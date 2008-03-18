@@ -45,6 +45,7 @@ namespace Tambon
             this.button1 = new System.Windows.Forms.Button();
             this.ButtonThesaban = new System.Windows.Forms.Button();
             this.btnSetup = new System.Windows.Forms.Button();
+            this.btnNumerals = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
             // 
@@ -229,11 +230,22 @@ namespace Tambon
             this.btnSetup.UseVisualStyleBackColor = true;
             this.btnSetup.Click += new System.EventHandler(this.btnSetup_Click);
             // 
+            // btnNumerals
+            // 
+            this.btnNumerals.Location = new System.Drawing.Point(25, 259);
+            this.btnNumerals.Name = "btnNumerals";
+            this.btnNumerals.Size = new System.Drawing.Size(75, 23);
+            this.btnNumerals.TabIndex = 17;
+            this.btnNumerals.Text = "Numerals";
+            this.btnNumerals.UseVisualStyleBackColor = true;
+            this.btnNumerals.Click += new System.EventHandler(this.btnNumerals_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnNumerals);
             this.Controls.Add(this.btnSetup);
             this.Controls.Add(this.ButtonThesaban);
             this.Controls.Add(this.button1);
@@ -277,6 +289,7 @@ namespace Tambon
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ButtonThesaban;
         private System.Windows.Forms.Button btnSetup;
+        private System.Windows.Forms.Button btnNumerals;
     }
 }
 
