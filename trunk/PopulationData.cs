@@ -88,6 +88,7 @@ namespace De.AHoerstemeier.Tambon
         private String FullFilename(String iFilename)
         {
             String lDir = Path.Combine(AHGlobalSettings.HTMLCacheDir, "DOPA");
+            Directory.CreateDirectory(lDir);
             String retval = Path.Combine(lDir, iFilename);
             return retval;
         }
@@ -314,6 +315,7 @@ namespace De.AHoerstemeier.Tambon
             if (mChangwat != null)
             {
                 String lDir = Path.Combine(AHGlobalSettings.XMLOutputDir, "DOPA");
+                Directory.CreateDirectory(lDir);
                 retval = Path.Combine(lDir,"population" + mChangwat.Geocode.ToString("D2") + " " + year.ToString() + ".XML");
             }
             return retval;
