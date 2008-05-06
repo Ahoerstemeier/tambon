@@ -63,6 +63,10 @@ namespace De.AHoerstemeier.Tambon
             {
                 lEntityTypes.Add(EntityType.Sukhaphiban);
             }
+            if (chkMuban.Checked)
+            {
+                lEntityTypes.Add(EntityType.Muban);
+            }
             if (chkTAO.Checked)
             {
                 lEntityTypes.Add(EntityType.TAO);
