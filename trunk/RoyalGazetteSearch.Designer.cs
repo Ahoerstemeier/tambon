@@ -32,6 +32,7 @@
             this.cbxSearchKey = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkTambonCouncil = new System.Windows.Forms.CheckBox();
             this.chkTAO = new System.Windows.Forms.CheckBox();
             this.chkTambon = new System.Windows.Forms.CheckBox();
             this.chkSukhaphiban = new System.Windows.Forms.CheckBox();
@@ -47,7 +48,7 @@
             this.edtYearStart = new System.Windows.Forms.NumericUpDown();
             this.edtYearEnd = new System.Windows.Forms.NumericUpDown();
             this.cbx_AllYears = new System.Windows.Forms.CheckBox();
-            this.chkTambonCouncil = new System.Windows.Forms.CheckBox();
+            this.chkMuban = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearStart)).BeginInit();
@@ -73,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(237, 326);
+            this.button1.Location = new System.Drawing.Point(237, 355);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -83,6 +84,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkMuban);
             this.groupBox1.Controls.Add(this.chkTambonCouncil);
             this.groupBox1.Controls.Add(this.chkTAO);
             this.groupBox1.Controls.Add(this.chkTambon);
@@ -92,10 +94,20 @@
             this.groupBox1.Controls.Add(this.chkChangwat);
             this.groupBox1.Location = new System.Drawing.Point(9, 121);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(160, 201);
+            this.groupBox1.Size = new System.Drawing.Size(160, 227);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Entities";
+            // 
+            // chkTambonCouncil
+            // 
+            this.chkTambonCouncil.AutoSize = true;
+            this.chkTambonCouncil.Location = new System.Drawing.Point(9, 159);
+            this.chkTambonCouncil.Name = "chkTambonCouncil";
+            this.chkTambonCouncil.Size = new System.Drawing.Size(103, 17);
+            this.chkTambonCouncil.TabIndex = 5;
+            this.chkTambonCouncil.Text = "Tambon Council";
+            this.chkTambonCouncil.UseVisualStyleBackColor = true;
             // 
             // chkTAO
             // 
@@ -166,7 +178,7 @@
             this.groupBox2.Controls.Add(this.chkCreation);
             this.groupBox2.Location = new System.Drawing.Point(175, 121);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(137, 201);
+            this.groupBox2.Size = new System.Drawing.Size(137, 227);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Events";
@@ -276,21 +288,21 @@
             this.cbx_AllYears.UseVisualStyleBackColor = true;
             this.cbx_AllYears.CheckedChanged += new System.EventHandler(this.cbx_AllYears_CheckedChanged);
             // 
-            // chk_TC
+            // chkMuban
             // 
-            this.chkTambonCouncil.AutoSize = true;
-            this.chkTambonCouncil.Location = new System.Drawing.Point(9, 159);
-            this.chkTambonCouncil.Name = "chk_TC";
-            this.chkTambonCouncil.Size = new System.Drawing.Size(103, 17);
-            this.chkTambonCouncil.TabIndex = 5;
-            this.chkTambonCouncil.Text = "Tambon Council";
-            this.chkTambonCouncil.UseVisualStyleBackColor = true;
+            this.chkMuban.AutoSize = true;
+            this.chkMuban.Location = new System.Drawing.Point(9, 182);
+            this.chkMuban.Name = "chkMuban";
+            this.chkMuban.Size = new System.Drawing.Size(59, 17);
+            this.chkMuban.TabIndex = 8;
+            this.chkMuban.Text = "Muban";
+            this.chkMuban.UseVisualStyleBackColor = true;
             // 
             // RoyalGazetteSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 361);
+            this.ClientSize = new System.Drawing.Size(324, 390);
             this.Controls.Add(this.cbx_AllYears);
             this.Controls.Add(this.edtYearEnd);
             this.Controls.Add(this.edtYearStart);
@@ -334,5 +346,6 @@
         private System.Windows.Forms.CheckBox cbx_AllYears;
         private System.Windows.Forms.CheckBox chkTAO;
         private System.Windows.Forms.CheckBox chkTambonCouncil;
+        private System.Windows.Forms.CheckBox chkMuban;
     }
 }
