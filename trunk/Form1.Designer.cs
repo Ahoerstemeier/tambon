@@ -46,6 +46,7 @@ namespace Tambon
             this.ButtonThesaban = new System.Windows.Forms.Button();
             this.btnSetup = new System.Windows.Forms.Button();
             this.btnNumerals = new System.Windows.Forms.Button();
+            this.btnTambonFrequency = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
             // 
@@ -240,11 +241,22 @@ namespace Tambon
             this.btnNumerals.UseVisualStyleBackColor = true;
             this.btnNumerals.Click += new System.EventHandler(this.btnNumerals_Click);
             // 
+            // btnTambonFrequency
+            // 
+            this.btnTambonFrequency.Location = new System.Drawing.Point(261, 258);
+            this.btnTambonFrequency.Name = "btnTambonFrequency";
+            this.btnTambonFrequency.Size = new System.Drawing.Size(75, 23);
+            this.btnTambonFrequency.TabIndex = 18;
+            this.btnTambonFrequency.Text = "Tambon";
+            this.btnTambonFrequency.UseVisualStyleBackColor = true;
+            this.btnTambonFrequency.Click += new System.EventHandler(this.btnTambonFrequency_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnTambonFrequency);
             this.Controls.Add(this.btnNumerals);
             this.Controls.Add(this.btnSetup);
             this.Controls.Add(this.ButtonThesaban);
@@ -290,6 +302,7 @@ namespace Tambon
         private System.Windows.Forms.Button ButtonThesaban;
         private System.Windows.Forms.Button btnSetup;
         private System.Windows.Forms.Button btnNumerals;
+        private System.Windows.Forms.Button btnTambonFrequency;
     }
 }
 
