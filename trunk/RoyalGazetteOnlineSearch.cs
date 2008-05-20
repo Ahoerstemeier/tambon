@@ -86,7 +86,7 @@ namespace De.AHoerstemeier.Tambon
                        {EntityType.Thesaban,"เปลี่ยนแปลงเขตเทศบาล หรือ การยุบรวมองค์การบริหารส่วนตำบลจันดีกับเทศบาล  หรือ ยุบรวมสภาตำบลกับเทศบาล"},
                        {EntityType.Sukhaphiban,"เปลี่ยนแปลงเขตสุขาภิบาล"},
                        {EntityType.Changwat,"เปลี่ยนแปลงเขตจังหวัด"},
-                       {EntityType.Tambon,"เปลี่ยนแปลงเขตตำบล"},
+                       {EntityType.Tambon,"เปลี่ยนแปลงเขตตำบล หรือ การกำหนดเขตตำบล"},
                        {EntityType.TAO,"เปลี่ยนแปลงเขตองค์การบริหารส่วนตำบล"}
                    }
                    }
