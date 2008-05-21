@@ -68,7 +68,8 @@ namespace De.AHoerstemeier.Tambon
                      {EntityType.Sukhaphiban,"เปลี่ยนชื่อสุขาภิบาล หรือ เปลี่ยนนามสุขาภิบาล หรือ เปลี่ยนแปลงชื่อสุขาภิบาล"},
                      {EntityType.Thesaban,"เปลี่ยนชื่อเทศบาล หรือ เปลี่ยนนามเทศบาล หรือ เปลี่ยนแปลงชื่อเทศบาล"},
                      {EntityType.Tambon,"เปลี่ยนชื่อตำบล หรือ เปลี่ยนนามตำบล หรือ เปลี่ยนแปลงชื่อตำบล หรือ เปลี่ยนแปลงแก้ไขชื่อตำบล"},
-                     {EntityType.TAO,"เปลี่ยนชื่อองค์การบริหารส่วนตำบล"}
+                     {EntityType.TAO,"เปลี่ยนชื่อองค์การบริหารส่วนตำบล"},
+                     {EntityType.Muban,"รเปลี่ยนแปลงชื่อหมู่บ้าน"}
                  }
               },
               {
@@ -81,12 +82,12 @@ namespace De.AHoerstemeier.Tambon
                {
                    EntityModification.AreaChange,new Dictionary<EntityType,String>
                    {
-                       {EntityType.Amphoe,"เปลี่ยนแปลงเขตอำเภอ"},
+                       {EntityType.Amphoe,"เปลี่ยนแปลงเขตอำเภอ หรือ เปลี่ยนแปลงเขตต์อำเภอ"},
                        {EntityType.KingAmphoe,"เปลี่ยนแปลงเขตกิ่งอำเภอ"},
                        {EntityType.Thesaban,"เปลี่ยนแปลงเขตเทศบาล หรือ การยุบรวมองค์การบริหารส่วนตำบลจันดีกับเทศบาล  หรือ ยุบรวมสภาตำบลกับเทศบาล"},
                        {EntityType.Sukhaphiban,"เปลี่ยนแปลงเขตสุขาภิบาล"},
                        {EntityType.Changwat,"เปลี่ยนแปลงเขตจังหวัด"},
-                       {EntityType.Tambon,"เปลี่ยนแปลงเขตตำบล หรือ การกำหนดเขตตำบล"},
+                       {EntityType.Tambon,"เปลี่ยนแปลงเขตตำบล หรือ การกำหนดเขตตำบล  หรือ เปลี่ยนแปลงเขตต์ตำบล"},
                        {EntityType.TAO,"เปลี่ยนแปลงเขตองค์การบริหารส่วนตำบล"}
                    }
                    }
