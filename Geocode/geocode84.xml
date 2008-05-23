@@ -43,7 +43,9 @@
     <entity type="Tambon" name="ช้างขวา" english="Chang Khwa" geocode="840210"/>
     <entity type="Tambon" name="ท่าอุแท" english="Tha U-thae" geocode="840211"/>
     <entity type="Tambon" name="ทุ่งรัง" english="Thung Rang" geocode="840212"/>
-    <entity type="Tambon" name="คลองสระ" english="Khlong Sa" geocode="840213"/>
+    <entity type="Tambon" name="คลองสระ" english="Khlong Sa" geocode="840213">
+      <entity type="Muban" geocode="84021310" name="ปากฮาย" english="Pak Hai"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="ดอนสัก" english="Don Sak" geocode="8403">
     <officials>
@@ -66,10 +68,14 @@
       <official title="DistrictOfficer" name="นายวิจิตร สุระกุล"  begin="1972-01-04" end="1972-06-01" />
       <official title="MinorDistrictOfficer" name="นายลาภ ลาภชูรัต"  begin="1969-04-12" end="1972-01-04" />
     </officials>
-    <entity type="Tambon" name="ดอนสัก" english="Don Sak" geocode="840301"/>
+    <entity type="Tambon" name="ดอนสัก" english="Don Sak" geocode="840301">
+      <entity type="Muban" geocode="84030114" name="นางกำใหม่" english="Bang Kam Mai"/>
+    </entity>
     <entity type="Tambon" name="ชลคราม" english="Chonlakhram" geocode="840302"/>
     <entity type="Tambon" name="ไชยคราม" english="Chaiyakhram" geocode="840303"/>
-    <entity type="Tambon" name="ปากแพรก" english="Pak Phraek" geocode="840304"/>
+    <entity type="Tambon" name="ปากแพรก" english="Pak Phraek" geocode="840304">
+      <entity type="Muban" geocode="84030415" name="บ้านดินแดง" english="Ban Din Daeng"/>
+    </entity>
     <slogan>เขาชะโงกเด่นสง่า แหล่งประมงล้ำค่า เทียบท่าเฟอร์รี น้ำตกสวยวิภาวดี บารมีหลวงพ่อจ้อย</slogan>
   </entity>
   <entity type="Amphoe" name="เกาะสมุย" english="Ko Samui" geocode="8404">
@@ -109,22 +115,24 @@
     <entity type="Tambon" name="ท่าขนอน" english="Tha Khanon" geocode="840801"/>
     <entity type="Tambon" name="บ้านยาง" english="Ban Yang" geocode="840802"/>
     <entity type="Tambon" name="น้ำหัก" english="Nam Hak" geocode="840803"/>
-    <entity type="Tambon" name="ตะกุกใต้" english="Takuk Tai" geocode="840804" newgeocode="841901"/>
-    <entity type="Tambon" name="ตะกุกเหนือ" english="Takuk Nuea" geocode="840805" newgeocode="841902"/>
+    <entity type="Tambon" name="ตะกุกใต้" english="Takuk Tai" geocode="840804" newgeocode="841901" status="Reassigned"/>
+    <entity type="Tambon" name="ตะกุกเหนือ" english="Takuk Nuea" geocode="840805" newgeocode="841902" status="Reassigned"/>
     <entity type="Tambon" name="กะเปา" english="Kapao" geocode="840806"/>
     <entity type="Tambon" name="ท่ากระดาน" english="Tha Kradan" geocode="840807"/>
     <entity type="Tambon" name="ย่านยาว" english="Yan Yao" geocode="840808"/>
-    <entity type="Tambon" name="ถ้ำสิงขร" english="Tham Singkhon" geocode="840809"/>
+    <entity type="Tambon" name="ถ้ำสิงขร" english="Tham Singkhon" geocode="840809">
+      <entity type="Muban" geocode="84080910" name="ร่มจิตต์" english="Rom Chit"/>
+    </entity>
     <entity type="Tambon" name="บ้านทำเนียบ" english="Ban Thamniap" geocode="840810"/>
 
-    <entity type="Unknown" name="ตะกุดใต้" english="Takuk Tai" geocode="840899" newgeocode="841901"/>/>
+    <entity type="Unknown" name="ตะกุดใต้" english="Takuk Tai" geocode="840899" newgeocode="841901" status="Unknown"/>
   </entity>
   <entity type="Amphoe" name="บ้านตาขุน" english="Ban Ta Khun" geocode="8409">
     <entity type="Tambon" name="เขาวง" english="Khao Wong" geocode="840901"/>
     <entity type="Tambon" name="พะแสง" english="Phasaeng" geocode="840902"/>
     <entity type="Tambon" name="พรุไทย" english="Phru Thai" geocode="840903"/>
     <entity type="Tambon" name="เขาพัง" english="Khao Phang" geocode="840904"/>
-    <entity type="Tambon" name="ไกรสร" english="Krai Son" geocode="840905" abolished="1985"/>
+    <entity type="Tambon" name="ไกรสร" english="Krai Son" geocode="840905" abolished="1985" status="Abolished"/>
 
     <officials source="http://www.geocities.com/takhun2004/boss.htm">
       <official title="DistrictOfficer" name="ร.ต.ภิรมย์ สุขภาคกุล"  begin="1978-12-01" end="1978-08-25" />
@@ -176,8 +184,8 @@
     <entity type="Tambon" name="ทุ่งเตาใหม่" english="Thung Tao Mai" geocode="841210"/>
     <entity type="Tambon" name="เพิ่มพูนทรัพย์" english="Phoem Phun Sap" geocode="841211"/>
 
-    <entity type="Unknown" name="ท่าเรือ" english="Tha Ruea" geocode="841298" newgeocode="841302"/>
-    <entity type="Unknown" name="บ้านนา" english="Ban Na" geocode="841299" newgeocode="841301"/>
+    <entity type="Unknown" name="ท่าเรือ" english="Tha Ruea" geocode="841298" newgeocode="841302" status="Unknown"/>
+    <entity type="Unknown" name="บ้านนา" english="Ban Na" geocode="841299" newgeocode="841301" status="Unknown"/>
   </entity>
   <entity type="Amphoe" name="บ้านนาเดิม" english="Ban Na Doem" geocode="8413">
     <entity type="Tambon" name="บ้านนา" english="Ban Na" geocode="841301"/>
@@ -204,12 +212,14 @@
     <entity type="Tambon" name="สินปุน" english="Sin Pun" geocode="841602"/>
     <entity type="Tambon" name="บางสวรรค์" english="Bang Sawan" geocode="841603"/>
     <entity type="Tambon" name="ไทรขึง" english="Sai Khueng" geocode="841604"/>
-    <entity type="Tambon" name="สินเจริญ" english="Sin Charoen" geocode="841605"/>
+    <entity type="Tambon" name="สินเจริญ" english="Sin Charoen" geocode="841605">
+      <entity type="Muban" geocode="84160510" name="มูลนิธิ" english="Mun Ni Thi"/>
+    </entity>
     <entity type="Tambon" name="ไทรโสภา" english="Sai Sopha" geocode="841606"/>
     <entity type="Tambon" name="สาคู" english="Sakhu" geocode="841607"/>
 
-    <entity type="Unknown" name="ชัยบุรี" english="Chai Buri" geocode="841698" newgeocode="841802"/>
-    <entity type="Unknown" name="สองแพรก" english="Song Phraek" geocode="841699" newgeocode="841801"/>
+    <entity type="Unknown" name="ชัยบุรี" english="Chai Buri" geocode="841698" newgeocode="841802" status="Unknown"/>
+    <entity type="Unknown" name="สองแพรก" english="Song Phraek" geocode="841699" newgeocode="841801" status="Unknown"/>
   </entity>
   <entity type="Amphoe" name="พุนพิน" english="Phunphin" geocode="8417">
     <entity type="Tambon" name="ท่าข้าม" english="Tha Kham" geocode="841701"/>
@@ -229,12 +239,14 @@
     <entity type="Tambon" name="เขาหัวควาย" english="Khao Hua Khwai" geocode="841715"/>
     <entity type="Tambon" name="ตะปาน" english="Tapan" geocode="841716"/>
 
-    <entity type="Unknown" name="คลองไทร" geocode="841799" english="Khlong Sai" newgeocode="841103"/>
+    <entity type="Unknown" name="คลองไทร" geocode="841799" english="Khlong Sai" newgeocode="841103" status="Unknown"/>
   </entity>
   <entity type="Amphoe" name="ชัยบุรี" english="Chai Buri" geocode="8418">
     <entity type="Tambon" name="สองแพรก" english="Song Phraek" geocode="841801"/>
     <entity type="Tambon" name="ชัยบุรี" english="Chai Buri" geocode="841802"/>
-    <entity type="Tambon" name="คลองน้อย" english="Khlong Noi" geocode="841803"/>
+    <entity type="Tambon" name="คลองน้อย" english="Khlong Noi" geocode="841803">
+      <entity type="Muban" geocode="84180310" name="บ้านชาติพัฒนา" english="Ban Chat Phatthana"/>
+    </entity>
     <entity type="Tambon" name="ไทรทอง" english="Sai Thong" geocode="841804"/>
   </entity>
   <entity type="Amphoe" name="วิภาวดี" english="Vibhavadi" geocode="8419">
@@ -274,8 +286,8 @@
       <entity type="Muban" name="บ้านหน้าเขา" geocode="84190217" />
     </entity>
   </entity>
-  <entity type="KingAmphoe" name="ท่าโรงช้าง" english="Tha Rong Chang" geocode="8420" />
-  <entity type="KingAmphoe" name="บางสวรรค์" english="Bang Sawan" geocode="8421" />
+  <entity type="KingAmphoe" name="ท่าโรงช้าง" english="Tha Rong Chang" geocode="8420" status="Proposed"/>
+  <entity type="KingAmphoe" name="บางสวรรค์" english="Bang Sawan" geocode="8421" status="Proposed"/>
 
   <entity type="ThesabanNakhon" name="สุราษฎร์ธานี" english="Surat Thani" geocode="8499" parent="8401"/>
   <entity type="ThesabanMueang" name="นาสาร" english="Na San" geocode="8498" parent="8412"/>
