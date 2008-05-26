@@ -50,10 +50,12 @@ namespace De.AHoerstemeier.Tambon
             {
                 lEntityTypes.Add(EntityType.Amphoe);
                 lEntityTypes.Add(EntityType.KingAmphoe);
+                lEntityTypes.Add(EntityType.Khet);
             }
             if (chkTambon.Checked)
             {
                 lEntityTypes.Add(EntityType.Tambon);
+                lEntityTypes.Add(EntityType.Khwaeng);
             }
             if (chkThesaban.Checked)
             {
