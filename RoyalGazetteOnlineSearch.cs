@@ -69,7 +69,7 @@ namespace De.AHoerstemeier.Tambon
                      {EntityType.Thesaban,"เปลี่ยนชื่อเทศบาล หรือ เปลี่ยนนามเทศบาล หรือ เปลี่ยนแปลงชื่อเทศบาล"},
                      {EntityType.Tambon,"เปลี่ยนชื่อตำบล หรือ เปลี่ยนนามตำบล หรือ เปลี่ยนแปลงชื่อตำบล หรือ เปลี่ยนแปลงแก้ไขชื่อตำบล"},
                      {EntityType.TAO,"เปลี่ยนชื่อองค์การบริหารส่วนตำบล"},
-                     {EntityType.Muban,"รเปลี่ยนแปลงชื่อหมู่บ้าน"}
+                     {EntityType.Muban,"เปลี่ยนแปลงชื่อหมู่บ้าน"}
                  }
               },
               {
@@ -88,7 +88,8 @@ namespace De.AHoerstemeier.Tambon
                        {EntityType.Sukhaphiban,"เปลี่ยนแปลงเขตสุขาภิบาล"},
                        {EntityType.Changwat,"เปลี่ยนแปลงเขตจังหวัด"},
                        {EntityType.Tambon,"เปลี่ยนแปลงเขตตำบล หรือ การกำหนดเขตตำบล  หรือ เปลี่ยนแปลงเขตต์ตำบล"},
-                       {EntityType.TAO,"เปลี่ยนแปลงเขตองค์การบริหารส่วนตำบล"}
+                       {EntityType.TAO,"เปลี่ยนแปลงเขตองค์การบริหารส่วนตำบล"},
+                       {EntityType.Khwaeng,"เปลี่ยนแปลงพื้นที่แขวง"}
                    }
                    }
         };
