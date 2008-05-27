@@ -2708,12 +2708,34 @@
       </entry>
     </year>
     <year value="1966">
-      <!--TODO-->
-      <entry description="Creation of King Amphoe" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ (กิ่งอำเภอศรีชมพู อำเภอชุมแพ จังหวัดขอนแก่น)" volume="83" page="2260" issue="59 ง" uri="2509/D/059/2260.PDF" publication="1966-07-12" />
-      <entry description="Creation of King Amphoe" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ (กิ่งอำเภอสังคม อำเภอศรีเชียงใหม่ จังหวัดหนองคาย)" volume="83" page="997" issue="19 ง" uri="2509/D/019/997.PDF" publication="1966-03-01" />
-      <entry description="Creation of King Amphoe" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ (กิ่งอำเภอสนามไชย อำเภอคำพนมสารคาม จังหวัดฉะเชิงเทรา)" volume="83" page="254" issue="6 ง" uri="2509/D/006/254.PDF" publication="1966-01-18" />
-
-      <entry description="Creation of King Amphoe" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ (กิ่งอำเภอป่าติ้ว อำเภอคำเขื่อนแก้ว จังหวัดอุบลราชธานี)" volume="83" page="6" issue="74 ง ฉบับพิเศษ" uri="2509/D/074/6.PDF" publication="1966-09-01" />
+      <entry description="Creation of King Amphoe Si Chomphu" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ" subtitle="กิ่งอำเภอศรีชมพู อำเภอชุมแพ จังหวัดขอนแก่น" volume="83" page="2260" issue="59 ง" uri="2509/D/059/2260.PDF" publication="1966-07-12" effective="1966-07-01" sign="1966-06-30">
+        <create name="ศรีชมพู" geocode="4006" type="KingAmphoe" parent="4005">
+          <!--when was spelling changed from ศรีชมพู to สีชมพู?-->
+          <reassign geocode="400602"/>
+          <reassign geocode="400601"/>
+          <reassign geocode="400603"/>
+        </create>
+      </entry>
+      <entry description="Creation of King Amphoe Sangkhom" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ" subtitle="กิ่งอำเภอสังคม อำเภอศรีเชียงใหม่ จังหวัดหนองคาย" volume="83" page="997" issue="19 ง" uri="2509/D/019/997.PDF" publication="1966-03-01" sign="1966-02-14" effective="1966-03-01">
+        <create geocode="4308" type="KingAmphoe" parent="4307">
+          <reassign geocode="430801"/>
+          <reassign geocode="430803"/>
+        </create>
+      </entry>
+      <entry description="Creation of King Amphoe Sanam Chai" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ" subtitle="กิ่งอำเภอสนามไชย อำเภอคำพนมสารคาม จังหวัดฉะเชิงเทรา" volume="83" page="254" issue="6 ง" uri="2509/D/006/254.PDF" publication="1966-01-18" sign="1966-01-06" effective="1966-01-06">
+        <create name="สนามไชย" type="KingAmphoe" geocode="2408" parent="2406">
+          <reassign geocode="240801"/>
+          <reassign geocode="240802"/>
+          <reassign geocode="240804"/>
+        </create>
+        </entry>
+      <entry description="Creation of King Amphoe Pa Tio" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ (กิ่งอำเภอป่าติ้ว อำเภอคำเขื่อนแก้ว จังหวัดอุบลราชธานี)" volume="83" page="6" issue="74 ง ฉบับพิเศษ" uri="2509/D/074/6.PDF" publication="1966-09-01" sign="1966-08-17" effective="1966-09-01" >
+        <create geocode="3505" parent="3504" type="KingAmphoe">
+          <reassign geocode="350501"/>
+          <reassign geocode="350503"/>
+          <reassign geocode="350502"/>
+        </create>
+      </entry>
       <entry description="Creation of Amphoe Chonnabot" title="พระราชกฤษฎีกาตั้งอำเภอชนบท พ.ศ. ๒๕๐๙" volume="83" page="113" issue="10 ก" uri="2509/A/010/113.PDF" publication="1966-02-01" sign="1966-01-20">
         <create geocode="4018" type="Amphoe" >
           <reassign geocode="401801" />
@@ -2724,7 +2746,7 @@
       </entry>
       <entry description="Creation of Amphoe Phaya Thai" title="พระราชกฤษฎีกาตั้งอำเภอพญาไท พ.ศ. ๒๕๐๙" volume="83" page="1-3" issue="39 ก ฉบับพิเศษ" uri="2509/A/039/1.PDF" publication="1966-05-01" sign="1966-04-21">
         <create geocode="1014" type="Amphoe" >
-          <reassign geocode="" english="Phetchaburi"/>
+          <reassign geocode="" name="เพชรบุรี" english="Phetchaburi"/>
           <!--renamed to Thanon Phetchaburi? Then geocode 103703-->
           <reassign geocode="103701" />
           <reassign geocode="103702" />
