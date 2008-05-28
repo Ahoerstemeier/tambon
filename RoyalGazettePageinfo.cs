@@ -15,14 +15,14 @@ namespace De.AHoerstemeier.Tambon
             String retval = Page.ToString();
             if (PageEnd > Page)
             {
-                retval = retval + "-" + PageEnd.ToString();
+                retval = retval + "–" + PageEnd.ToString();
             }
             return retval;
         }
         public void ParseString(String iValue)
         {
             int lState = 0;
-            foreach (String SubString in iValue.Split('-'))
+            foreach (String SubString in iValue.Split('-','–'))
             {
                 switch (lState)
                 {
