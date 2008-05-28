@@ -56,7 +56,7 @@ namespace De.AHoerstemeier.Tambon
                     {EntityType.Amphoe,"ยุบอำเภอ"},
                     {EntityType.Sukhaphiban,"ยุบสุขาภิบาล"},
                     {EntityType.Tambon,"ยุบตำบล หรือ ยุบและเปลี่ยนแปลงเขตตำบล"},
-                    {EntityType.TAO,"ยุบองค์การบริหารส่วนตำบล หรือ ยุบรวมองค์การบริหารส่วนตำบล"},
+                    {EntityType.TAO,"ยุบองค์การบริหารส่วนตำบล หรือ ยุบรวมองค์การบริหารส่วนตำบล หรือ รวมองค์การบริหารส่วนตำบลกับ"},
                     {EntityType.TC,"ยุบรวมสภาตำบล"}
                 }
              },
