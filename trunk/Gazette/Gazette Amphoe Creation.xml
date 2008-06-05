@@ -3625,10 +3625,22 @@
     <reassign name="ดิดะ" />
   </entry>
 
-  <entry description="Creation of King Amphoe" title="ประกาศกรมพระนครบาล เรื่อง ตั้งกิ่งบุบผาราม" volume="35" page="144" issue="0 ก" uri="2461/A/144.PDF" publication="1918-06-16" />
-  <entry description="Creation of Amphoe" title="ประกาศกระทรวงนครบาล เรื่อง ตั้งอำเภอบางแม่นาง จังหวัดนนทบุรี" volume="38" page="23" issue="0 ก" uri="2464/A/23.PDF" publication="1921-04-24" />
-  <entry description="Creation of Amphoe" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบแยกและตั้งอำเภอในมณฑลนครสวรรค์" volume="42" page="260" issue="0 ก" uri="2468/A/260.PDF" publication="1926-01-17" />
-  <entry description="Creation of Amphoe" title="ประกาศ ตั้งอำเภอท่าช้าง จังหวัดเพชรบุรี" volume="33" page="166" issue="0 ก" uri="2459/A/166.PDF" publication="1916-09-24" />
+  <entry description="Creation of King Amphoe Buppharam" title="ประกาศกรมพระนครบาล เรื่อง ตั้งกิ่งบุบผาราม" volume="35" page="144" issue="0 ก" uri="2461/A/144.PDF" publication="1918-06-16" sign="1918-05-23" effective="1918-05-01">
+    <create type="KingAmphoe" parent="1018" name="บุบผาราม" >
+      <!-- 7 Tambon-->
+    </create>
+  </entry>
+  <entry description="Creation of Amphoe Bang Mae Nang" title="ประกาศกระทรวงนครบาล เรื่อง ตั้งอำเภอบางแม่นาง จังหวัดนนทบุรี" volume="38" page="23" issue="0 ก" uri="2464/A/23.PDF" publication="1921-04-24" >
+    <create type="Amphoe" geocode="1203" />
+    </entry>
+  <entry description="Downgrade and create of Amphoe in Monthon Nakhon Sawan" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบแยกและตั้งอำเภอในมณฑลนครสวรรค์" volume="42" page="260-262" issue="0 ก" uri="2468/A/260.PDF" publication="1926-01-17" sign="1926-01-09" effective="1926-01-01">
+    <status geocode="6308" old="Amphoe" new="KingAmphoe" parent="6306"/>
+    <create geocode="6106"/>
+    <create geocode="6011"/>
+  </entry>
+  <entry description="Creation of Amphoe Tha Chang" title="ประกาศ ตั้งอำเภอท่าช้าง จังหวัดเพชรบุรี" volume="33" page="166" issue="0 ก" uri="2459/A/166.PDF" publication="1916-09-24" >
+    <create type="Amphoe" geocode="7606" />
+  </entry>
 
   <!--TODO-->
 
