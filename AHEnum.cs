@@ -40,6 +40,7 @@ namespace De.AHoerstemeier.Tambon
         WildlifeSanctuary,
         NonHuntingArea,
         HistoricalPark,
-        HistoricalSite
+        HistoricalSite,
+        NationalPreservedForest
     }
 }

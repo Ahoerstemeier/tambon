@@ -99,7 +99,8 @@ namespace De.AHoerstemeier.Tambon
             {ProtectedAreaTypes.NonHuntingArea,"กำหนดเขตห้ามล่าสัตว์ป่า"},
             {ProtectedAreaTypes.WildlifeSanctuary,"เป็นเขตรักษาพันธุ์สัตว์ป่า"},
             {ProtectedAreaTypes.NationalPark,"เป็นอุทยานแห่งชาติ"},
-            {ProtectedAreaTypes.HistoricalSite,"กำหนดเขตที่ดินโบราณสถาน"}
+            {ProtectedAreaTypes.HistoricalSite,"กำหนดเขตที่ดินโบราณสถาน"},
+            {ProtectedAreaTypes.NationalPreservedForest,"เป็นป่าสงวนแห่งชาติ"}
         };
         #endregion
         #region constructor
