@@ -23,7 +23,8 @@ namespace De.AHoerstemeier.Tambon
         Mueang, Bangkok,
         Chumchon,
         TAO,
-        TC
+        TC,
+        Phak
     };
     internal enum EntityModification
     {
