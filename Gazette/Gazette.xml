@@ -481,6 +481,22 @@
     <reassign geocode="9604" oldownername="สายบุรี" owner="96" />
     <status geocode="9603" old="KingAmphoe" new="Amphoe" parent="9407" />
   </entry>
+  <entry description="Downgrade, create, abolish and rename of Amphoe in Monthon Nakhon Sawan" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบแยกและตั้งอำเภอในมณฑลนครสวรรค์" volume="42" page="260-262" issue="0 ก" uri="2468/A/260.PDF" publication="1926-01-17" sign="1926-01-09" effective="1926-01-01">
+    <status geocode="6308" old="Amphoe" new="KingAmphoe" parent="6306"/>
+    <abolish name="ห้วยแห้ง" type="KingAmphoe">
+      <reassign geocode="610603" owner="6106"/>
+      <!-- actually 4 unnamed Tambon, only guessed the one above-->
+    </abolish>
+    <rename oldname="คอกควาย" englishold="Khok Khwai" name="บ้านไร่" english="Ban Rai" geocode="6106"/>
+    <create geocode="6011" type="Amphoe">
+      <reassign geocode="601109" oldowner="6005"/>
+      <reassign geocode="601101" oldowner="6002"/>
+      <reassign geocode="601107" oldowner="6002"/>
+      <reassign geocode="601103" oldowner="6002"/>
+      <reassign geocode="601106" oldowner="6102"/>
+      <reassign geocode="601104" oldowner="6102"/>
+    </create>
+  </entry>
 
   <entry description="Creation of Monthon Pattani" title="ประกาศตั้งมณฑลปัตตานี" volume="23" page="399" issue="18" uri="2449/018/399.PDF" publication="1906-07-29" sign="1906-07-23">
     <create type="Monthon" name="ปัตตานี" />
