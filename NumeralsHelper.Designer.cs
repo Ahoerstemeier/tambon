@@ -30,6 +30,7 @@
         {
             this.btnDoConvert = new System.Windows.Forms.Button();
             this.boxText = new System.Windows.Forms.TextBox();
+            this.btnEncoding = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDoConvert
@@ -38,7 +39,7 @@
             this.btnDoConvert.Name = "btnDoConvert";
             this.btnDoConvert.Size = new System.Drawing.Size(75, 23);
             this.btnDoConvert.TabIndex = 0;
-            this.btnDoConvert.Text = "Go";
+            this.btnDoConvert.Text = "Numerals";
             this.btnDoConvert.UseVisualStyleBackColor = true;
             this.btnDoConvert.Click += new System.EventHandler(this.btnDoConvert_Click);
             // 
@@ -50,11 +51,22 @@
             this.boxText.Size = new System.Drawing.Size(289, 242);
             this.boxText.TabIndex = 1;
             // 
+            // btnEncoding
+            // 
+            this.btnEncoding.Location = new System.Drawing.Point(136, 250);
+            this.btnEncoding.Name = "btnEncoding";
+            this.btnEncoding.Size = new System.Drawing.Size(75, 23);
+            this.btnEncoding.TabIndex = 2;
+            this.btnEncoding.Text = "Encoding";
+            this.btnEncoding.UseVisualStyleBackColor = true;
+            this.btnEncoding.Click += new System.EventHandler(this.button1_Click);
+            // 
             // NumeralsHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.btnEncoding);
             this.Controls.Add(this.boxText);
             this.Controls.Add(this.btnDoConvert);
             this.Name = "NumeralsHelper";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Button btnDoConvert;
         private System.Windows.Forms.TextBox boxText;
+        private System.Windows.Forms.Button btnEncoding;
     }
 }
