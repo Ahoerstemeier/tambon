@@ -35,6 +35,7 @@
             // 
             // btnDoConvert
             // 
+            this.btnDoConvert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDoConvert.Location = new System.Drawing.Point(217, 250);
             this.btnDoConvert.Name = "btnDoConvert";
             this.btnDoConvert.Size = new System.Drawing.Size(75, 23);
@@ -45,6 +46,10 @@
             // 
             // boxText
             // 
+            this.boxText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.boxText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boxText.Location = new System.Drawing.Point(3, 2);
             this.boxText.Multiline = true;
             this.boxText.Name = "boxText";
@@ -53,6 +58,7 @@
             // 
             // btnEncoding
             // 
+            this.btnEncoding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEncoding.Location = new System.Drawing.Point(136, 250);
             this.btnEncoding.Name = "btnEncoding";
             this.btnEncoding.Size = new System.Drawing.Size(75, 23);
