@@ -30,21 +30,76 @@ namespace De.AHoerstemeier.Tambon
             boxText.Text = lValue;
         }
 
-        private static Dictionary<Char, Char> mOldPDFEncoding = new Dictionary<Char, Char>()
+        private Dictionary<Char, Char> mOldPDFEncoding = new Dictionary<Char, Char>()
             {
+              // Letters: กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮ
               {'°','ก'},
               {'¢','ข'},
-              // Kho Khwai ค
+              // ฃ
+              {'§','ค'},
+              // ฅฆ
               {'ß','ง'},
               {'®','จ'},
+              {'©','ฉ'},
+              {'™','ช'},
+              // ซ
+              {'≥','ฌ'},
+              {'≠','ญ'},
+              {'Æ','ฎ'},
+              //ฏฐฑฒณ
+              {'¥','ด'},
+              {'μ','ต'},
+              {'∂','ถ'},
+              {'Σ','ท'},              
+              {'Π','ธ'},
+              {'π','น'},
+              {'∫','บ'},
+              {'ª','ป'},
+              {'º','ผ'},
+              // ฝ
+              {'æ','พ'},
+              //ฟ
+              {'¿','ภ'},
+              {'¡','ม'},
+              {'¬','ย'},
+              {'√','ร'},
+              // ฤ
+              {'≈','ล'},
+              // ฦ
+              {'«','ว'},
+              {'»','ศ'},
+              {'…','ษ'},
+              {Convert.ToChar(0x00A0),'ส'},  // This one becomes 0x20 when copying it via clipboard
+              {'À','ห'},
+              // ฬ
+              {'Õ','อ'},
+              // ฮ
+              
               // vocals
+              {'–','ะ'},  
+              {'—',Convert.ToChar(0x0E31)}, // อั
+              {'“','า'},
+              {'”',Convert.ToChar(0x0E33)},  // อำ
+              {'‘',Convert.ToChar(0x0E34)},  // อิ
+              {'’',Convert.ToChar(0x0E35)},  // อี
+              {'÷',Convert.ToChar(0x0E36)},  // อึ
+              {'◊',Convert.ToChar(0x0E37)},  // อื
+              {'ÿ',Convert.ToChar(0x0E38)},  // อุ
+              {'Ÿ',Convert.ToChar(0x0E39)},  // อู
+              {'‡','เ'},
               {'·','แ'},
               {'‚','โ'},
               {'„','ใ'},
-              {'‡','เ'},
-              {'“','า'},
-              {'–','ะ'},    
+              {'‰','ไ'},
+              // tone marks
+              {'Ë',Convert.ToChar(0x0E48)}, // อ่
+              {'à',Convert.ToChar(0x0E48)}, // อ่ (yes, again)
+              {'È',Convert.ToChar(0x0E49)}, // อ้ 
+              {'â',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
+              {'ì',Convert.ToChar(0x0E4A)}, // อ๊
+              // อ้ อ๊ อ๋ อ์
               // numerals
+              {'','๐'},
               {'Ò','๑'},
               {'Ú','๒'},
               {'Û','๓'},
@@ -53,24 +108,8 @@ namespace De.AHoerstemeier.Tambon
               {'ˆ','๖'},
               {'˜','๗'},
               {'¯','๘'},
-              {'˘','๙'},
+              {'˘','๙'}
 
-              {'ª','ป'},
-              {'∫','บ'},
-              {'æ','พ'},
-              {'π','น'},
-              {'μ','ต'},
-              {'À','ห'},
-{'¥','ด'},
-{'¬','ย'},
-{'Σ','ท'},
-
-              {'«','ว'},
-              {'¡','ม'},
-              {'≈','ล'},
-              {'Õ','อ'},
-              {'»','ศ'},
-{'√','ร'}
             };
 
         private void button1_Click(object sender, EventArgs e)
