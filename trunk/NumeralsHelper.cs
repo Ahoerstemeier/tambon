@@ -97,7 +97,8 @@ namespace De.AHoerstemeier.Tambon
               {'È',Convert.ToChar(0x0E49)}, // อ้ 
               {'â',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
               {'ì',Convert.ToChar(0x0E4A)}, // อ๊
-              // อ้ อ๊ อ๋ อ์
+              // อ๋ 
+              {'å',Convert.ToChar(0x0E4C)}, // อ์
               // numerals
               {'','๐'},
               {'Ò','๑'},
