@@ -25,8 +25,10 @@
     <entity type="Tambon" name="กะเปอร์" english="Kapoe" geocode="850302" />
     <entity type="Tambon" name="เชี่ยวเหลียง" english="Chiao Liang" geocode="850303" />
     <entity type="Tambon" name="บ้านนา" english="Ban Na" geocode="850304" >
-      <entity type="Muban" name="บ้านทองหลางล่าง" geocode="85030407" />
-      <entity type="Muban" name="บ้านทุ่งถั่ว" geocode="85030408" />
+      <entity type="Muban" name="บ้านทองหลาง" english="Ban Thong Lang " geocode="85030403" />
+      
+      <entity type="Muban" name="บ้านทองหลางล่าง" english="Ban Thong Lang Lang" geocode="85030407" />
+      <entity type="Muban" name="บ้านทรัพย์สมบูรฌ์" english="Ban Sap Sombun" geocode="85030408" />
     </entity>
     <entity type="Tambon" name="บางหิน" english="Bang Hin" geocode="850305" />
     <entity type="Tambon" name="นาคา" english="Nakha" geocode="850306" newgeocode="850501"/>
@@ -42,7 +44,11 @@
     <entity type="Tambon" name="บางใหญ่" english="Bang Yai" geocode="850407" />
   </entity>
   <entity type="Amphoe" name="สุขสำราญ" english="Suk Samran" geocode="8505" parent="8503">
-    <entity type="Tambon" name="นาคา" english="Nakha" geocode="850501" />
+    <entity type="Tambon" name="นาคา" english="Nakha" geocode="850501" >
+      <entity type="Muban" geocode="85050102" name="บ้านนาพรุ" english="Ban Na Phru" />
+      
+      <entity type="Muban" geocode="85050108" name="บ้านทุ่งถั่ว" english="Ban Thung Thua"/>
+    </entity>
     <entity type="Tambon" name="กำพวน" english="Kamphuan" geocode="850502" >
       <entity type="Muban" geocode="85050201" name="บ้านทะเลนอก"/>
       <entity type="Muban" geocode="85050202" name="บ้านเหนือ"/>
