@@ -42,11 +42,13 @@ namespace De.AHoerstemeier.Tambon
               {'®','จ'},
               {'©','ฉ'},
               {'™','ช'},
-              // ซ
+              {'´','ซ'},
               {'≥','ฌ'},
               {'≠','ญ'},
               {'Æ','ฎ'},
-              //ฏฐฑฒณ
+              //ฏ
+              {'∞','ฐ'},
+              // ฑฒณ
               {'¥','ด'},
               {'μ','ต'},
               {'∂','ถ'},
@@ -56,9 +58,9 @@ namespace De.AHoerstemeier.Tambon
               {'∫','บ'},
               {'ª','ป'},
               {'º','ผ'},
-              // ฝ
+              {'Ω','ฝ'},
               {'æ','พ'},
-              //ฟ
+              {'ø','ฟ'},
               {'¿','ภ'},
               {'¡','ม'},
               {'¬','ย'},
@@ -78,12 +80,15 @@ namespace De.AHoerstemeier.Tambon
               // vocals
               {'–','ะ'},  
               {'—',Convert.ToChar(0x0E31)}, // อั
+              {'í',Convert.ToChar(0x0E31)}, // อั (yes, again)
               {'“','า'},
               {'”',Convert.ToChar(0x0E33)},  // อำ
               {'‘',Convert.ToChar(0x0E34)},  // อิ
               {'’',Convert.ToChar(0x0E35)},  // อี
+              {'ï',Convert.ToChar(0x0E35)},  // อี (yes, again)
               {'÷',Convert.ToChar(0x0E36)},  // อึ
               {'◊',Convert.ToChar(0x0E37)},  // อื
+              {'ó',Convert.ToChar(0x0E37)},  // อื
               {'ÿ',Convert.ToChar(0x0E38)},  // อุ
               {'Ÿ',Convert.ToChar(0x0E39)},  // อู
               {'‡','เ'},
@@ -94,11 +99,19 @@ namespace De.AHoerstemeier.Tambon
               // tone marks
               {'Ë',Convert.ToChar(0x0E48)}, // อ่
               {'à',Convert.ToChar(0x0E48)}, // อ่ (yes, again)
+              {'É',Convert.ToChar(0x0E48)}, // อ่ (yes, again)
+              {'ò',Convert.ToChar(0x0E48)}, // อ่ (yes, again)
               {'È',Convert.ToChar(0x0E49)}, // อ้ 
+              {'ô',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
               {'â',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
+              {'Ñ',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
               {'ì',Convert.ToChar(0x0E4A)}, // อ๊
+              {'ä',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
               // อ๋ 
               {'å',Convert.ToChar(0x0E4C)}, // อ์
+              {'Ï',Convert.ToChar(0x0E4C)}, // อ์
+              
+              {'Á',Convert.ToChar(0x0E47)}, //็อ็
               // numerals
               {'','๐'},
               {'Ò','๑'},
@@ -110,7 +123,7 @@ namespace De.AHoerstemeier.Tambon
               {'˜','๗'},
               {'¯','๘'},
               {'˘','๙'}
-
+              
             };
 
         private void button1_Click(object sender, EventArgs e)
