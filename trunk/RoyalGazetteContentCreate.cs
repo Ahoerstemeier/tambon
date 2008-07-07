@@ -27,7 +27,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     Status = (EntityType)Enum.Parse(typeof(EntityType), s);
                 }
-                Parent = Helper.GetAttributeOptionalInt(iNode, "parent");
+                Parent = Helper.GetAttributeOptionalInt(iNode, "parent",0);
 
             }
         }

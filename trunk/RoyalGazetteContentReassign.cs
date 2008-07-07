@@ -18,8 +18,8 @@ namespace De.AHoerstemeier.Tambon
             base.DoLoad(iNode);
             if (iNode != null && iNode.Name.Equals(XmlLabel))
             {
-                OldGeocode = Helper.GetAttributeOptionalInt(iNode, "oldgeocode");
-                OldParent = Helper.GetAttributeOptionalInt(iNode, "oldparent");
+                OldGeocode = Helper.GetAttributeOptionalInt(iNode, "oldgeocode",0);
+                OldParent = Helper.GetAttributeOptionalInt(iNode, "oldparent",0);
             }
         }
         protected override void DoCopy(RoyalGazetteContent iOther)

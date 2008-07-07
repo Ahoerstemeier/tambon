@@ -31,7 +31,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     Status = (EntityType)Enum.Parse(typeof(EntityType), s);
                 }
-                NewParent = Helper.GetAttributeOptionalInt(iNode, "parent");
+                NewParent = Helper.GetAttributeOptionalInt(iNode, "parent",0);
                 foreach (XmlNode lNode in iNode.ChildNodes)
                 {
                     if (lNode.Name == RoyalGazetteContentReassign.XmlLabel)
