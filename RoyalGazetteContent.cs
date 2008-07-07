@@ -17,8 +17,8 @@ namespace De.AHoerstemeier.Tambon
         {
             if (iNode != null)
             {
-                Geocode = Helper.GetAttributeOptionalInt(iNode, "geocode");
-                Owner = Helper.GetAttributeOptionalInt(iNode, "owner");
+                Geocode = Helper.GetAttributeOptionalInt(iNode, "geocode",0);
+                Owner = Helper.GetAttributeOptionalInt(iNode, "owner",0);
                 foreach (XmlNode lNode in iNode.ChildNodes)
                 {
                     var lContent = RoyalGazetteContent.CreateContentObject(lNode.Name);
