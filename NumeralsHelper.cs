@@ -110,7 +110,7 @@ namespace De.AHoerstemeier.Tambon
               {'ì',Convert.ToChar(0x0E4A)}, // อ๊
               {'ä',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
               {'Ö',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
-              // อ๋ 
+              {'Ü',Convert.ToChar(0x0E4B)}, // อ๋ 
               {'å',Convert.ToChar(0x0E4C)}, // อ์
               {'Ï',Convert.ToChar(0x0E4C)}, // อ์
               
