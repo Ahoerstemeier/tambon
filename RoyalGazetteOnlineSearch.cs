@@ -8,6 +8,11 @@ using System.Web;
 using System.IO;
 using System.Windows.Forms;
 
+/* Further interesting search string:
+  
+    PAO constituencies: การแบ่งเขตเลือกตั้งสมาชิกสภาองค์การบริหารส่วนจังหวัด 
+
+ */
 namespace De.AHoerstemeier.Tambon
 {
     class RoyalGazetteOnlineSearch
