@@ -78,7 +78,7 @@ namespace De.AHoerstemeier.Tambon
               {'À','ห'},
               // ฬ
               {'Õ','อ'},
-              // ฮ
+              {'Œ','ฮ'},  // actually it becomes OE with clipboard
               
               // vocals
               {'–','ะ'},  
