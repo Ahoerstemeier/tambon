@@ -76,7 +76,7 @@ namespace De.AHoerstemeier.Tambon
               {'…','ษ'},
               {Convert.ToChar(0x00A0),'ส'},  // This one becomes 0x20 when copying it via clipboard
               {'À','ห'},
-              // ฬ
+              {'Ã','ฬ'},
               {'Õ','อ'},
               {'Œ','ฮ'},  // actually it becomes OE with clipboard
               
@@ -87,6 +87,7 @@ namespace De.AHoerstemeier.Tambon
               {'“','า'},
               {'”',Convert.ToChar(0x0E33)},  // อำ
               {'‘',Convert.ToChar(0x0E34)},  // อิ
+              {'î',Convert.ToChar(0x0E34)},  // อิ (yes, again)
               {'’',Convert.ToChar(0x0E35)},  // อี
               {'ï',Convert.ToChar(0x0E35)},  // อี (yes, again)
               {'÷',Convert.ToChar(0x0E36)},  // อึ
@@ -112,6 +113,7 @@ namespace De.AHoerstemeier.Tambon
               {'ä',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
               {'Ö',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
               {'Ü',Convert.ToChar(0x0E4B)}, // อ๋ 
+              {'ã',Convert.ToChar(0x0E4B)}, // อ๋ (yes, again)
               {'å',Convert.ToChar(0x0E4C)}, // อ์
               {'Ï',Convert.ToChar(0x0E4C)}, // อ์
               
