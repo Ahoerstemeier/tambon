@@ -16,7 +16,7 @@ namespace De.AHoerstemeier.Tambon
         ThesabanNakhon, ThesabanMueang, ThesabanTambon,
         Khet,
         Khwaeng,
-        SakhaTambon, SakhaKwaeng, Sakha,
+        SakhaTambon, SakhaKhwaeng, Sakha,
         Monthon,
         Sukhaphiban,
         SukhaphibanTambon, SukhaphibanMueang,

@@ -52,7 +52,8 @@ namespace De.AHoerstemeier.Tambon
                     {EntityType.Tambon,"ตั้งและกำหนดเขตตำบล หรือ ตั้งตำบลในจังหวัด หรือ ตั้งและเปลี่ยนแปลงเขตตำบล"},
                     {EntityType.TAO,"ตั้งองค์การบริหารส่วนตำบล หรือ รวมสภาตำบลกับองค์การบริหารส่วนตำบล"},
                     {EntityType.Muban,"ตั้งหมู่บ้าน หรือ ตั้งและกำหนดเขตหมู่บ้าน หรือ ตั้งและกำหนดหมู่บ้าน"},
-                    {EntityType.Phak,"การรวมจังหวัดยกขึ้นเป็นภาค"}
+                    {EntityType.Phak,"การรวมจังหวัดยกขึ้นเป็นภาค"},
+                    {EntityType.Khwaeng,"ตั้งแขวง"}
                 }
             },
             {
@@ -98,7 +99,7 @@ namespace De.AHoerstemeier.Tambon
                        {EntityType.Khwaeng,"เปลี่ยนแปลงพื้นที่แขวง"},
                        {EntityType.Phak,"เปลี่ยนแปลงเขตภาค"}
                    }
-                   }
+             }
         };
 
         private static Dictionary<ProtectedAreaTypes, String> SearchKeysProtectedAreas = new Dictionary<ProtectedAreaTypes, string>
@@ -178,8 +179,8 @@ namespace De.AHoerstemeier.Tambon
             Byte[] lResponseData = lClient.DownloadData(lSearchURL + "?" + lRequestString);
             String lCookie = lClient.ResponseHeaders.Get("Set-Cookie");
             if (!String.IsNullOrEmpty(lCookie))
-            { 
-                mCookie = lCookie; 
+            {
+                mCookie = lCookie;
             }
             String response = Encoding.ASCII.GetString(lResponseData);
             Int32 lPosition = response.LastIndexOf(ResponseDataURL);
@@ -188,11 +189,11 @@ namespace De.AHoerstemeier.Tambon
             String retval = String.Empty;
             if (lDataURL.Contains("\";"))
             {
-              retval = BaseURL + lDataURL.Substring(0,lDataURL.LastIndexOf("\";"));
+                retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\";"));
             }
             else
             {
-                retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\"+")) + Helper.GetDateJavaScript(DateTime.Now).ToString()+"#";
+                retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\"+")) + Helper.GetDateJavaScript(DateTime.Now).ToString() + "#";
             }
             return retval;
         }
@@ -222,11 +223,11 @@ namespace De.AHoerstemeier.Tambon
         }
         private void PerformRequestPage(Int32 iPage)
         {
-            
+
             StringBuilder lRequestString = new StringBuilder();
             //lRequestString.Append("hidlowerindex=1");
             //lRequestString.Append("hidupperindex=100");
-            lRequestString.Append("txtNowpage="+iPage.ToString());
+            lRequestString.Append("txtNowpage=" + iPage.ToString());
             mDataUrl = GetDataURL(iPage, lRequestString.ToString());
         }
         private string MyURLEncode(string value)
@@ -244,7 +245,7 @@ namespace De.AHoerstemeier.Tambon
             RoyalGazetteList retval = new RoyalGazetteList();
             retval.AddRange(DoParse(lReader));
             return retval;
-            }
+        }
         private RoyalGazetteList DoParse(TextReader iReader)
         {
             RoyalGazetteList retval = new RoyalGazetteList();
@@ -255,7 +256,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 if (lCurrentLine.Contains(PageStart))
                 {
-                    String lTemp = lCurrentLine.Substring(lCurrentLine.LastIndexOf(PageStart)+PageStart.Length,3).Trim();
+                    String lTemp = lCurrentLine.Substring(lCurrentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
                     mNumberOfPages = Convert.ToInt32(lTemp);
                 }
                 else if (lCurrentLine.StartsWith(EntryStart))
@@ -338,7 +339,7 @@ namespace De.AHoerstemeier.Tambon
             PerformRequest();
             System.IO.Stream lData = DoDataDownload(0);
             RoyalGazetteList retval = DoParseStream(lData);
-            for (Int32 lPage = 2; lPage<=mNumberOfPages; lPage++)
+            for (Int32 lPage = 2; lPage <= mNumberOfPages; lPage++)
             {
                 PerformRequestPage(lPage);
                 System.IO.Stream lDataPage = DoDataDownload(lPage);
@@ -450,7 +451,7 @@ namespace De.AHoerstemeier.Tambon
         private String ModificationText(EntityModification iModification, EntityType iEntityType)
         {
             String retval = EntityModificationText[iModification];
-            retval = retval.Replace("%1%",iEntityType.ToString());
+            retval = retval.Replace("%1%", iEntityType.ToString());
             return retval;
         }
         public void SearchNewsNow()
