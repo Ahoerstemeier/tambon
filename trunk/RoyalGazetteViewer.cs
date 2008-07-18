@@ -72,19 +72,22 @@ namespace De.AHoerstemeier.Tambon
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView lGrid = sender as DataGridView;
-            DataGridViewRow lRow = lGrid.Rows[e.RowIndex];
-
-            DataRowView lRowView = lRow.DataBoundItem as DataRowView;
-            // Debug.Assert(lRowView != null);
-
-            DataRow lDataRow = lRowView.Row;
-            // Debug.Assert(lDataRow != null);
-
-            RoyalGazette lGazette = lDataRow["Title"] as RoyalGazette;
-            if (lGazette != null)
+            if (e.RowIndex >= 0)
             {
-                lGazette.ShowPDF();
+                DataGridView lGrid = sender as DataGridView;
+                DataGridViewRow lRow = lGrid.Rows[e.RowIndex];
+
+                DataRowView lRowView = lRow.DataBoundItem as DataRowView;
+                // Debug.Assert(lRowView != null);
+
+                DataRow lDataRow = lRowView.Row;
+                // Debug.Assert(lDataRow != null);
+
+                RoyalGazette lGazette = lDataRow["Title"] as RoyalGazette;
+                if (lGazette != null)
+                {
+                    lGazette.ShowPDF();
+                }
             }
         }
 
