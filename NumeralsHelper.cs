@@ -128,8 +128,11 @@ namespace De.AHoerstemeier.Tambon
               {'ˆ','๖'},
               {'˜','๗'},
               {'¯','๘'},
-              {'˘','๙'}
+              {'˘','๙'},
               
+              // non-Thai characters
+              {'ç','“'},
+              {'é','”'}
             };
 
         private void button1_Click(object sender, EventArgs e)
