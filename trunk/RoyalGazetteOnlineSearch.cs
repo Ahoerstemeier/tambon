@@ -184,16 +184,19 @@ namespace De.AHoerstemeier.Tambon
             }
             String response = Encoding.ASCII.GetString(lResponseData);
             Int32 lPosition = response.LastIndexOf(ResponseDataURL);
-            String lDataURL = response.Substring(lPosition, response.Length - lPosition);
-            lDataURL = lDataURL.Substring(ResponseDataURL.Length, lDataURL.Length - ResponseDataURL.Length);
             String retval = String.Empty;
-            if (lDataURL.Contains("\";"))
+            if (lPosition >= 0)
             {
-                retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\";"));
-            }
-            else
-            {
-                retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\"+")) + Helper.GetDateJavaScript(DateTime.Now).ToString() + "#";
+                String lDataURL = response.Substring(lPosition, response.Length - lPosition);
+                lDataURL = lDataURL.Substring(ResponseDataURL.Length, lDataURL.Length - ResponseDataURL.Length);
+                if (lDataURL.Contains("\";"))
+                {
+                    retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\";"));
+                }
+                else
+                {
+                    retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\"+")) + Helper.GetDateJavaScript(DateTime.Now).ToString() + "#";
+                }
             }
             return retval;
         }
@@ -337,13 +340,17 @@ namespace De.AHoerstemeier.Tambon
             mVolume = iVolume;
             mCookie = String.Empty;
             PerformRequest();
-            System.IO.Stream lData = DoDataDownload(0);
-            RoyalGazetteList retval = DoParseStream(lData);
-            for (Int32 lPage = 2; lPage <= mNumberOfPages; lPage++)
+            RoyalGazetteList retval = new RoyalGazetteList();
+            if (mDataUrl != String.Empty)
             {
-                PerformRequestPage(lPage);
-                System.IO.Stream lDataPage = DoDataDownload(lPage);
-                retval.AddRange(DoParseStream(lDataPage));
+                System.IO.Stream lData = DoDataDownload(0);
+                retval = DoParseStream(lData);
+                for (Int32 lPage = 2; lPage <= mNumberOfPages; lPage++)
+                {
+                    PerformRequestPage(lPage);
+                    System.IO.Stream lDataPage = DoDataDownload(lPage);
+                    retval.AddRange(DoParseStream(lDataPage));
+                }
             }
             return retval;
         }
