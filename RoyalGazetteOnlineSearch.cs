@@ -339,27 +339,39 @@ namespace De.AHoerstemeier.Tambon
             mSearchKey = iSearchKey;
             mVolume = iVolume;
             mCookie = String.Empty;
-            PerformRequest();
-            RoyalGazetteList retval = new RoyalGazetteList();
-            if (mDataUrl != String.Empty)
+            RoyalGazetteList retval = null;
+            try
             {
-                System.IO.Stream lData = DoDataDownload(0);
-                retval = DoParseStream(lData);
-                for (Int32 lPage = 2; lPage <= mNumberOfPages; lPage++)
+                PerformRequest();
+                retval = new RoyalGazetteList();
+                if (mDataUrl != String.Empty)
                 {
-                    PerformRequestPage(lPage);
-                    System.IO.Stream lDataPage = DoDataDownload(lPage);
-                    retval.AddRange(DoParseStream(lDataPage));
+                    System.IO.Stream lData = DoDataDownload(0);
+                    retval = DoParseStream(lData);
+                    for (Int32 lPage = 2; lPage <= mNumberOfPages; lPage++)
+                    {
+                        PerformRequestPage(lPage);
+                        System.IO.Stream lDataPage = DoDataDownload(lPage);
+                        retval.AddRange(DoParseStream(lDataPage));
+                    }
                 }
+            }
+            catch (System.Net.WebException e)
+            {
+                retval = null;
+                // TODO
             }
             return retval;
         }
         protected RoyalGazetteList GetListDescription(string iSearchKey, int iVolume, string iDescription)
         {
             RoyalGazetteList retval = DoGetList(iSearchKey, iVolume);
-            foreach (RoyalGazette lEntry in retval)
+            if (retval != null)
             {
-                lEntry.Description = iDescription;
+                foreach (RoyalGazette lEntry in retval)
+                {
+                    lEntry.Description = iDescription;
+                }
             }
             return retval;
         }
@@ -410,7 +422,10 @@ namespace De.AHoerstemeier.Tambon
                     if (iValues.Contains(lKeyValuePair.Key))
                     {
                         var lList = GetListDescription(lKeyValuePair.Value, lVolume, "Creation of " + lKeyValuePair.Key.ToString());
-                        retval.AddRange(lList);
+                        if (lList != null)
+                        {
+                            retval.AddRange(lList);
+                        }
                     }
                 }
             }
@@ -433,7 +448,10 @@ namespace De.AHoerstemeier.Tambon
                             if (iTypes.Contains(lKeyValuePair.Key))
                             {
                                 var lList = GetListDescription(lKeyValuePair.Value, lVolume, ModificationText(lOuterKeyValuePair.Key, lKeyValuePair.Key));
-                                retval.AddRange(lList);
+                                if (lList != null)
+                                {
+                                    retval.AddRange(lList);
+                                }
                             }
                         }
                     }
