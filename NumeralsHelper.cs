@@ -101,6 +101,7 @@ namespace De.AHoerstemeier.Tambon
               {'„','ใ'},
               {'‰','ไ'},
               // tone marks
+              {'ì',Convert.ToChar(0x0E47)}, // อ็
               {'Ë',Convert.ToChar(0x0E48)}, // อ่
               {'à',Convert.ToChar(0x0E48)}, // อ่ (yes, again)
               {'É',Convert.ToChar(0x0E48)}, // อ่ (yes, again)
@@ -109,8 +110,7 @@ namespace De.AHoerstemeier.Tambon
               {'ô',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
               {'â',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
               {'Ñ',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
-              {'ì',Convert.ToChar(0x0E4A)}, // อ๊
-              {'ä',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
+              {'ä',Convert.ToChar(0x0E4A)}, // อ๊ 
               {'Ö',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
               {'Ü',Convert.ToChar(0x0E4B)}, // อ๋ 
               {'ã',Convert.ToChar(0x0E4B)}, // อ๋ (yes, again)
