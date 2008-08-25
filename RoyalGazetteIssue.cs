@@ -65,6 +65,10 @@ namespace De.AHoerstemeier.Tambon
                     {
                         IssuePostfix = lSubString;
                     }
+                    else if (lSubString.Contains('/'))
+                    {
+                        IssuePostfix = lSubString;
+                    }
                     else if (mIssueBookNames.Contains(lSubString[0]))
                     {
                         IssueBook = lSubString[0];
