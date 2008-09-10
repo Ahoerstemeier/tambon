@@ -12,8 +12,6 @@ namespace De.AHoerstemeier.Tambon
         #region properties
         public EntityType Status { get; set; }
         public Int32 NewParent { get; set; }
-        public String Name { get; set; }
-        public String English { get; set; }
         public List<RoyalGazetteContent> SubEntities
         {
             get { return mSubEntities; }
@@ -24,8 +22,6 @@ namespace De.AHoerstemeier.Tambon
             base.DoLoad(iNode);
             if (iNode != null && iNode.Name.Equals(XmlLabel))
             {
-                Name = Helper.GetAttributeOptionalString(iNode, "name");
-                English = Helper.GetAttributeOptionalString(iNode, "english");
                 String s = Helper.GetAttributeOptionalString(iNode, "type");
                 if (!String.IsNullOrEmpty(s))
                 {

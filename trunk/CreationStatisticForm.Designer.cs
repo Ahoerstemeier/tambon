@@ -1,6 +1,6 @@
 ﻿namespace De.AHoerstemeier.Tambon
 {
-    partial class TambonCreationStatisticForm
+    partial class CreationStatisticForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,9 @@
             this.edtYearStart = new System.Windows.Forms.NumericUpDown();
             this.lblStartYear = new System.Windows.Forms.Label();
             this.lblEndYear = new System.Windows.Forms.Label();
-            this.btnCalc = new System.Windows.Forms.Button();
+            this.btnCalcTambon = new System.Windows.Forms.Button();
             this.edtData = new System.Windows.Forms.TextBox();
+            this.btnCalcMuban = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearStart)).BeginInit();
             this.SuspendLayout();
@@ -100,36 +101,52 @@
             this.lblEndYear.TabIndex = 10;
             this.lblEndYear.Text = "End Year";
             // 
-            // btnCalc
+            // btnCalcTambon
             // 
-            this.btnCalc.Location = new System.Drawing.Point(205, 14);
-            this.btnCalc.Name = "btnCalc";
-            this.btnCalc.Size = new System.Drawing.Size(75, 23);
-            this.btnCalc.TabIndex = 11;
-            this.btnCalc.Text = "Calc";
-            this.btnCalc.UseVisualStyleBackColor = true;
-            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
+            this.btnCalcTambon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCalcTambon.Location = new System.Drawing.Point(205, 9);
+            this.btnCalcTambon.Name = "btnCalcTambon";
+            this.btnCalcTambon.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcTambon.TabIndex = 11;
+            this.btnCalcTambon.Text = "Tambon";
+            this.btnCalcTambon.UseVisualStyleBackColor = true;
+            this.btnCalcTambon.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // edtData
             // 
+            this.edtData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.edtData.Location = new System.Drawing.Point(15, 79);
             this.edtData.Multiline = true;
             this.edtData.Name = "edtData";
             this.edtData.Size = new System.Drawing.Size(265, 182);
             this.edtData.TabIndex = 12;
             // 
-            // TambonCreationStatisticForm
+            // btnCalcMuban
+            // 
+            this.btnCalcMuban.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCalcMuban.Location = new System.Drawing.Point(205, 35);
+            this.btnCalcMuban.Name = "btnCalcMuban";
+            this.btnCalcMuban.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcMuban.TabIndex = 13;
+            this.btnCalcMuban.Text = "Muban";
+            this.btnCalcMuban.UseVisualStyleBackColor = true;
+            this.btnCalcMuban.Click += new System.EventHandler(this.btnCalcMuban_Click);
+            // 
+            // CreationStatisticForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.btnCalcMuban);
             this.Controls.Add(this.edtData);
-            this.Controls.Add(this.btnCalc);
+            this.Controls.Add(this.btnCalcTambon);
             this.Controls.Add(this.lblEndYear);
             this.Controls.Add(this.lblStartYear);
             this.Controls.Add(this.edtYearEnd);
             this.Controls.Add(this.edtYearStart);
-            this.Name = "TambonCreationStatisticForm";
+            this.Name = "CreationStatisticForm";
             this.Text = "TambonCreationStatisticForm";
             ((System.ComponentModel.ISupportInitialize)(this.edtYearEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearStart)).EndInit();
@@ -144,7 +161,8 @@
         private System.Windows.Forms.NumericUpDown edtYearStart;
         private System.Windows.Forms.Label lblStartYear;
         private System.Windows.Forms.Label lblEndYear;
-        private System.Windows.Forms.Button btnCalc;
+        private System.Windows.Forms.Button btnCalcTambon;
         private System.Windows.Forms.TextBox edtData;
+        private System.Windows.Forms.Button btnCalcMuban;
     }
 }

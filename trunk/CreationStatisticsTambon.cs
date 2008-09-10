@@ -5,69 +5,50 @@ using System.Text;
 
 namespace De.AHoerstemeier.Tambon
 {
-    class TambonCreationStatistics
+    class CreationStatisticsTambon:CreationStatistics
     {
-        const Int32 MAXIMUMMUBAN = 50;
         #region properties
-        public Int32 StartYear { get; set; }
-        public Int32 EndYear { get; set; }
-        private Int32 mNumberOfAnnouncements;
-        public Int32 NumberOfAnnouncements { get { return mNumberOfAnnouncements; } }
         private Int32 mNumberOfTambonCreations;
         public Int32 NumberOfTambonCreations { get { return mNumberOfTambonCreations; } }
         private List<Int32>[] mNumberOfMuban = new List<Int32>[MAXIMUMMUBAN];
         private Int32[] mNumberOfTambonCreationsPerChangwat = new Int32[100];
         #endregion
         #region constructor
-        public TambonCreationStatistics()
+        public CreationStatisticsTambon()
         {
             StartYear = 1883;
             EndYear = DateTime.Now.Year;
         }
-        public TambonCreationStatistics(Int32 iStartYear, Int32 iEndYear)
+        public CreationStatisticsTambon(Int32 iStartYear, Int32 iEndYear)
         {
             StartYear = iStartYear;
             EndYear = iEndYear;
         }
         #endregion
         #region methods
-        public void Calculate()
+        protected override void Clear()
         {
+            base.Clear();
             mNumberOfMuban = new List<Int32>[MAXIMUMMUBAN];
             mNumberOfTambonCreationsPerChangwat = new Int32[100];
             mNumberOfTambonCreations = 0;
-            mNumberOfAnnouncements = 0;
-
-            foreach (RoyalGazette lEntry in Helper.GlobalGazetteList)
-            {
-                if ((lEntry.Publication.Year <= EndYear) && (lEntry.Publication.Year >= StartYear))
-                {
-                    Boolean lfound = false;
-                    foreach (RoyalGazetteContent lContent in lEntry.Content)
-                    {
-                        if (lContent is RoyalGazetteContentCreate)
-                        {
-                            RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)lContent;
-                            if (lCreate.Status == EntityType.Tambon)
-                            {
-                                lfound = true;
-                                ProcessCreation(lCreate);
-                            }
-                        }
-                    }
-                    if (lfound)
-                    {
-                        mNumberOfAnnouncements++;
-                    }
-                }
-            }
         }
-
-        private void ProcessCreation(RoyalGazetteContentCreate iCreate)
+        protected override Boolean ContentFitting(RoyalGazetteContent iContent)
+        { 
+            Boolean retval = false;
+            if (iContent is RoyalGazetteContentCreate)
+            {
+                RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
+                retval = (lCreate.Status == EntityType.Tambon);
+            }
+            return retval;
+        }
+        protected override void ProcessContent(RoyalGazetteContent iContent)
         {
+            RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
             mNumberOfTambonCreations++;
 
-            Int32 lGeocode = iCreate.Geocode;
+            Int32 lGeocode = lCreate.Geocode;
             while (lGeocode > 100)
             {
                 lGeocode = lGeocode / 100;
@@ -75,7 +56,7 @@ namespace De.AHoerstemeier.Tambon
             mNumberOfTambonCreationsPerChangwat[lGeocode]++;
 
             Int32 lMaxMubanIndex = 0;
-            foreach (RoyalGazetteContent lSubEntry in iCreate.SubEntities)
+            foreach (RoyalGazetteContent lSubEntry in lCreate.SubEntities)
             {
                 if (lSubEntry is RoyalGazetteContentReassign)
                 {
@@ -88,11 +69,9 @@ namespace De.AHoerstemeier.Tambon
             {
                 mNumberOfMuban[lMaxMubanIndex] = new List<Int32>();
             }
-            mNumberOfMuban[lMaxMubanIndex].Add(iCreate.Geocode);
+            mNumberOfMuban[lMaxMubanIndex].Add(lCreate.Geocode);
         }
-        #endregion
-
-        public String Information()
+        public override String Information()
         {
             StringBuilder lBuilder = new StringBuilder();
             lBuilder.AppendLine(NumberOfAnnouncements.ToString() + " Announcements");
@@ -187,5 +166,7 @@ namespace De.AHoerstemeier.Tambon
             String retval = lBuilder.ToString();
             return retval;
         }
+        #endregion
+
     }
 }
