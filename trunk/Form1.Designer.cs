@@ -244,7 +244,7 @@ namespace Tambon
             // 
             // btnTambonFrequency
             // 
-            this.btnTambonFrequency.Location = new System.Drawing.Point(261, 258);
+            this.btnTambonFrequency.Location = new System.Drawing.Point(256, 259);
             this.btnTambonFrequency.Name = "btnTambonFrequency";
             this.btnTambonFrequency.Size = new System.Drawing.Size(99, 23);
             this.btnTambonFrequency.TabIndex = 18;
@@ -254,11 +254,11 @@ namespace Tambon
             // 
             // btnTambonCreation
             // 
-            this.btnTambonCreation.Location = new System.Drawing.Point(261, 287);
+            this.btnTambonCreation.Location = new System.Drawing.Point(130, 259);
             this.btnTambonCreation.Name = "btnTambonCreation";
             this.btnTambonCreation.Size = new System.Drawing.Size(97, 23);
             this.btnTambonCreation.TabIndex = 19;
-            this.btnTambonCreation.Text = "TambonCreation";
+            this.btnTambonCreation.Text = "CreationStatictics";
             this.btnTambonCreation.UseVisualStyleBackColor = true;
             this.btnTambonCreation.Click += new System.EventHandler(this.btnTambonCreation_Click);
             // 

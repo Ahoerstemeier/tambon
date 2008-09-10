@@ -8,9 +8,10 @@ namespace De.AHoerstemeier.Tambon
     class CreationStatisticsMuban:CreationStatistics
     {
         #region properties
+        private Int32 mCreationsWithoutParentName;
         private Int32 mNumberOfMubanCreations;
         public Int32 NumberOfMubanCreations { get { return mNumberOfMubanCreations; } }
-        private List<Int32>[] mHighestMubanNumber = new List<Int32>[MAXIMUMMUBAN];
+        private FrequencyCounter mHighestMubanNumber = new FrequencyCounter();
         private Dictionary<String,Int32> mNewNameSuffix = new Dictionary<string,Int32>();
         #endregion
         #region constructor
@@ -31,7 +32,8 @@ namespace De.AHoerstemeier.Tambon
             base.Clear();
             mNumberOfMubanCreations = 0;
             mNewNameSuffix = new Dictionary<string, Int32>();
-            mHighestMubanNumber = new List<Int32>[MAXIMUMMUBAN];
+            mHighestMubanNumber = new FrequencyCounter();
+            mCreationsWithoutParentName = 0;
         }
         protected override void ProcessContent(RoyalGazetteContent iContent)
         {
@@ -41,11 +43,7 @@ namespace De.AHoerstemeier.Tambon
             Int32 lMubanNumber = lCreate.Geocode % 100;
             if (lMubanNumber != lCreate.Geocode)
             {
-                if (mHighestMubanNumber[lMubanNumber] == null)
-                {
-                    mHighestMubanNumber[lMubanNumber] = new List<Int32>();
-                }
-                mHighestMubanNumber[lMubanNumber].Add(lCreate.Geocode);
+                mHighestMubanNumber.IncrementForCount(lMubanNumber,lCreate.Geocode);
             }
             if (!String.IsNullOrEmpty(lCreate.Name))
             {
@@ -61,7 +59,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     if (lCreate.Name.StartsWith(lParentName))
                     {
-                        String lSuffix = lCreate.Name.Remove(0, lParentName.Length);
+                        String lSuffix = lCreate.Name.Remove(0, lParentName.Length).Trim();
                         if (mNewNameSuffix.ContainsKey(lSuffix))
                         {
                             mNewNameSuffix[lSuffix]++;
@@ -71,6 +69,10 @@ namespace De.AHoerstemeier.Tambon
                             mNewNameSuffix.Add(lSuffix, 1);
                         }
                     }
+                }
+                else
+                {
+                    mCreationsWithoutParentName++;
                 }
             }
         }
@@ -99,13 +101,35 @@ namespace De.AHoerstemeier.Tambon
             StringBuilder lBuilder = new StringBuilder();
             lBuilder.AppendLine(NumberOfAnnouncements.ToString() + " Announcements");
             lBuilder.AppendLine(NumberOfMubanCreations.ToString() + " Muban created");
+            if (mCreationsWithoutParentName > 0)
+            {
+                lBuilder.AppendLine(mCreationsWithoutParentName.ToString() + " have no parent name");
+            }
             lBuilder.AppendLine();
-            lBuilder.AppendLine("Name equals " + SuffixFrequency(String.Empty).ToString() + " times");
-            List<String> lStandardSuffices = new List<String>() { "เหนือ", "ใต้", "พัฒนา"};
+            lBuilder.AppendLine("Name equal: " + SuffixFrequency(String.Empty).ToString() + " times");
+            List<String> lStandardSuffices = new List<String>() { "เหนือ", "ใต้", "พัฒนา", "ใหม่", "ทอง"};
             foreach (String lSuffix in lStandardSuffices)
             {
                 lBuilder.AppendLine("Suffix "+lSuffix+": "+SuffixFrequency(lSuffix).ToString()+" times");
             }
+            Int32 lNumeralSuffixFrequency = 0;
+            foreach (KeyValuePair<Char, Byte> lKeyValuePair in Helper.ThaiNumerals)
+            {
+                lNumeralSuffixFrequency = lNumeralSuffixFrequency + SuffixFrequency(lKeyValuePair.Key.ToString());
+            }
+            lBuilder.AppendLine("Suffix with number:"+lNumeralSuffixFrequency.ToString() + " times");
+
+            lBuilder.AppendLine();
+            lBuilder.AppendLine("Highest number of muban: " + mHighestMubanNumber.MaxValue.ToString());
+            if (mHighestMubanNumber.MaxValue > 0)
+            {
+                foreach (Int32 lGeocode in mHighestMubanNumber.Data[mHighestMubanNumber.MaxValue])
+                {
+                    lBuilder.Append(lGeocode.ToString() + ' ');
+                }
+            }
+            lBuilder.AppendLine();
+
             String retval = lBuilder.ToString();
             return retval;
         }

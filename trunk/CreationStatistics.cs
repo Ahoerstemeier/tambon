@@ -7,7 +7,6 @@ namespace De.AHoerstemeier.Tambon
 {
     abstract class CreationStatistics
     {
-        internal const Int32 MAXIMUMMUBAN = 50;
         #region properties
         public Int32 StartYear { get; set; }
         public Int32 EndYear { get; set; }
