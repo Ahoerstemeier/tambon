@@ -12,13 +12,18 @@ namespace De.AHoerstemeier.Tambon
         #region properties
         public Int32 Geocode { get; set; }
         public Int32 Owner { get; set; }
+        public String Name { get; set; }
+        public String English { get; set; }
         #endregion
+        #region methods
         virtual internal void DoLoad(XmlNode iNode)
         {
             if (iNode != null)
             {
                 Geocode = Helper.GetAttributeOptionalInt(iNode, "geocode",0);
-                Owner = Helper.GetAttributeOptionalInt(iNode, "owner",0);
+                Name = Helper.GetAttributeOptionalString(iNode, "name");
+                English = Helper.GetAttributeOptionalString(iNode, "english");
+                Owner = Helper.GetAttributeOptionalInt(iNode, "owner", 0);
                 foreach (XmlNode lNode in iNode.ChildNodes)
                 {
                     var lContent = RoyalGazetteContent.CreateContentObject(lNode.Name);
@@ -37,6 +42,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 Geocode = iOther.Geocode;
                 Owner = iOther.Owner;
+                Name = iOther.Name;
+                English = iOther.English;
             }
             foreach (RoyalGazetteContent lContent in iOther.mSubEntities)
             {
@@ -62,6 +69,14 @@ namespace De.AHoerstemeier.Tambon
             if (Owner != 0)
             {
                 iElement.SetAttribute("owner", Owner.ToString());
+            }
+            if (!String.IsNullOrEmpty(Name))
+            {
+                iElement.SetAttribute("name", Name.ToString());
+            }
+            if (!String.IsNullOrEmpty(English))
+            {
+                iElement.SetAttribute("english", English.ToString());
             }
             foreach (RoyalGazetteContent lContent in mSubEntities)
             {
@@ -109,6 +124,7 @@ namespace De.AHoerstemeier.Tambon
             }
             return retval;
         }
+        #endregion
 
         #region ICloneable Members
 

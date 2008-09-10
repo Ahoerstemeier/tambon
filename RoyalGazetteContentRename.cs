@@ -11,9 +11,7 @@ namespace De.AHoerstemeier.Tambon
         internal const String XmlLabel = "rename";
         #region properties
         public String OldName { get; set; }
-        public String NewName { get; set; }
         public String OldEnglish { get; set; }
-        public String NewEnglish { get; set; }
         #endregion
         internal override void DoLoad(XmlNode iNode)
         {
@@ -21,9 +19,8 @@ namespace De.AHoerstemeier.Tambon
             if (iNode != null && iNode.Name.Equals(XmlLabel))
             {
                 OldName = Helper.GetAttribute(iNode, "oldname");
-                NewName = Helper.GetAttribute(iNode, "name");
-                NewEnglish = Helper.GetAttributeOptionalString(iNode, "english");
                 OldEnglish = Helper.GetAttributeOptionalString(iNode, "oldenglish");
+                Name = Helper.GetAttribute(iNode, "name");
             }
         }
         protected override void DoCopy(RoyalGazetteContent iOther)
@@ -35,9 +32,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     RoyalGazetteContentRename iOtherRename = (RoyalGazetteContentRename)iOther;
                     OldName = iOtherRename.OldName;
-                    NewName = iOtherRename.NewName;
                     OldEnglish = iOtherRename.OldEnglish;
-                    NewEnglish = iOtherRename.NewEnglish;
                 }
             }
         }
@@ -55,14 +50,6 @@ namespace De.AHoerstemeier.Tambon
             if (!String.IsNullOrEmpty(OldEnglish))
             {
                 iElement.SetAttribute("oldenglish", OldEnglish);
-            }
-            if (!String.IsNullOrEmpty(NewName))
-            {
-                iElement.SetAttribute("name", NewName);
-            }
-            if (!String.IsNullOrEmpty(NewEnglish))
-            {
-                iElement.SetAttribute("english", NewEnglish);
             }
         }
         
