@@ -120,7 +120,7 @@
             this.edtData.Location = new System.Drawing.Point(15, 79);
             this.edtData.Multiline = true;
             this.edtData.Name = "edtData";
-            this.edtData.Size = new System.Drawing.Size(265, 182);
+            this.edtData.Size = new System.Drawing.Size(265, 267);
             this.edtData.TabIndex = 12;
             // 
             // btnCalcMuban
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(292, 358);
             this.Controls.Add(this.btnCalcMuban);
             this.Controls.Add(this.edtData);
             this.Controls.Add(this.btnCalcTambon);

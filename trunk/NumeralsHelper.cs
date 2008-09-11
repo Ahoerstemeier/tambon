@@ -91,10 +91,12 @@ namespace De.AHoerstemeier.Tambon
               {'’',Convert.ToChar(0x0E35)},  // อี
               {'ï',Convert.ToChar(0x0E35)},  // อี (yes, again)
               {'÷',Convert.ToChar(0x0E36)},  // อึ
+              {'ñ',Convert.ToChar(0x0E36)},  // อึ (yes, again)
               {'◊',Convert.ToChar(0x0E37)},  // อื
               {'ó',Convert.ToChar(0x0E37)},  // อื
               {'ÿ',Convert.ToChar(0x0E38)},  // อุ
               {'Ÿ',Convert.ToChar(0x0E39)},  // อู
+
               {'‡','เ'},
               {'·','แ'},
               {'‚','โ'},
@@ -113,9 +115,11 @@ namespace De.AHoerstemeier.Tambon
               {'Ñ',Convert.ToChar(0x0E49)}, // อ้ (yes, again)
               {'ä',Convert.ToChar(0x0E4A)}, // อ๊ 
               {'Ö',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
+              {'Í',Convert.ToChar(0x0E4A)}, // อ๊ (yes, again)
               {'Ü',Convert.ToChar(0x0E4B)}, // อ๋ 
               {'ã',Convert.ToChar(0x0E4B)}, // อ๋ (yes, again)
               {'Î',Convert.ToChar(0x0E4B)}, // อ๋ (yes, again)
+              {'õ',Convert.ToChar(0x0E4B)}, // อ๋ (yes, again)
               {'å',Convert.ToChar(0x0E4C)}, // อ์
               {'Ï',Convert.ToChar(0x0E4C)}, // อ์
               // numerals
@@ -142,6 +146,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 lValue = lValue.Replace(lKeyValuePair.Key,lKeyValuePair.Value);
             }
+            lValue = lValue.Replace("OE", "ฮ");
             boxText.Text = lValue;
         }
     }

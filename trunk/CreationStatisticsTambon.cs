@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Globalization;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -72,6 +73,8 @@ namespace De.AHoerstemeier.Tambon
             StringBuilder lBuilder = new StringBuilder();
             lBuilder.AppendLine(NumberOfAnnouncements.ToString() + " Announcements");
             lBuilder.AppendLine(NumberOfTambonCreations.ToString() + " Tambon created");
+            lBuilder.AppendLine("Creations per announcements: " + CreationsPerAnnouncement.MeanValue.ToString("F2", CultureInfo.InvariantCulture));
+            lBuilder.AppendLine("Maximum creation per announcements: " + CreationsPerAnnouncement.MaxValue.ToString());
 
             if (mNumberOfTambonCreations > 0)
             {
@@ -99,8 +102,8 @@ namespace De.AHoerstemeier.Tambon
 
 
                 lBuilder.AppendLine("Most common number of muban: " + mNumberOfMuban.MostCommonValue.ToString() + " (" + mNumberOfMuban.MostCommonValueCount.ToString() + " times)");
-                lBuilder.AppendLine("Mean number of muban: " + mNumberOfMuban.MeanValue.ToString());
-                lBuilder.AppendLine("Standard deviation: " + mNumberOfMuban.StandardDeviation.ToString());
+                lBuilder.AppendLine("Mean number of muban: " + mNumberOfMuban.MeanValue.ToString("F2", CultureInfo.InvariantCulture));
+                lBuilder.AppendLine("Standard deviation: " + mNumberOfMuban.StandardDeviation.ToString("F2", CultureInfo.InvariantCulture));
                 lBuilder.AppendLine("Lowest number of muban: " + mNumberOfMuban.MinValue.ToString());
                 if (mNumberOfMuban.MinValue > 0)
                 {
