@@ -159,7 +159,17 @@ namespace De.AHoerstemeier.Tambon
             {
                 lBuilder.AppendLine(mCreationsWithoutParentName.ToString() + " have no parent name");
             }
+            lBuilder.AppendLine("Highest number of muban: " + mHighestMubanNumber.MaxValue.ToString());
+            if (mHighestMubanNumber.MaxValue > 0)
+            {
+                foreach (Int32 lGeocode in mHighestMubanNumber.Data[mHighestMubanNumber.MaxValue])
+                {
+                    lBuilder.Append(lGeocode.ToString() + ' ');
+                }
+            }
             lBuilder.AppendLine();
+            lBuilder.AppendLine();
+
             lBuilder.AppendLine("Name equal: " + SuffixFrequency(String.Empty).ToString() + " times");
             List<String> lStandardSuffices = new List<String>() { "เหนือ", "ใต้", "พัฒนา", "ใหม่", "ทอง", "น้อย", "ใน"};
             foreach (String lSuffix in lStandardSuffices)
@@ -175,12 +185,20 @@ namespace De.AHoerstemeier.Tambon
             }
 
             lBuilder.AppendLine();
-            lBuilder.AppendLine("Highest number of muban: " + mHighestMubanNumber.MaxValue.ToString());
-            if (mHighestMubanNumber.MaxValue > 0)
+
+            lBuilder.Append("Other suffices: ");
+            foreach (KeyValuePair<String, Int32> lKeyValuePair in mNewNameSuffix)
             {
-                foreach (Int32 lGeocode in mHighestMubanNumber.Data[mHighestMubanNumber.MaxValue])
+                String lName = Helper.ReplaceThaiNumerals(lKeyValuePair.Key);
+                if (lStandardSuffices.Contains(lName))
+                { }
+                else if (String.IsNullOrEmpty(lKeyValuePair.Key))
+                { }
+                else if (Helper.IsNumeric(lName))
+                { }
+                else
                 {
-                    lBuilder.Append(lGeocode.ToString() + ' ');
+                    lBuilder.Append(lKeyValuePair.Key + " (" + lKeyValuePair.Value.ToString() + ") ");
                 }
             }
             lBuilder.AppendLine();
