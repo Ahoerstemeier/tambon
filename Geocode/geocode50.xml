@@ -29,7 +29,11 @@
   <entity type="Amphoe" name="จอมทอง" english="Chom Thong" geocode="5002" >
     <entity type="Tambon" name="ยางคราม" english="Yang Khram" geocode="500201" newgeocode="502403" />
     <entity type="Tambon" name="สองแคว" english="Song Khwae" geocode="500202" newgeocode="502402" />
-    <entity type="Tambon" name="บ้านหลวง" english="Ban Luang" geocode="500203" />
+    <entity type="Tambon" name="บ้านหลวง" english="Ban Luang" geocode="500203" >
+      <entity type="Muban" geocode="50020319" name="บ้านห้วยเฮี๊ยะ"/>
+
+      <entity type="Muban" geocode="50020323" name="บ้านใหม่ห้วยเฮี๊ยะ"/>
+    </entity>
     <entity type="Tambon" name="ข่วงเปา" english="Khuang Pao" geocode="500204" >
       <entity type="Muban" geocode="50020404" name="บ้านข่วงเปา"/>
 
@@ -46,8 +50,13 @@
     <entity type="Tambon" name="บ้านแปะ" english="Ban Pae" geocode="500206" >
       <entity type="Muban" geocode="50020606" name="บ้านข่วงเปาใต้"/>
 
+      <entity type="Muban" geocode="50020611" name="บ้านสบแจ่มฝั่งซ้าย"/>
+      <entity type="Muban" geocode="50020612" name="บ้านขุนแปะ"/>
+
       <entity type="Muban" geocode="50020614" name="บ้านบนนา"/>
 
+      <entity type="Muban" geocode="50020617" name="บ้านต้นผึ้ง"/>
+      <entity type="Muban" geocode="50020618" name="บ้านบวกห้า"/>
       <entity type="Muban" geocode="50020619" name="บ้านข่วงเปา"/>
       <entity type="Muban" geocode="50020620" name="บ้านแม่จร"/>
     </entity>
@@ -74,15 +83,25 @@
   </entity>
   <entity type="Amphoe" name="เชียงดาว" english="Chiang Dao" geocode="5004" >
     <entity type="Tambon" name="เชียงดาว" english="Chiang Dao" geocode="500401" />
-    <entity type="Tambon" name="เมืองนะ" english="Mueang Na" geocode="500402" />
+    <entity type="Tambon" name="เมืองนะ" english="Mueang Na" geocode="500402" >
+      <entity type="Muban" geocode="50040201" name="บ้านเมืองนะ"/>
+
+      <entity type="Muban" geocode="50040210" name="บ้านอรุโณทัย"/>
+
+        <entity type="Muban" geocode="50040213" name="บ้านเจียจันทร์"/>
+      <entity type="Muban" geocode="50040214" name="บ้านใหม่สามัคคี"/>
+    </entity>
     <entity type="Tambon" name="เมืองงาย" english="Mueang Ngai" geocode="500403" />
     <entity type="Tambon" name="แม่นะ" english="Mae Na" geocode="500404" />
     <entity type="Tambon" name="เมืองคอง" english="Mueang Khong" geocode="500405" />
     <entity type="Tambon" name="ปิงโค้ง" english="Ping Khong" geocode="500406" >
+      <entity type="Muban" geocode="50040601" name="บ้านออน"/>
+
       <entity type="Muban" geocode="50040607" name="บ้านห้วยลึก"/>
 
       <entity type="Muban" geocode="50040612" name="บ้านแม่มะกู้"/>
 
+      <entity type="Muban" geocode="50040614" name="บ้านป่าตึงงาม"/>
       <entity type="Muban" geocode="50040615" name="บ้านหนองเต่า"/>
       <entity type="Muban" geocode="50040616" name="บ้านห้วยน้ำริน"/>
     </entity>
@@ -135,7 +154,11 @@
     <entity type="Tambon" name="ป่าแป๋" english="Pa Pae" geocode="500609" />
     <entity type="Tambon" name="เมืองก๋าย" english="Mueang Kai" geocode="500610" />
     <entity type="Tambon" name="บ้านช้าง" english="Ban Chang" geocode="500611" />
-    <entity type="Tambon" name="กื้ดช้าง" english="Kuet Chang" geocode="500612" />
+    <entity type="Tambon" name="กื้ดช้าง" english="Kuet Chang" geocode="500612" >
+      <entity type="Muban" geocode="50061206" name="บ้านทุ่งละคร"/>
+
+      <entity type="Muban" geocode="50061208" name="บ้านผาปู่จอม"/>
+    </entity>
     <entity type="Tambon" name="อินทขิล" english="Inthakhin" geocode="500613" >
       <entity type="Muban" geocode="50061316" name="บ้านปางกื้ด"/>
 
@@ -347,7 +370,11 @@
   </entity>
   <entity type="Amphoe" name="หางดง" english="Hang Dong" geocode="5015" >
     <entity type="Tambon" name="หางดง" english="Hang Dong" geocode="501501" />
-    <entity type="Tambon" name="หนองแก๋ว" english="Nong Kaeo" geocode="501502" />
+    <entity type="Tambon" name="หนองแก๋ว" english="Nong Kaeo" geocode="501502" >
+      <entity type="Muban" geocode="50150207" name="บ้านสันทราย"/>
+
+      <entity type="Muban" geocode="50150209" name="บ้านสันทรายพัฒนา"/>
+    </entity>
     <entity type="Tambon" name="หารแก้ว" english="Han Kaeo" geocode="501503" />
     <entity type="Tambon" name="หนองตอง" english="Nong Tong" geocode="501504" />
     <entity type="Tambon" name="ขุนคง" english="Khun Khong" geocode="501505" />
@@ -361,12 +388,20 @@
   <entity type="Amphoe" name="ฮอด" english="Hot" geocode="5016" >
     <entity type="Tambon" name="หางดง" english="Hang Dong" geocode="501601" />
     <entity type="Tambon" name="ฮอด" english="Hot" geocode="501602" />
-    <entity type="Tambon" name="บ้านตาล" english="Ban Tan" geocode="501603" />
+    <entity type="Tambon" name="บ้านตาล" english="Ban Tan" geocode="501603" >
+      <entity type="Muban" geocode="50160301" name="บ้านตาลเหนือ"/>
+
+      <entity type="Muban" geocode="50160310" name="บ้านใหม่พัฒนา"/>
+    </entity>
     <entity type="Tambon" name="บ่อหลวง" english="Bo Luang" geocode="501604" >
       <entity type="Muban" geocode="50160412" name="บ้านบ่อพะแวน"/>
       <entity type="Muban" geocode="50160413" name="บ้านแม่หืด"/>
     </entity>
-    <entity type="Tambon" name="บ่อสลี" english="Bo Sali" geocode="501605" />
+    <entity type="Tambon" name="บ่อสลี" english="Bo Sali" geocode="501605" >
+      <entity type="Muban" geocode="50160502" name="บ้านอมลอง"/>
+
+      <entity type="Muban" geocode="50160510" name="บ้านดอกแดง"/>
+    </entity>
     <entity type="Tambon" name="นาคอเรือ" english="Na Kho Ruea" geocode="501606" />
   </entity>
   <entity type="Amphoe" name="ดอยเต่า" english="Doi Tao" geocode="5017" >
@@ -408,7 +443,11 @@
     <entity type="Tambon" name="ป่าบง" english="Pa Bong" geocode="501912" />
   </entity>
   <entity type="Amphoe" name="เวียงแหง" english="Wiang Haeng" geocode="5020" >
-    <entity type="Tambon" name="เมืองแหง" english="Mueang Ngae" geocode="502001" />
+    <entity type="Tambon" name="เมืองแหง" english="Mueang Ngae" geocode="502001" >
+      <entity type="Muban" geocode="50200109" name="บ้านปางควาย"/>
+
+      <entity type="Muban" geocode="50200112" name="บ้านแม่แตะ"/>
+    </entity>
     <entity type="Tambon" name="เปียงหลวง" english="Piang Luang" geocode="502002" />
     <entity type="Tambon" name="แสนไห" english="Saen Hai" geocode="502003" />
   </entity>
@@ -442,7 +481,11 @@
     <entity type="Tambon" name="ทาเหนือ" english="Tha Nuea" geocode="502306" />
   </entity>
   <entity type="Amphoe" name="ดอยหล่อ" english="Doi Lo" geocode="5024" >
-    <entity type="Tambon" name="ดอยหล่อ" english="Doi Lo" geocode="502401" />
+    <entity type="Tambon" name="ดอยหล่อ" english="Doi Lo" geocode="502401" >
+      <entity type="Muban" geocode="50240109" name="บ้านปากทางสามัคคี"/>
+
+      <entity type="Muban" geocode="50240126" name="บ้านไร่บวกบง"/>
+    </entity>
     <entity type="Tambon" name="สองแคว" english="Song Khwae" geocode="502402" />
     <entity type="Tambon" name="ยางคราม" english="Yang Khram" geocode="502403" />
     <entity type="Tambon" name="สันติสุข" english="Santi Suk" geocode="502404" />
