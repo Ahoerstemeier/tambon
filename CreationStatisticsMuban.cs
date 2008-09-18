@@ -15,6 +15,7 @@ namespace De.AHoerstemeier.Tambon
         private FrequencyCounter mHighestMubanNumber = new FrequencyCounter();
         private Dictionary<String,Int32> mNewNameSuffix = new Dictionary<string,Int32>();
         private Dictionary<String, Int32> mNewNamePrefix = new Dictionary<string, Int32>();
+        private Dictionary<Int32, Int32> mMubanCreationsInTambon = new Dictionary<Int32, Int32>();
         #endregion
         #region constructor
         public CreationStatisticsMuban()
@@ -37,6 +38,7 @@ namespace De.AHoerstemeier.Tambon
             mNewNamePrefix = new Dictionary<string, Int32>();
             mHighestMubanNumber = new FrequencyCounter();
             mCreationsWithoutParentName = 0;
+            mMubanCreationsInTambon = new Dictionary<Int32, Int32>();
         }
         protected override void ProcessContent(RoyalGazetteContent iContent)
         {
@@ -47,6 +49,12 @@ namespace De.AHoerstemeier.Tambon
             if (lMubanNumber != lCreate.Geocode)
             {
                 mHighestMubanNumber.IncrementForCount(lMubanNumber,lCreate.Geocode);
+                Int32 lTambonGeocode = lCreate.Geocode / 100;
+                if (!mMubanCreationsInTambon.ContainsKey(lTambonGeocode))
+                {
+                    mMubanCreationsInTambon.Add(lTambonGeocode, 0);
+                }
+                mMubanCreationsInTambon[lTambonGeocode]++;
             }
             String lName = StripBan(lCreate.Name);
             if (!String.IsNullOrEmpty(lName))
@@ -165,6 +173,21 @@ namespace De.AHoerstemeier.Tambon
                 foreach (Int32 lGeocode in mHighestMubanNumber.Data[mHighestMubanNumber.MaxValue])
                 {
                     lBuilder.Append(lGeocode.ToString() + ' ');
+                }
+            }
+            lBuilder.AppendLine();
+
+            List<KeyValuePair<Int32, Int32>> lSorted = new List<KeyValuePair<Int32,Int32>>();
+            lSorted.AddRange(mMubanCreationsInTambon);
+            lSorted.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
+            if (lSorted.Count > 0)
+            {
+                KeyValuePair<Int32, Int32> lFirst = lSorted.ElementAt(0);
+                lBuilder.AppendLine("Most muban created in one tambon: " + lFirst.Value.ToString());
+                foreach (KeyValuePair<Int32, Int32> lEntry in lSorted.FindAll(
+                    delegate(KeyValuePair<Int32, Int32> x) { return (x.Value == lFirst.Value); }))
+                {
+                    lBuilder.Append(lEntry.Key.ToString() + ' ');
                 }
             }
             lBuilder.AppendLine();
