@@ -5,7 +5,11 @@
     <entity type="Tambon" name="หนองภัยศูนย์" english="Nong Phai Sun" geocode="390102" />
     <entity type="Tambon" name="โพธิ์ชัย" english="Pho Chai" geocode="390103" />
     <entity type="Tambon" name="หนองสวรรค์" english="Nong Sawan" geocode="390104" />
-    <entity type="Tambon" name="หัวนา" english="Hua Na" geocode="390105" />
+    <entity type="Tambon" name="หัวนา" english="Hua Na" geocode="390105" >
+      <entity type="Muban" geocode="39010506" name="บ้านดินทรายอ่อนใต้"/>
+
+      <entity type="Muban" geocode="39010516" name="บ้านทรายทอง"/>
+    </entity>
     <entity type="Tambon" name="บ้านขาม" english="Ban Kham" geocode="390106" >
       <entity type="Muban" geocode="39010601" name="บ้านขาม"/>
 
@@ -16,10 +20,12 @@
     <entity type="Tambon" name="โนนขมิ้น" english="Non Khamin" geocode="390109" />
     <entity type="Tambon" name="ลำภู" english="Lam Phu" geocode="390110" />
     <entity type="Tambon" name="กุดจิก" english="Kut Chik" geocode="390111" >
+      <entity type="Muban" geocode="39011102" name="บ้านทุ่งโปร่งใต้"/>
       <entity type="Muban" geocode="39011103" name="บ้านทุ่งโปร่งใต้"/>
 
       <entity type="Muban" geocode="39011106" name="บ้านโพธิ์ศรีสะอาด"/>
 
+      <entity type="Muban" geocode="39011112" name="บ้านทุ่งโปร่งพัฒนา"/>
       <entity type="Muban" geocode="39011113" name="บ้านทุ่งโปร่งศรีวิไล"/>
       <entity type="Muban" geocode="39011114" name="บ้านโพธิ์ศรีพัฒนา"/>
     </entity>
@@ -28,6 +34,9 @@
     <entity type="Tambon" name="ป่าไม้งาม" english="Pa Mai Ngam" geocode="390114" >
       <entity type="Muban" geocode="39011401" name="บ้านลาดใต้"/>
 
+      <entity type="Muban" geocode="39011404" name="บ้านโคกกลาง"/>
+
+      <entity type="Muban" geocode="39011412" name="บ้านใหม่โพธิ์ทอง"/>
       <entity type="Muban" geocode="39011413" name="บ้านลาดกลาง"/>
     </entity>
     <entity type="Tambon" name="หนองหว้า" english="Nong Wa" geocode="390115" />
@@ -61,7 +70,14 @@
 
       <entity type="Muban" geocode="39020521" name="บ้านร่องน้ำใสเหนือ"/>
     </entity>
-    <entity type="Tambon" name="ฝั่งแดง" english="Fang Daeng" geocode="390206" />
+    <entity type="Tambon" name="ฝั่งแดง" english="Fang Daeng" geocode="390206" >
+      <entity type="Muban" geocode="39020604" name="บ้านฝั่งแดง"/>
+
+      <entity type="Muban" geocode="39020614" name="บ้านศรีวิไล"/>
+
+      <entity type="Muban" geocode="39020617" name="บ้านสง่านาเพียง"/>
+      <entity type="Muban" geocode="39020618" name="บ้านฝั่งแดงกลาง"/>
+    </entity>
     <entity type="Tambon" name="เก่ากลอย" english="Kao Kloi" geocode="390207" />
     <entity type="Tambon" name="วังทอง" english="Wang Thong" geocode="390208" newgeocode="390603" />
     <entity type="Tambon" name="โนนเมือง" english="Non Mueang" geocode="390209" />
@@ -131,7 +147,11 @@
     <entity type="Tambon" name="หันนางาม" english="Han Na Ngam" geocode="390412" />
   </entity>
   <entity type="Amphoe" name="สุวรรณคูหา" english="Suwannakhuha" geocode="3905" >
-    <entity type="Tambon" name="นาสี" english="Na Si" geocode="390501" />
+    <entity type="Tambon" name="นาสี" english="Na Si" geocode="390501" >
+      <entity type="Muban" geocode="39050104" name="บ้านหินฮาว"/>
+
+      <entity type="Muban" geocode="39050114" name="บ้านห้วยหันพัฒนา"/>
+    </entity>
     <entity type="Tambon" name="บ้านโคก" english="Ban Khok" geocode="390502" >
       <entity type="Muban" geocode="39050209" name="บ้านต่างแคน"/>
 
@@ -156,9 +176,9 @@
     <entity type="Tambon" name="เทพคีรี" english="Thep Khiri" geocode="390605" />
   </entity>
 
-  <entity type="KingAmphoe" name="กุดดินจี่" english="Kut Din Chi" geocode="3907" />
-  <entity type="KingAmphoe" name="ยางหล่อ" english="Yang Lo" geocode="3908" />
-  <entity type="KingAmphoe" name="หัวนา" english="Hua Na" geocode="3909" />
+  <entity type="KingAmphoe" name="กุดดินจี่" english="Kut Din Chi" geocode="3907" status="Unknown"/>
+  <entity type="KingAmphoe" name="ยางหล่อ" english="Yang Lo" geocode="3908" status="Unknown"/>
+  <entity type="KingAmphoe" name="หัวนา" english="Hua Na" geocode="3909" status="Unknown"/>
 
   <entity type="ThesabanMueang" name="หนองบัวลำภู" english="Nong Bua Lamphu" geocode="3999" parent="3901" />
   <entity type="ThesabanTambon" name="นาคำไฮ" english="Na Kham Hai" geocode="3998" parent="3901" />
