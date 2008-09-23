@@ -35,6 +35,7 @@
             this.btnCalcTambon = new System.Windows.Forms.Button();
             this.edtData = new System.Windows.Forms.TextBox();
             this.btnCalcMuban = new System.Windows.Forms.Button();
+            this.btnDates = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearStart)).BeginInit();
             this.SuspendLayout();
@@ -117,10 +118,10 @@
             this.edtData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.edtData.Location = new System.Drawing.Point(15, 79);
+            this.edtData.Location = new System.Drawing.Point(15, 93);
             this.edtData.Multiline = true;
             this.edtData.Name = "edtData";
-            this.edtData.Size = new System.Drawing.Size(265, 267);
+            this.edtData.Size = new System.Drawing.Size(265, 253);
             this.edtData.TabIndex = 12;
             // 
             // btnCalcMuban
@@ -134,11 +135,23 @@
             this.btnCalcMuban.UseVisualStyleBackColor = true;
             this.btnCalcMuban.Click += new System.EventHandler(this.btnCalcMuban_Click);
             // 
+            // btnDates
+            // 
+            this.btnDates.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDates.Location = new System.Drawing.Point(205, 64);
+            this.btnDates.Name = "btnDates";
+            this.btnDates.Size = new System.Drawing.Size(75, 23);
+            this.btnDates.TabIndex = 14;
+            this.btnDates.Text = "Dates";
+            this.btnDates.UseVisualStyleBackColor = true;
+            this.btnDates.Click += new System.EventHandler(this.btnDates_Click);
+            // 
             // CreationStatisticForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 358);
+            this.Controls.Add(this.btnDates);
             this.Controls.Add(this.btnCalcMuban);
             this.Controls.Add(this.edtData);
             this.Controls.Add(this.btnCalcTambon);
@@ -164,5 +177,6 @@
         private System.Windows.Forms.Button btnCalcTambon;
         private System.Windows.Forms.TextBox edtData;
         private System.Windows.Forms.Button btnCalcMuban;
+        private System.Windows.Forms.Button btnDates;
     }
 }
