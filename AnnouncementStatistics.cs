@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace De.AHoerstemeier.Tambon
+{
+    abstract class AnnouncementStatistics
+    {
+        #region properties
+        public Int32 StartYear { get; set; }
+        public Int32 EndYear { get; set; }
+        protected Int32 mNumberOfAnnouncements;
+        public Int32 NumberOfAnnouncements { get { return mNumberOfAnnouncements; } }
+        #endregion
+        #region methods
+        protected virtual void Clear()
+        {
+            mNumberOfAnnouncements = 0;
+        }
+        protected virtual Boolean AnnouncementDateFitting(RoyalGazette iEntry)
+        {
+            Boolean retval = ((iEntry.Publication.Year <= EndYear) && (iEntry.Publication.Year >= StartYear));
+            return retval;
+        }
+        protected abstract void ProcessAnnouncement(RoyalGazette iEntry);
+        public void Calculate()
+        {
+            Clear();
+
+            foreach (RoyalGazette lEntry in Helper.GlobalGazetteList)
+            {
+                if (AnnouncementDateFitting(lEntry))
+                {
+                    ProcessAnnouncement(lEntry);
+                }
+            }
+        }
+        public abstract String Information();
+        #endregion
+
+    }
+}

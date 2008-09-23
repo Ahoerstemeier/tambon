@@ -18,19 +18,31 @@ namespace De.AHoerstemeier.Tambon
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            CreationStatisticsTambon lTambonStatistics = new CreationStatisticsTambon((Int32)edtYearStart.Value, (Int32)edtYearEnd.Value);
-            lTambonStatistics.Calculate();
-
-            edtData.Text = lTambonStatistics.Information();
+            CreationStatisticsTambon lStatistics = new CreationStatisticsTambon((Int32)edtYearStart.Value, (Int32)edtYearEnd.Value);
+            DoCalculate(lStatistics);
         }
 
         private void btnCalcMuban_Click(object sender, EventArgs e)
         {
-            CreationStatisticsMuban lMubanStatistics = new CreationStatisticsMuban((Int32)edtYearStart.Value, (Int32)edtYearEnd.Value);
-            lMubanStatistics.Calculate();
+            CreationStatisticsMuban lStatistics = new CreationStatisticsMuban((Int32)edtYearStart.Value, (Int32)edtYearEnd.Value);
+            DoCalculate(lStatistics);
+        }
 
-            edtData.Text = lMubanStatistics.Information();
+        private void btnDates_Click(object sender, EventArgs e)
+        {
+            StatisticsAnnouncementDates lStatistics = new StatisticsAnnouncementDates((Int32)edtYearStart.Value, (Int32)edtYearEnd.Value);
+            DoCalculate(lStatistics);
+            if (lStatistics.StrangeAnnouncements.Count > 0)
+            {
+                Invoke(new RoyalGazetteList.ProcessingFinished(RoyalGazetteViewer.ShowGazetteDialog), new object[] { lStatistics.StrangeAnnouncements });
+            }
+        }
 
+        private void DoCalculate(AnnouncementStatistics iStatistics)
+        {
+            iStatistics.Calculate();
+
+            edtData.Text = iStatistics.Information();
         }
     }
 }

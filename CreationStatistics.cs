@@ -5,62 +5,44 @@ using System.Text;
 
 namespace De.AHoerstemeier.Tambon
 {
-    abstract class CreationStatistics
+    abstract class CreationStatistics : AnnouncementStatistics
     {
         #region properties
-        public Int32 StartYear { get; set; }
-        public Int32 EndYear { get; set; }
-        private Int32 mNumberOfAnnouncements;
-        public Int32 NumberOfAnnouncements { get { return mNumberOfAnnouncements; } }
         private FrequencyCounter mCreationsPerAnnouncement = new FrequencyCounter();
         protected FrequencyCounter CreationsPerAnnouncement { get { return mCreationsPerAnnouncement; } }
         #endregion
         #region methods
-        protected virtual void Clear()
+        protected override void Clear()
         {
-            mNumberOfAnnouncements = 0;
+            base.Clear();
             mCreationsPerAnnouncement = new FrequencyCounter();
-        }
-        protected virtual Boolean AnnouncementDateFitting(RoyalGazette iEntry)
-        {
-            Boolean retval = ((iEntry.Publication.Year <= EndYear) && (iEntry.Publication.Year >= StartYear));
-            return retval;
         }
         protected abstract Boolean ContentFitting(RoyalGazetteContent iContent);
         protected abstract void ProcessContent(RoyalGazetteContent iContent);
-        public void Calculate()
+        protected override void ProcessAnnouncement(RoyalGazette iEntry)
         {
-            Clear();
-
-            foreach (RoyalGazette lEntry in Helper.GlobalGazetteList)
+            Int32 lCount = 0;
+            Int32 lProvinceGeocode = 0;
+            foreach (RoyalGazetteContent lContent in iEntry.Content)
             {
-                if (AnnouncementDateFitting(lEntry)) 
+                if (ContentFitting(lContent))
                 {
-                    Int32 lCount = 0;
-                    Int32 lProvinceGeocode = 0;
-                    foreach (RoyalGazetteContent lContent in lEntry.Content)
+                    lCount++;
+                    ProcessContent(lContent);
+                    lProvinceGeocode = lContent.Geocode;
+                    while (lProvinceGeocode / 100 != 0)
                     {
-                        if (ContentFitting(lContent))
-                        {
-                                lCount++;
-                                ProcessContent(lContent);
-                            lProvinceGeocode=lContent.Geocode;
-                            while (lProvinceGeocode / 100 != 0)
-                            {
-                                lProvinceGeocode = lProvinceGeocode / 100;
-                            }
+                        lProvinceGeocode = lProvinceGeocode / 100;
+                    }
 
-                        }
-                    }
-                    if (lCount>0)
-                    {
-                        mNumberOfAnnouncements++;
-                        mCreationsPerAnnouncement.IncrementForCount(lCount, lProvinceGeocode);
-                    }
                 }
             }
+            if (lCount > 0)
+            {
+                mNumberOfAnnouncements++;
+                mCreationsPerAnnouncement.IncrementForCount(lCount, lProvinceGeocode);
+            }
         }
-        public abstract String Information();
         #endregion
     }
 }
