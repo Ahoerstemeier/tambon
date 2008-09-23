@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Muban: http://www3.suratthani.go.th/poc/p45/poc9/muban.asp?tumbonid=16 -->
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สุราษฎร์ธานี" english="Surat Thani" geocode="84">
   <slogan>เมืองร้อยเกาะ เงาะอร่อย หอยใหญ่ ไข่แดง แหล่งธรรมะ</slogan>
   <provincehall>
@@ -121,11 +120,17 @@
     <slogan>หอยใหญ่นางรม, ชมวิทยาลัยฝึกลิง, มากยิ่งกุ้งกุลาดำ, งามล้ำพระไสยาสน์, พระพุทธบาทควรผดุง รุ่งเรืองเมืองท่าทอง</slogan>
     <districtoffice>
       <geo:Point>
-        <geo:lat>9.1658</geo:lat>
-        <geo:long>99.4706</geo:long>
+        <geo:lat>9.1656</geo:lat>
+        <geo:long>99.4711</geo:long>
       </geo:Point>
     </districtoffice>
-    <entity type="Tambon" name="ท่าทองใหม่" english="Tha Thong Mai" geocode="840201"/>
+    <entity type="Tambon" name="ท่าทองใหม่" english="Tha Thong Mai" geocode="840201">
+      <entity type="Muban" geocode="84020101" name="บ้านทุ่งอ่อนใจ"/>
+      <entity type="Muban" geocode="84020102" name="บ้านท่าทองใหม่"/>
+      <entity type="Muban" geocode="84020103" name="บ้านกะแดะแจะ"/>
+      <entity type="Muban" geocode="84020104" name="บ้านบางสำโรง"/>
+      <entity type="Muban" geocode="84020105" name="บ้านท่าทองใหม่"/>
+      </entity>
     <entity type="Tambon" name="ท่าทอง" english="Tha Thong" geocode="840202">
       <entity type="Muban" geocode="84020201" name="ปากน้ำท่าทอง"/>
       <entity type="Muban" geocode="84020202" name="ท่าเกตุ"/>
@@ -1516,7 +1521,14 @@
     </municipaloffice>
     <slogan>ท่าข้ามเมืองน่าอยู่ คนมีคุณภาพและคุณธรรม เป็นผู้นำองค์กรการเรียนรู้และกีฬา เมืองแห่งภูมิปัญญาท้องถิ่น</slogan>
   </entity>
-  <entity type="ThesabanTambon" name="กาญจนดิษฐ์" english="Kanchanadit" geocode="8496" parent="8402"/>
+  <entity type="ThesabanTambon" name="กาญจนดิษฐ์" english="Kanchanadit" geocode="8496" parent="8402">
+    <municipaloffice>
+      <geo:Point>
+        <geo:lat>9.1653</geo:lat>
+        <geo:long>99.4706</geo:long>
+      </geo:Point>
+    </municipaloffice>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าทองใหม่" english="Tha Thong Mai" geocode="8495" parent="8402">
     <municipaloffice>
       <geo:Point>
