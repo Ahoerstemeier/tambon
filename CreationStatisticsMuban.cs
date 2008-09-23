@@ -150,7 +150,7 @@ namespace De.AHoerstemeier.Tambon
                 String lName = Helper.ReplaceThaiNumerals(lKeyValue.Key);
                 if ((!String.IsNullOrEmpty(lName))&&(Helper.IsNumeric(lName)))
                 {
-                    retval++;
+                    retval=retval+lKeyValue.Value;
                 }
             }
             return retval;
