@@ -42,12 +42,16 @@ namespace De.AHoerstemeier.Tambon
                 {
                     TimeSpan iTime = iEntry.Publication.Subtract(iEntry.Effective);
                     mDaysBetweenPublicationAndEffective.IncrementForCount(iTime.Days, 0);
+                    if (Math.Abs(iTime.Days) > 365)
+                    {
+                        mStrangeAnnouncements.Add(iEntry);
+                    }
                 }
                 if (iEntry.Sign.Year > 1)
                 {
                     TimeSpan iTime = iEntry.Publication.Subtract(iEntry.Sign);
                     mDaysBetweenSignAndPublication.IncrementForCount(iTime.Days, 0);
-                    if (iTime.Days < 0)
+                    if ((iTime.Days < 0)|(iTime.Days>365))
                     {
                         mStrangeAnnouncements.Add(iEntry);
                     }
