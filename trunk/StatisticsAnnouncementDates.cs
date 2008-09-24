@@ -35,6 +35,7 @@ namespace De.AHoerstemeier.Tambon
         }
         protected override void ProcessAnnouncement(RoyalGazette iEntry)
         {
+            Int32 lWarningOffsetDays = 345;
             mNumberOfAnnouncements++;
             if (iEntry.Publication.Year > 1)
             {
@@ -42,7 +43,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     TimeSpan iTime = iEntry.Publication.Subtract(iEntry.Effective);
                     mDaysBetweenPublicationAndEffective.IncrementForCount(iTime.Days, 0);
-                    if (Math.Abs(iTime.Days) > 365)
+                    if (Math.Abs(iTime.Days) > lWarningOffsetDays)
                     {
                         mStrangeAnnouncements.Add(iEntry);
                     }
@@ -51,9 +52,12 @@ namespace De.AHoerstemeier.Tambon
                 {
                     TimeSpan iTime = iEntry.Publication.Subtract(iEntry.Sign);
                     mDaysBetweenSignAndPublication.IncrementForCount(iTime.Days, 0);
-                    if ((iTime.Days < 0)|(iTime.Days>365))
+                    if ((iTime.Days < 0) | (iTime.Days > lWarningOffsetDays))
                     {
-                        mStrangeAnnouncements.Add(iEntry);
+                        if (!mStrangeAnnouncements.Contains(iEntry))
+                        {
+                            mStrangeAnnouncements.Add(iEntry);
+                        }
                     }
                 }
             }
