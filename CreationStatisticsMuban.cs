@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Globalization;
+using System.Diagnostics;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -16,6 +17,7 @@ namespace De.AHoerstemeier.Tambon
         private Dictionary<String,Int32> mNewNameSuffix = new Dictionary<string,Int32>();
         private Dictionary<String, Int32> mNewNamePrefix = new Dictionary<string, Int32>();
         private Dictionary<Int32, Int32> mMubanCreationsInTambon = new Dictionary<Int32, Int32>();
+        private Dictionary<Int32, Int32> mMubanCreationsInChangwat = new Dictionary<Int32, Int32>();
         #endregion
         #region constructor
         public CreationStatisticsMuban()
@@ -39,6 +41,7 @@ namespace De.AHoerstemeier.Tambon
             mHighestMubanNumber = new FrequencyCounter();
             mCreationsWithoutParentName = 0;
             mMubanCreationsInTambon = new Dictionary<Int32, Int32>();
+            mMubanCreationsInChangwat = new Dictionary<Int32, Int32>();
         }
         protected override void ProcessContent(RoyalGazetteContent iContent)
         {
@@ -55,6 +58,16 @@ namespace De.AHoerstemeier.Tambon
                     mMubanCreationsInTambon.Add(lTambonGeocode, 0);
                 }
                 mMubanCreationsInTambon[lTambonGeocode]++;
+                Int32 lChangwatGeocode = lTambonGeocode;
+                while (lChangwatGeocode > 100)
+                {
+                    lChangwatGeocode = lChangwatGeocode / 100;
+                }
+                if (!mMubanCreationsInChangwat.ContainsKey(lChangwatGeocode))
+                {
+                    mMubanCreationsInChangwat.Add(lChangwatGeocode, 0);
+                }
+                mMubanCreationsInChangwat[lChangwatGeocode]++;
             }
             String lName = StripBan(lCreate.Name);
             if (!String.IsNullOrEmpty(lName))
@@ -177,18 +190,36 @@ namespace De.AHoerstemeier.Tambon
             }
             lBuilder.AppendLine();
 
-            List<KeyValuePair<Int32, Int32>> lSorted = new List<KeyValuePair<Int32,Int32>>();
-            lSorted.AddRange(mMubanCreationsInTambon);
-            lSorted.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
-            if (lSorted.Count > 0)
+            List<KeyValuePair<Int32, Int32>> lSortedTambon = new List<KeyValuePair<Int32,Int32>>();
+            lSortedTambon.AddRange(mMubanCreationsInTambon);
+            lSortedTambon.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
+            if (lSortedTambon.Count > 0)
             {
-                KeyValuePair<Int32, Int32> lFirst = lSorted.ElementAt(0);
+                KeyValuePair<Int32, Int32> lFirst = lSortedTambon.ElementAt(0);
                 lBuilder.AppendLine("Most muban created in one tambon: " + lFirst.Value.ToString());
-                foreach (KeyValuePair<Int32, Int32> lEntry in lSorted.FindAll(
+                foreach (KeyValuePair<Int32, Int32> lEntry in lSortedTambon.FindAll(
                     delegate(KeyValuePair<Int32, Int32> x) { return (x.Value == lFirst.Value); }))
                 {
                     lBuilder.Append(lEntry.Key.ToString() + ' ');
                 }
+                lBuilder.Remove(lBuilder.Length - 1, 1);
+            }
+            lBuilder.AppendLine();
+            List<KeyValuePair<Int32, Int32>> lSortedChangwat = new List<KeyValuePair<Int32, Int32>>();
+            lSortedChangwat.AddRange(mMubanCreationsInChangwat);
+            lSortedChangwat.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
+            if (lSortedChangwat.Count > 0)
+            {
+                KeyValuePair<Int32, Int32> lFirst = lSortedChangwat.ElementAt(0);
+                lBuilder.AppendLine("Most muban created in province: " + lFirst.Value.ToString());
+                foreach (KeyValuePair<Int32, Int32> lEntry in lSortedChangwat.FindAll(
+                    delegate(KeyValuePair<Int32, Int32> x) { return (x.Value == lFirst.Value); }))
+                {
+                    PopulationDataEntry lGeocodeData = Helper.Geocodes.Find(delegate(PopulationDataEntry x) { return (x.Geocode == lEntry.Key); });
+                    Debug.Assert(lGeocodeData != null, "Geocode not found");
+                    lBuilder.Append(lGeocodeData.English + ", ");
+                }
+                lBuilder.Remove(lBuilder.Length - 2, 2);
             }
             lBuilder.AppendLine();
             lBuilder.AppendLine();
