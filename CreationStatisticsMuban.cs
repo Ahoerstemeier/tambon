@@ -49,10 +49,10 @@ namespace De.AHoerstemeier.Tambon
             mNumberOfMubanCreations++;
 
             Int32 lMubanNumber = lCreate.Geocode % 100;
+            Int32 lTambonGeocode = lCreate.Geocode / 100;
             if (lMubanNumber != lCreate.Geocode)
             {
                 mHighestMubanNumber.IncrementForCount(lMubanNumber,lCreate.Geocode);
-                Int32 lTambonGeocode = lCreate.Geocode / 100;
                 if (!mMubanCreationsInTambon.ContainsKey(lTambonGeocode))
                 {
                     mMubanCreationsInTambon.Add(lTambonGeocode, 0);
@@ -78,6 +78,7 @@ namespace De.AHoerstemeier.Tambon
                     if (lSubEntry is RoyalGazetteContentAreaChange)
                     {
                         lParentName = lSubEntry.Name;
+                        Debug.Assert(lTambonGeocode == (lSubEntry.Geocode / 100),"Parent muban as a different geocode");
                     }
                 }
                 lParentName = StripBan(lParentName);
@@ -240,6 +241,7 @@ namespace De.AHoerstemeier.Tambon
 
             lBuilder.AppendLine();
 
+            // TODO: Sorted by frequency
             lBuilder.Append("Other suffices: ");
             foreach (KeyValuePair<String, Int32> lKeyValuePair in mNewNameSuffix)
             {
