@@ -1751,7 +1751,7 @@
       </entry>
     </year>
     <year value="1977">
-      <entry description="Creation of King Amphoe Phop Phra" volume="94" issue="26 ง" page="1315" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่อำเภอแม่สอด จังหวัดตาก ตั้งเป็นกิ่งอำเภอพบพระ" uri="2520/D/026/1315.PDF" publication="1977-03-26" effective="1977-04-1" sign="1977-03-3" >
+      <entry description="Creation of King Amphoe Phop Phra" volume="94" issue="26 ง" page="1315" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่อำเภอแม่สอด จังหวัดตาก ตั้งเป็นกิ่งอำเภอพบพระ" uri="2520/D/026/1315.PDF" publication="1977-03-26" effective="1977-04-01" sign="1977-03-03" >
         <create geocode="6307" type="KingAmphoe" parent="6306" >
           <reassign geocode="630701" />
           <reassign geocode="630702" />
@@ -2511,7 +2511,7 @@
           <reassign geocode="840302" />
         </create>
       </entry>
-      <entry description="Creation of King Amphoe Nam Yuen" volume="86" issue="24 ง" page="1017" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ" uri="2512/D/024/1017.PDF" publication="1969-03-25" effective="1969-03-17" sign="1969-03-7" >
+      <entry description="Creation of King Amphoe Nam Yuen" volume="86" issue="24 ง" page="1017" title="ประกาศกระทรวงมหาดไทย เรื่อง แบ่งท้องที่ตั้งเป็นกิ่งอำเภอ" uri="2512/D/024/1017.PDF" publication="1969-03-25" effective="1969-03-17" sign="1969-03-07" >
         <create geocode="3409" type="KingAmphoe" parent="3407" >
           <reassign geocode="340901" />
           <reassign geocode="340903" />
@@ -2753,7 +2753,7 @@
       </entry>
       <entry description="Creation of Amphoe Phaya Thai" title="พระราชกฤษฎีกาตั้งอำเภอพญาไท พ.ศ. ๒๕๐๙" volume="83" page="1-3" issue="39 ก ฉบับพิเศษ" uri="2509/A/039/1.PDF" publication="1966-05-01" sign="1966-04-21" effectiveafter="0">
         <create geocode="1014" type="Amphoe" >
-          <reassign geocode="" name="เพชรบุรี" english="Phetchaburi"/>
+          <reassign name="เพชรบุรี" english="Phetchaburi"/>
           <!--renamed to Thanon Phetchaburi? Then geocode 103703-->
           <reassign geocode="103701" />
           <reassign geocode="103702" />
@@ -3031,7 +3031,7 @@
         </create>
       </entry>
       <entry description="Creation of King Amphoe Ban Dung" title="ประกาศกระทรวงมหาดไทย เรื่อง ยกฐานะตำบลขึ้นเป็นกิ่งอำเภอ" subtitle="กิ่งอำเภอบ้านดุง อำเภอหนองหาร จังหวัดอุดรธานี" volume="76" page="1368-1369" issue="53 ง" uri="2502/D/053/1368.PDF" publication="1959-05-19" sign="1959-04-30" effective="1959-05-16">
-        <create type="KingAmphoe" geocode="4111" paren="4106">
+        <create type="KingAmphoe" geocode="4111" parent="4106">
           <reassign geocode="411102"/>
           <reassign geocode="411106"/>
           <reassign geocode="411103"/>
@@ -3235,14 +3235,14 @@
       </entry>
     </year>
     <year value="1943">
-      <entry description="Creation of Amphoe Chum Phae" volume="60" issue="41 ง" page="2423" title="ประกาศสำนักนายกรัฐมนตรี เรื่อง ตั้งอำเภอชุมแพและยุบอำเภอชนบท จังหวัดขอนแก่น" uri="2486/D/041/2423.PDF" publication="1943-08-03" sign="1943-07-20" effectiveafter="0">
+      <entry description="Creation of Amphoe Chum Phae and abolish of Amphoe Chonnabot" volume="60" issue="41 ง" page="2423" title="ประกาศสำนักนายกรัฐมนตรี เรื่อง ตั้งอำเภอชุมแพและยุบอำเภอชนบท จังหวัดขอนแก่น" uri="2486/D/041/2423.PDF" publication="1943-08-03" sign="1943-07-20" effectiveafter="0">
         <create geocode="4005" type="Amphoe" parent="4016">
           <reassign geocode="400501" />
           <reassign geocode="400602" />
           <reassign geocode="400502" />
           <reassign geocode="400505" />
         </create>
-        <abolish geocode="4018" new="4010"/>
+        <abolish type="Amphoe" geocode="4018" owner="4010"/>
       </entry>
     </year>
     <year value="1941">
@@ -3525,11 +3525,11 @@
       <create geocode="9606" type="KingAmphoe" parent="9605">
         <reassign geocode="960603"/>
         <reassign geocode="960605"/>
-        <reassign geocode="" name="Sakho"/>
-        <reassign geocode="" name="Thalang"/>
-        <reassign geocode="" name="Mayung"/>
+        <reassign english="Sakho"/>
+        <reassign english="Thalang"/>
+        <reassign english="Mayung"/>
         <reassign geocode="960601" />
-        <reassign geocode="" name="Lamo"/>
+        <reassign english="Lamo"/>
         <reassign geocode="960606" />
       </create>
     </entry>
@@ -3573,10 +3573,10 @@
     <entry description="Creation of King Amphoe" title="แจ้งความกระทรวงมหาดไทย" subtitle="เรื่อง ยุบอำเภอสลวงที่ขึ้นนครเชียงใหม่ตั้งกิ่งอำเภอเชียงดาวเป็นอำเภอเชียงดาว ตั้งกิ่งอำเภอสมิงเป็นอำเภอสเมิงขึ้นนครเชียงใหม่ แยกตำบลต่างๆรวม ๔ ตำบล ซึ่งอยู่ในท้องที่อำเภอจอมทอง ตั้งเป็นอำเภอเมืองแจ่มขึ้นเมืองนครเชียงใหม่ แยกตำบลต่างๆรวม ๗ ตำบลในท้องที่อำเภอเมืองน่าน ตั้งเป็นกิ่งอำเภอเมืองสาแยกตำบลต่างๆรวม ๔ ตำบลซึ่งอยู่ในท้องที่อำเภอเมืองน่านเป็นกิ่งอำเภอเชียงม่อนขึ้นอำเภอเมืองน่าน" volume="25" page="447" issue="15" uri="2451/015/447_1.PDF" publication="1908-07-12" >
       <create type="Amphoe" name="เชียงม่วน" parent="5501" >
         <!--Renamed to Pong? Or abolished before 1917? -->
-        <reassign name="เชียงม่วน" geocode="560401" oldowner="5501" owner="" />
-        <reassign name="เมืองสวด" oldowner="5501" owner="" />
-        <reassign name="เมืองสะคำ" oldowner="5501" owner="" />
-        <reassign name="เมืองสระเอิ่ยบ" oldowner="5501" owner="" />
+        <reassign name="เชียงม่วน" geocode="560401" oldowner="5501" />
+        <reassign name="เมืองสวด" oldowner="5501" />
+        <reassign name="เมืองสะคำ" oldowner="5501" />
+        <reassign name="เมืองสระเอิ่ยบ" oldowner="5501" />
       </create>
     </entry>
     <entry description="Creation of King Amphoe Tha Chang" volume="25" issue="19" page="569" title="แจ้งความกระทรวงมหาดไทย" subtitle="เรื่อง รวมตำบลต่างๆในท้องที่อำเภอพุมเรียงและพุนพินเมืองชุมพร ๖ ตำบลตั้งเป็นกิ่งอำเภอท่าฉาง" uri="2451/019/569.PDF" publication="1908-08-09" sign="1908-07-31">
