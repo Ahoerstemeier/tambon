@@ -57,11 +57,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         IssuePrefix = lSubString;
                     }
-                    else if (lSubString == "ฉบับพิเศษ")
-                    {
-                        IssuePostfix = lSubString;
-                    }
-                    else if (lSubString == "ฉบับเพิ่มเติม")
+                    else if (lSubString.StartsWith("ฉบับ"))
                     {
                         IssuePostfix = lSubString;
                     }
