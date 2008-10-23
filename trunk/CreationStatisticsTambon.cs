@@ -12,6 +12,7 @@ namespace De.AHoerstemeier.Tambon
         private Int32 mNumberOfTambonCreations;
         public Int32 NumberOfTambonCreations { get { return mNumberOfTambonCreations; } }
         private FrequencyCounter mNumberOfMuban = new FrequencyCounter();
+        private FrequencyCounter mNumberOfParentTambon = new FrequencyCounter();
         private Int32[] mNumberOfTambonCreationsPerChangwat = new Int32[100];
         #endregion
         #region constructor
@@ -31,6 +32,7 @@ namespace De.AHoerstemeier.Tambon
         {
             base.Clear();
             mNumberOfMuban = new FrequencyCounter();
+            mNumberOfParentTambon = new FrequencyCounter();
             mNumberOfTambonCreationsPerChangwat = new Int32[100];
             mNumberOfTambonCreations = 0;
         }
@@ -57,16 +59,27 @@ namespace De.AHoerstemeier.Tambon
             mNumberOfTambonCreationsPerChangwat[lGeocode]++;
 
             Int32 lMaxMubanIndex = 0;
+            List<Int32> lParentTambon = new List<Int32>(); 
             foreach (RoyalGazetteContent lSubEntry in lCreate.SubEntities)
             {
                 if (lSubEntry is RoyalGazetteContentReassign)
                 {
                     Int32 lMubanCode = lSubEntry.Geocode % 100;
                     lMaxMubanIndex = Math.Max(lMaxMubanIndex, lMubanCode);
+                    RoyalGazetteContentReassign lReassign = (RoyalGazetteContentReassign)lSubEntry;
+                    Int32 lTambonCode = lReassign.OldGeocode / 100;
+                    if (!lParentTambon.Contains(lTambonCode))
+                    {
+                        lParentTambon.Add(lTambonCode);
+                    }
                 }
             }
 
             mNumberOfMuban.IncrementForCount(lMaxMubanIndex,lCreate.Geocode);
+            if (lParentTambon.Count > 0)
+            {
+                mNumberOfParentTambon.IncrementForCount(lParentTambon.Count, lCreate.Geocode);
+            }
         }
         public override String Information()
         {
@@ -99,8 +112,6 @@ namespace De.AHoerstemeier.Tambon
                 }
                 lBuilder.AppendLine();
 
-
-
                 lBuilder.AppendLine("Most common number of muban: " + mNumberOfMuban.MostCommonValue.ToString() + " (" + mNumberOfMuban.MostCommonValueCount.ToString() + " times)");
                 lBuilder.AppendLine("Mean number of muban: " + mNumberOfMuban.MeanValue.ToString("F2", CultureInfo.InvariantCulture));
                 lBuilder.AppendLine("Standard deviation: " + mNumberOfMuban.StandardDeviation.ToString("F2", CultureInfo.InvariantCulture));
@@ -117,6 +128,16 @@ namespace De.AHoerstemeier.Tambon
                 if (mNumberOfMuban.MaxValue > 0)
                 {
                     foreach (Int32 lGeocode in mNumberOfMuban.Data[mNumberOfMuban.MaxValue])
+                    {
+                        lBuilder.Append(lGeocode.ToString() + ' ');
+                    }
+                    lBuilder.AppendLine();
+                }
+
+                lBuilder.AppendLine("Highest number of parent tambon: " + mNumberOfParentTambon.MaxValue.ToString());
+                if (mNumberOfParentTambon.MaxValue > 1)
+                {
+                    foreach (Int32 lGeocode in mNumberOfParentTambon.Data[mNumberOfParentTambon.MaxValue])
                     {
                         lBuilder.Append(lGeocode.ToString() + ' ');
                     }
