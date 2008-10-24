@@ -143,6 +143,18 @@ namespace De.AHoerstemeier.Tambon
                     }
                     lBuilder.AppendLine();
                 }
+                Int32[] lNumberOfParentTambon = new Int32[mNumberOfParentTambon.MaxValue+1];
+                foreach (KeyValuePair<Int32, List<Int32>> lParentTambon in mNumberOfParentTambon.Data)
+                {
+                    lNumberOfParentTambon[lParentTambon.Key] = lParentTambon.Value.Count;
+                }
+                for (Int32 i = 0; i <= mNumberOfParentTambon.MaxValue; i++)
+                {
+                    if (lNumberOfParentTambon[i] != 0)
+                    {
+                        lBuilder.AppendLine(i.ToString() + ": " + lNumberOfParentTambon[i].ToString());
+                    }
+                }
             }
             String retval = lBuilder.ToString();
             return retval;
