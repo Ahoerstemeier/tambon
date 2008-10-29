@@ -131,7 +131,10 @@ namespace De.AHoerstemeier.Tambon
                 retval = retval + lGazette.Citation() + " ";
             }
             retval = retval.Trim();
-            Clipboard.SetText(retval);
+            if (!String.IsNullOrEmpty(retval))
+            {
+                Clipboard.SetText(retval);
+            }
         }
         internal static void ShowGazetteDialog(RoyalGazetteList iList)
         {
