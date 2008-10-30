@@ -838,11 +838,13 @@
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบล ในจังหวัดอุดรธานี" volume="55" page="4228" issue="0 ง" uri="2481/D/4228.PDF" publication="1939-03-20" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดราชบุรี" volume="55" page="4308" issue="0 ง" uri="2481/D/4308.PDF" publication="1939-03-27" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลและอำเภอในจังหวัดน่าน" volume="55" page="4313" issue="0 ง" uri="2481/D/4313.PDF" publication="1939-03-27" />
-  <entry description="Correction to Change of area of Tambon in Surat Thani" title="แก้คำผิด ราชกิจจานุเบกษา เล่ม ๕๕ ตอนที่ ๖๑ ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี หน้า ๓๒๔๔" volume="55" page="4368" issue="0 ง" uri="2481/D/4368.PDF" publication="1941-03-27" >
-    <correction volume="55" page="61" issue="0 ง"/>
+  <entry description="Correction to Change of area of Tambon in Surat Thani" title="แก้คำผิด ราชกิจจานุเบกษา เล่ม ๕๕ ตอนที่ ๖๑ ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี หน้า ๓๒๔๔" volume="55" page="4368" issue="0 ง" uri="2481/D/4368.PDF" publication="1939-03-27" >
+    <!--To be moved to Tambon creation-->
+    <correction volume="55" page="3244" issue="0 ง" date="1938-12-26"/>
   </entry>
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดกระบี่" volume="56" page="12" issue="0 ง" uri="2482/D/12.PDF" publication="1939-04-03" />
   <entry description="Creation of Tambon Tha Sathon, Phunphin, Surat Thani and reassign of Muban" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี" volume="56" page="13-14" issue="0 ง" uri="2482/D/13.PDF" publication="1939-04-03" sign="1939-03-23">
+    <!--To be moved to Tambon creation-->
     <reassign oldgeocode="84170801" newowner="841701"/>
     <reassign oldgeocode="84170802" newowner="841701"/>
     <reassign oldgeocode="84170803" newowner="841701"/>
@@ -882,8 +884,21 @@
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดขอนแก่น" volume="57" page="1425" issue="0 ง" uri="2483/D/1425.PDF" publication="1940-08-13" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดจันทบุรี" volume="57" page="1426" issue="0 ง" uri="2483/D/1426.PDF" publication="1940-08-13" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสกลนคร" volume="57" page="1427" issue="0 ง" uri="2483/D/1427.PDF" publication="1940-08-13" />
-  <entry description="Change of area of Tambon in Surat Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี" volume="57" page="1428" issue="0 ง" uri="2483/D/1428.PDF" publication="1940-08-13" >
-    <areachange geocode="84"/>
+  <entry description="Creation of Tambon Phru Phi, Ban Na San, Surat Thani and reassign of Muban" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี" volume="57" page="1428" issue="0 ง" uri="2483/D/1428.PDF" publication="1940-08-13" sign="1940-08-02">
+    <create type="Tambon" geocode="841202">
+      <areachange geocode="84120101"/>
+      <!--parts of Mu 1 only-->
+      <reassign oldgeocode="84120107"/>
+      <reassign oldgeocode="84120108"/>
+      <reassign oldgeocode="84120109"/>
+      <reassign oldgeocode="84120110"/>
+      <reassign oldgeocode="84120111"/>
+    </create>
+    <reassign geocode="84120106" newowner="841205"/>
+    <reassign geocode="84120102" newowner="841204"/>
+    <areachange geocode="841301"/>
+    <areachange geocode="841201"/>
+    <!-- no village number given for the last change-->
   </entry>
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดหนองคาย" volume="57" page="1507" issue="0 ง" uri="2483/D/1507.PDF" publication="1940-08-20" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสระบุรี" volume="57" page="1628" issue="0 ง" uri="2483/D/1628.PDF" publication="1940-09-03" />
@@ -922,8 +937,9 @@
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดเชียงใหม่" volume="58" page="2300" issue="0 ง" uri="2484/D/2300.PDF" publication="1941-07-29" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุรินทร์" volume="58" page="2370" issue="0 ง" uri="2484/D/2370.PDF" publication="1941-08-05" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดปทุมธานี" volume="58" page="2461" issue="0 ง" uri="2484/D/2461.PDF" publication="1941-08-12" />
-  <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี" volume="58" page="2501" issue="0 ง" uri="2484/D/2501.PDF" publication="1941-08-19" >
-    <areachange geocode="84"/>
+  <entry description="Change of area of Tambon in Surat Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี" volume="58" page="2501" issue="0 ง" uri="2484/D/2501.PDF" publication="1941-08-19" sign="1941-08-07">
+    <reassign geocode="84110501" newowner="841102"/>
+    <reassign geocode="84110510" newowner="841102"/>
   </entry>
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดอุบลราชธานี" volume="58" page="2502" issue="0 ง" uri="2484/D/2502.PDF" publication="1941-08-19" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดนครสวรรค์" volume="58" page="3405" issue="0 ง" uri="2484/D/3405.PDF" publication="1941-09-23" />
@@ -931,8 +947,14 @@
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลและอำเภอในจังหวัดอุบลราชธานี" volume="58" page="3406" issue="0 ง" uri="2484/D/3406.PDF" publication="1941-09-23" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดพิจิตร" volume="58" page="3571" issue="0 ง" uri="2484/D/3571.PDF" publication="1941-10-07" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดระยอง" volume="58" page="3571" issue="0 ง" uri="2484/D/3571_1.PDF" publication="1941-10-07" />
-  <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี" volume="58" page="3668" issue="0 ง" uri="2484/D/3668.PDF" publication="1941-10-14" >
-    <areachange geocode="84"/>
+  <entry description="Creation of Tambon Tha Thong Mai, Kanchanadit, Surat Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี" volume="58" page="3668-3669" issue="0 ง" uri="2484/D/3668.PDF" publication="1941-10-14" sign="1941-10-07">
+    <create type="Tambon" geocode="840201">
+      <reassign geocode="84020405" />
+      <reassign geocode="84020406" />
+      <reassign geocode="84020407" />
+      <reassign geocode="84020410" />
+      <reassign geocode="84020411" />
+    </create>
   </entry>
   <entry description="Change of area of Tambon" title="แก้คำผิด ราชกิจจานุเบกษา เล่ม ๕๘ ตอนที่ ๗๑ ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดระยอง หน้า ๓๕๗๒" volume="58" page="3782" issue="0 ง" uri="2484/D/3782_1.PDF" publication="1941-10-21" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลและอำเภอในจังหวัดสระบุรี" volume="58" page="3819" issue="0 ง" uri="2484/D/3819.PDF" publication="1941-10-28" />
@@ -965,8 +987,17 @@
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดต่าง ๆ (ตำบลบางรามัญ และตำบลต้นโพธิ อำเภอเมืองสิงห์บุรี จังหวัดสิงห์บุรี ตำบลบัวเงิน อำเภอน้ำพอง จังหวัดขอนแก่น และตำบลบางหลวง ตำบลบ้านฉาง อำเภอเมืองปทุมธานี จังหวัดปทุมธานี)" volume="64" page="2366" issue="42 ง" uri="2490/D/042/2366.PDF" publication="1947-09-09" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในเขตท้องที่จังหวัดอุตรดิตถ์ (ในตำบลน้ำริด ตำบลท่าเสา อำเภอเมืองอุตรดิตถ์ และตำบลศรีพนมมาศ และตำบลฝายหลวง อำเภอลับแล จังหวัดอุตรดิตถ์)" volume="64" page="2450" issue="45 ง" uri="2490/D/045/2450.PDF" publication="1947-09-23" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในเขตเทศบาลนครจังหวัดเชียงใหม่" volume="64" page="2534" issue="46 ง" uri="2490/D/046/2534.PDF" publication="1947-09-30" />
-  <entry description="Change of area and creation of Tambon in Surat Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลและตั้งตำบลใหม่ (ตำบลเคียนซา อำเภอบ้านาสาร ตำบลบ้านยาง และตำบลตะกุกท้าย อำเภอท่าขนอน จังหวัดสุราษฎร์ธานี)" volume="64" page="2739" issue="51 ง" uri="2490/D/051/2739.PDF" publication="1947-10-28" >
-    <areachange geocode="84"/>
+  <entry description="Creation of Tambon in Surat Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลและตั้งตำบลใหม่ (ตำบลเคียนซา อำเภอบ้านาสาร ตำบลบ้านยาง และตำบลตะกุกท้าย อำเภอท่าขนอน จังหวัดสุราษฎร์ธานี)" volume="64" page="2739-2740" issue="51 ง" uri="2490/D/051/2739.PDF" publication="1947-10-28" sign="1947-10-20">
+    <create type="Tambon" geocode="841401">
+      <reassign geocode="84140101" oldgeocode="84170701" oldowner="8412"/>
+      <reassign geocode="84140102" oldgeocode="84170702" oldowner="8412"/>
+      <reassign geocode="84140103" oldgeocode="84140204" oldowner="8412"/>
+      <reassign geocode="84140103" oldgeocode="84140205" oldowner="8412"/>
+    </create>
+    <create type="Tambon" geocode="840802">
+      
+    </create>
+    <!--Takuk Chai, now Vibhavadi-->
   </entry>
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง การเปลี่ยนแปลงเขตตำบลในจังหวัดต่าง ๆ" volume="64" page="2842" issue="52 ง" uri="2490/D/052/2842.PDF" publication="1947-11-04" />
   <entry description="Change of area of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในอำเภอบางปะอิน จังหวัดพระนครศรีอยุธยา (โอนหมู่ ๑ บ้านเกาะเกิด ตำบลบางปะอิน ไปขึ้นเป็น หมู่ ๕ ตำบลบ้านพลับ อำเภอบางปะอิน จังหวัดพระนครศรีอยุธยา)" volume="64" page="2967" issue="55 ง" uri="2490/D/055/2967.PDF" publication="1947-11-18" />
