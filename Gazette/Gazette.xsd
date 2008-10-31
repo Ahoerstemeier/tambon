@@ -47,9 +47,10 @@
         <xs:attribute name="newowner" type="xs:unsignedInt" use="optional" />
         <xs:attribute name="newownername" type="xs:string" use="optional" />
         <xs:attribute name="newownerenglish" type="xs:string" use="optional" />
+        <xs:attribute name="muban" type="xs:unsignedInt" use="optional" />
+        <!-- in case the old owner had no geocode -->
         <xs:attribute name="oldowner" type="xs:unsignedInt" use="optional" />
         <xs:attribute name="oldownername" type="xs:string" use="optional" />
-        <!-- in case the old owner had no geocode -->
         <xs:attribute name="oldmuban" type="xs:unsignedInt" use="optional" />
         <xs:attribute name="oldparent" type="xs:unsignedInt" use="optional" />
       </xs:extension>
