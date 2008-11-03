@@ -53,7 +53,8 @@ namespace De.AHoerstemeier.Tambon
                     {EntityType.TAO,"ตั้งองค์การบริหารส่วนตำบล หรือ รวมสภาตำบลกับองค์การบริหารส่วนตำบล"},
                     {EntityType.Muban,"ตั้งหมู่บ้าน หรือ ตั้งและกำหนดเขตหมู่บ้าน หรือ ตั้งและกำหนดหมู่บ้าน"},
                     {EntityType.Phak,"การรวมจังหวัดยกขึ้นเป็นภาค"},
-                    {EntityType.Khwaeng,"ตั้งแขวง"}
+                    {EntityType.Khwaeng,"ตั้งแขวง"},
+                    {EntityType.Khet,"ตั้งเขต กรุงเทพมหานคร"}
                 }
             },
             {
@@ -97,7 +98,8 @@ namespace De.AHoerstemeier.Tambon
                        {EntityType.Tambon,"เปลี่ยนแปลงเขตตำบล หรือ กำหนดเขตตำบล  หรือ เปลี่ยนแปลงเขตต์ตำบล หรือ ปรับปรุงเขตตำบล"},
                        {EntityType.TAO,"เปลี่ยนแปลงเขตองค์การบริหารส่วนตำบล"},
                        {EntityType.Khwaeng,"เปลี่ยนแปลงพื้นที่แขวง"},
-                       {EntityType.Phak,"เปลี่ยนแปลงเขตภาค"}
+                       {EntityType.Phak,"เปลี่ยนแปลงเขตภาค"},
+                       {EntityType.Khet,"เปลี่ยนแปลงพื้นที่เขต กรุงเทพมหานคร"}
                    }
              }
         };
