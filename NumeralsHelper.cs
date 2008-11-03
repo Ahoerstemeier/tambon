@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-// TODO: Konvertierung des Fonts aus den aelteren PDFs in normales Encoding
-
 namespace De.AHoerstemeier.Tambon
 {
     public partial class NumeralsHelper : Form
