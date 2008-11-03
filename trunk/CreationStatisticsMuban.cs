@@ -241,8 +241,8 @@ namespace De.AHoerstemeier.Tambon
 
             lBuilder.AppendLine();
 
-            // TODO: Sorted by frequency
             lBuilder.Append("Other suffices: ");
+            List<KeyValuePair<String, Int32>> lSortedSuffices = new List<KeyValuePair<String, Int32>>();
             foreach (KeyValuePair<String, Int32> lKeyValuePair in mNewNameSuffix)
             {
                 String lName = Helper.ReplaceThaiNumerals(lKeyValuePair.Key);
@@ -254,8 +254,13 @@ namespace De.AHoerstemeier.Tambon
                 { }
                 else
                 {
-                    lBuilder.Append(lKeyValuePair.Key + " (" + lKeyValuePair.Value.ToString() + ") ");
+                    lSortedSuffices.Add(lKeyValuePair);
                 }
+            }
+            lSortedSuffices.Sort(delegate(KeyValuePair<String, Int32> x, KeyValuePair<String, Int32> y) { return y.Value.CompareTo(x.Value); });
+            foreach (KeyValuePair<String, Int32> lKeyValuePair in lSortedSuffices)
+            {
+                lBuilder.Append(lKeyValuePair.Key + " (" + lKeyValuePair.Value.ToString() + ") ");
             }
             lBuilder.AppendLine();
 
