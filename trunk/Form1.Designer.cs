@@ -28,18 +28,18 @@ namespace Tambon
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_GazetteMirror = new System.Windows.Forms.Button();
+            System.Windows.Forms.Button btn_LoadGazetteXML;
             this.btn_Population = new System.Windows.Forms.Button();
             this.edt_year = new System.Windows.Forms.NumericUpDown();
             this.cbx_changwat = new System.Windows.Forms.ComboBox();
             this.btn_PopulationAll = new System.Windows.Forms.Button();
-            this.btn_GazetteLoad = new System.Windows.Forms.Button();
+            this.btn_GazetteLoadAll = new System.Windows.Forms.Button();
             this.btn_GazetteShow = new System.Windows.Forms.Button();
             this.btn_CheckForNews = new System.Windows.Forms.Button();
             this.btn_GazetteShowAll = new System.Windows.Forms.Button();
             this.btn_GazetteSearchYear = new System.Windows.Forms.Button();
             this.btn_LoadCcaatt = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialogCCAATT = new System.Windows.Forms.OpenFileDialog();
             this.btn_DownloadCcaatt = new System.Windows.Forms.Button();
             this.btn_GazetteNewsSince1970 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,19 +48,20 @@ namespace Tambon
             this.btnNumerals = new System.Windows.Forms.Button();
             this.btnTambonFrequency = new System.Windows.Forms.Button();
             this.btnTambonCreation = new System.Windows.Forms.Button();
+            this.openFileDialogXML = new System.Windows.Forms.OpenFileDialog();
+            btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_GazetteMirror
+            // btn_LoadGazetteXML
             // 
-            this.btn_GazetteMirror.Enabled = false;
-            this.btn_GazetteMirror.Location = new System.Drawing.Point(143, 12);
-            this.btn_GazetteMirror.Name = "btn_GazetteMirror";
-            this.btn_GazetteMirror.Size = new System.Drawing.Size(98, 23);
-            this.btn_GazetteMirror.TabIndex = 0;
-            this.btn_GazetteMirror.Text = "Gazette Cache";
-            this.btn_GazetteMirror.UseVisualStyleBackColor = true;
-            this.btn_GazetteMirror.Click += new System.EventHandler(this.btnGazetteMirror_Click);
+            btn_LoadGazetteXML.Location = new System.Drawing.Point(143, 12);
+            btn_LoadGazetteXML.Name = "btn_LoadGazetteXML";
+            btn_LoadGazetteXML.Size = new System.Drawing.Size(98, 23);
+            btn_LoadGazetteXML.TabIndex = 0;
+            btn_LoadGazetteXML.Text = "Gazette XML";
+            btn_LoadGazetteXML.UseVisualStyleBackColor = true;
+            btn_LoadGazetteXML.Click += new System.EventHandler(this.btn_LoadGazetteXML_Click);
             // 
             // btn_Population
             // 
@@ -116,15 +117,15 @@ namespace Tambon
             this.btn_PopulationAll.UseVisualStyleBackColor = true;
             this.btn_PopulationAll.Click += new System.EventHandler(this.btnPopulationDownloadAll_click);
             // 
-            // btn_GazetteLoad
+            // btn_GazetteLoadAll
             // 
-            this.btn_GazetteLoad.Location = new System.Drawing.Point(25, 12);
-            this.btn_GazetteLoad.Name = "btn_GazetteLoad";
-            this.btn_GazetteLoad.Size = new System.Drawing.Size(112, 23);
-            this.btn_GazetteLoad.TabIndex = 6;
-            this.btn_GazetteLoad.Text = "Load gazette";
-            this.btn_GazetteLoad.UseVisualStyleBackColor = true;
-            this.btn_GazetteLoad.Click += new System.EventHandler(this.btn_GazetteLoad_Click);
+            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(25, 12);
+            this.btn_GazetteLoadAll.Name = "btn_GazetteLoadAll";
+            this.btn_GazetteLoadAll.Size = new System.Drawing.Size(112, 23);
+            this.btn_GazetteLoadAll.TabIndex = 6;
+            this.btn_GazetteLoadAll.Text = "Load gazette";
+            this.btn_GazetteLoadAll.UseVisualStyleBackColor = true;
+            this.btn_GazetteLoadAll.Click += new System.EventHandler(this.btn_GazetteLoad_Click);
             // 
             // btn_GazetteShow
             // 
@@ -178,9 +179,11 @@ namespace Tambon
             this.btn_LoadCcaatt.UseVisualStyleBackColor = true;
             this.btn_LoadCcaatt.Click += new System.EventHandler(this.btn_LoadCcaatt_Click);
             // 
-            // openFileDialog1
+            // openFileDialogCCAATT
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialogCCAATT.FileName = "openFileDialog1";
+            this.openFileDialogCCAATT.Filter = "Text files (*.txt)|*.txt";
+            this.openFileDialogCCAATT.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogCCAATT_FileOk);
             // 
             // btn_DownloadCcaatt
             // 
@@ -262,6 +265,12 @@ namespace Tambon
             this.btnTambonCreation.UseVisualStyleBackColor = true;
             this.btnTambonCreation.Click += new System.EventHandler(this.btnTambonCreation_Click);
             // 
+            // openFileDialogXML
+            // 
+            this.openFileDialogXML.Filter = "XML file (*.xml)|*.xml";
+            this.openFileDialogXML.Multiselect = true;
+            this.openFileDialogXML.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogXML_FileOk);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,12 +289,12 @@ namespace Tambon
             this.Controls.Add(this.btn_GazetteShowAll);
             this.Controls.Add(this.btn_CheckForNews);
             this.Controls.Add(this.btn_GazetteShow);
-            this.Controls.Add(this.btn_GazetteLoad);
+            this.Controls.Add(this.btn_GazetteLoadAll);
             this.Controls.Add(this.btn_PopulationAll);
             this.Controls.Add(this.cbx_changwat);
             this.Controls.Add(this.edt_year);
             this.Controls.Add(this.btn_Population);
-            this.Controls.Add(this.btn_GazetteMirror);
+            this.Controls.Add(btn_LoadGazetteXML);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -296,18 +305,17 @@ namespace Tambon
 
         #endregion
 
-        private System.Windows.Forms.Button btn_GazetteMirror;
         private System.Windows.Forms.Button btn_Population;
         private System.Windows.Forms.NumericUpDown edt_year;
         private System.Windows.Forms.ComboBox cbx_changwat;
         private System.Windows.Forms.Button btn_PopulationAll;
-        private System.Windows.Forms.Button btn_GazetteLoad;
+        private System.Windows.Forms.Button btn_GazetteLoadAll;
         private System.Windows.Forms.Button btn_GazetteShow;
         private System.Windows.Forms.Button btn_CheckForNews;
         private System.Windows.Forms.Button btn_GazetteShowAll;
         private System.Windows.Forms.Button btn_GazetteSearchYear;
         private System.Windows.Forms.Button btn_LoadCcaatt;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialogCCAATT;
         private System.Windows.Forms.Button btn_DownloadCcaatt;
         private System.Windows.Forms.Button btn_GazetteNewsSince1970;
         private System.Windows.Forms.Button button1;
@@ -316,6 +324,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnNumerals;
         private System.Windows.Forms.Button btnTambonFrequency;
         private System.Windows.Forms.Button btnTambonCreation;
+        private System.Windows.Forms.OpenFileDialog openFileDialogXML;
     }
 }
 
