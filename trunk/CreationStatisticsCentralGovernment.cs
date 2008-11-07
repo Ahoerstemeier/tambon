@@ -40,8 +40,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 if (lSubEntry is RoyalGazetteContentReassign)
                 {
-                    Int32 lSubEntityCode = lSubEntry.Geocode % 100;
-                    lMaxSubEntityIndex = Math.Max(lMaxSubEntityIndex, lSubEntityCode);
+                    lMaxSubEntityIndex++;
+
                     RoyalGazetteContentReassign lReassign = (RoyalGazetteContentReassign)lSubEntry;
                     Int32 lParentEntityCode = lReassign.OldGeocode / 100;
                     if (!lParentEntities.Contains(lParentEntityCode))
