@@ -10,15 +10,41 @@ namespace De.AHoerstemeier.Tambon
         #region properties
         private FrequencyCounter mCreationsPerAnnouncement = new FrequencyCounter();
         protected FrequencyCounter CreationsPerAnnouncement { get { return mCreationsPerAnnouncement; } }
+        private Int32 mNumberOfCreations;
+        public Int32 NumberOfCreations { get { return mNumberOfCreations; } }
+        protected Int32[] mNumberOfCreationsPerChangwat = new Int32[100];
         #endregion
         #region methods
         protected override void Clear()
         {
             base.Clear();
             mCreationsPerAnnouncement = new FrequencyCounter();
+            mNumberOfCreationsPerChangwat = new Int32[100];
+            mNumberOfCreations = 0;
         }
-        protected abstract Boolean ContentFitting(RoyalGazetteContent iContent);
-        protected abstract void ProcessContent(RoyalGazetteContent iContent);
+        protected abstract Boolean EntityFitting(EntityType iEntityType);
+        protected Boolean ContentFitting(RoyalGazetteContent iContent)
+        {
+            Boolean retval = false;
+            if (iContent is RoyalGazetteContentCreate)
+            {
+                RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
+                retval = EntityFitting(lCreate.Status);
+            }
+            return retval;
+        }
+        protected virtual void ProcessContent(RoyalGazetteContent iContent)
+        {
+            RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
+            mNumberOfCreations++;
+
+            Int32 lChangwatGeocode = lCreate.Geocode;
+            while (lChangwatGeocode > 100)
+            {
+                lChangwatGeocode = lChangwatGeocode / 100;
+            }
+            mNumberOfCreationsPerChangwat[lChangwatGeocode]++;
+        }
         protected override void ProcessAnnouncement(RoyalGazette iEntry)
         {
             Int32 lCount = 0;

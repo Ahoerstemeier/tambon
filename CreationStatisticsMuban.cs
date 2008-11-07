@@ -7,17 +7,13 @@ using System.Diagnostics;
 
 namespace De.AHoerstemeier.Tambon
 {
-    class CreationStatisticsMuban:CreationStatistics
+    class CreationStatisticsMuban : CreationStatisticsCentralGovernment
     {
         #region properties
         private Int32 mCreationsWithoutParentName;
-        private Int32 mNumberOfMubanCreations;
-        public Int32 NumberOfMubanCreations { get { return mNumberOfMubanCreations; } }
         private FrequencyCounter mHighestMubanNumber = new FrequencyCounter();
         private Dictionary<String,Int32> mNewNameSuffix = new Dictionary<string,Int32>();
         private Dictionary<String, Int32> mNewNamePrefix = new Dictionary<string, Int32>();
-        private Dictionary<Int32, Int32> mMubanCreationsInTambon = new Dictionary<Int32, Int32>();
-        private Dictionary<Int32, Int32> mMubanCreationsInChangwat = new Dictionary<Int32, Int32>();
         #endregion
         #region constructor
         public CreationStatisticsMuban()
@@ -35,50 +31,29 @@ namespace De.AHoerstemeier.Tambon
         protected override void Clear()
         {
             base.Clear();
-            mNumberOfMubanCreations = 0;
             mNewNameSuffix = new Dictionary<string, Int32>();
             mNewNamePrefix = new Dictionary<string, Int32>();
             mHighestMubanNumber = new FrequencyCounter();
             mCreationsWithoutParentName = 0;
-            mMubanCreationsInTambon = new Dictionary<Int32, Int32>();
-            mMubanCreationsInChangwat = new Dictionary<Int32, Int32>();
         }
-        protected override void ProcessContent(RoyalGazetteContent iContent)
+        protected override Boolean EntityFitting(EntityType iEntityType)
         {
-            RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
-            mNumberOfMubanCreations++;
-
-            Int32 lMubanNumber = lCreate.Geocode % 100;
-            Int32 lTambonGeocode = lCreate.Geocode / 100;
-            if (lMubanNumber != lCreate.Geocode)
-            {
-                mHighestMubanNumber.IncrementForCount(lMubanNumber,lCreate.Geocode);
-                if (!mMubanCreationsInTambon.ContainsKey(lTambonGeocode))
-                {
-                    mMubanCreationsInTambon.Add(lTambonGeocode, 0);
-                }
-                mMubanCreationsInTambon[lTambonGeocode]++;
-                Int32 lChangwatGeocode = lTambonGeocode;
-                while (lChangwatGeocode > 100)
-                {
-                    lChangwatGeocode = lChangwatGeocode / 100;
-                }
-                if (!mMubanCreationsInChangwat.ContainsKey(lChangwatGeocode))
-                {
-                    mMubanCreationsInChangwat.Add(lChangwatGeocode, 0);
-                }
-                mMubanCreationsInChangwat[lChangwatGeocode]++;
-            }
-            String lName = StripBan(lCreate.Name);
+            Boolean result = (iEntityType == EntityType.Muban);
+            return result;
+        }
+        protected void ProcessContentForName(RoyalGazetteContentCreate iCreate)
+        {
+            Int32 lTambonGeocode = iCreate.Geocode / 100;
+            String lName = StripBan(iCreate.Name);
             if (!String.IsNullOrEmpty(lName))
             {
                 String lParentName = String.Empty;
-                foreach (RoyalGazetteContent lSubEntry in lCreate.SubEntities)
+                foreach (RoyalGazetteContent lSubEntry in iCreate.SubEntities)
                 {
                     if (lSubEntry is RoyalGazetteContentAreaChange)
                     {
                         lParentName = lSubEntry.Name;
-                        Debug.Assert(lTambonGeocode == (lSubEntry.Geocode / 100),"Parent muban as a different geocode");
+                        Debug.Assert(lTambonGeocode == (lSubEntry.Geocode / 100), "Parent muban as a different geocode");
                     }
                 }
                 lParentName = StripBan(lParentName);
@@ -116,6 +91,18 @@ namespace De.AHoerstemeier.Tambon
                 }
             }
         }
+        protected override void ProcessContent(RoyalGazetteContent iContent)
+        {
+            base.ProcessContent(iContent);
+            RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
+
+            Int32 lMubanNumber = lCreate.Geocode % 100;
+            if (lMubanNumber != lCreate.Geocode)
+            {
+                mHighestMubanNumber.IncrementForCount(lMubanNumber,lCreate.Geocode);
+            }
+            ProcessContentForName(lCreate);
+        }
 
         private String StripBan(String iName)
         {
@@ -128,16 +115,6 @@ namespace De.AHoerstemeier.Tambon
             return retval;
         }
 
-        protected override Boolean ContentFitting(RoyalGazetteContent iContent)
-        {
-            Boolean retval = false;
-            if (iContent is RoyalGazetteContentCreate)
-            {
-                RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
-                retval = (lCreate.Status == EntityType.Muban);
-            }
-            return retval;
-        }
         protected Int32 SuffixFrequency(String iSuffix)
         {
             Int32 retval = 0;
@@ -172,76 +149,56 @@ namespace De.AHoerstemeier.Tambon
         public override String Information()
         {
             StringBuilder lBuilder = new StringBuilder();
-            lBuilder.AppendLine(NumberOfAnnouncements.ToString() + " Announcements");
-            lBuilder.AppendLine(NumberOfMubanCreations.ToString() + " Muban created");
-            lBuilder.AppendLine("Creations per announcements: " + CreationsPerAnnouncement.MeanValue.ToString("F2", CultureInfo.InvariantCulture));
-            lBuilder.AppendLine("Maximum creation per announcements: " + CreationsPerAnnouncement.MaxValue.ToString());
+            AppendBasicInfo(lBuilder, "Muban");
+            AppendProblems(lBuilder);
+            AppendChangwatInfo(lBuilder, "Muban");
+            AppendMubanNumberInfo(lBuilder);
+            AppendParentFrequencyInfo(lBuilder,"Tambon","Muban");
+            AppendChangwatInfo(lBuilder, "Muban");
+            AppendNameInfo(lBuilder);
 
+            String retval = lBuilder.ToString();
+            return retval;
+        }
+
+        private void AppendProblems(StringBuilder iBuilder)
+        {
             if (mCreationsWithoutParentName > 0)
             {
-                lBuilder.AppendLine(mCreationsWithoutParentName.ToString() + " have no parent name");
+                iBuilder.AppendLine(mCreationsWithoutParentName.ToString() + " have no parent name");
             }
-            lBuilder.AppendLine("Highest number of muban: " + mHighestMubanNumber.MaxValue.ToString());
+        }
+        private void AppendMubanNumberInfo(StringBuilder iBuilder)
+        {
+            iBuilder.AppendLine("Highest number of muban: " + mHighestMubanNumber.MaxValue.ToString());
             if (mHighestMubanNumber.MaxValue > 0)
             {
                 foreach (Int32 lGeocode in mHighestMubanNumber.Data[mHighestMubanNumber.MaxValue])
                 {
-                    lBuilder.Append(lGeocode.ToString() + ' ');
+                    iBuilder.Append(lGeocode.ToString() + ' ');
                 }
             }
-            lBuilder.AppendLine();
-
-            List<KeyValuePair<Int32, Int32>> lSortedTambon = new List<KeyValuePair<Int32,Int32>>();
-            lSortedTambon.AddRange(mMubanCreationsInTambon);
-            lSortedTambon.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
-            if (lSortedTambon.Count > 0)
-            {
-                KeyValuePair<Int32, Int32> lFirst = lSortedTambon.ElementAt(0);
-                lBuilder.AppendLine("Most muban created in one tambon: " + lFirst.Value.ToString());
-                foreach (KeyValuePair<Int32, Int32> lEntry in lSortedTambon.FindAll(
-                    delegate(KeyValuePair<Int32, Int32> x) { return (x.Value == lFirst.Value); }))
-                {
-                    lBuilder.Append(lEntry.Key.ToString() + ' ');
-                }
-                lBuilder.Remove(lBuilder.Length - 1, 1);
-            }
-            lBuilder.AppendLine();
-            List<KeyValuePair<Int32, Int32>> lSortedChangwat = new List<KeyValuePair<Int32, Int32>>();
-            lSortedChangwat.AddRange(mMubanCreationsInChangwat);
-            lSortedChangwat.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
-            if (lSortedChangwat.Count > 0)
-            {
-                KeyValuePair<Int32, Int32> lFirst = lSortedChangwat.ElementAt(0);
-                lBuilder.AppendLine("Most muban created in province: " + lFirst.Value.ToString());
-                foreach (KeyValuePair<Int32, Int32> lEntry in lSortedChangwat.FindAll(
-                    delegate(KeyValuePair<Int32, Int32> x) { return (x.Value == lFirst.Value); }))
-                {
-                    PopulationDataEntry lGeocodeData = Helper.Geocodes.Find(delegate(PopulationDataEntry x) { return (x.Geocode == lEntry.Key); });
-                    Debug.Assert(lGeocodeData != null, "Geocode not found");
-                    lBuilder.Append(lGeocodeData.English + ", ");
-                }
-                lBuilder.Remove(lBuilder.Length - 2, 2);
-            }
-            lBuilder.AppendLine();
-            lBuilder.AppendLine();
-
-            lBuilder.AppendLine("Name equal: " + SuffixFrequency(String.Empty).ToString() + " times");
-            List<String> lStandardSuffices = new List<String>() { "เหนือ", "ใต้", "พัฒนา", "ใหม่", "ทอง", "น้อย", "ใน"};
+            iBuilder.AppendLine();
+        }
+        private void AppendNameInfo(StringBuilder iBuilder)
+        {
+            iBuilder.AppendLine("Name equal: " + SuffixFrequency(String.Empty).ToString() + " times");
+            List<String> lStandardSuffices = new List<String>() { "เหนือ", "ใต้", "พัฒนา", "ใหม่", "ทอง", "น้อย", "ใน" };
             foreach (String lSuffix in lStandardSuffices)
             {
-                lBuilder.AppendLine("Suffix "+lSuffix+": "+SuffixFrequency(lSuffix).ToString()+" times");
+                iBuilder.AppendLine("Suffix " + lSuffix + ": " + SuffixFrequency(lSuffix).ToString() + " times");
             }
-            lBuilder.AppendLine("Suffix with number:" + SuffixFrequencyNumbers().ToString() + " times");
+            iBuilder.AppendLine("Suffix with number:" + SuffixFrequencyNumbers().ToString() + " times");
 
             List<String> lStandardPrefixes = new List<String>() { "ใหม่" };
             foreach (String lPrefix in lStandardPrefixes)
             {
-                lBuilder.AppendLine("Prefix " + lPrefix + ": " + PrefixFrequency(lPrefix).ToString() + " times");
+                iBuilder.AppendLine("Prefix " + lPrefix + ": " + PrefixFrequency(lPrefix).ToString() + " times");
             }
 
-            lBuilder.AppendLine();
+            iBuilder.AppendLine();
 
-            lBuilder.Append("Other suffices: ");
+            iBuilder.Append("Other suffices: ");
             List<KeyValuePair<String, Int32>> lSortedSuffices = new List<KeyValuePair<String, Int32>>();
             foreach (KeyValuePair<String, Int32> lKeyValuePair in mNewNameSuffix)
             {
@@ -260,12 +217,9 @@ namespace De.AHoerstemeier.Tambon
             lSortedSuffices.Sort(delegate(KeyValuePair<String, Int32> x, KeyValuePair<String, Int32> y) { return y.Value.CompareTo(x.Value); });
             foreach (KeyValuePair<String, Int32> lKeyValuePair in lSortedSuffices)
             {
-                lBuilder.Append(lKeyValuePair.Key + " (" + lKeyValuePair.Value.ToString() + ") ");
+                iBuilder.Append(lKeyValuePair.Key + " (" + lKeyValuePair.Value.ToString() + ") ");
             }
-            lBuilder.AppendLine();
-
-            String retval = lBuilder.ToString();
-            return retval;
+            iBuilder.AppendLine();
         }
         #endregion
     }
