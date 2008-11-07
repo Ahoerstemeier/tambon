@@ -16,7 +16,7 @@ namespace De.AHoerstemeier.Tambon
             InitializeComponent();
         }
 
-        private void btnCalc_Click(object sender, EventArgs e)
+        private void btnCalcTambon_Click(object sender, EventArgs e)
         {
             CreationStatisticsTambon lStatistics = new CreationStatisticsTambon((Int32)edtYearStart.Value, (Int32)edtYearEnd.Value);
             DoCalculate(lStatistics);
@@ -43,6 +43,12 @@ namespace De.AHoerstemeier.Tambon
             iStatistics.Calculate();
 
             edtData.Text = iStatistics.Information();
+        }
+
+        private void btnCalcAmphoe_Click(object sender, EventArgs e)
+        {
+            CreationStatisticsAmphoe lStatistics = new CreationStatisticsAmphoe((Int32)edtYearStart.Value, (Int32)edtYearEnd.Value);
+            DoCalculate(lStatistics);
         }
     }
 }
