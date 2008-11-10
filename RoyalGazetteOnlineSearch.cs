@@ -470,7 +470,10 @@ namespace De.AHoerstemeier.Tambon
             for (Int32 lVolume = iVolumeBegin; lVolume <= iVolumeEnd; lVolume++)
             {
                 var lList = GetListDescription(iSearchKey, lVolume, "");
-                retval.AddRange(lList);
+                if (lList != null)
+                {
+                    retval.AddRange(lList);
+                }
             }
             return retval;
         }
