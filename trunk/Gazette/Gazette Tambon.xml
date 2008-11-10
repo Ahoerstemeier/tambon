@@ -10,6 +10,9 @@
   <!--Missing: Rename of ศาลเจ้า to แม่เล่ย์ (601303)-->
   <!--Missing: Rename of โนนศิลา to โนนศิลาเลิง (461804) after 1997 -->
   <!--Missing: Rename of บ้านแดงใหญ่ to แดงใหญ่ (310908) -->
+  <!--Change of spelling: ตะกรบ (840607) was ตะกบ in 1947-->
+  <!--Change of spelling: กะแดะ was กระแดะ after 1947 -->
+  <!--Rename of บ้านนาสาร (841201) to นาสาร after 1947? -->
   <decade value="2000s">
     <entry description="Rename of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงชื่อตำบลวังหงษ์ อำเภอเมืองแพร่ จังหวัดแพร่ เป็นชื่อตำบลวังหงส์" volume="124" page="3" issue="83 ง" uri="2550/D/083/3.PDF" publication="2007-10-04" sign="2007-08-21" effective="2007-06-19">
       <rename oldname="วังหงษ์" name="วังหงส์" geocode="540113" />
@@ -18628,7 +18631,7 @@
           <reassign geocode="44091108" oldgeocode="44090515"/>
           <reassign geocode="44091109" oldgeocode="44090213"/>
           <reassign geocode="44091110" oldgeocode="44090306"/>
-        </create>                                                         
+        </create>
       </entry>
       <entry description="Creation of Tambon in Prachinburi" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภออรัญประเทสและกิ่งอำเภอนาดี อำเภอกบินทร์บุรี จังหวัดปราจีนบุรี" volume="95" page="3928-3935" issue="126 ง" uri="2521/D/126/3928.PDF" publication="1978-11-14" sign="1978-09-28" effective="1978-09-01">
         <create type="Tambon" geocode="251008">
@@ -24300,6 +24303,7 @@
       <rename oldname="วัดเกตุ" name="หนองป่าครั่ง" geocode="500113"/>
     </entry>
     <entry description="Creation of Tambon Tha Thong Mai, Kanchanadit, Surat Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลในจังหวัดสุราษฎร์ธานี" volume="58" page="3668-3669" issue="0 ง" uri="2484/D/3668.PDF" publication="1941-10-14" sign="1941-10-07">
+      <!--strange, in 1947 840204 was created out of 840201 -->
       <create type="Tambon" geocode="840201">
         <reassign geocode="84020405" />
         <reassign geocode="84020406" />
@@ -24323,27 +24327,157 @@
     <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลในจังหวัดพระนครศรีอยุธยา" volume="64" page="1434" issue="26 ง" uri="2490/D/026/1434.PDF" publication="1947-06-10" />
     <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลในจังหวัดต่าง ๆ" volume="64" page="1930" issue="33 ง" uri="2490/D/033/1930.PDF" publication="1947-07-29" />
     <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลในจังหวัดต่าง ๆ" volume="64" page="2507-2533" issue="46 ง" uri="2490/D/046/2507.PDF" publication="1947-09-30" sign="1947-09-18" effective="1947-09-15">
-      <!--...-->
-      <create type="Tambon" geocode="840109"/>
-      <create type="Tambon" geocode="840106"/>
-      <create type="Tambon" geocode="840606"/>
-      <create type="Tambon" geocode="840702"/>
-      <create type="Tambon" geocode="840705"/>
-      <create type="Tambon" geocode="841203"/>
-      <create type="Tambon" geocode="841205"/>
-      <create type="Tambon" geocode="841302"/>
-      <create type="Tambon" geocode="841504"/>
-      <create type="Tambon" geocode="840207"/>
-      <create type="Tambon" geocode="840210"/>
-      <create type="Tambon" geocode="840302"/>
-      <create type="Tambon" geocode="840204"/>
-      <create type="Tambon" geocode="840901"/>
-      <create type="Tambon" geocode="841714"/>
-      <create type="Tambon" geocode="841704"/>
-      <create type="Tambon" geocode="840402"/>
-      <create type="Tambon" geocode="840405"/>
-      <create type="Tambon" geocode="840407"/>
-      <create type="Tambon" geocode="840502"/>
+      <!--Page 2519-->
+      <create type="Tambon" geocode="840109">
+        <reassign geocode="84010901" oldgeocode="84010705"/>
+        <reassign geocode="84010902" oldgeocode="84010702"/>
+        <reassign geocode="84010903" oldgeocode="84010806"/>
+      </create>
+      <create type="Tambon" geocode="840106">
+        <reassign geocode="84010601" oldgeocode="84010505"/>
+        <reassign geocode="84010602" oldgeocode="84010505"/>
+        <reassign geocode="84010603" oldgeocode="84010502"/>
+        <reassign geocode="84010604" oldgeocode="84010506"/>
+      </create>
+      <create type="Tambon" geocode="840606">
+        <reassign geocode="84060601" oldgeocode="84060403"/>
+        <reassign geocode="84060602" oldgeocode="84060408"/>
+        <reassign geocode="84060603" oldgeocode="84060407"/>
+        <reassign geocode="84060604" oldgeocode="84060406"/>
+      </create>
+      <create type="Tambon" geocode="840702" owner="8406">
+        <reassign geocode="84070201" oldgeocode="84070101"/>
+        <reassign geocode="84070202" oldgeocode="84070112"/>
+        <reassign geocode="84070203" oldgeocode="84070111"/>
+        <reassign geocode="84070204" oldgeocode="84070406"/>
+        <reassign geocode="84070205" oldgeocode="84070405"/>
+      </create>
+      <create type="Tambon" geocode="840705" owner="8406">
+        <reassign geocode="84070501" oldgeocode="84060708"/>
+        <reassign geocode="84070502" oldgeocode="84060707"/>
+        <reassign geocode="84070503" oldgeocode="84060703"/>
+        <reassign geocode="84070504" oldgeocode="84060704"/>
+        <reassign geocode="84070505" oldgeocode="84070110"/>
+        <reassign geocode="84070506" oldgeocode="84070102"/>
+      </create>
+      <create type="Tambon" geocode="841203">
+        <!--strange - same Tambon already created in 1938 with different sources -->
+        <!--841201 named บ้านนาสาร, though it only had บ้านนา and นาสาร?-->
+        <reassign geocode="84120301" oldgeocode="84120107"/>
+        <reassign geocode="84120302" oldgeocode="84120108"/>
+        <reassign geocode="84120303" oldgeocode="84120403"/>
+      </create>
+      <create type="Tambon" geocode="841205">
+        <reassign geocode="84120501" oldgeocode="84120205"/>
+        <reassign geocode="84120502" oldgeocode="84120206"/>
+      </create>
+      <create type="Tambon" geocode="841302" owner="8412">
+        <reassign geocode="84130201" oldgeocode="84130104"/>
+        <reassign geocode="84130202" oldgeocode="84130105"/>
+      </create>
+      <create type="Tambon" geocode="841504" owner="8412">
+        <reassign geocode="84150401" oldgeocode="84150106"/>
+        <reassign geocode="84150402 oldgeocode="84150107"/>
+        <reassign geocode="84150403" oldgeocode="84150108"/>
+        <reassign geocode="84150403" oldgeocode="84150109"/>
+        <reassign geocode="84150404" oldgeocode="84150110"/>
+        <reassign geocode="84150405" oldgeocode="84150111"/>
+      </create>
+      <create type="Tambon" geocode="840207">
+        <reassign geocode="84020701" oldgeocode="84020307"/>
+        <reassign geocode="84020702" oldgeocode="84020309"/>
+        <reassign geocode="84020703" oldgeocode="84020310"/>
+      </create>
+      <create type="Tambon" geocode="840210">
+        <reassign geocode="84021001" oldgeocode="84020907"/>
+        <reassign geocode="84021002" oldgeocode="84020908"/>
+        <reassign geocode="84021003" oldgeocode="84020909"/>
+        <reassign geocode="84021004" oldgeocode="84020910"/>
+        <reassign geocode="84021005" oldgeocode="84020911"/>
+        <reassign geocode="84021006" oldgeocode="84020912"/>
+        <reassign geocode="84021007" oldgeocode="84020913"/>
+      </create>
+      <create type="Tambon" geocode="840302" owner="8402">
+        <reassign geocode="84030201" oldgeocode="84020206"/>
+        <reassign geocode="84030202" oldgeocode="84020207"/>
+        <reassign geocode="84030203" oldgeocode="84020208"/>
+        <reassign geocode="84030204" oldgeocode="84020209"/>
+      </create>
+      <create type="Tambon" geocode="840204">
+        <reassign geocode="84020401" oldgeocode="84020105"/>
+        <reassign geocode="84020402" oldgeocode="84020106"/>
+        <reassign geocode="84020403" oldgeocode="84020107"/>
+        <reassign geocode="84020404" oldgeocode="84020108"/>
+        <reassign geocode="84020405" oldgeocode="84020109"/>
+        <reassign geocode="84020406" oldgeocode="84020110"/>
+      </create>
+      <create type="Tambon" geocode="840901" owner="8408">
+        <reassign geocode="84090101" oldgeocode="84090308"/>
+        <reassign geocode="84090102" oldgeocode="84090309"/>
+        <reassign geocode="84090103" oldgeocode="84090207"/>
+        <reassign geocode="84090104" oldgeocode="84090209"/>
+        <reassign geocode="84090105" oldgeocode="84080805"/>
+      </create>
+      <create type="Tambon" geocode="841714">
+        <reassign geocode="84171401" oldgeocode="84171109"/>
+        <reassign geocode="84171402" oldgeocode="84171107"/>
+        <reassign geocode="84171403" oldgeocode="84171108"/>
+        <reassign geocode="84171404" oldgeocode="84171106"/>
+        <reassign geocode="84171405" oldgeocode="84171105"/>
+      </create>
+      <create type="Tambon" geocode="841704">
+        <reassign geocode="84170401" oldgeocode="84170601"/>
+        <reassign geocode="84170402" oldgeocode="84170506"/>
+        <reassign geocode="84170403" oldgeocode="84170505"/>
+      </create>
+      <create type="Tambon" geocode="840402">
+        <reassign geocode="84040201" oldgeocode="84040105"/>
+        <reassign geocode="84040202" oldgeocode="84040106"/>
+      </create>
+      <create type="Tambon" geocode="840405">
+        <reassign geocode="84040501" oldgeocode="84040404"/>
+        <reassign geocode="84040502" oldgeocode="84040405"/>
+      </create>
+      <create type="Tambon" geocode="840407">
+        <reassign geocode="84040701" oldgeocode="84040604"/>
+        <reassign geocode="84040702" oldgeocode="84040605"/>
+        <reassign geocode="84040703" oldgeocode="84040606"/>
+        <reassign geocode="84040704" oldgeocode="84040607"/>
+      </create>
+      <create type="Tambon" geocode="840502" owner="8404">
+        <reassign geocode="84050201" oldgeocode="84050106"/>
+        <reassign geocode="84050202" oldgeocode="84050107"/>
+        <reassign geocode="84050203" oldgeocode="84050108"/>
+        <reassign geocode="84050204" oldgeocode="84050109"/>
+      </create>
+      <!--Page 2525, Yala-->
+    </entry>
+    <entry description="Creation of Tambon in Surat Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบลและตั้งตำบลใหม่ (ตำบลเคียนซา อำเภอบ้านาสาร ตำบลบ้านยาง และตำบลตะกุกท้าย อำเภอท่าขนอน จังหวัดสุราษฎร์ธานี)" volume="64" page="2739-2740" issue="51 ง" uri="2490/D/051/2739.PDF" publication="1947-10-28" sign="1947-10-20" effective="1947-10-10">
+      <create type="Tambon" geocode="841401">
+        <reassign geocode="84140101" oldgeocode="84170701" oldowner="8412"/>
+        <reassign geocode="84140102" oldgeocode="84170702" oldowner="8412"/>
+        <reassign geocode="84140103" oldgeocode="84140204" oldowner="8412"/>
+        <reassign geocode="84140103" oldgeocode="84140205" oldowner="8412"/>
+      </create>
+      <create type="Tambon" geocode="840802">
+        <reassign geocode="84080201" oldgeocode="84080108"/>
+        <reassign geocode="84080202" oldgeocode="84080109"/>
+        <reassign geocode="84080203" oldgeocode="84080110"/>
+        <reassign geocode="84080204" oldgeocode="84080111"/>
+        <reassign geocode="84080205" oldgeocode="84080112"/>
+        <reassign geocode="84080206" oldgeocode="84080113"/>
+        <reassign geocode="84080207" oldgeocode="84080701"/>
+        <reassign geocode="84080208" oldgeocode="84080703"/>
+      </create>
+      <create type="Tambon" name="ตะกุกซ้าย" owner="8408">
+        <reassign muban="1" oldgeocode="84080306"/>
+        <reassign muban="2" oldgeocode="84080307"/>
+        <reassign muban="3" oldmuban="3" ownername="ตะกุก"/>
+        <reassign muban="4" oldmuban="4" ownername="ตะกุก"/>
+        <reassign muban="5" oldmuban="8" ownername="ตะกุก"/>
+        <reassign muban="6" oldmuban="7" ownername="ตะกุก"/>
+        <!--Abolished again in 1949-->
+      </create>
     </entry>
     <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลในจังหวัดอุตรดิตถ์" volume="64" page="2840" issue="52 ง" uri="2490/D/052/2840.PDF" publication="1947-11-04" />
     <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลในจังหวัดสมุทรสงคราม" volume="64" page="3549" issue="64 ง" uri="2490/D/064/3549.PDF" publication="1947-12-30" />
@@ -24376,7 +24510,7 @@
     <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในจังหวัดพระนคร" volume="64" page="3433" issue="62 ง" uri="2490/D/062/3433.PDF" publication="1947-12-23" />
   </decade>
   <decade value="1930s">
-    <entry description="Abolish, change of area and rename of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตและเปลี่ยนชื่อตำบลในจังหวัดพระนครและธนบุรี" volume="52" page="3233" issue="0 ง" uri="2478/D/3233.PDF" publication="1936-02-09" />
+    <entry description="Abolish, change of area and rename of Tambon in Phra Nakhon and Thonburi" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตและเปลี่ยนชื่อตำบลในจังหวัดพระนครและธนบุรี" volume="52" page="3233" issue="0 ง" uri="2478/D/3233.PDF" publication="1936-02-09" />
     <entry description="Abolish of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตตำบล" subtitle="ยุบตำบลท่าน้ำตะวันออก รวมเข้ากับตำบลท่าน้ำตะวัน อำเภอปะนาเระ จังหวัดปัตตานี" volume="53" page="874" issue="0 ง" uri="2479/D/874.PDF" publication="1936-08-02" />
     <entry description="Abolish of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบตำบลเขาคันทรงไปขึ้นตำบลหนองขาม อำเภอศรีราชา" volume="53" page="875" issue="0 ง" uri="2479/D/875.PDF" publication="1936-08-02" />
     <entry description="Abolish of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบตำบลบ้านอ้อรวมเข้ากับตำบลอัมริตย์ อำเภอผักไห่ จังหวัดพระนครศรีอยุธยา" volume="53" page="2014" issue="0 ง" uri="2479/D/2014.PDF" publication="1936-11-01" />
