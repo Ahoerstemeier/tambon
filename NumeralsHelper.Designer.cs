@@ -31,6 +31,7 @@
             this.btnDoConvert = new System.Windows.Forms.Button();
             this.boxText = new System.Windows.Forms.TextBox();
             this.btnEncoding = new System.Windows.Forms.Button();
+            this.btnMonths = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDoConvert
@@ -65,19 +66,29 @@
             this.btnEncoding.TabIndex = 2;
             this.btnEncoding.Text = "Encoding";
             this.btnEncoding.UseVisualStyleBackColor = true;
-            this.btnEncoding.Click += new System.EventHandler(this.button1_Click);
+            this.btnEncoding.Click += new System.EventHandler(this.btnEncoding_Click);
+            // 
+            // btnMonths
+            // 
+            this.btnMonths.Location = new System.Drawing.Point(55, 250);
+            this.btnMonths.Name = "btnMonths";
+            this.btnMonths.Size = new System.Drawing.Size(75, 23);
+            this.btnMonths.TabIndex = 3;
+            this.btnMonths.Text = "Months";
+            this.btnMonths.UseVisualStyleBackColor = true;
+            this.btnMonths.Click += new System.EventHandler(this.btnMonths_Click);
             // 
             // NumeralsHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.btnMonths);
             this.Controls.Add(this.btnEncoding);
             this.Controls.Add(this.boxText);
             this.Controls.Add(this.btnDoConvert);
             this.Name = "NumeralsHelper";
             this.Text = "NumeralsHelper";
-            this.Load += new System.EventHandler(this.NumeralsHelper_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,5 +99,6 @@
         private System.Windows.Forms.Button btnDoConvert;
         private System.Windows.Forms.TextBox boxText;
         private System.Windows.Forms.Button btnEncoding;
+        private System.Windows.Forms.Button btnMonths;
     }
 }

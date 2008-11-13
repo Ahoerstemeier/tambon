@@ -16,11 +16,6 @@ namespace De.AHoerstemeier.Tambon
             InitializeComponent();
         }
 
-        private void NumeralsHelper_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDoConvert_Click(object sender, EventArgs e)
         {
             String lValue = boxText.Text;
@@ -137,7 +132,7 @@ namespace De.AHoerstemeier.Tambon
               {'é','”'}
             };
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEncoding_Click(object sender, EventArgs e)
         {
             String lValue = boxText.Text;
             foreach (KeyValuePair<Char, Char> lKeyValuePair in mOldPDFEncoding)
@@ -145,6 +140,18 @@ namespace De.AHoerstemeier.Tambon
                 lValue = lValue.Replace(lKeyValuePair.Key,lKeyValuePair.Value);
             }
             lValue = lValue.Replace("OE", "ฮ");
+            boxText.Text = lValue;
+        }
+
+        private void btnMonths_Click(object sender, EventArgs e)
+        {
+            String lValue = boxText.Text;
+            foreach (KeyValuePair<String,Byte> lKeyValuePair in Helper.ThaiMonthNames)
+            {
+                DateTime lDateTime = new DateTime(2000, lKeyValuePair.Value, 1);
+                String lMonthName = lDateTime.ToString("MMMM");
+                lValue = lValue.Replace(lKeyValuePair.Key,lMonthName);
+            }
             boxText.Text = lValue;
         }
     }
