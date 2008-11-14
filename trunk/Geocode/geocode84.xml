@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สุราษฎร์ธานี" english="Surat Thani" geocode="84">
   <slogan>เมืองร้อยเกาะ เงาะอร่อย หอยใหญ่ ไข่แดง แหล่งธรรมะ</slogan>
-  <provincehall>
+  <office type="ProvinceHall">
     <geo:Point>
       <geo:lat>9.1327</geo:lat>
       <geo:long>99.3323</geo:long>
     </geo:Point>
-  </provincehall>
+    <url>http://www.suratthani.go.th/</url>
+  </office>
+  <officials>
+    <official title="Governor" name="ประชา เตรัตน์"  begin="2008-10-01" />
+  </officials>
   <entity type="Amphoe" name="เมืองสุราษฎร์ธานี" english="Mueang Surat Thani" geocode="8401">
-    <districtoffice>
+    <slogan>ลุ่มน้ำหกตำบล ผ่องคนขยันทำกิน ผลอาสินมากมาย ค้าขายตลอดปี</slogan>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.1362</geo:lat>
         <geo:long>99.3203</geo:long>
       </geo:Point>
       <address>
-        <tambon value="ตลาด" geocode="840101"/>
+        <tambon name="ตลาด" geocode="840101"/>
         <street value="170 ถ.ตลาดใหม่" />
+        <postcode code="84000"/>
       </address>
-    </districtoffice>
+    </office>
     <area>
       <data value="231.317" unit="km²" source="amphoe.com" date="2007" />
       <data value="233.8" unit="km²" source="census" date="2000" />
     </area>
-    <slogan>ลุ่มน้ำหกตำบล ผ่องคนขยันทำกิน ผลอาสินมากมาย ค้าขายตลอดปี</slogan>
     <entity type="Tambon" name="ตลาด" english="Talat" geocode="840101"/>
     <entity type="Tambon" name="มะขามเตี้ย" english="Makham Tia" geocode="840102">
       <entity type="Muban" geocode="84010201" name="ในลึก"/>
@@ -118,19 +123,19 @@
   </entity>
   <entity type="Amphoe" name="กาญจนดิษฐ์" english="Kanchanadit" geocode="8402">
     <slogan>หอยใหญ่นางรม, ชมวิทยาลัยฝึกลิง, มากยิ่งกุ้งกุลาดำ, งามล้ำพระไสยาสน์, พระพุทธบาทควรผดุง รุ่งเรืองเมืองท่าทอง</slogan>
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.1656</geo:lat>
         <geo:long>99.4711</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="ท่าทองใหม่" english="Tha Thong Mai" geocode="840201">
       <entity type="Muban" geocode="84020101" name="บ้านทุ่งอ่อนใจ"/>
       <entity type="Muban" geocode="84020102" name="บ้านท่าทองใหม่"/>
       <entity type="Muban" geocode="84020103" name="บ้านกะแดะแจะ"/>
       <entity type="Muban" geocode="84020104" name="บ้านบางสำโรง"/>
       <entity type="Muban" geocode="84020105" name="บ้านท่าทองใหม่"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="ท่าทอง" english="Tha Thong" geocode="840202">
       <entity type="Muban" geocode="84020201" name="ปากน้ำท่าทอง"/>
       <entity type="Muban" geocode="84020202" name="ท่าเกตุ"/>
@@ -267,6 +272,13 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ดอนสัก" english="Don Sak" geocode="8403">
+    <slogan>เขาชะโงกเด่นสง่า แหล่งประมงล้ำค่า เทียบท่าเฟอร์รี น้ำตกสวยวิภาวดี บารมีหลวงพ่อจ้อย</slogan>
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>9.3139</geo:lat>
+        <geo:long>99.6903</geo:long>
+      </geo:Point>
+    </office>
     <officials>
       <official title="DistrictOfficer" name="นายไพศาล ตรีธัญญา"  begin="2003-10-06" end="" />
       <official title="DistrictOfficer" name="นายพิชัย ธิติศักดิ์"  begin="2002-12-16" end="2003-10-06" />
@@ -287,12 +299,6 @@
       <official title="DistrictOfficer" name="นายวิจิตร สุระกุล"  begin="1972-01-04" end="1972-06-01" />
       <official title="MinorDistrictOfficer" name="นายลาภ ลาภชูรัต"  begin="1969-04-12" end="1972-01-04" />
     </officials>
-    <districtoffice>
-      <geo:Point>
-        <geo:lat>9.3139</geo:lat>
-        <geo:long>99.6903</geo:long>
-      </geo:Point>
-    </districtoffice>
     <entity type="Tambon" name="ดอนสัก" english="Don Sak" geocode="840301">
       <entity type="Muban" geocode="84030101" name="นาเหนือ"/>
       <entity type="Muban" geocode="84030102" name="ดอนหาร"/>
@@ -341,15 +347,14 @@
       <entity type="Muban" geocode="84030414" name="นางกำใหม่"/>
       <entity type="Muban" geocode="84030415" name="บ้านดินแดง" english="Ban Din Daeng"/>
     </entity>
-    <slogan>เขาชะโงกเด่นสง่า แหล่งประมงล้ำค่า เทียบท่าเฟอร์รี น้ำตกสวยวิภาวดี บารมีหลวงพ่อจ้อย</slogan>
   </entity>
   <entity type="Amphoe" name="เกาะสมุย" english="Ko Samui" geocode="8404">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.5365</geo:lat>
         <geo:long>99.9363</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="อ่างทอง" english="Ang Thong" geocode="840401"/>
     <entity type="Tambon" name="ลิปะน้อย" english="Lipa Noi" geocode="840402"/>
     <entity type="Tambon" name="ตลิ่งงาม" english="Taling Ngam" geocode="840403"/>
@@ -359,12 +364,12 @@
     <entity type="Tambon" name="แม่น้ำ" english="Mae Nam" geocode="840407"/>
   </entity>
   <entity type="Amphoe" name="เกาะพะงัน" english="Ko Pha-ngan" geocode="8405">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.7201</geo:lat>
         <geo:long>99.9957</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
 
     <entity type="Tambon" name="เกาะพะงัน" english="Ko Pha-ngan" geocode="840501">
       <entity type="Muban" geocode="84050101" name="ท้องศาลา"/>
@@ -391,12 +396,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ไชยา" english="Chaiya" geocode="8406">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.3867</geo:lat>
         <geo:long>99.2000</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="ตลาดไชยา" english="Talat Chaiya" geocode="840601">
       <entity type="Muban" geocode="84060101" name="ตลาดไชยา"/>
       <entity type="Muban" geocode="84060102" name="สงขลา"/>
@@ -471,12 +476,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ท่าชนะ" english="Tha Chana" geocode="8407">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.5722</geo:lat>
         <geo:long>99.1650</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="ท่าชนะ" english="Tha Chana" geocode="840701">
       <entity type="Muban" geocode="84070101" name="ท่ากระจาย"/>
       <entity type="Muban" geocode="84070102" name="ชั่งคำ"/>
@@ -564,12 +569,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="คีรีรัฐนิคม" english="Khiri Rat Nikhom" geocode="8408">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.0300</geo:lat>
         <geo:long>98.9533</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="ท่าขนอน" english="Tha Khanon" geocode="840801">
       <entity type="Muban" geocode="84080101" name="ท่าขนอน"/>
       <entity type="Muban" geocode="84080102" name="ท่า"/>
@@ -612,8 +617,8 @@
       <entity type="Muban" geocode="84080309" name="หินลาด"/>
       <entity type="Muban" geocode="84080310" name="หวายหนิม"/>
     </entity>
-    <entity type="Tambon" name="ตะกุกใต้" english="Takuk Tai" geocode="840804" newgeocode="841901" status="Reassigned"/>
-    <entity type="Tambon" name="ตะกุกเหนือ" english="Takuk Nuea" geocode="840805" newgeocode="841902" status="Reassigned"/>
+    <entity type="Tambon" name="ตะกุกใต้" english="Takuk Tai" geocode="840804" newgeocode="841901" comment="Reassigned"/>
+    <entity type="Tambon" name="ตะกุกเหนือ" english="Takuk Nuea" geocode="840805" newgeocode="841902" comment="Reassigned"/>
     <entity type="Tambon" name="กะเปา" english="Kapao" geocode="840806">
       <entity type="Muban" geocode="84080601" name="หาดมุด"/>
       <entity type="Muban" geocode="84080602" name="กะเปา"/>
@@ -673,15 +678,35 @@
       <entity type="Muban" geocode="84081009" name="เคี่ยมงาม"/>
     </entity>
 
-    <entity type="Unknown" name="ตะกุดใต้" english="Takuk Tai" geocode="840899" newgeocode="841901" status="Unknown"/>
+    <entity type="Unknown" name="ตะกุดใต้" english="Takuk Tai" geocode="840899" newgeocode="841901"/>
   </entity>
   <entity type="Amphoe" name="บ้านตาขุน" english="Ban Ta Khun" geocode="8409">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.9050</geo:lat>
         <geo:long>98.8850</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
+    <officials source="http://www.geocities.com/takhun2004/boss.htm">
+      <official title="DistrictOfficer" name="ร.ต.ภิรมย์ สุขภาคกุล"  begin="1978-12-01" end="1978-08-25" />
+      <official title="DistrictOfficer" name="นายวันชัย ฤกษ์อร่าม"  begin="1978-08-20" end="1979-05-28" />
+      <official title="DistrictOfficer" name="นายเจษฎา อุรพิพัฒน์พงศ์"  begin="1979-05-29" end="1980-07-01" />
+      <official title="DistrictOfficer" name="ร.ต.ประพันธ์ ศิวิไล"  begin="1983-07-03" end="1983-08-10" />
+      <official title="DistrictOfficer" name="นายวินัย สวัสดี"  begin="1983-08-22" end="1983-11-20" />
+      <official title="DistrictOfficer" name="นายสมศักดิ์ ตะเภาน้อย"  begin="1983-11-21" end="1986-01-19" />
+      <official title="DistrictOfficer" name="นายเฉลิมพล รัตนวงศ์"  begin="1986-01-20" end="1989-01-20" />
+      <official title="DistrictOfficer" name="นายสมพงษ์ กฤตลักษณ์"  begin="1989-01-23" end="1989-10-23" />
+      <official title="DistrictOfficer" name="นายไตรรัตน์ จงจิตร์"  begin="1989-10-24" end="1990-07-02" />
+      <official title="DistrictOfficer" name="นายวุฒิ จารุพันธุเศรษฐ์"  begin="1990-07-03" end="1993-08-03" />
+      <official title="DistrictOfficer" name="นายสุวิทย์ วัชโรทยางกูร"  begin="1993-08-04" end="1994-10-16" />
+      <official title="DistrictOfficer" name="นายเฉลิมชัย ศรีกมล"  begin="1994-10-17" end="1997-11-09" />
+      <official title="DistrictOfficer" name="นายโสภณ แพรกทอง"  begin="1997-11-10" end="1998-11-01" />
+      <official title="DistrictOfficer" name="นายบุญเลิศ ถังมณี"  begin="1998-11-02" end="1999-11-21" />
+      <official title="DistrictOfficer" name="นายจำรัส หวานมณี"  begin="1999-11-22" end="2001-10-10" />
+      <official title="DistrictOfficer" name="นายโสภณ แพรกทอง"  begin="2001-10-11" end="2002-08-30" />
+      <official title="DistrictOfficer" name="นายอาทร เพชรรักษ์"  begin="2002-10-16" />
+      <official title="DistrictOfficer" name="นายอภิรักษ์ ศักดิ์สนิท" />
+    </officials>
 
     <entity type="Tambon" name="เขาวง" english="Khao Wong" geocode="840901">
       <entity type="Muban" geocode="84090101" name="สวนทุเรียน"/>
@@ -720,36 +745,15 @@
       <entity type="Muban" geocode="84090404" name="ไกรสร"/>
       <entity type="Muban" geocode="84090405" name="เชี่ยวหลาน"/>
     </entity>
-    <entity type="Tambon" name="ไกรสร" english="Krai Son" geocode="840905" abolished="1985" status="Abolished"/>
-
-    <officials source="http://www.geocities.com/takhun2004/boss.htm">
-      <official title="DistrictOfficer" name="ร.ต.ภิรมย์ สุขภาคกุล"  begin="1978-12-01" end="1978-08-25" />
-      <official title="DistrictOfficer" name="นายวันชัย ฤกษ์อร่าม"  begin="1978-08-20" end="1979-05-28" />
-      <official title="DistrictOfficer" name="นายเจษฎา อุรพิพัฒน์พงศ์"  begin="1979-05-29" end="1980-07-01" />
-      <official title="DistrictOfficer" name="ร.ต.ประพันธ์ ศิวิไล"  begin="1983-07-03" end="1983-08-10" />
-      <official title="DistrictOfficer" name="นายวินัย สวัสดี"  begin="1983-08-22" end="1983-11-20" />
-      <official title="DistrictOfficer" name="นายสมศักดิ์ ตะเภาน้อย"  begin="1983-11-21" end="1986-01-19" />
-      <official title="DistrictOfficer" name="นายเฉลิมพล รัตนวงศ์"  begin="1986-01-20" end="1989-01-20" />
-      <official title="DistrictOfficer" name="นายสมพงษ์ กฤตลักษณ์"  begin="1989-01-23" end="1989-10-23" />
-      <official title="DistrictOfficer" name="นายไตรรัตน์ จงจิตร์"  begin="1989-10-24" end="1990-07-02" />
-      <official title="DistrictOfficer" name="นายวุฒิ จารุพันธุเศรษฐ์"  begin="1990-07-03" end="1993-08-03" />
-      <official title="DistrictOfficer" name="นายสุวิทย์ วัชโรทยางกูร"  begin="1993-08-04" end="1994-10-16" />
-      <official title="DistrictOfficer" name="นายเฉลิมชัย ศรีกมล"  begin="1994-10-17" end="1997-11-09" />
-      <official title="DistrictOfficer" name="นายโสภณ แพรกทอง"  begin="1997-11-10" end="1998-11-01" />
-      <official title="DistrictOfficer" name="นายบุญเลิศ ถังมณี"  begin="1998-11-02" end="1999-11-21" />
-      <official title="DistrictOfficer" name="นายจำรัส หวานมณี"  begin="1999-11-22" end="2001-10-10" />
-      <official title="DistrictOfficer" name="นายโสภณ แพรกทอง"  begin="2001-10-11" end="2002-08-30" />
-      <official title="DistrictOfficer" name="นายอาทร เพชรรักษ์"  begin="2002-10-16" end="" />
-      <official title="DistrictOfficer" name="นายอภิรักษ์ ศักดิ์สนิท" begin="" end="" />
-    </officials>
+    <entity type="Tambon" name="ไกรสร" english="Krai Son" geocode="840905" comment="ABolished 1985"/>
   </entity>
   <entity type="Amphoe" name="พนม" english="Phanom" geocode="8410">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.8550</geo:lat>
         <geo:long>98.8133</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="พนม" english="Phanom" geocode="841001">
       <entity type="Muban" geocode="84100101" name="พิทักษ์พัฒนา"/>
       <entity type="Muban" geocode="84100102" name="วัดพนม"/>
@@ -820,12 +824,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ท่าฉาง" english="Tha Chang" geocode="8411">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.2808</geo:lat>
         <geo:long>99.2008</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="ท่าฉาง" english="Tha Chang" geocode="841101">
       <entity type="Muban" geocode="84110101" name="ท่าฉาง"/>
       <entity type="Muban" geocode="84110102" name="ท่าเคย"/>
@@ -884,12 +888,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="บ้านนาสาร" english="Ban Na San" geocode="8412">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.8006</geo:lat>
         <geo:long>99.3642</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="นาสาร" english="Na San" geocode="841201"/>
     <entity type="Tambon" name="พรุพี" english="Phru Phi" geocode="841202">
       <entity type="Muban" geocode="84120201" name="ตลาดพรุพี"/>
@@ -976,16 +980,16 @@
       <entity type="Muban" geocode="84121105" name="กอบแกบ"/>
       <entity type="Muban" geocode="84121106" name="วังหิน"/>
     </entity>
-    <entity type="Unknown" name="ท่าเรือ" english="Tha Ruea" geocode="841298" newgeocode="841302" status="Unknown"/>
-    <entity type="Unknown" name="บ้านนา" english="Ban Na" geocode="841299" newgeocode="841301" status="Unknown"/>
+    <entity type="Unknown" name="ท่าเรือ" english="Tha Ruea" geocode="841298" newgeocode="841302"/>
+    <entity type="Unknown" name="บ้านนา" english="Ban Na" geocode="841299" newgeocode="841301"/>
   </entity>
   <entity type="Amphoe" name="บ้านนาเดิม" english="Ban Na Doem" geocode="8413">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.8850</geo:lat>
         <geo:long>99.3100</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="บ้านนา" english="Ban Na" geocode="841301">
       <entity type="Muban" geocode="84130101" name="ห้วยใหญ่"/>
       <entity type="Muban" geocode="84130102" name="ตลาดบ้านนา น้ำเกลี้ยง"/>
@@ -1026,12 +1030,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="เคียนซา" english="Khian Sa" geocode="8414">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.8408</geo:lat>
         <geo:long>99.1942</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
 
     <entity type="Tambon" name="เคียนซา" english="Khian Sa" geocode="841401">
       <entity type="Muban" geocode="84140101" name="เคียนซา"/>
@@ -1093,12 +1097,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="เวียงสระ" english="Wiang Sa" geocode="8415">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.6297</geo:lat>
         <geo:long>99.3431</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="เวียงสระ" english="Wiang Sa" geocode="841501">
       <entity type="Muban" geocode="84150101" name="ห้วยสะพาน"/>
       <entity type="Muban" geocode="84150102" name="ดอนเหรียง"/>
@@ -1175,12 +1179,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="พระแสง" english="Phrasaeng" geocode="8416">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.5683</geo:lat>
         <geo:long>99.2483</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="อิปัน" english="I-pan" geocode="841601">
       <entity type="Muban" geocode="84160101" name="ใสนา"/>
       <entity type="Muban" geocode="84160102" name="โพธิ์บาย"/>
@@ -1267,16 +1271,16 @@
       <entity type="Muban" geocode="84160706" name="ห้วยทรายขาว"/>
       <entity type="Muban" geocode="84160707" name="บางใหญ่"/>
     </entity>
-    <entity type="Unknown" name="ชัยบุรี" english="Chai Buri" geocode="841698" newgeocode="841802" status="Unknown"/>
-    <entity type="Unknown" name="สองแพรก" english="Song Phraek" geocode="841699" newgeocode="841801" status="Unknown"/>
+    <entity type="Unknown" name="ชัยบุรี" english="Chai Buri" geocode="841698" newgeocode="841802"/>
+    <entity type="Unknown" name="สองแพรก" english="Song Phraek" geocode="841699" newgeocode="841801"/>
   </entity>
   <entity type="Amphoe" name="พุนพิน" english="Phunphin" geocode="8417">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.1097</geo:lat>
         <geo:long>99.2319</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="ท่าข้าม" english="Tha Kham" geocode="841701">
       <entity type="Muban" geocode="84170101" name="พุนพิน"/>
       <entity type="Muban" geocode="84170103" name="บางท่าข้าม"/>
@@ -1404,15 +1408,15 @@
       <entity type="Muban" geocode="84171604" name="ทับแปด"/>
       <entity type="Muban" geocode="84171605" name="ห้วยทรายขาว"/>
     </entity>
-    <entity type="Unknown" name="คลองไทร" geocode="841799" english="Khlong Sai" newgeocode="841103" status="Unknown"/>
+    <entity type="Unknown" name="คลองไทร" geocode="841799" english="Khlong Sai" newgeocode="841103"/>
   </entity>
   <entity type="Amphoe" name="ชัยบุรี" english="Chai Buri" geocode="8418">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.4628</geo:lat>
         <geo:long>99.0767</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="สองแพรก" english="Song Phraek" geocode="841801">
       <entity type="Muban" geocode="84180101" name="บ้านโตรม"/>
       <entity type="Muban" geocode="84180102" name="บ้านคลองศอก"/>
@@ -1458,12 +1462,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="วิภาวดี" english="Vibhavadi" geocode="8419">
-    <districtoffice>
+    <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>9.2389</geo:lat>
         <geo:long>98.9789</geo:long>
       </geo:Point>
-    </districtoffice>
+    </office>
     <entity type="Tambon" name="ตะกุกใต้" english="Takuk Tai" geocode="841901">
       <entity type="Muban" name="ชายศรี" geocode="84190101" />
       <entity type="Muban" name="เชี่ยวปราง" geocode="84190102" />
@@ -1500,53 +1504,58 @@
       <entity type="Muban" name="บ้านหน้าเขา" geocode="84190217" />
     </entity>
   </entity>
-  <entity type="KingAmphoe" name="ท่าโรงช้าง" english="Tha Rong Chang" geocode="8420" status="Proposed"/>
-  <entity type="KingAmphoe" name="บางสวรรค์" english="Bang Sawan" geocode="8421" status="Proposed"/>
+  <entity type="KingAmphoe" name="ท่าโรงช้าง" english="Tha Rong Chang" geocode="8420" comment="Proposed, but not created"/>
+  <entity type="KingAmphoe" name="บางสวรรค์" english="Bang Sawan" geocode="8421" comment="Proposed, but not created"/>
 
   <entity type="ThesabanNakhon" name="สุราษฎร์ธานี" english="Surat Thani" geocode="8499" parent="8401">
-    <municipaloffice>
+    <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>9.1396</geo:lat>
         <geo:long>99.3305</geo:long>
       </geo:Point>
-    </municipaloffice>
+      <address>
+        <street value="ถนนภักดีอนุสรณ์"/>
+        <postcode code="84000"/>
+      </address>
+      <url>http://www.suratcity.org/</url>
+    </office>
   </entity>
   <entity type="ThesabanMueang" name="นาสาร" english="Na San" geocode="8498" parent="8412"/>
   <entity type="ThesabanMueang" name="ท่าข้าม" english="Tha Kham" geocode="8497" parent="8417">
-    <municipaloffice>
+    <slogan>ท่าข้ามเมืองน่าอยู่ คนมีคุณภาพและคุณธรรม เป็นผู้นำองค์กรการเรียนรู้และกีฬา เมืองแห่งภูมิปัญญาท้องถิ่น</slogan>
+    <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>9.1058</geo:lat>
         <geo:long>99.2326</geo:long>
       </geo:Point>
-    </municipaloffice>
-    <slogan>ท่าข้ามเมืองน่าอยู่ คนมีคุณภาพและคุณธรรม เป็นผู้นำองค์กรการเรียนรู้และกีฬา เมืองแห่งภูมิปัญญาท้องถิ่น</slogan>
+    </office>
   </entity>
   <entity type="ThesabanTambon" name="กาญจนดิษฐ์" english="Kanchanadit" geocode="8496" parent="8402">
-    <municipaloffice>
+    <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>9.1653</geo:lat>
         <geo:long>99.4706</geo:long>
       </geo:Point>
-    </municipaloffice>
+    </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าทองใหม่" english="Tha Thong Mai" geocode="8495" parent="8402">
-    <municipaloffice>
+    <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>9.3926</geo:lat>
         <geo:long>99.1480</geo:long>
       </geo:Point>
-    </municipaloffice>
+    </office>
   </entity>
   <entity type="ThesabanTambon" name="ดอนสัก" english="Don Sak" geocode="8494" parent="8403"/>
   <entity type="ThesabanTambon" name="เกาะสมุย" english="Ko Samui" geocode="8493" parent="8404"/>
   <entity type="ThesabanTambon" name="เกาะพะงัน" english="Ko Pha Ngan" geocode="8492" parent="8405"/>
   <entity type="ThesabanTambon" name="ตลาดไชยา" english="Talat Chaiya" geocode="8491" parent="8406">
-    <municipaloffice>
+    <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>9.3911</geo:lat>
         <geo:long>99.2008</geo:long>
       </geo:Point>
-    </municipaloffice>
+    </office>
   </entity>
   <entity type="ThesabanTambon" name="พุมเรียง" english="Phum Riang" geocode="8490" parent="8406"/>
   <entity type="ThesabanTambon" name="ท่าชนะ" english="Tha Chana" geocode="8489" parent="8407"/>

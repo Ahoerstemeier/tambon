@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ToDo: Better scheme for renaming and reassignments -->
+<xs:schema xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" />
+  <xs:simpleType name="EntityType">
+    <!--Copy from Gazette.xsd - must be put into import file -->
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Changwat"/>
+      <xs:enumeration value="Bangkok"/>
+      <xs:enumeration value="Amphoe"/>
+      <xs:enumeration value="KingAmphoe"/>
+      <xs:enumeration value="Tambon"/>
+      <xs:enumeration value="Khet"/>
+      <xs:enumeration value="Khwaeng"/>
+      <xs:enumeration value="Muban"/>
+      <xs:enumeration value="Monthon"/>
+      <xs:enumeration value="Phak"/>
+      <xs:enumeration value="TAO"/>
+      <xs:enumeration value="TC"/>
+      <xs:enumeration value="ThesabanTambon"/>
+      <xs:enumeration value="ThesabanMueang"/>
+      <xs:enumeration value="ThesabanNakhon"/>
+      <xs:enumeration value="Sukhaphiban"/>
+      <xs:enumeration value="SukhaphibanTambon"/>
+      <xs:enumeration value="SukhaphibanMueang"/>
+      <xs:enumeration value="SakhaTambon"/>
+      <xs:enumeration value="SakhaKhwaeng"/>
+      <xs:enumeration value="Sakha"/>
+      <xs:enumeration value="Unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OfficialType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Governor"/>
+      <xs:enumeration value="DistrictOfficer"/>
+      <xs:enumeration value="MinorDistrictOfficer"/>
+      <xs:enumeration value="Kamnan"/>
+      <xs:enumeration value="PhuYaiBan"/>
+      <xs:enumeration value="PAOChairman"/>
+      <xs:enumeration value="Mayor"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OfficeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ProvinceHall"/>
+      <xs:enumeration value="DistrictOffice"/>
+      <xs:enumeration value="MunicipalityOffice"/>
+      <xs:enumeration value="DistrictMuseum"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name='OfficialList'>
+    <xs:sequence>
+      <xs:element name="official" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:attribute name="title" type="OfficialType" use="required" />
+          <xs:attribute name="name" type="xs:string" use="required" />
+          <xs:attribute name="english" type="xs:string" use="optional" />
+          <xs:attribute name="begin" type="xs:date" use="optional" />
+          <xs:attribute name="end" type="xs:string" use="optional" />
+          <xs:attribute name="comment" type="xs:string" use="optional" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="source" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="ThaiAddress">
+    <xs:sequence>
+      <xs:element name="tambon" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="name" type="xs:string" use="required" />
+          <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="village" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="name" type="xs:string" use="optional" />
+          <xs:attribute name="number" type="xs:unsignedInt" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="street" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="value" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postcode" minOccurs="0">
+        <xs:complexType>
+          <xs:attribute name="code" type="xs:unsignedInt" use="required" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name='Office'>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="geo:Point" />
+      <xs:element minOccurs="0" name="address" type="ThaiAddress"/>
+      <xs:element minOccurs="0" name="url" type="xs:anyURI"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="OfficeType" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="AreaUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="km²"/>
+      <xs:enumeration value="rai"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AreaData">
+    <xs:attribute name="value" type="xs:decimal" use="required" />
+    <xs:attribute name="unit" type="AreaUnit" use="required" />
+    <xs:attribute name="source" type="xs:string" use="required" />
+    <xs:attribute name="date" type="xs:unsignedShort" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="Area">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="data" type="AreaData"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Entity">
+    <xs:sequence minOccurs="0">
+      <xs:element minOccurs="0" name="slogan" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="Office"/>
+      <xs:element minOccurs="0" name="area" type="Area"/>
+      <xs:element minOccurs="0" name="officials" type="OfficialList"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="Entity"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="EntityType" use="required" />
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="english" type="xs:string" use="optional" />
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
+    <xs:attribute name="newgeocode" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="newname" type="xs:string" use="optional" />
+    <xs:attribute name="oldname" type="xs:string" use="optional" />
+    <xs:attribute name="parent" type="xs:string" use="optional" />
+    <xs:attribute name="comment" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:element name="entity" type="Entity"/>
+</xs:schema>
