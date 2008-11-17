@@ -70,6 +70,7 @@
             // 
             // btnMonths
             // 
+            this.btnMonths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMonths.Location = new System.Drawing.Point(55, 250);
             this.btnMonths.Name = "btnMonths";
             this.btnMonths.Size = new System.Drawing.Size(75, 23);
