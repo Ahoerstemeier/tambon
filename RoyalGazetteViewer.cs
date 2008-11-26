@@ -180,7 +180,7 @@ namespace De.AHoerstemeier.Tambon
 
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void btnSaveXml_Click(object sender, EventArgs e)
         {
             if (mData != null)
             {
@@ -188,9 +188,23 @@ namespace De.AHoerstemeier.Tambon
                 lDlg.Filter = "XML Files|*.xml|All files|*.*";
                 if (lDlg.ShowDialog() == DialogResult.OK)
                 {
-                    mData.SaveXML(/*"e:\\Thailand\\DOPA\\Gazette new.xml"*/ lDlg.FileName);
+                    mData.SaveXML(lDlg.FileName);
                 }
             }
+        }
+
+        private void btnSaveRSS_Click(object sender, EventArgs e)
+        {
+            if (mData != null)
+            {
+                SaveFileDialog lDlg = new SaveFileDialog();
+                lDlg.Filter = "XML Files|*.xml|All files|*.*";
+                if (lDlg.ShowDialog() == DialogResult.OK)
+                {
+                    mData.ExportToRSS(lDlg.FileName);
+                }
+            }
+
         }
     }
 }

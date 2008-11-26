@@ -36,7 +36,8 @@
             this.mnuDeletePDF = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuCitation = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.btnSaveXml = new System.Windows.Forms.Button();
+            this.btnSaveRSS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -102,24 +103,35 @@
             this.mnuCitation.Text = "Citation";
             this.mnuCitation.Click += new System.EventHandler(this.mnuCitation_Click);
             // 
-            // btn_save
+            // btnSaveXml
             // 
-            this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_save.Location = new System.Drawing.Point(676, 365);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
-            this.btn_save.TabIndex = 1;
-            this.btn_save.Text = "SaveAs";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.btnSaveXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveXml.Location = new System.Drawing.Point(676, 365);
+            this.btnSaveXml.Name = "btnSaveXml";
+            this.btnSaveXml.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveXml.TabIndex = 1;
+            this.btnSaveXml.Text = "Save XML";
+            this.btnSaveXml.UseVisualStyleBackColor = true;
+            this.btnSaveXml.Click += new System.EventHandler(this.btnSaveXml_Click);
+            // 
+            // btnSaveRSS
+            // 
+            this.btnSaveRSS.Location = new System.Drawing.Point(595, 365);
+            this.btnSaveRSS.Name = "btnSaveRSS";
+            this.btnSaveRSS.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveRSS.TabIndex = 2;
+            this.btnSaveRSS.Text = "Save Feed";
+            this.btnSaveRSS.UseVisualStyleBackColor = true;
+            this.btnSaveRSS.Click += new System.EventHandler(this.btnSaveRSS_Click);
             // 
             // RoyalGazetteViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 390);
+            this.Controls.Add(this.btnSaveRSS);
             this.Controls.Add(this.grid);
-            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btnSaveXml);
             this.Name = "RoyalGazetteViewer";
             this.Text = "RoyalGazetteViewer";
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
@@ -137,6 +149,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuMirror;
         private System.Windows.Forms.ToolStripMenuItem mnuDeletePDF;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btnSaveXml;
+        private System.Windows.Forms.Button btnSaveRSS;
     }
 }
