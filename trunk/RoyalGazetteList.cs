@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Xml;
+using System.ServiceModel.Syndication;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -87,6 +88,11 @@ namespace De.AHoerstemeier.Tambon
                 lEntry.MirrorToCache();
             }
         }
+        public void SortByPublicationDate()
+        {
+            Sort(delegate(RoyalGazette x, RoyalGazette y) { return y.Publication.CompareTo(x.Publication); });
+        }
+
         public RoyalGazetteList AllAboutEntity(Int32 iGeocode, Boolean iIncludeSubEntities)
         {
             var retval = new RoyalGazetteList();
@@ -108,6 +114,22 @@ namespace De.AHoerstemeier.Tambon
             {
                 lEntry.ExportToXML(lNode);
             }
+        }
+        public void ExportToRSS(String iFilename)
+        {
+            SyndicationFeed lFeed = new SyndicationFeed();
+            lFeed.Title = new TextSyndicationContent("Royal Gazette");
+            List<SyndicationItem> lItems = new List<SyndicationItem>();
+
+            foreach (RoyalGazette lEntry in this)
+            {
+                lItems.Add(lEntry.ToSyndicationItem());
+            }
+            lFeed.Items = lItems;
+
+            XmlWriter lWriter = XmlWriter.Create(iFilename);
+            lFeed.SaveAsAtom10(lWriter);
+
         }
         public void SaveXML(string iFilename)
         {

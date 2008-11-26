@@ -381,6 +381,7 @@ namespace De.AHoerstemeier.Tambon
         {
             RoyalGazetteList retval = new RoyalGazetteList();
             retval.AddRange(SearchNewsRange(iDate, iDate));
+            retval.SortByPublicationDate();
             return retval;
         }
         public RoyalGazetteList SearchNewsRange(DateTime iBeginDate, DateTime iEndDate)
@@ -409,6 +410,7 @@ namespace De.AHoerstemeier.Tambon
             }
             var lAdministrativeEntitiesList = SearchNewsRangeAdministrative(iBeginDate, iEndDate, lEntityTypes, lEntityModifications);
             retval.AddRange(lAdministrativeEntitiesList);
+            retval.SortByPublicationDate();
             return retval;
         }
         public RoyalGazetteList SearchNewsProtectedAreas(DateTime iBeginDate, DateTime iEndDate, List<ProtectedAreaTypes> iValues)
@@ -431,6 +433,7 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
             }
+            retval.SortByPublicationDate();
             return retval;
         }
         public RoyalGazetteList SearchNewsRangeAdministrative(DateTime iBeginDate, DateTime iEndDate, List<EntityType> iTypes, List<EntityModification> iModifications)
@@ -475,6 +478,7 @@ namespace De.AHoerstemeier.Tambon
                     retval.AddRange(lList);
                 }
             }
+            retval.SortByPublicationDate();
             return retval;
         }
 
@@ -492,6 +496,7 @@ namespace De.AHoerstemeier.Tambon
                 // Check news from last year as well, in case something was added late
                 lGazetteList.AddRange(SearchNews(DateTime.Now.AddYears(-1)));
             }
+            lGazetteList.SortByPublicationDate();
             if (OnProcessingFinished != null)
             {
                 OnProcessingFinished(lGazetteList);
