@@ -129,7 +129,7 @@ namespace De.AHoerstemeier.Tambon
 
             XmlWriter lWriter = XmlWriter.Create(iFilename);
             lFeed.SaveAsAtom10(lWriter);
-
+            lWriter.Flush();
         }
         public void SaveXML(string iFilename)
         {
