@@ -25,6 +25,7 @@
   <!--Change of spelling: ทุ่งครอง to ทุ่งคลอง (461001)-->
   <!--Change of spelling: ระหานนา to ละหานนา (401404)-->
   <!--Rename of บ้านนาสาร (841201) to นาสาร after 1947? -->
+  <!--Rename of หนองตาเดี้ยง to หนองแค (190301)-->
   <decade value="2000s">
     <entry description="Rename of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงชื่อตำบลวังหงษ์ อำเภอเมืองแพร่ จังหวัดแพร่ เป็นชื่อตำบลวังหงส์" volume="124" page="3" issue="83 ง" uri="2550/D/083/3.PDF" publication="2007-10-04" sign="2007-08-21" effective="2007-06-19">
       <rename oldname="วังหงษ์" name="วังหงส์" geocode="540113" />
@@ -30687,7 +30688,41 @@
       </entry>
     </year>
     <year value="1956">
-      <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอหนองแค จังหวัดสระบุรี" volume="73" page="1970" issue="56 ง" uri="2499/D/056/1970.PDF" publication="1956-07-17" />
+      <entry description="Reassign of Muban, Change of area of Thesaban and Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอหนองแค จังหวัดสระบุรี" volume="73" page="1970-1972" issue="56 ง" uri="2499/D/056/1970.PDF" publication="1956-07-17" sign="1956-06-22" effective="1956-04-11">
+        <areachange geocode="1997">
+          <!--These Muban added to Thesaban and changed Tambon-->
+          <reassign oldownername="นาเริ่ง" oldmuban="1" newowner="190301"/>
+          <reassign oldownername="นาเริ่ง" oldmuban="3" newowner="190301"/>
+          <reassign oldownername="นาเริ่ง" oldmuban="4" newowner="190301"/>
+          <reassign oldownername="นาเริ่ง" oldmuban="5" newowner="190301"/>
+          <reassign oldownername="นาเริ่ง" oldmuban="6" newowner="190301"/>
+          <reassign oldownername="นาเริ่ง" oldmuban="8" newowner="190301">
+            <!--Only parts of the Muban -->
+          </reassign>
+        </areachange>
+        <reassign oldownername="นาเริ่ง" oldmuban="8" newowner="19030202">
+          <!--Only parts of the Muban -->
+        </reassign>
+        <reassign oldownername="นาเริ่ง" oldmuban="7" newowner="19030202"/>
+        <reassign oldownername="นาเริ่ง" oldmuban="9" geocode="19030212"/>
+        <reassign oldownername="นาเริ่ง" oldmuban="2" geocode="19031111"/>
+        <!--Not mentioned, but suppose that the Tambon was abolished-->
+        <create type="Tambon" geocode="190314">
+          <reassign geocode="19031401" oldgeocode="19030101"/>
+          <reassign geocode="19031401" oldgeocode="19030105"/>
+          <reassign geocode="19031402" oldgeocode="19030102"/>
+          <reassign geocode="19031403" oldgeocode="19030103"/>
+          <reassign geocode="19031403" oldgeocode="19030104"/>
+          <reassign geocode="19031404" oldgeocode="19030107"/>
+          <reassign geocode="19031404" oldgeocode="19030115"/>
+          <reassign geocode="19031405" oldgeocode="19030111"/>
+          <reassign geocode="19031405" oldgeocode="19030113"/>
+          <reassign geocode="19031406" oldgeocode="19030106"/>
+          <reassign geocode="19031406" oldgeocode="19030116"/>
+          <reassign geocode="19031407" oldgeocode="19030113"/>
+          <reassign geocode="19031407" oldgeocode="19030117"/>
+        </create>
+      </entry>
       <entry description="Abolish of Tambon Bang Nara, Mueang Narathiwat, Narathiwat" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอเมืองนราธิวาส จังหวัดนราธิวาส" volume="74" page="28-29" issue="1 ง" uri="2500/D/001/28.PDF" publication="1957-01-01" sign="1956-10-09" effective="1956-05-15">
         <abolish type="Tambon" name="บางนรา" owner="9601">
           <areachange geocode="9699"/>
@@ -30703,7 +30738,61 @@
       </entry>
     </year>
     <year value="1954">
-      <entry title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลเพิ่มในท้องที่อำเภอเมืองลพบุรี จังหวัดลพบุรี" volume="71" page="2360" issue="68 ง" uri="2497/D/068/2360.PDF" publication="1954-10-26" />
+      <entry description="Creation of Tambon in Lopburi" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลเพิ่มในท้องที่อำเภอเมืองลพบุรี จังหวัดลพบุรี" volume="71" page="2360-2365" issue="68 ง" uri="2497/D/068/2360.PDF" publication="1954-10-26" sign="1954-10-07" effective="1954-10-07">
+        <create type="Tambon" geocode="160101">
+          <create type="Muban" geocode="16010101"/>
+          <create type="Muban" geocode="16010102"/>
+          <create type="Muban" geocode="16010103"/>
+          <create type="Muban" geocode="16010104"/>
+          <create type="Muban" geocode="16010105"/>
+          <create type="Muban" geocode="16010106"/>
+          <create type="Muban" geocode="16010107"/>
+          <create type="Muban" geocode="16010108"/>
+          <create type="Muban" geocode="16010109"/>
+          <create type="Muban" geocode="16010110"/>
+          <create type="Muban" geocode="16010111"/>
+        </create>
+        <create type="Tambon" geocode="160114">
+          <create type="Muban" geocode="16011401"/>
+          <create type="Muban" geocode="16011402"/>
+          <create type="Muban" geocode="16011403"/>
+          <create type="Muban" geocode="16011404"/>
+          <create type="Muban" geocode="16011405"/>
+          <create type="Muban" geocode="16011406"/>
+          <create type="Muban" geocode="16011407"/>
+          <create type="Muban" geocode="16011408"/>
+          <create type="Muban" geocode="16011409"/>
+        </create>
+        <create type="Tambon" geocode="160106">
+          <create type="Muban" geocode="16010601"/>
+          <create type="Muban" geocode="16010602"/>
+          <create type="Muban" geocode="16010603"/>
+          <create type="Muban" geocode="16010604"/>
+          <create type="Muban" geocode="16010605"/>
+          <create type="Muban" geocode="16010606"/>
+          <create type="Muban" geocode="16010607"/>
+        </create>
+        <create type="Tambon" geocode="160120">
+          <create type="Muban" geocode="16012001"/>
+          <create type="Muban" geocode="16012002"/>
+          <create type="Muban" geocode="16012003"/>
+          <create type="Muban" geocode="16012004"/>
+          <create type="Muban" geocode="16012005"/>
+          <create type="Muban" geocode="16012006"/>
+          <create type="Muban" geocode="16012007"/>
+        </create>
+        <create type="Tambon" geocode="160115">
+          <create type="Muban" geocode="16011501"/>
+          <create type="Muban" geocode="16011502"/>
+          <create type="Muban" geocode="16011503"/>
+          <create type="Muban" geocode="16011504"/>
+          <create type="Muban" geocode="16011505"/>
+          <create type="Muban" geocode="16011506"/>
+          <create type="Muban" geocode="16011507"/>
+        </create>
+        <!--Does not state where the area of the new tambon came from, but probably was Tha Hin which identical with thesaban-->
+        <areachange geocode="160102"/>
+      </entry>
     </year>
     <year value="1953">
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบล ในท้องที่อำเภอมุกดาหาร จังหวัดนครพนม" volume="70" page="196" issue="6 ง" uri="2496/D/006/196.PDF" publication="1953-01-20" />
@@ -30720,7 +30809,19 @@
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอภูเขียว จังหวัดชัยภูมิ" volume="70" page="3272" issue="58 ง" uri="2496/D/058/3272.PDF" publication="1953-09-15" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอธวัชบุรีและอำเภอเสลภูมิ จังหวัดร้อยเอ็ด" volume="70" page="4388" issue="69 ง" uri="2496/D/069/4388.PDF" publication="1953-11-03" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอรัตนบุรี และอำเภอท่าตูม จังหวัดสุรินทร์" volume="70" page="4926" issue="74 ง" uri="2496/D/074/4926.PDF" publication="1953-11-24" />
-      <entry title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลสำนักแต้วในท้องที่อำเภอสะเดา จังหวัดสงขลา" volume="70" page="4558" issue="71 ง" uri="2496/D/071/4558.PDF" publication="1953-11-10" />
+      <entry description="Creation of Tambon Samnak Taeo, Sadao, Songkhla" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งตำบลสำนักแต้วในท้องที่อำเภอสะเดา จังหวัดสงขลา" volume="70" page="4558-4560" issue="71 ง" uri="2496/D/071/4558.PDF" publication="1953-11-10" sign="1953-10-27" effective="1953-10-27">
+        <!--Source Tambon not stated, only guessed as the creation is related with Thesaban Sadao-->
+        <create type="Tambon" geocode="901004">
+          <reassign geocode="90100401" oldowner="901001"/>
+          <reassign geocode="90100402" oldowner="901001"/>
+          <reassign geocode="90100403" oldowner="901001"/>
+          <reassign geocode="90100404" oldowner="901001"/>
+          <reassign geocode="90100405" oldowner="901001"/>
+          <reassign geocode="90100406" oldowner="901001"/>
+          <reassign geocode="90100407" oldowner="901001"/>
+          <reassign geocode="90100408" oldowner="901001"/>
+        </create>
+      </entry>
     </year>
     <year value="1952">
       <entry description="Creation of Tambon in Trat" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอแหลมงอบ จังหวัดตราด" volume="69" page="2008-2009" issue="43 ง" uri="2495/D/043/2008.PDF" publication="1952-07-08" sign="1952-06-19" effective="1952-06-19">
@@ -30738,7 +30839,25 @@
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอเมืองร้อยเอ็ด อำเภอแวง และอำเภอเกษตรวิสัย จังหวัดร้อยเอ็ด" volume="69" page="4045" issue="67 ง" uri="2495/D/067/4045.PDF" publication="1952-11-11" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอบ้านไผ่ จังหวัดขอนแก่น" volume="69" page="4053" issue="67 ง" uri="2495/D/067/4053.PDF" publication="1952-11-11" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอบรบือ อำเภอโกสุมพิสัย อำเภอกันทรวิชัย และอำเภอเมืองมหาสารคาม จังหวัดมหาสารคาม" volume="69" page="4056" issue="67 ง" uri="2495/D/067/4056.PDF" publication="1952-11-11" />
-      <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอเมืองสมุทรสาคร จังหวัดสมุทรสาคร" volume="69" page="4453" issue="71 ง" uri="2495/D/071/4453.PDF" publication="1952-12-02" />
+      <entry description="Creation of Tambon in Samut Sakhon and change of area of Thesaban Mueang Samut Sakhon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอเมืองสมุทรสาคร จังหวัดสมุทรสาคร" volume="69" page="4453-4456" issue="71 ง" uri="2495/D/071/4453.PDF" publication="1952-12-02" sign="1952-11-19" effective="1952-11-19">
+        <create type="Tambon" geocode="740117">
+          <create type="Muban" geocode="74011701"/>
+          <reassign geocode="74011702" oldgeocode="74011403"/>
+          <reassign geocode="74011703" oldgeocode="74011410"/>
+          <create type="Muban" geocode="74011704"/>
+          <create type="Muban" geocode="74011705"/>
+          <reassign geocode="74011706" oldgeocode="74011609"/>
+        </create>
+        <create type="Tambon" geocode="740108">
+          <create type="Muban" geocode="74010801"/>
+          <create type="Muban" geocode="74010802" oldowner="74011601"/>
+          <reassign geocode="74010803" oldgeocode="74011601"/>
+          <create type="Muban" geocode="74010804" oldowner="74011601"/>
+          <create type="Muban" geocode="74010805"/>
+          <create type="Muban" geocode="74010806" oldowner="74011005"/>
+        </create>
+        <areachange geocode="7499"/>
+      </entry>
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอวังสพุง จังหวัดเลย" volume="69" page="4456" issue="71 ง" uri="2495/D/071/4456.PDF" publication="1952-12-02" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอไชยบาดาล จังหวัดลพบุรี" volume="69" page="4671" issue="74 ง" uri="2495/D/074/4671.PDF" publication="1952-12-16" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอเมืองชัยภูมิ กิ่งอำเภอคอนสวรรค์ และอำเภอภูเขียว จังหวัดชัยภูมิ" volume="69" page="4774" issue="77 ง" uri="2495/D/077/4774.PDF" publication="1952-12-30" />
@@ -30760,8 +30879,43 @@
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอสุวรรณภูมิ จังหวัดร้อยเอ็ด" volume="67" page="3026" issue="39 ง" uri="2493/D/039/3026.PDF" publication="1950-07-18" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอธาตุพนม จังหวัดนครพนม" volume="67" page="3029" issue="39 ง" uri="2493/D/039/3029.PDF" publication="1950-07-18" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอศรีราชา จังหวัดชลบุรี" volume="67" page="3436" issue="44 ง" uri="2493/D/044/3436.PDF" publication="1950-08-15" />
-      <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอต่าง ๆ จังหวัดธนบุรี" volume="67" page="4121" issue="49 ง" uri="2493/D/049/4121.PDF" publication="1950-09-19" />
-      <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอเมืองฉะเชิงเทรา จังหวัดฉะเชิงเทรา" volume="67" page="4399" issue="51 ง" uri="2493/D/051/4399.PDF" publication="1950-09-26" />
+      <entry description="Creation of Tambon in Thonburi" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอต่าง ๆ จังหวัดธนบุรี" volume="67" page="4121-4137" issue="49 ง" uri="2493/D/049/4121.PDF" publication="1950-09-19" sign="1950-09-07" effective="1950-09-01">
+        <create type="Tambon" geocode="102002">
+          <areachange geocode="102001"/>
+          <areachange geocode="102008"/>
+        </create>
+        <create type="Tambon" geocode="102007">
+          <areachange geocode="102006"/>
+          <areachange geocode="102004"/>
+          <areachange geocode="102005"/>
+        </create>
+        <create type="Tambon" geocode="101502">
+          <reassign geocode="101501"/>
+          <reassign geocode="101503"/>
+        </create>
+        <create type="Tambon" geocode="101801">
+          <areachange geocode="101802"/>
+        </create>
+        <create type="Tambon" geocode="101804">
+          <areachange geocode="101803"/>
+        </create>
+        <create type="Tambon" geocode="102210">
+          <areachange geocode="102209"/>
+        </create>
+      </entry>
+      <entry description="Creation of Tambon Wang Takhian, Mueang Chachoengsao, Chachoengsao" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอเมืองฉะเชิงเทรา จังหวัดฉะเชิงเทรา" volume="67" page="4399-4400" issue="51 ง" uri="2493/D/051/4399.PDF" publication="1950-09-26" sign="1950-09-12" effective="1950-09-12">
+        <create type="Tambon" geocode="240111">
+          <reassign geocode="24011101" oldgeocode="24011210"/>
+          <reassign geocode="24011102" oldgeocode="24011211"/>
+          <reassign geocode="24011103" oldgeocode="24011212"/>
+          <reassign geocode="24011104" oldgeocode="24011213"/>
+          <reassign geocode="24011105" oldgeocode="24011214"/>
+          <reassign geocode="24011106" oldgeocode="24011215"/>
+          <reassign geocode="24011107" oldgeocode="24011216"/>
+          <reassign geocode="24011108" oldgeocode="24011217"/>
+          <reassign geocode="24011109" oldgeocode="24011218"/>
+        </create>
+      </entry>
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอยางตลาด จังหวัดกาฬสินธุ์" volume="67" page="5725" issue="60 ง" uri="2493/D/060/5725.PDF" publication="1950-11-07" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอกันทรวิชัย จังหวัดมหาสารคาม" volume="67" page="5975" issue="63 ง" uri="2493/D/063/5975.PDF" publication="1950-11-21" />
       <entry description="Creation of Tambon" title="ประกาศกระทรวงมหาดไทย เรื่อง ตั้งและเปลี่ยนแปลงเขตตำบลในท้องที่อำเภอสามง่าม จังหวัดพิจิตร" volume="67" page="6302" issue="67 ง" uri="2493/D/067/6302.PDF" publication="1950-12-12" />
