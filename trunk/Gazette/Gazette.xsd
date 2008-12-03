@@ -21,6 +21,12 @@
       <xs:enumeration value="SukhaphibanMueang"/>
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name='GazetteReference'>
+    <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="issue" type="xs:string" use="required"/>
+    <xs:attribute name="date" type="xs:date" use="optional"/>
+  </xs:complexType>
   <xs:complexType name='GazetteOperation'>
     <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
 
@@ -108,13 +114,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="GazetteCorrection">
-    <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
-    <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
-    <xs:attribute name="issue" type="xs:string" use="required"/>
-    <xs:attribute name="date" type="xs:date" use="optional"/>
-  </xs:complexType>
-  <xs:group name="EntryAction" >    
+  <xs:group name="EntryAction" >
     <xs:choice>
       <xs:element name="reassign" type="GazetteReassign"/>
       <xs:element name="status" type="GazetteStatusChange"/>
@@ -124,8 +124,9 @@
       <xs:element name="create" type="GazetteCreate"/>
       <xs:element name="mention" type="GazetteOperation"/>
       <xs:element name="capital" type="GazetteOperation"/>
-      <xs:element name="correction" type="GazetteCorrection"/>
+      <xs:element name="correction" type="GazetteReference"/>
       <xs:element name="renumber" type="GazetteRenumber"/>
+      <xs:element name="related" type="GazetteReference"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name='GazetteEntry'>
