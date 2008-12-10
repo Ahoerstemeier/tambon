@@ -116,6 +116,7 @@
             // 
             // btnSaveRSS
             // 
+            this.btnSaveRSS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveRSS.Location = new System.Drawing.Point(595, 365);
             this.btnSaveRSS.Name = "btnSaveRSS";
             this.btnSaveRSS.Size = new System.Drawing.Size(75, 23);
