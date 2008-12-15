@@ -38,6 +38,10 @@ namespace De.AHoerstemeier.Tambon
             List<Int32> lParentEntities = new List<Int32>();
             foreach (RoyalGazetteContent lSubEntry in lCreate.SubEntities)
             {
+                if (lSubEntry is RoyalGazetteContentCreate)
+                {
+                    lMaxSubEntityIndex++;
+                }
                 if (lSubEntry is RoyalGazetteContentReassign)
                 {
                     lMaxSubEntityIndex++;
