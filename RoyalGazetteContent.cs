@@ -120,6 +120,11 @@ namespace De.AHoerstemeier.Tambon
                         retval = new RoyalGazetteContentAbolish();
                         break;
                     }
+                case RoyalGazetteContentConstituency.XmlLabel:
+                    {
+                        retval = new RoyalGazetteContentAbolish();
+                        break;
+                    }
                 
             }
             return retval;
