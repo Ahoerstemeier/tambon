@@ -19,6 +19,7 @@
       <xs:enumeration value="Sukhaphiban"/>
       <xs:enumeration value="SukhaphibanTambon"/>
       <xs:enumeration value="SukhaphibanMueang"/>
+      <xs:enumeration value="PAO"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name='GazetteReference'>
@@ -123,6 +124,7 @@
       <xs:element name="areachange" type="GazetteAreaChange"/>
       <xs:element name="create" type="GazetteCreate"/>
       <xs:element name="mention" type="GazetteOperation"/>
+      <xs:element name="constituency" type="GazetteOperation"/>
       <xs:element name="capital" type="GazetteOperation"/>
       <xs:element name="correction" type="GazetteReference"/>
       <xs:element name="renumber" type="GazetteRenumber"/>
