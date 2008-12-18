@@ -73,6 +73,10 @@ namespace De.AHoerstemeier.Tambon
             {
                 lEntityTypes.Add(EntityType.TAO);
             }
+            if (chkPAO.Checked)
+            {
+                lEntityTypes.Add(EntityType.PAO);
+            }
             if (chkTambonCouncil.Checked)
             {
                 lEntityTypes.Add(EntityType.TC);
@@ -96,6 +100,10 @@ namespace De.AHoerstemeier.Tambon
             if (chkStatus.Checked)
             {
                 lEntityModifications.Add(EntityModification.StatusChange);
+            }
+            if (chkConstituency.Checked)
+            {
+                lEntityModifications.Add(EntityModification.Constituency);
             }
             lList.AddRange(lSearcher.SearchNewsRangeAdministrative(lDateStart, lDateEnd, lEntityTypes, lEntityModifications));
 

@@ -32,6 +32,7 @@
             this.cbxSearchKey = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkMuban = new System.Windows.Forms.CheckBox();
             this.chkTambonCouncil = new System.Windows.Forms.CheckBox();
             this.chkTAO = new System.Windows.Forms.CheckBox();
             this.chkTambon = new System.Windows.Forms.CheckBox();
@@ -48,7 +49,8 @@
             this.edtYearStart = new System.Windows.Forms.NumericUpDown();
             this.edtYearEnd = new System.Windows.Forms.NumericUpDown();
             this.cbx_AllYears = new System.Windows.Forms.CheckBox();
-            this.chkMuban = new System.Windows.Forms.CheckBox();
+            this.chkConstituency = new System.Windows.Forms.CheckBox();
+            this.chkPAO = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearStart)).BeginInit();
@@ -84,6 +86,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkPAO);
             this.groupBox1.Controls.Add(this.chkMuban);
             this.groupBox1.Controls.Add(this.chkTambonCouncil);
             this.groupBox1.Controls.Add(this.chkTAO);
@@ -98,6 +101,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Entities";
+            // 
+            // chkMuban
+            // 
+            this.chkMuban.AutoSize = true;
+            this.chkMuban.Location = new System.Drawing.Point(9, 182);
+            this.chkMuban.Name = "chkMuban";
+            this.chkMuban.Size = new System.Drawing.Size(59, 17);
+            this.chkMuban.TabIndex = 8;
+            this.chkMuban.Text = "Muban";
+            this.chkMuban.UseVisualStyleBackColor = true;
             // 
             // chkTambonCouncil
             // 
@@ -171,6 +184,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkConstituency);
             this.groupBox2.Controls.Add(this.chkArea);
             this.groupBox2.Controls.Add(this.chkStatus);
             this.groupBox2.Controls.Add(this.chkRename);
@@ -288,15 +302,25 @@
             this.cbx_AllYears.UseVisualStyleBackColor = true;
             this.cbx_AllYears.CheckedChanged += new System.EventHandler(this.cbx_AllYears_CheckedChanged);
             // 
-            // chkMuban
+            // chkConstituency
             // 
-            this.chkMuban.AutoSize = true;
-            this.chkMuban.Location = new System.Drawing.Point(9, 182);
-            this.chkMuban.Name = "chkMuban";
-            this.chkMuban.Size = new System.Drawing.Size(59, 17);
-            this.chkMuban.TabIndex = 8;
-            this.chkMuban.Text = "Muban";
-            this.chkMuban.UseVisualStyleBackColor = true;
+            this.chkConstituency.AutoSize = true;
+            this.chkConstituency.Location = new System.Drawing.Point(12, 131);
+            this.chkConstituency.Name = "chkConstituency";
+            this.chkConstituency.Size = new System.Drawing.Size(87, 17);
+            this.chkConstituency.TabIndex = 5;
+            this.chkConstituency.Text = "Constituency";
+            this.chkConstituency.UseVisualStyleBackColor = true;
+            // 
+            // chkPAO
+            // 
+            this.chkPAO.AutoSize = true;
+            this.chkPAO.Location = new System.Drawing.Point(9, 204);
+            this.chkPAO.Name = "chkPAO";
+            this.chkPAO.Size = new System.Drawing.Size(48, 17);
+            this.chkPAO.TabIndex = 6;
+            this.chkPAO.Text = "PAO";
+            this.chkPAO.UseVisualStyleBackColor = true;
             // 
             // RoyalGazetteSearch
             // 
@@ -347,5 +371,7 @@
         private System.Windows.Forms.CheckBox chkTAO;
         private System.Windows.Forms.CheckBox chkTambonCouncil;
         private System.Windows.Forms.CheckBox chkMuban;
+        private System.Windows.Forms.CheckBox chkPAO;
+        private System.Windows.Forms.CheckBox chkConstituency;
     }
 }
