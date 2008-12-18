@@ -38,7 +38,8 @@ namespace De.AHoerstemeier.Tambon
             {EntityModification.AreaChange,"Change of area of %1%"},
             {EntityModification.Creation,"Creation of %1%"},
             {EntityModification.Rename,"Rename of %1%"},
-            {EntityModification.StatusChange,"Change of status of %1%"}
+            {EntityModification.StatusChange,"Change of status of %1%"},
+            {EntityModification.Constituency,"Constituencies of %1%"}
         };
         public static Dictionary<EntityModification, Dictionary<EntityType, String>> SearchKeys = new Dictionary<EntityModification, Dictionary<EntityType, string>>
         {
@@ -101,7 +102,15 @@ namespace De.AHoerstemeier.Tambon
                        {EntityType.Phak,"เปลี่ยนแปลงเขตภาค"},
                        {EntityType.Khet,"เปลี่ยนแปลงพื้นที่เขต กรุงเทพมหานคร"}
                    }
+             },
+             {
+                 EntityModification.Constituency,new Dictionary<EntityType,String>
+                 {
+                     {EntityType.PAO,"แบ่งเขตเลือกตั้งสมาชิกสภาองค์การบริหารส่วนจังหวัด หรือ เปลี่ยนแปลงแก้ไขเขตเลือกตั้งสมาชิกสภาองค์การบริหารส่วนจังหวัด"},
+                     {EntityType.Thesaban,"การแบ่งเขตเลือกตั้งสมาชิกสภาเทศบาล หรือ เปลี่ยนแปลงแก้ไขเขตเลือกตั้งสมาชิกสภาเทศบาล"}
+                 }
              }
+
         };
 
         private static Dictionary<ProtectedAreaTypes, String> SearchKeysProtectedAreas = new Dictionary<ProtectedAreaTypes, string>

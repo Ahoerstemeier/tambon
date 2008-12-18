@@ -24,6 +24,7 @@ namespace De.AHoerstemeier.Tambon
         Chumchon,
         TAO,
         TC,
+        PAO,
         Phak
     };
     internal enum EntityModification
@@ -32,7 +33,8 @@ namespace De.AHoerstemeier.Tambon
         Abolishment,
         Rename,
         StatusChange,
-        AreaChange
+        AreaChange,
+        Constituency
     }
     internal enum ProtectedAreaTypes
     {
