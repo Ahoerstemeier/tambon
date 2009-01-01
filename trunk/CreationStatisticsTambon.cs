@@ -89,7 +89,7 @@ namespace De.AHoerstemeier.Tambon
                         mTotal.ToString() +
                         " (" + 
                         mPercent.ToString("0#.##") + 
-                        ")");
+                        "%)");
                     iBuilder.AppendLine();
                 }
         }
