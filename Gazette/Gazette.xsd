@@ -22,13 +22,24 @@
       <xs:enumeration value="PAO"/>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="ParkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NationalPark"/>
+      <xs:enumeration value="ForestPark"/>
+      <xs:enumeration value="HistoricalPark"/>
+      <xs:enumeration value="WildlifeSanctuary"/>
+      <xs:enumeration value="NonHuntingArea"/>
+      <xs:enumeration value="HistoricalSite"/>
+      <xs:enumeration value="NationalForest"/>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name='GazetteReference'>
     <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="issue" type="xs:string" use="required"/>
     <xs:attribute name="date" type="xs:date" use="optional"/>
   </xs:complexType>
-  <xs:complexType name='GazetteOperation'>
+  <xs:complexType name="GazetteOperation">
     <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
 
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
@@ -46,6 +57,15 @@
     <xs:attribute name="parent" type="xs:unsignedInt" use="optional" />
     <xs:attribute name="parentname" type="xs:string" use="optional" />
     <!--Parent for King Amphoe-->
+  </xs:complexType>
+  <xs:complexType name="GazettePark">
+    <xs:attribute name="name" type="xs:string" use="optional" />
+    <xs:attribute name="english" type="xs:string" use="optional" />
+    <xs:attribute name="type" type="ParkType" use="required" />
+    <xs:attribute name="area" type="xs:double" use="optional" />
+    <xs:attribute name="arearai" type="xs:double" use="optional" />
+    <xs:attribute name="locationgeocode" type="xs:unsignedInt" use="optional"/><!--or maybe better a Thai address child element? -->
+    <xs:attribute name="id" type="xs:unsignedInt" use="optional"/>
   </xs:complexType>
   <xs:complexType name='GazetteReassign'>
     <xs:complexContent>
@@ -129,6 +149,10 @@
       <xs:element name="correction" type="GazetteReference"/>
       <xs:element name="renumber" type="GazetteRenumber"/>
       <xs:element name="related" type="GazetteReference"/>
+      <xs:element name="createpark" type="GazettePark"/>
+      <xs:element name="abolishpark" type="GazettePark"/>
+<!--      <xs:element name="renamepark" type="GazettePark"/> -->
+      <xs:element name="areachangepark" type="GazettePark"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name='GazetteEntry'>
