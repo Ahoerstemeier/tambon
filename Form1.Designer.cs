@@ -49,6 +49,7 @@ namespace Tambon
             this.btnTambonFrequency = new System.Windows.Forms.Button();
             this.btnTambonCreation = new System.Windows.Forms.Button();
             this.openFileDialogXML = new System.Windows.Forms.OpenFileDialog();
+            this.btnAreaUnits = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -271,11 +272,22 @@ namespace Tambon
             this.openFileDialogXML.Multiselect = true;
             this.openFileDialogXML.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialogXML_FileOk);
             // 
+            // btnAreaUnits
+            // 
+            this.btnAreaUnits.Location = new System.Drawing.Point(247, 163);
+            this.btnAreaUnits.Name = "btnAreaUnits";
+            this.btnAreaUnits.Size = new System.Drawing.Size(79, 23);
+            this.btnAreaUnits.TabIndex = 20;
+            this.btnAreaUnits.Text = "Area units";
+            this.btnAreaUnits.UseVisualStyleBackColor = true;
+            this.btnAreaUnits.Click += new System.EventHandler(this.btnAreaUnits_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnAreaUnits);
             this.Controls.Add(this.btnTambonCreation);
             this.Controls.Add(this.btnTambonFrequency);
             this.Controls.Add(this.btnNumerals);
@@ -325,6 +337,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnTambonFrequency;
         private System.Windows.Forms.Button btnTambonCreation;
         private System.Windows.Forms.OpenFileDialog openFileDialogXML;
+        private System.Windows.Forms.Button btnAreaUnits;
     }
 }
 

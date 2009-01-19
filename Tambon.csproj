@@ -161,6 +161,9 @@
     <EmbeddedResource Include="CreationStatisticForm.resx">
       <DependentUpon>CreationStatisticForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UnitConverterForm.resx">
+      <DependentUpon>UnitConverterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -192,6 +195,12 @@
     </Compile>
     <Compile Include="RoyalGazetteViewer.Designer.cs">
       <DependentUpon>RoyalGazetteViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UnitConverterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitConverterForm.Designer.cs">
+      <DependentUpon>UnitConverterForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
