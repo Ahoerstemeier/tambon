@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" geocode="35" name="ยโสธร" english="Yasothon" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" geocode="35" name="ยโสธร" english="Yasothon" >
   <entity type="Amphoe" name="เมืองยโสธร" english="Mueang Yasothon" geocode="3501" >
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="350101" />
     <entity type="Tambon" name="น้ำคำใหญ่" english="Nam Kham Yai" geocode="350102" />
@@ -27,7 +27,7 @@
       <entity type="Muban" geocode="35011204" name="บ้านกุดกง"/>
 
       <entity type="Muban" geocode="35011214" name="บ้านกุดกง"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="หนองหิน" english="Nong Hin" geocode="350113" />
     <entity type="Tambon" name="หนองคู" english="Nong Khu" geocode="350114" />
     <entity type="Tambon" name="ขุมเงิน" english="Khum Ngoen" geocode="350115" />
@@ -37,7 +37,7 @@
       <entity type="Muban" geocode="35011805" name="บ้านยางเดี่ยว"/>
 
       <entity type="Muban" geocode="35011809" name="บ้านยางเดี่ยว"/>
-      </entity>
+    </entity>
 
     <entity type="Unknown" name="นาเวียง" english="Na Wiang" geocode="350196" newgeocode="350204" />
     <entity type="Unknown" name="ดงมะไฟ" english="Dong Mafai" geocode="350197" newgeocode="350203" />
@@ -51,16 +51,37 @@
       <entity type="Muban" geocode="35020308" name="บ้านดงมะไฟ"/>
 
       <entity type="Muban" geocode="35020310" name="บ้านดงมะไฟ"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="นาเวียง" english="Na Wiang" geocode="350204" />
     <entity type="Tambon" name="ไผ่" english="Phai" geocode="350205" />
   </entity>
   <entity type="Amphoe" name="กุดชุม" english="Kut Chum" geocode="3503" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.0333</geo:lat>
+        <geo:long>104.3381</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="กุดชุม" english="Kut Chum" geocode="350301" >
+      <entity type="Muban" geocode="35030101" name="บ้านหนองบอน"/>
+      <entity type="Muban" geocode="35030102" name="บ้านหนองเรือ"/>
+      <entity type="Muban" geocode="35030103" name="บ้านเหล่าตำแย"/>
+      <entity type="Muban" geocode="35030104" name="บ้านกุดชุมคุรุ"/>
+      <entity type="Muban" geocode="35030105" name="บ้านสองคร"/>
+      <entity type="Muban" geocode="35030106" name="บ้านหนองมาลา"/>
+      <entity type="Muban" geocode="35030107" name="บ้านหนองแก"/>
+      <entity type="Muban" geocode="35030108" name="บ้านกุดชุมพัฒนา"/>
+      <entity type="Muban" geocode="35030109" name="บ้านโคกสูง"/>
       <entity type="Muban" geocode="35030110" name="บ้านหนองเมืองกลาง"/>
-
+      <entity type="Muban" geocode="35030111" name="บ้านเหล่าฝ้าย"/>
+      <entity type="Muban" geocode="35030112" name="บ้านเอราวัณ"/>
+      <entity type="Muban" geocode="35030113" name="บ้านคำกลาง"/>
+      <entity type="Muban" geocode="35030114" name="บ้านกุดชุมพํฒนา"/>
+      <entity type="Muban" geocode="35030115" name="บ้านทองสัมฤทธิ์"/>
+      <entity type="Muban" geocode="35030116" name="บ้านนามน"/>
+      <entity type="Muban" geocode="35030117" name="บ้านกุดชุมพัฒนา"/>
       <entity type="Muban" geocode="35030118" name="บ้านหนองบอน"/>
-
+      <entity type="Muban" geocode="35030119" name="บ้านเหล่าตำแย"/>
       <entity type="Muban" geocode="35030120" name="บ้านหนองบัว"/>
       <entity type="Muban" geocode="35030121" name="บ้านหนองเมืองกลาง"/>
     </entity>
@@ -87,15 +108,15 @@
       <entity type="Muban" geocode="35040601" name="บ้านนาห่อม"/>
 
       <entity type="Muban" geocode="35040606" name="บ้านนาห่อม"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="ดงแคนใหญ่" english="Dong Khaen Yai" geocode="350407" >
       <entity type="Muban" geocode="35040702" name="บ้านนาถ่ม"/>
 
       <entity type="Muban" geocode="35040710" name="บ้านดงแคนใหญ่"/>
 
       <entity type="Muban" geocode="35040712" name="บ้านนาถ่ม"/>
-        <entity type="Muban" geocode="35040713" name="บ้านดงแคนใหญ่"/>
-      </entity>
+      <entity type="Muban" geocode="35040713" name="บ้านดงแคนใหญ่"/>
+    </entity>
     <entity type="Tambon" name="กู่จาน" english="Ku Chan" geocode="350408" />
     <entity type="Tambon" name="นาแก" english="Na Kae" geocode="350409" />
     <entity type="Tambon" name="กุดกุง" english="Kut Kung" geocode="350410" />
@@ -148,8 +169,8 @@
       <entity type="Muban" geocode="35080515" name="บ้านโพง"/>
 
       <entity type="Muban" geocode="35080518" name="บ้านห้องแซง"/>
-        <entity type="Muban" geocode="35080519" name="บ้านนาหว้า"/>
-      </entity>
+      <entity type="Muban" geocode="35080519" name="บ้านนาหว้า"/>
+    </entity>
     <entity type="Tambon" name="สามัคคี" english="Samakkhi" geocode="350806" />
     <entity type="Tambon" name="กุดเชียงหมี" english="Kut Chiang Mi" geocode="350807" />
     <entity type="Tambon" name="คำเตย" english="Kham Toei" geocode="350808" newgeocode="350904" />
@@ -189,7 +210,14 @@
 
   <entity type="ThesabanMueang" name="ยโสธร" english="Yasothon" geocode="3599" parent="3501" />
   <entity type="ThesabanTambon" name="ทรายมูล" english="Sai Mun" geocode="3598" parent="3502" />
-  <entity type="ThesabanTambon" name="กุดชุมพัฒนา" english="Kut Chum Phanna" geocode="3597" parent="3503" />
+  <entity type="ThesabanTambon" name="กุดชุมพัฒนา" english="Kut Chum Phatthana" geocode="3597" parent="3503" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.0332</geo:lat>
+        <geo:long>104.3397</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="คำเขื่อนแก้ว" english="Kham Khuean Kaeo" geocode="3596" parent="3504" />
   <entity type="ThesabanTambon" name="ป่าติ้ว" english="Pa Tio" geocode="3595" parent="3505" />
   <entity type="ThesabanTambon" name="ฟ้าหยาด" english="Fa Yat" geocode="3594" parent="3506" />
