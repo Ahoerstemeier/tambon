@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="EntityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TAO"/>
+      <xs:enumeration value="ThesabanTambon"/>
+      <xs:enumeration value="ThesabanMueang"/>
+      <xs:enumeration value="ThesabanNakhon"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name='GazetteReference'>
+    <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="issue" type="xs:string" use="required"/>
+    <xs:attribute name="date" type="xs:date" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="BasicOperation">
+    <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="english" type="xs:string" use="required" />
+    <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="effective" type="xs:date" use="optional"/>
+    <xs:attribute name="comment" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name='RenameOperation'>
+    <xs:complexContent>
+      <xs:extension base="BasicOperation">
+        <xs:attribute name="type" type="EntityType" use="required" />
+        <xs:attribute name="oldname" type="xs:string" use="required" />
+        <xs:attribute name="oldenglish" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='AreaOperation'>
+    <xs:complexContent>
+      <xs:extension base="BasicOperation">
+        <xs:attribute name="type" type="EntityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='StatusOperation'>
+    <xs:complexContent>
+      <xs:extension base="BasicOperation">
+        <xs:attribute name="old" type="EntityType" use="required" />
+        <xs:attribute name="new" type="EntityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:group name="EntryAction" >
+    <xs:choice>
+      <xs:element name="status" type="StatusOperation"/>
+      <xs:element name="rename" type="RenameOperation"/>
+      <xs:element name="areachange" type="AreaOperation"/>
+      <xs:element name="related" type="GazetteReference"/>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name='MeetingEntry'>
+    <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="date" type="xs:date" use="required" />
+    <xs:attribute name="url" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name='MeetingEntryContainer'>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="boardmeeting" type="MeetingEntry"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="MeetingEntryContainer"/>
+    </xs:sequence>
+    <xs:attribute name="value" type="xs:string" use="required" />
+  </xs:complexType>
+
+
+  <xs:element name="boardmeetings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="MeetingEntryContainer"/>
+      </xs:sequence>
+    </xs:complexType>
+
+  </xs:element>
+</xs:schema>
