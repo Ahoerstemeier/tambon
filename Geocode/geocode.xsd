@@ -94,7 +94,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" ref="geo:Point" />
       <xs:element minOccurs="0" name="address" type="ThaiAddress"/>
-      <xs:element minOccurs="0" name="url" type="xs:anyURI"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="xs:anyURI"/>
     </xs:sequence>
     <xs:attribute name="type" type="OfficeType" use="required" />
   </xs:complexType>
