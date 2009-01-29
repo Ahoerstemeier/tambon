@@ -172,9 +172,6 @@
   </entity>
   <entity type="Amphoe" name="บ้านธิ" english="Ban Thi" geocode="5107" >
     <entity type="Tambon" name="บ้านธิ" english="Ban Thi" geocode="510701" >
-      <office type="TAOOffice">
-        <url>http://www.banthi.org</url>
-      </office>
       <entity type="Muban" geocode="51070101" name="บ้านเตาปูน"/>
       <entity type="Muban" geocode="51070102" name="บ้านป่าเปา"/>
       <entity type="Muban" geocode="51070103" name="บ้านธิหลวง"/>
@@ -225,6 +222,9 @@
   <entity type="ThesabanTambon" name="ป่าซาง" english="Pasang" geocode="5189" parent="5106" />
   <entity type="ThesabanTambon" name="ม่วงน้อย" english="Muang Noi" geocode="5188" parent="5106" />
   <entity type="ThesabanTambon" name="วังผาง" english="Wang Phang" geocode="5187" parent="5108" />
-  <entity type="ThesabanTambon" name="บ้านธิ" english="Ban Thi" geocode="5186" parent="5107" />
-  <entity type="ThesabanTambon" name="แม่แรง" english="Mae Raeng" geocode="5185" parent="5106" />
-</entity>
+  <entity type="ThesabanTambon" name="บ้านธิ" english="Ban Thi" geocode="5186" parent="5107" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banthi.org/</url>
+    </office>
+    <entity type="ThesabanTambon" name="แม่แรง" english="Mae Raeng" geocode="5185" parent="5106" />
+  </entity>
