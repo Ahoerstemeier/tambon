@@ -136,6 +136,9 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="GazetteSuggestion">
+    <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="1"/>
+  </xs:complexType>
   <xs:group name="EntryAction" >
     <xs:choice>
       <xs:element name="reassign" type="GazetteReassign"/>
@@ -154,6 +157,7 @@
       <xs:element name="abolishpark" type="GazettePark"/>
 <!--      <xs:element name="renamepark" type="GazettePark"/> -->
       <xs:element name="areachangepark" type="GazettePark"/>
+      <xs:element name="suggestion" type="GazetteSuggestion"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name='GazetteEntry'>
