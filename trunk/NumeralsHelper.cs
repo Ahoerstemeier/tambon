@@ -126,6 +126,9 @@ namespace De.AHoerstemeier.Tambon
               {'˜','๗'},
               {'¯','๘'},
               {'˘','๙'},
+
+              // special characters
+              {'Ê','ๆ'},
               
               // non-Thai characters
               {'ç','“'},
