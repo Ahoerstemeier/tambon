@@ -170,9 +170,12 @@
   </entity>
   
   <entity type="ThesabanMueang" name="ปทุมธานี" english="Pathum Thani" geocode="1399" parent="1301" />
-  <entity type="ThesabanMueang" name="รังสิต" english="Rangsit" geocode="1398" parent="1303" />
-  <entity type="ThesabanMueang" name="ประชาธิปัตย์" newname="รังสิต" english="Prachathipat" geocode="1398" parent="1303" />
-    <entity type="ThesabanMueang" name="คูคต" english="Khu Khot" geocode="1397" parent="1306" />
+  <entity type="ThesabanMueang" name="รังสิต" english="Rangsit" geocode="1398" parent="1303" >
+    <history>
+      <rename oldname="ประชาธิปัตย์" name="รังสิต" oldenglish="Prachathipat" />
+    </history>  
+  </entity>
+  <entity type="ThesabanMueang" name="คูคต" english="Khu Khot" geocode="1397" parent="1306" />
   <entity type="ThesabanMueang" name="ท่าโขลง" english="Tha Khlong" geocode="1396" parent="1302" />
   <entity type="ThesabanTambon" name="บางหลวง" english="Bang Luang" geocode="1395" parent="1301" />
   <entity type="ThesabanMueang" name="คลองหลวง" english="Khlong Luang" geocode="1394" parent="1302" />

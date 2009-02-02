@@ -13,6 +13,7 @@
       <xs:enumeration value="Khet"/>
       <xs:enumeration value="Khwaeng"/>
       <xs:enumeration value="Muban"/>
+      <xs:enumeration value="Mueang"/>
       <xs:enumeration value="Monthon"/>
       <xs:enumeration value="Phak"/>
       <xs:enumeration value="TAO"/>
@@ -115,12 +116,52 @@
       <xs:element maxOccurs="unbounded" name="data" type="AreaData"/>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="HistoryEntry">
+    <xs:attribute name="effective" type="xs:date" use="optional" />
+    <xs:attribute name="comment" type="xs:string" use="optional" />
+  </xs:complexType>  
+  <xs:complexType name="HistoryStatus">
+    <xs:complexContent>
+      <xs:extension base="HistoryEntry">
+        <xs:attribute name="old" type="EntityType" use="required" />
+        <xs:attribute name="new" type="EntityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HistoryRename">
+    <xs:complexContent>
+      <xs:extension base="HistoryEntry">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="oldname" type="xs:string" use="required" />
+        <xs:attribute name="oldenglish" type="xs:string" use="optional" />
+        <xs:attribute name="english" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HistorySpelling">
+    <xs:complexContent>
+      <xs:extension base="HistoryEntry">
+        <xs:attribute name="name" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:group name="History" >
+    <xs:choice>
+      <xs:element maxOccurs="unbounded" name="rename" type="HistoryRename"/>
+      <xs:element maxOccurs="unbounded" name="statuschange" type="HistoryStatus"/>
+      <xs:element maxOccurs="unbounded" name="misspelling" type="HistorySpelling"/>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name="HistoryList">
+    <xs:group ref="History" maxOccurs="unbounded" minOccurs="0"/>
+  </xs:complexType>
   <xs:complexType name="Entity">
     <xs:sequence minOccurs="0">
       <xs:element minOccurs="0" name="slogan" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="Office"/>
       <xs:element minOccurs="0" name="area" type="Area"/>
       <xs:element minOccurs="0" name="officials" type="OfficialList"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="history" type="HistoryList"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="Entity"/>
     </xs:sequence>
     <xs:attribute name="type" type="EntityType" use="required" />
@@ -128,8 +169,6 @@
     <xs:attribute name="english" type="xs:string" use="optional" />
     <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
     <xs:attribute name="newgeocode" type="xs:unsignedInt" use="optional" />
-    <xs:attribute name="newname" type="xs:string" use="optional" />
-    <xs:attribute name="oldname" type="xs:string" use="optional" />
     <xs:attribute name="parent" type="xs:string" use="optional" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
     <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />

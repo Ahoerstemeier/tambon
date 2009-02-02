@@ -170,8 +170,11 @@
   <entity type="ThesabanTambon" name="พานทอง" english="Phan Thong" geocode="2083" parent="2005" />
   <entity type="ThesabanTambon" name="หนองตำลึง" english="Nong Tamlueng" geocode="2082" parent="2005" />
   <entity type="ThesabanTambon" name="บางพระ" english="Bang Phra" geocode="2081" parent="2007" />
-  <entity type="ThesabanTambon" name="เจ้าพระยาสุรศักดิ์" english="Chao Phraya Surasak" geocode="2080" parent="2007" />
-  <entity type="ThesabanTambon" name="อ่าวอุดม" newname="เจ้าพระยาสุรศักดิ์" english="Ao Udom" geocode="2080" parent="2007" />
+  <entity type="ThesabanTambon" name="เจ้าพระยาสุรศักดิ์" english="Chao Phraya Surasak" geocode="2080" parent="2007" >
+    <history>
+      <rename oldname="อ่าวอุดม" name="เจ้าพระยาสุรศักดิ์" oldenglish="Ao Udom" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="เกาะสีชัง" english="Ko Sichang" geocode="2079" parent="2008" />
   <entity type="ThesabanTambon" name="นาจอมเทียน" english="Na Chom Thian" geocode="2078" parent="2009" />
   <entity type="ThesabanTambon" name="บางเสร่" english="Bang Sare" geocode="2077" parent="2009" />
@@ -179,8 +182,10 @@
   <entity type="ThesabanTambon" name="บ่อทอง" english="Bo Thong" geocode="2075" parent="2010" />
   <entity type="ThesabanTambon" name="เกาะจันทร์" english="Ko Chan" geocode="2074" parent="2011" />
   <entity type="ThesabanTambon" name="ท่าบุญมี" english="Tha Bunmi" geocode="2073" parent="2011" />
-  <entity type="ThesabanMueang" name="หนองปรือ" english="Nong Prue" geocode="2072" parent="2004" />
-  <entity type="Unknown" name="หนองปรือ" english="Nong Prue" geocode="207201" />
+  <entity type="ThesabanMueang" name="หนองปรือ" english="Nong Prue" geocode="2072" parent="2004" >
+    <entity type="Unknown" name="หนองปรือ" english="Nong Prue" geocode="207201" />
+  </entity>
+  <entity type="ThesabanTambon" name="ธาตุทอง" english="That Thong" geocode="2071" parent="2010" tambon="201004" />
 
-  <entity type="SakhaTambon" name="บางเสร่" english="Bang Sare" geocode="2051" parent="2009" />
+    <entity type="SakhaTambon" name="บางเสร่" english="Bang Sare" geocode="2051" parent="2009" />
 </entity>
