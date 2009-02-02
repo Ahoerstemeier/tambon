@@ -23,7 +23,7 @@
       <entity type="Muban" geocode="15011303" name="บ้านท่ามอญ"/>
       <entity type="Muban" geocode="15011304" name="บ้านสวนมะม่วง"/>
       <entity type="Muban" geocode="15011305" name="บ้านคลองวัว"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="ย่านซื่อ" english="Yan Sue" geocode="150114" />
   </entity>
   <entity type="Amphoe" name="ไชโย" english="Chaiyo" geocode="1502" >
@@ -101,8 +101,12 @@
   <entity type="ThesabanMueang" name="อ่างทอง" english="Ang Thong" geocode="1599" parent="1501" />
   <entity type="ThesabanTambon" name="ป่าโมก" english="Pa Mok" geocode="1598" parent="1503" />
   <entity type="ThesabanTambon" name="เกษไชโย" english="Ket Chaiyo" geocode="1597" parent="1502" />
-  <entity type="ThesabanTambon" name="จรเข้ร้อง" english="Chorakhe Rong " geocode="1596" parent="1502" />
-  <entity type="ThesabanTambon" name="จระเข้ร้อง" newname="จรเข้ร้อง" english="Chorakhe Rong " geocode="1596" parent="1502" comment="Alternative spelling used 2001-2003"/>
+  <entity type="ThesabanTambon" name="ไชโย" english="Chaiyo" geocode="1596" parent="1502" >
+    <history>
+      <rename oldname="จรเข้ร้อง" oldenglish="Chorakhe Rong" name="ไชโย" />
+      <misspelling name="จระเข้ร้อง" comment="Alternative spelling used 2001-2003"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="โพธิ์ทอง" english="Pho Thong" geocode="1595" parent="1504" />
   <entity type="ThesabanTambon" name="รำมะสัก" english="Ram Masak " geocode="1594" parent="1504" />
   <entity type="ThesabanTambon" name="แสวงหา" english="Sawaeng Ha" geocode="1593" parent="1505" />
@@ -110,5 +114,5 @@
   <entity type="ThesabanTambon" name="ศาลเจ้าโรงทอง" english="San Chao Rong Thong " geocode="1591" parent="1506" />
   <entity type="ThesabanTambon" name="สามโก้" english="Samko" geocode="1590" parent="1507" />
   <entity type="ThesabanTambon" name="โพสะ" english="Phosa" geocode="1589" parent="1501" />
-  
+
 </entity>

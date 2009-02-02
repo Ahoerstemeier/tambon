@@ -21,7 +21,7 @@
       <entity type="Muban" geocode="23010710" name="บ้านเขาระกำ"/>
       <entity type="Muban" geocode="23010711" name="บ้านหินเพลิง"/>
       <entity type="Muban" geocode="23010712" name="บ้านราษฎร์สามัคคี"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="ห้วยแร้ง" english="Huai Raeng" geocode="230108" >
       <entity type="Muban" geocode="23010805" name="บ้านปากพีด"/>
 
@@ -72,7 +72,7 @@
       <entity type="Muban" geocode="23050202" name="บ้านหนองใหญ่"/>
 
       <entity type="Muban" geocode="23050204" name="บ้านท่าประดู่"/>
-      
+
     </entity>
     <entity type="Tambon" name="บางปิด" english="Bang Pit" geocode="230503" />
     <entity type="Tambon" name="เกาะช้าง" english="Ko Chang" geocode="230504" newgeocode="230701" />
@@ -106,8 +106,11 @@
   <entity type="KingAmphoe" name="ราชการุณย์" english="Rat Karun" geocode="2308" />
 
   <entity type="ThesabanMueang" name="ตราด" english="Trat" geocode="2399" parent="2301" />
-  <entity type="ThesabanTambon" name="ท่าพริกเนินทราย" english="Tha Phrik Noen Sai" geocode="2398" parent="2301" />
-  <entity type="ThesabanTambon" name="ท่าพริก" newname="ท่าพริกเนินทราย" english="Tha Phrik" geocode="2398" parent="2301" />
+  <entity type="ThesabanTambon" name="ท่าพริกเนินทราย" english="Tha Phrik Noen Sai" geocode="2398" parent="2301" >
+    <history>
+      <rename oldname="ท่าพริก" name="ท่าพริกเนินทราย" oldenglish="Tha Phrik" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="คลองใหญ่" english="Khlong Yai" geocode="2397" parent="2302" />
   <entity type="ThesabanTambon" name="หาดเล็ก" english="Hat Lek" geocode="2396" parent="2302" />
   <entity type="ThesabanTambon" name="เขาสมิง" english="Khao Saming" geocode="2395" parent="2303" />

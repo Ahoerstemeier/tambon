@@ -124,10 +124,16 @@
       <entity type="Muban" geocode="11030411" name="บ้านคลองโอ่งแตก"/>
     </entity>
     <entity type="Tambon" name="บางเสาธง" english="Bang Sao Thong" geocode="110305" newgeocode="110601" />
-    <entity type="Tambon" name="ศีรษะจรเข้ใหญ่" english="Sisa Chorakhe Yai" geocode="110306" newgeocode="110603" />
-    <entity type="Tambon" name="ศรีษะจรเข้ใหญ่" newname="ศีรษะจรเข้ใหญ่" english="Sisa Chorakhe Yai" geocode="110306" newgeocode="110603" comment="Spelling variant?" />
-    <entity type="Tambon" name="ศีรษะจรเข้น้อย" english="Sisa Chorakhe Noi" geocode="110307" newgeocode="110602" />
-    <entity type="Tambon" name="ศรีษะจรเข้น้อย" newname="ศีรษะจรเข้น้อย" english="Sisa Chorakhe Noi" geocode="110307" newgeocode="110602" comment="Spelling variant?" />
+    <entity type="Tambon" name="ศีรษะจรเข้ใหญ่" english="Sisa Chorakhe Yai" geocode="110306" newgeocode="110603" >
+      <history>
+        <misspelling name="ศรีษะจรเข้ใหญ่" comment="Spelling variant?" />
+      </history>
+    </entity>
+    <entity type="Tambon" name="ศีรษะจรเข้น้อย" english="Sisa Chorakhe Noi" geocode="110307" newgeocode="110602" >
+      <history>
+        <misspelling name="ศรีษะจรเข้น้อย" comment="Spelling variant?" />
+      </history>
+    </entity>
     <entity type="Tambon" name="ราชาเทวะ" english="Racha Thewa" geocode="110308" >
       <entity type="Muban" geocode="11030801" name="บ้านคลองลาดกระบัง"/>
       <entity type="Muban" geocode="11030802" name="บ้านคลองลาดกระบัง"/>
@@ -197,4 +203,10 @@
   <entity type="ThesabanTambon" name="พระสมุทรเจดีย์" english="Phra Samut Chedi" geocode="1186" parent="1105" />
   <entity type="ThesabanTambon" name="แหลมฟ้าผ่า" english="Laem Fa Pha" geocode="1185" parent="1105" />
   <entity type="ThesabanTambon" name="บางเสาธง" english="Bang Sao Thong" geocode="1184" parent="1106" />
+  <entity type="ThesabanMueang" name="ปากน้ำสมุทรปราการ" english="Pak Nam Samut Prakan" geocode="1183" parent="1101" tambon="110103" >
+    <history>
+      <statuschange old="TAO" new="ThesabanMueang" effective="2007-07-05"/>
+      <rename oldname="บางเมือง" oldenglish="Bang Mueang" name="ปากน้ำสมุทรปราการ" english="Pak Nam Samut Prakan" effective="2007-07-05"/>
+    </history>
+  </entity>
 </entity>
