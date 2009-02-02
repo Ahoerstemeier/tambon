@@ -79,7 +79,7 @@ namespace Tambon
             // 
             this.edt_year.Location = new System.Drawing.Point(25, 70);
             this.edt_year.Maximum = new decimal(new int[] {
-            2007,
+            2008,
             0,
             0,
             0});
