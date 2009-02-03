@@ -254,9 +254,9 @@
     <entity type="Tambon" name="หนองมะแซว" english="Nong Masaeo" geocode="341620" newgeocode="370115" />
     <entity type="Tambon" name="แมด" english="Maet" geocode="341621" newgeocode="342306,370706" />
     <entity type="Tambon" name="กุดปลาดุก" english="Kut Pla Duk" geocode="341622" newgeocode="370116" />
-      <entity type="Tambon" name="โนนงาม" english="Non Ngam" geocode="341623" newgeocode="342706,370306" />
+    <entity type="Tambon" name="โนนงาม" english="Non Ngam" geocode="341623" newgeocode="342706,370306" />
 
-     </entity>
+  </entity>
   <entity type="Amphoe" name="เสนางคนิคม" english="Senangkhanikhom" geocode="3417" newgeocode="3705" >
     <entity type="Tambon" name="เสนางคนิคม" english="Senangkhanikhom" geocode="341701" newgeocode="370501" />
     <entity type="Tambon" name="โพนทอง" english="Phon Thong" geocode="341702" newgeocode="370502" />
@@ -341,8 +341,11 @@
     <entity type="Tambon" name="คันไร่" english="Khan Rai" geocode="342501" />
     <entity type="Tambon" name="ช่องเม็ก" english="Chong Mek" geocode="342502" />
     <entity type="Tambon" name="โนนก่อ" english="Non Ko" geocode="342503" />
-    <entity type="Tambon" name="นิคมสร้างตนเองลำโดมน้อย" english="Nikhom Lam Dom Noi" geocode="342504" />
-    <entity type="Tambon" name="นิคมลำโดมน้อย" newname="นิคมสร้างตนเองลำโดมน้อย" english="Nikhom Lam Dom Noi" geocode="342504" />    
+    <entity type="Tambon" name="นิคมสร้างตนเองลำโดมน้อย" english="Nikhom Lam Dom Noi" geocode="342504" >
+      <history>
+        <misspelling name="นิคมลำโดมน้อย"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="ฝางคำ" english="Fang Kham" geocode="342505" />
     <entity type="Tambon" name="คำเขื่อนแก้ว" english="Kham Khuean Kaeo" geocode="342506" />
   </entity>
@@ -399,14 +402,21 @@
   <entity type="ThesabanMueang" name="พิบูลมังสาหาร" english="Phibun Mangsahan" geocode="3497" parent="3419,3409" />
   <!--3409 only because of apparent mistake in DOPA population data of early 1990s, which refer to a Tambon Song-->
   <entity type="ThesabanTambon" name="อุบล" english="Ubon" geocode="3496" parent="3401" />
-  <entity type="ThesabanTambon" name="ศรีเมืองใหม่" english="Si Mueang Mai" geocode="3495" parent="3402" />
-  <entity type="ThesabanTambon" name="นาเอือด" newname="ศรีเมืองใหม่" english="Na Ueat" geocode="3495" parent="3402" />
+  <entity type="ThesabanTambon" name="ศรีเมืองใหม่" english="Si Mueang Mai" geocode="3495" parent="3402" >
+    <history>
+      <rename oldname="นาเอือด" name="ศรีเมืองใหม่" oldenglish="Na Ueat" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="บ้านด่าน" english="Ban Dan" geocode="3494" parent="3403" />
   <entity type="ThesabanTambon" name="เขื่องใน" english="Khueang Nai" geocode="3493" parent="3404" />
   <entity type="ThesabanTambon" name="เขมราฐ" english="Khemarat" geocode="3492" parent="3405" />
   <entity type="ThesabanTambon" name="นาส่วง" english="Na Suang" geocode="3491" parent="3407" />
   <entity type="ThesabanTambon" name="บัวงาม" english="Bua Ngam" geocode="3490" parent="3407" />
-  <entity type="ThesabanTambon" name="เมืองเดช" english="Mueang Det" geocode="3489" parent="3407" />
+  <entity type="ThesabanMueang" name="เดชอุดม" english="Det Udom" geocode="3489" parent="3407" >
+    <history>
+      <rename oldname="เมืองเดช" oldenglish="Mueang Det" name="เดชอุดม"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="นาจะหลวย" english="Na Chaluai" geocode="3488" parent="3408" />
   <entity type="ThesabanTambon" name="น้ำยืน" english="Nam Yuen" geocode="3487" parent="3409" />
   <entity type="ThesabanTambon" name="บุญฑริก" english="Buntharik" geocode="3486" parent="3410" />
@@ -423,4 +433,6 @@
   <entity type="ThesabanTambon" name="ขามใหญ่" english="Kham Yai" geocode="3475" parent="3401" />
   <entity type="ThesabanTambon" name="กุดประทาย" english="Kut Prathai" geocode="3474" parent="3407" />
   <entity type="ThesabanTambon" name="นิคมสร้างตนเองลำโดมน้อย" english="Nikhom Sang Ton-eng Lam Dom Noi" geocode="3473" parent="3425" />
+  <entity type="ThesabanTambon" name="คอแลน" english="Kho Laen" geocode="3472" parent="3410" tambon="341003" />
+  <entity type="ThesabanTambon" name="ปทุม" english="Pathum" geocode="3471" parent="3401" tambon="340107" />
 </entity>

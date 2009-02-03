@@ -65,8 +65,11 @@
 
       <entity type="Muban" geocode="92030410" name="บ้านนาหยีค้อม"/>
     </entity>
-    <entity type="Tambon" name="โพรงจระเข้" english="Phrong Chorakhe" geocode="920305" />
-    <entity type="Tambon" newname="โพรงจระเข้" name="โพรงจรเข้" english="Phrong Chorakhe" geocode="920305" comment="Misspelled on DOPA"/>
+    <entity type="Tambon" name="โพรงจระเข้" english="Phrong Chorakhe" geocode="920305" >
+      <history>
+        <misspelling name="โพรงจรเข้" comment="Misspelled on DOPA"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="ทุ่งกระบือ" english="Thung Krabue" geocode="920306" />
     <entity type="Tambon" name="ทุ่งค่าย" english="Thung Khai" geocode="920307" >
       <entity type="Muban" geocode="92030703" name="บ้านควนยาง"/>
@@ -120,8 +123,8 @@
       <entity type="Muban" geocode="92050405" name="บ้านฉางหลาง"/>
       <entity type="Muban" geocode="92050406" name="บ้านผมเด็น"/>
       <entity type="Muban" geocode="92050407" name="บ้านนาหละ"/>
-      </entity>
-      <entity type="Tambon" name="นาเมืองเพชร" english="Na Mueang Phet" geocode="920505" >
+    </entity>
+    <entity type="Tambon" name="นาเมืองเพชร" english="Na Mueang Phet" geocode="920505" >
       <entity type="Muban" geocode="92050501" name="บ้านห้วยไทร"/>
       <entity type="Muban" geocode="92050502" name="บ้านเขาแก้ว"/>
       <entity type="Muban" geocode="92050503" name="บ้านห้วยน้ำดำ"/>
@@ -216,8 +219,11 @@
   <entity type="ThesabanTambon" name="สิเกา" english="Sikao" geocode="9291" parent="9205" />
   <entity type="ThesabanTambon" name="นาวง" english="Na Wong" geocode="9290" parent="9206" />
   <entity type="ThesabanTambon" name="ลำภูรา" english="Lam Phu Ra" geocode="9289" parent="9206" />
-  <entity type="ThesabanTambon" name="วังวิเศษ" english="Wang Wiset" geocode="9288" parent="9207" />
-  <entity type="ThesabanTambon" newname="วังวิเศษ" name="วังมะปรางเหนือ" english="Wang Maprang Nuea" geocode="9288" parent="9207" comment="Renamed in 2003"/>
+  <entity type="ThesabanTambon" name="วังวิเศษ" english="Wang Wiset" geocode="9288" parent="9207" >
+    <history>
+      <rename name="วังวิเศษ" oldname="วังมะปรางเหนือ" oldenglish="Wang Maprang Nuea" comment="Renamed in 2003"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="นาโยงเหนือ" english="Na Yong Nuea" geocode="9287" parent="9208" />
   <entity type="ThesabanTambon" name="คลองปาง" english="Khlong Pang" geocode="9286" parent="9209" />
 

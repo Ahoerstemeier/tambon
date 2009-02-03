@@ -348,8 +348,8 @@
     <entity type="Tambon" name="ไพศาล" english="Phaisan" geocode="450515" />
     <entity type="Tambon" name="เทอดไทย" english="Thoet Thai" geocode="450516" newgeocode="452002" />
     <entity type="Tambon" name="เมืองน้อย" english="Mueang Noi" geocode="450517" />
-    <entity type="Tambon" name="โนนศิลา" english="Non Sila" geocode="450517" abolished="???"/>
-    <entity type="Tambon" name="โนนศิลา" english="Non Sila" geocode="450518" abolished="???"/>
+    <entity type="Tambon" name="โนนศิลา" english="Non Sila" geocode="450517" comment="Abolished?"/>
+    <entity type="Tambon" name="โนนศิลา" english="Non Sila" geocode="450518" comment="Abolished?"/>
     <entity type="Tambon" name="เชียงขวัญ" english="Chiang Khwan" geocode="450519" newgeocode="451801" />
     <entity type="Tambon" name="บึงนคร" english="Bueng Nakhon" geocode="450520" />
     <entity type="Tambon" name="พลับพลา" english="Phlapphla" geocode="450521" newgeocode="451802" />
@@ -423,8 +423,11 @@
     <entity type="Unknown" name="ขามเบี้ย" english="Kham Pia" geocode="450799" newgeocode="450801" />
   </entity>
   <entity type="Amphoe" name="โพธิ์ชัย" english="Pho Chai" geocode="4508" >
-    <entity type="Tambon" name="ขามเปี้ย" english="Kham Pia" geocode="450801" />
-    <entity type="Tambon" name="ขามเบี้ย" newname="ขามเปี้ย" english="Kham Pia" geocode="450801" comment="Misspelled in DOPA population, or old spelling?"/>
+    <entity type="Tambon" name="ขามเปี้ย" english="Kham Pia" geocode="450801" >
+      <history>
+        <misspelling name="ขามเบี้ย" comment="Misspelled in DOPA population, or old spelling?"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="เชียงใหม่" english="Chiang Mai" geocode="450802" />
     <entity type="Tambon" name="บัวคำ" english="Bua Kham" geocode="450803" />
     <entity type="Tambon" name="อัคคะคำ" english="Akkha Kham" geocode="450804" />
@@ -705,9 +708,16 @@
   <entity type="ThesabanTambon" name="ชัยวารี" english="Chai Wari" geocode="4590" parent="4508" />
   <entity type="ThesabanTambon" name="เชียงใหม่" english="Chiang Mai" geocode="4589" parent="4508" />
   <entity type="ThesabanTambon" name="หนองพอก" english="Nong Phok" geocode="4588" parent="4509" />
-  <entity type="ThesabanTambon" name="กลาง" english="Klang" geocode="4587" parent="4510" />
-  <entity type="ThesabanTambon" name="สุวรรณภูมิ" english="Suwannaphum" geocode="4586" parent="4511" />
-  <entity type="ThesabanTambon" name="สระคู" newname="สุวรรณภูมิ" english="Suwannaphum" geocode="4586" parent="4511" />
+  <entity type="ThesabanTambon" name="เสลภูมิ" english="Selaphum" geocode="4587" parent="4510" >
+    <history>
+      <rename oldname="กลาง" oldenglish="Klang" name="ลเสลภูมิ"/>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="สุวรรณภูมิ" english="Suwannaphum" geocode="4586" parent="4511" >
+    <history>
+      <rename oldname="สระคู" name="สุวรรณภูมิ" oldenglish="Suwannaphum"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="เมืองสรวง" english="Mueang Suang" geocode="4585" parent="4512" />
   <entity type="ThesabanTambon" name="โพนทราย" english="Phon Sai" geocode="4584" parent="4513" />
   <entity type="ThesabanTambon" name="อาจสามารถ" english="At Samat" geocode="4583" parent="4514" />

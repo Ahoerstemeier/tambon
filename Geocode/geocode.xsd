@@ -168,7 +168,8 @@
     <xs:attribute name="name" type="xs:string" use="required" />
     <xs:attribute name="english" type="xs:string" use="optional" />
     <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
-    <xs:attribute name="newgeocode" type="xs:unsignedInt" use="optional" />
+    <!--have to find better way for this-->
+    <xs:attribute name="newgeocode" type="xs:string" use="optional" />
     <xs:attribute name="parent" type="xs:string" use="optional" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
     <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />

@@ -323,7 +323,7 @@
     </entity>
     <entity type="Tambon" name="สะลวง" english="Saluang" geocode="500705" />
     <entity type="Tambon" name="ห้วยทราย" english="Huai Sai" geocode="500706" >
-      <entity type="Muban" geocode="50070605" name="บ้านหัวฝาย" english="Ban Hua Fai" oldname="บ้านเหล่า"/>
+      <entity type="Muban" geocode="50070605" name="บ้านหัวฝาย" english="Ban Hua Fai" comment="Old name: บ้านเหล่า"/>
     </entity>
     <entity type="Tambon" name="แม่แรม" english="Mae Raem" geocode="500707" >
       <entity type="Muban" geocode="50070705" name="บ้านป่าม่วง"/>
@@ -602,7 +602,7 @@
     <entity type="Tambon" name="หนองหาร" english="Nong Han" geocode="501408" />
     <entity type="Tambon" name="แม่แฝก" english="Mae Faek" geocode="501409" />
     <entity type="Tambon" name="แม่แฝกใหม่" english="Mae Faek Mai" geocode="501410" >
-      <entity type="Muban" geocode="50141003" name="บ้านเจดีย์แม่ครัว"/>
+      <entity type="Muban" geocode="50141003" name="บ้านเจดีย์แม่ครัว" english="Ban Chedi Mae Khrua"/>
 
       <entity type="Muban" geocode="50141006" name="บ้านแพะเจดีย์"/>
 
@@ -838,13 +838,19 @@
 
   <entity type="ThesabanNakhon" name="เชียงใหม่" english="Chiang Mai" geocode="5099" parent="5001" />
   <entity type="ThesabanTambon" name="ช้างเผือก" english="Chang Phueak" geocode="5098" parent="5001" />
-  <entity type="ThesabanTambon" name="จอมทอง" english="Chom Thong" geocode="5097" parent="5002" />
-  <entity type="ThesabanTambon" name="บ้านหลวง" newname="จอมทอง" english="Ban Luang" geocode="5097" parent="5002" />
+  <entity type="ThesabanTambon" name="จอมทอง" english="Chom Thong" geocode="5097" parent="5002" >
+    <history>
+      <rename oldname="บ้านหลวง" name="จอมทอง" oldenglish="Ban Luang" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="แม่แจ่ม" english="Mae Chaem" geocode="5096" parent="5003" />
   <entity type="ThesabanTambon" name="เชียงดาว" english="Chiang Dao" geocode="5095" parent="5004" />
   <entity type="ThesabanTambon" name="เมืองงาย" english="Mueang Ngai" geocode="5094" parent="5004" />
-  <entity type="ThesabanTambon" name="ดอยสะเก็ด" english="Doi Saket" geocode="5093" parent="5005" />
-  <entity type="ThesabanTambon" name="เชิงดอย" newname="เชิงดอย" english="Choeng Doi" geocode="5093" parent="5005" />
+  <entity type="ThesabanTambon" name="ดอยสะเก็ด" english="Doi Saket" geocode="5093" parent="5005" >
+    <history>
+      <rename oldname="เชิงดอย" name="เชิงดอย" oldenglish="Choeng Doi" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="เมืองแกนพัฒนา" english="Mueang Kaen Phatthana" geocode="5092" parent="5006" />
   <entity type="ThesabanTambon" name="สันมหาพน" english="San Maha Phon" geocode="5091" parent="5006" />
   <entity type="ThesabanTambon" name="แม่ริม" english="Mae Rim" geocode="5090" parent="5007" />
@@ -854,8 +860,11 @@
   <entity type="ThesabanTambon" name="แม่อาย" english="Mae Ai" geocode="5086" parent="5010" />
   <entity type="ThesabanTambon" name="เวียงพร้าว" english="Wiang Phrao" geocode="5085" parent="5011" />
   <entity type="ThesabanTambon" name="บ้านกลาง" english="Ban Klang" geocode="5084" parent="5012" />
-  <entity type="ThesabanTambon" name="สันป่าตอง" english="San Pa Tong" geocode="5083" parent="5012" />
-  <entity type="ThesabanTambon" name="ยุหว่า" newname="สันป่าตอง" english="Yu Wa" geocode="5083" parent="5012" />
+  <entity type="ThesabanTambon" name="สันป่าตอง" english="San Pa Tong" geocode="5083" parent="5012" >
+    <history>
+      <rename oldname="ยุหว่า" name="สันป่าตอง" oldenglish="Yu Wa" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="ต้นเปา" english="Ton Pao" geocode="5082" parent="5013" />
   <entity type="ThesabanTambon" name="สันกำแพง" english="San Kamphaeng" geocode="5081" parent="5013" />
   <entity type="ThesabanTambon" name="แม่โจ้" english="Mae Cho" geocode="5080" parent="5014" />
@@ -871,9 +880,22 @@
   <entity type="ThesabanTambon" name="อมก๋อย" english="Omkoi" geocode="5074" parent="5018" />
   <entity type="ThesabanTambon" name="ยางเนิ้ง" english="Yang Noeng" geocode="5073" parent="5019" />
   <entity type="ThesabanTambon" name="ไชยปราการ" english="Chai Prakan" geocode="5072" parent="5021" />
-  <entity type="ThesabanTambon" name="แม่วาง" english="Mae Wang" geocode="5071" parent="5022" />
-  <entity type="ThesabanTambon" name="บ้านกาด" english="Ban Kat" newname="แม่วาง" geocode="5071" parent="5022" />
+  <entity type="ThesabanTambon" name="แม่วาง" english="Mae Wang" geocode="5071" parent="5022" >
+    <history>
+      <rename oldname="บ้านกาด" oldenglish="Ban Kat" name="แม่วาง" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="หนองป่าครั่ง" english="Nong Pa Khrang" geocode="5070" parent="5001" />
+  <entity type="ThesabanTambon" name="ชมภู" english="Chom Phu" geocode="5069" parent="5019" tambon="501903" />
+  <entity type="ThesabanTambon" name="เจดีย์แม่ครัว" english="Chedi Mae Khrua" geocode="5068" parent="5014" tambon="501410" >
+    <history>
+      <rename oldname="แม่แฝกใหม่" oldenglish="Mae Faek Mai" name="เจดีย์แม่ครัว"/>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="หนองผึ้ง" english="Nong Phueng" geocode="5067" parent="5019" tambon="501907" />
+  <entity type="ThesabanTambon" name="แม่แฝก" english="Mae Faek" geocode="5066" parent="5014" tambon="501409" />
+  <entity type="ThesabanTambon" name="หนองจ๊อม" english="Nong Chom" geocode="5065" parent="5014" tambon="501407" />
+  <entity type="ThesabanTambon" name="สารภี" english="Saraphi" geocode="5064" parent="5019" tambon="501902" />
 
   <entity type="SakhaKhwaeng" name="กาลวิละ" geocode="5051" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai"/>
   <entity type="SakhaKhwaeng" name="ศรีวิชัย" geocode="5052" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai"/>

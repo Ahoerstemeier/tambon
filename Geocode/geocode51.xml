@@ -98,12 +98,14 @@
     </entity>
     <entity type="Tambon" name="ศรีเตี้ย" english="Si Tia" geocode="510304" />
     <entity type="Tambon" name="หนองปลาสะวาย" english="Nong Pla Sawai" geocode="510305" >
+      <history>
+        <misspelling name="หนองปลาสวาย" comment="Alternative spelling in DOPA population"/>
+      </history>
       <entity type="Muban" geocode="51030502" name="บ้านหนองปลาสะวาย"/>
 
       <entity type="Muban" geocode="51030507" name="บ้านสันเจดีย์ริมปิง"/>
       <entity type="Muban" geocode="51030508" name="บ้านปากล้อง"/>
     </entity>
-    <entity type="Tambon" name="หนองปลาสวาย" newname="หนองปลาสะวาย" english="Nong Pla Sawai" geocode="510305" comment="Alternative spelling in DOPA population"/>
   </entity>
   <entity type="Amphoe" name="ลี้" english="Li" geocode="5104" >
     <entity type="Tambon" name="ลี้" english="Li" geocode="510401" >
@@ -226,6 +228,11 @@
     <office type="MunicipalityOffice">
       <url>http://www.banthi.org/</url>
     </office>
-    </entity>
-  <entity type="ThesabanTambon" name="แม่แรง" english="Mae Raeng" geocode="5185" parent="5106" />
   </entity>
+  <entity type="ThesabanTambon" name="แม่แรง" english="Mae Raeng" geocode="5185" parent="5106" />
+  <entity type="ThesabanTambon" name="เหมืองง่า" english="Mueang Nga" geocode="5184" parent="5101" tambon="510102" />
+  <entity type="ThesabanTambon" name="บ้านกลาง" english="Ban Klang" geocode="5183" parent="5101" tambon="510112" />
+  <entity type="ThesabanTambon" name="เวียงยอง" english="Wiang Yong" geocode="5182" parent="5101" tambon="510111" />
+  <entity type="ThesabanTambon" name="มะเขือแจ้" english="Makhuea Chae" geocode="5181" parent="5101" tambon="510113" />
+  <entity type="ThesabanTambon" name="มะกอก" english="Makok" geocode="5180" parent="5106" tambon="510606" />
+</entity>

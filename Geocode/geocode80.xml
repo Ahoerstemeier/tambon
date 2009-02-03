@@ -1131,7 +1131,7 @@
       <entity type="Muban" geocode="80120208" name="บ้านบางปอ"/>
       <entity type="Muban" geocode="80120209" name="บ้านบางมะขาม"/>
       <entity type="Muban" geocode="80120210" name="บ้านบางเนียน"/>
-      <entity type="Muban" geocode="80120211" oldname="บ้านบางจาก" name="บ้านราษฎร์สงวน"/>
+      <entity type="Muban" geocode="80120211" comment="Old name: บ้านบางจาก" name="บ้านราษฎร์สงวน"/>
       <!--<entity type="Muban" geocode="80120211" name="บ้านเกาะเสือ"/>-->
       <entity type="Muban" geocode="80120212" name="บ้านบางลึก"/>
       <entity type="Muban" geocode="80120213" name="บ้านแสงวิมาน"/>
@@ -1272,7 +1272,7 @@
       <entity type="Muban" geocode="80121604" name="บ้านถนน"/>
       <entity type="Muban" geocode="80121605" name="บ้านทวด"/>
       <entity type="Muban" geocode="80121606" name="บ้านกลาง"/>
-      <entity type="Muban" geocode="80121607" oldname="บ้านเกาะกัง" name="บ้านเกาะทัง"/>
+      <entity type="Muban" geocode="80121607" comment="Old name: บ้านเกาะกัง" name="บ้านเกาะทัง"/>
       <entity type="Muban" geocode="80121608" name="บ้านแสม"/>
       <entity type="Muban" geocode="80121609" name="บ้านสระท่าออก"/>
       <entity type="Muban" geocode="80121610" name="บ้านริมเขื่อน"/>
@@ -1371,8 +1371,11 @@
       <entity type="Muban" geocode="80130606" name="บ้านหัวควน"/>
       <entity type="Muban" geocode="80130607" name="บ้านทุ่งหล่อ"/>
     </entity>
-    <entity type="Tambon" name="สามตำบล" english="Sam Tambon" geocode="801307" newgeocode="801906" />
-    <entity type="Tambon" name="สาม" newname="สามตำบล" english="Sam" geocode="801307" newgeocode="801906" comment="Misnamed in DOPA statistics"/>
+    <entity type="Tambon" name="สามตำบล" english="Sam Tambon" geocode="801307" newgeocode="801906" >
+      <history>
+        <misspelling name="สาม" comment="Misnamed in DOPA statistics"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="ทางพูน" english="Thang Phun" geocode="801308" newgeocode="802304" />
     <entity type="Tambon" name="นาหมอบุญ" english="Na Mo Bun" geocode="801309" newgeocode="801905" />
     <entity type="Tambon" name="ทุ่งโพธิ์" english="Thung Pho" geocode="801310" newgeocode="801904" />
@@ -1834,7 +1837,7 @@
     <entity type="Tambon" name="ทุ่งโพธิ์" english="Thung Pho" geocode="801904" >
       <entity type="Muban" geocode="80190401" name="บ้านทุ่งโพธิ์"/>
       <entity type="Muban" geocode="80190402" name="บ้านโคกแร่"/>
-      <entity type="Muban" geocode="80190403" oldname="บ้านเขายิก" name="บ้านเขานา"/>
+      <entity type="Muban" geocode="80190403" comment="Old name: บ้านเขายิก" name="บ้านเขานา"/>
       <entity type="Muban" geocode="80190404" name="บ้านใสหินตั้ง"/>
       <entity type="Muban" geocode="80190405" name="บ้านอ้ายเลา"/>
       <entity type="Muban" geocode="80190406" name="บ้านเตาปูน"/>
@@ -1851,13 +1854,15 @@
       <entity type="Muban" geocode="80190506" name="บ้านห้วยแก้ว" comment="To be announced?"/>
     </entity>
     <entity type="Tambon" name="สามตำบล" english="Sam Tambon" geocode="801906" >
+      <history>
+        <misspelling name="สาม" comment="Misnamed in DOPA statistics"/>
+      </history>
       <entity type="Muban" geocode="80190601" name="บ้านวังใส"/>
       <entity type="Muban" geocode="80190602" name="บ้านคอพรุ"/>
       <entity type="Muban" geocode="80190603" name="บ้านวังฆ้อง"/>
       <entity type="Muban" geocode="80190604" name="บ้านสำนักไม้เรียบ"/>
       <entity type="Muban" geocode="80190605" name="บ้านสำนักขัน"/>
     </entity>
-    <entity type="Tambon" name="สาม" newname="สามตำบล" english="Sam" geocode="801906" comment="Misnamed in DOPA statistics"/>
   </entity>
   <entity type="Amphoe" name="พระพรหม" english="Phra Phrom" geocode="8020" >
     <entity type="Tambon" name="นาพรุ" english="Na Phru" geocode="802001" >
@@ -2056,8 +2061,11 @@
 
   <entity type="ThesabanNakhon" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" geocode="8099" parent="8001" />
   <entity type="ThesabanMueang" name="ปากพนัง" english="Pak Phanang" geocode="8098" parent="8012" />
-  <entity type="ThesabanMueang" name="ทุ่งสง" english="Thung Song" geocode="8097" parent="8009" />
-  <entity type="ThesabanMueang" name="ปากแพรก" newname="ทุ่งสง" english="Pak Phraek" geocode="8097" parent="8009" />
+  <entity type="ThesabanMueang" name="ทุ่งสง" english="Thung Song" geocode="8097" parent="8009" >
+    <history>
+      <rename oldname="ปากแพรก" name="ทุ่งสง" oldenglish="Pak Phraek"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าแพ" english="Tha Phae" geocode="8096" parent="8001" />
   <entity type="ThesabanTambon" name="บางจาก" english="Bang Chak" geocode="8095" parent="8001" />
   <entity type="ThesabanTambon" name="ปากนคร" english="Pak Nakhon" geocode="8094" parent="8001" />
@@ -2083,7 +2091,7 @@
   <entity type="ThesabanTambon" name="ที่วัง" english="Thi Wang" geocode="8074" parent="8009" />
   <entity type="ThesabanTambon" name="ทางพูน" english="Thang Phun" geocode="8073" parent="8023" tambon="802304" />
   <entity type="ThesabanTambon" name="เกาะเพชร" english="Ko Phet" geocode="7072" parent="8016" tambon="801611" />
-      
+
   <entity type="SakhaTambon" name="เสือหึง" english="Suea Hueng" geocode="8051" parent="8006" />
   <entity type="SakhaTambon" name="สวนหลวง" english="Suan Luang" geocode="8052" parent="8006" />
   <entity type="SakhaTambon" name="หินตก" english="Hin Tok" geocode="8053" parent="8013" />

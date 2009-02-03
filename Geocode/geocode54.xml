@@ -4,7 +4,7 @@
   <entity type="Amphoe" name="เมืองแพร่" english="Mueang Phrae" geocode="5401" >
     <entity type="Tambon" name="ในเวียง" english="Nai Wiang" geocode="540101" />
     <entity type="Tambon" name="นาจักร" english="Na Chak" geocode="540102" >
-        <entity type="Muban" geocode="54010202" name="บ้านโกศัยประชาพัฒนา"/>
+      <entity type="Muban" geocode="54010202" name="บ้านโกศัยประชาพัฒนา"/>
 
       <entity type="Muban" geocode="54010209" name="บ้านน้ำทอง"/>
     </entity>
@@ -23,7 +23,7 @@
       <entity type="Muban" geocode="54010806" name="บ้านแม่หล่ายศรีวิจัย"/>
       <entity type="Muban" geocode="54010807" name="บ้านแม่หล่าย"/>
       <entity type="Muban" geocode="54010808" name="บ้านบุญเจริญ"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="ห้วยม้า" english="Huai Ma" geocode="540109" />
     <entity type="Tambon" name="ป่าแมต" english="Pa Maet" geocode="540110" >
       <entity type="Muban" geocode="54011009" name="บ้านมหาโพธิ์"/>
@@ -41,8 +41,10 @@
       <entity type="Muban" geocode="54011111" name="บ้านถิ่นใน"/>
     </entity>
     <entity type="Tambon" name="สวนเขื่อน" english="Suan Khuean" geocode="540112" />
-    <entity type="Tambon" name="วังหงษ์" english="Wang Hong" geocode="540113" newname="วังหงส์"/>
     <entity type="Tambon" name="วังหงส์" english="Wang Hong" geocode="540113" >
+      <history>
+        <misspelling name="วังหงษ์"/>
+      </history>
       <entity type="Muban" geocode="54011301" name="บ้านวังหงษ์"/>
       <entity type="Muban" geocode="54011302" name="บ้านวังหงษ์"/>
 
@@ -55,7 +57,7 @@
       <entity type="Muban" geocode="54011402" name="บ้านต้นม่วง"/>
 
       <entity type="Muban" geocode="54011412" name="บ้านต้นม่วง"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="ทุ่งกวาว" english="Thung Kwao" geocode="540115" />
     <entity type="Tambon" name="ท่าข้าม" english="Tha Kham" geocode="540116" />
     <entity type="Tambon" name="แม่ยม" english="Mae Yom" geocode="540117" />
@@ -64,7 +66,7 @@
 
       <entity type="Muban" geocode="54011806" name="บ้านใน"/>
 
-        <entity type="Muban" geocode="54011811" name="บ้านพระธาตุช่อแฮ"/>
+      <entity type="Muban" geocode="54011811" name="บ้านพระธาตุช่อแฮ"/>
       <entity type="Muban" geocode="54011812" name="บ้านใน"/>
     </entity>
     <entity type="Tambon" name="ร่องฟอง" english="Rong Fong" geocode="540119" />
@@ -106,7 +108,7 @@
       <entity type="Muban" geocode="54021305" name="บ้านน้ำพุสูง"/>
 
       <entity type="Muban" geocode="54021308" name="บ้านครกหนานทา"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="แม่ทราย" english="Mae Sai" geocode="540214" />
     <entity type="Tambon" name="แม่ยางร้อง" english="Mae Yang Rong" geocode="540215" />
 
@@ -130,7 +132,7 @@
       <entity type="Muban" geocode="54030905" name="บ้านแก่งหลวง"/>
 
       <entity type="Muban" geocode="54030907" name="บ้านแม่หลู้ตะวันออก"/>
-      </entity>
+    </entity>
   </entity>
   <entity type="Amphoe" name="สูงเม่น" english="Sung Men" geocode="5404" >
     <entity type="Tambon" name="สูงเม่น" english="Sung Men" geocode="540401" >
@@ -181,7 +183,7 @@
   </entity>
   <entity type="Amphoe" name="วังชิ้น" english="Wang Chin" geocode="5407" >
     <entity type="Tambon" name="วังชิ้น" english="Wang Chin" geocode="540701" >
-      <entity geocode="54070104" name="บ้านสีทิใน" english="Ban Si Thinai" />
+      <entity type="Muban" geocode="54070104" name="บ้านสีทิใน" english="Ban Si Thinai" />
     </entity>
     <entity type="Tambon" name="สรอย" english="Soi" geocode="540702" />
     <entity type="Tambon" name="แม่ป้าก" english="Mae Pak" geocode="540703" />
@@ -213,5 +215,4 @@
   <entity type="ThesabanTambon" name="สอง" english="Song" geocode="5489" parent="5406" />
   <entity type="ThesabanTambon" name="วังชิ้น" english="Wang Chin" geocode="5488" parent="5407" />
   <entity type="ThesabanTambon" name="หนองม่วงไข่" english="Nong Muang Khai" geocode="5487" parent="5408" />
-  <entity type="ThesabanTambon" name="ป่าแดง" english="Pa Daeng" geocode="5486" parent="5401" />
 </entity>

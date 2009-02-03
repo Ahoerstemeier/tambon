@@ -172,8 +172,11 @@
   </entity>
 
   <entity type="ThesabanMueang" name="ปัตตานี" english="Pattani" geocode="9499" parent="9401" />
-  <entity type="ThesabanTambon" name="ตะลุบัน" english="Taluban" geocode="9498" parent="9407" />
-  <entity type="ThesabanTambon" name="ตะลุปัน" newname="ตะลุบัน" english="Taluban" geocode="9498" parent="9407" />
+  <entity type="ThesabanTambon" name="ตะลุบัน" english="Taluban" geocode="9498" parent="9407" >
+    <history>
+      <misspelling name="ตะลุปัน" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="โคกโพธิ์" english="Khok Pho" geocode="9497" parent="9402" />
   <entity type="ThesabanTambon" name="นาประดู่" english="Na Pradu" geocode="9496" parent="9402" />
   <entity type="ThesabanTambon" name="บ่อทอง" english="Bo Thong" geocode="9495" parent="9403" />
