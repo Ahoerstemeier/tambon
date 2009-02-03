@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <entity type="Changwat" name="นครราชสีมา" english="Nakhon Ratchasima" geocode="30">
   <officials>
-    <official title="ProvinceGovernor" name="ประจักษ์ สุวรรณภักดี"  begin="2008-10-01" end="" />
-    <official title="ProvinceGovernor" name="สุธี มากบุญ"  begin="2007-10-01" end="2008-09-30" />
+    <official title="Governor" name="ประจักษ์ สุวรรณภักดี"  begin="2008-10-01" end="" />
+    <official title="Governor" name="สุธี มากบุญ"  begin="2007-10-01" end="2008-09-30" />
   </officials>
   <entity type="Amphoe" name="เมืองนครราชสีมา" english="Mueang Nakhon Ratchasima" geocode="3001" >
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="300101" />
@@ -1040,8 +1040,10 @@
       <entity type="Muban" geocode="30211214" name="บ้านหนองไม้แดง"/>
     </entity>
   </entity>
-  <entity type="Amphoe" name="หนองบุนนาก" newname="หนองบุญมาก" english="Nong Bunnak" geocode="3022" />
   <entity type="Amphoe" name="หนองบุญมาก" english="Nong Bun Mak" geocode="3022" >
+    <history>
+      <rename oldname="หนองบุนนาก" name="หนองบุญมาก" oldenglish="Nong Bunnak"/>
+    </history>
     <entity type="Tambon" name="หนองบุนนาก" english="Nong Bunnak" geocode="302201" />
     <entity type="Tambon" name="สารภี" english="Saraphi" geocode="302202" />
     <entity type="Tambon" name="ไทยเจริญ" english="Thai Charoen" geocode="302203" />
@@ -1195,7 +1197,7 @@
   <entity type="ThesabanTambon" name="ขามทะเลสอ" english="Kham Thale So" geocode="3065" parent="3019" />
   <entity type="ThesabanTambon" name="คลองไผ่" english="Khlong Phai" geocode="3064" parent="3020" />
   <entity type="ThesabanTambon" name="ลาดบัวขาว" english="Lat Bua Khao" geocode="3063" parent="3020" />
-  <entity type="ThesabanTambon" name="สีคิ้ว" english="Sikhio" geocode="3062" parent="3020" />
+  <entity type="ThesabanMueang" name="สีคิ้ว" english="Sikhio" geocode="3062" parent="3020" />
   <entity type="ThesabanTambon" name="กลางดง" english="Klang Dong" geocode="3061" parent="3021" />
   <entity type="ThesabanTambon" name="โนนแดง" english="Non Daeng" geocode="3060" parent="3024" />
   <entity type="ThesabanTambon" name="ศาลเจ้าพ่อ" english="San Chaopho" geocode="3059" parent="3025" />
@@ -1208,7 +1210,11 @@
   <entity type="ThesabanTambon" name="หัวทะเล" english="Hua Thale" geocode="3052" parent="3001" />
   <!-- what happened with 3051 and 3050? Number 3049 according to ccaatt -->
   <entity type="ThesabanTambon" name="โพธิ์กลาง" english="Pho Klang" geocode="3049" parent="3001" />
-  <entity type="ThesabanTambon" name="ลำนางแก้ว" english="Lam Nang Kaeo" geocode="3048" parent="3014" />
+  <entity type="ThesabanTambon" name="ดอนหวาย" english="Don Wai" geocode="3048" parent="3010" tambon="301015" />
+  <entity type="ThesabanTambon" name="ลำนางแก้ว" english="Lam Nang Kaeo" geocode="3047" parent="3014" />
+  <entity type="ThesabanTambon" name="ท่าเยี่ยม" english="Tha Yiam" geocode="3046" parent="3007" tambon="300707" />
+  <entity type="ThesabanTambon" name="หนองไข่น้ำ" english="Nong Khai Nam" geocode="3045" parent="3001" tambon="300125" />
+  <entity type="ThesabanTambon" name="บัลลังก์" english="Banlang" geocode="3044" parent="3009" tambon="300907" />
 
   <entity type="SakhaTambon" name="มะค่า-พลสงคราม" english="Makha-Phon Songkhram" geocode="3051" />
 </entity>

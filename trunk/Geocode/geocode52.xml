@@ -368,7 +368,7 @@
       <entity type="Muban" geocode="52130107" name="บ้านสบปาน"/>
       <entity type="Muban" geocode="52130108" name="บ้านน้ำโจ้"/>
       <entity type="Muban" geocode="52130109" name="บ้านหลวงเมืองปาน"/>
-      </entity>
+    </entity>
     <entity type="Tambon" name="บ้านขอ" english="Ban Kho" geocode="521302" >
       <entity type="Muban" geocode="52130201" name="บ้านกลาง"/>
       <entity type="Muban" geocode="52130202" name="บ้านทุ่งสะแกง"/>
@@ -397,13 +397,19 @@
   <entity type="KingAmphoe" name="วังเงิน" english="Wang Ngoen" geocode="5215" />
 
   <entity type="ThesabanNakhon" name="ลำปาง" english="Lampang" geocode="5299" parent="5201" />
-  <entity type="ThesabanMueang" name="เขลางค์นคร" english="Khelang Nakhon" geocode="5298" parent="5201" />
-  <entity type="ThesabanMueang" name="ชมพู" newname="เขลางค์นคร" english="Chomphu" geocode="5298" parent="5201" />
+  <entity type="ThesabanMueang" name="เขลางค์นคร" english="Khelang Nakhon" geocode="5298" parent="5201" >
+    <history>
+      <rename oldname="ชมพู" name="เขลางค์นคร" oldenglish="Chomphu" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="บ่อแฮ้ว" english="Bo Haeo" geocode="5297" parent="5201" />
   <entity type="ThesabanTambon" name="พิชัย" english="Phichai" geocode="5296" parent="5201" />
   <entity type="ThesabanTambon" name="เกาะคา" english="Ko Kha" geocode="5295" parent="5203" />
-  <entity type="ThesabanTambon" name="หลวงเหนือ" english="Luang Nuea" geocode="5294" parent="5205" />
-  <entity type="ThesabanTambon" name="ดอนไชย" newname="หลวงเหนือ" english="Don Chaiya" geocode="5294" parent="5205" />
+  <entity type="ThesabanTambon" name="หลวงเหนือ" english="Luang Nuea" geocode="5294" parent="5205" >
+    <history>
+      <rename oldname="ดอนไชย" name="หลวงเหนือ" oldenglish="Don Chaiya"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="เสริมงาม" english="Soem Ngam" geocode="5293" parent="5204" />
   <entity type="ThesabanTambon" name="แจ้ห่ม" english="Chae Hom" geocode="5292" parent="5206" />
   <entity type="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" geocode="5291" parent="5207" />
@@ -415,4 +421,9 @@
   <entity type="ThesabanTambon" name="สบปราบ" english="Sop Prap" geocode="5285" parent="5211" />
   <entity type="ThesabanTambon" name="ห้างฉัตร" english="Hang Chat" geocode="5284" parent="5212" />
   <entity type="ThesabanTambon" name="เวียงมอก " english="Wiang Mok" geocode="5283" parent="5208" />
+  <entity type="ThesabanTambon" name="สิริราช" english="Sirirat" geocode="5282" parent="5210" tambon="521011" >
+    <history>
+      <rename oldname="สันดอนแก้ว" oldenglish="San Don Kaeo" name="สิริราช"/>
+    </history>
+  </entity>
 </entity>

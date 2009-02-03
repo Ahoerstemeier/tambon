@@ -182,8 +182,11 @@
     </entity>
     <entity type="Tambon" name="ต้า" english="Ta" geocode="570406" newgeocode="571401" />
     <entity type="Tambon" name="ป่าตาล" english="Pa Tan" geocode="570407" newgeocode="571402" />
-    <entity type="Tambon" name="ยางฮอม" english="Yang Hom" geocode="570408" newgeocode="571403" />
-    <entity type="Tambon" name="ยยางฮอม" newname="ยางฮอม" english="Yang Hom" geocode="570408" newgeocode="571403" comment="Misspelled in DOPA 1993 population statistics"/>
+    <entity type="Tambon" name="ยางฮอม" english="Yang Hom" geocode="570408" newgeocode="571403" >
+      <history>
+        <misspelling name="ยยางฮอม" comment="Misspelled in DOPA 1993 population statistics"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="ตับเต่า" english="Tap Tao" geocode="570409" >
       <entity type="Muban" geocode="57040909" name="บ้านร่มโพธิ์ไทย"/>
       <entity type="Muban" geocode="57040910" name="บ้านราษฎร์ภักดี"/>
@@ -576,8 +579,11 @@
   <entity type="ThesabanTambon" name="แม่สาย" english="Mae Sai" geocode="5785" parent="5709" />
   <entity type="ThesabanTambon" name="ห้วยไคร้" english="Huai Khrai" geocode="5784" parent="5709" />
   <entity type="ThesabanTambon" name="แม่สรวย" english="Mae Suai" geocode="5783" parent="5710" />
-  <entity type="ThesabanTambon" name="เจดีย์หลวง" english="Chedi Luang" geocode="5782" parent="5710" />
-  <entity type="ThesabanTambon" name="ศรีถ้อย" newname="เจดีย์หลวง" english="Si Thoi" geocode="5782" parent="5710" />
+  <entity type="ThesabanTambon" name="เจดีย์หลวง" english="Chedi Luang" geocode="5782" parent="5710" >
+    <history>
+      <rename oldname="ศรีถ้อย" name="เจดีย์หลวง" oldenglish="Si Thoi" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="แม่ขะจาน" english="Mae Khachan" geocode="5781" parent="5711" />
   <entity type="ThesabanTambon" name="เวียงป่าเป้า" english="Wiang Pa Pao" geocode="5780" parent="5711" />
   <entity type="ThesabanTambon" name="พญาเม็งราย" english="Phaya Mengrai" geocode="5779" parent="5712" />

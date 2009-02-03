@@ -624,7 +624,10 @@
       <entity type="Muban" geocode="41111313" name="บ้านดอนขี้เหล็กเหนือ"/>
     </entity>
   </entity>
-  <entity type="Amphoe" name="หนองบัวลำภู" newname="เมืองหนองบัวลำภู" english="Nong Bua Lam Phu" geocode="4112" newgeocode="3901" >
+  <entity type="Amphoe" name="หนองบัวลำภู" english="Nong Bua Lam Phu" geocode="4112" newgeocode="3901" >
+    <history>
+      <rename oldname="หนองบัวลำภู" name="เมืองหนองบัวลำภู" oldenglish="Nong Bua Lam Phu"/>
+    </history>
     <entity type="Tambon" name="หนองบัว" english="Nong Bua" geocode="411201" newgeocode="390101" />
     <entity type="Tambon" name="หนองภัยศูนย์" english="Nong Phai Sun" geocode="411202" newgeocode="390102" />
     <entity type="Tambon" name="โพธิ์ชัย" english="Pho Chai" geocode="411203" newgeocode="390103" />
@@ -670,7 +673,7 @@
     <entity type="Tambon" name="วังปลาป้อม" english="Wang Pla Pom" geocode="411412" newgeocode="390212,390604" />
     <entity type="Tambon" name="กุดแห่" english="Kut Hae" geocode="411413" newgeocode="390213" />
     <entity type="Tambon" name="เทพคีรี" english="Thep Khiri" geocode="411414" newgeocode="390214,390605" />
-    <entity type="Tambon" name="โนนภูทอง" english="Non Phu Thong" geocode="411415" newgeocode="390215" abolished="???"/>
+    <entity type="Tambon" name="โนนภูทอง" english="Non Phu Thong" geocode="411415" newgeocode="390215" comment="Abolished?"/>
 
     <entity type="Unknown" name="บุญทัน" english="Bun Than" geocode="411493" newgeocode="411507,390507" />
     <entity type="Unknown" name="สุวรรณคูหา" english="Suwannakhuha" geocode="411494" newgeocode="411506,390506" />
@@ -856,7 +859,11 @@
       <entity type="Muban" geocode="41181011" name="บ้านโสมเจริญ"/>
       <entity type="Muban" geocode="41181012" name="บ้านโนนนาโพธิ์"/>
     </entity>
-    <entity type="Tambon" name="ทุบกุง" newname="ทับกุง" english="Thup Kung" geocode="411811" newgeocode="412104" />
+    <entity type="Tambon" name="ทุบกุง" english="Thup Kung" geocode="411811" newgeocode="412104" >
+      <history>
+        <rename oldname="ทุบกุง" name="ทับกุง" oldenglish="Thup Kung"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="สามัคคี" english="Samakkhi" geocode="411812" >
       <entity type="Muban" geocode="41181201" name="บ้านสามัคคี"/>
       <entity type="Muban" geocode="41181202" name="บ้านโชคชัยสามัคคี"/>
@@ -1119,16 +1126,19 @@
     <entity type="Tambon" name="ห้วยสามพาด" english="Huai Sam Phat" geocode="412502" />
     <entity type="Tambon" name="อุ่มจาน" english="Um Chan" geocode="412503" />
   </entity>
-  <entity type="KingAmphoe" name="ภูพระบาท" english="Phu Phrabat" geocode="4126" status="Unknown"/>
-  <entity type="KingAmphoe" name="วังสายไหม" english="Wang Sai Mai" geocode="4127" status="Unknown"/>
+  <entity type="KingAmphoe" name="ภูพระบาท" english="Phu Phrabat" geocode="4126" comment="Status unknown"/>
+  <entity type="KingAmphoe" name="วังสายไหม" english="Wang Sai Mai" geocode="4127" comment="Status unknown"/>
 
   <entity type="ThesabanNakhon" name="อุดรธานี" english="Udon Thani" geocode="4199" parent="4101" />
   <entity type="ThesabanTambon" name="นาข่า" english="Na Kha" geocode="4198" parent="4101" />
   <entity type="ThesabanTambon" name="นิคมสงเคราะห์" english="Nikhom Songkhro" geocode="4197" parent="4101" />
   <entity type="ThesabanMueang" name="โนนสูง-น้ำคำ" english="Non Sung - Nam Kham" geocode="4196" parent="4101" />
   <entity type="ThesabanTambon" name="บ้านจั่น" english="Ban Chan" geocode="4195" parent="4101" />
-  <entity type="ThesabanTambon" name="หนองสำโรง" english="Nong Sam Rong" geocode="4194" parent="4101" />
-  <entity type="ThesabanTambon" name="โพธิสว่าง" newname="หนองสำโรง" english="Phothi Sawang" geocode="4194" parent="4101" />
+  <entity type="ThesabanTambon" name="หนองสำโรง" english="Nong Sam Rong" geocode="4194" parent="4101" >
+    <history>
+      <rename oldname="โพธิสว่าง" name="หนองสำโรง" oldenglish="Phothi Sawang"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="หนองบัว" english="Nong Bua" geocode="4193" parent="4101" />
   <entity type="ThesabanTambon" name="กุดจับ" english="Kut Chap" geocode="4192" parent="4102" />
   <entity type="ThesabanTambon" name="เชียงเพ็ง" english="Chiang Pheng" geocode="4191" parent="4102" />
@@ -1136,8 +1146,11 @@
   <entity type="ThesabanTambon" name="สร้างก่อ" english="Sang Ko" geocode="4189" parent="4102" />
   <entity type="ThesabanTambon" name="หนองวัวซอ" english="Nong Wua So" geocode="4188" parent="4103" />
   <entity type="ThesabanTambon" name="หนองอ้อโนนหวาย" english="Nong O Non Wai" geocode="4187" parent="4103" />
-  <entity type="ThesabanTambon" name="กุมภวาปี" english="Kumphawapi" geocode="4186" parent="4104" />
-  <entity type="ThesabanTambon" name="ตูมใต้" newname="กุมภวาปี" english="Tum Tai" geocode="4186" parent="4104" />
+  <entity type="ThesabanTambon" name="กุมภวาปี" english="Kumphawapi" geocode="4186" parent="4104" >
+    <history>
+      <rename oldname="ตูมใต้" name="กุมภวาปี" oldenglish="Tum Tai"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="พันดอน" english="Phan Don" geocode="4185" parent="4104" />
   <entity type="ThesabanTambon" name="ห้วยเกิ้ง" english="Huai Koeng" geocode="4184" parent="4104" />
   <entity type="ThesabanTambon" name="โนนสะอาด" english="Non Sa-at" geocode="4183" parent="4105" />

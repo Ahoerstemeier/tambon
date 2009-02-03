@@ -261,13 +261,13 @@
     </entity>
     <entity type="Tambon" name="บางกล่ำ" english="Bang Klam" geocode="901115" newgeocode="901401" />
     <entity type="Tambon" name="บ้านพรุ" english="Ban Phru" geocode="901116" >
-      <entity type="Muban" geocode="90111601" name="บ้านพรุ" municipality="9096"/>
-      <entity type="Muban" geocode="90111602" name="บ้านพรุ" municipality="9096"/>
+      <entity type="Muban" geocode="90111601" name="บ้านพรุ" comment="Municipality: 9096"/>
+      <entity type="Muban" geocode="90111602" name="บ้านพรุ" comment="Municipality: 9096"/>
       <entity type="Muban" geocode="90111603" name="บ้านพรุ"/>
-      <entity type="Muban" geocode="90111604" name="บ้านพรุ" municipality="9096"/>
-      <entity type="Muban" geocode="90111605" name="บ้านโป๊ะหมอ" municipality="9096"/>
-      <entity type="Muban" geocode="90111606" name="บ้านบางศาลา" municipality="9096"/>
-      <entity type="Muban" geocode="90111607" name="บ้านโป๊ะหมอ" municipality="9096"/>
+      <entity type="Muban" geocode="90111604" name="บ้านพรุ" comment="Municipality: 9096"/>
+      <entity type="Muban" geocode="90111605" name="บ้านโป๊ะหมอ" comment="Municipality: 9096"/>
+      <entity type="Muban" geocode="90111606" name="บ้านบางศาลา" comment="Municipality: 9096"/>
+      <entity type="Muban" geocode="90111607" name="บ้านโป๊ะหมอ" comment="Municipality: 9096"/>
       <entity type="Muban" geocode="90111608" name="บ้านคลองปอม"/>
       <entity type="Muban" geocode="90111609" name="บ้านคลองยา"/>
       <entity type="Muban" geocode="90111610" name="บ้านไร่"/>
@@ -343,8 +343,11 @@
   <entity type="ThesabanTambon" name="กำแพงเพชร" english="Kamphaeng Phet" geocode="9088" parent="9009" />
   <entity type="ThesabanTambon" name="นาสีทอง" english="Na Si Thong" geocode="9087" parent="9009" />
   <entity type="ThesabanTambon" name="ปริก" english="Prik" geocode="9086" parent="9010" />
-  <entity type="ThesabanMueang" name="ปาดังเบซาร์" english="Padang Besar" geocode="9085" parent="9010" />
-  <entity type="ThesabanTambon" name="พังลา" english="Phang La" geocode="9084" parent="9010" newname="คลองแงะ"/>
+  <entity type="ThesabanMueang" name="ปาดังเบซาร์" english="Padang Besar" geocode="9085" parent="9010" >
+    <history>
+      <rename oldname="พังลา" oldenglish="Phang La" name="คลองแงะ"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="คลองแงะ" english="Khlong Ngae" geocode="9084" parent="9010" />
   <entity type="ThesabanTambon" name="พะตง" english="Pha Tong" geocode="9083" parent="9011" />
   <entity type="ThesabanTambon" name="ควนเนียง" english="Khuan Niang" geocode="9082" parent="9013" />

@@ -454,8 +454,11 @@
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="401002" />
     <entity type="Tambon" name="บ้านแฮด" english="Ban Haet" geocode="401003" newgeocode="402401" />
     <entity type="Tambon" name="โคกสำราญ" english="Khok Samran" geocode="401004" newgeocode="402402" />
-    <entity type="Tambon" name="เมืองเพีย" english="Mueang Phia" geocode="401005" />
-    <entity type="Tambon" name="เมืองเฟีย" newname="เมืองเพีย" english="Mueang Phia" geocode="401005" comment="Misspelled in DOPA population"/>
+    <entity type="Tambon" name="เมืองเพีย" english="Mueang Phia" geocode="401005" >
+      <history>
+        <misspelling name="เมืองเฟีย" comment="Misspelled in DOPA population"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="เปือยใหญ่" english="Pueai Yai" geocode="401006" newgeocode="402504" />
     <entity type="Tambon" name="โนนศิลา" english="Non Sila" geocode="401007" newgeocode="402501" />
     <entity type="Tambon" name="บ้านหัน" english="Ban Han" geocode="401008" newgeocode="402503" />
@@ -778,8 +781,8 @@
   <entity type="ThesabanTambon" name="บ้านโคก" english="Ban Khok" geocode="4071" parent="4022" />
   <entity type="ThesabanTambon" name="บ้านแฮด" english="Ban Haet" geocode="4070" parent="4024" />
   <entity type="ThesabanTambon" name="โนนศิลา" english="Non Sila" geocode="4069" parent="4025" />
-  <entity type="ThesabanTambon" name="บ้านเป็ด" english="Ban Pet" geocode="4068" parent="4001" />
+  <entity type="ThesabanTambon" name="บ้านเป็ด" english="Ban Pet" geocode="4068" parent="4001" >
+    <entity type="Unknown" name="บ้านเป็ด" english="Ban Pet" geocode="406801" />
+  </entity>
   <entity type="ThesabanTambon" name="สาวะถี" english="Sawathi" geocode="4067" parent="4001" />
-
-  <entity type="Unknown" name="บ้านเป็ด" english="Ban Pet" geocode="406801" />
 </entity>

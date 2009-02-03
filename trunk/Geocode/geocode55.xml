@@ -25,11 +25,13 @@
     <entity type="Tambon" name="ถืมตอง" english="Thuem Tong" geocode="550105" />
     <entity type="Tambon" name="เรือง" english="Rueang" geocode="550106" />
     <entity type="Tambon" name="นาซาว" english="Na Sao" geocode="550107" >
+      <history>
+        <misspelling name="นาชาว" comment="Misspelled in DOPA 1999 data"/>
+      </history>
       <entity type="Muban" geocode="55010704" name="บ้านก๊อด"/>
 
       <entity type="Muban" geocode="55010707" name="บ้านก๊อดใหม่พัฒนา"/>
     </entity>
-    <entity type="Tambon" name="นาชาว" newname="นาซาว" english="Na Sao" geocode="550107" comment="Misspelled in DOPA 1999 data"/>
     <entity type="Tambon" name="ดู่ใต้" english="Du Tai" geocode="550108" >
       <entity type="Muban" geocode="55010804" name="บ้านเจดีย์" />
 
@@ -254,13 +256,25 @@
   <entity type="ThesabanMueang" name="น่าน" english="Nan" geocode="5599" parent="5501" />
   <entity type="ThesabanTambon" name="หนองแดง" english="Nong Daeng" geocode="5598" parent="5502" />
   <entity type="ThesabanTambon" name="นาน้อย" english="Na Noi" geocode="5597" parent="5504" />
-  <entity type="ThesabanTambon" name="ปัว" english="Pua" geocode="5596" parent="5505" />
-  <entity type="ThesabanTambon" name="บ้านปรางค์" newname="ปัว" english="Ban Prang" geocode="5596" parent="5505" />
+  <entity type="ThesabanTambon" name="ปัว" english="Pua" geocode="5596" parent="5505" >
+    <history>
+      <rename oldname="บ้านปรางค์" name="ปัว" oldenglish="Ban Prang" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าวังผา" english="Tha Wang Pha" geocode="5595" parent="5506" />
-  <entity type="ThesabanTambon" name="เวียงสา" english="Wiang Sa" geocode="5594" parent="5507" />
-  <entity type="ThesabanTambon" name="กลางเวียง" newname="เวียงสา" english="Klang Wiang" geocode="5594" parent="5507" />
-  <entity type="ThesabanTambon" name="และ" english="Lae" geocode="5593" parent="5508" newname="ทุ่งช้าง"/>
-  <entity type="ThesabanTambon" name="ทุ่งช้าง" english="Thung Chang" geocode="5593" parent="5508" />
-  <entity type="ThesabanTambon" name="เชียงกลาง" english="Chiang Klang" geocode="5592" parent="5509" />
-  <entity type="ThesabanTambon" name="สบกอน" newname="เชียงกลาง" english="Sop Kon" geocode="5592" parent="5509" />
+  <entity type="ThesabanTambon" name="เวียงสา" english="Wiang Sa" geocode="5594" parent="5507" >
+    <history>
+      <rename oldname="กลางเวียง" name="เวียงสา" oldenglish="Klang Wiang"/>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="ทุ่งช้าง" english="Thung Chang" geocode="5593" parent="5508" >
+    <history>
+      <rename oldname="และ" oldenglish="Lae" name="ทุ่งช้าง"/>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="เชียงกลาง" english="Chiang Klang" geocode="5592" parent="5509" >
+    <history>
+      <rename oldname="สบกอน" name="เชียงกลาง" oldenglish="Sop Kon"/>
+    </history>
+  </entity>
 </entity>
