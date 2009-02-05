@@ -55,6 +55,7 @@
       <xs:element name="official" minOccurs="0" maxOccurs="unbounded">
         <xs:complexType>
           <xs:attribute name="title" type="OfficialType" use="required" />
+          <xs:attribute name="index" type="xs:int" use="optional" />
           <xs:attribute name="name" type="xs:string" use="required" />
           <xs:attribute name="english" type="xs:string" use="optional" />
           <xs:attribute name="begin" type="xs:date" use="optional" />
