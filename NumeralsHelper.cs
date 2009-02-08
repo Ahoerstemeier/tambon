@@ -155,6 +155,12 @@ namespace De.AHoerstemeier.Tambon
                 String lMonthName = lDateTime.ToString("MMMM");
                 lValue = lValue.Replace(lKeyValuePair.Key,lMonthName);
             }
+            foreach (KeyValuePair<String, Byte> lKeyValuePair in Helper.ThaiMonthAbbreviations)
+            {
+                DateTime lDateTime = new DateTime(2000, lKeyValuePair.Value, 1);
+                String lMonthName = lDateTime.ToString("MMMM");
+                lValue = lValue.Replace(lKeyValuePair.Key, lMonthName);
+            }
             boxText.Text = lValue;
         }
     }
