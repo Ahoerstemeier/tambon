@@ -61,7 +61,7 @@
           <xs:attribute name="begin" type="xs:date" use="optional" />
           <xs:attribute name="endyear" type="xs:integer" use="optional" />
           <xs:attribute name="beginyear" type="xs:integer" use="optional" />
-          <xs:attribute name="end" type="xs:string" use="optional" />
+          <xs:attribute name="end" type="xs:date" use="optional" />
           <xs:attribute name="comment" type="xs:string" use="optional" />
         </xs:complexType>
       </xs:element>
@@ -122,7 +122,7 @@
   <xs:complexType name="HistoryEntry">
     <xs:attribute name="effective" type="xs:date" use="optional" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
-  </xs:complexType>  
+  </xs:complexType>
   <xs:complexType name="HistoryStatus">
     <xs:complexContent>
       <xs:extension base="HistoryEntry">
