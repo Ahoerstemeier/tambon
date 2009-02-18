@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity type="Changwat" name="นครสวรรค์" english="Nakhon Sawan" geocode="60">
+  <officials>
+    <official title="Governor" name="ศุภกิจ  บุญญฤทธิพงษ์" beginyear="2008"/>
+    <official title="Governor" name="กวี กิตติสถาพร" beginyear="2007" endyear="2008"/>
+    <official title="Governor" name="ชนินทร์ บัวประเสริฐ" beginyear="2005" endyear="2007"/>
+    <official title="Governor" name="พีรพล ไตรทศาวิทย์" beginyear="2003" endyear="2005"/>
+  </officials>
   <entity type="Amphoe" name="เมืองนครสวรรค์" english="Mueang Nakhon Sawan" geocode="6001" >
     <entity type="Tambon" name="ปากน้ำโพ" english="Pak Nam Pho" geocode="600101" />
     <entity type="Tambon" name="กลางแดด" english="Klang Daet" geocode="600102" >
@@ -28,8 +34,11 @@
     </entity>
     <entity type="Tambon" name="บ้านแก่ง" english="Ban Kaeng" geocode="600111" />
     <entity type="Tambon" name="พระนอน" english="Phra Non" geocode="600112" />
-    <entity type="Tambon" name="วัดไทร" english="Wat Sai" geocode="600113" />
-    <entity type="Tambon" name="วัดไทรย์" newname="วัดไทร" english="Wat Sai" geocode="600113" comment="Misspelled in DOPA population data"/>
+    <entity type="Tambon" name="วัดไทร" english="Wat Sai" geocode="600113" >
+      <history>
+        <misspelling name="วัดไทรย์" comment="Misspelled in DOPA population data"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="หนองกรด" english="Nong Krot" geocode="600114" />
     <entity type="Tambon" name="หนองกระโดน" english="Nong Kradon" geocode="600115" />
     <entity type="Tambon" name="หนองปลิง" english="Nong Pling" geocode="600116" />
@@ -308,8 +317,11 @@
     <entity type="Tambon" name="แม่เล่ย์" english="Mae Le" geocode="601111" newgeocode="601303" />
     <entity type="Tambon" name="แม่วงก์" english="Mae Wong" geocode="601112" newgeocode="601301" />
     <entity type="Tambon" name="วังซ่าน" english="Wang San" geocode="601113" newgeocode="601304" />
-    <entity type="Tambon" name="เขาชนกัน" english="Khao Chon Kan" geocode="601114" newgeocode="601305" />
-    <entity type="Tambon" name="เเขาชนกัน" newname="เขาชนกัน" english="Khao Chon Kan" geocode="601114" newgeocode="601305" comment="Misspelled on DOPA population data"/>
+    <entity type="Tambon" name="เขาชนกัน" english="Khao Chon Kan" geocode="601114" newgeocode="601305" >
+      <history>
+        <misspelling name="เเขาชนกัน" comment="Misspelled on DOPA population data"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="ปางสวรรค์" english="Pang Sawan" geocode="601115" newgeocode="601502" />
     <entity type="Tambon" name="ศาลเจ้าไก่ต่อ" english="Sanchao Kai To" geocode="601116" >
       <entity type="Muban" geocode="60111606" name="บ้านท่าตะโก"/>
