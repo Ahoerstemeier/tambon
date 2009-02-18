@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="สุพรรณบุรี" english="Suphanburi" geocode="72">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สุพรรณบุรี" english="Suphanburi" geocode="72">
 
   <entity type="Amphoe" name="เมืองสุพรรณบุรี" english="Mueang Suphan Buri" geocode="7201" >
     <entity type="Tambon" name="ท่าพี่เลี้ยง" english="Tha Phi Liang" geocode="720101" />
@@ -194,6 +194,10 @@
   </entity>
   <entity type="Amphoe" name="ดอนเจดีย์" english="Don Chedi" geocode="7206" >
     <entity type="Tambon" name="ดอนเจดีย์" english="Don Chedi" geocode="720601" >
+      <!-- Coordinates from http://school.obec.go.th/spvs4/work/gps_don1.htm -->
+      <office type="TAOOffice">
+        <!-- 47P X =608738 Y = 1616038 -->
+      </office>
       <entity type="Muban" geocode="72060101" name="บ้านราษฎรบำรุง"/>
       <entity type="Muban" geocode="72060102" name="บ้านท่าแร่"/>
       <entity type="Muban" geocode="72060103" name="บ้านหนองสระ"/>
@@ -205,6 +209,9 @@
       <entity type="Muban" geocode="72060109" name="บ้านนเรศพัฒนา"/>
     </entity>
     <entity type="Tambon" name="หนองสาหร่าย" english="Nong Sarai" geocode="720602" >
+      <office type="TAOOffice">
+        <!-- 47P X = 608120 Y = 1621292  -->
+      </office>
       <entity type="Muban" geocode="72060201" name="บ้านดอนมะเกลือ"/>
       <entity type="Muban" geocode="72060202" name="บ้านโคกหม้อ"/>
       <entity type="Muban" geocode="72060203" name="บ้านหนองขุม"/>
@@ -217,6 +224,9 @@
       <entity type="Muban" geocode="72060210" name="บ้านหนองกะหนาก"/>
     </entity>
     <entity type="Tambon" name="ไร่รถ" english="Rai Rot" geocode="720603" >
+      <office type="TAOOffice">
+        <!-- 47P X = 607117 Y = 1612915 -->
+      </office>
       <entity type="Muban" geocode="72060301" name="บ้านไร่รถ"/>
       <entity type="Muban" geocode="72060302" name="บ้านหนองนา"/>
       <entity type="Muban" geocode="72060303" name="บ้านจิกรากข่า"/>
@@ -229,6 +239,9 @@
       <entity type="Muban" geocode="72060310" name="บ้านหนองระกำ"/>
       </entity>
     <entity type="Tambon" name="สระกระโจม" english="Sa Krachom" geocode="720604" >
+      <office type="TAOOffice">
+        <!-- 47P X = 594744 Y = 1617892   -->
+      </office>
       <entity type="Muban" geocode="72060401" name="บ้านหนองไผ่ล้อม"/>
       <entity type="Muban" geocode="72060402" name="บ้านหัวนา-หินแลง"/>
       <entity type="Muban" geocode="72060403" name="บ้านสระกระโจม"/>
@@ -240,6 +253,9 @@
       <entity type="Muban" geocode="72060409" name="บ้านดอนกลางพัฒนา"/>
       </entity>
     <entity type="Tambon" name="ทะเลบก" english="Thale Bok" geocode="720605" >
+      <office type="TAOOffice">
+        <!-- 47P X = 595809 Y =1620074 -->
+      </office>
       <entity type="Muban" geocode="72060501" name="บ้านหนองทราย"/>
       <entity type="Muban" geocode="72060502" name="บ้านทะเลบก"/>
       <entity type="Muban" geocode="72060503" name="บ้านทะเลบวช"/>
@@ -344,7 +360,11 @@
   <entity type="ThesabanTambon" name="ไผ่กองดิน" english="Phai Kong Din" geocode="7287" parent="7204" />
   <entity type="ThesabanTambon" name="ศรีประจันต์" english="Si Prachan" geocode="7286" parent="7205" />
   <entity type="ThesabanTambon" name="ดอนเจดีย์" english="Don Chedi" geocode="7285" parent="7206" />
-  <entity type="ThesabanTambon" name="สระกระโจม" english="Sa Krachom" geocode="7284" parent="7206" />
+  <entity type="ThesabanTambon" name="สระกระโจม" english="Sa Krachom" geocode="7284" parent="7206" >
+    <office type="MunicipalityOffice">
+      <url>http://www.sakrajom.org/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ทุ่งคอก" english="Thung Khok" geocode="7283" parent="7207" />
   <entity type="ThesabanTambon" name="สามชุก" english="Sam Chuk" geocode="7282" parent="7208" />
   <entity type="ThesabanTambon" name="สระยายโสม" english="Sa Yai Som" geocode="7281" parent="7209" />
