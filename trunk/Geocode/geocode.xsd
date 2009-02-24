@@ -165,7 +165,7 @@
       <xs:element minOccurs="0" name="slogan" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="Office"/>
       <xs:element minOccurs="0" name="area" type="Area"/>
-      <xs:element minOccurs="0" name="officials" type="OfficialList"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="officials" type="OfficialList"/>
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="HistoryList"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="Entity"/>
     </xs:sequence>
