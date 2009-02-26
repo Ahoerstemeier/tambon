@@ -23,6 +23,32 @@ namespace De.AHoerstemeier.Tambon
             boxText.Text = lValue;
         }
 
+        private Dictionary<String, String> mOldPDFFixupSoSuea = new Dictionary<string, string>()
+        {
+              {" ะ","สะ"},  
+              {" "+Convert.ToChar(0x0E31),"ส"+Convert.ToChar(0x0E31)}, // อั
+              {" า","สา"},
+              {" "+Convert.ToChar(0x0E33),"ส"+Convert.ToChar(0x0E33)},  // อำ
+              {" "+Convert.ToChar(0x0E34),"ส"+Convert.ToChar(0x0E34)},  // อิ
+              {" "+Convert.ToChar(0x0E35),"ส"+Convert.ToChar(0x0E35)},  // อี
+              {" "+Convert.ToChar(0x0E36),"ส"+Convert.ToChar(0x0E36)},  // อึ
+              {" "+Convert.ToChar(0x0E37),"ส"+Convert.ToChar(0x0E37)},  // อื
+              {" "+Convert.ToChar(0x0E38),"ส"+Convert.ToChar(0x0E38)},  // อุ
+              {" "+Convert.ToChar(0x0E39),"ส"+Convert.ToChar(0x0E39)},  // อู
+
+              {"เ ","เส"},
+              {"แ ","แส"},
+              {"โ ","โส"},
+              {"ใ ","ใส"},
+              {"ไ ","ไส"},
+              // tone marks
+              {" "+Convert.ToChar(0x0E47),"ส"+Convert.ToChar(0x0E47)}, // อ็
+              {" "+Convert.ToChar(0x0E48),"ส"+Convert.ToChar(0x0E48)}, // อ่
+              {" "+Convert.ToChar(0x0E49),"ส"+Convert.ToChar(0x0E49)}, // อ้ 
+              {" "+Convert.ToChar(0x0E4A),"ส"+Convert.ToChar(0x0E4A)}, // อ๊ 
+              {" "+Convert.ToChar(0x0E4B),"ส"+Convert.ToChar(0x0E4B)}, // อ๋ 
+              {" "+Convert.ToChar(0x0E4C),"ส"+Convert.ToChar(0x0E4C)} // อ์
+        };
         private Dictionary<Char, Char> mOldPDFEncoding = new Dictionary<Char, Char>()
             {
               // Letters: กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮ
@@ -144,6 +170,10 @@ namespace De.AHoerstemeier.Tambon
                 lValue = lValue.Replace(lKeyValuePair.Key,lKeyValuePair.Value);
             }
             lValue = lValue.Replace("OE", "ฮ");
+            foreach (KeyValuePair<String,String> lKeyValuePair in mOldPDFFixupSoSuea)
+            {
+                lValue = lValue.Replace(lKeyValuePair.Key, lKeyValuePair.Value);
+            }
             boxText.Text = lValue;
         }
 
