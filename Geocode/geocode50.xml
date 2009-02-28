@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="เชียงใหม่" english="Chiang Mai" geocode="50" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เชียงใหม่" english="Chiang Mai" geocode="50" >
   <officials>
     <!-- http://www.chiangmai.go.th/cmweb/governor_list.html -->
     <official title="Governor" index="31" name="วิบูลย์ สงวนพงศ์" begin="2007-10-01"/>
@@ -42,7 +42,11 @@
     <entity type="Tambon" name="ช้างม่อย" english="Chang Moi" geocode="500104" />
     <entity type="Tambon" name="ช้างคลาน" english="Chang Khlan" geocode="500105" />
     <entity type="Tambon" name="วัดเกต" english="Wat Ket" geocode="500106" />
-    <entity type="Tambon" name="ช้างเผือก" english="Chang Phueak" geocode="500107" />
+    <entity type="Tambon" name="ช้างเผือก" english="Chang Phueak" geocode="500107" >
+      <office type="TAOOffice">
+        <url>http://www.changpuak.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="สุเทพ" english="Suthep" geocode="500108" >
       <entity type="Muban" geocode="50010801" name="บ้านเชิงดอย"/>
       <entity type="Muban" geocode="50010802" name="บ้านห้วยแก้ว"/>
@@ -205,7 +209,25 @@
       <entity type="Muban" geocode="50050214" name="บ้านสันทุ่งใหม่"/>
       <entity type="Muban" geocode="50050215" name="บ้านกอง"/>
     </entity>
-    <entity type="Tambon" name="ลวงเหนือ" english="Luang Nuea" geocode="500503" />
+    <entity type="Tambon" name="ลวงเหนือ" english="Luang Nuea" geocode="500503" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>18.9158</geo:lat>
+          <geo:long>99.1350</geo:long>
+        </geo:Point>
+        <url>http://www.loungnuae.com</url>
+      </office>
+      <entity type="Muban" geocode="50050301" name="บ้านป่าสักงาม"/>
+      <entity type="Muban" geocode="50050302" name="บ้านตลาดใหม่"/>
+      <entity type="Muban" geocode="50050303" name="บ้านเมืองวะ"/>
+      <entity type="Muban" geocode="50050304" name="บ้านลวงเหนือ"/>
+      <entity type="Muban" geocode="50050305" name="บ้านลวงเหนือ"/>
+      <entity type="Muban" geocode="50050306" name="บ้านสันทราย"/>
+      <entity type="Muban" geocode="50050307" name="บ้านข้างน้ำ"/>
+      <entity type="Muban" geocode="50050308" name="บ้านวังธาร"/>
+      <entity type="Muban" geocode="50050309" name="บ้านใหม่ริมคลอง"/>
+      <entity type="Muban" geocode="50050310" name="บ้านทุ่งกอลาน"/>
+    </entity>
     <entity type="Tambon" name="ป่าป้อง" english="Pa Pong" geocode="500504" >
       <entity type="Muban" geocode="50050401" name="บ้านป่าตึงน้อย"/>
 
@@ -887,7 +909,15 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="เมืองแกนพัฒนา" english="Mueang Kaen Phatthana" geocode="5092" parent="5006" />
-  <entity type="ThesabanTambon" name="สันมหาพน" english="San Maha Phon" geocode="5091" parent="5006" />
+  <entity type="ThesabanTambon" name="สันมหาพน" english="San Maha Phon" geocode="5091" parent="5006" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>19.1240</geo:lat>
+        <geo:long>98.9472</geo:long>
+      </geo:Point>
+      <url>http://www.samahapon.com</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แม่ริม" english="Mae Rim" geocode="5090" parent="5007" />
   <entity type="ThesabanTambon" name="สะเมิงใต้" english="Samoeng Tai" geocode="5089" parent="5008" />
   <entity type="ThesabanTambon" name="บ้านแม่ข่า" english="Ban Mae Kha" geocode="5088" parent="5009" />
