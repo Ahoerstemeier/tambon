@@ -32,6 +32,7 @@
             this.cbxSearchKey = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkPAO = new System.Windows.Forms.CheckBox();
             this.chkMuban = new System.Windows.Forms.CheckBox();
             this.chkTambonCouncil = new System.Windows.Forms.CheckBox();
             this.chkTAO = new System.Windows.Forms.CheckBox();
@@ -41,6 +42,7 @@
             this.chkAmphoe = new System.Windows.Forms.CheckBox();
             this.chkChangwat = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkConstituency = new System.Windows.Forms.CheckBox();
             this.chkArea = new System.Windows.Forms.CheckBox();
             this.chkStatus = new System.Windows.Forms.CheckBox();
             this.chkRename = new System.Windows.Forms.CheckBox();
@@ -49,8 +51,6 @@
             this.edtYearStart = new System.Windows.Forms.NumericUpDown();
             this.edtYearEnd = new System.Windows.Forms.NumericUpDown();
             this.cbx_AllYears = new System.Windows.Forms.CheckBox();
-            this.chkConstituency = new System.Windows.Forms.CheckBox();
-            this.chkPAO = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearStart)).BeginInit();
@@ -101,6 +101,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Entities";
+            // 
+            // chkPAO
+            // 
+            this.chkPAO.AutoSize = true;
+            this.chkPAO.Location = new System.Drawing.Point(9, 204);
+            this.chkPAO.Name = "chkPAO";
+            this.chkPAO.Size = new System.Drawing.Size(48, 17);
+            this.chkPAO.TabIndex = 6;
+            this.chkPAO.Text = "PAO";
+            this.chkPAO.UseVisualStyleBackColor = true;
             // 
             // chkMuban
             // 
@@ -196,6 +206,16 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Events";
+            // 
+            // chkConstituency
+            // 
+            this.chkConstituency.AutoSize = true;
+            this.chkConstituency.Location = new System.Drawing.Point(12, 131);
+            this.chkConstituency.Name = "chkConstituency";
+            this.chkConstituency.Size = new System.Drawing.Size(87, 17);
+            this.chkConstituency.TabIndex = 5;
+            this.chkConstituency.Text = "Constituency";
+            this.chkConstituency.UseVisualStyleBackColor = true;
             // 
             // chkArea
             // 
@@ -302,26 +322,6 @@
             this.cbx_AllYears.UseVisualStyleBackColor = true;
             this.cbx_AllYears.CheckedChanged += new System.EventHandler(this.cbx_AllYears_CheckedChanged);
             // 
-            // chkConstituency
-            // 
-            this.chkConstituency.AutoSize = true;
-            this.chkConstituency.Location = new System.Drawing.Point(12, 131);
-            this.chkConstituency.Name = "chkConstituency";
-            this.chkConstituency.Size = new System.Drawing.Size(87, 17);
-            this.chkConstituency.TabIndex = 5;
-            this.chkConstituency.Text = "Constituency";
-            this.chkConstituency.UseVisualStyleBackColor = true;
-            // 
-            // chkPAO
-            // 
-            this.chkPAO.AutoSize = true;
-            this.chkPAO.Location = new System.Drawing.Point(9, 204);
-            this.chkPAO.Name = "chkPAO";
-            this.chkPAO.Size = new System.Drawing.Size(48, 17);
-            this.chkPAO.TabIndex = 6;
-            this.chkPAO.Text = "PAO";
-            this.chkPAO.UseVisualStyleBackColor = true;
-            // 
             // RoyalGazetteSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +337,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RoyalGazetteSearch";
             this.Text = "Search in Royal Gazette";
+            this.Load += new System.EventHandler(this.RoyalGazetteSearch_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
