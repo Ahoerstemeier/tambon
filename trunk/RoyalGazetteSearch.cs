@@ -120,5 +120,12 @@ namespace De.AHoerstemeier.Tambon
             edtYearStart.Enabled = !cbx_AllYears.Checked;
         }
 
+        private void RoyalGazetteSearch_Load(object sender, EventArgs e)
+        {
+            edtYearEnd.Maximum = DateTime.Now.Year;
+            edtYearEnd.Value = DateTime.Now.Year;
+            edtYearStart.Maximum = DateTime.Now.Year;
+        }
+
     }
 }
