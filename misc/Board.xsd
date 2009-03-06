@@ -8,6 +8,13 @@
       <xs:enumeration value="ThesabanNakhon"/>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="BoardNumber">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="1,2"/>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name='GazetteReference'>
     <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
@@ -58,6 +65,7 @@
   <xs:complexType name='MeetingEntry'>
     <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
     <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="board" type="BoardNumber" use="required" />
     <xs:attribute name="date" type="xs:date" use="required" />
     <xs:attribute name="url" type="xs:string" use="required" />
   </xs:complexType>
