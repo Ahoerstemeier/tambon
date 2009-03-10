@@ -69,14 +69,17 @@
     <entity type="Tambon" name="โพนงาม" english="Phon Ngam" geocode="460303" />
     <entity type="Tambon" name="ดงลิง" english="Dong Ling" geocode="460304" />
     <entity type="Tambon" name="ธัญญา" english="Thanya" geocode="460305" />
-    <entity type="Tambon" name="กุดฆ้องชัย" english="Kut Song Chai" geocode="460306" newname="เหล่ากลาง" newgeocode="461802"/>
+    <entity type="Tambon" name="กุดฆ้องชัย" english="Kut Song Chai" geocode="460306" newgeocode="461802" comment="Also renamed to เหล่ากลาง"/>
     <entity type="Tambon" name="ลำชี" english="Lam Chi" geocode="460307" newgeocode="461805" />
     <entity type="Tambon" name="หนองแปน" english="Nong Paen" geocode="460308" />
     <entity type="Tambon" name="โคกสะอาด" english="Khok Sa-at" geocode="460309" newgeocode="461803" />
     <entity type="Tambon" name="เจ้าท่า" english="Chao Tha" geocode="460310" />
     <entity type="Tambon" name="โคกสมบูรณ์" english="Khok Sombun" geocode="460311" />
-    <entity type="Tambon" name="โนนศิลาเลิง" english="Non Sila Loeng" geocode="460312" newgeocode="461804" />
-    <entity type="Tambon" name="โนนศิลา" newname="โนนศิลาเลิง" english="Non Sila" geocode="460312" newgeocode="461804" />
+    <entity type="Tambon" name="โนนศิลาเลิง" english="Non Sila Loeng" geocode="460312" newgeocode="461804" >
+      <history>
+        <rename oldname="โนนศิลา" name="โนนศิลาเลิง" oldenglish="Non Sila"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="ฆ้องชัยพัฒนา" english="Khong Chai Phatthana" geocode="460313" newgeocode="461801" />
   </entity>
   <entity type="Amphoe" name="ร่องคำ" english="Rong Kham" geocode="4604" >
@@ -317,7 +320,11 @@
     <entity type="Tambon" name="แซงบาดาล" english="Saeng Badan" geocode="461303" />
     <entity type="Tambon" name="มหาไชย" english="Maha Chai" geocode="461304" />
     <entity type="Tambon" name="หมูม่น" english="Mu Mon" geocode="461305" />
-    <entity type="Tambon" name="ผาเสวย" english="Pha Sawoei" geocode="461306" />
+    <entity type="Tambon" name="ผาเสวย" english="Pha Sawoei" geocode="461306" >
+      <office type="TAOOffice">
+        <url>http://www.tambon-psv.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ศรีสมเด็จ" english="Si Somdet" geocode="461307" />
     <entity type="Tambon" name="ลำห้วยหลัว" english="Lam Huai Lua" geocode="461308" />
   </entity>
@@ -353,8 +360,11 @@
   </entity>
   <entity type="Amphoe" name="ฆ้องชัย" english="Khong Chai" geocode="4618" >
     <entity type="Tambon" name="ฆ้องชัยพัฒนา" english="Khong Chai Phatthana" geocode="461801" />
-    <entity type="Tambon" name="เหล่ากลาง" english="Lao Klang" geocode="461802" />
-    <entity type="Tambon" name="กุดฆ้องชัย" english="Kut Song Chai" newname="เหล่ากลาง" geocode="461802"/>
+    <entity type="Tambon" name="เหล่ากลาง" english="Lao Klang" geocode="461802" >
+      <history>
+        <rename oldname="กุดฆ้องชัย" oldenglish="Kut Song Chai" name="เหล่ากลาง"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="โคกสะอาด" english="Khok Sa-at" geocode="461803" />
     <entity type="Tambon" name="โนนศิลาเลิง" english="Non Sila Loeng" geocode="461804" />
     <entity type="Tambon" name="ลำชี" english="Lam Chi" geocode="461805" />
