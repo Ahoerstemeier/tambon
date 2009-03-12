@@ -60,11 +60,6 @@ namespace De.AHoerstemeier.Tambon
         private const String TableEntryEnd = "</font></td>";
         private const String UrlBase = "http://www.dopa.go.th/xstat/";
 
-        internal static String GeocodeXmlSourceDir()
-        {
-            String retval = Path.GetDirectoryName(Application.ExecutablePath) + "\\geocode\\";
-            return retval;
-        }
         #endregion
 
         #region methods
@@ -301,7 +296,7 @@ namespace De.AHoerstemeier.Tambon
         {
             if (mChangwat != null)
             {
-                String lFilename = GeocodeSourceFile(mChangwat.Geocode);
+                String lFilename = Helper.GeocodeSourceFile(mChangwat.Geocode);
                 if (File.Exists(lFilename))
                 {
                     PopulationData lGeocodes = PopulationData.Load(lFilename);
@@ -368,11 +363,6 @@ namespace De.AHoerstemeier.Tambon
             {
                 OnProcessingFinished(this);
             }
-        }
-        internal static String GeocodeSourceFile(Int32 iGeocode)
-        {
-            String lFilename = GeocodeXmlSourceDir() + "geocode" + iGeocode.ToString("D2") + ".XML";
-            return lFilename;
         }
 
         public List<PopulationDataEntry> EntitiesWithoutGeocode()

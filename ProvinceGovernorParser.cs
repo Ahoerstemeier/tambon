@@ -10,13 +10,21 @@ namespace De.AHoerstemeier.Tambon
 {
     class ProvinceGovernorParser
     {
-        private Dictionary<String, List<EntityLeader>> mData = null;
+        #region variables
+        private List<PopulationDataEntry> mData = null;
         private const String mChangwatStart = ">จังหวัด";
         private const String mGovernorStart = ">ผู้ว่าราชการจังหวัด";
         private const String mViceGovernorStart = ">รองผู้ว่าราชการจังหวัด";
         private const String mTelephoneStart = " โทร ";
         private const String mMobileStart = "มือถือ";
         private const String mPageEnd = "- BEGIN WEB STAT CODE -";
+        #endregion
+        #region constructor
+        public ProvinceGovernorParser()
+        { 
+        }
+        #endregion
+        #region methods
         public void ParseUrl(String iUrl)
         {
             WebClient lWebClient = new WebClient();
@@ -28,9 +36,9 @@ namespace De.AHoerstemeier.Tambon
             Stream mData = new FileStream(iFilename, FileMode.Open);
             Parse(mData);
         }
-        protected List<EntityLeader> ParseLeaders(String iValue)
+        protected EntityLeaderList ParseLeaders(String iValue)
         {
-            List<EntityLeader> lResult = new List<EntityLeader>();
+            EntityLeaderList lResult = new EntityLeaderList();
             Int32 lPos3 = iValue.IndexOf(mGovernorStart) + mGovernorStart.Length;
             Int32 lPos4 = iValue.IndexOf(mViceGovernorStart) + mViceGovernorStart.Length;
             lResult.AddRange(ParseNames(iValue.Substring(lPos3, lPos4 - lPos3 - mViceGovernorStart.Length), EntityLeaderType.Governor));
@@ -39,7 +47,7 @@ namespace De.AHoerstemeier.Tambon
         }
         public void Parse(Stream iStream)
         {
-            Dictionary<String, List<EntityLeader>> lResult = new Dictionary<String, List<EntityLeader>>();
+            List<PopulationDataEntry> lResult = new List<PopulationDataEntry>();
             String lCurrentLine = String.Empty;
             var lReader = new StreamReader(iStream, Helper.ThaiEncoding);
             StringBuilder lEntryData = new StringBuilder();
@@ -55,7 +63,7 @@ namespace De.AHoerstemeier.Tambon
                     if (!String.IsNullOrEmpty(lCurrentChangwat))
                     {
                         lCurrentData = lCurrentData + "\n" + lLine.Substring(0, lPos1 - mChangwatStart.Length);
-                        lResult.Add(lCurrentChangwat, ParseLeaders(lCurrentData));
+                        lResult.Add(new PopulationDataEntry(lCurrentChangwat, ParseLeaders(lCurrentData)));
                         lCurrentData = String.Empty;
                     }
                     lCurrentChangwat = lLine.Substring(lPos1, lPos2 - lPos1);
@@ -76,7 +84,7 @@ namespace De.AHoerstemeier.Tambon
             }
             if (!String.IsNullOrEmpty(lCurrentChangwat))
             {
-                lResult.Add(lCurrentChangwat, ParseLeaders(lCurrentData));
+                lResult.Add(new PopulationDataEntry(lCurrentChangwat, ParseLeaders(lCurrentData)));
             }
             mData = lResult;
         }
@@ -85,28 +93,9 @@ namespace De.AHoerstemeier.Tambon
             XmlDocument lXmlDocument = Helper.XmlDocumentFromNode(iNode);
             var lNode = (XmlElement)lXmlDocument.CreateNode("element", "governors", "");
             iNode.AppendChild(lNode);
-            foreach (KeyValuePair<String, List<EntityLeader>> lEntry in mData)
+            foreach (PopulationDataEntry lEntry in mData)
             {
-                var lNodeProvince = (XmlElement)lXmlDocument.CreateNode("element", "entity", "");
-
-                lNodeProvince.SetAttribute("type", "Changwat");
-                lNodeProvince.SetAttribute("name", lEntry.Key);
-                foreach (PopulationDataEntry lChangwat in Helper.Geocodes)
-                {
-                    if (lChangwat.Name == lEntry.Key)
-                    {
-                        lNodeProvince.SetAttribute("english", lChangwat.English);
-                        lNodeProvince.SetAttribute("geocode", lChangwat.Geocode.ToString());
-                    }
-                }
-                lNode.AppendChild(lNodeProvince);
-
-                var lNodeOfficials = (XmlElement)lXmlDocument.CreateNode("element", "officials", "");
-                foreach (EntityLeader lEntityLeader in lEntry.Value)
-                {
-                    lEntityLeader.ExportToXML(lNodeOfficials);
-                }
-                lNodeProvince.AppendChild(lNodeOfficials);
+                lEntry.ExportToXML(lNode);
             }
         }
         private List<EntityLeader> ParseNames(String iLine, EntityLeaderType iPosition)
@@ -177,5 +166,42 @@ namespace De.AHoerstemeier.Tambon
             lResult = lResult + lLine;
             return lResult;
         }
+        public Dictionary<String, EntityLeader> NewGovernors()
+        {
+            Dictionary<String, EntityLeader> RetVal = new Dictionary<String, EntityLeader>();
+            List<PopulationDataEntry> lFoundEntries = new List<PopulationDataEntry>();
+
+            foreach (PopulationDataEntry lEntry in mData)
+            { 
+                lEntry.Geocode = Helper.GetGeocode(lEntry.Name);
+                String lFilename = Helper.GeocodeSourceFile(lEntry.Geocode);
+                PopulationData lData = PopulationData.Load(lFilename);
+                lEntry.English = lData.Data.English;
+                foreach (EntityLeaderList lEntryList in lEntry.OfficialsLists)
+                {
+                    foreach (EntityLeader lLeader in lEntryList)
+                    {
+                        if (lLeader.Position == EntityLeaderType.Governor)
+                        {
+                            if (lData.Data.LeaderAlreadyInList(lLeader))
+                            {
+                                lFoundEntries.Add(lEntry);
+                            }
+                            else
+                            {
+                                RetVal.Add(lEntry.English,lLeader);
+                            }
+                        }
+                    }
+                }
+            }
+            foreach (PopulationDataEntry lEntry in lFoundEntries)
+            {
+                mData.Remove(lEntry);
+            }
+            return RetVal;
+        }
+        #endregion
+
     }
 }

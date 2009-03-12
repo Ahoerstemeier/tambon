@@ -82,7 +82,7 @@ namespace De.AHoerstemeier.Tambon
         }
         public void RemoveAllKnownGeocodes()
         {
-            foreach (string lFilename in Directory.GetFiles(PopulationData.GeocodeXmlSourceDir(), "geocode*.XML"))
+            foreach (string lFilename in Directory.GetFiles(Helper.GeocodeXmlSourceDir(), "geocode*.XML"))
             {
                 PopulationData lCurrentList = PopulationData.Load(lFilename);
                 RemoveKnownGeocodes(lCurrentList.Data);
