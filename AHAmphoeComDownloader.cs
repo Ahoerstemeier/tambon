@@ -32,7 +32,7 @@ namespace De.AHoerstemeier.Tambon
         private const String SearchStringMuban = "2.หมู่บ้าน";
         private const String SearchStringTAO = "4.อบต";
         private const String SearchStringDataBottom = "<span lang=\"en-us\">";
-        private static Dictionary<String,Int16> mProvinceIDs = new Dictionary<String,Int16>() {
+        private static Dictionary<String, Int16> mProvinceIDs = new Dictionary<String, Int16>() {
 { "กระบี่",1},
 { "กาญจนบุรี",2},
 { "กาฬสินธุ์",3},
@@ -398,7 +398,7 @@ namespace De.AHoerstemeier.Tambon
                 Stream lData = DoDownload(iProvinceID, iAmphoeID);
                 SaveToCache(lData, iAmphoeID);
             }
-            Stream mData = new FileStream(CacheFileName(iAmphoeID),FileMode.Open);
+            Stream mData = new FileStream(CacheFileName(iAmphoeID), FileMode.Open);
             var retval = Parse(mData);
             retval.AmphoeID = iAmphoeID;
             retval.ProvinceID = iProvinceID;
@@ -427,17 +427,17 @@ namespace De.AHoerstemeier.Tambon
             {
                 File.Delete(lFileName);
             }
-            
+
         }
         private String CacheDirectory()
         {
             String lDir = Path.Combine(AHGlobalSettings.HTMLCacheDir, "amphoe");
             return lDir;
-        }            
+        }
 
         private String CacheFileName(Int16 iAmphoeID)
         {
-            String retval = Path.Combine(CacheDirectory(),"amphoe " + iAmphoeID.ToString() + ".html");
+            String retval = Path.Combine(CacheDirectory(), "amphoe " + iAmphoeID.ToString() + ".html");
             return retval;
         }
         public List<AHAmphoeComData> DoItAll(Int32 iProvinceGeocode)
@@ -465,7 +465,7 @@ namespace De.AHoerstemeier.Tambon
                 lProvinceID = mProvinceIDs[s];
             }
             return lProvinceID;
-            
+
         }
     }
 

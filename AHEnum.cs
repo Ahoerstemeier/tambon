@@ -46,4 +46,23 @@ namespace De.AHoerstemeier.Tambon
         HistoricalSite,
         NationalPreservedForest
     }
+    internal enum EntityLeaderType
+    {
+        Governor,
+        ViceGovernor,
+        DistrictOfficer,
+        MinorDistrictOfficer,
+        Kamnan,
+        PhuYaiBan,
+        PAOChairman,
+        Mayor,
+        TAOChairman,
+        SanitaryDistrictChairman
+    }
+    internal enum PersonTitle
+    {
+        Unknown,
+        Mister,
+        Miss
+    }
 }
