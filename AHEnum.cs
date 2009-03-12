@@ -63,6 +63,9 @@ namespace De.AHoerstemeier.Tambon
     {
         Unknown,
         Mister,
-        Miss
+        Miss,
+        Mistress,
+        SecondLieutenant,
+        ActingSecondLieutenant
     }
 }
