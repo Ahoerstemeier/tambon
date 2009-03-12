@@ -16,6 +16,7 @@ namespace De.AHoerstemeier.Tambon
         private const String mViceGovernorStart = ">รองผู้ว่าราชการจังหวัด";
         private const String mTelephoneStart = " โทร ";
         private const String mMobileStart = "มือถือ";
+        private const String mPageEnd = "- BEGIN WEB STAT CODE -";
         public void ParseUrl(String iUrl)
         {
             WebClient lWebClient = new WebClient();
@@ -47,22 +48,30 @@ namespace De.AHoerstemeier.Tambon
             while ((lCurrentLine = lReader.ReadLine()) != null)
             {
                 String lLine = lCurrentLine.Replace("&nbsp;", " ");
-                if (lLine.Contains(mChangwatStart))
+                while (lLine.Contains(mChangwatStart))
                 {
                     Int32 lPos1 = lLine.IndexOf(mChangwatStart) + mChangwatStart.Length;
                     Int32 lPos2 = lLine.IndexOf("<", lPos1);
                     if (!String.IsNullOrEmpty(lCurrentChangwat))
                     {
-                        lCurrentData = lCurrentData + lLine.Substring(0, lPos1 - mChangwatStart.Length);
+                        lCurrentData = lCurrentData + "\n" + lLine.Substring(0, lPos1 - mChangwatStart.Length);
                         lResult.Add(lCurrentChangwat, ParseLeaders(lCurrentData));
+                        lCurrentData = String.Empty;
                     }
                     lCurrentChangwat = lLine.Substring(lPos1, lPos2 - lPos1);
+                    if (Helper.ChangwatMisspellings.ContainsKey(lCurrentChangwat))
+                    {
+                        lCurrentChangwat = Helper.ChangwatMisspellings[lCurrentChangwat];
+                    }
                     lLine = lLine.Substring(lPos2);
-                    lCurrentData = lLine;
                 }
-                else if (!String.IsNullOrEmpty(lCurrentChangwat))
+                if (lLine.Contains(mPageEnd))
                 {
-                    lCurrentData = lCurrentData + lLine;
+                    break;
+                }
+                if (!String.IsNullOrEmpty(lCurrentChangwat))
+                {
+                    lCurrentData = lCurrentData + "\n" + lLine;
                 }
             }
             if (!String.IsNullOrEmpty(lCurrentChangwat))
@@ -78,10 +87,18 @@ namespace De.AHoerstemeier.Tambon
             iNode.AppendChild(lNode);
             foreach (KeyValuePair<String, List<EntityLeader>> lEntry in mData)
             {
-                var lNodeProvince = (XmlElement)lXmlDocument.CreateNode("element", "province", "");
+                var lNodeProvince = (XmlElement)lXmlDocument.CreateNode("element", "entity", "");
 
-                lNodeProvince.SetAttribute("geocode", Helper.GetGeocode(lEntry.Key).ToString());
+                lNodeProvince.SetAttribute("type", "Changwat");
                 lNodeProvince.SetAttribute("name", lEntry.Key);
+                foreach (PopulationDataEntry lChangwat in Helper.Geocodes)
+                {
+                    if (lChangwat.Name == lEntry.Key)
+                    {
+                        lNodeProvince.SetAttribute("english", lChangwat.English);
+                        lNodeProvince.SetAttribute("geocode", lChangwat.Geocode.ToString());
+                    }
+                }
                 lNode.AppendChild(lNodeProvince);
 
                 var lNodeOfficials = (XmlElement)lXmlDocument.CreateNode("element", "officials", "");

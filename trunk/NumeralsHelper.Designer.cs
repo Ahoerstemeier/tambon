@@ -32,12 +32,13 @@
             this.boxText = new System.Windows.Forms.TextBox();
             this.btnEncoding = new System.Windows.Forms.Button();
             this.btnMonths = new System.Windows.Forms.Button();
+            this.btnTitles = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDoConvert
             // 
             this.btnDoConvert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDoConvert.Location = new System.Drawing.Point(217, 250);
+            this.btnDoConvert.Location = new System.Drawing.Point(247, 250);
             this.btnDoConvert.Name = "btnDoConvert";
             this.btnDoConvert.Size = new System.Drawing.Size(75, 23);
             this.btnDoConvert.TabIndex = 0;
@@ -54,13 +55,13 @@
             this.boxText.Location = new System.Drawing.Point(3, 2);
             this.boxText.Multiline = true;
             this.boxText.Name = "boxText";
-            this.boxText.Size = new System.Drawing.Size(289, 242);
+            this.boxText.Size = new System.Drawing.Size(319, 242);
             this.boxText.TabIndex = 1;
             // 
             // btnEncoding
             // 
             this.btnEncoding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEncoding.Location = new System.Drawing.Point(136, 250);
+            this.btnEncoding.Location = new System.Drawing.Point(166, 250);
             this.btnEncoding.Name = "btnEncoding";
             this.btnEncoding.Size = new System.Drawing.Size(75, 23);
             this.btnEncoding.TabIndex = 2;
@@ -71,7 +72,7 @@
             // btnMonths
             // 
             this.btnMonths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMonths.Location = new System.Drawing.Point(55, 250);
+            this.btnMonths.Location = new System.Drawing.Point(85, 250);
             this.btnMonths.Name = "btnMonths";
             this.btnMonths.Size = new System.Drawing.Size(75, 23);
             this.btnMonths.TabIndex = 3;
@@ -79,11 +80,23 @@
             this.btnMonths.UseVisualStyleBackColor = true;
             this.btnMonths.Click += new System.EventHandler(this.btnMonths_Click);
             // 
+            // btnTitles
+            // 
+            this.btnTitles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTitles.Location = new System.Drawing.Point(4, 250);
+            this.btnTitles.Name = "btnTitles";
+            this.btnTitles.Size = new System.Drawing.Size(75, 23);
+            this.btnTitles.TabIndex = 4;
+            this.btnTitles.Text = "Titles";
+            this.btnTitles.UseVisualStyleBackColor = true;
+            this.btnTitles.Click += new System.EventHandler(this.btnTitles_Click);
+            // 
             // NumeralsHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(322, 273);
+            this.Controls.Add(this.btnTitles);
             this.Controls.Add(this.btnMonths);
             this.Controls.Add(this.btnEncoding);
             this.Controls.Add(this.boxText);
@@ -101,5 +114,6 @@
         private System.Windows.Forms.TextBox boxText;
         private System.Windows.Forms.Button btnEncoding;
         private System.Windows.Forms.Button btnMonths;
+        private System.Windows.Forms.Button btnTitles;
     }
 }

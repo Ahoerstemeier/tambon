@@ -194,5 +194,15 @@ namespace De.AHoerstemeier.Tambon
             }
             boxText.Text = lValue;
         }
+
+        private void btnTitles_Click(object sender, EventArgs e)
+        {
+            String lValue = boxText.Text;
+            foreach (KeyValuePair<String, PersonTitle> lKeyValuePair in Helper.PersonTitleStrings)
+            {
+                lValue = lValue.Replace(lKeyValuePair.Key, lKeyValuePair.Value.ToString()+" ");
+            }
+            boxText.Text = lValue;
+        }
     }
 }
