@@ -162,7 +162,30 @@
     <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="500310" />
   </entity>
   <entity type="Amphoe" name="เชียงดาว" english="Chiang Dao" geocode="5004" >
-    <entity type="Tambon" name="เชียงดาว" english="Chiang Dao" geocode="500401" />
+    <office type="DistrictOffice">
+      <url>http://www.amphoechiangdao.com</url>
+    </office>
+    <entity type="Tambon" name="เชียงดาว" english="Chiang Dao" geocode="500401" >
+      <office type="TAOOffice">
+        <url>http://www.chiangdao-sao.com</url>
+      </office>
+      <entity type="Muban" geocode="50040101" name="บ้านทุ่งละคร"/>
+      <entity type="Muban" geocode="50040102" name="บ้านดอน"/>
+      <entity type="Muban" geocode="50040103" name="บ้านม่วงฆ้อง"/>
+      <entity type="Muban" geocode="50040104" name="บ้านวังจ๊อม"/>
+      <entity type="Muban" geocode="50040105" name="บ้านถ้ำ"/>
+      <entity type="Muban" geocode="50040106" name="บ้านเชียงดาว"/>
+      <entity type="Muban" geocode="50040107" name="บ้านดง"/>
+      <entity type="Muban" geocode="50040108" name="บ้านแม่ก๊ะ"/>
+      <entity type="Muban" geocode="50040109" name="บ้านทุ่งหลุก"/>
+      <entity type="Muban" geocode="50040110" name="บ้านนาเลา"/>
+      <entity type="Muban" geocode="50040111" name="บ้านแม่เตาะ"/>
+      <entity type="Muban" geocode="50040112" name="บ้านโรงวัว"/>
+      <entity type="Muban" geocode="50040113" name="บ้านทุ่งดินแดง"/>
+      <entity type="Muban" geocode="50040114" name="บ้านหัวทุ่ง"/>
+      <entity type="Muban" geocode="50040115" name="บ้านศรีสะอาด"/>
+      <entity type="Muban" geocode="50040116" name="บ้านผาลาย"/>
+      </entity>
     <entity type="Tambon" name="เมืองนะ" english="Mueang Na" geocode="500402" >
       <entity type="Muban" geocode="50040201" name="บ้านเมืองนะ"/>
 
@@ -171,9 +194,35 @@
       <entity type="Muban" geocode="50040213" name="บ้านเจียจันทร์"/>
       <entity type="Muban" geocode="50040214" name="บ้านใหม่สามัคคี"/>
     </entity>
-    <entity type="Tambon" name="เมืองงาย" english="Mueang Ngai" geocode="500403" />
-    <entity type="Tambon" name="แม่นะ" english="Mae Na" geocode="500404" />
-    <entity type="Tambon" name="เมืองคอง" english="Mueang Khong" geocode="500405" />
+    <entity type="Tambon" name="เมืองงาย" english="Mueang Ngai" geocode="500403" >
+      <entity type="Muban" geocode="50040301" name="บ้านเมืองงายเหนือ"/>
+      <entity type="Muban" geocode="50040302" name="บ้านเมืองงายใต้"/>
+      <entity type="Muban" geocode="50040303" name="บ้านใหม่"/>
+      <entity type="Muban" geocode="50040304" name="บ้านแม่ข้อน"/>
+      <entity type="Muban" geocode="50040305" name="บ้านสบงาย"/>
+      <entity type="Muban" geocode="50040306" name="บ้านหนองขะแตะ"/>
+      <entity type="Muban" geocode="50040307" name="บ้านขุนแขะ"/> 
+      <entity type="Muban" geocode="50040308" name="บ้านสหกรณ์"/>
+      <entity type="Muban" geocode="50040309" name="บ้านม่วงง้ม"/>
+      <entity type="Muban" geocode="50040310" name="บ้านสัน"/>
+      <entity type="Muban" geocode="50040311" name="บ้านหนองบัว"/>
+      </entity>
+    <entity type="Tambon" name="แม่นะ" english="Mae Na" geocode="500404" >
+      <office type="TAOOffice">
+        <url>http://www.tambonmaena.org</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="เมืองคอง" english="Mueang Khong" geocode="500405" >
+      <office type="TAOOffice">
+        <url>http://www.muangkong.go.th</url>
+      </office>
+      <entity type="Muban" geocode="50040501" name="บ้านใหม่"/> 
+      <entity type="Muban" geocode="50040502" name="บ้านวังมะริว"/>
+      <entity type="Muban" geocode="50040503" name="บ้านหนองบัว"/>
+      <entity type="Muban" geocode="50040504" name="บ้านหลวง"/>
+      <entity type="Muban" geocode="50040505" name="บ้านน้ำรู"/>
+      <entity type="Muban" geocode="50040506" name="บ้านแม่แพลม"/>
+      </entity>
     <entity type="Tambon" name="ปิงโค้ง" english="Ping Khong" geocode="500406" >
       <entity type="Muban" geocode="50040601" name="บ้านออน"/>
 
@@ -902,7 +951,11 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่แจ่ม" english="Mae Chaem" geocode="5096" parent="5003" />
   <entity type="ThesabanTambon" name="เชียงดาว" english="Chiang Dao" geocode="5095" parent="5004" />
-  <entity type="ThesabanTambon" name="เมืองงาย" english="Mueang Ngai" geocode="5094" parent="5004" />
+  <entity type="ThesabanTambon" name="เมืองงาย" english="Mueang Ngai" geocode="5094" parent="5004" >
+    <office type="MunicipalityOffice">
+      <url>http://www.muangngay.go.th</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ดอยสะเก็ด" english="Doi Saket" geocode="5093" parent="5005" >
     <history>
       <rename oldname="เชิงดอย" name="เชิงดอย" oldenglish="Choeng Doi" />
