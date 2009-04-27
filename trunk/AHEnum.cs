@@ -65,6 +65,14 @@ namespace De.AHoerstemeier.Tambon
         Mister,
         Miss,
         Mistress,
+        General,
+        LieutenantGeneral,
+        MajorGeneral,
+        Colonel,
+        LieutenantColonel,
+        Major, 
+        Captain,
+        FirstLieutenant,
         SecondLieutenant,
         ActingSecondLieutenant
     }
