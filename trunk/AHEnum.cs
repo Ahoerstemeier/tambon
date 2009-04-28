@@ -74,6 +74,7 @@ namespace De.AHoerstemeier.Tambon
         Captain,
         FirstLieutenant,
         SecondLieutenant,
-        ActingSecondLieutenant
+        ActingSecondLieutenant,
+        SubLieutenant
     }
 }
