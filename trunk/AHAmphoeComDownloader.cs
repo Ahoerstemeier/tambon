@@ -9,7 +9,6 @@ using System.Xml.Linq;
 
 namespace De.AHoerstemeier.Tambon
 {
-
     class AHAmphoeComDownloader
     {
         #region Constants
@@ -455,7 +454,7 @@ namespace De.AHoerstemeier.Tambon
         private Int16 IdFromGeocode(int iProvinceGeocode)
         {
             Int16 lProvinceID = 0;
-            XElement lGeocodeXML = XElement.Load("geocode.xml");
+            XElement lGeocodeXML = XElement.Load(Helper.BasicGeocodeFileName());
 
             var lQuery = from c in lGeocodeXML.Descendants("entity")
                          where ((Int32)(c.Attribute("geocode")) == iProvinceGeocode)
