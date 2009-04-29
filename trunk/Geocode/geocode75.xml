@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="สมุทรสงคราม" english="Samut Songkhram" geocode="75">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สมุทรสงคราม" english="Samut Songkhram" geocode="75">
   <officials>
     <official title="Governor" name="ประภาศ บุญยินดี" beginyear="2008"/>
     <official title="Governor" name="วีระยุทธ เอี่ยมอำภา" beginyear="2006" endyear="2008"/>
@@ -249,6 +249,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="อัมพวา" english="Amphawa" geocode="7503" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.4247</geo:lat>
+        <geo:long>99.9572</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="อัมพวา" english="Amphawa" geocode="750301" />
     <entity type="Tambon" name="สวนหลวง" english="Suan Luang" geocode="750302" >
       <entity type="Muban" geocode="75030201" name="บ้านแหลมสวนหลวง"/>
@@ -370,7 +376,15 @@
   </entity>
 
   <entity type="ThesabanMueang" name="สมุทรสงคราม" english="Samut Songkhram" geocode="7599" parent="7501" />
-  <entity type="ThesabanTambon" name="อัมพวา" english="Amphawa" geocode="7598" parent="7503" />
+  <entity type="ThesabanTambon" name="อัมพวา" english="Amphawa" geocode="7598" parent="7503" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.4248</geo:lat>
+        <geo:long>99.9559</geo:long>
+      </geo:Point>
+      <url>http://www.amphawa.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="กระดังงา" english="Kradangnga" geocode="7597" parent="7502" />
   <entity type="ThesabanTambon" name="บางนกแขวก" english="Bang Nok Khwaek" geocode="7596" parent="7502" />
   <entity type="ThesabanTambon" name="เหมืองใหม่" english="Mueang Mai" geocode="7595" parent="7503" />
