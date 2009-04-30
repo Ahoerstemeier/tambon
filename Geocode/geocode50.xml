@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เชียงใหม่" english="Chiang Mai" geocode="50" >
+  <office type="PAOOffice">
+    <geo:Point>
+      <geo:lat>18.8383</geo:lat>
+      <geo:long>98.9747</geo:long>
+    </geo:Point>
+    <url>http://www.chiangmaipao.go.th</url>
+  </office>
   <officials source="http://www.chiangmai.go.th/cmweb/governor_list.html" >
     <official title="Governor" index="32" name="อมรพันธุ์ นิมานันท์" begin="2009-03-01"/>
     <official title="Governor" index="31" name="วิบูลย์ สงวนพงศ์" begin="2007-10-01" end="2009-02-28"/>
@@ -996,7 +1003,11 @@
   <entity type="ThesabanTambon" name="ท่าข้าม" english="Tha Kham" geocode="5076" parent="5016" />
   <entity type="ThesabanTambon" name="ท่าเดื่อ" english="Tha Duea" geocode="5075" parent="5017" />
   <entity type="ThesabanTambon" name="อมก๋อย" english="Omkoi" geocode="5074" parent="5018" />
-  <entity type="ThesabanTambon" name="ยางเนิ้ง" english="Yang Noeng" geocode="5073" parent="5019" />
+  <entity type="ThesabanTambon" name="ยางเนิ้ง" english="Yang Noeng" geocode="5073" parent="5019" >
+    <office type="MunicipalityOffice">
+      <url>http://www.theyang.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ไชยปราการ" english="Chai Prakan" geocode="5072" parent="5021" />
   <entity type="ThesabanTambon" name="แม่วาง" english="Mae Wang" geocode="5071" parent="5022" >
     <history>
