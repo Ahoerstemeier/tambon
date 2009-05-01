@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สมุทรสงคราม" english="Samut Songkhram" geocode="75">
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>13.4127</geo:lat>
+      <geo:long>100.0017</geo:long>
+    </geo:Point>
+    <url>http://www.samutsongkhram.go.th/</url>
+  </office>
+  <office type="PAOOffice">
+    <geo:Point>
+      <geo:lat>13.4136</geo:lat>
+      <geo:long>100.0016</geo:long>
+    </geo:Point>
+  </office>
   <officials>
     <official title="Governor" name="ประภาศ บุญยินดี" beginyear="2008"/>
     <official title="Governor" name="วีระยุทธ เอี่ยมอำภา" beginyear="2006" endyear="2008"/>
@@ -7,6 +20,12 @@
     <official title="Governor" name="วิชชา ประสานเกลียว" beginyear="2004" endyear="2005"/>
   </officials>
   <entity type="Amphoe" name="เมืองสมุทรสงคราม" english="Mueang Samut Songkhram" geocode="7501" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.4139</geo:lat>
+        <geo:long>100.0032</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แม่กลอง" english="Mae Klong" geocode="750101" />
     <entity type="Tambon" name="บางขันแตก" english="Bang Khan Taek" geocode="750102" >
       <entity type="Muban" geocode="75010201" name="บ้านบางนางจัน"/>
@@ -375,7 +394,15 @@
     </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="สมุทรสงคราม" english="Samut Songkhram" geocode="7599" parent="7501" />
+  <entity type="ThesabanMueang" name="สมุทรสงคราม" english="Samut Songkhram" geocode="7599" parent="7501" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.4096</geo:lat>
+        <geo:long>100.0016</geo:long>
+      </geo:Point>
+      <url>http://skmun.8m.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="อัมพวา" english="Amphawa" geocode="7598" parent="7503" >
     <office type="MunicipalityOffice">
       <geo:Point>
