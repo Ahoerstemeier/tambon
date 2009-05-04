@@ -51,6 +51,7 @@ namespace Tambon
             this.openFileDialogXML = new System.Windows.Forms.OpenFileDialog();
             this.btnAreaUnits = new System.Windows.Forms.Button();
             this.btnGovernor = new System.Windows.Forms.Button();
+            this.btnBoard = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -293,11 +294,22 @@ namespace Tambon
             this.btnGovernor.UseVisualStyleBackColor = true;
             this.btnGovernor.Click += new System.EventHandler(this.btnGovernor_Click);
             // 
+            // btnBoard
+            // 
+            this.btnBoard.Location = new System.Drawing.Point(130, 288);
+            this.btnBoard.Name = "btnBoard";
+            this.btnBoard.Size = new System.Drawing.Size(97, 23);
+            this.btnBoard.TabIndex = 22;
+            this.btnBoard.Text = "Board";
+            this.btnBoard.UseVisualStyleBackColor = true;
+            this.btnBoard.Click += new System.EventHandler(this.btnBoard_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnBoard);
             this.Controls.Add(this.btnGovernor);
             this.Controls.Add(this.btnAreaUnits);
             this.Controls.Add(this.btnTambonCreation);
@@ -351,6 +363,7 @@ namespace Tambon
         private System.Windows.Forms.OpenFileDialog openFileDialogXML;
         private System.Windows.Forms.Button btnAreaUnits;
         private System.Windows.Forms.Button btnGovernor;
+        private System.Windows.Forms.Button btnBoard;
     }
 }
 
