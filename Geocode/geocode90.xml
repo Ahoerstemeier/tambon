@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="สงขลา" english="Songkhla" geocode="90">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สงขลา" english="Songkhla" geocode="90">
   <officials source="http://www.songkhla.go.th/songkhla52/ceo/ceo_past2.html">
     <official title="Governor" index="47" name="สนธิ เตชานันท์" begin="2006-11-13"/>
     <official title="Governor" index="46" name="สมพร ใช้บางยาง" begin="2003-10-01" end="2006-10-29"/>
@@ -364,7 +364,32 @@
     <entity type="Tambon" name="รัตภูมิ" english="Rattaphum" geocode="901301" />
     <entity type="Tambon" name="ควนโส" english="Khuan So" geocode="901302" />
     <entity type="Tambon" name="ห้วยลึก" english="Huai Luek" geocode="901303" />
-    <entity type="Tambon" name="บางเหรียง" english="Bang Riang" geocode="901304" />
+    <entity type="Tambon" name="บางเหรียง" english="Bang Riang" geocode="901304" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>7.1392</geo:lat>
+          <geo:long>100.4017</geo:long>
+        </geo:Point>
+        <url>http://www.bangrieang.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="90130401" name="บ้านคลองคล้า" comment="ThaiTambon.com says บ้านปลายนา"/>
+      <entity type="Muban" geocode="90130402" name="บ้านยางหัก"/>
+      <entity type="Muban" geocode="90130403" name="บ้านบางเหรียงตก"/>
+      <entity type="Muban" geocode="90130404" name="บ้านบางเหรียงบน"/>
+      <entity type="Muban" geocode="90130405" name="บ้านบางเหรียงใต้"/>
+      <entity type="Muban" geocode="90130406" name="บ้านเกาะน้ำรอบ"/>
+      <entity type="Muban" geocode="90130407" name="บ้านบางทีง"/>
+      <entity type="Muban" geocode="90130408" name="บ้านเกาะใหญ่"/>
+      <entity type="Muban" geocode="90130409" name="บ้านคลองช้าง"/>
+      <entity type="Muban" geocode="90130410" name="บ้านโหล๊ะหนุน" comment="ThaiTambon.com says บ้านคลองคล้า">
+        <history>
+          <rename oldname="บ้านเกาะใหญ่" name="บ้านโหล๊ะหนุน" comment="Name used in 2001 Gazette announcement"/>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="90130409" name="บ้านแพรกสุวรรณ"/>
+      <entity type="Muban" geocode="90130412" name="บ้านโคกเมือง"/>
+      <entity type="Muban" geocode="90130413" name="บ้านหน้าควน"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="บางกล่ำ" english="Bang Klam" geocode="9014" >
     <entity type="Tambon" name="บางกล่ำ" english="Bang Klam" geocode="901401" />
