@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<entity type="Changwat" name="ภูเก็ต" english="Phuket" geocode="83">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ภูเก็ต" english="Phuket" geocode="83">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>7.8900</geo:lat>
+      <geo:long>98.3984</geo:long>
+    </geo:Point>
     <url>http://phuket.go.th</url>
+  </office>
+  <office type="PAOOffice">
+    <url>http://www.phuketcity.org/</url>
   </office>
   <officials source="http://www.phuket.go.th/www_phuketGoTh/data_ceo/gov_gover.htm">
     <official title="Governor" index="42" name="วิชัย ไพรสงบ" begin="2009-03-01"/>
@@ -50,11 +57,20 @@
   <officials>
     <official title="PAOChairman" name="ไพบูลย์ อุปัติศฤงค์" beginyear="2008"/>
     <official title="PAOChairman" name="อัญชลี เทพบุตร" beginyear="2004" endyear="2008"/>
-  </officials>  
+  </officials>
   <entity type="Amphoe" name="เมืองภูเก็ต" english="Mueang Phuket" geocode="8301">
-		<entity type="Tambon" name="ตลาดใหญ่" english="Talat Yai" geocode="830101" />
-		<entity type="Tambon" name="ตลาดเหนือ" english="Talat Nuea" geocode="830102" />
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>7.8895</geo:lat>
+        <geo:long>98.3851</geo:long>
+      </geo:Point>
+    </office>
+    <entity type="Tambon" name="ตลาดใหญ่" english="Talat Yai" geocode="830101" />
+    <entity type="Tambon" name="ตลาดเหนือ" english="Talat Nuea" geocode="830102" />
     <entity type="Tambon" name="เกาะแก้ว" english="Ko Kaeo" geocode="830103" >
+      <office type="TAOOffice">
+        <url>http://www.phuket-kohkeaw.th.org/</url>
+      </office>
       <entity type="Muban" geocode="83010301" name="บ้านสะปำ"/>
       <entity type="Muban" geocode="83010302" name="บ้านบางคู"/>
       <entity type="Muban" geocode="83010303" name="บ้านบางเหนียว"/>
@@ -84,6 +100,9 @@
       <entity type="Muban" geocode="83010509" name="บ้านท่าแครงบน"/>
     </entity>
     <entity type="Tambon" name="ฉลอง" english="Chalong" geocode="830106" >
+      <office type="TAOOffice">
+        <url>http://www.chalong.go.th/</url>
+      </office>
       <entity type="Muban" geocode="83010601" name="บ้านเขาน้อย"/>
       <entity type="Muban" geocode="83010602" name="บ้านบนสวน"/>
       <entity type="Muban" geocode="83010603" name="บ้านป่าไล่" comment="Old name บ้านป่าหลาย?"/>
@@ -110,8 +129,14 @@
       <entity type="Muban" geocode="83010803" name="บ้านบางลา"/>
       <entity type="Muban" geocode="83010804" name="บ้านคอกช้าง"/>
     </entity>
-	</entity>
-	<entity type="Amphoe" name="กะทู้" english="Katu" geocode="8302">
+  </entity>
+  <entity type="Amphoe" name="กะทู้" english="Katu" geocode="8302">
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>7.9090</geo:lat>
+        <geo:long>98.3333</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="กะทู้" english="Kathu" geocode="830201" >
       <entity type="Muban" geocode="83020101" name="บ้านเก็ตโฮ่"/>
       <entity type="Muban" geocode="83020102" name="บ้านกะทู้"/>
@@ -122,8 +147,11 @@
       <entity type="Muban" geocode="83020107" name="ทุ่งทอง"/>
       <entity type="Muban" geocode="83020108" name="บ้านทุ่งทอง"/>
     </entity>
-		<entity type="Tambon" name="ป่าตอง" english="Pa Tong" geocode="830202" />
+    <entity type="Tambon" name="ป่าตอง" english="Pa Tong" geocode="830202" />
     <entity type="Tambon" name="กมลา" english="Kamala" geocode="830203" >
+      <office type="TAOOffice">
+        <url>http://www.kamalacity.org/</url>
+      </office>
       <entity type="Muban" geocode="83020301" name="บ้านบางหวาน"/>
       <entity type="Muban" geocode="83020302" name="บ้านเหนือ"/>
       <entity type="Muban" geocode="83020303" name="บ้านนอกเล"/>
@@ -131,9 +159,18 @@
       <entity type="Muban" geocode="83020305" name="บ้านหัวควน"/>
       <entity type="Muban" geocode="83020306" name="บ้านนาคา"/>
     </entity>
-	</entity>
-	<entity type="Amphoe" name="ถลาง" english="Thalang" geocode="8303">
+  </entity>
+  <entity type="Amphoe" name="ถลาง" english="Thalang" geocode="8303">
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.0316</geo:lat>
+        <geo:long>98.3340</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เทพกระษัตรี" english="Thep Krasatti" geocode="830301" >
+      <office type="TAOOffice">
+        <url>http://www.thepkrasattri2550.org/</url>
+      </office>
       <entity type="Muban" geocode="83030101" name="บ้านตะเคียน"/>
       <entity type="Muban" geocode="83030102" name="บ้านแขนน"/>
       <entity type="Muban" geocode="83030103" name="บ้านเหรียง"/>
@@ -147,6 +184,9 @@
       <entity type="Muban" geocode="83030111" name="บ้านควน"/>
     </entity>
     <entity type="Tambon" name="ศรีสุนทร" english="Si Sunthon" geocode="830302" >
+      <office type="TAOOffice">
+        <url>http://www.phuketsrisunthon.org/</url>
+      </office>
       <entity type="Muban" geocode="83030201" name="บ้านลิพอนเขาล้าน"/>
       <entity type="Muban" geocode="83030202" name="บ้านลิพอนบางกอก"/>
       <entity type="Muban" geocode="83030203" name="บ้านท่าเรือ"/>
@@ -156,48 +196,69 @@
       <entity type="Muban" geocode="83030207" name="บ้านม่าหนิก"/>
       <entity type="Muban" geocode="83030208" name="บ้านลิพอนหัวหาน-บ่อแร่"/>
     </entity>
-      <entity type="Tambon" name="เชิงทะเล" english="Choeng Thale" geocode="830303" >
-        <office type="TAOOffice">
-          <url>http://www.chengtale-abt.org</url>
-        </office>
-        <entity type="Muban" geocode="83030301" name="บ้านเชิงทะเล"/>
-        <entity type="Muban" geocode="83030302" name="บ้านบางเทา"/>
-        <entity type="Muban" geocode="83030303" name="บ้านหาดสุรินทร์"/>
-        <entity type="Muban" geocode="83030304" name="บ้านป่าสัก"/>
-        <entity type="Muban" geocode="83030305" name="บ้านบางเทานอก"/>
-        <entity type="Muban" geocode="83030306" name="บ้านลายัน"/>
-      </entity>
-      <entity type="Tambon" name="ป่าคลอก" english="Pa Khlok" geocode="830304" >
-        <entity type="Muban" geocode="83030401" name="บ้านผักฉีด"/>
-        <entity type="Muban" geocode="83030402" name="บ้านป่าคลอก"/>
-        <entity type="Muban" geocode="83030403" name="บ้านบางโรง"/>
-        <entity type="Muban" geocode="83030404" name="บ้านพารา"/>
-        <entity type="Muban" geocode="83030405" name="บ้านเกาะนาคา"/>
-        <entity type="Muban" geocode="83030406" name="บ้านอ่าวปอ"/>
-        <entity type="Muban" geocode="83030407" name="บ้านยามู"/>
-        <entity type="Muban" geocode="83030408" name="บ้านบางลา"/>
-        <entity type="Muban" geocode="83030409" name="บ้านอ่าวกุ้ง"/>
-      </entity>
-      <entity type="Tambon" name="ไม้ขาว" english="Mai Khao" geocode="830305" >
-        <entity type="Muban" geocode="83030501" name="บ้านหมากปรก"/>
-        <entity type="Muban" geocode="83030502" name="บ้านคอเอน"/>
-        <entity type="Muban" geocode="83030503" name="บ้านสวนมะพร้าว"/>
-        <entity type="Muban" geocode="83030504" name="บ้านไม้ขาว"/>
-        <entity type="Muban" geocode="83030505" name="บ้านท่าฉัตรไชย"/>
-        <entity type="Muban" geocode="83030506" name="บ้านบ่อไทร"/>
-        <entity type="Muban" geocode="83030507" name="บ้านหยิด"/>
-      </entity>
-      <entity type="Tambon" name="สาคู" english="Sakhu" geocode="830306" >
-        <entity type="Muban" geocode="83030601" name="บ้านในยาง"/>
-        <entity type="Muban" geocode="83030602" name="บ้านตรอกม่วง"/>
-        <entity type="Muban" geocode="83030603" name="บ้านสาคู"/>
-        <entity type="Muban" geocode="83030604" name="บ้านในทอน"/>
-        <entity type="Muban" geocode="83030605" name="บ้านบางฆ่าเหลา"/>
-      </entity>
+    <entity type="Tambon" name="เชิงทะเล" english="Choeng Thale" geocode="830303" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>7.9866</geo:lat>
+          <geo:long>98.3025</geo:long>
+        </geo:Point>
+        <url>http://www.chengtale-abt.org</url>
+      </office>
+      <entity type="Muban" geocode="83030301" name="บ้านเชิงทะเล"/>
+      <entity type="Muban" geocode="83030302" name="บ้านบางเทา"/>
+      <entity type="Muban" geocode="83030303" name="บ้านหาดสุรินทร์"/>
+      <entity type="Muban" geocode="83030304" name="บ้านป่าสัก"/>
+      <entity type="Muban" geocode="83030305" name="บ้านบางเทานอก"/>
+      <entity type="Muban" geocode="83030306" name="บ้านลายัน"/>
     </entity>
+    <entity type="Tambon" name="ป่าคลอก" english="Pa Khlok" geocode="830304" >
+      <office type="TAOOffice">
+        <url>http://www.paklok.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="83030401" name="บ้านผักฉีด"/>
+      <entity type="Muban" geocode="83030402" name="บ้านป่าคลอก"/>
+      <entity type="Muban" geocode="83030403" name="บ้านบางโรง"/>
+      <entity type="Muban" geocode="83030404" name="บ้านพารา"/>
+      <entity type="Muban" geocode="83030405" name="บ้านเกาะนาคา"/>
+      <entity type="Muban" geocode="83030406" name="บ้านอ่าวปอ"/>
+      <entity type="Muban" geocode="83030407" name="บ้านยามู"/>
+      <entity type="Muban" geocode="83030408" name="บ้านบางลา"/>
+      <entity type="Muban" geocode="83030409" name="บ้านอ่าวกุ้ง"/>
+    </entity>
+    <entity type="Tambon" name="ไม้ขาว" english="Mai Khao" geocode="830305" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>8.1812</geo:lat>
+          <geo:long>98.2992</geo:long>
+        </geo:Point>
+        <url>http://www.maikhaow.org</url>
+      </office>
+      <entity type="Muban" geocode="83030501" name="บ้านหมากปรก"/>
+      <entity type="Muban" geocode="83030502" name="บ้านคอเอน"/>
+      <entity type="Muban" geocode="83030503" name="บ้านสวนมะพร้าว"/>
+      <entity type="Muban" geocode="83030504" name="บ้านไม้ขาว"/>
+      <entity type="Muban" geocode="83030505" name="บ้านท่าฉัตรไชย"/>
+      <entity type="Muban" geocode="83030506" name="บ้านบ่อไทร"/>
+      <entity type="Muban" geocode="83030507" name="บ้านหยิด"/>
+    </entity>
+    <entity type="Tambon" name="สาคู" english="Sakhu" geocode="830306" >
+      <office type="TAOOffice">
+        <url>http://sakhu.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="83030601" name="บ้านในยาง"/>
+      <entity type="Muban" geocode="83030602" name="บ้านตรอกม่วง"/>
+      <entity type="Muban" geocode="83030603" name="บ้านสาคู"/>
+      <entity type="Muban" geocode="83030604" name="บ้านในทอน"/>
+      <entity type="Muban" geocode="83030605" name="บ้านบางฆ่าเหลา"/>
+    </entity>
+  </entity>
 
   <entity type="ThesabanNakhon" name="ภูเก็ต" english="Phuket" geocode="8399" parent="8301" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>7.8883</geo:lat>
+        <geo:long>98.3974</geo:long>
+      </geo:Point>
       <url>http://www.phuketcity.go.th/</url>
     </office>
   </entity>
@@ -210,7 +271,7 @@
     <office type="MunicipalityOffice">
       <url>http://www.karonmunicipality.org</url>
     </office>
-  </entity>  
+  </entity>
   <entity type="ThesabanTambon" name="กะทู้" english="Kathu" geocode="8396" parent="8302" >
     <office type="MunicipalityOffice">
       <url>http://kathucity.go.th</url>
@@ -223,6 +284,10 @@
   </entity>
   <entity type="ThesabanTambon" name="เทพกระษัตรี" english="Thep Krasattri" geocode="8394" parent="8303" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>8.0300</geo:lat>
+        <geo:long>98.3338</geo:long>
+      </geo:Point>
       <url>http://www.thepcity.go.th</url>
     </office>
   </entity>
@@ -232,10 +297,10 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ราไวย์" english="Rawai" geocode="8392" parent="8301" >
-      <office type="MunicipalityOffice">
-        <url>http://www.rawai.go.th</url>
-      </office>
-    </entity>
+    <office type="MunicipalityOffice">
+      <url>http://www.rawai.go.th</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="วิชิต" english="Wichit" geocode="8391" parent="8301" >
     <office type="MunicipalityOffice">
       <url>http://www.phuket-vichit.go.th</url>
