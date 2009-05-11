@@ -22,7 +22,7 @@ namespace De.AHoerstemeier.Tambon
             if (iNode != null)
             {
                 Geocode = Helper.GetAttributeOptionalInt(iNode, "geocode",0);
-                Geocode = Helper.GetAttributeOptionalInt(iNode, "tambon", 0);
+                TambonGeocode = Helper.GetAttributeOptionalInt(iNode, "tambon", 0);
                 Name = Helper.GetAttributeOptionalString(iNode, "name");
                 English = Helper.GetAttributeOptionalString(iNode, "english");
                 Owner = Helper.GetAttributeOptionalInt(iNode, "owner", 0);
