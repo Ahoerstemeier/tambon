@@ -438,14 +438,69 @@
   </entity>
   <entity type="Amphoe" name="สะเดา" english="Sadao" geocode="9010" >
     <entity type="Tambon" name="สะเดา" english="Sadao" geocode="901001" />
-    <entity type="Tambon" name="ปริก" english="Prik" geocode="901002" />
-    <entity type="Tambon" name="พังลา" english="Phang La" geocode="901003" />
-    <entity type="Tambon" name="สำนักแต้ว" english="Samnak Taeo" geocode="901004" />
-    <entity type="Tambon" name="ทุ่งหมอ" english="Thung Mo" geocode="901005" />
+    <entity type="Tambon" name="ปริก" english="Prik" geocode="901002" >
+      <office type="TAOOffice">
+        <url>http://www.tambonprik.com/</url>
+      </office>
+      <entity type="Muban" geocode="90100201" name="บ้านใหม่"/>
+      <entity type="Muban" geocode="90100202" name="บ้านทุ่งออก"/>
+      <entity type="Muban" geocode="90100203" name="บ้านตลาดปริก"/>
+      <entity type="Muban" geocode="90100204" name="บ้านตะเคียนเภา"/>
+      <entity type="Muban" geocode="90100205" name="บ้านสวนหม่อม"/>
+      <entity type="Muban" geocode="90100206" name="บ้านปริกตก"/>
+      <entity type="Muban" geocode="90100207" name="บ้านปริกใต้"/>
+      <entity type="Muban" geocode="90100208" name="บ้านหัวถนน"/>
+      <entity type="Muban" geocode="90100209" name="บ้านยางเกาะ"/>
+      <entity type="Muban" geocode="90100210" name="บ้านควนเสม็ด"/>
+      <entity type="Muban" geocode="90100211" name="บ้านทุ่งหลุมนก"/>
+    </entity>
+    <entity type="Tambon" name="พังลา" english="Phang La" geocode="901003" >
+      <office type="TAOOffice">
+        <url>http://www.pangla-sao.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="90100301" name="บ้านพังลาตก"/>
+      <entity type="Muban" geocode="90100302" name="บ้านพังลาออก"/>
+      <entity type="Muban" geocode="90100303" name="บ้านระตะ"/>
+      <entity type="Muban" geocode="90100304" name="บ้านแม่น้ำ"/>
+      <entity type="Muban" geocode="90100305" name="บ้านคลองแงะ" comment="Part in Thesaban"/>
+      <entity type="Muban" geocode="90100306" name="บ้านคลองผ่าน" comment="Thesaban"/>
+      <entity type="Muban" geocode="90100307" name="บ้านม่วงก็อง"/>
+    </entity>
+    <entity type="Tambon" name="สำนักแต้ว" english="Samnak Taeo" geocode="901004" >
+      <office type="TAOOffice">
+        <url>http://www.sumnaktaw.go.th/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ทุ่งหมอ" english="Thung Mo" geocode="901005" >
+      <office type="TAOOffice">
+        <url>http://www.tungmor.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ท่าโพธิ์" english="Tha Pho" geocode="901006" />
-    <entity type="Tambon" name="ปาดังเบซาร์" english="Padang Besa" geocode="901007" />
-    <entity type="Tambon" name="สำนักขาม" english="Samnak Kham" geocode="901008" />
-    <entity type="Tambon" name="เขามีเกียรติ" english="Khao Mi Kiat" geocode="901009" />
+    <entity type="Tambon" name="ปาดังเบซาร์" english="Padang Besa" geocode="901007" >
+      <office type="TAOOffice">
+        <url>http://www.padangbeza.go.th/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="สำนักขาม" english="Samnak Kham" geocode="901008" >
+      <entity type="Muban" geocode="90100801" name="บ้านสำนักขาม"/>
+      <entity type="Muban" geocode="90100802" name="บ้านด่านนอก"/>
+      <entity type="Muban" geocode="90100803" name="บ้านหน่ำฮั้ว"/>
+      <entity type="Muban" geocode="90100804" name="บ้านทับโกบ"/>
+      <entity type="Muban" geocode="90100805" name="บ้านพรุเตียว"/>
+      <entity type="Muban" geocode="90100806" name="บ้านไร่ตก"/>
+      <entity type="Muban" geocode="90100807" name="บ้านไทย-จังโหลน"/>
+    </entity>
+    <entity type="Tambon" name="เขามีเกียรติ" english="Khao Mi Kiat" geocode="901009" >
+      <office type="TAOOffice">
+        <url>http://www.khaomeekeat.com/</url>
+      </office>
+      <entity type="Muban" geocode="90100901" name="บ้านตีนนา"/>
+      <entity type="Muban" geocode="90100902" name="บ้านวังปริง"/>
+      <entity type="Muban" geocode="90100903" name="บ้านสำนักหว้า"/>
+      <entity type="Muban" geocode="90100904" name="บ้านท่าโต้"/>
+      <entity type="Muban" geocode="90100905" name="บ้านเขามีเกียรติ"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="หาดใหญ่" english="Hat Yai" geocode="9011" >
     <entity type="Tambon" name="หาดใหญ่" english="Hat Yai" geocode="901101" />
@@ -605,7 +660,11 @@
 
   <entity type="ThesabanNakhon" name="สงขลา" english="Songkhla" geocode="9099" parent="9001" />
   <entity type="ThesabanNakhon" name="หาดใหญ่" english="Hat Yai" geocode="9098" parent="9011" />
-  <entity type="ThesabanMueang" name="สะเดา" english="Sadao" geocode="9097" parent="9010" />
+  <entity type="ThesabanMueang" name="สะเดา" english="Sadao" geocode="9097" parent="9010" >
+    <office type="MunicipalityOffice">
+      <url>http://www.sadaocity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="บ้านพรุ" english="Ban Phru" geocode="9096" parent="9011" />
   <entity type="ThesabanTambon" name="สทิงพระ" english="Sathing Phra" geocode="9095" parent="9002" />
   <entity type="ThesabanTambon" name="จะนะ" english="Chana" geocode="9094" parent="9003" >
@@ -620,13 +679,24 @@
   <entity type="ThesabanTambon" name="ระโนด" english="Ranot" geocode="9089" parent="9007" />
   <entity type="ThesabanTambon" name="กำแพงเพชร" english="Kamphaeng Phet" geocode="9088" parent="9009" />
   <entity type="ThesabanTambon" name="นาสีทอง" english="Na Si Thong" geocode="9087" parent="9009" />
-  <entity type="ThesabanTambon" name="ปริก" english="Prik" geocode="9086" parent="9010" />
+  <entity type="ThesabanTambon" name="ปริก" english="Prik" geocode="9086" parent="9010" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tonprik.org/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="ปาดังเบซาร์" english="Padang Besar" geocode="9085" parent="9010" >
+    <office type="MunicipalityOffice">
+      <url>http://www.padangbezarcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="คลองแงะ" english="Khlong Ngae" geocode="9084" parent="9010" >
+    <office type="MunicipalityOffice">
+      <url>http://khlongngae.org/</url>
+    </office>
     <history>
       <rename oldname="พังลา" oldenglish="Phang La" name="คลองแงะ"/>
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="คลองแงะ" english="Khlong Ngae" geocode="9084" parent="9010" />
   <entity type="ThesabanTambon" name="พะตง" english="Pha Tong" geocode="9083" parent="9011" />
   <entity type="ThesabanTambon" name="ควนเนียง" english="Khuan Niang" geocode="9082" parent="9013" />
   <entity type="ThesabanMueang" name="สิงหนคร" english="Singhanakhon" geocode="9081" parent="9015" />
