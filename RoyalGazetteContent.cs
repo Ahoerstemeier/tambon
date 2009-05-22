@@ -132,6 +132,11 @@ namespace De.AHoerstemeier.Tambon
                         retval = new RoyalGazetteContentConstituency();
                         break;
                     }
+                case RoyalGazetteContentMention.XmlLabel:
+                    {
+                        retval = new RoyalGazetteContentMention();
+                        break;
+                    }
                 
             }
             return retval;
