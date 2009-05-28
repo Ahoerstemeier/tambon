@@ -72,6 +72,13 @@
     </xs:sequence>
     <xs:attribute name="source" type="xs:string" use="optional" />
   </xs:complexType>
+  <xs:complexType name="MyURI">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+        <xs:attribute name="comment" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>    
+  </xs:complexType>
   <xs:complexType name="ThaiAddress">
     <xs:sequence>
       <xs:element name="tambon" minOccurs="0">
@@ -102,7 +109,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" ref="geo:Point" />
       <xs:element minOccurs="0" name="address" type="ThaiAddress"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="xs:anyURI"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="MyURI"/>
     </xs:sequence>
     <xs:attribute name="type" type="OfficeType" use="required" />
   </xs:complexType>

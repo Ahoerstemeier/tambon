@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="ชลบุรี" english="Chon Buri" geocode="20">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ชลบุรี" english="Chon Buri" geocode="20">
   <officials>
     <official title="Governor" name="เสนีย์ จิตตเกษม" begin="2009-05-06"/>
     <official title="Governor" name="สุรพล พงษ์ทัดศิริกุล" begin="2008-10-01" end="2009-05-06"/>
@@ -51,14 +51,37 @@
   </entity>
   <entity type="Amphoe" name="บางละมุง" english="Bang Lamung" geocode="2004" >
     <entity type="Tambon" name="บางละมุง" english="Bang Lamung" geocode="200401" />
-    <entity type="Tambon" name="หนองปรือ" english="Nong Prue" geocode="200402" />
+    <entity type="Tambon" name="หนองปรือ" english="Nong Prue" geocode="200402" >
+      <office type="TAOOffice">
+        <url>http://www.nongprue-banglamung.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="20040201" name="บ้านหนองปรือ"/>
+      <entity type="Muban" geocode="20040202" name="บ้านทรงธรรม"/>
+      <entity type="Muban" geocode="20040203" name="บ้านเกาะกลาง"/>
+      <entity type="Muban" geocode="20040204" name="บ้านเกาะกะบก"/>
+      <entity type="Muban" geocode="20040205" name="บ้านเหนือบ่อกรุ"/>
+      <entity type="Muban" geocode="20040206" name="บ้านเนินตูม"/>
+      <entity type="Muban" geocode="20040207" name="บ้านหนองไผ่"/>
+      <entity type="Muban" geocode="20040208" name="บ้านหนองไก่เถื่อน"/>
+      <entity type="Muban" geocode="20040209" name="บ้านทรายมูล"/>
+      <entity type="Muban" geocode="20040210" name="บ้านหนองเซ่ง"/>
+    </entity>
     <entity type="Tambon" name="หนองปลาไหล" english="Nong Pla Lai" geocode="200403" />
     <entity type="Tambon" name="โป่ง" english="Pong" geocode="200404" >
       <entity type="Muban" geocode="20040406" name="บ้านห้วยยายมุก"/>
 
       <entity type="Muban" geocode="20040410" name="บ้านคลองใหญ่"/>
     </entity>
-    <entity type="Tambon" name="เขาไม้แก้ว" english="Khao Mai Kaeo" geocode="200405" />
+    <entity type="Tambon" name="เขาไม้แก้ว" english="Khao Mai Kaeo" geocode="200405" >
+      <office type="TAOOffice">
+        <url>http://www.khaomaikaew.com/</url>
+      </office>
+      <entity type="Muban" geocode="20040501" name="บ้านห้วยลึก"/>
+      <entity type="Muban" geocode="20040502" name="บ้านมาบเจริญ"/>
+      <entity type="Muban" geocode="20040503" name="บ้านเขาไม้แก้ว"/>
+      <entity type="Muban" geocode="20040504" name="บ้านห้วยไข่เน่า"/>
+      <entity type="Muban" geocode="20040505" name="บ้านภูไทร"/>
+    </entity>
     <entity type="Tambon" name="ห้วยใหญ่" english="Huai Yai" geocode="200406" />
     <entity type="Tambon" name="ตะเคียนเตี้ย" english="Takhian Tia" geocode="200407" />
     <entity type="Tambon" name="นาเกลือ" english="Na Kluea" geocode="200408" />
@@ -89,7 +112,15 @@
     <entity type="Tambon" name="หัวถนน" english="Hua Thanon" geocode="200610" />
     <entity type="Tambon" name="ท่าข้าม" english="Tha Kham" geocode="200611" />
     <entity type="Tambon" name="ท่าบุญมี" english="Tha Bun Mi" geocode="200612" newgeocode="201102" />
-    <entity type="Tambon" name="หนองปรือ" english="Nong Prue" geocode="200613" />
+    <entity type="Tambon" name="หนองปรือ" english="Nong Prue" geocode="200613" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>13.5067</geo:lat>
+          <geo:long>101.2090</geo:long>
+        </geo:Point>
+        <url>http://www.nongprue.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="หนองขยาด" english="Nong Khayat" geocode="200614" />
     <entity type="Tambon" name="ทุ่งขวาง" english="Thung Khwang" geocode="200615" />
     <entity type="Tambon" name="หนองเหียง" english="Nong Hiang" geocode="200616" />
@@ -193,5 +224,5 @@
   </entity>
   <entity type="ThesabanTambon" name="ธาตุทอง" english="That Thong" geocode="2071" parent="2010" tambon="201004" />
 
-    <entity type="SakhaTambon" name="บางเสร่" english="Bang Sare" geocode="2051" parent="2009" />
+  <entity type="SakhaTambon" name="บางเสร่" english="Bang Sare" geocode="2051" parent="2009" />
 </entity>

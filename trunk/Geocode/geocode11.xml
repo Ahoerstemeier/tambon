@@ -1,12 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="สมุทรปราการ" english="Samut Prakan" geocode="11" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สมุทรปราการ" english="Samut Prakan" geocode="11" >
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>13.5994</geo:lat>
+      <geo:long>100.5968</geo:long>
+    </geo:Point>
+    <address>
+      <tambon name="ปากน้ำ" geocode="110101"/>
+      <street value="ถ.สุทธิภิรมย์"/>
+      <postcode code="10270"/>
+    </address>
+    <url>http://www.samutprakan.go.th/</url>
+  </office>
   <officials>
     <official title="Governor" name="ขวัญชัย วงศ์นิติกร" beginyear="2008"/>
     <official title="Governor" name="อนุวัฒน์ เมธีวิบูลวุฒิ" beginyear="2006" endyear="2008"/>
     <official title="Governor" name="สุขุมรัฏฐ์  สาริบุตร" beginyear="2005" endyear="2006"/>
     <official title="Governor" name="สุรอรรถ ทองนิรมล" beginyear="2003" endyear="2005"/>
   </officials>
-    <entity type="Amphoe" name="เมืองสมุทรปราการ" english="Mueang Samut Prakan" geocode="1101" >
+  <entity type="Amphoe" name="เมืองสมุทรปราการ" english="Mueang Samut Prakan" geocode="1101" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.6003</geo:lat>
+        <geo:long>100.5969</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="110101" />
     <entity type="Tambon" name="สำโรงเหนือ" english="Samrong Nuea" geocode="110102" />
     <entity type="Tambon" name="บางเมือง" english="Bang Mueang" geocode="110103" />
@@ -43,7 +61,11 @@
     <entity type="Unknown" name="นาเกลือ" english="Na Kluea" geocode="110199" newgeocode="110501" />
   </entity>
   <entity type="Amphoe" name="บางบ่อ" english="Bang Bo" geocode="1102" >
-    <entity type="Tambon" name="บางบ่อ" english="Bang Bo" geocode="110201" />
+    <entity type="Tambon" name="บางบ่อ" english="Bang Bo" geocode="110201" >
+      <office type="TAOOffice">
+        <url>http://www.bangbor.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านระกาศ" english="Ban Rakat" geocode="110202" />
     <entity type="Tambon" name="บางพลีน้อย" english="Bang Phli Noi" geocode="110203" />
     <entity type="Tambon" name="บางเพรียง" english="Bang Phriang" geocode="110204" />
@@ -56,6 +78,9 @@
   </entity>
   <entity type="Amphoe" name="บางพลี" english="Bang Phli" geocode="1103" >
     <entity type="Tambon" name="บางพลีใหญ่" english="Bang Phli Yai" geocode="110301" >
+      <office type="TAOOffice">
+        <url>http://www.bangpleeyai.go.th/</url>
+      </office>
       <entity type="Muban" geocode="11030101" name="บ้านคลองบางแก้วใหญ่"/>
       <entity type="Muban" geocode="11030102" name="บ้านคลองบางแก้วน้อย"/>
       <entity type="Muban" geocode="11030103" name="บ้านคลองบางแก้ว"/>
@@ -83,7 +108,7 @@
     <entity type="Tambon" name="บางแก้ว" english="Bang Kaeo" geocode="110302" >
       <office type="TAOOffice">
         <url>http://www.obt-bangkaew.com/</url>
-      </office>   
+      </office>
       <!-- according to TAO website, names start with  ชุมชนริม instead of บ้าน (except Mu 3, 5, 14,15, those only ชุมชน) -->
       <entity type="Muban" geocode="11030201" name="บ้านคลองกระทุ่ม"/>
       <entity type="Muban" geocode="11030202" name="บ้านริมคลองสำโรง"/>
@@ -144,6 +169,9 @@
       </history>
     </entity>
     <entity type="Tambon" name="ราชาเทวะ" english="Racha Thewa" geocode="110308" >
+      <office type="MunicipalityOffice">
+        <url>http://www.rachathewa.go.th/</url>
+      </office>
       <entity type="Muban" geocode="11030801" name="บ้านคลองลาดกระบัง"/>
       <entity type="Muban" geocode="11030802" name="บ้านคลองลาดกระบัง"/>
       <entity type="Muban" geocode="11030803" name="บ้านคลองลาดกระบัง"/>
@@ -161,6 +189,9 @@
       <entity type="Muban" geocode="11030815" name="บ้านคลองบัวลอย"/>
     </entity>
     <entity type="Tambon" name="หนองปรือ" english="Nong Prue" geocode="110309" >
+      <office type="TAOOffice">
+        <url>http://www.nongprue.org/</url>
+      </office>
       <entity type="Muban" geocode="11030901" name="บ้านคลองหนองงูเห่า"/>
       <entity type="Muban" geocode="11030902" name="บ้านคลองท้องคุ้ง"/>
       <entity type="Muban" geocode="11030903" name="บ้านร่วมใจพัฒนา"/>
@@ -196,23 +227,90 @@
     <entity type="Tambon" name="ศีรษะจรเข้ใหญ่" english="Sisa Chorakhe Yai" geocode="110603" />
   </entity>
 
-  <entity type="ThesabanNakhon" name="สมุทรปราการ" english="Samut Prakan" geocode="1199" parent="1101" />
-  <entity type="ThesabanMueang" name="พระประแดง" english="Phra Pradaeng" geocode="1198" parent="1104" />
-  <entity type="ThesabanMueang" name="ลัดหลวง" english="Lat Luang" geocode="1197" parent="1104" />
-  <entity type="ThesabanTambon" name="สำโรงเหนือ" english="Sam Rong Nuea" geocode="1196" parent="1101" />
+  <entity type="ThesabanNakhon" name="สมุทรปราการ" english="Samut Prakan" geocode="1199" parent="1101" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.6004</geo:lat>
+        <geo:long>100.5964</geo:long>
+      </geo:Point>
+      <url comment="Currently offline">http://www.samutprakancity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanMueang" name="พระประแดง" english="Phra Pradaeng" geocode="1198" parent="1104" >
+    <office type="MunicipalityOffice">
+      <url>http://www.phrapradaeng.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanMueang" name="ลัดหลวง" english="Lat Luang" geocode="1197" parent="1104" >
+    <office type="MunicipalityOffice">
+      <url>http://www.ladluang.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="สำโรงเหนือ" english="Sam Rong Nuea" geocode="1196" parent="1101" >
+    <office type="MunicipalityOffice">
+      <url>http://www.samrongnua.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="สำโรงใต้" english="Sam Rong Tai" geocode="1195" parent="1104" />
-  <entity type="ThesabanTambon" name="ด่านสำโรง" english="Dan Sam Rong" geocode="1194" parent="1101" />
-  <entity type="ThesabanTambon" name="บางเมือง" english="Bang Mueang" geocode="1193" parent="1101" />
-  <entity type="ThesabanTambon" name="แพรกษา" english="Phraek Sa" geocode="1192" parent="1101" />
-  <entity type="ThesabanTambon" name="บางปู" english="Bang Pu" geocode="1191" parent="1101" />
-  <entity type="ThesabanTambon" name="คลองด่าน" english="Khlong Khan" geocode="1190" parent="1102" />
-  <entity type="ThesabanTambon" name="คลองสวน" english="Khlong Suan" geocode="1189" parent="1102" />
-  <entity type="ThesabanTambon" name="บางบ่อ" english="Bang Bo" geocode="1188" parent="1102" />
-  <entity type="ThesabanTambon" name="บางพลี" english="Bang Phli" geocode="1187" parent="1103" />
-  <entity type="ThesabanTambon" name="พระสมุทรเจดีย์" english="Phra Samut Chedi" geocode="1186" parent="1105" />
-  <entity type="ThesabanTambon" name="แหลมฟ้าผ่า" english="Laem Fa Pha" geocode="1185" parent="1105" />
-  <entity type="ThesabanTambon" name="บางเสาธง" english="Bang Sao Thong" geocode="1184" parent="1106" />
+  <entity type="ThesabanTambon" name="ด่านสำโรง" english="Dan Sam Rong" geocode="1194" parent="1101" >
+    <office type="MunicipalityOffice">
+      <url>http://www.dansomrong.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางเมือง" english="Bang Mueang" geocode="1193" parent="1101" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangmueng.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="แพรกษา" english="Phraek Sa" geocode="1192" parent="1101" >
+    <office type="MunicipalityOffice">
+      <url>http://www.praksa.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางปู" english="Bang Pu" geocode="1191" parent="1101" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangpoocity.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="คลองด่าน" english="Khlong Khan" geocode="1190" parent="1102" >
+    <office type="MunicipalityOffice">
+      <url>http://www.klongdanmunicipality.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="คลองสวน" english="Khlong Suan" geocode="1189" parent="1102" >
+    <office type="MunicipalityOffice">
+      <url>http://www.klongsuan.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางบ่อ" english="Bang Bo" geocode="1188" parent="1102" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangbo.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางพลี" english="Bang Phli" geocode="1187" parent="1103" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangplee.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="พระสมุทรเจดีย์" english="Phra Samut Chedi" geocode="1186" parent="1105" >
+    <office type="MunicipalityOffice">
+      <url>http://www.phrasamutjedee.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="แหลมฟ้าผ่า" english="Laem Fa Pha" geocode="1185" parent="1105" >
+    <office type="MunicipalityOffice">
+      <url>http://www.laemfhapa.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางเสาธง" english="Bang Sao Thong" geocode="1184" parent="1106" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangsaothong.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="ปากน้ำสมุทรปราการ" english="Pak Nam Samut Prakan" geocode="1183" parent="1101" tambon="110103" >
+    <office type="MunicipalityOffice">
+      <url>http://www.parknumsamutprakran.org/</url>
+    </office>
     <history>
       <statuschange old="TAO" new="ThesabanMueang" effective="2007-07-05"/>
       <rename oldname="บางเมือง" oldenglish="Bang Mueang" name="ปากน้ำสมุทรปราการ" english="Pak Nam Samut Prakan" effective="2007-07-05"/>
