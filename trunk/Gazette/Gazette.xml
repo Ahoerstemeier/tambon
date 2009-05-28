@@ -189,16 +189,16 @@
     <reassign geocode="91" ownername="MonthonPhuket" />
   </entry>
 
-  <entry description="Rename of Monthon and reassign of Mueang" title="ประกาศ เลิกมณฑลเพชรบูรณ์เข้าเป็นเมืองในมณฑลพิษณุโลก และแยกมณฑลพายัพเป็นมณฑลมหาราษฎร์ และมณฑลพายัพ รวมเรียกว่า มณฑลภาคพายัพ มีตำแหน่งอุปราชเป็นผู้ตรวจตรากำกับราชการ" volume="32" issue="0 ก" publication="1915-09-12" page="200" uri="2458/A/200.PDF" sign="1915-09-06" effective="1916-04-01">
+  <entry description="Split of Monthon and reassign of Mueang" title="ประกาศ เลิกมณฑลเพชรบูรณ์เข้าเป็นเมืองในมณฑลพิษณุโลก และแยกมณฑลพายัพเป็นมณฑลมหาราษฎร์ และมณฑลพายัพ รวมเรียกว่า มณฑลภาคพายัพ มีตำแหน่งอุปราชเป็นผู้ตรวจตรากำกับราชการ" volume="32" issue="0 ก" publication="1915-09-12" page="200-202" uri="2458/A/200.PDF" sign="1915-09-06" effective="1916-04-01">
     <abolish type="Monthon" name="เพชรบูรณ์" english="Phetchabun">
-      <reassign geocode="67" ownername="MonthonPhitsanulok"/>
+      <reassign type="Changwat" geocode="67" ownername="MonthonPhitsanulok"/>
       <reassign type="Changwat" name="หล่มสัก" english="Lom Sak" ownername="MonthonPhitsanulok"/>        
     </abolish>
     <rename type="Monthon" oldname="พายัพ" oldenglish="Phayap" english="Phak Phayap" name="ภาคพายัพ"/>
     <create type="Monthon" name="มหาราษฎร์" english="Maharat" >
-      <reassign oldownername="MonthonPhayap" geocode="55"/>
-      <reassign oldownername="MonthonPhayap" geocode="52"/>
-      <reassign oldownername="MonthonPhayap" geocode="54"/>
+      <reassign type="Changwat" name="นครน่าน" english="Nakhon Nan" oldownername="MonthonPhayap" geocode="55"/>
+      <reassign type="Changwat" name="นครลำปาง" english="Nakhon Lampang" oldownername="MonthonPhayap" geocode="52"/>
+      <reassign type="Changwat" name="แพร่" english="Phrae" oldownername="MonthonPhayap" geocode="54"/>
     </create>
   </entry>
   <entry description="Change of area of Changwat Nan, Chiang Rai and Phrae" title="พระราชบัญญัติเปลี่ยนแปลงเขตจังหวัดน่าน จังหวัดเชียงราย และจังหวัดแพร่ พ.ศ. ๒๔๙๕" volume="69" issue="77 ก" publication="1952-12-30" sign="1952-12-22" page="1440-1441" uri="2495/A/077/1440.PDF">
@@ -283,6 +283,20 @@
   </entry>
   <entry description="Reassign of Mueang Chiang Khan to Monthon Udon" title="ประกาศกระทรวงมหาดไทย ประกาศโอนการปกครองเมืองเชียงคานไปขึ้นมณฑลอุดร" volume="28" page="622" issue="0 ง" uri="2454/D/622.PDF" publication="1911-06-25" sign="1911-06-23">
     <reassign geocode="4203" name="เชียงคาน" oldownername="MonthonPhitsanulok" newownername="MonthonUdon" />
+  </entry>
+  <entry description="Split of Monthon Isan in Monthon Roi-Et and Ubon Ratchathani" title="พระบรมราชโองการ ประกาศ แยกมณฑลอิสานออกเป็น ๒ มณฑล คือ มณฑลอุบลราชธานี ๑ มณฑลร้อยเอ็ด ๑" volume="29" page="8-9" issue="ก" uri="2455/A/8.PDF" publication="1912-04-14" sign="1912-04-03">
+    <abolish type="Monthon" english="Isan" name="อิสาน">
+      <create type="Monthon" english="Roi-Et" name="ร้อยเอ็ด">
+        <mention type="Changwat" english="Roi-Et" name="ร้อยเอ็ด" geocode="45"/>
+        <mention type="Changwat" english="Sarakham" name="สารคาม" geocode="44"/>
+        <mention type="Changwat" english="Kalasin" name="กาฬสินธุ์" geocode="46"/>
+      </create>
+      <create type="Monthon" english="Ubon Ratchathani" name="อุบลราชธานี">
+        <mention type="Changwat" english="Ubon" name="อุบล" geocode="34"/>
+        <mention type="Changwat" english="Khukhan" name="ขุขันธ์" geocode="33"/>
+        <mention type="Changwat" english="Surin" name="สุรินทร์" geocode="32"/>
+      </create>
+    </abolish>
   </entry>
 
   <entry title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติลักษณะปกครองคณะสงฆ์ภายในจังหวัดกรุงเทพ ฯ และตั้งแขวงอำเภอดุสิต" volume="19" page="297" issue="16" uri="2445/016/297.PDF" publication="1902-07-20" />
