@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="น่าน" english="Nan" geocode="55">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="น่าน" english="Nan" geocode="55">
   <officials source="http://www.nan2day.com/forum/index.php?topic=1223.0">
     <official title="Governor" index="48" name="วีรวิทย์ วิวัฒนวานิช" begin="2009-05-06"/>
     <official title="Governor" index="47" name="สมศักดิ์ สุวรรณสุจริต" beginyear="2008" end="2009-05-06"/>
@@ -122,7 +122,15 @@
   </entity>
   <entity type="Amphoe" name="บ้านหลวง" english="Ban Luang" geocode="5503" >
     <entity type="Tambon" name="บ้านฟ้า" english="Ban Fa" geocode="550301" />
-    <entity type="Tambon" name="ป่าคาหลวง" english="Pa Kha Luang" geocode="550302" />
+    <entity type="Tambon" name="ป่าคาหลวง" english="Pa Kha Luang" geocode="550302" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>18.8514</geo:lat>
+          <geo:long>100.4353</geo:long>
+        </geo:Point>
+        <url>http://www.phakalaung.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="สวด" english="Suat" geocode="550303" />
     <entity type="Tambon" name="บ้านพี้" english="Ban Phi" geocode="550304" />
   </entity>
