@@ -893,13 +893,22 @@
   <entity type="ThesabanTambon" name="ลาดหญ้า" english="Lat Ya" geocode="7196" parent="7101" />
   <entity type="ThesabanTambon" name="หนองบัว" english="Nong Bua" geocode="7195" parent="7101" />
   <entity type="ThesabanTambon" name="น้ำตกไทรโยคน้อย" english="Nam Tok Sai Yok Noi" geocode="7194" parent="7102" />
-  <entity type="ThesabanTambon" name="วังโพธิ์" english="Wang Pho" geocode="7193" parent="7102" />
-  <entity type="ThesabanTambon" name="ลุ่มสุ่ม" newname="วังโพธิ์" english="Lum Sum" geocode="7193" parent="7102" />
+  <entity type="ThesabanTambon" name="วังโพธิ์" english="Wang Pho" geocode="7193" parent="7102" >
+    <history>
+      <rename oldname="ลุ่มสุ่ม" name="วังโพธิ์" oldenglish="Lum Sum" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="บ่อพลอย" english="Bo Phloi" geocode="7192" parent="7103" />
   <entity type="ThesabanTambon" name="หนองรี" english="Nong Ri" geocode="7191" parent="7103" />
   <entity type="ThesabanTambon" name="เอราวัณ" english="Era Wan" geocode="7190" parent="7104" />
-  <entity type="ThesabanTambon" name="ลูกแก" newname="ดอนขมิ้น" english="Luk Kae" geocode="7189" parent="7105" />
-  <entity type="ThesabanTambon" name="ดอนขมิ้น" english="Don Khamin" geocode="7189" parent="7105" />
+  <entity type="ThesabanTambon" name="ดอนขมิ้น" english="Don Khamin" geocode="7189" parent="7105" >
+    <office type="MunicipalityOffice">
+      <url>http://www.lukkae.go.th/</url>
+    </office>
+    <history>
+      <rename oldname="ลูกแก" name="ดอนขมิ้น" oldenglish="Luk Kae" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="ท่ามะกา" english="Tha Maka" geocode="7188" parent="7105" />
   <entity type="ThesabanTambon" name="ท่าไม้" english="Tha Mai" geocode="7187" parent="7105" />
   <entity type="ThesabanTambon" name="พระแท่น" english="Phra Thaen" geocode="7186" parent="7105" />
@@ -911,8 +920,11 @@
   <entity type="ThesabanTambon" name="ทองผาภูมิ" english="Thong Pha Phum" geocode="7180" parent="7107" />
   <entity type="ThesabanTambon" name="วังกะ" english="Wang Ka" geocode="7179" parent="7108" />
   <entity type="ThesabanTambon" name="พนมทวน" english="Phanom Thuan" geocode="7178" parent="7109" />
-  <entity type="ThesabanTambon" name="ตลาดเขต" english="Talat Khet" geocode="7177" parent="7109" />
-  <entity type="ThesabanTambon" name="รางหวาย" english="Rang Wai" geocode="7177" parent="7109" newname="ตลาดเขต"/>
+  <entity type="ThesabanTambon" name="ตลาดเขต" english="Talat Khet" geocode="7177" parent="7109" >
+    <history>
+      <rename oldname="รางหวาย" oldenglish="Rang Wai" name="ตลาดเขต"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="เลาขวัญ" english="Lao Khwan" geocode="7176" parent="7110" />
   <entity type="ThesabanTambon" name="หนองฝ้าย" english="Nong Fai" geocode="7175" parent="7110" />
   <entity type="ThesabanTambon" name="ด่านมะขามเตี้ย" english="Dan Makham Tia" geocode="7174" parent="7111" />
