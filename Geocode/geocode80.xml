@@ -100,6 +100,9 @@
       <entity type="Muban" geocode="80011305" name="บ้านทุ่งทิศพรหม"/>
     </entity>
     <entity type="Tambon" name="มะม่วงสองต้น" english="Mamuang Song Ton" geocode="800114" >
+      <office type="TAOOffice">
+        <url>http://www.mamungsongton.go.th/</url>
+      </office>
       <entity type="Muban" geocode="80011401" name="บ้านในฉาง"/>
       <!--<entity type="Muban" geocode="80011401" name="บ้านคลองลาว"/>-->
       <entity type="Muban" geocode="80011402" name="บ้านนาสำโรง"/>
@@ -247,6 +250,9 @@
       <entity type="Muban" geocode="80020207" name="บ้านนาออก"/>
     </entity>
     <entity type="Tambon" name="อินคีรี" english="In Khiri" geocode="800203" >
+      <office type="TAOOffice">
+        <url>http://www.inkeree.go.th/</url>
+      </office>
       <entity type="Muban" geocode="80020301" name="บ้านน้ำแคบ"/>
       <entity type="Muban" geocode="80020302" name="บ้านกล้วย"/>
       <entity type="Muban" geocode="80020303" name="บ้านนาสร้าง"/>
@@ -472,9 +478,6 @@
       <entity type="Muban" geocode="80050208" name="บ้านห้วยช่อง"/>
     </entity>
     <entity type="Tambon" name="เขาพระ" english="Khao Phra" geocode="800503" >
-      <office type="MunicipalityOffice">
-        <url>http://www.khaopra.org</url>
-      </office>
       <entity type="Muban" geocode="80050301" name="บ้านหน้าเขา"/>
       <entity type="Muban" geocode="80050302" name="บ้านหนองบัว"/>
       <entity type="Muban" geocode="80050303" name="บ้านทุ่งร่อน"/>
@@ -965,7 +968,7 @@
     <entity type="Tambon" name="เขาโร" english="Khao Ro" geocode="800907" >
       <office type="TAOOffice">
         <url>http://www.khaoro.go.th/</url>
-        </office>
+      </office>
       <entity type="Muban" geocode="80090701" name="บ้านทุ่งควาย"/>
       <entity type="Muban" geocode="80090702" name="บ้านหนองปลิง"/>
       <entity type="Muban" geocode="80090703" name="บ้านวังเต่า"/>
@@ -2178,6 +2181,13 @@
   <entity type="ThesabanTambon" name="ที่วัง" english="Thi Wang" geocode="8074" parent="8009" />
   <entity type="ThesabanTambon" name="ทางพูน" english="Thang Phun" geocode="8073" parent="8023" tambon="802304" />
   <entity type="ThesabanTambon" name="เกาะเพชร" english="Ko Phet" geocode="7072" parent="8016" tambon="801611" />
+
+  <!-- not yet in DOPA statistics-->
+  <entity type="ThesabanTambon" name="เขาพระ" english="Khao Phra" geocode="7071" parent="8005" tambon="800503" >
+    <office type="MunicipalityOffice">
+      <url>http://www.khaopra.org</url>
+    </office>
+  </entity>
 
   <entity type="SakhaTambon" name="เสือหึง" english="Suea Hueng" geocode="8051" parent="8006" />
   <entity type="SakhaTambon" name="สวนหลวง" english="Suan Luang" geocode="8052" parent="8006" />
