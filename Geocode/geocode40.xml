@@ -915,7 +915,22 @@
     <entity type="Tambon" name="ห้วยเตย" english="Huai Toei" geocode="402105" />
   </entity>
   <entity type="Amphoe" name="โคกโพธิ์ไชย" english="Khok Pho Chai" geocode="4022" >
-    <entity type="Tambon" name="บ้านโคก" english="Ban Khok" geocode="402201" />
+    <entity type="Tambon" name="บ้านโคก" english="Ban Khok" geocode="402201" >
+      <office type="TAOOffice">
+        <url>http://www.bankok.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="40220101" name="บ้านโคก" comment="Municipal"/>
+      <entity type="Muban" geocode="40220102" name="บ้านโสกนาดี" comment="Partially municipal"/>
+      <entity type="Muban" geocode="40220103" name="บ้านโคก" comment="Municipal"/>
+      <entity type="Muban" geocode="40220104" name="บ้านนายาว"/>
+      <entity type="Muban" geocode="40220105" name="บ้านโสกใหญ่"/>
+      <entity type="Muban" geocode="40220106" name="บ้านโนนคูณ"/>
+      <entity type="Muban" geocode="40220107" name="บ้านโคก" comment="Municipal"/>
+      <entity type="Muban" geocode="40220108" name="บ้านโคกสง่า" comment="Partially municipal"/>
+      <entity type="Muban" geocode="40220109" name="บ้านหนองทุ่ม"/>
+      <entity type="Muban" geocode="40220110" name="บ้านหนองชมภู"/>
+      <entity type="Muban" geocode="40220111" name="บ้านนาวิลัย" comment="Partially municipal"/>
+      </entity>
     <entity type="Tambon" name="โพธิ์ไชย" english="Pho Chai" geocode="402202" />
     <entity type="Tambon" name="ซับสมบูรณ์" english="Sap Sombun" geocode="402203" />
     <entity type="Tambon" name="นาแพง" english="Na Phaeng" geocode="402204" />
@@ -994,7 +1009,17 @@
   <entity type="ThesabanTambon" name="เขาสวนกวาง" english="Khao Suan Kwang" geocode="4074" parent="4019" />
   <entity type="ThesabanTambon" name="ภูผาม่าน" english="Phu Pha Man" geocode="4073" parent="4020" />
   <entity type="ThesabanTambon" name="ซำสูง" english="Sam Sung" geocode="4072" parent="4021" />
-  <entity type="ThesabanTambon" name="บ้านโคก" english="Ban Khok" geocode="4071" parent="4022" />
+  <entity type="ThesabanTambon" name="บ้านโคก" english="Ban Khok" geocode="4071" parent="4022" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tombolbankok.org/</url>
+    </office>
+    <entity type="Chumchon" geocode="40710001" name="บ้านโคกพัฒนา" muban="40220101"/>
+    <entity type="Chumchon" geocode="40710002" name="รวมพลัง" muban="40220102"/>
+    <entity type="Chumchon" geocode="40710003" name="นรวมพลัง" muban="40220103"/>
+    <entity type="Chumchon" geocode="40710004" name="โคกนคร 2000" muban="40220107"/>
+    <entity type="Chumchon" geocode="40710005" name="สามัคคี" muban="40220108"/>
+    <entity type="Chumchon" geocode="40710006" name="นาวิลัยร่วมใจพัฒนา" muban="40220111"/>
+  </entity>
   <entity type="ThesabanTambon" name="บ้านแฮด" english="Ban Haet" geocode="4070" parent="4024" />
   <entity type="ThesabanTambon" name="โนนศิลา" english="Non Sila" geocode="4069" parent="4025" />
   <entity type="ThesabanTambon" name="บ้านเป็ด" english="Ban Pet" geocode="4068" parent="4001" >
