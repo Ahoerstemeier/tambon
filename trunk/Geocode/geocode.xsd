@@ -27,6 +27,7 @@
       <xs:enumeration value="SakhaTambon"/>
       <xs:enumeration value="SakhaKhwaeng"/>
       <xs:enumeration value="Sakha"/>
+      <xs:enumeration value="Chumchon"/>
       <xs:enumeration value="Unknown"/>
     </xs:restriction>
   </xs:simpleType>
@@ -186,7 +187,10 @@
     <xs:attribute name="newgeocode" type="xs:string" use="optional" />
     <xs:attribute name="parent" type="xs:string" use="optional" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
+    <!-- for Thesaban covering a complete Tambon-->
     <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />
+    <!-- for Chumchon corresponding to a specific Muban-->
+    <xs:attribute name="muban" type="xs:unsignedInt" use="optional" />
   </xs:complexType>
   <xs:element name="entity" type="Entity"/>
 </xs:schema>

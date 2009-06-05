@@ -53,8 +53,15 @@
   <entity type="Amphoe" name="เมืองอุตรดิตถ์" english="Mueang Uttaradit" geocode="5301" >
     <entity type="Tambon" name="ท่าอิฐ" english="Tha It" geocode="530101" />
     <entity type="Tambon" name="ท่าเสา" english="Tha Sao" geocode="530102" >
+      <entity type="Muban" geocode="53010201" name="บ้านคลองห้วยไผ่"/>
+      <entity type="Muban" geocode="53010202" name="บ้านหนองบัว"/>
+      <entity type="Muban" geocode="53010203" name="บ้านหนองผา-นาโปร่ง"/>
+      <entity type="Muban" geocode="53010204" name="บ้านหนองคำฮ้อย"/>
       <entity type="Muban" geocode="53010205" name="บ้านม่อนดินแดง"/>
-
+      <entity type="Muban" geocode="53010206" name="บ้านบนดง"/>
+      <entity type="Muban" geocode="53010207" name="บ้านดงตะขบ"/>
+      <entity type="Muban" geocode="53010208" name="บ้านดงตะขบ"/>
+      <entity type="Muban" geocode="53010209" name="บ้านหนองหิน"/>
       <entity type="Muban" geocode="53010210" name="บ้านม่อนดินแดง"/>
     </entity>
     <entity type="Tambon" name="บ้านเกาะ" english="Ban Ko" geocode="530103" />
@@ -384,7 +391,11 @@
   <entity type="ThesabanTambon" name="ร่วมจิต" english="Ruam Chit" geocode="5392" parent="5303" />
   <entity type="ThesabanTambon" name="น้ำปาด" english="Nam Pat" geocode="5391" parent="5304" />
   <entity type="ThesabanTambon" name="ฟากท่า" english="Fak Tha" geocode="5390" parent="5305" />
-  <entity type="ThesabanTambon" name="บ้านโคก" english="Ban Khok" geocode="5389" parent="5306" />
+  <entity type="ThesabanTambon" name="บ้านโคก" english="Ban Khok" geocode="5389" parent="5306" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bankhok.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าสัก" english="Tha Sak" geocode="5388" parent="5307" />
   <entity type="ThesabanTambon" name="ในเมือง" english="Nai Mueang" geocode="5387" parent="5307" />
   <entity type="ThesabanTambon" name="ทุ่งยั้ง" english="Thung Yang" geocode="5386" parent="5308" />
@@ -392,4 +403,11 @@
   <entity type="ThesabanTambon" name="ทองแสนขัน" english="Thong Saen Khan" geocode="5384" parent="5309" />
   <entity type="ThesabanTambon" name="บ้านเกาะ" english="Ban Ko" geocode="5373" parent="5301" />
   <entity type="ThesabanTambon" name="ผาจุก" english="Pha Chuk" geocode="5372" parent="5301" />
+
+  <!-- Not yet in DOPA statistics-->
+  <entity type="ThesabanTambon" name="ท่าเสา" english="Tha Sao" geocode="5371" parent="5301" tambon="530102" >
+    <office type="MunicipalityOffice">
+      <url>http://www.thasao.go.th/</url>
+    </office>
+  </entity>
 </entity>
