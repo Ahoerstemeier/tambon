@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<entity type="Changwat" name="นครราชสีมา" english="Nakhon Ratchasima" geocode="30">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครราชสีมา" english="Nakhon Ratchasima" geocode="30">
   <officials>
     <official title="Governor" name="ประจักษ์ สุวรรณภักดี"  begin="2008-10-01" />
     <official title="Governor" name="สุธี มากบุญ"  begin="2007-10-01" end="2008-09-30" />
@@ -42,6 +42,13 @@
       <entity type="Muban" geocode="30010411" name="บ้านหนองกระชาย"/>
     </entity>
     <entity type="Tambon" name="มะเริง" english="Maroeng" geocode="300105" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.9808</geo:lat>
+          <geo:long>102.1695</geo:long>
+        </geo:Point>
+        <url>http://www.koratmrg.com/</url>
+      </office>
       <entity type="Muban" geocode="30010501" name="บ้านหัวช้าง"/>
       <entity type="Muban" geocode="30010502" name="บ้านใหม่"/>
       <entity type="Muban" geocode="30010503" name="บ้านสารภี"/>
@@ -119,6 +126,9 @@
       <entity type="Muban" geocode="30011112" name="บ้านทุ่งทะเลร่วมใจ"/>
     </entity>
     <entity type="Tambon" name="บ้านเกาะ" english="Ban Ko" geocode="300112" >
+      <office type="TAOOffice">
+        <url>http://www.bankoh-korat.com/</url>
+      </office>
       <entity type="Muban" geocode="30011201" name="บ้านเกาะ"/>
       <entity type="Muban" geocode="30011202" name="บ้านเกาะ"/>
       <entity type="Muban" geocode="30011203" name="บ้านขนาย"/>
