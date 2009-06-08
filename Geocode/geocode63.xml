@@ -183,9 +183,20 @@
       <entity type="Muban" geocode="63060607" name="บ้านวังตะเคียนใต้"/>
     </entity>
     <entity type="Tambon" name="แม่ปะ" english="Mae Pa" geocode="630607" >
+      <office type="TAOOffice">
+        <url>http://www.maepalocal.com/</url>
+      </office>
+      <entity type="Muban" geocode="63060701" name="บ้านแม่ปะเหนือ"/>
+      <entity type="Muban" geocode="63060702" name="บ้านแม่ปะกลาง"/>
       <entity type="Muban" geocode="63060703" name="บ้านแม่ปะใต้"/>
-
-      <entity type="Muban" geocode="63060711" name="บ้านใหม่หนองบัวคำ"/>
+      <entity type="Muban" geocode="63060704" name="บ้านห้วยกะโหลก"/>
+      <entity type="Muban" geocode="63060705" name="บ้านปากห้วยแม่ปะ"/>
+      <entity type="Muban" geocode="63060706" name="บ้านห้วยหินฝน"/>
+      <entity type="Muban" geocode="63060707" name="บ้านหนองบัว"/>
+      <entity type="Muban" geocode="63060708" name="บ้านแม่ปะบ้านสัน"/>
+      <entity type="Muban" geocode="63060709" name="บ้านพระธาตุ"/>
+      <entity type="Muban" geocode="63060710" name="บ้านร่วมใจพัฒนา"/>
+      <entity type="Muban" geocode="63060711" name="บ้านใหม่หนองบัวคำ" comment="TAO website says บ้านหนองบัวคำ"/>
     </entity>
     <entity type="Tambon" name="มหาวัน" english="Mahawan" geocode="630608" />
     <entity type="Tambon" name="ด่านแม่ละเมา" english="Dan Mae Lamao" geocode="630609" />
@@ -258,7 +269,11 @@
 
 
   <entity type="ThesabanMueang" name="ตาก" english="Tak" geocode="6399" parent="6301" />
-  <entity type="ThesabanMueang" name="แม่สอด" english="Mae Sot" geocode="6398" parent="6306" />
+  <entity type="ThesabanMueang" name="แม่สอด" english="Mae Sot" geocode="6398" parent="6306" >
+    <office type="MunicipalityOffice">
+      <url>http://www.msmun.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ทุ่งกระเชาะ" english="Thung Kra Cho" geocode="6397" parent="6302" />
   <entity type="ThesabanTambon" name="บ้านตาก" english="Ban Tak" geocode="6396" parent="6302" />
   <entity type="ThesabanTambon" name="สามเงา" english="Sam Ngao" geocode="6395" parent="6303" />
