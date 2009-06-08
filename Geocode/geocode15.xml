@@ -43,7 +43,7 @@
     <official title="Governor" index="2" name="พระพิทักษ์เทพธานี" beginyear="1895" endyear="1896"/>
     <official title="Governor" index="1" name="พระยาวิเศษไชยชาญ ปรีชาญาณยุติธรรมโกศลสกลเกษตรวิไสย" endyear="1895"/>
   </officials>
-    <entity type="Amphoe" name="เมืองอ่างทอง" english="Mueang Ang Thong" geocode="1501" >
+  <entity type="Amphoe" name="เมืองอ่างทอง" english="Mueang Ang Thong" geocode="1501" >
     <entity type="Tambon" name="ตลาดหลวง" english="Talat Luang" geocode="150101" />
     <entity type="Tambon" name="บางแก้ว" english="Bang Kaeo" geocode="150102" />
     <entity type="Tambon" name="ศาลาแดง" english="Sala Daeng" geocode="150103" />
@@ -127,7 +127,20 @@
     <entity type="Tambon" name="คลองขนาก" english="Khlong Khanak" geocode="150609" />
     <entity type="Tambon" name="ไผ่วง" english="Phai Wong" geocode="150610" />
     <entity type="Tambon" name="สี่ร้อย" english="Si Roi" geocode="150611" />
-    <entity type="Tambon" name="ม่วงเตี้ย" english="Muang Tia" geocode="150612" />
+    <entity type="Tambon" name="ม่วงเตี้ย" english="Muang Tia" geocode="150612" >
+      <entity type="Muban" geocode="15061201" name="บ้านศาลาดิน"/>
+      <entity type="Muban" geocode="15061202" name="บ้านศาลาดิน"/>
+      <entity type="Muban" geocode="15061203" name="บ้านศาลาดิน"/>
+      <entity type="Muban" geocode="15061204" name="บ้านม่วงขวัญ"/>
+      <entity type="Muban" geocode="15061205" name="บ้านโคกมะรุม"/>
+      <entity type="Muban" geocode="15061206" name="บ้านโคกมะรุม"/>
+      <entity type="Muban" geocode="15061207" name="บ้านศาลเจ้าตะละ"/>
+      <entity type="Muban" geocode="15061208" name="บ้านม่วงเตี้ย"/>
+      <entity type="Muban" geocode="15061209" name="บ้านม่วงเตี้ย"/>
+      <entity type="Muban" geocode="15061210" name="บ้านคลองตะวัน"/>
+      <entity type="Muban" geocode="15061211" name="บ้านหัวคลอง"/>
+      <entity type="Muban" geocode="15061212" name="บ้านหัวคลอง"/>
+    </entity>
     <entity type="Tambon" name="หัวตะพาน" english="Hua Taphan" geocode="150613" />
     <entity type="Tambon" name="หลักแก้ว" english="Lak Kaeo" geocode="150614" />
     <entity type="Tambon" name="ตลาดใหม่" english="Talat Mai" geocode="150615" />
@@ -157,4 +170,10 @@
   <entity type="ThesabanTambon" name="สามโก้" english="Samko" geocode="1590" parent="1507" />
   <entity type="ThesabanTambon" name="โพสะ" english="Phosa" geocode="1589" parent="1501" />
 
+  <!-- Not yet in DOPA statistics-->
+  <entity type="ThesabanTambon" name="ม่วงเตี้ย" english="Muang Tia" geocode="1585" parent="1506" tambon="150612" >
+    <office type="MunicipalityOffice">
+      <url>http://www.muangtia.com/</url>
+    </office>
+  </entity>
 </entity>

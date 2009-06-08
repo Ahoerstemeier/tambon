@@ -325,12 +325,18 @@
     <entity type="Tambon" name="แม่พูล" english="Mae Phun" geocode="530802" />
     <entity type="Tambon" name="นานกกก" english="Na Nok Kok" geocode="530803" />
     <entity type="Tambon" name="ฝายหลวง" english="Fai Luang" geocode="530804" >
+      <office type="TAOOffice">
+        <url>http://www.failuang.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="53080401" name="บ้านเชียงแสน"/>
+      <entity type="Muban" geocode="53080402" name="บ้านน้ำท่วม"/>
       <entity type="Muban" geocode="53080403" name="บ้านนารี"/>
-      <entity type="Muban" geocode="53080404" name="บ้านฟากท่า"/>
+      <entity type="Muban" geocode="53080404" name="บ้านฟากท่า" comment="TAO website says บ้านม่อนป่างิ้ว"/>
       <entity type="Muban" geocode="53080405" name="บ้านทุ่งเอี้ยง"/>
-
+      <entity type="Muban" geocode="53080406" name="บ้านต้นม่วง"/>
       <entity type="Muban" geocode="53080407" name="บ้านท้องลับแล"/>
-
+      <entity type="Muban" geocode="53080408" name="บ้านท่วมแล้ง"/>
+      <entity type="Muban" geocode="53080409" name="บ้านวัดป่า"/>
       <entity type="Muban" geocode="53080410" name="บ้านท้องลับแลพัฒนา"/>
       <entity type="Muban" geocode="53080411" name="บ้านทุ่งพัฒนา"/>
       <entity type="Muban" geocode="53080412" name="บ้านต้นม่วงใต้"/>
@@ -402,7 +408,11 @@
   <entity type="ThesabanTambon" name="ท่าสัก" english="Tha Sak" geocode="5388" parent="5307" />
   <entity type="ThesabanTambon" name="ในเมือง" english="Nai Mueang" geocode="5387" parent="5307" />
   <entity type="ThesabanTambon" name="ทุ่งยั้ง" english="Thung Yang" geocode="5386" parent="5308" />
-  <entity type="ThesabanTambon" name="หัวดง" english="Hua Dong" geocode="5385" parent="5308" />
+  <entity type="ThesabanTambon" name="หัวดง" english="Hua Dong" geocode="5385" parent="5308" >
+    <office type="MunicipalityOffice">
+      <url>http://www.huadong.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ทองแสนขัน" english="Thong Saen Khan" geocode="5384" parent="5309" />
   <entity type="ThesabanTambon" name="บ้านเกาะ" english="Ban Ko" geocode="5373" parent="5301" />
   <entity type="ThesabanTambon" name="ผาจุก" english="Pha Chuk" geocode="5372" parent="5301" />
