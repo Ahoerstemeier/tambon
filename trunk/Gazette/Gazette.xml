@@ -16,7 +16,11 @@
     <abolish type="Changwat" english="Kalasin" ownerenglish="Maha Sarakham" />
     <abolish type="Changwat" english="Lang Suan" ownerenglish="Chumphon" />
     <abolish type="Changwat" english="Takua Pa" ownerenglish="Phang Nga" />
-    <abolish type="Changwat" english="Sai Buri" ownerenglish="Pattani" />
+    <abolish type="Changwat" name="สายบุรี" english="Sai Buri">
+      <reassign type="Amphoe" geocode="9603" newowner="96"/>
+      <reassign type="Amphoe" geocode="9407" newowner="94"/>
+      <reassign type="KingAmphoe" name="กะลาพอ" english="Kalapho" parent="9407" comment="Abolished in 1938"/>
+    </abolish>
     <abolish type="Changwat" english="Phra Pra Daeng" ownerenglish="SamutPrakan, Thonburi" />
     <!--only Rat Burana to Thonburi -->
     <abolish type="Changwat" english="MinBuri" ownerenglish="Phra Nakhon, Chachoengsao" />

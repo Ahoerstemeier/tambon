@@ -615,10 +615,14 @@
       <rename name="มะกรูด" english="Makrut" oldname="เมืองเก่า" oldenglish="Mueang Kao" geocode="9402"/>
       <rename name="ยามู" english="Yamu" oldname="เมืองยะหริ่ง" oldenglish="Mueang Yaring" geocode="9409"/>
       <rename name="มายอ" english="Mayo" oldname="ราเกาะ" oldenglish="Rako" geocode="9405"/>
-      <rename name="ตะลุบัน" english="Taluban" oldname="เมือง" oldenglish="Mueang" geocode="9407"/>
-      <!--in Gazette spelled ตะบุลัน, corrected on page ๘๕๘ -->
-      <rename name="บาเจาะ" english="Bacho" oldname="จำปากอ" oldenglish="Champako" geocode="9603"/>
-      <!--in Gazette it says name="บาเระเหนือ" english="Paro Nuea", corrected with page ๘๕๘ -->
+      <rename name="ตะลุบัน" english="Taluban" oldname="เมือง" oldenglish="Mueang" geocode="9407">
+        <!--spelled ตะบุลัน, corrected to ตะลุบัน on page 858-->
+        <related volume="34" page="858" issue="0 ง" date="1917-06-17" />
+      </rename>
+      <rename name="บาเจาะ" english="Bacho" oldname="จำปากอ" oldenglish="Champako" geocode="9603">
+        <!--บาเระเหนือ (Paro Nuea), corrected to Bacho on page 858 -->
+        <related volume="34" page="858" issue="0 ง" date="1917-06-17" />
+      </rename>
       <rename name="เสตง" english="Setong" oldname="เมือง" oldenglish="Mueang" geocode="9501"/>
       <rename name="โกตาบารู" english="Kota Baru" oldname="รามันห์" oldenglish="Raman" geocode="9506"/>
       <rename name="บางนารา" english="Bang Nara" oldname="เมือง" oldenglish="Mueang" geocode="9601"/>
@@ -756,6 +760,8 @@
     </entry>
     <entry description="Correction to rename of Amphoe" title="แก้คำผิด ราชกิจจานุเบกษา แผนกกฤษฎีกา เล่ม ๓๔ ตอนที่ ๕ ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่ออำเภอ หน้า ๔๐" volume="34" page="858" issue="0 ง" uri="2460/D/858_1.PDF" publication="1917-06-17" >
       <correction volume="34" issue="0 ก" page="40" />
+      <mention geocode="9603"/>
+      <mention geocode="9407"/>
     </entry>
     <entry description="Correction to rename of Amphoe" title="แก้คำผิด ราชกิจจานุเบกษา เล่ม ๓๔ ตอนที่ ๕ ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่ออำเภอ หน้า ๖๑" volume="34" page="1985" issue="0 ง" uri="2460/D/1985_1.PDF" publication="1917-10-14" >
       <correction volume="34" issue="0 ก" page="40" />
