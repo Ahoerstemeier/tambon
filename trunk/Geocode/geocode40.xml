@@ -855,7 +855,11 @@
       <entity type="Muban" geocode="40170616" name="บ้านหนองบัวเย็น"/>
       <entity type="Muban" geocode="40170617" name="บ้านโนนพันชาติ"/>
     </entity>
-    <entity type="Tambon" name="นางาม" english="Na Ngam" geocode="401707" />
+    <entity type="Tambon" name="นางาม" english="Na Ngam" geocode="401707" >
+      <office type="TAOOffice">
+        <url>http://www.nangam.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านโคก" english="Ban Khok" geocode="401708" newgeocode="402201" />
     <entity type="Tambon" name="โพธิ์ไชย" english="Pho Chai" geocode="401709" newgeocode="402202" />
     <entity type="Tambon" name="ท่าศาลา" english="Tha Sala" geocode="401710" />
@@ -1038,4 +1042,11 @@
     <entity type="Unknown" name="บ้านเป็ด" english="Ban Pet" geocode="406801" />
   </entity>
   <entity type="ThesabanTambon" name="สาวะถี" english="Sawathi" geocode="4067" parent="4001" />
+  
+  <!-- not yet in DOPA statistics-->
+  <entity type="ThesabanTambon" name="เมืองเก่า" english="Mueang Kao" geocode="4062" parent="4001" tambon="400106" >
+    <office type="MunicipalityOffice">
+      <url>http://sites.google.com/site/mk20080rg/</url>
+    </office>
+  </entity>
 </entity>
