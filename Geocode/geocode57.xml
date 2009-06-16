@@ -699,6 +699,9 @@
     </entity>
     <entity type="Tambon" name="แม่สลองนอก" english="Mae Salong Nok" geocode="571503" />
     <entity type="Tambon" name="แม่ฟ้าหลวง" english="Mae Fa Luang" geocode="571504" >
+      <office type="TAOOffice">
+        <url>http://www.maefaluang.org/</url>
+      </office>
       <entity type="Muban" geocode="57150401" name="บ้านห้วยน้ำขุ่น"/>
 
       <entity type="Muban" geocode="57150412" name="บ้านป่าซางนาเงิน"/>
@@ -804,6 +807,14 @@
   <entity type="ThesabanTambon" name="บ้านดู่" english="Ban Du" geocode="5774" parent="5701" />
 
   <!-- Not yet in DOPA statistics-->
+  <entity type="ThesabanTambon" name="เชียงของ" english="Chiang Khong" geocode="5770" parent="5703" tambon="570301" >
+    <office type="MunicipalityOffice">
+      <url>http://www.wiang.go.th/</url>
+    </office>
+    <history>
+      <rename oldname="เวียง" oldenglish="Wiang" name="เชียงของ" english="Chiang Khong" />
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="เวียงพางคำ" english="Wiang Phang Kham" geocode="5773" parent="5709" tambon="570906" >
     <office type="MunicipalityOffice">
       <url>http://www.nang-non.com/</url>
