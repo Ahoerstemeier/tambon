@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="เพชรบุรี" english="Phetchaburi" geocode="76">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เพชรบุรี" english="Phetchaburi" geocode="76">
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>13.1106</geo:lat>
+      <geo:long>99.9464</geo:long>
+    </geo:Point>
+    <url>http://www.phetchaburi.go.th/</url>
+  </office>
   <officials source="http://www.phetchaburi.go.th/data/admin1.htm">
     <official title="Governor" index="54" name="ชาย พานิชพรพันธุ์" beginyear="2008"/>
     <official title="Governor" index="53" name="สยุมพร ลิ่มไทย" beginyear="2006" endyear="2008"/>
@@ -57,6 +64,12 @@
     <official title="Governor" index="1" name="พระยาเพชรบุรี (ฟู)" comment="No begin or end, only list year 1782"/>
   </officials>
   <entity type="Amphoe" name="เมืองเพชรบุรี" english="Mueang Phetchaburi" geocode="7601" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.1118</geo:lat>
+        <geo:long>99.9440</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ท่าราบ" english="Tha Rap" geocode="760101" />
     <entity type="Tambon" name="คลองกระแชง" english="Khlong Krachaeng" geocode="760102" />
     <entity type="Tambon" name="บางจาน" english="Bang Chan" geocode="760103" />
@@ -141,8 +154,27 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ชะอำ" english="Cha-am" geocode="7604" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>12.7997</geo:lat>
+        <geo:long>99.9672</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ชะอำ" english="Cha-am" geocode="760401" />
-    <entity type="Tambon" name="บางเก่า" english="Bang Kao" geocode="760402" />
+    <entity type="Tambon" name="บางเก่า" english="Bang Kao" geocode="760402" >
+      <office type="TAOOffice">
+        <url>http://www.bangkao.net/</url>
+      </office>
+      <entity type="Muban" geocode="76040201" name="บ้านบางเก่า"/>
+      <entity type="Muban" geocode="76040202" name="บ้านบางเก่า"/>
+      <entity type="Muban" geocode="76040203" name="บ้านบ่อใหญ่"/>
+      <entity type="Muban" geocode="76040204" name="บ้านท่า"/>
+      <entity type="Muban" geocode="76040205" name="บ้านปากคลอง"/>
+      <entity type="Muban" geocode="76040206" name="บ้านท่าไทร"/>
+      <entity type="Muban" geocode="76040207" name="บ้านบางเกตุ"/>
+      <entity type="Muban" geocode="76040208" name="บ้านม่วง"/>
+      <entity type="Muban" geocode="76040209" name="บ้านโตนดหลวง"/>
+    </entity>
     <entity type="Tambon" name="นายาง" english="Na Yang" geocode="760403" />
     <entity type="Tambon" name="เขาใหญ่" english="Khao Yai" geocode="760404" />
     <entity type="Tambon" name="หนองศาลา" english="Nong Sala" geocode="760405" />
@@ -228,7 +260,11 @@
     <entity type="Tambon" name="ไร่สะท้อน" english="Rai Sathon" geocode="760614" />
     <entity type="Tambon" name="ห้วยข้อง" english="Huai Khong" geocode="760615" />
     <entity type="Tambon" name="ท่าช้าง" english="Tha Chang" geocode="760616" />
-    <entity type="Tambon" name="ถ้ำรงค์" english="Tham Rong" geocode="760617" />
+    <entity type="Tambon" name="ถ้ำรงค์" english="Tham Rong" geocode="760617" >
+      <office type="TAOOffice">
+        <url>http://www.tamrong.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ห้วยลึก" english="Huai Luek" geocode="760618" />
   </entity>
   <entity type="Amphoe" name="บ้านแหลม" english="Ban Laem" geocode="7607" >
@@ -270,8 +306,22 @@
   </entity>
   <entity type="Amphoe" name="แก่งกระจาน" english="Kaeng Krachan" geocode="7608" >
     <entity type="Tambon" name="แก่งกระจาน" english="Kaeng Krachan" geocode="760801" >
+      <office type="TAOOffice">
+        <url>http://www.kaengkrachan.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="76080101" name="บ้านแก่งกระจาน"/>
+      <entity type="Muban" geocode="76080102" name="บ้านหนองหงษ์"/>
+      <entity type="Muban" geocode="76080103" name="บ้านถ้ำเสือ"/>
+      <entity type="Muban" geocode="76080104" name="บ้านลำตะเคียน"/>
       <entity type="Muban" geocode="76080105" name="บ้านแม่คะเมย"/>
-
+      <entity type="Muban" geocode="76080106" name="บ้านวังนางนวล"/>
+      <entity type="Muban" geocode="76080107" name="บ้านหนองเกด"/>
+      <entity type="Muban" geocode="76080108" name="บ้านท่าเรือ"/>
+      <entity type="Muban" geocode="76080109" name="บ้านน้ำทรัพย์"/>
+      <entity type="Muban" geocode="76080110" name="บ้านพุเข็ม"/>
+      <entity type="Muban" geocode="76080111" name="บ้านเขากลิ้ง"/>
+      <entity type="Muban" geocode="76080112" name="บ้านเขาพระลาย"/>
+      <entity type="Muban" geocode="76080113" name="บ้านต้นเกตุ"/>
       <entity type="Muban" geocode="76080114" name="บ้านพุบอน"/>
     </entity>
     <entity type="Tambon" name="สองพี่น้อง" english="Song Phi Nong" geocode="760802" />
@@ -282,8 +332,24 @@
   </entity>
   <entity type="KingAmphoe" name="เขาลูกช้าง" english="Khao Lukchang" geocode="7609" />
 
-  <entity type="ThesabanMueang" name="เพชรบุรี" english="Phetchaburi" geocode="7699" parent="7601" />
-  <entity type="ThesabanTambon" name="ชะอำ" english="Cha-am" geocode="7698" parent="7604" />
+  <entity type="ThesabanMueang" name="เพชรบุรี" english="Phetchaburi" geocode="7699" parent="7601" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.1119</geo:lat>
+        <geo:long>99.9458</geo:long>
+      </geo:Point>
+      <url>http://www.phetchaburicity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanMueang" name="ชะอำ" english="Cha-am" geocode="7698" parent="7604" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>12.7993</geo:lat>
+        <geo:long>99.9684</geo:long>
+      </geo:Point>
+      <url>http://www.cha-amcity.go.th</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หัวสะพาน" english="Hua Saphan" geocode="7697" parent="7601" />
   <entity type="ThesabanTambon" name="หาดเจ้าสำราญ" english="Hat Chao Sam Ran" geocode="7696" parent="7601" />
   <entity type="ThesabanTambon" name="เขาย้อย" english="Khao Yoi" geocode="7695" parent="7602" />
