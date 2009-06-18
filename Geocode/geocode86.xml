@@ -62,7 +62,20 @@
   </officials>
   <entity type="Amphoe" name="เมืองชุมพร" english="Mueang Chumphon" geocode="8601" >
     <entity type="Tambon" name="ท่าตะเภา" english="Tha Taphao" geocode="860101" />
-    <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="860102" />
+    <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="860102" >
+      <office type="TAOOffice">
+        <url>http://www.paknamchumporn.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="86010201" name="บ้านเกาะเสม็ด"/>
+
+      <entity type="Muban" geocode="86010204" name="บ้านคอหมู"/>
+      <entity type="Muban" geocode="86010205" name="บ้านหัวกรูด"/>
+      <entity type="Muban" geocode="86010206" name="บ้านใน"/>
+      <entity type="Muban" geocode="86010207" name="บ้านหัวถนน (บางส่วน)"/>
+      <entity type="Muban" geocode="86010208" name="บ้านจัดสรร"/>
+
+      <entity type="Muban" geocode="86010210" name="บ้านมัทรี"/>
+    </entity>
     <entity type="Tambon" name="ท่ายาง" english="Tha Yang" geocode="860103" />
     <entity type="Tambon" name="บางหมาก" english="Bang Mak" geocode="860104" >
       <office type="TAOOffice">
@@ -408,7 +421,11 @@
 
   <entity type="ThesabanMueang" name="ชุมพร" english="Chumphon" geocode="8699" parent="8601" />
   <entity type="ThesabanMueang" name="หลังสวน" english="Lang Suan" geocode="8698" parent="8604" />
-  <entity type="ThesabanTambon" name="ปากน้ำชุมพร" english="Paknam Chumphon" geocode="8697" parent="8601" />
+  <entity type="ThesabanTambon" name="ปากน้ำชุมพร" english="Paknam Chumphon" geocode="8697" parent="8601" >
+    <office type="MunicipalityOffice">
+      <url>http://www.paknumchumphon.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="วังไผ่" english="Wang Phai" geocode="8696" parent="8601" />
   <entity type="ThesabanTambon" name="ท่าแซะ" english="Tha Sae" geocode="8695" parent="8602" />
   <entity type="ThesabanTambon" name="เนินสันติ" english="Noen Santi" geocode="8694" parent="8602" />
