@@ -272,11 +272,23 @@
   <entity type="ThesabanMueang" name="ชลบุรี" english="Chonburi" geocode="2099" parent="2001" />
   <entity type="ThesabanMueang" name="พนัสนิคม" english="Phanat Nikhom" geocode="2098" parent="2006" />
   <entity type="ThesabanMueang" name="ศรีราชา" english="Si Racha" geocode="2097" parent="2007" />
-  <entity type="Mueang" name="พัทยา" english="Pattaya" geocode="2096" parent="2004" />
+  <entity type="Mueang" name="พัทยา" english="Pattaya" geocode="2096" parent="2004" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>12.9497</geo:lat>
+        <geo:long>100.8933</geo:long>
+      </geo:Point>
+      <url>http://www.pattaya.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="บ้านบึง" english="Ban Bueng" geocode="2095" parent="2002" />
   <entity type="ThesabanMueang" name="แสนสุข" english="Saen Suk" geocode="2094" parent="2001" />
-  <entity type="ThesabanTambon" name="แหลมฉบัง" english="Laem Chabang" geocode="2093" parent="2007,2004" >
+  <entity type="ThesabanTambon" name="แหลมฉบัง" english="Laem Chabang" geocode="2093" parent="2007,2004" >    
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.0860</geo:lat>
+        <geo:long>100.9247</geo:long>
+      </geo:Point>
       <url>http://www.lcb.go.th/</url>
     </office>
   </entity>
