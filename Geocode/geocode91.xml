@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="สตูล" english="Satun" geocode="91">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สตูล" english="Satun" geocode="91">
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>6.6239</geo:lat>
+      <geo:long>100.0670</geo:long>
+    </geo:Point>
+    <url>http://www.satun.go.th/</url>
+  </office>
+  <office type="PAOOffice">
+    <url>http://www.pao-satun.go.th/</url>
+  </office>
   <officials source="http://www.satunprovince.net/satun_ceo_list.html">
     <official title="Governor" index="48" name="สุเมธ ชัยเลิศวณิชกุล" begin="2009-03-01"/>
     <official title="Governor" index="47" name="สยุมพร ลิ่มไทย" begin="2008-10-20" end="2009-02-28" />
@@ -51,6 +61,12 @@
     <official title="Governor" index="1" name="พระยาอภัยนุราชฯ (ตนกูบิศนู)" beginyear="1813" endyear="1815"/>
   </officials>
   <entity type="Amphoe" name="เมืองสตูล" english="Mueang Satun" geocode="9101" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>6.6233</geo:lat>
+        <geo:long>100.0667</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="พิมาน" english="Phiman" geocode="910101" />
     <entity type="Tambon" name="คลองขุด" english="Khlong Khut" geocode="910102" >
       <entity type="Muban" geocode="91010201" name="เขาจีน"/>
@@ -463,11 +479,35 @@
     </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="สตูล" english="Satun" geocode="9199" parent="9101" />
+  <entity type="ThesabanMueang" name="สตูล" english="Satun" geocode="9199" parent="9101" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>6.6148</geo:lat>
+        <geo:long>100.0680</geo:long>
+      </geo:Point>
+      <url>http://www.stm.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เจ๊ะบิลัง" english="Che Bi Lang" geocode="9198" parent="9101" />
-  <entity type="ThesabanTambon" name="ฉลุง" english="Chalung" geocode="9197" parent="9101" />
+  <entity type="ThesabanTambon" name="ฉลุง" english="Chalung" geocode="9197" parent="9101" >
+    <office type="MunicipalityOffice">
+      <url>http://www.chalungcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ควนโดน" english="Khuan Don" geocode="9196" parent="9102" />
-  <entity type="ThesabanTambon" name="กำแพง" english="Kamphaeng" geocode="9195" parent="9105" />
-  <entity type="ThesabanTambon" name="ทุ่งหว้า" english="Thung Wa" geocode="9194" parent="9106" />
-  <entity type="ThesabanTambon" name="คลองขุด" english="Khlong Khut" geocode="9193" parent="9101" />
+  <entity type="ThesabanTambon" name="กำแพง" english="Kamphaeng" geocode="9195" parent="9105" >
+    <office type="MunicipalityOffice">
+      <url>http://www.kumpangcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ทุ่งหว้า" english="Thung Wa" geocode="9194" parent="9106" >
+    <office type="MunicipalityOffice">
+      <url>http://www.thungwacity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="คลองขุด" english="Khlong Khut" geocode="9193" parent="9101" >
+    <office type="MunicipalityOffice">
+      <url>http://www.klongkhudcity.go.th/</url>
+    </office>
+  </entity>
 </entity>
