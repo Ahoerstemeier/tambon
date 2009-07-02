@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สุพรรณบุรี" english="Suphanburi" geocode="72">
+  <office type="ProvinceHall">
+    <url>http://www.suphanburi.go.th/</url>
+  </office>
   <officials source="http://www.suphanburi.go.th/ppp.ppt">
     <official title="Governor" index="40" name="สมศักย์ ภูรีศรีศักดิ์" begin="2006-11-13"/>
     <official title="Governor" index="39" name="ทรงพล ทิมาศาสตร์" begin="2003-10-01" end="2006-09-30"/>
@@ -101,7 +104,23 @@
     <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="720205" />
     <entity type="Tambon" name="ทุ่งคลี" english="Thung Khli" geocode="720206" />
     <entity type="Tambon" name="โคกช้าง" english="Khok Chang" geocode="720207" />
-    <entity type="Tambon" name="หัวเขา" english="Hua Khao" geocode="720208" />
+    <entity type="Tambon" name="หัวเขา" english="Hua Khao" geocode="720208" >
+      <office type="TAOOffice">
+        <url>http://www.huakhao.com/</url>
+      </office>
+      <entity type="Muban" geocode="72020801" name="บ้านเขาดีรี"/>
+      <entity type="Muban" geocode="72020802" name="บ้านหัวเขา"/>
+      <entity type="Muban" geocode="72020803" name="บ้านกระเสียว"/>
+      <entity type="Muban" geocode="72020804" name="บ้านวัดไทร"/>
+      <entity type="Muban" geocode="72020805" name="บ้านน้ำพุ"/>
+      <entity type="Muban" geocode="72020806" name="บ้านหัวเขา"/>
+      <entity type="Muban" geocode="72020807" name="บ้านฉวาก"/>
+      <entity type="Muban" geocode="72020808" name="บ้านปากดง"/>
+      <entity type="Muban" geocode="72020809" name="บ้านเขาเขียว"/>
+      <entity type="Muban" geocode="72020810" name="บ้านหัวเขา"/>
+      <entity type="Muban" geocode="72020811" name="บ้านหนองกระด่าน"/>
+      <entity type="Muban" geocode="72020812" name="บ้านตรอกตาโพธิ์"/>
+      </entity>
     <entity type="Tambon" name="หัวนา" english="Hua Na" geocode="720209" >
       <entity type="Muban" geocode="72020902" name="บ้านอู่ตะเภา"/>
 
@@ -486,7 +505,11 @@
   <entity type="ThesabanTambon" name="ท่าเสด็จ" english="Tha Sadet" geocode="7297" parent="7201" />
   <entity type="ThesabanTambon" name="โพธิ์พระยา" english="Pho Phraya" geocode="7296" parent="7201" />
   <entity type="ThesabanTambon" name="สวนแตง" english="Suan Taeng" geocode="7295" parent="7201" />
-  <entity type="ThesabanTambon" name="เขาพระ" english="Khao Phra" geocode="7294" parent="7202" />
+  <entity type="ThesabanTambon" name="เขาพระ" english="Khao Phra" geocode="7294" parent="7202" >
+    <office type="MunicipalityOffice">
+      <url>http://www.khaophra.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="นางบวช" english="Nang Buat" geocode="7293" parent="7202" />
   <entity type="ThesabanTambon" name="บ่อกรุ" english="Bo Kru" geocode="7292" parent="7202" />
   <entity type="ThesabanTambon" name="ด่านช้าง" english="Dan Chang" geocode="7291" parent="7203" />
