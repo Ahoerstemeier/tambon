@@ -379,7 +379,12 @@
     <entity type="Tambon" name="คำเจริญ" english="Kham Charoen" geocode="341123" />
   </entity>
   <entity type="Amphoe" name="กุดข้าวปุ้น" english="Kut Khaopun" geocode="3412" >
-    <entity type="Tambon" name="ข้าวปุ้น" english="Khaopun" geocode="341201" />
+    <entity type="Tambon" name="ข้าวปุ้น" english="Khaopun" geocode="341201" >
+      <!-- OBT sometimes misnamed as กุดข้าวปุ้น -->
+      <office type="TAOOffice">
+        <url>http://www.khaopun.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="โนนสวาง" english="Non Sawang" geocode="341202" />
     <entity type="Tambon" name="แก่งเค็ง" english="Kaeng Kheng" geocode="341203" />
     <entity type="Tambon" name="กาบิน" english="Ka Bin" geocode="341204" />
