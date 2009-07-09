@@ -522,7 +522,14 @@
   </entity>
   <entity type="Amphoe" name="วัดโบสถ์" english="Wat Bot" geocode="6507" >
     <entity type="Tambon" name="วัดโบสถ์" english="Wat Bot" geocode="650701" />
-    <entity type="Tambon" name="ท่างาม" english="Tha Ngam" geocode="650702" />
+    <entity type="Tambon" name="ท่างาม" english="Tha Ngam" geocode="650702" >
+
+      <entity type="Muban" geocode="65070206" name="บ้านเขาไร่ศรีราชา" english="Ban Khao Rai Si Ratcha">
+        <history>
+          <rename oldname="บ้านหนองอ้ายโพ้น" oldenglish="Ban Nong Ai Phon" name="บ้านเขาไร่ศรีราชา" english="Ban Khao Rai Si Ratcha" />
+        </history>
+      </entity>
+    </entity>
     <entity type="Tambon" name="ท้อแท้" english="Thothae" geocode="650703" />
     <entity type="Tambon" name="บ้านยาง" english="Ban Yang" geocode="650704" />
     <entity type="Tambon" name="หินลาด" english="Hin Lat" geocode="650705" />
@@ -575,14 +582,19 @@
       <office type="TAOOffice">
         <url>http://kaengsopha.com/</url>
       </office>
-      <entity type="Muban" geocode="650806" name="บ้านปอย"/>
-      หมู่ที่  8  บ้านปากยาง
-      หมู่ที่  2  บ้านแก่งกุลา       หมู่ที่  9  บ้านแก่งซอง
-      หมู่ที่  3  บ้านห้วยพลู        หมู่ที่  10  บ้านโป่งปะ
-      หมู่ที่  4  บ้านเขาน้อย       หมู่ที่   11  บ้านน้อยม่วงหอม
-      หมู่ที่  5  บ้านม่วงหอม       หมู่ที่  12  บ้านแก่งกุลาเหนือ
-      หมู่ที่  6  บ้านลานหญ้า      หมู่ที่  13  บ้านใหม่เขาน้อย
-      หมู่ที่  7  บ้านทรัพย์ไพรวัลย์
+      <entity type="Muban" geocode="65080601" name="บ้านปอย"/>
+      <entity type="Muban" geocode="65080602" name="บ้านแก่งกุลา"/>
+      <entity type="Muban" geocode="65080603" name="บ้านห้วยพลู"/>
+      <entity type="Muban" geocode="65080604" name="บ้านเขาน้อย"/>
+      <entity type="Muban" geocode="65080605" name="บ้านม่วงหอม"/>
+      <entity type="Muban" geocode="65080606" name="บ้านลานหญ้า"/>
+      <entity type="Muban" geocode="65080607" name="บ้านทรัพย์ไพรวัลย์"/>
+      <entity type="Muban" geocode="65080609" name="บ้านแก่งซอง 2"/>
+      <entity type="Muban" geocode="65080608" name="บ้านปากยาง"/>
+      <entity type="Muban" geocode="65080610" name="บ้านโป่งปะ"/>
+      <entity type="Muban" geocode="65080611" name="บ้านน้อยม่วงหอม"/>
+      <entity type="Muban" geocode="65080612" name="บ้านแก่งกุลาเหนือ"/>
+      <entity type="Muban" geocode="65080613" name="บ้านใหม่เขาน้อย"/>
     </entity>
     <entity type="Tambon" name="ท่าหมื่นราม" english="Tha Muen Ram" geocode="650807" />
     <entity type="Tambon" name="วังนกแอ่น" english="Wang Nok Aen" geocode="650808" >
@@ -708,7 +720,11 @@
   <entity type="KingAmphoe" name="วังน้ำคู้" english="Wang Nam Khu" geocode="6513" parent="6501" comment="Proposed, but not created"/>
   <entity type="KingAmphoe" name="นครบางยาง" english="Nakhon Bang Yang" geocode="6514" parent="6502" comment="Proposed, but not created"/>
 
-  <entity type="ThesabanNakhon" name="พิษณุโลก" english="Phitsanulok" geocode="6599" parent="6501" />
+  <entity type="ThesabanNakhon" name="พิษณุโลก" english="Phitsanulok" geocode="6599" parent="6501" >
+    <office type="MunicipalityOffice">
+      <url>http://www.phsmun.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" geocode="6598" parent="6501" />
   <entity type="ThesabanTambon" name="นครไทย" english="Nakhon Thai" geocode="6597" parent="6502" />
   <entity type="ThesabanTambon" name="ป่าแดง" english="Pa Daeng" geocode="6596" parent="6503" />
