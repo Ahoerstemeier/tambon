@@ -636,7 +636,7 @@
 
   <!-- Not in the source, taken from http://www.vcharkarn.com/vcafe/59273/3, exact year unspecified -->
   <entity type="Monthon" name="กรุงเทพฯ" english="Krung Thep" >
-    <entity type="Changwat" name="พระนครเหนือ" english="Phra Nakhon Nuea" >
+    <entity type="Changwat" name="พระนคร" english="Phra Nakhon" >
       <entity type="Amphoe" name="บางขุนพรหม" english="Bang Khun Phrom"/>
       <entity type="Amphoe" name="นางเลิ้ง" english="Bang Liang"/>
       <entity type="Amphoe" name="สามเสน" english="Sam Sen"/>
@@ -645,14 +645,10 @@
       <entity type="Amphoe" name="ประแจจีน" />
       <entity type="Amphoe" name="พญาไท" english="Phaya Thai"/>
       <entity type="Amphoe" name="บางเขน" english="Bang Khen"/>
-    </entity>
-    <entity type="Changwat" name="พระนครกลาง" english="Phra Nakhon Klang" >
       <entity type="Amphoe" name="พระราชวัง" english="Phra Ratcha Wang"/>
       <entity type="Amphoe" name="พาหุรัด" english="Phahurat"/>
       <entity type="Amphoe" name="ชนะสงคราม" english="Chana Songkhram"/>
-      <entity type="Amphoe" name="สำราญราษฎร์" english="Samran Rat"/>    
-    </entity>
-    <entity type="Changwat" name="พระนครใต้" english="Phra Nakhon Tai" >
+      <entity type="Amphoe" name="สำราญราษฎร์" english="Samran Rat"/>
       <entity type="Amphoe" name="จักรวรรดิ" english="Chakkrawat"/>
       <entity type="Amphoe" name="สามยอด" english="Sam Yot"/>
       <entity type="Amphoe" name="สัมพันธวงศ์" english="Samphanthawong" geocode="1013"/>
@@ -662,16 +658,14 @@
       <entity type="Amphoe" name="สาธร" english="Sathon"/>
       <entity type="Amphoe" name="ปทุมวัน" english="Pathum Wan" geocode="1007"/>
       <entity type="Amphoe" name="บ้านทวาย" english="Ban Thawai" geocode="1012"/>
-        <!--according to http://en.wikipedia.org/wiki/Yan_Nawa Ban Thawai was part of Changwat Phra Pradaeng-->
+      <!--according to http://en.wikipedia.org/wiki/Yan_Nawa Ban Thawai was part of Changwat Phra Pradaeng-->
       <entity type="Amphoe" name="บางกะปิ" english="Bang Kapi" geocode="1006"/>
     </entity>
-      <entity type="Changwat" name="ธนบุรีเหนือ" english="Thon Buri Nuea" >
-        <entity type="Amphoe" name="หงสาราม" english="Hong Sa Ram"/>
-        <entity type="Amphoe" name="อมรินทร์" english="Amarin" geocode="1020"/>
-        <entity type="Amphoe" name="บางพลัด" english="Bang Phlat"/>
-        <entity type="Amphoe" name="ตลิ่งชัน" english="Taling Chan" geocode="1019"/>
-      </entity>
-    <entity type="Changwat" name="ธนบุรีใต้" english="Thon Buri Tai" >
+    <entity type="Changwat" name="ธนบุรี" english="Thon Buri" >
+      <entity type="Amphoe" name="หงสาราม" english="Hong Sa Ram"/>
+      <entity type="Amphoe" name="อมรินทร์" english="Amarin" geocode="1020"/>
+      <entity type="Amphoe" name="บางพลัด" english="Bang Phlat"/>
+      <entity type="Amphoe" name="ตลิ่งชัน" english="Taling Chan" geocode="1019"/>
       <entity type="Amphoe" name="บุปผาราม" english="Buppharam"/>
       <entity type="Amphoe" name="ราชคฤห์" english="Rat Khri"/>
       <entity type="Amphoe" name="บุคโล" english="Buk Lo"/>
@@ -681,28 +675,28 @@
       <entity type="Amphoe" name="ราษฎร์บุรณะล่าง" english="Rat Burana Lang" geocode="1024" />
     </entity>
     <entity type="Changwat" name="มีนบุรี" english="Min Buri" >
-        <entity type="Amphoe" name="คลองสามวา" english="Khlong Sam Wa" geocode="1010" />
-        <!--when was it renamed to มีนบุรี Minburi-->
-        <entity type="Amphoe" name="แสนแสบ" english="Saen Saep" geocode="1011"/>
-        <entity type="Amphoe" name="จีระดับ" english="Jira Dap"/>
-        <entity type="Amphoe" name="หนองจอก" english="Nong Chok" geocode="1003" />
-      </entity>
-      <entity type="Changwat" name="นนทบุรี" english="Nonthaburi" geocode="12">
-        <entity type="Amphoe" name="นนทบุรี" english="Nonthaburi" geocode="1201" />
-        <entity type="Amphoe" name="ปากเกร็ด" english="Pak Kret" geocode="1206" />
-        <entity type="Amphoe" name="บางใหญ่" english="Bang Yai" geocode="1202" />
-        <!--yes, was renamed in 1930, and other district got old name-->
-        <entity type="Amphoe" name="บางบัวทอง" english="Bang Bua Thong" geocode="1204" />
-      </entity>
-      <entity type="Changwat" name="สมุทรปราการ" english="Samut Prakan" geocode="11">
-        <entity type="Amphoe" name="สมุทรปราการ" english="Samut Prakan" geocode="1101" />
-        <entity type="Amphoe" name="บางพลี" english="Bang Phli" geocode="1103" />
-        <entity type="Amphoe" name="บางเหี้ย" english="" geocode="" />
-      </entity>
-      <entity type="Changwat" name="พระประแดง" english="Phra Pradaeng" >
-        <!--renamed in 1915 or 1916 from นครเขื่อนขันธ์ Nakhon Khuan Khan -->
-        <entity type="Amphoe" name="พระประแดง" english="Phra Pradaeng" geocode="1104" />
-        <entity type="Amphoe" name="พระโขนง" english="Phra Khanong" geocode="1009" />
-      </entity>
+      <entity type="Amphoe" name="คลองสามวา" english="Khlong Sam Wa" geocode="1010" />
+      <!--when was it renamed to มีนบุรี Minburi-->
+      <entity type="Amphoe" name="แสนแสบ" english="Saen Saep" geocode="1011"/>
+      <entity type="Amphoe" name="จีระดับ" english="Jira Dap"/>
+      <entity type="Amphoe" name="หนองจอก" english="Nong Chok" geocode="1003" />
     </entity>
+    <entity type="Changwat" name="นนทบุรี" english="Nonthaburi" geocode="12">
+      <entity type="Amphoe" name="นนทบุรี" english="Nonthaburi" geocode="1201" />
+      <entity type="Amphoe" name="ปากเกร็ด" english="Pak Kret" geocode="1206" />
+      <entity type="Amphoe" name="บางใหญ่" english="Bang Yai" geocode="1202" />
+      <!--yes, was renamed in 1930, and other district got old name-->
+      <entity type="Amphoe" name="บางบัวทอง" english="Bang Bua Thong" geocode="1204" />
+    </entity>
+    <entity type="Changwat" name="สมุทรปราการ" english="Samut Prakan" geocode="11">
+      <entity type="Amphoe" name="สมุทรปราการ" english="Samut Prakan" geocode="1101" />
+      <entity type="Amphoe" name="บางพลี" english="Bang Phli" geocode="1103" />
+      <entity type="Amphoe" name="บางเหี้ย" english="Bang Hia" geocode="1102" />
+    </entity>
+    <entity type="Changwat" name="พระประแดง" english="Phra Pradaeng" >
+      <!--renamed in 1915 or 1916 from นครเขื่อนขันธ์ Nakhon Khuan Khan -->
+      <entity type="Amphoe" name="พระประแดง" english="Phra Pradaeng" geocode="1104" />
+      <entity type="Amphoe" name="พระโขนง" english="Phra Khanong" geocode="1009" />
+    </entity>
+  </entity>
 </year>
