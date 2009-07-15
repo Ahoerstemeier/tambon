@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="ชัยภูมิ" english="Chaiyaphum" geocode="36">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ชัยภูมิ" english="Chaiyaphum" geocode="36">
   <officials source="http://www.chaiyaphum.go.th/chaiyaphumdata/president.html">
     <official title="Governor" index="59" name="ถาวร พรหมมีชัย" begin="2007-10-01"/>
     <official title="Governor" index="58" name="ศุภกิจ บุญญฤทธิพงษ์" beginyear="2006" end="2007-09-30"/>
@@ -378,7 +378,19 @@
     <entity type="Tambon" name="ตะโกทอง" english="Tako Thong" geocode="360616" newgeocode="361603" />
   </entity>
   <entity type="Amphoe" name="บำเหน็จณรงค์" english="Bamnet Narong" geocode="3607" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.5002</geo:lat>
+        <geo:long>101.6863</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านชวน" english="Ban Chuan" geocode="360701" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>15.5325</geo:lat>
+          <geo:long>101.6593</geo:long>
+        </geo:Point>
+      </office>
       <entity type="Muban" geocode="36070102" name="บ้านชวน"/>
       <entity type="Muban" geocode="36070103" name="บ้านปะโค"/>
 
