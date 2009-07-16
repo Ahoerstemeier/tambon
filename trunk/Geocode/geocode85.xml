@@ -66,9 +66,6 @@
       <entity type="Muban" geocode="85010305" name="บ้านหาดทรายดำ(เกาะ)"/>
     </entity>
     <entity type="Tambon" name="บางริ้น" english="Bang Rin" geocode="850104" >
-      <office type="MunicipalityOffice">
-        <url>http://www.bangrin.th.gs/</url>
-      </office>
       <entity type="Muban" geocode="85010401" name="บ้านบางกลาง"/>
       <entity type="Muban" geocode="85010402" name="บ้านบางริ้น"/>
       <entity type="Muban" geocode="85010403" name="บ้านพรรั้ง"/>
@@ -306,11 +303,15 @@
     </entity>
   </entity>
 
-
   <entity type="ThesabanMueang" name="ระนอง" english="Ranong" geocode="8599" parent="8501" />
   <entity type="ThesabanTambon" name="ปากน้ำ" english="Paknam" geocode="8598" parent="8501" />
   <entity type="ThesabanTambon" name="หงาว" english="Ngao" geocode="8597" parent="8501" />
   <entity type="ThesabanTambon" name="ละอุ่น " english="La-Un" geocode="8596" parent="8502" />
   <entity type="ThesabanTambon" name="กะเปอร์" english="Kapoe" geocode="8595" parent="8503" />
   <entity type="ThesabanTambon" name="น้ำจืด" english="Namchuet" geocode="8594" parent="8504" />
+  <entity type="ThesabanTambon" name="บางริ้น" english="Bang Rin" geocode="8593" parent="8501" tambon="850104" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangrin.th.gs/</url>
+    </office>
+  </entity>
 </entity>

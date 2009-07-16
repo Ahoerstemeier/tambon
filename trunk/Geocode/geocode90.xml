@@ -482,10 +482,10 @@
       <office type="TAOOffice">
         <url>http://www.nathawee-sao.go.th/</url>
       </office>
-      
+
       <entity type="Muban" geocode="90040102" name="บ้านพลีเหนือ"/>
       <entity type="Muban" geocode="90040103" name="บ้านพลีใต้"/>
-              
+
       <entity type="Muban" geocode="90040107" name="บ้านเคลียง"/>
       <entity type="Muban" geocode="90040108" name="บ้านซองใต้"/>
       <entity type="Muban" geocode="90040109" name="บ้านซองเหนือ"/>
@@ -600,9 +600,6 @@
       </office>
     </entity>
     <entity type="Tambon" name="ลำไพล" english="Lam Phlai" geocode="900504" >
-      <office type="MunicipalityOffice">
-        <url>http://www.lampli.go.th</url>
-      </office>
       <entity type="Muban" geocode="90050401" name="บ้านลำไพล"/>
       <entity type="Muban" geocode="90050402" name="บ้านลำไพลตก"/>
       <entity type="Muban" geocode="90050403" name="บ้านลำไพลเหนือ"/>
@@ -1464,9 +1461,9 @@
   <entity type="ThesabanTambon" name="พะตง" english="Pha Tong" geocode="9083" parent="9011" />
   <entity type="ThesabanTambon" name="ควนเนียง" english="Khuan Niang" geocode="9082" parent="9013" />
   <entity type="ThesabanMueang" name="สิงหนคร" english="Singhanakhon" geocode="9081" parent="9015" />
-  <entity type="ThesabanMueang" name="ควนลัง" english="Khuan Lang" geocode="9079" parent="9011" />
-  <entity type="ThesabanMueang" name="คลองแห" english="Khlong Hae" geocode="9078" parent="9011" />
-  <entity type="ThesabanMueang" name="คอหงส์" english="Khohong" geocode="9080" parent="9011" />
+  <entity type="ThesabanMueang" name="คอหงส์" english="Khohong" geocode="9080" parent="9011" tambon="901104"/>
+  <entity type="ThesabanTambon" name="ควนลัง" english="Khuan Lang" geocode="9079" parent="9011" tambon="901102" />
+  <entity type="ThesabanTambon" name="คลองแห" english="Khlong Hae" geocode="9078" parent="9011" tambon="901105" />
   <entity type="ThesabanTambon" name="สำนักขาม" english="Samnak Kham" geocode="9077" parent="9010" >
     <office type="MunicipalityOffice">
       <url>http://www.sumnakkham.go.th</url>
@@ -1478,17 +1475,23 @@
       <url>http://www.krc.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บ้านพรุ" english="Ban Phru" geocode="9075" parent="9011" tambon="901116" >
+  <entity type="ThesabanTambon" name="พะวง" english="Phawong" geocode="9075" parent="9001" tambon="900104" />
+  <entity type="ThesabanTambon" name="บ้านพรุ" english="Ban Phru" geocode="9074" parent="9011" tambon="901116" >
     <office type="MunicipalityOffice">
       <url>http://www.banpru.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="น้ำน้อย" english="Nam Noi" geocode="9074" parent="9011" tambon="901114" >
+  <entity type="ThesabanTambon" name="ลำไพล" english="Lam Phlai" geocode="9073" parent="9005" tambon="900504" >
+    <office type="MunicipalityOffice">
+      <url>http://www.lampli.go.th</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="น้ำน้อย" english="Nam Noi" geocode="9072" parent="9011" tambon="901114" >
     <office type="MunicipalityOffice">
       <url>http://www.namnoi.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ท่าช้าง" english="Tha Chang" geocode="9073" parent="9014" tambon="901402">
+  <entity type="ThesabanTambon" name="ท่าช้าง" english="Tha Chang" geocode="9071" parent="9014" tambon="901402">
     <office type="MunicipalityOffice">
       <url>http://www.thachang.go.th/</url>
     </office>
