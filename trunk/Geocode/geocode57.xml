@@ -810,12 +810,12 @@
       <entity type="Muban" geocode="57180310" name="บ้านใหม่พัฒนาใต้"/>
     </entity>
   </entity>
-  <entity type="KingAmphoe" name="ปล้อง" english="Plong" geocode="5719" />
-  <entity type="KingAmphoe" name="นาแล" english="Na Lae" geocode="5720" />
-  <entity type="KingAmphoe" name="ดอยสัก" english="Doi Sak" geocode="5721" />
-  <entity type="KingAmphoe" name="แม่อ้อ" english="Mae O" geocode="5722" />
-  <entity type="KingAmphoe" name="วาวี" english="Wa Wi" geocode="5723" />
-  <entity type="KingAmphoe" name="แม่ขะจาน" english="Mae Kha Chan" geocode="5724" />
+  <entity type="KingAmphoe" name="ปล้อง" english="Plong" geocode="5719" comment="Proposed, but never created"/>
+  <entity type="KingAmphoe" name="นาแล" english="Na Lae" geocode="5720" comment="Proposed, but never created"/>
+  <entity type="KingAmphoe" name="ดอยสัก" english="Doi Sak" geocode="5721" comment="Proposed, but never created"/>
+  <entity type="KingAmphoe" name="แม่อ้อ" english="Mae O" geocode="5722" comment="Proposed, but never created"/>
+  <entity type="KingAmphoe" name="วาวี" english="Wa Wi" geocode="5723" comment="Proposed, but never created"/>
+  <entity type="KingAmphoe" name="แม่ขะจาน" english="Mae Kha Chan" geocode="5724" comment="Proposed, but never created"/>
 
   <entity type="ThesabanMueang" name="เชียงราย" english="Chiang Rai" geocode="5799" parent="5701" />
   <entity type="ThesabanTambon" name="เวียงชัย" english="Wiang Chai" geocode="5798" parent="5702" />
@@ -850,10 +850,17 @@
   <entity type="ThesabanTambon" name="ป่าก่อดำ" english="Pa Ko Dam" geocode="5777" parent="5716" />
   <entity type="ThesabanTambon" name="แม่ลาว" english="Mae Lao" geocode="5776" parent="5716" />
   <entity type="ThesabanTambon" name="บ้านเหล่า" english="Ban Lao" geocode="5775" parent="5717" />
-  <entity type="ThesabanTambon" name="บ้านดู่" english="Ban Du" geocode="5774" parent="5701" />
+  <entity type="ThesabanTambon" name="บ้านดู่" english="Ban Du" geocode="5774" parent="5701" tambon="570103"/>
 
   <!-- Not yet in DOPA statistics-->
-  <entity type="ThesabanTambon" name="เชียงของ" english="Chiang Khong" geocode="5770" parent="5703" tambon="570301" >
+  <entity type="ThesabanTambon" name="เวียงพางคำ" english="Wiang Phang Kham" geocode="5773" parent="5709" tambon="570906" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nang-non.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ป่าซาง" english="Pa Sang" geocode="5772" parent="5707" tambon="570704" />
+  <entity type="ThesabanTambon" name="นางแล" english="Nang Lae" geocode="5771" parent="5701" tambon="570104" />
+    <entity type="ThesabanTambon" name="เชียงของ" english="Chiang Khong" geocode="5770" parent="5703" tambon="570301" >
     <office type="MunicipalityOffice">
       <url>http://www.wiang.go.th/</url>
     </office>
@@ -861,9 +868,8 @@
       <rename oldname="เวียง" oldenglish="Wiang" name="เชียงของ" english="Chiang Khong" />
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="เวียงพางคำ" english="Wiang Phang Kham" geocode="5773" parent="5709" tambon="570906" >
-    <office type="MunicipalityOffice">
-      <url>http://www.nang-non.com/</url>
-    </office>
-  </entity>
+  <entity type="ThesabanTambon" name="ยางฮอม" english="Yang Hom" geocode="5769" parent="5714" tambon="571403" />
+  <entity type="ThesabanTambon" name="ป่าอ้อดอนชัย" english="Pa O Don Chai" geocode="5768" parent="5701" tambon="570116" />
+  <entity type="ThesabanTambon" name="ครึ่ง" english="Khrueng" geocode="5767" parent="5703" tambon="570303" />
+  <entity type="ThesabanTambon" name="ไม้ยา" english="Mai Ya" geocode="5766" parent="5712" tambon="571203" />
 </entity>

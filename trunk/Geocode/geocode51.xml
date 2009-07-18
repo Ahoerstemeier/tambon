@@ -249,7 +249,7 @@
     <entity type="Tambon" name="หนองยวง" english="Nong Yuang" geocode="510802" />
     <entity type="Tambon" name="วังผาง" english="Wang Phang" geocode="510803" />
   </entity>
-  <entity type="KingAmphoe" name="ทาขุมเงิน" english="Tha Khum Ngoen" geocode="5109" />
+  <entity type="KingAmphoe" name="ทาขุมเงิน" english="Tha Khum Ngoen" geocode="5109" comment="Proposed, but not created"/>
 
   <entity type="ThesabanMueang" name="ลำพูน" english="Lamphun" geocode="5199" parent="5101" >
     <office type="MunicipalityOffice">
@@ -272,12 +272,12 @@
   <entity type="ThesabanTambon" name="ป่าซาง" english="Pasang" geocode="5189" parent="5106" />
   <entity type="ThesabanTambon" name="ม่วงน้อย" english="Muang Noi" geocode="5188" parent="5106" />
   <entity type="ThesabanTambon" name="วังผาง" english="Wang Phang" geocode="5187" parent="5108" />
-  <entity type="ThesabanTambon" name="บ้านธิ" english="Ban Thi" geocode="5186" parent="5107" >
+  <entity type="ThesabanTambon" name="บ้านธิ" english="Ban Thi" geocode="5186" parent="5107" tambon="510701">
     <office type="MunicipalityOffice">
       <url>http://www.banthi.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="แม่แรง" english="Mae Raeng" geocode="5185" parent="5106" />
+  <entity type="ThesabanTambon" name="แม่แรง" english="Mae Raeng" geocode="5185" parent="5106" tambon="510603"/>
   <entity type="ThesabanTambon" name="เหมืองง่า" english="Mueang Nga" geocode="5184" parent="5101" tambon="510102" />
   <entity type="ThesabanTambon" name="บ้านกลาง" english="Ban Klang" geocode="5183" parent="5101" tambon="510112" />
   <entity type="ThesabanTambon" name="เวียงยอง" english="Wiang Yong" geocode="5182" parent="5101" tambon="510111" >
@@ -287,8 +287,12 @@
   </entity>
   <entity type="ThesabanTambon" name="มะเขือแจ้" english="Makhuea Chae" geocode="5181" parent="5101" tambon="510113" />
   <entity type="ThesabanTambon" name="มะกอก" english="Makok" geocode="5180" parent="5106" tambon="510606" />
+  <entity type="ThesabanTambon" name="หนองยวง" english="Nong Yuang" geocode="5179" parent="5108" tambon="510802" />
+  <entity type="ThesabanTambon" name="หนองล่อง" english="Nong Long" geocode="5178" parent="5108" tambon="510801" />
+  <entity type="ThesabanTambon" name="ทาสบชัย" english="Tha Sop Chai" geocode="5177" parent="5102" tambon="510202" />
+  <entity type="ThesabanTambon" name="ศรีเตี้ย" english="Si Tia" geocode="5176" parent="5103" tambon="510304" />
 
-  <!-- not yet in DOPA statistics -->
+  <!-- no geocode yet -->
   <entity type="ThesabanTambon" name="ศรีวิชัย" english="Si Wichai" geocode="510409" >
     <office type="MunicipalityOffice">
       <url>http://sriwichai.org/</url>

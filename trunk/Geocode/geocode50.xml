@@ -74,9 +74,6 @@
     <entity type="Tambon" name="แม่เหียะ" english="Mae Hia" geocode="500109" />
     <entity type="Tambon" name="ป่าแดด" english="Pa Daet" geocode="500110" />
     <entity type="Tambon" name="หนองหอย" english="Nong Hoi" geocode="500111" >
-      <office type="MunicipalityOffice">
-        <url>http://www.nonghoicity.go.th/</url>
-      </office>
       <entity type="Muban" geocode="50011101" name="บ้านหนองหอย"/>
       <entity type="Muban" geocode="50011102" name="บ้านโรงวัว"/>
       <entity type="Muban" geocode="50011103" name="บ้านเสาหิน"/>
@@ -289,13 +286,6 @@
       <entity type="Muban" geocode="50050215" name="บ้านกอง"/>
     </entity>
     <entity type="Tambon" name="ลวงเหนือ" english="Luang Nuea" geocode="500503" >
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>18.9158</geo:lat>
-          <geo:long>99.1350</geo:long>
-        </geo:Point>
-        <url>http://www.loungnuae.com/</url>
-      </office>
       <entity type="Muban" geocode="50050301" name="บ้านป่าสักงาม"/>
       <entity type="Muban" geocode="50050302" name="บ้านตลาดใหม่"/>
       <entity type="Muban" geocode="50050303" name="บ้านเมืองวะ"/>
@@ -569,7 +559,7 @@
       <office type="TAOOffice">
         <url>http://www.maesoon.go.th/</url>
       </office>
-      
+
       <entity type="Muban" geocode="50090504" name="บ้านสันป่าแดง"/>
       <entity type="Muban" geocode="50090505" name="บ้านล้องอ้อ"/>
       <entity type="Muban" geocode="50090506" name="บ้านต้นส้าน"/>
@@ -603,7 +593,7 @@
       <office type="TAOOffice">
         <url>http://www.maekha.go.th/</url>
       </office>
-              
+
       <entity type="Muban" geocode="50091104" name="บ้านห้วยโจ้"/>
 
       <entity type="Muban" geocode="50091113" name="บ้านห้วยโจ้เหนือ"/>
@@ -930,9 +920,6 @@
       <entity type="Muban" geocode="50140307" name="บ้านท่าทุ่ม"/>
     </entity>
     <entity type="Tambon" name="สันนาเม็ง" english="San Na Meng" geocode="501404" >
-      <office type="TAOOffice">
-        <url>http://www.sannameng.org</url>
-      </office>
       <entity type="Muban" geocode="50140404" name="บ้านสันหลวง"/>
 
       <entity type="Muban" geocode="50140406" name="บ้านแม่กวง"/>
@@ -1316,6 +1303,10 @@
     </entity>
     <entity type="Tambon" name="สันติสุข" english="Santi Suk" geocode="502404" />
   </entity>
+  <entity type="KingAmphoe" geocode="5025" name="เวียงคำ" english="Wiang Kham" comment="Proposed, but not created"/>
+  <entity type="KingAmphoe" geocode="5026" name="วัดจันทร์" english="Wat Chan" comment="Proposed, but not created"/>
+  <entity type="KingAmphoe" geocode="5027" name="หมอกฟ้า" english="Nok Fa" comment="Proposed, but not created"/>
+  <entity type="KingAmphoe" geocode="5028" name="บ่อหลวง" english="Bo Luang" comment="Proposed, but not created"/>
 
   <entity type="ThesabanNakhon" name="เชียงใหม่" english="Chiang Mai" geocode="5099" parent="5001" />
   <entity type="ThesabanTambon" name="ช้างเผือก" english="Chang Phueak" geocode="5098" parent="5001" />
@@ -1386,29 +1377,62 @@
       <rename oldname="บ้านกาด" oldenglish="Ban Kat" name="แม่วาง" />
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="หนองป่าครั่ง" english="Nong Pa Khrang" geocode="5070" parent="5001" />
-  <entity type="ThesabanTambon" name="ชมภู" english="Chom Phu" geocode="5069" parent="5019" tambon="501903" />
-  <entity type="ThesabanTambon" name="เจดีย์แม่ครัว" english="Chedi Mae Khrua" geocode="5068" parent="5014" tambon="501410" >
-    <history>
-      <rename oldname="แม่แฝกใหม่" oldenglish="Mae Faek Mai" name="เจดีย์แม่ครัว"/>
-    </history>
-  </entity>
-  <entity type="ThesabanTambon" name="หนองผึ้ง" english="Nong Phueng" geocode="5067" parent="5019" tambon="501907" />
-  <entity type="ThesabanTambon" name="แม่แฝก" english="Mae Faek" geocode="5066" parent="5014" tambon="501409" />
-  <entity type="ThesabanTambon" name="หนองจ๊อม" english="Nong Chom" geocode="5065" parent="5014" tambon="501407" />
-  <entity type="ThesabanTambon" name="สารภี" english="Saraphi" geocode="5064" parent="5019" tambon="501902" />
-
-  <!-- not yet in DOPA list -->
-  <entity type="ThesabanTambon" name="สุเทพ" english="Suthep" geocode="5063" parent="5001" tambon="500108" >
+  <entity type="ThesabanTambon" name="หนองป่าครั่ง" english="Nong Pa Khrang" geocode="5070" parent="5001" tambon="500113"/>
+  <entity type="ThesabanTambon" name="สุเทพ" english="Suthep" geocode="5069" parent="5001" tambon="500108" >
     <office type="MunicipalityOffice">
       <url>http://www.suthep.go.th/</url>
     </office>
   </entity>
-  <entity type="Tambon" name="สันปูเลย" english="San Pu Loei" geocode="5062" parent="5005" tambon="500502" >
+  <entity type="ThesabanTambon" name="ป่าแดด" english="Pa Daet" geocode="5068" parent="5001" tambon="500110" />
+  <entity type="ThesabanTambon" name="ชมภู" english="Chom Phu" geocode="5067" parent="5019" tambon="501903" />
+  <entity type="ThesabanTambon" name="แม่ปั๋ง" english="Mae Pang" geocode="5066" parent="5011" tambon="501110" />
+  <entity type="ThesabanTambon" name="เจดีย์แม่ครัว" english="Chedi Mae Khrua" geocode="5065" parent="5014" tambon="501410" >
+    <history>
+      <rename oldname="แม่แฝกใหม่" oldenglish="Mae Faek Mai" name="เจดีย์แม่ครัว"/>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="หนองผึ้ง" english="Nong Phueng" geocode="5064" parent="5019" tambon="501907" />
+  <entity type="ThesabanTambon" name="ท่าศาลา" english="Tha Sala" geocode="5063" parent="5001" tambon="500112" />
+  <entity type="ThesabanTambon" name="แม่แฝก" english="Mae Faek" geocode="5062" parent="5014" tambon="501409" />
+  <entity type="ThesabanTambon" name="หนองหอย" english="Nong Hoi" geocode="5061" parent="5001" tambon="500111" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nonghoicity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หนองจ๊อม" english="Nong Chom" geocode="5060" parent="5014" tambon="501407" />
+  <entity type="ThesabanTambon" name="ฟ้าฮ่าม" english="Fa Ham" geocode="5059" parent="5001" tambon="500114" />
+  <entity type="ThesabanTambon" name="สารภี" english="Saraphi" geocode="5058" parent="5019" tambon="501902" />
+  <entity type="ThesabanTambon" name="แม่เหียะ" english="Mae Hia" geocode="5057" parent="5001" tambon="500109" />
+  <entity type="ThesabanTambon" name="พระธาตุปู่ก่ำ" english="Phra That Pu Kam" geocode="5056" parent="5004" tambon="500403" />
+  <entity type="ThesabanTambon" name="ปิงโค้ง" english="Ping Khong" geocode="5055" parent="5004" tambon="500406" />
+  <entity type="ThesabanTambon" name="ทุ่งข้าวพวง" english="Thung Khao Phuang" geocode="5054" parent="5004" tambon="500407" />
+  <entity type="ThesabanTambon" name="เมืองนะ" english="Mueang Na" geocode="5050" parent="5004" tambon="500402" />
+  <entity type="ThesabanTambon" name="เชิงดอย" english="Choeng Doi" geocode="5049" parent="5005" tambon="500501" />
+  <entity type="ThesabanTambon" name="แม่โป่ง" english="Mae Pong" geocode="5048" parent="5005" tambon="500512" />
+  <entity type="ThesabanTambon" name="ลวงเหนือ" english="Luang Nuea" geocode="5047" parent="5005" tambon="500503" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>18.9158</geo:lat>
+        <geo:long>99.1350</geo:long>
+      </geo:Point>
+      <url>http://www.loungnuae.com/</url>
+    </office>
+  </entity>
+  <entity type="Tambon" name="สันปูเลย" english="San Pu Loei" geocode="5046" parent="5005" tambon="500502" >
     <office type="MunicipalityOffice">
       <url>http://www.spl.go.th</url>
     </office>
   </entity>
+  <entity type="ThesabanTambon" name="แม่ปูคา" english="Mae Pu Kha" geocode="5045" parent="5013" tambon="501310" />
+  <entity type="ThesabanTambon" name="สันพระเนตร" english="San Phranet" geocode="5044" parent="5014" tambon="501403" />
+  <entity type="ThesabanTambon" name="สันนาเม็ง" english="San Na Meng" geocode="5043" parent="5014" tambon="501404" >
+    <office type="MunicipalityOffice">
+      <url>http://www.sannameng.org</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ป่าไผ่" english="Pa Phai" geocode="5042" parent="5014" tambon="501412" />
+  <entity type="ThesabanTambon" name="บ่อหลวง" english="Bo Luang" geocode="5041" parent="5016" tambon="501604" />
+
   <entity type="SakhaKhwaeng" name="กาลวิละ" geocode="5051" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai"/>
   <entity type="SakhaKhwaeng" name="ศรีวิชัย" geocode="5052" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai"/>
   <entity type="SakhaKhwaeng" name="เม็งราย" geocode="5053" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai"/>
