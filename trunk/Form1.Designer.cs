@@ -52,6 +52,7 @@ namespace Tambon
             this.btnAreaUnits = new System.Windows.Forms.Button();
             this.btnGovernor = new System.Windows.Forms.Button();
             this.btnBoard = new System.Windows.Forms.Button();
+            this.btnMuban = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -304,11 +305,22 @@ namespace Tambon
             this.btnBoard.UseVisualStyleBackColor = true;
             this.btnBoard.Click += new System.EventHandler(this.btnBoard_Click);
             // 
+            // btnMuban
+            // 
+            this.btnMuban.Location = new System.Drawing.Point(343, 108);
+            this.btnMuban.Name = "btnMuban";
+            this.btnMuban.Size = new System.Drawing.Size(66, 22);
+            this.btnMuban.TabIndex = 23;
+            this.btnMuban.Text = "Muban";
+            this.btnMuban.UseVisualStyleBackColor = true;
+            this.btnMuban.Click += new System.EventHandler(this.btnMuban_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnMuban);
             this.Controls.Add(this.btnBoard);
             this.Controls.Add(this.btnGovernor);
             this.Controls.Add(this.btnAreaUnits);
@@ -364,6 +376,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnAreaUnits;
         private System.Windows.Forms.Button btnGovernor;
         private System.Windows.Forms.Button btnBoard;
+        private System.Windows.Forms.Button btnMuban;
     }
 }
 
