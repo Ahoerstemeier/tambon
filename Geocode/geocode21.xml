@@ -277,7 +277,7 @@
     </entity>
     <entity type="Tambon" name="มะขามคู่" english="Makham Khu" geocode="210804" />
   </entity>
-  <entity type="KingAmphoe" name="สุนทรภู่" english="Sunthon Phu" geocode="2109" parent="2103"/>
+  <entity type="KingAmphoe" name="สุนทรภู่" english="Sunthon Phu" geocode="2109" parent="2103" comment="Proposed, but not created"/>
 
   <entity type="ThesabanNakhon" name="ระยอง" english="Rayong" geocode="2199" parent="2101" />
   <entity type="ThesabanMueang" name="เมืองแกลง" english="Mueang Klaeng" geocode="2198" parent="2103" />
@@ -295,7 +295,10 @@
   <entity type="ThesabanTambon" name="จอมพลเจ้าพระยา" english="Chomphon Chao Phraya" geocode="2186" parent="2106" />
   <entity type="ThesabanTambon" name="บ้านปลวกแดง" english="Ban Pluak Daeng" geocode="2185" parent="2106" />
   <entity type="ThesabanTambon" name="มาบข่า" english="Map Kha" geocode="2184" parent="2108" />
-  <entity type="ThesabanTambon" name="มะขามคู่" english="Makham Khu" geocode="2183" parent="2108" />
-  <entity type="ThesabanTambon" name="มาบข่าพัฒนา" english="Map Kha Phatthana" geocode="2182" parent="2108"/>
+  <entity type="ThesabanTambon" name="มะขามคู่" english="Makham Khu" geocode="2183" parent="2108" tambon="210804"/>
+  <entity type="ThesabanTambon" name="บ้านฉาง" english="Ban Chang" geocode="2182" parent="2102" tambon="210203" />
+  <entity type="ThesabanTambon" name="มาบข่าพัฒนา" english="Map Kha Phatthana" geocode="2181" parent="2108" tambon="210508"/>
+  <entity type="ThesabanTambon" name="บ้านนา" english="Ban Na" geocode="2180" parent="2103" tambon="210308" />
+
   <entity name="มาบข่า" type="SakhaTambon" geocode="2151" english="Map Kha" parent="2105" />
 </entity>
