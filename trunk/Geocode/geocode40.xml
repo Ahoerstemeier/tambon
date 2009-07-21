@@ -1167,9 +1167,9 @@
     <entity type="Tambon" name="เปือยใหญ่" english="Pueai Yai" geocode="402504" />
     <entity type="Tambon" name="โนนแดง" english="Non Daeng" geocode="402505" />
   </entity>
-  <entity type="KingAmphoe" name="ภูคำน้อย" english="Phu Kham Noi" geocode="4026" />
-  <entity type="KingAmphoe" name="หนองแก" english="Nong Kae" geocode="4027" />
-  <entity type="KingAmphoe" name="โนนหัน" english="Non Han" geocode="4028" />
+  <entity type="KingAmphoe" name="ภูคำน้อย" english="Phu Kham Noi" geocode="4026" comment="Proposed, but not created"/>
+  <entity type="KingAmphoe" name="หนองแก" english="Nong Kae" geocode="4027" comment="Proposed, but not created"/>
+  <entity type="KingAmphoe" name="โนนหัน" english="Non Han" geocode="4028" comment="Proposed, but not created"/>
   <entity type="Amphoe" name="เวียงเก่า" english="Wiang Kao" geocode="4029" >
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="402901" >
       <entity type="Muban" geocode="40290107" name="บ้านหนองคู"/>
@@ -1221,12 +1221,15 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านแฮด" english="Ban Haet" geocode="4070" parent="4024" />
   <entity type="ThesabanTambon" name="โนนศิลา" english="Non Sila" geocode="4069" parent="4025" />
-  <entity type="ThesabanTambon" name="บ้านเป็ด" english="Ban Pet" geocode="4068" parent="4001" >
+  <entity type="ThesabanTambon" name="บ้านเป็ด" english="Ban Pet" geocode="4068" parent="4001" tambon="400115">
     <entity type="Unknown" name="บ้านเป็ด" english="Ban Pet" geocode="406801" />
   </entity>
-  <entity type="ThesabanTambon" name="สาวะถี" english="Sawathi" geocode="4067" parent="4001" />
+  <entity type="ThesabanTambon" name="สาวะถี" english="Sawathi" geocode="4067" parent="4001" tambon="400108"/>
+  <entity type="ThesabanTambon" name="ลำน้ำพอง" english="Lam Nam Phong" geocode="4066" parent="4007" tambon="400701" />
+  <entity type="ThesabanTambon" name="กุดน้ำใส" english="Kut Nam Sai" geocode="4065" parent="4007" tambon="400712" />
+  <entity type="ThesabanTambon" name="บ้านค้อ" english="Ban Kho" geocode="4064" parent="4001" tambon="400110" />
 
-  <!-- not yet in DOPA statistics-->
+  <!-- no geocode assigned yet -->
   <entity type="ThesabanTambon" name="เมืองเก่า" english="Mueang Kao" geocode="4062" parent="4001" tambon="400106" >
     <office type="MunicipalityOffice">
       <url>http://sites.google.com/site/mk20080rg/</url>
