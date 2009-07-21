@@ -32,11 +32,7 @@
     </entity>
     <entity type="Tambon" name="น้ำหมาน" english="Nam Man" geocode="420105" />
     <entity type="Tambon" name="เสี้ยว" english="Siao" geocode="420106" />
-    <entity type="Tambon" name="นาอาน" english="Na An" geocode="420107" >
-      <office type="MunicipalityOffice">
-        <url>http://www.naan.go.th/</url>
-      </office>
-    </entity>
+    <entity type="Tambon" name="นาอาน" english="Na An" geocode="420107" />
     <entity type="Tambon" name="นาโป่ง" english="Na Pong" geocode="420108" >
       <entity type="Muban" geocode="42010804" name="บ้านขอนแก่น"/>
       <entity type="Muban" geocode="42010805" name="บ้านติ้วน้อย"/>
@@ -364,5 +360,13 @@
   <entity type="ThesabanTambon" name="วังสะพุง" english="Wang Saphung" geocode="4288" parent="4209" />
   <entity type="ThesabanTambon" name="ภูกระดึง" english="Phu Kradueng" geocode="4287" parent="4210" />
   <entity type="ThesabanTambon" name="หนองหิน" english="Nong Hin" geocode="4286" parent="4214" />
-  <entity type="ThesabanTambon" name="เขาแก้ว" english="Khao Kaeo" geocode="4285" parent="4203" />
+  <entity type="ThesabanTambon" name="เขาแก้ว" english="Khao Kaeo" geocode="4285" parent="4203" tambon="420304"/>
+  <entity type="ThesabanTambon" name="นาอาน" english="Na An" geocode="4284" parent="4201" tambon="420107" >
+    <office type="MunicipalityOffice">
+      <url>http://www.naan.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="นาโป่ง" english="Na Pong" geocode="4283" parent="4201" tambon="420108" />
+  <entity type="ThesabanTambon" name="นาดินดำ" english="Na Din Dam" geocode="4282" parent="4201" tambon="420109" />
+  <entity type="ThesabanTambon" name="ธาตุ" english="That" geocode="4181" parent="4203" tambon="420302" />
 </entity>
