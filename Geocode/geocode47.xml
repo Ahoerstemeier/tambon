@@ -21,9 +21,6 @@
     </entity>
     <entity type="Tambon" name="นาตงวัฒนา" english="Na Tong Watthana" geocode="470105" newgeocode="471703" />
     <entity type="Tambon" name="เชียงเครือ" english="Chiang Khruea" geocode="470106" >
-      <office type="MunicipalityOffice">
-        <url>http://www.chkr.go.th</url>
-      </office>
       <entity type="Muban" geocode="47010601" name="บ้านเชียงเครือ"/>
       <entity type="Muban" geocode="47010602" name="บ้านโพนสวาง"/>
       <entity type="Muban" geocode="47010603" name="บ้านดอนเชียงบาล"/>
@@ -571,7 +568,7 @@
       <entity type="Muban" geocode="47180409" name="บ้านโนนเจริญ"/>
     </entity>
   </entity>
-  <entity type="KingAmphoe" name="ห้วยไร่" english="Huai Rai" geocode="4719" />
+  <entity type="KingAmphoe" name="ห้วยไร่" english="Huai Rai" geocode="4719" comment="Proposed, but not created"/>
 
   <entity type="ThesabanMueang" name="สกลนคร" english="Sakon Nakhon" geocode="4799" parent="4701" />
   <entity type="ThesabanTambon" name="ดงมะไฟ" english="Dong Mafai" geocode="4798" parent="4701" />
@@ -589,7 +586,16 @@
   <entity type="ThesabanTambon" name="สว่างแดนดิน" english="Sawang Daen Din" geocode="4786" parent="4712" />
   <entity type="ThesabanTambon" name="ส่องดาว" english="Song Dao" geocode="4785" parent="4713" />
   <entity type="ThesabanTambon" name="เจริญศิลป์" english="Charoen Sin" geocode="4784" parent="4716" />
+  <entity type="ThesabanTambon" name="เชียงเครือ" english="Chiang Khruea" geocode="4783" parent="4701" tambon="470106" >
+    <office type="MunicipalityOffice">
+      <url>http://www.chkr.go.th</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="สามัคคีพัฒนา" english="Samakkhi Phatthana" geocode="4782" parent="4711" tambon="471108" />
+  <entity type="ThesabanTambon" name="บงใต้" english="Bong Tai" geocode="4781" parent="4710" tambon="471211" />
+  <entity type="ThesabanTambon" name="ตองโขบ" english="Tong Khop" geocode="4780" parent="4715" tambon="471501" />
+  <entity type="ThesabanTambon" name="คำบ่อ" english="Kham Bo" geocode="4779" parent="4706" tambon="470604" />
 
-  <entity type="Unknown" name="อ.บ้านหัน  จ.สกลนคร" geocode="4781" />
+  <!--<entity type="Unknown" name="อ.บ้านหัน  จ.สกลนคร" geocode="4781" />-->
   <entity type="SakhaTambon" name="กุดเรือคำ" english="Kut Ruea Kham" geocode="4751" parent="4708" />
 </entity>
