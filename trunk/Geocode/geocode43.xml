@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="หนองคาย" english="Nong Khai" geocode="43">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="หนองคาย" english="Nong Khai" geocode="43">
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>17.8680</geo:lat>
+      <geo:long>102.7448</geo:long>
+    </geo:Point>
+    <url>http://www.nongkhai.go.th/</url>
+  </office>
   <officials source="http://123.242.162.3/web/index.php?module=ContentExpress&amp;func=display&amp;ceid=9">
     <official title="Governor" index="39" name="กวี กิตติสถาพร" beginyear="2008"/>
     <official title="Governor" index="38" name="เจด็จ มุสิกวงศ์" beginyear="2007" endyear="2008"/>
@@ -314,7 +321,15 @@
     <entity type="Tambon" name="นาดง" english="Na Dong" geocode="431006" />
   </entity>
   <entity type="Amphoe" name="บึงโขงหลง" english="Bueng Khong Long" geocode="4311" >
-    <entity type="Tambon" name="บึงโขงหลง" english="Bueng Khong Long" geocode="431101" />
+    <entity type="Tambon" name="บึงโขงหลง" english="Bueng Khong Long" geocode="431101" >
+      
+      <entity type="Muban" geocode="43110109" name="บ้านสระแก้ว" english="Ban Sa Kaeo"/>
+
+      <entity type="Muban" geocode="43110111" name="บ้านโนนสว่าง" english="Ban Non Sawang"/>
+      <entity type="Muban" geocode="43110112" name="บ้านบึงโขงหลง" english="Ban Bueng Khong Long"/>
+      
+      <entity type="Muban" geocode="43110117" name="บ้านทรายทอง" english="Ban Sai Thong"/>
+    </entity>
     <entity type="Tambon" name="โพธิ์หมากแข้ง" english="Pho Mak Khaeng" geocode="431102" >
       <entity type="Muban" geocode="43110204" name="บ้านบัวโคก"/>
 
@@ -413,7 +428,11 @@
   <entity type="KingAmphoe" name="สามแยกสีชมภู" english="Sam Yaek Si Chom Phu" geocode="4320" comment="Proposed, but not created"/>
   <entity type="KingAmphoe" name="หอคำ" english="Hokham" geocode="4321" comment="Proposed, but not created"/>
 
-  <entity type="ThesabanMueang" name="หนองคาย" english="Nong Khai" geocode="4399" parent="4301" />
+  <entity type="ThesabanMueang" name="หนองคาย" english="Nong Khai" geocode="4399" parent="4301" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nongkhaimunicipality.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เวียงคุก" english="Wiang Khuk" geocode="4398" parent="4301" />
   <entity type="ThesabanTambon" name="หนองสองห้อง" english="Nong Song Hong" geocode="4397" parent="4301" />
   <entity type="ThesabanTambon" name="ท่าบ่อ" english="Tha Bo" geocode="4396" parent="4302" />
@@ -432,7 +451,11 @@
   <entity type="ThesabanTambon" name="ท่าสะอาด" english="Tha Sa-at" geocode="4387" parent="4309" />
   <entity type="ThesabanTambon" name="ศรีพนา" english="Si Phana" geocode="4386" parent="4309" />
   <entity type="ThesabanTambon" name="ปากคาด" english="Pak Khat" geocode="4385" parent="4310" />
-  <entity type="ThesabanTambon" name="บึงโขงหลง" english="Bueng Khong Long" geocode="4384" parent="4311" />
+  <entity type="ThesabanTambon" name="บึงโขงหลง" english="Bueng Khong Long" geocode="4384" parent="4311" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tesbanbkl.ob.tc/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ศรีวิไล" english="Si Wilai" geocode="4383" parent="4312" />
   <entity type="ThesabanTambon" name="หาดคำ" english="Hat Kham" geocode="4382" parent="4301" tambon="430107"/>
   <entity type="ThesabanTambon" name="โพธิ์ชัย" english="Pho Chai" geocode="4381" parent="4301" tambon="430103"/>
