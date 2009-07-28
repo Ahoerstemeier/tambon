@@ -630,7 +630,11 @@
     <entity type="Tambon" name="ท่าหาดยาว" english="Tha Hat Yao" geocode="451305" />
   </entity>
   <entity type="Amphoe" name="อาจสามารถ" english="At Samat" geocode="4514" >
-    <entity type="Tambon" name="อาจสามารถ" english="At Samat" geocode="451401" />
+    <entity type="Tambon" name="อาจสามารถ" english="At Samat" geocode="451401" >
+      <office type="TAOOffice">
+        <url>http://www.atsamart.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="โพนเมือง" english="Phon Mueang" geocode="451402" />
     <entity type="Tambon" name="บ้านแจ้ง" english="Ban Chaeng" geocode="451403" />
     <entity type="Tambon" name="หน่อม" english="Nom" geocode="451404" />
@@ -856,8 +860,16 @@
   <entity type="ThesabanTambon" name="ปอภาร" english="Po Phan" geocode="4577" parent="4501" tambon="450109" />
   <entity type="ThesabanTambon" name="อุ่มเม้า" english="Um Mao" geocode="4576" parent="4505" tambon="450506" />
   <entity type="ThesabanTambon" name="หัวช้าง" english="Hua Chang" geocode="4575" parent="4504" tambon="450401" />
-  <entity type="ThesabanTambon" name="โคกล่าม" english="Khok Lam" geocode="4574" parent="4504" tambon="450404" />
-  <entity type="ThesabanTambon" name="ดงแดง" english="Dong Daeng" geocode="4573" parent="4504" tambon="450406" />
+  <entity type="ThesabanTambon" name="โคกล่าม" english="Khok Lam" geocode="4574" parent="4504" tambon="450404" >
+    <office type="MunicipalityOffice">
+      <url>http://www.khoklam.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ดงแดง" english="Dong Daeng" geocode="4573" parent="4504" tambon="450406" >
+    <office type="MunicipalityOffice">
+      <url>http://www.dongdang.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ขวาว" english="Khwao" geocode="4572" parent="4510" tambon="451008" />
   <entity type="ThesabanTambon" name="เมืองไพร" english="Mueang Phrai" geocode="4571" parent="4510" tambon="451003" />
   <entity type="ThesabanTambon" name="ดินดำ" english="Din Dam" geocode="4570" parent="4517" tambon="451701" />
