@@ -132,15 +132,27 @@
     <entity type="Unknown" name="ป่าคาย" english="Pa Khai" geocode="530299" newgeocode="530903" />
   </entity>
   <entity type="Amphoe" name="ท่าปลา" english="Tha Pla" geocode="5303" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.7930</geo:lat>
+        <geo:long>100.3772</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ท่าปลา" english="Tha Pla" geocode="530301" >
-      <office type="DistrictOffice">
-        <geo:Point>
-          <geo:lat>17.7930</geo:lat>
-          <geo:long>100.3772</geo:long>
-        </geo:Point>
+      <office type="TAOOffice">
+        <url>http://www.thapla.9f.com/</url>
       </office>
-      <entity type="Muban" geocode="53030102" name="บ้านสามร้อยเมตร"/>
 
+      <entity type="Muban" geocode="53030102" name="บ้านสามร้อยเมตร"/>
+      <entity type="Muban" geocode="53030103" name="บ้านน้ำคอม"/>
+      <entity type="Muban" geocode="53030104" name="บ้านน้ำสิงห์เหนือ"/>
+      <entity type="Muban" geocode="53030105" name="บ้านน้ำสิงห์ใต้"/>
+      <entity type="Muban" geocode="53030106" name="บ้านเนินสวน"/>
+      <entity type="Muban" geocode="53030107" name="บ้านสิงห์คอมพัฒนา"/>
+      <entity type="Muban" geocode="53030108" name="บ้านเนินสว่าง"/>
+      <entity type="Muban" geocode="53030109" name="บ้านท่าเรือ"/>
+      <entity type="Muban" geocode="53030110" name="บ้านปางผึ้ง"/>
+      <entity type="Muban" geocode="53030111" name="บ้านผาแก่น"/>
       <entity type="Muban" geocode="53030112" name="บ้านสามร้อยเมตร"/>
     </entity>
     <entity type="Tambon" name="หาดล้า" english="Hat La" geocode="530302" >
@@ -155,7 +167,11 @@
     </entity>
     <entity type="Tambon" name="จริม" english="Charim" geocode="530304" />
     <entity type="Tambon" name="น้ำหมัน" english="Nam Man" geocode="530305" />
-    <entity type="Tambon" name="ท่าแฝก" english="Tha Faek" geocode="530306" />
+    <entity type="Tambon" name="ท่าแฝก" english="Tha Faek" geocode="530306" >
+      <office type="TAOOffice">
+        <url>http://www.thafak.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="นางพญา" english="Nang Phaya" geocode="530307" />
     <entity type="Tambon" name="ร่วมจิต" english="Ruam Chit" geocode="530308" />
   </entity>
