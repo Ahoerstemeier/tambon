@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity type="Changwat" name="ร้อยเอ็ด" english="Roi Et" geocode="45">
+  <office type="ProvinceHall">
+    <url>http://www.roiet.go.th</url>
+  </office>
+  <office type="PAOOffice">
+    <url>http://www.pao-roiet.go.th</url>
+  </office>
   <officials>
     <official title="Governor" name="ชิตพงษ์ ฤทธิประศาสน์" begin="2009-03-01"/>
     <official title="Governor" name="พงษ์ศิริ กุสุมภ์" beginyear="2008" end="2008-02-28"/>
@@ -265,7 +271,11 @@
     <entity type="Unknown" name="โพธิ์ทอง" english="Pho Thong" geocode="450199" newgeocode="450706" />
   </entity>
   <entity type="Amphoe" name="เกษตรวิสัย" english="Kaset Wisai" geocode="4502" >
-    <entity type="Tambon" name="เกษตรวิสัย" english="Kaset Wisai" geocode="450201" />
+    <entity type="Tambon" name="เกษตรวิสัย" english="Kaset Wisai" geocode="450201" >
+      <office type="TAOOffice">
+        <url>http://www.muangkate.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="เมืองบัว" english="Mueang Bua" geocode="450202" />
     <entity type="Tambon" name="เหล่าหลวง" english="Lao Luang" geocode="450203" />
     <entity type="Tambon" name="สิงห์โคก" english="Sing Khok" geocode="450204" />
@@ -317,6 +327,9 @@
     <entity type="Tambon" name="ดงครั่งน้อย" english="Dong Khrang Noi" geocode="450213" />
   </entity>
   <entity type="Amphoe" name="ปทุมรัตต์" english="Pathum Rat" geocode="4503" >
+    <office type="DistrictOffice">
+      <url>http://www.patumrat.net/</url>
+    </office>
     <entity type="Tambon" name="บัวแดง" english="Bua Daeng" geocode="450301" >
       <entity type="Muban" geocode="45030101" name="บ้านบัวแดง"/>
 
@@ -327,6 +340,9 @@
     </entity>
     <entity type="Tambon" name="ดอกล้ำ" english="Dok Lam" geocode="450302" />
     <entity type="Tambon" name="หนองแคน" english="Nong Khaen" geocode="450303" >
+      <office type="TAOOffice">
+        <url>http://www.nongkan.go.th/</url>
+      </office>
       <entity type="Muban" geocode="45030303" name="บ้านดู่"/>
 
       <entity type="Muban" geocode="45030314" name="บ้านดู่ใหญ่"/>
@@ -523,7 +539,11 @@
     <entity type="Tambon" name="ภูเขาทอง" english="Phukhao Thong" geocode="450903" />
     <entity type="Tambon" name="กกโพธิ์" english="Kok Pho" geocode="450904" />
     <entity type="Tambon" name="โคกสว่าง" english="Khok Sawang" geocode="450905" />
-    <entity type="Tambon" name="หนองขุ่นใหญ่" english="Nong Khun Yai" geocode="450906" />
+    <entity type="Tambon" name="หนองขุ่นใหญ่" english="Nong Khun Yai" geocode="450906" >
+      <office type="TAOOffice">
+        <url>http://www.nongkunyai.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="รอบเมือง" english="Rop Mueang" geocode="450907" >
       <entity type="Muban" geocode="45090704" name="บ้านโนนสวาสดิ์"/>
 
@@ -777,7 +797,11 @@
     <entity type="Tambon" name="ดินดำ" english="Din Dam" geocode="451701" />
     <entity type="Tambon" name="ปาฝา" english="Pa Fa" geocode="451702" />
     <entity type="Tambon" name="ม่วงลาด" english="Muang Lat" geocode="451703" />
-    <entity type="Tambon" name="จังหาร" english="Changhan" geocode="451704" />
+    <entity type="Tambon" name="จังหาร" english="Changhan" geocode="451704" >
+      <office type="TAOOffice">
+        <url>http://www.tambonjunghan.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ดงสิงห์" english="Dong Sing" geocode="451705" />
     <entity type="Tambon" name="ยางใหญ่" english="Yang Yai" geocode="451706" />
     <entity type="Tambon" name="ผักแว่น" english="Phak Waen" geocode="451707" >
@@ -829,7 +853,11 @@
 
   <entity type="ThesabanMueang" name="ร้อยเอ็ด" english="Roi Et" geocode="4599" parent="4501" />
   <entity type="ThesabanTambon" name="กู่กาสิงห์" english="Ku Ka Sing" geocode="4598" parent="4502" />
-  <entity type="ThesabanTambon" name="เกษตรวิสัย" english="Kaset Wisai" geocode="4597" parent="4502" />
+  <entity type="ThesabanTambon" name="เกษตรวิสัย" english="Kaset Wisai" geocode="4597" parent="4502" >
+    <office type="MunicipalityOffice">
+      <url>http://www.kasetwisai.net/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ปทุมรัตต์" english="Pathum Rat" geocode="4596" parent="4503" />
   <entity type="ThesabanTambon" name="จตุรพักตรพิมาน" english="Chaturaphak Phiman" geocode="4595" parent="4504" />
   <entity type="ThesabanTambon" name="ธงธานี" english="Thong Thani" geocode="4594" parent="4505" />
