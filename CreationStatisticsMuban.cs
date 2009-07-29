@@ -44,7 +44,7 @@ namespace De.AHoerstemeier.Tambon
         protected void ProcessContentForName(RoyalGazetteContentCreate iCreate)
         {
             Int32 lTambonGeocode = iCreate.Geocode / 100;
-            String lName = StripBan(iCreate.Name);
+            String lName = Helper.StripBan(iCreate.Name);
             if (!String.IsNullOrEmpty(lName))
             {
                 String lParentName = String.Empty;
@@ -56,7 +56,7 @@ namespace De.AHoerstemeier.Tambon
                         Debug.Assert(lTambonGeocode == (lSubEntry.Geocode / 100), "Parent muban as a different geocode");
                     }
                 }
-                lParentName = StripBan(lParentName);
+                lParentName = Helper.StripBan(lParentName);
                 if (!String.IsNullOrEmpty(lParentName))
                 {
                     if (lName.StartsWith(lParentName))
@@ -102,17 +102,6 @@ namespace De.AHoerstemeier.Tambon
                 mHighestMubanNumber.IncrementForCount(lMubanNumber,lCreate.Geocode);
             }
             ProcessContentForName(lCreate);
-        }
-
-        private String StripBan(String iName)
-        {
-            const String ThaiStringBan = "บ้าน";
-            String retval = iName;
-            if (iName.StartsWith(ThaiStringBan))
-            {
-                retval = iName.Remove(0, ThaiStringBan.Length).Trim();
-            }
-            return retval;
         }
 
         protected Int32 SuffixFrequency(String iSuffix)

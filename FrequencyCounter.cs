@@ -21,6 +21,8 @@ namespace De.AHoerstemeier.Tambon
         public Int32 MostCommonValue { get { if (mDirty) { CalculateStatistics(); }; return mMostCommonValue; } }
         private Int32 mMostCommonValueCount = 0;
         public Int32 MostCommonValueCount { get { if (mDirty) { CalculateStatistics(); }; return mMostCommonValueCount; } }
+        private Int32 mCount = 0;
+        public Int32 NumberOfValues { get { if (mDirty) { CalculateStatistics(); }; return mCount; } }
         private double mStandardDeviation = 0;
         public double StandardDeviation { get { if (mDirty) { CalculateStatistics(); }; return mStandardDeviation; } }
         #endregion
@@ -48,7 +50,7 @@ namespace De.AHoerstemeier.Tambon
             mMostCommonValueCount = 0;
             mStandardDeviation = 0;
             Int32 lSum = 0;
-            Int32 lCount = 0;
+            mCount = 0;
             foreach (KeyValuePair<Int32, List<Int32>> lKeyValue in mData)
             {
                 if ((lKeyValue.Value != null)&&(lKeyValue.Key!=0))
@@ -56,7 +58,7 @@ namespace De.AHoerstemeier.Tambon
                     Int32 lCurrentCount = lKeyValue.Value.Count;
                     if (lCurrentCount > 0)
                     {
-                        lCount=lCount+lCurrentCount;
+                        mCount=mCount+lCurrentCount;
                         lSum = lSum + lKeyValue.Key*lCurrentCount;
                         if (mMinValue == 0)
                         {
@@ -72,9 +74,9 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
             }
-            if (lCount > 0)
+            if (mCount > 0)
             {
-                mMeanValue = (lSum * 1.0 / lCount);
+                mMeanValue = (lSum * 1.0 / mCount);
                 double lDeviation = 0;
                 foreach (KeyValuePair<Int32, List<Int32>> lKeyValue in mData)
                 {
@@ -87,7 +89,7 @@ namespace De.AHoerstemeier.Tambon
                         }
                     }
                 }
-                mStandardDeviation = Math.Sqrt(lDeviation / lCount);
+                mStandardDeviation = Math.Sqrt(lDeviation / mCount);
             }
         }
         #endregion
