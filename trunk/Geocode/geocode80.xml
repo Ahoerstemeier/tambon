@@ -49,8 +49,8 @@
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="800101" />
     <entity type="Tambon" name="ท่าวัง" english="Tha Wang" geocode="800102" />
     <entity type="Tambon" name="คลัง" english="Khlang" geocode="800103" />
-    <entity type="Tambon" name="นา" english="Na" geocode="800104" comment="Abolished?" />
-    <entity type="Tambon" name="ศาลามีชัย" english="Sala Mi Chai" geocode="800105" comment="Abolished?" />
+    <entity type="Tambon" name="นา" english="Na" geocode="800104" comment="Abolished in 1966?" />
+    <entity type="Tambon" name="ศาลามีชัย" english="Sala Mi Chai" geocode="800105" comment="Abolished in 1966?" />
     <entity type="Tambon" name="ท่าไร่" english="Tha Rai" geocode="800106" >
       <office type="TAOOffice">
         <url>http://www.tharai.go.th/</url>
@@ -2529,39 +2529,110 @@
   <entity type="KingAmphoe" name="กลาย" english="Klai" geocode="8026" comment="Proposed, but not created"/>
   <entity type="KingAmphoe" name="นาหลวง" english="Na Luang" geocode="8027" comment="Proposed, but not created"/>
 
-  <entity type="ThesabanNakhon" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" geocode="8099" parent="8001" />
-  <entity type="ThesabanMueang" name="ปากพนัง" english="Pak Phanang" geocode="8098" parent="8012" />
+  <entity type="ThesabanNakhon" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" geocode="8099" parent="8001" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nakhoncity.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanMueang" name="ปากพนัง" english="Pak Phanang" geocode="8098" parent="8012" >
+    <office type="MunicipalityOffice">
+      <url comment="Should be http://www.pakphanang.go.th">http://61.7.241.50/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="ทุ่งสง" english="Thung Song" geocode="8097" parent="8009" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tungsong.com/</url>
+    </office>
     <history>
       <rename oldname="ปากแพรก" name="ทุ่งสง" oldenglish="Pak Phraek"/>
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="ท่าแพ" english="Tha Phae" geocode="8096" parent="8001" />
-  <entity type="ThesabanTambon" name="บางจาก" english="Bang Chak" geocode="8095" parent="8001" />
-  <entity type="ThesabanTambon" name="ปากนคร" english="Pak Nakhon" geocode="8094" parent="8001" />
-  <entity type="ThesabanTambon" name="ทอนหงส์" english="Thon Hong" geocode="8093" parent="8002" />
-  <entity type="ThesabanTambon" name="พรหมโลก" english="Phrommalok" geocode="8092" parent="8002" />
-  <entity type="ThesabanTambon" name="ลานสกา" english="Lan Saka" geocode="8091" parent="8003" />
+  <entity type="ThesabanTambon" name="ท่าแพ" english="Tha Phae" geocode="8096" parent="8001" >
+    <office type="MunicipalityOffice">
+      <url>http://www.thapaircity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางจาก" english="Bang Chak" geocode="8095" parent="8001" >
+    <office type="MunicipalityOffice">
+      <url>http://bangjak.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ปากนคร" english="Pak Nakhon" geocode="8094" parent="8001" >
+    <office type="MunicipalityOffice">
+      <url>http://www.paknakhoncity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ทอนหงส์" english="Thon Hong" geocode="8093" parent="8002" >
+    <office type="MunicipalityOffice">
+      <url>http://www.thonhongcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="พรหมโลก" english="Phrommalok" geocode="8092" parent="8002" >
+    <office type="MunicipalityOffice">
+      <url>http://www.promlokcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ลานสกา" english="Lan Saka" geocode="8091" parent="8003" >
+    <office type="MunicipalityOffice">
+      <url>http://www.lansakacity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="จันดี" english="Chan Di" geocode="8090" parent="8004" >
     <office type="MunicipalityOffice">
       <url>http://www.chandeecity.go.th</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ฉวาง" english="Chawang" geocode="8089" parent="8004" />
-  <entity type="ThesabanTambon" name="ไม้เรียง" english="Mai Riang" geocode="8088" parent="8004" />
-  <entity type="ThesabanTambon" name="พิปูน" english="Phibun" geocode="8087" parent="8005" />
-  <entity type="ThesabanTambon" name="เชียรใหญ่" english="Chian Yai" geocode="8086" parent="8006" />
-  <entity type="ThesabanTambon" name="ชะอวด" english="Cha-uat" geocode="8085" parent="8007" />
-  <entity type="ThesabanTambon" name="ท่าศาลา" english="Thasala" geocode="8084" parent="8008" />
-  <entity type="ThesabanTambon" name="นาบอน" english="Nabon" geocode="8083" parent="8010" />
+  <entity type="ThesabanTambon" name="ฉวาง" english="Chawang" geocode="8089" parent="8004" >
+    <office type="MunicipalityOffice">
+      <url>http://www.chawangcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ไม้เรียง" english="Mai Riang" geocode="8088" parent="8004" >
+    <office type="MunicipalityOffice">
+      <url>http://www.mairiang.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="พิปูน" english="Phibun" geocode="8087" parent="8005" >
+    <office type="MunicipalityOffice">
+      <url>http://www.phipuncity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="เชียรใหญ่" english="Chian Yai" geocode="8086" parent="8006" >
+    <office type="MunicipalityOffice">
+      <url>http://www.chianyaicity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ชะอวด" english="Cha-uat" geocode="8085" parent="8007" >
+    <office type="MunicipalityOffice">
+      <url>http://www.cha-uat.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ท่าศาลา" english="Thasala" geocode="8084" parent="8008" >
+    <office type="MunicipalityOffice">
+      <url>http://www.thasalacity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="นาบอน" english="Nabon" geocode="8083" parent="8010" >
+    <office type="MunicipalityOffice">
+      <url>http://www.naboncity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ท่ายาง" english="Thayang" geocode="8082" parent="8011" />
   <entity type="ThesabanTambon" name="เขาชุมทอง" english="Khao Chum Thong" geocode="8081" parent="8013" >
     <office type="MunicipalityOffice">
       <url>http://www.kctcity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ร่อนพิบูลย์" english="Ron Phibun" geocode="8080" parent="8013" />
-  <entity type="ThesabanTambon" name="หินตก" english="Hin Tok" geocode="8079" parent="8013" />
+  <entity type="ThesabanTambon" name="ร่อนพิบูลย์" english="Ron Phibun" geocode="8080" parent="8013" >
+    <office type="MunicipalityOffice">
+      <url>http://www.ronpibooncity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หินตก" english="Hin Tok" geocode="8079" parent="8013" >
+    <office type="MunicipalityOffice">
+      <url>http://www.hintokcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="สิชล" english="Sichon" geocode="8078" parent="8014" >
     <office type="MunicipalityOffice">
       <url>http://www.sichoncity.go.th/</url>
@@ -2576,7 +2647,11 @@
       <url>http://www.khanomcity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="หัวไทร" english="Hua Sai" geocode="8076" parent="8016" />
+  <entity type="ThesabanTambon" name="หัวไทร" english="Hua Sai" geocode="8076" parent="8016" >
+    <office type="MunicipalityOffice">
+      <url>http://www.huasaicity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ท้องเนียน" english="Thong Nian" geocode="8075" parent="8015" tambon="801503">
     <office type="MunicipalityOffice">
       <url>http://www.thongnian.com/</url>
