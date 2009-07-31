@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="นครพนม" english="Nakhon Phanom" geocode="48">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครพนม" english="Nakhon Phanom" geocode="48">
   <office type="ProvinceHall">
     <url>http://www.nakhonphanom.go.th/</url>
   </office>
@@ -447,6 +447,12 @@
     <entity type="Tambon" name="หนองโพธิ์" english="Nong Pho" geocode="480716" newgeocode="481204" />
   </entity>
   <entity type="Amphoe" name="ศรีสงคราม" english="Si Songkhram" geocode="4808" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.6272</geo:lat>
+        <geo:long>104.2505</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ศรีสงคราม" english="Si Songkhram" geocode="480801" />
     <entity type="Tambon" name="นาเดื่อ" english="Na Duea" geocode="480802" >
       <entity type="Muban" geocode="48080209" name="บ้านนาเดื่อ"/>
@@ -677,7 +683,15 @@
       <url>http://www.tessabannakae.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ศรีสงคราม" english="Si Songkhram" geocode="4893" parent="4808" />
+  <entity type="ThesabanTambon" name="ศรีสงคราม" english="Si Songkhram" geocode="4893" parent="4808" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.6276</geo:lat>
+        <geo:long>104.2613</geo:long>
+      </geo:Point>
+      <url>http://www.srisongkram.org/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="นาหว้า" english="Na Wa" geocode="4892" parent="4809" />
   <entity type="ThesabanTambon" name="โพนสวรรค์" english="Phon Sawan" geocode="4891" parent="4810" />
   <entity type="ThesabanTambon" name="ปลาปาก" english="Pla Pak" geocode="4890" parent="4802" />
