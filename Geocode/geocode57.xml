@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="เชียงราย" english="Chiang Rai" geocode="57" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เชียงราย" english="Chiang Rai" geocode="57" >
+  <office type="ProvinceHall">
+    <url>http://www.chiang rai.go.th</url>
+  </office>
   <officials source="http://www.chiangrai.net/CPOC/2009/Articles/viewArticle.aspx?A=9">
     <official title="Governor" name="สุเมธ แสงนิ่มนวล" begin="2009-03-01"/>
     <official title="Governor" name="ไตรสิทธิ์ สินสมบูรณ์ทอง" begin="2008-05-06" end="2009-02-28"/>
@@ -292,6 +295,12 @@
     <entity type="Unknown" name="ม่วงยาย" english="Muang Yai" geocode="570399" newgeocode="571301" />
   </entity>
   <entity type="Amphoe" name="เทิง" english="Thoeng" geocode="5704" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.6854</geo:lat>
+        <geo:long>100.1934</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="570401" >
       <entity type="Muban" geocode="57040103" name="บ้านห้วยไคร้"/>
 
