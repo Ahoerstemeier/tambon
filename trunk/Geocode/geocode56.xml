@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="พะเยา" english="Phayao" geocode="56" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="พะเยา" english="Phayao" geocode="56" >
+  <office type="ProvinceHall">
+    <url>http://www.phayao.go.th</url>
+  </office>
   <officials source="http://www.phayao.go.th/boss.html">
     <official title="Governor" index="16" name="สาวเรืองวรรณ บัวนุช" begin="2008-05-06"/>
     <official title="Governor" index="15" name="ธนเษก อัศวานุวัตร" begin="2006-11-13" end="2008-05-05"/>
@@ -367,6 +370,12 @@
     <entity type="Tambon" name="เจริญราษฎร์" english="Charoen Rat" geocode="560706" />
   </entity>
   <entity type="Amphoe" name="ภูซาง" english="Phu Sang" geocode="5608" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.5990</geo:lat>
+        <geo:long>100.3242</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ภูซาง" english="Phu Sang" geocode="560801" >
       <entity type="Muban" geocode="56080104" name="บ้านป่าสัก"/>
 
