@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครพนม" english="Nakhon Phanom" geocode="48">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>17.4072</geo:lat>
+      <geo:long>104.7822</geo:long>
+    </geo:Point>
     <url>http://www.nakhonphanom.go.th/</url>
   </office>
   <officials source="http://www.nakhonphanom.go.th/nakhonphanom/tableboss.php">
@@ -506,7 +510,19 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="นาหว้า" english="Na Wa" geocode="4809" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.4894</geo:lat>
+        <geo:long>104.1014</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="นาหว้า" english="Na Wa" geocode="480901" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>17.5105</geo:lat>
+          <geo:long>104.0998</geo:long>
+        </geo:Point>
+      </office>
       <entity type="Muban" geocode="48090101" name="บ้านนาหว้า"/>
       <entity type="Muban" geocode="48090102" name="บ้านนาหว้า"/>
       <entity type="Muban" geocode="48090103" name="บ้านนาหว้า"/>
@@ -540,6 +556,10 @@
     </entity>
     <entity type="Tambon" name="นาคูณใหญ่" english="Na Khun Yai" geocode="480904" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>17.5114</geo:lat>
+          <geo:long>104.1364</geo:long>
+        </geo:Point>
         <url>http://www.nakoonyai.org/</url>
       </office>
       <entity type="Muban" geocode="48090401" name="บ้านม่วง" english="Ban Muang"/>
@@ -569,6 +589,12 @@
       <entity type="Muban" geocode="48090515" name="บ้านหนองดุด"/>
     </entity>
     <entity type="Tambon" name="ท่าเรือ" english="Tha Ruea" geocode="480906" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>17.5165</geo:lat>
+          <geo:long>104.0661</geo:long>
+        </geo:Point>
+      </office>
       <entity type="Muban" geocode="48090601" name="บ้านท่าเรือ"/>
       <entity type="Muban" geocode="48090602" name="บ้านท่าเรือ"/>
       <entity type="Muban" geocode="48090603" name="บ้านนาซ่อม"/>
@@ -694,7 +720,15 @@
     <entity type="Tambon" name="หนองโพธิ์" english="Nong Pho" geocode="481204" />
   </entity>
 
-  <entity type="ThesabanMueang" name="นครพนม" english="Nakhon Phanom" geocode="4899" parent="4801" />
+  <entity type="ThesabanMueang" name="นครพนม" english="Nakhon Phanom" geocode="4899" parent="4801" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.4069</geo:lat>
+        <geo:long>104.7811</geo:long>
+      </geo:Point>
+      <url>http://www.nakhonphanomcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าอุเทน" english="Tha Uthen" geocode="4898" parent="4803" />
   <entity type="ThesabanTambon" name="บ้านแพง" english="Ban Phaeng" geocode="4897" parent="4804" />
   <entity type="ThesabanTambon" name="ธาตุพนม" english="That Phanom" geocode="4896" parent="4805" />
@@ -713,7 +747,11 @@
       <url>http://www.srisongkram.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="นาหว้า" english="Na Wa" geocode="4892" parent="4809" />
+  <entity type="ThesabanTambon" name="นาหว้า" english="Na Wa" geocode="4892" parent="4809" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nawha.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="โพนสวรรค์" english="Phon Sawan" geocode="4891" parent="4810" />
   <entity type="ThesabanTambon" name="ปลาปาก" english="Pla Pak" geocode="4890" parent="4802" />
 </entity>
