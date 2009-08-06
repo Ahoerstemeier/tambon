@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="ร้อยเอ็ด" english="Roi Et" geocode="45">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ร้อยเอ็ด" english="Roi Et" geocode="45">
   <office type="ProvinceHall">
     <url>http://www.roiet.go.th</url>
   </office>
@@ -651,9 +651,22 @@
     <entity type="Tambon" name="เมืองสรวง" english="Mueang Suang" geocode="451205" />
   </entity>
   <entity type="Amphoe" name="โพนทราย" english="Phon Sai" geocode="4513" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.4879</geo:lat>
+        <geo:long>103.9964</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="โพนทราย" english="Phon Sai" geocode="451301" />
     <entity type="Tambon" name="สามขา" english="Sam Kha" geocode="451302" />
-    <entity type="Tambon" name="ศรีสว่าง" english="Si Sawang" geocode="451303" />
+    <entity type="Tambon" name="ศรีสว่าง" english="Si Sawang" geocode="451303" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>15.5245</geo:lat>
+          <geo:long>103.9345</geo:long>
+        </geo:Point>
+      </office>
+    </entity>
     <entity type="Tambon" name="ยางคำ" english="Yang Kham" geocode="451304" >
       <office type="TAOOffice">
         <url>http://yangkham.pantown.com/</url>
@@ -904,7 +917,15 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="เมืองสรวง" english="Mueang Suang" geocode="4585" parent="4512" />
-  <entity type="ThesabanTambon" name="โพนทราย" english="Phon Sai" geocode="4584" parent="4513" />
+  <entity type="ThesabanTambon" name="โพนทราย" english="Phon Sai" geocode="4584" parent="4513" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>15.4868</geo:lat>
+        <geo:long>103.9973</geo:long>
+      </geo:Point>
+      <url>http://roietceo.net/tbphonsai/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="อาจสามารถ" english="At Samat" geocode="4583" parent="4514" />
   <entity type="Unknown" name="อาจสามารถ" english="At Samat" geocode="4582" />
   <entity type="ThesabanTambon" name="โนนตาล" english="Non Tan" geocode="4581" parent="4501" tambon="450124" />
