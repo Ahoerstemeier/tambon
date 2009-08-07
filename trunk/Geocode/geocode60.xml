@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="นครสวรรค์" english="Nakhon Sawan" geocode="60">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครสวรรค์" english="Nakhon Sawan" geocode="60">
   <officials>
     <official title="Governor" name="ศุภกิจ บุญญฤทธิพงษ์" beginyear="2008"/>
     <official title="Governor" name="กวี กิตติสถาพร" beginyear="2007" endyear="2008"/>
@@ -22,7 +22,23 @@
       <entity type="Muban" geocode="60010312" name="บ้านหนองเจ้าสนุก"/>
     </entity>
     <entity type="Tambon" name="แควใหญ่" english="Khwae Yai" geocode="600104" />
-    <entity type="Tambon" name="ตะเคียนเลื่อน" english="Takhian Luean" geocode="600105" />
+    <entity type="Tambon" name="ตะเคียนเลื่อน" english="Takhian Luean" geocode="600105" >
+      <office type="TAOOffice">
+        <url>http://www.takeanluen.com/</url>
+      </office>
+      <entity type="Muban" geocode="60010501" name="บ้านตะเคียนเลื่อน"/>
+      <entity type="Muban" geocode="60010502" name="บ้านตะเคียนเลื่อน"/>
+      <entity type="Muban" geocode="60010503" name="บ้านเกาะหงษ์"/>
+      <entity type="Muban" geocode="60010504" name="บ้านเกาะหงษ์"/>
+      <entity type="Muban" geocode="60010505" name="บ้านเกาะหงษ์"/>
+      <entity type="Muban" geocode="60010506" name="บ้านเกาะหงษ์"/>
+      <entity type="Muban" geocode="60010507" name="บ้านเกาะหงษ์"/>
+      <entity type="Muban" geocode="60010508" name="บ้านไผ่แถว"/>
+      <entity type="Muban" geocode="60010509" name="บ้านเกาะหงษ์"/>
+      <entity type="Muban" geocode="60010510" name="บ้านเกาะหงส์"/>
+      <entity type="Muban" geocode="60010511" name="บ้านวังยาง"/>
+      <entity type="Muban" geocode="60010512" name="บ้านวังยาง"/>
+    </entity>
     <entity type="Tambon" name="นครสวรรค์ตก" english="Nakhon Sawan Tok" geocode="600106" >
       <office type="TAOOffice">
         <url>http://www.sawantok.com/</url>
@@ -57,7 +73,15 @@
 
       <entity type="Muban" geocode="60011012" name="บ้านใหม่บึงน้ำใส"/>
     </entity>
-    <entity type="Tambon" name="บ้านแก่ง" english="Ban Kaeng" geocode="600111" />
+    <entity type="Tambon" name="บ้านแก่ง" english="Ban Kaeng" geocode="600111" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>15.8053</geo:lat>
+          <geo:long>100.0733</geo:long>
+        </geo:Point>
+        <url>http://www.bankang.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="พระนอน" english="Phra Non" geocode="600112" />
     <entity type="Tambon" name="วัดไทร" english="Wat Sai" geocode="600113" >
       <office type="TAOOffice">
