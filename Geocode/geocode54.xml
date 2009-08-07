@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="แพร่" english="Phrae" geocode="54" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="แพร่" english="Phrae" geocode="54" >
   <officials>
     <official title="Governor" name="วัลลภ พริ้งพงษ์" begin="2009-05-06"/>
     <official title="Governor" name="พงษ์ศักดิ์ พลายเวช" beginyear="2007" end="2009-05-06"/>
@@ -173,7 +173,19 @@
       <entity type="Muban" geocode="54030114" name="บ้านแม่ลานพัฒนา"/>
     </entity>
     <entity type="Tambon" name="บ้านปิน" english="Ban Pin" geocode="540302" />
-    <entity type="Tambon" name="ต้าผามอก" english="Ta Pha Mok" geocode="540303" />
+    <entity type="Tambon" name="ต้าผามอก" english="Ta Pha Mok" geocode="540303" >
+      <office type="TAOOffice">
+        <url>http://www.tapamok.com/</url>
+      </office>
+      <entity type="Muban" geocode="54030301" name="บ้านผามอก"/>
+      <entity type="Muban" geocode="54030302" name="บ้านน้ำริน"/>
+      <entity type="Muban" geocode="54030303" name="บ้านปง"/>
+      <entity type="Muban" geocode="54030304" name="บ้านเกี๋ยงพา"/>
+      <entity type="Muban" geocode="54030305" name="บ้านอิมอรัญ"/>
+      <entity type="Muban" geocode="54030306" name="บ้านโพธิ์ทอง"/>
+      <entity type="Muban" geocode="54030307" name="บ้านม่วงเจริญ"/>
+      <entity type="Muban" geocode="54030308" name="บ้านปงใต้"/>
+    </entity>
     <entity type="Tambon" name="เวียงต้า" english="Wiang Ta" geocode="540304" />
     <entity type="Tambon" name="ปากกาง" english="Pak Kang" geocode="540305" >
       <office type="TAOOffice">
