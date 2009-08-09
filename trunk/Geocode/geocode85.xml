@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<entity type="Changwat" name="ระนอง" english="Ranong" geocode="85">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ระนอง" english="Ranong" geocode="85">
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>9.9670</geo:lat>
+      <geo:long>98.6355</geo:long>
+    </geo:Point>
+    <url>http://www.ranong.go.th</url>
+  </office>
+  <office type="PAOOffice">
+    <url>http://www.ranongpao.go.th</url>
+  </office>
   <officials source="http://www.ranong.go.th/grranong11.htm">
     <official title="Governor" index="40" name="วันชาติ วงษ์ชัยชนะ" begin="2008-10-01"/>
     <official title="Governor" index="39" name="กาญจนาภา กี่หมัน" begin="2006-11-13" end="2008-09-30"/>
@@ -44,6 +54,12 @@
     <official title="Governor" index="1" name="หลวงระนอง (นายระนอง นามสกุลไม่ปรากฏ)" endyear="1854"/>
   </officials>
   <entity type="Amphoe" name="เมืองระนอง" english="Mueang Ranong" geocode="8501" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>9.9672</geo:lat>
+        <geo:long>98.6339</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เขานิเวศน์" english="Khao Niwet" geocode="850101" />
     <entity type="Tambon" name="ราชกรูด" english="Ratchakrut" geocode="850102" >
       <office type="MunicipalityOffice">
@@ -153,6 +169,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="กะเปอร์" english="Kapoe" geocode="8503" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>9.5853</geo:lat>
+        <geo:long> 98.5961</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ม่วงกลวง" english="Muang Kluang" geocode="850301" >
       <office type="TAOOffice">
         <url>http://www.muangkluang.go.th/</url>
@@ -285,6 +307,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="สุขสำราญ" english="Suk Samran" geocode="8505" parent="8503">
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>9.3446</geo:lat>
+        <geo:long>98.4294</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="นาคา" english="Nakha" geocode="850501" >
       <entity type="Muban" geocode="85050101" name="บ้านบางมัน"/>
       <entity type="Muban" geocode="85050102" name="บ้านนาพรุ" english="Ban Na Phru" />
@@ -306,7 +334,15 @@
     </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="ระนอง" english="Ranong" geocode="8599" parent="8501" />
+  <entity type="ThesabanMueang" name="ระนอง" english="Ranong" geocode="8599" parent="8501" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>9.9621</geo:lat>
+        <geo:long>98.6389</geo:long>
+      </geo:Point>
+      <url>http://www.ranongcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ปากน้ำ" english="Paknam" geocode="8598" parent="8501" />
   <entity type="ThesabanTambon" name="หงาว" english="Ngao" geocode="8597" parent="8501" />
   <entity type="ThesabanTambon" name="ละอุ่น " english="La-Un" geocode="8596" parent="8502" />
