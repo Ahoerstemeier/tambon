@@ -87,6 +87,17 @@ namespace De.AHoerstemeier.Tambon
             String retval = Path.Combine(lDir, iFilename);
             return retval;
         }
+        public String WikipediaReference()
+        {
+            StringBuilder lBuilder = new StringBuilder();
+            lBuilder.Append("<ref>{{cite web|url=");
+            lBuilder.Append(SourceUrl(1));
+            lBuilder.Append("|publisher=Department of Provincial Administration");
+            lBuilder.Append("|title=Population statistics ");
+            lBuilder.Append(mYear.ToString());
+            lBuilder.Append("}}</ref>");
+            return lBuilder.ToString();
+        }
 
         private Boolean cached(String iFilename)
         {
@@ -162,7 +173,7 @@ namespace De.AHoerstemeier.Tambon
 
             }
         }
-        protected void GetData()
+        private String SourceUrl(Int16 iPage)
         {
             Int32 lYearShort = mYear + 543 - 2500;
             if ((lYearShort < 0) | (lYearShort > 99))
@@ -173,14 +184,24 @@ namespace De.AHoerstemeier.Tambon
             {
                 throw new ArgumentOutOfRangeException();
             }
-            string lFilenameBase = "p" + lYearShort.ToString("D2") + mGeocode.ToString("D2") + "_";
-            int lCount = 0;
+            StringBuilder lBuilder = new StringBuilder();
+            lBuilder.Append('p');
+            lBuilder.Append(lYearShort.ToString("D2"));
+            lBuilder.Append(mGeocode.ToString("D2"));
+            lBuilder.Append('_');
+            lBuilder.Append(iPage.ToString("D2"));
+            lBuilder.Append(".html");
+            return lBuilder.ToString();
+        }
+        protected void GetData()
+        {
+            Int16 lCount = 0;
             try
             {
                 while (lCount < 99)
                 {
                     lCount++;
-                    ParseSingleFile(lFilenameBase + lCount.ToString("D2") + ".html");
+                    ParseSingleFile(SourceUrl(lCount));
                 }
             }
             catch
