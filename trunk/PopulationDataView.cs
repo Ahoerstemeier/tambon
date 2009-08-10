@@ -107,7 +107,7 @@ namespace De.AHoerstemeier.Tambon
         private void btnClipboardAmphoe_Click(object sender, EventArgs e)
         {
             var lData = CurrentSelectedEntity(sender);
-            string lOutput = lData.WriteForWikipedia();
+            string lOutput = lData.WriteForWikipedia(mData.WikipediaReference());
             Clipboard.SetText(lOutput);
         }
 
