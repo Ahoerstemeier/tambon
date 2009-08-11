@@ -84,7 +84,18 @@
     <entity type="Tambon" name="นนทรีย์" english="Nonsi" geocode="230405" />
   </entity>
   <entity type="Amphoe" name="แหลมงอบ" english="Laem Ngop" geocode="2305" >
-    <entity type="Tambon" name="แหลมงอบ" english="Laem Ngop" geocode="230501" />
+    <entity type="Tambon" name="แหลมงอบ" english="Laem Ngop" geocode="230501" >
+      <office type="TAOOffice">
+        <url>http://www.laemngob.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="23050101" name="บ้านแหลมงอบ"/>
+      <entity type="Muban" geocode="23050102" name="บ้านคลองปอ"/>
+      <entity type="Muban" geocode="23050103" name="บ้านแหลมมะขาม"/>
+      <entity type="Muban" geocode="23050104" name="บ้านหัวหิน"/>
+      <entity type="Muban" geocode="23050105" name="บ้านแหลมทองหลาง"/>
+      <entity type="Muban" geocode="23050106" name="บ้านกลาง"/>
+      <entity type="Muban" geocode="23050107" name="บ้านหนองปรือ"/>
+    </entity>
     <entity type="Tambon" name="น้ำเชี่ยว" english="Nam Chiao" geocode="230502" >
       <entity type="Muban" geocode="23050202" name="บ้านหนองใหญ่"/>
 
@@ -134,5 +145,9 @@
   <entity type="ThesabanTambon" name="แสนตุ้ง" english="Saen Tung" geocode="2394" parent="2303" />
   <entity type="ThesabanTambon" name="บ่อพลอย" english="Bo Phloi" geocode="2393" parent="2304" />
   <entity type="ThesabanTambon" name="น้ำเชี่ยว" english="Nam Chiao" geocode="2392" parent="2305" />
-  <entity type="ThesabanTambon" name="แหลมงอบ" english="Laem Ngop" geocode="2391" parent="2305" />
+  <entity type="ThesabanTambon" name="แหลมงอบ" english="Laem Ngop" geocode="2391" parent="2305" >
+    <office type="MunicipalityOffice">
+      <url>http://www.laemngobcity.go.th/</url>
+    </office>
+  </entity>
 </entity>

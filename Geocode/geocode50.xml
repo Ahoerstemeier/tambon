@@ -548,8 +548,17 @@
   <entity type="Amphoe" name="แม่ริม" english="Mae Rim" geocode="5007" >
     <entity type="Tambon" name="ริมใต้" english="Rim Tai" geocode="500701" />
     <entity type="Tambon" name="ริมเหนือ" english="Rim Nuea" geocode="500702" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>18.9334</geo:lat>
+          <geo:long>98.9404</geo:long>
+        </geo:Point>
+        <url>http://rimnuar.org/</url>
+      </office>
       <entity type="Muban" geocode="50070201" name="บ้านเหมืองผ่า"/>
-
+      <entity type="Muban" geocode="50070202" name="บ้านท้องฝาย"/>
+      <entity type="Muban" geocode="50070203" name="บ้านหัวดง"/>
+      <entity type="Muban" geocode="50070204" name="บ้านเกาะ"/>
       <entity type="Muban" geocode="50070205" name="บ้านเหมืองผ่ารวมใจ"/>
     </entity>
     <entity type="Tambon" name="สันโป่ง" english="San Pong" geocode="500703" >
@@ -964,7 +973,11 @@
     </entity>
     <entity type="Tambon" name="ทุ่งสะโตก" english="Thung Satok" geocode="501208" />
     <entity type="Tambon" name="ทุ่งปี้" english="Thung Pi" geocode="501209" newgeocode="502202" />
-    <entity type="Tambon" name="ทุ่งต้อม" english="Thung Tom" geocode="501210" />
+    <entity type="Tambon" name="ทุ่งต้อม" english="Thung Tom" geocode="501210" >
+      <office type="TAOOffice">
+        <url>http://www.tungtom.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านกาด" english="Ban Kat" geocode="501211" newgeocode="502201" />
     <entity type="Tambon" name="แม่วิน" english="Mae Win" geocode="501212" newgeocode="502204" />
     <entity type="Tambon" name="ทุ่งรวงทอง" english="Thung Ruang Thong" geocode="501213" newgeocode="502203" />
