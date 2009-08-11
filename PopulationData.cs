@@ -91,7 +91,7 @@ namespace De.AHoerstemeier.Tambon
         {
             StringBuilder lBuilder = new StringBuilder();
             lBuilder.Append("<ref>{{cite web|url=");
-            lBuilder.Append(SourceUrl(1));
+            lBuilder.Append(UrlBase+SourceFilename(1));
             lBuilder.Append("|publisher=Department of Provincial Administration");
             lBuilder.Append("|title=Population statistics ");
             lBuilder.Append(mYear.ToString());
@@ -173,7 +173,7 @@ namespace De.AHoerstemeier.Tambon
 
             }
         }
-        private String SourceUrl(Int16 iPage)
+        private String SourceFilename(Int16 iPage)
         {
             Int32 lYearShort = mYear + 543 - 2500;
             if ((lYearShort < 0) | (lYearShort > 99))
@@ -201,7 +201,7 @@ namespace De.AHoerstemeier.Tambon
                 while (lCount < 99)
                 {
                     lCount++;
-                    ParseSingleFile(SourceUrl(lCount));
+                    ParseSingleFile(SourceFilename(lCount));
                 }
             }
             catch
