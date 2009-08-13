@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" geocode="24" name="ฉะเชิงเทรา" english="Chachoengsao">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" geocode="24" name="ฉะเชิงเทรา" english="Chachoengsao">
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>13.6876</geo:lat>
+      <geo:long>101.0702</geo:long>
+    </geo:Point>
+    <url>http://www.chachoengsao.go.th/</url>
+  </office>
+  <office type="PAOOffice">
+    <geo:Point>
+      <!-- Not confirmed, found via Google -->
+      <geo:lat>13.6868</geo:lat>
+      <geo:long>101.0712</geo:long>
+    </geo:Point>
+    <url>http://www.cpao.go.th/</url>
+  </office>
   <officials>
     <official title="Governor" name="สุรพล พงษ์ทัดศิริกุล" begin="2009-05-06"/>
     <official title="Governor" name="วีรวิทย์ วิวัฒนวานิช" begin="2008-10-01" end="2009-05-06"/>
@@ -7,6 +22,12 @@
     <official title="Governor" name="โกเมศ แดงทองดี" end="2005-09-30"/>
   </officials>
   <entity type="Amphoe" name="เมืองฉะเชิงเทรา" english="Mueang Chachoengsao" geocode="2401" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.6886</geo:lat>
+        <geo:long>101.0709</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หน้าเมือง" english="Na Mueang" geocode="240101" />
     <entity type="Tambon" name="ท่าไข่" english="Tha Khai" geocode="240102" >
       <entity type="Muban" geocode="24010201" name="บ้านประตูน้ำท่าไข่"/>
@@ -44,6 +65,12 @@
     <entity type="Tambon" name="บางเตย" english="Bang Toei" geocode="240119" />
   </entity>
   <entity type="Amphoe" name="บางคล้า" english="Bang Khla" geocode="2402" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.7281</geo:lat>
+        <geo:long>101.2081</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บางคล้า" english="Bang Khla" geocode="240201" />
     <entity type="Tambon" name="ก้อนแก้ว" english="Kon Kaeo" geocode="240202" newgeocode="241101" />
     <entity type="Tambon" name="คลองเขื่อน" english="Khlong Khuean" geocode="240203" newgeocode="241102" />
@@ -60,6 +87,12 @@
     <entity type="Tambon" name="หัวไทร" english="Hua Sai" geocode="240214" />
   </entity>
   <entity type="Amphoe" name="บางน้ำเปรี้ยว" english="Bang Nam Priao" geocode="2403" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.8473</geo:lat>
+        <geo:long>101.0534</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บางน้ำเปรี้ยว" english="Bang Nam Priao" geocode="240301" />
     <entity type="Tambon" name="บางขนาก" english="Bang Khanak" geocode="240302" />
     <entity type="Tambon" name="สิงโตทอง" english="Singto Thong" geocode="240303" />
@@ -67,7 +100,15 @@
     <entity type="Tambon" name="บึงน้ำรักษ์" english="Bueng Nam Rak" geocode="240305" />
     <entity type="Tambon" name="ดอนเกาะกา" english="Don Ko Ka" geocode="240306" />
     <entity type="Tambon" name="โยธะกา" english="Yothaka" geocode="240307" />
-    <entity type="Tambon" name="ดอนฉิมพลี" english="Don Chimphli" geocode="240308" />
+    <entity type="Tambon" name="ดอนฉิมพลี" english="Don Chimphli" geocode="240308" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>13.9052</geo:lat>
+          <geo:long>100.9694</geo:long>
+        </geo:Point>
+        <url>http://www.donchimplee.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ศาลาแดง" english="Sala Daeng" geocode="240309" >
       <office type="TAOOffice">
         <url>http://www.obtsaladang.com/</url>
@@ -76,6 +117,13 @@
     <entity type="Tambon" name="โพรงอากาศ" english="Phrong Akat" geocode="240310" />
   </entity>
   <entity type="Amphoe" name="บางปะกง" english="Bang Pakong" geocode="2404" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.5427</geo:lat>
+        <geo:long>100.9938</geo:long>
+      </geo:Point>
+    </office>
+
     <entity type="Tambon" name="บางปะกง" english="Bang Pakong" geocode="240401" >
       <office type="TAOOffice">
         <url>http://www.sao-bangpakong.go.th/</url>
@@ -143,6 +191,12 @@
     <entity type="Tambon" name="เขาดิน" english="Khao Din" geocode="240412" />
   </entity>
   <entity type="Amphoe" name="บ้านโพธิ์" english="Ban Pho" geocode="2405" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.5998</geo:lat>
+        <geo:long>101.0786</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านโพธิ์" english="Ban Pho" geocode="240501" />
     <entity type="Tambon" name="เกาะไร่" english="Ko Rai" geocode="240502" />
     <entity type="Tambon" name="คลองขุด" english="Khlong Khut" geocode="240503" />
@@ -193,6 +247,12 @@
     <entity type="Tambon" name="สิบเอ็ดศอก" english="Sip Et Sok" geocode="240517" />
   </entity>
   <entity type="Amphoe" name="พนมสารคาม" english="Phanom Sarakham" geocode="2406" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.7447</geo:lat>
+        <geo:long>101.3472</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เกาะขนุน" english="Ko Khanun" geocode="240601" />
     <entity type="Tambon" name="บ้านซ่อง" english="Ban Song" geocode="240602" />
     <entity type="Tambon" name="พนมสารคาม" english="Phanom Sarakham" geocode="240603" />
@@ -203,11 +263,23 @@
     <entity type="Tambon" name="เขาหินซ้อน" english="Khao Hin Son" geocode="240608" />
   </entity>
   <entity type="Amphoe" name="ราชสาส์น" english="Ratchasan" geocode="2407" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.7823</geo:lat>
+        <geo:long>101.2818</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บางคา" english="Bang Kha" geocode="240701" />
     <entity type="Tambon" name="เมืองใหม่" english="Mueang Mai" geocode="240702" />
     <entity type="Tambon" name="ดงน้อย" english="Dong Noi" geocode="240703" />
   </entity>
   <entity type="Amphoe" name="สนามชัยเขต" english="Sanam Chai Khet" geocode="2408" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.6583</geo:lat>
+        <geo:long>101.4389</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="คู้ยายหมี" english="Khu Yai Mi" geocode="240801" >
       <entity type="Muban" geocode="24080108" name="บ้านหนองยาง"/>
 
@@ -246,6 +318,12 @@
     <entity type="Tambon" name="คลองตะเกรา" english="Khlong Takrao" geocode="240806" newgeocode="241002" />
   </entity>
   <entity type="Amphoe" name="แปลงยาว" english="Plaeng Yao" geocode="2409" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.5847</geo:lat>
+        <geo:long>101.2842</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แปลงยาว" english="Plaeng Yao" geocode="240901" />
     <entity type="Tambon" name="วังเย็น" english="Wang Yen" geocode="240902" />
     <entity type="Tambon" name="หัวสำโรง" english="Hua Samrong" geocode="240903" />
@@ -268,6 +346,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ท่าตะเกียบ" english="Tha Takiap" geocode="2410" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.4447</geo:lat>
+        <geo:long>101.6110</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ท่าตะเกียบ" english="Tha Takiap" geocode="241001" >
       <entity type="Muban" geocode="24100108" name="บ้านหนองปลาซิว"/>
 
@@ -308,6 +392,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="คลองเขื่อน" english="Khlong Khuean" geocode="2411" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.7913</geo:lat>
+        <geo:long>101.1629</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ก้อนแก้ว" english="Kon Kaeo" geocode="241101" />
     <entity type="Tambon" name="คลองเขื่อน" english="Khlong Khuean" geocode="241102" />
     <entity type="Tambon" name="บางเล่า" english="Bang Lao" geocode="241103" />
@@ -317,7 +407,15 @@
   <entity type="KingAmphoe" name="บุรีรมย์" english="Buri Rom" geocode="2412" comment="Proposed, but not created"/>
   <entity type="KingAmphoe" name="ดอนฉิมพลี" english="Don Chimphli" geocode="2413" comment="Proposed, but not created"/>
 
-  <entity type="ThesabanMueang" name="ฉะเชิงเทรา" english="Chachoengsao" geocode="2499" parent="2401" />
+  <entity type="ThesabanMueang" name="ฉะเชิงเทรา" english="Chachoengsao" geocode="2499" parent="2401" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.6903</geo:lat>
+        <geo:long>101.0703</geo:long>
+      </geo:Point>
+      <url>http://www.tbmccs.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางคล้า" english="Bang Khla" geocode="2498" parent="2402" />
   <entity type="ThesabanTambon" name="นครเนื่องเขต" english="Nakhon Nueang Khet" geocode="2497" parent="2401" />
   <entity type="ThesabanTambon" name="ปากน้ำ" english="Pak Nam" geocode="2496" parent="2402" >
