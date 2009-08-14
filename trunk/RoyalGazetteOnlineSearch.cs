@@ -32,7 +32,7 @@ namespace De.AHoerstemeier.Tambon
         #endregion
         public event RoyalGazetteList.ProcessingFinished OnProcessingFinished;
         #region consts
-        private static Dictionary<EntityModification, String> EntityModificationText = new Dictionary<EntityModification, string>
+        private static Dictionary<EntityModification, String> EntityModificationText = new Dictionary<EntityModification, String>
         {
             {EntityModification.Abolishment,"Abolish of %1%"},
             {EntityModification.AreaChange,"Change of area of %1%"},
@@ -41,7 +41,7 @@ namespace De.AHoerstemeier.Tambon
             {EntityModification.StatusChange,"Change of status of %1%"},
             {EntityModification.Constituency,"Constituencies of %1%"}
         };
-        public static Dictionary<EntityModification, Dictionary<EntityType, String>> SearchKeys = new Dictionary<EntityModification, Dictionary<EntityType, string>>
+        public static Dictionary<EntityModification, Dictionary<EntityType, String>> SearchKeys = new Dictionary<EntityModification, Dictionary<EntityType, String>>
         {
             {
                 EntityModification.Creation,new Dictionary<EntityType,String>
@@ -112,14 +112,32 @@ namespace De.AHoerstemeier.Tambon
              }
 
         };
-
-        private static Dictionary<ProtectedAreaTypes, String> SearchKeysProtectedAreas = new Dictionary<ProtectedAreaTypes, string>
+        public static Dictionary<EntityModification, Dictionary<ProtectedAreaTypes, String>> SearchKeysProtectedAreas = new Dictionary<EntityModification, Dictionary<ProtectedAreaTypes, String>>
         {
-            {ProtectedAreaTypes.NonHuntingArea,"กำหนดเขตห้ามล่าสัตว์ป่า"},
-            {ProtectedAreaTypes.WildlifeSanctuary,"เป็นเขตรักษาพันธุ์สัตว์ป่า"},
-            {ProtectedAreaTypes.NationalPark,"เป็นอุทยานแห่งชาติ"},
-            {ProtectedAreaTypes.HistoricalSite,"กำหนดเขตที่ดินโบราณสถาน"},
-            {ProtectedAreaTypes.NationalPreservedForest,"เป็นป่าสงวนแห่งชาติ"}
+            {
+                EntityModification.Creation,new Dictionary<ProtectedAreaTypes,String>
+                {
+                    {ProtectedAreaTypes.NonHuntingArea,"กำหนดเขตห้ามล่าสัตว์ป่า เป็นเขตห้ามล่าสัตว์ป่า"},
+                    {ProtectedAreaTypes.WildlifeSanctuary,"เป็นเขตรักษาพันธุ์สัตว์ป่า"},
+                    {ProtectedAreaTypes.NationalPark,"เป็นอุทยานแห่งชาติ เพิกถอนอุทยานแห่งชาติ"},
+                    {ProtectedAreaTypes.HistoricalSite,"กำหนดเขตที่ดินโบราณสถาน"},
+                    {ProtectedAreaTypes.NationalPreservedForest,"เป็นป่าสงวนแห่งชาติ กำหนดพื้นที่ป่าสงวนแห่งชาติ"}
+                  }
+               },
+               {
+                EntityModification.Abolishment,new Dictionary<ProtectedAreaTypes,String>
+                {
+                    {ProtectedAreaTypes.NationalPark,"เพิกถอนอุทยานแห่งชาติ"},  // actually it's normally an area change
+                    {ProtectedAreaTypes.WildlifeSanctuary,"เพิกถอนเขตรักษาพันธุ์สัตว์ป่า"}  // actually it's normally an area change
+                  }
+               },
+               {
+                EntityModification.AreaChange,new Dictionary<ProtectedAreaTypes,String>
+                {
+                    {ProtectedAreaTypes.NationalPark,"เปลี่ยนแปลงเขตอุทยานแห่งชาติ"},
+                    {ProtectedAreaTypes.WildlifeSanctuary,"เปลี่ยนแปลงเขตรักษาพันธุ์สัตว์ป่า"}
+                }
+            }    
         };
         #endregion
         #region constructor
@@ -430,14 +448,17 @@ namespace De.AHoerstemeier.Tambon
 
             for (Int32 lVolume = iVolumeBegin; lVolume <= iVolumeEnd; lVolume++)
             {
-                foreach (KeyValuePair<ProtectedAreaTypes, String> lKeyValuePair in SearchKeysProtectedAreas)
+                foreach (KeyValuePair<EntityModification, Dictionary<ProtectedAreaTypes, String>> lOuterKeyValuePair in SearchKeysProtectedAreas)
                 {
-                    if (iValues.Contains(lKeyValuePair.Key))
+                    foreach (KeyValuePair<ProtectedAreaTypes, String> lKeyValuePair in lOuterKeyValuePair.Value)
                     {
-                        var lList = GetListDescription(lKeyValuePair.Value, lVolume, "Creation of " + lKeyValuePair.Key.ToString());
-                        if (lList != null)
+                        if (iValues.Contains(lKeyValuePair.Key))
                         {
-                            retval.AddRange(lList);
+                            var lList = GetListDescription(lKeyValuePair.Value, lVolume, ModificationText(lOuterKeyValuePair.Key, lKeyValuePair.Key));                                
+                            if (lList != null)
+                            {
+                                retval.AddRange(lList);
+                            }
                         }
                     }
                 }
@@ -495,6 +516,12 @@ namespace De.AHoerstemeier.Tambon
         {
             String retval = EntityModificationText[iModification];
             retval = retval.Replace("%1%", iEntityType.ToString());
+            return retval;
+        }
+        private String ModificationText(EntityModification iModification, ProtectedAreaTypes iProtectedAreaType)
+        {
+            String retval = EntityModificationText[iModification];
+            retval = retval.Replace("%1%", iProtectedAreaType.ToString());
             return retval;
         }
         public void SearchNewsNow()
