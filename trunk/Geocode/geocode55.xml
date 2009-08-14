@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="น่าน" english="Nan" geocode="55">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>18.7761</geo:lat>
+      <geo:long>100.7739</geo:long>
+    </geo:Point>
     <url>http://www.nan.go.th/</url>
   </office>
   <officials source="http://www.nan2day.com/forum/index.php?topic=1223.0">
@@ -54,6 +58,12 @@
     <official title="Governor" index="1" name="พระยาพิชัยชาญฤทธิ์" beginyear="1890" endyear="1892"/>
   </officials>
   <entity type="Amphoe" name="เมืองน่าน" english="Mueang Nan" geocode="5501" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>18.7936</geo:lat>
+        <geo:long>100.7294</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ในเวียง" english="Nai Wiang" geocode="550101" />
     <entity type="Tambon" name="บ่อ" english="Bo" geocode="550102" >
       <office type="TAOOffice">
@@ -77,7 +87,15 @@
 
       <entity type="Muban" geocode="55010309" name="บ้านฟ้าใหม่"/>
     </entity>
-    <entity type="Tambon" name="ไชยสถาน" english="Chaiya Sathan" geocode="550104" />
+    <entity type="Tambon" name="ไชยสถาน" english="Chaiya Sathan" geocode="550104" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>18.7730</geo:lat>
+          <geo:long>100.7205</geo:long>
+        </geo:Point>
+      </office>
+      
+    </entity>
     <entity type="Tambon" name="ถืมตอง" english="Thuem Tong" geocode="550105" />
     <entity type="Tambon" name="เรือง" english="Rueang" geocode="550106" />
     <entity type="Tambon" name="นาซาว" english="Na Sao" geocode="550107" >
@@ -389,7 +407,15 @@
     </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="น่าน" english="Nan" geocode="5599" parent="5501" />
+  <entity type="ThesabanMueang" name="น่าน" english="Nan" geocode="5599" parent="5501" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>18.7893</geo:lat>
+        <geo:long>100.7766</geo:long>
+      </geo:Point>
+      <url>http://www.nancity.org/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หนองแดง" english="Nong Daeng" geocode="5598" parent="5502" />
   <entity type="ThesabanTambon" name="นาน้อย" english="Na Noi" geocode="5597" parent="5504" />
   <entity type="ThesabanTambon" name="ปัว" english="Pua" geocode="5596" parent="5505" >
