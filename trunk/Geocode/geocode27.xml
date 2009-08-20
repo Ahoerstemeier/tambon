@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" geocode="27" name="สระแก้ว" english="Sa Kaeo" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" geocode="27" name="สระแก้ว" english="Sa Kaeo" >
   <office type="ProvinceHall">
     <url>http://www.sakaeo.go.th</url>
   </office>
@@ -44,12 +44,59 @@
     <entity type="Tambon" name="เขาสามสิบ" english="Khao Sam Sip" geocode="270112" newgeocode="270704" />
   </entity>
   <entity type="Amphoe" name="คลองหาด" english="Khlong Hat" geocode="2702" >
-    <entity type="Tambon" name="คลองหาด" english="Khlong Hat" geocode="270201" />
-    <entity type="Tambon" name="ไทยอุดม" english="Thai Udom" geocode="270202" />
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.4489</geo:lat>
+        <geo:long>102.3000</geo:long>
+      </geo:Point>
+    </office>
+    <entity type="Tambon" name="คลองหาด" english="Khlong Hat" geocode="270201" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>13.4506</geo:lat>
+          <geo:long>102.2888</geo:long>
+        </geo:Point>
+      </office>
+      <entity type="Muban" geocode="27020101" name="บ้านคลองหาด"/>
+      <entity type="Muban" geocode="27020102" name="บ้านซับมะกรูด"/>
+      <entity type="Muban" geocode="27020103" name="บ้านป่าช้ากวาง"/>
+      <entity type="Muban" geocode="27020104" name="บ้านเขาเลื่อม"/>
+      <entity type="Muban" geocode="27020105" name="บ้านคลองหาด"/>
+      <entity type="Muban" geocode="27020106" name="บ้านทับวังวน"/>
+      <entity type="Muban" geocode="27020107" name="บ้านซับมะกรูด"/>
+      <entity type="Muban" geocode="27020108" name="บ้านเขาดิน"/>
+      <entity type="Muban" geocode="27020109" name="บ้านเขาเลื่อมใต้"/>
+      <entity type="Muban" geocode="27020110" name="บ้านไทยพัฒนา"/>
+      <entity type="Muban" geocode="27020111" name="บ้านป่าตะแบก"/>
+      <entity type="Muban" geocode="27020112" name="บ้านเขาช่องแคบ"/>
+      <entity type="Muban" geocode="27020113" name="บ้านคลองหาดพัฒนา"/>
+    </entity>
+    <entity type="Tambon" name="ไทยอุดม" english="Thai Udom" geocode="270202" >
+      <entity type="Muban" geocode="27020201" name="บ้านไทยอุดม"/>
+      <entity type="Muban" geocode="27020202" name="บ้านซับน้อย"/>
+      <entity type="Muban" geocode="27020203" name="บ้านซับถาวร"/>
+      <entity type="Muban" geocode="27020204" name="บ้านหนองตะเคียน"/>
+      <entity type="Muban" geocode="27020205" name="บ้านเขาภูหีบ"/>
+      <entity type="Muban" geocode="27020206" name="บ้านไทยสมาน"/>
+      <entity type="Muban" geocode="27020207" name="บ้านใหม่สามัคคี"/>
+      <entity type="Muban" geocode="27020208" name="บ้านพรหมนิมิต"/>
+      <entity type="Muban" geocode="27020209" name="บ้านวังปืน"/>
+    </entity>
     <entity type="Tambon" name="ซับมะกรูด" english="Sap Makrut" geocode="270203" />
     <entity type="Tambon" name="ไทรเดี่ยว" english="Sai Diao" geocode="270204" />
     <entity type="Tambon" name="คลองไก่เถื่อน" english="Khlong Kai Thuean" geocode="270205" />
-    <entity type="Tambon" name="เบญจขร" english="Benchakhon" geocode="270206" />
+    <entity type="Tambon" name="เบญจขร" english="Benchakhon" geocode="270206" >
+      <entity type="Muban" geocode="27020601" name="บ้านน้ําคํา"/>
+      <entity type="Muban" geocode="27020602" name="บ้านห้วยไคร้เหนือ"/>
+      <entity type="Muban" geocode="27020603" name="บ้านจานแก่น"/>
+      <entity type="Muban" geocode="27020604" name="บ้านเขาเบญจขร"/>
+      <entity type="Muban" geocode="27020605" name="บ้านชุมทอง"/>
+      <entity type="Muban" geocode="27020606" name="บ้านซับพลู"/>
+      <entity type="Muban" geocode="27020607" name="บ้านเขาดินแดง"/>
+      <entity type="Muban" geocode="27020608" name="บ้านซับพลูเหนือ"/>
+      <entity type="Muban" geocode="27020609" name="บ้านวังไหม"/>
+      <entity type="Muban" geocode="27020610" name="บ้านน้อยเจริญสุข"/>
+    </entity>
     <entity type="Tambon" name="ไทรทอง" english="Sai Thong" geocode="270207" />
   </entity>
   <entity type="Amphoe" name="ตาพระยา" english="Ta Phraya" geocode="2703" >
