@@ -226,7 +226,7 @@
         <url>http://maenajon.org/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="บ้านจันทร์" english="Ban Chan" geocode="500306" >
+    <entity type="Tambon" name="บ้านจันทร์" english="Ban Chan" geocode="500306" comment="To be split off to Galyani Vadhana">
       <office type="TAOOffice">
         <url>http://www.banghang.org/</url>
       </office>
@@ -255,7 +255,7 @@
         <url>http://www.kongkhak.org/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="500309" >
+    <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="500309" comment="To be split off to Galyani Vadhana">
       <office type="TAOOffice">
         <url>http://www.maedaed.org/</url>
       </office>
@@ -267,7 +267,7 @@
       <entity type="Muban" geocode="50030906" name="บ้านดงสามหมื่น"/>
       <entity type="Muban" geocode="50030907" name="บ้านแม่ตะละม้ง"/>
     </entity>
-    <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="500310" >
+    <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="500310" comment="To be split off to Galyani Vadhana">
       <office type="TAOOffice">
         <url>http://www.jamluang.org/</url>
       </office>
@@ -1530,7 +1530,16 @@
     <entity type="Tambon" name="สันติสุข" english="Santi Suk" geocode="502404" />
   </entity>
   <entity type="KingAmphoe" geocode="5025" name="เวียงคำ" english="Wiang Kham" comment="Proposed, but not created"/>
-  <entity type="KingAmphoe" geocode="5026" name="วัดจันทร์" english="Wat Chan" comment="Proposed, but not created"/>
+  <entity type="Amphoe" geocode="5026" name="กัลยาณิวัฒนา" english="Galyani Vadhana" comment="To be created soon">
+    <history>
+      <rename oldname="วัดจันทร์" oldenglish="Wat Chan" name="กัลยาณิวัฒนา" english="Galyani Vadhana" comment="Working name, only before official name was chosen" effective="2009-07-07"/>
+    </history>
+    <!-- Geocodes not yet known
+    <entity type="Tambon" name="บ้านจันทร์" english="Ban Chan" geocode="502601" />
+    <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="502602" />
+    <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="502603"/>
+    -->
+  </entity>
   <entity type="KingAmphoe" geocode="5027" name="หมอกฟ้า" english="Nok Fa" comment="Proposed, but not created"/>
   <entity type="KingAmphoe" geocode="5028" name="บ่อหลวง" english="Bo Luang" comment="Proposed, but not created"/>
 
@@ -1576,7 +1585,11 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ต้นเปา" english="Ton Pao" geocode="5082" parent="5013" />
-  <entity type="ThesabanTambon" name="สันกำแพง" english="San Kamphaeng" geocode="5081" parent="5013" />
+  <entity type="ThesabanTambon" name="สันกำแพง" english="San Kamphaeng" geocode="5081" parent="5013" >
+    <office type="MunicipalityOffice">
+      <url>http://www.sankamphaeng.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แม่โจ้" english="Mae Cho" geocode="5080" parent="5014" />
   <entity type="ThesabanTambon" name="สันทรายหลวง" english="San Sai Luang" geocode="5079" parent="5014" >
     <office type="MunicipalityOffice">
@@ -1631,7 +1644,11 @@
   </entity>
   <entity type="ThesabanTambon" name="หนองจ๊อม" english="Nong Chom" geocode="5060" parent="5014" tambon="501407" />
   <entity type="ThesabanTambon" name="ฟ้าฮ่าม" english="Fa Ham" geocode="5059" parent="5001" tambon="500114" />
-  <entity type="ThesabanTambon" name="สารภี" english="Saraphi" geocode="5058" parent="5019" tambon="501902" />
+  <entity type="ThesabanTambon" name="สารภี" english="Saraphi" geocode="5058" parent="5019" tambon="501902" >
+    <office type="MunicipalityOffice">
+      <url>http://www.saraphi.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แม่เหียะ" english="Mae Hia" geocode="5057" parent="5001" tambon="500109" />
   <entity type="ThesabanTambon" name="พระธาตุปู่ก่ำ" english="Phra That Pu Kam" geocode="5056" parent="5004" tambon="500403" />
   <entity type="ThesabanTambon" name="ปิงโค้ง" english="Ping Khong" geocode="5055" parent="5004" tambon="500406" />
