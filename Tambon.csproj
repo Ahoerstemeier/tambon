@@ -83,6 +83,7 @@
     <Compile Include="CreationStatisticsAmphoe.cs" />
     <Compile Include="CreationStatisticsCentralGovernment.cs" />
     <Compile Include="CreationStatisticsMuban.cs" />
+    <Compile Include="EntityCounter.cs" />
     <Compile Include="EntityLeader.cs" />
     <Compile Include="EntityLeaderList.cs" />
     <Compile Include="FrequencyCounter.cs" />
@@ -110,6 +111,12 @@
     </Compile>
     <Compile Include="CreationStatisticsTambon.cs" />
     <Compile Include="StatisticsAnnouncementDates.cs" />
+    <Compile Include="StringDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringDisplayForm.Designer.cs">
+      <DependentUpon>StringDisplayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThaiAddress.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -168,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreationStatisticForm.resx">
       <DependentUpon>CreationStatisticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringDisplayForm.resx">
+      <DependentUpon>StringDisplayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitConverterForm.resx">
       <DependentUpon>UnitConverterForm.cs</DependentUpon>
