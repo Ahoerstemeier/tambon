@@ -137,9 +137,28 @@ namespace De.AHoerstemeier.Tambon
             }
             return RetVal;
         }
+
+        public string Information(PopulationDataEntry iChangwat)
+        {
+            StringBuilder lBuilder = new StringBuilder();
+
+            lBuilder.AppendLine(StatisticsText(iChangwat));
+            lBuilder.AppendLine();
+
+            foreach (KeyValuePair<PopulationDataEntry, PopulationDataEntry> lKeyValuePair in DifferentMubanNames(iChangwat))
+            {
+                lBuilder.Append(lKeyValuePair.Key.Geocode.ToString());
+                lBuilder.Append(' ');
+                lBuilder.Append(Helper.StripBan(lKeyValuePair.Key.Name));
+                lBuilder.Append(" instead of ");
+                lBuilder.AppendLine(Helper.StripBan(lKeyValuePair.Value.Name));
+            }
+
+            String RetVal = lBuilder.ToString();
+            return RetVal;
+        }
         #endregion
     }
 }
 
 // ToDo: Save To XML
-// ToDo: Dialog to display results
