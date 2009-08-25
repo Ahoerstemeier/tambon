@@ -96,5 +96,16 @@ namespace De.AHoerstemeier.Tambon
             mGeocodes.ExportToXML(lXmlDocument);
             lXmlDocument.Save(iFilename);
         }
+        public override String ToString()
+        {
+            StringBuilder lBuilder = new StringBuilder();
+            foreach (PopulationDataEntry lGeocode in mGeocodes.SubEntities)
+            {
+                lBuilder.Append(lGeocode.Geocode.ToString());
+                lBuilder.Append(' ');
+                lBuilder.AppendLine(lGeocode.Name);
+            }
+            return lBuilder.ToString();
+        }
     }
 }

@@ -166,7 +166,7 @@ namespace De.AHoerstemeier.Tambon
             lResult = lResult + lLine;
             return lResult;
         }
-        public Dictionary<String, EntityLeader> NewGovernors()
+        public Dictionary<String, EntityLeader> NewGovernorsList()
         {
             Dictionary<String, EntityLeader> RetVal = new Dictionary<String, EntityLeader>();
             List<PopulationDataEntry> lFoundEntries = new List<PopulationDataEntry>();
@@ -201,6 +201,16 @@ namespace De.AHoerstemeier.Tambon
             }
             return RetVal;
         }
+        public String NewGovernorsText()
+        { 
+            StringBuilder lBuilder = new StringBuilder();
+            foreach (KeyValuePair<String,EntityLeader> lEntry in NewGovernorsList())
+            {
+                lBuilder.AppendLine(lEntry.Key+" "+lEntry.Value.Name);
+            }
+            return lBuilder.ToString();
+        }
+
         #endregion
 
     }
