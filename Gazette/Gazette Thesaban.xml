@@ -1435,6 +1435,9 @@ Rename สุวรรณภูมิ	Suwannaphum	สระคู
       </entry>
     </year>
     <year value="1982">
+      <entry description="Change of area of Thesaban Mueang Nakhon Ratchasima" title="พระราชกฤษฎีกาเปลี่ยนแปลงเขตเทศบาลเมืองนครราชสีมา จังหวัดนครราชสีมา พ.ศ. ๒๕๒๕" volume="99" page="1" issue="197 ก ฉบับพิเศษ" uri="2525/A/197/1.PDF" publication="1982-12-31" >
+        <areachange geocode="3099"/>
+      </entry>
       <entry description="Change of area of Sukhaphiban Tak Bai, Narathiwat" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตสุขาภิบาลตากใบ อำเภอตากใบ จังหวัดนราธิวาส" volume="99" page="4202-4203" issue="153 ง" uri="2525/D/153/4202.PDF" publication="1982-10-19" sign="1982-08-05">
         <areachange geocode="9697"/>
       </entry>
@@ -4392,6 +4395,11 @@ Rename สุวรรณภูมิ	Suwannaphum	สระคู
         <areachange geocode="8099"/>
       </entry>
     </year>
+    <year value="1931">
+      <entry description="Creation of Sukhaphiban Mueang Uttaradit" title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลเมืองอุตรดิตถ์" volume="48" page="53-56" issue="0 ก" uri="2474/A/53.PDF" publication="1931-05-10" sign="1931-05-09">
+        <create type="SukhaphibanMueang" geocode ="5399"/>
+      </entry>
+    </year>
     <year value="1930">
       <entry description="Creation of Sukhaphiban Surat Thani" title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาล จังหวัดสุราษฎร์ธานี มณฑลนครศรีธรรมราช" volume="47" issue="0 ก" publication="1930-12-21" page="271-273" uri="2473/A/271.PDF" sign="1930-12-19">
         <create geocode="8499" type="Sukhaphiban" />
@@ -4399,11 +4407,50 @@ Rename สุวรรณภูมิ	Suwannaphum	สระคู
     </year>
   </decade>
   <decade value="1910s">
+    <entry description="Creation of Sukhaphiban Samut Prakan" title="ประกาศใช้พระราชบัญญัติสุขาภิบาล ตำบลบางเมือง อำเภอสมุท จังหวัดสมุทรปราการ" volume="34" page="256-257" issue="0 ก" uri="2460/A/256.PDF" publication="1917-06-24" sign="1917-06-20">
+      <create type="Sukhaphiban" geocode="1199">
+        <mention geocode="110103"/>
+      </create>
+    </entry>
     <entry description="Change of Sukhaphiban Tambon Tha Chalom to Sukhaphiban Mueang" title="ประกาศกระทรวงมหาดไทย เรื่อง ประกาศเปลี่ยนการจัดสุขาภิบาลตำบลท่าฉลอม จังหวัดสมุทรสาคร เป็นสุขาภิบาลเมือง" volume="33" page="273" issue="0 ก" uri="2459/A/273.PDF" publication="1916-12-24">
       <status old="SukhaphibanTambon" new="SukhaphibanMueang" geocode="7499" />
     </entry>
     <entry description="Creation of Sukhaphiban Mueang Phitsanulok" title="ประกาศใช้พระราชบัญญัติสุขาภิบาลเมืองพิษณุโลก" volume="32" page="281-282" issue="0 ก" uri="2458/A/281.PDF" publication="1915-10-03" sign="1915-09-28">
       <create type="SukhaphibanMueang" name="พิศณุโลก" english="Phitsanulok" geocode="6599"/>
+    </entry>
+    <entry description="Creation of Sukhaphiban Nakhon Pathom" title="ประกาศใช้พระราชบัญญัติสุขาภิบาล ในตำบลนครปฐม ตำบลพระปฐม ตำบลห้วยจระเข้ ตำบลบ่อพลับ ตำบลสนามจันทร์ ท้องที่อำเภอพระปฐมเจดีย์ มณฑลนครไชยศรี" volume="27" page="151-153" issue="0 ก" uri="2453/A/151.PDF" publication="1911-02-05" sign="1911-01-05" effective="1911-04-01">
+      <create type="Sukhaphiban" geocode="7399">
+        <mention geocode="730111"/>
+        <mention type="Tambon" name="พระปฐม" owner="7301"/>
+        <mention geocode="730122"/>
+        <mention geocode="730110"/>
+        <mention geocode="730107"/>
+      </create>
+    </entry>
+    <entry description="Creation of Sukhaphiban Nakhon Si Thammarat" title="ประกาศใช้พระราชบัญญัติสุขาภิบาล ตำบลท่าวัง ตำบลคลัง ตำบลประตูไชยเหนือ ตำบลพระเสื้อเมือง ท้องที่อำเภอเมือง เมืองนครศรีธรรมราช" volume="27" page="62-64" issue="0 ก" uri="2453/A/62.PDF" publication="1910-09-04" sign="1910-08-13" effective="1910-09-01">
+      <create type="Sukhaphiban" geocode="8099">
+        <mention geocode="800102"/>
+        <mention geocode="800103"/>
+        <mention type="Tambon" name="ประตูไชยเหนือ" owner="8001"/>
+        <mention type="Tambon" name="พระเสื้อเมือง" geocode="800101" owner="8001"/>
+      </create>
+    </entry>
+    <entry description="Creation of Sukhaphiban Phichai" title="ประกาศใช้พระราชบัญญัติสุขาภิบาล ตำบลตลาดท่าอิฐ เมืองพิไชย" volume="27" page="25-27" issue="0 ก" uri="2453/A/25.PDF" publication="1910-05-29" sign="1910-05-21" effective="1910-07-01">
+      <create type="Sukhaphiban" geocode="5399">
+        <mention geocode="530101" name="ตลาดท่าอิฐ"/>
+      </create>
+    </entry>
+  </decade>
+  <decade value="1900s">
+    <entry description="Creation of Sukhaphiban Chanthaburi" title="พระบรมราชโองการ ประกาศใช้พระราชบัญญัติสุขาภิบาลในตำบลตลาดเมืองจันทบุรี มณฑลจันทบุรี" volume="25" page="1297-1298" issue="44" uri="2451/044/1297.PDF" publication="1909-01-31" sign="1909-01-26" effective="1909-04-01">
+      <create type="Sukhaphiban" geocode="2299">
+        <mention geocode="220101"/>
+      </create>
+    </entry>
+    <entry description="Creation of Sukhaphiban Nakhon Ratchasima" title="พระบรมราชโองการ ประกาศใช้พระราชบัญญัติสุขาภิบาลในตำบลโพกลาง มณฑลนครราชสีมา" volume="25" page="1183-1184" issue="40 ฉบับเพิ่มเติม" uri="2451/040/1183_1.PDF" publication="1909-01-03" sign="1909-01-02" effective="1909-04-01">
+      <create type="Sukhaphiban" geocode="3099">
+        <mention geocode="300102"/>
+      </create>
     </entry>
   </decade>
   <!--TODO-->
@@ -4467,7 +4514,6 @@ Rename สุวรรณภูมิ	Suwannaphum	สระคู
     <entry description="Change of area of Thesaban" title="พระราชกฤษฎีกาเปลี่ยนแปลงเขตเทศบาลเมืองอุบลราชธานี จังหวัดอุบลราชธานี (ฉบับที่ ๒) พ.ศ. ๒๕๒๔ [ขยายเขตเทศบาลเมืองอุบลราชธานีออกไปนอกท้องที่]" volume="98" page="12" issue="211 ก ฉบับพิเศษ" uri="2524/A/211/12.PDF" publication="1981-12-24" />
     <entry description="Change of area of Sukhaphiban" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตสุขาภิบาลเวียงเชียงของ อำเภอเชียงของ จังหวัดเชียงราย" volume="98" page="225" issue="13 ง" uri="2524/D/013/225.PDF" publication="1981-01-27" />
     <entry description="Change of area of Sukhaphiban" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตสุขาภิบาลแวง อำเภอโพนทอง จังหวัดร้อยเอ็ด" volume="98" page="748" issue="42 ง" uri="2524/D/042/748.PDF" publication="1981-03-17" />
-    <entry description="Change of area of Thesaban" title="พระราชกฤษฎีกาเปลี่ยนแปลงเขตเทศบาลเมืองนครราชสีมา จังหวัดนครราชสีมา พ.ศ. ๒๕๒๕" volume="99" page="1" issue="197 ก ฉบับพิเศษ" uri="2525/A/197/1.PDF" publication="1982-12-31" />
     <entry description="Change of area of Thesaban" title="พระราชกฤษฎีกาเปลี่ยนแปลงเขตเทศบาลเมืองกาฬสินธุ์ จังหวัดกาฬสินธุ์ พ.ศ. ๒๕๒๕" volume="99" page="10" issue="137 ก ฉบับพิเศษ" uri="2525/A/137/10.PDF" publication="1982-09-26" />
     <entry description="Change of area of Sukhaphiban" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตสุขาภิบาลลุ่มสุ่ม อำเภอไทรโยค จังหวัดกาญจนบุรี" volume="99" page="4200" issue="153 ง" uri="2525/D/153/4200.PDF" publication="1982-10-19" />
     <entry description="Change of area of Sukhaphiban" title="ประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตสุขาภิบาลยางตลาด อำเภอยางตลาด จังหวัดกาฬสินธุ์" volume="99" page="3936" issue="138 ง" uri="2525/D/138/3936.PDF" publication="1982-09-28" />
@@ -4643,28 +4689,21 @@ Rename สุวรรณภูมิ	Suwannaphum	สระคู
   <entry description="Change of area of Thesaban" title="พระราชกฤษฎีกาเปลี่ยนแปลงเขตเทศบาลเมืองระยอง จังหวัดระยอง พ.ศ. ๒๔๙๙" volume="73" page="900" issue="57 ก" uri="2499/A/057/900.PDF" publication="1956-07-24" />
   <entry description="Change of area of Thesaban" title="พระราชกฤษฎีกาเปลี่ยนแปลงเขตเทศบาลเมืองอุบลราชธานี จังหวัดอุบลราชธานี พ.ศ. ๒๔๙๙" volume="73" page="1390" issue="96 ก" uri="2499/A/096/1390.PDF" publication="1956-11-20" />
 
-  <entry title="ประกาศใช้พระราชบัญญัติจัดการสุขาภิบาลเมืองเชียงใหม่" volume="30" page="477" issue="0 ก" uri="2456/A/477.PDF" publication="1914-03-08" />
-  <entry title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลตามหัวเมืองรัตนโกสินทรศก ๑๒๗ ในตำบลน้ำซึม ตำบลสะแกรัง อำเภอน้ำซึม จังหวัดอุทัยธานี มณฑลนครสวรรค์" volume="47" page="211" issue="0 ก" uri="2473/A/211.PDF" publication="1930-10-05" />
-  <entry title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลอำเภอชุมแสง จังหวัดนครสวรรค์" volume="47" page="259" issue="0 ก" uri="2473/A/259.PDF" publication="1930-11-30" />
-  <entry title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลท้องที่บ้านเช่า ตลาดบ้านหมี่ จังหวัดลพบุรี" volume="48" page="37" issue="0 ก" uri="2474/A/37.PDF" publication="1931-04-19" />
-  <entry title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลเมืองอุตรดิตถ์" volume="48" page="53" issue="0 ก" uri="2474/A/53.PDF" publication="1931-05-10" />
-  <entry title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลเมืองฉะเชิงเทรา มณฑลปราจีน" volume="48" page="412" issue="0 ก" uri="2474/A/412.PDF" publication="1931-11-22" />
-  <entry title="ประกาศสภาผู้แทนราษฎร เรื่อง ตั้งกรรมาธิการวิสามัญพิจารณาร่างพระราชบัญญัติจัดตั้งเทศบาลนครเชียงใหม่ พุทธศักราช ๒๔๗๘" volume="52" page="3766" issue="0 ง" uri="2478/D/3766.PDF" publication="1936-03-08" />
+  <entry description="Creation of Sukhaphiban Chiang Mai" title="ประกาศใช้พระราชบัญญัติจัดการสุขาภิบาลเมืองเชียงใหม่" volume="30" page="477" issue="0 ก" uri="2456/A/477.PDF" publication="1914-03-08" />
+  <entry description="Creation of Sukhaphiban Uthai Thani" title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลตามหัวเมืองรัตนโกสินทรศก ๑๒๗ ในตำบลน้ำซึม ตำบลสะแกรัง อำเภอน้ำซึม จังหวัดอุทัยธานี มณฑลนครสวรรค์" volume="47" page="211" issue="0 ก" uri="2473/A/211.PDF" publication="1930-10-05" />
+  <entry description="Creation of Sukhaphiban in Nakhon Sawan" title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลอำเภอชุมแสง จังหวัดนครสวรรค์" volume="47" page="259" issue="0 ก" uri="2473/A/259.PDF" publication="1930-11-30" />
+  <entry description="Creation of Sukhaphiban in Lopburi" title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลท้องที่บ้านเช่า ตลาดบ้านหมี่ จังหวัดลพบุรี" volume="48" page="37" issue="0 ก" uri="2474/A/37.PDF" publication="1931-04-19" />
+  <entry description="Creation of Sukhaphiban Mueang Chachoengsao" title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติจัดการสุขาภิบาลเมืองฉะเชิงเทรา มณฑลปราจีน" volume="48" page="412" issue="0 ก" uri="2474/A/412.PDF" publication="1931-11-22" />
+  
   <entry description="Creation of Thesaban Nakhon Krung Thep" title="พระราชบัญญัติจัดตั้งเทศบาลนครกรุงเทพฯ พุทธศักราช ๒๔๗๙" volume="53" page="704" issue="0 ก" uri="2479/A/704.PDF" publication="1936-11-29" />
-  <entry title="พระราชบัญญัติจัดตั้งเทศบาลนครกรุงธนบุรี พุทธศักราช ๒๔๗๙" volume="53" page="710" issue="0 ก" uri="2479/A/710.PDF" publication="1936-11-29" />
+  <entry description="Creation of Thesaban Nakhon Krung Thonburi" title="พระราชบัญญัติจัดตั้งเทศบาลนครกรุงธนบุรี พุทธศักราช ๒๔๗๙" volume="53" page="710" issue="0 ก" uri="2479/A/710.PDF" publication="1936-11-29" />
   <entry title="บอกแก้ [ราชกิจจานุเบกษา เล่ม ๕๓ ตอนที่ ๔๖ พระราชบัญญัติจัดตั้งเทศบาลนครกรุงธนบุรี พุทธศักราช ๒๔๗๙ หน้า ๗๑๐]" volume="53" page="2432" issue="0 ง" uri="2479/D/2432.PDF" publication="1936-12-13" />
   <entry title="แก้คำผิด ราชกิจจานุเบกษา แผนกกฤษฎีกา เล่ม ๕๓ ตอนที่ ๖๖ พระราชกฤษฎีกา จัดตั้งเทศบาลเมืองแม่ฮ่องสอน จังหวัดแม่ฮ่องสอน พุทธศักราช ๒๔๗๙ และแผนผังท้ายพระราชกฤษฎีกา หน้า ๑๓๐๘" volume="54" page="1670" issue="0 ง" uri="2480/D/1670_1.PDF" publication="1937-11-08" />
   <entry title="แก้คำผิด ราชกิจจานุเบกษา แผนกกฤษฎีกา เล่ม ๕๔ ตอนที่ ๗๖ พระราชกฤษฏีกา จัดตั้งเทศบาลเมืองบางบัวทอง จังหวัดนนทบุรี พุทธศักราช ๒๔๘๐ (แผนผังท้ายหน้า ๑๘๖๒)" volume="56" page="3717" issue="0 ง" uri="2482/D/3717.PDF" publication="1940-03-25" />
 
-  <entry title="ประกาศใช้พระราชบัญญัติสุขาภิบาล ตำบลบางเมือง อำเภอสมุท จังหวัดสมุทรปราการ" volume="34" page="256" issue="0 ก" uri="2460/A/256.PDF" publication="1917-06-24" />
-  <entry title="ประกาศใช้พระราชบัญญัติสุขาภิบาล ในตำบลนครปฐม ตำบลพระปฐม ตำบลห้วยจระเข้ ตำบลบ่อพลับ ตำบลสนามจันทร์ ท้องที่อำเภอพระปฐมเจดีย์ มณฑลนครไชยศรี" volume="27" page="151" issue="0 ก" uri="2453/A/151.PDF" publication="1911-02-05" />
-  <entry title="ประกาศใช้พระราชบัญญัติสุขาภิบาล ตำบลท่าวัง ตำบลคลัง ตำบลประตูไชยเหนือ ตำบลพระเสื้อเมือง ท้องที่อำเภอเมือง เมืองนครศรีธรรมราช" volume="27" page="62" issue="0 ก" uri="2453/A/62.PDF" publication="1910-09-04" />
-  <entry title="ประกาศใช้พระราชบัญญัติสุขาภิบาล ตำบลตลาดท่าอิฐ เมืองพิไชย" volume="27" page="25" issue="0 ก" uri="2453/A/25.PDF" publication="1910-05-29" />
-  <entry title="พระบรมราชโองการ ประกาศใช้พระราชบัญญัติสุขาภิบาลในตำบลตลาดเมืองจันทบุรี มณฑลจันทบุรี" volume="25" page="1297" issue="44" uri="2451/044/1297.PDF" publication="1909-01-31" />
-  <entry title="พระบรมราชโองการ ประกาศใช้พระราชบัญญัติสุขาภิบาลในตำบลโพกลาง มณฑลนครราชสีมา" volume="25" page="1183" issue="40 ฉบับเพิ่มเติม" uri="2451/040/1183_1.PDF" publication="1909-01-03" />
-
   <!-- strange -->
   <entry description="Rename of Ministry of Health" title="แจ้งความกระทรวงมหาดไทย เรื่อง โอนกองแพทย์สุขาภิบาลไปขึ้นกรมสาธารณสุขและเปลี่ยนนามกรมสุขาภิบาลเป็น &quot;กรมนคราทร&quot; กองช่างก่อสร้างเป็น &quot;กองสถาปัตยะกร&quot;" volume="42" page="235-238" issue="0 ง" uri="2468/D/235.PDF" publication="1925-04-26" sign="1925-04-21" />
+  <entry description="Creation of commission on creation of Thesaban Nakhon Chiang Mai" title="ประกาศสภาผู้แทนราษฎร เรื่อง ตั้งกรรมาธิการวิสามัญพิจารณาร่างพระราชบัญญัติจัดตั้งเทศบาลนครเชียงใหม่ พุทธศักราช ๒๔๗๘" volume="52" page="3766" issue="0 ง" uri="2478/D/3766.PDF" publication="1936-03-08" />
   <entry description="???" title="ประกาศกิ่งอำเภอแก้งสนามนาง เรื่อง ให้ผู้รับประเมินซึ่งมีกรรมสิทธิ์ในทรัพย์สินที่ตั้งอยู่ในเขตกิ่งอำเภอแก้งสนามนาง จังหวัดนครราชสีมา (ซึ่งยังไม่ได้รับอนุมัติจัดตั้งเป็นสุขาภิบาล) อันต้องเสียภาษีโรงเรือน ประจำปี พ.ศ. ๒๕๓๑ ไปรับแบบพิมพ์" volume="105" page="140" issue="74 ง ฉบับพิเศษ" uri="2531/D/074/140.PDF" publication="1988-05-06" />
   <entry description="???" title="ประกาศคณะกรรมการควบคุมการขนส่งทางบกประจำจังหวัดสมุทรปราการ ฉบับที่ ๑๕ (พ.ศ. ๒๕๒๖) เรื่อง ปรับปรุงเส้นทางและรายละเอียดเส้นทางสำหรับการขนส่งประจำทางด้วยรถโดยสาร หมวด ๔ จังหวัดสมุทรปราการ สายที่ ๑๒๐๐ ตลาดสำโรงใต้-สุขาภิบาล ๖ เป็นสุขาภิบาล ๖ (วัดบางเสือ)-ตลาด สำโรงเหนือ" volume="100" page="3993" issue="171 ง" uri="2526/D/171/3993.PDF" publication="1983-10-25" />
   <entry description="Correction to Creation of Sukhaphiban" title="แก้คำผิด ราชกิจจานุเบกษา เล่ม ๗๒ ตอนที่ ๗๔ ประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งสุขาภิบาลดำเนินสะดวก อำเภอดำเนินสะดวก จังหวัดราชบุรี หน้า ๑๐๘" volume="73" issue="89 ง" page="0" uri="2499/D/089/0.PDF" publication="1956-10-30" />
