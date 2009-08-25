@@ -7,17 +7,25 @@ namespace De.AHoerstemeier.Tambon
 {
     class EntityCounter
     {
+        #region properties
         private Dictionary<String, Int32> mNamesCount = new Dictionary<String, Int32>();
         private List<EntityType> mEntityTypes;
         public Int32 BaseGeocode { get; set; }
-
+        private Int32 mNumberOfEntities;
+        public Int32 NumberOfEntities { get { return mNumberOfEntities; } }
+        #endregion
+        #region constructor
         public EntityCounter(List<EntityType> iEntityTypes)
         {
             mEntityTypes = iEntityTypes;
         }
+        #endregion
+        #region methods
         public String CommonNames(Int32 iCutOff)
         {
             StringBuilder lBuilder = new StringBuilder();
+
+            lBuilder.AppendLine("Total number: " + NumberOfEntities.ToString());
 
             List<KeyValuePair<String, Int32>> lSorted = new List<KeyValuePair<String, Int32>>();
             foreach (KeyValuePair<String, Int32> lKeyValuePair in mNamesCount)
@@ -56,17 +64,22 @@ namespace De.AHoerstemeier.Tambon
             }
             return lList;
         }
-        private static List<PopulationDataEntry> NormalizeNames(List<PopulationDataEntry> iList)
+        private List<PopulationDataEntry> NormalizeNames(List<PopulationDataEntry> iList)
         {
+            List<PopulationDataEntry> lResult = new List<PopulationDataEntry>();
             foreach (PopulationDataEntry lEntry in iList)
             {
                 if (lEntry.Type == EntityType.Muban)
                 {
                     lEntry.Name = Helper.StripBan(lEntry.Name);
                 }
+                if ((!lEntry.IsObsolete()) & (Helper.IsBaseGeocode(BaseGeocode, lEntry.Geocode)))
+                {
+                    lResult.Add(lEntry);
+                }
             }
-            iList.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return p1.Name.CompareTo(p2.Name); });
-            return iList;
+            lResult.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return p1.Name.CompareTo(p2.Name); });
+            return lResult;
         }
         private static Dictionary<String, Int32> DoCalculate(List<PopulationDataEntry> iList)
         {
@@ -75,9 +88,7 @@ namespace De.AHoerstemeier.Tambon
             Int32 lCount = 0;
             foreach (PopulationDataEntry lEntry in iList)
             {
-                if (lEntry.IsObsolete())
-                { }
-                else if (lEntry.Name == lLastname)
+                if (lEntry.Name == lLastname)
                 {
                     lCount++;
                 }
@@ -101,7 +112,9 @@ namespace De.AHoerstemeier.Tambon
         {
             var lList = LoadGeocodeLists();
             lList = NormalizeNames(lList);
+            mNumberOfEntities = lList.Count;
             mNamesCount = DoCalculate(lList);
         }
+        #endregion
     }
 }
