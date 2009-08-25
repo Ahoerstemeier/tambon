@@ -7,7 +7,7 @@ namespace De.AHoerstemeier.Tambon
 {
     class EntityCounter
     {
-        private Dictionary<String, Int32>  mNamesCount = new Dictionary<String, Int32>();
+        private Dictionary<String, Int32> mNamesCount = new Dictionary<String, Int32>();
         private List<EntityType> mEntityTypes;
         public Int32 BaseGeocode { get; set; }
 
@@ -35,14 +35,14 @@ namespace De.AHoerstemeier.Tambon
                 {
                     break;
                 }
-                      
+
             }
 
             String RetVal = lBuilder.ToString();
             return RetVal;
         }
-    
-        public void Calculate()
+
+        private List<PopulationDataEntry> LoadGeocodeLists()
         {
             var lList = new List<PopulationDataEntry>();
             foreach (PopulationDataEntry lEntry in Helper.Geocodes)
@@ -54,14 +54,29 @@ namespace De.AHoerstemeier.Tambon
                     lList.AddRange(lEntities.Data.FlatList(mEntityTypes));
                 }
             }
-            lList.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return p1.Name.CompareTo(p2.Name); });
+            return lList;
+        }
+        private static List<PopulationDataEntry> NormalizeNames(List<PopulationDataEntry> iList)
+        {
+            foreach (PopulationDataEntry lEntry in iList)
+            {
+                if (lEntry.Type == EntityType.Muban)
+                {
+                    lEntry.Name = Helper.StripBan(lEntry.Name);
+                }
+            }
+            iList.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return p1.Name.CompareTo(p2.Name); });
+            return iList;
+        }
+        private static Dictionary<String, Int32> DoCalculate(List<PopulationDataEntry> iList)
+        {
+            Dictionary<String, Int32> lResult = new Dictionary<String, Int32>();
             String lLastname = String.Empty;
             Int32 lCount = 0;
-            foreach (PopulationDataEntry lEntry in lList)
+            foreach (PopulationDataEntry lEntry in iList)
             {
-                if (lEntry.NewGeocode.Count != 0)
-                {
-                }
+                if (lEntry.IsObsolete())
+                { }
                 else if (lEntry.Name == lLastname)
                 {
                     lCount++;
@@ -70,7 +85,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     if (!String.IsNullOrEmpty(lLastname))
                     {
-                        mNamesCount.Add(lLastname, lCount + 1);
+                        lResult.Add(lLastname, lCount + 1);
                     }
                     lCount = 0;
                     lLastname = lEntry.Name;
@@ -78,9 +93,15 @@ namespace De.AHoerstemeier.Tambon
             }
             if (!String.IsNullOrEmpty(lLastname))
             {
-                mNamesCount.Add(lLastname, lCount + 1);
+                lResult.Add(lLastname, lCount + 1);
             }
-        
+            return lResult;
+        }
+        public void Calculate()
+        {
+            var lList = LoadGeocodeLists();
+            lList = NormalizeNames(lList);
+            mNamesCount = DoCalculate(lList);
         }
     }
 }

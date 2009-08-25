@@ -53,6 +53,7 @@ namespace Tambon
             this.btnGovernor = new System.Windows.Forms.Button();
             this.btnBoard = new System.Windows.Forms.Button();
             this.btnMuban = new System.Windows.Forms.Button();
+            this.btnMubanNames = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -287,7 +288,7 @@ namespace Tambon
             // 
             // btnGovernor
             // 
-            this.btnGovernor.Location = new System.Drawing.Point(256, 288);
+            this.btnGovernor.Location = new System.Drawing.Point(128, 318);
             this.btnGovernor.Name = "btnGovernor";
             this.btnGovernor.Size = new System.Drawing.Size(99, 24);
             this.btnGovernor.TabIndex = 21;
@@ -297,7 +298,7 @@ namespace Tambon
             // 
             // btnBoard
             // 
-            this.btnBoard.Location = new System.Drawing.Point(130, 288);
+            this.btnBoard.Location = new System.Drawing.Point(130, 289);
             this.btnBoard.Name = "btnBoard";
             this.btnBoard.Size = new System.Drawing.Size(97, 23);
             this.btnBoard.TabIndex = 22;
@@ -315,11 +316,22 @@ namespace Tambon
             this.btnMuban.UseVisualStyleBackColor = true;
             this.btnMuban.Click += new System.EventHandler(this.btnMuban_Click);
             // 
+            // btnMubanNames
+            // 
+            this.btnMubanNames.Location = new System.Drawing.Point(256, 289);
+            this.btnMubanNames.Name = "btnMubanNames";
+            this.btnMubanNames.Size = new System.Drawing.Size(99, 24);
+            this.btnMubanNames.TabIndex = 24;
+            this.btnMubanNames.Text = "Muban Names";
+            this.btnMubanNames.UseVisualStyleBackColor = true;
+            this.btnMubanNames.Click += new System.EventHandler(this.btnMubanNames_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnMubanNames);
             this.Controls.Add(this.btnMuban);
             this.Controls.Add(this.btnBoard);
             this.Controls.Add(this.btnGovernor);
@@ -377,6 +389,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnGovernor;
         private System.Windows.Forms.Button btnBoard;
         private System.Windows.Forms.Button btnMuban;
+        private System.Windows.Forms.Button btnMubanNames;
     }
 }
 
