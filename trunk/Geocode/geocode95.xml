@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="ยะลา" english="Yala" geocode="95">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ยะลา" english="Yala" geocode="95">
+  <office type="ProvinceHall">
+    <url>http://www.yala.go.th/</url>
+  </office>
   <officials source="http://www.yala.go.th/tamniub.htm">
     <official title="Governor" index="48" name="ธีระ มินทราศักดิ์" begin="2006-11-13"/>
     <official title="Governor" index="47" name="บุณยสิทธิ์ สุวรรณรัตน์" begin="2003-10-01" end="2006-09-30"/>
@@ -77,13 +80,29 @@
     <entity type="Tambon" name="ลำพะยา" english="Lam Phaya" geocode="950111" />
     <entity type="Tambon" name="เปาะเส้ง" english="Po Seng" geocode="950112" />
     <entity type="Tambon" name="กรงปินัง" english="Krong Pinang" geocode="950113" newgeocode="950801" />
-    <entity type="Tambon" name="พร่อน" english="Phron" geocode="950114" />
+    <entity type="Tambon" name="พร่อน" english="Phron" geocode="950114" >
+      <office type="TAOOffice">
+        <url>http://www.pa-ron.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95011401" name="บ้านพร่อน"/>
+      <entity type="Muban" geocode="95011402" name="บ้านดูซง"/>
+      <entity type="Muban" geocode="95011403" name="บ้านตาสา"/>
+      <entity type="Muban" geocode="95011404" name="บ้านท่าวัง"/>
+      <entity type="Muban" geocode="95011405" name="บ้านควน"/>
+      <entity type="Muban" geocode="95011406" name="บ้านจาหนัน"/>
+    </entity>
     <entity type="Tambon" name="บันนังสาเรง" english="Bannang Sareng" geocode="950115" />
     <entity type="Tambon" name="สะเตงนอก" english="Sateng Nok" geocode="950116" />
     <entity type="Tambon" name="ห้วยกระทิง" english="Huai Krathing" geocode="950117" newgeocode="950803" />
     <entity type="Tambon" name="ตาเซะ" english="Ta Se" geocode="950118" />
   </entity>
   <entity type="Amphoe" name="เบตง" english="Betong" geocode="9502" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>5.7735</geo:lat>
+        <geo:long>101.0606</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เบตง" english="Betong" geocode="950201" />
     <entity type="Tambon" name="ยะรม" english="Yarom" geocode="950202" >
       <entity type="Muban" geocode="95020206" name="บ้านใหม่"/>
@@ -138,6 +157,12 @@
     <entity type="Tambon" name="คีรีเขต" english="Khiri Khet" geocode="950404" />
   </entity>
   <entity type="Amphoe" name="ยะหา" english="Yaha" geocode="9505" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>6.4783</geo:lat>
+        <geo:long>101.1350</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ยะหา" english="Yaha" geocode="950501" >
       <entity type="Muban" geocode="95050101" name="บ้านอาบอ"/>
 
