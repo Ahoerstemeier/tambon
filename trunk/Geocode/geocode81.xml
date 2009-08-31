@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="กระบี่" english="Krabi" geocode="81" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="กระบี่" english="Krabi" geocode="81" >
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>8.0578</geo:lat>
+      <geo:long>98.9178</geo:long>
+    </geo:Point>
+    <url>http://wwww.krabi.go.th/</url>
+  </office>
+  <office type="PAOOffice">
+    <url>http://www.krabipao.go.th/</url>
+  </office>
   <officials source="http://www.krabi.go.th/men/oldgov.htm">
     <official title="Governor" index="46" name="ศิวะ ศิริเสาวลักษณ์" begin="2006-09-13"/>
     <official title="Governor" index="45" name="สนธิ เตชานันท์" begin="2005-10-01" end="2006-09-12"/>
@@ -49,11 +59,17 @@
     <official title="Governor" index="1" name="หลวงเทพเสนา"/>
   </officials>
   <entity type="Amphoe" name="เมืองกระบี่" english="Mueang Krabi" geocode="8101" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.0618</geo:lat>
+        <geo:long>98.9186</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="810101" />
     <entity type="Tambon" name="กระบี่ใหญ่" english="Krabi Yai" geocode="810102" />
     <entity type="Tambon" name="กระบี่น้อย" english="Krabi Noi" geocode="810103" >
       <office type="TAOOffice">
-        <url>http://www.krabinoy.org/</url>
+        <url>http://www.krabinoi.org/</url>
       </office>
       <entity type="Muban" geocode="81010301" name="บ้านหน้าชิง"/>
       <entity type="Muban" geocode="81010302" name="บ้านน้ำจาน"/>
@@ -157,6 +173,12 @@
     <entity type="Unknown" name="เหนือคลอง" english="Nuea Khlong" geocode="810199" newgeocode="810801" />
   </entity>
   <entity type="Amphoe" name="เขาพนม" english="Khao Phanom" geocode="8102" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.2647</geo:lat>
+        <geo:long>99.0492</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เขาพนม" english="Khao Phanom" geocode="810201" >
       <office type="TAOOffice">
         <url>http://www.khopanom.org/</url>
@@ -193,6 +215,12 @@
     <entity type="Tambon" name="โคกหาร" english="Khok Han" geocode="810206" />
   </entity>
   <entity type="Amphoe" name="เกาะลันตา" english="Ko Lanta" geocode="8103" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>7.6555</geo:lat>
+        <geo:long>99.0418</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เกาะลันตาใหญ่" english="Ko Lanta Yai" geocode="810301" />
     <entity type="Tambon" name="เกาะลันตาน้อย" english="Ko Lanta Noi" geocode="810302" >
       <office type="TAOOffice">
@@ -205,8 +233,25 @@
       <entity type="Muban" geocode="81030205" name="บ้านคลองโตนด"/>
       <entity type="Muban" geocode="81030206" name="บ้านทอนลิบง"/>
     </entity>
-    <entity type="Tambon" name="เกาะกลาง" english="Ko Klang" geocode="810303" />
+    <entity type="Tambon" name="เกาะกลาง" english="Ko Klang" geocode="810303" >
+      <office type="TAOOffice">
+        <url>http://www.kohklang.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="81030301" name="บ้านร่าปู"/>
+      <entity type="Muban" geocode="81030302" name="บ้านร่าหมาด"/>
+      <entity type="Muban" geocode="81030303" name="บ้านปากคลอง"/>
+      <entity type="Muban" geocode="81030304" name="บ้านคลองย่าหนัด"/>
+      <entity type="Muban" geocode="81030305" name="บ้านลิกี"/>
+      <entity type="Muban" geocode="81030306" name="บ้านนาทุ่งกลาง"/>
+      <entity type="Muban" geocode="81030307" name="บ้านอ่าวทองหลาง"/>
+      <entity type="Muban" geocode="81030308" name="บ้านหัวหิน"/>
+      <entity type="Muban" geocode="81030309" name="บ้านท่าคลอง"/>
+      <entity type="Muban" geocode="81030310" name="บ้านขุนสมุทร"/>
+    </entity>
     <entity type="Tambon" name="คลองยาง" english="Khlong Yang" geocode="810304" >
+      <office type="TAOOffice">
+        <url>http://www.klongyang.com/</url>
+      </office>
       <entity type="Muban" geocode="81030402" name="บ้านคลองยาง" english="Ban Khlong Yang" />
 
       <entity type="Muban" geocode="81030407" name="บ้านต้นทัง" english="Ban Ton Thang" />
@@ -237,12 +282,55 @@
       <entity type="Muban" geocode="81040108" name="บ้านในควน"/>
       <entity type="Muban" geocode="81040109" name="บ้านหน้าค่าย"/>
     </entity>
-    <entity type="Tambon" name="คลองท่อมเหนือ" english="Khlong Thom Nuea" geocode="810402" />
-    <entity type="Tambon" name="คลองพน" english="Khlong Phon" geocode="810403" />
-    <entity type="Tambon" name="ทรายขาว" english="Sai Khao" geocode="810404" />
+    <entity type="Tambon" name="คลองท่อมเหนือ" english="Khlong Thom Nuea" geocode="810402" >
+      <office type="TAOOffice">
+        <url>http://www.khlongthomnuea.org/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="คลองพน" english="Khlong Phon" geocode="810403" >
+      <office type="TAOOffice">
+        <url>http://www.klongphon.org/</url>
+      </office>
+      <entity type="Muban" geocode="81040301" name="บ้านคลองพน"/>
+      <entity type="Muban" geocode="81040302" name="บ้านดินนา"/>
+      <entity type="Muban" geocode="81040303" name="บ้านนา"/>
+      <entity type="Muban" geocode="81040304" name="บ้านคลองปิ้ง"/>
+      <entity type="Muban" geocode="81040305" name="บ้านมู่สา"/>
+      <entity type="Muban" geocode="81040306" name="บ้านพรุใหญ่"/>
+      <entity type="Muban" geocode="81040307" name="บ้านคลองแรด"/>
+      <entity type="Muban" geocode="81040308" name="บ้านหินเพิง"/>
+      <entity type="Muban" geocode="81040309" name="บ้านท่ามะพร้าว"/>
+      <entity type="Muban" geocode="81040310" name="บ้านคลองไคร"/>
+      <entity type="Muban" geocode="81040311" name="บ้านทุ่งครก"/>
+      <entity type="Muban" geocode="81040312" name="บ้านทุ่งยอ"/>
+      <entity type="Muban" geocode="81040313" name="บ้านคลองยี่เหร่"/>
+      <entity type="Muban" geocode="81040314" name="บ้านคลองไครใต้"/>
+    </entity>
+    <entity type="Tambon" name="ทรายขาว" english="Sai Khao" geocode="810404" >
+      <office type="TAOOffice">
+        <url>http://www.saikhawcity.org/</url>
+      </office>
+      <entity type="Muban" geocode="81040401" name="บ้านห้วยลึก"/>
+      <entity type="Muban" geocode="81040402" name="บ้านทรายขาว"/>
+      <entity type="Muban" geocode="81040403" name="บ้านห้วยพลูหนัง"/>
+      <entity type="Muban" geocode="81040404" name="บ้านบ่อมะม่วง"/>
+      <entity type="Muban" geocode="81040405" name="บ้านทุ่งคา"/>
+      <entity type="Muban" geocode="81040406" name="บ้านทุ่งล้อ"/>
+      <entity type="Muban" geocode="81040407" name="บ้านพรุพี"/>
+    </entity>
     <entity type="Tambon" name="ห้วยน้ำขาว" english="Huai Nam Khao" geocode="810405" >
+      <office type="TAOOffice">
+        <url>http://www.huaynamkhaw.go.th/</url>
+      </office>
       <entity type="Muban" geocode="81040501" name="บ้านห้วยน้ำขาว" english="Ban Huai Nam Khao"/>
-
+      <entity type="Muban" geocode="81040502" name="บ้านทุ่งเสม็ด"/>
+      <entity type="Muban" geocode="81040503" name="บ้านน้ำร้อน"/>
+      <entity type="Muban" geocode="81040504" name="บ้านท่าประดู่"/>
+      <entity type="Muban" geocode="81040505" name="บ้านคลองแค"/>
+      <entity type="Muban" geocode="81040506" name="บ้านควนใต้"/>
+      <entity type="Muban" geocode="81040507" name="บ้านนา"/>
+      <entity type="Muban" geocode="81040508" name="บ้านควน"/>
+      <entity type="Muban" geocode="81040509" name="บ้านทุ่งควนหิน"/>
       <entity type="Muban" geocode="81040510" name="บ้านน้ำขาวตก" english="Ban Nam Khao Tok"/>
     </entity>
     <entity type="Tambon" name="พรุดินนา" english="Phru Din Na" geocode="810406" >
@@ -250,11 +338,30 @@
 
       <entity type="Muban" geocode="81040611" name="บ้านช่องเสียด" english="Ban Ton Thang" />
     </entity>
-    <entity type="Tambon" name="เพหลา" english="Phela" geocode="810407" />
+    <entity type="Tambon" name="เพหลา" english="Phela" geocode="810407" >
+      <office type="TAOOffice">
+        <url>http://www.phala.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="81040701" name="บ้านเพหลาใต้"/>
+      <entity type="Muban" geocode="81040702" name="บ้านเพหลาเหนือ"/>
+      <entity type="Muban" geocode="81040703" name="บ้านพรุเตยใต้"/>
+      <entity type="Muban" geocode="81040704" name="บ้านพรุเตยเหนือ"/>
+      <entity type="Muban" geocode="81040705" name="บ้านพรุเตียว"/>
+      <entity type="Muban" geocode="81040706" name="บ้านบางใหญ่"/>
+      <entity type="Muban" geocode="81040707" name="บ้านท่าเรือ"/>
+      <entity type="Muban" geocode="81040708" name="บ้านทรายทอง"/>
+      <entity type="Muban" geocode="81040709" name="บ้านควนสบาย"/>
+    </entity>
 
     <entity type="Unknown" name="ลำทับ" english="Lam Thap" geocode="810499" newgeocode="810701" />
   </entity>
   <entity type="Amphoe" name="อ่าวลึก" english="Ao Luek" geocode="8105" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.3776</geo:lat>
+        <geo:long>98.7216</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="อ่าวลึกใต้" english="Ao Luek Tai" geocode="810501" />
     <entity type="Tambon" name="แหลมสัก" english="Laem Sak" geocode="810502" >
       <office type="TAOOffice">
@@ -262,15 +369,44 @@
       </office>
     </entity>
     <entity type="Tambon" name="นาเหนือ" english="Na Nuea" geocode="810503" />
-    <entity type="Tambon" name="คลองหิน" english="Khlong Hin" geocode="810504" />
+    <entity type="Tambon" name="คลองหิน" english="Khlong Hin" geocode="810504" >
+      <office type="TAOOffice">
+        <url>http://www.klonghin.org/</url>
+      </office>
+      <entity type="Muban" geocode="81050401" name="บ้านศาลาพระม่วง"/>
+      <entity type="Muban" geocode="81050402" name="บ้านนบ"/>
+      <entity type="Muban" geocode="81050403" name="บ้านป่างาม"/>
+      <entity type="Muban" geocode="81050404" name="บ้านหนองหลุมพอ"/>
+      <entity type="Muban" geocode="81050405" name="บ้านช่องไม้ดำ"/>
+    </entity>
     <entity type="Tambon" name="อ่าวลึกน้อย" english="Ao Luek Noi" geocode="810505" />
-    <entity type="Tambon" name="อ่าวลึกเหนือ" english="Ao Luek Nuea" geocode="810506" />
+    <entity type="Tambon" name="อ่าวลึกเหนือ" english="Ao Luek Nuea" geocode="810506" >
+      <office type="TAOOffice">
+        <url>http://www.aolueknuea.org/</url>
+      </office>
+      <entity type="Muban" geocode="81050601" name="บ้านในยวนแขก"/>
+      <entity type="Muban" geocode="81050602" name="บ้านอ่าวลึกเหนือ"/>
+      <entity type="Muban" geocode="81050603" name="บ้านน้ำจาน"/>
+      <entity type="Muban" geocode="81050604" name="บ้านหนองกก"/>
+      <entity type="Muban" geocode="81050605" name="บ้านหนองหวายพน"/>
+      <entity type="Muban" geocode="81050606" name="บ้านถ้ำเพชร"/>
+    </entity>
     <entity type="Tambon" name="เขาใหญ่" english="Khao Yai" geocode="810507" >
       <office type="TAOOffice">
         <url>http://www.khaoyaicity.org/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="คลองยา" english="Khlong Ya" geocode="810508" />
+    <entity type="Tambon" name="คลองยา" english="Khlong Ya" geocode="810508" >
+      <office type="TAOOffice">
+        <url>http://www.khlongya.com/</url>
+      </office>
+      <entity type="Muban" geocode="81050801" name="บ้านควนเคียนทอง"/>
+      <entity type="Muban" geocode="81050802" name="บ้านคลองทรายขาว"/>
+      <entity type="Muban" geocode="81050803" name="บ้านคลองยา"/>
+      <entity type="Muban" geocode="81050804" name="บ้านเขาแก้ว"/>
+      <entity type="Muban" geocode="81050805" name="บ้านปากช่อง"/>
+      <entity type="Muban" geocode="81050806" name="บ้านคลองไร่"/>
+    </entity>
     <entity type="Tambon" name="บ้านกลาง" english="Ban Klang" geocode="810509" />
 
     <entity type="Unknown" name="เขาเขน" english="Khao Khen" geocode="810597" newgeocode="810602" />
@@ -279,17 +415,31 @@
   </entity>
   <entity type="Amphoe" name="ปลายพระยา" english="Plai Phraya" geocode="8106" >
     <entity type="Tambon" name="ปลายพระยา" english="Plai Phraya" geocode="810601" >
+      <office type="TAOOffice">
+        <url>http://www.playpraya.org/</url>
+      </office>
       <entity type="Muban" geocode="81060113" name="บ้านควนเขียว" english="Ban Khuan Khiao"/>
 
       <entity type="Muban" geocode="81060118" name="บ้านริมสวน" english="Ban Rim Suan"/>
     </entity>
-    <entity type="Tambon" name="เขาเขน" english="Khao Khen" geocode="810602" />
+    <entity type="Tambon" name="เขาเขน" english="Khao Khen" geocode="810602" >
+      <office type="TAOOffice">
+        <url>http://www.khaokhen-1.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="เขาต่อ" english="Khao To" geocode="810603" />
     <entity type="Tambon" name="คีรีวง" english="Khiri Wong" geocode="810604" >
-      <entity type="Muban" geocode="81060402" name="บ้านบางเหลียว" english="Ban Bang Liao" />
-
-      <entity type="Muban" geocode="81030407" name="บ้านต้นทัง" english="Ban Ton Thang" />
-      <entity type="Muban" geocode="81060408" name="บ้านบางใหญ่" english="Ban Bang Yai" />
+      <office type="TAOOffice">
+        <url>http://www.kiriwong.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="81060401" name="บ้านควนทัง"/>
+      <entity type="Muban" geocode="81060402" name="บ้านบางเหลียว" english="Ban Bang Liao"/>
+      <entity type="Muban" geocode="81060403" name="บ้านโคกแซะ"/>
+      <entity type="Muban" geocode="81060404" name="บ้านนา"/>
+      <entity type="Muban" geocode="81060405" name="บ้านห้วยกรวด"/>
+      <entity type="Muban" geocode="81060406" name="บ้านสหกรณ์"/>
+      <entity type="Muban" geocode="81060407" name="บ้านน้ำรอบ"/>
+      <entity type="Muban" geocode="81060408" name="บ้านบางใหญ่" english="Ban Bang Yai"/>
     </entity>
   </entity>
   <entity type="Amphoe" name="ลำทับ" english="Lam Thap" geocode="8107" >
@@ -306,7 +456,21 @@
       <entity type="Muban" geocode="81070206" name="บ้านน้ำดำ"/>
       <entity type="Muban" geocode="81070207" name="บ้านใสสด"/>
     </entity>
-    <entity type="Tambon" name="ทุ่งไทรทอง" english="Thung Saithong" geocode="810703" />
+    <entity type="Tambon" name="ทุ่งไทรทอง" english="Thung Saithong" geocode="810703" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <!-- location according to http://thungsaithong.go.th/index.php?option=com_content&task=view&id=34&Itemid=46 -->
+          <geo:lat>8.06141</geo:lat>
+          <geo:long>99.2834</geo:long>
+        </geo:Point>
+        <url>http://www.thungsaithong.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="81070301" name="บ้านไสใน"/>
+      <entity type="Muban" geocode="81070302" name="บ้านสะพานพน"/>
+      <entity type="Muban" geocode="81070303" name="บ้านทุ่งทับควาย"/>
+      <entity type="Muban" geocode="81070304" name="บ้านเกาะไทร"/>
+      <entity type="Muban" geocode="81070305" name="บ้านบางบอน"/>
+    </entity>
     <entity type="Tambon" name="ดินแดง" english="Din Daeng" geocode="810704" >
       <office type="TAOOffice">
         <url>http://www.dindangcity.org/</url>
@@ -320,6 +484,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="เหนือคลอง" english="Nuea Khlong" geocode="8108" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.0747</geo:lat>
+        <geo:long>99.0037</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เหนือคลอง" english="Nuea Khlong" geocode="810801" >
       <office type="TAOOffice">
         <url>http://www.nuakhlong.go.th/</url>
@@ -332,7 +502,18 @@
       <entity type="Muban" geocode="81080106" name="บ้านนาออก"/>
       <entity type="Muban" geocode="81080107" name="บ้านเขาแก้ว"/>
     </entity>
-    <entity type="Tambon" name="เกาะศรีบอยา" english="Ko Siboya" geocode="810802" />
+    <entity type="Tambon" name="เกาะศรีบอยา" english="Ko Siboya" geocode="810802" >
+      <office type="TAOOffice">
+        <url>http://www.kohsriboya.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="81080201" name="บ้านคลองเตาะ"/>
+      <entity type="Muban" geocode="81080202" name="บ้านเกาะปู"/>
+      <entity type="Muban" geocode="81080203" name="บ้านเกาะจำ"/>
+      <entity type="Muban" geocode="81080204" name="บ้านเกาะฮั่ง"/>
+      <entity type="Muban" geocode="81080205" name="บ้านติงไหร"/>
+      <entity type="Muban" geocode="81080206" name="บ้านเกาะศรีบอยา"/>
+      <entity type="Muban" geocode="81080207" name="บ้านหลังเกาะ"/>
+    </entity>
     <entity type="Tambon" name="คลองขนาน" english="Khlong Khanan" geocode="810803" >
       <office type="TAOOffice">
         <url>http://www.khlongkanan.org/</url>
@@ -369,17 +550,49 @@
       <entity type="Muban" geocode="81080606" name="บ้านหลังดา" english="Ban Lang Da"/>
     </entity>
     <entity type="Tambon" name="ปกาสัย" english="Pakasai" geocode="810807" />
-    <entity type="Tambon" name="ห้วยยูง" english="Huai Yung" geocode="810808" />
+    <entity type="Tambon" name="ห้วยยูง" english="Huai Yung" geocode="810808" >
+      <office type="TAOOffice">
+        <url>http://huayyung.com/</url>
+      </office>
+    </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="กระบี่" english="Krabi" geocode="8199" parent="8101" />
+  <entity type="ThesabanMueang" name="กระบี่" english="Krabi" geocode="8199" parent="8101" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>8.0592</geo:lat>
+        <geo:long>98.9189</geo:long>
+      </geo:Point>
+      <url>http://www.krabicity.org/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เขาพนม" english="Khao Phanom" geocode="8198" parent="8102" />
-  <entity type="ThesabanTambon" name="เกาะลันตาใหญ่" english="Ko Lanta Yai" geocode="8197" parent="8103" />
-  <entity type="ThesabanTambon" name="คลองท่อมใต้" english="Khlong Thom Tai" geocode="8196" parent="8104" />
-  <entity type="ThesabanTambon" name="คลองพน" english="Khlong Phon" geocode="8195" parent="8104" />
-  <entity type="ThesabanTambon" name="แหลมสัก" english="Laem Sak" geocode="8194" parent="8105" />
+  <entity type="ThesabanTambon" name="เกาะลันตาใหญ่" english="Ko Lanta Yai" geocode="8197" parent="8103" >
+    <office type="MunicipalityOffice">
+      <url>http://www.kohlantayaicity.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="คลองท่อมใต้" english="Khlong Thom Tai" geocode="8196" parent="8104" >
+    <office type="MunicipalityOffice">
+      <url>http://www.khlongthomcity.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="คลองพน" english="Khlong Phon" geocode="8195" parent="8104" >
+    <office type="MunicipalityOffice">
+      <url>http://www.klongphoncity.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="แหลมสัก" english="Laem Sak" geocode="8194" parent="8105" >
+    <office type="MunicipalityOffice">
+      <url>http://www.laemsak.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="อ่าวลึกใต้" english="Ao Luek Tai" geocode="8193" parent="8105" />
-  <entity type="ThesabanTambon" name="ปลายพระยา" english="Plai Phraya" geocode="8192" parent="8106" />
+  <entity type="ThesabanTambon" name="ปลายพระยา" english="Plai Phraya" geocode="8192" parent="8106" >
+    <office type="MunicipalityOffice">
+      <url>http://www.plaiphraya.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ลำทับ" english="Lam Thap" geocode="8191" parent="8107" />
   <entity type="ThesabanTambon" name="เหนือคลอง" english="Nuea Khlong" geocode="8190" parent="8108" />
 </entity>
