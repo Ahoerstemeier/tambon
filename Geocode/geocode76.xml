@@ -390,7 +390,11 @@
       <entity type="Muban" geocode="76070503" name="บ้านดอนกลาง"/>
       <entity type="Muban" geocode="76070504" name="บ้านดอนคดี"/>
     </entity>
-    <entity type="Tambon" name="บางตะบูน" english="Bang Tabun" geocode="760706" />
+    <entity type="Tambon" name="บางตะบูน" english="Bang Tabun" geocode="760706" >
+      <office type="TAOOffice">
+        <url>http://www.bangtaboon.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="บางตะบูนออก" english="Bang Tabun Ok" geocode="760707" />
     <entity type="Tambon" name="บางครก" english="Bang Khrok" geocode="760708" >
       <office type="TAOOffice">
@@ -463,12 +467,24 @@
         <geo:lat>12.7993</geo:lat>
         <geo:long>99.9684</geo:long>
       </geo:Point>
-      <url>http://www.cha-amcity.go.th</url>
+      <url>http://www.cha-amcity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="หัวสะพาน" english="Hua Saphan" geocode="7697" parent="7601" />
-  <entity type="ThesabanTambon" name="หาดเจ้าสำราญ" english="Hat Chao Sam Ran" geocode="7696" parent="7601" />
-  <entity type="ThesabanTambon" name="เขาย้อย" english="Khao Yoi" geocode="7695" parent="7602" />
+  <entity type="ThesabanTambon" name="หัวสะพาน" english="Hua Saphan" geocode="7697" parent="7601" >
+    <office type="MunicipalityOffice">
+      <url>http://www.huasaphan-phet.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หาดเจ้าสำราญ" english="Hat Chao Sam Ran" geocode="7696" parent="7601" >
+    <office type="MunicipalityOffice">
+      <url>http://www.hadchaosamran.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="เขาย้อย" english="Khao Yoi" geocode="7695" parent="7602" >
+    <office type="MunicipalityOffice">
+      <url>http://www.khao-yoi-minicip.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="นายาง" english="Na Yang" geocode="7694" parent="7604" />
   <entity type="ThesabanTambon" name="ท่ายาง" english="Tha Yang" geocode="7693" parent="7605" >
     <office type="MunicipalityOffice">
@@ -476,7 +492,11 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองจอก" english="Nong Chok" geocode="7692" parent="7605" />
-  <entity type="ThesabanTambon" name="บ้านลาด" english="Ban Lat" geocode="7691" parent="7606" />
+  <entity type="ThesabanTambon" name="บ้านลาด" english="Ban Lat" geocode="7691" parent="7606" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banlat.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางตะบูน" english="Bang Tabun" geocode="7690" parent="7607" />
   <entity type="ThesabanTambon" name="บ้านแหลม" english="Ban Laem" geocode="7689" parent="7607" >
     <office type="MunicipalityOffice">

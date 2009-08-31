@@ -297,8 +297,15 @@
     </entity>
     <entity type="Tambon" name="คุริง" english="Khuring" geocode="860202" >
       <office type="TAOOffice">
-        <url>http://www.khuring.com</url>
+        <url>http://www.khuring.com/</url>
       </office>
+      <entity type="Muban" geocode="86020201" name="บ้านใหม่พัฒนา"/>
+      <entity type="Muban" geocode="86020202" name="บ้านใหม่อุดม"/>
+      <entity type="Muban" geocode="86020203" name="บ้านวังมะปราง"/>
+      <entity type="Muban" geocode="86020204" name="ท่าลานทอง" comment="DOPA says บ้านทุ่งยอ"/>
+      <entity type="Muban" geocode="86020205" name="บ้านทุ่งกระทิงทอง"/>
+      <entity type="Muban" geocode="86020206" name="บ้านช่วยอนันต์"/>
+      <entity type="Muban" geocode="86020207" name="บ้านยี่ลาน"/>
     </entity>
     <entity type="Tambon" name="สลุย" english="Salui" geocode="860203" />
     <entity type="Tambon" name="นากระตาม" english="Na Kratam" geocode="860204" >
@@ -310,15 +317,15 @@
       <office type="TAOOffice">
         <url>http://www.rabror.go.th/</url>
       </office>
-      <entity type="Muban" geocode="86020501" name="รับร่อ"/>
-      <entity type="Muban" geocode="86020502" name="หาดใน"/>
-      <entity type="Muban" geocode="86020503" name="หาดแตง"/>
-      <entity type="Muban" geocode="86020504" name="อีแบ้"/>
-      <entity type="Muban" geocode="86020505" name="สวนเหนือ"/>
-      <entity type="Muban" geocode="86020506" name="หลังเขา"/>
-      <entity type="Muban" geocode="86020507" name="สวนใต้"/>
-      <entity type="Muban" geocode="86020508" name="นาสร้าง"/>
-      <entity type="Muban" geocode="86020509" name="กรายทอง"/>
+      <entity type="Muban" geocode="86020501" name="บ้านรับร่อ"/>
+      <entity type="Muban" geocode="86020502" name="บ้านหาดใน"/>
+      <entity type="Muban" geocode="86020503" name="บ้านหาดแตง"/>
+      <entity type="Muban" geocode="86020504" name="บ้านอีแบ้"/>
+      <entity type="Muban" geocode="86020505" name="บ้านสวนเหนือ"/>
+      <entity type="Muban" geocode="86020506" name="บ้านหลังเขา"/>
+      <entity type="Muban" geocode="86020507" name="บ้านสวนใต้"/>
+      <entity type="Muban" geocode="86020508" name="บ้านนาสร้าง"/>
+      <entity type="Muban" geocode="86020509" name="บ้านกรายทอง"/>
       <entity type="Muban" geocode="86020610" name="บ้านสันตินิมิตร"/>
       <entity type="Muban" geocode="86020511" name="บ้านพันวาล"/>
       <entity type="Muban" geocode="86020512" name="บ้านบางมาศ"/>
@@ -792,7 +799,15 @@
     </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="ชุมพร" english="Chumphon" geocode="8699" parent="8601" />
+  <entity type="ThesabanMueang" name="ชุมพร" english="Chumphon" geocode="8699" parent="8601" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>10.4938</geo:lat>
+        <geo:long>99.1801</geo:long>
+      </geo:Point>
+      <url>http://www.chumphontown.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="หลังสวน" english="Lang Suan" geocode="8698" parent="8604" />
   <entity type="ThesabanTambon" name="ปากน้ำชุมพร" english="Paknam Chumphon" geocode="8697" parent="8601" >
     <office type="MunicipalityOffice">

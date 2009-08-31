@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" geocode="31" name="บุรีรัมย์" english="Buri Ram" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"  type="Changwat" geocode="31" name="บุรีรัมย์" english="Buri Ram" >
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>14.9942</geo:lat>
+      <geo:long>103.1034</geo:long>
+    </geo:Point>
+    <url>http://www.buriram.go.th/</url>
+  </office>
   <officials>
     <official title="Governor" name="มงคล สุรสัจจะ" begin="2008-10-01"/>
     <official title="Governor" english="Santhat Chattuchai" name="สันทัด จัตุชัย" begin="2007-04-30" end="2008-09-30" />
@@ -251,7 +258,12 @@
     <entity type="Tambon" name="ละเวี้ย" english="Lawia" geocode="310705" />
     <entity type="Tambon" name="จรเข้มาก" english="Chorakhe Mak" geocode="310706" />
     <entity type="Tambon" name="ปังกู" english="Pang Ku" geocode="310707" />
-    <entity type="Tambon" name="โคกย่าง" english="Khok Yang" geocode="310708" />
+    <entity type="Tambon" name="โคกย่าง" english="Khok Yang" geocode="310708" >
+      <office type="TAOOffice">
+        <url>http://www.kokyang.go.th/</url>
+      </office>
+              
+    </entity>
     <entity type="Tambon" name="โคกขมิ้น" english="Khok Khamin" geocode="310709" newgeocode="311502" />
     <entity type="Tambon" name="โคกม้า" english="Khok Ma" geocode="310710" />
     <entity type="Tambon" name="ป่าชัน" english="Pa Chan" geocode="310711" newgeocode="311503" />
@@ -613,7 +625,15 @@
   </entity>
   <entity type="KingAmphoe" name="ปราสาทเมืองต่ำ" english="Prasat Mueang Tam" geocode="3124" obsolete="1" comment="Proposed, but not created"/>
 
-  <entity type="ThesabanMueang" name="บุรีรัมย์" english="Buriram" geocode="3199" parent="3101" />
+  <entity type="ThesabanMueang" name="บุรีรัมย์" english="Buriram" geocode="3199" parent="3101" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>14.9974</geo:lat>
+        <geo:long>103.1087</geo:long>
+      </geo:Point>
+      <url>http://www.buriramcity.org/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="นางรอง" english="Nang Rong" geocode="3198" parent="3104" />
   <entity type="ThesabanTambon" name="คูเมือง" english="Khu Mueang" geocode="3197" parent="3102" />
   <entity type="ThesabanTambon" name="หินเหล็กไฟ" english="Hin Lek Fai" geocode="3196" parent="3102" />
