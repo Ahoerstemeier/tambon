@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="พังงา" english="Phang Nga" geocode="82" >
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>8.4399</geo:lat>
+      <geo:long>98.5180</geo:long>
+    </geo:Point>
+    <url>http://www.phangnga.go.th/</url>
+  </office>
   <officials>
     <official title="Governor" name="เยี่ยมสุริยา พาลุสุข" beginyear="2008"/>
     <official title="Governor" name="วิชัย ไพรสงบ" beginyear="2007" endyear="2008"/>
@@ -50,6 +57,12 @@
     <entity type="Unknown" name="เกาะยาวน้อย" english="Ko Yao Noi" geocode="820199" newgeocode="820201" />
   </entity>
   <entity type="Amphoe" name="เกาะยาว" english="Ko Yao" geocode="8202" parent="8201" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.1113</geo:lat>
+        <geo:long>98.5909</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เกาะยาวน้อย" english="Ko Yao Noi" geocode="820201" >
       <office type="TAOOffice">
         <url>http://www.kohyaonoi.org/</url>
@@ -83,6 +96,12 @@
     <entity type="Tambon" name="รมณีย์" english="Rommani" geocode="820305" />
   </entity>
   <entity type="Amphoe" name="ตะกั่วทุ่ง" english="Takua Thung" geocode="8204" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.3921</geo:lat>
+        <geo:long>98.4520</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ถ้ำ" english="Tham" geocode="820401" />
     <entity type="Tambon" name="กระโสม" english="Krasom" geocode="820402" />
     <entity type="Tambon" name="กะไหล" english="Kalai" geocode="820403" >
@@ -124,7 +143,7 @@
         <url>http://www.kokkloy.org/</url>
       </office>
       <entity type="Muban" geocode="82040601" name="บ้านโคกกลอย"/>
-
+      
       <entity type="Muban" geocode="82040603" name="บ้านปากช่อง"/>
       <entity type="Muban" geocode="82040604" name="บ้านดอน"/>
       <entity type="Muban" geocode="82040605" name="บ้านหานบัว"/>
@@ -141,6 +160,12 @@
     <entity type="Tambon" name="คลองเคียน" english="Khlong Khian" geocode="820407" />
   </entity>
   <entity type="Amphoe" name="ตะกั่วป่า" english="Takua Pa" geocode="8205" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.8696</geo:lat>
+        <geo:long>98.3436</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ตะกั่วป่า" english="Takua Pa" geocode="820501" />
     <entity type="Tambon" name="บางนายสี" english="Bang Nai Si" geocode="820502" />
     <entity type="Tambon" name="บางไทร" english="Bang Sai" geocode="820503" />
@@ -151,6 +176,12 @@
     <entity type="Tambon" name="เกาะคอเขา" english="Ko Kho Khao" geocode="820508" />
   </entity>
   <entity type="Amphoe" name="คุระบุรี" english="Khura Buri" geocode="8206" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>9.1939</geo:lat>
+        <geo:long>98.4150</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="คุระ" english="Khura" geocode="820601" >
       <entity type="Muban" geocode="82060101" name="บ้านทุ่งนา"/>
       <entity type="Muban" geocode="82060102" name="บ้านกลาง"/>
@@ -175,6 +206,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ทับปุด" english="Thap Put" geocode="8207" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.5161</geo:lat>
+        <geo:long>98.6398</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ทับปุด" english="Thap Put" geocode="820701" >
       <office type="TAOOffice">
         <url>http://www.thupput.org/</url>
@@ -230,13 +267,45 @@
   </entity>
   <entity type="KingAmphoe" name="โคกกลอย" english="Khok Kloi" geocode="8209" comment="Proposed, but not created"/>
 
-  <entity type="ThesabanMueang" name="พังงา" english="Phang Nga" geocode="8299" parent="8201" />
-  <entity type="ThesabanMueang" name="ตะกั่วป่า" english="Takua Pa" geocode="8298" parent="8205" />
+  <entity type="ThesabanMueang" name="พังงา" english="Phang Nga" geocode="8299" parent="8201" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>8.4644</geo:lat>
+        <geo:long>98.5317</geo:long>
+      </geo:Point>
+      <url>http://www.phangngacity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanMueang" name="ตะกั่วป่า" english="Takua Pa" geocode="8298" parent="8205" >
+    <office type="MunicipalityOffice">
+      <url>http://www.takuapacity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เกาะยาว" english="Ko Yao" geocode="8297" parent="8202" />
   <entity type="ThesabanTambon" name="ท่านา" english="Tha Na" geocode="8296" parent="8203" />
-  <entity type="ThesabanTambon" name="กระโสม" english="Kra Som" geocode="8295" parent="8204" />
+  <entity type="ThesabanTambon" name="กระโสม" english="Kra Som" geocode="8295" parent="8204" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>8.3924</geo:lat>
+        <geo:long>98.4519</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="โคกกลอย" english="Khok Kloi" geocode="8294" parent="8204" />
-  <entity type="ThesabanTambon" name="คุระบุรี" english="Khura Buri" geocode="8293" parent="8206" />
-  <entity type="ThesabanTambon" name="ทับปุด" english="Thap Put" geocode="8292" parent="8207" />
-  <entity type="ThesabanTambon" name="ท้ายเหมือง " english="Thai Mueang" geocode="8291" parent="8208" />
+  <entity type="ThesabanTambon" name="คุระบุรี" english="Khura Buri" geocode="8293" parent="8206" >
+    <office type="MunicipalityOffice">
+      <url>http://tedsabankuraburi.pantown.com/</url>
+      <url>http://www.geocities.com/kuraburimuni/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ทับปุด" english="Thap Put" geocode="8292" parent="8207" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tappud.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ท้ายเหมือง " english="Thai Mueang" geocode="8291" parent="8208" >
+    <office type="MunicipalityOffice">
+      <url>http://www.thaimuangmuni.go.th/</url>
+    </office>
+  </entity>
 </entity>
