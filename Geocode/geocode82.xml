@@ -7,6 +7,9 @@
     </geo:Point>
     <url>http://www.phangnga.go.th/</url>
   </office>
+  <office type="PAOOffice">
+    <url>http://www.phangngapao.org</url>
+  </office>
   <officials>
     <official title="Governor" name="เยี่ยมสุริยา พาลุสุข" beginyear="2008"/>
     <official title="Governor" name="วิชัย ไพรสงบ" beginyear="2007" endyear="2008"/>
@@ -50,8 +53,20 @@
       <entity type="Muban" geocode="82010603" name="บ้านทับเหวน"/>
     </entity>
     <entity type="Tambon" name="ทุ่งคาโงก" english="Thung Kha Ngok" geocode="820107" />
-    <entity type="Tambon" name="เกาะปันหยี" english="Ko Panyi" geocode="820108" />
-    <entity type="Tambon" name="ป่ากอ" english="Pa Ko" geocode="820109" />
+    <entity type="Tambon" name="เกาะปันหยี" english="Ko Panyi" geocode="820108" >
+      <office type="TAOOffice">
+        <url>http://www.kohpanyee.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="82010801" name="บ้านท่าด่าน"/>
+      <entity type="Muban" geocode="82010802" name="เกาะปันหยี"/>
+      <entity type="Muban" geocode="82010803" name="เกาะไม้ไผ่"/>
+      <entity type="Muban" geocode="82010804" name="เกาะหมากน้อย"/>
+      </entity>
+    <entity type="Tambon" name="ป่ากอ" english="Pa Ko" geocode="820109" >
+      <office type="TAOOffice">
+        <url>http://www.phako.go.th/</url>
+      </office>
+    </entity>
 
     <entity type="Unknown" name="เกาะยาวใหญ่" english="Ko Yao Yai" geocode="820198" newgeocode="820202" />
     <entity type="Unknown" name="เกาะยาวน้อย" english="Ko Yao Noi" geocode="820199" newgeocode="820201" />
@@ -91,8 +106,26 @@
       <entity type="Muban" geocode="82030203" name="บ้านปากพู่"/>
       <entity type="Muban" geocode="82030204" name="บ้านบางพาง"/>
     </entity>
-    <entity type="Tambon" name="เหมาะ" english="Mo" geocode="820303" />
-    <entity type="Tambon" name="เหล" english="Le" geocode="820304" />
+    <entity type="Tambon" name="เหมาะ" english="Mo" geocode="820303" >
+      <office type="TAOOffice">
+        <url>http://www.moh2550.org/</url>
+      </office>
+      <entity type="Muban" geocode="82030301" name="บ้านเหมาะ"/>
+      <entity type="Muban" geocode="82030302" name="บ้านปลายวา"/>
+      <entity type="Muban" geocode="82030303" name="บ้านสะพานเสือ"/>
+      <entity type="Muban" geocode="82030304" name="บ้านในหนด"/>
+    </entity>
+    <entity type="Tambon" name="เหล" english="Le" geocode="820304" >
+      <office type="TAOOffice">
+        <url>http://www.lhae.org/</url>
+      </office>
+      <entity type="Muban" geocode="82030401" name="บ้านนกฮูก"/>
+      <entity type="Muban" geocode="82030402" name="บ้านปากเหล"/>
+      <entity type="Muban" geocode="82030403" name="บ้านในเหล"/>
+      <entity type="Muban" geocode="82030404" name="บ้านช้างเชื่อ"/>
+      <entity type="Muban" geocode="82030405" name="บ้านเล็ดตอก"/>
+      <entity type="Muban" geocode="82030406" name="บ้านสายปิหนัง"/>
+    </entity>
     <entity type="Tambon" name="รมณีย์" english="Rommani" geocode="820305" />
   </entity>
   <entity type="Amphoe" name="ตะกั่วทุ่ง" english="Takua Thung" geocode="8204" >
