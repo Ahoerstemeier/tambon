@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="อ่างทอง" english="Ang Thong" geocode="15" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>14.5892</geo:lat>
+      <geo:long>100.4549</geo:long>
+    </geo:Point>
     <url>http://www.angthong.go.th/</url>
   </office>
   <officials source="http://th.wikipedia.org/wiki/จังหวัดอ่างทอง">
@@ -47,13 +51,41 @@
     <official title="Governor" index="1" name="พระยาวิเศษไชยชาญ ปรีชาญาณยุติธรรมโกศลสกลเกษตรวิไสย" endyear="1895"/>
   </officials>
   <entity type="Amphoe" name="เมืองอ่างทอง" english="Mueang Ang Thong" geocode="1501" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.5886</geo:lat>
+        <geo:long>100.4535</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ตลาดหลวง" english="Talat Luang" geocode="150101" />
     <entity type="Tambon" name="บางแก้ว" english="Bang Kaeo" geocode="150102" />
     <entity type="Tambon" name="ศาลาแดง" english="Sala Daeng" geocode="150103" />
-    <entity type="Tambon" name="ป่างิ้ว" english="Pa Ngio" geocode="150104" />
+    <entity type="Tambon" name="ป่างิ้ว" english="Pa Ngio" geocode="150104" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.6084</geo:lat>
+          <geo:long>100.4260</geo:long>
+        </geo:Point>
+        <url>http://www.pangiu.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="15010401" name="บ้านป่างิ้ว"/>
+      <entity type="Muban" geocode="15010402" name="บ้านคลองห้วยโพธิ์"/>
+      <entity type="Muban" geocode="15010403" name="บ้านบ่อน้ำ"/>
+      <entity type="Muban" geocode="15010404" name="บ้านตาลแถว"/>
+      <entity type="Muban" geocode="15010405" name="บ้านค่ายลูกเสือ"/>
+      <entity type="Muban" geocode="15010406" name="บ้านแปดแก้ว"/>
+      <entity type="Muban" geocode="15010407" name="บ้านป่างิ้ว"/>
+    </entity>
     <entity type="Tambon" name="บ้านแห" english="Ban Hae" geocode="150105" />
     <entity type="Tambon" name="ตลาดกรวด" english="Talat Kruat" geocode="150106" />
-    <entity type="Tambon" name="มหาดไทย" english="Mahat Thai" geocode="150107" />
+    <entity type="Tambon" name="มหาดไทย" english="Mahat Thai" geocode="150107" >
+      <entity type="Muban" geocode="15010701" name="บ้านหนองไข่เน่า"/>
+      <entity type="Muban" geocode="15010702" name="บ้านบางหัก"/>
+      <entity type="Muban" geocode="15010703" name="บ้านท่ามอญ"/>
+      <entity type="Muban" geocode="15010704" name="บ้านหัวตะพาน"/>
+      <entity type="Muban" geocode="15010705" name="บ้านคุ้มมักเม่า"/>
+      <entity type="Muban" geocode="15010706" name="บ้านโรงนา"/>
+    </entity>
     <entity type="Tambon" name="บ้านอิฐ" english="Ban It" geocode="150108" >
       <office type="TAOOffice">
         <url>http://www.webban-it.com/</url>
@@ -98,7 +130,21 @@
     <entity type="Tambon" name="บางเสด็จ" english="Bang Sadet" geocode="150305" />
     <entity type="Tambon" name="นรสิงห์" english="Norasing" geocode="150306" />
     <entity type="Tambon" name="เอกราช" english="Ekkarat" geocode="150307" />
-    <entity type="Tambon" name="โผงเผง" english="Phong Pheng" geocode="150308" />
+    <entity type="Tambon" name="โผงเผง" english="Phong Pheng" geocode="150308" >
+      <office type="TAOOffice">
+        <url>http://www.tambon-phongpheng.com/</url>
+      </office>
+    </entity>
+    <entity type="Muban" geocode="15030801" name="บ้านเลน"/>
+    <entity type="Muban" geocode="15030802" name="บ้านเลน"/>
+    <entity type="Muban" geocode="15030803" name="บ้านสวนส้ม"/>
+    <entity type="Muban" geocode="15030804" name="บ้านสวนส้ม"/>
+    <entity type="Muban" geocode="15030805" name="บ้านหมู่ตาล"/>
+    <entity type="Muban" geocode="15030806" name="บ้านน้ำวน"/>
+    <entity type="Muban" geocode="15030807" name="บ้านโผงเผง"/>
+    <entity type="Muban" geocode="15030808" name="บ้านโผงเผง"/>
+    <entity type="Muban" geocode="15030809" name="บ้านโผงเผง"/>
+    <entity type="Muban" geocode="15030810" name="บ้านโรงม้า"/>
   </entity>
   <entity type="Amphoe" name="โพธิ์ทอง" english="Pho Thong" geocode="1504" >
     <entity type="Tambon" name="อ่างแก้ว" english="Ang Kaeo" geocode="150401" />
@@ -149,6 +195,12 @@
     <entity type="Tambon" name="จำลอง" english="Chamlong" geocode="150507" />
   </entity>
   <entity type="Amphoe" name="วิเศษชัยชาญ" english="Wiset Chai Chan" geocode="1506" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.5946</geo:lat>
+        <geo:long>100.3385</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ไผ่จำศิล" english="Phai Cham Sin" geocode="150601" >
       <office type="TAOOffice">
         <url>http://www.paijumsin.com/</url>
@@ -185,7 +237,24 @@
     <entity type="Tambon" name="ยี่ล้น" english="Yi Lon" geocode="150606" />
     <entity type="Tambon" name="บางจัก" english="Bang Chak" geocode="150607" />
     <entity type="Tambon" name="ห้วยคันแหลน" english="Huai Khan Laen" geocode="150608" />
-    <entity type="Tambon" name="คลองขนาก" english="Khlong Khanak" geocode="150609" />
+    <entity type="Tambon" name="คลองขนาก" english="Khlong Khanak" geocode="150609" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.5180</geo:lat>
+          <geo:long>100.3547</geo:long>
+        </geo:Point>
+        <url>http://www.khlongkhanak.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="15060901" name="บ้านเจ๊ก"/>
+      <entity type="Muban" geocode="15060902" name="บ้านบางกะลา"/>
+      <entity type="Muban" geocode="15060903" name="บ้านดาบ"/>
+      <entity type="Muban" geocode="15060904" name="บ้านบางกะสา"/>
+
+      <entity type="Muban" geocode="15060906" name="บ้านโพธิ์ศรี"/>
+      <entity type="Muban" geocode="15060907" name="บ้านคลองนมโค"/>
+
+      <entity type="Muban" geocode="15060909" name="บ้านดอนหอยโข่ง"/>
+    </entity>
     <entity type="Tambon" name="ไผ่วง" english="Phai Wong" geocode="150610" >
       <office type="TAOOffice">
         <url>http://www.phaiwong.org/</url>
@@ -229,10 +298,24 @@
     <entity type="Tambon" name="ตลาดใหม่" english="Talat Mai" geocode="150615" />
   </entity>
   <entity type="Amphoe" name="สามโก้" english="Samko" geocode="1507" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.6056</geo:lat>
+        <geo:long>100.2449</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สามโก้" english="Samko" geocode="150701" />
     <entity type="Tambon" name="ราษฎรพัฒนา" english="Ratsadon Phatthana" geocode="150702" />
     <entity type="Tambon" name="อบทม" english="Op Thom" geocode="150703" />
-    <entity type="Tambon" name="โพธิ์ม่วงพันธ์" english="Pho Muang Phan" geocode="150704" />
+    <entity type="Tambon" name="โพธิ์ม่วงพันธ์" english="Pho Muang Phan" geocode="150704" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.5722</geo:lat>
+          <geo:long>100.2653</geo:long>
+        </geo:Point>
+        <url>http://phomuangphan.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="มงคลธรรมนิมิต" english="Mongkhon Tham Nimit" geocode="150705" />
   </entity>
 
