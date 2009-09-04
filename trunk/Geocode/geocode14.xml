@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya" geocode="14">
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>14.3496</geo:lat>
+      <geo:long>100.5596</geo:long>
+    </geo:Point>
+    <url>http://www.ayutthaya.go.th/</url>
+  </office>
   <officials source="http://www.ayutthaya.go.th/excutive.htm">
     <official title="Governor" index="52" name="วิทยา ผิวผ่อง" begin="2009-03-01"/>
     <official title="Governor" index="51" name="ปรีชา กมลบุตร" begin="2008-05-06" end="2009-02-28"/>
@@ -55,6 +62,12 @@
     <official title="Governor" index="1" name="เจ้าพระยาชัยวิชิตสิทธิสงคราม" comment="Reign of Rama I"/>
   </officials>
   <entity type="Amphoe" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya" geocode="1401" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.3522</geo:lat>
+        <geo:long>100.5766</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ประตูชัย" english="Pratu Chai" geocode="140101" />
     <entity type="Tambon" name="กะมัง" english="Kamang" geocode="140102" />
     <entity type="Tambon" name="หอรัตนไชย" english="Ho Rattanachai" geocode="140103" />
@@ -321,10 +334,24 @@
     <entity type="Tambon" name="บ้านขล้อ" english="Ban Khlo" geocode="140717" />
   </entity>
   <entity type="Amphoe" name="ผักไห่" english="Phak Hai" geocode="1408" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.4583</geo:lat>
+        <geo:long>100.3700</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ผักไห่" english="Phak Hai" geocode="140801" />
     <entity type="Tambon" name="อมฤต" english="Ammarit" geocode="140802" />
     <entity type="Tambon" name="บ้านแค" english="Ban Khae" geocode="140803" />
-    <entity type="Tambon" name="ลาดน้ำเค็ม" english="Lat Nam Khem" geocode="140804" />
+    <entity type="Tambon" name="ลาดน้ำเค็ม" english="Lat Nam Khem" geocode="140804" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.4898</geo:lat>
+          <geo:long>100.3916</geo:long>
+        </geo:Point>
+        <url>http://www.ladnamkem.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ตาลาน" english="Talan" geocode="140805" />
     <entity type="Tambon" name="ท่าดินแดง" english="Tha Din Daeng" geocode="140806" >
       <office type="TAOOffice">
@@ -332,7 +359,23 @@
       </office>
     </entity>
     <entity type="Tambon" name="ดอนลาน" english="Don Lan" geocode="140807" />
-    <entity type="Tambon" name="นาคู" english="Na Khu" geocode="140808" />
+    <entity type="Tambon" name="นาคู" english="Na Khu" geocode="140808" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.4661</geo:lat>
+          <geo:long>100.2553</geo:long>
+        </geo:Point>
+        <url>http://www.nakhu.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="14080801" name="บ้านคูล่าง"/>
+      <entity type="Muban" geocode="14080802" name="บ้านคูคลอง"/>
+      <entity type="Muban" geocode="14080803" name="บ้านคูเหนือ"/>
+      <entity type="Muban" geocode="14080804" name="บ้านคูล่าง"/>
+      <entity type="Muban" geocode="14080805" name="บ้านท้ายวัด"/>
+      <entity type="Muban" geocode="14080806" name="บ้านนาคู"/>
+      <entity type="Muban" geocode="14080807" name="บ้านห้วยหมู"/>
+      <entity type="Muban" geocode="14080808" name="บ้านห้วยรี"/>
+    </entity>
     <entity type="Tambon" name="กุฎี" english="Kudi" geocode="140809" />
     <entity type="Tambon" name="ลำตะเคียน" english="Lam Takhian" geocode="140810" />
     <entity type="Tambon" name="โคกช้าง" english="Khok Chang" geocode="140811" />

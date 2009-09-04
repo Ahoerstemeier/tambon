@@ -114,7 +114,28 @@
     <entity type="Tambon" name="บ้านยาง" english="Ban Yang" geocode="730125" />
   </entity>
   <entity type="Amphoe" name="กำแพงแสน" english="Kamphaeng Saen" geocode="7302" >
-    <entity type="Tambon" name="ทุ่งกระพังโหม" english="Thung Kraphang Hom" geocode="730201" />
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.9838</geo:lat>
+        <geo:long>99.9938</geo:long>
+      </geo:Point>
+    </office>
+    <entity type="Tambon" name="ทุ่งกระพังโหม" english="Thung Kraphang Hom" geocode="730201" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>13.9563</geo:lat>
+          <geo:long>100.0033</geo:long>
+        </geo:Point>
+        <url>http://thungkapunghom.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="73020101" name="บ้านยาง"/>
+      <entity type="Muban" geocode="73020102" name="บ้านรางพิกุล"/>
+      <entity type="Muban" geocode="73020103" name="บ้านโปร่งพรหม"/>
+      <entity type="Muban" geocode="73020104" name="บ้านดอนซาก"/>
+      <entity type="Muban" geocode="73020105" name="บ้านทุ่งหนองปลาไหล"/>
+      <entity type="Muban" geocode="73020106" name="บ้านหนองแหน"/>
+      <entity type="Muban" geocode="73020107" name="บ้านยางพัฒนา"/>
+    </entity>
     <entity type="Tambon" name="กระตีบ" english="Kratip" geocode="730202" />
     <entity type="Tambon" name="ทุ่งลูกนก" english="Thung Luk Nok" geocode="730203" />
     <entity type="Tambon" name="ห้วยขวาง" english="Huai Khwang" geocode="730204" >

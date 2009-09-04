@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สุพรรณบุรี" english="Suphanburi" geocode="72">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>14.5138</geo:lat>
+      <geo:long>100.1302</geo:long>
+    </geo:Point>
     <url>http://www.suphanburi.go.th/</url>
   </office>
   <officials source="http://www.suphanburi.go.th/ppp.ppt">
@@ -46,9 +50,28 @@
     <official title="Governor" index="1" name="พระยาสุนทรสงคราม (จัน สุนทรพงษ์)" beginyear="1851" endyear="1869"/>
   </officials>
   <entity type="Amphoe" name="เมืองสุพรรณบุรี" english="Mueang Suphan Buri" geocode="7201" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.4744</geo:lat>
+        <geo:long>100.1185</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ท่าพี่เลี้ยง" english="Tha Phi Liang" geocode="720101" />
     <entity type="Tambon" name="รั้วใหญ่" english="Rua Yai" geocode="720102" />
-    <entity type="Tambon" name="ทับตีเหล็ก" english="Thap Ti Lek" geocode="720103" />
+    <entity type="Tambon" name="ทับตีเหล็ก" english="Thap Ti Lek" geocode="720103" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.4368</geo:lat>
+          <geo:long>100.1101</geo:long>
+        </geo:Point>
+        <url>http://www.thaptilek.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="72010301" name="บ้านทับตีเหล็ก"/>
+      <entity type="Muban" geocode="72010302" name="บ้านประสพสุข"/>
+      <entity type="Muban" geocode="72010303" name="บ้านท่าดินเหนียว"/>
+      <entity type="Muban" geocode="72010304" name="บ้านโพธิ์เขียว"/>
+      <entity type="Muban" geocode="72010305" name="บ้านดอนบ้าน"/>
+    </entity>
     <entity type="Tambon" name="ท่าระหัด" english="Tha Rahat" geocode="720104" />
     <entity type="Tambon" name="ไผ่ขวาง" english="Phai Khwang" geocode="720105" />
     <entity type="Tambon" name="โคกโคเฒ่า" english="Khok Kho Thao" geocode="720106" />
@@ -86,6 +109,12 @@
     <entity type="Tambon" name="สนามคลี" english="Sanam Khli" geocode="720120" />
   </entity>
   <entity type="Amphoe" name="เดิมบางนางบวช" english="Doem Bang Nang Buat" geocode="7202" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.8538</geo:lat>
+        <geo:long>100.0979</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เขาพระ" english="Khao Phra" geocode="720201" >
       <office type="TAOOffice">
         <geo:Point>
@@ -247,6 +276,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="บางปลาม้า" english="Bang Pla Ma" geocode="7204" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 14.4023</geo:lat>
+        <geo:long>100.1543</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="โคกคราม" english="Khok Khram" geocode="720401" >
       <office type="TAOOffice">
         <geo:Point>
@@ -262,13 +297,43 @@
     <entity type="Tambon" name="สาลี" english="Sali" geocode="720406" />
     <entity type="Tambon" name="ไผ่กองดิน" english="Phai Kong Din" geocode="720407" />
     <entity type="Tambon" name="องครักษ์" english="Ongkharak" geocode="720408" />
-    <entity type="Tambon" name="จรเข้ใหญ่" english="Chorakhe Yai" geocode="720409" />
+    <entity type="Tambon" name="จรเข้ใหญ่" english="Chorakhe Yai" geocode="720409" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.4218</geo:lat>
+          <geo:long>100.2302</geo:long>
+        </geo:Point>
+        <url>http://www.jorakheyai.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านแหลม" english="Ban Laem" geocode="720410" >
       <office type="TAOOffice">
         <url>http://www.banleamburi.org/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="มะขามล้ม" english="Makham Lom" geocode="720411" />
+    <entity type="Tambon" name="มะขามล้ม" english="Makham Lom" geocode="720411" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.3876</geo:lat>
+          <geo:long>100.0714</geo:long>
+        </geo:Point>
+        <url>http://www.makhamlom.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="72041101" name="บ้านโคกโก"/>
+      <entity type="Muban" geocode="72041102" name="บ้านมะขามล้ม"/>
+      <entity type="Muban" geocode="72041103" name="บ้านมะขามล้ม"/>
+      <entity type="Muban" geocode="72041104" name="บ้านโพนขาม"/>
+      <entity type="Muban" geocode="72041105" name="บ้านสะแกย่างหมู"/>
+      <entity type="Muban" geocode="72041106" name="บ้านวัดโบสถ์"/>
+      <entity type="Muban" geocode="72041107" name="บ้านหมี่ตะลุ่ม"/>
+      <entity type="Muban" geocode="72041108" name="บ้านปากบาง"/>
+      <entity type="Muban" geocode="72041109" name="บ้านดอนไผ่แขวน (บ้านหัวนา)"/>
+      <entity type="Muban" geocode="72041110" name="บ้านวัดโบสถ์"/>
+      <entity type="Muban" geocode="72041111" name="บ้านดอนโพธิ์งาม"/>
+      <entity type="Muban" geocode="72041112" name="บ้านกระทุ่มใหญ่"/>
+      <entity type="Muban" geocode="72041113" name="บ้านโพธิ์เตาเหล็ก"/>
+      <entity type="Muban" geocode="72041114" name="บ้านข่อย"/>
+    </entity>
     <entity type="Tambon" name="วังน้ำเย็น" english="Wang Nam Yen" geocode="720412" />
     <entity type="Tambon" name="วัดโบสถ์" english="Wat Bot" geocode="720413" />
     <entity type="Tambon" name="วัดดาว" english="Wat Dao" geocode="720414" />
@@ -398,6 +463,12 @@
     <entity type="Tambon" name="ดอนมะนาว" english="Don Manao" geocode="720715" />
   </entity>
   <entity type="Amphoe" name="สามชุก" english="Sam Chuk" geocode="7208" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.7553</geo:lat>
+        <geo:long>100.0947</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ย่านยาว" english="Yan Yao" geocode="720801" />
     <entity type="Tambon" name="วังลึก" english="Wang Luek" geocode="720802" />
     <entity type="Tambon" name="สามชุก" english="Sam Chuk" geocode="720803" />
@@ -405,6 +476,10 @@
     <entity type="Tambon" name="บ้านสระ" english="Ban Sa" geocode="720805" />
     <entity type="Tambon" name="หนองสะเดา" english="Nong Sadao" geocode="720806" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.8158</geo:lat>
+          <geo:long> 99.9881</geo:long>
+        </geo:Point>
         <url>http://www.nongsadao.go.th/</url>
       </office>
       <entity type="Muban" geocode="72080601" name="บ้านดอนไร่"/>
@@ -489,6 +564,12 @@
     <entity type="Tambon" name="กระจัน" english="Krachan" geocode="720913" />
   </entity>
   <entity type="Amphoe" name="หนองหญ้าไซ" english="Nong Ya Sai" geocode="7210" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.7748</geo:lat>
+        <geo:long>99.9113</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หนองหญ้าไซ" english="Nong Ya Sai" geocode="721001" >
       <office type="TAOOffice">
         <url>http://www.nongyasai-sao.go.th/</url>
