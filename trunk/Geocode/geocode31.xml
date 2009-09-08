@@ -475,7 +475,18 @@
     <entity type="Tambon" name="หูทำนบ" english="Hu Thamnop" geocode="311205" />
   </entity>
   <entity type="Amphoe" name="นาโพธิ์" english="Na Pho" geocode="3113" >
-    <entity type="Tambon" name="นาโพธิ์" english="Na Pho" geocode="311301" />
+    <entity type="Tambon" name="นาโพธิ์" english="Na Pho" geocode="311301" >
+      <office type="TAOOffice">
+        <url>http://www.na-po.org/</url>
+      </office>
+      <entity type="Muban" geocode="31130103" name="บ้านจอก"/>
+
+      <entity type="Muban" geocode="31130107" name="บ้านโศกกะฐิน"/>
+      <entity type="Muban" geocode="31130108" name="บ้านหนองต่อ"/>
+      <entity type="Muban" geocode="31130109" name="บ้านหนองหญ้ารังกา"/>
+      <entity type="Muban" geocode="31130110" name="บ้านหนองหว้า"/>
+      <entity type="Muban" geocode="31130111" name="บ้านหนองหว้า"/>
+    </entity>
     <entity type="Tambon" name="บ้านคู" english="Ban Khu" geocode="311302" />
     <entity type="Tambon" name="บ้านดู่" english="Ban Du" geocode="311303" />
     <entity type="Tambon" name="ดอนกอก" english="Don Kok" geocode="311304" />
@@ -686,7 +697,11 @@
   <entity type="ThesabanTambon" name="ลำปลายมาศ" english="Lam Plai Mat" geocode="3187" parent="3110" />
   <entity type="ThesabanTambon" name="สตึก" english="Satuek" geocode="3186" parent="3111" />
   <entity type="ThesabanTambon" name="ปะคำ" english="Pa Kham" geocode="3185" parent="3112" />
-  <entity type="ThesabanTambon" name="นาโพธิ์" english="Na Pho" geocode="3184" parent="3113" />
+  <entity type="ThesabanTambon" name="นาโพธิ์" english="Na Pho" geocode="3184" parent="3113" >
+    <office type="MunicipalityOffice">
+      <url>http://www.naphomuni.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หนองหงส์" english="Nong Hong" geocode="3183" parent="3114" />
   <entity type="ThesabanTambon" name="พลับพลาชัย" english="Phlapphla Chai" geocode="3182" parent="3115" />
   <entity type="ThesabanTambon" name="ห้วยราช" english="Huai Rat" geocode="3181" parent="3116" />
