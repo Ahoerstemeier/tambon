@@ -21,6 +21,7 @@ namespace De.AHoerstemeier.Tambon
             lFilename = Path.Combine(lFilename, "Muban" + iGeocode.ToString() + ".txt");
             StreamReader lReader = new StreamReader(lFilename);
             PopulationDataEntry RetVal = Parse(lReader);
+            lReader.Dispose();
             RetVal.Geocode = iGeocode;
             return RetVal;
         }
@@ -46,8 +47,10 @@ namespace De.AHoerstemeier.Tambon
                     PopulationDataEntry lCurrentMuban = new PopulationDataEntry();
                     String lAmphoe = lSubStrings[1].Replace('"', ' ').Trim();
                     String lTambon = lSubStrings[2].Replace('"', ' ').Trim();
-                    lCurrentMuban.Geocode = Convert.ToInt32(lSubStrings[3].Replace('"', ' ').Trim());
+                    String lGeocode = lSubStrings[3].Replace('"', ' ').Replace(" ", "").Trim();
+                    lCurrentMuban.Geocode = Convert.ToInt32(lGeocode);
                     lCurrentMuban.Name = lSubStrings[4].Replace('"', ' ').Trim();
+                    lCurrentMuban.Type = EntityType.Muban;
                     Int32 lMuban = Convert.ToInt32(lSubStrings[5].Replace('"', ' ').Trim());
                     if (lMuban != (lCurrentMuban.Geocode % 100))
                     {
@@ -60,6 +63,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         lCurrentAmphoe = new PopulationDataEntry();
                         lCurrentAmphoe.Name = lTambon;
+                        lCurrentAmphoe.Type = EntityType.Amphoe;
                         lCurrentAmphoe.Geocode = (lCurrentMuban.Geocode / 10000);
                         lCurrentChangwat.SubEntities.Add(lCurrentAmphoe);
                     }
@@ -67,41 +71,58 @@ namespace De.AHoerstemeier.Tambon
                     {
                         lCurrentTambon = new PopulationDataEntry();
                         lCurrentTambon.Name = lTambon;
+                        lCurrentTambon.Type = EntityType.Tambon;
                         lCurrentTambon.Geocode = (lCurrentMuban.Geocode / 100);
                         lCurrentAmphoe.SubEntities.Add(lCurrentTambon);
                     }
                     lCurrentTambon.SubEntities.Add(lCurrentMuban);
                 }
             }
+            lCurrentChangwat.Type = EntityType.Changwat;
             return lCurrentChangwat;
 
         }
-        public FrequencyCounter Statistics(PopulationDataEntry iChangwat)
+        static public void Statistics(PopulationDataEntry iChangwat, FrequencyCounter ioCounter)
         {
-            FrequencyCounter RetVal = new FrequencyCounter();
             foreach (PopulationDataEntry lAmphoe in iChangwat.SubEntities)
             {
                 foreach (PopulationDataEntry lTambon in lAmphoe.SubEntities)
                 {
                     Int32 lNumberOfMuban = lTambon.SubEntities.Count;
-                    RetVal.IncrementForCount(lNumberOfMuban, lTambon.Geocode);
+                    ioCounter.IncrementForCount(lNumberOfMuban, lTambon.Geocode);
                 }
             }
-            return RetVal;
         }
-        public String StatisticsText(PopulationDataEntry iChangwat)
+        static public FrequencyCounter Statistics(PopulationDataEntry iChangwat)
+        {
+            FrequencyCounter lCounter = new FrequencyCounter();
+            Statistics(iChangwat, lCounter);
+            return lCounter;
+        }
+        static public String StatisticsText(FrequencyCounter iCounter)
         {
             StringBuilder lBuilder = new StringBuilder();
-            FrequencyCounter lStatistics = Statistics(iChangwat);
 
-            Int32 lCount = lStatistics.NumberOfValues;
+            Int32 lCount = iCounter.NumberOfValues;
             lBuilder.AppendLine(lCount.ToString() + " Tambon");
-            lBuilder.AppendLine(Math.Round(lStatistics.MeanValue * lCount).ToString() + " Muban");
+            lBuilder.AppendLine(Math.Round(iCounter.MeanValue * lCount).ToString() + " Muban");
             lBuilder.AppendLine();
-            lBuilder.AppendLine(lStatistics.MeanValue.ToString("F2", CultureInfo.InvariantCulture) + " Muban per Tambon");
-            lBuilder.AppendLine(lStatistics.MaxValue.ToString() + " Muban per Tambon max.");
+            lBuilder.AppendLine(iCounter.MeanValue.ToString("F2", CultureInfo.InvariantCulture) + " Muban per Tambon");
+            lBuilder.AppendLine(iCounter.MaxValue.ToString() + " Muban per Tambon max.");
+            String lTambonCodes = String.Empty;
+            foreach (var lEntry in iCounter.Data[iCounter.MaxValue])
+            {
+                lTambonCodes = lTambonCodes + lEntry.ToString() + ", ";
+            }
+            lBuilder.AppendLine(lTambonCodes.Substring(0,lTambonCodes.Length - 2));
 
             String RetVal = lBuilder.ToString();
+            return RetVal;
+        }
+        static public String StatisticsText(PopulationDataEntry iChangwat)
+        {
+            FrequencyCounter lStatistics = Statistics(iChangwat);
+            String RetVal = StatisticsText(lStatistics);
             return RetVal;
         }
         public Dictionary<PopulationDataEntry, PopulationDataEntry> DifferentMubanNames(PopulationDataEntry iChangwat)
