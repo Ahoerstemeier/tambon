@@ -54,6 +54,7 @@ namespace Tambon
             this.btnBoard = new System.Windows.Forms.Button();
             this.btnMuban = new System.Windows.Forms.Button();
             this.btnMubanNames = new System.Windows.Forms.Button();
+            this.chkUseCsv = new System.Windows.Forms.CheckBox();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -326,11 +327,22 @@ namespace Tambon
             this.btnMubanNames.UseVisualStyleBackColor = true;
             this.btnMubanNames.Click += new System.EventHandler(this.btnMubanNames_Click);
             // 
+            // chkUseCsv
+            // 
+            this.chkUseCsv.AutoSize = true;
+            this.chkUseCsv.Location = new System.Drawing.Point(361, 293);
+            this.chkUseCsv.Name = "chkUseCsv";
+            this.chkUseCsv.Size = new System.Drawing.Size(47, 17);
+            this.chkUseCsv.TabIndex = 25;
+            this.chkUseCsv.Text = "CSV";
+            this.chkUseCsv.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.chkUseCsv);
             this.Controls.Add(this.btnMubanNames);
             this.Controls.Add(this.btnMuban);
             this.Controls.Add(this.btnBoard);
@@ -360,6 +372,7 @@ namespace Tambon
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -390,6 +403,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnBoard;
         private System.Windows.Forms.Button btnMuban;
         private System.Windows.Forms.Button btnMubanNames;
+        private System.Windows.Forms.CheckBox chkUseCsv;
     }
 }
 

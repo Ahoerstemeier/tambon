@@ -55,11 +55,14 @@ namespace De.AHoerstemeier.Tambon
             var lList = new List<PopulationDataEntry>();
             foreach (PopulationDataEntry lEntry in Helper.Geocodes)
             {
-                String lFilename = Helper.GeocodeSourceFile(lEntry.Geocode);
-                if (File.Exists(lFilename))
+                if (Helper.IsBaseGeocode(BaseGeocode, lEntry.Geocode))
                 {
-                    PopulationData lEntities = PopulationData.Load(lFilename);
-                    lList.AddRange(lEntities.Data.FlatList(mEntityTypes));
+                    String lFilename = Helper.GeocodeSourceFile(lEntry.Geocode);
+                    if (File.Exists(lFilename))
+                    {
+                        PopulationData lEntities = PopulationData.Load(lFilename);
+                        lList.AddRange(lEntities.Data.FlatList(mEntityTypes));
+                    }
                 }
             }
             return lList;
@@ -111,7 +114,11 @@ namespace De.AHoerstemeier.Tambon
         public void Calculate()
         {
             var lList = LoadGeocodeLists();
-            lList = NormalizeNames(lList);
+            Calculate(lList);
+        }
+        public void Calculate(List<PopulationDataEntry> iInputList)
+        {
+            var lList = NormalizeNames(iInputList);
             mNumberOfEntities = lList.Count;
             mNamesCount = DoCalculate(lList);
         }
