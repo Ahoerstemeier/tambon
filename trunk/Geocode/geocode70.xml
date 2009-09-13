@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ราชบุรี" english="Ratchaburi" geocode="70">
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>13.5290</geo:lat>
+      <geo:long>99.8135</geo:long>
+    </geo:Point>
+    <url>http://www.ratchaburi.go.th/</url>
+  </office>
+  <office type="PAOOffice">
+    <url>http://www.ratchaburipao.go.th/</url>
+  </office>
   <officials source="http://www.ratchaburi.go.th/data/name.htm">
     <official title="Governor" index="48" name="สุเทพ โกมลภมร" begin="2009-03-01"/>
     <official title="Governor" index="47" name="สุเมธ ชัยเลิศวณิชกุล" begin="2008-10-20" end="2009-02-28" />
@@ -51,6 +61,12 @@
     <official title="Governor" index="1" name="เจ้าพระยาราชบุรี  (เสม  วงศาโรจน์)" comment="พระเจ้ากรุงธน - รัชกาลที่ 1"/>
   </officials>
   <entity type="Amphoe" name="เมืองราชบุรี" english="Mueang Ratchaburi" geocode="7001" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.5284</geo:lat>
+        <geo:long>99.8125</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หน้าเมือง" english="Na Mueang" geocode="700101" />
     <entity type="Tambon" name="เจดีย์หัก" english="Chedi Hak" geocode="700102" />
     <entity type="Tambon" name="ดอนตะโก" english="Don Tako" geocode="700103" >
@@ -153,6 +169,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="จอมบึง" english="Chom Bueng" geocode="7002" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.6196</geo:lat>
+        <geo:long>99.5917</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="จอมบึง" english="Chom Bueng" geocode="700201" />
     <entity type="Tambon" name="ปากช่อง" english="Pak Chong" geocode="700202" />
     <entity type="Tambon" name="เบิกไพร" english="Boek Phrai" geocode="700203" />
@@ -249,6 +271,12 @@
     <entity type="Tambon" name="ดอนไผ่" english="Don Phai" geocode="700413" />
   </entity>
   <entity type="Amphoe" name="บ้านโป่ง" english="Ban Pong" geocode="7005" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.8141</geo:lat>
+        <geo:long>99.8711</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านโป่ง" english="Ban Pong" geocode="700501" />
     <entity type="Tambon" name="ท่าผา" english="Tha Pha" geocode="700502" />
     <entity type="Tambon" name="กรับใหญ่" english="Krap Yai" geocode="700503" />
@@ -273,7 +301,26 @@
       <entity type="Muban" geocode="70050514" name="บ้านสวนกล้วย"/>
       <entity type="Muban" geocode="70050515" name="บ้านหนองสาระนัง"/>
     </entity>
-    <entity type="Tambon" name="หนองอ้อ" english="Nong O" geocode="700506" />
+    <entity type="Tambon" name="หนองอ้อ" english="Nong O" geocode="700506" >
+      <office type="TAOOffice">
+        <url>http://tambon-naongor.com/</url>
+      </office>
+      <entity type="Muban" geocode="70050601" name="บ้านหนองบอน"/>
+      <entity type="Muban" geocode="70050602" name="บ้านหัวโป่งเล็ก"/>
+      <entity type="Muban" geocode="70050603" name="บ้านหัวโป่งใหญ่"/>
+      <entity type="Muban" geocode="70050604" name="บ้านหนองอ้อไทย"/>
+      <entity type="Muban" geocode="70050605" name="บ้านนาเจริญ"/>
+      <entity type="Muban" geocode="70050606" name="บ้านหนองอ้อตะวันออก"/>
+      <entity type="Muban" geocode="70050607" name="บ้านหนองอ้อตะวันตก"/>
+      <entity type="Muban" geocode="70050608" name="บ้านหนองหูช้าง"/>
+      <entity type="Muban" geocode="70050609" name="บ้านหนองกระจ่อย"/>
+      <entity type="Muban" geocode="70050610" name="บ้านหนองตะแคง"/>
+      <entity type="Muban" geocode="70050611" name="บ้านทุ่งน้อย"/>
+      <entity type="Muban" geocode="70050612" name="บ้านลาดใหญ่"/>
+      <entity type="Muban" geocode="70050613" name="บ้านโรงข้าวสาร"/>
+      <entity type="Muban" geocode="70050614" name="บ้านหนองเจริญ"/>
+      <entity type="Muban" geocode="70050615" name="บ้านทุ่งเจริญ"/>
+    </entity>
     <entity type="Tambon" name="ดอนกระเบื้อง" english="Don Krabueang" geocode="700507" >
       <entity type="Muban" geocode="70050701" name="บ้านรางโพธิ์"/>
 
@@ -293,6 +340,12 @@
     <entity type="Tambon" name="ลาดบัวขาว" english="Lat Bua Khao" geocode="700515" />
   </entity>
   <entity type="Amphoe" name="บางแพ" english="Bang Phae" geocode="7006" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.6914</geo:lat>
+        <geo:long>99.9304</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บางแพ" english="Bang Phae" geocode="700601" />
     <entity type="Tambon" name="วังเย็น" english="Wang Yen" geocode="700602" />
     <entity type="Tambon" name="หัวโพ" english="Hua Pho" geocode="700603" />
@@ -313,6 +366,12 @@
     <entity type="Tambon" name="โพหัก" english="Pho Hak" geocode="700607" />
   </entity>
   <entity type="Amphoe" name="โพธาราม" english="Photharam" geocode="7007" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.6924</geo:lat>
+        <geo:long>99.8534</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="โพธาราม" english="Photharam" geocode="700701" />
     <entity type="Tambon" name="ดอนกระเบื้อง" english="Don Krabueang" geocode="700702" />
     <entity type="Tambon" name="หนองโพ" english="Nong Pho" geocode="700703" />
@@ -355,6 +414,12 @@
     <entity type="Tambon" name="หนองกวาง" english="Nong Kwang" geocode="700719" />
   </entity>
   <entity type="Amphoe" name="ปากท่อ" english="Pak Tho" geocode="7008" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.3678</geo:lat>
+        <geo:long>99.8305</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ทุ่งหลวง" english="Thung Luang" geocode="700801" />
     <entity type="Tambon" name="วังมะนาว" english="Wang Manao" geocode="700802" />
     <entity type="Tambon" name="ดอนทราย" english="Don Sai" geocode="700803" />
@@ -373,6 +438,12 @@
     <entity type="Tambon" name="ห้วยยางโทน" english="Huai Yang Thon" geocode="700812" />
   </entity>
   <entity type="Amphoe" name="วัดเพลง" english="Wat Phleng" geocode="7009" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.4539</geo:lat>
+        <geo:long>99.8869</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เกาะศาลพระ" english="Ko San Phra" geocode="700901" />
     <entity type="Tambon" name="จอมประทัด" english="Chom Prathat" geocode="700902" />
     <entity type="Tambon" name="วัดเพลง" english="Wat Phleng" geocode="700903" >
@@ -421,7 +492,11 @@
     </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="ราชบุรี" english="Ratchaburi" geocode="7099" parent="7001" />
+  <entity type="ThesabanMueang" name="ราชบุรี" english="Ratchaburi" geocode="7099" parent="7001" >
+    <office type="MunicipalityOffice">
+      <url>http://www.rbm.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="บ้านโป่ง" english="Ban Pong" geocode="7098" parent="7005" />
   <entity type="ThesabanMueang" name="โพธาราม" english="Photharam" geocode="7097" parent="7007" />
   <entity type="ThesabanTambon" name="เขางู" english="Khao Ngu" geocode="7096" parent="7001" />
