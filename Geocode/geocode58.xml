@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="แม่ฮ่องสอน" english="Mae Hong Son" geocode="58" >
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="แม่ฮ่องสอน" english="Mae Hong Son" geocode="58" >
+  <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>19.2880</geo:lat>
+      <geo:long>97.9646</geo:long>
+    </geo:Point>
+    <url>http://www.maehongson.go.th/</url>
+  </office>
   <officials>
     <official title="Governor" name="กำธร ถาวรสถิตย์" begin="2009-10-01"/>
     <official title="Governor" name="ธงชัย วงษ์เหรียญทอง" beginyear="2007" end="2009-09-30"/>
@@ -7,6 +14,12 @@
     <official title="Governor" name="สุพจน์ เลาวัณย์ศิริ" endyear="2005"/>
   </officials>
   <entity type="Amphoe" name="เมืองแม่ฮ่องสอน" english="Mueang Mae Hong Son" geocode="5801" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.3041</geo:lat>
+        <geo:long>97.9774</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="จองคำ" english="Chong Kham" geocode="580101" />
     <entity type="Tambon" name="ห้วยโป่ง" english="Huai Pong" geocode="580102" />
     <entity type="Tambon" name="ผาบ่อง" english="Pha Bong" geocode="580103" />
@@ -82,6 +95,12 @@
     <entity type="Tambon" name="โป่งสา" english="Pong Sa" geocode="580307" />
   </entity>
   <entity type="Amphoe" name="แม่สะเรียง" english="Mae Sariang" geocode="5804" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>18.1594</geo:lat>
+        <geo:long>97.9338</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านกาศ" english="Ban Kat" geocode="580401" >
       <office type="TAOOffice">
         <url>http://www.bankad-msr.net/</url>
@@ -140,6 +159,12 @@
     <entity type="Unknown" name="สบเมย" english="Sop Moei" geocode="580499" newgeocode="580601" />
   </entity>
   <entity type="Amphoe" name="แม่ลาน้อย" english="Mae La Noi" geocode="5805" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>18.3841</geo:lat>
+        <geo:long>97.9370</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แม่ลาน้อย" english="Mae La Noi" geocode="580501" >
       <office type="TAOOffice">
         <url>http://www.maelanoi.org/</url>
@@ -185,6 +210,12 @@
     <entity type="Tambon" name="ขุนแม่ลาน้อย" english="Khun Mae La Noi" geocode="580508" />
   </entity>
   <entity type="Amphoe" name="สบเมย" english="Sop Moei" geocode="5806" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.9620</geo:lat>
+        <geo:long>97.9332</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สบเมย" english="Sop Moei" geocode="580601" >
       <entity type="Muban" geocode="58060101" name="บ้านเลโค๊ะ"/>
 
@@ -211,9 +242,34 @@
     <entity type="Tambon" name="แม่สามแลบ" english="Mae Sam Laep" geocode="580606" />
   </entity>
   <entity type="Amphoe" name="ปางมะผ้า" english="Pang Mapha" geocode="5807" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.5226</geo:lat>
+        <geo:long>98.2464</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สบป่อง" english="Sop Pong" geocode="580701" />
-    <entity type="Tambon" name="ปางมะผ้า" english="Pang Mapha" geocode="580702" />
-    <entity type="Tambon" name="ถ้ำลอด" english="Tham Lot" geocode="580703" />
+    <entity type="Tambon" name="ปางมะผ้า" english="Pang Mapha" geocode="580702" >
+      <office type="TAOOffice">
+        <url>http://www.pangmapa.com/</url>
+      </office>
+      <entity type="Muban" geocode="58070201" name="บ้านแม่ละนา"/>
+      <entity type="Muban" geocode="58070202" name="บ้านปางคาม" comment="หมู่บ้านบริวารบ้านน้ำจาง"/>
+      <entity type="Muban" geocode="58070203" name="บ้านไม้ฮุง" comment="หมู่บ้านบริวารบ้านปางคามน้อย"/>
+      <entity type="Muban" geocode="58070204" name="บ้านจ่าโบ่"/>
+      <entity type="Muban" geocode="58070205" name="บ้านยาป่าแหน" comment="หมู่บ้านบริวารบ้านผาเจริญ"/>
+      <entity type="Muban" geocode="58070206" name="บ้านผาแดง"/>
+      <entity type="Muban" geocode="58070207" name="บ้านไม้ลัน"/>
+      <entity type="Muban" geocode="58070208" name="บ้านห้วยเฮี๊ยะ"/>
+      <entity type="Muban" geocode="58070209" name="บ้านลุกข้าวหลาม"/>
+      <entity type="Muban" geocode="58070210" name="บ้านผาเผือก"/>
+      <entity type="Muban" geocode="58070211" name="บ้านบ่อไคร้"/>
+    </entity>
+    <entity type="Tambon" name="ถ้ำลอด" english="Tham Lot" geocode="580703" >
+      <office type="TAOOffice">
+        <url>http://thumlodlca.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="นาปู่ป้อม" english="Na Pu Pom" geocode="580704" >
       <office type="TAOOffice">
         <url>http://www.napupom.com/</url>
