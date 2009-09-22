@@ -193,17 +193,17 @@
     <create index="5" type="Amphoe" name="จักรวรรดิ์" english="Chakkrawat"/>
     <create index="6" type="Amphoe" name="สัมพันธวงษ์" english="Samphanthawong" geocode="1013"/>
     <create index="7" type="Amphoe" name="สามแยก" english="Sam Yaek"/>
-    <create index="8" type="Amphoe" name="ป้อมปราบศัตรูพ่าย" english="Pom Prap Sattru Phai" geocode="1008"/>
-    <create index="9" type="Amphoe" name="สามยอด" english="Sam Yot"/>
+    <create index="8" type="Amphoe" name="ป้อมปราบศัตรูพ่าย" english="Pom Prap Sattru Phai"/>
+    <create index="9" type="Amphoe" name="สามยอด" english="Sam Yot" geocode="1008"/>
     <create index="10" type="Amphoe" name="นางเลิ้ง" english="Bang Liang"/>
     <create index="11" type="Amphoe" name="บางขุนพรหม" english="Bang Khun Phrom"/>
     <create index="12" type="Amphoe" name="สามเสน" english="Sam Sen"/>
     <create index="13" type="Amphoe" name="ดุสิต" english="Dusit" geocode="1002"/>
-    <create index="14" type="Amphoe" name="พญาไท" english="Phaya Thai"/>
+    <create index="14" type="Amphoe" name="พญาไท" english="Phaya Thai" geocode="1014"/>
     <create index="15" type="Amphoe" name="ประแจจีน" english="Prachae Chin" />
     <create index="16" type="Amphoe" name="ปทุมวัน" english="Pathum Wan" geocode="1007"/>
     <create index="17" type="Amphoe" name="บางรัก" english="Bang Rak" geocode="1004"/>
-    <create index="18" type="Amphoe" name="สาธร" english="Sathon"/>
+    <create index="18" type="Amphoe" name="สาธร" english="Sathon" geocode="1028"/>
     <create index="19" type="Amphoe" name="บ้านทวาย" english="Ban Thawai" geocode="1012"/>
     <create index="20" type="Amphoe" name="บางพลัด" english="Bang Phlat"/>
     <create index="21" type="Amphoe" name="อมรินทร์" english="Amarin" geocode="1020"/>
@@ -213,14 +213,45 @@
     <create index="25" type="Amphoe" name="บุคโล" english="Buk Lo"/>
   </entry>
   <entry description="Downgrade of Amphoe in Phra Nakhon" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบเลิกอำเภอและลดลงเป็นกิ่งในจังหวัดพระนคร" volume="42" page="431" issue="0 ก" uri="2468/A/431.PDF" publication="1926-03-31" effective="1926-04-01" sign="1926-03-31">
-    <status index="1" old="Amphoe" new="KingAmphoe" geocode="1014" parent="1002"/>
+    <status index="1" old="Amphoe" new="KingAmphoe" name="พญาไท" english="Phaya Thai" geocode="1014" parent="1002"/>
     <status index="2" old="Amphoe" new="KingAmphoe" name="นางเลิ้ง" english="Bang Liang" parentname="บางขุนพรหม"/>
     <status index="3" old="Amphoe" new="KingAmphoe" name="พระราชวัง" english="Phra Ratcha Wang" parentname="พาหุรัด"/>
     <status index="4" old="Amphoe" new="KingAmphoe" name="ชนะสงคราม" english="Chana Songkhram" parentname="สำราญราษฎร์"/>
-    <status index="5" old="Amphoe" new="KingAmphoe" geocode="1008" parentname="สามยอด"/>
-    <status index="6" old="Amphoe" new="KingAmphoe" geocode="1028" parent="1004"/>
+    <status index="5" old="Amphoe" new="KingAmphoe" name="ป้อมปราบศัตรูพ่าย" english="Pom Prap Sattru Phai" geocode="1008" parentname="สามยอด"/>
+    <status index="6" old="Amphoe" new="KingAmphoe" name="สาทร" english="Sathon" geocode="1028" parent="1004"/>
   </entry>
   <entry description="Change of Tambon in Amphoe Phra Nakhon" title="แจ้งความกระทรวงมหาดไทย บัญชีรายนามตำบลที่ควรยุบและรวมเข้ากับตำบลอื่นตามท้องที่บางอำเภอในจังหวัดพระนคร" volume="50" page="1039" issue="0 ง" uri="2476/D/1039.PDF" publication="1933-07-09" />
   <entry description="Creation of 2 Tambon in Krung Thep" title="ประกาศกระทรวงนครบาล เพิ่มเติมตั้งตำบลผูกปี้ อีก ๒ ตำบล" volume="14" page="596" issue="37" uri="2440/037/596_2.PDF" publication="1897-12-12" />
+  <entry description="Abolish and rename of Amphoe in Phra Nakhon and Thonburi" title="ประกาศ เรื่องยุบรวมอำเภอและเลิกกิ่งอำเภอในจังหวัดพระนครและธนบุรี" volume="45" page="360-361" issue="0 ก" uri="2471/A/360.PDF" publication="1929-03-17" sign="1929-03-12" effective="1929-04-01" >
+    <create index="1" type="Amphoe" name="พระนคร" english="Phra Nakhon" geocode="1001">
+      <abolish type="Amphoe" name="พาหุรัด" english="Phahurat"/>
+      <abolish type="Amphoe" name="สำราญราษฎร์" english="Samran Rat"/>
+      <abolish type="KingAmphoe" name="พระราชวัง" english="Phra Ratcha Wang"/>
+      <abolish type="KingAmphoe" name="ชนะสงคราม" english="Chana Songkhram"/>
+    </create>
+    <abolish index="2" type="KingAmphoe" name="นางเลิ้ง" english="Bang Liang">
+      <areachange type="Amphoe" name="บางขุนพรหม" english="Bang Khun Phrom"/>
+      </abolish>
+    <rename index="2" type="Amphoe" oldname="บางขุนพรหม" oldenglish="Bang Khun Phrom" name="นางเลิ้ง" english="Bang Liang"/>
+    <abolish index="3" type="KingAmphoe" name="พญาไท" english="Phaya Thai" geocode="1014">
+      <areachange name="ดุสิต" english="Dusit" geocode="1002"/>
+    </abolish>
+    <abolish index="4" type="KingAmphoe" name="ป้อมปราบ" english="Pom Prap">
+      <areachange type="Amphoe" name="สามยอด" english="Sam Yot" geocode="1008"/>
+    </abolish>
+    <rename index="4" type="Amphoe" oldname="สามยอด" oldenglish="Sam Yot" name="ป้อมปราบ" english="Pom Prap" geocode="1008"/>
+    <abolish index="5" type="Amphoe" name="จักรวรรดิ" english="Chakkrawat" >
+      <areachange type="Amphoe" name="สัมพันธวงศ์" english="Samphanthawong" geocode="1013"/>
+    </abolish>
+    <abolish index="6" type="KingAmphoe" name="สาธร" english="Sathon" geocode="1028">
+      <areachange name="บางรัก" english="Bang Rak" geocode="1004"/>
+    </abolish>
+    <abolish index="7" type="Amphoe" name="หนองแขม" english="Nong Khaem">
+      <areachange name="ภาษีเจริญ" english="Phasi Charoen" geocode="1022"/>
+    </abolish>
+  </entry>
+  <entry description="Reassign of Amphoe and Tambon in Monthon Krung Thep" title="พระบรมราชโองการ ประกาศ เรื่อง แก้ไขเขตจังหวัดพระนคร ธนบุรี พระประแดง สมุทรปราการ และมีนบุรีในมณฑลกรุงเทพ ฯ กับธัญบุรี ในมณฑลอยุธยา" volume="44" page="153-157" issue="0 ก" uri="2470/A/153.PDF" publication="1928-08-21" />
+  
+  <entry description="Police districts in Thon Buri" title="ประกาศกระทรวงนครบาล เรื่อง แบ่งเขตท้องที่ตำรวจพระนครบาลในจังหวัดธนบุรี" volume="33" page="117-118" issue="0 ก" uri="2459/A/117.PDF" publication="1916-07-30" sign="1916-07-24" />
 
 </gazette>
