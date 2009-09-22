@@ -311,7 +311,11 @@ namespace De.AHoerstemeier.Tambon
             }
             if (lEntryData.Length > 0)
             {
-                retval.Add(ParseSingeItem(lEntryData.ToString()));
+                var current = ParseSingeItem(lEntryData.ToString());
+                if (current != null)
+                {
+                    retval.Add(current);
+                }
             }
             return retval;
         }
@@ -454,7 +458,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         if (iValues.Contains(lKeyValuePair.Key))
                         {
-                            var lList = GetListDescription(lKeyValuePair.Value, lVolume, ModificationText(lOuterKeyValuePair.Key, lKeyValuePair.Key));                                
+                            var lList = GetListDescription(lKeyValuePair.Value, lVolume, ModificationText(lOuterKeyValuePair.Key, lKeyValuePair.Key));
                             if (lList != null)
                             {
                                 retval.AddRange(lList);
