@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="พะเยา" english="Phayao" geocode="56" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>19.1915</geo:lat>
+      <geo:long>99.8799</geo:long>
+    </geo:Point>
     <url>http://www.phayao.go.th</url>
   </office>
   <officials source="http://www.phayao.go.th/boss.html">
@@ -23,6 +27,12 @@
     <official title="Governor" index="1" name="สัญญา ปาลวัฒน์วิไชย" begin="1977-08-28" end="1981-09-30"/>
   </officials>
   <entity type="Amphoe" name="เมืองพะเยา" english="Mueang Phayao" geocode="5601" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.1919</geo:lat>
+        <geo:long>99.8786</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="560101" />
     <entity type="Tambon" name="แม่ต๋ำ" english="Mae Tam" geocode="560102" />
     <entity type="Tambon" name="ดงเจน" english="Dong Chen" geocode="560103" newgeocode="560902" />
@@ -125,6 +135,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="จุน" english="Chun" geocode="5602" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.3372</geo:lat>
+        <geo:long>100.1350</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ห้วยข้าวก่ำ" english="Huai Khao Kam" geocode="560201" >
       <entity type="Muban" geocode="56020103" name="บ้านสันป่าก้าว"/>
 
@@ -284,6 +300,12 @@
     <entity type="Tambon" name="สระ" english="Sa" geocode="560403" />
   </entity>
   <entity type="Amphoe" name="ดอกคำใต้" english="Dok Khamtai" geocode="5605" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.1624</geo:lat>
+        <geo:long>99.9934</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ดอกคำใต้" english="Dok Khamtai" geocode="560501" />
     <entity type="Tambon" name="ดอนศรีชุม" english="Don Si Chum" geocode="560502" />
     <entity type="Tambon" name="บ้านถ้ำ" english="Ban Tham" geocode="560503" />
@@ -426,7 +448,7 @@
   </entity>
   <entity type="Amphoe" name="แม่ใจ" english="Mae Chai" geocode="5607" >
     <entity type="Tambon" name="แม่ใจ" english="Mae Chai" geocode="560701" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <!-- TAO renamed to รวมใจพัฒนา when upgraded -->
         <url>http://ruomjaipat.com/</url>
       </office>
