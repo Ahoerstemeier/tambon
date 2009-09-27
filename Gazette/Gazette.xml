@@ -121,16 +121,37 @@
       <mention type="Tambon" name="มรกต"/>
     </create>
   </entry>
-  <entry description="Abolish or Downgrade of Amphoe" title="แจ้งความกระทรวงมหาดไทย เรื่อง ยุบอำเภอไทรโยค อำเภอศรีสวัสดิ์เป็นกิ่งอำเภอ และย้ายอำเภอสังขละบุรีมาตั้งที่เมืองท่าขนุน" volume="23" page="1332" issue="53" uri="2449/053/1332_2.PDF" publication="1907-03-31" />
-  <entry description="Abolish or Downgrade of Amphoe" title="แจ้งความกระทรวงมหาดไทย [เรื่อง ยุบอำเภอเกษตรสมบูรณ์เป็นกิ่งอำเภอขึ้นอยู่ในบังคับบัญชาของนายอำเภอภูเขียวแขวงเมืองนครราชสีมา]" volume="25" page="296" issue="10" uri="2451/010/296.PDF" publication="1908-06-07" sign="1908-04-27"/>
-  <entry description="Downgrade of Amphoe Phrasong to King Amphoe" title="แจ้งความกระทรวงมหาดไทย เรื่อง ยุบอำเภอประสงค์แขวงเมืองไชยา ลงเป็นกิ่งอำเภอ" volume="26" page="137" issue="0 ง" uri="2452/D/137.PDF" publication="1909-05-02" >
+  <entry description="Downgrade of Amphoe and creation of King Amphoe in Kanchanaburi" title="แจ้งความกระทรวงมหาดไทย เรื่อง ยุบอำเภอไทรโยค อำเภอศรีสวัสดิ์เป็นกิ่งอำเภอ และย้ายอำเภอสังขละบุรีมาตั้งที่เมืองท่าขนุน" volume="23" page="1332" issue="53" uri="2449/053/1332_2.PDF" publication="1907-03-31" sign="1907-03-27">
+    <status old="Amphoe" new="KingAmphoe" name="ไทรโยค" english="Sai Yok" geocode="7102"/>
+    <status old="Amphoe" new="KingAmphoe" name="ศรีสวัสดิ์" english="Si Sawat" geocode="7104"/>
+    <create type="KingAmphoe" name="วังกอ" geocode="7108" />
+  </entry>
+  <entry description="Downgrade of Amphoe Kaset Sombun to King Amphoe" title="แจ้งความกระทรวงมหาดไทย [เรื่อง ยุบอำเภอเกษตรสมบูรณ์เป็นกิ่งอำเภอขึ้นอยู่ในบังคับบัญชาของนายอำเภอภูเขียวแขวงเมืองนครราชสีมา]" volume="25" page="296" issue="10" uri="2451/010/296.PDF" publication="1908-06-07" sign="1908-06-01">
+    <status old="Amphoe" new="KingAmphoe" name="เกษตรสมบูรณ์" geocode="3604"/>
+  </entry>
+  <entry description="Downgrade of Amphoe Prasong to King Amphoe" title="แจ้งความกระทรวงมหาดไทย เรื่อง ยุบอำเภอประสงค์แขวงเมืองไชยา ลงเป็นกิ่งอำเภอ" volume="26" page="137" issue="0 ง" uri="2452/D/137.PDF" publication="1909-05-02" sign="1909-04-27">
     <status old="Amphoe" new="KingAmphoe" name="ประสงค์" owner="8406" comment="Recreated in 1948 as Tha Chana, geocode 8407"/>
   </entry>
 
-  <entry description="Abolish or Downgrade of Amphoe" title="ประกาศกระทรวงมหาดไทย ประกาศยุบอำเภอวารินทร์ชำราบไปรวมกับอำเภอพิบูลมังสาหาร และอำเภอบูรพาอุบลในจังหวัดอุบล มณฑลอิสาน" volume="28" page="359" issue="0 ง" uri="2454/D/359_1.PDF" publication="1911-05-28" />
-  <entry description="Abolish or Downgrade of Amphoe" title="แจ้งความกระทรวงมหาดไทย เรื่อง เลิกและยุบอำเภอต่างๆ ในมณฑลอุบลลงเป็นกิ่งอำเภอ" volume="29" page="982" issue="0 ง" uri="2455/D/982_1.PDF" publication="1912-07-28" />
+  <entry description="Abolish of Amphoe Warin Chamrap" title="ประกาศกระทรวงมหาดไทย ประกาศยุบอำเภอวารินทร์ชำราบไปรวมกับอำเภอพิบูลมังสาหาร และอำเภอบูรพาอุบลในจังหวัดอุบล มณฑลอิสาน" volume="28" page="359" issue="0 ง" uri="2454/D/359_1.PDF" publication="1911-05-28" sign="1911-05-20">
+    <abolish type="Amphoe" name="วารินทร์ชำราบ" english="Warin Chamrap">
+      <!-- Preset day Warin Chamrap was named ทักษิณอุบล till 1913 -->
+      <areachange geocode="3419"/>
+      <areachange geocode="3401"/>
+  </abolish>
+  </entry>
+  <entry description="Abolish and Downgrade of Amphoe in Ubon Ratchathani" title="แจ้งความกระทรวงมหาดไทย เรื่อง เลิกและยุบอำเภอต่างๆ ในมณฑลอุบลลงเป็นกิ่งอำเภอ" volume="29" page="982-983" issue="0 ง" uri="2455/D/982_1.PDF" publication="1912-07-28" />
   <entry description="Abolish or Downgrade of Amphoe" title="พระบรมราชโองการ ประกาศ ยุบอำเภอและรวมเขตอำเภอ สำหรับการปกครองในมณฑลอุดร" volume="31" page="48" issue="0 ก" uri="2457/A/48.PDF" publication="1914-04-12" />
-  <entry description="Abolish or Downgrade of Amphoe" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบอำเภอสบปราบลงเป็นกิ่งอำเภอสบปราบ" volume="34" page="504" issue="0 ก" uri="2460/A/504.PDF" publication="1917-12-23" />
+  <entry description="Downgrade of Amphoe Sop Prap" title="ประกาศกระทรวงมหาดไทย เรื่อง ยุบอำเภอสบปราบลงเป็นกิ่งอำเภอสบปราบ" volume="34" page="504" issue="0 ก" uri="2460/A/504.PDF" publication="1917-12-23" sign="1917-12-18">
+    <status old="Amphoe" new="KingAmphoe" geocode="5211">
+      <reassign geocode="520403" oldowner="5211" owner="5203"/>
+      <reassign geocode="520402" oldowner="5211" owner="5203"/>
+      <reassign name="ทุ่งนา" english="Thung Na" geocode="520401" oldowner="5211" owner="5203"/>
+      <mention geocode="521101"/>
+      <mention geocode="521102"/>
+      <mention geocode="521103"/>
+    </status>
+  </entry>
   <entry description="Abolish of Amphoe Mae Chai and Dok Kham Tai, Chiang Rai" title="ประกาศกระทรวงมหาดไทย เรื่อง ให้ยุบอำเภอแม่ใจและอำเภอดอกคำใต้" volume="34" page="505" issue="0 ก" uri="2460/A/505.PDF" publication="1917-12-23" sign="1917-12-18">
     <abolish type="Amphoe" name="แม่ใจ" geocode="5607"/>
     <abolish type="Amphoe" name="ดอกคำใต้" geocode="5605"/>
