@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" />
   <xs:simpleType name="EntityType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Changwat"/>
@@ -59,6 +60,9 @@
     <!--Parent for King Amphoe-->
   </xs:complexType>
   <xs:complexType name="GazettePark">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="geo:Point" />
+    </xs:sequence>
     <xs:attribute name="name" type="xs:string" use="optional" />
     <xs:attribute name="english" type="xs:string" use="optional" />
     <xs:attribute name="type" type="ParkType" use="required" />
