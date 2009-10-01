@@ -83,6 +83,12 @@
     <entity type="Tambon" name="แม่อูคอ" english="Mae Ukho" geocode="580206" />
   </entity>
   <entity type="Amphoe" name="ปาย" english="Pai" geocode="5803" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.3586</geo:lat>
+        <geo:long>98.4400</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เวียงใต้" english="Wiang Tai" geocode="580301" >
       <office type="TAOOffice">
         <url>http://www.viengtai.go.th/</url>
@@ -358,13 +364,27 @@
   <entity type="Unknown" name="อ.ม่วยต่อ  จ.แม่ฮ่องสอน" geocode="5881" />
   <!-- old name of Amphoe Mueang Mae Hong Son (5801)-->
 
-  <entity type="ThesabanMueang" name="แม่ฮ่องสอน" english="Mae Hong Son" geocode="5899" parent="5801" />
+  <entity type="ThesabanMueang" name="แม่ฮ่องสอน" english="Mae Hong Son" geocode="5899" parent="5801" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>19.3011</geo:lat>
+        <geo:long>97.9698</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ขุนยวม" english="Khun Yuam" geocode="5898" parent="5802" >
     <office type="MunicipalityOffice">
       <url>http://khunyoum.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ปาย" english="Pai" geocode="5897" parent="5803" />
+  <entity type="ThesabanTambon" name="ปาย" english="Pai" geocode="5897" parent="5803" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>19.3586</geo:lat>
+        <geo:long>98.4339</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แม่สะเรียง" english="Mae Sariang" geocode="5896" parent="5804" >
     <office type="MunicipalityOffice">
       <url>http://www.maesariang.org</url>
