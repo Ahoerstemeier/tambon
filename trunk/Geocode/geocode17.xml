@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" geocode="17" name="สิงห์บุรี" english="Sing Buri" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>14.8967</geo:lat>
+      <geo:long>100.4112</geo:long>
+    </geo:Point>
     <url>http://www.singburi.go.th/</url>
     <officials source="http://www.singburi.go.th/gover/rescidence.html">
       <official title="Governor" index="46" name="ชิตพงษ์ ฤทธิประศาสน์" begin="2009-10-01"/>
@@ -52,6 +56,12 @@
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองสิงห์บุรี" english="Mueang Sing Buri" geocode="1701" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.8883</geo:lat>
+        <geo:long>100.4047</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บางพุทรา" english="Bang Phutsa" geocode="170101" />
     <entity type="Tambon" name="บางมัญ" english="Bang Man" geocode="170102" />
     <entity type="Tambon" name="โพกรวม" english="Phok Ruam" geocode="170103" />
@@ -66,6 +76,12 @@
     <entity type="Tambon" name="บางกระบือ" english="Bang Krabue" geocode="170108" />
   </entity>
   <entity type="Amphoe" name="บางระจัน" english="Bang Rachan" geocode="1702" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.8922</geo:lat>
+        <geo:long>100.3171</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สิงห์" english="Sing" geocode="170201" />
     <entity type="Tambon" name="ไม้ดัด" english="Mai Dat" geocode="170202" />
     <entity type="Tambon" name="เชิงกลัด" english="Choeng Klat" geocode="170203" />
@@ -80,6 +96,12 @@
     <entity type="Tambon" name="สระแจง" english="Sa Chaeng" geocode="170208" />
   </entity>
   <entity type="Amphoe" name="ค่ายบางระจัน" english="Khai Bang Rachan" geocode="1703" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.8003</geo:lat>
+        <geo:long>100.3107</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="โพทะเล" english="Pho Thale" geocode="170301" />
     <entity type="Tambon" name="บางระจัน" english="Bang Rachan" geocode="170302" />
     <entity type="Tambon" name="โพสังโฆ" english="Pho Sangkho" geocode="170303" >
@@ -124,7 +146,17 @@
     <entity type="Tambon" name="หนองกระทุ่ม" english="Nong Krathum" geocode="170306" />
   </entity>
   <entity type="Amphoe" name="พรหมบุรี" english="Phrom Buri" geocode="1704" >
-    <entity type="Tambon" name="พระงาม" english="Phra Ngam" geocode="170401" />
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.7912</geo:lat>
+        <geo:long>100.4535</geo:long>
+      </geo:Point>
+    </office>
+    <entity type="Tambon" name="พระงาม" english="Phra Ngam" geocode="170401" >
+      <office type="TAOOffice">
+        <url>http://www.prangam.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="พรหมบุรี" english="Phrom Buri" geocode="170402" />
     <entity type="Tambon" name="บางน้ำเชี่ยว" english="Bang Nam Chiao" geocode="170403" />
     <entity type="Tambon" name="บ้านหม้อ" english="Ban Mo" geocode="170404" >
@@ -153,10 +185,39 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ท่าช้าง" english="Tha Chang" geocode="1705" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.7617</geo:lat>
+        <geo:long>100.3900</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ถอนสมอ" english="Thon Samo" geocode="170501" />
-    <entity type="Tambon" name="โพประจักษ์" english="Pho Prachak" geocode="170502" />
-    <entity type="Tambon" name="วิหารขาว" english="Wihan Khao" geocode="170503" />
-    <entity type="Tambon" name="พิกุลทอง" english="Phikun Thong" geocode="170504" />
+    <entity type="Tambon" name="โพประจักษ์" english="Pho Prachak" geocode="170502" >
+      <office type="TAOOffice">
+        <url>http://www.phoprajak.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="17050201" name="บ้านโพประจักษ์"/>
+      <entity type="Muban" geocode="17050202" name="บ้านกะดีแดง"/>
+      <entity type="Muban" geocode="17050203" name="บ้านกระทุ่มลาย"/>
+      <entity type="Muban" geocode="17050204" name="บ้านละเมาะยุบ"/>
+      <entity type="Muban" geocode="17050205" name="บ้านจำปาทอง"/>
+    </entity>
+    <entity type="Tambon" name="วิหารขาว" english="Wihan Khao" geocode="170503" >
+      <office type="TAOOffice">
+        <url>http://wihankaow.net/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="พิกุลทอง" english="Phikun Thong" geocode="170504" >
+      <office type="TAOOffice">
+        <url>http://www.pikulthong.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="17050401" name="บ้านล่าง"/>
+      <entity type="Muban" geocode="17050402" name="บ้านบางสวนหลวง"/>
+<entity type="Muban" geocode="17050403" name="บ้านพิกุลทอง"/>
+<entity type="Muban" geocode="17050404" name="บ้านคดอ้อย"/>
+<entity type="Muban" geocode="17050405" name="บ้านลาดปฎัก"/>
+<entity type="Muban" geocode="17050406" name="บ้านโคกอ้อย"/>
+</entity>
   </entity>
   <entity type="Amphoe" name="อินทร์บุรี" english="In Buri" geocode="1706" >
     <office type="DistrictOffice">
@@ -228,10 +289,33 @@
       <entity type="Muban" geocode="17060409" name="บ้านแหลมทอง"/>
       <entity type="Muban" geocode="17060410" name="บ้านแหลมไผ่"/>
     </entity>
-    <entity type="Tambon" name="ชีน้ำร้าย" english="Chi Nam Rai" geocode="170605" />
-    <entity type="Tambon" name="ท่างาม" english="Tha Ngam" geocode="170606" />
+    <entity type="Tambon" name="ชีน้ำร้าย" english="Chi Nam Rai" geocode="170605" >
+      <office type="TAOOffice">
+        <url>http://www.cheenumrai.go.th/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ท่างาม" english="Tha Ngam" geocode="170606" >
+      <office type="TAOOffice">
+        <url>http://www.tarngam.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="17060601" name="บ้านโคกขาม"/>
+      <entity type="Muban" geocode="17060602" name="บ้านโคกขาม"/>
+      <entity type="Muban" geocode="17060603" name="บ้านโคกขาม"/>
+      <entity type="Muban" geocode="17060604" name="บ้านบางเล็ก"/>
+      <entity type="Muban" geocode="17060605" name="บ้านเกาะแก้ว"/>
+      <entity type="Muban" geocode="17060606" name="บ้านท่าข่อย"/>
+      <entity type="Muban" geocode="17060607" name="บ้านท่างาม"/>
+      <entity type="Muban" geocode="17060608" name="บ้านบางตาโฉม"/>
+      <entity type="Muban" geocode="17060609" name="บ้านปลาไหล"/>
+      <entity type="Muban" geocode="17060610" name="บ้านหัวดง"/>
+      <entity type="Muban" geocode="17060611" name="บ้านโพธิ์สำนัก"/>
+    </entity>
     <entity type="Tambon" name="น้ำตาล" english="Nam Tan" geocode="170607" />
-    <entity type="Tambon" name="ทองเอน" english="Thong En" geocode="170608" />
+    <entity type="Tambon" name="ทองเอน" english="Thong En" geocode="170608" >
+      <office type="TAOOffice">
+        <url>http://www.thongen.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ห้วยชัน" english="Huai Chan" geocode="170609" >
       <entity type="Muban" geocode="17060901" name="บ้านการ้อง"/>
       <entity type="Muban" geocode="17060902" name="บ้านการ้อง"/>
@@ -244,10 +328,30 @@
       <entity type="Muban" geocode="17060909" name="บ้านตาลตาแก้ว"/>
       <entity type="Muban" geocode="17060910" name="บ้านหนองสุ่ม"/>
     </entity>
-    <entity type="Tambon" name="โพธิ์ชัย" english="Pho Chai" geocode="170610" />
+    <entity type="Tambon" name="โพธิ์ชัย" english="Pho Chai" geocode="170610" >
+      <office type="TAOOffice">
+        <url>http://www.localthai.org/phochai/</url>
+      </office>
+      <entity type="Muban" geocode="17061001" name="บ้านแหลมยอ"/>
+      <entity type="Muban" geocode="17061002" name="บ้านบางมอญ"/>
+      <entity type="Muban" geocode="17061003" name="บ้านแป้ง"/>
+      <entity type="Muban" geocode="17061004" name="บ้านอ่าวกระโจม"/>
+      <entity type="Muban" geocode="17061005" name="บ้านหางน้ำโพธิ์ชัย"/>
+      <entity type="Muban" geocode="17061006" name="บ้านหนองกระเจา"/>
+      <entity type="Muban" geocode="17061007" name="บ้านลำเหนือ"/>
+      <entity type="Muban" geocode="17061008" name="บ้านลำใต้"/>
+    </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="สิงห์บุรี" english="Singburi" geocode="1799" parent="1701" />
+  <entity type="ThesabanMueang" name="สิงห์บุรี" english="Singburi" geocode="1799" parent="1701" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>14.8911</geo:lat>
+        <geo:long>100.4029</geo:long>
+      </geo:Point>
+      <url>http://www.muangsing.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางระจัน" english="Bang Rachan" geocode="1798" parent="1702" >
     <history>
       <rename oldname="สิงห์" oldenglish="Sing" name="บางระจัน" english="Bang Rachan"/>
