@@ -6,8 +6,9 @@ using System.Xml;
 
 namespace De.AHoerstemeier.Tambon
 {
-    class ThaiAddress
+    class ThaiAddress : ICloneable
     {
+        #region properties
         private Int32 mGeocode = 0;
         public String Changwat { get; set; }
         public String Amphoe { get; set; }
@@ -17,15 +18,28 @@ namespace De.AHoerstemeier.Tambon
         public Int32 Geocode { get { return mGeocode; } }
         public String Street { get; set; }
         public String PlainValue { get; set; }
+        #endregion
 
         const String SearchKeyMuban = "หมู่ ";
         const String SearchKeyMubanAlternative = "หมู่ที่";
         const String SearchKeyTambon = "ต.";
         const String SearchKeyPostalCode = "รหัสไปรษณีย์";
 
+        internal void CalcGeocode()
+        {
+            // Tambon eigentlich auch
+            mGeocode = Helper.GetGeocode(Changwat, Amphoe, EntityType.Amphoe);
+        }
         internal void WriteToXmlElement(XmlElement iElement)
         {
             // TODO
+        }
+        public void ExportToXML(XmlElement iNode)
+        {
+            XmlDocument lXmlDocument = Helper.XmlDocumentFromNode(iNode);
+            var lNewElement = (XmlElement)lXmlDocument.CreateNode("element", "address", "");
+            iNode.AppendChild(lNewElement);
+            WriteToXmlElement(lNewElement);
         }
         private String TextAfter(String iValue, String iSearch)
         {
@@ -78,15 +92,44 @@ namespace De.AHoerstemeier.Tambon
                 }            
             }
         }
+        internal static ThaiAddress Load(XmlNode iNode)
+        {
+            ThaiAddress RetVal = null;
+
+            if (iNode != null && iNode.Name.Equals("address"))
+            {
+                RetVal = new ThaiAddress();
+                RetVal.ReadFromXml(iNode);
+            }
+            return RetVal;
+        }
         internal void ReadFromXml(XmlNode iNode)
         {
             // TODO
         }
-
-        internal void CalcGeocode()
-        {
-            // Tambon eigentlich auch
-            mGeocode = Helper.GetGeocode(Changwat, Amphoe, EntityType.Amphoe);
+        #region constructor
+        public ThaiAddress()
+        { 
         }
+        public ThaiAddress(ThaiAddress iValue)
+        { 
+            Changwat = iValue.Changwat;
+            Amphoe = iValue.Amphoe;
+            Tambon = iValue.Tambon;
+            Muban = iValue.Muban;
+            PostalCode = iValue.PostalCode;
+            Street = iValue.Street;
+            PlainValue = iValue.PlainValue;
+        }
+        #endregion
+
+        #region ICloneable Members
+
+        public object Clone()
+        {
+            return new ThaiAddress(this);
+        }
+
+        #endregion
     }
 }

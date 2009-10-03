@@ -77,4 +77,14 @@ namespace De.AHoerstemeier.Tambon
         ActingSecondLieutenant,
         SubLieutenant
     }
+    internal enum OfficeType
+    {
+        ProvinceHall,
+        PAOOffice,
+        DistrictOffice,
+        TAOOffice,
+        MunicipalityOffice,
+        VillageHeadmanOffice,
+        DistrictMuseum // ???
+    }
 }

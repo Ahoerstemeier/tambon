@@ -63,7 +63,7 @@ namespace De.AHoerstemeier.Tambon
                     if (!String.IsNullOrEmpty(lCurrentChangwat))
                     {
                         lCurrentData = lCurrentData + "\n" + lLine.Substring(0, lPos1 - mChangwatStart.Length);
-                        lResult.Add(new PopulationDataEntry(lCurrentChangwat, ParseLeaders(lCurrentData)));
+                        lResult.Add(new PopulationDataEntry(lCurrentChangwat, OfficeType.ProvinceHall, ParseLeaders(lCurrentData)));
                         lCurrentData = String.Empty;
                     }
                     lCurrentChangwat = lLine.Substring(lPos1, lPos2 - lPos1);
@@ -84,7 +84,7 @@ namespace De.AHoerstemeier.Tambon
             }
             if (!String.IsNullOrEmpty(lCurrentChangwat))
             {
-                lResult.Add(new PopulationDataEntry(lCurrentChangwat, ParseLeaders(lCurrentData)));
+                lResult.Add(new PopulationDataEntry(lCurrentChangwat, OfficeType.ProvinceHall, ParseLeaders(lCurrentData)));
             }
             mData = lResult;
         }
@@ -177,9 +177,9 @@ namespace De.AHoerstemeier.Tambon
                 String lFilename = Helper.GeocodeSourceFile(lEntry.Geocode);
                 PopulationData lData = PopulationData.Load(lFilename);
                 lEntry.English = lData.Data.English;
-                foreach (EntityLeaderList lEntryList in lEntry.OfficialsLists)
+                foreach (EntityOffice lOffice in lEntry.Offices)
                 {
-                    foreach (EntityLeader lLeader in lEntryList)
+                    foreach (EntityLeader lLeader in lOffice.OfficialsList)
                     {
                         if (lLeader.Position == EntityLeaderType.Governor)
                         {
