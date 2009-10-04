@@ -55,6 +55,7 @@ namespace Tambon
             this.btnMuban = new System.Windows.Forms.Button();
             this.btnMubanNames = new System.Windows.Forms.Button();
             this.chkUseCsv = new System.Windows.Forms.CheckBox();
+            this.btnCreateKml = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -337,11 +338,22 @@ namespace Tambon
             this.chkUseCsv.Text = "CSV";
             this.chkUseCsv.UseVisualStyleBackColor = true;
             // 
+            // btnCreateKml
+            // 
+            this.btnCreateKml.Location = new System.Drawing.Point(259, 318);
+            this.btnCreateKml.Name = "btnCreateKml";
+            this.btnCreateKml.Size = new System.Drawing.Size(95, 23);
+            this.btnCreateKml.TabIndex = 26;
+            this.btnCreateKml.Text = "Create KML";
+            this.btnCreateKml.UseVisualStyleBackColor = true;
+            this.btnCreateKml.Click += new System.EventHandler(this.btnCreateKml_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnCreateKml);
             this.Controls.Add(this.chkUseCsv);
             this.Controls.Add(this.btnMubanNames);
             this.Controls.Add(this.btnMuban);
@@ -404,6 +416,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnMuban;
         private System.Windows.Forms.Button btnMubanNames;
         private System.Windows.Forms.CheckBox chkUseCsv;
+        private System.Windows.Forms.Button btnCreateKml;
     }
 }
 
