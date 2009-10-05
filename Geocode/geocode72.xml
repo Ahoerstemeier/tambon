@@ -167,6 +167,12 @@
     <entity type="Unknown" name="หนองมะค่าโมง" english="Nong Makha Mong" geocode="720299" newgeocode="720301" />
   </entity>
   <entity type="Amphoe" name="ด่านช้าง" english="Dan Chang" geocode="7203" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.8418</geo:lat>
+        <geo:long>99.6974</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หนองมะค่าโมง" english="Nong Makha Mong" geocode="720301" >
       <entity type="Muban" geocode="72030101" name="บ้านหนองมะค่าโมง"/>
       <entity type="Muban" geocode="72030102" name="บ้านพุข่อย"/>
@@ -350,6 +356,12 @@
     <entity type="Tambon" name="วัดดาว" english="Wat Dao" geocode="720414" />
   </entity>
   <entity type="Amphoe" name="ศรีประจันต์" english="Si Prachan" geocode="7205" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.6198</geo:lat>
+        <geo:long>100.1445</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ศรีประจันต์" english="Si Prachan" geocode="720501" />
     <entity type="Tambon" name="บ้านกร่าง" english="Ban Krang" geocode="720502" />
     <entity type="Tambon" name="มดแดง" english="Mot Daeng" geocode="720503" />
@@ -361,6 +373,12 @@
     <entity type="Tambon" name="วังยาง" english="Wang Yang" geocode="720509" />
   </entity>
   <entity type="Amphoe" name="ดอนเจดีย์" english="Don Chedi" geocode="7206" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.6351</geo:lat>
+        <geo:long>100.0211</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ดอนเจดีย์" english="Don Chedi" geocode="720601" >
       <!-- Coordinates from http://school.obec.go.th/spvs4/work/gps_don1.htm -->
       <office type="TAOOffice">
@@ -439,6 +457,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="สองพี่น้อง" english="Song Phi Nong" geocode="7207" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.2236</geo:lat>
+        <geo:long>100.0210</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สองพี่น้อง" english="Song Phi Nong" geocode="720701" />
     <entity type="Tambon" name="บางเลน" english="Bang Len" geocode="720702" />
     <entity type="Tambon" name="บางตาเถร" english="Bang Ta Then" geocode="720703" />
@@ -516,6 +540,12 @@
     <entity type="Unknown" name="หนองหญ้าไซ" english="Nong Ya Sai" geocode="720899" newgeocode="721001" />
   </entity>
   <entity type="Amphoe" name="อู่ทอง" english="U Thong" geocode="7209" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.3756</geo:lat>
+        <geo:long>99.8923</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="อู่ทอง" english="U Thong" geocode="720901" />
     <entity type="Tambon" name="สระยายโสม" english="Sa Yai Som" geocode="720902" />
     <entity type="Tambon" name="จรเข้สามพัน" english="Chorakhe Sam Phan" geocode="720903" />
@@ -573,7 +603,25 @@
       <entity type="Muban" geocode="72090820" name="บ้านใหม่ใต้"/>
     </entity>
     <entity type="Tambon" name="พลับพลาไชย" english="Phlapphla Chai" geocode="720909" />
-    <entity type="Tambon" name="บ้านโข้ง" english="Ban Khong" geocode="720910" />
+    <entity type="Tambon" name="บ้านโข้ง" english="Ban Khong" geocode="720910" >
+      <office type="MunicipalityOffice">
+        <url>http://bankhong.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="72091001" name="บ้านจร้าเก่า"/>
+      <entity type="Muban" geocode="72091002" name="บ้านจร้าใหม่"/>
+      <entity type="Muban" geocode="72091003" name="บ้านหนองจอก"/>
+      <entity type="Muban" geocode="72091004" name="บ้านทุ่งดินดำ"/>
+      <entity type="Muban" geocode="72091005" name="บ้านเขากระจิว"/>
+      <entity type="Muban" geocode="72091006" name="บ้านสระบัวทอง"/>
+      <entity type="Muban" geocode="72091007" name="บ้านกกม่วง"/>
+      <entity type="Muban" geocode="72091008" name="บ้านหนองจอกน้อย"/>
+      <entity type="Muban" geocode="72091009" name="บ้านหนองสลัดได"/>
+      <entity type="Muban" geocode="72091010" name="บ้านดอนยอ"/>
+      <entity type="Muban" geocode="72091011" name="บ้านฟากห้วย"/>
+      <entity type="Muban" geocode="72091012" name="บ้านดอนกลาง"/>
+      <entity type="Muban" geocode="72091013" name="บ้านวังวัว"/>
+      <entity type="Muban" geocode="72091014" name="บ้านหนองกระหนาก"/>
+    </entity>
     <entity type="Tambon" name="เจดีย์" english="Chedi" geocode="720911" />
     <entity type="Tambon" name="สระพังลาน" english="Sa Phang Lan" geocode="720912" />
     <entity type="Tambon" name="กระจัน" english="Krachan" geocode="720913" />
@@ -604,8 +652,16 @@
       <entity type="Muban" geocode="72100113" name="บ้านหนองมะฟราน"/>
     </entity>
     <entity type="Tambon" name="หนองราชวัตร" english="Nong Rathawat" geocode="721002" >
+      <office type="TAOOffice">
+        <url>http://www.nongratchawat.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="72100201" name="บ้านหนองเต่าทอง"/>
+      <entity type="Muban" geocode="72100202" name="บ้านหนองคาง"/>
+      <entity type="Muban" geocode="72100203" name="บ้านหนองทราย"/>
+      <entity type="Muban" geocode="72100204" name="บ้านหนองราชวัตร"/>
       <entity type="Muban" geocode="72100205" name="บ้านมาบพะยอม"/>
-
+      <entity type="Muban" geocode="72100206" name="บ้านทัพมะเขือ"/>
+      <entity type="Muban" geocode="72100207" name="บ้านหนองกระทุ่ม"/>
       <entity type="Muban" geocode="72100208" name="บ้านหนองเสือทับหมี"/>
     </entity>
     <entity type="Tambon" name="หนองโพธิ์" english="Nong Pho" geocode="721003" />
@@ -615,7 +671,11 @@
 
       <entity type="Muban" geocode="72100511" name="บ้านห้วยน้ำจันทร์ใต้"/>
     </entity>
-    <entity type="Tambon" name="ทัพหลวง" english="Thap Luang" geocode="721006" />
+    <entity type="Tambon" name="ทัพหลวง" english="Thap Luang" geocode="721006" >
+      <office type="TAOOffice">
+        <url>http://tubloung.com/</url>
+      </office>
+      </entity>
   </entity>
   <entity type="KingAmphoe" name="บางตาเถร" english="Bangta Then" geocode="7211" />
   <entity type="KingAmphoe" name="เนินพลับพลา" english="Noen Phlapphla" geocode="7212" />
