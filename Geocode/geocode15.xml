@@ -125,6 +125,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ไชโย" english="Chaiyo" geocode="1502" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.6492</geo:lat>
+        <geo:long>100.4788</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="จรเข้ร้อง" english="Chorakhe Rong" geocode="150201" />
     <entity type="Tambon" name="ไชยภูมิ" english="Chaiyaphum" geocode="150202" />
     <entity type="Tambon" name="ชัยฤทธิ์" english="Chaiyarit" geocode="150203" >
@@ -140,6 +146,12 @@
     <entity type="Tambon" name="ตรีณรงค์" english="Tri Narong" geocode="150209" />
   </entity>
   <entity type="Amphoe" name="ป่าโมก" english="Pa Mok" geocode="1503" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.4900</geo:lat>
+        <geo:long>100.4481</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บางปลากด" english="Bang Pla Kot" geocode="150301" />
     <entity type="Tambon" name="ป่าโมก" english="Pa Mok" geocode="150302" />
     <entity type="Tambon" name="สายทอง" english="Sai Thong" geocode="150303" >
@@ -195,6 +207,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="โพธิ์ทอง" english="Pho Thong" geocode="1504" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.6670</geo:lat>
+        <geo:long>100.4081</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="อ่างแก้ว" english="Ang Kaeo" geocode="150401" >
       <office type="TAOOffice">
         <url>http://www.tambonangkeaw.com/</url>
@@ -288,6 +306,12 @@
     <entity type="Tambon" name="คำหยาด" english="Kham Yat" geocode="150415" />
   </entity>
   <entity type="Amphoe" name="แสวงหา" english="Sawaeng Ha" geocode="1505" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.7514</geo:lat>
+        <geo:long>100.3248</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แสวงหา" english="Sawaeng Ha" geocode="150501" />
     <entity type="Tambon" name="ศรีพราน" english="Si Phran" geocode="150502" />
     <entity type="Tambon" name="บ้านพราน" english="Ban Phran" geocode="150503" />
@@ -463,6 +487,9 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ไชโย" english="Chaiyo" geocode="1596" parent="1502" >
+    <office type="MunicipalityOffice">
+      <url comment="Offline">http://jorakaerong.com/</url>
+    </office>
     <history>
       <rename oldname="จรเข้ร้อง" oldenglish="Chorakhe Rong" name="ไชโย" />
       <misspelling name="จระเข้ร้อง" comment="Alternative spelling used 2001-2003"/>
@@ -475,7 +502,11 @@
       <url>http://www.sawangha.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บางจัก" english="Bang Chak" geocode="1592" parent="1506" />
+  <entity type="ThesabanTambon" name="บางจัก" english="Bang Chak" geocode="1592" parent="1506" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/angthong/bangjuk/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ศาลเจ้าโรงทอง" english="San Chao Rong Thong " geocode="1591" parent="1506" >
     <office type="MunicipalityOffice">
       <url>http://www.sanjaorongthong.go.th/</url>
