@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ปัตตานี" english="Pattani" geocode="94">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>6.8677</geo:lat>
+      <geo:long>101.2501</geo:long>
+    </geo:Point>
     <url>http://www.pattani.go.th</url>
     <officials>
       <official title="Governor" name="ธีรเทพ ศรียะพันธ์" beginyear="2008"/>
@@ -9,6 +13,12 @@
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองปัตตานี" english="Mueang Pattani" geocode="9401" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>6.8687</geo:lat>
+        <geo:long>101.2500</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สะบารัง" english="Sabarang" geocode="940101" />
     <entity type="Tambon" name="อาเนาะรู" english="Anoru" geocode="940102" />
     <entity type="Tambon" name="จะบังติกอ" english="Chabang Tiko" geocode="940103" />
@@ -87,6 +97,12 @@
     <entity type="Tambon" name="ช้างให้ตก" english="Chang Hai Tok" geocode="940215" />
   </entity>
   <entity type="Amphoe" name="หนองจิก" english="Nong Chik" geocode="9403" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>6.8444</geo:lat>
+        <geo:long>101.1787</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เกาะเปาะ" english="Ko Po" geocode="940301" />
     <entity type="Tambon" name="คอลอตันหยง" english="Kholo Tanyong" geocode="940302" />
     <entity type="Tambon" name="ดอนรัก" english="Don Rak" geocode="940303" />
@@ -189,6 +205,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ยะหริ่ง" english="Yaring" geocode="9409" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>6.8664</geo:lat>
+        <geo:long>101.3692</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ตะโละ" english="Talo" geocode="940901" />
     <entity type="Tambon" name="ตะโละกาโปร์" english="Talo Kapo" geocode="940902" />
     <entity type="Tambon" name="ตันหยงดาลอ" english="Tanyong Talo" geocode="940903" />
@@ -237,7 +259,15 @@
     <entity type="Tambon" name="ป่าไร่" english="Pa Rai" geocode="941203" />
   </entity>
 
-  <entity type="ThesabanMueang" name="ปัตตานี" english="Pattani" geocode="9499" parent="9401" />
+  <entity type="ThesabanMueang" name="ปัตตานี" english="Pattani" geocode="9499" parent="9401" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>6.8663</geo:lat>
+        <geo:long>101.2509</geo:long>
+      </geo:Point>
+      <url>http://www.pattanicity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ตะลุบัน" english="Taluban" geocode="9498" parent="9407" >
     <office type="MunicipalityOffice">
       <url>http://www.talubun.go.th/</url>
