@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ชลบุรี" english="Chon Buri" geocode="20">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>13.3620</geo:lat>
+      <geo:long>100.9834</geo:long>
+    </geo:Point>
     <url>http://www.chonburi.go.th/</url>
     <officials>
       <official title="Governor" name="เสนีย์ จิตตเกษม" begin="2009-05-06"/>
@@ -9,7 +13,16 @@
       <official title="Governor" name="พิสิฐ เกตุผาสุข" begin="2003-10-01" end="2006-10-01"/>
     </officials>
   </office>
+  <office type="PAOOffice">
+    <url>http://www.chon.go.th/</url>
+  </office>
   <entity type="Amphoe" name="เมืองชลบุรี" english="Mueang Chon Buri" geocode="2001" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.3618</geo:lat>
+        <geo:long>100.9799</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บางปลาสร้อย" english="Bang Pla Soi" geocode="200101" />
     <entity type="Tambon" name="มะขามหย่ง" english="Makham Yong" geocode="200102" />
     <entity type="Tambon" name="บ้านโขด" english="Ban Khot" geocode="200103" />
@@ -43,6 +56,12 @@
     <entity type="ThesabanMueang" name="ชลบุรี" english="Chon Buri" geocode="200199" />
   </entity>
   <entity type="Amphoe" name="บ้านบึง" english="Ban Bueng" geocode="2002" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.3114</geo:lat>
+        <geo:long>101.1122</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านบึง" english="Ban Bueng" geocode="200201" />
     <entity type="Tambon" name="คลองกิ่ว" english="Khlong Kio" geocode="200202" >
       <office type="TAOOffice">
@@ -70,6 +89,12 @@
     <entity type="Unknown" name="หนองใหญ่" english="Nong Yai" geocode="200299" newgeocode="200301" />
   </entity>
   <entity type="Amphoe" name="หนองใหญ่" english="Nong Yai" geocode="2003" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.1565</geo:lat>
+        <geo:long>101.3663</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หนองใหญ่" english="Nong Yai" geocode="200301" />
     <entity type="Tambon" name="คลองพลู" english="Khlong Phlu" geocode="200302" >
       <office type="TAOOffice">
@@ -132,6 +157,12 @@
     <entity type="Tambon" name="นาเกลือ" english="Na Kluea" geocode="200408" />
   </entity>
   <entity type="Amphoe" name="พานทอง" english="Phan Thong" geocode="2005" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.4707</geo:lat>
+        <geo:long>101.0968</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="พานทอง" english="Phan Thong" geocode="200501" />
     <entity type="Tambon" name="หนองตำลึง" english="Nong Tamlueng" geocode="200502" />
     <entity type="Tambon" name="มาบโป่ง" english="Map Pong" geocode="200503" />
@@ -149,6 +180,12 @@
     <entity type="Tambon" name="บางหัก" english="Bang Hak" geocode="200511" />
   </entity>
   <entity type="Amphoe" name="พนัสนิคม" english="Phanat Nikhom" geocode="2006" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.4521</geo:lat>
+        <geo:long>101.1773</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="พนัสนิคม" english="Phanat Nikhom" geocode="200601" />
     <entity type="Tambon" name="หน้าพระธาตุ" english="Na Phrathat" geocode="200602" />
     <entity type="Tambon" name="วัดหลวง" english="Wat Luang" geocode="200603" />
@@ -297,6 +334,12 @@
     <entity type="Unknown" name="บ่อทอง" english="Bo Thong" geocode="200699" newgeocode="201001" />
   </entity>
   <entity type="Amphoe" name="ศรีราชา" english="Si Racha" geocode="2007" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.1745</geo:lat>
+        <geo:long>100.9309</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ศรีราชา" english="Si Racha" geocode="200701" />
     <entity type="Tambon" name="สุรศักดิ์" english="Surasak" geocode="200702" />
     <entity type="Tambon" name="ทุ่งสุขลา" english="Thung Sukhla" geocode="200703" />
@@ -319,9 +362,18 @@
     <entity type="Unknown" name="ท่าเทววงษ์" english="Tha Thewawong" geocode="200799" newgeocode="200801" />
   </entity>
   <entity type="Amphoe" name="เกาะสีชัง" english="Ko Sichang" geocode="2008" >
+    <office type="DistrictOffice">
+      <url>http://www.si-chang.com/</url>
+    </office>
     <entity type="Tambon" name="ท่าเทววงษ์" english="Tha Thewawong" geocode="200801" />
   </entity>
   <entity type="Amphoe" name="สัตหีบ" english="Sattahip" geocode="2009" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>12.6630</geo:lat>
+        <geo:long>100.9055</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สัตหีบ" english="Sattahip" geocode="200901" />
     <entity type="Tambon" name="นาจอมเทียน" english="Na Chom Thian" geocode="200902" />
     <entity type="Tambon" name="พลูตาหลวง" english="Phlu Ta Luang" geocode="200903" />
@@ -329,6 +381,12 @@
     <entity type="Tambon" name="แสมสาร" english="Samaesan" geocode="200905" />
   </entity>
   <entity type="Amphoe" name="บ่อทอง" english="Bo Thong" geocode="2010" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.2785</geo:lat>
+        <geo:long>101.4404</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ่อทอง" english="Bo Thong" geocode="201001" >
       <office type="TAOOffice">
         <url>http://www.botong.go.th/</url>
@@ -373,11 +431,25 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="เกาะจันทร์" english="Ko Chan" geocode="2011" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 13.4174</geo:lat>
+        <geo:long>101.3346</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เกาะจันทร์" english="Ko Chan" geocode="201101" />
     <entity type="Tambon" name="ท่าบุญมี" english="Tha Bun Mi" geocode="201102" />
   </entity>
 
-  <entity type="ThesabanMueang" name="ชลบุรี" english="Chonburi" geocode="2099" parent="2001" />
+  <entity type="ThesabanMueang" name="ชลบุรี" english="Chonburi" geocode="2099" parent="2001" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.3610</geo:lat>
+        <geo:long>100.9854</geo:long>
+      </geo:Point>
+      <url>http://www.chonburicity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="พนัสนิคม" english="Phanat Nikhom" geocode="2098" parent="2006" />
   <entity type="ThesabanMueang" name="ศรีราชา" english="Si Racha" geocode="2097" parent="2007" >
     <office type="MunicipalityOffice">
@@ -439,8 +511,8 @@
   <entity type="ThesabanTambon" name="สัตหีบ" english="Sattahip" geocode="2076" parent="2009" >
     <office type="MunicipalityOffice">
       <geo:Point>
-        <geo:lat>13.0864</geo:lat>
-        <geo:long>100.925</geo:long>
+        <geo:lat>12.7236</geo:lat>
+        <geo:long>100.8869</geo:long>
       </geo:Point>
       <url>http://www.sattahip.net/</url>
     </office>

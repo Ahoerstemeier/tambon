@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ชัยภูมิ" english="Chaiyaphum" geocode="36">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>15.8081</geo:lat>
+      <geo:long>102.0329</geo:long>
+    </geo:Point>
     <url>http://www.chaiyaphum.go.th/</url>
     <officials source="http://www.chaiyaphum.go.th/chaiyaphumdata/president.html">
       <official title="Governor" index="60" name="วันชัย สุทธิวรชัย" begin="2009-10-01"/>
@@ -66,6 +70,12 @@
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองชัยภูมิ" english="Mueang Chaiyaphum" geocode="3601" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.8100</geo:lat>
+        <geo:long>102.0202</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="360101" />
     <entity type="Tambon" name="รอบเมือง" english="Rop Mueang" geocode="360102" />
     <entity type="Tambon" name="โพนทอง" english="Phon Thong" geocode="360103" >
@@ -181,6 +191,12 @@
     <entity type="Unknown" name="บ้านเจียง" english="Ban Chiang" geocode="360199" newgeocode="361401" />
   </entity>
   <entity type="Amphoe" name="บ้านเขว้า" english="Ban Khwao" geocode="3602" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.7782</geo:lat>
+        <geo:long>101.9070</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านเขว้า" english="Ban Khwao" geocode="360201" >
       <entity type="Muban" geocode="36020105" name="บ้านโนนตาด"/>
 
@@ -321,6 +337,12 @@
     <entity type="Unknown" name="บ้านเจียง" english="Ban Chiang" geocode="360599" newgeocode="361401" />
   </entity>
   <entity type="Amphoe" name="จัตุรัส" english="Chatturat" geocode="3606" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.5656</geo:lat>
+        <geo:long>101.8455</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านกอก" english="Ban Kok" geocode="360601" >
       <office type="TAOOffice">
         <url>http://www.baankok.go.th/</url>
@@ -560,6 +582,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="บ้านแท่น" english="Ban Thaen" geocode="3611" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.4050</geo:lat>
+        <geo:long>102.3421</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านแท่น" english="Ban Thaen" geocode="361101" >
       <office type="TAOOffice">
         <url>http://abo-banthaen.com/</url>
@@ -603,6 +631,12 @@
     <entity type="Tambon" name="หนองไผ่" english="Nong Phai" geocode="361210" />
   </entity>
   <entity type="Amphoe" name="คอนสาร" english="Khon San" geocode="3613" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.6134</geo:lat>
+        <geo:long>101.9199</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="คอนสาร" english="Khon San" geocode="361301" >
       <entity type="Muban" geocode="36130105" name="บ้านคลองบอน"/>
 
@@ -656,6 +690,12 @@
     <entity type="Tambon" name="แหลมทอง" english="Laem Thong" geocode="361404" />
   </entity>
   <entity type="Amphoe" name="เนินสง่า" english="Noen Sa-nga" geocode="3615" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.5641</geo:lat>
+        <geo:long>102.0016</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หนองฉิม" english="Nong Chim" geocode="361501" >
       <entity type="Muban" geocode="36150102" name="บ้านโสกคร้อ"/>
 
@@ -716,7 +756,11 @@
   <entity type="ThesabanTambon" name="บำเหน็จณรงค์" english="Bamnet Narong" geocode="3688" parent="3607" />
   <entity type="ThesabanTambon" name="หนองบัวระเหว" english="Nong Bua Rawe" geocode="3687" parent="3608" />
   <entity type="ThesabanTambon" name="เทพสถิต" english="Thep Sathit" geocode="3686" parent="3609" />
-  <entity type="ThesabanTambon" name="บ้านเพชรภูเขียว" english="Ban Phet Phu Khiao" geocode="3685" parent="3610" />
+  <entity type="ThesabanTambon" name="บ้านเพชรภูเขียว" english="Ban Phet Phu Khiao" geocode="3685" parent="3610" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banphetphukhieo.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ผักปัง" english="Phak Pang" geocode="3684" parent="3610" />
   <entity type="ThesabanTambon" name="บ้านแท่น" english="Ban Thaen" geocode="3683" parent="3611" />
   <entity type="ThesabanTambon" name="นาหนองทุ่ม" english="Na Nong Thum" geocode="3682" parent="3612" />
