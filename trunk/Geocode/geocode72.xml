@@ -448,7 +448,13 @@
     </entity>
     <entity type="Tambon" name="ไร่รถ" english="Rai Rot" geocode="720603" >
       <office type="TAOOffice">
-        <!-- 47P X = 607117 Y = 1612915 -->
+        <geo:Point>
+          <geo:lat>14.5902</geo:lat>
+          <geo:long>99.9916</geo:long>
+        </geo:Point>
+        <url>http://www.rairot.go.th/</url>
+        <!-- 47P X = 607117 Y = 1612915 (website) -->
+        <!-- 47P     606770     1613250 (real) -->
       </office>
       <entity type="Muban" geocode="72060301" name="บ้านไร่รถ"/>
       <entity type="Muban" geocode="72060302" name="บ้านหนองนา"/>
@@ -512,8 +518,16 @@
     <entity type="Tambon" name="หัวโพธิ์" english="Hua Pho" geocode="720706" />
     <entity type="Tambon" name="บางพลับ" english="Bang Phlap" geocode="720707" />
     <entity type="Tambon" name="เนินพระปรางค์" english="Noen Phra Prang" geocode="720708" />
-    <entity type="Tambon" name="บ้านช้าง" english="Ban Chang" geocode="720709" />
-    <entity type="Tambon" name="ต้นตาล" english="Ton Tan" geocode="720710" />
+    <entity type="Tambon" name="บ้านช้าง" english="Ban Chang" geocode="720709" >
+      <office type="MunicipalityOffice">
+        <url>http://www.banchang.go.th/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ต้นตาล" english="Ton Tan" geocode="720710" >
+      <office type="TAOOffice">
+        <url>http://tontan-suphan.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ศรีสำราญ" english="Si Samran" geocode="720711" >
       <office type="TAOOffice">
         <url>http://www.srisumran.go.th/</url>
@@ -533,7 +547,27 @@
       <entity type="Muban" geocode="72071113" name="บ้านหนองโพธิ์"/>
       <entity type="Muban" geocode="72071114" name="บ้านไผ่ขาด"/>
     </entity>
-    <entity type="Tambon" name="ทุ่งคอก" english="Thung Khok" geocode="720712" />
+    <entity type="Tambon" name="ทุ่งคอก" english="Thung Khok" geocode="720712" >
+      <office type="TAOOffice">
+        <url>http://www.thungkhok.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="72071201" name="บ้านบัวขาว"/>
+      <entity type="Muban" geocode="72071202" name="บ้านเทพพิทักษ์"/>
+      <entity type="Muban" geocode="72071203" name="บ้านหนองวัลย์เปรียง"/>
+      <entity type="Muban" geocode="72071204" name="บ้านดอนกอก"/>
+      <entity type="Muban" geocode="72071205" name="บ้านหนองหมัน"/>
+      <entity type="Muban" geocode="72071206" name="บ้านโป่ง"/>
+      <entity type="Muban" geocode="72071207" name="บ้านทับเสนารักษ์"/>
+      <entity type="Muban" geocode="72071208" name="บ้านวังตะกู"/>
+      <entity type="Muban" geocode="72071209" name="บ้านลองตอง"/>
+      <entity type="Muban" geocode="72071210" name="บ้านทุ่งคอก"/>
+      <entity type="Muban" geocode="72071211" name="บ้านปากคอก"/>
+      <entity type="Muban" geocode="72071212" name="บ้านทุ่งเข็น"/>
+      <entity type="Muban" geocode="72071212" name="บ้านรางเทียน"/>
+      <entity type="Muban" geocode="72071214" name="บ้านโป่งตะไล้"/>
+      <entity type="Muban" geocode="72071215" name="บ้านทุ่งเจริญ"/>
+      <entity type="Muban" geocode="72071216" name="บ้านหนองกระทุ่ม"/>
+    </entity>
     <entity type="Tambon" name="หนองบ่อ" english="Nong Bo" geocode="720713" />
     <entity type="Tambon" name="บ่อสุพรรณ" english="Bo Suphan" geocode="720714" />
     <entity type="Tambon" name="ดอนมะนาว" english="Don Manao" geocode="720715" />

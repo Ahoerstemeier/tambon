@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นนทบุรี" english="Nonthaburi" geocode="12" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>13.8626</geo:lat>
+      <geo:long>100.5145</geo:long>
+    </geo:Point>
     <url>http://www.nonthaburi.go.th/</url>
     <officials source="http://203.151.46.31/Chocolate/Program45/A050201.php?id_topic=A0501">
       <official title="Governor" index="33" name="วิเชียร พุฒิวิญญู" begin="2009-10-01"/>
@@ -38,7 +42,19 @@
       <official title="Governor" index="1" name="มหาอำมาตย์ตรี นายพันตรีพระยาไกรโกษา (ทัด สิงหเสนี)"/>
     </officials>
   </office>
+  <office type="PAOOffice">
+    <geo:Point>
+      <geo:lat>13.8627</geo:lat>
+      <geo:long>100.5135</geo:long>
+    </geo:Point>
+  </office>
   <entity type="Amphoe" name="เมืองนนทบุรี" english="Mueang Nonthaburi" geocode="1201" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.8623</geo:lat>
+        <geo:long>100.5135</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สวนใหญ่" english="Suan Yai" geocode="120101" />
     <entity type="Tambon" name="ตลาดขวัญ" english="Talat Khwan" geocode="120102" />
     <entity type="Tambon" name="บางเขน" english="Bang Khen" geocode="120103" />
@@ -216,7 +232,15 @@
     <entity type="Tambon" name="คลองเกลือ" english="Khlong Kluea" geocode="120612" />
   </entity>
 
-  <entity type="ThesabanNakhon" name="นนทบุรี" english="Nonthaburi" geocode="1299" parent="1201" />
+  <entity type="ThesabanNakhon" name="นนทบุรี" english="Nonthaburi" geocode="1299" parent="1201" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.8612</geo:lat>
+        <geo:long>100.5135</geo:long>
+      </geo:Point>
+      <url>http://www.nakornnont.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="บางบัวทอง" english="Bang Bua Thong" geocode="1298" parent="1204" />
   <entity type="ThesabanNakhon" name="ปากเกร็ด" english="Pak Kret" geocode="1297" parent="1206" />
   <entity type="ThesabanTambon" name="บางกรวย" english="Bang Kruai" geocode="1296" parent="1202" />
