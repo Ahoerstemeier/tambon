@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เชียงราย" english="Chiang Rai" geocode="57" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>19.9135</geo:lat>
+      <geo:long>99.8269</geo:long>
+    </geo:Point>
     <url>http://www.chiangrai.go.th/</url>
     <officials source="http://www.chiangrai.net/CPOC/2009/Articles/viewArticle.aspx?A=9">
       <official title="Governor" name="สุเมธ แสงนิ่มนวล" begin="2009-03-01"/>
@@ -52,7 +56,20 @@
       <official title="Governor" name="เจ้าหลวงธรรมลังกา" beginyear="1843" endyear="1864"/>
     </officials>
   </office>
+  <office type="PAOOffice">
+    <geo:Point>
+      <geo:lat>19.9122</geo:lat>
+      <geo:long>99.8318</geo:long>
+    </geo:Point>
+    <url>http://pao.chiangrai.net/</url>
+  </office>
   <entity type="Amphoe" name="เมืองเชียงราย" english="Mueang Chiang Rai" geocode="5701" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.9085</geo:lat>
+        <geo:long>99.8325</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="570101" />
     <entity type="Tambon" name="รอบเวียง" english="Rop Wiang" geocode="570102" >
       <office type="TAOOffice">
@@ -208,6 +225,12 @@
     <entity type="Unknown" name="ทุ่งก่อ" english="Thung Ko" geocode="570199" newgeocode="571701" />
   </entity>
   <entity type="Amphoe" name="เวียงชัย" english="Wiang Chai" geocode="5702" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.8832</geo:lat>
+        <geo:long>99.9329</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ทุ่งก่อ" english="Thung Ko" geocode="570201" newgeocode="571701" />
     <entity type="Tambon" name="เวียงชัย" english="Wiang Chai" geocode="570202" >
       <entity type="Muban" geocode="57020204" name="บ้านด้าย"/>
@@ -251,6 +274,12 @@
     <entity type="Tambon" name="เมืองชุม" english="Mueang Chum" geocode="570208" />
   </entity>
   <entity type="Amphoe" name="เชียงของ" english="Chiang Khong" geocode="5703" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>20.2613</geo:lat>
+        <geo:long>100.4060</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="570301" />
     <entity type="Tambon" name="สถาน" english="Sathan" geocode="570302" >
       <office type="TAOOffice">
@@ -300,7 +329,7 @@
   <entity type="Amphoe" name="เทิง" english="Thoeng" geocode="5704" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat>19.6854</geo:lat>
+        <geo:lat>19.6855</geo:lat>
         <geo:long>100.1934</geo:long>
       </geo:Point>
     </office>
@@ -395,6 +424,12 @@
     <entity type="Unknown" name="ป่าตาล" english="Pa Tan" geocode="570499" newgeocode="571402" />
   </entity>
   <entity type="Amphoe" name="พาน" english="Phan" geocode="5705" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.5538</geo:lat>
+        <geo:long>99.7406</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สันมะเค็ด" english="San Makhet" geocode="570501" />
     <entity type="Tambon" name="แม่อ้อ" english="Mae O" geocode="570502" >
       <office type="TAOOffice">
@@ -503,6 +538,12 @@
     <entity type="Unknown" name="ป่าแดด" english="Pa Daet" geocode="570599" newgeocode="570601" />
   </entity>
   <entity type="Amphoe" name="ป่าแดด" english="Pa Daet" geocode="5706" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.5042</geo:lat>
+        <geo:long>99.9930</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ป่าแดด" english="Pa Daet" geocode="570601" />
     <entity type="Tambon" name="ป่าแงะ" english="Pa Ngae" geocode="570602" />
     <entity type="Tambon" name="สันมะค่า" english="San Makha" geocode="570603" />
@@ -511,6 +552,12 @@
     <entity type="Tambon" name="57060900" english="???" geocode="570609" obsolete="1" comment="Abolished Tambon?"/>
   </entity>
   <entity type="Amphoe" name="แม่จัน" english="Mae Chan" geocode="5707" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>20.1463</geo:lat>
+        <geo:long>99.8525</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แม่จัน" english="Mae Chan" geocode="570701" >
       <entity type="Muban" geocode="57070110" name="บ้านห้วยโจ้-จอป่าคา"/>
 
@@ -635,6 +682,12 @@
     <entity type="Tambon" name="โชคชัย" english="Chok Chai" geocode="570717" newgeocode="571802" />
   </entity>
   <entity type="Amphoe" name="เชียงแสน" english="Chiang Saen" geocode="5708" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>20.2751</geo:lat>
+        <geo:long>100.0877</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="570801" />
     <entity type="Tambon" name="ป่าสัก" english="Pa Sak" geocode="570802" >
       <office type="TAOOffice">
@@ -684,6 +737,12 @@
     <entity type="Tambon" name="โยนก" english="Yonok" geocode="570806" />
   </entity>
   <entity type="Amphoe" name="แม่สาย" english="Mae Sai" geocode="5709" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>20.4281</geo:lat>
+        <geo:long>99.8832</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แม่สาย" english="Mae Sai" geocode="570901" />
     <entity type="Tambon" name="ห้วยไคร้" english="Huai Khrai" geocode="570902" >
       <office type="TAOOffice">
@@ -729,6 +788,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="แม่สรวย" english="Mae Suai" geocode="5710" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.6564</geo:lat>
+        <geo:long>99.5426</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แม่สรวย" english="Mae Suai" geocode="571001" >
       <office type="TAOOffice">
         <url>http://www.maesuai.com/</url>
@@ -903,6 +968,12 @@
     <entity type="Tambon" name="เวียงกาหลง" english="Wiang Kalong" geocode="571108" obsolete="1" comment="Abolished Tambon?"/>
   </entity>
   <entity type="Amphoe" name="พญาเม็งราย" english="Phaya Mengrai" geocode="5712" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.8488</geo:lat>
+        <geo:long>100.1536</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แม่เปา" english="Mae Pao" geocode="571201" >
       <entity type="Muban" geocode="57120102" name="บ้านสบเปา"/>
 
@@ -932,6 +1003,12 @@
     <entity type="Tambon" name="ตาดควัน" english="Tat Khwan" geocode="571205" />
   </entity>
   <entity type="Amphoe" name="เวียงแก่น" english="Wiang Kaen" geocode="5713" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>20.1124</geo:lat>
+        <geo:long>100.5135</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ม่วงยาย" english="Muang Yai" geocode="571301" >
       <office type="TAOOffice">
         <url>http://www.padai.org/</url>
@@ -971,6 +1048,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="แม่ฟ้าหลวง" english="Mae Fa Luang" geocode="5715" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>20.2670</geo:lat>
+        <geo:long>99.8012</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เทอดไทย" english="Thoet Thai" geocode="571501" >
       <office type="TAOOffice">
         <url>http://www.therdthai.com/</url>
@@ -1019,6 +1102,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="แม่ลาว" english="Mae Lao" geocode="5716" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>19.7899</geo:lat>
+        <geo:long>99.6997</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ดงมะดะ" english="Dong Mada" geocode="571601" >
       <office type="TAOOffice">
         <url>http://www.dongmada.com/</url>
@@ -1062,6 +1151,12 @@
     <entity type="Tambon" name="โป่งแพร่" english="Pong Phrae" geocode="571605" />
   </entity>
   <entity type="Amphoe" name="เวียงเชียงรุ้ง" english="Wiang Chiang Rung" geocode="5717" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>20.0130</geo:lat>
+        <geo:long>100.0570</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ทุ่งก่อ" english="Thung Ko" geocode="571701" >
       <office type="TAOOffice">
         <url>http://www.thungkor.com/</url>
@@ -1086,6 +1181,12 @@
     <entity type="Tambon" name="ป่าซาง" english="Pa Sang" geocode="571703" />
   </entity>
   <entity type="Amphoe" name="ดอยหลวง" english="Doi Luang" geocode="5718" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>20.1182</geo:lat>
+        <geo:long>100.0993</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ปงน้อย" english="Pong Noi" geocode="571801" >
       <office type="TAOOffice">
         <url>http://www.pongnoi.com/</url>
@@ -1132,7 +1233,15 @@
   <entity type="KingAmphoe" name="วาวี" english="Wa Wi" geocode="5723" obsolete="1" comment="Proposed, but never created"/>
   <entity type="KingAmphoe" name="แม่ขะจาน" english="Mae Kha Chan" obsolete="1" geocode="5724" comment="Proposed, but never created"/>
 
-  <entity type="ThesabanMueang" name="เชียงราย" english="Chiang Rai" geocode="5799" parent="5701" />
+  <entity type="ThesabanMueang" name="เชียงราย" english="Chiang Rai" geocode="5799" parent="5701" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>19.9093</geo:lat>
+        <geo:long>99.8279</geo:long>
+      </geo:Point>
+      <url>http://www.chiangraicity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เวียงชัย" english="Wiang Chai" geocode="5798" parent="5702" />
   <entity type="ThesabanTambon" name="บุญเรือง" english="Bun Rueang" geocode="5797" parent="5703" />
   <entity type="ThesabanTambon" name="เวียงเชียงของ" english="Wiang Chiang Khong" geocode="5796" parent="5703" />
@@ -1148,6 +1257,10 @@
   <entity type="ThesabanTambon" name="เวียงเชียงแสน" english="Wiang Chiang Saen" geocode="5786" parent="5708" />
   <entity type="ThesabanTambon" name="แม่สาย" english="Mae Sai" geocode="5785" parent="5709" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>20.4266</geo:lat>
+        <geo:long>99.8841</geo:long>
+      </geo:Point>
       <url>http://www.maesai.go.th/</url>
     </office>
   </entity>
