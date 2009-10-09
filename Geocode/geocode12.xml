@@ -84,6 +84,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="บางกรวย" english="Bang Kruai" geocode="1202" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.8052</geo:lat>
+        <geo:long>100.4727</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="วัดชลอ" english="Wat Chalo" geocode="120201" />
     <entity type="Tambon" name="บางกรวย" english="Bang Kruai" geocode="120202" />
     <entity type="Tambon" name="บางสีทอง" english="Bang Si Thong" geocode="120203" />
@@ -110,6 +116,12 @@
     <entity type="Tambon" name="ศาลากลาง" english="Sala Klang" geocode="120209" />
   </entity>
   <entity type="Amphoe" name="บางใหญ่" english="Bang Yai" geocode="1203" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.8765</geo:lat>
+        <geo:long>100.4042</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บางม่วง" english="Bang Muang" geocode="120301" >
       <entity type="Muban" geocode="12030106" name="บ้านบางโสนพัฒนา"/>
 
@@ -142,6 +154,12 @@
     <entity type="Tambon" name="บ้านใหม่" english="Ban Mai" geocode="120306" />
   </entity>
   <entity type="Amphoe" name="บางบัวทอง" english="Bang Bua Thong" geocode="1204" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.9686</geo:lat>
+        <geo:long>100.4056</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="โสนลอย" english="Sano Loi" geocode="120401" />
     <entity type="Tambon" name="บางบัวทอง" english="Bang Bua Thong" geocode="120402" />
     <entity type="Tambon" name="บางรักใหญ่" english="Bang Rak Yai" geocode="120403" />
@@ -170,6 +188,12 @@
     <entity type="Tambon" name="บางรักพัฒนา" english="Bang Rak Phatthana" geocode="120408" />
   </entity>
   <entity type="Amphoe" name="ไทรน้อย" english="Sai Noi" geocode="1205" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.9789</geo:lat>
+        <geo:long>100.3136</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ไทรน้อย" english="Sai Noi" geocode="120501" >
       <entity type="Muban" geocode="12050101" name="บ้านไทรน้อย"/>
 
@@ -209,6 +233,12 @@
     <entity type="Tambon" name="ทวีวัฒนา" english="Thawi Watthana" geocode="120507" />
   </entity>
   <entity type="Amphoe" name="ปากเกร็ด" english="Pak Kret" geocode="1206" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>13.9125</geo:lat>
+        <geo:long>100.4983</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ปากเกร็ด" english="Pak Kret" geocode="120601" />
     <entity type="Tambon" name="บางตลาด" english="Bang Talat" geocode="120602" />
     <entity type="Tambon" name="บ้านใหม่" english="Ban Mai" geocode="120603" />
@@ -257,7 +287,15 @@
     </office>
   </entity>
   <entity type="ThesabanMueang" name="บางบัวทอง" english="Bang Bua Thong" geocode="1298" parent="1204" />
-  <entity type="ThesabanNakhon" name="ปากเกร็ด" english="Pak Kret" geocode="1297" parent="1206" />
+  <entity type="ThesabanNakhon" name="ปากเกร็ด" english="Pak Kret" geocode="1297" parent="1206" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.9123</geo:lat>
+        <geo:long>100.4979</geo:long>
+      </geo:Point>
+      <url>http://www.pakkretcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางกรวย" english="Bang Kruai" geocode="1296" parent="1202" />
   <entity type="ThesabanTambon" name="บางศรีเมือง" english="Bang Si Mueang" geocode="1295" parent="1201" />
   <entity type="ThesabanTambon" name="ปลายบาง" english="Plai Bang" geocode="1294" parent="1202" />
