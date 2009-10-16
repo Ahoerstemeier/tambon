@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เพชรบูรณ์" english="Phetchabun" geocode="67" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>16.4192</geo:lat>
+      <geo:long>101.1597</geo:long>
+    </geo:Point>
     <url>http://www.phetchabun.go.th/</url>
     <officials source="http://www.phetchabun.go.th/history/history06.php">
       <official title="Governor" index="39" name="ธวัชชัย เทอดเผ่าไทย" begin="2009-10-01"/>
@@ -45,9 +49,15 @@
     </officials>
   </office>
   <office type="PAOOffice">
-    <url>http://www.phetchabunpao.go.th</url>
+    <url>http://www.phetchabunpao.go.th/</url>
   </office>
   <entity type="Amphoe" name="เมืองเพชรบูรณ์" english="Mueang Phetchabun" geocode="6701" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 16.4430</geo:lat>
+        <geo:long>101.1493</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="670101" />
     <entity type="Tambon" name="ตะเบาะ" english="Tabo" geocode="670102" >
       <entity type="Muban" geocode="67010205" name="บ้านห้วยไคร้"/>
@@ -62,7 +72,15 @@
         <url>http://www.bantok.ob.tc/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="สะเดียง" english="Sadiang" geocode="670104" />
+    <entity type="Tambon" name="สะเดียง" english="Sadiang" geocode="670104" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>16.4409</geo:lat>
+          <geo:long>101.1509</geo:long>
+        </geo:Point>
+        <url>http://www.sadieng.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ป่าเลา" english="Pa Lao" geocode="670105" >
       <office type="TAOOffice">
         <url>http://www.palao-admin.com/</url>
@@ -76,11 +94,22 @@
     <entity type="Tambon" name="นางั่ว" english="Na Ngua" geocode="670106" >
       <entity type="Muban" geocode="67010601" name="บ้านสำนักหมัน"/>
       <entity type="Muban" geocode="67010602" name="บ้านนางั่ว"/>
-
+      <entity type="Muban" geocode="67010603" name="บ้านนางั่ว"/>
+      <entity type="Muban" geocode="67010604" name="บ้านนางั่ว"/>
+      <entity type="Muban" geocode="67010605" name="บ้านนางั่ว"/>
+      <entity type="Muban" geocode="67010606" name="บ้านนา"/>
+      <entity type="Muban" geocode="67010607" name="บ้านคลองสาร"/>
+      <entity type="Muban" geocode="67010608" name="บ้านนางั่ว"/>
+      <entity type="Muban" geocode="67010609" name="บ้านนางั่ว"/>
+      <entity type="Muban" geocode="67010610" name="บ้านนา"/>
+      <entity type="Muban" geocode="67010611" name="บ้านนางั่ว"/>
       <entity type="Muban" geocode="67010612" name="บ้านคลองแคพัฒนา"/>
       <entity type="Muban" geocode="67010613" name="บ้านนางั่วพัฒนา"/>
     </entity>
     <entity type="Tambon" name="ท่าพล" english="Tha Phon" geocode="670107" >
+      <office type="TAOOffice">
+        <url>http://www.thaphon.com/</url>
+      </office>
       <entity type="Muban" geocode="67010703" name="บ้านโพธิ์ทอง"/>
 
       <entity type="Muban" geocode="67010707" name="บ้านอมกง"/>
@@ -91,7 +120,22 @@
       <entity type="Muban" geocode="67010720" name="บ้านอมกงพัฒนา"/>
       <entity type="Muban" geocode="67010721" name="บ้านตะเคียนเงิน"/>
     </entity>
-    <entity type="Tambon" name="ดงมูลเหล็ก" english="Dong Mun Lek" geocode="670108" />
+    <entity type="Tambon" name="ดงมูลเหล็ก" english="Dong Mun Lek" geocode="670108" >
+      <office type="TAOOffice">
+        <url>http://www.dongmoonlaek.net/</url>
+      </office>
+      <entity type="Muban" geocode="67010801" name="บ้านดงมูลเหล็ก"/>
+      <entity type="Muban" geocode="67010802" name="บ้านดงมูลเหล็ก"/>
+      <entity type="Muban" geocode="67010803" name="บ้านคลองบง"/>
+      <entity type="Muban" geocode="67010804" name="บ้านดงมูลเหล็ก"/>
+      <entity type="Muban" geocode="67010805" name="บ้านโนนตะแบก"/>
+      <entity type="Muban" geocode="67010806" name="บ้านท่ากกตาล"/>
+      <entity type="Muban" geocode="67010807" name="บ้านลำป่าสักมูล"/>
+      <entity type="Muban" geocode="67010808" name="บ้านโนนสะอาด"/>
+      <entity type="Muban" geocode="67010809" name="บ้านลำป่าสักเหนือ"/>
+      <entity type="Muban" geocode="67010810" name="บ้านลำป่าสัก"/>
+      <entity type="Muban" geocode="67010811" name="บ้านท่ากกตาล"/>
+    </entity>
     <entity type="Tambon" name="บ้านโคก" english="Ban Khok" geocode="670109" >
       <office type="TAOOffice">
         <url>http://www.bankhog.com/</url>
@@ -113,8 +157,15 @@
       <entity type="Muban" geocode="67010915" name="บ้านโป่งตาโป้"/>
       <entity type="Muban" geocode="67010916" name="บ้านน้ำอ้อมเหนือ"/>
     </entity>
-    <entity type="Tambon" name="ชอนไพร" english="Chon Phrai" geocode="670110" />
+    <entity type="Tambon" name="ชอนไพร" english="Chon Phrai" geocode="670110" >
+      <office type="TAOOffice">
+        <url>http://www.chonprai.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="นาป่า" english="Na Pa" geocode="670111" >
+      <office type="TAOOffice">
+        <url>http://www.napasao.ob.tc/</url>
+      </office>
       <entity type="Muban" geocode="67011105" name="บ้านปากน้ำ"/>
       <entity type="Muban" geocode="67011106" name="บ้านเฉลียงลับ"/>
 
@@ -122,12 +173,21 @@
       <entity type="Muban" geocode="67011117" name="บ้านปากน้ำพัฒนา"/>
     </entity>
     <entity type="Tambon" name="นายม" english="Na Yom" geocode="670112" >
+      <office type="TAOOffice">
+        <url>http://www.nayom.org/</url>
+      </office>
+      <entity type="Muban" geocode="67011201" name="บ้านหนองผักบุ้ง"/>
       <entity type="Muban" geocode="67011202" name="บ้านนายม"/>
-
+      <entity type="Muban" geocode="67011203" name="บ้านนายม"/>
+      <entity type="Muban" geocode="67011204" name="บ้านนายม"/>
       <entity type="Muban" geocode="67011205" name="บ้านหัวนา"/>
-
+      <entity type="Muban" geocode="67011206" name="บ้านขมวด"/>
       <entity type="Muban" geocode="67011207" name="บ้านวังมะช่อ"/>
-
+      <entity type="Muban" geocode="67011208" name="บ้านถ้ำน้ำบัง"/>
+      <entity type="Muban" geocode="67011209" name="บ้านน้ำโจน"/>
+      <entity type="Muban" geocode="67011210" name="บ้านท่าเมี่ยง"/>
+      <entity type="Muban" geocode="67011211" name="บ้านฟากห้วย"/>
+      <entity type="Muban" geocode="67011212" name="บ้านผาแดง"/>
       <entity type="Muban" geocode="67011213" name="บ้านหัวช้าง"/>
       <entity type="Muban" geocode="67011214" name="บ้านโคกบัวศรี"/>
       <entity type="Muban" geocode="67011215" name="บ้านหัวนา"/>
@@ -138,7 +198,7 @@
       </office>
       <entity type="Muban" geocode="67011301" name="บ้านยาวีเหนือ"/>
       <entity type="Muban" geocode="67011302" name="บ้านห้วยโป่ง"/>
-      <entity type="Muban" geocode="67011303" name="บ้านวังชมภู (อยู่เขตเทศบาล)"/>
+      <entity type="Muban" geocode="67011303" name="บ้านวังชมภู"/>
       <entity type="Muban" geocode="67011304" name="บ้านวังทอง"/>
       <entity type="Muban" geocode="67011305" name="บ้านซับข่อย"/>
       <entity type="Muban" geocode="67011306" name="บ้านหลุง"/>
@@ -160,12 +220,24 @@
       <entity type="Muban" geocode="67011411" name="บ้านซำบอน"/>
     </entity>
     <entity type="Tambon" name="ห้วยสะแก" english="Huai Sakae" geocode="670115" >
+      <office type="TAOOffice">
+        <url>http://huaysaka.com/</url>
+      </office>
+      <entity type="Muban" geocode="67011501" name="บ้านชัยมงคล"/>
+      <entity type="Muban" geocode="67011502" name="บ้านหนองแหวน"/>
+      <entity type="Muban" geocode="67011503" name="บ้านหนองหิน"/>
       <entity type="Muban" geocode="67011504" name="บ้านห้วยนาค"/>
       <entity type="Muban" geocode="67011505" name="บ้านห้วยสะแก"/>
-
-      <entity type="Muban" geocode="67011512" name="บ้านห้วยสะแกเหนือ"/>
+      <entity type="Muban" geocode="67011506" name="บ้านเนินสง่า"/>
+      <entity type="Muban" geocode="67011507" name="บ้านศรีษะเกษ"/>
+      <entity type="Muban" geocode="67011508" name="บ้านเนินสมบูรณ์"/>
+      <entity type="Muban" geocode="67011509" name="บ้านเนินสบาย"/>
+      <entity type="Muban" geocode="67011510" name="บ้านระหาร"/>
+      <entity type="Muban" geocode="67011511" name="บ้านชัยเจริญ"/>
+      <entity type="Muban" geocode="67011512" name="บ้านห้วยสะหกเหนือ"/>
+      <entity type="Muban" geocode="67011512" name="บ้านห้วยสะแกเหนือ" comment="TAO website says บ้านห้วยสะหกเหนือ"/>
       <entity type="Muban" geocode="67011513" name="บ้าน กม.๑๓"/>
-      <entity type="Muban" geocode="67011514" name="บ้านดงผักกูด"/>
+      <entity type="Muban" geocode="67011514" name="บ้านดงผักกูด" comment="TAO website says บ้านดงผักกรุด"/>
     </entity>
     <entity type="Tambon" name="ห้วยใหญ่" english="Huai Yai" geocode="670116" >
       <entity type="Muban" geocode="67011603" name="บ้านสะแกงาม"/>
@@ -173,6 +245,9 @@
       <entity type="Muban" geocode="67011612" name="บ้านป่าสัก"/>
     </entity>
     <entity type="Tambon" name="ระวิง" english="Rawing" geocode="670117" >
+      <office type="TAOOffice">
+        <url>http://rawingg.com/</url>
+      </office>
       <entity type="Muban" geocode="67011706" name="บ้านยางกุด"/>
 
       <entity type="Muban" geocode="67011710" name="บ้านยางแหลม"/>
@@ -180,6 +255,12 @@
     <entity type="Tambon" name="67012000" english="???" geocode="670120" obsolete="1" comment="Abolished Tambon?"/>
   </entity>
   <entity type="Amphoe" name="ชนแดน" english="Chon Daen" geocode="6702" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.1892</geo:lat>
+        <geo:long>100.8597</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ชนแดน" english="Chon Daen" geocode="670201" >
       <entity type="Muban" geocode="67020103" name="บ้านชนแดนใต้"/>
 
@@ -259,6 +340,12 @@
     <entity type="Unknown" name="วังโป่ง" english="Wang Pong" geocode="670299" newgeocode="671001" />
   </entity>
   <entity type="Amphoe" name="หล่มสัก" english="Lom Sak" geocode="6703" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.7796</geo:lat>
+        <geo:long>101.2419</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หล่มสัก" english="Lom Sak" geocode="670301" />
     <entity type="Tambon" name="วัดป่า" english="Wat Pa" geocode="670302" />
     <entity type="Tambon" name="ตาลเดี่ยว" english="Tan Diao" geocode="670303" />
@@ -341,6 +428,12 @@
     <entity type="Unknown" name="แคมป์สน" english="Khaem Son" geocode="670399" newgeocode="671102" />
   </entity>
   <entity type="Amphoe" name="หล่มเก่า" english="Lom Kao" geocode="6704" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.8857</geo:lat>
+        <geo:long>101.2292</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หล่มเก่า" english="Lom Kao" geocode="670401" />
     <entity type="Tambon" name="นาซำ" english="Na Sam" geocode="670402" />
     <entity type="Tambon" name="หินฮาว" english="Hin Hao" geocode="670403" />
@@ -359,6 +452,12 @@
     <entity type="Unknown" name="น้ำหนาว" english="Nam Nao" geocode="670499" newgeocode="670901" />
   </entity>
   <entity type="Amphoe" name="วิเชียรบุรี" english="Wichian Buri" geocode="6705" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.6571</geo:lat>
+        <geo:long>101.1068</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ท่าโรง" english="Tha Rong" geocode="670501" />
     <entity type="Tambon" name="สระประดู่" english="Sa Pradu" geocode="670502" />
     <entity type="Tambon" name="สามแยก" english="Sam Yaek" geocode="670503" />
@@ -424,6 +523,12 @@
     <entity type="Unknown" name="ศรีเทพ" english="Si Thep" geocode="670599" newgeocode="670601" />
   </entity>
   <entity type="Amphoe" name="ศรีเทพ" english="Si Thep" geocode="6706" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.4532</geo:lat>
+        <geo:long>101.0674</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ศรีเทพ" english="Si Thep" geocode="670601" >
       <entity type="Muban" geocode="67060106" name="บ้านบึงนาจาน"/>
 
@@ -459,6 +564,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="หนองไผ่" english="Nong Phai" geocode="6707" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.9901</geo:lat>
+        <geo:long>101.0626</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="กองทูล" english="Kong Thun" geocode="670701" />
     <entity type="Tambon" name="นาเฉลียง" english="Na Chaliang" geocode="670702" >
       <entity type="Muban" geocode="67070207" name="บ้านหนองไลย์"/>
@@ -615,10 +726,29 @@
   <entity type="KingAmphoe" name="เมืองกลาง" english="Mueang Klang" geocode="6715" obsolete="1" comment="Suggested, but not created"/>
   <!-- <entity type="KingAmphoe" name="นาตะกรุด" english="Na Ta Krut" parent="6706" comment="Suggested in 1997"/> -->
 
-  <entity type="ThesabanMueang" name="เพชรบูรณ์" english="Phetchabun" geocode="6799" parent="6701" />
+  <entity type="ThesabanMueang" name="เพชรบูรณ์" english="Phetchabun" geocode="6799" parent="6701" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.4186</geo:lat>
+        <geo:long>101.1582</geo:long>
+      </geo:Point>
+      <url>http://www.nakornban.net/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="หล่มสัก" english="Lom Sak" geocode="6798" parent="6703" />
-  <entity type="ThesabanTambon" name="ท่าพล" english="Tha Phon" geocode="6797" parent="6701" />
-  <entity type="ThesabanTambon" name="วังชมภู" english="Wang Chom Phu" geocode="6796" parent="6701" />
+  <entity type="ThesabanTambon" name="ท่าพล" english="Tha Phon" geocode="6797" parent="6701" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.5859</geo:lat>
+        <geo:long>101.1501</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="วังชมภู" english="Wang Chom Phu" geocode="6796" parent="6701" >
+    <office type="MunicipalityOffice">
+      <url>http://wangchompu-mu.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ชนแดน" english="Chon Daen" geocode="6795" parent="6702" />
   <entity type="ThesabanTambon" name="ดงขุย" english="Dong Khui" geocode="6794" parent="6702" />
   <entity type="ThesabanTambon" name="ท่าข้าม" english="Tha Kham" geocode="6793" parent="6702" />
@@ -640,7 +770,11 @@
       <rename oldname="นาเฉลียง" oldenglish="Na Chaliang" name="เฉลียงทอง"/>
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="นางั่ว" english="Na Ngua" geocode="6782" parent="6701" tambon="670106" />
+  <entity type="ThesabanTambon" name="นางั่ว" english="Na Ngua" geocode="6782" parent="6701" tambon="670106" >
+    <office type="MunicipalityOffice">
+      <url>http://www.na-ngua.net/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บ่อไทย" english="Bo Thai" geocode="6781" parent="6707" tambon="670706" />
   <entity type="ThesabanTambon" name="บัววัฒนา" english="Bua Watthana" geocode="6780" parent="6707" tambon="670709" />
   <entity type="ThesabanTambon" name="โคกสะอาด" english="Khok Sa-at" geocode="6779" parent="6706" tambon="670605" />
