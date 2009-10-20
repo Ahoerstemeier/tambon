@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ตาก" english="Tak" geocode="63" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>16.8842</geo:lat>
+      <geo:long>99.1253</geo:long>
+    </geo:Point>
     <url>http://www.tak.go.th/</url>
     <officials>
       <official title="Governor" name="สามารถ ลอยฟ้า" begin="2009-10-01"/>
@@ -11,6 +15,12 @@
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองตาก" english="Mueang Tak" geocode="6301" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.8818</geo:lat>
+        <geo:long>99.1236</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ระแหง" english="Rahaeng" geocode="630101" />
     <entity type="Tambon" name="หนองหลวง" english="Nong Luang" geocode="630102" />
     <entity type="Tambon" name="เชียงเงิน" english="Chiang Ngoen" geocode="630103" />
@@ -76,6 +86,12 @@
     <entity type="Tambon" name="ประดาง" english="Pradang" geocode="630117" newgeocode="630903" />
   </entity>
   <entity type="Amphoe" name="บ้านตาก" english="Ban Tak" geocode="6302" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 17.0434</geo:lat>
+        <geo:long> 99.0791</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ตากออก" english="Tak Ok" geocode="630201" >
       <entity type="Muban" geocode="63020106" name="บ้านตลาดตรอกซอย"/>
 
@@ -135,6 +151,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="สามเงา" english="Sam Ngao" geocode="6303" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 17.2433</geo:lat>
+        <geo:long> 99.0225</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สามเงา" english="Sam Ngao" geocode="630301" >
       <entity type="Muban" geocode="63030101" name="บ้านป่ายางใต้"/>
 
@@ -174,6 +196,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="แม่ระมาด" english="Mae Ramat" geocode="6304" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.9830</geo:lat>
+        <geo:long>98.5168</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แม่ระมาด" english="Mae Ramat" geocode="630401" />
     <entity type="Tambon" name="แม่จะเรา" english="Mae Charao" geocode="630402" />
     <entity type="Tambon" name="ขะเนจื้อ" english="Khane Chue" geocode="630403" >
@@ -218,6 +246,12 @@
     <entity type="Tambon" name="แม่อุสุ" english="Mae Usu" geocode="630506" />
   </entity>
   <entity type="Amphoe" name="แม่สอด" english="Mae Sot" geocode="6306" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.7129</geo:lat>
+        <geo:long>98.5748</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="แม่สอด" english="Mae Sot" geocode="630601" />
     <entity type="Tambon" name="แม่กุ" english="Mae Ku" geocode="630602" />
     <entity type="Tambon" name="พะวอ" english="Phawo" geocode="630603" >
@@ -330,6 +364,12 @@
     <entity type="Tambon" name="แม่กลอง" english="Mae Klong" geocode="630806" />
   </entity>
   <entity type="Amphoe" name="วังเจ้า" english="Wang Chao" geocode="6309" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 16.7041</geo:lat>
+        <geo:long> 99.2429</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เชียงทอง" english="Chiang Thong" geocode="630901" />
     <entity type="Tambon" name="นาโบสถ์" english="Na Bot" geocode="630902" >
       <entity type="Muban" geocode="63090204" name="บ้านนาโบสถ์"/>
@@ -352,7 +392,15 @@
   <!--old name of Sam Ngoen? - see http://www.policetak.com/samngo.htm -->
 
 
-  <entity type="ThesabanMueang" name="ตาก" english="Tak" geocode="6399" parent="6301" />
+  <entity type="ThesabanMueang" name="ตาก" english="Tak" geocode="6399" parent="6301" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.8710</geo:lat>
+        <geo:long>99.1251</geo:long>
+      </geo:Point>
+      <url>http://www.tessabantak.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="แม่สอด" english="Mae Sot" geocode="6398" parent="6306" >
     <office type="MunicipalityOffice">
       <url>http://www.msmun.go.th/</url>

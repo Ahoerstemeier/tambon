@@ -8,6 +8,9 @@
       <official title="Governor" name="จารึก ปริญญาพล" beginyear="2004" endyear="2007"/>
     </officials>
   </office>
+  <office type="PAOOffice">
+    <url>http://udonpao.go.th/</url>
+  </office>
   <entity type="Amphoe" name="เมืองอุดรธานี" english="Mueang Udon Thani" geocode="4101" >
     <entity type="Tambon" name="หมากแข้ง" english="Mak Khaeng" geocode="410101" />
     <entity type="Tambon" name="นิคมสงเคราะห์" english="Nikhom Songkhro" geocode="410102" >
@@ -96,8 +99,17 @@
       <entity type="Muban" geocode="41012012" name="บ้านเชียงพัง"/>
     </entity>
     <entity type="Tambon" name="หนองไผ่" english="Nong Phai" geocode="410121" >
+      <entity type="Muban" geocode="41012101" name="บ้านหนองไผ่"/>
+      <entity type="Muban" geocode="41012102" name="บ้านแม่นนท์"/>
+      <entity type="Muban" geocode="41012103" name="บ้านหนองบัวเงิน"/>
+      <entity type="Muban" geocode="41012104" name="บ้านหนองตะไก้"/>
       <entity type="Muban" geocode="41012105" name="บ้านหนองตะไก้เหนือ"/>
-
+      <entity type="Muban" geocode="41012106" name="บ้านหนองนาเจริญ"/>
+      <entity type="Muban" geocode="41012107" name="บ้านหนองตะไก้น้อย"/>
+      <entity type="Muban" geocode="41012108" name="บ้านหนองหิน"/>
+      <entity type="Muban" geocode="41012109" name="บ้านทอนกลาง"/>
+      <entity type="Muban" geocode="41012110" name="บ้านหนองบัวทอง"/>
+      <entity type="Muban" geocode="41012111" name="บ้านนาทองคำ"/>
       <entity type="Muban" geocode="41012112" name="บ้านหนองตะไก้ใต้"/>
     </entity>
 
@@ -1906,7 +1918,11 @@
     </office>
   </entity>
   <!-- not sure which Nong Phai is which... -->
-  <entity type="ThesabanTambon" name="หนองไผ่" english="Nong Phai" geocode="4168" parent="4101" tambon="410121" />
+  <entity type="ThesabanTambon" name="หนองไผ่" english="Nong Phai" geocode="4168" parent="4101" tambon="410121" >
+    <office type="MunicipalityOffice">
+      <url>http://nongpai.org/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หนองไผ่" english="Nong Phai" geocode="4167" parent="4106" tambon="410614" />
   <entity type="ThesabanTambon" name="ลำพันชาด" english="Lam Phan Chat" geocode="4166" parent="4110" tambon="411006" />
   <entity type="ThesabanTambon" name="เวียงคำ" english="Wiang Kham" geocode="4165" parent="4104" tambon="410403" />

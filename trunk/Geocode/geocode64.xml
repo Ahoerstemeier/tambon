@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="สุโขทัย" english="Sukhothai" geocode="64" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>17.0061</geo:lat>
+      <geo:long>99.8266</geo:long>
+    </geo:Point>
     <url>http://www.sukhothai.go.th/</url>
     <officials source="http://www.sukhothai.go.th/gove/gove_04.htm">
       <official title="Governor" index="38" name="นายจักริน เปลี่ยนวงษ์" begin="2009-10-01"/>
@@ -49,6 +53,12 @@
     <url>http://www.sukhothaipao.org/</url>
   </office>
   <entity type="Amphoe" name="เมืองสุโขทัย" english="Mueang Sukhothai" geocode="6401" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.0079</geo:lat>
+        <geo:long>99.8232</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ธานี" english="Thani" geocode="640101" />
     <entity type="Tambon" name="บ้านสวน" english="Ban Suan" geocode="640102" >
       <office type="TAOOffice">
@@ -56,6 +66,9 @@
       </office>
     </entity>
     <entity type="Tambon" name="เมืองเก่า" english="Mueang Kao" geocode="640103" >
+      <office type="TAOOffice">
+        <url>http://www.muangkhao.com/</url>
+      </office>
       <entity type="Muban" geocode="64010304" name="บ้านวังตะคร้อ"/>
 
       <entity type="Muban" geocode="64010311" name="บ้านวังใหม่เจริญสุข"/>
@@ -95,6 +108,12 @@
     <entity type="Tambon" name="วังทองแดง" english="Wang Thong Daeng" geocode="640110" />
   </entity>
   <entity type="Amphoe" name="บ้านด่านลานหอย" english="Ban Dan Lan Hoi" geocode="6402" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.0062</geo:lat>
+        <geo:long>99.5747</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ลานหอย" english="Lan Hoi" geocode="640201" >
       <entity type="Muban" geocode="64020105" name="บ้านหนองเฒ่า"/>
       <entity type="Muban" geocode="64020106" name="บ้านวังตะแบก"/>
@@ -130,6 +149,12 @@
     <entity type="Tambon" name="วังลึก" english="Wang Luek" geocode="640207" />
   </entity>
   <entity type="Amphoe" name="คีรีมาศ" english="Khiri Mat" geocode="6403" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>16.8333</geo:lat>
+        <geo:long>99.8018</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="โตนด" english="Tanot" geocode="640301" />
     <entity type="Tambon" name="ทุ่งหลวง" english="Thung Luang" geocode="640302" />
     <entity type="Tambon" name="บ้านป้อม" english="Ban Pom" geocode="640303" />
@@ -150,6 +175,12 @@
     <entity type="Tambon" name="ทุ่งยางเมือง" english="Thung Yang Mueang" geocode="640310" />
   </entity>
   <entity type="Amphoe" name="กงไกรลาศ" english="Kong Krailat" geocode="6404" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 16.9526</geo:lat>
+        <geo:long> 99.9759</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="กง" english="Kong" geocode="640401" />
     <entity type="Tambon" name="บ้านกร่าง" english="Ban Krang" geocode="640402" />
     <entity type="Tambon" name="ไกรนอก" english="Krai Nok" geocode="640403" />
@@ -192,6 +223,12 @@
     <entity type="Tambon" name="บ้านใหม่สุขเกษม" english="Ban Mai Suk Kasem" geocode="640411" />
   </entity>
   <entity type="Amphoe" name="ศรีสัชนาลัย" english="Si Satchanalai" geocode="6405" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.5173</geo:lat>
+        <geo:long>99.7603</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หาดเสี้ยว" english="Hat Siao" geocode="640501" />
     <entity type="Tambon" name="ป่างิ้ว" english="Pa Ngio" geocode="640502" >
       <entity type="Muban" geocode="64050204" name="บ้านวังค่า"/>
@@ -248,6 +285,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ศรีสำโรง" english="Si Samrong" geocode="6406" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.1647</geo:lat>
+        <geo:long>99.8619</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="คลองตาล" english="Khlong Tan" geocode="640601" />
     <entity type="Tambon" name="วังลึก" english="Wang Luek" geocode="640602" />
     <entity type="Tambon" name="สามเรือน" english="Sam Ruean" geocode="640603" >
@@ -293,10 +336,32 @@
     </entity>
     <entity type="Tambon" name="ทับผึ้ง" english="Thap Phueng" geocode="640610" />
     <entity type="Tambon" name="บ้านซ่าน" english="Ban San" geocode="640611" />
-    <entity type="Tambon" name="วังใหญ่" english="Wang Yai" geocode="640612" />
+    <entity type="Tambon" name="วังใหญ่" english="Wang Yai" geocode="640612" >
+      <office type="TAOOffice">
+        <url>http://www.wangyai.com/</url>
+      </office>
+      <entity type="Muban" geocode="64061201" name="บ้านวังใหญ่"/>
+      <entity type="Muban" geocode="64061202" name="บ้านวังใหญ่"/>
+      <entity type="Muban" geocode="64061203" name="บ้านวังใหญ่"/>
+      <entity type="Muban" geocode="64061204" name="บ้านเตว็ดใน"/>
+      <entity type="Muban" geocode="64061205" name="บ้านโคกกะทือ"/>
+      <entity type="Muban" geocode="64061206" name="บ้านโคกกะทือ"/>
+      <entity type="Muban" geocode="64061207" name="บ้านไผ่ซอ"/>
+      <entity type="Muban" geocode="64061208" name="บ้านสระบัว"/>
+      <entity type="Muban" geocode="64061209" name="บ้านสระบัว"/>
+      <entity type="Muban" geocode="64061210" name="บ้านคลองชัด"/>
+      <entity type="Muban" geocode="64061211" name="บ้านคลองชัด"/>
+      <entity type="Muban" geocode="64061212" name="บ้านคลองชัด"/>
+    </entity>
     <entity type="Tambon" name="ราวต้นจันทร์" english="Rao Ton Chan" geocode="640613" />
   </entity>
   <entity type="Amphoe" name="สวรรคโลก" english="Sawankhalok" geocode="6407" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.3174</geo:lat>
+        <geo:long>99.8313</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เมืองสวรรคโลก" english="Mueang Sawankhalok" geocode="640701" />
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="640702" >
       <office type="MunicipalityOffice">
@@ -361,6 +426,12 @@
     <entity type="Unknown" name="ศรีนคร" english="Si Nakhon" geocode="640799" newgeocode="640801" />
   </entity>
   <entity type="Amphoe" name="ศรีนคร" english="Si Nakhon" geocode="6408" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.3482</geo:lat>
+        <geo:long>99.9909</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ศรีนคร" english="Si Nakhon" geocode="640801" />
     <entity type="Tambon" name="นครเดิฐ" english="Nakhon Doet" geocode="640802" >
       <office type="TAOOffice">
@@ -376,6 +447,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ทุ่งเสลี่ยม" english="Thung Saliam" geocode="6409" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.3209</geo:lat>
+        <geo:long>99.5610</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านใหม่ไชยมงคล" english="Ban Mai Chai Mongkhon" geocode="640901" >
       <entity type="Muban" geocode="64090101" name="บ้านกมลราษฎร์"/>
 
