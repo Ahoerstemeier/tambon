@@ -310,6 +310,7 @@
     </entity>
     <entity type="Tambon" name="กะบกเตี้ย" english="Kabok Tia" geocode="180610" newgeocode="180802" />
     <entity type="Tambon" name="สามง่ามท่าโบสถ์" english="Sam Ngam Tha Bot" geocode="180611" />
+      
   </entity>
   <entity type="Amphoe" name="หนองมะโมง" english="Nong Mamong" geocode="1807" >
     <entity type="Tambon" name="หนองมะโมง" english="Nong Mamong" geocode="180701" >
@@ -328,7 +329,11 @@
   </entity>
   <entity type="KingAmphoe" name="ศรีหนองแซง" english="Si Nong Saeng" geocode="1809" obsolete="1" comment="Proposed, but not created"/>
 
-  <entity type="ThesabanMueang" name="ชัยนาท" english="Chainat" geocode="1899" parent="1801" />
+  <entity type="ThesabanMueang" name="ชัยนาท" english="Chainat" geocode="1899" parent="1801" >
+    <office type="MunicipalityOffice">
+      <url>http://www.chainatcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="วัดสิงห์" english="Wat Sing" geocode="1898" parent="1803" />
   <entity type="ThesabanTambon" name="คุ้งสำเภา" english="Khung Samphao" geocode="1897" parent="1802" />
   <entity type="ThesabanTambon" name="หางน้ำสาคร" english="Hang Nam Sakhon" geocode="1896" parent="1802" />
@@ -339,7 +344,11 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แพรกศรีราชา" english="Phraek Si Racha" geocode="1893" parent="1805" />
-  <entity type="ThesabanTambon" name="สามง่ามท่าโบสถ์" english="Sam Ngam Tha Bot" geocode="1892" parent="1806" />
+  <entity type="ThesabanTambon" name="สามง่ามท่าโบสถ์" english="Sam Ngam Tha Bot" geocode="1892" parent="1806" >
+    <office type="MunicipalityOffice">
+      <url>http://www.samngamthaboat.ob.tc/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หันคา" english="Hankha" geocode="1891" parent="1806" />
   <entity type="ThesabanTambon" name="เนินขาม" english="Noen Kham" geocode="1890" parent="1808" tambon="180801" />
   <entity type="ThesabanTambon" name="วังตะเคียน" english="Wang Takhian" geocode="1889" parent="1807" tambon="180702" />
