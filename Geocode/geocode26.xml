@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity type="Changwat" name="นครนายก" english="Nakhon Nayok" geocode="26">
+<entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครนายก" english="Nakhon Nayok" geocode="26">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat> 14.2124</geo:lat>
+      <geo:long>101.2016</geo:long>
+    </geo:Point>
     <url>http://www.nakhonnayok.go.th/</url>
     <officials source="http://www.nakhonnayok.go.th/data/manegerline.html">
       <official title="Governor" name="ปรีชา กมลบุตร" begin="2009-03-01"/>
@@ -46,6 +50,12 @@
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองนครนายก" english="Mueang Nakhon Nayok" geocode="2601" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 14.2037</geo:lat>
+        <geo:long>101.2172</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="นครนายก" english="Nakhon Nayok" geocode="260101" />
     <entity type="Tambon" name="ท่าช้าง" english="Tha Chang" geocode="260102" >
       <entity type="Muban" geocode="26010201" name="บ้านดอนใหญ่"/>
@@ -64,7 +74,7 @@
     </entity>
     <entity type="Tambon" name="บ้านใหญ่" english="Ban Yai" geocode="260103" >
       <office type="TAOOffice">
-        <url>http://www.tambon-banyai.com</url>
+        <url>http://www.tambon-banyai.com/</url>
       </office>
       <entity type="Muban" geocode="26010301" name="บ้านท่าข่อย"/>
       <entity type="Muban" geocode="26010302" name="บ้านโพธิ์"/>
@@ -219,6 +229,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ปากพลี" english="Pak Phli" geocode="2602" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 14.1633</geo:lat>
+        <geo:long>101.2687</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เกาะหวาย" english="Ko Wai" geocode="260201" >
       <entity type="Muban" geocode="26020101" name="บ้านเกาะหวาย"/>
       <entity type="Muban" geocode="26020102" name="บ้านคลองตะเคียน"/>
@@ -292,6 +308,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="บ้านนา" english="Ban Na" geocode="2603" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 14.2667</geo:lat>
+        <geo:long>101.0614</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านนา" english="Ban Na" geocode="260301" >
       <office type="TAOOffice">
         <url>http://www.bannanayok.org/</url>
@@ -443,6 +465,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="องครักษ์" english="Ongkharak" geocode="2604" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 14.1214</geo:lat>
+        <geo:long>101.0038</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="พระอาจารย์" english="Phra Achan" geocode="260401" >
       <office type="TAOOffice">
         <url>http://www.tambon-phra-arjan.com/</url>
@@ -589,7 +617,15 @@
     </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="นครนายก" english="Nakhon Nayok" geocode="2699" parent="2601" />
+  <entity type="ThesabanMueang" name="นครนายก" english="Nakhon Nayok" geocode="2699" parent="2601" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 14.2070</geo:lat>
+        <geo:long>101.2142</geo:long>
+      </geo:Point>
+      <url>http://www.nayokcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าช้าง" english="Tha Chang" geocode="2698" parent="2601" />
   <entity type="ThesabanTambon" name="เกาะหวาย" english="Ko Wai" geocode="2697" parent="2602" />
   <entity type="ThesabanTambon" name="บ้านนา" english="Ban Na" geocode="2696" parent="2603" />

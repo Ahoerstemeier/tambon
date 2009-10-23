@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="อุทัยธานี" english="Uthai Thani" geocode="61" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat> 15.3734</geo:lat>
+      <geo:long>100.0385</geo:long>
+    </geo:Point>
     <url>http://www.uthaithani.go.th/</url>
     <officials>
       <official title="Governor" index="64" name="ชนม์ชื่น บุญญานุสาสน์" begin="2008-10-01" />
@@ -74,6 +78,12 @@
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองอุทัยธานี" english="Mueang Uthai Thani" geocode="6101" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.3794</geo:lat>
+        <geo:long>100.0247</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="อุทัยใหม่" english="Uthai Mai" geocode="610101" />
     <entity type="Tambon" name="น้ำซึม" english="Nam Suem" geocode="610102" />
     <entity type="Tambon" name="สะแกกรัง" english="Sakae Krang" geocode="610103" />
@@ -104,6 +114,12 @@
     <entity type="Unknown" name="ข้าวเม่า" english="Khao Mao" geocode="610199" />
   </entity>
   <entity type="Amphoe" name="ทัพทัน" english="Thap Than" geocode="6102" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.4596</geo:lat>
+        <geo:long> 99.8867</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ทัพทัน" english="Thap Than" geocode="610201" />
     <entity type="Tambon" name="ทุ่งนาไทย" english="Thung Na Thai" geocode="610202" />
     <entity type="Tambon" name="เขาขี้ฝอย" english="Khao Khi Foi" geocode="610203" />
@@ -177,6 +193,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="สว่างอารมณ์" english="Sawang Arom" geocode="6103" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.5838</geo:lat>
+        <geo:long> 99.8610</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สว่างอารมณ์" english="Sawang Arom" geocode="610301" >
       <entity type="Muban" geocode="61030107" name="บ้านดงแขวน"/>
 
@@ -203,6 +225,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="หนองฉาง" english="Nong Chang" geocode="6104" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.3914</geo:lat>
+        <geo:long> 99.8414</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หนองฉาง" english="Nong Chang" geocode="610401" />
     <entity type="Tambon" name="หนองยาง" english="Nong Yang" geocode="610402" />
     <entity type="Tambon" name="หนองนางนวล" english="Nong Nang Nuan" geocode="610403" />
@@ -227,6 +255,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="หนองขาหย่าง" english="Nong Khayang" geocode="6105" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.3640</geo:lat>
+        <geo:long> 99.9293</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หนองขาหย่าง" english="Nong Khayang" geocode="610501" />
     <entity type="Tambon" name="หนองไผ่" english="Nong Phai" geocode="610502" />
     <entity type="Tambon" name="ดอนกลอย" english="Don Kloi" geocode="610503" />
@@ -367,6 +401,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ห้วยคต" english="Huai Khot" geocode="6108" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.2914</geo:lat>
+        <geo:long> 99.6167</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สุขฤทัย" english="Suk Ruethai" geocode="610801" >
       <entity type="Muban" geocode="61080101" name="บ้านวังบ่าง"/>
 
@@ -376,7 +416,15 @@
     <entity type="Tambon" name="ห้วยคต" english="Huai Khot" geocode="610803" />
   </entity>
 
-  <entity type="ThesabanMueang" name="อุทัยธานี" english="Uthai Thani" geocode="6199" parent="6101" />
+  <entity type="ThesabanMueang" name="อุทัยธานี" english="Uthai Thani" geocode="6199" parent="6101" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 15.3767</geo:lat>
+        <geo:long>100.0340</geo:long>
+      </geo:Point>
+    </office>
+    <url>http://www.uthaicity.org/</url>
+  </entity>
   <entity type="ThesabanTambon" name="ตลุกดู่" english="Taluk Du" geocode="6198" parent="6102" />
   <entity type="ThesabanTambon" name="ทัพทัน" english="Thap Than" geocode="6197" parent="6102" >
     <office type="MunicipalityOffice">
