@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" geocode="27" name="สระแก้ว" english="Sa Kaeo" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat> 13.7968</geo:lat>
+      <geo:long>102.1385</geo:long>
+    </geo:Point>
     <url>http://www.sakaeo.go.th</url>
     <officials>
       <official title="Governor" name="ศานิตย์ นาคสุขศรี" beginyear="2008"/>
@@ -13,6 +17,12 @@
     <url>http://www.sakaeopao.go.th/</url>
   </office>
   <entity type="Amphoe" name="เมืองสระแก้ว" english="Mueang Sa Kaeo" geocode="2701" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 13.8148</geo:lat>
+        <geo:long>102.0718</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สระแก้ว" english="Sa Kaeo" geocode="270101" />
     <entity type="Tambon" name="บ้านแก้ง" english="Ban Kaeng" geocode="270102" >
       <office type="TAOOffice">
@@ -125,6 +135,12 @@
     <entity type="Tambon" name="ไทรทอง" english="Sai Thong" geocode="270207" />
   </entity>
   <entity type="Amphoe" name="ตาพระยา" english="Ta Phraya" geocode="2703" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 14.0061</geo:lat>
+        <geo:long>102.8059</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ตาพระยา" english="Ta Phraya" geocode="270301" />
     <entity type="Tambon" name="ทัพเสด็จ" english="Thap Sadet" geocode="270302" />
     <entity type="Tambon" name="โคกสูง" english="Khok Sung" geocode="270303" newgeocode="270801" />
@@ -149,6 +165,12 @@
     <entity type="Tambon" name="โคคลาน" english="Kho Khlan" geocode="270309" />
   </entity>
   <entity type="Amphoe" name="วังน้ำเย็น" english="Wang Nam Yen" geocode="2704" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 13.4998</geo:lat>
+        <geo:long>102.1821</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="วังน้ำเย็น" english="Wang Nam Yen" geocode="270401" >
       <office type="TAOOffice">
         <url>http://obtwangnamyen.net/</url>
@@ -262,6 +284,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="อรัญประเทศ" english="Aranyaprathet" geocode="2706" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 13.7008</geo:lat>
+        <geo:long>102.5118</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="อรัญประเทศ" english="Aranyaprathet" geocode="270601" />
     <entity type="Tambon" name="เมืองไผ่" english="Mueang Phai" geocode="270602" >
       <office type="TAOOffice">
@@ -330,6 +358,12 @@
     <entity type="Tambon" name="บ้านด่าน" english="Ban Dan" geocode="270613" />
   </entity>
   <entity type="Amphoe" name="เขาฉกรรจ์" english="Khao Chakan" geocode="2707" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 13.6507</geo:lat>
+        <geo:long>102.0968</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เขาฉกรรจ์" english="Khao Chakan" geocode="270701" />
     <entity type="Tambon" name="หนองหว้า" english="Nong Wa" geocode="270702" >
       <entity type="Muban" geocode="27070204" name="บ้านคลองธรรมชาติ"/>
@@ -389,6 +423,12 @@
     <entity type="Tambon" name="โนนหมากมุ่น" english="Non Mak Mun" geocode="270804" />
   </entity>
   <entity type="Amphoe" name="วังสมบูรณ์" english="Wang Sombun" geocode="2709" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 13.3970</geo:lat>
+        <geo:long>102.1987</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="วังสมบูรณ์" english="Wang Sombun" geocode="270901" >
       <entity type="Muban" geocode="27090101" name="บ้านวังสมบูรณ์"/>
       <entity type="Muban" geocode="27090102" name="บ้านโพธิ์ทอง"/>
@@ -426,8 +466,20 @@
     </entity>
   </entity>
 
-  <entity type="ThesabanMueang" name="สระแก้ว" english="Sa Kaeo" geocode="2799" parent="2701" />
-  <entity type="ThesabanMueang" name="อรัญญประเทศ" english="Aranya Prathet" geocode="2798" parent="2706" />
+  <entity type="ThesabanMueang" name="สระแก้ว" english="Sa Kaeo" geocode="2799" parent="2701" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.7968</geo:lat>
+        <geo:long>102.1373</geo:long>
+      </geo:Point>
+      <url comment="Offline">http://www.sakaeocity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanMueang" name="อรัญญประเทศ" english="Aranya Prathet" geocode="2798" parent="2706" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tessabanaran.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าเกษม" english="Tha Kasem" geocode="2797" parent="2701" />
   <entity type="ThesabanTambon" name="ศาลาลำดวน" english="Sala Lamduan" geocode="2796" parent="2701" />
   <entity type="ThesabanTambon" name="ตาพระยา" english="Ta Phraya" geocode="2795" parent="2703" />
