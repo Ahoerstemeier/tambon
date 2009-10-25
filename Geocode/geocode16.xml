@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ลพบุรี" english="Lopburi" geocode="16">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat> 14.8006</geo:lat>
+      <geo:long>100.6514</geo:long>
+    </geo:Point>
     <url>http://www.lopburi.go.th/</url>
     <officials source="http://www.lopburi.go.th/governor/governor.htm">
       <official title="Governor" index="45" name="ฉัตรชัย  พรหมเลิศ" begin="2009-10-01"/>
@@ -51,6 +55,12 @@
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองลพบุรี" english="Mueang Lop Buri" geocode="1601" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 14.7981</geo:lat>
+        <geo:long>100.6537</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ทะเลชุบศร" english="Thale Chup Son" geocode="160101" />
     <entity type="Tambon" name="ท่าหิน" english="Tha Hin" geocode="160102" />
     <entity type="Tambon" name="กกโก" english="Kok Ko" geocode="160103" >
@@ -138,6 +148,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="พัฒนานิคม" english="Phatthana Nikhom" geocode="1602" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 14.8558</geo:lat>
+        <geo:long>100.9901</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="พัฒนานิคม" english="Phatthana Nikhom" geocode="160201" />
     <entity type="Tambon" name="ช่องสาริกา" english="Chong Sarika" geocode="160202" />
     <entity type="Tambon" name="มะนาวหวาน" english="Manao Wan" geocode="160203" >
@@ -209,6 +225,12 @@
     <entity type="Unknown" name="สระโบสถ์" english="Sa Bot" geocode="160399" newgeocode="160801" />
   </entity>
   <entity type="Amphoe" name="ชัยบาดาล" english="Chai Badan" geocode="1604" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.2062</geo:lat>
+        <geo:long>101.1367</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ลำนารายณ์" english="Lam Narai" geocode="160401" />
     <entity type="Tambon" name="ชัยนารายณ์" english="Chai Narai" geocode="160402" />
     <entity type="Tambon" name="ศิลาทิพย์" english="Sila Thip" geocode="160403" />
@@ -314,6 +336,12 @@
     <entity type="Tambon" name="สนามแจง" english="Sanam Chaeng" geocode="160622" />
   </entity>
   <entity type="Amphoe" name="ท่าหลวง" english="Tha Luang" geocode="1607" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.0684</geo:lat>
+        <geo:long>101.1068</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ท่าหลวง" english="Tha Luang" geocode="160701" />
     <entity type="Tambon" name="แก่งผักกูด" english="Kaeng Phak Kut" geocode="160702" />
     <entity type="Tambon" name="ซับจำปา" english="Sap Champa" geocode="160703" />
@@ -322,6 +350,12 @@
     <entity type="Tambon" name="หัวลำ" english="Hua Lam" geocode="160706" />
   </entity>
   <entity type="Amphoe" name="สระโบสถ์" english="Sa Bot" geocode="1608" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.1951</geo:lat>
+        <geo:long>100.8487</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="สระโบสถ์" english="Sa Bot" geocode="160801" />
     <entity type="Tambon" name="มหาโพธิ" english="Maha Phot" geocode="160802" />
     <entity type="Tambon" name="ทุ่งท่าช้าง" english="Thung Tha Chang" geocode="160803" />
@@ -329,6 +363,12 @@
     <entity type="Tambon" name="นิยมชัย" english="Niyom Chai" geocode="160805" />
   </entity>
   <entity type="Amphoe" name="โคกเจริญ" english="Khok Charoen" geocode="1609" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.3826</geo:lat>
+        <geo:long>100.8226</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="โคกเจริญ" english="Khok Charoen" geocode="160901" >
       <office type="TAOOffice">
         <url>http://www.khokjaroen.com/</url>
@@ -383,7 +423,15 @@
     <entity type="Tambon" name="ชอนสารเดช" english="Chon Saradet" geocode="161106" />
   </entity>
 
-  <entity type="ThesabanMueang" name="ลพบุรี" english="Lopburi" geocode="1699" parent="1601" />
+  <entity type="ThesabanMueang" name="ลพบุรี" english="Lopburi" geocode="1699" parent="1601" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 14.7999</geo:lat>
+        <geo:long>100.6269</geo:long>
+      </geo:Point>
+      <url>http://www.lopburicity.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="บ้านหมี่" english="Ban Mi" geocode="1698" parent="1606" />
   <entity type="ThesabanTambon" name="โคกสำโรง" english="Khok Samrong" geocode="1697" parent="1603" />
   <entity type="ThesabanTambon" name="โคกตูม" english="Khok Tum" geocode="1696" parent="1601" />
