@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เลย" english="Loei" geocode="42">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat> 17.4873</geo:lat>
+      <geo:long>101.7202</geo:long>
+    </geo:Point>
     <url>http://www.loei.go.th/</url>
     <officials>
       <official title="Governor" name="พรศักดิ์ เจียรณัย" begin="2009-10-01"/>
@@ -9,6 +13,12 @@
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองเลย" english="Mueang Loei" geocode="4201" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.4888</geo:lat>
+        <geo:long>101.7194</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="กุดป่อง" english="Kut Pong" geocode="420101" />
     <entity type="Tambon" name="เมือง" english="Mueang" geocode="420102" >
       <entity type="Muban" geocode="42010201" name="บ้านกำเนิดเพชร"/>
@@ -65,6 +75,12 @@
     <entity type="Tambon" name="กกทอง" english="Kok Thong" geocode="420114" />
   </entity>
   <entity type="Amphoe" name="นาด้วง" english="Na Duang" geocode="4202" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 17.4792</geo:lat>
+        <geo:long>101.9707</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="นาด้วง" english="Na Duang" geocode="420201" />
     <entity type="Tambon" name="นาดอกคำ" english="Na Dok Kham" geocode="420202" />
     <entity type="Tambon" name="ท่าสะอาด" english="Tha Sa-at" geocode="420203" >
@@ -82,6 +98,12 @@
     <entity type="Tambon" name="ท่าสวรรค์" english="Tha Sawan" geocode="420204" />
   </entity>
   <entity type="Amphoe" name="เชียงคาน" english="Chiang Khan" geocode="4203" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 17.8982</geo:lat>
+        <geo:long>101.6664</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="เชียงคาน" english="Chiang Khan" geocode="420301" />
     <entity type="Tambon" name="ธาตุ" english="That" geocode="420302" >
       <entity type="Muban" geocode="42030201" name="บ้านธาตุ"/>
@@ -145,6 +167,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ด่านซ้าย" english="Dan Sai" geocode="4205" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 17.2800</geo:lat>
+        <geo:long>101.1467</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ด่านซ้าย" english="Dan Sai" geocode="420501" >
       <office type="TAOOffice">
         <url>http://www.dansai-sao.go.th/</url>
@@ -225,6 +253,12 @@
     <entity type="Tambon" name="สานตม" english="San Tom" geocode="420706" />
   </entity>
   <entity type="Amphoe" name="ท่าลี่" english="Tha Li" geocode="4208" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 17.6243</geo:lat>
+        <geo:long>101.4216</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ท่าลี่" english="Tha Li" geocode="420801" />
     <entity type="Tambon" name="หนองผือ" english="Nong Phue" geocode="420802" />
     <entity type="Tambon" name="อาฮี" english="A Hi" geocode="420803" >
@@ -301,6 +335,12 @@
     <entity type="Unknown" name="ภูหอ" english="Phu Ho" geocode="420999" newgeocode="421101" />
   </entity>
   <entity type="Amphoe" name="ภูกระดึง" english="Phu Kradueng" geocode="4210" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 16.8843</geo:lat>
+        <geo:long>101.8845</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ศรีฐาน" english="Si Than" geocode="421001" />
     <entity type="Tambon" name="ปวนพุ" english="Puan Phu" geocode="421002" newgeocode="421403" />
     <entity type="Tambon" name="ท่าช้างคล้อง" english="Tha Chang Khlong" geocode="421003" newgeocode="421202" />
@@ -357,7 +397,17 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="เอราวัณ" english="Erawan" geocode="4213" >
-    <entity type="Tambon" name="เอราวัณ" english="Erawan" geocode="421301" />
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 17.3099</geo:lat>
+        <geo:long>101.9401</geo:long>
+      </geo:Point>
+    </office>
+    <entity type="Tambon" name="เอราวัณ" english="Erawan" geocode="421301" >
+      <office type="MunicipalityOffice">
+        <url>http://www.erawanadmin.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ผาอินทร์แปลง" english="Pha In Plaeng" geocode="421302" />
     <entity type="Tambon" name="ผาสามยอด" english="Pha Sam Yot" geocode="421303" >
       <entity type="Muban" geocode="42130301" name="บ้านห้วยป่าน"/>
@@ -378,7 +428,15 @@
     <entity type="Tambon" name="ปวนพุ" english="Puan Phu" geocode="421403" />
   </entity>
 
-  <entity type="ThesabanMueang" name="เลย" english="Loei" geocode="4299" parent="4201" />
+  <entity type="ThesabanMueang" name="เลย" english="Loei" geocode="4299" parent="4201" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 17.4853</geo:lat>
+        <geo:long>101.7308</geo:long>
+      </geo:Point>
+      <url>http://www.loeicity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="นาอ้อ" english="Na O" geocode="4298" parent="4201" />
   <entity type="ThesabanTambon" name="น้ำสวย" english="Nam Suai" geocode="4297" parent="4201" />
   <entity type="ThesabanTambon" name="นาด้วง" english="Na Duang" geocode="4296" parent="4202" />
