@@ -46,6 +46,9 @@
       <entity type="Muban" geocode="62010422" name="บ้านสร้อยสุวรรณ"/>
     </entity>
     <entity type="Tambon" name="นครชุม" english="Nakhon Chum" geocode="620105" >
+      <office type="TAOOffice">
+        <url>http://nakhonchum.org/</url>
+      </office>
       <entity type="Muban" geocode="62010505" name="บ้านนครชุม"/>
 
       <entity type="Muban" geocode="62010513" name="บ้านป่ามะม่วง"/>
@@ -771,7 +774,11 @@
 
   <entity type="ThesabanMueang" name="กำแพงเพชร" english="Kamphaeng Phet " geocode="6299" parent="6201" />
   <entity type="ThesabanTambon" name="คลองแม่ลาย" english="Khlong Mae Lai" geocode="6298" parent="6201" />
-  <entity type="ThesabanTambon" name="นครชุม" english="Nakhon Chum" geocode="6297" parent="6201" />
+  <entity type="ThesabanTambon" name="นครชุม" english="Nakhon Chum" geocode="6297" parent="6201" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nakhonchum.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ปากดง" english="Pak Dong" geocode="6296" parent="6201" />
   <entity type="ThesabanTambon" name="ไทรงาม" english="Sai Ngam" geocode="6295" parent="6202" />
   <entity type="ThesabanTambon" name="ขาณุวรลักษบุรี" english="Khanu Woralaksaburi" geocode="6294" parent="6204" />
