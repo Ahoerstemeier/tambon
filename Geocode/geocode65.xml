@@ -490,7 +490,18 @@
       <entity type="Muban" geocode="65040118" name="บ้านศรีมงคล"/>
       <entity type="Muban" geocode="65040119" name="บ้านคลองวัดไร่เหนือ"/>
     </entity>
-    <entity type="Tambon" name="ปลักแรด" english="Plak Raet" geocode="650402" />
+    <entity type="Tambon" name="ปลักแรด" english="Plak Raet" geocode="650402" >
+      <entity type="Muban" geocode="65040201" name="บ้านปลักแรด"/>
+      <entity type="Muban" geocode="65040202" name="บ้านดงโคกขาม"/>
+      <entity type="Muban" geocode="65040203" name="บ้านปลักแรด"/>
+      <entity type="Muban" geocode="65040204" name="บ้านหนองแขม"/>
+      <entity type="Muban" geocode="65040205" name="บ้านปลักแรด"/>
+      <entity type="Muban" geocode="65040206" name="บ้านหล่ายมือสี"/>
+      <entity type="Muban" geocode="65040207" name="บ้านหล่ายโพธิ์"/>
+      <entity type="Muban" geocode="65040208" name="บ้านทุ่งชา"/>
+      <entity type="Muban" geocode="65040209" name="บ้านหนองมะปราง"/>
+      <entity type="Muban" geocode="65040210" name="บ้านตะเภาทองเฉลิมพระเกียรติ"/>
+    </entity>
     <entity type="Tambon" name="พันเสา" english="Phan Sao" geocode="650403" />
     <entity type="Tambon" name="วังอิทก" english="Wang Ithok" geocode="650404" >
       <office type="TAOOffice">
@@ -1240,29 +1251,57 @@
       <url>http://www.phsmun.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" geocode="6598" parent="6501" />
-  <entity type="ThesabanTambon" name="นครไทย" english="Nakhon Thai" geocode="6597" parent="6502" />
+  <entity type="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" geocode="6598" parent="6501" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banmaicity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="นครไทย" english="Nakhon Thai" geocode="6597" parent="6502" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nakhonthai.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ป่าแดง" english="Pa Daeng" geocode="6596" parent="6503" >
     <office type="MunicipalityOffice">
       <url>http://tessabanpadaeng.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บางระกำ" english="Bang Rakam" geocode="6595" parent="6504" />
-  <entity type="ThesabanTambon" name="ปลักแรด" english="Plak Raet" geocode="6594" parent="6504" />
+  <entity type="ThesabanTambon" name="บางระกำ" english="Bang Rakam" geocode="6595" parent="6504" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangrakam.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ปลักแรด" english="Plak Raet" geocode="6594" parent="6504" >
+    <office type="MunicipalityOffice">
+      <url>http://www.prukrad.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เนินกุ่ม" english="Noen Kum" geocode="6593" parent="6505" >
     <office type="MunicipalityOffice">
       <url>http://www.nuenkumdistrict.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บางกระทุ่ม" english="Bang Krathum" geocode="6592" parent="6505" />
+  <entity type="ThesabanTambon" name="บางกระทุ่ม" english="Bang Krathum" geocode="6592" parent="6505" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangkrathum.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="พรหมพิราม" english="Phrom Phiram" geocode="6591" parent="6506" />
   <entity type="ThesabanTambon" name="วงฆ้อง" english="Wong Khong" geocode="6590" parent="6506" >
     <office type="MunicipalityOffice">
       <url>http://www.wongkong.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="วัดโบสถ์" english="Wat Bot" geocode="6589" parent="6507" />
-  <entity type="ThesabanTambon" name="วังทอง" english="Wang Thong" geocode="6588" parent="6508" />
+  <entity type="ThesabanTambon" name="วัดโบสถ์" english="Wat Bot" geocode="6589" parent="6507" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/phitsanulok/watbot/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="วังทอง" english="Wang Thong" geocode="6588" parent="6508" >
+    <office type="MunicipalityOffice">
+      <url>http://www.wt.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เนินมะปราง" english="Noen Maprang" geocode="6587" parent="6509" />
   <entity type="ThesabanTambon" name="บ้านแยง" english="Ban Yaeng" geocode="6586" parent="6502" tambon="650203"/>
   <entity type="ThesabanTambon" name="ไทรย้อย" english="Sai Yoi" geocode="6585" parent="6509" tambon="650903"/>
@@ -1273,9 +1312,16 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บึงระมาณ" english="Bueng Raman" geocode="6582" parent="6504" tambon="650402" >
+    <office type="MunicipalityOffice">
+      <url>http://buangraman.com/</url>
+    </office>
     <history>
       <rename oldname="ปลักแรด" oldenglish="Plak Raet" name="บึงระมาณ"/>
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="บ้านมุง" english="Ban Mung" geocode="6581" parent="6509" tambon="650902" />
+  <entity type="ThesabanTambon" name="บ้านมุง" english="Ban Mung" geocode="6581" parent="6509" tambon="650902" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banmung.go.th/</url>
+    </office>
+  </entity>
 </entity>
