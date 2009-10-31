@@ -33,6 +33,9 @@ namespace De.AHoerstemeier.Tambon
             // Column 4 : Code
             // Column 5 : Name
             // Column 6 : Muban number
+            // Column 7 : Location source/placemark
+            // Column 8 : Location UTM Easting (47N, Indian 1974)
+            // Column 9 : Location UTM Northing (47N, Indian 1974)
 
             String lCurrentLine = String.Empty;
             PopulationDataEntry lCurrentChangwat = new PopulationDataEntry();
@@ -42,7 +45,7 @@ namespace De.AHoerstemeier.Tambon
             while ((lCurrentLine = iReader.ReadLine()) != null)
             {
                 var lSubStrings = lCurrentLine.Split(new Char[] { '\t' });
-                if ((lSubStrings.Length > 0) & (!String.IsNullOrEmpty(lSubStrings[0])) & (Helper.IsNumeric(lSubStrings[0])))
+                if ((lSubStrings.Length > 0) & (!String.IsNullOrEmpty(lSubStrings[0])) & Helper.IsNumeric(lSubStrings[0]))
                 {
                     PopulationDataEntry lCurrentMuban = new PopulationDataEntry();
                     String lAmphoe = lSubStrings[1].Replace('"', ' ').Trim();
@@ -51,13 +54,27 @@ namespace De.AHoerstemeier.Tambon
                     lCurrentMuban.Geocode = Convert.ToInt32(lGeocode);
                     lCurrentMuban.Name = lSubStrings[4].Replace('"', ' ').Trim();
                     lCurrentMuban.Type = EntityType.Muban;
-                    Int32 lMuban = Convert.ToInt32(lSubStrings[5].Replace('"', ' ').Trim());
-                    if (lMuban != (lCurrentMuban.Geocode % 100))
+                    String lEasting = lSubStrings[7].Replace('"', ' ').Replace('E', ' ').Trim();
+                    String lNorthing = lSubStrings[8].Replace('"', ' ').Replace('N', ' ').Trim();
+                    if (Helper.IsNumeric(lEasting) && Helper.IsNumeric(lNorthing))
                     {
-                        String lComment = "Code is " + lCurrentMuban.Geocode.ToString() + ',';
-                        lComment = lComment + " Muban number is " + lMuban.ToString();
-                        lCurrentMuban.Comment = lComment;
-                        lCurrentMuban.Geocode = lCurrentMuban.Geocode - (lCurrentMuban.Geocode % 100) + lMuban;
+                        EntityOffice lOffice = new EntityOffice();
+                        lOffice.Type = OfficeType.VillageHeadmanOffice;
+                        lOffice.Location = new GeoPoint(Convert.ToInt32(lNorthing), Convert.ToInt32(lEasting), "47N", GeoDatum.DatumIndian1975());
+                        lOffice.Location.Datum = GeoDatum.DatumWGS84();
+                        lCurrentMuban.Offices.Add(lOffice);
+                    }
+                    String lMubanString = lSubStrings[5].Replace('"', ' ').Trim();
+                    if (Helper.IsNumeric(lMubanString))
+                    {
+                        Int32 lMuban = Convert.ToInt32(lMubanString);
+                        if (lMuban != (lCurrentMuban.Geocode % 100))
+                        {
+                            String lComment = "Code is " + lCurrentMuban.Geocode.ToString() + ',';
+                            lComment = lComment + " Muban number is " + lMuban.ToString();
+                            lCurrentMuban.Comment = lComment;
+                            lCurrentMuban.Geocode = lCurrentMuban.Geocode - (lCurrentMuban.Geocode % 100) + lMuban;
+                        }
                     }
                     if ((lCurrentMuban.Geocode / 10000) != lCurrentAmphoe.Geocode)
                     {
@@ -110,12 +127,17 @@ namespace De.AHoerstemeier.Tambon
             lBuilder.AppendLine(iCounter.MeanValue.ToString("F2", CultureInfo.InvariantCulture) + " Muban per Tambon");
             lBuilder.AppendLine(iCounter.MaxValue.ToString() + " Muban per Tambon max.");
             String lTambonCodes = String.Empty;
-            foreach (var lEntry in iCounter.Data[iCounter.MaxValue])
+            if (iCounter.MaxValue != 0)
             {
-                lTambonCodes = lTambonCodes + lEntry.ToString() + ", ";
+                foreach (var lEntry in iCounter.Data[iCounter.MaxValue])
+                {
+                    lTambonCodes = lTambonCodes + lEntry.ToString() + ", ";
+                }
             }
-            lBuilder.AppendLine(lTambonCodes.Substring(0,lTambonCodes.Length - 2));
-
+            if (lTambonCodes.Length > 0)
+            {
+                lBuilder.AppendLine(lTambonCodes.Substring(0, lTambonCodes.Length - 2));
+            }
             String RetVal = lBuilder.ToString();
             return RetVal;
         }
