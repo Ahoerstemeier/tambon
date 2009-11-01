@@ -55,13 +55,26 @@ namespace De.AHoerstemeier.Tambon
             doc.Save(iFilename);
         }
         //this function can add a point to the map, if you want extend functionalities you have to create other functions for each google earth shapes ( polygon, line, etc... ) 
-        public XmlNode AddPoint(XmlNode iNode, double iLatitude, double iLongitude, string iName, string iStyle)
+        public XmlNode AddPoint(XmlNode iNode, double iLatitude, double iLongitude, string iName, string iStyle, string iAddress, string iDescription)
         {
             XmlNode lPlacemarkNode = doc.CreateElement("Placemark");
             iNode.AppendChild(lPlacemarkNode);
             XmlNode lNameNode = doc.CreateElement("name");
             lNameNode.AppendChild(doc.CreateTextNode(iName));
             lPlacemarkNode.AppendChild(lNameNode);
+            if (!String.IsNullOrEmpty(iAddress))
+            {
+                XmlNode lAddressNode = doc.CreateElement("address");
+                lAddressNode.AppendChild(doc.CreateTextNode(iAddress));
+                lPlacemarkNode.AppendChild(lAddressNode);
+            }
+            if (!String.IsNullOrEmpty(iDescription))
+            {
+                XmlNode lDescriptionNode = doc.CreateElement("description");
+                lDescriptionNode.AppendChild(doc.CreateTextNode(iDescription));
+                lPlacemarkNode.AppendChild(lDescriptionNode);
+            }
+
             XmlNode lStyleNode = doc.CreateElement("styleUrl");
             lStyleNode.AppendChild(doc.CreateTextNode('#' + iStyle));
             lPlacemarkNode.AppendChild(lStyleNode);
@@ -72,9 +85,9 @@ namespace De.AHoerstemeier.Tambon
             lCoordinateNode.AppendChild(doc.CreateTextNode(iLongitude.ToString(Helper.CultureInfoUS) + "," + iLatitude.ToString(Helper.CultureInfoUS)));
             return lPlacemarkNode;
         }
-        public XmlNode AddPoint(double iLatitude, double iLongitude, string iName, string iStyle)
+        public XmlNode AddPoint(double iLatitude, double iLongitude, string iName, string iStyle, string iAddress, string iDescription)
         {
-            XmlNode RetVal = AddPoint(mDocumentNode, iLatitude, iLongitude, iName, iStyle);
+            XmlNode RetVal = AddPoint(mDocumentNode, iLatitude, iLongitude, iName, iStyle,iAddress,iDescription);
             return RetVal;
         }
         public XmlNode AddFolder(XmlNode iNode, string iName, Boolean iOpen)

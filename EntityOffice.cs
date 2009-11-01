@@ -151,12 +151,17 @@ namespace De.AHoerstemeier.Tambon
                 iKml.AddIconStyle(lKeyValuePair.Key.ToString(), new Uri(lKeyValuePair.Value));
             }
         }
-        internal void AddToKml(KmlHelper iKml, XmlNode iNode, String lEntityName)
+        internal void AddToKml(KmlHelper iKml, XmlNode iNode, String lEntityName, String iDescription)
         {
             if (Location != null)
             {
                 String lName = OfficeNameEnglish[Type] + ' ' + lEntityName;
-                iKml.AddPoint(iNode, Location.Latitude, Location.Longitude, lName, Type.ToString());
+                String lAddress = String.Empty;
+                if (Address != null)
+                {
+                    lAddress = Address.ToString();
+                }
+                iKml.AddPoint(iNode, Location.Latitude, Location.Longitude, lName, Type.ToString(),lAddress,iDescription);
             }
         }
 

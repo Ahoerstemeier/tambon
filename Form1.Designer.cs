@@ -340,9 +340,9 @@ namespace Tambon
             // 
             // btnCreateKml
             // 
-            this.btnCreateKml.Location = new System.Drawing.Point(259, 318);
+            this.btnCreateKml.Location = new System.Drawing.Point(256, 318);
             this.btnCreateKml.Name = "btnCreateKml";
-            this.btnCreateKml.Size = new System.Drawing.Size(95, 23);
+            this.btnCreateKml.Size = new System.Drawing.Size(99, 23);
             this.btnCreateKml.TabIndex = 26;
             this.btnCreateKml.Text = "Create KML";
             this.btnCreateKml.UseVisualStyleBackColor = true;
