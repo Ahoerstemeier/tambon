@@ -500,7 +500,16 @@
       </office>
     </entity>
     <entity type="Tambon" name="หลักชัย" english="Lak Chai" geocode="141002" />
-    <entity type="Tambon" name="สามเมือง" english="Sam Mueang" geocode="141003" />
+    <entity type="Tambon" name="สามเมือง" english="Sam Mueang" geocode="141003" >
+      <entity type="Muban" geocode="14100301" name="บ้านสี่แยก"/>
+      <entity type="Muban" geocode="14100302" name="บ้านหนองปปลาหมอ"/>
+      <entity type="Muban" geocode="14100303" name="บ้านสามเมือง"/>
+      <entity type="Muban" geocode="14100304" name="บ้านหนองหล่ม"/>
+      <entity type="Muban" geocode="14100305" name="บ้านพาดหมอน"/>
+      <entity type="Muban" geocode="14100306" name="บ้านคลองหนึ่ง"/>
+      <entity type="Muban" geocode="14100307" name="บ้านทดผู้ใหญ่กา"/>
+      <entity type="Muban" geocode="14100308" name="บ้านคลองพิสนธ์"/>
+    </entity>
     <entity type="Tambon" name="พระยาบันลือ" english="Phraya Banlue" geocode="141004" />
     <entity type="Tambon" name="สิงหนาท" english="Singhanat" geocode="141005" />
     <entity type="Tambon" name="คู้สลอด" english="Khu Salot" geocode="141006" >
@@ -618,7 +627,7 @@
       <entity type="Muban" geocode="14121503" name="บ้านหนองหญ้าคา"/>
       <entity type="Muban" geocode="14121504" name="บ้านจรเข้ไล่"/>
       <entity type="Muban" geocode="14121505" name="บ้านไผ่ล้อม"/>
-              
+
       <entity type="Muban" geocode="14121507" name="บ้านหนองลำเจียก"/>
     </entity>
     <entity type="Tambon" name="บ้านหลวง" english="Ban Luang" geocode="141216" />
@@ -685,7 +694,15 @@
       <entity type="Muban" geocode="14151004" name="บ้านขวางใต้"/>
     </entity>
     <entity type="Tambon" name="ท่าตอ" english="Tha To" geocode="141511" />
-    <entity type="Tambon" name="บ้านใหม่" english="Ban Mai" geocode="141512" />
+    <entity type="Tambon" name="บ้านใหม่" english="Ban Mai" geocode="141512" >
+      <office type="TAOOffice">
+        <url>http://www.banmaimr.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="14151201" name="บ้านใหม่"/>
+      <entity type="Muban" geocode="14151202" name="บ้านใหม่"/>
+      <entity type="Muban" geocode="14151203" name="บ้านใหม่"/>
+      <entity type="Muban" geocode="14151204" name="บ้านใหม่"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="บ้านแพรก" english="Ban Phraek" geocode="1416" >
     <office type="DistrictOffice">
@@ -696,8 +713,16 @@
     </office>
     <entity type="Tambon" name="บ้านแพรก" english="Ban Phraek" geocode="141601" />
     <entity type="Tambon" name="บ้านใหม่" english="Ban Mai" geocode="141602" />
-    <entity type="Tambon" name="สำพะเนียง" english="Sam Phaniang" geocode="141603" />
-    <entity type="Tambon" name="คลองน้อย" english="Khlong Noi" geocode="141604" />
+    <entity type="Tambon" name="สำพะเนียง" english="Sam Phaniang" geocode="141603" >
+      <office type="TAOOffice">
+        <url>http://www.sampaneang.go.th/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="คลองน้อย" english="Khlong Noi" geocode="141604" >
+      <office type="TAOOffice">
+        <url>http://www.klongnoi.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="สองห้อง" english="Song Hong" geocode="141605" />
   </entity>
 
@@ -714,17 +739,37 @@
     </history>
   </entity>
   <entity type="ThesabanMueang" name="เสนา" english="Sena" geocode="1498" parent="1412" />
-  <entity type="ThesabanTambon" name="ท่าเรือ" english="Tha Ruea" geocode="1497" parent="1402" />
+  <entity type="ThesabanTambon" name="ท่าเรือ" english="Tha Ruea" geocode="1497" parent="1402" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tharuacity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เจ้าเจ็ด" english="Chao Chet" geocode="1496" parent="1412" />
-  <entity type="ThesabanTambon" name="อโยธยา" english="Ayodya" geocode="1495" parent="1401" />
+  <entity type="ThesabanMueang" name="อโยธยา" english="Ayodya" geocode="1495" parent="1401" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/ayutthaya/ayothaya/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าหลวง" english="Tha Luang" geocode="1494" parent="1402" >
     <office type="MunicipalityOffice">
       <url>http://www.thaluang.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="นครหลวง" english="Nakhon Luang" geocode="1493" parent="1403" />
-  <entity type="ThesabanTambon" name="อรัญญิก" english="Aranyik" geocode="1492" parent="1403" />
-  <entity type="ThesabanTambon" name="บางไทร" english="Bang Sai" geocode="1491" parent="1404" />
+  <entity type="ThesabanTambon" name="นครหลวง" english="Nakhon Luang" geocode="1493" parent="1403" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nakhonloungcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="อรัญญิก" english="Aranyik" geocode="1492" parent="1403" >
+    <office type="MunicipalityOffice">
+      <url>http://www.aranyik.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางไทร" english="Bang Sai" geocode="1491" parent="1404" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangsai.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ราชคราม" english="Rat Khram" geocode="1490" parent="1404" >
     <office type="MunicipalityOffice">
       <url>http://www.rajacram.com/</url>
@@ -732,26 +777,114 @@
   </entity>
   <entity type="ThesabanTambon" name="บางบาล" english="Bang Ban" geocode="1489" parent="1405" />
   <entity type="ThesabanTambon" name="มหาพราหมณ์" english="Maha Phram" geocode="1488" parent="1405" />
-  <entity type="ThesabanTambon" name="บางปะหัน" english="Bang Pahan" geocode="1487" parent="1407" />
-  <entity type="ThesabanTambon" name="บ้านเลน" english="Ban Len" geocode="1486" parent="1406" />
-  <entity type="ThesabanTambon" name="บ้านสร้าง" english="Ban Sang" geocode="1485" parent="1406" />
-  <entity type="ThesabanTambon" name="พระอินทราชา" english="Phra In Sacha" geocode="1484" parent="1406" />
-  <entity type="ThesabanTambon" name="ผักไห่" english="Phak Hai" geocode="1483" parent="1408" />
-  <entity type="ThesabanTambon" name="ลาดชะโด" english="Lat Chado" geocode="1482" parent="1408" />
-  <entity type="ThesabanTambon" name="ภาชี" english="Phachi" geocode="1481" parent="1409" />
-  <entity type="ThesabanTambon" name="ลาดบัวหลวง" english="Lat Bua Luang" geocode="1480" parent="1410" />
-  <entity type="ThesabanTambon" name="ลำตาเสา" english="Lam Ta Sao" geocode="1479" parent="1411" />
-  <entity type="ThesabanTambon" name="หัวเวียง" english="Hua Wiang" geocode="1478" parent="1412" />
-  <entity type="ThesabanTambon" name="บางซ้าย" english="Bang Sai" geocode="1477" parent="1413" />
-  <entity type="ThesabanTambon" name="อุทัย" english="Uthai" geocode="1476" parent="1414" />
-  <entity type="ThesabanTambon" name="มหาราช" english="Maha Rat" geocode="1475" parent="1415" />
-  <entity type="ThesabanTambon" name="โรงช้าง" english="Rong Chang" geocode="1474" parent="1415" />
-  <entity type="ThesabanTambon" name="บ้านแพรก" english="Ban Phraek" geocode="1473" parent="1416" />
-  <entity type="ThesabanTambon" name="ปราสาททอง" english="Prasat Thong" geocode="1472" parent="1406" tambon="140601"/>
-  <entity type="ThesabanTambon" name="คลองจิก" english="Khlong Chik" geocode="1471" parent="1406" tambon="140606"/>
+  <entity type="ThesabanTambon" name="บางปะหัน" english="Bang Pahan" geocode="1487" parent="1407" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangpahun.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บ้านเลน" english="Ban Len" geocode="1486" parent="1406" >
+    <office type="MunicipalityOffice">
+      <url>http://bannlen.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บ้านสร้าง" english="Ban Sang" geocode="1485" parent="1406" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bansangcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="พระอินทราชา" english="Phra In Sacha" geocode="1484" parent="1406" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 14.1446</geo:lat>
+        <geo:long>100.6052</geo:long>
+      </geo:Point>
+      <url comment="Offline?">http://www.pra-intaracha.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ผักไห่" english="Phak Hai" geocode="1483" parent="1408" >
+    <office type="MunicipalityOffice">
+      <url>http://www.phakhai.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ลาดชะโด" english="Lat Chado" geocode="1482" parent="1408" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/ayutthaya/latchado/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ภาชี" english="Phachi" geocode="1481" parent="1409" >
+    <office type="MunicipalityOffice">
+      <url>http://www.phachi.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ลาดบัวหลวง" english="Lat Bua Luang" geocode="1480" parent="1410" >
+    <office type="MunicipalityOffice">
+      <url>http://www.ladbualuang.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ลำตาเสา" english="Lam Ta Sao" geocode="1479" parent="1411" >
+    <office type="MunicipalityOffice">
+      <url>http://www.lamtasao.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หัวเวียง" english="Hua Wiang" geocode="1478" parent="1412" >
+    <office type="MunicipalityOffice">
+      <url>http://www.hauwiangcity.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางซ้าย" english="Bang Sai" geocode="1477" parent="1413" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bangzai.net/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="อุทัย" english="Uthai" geocode="1476" parent="1414" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tessabanuthai.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="มหาราช" english="Maha Rat" geocode="1475" parent="1415" >
+    <office type="MunicipalityOffice">
+      <url>http://www.maharat.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="โรงช้าง" english="Rong Chang" geocode="1474" parent="1415" >
+    <office type="MunicipalityOffice">
+      <url>http://tessabanrongchang.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บ้านแพรก" english="Ban Phraek" geocode="1473" parent="1416" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banprak.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ปราสาททอง" english="Prasat Thong" geocode="1472" parent="1406" tambon="140601">
+    <office type="MunicipalityOffice">
+      <url>http://www.prasattong.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="คลองจิก" english="Khlong Chik" geocode="1471" parent="1406" tambon="140606">
+    <office type="MunicipalityOffice">
+      <url>http://www.klongjigcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เชียงรากน้อย" english="Chiang Rak Noi" geocode="1470" parent="1406" tambon="140602"/>
-  <entity type="ThesabanTambon" name="บางกระสั้น" english="Bang Krasan" geocode="1469" parent="1406" tambon="140605"/>
-  <entity type="ThesabanTambon" name="บางนมโค" english="Bang Nom Kho" geocode="1468" parent="1412" tambon="141205"/>
-  <entity type="ThesabanTambon" name="สามกอ" english="Sam Ko" geocode="1467" parent="1412" tambon="141204"/>
-  <entity type="ThesabanTambon" name="สามเมือง" english="Sam Mueang" geocode="1466" parent="1410" tambon="141003" />
+  <entity type="ThesabanTambon" name="บางกระสั้น" english="Bang Krasan" geocode="1469" parent="1406" tambon="140605">
+    <office type="MunicipalityOffice">
+      <url>http://www.bangkasun.net/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บางนมโค" english="Bang Nom Kho" geocode="1468" parent="1412" tambon="141205">
+    <office type="MunicipalityOffice">
+      <url>http://www.bangnomko.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="สามกอ" english="Sam Ko" geocode="1467" parent="1412" tambon="141204">
+    <office type="MunicipalityOffice">
+      <url>http://www.samkor.thport.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="สามเมือง" english="Sam Mueang" geocode="1466" parent="1410" tambon="141003" >
+    <office type="MunicipalityOffice">
+      <url>http://www.sammuang.go.th/</url>
+    </office>
+  </entity>
 </entity>
