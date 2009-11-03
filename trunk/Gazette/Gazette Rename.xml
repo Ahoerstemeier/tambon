@@ -124,6 +124,8 @@
   <!--Rename of พระเสื้อเมือง to ในเมือง (800101) after 1910-->
   <!--Rename of สาขลา to นาเกลือ (110501) after 1919-->
   <!--Rename of ทุ่งนา to ทุ่งงาม (520401) after 1917-->
+  <!--Change of spelling สันสันซ้าย to สันทราย (5014) 1904-1917 -->
+  <!--Change of spelling แม่ซวย to แม่สรวย (5710) 1904-1917 -->
   <decade value="2000s">
     <entry description="Rename of Amphoe Nong Bun Nak" title="พระราชกฤษฎีกาเปลี่ยนชื่ออำเภอหนองบุนนาก จังหวัดนครราชสีมา พ.ศ. ๒๕๔๖" volume="120" page="7-8" issue="36 ก" uri="00124516.PDF" publication="2003-05-01" sign="2003-04-22">
       <rename oldname="หนองบุนนาก" name="หนองบุญมาก" geocode="3022"/>
@@ -973,6 +975,22 @@
     <rename oldname="บุปผาราม" name="คลองสาน" geocode="1018" />
   </entry>
 
-  <entry description="Rename of Kwaeng" title="แจ้งความกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่อแขวงในนครเชียงใหม่ นครลำปาง" volume="21" page="381" issue="23" uri="2447/023/381_1.PDF" publication="1904-09-04" />
-  <entry description="Rename of Kwaeng" title="แจ้งความกระทรวงมหาดไทย" subtitle="เปลี่ยนชื่อแขวงแม่กก เรียกแขวงเมืองเชียงราย กับรวมแขวงเมืองพง แขวงเมืองเวียงป่าเป้าเรียกแขวงแม่ซวย" volume="22" page="950-951" issue="39" uri="2448/039/950_2.PDF" publication="1905-12-24" />
+  <entry description="Rename of Khwaeng in Chiang Mai and Lampang" title="แจ้งความกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่อแขวงในนครเชียงใหม่ นครลำปาง" volume="21" page="381" issue="23" uri="2447/023/381_1.PDF" publication="1904-09-04" sign="1904-08-26">
+    <rename type="Amphoe" oldname="แม่ขาน" oldenglish="Mae Khan" name="สันป่าตอง" english="San Pa Tong" geocode="5012" />
+    <rename type="Amphoe" oldname="แม่กวง" oldenglish="Mae Kwang" name="สันสันซ้าย" english="San Sai" geocode="5014" />
+    <rename type="Amphoe" oldname="ขุนมี่" oldenglish="Khun Mi" name="เชียงดาว" english="Chiang Dao" geocode="5004" />
+    <rename type="Amphoe" oldname="แม่งัด" oldenglish="Mae Ngat" name="เมืองพร้าว" english="Mueang Phrao" geocode="5011" />
+    <rename type="Amphoe" oldname="ปิงใฅ้" oldenglish="Ping Tai" name="เมืองฮอด" english="Mueang Hot" geocode="5016" />
+    <rename type="Amphoe" oldname="วังเหนือ" oldenglish="Wang Nuea" name="แจ้ห่ม" english="Chae Hom" geocode="5206" />
+    <rename type="Amphoe" oldname="วังใฅ้" oldenglish="Wang Tai" name="สบปราบ" english="Sop Prap" geocode="5211" />
+    <rename type="Amphoe" oldname="พะเยาเหนือ" oldenglish="Phayao Nuea" name="แม่ใจ" english="Mae Chai" geocode="5607" comment="Actually Mae Chai was abolished later and recreated in 1963"/>
+    <rename type="Amphoe" oldname="พะเยาใฅ้" oldenglish="Phayao Tai" name="ดอกคำใต้" english="Dok Khamtai" geocode="5605" comment="Actually Dok Khamtai was abolished later and recreated in 1963"/>
+  </entry>
+  <entry description="Rename and merge of Khwaeng" title="แจ้งความกระทรวงมหาดไทย" subtitle="เปลี่ยนชื่อแขวงแม่กก เรียกแขวงเมืองเชียงราย กับรวมแขวงเมืองพง แขวงเมืองเวียงป่าเป้าเรียกแขวงแม่ซวย" volume="22" page="950-951" issue="39" uri="2448/039/950_2.PDF" publication="1905-12-24" sign="1905-12-07">
+    <rename type="Amphoe" geocode="5701" oldname="แม่กก" oldenglish="Mae Kok" name="เมืองเชียงราย" english="Mueang Chiang Rai"/>
+    <create type="Amphoe" geocode="5710" name="แม่ซวย" english="Mae Suai">
+      <abolish name="เมืองเวียงป่าเป้า" english="Mueang Wiang Pa Pao" type="Amphoe"/>
+      <abolish name="เมืองพง" english="Mueang Phong" type="Amphoe"/>
+    </create>
+  </entry>
 </gazette>
