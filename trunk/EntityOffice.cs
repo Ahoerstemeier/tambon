@@ -161,7 +161,13 @@ namespace De.AHoerstemeier.Tambon
                 {
                     lAddress = Address.ToString();
                 }
-                iKml.AddPoint(iNode, Location.Latitude, Location.Longitude, lName, Type.ToString(),lAddress,iDescription);
+                // ToDo: for Amphoe also amphoe.com URL to description
+                String lDescription = iDescription;
+                foreach (Uri lUri in this.Websites)
+                {
+                    lDescription = lDescription + "\n" + lUri.ToString();
+                }
+                iKml.AddPoint(iNode, Location.Latitude, Location.Longitude, lName, Type.ToString(),lAddress,lDescription);
             }
         }
 
