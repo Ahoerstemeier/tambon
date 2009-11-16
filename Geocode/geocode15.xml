@@ -88,7 +88,11 @@
       <entity type="Muban" geocode="15010406" name="บ้านแปดแก้ว"/>
       <entity type="Muban" geocode="15010407" name="บ้านป่างิ้ว"/>
     </entity>
-    <entity type="Tambon" name="บ้านแห" english="Ban Hae" geocode="150105" />
+    <entity type="Tambon" name="บ้านแห" english="Ban Hae" geocode="150105" >
+      <office type="TAOOffice">
+        <url>http://www.ban-hae.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ตลาดกรวด" english="Talat Kruat" geocode="150106" />
     <entity type="Tambon" name="มหาดไทย" english="Mahat Thai" geocode="150107" >
       <entity type="Muban" geocode="15010701" name="บ้านหนองไข่เน่า"/>
@@ -123,6 +127,10 @@
     </entity>
     <entity type="Tambon" name="ย่านซื่อ" english="Yan Sue" geocode="150114" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 14.6221</geo:lat>
+          <geo:long>100.4531</geo:long>
+        </geo:Point>
         <url>http://www.yaansue.com/</url>
       </office>
     </entity>
@@ -142,7 +150,18 @@
       </office>
     </entity>
     <entity type="Tambon" name="เทวราช" english="Thewarat" geocode="150204" />
-    <entity type="Tambon" name="ราชสถิตย์" english="Ratchasathit" geocode="150205" />
+    <entity type="Tambon" name="ราชสถิตย์" english="Ratchasathit" geocode="150205" >
+      <office type="TAOOffice">
+        <url>http://www.ratchasathit.com/</url>
+      </office>
+      <entity type="Muban" geocode="15020501" name="บ้านราชสถิตย์"/>
+      <entity type="Muban" geocode="15020502" name="บ้านราชสถิตย์"/>
+      <entity type="Muban" geocode="15020503" name="บ้านโรงม้า"/>
+      <entity type="Muban" geocode="15020504" name="บ้านโรงม้า"/>
+      <entity type="Muban" geocode="15020505" name="บ้านโรงม้า"/>
+      <entity type="Muban" geocode="15020506" name="บ้านหนองขุม"/>
+      <entity type="Muban" geocode="15020507" name="บ้านหนองหาด"/>
+    </entity>
     <entity type="Tambon" name="ไชโย" english="Chaiyo" geocode="150206" />
     <entity type="Tambon" name="หลักฟ้า" english="Lak Fa" geocode="150207" />
     <entity type="Tambon" name="ชะไว" english="Chawai" geocode="150208" />
@@ -164,6 +183,10 @@
     </entity>
     <entity type="Tambon" name="โรงช้าง" english="Rong Chang" geocode="150304" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 14.4945</geo:lat>
+          <geo:long>100.4601</geo:long>
+        </geo:Point>
         <url>http://www.rhongchang.com/</url>
       </office>
       <entity type="Muban" geocode="15030401" name="บ้านคลองฝรั่ง"/>
@@ -229,9 +252,28 @@
         <url>http://www.tambonangkeaw.com/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="อินทประมูล" english="Inthapramun" geocode="150402" />
+    <entity type="Tambon" name="อินทประมูล" english="Inthapramun" geocode="150402" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 14.6497</geo:lat>
+          <geo:long>100.4136</geo:long>
+        </geo:Point>
+        <url>http://www.intapramul.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="15040201" name="บ้านน้ำอาบ"/>
+      <entity type="Muban" geocode="15040202" name="บ้านอินทประมูล"/>
+      <entity type="Muban" geocode="15040203" name="บ้านอินทประมูล"/>
+
+      <entity type="Muban" geocode="15040205" name="บ้านคลองวัดป่า"/>
+      <entity type="Muban" geocode="15040206" name="บ้านคลองห้วยลิงออก"/>
+      <entity type="Muban" geocode="15040207" name="บ้านคลองห้วยลิงออก"/>
+    </entity>
     <entity type="Tambon" name="บางพลับ" english="Bang Phlap" geocode="150403" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 14.6532</geo:lat>
+          <geo:long>100.4125</geo:long>
+        </geo:Point>
         <url>http://www.bangphlap.com/</url>
         <url>http://www.geocities.com/obtbangplub/</url>
       </office>
@@ -252,7 +294,11 @@
         <url>http://www.rammasak.com/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="บางระกำ" english="Bang Rakam" geocode="150406" />
+    <entity type="Tambon" name="บางระกำ" english="Bang Rakam" geocode="150406" >
+      <office type="TAOOffice">
+        <url>http://www.bang-rakam.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="โพธิ์รังนก" english="Pho Rang Nok" geocode="150407" >
       <entity type="Muban" geocode="15040701" name="บ้านบางกระแว่น"/>
       <entity type="Muban" geocode="15040702" name="บ้านโพธิ์รังนก"/>
@@ -322,13 +368,26 @@
         <geo:lat>14.7514</geo:lat>
         <geo:long>100.3248</geo:long>
       </geo:Point>
+      <url>http://www.amphoe-sawaengha.com/</url>
     </office>
     <entity type="Tambon" name="แสวงหา" english="Sawaeng Ha" geocode="150501" />
     <entity type="Tambon" name="ศรีพราน" english="Si Phran" geocode="150502" />
-    <entity type="Tambon" name="บ้านพราน" english="Ban Phran" geocode="150503" />
+    <entity type="Tambon" name="บ้านพราน" english="Ban Phran" geocode="150503" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 14.7018</geo:lat>
+          <geo:long>100.2981</geo:long>
+        </geo:Point>
+        <url comment="Strange content">http://www.banpran.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="วังน้ำเย็น" english="Wang Nam Yen" geocode="150504" />
     <entity type="Tambon" name="สีบัวทอง" english="Si Bua Thong" geocode="150505" />
-    <entity type="Tambon" name="ห้วยไผ่" english="Huai Phai" geocode="150506" />
+    <entity type="Tambon" name="ห้วยไผ่" english="Huai Phai" geocode="150506" >
+      <office type="TAOOffice">
+        <url>http://www.tambonhuaypai.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="จำลอง" english="Chamlong" geocode="150507" >
       <office type="TAOOffice">
         <url>http://www.thambonjumlong.com/</url>
