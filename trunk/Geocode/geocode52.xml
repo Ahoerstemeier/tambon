@@ -45,6 +45,9 @@
       <official title="Governor" index="1" name="พระยาสุเรนทรราชเสนา (เจิม จารุจินดา)" beginyear="1910" endyear="1927"/>
     </officials>
   </office>
+  <office type="PAOOffice">
+    <url>http://www.lp-pao.go.th/</url>
+  </office>
   <entity type="Amphoe" name="เมืองลำปาง" english="Mueang Lampang" geocode="5201" >
     <office type="DistrictOffice">
       <geo:Point>
@@ -87,6 +90,12 @@
       <entity type="Muban" geocode="52011017" name="บ้านปงชัยพัฒนา"/>
     </entity>
     <entity type="Tambon" name="พิชัย" english="Phichai" geocode="520111" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>18.29122</geo:lat>
+          <geo:long>99.52601</geo:long>
+        </geo:Point>
+      </office>
       <entity type="Muban" geocode="52011111" name="บ้านดอนมูล"/>
 
       <entity type="Muban" geocode="52011117" name="บ้านมิ่งมงคล"/>
@@ -166,9 +175,17 @@
       </geo:Point>
     </office>
     <entity type="Tambon" name="ลำปางหลวง" english="Lampang Luang" geocode="520301" >
-      <entity type="Muban" geocode="52030105" name="บ้านจู๊ด"/>
+      <entity type="Muban" geocode="52030101" name="บ้านลำปางหลวง"/>
+      <entity type="Muban" geocode="52030102" name="บ้านลำปางหลวงใต้"/>
+      <entity type="Muban" geocode="52030103" name="บ้านป่าเหียง"/>
+      <entity type="Muban" geocode="52030104" name="บ้านนางเหลียว"/>
+      <entity type="Muban" geocode="52030105" name="บ้านจู๊ด" comment="TAO website spells it บ้านจู้ด"/>
       <entity type="Muban" geocode="52030106" name="บ้านม้าเหนือ"/>
-
+      <entity type="Muban" geocode="52030107" name="บ้านลอมศรีป้อ"/>
+      <entity type="Muban" geocode="52030108" name="บ้านกองหาญ"/>
+      <entity type="Muban" geocode="52030109" name="บ้านม้าใต้"/>
+      <entity type="Muban" geocode="52030110" name="บ้านจู้ดทุ่ง"/>
+      <entity type="Muban" geocode="52030111" name="บ้านจามเทวี"/>
       <entity type="Muban" geocode="52030112" name="บ้านปงป่าม่วง"/>
       <entity type="Muban" geocode="52030113" name="บ้านม้ากลาง"/>
     </entity>
@@ -183,7 +200,15 @@
       </office>
     </entity>
     <entity type="Tambon" name="วังพร้าว" english="Wang Phrao" geocode="520304" />
-    <entity type="Tambon" name="ศาลา" english="Sala" geocode="520305" />
+    <entity type="Tambon" name="ศาลา" english="Sala" geocode="520305" >
+      <entity type="Muban" geocode="52030501" name="บ้านศาลาดงลาน"/>
+      <entity type="Muban" geocode="52030502" name="บ้านศาลาไชย"/>
+      <entity type="Muban" geocode="52030503" name="บ้านสำราญนิเวศน์"/>
+      <entity type="Muban" geocode="52030504" name="บ้านหนองแหวน"/>
+      <entity type="Muban" geocode="52030505" name="บ้านไร่อ้อย"/>
+      <entity type="Muban" geocode="52030506" name="บ้านศาลาหลวง"/>
+      <entity type="Muban" geocode="52030507" name="บ้านเหล่า-แม่ปูน"/>
+    </entity>
     <entity type="Tambon" name="เกาะคา" english="Ko Kha" geocode="520306" >
       <office type="TAOOffice">
         <url>http://www.kokhasub.com/</url>
@@ -318,13 +343,12 @@
       <entity type="Muban" geocode="52060111" name="บ้านม่วงพัฒนา"/>
     </entity>
     <entity type="Tambon" name="บ้านสา" english="Ban Sa" geocode="520602" >
-      <entity type="Muban" geocode="52060201" name="บ้านแป้น"/>
-
+      <entity type="Muban" geocode="52060201" name="บ้านแป้นเหนือ"/>
+      <entity type="Muban" geocode="52060202" name="บ้านสบหก"/>
       <entity type="Muban" geocode="52060203" name="บ้านสาแพะ"/>
-
+      <entity type="Muban" geocode="52060204" name="บ้านสาเหนือ"/>
       <entity type="Muban" geocode="52060205" name="บ้านสามัคคี"/>
       <entity type="Muban" geocode="52060206" name="บ้านแป้นใต้"/>
-
       <entity type="Muban" geocode="52060207" name="บ้านสาแพะเหนือ"/>
       <entity type="Muban" geocode="52060208" name="บ้านแป้นพัฒนา"/>
       <entity type="Muban" geocode="52060209" name="บ้านแป้นโป่งชัย"/>
@@ -516,7 +540,17 @@
       </office>
     </entity>
     <entity type="Tambon" name="บ้านบอม" english="Ban Bom" geocode="521005" />
-    <entity type="Tambon" name="น้ำโจ้" english="Nam Cho" geocode="521006" />
+    <entity type="Tambon" name="น้ำโจ้" english="Nam Cho" geocode="521006" >
+      <entity type="Muban" geocode="52100601" name="บ้านฮ่องห้า"/>
+      <entity type="Muban" geocode="52100602" name="บ้านป่าจ้ำ"/>
+      <entity type="Muban" geocode="52100603" name="บ้านต๋อ"/>
+      <entity type="Muban" geocode="52100604" name="บ้านหนอง"/>
+      <entity type="Muban" geocode="52100605" name="บ้านน้ำโจ้"/>
+      <entity type="Muban" geocode="52100606" name="บ้านม่อนแสนศรี"/>
+      <entity type="Muban" geocode="52100607" name="บ้านแม่ปุง"/>
+      <entity type="Muban" geocode="52100608" name="บ้านป่าม่วง"/>
+      <entity type="Muban" geocode="52100609" name="บ้านหนองพัฒนา"/>
+    </entity>
     <entity type="Tambon" name="ดอนไฟ" english="Don Fai" geocode="521007" />
     <entity type="Tambon" name="หัวเสือ" english="Hua Suea" geocode="521008" />
     <entity type="Tambon" name="สบป้าด" english="Sop Pat" geocode="521009" newgeocode="520205" />
@@ -752,18 +786,49 @@
   <entity type="ThesabanTambon" name="สบปราบ" english="Sop Prap" geocode="5285" parent="5211" />
   <entity type="ThesabanTambon" name="ห้างฉัตร" english="Hang Chat" geocode="5284" parent="5212" />
   <entity type="ThesabanTambon" name="เวียงมอก" english="Wiang Mok" geocode="5283" parent="5208" tambon="520805"/>
-  <entity type="ThesabanTambon" name="แม่เมาะ" english="Mae Mo" geocode="5282" parent="5202" tambon="520204" />
+  <entity type="ThesabanTambon" name="แม่เมาะ" english="Mae Mo" geocode="5282" parent="5202" tambon="520204" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tasaban-maemoh.org/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="สิริราช" english="Sirirat" geocode="5281" parent="5210" tambon="521011" >
+    <office type="MunicipalityOffice">
+      <url>http://www.sirirach.net/</url>
+    </office>
     <history>
       <rename oldname="สันดอนแก้ว" oldenglish="San Don Kaeo" name="สิริราช"/>
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="ลำปางหลวง" english="Lampang Luang" geocode="5280" parent="5203" tambon="520301" />
-  <entity type="ThesabanTambon" name="นาแก้ว" english="Na Kaeo" geocode="5279" parent="5203" tambon="520302" />
-  <entity type="ThesabanTambon" name="ศาลา" english="Sala" geocode="5278" parent="5203" tambon="520305" />
-  <entity type="ThesabanTambon" name="บ้านสา" english="Ban Sa" geocode="5277" parent="5206" tambon="520602" />
-  <entity type="ThesabanTambon" name="แม่ทะ" english="Mae Tha" geocode="5276" parent="5210" tambon="521001" />
-  <entity type="ThesabanTambon" name="น้ำโจ้" english="Nam Cho" geocode="5275" parent="5210" tambon="521006" />
+  <entity type="ThesabanTambon" name="ลำปางหลวง" english="Lampang Luang" geocode="5280" parent="5203" tambon="520301" >
+    <office type="MunicipalityOffice">
+      <url>http://www.lampangluang.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="นาแก้ว" english="Na Kaeo" geocode="5279" parent="5203" tambon="520302" >
+    <office type="MunicipalityOffice">
+      <url>http://nakaew.org/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ศาลา" english="Sala" geocode="5278" parent="5203" tambon="520305" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tbsala2009.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บ้านสา" english="Ban Sa" geocode="5277" parent="5206" tambon="520602" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bansa.net/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="แม่ทะ" english="Mae Tha" geocode="5276" parent="5210" tambon="521001" >
+    <office type="MunicipalityOffice">
+      <url>http://maetha.igetweb.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="น้ำโจ้" english="Nam Cho" geocode="5275" parent="5210" tambon="521006" >
+    <office type="MunicipalityOffice">
+      <url>http://www.namcho-mn.org/</url>
+    </office>
+  </entity>
 
   <!-- Geocode nor yet known -->
   <entity type="ThesabanTambon" name="ทุ่งผึ้ง" english="Thung Phueng" geocode="5274" parent="5206" tambon="520606" >
