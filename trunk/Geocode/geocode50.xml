@@ -1621,6 +1621,9 @@
     <entity type="Tambon" name="โปงทุ่ง" english="Pong Thung" geocode="501706" />
   </entity>
   <entity type="Amphoe" name="อมก๋อย" english="Omkoi" geocode="5018" >
+    <office type="DistrictOffice">
+      <url>http://www.omkoi.org/</url>
+    </office>
     <entity type="Tambon" name="อมก๋อย" english="Omkoi" geocode="501801" />
     <entity type="Tambon" name="ยางเปียง" english="Yang Piang" geocode="501802" >
       <office type="TAOOffice">
@@ -2036,9 +2039,15 @@
     <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="502603"/>
     -->
   </entity>
-  <entity type="KingAmphoe" geocode="5027" name="หมอกฟ้า" english="Nok Fa" obsolete="1" comment="Proposed, but not created"/>
+  <entity type="KingAmphoe" geocode="5027" name="หมอกฟ้า" english="Mok Fa" obsolete="1" comment="Proposed, but not created; to be split off from 5006"/>
   <entity type="KingAmphoe" geocode="5028" name="บ่อหลวง" english="Bo Luang" obsolete="1" comment="Proposed, but not created"/>
-
+<!--
+  <entity type="KingAmphoe" name="นันทบุรี" english="Nanthaburi" obsolete="1" comment="Proposed, but not created">
+    <entity type="Tambon" name="แม่ตื่น" english="Mae Tuen" oldgeocode="501803" />
+    <entity type="Tambon" name="ม่อนจอง" english="Mon Chong" oldgeocode="501804" />
+  </entity>
+-->
+  
   <entity type="ThesabanNakhon" name="เชียงใหม่" english="Chiang Mai" geocode="5099" parent="5001" >
     <office type="MunicipalityOffice">
       <geo:Point>
