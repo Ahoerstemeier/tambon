@@ -1622,7 +1622,19 @@
   </entity>
   <entity type="Amphoe" name="อมก๋อย" english="Omkoi" geocode="5018" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.8011</geo:lat>
+        <geo:long>98.3587</geo:long>
+      </geo:Point>
       <url>http://www.omkoi.org/</url>
+      <officials>
+        <official title="DistrictOfficer" name="สิทธิชัย สวัสดิ์แสน"/>
+        <official title="DistrictOfficer" index="24" name="พุฒิพงศ์ ศิริมาตย์" english="Putipong Sirimatya"/>
+        <!-- 
+        <official title="DistrictOfficer" name="เจริญ  อาศนสุวรรณ"/>
+        <official title="DistrictOfficer" name="วีระเดช สมวรรณ"/>
+        -->
+      </officials>
     </office>
     <entity type="Tambon" name="อมก๋อย" english="Omkoi" geocode="501801" />
     <entity type="Tambon" name="ยางเปียง" english="Yang Piang" geocode="501802" >
@@ -1834,6 +1846,9 @@
         <geo:lat>18.6126</geo:lat>
         <geo:long>98.7750</geo:long>
       </geo:Point>
+      <officials>
+        <official title="DistrictOfficer" name="พุฒิพงศ์ ศิริมาตย์" english="Putipong Sirimatya"/>
+      </officials>
     </office>
     <entity type="Tambon" name="บ้านกาด" english="Ban Kat" geocode="502201" >
       <office type="TAOOffice">
@@ -2041,13 +2056,13 @@
   </entity>
   <entity type="KingAmphoe" geocode="5027" name="หมอกฟ้า" english="Mok Fa" obsolete="1" comment="Proposed, but not created; to be split off from 5006"/>
   <entity type="KingAmphoe" geocode="5028" name="บ่อหลวง" english="Bo Luang" obsolete="1" comment="Proposed, but not created"/>
-<!--
+  <!--
   <entity type="KingAmphoe" name="นันทบุรี" english="Nanthaburi" obsolete="1" comment="Proposed, but not created">
     <entity type="Tambon" name="แม่ตื่น" english="Mae Tuen" oldgeocode="501803" />
     <entity type="Tambon" name="ม่อนจอง" english="Mon Chong" oldgeocode="501804" />
   </entity>
 -->
-  
+
   <entity type="ThesabanNakhon" name="เชียงใหม่" english="Chiang Mai" geocode="5099" parent="5001" >
     <office type="MunicipalityOffice">
       <geo:Point>
