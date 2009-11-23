@@ -59,8 +59,30 @@
   </office>
   <entity type="Amphoe" name="เมืองยะลา" english="Mueang Yala" geocode="9501" >
     <entity type="Tambon" name="สะเตง" english="Sateng" geocode="950101" />
-    <entity type="Tambon" name="บุดี" english="Budi" geocode="950102" />
-    <entity type="Tambon" name="ยุโป" english="Yupo" geocode="950103" />
+    <entity type="Tambon" name="บุดี" english="Budi" geocode="950102" >
+      <office type="TAOOffice">
+        <url>http://www.budee.thport.com/</url>
+      </office>
+      <entity type="Muban" geocode="95010201" name="บ้านบุดี"/>
+      <entity type="Muban" geocode="95010202" name="บ้านนิบง"/>
+      <entity type="Muban" geocode="95010203" name="บ้านจือนือแร"/>
+      <entity type="Muban" geocode="95010204" name="บ้านบือแน"/>
+      <entity type="Muban" geocode="95010205" name="บ้านไบ้"/>
+      <entity type="Muban" geocode="95010206" name="บ้านบูเกะคละ"/>
+      <entity type="Muban" geocode="95010207" name="บ้านรั้วตะวัน"/>
+      <entity type="Muban" geocode="95010208" name="บ้านบุดีฮิเล"/>
+    </entity>
+    <entity type="Tambon" name="ยุโป" english="Yupo" geocode="950103" >
+      <office type="TAOOffice">
+        <url>http://www.yupo.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95010301" name="บ้านยุโป"/>
+      <entity type="Muban" geocode="95010302" name="บ้านทุ่งเหรี่ยง"/>
+      <entity type="Muban" geocode="95010303" name="บ้านบาโด"/>
+      <entity type="Muban" geocode="95010304" name="บ้านทุ่งยามู"/>
+      <entity type="Muban" geocode="95010305" name="บ้านคลองทรายใน"/>
+      <entity type="Muban" geocode="95010306" name="บ้านบ่อเจ็ดลูก"/>
+    </entity>
     <entity type="Tambon" name="ลิดล" english="Lidon" geocode="950104" >
       <office type="TAOOffice">
         <url>http://www.lidol.go.th/</url>
@@ -81,15 +103,49 @@
       <entity type="Muban" geocode="95010603" name="บ้านปาโจ"/>
     </entity>
     <entity type="Tambon" name="สะเอะ" english="Sa-ae" geocode="950107" newgeocode="950802" />
-    <entity type="Tambon" name="ท่าสาป" english="Tha Sap" geocode="950108" />
-    <entity type="Tambon" name="ลำใหม่" english="Lam Mai" geocode="950109" />
+    <entity type="Tambon" name="ท่าสาป" english="Tha Sap" geocode="950108" >
+      <office type="TAOOffice">
+        <!-- Location 6.54124, 101.25844 from longdo, Google has no hires yet-->
+      </office>
+    </entity>
+    <entity type="Tambon" name="ลำใหม่" english="Lam Mai" geocode="950109" >
+      <office type="TAOOffice">
+        <url>http://www.lummai.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95010901" name="บ้านปีซัด"/>
+      <entity type="Muban" geocode="95010902" name="บ้านน้ำเย็น"/>
+      <entity type="Muban" geocode="95010903" name="บ้านป่าพ้อ"/>
+      <entity type="Muban" geocode="95010904" name="บ้านปอเยาะ"/>
+      <entity type="Muban" geocode="95010905" name="บ้านลูกา"/>
+      <entity type="Muban" geocode="95010906" name="บ้านต้นพิกุล"/>
+      <entity type="Muban" geocode="95010907" name="บ้านสีคง"/>
+    </entity>
     <entity type="Tambon" name="หน้าถ้ำ" english="Na Tham" geocode="950110" >
       <office type="TAOOffice">
         <url>http://www.natum.go.th/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="ลำพะยา" english="Lam Phaya" geocode="950111" />
-    <entity type="Tambon" name="เปาะเส้ง" english="Po Seng" geocode="950112" />
+    <entity type="Tambon" name="ลำพะยา" english="Lam Phaya" geocode="950111" >
+      <office type="TAOOffice">
+        <url>http://lumphaya.org/</url>
+      </office>
+      <entity type="Muban" geocode="95011101" name="บ้านเหนือ"/>
+      <entity type="Muban" geocode="95011102" name="บ้านลำพะยา"/>
+      <entity type="Muban" geocode="95011103" name="บ้านพรุ"/>
+      <entity type="Muban" geocode="95011104" name="บ้านทำเนียบ"/>
+      <entity type="Muban" geocode="95011105" name="บ้านออก"/>
+      <entity type="Muban" geocode="95011106" name="บ้านทองล้น"/>
+      <entity type="Muban" geocode="95011107" name="บ้านต้นหยี"/>
+    </entity>
+    <entity type="Tambon" name="เปาะเส้ง" english="Po Seng" geocode="950112" >
+      <office type="TAOOffice">
+        <url>http://www.pohseng.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95011201" name="บ้านเปาะเส้ง"/>
+      <entity type="Muban" geocode="95011202" name="บ้านจืองา"/>
+      <entity type="Muban" geocode="95011203" name="บ้านกูแบปาแย"/>
+      <entity type="Muban" geocode="95011204" name="บ้านเนียง"/>
+    </entity>
     <entity type="Tambon" name="กรงปินัง" english="Krong Pinang" geocode="950113" newgeocode="950801" />
     <entity type="Tambon" name="พร่อน" english="Phron" geocode="950114" >
       <office type="TAOOffice">
@@ -281,8 +337,34 @@
     <entity type="Unknown" name="ธารโต" english="Than To" geocode="950399" newgeocode="950401" />
   </entity>
   <entity type="Amphoe" name="ธารโต" english="Than To" geocode="9504" >
-    <entity type="Tambon" name="ธารโต" english="Than To" geocode="950401" />
-    <entity type="Tambon" name="บ้านแหร" english="Ban Rae" geocode="950402" />
+    <entity type="Tambon" name="ธารโต" english="Than To" geocode="950401" >
+      <office type="TAOOffice">
+        <url>http://www.thanto.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95040101" name="บ้านธารโต"/>
+      <entity type="Muban" geocode="95040102" name="บ้านหน้าเกษตร"/>
+      <entity type="Muban" geocode="95040103" name="บ้านจาเราะแป"/>
+      <entity type="Muban" geocode="95040104" name="บ้านศรีท่าน้ำ"/>
+      <entity type="Muban" geocode="95040105" name="บ้านบันนังกระแจะ"/>
+      <entity type="Muban" geocode="95040106" name="บ้านมายอ"/>
+      <entity type="Muban" geocode="95040107" name="บ้านหลังเกษตร"/>
+    </entity>
+    <entity type="Tambon" name="บ้านแหร" english="Ban Rae" geocode="950402" >
+      <office type="TAOOffice">
+        <url>http://www.banrae.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95040201" name="บ้านแหร"/>
+      <entity type="Muban" geocode="95040202" name="บ้านบัวทอง"/>
+      <entity type="Muban" geocode="95040203" name="บ้านซาไก"/>
+      <entity type="Muban" geocode="95040204" name="บ้านบูโล๊ะสะนีแย"/>
+      <entity type="Muban" geocode="95040205" name="บ้านบ่อหินนอก"/>
+      <entity type="Muban" geocode="95040206" name="บ้านบาตูปูเต๊ะ"/>
+      <entity type="Muban" geocode="95040207" name="บ้านวังศิลา"/>
+      <entity type="Muban" geocode="95040208" name="บ้านเจาะซีโป๊ะ"/>
+      <entity type="Muban" geocode="95040209" name="บ้านบัวทองใต้"/>
+      <entity type="Muban" geocode="95040210" name="บ้านควนดินดำ"/>
+      <entity type="Muban" geocode="95040211" name="บ้านบ่อหินใน"/>
+    </entity>
     <entity type="Tambon" name="แม่หวาด" english="Mae Wat" geocode="950403" >
       <office type="TAOOffice">
         <url>http://www.maewad.go.th/</url>
@@ -326,16 +408,49 @@
       <entity type="Muban" geocode="95050108" name="บ้านเจาะกลาดี"/>
       <entity type="Muban" geocode="95050109" name="บ้านกือเต"/>
     </entity>
-    <entity type="Tambon" name="ละแอ" english="La-ae" geocode="950502" />
-    <entity type="Tambon" name="ปะแต" english="Pa Tae" geocode="950503" />
+    <entity type="Tambon" name="ละแอ" english="La-ae" geocode="950502" >
+      <office type="TAOOffice">
+        <url>http://www.laae.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95050201" name="บ้านละแอ"/>
+      <entity type="Muban" geocode="95050202" name="บ้านตาเป"/>
+      <entity type="Muban" geocode="95050203" name="บ้านกือยา"/>
+      <entity type="Muban" geocode="95050204" name="บ้านกูแบรายอ"/>
+      <entity type="Muban" geocode="95050205" name="บ้านชะเม๊"/>
+      <entity type="Muban" geocode="95050206" name="บ้านปือรอ"/>
+    </entity>
+    <entity type="Tambon" name="ปะแต" english="Pa Tae" geocode="950503" >
+      <office type="TAOOffice">
+        <url>http://www.abtpata.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="บาโร๊ะ" english="Baro" geocode="950504" >
       <entity type="Muban" geocode="95050401" name="บ้านปูแล"/>
 
       <entity type="Muban" geocode="95050408" name="บ้านบาโย"/>
     </entity>
     <entity type="Tambon" name="กาบัง" english="Kabang" geocode="950505" newgeocode="950701" />
-    <entity type="Tambon" name="ตาชี" english="Tachi" geocode="950506" />
-    <entity type="Tambon" name="บาโงยซิแน" english="Ba-ngoi Sinae" geocode="950507" />
+    <entity type="Tambon" name="ตาชี" english="Tachi" geocode="950506" >
+      <office type="TAOOffice">
+        <url>http://www.tachee.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95050601" name="บ้านแค่"/>
+      <entity type="Muban" geocode="95050602" name="บ้านนอก"/>
+      <entity type="Muban" geocode="95050603" name="บ้านออก"/>
+      <entity type="Muban" geocode="95050604" name="บ้านไร่"/>
+      <entity type="Muban" geocode="95050605" name="บ้านเหมืองล่าง"/>
+    </entity>
+    <entity type="Tambon" name="บาโงยซิแน" english="Ba-ngoi Sinae" geocode="950507" >
+      <office type="TAOOffice">
+        <url>http://www.bangoycinae.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95050701" name="บ้านบาโงยซิแน"/>
+      <entity type="Muban" geocode="95050702" name="บ้านบูเก๊ะ"/>
+      <entity type="Muban" geocode="95050703" name="บ้านลีมาปูโร๊ะ"/>
+      <entity type="Muban" geocode="95050704" name="บ้านโปโฮ"/>
+      <entity type="Muban" geocode="95050705" name="บ้านซีเยาะ"/>
+      <entity type="Muban" geocode="95050706" name="บ้านลูรงค์"/>
+    </entity>
     <entity type="Tambon" name="กาตอง" english="Katong" geocode="950508" >
       <office type="TAOOffice">
         <url>http://www.katong.go.th/</url>
@@ -352,9 +467,35 @@
     <entity type="Unknown" name="กาบัง" english="Kabang" geocode="950599" newgeocode="950701" />
   </entity>
   <entity type="Amphoe" name="รามัน" english="Raman" geocode="9506" >
-    <entity type="Tambon" name="กายูบอเกาะ" english="Kayu Boko" geocode="950601" />
-    <entity type="Tambon" name="กาลูปัง" english="Kalupang" geocode="950602" />
-    <entity type="Tambon" name="กาลอ" english="Kalo" geocode="950603" />
+    <entity type="Tambon" name="กายูบอเกาะ" english="Kayu Boko" geocode="950601" >
+      <office type="TAOOffice">
+        <url>http://www.kayuboko.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95060101" name="บ้านรามัน"/>
+      <entity type="Muban" geocode="95060102" name="บ้านตอแล"/>
+      <entity type="Muban" geocode="95060103" name="บ้านบือยอง"/>
+      <entity type="Muban" geocode="95060104" name="บ้านพอแม็ง"/>
+      <entity type="Muban" geocode="95060105" name="บ้านฮูหยงบาโร๊ะ"/>
+      <entity type="Muban" geocode="95060106" name="บ้านตลาดล่าง"/>
+    </entity>
+    <entity type="Tambon" name="กาลูปัง" english="Kalupang" geocode="950602" >
+      <office type="TAOOffice">
+        <url>http://www.kalupank.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95060201" name="บ้านบือแนบารู"/>
+      <entity type="Muban" geocode="95060202" name="บ้านกาลูปัง"/>
+      <entity type="Muban" geocode="95060203" name="บ้านบาลูกา"/>
+      <entity type="Muban" geocode="95060204" name="บ้านเลสุ"/>
+    </entity>
+    <entity type="Tambon" name="กาลอ" english="Kalo" geocode="950603" >
+      <office type="TAOOffice">
+        <url>http://www.kalor.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95060301" name="บ้านแบหอ"/>
+      <entity type="Muban" geocode="95060302" name="บ้านกาลอ"/>
+      <entity type="Muban" geocode="95060303" name="บ้านทำนบ"/>
+      <entity type="Muban" geocode="95060304" name="บ้านตะโละมีแย"/>
+    </entity>
     <entity type="Tambon" name="กอตอตือร๊ะ" english="Koto Tuera" geocode="950604" >
       <office type="TAOOffice">
         <url>http://www.kototeura.go.th/</url>
@@ -366,8 +507,29 @@
       <entity type="Muban" geocode="95060405" name="บ้านกาดือแป"/>
     </entity>
     <entity type="Tambon" name="โกตาบารู" english="Kota Baru" geocode="950605" />
-    <entity type="Tambon" name="เกะรอ" english="Kero" geocode="950606" />
-    <entity type="Tambon" name="จะกว๊ะ" english="Cha-kwa" geocode="950607" />
+    <entity type="Tambon" name="เกะรอ" english="Kero" geocode="950606" >
+      <office type="TAOOffice">
+        <url>http://www.kero.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95060601" name="บ้านเกะรอ"/>
+      <entity type="Muban" geocode="95060602" name="บ้านปาแตรายอ"/>
+      <entity type="Muban" geocode="95060603" name="บ้านตาเน๊าะปูโย๊ะ"/>
+      <entity type="Muban" geocode="95060604" name="บ้านพะปูเงาะ"/>
+      <entity type="Muban" geocode="95060605" name="บ้านแอแกง"/>
+      <entity type="Muban" geocode="95060606" name="บ้านปูลามอง"/>
+      <entity type="Muban" geocode="95060607" name="บ้านฮูแตบาโงย"/>
+    </entity>
+    <entity type="Tambon" name="จะกว๊ะ" english="Cha-kwa" geocode="950607" >
+      <office type="TAOOffice">
+        <url>http://www.jakwa.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95060701" name="บ้านจะกว๊ะ"/>
+      <entity type="Muban" geocode="95060702" name="บ้านกำปงบือแน"/>
+      <entity type="Muban" geocode="95060703" name="บ้านปูลาสะนอ"/>
+      <entity type="Muban" geocode="95060704" name="บ้านลีเซ็ง"/>
+      <entity type="Muban" geocode="95060705" name="บ้านยือนือเร๊ะ"/>
+      <entity type="Muban" geocode="95060706" name="บ้านกูแบกือโร๊ะ"/>
+    </entity>
     <entity type="Tambon" name="ท่าธง" english="Tha Thong" geocode="950608" >
       <office type="TAOOffice">
         <url>http://www.tatong.go.th/</url>
@@ -387,7 +549,18 @@
       <entity type="Muban" geocode="95060906" name="บ้านบาโงบูโล๊ะ"/>
       <entity type="Muban" geocode="95060907" name="บ้านบือแนตือบู"/>
     </entity>
-    <entity type="Tambon" name="บาลอ" english="Balo" geocode="950610" />
+    <entity type="Tambon" name="บาลอ" english="Balo" geocode="950610" >
+      <office type="TAOOffice">
+        <url>http://www.balor.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95061001" name="บ้านบาลอ"/>
+      <entity type="Muban" geocode="95061002" name="บ้านปาโฮะ"/>
+      <entity type="Muban" geocode="95061003" name="บ้านสะแตเซ็ง"/>
+      <entity type="Muban" geocode="95061004" name="บ้านสุเป๊ะบือแนบือแต"/>
+      <entity type="Muban" geocode="95061005" name="บ้านละแอ"/>
+      <entity type="Muban" geocode="95061006" name="บ้านปูลัย"/>
+      <entity type="Muban" geocode="95061007" name="บ้านบาลูกาปาลัส"/>
+    </entity>
     <entity type="Tambon" name="บาโงย" english="Ba-ngoi" geocode="950611" />
     <entity type="Tambon" name="บือมัง" english="Buemang" geocode="950612" >
       <office type="TAOOffice">
@@ -400,10 +573,38 @@
       <entity type="Muban" geocode="95061205" name="บ้านปงตา"/>
       <entity type="Muban" geocode="95061206" name="บ้านปีแยะ"/>
     </entity>
-    <entity type="Tambon" name="ยะต๊ะ" english="Yata" geocode="950613" />
-    <entity type="Tambon" name="วังพญา" english="Wang Phaya" geocode="950614" />
-    <entity type="Tambon" name="อาซ่อง" english="A-song" geocode="950615" />
-    <entity type="Tambon" name="ตะโล๊ะหะลอ" english="Talo Halo" geocode="950616" />
+    <entity type="Tambon" name="ยะต๊ะ" english="Yata" geocode="950613" >
+      <office type="TAOOffice">
+        <url>http://www.yata.go.th/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="วังพญา" english="Wang Phaya" geocode="950614" >
+      <office type="TAOOffice">
+        <url>http://www.wangpaya.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95061401" name="บ้านปากาซาแม"/>
+      <entity type="Muban" geocode="95061402" name="บ้านโต๊ะปาแก๊ะ"/>
+      <entity type="Muban" geocode="95061403" name="บ้านวังพญา (ตาลาแน)"/>
+      <entity type="Muban" geocode="95061404" name="บ้านอูเป๊าะ"/>
+      <entity type="Muban" geocode="95061405" name="บ้านบูเก๊ะจือฆา"/>
+      <entity type="Muban" geocode="95061406" name="บ้านหัวควน"/>
+      <entity type="Muban" geocode="95061407" name="บ้านบาโงบองอ"/>
+    </entity>
+    <entity type="Tambon" name="อาซ่อง" english="A-song" geocode="950615" >
+      <office type="TAOOffice">
+        <url>http://www.r-song.com/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ตะโล๊ะหะลอ" english="Talo Halo" geocode="950616" >
+      <office type="TAOOffice">
+        <url>http://www.thalohalo.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95061601" name="บ้านบือเล็ง"/>
+      <entity type="Muban" geocode="95061602" name="บ้านตะโละหะลอ"/>
+      <entity type="Muban" geocode="95061603" name="บ้านบือแนกูยิ"/>
+      <entity type="Muban" geocode="95061604" name="บ้านบือแนบูเก๊ะ"/>
+      <entity type="Muban" geocode="95061605" name="บ้านบึงน้ำใส"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="กาบัง" english="Kabang" geocode="9507" >
     <entity type="Tambon" name="กาบัง" english="Kabang" geocode="950701" >
@@ -437,9 +638,35 @@
   </entity>
   <entity type="Amphoe" name="กรงปินัง" english="Krong Pinang" geocode="9508" >
     <entity type="Tambon" name="กรงปินัง" english="Krong Pinang" geocode="950801" />
-    <entity type="Tambon" name="สะเอะ" english="Sa-ae" geocode="950802" />
-    <entity type="Tambon" name="ห้วยกระทิง" english="Huai Krathing" geocode="950803" />
-    <entity type="Tambon" name="ปุโรง" english="Purong" geocode="950804" />
+    <entity type="Tambon" name="สะเอะ" english="Sa-ae" geocode="950802" >
+      <office type="TAOOffice">
+        <url>http://www.sa-ae.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95080201" name="บ้านบาโงยือรา"/>
+      <entity type="Muban" geocode="95080202" name="บ้านบาตูบือละ"/>
+      <entity type="Muban" geocode="95080203" name="บ้านกะดูโด๊ะ"/>
+      <entity type="Muban" geocode="95080204" name="บ้านสะเอะใน"/>
+      <entity type="Muban" geocode="95080205" name="บ้านแปแจง"/>
+      <entity type="Muban" geocode="95080206" name="บ้านตะโล๊ะสโตร์"/>
+    </entity>
+    <entity type="Tambon" name="ห้วยกระทิง" english="Huai Krathing" geocode="950803" >
+      <office type="TAOOffice">
+        <url>http://www.huaikrating.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95080301" name="บ้านกูวา"/>
+      <entity type="Muban" geocode="95080302" name="บ้านแบหอ"/>
+      <entity type="Muban" geocode="95080303" name="บ้านสลาแด"/>
+      <entity type="Muban" geocode="95080304" name="บ้านควนนางา"/>
+    </entity>
+    <entity type="Tambon" name="ปุโรง" english="Purong" geocode="950804" >
+      <office type="TAOOffice">
+        <url>http://www.pu-rong.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="95080401" name="บ้านโฉลง"/>
+      <entity type="Muban" geocode="95080402" name="บ้านปุโรง"/>
+      <entity type="Muban" geocode="95080403" name="บ้านตะโล๊ะปานะ"/>
+      <entity type="Muban" geocode="95080404" name="บ้านลูโบ๊ะกาโล"/>
+    </entity>
   </entity>
 
   <entity type="ThesabanNakhon" name="ยะลา" english="Yala" geocode="9599" parent="9501" >
@@ -456,8 +683,16 @@
       <url>http://www.betongtown.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ลำใหม่" english="Lam Mai" geocode="9597" parent="9501" />
-  <entity type="ThesabanTambon" name="บันนังสตา" english="Bannang Sata" geocode="9596" parent="9503" />
+  <entity type="ThesabanTambon" name="ลำใหม่" english="Lam Mai" geocode="9597" parent="9501" >
+    <office type="MunicipalityOffice">
+      <url>http://www.lammai.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บันนังสตา" english="Bannang Sata" geocode="9596" parent="9503" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bannangsata.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="คอกช้าง" english="Khok Chang" geocode="9595" parent="9504" />
   <entity type="ThesabanTambon" name="ยะหา" english="Yaha" geocode="9594" parent="9505" >
     <office type="MunicipalityOffice">
@@ -478,6 +713,7 @@
   </entity>
   <entity type="ThesabanTambon" name="สะเตงนอก" english="Sateng Nok" geocode="9590" parent="9501" tambon="950116" >
     <office type="MunicipalityOffice">
+      <!-- Location 	6.53450, 101.31077 from Longdo, no hires in Google yet -->
       <url>http://www.satengnok.go.th/</url>
     </office>
   </entity>
