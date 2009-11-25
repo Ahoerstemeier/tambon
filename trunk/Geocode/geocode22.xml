@@ -263,6 +263,12 @@
       <entity type="Muban" geocode="22020711" name="บ้านหนองห้าง"/>
     </entity>
     <entity type="Tambon" name="มาบไพ" english="Map Phai" geocode="220208" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>12.6164</geo:lat>
+          <geo:long>102.2476</geo:long>
+        </geo:Point>
+      </office>
       <entity type="Muban" geocode="22020801" name="บ้านตรอกเพาะ"/>
       <entity type="Muban" geocode="22020802" name="บ้านมาบไพ"/>
       <entity type="Muban" geocode="22020803" name="บ้านมาบไพ"/>
@@ -1084,7 +1090,11 @@
       <url>http://www.paknamlamsinghamunicipal.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="พลิ้ว" english="Phlio" geocode="2286" parent="2206" />
+  <entity type="ThesabanTambon" name="พลิ้ว" english="Phlio" geocode="2286" parent="2206" >
+    <office type="MunicipalityOffice">
+      <url>http://www.phliocity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ทรายขาว" english="Sai Khao" geocode="2285" parent="2207" >
     <office type="MunicipalityOffice">
       <url>http://soidaocity.com/</url>
@@ -1092,14 +1102,42 @@
   </entity>
   <entity type="ThesabanTambon" name="นายายอาม" english="Na Yai Am" geocode="2284" parent="2209" />
   <entity type="ThesabanTambon" name="ทับช้าง" english="Thap Chang" geocode="2283" parent="2207" tambon="220703" />
-  <entity type="ThesabanTambon" name="พลวง" english="Phluang" geocode="2282" parent="2210" tambon="221002" />
-  <entity type="ThesabanTambon" name="บ่อเวฬุ" english="Bo Welu" geocode="2281" parent="2202" tambon="220212" />
-  <entity type="ThesabanTambon" name="เกาะขวาง" english="Ko Khwang" geocode="2280" parent="2201" tambon="220104" />
-  <entity type="ThesabanTambon" name="ตะเคียนทอง" english="Takhian Thong" geocode="2279" parent="2210" tambon="221003" />
+  <entity type="ThesabanTambon" name="พลวง" english="Phluang" geocode="2282" parent="2210" tambon="221002" >
+    <office type="MunicipalityOffice">
+      <url>http://www.pluangcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บ่อเวฬุ" english="Bo Welu" geocode="2281" parent="2202" tambon="220212" >
+    <office type="MunicipalityOffice">
+      <url>http://borwenlocal.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="เกาะขวาง" english="Ko Khwang" geocode="2280" parent="2201" tambon="220104" >
+    <office type="MunicipalityOffice">
+      <url>http://www.kohkwang.co.cc/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ตะเคียนทอง" english="Takhian Thong" geocode="2279" parent="2210" tambon="221003" >
+    <office type="MunicipalityOffice">
+      <url>http://www.takiantongcity.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ชากไทย" english="Chak Thai" geocode="2278" parent="2210" tambon="221001" />
   <entity type="ThesabanTambon" name="บ่อ" english="Bo" geocode="2277" parent="2202" tambon="220202" />
-  <entity type="ThesabanTambon" name="เกวียนหัก" english="Kwian Hak" geocode="2276" parent="2202" tambon="220203" />
+  <entity type="ThesabanTambon" name="เกวียนหัก" english="Kwian Hak" geocode="2276" parent="2202" tambon="220203" >
+    <office type="MunicipalityOffice">
+      <url>http://www.kwianhug.pr.in.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ตกพรม" english="Tok Phrom" geocode="2275" parent="2202" tambon="220211" />
-  <entity type="ThesabanTambon" name="หนองตาคง" english="Nong Ta Khong" geocode="2274" parent="2204" tambon="220404" />
-  <entity type="ThesabanTambon" name="คลองใหญ่" english="Khlong Yai" geocode="2273" parent="2204" tambon="220410" />
+  <entity type="ThesabanTambon" name="หนองตาคง" english="Nong Ta Khong" geocode="2274" parent="2204" tambon="220404" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nongtakongcity.ob.tc/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="คลองใหญ่" english="Khlong Yai" geocode="2273" parent="2204" tambon="220410" >
+    <office type="MunicipalityOffice">
+      <url>http://www.klongyaicity.go.th/</url>
+    </office>
+  </entity>
 </entity>
