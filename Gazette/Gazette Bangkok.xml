@@ -408,14 +408,38 @@
   </decade>
   <decade value="1970s">
     <year value="1978">
-      <entry description="Change of area of Khet" title="พระราชกฤษฎีกาเปลี่ยนแปลงพื้นที่เขตพญาไท เขตห้วยขวางและเขตบางกะปิ กรุงเทพมหานคร พ.ศ. ๒๕๒๑" volume="95" page="180" issue="48 ก" uri="2521/A/048/180.PDF" publication="1978-05-02" />
+      <entry description="Change of area of Khet" title="พระราชกฤษฎีกาเปลี่ยนแปลงพื้นที่เขตพญาไท เขตห้วยขวางและเขตบางกะปิ กรุงเทพมหานคร พ.ศ. ๒๕๒๑" volume="95" page="180-184" issue="48 ก" uri="2521/A/048/180.PDF" publication="1978-05-02" sign="1978-03-20" effectiveafter="0">
+        <reassign geocode="102601" oldowner="1014" newowner="1017"/>
+        <reassign geocode="101704" oldowner="1014" newowner="1017"/>
+        <areachange geocode="101701">
+          <areachange geocode="101401"/>
+        </areachange>
+        <areachange geocode="101702">
+          <areachange geocode="103704"/>
+        </areachange>
+      </entry>
     </year>
     <year value="1972">
-      <entry description="Creation of Bangkok Metropolitan Administration" title="ประกาศของคณะปฏิวัติ ฉบับที่ ๓๓๕" subtitle="มีสถานะเทียบเท่าพระราชบัญญัติ ให้ปรับปรุงระเบียบบริหารราชการ ส่วนราชการ และแบ่งขอบเขตท้องที่การปกครอง ในนครหลวงกรุงเทพธนบุรี" volume="89" page="187" issue="190 ก ฉบับพิเศษ" uri="2515/A/190/187.PDF" publication="1972-12-13" />
+      <entry description="Creation of Bangkok Metropolitan Administration" title="ประกาศของคณะปฏิวัติ ฉบับที่ ๓๓๕" subtitle="มีสถานะเทียบเท่าพระราชบัญญัติ ให้ปรับปรุงระเบียบบริหารราชการ ส่วนราชการ และแบ่งขอบเขตท้องที่การปกครอง ในนครหลวงกรุงเทพธนบุรี" volume="89" page="187-201" issue="190 ก ฉบับพิเศษ" uri="2515/A/190/187.PDF" publication="1972-12-13" effectiveafter="0">
+        <status old="Changwat" new="Bangkok" geocode="10"/>
+        <abolish type="ThesabanNakhon" name="หลวง"/>
+        <abolish type="PAO" name="ครหลวงกรุงเทพธนบุรี"/>
+        <!-- 11 sukhaphiban, not mentioned by name -->
+      </entry>
     </year>
     <year value="1971">
-      <entry description="Merge of Changwat Phra Nakhon and Thonburi to Nakhon Luang Krung Thep Thon Buri" title="ประกาศของคณะปฏิวัติ ฉบับที่ ๒๔" subtitle="มีสถานะเทียบเท่าพระราชบัญญัติ กำหนดให้รวมจังหวัดพระนครและจังหวัดธนบุรีเป็นหนึ่งจังหวัด เรียกว่า นครหลวงกรุงเทพธนบุรี" volume="88" page="816" issue="144 ก" uri="2514/A/144/816.PDF" publication="1971-12-21" />
-      <entry description="Merge of Thesaban Krung Thep and Thonburi" title="ประกาศของคณะปฏิวัติ ฉบับที่ ๒๕" subtitle="มีสถานะเทียบเท่าพระราชบัญญัติ กำหนดให้รวมเทศบาลนครกรุงเทพและเทศบาลนครธนบุรี เป็นเทศบาลสำหรับนครหลวงกรุงเทพธนบุรี เรียกว่า เทศบาลนครหลวง ถูกยกเลิกโดยพระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. ๒๕๒๘" volume="88" page="820" issue="144 ก" uri="2514/A/144/820.PDF" publication="1971-12-21" />
+      <entry description="Merge of Changwat Phra Nakhon and Thonburi to Nakhon Luang Krung Thep Thon Buri" title="ประกาศของคณะปฏิวัติ ฉบับที่ ๒๔" subtitle="มีสถานะเทียบเท่าพระราชบัญญัติ กำหนดให้รวมจังหวัดพระนครและจังหวัดธนบุรีเป็นหนึ่งจังหวัด เรียกว่า นครหลวงกรุงเทพธนบุรี" volume="88" page="816-819" issue="144 ก" uri="2514/A/144/816.PDF" publication="1971-12-21" effectiveafter="0">
+        <create type="Changwat" geocode="10" name="นครหลวงกรุงเทพธนบุรี">
+          <abolish type="Changwat" name="พระนคร"/>
+          <abolish type="Changwat" name="ธนบุรี"/>
+        </create>
+      </entry>
+      <entry description="Merge of Thesaban Krung Thep and Thonburi" title="ประกาศของคณะปฏิวัติ ฉบับที่ ๒๕" subtitle="มีสถานะเทียบเท่าพระราชบัญญัติ กำหนดให้รวมเทศบาลนครกรุงเทพและเทศบาลนครธนบุรี เป็นเทศบาลสำหรับนครหลวงกรุงเทพธนบุรี เรียกว่า เทศบาลนครหลวง ถูกยกเลิกโดยพระราชบัญญัติระเบียบบริหารราชการกรุงเทพมหานคร พ.ศ. ๒๕๒๘" volume="88" page="820-824" issue="144 ก" uri="2514/A/144/820.PDF" publication="1971-12-21" effectiveafter="0">
+        <create type="ThesabanNakhon" name="หลวง">
+          <abolish type="ThesabanNakhon" name="กรุงเทพ"/>
+          <abolish type="ThesabanNakhon" name="ธนบุรี"/>
+        </create>
+      </entry>
     </year>
   </decade>
 
