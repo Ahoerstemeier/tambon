@@ -61,7 +61,18 @@
     </office>
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="430101" />
     <entity type="Tambon" name="มีชัย" english="Mi Chai" geocode="430102" />
-    <entity type="Tambon" name="โพธิ์ชัย" english="Pho Chai" geocode="430103" />
+    <entity type="Tambon" name="โพธิ์ชัย" english="Pho Chai" geocode="430103" >
+      <entity type="Muban" geocode="43010301" name="บ้านหนาด"/>
+      <entity type="Muban" geocode="43010302" name="บ้านคำแค"/>
+      <entity type="Muban" geocode="43010303" name="บ้านโนนสังข์"/>
+      <entity type="Muban" geocode="43010304" name="บ้านเนินพระเนาว์"/>
+
+      <entity type="Muban" geocode="43010306" name="บ้านหนองแดง"/>
+      <entity type="Muban" geocode="43010307" name="บ้านร่องเม็ก"/>
+      <entity type="Muban" geocode="43010308" name="บ้านนาจันทร์"/>
+
+      <entity type="Muban" geocode="43010312" name="บ้านม่วงคำ"/>
+    </entity>
     <entity type="Tambon" name="กวนวัน" english="Kuan Wan" geocode="430104" />
     <entity type="Tambon" name="เวียงคุก" english="Wiang Khuk" geocode="430105" />
     <entity type="Tambon" name="วัดธาตุ" english="Wat That" geocode="430106" >
@@ -581,7 +592,11 @@
   </entity>
   <entity type="ThesabanTambon" name="ศรีวิไล" english="Si Wilai" geocode="4383" parent="4312" />
   <entity type="ThesabanTambon" name="หาดคำ" english="Hat Kham" geocode="4382" parent="4301" tambon="430107"/>
-  <entity type="ThesabanTambon" name="โพธิ์ชัย" english="Pho Chai" geocode="4381" parent="4301" tambon="430103"/>
+  <entity type="ThesabanTambon" name="โพธิ์ชัย" english="Pho Chai" geocode="4381" parent="4301" tambon="430103">
+    <office type="MunicipalityOffice">
+      <url>http://www.phochai.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="วิศิษฐ์" english="Wisit" geocode="4380" parent="4303" tambon="430316" />
   <entity type="ThesabanTambon" name="หนองเข็ง" english="Nong Kheng" geocode="4379" parent="4303" tambon="430304" />
   <entity type="ThesabanTambon" name="เฝ้าไร่" english="Fao Rai" geocode="4378" parent="4315" tambon="431501" />
