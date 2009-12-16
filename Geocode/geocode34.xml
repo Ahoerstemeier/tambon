@@ -327,7 +327,8 @@
     <entity type="Tambon" name="ตบหู" english="Top Hu" geocode="340710" />
     <entity type="Tambon" name="กลาง" english="Klang" geocode="340711" >
       <office type="TAOOffice">
-        <url>http://klangubn.com/</url>
+        <url>http://www.klang.go.th/</url>
+        <!--<url>http://klangubn.com/</url>-->
       </office>
       <entity type="Muban" geocode="34071101" name="บ้านกลาง"/>
       <entity type="Muban" geocode="34071102" name="บ้านบก"/>
@@ -947,7 +948,14 @@
     <entity type="Tambon" name="สำโรง" english="Samrong" geocode="342103" />
     <entity type="Tambon" name="สองคอน" english="Song Khon" geocode="342104" />
     <entity type="Tambon" name="สารภี" english="Saraphi" geocode="342105" />
-    <entity type="Tambon" name="เหล่างาม" english="Lao Ngam" geocode="342106" />
+    <entity type="Tambon" name="เหล่างาม" english="Lao Ngam" geocode="342106" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 15.7599</geo:lat>
+          <geo:long>105.3957</geo:long>
+        </geo:Point>
+      </office>
+    </entity>
   </entity>
   <entity type="Amphoe" name="สำโรง" english="Samrong" geocode="3422" >
     <entity type="Tambon" name="สำโรง" english="Samrong" geocode="342201" />
@@ -979,6 +987,7 @@
     <entity type="Tambon" name="เหล่าแดง" english="Lao Daeng" geocode="342402" >
       <office type="TAOOffice">
         <url>http://www.laodang.org/</url>
+        <url>http://laodang.igetweb.com/</url>
       </office>
       <entity type="Muban" geocode="34240201" name="บ้านกลาง"/>
       <entity type="Muban" geocode="34240202" name="บ้านแดง"/>
@@ -1069,7 +1078,12 @@
     </office>
     <entity type="Tambon" name="เหล่าเสือโก้ก" english="Lao Suea Kok" geocode="343101" >
       <office type="TAOOffice">
-        <url>http://www.loudsuagoke.go.th/</url>
+        <geo:Point>
+          <geo:lat> 15.4090</geo:lat>
+          <geo:long>104.9232</geo:long>
+        </geo:Point>
+        <url>http://www.laosuakok.com/</url>
+        <!--<url>http://www.loudsuagoke.go.th/</url>-->
       </office>
       <entity type="Muban" geocode="34310101" name="บ้านหัวขัว"/>
       <entity type="Muban" geocode="34310102" name="บ้านเหล่าเสือโก้ก"/>
