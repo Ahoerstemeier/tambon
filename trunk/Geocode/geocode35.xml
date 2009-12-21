@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" geocode="35" name="ยโสธร" english="Yasothon" >
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>15.8024</geo:lat>
+      <geo:long>104.1399</geo:long>
+    </geo:Point>
     <url>http://www.yasothon.go.th/</url>
     <officials>
       <official title="Governor" name="พงษ์ศักดิ์ นาคประดา" begin="2009-10-01"/>
@@ -15,13 +19,36 @@
     <url>http://www.yst-pao.org/</url>
   </office>
   <entity type="Amphoe" name="เมืองยโสธร" english="Mueang Yasothon" geocode="3501" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.7946</geo:lat>
+        <geo:long>104.1407</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="350101" />
     <entity type="Tambon" name="น้ำคำใหญ่" english="Nam Kham Yai" geocode="350102" >
       <office type="TAOOffice">
         <url>http://www.namkhamyai.org</url>
       </office>
     </entity>
-    <entity type="Tambon" name="ตาดทอง" english="Tat Thong" geocode="350103" />
+    <entity type="Tambon" name="ตาดทอง" english="Tat Thong" geocode="350103" >
+      <office type="MunicipalityOffice">
+        <url>http://www.thadthong.com/</url>
+      </office>
+      <entity type="Muban" geocode="35010301" name="บ้านตาดทอง"/>
+      <entity type="Muban" geocode="35010302" name="บ้านคอนสาย"/>
+      <entity type="Muban" geocode="35010303" name="บ้านดอนมะยาง"/>
+      <entity type="Muban" geocode="35010304" name="บ้านหนองแฝก"/>
+      <entity type="Muban" geocode="35010305" name="บ้านสะเดา"/>
+      <entity type="Muban" geocode="35010306" name="บ้านสะเดา"/>
+      <entity type="Muban" geocode="35010307" name="บ้านดอนแฮด"/>
+      <entity type="Muban" geocode="35010308" name="บ้านศาลาแดง"/>
+      <entity type="Muban" geocode="35010309" name="บ้านตาดทอง"/>
+      <entity type="Muban" geocode="35010310" name="บ้าน ก.ม. 3"/>
+      <entity type="Muban" geocode="35010311" name="บ้านตาดทอง"/>
+      <entity type="Muban" geocode="35010312" name="บ้านประชาสรรค์"/>
+      <entity type="Muban" geocode="35010313" name="บ้านสะเดา"/>
+    </entity>
     <entity type="Tambon" name="สำราญ" english="Samran" geocode="350104" >
       <office type="TAOOffice">
         <url>http://www.samran.go.th/</url>
@@ -38,7 +65,11 @@
       <entity type="Muban" geocode="35010410" name="บ้านบ่อ"/>
       <entity type="Muban" geocode="35010411" name="บ้านบาก"/>
     </entity>
-    <entity type="Tambon" name="ค้อเหนือ" english="Kho Nuea" geocode="350105" />
+    <entity type="Tambon" name="ค้อเหนือ" english="Kho Nuea" geocode="350105" >
+      <office type="TAOOffice">
+        <url>http://www.kornaue.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ดู่ทุ่ง" english="Du Thung" geocode="350106" />
     <entity type="Tambon" name="เดิด" english="Doet" geocode="350107" >
       <entity type="Muban" geocode="35010702" name="บ้านเดิด"/>
@@ -68,7 +99,11 @@
     </entity>
     <entity type="Tambon" name="ทุ่งแต้" english="Thung Tae" geocode="350109" />
     <entity type="Tambon" name="สิงห์" english="Sing" geocode="350110" />
-    <entity type="Tambon" name="นาสะไมย์" english="Na Samai" geocode="350111" />
+    <entity type="Tambon" name="นาสะไมย์" english="Na Samai" geocode="350111" >
+      <office type="TAOOffice">
+        <url>http://www.nasmai.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="เขื่องคำ" english="Khueang Kham" geocode="350112" >
       <entity type="Muban" geocode="35011204" name="บ้านกุดกง"/>
 
@@ -88,10 +123,30 @@
       <entity type="Muban" geocode="35011308" name="บ้านโนนอุดม"/>
       <entity type="Muban" geocode="35011309" name="บ้านหนองหงอก"/>
     </entity>
-    <entity type="Tambon" name="หนองคู" english="Nong Khu" geocode="350114" />
-    <entity type="Tambon" name="ขุมเงิน" english="Khum Ngoen" geocode="350115" />
-    <entity type="Tambon" name="ทุ่งนางโอก" english="Thung Nang Ok" geocode="350116" />
-    <entity type="Tambon" name="หนองเรือ" english="Nong Ruea" geocode="350117" />
+    <entity type="Tambon" name="หนองคู" english="Nong Khu" geocode="350114" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 15.7856</geo:lat>
+          <geo:long>104.2576</geo:long>
+        </geo:Point>
+        <url>http://nonku1.tripod.com/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ขุมเงิน" english="Khum Ngoen" geocode="350115" >
+      <office type="TAOOffice">
+        <url>http://www.knyaso.com/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ทุ่งนางโอก" english="Thung Nang Ok" geocode="350116" >
+      <office type="TAOOffice">
+        <url>http://www.ystnok.com/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="หนองเรือ" english="Nong Ruea" geocode="350117" >
+      <office type="TAOOffice">
+        <url>http://www.ys-nongrua.org/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="หนองเป็ด" english="Nong Pet" geocode="350118" >
       <office type="TAOOffice">
         <url>http://www.nongped.ob.tc/</url>
@@ -334,7 +389,15 @@
   </entity>
   <entity type="KingAmphoe" name="บดินทรเดชา" english="Badin Thon De Cha" geocode="3510" comment="Proposed, but not created"/>
 
-  <entity type="ThesabanMueang" name="ยโสธร" english="Yasothon" geocode="3599" parent="3501" />
+  <entity type="ThesabanMueang" name="ยโสธร" english="Yasothon" geocode="3599" parent="3501" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>15.7972</geo:lat>
+        <geo:long>104.1430</geo:long>
+      </geo:Point>
+      <url>http://www.yasocity.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ทรายมูล" english="Sai Mun" geocode="3598" parent="3502" />
   <entity type="ThesabanTambon" name="กุดชุมพัฒนา" english="Kut Chum Phatthana" geocode="3597" parent="3503" >
     <office type="MunicipalityOffice">
@@ -346,7 +409,11 @@
   </entity>
   <entity type="ThesabanTambon" name="คำเขื่อนแก้ว" english="Kham Khuean Kaeo" geocode="3596" parent="3504" />
   <entity type="ThesabanTambon" name="ป่าติ้ว" english="Pa Tio" geocode="3595" parent="3505" />
-  <entity type="ThesabanTambon" name="ฟ้าหยาด" english="Fa Yat" geocode="3594" parent="3506" />
+  <entity type="ThesabanTambon" name="ฟ้าหยาด" english="Fa Yat" geocode="3594" parent="3506" >
+    <office type="MunicipalityOffice">
+      <url>http://www.fayardtb.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ค้อวัง" english="Kho Wang" geocode="3593" parent="3507" />
   <entity type="ThesabanTambon" name="เลิงนกทา" english="Liang Nok Tha" geocode="3592" parent="3508" />
   <entity type="ThesabanTambon" name="สามแยก" english="Sam Yaek" geocode="3591" parent="3508" >
