@@ -32,7 +32,21 @@
     <entity type="Tambon" name="สร้างนกทา" english="Sang Nok Tha" geocode="370106" />
     <entity type="Tambon" name="คึมใหญ่" english="Khuem Yai" geocode="370107" />
     <entity type="Tambon" name="นาผือ" english="Na Phue" geocode="370108" />
-    <entity type="Tambon" name="น้ำปลีก" english="Nam Plik" geocode="370109" />
+    <entity type="Tambon" name="น้ำปลีก" english="Nam Plik" geocode="370109" >
+      <office type="TAOOffice">
+        <url>http://www.nampleek.com/</url>
+      </office>
+      <entity type="Muban" geocode="37010901" name="บ้านน้ำปลีก"/>
+      <entity type="Muban" geocode="37010902" name="บ้านน้ำปลีก"/>
+      <entity type="Muban" geocode="37010903" name="บ้านดงบัง"/>
+      <entity type="Muban" geocode="37010904" name="บ้านคำสร้างบ่อ"/>
+      <entity type="Muban" geocode="37010905" name="บ้านคำสร้างบ่อ"/>
+      <entity type="Muban" geocode="37010906" name="บ้านยางคำ"/>
+      <entity type="Muban" geocode="37010907" name="บ้านดอนดู่"/>
+
+      <entity type="Muban" geocode="37010909" name="บ้านน้ำปลีก"/>
+      <entity type="Muban" geocode="37010910" name="บ้านดงบัง"/>
+    </entity>
     <entity type="Tambon" name="นาวัง" english="Na Wang" geocode="370110" />
     <entity type="Tambon" name="นาหมอม้า" english="Na Mo Ma" geocode="370111" >
       <office type="TAOOffice">
@@ -45,7 +59,16 @@
     <entity type="Tambon" name="หนองมะแซว" english="Nong Masaeo" geocode="370115" />
     <entity type="Tambon" name="กุดปลาดุก" english="Kut Pla Duk" geocode="370116" />
     <entity type="Tambon" name="ดอนเมย" english="Don Moei" geocode="370117" />
-    <entity type="Tambon" name="นายม" english="Na Yom" geocode="370118" />
+    <entity type="Tambon" name="นายม" english="Na Yom" geocode="370118" >
+      <entity type="Muban" geocode="37011801" name="บ้านหนองแห่"/>
+      <entity type="Muban" geocode="37011802" name="บ้านนาลือ"/>
+      <entity type="Muban" geocode="37011803" name="บ้านนาอุดม"/>
+      <entity type="Muban" geocode="37011804" name="บ้านนาเยีย"/>
+      <entity type="Muban" geocode="37011805" name="บ้านนายม"/>
+      <entity type="Muban" geocode="37011806" name="บ้านนายม"/>
+      <entity type="Muban" geocode="37011807" name="บ้านนาดอกไม้"/>
+      <entity type="Muban" geocode="37011808" name="บ้านนาเยีย"/>
+    </entity>
     <entity type="Tambon" name="นาแต้" english="Na Tae" geocode="370119" >
       <office type="TAOOffice">
         <url>http://www.natae.org/</url>
@@ -98,10 +121,20 @@
     <entity type="Tambon" name="นาป่าแซง" english="Na Pa Saeng" geocode="370307" />
   </entity>
   <entity type="Amphoe" name="พนา" english="Phana" geocode="3704" >
-    <entity type="Tambon" name="พนา" english="Phana" geocode="370401" />
+    <entity type="Tambon" name="พนา" english="Phana" geocode="370401" >
+      <entity type="Muban" geocode="37040101" name="บ้านพนา ตำบลพนา"/>
+
+      <entity type="Muban" geocode="37040107" name="บ้านพนา ตำบลพนา"/>
+      <entity type="Muban" geocode="37040108" name="บ้านพนา ตำบลพนา"/>
+      <entity type="Muban" geocode="37040109" name="บ้านพนา ตำบลพนา"/>
+    </entity>
     <entity type="Tambon" name="จานลาน" english="Chan Lan" geocode="370402" />
     <entity type="Tambon" name="ไม้กลอน" english="Mai Klon" geocode="370403" />
-    <entity type="Tambon" name="พระเหลา" english="Phra Lao" geocode="370404" />
+    <entity type="Tambon" name="พระเหลา" english="Phra Lao" geocode="370404" >
+      <entity type="Muban" geocode="37040401" name="บ้านพนานต์"/>
+
+      <entity type="Muban" geocode="37040410" name="บ้านพนานต์"/>
+    </entity>
     <entity type="Tambon" name="37040700" english="" geocode="370407" obsolete="1" comment="In DOPA 1993 population data, might be actually Phra Lao?"/>
 
     <entity type="Unknown" name="นาหว้า" english="Na Wa" geocode="370497" newgeocode="370303" />
@@ -183,11 +216,27 @@
       <url>http://www.amnatmu.net/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="น้ำปลีก" english="Nam Plik" geocode="3798" parent="3701" />
-  <entity type="ThesabanTambon" name="ชานุมาน" english="Chanuman" geocode="3797" parent="3702" />
+  <entity type="ThesabanTambon" name="น้ำปลีก" english="Nam Plik" geocode="3798" parent="3701" >
+    <office type="MunicipalityOffice">
+      <url comment="Broken">http://www.tambolnampleek.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ชานุมาน" english="Chanuman" geocode="3797" parent="3702" >
+    <office type="MunicipalityOffice">
+      <url>http://www.chanumancity.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="นาหว้าใหญ่" english="Na Wa Yai" geocode="3796" parent="3703" />
-  <entity type="ThesabanTambon" name="พนา" english="Phana" geocode="3795" parent="3704" />
-  <entity type="ThesabanTambon" name="เสนางคนิคม" english="Senangkhanikhom" geocode="3794" parent="3705" />
+  <entity type="ThesabanTambon" name="พนา" english="Phana" geocode="3795" parent="3704" >
+    <office type="MunicipalityOffice">
+      <url>http://www.phanacity.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="เสนางคนิคม" english="Senangkhanikhom" geocode="3794" parent="3705" >
+    <office type="MunicipalityOffice">
+      <url>http://www.senangcity.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หัวตะพาน" english="Hua Taphan" geocode="3793" parent="3706" >
     <office type="MunicipalityOffice">
       <url>http://huataphancity.com</url>
@@ -198,6 +247,14 @@
       <url>http://www.amnatmuni.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="พระเหลา" english="Phra Lao" geocode="3791" parent="3704" tambon="370404"/>
-  <entity type="ThesabanTambon" name="นายม" english="Na Yom" geocode="3790" parent="3701" tambon="370118" />
+  <entity type="ThesabanTambon" name="พระเหลา" english="Phra Lao" geocode="3791" parent="3704" tambon="370404">
+    <office type="MunicipalityOffice">
+      <url>http://www.phalao.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="นายม" english="Na Yom" geocode="3790" parent="3701" tambon="370118" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nayom.ob.tc/</url>
+    </office>
+  </entity>
 </entity>
