@@ -267,11 +267,7 @@
         <url>http://maenajon.org/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="บ้านจันทร์" english="Ban Chan" geocode="500306" comment="To be split off to Galyani Vadhana">
-      <office type="TAOOffice">
-        <url>http://www.banghang.org/</url>
-      </office>
-    </entity>
+    <entity type="Tambon" name="บ้านจันทร์" english="Ban Chan" geocode="500306" newgeocode="502601"/>
     <entity type="Tambon" name="ปางหินฝน" english="Pang Hin Fon" geocode="500307" >
       <office type="TAOOffice">
         <url>http://www.geocities.com/panghinfon/</url>
@@ -296,30 +292,8 @@
         <url>http://www.kongkhak.org/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="500309" comment="To be split off to Galyani Vadhana">
-      <office type="TAOOffice">
-        <url>http://www.maedaed.org/</url>
-      </office>
-      <entity type="Muban" geocode="50030901" name="บ้านแม่ผาปู"/>
-      <entity type="Muban" geocode="50030902" name="บ้านแม่ตะละเหนือ"/>
-      <entity type="Muban" geocode="50030903" name="บ้านแม่ตะละใต้"/>
-      <entity type="Muban" geocode="50030904" name="บ้านแม่แดดน้อย"/>
-      <entity type="Muban" geocode="50030905" name="บ้านห้วยปู"/>
-      <entity type="Muban" geocode="50030906" name="บ้านดงสามหมื่น"/>
-      <entity type="Muban" geocode="50030907" name="บ้านแม่ตะละม้ง"/>
-    </entity>
-    <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="500310" comment="To be split off to Galyani Vadhana">
-      <office type="TAOOffice">
-        <url>http://www.jamluang.org/</url>
-      </office>
-      <entity type="Muban" geocode="50031001" name="บ้านขุนแม่รวม, บ้านแอเอาะ"/>
-      <entity type="Muban" geocode="50031002" name="บ้านกิ่วโป่ง, บ้านใหม่พัฒนา"/>
-      <entity type="Muban" geocode="50031003" name="บ้านแม่ละอุป, ขุนแม่ละอุป, ห้วยยาใต้"/>
-      <entity type="Muban" geocode="50031004" name="บ้านห้วยยา, ห้วยบะบ้า"/>
-      <entity type="Muban" geocode="50031005" name="บ้านห้วยเขียดแห้ง"/>
-      <entity type="Muban" geocode="50031006" name="บ้านแจ่มหลวง, นาเกล็ดหอย"/>
-      <entity type="Muban" geocode="50031007" name="บ้านเสาแดง"/>
-    </entity>
+    <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="500309" newgeocode="502602"/>
+    <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="500310" newgeocode="502603"/>
   </entity>
   <entity type="Amphoe" name="เชียงดาว" english="Chiang Dao" geocode="5004" >
     <office type="DistrictOffice">
@@ -2048,15 +2022,40 @@
     <entity type="Tambon" name="สันติสุข" english="Santi Suk" geocode="502404" />
   </entity>
   <entity type="KingAmphoe" geocode="5025" name="เวียงคำ" english="Wiang Kham" obsolete="1" comment="Proposed, but not created"/>
-  <entity type="Amphoe" geocode="5026" name="กัลยาณิวัฒนา" english="Galyani Vadhana" comment="To be created soon">
+  <entity type="Amphoe" geocode="5026" name="กัลยาณิวัฒนา" english="Galyani Vadhana" >
     <history>
       <rename oldname="วัดจันทร์" oldenglish="Wat Chan" name="กัลยาณิวัฒนา" english="Galyani Vadhana" comment="Working name, only before official name was chosen" effective="2009-07-07"/>
     </history>
-    <!-- Geocodes not yet known
-    <entity type="Tambon" name="บ้านจันทร์" english="Ban Chan" geocode="502601" />
-    <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="502602" />
-    <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="502603"/>
-    -->
+    <!-- Actual Geocodes not known yet -->
+    <entity type="Tambon" name="บ้านจันทร์" english="Ban Chan" geocode="502601" >
+            <office type="TAOOffice">
+        <url comment="Offline">http://www.banghang.org/</url>
+      </office>
+    </entity>
+    <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="502602" >
+      <office type="TAOOffice">
+        <url>http://www.maedaed.org/</url>
+      </office>
+      <entity type="Muban" geocode="50260201" name="บ้านแม่ผาปู"/>
+      <entity type="Muban" geocode="50260202" name="บ้านแม่ตะละเหนือ"/>
+      <entity type="Muban" geocode="50260203" name="บ้านแม่ตะละใต้"/>
+      <entity type="Muban" geocode="50260204" name="บ้านแม่แดดน้อย"/>
+      <entity type="Muban" geocode="50260205" name="บ้านห้วยปู"/>
+      <entity type="Muban" geocode="50260206" name="บ้านดงสามหมื่น"/>
+      <entity type="Muban" geocode="50260207" name="บ้านแม่ตะละม้ง"/>
+    </entity>
+    <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="502603">
+      <office type="TAOOffice">
+        <url>http://www.jamluang.org/</url>
+      </office>
+      <entity type="Muban" geocode="50260301" name="บ้านขุนแม่รวม, บ้านแอเอาะ"/>
+      <entity type="Muban" geocode="50260302" name="บ้านกิ่วโป่ง, บ้านใหม่พัฒนา"/>
+      <entity type="Muban" geocode="50260303" name="บ้านแม่ละอุป, ขุนแม่ละอุป, ห้วยยาใต้"/>
+      <entity type="Muban" geocode="50260304" name="บ้านห้วยยา, ห้วยบะบ้า"/>
+      <entity type="Muban" geocode="50260305" name="บ้านห้วยเขียดแห้ง"/>
+      <entity type="Muban" geocode="50260306" name="บ้านแจ่มหลวง, นาเกล็ดหอย"/>
+      <entity type="Muban" geocode="50260307" name="บ้านเสาแดง"/>
+    </entity>
   </entity>
   <entity type="KingAmphoe" geocode="5027" name="หมอกฟ้า" english="Mok Fa" obsolete="1" comment="Proposed, but not created; to be split off from 5006"/>
   <entity type="KingAmphoe" geocode="5028" name="บ่อหลวง" english="Bo Luang" obsolete="1" comment="Proposed, but not created"/>
