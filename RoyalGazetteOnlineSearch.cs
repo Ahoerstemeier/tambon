@@ -8,11 +8,6 @@ using System.Web;
 using System.IO;
 using System.Windows.Forms;
 
-/* Further interesting search string:
-  
-    PAO constituencies: การแบ่งเขตเลือกตั้งสมาชิกสภาองค์การบริหารส่วนจังหวัด 
-
- */
 namespace De.AHoerstemeier.Tambon
 {
     class RoyalGazetteOnlineSearch
@@ -118,11 +113,11 @@ namespace De.AHoerstemeier.Tambon
             {
                 EntityModification.Creation,new Dictionary<ProtectedAreaTypes,String>
                 {
-                    {ProtectedAreaTypes.NonHuntingArea,"กำหนดเขตห้ามล่าสัตว์ป่า เป็นเขตห้ามล่าสัตว์ป่า"},
+                    {ProtectedAreaTypes.NonHuntingArea,"กำหนดเขตห้ามล่าสัตว์ป่า หรือ เป็นเขตห้ามล่าสัตว์ป่า"},
                     {ProtectedAreaTypes.WildlifeSanctuary,"เป็นเขตรักษาพันธุ์สัตว์ป่า"},
-                    {ProtectedAreaTypes.NationalPark,"เป็นอุทยานแห่งชาติ เพิกถอนอุทยานแห่งชาติ"},
+                    {ProtectedAreaTypes.NationalPark,"เป็นอุทยานแห่งชาติ หรือ เพิกถอนอุทยานแห่งชาติ"},
                     {ProtectedAreaTypes.HistoricalSite,"กำหนดเขตที่ดินโบราณสถาน"},
-                    {ProtectedAreaTypes.NationalPreservedForest,"เป็นป่าสงวนแห่งชาติ กำหนดพื้นที่ป่าสงวนแห่งชาติ"}
+                    {ProtectedAreaTypes.NationalPreservedForest,"เป็นป่าสงวนแห่งชาติ หรือ กำหนดพื้นที่ป่าสงวนแห่งชาติ"}
                   }
                },
                {
