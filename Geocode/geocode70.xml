@@ -801,7 +801,12 @@
       <url>http://www.banpong.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanMueang" name="โพธาราม" english="Photharam" geocode="7097" parent="7007" />
+  <entity type="ThesabanMueang" name="โพธาราม" english="Photharam" geocode="7097" parent="7007,7001" >
+    <!-- In 1993 DOPA data wrong Tambon Na Mueang added to Photharam, thus the 7001 -->
+    <office type="MunicipalityOffice">
+      <url>http://www.photharam.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เขางู" english="Khao Ngu" geocode="7096" parent="7001" >
     <office type="MunicipalityOffice">
       <url>http://www.geocities.com/kaongu199/</url>
