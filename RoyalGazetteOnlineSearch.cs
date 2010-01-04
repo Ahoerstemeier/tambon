@@ -8,6 +8,8 @@ using System.Web;
 using System.IO;
 using System.Windows.Forms;
 
+// Other interesting search string: เป็นเขตปฏิรูปที่ดิน (area of land reform) - contains maps with Tambon boundaries
+
 namespace De.AHoerstemeier.Tambon
 {
     class RoyalGazetteOnlineSearch
