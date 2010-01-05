@@ -777,6 +777,9 @@
       <entity type="Muban" geocode="41090417" name="บ้านชัยเจริญ"/>
     </entity>
     <entity type="Tambon" name="หนองนกเขียน" english="Nong Nok Khian" geocode="410905" >
+      <office type="TAOOffice">
+        <url comment="Offline">http://www.nongnokkhein.go.th/</url>
+      </office>
       <entity type="Muban" geocode="41090502" name="บ้านโคกก่อง"/>
 
       <entity type="Muban" geocode="41090508" name="บ้านคำน้ำบุ้น"/>
@@ -785,6 +788,12 @@
     <entity type="Tambon" name="ตาดทอง" english="Tat Thong" geocode="410907" />
   </entity>
   <entity type="Amphoe" name="วังสามหมอ" english="Wang Sam Mo" geocode="4110" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 16.9498</geo:lat>
+        <geo:long>103.4286</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="หนองกุงทับม้า" english="Nong Kung Thap Ma" geocode="411001" >
       <office type="TAOOffice">
         <url>http://www.nongkungtabma.com/</url>
@@ -802,6 +811,7 @@
       <entity type="Muban" geocode="41100111" name="บ้านทรัพย์สมบูรณ์"/>
     </entity>
     <entity type="Tambon" name="หนองหญ้าไซ" english="Nong Ya Sai" geocode="411002" >
+      <!-- Longod: 16.95407, 103.33433 -->
       <entity type="Muban" geocode="41100201" name="บ้านหนองหญ้าไซ"/>
       <entity type="Muban" geocode="41100202" name="บ้านโคกสะอาด"/>
       <entity type="Muban" geocode="41100203" name="บ้านหนองไผ่"/>
@@ -813,6 +823,9 @@
       <entity type="Muban" geocode="41100209" name="บ้านเลิงถ่อน"/>
     </entity>
     <entity type="Tambon" name="บะยาว" english="Ba Yao" geocode="411003" >
+      <office type="TAOOffice">
+        <url>http://www.bayaolocal.go.th/</url>
+      </office>
       <entity type="Muban" geocode="41100301" name="บ้านบะยาว"/>
       <entity type="Muban" geocode="41100302" name="บ้านนาแก"/>
       <entity type="Muban" geocode="41100303" name="บ้านนานกชุม"/>
@@ -827,6 +840,12 @@
       <entity type="Muban" geocode="41100312" name="บ้านบะยาว"/>
     </entity>
     <entity type="Tambon" name="ผาสุก" english="Phasuk" geocode="411004" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 17.1508</geo:lat>
+          <geo:long>103.5595</geo:long>
+        </geo:Point>
+      </office>
       <entity type="Muban" geocode="41100401" name="บ้านผาสุก"/>
       <entity type="Muban" geocode="41100402" name="บ้านคำไฮ"/>
       <entity type="Muban" geocode="41100403" name="บ้านคำยาง"/>
@@ -857,6 +876,7 @@
       <entity type="Muban" geocode="41100509" name="บ้านน้อยคำเม็ก"/>
     </entity>
     <entity type="Tambon" name="วังสามหมอ" english="Wang Sam Mo" geocode="411006" >
+      <!-- Longdo: 16.94769, 103.45955 -->
       <entity type="Muban" geocode="41100601" name="บ้านหนองลุมพุก"/>
       <entity type="Muban" geocode="41100602" name="บ้านหนองแวงโคก"/>
       <entity type="Muban" geocode="41100603" name="บ้านโนนผักหอม"/>
@@ -946,6 +966,9 @@
       <entity type="Muban" geocode="41110417" name="บ้านหนองข่า"/>
     </entity>
     <entity type="Tambon" name="อ้อมกอ" english="Om Ko" geocode="411105" >
+      <office type="TAOOffice">
+        <url>http://www.aomgro.go.th/</url>
+      </office>
       <entity type="Muban" geocode="41110501" name="บ้านอ้อมกอ"/>
       <entity type="Muban" geocode="41110502" name="บ้านดงดารา"/>
       <entity type="Muban" geocode="41110503" name="บ้านโคกคำไหล"/>
@@ -1866,6 +1889,13 @@
       </geo:Point>
     </office>
     <entity type="Tambon" name="บ้านแดง" english="Ban Daeng" geocode="412301">
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 17.5514</geo:lat>
+          <geo:long>103.0581</geo:long>
+        </geo:Point>
+        <url>http://www.baandang.com/</url>
+      </office>
       <entity type="Muban" geocode="41230101" name="บ้านแดง"/>
       <entity type="Muban" geocode="41230102" name="บ้านหนองผักแว่น"/>
       <entity type="Muban" geocode="41230103" name="บ้านไชยวานน้อย"/>
@@ -1970,7 +2000,24 @@
       </geo:Point>
     </office>
     <entity type="Tambon" name="นาม่วง" english="Na Muang" geocode="412501" />
-    <entity type="Tambon" name="ห้วยสามพาด" english="Huai Sam Phat" geocode="412502" />
+    <entity type="Tambon" name="ห้วยสามพาด" english="Huai Sam Phat" geocode="412502" >
+      <office type="TAOOffice">
+        <url>http://www.huaysampad.org/</url>
+      </office>
+      <entity type="Muban" geocode="41250201" name="บ้านห้วยสามพาด"/>
+      <entity type="Muban" geocode="41250202" name="บ้านโนนคำมี"/>
+      <entity type="Muban" geocode="41250203" name="บ้านโนนสมบูรณ์"/>
+      <entity type="Muban" geocode="41250204" name="บ้านอีทุย"/>
+      <entity type="Muban" geocode="41250205" name="บ้านโคกสง่า"/>
+      <entity type="Muban" geocode="41250206" name="บ้านวังขอนกว้าง"/>
+      <entity type="Muban" geocode="41250207" name="บ้านหนองแก"/>
+      <entity type="Muban" geocode="41250208" name="บ้านหนองแวงเหนือ"/>
+      <entity type="Muban" geocode="41250209" name="บ้านป่าก้าว"/>
+      <entity type="Muban" geocode="41250210" name="บ้านสะอาดนามูล"/>
+      <entity type="Muban" geocode="41250211" name="บ้านสังคม"/>
+      <entity type="Muban" geocode="41250212" name="บ้านโนนสมบูรณ์"/>
+      <entity type="Muban" geocode="41250213" name="บ้านอนามัยไทยเจริญ"/>
+    </entity>
     <entity type="Tambon" name="อุ่มจาน" english="Um Chan" geocode="412503" >
       <office type="TAOOffice">
         <url>http://www.geocities.com/spicy_pom/</url>
