@@ -848,6 +848,10 @@
     </office>
     <entity type="Tambon" name="บ้านแท่น" english="Ban Thaen" geocode="361101" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 16.4099</geo:lat>
+          <geo:long>102.3738</geo:long>
+        </geo:Point>
         <url>http://abo-banthaen.com/</url>
       </office>
       <entity type="Muban" geocode="36110101" name="บ้านนาดี"/>
@@ -1138,7 +1142,22 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ผักปัง" english="Phak Pang" geocode="3684" parent="3610" />
-  <entity type="ThesabanTambon" name="บ้านแท่น" english="Ban Thaen" geocode="3683" parent="3611" />
+  <entity type="ThesabanTambon" name="บ้านแท่น" english="Ban Thaen" geocode="3683" parent="3611" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banthaen.org/</url>
+    </office>
+    <entity type="Chumchon" geocode="36830001" name="ตะโกทอง" muban="36110103"/>
+    <entity type="Chumchon" geocode="36830002" name="บัลลังก์" muban="36110103"/>
+    <entity type="Chumchon" geocode="36830003" name="พระแท่น" muban="36110103"/>
+    <entity type="Chumchon" geocode="36830004" name="สว่างพัฒนา" muban="36110111"/>
+    <entity type="Chumchon" geocode="36830005" name="สว่างสามัคคี" muban="36110111"/>
+    <entity type="Chumchon" geocode="36830006" name="ลำคลองพัฒนา" muban="36110114"/>
+    <entity type="Chumchon" geocode="36830007" name="นาดีทุ่งทอง" muban="36110101"/>
+    <entity type="Chumchon" geocode="36830008" name="เหมือดแอโนนเมือง" muban="36110114"/>
+    <entity type="Chumchon" geocode="36830009" name="พิทักษ์ไทย" muban="36110114"/>
+    <entity type="Chumchon" geocode="36830010" name="นาล้อมสันติสุข" muban="36110101"/>
+    <entity type="Chumchon" geocode="36830011" name="โนนสาทอน" muban="36110105"/>
+  </entity>
   <entity type="ThesabanTambon" name="นาหนองทุ่ม" english="Na Nong Thum" geocode="3682" parent="3612" />
   <entity type="ThesabanTambon" name="แก้งคร้อ" english="Kaeng Khro" geocode="3681" parent="3612" />
   <entity type="ThesabanTambon" name="คอนสาร" english="Khon San" geocode="3680" parent="3613" />
