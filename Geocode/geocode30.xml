@@ -142,7 +142,7 @@
       <!-- Longdo: 14.96610, 102.08855 -->
       <entity type="Muban" geocode="30011001" name="บ้านบุ่ง"/>
       <entity type="Muban" geocode="30011002" name="บ้านบุ่งตาหลั่ว"/>
-      
+
       <entity type="Muban" geocode="30011007" name="บ้านหนองนกยูง"/>
     </entity>
     <entity type="Tambon" name="หัวทะเล" english="Hua Thale" geocode="300111" >
@@ -2020,9 +2020,18 @@
     <entity type="Tambon" name="วังน้ำเขียว" english="Wang Nam Khiao" geocode="301408" newgeocode="302501" />
     <entity type="Tambon" name="ตูม" english="Tum" geocode="301409" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 14.6753</geo:lat>
+          <geo:long>101.9594</geo:long>
+        </geo:Point>
+        <!-- Longdo: 14.67630, 101.95963 -->
         <url>http://www.abttoom.com/</url>
       </office>
-      <entity type="Muban" geocode="30140901" name="บ้านโนนตากแดด"/>
+      <entity type="Muban" geocode="30140901" name="บ้านคลองวัด" english="Ban Khlong Wat">
+        <history>
+          <rename oldname="บ้านโนนตากแดด" oldenglish="Ban Non Tak Daet" name="บ้านคลองวัด" english="Ban Khlong Wat"/>
+        </history>
+      </entity>
       <entity type="Muban" geocode="30140902" name="บ้านโนนวังหิน"/>
       <entity type="Muban" geocode="30140903" name="บ้านหนองปลิง"/>
       <entity type="Muban" geocode="30140904" name="บ้านสะแกงาม"/>
@@ -3734,6 +3743,10 @@
   </entity>
   <entity type="ThesabanTambon" name="หัวทะเล" english="Hua Thale" geocode="3050" parent="3001" tambon="300111">
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 14.9707</geo:lat>
+        <geo:long>102.1471</geo:long>
+      </geo:Point>
       <url>http://www.huathalae.com/</url>
     </office>
   </entity>
