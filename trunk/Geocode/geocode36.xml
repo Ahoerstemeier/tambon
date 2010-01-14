@@ -283,6 +283,9 @@
       <entity type="Muban" geocode="36020119" name="บ้านกุดฉนวนอุดม"/>
     </entity>
     <entity type="Tambon" name="ตลาดแร้ง" english="Talat Raeng" geocode="360202" >
+      <office type="TAOOffice">
+        <url>http://www.taladrang.org/</url>
+      </office>
       <entity type="Muban" geocode="36020208" name="บ้านห้วย"/>
 
       <entity type="Muban" geocode="36020218" name="บ้านห้วยเหนือ"/>
@@ -314,6 +317,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="คอนสวรรค์" english="Khon Sawan" geocode="3603" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 15.9317</geo:lat>
+        <geo:long>102.2814</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="คอนสวรรค์" english="Khon Sawan" geocode="360301" />
     <entity type="Tambon" name="ยางหวาย" english="Yang Wai" geocode="360302" />
     <entity type="Tambon" name="ช่องสามหมอ" english="Chong Sam Mo" geocode="360303" >
@@ -337,8 +346,28 @@
     <entity type="Tambon" name="ห้วยไร่" english="Huai Rai" geocode="360305" />
     <entity type="Tambon" name="บ้านโสก" english="Ban Sok" geocode="360306" />
     <entity type="Tambon" name="โคกมั่งงอย" english="Khok Mang Ngoi" geocode="360307" >
+      <office type="TAOOffice">
+        <url>http://www.kokmungngoi.go.th/</url>
+        <officials>
+          <official index="1" title="TAOChairman" name="เหลี่ยม บุ้งทอง" beginyear="1995" endyear="1998"/>
+          <official index="2" title="TAOChairman" name="บุญชู ปะวะเข" beginyear="1998" endyear="2002"/>
+          <official index="3" title="TAOChairman" name="เสวย ดีบ้านโสก" beginyear="2002" endyear="2004"/>
+          <official index="4" title="TAOChairman" name="กองหลา ครองพวก" beginyear="2004" endyear="2008"/>
+          <official index="5" title="TAOChairman" name="สามารถ หิรัญคำ" beginyear="2008"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="36030701" name="บ้านหนองแดงน้อย"/>
-
+      <entity type="Muban" geocode="36030702" name="บ้านโคกมั่งงอย"/>
+      <entity type="Muban" geocode="36030703" name="บ้านโนนประดู่"/>
+      <entity type="Muban" geocode="36030704" name="บ้านหนองโน"/>
+      <entity type="Muban" geocode="36030705" name="บ้านโสกกกแดง"/>
+      <entity type="Muban" geocode="36030706" name="บ้านหนองเหมือดแอ่"/>
+      <entity type="Muban" geocode="36030707" name="บ้านหนองโนน้อย"/>
+      <entity type="Muban" geocode="36030708" name="บ้านสระแก้ว"/>
+      <entity type="Muban" geocode="36030709" name="บ้านหนองเม็ก"/>
+      <entity type="Muban" geocode="36030710" name="บ้านโคกมั่งงอย"/>
+      <entity type="Muban" geocode="36030711" name="บ้านหนองเหมือดแอ่"/>
+      <entity type="Muban" geocode="36030712" name="บ้านหนองโน"/>
       <entity type="Muban" geocode="36030713" name="บ้านหนองแดงน้อย"/>
     </entity>
     <entity type="Tambon" name="หนองขาม" english="Nong Kham" geocode="360308" >
@@ -370,7 +399,16 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="เกษตรสมบูรณ์" english="Kaset Sombun" geocode="3604" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 16.2804</geo:lat>
+        <geo:long>101.9543</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="บ้านยาง" english="Ban Yang" geocode="360401" >
+      <office type="TAOOffice">
+        <url>http://www.banyang.ob.tc/</url>
+      </office>
       <entity type="Muban" geocode="36040110" name="บ้านเมืองเก่า"/>
 
       <entity type="Muban" geocode="36040113" name="บ้านเมืองเก่า"/>
@@ -422,6 +460,13 @@
     <entity type="Tambon" name="สระโพนทอง" english="Sa Phon Thong" geocode="360407" />
     <entity type="Tambon" name="หนองข่า" english="Nong Kha" geocode="360408" />
     <entity type="Tambon" name="หนองโพนงาม" english="Nong Phon Ngam" geocode="360409" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 16.4302</geo:lat>
+          <geo:long>101.9669</geo:long>
+        </geo:Point>
+        <url comment="Plain URL does not work">http://www.nongponngam.ob.tc/index%281%29.html</url>
+      </office>
       <entity type="Muban" geocode="36040901" name="บ้านหนองโพนงาม"/>
 
       <entity type="Muban" geocode="36040904" name="บ้านสารจอดใหม่"/>
@@ -666,10 +711,23 @@
           <geo:lat>15.5325</geo:lat>
           <geo:long>101.6593</geo:long>
         </geo:Point>
+        <url>http://banchuan.go.th/</url>
       </office>
+      <entity type="Muban" geocode="36070101" name="บ้านชวน"/>
       <entity type="Muban" geocode="36070102" name="บ้านชวน"/>
       <entity type="Muban" geocode="36070103" name="บ้านปะโค"/>
-
+      <entity type="Muban" geocode="36070104" name="บ้านหินตั้ง"/>
+      <entity type="Muban" geocode="36070105" name="บ้านตะกอ"/>
+      <entity type="Muban" geocode="36070106" name="บ้านเสลา"/>
+      <entity type="Muban" geocode="36070107" name="บ้านห้วยทราย"/>
+      <entity type="Muban" geocode="36070108" name="บ้านหนองตะไก้"/>
+      <entity type="Muban" geocode="36070109" name="บ้านวังพระทราย"/>
+      <entity type="Muban" geocode="36070110" name="บ้านหลุง"/>
+      <entity type="Muban" geocode="36070111" name="บ้านถนนหว้า"/>
+      <entity type="Muban" geocode="36070112" name="บ้านหนองสองห้อง"/>
+      <entity type="Muban" geocode="36070113" name="บ้านทรายทอง"/>
+      <entity type="Muban" geocode="36070114" name="บ้านทรายเงิน"/>
+      <entity type="Muban" geocode="36070115" name="บ้านหนองโสน"/>
       <entity type="Muban" geocode="36070116" name="บ้านปะโค"/>
       <entity type="Muban" geocode="36070117" name="บ้านชวน"/>
     </entity>
@@ -712,8 +770,8 @@
   <entity type="Amphoe" name="หนองบัวระเหว" english="Nong Bua Rawe" geocode="3608" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 15.7498</geo:lat>
-        <geo:long>101.7598</geo:long>
+        <geo:lat>  15.7485</geo:lat>
+        <geo:long>101.7594</geo:long>
       </geo:Point>
       <url>http://www.rawedistrict.com/</url>
     </office>
@@ -1005,19 +1063,40 @@
       </geo:Point>
     </office>
     <entity type="Tambon" name="คอนสาร" english="Khon San" geocode="361301" >
-      <entity type="Muban" geocode="36130105" name="บ้านคลองบอน"/>
+      <office type="TAOOffice">
+        <url>http://www.khonsan.go.th/</url>
+      </office>
 
+      <entity type="Muban" geocode="36130102" name="บ้านคอนสาร"/>
+      <entity type="Muban" geocode="36130103" name="บ้านหัวนาม่วง"/>
+      <entity type="Muban" geocode="36130104" name="บ้านเซินใต้"/>
+      <entity type="Muban" geocode="36130105" name="บ้านคลองบอน"/>
+      <entity type="Muban" geocode="36130106" name="บ้านนาอ้อม"/>
+      <entity type="Muban" geocode="36130107" name="บ้านนาโปร่ง"/>
+      <entity type="Muban" geocode="36130108" name="บ้านน้ำพุปางวัว"/>
       <entity type="Muban" geocode="36130109" name="บ้านคลองดง"/>
     </entity>
     <entity type="Tambon" name="ทุ่งพระ" english="Thung Phra" geocode="361302" >
+      <office type="TAOOffice">
+        <url>http://www.thungpha.org/</url>
+      </office>
       <entity type="Muban" geocode="36130206" name="บ้านห้วยสนามทราย"/>
 
       <entity type="Muban" geocode="36130210" name="บ้านห้วยทรายทอง"/>
     </entity>
     <entity type="Tambon" name="โนนคูณ" english="Non Khun" geocode="361303" >
+      <office type="TAOOffice">
+        <url>http://www.nonkoon.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="36130301" name="บ้านโนนคูณ"/>
+      <entity type="Muban" geocode="36130302" name="บ้านโนนโจด"/>
       <entity type="Muban" geocode="36130303" name="บ้านโสกมะตูม"/>
       <entity type="Muban" geocode="36130304" name="บ้านโจดกลาง"/>
-
+      <entity type="Muban" geocode="36130305" name="บ้านโนนสง่า"/>
+      <entity type="Muban" geocode="36130306" name="บ้านกูดมะนาว"/>
+      <entity type="Muban" geocode="36130307" name="บ้านโคกมะตูม"/>
+      <entity type="Muban" geocode="36130308" name="บ้านโนนเตาไห"/>
+      <entity type="Muban" geocode="36130309" name="บ้านโนนสะอาด"/>
       <entity type="Muban" geocode="36130310" name="บ้านโนนเจริญ"/>
       <entity type="Muban" geocode="36130311" name="บ้านห้วยเจริญสุข"/>
     </entity>
