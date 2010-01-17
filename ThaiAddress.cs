@@ -14,6 +14,7 @@ namespace De.AHoerstemeier.Tambon
         public String Amphoe { get; set; }
         public String Tambon { get; set; }
         public Int32 Muban { get; set; }
+        public String MubanName { get; set; }
         public Int32 PostalCode { get; set; }
         public Int32 Geocode { get { return mGeocode; } }
         public String Street { get; set; }
@@ -105,7 +106,50 @@ namespace De.AHoerstemeier.Tambon
         }
         internal void ReadFromXml(XmlNode iNode)
         {
-            // TODO
+            if (iNode != null)
+            {
+                foreach (XmlNode lNode in iNode.ChildNodes)
+                {
+                    switch (lNode.Name)
+                    {
+                        case "postcode":
+                            PostalCode = Helper.GetAttributeOptionalInt(lNode, "code", 0);
+                            break;
+                        case "street":
+                            Street = Helper.GetAttribute(lNode, "value");
+                            break;
+                        case "village":
+                            Muban = Helper.GetAttributeOptionalInt(lNode, "number", 0);
+                            MubanName = Helper.GetAttributeOptionalString(lNode, "name");
+                            break;
+                        case "tambon":
+                            Tambon = Helper.GetAttribute(lNode,"name");
+                            mGeocode = Helper.GetAttributeOptionalInt(lNode,"geocode",0);
+                            break;
+                    }
+                }
+            }
+        }
+        public override string ToString()
+        {
+            String lValue = String.Empty;
+            if (!String.IsNullOrEmpty(Street))
+            {
+                lValue = Street+'\n';
+            }
+            if (!String.IsNullOrEmpty(Tambon))
+            {
+                lValue = lValue + "ต." + Tambon + '\n';
+            }
+            if (!String.IsNullOrEmpty(Amphoe))
+            {
+                lValue = lValue + "อ." + Amphoe + '\n';
+            }
+            if (!String.IsNullOrEmpty(Changwat))
+            {
+                lValue = lValue + "จ." + Changwat + '\n';
+            }
+            return lValue;
         }
         #region constructor
         public ThaiAddress()
