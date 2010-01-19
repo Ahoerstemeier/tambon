@@ -56,6 +56,7 @@ namespace Tambon
             this.btnMubanNames = new System.Windows.Forms.Button();
             this.chkUseCsv = new System.Windows.Forms.CheckBox();
             this.btnCreateKml = new System.Windows.Forms.Button();
+            this.btnGeo = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -348,11 +349,22 @@ namespace Tambon
             this.btnCreateKml.UseVisualStyleBackColor = true;
             this.btnCreateKml.Click += new System.EventHandler(this.btnCreateKml_Click);
             // 
+            // btnGeo
+            // 
+            this.btnGeo.Location = new System.Drawing.Point(25, 289);
+            this.btnGeo.Name = "btnGeo";
+            this.btnGeo.Size = new System.Drawing.Size(75, 23);
+            this.btnGeo.TabIndex = 27;
+            this.btnGeo.Text = "Geocoord";
+            this.btnGeo.UseVisualStyleBackColor = true;
+            this.btnGeo.Click += new System.EventHandler(this.btnGeo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnGeo);
             this.Controls.Add(this.btnCreateKml);
             this.Controls.Add(this.chkUseCsv);
             this.Controls.Add(this.btnMubanNames);
@@ -417,6 +429,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnMubanNames;
         private System.Windows.Forms.CheckBox chkUseCsv;
         private System.Windows.Forms.Button btnCreateKml;
+        private System.Windows.Forms.Button btnGeo;
     }
 }
 

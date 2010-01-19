@@ -29,26 +29,30 @@ namespace De.AHoerstemeier.Tambon
             Latitude = iLatitude;
             Longitude = iLongitude;
         }
+        public GeoPoint(string iValue)
+        {
+            throw new NotImplementedException();
+        }
         public GeoPoint(GeoPoint iValue)
         {
             Latitude = iValue.Latitude;
             Longitude = iValue.Longitude;
             Datum = (GeoDatum)iValue.Datum.Clone();
         }
-        public GeoPoint(double UTMNorthing, double UTMEasting, string sUTMZone, GeoDatum iDatum)
+        public GeoPoint(double iUTMNorthing, double iUTMEasting, string iUTMZone, GeoDatum iDatum)
         {
             double eccSquared = iDatum.Ellipsoid.ExcentricitySquared;
             double dEquatorialRadius = iDatum.Ellipsoid.SemiMajorAxis;
 
             // populate North/South
-            char cZoneLetter = sUTMZone[sUTMZone.Length - 1];
+            char cZoneLetter = iUTMZone[iUTMZone.Length - 1];
             bool bNorthernHemisphere = (cZoneLetter >= 'N');
 
-            string sZoneNum = sUTMZone.Substring(0, sUTMZone.Length - 1);
+            string sZoneNum = iUTMZone.Substring(0, iUTMZone.Length - 1);
             int iZoneNumber = Convert.ToInt32(sZoneNum);
 
-            double x = UTMEasting - 500000.0; //remove 500,000 meter offset for longitude
-            double y = UTMNorthing;
+            double x = iUTMEasting - 500000.0; //remove 500,000 meter offset for longitude
+            double y = iUTMNorthing;
             if (!bNorthernHemisphere)
             {
                 // point is in southern hemisphere
@@ -158,6 +162,10 @@ namespace De.AHoerstemeier.Tambon
             lLongitudeElement.InnerText = Longitude.ToString(Helper.CultureInfoUS);
             lNewElement.AppendChild(lLongitudeElement);
         }
+        public void CalcUTM(out double oNorthing, out double oEasting, out string oZone)
+        {
+            throw new NotImplementedException();
+        }
 
         internal static GeoPoint Load(XmlNode iNode)
         {
@@ -186,6 +194,81 @@ namespace De.AHoerstemeier.Tambon
             }
             return RetVal;
 
+        }
+
+        private static String CoordinateToString(string iFormat, double iValue)
+        {
+            String lResult = iFormat;
+
+            lResult = lResult.Replace("%C", Math.Truncate(iValue).ToString());
+            lResult = lResult.Replace("%D", Math.Truncate(Math.Abs(iValue)).ToString());
+            lResult = lResult.Replace("%M", Math.Truncate((Math.Abs(iValue) * 60) % 60).ToString());
+            lResult = lResult.Replace("%S", Math.Truncate((Math.Abs(iValue)*3600) % 60).ToString());
+
+            // http://www.codeproject.com/KB/string/llstr.aspx
+            // String.Format() ?
+
+            // %C - integer co-ordinate, may be negative or positive
+            // %c - decimal co-ordinate, the entire co-ordinate, may be negative or positive
+            // %D - integer degrees, always positive
+            // %M - integer degrees, always positive
+            // %S - integer seconds, always positive, rounded
+            // %d - decimal degrees, always positive
+            // %m - decimal minutes, always positive
+            // %s - decimal seconds, always positive
+            return lResult;
+        }
+        public String ToString(string iFormat)
+        {
+            // %H - hemisphere - single character of N,S,E,W
+            // %C - integer co-ordinate, may be negative or positive
+            // %c - decimal co-ordinate, the entire co-ordinate, may be negative or positive
+            // %D - integer degrees, always positive
+            // %M - integer degrees, always positive
+            // %S - integer seconds, always positive, rounded
+            // %d - decimal degrees, always positive
+            // %m - decimal minutes, always positive
+            // %s - decimal seconds, always positive
+            // %% - for %
+            String lLatitude = CoordinateToString(iFormat,Latitude);
+            if (Latitude >= 0)
+            {
+                lLatitude = lLatitude.Replace("%H", "N");
+            }
+            else
+            {
+                lLatitude = lLatitude.Replace("%H", "S");
+            }
+            String lLongitude = CoordinateToString(iFormat, Longitude);
+            if (Longitude >= 0)
+            {
+                lLongitude = lLongitude.Replace("%H", "E");
+            }
+            else
+            {
+                lLongitude = lLongitude.Replace("%H", "W");
+            }
+
+            String lResult = lLatitude + ' ' + lLongitude;
+            lResult = lResult.Replace("%%","%");
+            return lResult;
+        }
+        public String ToUTMString()
+        {
+            throw new NotImplementedException();
+        }
+        public String ToMGRSString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static GeoPoint ParseMGRS(String iValue)
+        {
+            // TODO
+
+            // VE ๒๐๔๕๐๘ -> VE 204508 -> 48Q VE 204 508 -> 48Q 420400 1950800
+
+            throw new NotImplementedException();
         }
 
         #endregion
