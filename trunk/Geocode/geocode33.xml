@@ -68,7 +68,11 @@
     <entity type="Tambon" name="เมืองเหนือ" english="Mueang Nuea" geocode="330101" />
     <entity type="Tambon" name="เมืองใต้" english="Mueang Tai" geocode="330102" />
     <entity type="Tambon" name="คูซอด" english="Khu Sot" geocode="330103" />
-    <entity type="Tambon" name="ซำ" english="Sam" geocode="330104" />
+    <entity type="Tambon" name="ซำ" english="Sam" geocode="330104" >
+      <office type="TAOOffice">
+        <url>http://some.igetweb.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="จาน" english="Chan" geocode="330105" />
     <entity type="Tambon" name="ตะดอบ" english="Tadop" geocode="330106" >
       <office type="TAOOffice">
@@ -115,13 +119,25 @@
       <entity type="Muban" geocode="33011109" name="บ้านบก"/>
       <entity type="Muban" geocode="33011110" name="บ้านกุดโง้งใต้" comment="TAO website says บ้านกุดโง้ง"/>
     </entity>
-    <entity type="Tambon" name="โพนค้อ" english="Phon Kho" geocode="330112" />
+    <entity type="Tambon" name="โพนค้อ" english="Phon Kho" geocode="330112" >
+      <office type="TAOOffice">
+        <url>http://www.phonkor.ob.tc/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ธาตุ" english="That" geocode="330113" newgeocode="331602" />
     <entity type="Tambon" name="ตำแย" english="Tamyae" geocode="330114" newgeocode="332003" />
-    <entity type="Tambon" name="โพนเขวา" english="Phon Khwao" geocode="330115" />
+    <entity type="Tambon" name="โพนเขวา" english="Phon Khwao" geocode="330115" >
+      <office type="TAOOffice">
+        <url>http://www.ponkhwao.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="หญ้าปล้อง" english="Ya Plong" geocode="330116" />
     <entity type="Tambon" name="บุสูง" english="Bu Sung" geocode="330117" newgeocode="331601" />
-    <entity type="Tambon" name="ทุ่ม" english="Thum" geocode="330118" />
+    <entity type="Tambon" name="ทุ่ม" english="Thum" geocode="330118" >
+      <office type="TAOOffice">
+        <url>http://www.toomsisaket.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="หนองไฮ" english="Nong Hai" geocode="330119" >
       <office type="TAOOffice">
         <url>http://www.nonghi.go.th/</url>
@@ -1476,9 +1492,7 @@
   </entity>
   <entity type="ThesabanMueang" name="กันทรลักษ์" english="Kantharalak" geocode="3396" parent="3304" >
     <office type="MunicipalityOffice">
-      <url>
-        >http://www.kanthalukcity.ob.tc/history.html
-      </url>
+      <url>http://www.kanthalukcity.ob.tc</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ห้วยเหนือ" english="Huai Nuea" geocode="3395" parent="3305" >
