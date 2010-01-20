@@ -17,6 +17,7 @@ namespace De.AHoerstemeier.Tambon
         private PopulationDataEntry mChangwat = null;
         private PopulationDataEntry mCurrentSubEntry = null;
         private List<PopulationDataEntry> mThesaban = new List<PopulationDataEntry>();
+        private List<PopulationDataEntry> mInvalidGeocodes = new List<PopulationDataEntry>();
         #endregion
         #region properties
         public Int32 year
@@ -321,6 +322,7 @@ namespace De.AHoerstemeier.Tambon
                 if (File.Exists(lFilename))
                 {
                     PopulationData lGeocodes = PopulationData.Load(lFilename);
+                    mInvalidGeocodes = lGeocodes.Data.InvalidGeocodeEntries();
                     Data.GetCodes(lGeocodes.Data);
                 }
             }
@@ -386,6 +388,10 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        public List<PopulationDataEntry> EntitiesWithInvalidGeocode()
+        {
+            return mInvalidGeocodes;
+        }
         public List<PopulationDataEntry> EntitiesWithoutGeocode()
         {
             var retval = new List<PopulationDataEntry>();
