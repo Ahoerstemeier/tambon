@@ -115,6 +115,7 @@
             // 
             // btnSaveXML
             // 
+            this.btnSaveXML.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSaveXML.Location = new System.Drawing.Point(3, 458);
             this.btnSaveXML.Name = "btnSaveXML";
             this.btnSaveXML.Size = new System.Drawing.Size(75, 23);
@@ -125,6 +126,7 @@
             // 
             // btnClipboardAmphoe
             // 
+            this.btnClipboardAmphoe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClipboardAmphoe.Enabled = false;
             this.btnClipboardAmphoe.Location = new System.Drawing.Point(163, 458);
             this.btnClipboardAmphoe.Name = "btnClipboardAmphoe";
@@ -136,6 +138,7 @@
             // 
             // btnGazette
             // 
+            this.btnGazette.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGazette.Location = new System.Drawing.Point(84, 458);
             this.btnGazette.Name = "btnGazette";
             this.btnGazette.Size = new System.Drawing.Size(75, 23);
