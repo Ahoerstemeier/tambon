@@ -264,6 +264,7 @@ namespace De.AHoerstemeier.Tambon
 
         public static GeoPoint ParseMGRS(String iValue)
         {
+            String lValue = Helper.ReplaceThaiNumerals(iValue).ToUpperInvariant();
             // TODO
 
             // VE ๒๐๔๕๐๘ -> VE 204508 -> 48Q VE 204 508 -> 48Q 420400 1950800
