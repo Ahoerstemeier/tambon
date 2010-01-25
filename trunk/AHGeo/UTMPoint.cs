@@ -39,27 +39,172 @@ namespace De.AHoerstemeier.Geo
         }
         #endregion
 
+        #region constants
+        private const String cZoneCharacters = "CDEFGHJKLMNPQRSTUVWX";
+        #endregion
+
         #region methods
         public char ZoneBand()
         {
-            throw new NotImplementedException();
+            GeoPoint lGeoPoint = new GeoPoint(this, GeoDatum.DatumWGS84());
+            char lZoneChar = UTMLetterDesignator(lGeoPoint.Latitude);
+            return lZoneChar;
         }
-        public String ToString(Int32 iDigits)
+        public String ToUTMString(Int16 iDigits)
         {
-            throw new NotImplementedException();
+            String lNorthing = Northing.ToString("0000000");
+            String lEasting = Easting.ToString("0000000");
+            lEasting = lEasting.Substring(0, iDigits);
+            lNorthing = lNorthing.Substring(0, iDigits);
+            String lResult = ZoneNumber.ToString("00") + ZoneBand() + ' ' + lEasting + ' ' + lNorthing;
+            return lResult;
         }
         public String ToMGRSString(Int32 iDigits)
         {
-            throw new NotImplementedException();
+            String lNorthing = Northing.ToString("0000000");
+            String lEasting = Easting.ToString("0000000");
+            String lEastingLetters = MGRSEastingChars(ZoneNumber);
+            Int32 lEastingIdentifier = Convert.ToInt32(lEasting.Substring(0, 2));
+            String lEastingChar = lEastingLetters.Substring(lEastingIdentifier, 1);
+            Int32 lNorthingIdentifier = Convert.ToInt32(lNorthing.Substring(0, 1));
+            lNorthingIdentifier = (lNorthingIdentifier % 2) * 10;
+            lNorthingIdentifier = lNorthingIdentifier + Convert.ToInt32(lNorthing.Substring(1, 1));
+
+            String lNorthingLetters = MGRSNorthingChars(ZoneNumber);
+            String lNorthingChar = lNorthingLetters.Substring(lNorthingIdentifier, 1);
+            String lResult =
+                ZoneNumber.ToString("00") +
+                ZoneBand() + ' ' +
+                lEastingChar + lNorthingChar + ' ' +
+                lEasting.Substring(2, iDigits - 2) +
+                lNorthing.Substring(2, iDigits - 2);
+            return lResult;
         }
-        public void ParseUTMString(String iValue)
-        { 
-            throw new NotImplementedException(); 
-        }
-        public void ParseMGRSString(String iValue)
+        public static UTMPoint ParseUTMString(String iValue)
         {
-            throw new NotImplementedException();
+            String lValue = iValue.ToUpperInvariant().Replace(" ", "");
+            String lZone = lValue.Substring(0, 3);
+            String lNumbers = lValue.Remove(0, 3);
+            Int32 lDigits = lNumbers.Length / 2;
+            String lEastingString = lNumbers.Substring(0, lDigits);
+            String lNorthingString = lNumbers.Substring(lDigits, lDigits);
+
+            Int32 lZoneNumber = Convert.ToInt32(lZone.Substring(0, 2));
+            char lZoneLetter = lZone[2];
+
+            Int32 lNorthing = Convert.ToInt32(lEastingString);
+            Int32 lEasting = Convert.ToInt32(lEastingString);
+            UTMPoint lResult = new UTMPoint(lNorthing, lEasting, lZoneNumber, MinNorthing(lZoneLetter) >= 0);
+            return lResult;
         }
+        public static UTMPoint ParseMGRSString(String iValue)
+        {
+            String lValue = iValue.ToUpperInvariant().Replace(" ", "");
+            String lZone = lValue.Substring(0, 3);
+            String lEastingChar = lValue.Substring(3, 1);
+            String lNorthingChar = lValue.Substring(4, 1);
+            String lNumbers = lValue.Remove(0, 5);
+            Int32 lDigits = lNumbers.Length / 2;
+            String lEastingString = lNumbers.Substring(0, lDigits);
+            String lNorthingString = lNumbers.Substring(lDigits, lDigits);
+
+            Int32 lZoneNumber = Convert.ToInt16(lZone.Substring(0, 2));
+            char lZoneLetter = lZone[2];
+            String lEastingLetters = MGRSEastingChars(lZoneNumber);
+            Int32 lEastingNumber = lEastingLetters.IndexOf(lEastingChar);
+            lEastingString = lEastingNumber.ToString("00") + lEastingString;
+            String lNorthingLetters = MGRSNorthingChars(lZoneNumber);
+            Int32 lNorthingNumber = lNorthingLetters.IndexOf(lNorthingChar);
+            Int32 lMinNorthing = MinNorthing(lZoneLetter);
+
+            // TODO
+
+            Int32 lNorthing = Convert.ToInt32(lEastingString);
+            Int32 lEasting = Convert.ToInt32(lEastingString);
+            UTMPoint lResult = new UTMPoint(lNorthing, lEasting, lZoneNumber, lZoneLetter > 'N');
+            return lResult;
+        }
+
+        private static String MGRSNorthingChars(Int32 lZoneNumber)
+        {
+            String lNorthingLetters = String.Empty;
+            switch (lZoneNumber % 2)
+            {
+                case 0:
+                    lNorthingLetters = "ABCDEFGHJKLMNPQRSTUV";
+                    break;
+                case 1:
+                    lNorthingLetters = "FGHJKLMNPQRSTUVABCDE";
+                    break;
+            }
+            return lNorthingLetters;
+        }
+        private static String MGRSEastingChars(Int32 iZoneNumber)
+        {
+            String lEastingLetters = String.Empty;
+            switch (iZoneNumber % 3)
+            {
+                case 0:
+                    lEastingLetters = "STUVWXYZ";
+                    break;
+                case 1:
+                    lEastingLetters = "ABCDEFGH";
+                    break;
+                case 2:
+                    lEastingLetters = "JKLMNPQR";
+                    break;
+            }
+            return lEastingLetters;
+        }
+        private static Int32 MinNorthing(char iZoneChar)
+        {
+            switch (iZoneChar)
+            {
+                case 'C': return 1100000;
+                case 'D': return 2000000;
+                case 'E': return 2800000;
+                case 'F': return 3700000;
+                case 'G': return 4600000;
+                case 'H': return 5500000;
+                case 'J': return 6400000;
+                case 'K': return 7300000;
+                case 'L': return 8200000;
+                case 'M': return 9100000;
+                case 'N': return 0;
+                case 'P': return 800000;
+                case 'Q': return 1700000;
+                case 'R': return 2600000;
+                case 'S': return 3500000;
+                case 'T': return 4400000;
+                case 'U': return 5300000;
+                case 'V': return 6200000;
+                case 'W': return 7000000;
+                case 'X': return 7900000;
+            }
+            throw new ArgumentOutOfRangeException(iZoneChar.ToString()+" is invalid UTM zone letter");
+        }
+        private static Int32 UTMZoneToLatitude(char iZoneChar)
+        {
+            Int32 lIndex = cZoneCharacters.IndexOf(iZoneChar);
+            Int32 lZoneBottom = -80 + 8 * lIndex;
+            return lZoneBottom;
+        }
+        private char UTMLetterDesignator(double iLatitude)
+        {
+            char lLetter;
+            if (iLatitude < 84.0 && iLatitude >= 72.0)
+            {
+                // Special case: zone X is 12 degrees from north to south, not 8.
+                lLetter = cZoneCharacters[19];
+            }
+            else
+            {
+                lLetter = cZoneCharacters[(int)((iLatitude + 80.0) / 8.0)];
+            }
+
+            return lLetter;
+        }
+
         #endregion
 
         #region ICloneable Members
