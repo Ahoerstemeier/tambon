@@ -128,7 +128,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         mChangwat = lCurrentEntry;
                     }
-                    else if ((mCurrentSubEntry == null) | (Helper.SecondLevelEntity.Contains(lCurrentEntry.Type)))
+                    else if ((mCurrentSubEntry == null) | (EntityTypeHelper.SecondLevelEntity.Contains(lCurrentEntry.Type)))
                     {
                         mChangwat.SubEntities.Add(lCurrentEntry);
                         mCurrentSubEntry = lCurrentEntry;
@@ -351,7 +351,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 foreach (PopulationDataEntry lEntity in mChangwat.SubEntities)
                 {
-                    if (Helper.Thesaban.Contains(lEntity.Type) | Helper.Sakha.Contains(lEntity.Type))
+                    if (EntityTypeHelper.Thesaban.Contains(lEntity.Type) | EntityTypeHelper.Sakha.Contains(lEntity.Type))
                     {
                         mThesaban.Add(lEntity);
                     }
