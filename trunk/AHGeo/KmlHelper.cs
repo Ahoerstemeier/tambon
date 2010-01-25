@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace De.AHoerstemeier.Tambon
+namespace De.AHoerstemeier.Geo
 {
-    class KmlHelper
+    public class KmlHelper
     {
         #region variables
         private XmlDocument doc = new XmlDocument();

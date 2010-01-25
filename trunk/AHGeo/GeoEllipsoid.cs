@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
-namespace De.AHoerstemeier.Tambon
+namespace De.AHoerstemeier.Geo
 {
-    class GeoEllipsoid : ICloneable
+    public class GeoEllipsoid : ICloneable, IEquatable<GeoEllipsoid>
     {
         #region properties
         public String Name { get; set; }
@@ -35,6 +34,14 @@ namespace De.AHoerstemeier.Tambon
             return new GeoEllipsoid(this);
         }
 
+        #endregion
+        #region IEquatable Members
+        public bool Equals(GeoEllipsoid iObj)
+        {
+            bool lResult = Math.Abs(iObj.SemiMajorAxis - this.SemiMajorAxis) < 0.0001;
+            lResult = lResult & (Math.Abs(iObj.DenominatorOfFlattening - this.DenominatorOfFlattening) < 0.0000000001);
+            return lResult;
+        }
         #endregion
 
         // http://www.colorado.edu/geography/gcraft/notes/datum/edlist.html

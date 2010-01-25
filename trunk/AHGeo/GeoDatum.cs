@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
-namespace De.AHoerstemeier.Tambon
+namespace De.AHoerstemeier.Geo
 {
-    class GeoDatum : ICloneable
+    public class GeoDatum : ICloneable, IEquatable<GeoDatum>
     {
         #region properties
         public String Name { get; set; }
@@ -47,6 +46,16 @@ namespace De.AHoerstemeier.Tambon
             return new GeoDatum(this);
         }
 
+        #endregion
+        #region IEquatable Members
+        public bool Equals(GeoDatum iObj)
+        {
+            bool lResult = iObj.Ellipsoid.Equals(this.Ellipsoid);
+            lResult = lResult & (Math.Abs(iObj.deltaX - this.deltaX) < 0.1);
+            lResult = lResult & (Math.Abs(iObj.deltaY - this.deltaY) < 0.1);
+            lResult = lResult & (Math.Abs(iObj.deltaZ - this.deltaZ) < 0.1);
+            return lResult;
+        }
         #endregion
     }
 }
