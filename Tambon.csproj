@@ -88,10 +88,6 @@
     <Compile Include="EntityLeader.cs" />
     <Compile Include="EntityLeaderList.cs" />
     <Compile Include="FrequencyCounter.cs" />
-    <Compile Include="GeoDatum.cs" />
-    <Compile Include="GeoEllipsoid.cs" />
-    <Compile Include="GeoPoint.cs" />
-    <Compile Include="KmlHelper.cs" />
     <Compile Include="MubanCSVReader.cs" />
     <Compile Include="NumeralsHelper.cs">
       <SubType>Form</SubType>
@@ -552,6 +548,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AHGeo\AHGeo.csproj">
+      <Project>{701BEA66-8220-4F60-9A8D-11AAA4E20974}</Project>
+      <Name>AHGeo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

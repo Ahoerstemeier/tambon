@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Globalization;
+using De.AHoerstemeier.Geo;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -60,7 +61,8 @@ namespace De.AHoerstemeier.Tambon
                     {
                         EntityOffice lOffice = new EntityOffice();
                         lOffice.Type = OfficeType.VillageHeadmanOffice;
-                        lOffice.Location = new GeoPoint(Convert.ToInt32(lNorthing), Convert.ToInt32(lEasting), "47N", GeoDatum.DatumIndian1975());
+                        UTMPoint lUTMLocation = new UTMPoint(Convert.ToInt32(lNorthing), Convert.ToInt32(lEasting), 47, true);
+                        lOffice.Location = new GeoPoint(lUTMLocation, GeoDatum.DatumIndian1975());
                         lOffice.Location.Datum = GeoDatum.DatumWGS84();
                         lCurrentMuban.Offices.Add(lOffice);
                     }
