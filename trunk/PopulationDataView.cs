@@ -57,7 +57,7 @@ namespace De.AHoerstemeier.Tambon
                 lListViewItem.SubItems.Add(lEntity.Name);
                 lListViewItem.SubItems.Add(lEntity.Geocode.ToString());
                 lListViewItem.SubItems.Add(lEntity.Total.ToString());
-                lListViewItem.SubItems.Add(lEntity.SubNames(Helper.Thesaban).ToString());
+                lListViewItem.SubItems.Add(lEntity.SubNames(EntityTypeHelper.Thesaban).ToString());
             }
             mListviewData.EndUpdate();
         }
@@ -80,7 +80,7 @@ namespace De.AHoerstemeier.Tambon
                 retval.Tag = iData;
                 foreach (PopulationDataEntry lEntity in iData.SubEntities)
                 {
-                    if (!Helper.Thesaban.Contains(lEntity.Type))
+                    if (!EntityTypeHelper.Thesaban.Contains(lEntity.Type))
                     {
                       retval.Nodes.Add(PopulationDataEntryToTreeNode(lEntity));
                     }
@@ -115,7 +115,7 @@ namespace De.AHoerstemeier.Tambon
         {
             var lData = CurrentSelectedEntity(sender);
             PopulationDataEntryToListView(lData);
-            btnClipboardAmphoe.Enabled = Helper.IsCompatibleEntityType(lData.Type, EntityType.Amphoe);
+            btnClipboardAmphoe.Enabled = EntityTypeHelper.IsCompatibleEntityType(lData.Type, EntityType.Amphoe);
         }
 
         private PopulationDataEntry CurrentSelectedEntity(object sender)

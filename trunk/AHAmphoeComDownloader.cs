@@ -241,10 +241,10 @@ namespace De.AHoerstemeier.Tambon
 
         private void ParseAmphoeChangwatName(String iLine, AHAmphoeComData ioData)
         {
-            Int32 lPos1 = iLine.IndexOf(Helper.EntityNames[EntityType.Amphoe]) + Helper.EntityNames[EntityType.Amphoe].Length;
+            Int32 lPos1 = iLine.IndexOf(EntityTypeHelper.EntityNames[EntityType.Amphoe]) + EntityTypeHelper.EntityNames[EntityType.Amphoe].Length;
             Int32 lPos2 = iLine.IndexOf("&nbsp;");
             ioData.AmphoeName = iLine.Substring(lPos1, lPos2 - lPos1);
-            Int32 lPos3 = iLine.IndexOf(Helper.EntityNames[EntityType.Changwat]) + Helper.EntityNames[EntityType.Changwat].Length;
+            Int32 lPos3 = iLine.IndexOf(EntityTypeHelper.EntityNames[EntityType.Changwat]) + EntityTypeHelper.EntityNames[EntityType.Changwat].Length;
             Int32 lPos4 = iLine.IndexOf(SearchStringAmphoeChangwatEnd);
             ioData.ChangwatName = iLine.Substring(lPos3, lPos4 - lPos3);
         }

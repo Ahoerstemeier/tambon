@@ -71,13 +71,13 @@ namespace De.AHoerstemeier.Tambon
                     Muban = Convert.ToInt32(lTemp);
                 }
             }
-            if (iValue.Contains(Helper.EntityNames[EntityType.Changwat]))
+            if (iValue.Contains(EntityTypeHelper.EntityNames[EntityType.Changwat]))
             {
-                Changwat = TextAfter(iValue, Helper.EntityNames[EntityType.Changwat]);
+                Changwat = TextAfter(iValue, EntityTypeHelper.EntityNames[EntityType.Changwat]);
             }
-            if (iValue.Contains(Helper.EntityNames[EntityType.Amphoe]))
+            if (iValue.Contains(EntityTypeHelper.EntityNames[EntityType.Amphoe]))
             {
-                Amphoe = TextAfter(iValue, Helper.EntityNames[EntityType.Amphoe]);
+                Amphoe = TextAfter(iValue, EntityTypeHelper.EntityNames[EntityType.Amphoe]);
             }
             if (iValue.Contains(SearchKeyTambon))
             {
