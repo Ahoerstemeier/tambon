@@ -228,8 +228,8 @@ namespace De.AHoerstemeier.Geo
 		        UTMNorthing += 10000000.0; //10000000 meter offset for southern hemisphere
             }
             UTMPoint lResult = new UTMPoint(
-                (Int32)Math.Truncate(UTMNorthing), 
-                (Int32)Math.Truncate(UTMEasting), 
+                (Int32)Math.Truncate(UTMEasting),
+                (Int32)Math.Truncate(UTMNorthing),
                 ZoneNumber, Latitude >= 0);
             return lResult;
         }

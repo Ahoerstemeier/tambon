@@ -21,16 +21,13 @@ namespace De.AHoerstemeier.Geo
         }
         public UTMPoint(string iValue)
         {
-            ParseUTMString(iValue);
+            Assign(ParseUTMString(iValue));
         }
         public UTMPoint(UTMPoint iValue)
         {
-            Northing = iValue.Northing;
-            Easting = iValue.Easting;
-            ZoneNumber = iValue.ZoneNumber;
-            IsNorthernHemisphere = iValue.IsNorthernHemisphere;
+            Assign(iValue);
         }
-        public UTMPoint(Int32 iNorthing, Int32 iEasting, Int32 iZoneNumber, Boolean iIsNorthernHemisphere)
+        public UTMPoint(Int32 iEasting, Int32 iNorthing, Int32 iZoneNumber, Boolean iIsNorthernHemisphere)
         {
             Northing = iNorthing;
             Easting = iEasting;
@@ -46,7 +43,13 @@ namespace De.AHoerstemeier.Geo
         #region methods
         public char ZoneBand()
         {
-            GeoPoint lGeoPoint = new GeoPoint(this, GeoDatum.DatumWGS84());
+            char lZoneChar = ZoneBand(this.Northing, this.IsNorthernHemisphere);
+            return lZoneChar;
+        }
+        static char ZoneBand(Int32 iNorthing, bool iIsNorthernHemisphere)
+        {
+            UTMPoint lTemp = new UTMPoint(0, iNorthing, 1, iIsNorthernHemisphere);
+            GeoPoint lGeoPoint = new GeoPoint(lTemp, GeoDatum.DatumWGS84());
             char lZoneChar = UTMLetterDesignator(lGeoPoint.Latitude);
             return lZoneChar;
         }
@@ -65,7 +68,7 @@ namespace De.AHoerstemeier.Geo
             String lEasting = Easting.ToString("0000000");
             String lEastingLetters = MGRSEastingChars(ZoneNumber);
             Int32 lEastingIdentifier = Convert.ToInt32(lEasting.Substring(0, 2));
-            String lEastingChar = lEastingLetters.Substring(lEastingIdentifier, 1);
+            String lEastingChar = lEastingLetters.Substring(lEastingIdentifier-1, 1);
             Int32 lNorthingIdentifier = Convert.ToInt32(lNorthing.Substring(0, 1));
             lNorthingIdentifier = (lNorthingIdentifier % 2) * 10;
             lNorthingIdentifier = lNorthingIdentifier + Convert.ToInt32(lNorthing.Substring(1, 1));
@@ -92,9 +95,9 @@ namespace De.AHoerstemeier.Geo
             Int32 lZoneNumber = Convert.ToInt32(lZone.Substring(0, 2));
             char lZoneLetter = lZone[2];
 
-            Int32 lNorthing = Convert.ToInt32(lEastingString);
+            Int32 lNorthing = Convert.ToInt32(lNorthingString);
             Int32 lEasting = Convert.ToInt32(lEastingString);
-            UTMPoint lResult = new UTMPoint(lNorthing, lEasting, lZoneNumber, MinNorthing(lZoneLetter) >= 0);
+            UTMPoint lResult = new UTMPoint(lEasting, lNorthing, lZoneNumber, MinNorthing(lZoneLetter) >= 0);
             return lResult;
         }
         public static UTMPoint ParseMGRSString(String iValue)
@@ -111,17 +114,21 @@ namespace De.AHoerstemeier.Geo
             Int32 lZoneNumber = Convert.ToInt16(lZone.Substring(0, 2));
             char lZoneLetter = lZone[2];
             String lEastingLetters = MGRSEastingChars(lZoneNumber);
-            Int32 lEastingNumber = lEastingLetters.IndexOf(lEastingChar);
+            Int32 lEastingNumber = lEastingLetters.IndexOf(lEastingChar)+1;
             lEastingString = lEastingNumber.ToString("00") + lEastingString;
             String lNorthingLetters = MGRSNorthingChars(lZoneNumber);
             Int32 lNorthingNumber = lNorthingLetters.IndexOf(lNorthingChar);
             Int32 lMinNorthing = MinNorthing(lZoneLetter);
 
-            // TODO
+            Int32 lNorthingTemp = (lMinNorthing / 2000000) * 2000000 + lNorthingNumber * 100000;
+            if (ZoneBand(lNorthingTemp, lZoneLetter >= 'N') != lZoneLetter)
+            {
+                lNorthingTemp = lNorthingTemp + 200000;
+            }
 
-            Int32 lNorthing = Convert.ToInt32(lEastingString);
+            Int32 lNorthing = lNorthingTemp+Convert.ToInt32(lNorthingString);
             Int32 lEasting = Convert.ToInt32(lEastingString);
-            UTMPoint lResult = new UTMPoint(lNorthing, lEasting, lZoneNumber, lZoneLetter > 'N');
+            UTMPoint lResult = new UTMPoint(lEasting, lNorthing, lZoneNumber, lZoneLetter > 'N');
             return lResult;
         }
 
@@ -131,10 +138,10 @@ namespace De.AHoerstemeier.Geo
             switch (lZoneNumber % 2)
             {
                 case 0:
-                    lNorthingLetters = "ABCDEFGHJKLMNPQRSTUV";
+                    lNorthingLetters = "FGHJKLMNPQRSTUVABCDE";
                     break;
                 case 1:
-                    lNorthingLetters = "FGHJKLMNPQRSTUVABCDE";
+                    lNorthingLetters = "ABCDEFGHJKLMNPQRSTUV";
                     break;
             }
             return lNorthingLetters;
@@ -189,7 +196,7 @@ namespace De.AHoerstemeier.Geo
             Int32 lZoneBottom = -80 + 8 * lIndex;
             return lZoneBottom;
         }
-        private char UTMLetterDesignator(double iLatitude)
+        private static char UTMLetterDesignator(double iLatitude)
         {
             char lLetter;
             if (iLatitude < 84.0 && iLatitude >= 72.0)
@@ -203,6 +210,14 @@ namespace De.AHoerstemeier.Geo
             }
 
             return lLetter;
+        }
+
+        private void Assign(UTMPoint iValue)
+        {
+            Northing = iValue.Northing;
+            Easting = iValue.Easting;
+            ZoneNumber = iValue.ZoneNumber;
+            IsNorthernHemisphere = iValue.IsNorthernHemisphere;
         }
 
         #endregion
