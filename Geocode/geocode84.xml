@@ -661,6 +661,7 @@
     <entity type="Tambon" name="ท่าชนะ" english="Tha Chana" geocode="840701">
       <office type="TAOOffice">
         <geo:Point>
+          <!-- according to Longdo, which building is TAO, which one the hospital? -->
           <geo:lat>9.5975</geo:lat>
           <geo:long>99.1660</geo:long>
         </geo:Point>
@@ -1081,7 +1082,7 @@
           <geo:lat>9.2668</geo:lat>
           <geo:long>99.1530</geo:long>
         </geo:Point>
-        <url>http://www.tambolthachang.com/</url>
+        <url comment="Offline">http://www.tambolthachang.com/</url>
       </office>
       <entity type="Muban" geocode="84110101" name="ท่าฉาง"/>
       <entity type="Muban" geocode="84110102" name="ท่าเคย"/>
@@ -2014,6 +2015,10 @@
   </entity>
   <entity type="ThesabanTambon" name="ท่าชนะ" english="Tha Chana" geocode="8489" parent="8407">
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>9.5720</geo:lat>
+        <geo:long>99.1658</geo:long>
+      </geo:Point>
       <url>http://www.thachanacity.go.th/</url>
     </office>
   </entity>
