@@ -89,8 +89,8 @@ namespace De.AHoerstemeier.Geo
             String lZone = lValue.Substring(0, 3);
             String lNumbers = lValue.Remove(0, 3);
             Int32 lDigits = lNumbers.Length / 2;
-            String lEastingString = lNumbers.Substring(0, lDigits);
-            String lNorthingString = lNumbers.Substring(lDigits, lDigits);
+            String lEastingString = lNumbers.Substring(0, lDigits).PadRight(7,'0');
+            String lNorthingString = lNumbers.Substring(lDigits, lDigits).PadRight(7, '0');
 
             Int32 lZoneNumber = Convert.ToInt32(lZone.Substring(0, 2));
             char lZoneLetter = lZone[2];
@@ -108,8 +108,8 @@ namespace De.AHoerstemeier.Geo
             String lNorthingChar = lValue.Substring(4, 1);
             String lNumbers = lValue.Remove(0, 5);
             Int32 lDigits = lNumbers.Length / 2;
-            String lEastingString = lNumbers.Substring(0, lDigits);
-            String lNorthingString = lNumbers.Substring(lDigits, lDigits);
+            String lEastingString = lNumbers.Substring(0, lDigits).PadRight(5,'0');
+            String lNorthingString = lNumbers.Substring(lDigits, lDigits).PadRight(5, '0');
 
             Int32 lZoneNumber = Convert.ToInt16(lZone.Substring(0, 2));
             char lZoneLetter = lZone[2];
@@ -132,7 +132,7 @@ namespace De.AHoerstemeier.Geo
             return lResult;
         }
 
-        private static String MGRSNorthingChars(Int32 lZoneNumber)
+        public static String MGRSNorthingChars(Int32 lZoneNumber)
         {
             String lNorthingLetters = String.Empty;
             switch (lZoneNumber % 2)
@@ -218,6 +218,12 @@ namespace De.AHoerstemeier.Geo
             Easting = iValue.Easting;
             ZoneNumber = iValue.ZoneNumber;
             IsNorthernHemisphere = iValue.IsNorthernHemisphere;
+        }
+
+        public override string ToString()
+        {
+            String lResult = ToUTMString(7);
+            return lResult;
         }
 
         #endregion

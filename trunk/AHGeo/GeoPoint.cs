@@ -95,6 +95,14 @@ namespace De.AHoerstemeier.Geo
         #endregion
 
         #region methods
+        public bool IsNorthernHemisphere()
+        {
+            return Latitude >= 0;
+        }
+        public bool IsWesternLongitude()
+        {
+            return Longitude < 0;
+        }
         protected void SetDatum(GeoDatum iNewDatum)
         {
             // Source http://home.hiwaay.net/~taylorc/bookshelf/math-science/geodesy/datum/transform/molodensky/
@@ -319,6 +327,30 @@ namespace De.AHoerstemeier.Geo
             String lResult = lLatitude + ' ' + lLongitude;
             lResult = lResult.Replace("%%", "%");
             return lResult;
+        }
+        public override string ToString()
+        {
+            // TODO use ToString(Format) instead
+            String lLatitude = Math.Abs(Latitude).ToString("#0.0000")+"° ";
+            if (IsNorthernHemisphere())
+            {
+                lLatitude = lLatitude + 'N';
+            }
+            else
+            {
+                lLatitude = lLatitude + 'S';
+            }
+            String lLongitude = Math.Abs(Longitude).ToString("##0.0000") + "° ";
+            if (IsWesternLongitude())
+            {
+                lLongitude = lLongitude + 'W';
+            }
+            else
+            {
+                lLongitude = lLongitude + 'E';
+            }
+            String lResult = lLatitude + ' ' + lLongitude;
+            return lResult;            
         }
 
         #endregion
