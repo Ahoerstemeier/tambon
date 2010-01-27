@@ -31,6 +31,7 @@ namespace De.AHoerstemeier.Geo
             Ellipsoid = (GeoEllipsoid)iValue.Ellipsoid.Clone();
         }
         #endregion
+        #region methods
         public static GeoDatum DatumWGS84()
         {
             return new GeoDatum("WGS84", GeoEllipsoid.EllipsoidWGS84(), 0, 0, 0);
@@ -39,6 +40,11 @@ namespace De.AHoerstemeier.Geo
         {
             return new GeoDatum("Indian 1975", GeoEllipsoid.EllipsoidEverest(), 210, 814, 289);
         }
+        public override string ToString()
+        {
+            return this.Name;
+        }
+        #endregion
         #region ICloneable Members
 
         public object Clone()

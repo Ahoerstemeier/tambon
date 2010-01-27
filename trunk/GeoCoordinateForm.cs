@@ -58,7 +58,7 @@ namespace De.AHoerstemeier.Tambon
                 lValue = ZoneForThailandMGRS(lValue) + lValue;
                 UTMPoint lUTM = UTMPoint.ParseMGRSString(lValue);
                 edit_UTM.Text = lUTM.ToString();
-                GeoPoint lGeo = new GeoPoint(lUTM, GeoDatum.DatumIndian1975());
+                GeoPoint lGeo = new GeoPoint(lUTM, (GeoDatum)cbx_datum.SelectedItem);
                 lGeo.Datum = GeoDatum.DatumWGS84();
                 edit_LatLong.Text = lGeo.ToString();
             }
@@ -68,6 +68,13 @@ namespace De.AHoerstemeier.Tambon
                 edit_UTM.Text = String.Empty;
                 edit_LatLong.Text = String.Empty;
             }
+        }
+
+        private void GeoCoordinateForm_Load(object sender, EventArgs e)
+        {
+            cbx_datum.Items.Add(GeoDatum.DatumWGS84());
+            cbx_datum.SelectedIndex = 0;
+            cbx_datum.Items.Add(GeoDatum.DatumIndian1975());
         }
     }
 }
