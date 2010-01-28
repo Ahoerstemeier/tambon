@@ -38,7 +38,15 @@ namespace De.AHoerstemeier.Geo
         }
         public static GeoDatum DatumIndian1975()
         {
-            return new GeoDatum("Indian 1975", GeoEllipsoid.EllipsoidEverest(), 210, 814, 289);
+            return new GeoDatum("Indian 1975 - Thailand", GeoEllipsoid.EllipsoidEverest(), 209, 818, 290);
+        }
+        public static GeoDatum DatumIndian1954()
+        {
+            return new GeoDatum("Indian 1954 - Thailand", GeoEllipsoid.EllipsoidEverest(), 218, 816, 297);
+        }
+        public static GeoDatum DatumNorthAmerican27MeanConus()
+        {
+            return new GeoDatum("North American Datum 1927 (NAD27, mean for conus)", GeoEllipsoid.EllipsoidClarke1866(), -8, 160, 176);
         }
         public override string ToString()
         {
