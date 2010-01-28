@@ -174,6 +174,7 @@
             this.Controls.Add(this.edtYearStart);
             this.Name = "CreationStatisticForm";
             this.Text = "TambonCreationStatisticForm";
+            this.Load += new System.EventHandler(this.CreationStatisticForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.edtYearEnd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtYearStart)).EndInit();
             this.ResumeLayout(false);
