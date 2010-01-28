@@ -166,7 +166,7 @@ namespace De.AHoerstemeier.Tambon
                 String lDescription = iDescription;
                 foreach (Uri lUri in this.Websites)
                 {
-                    lDescription = lDescription + "\n" + lUri.ToString();
+                    lDescription = lDescription + Environment.NewLine + lUri.ToString();
                 }
                 iKml.AddPoint(iNode, Location.Latitude, Location.Longitude, lName, Type.ToString(),lAddress,lDescription);
             }

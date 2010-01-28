@@ -36,7 +36,7 @@ namespace De.AHoerstemeier.Tambon
         }
         private List<KontessabanDataEntry> DoParse(String iPlainText)
         {
-            String lTempText = iPlainText.Replace("<br>", "\n").Replace("<BR>", "\n");
+            String lTempText = iPlainText.Replace("<br>", Environment.NewLine).Replace("<BR>", Environment.NewLine);
             var lParseReader = new StringReader(lTempText);
             String lCurrentLine = String.Empty;
             List<KontessabanDataEntry> lData = new List<KontessabanDataEntry>();

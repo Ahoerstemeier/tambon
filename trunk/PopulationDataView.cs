@@ -36,9 +36,9 @@ namespace De.AHoerstemeier.Tambon
                 string s = "";
                 foreach (PopulationDataEntry lEntry in lEntitiesWithoutGeocode)
                 {
-                    s = s + lEntry.Name + "\n";
+                    s = s + lEntry.Name + Environment.NewLine;
                 }
-                MessageBox.Show(lEntitiesWithoutGeocode.Count.ToString() + " entities without geocode\n" + s);
+                MessageBox.Show(lEntitiesWithoutGeocode.Count.ToString() + " entities without geocode" + Environment.NewLine + s);
             }
         }
 

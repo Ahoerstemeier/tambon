@@ -62,7 +62,7 @@ namespace De.AHoerstemeier.Tambon
                     Int32 lPos2 = lLine.IndexOf("<", lPos1);
                     if (!String.IsNullOrEmpty(lCurrentChangwat))
                     {
-                        lCurrentData = lCurrentData + "\n" + lLine.Substring(0, lPos1 - mChangwatStart.Length);
+                        lCurrentData = lCurrentData + Environment.NewLine + lLine.Substring(0, lPos1 - mChangwatStart.Length);
                         lResult.Add(new PopulationDataEntry(lCurrentChangwat, OfficeType.ProvinceHall, ParseLeaders(lCurrentData)));
                         lCurrentData = String.Empty;
                     }
@@ -79,7 +79,7 @@ namespace De.AHoerstemeier.Tambon
                 }
                 if (!String.IsNullOrEmpty(lCurrentChangwat))
                 {
-                    lCurrentData = lCurrentData + "\n" + lLine;
+                    lCurrentData = lCurrentData + Environment.NewLine + lLine;
                 }
             }
             if (!String.IsNullOrEmpty(lCurrentChangwat))
@@ -102,7 +102,7 @@ namespace De.AHoerstemeier.Tambon
         {
             List<EntityLeader> lResult = new List<EntityLeader>();
             // to split the string into lines with one leader data
-            String lLine = iLine.Replace("<BR>", "\n").Replace("</P>", "\n");
+            String lLine = iLine.Replace("<BR>", Environment.NewLine).Replace("</P>", Environment.NewLine);
             lLine = RemoveAllTags(lLine);
             StringReader lReader = new StringReader(lLine);
             String lCurrentLine = String.Empty;

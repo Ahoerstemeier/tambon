@@ -203,7 +203,7 @@ namespace De.AHoerstemeier.Tambon
         }
         private String RemoveHTML(String iLine)
         {
-            String lTempString = iLine.Replace("<br>", "\n");
+            String lTempString = iLine.Replace("<br>", Environment.NewLine);
             lTempString = lTempString.Replace("</td>", "");
             lTempString = lTempString.Replace("</span>", "");
             lTempString = lTempString.Replace("</font>", "");
@@ -234,7 +234,7 @@ namespace De.AHoerstemeier.Tambon
             String lCurrentLine = String.Empty;
             while ((lCurrentLine = lReader.ReadLine()) != null)
             {
-                retval = retval + lCurrentLine.Trim() + "\r\n";
+                retval = retval + lCurrentLine.Trim() + Environment.NewLine;
             }
             return retval;
         }
