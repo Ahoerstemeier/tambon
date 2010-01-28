@@ -429,6 +429,10 @@
     </entity>
     <entity type="Tambon" name="ตลาดขวัญ" english="Talat Khwan" geocode="500507" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 18.8353</geo:lat>
+          <geo:long> 99.0812</geo:long>
+        </geo:Point>
         <url>http://taladkhuan.110mb.com/</url>
         <url>http://www.geocities.com/taladkhuan109/Index.html</url>
       </office>
@@ -653,6 +657,10 @@
     </entity>
     <entity type="Tambon" name="สันโป่ง" english="San Pong" geocode="500703" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 18.9424</geo:lat>
+          <geo:long> 98.9439</geo:long>
+        </geo:Point>
         <url>http://www.sunpong.info/</url>
       </office>
       <entity type="Muban" geocode="50070301" name="บ้านหนองอาบช้าง"/>
@@ -693,6 +701,10 @@
     </entity>
     <entity type="Tambon" name="แม่แรม" english="Mae Raem" geocode="500707" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 18.9201</geo:lat>
+          <geo:long> 98.9176</geo:long>
+        </geo:Point>
         <url>http://www.maeram.go.th/</url>
       </office>
       <entity type="Muban" geocode="50070705" name="บ้านป่าม่วง"/>
@@ -1958,6 +1970,12 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ดอยหล่อ" english="Doi Lo" geocode="5024" >
+    <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 18.4743</geo:lat>
+        <geo:long> 98.7835</geo:long>
+      </geo:Point>
+    </office>
     <entity type="Tambon" name="ดอยหล่อ" english="Doi Lo" geocode="502401" >
       <office type="TAOOffice">
         <url>http://www.doilor.org/</url>
@@ -2022,7 +2040,9 @@
       <entity type="Muban" geocode="50240310" name="บ้านผนัง"/>
       <entity type="Muban" geocode="50240311" name="บ้านหนองม่วง"/>
     </entity>
-    <entity type="Tambon" name="สันติสุข" english="Santi Suk" geocode="502404" />
+    <entity type="Tambon" name="สันติสุข" english="Santi Suk" geocode="502404" >
+      <!-- Wikimapia: 18°31'45"N   98°49'14"E  -->
+    </entity>
   </entity>
   <entity type="KingAmphoe" geocode="5025" name="เวียงคำ" english="Wiang Kham" obsolete="1" comment="Proposed, but not created"/>
   <entity type="Amphoe" geocode="5026" name="กัลยาณิวัฒนา" english="Galyani Vadhana" >
