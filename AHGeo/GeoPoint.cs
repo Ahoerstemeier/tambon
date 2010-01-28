@@ -28,6 +28,13 @@ namespace De.AHoerstemeier.Geo
             Latitude = iLatitude;
             Longitude = iLongitude;
         }
+        public GeoPoint(double iLatitude, double iLongitude, double iAltitude, GeoDatum iDatum)
+        {
+            Latitude = iLatitude;
+            Longitude = iLongitude;
+            Altitude = iAltitude;
+            mDatum = iDatum;
+        }
         public GeoPoint(string iValue)
         {
             throw new NotImplementedException();
@@ -37,7 +44,7 @@ namespace De.AHoerstemeier.Geo
             Latitude = iValue.Latitude;
             Longitude = iValue.Longitude;
             Altitude = iValue.Altitude;
-            Datum = (GeoDatum)iValue.Datum.Clone();
+            mDatum = (GeoDatum)iValue.Datum.Clone();
         }
         public GeoPoint(UTMPoint iUTMPoint, GeoDatum iDatum)
         {
@@ -106,10 +113,12 @@ namespace De.AHoerstemeier.Geo
         protected void SetDatum(GeoDatum iNewDatum)
         {
             // Source http://home.hiwaay.net/~taylorc/bookshelf/math-science/geodesy/datum/transform/molodensky/
-            double slat = Math.Sin(Latitude);
-            double clat = Math.Cos(Latitude);
-            double slon = Math.Sin(Longitude);
-            double clon = Math.Cos(Longitude);
+            double LatRad = Latitude / dCvtRad2Deg;
+            double LongRad = Longitude / dCvtRad2Deg;
+            double slat = Math.Sin(LatRad);
+            double clat = Math.Cos(LatRad);
+            double slon = Math.Sin(LongRad);
+            double clon = Math.Cos(LongRad);
             double from_a = Datum.Ellipsoid.SemiMajorAxis;
             double from_f = Datum.Ellipsoid.Flattening;
             double from_esq = Datum.Ellipsoid.ExcentricitySquared;
@@ -134,8 +143,8 @@ namespace De.AHoerstemeier.Geo
             double dh = (dx * clat * clon) + (dy * clat * slon) + (dz * slat)
                  - (da * (from_a / rn)) + ((df * rn * ssqlat) / adb);
 
-            Longitude = Longitude + dlon;
-            Latitude = Latitude + dlat;
+            Longitude = Longitude + dlon * dCvtRad2Deg;
+            Latitude = Latitude + dlat * dCvtRad2Deg;
             Altitude = Altitude + dh;
             mDatum = iNewDatum;
         }

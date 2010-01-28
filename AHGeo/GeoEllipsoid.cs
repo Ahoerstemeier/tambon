@@ -53,5 +53,9 @@ namespace De.AHoerstemeier.Geo
         {
             return new GeoEllipsoid("Everest", 6377276.345, 1 / 300.8017);
         }
+        public static GeoEllipsoid EllipsoidClarke1866()
+        {
+            return new GeoEllipsoid("Clarke1866", 6378206.4, 1 / 294.978698);
+        }
     }
 }

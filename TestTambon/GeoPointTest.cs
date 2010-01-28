@@ -67,9 +67,7 @@ namespace TestProject1
         [TestMethod]
         public void TestGeoPointCopyConstructor()
         {
-            GeoPoint lBasePoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
-            lBasePoint.Altitude = mAltitudeBangkok;
-            lBasePoint.Datum = GeoDatum.DatumWGS84();
+            GeoPoint lBasePoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok, mAltitudeBangkok, GeoDatum.DatumWGS84());
             GeoPoint lClonePoint = new GeoPoint(lBasePoint);
             Assert.IsTrue(lBasePoint.Equals(lClonePoint));
             // Assert.AreEqual<GeoPoint>(lClonePoint, lBasePoint); // does not use the IEquatable
@@ -107,6 +105,15 @@ namespace TestProject1
             UTMPoint lUTMPoint = UTMPoint.ParseMGRSString("33UVS1177755984");
             UTMPoint lUTMPointExpected = new UTMPoint("33U 0411777 5655984");
             Assert.IsTrue(lUTMPointExpected.Equals(lUTMPoint));
+        }
+        [TestMethod]
+        public void TestDatumCoversion()
+        {
+            // example as of http://www.colorado.edu/geography/gcraft/notes/datum/gif/molodens.gif
+            GeoPoint lPoint = new GeoPoint(30, -100, 232, GeoDatum.DatumNorthAmerican27MeanConus());
+            lPoint.Datum = GeoDatum.DatumWGS84();
+            GeoPoint lExpected = new GeoPoint(30.0002239, -100.0003696, 194.816, GeoDatum.DatumWGS84());
+            Assert.IsTrue(lExpected.Equals(lPoint));
         }
     }
 }

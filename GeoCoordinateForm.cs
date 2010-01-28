@@ -75,6 +75,7 @@ namespace De.AHoerstemeier.Tambon
             cbx_datum.Items.Add(GeoDatum.DatumWGS84());
             cbx_datum.SelectedIndex = 0;
             cbx_datum.Items.Add(GeoDatum.DatumIndian1975());
+            cbx_datum.Items.Add(GeoDatum.DatumIndian1954());
         }
     }
 }
