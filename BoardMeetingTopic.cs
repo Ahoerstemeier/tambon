@@ -10,6 +10,7 @@ namespace De.AHoerstemeier.Tambon
         public DateTime Effective { get; set; }
         public RoyalGazette Gazette { get; set; }
         public RoyalGazetteContent Topic { get; set; }
+        public EntityType Type { get; set; }
 
         public TimeSpan TimeTillPublish()
         {
@@ -29,7 +30,10 @@ namespace De.AHoerstemeier.Tambon
                     Boolean lFitting = false;
                     if (Topic.GetType() == typeof(RoyalGazetteContentStatus))
                     {
-                        lFitting = (lGazetteContent.GetType() == typeof(RoyalGazetteContentConstituency));
+                        if (lGazetteContent.GetType() == typeof(RoyalGazetteContentConstituency))
+                        { 
+                            lFitting = (Type == ((RoyalGazetteContentConstituency)lGazetteContent).Type);
+                        }
                     }
 //                    if (this.GetType() == typeof(RoyalGazetteContentRename))
 //                    {
