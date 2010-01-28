@@ -135,19 +135,19 @@ namespace De.AHoerstemeier.Tambon
             String lValue = String.Empty;
             if (!String.IsNullOrEmpty(Street))
             {
-                lValue = Street+'\n';
+                lValue = Street + Environment.NewLine;
             }
             if (!String.IsNullOrEmpty(Tambon))
             {
-                lValue = lValue + "ต." + Tambon + '\n';
+                lValue = lValue + "ต." + Tambon + Environment.NewLine;
             }
             if (!String.IsNullOrEmpty(Amphoe))
             {
-                lValue = lValue + "อ." + Amphoe + '\n';
+                lValue = lValue + "อ." + Amphoe + Environment.NewLine;
             }
             if (!String.IsNullOrEmpty(Changwat))
             {
-                lValue = lValue + "จ." + Changwat + '\n';
+                lValue = lValue + "จ." + Changwat + Environment.NewLine;
             }
             return lValue;
         }
