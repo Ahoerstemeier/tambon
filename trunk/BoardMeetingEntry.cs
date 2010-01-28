@@ -15,10 +15,12 @@ namespace De.AHoerstemeier.Tambon
         public Uri WebLink { get; set; }
         public List<BoardMeetingTopic> Contents { get; set; }
         #endregion
+        #region constructors
         public BoardMeetingEntry()
         {
             Contents = new List<BoardMeetingTopic>();
         }
+        #endregion
         #region methods
         internal static BoardMeetingEntry Load(XmlNode iNode)
         {
@@ -49,6 +51,15 @@ namespace De.AHoerstemeier.Tambon
                     BoardMeetingTopic lTopic = new BoardMeetingTopic();
                     lTopic.Topic = lContent;
                     lTopic.Effective = Helper.GetAttributeOptionalDateTime(lNode,"effective");
+                    String s = Helper.GetAttributeOptionalString(lNode, "type");
+                    if (String.IsNullOrEmpty(s))
+                    {
+                        s = Helper.GetAttributeOptionalString(lNode, "new");
+                    }
+                    if (!String.IsNullOrEmpty(s))
+                    {
+                        lTopic.Type = (EntityType)Enum.Parse(typeof(EntityType), s);
+                    }
                     lTopic.FindGazette();
                     Contents.Add(lTopic);
                 }
