@@ -55,6 +55,7 @@ namespace De.AHoerstemeier.Tambon
         {
             edtYearEnd.Maximum = DateTime.Now.Year;
             edtYearEnd.Value = edtYearEnd.Maximum;
+            edtYearStart.Maximum = edtYearEnd.Maximum;
         }
     }
 }
