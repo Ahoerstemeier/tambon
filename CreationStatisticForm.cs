@@ -50,5 +50,11 @@ namespace De.AHoerstemeier.Tambon
             CreationStatisticsAmphoe lStatistics = new CreationStatisticsAmphoe((Int32)edtYearStart.Value, (Int32)edtYearEnd.Value);
             DoCalculate(lStatistics);
         }
+
+        private void CreationStatisticForm_Load(object sender, EventArgs e)
+        {
+            edtYearEnd.Maximum = DateTime.Now.Year;
+            edtYearEnd.Value = edtYearEnd.Maximum;
+        }
     }
 }
