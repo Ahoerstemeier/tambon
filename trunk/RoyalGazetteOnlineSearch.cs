@@ -529,7 +529,7 @@ namespace De.AHoerstemeier.Tambon
         public void SearchNewsNow()
         {
             RoyalGazetteList lGazetteList = SearchNews(DateTime.Now);
-            if (DateTime.Now.Month < 3)
+            if (DateTime.Now.Month == 1)
             {
                 // Check news from last year as well, in case something was added late
                 lGazetteList.AddRange(SearchNews(DateTime.Now.AddYears(-1)));
