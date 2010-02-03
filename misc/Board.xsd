@@ -46,6 +46,13 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name='AbolishOperation'>
+    <xs:complexContent>
+      <xs:extension base="BasicOperation">
+        <xs:attribute name="type" type="EntityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name='StatusOperation'>
     <xs:complexContent>
       <xs:extension base="BasicOperation">
@@ -59,6 +66,7 @@
       <xs:element name="status" type="StatusOperation"/>
       <xs:element name="rename" type="RenameOperation"/>
       <xs:element name="areachange" type="AreaOperation"/>
+      <xs:element name="abolish" type="AbolishOperation"/>
       <xs:element name="related" type="GazetteReference"/>
     </xs:choice>
   </xs:group>
