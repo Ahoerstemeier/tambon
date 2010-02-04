@@ -174,7 +174,11 @@
     <entity type="Tambon" name="นาปัง" english="Na Pang" geocode="550113" newgeocode="551402" />
     <entity type="Tambon" name="เมืองจัง" english="Mueang Chang" geocode="550114" newgeocode="551405" />
     <entity type="Tambon" name="น้ำแก่น" english="Nam Kaen" geocode="550115" newgeocode="551403" />
-    <entity type="Tambon" name="สวก" english="Suak" geocode="550116" />
+    <entity type="Tambon" name="บ่อสวก" english="Bo Suak" geocode="550116" >
+      <history>
+        <rename oldname="สวก" oldenglish="Suak" name="บ่อสวก" english="Bo Suak" effective="2010-02-04"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="สะเนียน" english="Sanian" geocode="550117" >
       <entity type="Muban" geocode="55011710" name="บ้านละเบ้ายา"/>
       <entity type="Muban" geocode="55011711" name="ห้วยเฮือ" english="Huay Huea" />
@@ -279,7 +283,13 @@
     </entity>
     <entity type="Tambon" name="เชียงของ" english="Chiang Khong" geocode="550402" />
     <entity type="Tambon" name="ศรีษะเกษ" english="Si Sa Ket" geocode="550403" />
-    <entity type="Tambon" name="สถาน" english="Sathan" geocode="550404" />
+    <entity type="Tambon" name="สถาน" english="Sathan" geocode="550404">
+      <entity type="Muban" geocode="55040403" name="บ้านใหม่" english="Ban Mai">
+        <history>
+          <rename oldname="บ้านร้อง" oldenglish="Ban Rong" name="บ้านใหม่" english="Ban Mai" effective="2010-02-04"/>
+        </history>
+      </entity>
+    </entity>
     <entity type="Tambon" name="สันทะ" english="Santha" geocode="550405" >
       <entity type="Muban" geocode="55040501" name="บ้านเชตวัน"/>
       <entity type="Muban" geocode="55040502" name="บ้านห้วยจอย"/>
@@ -532,7 +542,13 @@
     <entity type="Tambon" name="อ่ายนาไลย" english="Ai Na Lai" geocode="550711" />
     <entity type="Tambon" name="ส้านนาหนองใหม่" english="San Na Nong Mai" geocode="550712" />
     <entity type="Tambon" name="แม่ขะนิง" english="Mae Khaning" geocode="550713" />
-    <entity type="Tambon" name="แม่สาคร" english="Mae Sakhon" geocode="550714" />
+    <entity type="Tambon" name="แม่สาคร" english="Mae Sakhon" geocode="550714" >
+      <entity type="Muban" geocode="55071402" name="บ้านมงคล" english="Ban Mongkhon">
+        <history>
+          <rename oldname="บ้านท่าเลอ" oldenglish="Ban Tha Loe" name="บ้านมงคล" english="Ban Mongkhon" effective="2010-02-04"/>
+        </history>
+      </entity>
+    </entity>
     <entity type="Tambon" name="จอมจันทร์" english="Chom Chan" geocode="550715" >
       <office type="TAOOffice">
         <url>http://www.jomjan.ob.tc/</url>
