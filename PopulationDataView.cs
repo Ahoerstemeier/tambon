@@ -137,7 +137,7 @@ namespace De.AHoerstemeier.Tambon
             var lData = CurrentSelectedEntity(sender);
             if ((lData != null)&&(OnShowGazette != null))
             {
-                var lList = Helper.GlobalGazetteList.AllAboutEntity(lData.Geocode, true);
+                var lList = TambonHelper.GlobalGazetteList.AllAboutEntity(lData.Geocode, true);
                 OnShowGazette(lList);
             }
         }

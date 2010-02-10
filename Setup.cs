@@ -18,21 +18,21 @@ namespace De.AHoerstemeier.Tambon
         public Setup()
         {
             InitializeComponent();
-            AHGlobalSettings.LoadSettings();
-            HTMLCacheDir = AHGlobalSettings.HTMLCacheDir;
+            GlobalSettings.LoadSettings();
+            HTMLCacheDir = GlobalSettings.HTMLCacheDir;
             edtHTMLCacheDir.Text = HTMLCacheDir;
-            XMLOutputDir = AHGlobalSettings.XMLOutputDir;
+            XMLOutputDir = GlobalSettings.XMLOutputDir;
             edtXMLOutputDir.Text = XMLOutputDir;
-            PDFDir = AHGlobalSettings.PDFDir;
+            PDFDir = GlobalSettings.PDFDir;
             edtPDFDir.Text = PDFDir;
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            AHGlobalSettings.HTMLCacheDir = HTMLCacheDir;
-            AHGlobalSettings.PDFDir = PDFDir;
-            AHGlobalSettings.XMLOutputDir = XMLOutputDir;
-            AHGlobalSettings.SaveSettings();
+            GlobalSettings.HTMLCacheDir = HTMLCacheDir;
+            GlobalSettings.PDFDir = PDFDir;
+            GlobalSettings.XMLOutputDir = XMLOutputDir;
+            GlobalSettings.SaveSettings();
         }
 
         private void edtHTMLCacheDir_TextChanged(object sender, EventArgs e)
