@@ -1,6 +1,6 @@
 ﻿namespace De.AHoerstemeier.Tambon
 {
-    partial class NumeralsHelper
+    partial class NumeralsTambonHelper
     {
         /// <summary>
         /// Required designer variable.
@@ -91,7 +91,7 @@
             this.btnTitles.UseVisualStyleBackColor = true;
             this.btnTitles.Click += new System.EventHandler(this.btnTitles_Click);
             // 
-            // NumeralsHelper
+            // NumeralsTambonHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,8 +101,8 @@
             this.Controls.Add(this.btnEncoding);
             this.Controls.Add(this.boxText);
             this.Controls.Add(this.btnDoConvert);
-            this.Name = "NumeralsHelper";
-            this.Text = "NumeralsHelper";
+            this.Name = "NumeralsTambonHelper";
+            this.Text = "NumeralsTambonHelper";
             this.ResumeLayout(false);
             this.PerformLayout();
 

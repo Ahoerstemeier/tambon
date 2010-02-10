@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace De.AHoerstemeier.Tambon
 {
-    public partial class NumeralsHelper : Form
+    public partial class NumeralsTambonHelper : Form
     {
-        public NumeralsHelper()
+        public NumeralsTambonHelper()
         {
             InitializeComponent();
         }
@@ -19,7 +19,7 @@ namespace De.AHoerstemeier.Tambon
         private void btnDoConvert_Click(object sender, EventArgs e)
         {
             String lValue = boxText.Text;
-            lValue = Helper.ReplaceThaiNumerals(lValue);
+            lValue = TambonHelper.ReplaceThaiNumerals(lValue);
             boxText.Text = lValue;
         }
 
@@ -180,13 +180,13 @@ namespace De.AHoerstemeier.Tambon
         private void btnMonths_Click(object sender, EventArgs e)
         {
             String lValue = boxText.Text;
-            foreach (KeyValuePair<String,Byte> lKeyValuePair in Helper.ThaiMonthNames)
+            foreach (KeyValuePair<String,Byte> lKeyValuePair in TambonHelper.ThaiMonthNames)
             {
                 DateTime lDateTime = new DateTime(2000, lKeyValuePair.Value, 1);
                 String lMonthName = lDateTime.ToString("MMMM");
                 lValue = lValue.Replace(lKeyValuePair.Key,lMonthName);
             }
-            foreach (KeyValuePair<String, Byte> lKeyValuePair in Helper.ThaiMonthAbbreviations)
+            foreach (KeyValuePair<String, Byte> lKeyValuePair in TambonHelper.ThaiMonthAbbreviations)
             {
                 DateTime lDateTime = new DateTime(2000, lKeyValuePair.Value, 1);
                 String lMonthName = lDateTime.ToString("MMMM");
@@ -198,7 +198,7 @@ namespace De.AHoerstemeier.Tambon
         private void btnTitles_Click(object sender, EventArgs e)
         {
             String lValue = boxText.Text;
-            foreach (KeyValuePair<String, PersonTitle> lKeyValuePair in Helper.PersonTitleStrings)
+            foreach (KeyValuePair<String, PersonTitle> lKeyValuePair in TambonHelper.PersonTitleStrings)
             {
                 lValue = lValue.Replace(lKeyValuePair.Key, lKeyValuePair.Value.ToString()+" ");
             }

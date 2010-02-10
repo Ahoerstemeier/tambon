@@ -52,7 +52,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void edit_MGRS_TextChanged(object sender, EventArgs e)
         {
-            String lValue = Helper.ReplaceThaiNumerals(edit_MGRS.Text.ToUpper()).Trim();
+            String lValue = TambonHelper.ReplaceThaiNumerals(edit_MGRS.Text.ToUpper()).Trim();
             try
             {
                 lValue = ZoneForThailandMGRS(lValue) + lValue;

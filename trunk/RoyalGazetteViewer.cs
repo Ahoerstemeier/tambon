@@ -148,11 +148,11 @@ namespace De.AHoerstemeier.Tambon
             var lNewGazetteEntries = new RoyalGazetteList();
             foreach (RoyalGazette lEntry in iList)
             {
-                if (Helper.GlobalGazetteList == null)
+                if (TambonHelper.GlobalGazetteList == null)
                 {
                     lNewGazetteEntries.Add(lEntry);
                 }
-                else if (!Helper.GlobalGazetteList.Contains(lEntry))
+                else if (!TambonHelper.GlobalGazetteList.Contains(lEntry))
                 {
                     lNewGazetteEntries.Add(lEntry);
                 }

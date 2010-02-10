@@ -70,41 +70,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AHAmphoeComData.cs" />
-    <Compile Include="AHAmphoeComDownloader.cs" />
-    <Compile Include="AHDopaGeocodeList.cs" />
-    <Compile Include="AHEnum.cs" />
-    <Compile Include="AHGlobalSettings.cs" />
-    <Compile Include="AnnouncementStatistics.cs" />
-    <Compile Include="BoardMeetingEntry.cs" />
-    <Compile Include="BoardMeetingList.cs" />
-    <Compile Include="BoardMeetingTopic.cs" />
-    <Compile Include="EntityOffice.cs" />
-    <Compile Include="CreationStatistics.cs" />
-    <Compile Include="CreationStatisticsAmphoe.cs" />
-    <Compile Include="CreationStatisticsCentralGovernment.cs" />
-    <Compile Include="CreationStatisticsMuban.cs" />
-    <Compile Include="EntityCounter.cs" />
-    <Compile Include="EntityLeader.cs" />
-    <Compile Include="EntityLeaderList.cs" />
-    <Compile Include="EntityTypeHelper.cs" />
-    <Compile Include="FrequencyCounter.cs" />
     <Compile Include="GeoCoordinateForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GeoCoordinateForm.Designer.cs">
       <DependentUpon>GeoCoordinateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MubanCSVReader.cs" />
     <Compile Include="NumeralsHelper.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NumeralsHelper.Designer.cs">
       <DependentUpon>NumeralsHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProvinceGovernorParser.cs" />
-    <Compile Include="RoyalGazetteContentConstituency.cs" />
-    <Compile Include="RoyalGazetteContentMention.cs" />
     <Compile Include="Setup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,33 +94,24 @@
     <Compile Include="CreationStatisticForm.Designer.cs">
       <DependentUpon>CreationStatisticForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreationStatisticsTambon.cs" />
-    <Compile Include="StatisticsAnnouncementDates.cs" />
     <Compile Include="StringDisplayForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StringDisplayForm.Designer.cs">
       <DependentUpon>StringDisplayForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThaiAddress.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="KontessabanDataEntry.cs" />
-    <Compile Include="KontessabanDownloader.cs" />
     <Compile Include="RoyalGazetteSearch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RoyalGazetteSearch.Designer.cs">
       <DependentUpon>RoyalGazetteSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper.cs" />
-    <Compile Include="IGeocode.cs" />
-    <Compile Include="PopulationDataEntry.cs" />
-    <Compile Include="PopulationData.cs" />
     <Compile Include="PopulationDataView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,18 +175,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RoyalGazette.cs" />
-    <Compile Include="RoyalGazetteContent.cs" />
-    <Compile Include="RoyalGazetteContentAreaChange.cs" />
-    <Compile Include="RoyalGazetteContentCreate.cs" />
-    <Compile Include="RoyalGazetteContentReassign.cs" />
-    <Compile Include="RoyalGazetteContentRename.cs" />
-    <Compile Include="RoyalGazetteContentAbolish.cs" />
-    <Compile Include="RoyalGazetteContentStatus.cs" />
-    <Compile Include="RoyalGazetteIssue.cs" />
-    <Compile Include="RoyalGazetteList.cs" />
-    <Compile Include="RoyalGazetteOnlineSearch.cs" />
-    <Compile Include="RoyalGazettePageinfo.cs" />
     <Compile Include="RoyalGazetteViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -563,6 +519,10 @@
     <ProjectReference Include="AHGeo\AHGeo.csproj">
       <Project>{701BEA66-8220-4F60-9A8D-11AAA4E20974}</Project>
       <Name>AHGeo</Name>
+    </ProjectReference>
+    <ProjectReference Include="AHTambon\AHTambon.csproj">
+      <Project>{2B678FFA-AD71-4D31-873E-20C82729BD4A}</Project>
+      <Name>AHTambon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
