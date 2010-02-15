@@ -301,7 +301,7 @@
       <mention geocode="34" name="อุบลราชธานี" english="Ubon Ratchathani"/>
       <mention geocode="33" name="ศรีสะเกษ" english="Si Sa Ket"/>
     </create>
-    <create type="Monthon" name="ตวันออก" >
+    <create type="Monthon" name="ตวันออก" english="Tawan Ok">
       <mention name="พระตะบอง" english="Phra Thabong"/>
       <mention name="เสียมราฐ" english="Siam Rat"/>
       <mention name="ศรีโสภณ" english="Sisophon"/>
@@ -417,10 +417,54 @@
   <entry title="พระบรมราชโองการ ประกาศ ใช้พระราชบัญญัติลักษณะปกครองคณะสงฆ์ภายในจังหวัดกรุงเทพ ฯ และตั้งแขวงอำเภอดุสิต" volume="19" page="297" issue="16" uri="2445/016/297.PDF" publication="1902-07-20" />
   <entry description="Abolish of Khwaeng Muet Ka and creation of Khwaeng Mueang Hot and King Khwaeng Mueang Hot" title="แจ้งความกระทรวงมหาดไทย" subtitle="ยกเลิกแขวงมืดกา ตั้งแขวงเมืองธอดและกิ่งแขวงเมืองฮอดขึ้น" volume="22" page="607" issue="28" uri="2448/028/607.PDF" publication="1905-10-08" />
   <entry title="แจ้งความกระทรวงมหาดไทย เรื่อง เลิกบริเวณปิงเหนือ ยกแขวงเมืองพร้าวซึ่งขึ้นต่อบริเวณมาขึ้นเค้าสนามหลวงนครเชียงใหม่ และตั้งแขวงแม่แตงขึ้นอีกแขวงหนึ่ง ขึ้นตรงต่อเค้าสนามหลวงนครเชียงใหม่ โอนกิ่งแขวงเชียงดาวซึ่งอยู่ในบริเวณปิงเหนือเดิมขึ้นแขวงแม่แตง" volume="24" page="301" issue="13" uri="2450/013/301_1.PDF" publication="1907-06-30" />
-  <entry description="Definition of Amphoe and Tambon in Pathum Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง ให้แบ่งเขตท้องที่ ในจังหวัดปทุมธานี" volume="34" page="5" issue="0 ก" uri="2460/A/5.PDF" publication="1917-04-01" />
+  <entry description="Creation of Amphoe Lat Lum Kaeo, Pathum Thani" title="ประกาศกระทรวงมหาดไทย เรื่อง ให้แบ่งเขตท้องที่ ในจังหวัดปทุมธานี" volume="34" page="5-6" issue="0 ก" uri="2460/A/5.PDF" publication="1917-04-01" sign="1917-03-28" >
+    <mention type="Amphoe" geocode="1301">
+      <mention geocode="130111"/>
+      <mention name="บางกระดี" geocode="130112"/>
+      <mention geocode="130102"/>
+      <mention geocode="130114"/>
+      <mention name="บ้านแหลม" geocode="130505" comment="Renamed in 2488"/>
+      <mention geocode="130109"/>
+      <mention name="บางขแยง" geocode="130106"/>
+      <mention geocode="130107"/>
+      <mention geocode="130110"/>
+      <mention geocode="130113"/>
+      <mention name="บ้านกระแชงไทย" geocode="130105"/>
+      <mention geocode="130103"/>
+      <mention geocode="130101"/>
+      <mention geocode="130104"/>
+      <mention name="บางหลวงไหว้พระ" geocode="130108"/>
+    </mention>
+    <mention geocode="1307">
+      <mention geocode="130711"/>
+      <mention geocode="130710"/>
+      <mention geocode="130702"/>
+      <mention geocode="130701"/>
+      <mention geocode="130703"/>
+      <mention name="บ้านกระแชงมอญ" geocode="130704"/>
+      <mention name="บางโพ" geocode="130705"/>
+      <mention geocode="130709"/>
+      <mention geocode="130708"/>
+      <mention name="บ้านประทุม" geocode="130707"/>
+      <mention geocode="130706"/>
+    </mention>
+    <create type="Amphoe" name="ลาดหลุมแก้ว" english="Lat Lum Kaeo" geocode="1305">
+      <reassign geocode="130501"/>
+      <reassign geocode="130507"/>
+      <reassign geocode="130502"/>
+      <reassign geocode="130503"/>
+      <reassign geocode="130504"/>
+      <reassign name="คูตัน" geocode="130506"/>
+    </create>
+  </entry>
 
   <entry description="Creation of Vice-Roys" title="พระบรมราชโองการ ประกาศ ว่าด้วยหน้าที่และอำนาจอุปราช" volume="32" page="393" issue="0 ก" uri="2458/A/393.PDF" publication="1915-12-19" />
-  <entry description="Rename of Monthon" title="กฎข้อบังคับ เรื่อง เปลี่ยนชื่อมณฑล ๔ มณฑล" volume="17" page="620" issue="44" uri="2443/044/620.PDF" publication="1901-01-27" />
+  <entry description="Rename of Monthon" title="กฎข้อบังคับ เรื่อง เปลี่ยนชื่อมณฑล ๔ มณฑล" volume="17" page="620" issue="44" uri="2443/044/620.PDF" publication="1901-01-27" sign="1901-01-21">
+    <rename type="Monthon" oldname="ตวันออก" oldenglish="Tawan Ok" name="บูรพา" english="Burapha"/>
+    <rename type="Monthon" oldname="ตวันออกเฉียงเหนือ" oldenglish="Tawan Ok Chiang Nuea" name="อีสาณ" english="Isan"/>
+    <rename type="Monthon" oldname="ฝ่ายเหนือ" oldenglish="Fai Nuea" name="อุดร" english="Udon"/>
+    <rename type="Monthon" oldname="ตวันตกเฉียงเหนือ" oldenglish="Tawan Tok Chiang Nuea" name="พายัพ" english="Phayap"/>
+  </entry>
   <entry title="ประกาศ ชื่อเมืองนครราชสีมา [ประกาศการที่ได้ทรงพระกรุณาโปรดเกล้า ฯ ให้ใช้ชื่อเมืองนครราชสีมา แทน ชื่อมณฑลและเมืองนครราชสีห์มา]" volume="18" page="791" issue="41" uri="2444/041/791.PDF" publication="1902-01-12" />
 
   <!--ToDo-->
