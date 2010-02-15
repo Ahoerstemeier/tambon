@@ -70,6 +70,7 @@ namespace De.AHoerstemeier.Tambon
 
             return RetVal;
         }
+        internal List<BoardMeetingTopic> mStrangeEntries = new List<BoardMeetingTopic>();
 
         public FrequencyCounter EffectiveDateTillPublication()
         {
@@ -88,13 +89,16 @@ namespace De.AHoerstemeier.Tambon
                                 lGeocode = lTopic.Topic.TambonGeocode;
                             }
                             lCounter.IncrementForCount(lDiff.Days, lGeocode);
+                            if ((lDiff.Days < 0) & (!mStrangeEntries.Contains(lTopic)))
+                            {
+                                mStrangeEntries.Add(lTopic);
+                            }
                         }
                     }
                 }
             }
             return lCounter;
         }
-
         public FrequencyCounter MeetingDateTillPublication()
         {
             FrequencyCounter lCounter = new FrequencyCounter();
@@ -112,6 +116,10 @@ namespace De.AHoerstemeier.Tambon
                                 lGeocode = lTopic.Topic.TambonGeocode;
                             }
                             lCounter.IncrementForCount(lDiff.Days, lGeocode);
+                            if ((lDiff.Days < 0) & ( !mStrangeEntries.Contains(lTopic)))
+                            {
+                                mStrangeEntries.Add(lTopic);
+                            }
                         }
                     }
                 }
