@@ -140,7 +140,20 @@
       <areachange geocode="3401"/>
   </abolish>
   </entry>
-  <entry description="Abolish and Downgrade of Amphoe in Ubon Ratchathani" title="แจ้งความกระทรวงมหาดไทย เรื่อง เลิกและยุบอำเภอต่างๆ ในมณฑลอุบลลงเป็นกิ่งอำเภอ" volume="29" page="982-983" issue="0 ง" uri="2455/D/982_1.PDF" publication="1912-07-28" />
+  <entry description="Abolish, downgrade and rename of Amphoe in Ubon Ratchathani" title="แจ้งความกระทรวงมหาดไทย เรื่อง เลิกและยุบอำเภอต่างๆ ในมณฑลอุบลลงเป็นกิ่งอำเภอ" volume="29" page="982-983" issue="0 ง" uri="2455/D/982_1.PDF" publication="1912-07-28" sign="1912-07-19">
+    <areachange geocode="3407">
+      <abolish type="Amphoe" name="โดมประดิษฐ์"/>
+      <abolish type="Amphoe" name="กลองเดช"/>
+      <abolish type="Amphoe" name="อุไทยเดช"/>
+    </areachange>
+    <abolish type="Amphoe" name="สุรพินธ์">
+      <areachange geocode="3209"/>
+    </abolish>
+    <status old="Amphoe" new="KingAmphoe" geocode="3410" name="บัวบุณฑริก" english="Bua Buntharik" parent="3407"/>
+    <status old="Amphoe" new="KingAmphoe" geocode="3702" name="ชานุมาณมณล" english="Chanuman Monthon" parent="3405"/>
+    <status old="Amphoe" new="KingAmphoe" geocode="3705" parent="3701"/>
+    <rename type="Amphoe" geocode="3407" name="เดชอุดม" english="Det Udom" oldname="ปจิมเดชอุดม" oldenglish="Pachim Det Udom"/>
+  </entry>
   <entry description="Abolish, area change and create of Amphoe in Monthon Udon Thani" title="พระบรมราชโองการ ประกาศ ยุบอำเภอและรวมเขตอำเภอ สำหรับการปกครองในมณฑลอุดร" volume="31" page="48-50" issue="0 ก" uri="2457/A/48.PDF" publication="1914-04-12" sign="1914-04-06">
     <abolish type="Amphoe" name="เมืองวาริชภูมิ" english="Mueang Waritchaphum" owner="47">
       <areachange geocode="4704"/>
@@ -465,11 +478,26 @@
     <rename type="Monthon" oldname="ฝ่ายเหนือ" oldenglish="Fai Nuea" name="อุดร" english="Udon"/>
     <rename type="Monthon" oldname="ตวันตกเฉียงเหนือ" oldenglish="Tawan Tok Chiang Nuea" name="พายัพ" english="Phayap"/>
   </entry>
-  <entry title="ประกาศ ชื่อเมืองนครราชสีมา [ประกาศการที่ได้ทรงพระกรุณาโปรดเกล้า ฯ ให้ใช้ชื่อเมืองนครราชสีมา แทน ชื่อมณฑลและเมืองนครราชสีห์มา]" volume="18" page="791" issue="41" uri="2444/041/791.PDF" publication="1902-01-12" />
-
-  <!--ToDo-->
-  <entry title="แจ้งความกระทรวงพระคลังมหาสมบัติ เรื่อง ตั้งกิ่งกรรมการพิจารณาหนังสือใบอนุญาตร้านจำหน่ายสุรา" volume="43" page="2293" issue="0 ง" uri="2469/D/2293.PDF" publication="1926-09-12" />
-  <entry title="แจ้งความกระทรวงการคลัง เรื่อง ตั้งกิ่งกรรมการพิจารณาหนังสือใบอนุญาตร้านจำหร่ายสุรา" volume="50" page="3072" issue="0 ง" uri="2476/D/3072_1.PDF" publication="1934-01-28" />
-  <entry title="แก้คำผิด ราชกิจจานุเบกษา เล่ม ๕๒ ตอนที่ ๗๓ ประกาศกระทรวงมหาดไทย เรื่อง ตั้งกิ่งอำเภอลำปลายมาศ หน้า ๓๔๑๘" volume="52" page="3811" issue="0 ง" uri="2478/D/3811.PDF" publication="1936-03-08" />
-
+  <entry description="Creation of Monthon Chanthaburi and Mueang Khlung" title="ประกาศกระทรวงมหาดไทย ประกาศตั้งมณฑลจันทบุรีและตั้งเมืองขลุง" volume="23" page="33" issue="2" uri="2449/002/33_1.PDF" publication="1906-04-08" sign="1906-04-04">
+    <create type="Changwat" name="ขลุง" english="Khlung">
+      <mention type="Amphoe" geocode="2202" name="ขลุง"/>
+      <mention type="Amphoe" geocode="2303" name="ทุ่งใหญ่"/>
+    </create>
+    <create type="Monthon" name="จันทบุรี" english="Chanthaburi">
+      <mention type="Changwat" geocode="22" name="จันทบุรี" english="Chanthaburi"/>
+      <mention type="Changwat" geocode="21" name="ระยอง" english="Rayong" />
+      <mention type="Changwat" name="ขลุง" english="Khlung"/>
+    </create>
+  </entry>
+  <entry description="Creation of Monthon Phak Tawan Tok" title="ประกาศ ตั้งมณฑลภาคตะวันตก" volume="32" page="417" issue="0 ก" uri="2458/A/417.PDF" publication="1916-01-16" sign="1916-01-07" effective="1916-01-01">
+    <create type="Monthon" name="ภาคตะวันตก" english="Phak Tawan Tok">
+      <abolish type="Monthon" name="นครชัยศรี" english="Nakhon Chai Si"/>
+      <abolish type="Monthon" name="ราชบุรี" english="Ratchaburi"/>
+    </create>
+  </entry>
+  <entry description="Creation of Monthon Phetchabun" title="ประกาศกระทรวงมหาดไทย ประกาศตั้งมณฑลเพชรบูรณ์" volume="24" page="1203-1204" issue="45" uri="2450/045/1203.PDF" publication="1908-02-09" sign="1908-02-04">
+    <create type="Monthon" name="เพชรบูรณ์" english="Phetchabun">
+      <areachange type="Monthon" name="พิษณุโลก" english="Phitsanulok"/>
+    </create>
+  </entry>
 </gazette>
