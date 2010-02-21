@@ -12,6 +12,8 @@ namespace De.AHoerstemeier.Tambon
 {
     public partial class GeoCoordinateForm : Form
     {
+        private Boolean mChanging = false;
+
         public GeoCoordinateForm()
         {
             InitializeComponent();
@@ -52,30 +54,58 @@ namespace De.AHoerstemeier.Tambon
 
         private void edit_MGRS_TextChanged(object sender, EventArgs e)
         {
-            String lValue = TambonHelper.ReplaceThaiNumerals(edit_MGRS.Text.ToUpper()).Trim();
-            try
+            if (!mChanging)
             {
-                lValue = ZoneForThailandMGRS(lValue) + lValue;
-                UTMPoint lUTM = UTMPoint.ParseMGRSString(lValue);
-                edit_UTM.Text = lUTM.ToString();
-                GeoPoint lGeo = new GeoPoint(lUTM, (GeoDatum)cbx_datum.SelectedItem);
-                lGeo.Datum = GeoDatum.DatumWGS84();
-                edit_LatLong.Text = lGeo.ToString();
-            }
-            catch
-            { 
-                // invalid string
-                edit_UTM.Text = String.Empty;
-                edit_LatLong.Text = String.Empty;
+                String lValue = TambonHelper.ReplaceThaiNumerals(edit_MGRS.Text.ToUpper()).Trim();
+                try
+                {
+                    mChanging = true;
+                    lValue = ZoneForThailandMGRS(lValue) + lValue;
+                    UTMPoint lUTM = UTMPoint.ParseMGRSString(lValue);
+                    edit_UTM.Text = lUTM.ToString();
+                    GeoPoint lGeo = new GeoPoint(lUTM, (GeoDatum)cbx_datum.SelectedItem);
+                    lGeo.Datum = GeoDatum.DatumWGS84();
+                    edit_LatLong.Text = lGeo.ToString();
+                }
+                catch
+                {
+                    // invalid string
+                    edit_UTM.Text = String.Empty;
+                    edit_LatLong.Text = String.Empty;
+                }
+                mChanging = false;
             }
         }
-
         private void GeoCoordinateForm_Load(object sender, EventArgs e)
         {
             cbx_datum.Items.Add(GeoDatum.DatumWGS84());
             cbx_datum.SelectedIndex = 0;
             cbx_datum.Items.Add(GeoDatum.DatumIndian1975());
             cbx_datum.Items.Add(GeoDatum.DatumIndian1954());
+        }
+
+        private void edit_UTM_TextChanged(object sender, EventArgs e)
+        {
+            if (!mChanging)
+            {
+                String lValue = TambonHelper.ReplaceThaiNumerals(edit_UTM.Text.ToUpper()).Trim();
+                try
+                {
+                    mChanging = true;
+                    UTMPoint lUTM = UTMPoint.ParseUTMString(lValue);
+                    edit_MGRS.Text = lUTM.ToMGRSString(6);
+                    GeoPoint lGeo = new GeoPoint(lUTM, (GeoDatum)cbx_datum.SelectedItem);
+                    lGeo.Datum = GeoDatum.DatumWGS84();
+                    edit_LatLong.Text = lGeo.ToString();
+                }
+                catch
+                {
+                    // invalid string
+                    edit_MGRS.Text = String.Empty;
+                    edit_LatLong.Text = String.Empty;
+                }
+                mChanging = false;
+            }
         }
     }
 }

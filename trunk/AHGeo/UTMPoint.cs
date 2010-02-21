@@ -67,7 +67,7 @@ namespace De.AHoerstemeier.Geo
             String lNorthing = Northing.ToString("0000000");
             String lEasting = Easting.ToString("0000000");
             String lEastingLetters = MGRSEastingChars(ZoneNumber);
-            Int32 lEastingIdentifier = Convert.ToInt32(lEasting.Substring(0, 2));
+            Int32 lEastingIdentifier = Convert.ToInt32(lEasting.Substring(0, 2)) % 8;
             String lEastingChar = lEastingLetters.Substring(lEastingIdentifier-1, 1);
             Int32 lNorthingIdentifier = Convert.ToInt32(lNorthing.Substring(0, 1));
             lNorthingIdentifier = (lNorthingIdentifier % 2) * 10;

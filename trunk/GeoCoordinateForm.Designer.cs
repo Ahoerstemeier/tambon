@@ -74,6 +74,7 @@
             this.edit_UTM.Name = "edit_UTM";
             this.edit_UTM.Size = new System.Drawing.Size(186, 20);
             this.edit_UTM.TabIndex = 3;
+            this.edit_UTM.TextChanged += new System.EventHandler(this.edit_UTM_TextChanged);
             // 
             // lbl_LatLong
             // 
