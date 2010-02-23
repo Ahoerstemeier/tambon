@@ -347,15 +347,14 @@
       <mention type="Changwat" geocode="43" name="หนองคาย" english="Nong Khai"/>
       <mention type="Changwat" name="โพนพิสัย" english="Phon Phisai"/>
     </entry>
-    <entry description="Creation of Mueang Kabin Buri" title="แจ้งความกระทรวงมหาดไทย เรื่อง ตั้งอำเภอกบินทร์บุรีขึ้นเป็นเมืองกบินทร์บุรีขึ้นเมืองปราจีน ส่วนเมืองขลุงยกเลิกเสียตั้งเป็นอำเภอขึ้นเมืองจันทบุรีโอนอำเภอทุ่งใหญ่จากอำเภอขลุงขึ้นเมืองตราดตามเดิม" volume="24" issue="24" publication="1907-09-15" page="589-590" uri="2450/024/589_1.PDF" sign="1907-09-10" >
+    <entry description="Creation of Mueang Kabin Buri and abolish of Mueang Khlung" title="แจ้งความกระทรวงมหาดไทย เรื่อง ตั้งอำเภอกบินทร์บุรีขึ้นเป็นเมืองกบินทร์บุรีขึ้นเมืองปราจีน ส่วนเมืองขลุงยกเลิกเสียตั้งเป็นอำเภอขึ้นเมืองจันทบุรีโอนอำเภอทุ่งใหญ่จากอำเภอขลุงขึ้นเมืองตราดตามเดิม" volume="24" issue="24" publication="1907-09-15" page="589-590" uri="2450/024/589_1.PDF" sign="1907-09-10" >
       <create name="กระบินทรบุรี" type="Changwat" >
         <reassign geocode="2502" oldowner="25" />
       </create>
       <!-- ยกเลิก = abolish -->
       <abolish name="ขลุง" type="Changwat" >
-        <reassign name="ทุ่งใหญ่" type="Amphoe" owner="23" />
-        <!--Thung Yai -> Bo Rai? Tambon Dan Chumphon was in both-->
-        <reassign name="ขลุง" geocode="2202" owner="22" />
+        <reassign name="ทุ่งใหญ่" type="Amphoe" geocode="2303" owner="23" />
+        <reassign name="ขลุง" type="Amphoe" geocode="2202" owner="22" />
       </abolish>
     </entry>
     <entry description="Reassign of district Pra Song from Lang Suan to Surat Thani" title="แจ้งความกระทรวงมหาดไทย" subtitle="เรื่อง โอนอำเภอประสงค์จากเขตเมืองหลังสวนมาเป็นเขตเมืองไชยา รวมอยู่ในบ้านพุมเรียงและศาลพุมเรียง" volume="23" page="626" issue="25" uri="2449/025/626_1.PDF" publication="1906-09-16" sign="1906-09-13">
