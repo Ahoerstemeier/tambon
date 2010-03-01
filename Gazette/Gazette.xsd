@@ -145,6 +145,19 @@
   <xs:complexType name="GazetteSuggestion">
     <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="1"/>
   </xs:complexType>
+  <xs:complexType name='GazetteCapital'>
+    <xs:complexContent>
+      <xs:extension base="GazetteOperation">
+        <xs:attribute name="capitalname" type="xs:string" use="required" />
+        <xs:attribute name="capitalenglish" type="xs:string" use="optional" />
+        <xs:attribute name="capitaltype" type="EntityType" use="optional" />
+        <xs:attribute name="capitalgeocode" type="xs:unsignedInt" use="optional" />
+        <xs:attribute name="oldcapitalname" type="xs:string" use="optional" />
+        <xs:attribute name="oldcapitalenglish" type="xs:string" use="optional" />
+        <xs:attribute name="oldcapitalgeocode" type="xs:unsignedInt" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:group name="EntryAction" >
     <xs:choice>
       <xs:element name="reassign" type="GazetteReassign"/>
@@ -155,7 +168,7 @@
       <xs:element name="create" type="GazetteCreate"/>
       <xs:element name="mention" type="GazetteOperation"/>
       <xs:element name="constituency" type="GazetteOperation"/>
-      <xs:element name="capital" type="GazetteOperation"/>
+      <xs:element name="capital" type="GazetteCapital"/>
       <xs:element name="correction" type="GazetteReference"/>
       <xs:element name="renumber" type="GazetteRenumber"/>
       <xs:element name="related" type="GazetteReference"/>
