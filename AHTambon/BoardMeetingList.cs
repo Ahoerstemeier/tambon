@@ -126,5 +126,30 @@ namespace De.AHoerstemeier.Tambon
             }
             return lCounter;
         }
+        public FrequencyCounter MissingConstituencyAnnouncements()
+        {
+            FrequencyCounter lCounter = new FrequencyCounter();
+
+            foreach (BoardMeetingEntry lEntry in this)
+            {
+                foreach (BoardMeetingTopic lTopic in lEntry.Contents)
+                {
+                    if ((lTopic.Gazette == null) & (lTopic.Topic.GetType() == typeof(RoyalGazetteContentStatus)))
+                    {
+                        TimeSpan lDiff = DateTime.Now - lEntry.Date;
+                        {
+                            Int32 lGeocode = lTopic.Topic.Geocode;
+                            if (lGeocode == 0)
+                            {
+                                lGeocode = lTopic.Topic.TambonGeocode;
+                            }
+                            lCounter.IncrementForCount(lDiff.Days, lGeocode);
+                        }
+                    }
+                }
+            }
+
+            return lCounter;
+        }
     }
 }
