@@ -344,7 +344,7 @@ namespace De.AHoerstemeier.Tambon
             lXmlDocument.Save(XMLExportFileName());
         }
 
-        protected void ReOrderThesaban()
+        internal void ReOrderThesaban()
         {
             if (mChangwat != null)
             {
