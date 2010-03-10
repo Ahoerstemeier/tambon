@@ -15,6 +15,22 @@ namespace De.AHoerstemeier.Tambon
             mGeocode = iGeocode;
         }
 
+        private static Boolean HasConstituencyAnnouncement(Int32 iGeocode, EntityType iType)
+        {
+            Boolean lSuccess = false;
+            foreach (RoyalGazette lGazette in TambonHelper.GlobalGazetteList.AllAboutEntity(iGeocode, false))
+            {
+                foreach (RoyalGazetteContent lContent in lGazette.Content)
+                {
+                    if (lContent.IsAboutGeocode(iGeocode, false) && (lContent.GetType() == typeof(RoyalGazetteContentConstituency)))
+                    {
+                        lSuccess = lSuccess || (((RoyalGazetteContentConstituency)lContent).Type == iType);
+                    }
+                }
+            }
+            return lSuccess;
+        }
+
         public List<PopulationDataEntry> ThesabanWithoutConstituencies()
         {
             List<PopulationDataEntry> lResult = new List<PopulationDataEntry>();
@@ -28,17 +44,11 @@ namespace De.AHoerstemeier.Tambon
                     { 
                         if (EntityTypeHelper.Thesaban.Contains(lEntry.Type))
                         {
-                            Boolean lSuccess =false;
-                            // ToDo: How about the former TAO only qualified by Tambon geocode?
-                            foreach (RoyalGazette lGazette in TambonHelper.GlobalGazetteList.AllAboutEntity(lEntry.Geocode,false))
+                            Boolean lSuccess = HasConstituencyAnnouncement(lEntry.Geocode, lEntry.Type);
+
+                            if ((!lSuccess) & (lEntry.GeocodeOfCorrespondingTambon != 0))
                             {
-                                foreach (RoyalGazetteContent lContent in lGazette.Content)
-                                {
-                                    if (lContent.IsAboutGeocode(lEntry.Geocode,false) && (lContent.GetType()==typeof(RoyalGazetteContentConstituency)))
-                                    {
-                                        lSuccess = lSuccess || (((RoyalGazetteContentConstituency)lContent).Type==lEntry.Type);
-                                    }
-                                }
+                                lSuccess = HasConstituencyAnnouncement(lEntry.GeocodeOfCorrespondingTambon, lEntry.Type);
                             }
                             if (!lSuccess)
                             {
