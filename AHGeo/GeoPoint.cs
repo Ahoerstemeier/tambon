@@ -185,64 +185,64 @@ namespace De.AHoerstemeier.Geo
             double eccSquared = mDatum.Ellipsoid.ExcentricitySquared;
             double dEquatorialRadius = mDatum.Ellipsoid.SemiMajorAxis;
 
-        	double k0 = 0.9996;
+            double k0 = 0.9996;
 
-        	double LongOrigin;
+            double LongOrigin;
             double eccPrimeSquared = (eccSquared) / (1 - eccSquared);
-	
+
             //Make sure the longitude is between -180.00 .. 179.9
-	        double lLongitude = (Longitude+180)-Math.Truncate((Longitude+180)/360)*360-180; // -180.00 .. 179.9;
+            double lLongitude = (Longitude + 180) - Math.Truncate((Longitude + 180) / 360) * 360 - 180; // -180.00 .. 179.9;
 
-	        double LatRad = Latitude / dCvtRad2Deg;
-	        double LongRad = Longitude / dCvtRad2Deg;
+            double LatRad = Latitude / dCvtRad2Deg;
+            double LongRad = Longitude / dCvtRad2Deg;
 
-	        Int32 ZoneNumber = (Int32)Math.Truncate((lLongitude + 180)/6) + 1;
-  
-	        if( Latitude >= 56.0 && Latitude < 64.0 && lLongitude >= 3.0 && lLongitude < 12.0 )
+            Int32 ZoneNumber = (Int32)Math.Truncate((lLongitude + 180) / 6) + 1;
+
+            if (Latitude >= 56.0 && Latitude < 64.0 && lLongitude >= 3.0 && lLongitude < 12.0)
             {
-		        ZoneNumber = 32; // larger zone for southern Norway
+                ZoneNumber = 32; // larger zone for southern Norway
             }
-	        if( Latitude >= 72.0 && Latitude < 84.0 ) 
+            if (Latitude >= 72.0 && Latitude < 84.0)
             {
                 // Special zones for Svalbard
-	            if (lLongitude >= 0.0  && lLongitude <  9.0 ) 
+                if (lLongitude >= 0.0 && lLongitude < 9.0)
                 {
                     ZoneNumber = 31;
                 }
-	            else if (lLongitude >= 9.0  && lLongitude < 21.0 ) 
+                else if (lLongitude >= 9.0 && lLongitude < 21.0)
                 {
                     ZoneNumber = 33;
                 }
-	            else if (lLongitude >= 21.0 && lLongitude < 33.0 ) 
+                else if (lLongitude >= 21.0 && lLongitude < 33.0)
                 {
                     ZoneNumber = 35;
                 }
-	            else if (lLongitude >= 33.0 && lLongitude < 42.0 ) 
+                else if (lLongitude >= 33.0 && lLongitude < 42.0)
                 {
                     ZoneNumber = 37;
                 }
             }
-	        LongOrigin = (ZoneNumber - 1)*6 - 180 + 3;  //+3 puts origin in middle of zone
-	        double LongOriginRad = LongOrigin / dCvtRad2Deg;
+            LongOrigin = (ZoneNumber - 1) * 6 - 180 + 3;  //+3 puts origin in middle of zone
+            double LongOriginRad = LongOrigin / dCvtRad2Deg;
 
             double N = dEquatorialRadius / Math.Sqrt(1 - eccSquared * Math.Sin(LatRad) * Math.Sin(LatRad));
             double T = Math.Tan(LatRad) * Math.Tan(LatRad);
             double C = eccPrimeSquared * Math.Cos(LatRad) * Math.Cos(LatRad);
-            double A = Math.Cos(LatRad)*(LongRad-LongOriginRad);
-	        double M = dEquatorialRadius*((1	- eccSquared/4		- 3*eccSquared*eccSquared/64	- 5*eccSquared*eccSquared*eccSquared/256)*LatRad 
-				- (3*eccSquared/8	+ 3*eccSquared*eccSquared/32	+ 45*eccSquared*eccSquared*eccSquared/1024)*Math.Sin(2*LatRad)
-									+ (15*eccSquared*eccSquared/256 + 45*eccSquared*eccSquared*eccSquared/1024)*Math.Sin(4*LatRad) 
-									- (35*eccSquared*eccSquared*eccSquared/3072)*Math.Sin(6*LatRad));
-	
-	        double UTMEasting = (double)(k0*N*(A+(1-T+C)*A*A*A/6
-					+ (5-18*T+T*T+72*C-58*eccPrimeSquared)*A*A*A*A*A/120)
-					+ 500000.0);
-	        double UTMNorthing = (double)(k0*(M+N*Math.Tan(LatRad)*(A*A/2+(5-T+9*C+4*C*C)*A*A*A*A/24
-				 + (61-58*T+T*T+600*C-330*eccPrimeSquared)*A*A*A*A*A*A/720)));
+            double A = Math.Cos(LatRad) * (LongRad - LongOriginRad);
+            double M = dEquatorialRadius * ((1 - eccSquared / 4 - 3 * eccSquared * eccSquared / 64 - 5 * eccSquared * eccSquared * eccSquared / 256) * LatRad
+                - (3 * eccSquared / 8 + 3 * eccSquared * eccSquared / 32 + 45 * eccSquared * eccSquared * eccSquared / 1024) * Math.Sin(2 * LatRad)
+                                    + (15 * eccSquared * eccSquared / 256 + 45 * eccSquared * eccSquared * eccSquared / 1024) * Math.Sin(4 * LatRad)
+                                    - (35 * eccSquared * eccSquared * eccSquared / 3072) * Math.Sin(6 * LatRad));
 
-	        if (Latitude < 0)
+            double UTMEasting = (double)(k0 * N * (A + (1 - T + C) * A * A * A / 6
+                    + (5 - 18 * T + T * T + 72 * C - 58 * eccPrimeSquared) * A * A * A * A * A / 120)
+                    + 500000.0);
+            double UTMNorthing = (double)(k0 * (M + N * Math.Tan(LatRad) * (A * A / 2 + (5 - T + 9 * C + 4 * C * C) * A * A * A * A / 24
+                 + (61 - 58 * T + T * T + 600 * C - 330 * eccPrimeSquared) * A * A * A * A * A * A / 720)));
+
+            if (Latitude < 0)
             {
-		        UTMNorthing += 10000000.0; //10000000 meter offset for southern hemisphere
+                UTMNorthing += 10000000.0; //10000000 meter offset for southern hemisphere
             }
             UTMPoint lResult = new UTMPoint(
                 (Int32)Math.Truncate(UTMEasting),
@@ -340,7 +340,7 @@ namespace De.AHoerstemeier.Geo
         public override string ToString()
         {
             // TODO use ToString(Format) instead
-            String lLatitude = Math.Abs(Latitude).ToString("#0.0000")+"° ";
+            String lLatitude = Math.Abs(Latitude).ToString("#0.0000") + "° ";
             if (IsNorthernHemisphere())
             {
                 lLatitude = lLatitude + 'N';
@@ -359,7 +359,7 @@ namespace De.AHoerstemeier.Geo
                 lLongitude = lLongitude + 'E';
             }
             String lResult = lLatitude + ' ' + lLongitude;
-            return lResult;            
+            return lResult;
         }
 
         #endregion
