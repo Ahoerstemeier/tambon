@@ -665,7 +665,23 @@
         <geo:long>100.9055</geo:long>
       </geo:Point>
     </office>
-    <entity type="Tambon" name="สัตหีบ" english="Sattahip" geocode="200901" />
+    <entity type="Tambon" name="สัตหีบ" english="Sattahip" geocode="200901" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>12.7236</geo:lat>
+          <geo:long>100.8869</geo:long>
+        </geo:Point>
+        <url>http://www.sattahip.net/</url>
+      </office>
+      <entity type="Muban" geocode="20090101" name="บ้านสัตหีบ"/>
+      <entity type="Muban" geocode="20090102" name="บ้านนา"/>
+      <entity type="Muban" geocode="20090103" name="บ้านทุ่งโปรง - ยางงาม"/>
+      <entity type="Muban" geocode="20090104" name="บ้านเตาถ่าน"/>
+      <entity type="Muban" geocode="20090105" name="บ้านป่ายุบ"/>
+      <entity type="Muban" geocode="20090106" name="บ้านหนองระกำ"/>
+      <entity type="Muban" geocode="20090107" name="บ้านร่มฤดี"/>
+      <entity type="Muban" geocode="20090108" name="บ้านคลองกานดา"/>
+    </entity>
     <entity type="Tambon" name="นาจอมเทียน" english="Na Chom Thian" geocode="200902" />
     <entity type="Tambon" name="พลูตาหลวง" english="Phlu Ta Luang" geocode="200903" />
     <entity type="Tambon" name="บางเสร่" english="Bang Sare" geocode="200904" />
@@ -896,13 +912,9 @@
       <url>http://www.bangsaray.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="สัตหีบ" english="Sattahip" geocode="2076" parent="2009" >
+  <entity type="ThesabanMueang" name="สัตหีบ" english="Sattahip" geocode="2076" parent="2009" >
     <office type="MunicipalityOffice">
-      <geo:Point>
-        <geo:lat>12.7236</geo:lat>
-        <geo:long>100.8869</geo:long>
-      </geo:Point>
-      <url>http://www.sattahip.net/</url>
+      <url>http://www.sattahipmunicipality.go.th/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ่อทอง" english="Bo Thong" geocode="2075" parent="2010" >
