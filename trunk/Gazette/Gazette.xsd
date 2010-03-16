@@ -37,6 +37,8 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name='GazetteReference'>
+    <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+
     <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="issue" type="xs:string" use="required"/>
