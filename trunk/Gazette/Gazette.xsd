@@ -146,6 +146,8 @@
   </xs:complexType>
   <xs:complexType name="GazetteSuggestion">
     <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="1"/>
+
+    <xs:attribute name="author" type="xs:string" use="optional" />
   </xs:complexType>
   <xs:complexType name='GazetteCapital'>
     <xs:complexContent>
