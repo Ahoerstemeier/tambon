@@ -42,7 +42,7 @@ namespace De.AHoerstemeier.Tambon
                     lGeocodes.ReOrderThesaban();
                     foreach (PopulationDataEntry lEntry in lGeocodes.Thesaban)
                     { 
-                        if (EntityTypeHelper.Thesaban.Contains(lEntry.Type))
+                        if (EntityTypeHelper.Thesaban.Contains(lEntry.Type) & (!lEntry.Obsolete) )
                         {
                             Boolean lSuccess = HasConstituencyAnnouncement(lEntry.Geocode, lEntry.Type);
 
