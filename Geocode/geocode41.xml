@@ -986,12 +986,6 @@
       <entity type="Muban" geocode="41100312" name="บ้านบะยาว"/>
     </entity>
     <entity type="Tambon" name="ผาสุก" english="Phasuk" geocode="411004" >
-      <office type="TAOOffice">
-        <geo:Point>
-          <geo:lat> 17.1508</geo:lat>
-          <geo:long>103.5595</geo:long>
-        </geo:Point>
-      </office>
       <entity type="Muban" geocode="41100401" name="บ้านผาสุก"/>
       <entity type="Muban" geocode="41100402" name="บ้านคำไฮ"/>
       <entity type="Muban" geocode="41100403" name="บ้านคำยาง"/>
@@ -2442,6 +2436,13 @@
   </entity>
   <entity type="ThesabanTambon" name="จำปี" english="Champi" geocode="4162" parent="4109" tambon="410902" />
   <entity type="ThesabanTambon" name="โพนสูง" english="Phon Sung" geocode="4161" parent="4108" tambon="410804" />
-  <entity type="ThesabanTambon" name="ผาสุก" english="Pha Suk" geocode="4160" parent="4104" tambon="410413" />
+  <entity type="ThesabanTambon" name="ผาสุก" english="Pha Suk" geocode="4160" parent="4104" tambon="411004" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 17.1508</geo:lat>
+        <geo:long>103.5595</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หัวนาคำ" english="Hua Na Kham" geocode="4159" parent="4109" tambon="410904" />
 </entity>
