@@ -10,8 +10,18 @@ namespace De.AHoerstemeier.Tambon
     {
         internal const String XmlLabel = "capital";
         #region properties
-        public EntityType Type { get; set; }
-        public EntityType TypeCapital { get; set; }
+        private EntityType mType = EntityType.Unknown;
+        public EntityType Type 
+        {
+            get { return mType; }
+            set { mType = value; }
+        }
+        private EntityType mTypeCapital = EntityType.Unknown;
+        public EntityType TypeCapital 
+        {
+            get { return mTypeCapital; }
+            set { mTypeCapital = value; }
+        }
         public Int32 GeocodeCapital { get; set; }
         public Int32 GeocodeCapitalOld { get; set; }
         public String CapitalName { get; set; }
@@ -19,6 +29,7 @@ namespace De.AHoerstemeier.Tambon
         public String CapitalEnglish { get; set; }
         public String CapitalEnglishOld { get; set; }
         #endregion
+
         #region constructor
         public RoyalGazetteContentCapital()
         {
@@ -31,6 +42,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion
+
         #region methods
         protected override String GetXmlLabel()
         {

@@ -10,8 +10,6 @@ namespace De.AHoerstemeier.Tambon
     public class EntityOffice : ICloneable
     {
         #region variables
-        private List<Uri> mWebsites = new List<Uri>();
-
         private static Dictionary<OfficeType, String> OfficeKmlStyles = new Dictionary<OfficeType, String>()
             {
               {OfficeType.ProvinceHall, "http://maps.google.com/mapfiles/kml/paddle/blu-blank.png"},
@@ -38,11 +36,35 @@ namespace De.AHoerstemeier.Tambon
         #endregion
 
         #region properties
-        public EntityLeaderList OfficialsList { get; set; }
-        public ThaiAddress Address { get; set; }
-        public List<Uri> Websites { get { return mWebsites; } }
-        public OfficeType Type { get; set; }
-        public GeoPoint Location { get; set; }
+        private EntityLeaderList mOfficialsList = new EntityLeaderList();
+        public EntityLeaderList OfficialsList 
+        { 
+            get { return mOfficialsList; }
+            set { mOfficialsList = value; }
+        }
+        private ThaiAddress mAddress = null;
+        public ThaiAddress Address 
+        {
+            get { return mAddress; }
+            set { mAddress = value; }
+        }
+        private List<Uri> mWebsites = new List<Uri>();
+        public List<Uri> Websites 
+        { 
+            get { return mWebsites; } 
+        }
+        private OfficeType mType = OfficeType.Unknown;
+        public OfficeType Type 
+        {
+            get { return mType; }
+            set { mType = value; }
+        }
+        private GeoPoint mLocation = null;
+        public GeoPoint Location 
+        {
+            get { return mLocation; }
+            set { mLocation = value; }
+        }
         #endregion
 
         #region constructor

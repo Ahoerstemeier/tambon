@@ -41,7 +41,7 @@ namespace De.AHoerstemeier.Tambon
             RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
 
             List<Int32> lTargetMubanNumbers = new List<Int32>();
-            foreach (RoyalGazetteContent lSubEntry in lCreate.SubEntities)
+            foreach (RoyalGazetteContent lSubEntry in lCreate.SubEntries)
             {
                 if (lSubEntry is RoyalGazetteContentReassign)
                 {

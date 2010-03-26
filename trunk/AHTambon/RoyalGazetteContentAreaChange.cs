@@ -9,9 +9,12 @@ namespace De.AHoerstemeier.Tambon
     class RoyalGazetteContentAreaChange:RoyalGazetteContent
     {
         internal const String XmlLabel = "areachange";
+
         #region properties
         public Single Area { get; set; }
         #endregion
+
+        #region methods
         protected override String GetXmlLabel()
         {
             return XmlLabel;
@@ -48,5 +51,6 @@ namespace De.AHoerstemeier.Tambon
                 iElement.SetAttribute("newarea", Area.ToString());
             }
         }
+        #endregion
     }
 }

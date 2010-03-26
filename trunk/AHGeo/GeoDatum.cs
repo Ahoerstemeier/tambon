@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,11 +8,17 @@ namespace De.AHoerstemeier.Geo
     {
         #region properties
         public String Name { get; set; }
-        public GeoEllipsoid Ellipsoid { get; set; }
+		private GeoEllipsoid mEllipsoid = GeoEllipsoid.EllipsoidWGS84();
+        public GeoEllipsoid Ellipsoid
+        {
+            get { return mEllipsoid; }
+            set { mEllipsoid = value; }
+        }
         public double deltaX { get; set; }
         public double deltaY { get; set; }
         public double deltaZ { get; set; }
         #endregion
+
         #region constructor
         public GeoDatum(String iName, GeoEllipsoid iEllipsoid, double ideltaX, double ideltaY, double ideltaZ)
         {
@@ -31,6 +37,7 @@ namespace De.AHoerstemeier.Geo
             Ellipsoid = (GeoEllipsoid)iValue.Ellipsoid.Clone();
         }
         #endregion
+
         #region methods
         public static GeoDatum DatumWGS84()
         {
@@ -53,6 +60,7 @@ namespace De.AHoerstemeier.Geo
             return this.Name;
         }
         #endregion
+
         #region ICloneable Members
 
         public object Clone()
@@ -61,6 +69,7 @@ namespace De.AHoerstemeier.Geo
         }
 
         #endregion
+
         #region IEquatable Members
         public bool Equals(GeoDatum iObj)
         {

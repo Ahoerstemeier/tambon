@@ -48,7 +48,7 @@ namespace De.AHoerstemeier.Tambon
             if (!String.IsNullOrEmpty(lName))
             {
                 String lParentName = String.Empty;
-                foreach (RoyalGazetteContent lSubEntry in iCreate.SubEntities)
+                foreach (RoyalGazetteContent lSubEntry in iCreate.SubEntries)
                 {
                     if (lSubEntry is RoyalGazetteContentAreaChange)
                     {

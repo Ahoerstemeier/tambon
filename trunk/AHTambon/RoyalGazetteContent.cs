@@ -8,7 +8,8 @@ namespace De.AHoerstemeier.Tambon
 {
     public abstract class RoyalGazetteContent : ICloneable, IGeocode
     {
-        protected List<RoyalGazetteContent> mSubEntities = new List<RoyalGazetteContent>();
+        protected List<RoyalGazetteContent> mSubEntries = new List<RoyalGazetteContent>();
+
         #region properties
         public Int32 Geocode { get; set; }
         public Int32 TambonGeocode { get; set; }
@@ -16,6 +17,7 @@ namespace De.AHoerstemeier.Tambon
         public String Name { get; set; }
         public String English { get; set; }
         #endregion
+
         #region methods
         virtual internal void DoLoad(XmlNode iNode)
         {
@@ -32,7 +34,7 @@ namespace De.AHoerstemeier.Tambon
                     if (lContent != null)
                     {
                         lContent.DoLoad(lNode);
-                        mSubEntities.Add(lContent);
+                        mSubEntries.Add(lContent);
                     }
                 }
             }
@@ -48,10 +50,10 @@ namespace De.AHoerstemeier.Tambon
                 Name = iOther.Name;
                 English = iOther.English;
             }
-            foreach (RoyalGazetteContent lContent in iOther.mSubEntities)
+            foreach (RoyalGazetteContent lContent in iOther.mSubEntries)
             {
                 RoyalGazetteContent lNewContent = (RoyalGazetteContent)lContent.Clone();
-                mSubEntities.Add(lNewContent);
+                mSubEntries.Add(lNewContent);
             }
         }
 
@@ -85,7 +87,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 iElement.SetAttribute("english", English.ToString());
             }
-            foreach (RoyalGazetteContent lContent in mSubEntities)
+            foreach (RoyalGazetteContent lContent in mSubEntries)
             {
                 lContent.ExportToXML(iElement);
             }
@@ -167,7 +169,7 @@ namespace De.AHoerstemeier.Tambon
             Boolean retval = TambonHelper.IsSameGeocode(iGeocode, Geocode, iIncludeSubEntities);
             retval = retval | TambonHelper.IsSameGeocode(iGeocode, Owner, iIncludeSubEntities);
             retval = retval | TambonHelper.IsSameGeocode(iGeocode, TambonGeocode, iIncludeSubEntities);
-            foreach (RoyalGazetteContent lContent in mSubEntities)
+            foreach (RoyalGazetteContent lContent in mSubEntries)
             {
                 retval = retval | lContent.IsAboutGeocode(iGeocode, iIncludeSubEntities);
             }

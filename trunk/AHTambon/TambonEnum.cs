@@ -48,6 +48,7 @@ namespace De.AHoerstemeier.Tambon
     }
     public enum EntityLeaderType
     {
+        Unknown,
         Governor,
         ViceGovernor,
         DistrictOfficer,
@@ -79,6 +80,7 @@ namespace De.AHoerstemeier.Tambon
     }
     public enum OfficeType
     {
+        Unknown,
         ProvinceHall,
         PAOOffice,
         DistrictOffice,

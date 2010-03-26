@@ -9,9 +9,16 @@ namespace De.AHoerstemeier.Tambon
     class RoyalGazetteContentConstituency:RoyalGazetteContent
     {
         internal const String XmlLabel = "constituency";
+
         #region properties
-        public EntityType Type { get; set; }
+        private EntityType mType = EntityType.Unknown;
+        public EntityType Type
+        {
+            get { return mType; }
+            set { mType = value; }
+        }
         #endregion
+
         #region constructor
         public RoyalGazetteContentConstituency()
         {
@@ -23,6 +30,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion
+
         #region methods
         protected override String GetXmlLabel()
         {

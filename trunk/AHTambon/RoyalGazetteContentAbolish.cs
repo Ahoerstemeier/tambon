@@ -10,11 +10,16 @@ namespace De.AHoerstemeier.Tambon
     {
         internal const String XmlLabel = "abolish";
         #region properties
-        public EntityType Status { get; set; }
+        private EntityType mStatus = EntityType.Unknown;
+        public EntityType Status 
+        {
+            get { return mStatus; }
+            set { mStatus = value; }
+        }
         public Int32 NewParent { get; set; }
         public List<RoyalGazetteContent> SubEntities
         {
-            get { return mSubEntities; }
+            get { return mSubEntries; }
         }
         #endregion
         internal override void DoLoad(XmlNode iNode)
@@ -34,7 +39,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         var lContent = new RoyalGazetteContentReassign();
                         lContent.DoLoad(lNode);
-                        mSubEntities.Add(lContent);
+                        mSubEntries.Add(lContent);
                     }
 
                 }

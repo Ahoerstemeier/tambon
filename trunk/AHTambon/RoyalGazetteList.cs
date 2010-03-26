@@ -10,11 +10,13 @@ namespace De.AHoerstemeier.Tambon
     public class RoyalGazetteList : List<RoyalGazette>
     {
         public delegate void ProcessingFinished(RoyalGazetteList data);
+
         #region constructor
         public RoyalGazetteList()
         {
         }
         #endregion
+
         #region methods
         public static RoyalGazetteList Load(String iFromFile)
         {
