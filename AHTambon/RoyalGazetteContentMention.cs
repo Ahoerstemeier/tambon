@@ -8,6 +8,7 @@ namespace De.AHoerstemeier.Tambon
     class RoyalGazetteContentMention:RoyalGazetteContent
     {
         internal const String XmlLabel = "mention";
+
         protected override String GetXmlLabel()
         {
             return XmlLabel;

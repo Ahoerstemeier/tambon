@@ -10,8 +10,18 @@ namespace De.AHoerstemeier.Tambon
     {
         internal const String XmlLabel = "status";
         #region properties
-        public EntityType OldStatus { get; set; }
-        public EntityType NewStatus { get; set; }
+        private EntityType mOldStatus = EntityType.Unknown;
+        public EntityType OldStatus 
+        { 
+            get { return mOldStatus; }
+            set { mOldStatus = value; }
+        }
+        private EntityType mNewStatus = EntityType.Unknown;
+        public EntityType NewStatus 
+        {
+            get { return mNewStatus; }
+            set { mNewStatus = value; }
+        }
         #endregion
         override internal void DoLoad(XmlNode iNode)
         {

@@ -9,10 +9,13 @@ namespace De.AHoerstemeier.Tambon
     class RoyalGazetteContentRename : RoyalGazetteContent
     {
         internal const String XmlLabel = "rename";
+
         #region properties
         public String OldName { get; set; }
         public String OldEnglish { get; set; }
         #endregion
+
+        #region methods
         internal override void DoLoad(XmlNode iNode)
         {
             base.DoLoad(iNode);
@@ -52,6 +55,6 @@ namespace De.AHoerstemeier.Tambon
                 iElement.SetAttribute("oldenglish", OldEnglish);
             }
         }
-        
+        #endregion
     }
 }

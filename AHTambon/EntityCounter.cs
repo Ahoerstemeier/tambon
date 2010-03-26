@@ -14,12 +14,14 @@ namespace De.AHoerstemeier.Tambon
         private Int32 mNumberOfEntities;
         public Int32 NumberOfEntities { get { return mNumberOfEntities; } }
         #endregion
+
         #region constructor
         public EntityCounter(List<EntityType> iEntityTypes)
         {
             mEntityTypes = iEntityTypes;
         }
         #endregion
+
         #region methods
         public String CommonNames(Int32 iCutOff)
         {

@@ -9,14 +9,22 @@ namespace De.AHoerstemeier.Tambon
     public class RoyalGazetteContentCreate : RoyalGazetteContent
     {
         internal const String XmlLabel = "create";
+
         #region properties
-        public EntityType Status { get; set; }
-        public Int32 Parent { get; set; }
-        public List<RoyalGazetteContent> SubEntities
+        private EntityType mType = EntityType.Unknown;
+        public EntityType Type 
         {
-            get { return mSubEntities; }
+            get { return mType; }
+            set { mType = value; }
+        }
+        public Int32 Parent { get; set; }
+        public List<RoyalGazetteContent> SubEntries
+        {
+            get { return mSubEntries; }
         }
         #endregion
+
+        #region methods
         internal override void DoLoad(XmlNode iNode)
         {
             base.DoLoad(iNode);
@@ -25,7 +33,7 @@ namespace De.AHoerstemeier.Tambon
                 string s = TambonHelper.GetAttribute(iNode, "type");
                 if (!String.IsNullOrEmpty(s))
                 {
-                    Status = (EntityType)Enum.Parse(typeof(EntityType), s);
+                    Type = (EntityType)Enum.Parse(typeof(EntityType), s);
                 }
                 Parent = TambonHelper.GetAttributeOptionalInt(iNode, "parent",0);
 
@@ -43,7 +51,7 @@ namespace De.AHoerstemeier.Tambon
                 if (iOther is RoyalGazetteContentCreate)
                 {
                     RoyalGazetteContentCreate iOtherCreate = (RoyalGazetteContentCreate)iOther;
-                    Status = iOtherCreate.Status;
+                    Type = iOtherCreate.Type;
                     Parent = iOtherCreate.Parent;
                 }
             }
@@ -51,14 +59,15 @@ namespace De.AHoerstemeier.Tambon
         override protected void WriteToXmlElement(XmlElement iElement)
         {
             base.WriteToXmlElement(iElement);
-            if (Status != EntityType.Unknown)
+            if (Type != EntityType.Unknown)
             {
-                iElement.SetAttribute("type", Status.ToString());
+                iElement.SetAttribute("type", Type.ToString());
             }
             if (Parent != 0)
             {
                 iElement.SetAttribute("parent", Parent.ToString());
             }
         }
+        #endregion
     }
 }

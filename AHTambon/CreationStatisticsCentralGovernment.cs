@@ -36,7 +36,7 @@ namespace De.AHoerstemeier.Tambon
             
             Int32 lMaxSubEntityIndex = 0;
             List<Int32> lParentEntities = new List<Int32>();
-            foreach (RoyalGazetteContent lSubEntry in lCreate.SubEntities)
+            foreach (RoyalGazetteContent lSubEntry in lCreate.SubEntries)
             {
                 if (lSubEntry is RoyalGazetteContentCreate)
                 {

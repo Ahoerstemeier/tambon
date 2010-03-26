@@ -29,7 +29,7 @@ namespace De.AHoerstemeier.Tambon
             if (iContent is RoyalGazetteContentCreate)
             {
                 RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
-                retval = EntityFitting(lCreate.Status);
+                retval = EntityFitting(lCreate.Type);
             }
             return retval;
         }

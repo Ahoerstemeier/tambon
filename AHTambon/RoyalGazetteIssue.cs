@@ -8,12 +8,14 @@ namespace De.AHoerstemeier.Tambon
     public class RoyalGazetteIssue : IComparable,ICloneable
     {
         static private List<Char> mIssueBookNames = new List<Char>() { 'ก', 'ง', 'ข', 'ค' };
+
         #region variables
         private String IssuePrefix;
         private String IssuePostfix;
         private Int32 IssueNumber = -1;
         private Char IssueBook = ' ';
         #endregion
+
         #region constructor
         public RoyalGazetteIssue(String value)
         {
@@ -30,6 +32,7 @@ namespace De.AHoerstemeier.Tambon
             IssueBook = value.IssueBook;
         }
         #endregion
+
         #region methods
         public Boolean IsEmpty()
         {

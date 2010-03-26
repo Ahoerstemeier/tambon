@@ -12,17 +12,27 @@ namespace De.AHoerstemeier.Tambon
         private String mName = String.Empty;
         public String Name { get { return mName; } set { SetName(value); } }
         public String English { get; set; }
-        public PersonTitle Title { get; set; }
+        private PersonTitle mTitle = PersonTitle.Unknown;
+        public PersonTitle Title { 
+            get { return mTitle; } 
+            set { mTitle = value; } 
+        }
         public String Telephone { get; set; }
         public String CellPhone { get; set; }
         public String Comment { get; set; }
-        public EntityLeaderType Position { get; set; }
+        private EntityLeaderType mPosition = EntityLeaderType.Unknown;
+        public EntityLeaderType Position 
+        { 
+            get { return mPosition; } 
+            set { mPosition = value; } 
+        }
         public Int32 Index { get; set; }
         public DateTime BeginOfTerm { get; set; }
         public Int32 BeginOfTermYear { get; set; }
         public DateTime EndOfTerm { get; set; }
         public Int32 EndOfTermYear { get; set; }
         #endregion
+
         #region constructor
         public EntityLeader()
         {
@@ -42,6 +52,7 @@ namespace De.AHoerstemeier.Tambon
             EndOfTermYear = iValue.EndOfTermYear;
         }
         #endregion
+
         #region methods
         private void SetName(String iName)
         {
@@ -136,6 +147,7 @@ namespace De.AHoerstemeier.Tambon
             return RetVal;
         }
         #endregion
+
         #region ICloneable Members
 
         public object Clone()

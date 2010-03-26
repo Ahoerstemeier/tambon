@@ -7,9 +7,12 @@ namespace De.AHoerstemeier.Tambon
 {
     public class RoyalGazettePageinfo:IComparable,ICloneable
     {
+        #region properties
         public Int32 Page { get; set; }
         public Int32 PageEnd { get; set; }
+        #endregion
 
+        #region methods
         public override String ToString()
         {
             String retval = Page.ToString();
@@ -38,6 +41,11 @@ namespace De.AHoerstemeier.Tambon
                 lState++;
             }
         }
+        internal bool IsEmpty()
+        {
+            return (Page == 0);
+        }
+        #endregion
 
         #region constructor
         public RoyalGazettePageinfo()
@@ -97,9 +105,5 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion
 
-        internal bool IsEmpty()
-        {
-            return (Page == 0);
-        }
     }
 }

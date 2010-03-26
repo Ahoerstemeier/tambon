@@ -50,7 +50,7 @@ namespace De.AHoerstemeier.Tambon
         {
             base.ProcessContent(iContent);
             RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
-            if (lCreate.Status == EntityType.KingAmphoe)
+            if (lCreate.Type == EntityType.KingAmphoe)
             {
                 mNumberOfKingAmphoeCreations++;
             }

@@ -20,9 +20,11 @@ namespace De.AHoerstemeier.Tambon
             }
         }
         #endregion
+
         #region properties
         public String Source { get; set; }
         #endregion
+
         #region methods
         public void ExportToXML(XmlElement iNode)
         {
@@ -62,6 +64,7 @@ namespace De.AHoerstemeier.Tambon
             return RetVal;
         }
         #endregion
+
         #region ICloneable Members
 
         public object Clone()

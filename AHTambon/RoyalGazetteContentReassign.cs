@@ -9,10 +9,13 @@ namespace De.AHoerstemeier.Tambon
     class RoyalGazetteContentReassign:RoyalGazetteContent
     {
         internal const String XmlLabel = "reassign";
+
         #region properties
         public Int32 OldGeocode { get; set; }
         public Int32 OldParent { get; set; }
         #endregion
+
+        #region methods
         internal override void DoLoad(XmlNode iNode)
         {
             base.DoLoad(iNode);
@@ -51,11 +54,15 @@ namespace De.AHoerstemeier.Tambon
         {
             return XmlLabel;
         }
+        #endregion
+
+        #region IGeocode Members
         public override bool IsAboutGeocode(Int32 iGeocode, Boolean iIncludeSubEntities)
         {
             Boolean retval = TambonHelper.IsSameGeocode(iGeocode, Geocode, iIncludeSubEntities);
             retval = retval | TambonHelper.IsSameGeocode(iGeocode, OldGeocode, iIncludeSubEntities);
             return retval;
         }
+        #endregion
     }
 }
