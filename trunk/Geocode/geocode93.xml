@@ -293,9 +293,6 @@
       <entity type="Muban" geocode="93020107" name="บ้านในมอญ"/>
     </entity>
     <entity type="Tambon" name="ชะรัด" english="Charat" geocode="930202" >
-      <office type="MunicipalityOffice">
-        <url>http://www.charad.go.th/</url>
-      </office>
       <entity type="Muban" geocode="93020201" name="บ้านควนท้อน"/>
       <entity type="Muban" geocode="93020202" name="บ้านวังปริง"/>
       <entity type="Muban" geocode="93020203" name="บ้านหัวหรั่ง"/>
@@ -405,9 +402,6 @@
       <entity type="Muban" geocode="93030612" name="บ้านสะทัง"/>
     </entity>
     <entity type="Tambon" name="โคกม่วง" english="Khok Muang" geocode="930307" >
-      <office type="TAOOffice">
-        <url>http://www.kokmuang.go.th/</url>
-      </office>
       <entity type="Muban" geocode="93030701" name="บ้านเกาะทองสม"/>
       <entity type="Muban" geocode="93030702" name="บ้านทางเกวียน"/>
       <entity type="Muban" geocode="93030703" name="บ้านโคกม่วง"/>
@@ -677,9 +671,6 @@
       <entity type="Muban" geocode="93060511" name="บ้านเพ็งอาด"/>
     </entity>
     <entity type="Tambon" name="หารเทา" english="Han Thao" geocode="930606" >
-      <office type="MunicipalityOffice">
-        <url>http://www.harnthao.go.th/</url>
-      </office>
       <entity type="Muban" geocode="93060602" name="บ้านหารเทา (ท่าทิศคูร)"/>
 
       <entity type="Muban" geocode="93060605" name="บ้านทะเลเหมียง"/>
@@ -812,12 +803,7 @@
         <official title="DistrictOfficer" name="นิกร จันทร์อำไพ" end="2010-02-21"/>
       </officials>
     </office>
-    <entity type="Tambon" name="ท่ามะเดื่อ" english="Tha Maduea" geocode="930901" >
-      <office type="MunicipalityOffice">
-        <!--renamed when upgraded-->
-        <url>http://www.bangkaew.go.th/</url>
-      </office>
-    </entity>
+    <entity type="Tambon" name="ท่ามะเดื่อ" english="Tha Maduea" geocode="930901" />
     <entity type="Tambon" name="นาปะขอ" english="Na Pakho" geocode="930902" >
       <office type="TAOOffice">
         <url>http://napakho.go.th/</url>
@@ -907,9 +893,6 @@
   </entity>
   <entity type="Amphoe" name="ศรีนครินทร์" english="Srinagarindra" geocode="9311" >
     <entity type="Tambon" name="ชุมพล" english="Chumphon" geocode="931101" >
-      <office type="MunicipalityOffice">
-        <url>http://www.chumponcity.go.th/</url>
-      </office>
       <entity type="Muban" geocode="93110101" name="บ้านชุมพล"/>
       <entity type="Muban" geocode="93110102" name="บ้านหนองปรีอ"/>
       <entity type="Muban" geocode="93110103" name="บ้านหนองเสม็ด"/>
@@ -926,10 +909,6 @@
       <entity type="Muban" geocode="93110114" name="บ้านชุมทอง"/>
     </entity>
     <entity type="Tambon" name="บ้านนา" english="Ban Na" geocode="931102" >
-      <office type="MunicipalityOffice">
-        <!-- Longdo: 7.56669, 99.90009 -->
-        <url>http://www.bannaptlcity.go.th/</url>
-      </office>
       <entity type="Muban" geocode="93110201" name="บ้านนาวง" comment="เขต 1"/>
       <entity type="Muban" geocode="93110202" name="บ้านลำใน" comment="เขต 2"/>
       <entity type="Muban" geocode="93110203" name="บ้านนา" comment="เขต 2"/>
@@ -1011,4 +990,37 @@
       <url>http://www.lankhoy.go.th/</url>
     </office>
   </entity>
+  <entity type="ThesabanTambon" name="บ้านนา" english="Ban Na" geocode="9389" tambon="931102" parent="9311">
+    <office type="MunicipalityOffice">
+      <!-- Longdo: 7.56669, 99.90009 -->
+      <url>http://www.bannaptlcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="โคกม่วง" english="Khok Muang" geocode="9388" tambon="930307" parent="9303">
+    <office type="TAOOffice">
+      <url>http://www.kokmuang.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ชุมพล" english="Chumphon" geocode="9387" tambon="931101" parent="9311">
+    <office type="MunicipalityOffice">
+      <url>http://www.chumponcity.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="อ่าวพะยูน" english="Ao Phayun" geocode="9386" tambon="930601" parent="9306"/>
+  <entity type="ThesabanTambon" name="บางแก้ว" english="Bang Kaeo" geocode="9385" tambon="930901" parent="9309">
+    <office type="MunicipalityOffice">
+      <url>http://www.bangkaew.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หารเทา" english="Han Thao" geocode="9384" tambon="930606" parent="9306">
+    <office type="MunicipalityOffice">
+      <url>http://www.harnthao.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ชะรัด" english="Charat" geocode="9383" tambon="930202" parent="9302">
+    <office type="MunicipalityOffice">
+      <url>http://www.charad.go.th/</url>
+    </office>
+  </entity>
+
 </entity>

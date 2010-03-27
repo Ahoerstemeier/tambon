@@ -434,16 +434,7 @@
         <geo:long>100.7496</geo:long>
       </geo:Point>
     </office>
-    <entity type="Tambon" name="คูคต" english="Khu Khot" geocode="130601" >
-      <office type="MunicipalityOffice">
-        <!-- renamed in upgrade -->
-        <geo:Point>
-          <geo:lat> 13.9726</geo:lat>
-          <geo:long>100.6506</geo:long>
-        </geo:Point>
-        <url>http://www.lamsamkaeo.go.th/</url>
-      </office>      
-    </entity>
+    <entity type="Tambon" name="คูคต" english="Khu Khot" geocode="130601" />
     <entity type="Tambon" name="ลาดสวาย" english="Lat Sawai" geocode="130602" >
       <office type="TAOOffice">
         <geo:Point>
@@ -648,6 +639,15 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บางคูวัด" english="Bang Khu Wat" geocode="1383" parent="1301" tambon="130107" />
+  <entity type="ThesabanMueang" name="ลำสามแก้ว" english="Lam Sam Kaeo" geocode="1382" parent="1306" tambon="130601" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 13.9726</geo:lat>
+        <geo:long>100.6506</geo:long>
+      </geo:Point>
+      <url>http://www.lamsamkaeo.go.th/</url>
+    </office>
+  </entity>
 
   <entity name="คูคต" type="SakhaTambon" geocode="1351" english="Khu Khot" parent="1306" />
 

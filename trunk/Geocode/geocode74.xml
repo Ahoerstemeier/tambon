@@ -93,13 +93,6 @@
       <entity type="Muban" geocode="74010807" name="บ้านหลังศาล"/>
     </entity>
     <entity type="Tambon" name="นาดี" english="Na Di" geocode="740109" >
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat> 13.5961</geo:lat>
-          <geo:long>100.2818</geo:long>
-        </geo:Point>
-        <url>http://nadee.go.th/</url>
-      </office>
       <entity type="Muban" geocode="74010901" name="บ้านโคกตานุช"/>
       <entity type="Muban" geocode="74010902" name="บ้านบางปิ้ง"/>
       <entity type="Muban" geocode="74010903" name="บ้านหุบสังกะสี"/>
@@ -419,9 +412,16 @@
       <url>http://www.nmt.or.th/samutsakhon/lakha/</url>
     </office>
   </entity>
-
-  <!-- not yet in DOPA statistics -->
-  <entity type="ThesabanTambon" name="สวนหลวง" english="Suan Luang" geocode="7492" tambon="740204" parent="7402">
+  <entity type="ThesabanTambon" name="นาดี" english="Na Di" geocode="7492" tambon="740109" parent="7401">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 13.5961</geo:lat>
+        <geo:long>100.2818</geo:long>
+      </geo:Point>
+      <url>http://nadee.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="สวนหลวง" english="Suan Luang" geocode="7491" tambon="740204" parent="7402">
     <office type="MunicipalityOffice">
       <url>http://www.suanluang.go.th/</url>
     </office>
