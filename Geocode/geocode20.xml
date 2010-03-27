@@ -666,13 +666,6 @@
       </geo:Point>
     </office>
     <entity type="Tambon" name="สัตหีบ" english="Sattahip" geocode="200901" >
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>12.7236</geo:lat>
-          <geo:long>100.8869</geo:long>
-        </geo:Point>
-        <url>http://www.sattahip.net/</url>
-      </office>
       <entity type="Muban" geocode="20090101" name="บ้านสัตหีบ"/>
       <entity type="Muban" geocode="20090102" name="บ้านนา"/>
       <entity type="Muban" geocode="20090103" name="บ้านทุ่งโปรง - ยางงาม"/>
@@ -980,6 +973,15 @@
   </entity>
   <entity type="ThesabanTambon" name="หมอนนาง" english="Mon Nang" geocode="2063" parent="2006" tambon="200606" />
   <entity type="ThesabanTambon" name="หนองชาก" english="Nong Chak" geocode="2062" parent="2002" tambon="200206" />
+  <entity type="ThesabanTambon" name="สัตหีบ" english="Sattahip" geocode="2061" parent="2009" tambon="200901" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>12.7236</geo:lat>
+        <geo:long>100.8869</geo:long>
+      </geo:Point>
+      <url>http://www.sattahip.net/</url>
+    </office>
+  </entity>
 
-  <entity type="SakhaTambon" name="บางเสร่" english="Bang Sare" geocode="2051" parent="2009" />
+    <entity type="SakhaTambon" name="บางเสร่" english="Bang Sare" geocode="2051" parent="2009" />
 </entity>

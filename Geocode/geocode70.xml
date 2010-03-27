@@ -160,9 +160,6 @@
     <entity type="Tambon" name="เขาแร้ง" english="Khao Raeng" geocode="700115" />
     <entity type="Tambon" name="เกาะพลับพลา" english="Ko Phlapphla" geocode="700116" />
     <entity type="Tambon" name="หลุมดิน" english="Lum Din" geocode="700117" >
-      <office type="TAOOffice">
-        <url>http://www.lhumdin.com/</url>
-      </office>
       <entity type="Muban" geocode="70011701" name="บ้านท่าแจ่" comment="Obsolete, part of Thesaban Mueang Ratchaburi"/>
       <entity type="Muban" geocode="70011702" name="บ้านท่าแจ่"/>
       <entity type="Muban" geocode="70011703" name="บ้านคลองหลุมดิน"/>
@@ -622,11 +619,7 @@
 
       <entity type="Muban" geocode="70070712" name="บ้านทุ่ง"/>
     </entity>
-    <entity type="Tambon" name="ดอนทราย" english="Don Sai" geocode="700708" >
-      <office type="TAOOffice">
-        <url>http://www.geocities.com/ying_pum/</url>
-      </office>
-    </entity>
+    <entity type="Tambon" name="ดอนทราย" english="Don Sai" geocode="700708" />
     <entity type="Tambon" name="เจ็ดเสมียน" english="Chet Samian" geocode="700709" />
     <entity type="Tambon" name="คลองข่อย" english="Khlong Khoi" geocode="700710" >
       <office type="TAOOffice">
@@ -950,9 +943,19 @@
       <url>http://www.boegprai.go.th/</url>
     </office>
   </entity>
+  <entity type="ThesabanTambon" name="หลุมดิน" english="Lum Din" geocode="7071" parent="7001" tambon="700117" >
+    <office type="MunicipalityOffice">
+      <url>http://www.lhumdin.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ดอนทราย" english="Don Sai" geocode="7070" parent="7007" tambon="700708" >
+    <office type="MunicipalityOffice">
+      <url>http://www.geocities.com/ying_pum/</url>
+    </office>
+  </entity>
 
   <!-- not yet in DOPA statistics, geocode unconfirmed -->
-  <entity type="ThesabanTambon" name="บ้านไร่" english="Ban Rai" geocode="7071" parent="7004" tambon="700408" >
+  <entity type="ThesabanTambon" name="บ้านไร่" english="Ban Rai" geocode="7050" parent="7004" tambon="700408" >
     <office type="MunicipalityOffice">
       <url>http://www.banraidumnoen.go.th/</url>
     </office>

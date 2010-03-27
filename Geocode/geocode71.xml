@@ -25,9 +25,6 @@
     <entity type="Tambon" name="บ้านเหนือ" english="Ban Nuea" geocode="710101" />
     <entity type="Tambon" name="บ้านใต้" english="Ban Tai" geocode="710102" />
     <entity type="Tambon" name="ปากแพรก" english="Pak Phraek" geocode="710103" >
-      <office type="MunicipalityOffice">
-        <url>http://www.pakpraek.com/</url>
-      </office>
       <entity type="Muban" geocode="71010301" name="บ้านลิ้นช้าง"/>
       <entity type="Muban" geocode="71010302" name="บ้านเขาแหลม"/>
       <entity type="Muban" geocode="71010303" name="บ้านเขาตอง"/>
@@ -911,9 +908,6 @@
     <entity type="Tambon" name="สระลงเรือ" english="Sa Long Ruea" geocode="710909" newgeocode="711304" />
     <entity type="Tambon" name="วังไผ่" english="Wang Phai" geocode="710910" newgeocode="711302" />
     <entity type="Tambon" name="หนองสาหร่าย" english="Nong Sarai" geocode="710911" >
-      <office type="MunicipalityOffice">
-        <url>http://www.nongsarai.go.th/</url>
-      </office>
       <entity type="Muban" geocode="71091101" name="บ้านสระลุมพุก"/>
       <entity type="Muban" geocode="71091102" name="บ้านโกรกยาว"/>
       <entity type="Muban" geocode="71091103" name="บ้านหนองจิก"/>
@@ -1312,18 +1306,28 @@
       <url>http://www.nongpruekan.com/</url>
     </office>
   </entity>
-
-  <entity type="ThesabanTambon" name="วังขนาย" english="Wang Khanai" geocode="7171" parent="7106" tambon="710602" >
+  <entity type="ThesabanTambon" name="วังขนาย" english="Wang Khanai" geocode="7172" parent="7106" tambon="710602" >
     <office type="MunicipalityOffice">
       <url>http://wangkanai.o2blog.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ท่าล้อ" english="Tha Lo" geocode="7170" parent="7106" tambon="710604" />
-  <entity type="ThesabanTambon" name="วังศาลา" english="Wang Sala" geocode="7172" parent="7106" tambon="710603">
+  <entity type="ThesabanTambon" name="ท่าล้อ" english="Tha Lo" geocode="7171" parent="7106" tambon="710604" />
+  <entity type="ThesabanTambon" name="วังศาลา" english="Wang Sala" geocode="7170" parent="7106" tambon="710603">
     <office type="MunicipalityOffice">
       <url>http://www.yeesok.com/</url>
     </office>
   </entity>
+  <entity type="ThesabanTambon" name="ปากแพรก" english="Pak Phraek" geocode="7169" parent="7101" tambon="710103" >
+    <office type="MunicipalityOffice">
+      <url>http://www.pakpraek.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หนองสาหร่าย" english="Nong Sarai" geocode="7168" parent="7109" tambon="710911" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nongsarai.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="รางหวาย" english="Rang Wai" geocode="7167" parent="7109" tambon="710906" />
 
   <entity type="SakhaTambon" name="ท่ากระดาน" english="Tha Kradan" geocode="7151" parent="7104" />
 </entity>

@@ -172,13 +172,6 @@
       <entity type="Muban" geocode="12020805" name="บ้านหัวคูนอก"/>
     </entity>
     <entity type="Tambon" name="ศาลากลาง" english="Sala Klang" geocode="120209" >
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat> 13.8033</geo:lat>
-          <geo:long>100.3754</geo:long>
-        </geo:Point>
-        <url>http://www.salaklang.go.th/</url>
-      </office>
       <entity type="Muban" geocode="12020901" name="บ้านคลองบางนา"/>
       <entity type="Muban" geocode="12020902" name="บ้านประตูน้ำฉิมพลี"/>
       <entity type="Muban" geocode="12020903" name="บ้านคลองขุดมหาสวัสดิ์"/>
@@ -583,6 +576,15 @@
       <officials>
         <official title="Mayor" name="มงคล อัศวนิโครธร"/>
       </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ศาลากลาง" english="Sala Klang" geocode="1289" parent="1202" tambon="120209">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 13.8033</geo:lat>
+        <geo:long>100.3754</geo:long>
+      </geo:Point>
+      <url>http://www.salaklang.go.th/</url>
     </office>
   </entity>
 
