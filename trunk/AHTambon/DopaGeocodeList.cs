@@ -21,8 +21,13 @@ namespace De.AHoerstemeier.Tambon
             {
                 if (lCurrentLine.Length > 8)
                 {
-
-                    String lGeocodeString = lCurrentLine.Substring(0, 8);
+                    Int32 lPos = 8;
+                    if (lCurrentLine.Contains('|'))
+                    {
+                        lPos = lCurrentLine.IndexOf('|');
+                        lCurrentLine = lCurrentLine.Replace("|", "");
+                    }
+                    String lGeocodeString = lCurrentLine.Substring(0, lPos);
                     Int32 lGeocode = Convert.ToInt32(lGeocodeString);
                     while (lGeocode % 100 == 0)
                     {
@@ -82,10 +87,18 @@ namespace De.AHoerstemeier.Tambon
         }
         public void RemoveAllKnownGeocodes()
         {
+            List<String> lBroken = new List<string>();
             foreach (string lFilename in Directory.GetFiles(TambonHelper.GeocodeXmlSourceDir(), "geocode*.XML"))
             {
-                PopulationData lCurrentList = PopulationData.Load(lFilename);
-                RemoveKnownGeocodes(lCurrentList.Data);
+                try
+                {
+                    PopulationData lCurrentList = PopulationData.Load(lFilename);
+                    RemoveKnownGeocodes(lCurrentList.Data);
+                }
+                catch 
+                {
+                    lBroken.Add(lFilename);
+                }
             }
 
         }
