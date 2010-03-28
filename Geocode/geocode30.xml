@@ -100,9 +100,6 @@
       <entity type="Muban" geocode="30010615" name="บ้านหนองพระลาน"/>
     </entity>
     <entity type="Tambon" name="ปรุใหญ่" english="Pru Yai" geocode="300107" >
-      <office type="TAOOffice">
-        <url>http://www.pruyai.com/</url>
-      </office>
       <entity type="Muban" geocode="30010701" name="บ้านคนชุม"/>
       <entity type="Muban" geocode="30010702" name="บ้านตะคองเก่า"/>
       <entity type="Muban" geocode="30010703" name="บ้านหนองหอย"/>
@@ -3883,6 +3880,12 @@
       <url>http://www.pailomcity.com/</url>
     </office>
   </entity>
+  <entity type="ThesabanTambon" name="ปรุใหญ่" english="Pru Yai" geocode="3051" parent="3001" tambon="300107" >
+    <office type="MunicipalityOffice">
+      <url>http://www.pruyai.com/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="วังไทร" english="Wang Sai" geocode="3051" parent="3021" tambon="302111"/>
   <entity type="ThesabanTambon" name="หัวทะเล" english="Hua Thale" geocode="3050" parent="3001" tambon="300111">
     <office type="MunicipalityOffice">
       <geo:Point>
@@ -3950,6 +3953,8 @@
     </office>
   </entity>
 
+  <!-- codes were reused for Thesaban in 2010
   <entity type="SakhaTambon" name="มะค่า-พลสงคราม" english="Makha-Phon Songkhram" geocode="3051" parent="3009,3010"/>
   <entity type="SakhaTambon" name="สำนักตะคร้อ" english="Samnak Takhro" geocode="3052"/>
+  -->
 </entity>
