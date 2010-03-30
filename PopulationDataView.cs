@@ -30,16 +30,6 @@ namespace De.AHoerstemeier.Tambon
                 }
                 PopulationDataToTreeView(mTreeviewData, mData);
             }
-            var lEntitiesWithoutGeocode = mData.EntitiesWithoutGeocode();
-            if (lEntitiesWithoutGeocode.Count > 0)
-            {
-                string s = "";
-                foreach (PopulationDataEntry lEntry in lEntitiesWithoutGeocode)
-                {
-                    s = s + lEntry.Name + Environment.NewLine;
-                }
-                MessageBox.Show(lEntitiesWithoutGeocode.Count.ToString() + " entities without geocode" + Environment.NewLine + s);
-            }
         }
 
         public PopulationDataView()
