@@ -204,5 +204,16 @@ namespace De.AHoerstemeier.Tambon
             }
             boxText.Text = lValue;
         }
+
+        private void btnInvert_Click(object sender, EventArgs e)
+        {
+            String lValue = boxText.Text;
+            StringBuilder lBuilder = new StringBuilder();
+            foreach (String lSubString in lValue.Split('\n'))
+            {
+                lBuilder.Insert(0, lSubString + Environment.NewLine);
+            };
+            boxText.Text = lBuilder.ToString();
+        }
     }
 }
