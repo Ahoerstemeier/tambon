@@ -211,7 +211,7 @@ namespace De.AHoerstemeier.Tambon
             StringBuilder lBuilder = new StringBuilder();
             foreach (String lSubString in lValue.Split('\n'))
             {
-                lBuilder.Insert(0, lSubString + Environment.NewLine);
+                lBuilder.Insert(0, lSubString+'\n');
             };
             boxText.Text = lBuilder.ToString();
         }

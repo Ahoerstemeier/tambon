@@ -39,7 +39,7 @@
             // btnDoConvert
             // 
             this.btnDoConvert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDoConvert.Location = new System.Drawing.Point(316, 250);
+            this.btnDoConvert.Location = new System.Drawing.Point(317, 250);
             this.btnDoConvert.Name = "btnDoConvert";
             this.btnDoConvert.Size = new System.Drawing.Size(75, 23);
             this.btnDoConvert.TabIndex = 0;
@@ -56,13 +56,13 @@
             this.boxText.Location = new System.Drawing.Point(3, 2);
             this.boxText.Multiline = true;
             this.boxText.Name = "boxText";
-            this.boxText.Size = new System.Drawing.Size(388, 242);
+            this.boxText.Size = new System.Drawing.Size(389, 242);
             this.boxText.TabIndex = 1;
             // 
             // btnEncoding
             // 
             this.btnEncoding.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEncoding.Location = new System.Drawing.Point(235, 250);
+            this.btnEncoding.Location = new System.Drawing.Point(236, 250);
             this.btnEncoding.Name = "btnEncoding";
             this.btnEncoding.Size = new System.Drawing.Size(75, 23);
             this.btnEncoding.TabIndex = 2;
@@ -73,7 +73,7 @@
             // btnMonths
             // 
             this.btnMonths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMonths.Location = new System.Drawing.Point(154, 250);
+            this.btnMonths.Location = new System.Drawing.Point(155, 250);
             this.btnMonths.Name = "btnMonths";
             this.btnMonths.Size = new System.Drawing.Size(75, 23);
             this.btnMonths.TabIndex = 3;
@@ -84,7 +84,7 @@
             // btnTitles
             // 
             this.btnTitles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTitles.Location = new System.Drawing.Point(73, 250);
+            this.btnTitles.Location = new System.Drawing.Point(74, 250);
             this.btnTitles.Name = "btnTitles";
             this.btnTitles.Size = new System.Drawing.Size(75, 23);
             this.btnTitles.TabIndex = 4;
@@ -94,7 +94,8 @@
             // 
             // btnInvert
             // 
-            this.btnInvert.Location = new System.Drawing.Point(3, 250);
+            this.btnInvert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInvert.Location = new System.Drawing.Point(4, 250);
             this.btnInvert.Name = "btnInvert";
             this.btnInvert.Size = new System.Drawing.Size(64, 23);
             this.btnInvert.TabIndex = 5;
@@ -106,13 +107,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 273);
+            this.ClientSize = new System.Drawing.Size(392, 273);
             this.Controls.Add(this.btnInvert);
             this.Controls.Add(this.btnTitles);
             this.Controls.Add(this.btnMonths);
             this.Controls.Add(this.btnEncoding);
             this.Controls.Add(this.boxText);
             this.Controls.Add(this.btnDoConvert);
+            this.MinimumSize = new System.Drawing.Size(400, 300);
             this.Name = "NumeralsTambonHelper";
             this.Text = "NumeralsTambonHelper";
             this.ResumeLayout(false);
