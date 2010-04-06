@@ -12,6 +12,7 @@ namespace De.AHoerstemeier.Geo
         private double dCvtRad2Deg = 180.0 / Math.PI; // 57.2957795130823208767 ...
         private GeoDatum mDatum = GeoDatum.DatumWGS84();
         #endregion
+
         #region properties
         public double Altitude { get; set; }
         public double Latitude { get; set; }
