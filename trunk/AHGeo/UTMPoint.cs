@@ -7,6 +7,8 @@ namespace De.AHoerstemeier.Geo
 {
     public class UTMPoint : ICloneable, IEquatable<UTMPoint>
     {
+        public const Int16 MaxDigits = 7;
+        public const Int16 MinDigits = 2;
         #region properties
         public Int32 Northing { get; set; }
         public Int32 Easting { get; set; }
@@ -34,6 +36,13 @@ namespace De.AHoerstemeier.Geo
             ZoneNumber = iZoneNumber;
             IsNorthernHemisphere = iIsNorthernHemisphere;
         }
+        public UTMPoint(Double iEasting, Double iNorthing, Int32 iZoneNumber, Boolean iIsNorthernHemisphere)
+        {
+            Northing = Convert.ToInt32(Math.Round(iNorthing));
+            Easting = Convert.ToInt32(Math.Round(iEasting));
+            ZoneNumber = iZoneNumber;
+            IsNorthernHemisphere = iIsNorthernHemisphere;
+        }
         #endregion
 
         #region constants
@@ -55,15 +64,22 @@ namespace De.AHoerstemeier.Geo
         }
         public String ToUTMString(Int16 iDigits)
         {
+            Int16 lDigits = MakeDigitValid(iDigits);
             String lNorthing = Northing.ToString("0000000");
             String lEasting = Easting.ToString("0000000");
-            lEasting = lEasting.Substring(0, iDigits);
-            lNorthing = lNorthing.Substring(0, iDigits);
+            lEasting = lEasting.Substring(0, lDigits);
+            lNorthing = lNorthing.Substring(0, lDigits);
             String lResult = ZoneNumber.ToString("00") + ZoneBand() + ' ' + lEasting + ' ' + lNorthing;
             return lResult;
         }
-        public String ToMGRSString(Int32 iDigits)
+        static public Int16 MakeDigitValid(Int16 iDigits)
         {
+            Int16 lDigits = Math.Min(MaxDigits, Math.Max(MinDigits, iDigits));
+            return lDigits;
+        }
+        public String ToMGRSString(Int16 iDigits)
+        {
+            Int16 lDigits = MakeDigitValid(iDigits);
             String lNorthing = Northing.ToString("0000000");
             String lEasting = Easting.ToString("0000000");
             String lEastingLetters = MGRSEastingChars(ZoneNumber);
@@ -79,8 +95,8 @@ namespace De.AHoerstemeier.Geo
                 ZoneNumber.ToString("00") +
                 ZoneBand() + ' ' +
                 lEastingChar + lNorthingChar + ' ' +
-                lEasting.Substring(2, iDigits - 2) +
-                lNorthing.Substring(2, iDigits - 2);
+                lEasting.Substring(2, lDigits - 2) +
+                lNorthing.Substring(2,lDigits - 2);
             return lResult;
         }
         public static UTMPoint ParseUTMString(String iValue)
@@ -222,7 +238,7 @@ namespace De.AHoerstemeier.Geo
 
         public override string ToString()
         {
-            String lResult = ToUTMString(7);
+            String lResult = ToUTMString(MaxDigits);
             return lResult;
         }
 
