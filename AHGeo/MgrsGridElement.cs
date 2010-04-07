@@ -84,7 +84,7 @@ namespace De.AHoerstemeier.Geo
             return lResult;
         }
 
-        private void AddKmlStyle(KmlHelper iKmlWriter)
+        private static void AddKmlStyle(KmlHelper iKmlWriter)
         {
             XmlNode lNode = iKmlWriter.AddStyle(mDefStyle);
             iKmlWriter.AddStylePoly(lNode, 2, false);
@@ -107,10 +107,15 @@ namespace De.AHoerstemeier.Geo
         }
         public void ExportToKml(String iFilename)
         {
-            KmlHelper lKmlWriter = new KmlHelper();
-            AddKmlStyle(lKmlWriter);
+            KmlHelper lKmlWriter = StartKmlWriting();
             WriteToKml(lKmlWriter, lKmlWriter.DocumentNode);
             lKmlWriter.SaveToFile(iFilename);
+        }
+        public static KmlHelper StartKmlWriting()
+        {
+            KmlHelper lKmlWriter = new KmlHelper();
+            AddKmlStyle(lKmlWriter);
+            return lKmlWriter;
         }
         #endregion
 

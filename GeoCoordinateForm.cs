@@ -60,7 +60,10 @@ namespace De.AHoerstemeier.Tambon
                 try
                 {
                     mChanging = true;
-                    lValue = ZoneForThailandMGRS(lValue) + lValue;
+                    if (!TambonHelper.IsNumeric(lValue.Substring(0,2)))
+                    {
+                      lValue = ZoneForThailandMGRS(lValue) + lValue;
+                    }
                     UTMPoint lUTM = UTMPoint.ParseMGRSString(lValue);
                     edit_UTM.Text = lUTM.ToString();
                     GeoPoint lGeo = new GeoPoint(lUTM, (GeoDatum)cbx_datum.SelectedItem);

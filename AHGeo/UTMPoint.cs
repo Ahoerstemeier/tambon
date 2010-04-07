@@ -139,12 +139,12 @@ namespace De.AHoerstemeier.Geo
             Int32 lNorthingTemp = (lMinNorthing / 2000000) * 2000000 + lNorthingNumber * 100000;
             if (ZoneBand(lNorthingTemp, lZoneLetter >= 'N') != lZoneLetter)
             {
-                lNorthingTemp = lNorthingTemp + 200000;
+                lNorthingTemp = lNorthingTemp + 2000000;
             }
 
             Int32 lNorthing = lNorthingTemp+Convert.ToInt32(lNorthingString);
             Int32 lEasting = Convert.ToInt32(lEastingString);
-            UTMPoint lResult = new UTMPoint(lEasting, lNorthing, lZoneNumber, lZoneLetter > 'N');
+            UTMPoint lResult = new UTMPoint(lEasting, lNorthing, lZoneNumber, lZoneLetter >= 'N');
             return lResult;
         }
 
