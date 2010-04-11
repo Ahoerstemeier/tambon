@@ -167,6 +167,34 @@ namespace De.AHoerstemeier.Geo
             lResult.Easting = (lWest.Easting + lEast.Easting) / 2;
             return lResult;
         }
+        public Boolean IsValid()
+        {
+            Boolean lResult = SameZone(ActualCentralPoint());
+            return lResult; 
+        }
+
+        public List<MgrsGridElement> SubGrids()
+        {
+            List<MgrsGridElement> lResult = new List<MgrsGridElement>();
+            String lStart = mName.Substring(0, 5);
+            String lNumbers = mName.Remove(0, 5);
+            for (Int32 lSubEasting = 0; lSubEasting < 10; lSubEasting++)
+            {
+                for (Int32 lSubNorthing = 0; lSubNorthing < 100; lSubNorthing++)
+                {
+                    String lEastingString = lNumbers.Substring(0, mDigits-2) + lSubEasting.ToString();
+                    String lNorthingString = lNumbers.Substring(mDigits-2, mDigits-2) + lSubNorthing.ToString();
+                    String lName = lStart + lEastingString + lNorthingString;
+                    MgrsGridElement lSubElement = new MgrsGridElement(lName);
+                    lSubElement.Datum = this.Datum;
+                    if (lSubElement.IsValid())
+                    {
+                        lResult.Add(lSubElement);
+                    }
+                }
+            }
+            return lResult;
+        }
 
         private static void AddKmlStyle(KmlHelper iKmlWriter)
         {
@@ -206,7 +234,7 @@ namespace De.AHoerstemeier.Geo
         private void SetMgrs(String iValue)
         {
             String lMgrs = iValue.Replace(" ", "");
-            Int16 lDigits = Convert.ToInt16(lMgrs.Length-3);
+            Int16 lDigits = Convert.ToInt16((lMgrs.Length-1)/2);
             mCentralPoint = MakeCentral(UTMPoint.ParseMGRSString(iValue), lDigits);
             mDigits = lDigits;
             mName = iValue;
