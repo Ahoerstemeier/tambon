@@ -25,6 +25,9 @@
         <geo:lat>6.8687</geo:lat>
         <geo:long>101.2500</geo:long>
       </geo:Point>
+      <officials>
+        <official title="DistrictOfficer" name="ขวัญชาติ วงศ์ศุภรานันต์" comment="2009-06"/>
+      </officials>
     </office>
     <entity type="Tambon" name="สะบารัง" english="Sabarang" geocode="940101" />
     <entity type="Tambon" name="อาเนาะรู" english="Anoru" geocode="940102" />
@@ -79,6 +82,11 @@
     <entity type="Tambon" name="ปุยุด" english="Puyut" geocode="940113" />
   </entity>
   <entity type="Amphoe" name="โคกโพธิ์" english="Khok Pho" geocode="9402" >
+    <office type="DistrictOffice">
+      <officials>
+        <official title="DistrictOfficer" name="นิพนธ์ อินทรสกุล" comment="2009-06"/>
+      </officials>
+    </office>
     <entity type="Tambon" name="โคกโพธิ์" english="Khok Pho" geocode="940201" >
       <office type="TAOOffice">
         <url comment="Offline?">http://www.kokpho.go.th/</url>
@@ -134,6 +142,9 @@
         <geo:long>101.1787</geo:long>
       </geo:Point>
       <url>http://nongjik.blogspot.com/</url>
+      <officials>
+        <official title="DistrictOfficer" name="สนั่น พงษ์อักษร" comment="2009-06"/>
+      </officials>
     </office>
     <entity type="Tambon" name="เกาะเปาะ" english="Ko Po" geocode="940301" />
     <entity type="Tambon" name="คอลอตันหยง" english="Kholo Tanyong" geocode="940302" />
@@ -169,6 +180,11 @@
     <entity type="Tambon" name="ลิปะสะโง" english="Lipa Sa-ngo" geocode="940312" />
   </entity>
   <entity type="Amphoe" name="ปะนาเระ" english="Panare" geocode="9404" >
+    <office type="DistrictOffice">
+      <officials>
+        <official title="DistrictOfficer" name="ธรรมรงค์ คงวัดใหม่" comment="2009-06"/>
+      </officials>
+    </office>
     <entity type="Tambon" name="ปะนาเระ" english="Panare" geocode="940401" />
     <entity type="Tambon" name="ท่าข้าม" english="Tha Kham" geocode="940402" />
     <entity type="Tambon" name="บ้านนอก" english="Ban Nok" geocode="940403" />
@@ -213,7 +229,19 @@
         <official title="DistrictOfficer" name="สมศักดิ์ เจริญไพฑูรย์" end="2008-11-23"/>
       </officials>
     </office>
-    <entity type="Tambon" name="ตะโละแมะนา" english="Talo Maena" geocode="940601" />
+    <entity type="Tambon" name="ตะโละแมะนา" english="Talo Maena" geocode="940601" >
+      <office type="TAOOffice">
+        <!-- Longdo: 6.58868, 101.39387 -->
+        <url>http://www.talomaena.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="มะยูโซะ สาแลมะ"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="94060101" name="บ้านลูกไม้ไผ่"/>
+      <entity type="Muban" geocode="94060102" name="บ้านแลแวะ"/>
+      <entity type="Muban" geocode="94060103" name="บ้านตะโละแมะนา"/>
+      <entity type="Muban" geocode="94060104" name="บ้านตะโละนิบง"/>
+    </entity>
     <entity type="Tambon" name="พิเทน" english="Phithen" geocode="940602" >
       <office type="TAOOffice">
         <url>http://pitain.tripod.com/</url>
@@ -262,6 +290,11 @@
     <entity type="Tambon" name="ทุ่งคล้า" english="Thung Khla" geocode="940711" />
   </entity>
   <entity type="Amphoe" name="ไม้แก่น" english="Mai Kaen" geocode="9408" >
+    <office type="DistrictOffice">
+      <officials>
+        <official title="DistrictOfficer" name="สุรพร พร้อมมูล" comment="2009-06"/>
+      </officials>
+    </office>
     <entity type="Tambon" name="ไทรทอง" english="Sai Thong" geocode="940801" >
       <!-- Longdo: 6.62013, 101.66919 -->
     </entity>
@@ -281,30 +314,129 @@
         <geo:long>101.3692</geo:long>
       </geo:Point>
       <officials>
-        <official title="DistrictOfficer" name="ไกรศร วิศิษฎ์วงศ์" begin="2007-11-12"/>
+        <official title="DistrictOfficer" name="ไกรศร วิศิษฎ์วงศ์" begin="2007-11-12" comment="2009-06"/>
         <official title="DistrictOfficer" name="นิกร จันทร์อำไพ" end="2007-11-11"/>
+
+        <official title="DistrictOfficer" name="ศุภนัย พวงมณี" comment="2004"/>
       </officials>
     </office>
-    <entity type="Tambon" name="ตะโละ" english="Talo" geocode="940901" />
-    <entity type="Tambon" name="ตะโละกาโปร์" english="Talo Kapo" geocode="940902" />
+    <entity type="Tambon" name="ตะโละ" english="Talo" geocode="940901" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="มูฮัมหมัด มามะ" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ตะโละกาโปร์" english="Talo Kapo" geocode="940902" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="มามะรอหิง ดอเลาะ" comment="2007-10"/>
+          <official title="TAOChairman" name="อายิ ตาเยะ" comment="2004"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="94090201" name="บ้านปาตา"/>
+      <entity type="Muban" geocode="94090202" name="บ้านตะโละอาโห"/>
+      <entity type="Muban" geocode="94090203" name="บ้านท่าด่าน"/>
+      <entity type="Muban" geocode="94090204" name="บ้านท่าพง"/>
+      <entity type="Muban" geocode="94090205" name="บ้านท่ากุน">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="สาและ เจ๊ะอูเซ็ง" english="Salae Jae-useng"/>
+          </officials>
+        </office>
+      </entity>
+    </entity>
     <entity type="Tambon" name="ตันหยงดาลอ" english="Tanyong Talo" geocode="940903" />
     <entity type="Tambon" name="ตันหยงจึงงา" english="Tanyong Chueng-nga" geocode="940904" />
-    <entity type="Tambon" name="ตอหลัง" english="Tolang" geocode="940905" />
-    <entity type="Tambon" name="ตาแกะ" english="Takae" geocode="940906" />
-    <entity type="Tambon" name="ตาลีอายร์" english="Tali-ai" geocode="940907" />
+    <entity type="Tambon" name="ตอหลัง" english="Tolang" geocode="940905" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="ฮามะ เจะและ" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ตาแกะ" english="Takae" geocode="940906" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="ดอรอแม แจะแวนิ" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="ตาลีอายร์" english="Tali-ai" geocode="940907" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="รัตติยา กูนิง" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ยามู" english="Yamu" geocode="940908" />
     <entity type="Tambon" name="บางปู" english="Bang Pu" geocode="940909" />
-    <entity type="Tambon" name="หนองแรต" english="Nong Raet" geocode="940910" />
-    <entity type="Tambon" name="ปิยามุมัง" english="Piya Mumang" geocode="940911" />
+    <entity type="Tambon" name="หนองแรต" english="Nong Raet" geocode="940910" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="อิสมาแอ สนิ" comment="2004"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="94090901" name="บ้านหนองแรต"/>
+      <entity type="Muban" geocode="94090902" name="บ้านแหลม"/>
+      <entity type="Muban" geocode="94090903" name="บ้านแบรอ"/>
+      <entity type="Muban" geocode="94090904" name="บ้านบือแนลูวา"/>
+      <entity type="Muban" geocode="94090905" name="บ้านลางา"/>
+      <entity type="Muban" geocode="94090906" name="บ้านวอจา"/>
+    </entity>
+    <entity type="Tambon" name="ปิยามุมัง" english="Piya Mumang" geocode="940911" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="นิฮะ นิมะกะจิ" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ปุลากง" english="Pulakong" geocode="940912" />
-    <entity type="Tambon" name="บาโลย" english="Baloi" geocode="940913" />
-    <entity type="Tambon" name="สาบัน" english="Saban" geocode="940914" />
+    <entity type="Tambon" name="บาโลย" english="Baloi" geocode="940913" >
+      <office type="TAOOffice">
+        <url>http://www.totpattani.net/balo/</url>
+        <officials>
+          <official title="TAOChairman" name="อุมา มะลี" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="สาบัน" english="Saban" geocode="940914" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="จรัญ เส้นหล๊ะ" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="มะนังยง" english="Manang Yong" geocode="940915" />
-    <entity type="Tambon" name="ราตาปันยัง" english="Rata Panyang" geocode="940916" />
-    <entity type="Tambon" name="จะรัง" english="Charang" geocode="940917" />
-    <entity type="Tambon" name="แหลมโพธิ์" english="Laem Pho" geocode="940918" />
+    <entity type="Tambon" name="ราตาปันยัง" english="Rata Panyang" geocode="940916" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="นายเกษม ยามาลูติง" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="จะรัง" english="Charang" geocode="940917" >
+      <office type="TAOOffice">
+        <url>http://www.totpattani.net/jarang/</url>
+        <officials>
+          <official title="TAOChairman" name="กานต์ วานิ" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="แหลมโพธิ์" english="Laem Pho" geocode="940918" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="นิมา ยีอาแซ" comment="2004"/>
+        </officials>
+      </office>
+    </entity>
   </entity>
   <entity type="Amphoe" name="ยะรัง" english="Yarang" geocode="9410" >
+    <office type="DistrictOffice">
+      <officials>
+        <official title="DistrictOfficer" name="วชิระ อัลภาชน์" comment="2009-06"/>
+      </officials>
+    </office>
     <entity type="Tambon" name="ยะรัง" english="Yarang" geocode="941001" />
     <entity type="Tambon" name="สะดาวา" english="Sadawa" geocode="941002" />
     <entity type="Tambon" name="ประจัน" english="Prachan" geocode="941003" />
@@ -325,9 +457,21 @@
   <entity type="Amphoe" name="กะพ้อ" english="Kapho" geocode="9411" >
     <office type="DistrictOffice">
       <url>http://kaphor.org/</url>
+      <!--<url>http://gaporcity.blogspot.com/</url>-->
+      <officials>
+        <official title="DistrictOfficer" name="นิพนธ์ อินทรสกุล" comment="2009-06"/>
+      </officials>
     </office>
     <entity type="Tambon" name="กะรุบี" english="Karubi" geocode="941101" />
-    <entity type="Tambon" name="ตะโละดือรามัน" english="Talo Due Raman" geocode="941102" />
+    <entity type="Tambon" name="ตะโละดือรามัน" english="Talo Due Raman" geocode="941102" >
+      <office type="TAOOffice">
+        <!-- Longdo: 6.59573, 101.55503 -->
+        <url>http://www.talohduraman.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="อับดุลรอนิง เซ็ง"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ปล่องหอย" english="Plong Hoi" geocode="941103" />
   </entity>
   <entity type="Amphoe" name="แม่ลาน" english="Mae Lan" geocode="9412" >
@@ -370,15 +514,29 @@
   <entity type="ThesabanTambon" name="หนองจิก" english="Nong Chik" geocode="9494" parent="9403" />
   <entity type="ThesabanTambon" name="ปะนาเระ" english="Panare" geocode="9493" parent="9404" />
   <entity type="ThesabanTambon" name="มายอ" english="Mayo" geocode="9492" parent="9405" />
-  <entity type="ThesabanTambon" name="ตันหยง" english="Than Yong" geocode="9491" parent="9409" />
+  <entity type="ThesabanTambon" name="ตันหยง" english="Than Yong" geocode="9491" parent="9409" >
+    <office type="MunicipalityOffice">
+      <url>http://tbtanyong.nanacity.com/</url>
+      <officials>
+        <official title="Mayor" name="สาเหะมูหามัด อัลฮิดรุส" comment="2004"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางปู" english="Bang Pu" geocode="9490" parent="9409" >
     <office type="MunicipalityOffice">
       <url>http://www.bangpu.go.th/</url>
+      <officials>
+        <official title="Mayor" name="นิอัฮหมัดลุตฟิ นิเดร์หะ" comment="2004"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ยะหริ่ง" english="Yaring" geocode="9489" parent="9409" >
     <office type="MunicipalityOffice">
       <url>http://www.yaringcity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ฮัสซํน บาราเฮง"/>
+        <official title="Mayor" name="บรรจง อับดุลบุตร" comment="2004"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ยะรัง" english="Yarang" geocode="9488" parent="9410" />
