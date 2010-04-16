@@ -208,7 +208,7 @@ namespace De.AHoerstemeier.Geo
             String lDescription = "MGRS Grid: " + mName;
 
             GeoPoint lPoint = new GeoPoint(ActualCentralPoint(),mDatum);
-            iKmlWriter.AddPoint(iNode, lPoint.Latitude, lPoint.Longitude, mName, mDefStyle, String.Empty, lDescription);
+            // iKmlWriter.AddPoint(iNode, lPoint.Latitude, lPoint.Longitude, mName, mDefStyle, String.Empty, lDescription);
             List<GeoPoint> lBorder = new List<GeoPoint>();
             lBorder.Add(new GeoPoint(NorthWestCorner(),mDatum));
             lBorder.Add(new GeoPoint(NorthEastCorner(),mDatum));
