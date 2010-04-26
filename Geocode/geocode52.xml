@@ -950,7 +950,13 @@
         <official title="DistrictOfficer" name="วินัย สิทธิมณฑล" end="2007-10-23"/>
       </officials>
     </office>
-    <entity type="Tambon" name="ห้างฉัตร" english="Hang Chat" geocode="521201" />
+    <entity type="Tambon" name="ห้างฉัตร" english="Hang Chat" geocode="521201" >
+      <entity type="Muban" geocode="52120101" name="บ้านห้างฉัตรใต้"/>
+      <entity type="Muban" geocode="52120102" name="บ้านห้างฉัตรเหนือ"/>
+
+      <entity type="Muban" geocode="52120105" name="บ้านแพะดอนสัก"/>
+      <entity type="Muban" geocode="52120106" name="บ้านขามแดง"/>
+    </entity>
     <entity type="Tambon" name="หนองหล่ม" english="Nong Lom" geocode="521202" >
       <office type="TAOOffice">
         <url>http://www.nonglomlp.com/</url>
@@ -1172,7 +1178,18 @@
       <url>http://www.sobprabcity.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ห้างฉัตร" english="Hang Chat" geocode="5284" parent="5212" />
+  <entity type="ThesabanTambon" name="ห้างฉัตร" english="Hang Chat" geocode="5284" parent="5212" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 18.3270</geo:lat>
+        <geo:long> 99.3478</geo:long>
+      </geo:Point>
+      <url>http://www.hangchat.go.th/</url>
+      <officials>
+        <official title="Mayor" name="จรัญ วงศ์สวัสดิ์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เวียงมอก" english="Wiang Mok" geocode="5283" parent="5208" tambon="520805"/>
   <entity type="ThesabanTambon" name="แม่เมาะ" english="Mae Mo" geocode="5282" parent="5202" tambon="520204" >
     <office type="MunicipalityOffice">
