@@ -35,7 +35,8 @@ namespace De.AHoerstemeier.Tambon
               {EntityType.Chumchon, "ชุมชน"},
               {EntityType.TAO, "องค์การบริหารส่วนตำบล"},
               {EntityType.TC, "สภาตำบล"},
-              {EntityType.Phak, "ภาค"}
+              {EntityType.Phak, "ภาค"},
+              {EntityType.KlumChangwat, "กลุ่มจังหวัด"}
             };
         private static List<EntityType> mEntityThesaban = new List<EntityType>() 
         { 

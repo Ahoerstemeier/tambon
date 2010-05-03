@@ -25,7 +25,7 @@ namespace De.AHoerstemeier.Tambon
         TAO,
         TC,
         PAO,
-        Phak
+        Phak, KlumChangwat
     };
     public enum EntityModification
     {
