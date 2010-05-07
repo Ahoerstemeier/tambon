@@ -185,9 +185,15 @@
     <entity type="Tambon" name="ยางคราม" english="Yang Khram" geocode="500201" newgeocode="502403" />
     <entity type="Tambon" name="สองแคว" english="Song Khwae" geocode="500202" newgeocode="502402" />
     <entity type="Tambon" name="บ้านหลวง" english="Ban Luang" geocode="500203" >
-      <office type="TAOOffice">
-        <url comment="Offline">http://www.ban-loung.go.th/</url>
+      <office type="MunicipalityOffice">
+        <url>http://banluangcity.org/</url>
+        <!-- <url comment="Offline">http://www.ban-loung.go.th/</url> -->
       </office>
+      <entity type="Muban" geocode="50020301" name="บ้านแท่นคำ"/>
+      <entity type="Muban" geocode="50020302" name="บ้านลุ่มใต้"/>
+      <entity type="Muban" geocode="50020303" name="บ้านหลวงใต้"/>
+      <entity type="Muban" geocode="50020304" name="บ้านแม่กลาง"/>
+
       <entity type="Muban" geocode="50020319" name="บ้านห้วยเฮี๊ยะ"/>
 
       <entity type="Muban" geocode="50020323" name="บ้านใหม่ห้วยเฮี๊ยะ"/>
@@ -2328,7 +2334,11 @@
   </entity>
   <entity type="ThesabanTambon" name="จอมทอง" english="Chom Thong" geocode="5097" parent="5002" >
     <office type="MunicipalityOffice">
-      <url comment="Broken">http://www.chomthong.go.th/</url>
+      <url>http://www.chomthong.org/</url>
+      <!-- <url comment="Broken">http://www.chomthong.go.th/</url>-->
+      <officials>
+        <official title="Mayor" name="ยุทธ เทพวงศ์" comment="2010"/>
+      </officials>
     </office>
     <history>
       <rename oldname="บ้านหลวง" name="จอมทอง" oldenglish="Ban Luang" />
