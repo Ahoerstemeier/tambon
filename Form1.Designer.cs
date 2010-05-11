@@ -47,7 +47,7 @@ namespace Tambon
             this.btnSetup = new System.Windows.Forms.Button();
             this.btnNumerals = new System.Windows.Forms.Button();
             this.btnTambonFrequency = new System.Windows.Forms.Button();
-            this.btnTambonCreation = new System.Windows.Forms.Button();
+            this.btnCreationStatistics = new System.Windows.Forms.Button();
             this.openFileDialogXML = new System.Windows.Forms.OpenFileDialog();
             this.btnAreaUnits = new System.Windows.Forms.Button();
             this.btnGovernor = new System.Windows.Forms.Button();
@@ -261,19 +261,19 @@ namespace Tambon
             this.btnTambonFrequency.Name = "btnTambonFrequency";
             this.btnTambonFrequency.Size = new System.Drawing.Size(99, 23);
             this.btnTambonFrequency.TabIndex = 18;
-            this.btnTambonFrequency.Text = "TambonNames";
+            this.btnTambonFrequency.Text = "Tambon Names";
             this.btnTambonFrequency.UseVisualStyleBackColor = true;
             this.btnTambonFrequency.Click += new System.EventHandler(this.btnTambonFrequency_Click);
             // 
-            // btnTambonCreation
+            // btnCreationStatistics
             // 
-            this.btnTambonCreation.Location = new System.Drawing.Point(130, 259);
-            this.btnTambonCreation.Name = "btnTambonCreation";
-            this.btnTambonCreation.Size = new System.Drawing.Size(97, 23);
-            this.btnTambonCreation.TabIndex = 19;
-            this.btnTambonCreation.Text = "CreationStatictics";
-            this.btnTambonCreation.UseVisualStyleBackColor = true;
-            this.btnTambonCreation.Click += new System.EventHandler(this.btnTambonCreation_Click);
+            this.btnCreationStatistics.Location = new System.Drawing.Point(130, 259);
+            this.btnCreationStatistics.Name = "btnCreationStatistics";
+            this.btnCreationStatistics.Size = new System.Drawing.Size(111, 23);
+            this.btnCreationStatistics.TabIndex = 19;
+            this.btnCreationStatistics.Text = "Creation Statistics";
+            this.btnCreationStatistics.UseVisualStyleBackColor = true;
+            this.btnCreationStatistics.Click += new System.EventHandler(this.btnTambonCreation_Click);
             // 
             // openFileDialogXML
             // 
@@ -295,7 +295,7 @@ namespace Tambon
             // 
             this.btnGovernor.Location = new System.Drawing.Point(128, 318);
             this.btnGovernor.Name = "btnGovernor";
-            this.btnGovernor.Size = new System.Drawing.Size(99, 24);
+            this.btnGovernor.Size = new System.Drawing.Size(113, 24);
             this.btnGovernor.TabIndex = 21;
             this.btnGovernor.Text = "Governor";
             this.btnGovernor.UseVisualStyleBackColor = true;
@@ -305,7 +305,7 @@ namespace Tambon
             // 
             this.btnBoard.Location = new System.Drawing.Point(130, 289);
             this.btnBoard.Name = "btnBoard";
-            this.btnBoard.Size = new System.Drawing.Size(97, 23);
+            this.btnBoard.Size = new System.Drawing.Size(111, 23);
             this.btnBoard.TabIndex = 22;
             this.btnBoard.Text = "Board";
             this.btnBoard.UseVisualStyleBackColor = true;
@@ -396,7 +396,7 @@ namespace Tambon
             this.Controls.Add(this.btnBoard);
             this.Controls.Add(this.btnGovernor);
             this.Controls.Add(this.btnAreaUnits);
-            this.Controls.Add(this.btnTambonCreation);
+            this.Controls.Add(this.btnCreationStatistics);
             this.Controls.Add(this.btnTambonFrequency);
             this.Controls.Add(this.btnNumerals);
             this.Controls.Add(this.btnSetup);
@@ -444,7 +444,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnSetup;
         private System.Windows.Forms.Button btnNumerals;
         private System.Windows.Forms.Button btnTambonFrequency;
-        private System.Windows.Forms.Button btnTambonCreation;
+        private System.Windows.Forms.Button btnCreationStatistics;
         private System.Windows.Forms.OpenFileDialog openFileDialogXML;
         private System.Windows.Forms.Button btnAreaUnits;
         private System.Windows.Forms.Button btnGovernor;
