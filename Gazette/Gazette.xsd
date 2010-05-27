@@ -37,6 +37,13 @@
       <xs:enumeration value="NationalForest"/>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="SignByFunction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PrimeMinister"/>
+      <xs:enumeration value="MinisterOfInterior"/>
+      <xs:enumeration value="DeputyMinisterOfInterior"/>
+    </xs:restriction>
+    </xs:simpleType>
   <xs:complexType name='GazetteReference'>
     <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
 
@@ -198,6 +205,8 @@
     <xs:attribute name="sign" type="xs:date" use="optional" />
     <xs:attribute name="effective" type="xs:date" use="optional" />
     <xs:attribute name="subtitle" type="xs:string" use="optional" />
+    <xs:attribute name="signedby" type="xs:string" use="optional" />
+    <xs:attribute name="signedbyfunction" type="SignByFunction" use="optional" />
   </xs:complexType>
   <xs:complexType name='GazetteEntryContainer'>
     <xs:sequence>
