@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครปฐม" english="Nakhon Pathom" geocode="73">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat> 13.7667</geo:lat>
+      <geo:long>100.0586</geo:long>
+    </geo:Point>
     <url>http://www.nakhonpathom.go.th/</url>
     <officials source="http://61.19.85.103/npt2008/showofficial.php">
       <official title="Governor" index="38" name="ปนัดดา ดิศกุล" begin="2009-10-01"/>
@@ -45,6 +49,10 @@
     </officials>
   </office>
   <office type="PAOOffice">
+    <geo:Point>
+      <geo:lat> 13.7845</geo:lat>
+      <geo:long>100.0513</geo:long>
+    </geo:Point>
     <url>http://www.nkppao.go.th/</url>
   </office>
   <entity type="Amphoe" name="เมืองนครปฐม" english="Mueang Nakhon Pathom" geocode="7301" >
@@ -751,6 +759,10 @@
     </entity>
     <entity type="Tambon" name="บางกระทึก" english="Bang Krathuek" geocode="730604" >
       <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat> 13.7722</geo:lat>
+          <geo:long>100.2849</geo:long>
+        </geo:Point>
         <url>http://www.bangkrateuk.com/</url>
       </office>
       <entity type="Muban" geocode="73060401" name="บ้านคลองเจริญพร"/>
@@ -964,6 +976,7 @@
   <entity type="ThesabanNakhon" name="นครปฐม" english="Nakhon Pathom" geocode="7399" parent="7301" >
     <office type="MunicipalityOffice">
       <geo:Point>
+        <!--Building torn down between 2005 and 2010, to be rebuilt? -->
         <geo:lat>13.8204</geo:lat>
         <geo:long>100.0626</geo:long>
       </geo:Point>
