@@ -132,7 +132,8 @@ namespace De.AHoerstemeier.Tambon
                 EntityModification.AreaChange,new Dictionary<ProtectedAreaTypes,String>
                 {
                     {ProtectedAreaTypes.NationalPark,"เปลี่ยนแปลงเขตอุทยานแห่งชาติ"},
-                    {ProtectedAreaTypes.WildlifeSanctuary,"เปลี่ยนแปลงเขตรักษาพันธุ์สัตว์ป่า"}
+                    {ProtectedAreaTypes.WildlifeSanctuary,"เปลี่ยนแปลงเขตรักษาพันธุ์สัตว์ป่า"},
+                    {ProtectedAreaTypes.HistoricalSite,"แก้ไขเขตที่ดินโบราณสถาน"}
                 }
             }    
         };
