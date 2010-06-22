@@ -40,8 +40,15 @@
   <xs:simpleType name="SignByFunction">
     <xs:restriction base="xs:string">
       <xs:enumeration value="PrimeMinister"/>
+      <!-- นายกรัฐมนตรี -->
       <xs:enumeration value="MinisterOfInterior"/>
       <xs:enumeration value="DeputyMinisterOfInterior"/>
+      <xs:enumeration value="ProvinceGovernor"/>
+      <xs:enumeration value="BangkokGovernor"/>
+      <xs:enumeration value="BangkokPermanentSecretary"/>
+      <!-- ปลัดกรุงเทพ -->
+      <xs:enumeration value="DeputyBangkokPermanentSecretary"/>
+      <!-- รองปลัดกรุงเทพ -->
     </xs:restriction>
     </xs:simpleType>
   <xs:complexType name='GazetteReference'>
