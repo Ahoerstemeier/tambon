@@ -89,4 +89,17 @@ namespace De.AHoerstemeier.Tambon
         VillageHeadmanOffice,
         DistrictMuseum // ???
     }
+    public enum GazetteSignPosition
+    { 
+        Unknown,
+        PrimeMinister,
+        MinisterOfInterior,
+        DeputyMinisterOfInterior,
+        MinistryOfInteriorPermanentSecretary,
+        ProvinceGovernor,
+        BangkokGovernor,
+        BangkokPermanentSecretary,
+        DeputyBangkokPermanentSecretary,
+        MinisterOfInformationAndCommunicationTechnology
+    }
 }
