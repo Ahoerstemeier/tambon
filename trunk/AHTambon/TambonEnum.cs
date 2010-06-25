@@ -100,6 +100,7 @@ namespace De.AHoerstemeier.Tambon
         BangkokGovernor,
         BangkokPermanentSecretary,
         DeputyBangkokPermanentSecretary,
-        MinisterOfInformationAndCommunicationTechnology
+        MinisterOfInformationAndCommunicationTechnology,
+        ElectionCommissionPresident
     }
 }
