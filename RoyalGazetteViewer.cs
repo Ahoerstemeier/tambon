@@ -22,6 +22,8 @@ namespace De.AHoerstemeier.Tambon
             mTable.Columns.Add("Signed", typeof(DateTime));
             mTable.Columns.Add("Publication", typeof(DateTime));
             mTable.Columns.Add("Effective", typeof(DateTime));
+            mTable.Columns.Add("SignedBy", typeof(String));
+            mTable.Columns.Add("SignedByAs", typeof(GazetteSignPosition));
             mTable.Columns.Add("Gazette", typeof(String));
         }
 
@@ -38,6 +40,8 @@ namespace De.AHoerstemeier.Tambon
                 lRow["Publication"] = lEntry.Publication;
                 lRow["Signed"] = lEntry.Sign;
                 lRow["Effective"] = lEntry.Effective;
+                lRow["SignedBy"] = lEntry.SignedBy;
+                lRow["SignedByAs"] = lEntry.SignedByPosition;
                 lRow["Gazette"] = lEntry;
                 mTable.Rows.Add(lRow);
             }
