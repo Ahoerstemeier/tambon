@@ -58,7 +58,8 @@ namespace De.AHoerstemeier.Tambon
         PAOChairman,
         Mayor,
         TAOChairman,
-        SanitaryDistrictChairman
+        SanitaryDistrictChairman,
+        ChumchonChairman
     }
     public enum PersonTitle
     {
@@ -87,6 +88,7 @@ namespace De.AHoerstemeier.Tambon
         TAOOffice,
         MunicipalityOffice,
         VillageHeadmanOffice,
+        ChumchonOffice,
         DistrictMuseum // ???
     }
     public enum GazetteSignPosition
