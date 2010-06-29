@@ -29,6 +29,7 @@ namespace De.AHoerstemeier.Tambon
               {OfficeType.MunicipalityOffice, "Municipality office"},
               {OfficeType.TAOOffice, "TAO office"},
               {OfficeType.VillageHeadmanOffice, "Village headman office"},
+              {OfficeType.ChumchonOffice,"Chumchon office"},
 
               {OfficeType.DistrictMuseum,"District museum"}
             };
