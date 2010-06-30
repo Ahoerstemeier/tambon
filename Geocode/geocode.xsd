@@ -166,10 +166,18 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="HistoryCreate">
+    <xs:complexContent>
+      <xs:extension base="HistoryEntry">
+        <xs:attribute name="type" type="EntityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:group name="History" >
     <xs:choice>
       <xs:element maxOccurs="unbounded" name="rename" type="HistoryRename"/>
       <xs:element maxOccurs="unbounded" name="statuschange" type="HistoryStatus"/>
+      <xs:element maxOccurs="unbounded" name="create" type="HistoryCreate"/>
       <xs:element maxOccurs="unbounded" name="misspelling" type="HistorySpelling"/>
     </xs:choice>
   </xs:group>
