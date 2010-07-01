@@ -180,7 +180,7 @@ namespace De.AHoerstemeier.Geo
             String lNumbers = mName.Remove(0, 5);
             for (Int32 lSubEasting = 0; lSubEasting < 10; lSubEasting++)
             {
-                for (Int32 lSubNorthing = 0; lSubNorthing < 100; lSubNorthing++)
+                for (Int32 lSubNorthing = 0; lSubNorthing < 10; lSubNorthing++)
                 {
                     String lEastingString = lNumbers.Substring(0, mDigits-2) + lSubEasting.ToString();
                     String lNorthingString = lNumbers.Substring(mDigits-2, mDigits-2) + lSubNorthing.ToString();
