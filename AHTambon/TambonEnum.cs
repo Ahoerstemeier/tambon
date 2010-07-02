@@ -103,6 +103,8 @@ namespace De.AHoerstemeier.Tambon
         BangkokPermanentSecretary,
         DeputyBangkokPermanentSecretary,
         MinisterOfInformationAndCommunicationTechnology,
-        ElectionCommissionPresident
+        ElectionCommissionPresident,
+        RoyalInstitutePresident,
+        RoyalInstituteActingPresident
     }
 }
