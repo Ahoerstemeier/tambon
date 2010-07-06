@@ -423,7 +423,15 @@
       <entity type="Muban" geocode="13050404" name="บ้านคลองบางโพธิ์"/>
       <entity type="Muban" geocode="13050405" name="บ้านคลองบางเตย"/>
     </entity>
-    <entity type="Tambon" name="คลองพระอุดม" english="Khlong Phra Udom" geocode="130505" />
+    <entity type="Tambon" name="คลองพระอุดม" english="Khlong Phra Udom" geocode="130505" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat> 13.9741</geo:lat>
+          <geo:long>100.4482</geo:long>
+        </geo:Point>
+        <url>http://www.klongphraudomcity.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ่อเงิน" english="Bo Ngoen" geocode="130506" >
       <office type="TAOOffice">
         <url>http://www.borngern.org/</url>
@@ -586,6 +594,10 @@
 
   <entity type="ThesabanMueang" name="ปทุมธานี" english="Pathum Thani" geocode="1399" parent="1301" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 14.0193</geo:lat>
+        <geo:long>100.5351</geo:long>
+      </geo:Point>
       <url>http://www.nmt.or.th/pathum/MuangPathum/</url>
     </office>
   </entity>
@@ -645,8 +657,17 @@
       <url>http://www.tambonrahang.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ลำไทร" english="Lam Sai" geocode="1389" parent="1306" />
-  <entity type="ThesabanTambon" name="ลำลูกกา" english="Lam Luk Ka" geocode="1388" parent="1306" />
+  <entity type="ThesabanTambon" name="ลำไทร" english="Lam Sai" geocode="1389" parent="1306" >
+    <!-- Longdo: 13.95355, 100.86038 -->
+  </entity>
+  <entity type="ThesabanTambon" name="ลำลูกกา" english="Lam Luk Ka" geocode="1388" parent="1306" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 13.9297</geo:lat>
+        <geo:long>100.7375</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางเตย" english="Bang Toei" geocode="1387" parent="1307" >
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/pathum/bangtoei/</url>
@@ -654,7 +675,14 @@
   </entity>
   <entity type="ThesabanTambon" name="บางกะดี" english="Bang Kadi" geocode="1386" parent="1301" tambon="130112">
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.9841</geo:lat>
+        <geo:long>100.5512</geo:long>
+      </geo:Point>
       <url>http://www.bangkadi.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ธวัชชัย อึ้งอัมพรวิไล" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หลักหก" english="Lak Hok" geocode="1385" parent="1301" tambon="130114" >
@@ -672,6 +700,9 @@
         <geo:long>100.6687</geo:long>
       </geo:Point>
       <url>http://www.bungyeetho.go.th/</url>
+      <officials>
+        <official title="Mayor" name="รังสรรค์  นันทกาวงศ์" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บางคูวัด" english="Bang Khu Wat" geocode="1383" parent="1301" tambon="130107" />
@@ -682,6 +713,9 @@
         <geo:long>100.6506</geo:long>
       </geo:Point>
       <url>http://www.lamsamkaeo.go.th/</url>
+      <officials>
+        <official title="Mayor" name="บุญไกร บุญคุ้ม" comment="2010"/>
+      </officials>
     </office>
   </entity>
 
