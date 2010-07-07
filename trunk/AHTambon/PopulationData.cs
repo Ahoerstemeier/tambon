@@ -376,11 +376,39 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        public void Process()
+        private void ProcessAllProvinces()
+        {
+            PopulationDataEntry lData = new PopulationDataEntry();
+            foreach (PopulationDataEntry lEntry in TambonHelper.Geocodes)
+            {
+                PopulationData lTempCalculator = new PopulationData(mYear, lEntry.Geocode);
+                lTempCalculator.Process();
+                lData.SubEntities.Add(lTempCalculator.Data);
+                lData.Female += lTempCalculator.Data.Female;
+                lData.Male += lTempCalculator.Data.Male;
+                lData.Households += lTempCalculator.Data.Households;
+                lData.Total += lTempCalculator.Data.Total;
+            }
+            mChangwat = lData;
+        }
+        private void ProcessProvince(Int32 iGeocode)
         {
             GetData();
             GetGeocodes();
             ReOrderThesaban();
+        }
+
+        public void Process()
+        {
+            if (mGeocode==0)
+            {
+                ProcessAllProvinces();
+            }
+            else
+            {
+                ProcessProvince(mGeocode);
+            }
+
             if (OnProcessingFinished != null)
             {
                 OnProcessingFinished(this);
