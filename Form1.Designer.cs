@@ -59,6 +59,7 @@ namespace Tambon
             this.btnGeo = new System.Windows.Forms.Button();
             this.btnThesaban = new System.Windows.Forms.Button();
             this.btnMgrsGrid = new System.Windows.Forms.Button();
+            this.btnConstituency = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -381,11 +382,22 @@ namespace Tambon
             this.btnMgrsGrid.UseVisualStyleBackColor = true;
             this.btnMgrsGrid.Click += new System.EventHandler(this.btnMgrsGrid_Click);
             // 
+            // btnConstituency
+            // 
+            this.btnConstituency.Location = new System.Drawing.Point(25, 137);
+            this.btnConstituency.Name = "btnConstituency";
+            this.btnConstituency.Size = new System.Drawing.Size(112, 22);
+            this.btnConstituency.TabIndex = 30;
+            this.btnConstituency.Text = "Constituency";
+            this.btnConstituency.UseVisualStyleBackColor = true;
+            this.btnConstituency.Click += new System.EventHandler(this.btnConstituency_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnConstituency);
             this.Controls.Add(this.btnMgrsGrid);
             this.Controls.Add(this.btnThesaban);
             this.Controls.Add(this.btnGeo);
@@ -456,6 +468,7 @@ namespace Tambon
         private System.Windows.Forms.Button btnGeo;
         private System.Windows.Forms.Button btnThesaban;
         private System.Windows.Forms.Button btnMgrsGrid;
+        private System.Windows.Forms.Button btnConstituency;
     }
 }
 
