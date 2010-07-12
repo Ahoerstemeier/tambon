@@ -384,11 +384,8 @@ namespace De.AHoerstemeier.Tambon
                 PopulationData lTempCalculator = new PopulationData(mYear, lEntry.Geocode);
                 lTempCalculator.Process();
                 lData.SubEntities.Add(lTempCalculator.Data);
-                lData.Female += lTempCalculator.Data.Female;
-                lData.Male += lTempCalculator.Data.Male;
-                lData.Households += lTempCalculator.Data.Households;
-                lData.Total += lTempCalculator.Data.Total;
             }
+            lData.CalculateNumbersFromSubEntities();
             mChangwat = lData;
         }
         private void ProcessProvince(Int32 iGeocode)
