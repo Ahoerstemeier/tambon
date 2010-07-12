@@ -13,22 +13,29 @@ namespace De.AHoerstemeier.Tambon
         #endregion
 
         #region methods
-        public static Dictionary<PopulationDataEntry, Int32> Calculate(Int32 iParentGeocode, Int32 iYear, Int32 NumberOfSeats)
+        public static Dictionary<PopulationDataEntry, Int32> Calculate(Int32 iParentGeocode, Int32 iYear, Int32 iNumberOfSeats)
         {
-            Dictionary<PopulationDataEntry, Int32> retval = new Dictionary<PopulationDataEntry, Int32>();
+            Dictionary<PopulationDataEntry, Int32> retval = null;
 
             PopulationData lDownloader = new PopulationData(iYear, iParentGeocode);
             lDownloader.Process();
+            retval = Calculate(lDownloader.Data, iYear, iNumberOfSeats);
+            return retval;
+        }
+        public static Dictionary<PopulationDataEntry, Int32> Calculate(PopulationDataEntry iData, Int32 iYear, Int32 iNumberOfSeats)
+        {
+            Dictionary<PopulationDataEntry, Int32> retval = new Dictionary<PopulationDataEntry, Int32>();
+
             Int32 lTotalPopulation = 0;
-            foreach (PopulationDataEntry lEntry in lDownloader.Data.SubEntities)
+            foreach (PopulationDataEntry lEntry in iData.SubEntities)
             {
                 retval.Add(lEntry, 0);
                 lTotalPopulation += lEntry.Total;
             }
-            double lDivisor = (1.0*NumberOfSeats) / (1.0*lTotalPopulation);
-            Int32 lRemainingSeat = NumberOfSeats;
+            double lDivisor = (1.0*iNumberOfSeats) / (1.0*lTotalPopulation);
+            Int32 lRemainingSeat = iNumberOfSeats;
             Dictionary<PopulationDataEntry, double> lRemainder = new Dictionary<PopulationDataEntry, double>();
-            foreach (PopulationDataEntry lEntry in lDownloader.Data.SubEntities)
+            foreach (PopulationDataEntry lEntry in iData.SubEntities)
             {
                 double lSeats = lEntry.Total * lDivisor;
                 Int32 lActualSeats = Math.Max(1, Convert.ToInt32(Math.Truncate(lSeats)));
@@ -39,7 +46,7 @@ namespace De.AHoerstemeier.Tambon
             }
 
             List<PopulationDataEntry> lSortedRemainders = new List<PopulationDataEntry>();
-            foreach (PopulationDataEntry lEntry in lDownloader.Data.SubEntities)
+            foreach (PopulationDataEntry lEntry in iData.SubEntities)
             {
                 lSortedRemainders.Add(lEntry);
             }
