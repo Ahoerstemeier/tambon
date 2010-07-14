@@ -162,10 +162,11 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="GazetteSuggestion">
+  <xs:complexType name="GazetteInterpellation">
     <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="1"/>
 
     <xs:attribute name="author" type="xs:string" use="optional" />
+    <xs:attribute name="number" type="xs:integer" use="optional" />
   </xs:complexType>
   <xs:complexType name='GazetteCapital'>
     <xs:complexContent>
@@ -198,7 +199,7 @@
       <xs:element name="abolishpark" type="GazettePark"/>
 <!--      <xs:element name="renamepark" type="GazettePark"/> -->
       <xs:element name="areachangepark" type="GazettePark"/>
-      <xs:element name="suggestion" type="GazetteSuggestion"/>
+      <xs:element name="interpellation" type="GazetteInterpellation"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name='GazetteEntry'>
