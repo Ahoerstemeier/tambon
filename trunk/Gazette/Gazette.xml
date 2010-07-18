@@ -167,7 +167,7 @@
     </abolish>
     <areachange type="Amphoe" name="เมืองโพนพิสัย" english="Mueang Phon Phisai" geocode="4305"/>
     <areachange type="Amphoe" name="เมืองไชยบุรี" english="Mueang Chaiburi" geocode="4303">
-      <capital name="บ้านบึงกาฬ"/>
+      <capital capitalname="บ้านบึงกาฬ"/>
     </areachange>
     <create type="Amphoe" name="เมืองพล" english="Mueang Phon" geocode="4012" >
       <areachange geocode="4018"/>
@@ -362,12 +362,6 @@
       <reassign type="Tambon" name="บ้านท่าวังพร้าว" english="Ban Tha Wang Phrao" geocode="501203" newowner="5012"/>
     </abolish>
   </entry>
-  <entry description="Abolish of Amphoe and reassign of Amphoe in Samut Songkhram and Ratchaburi" title="แจ้งความกระทรวงมหาดไทย เรื่อง ยกเลิกอำเภอแม่น้ำอ้อม กับ อำเภอสี่หมื่น เมืองราชบุรีมาเป็นเขตเมือง สมุทรสงคราม" volume="30" page="1073" issue="0 ง" uri="2456/D/1073.PDF" publication="1913-08-24" sign="1913-08-16">
-    <abolish type="Amphoe" name="แม่น้ำอ้อม" english="Mae Nam Om">
-      <areachange type="Amphoe" name="สี่หมื่น" english="Si Muen" geocode="7502"/>
-    </abolish>
-    <reassign type="Amphoe" name="สี่หมื่น" english="Si Muen" geocode="7502" oldowner="70"/>
-  </entry>
   <entry description="Abolish of Amphoe" title="แก้คำผิด ราชกิจจานุเบกษา เล่ม ๓๒ ตอนที่ ๓๑ ประกาศยกเลิกอำเภอชั้นใน ๗ อำเภอ และตั้งอำเภอชั้นในขึ้นใหม่ ๒๕ อำเภอ หน้า ๓๓๖,๓๓๘,๓๔๑,๓๔๔" volume="32" page="1817" issue="0 ง" uri="2458/D/1817.PDF" publication="1915-11-14" />
   <entry description="Abolish of Amphoe" title="แก้คำผิด ราชกิจจานุเบกษา แผนกกฤษฎีกา เล่ม ๓๒ ตอนที่ ๓๒ ประกาศยกเลิกอำเภอชั้นใน ๗ อำเภอ และตั้งอำเภอชั้นในขึ้นใหม่ ๒๕ อำเภอ หน้า ๓๔๒, ๓๔๓, ๓๔๔, ๓๔๗" volume="33" page="1468" issue="0 ง" uri="2459/D/1468.PDF" publication="1916-09-10" />
 
@@ -501,4 +495,22 @@
       <areachange type="Monthon" name="พิษณุโลก" english="Phitsanulok"/>
     </create>
   </entry>
+
+  <entry description="Reassign of Amphoe from Ratchaburi to Samut Songkhram" title="แจ้งความกระทรวงมหาดไทย เรื่อง ยกเลิกอำเภอแม่น้ำอ้อม กับ อำเภอสี่หมื่น เมืองราชบุรีมาเป็นเขตเมือง สมุทรสงคราม" volume="30" page="1073" issue="0 ง" uri="2456/D/1073.PDF" publication="1913-08-24" sign="1913-08-16">
+    <abolish type="Amphoe" name="แม่น้ำอ้อม" english="Mae Nam Om">
+      <areachange type="Amphoe" name="สี่หมื่น" english="Si Muen" geocode="7502"/>
+    </abolish>
+    <!--<reassign name="แม่น้ำอ้อม" geocode="7008" oldowner="70" newowner="75"/>-->
+    <reassign name="สี่หมื่น" geocode="7502" oldowner="70" newowner="75"/>
+    <!-- List of Amphoe in Ratchaburi and Samut Songkhram--> 
+  </entry>
+  <entry description="Amphoe changes in Ratchaburi and Samut Songkhram" title="แจ้งความกระทรวงมหาดไทย เรื่อง ย้ายที่ว่าการอำเภอและตั้งกิ่งอำเภอ" subtitle="ย้ายที่ว่าการอำเภอแม่น้ำอ้อมไปตั้งที่ว่าการอำเภอปากท่อ เรียกว่า อำเภอปากท่อ และให้ตั้งกิ่งอำเภอวัดเพลง ขึ้นอยู่ในความปกครองของอำเภอปากท่อ จังหวัดราชบุรี" volume="31" page="2220" issue="0 ง" uri="2457/D/2220.PDF" publication="1914-12-27" sign="1914-12-21">
+    <reassign type="Amphoe" name="แม่น้ำอ้อม" english="Mae Nam Om" geocode="7008" oldowner="75" newowner="70"/>
+    <rename type="Amphoe" oldname="แม่น้ำอ้อม" oldenglish="Mae Nam Om" name="ปากท่อ" english="Pak Tho" geocode="7008" />
+    <create type="KingAmphoe" name="วัดเพลง" geocode="7009" parent="7008"/>
+  </entry>
+  <entry description="Amphoe changes in Ratchaburi and Samut Songkhram"  title="ประกาศกระทรวงมหาดไทย ประกาศยกเขตอำเภอแม่น้ำอ้อม อำเภอสี่หมื่น จากเมืองราชบุรีไปขึ้นเมืองสมุทรสงคราม" volume="28" page="489" issue="0 ง" uri="2454/D/489_1.PDF" publication="1911-06-11" >
+    <reassign type="Amphoe" name="แม่น้ำอ้อม" english="Mae Nam Om" geocode="7008" oldowner="70" newowner="75"/>
+  </entry>
+
 </gazette>
