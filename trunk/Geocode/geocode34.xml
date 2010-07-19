@@ -997,7 +997,9 @@
     </entity>
     <entity type="Tambon" name="โนนค้อ" english="Non Kho" geocode="341006" />
     <entity type="Tambon" name="บัวงาม" english="Bua Ngam" geocode="341007" />
-    <entity type="Tambon" name="บ้านแมด" english="Ban Maet" geocode="341008" />
+    <entity type="Tambon" name="บ้านแมด" english="Ban Maet" geocode="341008" >
+      <!-- Longdo:  14.853883° 105.321781° -->
+    </entity>
   </entity>
   <entity type="Amphoe" name="ตระการพืชผล" english="Trakan Phuet Phon" geocode="3411" >
     <office type="DistrictOffice">
@@ -2198,7 +2200,19 @@
   <entity type="ThesabanTambon" name="บุญฑริก" english="Buntharik" geocode="3486" parent="3410" >
     <office type="MunicipalityOffice">
       <url>http://www.bun.ob.tc/</url>
+      <officials>
+        <official title="Mayor" name="จันทร์ศรี งานในเมือง" comment="2010"/>
+      </officials>
     </office>
+    <!--
+    1.ชุมชนบ้านบัวงาม	หมู่ที่ 1 ตำบลบัวงาม
+    2.ชุมชน บ้านโพนงาม	หมู่ที่ 1 ตำบลโพนงาม
+    3.ชุมชน บ้านโนนสวรรค์	หมู่ที่ 2 ตำบลบัวงาม
+    4.ชุมชน บ้านบุณฑริก	หมู่ที่ 8 ตำบลบัวงาม
+    5.ชุมชน บ้านสวนสน	หมู่ที่ 9 ตำบลโพนงาม
+    6.ชุมชน บ้านโนนท่าช้าง	หมู่ที่ 10 ตำบลบัวงาม
+    7.ชุมชน บ้านโพนสุขสันต์	หมู่ที่ 12 ตำบลโพนงาม
+    -->
   </entity>
   <entity type="ThesabanTambon" name="ตระการพืชผล" english="Trakan Phuetphon" geocode="3485" parent="3411" >
     <office type="MunicipalityOffice">
@@ -2220,8 +2234,23 @@
       <url>http://huaikhayung.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="อ่างศิลา" english="Ang Sila" geocode="3481" parent="3419" />
-  <entity type="ThesabanTambon" name="ตาลสุม" english="Tan Sum" geocode="3480" parent="3420" />
+  <entity type="ThesabanTambon" name="อ่างศิลา" english="Ang Sila" geocode="3481" parent="3419" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 15.0628</geo:lat>
+        <geo:long>105.2730</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ตาลสุม" english="Tan Sum" geocode="3480" parent="3420">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 15.3154</geo:lat>
+        <geo:long>105.1606</geo:long>
+      </geo:Point>
+      <url comment="Offline">http://www.tansum.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="โพธิ์ไทร" english="Pho Sai" geocode="3479" parent="3421" >
     <office type="MunicipalityOffice">
       <geo:Point>
@@ -2245,7 +2274,14 @@
       <url>http://www.nmt.or.th/ubon/saensuk/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ขามใหญ่" english="Kham Yai" geocode="3475" parent="3401" tambon="340108"/>
+  <entity type="ThesabanTambon" name="ขามใหญ่" english="Kham Yai" geocode="3475" parent="3401" tambon="340108">
+    <office type="MunicipalityOffice">
+      <url>http://khamyai.org/</url>
+      <officials>
+        <official title="Mayor" name="ปัญญา กัลป์ตินันท์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="กุดประทาย" english="Kut Prathai" geocode="3474" parent="3407" tambon="340709"/>
   <entity type="ThesabanTambon" name="นิคมสร้างตนเองลำโดมน้อย" english="Nikhom Sang Ton-eng Lam Dom Noi" geocode="3473" parent="3425" tambon="342504">
     <!-- Longdo: 15.15583, 102.51045 -->
@@ -2256,7 +2292,13 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ปทุม" english="Pathum" geocode="3471" parent="3401" tambon="340107" />
-  <entity type="ThesabanTambon" name="เทพวงศา" english="Thep Wongsa" geocode="3470" parent="3405" tambon="340501" />
+  <entity type="ThesabanTambon" name="เทพวงศา" english="Thep Wongsa" geocode="3470" parent="3405" tambon="340501" >
+    <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="อลงกต แสวงสุข" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ขามป้อม" english="Kham Pom" geocode="3469" parent="3405" tambon="340503" >
     <office type="MunicipalityOffice">
       <url>http://tambonkhampom.com/</url>
