@@ -1263,6 +1263,7 @@
     <entity type="Tambon" name="นาสาร" english="Na San" geocode="841201"/>
     <entity type="Tambon" name="พรุพี" english="Phru Phi" geocode="841202">
       <office type="TAOOffice">
+        <!-- Unsure:   8.706814°  99.354248° -->
         <url>http://www.phruphi.go.th/</url>
         <officials>
           <official title="TAOChairman" name="ประเวช ลิกขะไชย" begin="2008-08-31"/>
@@ -1302,6 +1303,9 @@
     <entity type="Tambon" name="ท่าชี" english="Tha Chi" geocode="841205">
       <office type="TAOOffice">
         <url>http://www.thachi.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="บัญชา หนูภักดี" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="84120501" name="นาควน"/>
       <entity type="Muban" geocode="84120502" name="นาลึก"/>
@@ -1312,7 +1316,14 @@
     </entity>
     <entity type="Tambon" name="ควนศรี" english="Khuan Si" geocode="841206">
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>8.7072</geo:lat>
+          <geo:long>99.3311</geo:long>
+        </geo:Point>
         <url>http://www.khuansri.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ธีระ โพธิ์เพชร" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="84120601" name="ควนมหาชัย"/>
       <entity type="Muban" geocode="84120602" name="ควนศรี"/>
@@ -2184,18 +2195,17 @@
         <official title="Mayor" name="ยุทธศักดิ์ ชูศักดิ์" begin="2009-08-23"/>
       </officials>
     </office>
-    <!-- 
-    1.ชุมชนบ้านกะแดะ
-    2.ชุมชนบ้านดอนยา
-    3.ชุมชนบ้านบัวท้อน
-    4.ชุมชนบ้านนา ตรอก
-    5.ชุมชนบ้านพ่วง
-    6.ชุมชนบ้านไร่หลวงบน
-    7.ชุมชนบ้านไร่หลวงล่าง
-    8.ชุมชนบ้านปากกะแดะ
-    9.ชุมชนบ้านหนองสวน
-    10.ชุมชนบ้านท่าช้าง    
-    -->
+    <!-- numbers to be confirmed -->
+    <entity type="Chumchon" geocode="84960001" name="บ้านกะแดะ"/>
+    <entity type="Chumchon" geocode="84960002" name="บ้านดอนยา"/>
+    <entity type="Chumchon" geocode="84960003" name="บ้านบัวท้อน"/>
+    <entity type="Chumchon" geocode="84960004" name="บ้านนา ตรอก"/>
+    <entity type="Chumchon" geocode="84960005" name="บ้านพ่วง"/>
+    <entity type="Chumchon" geocode="84960006" name="บ้านไร่หลวงบน"/>
+    <entity type="Chumchon" geocode="84960007" name="บ้านไร่หลวงล่าง"/>
+    <entity type="Chumchon" geocode="84960008" name="บ้านปากกะแดะ"/>
+    <entity type="Chumchon" geocode="84960009" name="บ้านหนองสวน"/>
+    <entity type="Chumchon" geocode="84960010" name="บ้านท่าช้าง"/>
   </entity>
   <entity type="ThesabanTambon" name="ท่าทองใหม่" english="Tha Thong Mai" geocode="8495" parent="8402">
     <office type="MunicipalityOffice">
