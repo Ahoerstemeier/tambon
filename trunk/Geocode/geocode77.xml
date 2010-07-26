@@ -96,10 +96,23 @@
     </entity>
     <entity type="Tambon" name="คลองวาฬ" english="Khlong Wan" geocode="770103" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>11.7496</geo:lat>
+          <geo:long>99.7567</geo:long>
+        </geo:Point>
         <url>http://www.klongwan.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="สมยศ หวังเจริญ" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="77010301" name="บ้านคลองวาฬ"/>
-      <entity type="Muban" geocode="77010302" name="บ้านหนองหิน"/>
+      <entity type="Muban" geocode="77010302" name="บ้านหนองหิน">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="โยธิน ยวงบริบูรณ์" endyear="2010"/>
+          </officials>
+        </office>
+      </entity>
       <entity type="Muban" geocode="77010303" name="บ้านทางหวาย"/>
       <entity type="Muban" geocode="77010304" name="บ้านหว้าโทน"/>
       <entity type="Muban" geocode="77010305" name="บ้านห้วยใหญ่"/>
