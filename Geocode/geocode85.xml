@@ -94,12 +94,6 @@
       <entity type="Muban" geocode="85010305" name="บ้านหาดทรายดำ(เกาะ)"/>
     </entity>
     <entity type="Tambon" name="บางริ้น" english="Bang Rin" geocode="850104" >
-      <office type="TAOOffice">
-        <geo:Point>
-          <geo:lat>  9.9532</geo:lat>
-          <geo:long> 98.6344</geo:long>
-        </geo:Point>
-      </office>
       <entity type="Muban" geocode="85010401" name="บ้านบางกลาง"/>
       <entity type="Muban" geocode="85010402" name="บ้านบางริ้น"/>
       <entity type="Muban" geocode="85010403" name="บ้านพรรั้ง"/>
@@ -220,7 +214,7 @@
     </office>
     <entity type="Tambon" name="ม่วงกลวง" english="Muang Kluang" geocode="850301" >
       <office type="TAOOffice">
-        <url>http://www.muangkluang.go.th/</url>
+        <url comment="Offline">http://www.muangkluang.go.th/</url>
       </office>
       <entity type="Muban" geocode="85030101" name="บ้านม่วงกลวง"/>
       <entity type="Muban" geocode="85030102" name="บ้านบางเบน"/>
@@ -230,6 +224,9 @@
     <entity type="Tambon" name="กะเปอร์" english="Kapoe" geocode="850302" >
       <office type="TAOOffice">
         <url>http://kapoecity.org/</url>
+        <officials>
+          <official title="TAOChairman" name="นัดนวุทธิ์ รัชนิพนธ์" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="85030201" name="บ้านด่าน"/>
       <entity type="Muban" geocode="85030202" name="บ้านห้วยเสียด"/>
@@ -253,7 +250,7 @@
     </entity>
     <entity type="Tambon" name="บ้านนา" english="Ban Na" geocode="850304" >
       <office type="TAOOffice">
-        <url>http://www.bannasao.go.th/</url>
+        <url comment="Offline">http://www.bannasao.go.th/</url>
       </office>
       <entity type="Muban" geocode="85030401" name="บ้านนา"/>
       <entity type="Muban" geocode="85030402" name="บ้านกลาง"/>
@@ -266,7 +263,7 @@
     </entity>
     <entity type="Tambon" name="บางหิน" english="Bang Hin" geocode="850305" >
       <office type="TAOOffice">
-        <url comment="Offline?">http://www.banghin.go.th/</url>
+        <url comment="Offline">http://www.banghin.go.th/</url>
       </office>
       <entity type="Muban" geocode="85030501" name="บ้านชาคลี"/>
       <entity type="Muban" geocode="85030502" name="บ้านบางหิน"/>
@@ -312,7 +309,7 @@
     </entity>
     <entity type="Tambon" name="มะมุ" english="Mamu" geocode="850403" >
       <office type="TAOOffice">
-        <!-- Longdo: 10.47602, 98.81171 -->
+        <!-- Longdo: 10.47602, 98.81171; Google map on site: 98.8116,10.4763 -->
         <url>http://www.mamu.go.th/</url>
       </office>
       <entity type="Muban" geocode="85040301" name="บ้านสองพี่น้อง"/>
@@ -328,6 +325,9 @@
     <entity type="Tambon" name="ปากจั่น" english="Pak Chan" geocode="850404" >
       <office type="TAOOffice">
         <url>http://www.pakjun.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="อวยชัย นาคเล็ก" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="85040401" name="บ้านหนองผักบุ้ง"/>
       <entity type="Muban" geocode="85040402" name="บ้านนาน้อย"/>
@@ -345,6 +345,9 @@
       <office type="TAOOffice">
         <!-- Longdo: 10.34243, 98.77703 -->
         <url>http://lumliang.org/</url>
+        <officials>
+          <official title="TAOChairman" name="สนธยา มีสถิตย์" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="85040501" name="บ้านลำเลียง"/>
       <entity type="Muban" geocode="85040502" name="บ้านห้วยไทร"/>
@@ -359,8 +362,8 @@
       <entity type="Muban" geocode="85040511" name="บ้านห้วยไทรเหนือ"/>
     </entity>
     <entity type="Tambon" name="จ.ป.ร." english="Choporo" geocode="850406" >
-      <office type="TAOOffice">
-        <url>http://www.jpr.go.th/</url>
+      <office type="MunicipalityOffice">
+        <url comment="Offline">http://www.jpr.go.th/</url>
       </office>
       <entity type="Muban" geocode="85040601" name="บ้านหินซอง"/>
       <entity type="Muban" geocode="85040602" name="บ้านนิคมผัง 2"/>
@@ -377,6 +380,9 @@
     <entity type="Tambon" name="บางใหญ่" english="Bang Yai" geocode="850407" >
       <office type="TAOOffice">
         <url>http://www.bangyai-kraburi.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="บุญส่ง หนูหนัน" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="85040701" name="บ้านบางสองรา"/>
       <entity type="Muban" geocode="85040702" name="บ้านบางสองราใต้"/>
@@ -404,10 +410,10 @@
     <entity type="Tambon" name="นาคา" english="Nakha" geocode="850501" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat>  9.4318</geo:lat>
-          <geo:long> 98.4673</geo:long>
+          <geo:lat>9.4318</geo:lat>
+          <geo:long>98.4673</geo:long>
         </geo:Point>
-        <url comment="Offline?">http://www.naka.go.th/</url>
+        <url comment="Offline">http://www.naka.go.th/</url>
       </office>
       <entity type="Muban" geocode="85050101" name="บ้านบางมัน"/>
       <entity type="Muban" geocode="85050102" name="บ้านนาพรุ" english="Ban Na Phru" />
@@ -421,10 +427,10 @@
     <entity type="Tambon" name="กำพวน" english="Kamphuan" geocode="850502" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat>  9.3782</geo:lat>
-          <geo:long> 98.4209</geo:long>
+          <geo:lat>9.3782</geo:lat>
+          <geo:long>98.4209</geo:long>
         </geo:Point>
-        <url comment="Offline?">http://www.kumpuan.go.th/</url>
+        <url comment="Offline">http://www.kumpuan.go.th/</url>
       </office>
       <entity type="Muban" geocode="85050201" name="บ้านทะเลนอก"/>
       <entity type="Muban" geocode="85050202" name="บ้านเหนือ"/>
@@ -445,18 +451,59 @@
       <url>http://www.ranongcity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ปากน้ำ" english="Paknam" geocode="8598" parent="8501" />
-  <entity type="ThesabanTambon" name="หงาว" english="Ngao" geocode="8597" parent="8501" />
-  <entity type="ThesabanTambon" name="ละอุ่น" english="La-Un" geocode="8596" parent="8502" />
-  <entity type="ThesabanTambon" name="กะเปอร์" english="Kapoe" geocode="8595" parent="8503" >
+  <entity type="ThesabanTambon" name="ปากน้ำ" english="Paknam" geocode="8598" parent="8501" >
     <office type="MunicipalityOffice">
-      <url>http://www.kapercity.go.th/</url>
+      <geo:Point>
+        <geo:lat>9.9467</geo:lat>
+        <geo:long>98.5964</geo:long>
+      </geo:Point>
+      <url>http://www.pakrng.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ประยูร บัวสุวรรณ" comment="2010"/>
+      </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="น้ำจืด" english="Namchuet" geocode="8594" parent="8504" />
+  <entity type="ThesabanTambon" name="หงาว" english="Ngao" geocode="8597" parent="8501" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/ranong/ngao/</url>
+      <officials>
+        <official title="Mayor" name="ธรณิช อิ้วตกส้าน" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ละอุ่น" english="La-Un" geocode="8596" parent="8502">
+    <office type="MunicipalityOffice">
+      <url comment="Offline">http://www.tesabanlaun.go.th/</url>
+      <url>http://www.nmt.or.th/ranong/la-un/</url>
+      <officials>
+        <official title="Mayor" name="สากล สกุลรัตน์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="กะเปอร์" english="Kapoe" geocode="8595" parent="8503" >
+    <office type="MunicipalityOffice">
+      <url comment="Offline">http://www.kapercity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="วงษา เอี่ยมสกุล" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="น้ำจืด" english="Namchuet" geocode="8594" parent="8504" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/ranong/namchuet/</url>
+      <officials>
+        <official title="Mayor" name="อุกฤษฐ์ ตันติธรรมานันท์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางริ้น" english="Bang Rin" geocode="8593" parent="8501" tambon="850104" >
     <office type="MunicipalityOffice">
-      <url>http://www.bangrin.th.gs/</url>
+      <geo:Point>
+        <geo:lat>  9.9532</geo:lat>
+        <geo:long> 98.6344</geo:long>
+      </geo:Point>
+      <url>http://www.bangrin.comyr.com/</url>
+      <!--<url>http://www.bangrin.th.gs/</url>-->
     </office>
   </entity>
 </entity>
