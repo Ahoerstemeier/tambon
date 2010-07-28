@@ -173,6 +173,12 @@
       <entity type="Muban" geocode="93010812" name="บ้านต้นปริง"/>
     </entity>
     <entity type="Tambon" name="ลำปำ" english="Lampam" geocode="930109" >
+      <office type="TAOOffice">
+        <url>http://www.lampam.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="สุทิน ทองทรัพย์" comment="2010"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="93010901" name="บ้านหัวควน"/>
       <entity type="Muban" geocode="93010902" name="บ้านใสยอม"/>
       <entity type="Muban" geocode="93010903" name="บ้านเตาปูน"/>
@@ -241,6 +247,9 @@
       <entity type="Muban" geocode="93011209" name="บ้านนาภู่"/>
     </entity>
     <entity type="Tambon" name="ชัยบุรี" english="Chai Buri" geocode="930113" >
+      <office type="TAOOffice">
+        <url>http://www.chaiburicity.go.th/</url>
+      </office>
       <entity type="Muban" geocode="93011301" name="บ้านคอกวัว"/>
       <entity type="Muban" geocode="93011302" name="บ้านอ้ายใหญ่"/>
       <entity type="Muban" geocode="93011303" name="บ้านมะกอกใต้"/>
@@ -369,7 +378,11 @@
     </office>
     <entity type="Tambon" name="เขาชัยสน" english="Khao Chaison" geocode="930301" >
       <office type="TAOOffice">
-        <url>http://www.geocities.com/jam93130/</url>
+        <url>http://www.khaochaison.go.th/</url>
+        <!--<url>http://www.geocities.com/jam93130/</url>-->
+        <officials>
+          <official title="TAOChairman" name="ชูเกียรติ  ฤทธิ์เลือน" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="93030101" name="บ้านโคกยา"/>
       <entity type="Muban" geocode="93030102" name="บ้านโคกขาม"/>
@@ -389,6 +402,9 @@
     <entity type="Tambon" name="ควนขนุน" english="Khuan Khanun" geocode="930302" >
       <office type="TAOOffice">
         <url>http://www.khunkhanun-k.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="วิเชษฐ์ ชูชื่น" comment="2010"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="ท่ามะเดื่อ" english="Tha Maduea" geocode="930303" newgeocode="930901" />
@@ -471,7 +487,16 @@
       <entity type="Muban" geocode="93040110" name="บ้านคลองปลักปอม"/>
       <entity type="Muban" geocode="93040111" name="บ้านควนล่อน"/>
     </entity>
-    <entity type="Tambon" name="ตะโหมด" english="Tamot" geocode="930402" />
+    <entity type="Tambon" name="ตะโหมด" english="Tamot" geocode="930402" >
+      <office type="MunicipalityOffice">
+        <!-- Renamed to เขาหัวช้าง on upgrade -->
+        <!-- Longdo: 7.28536415099926 100.052024841309-->
+        <url>http://www.khaohuachang.go.th/</url>
+        <officials>
+          <official title="Mayor" name="ชูสินธุ์ ชนะสิทธิ์" comment="2010"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="คลองใหญ่" english="Khlong Yai" geocode="930403" >
       <office type="TAOOffice">
         <url>http://www.klongyai.go.th/</url>
@@ -542,6 +567,9 @@
       <entity type="Muban" geocode="93050508" name="บ้านเกาะอ้ายเฒ่า"/>
     </entity>
     <entity type="Tambon" name="แหลมโตนด" english="Laem Tanot" geocode="930506" >
+      <office type="TAOOffice">
+        <!--Longdo: 7.8167629241928 100.029228210449 -->
+      </office>
       <entity type="Muban" geocode="93050601" name="บ้านกองเกวียน"/>
       <entity type="Muban" geocode="93050602" name="บ้านแหลมโตนด"/>
 
@@ -621,6 +649,9 @@
     <entity type="Tambon" name="ชะมวง" english="Chamuang" geocode="930513" >
       <office type="TAOOffice">
         <url>http://www.chamung.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="พิเชษฐ์ พรหมด้วง" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="93051304" name="บ้านใสตอ"/>
 
@@ -663,8 +694,31 @@
       <entity type="Muban" geocode="93060105" name="บ้านพรุหมอ"/>
       <entity type="Muban" geocode="93060106" name="บ้านไร่"/>
     </entity>
-    <entity type="Tambon" name="ดอนประดู่" english="Don Pradu" geocode="930602" />
-    <entity type="Tambon" name="เกาะนางคำ" english="Ko Nang Kham" geocode="930603" />
+    <entity type="Tambon" name="ดอนประดู่" english="Don Pradu" geocode="930602" >
+      <office type="TAOOffice">
+        <url>http://www.donpradoo.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="จรัญ จันทร์แก้ว" comment="2010"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="เกาะนางคำ" english="Ko Nang Kham" geocode="930603" >
+      <office type="TAOOffice">
+        <url>http://www.kohnangkum.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="สันติ เส็มหมัด" comment="2010"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="93060301" name="บ้านเกาะแกง"/>
+      <entity type="Muban" geocode="93060302" name="บ้านเกาะยวน"/>
+      <entity type="Muban" geocode="93060303" name="บ้านท่าเนียน"/>
+      <entity type="Muban" geocode="93060304" name="บ้านเกาะนางคำ"/>
+      <entity type="Muban" geocode="93060305" name="บ้านเกาะนางคำเหนือ"/>
+      <entity type="Muban" geocode="93060306" name="บ้านบางพลอง"/>
+      <entity type="Muban" geocode="93060307" name="บ้านบางตาล"/>
+      <entity type="Muban" geocode="93060308" name="บ้านเกาะนางทอง"/>
+      <entity type="Muban" geocode="93060309" name="บ้านบ่อนนท์"/>
+    </entity>
     <entity type="Tambon" name="เกาะหมาก" english="Ko Mak" geocode="930604" >
       <office type="TAOOffice">
         <url>http://www.khomak.go.th/</url>
@@ -698,10 +752,15 @@
       <entity type="Muban" geocode="93060511" name="บ้านเพ็งอาด"/>
     </entity>
     <entity type="Tambon" name="หารเทา" english="Han Thao" geocode="930606" >
+      <entity type="Muban" geocode="93060601" name="บ้านคอกช้าง"/>
       <entity type="Muban" geocode="93060602" name="บ้านหารเทา (ท่าทิศคูร)"/>
-
+      <entity type="Muban" geocode="93060603" name="บ้านม่วงทวน"/>
+      <entity type="Muban" geocode="93060604" name="บ้านห้วยเรือ"/>
       <entity type="Muban" geocode="93060605" name="บ้านทะเลเหมียง"/>
-
+      <entity type="Muban" geocode="93060606" name="บ้านโคกโหนด"/>
+      <entity type="Muban" geocode="93060607" name="บ้านทุ่งแจ้"/>
+      <entity type="Muban" geocode="93060608" name="บ้านคลองเรือ"/>
+      <entity type="Muban" geocode="93060609" name="บ้านโหนดหมู่"/>
       <entity type="Muban" geocode="93060610" name="บ้านควนนกหว้า"/>
       <entity type="Muban" geocode="93060611" name="บ้านหารเทาออก"/>
     </entity>
@@ -806,6 +865,10 @@
       <entity type="Muban" geocode="93080111" name="บ้านห้วยแม่ลอน"/>
     </entity>
     <entity type="Tambon" name="โคกทราย" english="Khok Sai" geocode="930802" >
+      <office type="TAOOffice">
+        <!-- Longdo: 7.23335647582834 100.30477142334-->
+        <url>http://www.khoksai.go.th/</url>
+      </office>
       <entity type="Muban" geocode="93080201" name="บ้านพรุพ้อ"/>
 
       <entity type="Muban" geocode="93080208" name="บ้านควนปอม"/>
@@ -1014,7 +1077,11 @@
       <url>http://www.phatthalungcity.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เขาชัยสน" english="Khao Chaison" geocode="9398" parent="9303" />
+  <entity type="ThesabanTambon" name="เขาชัยสน" english="Khao Chaison" geocode="9398" parent="9303" >
+    <office type="MunicipalityOffice">
+      <url>http://kcson.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ตะโหมด" english="Tamot" geocode="9397" parent="9304" >
     <office type="MunicipalityOffice">
       <url>http://www.tamodcity.go.th/</url>
@@ -1022,13 +1089,28 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่ขรี" english="Mae Khari" geocode="9396" parent="9304,9309" >
     <office type="MunicipalityOffice">
-      <url>http://www.maekreecity.go.th/</url>
+      <!-- Longdo:   7.353013° 100.124399° -->
+      <!-- The www one is broken! -->
+      <url>http://new.maekreecity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สมบัติ ชนะสิทธิ์" comment="2010"/>
+      </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ควนขนุน" english="Khuan Khanun" geocode="9395" parent="9305" />
+  <entity type="ThesabanTambon" name="ควนขนุน" english="Khuan Khanun" geocode="9395" parent="9305" >
+    <office type="MunicipalityOffice">
+      <url>http://www.khuankhanuncity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ธนอรรถ แก้วนุ้ย" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="มะกอกเหนือ" english="Makok Nuea" geocode="9394" parent="9305" >
     <office type="MunicipalityOffice">
       <url>http://www.makoknuacity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="อาทร นุ่มนวล" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ปากพะยูน" english="Pak Phayun" geocode="9393" parent="9306" >
@@ -1041,7 +1123,16 @@
       <url>http://www.paboncity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ท่ามะเดื่อ" english="Tha Maduea" geocode="9391" parent="9309" />
+  <entity type="ThesabanTambon" name="ท่ามะเดื่อ" english="Tha Maduea" geocode="9391" parent="9309" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/phatthalung/thamadua/</url>
+      <!--<url>http://www.thamadua.info/</url>-->
+      <url comment="Offline">http://www.thamadua-mun.go.th/</url>
+      <officials>
+        <official title="Mayor" name="อำนวย ชิดชู" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ลานข่อย" english="Lan Khoi" geocode="9390" parent="9310" tambon="931002" >
     <office type="MunicipalityOffice">
       <url>http://www.lankhoy.go.th/</url>
@@ -1051,6 +1142,9 @@
     <office type="MunicipalityOffice">
       <!-- Longdo: 7.56669, 99.90009 -->
       <url>http://www.bannaptlcity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ประทีป อ่อนดำ" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="โคกม่วง" english="Khok Muang" geocode="9388" tambon="930307" parent="9303">
@@ -1060,10 +1154,17 @@
   </entity>
   <entity type="ThesabanTambon" name="ชุมพล" english="Chumphon" geocode="9387" tambon="931101" parent="9311">
     <office type="MunicipalityOffice">
-      <url>http://www.chumponcity.go.th/</url>
+      <url comment="Offline">http://www.chumponcity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="อ่าวพะยูน" english="Ao Phayun" geocode="9386" tambon="930601" parent="9306"/>
+  <entity type="ThesabanTambon" name="อ่าวพะยูน" english="Ao Phayun" geocode="9386" tambon="930601" parent="9306">
+    <office type="MunicipalityOffice">
+      <url>http://www.pakpayoon.go.th/</url>
+      <officials>
+        <official title="Mayor" name="อทิติ เมฆสุวรรณ" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางแก้ว" english="Bang Kaeo" geocode="9385" tambon="930901" parent="9309">
     <office type="MunicipalityOffice">
       <url>http://www.bangkaew.go.th/</url>
@@ -1072,11 +1173,17 @@
   <entity type="ThesabanTambon" name="หารเทา" english="Han Thao" geocode="9384" tambon="930606" parent="9306">
     <office type="MunicipalityOffice">
       <url>http://www.harnthao.go.th/</url>
+      <officials>
+        <official title="Mayor" name="พันแสน เสือพริก" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ชะรัด" english="Charat" geocode="9383" tambon="930202" parent="9302">
     <office type="MunicipalityOffice">
       <url>http://www.charad.go.th/</url>
+      <officials>
+        <official title="Mayor" name="มูหำมัด หนุ่นหยู่" comment="2010"/>
+      </officials>
     </office>
   </entity>
 
