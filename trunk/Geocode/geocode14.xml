@@ -257,7 +257,16 @@
       </officials>
     </office>
     <entity type="Tambon" name="นครหลวง" english="Nakhon Luang" geocode="140301" />
-    <entity type="Tambon" name="ท่าช้าง" english="Tha Chang" geocode="140302" />
+    <entity type="Tambon" name="ท่าช้าง" english="Tha Chang" geocode="140302" >
+      <entity type="Muban" geocode="14030201" name="บ้านกุฎีกรุ"/>
+      <entity type="Muban" geocode="14030202" name="บ้านท่าช้างใต้"/>
+      <entity type="Muban" geocode="14030203" name="บ้านท่าช้าง"/>
+      <entity type="Muban" geocode="14030204" name="บ้านท่าช้างเหนือ"/>
+      <entity type="Muban" geocode="14030205" name="บ้านสาไร"/>
+      <entity type="Muban" geocode="14030206" name="บ้านต้นโพธิ์"/>
+      <entity type="Muban" geocode="14030207" name="บ้านไผ่หนอง"/>
+      <entity type="Muban" geocode="14030208" name="ท่าช้างไห้"/>
+    </entity>
     <entity type="Tambon" name="บ่อโพง" english="Bo Phong" geocode="140303" >
       <office type="TAOOffice">
         <url>http://www.borphong.go.th/</url>
@@ -273,11 +282,14 @@
     <entity type="Tambon" name="บ้านชุ้ง" english="Ban Chung" geocode="140304" >
       <office type="TAOOffice">
         <url>http://www.banchung.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="เทเวศ สงเคราะห์ธรรม" comment="2010"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="ปากจั่น" english="Pak Chan" geocode="140305" >
       <office type="TAOOffice">
-        <url>http://www.pakjan.go.th/</url>
+        <url comment="Offline">http://www.pakjan.go.th/</url>
       </office>
       <entity type="Muban" geocode="14030501" name="บ้านเกาะปากจั่น"/>
       <entity type="Muban" geocode="14030502" name="บ้านปากจั่น"/>
@@ -288,15 +300,19 @@
     </entity>
     <entity type="Tambon" name="บางระกำ" english="Bang Rakam" geocode="140306" />
     <entity type="Tambon" name="บางพระครู" english="Bang Phra Khru" geocode="140307" />
-    <entity type="Tambon" name="แม่ลา" english="Mae La" geocode="140308" />
+    <entity type="Tambon" name="แม่ลา" english="Mae La" geocode="140308" >
+      <office type="TAOOffice">
+        <url>http://www.maela.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="หนองปลิง" english="Nong Pling" geocode="140309" >
       <office type="TAOOffice">
-        <url>http://www.nhongpling.go.th/</url>
+        <url comment="Offline">http://www.nhongpling.go.th/</url>
       </office>
     </entity>
     <entity type="Tambon" name="คลองสะแก" english="Khlong Sakae" geocode="140310" >
       <office type="TAOOffice">
-        <url>http://www.klongsakae.go.th/</url>
+        <url comment="Offline">http://www.klongsakae.go.th/</url>
       </office>
       <entity type="Muban" geocode="14031001" name="บ้านมอญ"/>
       <entity type="Muban" geocode="14031002" name="บ้านคลองสะแกใต้"/>
@@ -304,8 +320,21 @@
       <entity type="Muban" geocode="14031004" name="บ้านคลองสะแกเหนือ"/>
       <entity type="Muban" geocode="14031005" name="บ้านสวนกล้วย"/>
     </entity>
-    <entity type="Tambon" name="สามไถ" english="Sam Thai" geocode="140311" />
-    <entity type="Tambon" name="พระนอน" english="Phra Non" geocode="140312" />
+    <entity type="Tambon" name="สามไถ" english="Sam Thai" geocode="140311" >
+      <entity type="Muban" geocode="14031101" name="บ้านตำหรุ"/>
+      <entity type="Muban" geocode="14031102" name="บ้านสันเจ้า"/>
+      <entity type="Muban" geocode="14031103" name="บ้านท้ายวัดดงหวาย"/>
+      <entity type="Muban" geocode="14031104" name="บ้านตะโกเก่า"/>
+    </entity>
+    <entity type="Tambon" name="พระนอน" english="Phra Non" geocode="140312" >
+      <entity type="Muban" geocode="14031201" name="บ้านพระนอน"/>
+      <entity type="Muban" geocode="14031202" name="บ้านพระนอนไทย"/>
+      <entity type="Muban" geocode="14031203" name="บ้านพระนอนลาว"/>
+      <entity type="Muban" geocode="14031204" name="บ้านท่าหาด"/>
+      <entity type="Muban" geocode="14031205" name="บ้านหัวคุ้งลาว"/>
+      <entity type="Muban" geocode="14031206" name="บ้านไร่"/>
+      <entity type="Muban" geocode="14031207" name="บ้านหัวคุ้งไทย"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="บางไทร" english="Bang Sai" geocode="1404" >
     <office type="DistrictOffice">
@@ -1282,6 +1311,9 @@
   <entity type="ThesabanTambon" name="อรัญญิก" english="Aranyik" geocode="1492" parent="1403" >
     <office type="MunicipalityOffice">
       <url>http://www.aranyik.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ละเมียด นามแป้น" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บางไทร" english="Bang Sai" geocode="1491" parent="1404" >
