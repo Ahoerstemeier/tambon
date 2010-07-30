@@ -174,6 +174,10 @@
   </entity>
   <entity type="Amphoe" name="จอมทอง" english="Chom Thong" geocode="5002" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 18.4173</geo:lat>
+        <geo:long> 98.6759</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="สุรชัย มณีประกร" begin="2010-02-22"/>
         <official title="DistrictOfficer" name="ทรงทรัพย์ พิริยคุณธร" begin="2008-11-24" end="2010-02-21"/>
@@ -234,9 +238,36 @@
       <entity type="Muban" geocode="50020415" name="บ้านใหม่อังครักษ์"/>
     </entity>
     <entity type="Tambon" name="สบเตี๊ยะ" english="Sop Tia" geocode="500205" >
-      <!-- Longdo: 18.38959, 98.67810 -->
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 18.3895</geo:lat>
+          <geo:long> 98.6780</geo:long>
+        </geo:Point>
+        <url>http://www.sobtia.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="วิทยา ไชยเทพ" comment="2010"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="50020501" name="บ้านวังปิน"/>
+      <entity type="Muban" geocode="50020502" name="บ้านสบเตี๊ยะ"/>
+      <entity type="Muban" geocode="50020503" name="บ้านเชิงดอย"/>
+      <entity type="Muban" geocode="50020504" name="บ้านท่าหลุก"/>
+      <entity type="Muban" geocode="50020505" name="บ้านทุ่งหมากหนุ่ม"/>
       <entity type="Muban" geocode="50020506" name="บ้านแท่นดอกไม้"/>
-
+      <entity type="Muban" geocode="50020507" name="บ้านดงหาดนาค"/>
+      <entity type="Muban" geocode="50020508" name="บ้านห้วยโจ้"/>
+      <entity type="Muban" geocode="50020509" name="บ้านหนองอาบช้าง"/>
+      <entity type="Muban" geocode="50020510" name="บ้านทุ่งปูน"/>
+      <entity type="Muban" geocode="50020511" name="บ้านห้วยม่วง"/>
+      <entity type="Muban" geocode="50020512" name="บ้านวังปาน"/>
+      <entity type="Muban" geocode="50020513" name="บ้านห้วยม่วง"/>
+      <entity type="Muban" geocode="50020514" name="บ้านแม่เตี๊ยะใต้"/>
+      <entity type="Muban" geocode="50020515" name="บ้านคะนาอัน"/>
+      <entity type="Muban" geocode="50020516" name="บ้านบน"/>
+      <entity type="Muban" geocode="50020517" name="บ้านหาดนาค"/>
+      <entity type="Muban" geocode="50020518" name="บ้านพุทธนิมิตร"/>
+      <entity type="Muban" geocode="50020519" name="บ้านชาววัง"/>
+      <entity type="Muban" geocode="50020520" name="บ้านเด่นตะวันใต้"/>
       <entity type="Muban" geocode="50020521" name="บ้านแท่นดอกไม้ใต้"/>
     </entity>
     <entity type="Tambon" name="บ้านแปะ" english="Ban Pae" geocode="500206" >
@@ -537,6 +568,9 @@
       <entity type="Muban" geocode="50050310" name="บ้านทุ่งกอลาน"/>
     </entity>
     <entity type="Tambon" name="ป่าป้อง" english="Pa Pong" geocode="500504" >
+      <office type="MunicipalityOffice">
+        <url>http://www.papong.go.th/</url>
+      </office>
       <entity type="Muban" geocode="50050401" name="บ้านป่าตึงน้อย"/>
 
       <entity type="Muban" geocode="50050408" name="บ้านทุ่งยาว"/>
@@ -566,7 +600,7 @@
           <geo:long> 99.0812</geo:long>
         </geo:Point>
         <url>http://taladkhuan.110mb.com/</url>
-        <url>http://www.geocities.com/taladkhuan109/Index.html</url>
+        <!--<url>http://www.geocities.com/taladkhuan109/Index.html</url>-->
       </office>
       <entity type="Muban" geocode="50050701" name="บ้านพยาดอยแก้ว"/>
       <entity type="Muban" geocode="50050702" name="บ้านน้ำแพร่"/>
@@ -2348,7 +2382,13 @@
       <entity type="Muban" geocode="50240311" name="บ้านหนองม่วง"/>
     </entity>
     <entity type="Tambon" name="สันติสุข" english="Santi Suk" geocode="502404" >
-      <!-- Wikimapia: 18°31'45"N   98°49'14"E  -->
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 18.5290</geo:lat>
+          <geo:long> 98.8206</geo:long>
+        </geo:Point>
+        <!--<url>http://www.suntisuklocal.org/</url>-->
+      </office>
     </entity>
   </entity>
   <!-- <entity type="KingAmphoe" geocode="5025" name="เวียงคำ" english="Wiang Kham" obsolete="1" comment="Proposed, but not created, code reused for Galyani Vadhana"/> -->
@@ -2686,11 +2726,15 @@
         <postcode code="50220"/>
       </address>
       <url>http://www.cherngdoi.go.th/</url>
+      <officials>
+        <official title="Mayor" name="นายมงคล ชัยวุฒิ" comment="2010"/>
+        <official title="TAOChairman" name="มงคล ชัยวุฒิ" comment="2008"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แม่โป่ง" english="Mae Pong" geocode="5048" parent="5005" tambon="500512" >
     <office type="MunicipalityOffice">
-      <url>http://www.maepong.org/</url>
+      <!--<url>http://www.maepong.org/</url>-->
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ลวงเหนือ" english="Luang Nuea" geocode="5047" parent="5005" tambon="500503" >
