@@ -38,6 +38,7 @@
             this.mnuCitation = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSaveXml = new System.Windows.Forms.Button();
             this.btnSaveRSS = new System.Windows.Forms.Button();
+            this.xMLSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,40 +67,41 @@
             this.mnuMirror,
             this.mnuDeletePDF,
             this.toolStripMenuItem2,
-            this.mnuCitation});
+            this.mnuCitation,
+            this.xMLSourceToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(128, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 142);
             // 
             // mnuShow
             // 
             this.mnuShow.Name = "mnuShow";
-            this.mnuShow.Size = new System.Drawing.Size(127, 22);
+            this.mnuShow.Size = new System.Drawing.Size(152, 22);
             this.mnuShow.Text = "Show";
             this.mnuShow.Click += new System.EventHandler(this.mnuShow_Click);
             // 
             // mnuMirror
             // 
             this.mnuMirror.Name = "mnuMirror";
-            this.mnuMirror.Size = new System.Drawing.Size(127, 22);
+            this.mnuMirror.Size = new System.Drawing.Size(152, 22);
             this.mnuMirror.Text = "Mirror";
             this.mnuMirror.Click += new System.EventHandler(this.mnuMirror_Click);
             // 
             // mnuDeletePDF
             // 
             this.mnuDeletePDF.Name = "mnuDeletePDF";
-            this.mnuDeletePDF.Size = new System.Drawing.Size(127, 22);
+            this.mnuDeletePDF.Size = new System.Drawing.Size(152, 22);
             this.mnuDeletePDF.Text = "Delete PDF";
             this.mnuDeletePDF.Click += new System.EventHandler(this.mnuDeletePDF_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // mnuCitation
             // 
             this.mnuCitation.Name = "mnuCitation";
-            this.mnuCitation.Size = new System.Drawing.Size(127, 22);
+            this.mnuCitation.Size = new System.Drawing.Size(152, 22);
             this.mnuCitation.Text = "Citation";
             this.mnuCitation.Click += new System.EventHandler(this.mnuCitation_Click);
             // 
@@ -124,6 +126,13 @@
             this.btnSaveRSS.Text = "Save Feed";
             this.btnSaveRSS.UseVisualStyleBackColor = true;
             this.btnSaveRSS.Click += new System.EventHandler(this.btnSaveRSS_Click);
+            // 
+            // xMLSourceToolStripMenuItem
+            // 
+            this.xMLSourceToolStripMenuItem.Name = "xMLSourceToolStripMenuItem";
+            this.xMLSourceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xMLSourceToolStripMenuItem.Text = "XML source";
+            this.xMLSourceToolStripMenuItem.Click += new System.EventHandler(this.xMLSourceToolStripMenuItem_Click);
             // 
             // RoyalGazetteViewer
             // 
@@ -152,5 +161,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.Button btnSaveXml;
         private System.Windows.Forms.Button btnSaveRSS;
+        private System.Windows.Forms.ToolStripMenuItem xMLSourceToolStripMenuItem;
     }
 }

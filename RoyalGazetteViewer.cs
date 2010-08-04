@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Windows.Forms;
 
 namespace De.AHoerstemeier.Tambon
@@ -207,6 +208,22 @@ namespace De.AHoerstemeier.Tambon
                 {
                     mData.ExportToRSS(lDlg.FileName);
                 }
+            }
+
+        }
+
+        private void xMLSourceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String retval = String.Empty;
+            XmlDocument lXmlDocument = new XmlDocument();
+            foreach (RoyalGazette lGazette in CurrentSelection())
+            {
+                lGazette.ExportToXML(lXmlDocument);
+            }
+            retval = lXmlDocument.InnerXml;
+            if (!String.IsNullOrEmpty(retval))
+            {
+                Clipboard.SetText(retval);
             }
 
         }
