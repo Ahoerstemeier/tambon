@@ -109,7 +109,7 @@
     <entity type="Tambon" name="หินโงม" english="Hin Ngom" geocode="430108" />
     <entity type="Tambon" name="บ้านเดื่อ" english="Ban Duea" geocode="430109" >
       <office type="TAOOffice">
-        <url>http://tambon-bandua.com</url>
+        <!--<url>http://tambon-bandua.com</url>-->
       </office>
       <entity type="Muban" geocode="43010901" name="บ้านหมากก่อง"/>
       <entity type="Muban" geocode="43010902" name="บ้านเดื่อเหนือ"/>
@@ -150,7 +150,7 @@
     <entity type="Tambon" name="สระใคร" english="Sakhrai" geocode="430112" newgeocode="431401" />
     <entity type="Tambon" name="พระธาตุบังพวน" english="Phra That Bang Phuan" geocode="430113" >
       <office type="TAOOffice">
-        <url>http://www.prathat.ob.tc/</url>
+        <url comment="Broken">http://www.prathat.ob.tc/</url>
       </office>
       <entity type="Muban" geocode="43011301" name="บ้านบ่อแปบ"/>
       <entity type="Muban" geocode="43011302" name="บ้านโคกคำ"/>
@@ -171,7 +171,7 @@
     <entity type="Tambon" name="คอกช้าง" english="Khok Chang" geocode="430115" newgeocode="431402" />
     <entity type="Tambon" name="หนองกอมเกาะ" english="Nong Kom Ko" geocode="430116" >
       <office type="TAOOffice">
-        <url>http://www.nonggomgor.com/</url>
+        <!--<url>http://www.nonggomgor.com/</url>-->
       </office>
     </entity>
     <entity type="Tambon" name="ปะโค" english="Pa Kho" geocode="430117" >
@@ -182,10 +182,21 @@
         </geo:Point>
       </office>
     </entity>
-    <entity type="Tambon" name="เมืองหมี" english="Mueang Mi" geocode="430118" />
+    <entity type="Tambon" name="เมืองหมี" english="Mueang Mi" geocode="430118" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>17.8349</geo:lat>
+          <geo:long>102.6890</geo:long>
+        </geo:Point>
+      </office>
+    </entity>
     <entity type="Tambon" name="สีกาย" english="Si Kai" geocode="430119" >
       <office type="TAOOffice">
-        <url>http://www.seekai.com/</url>
+        <url>http://seekai-nk.com/</url>
+        <!--<url>http://www.seekai.com/</url>-->
+        <officials>
+          <official title="TAOChairman" name="สอนรัก อ่อนพรม" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="43011901" name="บ้านจอมแจ้ง" english="Ban Chom Chaeng"/>
       <entity type="Muban" geocode="43011902" name="บ้านสีกายใต้" english="Ban Si Kai Tai"/>
@@ -994,11 +1005,12 @@
       <data value="1.18" unit="km²" source="http://www.nmt.or.th/nongkhai/buengkan/Lists/List39/AllItems.aspx"/>
       <data value="737.5" unit="rai" source="http://www.nmt.or.th/nongkhai/buengkan/Lists/List39/AllItems.aspx"/>
     </area>
+    <!-- Numbers to be confirmed -->
     <entity type="Chumchon" geocode="43940001" name="บึงกาฬกลาง" muban="43030101"/>
     <entity type="Chumchon" geocode="43940002" name="ศรีโสภณ" muban="43030102"/>
     <entity type="Chumchon" geocode="43940003" name="บึงกาฬใต้" muban="43030103"/>
-    <entity type="Chumchon" geocode="43940003" name="บึงกาฬเหนือ" muban="43031601"/>
-    <entity type="Chumchon" geocode="43940003" name="วิศิษฐ์" muban="43031607"/>
+    <entity type="Chumchon" geocode="43940004" name="บึงกาฬเหนือ" muban="43031601"/>
+    <entity type="Chumchon" geocode="43940005" name="วิศิษฐ์" muban="43031607"/>
   </entity>
   <entity type="ThesabanTambon" name="ดอนหญ้านาง" english="Don Ya Nang" geocode="4393" parent="4304" >
     <office type="MunicipalityOffice">
