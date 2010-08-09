@@ -227,5 +227,20 @@ namespace De.AHoerstemeier.Tambon
             }
 
         }
+
+        private void pDFURLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String retval = String.Empty;
+            foreach (RoyalGazette lGazette in CurrentSelection())
+            {
+                retval = retval + lGazette.URL() + Environment.NewLine;
+            }
+            retval = retval.Substring(0, retval.Length - Environment.NewLine.Length);
+            if (!String.IsNullOrEmpty(retval))
+            {
+                Clipboard.SetText(retval);
+            }
+
+        }
     }
 }
