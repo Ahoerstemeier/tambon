@@ -36,9 +36,10 @@
             this.mnuDeletePDF = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuCitation = new System.Windows.Forms.ToolStripMenuItem();
+            this.xMLSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSaveXml = new System.Windows.Forms.Button();
             this.btnSaveRSS = new System.Windows.Forms.Button();
-            this.xMLSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pDFURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,9 +69,10 @@
             this.mnuDeletePDF,
             this.toolStripMenuItem2,
             this.mnuCitation,
-            this.xMLSourceToolStripMenuItem});
+            this.xMLSourceToolStripMenuItem,
+            this.pDFURLToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 142);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 164);
             // 
             // mnuShow
             // 
@@ -105,6 +107,13 @@
             this.mnuCitation.Text = "Citation";
             this.mnuCitation.Click += new System.EventHandler(this.mnuCitation_Click);
             // 
+            // xMLSourceToolStripMenuItem
+            // 
+            this.xMLSourceToolStripMenuItem.Name = "xMLSourceToolStripMenuItem";
+            this.xMLSourceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xMLSourceToolStripMenuItem.Text = "XML source";
+            this.xMLSourceToolStripMenuItem.Click += new System.EventHandler(this.xMLSourceToolStripMenuItem_Click);
+            // 
             // btnSaveXml
             // 
             this.btnSaveXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -127,12 +136,12 @@
             this.btnSaveRSS.UseVisualStyleBackColor = true;
             this.btnSaveRSS.Click += new System.EventHandler(this.btnSaveRSS_Click);
             // 
-            // xMLSourceToolStripMenuItem
+            // pDFURLToolStripMenuItem
             // 
-            this.xMLSourceToolStripMenuItem.Name = "xMLSourceToolStripMenuItem";
-            this.xMLSourceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xMLSourceToolStripMenuItem.Text = "XML source";
-            this.xMLSourceToolStripMenuItem.Click += new System.EventHandler(this.xMLSourceToolStripMenuItem_Click);
+            this.pDFURLToolStripMenuItem.Name = "pDFURLToolStripMenuItem";
+            this.pDFURLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pDFURLToolStripMenuItem.Text = "PDF URL";
+            this.pDFURLToolStripMenuItem.Click += new System.EventHandler(this.pDFURLToolStripMenuItem_Click);
             // 
             // RoyalGazetteViewer
             // 
@@ -162,5 +171,6 @@
         private System.Windows.Forms.Button btnSaveXml;
         private System.Windows.Forms.Button btnSaveRSS;
         private System.Windows.Forms.ToolStripMenuItem xMLSourceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pDFURLToolStripMenuItem;
     }
 }
