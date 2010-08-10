@@ -216,9 +216,15 @@ namespace De.AHoerstemeier.Tambon
         {
             String retval = String.Empty;
             XmlDocument lXmlDocument = new XmlDocument();
+            XmlNode lBaseNode = lXmlDocument;
+            if (CurrentSelection().Count > 1)
+            {
+                lBaseNode = (XmlElement)lXmlDocument.CreateNode("element", "gazette", "");
+                lXmlDocument.AppendChild(lBaseNode);
+            }
             foreach (RoyalGazette lGazette in CurrentSelection())
             {
-                lGazette.ExportToXML(lXmlDocument);
+                lGazette.ExportToXML(lBaseNode);
             }
             retval = lXmlDocument.InnerXml;
             if (!String.IsNullOrEmpty(retval))
