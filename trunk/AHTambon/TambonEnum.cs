@@ -105,6 +105,7 @@ namespace De.AHoerstemeier.Tambon
         MinisterOfInformationAndCommunicationTechnology,
         ElectionCommissionPresident,
         RoyalInstitutePresident,
-        RoyalInstituteActingPresident
+        RoyalInstituteActingPresident,
+        DepartmentOfTransportDirectorGeneral
     }
 }
