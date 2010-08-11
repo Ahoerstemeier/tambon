@@ -353,6 +353,9 @@
     <entity type="Tambon" name="ด่านช้าง" english="Dan Chang" geocode="720302" >
       <office type="TAOOffice">
         <url>http://www.dan-chang.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ณรงค์ เกษประทุม" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72030201" name="บ้านด่านช้าง"/>
       <entity type="Muban" geocode="72030202" name="บ้านหนองเปาะ"/>
@@ -497,7 +500,8 @@
       </office>
     </entity>
     <entity type="Tambon" name="บ้านแหลม" english="Ban Laem" geocode="720410" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <!-- renamed to บ้านแหลมพัฒนา on upgrade -->
         <url>http://www.banleamburi.org/</url>
       </office>
     </entity>
@@ -1093,6 +1097,9 @@
   <entity type="ThesabanMueang" name="สองพี่น้อง" english="Song Phi Nong" geocode="7298" parent="7207" >
     <office type="MunicipalityOffice">
       <url>http://www.songpeenongcity.com/</url>
+      <officials>
+        <official title="Mayor" name="วิโรจน์ คณูวัฒนา" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าเสด็จ" english="Tha Sadet" geocode="7297" parent="7201" >
@@ -1100,21 +1107,55 @@
       <url>http://www.thasadet.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="โพธิ์พระยา" english="Pho Phraya" geocode="7296" parent="7201" />
+  <entity type="ThesabanTambon" name="โพธิ์พระยา" english="Pho Phraya" geocode="7296" parent="7201" >
+    <office type="MunicipalityOffice">
+      <!--<url>http://www.phopraya.org/</url>-->
+      <officials>
+        <official title="Mayor" name="ชาตรี เอี่ยมอัมพรพงษ์" comment="2008"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="สวนแตง" english="Suan Taeng" geocode="7295" parent="7201" />
   <entity type="ThesabanTambon" name="เขาพระ" english="Khao Phra" geocode="7294" parent="7202" >
     <office type="MunicipalityOffice">
       <url>http://www.khaophra.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ปกรณ์ แซ่เล้า" comment="2010"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="72940001" name="บ้านเขาพระ" muban="72020101"/>
+    <entity type="Chumchon" geocode="72940002" name="บ้านท่ารวก" muban="72020103"/>
+    <entity type="Chumchon" geocode="72940003" name="บ้านท่ารวก" muban="72020104"/>
+    <entity type="Chumchon" geocode="72940004" name="บ้านท่าช้าง" muban="72020105"/>
+    <entity type="Chumchon" geocode="72940005" name="บ้านกำมะเชียรใต้" muban="72020106"/>
+    <entity type="Chumchon" geocode="72940006" name="บ้านหัวเกาะ" muban="72020107"/>
+    <entity type="Chumchon" geocode="72940007" name="บ้านท่าช้าง" muban="72020108"/>
+    <entity type="Chumchon" geocode="72940008" name="บ้านกำมะเชียรเหนือ" muban="72020109"/>
   </entity>
   <entity type="ThesabanTambon" name="นางบวช" english="Nang Buat" geocode="7293" parent="7202" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 14.8149</geo:lat>
+        <geo:long>100.1161</geo:long>
+      </geo:Point>
       <url>http://www.nangbuatcity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สวิง อยู่สุวรรณ" comment="2010"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="72930001" name="หมู่ที่ ๑ เหนือวัดวังสำเภาล่ม"/>
+    <entity type="Chumchon" geocode="72930002" name="หมู่ที่ ๑ ใต้วัดวังสำเภาล่ม"/>
+    <entity type="Chumchon" geocode="72930003" name="หมู่ที่ ๒ บ้านบางกระพ้น"/>
+    <entity type="Chumchon" geocode="72930004" name="หมู่ที่ ๔ หลังสถานีดับเพลิง"/>
+    <entity type="Chumchon" geocode="72930005" name="หมู่ที่ ๔ ตลาดนางบวช"/>
+    <entity type="Chumchon" geocode="72930006" name="หมู่ที่ ๕ บ้านท่านางเริง"/>
   </entity>
   <entity type="ThesabanTambon" name="บ่อกรุ" english="Bo Kru" geocode="7292" parent="7202" >
     <office type="MunicipalityOffice">
       <url>http://www.bokru-sm.com/</url>
+      <officials>
+        <official title="Mayor" name="ศักดิ์ชัย จันทร์ใหม่มูล" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ด่านช้าง" english="Dan Chang" geocode="7291" parent="7203" />
@@ -1133,7 +1174,7 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านแหลม" english="Ban Laem" geocode="7288" parent="7204" >
     <office type="MunicipalityOffice">
-      <url>http://www.geocities.com/baanlaem/</url>
+      <!--<url>http://www.geocities.com/baanlaem/</url>-->
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ไผ่กองดิน" english="Phai Kong Din" geocode="7287" parent="7204" >
@@ -1141,7 +1182,14 @@
       <url>http://www.paikongdin.co.cc/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ศรีประจันต์" english="Si Prachan" geocode="7286" parent="7205" />
+  <entity type="ThesabanTambon" name="ศรีประจันต์" english="Si Prachan" geocode="7286" parent="7205" >
+    <office type="MunicipalityOffice">
+      <url>http://www.siprachan.go.th/</url>
+      <officials>
+        <official title="Mayor" name="มานพ อิทธิสาร" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ดอนเจดีย์" english="Don Chedi" geocode="7285" parent="7206" >
     <office type="MunicipalityOffice">
       <url>http://www.donjadee.go.th/</url>
@@ -1169,6 +1217,10 @@
         <geo:lat> 14.3761</geo:lat>
         <geo:long>99.8922</geo:long>
       </geo:Point>
+      <url>http://www.u-thongcity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="นิยม ภานุมาสวิวัฒน์" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองหญ้าไซ" english="Nong Ya Sai" geocode="7279" parent="7210" >
@@ -1206,12 +1258,20 @@
       <rename oldname="โคกครามพัฒนา" oldenglish="Khok Khram Phatthana" name="ต้นคราม" english="Ton Kram" effective="2010-05-27"/>
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="บ้านดอน" english="Ban Don" geocode="7273" parent="7209" tambon="720904" />
+  <entity type="ThesabanTambon" name="บ้านดอน" english="Ban Don" geocode="7273" parent="7209" tambon="720904" >
+    <office type="MunicipalityOffice">
+      <url>http://tumbonbandon.igetweb.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ตะค่า" english="Takha" geocode="7272" parent="7204" tambon="720403" >
     <office type="MunicipalityOffice">
       <url>http://www.taka.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ท่าระหัด" english="Tha Rahat" geocode="7271" parent="7201" tambon="720104" />
+  <entity type="ThesabanTambon" name="ท่าระหัด" english="Tha Rahat" geocode="7271" parent="7201" tambon="720104" >
+    <office type="MunicipalityOffice">
+      <url>http://www.tharahat.go.th/</url>
+    </office>
+  </entity>
 
 </entity>
