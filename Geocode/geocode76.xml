@@ -458,7 +458,11 @@
       <entity type="Muban" geocode="76050612" name="บ้านหนองเตียนล่าง"/>
       <entity type="Muban" geocode="76050613" name="บ้านหนองชุมแสงบน"/>
     </entity>
-    <entity type="Tambon" name="วังไคร้" english="Wang Khrai" geocode="760507" />
+    <entity type="Tambon" name="วังไคร้" english="Wang Khrai" geocode="760507" >
+      <office type="TAOOffice">
+        <!--<url>http://www.wangkrai.go.th/</url>-->
+      </office>
+    </entity>
     <entity type="Tambon" name="วังจันทร์" english="Wang Chan" geocode="760508" newgeocode="760803" />
     <entity type="Tambon" name="สองพี่น้อง" english="Song Phi Nong" geocode="760509" newgeocode="760802" />
     <entity type="Tambon" name="แก่งกระจาน" english="Kaeng Krachan" geocode="760510" newgeocode="760801" />
@@ -651,6 +655,10 @@
   </entity>
   <entity type="Amphoe" name="บ้านแหลม" english="Ban Laem" geocode="7607" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat> 13.2006</geo:lat>
+        <geo:long> 99.9804</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="ปราโมทย์ สำเภาเงิน" begin="2010-02-22"/>
         <official title="DistrictOfficer" name="ไพบูลย์ ยิ้มแย้ม" begin="2008-11-24" end="2010-02-21"/>
