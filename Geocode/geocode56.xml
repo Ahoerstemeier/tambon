@@ -213,12 +213,6 @@
       <entity type="Muban" geocode="56020217" name="บ้านจุนรัชดา"/>
     </entity>
     <entity type="Tambon" name="ลอ" english="Lo" geocode="560203" >
-      <office type="TAOOffice">
-        <geo:Point>
-          <geo:lat>19.4390</geo:lat>
-          <geo:long>100.1143</geo:long>
-        </geo:Point>
-      </office>
       <entity type="Muban" geocode="56020301" name="บ้านลอ"/>
       <entity type="Muban" geocode="56020302" name="บ้านปางป้อมเหนือ"/>
       <entity type="Muban" geocode="56020303" name="บ้านร่องย้าง"/>
@@ -450,11 +444,36 @@
         <official title="DistrictOfficer" name="พิเศษ ธีรการุณวงศ์" end="2007-01-07"/>
       </officials>
     </office>
-    <entity type="Tambon" name="เชียงม่วน" english="Chiang Muan" geocode="560401" />
+    <entity type="Tambon" name="เชียงม่วน" english="Chiang Muan" geocode="560401" >
+      <entity type="Muban" geocode="56040101" name="บ้านหลวง"/>
+      <entity type="Muban" geocode="56040102" name="บ้านปงสนุก"/>
+      <entity type="Muban" geocode="56040103" name="บ้านปิน"/>
+      <entity type="Muban" geocode="56040104" name="บ้านไชยสถาน"/>
+      <entity type="Muban" geocode="56040105" name="บ้านท่าม่าน"/>
+      <entity type="Muban" geocode="56040106" name="บ้านหล่ายทุ่ง"/>
+      <entity type="Muban" geocode="56040107" name="บ้านสบทราย"/>
+      <entity type="Muban" geocode="56040108" name="บ้านใหม่"/>
+      <entity type="Muban" geocode="56040109" name="บ้านกลาง"/>
+      <entity type="Muban" geocode="56040110" name="บ้านป่าซางคำ"/>
+    </entity>
     <entity type="Tambon" name="บ้านมาง" english="Ban Mang" geocode="560402" >
       <office type="TAOOffice">
         <url>http://www.banmang.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="สมชัย อุ่นตาล" comment="2010"/>
+        </officials>
       </office>
+      <entity type="Muban" geocode="56040201" name="บ้านมาง"/>
+      <entity type="Muban" geocode="56040202" name="บ้านแพทย์"/>
+      <entity type="Muban" geocode="56040203" name="บ้านหนองหมู"/>
+      <entity type="Muban" geocode="56040204" name="บ้านป่าแขมใต้"/>
+      <entity type="Muban" geocode="56040205" name="บ้านทุ่งมอก"/>
+      <entity type="Muban" geocode="56040206" name="บ้านบ่อเบี้ย"/>
+      <entity type="Muban" geocode="56040207" name="บ้านหนองกลาง"/>
+      <entity type="Muban" geocode="56040208" name="บ้านป่าแขมเหนือ"/>
+      <entity type="Muban" geocode="56040209" name="บ้านบ่อตอง"/>
+      <entity type="Muban" geocode="56040210" name="บ้านบ่อต้นสัก"/>
+      <entity type="Muban" geocode="56040211" name="บ้านทุ่งเจริญ"/>
     </entity>
     <entity type="Tambon" name="สระ" english="Sa" geocode="560403" >
       <office type="TAOOffice">
@@ -562,7 +581,7 @@
   </entity>
   <entity type="Amphoe" name="ปง" english="Pong" geocode="5606" >
     <office type="DistrictOffice">
-      <url comment="Offline?">http://www.amphoepong.org/</url>
+      <url>http://www.amphoepong.org/</url>
       <officials>
         <official title="DistrictOfficer" name="วีระเดช สมวรรณ" begin="2008-11-24"/>
         <official title="DistrictOfficer" name="นิภา สุวรรณสุจริต" begin="2007-11-12" end="2008-11-23"/>
@@ -863,7 +882,14 @@
       <url>http://www.bansailocal.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เชียงม่วน" english="Chiang Muan" geocode="5695" parent="5604" />
+  <entity type="ThesabanTambon" name="เชียงม่วน" english="Chiang Muan" geocode="5695" parent="5604">
+    <office type="MunicipalityOffice">
+      <url>http://www.chiangmuan-tour.com/</url>
+      <officials>
+        <official title="Mayor" name="ประสิทธิ์ สมัคร" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บ้านถ้ำ" english="Ban Tham" geocode="5694" parent="5605" >
     <office type="MunicipalityOffice">
       <url>http://www.banthum.org/</url>
@@ -883,7 +909,11 @@
       <url>http://www.nmt.or.th/phayao/ngim/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ปง" english="Pong" geocode="5691" parent="5606" />
+  <entity type="ThesabanTambon" name="ปง" english="Pong" geocode="5691" parent="5606" >
+    <office type="MunicipalityOffice">
+      <url>http://www.ponglocal.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แม่ใจ" english="Mae Chai" geocode="5690" parent="5607" >
     <office type="MunicipalityOffice">
       <url>http://maejailocalgov.com/</url>
@@ -936,10 +966,25 @@
   </entity>
   <entity type="ThesabanTambon" name="เวียงลอ" english="Wiang Lo" geocode="5680" parent="5602" tambon="560203" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>19.4390</geo:lat>
+        <geo:long>100.1143</geo:long>
+      </geo:Point>
       <url>http://www.tedsabanwianglor.com/</url>
+      <officials>
+        <official title="Mayor" name="ชำนาญ บัวแดง" comment="2010"/>
+      </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ฝายกวาง" english="Fai Kwang" geocode="5679" parent="5603" tambon="560308" />
+  <entity type="ThesabanTambon" name="ฝายกวาง" english="Fai Kwang" geocode="5679" parent="5603" tambon="560308" >
+    <office type="MunicipalityOffice">
+      <url comment="Offline?">http://www.faikwangmunic.com/</url>
+      <url>http://www.nmt.or.th/phayao/faikwang/</url>
+      <officials>
+        <official title="Mayor" name="ชูชาติ ชอบทำนา" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ห้วยลาน" english="Huai Lan" geocode="5678" parent="5605" tambon="560505" >
     <office type="MunicipalityOffice">
       <url>http://www.huaylan.org/</url>
