@@ -714,13 +714,18 @@
       <entity type="Muban" geocode="52080410" name="บ้านสะพานหินพัฒนา"/>
     </entity>
     <entity type="Tambon" name="เวียงมอก" english="Wiang Mok" geocode="520805" >
+      <entity type="Muban" geocode="52080501" name="บ้านห้วยริน"/>
       <entity type="Muban" geocode="52080502" name="บ้านท่าเวียง"/>
-
+      <entity type="Muban" geocode="52080503" name="บ้านสะเลียมหวาน"/>
+      <entity type="Muban" geocode="52080504" name="บ้านปางอ้า"/>
       <entity type="Muban" geocode="52080505" name="บ้านแม่พุ"/>
-
+      <entity type="Muban" geocode="52080506" name="บ้านแม่แสลม"/>
+      <entity type="Muban" geocode="52080507" name="บ้านท่าเกวียน"/>
       <entity type="Muban" geocode="52080508" name="บ้านหนองหอย"/>
-
-      <entity type="Muban" geocode="52080512" name="บ้านท่าเวียงทอง"/>
+      <entity type="Muban" geocode="52080509" name="บ้านหอรบ"/>
+      <entity type="Muban" geocode="52080510" name="บ้านชัยชมภู"/>
+      <entity type="Muban" geocode="52080511" name="บ้านห้วยเตาปูน"/>
+      <entity type="Muban" geocode="52080512" name="บ้านท่าเวียงทอง" comment="Thesaban website says บ้านเวียงทอง"/>
       <entity type="Muban" geocode="52080513" name="บ้านแม่พุเหนือ"/>
       <entity type="Muban" geocode="52080514" name="บ้านเด่นไม้ซุง"/>
     </entity>
@@ -983,6 +988,9 @@
       <office type="MunicipalityOffice">
         <url>http://www.pongyangkhok.go.th/</url>
         <!--<url>http://www.pongyangkok.org/</url>-->
+        <officials>
+          <official title="Mayor" name="ย้าย  ฮาวคำฟู" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="52120401" name="บ้านสันหนองบง"/>
       <entity type="Muban" geocode="52120402" name="บ้านทุ่งบ่อแป้น"/>
@@ -1198,7 +1206,14 @@
       </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เวียงมอก" english="Wiang Mok" geocode="5283" parent="5208" tambon="520805"/>
+  <entity type="ThesabanTambon" name="เวียงมอก" english="Wiang Mok" geocode="5283" parent="5208" tambon="520805">
+    <office type="MunicipalityOffice">
+      <url>http://wiangmok.com/</url>
+      <officials>
+        <official title="Mayor" name="ภูมิภัทร วงศ์เขื่อนแก้ว" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แม่เมาะ" english="Mae Mo" geocode="5282" parent="5202" tambon="520204" >
     <office type="MunicipalityOffice">
       <url>http://www.tasaban-maemoh.org/</url>
