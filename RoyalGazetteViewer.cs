@@ -28,9 +28,16 @@ namespace De.AHoerstemeier.Tambon
             mTable.Columns.Add("Gazette", typeof(String));
         }
 
-        private void FillDataTable()
+        private void FillDataTable(RoyalGazetteList iData)
         {
-            foreach (RoyalGazette lEntry in mData)
+            RoyalGazetteList lData = iData;
+            if (filterToolStripMenuItem.Checked)
+            {
+                lData = lData.FilteredList(TambonHelper.GlobalGazetteList);
+            }
+
+            mTable.Rows.Clear();    
+            foreach (RoyalGazette lEntry in lData)
             {
                 DataRow lRow = mTable.NewRow();
                 lRow["Description"] = lEntry.Description;
@@ -62,11 +69,21 @@ namespace De.AHoerstemeier.Tambon
             get { return mData; }
             set { SetData(value); }
         }
+
+        private Boolean mFiltered = false;
+        internal Boolean Filtered
+        {
+            get { return mFiltered; }
+            set { mFiltered = value; SetData(mData); }
+        }
         private void SetData(RoyalGazetteList value)
         {
-            mData = value;
-            FillDataTable();
-            grid.Columns.GetLastColumn(DataGridViewElementStates.Visible, DataGridViewElementStates.None).Visible = false;
+            if (value != null)
+            {
+                mData = value;
+                FillDataTable(mData);
+                grid.Columns[mTable.Columns.Count-1].Visible = false;
+            }
         }
 
         private void InitializeGrid()
@@ -141,30 +158,20 @@ namespace De.AHoerstemeier.Tambon
                 Clipboard.SetText(retval);
             }
         }
-        internal static void ShowGazetteDialog(RoyalGazetteList iList)
+        internal static void ShowGazetteDialog(RoyalGazetteList iList, Boolean iFiltered)
         {
             var lDataForm = new RoyalGazetteViewer();
+            lDataForm.Filtered = iFiltered;
             lDataForm.Data = iList;
             lDataForm.Show();
         }
 
         internal static void ShowGazetteNewsDialog(RoyalGazetteList iList)
         {
-            var lNewGazetteEntries = new RoyalGazetteList();
-            foreach (RoyalGazette lEntry in iList)
-            {
-                if (TambonHelper.GlobalGazetteList == null)
-                {
-                    lNewGazetteEntries.Add(lEntry);
-                }
-                else if (!TambonHelper.GlobalGazetteList.Contains(lEntry))
-                {
-                    lNewGazetteEntries.Add(lEntry);
-                }
-            }
+            var lNewGazetteEntries = iList.FilteredList(TambonHelper.GlobalGazetteList);
             if (lNewGazetteEntries.Count != 0)
             {
-                ShowGazetteDialog(lNewGazetteEntries);
+                ShowGazetteDialog(iList,true);
             }
         }
 
@@ -247,6 +254,19 @@ namespace De.AHoerstemeier.Tambon
                 Clipboard.SetText(retval);
             }
 
+        }
+
+        private void filterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            filterToolStripMenuItem.Checked = !filterToolStripMenuItem.Checked;
+            Filtered = filterToolStripMenuItem.Checked;
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            Boolean lHasFilter = ((TambonHelper.GlobalGazetteList != null) && (TambonHelper.GlobalGazetteList.Count>0));
+            filterToolStripMenuItem.Visible = (lHasFilter);
+            toolStripSeparator1.Visible = (lHasFilter);
         }
     }
 }
