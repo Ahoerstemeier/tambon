@@ -37,9 +37,11 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuCitation = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pDFURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSaveXml = new System.Windows.Forms.Button();
             this.btnSaveRSS = new System.Windows.Forms.Button();
-            this.pDFURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,9 +72,12 @@
             this.toolStripMenuItem2,
             this.mnuCitation,
             this.xMLSourceToolStripMenuItem,
-            this.pDFURLToolStripMenuItem});
+            this.pDFURLToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.filterToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 164);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 192);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // mnuShow
             // 
@@ -114,6 +119,13 @@
             this.xMLSourceToolStripMenuItem.Text = "XML source";
             this.xMLSourceToolStripMenuItem.Click += new System.EventHandler(this.xMLSourceToolStripMenuItem_Click);
             // 
+            // pDFURLToolStripMenuItem
+            // 
+            this.pDFURLToolStripMenuItem.Name = "pDFURLToolStripMenuItem";
+            this.pDFURLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pDFURLToolStripMenuItem.Text = "PDF URL";
+            this.pDFURLToolStripMenuItem.Click += new System.EventHandler(this.pDFURLToolStripMenuItem_Click);
+            // 
             // btnSaveXml
             // 
             this.btnSaveXml.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -136,12 +148,17 @@
             this.btnSaveRSS.UseVisualStyleBackColor = true;
             this.btnSaveRSS.Click += new System.EventHandler(this.btnSaveRSS_Click);
             // 
-            // pDFURLToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.pDFURLToolStripMenuItem.Name = "pDFURLToolStripMenuItem";
-            this.pDFURLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pDFURLToolStripMenuItem.Text = "PDF URL";
-            this.pDFURLToolStripMenuItem.Click += new System.EventHandler(this.pDFURLToolStripMenuItem_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // filterToolStripMenuItem
+            // 
+            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            this.filterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.filterToolStripMenuItem.Text = "Filter  known";
+            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
             // 
             // RoyalGazetteViewer
             // 
@@ -172,5 +189,7 @@
         private System.Windows.Forms.Button btnSaveRSS;
         private System.Windows.Forms.ToolStripMenuItem xMLSourceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pDFURLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
     }
 }

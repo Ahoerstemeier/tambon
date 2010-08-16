@@ -10,6 +10,7 @@ namespace De.AHoerstemeier.Tambon
     public class RoyalGazetteList : List<RoyalGazette>
     {
         public delegate void ProcessingFinished(RoyalGazetteList data);
+        public delegate void ProcessingFinishedFiltered(RoyalGazetteList data, Boolean filtered);
 
         #region constructor
         public RoyalGazetteList()
@@ -138,6 +139,23 @@ namespace De.AHoerstemeier.Tambon
             XmlDocument lXmlDocument = new XmlDocument();
             ExportToXML(lXmlDocument);
             lXmlDocument.Save(iFilename);
+        }
+
+        public RoyalGazetteList FilteredList(RoyalGazetteList iFilter)
+        {
+            var lResult = new RoyalGazetteList();
+            foreach (RoyalGazette lEntry in this)
+            {
+                if (iFilter == null)
+                {
+                    lResult.Add(lEntry);
+                }
+                else if (!iFilter.Contains(lEntry))
+                {
+                    lResult.Add(lEntry);
+                }
+            }
+            return lResult;
         }
         #endregion
     }
