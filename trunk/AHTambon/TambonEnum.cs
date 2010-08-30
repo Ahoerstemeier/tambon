@@ -106,6 +106,8 @@ namespace De.AHoerstemeier.Tambon
         ElectionCommissionPresident,
         RoyalInstitutePresident,
         RoyalInstituteActingPresident,
-        DepartmentOfTransportDirectorGeneral
+        DepartmentOfTransportDirectorGeneral,
+        DistrictOfficerBangkok,
+        DistrictOfficer
     }
 }
