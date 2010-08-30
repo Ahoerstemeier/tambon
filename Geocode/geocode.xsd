@@ -116,12 +116,21 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="OldLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="geo:Point" />
+      <xs:element minOccurs="0" name="address" type="ThaiAddress"/>
+    </xs:sequence>
+    <xs:attribute name="end" type="xs:date" use="optional" />
+    <xs:attribute name="comment" type="xs:string" use="optional" />
+  </xs:complexType>
   <xs:complexType name='Office'>
     <xs:sequence>
       <xs:element minOccurs="0" ref="geo:Point" />
       <xs:element minOccurs="0" name="address" type="ThaiAddress"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="MyURI"/>
       <xs:element minOccurs="0" maxOccurs="1" name="officials" type="OfficialList"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="oldlocations" type="OldLocation"/>
     </xs:sequence>
     <xs:attribute name="type" type="OfficeType" use="required" />
   </xs:complexType>
