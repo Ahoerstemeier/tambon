@@ -1631,9 +1631,6 @@
       <entity type="Muban" geocode="50140210" name="บ้านสันทรายเงิน"/>
     </entity>
     <entity type="Tambon" name="สันพระเนตร" english="San Phranet" geocode="501403" >
-      <office type="TAOOffice">
-        <url>http://www.geocities.com/sanphanet_of_sao/</url>
-      </office>
       <entity type="Muban" geocode="50140301" name="บ้านสันศรี"/>
       <entity type="Muban" geocode="50140302" name="บ้านแม่คาว"/>
       <entity type="Muban" geocode="50140303" name="บ้านป่าไผ่" comment="TAO website says บ้านกลางทุ่ง"/>
@@ -2764,7 +2761,19 @@
       <url>http://www.maepuka.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="สันพระเนตร" english="San Phranet" geocode="5044" parent="5014" tambon="501403" />
+  <entity type="ThesabanTambon" name="สันพระเนตร" english="San Phranet" geocode="5044" parent="5014" tambon="501403" >
+    <office type="MunicipalityOffice">
+      <url>http://sanphanet.go.th/</url>
+      <!--<url>http://www.geocities.com/sanphanet_of_sao/</url>-->
+      <officials source="http://sanphanet.go.th/boss_history.php">
+        <official index="5" title="TAOChairman" name="บุญชม นันธิ" begin="2004-07-18" end="2008-07-17"/>
+        <official index="4" title="TAOChairman" name="ทศพล จันทร์ผ่อง" begin="2002-06-28" end="2004-06-08"/>
+        <official index="3" title="TAOChairman" name="จันทร์แก้ว นันธิ" begin="2000-06-16" end="2002-06-27"/>
+        <official index="2" title="TAOChairman" name="อินผาย ล้อมเขตร์" begin="1999-03-02" end="2000-04-27"/>
+        <official index="1" title="Kamnan" name="อินผาย ล้อมเขตร์" begin="1996-05-13" end="1999-03-01"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="สันนาเม็ง" english="San Na Meng" geocode="5043" parent="5014" tambon="501404" >
     <office type="MunicipalityOffice">
       <url>http://www.sannameng.org</url>
