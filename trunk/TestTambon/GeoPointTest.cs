@@ -16,6 +16,7 @@ namespace TestProject1
         const double mLatitudeBangkok = 13.7535;
         const double mLongitudeBangkok = 100.5018;
         const double mAltitudeBangkok = 2.0;
+        const String mBangkokGeoHash = "w4rqnzxpv";
 
         public GeoPointTest()
         {
@@ -88,7 +89,7 @@ namespace TestProject1
         {
             // Dresden according to Wikipedia : 13° 44' 29"E 51° 02' 55"N = UTM 33U 0411777 5655984
             UTMPoint lUTMPoint = new UTMPoint("33U 0411777 5655984");
-            GeoPoint lGeoPoint = new GeoPoint(lUTMPoint,GeoDatum.DatumWGS84());
+            GeoPoint lGeoPoint = new GeoPoint(lUTMPoint, GeoDatum.DatumWGS84());
             GeoPoint lExpected = new GeoPoint(51.0 + 02.0 / 60.0 + 55.0 / 3600.0, 13.0 + 44.0 / 60.0 + 29.0 / 3600.0);
             Assert.IsTrue(lExpected.Equals(lGeoPoint));
         }
@@ -114,6 +115,20 @@ namespace TestProject1
             lPoint.Datum = GeoDatum.DatumWGS84();
             GeoPoint lExpected = new GeoPoint(30.0002239, -100.0003696, 194.816, GeoDatum.DatumWGS84());
             Assert.IsTrue(lExpected.Equals(lPoint));
+        }
+        [TestMethod]
+        public void TestGeoHashToGeo()
+        {
+            GeoPoint lGeoPoint = new GeoPoint();
+            lGeoPoint.GeoHash = mBangkokGeoHash;
+            GeoPoint lExpected = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
+            Assert.IsTrue(lExpected.Equals(lGeoPoint));
+        }
+        [TestMethod]
+        public void TestGeoToGeoHash()
+        {
+            GeoPoint lGeoPoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
+            Assert.IsTrue(lGeoPoint.GeoHash == mBangkokGeoHash);
         }
     }
 }

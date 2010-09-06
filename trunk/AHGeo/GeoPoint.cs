@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
@@ -11,6 +12,7 @@ namespace De.AHoerstemeier.Geo
         private double dScaleFactor = 0.9996; // scale factor, used as k0
         private double dCvtRad2Deg = 180.0 / Math.PI; // 57.2957795130823208767 ...
         private GeoDatum mDatum = GeoDatum.DatumWGS84();
+        private Int32 mGeoHashDefaultAccuracy = 6;
         #endregion
 
         #region properties
@@ -18,6 +20,7 @@ namespace De.AHoerstemeier.Geo
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public GeoDatum Datum { get { return mDatum; } set { SetDatum(value); } }
+        public String GeoHash { get { return CalcGeoHash(mGeoHashDefaultAccuracy); } set { SetGeoHash(value); } }
         #endregion
 
         #region constructor
@@ -338,7 +341,7 @@ namespace De.AHoerstemeier.Geo
             lResult = lResult.Replace("%%", "%");
             return lResult;
         }
-        public override string ToString()
+        public override String ToString()
         {
             // TODO use ToString(Format) instead
             String lLatitude = Math.Abs(Latitude).ToString("#0.0000") + "° ";
@@ -363,6 +366,16 @@ namespace De.AHoerstemeier.Geo
             return lResult;
         }
 
+        private String CalcGeoHash(Int32 iAccuracy)
+        {
+            return De.AHoerstemeier.Geo.GeoHash.EncodeGeoHash(this, iAccuracy);
+        }
+        private void SetGeoHash(String iValue)
+        {
+            GeoPoint lPoint = De.AHoerstemeier.Geo.GeoHash.DecodeGeoHash(iValue);
+            this.Latitude = lPoint.Latitude;
+            this.Longitude = lPoint.Longitude;
+        }
         #endregion
 
         #region ICloneable Members
