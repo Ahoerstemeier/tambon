@@ -128,7 +128,8 @@ namespace TestProject1
         public void TestGeoToGeoHash()
         {
             GeoPoint lGeoPoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
-            Assert.IsTrue(lGeoPoint.GeoHash == mBangkokGeoHash);
+            String lGeoHash = lGeoPoint.GeoHash;
+            Assert.IsTrue(lGeoHash == mBangkokGeoHash, "Returned " + lGeoHash+" instead of " + mBangkokGeoHash);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace De.AHoerstemeier.Geo
         private double dScaleFactor = 0.9996; // scale factor, used as k0
         private double dCvtRad2Deg = 180.0 / Math.PI; // 57.2957795130823208767 ...
         private GeoDatum mDatum = GeoDatum.DatumWGS84();
-        private Int32 mGeoHashDefaultAccuracy = 6;
+        private Int32 mGeoHashDefaultAccuracy = 9;
         #endregion
 
         #region properties
@@ -388,13 +388,16 @@ namespace De.AHoerstemeier.Geo
         #endregion
         #region IEquatable Members
         const double mAltitudeAccuracy = 0.01;  // 10 cm
-        const double mDegreeAccuracy = 0.00001;  // ca. 0.1 ArcSecond
+        const double mDegreeAccuracy = 0.00005;  // ca. 0.5 ArcSecond
         public bool Equals(GeoPoint iObj)
         {
-            bool lResult = Math.Abs(iObj.Altitude - this.Altitude) < mAltitudeAccuracy;
-            lResult = lResult & (Math.Abs(iObj.Latitude - this.Latitude) < mDegreeAccuracy);
-            lResult = lResult & (Math.Abs(iObj.Longitude - this.Longitude) < mDegreeAccuracy);
-            lResult = lResult & (iObj.Datum.Equals(this.Datum));
+            double lAltitudeError = Math.Abs(iObj.Altitude - this.Altitude);
+            double lLatitudeError = Math.Abs(iObj.Latitude - this.Latitude);
+            double lLongitudeError = Math.Abs(iObj.Longitude - this.Longitude);
+            bool lResult = (lAltitudeError < mAltitudeAccuracy)
+                & (lLatitudeError < mDegreeAccuracy)
+                & (lLongitudeError < mDegreeAccuracy)
+                & (iObj.Datum.Equals(this.Datum));
             return lResult;
         }
         #endregion

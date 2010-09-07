@@ -9,123 +9,151 @@ namespace De.AHoerstemeier.Geo
 
     static internal class GeoHash
     {
-        static char[] digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
+        private static char[] mDigits = { '0', '1', '2', '3', '4', '5', '6', '7', '8',
                         '9', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p',
                         'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+        private static int mNumberOfBits = 6 * 5;
+        private static Dictionary<char,Int32> mLookupTable = CreateLookup();
+
+        private static Dictionary<char,Int32> CreateLookup()
+        {
+            Dictionary<char, Int32> lResult = new Dictionary<char, Int32>();
+            int i = 0;
+            foreach (char c in mDigits)
+            {
+                lResult[c]=i;
+                i++;
+            }
+            return lResult;
+        }
 
         private static double GeoHashDecode(BitArray iBits, double iFloor, double iCeiling)
         {
-            double iMiddle = 0;
+            double lMiddle = 0;
+            double lFloor = iFloor;
+            double lCeiling = iCeiling;
             for (int i = 0; i < iBits.Length; i++)
             {
-                iMiddle = (iFloor + iCeiling) / 2;
+                lMiddle = (lFloor + lCeiling) / 2;
                 if (iBits[i])
                 {
-                    iFloor = iMiddle;
+                    lFloor = lMiddle;
                 }
                 else
                 {
-                    iCeiling = iMiddle;
+                    lCeiling = lMiddle;
                 }
             }
-            return iMiddle;
+            return lMiddle;
         }
-        private static BitArray GeoHashEncode(double iValue, double iFloor, double iCeiling, Int32 iAccuracy)
+        private static BitArray GeoHashEncode(double iValue, double iFloor, double iCeiling)
         {
-            Int32 lNumberOfBits = iAccuracy * 5;
-            BitArray lResult = new BitArray(lNumberOfBits);
-            for (int i = 0; i < lNumberOfBits; i++)
+            BitArray lResult = new BitArray(mNumberOfBits);
+            double lFloor = iFloor;
+            double lCeiling = iCeiling;
+            for (int i = 0; i < mNumberOfBits; i++)
             {
-                double lMiddle = (iFloor + iCeiling) / 2;
+                double lMiddle = (lFloor + lCeiling) / 2;
                 if (iValue >= lMiddle)
                 {
                     lResult[i] = true;
-                    iFloor = lMiddle;
+                    lFloor = lMiddle;
                 }
                 else
                 {
                     lResult[i] = false;
-                    iCeiling = lMiddle;
+                    lCeiling = lMiddle;
                 }
             }
             return lResult;
         }
 
-        private static String EncodeBase32(Int64 iValue)
+        private static String EncodeBase32(String iBinaryString)
         {
-            char[] lBuf = new char[65];
-            int lCharPos = 64;
-            Boolean lNegative = (iValue < 0);
-            if (!lNegative)
-                iValue = -iValue;
-            while (iValue <= -32)
+            StringBuilder lBuffer = new StringBuilder();
+            String lBinaryString = iBinaryString;
+            while (lBinaryString.Length > 0)
             {
-                lBuf[lCharPos--] = digits[(int)(-(iValue % 32))];
-                iValue /= 32;
+                String lCurrentBlock = lBinaryString.Substring(0, 5).PadLeft(5,'0');
+                if (lBinaryString.Length > 5)
+                {
+                    lBinaryString = lBinaryString.Substring(5, lBinaryString.Length - 5);
+                }
+                else 
+                { 
+                    lBinaryString = String.Empty; 
+                }
+                Int32 lValue = Convert.ToInt32(lCurrentBlock, 2);
+                lBuffer.Append(mDigits[lValue]);
             }
-            lBuf[lCharPos] = digits[(int)(-iValue)];
 
-            if (lNegative)
-                lBuf[--lCharPos] = '-';
-            String lResult = new String(lBuf, lCharPos, (65 - lCharPos));
+            String lResult = lBuffer.ToString();
             return lResult;
         }
 
         internal static GeoPoint DecodeGeoHash(String iValue)
         {
-            Int32 numbits = 6 * 5;
             StringBuilder lBuffer = new StringBuilder();
-            //for (char c : geohash.toCharArray()) {
-            //
-            //                      int i = lookup.get(c) + 32;
-            //                    lBuffer.Append( Int32.ToString(i, 2).substring(1) );
-            //          }
+            foreach (char c in iValue)
+            {
+                if (!mLookupTable.ContainsKey(c))
+                {
+                    throw new ArgumentException("Invalid character " + c);
+                }
+                int i = mLookupTable[c] + 32;
+                lBuffer.Append(Convert.ToString(i,2).Substring(1));
+            }
 
-            //        BitArray lonset = new BitArray();
-            //      BitArray latset = new BitArray();
+            BitArray lonset = new BitArray(mNumberOfBits);
+            BitArray latset = new BitArray(mNumberOfBits);
 
             //even bits
             int j = 0;
-            for (int i = 0; i < numbits * 2; i += 2)
+            for (int i = 0; i < mNumberOfBits * 2; i += 2)
             {
                 Boolean isSet = false;
                 if (i < lBuffer.Length)
+                {
                     isSet = lBuffer[i] == '1';
-                //            lonset.set(j++, isSet);
+                }
+                lonset[j] = isSet;
+                j++;
             }
 
             //odd bits
             j = 0;
-            for (int i = 1; i < numbits * 2; i += 2)
+            for (int i = 1; i < mNumberOfBits * 2; i += 2)
             {
                 Boolean isSet = false;
                 if (i < lBuffer.Length)
+                {
                     isSet = lBuffer[i] == '1';
-                // latset.set(j++, isSet);
+                }
+                latset[j] = isSet;
+                j++;
             }
 
-            //double lLongitude = GeoHashDecode(lonset, -180, 180);
-            //double lLatitude = GeoHashDecode(latset, -90, 90);
+            double lLongitude = GeoHashDecode(lonset, -180, 180);
+            double lLatitude = GeoHashDecode(latset, -90, 90);
 
-            //GeoPoint lResult = new GeoPoint(lLatitude,lLongitude);
+            GeoPoint lResult = new GeoPoint(lLatitude,lLongitude);
 
-            GeoPoint lResult = null;
             return lResult;
         }
 
         internal static String EncodeGeoHash(GeoPoint iData, Int32 iAccuracy)
         {
-            Int32 lNumBits = iAccuracy * 5;
-
-            BitArray lLatitudeBits = GeoHashEncode(iData.Latitude, -90, 90, lNumBits);
-            BitArray lLongitudeBits = GeoHashEncode(iData.Longitude, -180, 180, lNumBits);
+            BitArray lLatitudeBits = GeoHashEncode(iData.Latitude, -90, 90);
+            BitArray lLongitudeBits = GeoHashEncode(iData.Longitude, -180, 180);
             StringBuilder lBuffer = new StringBuilder();
-            for (int i = 0; i < lNumBits; i++)
+            for (int i = 0; i < mNumberOfBits; i++)
             {
-                lBuffer.Append((lLatitudeBits[i]) ? '1' : '0');
                 lBuffer.Append((lLongitudeBits[i]) ? '1' : '0');
+                lBuffer.Append((lLatitudeBits[i]) ? '1' : '0');
             }
-            String lResult = EncodeBase32(Convert.ToInt64(lBuffer.ToString(), 2));
+            String lBinaryValue = lBuffer.ToString();
+            String lResult = EncodeBase32(lBinaryValue);
+            lResult = lResult.Substring(0, iAccuracy);
             return lResult;
         }
     }
