@@ -431,10 +431,32 @@
       </officials>
     </office>
     <entity type="Tambon" name="บางบาล" english="Bang Ban" geocode="140501" />
-    <entity type="Tambon" name="วัดยม" english="Wat Yom" geocode="140502" />
+    <entity type="Tambon" name="วัดยม" english="Wat Yom" geocode="140502" >
+      <entity type="Muban" geocode="14050201" name="บ้านจีน"/>
+      <entity type="Muban" geocode="14050202" name="บ้านขอม"/>
+      <entity type="Muban" geocode="14050203" name="หัวสะพานมอญ"/>
+      <entity type="Muban" geocode="14050204" name="หัวสะพานแดง"/>
+    </entity>
     <entity type="Tambon" name="ไทรน้อย" english="Sai Noi" geocode="140503" />
-    <entity type="Tambon" name="สะพานไทย" english="Saphan Thai" geocode="140504" />
-    <entity type="Tambon" name="มหาพราหมณ์" english="Maha Phram" geocode="140505" />
+    <entity type="Tambon" name="สะพานไทย" english="Saphan Thai" geocode="140504" >
+      <entity type="Muban" geocode="14050401" name="บ้านโรงเหล็ก"/>
+      <entity type="Muban" geocode="14050402" name="บ้านกำแพง"/>
+      <entity type="Muban" geocode="14050403" name="บ้านแก"/>
+      <entity type="Muban" geocode="14050404" name="บ้านสะพานไทย"/>
+      <entity type="Muban" geocode="14050405" name="บ้านสะพานไทย"/>
+    </entity>
+    <entity type="Tambon" name="มหาพราหมณ์" english="Maha Phram" geocode="140505" >
+      <entity type="Muban" geocode="14050501" name="บ้านหัวเกาะ"/>
+      <entity type="Muban" geocode="14050502" name="บ้านตึก"/>
+      <entity type="Muban" geocode="14050503" name="บ้านผัก"/>
+      <entity type="Muban" geocode="14050504" name="บ้านหม้อ"/>
+      <entity type="Muban" geocode="14050505" name="บ้านม่วงหวาน"/>
+      <entity type="Muban" geocode="14050506" name="บ้านม่วงหวาน"/>
+      <entity type="Muban" geocode="14050507" name="บ้านเหนือวัด"/>
+      <entity type="Muban" geocode="14050508" name="บ้านเชือก"/>
+      <entity type="Muban" geocode="14050509" name="บ้านคูมอญ"/>
+      <entity type="Muban" geocode="14050510" name="บ้านคูมอญ"/>
+    </entity>
     <entity type="Tambon" name="กบเจา" english="Kop Chao" geocode="140506" >
       <office type="TAOOffice">
         <url>http://kobjao.go.th/</url>
@@ -498,7 +520,19 @@
       <entity type="Muban" geocode="14060111" name="บ้านท้องคุ้ง"/>
       <entity type="Muban" geocode="14060112" name="บ้านเกาะลอย"/>
     </entity>
-    <entity type="Tambon" name="เชียงรากน้อย" english="Chiang Rak Noi" geocode="140602" />
+    <entity type="Tambon" name="เชียงรากน้อย" english="Chiang Rak Noi" geocode="140602">
+      <entity type="Muban" geocode="14060201" name="บ้านหนองหอย"/>
+      <entity type="Muban" geocode="14060202" name="บ้านหนองหอย"/>
+      <entity type="Muban" geocode="14060203" name="บ้านคลองเปรม"/>
+      <entity type="Muban" geocode="14060204" name="บ้านคลองเปรม"/>
+      <entity type="Muban" geocode="14060205" name="บ้านบึงบอน"/>
+
+      <entity type="Muban" geocode="14060208" name="บ้านโรงอิฐ"/>
+      <entity type="Muban" geocode="14060209" name="บ้านหัวคลอง"/>
+      <entity type="Muban" geocode="14060210" name="บ้านคลองเปรม"/>
+      <entity type="Muban" geocode="14060211" name="บ้านเชียงรากน้อย"/>
+      <entity type="Muban" geocode="14060212" name="บ้านลำเรือแตก"/>
+    </entity>
     <entity type="Tambon" name="บ้านโพ" english="Ban Pho" geocode="140603" >
       <office type="TAOOffice">
         <url>http://www.banpo.go.th/</url>
@@ -1295,6 +1329,9 @@
         <geo:long>100.5761</geo:long>
       </geo:Point>
       <url>http://www.ayutthayacity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สมทรง สรรพโกศล" comment="2010"/>
+      </officials>
     </office>
     <history>
       <misspelling name="นครศรีอยุธยา" />
@@ -1348,7 +1385,14 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บางบาล" english="Bang Ban" geocode="1489" parent="1405" />
-  <entity type="ThesabanTambon" name="มหาพราหมณ์" english="Maha Phram" geocode="1488" parent="1405" />
+  <entity type="ThesabanTambon" name="มหาพราหมณ์" english="Maha Phram" geocode="1488" parent="1405" >
+    <office type="MunicipalityOffice">
+      <url>http://www.mahaphram.go.th/</url>
+      <officials>
+        <official title="Mayor" name="วิชา ใจกล้า" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บางปะหัน" english="Bang Pahan" geocode="1487" parent="1407" >
     <office type="MunicipalityOffice">
       <url>http://www.bangpahun.org/</url>
@@ -1438,7 +1482,31 @@
       <url>http://www.klongjigcity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เชียงรากน้อย" english="Chiang Rak Noi" geocode="1470" parent="1406" tambon="140602"/>
+  <entity type="ThesabanTambon" name="เชียงรากน้อย" english="Chiang Rak Noi" geocode="1470" parent="1406" tambon="140602">
+    <office type="MunicipalityOffice">
+      <url>http://www.chiengraknoy.go.th/</url>
+      <officials>
+        <official title="Mayor" name="เวียง นัยสิทธิ์" comment="2010"/>
+      </officials>
+    </office>
+    <entity type="Chumchon" geocode="14700001" name="บ้านคลองพุทรา" comment="Mu 1"/>
+    <entity type="Chumchon" geocode="14700002" name="ชายคลอง" comment="Mu 1"/>
+    <entity type="Chumchon" geocode="14700003" name="บ้านคลองพุทรา" comment="Mu 2"/>
+    <entity type="Chumchon" geocode="14700004" name="บ้านคลองเปรมบ้านลาด" comment="Mu 3"/>
+    <entity type="Chumchon" geocode="14700005" name="บ้านคลองเปรมพัฒนา" comment="Mu 4"/>
+    <entity type="Chumchon" geocode="14700006" name="ลาดตะเข้" comment="Mu 5"/>
+    <entity type="Chumchon" geocode="14700007" name="บ้านบึงบอน" comment="Mu 5"/>
+    <entity type="Chumchon" geocode="14700008" name="ซอยรักษ์วงวาน" comment="Mu 8"/>
+    <entity type="Chumchon" geocode="14700009" name="โรงอิฐพัฒนา" comment="Mu 8"/>
+    <entity type="Chumchon" geocode="14700010" name="ชายคลองพัฒนา" comment="Mu 8"/>
+    <entity type="Chumchon" geocode="14700011" name="หมู่บ้านร่มรื่นสามัคคี" comment="Mu 9"/>
+    <entity type="Chumchon" geocode="14700012" name="บ้านหัวคลอง" comment="Mu 9"/>
+    <entity type="Chumchon" geocode="14700013" name="ชาวคลองเปรม หมู่ 10 สามัคคี" comment="Mu 10"/>
+    <entity type="Chumchon" geocode="14700014" name="บ้านเชียงรากน้อย" comment="Mu 11"/>
+    <entity type="Chumchon" geocode="14700015" name="บ้านเชียงรากน้อย" comment="Mu 12"/>
+    <entity type="Chumchon" geocode="14700016" name="บ้านลำเรือแตกก้าวหน้า" comment="Mu 12"/>
+    <entity type="Chumchon" geocode="14700017" name="สรานครพัฒนา" comment="Mu 12"/>
+  </entity>
   <entity type="ThesabanTambon" name="บางกระสั้น" english="Bang Krasan" geocode="1469" parent="1406" tambon="140605">
     <office type="MunicipalityOffice">
       <url>http://www.bangkasun.net/</url>
