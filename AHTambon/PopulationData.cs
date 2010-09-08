@@ -11,6 +11,7 @@ namespace De.AHoerstemeier.Tambon
     {
         public delegate void ProcessingFinished(PopulationData data);
         #region variables
+        private Boolean mAnyCached = false;
         private Int32 mYear = 0;
         private Int32 mGeocode = 0;
         private PopulationDataEntry mChangwat = null;
@@ -105,11 +106,17 @@ namespace De.AHoerstemeier.Tambon
         }
         private void ParseSingleFile(String iFilename)
         {
-            if (!cached(iFilename))
+            if (!mAnyCached)
             {
-                Download(iFilename);
+                if (!cached(iFilename))
+                {
+                    Download(iFilename);
+                }
+                else
+                {
+                    mAnyCached = true;
+                }
             }
-
             var lReader = new System.IO.StreamReader(FullFilename(iFilename), TambonHelper.ThaiEncoding);
 
             String lCurrentLine = String.Empty;
@@ -344,7 +351,7 @@ namespace De.AHoerstemeier.Tambon
             lXmlDocument.Save(XMLExportFileName());
         }
 
-        internal void ReOrderThesaban()
+        public void ReOrderThesaban()
         {
             if (mChangwat != null)
             {
