@@ -647,7 +647,11 @@
     </entity>
     <entity type="Tambon" name="กะทูน" english="Kathun" geocode="800502" >
       <office type="TAOOffice">
-        <url>http://www.khatunlocal.com/</url>
+        <url>http://www.khatunlocal.org/</url>
+        <!--<url>http://www.khatunlocal.com/</url>-->
+        <officials>
+          <official title="TAOChairman" name="วิรัตน์  ริยาพันธ์" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="80050201" name="บ้านกะทูนเหนือ"/>
       <entity type="Muban" geocode="80050202" name="บ้านนางเอื้อย"/>
@@ -659,9 +663,6 @@
       <entity type="Muban" geocode="80050208" name="บ้านห้วยช่อง"/>
     </entity>
     <entity type="Tambon" name="เขาพระ" english="Khao Phra" geocode="800503" >
-      <office type="MunicipalityOffice">
-        <url>http://www.khaopra.org/</url>
-      </office>
       <entity type="Muban" geocode="80050301" name="บ้านหน้าเขา"/>
       <entity type="Muban" geocode="80050302" name="บ้านหนองบัว"/>
       <entity type="Muban" geocode="80050303" name="บ้านทุ่งร่อน"/>
@@ -2813,7 +2814,7 @@
 
   <entity type="ThesabanNakhon" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" geocode="8099" parent="8001" >
     <office type="MunicipalityOffice">
-      <!-- Longdo: 8.43652,99.96264  --> 
+      <!-- Longdo: 8.43652,99.96264  -->
       <url>http://www.nakhoncity.org/</url>
     </office>
   </entity>
@@ -2964,7 +2965,15 @@
   <!-- not yet in DOPA statistics-->
   <entity type="ThesabanTambon" name="เขาพระ" english="Khao Phra" geocode="8071" parent="8005" tambon="800503" >
     <office type="MunicipalityOffice">
-      <url>http://www.khaopra.org</url>
+      <geo:Point>
+        <geo:lat>8.5851</geo:lat>
+        <geo:long>99.5890</geo:long>
+      </geo:Point>
+      <url>http://www.khaopracity.go.th/</url>
+      <!--<url comment="No content yet">http://www.khaopra.org/</url>-->
+      <officials>
+        <official title="Mayor" name="พยุง สมทรัพย์" comment="2010"/>
+      </officials>
     </office>
   </entity>
 
