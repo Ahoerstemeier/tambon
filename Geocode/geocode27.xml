@@ -302,11 +302,11 @@
       </officials>
     </office>
     <entity type="Tambon" name="วังน้ำเย็น" english="Wang Nam Yen" geocode="270401" >
-      <office type="TAOOffice">
-        <!-- To be merged into Thesaban Wang Nam Yen -->
-        <url>http://obtwangnamyen.net/</url>
+      <office type="TAOOffice" obsolete="1">
+        <!-- Merged into Thesaban Wang Nam Yen -->
+        <!--<url>http://obtwangnamyen.net/</url>-->
         <officials>
-          <official title="TAOChairman" name="ศิโรจน์  เอกนิรันดร์" comment="2010"/>
+          <official title="TAOChairman" name="ศิโรจน์  เอกนิรันดร์" end="2010-09-23"/>
         </officials>
       </office>
       <entity type="Muban" geocode="27040101" name="บ้านวังน้ำเย็น"/>
@@ -853,6 +853,10 @@
   </entity>
   <entity type="ThesabanTambon" name="วังน้ำเย็น" english="Wang Nam Yen" geocode="2794" parent="2704" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.5004</geo:lat>
+        <geo:long>102.1806</geo:long>
+      </geo:Point>
       <url>http://www.wangnamyen.net/</url>
       <officials>
         <official title="Mayor" name="วันชัย นารีรักษ์" comment="2010"/>
