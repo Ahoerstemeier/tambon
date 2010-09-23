@@ -133,6 +133,7 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="oldlocations" type="OldLocation"/>
     </xs:sequence>
     <xs:attribute name="type" type="OfficeType" use="required" />
+    <xs:attribute name="obsolete" type="xs:boolean" use="optional" />
   </xs:complexType>
   <xs:simpleType name="AreaUnit">
     <xs:restriction base="xs:string">
