@@ -49,6 +49,12 @@
       <official title="Governor" index="2" name="หม่อมเจ้าโสตถิผล ชมพูนุช" beginyear="1919" endyear="1920"/>
       <official title="Governor" index="1" name="พระยาสมุทศักดารักษ์ (เจิม วิเศษรัตน์)" beginyear="1915" endyear="1919"/>
     </officials>
+    <oldlocations comment="Moved into new government center">
+      <geo:Point>
+        <geo:lat>17.8799</geo:lat>
+        <geo:long>102.7406</geo:long>
+      </geo:Point>
+    </oldlocations>
   </office>
   <office type="PAOOffice">
     <url>http://www.nongkhai-pao.org/</url>
@@ -59,8 +65,8 @@
   <entity type="Amphoe" name="เมืองหนองคาย" english="Mueang Nong Khai" geocode="4301" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat>17.8794</geo:lat>
-        <geo:long>102.7413</geo:long>
+        <geo:lat>17.8688</geo:lat>
+        <geo:long>102.7429</geo:long>
       </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="สิริรัฐ ชุมอุปการ" begin="2010-01-25"/>
@@ -70,6 +76,12 @@
         <official title="DistrictOfficer" name="โกมล บุญสูงเพชร" begin="2006-12-25"/>
         <official title="DistrictOfficer" name="สุทธิ รัตนศรีทอง" end="2006-12-24"/>
       </officials>
+      <oldlocations comment="Moved into new government center">
+        <geo:Point>
+          <geo:lat>17.8794</geo:lat>
+          <geo:long>102.7413</geo:long>
+        </geo:Point>
+      </oldlocations>
     </office>
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="430101" />
     <entity type="Tambon" name="มีชัย" english="Mi Chai" geocode="430102" />
@@ -85,7 +97,17 @@
 
       <entity type="Muban" geocode="43010312" name="บ้านม่วงคำ"/>
     </entity>
-    <entity type="Tambon" name="กวนวัน" english="Kuan Wan" geocode="430104" />
+    <entity type="Tambon" name="กวนวัน" english="Kuan Wan" geocode="430104" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>17.8566</geo:lat>
+          <geo:long>102.6912</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="TAOChairman" name="เอกชัย หัสดี" comment="2009"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="เวียงคุก" english="Wiang Khuk" geocode="430105" />
     <entity type="Tambon" name="วัดธาตุ" english="Wat That" geocode="430106" >
       <office type="MunicipalityOffice">
@@ -176,11 +198,14 @@
       </office>
     </entity>
     <entity type="Tambon" name="ปะโค" english="Pa Kho" geocode="430117" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>17.8140</geo:lat>
           <geo:long>102.7009</geo:long>
         </geo:Point>
+        <officials>
+          <official title="TAOChairman" name="บุญเลิศ ใจมั่น" comment="2007"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="เมืองหมี" english="Mueang Mi" geocode="430118" >
