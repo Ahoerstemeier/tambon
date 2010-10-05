@@ -95,6 +95,7 @@ namespace De.AHoerstemeier.Tambon
     { 
         Unknown,
         PrimeMinister,
+        DeputyPrimeMinister,
         MinisterOfInterior,
         DeputyMinisterOfInterior,
         MinistryOfInteriorPermanentSecretary,
