@@ -508,6 +508,9 @@
     <entity type="Tambon" name="ห้วยพระ" english="Huai Phra" geocode="730402" >
       <office type="TAOOffice">
         <url>http://www.huaypra.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ชัยวัฒน์ มนัสวงษ์กาญจน์" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="73040201" name="บ้านห้วยพระ"/>
       <entity type="Muban" geocode="73040202" name="บ้านสามแก้ว"/>
@@ -521,7 +524,8 @@
     </entity>
     <entity type="Tambon" name="ลำเหย" english="Lam Ye" geocode="730403" >
       <office type="TAOOffice">
-        <url>http://www.sao-lumheay.org/</url>
+        <url>http://www.sao-lumheay.com/</url>
+        <!--<url>http://www.sao-lumheay.org/</url>-->
       </office>
       <entity type="Muban" geocode="73040301" name="บ้านทุ่งสีหลง"/>
       <entity type="Muban" geocode="73040302" name="บ้านลำเหย"/>
@@ -542,11 +546,17 @@
     <entity type="Tambon" name="ดอนพุทรา" english="Don Phutsa" geocode="730404" >
       <office type="TAOOffice">
         <url>http://www.donphutsa.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="เมือง รักจ้อย" comment="2010"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="บ้านหลวง" english="Ban Luang" geocode="730405" >
       <office type="TAOOffice">
         <url>http://www.banluang.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="สมชัย ห้วยกรดวัฒนา" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="73040501" name="บ้านฝั่งคลอง"/>
       <entity type="Muban" geocode="73040502" name="บ้านหลวง"/>
@@ -556,7 +566,7 @@
     </entity>
     <entity type="Tambon" name="ดอนรวก" english="Don Ruak" geocode="730406" >
       <office type="TAOOffice">
-        <url>http://obt-donruak.com/</url>
+        <!--<url comment="Expired 2010-07-31">http://obt-donruak.com/</url> -->
       </office>
       <entity type="Muban" geocode="73040601" name="บ้านดอนรวกเล็ก"/>
       <entity type="Muban" geocode="73040602" name="บ้านสวนใหม่"/>
@@ -566,8 +576,18 @@
     </entity>
     <entity type="Tambon" name="ห้วยด้วน" english="Huai Duan" geocode="730407" >
       <office type="TAOOffice">
-        <url comment="Offline">http://www.huayduan.go.th/</url>
+        <url>http://www.huayduan.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="วิชาญ โพธิด้วง" comment="2010"/>
+        </officials>
       </office>
+      <entity type="Muban" geocode="73040701" name="บ้านทุ่งผักกูด"/>
+      <entity type="Muban" geocode="73040702" name="บ้านทุ่งผักกูด"/>
+      <entity type="Muban" geocode="73040703" name="บ้านดอนแกะแระ"/>
+      <entity type="Muban" geocode="73040704" name="บ้านห้วยด้วน"/>
+      <entity type="Muban" geocode="73040705" name="บ้านกงลาด"/>
+      <entity type="Muban" geocode="73040706" name="บ้านกงลาด"/>
+      <entity type="Muban" geocode="73040707" name="บ้านห้วยด้วน"/>
     </entity>
     <entity type="Tambon" name="ลำลูกบัว" english="Lam Luk Bua" geocode="730408" />
   </entity>
@@ -1029,7 +1049,14 @@
       <url>http://www.nmt.or.th/nakhonpathom/thamsala/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="โพรงมะเดื่อ" english="Phrong Maduea" geocode="7396" parent="7301" />
+  <entity type="ThesabanTambon" name="โพรงมะเดื่อ" english="Phrong Maduea" geocode="7396" parent="7301" >
+    <office type="MunicipalityOffice">
+      <!-- Longdo: 13.8213 99.9925 -->
+      <officials>
+        <official title="Mayor" name="อนงค์ลักษณ์ ตันกิตติวัฒน์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="กำแพงแสน" english="Kamphaeng Saen" geocode="7395" parent="7302" >
     <office type="MunicipalityOffice">
       <url>http://khampangsan.tripod.com/</url>
