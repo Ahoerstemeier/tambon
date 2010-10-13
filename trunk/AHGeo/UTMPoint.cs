@@ -79,24 +79,28 @@ namespace De.AHoerstemeier.Geo
         }
         public String ToMGRSString(Int16 iDigits)
         {
+            String lResult = String.Empty;
             Int16 lDigits = MakeDigitValid(iDigits);
             String lNorthing = Northing.ToString("0000000");
             String lEasting = Easting.ToString("0000000");
             String lEastingLetters = MGRSEastingChars(ZoneNumber);
             Int32 lEastingIdentifier = Convert.ToInt32(lEasting.Substring(0, 2)) % 8;
-            String lEastingChar = lEastingLetters.Substring(lEastingIdentifier-1, 1);
-            Int32 lNorthingIdentifier = Convert.ToInt32(lNorthing.Substring(0, 1));
-            lNorthingIdentifier = (lNorthingIdentifier % 2) * 10;
-            lNorthingIdentifier = lNorthingIdentifier + Convert.ToInt32(lNorthing.Substring(1, 1));
+            if (lEastingIdentifier != 0)
+            {
+                String lEastingChar = lEastingLetters.Substring(lEastingIdentifier - 1, 1);
+                Int32 lNorthingIdentifier = Convert.ToInt32(lNorthing.Substring(0, 1));
+                lNorthingIdentifier = (lNorthingIdentifier % 2) * 10;
+                lNorthingIdentifier = lNorthingIdentifier + Convert.ToInt32(lNorthing.Substring(1, 1));
 
-            String lNorthingLetters = MGRSNorthingChars(ZoneNumber);
-            String lNorthingChar = lNorthingLetters.Substring(lNorthingIdentifier, 1);
-            String lResult =
-                ZoneNumber.ToString("00") +
-                ZoneBand() + ' ' +
-                lEastingChar + lNorthingChar + ' ' +
-                lEasting.Substring(2, lDigits - 2) +
-                lNorthing.Substring(2,lDigits - 2);
+                String lNorthingLetters = MGRSNorthingChars(ZoneNumber);
+                String lNorthingChar = lNorthingLetters.Substring(lNorthingIdentifier, 1);
+                lResult =
+                    ZoneNumber.ToString("00") +
+                    ZoneBand() + ' ' +
+                    lEastingChar + lNorthingChar + ' ' +
+                    lEasting.Substring(2, lDigits - 2) +
+                    lNorthing.Substring(2, lDigits - 2);
+            }
             return lResult;
         }
         public static UTMPoint ParseUTMString(String iValue)
