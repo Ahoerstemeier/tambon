@@ -331,7 +331,21 @@
       <entity type="Muban" geocode="20040504" name="บ้านห้วยไข่เน่า"/>
       <entity type="Muban" geocode="20040505" name="บ้านภูไทร"/>
     </entity>
-    <entity type="Tambon" name="ห้วยใหญ่" english="Huai Yai" geocode="200406" />
+    <entity type="Tambon" name="ห้วยใหญ่" english="Huai Yai" geocode="200406" >
+      <entity type="Muban" geocode="20040601" name="บ้านทุ่งคาเหนือ"/>
+      <entity type="Muban" geocode="20040602" name="บ้านทุ่งคาใต้"/>
+      <entity type="Muban" geocode="20040603" name="บ้านห้วยใหญ่"/>
+      <entity type="Muban" geocode="20040604" name="บ้านชากนอก"/>
+      <entity type="Muban" geocode="20040605" name="บ้านนา"/>
+      <entity type="Muban" geocode="20040606" name="บ้านบึง"/>
+      <entity type="Muban" geocode="20040607" name="บ้านห้วยขวาง"/>
+      <entity type="Muban" geocode="20040608" name="บ้านทุ่งละหาน"/>
+      <entity type="Muban" geocode="20040609" name="บ้านเนินทราย"/>
+      <entity type="Muban" geocode="20040610" name="บ้านหนองชากแง้ว"/>
+      <entity type="Muban" geocode="20040611" name="บ้านมาบฟักทอง"/>
+      <entity type="Muban" geocode="20040612" name="บ้านนอก"/>
+      <entity type="Muban" geocode="20040613" name="บ้านหนองผักกูด"/>
+    </entity>
     <entity type="Tambon" name="ตะเคียนเตี้ย" english="Takhian Tia" geocode="200407" >
       <entity type="Muban" geocode="20040701" name="บ้านสังกะเปี๋ยว"/>
       <entity type="Muban" geocode="20040702" name="บ้านตะเคียนเตี้ย"/>
@@ -870,7 +884,15 @@
       <url>http://www.chonburicity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanMueang" name="พนัสนิคม" english="Phanat Nikhom" geocode="2098" parent="2006" />
+  <entity type="ThesabanMueang" name="พนัสนิคม" english="Phanat Nikhom" geocode="2098" parent="2006" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/chonburi/phanatmuni/</url>
+      <!--<url>http://www.phanatmuni.go.th/</url>-->
+      <officials>
+        <official title="Mayor" name="วิจัย  อัมราลิขิต" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="ศรีราชา" english="Si Racha" geocode="2097" parent="2007" >
     <office type="MunicipalityOffice">
       <url>http://www.srirachamunicipality.com/</url>
@@ -954,7 +976,15 @@
   </entity>
   <entity type="ThesabanTambon" name="ห้วยใหญ่" english="Huai Yai" geocode="2084" parent="2004" >
     <office type="MunicipalityOffice">
-      <url>http://www.huayyai.net/</url>
+      <geo:Point>
+        <geo:lat> 12.8667</geo:lat>
+        <geo:long>100.9432</geo:long>
+      </geo:Point>
+      <url>http://www.huayyai.go.th/</url>
+      <!--<url>http://www.huayyai.net/</url>-->
+      <officials>
+        <official title="Mayor" name="ไพรัตน์  ไตรศุภโชค" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="พานทอง" english="Phan Thong" geocode="2083" parent="2005" />
@@ -1037,7 +1067,14 @@
       <url>http://www.tessabankochan.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ท่าบุญมี" english="Tha Bunmi" geocode="2073" parent="2011" />
+  <entity type="ThesabanTambon" name="ท่าบุญมี" english="Tha Bunmi" geocode="2073" parent="2011" >
+    <office type="MunicipalityOffice">
+      <url>http://www.thabunmee.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ณรงค์ เตชะนันทวณิช" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="หนองปรือ" english="Nong Prue" geocode="2072" parent="2004" tambon="200402">
     <office type="MunicipalityOffice">
       <url>http://www.nongprue-banglamung.go.th/</url>
@@ -1085,7 +1122,14 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หมอนนาง" english="Mon Nang" geocode="2063" parent="2006" tambon="200606" />
-  <entity type="ThesabanTambon" name="หนองชาก" english="Nong Chak" geocode="2062" parent="2002" tambon="200206" />
+  <entity type="ThesabanTambon" name="หนองชาก" english="Nong Chak" geocode="2062" parent="2002" tambon="200206" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/chonburi/nongchak/</url>
+      <officials>
+        <official title="Mayor" name="บรรเจิด  สิงห์โตทอง" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เขตรอุดมศักดิ์" english="Khet Udom Sak" geocode="2061" parent="2009" tambon="200901" >
     <office type="MunicipalityOffice">
       <geo:Point>
