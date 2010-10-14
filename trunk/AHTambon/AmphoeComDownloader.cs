@@ -443,7 +443,7 @@ namespace De.AHoerstemeier.Tambon
         {
             List<AmphoeComData> retval = new List<AmphoeComData>();
             var lCodes = CreateCodes();
-            Int16 lProvinceID = IdFromGeocode(iProvinceGeocode);
+            Int16 lProvinceID = ProvinceIdFromGeocode(iProvinceGeocode);
             foreach (Int16 lValue in lCodes[lProvinceID])
             {
                 retval.Add(DoIt(lProvinceID, lValue));
@@ -451,7 +451,7 @@ namespace De.AHoerstemeier.Tambon
             return retval;
         }
 
-        private Int16 IdFromGeocode(int iProvinceGeocode)
+        private Int16 ProvinceIdFromGeocode(int iProvinceGeocode)
         {
             Int16 lProvinceID = 0;
             XElement lGeocodeXML = XElement.Load(TambonHelper.BasicGeocodeFileName());
