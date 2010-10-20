@@ -429,6 +429,11 @@
     </entity>
     <entity type="Tambon" name="เขาน้อย" english="Khao Noi" geocode="770602" >
       <office type="TAOOffice">
+        <geo:Point>
+          <!-- Exact building unsure, source http://cd.m-culture.go.th/prajoub/index.php?c=showitem&item=569 -->
+          <geo:lat>12.4018</geo:lat>
+          <geo:long>99.8754</geo:long>
+        </geo:Point>
         <url>http://www.khaonoy.go.th/</url>
         <officials>
           <official title="TAOChairman" name="สรกฤต ปราณปรีชากุล" comment="2010"/>
@@ -706,10 +711,14 @@
   <entity type="ThesabanTambon" name="ปราณบุรี" english="Pranburi" geocode="7788" parent="7706" >
     <office type="MunicipalityOffice">
       <geo:Point>
+        <!-- Moved to other location? -->
         <geo:lat>12.3939</geo:lat>
         <geo:long>99.9159</geo:long>
       </geo:Point>
       <url>http://www.pranburicity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ธันยวีร์  ศรีอ่อน" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ปากน้ำปราณ" english="Pak Nam Pran" geocode="7787" parent="7706" >
@@ -720,7 +729,19 @@
   <entity type="ThesabanTambon" name="หนองพลับ" english="Nong Phlap" geocode="7786" parent="7707" >
     <office type="MunicipalityOffice">
       <url>http://www.nongphlabcity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="เกรียงไกร ทวีกาญจน์" comment="2010"/>
+      </officials>
     </office>
+    <!-- 
+    1. ชุมชนหนองยายอ่วม
+    2. ชุมชนเทพสถิตย์
+    3. ชุมชนชัยพัฒนา
+    4. ชุมชนร่มไทร
+    5. ชุมชนร่มเกล้า
+    6. ชุมชนร่วมใจสามัคคี
+    7. ชุมชนรักสุดใจ
+    -->
   </entity>
   <entity type="ThesabanTambon" name="ไร่เก่า" english="Rai Kao" geocode="7785" parent="7708" >
     <office type="MunicipalityOffice">
