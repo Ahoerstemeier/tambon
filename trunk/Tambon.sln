@@ -9,6 +9,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AHGeo_Test", "TestTambon\AH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AHTambon", "AHTambon\AHTambon.csproj", "{2B678FFA-AD71-4D31-873E-20C82729BD4A}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website\", "{550E9729-D339-40B8-9F82-A7A117C88A85}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		ProjectReferences = "{2B678FFA-AD71-4D31-873E-20C82729BD4A}|AHTambon.dll;{701BEA66-8220-4F60-9A8D-11AAA4E20974}|AHGeo.dll;{DDFE165D-3C88-4839-BBC7-C80F08A92041}|AHTambonData.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Website"
+		Debug.AspNetCompiler.PhysicalPath = "Website\"
+		Debug.AspNetCompiler.TargetPath = "bin\Website\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Website"
+		Release.AspNetCompiler.PhysicalPath = "Website\"
+		Release.AspNetCompiler.TargetPath = "bin\Website\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1902"
+		VWDVirtualPath = "/tambon"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AHTambonData", "AHTambonData\AHTambonData.csproj", "{DDFE165D-3C88-4839-BBC7-C80F08A92041}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +56,14 @@ Global
 		{2B678FFA-AD71-4D31-873E-20C82729BD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B678FFA-AD71-4D31-873E-20C82729BD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B678FFA-AD71-4D31-873E-20C82729BD4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550E9729-D339-40B8-9F82-A7A117C88A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550E9729-D339-40B8-9F82-A7A117C88A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550E9729-D339-40B8-9F82-A7A117C88A85}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{550E9729-D339-40B8-9F82-A7A117C88A85}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DDFE165D-3C88-4839-BBC7-C80F08A92041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDFE165D-3C88-4839-BBC7-C80F08A92041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDFE165D-3C88-4839-BBC7-C80F08A92041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDFE165D-3C88-4839-BBC7-C80F08A92041}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
