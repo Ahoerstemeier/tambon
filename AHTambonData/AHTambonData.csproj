@@ -368,9 +368,9 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)geocode.xml" "$(SolutionDir)Website\App_Data\geocode.xml"
-xcopy "$(TargetDir)geocode\*.xml" "$(SolutionDir)Website\App_Data\geocode\"
-xcopy "$(TargetDir)gazette\*.xml" "$(SolutionDir)Website\App_Data\gazette\"
+    <PostBuildEvent>xcopy /Y "$(TargetDir)geocode.xml" "$(SolutionDir)Website\App_Data\geocode.xml"
+xcopy /Y "$(TargetDir)geocode\*.xml" "$(SolutionDir)Website\App_Data\geocode\"
+xcopy /Y "$(TargetDir)gazette\*.xml" "$(SolutionDir)Website\App_Data\gazette\"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
