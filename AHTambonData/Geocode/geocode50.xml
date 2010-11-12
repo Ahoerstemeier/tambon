@@ -930,7 +930,19 @@
       <entity type="Muban" geocode="50071009" name="บ้านสบสา-หนองฟาน"/>
       <entity type="Muban" geocode="50071010" name="บ้านพระเจ้านั่งโก๋น"/>
     </entity>
-    <entity type="Tambon" name="เหมืองแก้ว" english="Mueang Kaeo" geocode="500711" />
+    <entity type="Tambon" name="เหมืองแก้ว" english="Mueang Kaeo" geocode="500711" >
+      <office type="TAOOffice">
+        <url>http://www.muangkaew.org/</url>
+        <officials>
+          <official title="TAOChairman" name="ไกร บุญมาเรือน" comment="2010"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="50071108" name="บ้านทุ่งข้าวหอม" english="Ban Thung Khao Thom">
+        <history>
+          <rename oldname="บ้านทุ่งข้าวเน่า" oldenglish="Ban Thung Khao Nao" name="บ้านทุ่งข้าวหอม" english="Ban Thung Khao Thom" effective="2010-11-11"/>
+        </history>
+      </entity>
+    </entity>
   </entity>
   <entity type="Amphoe" name="สะเมิง" english="Samoeng" geocode="5008" >
     <office type="DistrictOffice">
