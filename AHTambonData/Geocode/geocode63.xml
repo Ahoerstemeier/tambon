@@ -325,9 +325,19 @@
       <entity type="Muban" geocode="63040314" name="บ้านชิปาก่อ"/>
     </entity>
     <entity type="Tambon" name="แม่ตื่น" english="Mae Tuen" geocode="630404" >
-      <entity type="Muban" geocode="63040410" name="บ้านห้วยโป่ง"/>
+      <office type="TAOOffice">
+        <url>http://maetune_sao.igetweb.com/</url>
+        <officials>
+          <official title="TAOChairman" name="พรชัย  วสันต์สำราญ" comment="2008"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="63040410" name="บ้านห้วยโป่ง" english="Ban Huai Pong"/>
 
-      <entity type="Muban" geocode="63040413" name="บ้านทีวะเบยทะ"/>
+      <entity type="Muban" geocode="63040413" name="บ้านเลอตอ" english="Ban Loe To">
+        <history>
+          <rename oldname="บ้านทีวะเบยทะ" oldenglish="Ban Thiwa Boeitha" name="บ้านเลอตอ" english="Ban Loe To" effective="2010-10-01"/>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="สามหมื่น" english="Sam Muen" geocode="630405" />
     <entity type="Tambon" name="พระธาตุ" english="Phra That" geocode="630406" />
