@@ -176,10 +176,6 @@
       <entity type="Muban" geocode="21011010" name="บ้านหนองหงส์"/>
     </entity>
     <entity type="Tambon" name="ทับมา" english="Thap Ma" geocode="210111" >
-      <office type="MunicipalityOffice">
-        <url>http://www.thabma.go.th/</url>
-        <url comment="Old website">http://tabma038.tripod.com/</url>
-      </office>
       <entity type="Muban" geocode="21011101" name="บ้านขนาบ"/>
       <entity type="Muban" geocode="21011102" name="บ้านแหลมมะขาม"/>
       <entity type="Muban" geocode="21011103" name="บ้านหนองมะหาด"/>
@@ -810,6 +806,16 @@
       <url>http://www.banna-klaeng.com/</url>
     </office>
   </entity>
-
-  <entity name="มาบข่า" type="SakhaTambon" geocode="2151" english="Map Kha" parent="2105" />
+  <entity type="ThesabanTambon" name="ทับมา" english="Thap Ma" geocode="2079" tambon="210111" >
+    <office type="MunicipalityOffice">
+      <url>http://www.thabma.go.th/</url>
+      <url comment="Old website">http://tabma038.tripod.com/</url>
+      <officials>
+        <official title="Mayor" name="ประเสริฐ วงษ์ศรี" comment="2010"/>
+        <official title="TAOChairman" name="มานิตย์ คาดหมายดี"/>
+      </officials>
+    </office>
+  </entity>
+  
+  <entity name="มาบข่า" type="SakhaTambon" geocode="2151" english="Map Kha" parent="2105" obsolete="1"/>
 </entity>

@@ -286,13 +286,14 @@
     </entity>
     <entity type="Tambon" name="โนนท่อน" english="Non Thon" geocode="400118" >
       <entity type="Muban" geocode="40011801" name="บ้านโนน"/>
-
+      <entity type="Muban" geocode="40011801" name="บ้านท่อน"/>
       <entity type="Muban" geocode="40011803" name="บ้านหนองเบ็ญ"/>
       <entity type="Muban" geocode="40011804" name="บ้านบึงแก"/>
-
+      <entity type="Muban" geocode="40011805" name="บ้านหนองค้า"/>
+      <entity type="Muban" geocode="40011806" name="บ้านกลางฮุง"/>
       <entity type="Muban" geocode="40011807" name="บ้านคำบอน"/>
       <entity type="Muban" geocode="40011808" name="บ้านท่อนใหม่"/>
-
+      <entity type="Muban" geocode="40011809" name="บ้านหนองค้า"/>
       <entity type="Muban" geocode="40011810" name="บ้านทรัพย์เจริญ"/>
       <entity type="Muban" geocode="40011811" name="บ้านคำบอน"/>
       <entity type="Muban" geocode="40011812" name="บ้านหนองขาม"/>
@@ -2734,7 +2735,15 @@
       <url>http://sites.google.com/site/thaibankor/</url>
     </office>
   </entity>
-
+  <entity type="ThesabanTambon" name="โนนท่อน" english="Non Thon" geocode="4063" tambon="400118" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nonthon.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ณัฐนัย เหล่าสุวรรณ์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
+  
   <!-- no geocode assigned yet -->
   <entity type="ThesabanTambon" name="เมืองเก่า" english="Mueang Kao" geocode="4062" parent="4001" tambon="400106" >
     <office type="MunicipalityOffice">
