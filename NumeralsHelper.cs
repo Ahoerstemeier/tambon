@@ -23,10 +23,10 @@ namespace De.AHoerstemeier.Tambon
             boxText.Text = lValue;
         }
 
-        private Dictionary<String, String> mOldPDFFixupSoSuea = new Dictionary<string, string>()
+        private Dictionary<String, String> mMacPDFFixupSoSuea = new Dictionary<string, string>()
         {
               {" ะ","สะ"},  
-              {" "+Convert.ToChar(0x0E31),"ส"+Convert.ToChar(0x0E31)}, // อั
+              {" "+Convert.ToChar(0x0E31),"ส"+Convert.ToChar(0x0E31)},  // อั
               {" า","สา"},
               {" "+Convert.ToChar(0x0E33),"ส"+Convert.ToChar(0x0E33)},  // อำ
               {" "+Convert.ToChar(0x0E34),"ส"+Convert.ToChar(0x0E34)},  // อิ
@@ -47,9 +47,29 @@ namespace De.AHoerstemeier.Tambon
               {" "+Convert.ToChar(0x0E49),"ส"+Convert.ToChar(0x0E49)}, // อ้ 
               {" "+Convert.ToChar(0x0E4A),"ส"+Convert.ToChar(0x0E4A)}, // อ๊ 
               {" "+Convert.ToChar(0x0E4B),"ส"+Convert.ToChar(0x0E4B)}, // อ๋ 
-              {" "+Convert.ToChar(0x0E4C),"ส"+Convert.ToChar(0x0E4C)} // อ์
+              {" "+Convert.ToChar(0x0E4C),"ส"+Convert.ToChar(0x0E4C)}  // อ์
         };
-        private Dictionary<Char, Char> mOldPDFEncoding = new Dictionary<Char, Char>()
+        private Dictionary<Char, Char> mBrokenPDFEncoding = new Dictionary<Char, Char>()
+        {
+              {Convert.ToChar(0xF702),Convert.ToChar(0x0E35)},  // อี
+
+              {Convert.ToChar(0xF705),Convert.ToChar(0x0E48)},  // อ่
+              {Convert.ToChar(0xF706),Convert.ToChar(0x0E49)},  // อ้
+
+              {Convert.ToChar(0xF708),Convert.ToChar(0x0E4B)},  // อ๋
+
+              {Convert.ToChar(0xF70A),Convert.ToChar(0x0E48)},  // อ่
+              {Convert.ToChar(0xF70B),Convert.ToChar(0x0E49)},  // อ้
+              {Convert.ToChar(0xF70C),Convert.ToChar(0x0E4A)},  // อ๊
+
+              {Convert.ToChar(0xF70E),Convert.ToChar(0x0E4C)},  // อ์
+
+              {Convert.ToChar(0xF710),Convert.ToChar(0x0E31)},  // อั
+
+              {Convert.ToChar(0xF712),Convert.ToChar(0x0E47)},  // อ็
+              {Convert.ToChar(0xF713),Convert.ToChar(0x0E48)}   // อ่
+        };
+        private Dictionary<Char, Char> mMacPDFEncoding = new Dictionary<Char, Char>()
             {
               // Letters: กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮ
               {'°','ก'},
@@ -165,15 +185,21 @@ namespace De.AHoerstemeier.Tambon
         private void btnEncoding_Click(object sender, EventArgs e)
         {
             String lValue = boxText.Text;
-            foreach (KeyValuePair<Char, Char> lKeyValuePair in mOldPDFEncoding)
+            foreach (KeyValuePair<Char, Char> lKeyValuePair in mMacPDFEncoding)
             {
                 lValue = lValue.Replace(lKeyValuePair.Key,lKeyValuePair.Value);
             }
             lValue = lValue.Replace("OE", "ฮ");
-            foreach (KeyValuePair<String,String> lKeyValuePair in mOldPDFFixupSoSuea)
+            foreach (KeyValuePair<String,String> lKeyValuePair in mMacPDFFixupSoSuea)
             {
                 lValue = lValue.Replace(lKeyValuePair.Key, lKeyValuePair.Value);
             }
+
+            foreach (KeyValuePair<Char, Char> lKeyValuePair in mBrokenPDFEncoding)
+            {
+                lValue = lValue.Replace(lKeyValuePair.Key, lKeyValuePair.Value);
+            }
+            
             boxText.Text = lValue;
         }
 
