@@ -89,6 +89,7 @@ namespace De.AHoerstemeier.Tambon
         MunicipalityOffice,
         VillageHeadmanOffice,
         ChumchonOffice,
+        SubdistrictHeadmanOffice,
         DistrictMuseum // ???
     }
     public enum GazetteSignPosition
