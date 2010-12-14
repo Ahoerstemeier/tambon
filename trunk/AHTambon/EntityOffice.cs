@@ -18,6 +18,7 @@ namespace De.AHoerstemeier.Tambon
               {OfficeType.MunicipalityOffice, "http://maps.google.com/mapfiles/kml/paddle/ylw-blank.png"},
               {OfficeType.TAOOffice, "http://maps.google.com/mapfiles/kml/paddle/wht-blank.png"},
               {OfficeType.VillageHeadmanOffice, "http://maps.google.com/mapfiles/kml/paddle/pink-blank.png"},
+              {OfficeType.SubdistrictHeadmanOffice, "http://maps.google.com/mapfiles/kml/paddle/pink-blank.png"},
 
               {OfficeType.DistrictMuseum, "http://maps.google.com/mapfiles/kml/shapes/museum.png"}
             };
@@ -30,6 +31,7 @@ namespace De.AHoerstemeier.Tambon
               {OfficeType.TAOOffice, "TAO office"},
               {OfficeType.VillageHeadmanOffice, "Village headman office"},
               {OfficeType.ChumchonOffice,"Chumchon office"},
+              {OfficeType.SubdistrictHeadmanOffice,"Subdistrict headman office"},
 
               {OfficeType.DistrictMuseum,"District museum"}
             };
