@@ -369,8 +369,8 @@
   <entity type="Amphoe" name="สามเงา" english="Sam Ngao" geocode="6303" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 17.2433</geo:lat>
-        <geo:long> 99.0225</geo:long>
+        <geo:lat>17.2250</geo:lat>
+        <geo:long>99.0551</geo:long>
       </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="ศุภชัย ขันธะทิม" begin="2010-02-22"/>
@@ -378,6 +378,12 @@
 
         <official title="DistrictOfficer" name="ธีรชัย ทศรฐ" end="2009-08-23"/>
       </officials>
+      <oldlocations>
+        <geo:Point>
+          <geo:lat>17.2433</geo:lat>
+          <geo:long>99.0225</geo:long>
+        </geo:Point>
+      </oldlocations>
     </office>
     <entity type="Tambon" name="สามเงา" english="Sam Ngao" geocode="630301" >
       <office type="TAOOffice">
@@ -442,9 +448,11 @@
     </entity>
     <entity type="Tambon" name="บ้านนา" english="Ban Na" geocode="630305" >
       <office type="TAOOffice">
-        <!-- Longdo: 17.24276, 99.02319  -->
-        <!-- really? very close to district office, should be TAO Sam Ngao. 
-             According to TAO website its in old district office however in Tambon Sam Ngao -->
+        <!-- old district office Sam Ngao, located outside of Ban Na subdistrict! -->
+        <geo:Point>
+          <geo:lat>17.2433</geo:lat>
+          <geo:long>99.0225</geo:long>
+        </geo:Point>
         <!--<url>http://www.bannatak.com/</url>-->
         <officials>
           <official title="TAOChairman" name="เกียรติศํกดิ์ ทันปัญญา" comment="2008"/>
@@ -894,7 +902,18 @@
       <!--<url>http://www.bantak.org/</url>-->
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="สามเงา" english="Sam Ngao" geocode="6395" parent="6303" />
+  <entity type="ThesabanTambon" name="สามเงา" english="Sam Ngao" geocode="6395" parent="6303" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.2255</geo:lat>
+        <geo:long>99.0507</geo:long>
+      </geo:Point>
+      <url>http://www.samngao.net/</url>
+      <officials>
+        <official title="Mayor" name="สิงห์ทอง โพศรี"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แม่จะเรา" english="Mae Charao" geocode="6394" parent="6304" >
     <office type="MunicipalityOffice">
       <url>http://www.maejaroa.go.th/</url>
