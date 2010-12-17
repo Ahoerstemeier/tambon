@@ -2,7 +2,7 @@
 <entity xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="แพร่" english="Phrae" geocode="54" >
   <office type="ProvinceHall">
     <geo:Point>
-      <geo:lat> 18.1453</geo:lat>
+      <geo:lat>18.1453</geo:lat>
       <geo:long>100.1409</geo:long>
     </geo:Point>
     <url>http://www.phrae.go.th/</url>
@@ -15,8 +15,15 @@
     </officials>
   </office>
   <office type="PAOOffice">
-    <!-- Longdo: 18.15202, 100.15562 -->
+    <!-- yes, really next to the stadium according to PAO website -->
+    <geo:Point>
+      <geo:lat>18.1504</geo:lat>
+      <geo:long>100.1553</geo:long>
+    </geo:Point>
     <url>http://www.phraepao.go.th/</url>
+    <officials>
+      <official title="PAOChairman" name="อนุวัธ วงศ์วรรณ" comment="2010"/>
+    </officials>
   </office>
   <entity type="Amphoe" name="เมืองแพร่" english="Mueang Phrae" geocode="5401" >
     <office type="DistrictOffice">
@@ -800,7 +807,7 @@
     </entity>
     <entity type="Tambon" name="ทุ่งแค้ว" english="Thung Khaeo" geocode="540806" />
   </entity>
-  <entity type="KingAmphoe" name="แดนชุมพล" english="Daen Chumphon" geocode="5409" comment="Proposed, but not created"/>
+  <entity type="KingAmphoe" name="แดนชุมพล" english="Daen Chumphon" geocode="5409" obsolete="1" comment="Proposed, but not created"/>
 
   <entity type="ThesabanMueang" name="แพร่" english="Phrae" geocode="5499" parent="5401" >
     <office type="MunicipalityOffice">
