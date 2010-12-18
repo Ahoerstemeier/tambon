@@ -1407,6 +1407,10 @@
     </office>
     <entity type="Tambon" name="นาบอน" english="Na Bon" geocode="801001" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>8.2520</geo:lat>
+          <geo:long>99.6009</geo:long>
+        </geo:Point>
         <url>http://www.nabon.go.th/</url>
       </office>
       <entity type="Muban" geocode="80100101" name="บ้านอัมพวัน"/>
@@ -1425,6 +1429,12 @@
       <entity type="Muban" geocode="80100114" name="บ้านควนเย็น"/>
     </entity>
     <entity type="Tambon" name="ทุ่งสง" english="Thung Song" geocode="801002" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>8.3028</geo:lat>
+          <geo:long>99.5062</geo:long>
+        </geo:Point>
+      </office>
       <entity type="Muban" geocode="80100201" name="บ้านหนองดี"/>
       <entity type="Muban" geocode="80100202" name="บ้านหนองบัว"/>
       <entity type="Muban" geocode="80100203" name="บ้านทุ่งยวน"/>
@@ -2923,8 +2933,9 @@
       <url>http://www.thasalacity.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="นาบอน" english="Nabon" geocode="8083" parent="8010" >
+  <entity type="ThesabanTambon" name="นาบอน" english="Na Bon" geocode="8083" parent="8010" >
     <office type="MunicipalityOffice">
+      <!--   8.261374° N  99.596599° E according to Google Earth placemark, no building visible yet -->
       <url>http://www.naboncity.go.th/</url>
     </office>
   </entity>
