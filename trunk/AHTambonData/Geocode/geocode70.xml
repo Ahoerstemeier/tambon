@@ -785,6 +785,10 @@
     <entity type="Tambon" name="หนองกระทุ่ม" english="Nong Krathum" geocode="700804" />
     <entity type="Tambon" name="ปากท่อ" english="Pak Tho" geocode="700805" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>13.3712</geo:lat>
+          <geo:long>99.8375</geo:long>
+        </geo:Point>
         <url>http://www.paktho.go.th/</url>
       </office>
     </entity>
@@ -1014,7 +1018,11 @@
       <url>http://www.nongpho.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ปากท่อ" english="Pak Tho" geocode="7078" parent="7008" />
+  <entity type="ThesabanTambon" name="ปากท่อ" english="Pak Tho" geocode="7078" parent="7008" >
+    <office type="MunicipalityOffice">
+      <!--<url>http://www.pakthocity.net/</url>-->
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="วัดเพลง" english="Wat Phleng" geocode="7077" parent="7009" >
     <office type="MunicipalityOffice">
       <url>http://www.watpleng.go.th/</url>
