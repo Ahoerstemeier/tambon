@@ -755,6 +755,10 @@
           <geo:lat>9.4522</geo:lat>
           <geo:long>99.1415</geo:long>
         </geo:Point>
+        <url>http://www.paway.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="วิทยา ใสสะอาด" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="84060601" name="ป่าเว"/>
       <entity type="Muban" geocode="84060602" name="เหยียด"/>
@@ -764,6 +768,11 @@
       <entity type="Muban" geocode="84060606" name="หนองผักหนาม"/>
     </entity>
     <entity type="Tambon" name="ตะกรบ" english="Takrop" geocode="840607">
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="สมพงค์ ยังอ้น" comment="end of term 2010?"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="84060701" name="ฝายพรุ"/>
       <entity type="Muban" geocode="84060702" name="ตะกรบ"/>
       <entity type="Muban" geocode="84060703" name="ห้วยพุนบน"/>
@@ -1775,10 +1784,14 @@
     </office>
     <entity type="Tambon" name="เวียงสระ" english="Wiang Sa" geocode="841501">
       <office type="MunicipalityOffice">
-        <!-- Longdo: 8.67939, 99.37424 (isn't that in Ban Song already?) -->
-        <url comment="Offline">http://www.wiangsra.go.th/</url>
+        <geo:Point>
+          <geo:lat>8.6420</geo:lat>
+          <geo:long>99.3260</geo:long>
+        </geo:Point>
+        <url>http://muangwiang.go.th/</url>
+        <!--<url>http://www.wiangsra.go.th/</url>-->
         <officials>
-          <official title="Mayor" name="สุภณ จิรัตน์ฐิกุล" begin="2009-12-04"/>
+          <official title="Mayor" name="ศุภรักษ์ ติ้วต้ง" comment="2010"/>
         </officials>
       </office>
       <entity type="Muban" geocode="84150101" name="ห้วยสะพาน"/>
@@ -2606,9 +2619,10 @@
   <entity type="ThesabanMueang" name="เวียงสระ" english="Wiang Sa" geocode="8481" parent="8415">
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/surat/wiangsa/</url>
-      <url comment="Offline">http://www.wiangsra.org/</url>
+      <!--<url>http://www.wiangsra.org/</url>-->
       <officials>
-        <official title="Mayor" name="สุภณ จิรัตน์ฐิกุล" beginyear="2006" comment="2010"/>
+        <official title="Mayor" name="สุภณ จิรัตน์ฐิกุล" begin="2009-12-04" comment="Re-elected"/>
+        <official title="Mayor" name="สุภณ จิรัตน์ฐิกุล" beginyear="2006"/>
       </officials>
     </office>
   </entity>
