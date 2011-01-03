@@ -160,9 +160,17 @@ namespace De.AHoerstemeier.Tambon
         }
         internal static void ShowGazetteDialog(RoyalGazetteList iList, Boolean iFiltered)
         {
+            ShowGazetteDialog(iList, iFiltered, String.Empty);
+        }
+        internal static void ShowGazetteDialog(RoyalGazetteList iList, Boolean iFiltered, String iTitle)
+        {
             var lDataForm = new RoyalGazetteViewer();
             lDataForm.Filtered = iFiltered;
             lDataForm.Data = iList;
+            if (!String.IsNullOrEmpty(iTitle))
+            {
+                lDataForm.Text = iTitle;
+            }
             lDataForm.Show();
         }
 
@@ -189,7 +197,6 @@ namespace De.AHoerstemeier.Tambon
             {
                 lGazette.RemoveFromCache();
             }
-
         }
 
         private void btnSaveXml_Click(object sender, EventArgs e)
@@ -216,7 +223,6 @@ namespace De.AHoerstemeier.Tambon
                     mData.ExportToRSS(lDlg.FileName);
                 }
             }
-
         }
 
         private void xMLSourceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -253,7 +259,6 @@ namespace De.AHoerstemeier.Tambon
             {
                 Clipboard.SetText(retval);
             }
-
         }
 
         private void filterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -267,6 +272,15 @@ namespace De.AHoerstemeier.Tambon
             Boolean lHasFilter = ((TambonHelper.GlobalGazetteList != null) && (TambonHelper.GlobalGazetteList.Count>0));
             filterToolStripMenuItem.Visible = (lHasFilter);
             toolStripSeparator1.Visible = (lHasFilter);
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            RoyalGazetteList lList = mData.FindDuplicates();
+            if (lList.Count > 0)
+            {
+                ShowGazetteDialog(lList, false, "Duplicate entries");
+            }
         }
     }
 }

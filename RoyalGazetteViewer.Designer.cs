@@ -38,10 +38,11 @@
             this.mnuCitation = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFURLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSaveXml = new System.Windows.Forms.Button();
-            this.btnSaveRSS = new System.Windows.Forms.Button();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.filterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSaveXml = new System.Windows.Forms.Button();
+            this.btnSaveRSS = new System.Windows.Forms.Button();
+            this.btnCheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,55 +77,67 @@
             this.toolStripSeparator1,
             this.filterToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 192);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(136, 170);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // mnuShow
             // 
             this.mnuShow.Name = "mnuShow";
-            this.mnuShow.Size = new System.Drawing.Size(152, 22);
+            this.mnuShow.Size = new System.Drawing.Size(135, 22);
             this.mnuShow.Text = "Show";
             this.mnuShow.Click += new System.EventHandler(this.mnuShow_Click);
             // 
             // mnuMirror
             // 
             this.mnuMirror.Name = "mnuMirror";
-            this.mnuMirror.Size = new System.Drawing.Size(152, 22);
+            this.mnuMirror.Size = new System.Drawing.Size(135, 22);
             this.mnuMirror.Text = "Mirror";
             this.mnuMirror.Click += new System.EventHandler(this.mnuMirror_Click);
             // 
             // mnuDeletePDF
             // 
             this.mnuDeletePDF.Name = "mnuDeletePDF";
-            this.mnuDeletePDF.Size = new System.Drawing.Size(152, 22);
+            this.mnuDeletePDF.Size = new System.Drawing.Size(135, 22);
             this.mnuDeletePDF.Text = "Delete PDF";
             this.mnuDeletePDF.Click += new System.EventHandler(this.mnuDeletePDF_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(132, 6);
             // 
             // mnuCitation
             // 
             this.mnuCitation.Name = "mnuCitation";
-            this.mnuCitation.Size = new System.Drawing.Size(152, 22);
+            this.mnuCitation.Size = new System.Drawing.Size(135, 22);
             this.mnuCitation.Text = "Citation";
             this.mnuCitation.Click += new System.EventHandler(this.mnuCitation_Click);
             // 
             // xMLSourceToolStripMenuItem
             // 
             this.xMLSourceToolStripMenuItem.Name = "xMLSourceToolStripMenuItem";
-            this.xMLSourceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xMLSourceToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.xMLSourceToolStripMenuItem.Text = "XML source";
             this.xMLSourceToolStripMenuItem.Click += new System.EventHandler(this.xMLSourceToolStripMenuItem_Click);
             // 
             // pDFURLToolStripMenuItem
             // 
             this.pDFURLToolStripMenuItem.Name = "pDFURLToolStripMenuItem";
-            this.pDFURLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pDFURLToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.pDFURLToolStripMenuItem.Text = "PDF URL";
             this.pDFURLToolStripMenuItem.Click += new System.EventHandler(this.pDFURLToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(132, 6);
+            // 
+            // filterToolStripMenuItem
+            // 
+            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
+            this.filterToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.filterToolStripMenuItem.Text = "Filter  known";
+            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
             // 
             // btnSaveXml
             // 
@@ -148,23 +161,23 @@
             this.btnSaveRSS.UseVisualStyleBackColor = true;
             this.btnSaveRSS.Click += new System.EventHandler(this.btnSaveRSS_Click);
             // 
-            // toolStripSeparator1
+            // btnCheck
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // filterToolStripMenuItem
-            // 
-            this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
-            this.filterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.filterToolStripMenuItem.Text = "Filter  known";
-            this.filterToolStripMenuItem.Click += new System.EventHandler(this.filterToolStripMenuItem_Click);
+            this.btnCheck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCheck.Location = new System.Drawing.Point(514, 365);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(75, 23);
+            this.btnCheck.TabIndex = 3;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // RoyalGazetteViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 390);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.btnSaveRSS);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.btnSaveXml);
@@ -191,5 +204,6 @@
         private System.Windows.Forms.ToolStripMenuItem pDFURLToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem filterToolStripMenuItem;
+        private System.Windows.Forms.Button btnCheck;
     }
 }
