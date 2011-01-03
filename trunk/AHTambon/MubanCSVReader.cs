@@ -55,6 +55,7 @@ namespace De.AHoerstemeier.Tambon
                     lCurrentMuban.Geocode = Convert.ToInt32(lGeocode);
                     lCurrentMuban.Name = lSubStrings[4].Replace('"', ' ').Trim();
                     lCurrentMuban.Type = EntityType.Muban;
+                    String lComment = lSubStrings[6].Replace('"', ' ').Trim();
                     String lEasting = lSubStrings[7].Replace('"', ' ').Replace('E', ' ').Trim();
                     String lNorthing = lSubStrings[8].Replace('"', ' ').Replace('N', ' ').Trim();
                     if (TambonHelper.IsNumeric(lEasting) && TambonHelper.IsNumeric(lNorthing))
@@ -72,9 +73,8 @@ namespace De.AHoerstemeier.Tambon
                         Int32 lMuban = Convert.ToInt32(lMubanString);
                         if (lMuban != (lCurrentMuban.Geocode % 100))
                         {
-                            String lComment = "Code is " + lCurrentMuban.Geocode.ToString() + ',';
+                            lComment = lComment + Environment.NewLine + "Code is " + lCurrentMuban.Geocode.ToString() + ',';
                             lComment = lComment + " Muban number is " + lMuban.ToString();
-                            lCurrentMuban.Comment = lComment;
                             lCurrentMuban.Geocode = lCurrentMuban.Geocode - (lCurrentMuban.Geocode % 100) + lMuban;
                         }
                     }
@@ -94,6 +94,7 @@ namespace De.AHoerstemeier.Tambon
                         lCurrentTambon.Geocode = (lCurrentMuban.Geocode / 100);
                         lCurrentAmphoe.SubEntities.Add(lCurrentTambon);
                     }
+                    lCurrentMuban.Comment = lComment;
                     lCurrentTambon.SubEntities.Add(lCurrentMuban);
                 }
             }
