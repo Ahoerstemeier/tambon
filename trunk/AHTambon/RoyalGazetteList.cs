@@ -12,6 +12,26 @@ namespace De.AHoerstemeier.Tambon
         public delegate void ProcessingFinished(RoyalGazetteList data);
         public delegate void ProcessingFinishedFiltered(RoyalGazetteList data, Boolean filtered);
 
+        private class URIComparer : IComparer<RoyalGazette>
+        {
+            public int Compare(RoyalGazette x, RoyalGazette y)
+            {
+                String lUriX = String.Empty;
+                String lUriY = String.Empty;
+                if (x != null)
+                {
+                    lUriX = x.URI;
+                }
+                if (y != null)
+                {
+                    lUriY = y.URI;
+                }
+
+                int lResult = lUriX.CompareTo(lUriY);
+                return lResult;
+                }
+        }
+
         #region constructor
         public RoyalGazetteList()
         {
@@ -157,6 +177,29 @@ namespace De.AHoerstemeier.Tambon
             }
             return lResult;
         }
+
+        public RoyalGazetteList FindDuplicates()
+        {
+            RoyalGazetteList lResult = new RoyalGazetteList();
+            RoyalGazetteList lTemp = new RoyalGazetteList();
+            lTemp.AddRange(this);
+            URIComparer lComparer = new URIComparer();
+            lTemp.Sort(lComparer.Compare);
+            int lIndex = 0;
+            while (lIndex < lTemp.Count)
+            {
+                RoyalGazette lEntry = lTemp[lIndex];
+                lTemp.RemoveAt(lIndex);
+                int lFound = lTemp.BinarySearch(lEntry, lComparer);
+                if (lFound >= 0)
+                {
+                    lResult.Add(lEntry);
+                }
+            }
+            return lResult;
+        }
+
         #endregion
+
     }
 }
