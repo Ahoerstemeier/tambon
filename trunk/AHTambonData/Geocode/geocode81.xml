@@ -57,10 +57,16 @@
   </office>
   <office type="PAOOffice">
     <geo:Point>
-      <geo:lat>8.0570</geo:lat>
-      <geo:long>98.9186</geo:long>
+      <geo:lat>8.0472</geo:lat>
+      <geo:long>98.9088</geo:long>
     </geo:Point>
     <url>http://www.krabipao.go.th/</url>
+    <oldlocations>
+      <geo:Point>
+        <geo:lat>8.0570</geo:lat>
+        <geo:long>98.9186</geo:long>
+      </geo:Point>
+    </oldlocations>
   </office>
   <entity type="Amphoe" name="เมืองกระบี่" english="Mueang Krabi" geocode="8101" >
     <office type="DistrictOffice">
@@ -76,7 +82,8 @@
     <entity type="Tambon" name="กระบี่ใหญ่" english="Krabi Yai" geocode="810102" />
     <entity type="Tambon" name="กระบี่น้อย" english="Krabi Noi" geocode="810103" >
       <office type="TAOOffice">
-        <url>http://www.krabinoi.org/</url>
+        <url>http://www.krabinoi.go.th/</url>
+        <!--<url>http://www.krabinoi.org/</url>-->
       </office>
       <entity type="Muban" geocode="81010301" name="บ้านหน้าชิง"/>
       <entity type="Muban" geocode="81010302" name="บ้านน้ำจาน"/>
@@ -94,6 +101,9 @@
     </entity>
     <entity type="Tambon" name="เกาะศรีบอยา" english="Ko Siboya" geocode="810104" newgeocode="810802" />
     <entity type="Tambon" name="เขาคราม" english="Khao Khram" geocode="810105" >
+      <office type="TAOOffice">
+        <!-- Longdo: 8.215055 98.809178 -->
+      </office>
       <entity type="Muban" geocode="81010501" name="บ้านทุ่ง"/>
       <entity type="Muban" geocode="81010502" name="บ้านหนองจิก"/>
       <entity type="Muban" geocode="81010503" name="บ้านไหนหนัง"/>
@@ -114,6 +124,12 @@
     <entity type="Tambon" name="โคกยาง" english="Khok Yang" geocode="810109" newgeocode="810805" />
     <entity type="Tambon" name="ตลิ่งชัน" english="Taling Chan" geocode="810110" newgeocode="810806" />
     <entity type="Tambon" name="ทับปริก" english="Thap Prik" geocode="810111" >
+      <office type="TAOOffice">
+        <url>http://www.tubprik.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ประพิศ มากสิน" comment="2010"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="81011101" name="บ้านในช่อง"/>
       <entity type="Muban" geocode="81011102" name="บ้านหนองขอน"/>
       <entity type="Muban" geocode="81011103" name="บ้านหนองพูด"/>
@@ -128,7 +144,15 @@
     <entity type="Tambon" name="เหนือคลอง" english="Nuea Khlong" geocode="810114" newgeocode="810801" />
     <entity type="Tambon" name="ไสไทย" english="Sai Thai" geocode="810115" >
       <office type="TAOOffice">
-        <url>http://www.saithai.org/</url>
+        <geo:Point>
+          <geo:lat>8.0513</geo:lat>
+          <geo:long>98.9070</geo:long>
+        </geo:Point>
+        <url>http://www.saithai.net/</url>
+        <!--<url>http://www.saithai.org/</url>-->
+        <officials>
+          <official title="TAOChairman" name="หราบ หง้าฝา" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="81011501" name="บ้านสวนพริก"/>
       <entity type="Muban" geocode="81011502" name="บ้านหนองกก"/>
@@ -141,6 +165,9 @@
     <entity type="Tambon" name="อ่าวนาง" english="Ao Nang" geocode="810116" >
       <office type="TAOOffice">
         <url>http://www.aonang.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="พันคำ  กิตติธรกุล" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="81011601" name="บ้านช่องพลี"/>
       <entity type="Muban" geocode="81011602" name="บ้านอ่าวนาง"/>
@@ -153,7 +180,11 @@
     </entity>
     <entity type="Tambon" name="หนองทะเล" english="Nong Thale" geocode="810117" >
       <office type="TAOOffice">
-        <url>http://www.nongtalay.org/</url>
+        <url>http://www.nongtalay.go.th/</url>
+        <!--<url>http://www.nongtalay.org/</url>-->
+        <officials>
+          <official title="TAOChairman" name="สุขกาย จันทร์อ่อน" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="81011701" name="บ้านหนองทะเล"/>
       <entity type="Muban" geocode="81011702" name="บ้านคลองม่วง"/>
@@ -164,6 +195,11 @@
       <entity type="Muban" geocode="81011707" name="บ้านเขากลม"/>
     </entity>
     <entity type="Tambon" name="คลองประสงค์" english="Khlong Prasong" geocode="810118" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="กิตติ พรหมภัทร" comment="2007"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="81011801" name="บ้านเกาะกลาง"/>
       <entity type="Muban" geocode="81011802" name="บ้านคลองประสงค์"/>
       <entity type="Muban" geocode="81011803" name="บ้านคลองก่ำ"/>
@@ -639,7 +675,11 @@
   <entity type="ThesabanTambon" name="เขาพนม" english="Khao Phanom" geocode="8198" parent="8102" />
   <entity type="ThesabanTambon" name="เกาะลันตาใหญ่" english="Ko Lanta Yai" geocode="8197" parent="8103" >
     <office type="MunicipalityOffice">
-      <url>http://www.kohlantayaicity.org/</url>
+      <url>http://www.nmt.or.th/krabi/kolantayai</url>
+      <!--<url>http://www.kohlantayaicity.org/</url>-->
+      <officials>
+        <official title="Mayor" name="วันชัย กุลวิจิตรรังสี" comment="2010?"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="คลองท่อมใต้" english="Khlong Thom Tai" geocode="8196" parent="8104" >
