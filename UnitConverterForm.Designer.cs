@@ -89,7 +89,7 @@
             this.edtRaiDecimal.DecimalPlaces = 4;
             this.edtRaiDecimal.Location = new System.Drawing.Point(12, 61);
             this.edtRaiDecimal.Maximum = new decimal(new int[] {
-            10000,
+            1000000,
             0,
             0,
             0});
