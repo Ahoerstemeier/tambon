@@ -76,6 +76,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 PopulationDataEntry lBuengKan = new PopulationDataEntry();
                 lBuengKan.English = "Bueng Kan";
+                lBuengKan.Geocode = 38;
                 List<Int32> lBuengKanAmphoeCodes = new List<int>() { 4313, 4311, 4309, 4312, 4303, 4306, 4310, 4304 };
                 PopulationDataEntry lNongKhai = lData.FindByCode(43);
                 foreach (Int32 lCode in lBuengKanAmphoeCodes)
@@ -88,6 +89,7 @@ namespace De.AHoerstemeier.Tambon
                 lBuengKan.CalculateNumbersFromSubEntities();
                 lData.SubEntities.Add(lBuengKan);
                 lData.CalculateNumbersFromSubEntities();
+                lData.SortSubEntities();
             }
 
             Dictionary<PopulationDataEntry, Int32> lResult = ConstituencyCalculator.Calculate(lData, lYear, lNumberOfConstituencies);
