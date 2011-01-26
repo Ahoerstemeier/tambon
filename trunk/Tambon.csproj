@@ -70,6 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstituencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConstituencyForm.Designer.cs">
+      <DependentUpon>ConstituencyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeoCoordinateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConstituencyForm.resx">
+      <DependentUpon>ConstituencyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>Form1.cs</DependentUpon>
