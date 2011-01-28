@@ -39,6 +39,16 @@ namespace De.AHoerstemeier.Tambon
                     cbxProvince.SelectedItem = lEntry;
                 }
             }
+
+            cbxRegion.Items.Clear();
+            foreach (String lRegionScheme in TambonHelper.RegionSchemes())
+            {
+                cbxRegion.Items.Add(lRegionScheme);
+            }
+            if (cbxRegion.Items.Count > 0)
+            {
+                cbxRegion.SelectedIndex = 0;
+            }
         }
 
         private void btnCalc_Click(object sender, EventArgs e)
@@ -72,7 +82,7 @@ namespace De.AHoerstemeier.Tambon
                 mDownloadedData[lYear] = (PopulationDataEntry)lData.Clone();
             }
 
-            if (rbxNational.Checked && cbxBuengKan.Checked)
+            if (rbxNational.Checked && chkBuengKan.Checked)
             {
                 PopulationDataEntry lBuengKan = new PopulationDataEntry();
                 lBuengKan.English = "Bueng Kan";
@@ -100,6 +110,18 @@ namespace De.AHoerstemeier.Tambon
             }
             txtData.Text = lDisplayResult;
         }
+
+        private void rbxNational_CheckedChanged(object sender, EventArgs e)
+        {
+            chkBuengKan.Enabled = rbxNational.Checked;
+            chkRegions.Enabled = rbxNational.Checked;
+        }
+
+        private void chkRegions_Changed(object sender, EventArgs e)
+        {
+            cbxRegion.Enabled = chkRegions.Checked && chkRegions.Enabled;
+        }
+
 
 
     }

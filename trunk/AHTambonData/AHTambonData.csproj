@@ -358,6 +358,9 @@
     <Content Include="Geocode\geocode96.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Regions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -369,6 +372,7 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>xcopy /Y "$(TargetDir)geocode.xml" "$(SolutionDir)Website\App_Data\geocode.xml"
+xcopy /Y "$(TargetDir)regions.xml" "$(SolutionDir)Website\App_Data\regions.xml"
 xcopy /Y "$(TargetDir)geocode\*.xml" "$(SolutionDir)Website\App_Data\geocode\"
 xcopy /Y "$(TargetDir)gazette\*.xml" "$(SolutionDir)Website\App_Data\gazette\"
 </PostBuildEvent>

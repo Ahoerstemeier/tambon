@@ -37,7 +37,9 @@
             this.cbxProvince = new System.Windows.Forms.ComboBox();
             this.btnCalc = new System.Windows.Forms.Button();
             this.txtData = new System.Windows.Forms.TextBox();
-            this.cbxBuengKan = new System.Windows.Forms.CheckBox();
+            this.chkBuengKan = new System.Windows.Forms.CheckBox();
+            this.cbxRegion = new System.Windows.Forms.ComboBox();
+            this.chkRegions = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtNumberOfConstituencies)).BeginInit();
             this.SuspendLayout();
@@ -117,11 +119,12 @@
             this.rbxNational.TabStop = true;
             this.rbxNational.Text = "Nationwide";
             this.rbxNational.UseVisualStyleBackColor = true;
+            this.rbxNational.CheckedChanged += new System.EventHandler(this.rbxNational_CheckedChanged);
             // 
             // rbxProvince
             // 
             this.rbxProvince.AutoSize = true;
-            this.rbxProvince.Location = new System.Drawing.Point(15, 80);
+            this.rbxProvince.Location = new System.Drawing.Point(15, 108);
             this.rbxProvince.Name = "rbxProvince";
             this.rbxProvince.Size = new System.Drawing.Size(67, 17);
             this.rbxProvince.TabIndex = 8;
@@ -135,14 +138,14 @@
             this.cbxProvince.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxProvince.FormattingEnabled = true;
-            this.cbxProvince.Location = new System.Drawing.Point(159, 80);
+            this.cbxProvince.Location = new System.Drawing.Point(159, 107);
             this.cbxProvince.Name = "cbxProvince";
             this.cbxProvince.Size = new System.Drawing.Size(121, 21);
             this.cbxProvince.TabIndex = 9;
             // 
             // btnCalc
             // 
-            this.btnCalc.Location = new System.Drawing.Point(7, 103);
+            this.btnCalc.Location = new System.Drawing.Point(7, 137);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(75, 23);
             this.btnCalc.TabIndex = 10;
@@ -155,30 +158,55 @@
             this.txtData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtData.Location = new System.Drawing.Point(7, 132);
+            this.txtData.Location = new System.Drawing.Point(7, 166);
             this.txtData.Multiline = true;
             this.txtData.Name = "txtData";
             this.txtData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtData.Size = new System.Drawing.Size(273, 129);
+            this.txtData.Size = new System.Drawing.Size(273, 179);
             this.txtData.TabIndex = 11;
             // 
-            // cbxBuengKan
+            // chkBuengKan
             // 
-            this.cbxBuengKan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbxBuengKan.AutoSize = true;
-            this.cbxBuengKan.Location = new System.Drawing.Point(159, 57);
-            this.cbxBuengKan.Name = "cbxBuengKan";
-            this.cbxBuengKan.Size = new System.Drawing.Size(117, 17);
-            this.cbxBuengKan.TabIndex = 12;
-            this.cbxBuengKan.Text = "Include Bueng Kan";
-            this.cbxBuengKan.UseVisualStyleBackColor = true;
+            this.chkBuengKan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkBuengKan.AutoSize = true;
+            this.chkBuengKan.Location = new System.Drawing.Point(159, 57);
+            this.chkBuengKan.Name = "chkBuengKan";
+            this.chkBuengKan.Size = new System.Drawing.Size(117, 17);
+            this.chkBuengKan.TabIndex = 12;
+            this.chkBuengKan.Text = "Include Bueng Kan";
+            this.chkBuengKan.UseVisualStyleBackColor = true;
+            // 
+            // cbxRegion
+            // 
+            this.cbxRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRegion.Enabled = false;
+            this.cbxRegion.FormattingEnabled = true;
+            this.cbxRegion.Location = new System.Drawing.Point(159, 80);
+            this.cbxRegion.Name = "cbxRegion";
+            this.cbxRegion.Size = new System.Drawing.Size(121, 21);
+            this.cbxRegion.TabIndex = 13;
+            // 
+            // chkRegions
+            // 
+            this.chkRegions.AutoSize = true;
+            this.chkRegions.Location = new System.Drawing.Point(15, 82);
+            this.chkRegions.Name = "chkRegions";
+            this.chkRegions.Size = new System.Drawing.Size(99, 17);
+            this.chkRegions.TabIndex = 14;
+            this.chkRegions.Text = "Show by region";
+            this.chkRegions.UseVisualStyleBackColor = true;
+            this.chkRegions.CheckedChanged += new System.EventHandler(this.chkRegions_Changed);
+            this.chkRegions.EnabledChanged += new System.EventHandler(this.chkRegions_Changed);
             // 
             // ConstituencyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
-            this.Controls.Add(this.cbxBuengKan);
+            this.ClientSize = new System.Drawing.Size(292, 357);
+            this.Controls.Add(this.chkRegions);
+            this.Controls.Add(this.cbxRegion);
+            this.Controls.Add(this.chkBuengKan);
             this.Controls.Add(this.txtData);
             this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.cbxProvince);
@@ -209,6 +237,8 @@
         private System.Windows.Forms.ComboBox cbxProvince;
         private System.Windows.Forms.Button btnCalc;
         private System.Windows.Forms.TextBox txtData;
-        private System.Windows.Forms.CheckBox cbxBuengKan;
+        private System.Windows.Forms.CheckBox chkBuengKan;
+        private System.Windows.Forms.ComboBox cbxRegion;
+        private System.Windows.Forms.CheckBox chkRegions;
     }
 }
