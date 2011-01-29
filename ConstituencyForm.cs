@@ -103,10 +103,41 @@ namespace De.AHoerstemeier.Tambon
             }
 
             Dictionary<PopulationDataEntry, Int32> lResult = ConstituencyCalculator.Calculate(lData, lYear, lNumberOfConstituencies);
+
+            if (chkRegions.Checked)
+            {
+                List<PopulationDataEntry> lRegions = TambonHelper.GetRegionBySchemeName(cbxRegion.Text);
+                Dictionary<PopulationDataEntry, Int32> lRegionResult = new Dictionary<PopulationDataEntry, Int32>();
+                foreach (PopulationDataEntry lRegion in lRegions)
+                {
+                    Int32 lConstituencies = 0;
+                    List<PopulationDataEntry> lSub = new List<PopulationDataEntry>();
+                    foreach (PopulationDataEntry lProvince in lRegion.SubEntities)
+                    {
+                        PopulationDataEntry lFound = lData.FindByCode(lProvince.Geocode);
+                        if (lFound != null)
+                        {
+                            lConstituencies = lConstituencies + lResult[lFound];
+                            lSub.Add(lFound);
+                        }
+                    }
+                    lRegion.SubEntities.Clear();
+                    lRegion.SubEntities.AddRange(lSub);
+                    lRegion.CalculateNumbersFromSubEntities();
+                    lRegionResult.Add(lRegion, lConstituencies);
+                }
+                lResult = lRegionResult;
+            }
+
             String lDisplayResult = String.Empty;
             foreach (KeyValuePair<PopulationDataEntry, Int32> lEntry in lResult)
             {
-                lDisplayResult = lDisplayResult + lEntry.Key.English + " " + lEntry.Value.ToString() + Environment.NewLine;
+                Int32 lVotersPerSeat = 0;
+                if (lEntry.Value != 0)
+                {
+                    lVotersPerSeat = lEntry.Key.Total / lEntry.Value;
+                }
+                lDisplayResult = lDisplayResult + lEntry.Key.English + " " + lEntry.Value.ToString() + " (" + lVotersPerSeat.ToString() + " per seat)" + Environment.NewLine;
             }
             txtData.Text = lDisplayResult;
         }
@@ -121,8 +152,6 @@ namespace De.AHoerstemeier.Tambon
         {
             cbxRegion.Enabled = chkRegions.Checked && chkRegions.Enabled;
         }
-
-
 
     }
 }
