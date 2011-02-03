@@ -138,6 +138,7 @@
     </xs:sequence>
     <xs:attribute name="type" type="OfficeType" use="required" />
     <xs:attribute name="obsolete" type="xs:boolean" use="optional" />
+    <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
   <xs:simpleType name="AreaUnit">
     <xs:restriction base="xs:string">

@@ -857,7 +857,14 @@
     </office>
     <entity type="Tambon" name="สองพี่น้อง" english="Song Phi Nong" geocode="720701" />
     <entity type="Tambon" name="บางเลน" english="Bang Len" geocode="720702" />
-    <entity type="Tambon" name="บางตาเถร" english="Bang Ta Then" geocode="720703" />
+    <entity type="Tambon" name="บางตาเถร" english="Bang Ta Then" geocode="720703" >
+      <office type="TAOOffice">
+        <url>http://www.bantatane.ob.tc/</url>
+        <officials>
+          <official title="TAOChairman" name="บัญชา สุนทรีเกษม" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="บางตะเคียน" english="Bang Takhian" geocode="720704" />
     <entity type="Tambon" name="บ้านกุ่ม" english="Ban Kum" geocode="720705" >
       <office type="TAOOffice">
@@ -907,6 +914,9 @@
     <entity type="Tambon" name="ศรีสำราญ" english="Si Samran" geocode="720711" >
       <office type="TAOOffice">
         <url>http://www.srisumran.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ประยงค์ พ่อค้า" comment="2008"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72071101" name="บ้านบางลี่เล็ก"/>
       <entity type="Muban" geocode="72071102" name="บ้านศรีสำราญ"/>
@@ -925,7 +935,14 @@
     </entity>
     <entity type="Tambon" name="ทุ่งคอก" english="Thung Khok" geocode="720712" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.1600</geo:lat>
+          <geo:long>99.9609</geo:long>
+        </geo:Point>
         <url>http://www.thungkhok.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="สุรพล ตันกสิกิจ" comment="2009"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72071201" name="บ้านบัวขาว"/>
       <entity type="Muban" geocode="72071202" name="บ้านเทพพิทักษ์"/>
@@ -965,7 +982,17 @@
       <entity type="Muban" geocode="72071308" name="บ้านกระถินแดง"/>
       <entity type="Muban" geocode="72071309" name="บ้านดอนแจงพัฒนา"/>
     </entity>
-    <entity type="Tambon" name="บ่อสุพรรณ" english="Bo Suphan" geocode="720714" />
+    <entity type="Tambon" name="บ่อสุพรรณ" english="Bo Suphan" geocode="720714" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.1379</geo:lat>
+          <geo:long>99.8946</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="TAOChairman" name="ทรงธรรม ลิ้มธนาคม" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ดอนมะนาว" english="Don Manao" geocode="720715" >
       <office type="TAOOffice">
         <url>http://donmanow.com/</url>
@@ -1376,7 +1403,13 @@
       <url>http://www.sakrajom.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ทุ่งคอก" english="Thung Khok" geocode="7283" parent="7207" />
+  <entity type="ThesabanTambon" name="ทุ่งคอก" english="Thung Khok" geocode="7283" parent="7207">
+    <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="ธานี ฉัตรนภารัตน" comment="2008"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="สามชุก" english="Sam Chuk" geocode="7282" parent="7208" >
     <office type="MunicipalityOffice">
       <url>http://www.samchuk.go.th/</url>
