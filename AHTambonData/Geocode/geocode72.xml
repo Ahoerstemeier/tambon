@@ -856,7 +856,18 @@
       </officials>
     </office>
     <entity type="Tambon" name="สองพี่น้อง" english="Song Phi Nong" geocode="720701" />
-    <entity type="Tambon" name="บางเลน" english="Bang Len" geocode="720702" />
+    <entity type="Tambon" name="บางเลน" english="Bang Len" geocode="720702" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.1618</geo:lat>
+          <geo:long>100.1027</geo:long>
+        </geo:Point>
+        <url>http://www.banglen.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="นันทศักดิ์ แคล้วประยูร" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="บางตาเถร" english="Bang Ta Then" geocode="720703" >
       <office type="TAOOffice">
         <url>http://www.bantatane.ob.tc/</url>
@@ -865,7 +876,17 @@
         </officials>
       </office>
     </entity>
-    <entity type="Tambon" name="บางตะเคียน" english="Bang Takhian" geocode="720704" />
+    <entity type="Tambon" name="บางตะเคียน" english="Bang Takhian" geocode="720704" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.2135</geo:lat>
+          <geo:long>100.1111</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="TAOChairman" name="สมปอง กาบแก้ว" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านกุ่ม" english="Ban Kum" geocode="720705" >
       <office type="TAOOffice">
         <url>http://www.bankum.go.th/</url>
@@ -896,19 +917,46 @@
       <entity type="Muban" geocode="72070613" name="บ้านหัวโพธิ์เหนือ"/>
       <entity type="Muban" geocode="72070614" name="บ้านดอนทอง"/>
     </entity>
-    <entity type="Tambon" name="บางพลับ" english="Bang Phlap" geocode="720707" />
-    <entity type="Tambon" name="เนินพระปรางค์" english="Noen Phra Prang" geocode="720708" />
+    <entity type="Tambon" name="บางพลับ" english="Bang Phlap" geocode="720707" >
+      <office type="TAOOffice">
+        <!-- comment - website was supposed to be at bangphlab.go.th, but the domain (still) dead, content available at first list-->
+        <url>http://www.pakor.go.th/center/website/management/website_dragdrop/index.php?site=532</url>
+        <url>http://www.bangphlab.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ปราศรัย แสวงทรัพย์" comment="2008"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="72070701" name="บ้านท้ายวัด"/>
+      <entity type="Muban" geocode="72070702" name="บ้านบางพลับ"/>
+      <entity type="Muban" geocode="72070703" name="บ้านดอนกระเบื้อง"/>
+      <entity type="Muban" geocode="72070704" name="บ้านบางบอน"/>
+      <entity type="Muban" geocode="72070705" name="บ้านดอนสงวน"/>
+      <entity type="Muban" geocode="72070706" name="บ้านท่าทรายทอง"/>
+      <entity type="Muban" geocode="72070707" name="บ้านบางคาง"/>
+    </entity>
+    <entity type="Tambon" name="เนินพระปรางค์" english="Noen Phra Prang" geocode="720708">
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="บุญสม สามงามยา" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านช้าง" english="Ban Chang" geocode="720709" >
       <office type="MunicipalityOffice">
         <url>http://www.banchang.go.th/</url>
         <officials>
           <official title="Mayor" name="รังสิต กลิ่นสุข" comment="2010"/>
+          <official title="Mayor" name="อำนาจ อยู่เกิด" comment="2008"/>
         </officials>
       </office>
     </entity>
     <entity type="Tambon" name="ต้นตาล" english="Ton Tan" geocode="720710" >
       <office type="TAOOffice">
         <url>http://tontan-suphan.com/</url>
+        <officials>
+          <official title="TAOChairman" name="ประสาน ปานทองคำ" comment="2010"/>
+          <official title="TAOChairman" name="เอนก ไกรทองสุข" comment="2008"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="ศรีสำราญ" english="Si Samran" geocode="720711" >
@@ -970,6 +1018,8 @@
         <url>http://nongbor.go.th/</url>
         <officials>
           <official title="TAOChairman" name="สาวอิสรีย์  ตันประทุมวงษ์" begin="2010-04-12" comment="Was yellow-carded before, won by-election on 2010-04-12"/>
+          
+          <official title="TAOChairman" name="อิสรีย์   ตันประทุมวงษ์" comment="2008"/>
         </officials>
       </office>
       <entity type="Muban" geocode="72071301" name="บ้านหนองจิก"/>
@@ -998,6 +1048,7 @@
         <url>http://donmanow.com/</url>
         <officials>
           <official title="TAOChairman" name="แหลม ศรีนุ้ย" comment="2010"/>
+          <official title="TAOChairman" name="พาณิชดนัย เนียมเพราะ" comment="2008"/>
         </officials>
       </office>
     </entity>
