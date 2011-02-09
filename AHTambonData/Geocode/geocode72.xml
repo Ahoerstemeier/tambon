@@ -1263,7 +1263,20 @@
         <official title="DistrictOfficer" name="เชิดศักดิ์ จำปาเทศ" end="2006-12-24"/>
       </officials>
     </office>
-    <entity type="Tambon" name="อู่ทอง" english="U Thong" geocode="720901" />
+    <entity type="Tambon" name="อู่ทอง" english="U Thong" geocode="720901" >
+      <office type="MunicipalityOffice">
+        <!-- renamed with upgrade: name="ท้าวอู่ทอง" english="Thao U Thong" -->
+        <!-- Longdo: 14.3615 99.8849 -->
+        <geo:Point>
+          <geo:lat>14.3604</geo:lat>
+          <geo:long>99.8852</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="Mayor" name="ฉัฐพนิต  มยูขโชติ" comment="2008"/>
+          <official title="TAOChairman" name="สาวฉัฐพนิต	มยูขโชติ" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="สระยายโสม" english="Sa Yai Som" geocode="720902" >
       <entity type="Muban" geocode="72090201" name="บ้านดอนเขว้า"/>
       <entity type="Muban" geocode="72090202" name="บ้านบ่อปั้น"/>
@@ -1276,12 +1289,51 @@
       <entity type="Muban" geocode="72090209" name="บ้านรางยาว"/>
       <entity type="Muban" geocode="72090210" name="บ้านบ่อคู่"/>
     </entity>
-    <entity type="Tambon" name="จรเข้สามพัน" english="Chorakhe Sam Phan" geocode="720903" />
+    <entity type="Tambon" name="จรเข้สามพัน" english="Chorakhe Sam Phan" geocode="720903" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.3258</geo:lat>
+          <geo:long>99.8623</geo:long>
+        </geo:Point>
+        <url>http://www.jorakhesamphan.go.th/</url>
+        <officials source="http://www.jorakhesamphan.go.th/index.php?page=pageinfo&amp;&pagename=history">
+          <official title="TAOChairman" index="4" name="ประนอม ปทุมสูติ" beginyear="2007"/>
+          <official title="TAOChairman" index="3" name="ประนอม ปทุมสูติ" beginyear="2003" endyear="2007"/>
+          <official title="TAOChairman" index="2" name="ประนอม ปทุมสูติ" beginyear="1999" endyear="2003"/>
+          <official title="TAOChairman" index="1" name="จรูญ บุญมี" beginyear="1995" endyear="1999"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="72090301" name="บ้านหนองบัว"/>
+      <entity type="Muban" geocode="72090302" name="บ้านวังหลุมพอง"/>
+      <entity type="Muban" geocode="72090303" name="บ้านรางโพธิ์"/>
+      <entity type="Muban" geocode="72090304" name="บ้านจรเข้สามพัน"/>
+      <entity type="Muban" geocode="72090305" name="บ้านจรเข้สามพัน"/>
+      <entity type="Muban" geocode="72090306" name="บ้านจรเข้สามพัน"/>
+      <entity type="Muban" geocode="72090307" name="บ้านหนองบอน"/>
+      <entity type="Muban" geocode="72090308" name="บ้านเขาชานหมาก"/>
+      <entity type="Muban" geocode="72090309" name="บ้านโพธิ์เงิน"/>
+      <entity type="Muban" geocode="72090310" name="บ้านทุ่งยายฟัก"/>
+      <entity type="Muban" geocode="72090311" name="บ้านเขาวงพาทย์"/>
+      <entity type="Muban" geocode="72090312" name="บ้านโพธิ์ทอง"/>
+      <entity type="Muban" geocode="72090313" name="บ้านปทุมทอง"/>
+      <entity type="Muban" geocode="72090314" name="บ้านเนินสมบัติ"/>
+      <entity type="Muban" geocode="72090315" name="บ้านวังขอน"/>
+    </entity>
     <entity type="Tambon" name="บ้านดอน" english="Ban Don" geocode="720904" />
-    <entity type="Tambon" name="ยุ้งทะลาย" english="Yung Thalai" geocode="720905" />
+    <entity type="Tambon" name="ยุ้งทะลาย" english="Yung Thalai" geocode="720905" >
+      <office type="TAOOffice">
+        <url>http://yungtalai.igetweb.com/</url>
+        <officials>
+          <official title="TAOChairman" name="สุมล มากระจัน" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ดอนมะเกลือ" english="Don Makluea" geocode="720906" >
       <office type="TAOOffice">
         <url>http://www.donmaklua.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ทองคำ กอดสะอาด" comment="2008"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72090601" name="บ้านหัวข่อย"/>
       <entity type="Muban" geocode="72090602" name="บ้านหน้าวัด"/>
@@ -1298,7 +1350,14 @@
     </entity>
     <entity type="Tambon" name="หนองโอ่ง" english="Nong Ong" geocode="720907" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.4275</geo:lat>
+          <geo:long>99.9070</geo:long>
+        </geo:Point>
         <url>http://tambon-nong-oong.pantown.com/</url>
+        <officials>
+          <official title="TAOChairman" name="สุนทร ทองฤทธิ์" comment="2008"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72090704" name="บ้านหนองหลุม"/>
 
@@ -1311,6 +1370,9 @@
           <geo:long>99.9372</geo:long>
         </geo:Point>
         <url>http://www.donkha.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="วิชัย ตั้งทวีวิพัฒน์" comment="2008"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72090801" name="บ้านดอนคาหัวตาล"/>
       <entity type="Muban" geocode="72090802" name="บ้านดอนคา"/>
@@ -1358,6 +1420,9 @@
     <entity type="Tambon" name="บ้านโข้ง" english="Ban Khong" geocode="720910" >
       <office type="MunicipalityOffice">
         <url>http://bankhong.go.th/</url>
+        <officials>
+          <official title="Mayor" name="ชะเลียง ปุสสะรังษ" comment="2008"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72091001" name="บ้านจร้าเก่า"/>
       <entity type="Muban" geocode="72091002" name="บ้านจร้าใหม่"/>
@@ -1374,10 +1439,19 @@
       <entity type="Muban" geocode="72091013" name="บ้านวังวัว"/>
       <entity type="Muban" geocode="72091014" name="บ้านหนองกระหนาก"/>
     </entity>
-    <entity type="Tambon" name="เจดีย์" english="Chedi" geocode="720911" />
+    <entity type="Tambon" name="เจดีย์" english="Chedi" geocode="720911" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="เอก เปลื้องพร้าว" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="สระพังลาน" english="Sa Phang Lan" geocode="720912" >
       <office type="TAOOffice">
         <url>http://www.srapanglan.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ประทีป โสไกร" comment="2008"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72091201" name="บ้านสระพังลาน"/>
       <entity type="Muban" geocode="72091202" name="บ้านดอนยายกร่อย"/>
@@ -1390,7 +1464,14 @@
       <entity type="Muban" geocode="72091209" name="บ้านสุวรรณวัฒน์"/>
       <entity type="Muban" geocode="72091210" name="บ้านตะวันออก"/>
     </entity>
-    <entity type="Tambon" name="กระจัน" english="Krachan" geocode="720913" />
+    <entity type="Tambon" name="กระจัน" english="Krachan" geocode="720913" >
+      <office type="MunicipalityOffice">
+        <officials>
+          <official title="Mayor" name="พัฒนเศรษฐ ศันสนะพิทยากร" comment="2008"/>
+          <official title="TAOChairman" name="ทัศนไชย ศันสนะพิทยากร" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
   </entity>
   <entity type="Amphoe" name="หนองหญ้าไซ" english="Nong Ya Sai" geocode="7210" >
     <office type="DistrictOffice">
@@ -1646,7 +1727,16 @@
   <entity type="ThesabanTambon" name="สระยายโสม" english="Sa Yai Som" geocode="7281" parent="7209" >
     <office type="MunicipalityOffice">
       <url>http://www.srayaisom.org/</url>
+      <officials>
+        <official title="Mayor" name="ศักดิ์ชัย ศิวะพรชัย" comment="2008"/>
+      </officials>
     </office>
+    <!-- Geocodes to be confirmed -->
+    <entity type="Chumchon" geocode="72810001" name="ชุมชนตลาดเทศบาล"/>
+    <entity type="Chumchon" geocode="72810002" name="ชุมชนสร้างสรรค์พัฒนา"/>
+    <entity type="Chumchon" geocode="72810003" name="ชุมชนร่วมใจพัฒนา"/>
+    <entity type="Chumchon" geocode="72810004" name="ชุมชนไทยทรงดำฝั่งตะวันออก"/>
+    <entity type="Chumchon" geocode="72810005" name="ชุมชนไทยทรงดำฝั่งตะวันตก"/>
   </entity>
   <entity type="ThesabanTambon" name="อู่ทอง" english="U Thong" geocode="7280" parent="7209" >
     <office type="MunicipalityOffice">
@@ -1657,6 +1747,7 @@
       <url>http://www.u-thongcity.go.th/</url>
       <officials>
         <official title="Mayor" name="นิยม ภานุมาสวิวัฒน์" comment="2010"/>
+        <official title="Mayor" name="รัชชัย วัฒนไกร" comment="2008"/>
       </officials>
     </office>
   </entity>
@@ -1692,6 +1783,9 @@
   <entity type="ThesabanTambon" name="ขุนพัดเพ็ง" english="Khun Phat Pheng" geocode="7276" parent="7209" tambon="720902" >
     <office type="MunicipalityOffice">
       <url>http://www.khunpadpeng.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ไพศาล ว่องไวกลยุทธ์" comment="2008"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ปลายนา" english="Plai Na" geocode="7275" parent="7205" tambon="720506" >
@@ -1719,6 +1813,9 @@
   <entity type="ThesabanTambon" name="บ้านดอน" english="Ban Don" geocode="7273" parent="7209" tambon="720904" >
     <office type="MunicipalityOffice">
       <url>http://tumbonbandon.igetweb.com/</url>
+      <officials>
+        <official title="Mayor" name="ถกล พุทธิมัย" comment="2008"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ตะค่า" english="Takha" geocode="7272" parent="7204" tambon="720403" >
