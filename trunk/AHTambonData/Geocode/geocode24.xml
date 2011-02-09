@@ -618,6 +618,9 @@
     <entity type="Tambon" name="เกาะขนุน" english="Ko Khanun" geocode="240601" >
       <office type="TAOOffice">
         <url>http://khoakanun.com/</url>
+        <officials>
+          <official title="TAOChairman" name="อดุลย์ แสงจันทร์ " comment="2010"/>
+        </officials>
       </office>
 
       <entity type="Muban" geocode="24060103" name="บ้านเกาะบุนนาค"/>
@@ -973,7 +976,18 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านโพธิ์" english="Ban Pho" geocode="2485" parent="2405" />
-  <entity type="ThesabanTambon" name="เกาะขนุน" english="Ko Khanun" geocode="2484" parent="2406" />
+  <entity type="ThesabanTambon" name="เกาะขนุน" english="Ko Khanun" geocode="2484" parent="2406" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat> 13.7227</geo:lat>
+        <geo:long>101.3834</geo:long>
+      </geo:Point>
+      <url>http://www.kohkhanooncity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="วัฒนา สุขโภชน์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เขาหินซ้อน" english="Khao Hin Son" geocode="2483" parent="2406" />
   <entity type="ThesabanTambon" name="พนมสารคาม" english="Phanom Sarakham" geocode="2482" parent="2406" />
   <entity type="ThesabanTambon" name="สนามชัยเขต" english="Sanam Chai Khet" geocode="2481" parent="2408" >
