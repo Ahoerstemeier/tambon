@@ -677,6 +677,12 @@
       </officials>
     </office>
     <entity type="Tambon" name="โคกคราม" english="Khok Khram" geocode="720401" >
+      <office type="MunicipalityOffice">
+        <!-- renamed to โคกครามพัฒนา with upgrade -->
+        <officials>
+          <official title="TAOChairman" name="วัฒนากร คำพันธ์" comment="2008"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="72040101" name="บ้านขนมจีน"/>
       <entity type="Muban" geocode="72040102" name="บ้านสวนขิง"/>
       <entity type="Muban" geocode="72040103" name="บ้านลานคา"/>
@@ -690,9 +696,26 @@
       <entity type="Muban" geocode="72040111" name="บ้านศาลาแดง"/>
       <entity type="Muban" geocode="72040112" name="บ้านโรงนา"/>
     </entity>
-    <entity type="Tambon" name="บางปลาม้า" english="Bang Pla Ma" geocode="720402" />
+    <entity type="Tambon" name="บางปลาม้า" english="Bang Pla Ma" geocode="720402" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.4068</geo:lat>
+          <geo:long>100.1074</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="TAOChairman" name="ไพบูลย์ ยิ้มประเสริฐ" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ตะค่า" english="Takha" geocode="720403" />
-    <entity type="Tambon" name="บางใหญ่" english="Bang Yai" geocode="720404" />
+    <entity type="Tambon" name="บางใหญ่" english="Bang Yai" geocode="720404" >
+      <office type="TAOOffice">
+        <url>http://www.bangyai.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ธัญญา วารีรัตน์" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="กฤษณา" english="Kritsana" geocode="720405" >
       <office type="TAOOffice">
         <officials>
@@ -700,17 +723,28 @@
         </officials>
       </office>
     </entity>
-    <entity type="Tambon" name="สาลี" english="Sali" geocode="720406" />
+    <entity type="Tambon" name="สาลี" english="Sali" geocode="720406" >
+      <office type="TAOOffice">
+        <!--<url>http://www.tambonsalee.com</url>-->
+        <officials>
+          <official title="TAOChairman" name="สักรินทร์ หงส์รัตน์" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ไผ่กองดิน" english="Phai Kong Din" geocode="720407" >
       <office type="TAOOffice">
         <officials>
           <official title="TAOChairman" name="กำพล จรุงกิจกุล" comment="2010"/>
+          <official title="TAOChairman" name="บุญเหลือ ฤกษ์รัชนี" comment="2008"/>
         </officials>
       </office>
     </entity>
     <entity type="Tambon" name="องครักษ์" english="Ongkharak" geocode="720408" >
       <office type="TAOOffice">
         <url>http://www.ongkarak.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="ภาสกร พุทธจรรยา" comment="2008"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72040801" name="บ้านองครักษ์"/>
       <entity type="Muban" geocode="72040802" name="บ้านคลองโมง"/>
@@ -727,12 +761,22 @@
           <geo:long>100.2302</geo:long>
         </geo:Point>
         <url>http://www.jorakheyai.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="บัญชา วิริยะพัตร์" comment="2008"/>
+        </officials>
       </office>
+
+      <entity type="Muban" geocode="72040902" name="บ้านจรเข้ใหญ่"/>
+
     </entity>
     <entity type="Tambon" name="บ้านแหลม" english="Ban Laem" geocode="720410" >
       <office type="MunicipalityOffice">
         <!-- renamed to บ้านแหลมพัฒนา on upgrade -->
         <url>http://www.banleamburi.org/</url>
+        <officials>
+          <official title="Mayor" name="สุรพงษ์ พนากิจกุล " comment="2010"/>
+          <official title="TAOChairman" name="สุรพงษ์ พนากิจกุล" comment="2008"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="มะขามล้ม" english="Makham Lom" geocode="720411" >
@@ -742,6 +786,9 @@
           <geo:long>100.0714</geo:long>
         </geo:Point>
         <url>http://www.makhamlom.go.th/</url>
+        <officials>
+          <official title="TAOChairman" name="โอภาส จันทร์เพ็ญ" comment="2008"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="72041101" name="บ้านโคกโก"/>
       <entity type="Muban" geocode="72041102" name="บ้านมะขามล้ม"/>
@@ -761,13 +808,28 @@
     <entity type="Tambon" name="วังน้ำเย็น" english="Wang Nam Yen" geocode="720412" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 14.3925</geo:lat>
+          <geo:lat>14.3925</geo:lat>
           <geo:long>100.0290</geo:long>
         </geo:Point>
+        <officials>
+          <official title="TAOChairman" name="ณรงค์ ลิ้มจันทร์ทอง" comment="2008"/>
+        </officials>
       </office>
     </entity>
-    <entity type="Tambon" name="วัดโบสถ์" english="Wat Bot" geocode="720413" />
-    <entity type="Tambon" name="วัดดาว" english="Wat Dao" geocode="720414" />
+    <entity type="Tambon" name="วัดโบสถ์" english="Wat Bot" geocode="720413" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="สนม พันธ์ตา" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="วัดดาว" english="Wat Dao" geocode="720414" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="ประทิว รัศมี" comment="2008"/>
+        </officials>
+      </office>
+    </entity>
   </entity>
   <entity type="Amphoe" name="ศรีประจันต์" english="Si Prachan" geocode="7205" >
     <office type="DistrictOffice">
@@ -1696,6 +1758,9 @@
   <entity type="ThesabanTambon" name="โคกคราม" english="Khok Khram" geocode="7290" parent="7204" >
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/suphanburi/kokkram/</url>
+      <officials>
+        <official title="Mayor" name="สมพงษ์ สุนทรธรรม" comment="2008"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บางปลาม้า" english="Bang Pla Ma" geocode="7289" parent="7204" >
@@ -1708,12 +1773,20 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านแหลม" english="Ban Laem" geocode="7288" parent="7204" >
     <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/suphanburi/banlaem/</url>
       <!--<url>http://www.geocities.com/baanlaem/</url>-->
+      <officials>
+        <official title="Mayor" name="บัณฑิต เฮงวัฒนา" comment="2008"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ไผ่กองดิน" english="Phai Kong Din" geocode="7287" parent="7204" >
     <office type="MunicipalityOffice">
       <url>http://www.paikongdin.co.cc/</url>
+      <officials>
+        <official title="Mayor" name="สุเวทย์ จรุงกิจกุล" comment="2010"/>
+        <official title="Mayor" name="สุรินทร์ อัยราวงศ์" comment="2008"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ศรีประจันต์" english="Si Prachan" geocode="7286" parent="7205" >
@@ -1857,6 +1930,9 @@
   <entity type="ThesabanTambon" name="ตะค่า" english="Takha" geocode="7272" parent="7204" tambon="720403" >
     <office type="MunicipalityOffice">
       <url>http://www.taka.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ไพบูลย์ ยิ้มประเสริฐ" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าระหัด" english="Tha Rahat" geocode="7271" parent="7201" tambon="720104" >
