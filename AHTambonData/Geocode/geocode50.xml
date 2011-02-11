@@ -193,8 +193,15 @@
     <entity type="Tambon" name="สองแคว" english="Song Khwae" geocode="500202" newgeocode="502402" />
     <entity type="Tambon" name="บ้านหลวง" english="Ban Luang" geocode="500203" >
       <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>18.4901</geo:lat>
+          <geo:long>98.6747</geo:long>
+        </geo:Point>
         <url>http://banluangcity.org/</url>
-        <!-- <url comment="Offline">http://www.ban-loung.go.th/</url> -->
+        <!-- <url>http://www.ban-loung.go.th/</url> -->
+        <officials>
+          <official title="Mayor" name="ก่อชิ เพชรไพรพนาวัลย์" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50020301" name="บ้านแท่นคำ" english="Ban Thaen Kham"/>
       <entity type="Muban" geocode="50020302" name="บ้านลุ่มใต้" english="Ban Lum Tai"/>
@@ -572,10 +579,22 @@
     </entity>
     <entity type="Tambon" name="ป่าป้อง" english="Pa Pong" geocode="500504" >
       <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>18.8437</geo:lat>
+          <geo:long>99.1372</geo:long>
+        </geo:Point>
         <url>http://www.papong.go.th/</url>
+        <officials>
+          <official title="Mayor" name="สมบูรณ์ ริญญา" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50050401" name="บ้านป่าตึงน้อย"/>
-
+      <entity type="Muban" geocode="50050402" name="บ้านป่าไม้แดง"/>
+      <entity type="Muban" geocode="50050403" name="บ้านป่าป้อง"/>
+      <entity type="Muban" geocode="50050404" name="บ้านป่าป้อง"/>
+      <entity type="Muban" geocode="50050405" name="บ้านป่าป้องใต้ร้อง"/>
+      <entity type="Muban" geocode="50050406" name="บ้านดวงดี"/>
+      <entity type="Muban" geocode="50050407" name="บ้านป่ายางงาม"/>
       <entity type="Muban" geocode="50050408" name="บ้านทุ่งยาว"/>
     </entity>
     <entity type="Tambon" name="สง่าบ้าน" english="Sa-nga Ban" geocode="500505" >
@@ -614,6 +633,11 @@
     </entity>
     <entity type="Tambon" name="สำราญราษฎร์" english="Samran Rat" geocode="500508" >
       <office type="TAOOffice">
+        <geo:Point>
+          <!-- cannot identify actual building -->
+          <geo:lat>18.8094</geo:lat>
+          <geo:long>99.0967</geo:long>
+        </geo:Point>
         <url>http://www.sumranrath.go.th/</url>
       </office>
       <entity type="Muban" geocode="50050801" name="บ้านร้องต้นขาม"/>
@@ -797,8 +821,12 @@
       <entity type="Muban" geocode="50061208" name="บ้านผาปู่จอม"/>
     </entity>
     <entity type="Tambon" name="อินทขิล" english="Inthakhin" geocode="500613" >
-      <office type="TAOOffice">
-        <url>http://www.intakhin.net</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>19.1639</geo:lat>
+          <geo:long>98.9484</geo:long>
+        </geo:Point>
+        <!--<url>http://www.intakhin.net</url>-->
       </office>
       <entity type="Muban" geocode="50061316" name="บ้านปางกื้ด"/>
 
