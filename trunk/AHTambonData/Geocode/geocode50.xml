@@ -633,11 +633,11 @@
     </entity>
     <entity type="Tambon" name="สำราญราษฎร์" english="Samran Rat" geocode="500508" >
       <office type="TAOOffice">
-        <geo:Point>
-          <!-- cannot identify actual building -->
+        <!-- cannot identify actual building -->
+        <!--<geo:Point>
           <geo:lat>18.8094</geo:lat>
           <geo:long>99.0967</geo:long>
-        </geo:Point>
+        </geo:Point>-->
         <url>http://www.sumranrath.go.th/</url>
       </office>
       <entity type="Muban" geocode="50050801" name="บ้านร้องต้นขาม"/>
@@ -1702,7 +1702,14 @@
     </entity>
     <entity type="Tambon" name="สันป่าเปา" english="San Pa Pao" geocode="501405" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>18.8591</geo:lat>
+          <geo:long>99.0865</geo:long>
+        </geo:Point>
         <url>http://www.sanpapao.net/</url>
+        <officials>
+          <official title="Mayor" name="สุวัจน์ ณ วิชัย " comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50140501" name="บ้านสันต้นเปา"/>
       <entity type="Muban" geocode="50140502" name="บ้านป่าก้าง"/>
@@ -1719,8 +1726,14 @@
     <entity type="Tambon" name="หนองจ๊อม" english="Nong Chom" geocode="501407" />
     <entity type="Tambon" name="หนองหาร" english="Nong Han" geocode="501408" >
       <office type="MunicipalityOffice">
-        <!-- Wikimapia: 18°56'45"N   98°59'1"E  -->
+        <geo:Point>
+          <geo:lat>18.9464</geo:lat>
+          <geo:long>98.9835</geo:long>
+        </geo:Point>
         <url>http://www.nongharn.go.th/</url>
+        <officials>
+          <official title="Mayor" name="สุวัชรชัย สุทธาวาสน์" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50140801" name="บ้านแม่เตาไห"/>
 
@@ -1741,7 +1754,11 @@
       <entity type="Muban" geocode="50141014" name="บ้านเจดีย์เจริญ"/>
     </entity>
     <entity type="Tambon" name="เมืองเล็น" english="Mueang Len" geocode="501411" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>18.8662</geo:lat>
+          <geo:long>99.0677</geo:long>
+        </geo:Point>
         <url>http://www.mueanglen.go.th/</url>
       </office>
       <entity type="Muban" geocode="50141101" name="บ้านเมืองวะ"/>

@@ -371,7 +371,15 @@
     </entity>
     <entity type="Tambon" name="ป่ามะนาว" english="Pa Manao" geocode="400205" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat> 16.3808</geo:lat>
+          <geo:long>102.5909</geo:long>
+        </geo:Point>
         <url>http://www.pamanow.netfirms.com/</url>
+        <!--<url>http://www.pamanow.org/</url>-->
+        <officials>
+          <official title="Mayor" name="บัวผัน บุญลือ" comment="2010"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="บ้านฝาง" english="Ban Fang" geocode="400206" >
@@ -420,7 +428,15 @@
     </entity>
     <entity type="Tambon" name="พระบุ" english="Phra Bu" geocode="400302" >
       <office type="TAOOffice">
+        <!-- TAP upgrade map suggests a bit further east, this from http://cd.m-culture.go.th/vdn/waypoints.php?page=12&q= -->
+        <geo:Point>
+          <geo:lat>16.2705</geo:lat>
+          <geo:long>102.6895</geo:long>
+        </geo:Point>
         <url>http://202.143.137.103/taophrabu/</url>
+        <officials>
+          <official title="TAOChairman" name="บุญส่ง ผิวขาว" comment="2009"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="40030201" name="บ้านพระบุ"/>
       <entity type="Muban" geocode="40030202" name="บ้านพระเนาว์"/>
@@ -2151,7 +2167,16 @@
       <entity type="Muban" geocode="40190306" name="บ้านขามป้อม"/>
       <entity type="Muban" geocode="40190307" name="บ้านนาโพธิ์"/>
     </entity>
-    <entity type="Tambon" name="โนนสมบูรณ์" english="Non Sombun" geocode="401904" />
+    <entity type="Tambon" name="โนนสมบูรณ์" english="Non Sombun" geocode="401904" >
+      <office type="MunicipalityOffice">
+        <!-- not yet visible in Google Earth -->
+        <geo:Point>
+          <geo:lat> 16.9998</geo:lat>
+          <geo:long>102.7607</geo:long>
+        </geo:Point>
+        <url>http://www.tnonsomboon.ob.tc/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="คำม่วง" english="Kham Muang" geocode="401905" >
       <office type="TAOOffice">
         <!--<url>http://www.tambon-khammuang.org/</url>-->
@@ -2762,7 +2787,7 @@
       </officials>
     </office>
   </entity>
-  
+
   <!-- no geocode assigned yet -->
   <entity type="ThesabanTambon" name="เมืองเก่า" english="Mueang Kao" geocode="4062" parent="4001" tambon="400106" >
     <office type="MunicipalityOffice">
