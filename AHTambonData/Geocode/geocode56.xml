@@ -162,22 +162,22 @@
       <entity type="Muban" geocode="56011509" name="บ้านม่อนแก้ว"/>
     </entity>
     <entity type="Tambon" name="ท่าจำปี" english="Tha Champi" geocode="560116" >
-      <office type="TAOOffice">
-        <url>http://www.thajampee.com/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>19.2431</geo:lat>
+          <geo:long>99.8273</geo:long>
+        </geo:Point>
+        <!--<url>http://www.thajampee.com/</url>-->
       </office>
     </entity>
     <entity type="Tambon" name="แม่อิง" english="Mae Ing" geocode="560117" newgeocode="560903" />
     <entity type="Tambon" name="สันป่าม่วง" english="San Pa Muang" geocode="560118" >
       <office type="TAOOffice">
-        <!-- old location
         <geo:Point>
-          <geo:lat>19.1903</geo:lat>
-          <geo:long>99.8874</geo:long>
-        </geo:Point> -->
-        <geo:Point>
-          <geo:lat> 19.1992</geo:lat>
-          <geo:long> 99.8712</geo:long>
+          <geo:lat>19.1776</geo:lat>
+          <geo:long>99.8360</geo:long>
         </geo:Point>
+        <!--<url>http://www.sanpamuang.org/</url>-->
       </office>
     </entity>
   </entity>
@@ -561,9 +561,26 @@
       <entity type="Muban" geocode="56050710" name="บ้านป่าซาง"/>
     </entity>
     <entity type="Tambon" name="หนองหล่ม" english="Nong Lom" geocode="560508" >
-      <office type="TAOOffice">
-        <url>http://nonglomlocaladmin.com/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>19.0443</geo:lat>
+          <geo:long>100.0573</geo:long>
+        </geo:Point>
+        <url>http://www.nonglom.org/</url>
+        <!--<url>http://nonglomlocaladmin.com/</url>-->
+        <officials>
+          <official title="Mayor" name="สมิง ธรรมปัญญา" comment="2010"/>
+        </officials>
       </office>
+      <entity type="Muban" geocode="56050801" name="บ้านห้วยฮุง"/>
+      <entity type="Muban" geocode="56050802" name="บ้านใหม่เหนือ"/>
+      <entity type="Muban" geocode="56050803" name="บ้านใหม่พัฒนา"/>
+      <entity type="Muban" geocode="56050804" name="บ้านท่านคร"/>
+      <entity type="Muban" geocode="56050805" name="บ้านแม่พริก"/>
+      <entity type="Muban" geocode="56050806" name="บ้านปางงุ้น"/>
+      <entity type="Muban" geocode="56050807" name="บ้านใหม่ไชยมงคล"/>
+      <entity type="Muban" geocode="56050808" name="บ้านหนองหล่ม"/>
+      <entity type="Muban" geocode="56050809" name="บ้านร่วมจิต"/>
     </entity>
     <entity type="Tambon" name="ดงสุวรรณ" english="Dong Suwan" geocode="560509" >
       <office type="TAOOffice">
@@ -762,7 +779,12 @@
       <entity type="Muban" geocode="56070513" name="บ้านเด่นโพธิ์ทอง"/>
       <entity type="Muban" geocode="56070514" name="บ้านเหล่าศรีดอนตัน"/>
     </entity>
-    <entity type="Tambon" name="เจริญราษฎร์" english="Charoen Rat" geocode="560706" />
+    <entity type="Tambon" name="เจริญราษฎร์" english="Charoen Rat" geocode="560706" >
+      <office type="MunicipalityOffice">
+        <!-- ca. 19.3897 99.7785, nothing visible in Google Earth -->
+        <url>http://www.keererat.com/</url>
+      </office>
+    </entity>
   </entity>
   <entity type="Amphoe" name="ภูซาง" english="Phu Sang" geocode="5608" >
     <office type="DistrictOffice">
