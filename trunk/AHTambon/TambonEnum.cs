@@ -113,6 +113,8 @@ namespace De.AHoerstemeier.Tambon
         DepartmentOfTransportDirectorGeneral,
         DistrictOfficerBangkok,
         DistrictOfficer,
-        SpeakerOfParliament
+        SpeakerOfParliament,
+        Mayor,
+        TAOMayor
     }
 }
