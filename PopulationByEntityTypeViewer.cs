@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 
 namespace De.AHoerstemeier.Tambon
@@ -45,10 +46,16 @@ namespace De.AHoerstemeier.Tambon
         }
         private void UpdateList()
         {
+            List<PopulationDataEntry> lList = CalculateList();
+            FillListView(lList); 
+        }
+
+        private List<PopulationDataEntry> CalculateList()
+        {
             List<PopulationDataEntry> lList = new List<PopulationDataEntry>();
             List<EntityType> lEntities = new List<EntityType>();
             if (rbx_Changwat.Checked)
-            { 
+            {
                 lEntities.Add(EntityType.Changwat);
                 lList.AddRange(mBaseEntry.FlatList(lEntities));
             }
@@ -101,7 +108,7 @@ namespace De.AHoerstemeier.Tambon
             }
 
             lList.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return (p2.Total.CompareTo(p1.Total)); });
-            FillListView(lList); 
+            return lList;
         }
         private void FillListView(List<PopulationDataEntry> iEntityList)
         {
@@ -125,6 +132,30 @@ namespace De.AHoerstemeier.Tambon
         {
             UpdateEntityTypeCheckboxes();
             UpdateList();
+        }
+
+        private void btnExportCSV_Click(object sender, EventArgs e)
+        {
+            const Char mCSVCharacter = ',';
+            SaveFileDialog lDlg = new SaveFileDialog();
+            lDlg.Filter = "CSV Files|*.csv|All files|*.*";
+            if (lDlg.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter lFileWrite = new StreamWriter(lDlg.FileName);
+                var lList = CalculateList();
+                foreach (PopulationDataEntry lEntity in lList)
+                {
+                    ListViewItem lListViewItem = mListviewData.Items.Add(lEntity.English);
+                    lFileWrite.Write(lEntity.Name);
+                    lFileWrite.Write(mCSVCharacter);
+                    lFileWrite.Write(lEntity.English);
+                    lFileWrite.Write(mCSVCharacter);
+                    lFileWrite.Write(lEntity.Geocode.ToString());
+                    lFileWrite.Write(mCSVCharacter);
+                    lFileWrite.WriteLine(lEntity.Total.ToString());
+                }
+                lFileWrite.Close();
+            }
         }
     }
 }
