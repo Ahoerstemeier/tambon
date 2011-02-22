@@ -59,7 +59,8 @@ namespace De.AHoerstemeier.Tambon
         private const String TableBoldStart = "<b>";
         private const String TableBoldEnd = "</b>";
         private const String TableEntryEnd = "</font></td>";
-        private const String UrlBase = "http://www.dopa.go.th/xstat/";
+        //private const String UrlBase = "http://www.dopa.go.th/xstat/";
+        private const String UrlBase = "http://203.113.86.149/xstat/";
 
         #endregion
 
