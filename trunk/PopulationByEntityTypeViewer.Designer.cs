@@ -44,6 +44,7 @@
             this.chk_ThesabanNakhon = new System.Windows.Forms.CheckBox();
             this.chk_ThesabanMueang = new System.Windows.Forms.CheckBox();
             this.chk_ThesabanTambon = new System.Windows.Forms.CheckBox();
+            this.btnExportCSV = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mListviewData
@@ -230,11 +231,23 @@
             this.chk_ThesabanTambon.UseVisualStyleBackColor = true;
             this.chk_ThesabanTambon.CheckStateChanged += new System.EventHandler(this.chk_Entity_CheckStateChanged);
             // 
+            // btnExportCSV
+            // 
+            this.btnExportCSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportCSV.Location = new System.Drawing.Point(583, 361);
+            this.btnExportCSV.Name = "btnExportCSV";
+            this.btnExportCSV.Size = new System.Drawing.Size(75, 23);
+            this.btnExportCSV.TabIndex = 22;
+            this.btnExportCSV.Text = "Export CSV";
+            this.btnExportCSV.UseVisualStyleBackColor = true;
+            this.btnExportCSV.Click += new System.EventHandler(this.btnExportCSV_Click);
+            // 
             // PopulationByEntityTypeViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 391);
+            this.Controls.Add(this.btnExportCSV);
             this.Controls.Add(this.chk_ThesabanTambon);
             this.Controls.Add(this.chk_ThesabanMueang);
             this.Controls.Add(this.chk_ThesabanNakhon);
@@ -273,5 +286,6 @@
         private System.Windows.Forms.CheckBox chk_ThesabanNakhon;
         private System.Windows.Forms.CheckBox chk_ThesabanMueang;
         private System.Windows.Forms.CheckBox chk_ThesabanTambon;
+        private System.Windows.Forms.Button btnExportCSV;
     }
 }
