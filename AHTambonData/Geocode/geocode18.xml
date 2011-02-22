@@ -648,13 +648,26 @@
       <url>http://www.hangnamsakorn.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เทพพิทักษ์" english="Thep Phithak" geocode="1895" parent="1804" >
+  <entity type="ThesabanTambon" name="โพธิ์พิทักษ์" english="Pho Phithak" geocode="1895" parent="1804" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <!--according to website, not clearly recognizable in Google Earth however-->
+        <geo:lat> 15.0738</geo:lat>
+        <geo:long>100.2827</geo:long>
+      </geo:Point>
+      <url>http://www.phophitak.go.th/</url>
       <!--<url>http://www.ponangdam.ob.tc/</url>-->
+      <officials>
+        <official title="Mayor" name="สุภัตร์ศักดิ์ โค้วคาศัย" comment="2010"/>
+      </officials>
     </office>
     <history>
-      <rename oldname="โพนางดำ" oldenglish="Pho Nang Dam" name="เทพพิทักษ์" english="Thep Phithak" effective="2010-03-25"/>
+      <rename oldname="โพนางดำ" oldenglish="Pho Nang Dam" name="โพธิ์พิทักษ์" english="Pho Phithak" effective="2010-03-25"/>
     </history>
+    <entity type="Chumchon" geocode="18950001" name="ชุมชนโพธิ์เจริญ"/>
+    <entity type="Chumchon" geocode="18950002" name="ชุมชนต้นโพธิ์"/>
+    <entity type="Chumchon" geocode="18950003" name="ชุมชนท่านขุนเณร"/>
+    <entity type="Chumchon" geocode="18950004" name="ชุมชนโพธิ์ศาล"/>
   </entity>
   <entity type="ThesabanTambon" name="สรรพยา" english="Sapphaya" geocode="1894" parent="1804" >
     <office type="MunicipalityOffice">
