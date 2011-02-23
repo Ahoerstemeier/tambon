@@ -12,6 +12,12 @@
       <official title="Governor" name="สำเริง เชื้อชวลิต" beginyear="2003" endyear="2007"/>
     </officials>
   </office>
+  <office type="PAOOffice">
+    <url>http://www.loeipao.org/</url>
+    <officials>
+      <official title="PAOChairman" name="ธนาวุฒิ ทิมสุวรรณ" comment="2010"/>
+    </officials>
+  </office>
   <entity type="Amphoe" name="เมืองเลย" english="Mueang Loei" geocode="4201" >
     <office type="DistrictOffice">
       <geo:Point>
@@ -25,7 +31,11 @@
     <entity type="Tambon" name="กุดป่อง" english="Kut Pong" geocode="420101" />
     <entity type="Tambon" name="เมือง" english="Mueang" geocode="420102" >
       <office type="TAOOffice">
-        <url>http://www.tambonmuang.net/</url>
+        <url>http://www.tambonmuang.go.th/</url>
+        <!--<url>http://www.tambonmuang.net/</url>-->
+        <officials>
+          <official title="TAOChairman" name="ธนายุทธ ชาวน้ำปาด"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="42010201" name="บ้านกำเนิดเพชร"/>
       <entity type="Muban" geocode="42010202" name="บ้านท่าแพ"/>
@@ -45,6 +55,9 @@
     <entity type="Tambon" name="กกดู่" english="Kok Du" geocode="420104" >
       <office type="TAOOffice">
         <url>http://www.kokduloei.com/</url>
+        <officials>
+          <official title="TAOChairman" name="สุเทพ อาธรรมระชะ " comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="42010401" name="บ้านลาดค้อ"/>
       <entity type="Muban" geocode="42010402" name="บ้านตูบโกบ"/>
@@ -57,8 +70,20 @@
       <entity type="Muban" geocode="42010409" name="บ้านกอไผ่โทน"/>
       <entity type="Muban" geocode="42010410" name="บ้านกกดู่ใต้"/>
     </entity>
-    <entity type="Tambon" name="น้ำหมาน" english="Nam Man" geocode="420105" />
-    <entity type="Tambon" name="เสี้ยว" english="Siao" geocode="420106" />
+    <entity type="Tambon" name="น้ำหมาน" english="Nam Man" geocode="420105" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="ชาติชาย จิตรอารีย์" comment="2010"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="เสี้ยว" english="Siao" geocode="420106" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="สนิท  วังธรรม" comment="2010"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="นาอาน" english="Na An" geocode="420107" >
       <entity type="Muban" geocode="42010701" name="บ้านติดต่อ"/>
       <entity type="Muban" geocode="42010702" name="บ้านขอนแดง"/>
@@ -100,6 +125,15 @@
       <entity type="Muban" geocode="42010914" name="บ้านห้วยลึก"/>
     </entity>
     <entity type="Tambon" name="น้ำสวย" english="Nam Suai" geocode="420110" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>17.5524</geo:lat>
+          <geo:long>101.8376</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="TAOChairman" name="จรูญ พานิช" comment="2010"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="42011005" name="บ้านหนองดอกบัว"/>
 
       <entity type="Muban" geocode="42011011" name="บ้านลายเหนือ"/>
@@ -108,7 +142,11 @@
     </entity>
     <entity type="Tambon" name="ชัยพฤกษ์" english="Chaiyaphruek" geocode="420111" >
       <office type="TAOOffice">
-        <url>http://chaiyapruk-loei.com/</url>
+        <!-- Longdo: 17.5283 101.7391 - under cloud in Google Earth -->
+        <!--<url>http://chaiyapruk-loei.com/</url>-->
+        <officials>
+          <official title="TAOChairman" name="เพ็ชร ทุมมาวัย" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="42011101" name="บ้านท่าข้าม"/>
       <entity type="Muban" geocode="42011102" name="บ้านหัวฝาย"/>
@@ -124,14 +162,30 @@
     </entity>
     <entity type="Tambon" name="นาแขม" english="Na Khaem" geocode="420112" >
       <office type="TAOOffice">
-        <url>http://www.nk.go.th/</url>
+        <url comment="Offline?">http://www.nk.go.th/</url>
+        <!--<url>http://tambolnakham.blogspot.com/</url>-->
+        <officials>
+          <official title="TAOChairman" name="สมหมาย แก้วบุดดี " comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="42011203" name="บ้านห้วยทราย"/>
 
       <entity type="Muban" geocode="42011209" name="บ้านห้วยทรายทอง"/>
     </entity>
-    <entity type="Tambon" name="ศรีสองรัก" english="Si Song Rak" geocode="420113" />
-    <entity type="Tambon" name="กกทอง" english="Kok Thong" geocode="420114" />
+    <entity type="Tambon" name="ศรีสองรัก" english="Si Song Rak" geocode="420113" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="มั่นคง สนธิจันทร์" comment="2010"/>
+        </officials>
+      </office>
+    </entity>
+    <entity type="Tambon" name="กกทอง" english="Kok Thong" geocode="420114" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="คำปุ่น วิจิตรปัญญา" comment="2010"/>
+        </officials>
+      </office>
+    </entity>
   </entity>
   <entity type="Amphoe" name="นาด้วง" english="Na Duang" geocode="4202" >
     <office type="DistrictOffice">
@@ -314,8 +368,13 @@
       </officials>
     </office>
     <entity type="Tambon" name="ด่านซ้าย" english="Dan Sai" geocode="420501" >
-      <office type="TAOOffice">
-        <url>http://www.dansai-sao.go.th/</url>
+      <office type="MunicipalityOffice">
+        <!-- renamed ศรีสองรัก with upgrade -->
+        <url>http://www.tessabansrisongrak.go.th/</url>
+        <!--<url>http://www.dansai-sao.go.th/</url>-->
+        <officials>
+          <official title="Mayor" name="ปราการ ไชยนอก " comment="2010"/>
+        </officials>
       </office>
 
       <entity type="Muban" geocode="42050102" name="บ้านเหนือ"/>
@@ -447,7 +506,13 @@
     </office>
     <entity type="Tambon" name="นาแห้ว" english="Na Haeo" geocode="420601" />
     <entity type="Tambon" name="แสงภา" english="Saeng Pha" geocode="420602" />
-    <entity type="Tambon" name="นาพึง" english="Na Phueng" geocode="420603" />
+    <entity type="Tambon" name="นาพึง" english="Na Phueng" geocode="420603" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOChairman" name="ประพนธ์ นนทะโคตร" comment="2010"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="นามาลา" english="Na Ma La" geocode="420604" />
     <entity type="Tambon" name="เหล่ากอหก" english="Lao Ko Hok" geocode="420605" />
   </entity>
@@ -858,14 +923,56 @@
         <geo:long>101.7308</geo:long>
       </geo:Point>
       <url>http://www.loeicity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สมศักดิ์ แสงเจริญรัตน์" comment="2010"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="42990001" name="ชุมชนบ้านติ้ว (คุ้มเทคนิค)"/>
+    <entity type="Chumchon" geocode="42990002" name="ชุมชนบ้านติ้ว (คุ้มตลาดเย็น)"/>
+    <entity type="Chumchon" geocode="42990003" name="ชุมชนบ้านติ้ว (คุ้มโรงเรียนเทศบาล 2)"/>
+    <entity type="Chumchon" geocode="42990004" name="ชุมชนนาเขิน 1"/>
+    <entity type="Chumchon" geocode="42990005" name="ชุมชนนาเขิน 2"/>
+    <entity type="Chumchon" geocode="42990006" name="ชุมชนนาหนอง-ท่าแพ 2"/>
+    <entity type="Chumchon" geocode="42990007" name="ชุมชนนาหนอง-ท่าแพ 1"/>
+    <entity type="Chumchon" geocode="42990008" name="ชุมชนหนองผักก้าม 2"/>
+    <entity type="Chumchon" geocode="42990009" name="ชุมชนหนองผักก้าม 1"/>
+    <entity type="Chumchon" geocode="42990010" name="ชุมชนกกม่วงชี"/>
+    <entity type="Chumchon" geocode="42990011" name="ชุมชนบ้านใหม่ 3"/>
+    <entity type="Chumchon" geocode="42990012" name="ชุมชนบ้านใหม่ 2"/>
+    <entity type="Chumchon" geocode="42990013" name="ชุมชนบ้านใหม่ 1"/>
+    <entity type="Chumchon" geocode="42990014" name="ชุมชนบ้านฟากเลย 2"/>
+    <entity type="Chumchon" geocode="42990015" name="ชุมชนบ้านฟากเลย 1"/>
+    <entity type="Chumchon" geocode="42990016" name="ชุมชนบ้านภูบ่อบิด"/>
+    <entity type="Chumchon" geocode="42990017" name="ชุมชนตลาดเมืองใหม"/>
+    <entity type="Chumchon" geocode="42990018" name="ชุมชนบ้านแฮ่ 1"/>
+    <entity type="Chumchon" geocode="42990019" name="ชุมชนบ้านแฮ่ 2"/>
+    <entity type="Chumchon" geocode="42990020" name="ชุมชนบ้านแฮ่ 3"/>
+
   </entity>
   <entity type="ThesabanTambon" name="นาอ้อ" english="Na O" geocode="4298" parent="4201" >
     <office type="MunicipalityOffice">
+      <url>http://www.tessabanna-o.com/</url>
       <url>http://naomuni.net78.net/</url>
+      <officials>
+        <official title="Mayor" name="ก้าน กุณะวงษ์ " comment="2010"/>
+      </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="น้ำสวย" english="Nam Suai" geocode="4297" parent="4201" />
+  <entity type="ThesabanTambon" name="น้ำสวย" english="Nam Suai" geocode="4297" parent="4201" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.5289</geo:lat>
+        <geo:long>101.8410</geo:long>
+      </geo:Point>
+      <officials>
+        <official title="Mayor" name="พนิดา ชำนนิกุล " comment="2010"/>
+      </officials>
+    </office>
+    <entity type="Chumchon" geocode="42970001" name="ชุมชนโนนสวรรค์"/>
+    <entity type="Chumchon" geocode="42970002" name="ชุมชนนามอน"/>
+    <entity type="Chumchon" geocode="42970003" name="ชุมชนน้ำพุเหนือ"/>
+    <entity type="Chumchon" geocode="42970004" name="ชุมชนน้ำพุพัฒนา"/>
+  </entity>
   <entity type="ThesabanTambon" name="นาด้วง" english="Na Duang" geocode="4296" parent="4202" >
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/loei/naduang/</url>
@@ -942,7 +1049,13 @@
     <constituency name="เขต  2" muban="2,4,6,7,8,11"/>
     -->
   </entity>
-  <entity type="ThesabanTambon" name="นาโป่ง" english="Na Pong" geocode="4283" parent="4201" tambon="420108" />
+  <entity type="ThesabanTambon" name="นาโป่ง" english="Na Pong" geocode="4283" parent="4201" tambon="420108" >
+    <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="มนตรี สอนสุภาพ" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="นาดินดำ" english="Na Din Dam" geocode="4282" parent="4201" tambon="420109" >
     <office type="MunicipalityOffice">
       <url>http://sv2.esswpark.org/~jesswpark121/</url>
