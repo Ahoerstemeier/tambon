@@ -23,6 +23,8 @@ namespace De.AHoerstemeier.Tambon
         public Int32 MostCommonValueCount { get { if (mDirty) { CalculateStatistics(); }; return mMostCommonValueCount; } }
         private Int32 mCount = 0;
         public Int32 NumberOfValues { get { if (mDirty) { CalculateStatistics(); }; return mCount; } }
+        private Int32 mSum = 0;
+        public Int32 SumValue { get { if (mDirty) { CalculateStatistics(); }; return mSum; } }
         private double mStandardDeviation = 0;
         public double StandardDeviation { get { if (mDirty) { CalculateStatistics(); }; return mStandardDeviation; } }
         #endregion
@@ -49,7 +51,7 @@ namespace De.AHoerstemeier.Tambon
             mMostCommonValue = 0;
             mMostCommonValueCount = 0;
             mStandardDeviation = 0;
-            Int32 lSum = 0;
+            mSum = 0;
             mCount = 0;
             foreach (KeyValuePair<Int32, List<Int32>> lKeyValue in mData)
             {
@@ -59,7 +61,7 @@ namespace De.AHoerstemeier.Tambon
                     if (lCurrentCount > 0)
                     {
                         mCount=mCount+lCurrentCount;
-                        lSum = lSum + lKeyValue.Key*lCurrentCount;
+                        mSum = mSum + lKeyValue.Key*lCurrentCount;
                         if (mMinValue == 0)
                         {
                             mMinValue = lKeyValue.Key;
@@ -76,7 +78,7 @@ namespace De.AHoerstemeier.Tambon
             }
             if (mCount > 0)
             {
-                mMeanValue = (lSum * 1.0 / mCount);
+                mMeanValue = (mSum * 1.0 / mCount);
                 double lDeviation = 0;
                 foreach (KeyValuePair<Int32, List<Int32>> lKeyValue in mData)
                 {
