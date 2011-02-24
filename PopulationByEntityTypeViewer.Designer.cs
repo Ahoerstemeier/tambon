@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mListviewData = new System.Windows.Forms.ListView();
-            this.columnEnglish = new System.Windows.Forms.ColumnHeader();
-            this.columnThai = new System.Windows.Forms.ColumnHeader();
-            this.columnGeocode = new System.Windows.Forms.ColumnHeader();
-            this.columnTotal = new System.Windows.Forms.ColumnHeader();
             this.rbx_Changwat = new System.Windows.Forms.RadioButton();
             this.rbx_AmphoeKhet = new System.Windows.Forms.RadioButton();
             this.rbx_TambonKhwaeng = new System.Windows.Forms.RadioButton();
@@ -45,43 +40,17 @@
             this.chk_ThesabanMueang = new System.Windows.Forms.CheckBox();
             this.chk_ThesabanTambon = new System.Windows.Forms.CheckBox();
             this.btnExportCSV = new System.Windows.Forms.Button();
+            this.grpData = new System.Windows.Forms.SplitContainer();
+            this.mListviewData = new System.Windows.Forms.ListView();
+            this.columnEnglish = new System.Windows.Forms.ColumnHeader();
+            this.columnThai = new System.Windows.Forms.ColumnHeader();
+            this.columnGeocode = new System.Windows.Forms.ColumnHeader();
+            this.columnTotal = new System.Windows.Forms.ColumnHeader();
+            this.txtStatistics = new System.Windows.Forms.TextBox();
+            this.grpData.Panel1.SuspendLayout();
+            this.grpData.Panel2.SuspendLayout();
+            this.grpData.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // mListviewData
-            // 
-            this.mListviewData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.mListviewData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnEnglish,
-            this.columnThai,
-            this.columnGeocode,
-            this.columnTotal});
-            this.mListviewData.Location = new System.Drawing.Point(3, 12);
-            this.mListviewData.Name = "mListviewData";
-            this.mListviewData.Size = new System.Drawing.Size(655, 277);
-            this.mListviewData.TabIndex = 10;
-            this.mListviewData.UseCompatibleStateImageBehavior = false;
-            this.mListviewData.View = System.Windows.Forms.View.Details;
-            // 
-            // columnEnglish
-            // 
-            this.columnEnglish.Text = "Name";
-            this.columnEnglish.Width = 107;
-            // 
-            // columnThai
-            // 
-            this.columnThai.Text = "Thai";
-            this.columnThai.Width = 95;
-            // 
-            // columnGeocode
-            // 
-            this.columnGeocode.Text = "Geocode";
-            // 
-            // columnTotal
-            // 
-            this.columnTotal.Text = "Total";
-            this.columnTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // rbx_Changwat
             // 
@@ -242,11 +211,75 @@
             this.btnExportCSV.UseVisualStyleBackColor = true;
             this.btnExportCSV.Click += new System.EventHandler(this.btnExportCSV_Click);
             // 
+            // grpData
+            // 
+            this.grpData.Location = new System.Drawing.Point(12, 12);
+            this.grpData.Name = "grpData";
+            // 
+            // grpData.Panel1
+            // 
+            this.grpData.Panel1.Controls.Add(this.mListviewData);
+            this.grpData.Panel1MinSize = 125;
+            // 
+            // grpData.Panel2
+            // 
+            this.grpData.Panel2.Controls.Add(this.txtStatistics);
+            this.grpData.Panel2MinSize = 125;
+            this.grpData.Size = new System.Drawing.Size(646, 277);
+            this.grpData.SplitterDistance = 350;
+            this.grpData.TabIndex = 23;
+            // 
+            // mListviewData
+            // 
+            this.mListviewData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.mListviewData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnEnglish,
+            this.columnThai,
+            this.columnGeocode,
+            this.columnTotal});
+            this.mListviewData.Location = new System.Drawing.Point(3, 3);
+            this.mListviewData.Name = "mListviewData";
+            this.mListviewData.Size = new System.Drawing.Size(344, 271);
+            this.mListviewData.TabIndex = 11;
+            this.mListviewData.UseCompatibleStateImageBehavior = false;
+            this.mListviewData.View = System.Windows.Forms.View.Details;
+            // 
+            // columnEnglish
+            // 
+            this.columnEnglish.Text = "Name";
+            this.columnEnglish.Width = 107;
+            // 
+            // columnThai
+            // 
+            this.columnThai.Text = "Thai";
+            this.columnThai.Width = 95;
+            // 
+            // columnGeocode
+            // 
+            this.columnGeocode.Text = "Geocode";
+            // 
+            // columnTotal
+            // 
+            this.columnTotal.Text = "Total";
+            this.columnTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtStatistics
+            // 
+            this.txtStatistics.Location = new System.Drawing.Point(3, 3);
+            this.txtStatistics.Multiline = true;
+            this.txtStatistics.Name = "txtStatistics";
+            this.txtStatistics.ReadOnly = true;
+            this.txtStatistics.Size = new System.Drawing.Size(286, 271);
+            this.txtStatistics.TabIndex = 0;
+            // 
             // PopulationByEntityTypeViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 391);
+            this.Controls.Add(this.grpData);
             this.Controls.Add(this.btnExportCSV);
             this.Controls.Add(this.chk_ThesabanTambon);
             this.Controls.Add(this.chk_ThesabanMueang);
@@ -259,10 +292,13 @@
             this.Controls.Add(this.rbx_TambonKhwaeng);
             this.Controls.Add(this.rbx_AmphoeKhet);
             this.Controls.Add(this.rbx_Changwat);
-            this.Controls.Add(this.mListviewData);
             this.MinimumSize = new System.Drawing.Size(400, 300);
             this.Name = "PopulationByEntityTypeViewer";
             this.Text = "PopulationByEntityTypeViewer";
+            this.grpData.Panel1.ResumeLayout(false);
+            this.grpData.Panel2.ResumeLayout(false);
+            this.grpData.Panel2.PerformLayout();
+            this.grpData.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,11 +306,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView mListviewData;
-        private System.Windows.Forms.ColumnHeader columnEnglish;
-        private System.Windows.Forms.ColumnHeader columnThai;
-        private System.Windows.Forms.ColumnHeader columnGeocode;
-        private System.Windows.Forms.ColumnHeader columnTotal;
         private System.Windows.Forms.RadioButton rbx_Changwat;
         private System.Windows.Forms.RadioButton rbx_AmphoeKhet;
         private System.Windows.Forms.RadioButton rbx_TambonKhwaeng;
@@ -287,5 +318,12 @@
         private System.Windows.Forms.CheckBox chk_ThesabanMueang;
         private System.Windows.Forms.CheckBox chk_ThesabanTambon;
         private System.Windows.Forms.Button btnExportCSV;
+        private System.Windows.Forms.SplitContainer grpData;
+        private System.Windows.Forms.ListView mListviewData;
+        private System.Windows.Forms.ColumnHeader columnEnglish;
+        private System.Windows.Forms.ColumnHeader columnThai;
+        private System.Windows.Forms.ColumnHeader columnGeocode;
+        private System.Windows.Forms.ColumnHeader columnTotal;
+        private System.Windows.Forms.TextBox txtStatistics;
     }
 }

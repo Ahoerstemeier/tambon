@@ -47,7 +47,22 @@ namespace De.AHoerstemeier.Tambon
         private void UpdateList()
         {
             List<PopulationDataEntry> lList = CalculateList();
-            FillListView(lList); 
+            FillListView(lList);
+
+            FrequencyCounter lCounter = new FrequencyCounter();
+            foreach (var lEntry in lList)
+            {
+                lCounter.IncrementForCount(lEntry.Total, lEntry.Geocode);
+            }
+
+            StringBuilder lBuilder = new StringBuilder();
+            lBuilder.AppendLine("Total population: " + lCounter.SumValue.ToString("##,###,##0"));
+            lBuilder.AppendLine("Number of entities: "+lCounter.NumberOfValues.ToString());
+            lBuilder.AppendLine("Mean population: " + lCounter.MeanValue.ToString("##,###,##0.0"));
+            lBuilder.AppendLine("Maximum population: " + lCounter.MaxValue.ToString("##,###,##0"));
+            lBuilder.AppendLine("Minimum population: " + lCounter.MinValue.ToString("##,###,##0"));
+
+            txtStatistics.Text = lBuilder.ToString();
         }
 
         private List<PopulationDataEntry> CalculateList()
@@ -57,6 +72,7 @@ namespace De.AHoerstemeier.Tambon
             if (rbx_Changwat.Checked)
             {
                 lEntities.Add(EntityType.Changwat);
+                lEntities.Add(EntityType.Bangkok);
                 lList.AddRange(mBaseEntry.FlatList(lEntities));
             }
             else if (rbx_AmphoeKhet.Checked)
