@@ -115,6 +115,7 @@ namespace De.AHoerstemeier.Tambon
         DistrictOfficer,
         SpeakerOfParliament,
         Mayor,
-        TAOMayor
+        TAOChairman,
+        PAOChairman
     }
 }
