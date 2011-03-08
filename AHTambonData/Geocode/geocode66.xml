@@ -423,7 +423,19 @@
     <entity type="Tambon" name="งิ้วราย" english="Ngio Rai" geocode="660402" />
     <entity type="Tambon" name="ห้วยเกตุ" english="Huai Ket" geocode="660403" />
     <entity type="Tambon" name="ไทรโรงโขน" english="Sai Rong Khon" geocode="660404" />
-    <entity type="Tambon" name="หนองพยอม" english="Nong Phayom" geocode="660405" />
+    <entity type="Tambon" name="หนองพยอม" english="Nong Phayom" geocode="660405" >
+      <entity type="Muban" geocode="66040501" name="บ้านป่าแดงเหนือ"/>
+      <entity type="Muban" geocode="66040502" name="บ้านหนองแก"/>
+      <entity type="Muban" geocode="66040503" name="บ้านห้วยจ้อย"/>
+      <entity type="Muban" geocode="66040504" name="บ้านไผ่เกาะ"/>
+      <entity type="Muban" geocode="66040505" name="บ้านหนองนกยาง"/>
+      <entity type="Muban" geocode="66040506" name="บ้านป่าแดงใต้"/>
+      <entity type="Muban" geocode="66040507" name="บ้านป่าแดง"/>
+      <entity type="Muban" geocode="66040508" name="บ้านหนองกระทุ่ม"/>
+      <entity type="Muban" geocode="66040509" name="บ้านเขาพนมกาว"/>
+      <entity type="Muban" geocode="66040510" name="บ้านหนองพงษ์"/>
+      <entity type="Muban" geocode="66040511" name="บ้านหนองโสน"/>
+    </entity>
     <entity type="Tambon" name="ทุ่งโพธิ์" english="Thung Pho" geocode="660406" />
     <entity type="Tambon" name="ดงตะขบ" english="Dong Takhop" geocode="660407" />
     <entity type="Tambon" name="คลองคูณ" english="Khlong Khun" geocode="660408" />
@@ -542,8 +554,16 @@
       <entity type="Muban" geocode="66060709" name="บ้านหนองลี"/>
     </entity>
     <entity type="Tambon" name="บางคลาน" english="Bang Khlan" geocode="660608" >
-      <office type="TAOOffice">
-        <url>http://bangklan.com/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>16.0156</geo:lat>
+          <geo:long>100.2737</geo:long>
+        </geo:Point>
+        <url>http://www.bangklan.go.th/</url>
+        <!--<url>http://bangklan.com/</url>-->
+        <officials>
+          <official title="Mayor" name="ชูชีพ พรธาดาวิทย์" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="66060801" name="บ้านบางคลาน"/>
       <entity type="Muban" geocode="66060802" name="บ้านมาบชุมแสง"/>
@@ -1009,7 +1029,14 @@
       <url>http://www.phichitmuni.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanMueang" name="ตะพานหิน" english="Taphan Hin" geocode="6698" parent="6604,6601,6611" comment="6601 must be wrong, mistake in DOPA data of 1993; 6611 dito for 1997"/>
+  <entity type="ThesabanMueang" name="ตะพานหิน" english="Taphan Hin" geocode="6698" parent="6604,6601,6611" comment="6601 must be wrong, mistake in DOPA data of 1993; 6611 dito for 1997">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.2108</geo:lat>
+        <geo:long>100.4188</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="บางมูลนาก" english="Bang Mun Nak" geocode="6697" parent="6605" >
     <office type="MunicipalityOffice">
       <url>http://www.bangmulnak.go.th/</url>
@@ -1055,30 +1082,79 @@
       <url>http://www.bangphai.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="วังตะกู" english="Wang Taku" geocode="6690" parent="6605" />
+  <entity type="ThesabanTambon" name="วังตะกู" english="Wang Taku" geocode="6690" parent="6605" >
+    <office type="MunicipalityOffice">
+      <url>http://www.wangtaku.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ไพโรจน์ วงษ์ตระหง่าน" comment="2010"/>
+      </officials>
+    </office>
+    <entity type="Chumchon" geocode="66900001" name="ชุมชนร่วมใจ" muban="66050901"/>
+    <entity type="Chumchon" geocode="66900002" name="ชุมชนราษฎร์อุทิศ" muban="66050903"/>
+    <entity type="Chumchon" geocode="66900003" name="ชุมชนตลาดใน" muban="66050911"/>
+    <entity type="Chumchon" geocode="66900004" name="ชุมชนตลาดนอก" muban="66050911"/>
+  </entity>
   <entity type="ThesabanTambon" name="ท่าเสา" english="Tha Sao" geocode="6689" parent="6606" >
     <office type="MunicipalityOffice">
       <url>http://www.thasaocity.go.th/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="โพทะเล" english="Pho Thale" geocode="6688" parent="6606" />
-  <entity type="ThesabanTambon" name="กำแพงดิน" english="Kamphaeng Din" geocode="6687" parent="6607" />
-  <entity type="ThesabanTambon" name="สามง่าม" english="Sam Ngam" geocode="6686" parent="6607" />
+  <entity type="ThesabanTambon" name="กำแพงดิน" english="Kamphaeng Din" geocode="6687" parent="6607">
+    <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="ดุษฎี โนรีแพทย์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="สามง่าม" english="Sam Ngam" geocode="6686" parent="6607" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/phichit/samngam/</url>
+      <officials>
+        <official title="Mayor" name="ประมวล  ปิ่นมาศ" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เขาทราย" english="Khao Sai" geocode="6685" parent="6608" />
   <entity type="ThesabanTambon" name="ทับคล้อ" english="Thap Khlo" geocode="6684" parent="6608" >
     <office type="MunicipalityOffice">
       <url>http://www.thabklo.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="สากเหล็ก" english="Sak Lek" geocode="6683" parent="6609" />
+  <entity type="ThesabanTambon" name="สากเหล็ก" english="Sak Lek" geocode="6683" parent="6609" >
+    <office type="MunicipalityOffice">
+      <!-- Longdo: 16.482999 100.483459 -->
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="สำนักขุนเณร" english="Samnak Khun Nen" geocode="6682" parent="6611" >
     <office type="MunicipalityOffice">
       <url>http://www.samnak-kn.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เนินปอ" english="Noen Po" geocode="6681" parent="6607" tambon="660706"/>
-  <entity type="ThesabanTambon" name="ดงป่าคำ" english="Dong Pa Kham" geocode="6680" parent="6601" tambon="660112" />
-  <entity type="ThesabanTambon" name="หอไกร" english="Ho Krai" geocode="6679" parent="6605" tambon="660503" />
+  <entity type="ThesabanTambon" name="เนินปอ" english="Noen Po" geocode="6681" parent="6607" tambon="660706">
+    <office type="MunicipalityOffice">
+      <url>http://www.tbt-noenpor.go.th/</url>
+      <officials>
+        <official title="Mayor" name="เอกวัฒน์  อินทรกูล" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ดงป่าคำ" english="Dong Pa Kham" geocode="6680" parent="6601" tambon="660112" >
+    <office type="MunicipalityOffice">
+      <url>http://www.dongpakam.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สมศักดิ์ พรมชาติ" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หอไกร" english="Ho Krai" geocode="6679" parent="6605" tambon="660503" >
+    <office type="MunicipalityOffice">
+      <url>http://www.horkrai.ob.tc/</url>
+      <officials>
+        <official title="Mayor" name="ทองคำ แสงจันทร์" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เนินมะกอก" english="Noen Makok" geocode="6678" parent="6605" tambon="660504" >
     <office type="MunicipalityOffice">
       <url>http://noenmakok.com/</url>
@@ -1089,5 +1165,12 @@
       <url>http://nongplong.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="หนองพยอม" english="Nong Phayom" geocode="6676" parent="6604" tambon="660405" />
+  <entity type="ThesabanTambon" name="หนองพยอม" english="Nong Phayom" geocode="6676" parent="6604" tambon="660405" >
+    <office type="MunicipalityOffice">
+      <url>http://hnongpayom.com/</url>
+      <officials>
+        <official title="Mayor" name="บงกช ต่ายทอง" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
 </entity>
