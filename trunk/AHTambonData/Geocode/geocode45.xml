@@ -573,7 +573,18 @@
       <entity type="Muban" geocode="45040115" name="บ้านอ้น"/>
     </entity>
     <entity type="Tambon" name="หนองผือ" english="Nong Phue" geocode="450402" />
-    <entity type="Tambon" name="เมืองหงส์" english="Mueang Hong" geocode="450403" />
+    <entity type="Tambon" name="เมืองหงส์" english="Mueang Hong" geocode="450403" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>15.8699</geo:lat>
+          <geo:long>103.5039</geo:long>
+        </geo:Point>
+        <url>http://www.muanghong.com/</url>
+        <officials>
+          <official title="Mayor" name="เศรนี  บุญเหลี่ยม" comment="2010"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="โคกล่าม" english="Khok Lam" geocode="450404" />
     <entity type="Tambon" name="น้ำใส" english="Nam Sai" geocode="450405" >
       <entity type="Muban" geocode="45040502" name="บ้านเที่ยมแข้"/>
@@ -1174,7 +1185,11 @@
       </office>
     </entity>
     <entity type="Tambon" name="วังหลวง" english="Wang Luang" geocode="451006" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>16.0852</geo:lat>
+          <geo:long>103.9823</geo:long>
+        </geo:Point>
         <url>http://www.wangluang.th.gs/</url>
         <url>http://www.wangluang.ob.tc/</url>
       </office>
@@ -1774,9 +1789,33 @@
     <entity type="Tambon" name="ปาฝา" english="Pa Fa" geocode="451702" />
     <entity type="Tambon" name="ม่วงลาด" english="Muang Lat" geocode="451703" />
     <entity type="Tambon" name="จังหาร" english="Changhan" geocode="451704" >
-      <office type="TAOOffice">
-        <url>http://www.tambonjunghan.org/</url>
+      <office type="MunicipalityOffice">
+        <!-- somewhere around  16.141408° 103.612265° -->
+        <url>http://www.janghan.go.th/</url>
+        <!--<url>http://www.tambonjunghan.org/</url>-->
+        <officials>
+          <official title="Mayor" name="ปัญญา ใจนุกูล" comment="2010"/>
+        </officials>
       </office>
+      <entity type="Muban" geocode="45170401" name="บ้านเหล่างิ้ว"/>
+      <entity type="Muban" geocode="45170402" name="บ้านเหล่างิ้ว"/>
+      <entity type="Muban" geocode="45170403" name="บ้านจังหาร"/>
+      <entity type="Muban" geocode="45170404" name="บ้านจังหาร"/>
+      <entity type="Muban" geocode="45170405" name="บ้านตลาดค้อ"/>
+      <entity type="Muban" geocode="45170406" name="บ้านโต้น"/>
+      <entity type="Muban" geocode="45170407" name="บ้านจ่าเหลา"/>
+      <entity type="Muban" geocode="45170408" name="บ้านนา"/>
+      <entity type="Muban" geocode="45170409" name="บ้านแคน"/>
+      <entity type="Muban" geocode="45170410" name="บ้านโนนขาม"/>
+      <entity type="Muban" geocode="45170411" name="บ้านหัวงัว"/>
+      <entity type="Muban" geocode="45170412" name="บ้านงิ้วงาม"/>
+      <entity type="Muban" geocode="45170413" name="บ้านเม็ก"/>
+      <entity type="Muban" geocode="45170414" name="บ้านลอมคอม"/>
+      <entity type="Muban" geocode="45170415" name="บ้านเหล่างิ้ว"/>
+      <entity type="Muban" geocode="45170416" name="บ้านเหล่างิ้ว"/>
+      <entity type="Muban" geocode="45170417" name="บ้านจังหาร"/>
+      <entity type="Muban" geocode="45170418" name="บ้านจังหาร"/>
+      <entity type="Muban" geocode="45170419" name="บ้านโนนขาม"/>
     </entity>
     <entity type="Tambon" name="ดงสิงห์" english="Dong Sing" geocode="451705" />
     <entity type="Tambon" name="ยางใหญ่" english="Yang Yai" geocode="451706" >
