@@ -73,8 +73,12 @@
     <entity type="Tambon" name="ทะเลชุบศร" english="Thale Chup Son" geocode="160101" />
     <entity type="Tambon" name="ท่าหิน" english="Tha Hin" geocode="160102" />
     <entity type="Tambon" name="กกโก" english="Kok Ko" geocode="160103" >
-      <office type="TAOOffice">
-        <url>http://www.tambolkokko.com/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>14.7734</geo:lat>
+          <geo:long>100.6701</geo:long>
+        </geo:Point>
+        <!--<url>http://www.tambolkokko.com/</url>-->
       </office>
     </entity>
     <entity type="Tambon" name="โก่งธนู" english="Kong Thanu" geocode="160104" >
@@ -588,8 +592,10 @@
     </entity>
     <entity type="Tambon" name="บางลี่" english="Bang Li" geocode="160504" />
     <entity type="Tambon" name="บางงา" english="Bang Nga" geocode="160505" >
-      <office type="TAOOffice">
-        <url comment="Currently 404">http://bangnga.org/</url>
+      <office type="MunicipalityOffice">
+        <!-- might be at  14.841550° 100.471656° -->
+        <url>http://bangnga.bbthaihost.com/</url>
+        <!--<url>http://bangnga.org/</url>-->
       </office>
       <entity type="Muban" geocode="16050501" name="บ้านโพธิ์ศรี"/>
       <entity type="Muban" geocode="16050502" name="บ้านโพธิ์ศรี"/>
