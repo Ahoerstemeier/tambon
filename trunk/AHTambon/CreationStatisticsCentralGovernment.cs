@@ -61,16 +61,18 @@ namespace De.AHoerstemeier.Tambon
                 mNumberOfParentEntities.IncrementForCount(lParentEntities.Count, lCreate.Geocode);
             }
         }
-        protected virtual void AppendBasicInfo(StringBuilder iBuilder, String iEntityName)
+        protected virtual void AppendBasicInfo(StringBuilder iBuilder)
         {
+            String lEntityName = DisplayEntityName();
             iBuilder.AppendLine(NumberOfAnnouncements.ToString() + " Announcements");
-            iBuilder.AppendLine(NumberOfCreations.ToString() + " "+iEntityName+" created");
+            iBuilder.AppendLine(NumberOfCreations.ToString() + " "+lEntityName+" created");
             iBuilder.AppendLine("Creations per announcements: " + CreationsPerAnnouncement.MeanValue.ToString("F2", CultureInfo.InvariantCulture));
             iBuilder.AppendLine("Maximum creation per announcements: " + CreationsPerAnnouncement.MaxValue.ToString());
             iBuilder.AppendLine();
         }
-        protected void AppendChangwatInfo(StringBuilder iBuilder, String iEntityName)
+        protected void AppendChangwatInfo(StringBuilder iBuilder)
         {
+            String lEntityName = DisplayEntityName();
             if (NumberOfCreations > 0)
             {
                 List<String> lChangwat = new List<String>();
@@ -87,7 +89,7 @@ namespace De.AHoerstemeier.Tambon
                         lChangwat.Add(lEntry.English);
                     }
                 }
-                iBuilder.AppendLine(lMaxNumber.ToString() + " "+iEntityName+" created in");
+                iBuilder.AppendLine(lMaxNumber.ToString() + " "+lEntityName+" created in");
                 foreach (String lName in lChangwat)
                 {
                     iBuilder.AppendLine("* " + lName);
@@ -97,6 +99,7 @@ namespace De.AHoerstemeier.Tambon
         }
         protected void AppendSubEntitiesInfo(StringBuilder iBuilder, String iSubEntityName)
         {
+            String lEntityName = DisplayEntityName();
             if (NumberOfCreations > 0)
             {
                 iBuilder.AppendLine("Most common number of " + iSubEntityName + ": " + mNumberOfSubEntities.MostCommonValue.ToString() + " (" + mNumberOfSubEntities.MostCommonValueCount.ToString() + " times)");
@@ -123,11 +126,12 @@ namespace De.AHoerstemeier.Tambon
                 iBuilder.AppendLine();
             }
         }
-        protected void AppendParentNumberInfo(StringBuilder iBuilder, String iParentName)
+        protected void AppendParentNumberInfo(StringBuilder iBuilder)
         {
+            String lParentName = DisplayEntityName();
             if (NumberOfCreations > 0)
             {
-                iBuilder.AppendLine("Highest number of parent " + iParentName + ": " + mNumberOfParentEntities.MaxValue.ToString());
+                iBuilder.AppendLine("Highest number of parent " + lParentName + ": " + mNumberOfParentEntities.MaxValue.ToString());
                 if (mNumberOfParentEntities.MaxValue > 1)
                 {
                     foreach (Int32 lGeocode in mNumberOfParentEntities.Data[mNumberOfParentEntities.MaxValue])
@@ -151,15 +155,16 @@ namespace De.AHoerstemeier.Tambon
                 iBuilder.AppendLine();
             }
         }
-        protected void AppendParentFrequencyInfo(StringBuilder iBuilder, String iParentEntityName, String iEntityName)
+        protected void AppendParentFrequencyInfo(StringBuilder iBuilder, String iParentEntityName)
         {
+            String lEntityName = DisplayEntityName();
             List<KeyValuePair<Int32, Int32>> lSortedParents = new List<KeyValuePair<Int32, Int32>>();
             lSortedParents.AddRange(mCreationsPerParent);
             lSortedParents.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
             if (lSortedParents.Count > 0)
             {
                 KeyValuePair<Int32, Int32> lFirst = lSortedParents.ElementAt(0);
-                iBuilder.AppendLine("Most "+iEntityName+" created in one " + iParentEntityName + ": " + lFirst.Value.ToString());
+                iBuilder.AppendLine("Most "+lEntityName+" created in one " + iParentEntityName + ": " + lFirst.Value.ToString());
                 foreach (KeyValuePair<Int32, Int32> lEntry in lSortedParents.FindAll(
                     delegate(KeyValuePair<Int32, Int32> x) { return (x.Value == lFirst.Value); }))
                 {
@@ -169,6 +174,30 @@ namespace De.AHoerstemeier.Tambon
             }
             iBuilder.AppendLine();
         }
+        protected void AppendDayOfYearInfo(StringBuilder iBuilder)
+        {
+            String lEntityName = DisplayEntityName();
+            DateTime lBaseDateTime = new DateTime(2004, 1, 1);
+            List<KeyValuePair<Int32, Int32>> lSortedDays = new List<KeyValuePair<Int32, Int32>>();
+            lSortedDays.AddRange(EffectiveDayOfYear);
+            lSortedDays.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
+            Int32 lCount = 0;
+            if (lSortedDays.Count > 0)
+            {
+                foreach (KeyValuePair<Int32, Int32> lData in lSortedDays)
+                {
+                    DateTime lCurrent = lBaseDateTime.AddDays(lData.Key-1);
+                    iBuilder.AppendLine(lCurrent.ToString("MMM dd") + ": " + EffectiveDayOfYear[lData.Key].ToString() + " " + lEntityName + " created");
+                    lCount++;
+                    if (lCount > 10)
+                    {
+                        break;
+                    }
+                }
+                iBuilder.AppendLine();
+            }
+        }
+        protected abstract String DisplayEntityName();
         #endregion
     }
 }

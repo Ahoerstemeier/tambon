@@ -28,6 +28,10 @@ namespace De.AHoerstemeier.Tambon
         }
         #endregion
         #region methods
+        protected override String DisplayEntityName()
+        {
+            return "Muban";
+        }
         protected override void Clear()
         {
             base.Clear();
@@ -138,12 +142,13 @@ namespace De.AHoerstemeier.Tambon
         public override String Information()
         {
             StringBuilder lBuilder = new StringBuilder();
-            AppendBasicInfo(lBuilder, "Muban");
+            AppendBasicInfo(lBuilder);
             AppendProblems(lBuilder);
-            AppendChangwatInfo(lBuilder, "Muban");
+            AppendChangwatInfo(lBuilder);
             AppendMubanNumberInfo(lBuilder);
-            AppendParentFrequencyInfo(lBuilder,"Tambon","Muban");
-            AppendChangwatInfo(lBuilder, "Muban");
+            AppendParentFrequencyInfo(lBuilder,"Tambon");
+            AppendChangwatInfo(lBuilder);
+            AppendDayOfYearInfo(lBuilder);
             AppendNameInfo(lBuilder);
 
             String retval = lBuilder.ToString();

@@ -38,10 +38,11 @@ namespace De.AHoerstemeier.Tambon
         public override String Information()
         {
             StringBuilder lBuilder = new StringBuilder();
-            AppendBasicInfo(lBuilder, "Amphoe");
-            AppendChangwatInfo(lBuilder, "Amphoe");
-            AppendSubEntitiesInfo(lBuilder, "Tambon");
-            AppendParentNumberInfo(lBuilder, "Amphoe");
+            AppendBasicInfo(lBuilder);
+            AppendChangwatInfo(lBuilder);
+            AppendSubEntitiesInfo(lBuilder,"Tambon");
+            AppendParentNumberInfo(lBuilder);
+            AppendDayOfYearInfo(lBuilder);
 
             String retval = lBuilder.ToString();
             return retval;
@@ -55,7 +56,13 @@ namespace De.AHoerstemeier.Tambon
                 mNumberOfKingAmphoeCreations++;
             }
         }
-        protected override void AppendBasicInfo(StringBuilder iBuilder, String iEntityName)
+        protected override String DisplayEntityName()
+        {
+            return "Amphoe";
+        }
+
+
+        protected override void AppendBasicInfo(StringBuilder iBuilder)
         {
             iBuilder.AppendLine(NumberOfAnnouncements.ToString() + " Announcements");
             iBuilder.AppendLine((NumberOfCreations-NumberOfKingAmphoeCreations).ToString() + " Amphoe created");
