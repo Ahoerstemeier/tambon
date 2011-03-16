@@ -122,6 +122,7 @@
             this.edtData.Location = new System.Drawing.Point(15, 132);
             this.edtData.Multiline = true;
             this.edtData.Name = "edtData";
+            this.edtData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.edtData.Size = new System.Drawing.Size(292, 305);
             this.edtData.TabIndex = 12;
             // 

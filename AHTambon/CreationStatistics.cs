@@ -13,6 +13,9 @@ namespace De.AHoerstemeier.Tambon
         private Int32 mNumberOfCreations;
         public Int32 NumberOfCreations { get { return mNumberOfCreations; } }
         protected Int32[] mNumberOfCreationsPerChangwat = new Int32[100];
+
+        private Dictionary<Int32, Int32> mEffectiveDayOfYear = new Dictionary<int, int>();
+        public Dictionary<Int32, Int32> EffectiveDayOfYear { get { return mEffectiveDayOfYear; } }
         #endregion
         #region methods
         protected override void Clear()
@@ -60,13 +63,22 @@ namespace De.AHoerstemeier.Tambon
                     {
                         lProvinceGeocode = lProvinceGeocode / 100;
                     }
-
                 }
             }
             if (lCount > 0)
             {
                 mNumberOfAnnouncements++;
                 mCreationsPerAnnouncement.IncrementForCount(lCount, lProvinceGeocode);
+                if (iEntry.Effective.Year > 1)
+                { 
+                    DateTime lDummy = new DateTime(2004,iEntry.Effective.Month,iEntry.Effective.Day);
+                    Int32 lIndex = lDummy.DayOfYear;
+                    if (!mEffectiveDayOfYear.ContainsKey(lIndex))
+                    {
+                        mEffectiveDayOfYear[lIndex] = 0;
+                    }
+                    mEffectiveDayOfYear[lIndex]++;
+                }
             }
         }
         #endregion

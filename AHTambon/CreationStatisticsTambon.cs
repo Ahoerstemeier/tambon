@@ -24,6 +24,10 @@ namespace De.AHoerstemeier.Tambon
         }
         #endregion
         #region methods
+        protected override String DisplayEntityName()
+        {
+            return "Tambon";
+        }
         protected override Boolean EntityFitting(EntityType iEntityType)
         {
             Boolean result = (iEntityType == EntityType.Tambon);
@@ -96,11 +100,12 @@ namespace De.AHoerstemeier.Tambon
         public override String Information()
         {
             StringBuilder lBuilder = new StringBuilder();
-            AppendBasicInfo(lBuilder, "Tambon");
-            AppendChangwatInfo(lBuilder, "Tambon");
+            AppendBasicInfo(lBuilder);
+            AppendChangwatInfo(lBuilder);
             AppendSubEntitiesInfo(lBuilder, "Muban");
             AppendMubanNumberChangeInfo(lBuilder);
-            AppendParentNumberInfo(lBuilder, "Tambon");
+            AppendParentNumberInfo(lBuilder);
+            AppendDayOfYearInfo(lBuilder);
             
             String retval = lBuilder.ToString();
             return retval;
