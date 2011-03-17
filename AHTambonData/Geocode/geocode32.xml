@@ -438,7 +438,16 @@
       <entity type="Muban" geocode="32040217" name="บ้านเชียงสง"/>
       <entity type="Muban" geocode="32040218" name="บ้านหลวงอุดม"/>
     </entity>
-    <entity type="Tambon" name="กระหาด" english="Krahat" geocode="320403" />
+    <entity type="Tambon" name="กระหาด" english="Krahat" geocode="320403" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <!-- building not yet visible in Google Earth -->
+          <geo:lat>15.1315</geo:lat>
+          <geo:long>103.5225</geo:long>
+        </geo:Point>
+        <url>http://www.krahard.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="บุแกรง" english="Bu Kraeng" geocode="320404" >
       <office type="MunicipalityOffice">
         <geo:Point>
@@ -604,8 +613,11 @@
       <entity type="Muban" geocode="32051514" name="บ้านหนองพลวง"/>
     </entity>
     <entity type="Tambon" name="กันตวจระมวล" english="Kantuatramuan" geocode="320516" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url>http://kantuad.com/</url>
+        <officials>
+          <official title="Mayor" name="สุวรรณี โชติสิรินันท์" comment="2010"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="สมุด" english="Samut" geocode="320517" >
@@ -1228,7 +1240,14 @@
         <url>http://www.krokreaw.go.th/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="หมื่นศรี" english="Muen Si" geocode="321207" />
+    <entity type="Tambon" name="หมื่นศรี" english="Muen Si" geocode="321207" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>15.0179</geo:lat>
+          <geo:long>103.9840</geo:long>
+        </geo:Point>
+      </office>
+    </entity>
     <entity type="Tambon" name="เสม็จ" english="Samet" geocode="321208" />
     <entity type="Tambon" name="สะโน" english="Sano" geocode="321209" />
     <entity type="Tambon" name="ประดู่" english="Pradu" geocode="321210" >
