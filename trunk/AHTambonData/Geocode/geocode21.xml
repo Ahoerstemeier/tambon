@@ -733,7 +733,10 @@
   </entity>
   <entity type="ThesabanTambon" name="แกลงกะเฉด" english="Klaeng Kachet" geocode="2196" parent="2101" >
     <office type="MunicipalityOffice">
-      <url comment="Offline">http://www.klangkached.go.th/</url>
+      <url>http://www.klangkached.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สุรพล อิทธิ์ประเสริฐ" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านเพ" english="Ban Phe" geocode="2195" parent="2101" >
@@ -802,6 +805,11 @@
   </entity>
   <entity type="ThesabanTambon" name="มะขามคู่" english="Makham Khu" geocode="2183" parent="2108" tambon="210804">
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>12.8425</geo:lat>
+        <geo:long>101.1153</geo:long>
+      </geo:Point>
+      <url>http://makhamkhu.go.th/</url>
       <url>http://www.makhamkhucity.go.th/</url>
     </office>
   </entity>
@@ -810,7 +818,14 @@
       <url>http://www.banchang.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="มาบข่าพัฒนา" english="Map Kha Phatthana" geocode="2181" parent="2108" tambon="210508"/>
+  <entity type="ThesabanTambon" name="มาบข่าพัฒนา" english="Map Kha Phatthana" geocode="2181" parent="2108" tambon="210508">
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/rayong/mapkha/</url>
+      <officials>
+        <official title="Mayor" name="อนันต์  ศรีสมบัติ" comment="2010"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บ้านนา" english="Ban Na" geocode="2180" parent="2103" tambon="210308" >
     <office type="MunicipalityOffice">
       <url>http://www.banna-klaeng.com/</url>
@@ -826,6 +841,6 @@
       </officials>
     </office>
   </entity>
-  
+
   <entity name="มาบข่า" type="SakhaTambon" geocode="2151" english="Map Kha" parent="2105" obsolete="1"/>
 </entity>
