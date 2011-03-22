@@ -313,7 +313,7 @@
     <entity type="Tambon" name="โพนสา" english="Phon Sa" geocode="430209" />
     <entity type="Tambon" name="หนองนาง" english="Nong Nang" geocode="430210" />
   </entity>
-  <entity type="Amphoe" name="บึงกาฬ" english="Bueng Kan" geocode="4303" >
+  <entity type="Amphoe" name="บึงกาฬ" english="Bueng Kan" geocode="4303" newgeocode="3801">
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.3581</geo:lat>
@@ -425,14 +425,14 @@
           <official title="Mayor" name="แพทย์ โคตะพัฒน์" comment="2010"/>
         </officials>
       </office>
+      <entity type="Muban" geocode="43040701" name="บ้านนาคำ"/>
+      <entity type="Muban" geocode="43040702" name="บ้านเหล่าใหญ่"/>
+      <entity type="Muban" geocode="43040703" name="บ้านหนองลาด"/>
+      <entity type="Muban" geocode="43040704" name="บ้านโนนสว่าง"/>
+      <entity type="Muban" geocode="43040705" name="บ้านนางาม"/>
+      <entity type="Muban" geocode="43040706" name="บ้านโชคชัย"/>
+      <entity type="Muban" geocode="43040707" name="บ้านโนนสะอาด"/>
     </entity>
-    <entity type="Muban" geocode="43040701" name="บ้านนาคำ"/>
-    <entity type="Muban" geocode="43040702" name="บ้านเหล่าใหญ่"/>
-    <entity type="Muban" geocode="43040703" name="บ้านหนองลาด"/>
-    <entity type="Muban" geocode="43040704" name="บ้านโนนสว่าง"/>
-    <entity type="Muban" geocode="43040705" name="บ้านนางาม"/>
-    <entity type="Muban" geocode="43040706" name="บ้านโชคชัย"/>
-    <entity type="Muban" geocode="43040707" name="บ้านโนนสะอาด"/>
   </entity>
   <entity type="Amphoe" name="โพนพิสัย" english="Phon Phisai" geocode="4305" >
     <office type="DistrictOffice">
@@ -813,7 +813,14 @@
       </officials>
     </office>
     <entity type="Tambon" name="ศรีวิไล" english="Si Wilai" geocode="431201" />
-    <entity type="Tambon" name="ชุมภูพร" english="Chumphu Phon" geocode="431202" />
+    <entity type="Tambon" name="ชุมภูพร" english="Chumphu Phon" geocode="431202" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>18.1368</geo:lat>
+          <geo:long>103.7430</geo:long>
+        </geo:Point>
+      </office>
+    </entity>
     <entity type="Tambon" name="นาแสง" english="Na Saeng" geocode="431203" />
     <entity type="Tambon" name="นาสะแบง" english="Na Sabaeng" geocode="431204" />
     <entity type="Tambon" name="นาสิงห์" english="Na Sing" geocode="431205" />
@@ -1072,7 +1079,7 @@
     ชุมชนบ้านขามใหญ่พัฒนา
     -->
   </entity>
-  <entity type="ThesabanTambon" name="บึงกาฬ" english="Bueng Kan" geocode="4394" parent="4303" >
+  <entity type="ThesabanTambon" name="บึงกาฬ" english="Bueng Kan" geocode="4394" parent="4303" newgeocode="3899">
     <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>18.3669</geo:lat>
