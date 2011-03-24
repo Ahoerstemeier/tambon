@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
 
 namespace De.AHoerstemeier.Tambon
 {
     public partial class ConstituencyForm : Form
     {
         private Dictionary<Int32, PopulationDataEntry> mDownloadedData = new Dictionary<int, PopulationDataEntry>();
+        private Dictionary<PopulationDataEntry, Int32> mLastCalculation = null;
 
         public ConstituencyForm()
         {
@@ -140,6 +143,8 @@ namespace De.AHoerstemeier.Tambon
                 lDisplayResult = lDisplayResult + lEntry.Key.English + " " + lEntry.Value.ToString() + " (" + lVotersPerSeat.ToString() + " per seat)" + Environment.NewLine;
             }
             txtData.Text = lDisplayResult;
+            mLastCalculation = lResult;
+            btnSaveCsv.Enabled = true;
         }
 
         private void rbxNational_CheckedChanged(object sender, EventArgs e)
@@ -151,6 +156,35 @@ namespace De.AHoerstemeier.Tambon
         private void chkRegions_Changed(object sender, EventArgs e)
         {
             cbxRegion.Enabled = chkRegions.Checked && chkRegions.Enabled;
+        }
+
+        private void btnSaveCsv_Click(object sender, EventArgs e)
+        {
+            Debug.Assert(mLastCalculation != null);
+
+            StringBuilder lBuilder = new StringBuilder();
+
+            foreach (KeyValuePair<PopulationDataEntry, Int32> lEntry in mLastCalculation)
+            {
+                Int32 lVotersPerSeat = 0;
+                if (lEntry.Value != 0)
+                {
+                    lVotersPerSeat = lEntry.Key.Total / lEntry.Value;
+                }
+
+                lBuilder.AppendLine(lEntry.Key.English + "," + lEntry.Value.ToString() + "," + lVotersPerSeat.ToString());
+            }
+
+            SaveFileDialog lDlg = new SaveFileDialog();
+            lDlg.Filter = "CSV Files|*.csv|All files|*.*";
+            if (lDlg.ShowDialog() == DialogResult.OK)
+            {
+                Stream lFileStream = new FileStream(lDlg.FileName, FileMode.CreateNew);
+                StreamWriter lWriter = new StreamWriter(lFileStream);
+                lWriter.Write(lBuilder.ToString());
+                lWriter.Close();
+            }
+
         }
 
     }

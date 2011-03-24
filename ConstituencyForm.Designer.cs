@@ -40,6 +40,7 @@
             this.chkBuengKan = new System.Windows.Forms.CheckBox();
             this.cbxRegion = new System.Windows.Forms.ComboBox();
             this.chkRegions = new System.Windows.Forms.CheckBox();
+            this.btnSaveCsv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtNumberOfConstituencies)).BeginInit();
             this.SuspendLayout();
@@ -199,11 +200,22 @@
             this.chkRegions.CheckedChanged += new System.EventHandler(this.chkRegions_Changed);
             this.chkRegions.EnabledChanged += new System.EventHandler(this.chkRegions_Changed);
             // 
+            // btnSaveCsv
+            // 
+            this.btnSaveCsv.Location = new System.Drawing.Point(205, 137);
+            this.btnSaveCsv.Name = "btnSaveCsv";
+            this.btnSaveCsv.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveCsv.TabIndex = 15;
+            this.btnSaveCsv.Text = "Save as CSV";
+            this.btnSaveCsv.UseVisualStyleBackColor = true;
+            this.btnSaveCsv.Click += new System.EventHandler(this.btnSaveCsv_Click);
+            // 
             // ConstituencyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 357);
+            this.Controls.Add(this.btnSaveCsv);
             this.Controls.Add(this.chkRegions);
             this.Controls.Add(this.cbxRegion);
             this.Controls.Add(this.chkBuengKan);
@@ -240,5 +252,6 @@
         private System.Windows.Forms.CheckBox chkBuengKan;
         private System.Windows.Forms.ComboBox cbxRegion;
         private System.Windows.Forms.CheckBox chkRegions;
+        private System.Windows.Forms.Button btnSaveCsv;
     }
 }
