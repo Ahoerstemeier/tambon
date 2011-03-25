@@ -44,9 +44,13 @@ namespace De.AHoerstemeier.Tambon
             {
                 lZoneChar = 'Q';
             }
-            else
+            else if (lNorthingCount>8)
             {
                 lZoneChar = 'P';
+            }
+            else
+            {
+                lZoneChar = 'N';
             }
             String lResult = lZone.ToString() + lZoneChar;
             return lResult;
