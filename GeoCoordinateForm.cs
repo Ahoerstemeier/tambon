@@ -40,7 +40,7 @@ namespace De.AHoerstemeier.Tambon
             Int32 lNorthingCount = lNorthingCharacters.IndexOf(lNorthingChar);
 
             char lZoneChar;
-            if (lNorthingCount >= 17)
+            if (lNorthingCount > 17)
             {
                 lZoneChar = 'Q';
             }
