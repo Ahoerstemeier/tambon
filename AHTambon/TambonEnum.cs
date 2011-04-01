@@ -58,6 +58,7 @@ namespace De.AHoerstemeier.Tambon
         PhuYaiBan,
         PAOChairman,
         Mayor,
+        TAOMayor,
         TAOChairman,
         SanitaryDistrictChairman,
         ChumchonChairman
@@ -115,6 +116,7 @@ namespace De.AHoerstemeier.Tambon
         DistrictOfficer,
         SpeakerOfParliament,
         Mayor,
+        TAOMayor,
         TAOChairman,
         PAOChairman
     }
