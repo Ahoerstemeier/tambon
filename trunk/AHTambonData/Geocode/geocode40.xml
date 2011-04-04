@@ -438,7 +438,7 @@
         </geo:Point>
         <url>http://202.143.137.103/taophrabu/</url>
         <officials>
-          <official title="TAOChairman" name="บุญส่ง ผิวขาว" comment="2009"/>
+          <official title="TAOMayor" name="บุญส่ง ผิวขาว" comment="2009"/>
         </officials>
       </office>
       <entity type="Muban" geocode="40030201" name="บ้านพระบุ"/>
@@ -464,7 +464,7 @@
       <office type="TAOOffice">
         <url>http://www.tambonnongwang.ob.tc/</url>
         <officials>
-          <official title="TAOChairman" name="ไสว เบ้าจรรยา" comment="2010"/>
+          <official title="TAOMayor" name="ไสว เบ้าจรรยา" comment="2010"/>
         </officials>
       </office>
     </entity>
@@ -574,7 +574,7 @@
       <office type="TAOOffice">
         <url>http://www.tumbonnontan.ob.tc/</url>
         <officials>
-          <official title="TAOChairman" name="เจริญ บุบผา" comment="2010"/>
+          <official title="TAOMayor" name="เจริญ บุบผา" comment="2010"/>
         </officials>
       </office>
       <entity type="Muban" geocode="40040801" name="บ้านโนนทัน"/>
@@ -695,8 +695,8 @@
       <office type="TAOOffice">
         <url>http://www.nongpai.go.th/</url>
         <officials>
-          <official index="6" title="TAOChairman" name="อำนวย หงอกชัย" beginyear="2008"/>
-          <official index="5" title="TAOChairman" name="อำนวย หงอกชัย" beginyear="2004" endyear="2008"/>
+          <official index="6" title="TAOMayor" name="อำนวย หงอกชัย" beginyear="2008"/>
+          <official index="5" title="TAOMayor" name="อำนวย หงอกชัย" beginyear="2004" endyear="2008"/>
           <official index="4" title="TAOChairman" name="มนตร คำภูเขียว" beginyear="2002" endyear="2004"/>
           <official index="3" title="TAOChairman" name="อำนวย หงอกชัย" beginyear="2002" endyear="2002"/>
           <official index="2" title="TAOChairman" name="สุทธิ พรมเสนา" beginyear="2000" endyear="2002"/>
@@ -1185,7 +1185,7 @@
       <office type="TAOOffice">
         <url>http://banfangkn.go.th/</url>
         <officials>
-          <official title="TAOChairman" name="วิรัตน์ สายประดิษฐ์" comment="2010"/>
+          <official title="TAOMayor" name="วิรัตน์ สายประดิษฐ์" comment="2010"/>
         </officials>
       </office>
       <entity type="Muban" geocode="40090701" name="บ้านฝาง"/>
@@ -2182,7 +2182,16 @@
         <official title="DistrictOfficer" name="วุฒิชัย เสาวโกมุท" end="2007-01-07"/>
       </officials>
     </office>
-    <entity type="Tambon" name="เขาสวนกวาง" english="Khao Suan Kwang" geocode="401901" />
+    <entity type="Tambon" name="เขาสวนกวาง" english="Khao Suan Kwang" geocode="401901" >
+      <entity type="Muban" geocode="40190101" name="บ้านเขาสวนกวาง"/>
+      <entity type="Muban" geocode="40190102" name="บ้านศรีชมชื่น"/>
+
+      <entity type="Muban" geocode="40190105" name="บ้านหนองกุง"/>
+
+      <entity type="Muban" geocode="40190108" name="บ้านป่าพร้าว"/>
+      <entity type="Muban" geocode="40190109" name="บ้านหนองตะนา"/>
+      <entity type="Muban" geocode="40190110" name="บ้านหัวหนอง"/>
+    </entity>
     <entity type="Tambon" name="ดงเมืองแอม" english="Dong Mueang Aem" geocode="401902" />
     <entity type="Tambon" name="นางิ้ว" english="Na Ngio" geocode="401903" >
       <office type="TAOOffice">
@@ -2481,7 +2490,7 @@
       <office type="TAOOffice">
         <url>http://www.tambon-nongsang.org/</url>
         <officials>
-          <official title="TAOChairman" name="นิรันดร์ หาญสุโพธิ์" comment="2010"/>
+          <official title="TAOMayor" name="นิรันดร์ หาญสุโพธิ์" comment="2010"/>
         </officials>
       </office>
       <entity type="Muban" geocode="40240401" name="บ้านหนองแซง"/>
@@ -2549,7 +2558,7 @@
         </geo:Point>
         <url>http://www.nmwk.org/</url>
         <officials>
-          <official title="TAOChairman" name="ศิริเชษฐ ภาโนชิต" comment="2010"/>
+          <official title="TAOMayor" name="ศิริเชษฐ ภาโนชิต" comment="2010"/>
         </officials>
       </office>
       <entity type="Muban" geocode="40290101" name="บ้านหนองขาม"/>
@@ -2638,6 +2647,9 @@
   <entity type="ThesabanTambon" name="ท่าพระ" english="Tha Phra" geocode="4095" parent="4001" >
     <office type="MunicipalityOffice">
       <url>http://www.thapra.org/</url>
+      <officials>
+        <official title="Mayor" name="ไชยยุทธ เลิศรุ้งพร" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านฝาง" english="Ban Fang" geocode="4094" parent="4002" >
@@ -2757,8 +2769,31 @@
   </entity>
   <entity type="ThesabanTambon" name="เขาสวนกวาง" english="Khao Suan Kwang" geocode="4074" parent="4019" >
     <office type="MunicipalityOffice">
-      <url>http://www.kaosuankwang.org/</url>
+      <url>http://www.kaosuankwang.com/</url>
+      <!--<url>http://www.kaosuankwang.org/</url>-->
+      <officials>
+        <official title="Mayor" name="สมนึก เต็มธนกิจไพศาล" comment="2010"/>
+      </officials>
     </office>
+    <!-- 
+    <constituency name="เขตเลือกตั้งที่ 1">
+      <entity type="Muban" geocode="40190101" name="บ้านเขาสวนกวาง"/>
+      <entity type="Muban" geocode="40190102" name="บ้านศรีชมชื่น"/>
+      <entity type="Muban" geocode="40190105" name="บ้านหนองกุง"/>
+      <entity type="Muban" geocode="40190108" name="บ้านป่าพร้าว"/>
+      <entity type="Muban" geocode="40190109" name="บ้านหนองตะนา"/>
+      <entity type="Muban" geocode="40190110" name="บ้านหัวหนอง"/>
+    </constituency>
+    <constituency name="เขตเลือกตั้งที่ 2">
+      <entity type="Muban" geocode="40190505" name="บ้านโนนทอง"/>
+      <entity type="Muban" geocode="40190506" name="บ้านห้วยบาก"/>
+      <entity type="Muban" geocode="40190508" name="บ้านโคกสว่าง"/>
+      <entity type="Muban" geocode="40190509" name="บ้านโนนสง่า"/>
+      <entity type="Muban" geocode="40190510" name="บ้านจอมพลพัฒนา"/>
+      <entity type="Muban" geocode="40190511" name="บ้านทางพาด"/>
+      <entity type="Muban" geocode="40190512" name="บ้านใหม่ศรีสุข"/>
+    </constituency>
+    -->
   </entity>
   <entity type="ThesabanTambon" name="ภูผาม่าน" english="Phu Pha Man" geocode="4073" parent="4020" >
     <office type="MunicipalityOffice">
