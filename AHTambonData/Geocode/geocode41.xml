@@ -1118,6 +1118,12 @@
       <entity type="Muban" geocode="41110112" name="บ้านศรีบูรพา"/>
     </entity>
     <entity type="Tambon" name="บ้านดุง" english="Ban Dung" geocode="411102" >
+      <office type="TAOOffice">
+        <url>http://www.abtbandung.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ธนบุญโรจน์  เถื่อนอ้าวลา" comment="2010"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="41110201" name="บ้านดุง"/>
       <entity type="Muban" geocode="41110202" name="บ้านนาโฮง"/>
       <entity type="Muban" geocode="41110203" name="บ้านถ่อนคำหวด"/>
@@ -1217,6 +1223,10 @@
       <entity type="Muban" geocode="41110709" name="บ้านโนนสะอาดใต้"/>
     </entity>
     <entity type="Tambon" name="นาไหม" english="Na Mai" geocode="411108" >
+      <office type="TAOOffice">
+        <!--<url>http://www.tambonnamai.org/</url>-->
+        <!--<url>http://www.sao-namai.org/</url>-->
+      </office>
       <entity type="Muban" geocode="41110801" name="บ้านนาไหม"/>
       <entity type="Muban" geocode="41110802" name="บ้านผึ้ง"/>
       <entity type="Muban" geocode="41110803" name="บ้านนาขี้นาค"/>
@@ -1242,7 +1252,13 @@
       <entity type="Muban" geocode="41110908" name="บ้านเทพเทว"/>
     </entity>
     <entity type="Tambon" name="วังทอง" english="Wang Thong" geocode="411110" >
-      <!-- Longdo: 17.74606, 103.33100 -->
+      <office type="TAOOffice">
+        <!-- Longdo: 17.74606, 103.33100 -->
+        <url>http://wangtongchanod.org/</url>
+        <officials>
+          <official title="TAOMayor" name="ชัยรัตน์ พิลาวัลย์" comment="2010"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="41111001" name="บ้านวังทอง"/>
       <entity type="Muban" geocode="41111002" name="บ้านวังดารา"/>
       <entity type="Muban" geocode="41111003" name="บ้านเหล่าหลวง"/>
@@ -1278,6 +1294,10 @@
           <geo:lat>17.5571</geo:lat>
           <geo:long>103.2387</geo:long>
         </geo:Point>
+        <url>http://www.bantradudon.com/</url>
+        <officials>
+          <official title="TAOMayor" name="วีระ โสเก่าข่า" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="41111201" name="บ้านตาด"/>
       <entity type="Muban" geocode="41111202" name="บ้านโนนทองหลาง"/>
@@ -1293,7 +1313,7 @@
     <entity type="Tambon" name="นาคำ" english="Na Kham" geocode="411113" >
       <office type="TAOOffice">
         <!-- Longdo: 17.65966, 103.15004 -->
-        <url>http://www.nakam.org/</url>
+        <!--<url>http://www.nakam.org/</url>-->
       </office>
       <entity type="Muban" geocode="41111301" name="บ้านนาคำ"/>
       <entity type="Muban" geocode="41111302" name="บ้านพรสันติ"/>
@@ -2499,7 +2519,49 @@
       <url>http://www.wangsammor.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บ้านดุง" english="Ban Dung" geocode="4175" parent="4111" />
+  <entity type="ThesabanMueang" name="บ้านดุง" english="Ban Dung" geocode="4175" parent="4111" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.6986</geo:lat>
+        <geo:long>103.2613</geo:long>
+      </geo:Point>
+      <url>http://www.bandungcity.go.th/</url>
+    </office>
+    <entity type="Chumchon" geocode="41750001" name="ชุมชนดงคำ ๑"/>
+    <entity type="Chumchon" geocode="41750002" name="ชุมชนดงคำ ๒"/>
+    <entity type="Chumchon" geocode="41750003" name="ชุมชนดุงน้อย"/>
+    <entity type="Chumchon" geocode="41750004" name="ชุมชนดงแดนเมืองเหนื"/>
+    <entity type="Chumchon" geocode="41750005" name="ชุมชนดงแดนเมืองใต้"/>
+    <entity type="Chumchon" geocode="41750006" name="ชุมชนอาสาพัฒนา"/>
+    <entity type="Chumchon" geocode="41750007" name="ชุมชนอาสาพัฒนา ๒"/>
+    <entity type="Chumchon" geocode="41750008" name="ชุมชนอาสาพาสุข"/>
+    <entity type="Chumchon" geocode="41750009" name="ชุมชนศรีสมบัติ ๑"/>
+    <entity type="Chumchon" geocode="41750010" name="ชุมชนศรีขวัญเมือง"/>
+    <entity type="Chumchon" geocode="41750011" name="ชุมชนศรีสมบัติ ๒"/>
+    <entity type="Chumchon" geocode="41750012" name="ชุมชนสระศรีพัฒนา"/>
+    <entity type="Chumchon" geocode="41750013" name="ชุมชนประดู่ ๑"/>
+    <entity type="Chumchon" geocode="41750014" name="ชุมชนราชพัสดุประดู่"/>
+    <entity type="Chumchon" geocode="41750015" name="ชุมชนศรีผดุง ๑"/>
+    <entity type="Chumchon" geocode="41750016" name="ชุมชนศรีผดุง ๒"/>
+    <entity type="Chumchon" geocode="41750017" name="ชุมชนทุ่งธนไพศาล"/>
+    <entity type="Chumchon" geocode="41750018" name="ชุมชนศรีสุทโธ"/>
+    <entity type="Chumchon" geocode="41750019" name="ชุมชนศรีอุดม"/>
+    <entity type="Chumchon" geocode="41750020" name="ชุมชนศรีอุดม ๑"/>
+    <entity type="Chumchon" geocode="41750021" name="ชุมชนศรีอุดม ๒"/>
+    <entity type="Chumchon" geocode="41750022" name="ชุมชนทศรีนพคุณ"/>
+    <entity type="Chumchon" geocode="41750023" name="ชุมชนหนองหินเหนือพัฒนา"/>
+    <entity type="Chumchon" geocode="41750024" name="ชุมชนหนองหินเหนือทักษิณ"/>
+    <entity type="Chumchon" geocode="41750025" name="ชุมชนหนองหินเหนือสุขสวัสดิ์"/>
+    <entity type="Chumchon" geocode="41750026" name="ชุมชนหนองหินใต้"/>
+    <entity type="Chumchon" geocode="41750027" name="ชุมชนหนองหินสามัคคีธรรม"/>
+    <entity type="Chumchon" geocode="41750028" name="ชุมชนศรีบูรพา ๑"/>
+    <entity type="Chumchon" geocode="41750029" name="ชุมชนศรีบูรพา ๒"/>
+    <entity type="Chumchon" geocode="41750030" name="ชุมชนศรีบูรพา ๓"/>
+    <entity type="Chumchon" geocode="41750031" name="ชุมชนบ้านดุง"/>
+    <entity type="Chumchon" geocode="41750032" name="ชุมชนโนนทัน"/>
+    <entity type="Chumchon" geocode="41750033" name="ชุมชนโนนกกบาก"/>
+    <entity type="Chumchon" geocode="41750034" name="ชุมชนดงเหนือ"/>
+  </entity>
   <entity type="ThesabanTambon" name="บ้านผือ" english="Ban Phue" geocode="4174" parent="4117" >
     <office type="MunicipalityOffice">
       <url>http://www.banphue.org/</url>
