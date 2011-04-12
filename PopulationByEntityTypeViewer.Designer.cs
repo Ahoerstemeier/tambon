@@ -213,6 +213,9 @@
             // 
             // grpData
             // 
+            this.grpData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.grpData.Location = new System.Drawing.Point(12, 12);
             this.grpData.Name = "grpData";
             // 
@@ -267,6 +270,9 @@
             // 
             // txtStatistics
             // 
+            this.txtStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStatistics.Location = new System.Drawing.Point(3, 3);
             this.txtStatistics.Multiline = true;
             this.txtStatistics.Name = "txtStatistics";
