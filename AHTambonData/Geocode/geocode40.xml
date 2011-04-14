@@ -1436,10 +1436,19 @@
         <official title="DistrictOfficer" name="คมสัน เจริญอาจ" end="2007-01-07"/>
       </officials>
     </office>
-    <entity type="Tambon" name="เปือยน้อย" english="Pueai Noi" geocode="401101" />
+    <entity type="Tambon" name="เปือยน้อย" english="Pueai Noi" geocode="401101">
+      <entity type="Muban" geocode="40110101" name="บ้านหัวขัว" comment="Belongs partially to Thesaban Sa Kaeo"/>
+      <entity type="Muban" geocode="40110102" name="บ้านเปือยน้อย"/>
+      <entity type="Muban" geocode="40110103" name="บ้านหัวฝาย"/>
+      <entity type="Muban" geocode="40110104" name="บ้านโนนเหลื่อม" comment="Belongs partially to Thesaban Sa Kaeo"/>
+      <entity type="Muban" geocode="40110105" name="บ้านขอนแก่นน้อย"/>
+      <entity type="Muban" geocode="40110106" name="บ้านดอนนาโน"/>
+      <entity type="Muban" geocode="40110107" name="บ้านหัวขัว"/>
+    </entity>
     <entity type="Tambon" name="วังม่วง" english="Wang Muang" geocode="401102" >
       <office type="TAOOffice">
-        <url>http://www.wangmuang.org/</url>
+        <url>http://www.wungmuang.go.th/</url>
+        <!--<url>http://www.wangmuang.org/</url>-->
       </office>
       <entity type="Muban" geocode="40110201" name="บ้านวังม่วง"/>
       <entity type="Muban" geocode="40110202" name="บ้านวังม่วง"/>
@@ -1452,7 +1461,11 @@
     </entity>
     <entity type="Tambon" name="ขามป้อม" english="Kham Pom" geocode="401103" >
       <office type="TAOOffice">
-        <url>http://www.khampom.com/</url>
+        <geo:Point>
+          <geo:lat>15.9493</geo:lat>
+          <geo:long>102.8552</geo:long>
+        </geo:Point>
+        <!--<url>http://www.khampom.com/</url>-->
       </office>
       <entity type="Muban" geocode="40110301" name="บ้านขามป้อม"/>
       <entity type="Muban" geocode="40110302" name="บ้านส้มป่อยใหญ่"/>
@@ -1465,7 +1478,21 @@
       <entity type="Muban" geocode="40110309" name="บ้านวังผือ"/>
       <entity type="Muban" geocode="40110310" name="บ้านหนองนกเขียน"/>
     </entity>
-    <entity type="Tambon" name="สระแก้ว" english="Sa Kaeo" geocode="401104" />
+    <entity type="Tambon" name="สระแก้ว" english="Sa Kaeo" geocode="401104" >
+      <office type="MunicipalityOffice">
+        <url>http://tambonsrakaew.go.th/</url>
+        <officials>
+          <official title="Mayor" name="สนอง ประวันนา" comment="2010"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="40110401" name="บ้านสระแก้ว"/>
+      <entity type="Muban" geocode="40110402" name="บ้านวังหิน" comment="Belongs to Thesaban Pueai Noi"/>
+      <entity type="Muban" geocode="40110403" name="บ้านเก่าค้อ"/>
+      <entity type="Muban" geocode="40110404" name="บ้านหนองบัวน้อย" comment="Belongs to Thesaban Pueai Noi"/>
+      <entity type="Muban" geocode="40110405" name="บ้านนาเสียว"/>
+      <entity type="Muban" geocode="40110406" name="บ้านโคกสว่าง"/>
+      <entity type="Muban" geocode="40110407" name="บ้านวังหิน" comment="Belongs partially to Thesaban Pueai Noi"/>
+      </entity>
   </entity>
   <entity type="Amphoe" name="พล" english="Phon" geocode="4012" >
     <office type="DistrictOffice">
@@ -2788,12 +2815,17 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านฝาง" english="Ban Fang" geocode="4094" parent="4002" >
     <office type="MunicipalityOffice">
+      <url>http://www.tbbanfang.go.th/</url>
       <url>http://www.banfang.org/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านโต้น" english="Ban Ton" geocode="4093" parent="4003" >
     <office type="MunicipalityOffice">
-      <url>http://bantonlocal.org/</url>
+      <url>http://www.nmt.or.th/khonkaen/banton/</url>
+      <!--<url>http://bantonlocal.org/</url>-->
+      <officials>
+        <official title="Mayor" name="เจริญ แซ่เต็ง" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="พระยืน" english="Phra Yuen" geocode="4092" parent="4003" >
@@ -2811,17 +2843,51 @@
         <geo:long>102.5487</geo:long>
       </geo:Point>
       <url>http://www.donmong.com/</url>
+      <officials>
+        <official title="Mayor" name="ชุติพนธ์ ด่านสกุลนาวา" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองแก" english="Nong Kae" geocode="4090" parent="4004" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.5140</geo:lat>
+        <geo:long>102.3004</geo:long>
+      </geo:Point>
       <url>http://www.nongkae.go.th/</url>
+      <officials>
+        <official title="Mayor" name="เกรียงศักดิ์ วิริยะอาชา" comment="2010"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="40900001" name="ชุมชนแสงตะวัน"/>
+    <entity type="Chumchon" geocode="40900002" name="ชุมชนแสงมณี"/>
+    <entity type="Chumchon" geocode="40900003" name="ชุมชนแสงชัย"/>
+    <entity type="Chumchon" geocode="40900004" name="ชุมชนประชาราษฎร์สามัคคี"/>
+    <entity type="Chumchon" geocode="40900005" name="ชุมชนพลนิมิต"/>
+    <entity type="Chumchon" geocode="40900006" name="ชุมชนคุรุราษฎร์สามัคคี"/>
+    <entity type="Chumchon" geocode="40900007" name="ชุมชนอนามัย"/>
+    <entity type="Chumchon" geocode="40900008" name="ชุมชนบูรพาสามัคคี"/>
   </entity>
   <entity type="ThesabanTambon" name="หนองเรือ" english="Nong Ruea" geocode="4089" parent="4004" >
     <office type="MunicipalityOffice">
       <url>http://www.nongrua.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ประทุมพร บางวิเศษ" comment="2010"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="40890001" name="ชุมชนบูรพา"/>
+    <entity type="Chumchon" geocode="40890002" name="ชุมชนตลาดสดที่หนึ่งา"/>
+    <entity type="Chumchon" geocode="40890003" name="ชุมชนทรัพย์เจริญพัฒนาา"/>
+    <entity type="Chumchon" geocode="40890004" name="ชุมชนร่วมใจา"/>
+    <entity type="Chumchon" geocode="40890005" name="ชุมชนหนองเรือทุ่งศรีทองา"/>
+    <entity type="Chumchon" geocode="40890006" name="ชุมชนกลางสวรรค์พัฒนาา"/>
+    <entity type="Chumchon" geocode="40890007" name="ชุมชนบ้านใหม่ศรีทองา"/>
+    <entity type="Chumchon" geocode="40890008" name="ชุมชนเจ้าพ่อเสนเมืองา"/>
+
+    <!-- constituencies
+    เขตที่  1  ประกอบด้วย  หมู่ 1  ,  หมู่  3  และหมู่  10  บางบ้าน
+    เขตที่  2  ประกอบด้วย  หมู่  2  และหมู่  10  บางบ้าน
+    -->
   </entity>
   <entity type="ThesabanTambon" name="โคกสูงสัมพันธ์" english="Khok Sung Sam Phanat" geocode="4088" parent="4005" />
   <entity type="ThesabanTambon" name="โนนหัน" english="Non Han" geocode="4087" parent="4005" >
@@ -2861,9 +2927,15 @@
   <entity type="ThesabanTambon" name="เปือยน้อย" english="Pueai Noi" geocode="4081" parent="4011" >
     <office type="MunicipalityOffice">
       <geo:Point>
-        <geo:lat> 15.8707</geo:lat>
+        <geo:lat>15.8707</geo:lat>
         <geo:long>102.9064</geo:long>
       </geo:Point>
+      <url>http://www.nmt.or.th/khonkaen/puaynoi/</url>
+      <url>http://puaynoi.org/</url>
+      <!--<url>http://www.puaynoi.com/</url>-->
+      <officials>
+        <official title="Mayor" name="ไพฑูรย์ ผิวผาง" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แวงใหญ่" english="Waeng Yai" geocode="4080" parent="4013" >
@@ -2873,6 +2945,9 @@
         <geo:long>102.5419</geo:long>
       </geo:Point>
       <url>http://www.nmt.or.th/khonkaen/waengyai/</url>
+      <officials>
+        <official title="Mayor" name="สุรพล เวียงวงษ์" comment="2010"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แวงน้อย" english="Waeng Noi" geocode="4079" parent="4014" >
