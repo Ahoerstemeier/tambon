@@ -1642,7 +1642,10 @@
     <entity type="Tambon" name="มะค่า" english="Makha" geocode="300914" >
       <office type="TAOOffice">
         <url>http://www.makha-sm.go.th/</url>
-        <url>http://www.obtmakha.go.th/</url>
+        <!--<url>http://www.obtmakha.go.th/</url>-->
+        <officials>
+          <official title="TAOMayor" name="ณรงค์ พลลำ" comment="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="30091401" name="บ้านคู"/>
       <entity type="Muban" geocode="30091402" name="บ้านหนองไผ่"/>
@@ -1739,7 +1742,16 @@
     <entity type="Tambon" name="มะค่า" english="Makha" geocode="301008" >
       <office type="TAOOffice">
         <url>http://www.makha.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="เสน่ห์ ยศกลาง" comment="2010"/>
+        </officials>
       </office>
+      <entity type="Muban" geocode="30100801" name="บ้านมะค่า"/>
+      <entity type="Muban" geocode="30100802" name="บ้านโนนดินทราย"/>
+
+      <entity type="Muban" geocode="30100805" name="บ้านดอนม่วง"/>
+
+      <entity type="Muban" geocode="30100813" name="บ้านมะเกลือ"/>
     </entity>
     <entity type="Tambon" name="พลสงคราม" english="Phon Songkhram" geocode="301009" >
       <office type="TAOOffice">
@@ -4453,10 +4465,19 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ตลาดแค" english="Talad Khae" geocode="3078" parent="3010" />
-  <entity type="ThesabanTambon" name="มะค่า" english="Makha" geocode="3077" parent="3009" >
+  <entity type="ThesabanTambon" name="มะค่า" english="Makha" geocode="3077" parent="3010" >
     <office type="MunicipalityOffice">
-      <url>http://www.makhacity.com/</url>
+      <url>http://www.makhacity.go.th/</url>
+      <!--<url>http://www.makhacity.com/</url>-->
+      <officials>
+        <official title="Mayor" name="ธนาพร ศิริโภคานนท์" comment="2010"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="30770001" name="ชุมชนมะค่า"/>
+    <entity type="Chumchon" geocode="30770002" name="ชุมชนโนนดินทราย"/>
+    <entity type="Chumchon" geocode="30770003" name="ชุมชนดอนม่วง"/>
+    <entity type="Chumchon" geocode="30770004" name="ชุมชนบ้านโกรก"/>
+    <entity type="Chumchon" geocode="30770005" name="ชุมชนมะเกลือ"/>
   </entity>
   <entity type="ThesabanTambon" name="ขามสะแกแสง" english="Kham Sakae Saeng" geocode="3076" parent="3011" />
   <entity type="ThesabanTambon" name="หนองหัวฟาน" english="Nong Hua Fan" geocode="3075" parent="3011" >
