@@ -1,40 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
- กรุงเทพมหานคร
-       เขตเลือกตั้งที่ ๑ ประกอบด้วย เขตพระนคร เขตป้อมปราบศัตรูพ่าย และเขตสัมพันธวงศ์
-       เขตเลือกตั้งที่ ๒ ประกอบด้วย เขตปทุมวัน เขตบางรัก และเขตสาทร
-       เขตเลือกตั้งที่ ๓ ประกอบด้วย เขตบางคอแหลม และเขตยานนาวา
-       เขตเลือกตั้งที่ ๔ ประกอบด้วย เขตคลองเตย และเขตวัฒนา
-       เขตเลือกตั้งที่ ๕ ประกอบด้วย เขตดุสิต และเขตราชเทวี
-       เขตเลือกตั้งที่ ๖ ประกอบด้วย เขตดินแดง และเขตพญาไท
-       เขตเลือกตั้งที่ ๗ ประกอบด้วย เขตห้วยขวาง และเขตวังทองหลาง (เฉพาะแขวงวังทองหลาง และแขวงพลับพลา)
-       เขตเลือกตั้งที่ ๘ ประกอบด้วย เขตลาดพร้าว และเขตวังทองหลาง (ยกเว้นแขวงวังทองหลาง และแขวงพลับพลา)
-       เขตเลือกตั้งที่ ๙ ประกอบด้วย เขตจตุจักร
-       เขตเลือกตั้งที่ ๑๐ ประกอบด้วย เขตบางซื่อ
-       เขตเลือกตั้งที่ ๑๑ ประกอบด้วย เขตหลักสี่ และเขตดอนเมือง (เฉพาะแขวงสนามบิน)
-       เขตเลือกตั้งที่ ๑๒ ประกอบด้วย เขตดอนเมือง (ยกเว้นแขวงสนามบิน)
-       เขตเลือกตั้งที่ ๑๓ ประกอบด้วย เขตสายไหม
-       เขตเลือกตั้งที่ ๑๔ ประกอบด้วย เขตบางเขน
-       เขตเลือกตั้งที่ ๑๕ ประกอบด้วย เขตบางกะปิ
-       เขตเลือกตั้งที่ ๑๖ ประกอบด้วย เขตบึงกุ่ม และเขตคันนายาว (เฉพาะแขวงรามอินทรา) 
-       เขตเลือกตั้งที่ ๑๗ ประกอบด้วย เขตมีนบุรี และเขตคันนายาว (ยกเว้นแขวงรามอินทรา)
-       เขตเลือกตั้งที่ ๑๘ ประกอบด้วย เขตคลองสามวา
-       เขตเลือกตั้งที่ ๑๙ ประกอบด้วย เขตหนองจอก
-       เขตเลือกตั้งที่ ๒๐ ประกอบด้วย เขตลาดกระบัง
-       เขตเลือกตั้งที่ ๒๑ ประกอบด้วย เขตสะพานสูง และเขตประเวศ (ยกเว้นแขวงหนองบอน และแขวงดอกไม้)
-       เขตเลือกตั้งที่ ๒๒ ประกอบด้วย เขตสวนหลวง และเขตประเวศ (เฉพาะแขวงหนองบอน และแขวงดอกไม้)
-       เขตเลือกตั้งที่ ๒๓ ประกอบด้วย เขตพระโขนง และเขตบางนา
-       เขตเลือกตั้งที่ ๒๔ ประกอบด้วย เขตธนบุรี (ยกเว้นแขวงดาวคะนอง) และเขตคลองสาน
-       เขตเลือกตั้งที่ ๒๕ ประกอบด้วย เขตจอมทอง และเขตธนบุรี (เฉพาะแขวงดาวคะนอง)
-       เขตเลือกตั้งที่ ๒๖ ประกอบด้วย เขตราษฎร์บูรณะ และเขตทุ่งครุ
-       เขตเลือกตั้งที่ ๒๗ ประกอบด้วย เขตบางขุนเทียน
-       เขตเลือกตั้งที่ ๒๘ ประกอบด้วย เขตบางบอน และเขตหนองแขม (เฉพาะแขวงหนองแขม)
-       เขตเลือกตั้งที่ ๒๙ ประกอบด้วย เขตทวีวัฒนา และเขตหนองแขม (ยกเว้นแขวงหนองแขม)
-       เขตเลือกตั้งที่ ๓๐ ประกอบด้วย เขตบางแค
-       เขตเลือกตั้งที่ ๓๑ ประกอบด้วย เขตภาษีเจริญ และเขตบางกอกใหญ่
-       เขตเลือกตั้งที่ ๓๒ ประกอบด้วย เขตตลิ่งชัน และเขตบางกอกน้อย (เฉพาะแขวงบ้านช่างหล่อ และแขวงบางขุนศรี)
-       เขตเลือกตั้งที่ ๓๓ ประกอบด้วย เขตบางพลัด และเขตบางกอกน้อย (ยกเว้นแขวงบ้านช่างหล่อ และแขวงบางขุนศรี)
-       
+<country>
+  <province geocode="10" number="33" english="Bangkok">
+    <constituency number="1">
+      <entity geocode="1001"/>
+      <entity geocode="1008"/>
+      <entity geocode="1013"/>
+    </constituency>
+    <constituency number="2">
+      <entity geocode="1007"/>
+      <entity geocode="1004"/>
+      <entity geocode="1028"/>
+    </constituency>
+    <constituency number="3">
+      <entity geocode="1031"/>
+      <entity geocode="1012"/>
+    </constituency>
+    <constituency number="4">
+      <entity geocode="1033"/>
+      <entity geocode="1039"/>
+    </constituency>
+    <constituency number="5">
+      <entity geocode="1002"/>
+      <entity geocode="1037"/>
+    </constituency>
+    <constituency number="6">
+      <entity geocode="1026"/>
+      <entity geocode="1014"/>
+    </constituency>
+    <constituency number="7">
+      <entity geocode="1017"/>
+      <entity geocode="104501" />
+      <entity geocode="104504"/>
+    </constituency>
+    <constituency number="8">
+      <entity geocode="1038"/>
+      <entity geocode="104502"/>
+      <entity geocode="104503"/>
+    </constituency>
+    <constituency number="9">
+      <entity geocode="1030"/>
+    </constituency>
+    <constituency number="10">
+      <entity geocode="1029"/>
+    </constituency>
+    <constituency number="11">
+      <entity geocode="1041"/>
+      <entity geocode="103605"/>
+    </constituency>
+    <constituency number="12">
+      <entity geocode="103602" />
+      <entity geocode="103604"/>
+    </constituency>
+    <constituency number="13">
+      <entity geocode="1042"/>
+    </constituency>
+    <constituency number="14">
+      <entity geocode="1005"/>
+    </constituency>
+    <constituency number="15">
+      <entity geocode="1006"/>
+    </constituency>
+    <constituency number="16">
+      <entity geocode="1027"/>
+      <entity type="Khwaeng" name="รามอินทรา" english="Ram Intra" geocode="104302" />
+    </constituency>
+    <constituency number="17">
+      <entity geocode="1010"/>
+      <entity geocode="104301" />
+    </constituency>  
+    <constituency number="18">
+      <entity geocode="1046"/>
+    </constituency>
+    <constituency number="19">
+      <entity geocode="1003"/>
+    </constituency>
+    <constituency number="20">
+      <entity geocode="1011"/>
+    </constituency>
+    <constituency number="21">
+      <entity geocode="1044"/>
+      <entity geocode="103201" />
+    </constituency>
+    <constituency number="22">
+      <entity geocode="1034"/>
+      <entity geocode="103202" />
+      <entity geocode="103203" />
+    </constituency>
+    <constituency number="23">
+      <entity geocode="1009"/>
+      <entity geocode="1047"/>
+    </constituency>
+    <constituency number="24">
+      <entity geocode="101501" />
+      <entity geocode="101502" />
+      <entity geocode="101503" />
+      <entity geocode="101504" />
+      <entity geocode="101505" />
+      <entity geocode="101507" />
+      <entity geocode="1018"/>
+    </constituency>
+    <constituency number="25">
+      <entity geocode="1035"/>
+      <entity geocode="101506" />
+    </constituency>
+    <constituency number="26">
+      <entity geocode="1024"/>
+      <entity geocode="1049"/>
+    </constituency>
+    <constituency number="27">
+      <entity geocode="1021"/>
+    </constituency>
+    <constituency number="28">
+      <entity geocode="1050"/>
+      <entity geocode="102302" />
+    </constituency>
+    <constituency number="29">
+      <entity geocode="1048"/>
+      <entity geocode="102303" />
+    </constituency>
+    <constituency number="30">
+      <entity geocode="1040"/>
+    </constituency>
+    <constituency number="31">
+      <entity geocode="1022"/>
+      <entity geocode="1016"/>
+    </constituency>
+    <constituency number="32">
+      <entity geocode="1019"/>
+      <entity geocode="102005" />
+      <entity geocode="102007" />
+    </constituency>
+    <constituency number="33">
+      <entity geocode="1025"/>
+      <entity geocode="102004" />
+      <entity geocode="102006" />
+      <entity geocode="102009" />
+    </constituency>
+  </province> 
+<!--       
        ภาคเหนือ
        - แพร่
        เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองแพร่ (ยกเว้นตำบลห้วยม้า, ตำบลแม่หล่าย, ตำบลแม่คำมี, ตำบลแม่ยม, ตำบลวังหงส์, ตำบลท่าข้าม และตำบลวังธง) และอำเภอสูงเม่น (ยกเว้นตำบลบ้านปง และตำบลหัวฝาย)
@@ -497,7 +600,6 @@
 
 <!-- เฉพาะ -> limited to, only -->
 <!-- ยกเว้น -> except -->
-<country>
   <province geocode="83" number="2" english="Phuket">
     <constituency number="1">
       <entity geocode="830101"/>
