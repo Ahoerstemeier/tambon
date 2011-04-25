@@ -26,7 +26,7 @@
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="entity" type="Entity"/>
     </xs:sequence>
-    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="index" type="xs:unsignedByte" use="required" />
     <xs:attribute name="MP" type="xs:unsignedByte" use="optional" default="1"/>
   </xs:complexType>
   <xs:complexType name="Province">
@@ -34,14 +34,15 @@
       <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="Constituency"/>
     </xs:sequence>
     <xs:attribute name="geocode" type="xs:unsignedByte" use="required" />
-    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
     <xs:attribute name="english" type="xs:string" use="required" />
+    <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="MP" type="xs:unsignedByte" use="optional" default="1"/>
   </xs:complexType>
   <xs:complexType name="Region">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="province" type="Province"/>
     </xs:sequence>
-    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="index" type="xs:unsignedByte" use="required" />
   </xs:complexType>
   <xs:element name="country">
     <xs:complexType>
