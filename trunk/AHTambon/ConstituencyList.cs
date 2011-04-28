@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml;
+
 
 namespace De.AHoerstemeier.Tambon
 {
-    class ConstituencyList:List<ConstituencyEntry>
+    public class ConstituencyList:List<ConstituencyEntry>
     {
         public Int32 Population()
         {
@@ -24,6 +26,24 @@ namespace De.AHoerstemeier.Tambon
                 lResult += lEntry.NumberOfSeats;
             }
             return lResult;
+        }
+
+        internal void ReadFromXml(System.Xml.XmlNode iNode)
+        {
+            if ( iNode != null && iNode.Name.Equals("constituencies") )
+            {
+                if ( iNode.HasChildNodes )
+                {
+                    foreach ( XmlNode lChildNode in iNode.ChildNodes )
+                    {
+                        if ( lChildNode.Name == "constituency" )
+                        {
+                            ConstituencyEntry lConstituency = ConstituencyEntry.Load(lChildNode);
+                            Add(lConstituency);
+                        }
+                    }
+                }
+            }
         }
     }
 }
