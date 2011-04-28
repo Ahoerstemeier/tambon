@@ -76,6 +76,12 @@
     <Compile Include="ConstituencyForm.Designer.cs">
       <DependentUpon>ConstituencyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConstituencyStatisticsViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConstituencyStatisticsViewer.Designer.cs">
+      <DependentUpon>ConstituencyStatisticsViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="GeoCoordinateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConstituencyForm.resx">
       <DependentUpon>ConstituencyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConstituencyStatisticsViewer.resx">
+      <DependentUpon>ConstituencyStatisticsViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <SubType>Designer</SubType>
