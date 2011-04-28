@@ -208,19 +208,18 @@ namespace De.AHoerstemeier.Tambon
         {
             OpenFileDialog lDlg = new OpenFileDialog();
             lDlg.Filter = "XML Files|*.xml|All files|*.*";
-            if ( lDlg.ShowDialog() == DialogResult.OK )
+            if (lDlg.ShowDialog() == DialogResult.OK)
             {
                 PopulationData lData = PopulationData.Load(lDlg.FileName);
                 Int32 lYear = Convert.ToInt32(edtYear.Value);
                 PopulationDataEntry lDataEntry = GetPopulationData(lYear);
-                FrequencyCounter lCounter = new FrequencyCounter();
                 var lList = lData.Data.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
-                foreach ( PopulationDataEntry lEntry in lList )
+                foreach (PopulationDataEntry lEntry in lList)
                 {
-                    foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
+                    foreach (ConstituencyEntry lConstituency in lEntry.ConstituencyList)
                     {
                         List<PopulationDataEntry> lNewEntityList = new List<PopulationDataEntry>();
-                        foreach ( PopulationDataEntry lConstituencyEntry in lConstituency.AdministrativeEntities )
+                        foreach (PopulationDataEntry lConstituencyEntry in lConstituency.AdministrativeEntities)
                         {
                             PopulationDataEntry lPopulationdataEntry = lDataEntry.FindByCode(lConstituencyEntry.Geocode);
                             Debug.Assert(lPopulationdataEntry != null, "Entity with code " + lConstituencyEntry.Geocode.ToString() + " not found");
@@ -228,14 +227,11 @@ namespace De.AHoerstemeier.Tambon
                         }
                         lConstituency.AdministrativeEntities.Clear();
                         lConstituency.AdministrativeEntities.AddRange(lNewEntityList);
-                        // lCounter.IncrementForCount(lConstituency.Population(), lConstituency.AdministrativeEntities.First().Geocode);
-                        lCounter.IncrementForCount(lConstituency.Population(), lConstituency.Index);
                     }
-                    // lCounter.IncrementForCount(lEntry.ConstituencyList.NumberOfSeats(), lEntry.Geocode);
                 }
+                ConstituencyStatisticsViewer lDialog = new ConstituencyStatisticsViewer(lData.Data);
+                lDialog.Show();
             }
-            // ToDo: Visualization of resulting data structure - lCounter moves inside that dialog then
-
         }
 
     }
