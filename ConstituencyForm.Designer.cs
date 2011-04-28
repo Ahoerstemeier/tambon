@@ -41,6 +41,7 @@
             this.cbxRegion = new System.Windows.Forms.ComboBox();
             this.chkRegions = new System.Windows.Forms.CheckBox();
             this.btnSaveCsv = new System.Windows.Forms.Button();
+            this.btnLoadConstituencyXml = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtNumberOfConstituencies)).BeginInit();
             this.SuspendLayout();
@@ -156,9 +157,9 @@
             // 
             // txtData
             // 
-            this.txtData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtData.Location = new System.Drawing.Point(7, 166);
             this.txtData.Multiline = true;
             this.txtData.Name = "txtData";
@@ -210,11 +211,22 @@
             this.btnSaveCsv.UseVisualStyleBackColor = true;
             this.btnSaveCsv.Click += new System.EventHandler(this.btnSaveCsv_Click);
             // 
+            // btnLoadConstituencyXml
+            // 
+            this.btnLoadConstituencyXml.Location = new System.Drawing.Point(88, 137);
+            this.btnLoadConstituencyXml.Name = "btnLoadConstituencyXml";
+            this.btnLoadConstituencyXml.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadConstituencyXml.TabIndex = 16;
+            this.btnLoadConstituencyXml.Text = "Load XML";
+            this.btnLoadConstituencyXml.UseVisualStyleBackColor = true;
+            this.btnLoadConstituencyXml.Click += new System.EventHandler(this.btnLoadConstituencyXml_Click);
+            // 
             // ConstituencyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 357);
+            this.Controls.Add(this.btnLoadConstituencyXml);
             this.Controls.Add(this.btnSaveCsv);
             this.Controls.Add(this.chkRegions);
             this.Controls.Add(this.cbxRegion);
@@ -253,5 +265,6 @@
         private System.Windows.Forms.ComboBox cbxRegion;
         private System.Windows.Forms.CheckBox chkRegions;
         private System.Windows.Forms.Button btnSaveCsv;
+        private System.Windows.Forms.Button btnLoadConstituencyXml;
     }
 }

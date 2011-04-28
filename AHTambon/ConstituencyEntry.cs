@@ -7,7 +7,7 @@ using System.IO;
 
 namespace De.AHoerstemeier.Tambon
 {
-    class ConstituencyEntry : ICloneable
+    public class ConstituencyEntry : ICloneable
     {
         #region properties
         private List<PopulationDataEntry> lAdministrativeEntities = new List<PopulationDataEntry>();
