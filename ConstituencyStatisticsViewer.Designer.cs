@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mTreeviewData = new System.Windows.Forms.TreeView();
+            this.TrvData = new System.Windows.Forms.TreeView();
             this.txtStatistics = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // mTreeviewData
+            // TrvData
             // 
-            this.mTreeviewData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.mTreeviewData.Location = new System.Drawing.Point(1, 2);
-            this.mTreeviewData.Name = "mTreeviewData";
-            this.mTreeviewData.Size = new System.Drawing.Size(153, 268);
-            this.mTreeviewData.TabIndex = 9;
+            this.TrvData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TrvData.Location = new System.Drawing.Point(1, 2);
+            this.TrvData.Name = "TrvData";
+            this.TrvData.Size = new System.Drawing.Size(153, 268);
+            this.TrvData.TabIndex = 9;
+            this.TrvData.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TrvData_AfterSelect);
             // 
             // txtStatistics
             // 
-            this.txtStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtStatistics.Location = new System.Drawing.Point(160, -1);
             this.txtStatistics.Multiline = true;
             this.txtStatistics.Name = "txtStatistics";
@@ -60,7 +60,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 273);
             this.Controls.Add(this.txtStatistics);
-            this.Controls.Add(this.mTreeviewData);
+            this.Controls.Add(this.TrvData);
             this.Name = "ConstituencyStatisticsViewer";
             this.Text = "ConstituencyStatisticsViewer";
             this.ResumeLayout(false);
@@ -70,7 +70,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView mTreeviewData;
+        private System.Windows.Forms.TreeView TrvData;
         private System.Windows.Forms.TextBox txtStatistics;
     }
 }

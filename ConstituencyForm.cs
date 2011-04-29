@@ -214,21 +214,37 @@ namespace De.AHoerstemeier.Tambon
                 Int32 lYear = Convert.ToInt32(edtYear.Value);
                 PopulationDataEntry lDataEntry = GetPopulationData(lYear);
                 var lList = lData.Data.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
-                foreach (PopulationDataEntry lEntry in lList)
+                foreach ( PopulationDataEntry lEntry in lList )
                 {
-                    foreach (ConstituencyEntry lConstituency in lEntry.ConstituencyList)
+                    Int32 lPopulation = 0;
+                    PopulationDataEntry lSourcePopulationdataEntry = lDataEntry.FindByCode(lEntry.Geocode);
+                    if ( lSourcePopulationdataEntry != null )
+                    {
+                        lSourcePopulationdataEntry.CalculateNumbersFromSubEntities();
+                        lEntry.CopyPopulationDataFrom(lSourcePopulationdataEntry);
+                    }
+                    List<Int32> lFoundGeocodes = new List<Int32>();
+                    foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
                     {
                         List<PopulationDataEntry> lNewEntityList = new List<PopulationDataEntry>();
-                        foreach (PopulationDataEntry lConstituencyEntry in lConstituency.AdministrativeEntities)
+                        foreach ( PopulationDataEntry lConstituencyEntry in lConstituency.AdministrativeEntities )
                         {
                             PopulationDataEntry lPopulationdataEntry = lDataEntry.FindByCode(lConstituencyEntry.Geocode);
                             Debug.Assert(lPopulationdataEntry != null, "Entity with code " + lConstituencyEntry.Geocode.ToString() + " not found");
                             lNewEntityList.Add(lPopulationdataEntry);
+                            Debug.Assert(!lFoundGeocodes.Exists(p => p == lConstituencyEntry.Geocode), "Geocode " + lConstituencyEntry.Geocode.ToString()+" used twice");
+                            lFoundGeocodes.Add(lConstituencyEntry.Geocode);
                         }
                         lConstituency.AdministrativeEntities.Clear();
                         lConstituency.AdministrativeEntities.AddRange(lNewEntityList);
+                        lPopulation += lConstituency.Population();
+                    }
+                    if ( (lPopulation > 0) && (lEntry.Total > 0) )
+                    {
+                        Debug.Assert(lPopulation == lEntry.Total, "Population for " + lEntry.English + " does not sum up");
                     }
                 }
+
                 ConstituencyStatisticsViewer lDialog = new ConstituencyStatisticsViewer(lData.Data);
                 lDialog.Show();
             }

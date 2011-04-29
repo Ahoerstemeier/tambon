@@ -18,7 +18,53 @@ namespace De.AHoerstemeier.Tambon
         {
             mData = iData;
             InitializeComponent();
+            FillTreeView(TrvData);
             txtStatistics.Text = CalculateData(0);
+        }
+
+        private TreeNode PopulationDataEntryToTreeNode(PopulationDataEntry iData)
+        {
+            // ToDo: cleanup this CodeCopy from PopulationDataView.cs
+            TreeNode retval = null;
+            if ( iData != null )
+            {
+                String lName = String.Empty;
+                if ( !String.IsNullOrEmpty(iData.English) )
+                {
+                    lName = iData.English;
+                }
+                else
+                {
+                    lName = "(" + iData.Name + ")";
+                }
+                retval = new TreeNode(lName);
+                retval.Tag = iData;
+                foreach ( PopulationDataEntry lEntity in iData.SubEntities )
+                {
+                    if ( !EntityTypeHelper.Thesaban.Contains(lEntity.Type) )
+                    {
+                        retval.Nodes.Add(PopulationDataEntryToTreeNode(lEntity));
+                    }
+                }
+
+            }
+            return retval;
+        }
+
+        private void FillTreeView(TreeView iTreeView)
+        {
+            iTreeView.BeginUpdate();
+            iTreeView.Nodes.Clear();
+            if ( mData != null )
+            {
+                TreeNode lNode = PopulationDataEntryToTreeNode(mData);
+                if ( lNode != null )
+                {
+                    iTreeView.Nodes.Add(lNode);
+                }
+            }
+            iTreeView.EndUpdate();
+            
         }
 
         private String CalculateData(Int32 iGeocode)
@@ -26,7 +72,7 @@ namespace De.AHoerstemeier.Tambon
             String lResult = String.Empty;
             FrequencyCounter lCounter = new FrequencyCounter();
             List<PopulationDataEntry> lList = null;
-            if (iGeocode == 0)
+            if ( iGeocode == 0 )
             {
 
                 lList = mData.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
@@ -36,9 +82,9 @@ namespace De.AHoerstemeier.Tambon
                 lList = new List<PopulationDataEntry>();
                 lList.Add(mData.FindByCode(iGeocode));
             }
-            foreach (PopulationDataEntry lEntry in lList)
+            foreach ( PopulationDataEntry lEntry in lList )
             {
-                foreach (ConstituencyEntry lConstituency in lEntry.ConstituencyList)
+                foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
                 {
                     lCounter.IncrementForCount(lConstituency.Population(), lEntry.Geocode * 100 + lConstituency.Index);
                 }
@@ -47,12 +93,12 @@ namespace De.AHoerstemeier.Tambon
             lBuilder.AppendLine("Number of constituencies: " + lCounter.NumberOfValues.ToString());
             lBuilder.AppendLine("Mean population per constituencies: " + Math.Round(lCounter.MeanValue).ToString());
             lBuilder.AppendLine("Maximum population: " + lCounter.MaxValue.ToString());
-            foreach (var lEntry in lCounter.Data[lCounter.MaxValue])
+            foreach ( var lEntry in lCounter.Data[lCounter.MaxValue] )
             {
-            lBuilder.AppendLine(" "+GetEntityConstituencyName(lEntry));
+                lBuilder.AppendLine(" " + GetEntityConstituencyName(lEntry));
             }
             lBuilder.AppendLine("Minimum population: " + lCounter.MinValue.ToString());
-            foreach (var lEntry in lCounter.Data[lCounter.MinValue])
+            foreach ( var lEntry in lCounter.Data[lCounter.MinValue] )
             {
                 lBuilder.AppendLine(" " + GetEntityConstituencyName(lEntry));
             }
@@ -68,6 +114,15 @@ namespace De.AHoerstemeier.Tambon
             Debug.Assert(lEntry != null, "Code " + lGeocode.ToString() + " not found");
             String lResult = lEntry.English + " Constituency " + lConstituency.ToString();
             return lResult;
+        }
+
+        private void TrvData_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            PopulationDataEntry lEntry = (PopulationDataEntry)e.Node.Tag;
+            if ( lEntry != null )
+            {
+                txtStatistics.Text = CalculateData(lEntry.Geocode);
+            }
         }
     }
 }
