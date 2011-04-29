@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity geocode="0" type="Unknown" english="Thailand">
+  <!-- เฉพาะ -> limited to, only -->
+  <!-- ยกเว้น -> except -->
   <entity geocode="10" type="Bangkok" english="Bangkok">
     <constituencies>
       <constituency index="1">
@@ -1007,21 +1009,72 @@
       </constituency>
     </constituencies>
   </entity>
-  <!--
-       - สงขลา
-       เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองสงขลา
-       เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอหาดใหญ่ (เฉพาะเทศบาลนครหาดใหญ่ เทศบาลเมืองคลองแหและตำบลคลองอู่ตะเภา)
-       เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอหาดใหญ่ (เฉพาะเทศบาลตำบลคูเต่า ตำบลฉลุง ตำบลทุ่งใหญ่ ตำบลท่าข้าม เทศบาลตำบลน้ำน้อย เทศบาลเมืองควนลัง ตำบลทุ่งตำเสา และเทศบาลเมืองคอหงส์) และอำเภอนาหม่อม
-       เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอระโนด อำเภอกระแสสินธุ์ อำเภอสทิงพระ และอำเภอสิงหนคร (เฉพาะตำบลม่วงงาม ตำบลบางเขียด เทศบาลตำบลชะแล้ ตำบลวัดขนุน และตำบลรำแดง)
-       เขตเลือกตั้งที่ ๕ ประกอบด้วย อำเภอสิงหนคร (เฉพาะตำบลปากรอ ตำบลป่าขาด ตำบลทำนบ ตำบลชิงโค และเทศบาลเมืองสิงหนคร) อำเภอควนเนียง อำเภอบางกล่ำ และอำเภอรัตภูมิ
-       เขตเลือกตั้งที่ ๖ ประกอบด้วย อำเภอหาดใหญ่ (เฉพาะตำบลพะตง เทศบาลตำบลพะตง เทศบาลตำบลบ้านไร่ และเทศบาลเมืองบ้านพรุ ) อำเภอคลองหอยโข่ง และอำเภอสะเดา (ยกเว้นตำบลสำนักแต้วและเทศบาลตำบลสำนักขาม)
-       เขตเลือกตั้งที่ ๗ ประกอบด้วย อำเภอนาทวี อำเภอสะบ้าย้อย และอำเภอสะเดา (เฉพาะตำบลสำนักแต้ว และเทศบาลตำบลสำนักขาม)
-       เขตเลือกตั้งที่ ๘ ประกอบด้วย อำเภอจะนะ อำเภอเทพา
-       
-       -->
-
-  <!-- เฉพาะ -> limited to, only -->
-  <!-- ยกเว้น -> except -->
+  <entity geocode="90" type="Changwat" english="Songkhla">
+    <constituencies>
+      <constituency index="1">
+        <entity geocode="9001"/>
+      </constituency>
+      <constituency index="2">
+        <entity geocode="901101" comment="Actually says เทศบาลนครหาดใหญ่"/>
+        <entity geocode="901105" comment="Actually says เทศบาลเมืองคลองแห"/>
+        <entity geocode="901107"/>
+      </constituency>
+      <constituency index="3">
+        <entity geocode="901103" comment="Actually says เทศบาลตำบลคูเต่า"/>
+        <entity geocode="901108"/>
+        <entity geocode="901111"/>
+        <entity geocode="901113"/>
+        <entity geocode="901114" comment="Actually says เทศบาลตำบลน้ำน้อย"/>
+        <entity geocode="901102" comment="Actually says เทศบาลเมืองควนลัง"/>
+        <entity geocode="901112"/>
+        <entity geocode="901104" comment="Actually says เทศบาลเมืองคอหงส์"/>
+        <entity geocode="9012"/>
+      </constituency>
+      <constituency index="4">
+        <entity geocode="9007"/>
+        <entity geocode="9008"/>
+        <entity geocode="9002"/>
+        <entity geocode="901511"/>
+        <entity geocode="901510"/>
+        <entity geocode="901506" comment="Actually says เทศบาลตำบลชะแล้"/>
+        <entity geocode="901505"/>
+        <entity geocode="901504"/>
+      </constituency>
+      <constituency index="5">
+        <entity geocode="901507"/>
+        <entity geocode="901508"/>
+        <entity geocode="901503"/>
+        <entity geocode="901501"/>
+        <entity geocode="901509" comment="Actually says เทศบาลเมืองคอหงส์"/>
+        <entity geocode="901502" comment="Actually says เทศบาลเมืองคอหงส์"/>
+        <entity geocode="9013"/>
+        <entity geocode="9014"/>
+        <entity geocode="9009"/>
+      </constituency>
+      <constituency index="6">
+        <entity geocode="901118"/>
+        <entity geocode="901116" comment="Actually says เทศบาลตำบลบ้านไร่และเทศบาลเมืองบ้านพรุ"/>
+        <entity geocode="9016"/>
+        <entity geocode="901001"/>
+        <entity geocode="901002"/>
+        <entity geocode="901003"/>
+        <entity geocode="901005"/>
+        <entity geocode="901006"/>
+        <entity geocode="901007"/>
+        <entity geocode="901009"/>
+      </constituency>
+      <constituency index="7">
+        <entity geocode="9004"/>
+        <entity geocode="9006"/>
+        <entity geocode="901004"/>
+        <entity geocode="901008" comment="Actually says เทศบาลตำบลสำนักขาม"/>
+      </constituency>
+      <constituency index="8">
+        <entity geocode="9003"/>
+        <entity geocode="9005"/>
+      </constituency>
+    </constituencies>
+  </entity>
   <entity geocode="83" type="Changwat" english="Phuket">
     <constituencies>
       <constituency index="1">
