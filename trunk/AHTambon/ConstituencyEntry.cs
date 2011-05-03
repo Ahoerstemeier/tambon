@@ -53,7 +53,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 RetVal = new ConstituencyEntry();
                 RetVal.Index = TambonHelper.GetAttributeOptionalInt(iNode, "index",0);
-                RetVal.NumberOfSeats = TambonHelper.GetAttributeOptionalInt(iNode, "MP", 1);
+                RetVal.NumberOfSeats = TambonHelper.GetAttributeOptionalInt(iNode, "numberofseats", 1);
 
                 if (iNode.HasChildNodes)
                 {
