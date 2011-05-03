@@ -70,39 +70,45 @@ namespace De.AHoerstemeier.Tambon
         private String CalculateData(Int32 iGeocode)
         {
             String lResult = String.Empty;
-            FrequencyCounter lCounter = new FrequencyCounter();
-            List<PopulationDataEntry> lList = null;
+            PopulationDataEntry lEntry = null;
             if ( iGeocode == 0 )
             {
-
-                lList = mData.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
+                lEntry = mData;
             }
             else
             {
-                lList = new List<PopulationDataEntry>();
-                lList.Add(mData.FindByCode(iGeocode));
+                lEntry = mData.FindByCode(iGeocode);
             }
-            foreach ( PopulationDataEntry lEntry in lList )
+            if (lEntry != null)
             {
-                foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
+                List<PopulationDataEntry> lList = lEntry.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
+                lList.Add(lEntry);
+                FrequencyCounter lCounter = new FrequencyCounter();
+                Int32 lSeats = 0;
+                foreach (PopulationDataEntry lSubEntry in lList)
                 {
-                    lCounter.IncrementForCount(lConstituency.Population(), lEntry.Geocode * 100 + lConstituency.Index);
+                    foreach (ConstituencyEntry lConstituency in lSubEntry.ConstituencyList)
+                    {
+                        lCounter.IncrementForCount(lConstituency.Population() / lConstituency.NumberOfSeats, lSubEntry.Geocode * 100 + lConstituency.Index);
+                        lSeats += lConstituency.NumberOfSeats;
+                    }
                 }
+                StringBuilder lBuilder = new StringBuilder();
+                lBuilder.AppendLine("Number of constituencies: " + lCounter.NumberOfValues.ToString());
+                lBuilder.AppendLine("Number of seats: " + lSeats.ToString());
+                lBuilder.AppendLine("Mean population per seat: " + Math.Round(lCounter.MeanValue).ToString());
+                lBuilder.AppendLine("Maximum population per seat: " + lCounter.MaxValue.ToString());
+                foreach (var lSubEntry in lCounter.Data[lCounter.MaxValue])
+                {
+                    lBuilder.AppendLine(" " + GetEntityConstituencyName(lSubEntry));
+                }
+                lBuilder.AppendLine("Minimum population per seat: " + lCounter.MinValue.ToString());
+                foreach (var lSubEntry in lCounter.Data[lCounter.MinValue])
+                {
+                    lBuilder.AppendLine(" " + GetEntityConstituencyName(lSubEntry));
+                }
+                lResult = lBuilder.ToString();
             }
-            StringBuilder lBuilder = new StringBuilder();
-            lBuilder.AppendLine("Number of constituencies: " + lCounter.NumberOfValues.ToString());
-            lBuilder.AppendLine("Mean population per constituencies: " + Math.Round(lCounter.MeanValue).ToString());
-            lBuilder.AppendLine("Maximum population: " + lCounter.MaxValue.ToString());
-            foreach ( var lEntry in lCounter.Data[lCounter.MaxValue] )
-            {
-                lBuilder.AppendLine(" " + GetEntityConstituencyName(lEntry));
-            }
-            lBuilder.AppendLine("Minimum population: " + lCounter.MinValue.ToString());
-            foreach ( var lEntry in lCounter.Data[lCounter.MinValue] )
-            {
-                lBuilder.AppendLine(" " + GetEntityConstituencyName(lEntry));
-            }
-            lResult = lBuilder.ToString();
             return lResult;
         }
 

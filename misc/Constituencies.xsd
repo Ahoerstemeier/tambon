@@ -13,7 +13,8 @@
       <xs:enumeration value="ThesabanTambon"/>
       <xs:enumeration value="ThesabanMueang"/>
       <xs:enumeration value="ThesabanNakhon"/>
-      
+      <xs:enumeration value="Region"/>
+
       <xs:enumeration value="Unknown"/>
     </xs:restriction>
   </xs:simpleType>
@@ -31,14 +32,75 @@
   <xs:complexType name="ConstituencyList">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="Constituency"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="election" type="Election"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Constituency">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="entity" type="Entity"/>
+      <xs:element minOccurs="0" maxOccurs="1" name="election" type="Election"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="byelection" type="ByElection"/>
     </xs:sequence>
     <xs:attribute name="index" type="xs:unsignedByte" use="required" />
-    <xs:attribute name="MP" type="xs:unsignedByte" use="optional" default="1"/>
+    <xs:attribute name="numberofseats" type="xs:unsignedByte" use="optional" default="1"/>
+    <xs:attribute name="comment" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:element type="Entity" name="entity"/>
+
+  <xs:complexType name="Party">
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="english" type="xs:string"/>
+    <xs:attribute name="id" type="xs:nonNegativeInteger"/>
+  </xs:complexType>
+  <xs:complexType name="PartyListEntry">
+    <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="votes" type="xs:positiveInteger" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="PartyList">
+    <xs:sequence>
+      <xs:element name="party" type="PartyListEntry" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="invalidvotes" type="xs:positiveInteger" />
+    <xs:attribute name="abstainvotes" type="xs:positiveInteger" />
+  </xs:complexType>
+  <xs:simpleType name="ElectionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="elected"/>
+      <xs:enumeration value="redcard"/>
+      <xs:enumeration value="yellowcard"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CandidateListEntry">
+    <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="votes" type="xs:positiveInteger" use="required"/>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="status" type="ElectionStatus" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="CandidateList">
+    <xs:sequence>
+      <xs:element name="party" type="CandidateListEntry" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="invalidvotes" type="xs:positiveInteger" />
+    <xs:attribute name="abstainvotes" type="xs:positiveInteger" />
+  </xs:complexType>
+  <xs:simpleType name="ByElectionReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="redcard"/>
+      <xs:enumeration value="yellowcard"/>
+      <xs:enumeration value="resignation"/>
+      <xs:enumeration value="death"/>
+      <xs:enumeration value="disqualification"/>
+      <xs:enumeration value="other"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Election">
+    <xs:sequence>
+      <xs:element name="partylist" type="PartyList"/>
+      <xs:element name="candidates" type="CandidateList"/>
+    </xs:sequence>
+    <xs:attribute name="date" type="xs:date" use="optional"/>
+    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="ByElection"></xs:complexType>
 </xs:schema>
