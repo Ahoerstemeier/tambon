@@ -96,16 +96,20 @@ namespace De.AHoerstemeier.Tambon
                 StringBuilder lBuilder = new StringBuilder();
                 lBuilder.AppendLine("Number of constituencies: " + lCounter.NumberOfValues.ToString());
                 lBuilder.AppendLine("Number of seats: " + lSeats.ToString());
-                lBuilder.AppendLine("Mean population per seat: " + Math.Round(lCounter.MeanValue).ToString());
-                lBuilder.AppendLine("Maximum population per seat: " + lCounter.MaxValue.ToString());
-                foreach (var lSubEntry in lCounter.Data[lCounter.MaxValue])
+                if ( lCounter.NumberOfValues > 0 )
                 {
-                    lBuilder.AppendLine(" " + GetEntityConstituencyName(lSubEntry));
-                }
-                lBuilder.AppendLine("Minimum population per seat: " + lCounter.MinValue.ToString());
-                foreach (var lSubEntry in lCounter.Data[lCounter.MinValue])
-                {
-                    lBuilder.AppendLine(" " + GetEntityConstituencyName(lSubEntry));
+                    lBuilder.AppendLine("Mean population per seat: " + Math.Round(lCounter.MeanValue).ToString());
+                    lBuilder.AppendLine("Standard deviation: " + Math.Round(lCounter.StandardDeviation).ToString());
+                    lBuilder.AppendLine("Maximum population per seat: " + lCounter.MaxValue.ToString());
+                    foreach ( var lSubEntry in lCounter.Data[lCounter.MaxValue] )
+                    {
+                        lBuilder.AppendLine(" " + GetEntityConstituencyName(lSubEntry));
+                    }
+                    lBuilder.AppendLine("Minimum population per seat: " + lCounter.MinValue.ToString());
+                    foreach ( var lSubEntry in lCounter.Data[lCounter.MinValue] )
+                    {
+                        lBuilder.AppendLine(" " + GetEntityConstituencyName(lSubEntry));
+                    }
                 }
                 lResult = lBuilder.ToString();
             }
