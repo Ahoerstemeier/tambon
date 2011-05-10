@@ -6,6 +6,19 @@ using System.Xml;
 
 namespace De.AHoerstemeier.Geo
 {
+    public enum PositionInRectangle
+    {
+        TopLeft,
+        TopMiddle,
+        TopRight,
+        BottomLeft,
+        BottomMiddle,
+        BottomRight,
+        MiddleLeft,
+        MiddleRight,
+        MiddleMiddle,
+    }
+
     internal class Helper
     {
         static public CultureInfo CultureInfoUS = new CultureInfo("en-us");
@@ -13,7 +26,7 @@ namespace De.AHoerstemeier.Geo
         {
             XmlDocument retval = null;
 
-            if (iNode is XmlDocument)
+            if ( iNode is XmlDocument )
             {
                 retval = (XmlDocument)iNode;
             }

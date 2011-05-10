@@ -13,6 +13,8 @@ namespace De.AHoerstemeier.Geo
         private double dCvtRad2Deg = 180.0 / Math.PI; // 57.2957795130823208767 ...
         private GeoDatum mDatum = GeoDatum.DatumWGS84();
         private Int32 mGeoHashDefaultAccuracy = 9;
+        private Int32 mMaidenheadDefaultAccuracy = 9;
+        private PositionInRectangle mDefaultPositionInRectangle = PositionInRectangle.MiddleMiddle;
         #endregion
 
         #region properties
@@ -21,6 +23,23 @@ namespace De.AHoerstemeier.Geo
         public double Longitude { get; set; }
         public GeoDatum Datum { get { return mDatum; } set { SetDatum(value); } }
         public String GeoHash { get { return CalcGeoHash(mGeoHashDefaultAccuracy); } set { SetGeoHash(value); } }
+        public String Maidenhead { get { return CalcMaidenhead(mMaidenheadDefaultAccuracy); } set { SetMaidenhead(value); } }
+
+        private void SetMaidenhead(String iValue)
+        {
+            Double lLatitude = 0;
+            Double lLongitude = 0;
+            MaidenheadLocator.GeographicalCoordinatesByMaidenheadLocator(iValue, mDefaultPositionInRectangle, out lLatitude, out lLongitude);
+            Datum = GeoDatum.DatumWGS84();
+            Latitude = lLatitude;
+            Longitude = lLongitude;
+        }
+        private String CalcMaidenhead(Int32 iPrecision)
+        {
+
+            String lResult = MaidenheadLocator.GetMaidenheadLocator(Latitude, Latitude, true, iPrecision);
+            return lResult;
+        }
         #endregion
 
         #region constructor
@@ -60,7 +79,7 @@ namespace De.AHoerstemeier.Geo
 
             double x = iUTMPoint.Easting - 500000.0; //remove 500,000 meter offset for longitude
             double y = iUTMPoint.Northing;
-            if (!bNorthernHemisphere)
+            if ( !bNorthernHemisphere )
             {
                 // point is in southern hemisphere
                 y = y - 10000000.0; // remove 10,000,000 meter offset used for southern hemisphere
@@ -152,6 +171,44 @@ namespace De.AHoerstemeier.Geo
             Altitude = Altitude + dh;
             mDatum = iNewDatum;
         }
+        internal static void ShiftPositionInRectangle(ref Double ioLatitude, ref Double lLongitude, PositionInRectangle lPositionInRectangle, Double iHeight, Double iWidth)
+        {
+            switch ( lPositionInRectangle )
+            {
+                case PositionInRectangle.TopLeft:
+                case PositionInRectangle.TopMiddle:
+                case PositionInRectangle.TopRight:
+                    ioLatitude += iHeight;
+                    break;
+            }
+
+            switch ( lPositionInRectangle )
+            {
+                case PositionInRectangle.MiddleLeft:
+                case PositionInRectangle.MiddleMiddle:
+                case PositionInRectangle.MiddleRight:
+                    ioLatitude += iHeight / 2;
+                    break;
+            }
+
+            switch ( lPositionInRectangle )
+            {
+                case PositionInRectangle.TopRight:
+                case PositionInRectangle.MiddleRight:
+                case PositionInRectangle.BottomRight:
+                    lLongitude += iWidth;
+                    break;
+            }
+
+            switch ( lPositionInRectangle )
+            {
+                case PositionInRectangle.TopMiddle:
+                case PositionInRectangle.MiddleMiddle:
+                case PositionInRectangle.BottomMiddle:
+                    lLongitude += iWidth / 2;
+                    break;
+            }
+        }
 
         public void ExportToKml(XmlNode iNode)
         {
@@ -202,26 +259,26 @@ namespace De.AHoerstemeier.Geo
 
             Int32 ZoneNumber = (Int32)Math.Truncate((lLongitude + 180) / 6) + 1;
 
-            if (Latitude >= 56.0 && Latitude < 64.0 && lLongitude >= 3.0 && lLongitude < 12.0)
+            if ( Latitude >= 56.0 && Latitude < 64.0 && lLongitude >= 3.0 && lLongitude < 12.0 )
             {
                 ZoneNumber = 32; // larger zone for southern Norway
             }
-            if (Latitude >= 72.0 && Latitude < 84.0)
+            if ( Latitude >= 72.0 && Latitude < 84.0 )
             {
                 // Special zones for Svalbard
-                if (lLongitude >= 0.0 && lLongitude < 9.0)
+                if ( lLongitude >= 0.0 && lLongitude < 9.0 )
                 {
                     ZoneNumber = 31;
                 }
-                else if (lLongitude >= 9.0 && lLongitude < 21.0)
+                else if ( lLongitude >= 9.0 && lLongitude < 21.0 )
                 {
                     ZoneNumber = 33;
                 }
-                else if (lLongitude >= 21.0 && lLongitude < 33.0)
+                else if ( lLongitude >= 21.0 && lLongitude < 33.0 )
                 {
                     ZoneNumber = 35;
                 }
-                else if (lLongitude >= 33.0 && lLongitude < 42.0)
+                else if ( lLongitude >= 33.0 && lLongitude < 42.0 )
                 {
                     ZoneNumber = 37;
                 }
@@ -244,7 +301,7 @@ namespace De.AHoerstemeier.Geo
             double UTMNorthing = (double)(k0 * (M + N * Math.Tan(LatRad) * (A * A / 2 + (5 - T + 9 * C + 4 * C * C) * A * A * A * A / 24
                  + (61 - 58 * T + T * T + 600 * C - 330 * eccPrimeSquared) * A * A * A * A * A * A / 720)));
 
-            if (Latitude < 0)
+            if ( Latitude < 0 )
             {
                 UTMNorthing += 10000000.0; //10000000 meter offset for southern hemisphere
             }
@@ -259,20 +316,20 @@ namespace De.AHoerstemeier.Geo
         {
             GeoPoint RetVal = null;
 
-            if (iNode != null && iNode.Name.Equals("geo:Point"))
+            if ( iNode != null && iNode.Name.Equals("geo:Point") )
             {
                 RetVal = new GeoPoint();
 
-                if (iNode.HasChildNodes)
+                if ( iNode.HasChildNodes )
                 {
-                    foreach (XmlNode lChildNode in iNode.ChildNodes)
+                    foreach ( XmlNode lChildNode in iNode.ChildNodes )
                     {
-                        if (lChildNode.Name == "geo:lat")
+                        if ( lChildNode.Name == "geo:lat" )
                         {
                             String lLatitude = lChildNode.InnerText;
                             RetVal.Latitude = Convert.ToDouble(lLatitude, Helper.CultureInfoUS);
                         }
-                        if (lChildNode.Name == "geo:long")
+                        if ( lChildNode.Name == "geo:long" )
                         {
                             String lLongitude = lChildNode.InnerText;
                             RetVal.Longitude = Convert.ToDouble(lLongitude, Helper.CultureInfoUS);
@@ -319,7 +376,7 @@ namespace De.AHoerstemeier.Geo
             // %s - decimal seconds, always positive
             // %% - for %
             String lLatitude = CoordinateToString(iFormat, Latitude);
-            if (Latitude >= 0)
+            if ( Latitude >= 0 )
             {
                 lLatitude = lLatitude.Replace("%H", "N");
             }
@@ -328,7 +385,7 @@ namespace De.AHoerstemeier.Geo
                 lLatitude = lLatitude.Replace("%H", "S");
             }
             String lLongitude = CoordinateToString(iFormat, Longitude);
-            if (Longitude >= 0)
+            if ( Longitude >= 0 )
             {
                 lLongitude = lLongitude.Replace("%H", "E");
             }
@@ -345,7 +402,7 @@ namespace De.AHoerstemeier.Geo
         {
             // TODO use ToString(Format) instead
             String lLatitude = Math.Abs(Latitude).ToString("#0.0000") + "° ";
-            if (IsNorthernHemisphere())
+            if ( IsNorthernHemisphere() )
             {
                 lLatitude = lLatitude + 'N';
             }
@@ -354,7 +411,7 @@ namespace De.AHoerstemeier.Geo
                 lLatitude = lLatitude + 'S';
             }
             String lLongitude = Math.Abs(Longitude).ToString("##0.0000") + "° ";
-            if (IsWesternLongitude())
+            if ( IsWesternLongitude() )
             {
                 lLongitude = lLongitude + 'W';
             }
@@ -376,6 +433,7 @@ namespace De.AHoerstemeier.Geo
             this.Latitude = lPoint.Latitude;
             this.Longitude = lPoint.Longitude;
         }
+
         #endregion
 
         #region ICloneable Members
@@ -401,5 +459,6 @@ namespace De.AHoerstemeier.Geo
             return lResult;
         }
         #endregion
+
     }
 }

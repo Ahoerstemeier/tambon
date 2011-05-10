@@ -17,6 +17,7 @@ namespace TestProject1
         const double mLongitudeBangkok = 100.5018;
         const double mAltitudeBangkok = 2.0;
         const String mBangkokGeoHash = "w4rqnzxpv";
+        const String mBangkokMaidenhead = "OK03GS";
 
         public GeoPointTest()
         {
@@ -130,6 +131,22 @@ namespace TestProject1
             GeoPoint lGeoPoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
             String lGeoHash = lGeoPoint.GeoHash;
             Assert.IsTrue(lGeoHash == mBangkokGeoHash, "Returned " + lGeoHash+" instead of " + mBangkokGeoHash);
+        }
+
+        [TestMethod]
+        public void TestMaidenheadToGeo()
+        {
+            GeoPoint lGeoPoint = new GeoPoint();
+            lGeoPoint.Maidenhead = mBangkokMaidenhead;
+            GeoPoint lExpected = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
+            Assert.IsTrue(lExpected.Equals(lGeoPoint));
+        }
+        [TestMethod]
+        public void TestGeoToMaidenhead()
+        {
+            GeoPoint lGeoPoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
+            String lMaidenhead = lGeoPoint.Maidenhead;
+            Assert.IsTrue(lMaidenhead == mBangkokMaidenhead, "Returned " + lMaidenhead + " instead of " + mBangkokMaidenhead);
         }
     }
 }
