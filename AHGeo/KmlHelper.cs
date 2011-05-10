@@ -43,21 +43,24 @@ namespace De.AHoerstemeier.Geo
             mDocumentNode.AppendChild(lStyleNode);
             return lStyleNode;
         }
-        public void AddStylePoly(String iName, Int32 iLineWidth, Boolean iPolyFill)
+        public void AddStylePoly(String iName, Int32 iLineWidth, UInt32 iLineColor, Boolean iPolyFill)
         {
             XmlNode lStyleNode = AddStyle(iName);
-            AddStylePoly(lStyleNode,iLineWidth,iPolyFill);
+            AddStylePoly(lStyleNode,iLineWidth,iLineColor,iPolyFill);
         }
-        public void AddStylePoly(XmlNode iNode, Int32 iLineWidth, Boolean iPolyFill)
+        public void AddStylePoly(XmlNode iNode, Int32 iLineWidth, UInt32 iLineColor, Boolean iPolyFill)
         {
             XmlNode lPolyStyleNode = doc.CreateElement("PolyStyle");
             iNode.AppendChild(lPolyStyleNode);
 
             XmlNode lLineNode = doc.CreateElement("LineStyle");
-            lPolyStyleNode.AppendChild(lLineNode);
+            iNode.AppendChild(lLineNode);
             XmlNode lLineWidthNode = doc.CreateElement("width");
             lLineWidthNode.InnerText = iLineWidth.ToString();
-            //  <color>ff0000ff</color>
+            lLineNode.AppendChild(lLineWidthNode);
+            XmlNode lLineColorNode = doc.CreateElement("color");
+            lLineColorNode.InnerText = iLineColor.ToString("X");
+            lLineNode.AppendChild(lLineColorNode);
             
             XmlNode lFillNode = doc.CreateElement("fill");
             lFillNode.InnerText = Convert.ToInt32(iPolyFill).ToString();

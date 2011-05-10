@@ -8,7 +8,8 @@ namespace De.AHoerstemeier.Geo
 {
     public class MgrsGridElement
     {
-        private const string mDefStyle = "White";
+        private const string mDefStyle = "Blue";
+        private const UInt32 mDefColor = 0xffff0000;
 
         #region properties
         private UTMPoint mCentralPoint = null;
@@ -199,7 +200,7 @@ namespace De.AHoerstemeier.Geo
         private static void AddKmlStyle(KmlHelper iKmlWriter)
         {
             XmlNode lNode = iKmlWriter.AddStyle(mDefStyle);
-            iKmlWriter.AddStylePoly(lNode, 2, false);
+            iKmlWriter.AddStylePoly(lNode, 2, mDefColor, false);
             iKmlWriter.AddIconStyle(lNode,new Uri("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png"));
         }
         public void WriteToKml(KmlHelper iKmlWriter, XmlNode iNode)
