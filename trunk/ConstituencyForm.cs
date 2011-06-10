@@ -104,22 +104,7 @@ namespace De.AHoerstemeier.Tambon
 
             if ( rbxNational.Checked && chkBuengKan.Checked )
             {
-                PopulationDataEntry lBuengKan = new PopulationDataEntry();
-                lBuengKan.English = "Bueng Kan";
-                lBuengKan.Geocode = 38;
-                List<Int32> lBuengKanAmphoeCodes = new List<int>() { 4313, 4311, 4309, 4312, 4303, 4306, 4310, 4304 };
-                PopulationDataEntry lNongKhai = lData.FindByCode(43);
-                foreach ( Int32 lCode in lBuengKanAmphoeCodes )
-                {
-                    PopulationDataEntry lEntry = lNongKhai.FindByCode(lCode);
-                    lBuengKan.SubEntities.Add(lEntry);
-                    lNongKhai.SubEntities.Remove(lEntry);
-                }
-                lNongKhai.CalculateNumbersFromSubEntities();
-                lBuengKan.CalculateNumbersFromSubEntities();
-                lData.SubEntities.Add(lBuengKan);
-                lData.CalculateNumbersFromSubEntities();
-                lData.SortSubEntities();
+                ModifyPopulationDataForBuengKan(lData);
             }
 
             Dictionary<PopulationDataEntry, Int32> lResult = ConstituencyCalculator.Calculate(lData, lYear, lNumberOfConstituencies);
@@ -162,6 +147,26 @@ namespace De.AHoerstemeier.Tambon
             txtData.Text = lDisplayResult;
             mLastCalculation = lResult;
             btnSaveCsv.Enabled = true;
+        }
+
+        private static void ModifyPopulationDataForBuengKan(PopulationDataEntry lData)
+        {
+            PopulationDataEntry lBuengKan = new PopulationDataEntry();
+            lBuengKan.English = "Bueng Kan";
+            lBuengKan.Geocode = 38;
+            List<Int32> lBuengKanAmphoeCodes = new List<int>() { 4313, 4311, 4309, 4312, 4303, 4306, 4310, 4304 };
+            PopulationDataEntry lNongKhai = lData.FindByCode(43);
+            foreach ( Int32 lCode in lBuengKanAmphoeCodes )
+            {
+                PopulationDataEntry lEntry = lNongKhai.FindByCode(lCode);
+                lBuengKan.SubEntities.Add(lEntry);
+                lNongKhai.SubEntities.Remove(lEntry);
+            }
+            lNongKhai.CalculateNumbersFromSubEntities();
+            lBuengKan.CalculateNumbersFromSubEntities();
+            lData.SubEntities.Add(lBuengKan);
+            lData.CalculateNumbersFromSubEntities();
+            lData.SortSubEntities();
         }
 
         private void rbxNational_CheckedChanged(object sender, EventArgs e)
@@ -208,11 +213,15 @@ namespace De.AHoerstemeier.Tambon
         {
             OpenFileDialog lDlg = new OpenFileDialog();
             lDlg.Filter = "XML Files|*.xml|All files|*.*";
-            if (lDlg.ShowDialog() == DialogResult.OK)
+            if ( lDlg.ShowDialog() == DialogResult.OK )
             {
                 PopulationData lData = PopulationData.Load(lDlg.FileName);
                 Int32 lYear = Convert.ToInt32(edtYear.Value);
                 PopulationDataEntry lDataEntry = GetPopulationData(lYear);
+                if ( rbxNational.Checked && chkBuengKan.Checked )
+                {
+                    ModifyPopulationDataForBuengKan(lDataEntry);
+                }
                 var lList = lData.Data.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
                 foreach ( PopulationDataEntry lEntry in lList )
                 {
@@ -232,7 +241,7 @@ namespace De.AHoerstemeier.Tambon
                             PopulationDataEntry lPopulationdataEntry = lDataEntry.FindByCode(lConstituencyEntry.Geocode);
                             Debug.Assert(lPopulationdataEntry != null, "Entity with code " + lConstituencyEntry.Geocode.ToString() + " not found");
                             lNewEntityList.Add(lPopulationdataEntry);
-                            Debug.Assert(!lFoundGeocodes.Exists(p => p == lConstituencyEntry.Geocode), "Geocode " + lConstituencyEntry.Geocode.ToString()+" used twice");
+                            Debug.Assert(!lFoundGeocodes.Exists(p => p == lConstituencyEntry.Geocode), "Geocode " + lConstituencyEntry.Geocode.ToString() + " used twice");
                             lFoundGeocodes.Add(lConstituencyEntry.Geocode);
                         }
                         lConstituency.AdministrativeEntities.Clear();
