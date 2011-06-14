@@ -29,6 +29,15 @@
     <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
+  <xs:complexType name="EntityExclude">
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
+  </xs:complexType>
+  <xs:complexType name="EntityInclude">
+    <xs:sequence>
+      <xs:element type="EntityExclude" name="exclude" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
+  </xs:complexType>
   <xs:complexType name="ConstituencyList">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="Constituency"/>
@@ -37,7 +46,7 @@
   </xs:complexType>
   <xs:complexType name="Constituency">
     <xs:sequence>
-      <xs:element minOccurs="1" maxOccurs="unbounded" name="entity" type="Entity"/>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="include" type="EntityInclude"/>
       <xs:element minOccurs="0" maxOccurs="1" name="election" type="Election"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="byelection" type="ByElection"/>
     </xs:sequence>
