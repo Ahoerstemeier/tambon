@@ -232,20 +232,10 @@ namespace De.AHoerstemeier.Tambon
                         lSourcePopulationdataEntry.CalculateNumbersFromSubEntities();
                         lEntry.CopyPopulationDataFrom(lSourcePopulationdataEntry);
                     }
-                    List<Int32> lFoundGeocodes = new List<Int32>();
                     foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
                     {
-                        List<PopulationDataEntry> lNewEntityList = new List<PopulationDataEntry>();
-                        foreach ( PopulationDataEntry lConstituencyEntry in lConstituency.AdministrativeEntities )
-                        {
-                            PopulationDataEntry lPopulationdataEntry = lDataEntry.FindByCode(lConstituencyEntry.Geocode);
-                            Debug.Assert(lPopulationdataEntry != null, "Entity with code " + lConstituencyEntry.Geocode.ToString() + " not found");
-                            lNewEntityList.Add(lPopulationdataEntry);
-                            Debug.Assert(!lFoundGeocodes.Exists(p => p == lConstituencyEntry.Geocode), "Geocode " + lConstituencyEntry.Geocode.ToString() + " used twice");
-                            lFoundGeocodes.Add(lConstituencyEntry.Geocode);
-                        }
-                        lConstituency.AdministrativeEntities.Clear();
-                        lConstituency.AdministrativeEntities.AddRange(lNewEntityList);
+                        GetPopulationData(lDataEntry, lConstituency.AdministrativeEntities);
+                        GetPopulationData(lDataEntry, lConstituency.ExcludedAdministrativeEntities);
                         lPopulation += lConstituency.Population();
                     }
                     if ( (lPopulation > 0) && (lEntry.Total > 0) )
@@ -257,6 +247,19 @@ namespace De.AHoerstemeier.Tambon
                 ConstituencyStatisticsViewer lDialog = new ConstituencyStatisticsViewer(lData.Data);
                 lDialog.Show();
             }
+        }
+
+        private static void GetPopulationData(PopulationDataEntry iPopulation, List<PopulationDataEntry> iData)
+        {
+            List<PopulationDataEntry> lNewEntityList = new List<PopulationDataEntry>();
+            foreach ( PopulationDataEntry lConstituencyEntry in iData )
+            {
+                PopulationDataEntry lPopulationdataEntry = iPopulation.FindByCode(lConstituencyEntry.Geocode);
+                Debug.Assert(lPopulationdataEntry != null, "Entity with code " + lConstituencyEntry.Geocode.ToString() + " not found");
+                lNewEntityList.Add(lPopulationdataEntry);
+            }
+            iData.Clear();
+            iData.AddRange(lNewEntityList);
         }
 
     }

@@ -3,387 +3,348 @@
   <entity type="Changwat" geocode="23" name="ตราด" english="Trat" >
     <constituencies>
       <constituency index="1" comment="ทั้งจังหวัด">
-        <entity type="Changwat" geocode="23"/>
+        <include geocode="23"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="26" name="นครนายก" english="Nakhon Nayok" >
     <constituencies>
       <constituency index="1" comment="ทั้งจังหวัด">
-        <entity type="Changwat" geocode="26"/>
+        <include geocode="26"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="82" name="พังงา" english="Phang Nga" >
     <constituencies>
       <constituency index="1" comment="ทั้งจังหวัด">
-        <entity type="Changwat" geocode="82"/>
+        <include geocode="82"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="58" name="แม่ฮ่องสอน" english="Mae Hong Son" >
     <constituencies>
       <constituency index="1" comment="ทั้งจังหวัด">
-        <entity type="Changwat" geocode="58"/>
+        <include geocode="58"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="85" name="ระนอง" english="Ranong" >
     <constituencies>
       <constituency index="1" comment="ทั้งจังหวัด">
-        <entity type="Changwat" geocode="85"/>
+        <include geocode="85"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="75" name="สมุทรสงคราม" english="Samut Songkhram" >
     <constituencies>
       <constituency index="1" comment="ทั้งจังหวัด">
-        <entity type="Changwat" geocode="75"/>
+        <include geocode="75"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="17" name="สิงห์บุรี" english="Sing Buri" >
     <constituencies>
       <constituency index="1" comment="ทั้งจังหวัด">
-        <entity type="Changwat" geocode="17"/>
+        <include geocode="17"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="18" name="ชัยนาท" english="Chai Nat" >
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองชัยนาท อําเภอสรรพยา อําเภอมโนรมย์ อําเภอวัดสิงห์ (ยกเว้นตําบลวังหมัน ตําบลหนองขุ่น และ ตําบลบ่อแร่)">
-        <entity geocode="1801"/>
-        <entity geocode="1804"/>
-        <entity geocode="1802"/>
-        <entity geocode="180301"/>
-        <entity geocode="180302"/>
-        <entity geocode="180303"/>
-        <entity geocode="180304"/>
+        <include geocode="1801"/>
+        <include geocode="1804"/>
+        <include geocode="1802"/>
+        <include geocode="1803">
+          <exclude geocode="180311"/>
+          <exclude geocode="180306"/>
+          <exclude geocode="180307"/>
+        </include>
       </constituency>
       <constituency index="2" comment="อําเภอสรรคบุีร อําเภอหันคา อําเภอเนินขาม อําเภอหนองมะโมง อําเภอวัดสิงห์ (เฉพาะตําบลวังหมัน ตําบลหนองขุ่น และ ตําบลบ่อแร่)">
-        <entity geocode="1805"/>
-        <entity geocode="1806"/>
-        <entity geocode="1808"/>
-        <entity geocode="1807"/>
-        <entity geocode="180311"/>
-        <entity geocode="180306"/>
-        <entity geocode="180307"/>
+        <include geocode="1805"/>
+        <include geocode="1806"/>
+        <include geocode="1808"/>
+        <include geocode="1807"/>
+        <include geocode="180311"/>
+        <include geocode="180306"/>
+        <include geocode="180307"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="38" name="บึงกาฬ" english="Bueng Kan">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองบึงกาฬ อําเภอโซ่พิสัย อําเภอปากคาด อําเภอบุ่งคล้า">
-        <entity geocode="4303"/>
-        <!--<entity geocode="3801"/>-->
-        <entity geocode="4306"/>
-        <entity geocode="4310"/>
-        <entity geocode="4313"/>
+        <include geocode="4303"/>
+        <!--<include geocode="3801"/>-->
+        <include geocode="4306"/>
+        <include geocode="4310"/>
+        <include geocode="4313"/>
       </constituency>
       <constituency index="2" comment="อําเภอเซกา อําเภอพรเจริญ อําเภอศรีิวไล อําเภอบึงโขงหลง">
-        <entity geocode="4309"/>
-        <entity geocode="4304"/>
-        <entity geocode="4312"/>
-        <entity geocode="4311"/>
+        <include geocode="4309"/>
+        <include geocode="4304"/>
+        <include geocode="4312"/>
+        <include geocode="4311"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="83" name="ภูเก็ต" english="Phuket">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองภูเก็ต (ยกเว้นเทศบาล ตําบลรัษฎา และ ตําบลเกาะแก้ว)">
-        <entity geocode="830101"/>
-        <entity geocode="830102"/>
-        <entity geocode="830105"/>
-        <entity geocode="830106"/>
-        <entity geocode="830107"/>
-        <entity geocode="830108"/>
+        <include geocode="8301">
+          <exclude geocode="830104" comment="Actually says เทศบาลตำบลรัษฎา"/>
+          <exclude geocode="830103"/>
+        </include>
       </constituency>
-      <constituency index="2" comment="อําเภอเมืองภูเก็ต (เฉพาะเทศบาล ตําบลรัษฎา และ ตําบลเกาะแก้ว) อําเภอถลาง อําเภอกะทู้ ">
-        <entity geocode="8302"/>
-        <entity geocode="8303"/>
-        <entity geocode="830104" comment="Actually says เทศบาลตำบลรัษฎา"/>
-        <entity geocode="830103"/>
+      <constituency index="2" comment="อําเภอเมืองภูเก็ต (เฉพาะเทศบาลตําบลรัษฎา และ ตําบลเกาะแก้ว) อําเภอถลาง อําเภอกะทู้ ">
+        <include geocode="8302"/>
+        <include geocode="8303"/>
+        <include geocode="830104" comment="Actually says เทศบาลตำบลรัษฎา"/>
+        <include geocode="830103"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="49" name="มุกดาหาร" english="Mukdahan" >
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองมุกดาหาร (ยกเว้นตําบลผึ่งแดด ตําบลดงมอน และ ตําบลนาโสก) อําเภอดอนตาล อําเภอหว้านใหญ่">
-        <entity geocode="490101"/>
-        <entity geocode="490102"/>
-        <entity geocode="490103"/>
-        <entity geocode="490104"/>
-        <entity geocode="490105"/>
-        <entity geocode="490108"/>
-        <entity geocode="490109"/>
-        <entity geocode="490110"/>
-        <entity geocode="490111"/>
-        <entity geocode="490113"/>
-        <entity geocode="4903"/>
-        <entity geocode="4906"/>
+        <include geocode="4901">
+          <exclude geocode="490106"/>
+          <exclude geocode="490112"/>
+          <exclude geocode="490107"/>
+        </include>
+        <include geocode="4903"/>
+        <include geocode="4906"/>
       </constituency>
       <constituency index="2" comment="อําเภอเมืองมุกดาหาร (เฉพาะตําบลผึ่งแดด ตําบลดงมอน และ ตําบลนาโสก) อําเภอคําชะอี อําเภอนิคมคําสร้อย อําเภอดงหลวง อําเภอหนองสูง">
-        <entity geocode="490106"/>
-        <entity geocode="490112"/>
-        <entity geocode="490107"/>
-        <entity geocode="4905"/>
-        <entity geocode="4902"/>
-        <entity geocode="4904"/>
-        <entity geocode="4907"/>
+        <include geocode="490106"/>
+        <include geocode="490112"/>
+        <include geocode="490107"/>
+        <include geocode="4905"/>
+        <include geocode="4902"/>
+        <include geocode="4904"/>
+        <include geocode="4907"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="51" name="ลำพูน" english="Lamphun">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองลําพูน อําเภอบ้านธิ อําเภอแม่ทา">
-        <entity geocode="5101"/>
-        <entity geocode="5107"/>
-        <entity geocode="5102"/>
+        <include geocode="5101"/>
+        <include geocode="5107"/>
+        <include geocode="5102"/>
       </constituency>
       <constituency index="2" comment="อําเภอป่าซาง อําเภอบ้านโฮ่ง อําเภอทุ่งหัวช้าง อําเภอลี้ อําเภอเวียงหนองล่อง">
-        <entity geocode="5106"/>
-        <entity geocode="5103"/>
-        <entity geocode="5105"/>
-        <entity geocode="5104"/>
-        <entity geocode="5108"/>
+        <include geocode="5106"/>
+        <include geocode="5103"/>
+        <include geocode="5105"/>
+        <include geocode="5104"/>
+        <include geocode="5108"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="91" name="สตูล" english="Satun">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองสตูล อําเภอควนโดน อําเภอควนกาหลง (เฉพาะตําบลทุ่งนุ้ย)">
-        <entity geocode="9101"/>
-        <entity geocode="9102"/>
-        <entity geocode="910301"/>
+        <include geocode="9101"/>
+        <include geocode="9102"/>
+        <include geocode="910301"/>
       </constituency>
       <constituency index="2" comment="อําเภอควนกาหลง (ยกเว้นตําบลทุ่งนุ้ย) อําเภอท่าแพ อําเภอละงู อําเภอทุ่งหว้า อําเภอมะนัง">
-        <entity geocode="910302"/>
-        <entity geocode="910303"/>
-        <entity geocode="9104"/>
-        <entity geocode="9105"/>
-        <entity geocode="9106"/>
-        <entity geocode="9107"/>
+        <include geocode="9103">
+          <exclude geocode="910301"/>
+        </include>
+        <include geocode="9104"/>
+        <include geocode="9105"/>
+        <include geocode="9106"/>
+        <include geocode="9107"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="15" name="อ่างทอง" english="Ang Thong">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองอ่างทอง อําเภอวิเศษชัยชาญ (ยกเว้นตําบลม่วงเตี้ย) อําเภอป่าโมก">
-        <entity geocode="1501"/>
-        <entity geocode="150601"/>
-        <entity geocode="150602"/>
-        <entity geocode="150603"/>
-        <entity geocode="150604"/>
-        <entity geocode="150605"/>
-        <entity geocode="150606"/>
-        <entity geocode="150607"/>
-        <entity geocode="150608"/>
-        <entity geocode="150609"/>
-        <entity geocode="150610"/>
-        <entity geocode="150611"/>
-        <entity geocode="150613"/>
-        <entity geocode="150614"/>
-        <entity geocode="150615"/>
-        <entity geocode="1503"/>
+        <include geocode="1501"/>
+        <include geocode="1506">
+          <exclude geocode="150612"/>
+        </include>
+        <include geocode="1503"/>
       </constituency>
       <constituency index="2" comment="อําเภอโพธิ์ทอง อําเภอวิเศษชัยชาญ (เฉพาะตําบลม่วงเตี้ย) อําเภอไชโย อําเภอแสวงหา อําเภอสามโก้">
-        <entity geocode="1504"/>
-        <entity geocode="150612"/>
-        <entity geocode="1502"/>
-        <entity geocode="1505"/>
-        <entity geocode="1507"/>
+        <include geocode="1504"/>
+        <include geocode="150612"/>
+        <include geocode="1502"/>
+        <include geocode="1505"/>
+        <include geocode="1507"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="37" name="อำนาจเจริญ" english="Amnat Charoen">
     <constituencies>
       <constituency index="1" comment="อําเภอเมือง อํานาจเจริญ อําเภอหัวตะพาน ">
-        <entity geocode="3701"/>
-        <entity geocode="3706"/>
+        <include geocode="3701"/>
+        <include geocode="3706"/>
       </constituency>
       <constituency index="2" comment="อําเภอปทุมราชวงศา อําเภอเสนางคนิคม อําเภอชานุมาน อําเภอลืออํานาจ อําเภอพนา">
-        <entity geocode="3703"/>
-        <entity geocode="3705"/>
-        <entity geocode="3702"/>
-        <entity geocode="3707"/>
-        <entity geocode="3704"/>
+        <include geocode="3703"/>
+        <include geocode="3705"/>
+        <include geocode="3702"/>
+        <include geocode="3707"/>
+        <include geocode="3704"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="61" name="อุทัยธานี" english="Uthai Thani">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองอุทัยธานี อําเภอหนองฉาง (ยกเว้นตําบล เขาบางแกรก ตําบลทุ่งโพและ ตําบลเขากวางทอง) อําเภอหนองขาหย่าง อําเภอทัพทัน อําเภอสว่างอารมณ์">
-        <entity geocode="6101"/>
-        <entity geocode="610401"/>
-        <entity geocode="610402"/>
-        <entity geocode="610403"/>
-        <entity geocode="610404"/>
-        <entity geocode="610405"/>
-        <entity geocode="610406"/>
-        <entity geocode="610408"/>
-        <entity geocode="6105"/>
-        <entity geocode="6102"/>
-        <entity geocode="6103"/>
+        <include geocode="6101"/>
+        <include geocode="6104">
+          <exclude geocode="610409"/>
+          <exclude geocode="610407"/>
+          <exclude geocode="610410"/>
+        </include>
+        <include geocode="6105"/>
+        <include geocode="6102"/>
+        <include geocode="6103"/>
       </constituency>
       <constituency index="2" comment="อําเภอบ้านไร่ อําเภอหนองฉาง (เฉพาะตําบล เขาบางแกรก ตําบลทุ่งโพและ ตําบลเขากวางทอง) อําเภอลานสัก อําเภอห้วยคต">
-        <entity geocode="6106"/>
-        <entity geocode="610409"/>
-        <entity geocode="610407"/>
-        <entity geocode="610410"/>
-        <entity geocode="6107"/>
-        <entity geocode="6108"/>
+        <include geocode="6106"/>
+        <include geocode="610409"/>
+        <include geocode="610407"/>
+        <include geocode="610410"/>
+        <include geocode="6107"/>
+        <include geocode="6108"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="81" name="กระบี่" english="Krabi">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองกระบี่ อําเภอเหนือคลอง">
-        <entity geocode="8101"/>
-        <entity geocode="8108"/>
+        <include geocode="8101"/>
+        <include geocode="8108"/>
       </constituency>
       <constituency index="2" comment="อําเภออ่าวลึก อําเภอปลายพระยา อําเภอเขาพนม">
-        <entity geocode="8105"/>
-        <entity geocode="8106"/>
-        <entity geocode="8102"/>
+        <include geocode="8105"/>
+        <include geocode="8106"/>
+        <include geocode="8102"/>
       </constituency>
       <constituency index="3" comment="อําเภอคลองท่อม อําเภอลําทับ อําเภอเกาะลันตา">
-        <entity geocode="8104"/>
-        <entity geocode="8107"/>
-        <entity geocode="8103"/>
+        <include geocode="8104"/>
+        <include geocode="8107"/>
+        <include geocode="8103"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="22" name="จันทบุรี" english="Chanthaburi">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองจันทบุีร อําเภอแหลมสิงห์">
-        <entity geocode="2201"/>
-        <entity geocode="2206"/>
+        <include geocode="2201"/>
+        <include geocode="2206"/>
       </constituency>
       <constituency index="2" comment="อําเภอท่าใหม่ อําเภอนายายอาม อําเภอเขาคิชฌกูฏ อําเภอแก่งหางแมว">
-        <entity geocode="2203"/>
-        <entity geocode="2209"/>
-        <entity geocode="2210"/>
-        <entity geocode="2208"/>
+        <include geocode="2203"/>
+        <include geocode="2209"/>
+        <include geocode="2210"/>
+        <include geocode="2208"/>
       </constituency>
       <constituency index="3" comment="อําเภอขลุง อําเภอโป่งน้ําร้อน อําเภอสอยดาว อําเภอมะขาม">
-        <entity geocode="2202"/>
-        <entity geocode="2204"/>
-        <entity geocode="2207"/>
-        <entity geocode="2205"/>
+        <include geocode="2202"/>
+        <include geocode="2204"/>
+        <include geocode="2207"/>
+        <include geocode="2205"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="86" name="ชุมพร" english="Chumphon">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองชุมพร (ยกเว้นตําบลวังใหม่ ตําบลบ้านนา ตําบลหาดพันไกร ตําบลบางลึก และ ตําบลถ้ําสิงห์) อําเภอสวี (ยกเว้นตําบลเขาทะลุ และ ตําบลเขาค่าย)">
-        <entity geocode="860101"/>
-        <entity geocode="860105"/>
-        <entity geocode="860110"/>
-        <entity geocode="860106"/>
-        <entity geocode="860113"/>
-        <entity geocode="860107"/>
-        <entity geocode="860104"/>
-        <entity geocode="860114"/>
-        <entity geocode="860115"/>
-        <entity geocode="860103"/>
-        <entity geocode="860102"/>
-        <entity geocode="860116"/>
-        <entity geocode="860708"/>
-        <entity geocode="860707"/>
-        <entity geocode="860705"/>
-        <entity geocode="860703"/>
-        <entity geocode="860702"/>
-        <entity geocode="860701"/>
-        <entity geocode="860704"/>
-        <entity geocode="860706"/>
-        <entity geocode="860709"/>
+        <include geocode="8601">
+          <exclude geocode="860111"/>
+          <exclude geocode="860112"/>
+          <exclude geocode="860109"/>
+          <exclude geocode="860108"/>
+          <exclude geocode="860117"/>
+        </include>
+        <include geocode="8607">
+          <exclude geocode="860710"/>
+          <exclude geocode="860711"/>
+        </include>
       </constituency>
       <constituency index="2" comment="อําเภอเมืองชุมพร (เฉพาะตําบลวังใหม่ ตําบลบ้านนา ตําบลหาดพันไกร ตําบลบางลึก และ ตําบลถ้ําสิงห์) อําเภอท่าแซะ อําเภอปะทิว">
-        <entity geocode="860111"/>
-        <entity geocode="860112"/>
-        <entity geocode="860109"/>
-        <entity geocode="860108"/>
-        <entity geocode="860117"/>
-        <entity geocode="8602"/>
-        <entity geocode="8603"/>
+        <include geocode="860111"/>
+        <include geocode="860112"/>
+        <include geocode="860109"/>
+        <include geocode="860108"/>
+        <include geocode="860117"/>
+        <include geocode="8602"/>
+        <include geocode="8603"/>
       </constituency>
       <constituency index="3" comment="อําเภอสวี (เฉพาะ ตําบลเขาทะลุ และ ตําบลเขาค่าย) อําเภอหลังสวน อําเภอละแม อําเภอพะโต๊ะ อําเภอทุ่งตะโก">
-        <entity geocode="860710"/>
-        <entity geocode="860711"/>
-        <entity geocode="8604"/>
-        <entity geocode="8605"/>
-        <entity geocode="8606"/>
-        <entity geocode="8608"/>
+        <include geocode="860710"/>
+        <include geocode="860711"/>
+        <include geocode="8604"/>
+        <include geocode="8605"/>
+        <include geocode="8606"/>
+        <include geocode="8608"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="63" name="ตาก" english="Tak">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองตาก อําเภอวังเจ้า อําเภอบ้านตาก (ยกเว้นตําบล เกาะตะเภา และ ตําบลท้องฟ้า)">
-        <entity geocode="6301"/>
-        <entity geocode="6309"/>
-        <entity geocode="630201"/>
-        <entity geocode="630202"/>
-        <entity geocode="630203"/>
-        <entity geocode="630204"/>
-        <entity geocode="630206"/>
+        <include geocode="6301"/>
+        <include geocode="6309"/>
+        <include geocode="6302">
+          <exclude geocode="630205"/>
+          <exclude geocode="630207"/>
+        </include>
       </constituency>
       <constituency index="2" comment="อําเภอแม่สอด (ยกเว้นตําบล แม่กาษา) อําเภอพบพระ อําเภออุ้มผาง">
-        <entity geocode="630601"/>
-        <entity geocode="630602"/>
-        <entity geocode="630603"/>
-        <entity geocode="630604"/>
-        <entity geocode="630606"/>
-        <entity geocode="630607"/>
-        <entity geocode="630608"/>
-        <entity geocode="630609"/>
-        <entity geocode="630610"/>
-        <entity geocode="6307"/>
-        <entity geocode="6308"/>
+        <include geocode="6306">
+          <exclude geocode="630605"/>
+        </include>
+        <include geocode="6307"/>
+        <include geocode="6308"/>
       </constituency>
       <constituency index="3" comment="อําเภอสามเงา อําเภอแม่ระมาด อําเภอท่าสองยาง อําเภอบ้านตาก (เฉพาะตําบล เกาะตะเภา และ ตําบลท้องฟ้า) อําเภอแม่สอด (เฉพาะตําบล แม่กาษา)">
-        <entity geocode="6303"/>
-        <entity geocode="6304"/>
-        <entity geocode="6305"/>
-        <entity geocode="630205"/>
-        <entity geocode="630207"/>
-        <entity geocode="630605"/>
+        <include geocode="6303"/>
+        <include geocode="6304"/>
+        <include geocode="6305"/>
+        <include geocode="630205"/>
+        <include geocode="630207"/>
+        <include geocode="630605"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="55" name="น่าน" english="Nan">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองน่าน อําเภอท่าวังผา (ยกเว้นตําบลยม และ ตําบลจอมพระ) อําเภอภูเพียง เทศบาลเมืองน่าน เทศบาลตําบลท่าวังผา">
-        <entity geocode="5501"/>
-        <entity geocode="550601"/>
-        <entity geocode="550602"/>
-        <entity geocode="550603"/>
-        <entity geocode="550605"/>
-        <entity geocode="550606"/>
-        <entity geocode="550608"/>
-        <entity geocode="550609"/>
-        <entity geocode="550610"/>
-        <entity geocode="5514"/>
+        <include geocode="5501"/>
+        <include geocode="5506">
+          <exclude geocode="550604"/>
+          <exclude geocode="550607"/>
+        </include>
+        <include geocode="5514"/>
         <!-- เทศบาลเมืองน่าน เทศบาลตำบลท่าวังผา already included via the Amphoe -->
       </constituency>
       <constituency index="2" comment="อําเภอเวียงสา อําเภอนาน้อย อําเภอนาหมื่น อําเภอบ้านหลวง อําเภอแม่จริม อําเภอสันติสุข เทศบาลตําบลเวียงสา เทศบาลตําบลนาน้อย เทศบาลหนองแดง">
-        <entity geocode="5507"/>
-        <entity geocode="5504"/>
-        <entity geocode="5510"/>
-        <entity geocode="5503"/>
-        <entity geocode="5502"/>
-        <entity geocode="5511"/>
+        <include geocode="5507"/>
+        <include geocode="5504"/>
+        <include geocode="5510"/>
+        <include geocode="5503"/>
+        <include geocode="5502"/>
+        <include geocode="5511"/>
         <!-- เทศบาลตำบลเวียงสา เทศบาลตำบลนาน้อย และเทศบาลตำบลหนองแดง already included via the Amphoe -->
       </constituency>
       <constituency index="3" comment="อําเภอปัว อําเภอทุ่งช้าง อําเภอเชียงกลาง อําเภอบ่อเกลือ อําเภอสองแคว อําเภอเฉลิมพระเกียรติ อําเภอท่าวังผา (เฉพาะตําบลยม และ ตําบลจอมพระ) เทศบาลตําบลปัว เทศบาลตําบลเชียงกลาง เทศบาลตําบลทุ่งช้าง">
-        <entity geocode="5505"/>
-        <entity geocode="5508"/>
-        <entity geocode="5509"/>
-        <entity geocode="5512"/>
-        <entity geocode="5513"/>
-        <entity geocode="5515"/>
-        <entity geocode="550604"/>
-        <entity geocode="550607"/>
+        <include geocode="5505"/>
+        <include geocode="5508"/>
+        <include geocode="5509"/>
+        <include geocode="5512"/>
+        <include geocode="5513"/>
+        <include geocode="5515"/>
+        <include geocode="550604"/>
+        <include geocode="550607"/>
         <!-- เทศบาลตำบลปัว เทศบาลตำบลเชียงกลาง เทศบาลตำบลทุ่งช้าง already included via the Amphoe-->
       </constituency>
     </constituencies>
@@ -391,307 +352,279 @@
   <entity type="Changwat" geocode="77" name="ประจวบคีรีขันธ์" english="Prachuap Khiri Khan">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองประจวบคีีรขันธ์ อําเภอกุยบุีร อําเภอสามร้อยยอด">
-        <entity geocode="7701"/>
-        <entity geocode="7702"/>
-        <entity geocode="7708"/>
+        <include geocode="7701"/>
+        <include geocode="7702"/>
+        <include geocode="7708"/>
       </constituency>
       <constituency index="2" comment="อําเภอหัวหิน อําเภอปราณบุีร">
-        <entity geocode="7707"/>
-        <entity geocode="7706"/>
+        <include geocode="7707"/>
+        <include geocode="7706"/>
       </constituency>
       <constituency index="3" comment="อําเภอทับสะแก อําเภอบางสะพาน อําเภอบางสะพานน้อย">
-        <entity geocode="7703"/>
-        <entity geocode="7704"/>
-        <entity geocode="7705"/>
+        <include geocode="7703"/>
+        <include geocode="7704"/>
+        <include geocode="7705"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="25" name="ปราจีนบุรี" english="Prachin Buri" >
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองปราจีนบุีร อําเภอบ้านสร้าง อําเภอศรีมโหสถ">
-        <entity geocode="2501"/>
-        <entity geocode="2506"/>
-        <entity geocode="2509"/>
+        <include geocode="2501"/>
+        <include geocode="2506"/>
+        <include geocode="2509"/>
       </constituency>
       <constituency index="2" comment="อําเภอศรีมหาโพธิ อําเภอประจันตคาม อําเภอกบินทร์บุีร (เฉพาะเทศบาลตําบลสระบัว ตําบลลาดตะเคียน ตําบลหาดนางแก้ว ตําบลวังดาล ตําบลนนทรี และ ตําบลนาแขม)">
-        <entity geocode="2508"/>
-        <entity geocode="2507"/>
-        <entity geocode="250208" comment="Says เทศบาลตําบลสระบัว ตําบลลาดตะเคียน"/>
-        <entity geocode="250207"/>
-        <entity geocode="250203"/>
-        <entity geocode="250204"/>
-        <entity geocode="250212"/>
+        <include geocode="2508"/>
+        <include geocode="2507"/>
+        <include geocode="250208" comment="Says เทศบาลตําบลสระบัว ตําบลลาดตะเคียน"/>
+        <include geocode="250207"/>
+        <include geocode="250203"/>
+        <include geocode="250204"/>
+        <include geocode="250212"/>
       </constituency>
       <constituency index="3" comment="อําเภอนาดี อําเภอกบินทร์บุีร (ยกเว้นเทศบาลตําบลสระบัว ตําบลลาดตะเคียน ตําบลหาดนางแก้ว ตําบลวังดาล ตําบลนนทรี และ ตําบลนาแขม)">
-        <entity geocode="2503"/>
-        <entity geocode="250201"/>
-        <entity geocode="250202"/>
-        <entity geocode="250205"/>
-        <entity geocode="250206"/>
-        <entity geocode="250209"/>
-        <entity geocode="250210"/>
-        <entity geocode="250211"/>
-        <entity geocode="250213"/>
-        <entity geocode="250214"/>
+        <include geocode="2503"/>
+        <include geocode="2502">
+          <exclude geocode="250208" comment="Says เทศบาลตําบลสระบัว ตําบลลาดตะเคียน"/>
+          <exclude geocode="250207"/>
+          <exclude geocode="250203"/>
+          <exclude geocode="250204"/>
+          <exclude geocode="250212"/>
+        </include>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="56" name="พะเยา" english="Phayao">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองพะเยา อําเภอแม่ใจ">
-        <entity geocode="5601"/>
-        <entity geocode="5607"/>
+        <include geocode="5601"/>
+        <include geocode="5607"/>
       </constituency>
       <constituency index="2" comment="อําเภอเชียงคํา อําเภอจุน อําเภอภูซาง">
-        <entity geocode="5603"/>
-        <entity geocode="5602"/>
-        <entity geocode="5608"/>
+        <include geocode="5603"/>
+        <include geocode="5602"/>
+        <include geocode="5608"/>
       </constituency>
       <constituency index="3" comment="อําเภอดอกคําใต้ อําเภอปง อําเภอภูกามยาว อําเภอเชียงม่วน">
-        <entity geocode="5605"/>
-        <entity geocode="5606"/>
-        <entity geocode="5609"/>
-        <entity geocode="5604"/>
+        <include geocode="5605"/>
+        <include geocode="5606"/>
+        <include geocode="5609"/>
+        <include geocode="5604"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="93" name="พัทลุง" english="Phatthalung">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองพัทลุง อําเภอเขาชัยสน">
-        <entity geocode="9301"/>
-        <entity geocode="9303"/>
+        <include geocode="9301"/>
+        <include geocode="9303"/>
       </constituency>
       <constituency index="2" comment="อําเภอควนขนุน อําเภอป่าพะยอม อําเภอศรีบรรพต อําเภอศรีนครินทร์">
-        <entity geocode="9305"/>
-        <entity geocode="9310"/>
-        <entity geocode="9307"/>
-        <entity geocode="9311"/>
+        <include geocode="9305"/>
+        <include geocode="9310"/>
+        <include geocode="9307"/>
+        <include geocode="9311"/>
       </constituency>
       <constituency index="3" comment="อําเภอปากพะยูน อําเภอตะโหมด อําเภอบางแก้ว อําเภอป่าบอน อําเภอกงหรา">
-        <entity geocode="9306"/>
-        <entity geocode="9304"/>
-        <entity geocode="9309"/>
-        <entity geocode="9308"/>
-        <entity geocode="9302"/>
+        <include geocode="9306"/>
+        <include geocode="9304"/>
+        <include geocode="9309"/>
+        <include geocode="9308"/>
+        <include geocode="9302"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="66" name="พิจิตร" english="Phichit" >
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองพิิจตร (ยกเว้นตําบลย่านยาว ตําบลคลองคะเชนทร์ ตําบลโรงช้าง และ ตําบลเมืองเก่า) อําเภอวังทรายพูน อําเภอสากเหล็ก อําเภอทับคล้อ">
-        <entity geocode="660101"/>
-        <entity geocode="660102"/>
-        <entity geocode="660104"/>
-        <entity geocode="660105"/>
-        <entity geocode="660109"/>
-        <entity geocode="660110"/>
-        <entity geocode="660111"/>
-        <entity geocode="660112"/>
-        <entity geocode="660113"/>
-        <entity geocode="660115"/>
-        <entity geocode="660119"/>
-        <entity geocode="660120"/>
-        <entity geocode="6602"/>
-        <entity geocode="6609"/>
-        <entity geocode="6608"/>
+        <include geocode="6601">
+          <exclude geocode="660103"/>
+          <exclude geocode="660106"/>
+          <exclude geocode="660107"/>
+          <exclude geocode="660108"/>
+        </include>
+        <include geocode="6602"/>
+        <include geocode="6609"/>
+        <include geocode="6608"/>
       </constituency>
       <constituency index="2" comment="อําเภอเมืองพิิจตร (เฉพาะตําบลย่านยาว ตําบลคลองคะเชนทร์ ตําบลโรงช้าง และ ตําบลเมืองเก่า) อําเภอวชิรบารมี อําเภอสามง่าม อําเภอโพธิ์ประทับช้าง อําเภอตะพานหิน (เฉพาะตําบลวังสําโรง ตําบลทับหมัน ตําบลวังหว้า ตําบลห้วยเกตุ ตําบลคลองคูณ และ เทศบาลเมืองตะพานหิน)">
-        <entity geocode="660103"/>
-        <entity geocode="660106"/>
-        <entity geocode="660107"/>
-        <entity geocode="660108"/>
-        <entity geocode="6612"/>
-        <entity geocode="6607"/>
-        <entity geocode="6603"/>
-        <entity geocode="660409"/>
-        <entity geocode="660412"/>
-        <entity geocode="660410"/>
-        <entity geocode="660403"/>
-        <entity geocode="660408"/>
-        <entity geocode="660401"/>
+        <include geocode="660103"/>
+        <include geocode="660106"/>
+        <include geocode="660107"/>
+        <include geocode="660108"/>
+        <include geocode="6612"/>
+        <include geocode="6607"/>
+        <include geocode="6603"/>
+        <include geocode="660409"/>
+        <include geocode="660412"/>
+        <include geocode="660410"/>
+        <include geocode="660403"/>
+        <include geocode="660408"/>
+        <include geocode="660401"/>
       </constituency>
       <constituency index="3" comment="อําเภอตะพานหิน (ยกเว้นตําบลวังสําโรง ตําบลทับหมัน ตําบลวังหว้า ตําบลห้วยเกตุ ตําบลคลองคูณ และ เทศบาลเมืองตะพานหิน) อําเภอบึงนาราง อําเภอโพทะเล อําเภอบางมูลนาก อําเภอดงเจริญ">
-        <entity geocode="660402"/>
-        <entity geocode="660404"/>
-        <entity geocode="660405"/>
-        <entity geocode="660406"/>
-        <entity geocode="660407"/>
-        <entity geocode="660411"/>
-        <entity geocode="660413"/>
-        <entity geocode="6610"/>
-        <entity geocode="6606"/>
-        <entity geocode="6605"/>
-        <entity geocode="6611"/>
+        <include geocode="6604">
+          <exclude geocode="660409"/>
+          <exclude geocode="660412"/>
+          <exclude geocode="660410"/>
+          <exclude geocode="660403"/>
+          <exclude geocode="660408"/>
+          <exclude geocode="660401"/>
+        </include>
+        <include geocode="6610"/>
+        <include geocode="6606"/>
+        <include geocode="6605"/>
+        <include geocode="6611"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="76" name="เพชรบุรี" english="Phetchaburi">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองเพชรบุีร อําเภอบ้านแหลม (ยกเว้น ตําบลบ้านแหลม ตําบลบางตะบูน และ ตําบลบางตะบูนออก)">
-        <entity geocode="7601"/>
-        <entity geocode="760709"/>
-        <entity geocode="760710"/>
-        <entity geocode="760705"/>
-        <entity geocode="760704"/>
-        <entity geocode="760702"/>
-        <entity geocode="760708"/>
-        <entity geocode="760703"/>
+        <include geocode="7601"/>
+        <include geocode="7607">
+          <exclude geocode="760701"/>
+          <exclude geocode="760706"/>
+          <exclude geocode="760707"/>
+        </include>
       </constituency>
       <constituency index="2" comment="อําเภอชะอํา อําเภอท่ายาง">
-        <entity geocode="7604"/>
-        <entity geocode="7605"/>
+        <include geocode="7604"/>
+        <include geocode="7605"/>
       </constituency>
       <constituency index="3" comment="อําเภอเขาย้อย อําเภอบ้านลาด อําเภอหนองหญ้าปล้อง อําเภอแก่งกระจาน อําเภอบ้านแหลม (เฉพาะ ตําบลบ้านแหลม ตําบลบางตะบูน และ ตําบลบางตะบูนออก)">
-        <entity geocode="7602"/>
-        <entity geocode="7606"/>
-        <entity geocode="7603"/>
-        <entity geocode="7608"/>
-        <entity geocode="760701"/>
-        <entity geocode="760706"/>
-        <entity geocode="760707"/>
+        <include geocode="7602"/>
+        <include geocode="7606"/>
+        <include geocode="7603"/>
+        <include geocode="7608"/>
+        <include geocode="760701"/>
+        <include geocode="760706"/>
+        <include geocode="760707"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="54" name="แพร่" english="Phrae">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองแพร่ (ยกเว้นตําบลห้วยม้า ตําบลแม่หล่าย ตําบลแม่คํามี ตําบลแม่ยม ตําบลวังหงส์ ตําบลท่าข้าม และ ตําบลวังธง) อําเภอสูงเม่น (ยกเว้นตําบลบ้านปง และ ตําบลหัวฝาย)">
-        <entity geocode="540101"/>
-        <entity geocode="540102"/>
-        <entity geocode="540103"/>
-        <entity geocode="540104"/>
-        <entity geocode="540105"/>
-        <entity geocode="540106"/>
-        <entity geocode="540110"/>
-        <entity geocode="540111"/>
-        <entity geocode="540112"/>
-        <entity geocode="540115"/>
-        <entity geocode="540118"/>
-        <entity geocode="540119"/>
-        <entity geocode="540120"/>
-        <entity geocode="540401"/>
-        <entity geocode="540402"/>
-        <entity geocode="540404"/>
-        <entity geocode="540405"/>
-        <entity geocode="540406"/>
-        <entity geocode="540408"/>
-        <entity geocode="540409"/>
-        <entity geocode="540410"/>
-        <entity geocode="540411"/>
-        <entity geocode="540412"/>
+        <include geocode="5401">
+          <exclude geocode="540109"/>
+          <exclude geocode="540108"/>
+          <exclude geocode="540114"/>
+          <exclude geocode="540117"/>
+          <exclude geocode="540113"/>
+          <exclude geocode="540116"/>
+          <exclude geocode="540107"/>
+        </include>
+        <include geocode="5404">
+          <exclude geocode="540407"/>
+          <exclude geocode="540403"/>
+        </include>
       </constituency>
       <constituency index="2" comment="อําเภอเมืองแพร่ (เฉพาะตําบลห้วยม้า ตําบลแม่หล่าย ตําบลแม่คํามี ตําบลแม่ยม ตําบลวังหงส์ ตําบลท่าข้าม และ ตําบลวังธง) อําเภอสอง อําเภอร้องกวาง อําเภอหนองม่วงไข่ ">
-        <entity geocode="540109"/>
-        <entity geocode="540108"/>
-        <entity geocode="540114"/>
-        <entity geocode="540117"/>
-        <entity geocode="540113"/>
-        <entity geocode="540116"/>
-        <entity geocode="540107"/>
-        <entity geocode="5406"/>
-        <entity geocode="5402"/>
-        <entity geocode="5408"/>
+        <include geocode="540109"/>
+        <include geocode="540108"/>
+        <include geocode="540114"/>
+        <include geocode="540117"/>
+        <include geocode="540113"/>
+        <include geocode="540116"/>
+        <include geocode="540107"/>
+        <include geocode="5406"/>
+        <include geocode="5402"/>
+        <include geocode="5408"/>
       </constituency>
       <constituency index="3" comment="อําเภอลอง อําเภอวังชิ้น อําเภอเด่นชัย อําเภอสูงเม่น(เฉพาะ ตําบลบ้านปง และ ตําบลหัวฝาย)">
-        <entity geocode="5403"/>
-        <entity geocode="5407"/>
-        <entity geocode="5405"/>
-        <entity geocode="540407"/>
-        <entity geocode="540403"/>
+        <include geocode="5403"/>
+        <include geocode="5407"/>
+        <include geocode="5405"/>
+        <include geocode="540407"/>
+        <include geocode="540403"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="35" name="ยโสธร" english="Yasothon">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองยโสธร อําเภอทรายมูล">
-        <entity geocode="3501"/>
-        <entity geocode="3502"/>
+        <include geocode="3501"/>
+        <include geocode="3502"/>
       </constituency>
       <constituency index="2" comment="อําเภอคําเขื่อนแก้ว อําเภอมหาชนะชัย อําเภอค้อวัง อําเภอป่าติ้ว">
-        <entity geocode="3504"/>
-        <entity geocode="3506"/>
-        <entity geocode="3507"/>
-        <entity geocode="3505"/>
+        <include geocode="3504"/>
+        <include geocode="3506"/>
+        <include geocode="3507"/>
+        <include geocode="3505"/>
       </constituency>
       <constituency index="3" comment="อําเภอเลิงนกทา อําเภอกุดชุม อําเภอไทยเจริญ">
-        <entity geocode="3508"/>
-        <entity geocode="3503"/>
-        <entity geocode="3509"/>
+        <include geocode="3508"/>
+        <include geocode="3503"/>
+        <include geocode="3509"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="95" name="ยะลา" english="Yala">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองยะลา (ยกเว้นตําบลบุดี ตําบลเปาะเส้ง และ ตําบลบันนังสาเรง)">
-        <entity geocode="950101"/>
-        <entity geocode="950103"/>
-        <entity geocode="950104"/>
-        <entity geocode="950106"/>
-        <entity geocode="950108"/>
-        <entity geocode="950109"/>
-        <entity geocode="950110"/>
-        <entity geocode="950111"/>
-        <entity geocode="950114"/>
-        <entity geocode="950116"/>
-        <entity geocode="950118"/>
+        <include geocode="9501">
+          <exclude geocode="950102"/>
+          <exclude geocode="950112"/>
+          <exclude geocode="950115"/>
+        </include>
       </constituency>
       <constituency index="2" comment="อําเภอเมืองยะลา (เฉพาะตําบลบุดี ตําบลเปาะเส้ง และ ตําบลบันนังสาเรง) อําเภอรามัน อําเภอยะหา(ยกเว้น ตําบลปะแต) อําเภอกาบัง">
-        <entity geocode="950102"/>
-        <entity geocode="950112"/>
-        <entity geocode="950115"/>
-        <entity geocode="9506"/>
-        <entity geocode="950501"/>
-        <entity geocode="950502"/>
-        <entity geocode="950504"/>
-        <entity geocode="950506"/>
-        <entity geocode="950507"/>
-        <entity geocode="950508"/>
-        <entity geocode="9507"/>
+        <include geocode="950102"/>
+        <include geocode="950112"/>
+        <include geocode="950115"/>
+        <include geocode="9506"/>
+        <include geocode="9505">
+          <exclude geocode="950503"/>
+        </include>
+        <include geocode="9507"/>
       </constituency>
-      <constituency index="3" comment="อําเภอยะหา(เฉพาะ ตําบลปะแต) อําเภอกรงปินัง อําเภอบันนังสตา อําเภอธารโต อําเภอเบตง">
-        <entity geocode="950503"/>
-        <entity geocode="9508"/>
-        <entity geocode="9503"/>
-        <entity geocode="9504"/>
-        <entity geocode="9502"/>
+      <constituency index="3" comment="อําเภอยะหา (เฉพาะ ตําบลปะแต) อําเภอกรงปินัง อําเภอบันนังสตา อําเภอธารโต อําเภอเบตง">
+        <include geocode="950503"/>
+        <include geocode="9508"/>
+        <include geocode="9503"/>
+        <include geocode="9504"/>
+        <include geocode="9502"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="74" name="สมุทรสาคร" english="Samut Sakhon" >
     <constituencies>
       <constituency index="1" comment="อำเภอเมืองสมุทรสาคร (เฉพาะตำบลมหาชัย ตำบลท่าฉลอม ตำบลโกรกกราก ตำบลคอกกระบือ ตำบลพันท้ายนรสิงห์ ตำบลโคกขาม ตำบลบางหญ้าแพรก ตำบลท่าทราย และตำบลบางน้ำจืด)">
-        <entity geocode="740101"/>
-        <entity geocode="740102"/>
-        <entity geocode="740103"/>
-        <entity geocode="740111"/>
-        <entity geocode="740113"/>
-        <entity geocode="740114"/>
-        <entity geocode="740117"/>
-        <entity geocode="740110"/>
-        <entity geocode="740112"/>
+        <include geocode="740101"/>
+        <include geocode="740102"/>
+        <include geocode="740103"/>
+        <include geocode="740111"/>
+        <include geocode="740113"/>
+        <include geocode="740114"/>
+        <include geocode="740117"/>
+        <include geocode="740110"/>
+        <include geocode="740112"/>
       </constituency>
       <constituency index="2" comment="อำเภอเมืองสมุทรสาคร (เฉพาะตำบลนาดี) และอำเภอกระทุ่มแบน (เฉพาะตำบลตลาดกระทุ่มแบน ตำบลอ้อมน้อย ตำบลท่าไม้ ตำบลสวนหลวง ตำบลแคราย ตำบลคลองมะเดื่อ ตำบลดอนไก่ดี และตำบลท่าเสา)">
-        <entity geocode="740109"/>
-        <entity geocode="740201"/>
-        <entity geocode="740202"/>
-        <entity geocode="740203"/>
-        <entity geocode="740204"/>
-        <entity geocode="740209"/>
-        <entity geocode="740206"/>
-        <entity geocode="740208"/>
-        <entity geocode="740210"/>
+        <include geocode="740109"/>
+        <include geocode="740201"/>
+        <include geocode="740202"/>
+        <include geocode="740203"/>
+        <include geocode="740204"/>
+        <include geocode="740209"/>
+        <include geocode="740206"/>
+        <include geocode="740208"/>
+        <include geocode="740210"/>
       </constituency>
       <constituency index="3" comment="อำเภอเมืองสมุทรสาคร (เฉพาะตำบลนาโคก ตำบลกาหลง ตำบลบางโทรัด ตำบลบ้านบ่อ ตำบลชัยมงคล ตำบลบางกระเจ้า ตำบลบ้านเกาะ และตำบลท่าจีน) อำเภอกระทุ่มแบน (เฉพาะตำบลบางยาง และตำบลหนองนกไข่) และอำเภอบ้านแพ้ว">
-        <entity geocode="740107"/>
-        <entity geocode="740106"/>
-        <entity geocode="740105"/>
-        <entity geocode="740104"/>
-        <entity geocode="740118"/>
-        <entity geocode="740116"/>
-        <entity geocode="740115"/>
-        <entity geocode="740108"/>
-        <entity geocode="740205"/>
-        <entity geocode="740207"/>
-        <entity geocode="7403"/>
+        <include geocode="740107"/>
+        <include geocode="740106"/>
+        <include geocode="740105"/>
+        <include geocode="740104"/>
+        <include geocode="740118"/>
+        <include geocode="740116"/>
+        <include geocode="740115"/>
+        <include geocode="740108"/>
+        <include geocode="740205"/>
+        <include geocode="740207"/>
+        <include geocode="7403"/>
       </constituency>
 
     </constituencies>
@@ -699,399 +632,544 @@
   <entity type="Changwat" geocode="27" name="สระแก้ว" english="Sa Kaeo">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองสระแก้ว อําเภอเขาฉกรรจ์ อําเภอวังน้ําเย็น (เฉพาะตําบลทุ่งมหาเจริญ)">
-        <entity geocode="2701"/>
-        <entity geocode="2707"/>
-        <entity geocode="270406"/>
+        <include geocode="2701"/>
+        <include geocode="2707"/>
+        <include geocode="270406"/>
       </constituency>
       <constituency index="2" comment="อําเภอวัฒนานคร (ยกเว้นตําบลช่องกุ่ม และ ตําบลแซร์ออ) อําเภอวังน้ําเย็น (ยกเว้นตําบลทุ่งมหาเจริญ) อําเภอคลองหาด อําเภอวังสมบูรณ์">
-        <entity geocode="270501"/>
-        <entity geocode="270502"/>
-        <entity geocode="270503"/>
-        <entity geocode="270504"/>
-        <entity geocode="270505"/>
-        <entity geocode="270507"/>
-        <entity geocode="270509"/>
-        <entity geocode="270510"/>
-        <entity geocode="270511"/>
-        <entity geocode="270401"/>
-        <entity geocode="270403"/>
-        <entity geocode="270405"/>
-        <entity geocode="2702"/>
-        <entity geocode="2709"/>
+        <include geocode="2705">
+          <exclude geocode="270506"/>
+          <exclude geocode="270508"/>
+        </include>
+        <include geocode="2704">
+          <exclude geocode="270406"/>
+        </include>
+        <include geocode="2702"/>
+        <include geocode="2709"/>
       </constituency>
       <constituency index="3" comment="อําเภออรัญประเทศ อําเภอตาพระยา อําเภอโคกสูง อําเภอวัฒนานคร (เฉพาะตําบลช่องกุ่ม และ ตําบลแซร์ออ)">
-        <entity geocode="2706"/>
-        <entity geocode="2703"/>
-        <entity geocode="2708"/>
-        <entity geocode="270506"/>
-        <entity geocode="270508"/>
+        <include geocode="2706"/>
+        <include geocode="2703"/>
+        <include geocode="2708"/>
+        <include geocode="270506"/>
+        <include geocode="270508"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="43" name="หนองคาย" english="Nong Khai" >
     <constituencies>
       <constituency index="1" comment="อำเภอเมืองหนองคาย (ยกเว้นตำบลพระธาตุบังพวน และตำบลเวียงคุก) อำเภอสระใคร และอำเภอโพนพิสัย (เฉพาะตำบลเหล่าต่างคำ ตำบลทุ่งหลวง และตำบลสร้างนางขาว)">
-        <entity geocode="430101"/>
-        <entity geocode="430102"/>
-        <entity geocode="430103"/>
-        <entity geocode="430104"/>
-        <entity geocode="430106"/>
-        <entity geocode="430107"/>
-        <entity geocode="430108"/>
-        <entity geocode="430109"/>
-        <entity geocode="430110"/>
-        <entity geocode="430111"/>
-        <entity geocode="430116"/>
-        <entity geocode="430117"/>
-        <entity geocode="430118"/>
-        <entity geocode="430119"/>
-        <entity geocode="4314"/>
-        <entity geocode="430507"/>
-        <entity geocode="430506"/>
-        <entity geocode="430522"/>
+        <include geocode="4301">
+          <exclude geocode="430113"/>
+          <exclude geocode="430105"/>
+        </include>
+        <include geocode="4314"/>
+        <include geocode="430507"/>
+        <include geocode="430506"/>
+        <include geocode="430522"/>
       </constituency>
       <constituency index="2" comment="อำเภอโพนพิสัย (ยกเว้นตำบลเหล่าต่างคำ ตำบลทุ่งหลวง และตำบลสร้างนางขาว) อำเภอรัตนวาปี และอำเภอเฝ้าไร่">
-        <entity geocode="430501"/>
-        <entity geocode="430502"/>
-        <entity geocode="430503"/>
-        <entity geocode="430504"/>
-        <entity geocode="430508"/>
-        <entity geocode="430509"/>
-        <entity geocode="430513"/>
-        <entity geocode="430521"/>
-        <entity geocode="4316"/>
-        <entity geocode="4315"/>
+        <include geocode="4305">
+          <exclude geocode="430507"/>
+          <exclude geocode="430506"/>
+          <exclude geocode="430522"/>
+        </include>
+        <include geocode="4316"/>
+        <include geocode="4315"/>
       </constituency>
       <constituency index="3" comment="อำเภอเมืองหนองคาย (เฉพาะตำบลพระธาตุบังพวน และตำบลเวียงคุก) อำเภอท่าบ่อ อำเภอศรีเชียงใหม่ อำเภอโพธิ์ตาก และอำเภอสังคม">
-        <entity geocode="430113"/>
-        <entity geocode="430105"/>
-        <entity geocode="4302"/>
-        <entity geocode="4307"/>
-        <entity geocode="4317"/>
-        <entity geocode="4308"/>
+        <include geocode="430113"/>
+        <include geocode="430105"/>
+        <include geocode="4302"/>
+        <include geocode="4307"/>
+        <include geocode="4317"/>
+        <include geocode="4308"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="39" name="หนองบัวลำภู" english="Nong Bua Lam Phu" >
     <constituencies>
       <constituency index="1" comment="อำเภอเมืองหนองบัวลำภู อำเภอโนนสัง (เฉพาะตำบลกุดดู่ ตำบลโนนสัง ตำบลบ้านค้อ ตำบลบ้านถิ่น และตำบลปางกู่)">
-        <entity geocode="3901"/>
-        <entity geocode="390304"/>
-        <entity geocode="390301"/>
-        <entity geocode="390305"/>
-        <entity geocode="390302"/>
-        <entity geocode="390310"/>
+        <include geocode="3901"/>
+        <include geocode="390304"/>
+        <include geocode="390301"/>
+        <include geocode="390305"/>
+        <include geocode="390302"/>
+        <include geocode="390310"/>
       </constituency>
       <constituency index="2" comment="อำเภอศรีบุญเรือง อำเภอนาวัง (ยกเว้นตำบลวังปลาป้อม) อำเภอโนนสัง (ยกเว้น ตำบลกุดดู่ ตำบลโนนสัง ตำบลบ้านค้อ ตำบลบ้านถิ่น และตำบลปางกู่)">
-        <entity geocode="3904"/>
-        <entity geocode="390601"/>
-        <entity geocode="390602"/>
-        <entity geocode="390603"/>
-        <entity geocode="390605"/>
-        <entity geocode="390303"/>
-        <entity geocode="390306"/>
-        <entity geocode="390307"/>
-        <entity geocode="390308"/>
-        <entity geocode="390309"/>
+        <include geocode="3904"/>
+        <include geocode="3906">
+          <exclude geocode="390604"/>
+        </include>
+        <include geocode="3903">
+          <exclude geocode="390304"/>
+          <exclude geocode="390301"/>
+          <exclude geocode="390305"/>
+          <exclude geocode="390302"/>
+          <exclude geocode="390310"/>
+        </include>
       </constituency>
       <constituency index="3" comment="อำเภอนากลาง อำเภอสุวรรณคูหา อำเภอนาวัง (เฉพาะตำบลวังปลาป้อม)">
-        <entity geocode="3902"/>
-        <entity geocode="3905"/>
-        <entity geocode="390604"/>
+        <include geocode="3902"/>
+        <include geocode="3905"/>
+        <include geocode="390604"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="53" name="อุตรดิตถ์" english="Uttaradit">
     <constituencies>
       <constituency index="1">
-        <entity geocode="5301"/>
+        <include geocode="5301"/>
       </constituency>
       <constituency index="2">
-        <entity geocode="5303"/>
-        <entity geocode="5304"/>
-        <entity geocode="5305"/>
-        <entity geocode="5306"/>
-        <entity geocode="5309"/>
+        <include geocode="5303"/>
+        <include geocode="5304"/>
+        <include geocode="5305"/>
+        <include geocode="5306"/>
+        <include geocode="5309"/>
       </constituency>
       <constituency index="3">
-        <entity geocode="5308"/>
-        <entity geocode="5302"/>
-        <entity geocode="5307"/>
+        <include geocode="5308"/>
+        <include geocode="5302"/>
+        <include geocode="5307"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="62" name="กำแพงเพชร" english="Kamphaeng Phet" >
     <constituencies>
       <constituency index="1" comment="อำเภอเมืองกำแพงเพชร (ยกเว้นตำบลสระแก้ว ตำบลไตรตรึงษ์ และเทศบาลตำบลปากดง)">
-        <entity geocode="620101"/>
-        <entity geocode="620103"/>
-        <entity geocode="620104"/>
-        <entity geocode="620105"/>
-        <entity geocode="620106"/>
-        <entity geocode="620107"/>
-        <entity geocode="620110"/>
-        <entity geocode="620111"/>
-        <entity geocode="620112"/>
-        <entity geocode="620113"/>
-        <entity geocode="620114"/>
-        <entity geocode="620115"/>
-        <entity geocode="620117"/>
-        <entity geocode="620118"/>
+        <include geocode="6201">
+          <exclude geocode="620119"/>
+          <exclude geocode="620102" comment="says ตำบลไตรตรึงษ์ และเทศบาลตำบลปากดง"/>
+        </include>
       </constituency>
       <constituency index="2" comment="อำเภอพรานกระต่าย อำเภอลานกระบือ อำเภอโกสัมพี อำเภอไทรงาม (เฉพาะตำบลมหาชัย ตำบลหนองคล้า ตำบลหนองทอง และตำบลพานทอง ) และอำเภอเมืองกำแพงเพชร (เฉพาะตำบลสระแก้ว)">
-        <entity geocode="6206"/>
-        <entity geocode="6207"/>
-        <entity geocode="6211"/>
-        <entity geocode="620205"/>
-        <entity geocode="620202"/>
-        <entity geocode="620203"/>
-        <entity geocode="620206"/>
-        <entity geocode="620119"/>
+        <include geocode="6206"/>
+        <include geocode="6207"/>
+        <include geocode="6211"/>
+        <include geocode="620205"/>
+        <include geocode="620202"/>
+        <include geocode="620203"/>
+        <include geocode="620206"/>
+        <include geocode="620119"/>
       </constituency>
-      <constituency index="3" comment="อำเภอคลองขลุง อำเภอคลองลาน อำเภอปางศิลาทอง และอำเภอเมืองกำแพงเพชร (เฉพาะตำบลไตรตรึงษ์ และเทศบาลตำบลปากดง)">
-        <entity geocode="6205"/>
-        <entity geocode="6203"/>
-        <entity geocode="6209"/>
-        <entity geocode="620102" comment="says ตำบลไตรตรึงษ์ และเทศบาลตำบลปากดง"/>
+      <constituency index="3" comment="อำเภอคลองขลุง อำเภอคลองลาน อำเภอปางศิลาทอง และอำเภอเมืองกำแพงเพชร (เฉพาะตำบลไตรตรึงษ์ และ เทศบาลตำบลปากดง)">
+        <include geocode="6205"/>
+        <include geocode="6203"/>
+        <include geocode="6209"/>
+        <include geocode="620102" comment="says ตำบลไตรตรึงษ์ และเทศบาลตำบลปากดง"/>
       </constituency>
       <constituency index="4" comment="อำเภอขาณุวรลักษบุรี อำเภอบึงสามัคคี อำเภอทรายทองวัฒนา และอำเภอไทรงาม (เฉพาะตำบลหนองแม่แตง ตำบลหนองไม้กอง ตำบลไทรงาม และเทศบาลตำบลไทรงาม)">
-        <entity geocode="6204"/>
-        <entity geocode="6210"/>
-        <entity geocode="6208"/>
-        <entity geocode="620207"/>
-        <entity geocode="620204"/>
-        <entity geocode="620201" comment="says ตำบลไทรงาม และเทศบาลตำบลไทรงาม"/>
+        <include geocode="6204"/>
+        <include geocode="6210"/>
+        <include geocode="6208"/>
+        <include geocode="620207"/>
+        <include geocode="620204"/>
+        <include geocode="620201" comment="says ตำบลไทรงาม และเทศบาลตำบลไทรงาม"/>
       </constituency>
     </constituencies>
-    - กำแพงเพชร
-    เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองกำแพงเพชร (ยกเว้นตำบลสระแก้ว ตำบลไตรตรึงษ์ และเทศบาลตำบลปากดง)
-    เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอพรานกระต่าย อำเภอลานกระบือ อำเภอโกสัมพี อำเภอไทรงาม (เฉพาะตำบลมหาชัย ตำบลหนองคล้า ตำบลหนองทอง และตำบลพานทอง ) และอำเภอเมืองกำแพงเพชร (เฉพาะตำบลสระแก้ว)
-    เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอคลองขลุง อำเภอคลองลาน อำเภอปางศิลาทอง และอำเภอเมืองกำแพงเพชร (เฉพาะตำบลไตรตรึงษ์ และเทศบาลตำบลปากดง)
-    เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอขาณุวรลักษบุรี อำเภอบึงสามัคคี อำเภอทรายทองวัฒนา และอำเภอไทรงาม (เฉพาะตำบลหนองแม่แตง ตำบลหนองไม้กอง ตำบลไทรงาม และเทศบาลตำบลไทรงาม)
   </entity>
   <entity type="Changwat" geocode="24" name="ฉะเชิงเทรา" english="Chachoengsao">
     <constituencies>
       <constituency index="1" comment="อำเภอเมืองฉะเชิงเทรา และอำเภอบางคล้า (เฉพาะตำบลบางสวน ตำบลสาวชะโงก ตำบลเสม็ดเหนือ และตำบลเสม็ดใต้)">
-        <entity geocode="2401"/>
-        <entity geocode="240204"/>
-        <entity geocode="240211"/>
-        <entity geocode="240212"/>
-        <entity geocode="240213"/>
+        <include geocode="2401"/>
+        <include geocode="240204"/>
+        <include geocode="240211"/>
+        <include geocode="240212"/>
+        <include geocode="240213"/>
       </constituency>
       <constituency index="2" comment="อำเภอบางน้ำเปรี้ยว อำเภอคลองเขื่อน อำเภอราชสาส์น อำเภอบางคล้า (เฉพาะตำบลบางคล้า ตำบลปากน้ำ ตำบลบางกระเจ็ด ตำบลท่าทองหลวง และ ตำบลหัวไทร) และอำเภอพนมสารคาม (เฉพาะตำบลเมืองเก่า ตำบลหนองยาว และ ตำบลหนองแหน)">
-        <entity geocode="2403"/>
-        <entity geocode="2411"/>
-        <entity geocode="2407"/>
-        <entity geocode="240201"/>
-        <entity geocode="240209"/>
-        <entity geocode="240208"/>
-        <entity geocode="240210"/>
-        <entity geocode="240214"/>
-        <entity geocode="240604"/>
-        <entity geocode="240605"/>
-        <entity geocode="240607"/>
+        <include geocode="2403"/>
+        <include geocode="2411"/>
+        <include geocode="2407"/>
+        <include geocode="240201"/>
+        <include geocode="240209"/>
+        <include geocode="240208"/>
+        <include geocode="240210"/>
+        <include geocode="240214"/>
+        <include geocode="240604"/>
+        <include geocode="240605"/>
+        <include geocode="240607"/>
       </constituency>
       <constituency index="3" comment="อำเภอท่าตะเกียบ อำเภอสนามชัยเขต และอำเภอพนมสารคาม (เฉพาะตำบลเกาะขนุน ตำบลพนมสารคาม ตำบลบ้านซ่อง ตำบลท่าถ่าน และตำบลเขาหินซ้อน)">
-        <entity geocode="2410"/>
-        <entity geocode="2408"/>
-        <entity geocode="240601"/>
-        <entity geocode="240603"/>
-        <entity geocode="240602"/>
-        <entity geocode="240606"/>
-        <entity geocode="240608"/>
+        <include geocode="2410"/>
+        <include geocode="2408"/>
+        <include geocode="240601"/>
+        <include geocode="240603"/>
+        <include geocode="240602"/>
+        <include geocode="240606"/>
+        <include geocode="240608"/>
       </constituency>
       <constituency index="4" comment="อำเภอบ้านโพธิ์ อำเภอบางปะกง และ อำเภอแปลงยาว">
-        <entity geocode="2405"/>
-        <entity geocode="2404"/>
-        <entity geocode="2409"/>
+        <include geocode="2405"/>
+        <include geocode="2404"/>
+        <include geocode="2409"/>
       </constituency>
     </constituencies>
   </entity>
   <entity type="Changwat" geocode="92" name="ตรัง" english="Trang">
     <constituencies>
       <constituency index="1" comment="อําเภอเมืองตรัง">
-        <entity geocode="9201"/>
+        <include geocode="9201"/>
       </constituency>
       <constituency index="2" comment="อําเภอรัษฎา อําเภอห้วยยอด อําเภอวังวิเศษ (ยกเว้น ตําบลวังมะปราง)">
-        <entity geocode="9209"/>
-        <entity geocode="9206"/>
-        <entity geocode="920701"/>
-        <entity geocode="920702"/>
-        <entity geocode="920703"/>
-        <entity geocode="920704"/>
+        <include geocode="9209"/>
+        <include geocode="9206"/>
+        <include geocode="9207">
+          <exclude geocode="920705"/>
+        </include>
       </constituency>
       <constituency index="3" comment="อําเภอนาโยง อําเภอย่านตาขาว (ยกเว้นตําบลทุ่งค่าย ตําบลเกาะเปียะ ตําบลทุ่งกระบือและ ตําบลย่านตาขาว) อําเภอหาดสําราญ อําเภอปะเหลียน">
-        <entity geocode="9208"/>
-        <entity geocode="920303"/>
-        <entity geocode="920305"/>
-        <entity geocode="920304"/>
-        <entity geocode="920302"/>
-        <entity geocode="9210"/>
-        <entity geocode="9204"/>
+        <include geocode="9208"/>
+        <include geocode="9203">
+          <exclude geocode="920307"/>
+          <exclude geocode="920308"/>
+          <exclude geocode="920306"/>
+          <exclude geocode="920301"/>
+        </include>
+        <include geocode="9210"/>
+        <include geocode="9204"/>
       </constituency>
       <constituency index="4" comment="อําเภอวังวิเศษ (เฉพาะตําบลวังมะปราง) อําเภอสิเกา อําเภอกันตัง อําเภอย่านตาขาว (เฉพาะตําบลทุ่งค่าย ตําบลเกาะเปียะ ตําบลทุ่งกระบือและ ตําบลย่านตาขาว)">
-        <entity geocode="920705"/>
-        <entity geocode="9205"/>
-        <entity geocode="9202"/>
-        <entity geocode="920307"/>
-        <entity geocode="920308"/>
-        <entity geocode="920306"/>
-        <entity geocode="920301"/>
+        <include geocode="920705"/>
+        <include geocode="9205"/>
+        <include geocode="9202"/>
+        <include geocode="920307"/>
+        <include geocode="920308"/>
+        <include geocode="920306"/>
+        <include geocode="920301"/>
       </constituency>
     </constituencies>
   </entity>
-  
-  <!-- Nakhon Phanom - Index 39 Page 21 -->
-  <!--
   <entity type="Changwat" geocode="48" name="นครพนม" english="Nakhon Phanom">
-    เขตเลือกตั้งที่ ๑ประกอบด้วย อำเภอศรีสงคราม อำเภอนาหว้า อำเภอบ้านแพงและอำเภอนาทม
-    เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอเมืองนครพนม (เฉพาะตำบลอาจสามารถ ตำบลนาราชควาย ตำบลนาทราย ตำบลโพธิ์ตาก ตำบลท่าค้อ และเทศบาลเมืองนครพนม) อำเภอท่าอุเทน และอำเภอโพนสวรรค์
-    เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอธาตุพนม อำเภอเรณูนคร อำเภอเมืองนครพนม (เฉพาะตำบลขามเฒ่า ตำบลคำเตย ตำบลดงขวาง ตำบลบ้านกลาง และตำบลหนองญาติ)
-    เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอนาแก อำเภอปลาปาก อำเภอวังยาง อำเภอเมืองนครพนม (เฉพาะตำบลกุรุคุ ตำบลบ้านผึ้ง และตำบลวังตามัว)
+    <constituencies>
+      <constituency index="1" comment="อำเภอศรีสงคราม อำเภอนาหว้า อำเภอบ้านแพง และ อำเภอนาทม">
+        <include geocode="4808"/>
+        <include geocode="4809"/>
+        <include geocode="4804"/>
+        <include geocode="4811"/>
+      </constituency>
+      <constituency index="2" comment="อำเภอเมืองนครพนม (เฉพาะตำบลอาจสามารถ ตำบลนาราชควาย ตำบลนาทราย ตำบลโพธิ์ตาก ตำบลท่าค้อ และเทศบาลเมืองนครพนม) อำเภอท่าอุเทน และอำเภอโพนสวรรค์">
+        <include geocode="480107"/>
+        <include geocode="480104"/>
+        <include geocode="480103"/>
+        <include geocode="480115"/>
+        <include geocode="480110"/>
+        <include geocode="480101" comment="Says เทศบาลเมืองนครพนม"/>
+        <include geocode="480102" comment="Says เทศบาลเมืองนครพนม"/>
+        <include geocode="4803"/>
+        <include geocode="4810"/>
+      </constituency>
+      <constituency index="3" comment="อำเภอธาตุพนม อำเภอเรณูนคร อำเภอเมืองนครพนม (เฉพาะตำบลขามเฒ่า ตำบลคำเตย ตำบลดงขวาง ตำบลบ้านกลาง และตำบลหนองญาติ)">
+        <include geocode="4805"/>
+        <include geocode="4806"/>
+        <include geocode="480108"/>
+        <include geocode="480111"/>
+        <include geocode="480113"/>
+        <include geocode="480109"/>
+        <include geocode="480112"/>
+      </constituency>
+      <constituency index="4" comment="อำเภอนาแก อำเภอปลาปาก อำเภอวังยาง อำเภอเมืองนครพนม (เฉพาะตำบลกุรุคุ ตำบลบ้านผึ้ง และตำบลวังตามัว)">
+        <include geocode="4807"/>
+        <include geocode="4802"/>
+        <include geocode="4812"/>
+        <include geocode="480105"/>
+        <include geocode="480106"/>
+        <include geocode="480114"/>
+
+      </constituency>
+    </constituencies>
+  </entity>
+  <entity type="Changwat" geocode="96" name="นราธิวาส" english="Narathiwat">
+    <constituencies>
+      <constituency index="1" comment="อําเภอเมืองนราธิวาส อําเภอตากใบ">
+        <include geocode="9601"/>
+        <include geocode="9602"/>
+      </constituency>
+      <constituency index="2" comment="อําเภอสุไหงโก-ลก อําเภอแว้ง อําเภอสุไหงปาดี">
+        <include geocode="9610"/>
+        <include geocode="9608"/>
+        <include geocode="9611"/>
+      </constituency>
+      <constituency index="3" comment="อําเภอระแงะ อําเภอจะแนะ อําเภอเจาะไอร้อง อําเภอสุคิิรน">
+        <include geocode="9605"/>
+        <include geocode="9612"/>
+        <include geocode="9613"/>
+        <include geocode="9609"/>
+      </constituency>
+      <constituency index="4" comment="อําเภอบาเจาะ อําเภอยี่งอ อําเภอรือเสาะ อําเภอศรีสาคร ">
+        <include geocode="9603"/>
+        <include geocode="9604"/>
+        <include geocode="9606"/>
+        <include geocode="9607"/>
+      </constituency>
+    </constituencies>
+  </entity>
+  <entity type="Changwat" geocode="94" name="ปัตตานี" english="Pattani" >
+    <constituencies>
+      <constituency index="1" comment="อําเภอเมืองปัตตานี อําเภอยะหริ่ง (ยกเว้นตําบลหนองแรต ตําบลมะนังยง ตําบลตันหยงดาลอ ตําบลจะรัง ตําบลสาบัน ตําบลตอหลัง ตําบลบาโลยและ ตําบลตันหยงจึงงา)">
+        <include geocode="9401" />
+        <include geocode="9409" >
+          <exclude geocode="940910"/>
+          <exclude geocode="940915"/>
+          <exclude geocode="940903"/>
+          <exclude geocode="940917"/>
+          <exclude geocode="940914"/>
+          <exclude geocode="940905"/>
+          <exclude geocode="940913"/>
+          <exclude geocode="940904"/>
+        </include>
+      </constituency>
+      <constituency index="2" comment="อําเภอหนองจิก อําเภอโคกโพธิ์ อําเภอแม่ลาน">
+        <include geocode="9403" />
+        <include geocode="9402" />
+        <include geocode="9412" />
+      </constituency>
+      <constituency index="3" comment="อําเภอปะนาเระ อําเภอสายบุีร อําเภอไม้แก่น อําเภอกะพ้อ อําเภอยะหริ่ง (เฉพาะตําบลหนองแรต ตําบลมะนังยง ตําบลตันหยงดาลอ ตําบลจะรัง ตําบลสาบัน ตําบลตอหลัง ตําบลบาโลยและ ตําบลตันหยงจึงงา)">
+        <include geocode="9404" />
+        <include geocode="9407" />
+        <include geocode="9408" />
+        <include geocode="9411" />
+        <include geocode="940910"/>
+        <include geocode="940915"/>
+        <include geocode="940903"/>
+        <include geocode="940917"/>
+        <include geocode="940914"/>
+        <include geocode="940905"/>
+        <include geocode="940913"/>
+        <include geocode="940904"/>
+      </constituency>
+      <constituency index="4" comment="อําเภอมายอ อําเภอทุ่งยางแดง อําเภอยะรัง">
+        <include geocode="9405" />
+        <include geocode="9406" />
+        <include geocode="9410" />
+      </constituency>
+    </constituencies>
+  </entity>
+
+  <!-- Rayong - does not sum up due to Thesaban  How to limit map Tha Phut to one district? -->
+  <entity type="Changwat" geocode="21" name="ระยอง" english="Rayong" >
+    <constituencies>
+      <constituency index="1" comment="อำเภอเมืองระยอง (ยกเว้นเทศบาลเมืองมาบตาพุด, เทศบาลตำบลทับมา, และเทศบาลตำบลเนินพระ)">
+        <include geocode="2101">
+          <exclude geocode="2197"/>
+          <exclude geocode="2179"/>
+          <exclude geocode="210109" comment="Actually เทศบาลตำบลเนินพระ"/> 
+        </include>
+      </constituency>
+      <constituency index="2" comment="อำเภอแกลง อำเภอเขาชะเมา">
+        <include geocode="2103"/>
+        <include geocode="2107"/>
+      </constituency>
+      <constituency index="3" comment="อำเภอบ้านค่าย, อำเภอวังจันทร์, อำเภอปลวกแดง,และอำเภอนิคมพัฒนา (ยกเว้นเทศบาลตำบลมาบข่าพัฒนา และเทศบาลตำบลมาบข่า)">
+        <include geocode="2105"/>
+        <include geocode="2104"/>
+        <include geocode="2106"/>
+        <include geocode="2108">
+          <exclude geocode="2181"/>
+          <exclude geocode="2184"/>
+        </include>
+        <include geocode="210804"/>
+      </constituency>
+      <constituency index="4" comment="อำเภอเมืองระยอง (เฉพาะเทศบาลเมืองมาบตาพุด,เทศบาลตำบลทับมา, และเทศบาลตำบลเนินพระ) อำเภอนิคมพัฒนา (เฉพาะเทศบาลตำบลมาบข่าพัฒนา และ เทศบาลตำบลมาบข่า) และ อำเภอบ้านฉาง">
+        <include geocode="2199"/>
+        <include geocode="2197"/>
+        <include geocode="210111"/>
+        <include geocode="210109"/>
+        <include geocode="2184"/>
+        <include geocode="2181"/>
+        <include geocode="2102"/>
+      </constituency>
+    </constituencies>
+  </entity>
+  <!--
+  <entity type="Changwat" geocode="16" name="ลพบุรี" english="Lop Buri" >
+    เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองลพบุรี (เฉพาะเทศบาลเมืองลพบุรี เทศบาลเมืองเขาสามยอด เทศบาลตำบลเขาพระงาม เทศบาลตำบลท่าศาลา เทศบาลตำบลโคกตูม เทศบาลตำบลถนนใหญ่ เทศบาลตำบลกกโก ตำบลป่าตาล ตำบลทะเลชุบศร และตำบลท่าแค)
+    เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอเมืองลพบุรี (เฉพาะตำบลบางขันหมาก ตำบลพรหมมาสตร์ ตำบลโพธิ์เก้าต้น ตำบลโก่งธนู ตำบลโคกกะเทียม ตำบลโคกลำพาน ตำบลงิ้วราย ตำบลดอนโพธิ์ ตำบลตะลุง ตำบลบ้านข่อย ตำบลท้ายตลาด ตำบลโพธิ์ตรุ และตำบลสี่คลอง) อำเภอท่าวุ้ง และอำเภอบ้านหมี่
+    เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอโคกสำโรง อำเภอหนองม่วง อำเภอสระโบสถ์ อำเภอโคกเจริญอำเภอชัยบาดาล (เฉพาะตำบลชัยนารายณ์ ตำบลศิลาทิพย์ ตำบลม่วงค่อม ตำบลมะกอกหวาน ตำบลบ้านใหม่สามัคคี และตำบลเขาแหลม)
+    เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอพัฒนานิคม อำเภอท่าหลวง อำเภอลำสนธิ อำเภอชัยบาดาล (เฉพาะเทศบาลตำบลลำนารายณ์ ตำบลห้วยหิน ตำบลลำนารายณ์ ตำบลบัวชุม ตำบลท่าดินดำ ตำบลซับตะเคียน ตำบลนาโสม ตำบลหนองยายโต๊ะ ตำบลเกาะรัง ตำบลท่ามะนาว ตำบลนิคมลำนารายณ์ และตำบลชัยบาดาล)
   </entity>
   -->
-  
+  <!-- ToDo: Does not sum up because of Thesaban! -->
+  <entity type="Changwat" geocode="52" name="ลำปาง" english="Lampang">
+    <constituencies>
+      <constituency index="1" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลนครลำปาง ตำบลบ้านค่า ตำบลบ้านเอื้อม ตำบลบ้านเป้า ตำบลบ่อแฮ้ว ตำบลนิคมพัฒนา ตำบลทุ่งฝาย ตำบลต้นธงชัย และตำบลบุญนาคพัฒนา)">
+        <include geocode="5299"/>
+        <include geocode="520115"/>
+        <include geocode="520113"/>
+        <include geocode="520114"/>
+        <include geocode="520116"/>
+        <include geocode="520118"/>
+        <include geocode="520112"/>
+        <include geocode="520117"/>
+        <include geocode="520119"/>
+      </constituency>
+      <constituency index="2" comment="อำเภอเมืองลำปาง (เฉพาะตำบลบ้านแลง) อำเภองาว อำเภอวังเหนือ อำเภอแจ้ห่ม และอำเภอเมืองปาน">
+        <include geocode="520109"/>
+        <include geocode="5205"/>
+        <include geocode="5207"/>
+        <include geocode="5206"/>
+        <include geocode="5213"/>
+      </constituency>
+      <constituency index="3" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลเมืองเขลางค์นคร ตำบลพิชัย และตำบลบ้านเสด็จ) อำเภอแม่ทะ และอำเภอแม่เมาะ">
+        <include geocode="5298"/>
+        <include geocode="520111"/>
+        <include geocode="520110"/>
+        <include geocode="5210"/>
+        <include geocode="5202"/>
+      </constituency>
+      <constituency index="4" comment="อำเภอเกาะคา อำเภอสบปราบ อำเภอแม่พริก อำเภอเสริมงาม และอำเภอเถิน">
+        <include geocode="5203"/>
+        <include geocode="5211"/>
+        <include geocode="5209"/>
+        <include geocode="5204"/>
+        <include geocode="5208"/>
+      </constituency>
+    </constituencies>
+  </entity>
   <!-- Oddities: Nan - lists Thesaban even though already included with the Amphoe -->
   <!-- e.g. Kamphaeng Phet: lists Tambon and Thesaban in same Tambon, e.g. อำเภอเมืองกำแพงเพชร (เฉพาะตำบลไตรตรึงษ์ และเทศบาลตำบลปากดง) -->
-
+  <!-- Nakhon Phanom: Amphoe Mueang not in Constituency 1 like in other provinces -->
+  
   <!-- เฉพาะ -> limited to, only -->
   <!-- ยกเว้น -> except -->
-  <entity geocode="10" type="Bangkok" english="Bangkok">
+  <entity type="Bangkok" geocode="10" name="กรุงเทพมหานคร" english="Bangkok">
     <constituencies>
       <constituency index="1">
-        <entity geocode="1001"/>
-        <entity geocode="1008"/>
-        <entity geocode="1013"/>
+        <include geocode="1001"/>
+        <include geocode="1008"/>
+        <include geocode="1013"/>
       </constituency>
       <constituency index="2">
-        <entity geocode="1007"/>
-        <entity geocode="1004"/>
-        <entity geocode="1028"/>
+        <include geocode="1007"/>
+        <include geocode="1004"/>
+        <include geocode="1028"/>
       </constituency>
       <constituency index="3">
-        <entity geocode="1031"/>
-        <entity geocode="1012"/>
+        <include geocode="1031"/>
+        <include geocode="1012"/>
       </constituency>
       <constituency index="4">
-        <entity geocode="1033"/>
-        <entity geocode="1039"/>
+        <include geocode="1033"/>
+        <include geocode="1039"/>
       </constituency>
       <constituency index="5">
-        <entity geocode="1002"/>
-        <entity geocode="1037"/>
+        <include geocode="1002"/>
+        <include geocode="1037"/>
       </constituency>
       <constituency index="6">
-        <entity geocode="1026"/>
-        <entity geocode="1014"/>
+        <include geocode="1026"/>
+        <include geocode="1014"/>
       </constituency>
       <constituency index="7">
-        <entity geocode="1017"/>
-        <entity geocode="104501" />
-        <entity geocode="104504"/>
+        <include geocode="1017"/>
+        <include geocode="104501" />
+        <include geocode="104504"/>
       </constituency>
       <constituency index="8">
-        <entity geocode="1038"/>
-        <entity geocode="104502"/>
-        <entity geocode="104503"/>
+        <include geocode="1038"/>
+        <include geocode="104502"/>
+        <include geocode="104503"/>
       </constituency>
       <constituency index="9">
-        <entity geocode="1030"/>
+        <include geocode="1030"/>
       </constituency>
       <constituency index="10">
-        <entity geocode="1029"/>
+        <include geocode="1029"/>
       </constituency>
       <constituency index="11">
-        <entity geocode="1041"/>
-        <entity geocode="103605"/>
+        <include geocode="1041"/>
+        <include geocode="103605"/>
       </constituency>
       <constituency index="12">
-        <entity geocode="103602" />
-        <entity geocode="103604"/>
+        <include geocode="103602" />
+        <include geocode="103604"/>
       </constituency>
       <constituency index="13">
-        <entity geocode="1042"/>
+        <include geocode="1042"/>
       </constituency>
       <constituency index="14">
-        <entity geocode="1005"/>
+        <include geocode="1005"/>
       </constituency>
       <constituency index="15">
-        <entity geocode="1006"/>
+        <include geocode="1006"/>
       </constituency>
       <constituency index="16">
-        <entity geocode="1027"/>
-        <entity type="Khwaeng" name="รามอินทรา" english="Ram Intra" geocode="104302" />
+        <include geocode="1027"/>
+        <include geocode="104302" />
       </constituency>
       <constituency index="17">
-        <entity geocode="1010"/>
-        <entity geocode="104301" />
+        <include geocode="1010"/>
+        <include geocode="104301" />
       </constituency>
       <constituency index="18">
-        <entity geocode="1046"/>
+        <include geocode="1046"/>
       </constituency>
       <constituency index="19">
-        <entity geocode="1003"/>
+        <include geocode="1003"/>
       </constituency>
       <constituency index="20">
-        <entity geocode="1011"/>
+        <include geocode="1011"/>
       </constituency>
       <constituency index="21">
-        <entity geocode="1044"/>
-        <entity geocode="103201" />
+        <include geocode="1044"/>
+        <include geocode="103201" />
       </constituency>
       <constituency index="22">
-        <entity geocode="1034"/>
-        <entity geocode="103202" />
-        <entity geocode="103203" />
+        <include geocode="1034"/>
+        <include geocode="103202" />
+        <include geocode="103203" />
       </constituency>
       <constituency index="23">
-        <entity geocode="1009"/>
-        <entity geocode="1047"/>
+        <include geocode="1009"/>
+        <include geocode="1047"/>
       </constituency>
       <constituency index="24">
-        <entity geocode="101501" />
-        <entity geocode="101502" />
-        <entity geocode="101503" />
-        <entity geocode="101504" />
-        <entity geocode="101505" />
-        <entity geocode="101507" />
-        <entity geocode="1018"/>
+        <include geocode="101501" />
+        <include geocode="101502" />
+        <include geocode="101503" />
+        <include geocode="101504" />
+        <include geocode="101505" />
+        <include geocode="101507" />
+        <include geocode="1018"/>
       </constituency>
       <constituency index="25">
-        <entity geocode="1035"/>
-        <entity geocode="101506" />
+        <include geocode="1035"/>
+        <include geocode="101506" />
       </constituency>
       <constituency index="26">
-        <entity geocode="1024"/>
-        <entity geocode="1049"/>
+        <include geocode="1024"/>
+        <include geocode="1049"/>
       </constituency>
       <constituency index="27">
-        <entity geocode="1021"/>
+        <include geocode="1021"/>
       </constituency>
       <constituency index="28">
-        <entity geocode="1050"/>
-        <entity geocode="102302" />
+        <include geocode="1050"/>
+        <include geocode="102302" />
       </constituency>
       <constituency index="29">
-        <entity geocode="1048"/>
-        <entity geocode="102303" />
+        <include geocode="1048"/>
+        <include geocode="102303" />
       </constituency>
       <constituency index="30">
-        <entity geocode="1040"/>
+        <include geocode="1040"/>
       </constituency>
       <constituency index="31">
-        <entity geocode="1022"/>
-        <entity geocode="1016"/>
+        <include geocode="1022"/>
+        <include geocode="1016"/>
       </constituency>
       <constituency index="32">
-        <entity geocode="1019"/>
-        <entity geocode="102005" />
-        <entity geocode="102007" />
+        <include geocode="1019"/>
+        <include geocode="102005" />
+        <include geocode="102007" />
       </constituency>
       <constituency index="33">
-        <entity geocode="1025"/>
-        <entity geocode="102004" />
-        <entity geocode="102006" />
-        <entity geocode="102009" />
+        <include geocode="1025"/>
+        <include geocode="102004" />
+        <include geocode="102006" />
+        <include geocode="102009" />
       </constituency>
     </constituencies>
   </entity>
@@ -1120,52 +1198,6 @@
        เขตเลือกตั้งที่ ๖ ประกอบด้วย อำเภอแม่สาย อำเภอเชียงแสน อำเภอดอยหลวง และอำเภอเวียงเชียงรุ้ง
        เขตเลือกตั้งที่ ๗ ประกอบด้วย อำเภอแม่จัน และอำเภอแม่ฟ้าหลวง
        -->
-  <!-- ToDo: Does not sum up because of Thesaban! -->
-  <entity geocode="52" type="Changwat" english="Lampang">
-    <constituencies>
-      <constituency index="1" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลนครลำปาง ตำบลบ้านค่า ตำบลบ้านเอื้อม ตำบลบ้านเป้า ตำบลบ่อแฮ้ว ตำบลนิคมพัฒนา ตำบลทุ่งฝาย ตำบลต้นธงชัย และตำบลบุญนาคพัฒนา)">
-        <entity geocode="5299"/>
-        <!--<entity geocode="520101"/>
-        <entity geocode="520103"/>
-        <entity geocode="520104"/>-->
-
-        <entity geocode="520115"/>
-        <entity geocode="520113"/>
-        <entity geocode="520114"/>
-        <entity geocode="520116"/>
-        <entity geocode="520118"/>
-        <entity geocode="520112"/>
-        <entity geocode="520117"/>
-        <entity geocode="520119"/>
-      </constituency>
-      <constituency index="2" comment="อำเภอเมืองลำปาง (เฉพาะตำบลบ้านแลง) อำเภองาว อำเภอวังเหนือ อำเภอแจ้ห่ม และอำเภอเมืองปาน">
-        <entity geocode="520109"/>
-        <entity geocode="5205"/>
-        <entity geocode="5207"/>
-        <entity geocode="5206"/>
-        <entity geocode="5213"/>
-      </constituency>
-      <constituency index="3" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลเมืองเขลางค์นคร ตำบลพิชัย และตำบลบ้านเสด็จ) อำเภอแม่ทะ และอำเภอแม่เมาะ">
-        <entity geocode="5298"/>
-        <!--
-        <entity geocode="520107"/>
-        <entity geocode="520108"/>
-        -->
-        <entity geocode="520111"/>
-        <entity geocode="520110"/>
-
-        <entity geocode="5210"/>
-        <entity geocode="5202"/>
-      </constituency>
-      <constituency index="4" comment="อำเภอเกาะคา อำเภอสบปราบ อำเภอแม่พริก อำเภอเสริมงาม และอำเภอเถิน">
-        <entity geocode="5203"/>
-        <entity geocode="5211"/>
-        <entity geocode="5209"/>
-        <entity geocode="5204"/>
-        <entity geocode="5208"/>
-      </constituency>
-    </constituencies>
-  </entity>
   <!--
 
 
@@ -1193,33 +1225,33 @@
        เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอสามชุก อำเภอศรีประจันต์ อำเภอดอนเจดีย์ (เฉพาะตำบลดอนเจดีย์ เทศบาลตำบลดอนเจดีย์ ตำบลหนองสาหร่าย และตำบลทะเลบก) อำเภอหนองหญ้าไซ (เฉพาะตำบลหนองหญ้าไซ เทศบาลตำบลหนองหญ้าไซ และตำบลหนองโพธิ์)
        เขตเลือกตั้งที่ ๕ ประกอบด้วย อำเภอด่านช้าง อำเภอเดิมบางนางบวช อำเภอหนองหญ้าไซ (เฉพาะตำบลหนองราชวัตร ตำบลแจงงาม ตำบลหนองขาม และตำบลทัพหลวง)
        -->
-  <entity geocode="14" type="Changwat" english="Phra Nakhon Si Ayutthaya">
+  <entity type="Changwat" geocode="14" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya">
     <constituencies>
       <constituency index="1">
-        <entity geocode="1401"/>
+        <include geocode="1401"/>
       </constituency>
       <constituency index="2">
-        <entity geocode="1402"/>
-        <entity geocode="1407"/>
-        <entity geocode="1403"/>
-        <entity geocode="1415"/>
-        <entity geocode="1416"/>
+        <include geocode="1402"/>
+        <include geocode="1407"/>
+        <include geocode="1403"/>
+        <include geocode="1415"/>
+        <include geocode="1416"/>
       </constituency>
       <constituency index="3">
-        <entity geocode="1411"/>
-        <entity geocode="1414"/>
-        <entity geocode="1409"/>
+        <include geocode="1411"/>
+        <include geocode="1414"/>
+        <include geocode="1409"/>
       </constituency>
       <constituency index="4">
-        <entity geocode="1406"/>
-        <entity geocode="1404"/>
-        <entity geocode="1410"/>
+        <include geocode="1406"/>
+        <include geocode="1404"/>
+        <include geocode="1410"/>
       </constituency>
       <constituency index="5">
-        <entity geocode="1412"/>
-        <entity geocode="1408"/>
-        <entity geocode="1405"/>
-        <entity geocode="1413"/>
+        <include geocode="1412"/>
+        <include geocode="1408"/>
+        <include geocode="1405"/>
+        <include geocode="1413"/>
       </constituency>
     </constituencies>
   </entity>
@@ -1248,28 +1280,28 @@
        เขตเลือกตั้งที่ ๕ ประกอบด้วย อำเภอบึงสามพัน อำเภอหนองไผ่ (เฉพาะเทศบาลตำบลบ่อไทย ตำบลเพชรละคร ตำบลกองทูล ตำบลวังท่าดี ตำบลบ้านโภชน์ ตำบลวังโบสถ์ ตำบลท่าแดง และตำบลท่าด้วง) และอำเภอวิเชียรบุรี (เฉพาะตำบลสามแยก ตำบลซับน้อย ตำบลโคกปรง ตำบลซับสมบูรณ์ และตำบลบึงกระจับ)
        เขตเลือกตั้งที่ ๖ ประกอบด้วย อำเภอศรีเทพ และอำเภอวิเชียรบุรี (เฉพาะเทศบาลตำบลวิเชียรบุรี เทศบาลตำบลพุเตย ตำบลพุเตย ตำบลพุขาม ตำบลท่าโรง ตำบลภูน้ำหยด ตำบลสระประดู่ ตำบลวังใหญ่ ตำบลน้ำร้อน ตำบลยางสาว และตำบลบ่อรัง)
        -->
-  <entity geocode="19" type="Changwat" english="Saraburi">
+  <entity type="Changwat" geocode="19" name="สระบุรี" english="Saraburi">
     <constituencies>
       <constituency index="1">
-        <entity geocode="1901"/>
-        <entity geocode="1913"/>
+        <include geocode="1901"/>
+        <include geocode="1913"/>
       </constituency>
       <constituency index="2">
-        <entity geocode="1911"/>
-        <entity geocode="1912"/>
-        <entity geocode="1902"/>
+        <include geocode="1911"/>
+        <include geocode="1912"/>
+        <include geocode="1902"/>
       </constituency>
       <constituency index="3">
-        <entity geocode="1903"/>
-        <entity geocode="1904"/>
-        <entity geocode="1905"/>
+        <include geocode="1903"/>
+        <include geocode="1904"/>
+        <include geocode="1905"/>
       </constituency>
       <constituency index="4">
-        <entity geocode="1909"/>
-        <entity geocode="1906"/>
-        <entity geocode="1908"/>
-        <entity geocode="1907"/>
-        <entity geocode="1910"/>
+        <include geocode="1909"/>
+        <include geocode="1906"/>
+        <include geocode="1908"/>
+        <include geocode="1907"/>
+        <include geocode="1910"/>
       </constituency>
     </constituencies>
   </entity>
@@ -1292,11 +1324,6 @@
        เขตเลือกตั้งที่ ๕ ประกอบด้วย อำเภอนครไทย อำเภอวัดโบสถ์ และอำเภอชาติตระการ
        
        
-       - ลพบุรี
-       เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองลพบุรี (เฉพาะเทศบาลเมืองลพบุรี เทศบาลเมืองเขาสามยอด เทศบาลตำบลเขาพระงาม เทศบาลตำบลท่าศาลา เทศบาลตำบลโคกตูม เทศบาลตำบลถนนใหญ่ เทศบาลตำบลกกโก ตำบลป่าตาล ตำบลทะเลชุบศร และตำบลท่าแค)
-       เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอเมืองลพบุรี (เฉพาะตำบลบางขันหมาก ตำบลพรหมมาสตร์ ตำบลโพธิ์เก้าต้น ตำบลโก่งธนู ตำบลโคกกะเทียม ตำบลโคกลำพาน ตำบลงิ้วราย ตำบลดอนโพธิ์ ตำบลตะลุง ตำบลบ้านข่อย ตำบลท้ายตลาด ตำบลโพธิ์ตรุ และตำบลสี่คลอง) อำเภอท่าวุ้ง และอำเภอบ้านหมี่
-       เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอโคกสำโรง อำเภอหนองม่วง อำเภอสระโบสถ์ อำเภอโคกเจริญอำเภอชัยบาดาล (เฉพาะตำบลชัยนารายณ์ ตำบลศิลาทิพย์ ตำบลม่วงค่อม ตำบลมะกอกหวาน ตำบลบ้านใหม่สามัคคี และตำบลเขาแหลม)
-       เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอพัฒนานิคม อำเภอท่าหลวง อำเภอลำสนธิ อำเภอชัยบาดาล (เฉพาะเทศบาลตำบลลำนารายณ์ ตำบลห้วยหิน ตำบลลำนารายณ์ ตำบลบัวชุม ตำบลท่าดินดำ ตำบลซับตะเคียน ตำบลนาโสม ตำบลหนองยายโต๊ะ ตำบลเกาะรัง ตำบลท่ามะนาว ตำบลนิคมลำนารายณ์ และตำบลชัยบาดาล)
        
        
        - ปทุมธานี
@@ -1353,37 +1380,37 @@
        เขตเลือกตั้งที่ ๖ ประกอบด้วย อำเภอวานรนิวาส และอำเภอเจริญศิลป์ (ยกเว้นตำบลโคกศิลา)
        เขตเลือกตั้งที่ ๗ ประกอบด้วย อำเภอบ้านม่วง อำเภอคำตากล้า และอำเภออากาศอำนวย (ยกเว้นเทศบาลตำบลบะหว้า และตำบลโพนแพง)
        -->
-  <entity geocode="46" type="Changwat" english="Kalasin">
+  <entity type="Changwat" geocode="46" name="กาฬสินธุ์" english="Kalasin">
     <constituencies>
       <constituency index="1">
-        <entity geocode="4601"/>
+        <include geocode="4601"/>
       </constituency>
       <constituency index="2">
-        <entity geocode="4607"/>
-        <entity geocode="4618"/>
+        <include geocode="4607"/>
+        <include geocode="4618"/>
       </constituency>
       <constituency index="3">
-        <entity geocode="4612"/>
-        <entity geocode="4608"/>
-        <entity geocode="4611"/>
+        <include geocode="4612"/>
+        <include geocode="4608"/>
+        <include geocode="4611"/>
       </constituency>
       <constituency index="4">
-        <entity geocode="4613"/>
-        <entity geocode="4610"/>
-        <entity geocode="4609"/>
-        <entity geocode="4615"/>
+        <include geocode="4613"/>
+        <include geocode="4610"/>
+        <include geocode="4609"/>
+        <include geocode="4615"/>
       </constituency>
       <constituency index="5">
-        <entity geocode="4603"/>
-        <entity geocode="4602"/>
-        <entity geocode="4614"/>
-        <entity geocode="4617"/>
-        <entity geocode="4604"/>
+        <include geocode="4603"/>
+        <include geocode="4602"/>
+        <include geocode="4614"/>
+        <include geocode="4617"/>
+        <include geocode="4604"/>
       </constituency>
       <constituency index="6">
-        <entity geocode="4605"/>
-        <entity geocode="4606"/>
-        <entity geocode="4616"/>
+        <include geocode="4605"/>
+        <include geocode="4606"/>
+        <include geocode="4616"/>
       </constituency>
     </constituencies>
   </entity>
@@ -1491,13 +1518,7 @@
        เขตเลือกตั้งที่ ๗ ประกอบด้วย อำเภอบางละมุง (เฉพาะตำบลหนองปรือ ตำบลโป่ง ตำบลห้วยใหญ่ และตำบลเขาไม้แก้ว)
        เขตเลือกตั้งที่ ๘ ประกอบด้วย อำเภอสัตหีบ
        
-       
-       - ระยอง
-       เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองระยอง (ยกเว้นเทศบาลเมืองมาบตาพุด, เทศบาลตำบลทับมา, และเทศบาลตำบลเนินพระ)
-       เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอแกลง และอำเภอเขาชะเมา
-       เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอบ้านค่าย, อำเภอวังจันทร์, อำเภอปลวกแดง,และอำเภอนิคมพัฒนา (ยกเว้นเทศบาลตำบลมาบข่าพัฒนา และเทศบาลตำบลมาบข่า)
-       เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอเมืองระยอง (เฉพาะเทศบาลเมืองมาบตาพุด,เทศบาลตำบลทับมา, และเทศบาลตำบลเนินพระ) อำเภอนิคมพัฒนา (เฉพาะเทศบาลตำบลมาบข่าพัฒนาและเทศบาลตำบลมาบข่า) และอำเภอบ้านฉาง
-       -->
+             -->
   <!--
        ภาคตะวันตก
        
@@ -1517,295 +1538,229 @@
        เขตเลือกตั้งที่ ๕ ประกอบด้วย อำเภอทองผาภูมิ อำเภอสังขละบุรี อำเภอไทรโยค (เฉพาะ ตำบลลุ่มสุ่ม ตำบลท่าเสา ตำบลสิงห์ ตำบลไทรโยค ตำบลวังกระแจะ และตำบลบ้องตี้) และอำเภอศรีสวัสดิ์ (เฉพาะตำบลนาสวน ตำบลด่านแม่แฉลบ ตำบลหนองเป็ด ตำบลท่ากระดาน และตำบลแม่กระบุง)
        
        -->
-  <entity geocode="80" type="Changwat" english="Nakhon Si Thammarat">
+  <entity type="Changwat" geocode="80" name="นครศรีธรรมราช" english="Nakhon Si Thammarat">
     <constituencies>
       <constituency index="1">
-        <entity geocode="800101" comment="Actually says เทศบาลนครนครศรีธรรมราช"/>
-        <entity geocode="800102" comment="Actually says เทศบาลนครนครศรีธรรมราช"/>
-        <entity geocode="800103" comment="Actually says เทศบาลนครนครศรีธรรมราช"/>
-        <entity geocode="800107" comment="Actually says เทศบาลตำบลปากนคร and ตำบลปากนคร"/>
-        <entity geocode="800118"/>
-        <entity geocode="800115"/>
-        <entity geocode="800112"/>
-        <entity geocode="800108"/>
-        <entity geocode="800121"/>
+        <include geocode="800101" comment="Actually says เทศบาลนครนครศรีธรรมราช"/>
+        <include geocode="800102" comment="Actually says เทศบาลนครนครศรีธรรมราช"/>
+        <include geocode="800103" comment="Actually says เทศบาลนครนครศรีธรรมราช"/>
+        <include geocode="800107" comment="Actually says เทศบาลตำบลปากนคร and ตำบลปากนคร"/>
+        <include geocode="800118"/>
+        <include geocode="800115"/>
+        <include geocode="800112"/>
+        <include geocode="800108"/>
+        <include geocode="800121"/>
       </constituency>
       <constituency index="2">
-        <entity geocode="800119" comment="Actually says เทศบาลตำบลบางจาก and ตำบลบางจาก"/>
-        <entity geocode="800113"/>
-        <entity geocode="800114"/>
-        <entity geocode="800122"/>
-        <entity geocode="800106"/>
-        <entity geocode="8020"/>
-        <entity geocode="801201" comment="Actually says เทศบาลเมืองปากพนัง"/>
-        <entity geocode="801202"/>
-        <entity geocode="801204"/>
-        <entity geocode="801206"/>
-        <entity geocode="801205"/>
-        <entity geocode="801203"/>
-        <entity geocode="801207"/>
-        <entity geocode="801208"/>
-        <entity geocode="801209"/>
-        <entity geocode="801210"/>
-        <entity geocode="801214"/>
+        <include geocode="800119" comment="Actually says เทศบาลตำบลบางจาก and ตำบลบางจาก"/>
+        <include geocode="800113"/>
+        <include geocode="800114"/>
+        <include geocode="800122"/>
+        <include geocode="800106"/>
+        <include geocode="8020"/>
+        <include geocode="801201" comment="Actually says เทศบาลเมืองปากพนัง"/>
+        <include geocode="801202"/>
+        <include geocode="801204"/>
+        <include geocode="801206"/>
+        <include geocode="801205"/>
+        <include geocode="801203"/>
+        <include geocode="801207"/>
+        <include geocode="801208"/>
+        <include geocode="801209"/>
+        <include geocode="801210"/>
+        <include geocode="801214"/>
       </constituency>
       <constituency index="3">
-        <entity geocode="8023"/>
-        <entity geocode="8006"/>
-        <entity geocode="8016"/>
-        <entity geocode="801211"/>
-        <entity geocode="801212"/>
-        <entity geocode="801213"/>
-        <entity geocode="801215"/>
-        <entity geocode="801216"/>
-        <entity geocode="801217"/>
-        <entity geocode="801218"/>
+        <include geocode="8023"/>
+        <include geocode="8006"/>
+        <include geocode="8016"/>
+        <include geocode="801211"/>
+        <include geocode="801212"/>
+        <include geocode="801213"/>
+        <include geocode="801215"/>
+        <include geocode="801216"/>
+        <include geocode="801217"/>
+        <include geocode="801218"/>
       </constituency>
       <constituency index="4">
-        <entity geocode="8007"/>
-        <entity geocode="8019"/>
-        <entity geocode="801301" comment="Actually says เทศบาลตำบลร่อนพิบูลย์"/>
-        <entity geocode="801304" comment="Actually says เทศบาลตำบลเขาชุมทอง"/>
-        <entity geocode="801305"/>
-        <entity geocode="801306"/>
+        <include geocode="8007"/>
+        <include geocode="8019"/>
+        <include geocode="801301" comment="Actually says เทศบาลตำบลร่อนพิบูลย์"/>
+        <include geocode="801304" comment="Actually says เทศบาลตำบลเขาชุมทอง"/>
+        <include geocode="801305"/>
+        <include geocode="801306"/>
       </constituency>
       <constituency index="5">
-        <entity geocode="8009"/>
-        <entity geocode="801001" comment="Actually says เทศบาลตำบลนาบอน and ตำบลนาบอน"/>
-        <entity geocode="801003"/>
+        <include geocode="8009"/>
+        <include geocode="801001" comment="Actually says เทศบาลตำบลนาบอน and ตำบลนาบอน"/>
+        <include geocode="801003"/>
       </constituency>
       <constituency index="6">
-        <entity geocode="8017"/>
-        <entity geocode="8011"/>
-        <entity geocode="8018"/>
-        <entity geocode="800401" comment="Actually says เทศบาลตำบลฉวาง and ตำบลฉวาง"/>
-        <entity geocode="800405" comment="Actually says เทศบาลตำบลไม้เรียง and ตำบลไม้เรียง"/>
-        <entity geocode="800406"/>
-        <entity geocode="800407"/>
-        <entity geocode="801002"/>
+        <include geocode="8017"/>
+        <include geocode="8011"/>
+        <include geocode="8018"/>
+        <include geocode="800401" comment="Actually says เทศบาลตำบลฉวาง and ตำบลฉวาง"/>
+        <include geocode="800405" comment="Actually says เทศบาลตำบลไม้เรียง and ตำบลไม้เรียง"/>
+        <include geocode="800406"/>
+        <include geocode="800407"/>
+        <include geocode="801002"/>
       </constituency>
       <constituency index="7">
-        <entity geocode="8005"/>
-        <entity geocode="8022"/>
-        <entity geocode="8003"/>
-        <entity geocode="801302"/>
-        <entity geocode="801303"/>
-        <entity geocode="800403"/>
-        <entity geocode="800404"/>
-        <entity geocode="800409"/>
-        <entity geocode="800410"/>
-        <entity geocode="800415"/>
-        <entity geocode="800416"/>
+        <include geocode="8005"/>
+        <include geocode="8022"/>
+        <include geocode="8003"/>
+        <include geocode="801302"/>
+        <include geocode="801303"/>
+        <include geocode="800403"/>
+        <include geocode="800404"/>
+        <include geocode="800409"/>
+        <include geocode="800410"/>
+        <include geocode="800415"/>
+        <include geocode="800416"/>
       </constituency>
       <constituency index="8">
-        <entity geocode="800120" comment="Actually says เทศบาลตำบลท่าแพ and ตำบลปากพูน"/>
-        <entity geocode="800116"/>
-        <entity geocode="800801" comment="Actually says เทศบาลตำบลท่าศาลา and ตำบลท่าศาลา"/>
-        <entity geocode="800810"/>
-        <entity geocode="800807"/>
-        <entity geocode="800813"/>
-        <entity geocode="8002"/>
-        <entity geocode="8021"/>
+        <include geocode="800120" comment="Actually says เทศบาลตำบลท่าแพ and ตำบลปากพูน"/>
+        <include geocode="800116"/>
+        <include geocode="800801" comment="Actually says เทศบาลตำบลท่าศาลา and ตำบลท่าศาลา"/>
+        <include geocode="800810"/>
+        <include geocode="800807"/>
+        <include geocode="800813"/>
+        <include geocode="8002"/>
+        <include geocode="8021"/>
       </constituency>
       <constituency index="9">
-        <entity geocode="8015"/>
-        <entity geocode="8014"/>
-        <entity geocode="800802"/>
-        <entity geocode="800803"/>
-        <entity geocode="800804"/>
-        <entity geocode="800806"/>
-        <entity geocode="800809"/>
-        <entity geocode="800811"/>
+        <include geocode="8015"/>
+        <include geocode="8014"/>
+        <include geocode="800802"/>
+        <include geocode="800803"/>
+        <include geocode="800804"/>
+        <include geocode="800806"/>
+        <include geocode="800809"/>
+        <include geocode="800811"/>
       </constituency>
     </constituencies>
   </entity>
-  <entity geocode="96" type="Changwat" english="Narathiwat">
+  <entity type="Changwat" geocode="90" name="สงขลา" english="Songkhla">
     <constituencies>
       <constituency index="1">
-        <entity geocode="9601"/>
-        <entity geocode="9602"/>
+        <include geocode="9001"/>
       </constituency>
       <constituency index="2">
-        <entity geocode="9610"/>
-        <entity geocode="9608"/>
-        <entity geocode="9611"/>
+        <include geocode="901101" comment="Actually says เทศบาลนครหาดใหญ่"/>
+        <include geocode="901105" comment="Actually says เทศบาลเมืองคลองแห"/>
+        <include geocode="901107"/>
       </constituency>
       <constituency index="3">
-        <entity geocode="9605"/>
-        <entity geocode="9612"/>
-        <entity geocode="9613"/>
-        <entity geocode="9609"/>
+        <include geocode="901103" comment="Actually says เทศบาลตำบลคูเต่า"/>
+        <include geocode="901108"/>
+        <include geocode="901111"/>
+        <include geocode="901113"/>
+        <include geocode="901114" comment="Actually says เทศบาลตำบลน้ำน้อย"/>
+        <include geocode="901102" comment="Actually says เทศบาลเมืองควนลัง"/>
+        <include geocode="901112"/>
+        <include geocode="901104" comment="Actually says เทศบาลเมืองคอหงส์"/>
+        <include geocode="9012"/>
       </constituency>
       <constituency index="4">
-        <entity geocode="9603"/>
-        <entity geocode="9604"/>
-        <entity geocode="9606"/>
-        <entity geocode="9607"/>
-      </constituency>
-    </constituencies>
-  </entity>
-  <entity geocode="90" type="Changwat" english="Songkhla">
-    <constituencies>
-      <constituency index="1">
-        <entity geocode="9001"/>
-      </constituency>
-      <constituency index="2">
-        <entity geocode="901101" comment="Actually says เทศบาลนครหาดใหญ่"/>
-        <entity geocode="901105" comment="Actually says เทศบาลเมืองคลองแห"/>
-        <entity geocode="901107"/>
-      </constituency>
-      <constituency index="3">
-        <entity geocode="901103" comment="Actually says เทศบาลตำบลคูเต่า"/>
-        <entity geocode="901108"/>
-        <entity geocode="901111"/>
-        <entity geocode="901113"/>
-        <entity geocode="901114" comment="Actually says เทศบาลตำบลน้ำน้อย"/>
-        <entity geocode="901102" comment="Actually says เทศบาลเมืองควนลัง"/>
-        <entity geocode="901112"/>
-        <entity geocode="901104" comment="Actually says เทศบาลเมืองคอหงส์"/>
-        <entity geocode="9012"/>
-      </constituency>
-      <constituency index="4">
-        <entity geocode="9007"/>
-        <entity geocode="9008"/>
-        <entity geocode="9002"/>
-        <entity geocode="901511"/>
-        <entity geocode="901510"/>
-        <entity geocode="901506" comment="Actually says เทศบาลตำบลชะแล้"/>
-        <entity geocode="901505"/>
-        <entity geocode="901504"/>
+        <include geocode="9007"/>
+        <include geocode="9008"/>
+        <include geocode="9002"/>
+        <include geocode="901511"/>
+        <include geocode="901510"/>
+        <include geocode="901506" comment="Actually says เทศบาลตำบลชะแล้"/>
+        <include geocode="901505"/>
+        <include geocode="901504"/>
       </constituency>
       <constituency index="5">
-        <entity geocode="901507"/>
-        <entity geocode="901508"/>
-        <entity geocode="901503"/>
-        <entity geocode="901501"/>
-        <entity geocode="901509" comment="Actually says เทศบาลเมืองคอหงส์"/>
-        <entity geocode="901502" comment="Actually says เทศบาลเมืองคอหงส์"/>
-        <entity geocode="9013"/>
-        <entity geocode="9014"/>
-        <entity geocode="9009"/>
+        <include geocode="901507"/>
+        <include geocode="901508"/>
+        <include geocode="901503"/>
+        <include geocode="901501"/>
+        <include geocode="901509" comment="Actually says เทศบาลเมืองคอหงส์"/>
+        <include geocode="901502" comment="Actually says เทศบาลเมืองคอหงส์"/>
+        <include geocode="9013"/>
+        <include geocode="9014"/>
+        <include geocode="9009"/>
       </constituency>
       <constituency index="6">
-        <entity geocode="901118"/>
-        <entity geocode="901116" comment="Actually says เทศบาลตำบลบ้านไร่ และ เทศบาลเมืองบ้านพรุ"/>
-        <entity geocode="9016"/>
-        <entity geocode="901001"/>
-        <entity geocode="901002"/>
-        <entity geocode="901003"/>
-        <entity geocode="901005"/>
-        <entity geocode="901006"/>
-        <entity geocode="901007"/>
-        <entity geocode="901009"/>
+        <include geocode="901118"/>
+        <include geocode="901116" comment="Actually says เทศบาลตำบลบ้านไร่ และ เทศบาลเมืองบ้านพรุ"/>
+        <include geocode="9016"/>
+        <include geocode="901001"/>
+        <include geocode="901002"/>
+        <include geocode="901003"/>
+        <include geocode="901005"/>
+        <include geocode="901006"/>
+        <include geocode="901007"/>
+        <include geocode="901009"/>
       </constituency>
       <constituency index="7">
-        <entity geocode="9004"/>
-        <entity geocode="9006"/>
-        <entity geocode="901004"/>
-        <entity geocode="901008" comment="Actually says เทศบาลตำบลสำนักขาม"/>
+        <include geocode="9004"/>
+        <include geocode="9006"/>
+        <include geocode="901004"/>
+        <include geocode="901008" comment="Actually says เทศบาลตำบลสำนักขาม"/>
       </constituency>
       <constituency index="8">
-        <entity geocode="9003"/>
-        <entity geocode="9005"/>
+        <include geocode="9003"/>
+        <include geocode="9005"/>
       </constituency>
     </constituencies>
   </entity>
-  <entity geocode="84" type="Changwat" english="Surat Thani">
+  <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
     <constituencies>
       <constituency index="1">
-        <entity geocode="8401"/>
+        <include geocode="8401"/>
       </constituency>
       <constituency index="2">
-        <entity geocode="840201"/>
-        <entity geocode="840202"/>
-        <entity geocode="840203"/>
-        <entity geocode="840204"/>
-        <entity geocode="840205"/>
-        <entity geocode="840207"/>
-        <entity geocode="840209"/>
-        <entity geocode="840211"/>
-        <entity geocode="8403"/>
-        <entity geocode="8404"/>
-        <entity geocode="8405"/>
+        <include geocode="840201"/>
+        <include geocode="840202"/>
+        <include geocode="840203"/>
+        <include geocode="840204"/>
+        <include geocode="840205"/>
+        <include geocode="840207"/>
+        <include geocode="840209"/>
+        <include geocode="840211"/>
+        <include geocode="8403"/>
+        <include geocode="8404"/>
+        <include geocode="8405"/>
       </constituency>
       <constituency index="3">
-        <entity geocode="8412"/>
-        <entity geocode="840212"/>
-        <entity geocode="840206"/>
-        <entity geocode="840210"/>
-        <entity geocode="840208"/>
-        <entity geocode="840213"/>
-        <entity geocode="8415"/>
+        <include geocode="8412"/>
+        <include geocode="840212"/>
+        <include geocode="840206"/>
+        <include geocode="840210"/>
+        <include geocode="840208"/>
+        <include geocode="840213"/>
+        <include geocode="8415"/>
       </constituency>
       <constituency index="4">
-        <entity geocode="8417"/>
-        <entity geocode="8413"/>
-        <entity geocode="840806"/>
-        <entity geocode="840807"/>
-        <entity geocode="840808"/>
-        <entity geocode="840809"/>
-        <entity geocode="840810"/>
-        <entity geocode="841401"/>
-        <entity geocode="841402"/>
-        <entity geocode="841403"/>
-        <entity geocode="841404"/>
+        <include geocode="8417"/>
+        <include geocode="8413"/>
+        <include geocode="840806"/>
+        <include geocode="840807"/>
+        <include geocode="840808"/>
+        <include geocode="840809"/>
+        <include geocode="840810"/>
+        <include geocode="841401"/>
+        <include geocode="841402"/>
+        <include geocode="841403"/>
+        <include geocode="841404"/>
       </constituency>
       <constituency index="5">
-        <entity geocode="8416"/>
-        <entity geocode="8418"/>
-        <entity geocode="8410"/>
-        <entity geocode="8409"/>
-        <entity geocode="841405"/>
+        <include geocode="8416"/>
+        <include geocode="8418"/>
+        <include geocode="8410"/>
+        <include geocode="8409"/>
+        <include geocode="841405"/>
       </constituency>
       <constituency index="6">
-        <entity geocode="8406"/>
-        <entity geocode="8407"/>
-        <entity geocode="8411"/>
-        <entity geocode="8419"/>
-        <entity geocode="840801"/>
-        <entity geocode="840803"/>
-        <entity geocode="840802"/>
-      </constituency>
-    </constituencies>
-  </entity>
-  <entity geocode="94" type="Changwat" english="Pattani" >
-    <constituencies>
-      <constituency index="1" >
-        <entity geocode="9401" />
-        <entity geocode="940901" />
-        <entity geocode="940902" />
-        <entity geocode="940906" />
-        <entity geocode="940907" />
-        <entity geocode="940908" />
-        <entity geocode="940909" />
-        <entity geocode="940911" />
-        <entity geocode="940912" />
-        <entity geocode="940916" />
-        <entity geocode="940918" />
-      </constituency>
-      <constituency index="2" >
-        <entity geocode="9403" />
-        <entity geocode="9402" />
-        <entity geocode="9412" />
-      </constituency>
-      <constituency index="3" >
-        <entity geocode="9404" />
-        <entity geocode="9407" />
-        <entity geocode="9408" />
-        <entity geocode="9411" />
-        <entity geocode="940910"/>
-        <entity geocode="940915"/>
-        <entity geocode="940903"/>
-        <entity geocode="940917"/>
-        <entity geocode="940914"/>
-        <entity geocode="940905"/>
-        <entity geocode="940913"/>
-        <entity geocode="940904"/>
-      </constituency>
-      <constituency index="4" >
-        <entity geocode="9405" />
-        <entity geocode="9406" />
-        <entity geocode="9410" />
+        <include geocode="8406"/>
+        <include geocode="8407"/>
+        <include geocode="8411"/>
+        <include geocode="8419"/>
+        <include geocode="840801"/>
+        <include geocode="840803"/>
+        <include geocode="840802"/>
       </constituency>
     </constituencies>
   </entity>
