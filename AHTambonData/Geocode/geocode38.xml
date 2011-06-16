@@ -14,7 +14,7 @@
   </office>
   <office type="PAOOffice">
   </office>
-  <entity type="Amphoe" name="บึงกาฬ" english="Bueng Kan" geocode="3801">
+  <entity type="Amphoe" name="เมืองบึงกาฬ" english="Mueang Bueng Kan" geocode="3801">
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.3581</geo:lat>
@@ -43,8 +43,25 @@
         </geo:Point>
       </office>
     </entity>
-    <entity type="Tambon" name="หนองเข็ง" english="Nong Kheng" geocode="430304" />
-    <entity type="Tambon" name="หอคำ" english="Ho Kham" geocode="430305" />
+    <entity type="Tambon" name="โนนสว่าง" english="Non Sawang" geocode="430304" >
+      <history>
+        <rename oldname="หนองเข็ง" oldenglish="Nong Kheng" name="โนนสว่าง" english="Non Sawang" effective="2011-03-04"/>
+      </history>
+      <entity type="Muban" geocode="43030401" name="บ้านโนนสว่าง"/>
+      <entity type="Muban" geocode="43030402" name="บ้านชัยบาดาล"/>
+      <entity type="Muban" geocode="43030403" name="บ้านสรรทวี"/>
+      <entity type="Muban" geocode="43030404" name="บ้านนาดี"/>
+      <entity type="Muban" geocode="43030405" name="บ้านดอนปอ"/>
+      <entity type="Muban" geocode="43030406" name="บ้านหนองดินดำ"/>
+      <entity type="Muban" geocode="43030407" name="บ้านบูรพา"/>
+      <entity type="Muban" geocode="43030408" name="บ้านหนองไฮ"/>
+      <entity type="Muban" geocode="43030409" name="บ้านพรนิยม"/>
+      <entity type="Muban" geocode="43030410" name="บ้านโนนงาม"/>
+      <entity type="Muban" geocode="43030411" name="บ้านโนนดู่"/>
+    </entity>
+    <entity type="Tambon" name="หอคำ" english="Ho Kham" geocode="430305">
+      <entity type="Muban" name="บ้านหนองเข็ง" english="Ban Nong Kheng" geocode="43030503"/>
+    </entity>
     <entity type="Tambon" name="หนองเลิง" english="Nong Loeng" geocode="430306" />
     <entity type="Tambon" name="โคกก่อง" english="Khok Kong" geocode="430307" >
       <office type="MunicipalityOffice">
@@ -476,6 +493,21 @@
       </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="หนองเข็ง" english="Nong Kheng" geocode="4379" parent="4303" tambon="430304" />
-  <entity type="ThesabanTambon" name="หอคำ" english="Ho Kham" geocode="4377" parent="4303" tambon="430305" />
+  <entity type="ThesabanTambon" name="หนองเข็ง" english="Nong Kheng" geocode="4379" parent="4303" tambon="430304" >
+    <office type="MunicipalityOffice">
+      <url>http://nongkheng.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สมาน สวัสดิ์นที" comment="2010"/>
+        <official title="TAOMayor" name="สมาน สวัสดิ์นที" comment="2008"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หอคำ" english="Ho Kham" geocode="4377" parent="4303" tambon="430305" >
+    <office type="MunicipalityOffice">
+      <!-- Longdo: 18.43348 103.43437 -->
+      <officials>
+        <official title="TAOMayor" name="นายอัมพร	ชัยเสนา" comment="2008"/>
+      </officials>
+    </office>
+  </entity>
 </entity>
