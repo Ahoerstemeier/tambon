@@ -100,13 +100,16 @@
       <xs:enumeration value="elected"/>
       <xs:enumeration value="redcard"/>
       <xs:enumeration value="yellowcard"/>
+      <xs:enumeration value="disqualified"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="Candidate">
     <xs:attribute name="party" type="xs:nonNegativeInteger" use="optional"/>
     <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="title" type="xs:string" use="optional"/>
     <xs:attribute name="english" type="xs:string" use="optional"/>
     <xs:attribute name="status" type="ElectionStatus" use="optional"/>
+    <xs:attribute name="comment" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:complexType name="CandidateListEntry">
     <xs:complexContent>
