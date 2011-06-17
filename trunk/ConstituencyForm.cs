@@ -217,15 +217,26 @@ namespace De.AHoerstemeier.Tambon
             if ( lDlg.ShowDialog() == DialogResult.OK )
             {
                 PopulationData lData = null;
-
-                StreamReader lReader = new StreamReader(lDlg.FileName);
-                XmlDocument lXmlDoc = new XmlDocument();
-                lXmlDoc.LoadXml(lReader.ReadToEnd());
-                foreach ( XmlNode lNode in lXmlDoc.ChildNodes )
+                StreamReader lReader = null;
+                try
                 {
-                    if ( lNode.Name == "electiondata" )
+
+                    lReader = new StreamReader(lDlg.FileName);
+                    XmlDocument lXmlDoc = new XmlDocument();
+                    lXmlDoc.LoadXml(lReader.ReadToEnd());
+                    foreach ( XmlNode lNode in lXmlDoc.ChildNodes )
                     {
-                        lData = PopulationData.Load(lNode);
+                        if ( lNode.Name == "electiondata" )
+                        {
+                            lData = PopulationData.Load(lNode);
+                        }
+                    }
+                }
+                finally
+                {
+                    if ( lReader != null )
+                    {
+                        lReader.Dispose();
                     }
                 }
                 if ( (lData != null) && (lData.Data != null) )
@@ -254,7 +265,8 @@ namespace De.AHoerstemeier.Tambon
                         }
                         if ( (lPopulation > 0) && (lEntry.Total > 0) )
                         {
-                            Debug.Assert(lPopulation == lEntry.Total, "Population for " + lEntry.English + " does not sum up");
+                            Int32 lPopulationDiff = lPopulation - lEntry.Total;
+                            Debug.Assert(lPopulationDiff == 0, "Population for " + lEntry.English + " does not sum up, off by " + lPopulationDiff.ToString());
                         }
                     }
 
