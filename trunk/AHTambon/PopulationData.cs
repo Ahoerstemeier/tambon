@@ -270,7 +270,7 @@ namespace De.AHoerstemeier.Tambon
                 LoadXMLThesaban(iNode);
             }
         }
-        internal static PopulationData Load(XmlNode iNode)
+        public static PopulationData Load(XmlNode iNode)
         {
             PopulationData RetVal = null;
 

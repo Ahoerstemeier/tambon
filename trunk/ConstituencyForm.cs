@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Xml;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -215,37 +216,51 @@ namespace De.AHoerstemeier.Tambon
             lDlg.Filter = "XML Files|*.xml|All files|*.*";
             if ( lDlg.ShowDialog() == DialogResult.OK )
             {
-                PopulationData lData = PopulationData.Load(lDlg.FileName);
-                Int32 lYear = Convert.ToInt32(edtYear.Value);
-                PopulationDataEntry lDataEntry = GetPopulationData(lYear);
-                if ( rbxNational.Checked && chkBuengKan.Checked )
-                {
-                    ModifyPopulationDataForBuengKan(lDataEntry);
-                }
-                var lList = lData.Data.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
-                foreach ( PopulationDataEntry lEntry in lList )
-                {
-                    Int32 lPopulation = 0;
-                    PopulationDataEntry lSourcePopulationdataEntry = lDataEntry.FindByCode(lEntry.Geocode);
-                    if ( lSourcePopulationdataEntry != null )
-                    {
-                        lSourcePopulationdataEntry.CalculateNumbersFromSubEntities();
-                        lEntry.CopyPopulationDataFrom(lSourcePopulationdataEntry);
-                    }
-                    foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
-                    {
-                        GetPopulationData(lDataEntry, lConstituency.AdministrativeEntities);
-                        GetPopulationData(lDataEntry, lConstituency.ExcludedAdministrativeEntities);
-                        lPopulation += lConstituency.Population();
-                    }
-                    if ( (lPopulation > 0) && (lEntry.Total > 0) )
-                    {
-                        Debug.Assert(lPopulation == lEntry.Total, "Population for " + lEntry.English + " does not sum up");
-                    }
-                }
+                PopulationData lData = null;
 
-                ConstituencyStatisticsViewer lDialog = new ConstituencyStatisticsViewer(lData.Data);
-                lDialog.Show();
+                StreamReader lReader = new StreamReader(lDlg.FileName);
+                XmlDocument lXmlDoc = new XmlDocument();
+                lXmlDoc.LoadXml(lReader.ReadToEnd());
+                foreach ( XmlNode lNode in lXmlDoc.ChildNodes )
+                {
+                    if ( lNode.Name == "electiondata" )
+                    {
+                        lData = PopulationData.Load(lNode);
+                    }
+                }
+                if ( (lData != null) && (lData.Data != null) )
+                {
+                    Int32 lYear = Convert.ToInt32(edtYear.Value);
+                    PopulationDataEntry lDataEntry = GetPopulationData(lYear);
+                    if ( rbxNational.Checked && chkBuengKan.Checked )
+                    {
+                        ModifyPopulationDataForBuengKan(lDataEntry);
+                    }
+                    var lList = lData.Data.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
+                    foreach ( PopulationDataEntry lEntry in lList )
+                    {
+                        Int32 lPopulation = 0;
+                        PopulationDataEntry lSourcePopulationdataEntry = lDataEntry.FindByCode(lEntry.Geocode);
+                        if ( lSourcePopulationdataEntry != null )
+                        {
+                            lSourcePopulationdataEntry.CalculateNumbersFromSubEntities();
+                            lEntry.CopyPopulationDataFrom(lSourcePopulationdataEntry);
+                        }
+                        foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
+                        {
+                            GetPopulationData(lDataEntry, lConstituency.AdministrativeEntities);
+                            GetPopulationData(lDataEntry, lConstituency.ExcludedAdministrativeEntities);
+                            lPopulation += lConstituency.Population();
+                        }
+                        if ( (lPopulation > 0) && (lEntry.Total > 0) )
+                        {
+                            Debug.Assert(lPopulation == lEntry.Total, "Population for " + lEntry.English + " does not sum up");
+                        }
+                    }
+
+                    ConstituencyStatisticsViewer lDialog = new ConstituencyStatisticsViewer(lData.Data);
+                    lDialog.Show();
+                }
             }
         }
 
