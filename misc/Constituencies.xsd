@@ -117,7 +117,7 @@
     <xs:complexContent>
       <xs:extension base="Candidate">
         <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
-        <xs:attribute name="votes" type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="votes" type="xs:positiveInteger" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
