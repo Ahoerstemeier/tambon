@@ -9,23 +9,31 @@ namespace De.AHoerstemeier.Tambon
     {
         Unknown,
         Changwat,
-        Amphoe, KingAmphoe,
+        Amphoe,
+        KingAmphoe,
         Tambon,
         Muban,
         Thesaban, // actually not a type, but a mistake in DOPA population of Nong Khai where they forgot the type
-        ThesabanNakhon, ThesabanMueang, ThesabanTambon,
+        ThesabanNakhon,
+        ThesabanMueang,
+        ThesabanTambon,
         Khet,
         Khwaeng,
-        SakhaTambon, SakhaKhwaeng, Sakha,
+        SakhaTambon,
+        SakhaKhwaeng,
+        Sakha,
         Monthon,
         Sukhaphiban,
-        SukhaphibanTambon, SukhaphibanMueang,
-        Mueang, Bangkok,
+        SukhaphibanTambon,
+        SukhaphibanMueang,
+        Mueang,
+        Bangkok,
         Chumchon,
         TAO,
         TC,
         PAO,
-        Phak, KlumChangwat,
+        Phak,
+        KlumChangwat,
         Constituency
     };
     public enum EntityModification
@@ -74,7 +82,7 @@ namespace De.AHoerstemeier.Tambon
         MajorGeneral,
         Colonel,
         LieutenantColonel,
-        Major, 
+        Major,
         Captain,
         FirstLieutenant,
         SecondLieutenant,
@@ -95,7 +103,7 @@ namespace De.AHoerstemeier.Tambon
         DistrictMuseum // ???
     }
     public enum GazetteSignPosition
-    { 
+    {
         Unknown,
         PrimeMinister,
         DeputyPrimeMinister,
@@ -118,6 +126,8 @@ namespace De.AHoerstemeier.Tambon
         Mayor,
         TAOMayor,
         TAOChairman,
-        PAOChairman
+        PAOChairman,
+        MunicipalPermanentSecretary,
+        MinistryOfInteriorDeputyPermanentSecretary
     }
 }
