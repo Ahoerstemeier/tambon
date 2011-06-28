@@ -283,7 +283,10 @@ namespace De.AHoerstemeier.Tambon
             {
                 PopulationDataEntry lPopulationdataEntry = iPopulation.FindByCode(lConstituencyEntry.Geocode);
                 Debug.Assert(lPopulationdataEntry != null, "Entity with code " + lConstituencyEntry.Geocode.ToString() + " not found");
-                lNewEntityList.Add(lPopulationdataEntry);
+                if ( lPopulationdataEntry != null )
+                {
+                    lNewEntityList.Add(lPopulationdataEntry);
+                }
             }
             iData.Clear();
             iData.AddRange(lNewEntityList);
