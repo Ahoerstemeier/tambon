@@ -1025,21 +1025,23 @@
         </constituency>
       </constituencies>
     </entity>
-    <!-- Lopburi - does not sum up due to Thesaban and non-municipal Tambon in separate constituencies -->
     <entity type="Changwat" geocode="16" name="ลพบุรี" english="Lop Buri" >
       <constituencies>
-        <constituency index="1" comment="อำเภอเมืองลพบุรี (เฉพาะเทศบาลเมืองลพบุรี เทศบาลเมืองเขาสามยอด เทศบาลตำบลเขาพระงาม เทศบาลตำบลท่าศาลา เทศบาลตำบลโคกตูม เทศบาลตำบลถนนใหญ่ เทศบาลตำบลกกโก ตำบลป่าตาล ตำบลทะเลชุบศร และตำบลท่าแค)">
-          <include geocode="160102" comment="Actually says เทศบาลเมืองลพบุรี, but ทะเลชุบศร is included as Tambon later anyway"/>
+        <constituency index="1" comment="อำเภอเมืองลพบุรี (เฉพาะเทศบาลเมืองลพบุรี เทศบาลเมืองเขาสามยอด เทศบาลตำบลเขาพระงาม เทศบาลตำบลท่าศาลา เทศบาลตำบลโคกตูม เทศบาลตำบลถนนใหญ่ เทศบาลตำบลกกโก ตำบลป่าตาล ตำบลทะเลชุบศร และ ตำบลท่าแค)">
+          <include geocode="1699"/>
           <include geocode="160106"/>
           <include geocode="160105"/>
+          <include geocode="160115"/>
           <include geocode="1696"/>
           <include geocode="160125"/>
           <include geocode="160103"/>
           <include geocode="160120"/>
-          <include geocode="160101"/>
+          <include geocode="160101">
+            <exclude geocode="1699"/>
+          </include>
           <include geocode="160114"/>
         </constituency>
-        <constituency index="2" comment="อำเภอเมืองลพบุรี (เฉพาะตำบลบางขันหมาก ตำบลพรหมมาสตร์ ตำบลโพธิ์เก้าต้น ตำบลโก่งธนู ตำบลโคกกะเทียม ตำบลโคกลำพาน ตำบลงิ้วราย ตำบลดอนโพธิ์ ตำบลตะลุง ตำบลบ้านข่อย ตำบลท้ายตลาด ตำบลโพธิ์ตรุ และตำบลสี่คลอง) อำเภอท่าวุ้ง และอำเภอบ้านหมี่">
+        <constituency index="2" comment="อำเภอเมืองลพบุรี (เฉพาะตำบลบางขันหมาก ตำบลพรหมมาสตร์ ตำบลโพธิ์เก้าต้น ตำบลโก่งธนู ตำบลโคกกะเทียม ตำบลโคกลำพาน ตำบลงิ้วราย ตำบลดอนโพธิ์ ตำบลตะลุง ตำบลบ้านข่อย ตำบลท้ายตลาด ตำบลโพธิ์ตรุ และ ตำบลสี่คลอง) อำเภอท่าวุ้ง และอำเภอบ้านหมี่">
           <include geocode="160117"/>
           <include geocode="160121"/>
           <include geocode="160122"/>
@@ -1056,24 +1058,28 @@
           <include geocode="1605"/>
           <include geocode="1606"/>
         </constituency>
-        <constituency index="3" comment="อำเภอโคกสำโรง อำเภอหนองม่วง อำเภอสระโบสถ์ อำเภอโคกเจริญ อำเภอชัยบาดาล (เฉพาะตำบลชัยนารายณ์ ตำบลศิลาทิพย์ ตำบลม่วงค่อม ตำบลมะกอกหวาน ตำบลบ้านใหม่สามัคคี และตำบลเขาแหลม)">
+        <constituency index="3" comment="อำเภอโคกสำโรง อำเภอหนองม่วง อำเภอสระโบสถ์ อำเภอโคกเจริญ อำเภอชัยบาดาล (เฉพาะตำบลชัยนารายณ์ ตำบลศิลาทิพย์ ตำบลม่วงค่อม ตำบลมะกอกหวาน ตำบลบ้านใหม่สามัคคี และ ตำบลเขาแหลม)">
           <include geocode="1603"/>
           <include geocode="1611"/>
           <include geocode="1608"/>
           <include geocode="1609"/>
-          <include geocode="160402" comment="Only non-municipal!"/>
+          <include geocode="160402" comment="Only non-municipal!">
+            <exclude geocode="1692"/>
+          </include>
           <include geocode="160403"/>
           <include geocode="160405"/>
           <include geocode="160408"/>
           <include geocode="160419"/>
           <include geocode="160422"/>
         </constituency>
-        <constituency index="4" comment="อำเภอพัฒนานิคม อำเภอท่าหลวง อำเภอลำสนธิ อำเภอชัยบาดาล (เฉพาะเทศบาลตำบลลำนารายณ์ ตำบลห้วยหิน ตำบลลำนารายณ์ ตำบลบัวชุม ตำบลท่าดินดำ ตำบลซับตะเคียน ตำบลนาโสม ตำบลหนองยายโต๊ะ ตำบลเกาะรัง ตำบลท่ามะนาว ตำบลนิคมลำนารายณ์ และตำบลชัยบาดาล)">
+        <constituency index="4" comment="อำเภอพัฒนานิคม อำเภอท่าหลวง อำเภอลำสนธิ อำเภอชัยบาดาล (เฉพาะเทศบาลตำบลลำนารายณ์ ตำบลห้วยหิน ตำบลลำนารายณ์ ตำบลบัวชุม ตำบลท่าดินดำ ตำบลซับตะเคียน ตำบลนาโสม ตำบลหนองยายโต๊ะ ตำบลเกาะรัง ตำบลท่ามะนาว ตำบลนิคมลำนารายณ์ และ ตำบลชัยบาดาล)">
           <include geocode="1602"/>
           <include geocode="1607"/>
           <include geocode="1610"/>
           <include geocode="1692"/>
-          <include geocode="160401" comment="Only non-municipal"/>
+          <include geocode="160401" comment="Only non-municipal">
+            <exclude geocode="1692"/>
+          </include>
           <include geocode="160404"/>
           <include geocode="160406"/>
           <include geocode="160407"/>
@@ -1090,32 +1096,36 @@
     <!-- Lampang - does not sum up because of Thesaban -->
     <entity type="Changwat" geocode="52" name="ลำปาง" english="Lampang">
       <constituencies>
-        <constituency index="1" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลนครลำปาง ตำบลบ้านค่า ตำบลบ้านเอื้อม ตำบลบ้านเป้า ตำบลบ่อแฮ้ว ตำบลนิคมพัฒนา ตำบลทุ่งฝาย ตำบลต้นธงชัย และตำบลบุญนาคพัฒนา)">
+        <constituency index="1" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลนครลำปาง ตำบลบ้านค่า ตำบลบ้านเอื้อม ตำบลบ้านเป้า ตำบลบ่อแฮ้ว ตำบลนิคมพัฒนา ตำบลทุ่งฝาย ตำบลต้นธงชัย และ ตำบลบุญนาคพัฒนา)">
           <include geocode="5299"/>
           <include geocode="520115"/>
           <include geocode="520113"/>
           <include geocode="520114"/>
-          <include geocode="520116"/>
+          <include geocode="520116">
+            <exclude geocode="5299"/>
+          </include>
           <include geocode="520118"/>
           <include geocode="520112"/>
           <include geocode="520117"/>
           <include geocode="520119"/>
         </constituency>
-        <constituency index="2" comment="อำเภอเมืองลำปาง (เฉพาะตำบลบ้านแลง) อำเภองาว อำเภอวังเหนือ อำเภอแจ้ห่ม และอำเภอเมืองปาน">
+        <constituency index="2" comment="อำเภอเมืองลำปาง (เฉพาะตำบลบ้านแลง) อำเภองาว อำเภอวังเหนือ อำเภอแจ้ห่ม และ อำเภอเมืองปาน">
           <include geocode="520109"/>
           <include geocode="5205"/>
           <include geocode="5207"/>
           <include geocode="5206"/>
           <include geocode="5213"/>
         </constituency>
-        <constituency index="3" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลเมืองเขลางค์นคร ตำบลพิชัย และตำบลบ้านเสด็จ) อำเภอแม่ทะ และอำเภอแม่เมาะ">
+        <constituency index="3" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลเมืองเขลางค์นคร ตำบลพิชัย และ ตำบลบ้านเสด็จ) อำเภอแม่ทะ และ อำเภอแม่เมาะ">
           <include geocode="5298"/>
-          <include geocode="520111"/>
+          <include geocode="520111">
+            <exclude geocode="5299"/>
+          </include>
           <include geocode="520110"/>
           <include geocode="5210"/>
           <include geocode="5202"/>
         </constituency>
-        <constituency index="4" comment="อำเภอเกาะคา อำเภอสบปราบ อำเภอแม่พริก อำเภอเสริมงาม และอำเภอเถิน">
+        <constituency index="4" comment="อำเภอเกาะคา อำเภอสบปราบ อำเภอแม่พริก อำเภอเสริมงาม และ อำเภอเถิน">
           <include geocode="5203"/>
           <include geocode="5211"/>
           <include geocode="5209"/>
@@ -1281,18 +1291,31 @@
       </constituencies>
 
     </entity>
-    <!-- Nakhon Pathom: Should not sum up due to Thesaban, but does??? -->
     <entity type="Changwat" geocode="73" name="นครปฐม" english="Nakhon Pathom" >
       <constituencies>
         <constituency index="1" comment="อำเภอเมืองนครปฐม (เฉพาะเทศบาลนครนครปฐม ตำบลนครปฐม ตำบลลำพยา ตำบลบ่อพลับ ตำบลหนองปากโลง ตำบลสนามจันทร์ ตำบลพระประโทน ตำบลห้วยจรเข้ ตำบลโพรงมะเดื่อ ตำบลหนองดินแดง ตำบลสวนป่าน ตำบลสระกะเทียม และตำบลวังตะกู)">
           <include geocode="7399"/>
-          <include geocode="730111"/>
-          <include geocode="730119"/>
-          <include geocode="730110"/>
-          <include geocode="730113"/>
-          <include geocode="730107"/>
-          <include geocode="730103"/>
-          <include geocode="730122"/>
+          <include geocode="730111">
+            <exclude geocode="7399"/>
+          </include>
+          <include geocode="730119">
+            <exclude geocode="7399"/>
+          </include>
+          <include geocode="730110">
+            <exclude geocode="7399"/>
+          </include>
+          <include geocode="730113">
+            <exclude geocode="7399"/>
+          </include>
+          <include geocode="730107">
+            <exclude geocode="7399"/>
+          </include>
+          <include geocode="730103">
+            <exclude geocode="7399"/>
+          </include>
+          <include geocode="730122">
+            <exclude geocode="7399"/>
+          </include>
           <include geocode="730118"/>
           <include geocode="730116"/>
           <include geocode="730121"/>
@@ -1316,7 +1339,9 @@
           <include geocode="730108"/>
           <include geocode="730109"/>
           <include geocode="730104"/>
-          <include geocode="730102" comment="Only non-municipal!"/>
+          <include geocode="730102" comment="Only non-municipal!">
+            <exclude geocode="7399"/>
+          </include>
           <include geocode="730114"/>
           <include geocode="730117"/>
           <include geocode="730115"/>
@@ -2201,10 +2226,11 @@
         </constituency>
       </constituencies>
     </entity>
+    <!-- Songkhla: does not sum up due to Thesaban -->
     <entity type="Changwat" geocode="90" name="สงขลา" english="Songkhla">
       <constituencies>
-        <constituency index="1">
-          <include geocode="9001" comment="อําเภอเมืองสงขลา"/>
+        <constituency index="1" comment="อําเภอเมืองสงขลา">
+          <include geocode="9001"/>
         </constituency>
         <constituency index="2" comment="อําเภอหาดใหญ่ (เฉพาะ เทศบาลนครหาดใหญ่ เทศบาลเมืองคลองแห และตําบลคลองอู่ตะเภา) ">
           <include geocode="901101" comment="Actually says เทศบาลนครหาดใหญ่"/>
@@ -2485,21 +2511,33 @@
           <include geocode="4199"/>
           <include geocode="4194"/>
           <include geocode="410117"/>
-          <include geocode="410112"/>
+          <include geocode="410112" comment="Only part not in เทศบาลเมืองหนองสำโรง">
+            <exclude geocode="4194"/>
+          </include>
         </constituency>
         <constituency index="2" comment="อำเภอเมืองอุดรธานี (เฉพาะตำบลนิคมสงเคราะห์ ตำบลหนองบัว ตำบลนาดี ตำบลเชียงพิณ ตำบลโนนสูง ตำบลหมูม่น ตำบลเชียงยืน ตำบลหนองนาคำ ตำบลกุดสระ ตำบลสามพร้าว ตำบลบ้านจั่น ตำบลหนองขอนกว้าง ตำบลโคกสะอาด และ ตำบลหนองไผ่)">
           <include geocode="410102"/>
-          <include geocode="410104"/>
-          <include geocode="410111"/>
-          <include geocode="410113"/>
+          <include geocode="410104" comment="Only part not in เทศบาลนครอุดรธานี">
+            <exclude geocode="4199"/>
+          </include>
+          <include geocode="410111" comment="Only part not in เทศบาลเมืองหนองสำโรง">
+            <exclude geocode="4194"/>
+          </include>
+          <include geocode="410113" comment="Only part not in เทศบาลเมืองหนองสำโรง">
+            <exclude geocode="4194"/>
+          </include>
           <include geocode="410106"/>
-          <include geocode="410107"/>
+          <include geocode="410107" comment="Only part not in เทศบาลเมืองหนองสำโรง">
+            <exclude geocode="4194"/>
+          </include>
           <include geocode="410108"/>
           <include geocode="410109"/>
           <include geocode="410110"/>
           <include geocode="410114"/>
           <include geocode="410117"/>
-          <include geocode="410118"/>
+          <include geocode="410118" comment="Only part not in เทศบาลนครอุดรธานี">
+            <exclude geocode="4199"/>
+          </include>
           <include geocode="410119"/>
           <include geocode="410121"/>
         </constituency>
@@ -2537,9 +2575,9 @@
             <exclude geocode="410406"/>
             <exclude geocode="410404"/>
           </include>
-            <include geocode="4105"/>
+          <include geocode="4105"/>
           <include geocode="4121"/>
-        </constituency>        
+        </constituency>
         <constituency index="8" comment="อำเภอเมืองอุดรธานี (เฉพาะตำบลหนองไฮ และ ตำบลบ้านตาด) อำเภอบ้านผือ (เฉพาะตำบลคำบง ตำบลเขือน้ำ และ ตำบลหนองหัวคู) อำเภอกุดจับ และ อำเภอหนองวัวซอ">
           <include geocode="410115"/>
           <include geocode="410105"/>
