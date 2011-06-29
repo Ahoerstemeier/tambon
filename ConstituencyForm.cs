@@ -250,28 +250,7 @@ namespace De.AHoerstemeier.Tambon
                     var lList = lData.Data.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
                     foreach ( PopulationDataEntry lEntry in lList )
                     {
-                        Int32 lPopulation = 0;
-                        PopulationDataEntry lSourcePopulationdataEntry = lDataEntry.FindByCode(lEntry.Geocode);
-                        if ( lSourcePopulationdataEntry != null )
-                        {
-                            lSourcePopulationdataEntry.CalculateNumbersFromSubEntities();
-                            lEntry.CopyPopulationDataFrom(lSourcePopulationdataEntry);
-                        }
-                        foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
-                        {
-                            GetPopulationData(lSourcePopulationdataEntry, lConstituency.AdministrativeEntities);
-                            foreach ( var lKeyValuePair in lConstituency.ExcludedAdministrativeEntities )
-                            {
-                                PopulationDataEntry lSourceSubEntity = lDataEntry.FindByCode(lKeyValuePair.Key.Geocode);
-                                GetPopulationData(lSourceSubEntity, lKeyValuePair.Value);
-                            }
-                            lPopulation += lConstituency.Population();
-                        }
-                        if ( (lPopulation > 0) && (lEntry.Total > 0) )
-                        {
-                            Int32 lPopulationDiff = lPopulation - lEntry.Total;
-                            Debug.Assert(lPopulationDiff == 0, "Population for " + lEntry.English + " does not sum up, off by " + lPopulationDiff.ToString());
-                        }
+                        lEntry.CopyPopulationToConstituencies(lDataEntry);
                     }
 
                     ConstituencyStatisticsViewer lDialog = new ConstituencyStatisticsViewer(lData.Data);
@@ -280,41 +259,6 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        private static void GetPopulationData(PopulationDataEntry iPopulation, List<PopulationDataEntry> iData)
-        {
-            if ( iPopulation == null )
-            {
-                throw new ArgumentNullException("iPopulation", "No source for population data");
-            }
-            List<PopulationDataEntry> lNewEntityList = new List<PopulationDataEntry>();
-            List<PopulationDataEntry> lThesabanList = new List<PopulationDataEntry>();
-            if ( iPopulation.Type == EntityType.Changwat )
-            {
-                lThesabanList = iPopulation.ThesabanList();
-            }
-            foreach ( PopulationDataEntry lConstituencyEntry in iData )
-            {
-                PopulationDataEntry lPopulationdataEntry = null;
-                foreach ( PopulationDataEntry lThesaban in lThesabanList )
-                {
-                    if ( lThesaban.Geocode == lConstituencyEntry.Geocode )
-                    {
-                        lPopulationdataEntry = lThesaban;
-                    }
-                }
-                if ( lPopulationdataEntry == null )
-                {
-                    lPopulationdataEntry = iPopulation.FindByCode(lConstituencyEntry.Geocode);
-                }
-                Debug.Assert(lPopulationdataEntry != null, "Entity with code " + lConstituencyEntry.Geocode.ToString() + " not found");
-                if ( lPopulationdataEntry != null )
-                {
-                    lNewEntityList.Add(lPopulationdataEntry);
-                }
-            }
-            iData.Clear();
-            iData.AddRange(lNewEntityList);
-        }
 
     }
 }

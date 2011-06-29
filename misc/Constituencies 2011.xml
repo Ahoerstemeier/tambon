@@ -993,34 +993,43 @@
     <!-- Rayong - does not sum up due to Thesaban  How to limit Map Tha Phut to one district? -->
     <entity type="Changwat" geocode="21" name="ระยอง" english="Rayong" >
       <constituencies>
-        <constituency index="1" comment="อำเภอเมืองระยอง (ยกเว้นเทศบาลเมืองมาบตาพุด, เทศบาลตำบลทับมา, และเทศบาลตำบลเนินพระ)">
+        <constituency index="1" comment="อำเภอเมืองระยอง (ยกเว้นเทศบาลเมืองมาบตาพุด, เทศบาลตำบลทับมา และ เทศบาลตำบลเนินพระ)">
           <include geocode="2101">
+            <exclude geocode="2197" comment="เทศบาลเมืองมาบตาพุด"/>
+            <exclude geocode="2179" comment="เทศบาลตำบลทับมา"/>
+            <exclude geocode="210109" comment="Only เทศบาลตำบลเนินพระ"/>
+          </include>
+          <include geocode="210109" comment="Workaround as the above removes too much">
+            <exclude geocode="2199"/>
             <exclude geocode="2197"/>
-            <exclude geocode="2179"/>
-            <exclude geocode="210109" comment="Actually เทศบาลตำบลเนินพระ"/>
           </include>
         </constituency>
         <constituency index="2" comment="อำเภอแกลง อำเภอเขาชะเมา">
           <include geocode="2103"/>
           <include geocode="2107"/>
         </constituency>
-        <constituency index="3" comment="อำเภอบ้านค่าย, อำเภอวังจันทร์, อำเภอปลวกแดง,และอำเภอนิคมพัฒนา (ยกเว้นเทศบาลตำบลมาบข่าพัฒนา และเทศบาลตำบลมาบข่า)">
+        <constituency index="3" comment="อำเภอบ้านค่าย, อำเภอวังจันทร์, อำเภอปลวกแดง และ อำเภอนิคมพัฒนา (ยกเว้นเทศบาลตำบลมาบข่าพัฒนา และเทศบาลตำบลมาบข่า)">
           <include geocode="2105"/>
           <include geocode="2104"/>
           <include geocode="2106"/>
           <include geocode="2108">
-            <exclude geocode="2181"/>
-            <exclude geocode="2184"/>
+            <exclude geocode="2181" comment="เทศบาลตำบลมาบข่าพัฒนา"/>
+            <exclude geocode="2184" comment="เทศบาลตำบลมาบข่า"/>
           </include>
-          <include geocode="210804"/>
         </constituency>
-        <constituency index="4" comment="อำเภอเมืองระยอง (เฉพาะเทศบาลเมืองมาบตาพุด,เทศบาลตำบลทับมา, และเทศบาลตำบลเนินพระ) อำเภอนิคมพัฒนา (เฉพาะเทศบาลตำบลมาบข่าพัฒนา และ เทศบาลตำบลมาบข่า) และ อำเภอบ้านฉาง">
-          <include geocode="2199"/>
-          <include geocode="2197"/>
-          <include geocode="210111"/>
-          <include geocode="210109"/>
-          <include geocode="2184"/>
-          <include geocode="2181"/>
+        <constituency index="4" comment="อำเภอเมืองระยอง (เฉพาะเทศบาลเมืองมาบตาพุด เทศบาลตำบลทับมา และ เทศบาลตำบลเนินพระ) อำเภอนิคมพัฒนา (เฉพาะเทศบาลตำบลมาบข่าพัฒนา และ เทศบาลตำบลมาบข่า) และ อำเภอบ้านฉาง">
+          <includesub geocode="2101">
+            <include geocode="2197" comment="เทศบาลเมืองมาบตาพุด"/>
+            <include geocode="2179" comment="เทศบาลตำบลทับมา"/>
+          </includesub>
+          <include geocode="210109" comment="เทศบาลตำบลเนินพระ">
+            <exclude geocode="2197"/>
+            <exclude geocode="2199"/>
+          </include>
+          <includesub geocode="2108">
+            <include geocode="2181" comment="เทศบาลตำบลมาบข่าพัฒนา"/>
+            <include geocode="2184" comment="เทศบาลตำบลมาบข่า"/>
+          </includesub>
           <include geocode="2102"/>
         </constituency>
       </constituencies>
@@ -1093,10 +1102,10 @@
         </constituency>
       </constituencies>
     </entity>
-    <!-- Lampang - does not sum up because of Thesaban -->
+    <!-- Lampang: does not sum up - 25 citizen of Tambon Hua Wiang in Th.T.Phichai not covered with definition? Or mistake in DOPA numbers? -->
     <entity type="Changwat" geocode="52" name="ลำปาง" english="Lampang">
       <constituencies>
-        <constituency index="1" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลนครลำปาง ตำบลบ้านค่า ตำบลบ้านเอื้อม ตำบลบ้านเป้า ตำบลบ่อแฮ้ว ตำบลนิคมพัฒนา ตำบลทุ่งฝาย ตำบลต้นธงชัย และ ตำบลบุญนาคพัฒนา)">
+        <constituency index="1" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลนครลำปาง ตำบลบ้านค่า ตำบลบ้านเอื้อม ตำบลบ้านเป้า ตำบลบ่อแฮ้ว ตำบลนิคมพัฒนา ตำบลทุ่งฝาย ตำบลต้นธงชัย และ ตำบลบุญนาคพัฒนา) อำเภอห้างฉัตร">
           <include geocode="5299"/>
           <include geocode="520115"/>
           <include geocode="520113"/>
@@ -1108,6 +1117,7 @@
           <include geocode="520112"/>
           <include geocode="520117"/>
           <include geocode="520119"/>
+          <include geocode="5212"/>
         </constituency>
         <constituency index="2" comment="อำเภอเมืองลำปาง (เฉพาะตำบลบ้านแลง) อำเภองาว อำเภอวังเหนือ อำเภอแจ้ห่ม และ อำเภอเมืองปาน">
           <include geocode="520109"/>
@@ -1597,12 +1607,42 @@
         </constituency>
       </constituencies>
     </entity>
-
-    <!-- Nakhon Sawan: does not sum up due to Thesaban -->
     <entity type="Changwat" geocode="60" name="นครสวรรค์" english="Nakhon Sawan" >
       <constituencies>
-        เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองนครสวรรค์ (เฉพาะตำบลปากน้ำโพ ตำบลนครสวรรค์ตก (ในเขตเทศบาลนครนครสวรรค์) ตำบลนครสวรรค์ออก (ในเขตเทศบาลนครนครสวรรค์) ตำบลวัดไทร ตำบลแควใหญ่ (ในเขตเทศบาลนครนครสวรรค์) ตำบลบ้านแก่ง ตำบลบ้านมะเกลือ ตำบลหนองกรด ตำบลหนองกระโดน ตำบลบางม่วง ตำบลบึงเสนาท)
-        เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอเมืองนครสวรรค์ (เฉพาะตำบลนครสวรรค์ตก (นอกเขต เทศบาลนครนครสวรรค์) ตำบลนครสวรรค์ออก (นอกเขตเทศบาลนครนครสวรรค์) ตำบลแควใหญ่ (นอกเขต เทศบาลนครนครสวรรค์) ตำบลตะเคียนเลื่อน ตำบลบางพระหลวง ตำบลเกรียงไกร ตำบลพระนอน ตำบลหนองปลิง ตำบลกลางแดด) อำเภอพยุหะคีรี และอำเภอโกรกพระ
+        <constituency index="1" comment="อำเภอเมืองนครสวรรค์ (เฉพาะตำบลปากน้ำโพ ตำบลนครสวรรค์ตก (ในเขตเทศบาลนครนครสวรรค์) ตำบลนครสวรรค์ออก (ในเขตเทศบาลนครนครสวรรค์) ตำบลวัดไทร ตำบลแควใหญ่ (ในเขตเทศบาลนครนครสวรรค์) ตำบลบ้านแก่ง ตำบลบ้านมะเกลือ ตำบลหนองกรด ตำบลหนองกระโดน ตำบลบางม่วง ตำบลบึงเสนาท)">
+          <include geocode="6099"/>
+          <include geocode="600101">
+            <exclude geocode="6099"/>
+          </include>
+          <include geocode="600113">
+            <exclude geocode="6099"/>
+          </include>
+          <include geocode="600111"/>
+          <include geocode="600110"/>
+          <include geocode="600114"/>
+          <include geocode="600115"/>
+          <include geocode="600109"/>
+          <include geocode="600117"/>
+        </constituency>
+        <constituency index="2" comment="อำเภอเมืองนครสวรรค์ (เฉพาะตำบลนครสวรรค์ตก (นอกเขต เทศบาลนครนครสวรรค์) ตำบลนครสวรรค์ออก (นอกเขตเทศบาลนครนครสวรรค์) ตำบลแควใหญ่ (นอกเขต เทศบาลนครนครสวรรค์) ตำบลตะเคียนเลื่อน ตำบลบางพระหลวง ตำบลเกรียงไกร ตำบลพระนอน ตำบลหนองปลิง ตำบลกลางแดด) อำเภอพยุหะคีรี และ อำเภอโกรกพระ">
+          <include geocode="600106">
+            <exclude geocode="6099"/>
+          </include>
+          <include geocode="600107">
+            <exclude geocode="6099"/>
+          </include>
+          <include geocode="600104">
+            <exclude geocode="6099"/>
+          </include>
+          <include geocode="600105"/>
+          <include geocode="600108"/>
+          <include geocode="600103"/>
+          <include geocode="600112"/>
+          <include geocode="600116"/>
+          <include geocode="600102"/>
+          <include geocode="6010"/>
+          <include geocode="6002"/>
+        </constituency>
         <constituency index="3" comment="อำเภอบรรพตพิสัย อำเภอชุมแสง และอำเภอเก้าเลี้ยว">
           <include geocode="6005"/>
           <include geocode="6003"/>
@@ -2226,18 +2266,17 @@
         </constituency>
       </constituencies>
     </entity>
-    <!-- Songkhla: does not sum up due to Thesaban -->
     <entity type="Changwat" geocode="90" name="สงขลา" english="Songkhla">
       <constituencies>
         <constituency index="1" comment="อําเภอเมืองสงขลา">
           <include geocode="9001"/>
         </constituency>
-        <constituency index="2" comment="อําเภอหาดใหญ่ (เฉพาะ เทศบาลนครหาดใหญ่ เทศบาลเมืองคลองแห และตําบลคลองอู่ตะเภา) ">
-          <include geocode="901101" comment="Actually says เทศบาลนครหาดใหญ่"/>
+        <constituency index="2" comment="อําเภอหาดใหญ่ (เฉพาะ เทศบาลนครหาดใหญ่ เทศบาลเมืองคลองแห และ ตําบลคลองอู่ตะเภา) ">
+          <include geocode="9098"/>
           <include geocode="901105" comment="Actually says เทศบาลเมืองคลองแห"/>
           <include geocode="901107"/>
         </constituency>
-        <constituency index="3" comment="อําเภอหาดใหญ่ (เฉพาะเทศบาล ตําบลคูเต่า ตําบลฉลุง ตําบลทุ่งใหญ่ ตําบลท่าข้าม เทศบาลตําบลน้ําน้อย เทศบาลเมืองควนลัง ตําบลทุ่งตําเสาและ เทศบาลเมืองคอหงส์) อําเภอนาหม่อม">
+        <constituency index="3" comment="อําเภอหาดใหญ่ (เฉพาะเทศบาล ตําบลคูเต่า ตําบลฉลุง ตําบลทุ่งใหญ่ ตําบลท่าข้าม เทศบาลตําบลน้ําน้อย เทศบาลเมืองควนลัง ตําบลทุ่งตําเส าและ เทศบาลเมืองคอหงส์) อําเภอนาหม่อม">
           <include geocode="901103" comment="Actually says เทศบาลตำบลคูเต่า"/>
           <include geocode="901108"/>
           <include geocode="901111"/>

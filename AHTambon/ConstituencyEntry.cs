@@ -16,6 +16,9 @@ namespace De.AHoerstemeier.Tambon
         private Dictionary<PopulationDataEntry, List<PopulationDataEntry>> lExcludedAdministrativeEntities = new Dictionary<PopulationDataEntry, List<PopulationDataEntry>>();
         public Dictionary<PopulationDataEntry, List<PopulationDataEntry>> ExcludedAdministrativeEntities
         { get { return lExcludedAdministrativeEntities; } }
+        private Dictionary<PopulationDataEntry, List<PopulationDataEntry>> lSubIncludedAdministrativeEntities = new Dictionary<PopulationDataEntry, List<PopulationDataEntry>>();
+        public Dictionary<PopulationDataEntry, List<PopulationDataEntry>> SubIncludedAdministrativeEntities
+        { get { return lSubIncludedAdministrativeEntities; } }
 
         public Int32 NumberOfSeats { get; set; }
         public Int32 Index { get; set; }
@@ -42,6 +45,14 @@ namespace De.AHoerstemeier.Tambon
                     ExcludedAdministrativeEntities[lKeyValuePair.Key].Add((PopulationDataEntry)lSubEntity.Clone());
                 }
             }
+            foreach (var lKeyValuePair in value.SubIncludedAdministrativeEntities)
+            {
+                SubIncludedAdministrativeEntities[lKeyValuePair.Key] = new List<PopulationDataEntry>();
+                foreach (PopulationDataEntry lSubEntity in lKeyValuePair.Value)
+                {
+                    SubIncludedAdministrativeEntities[lKeyValuePair.Key].Add((PopulationDataEntry)lSubEntity.Clone());
+                }
+            }
         }
         #endregion
 
@@ -58,6 +69,13 @@ namespace De.AHoerstemeier.Tambon
                 foreach ( PopulationDataEntry lEntry in lKeyValuePair.Value )
                 {
                     lResult -= lEntry.Total;
+                }
+            }
+            foreach (var lKeyValuePair in SubIncludedAdministrativeEntities)
+            {
+                foreach (PopulationDataEntry lEntry in lKeyValuePair.Value)
+                {
+                    lResult += lEntry.Total;
                 }
             }
             return lResult;
@@ -95,6 +113,24 @@ namespace De.AHoerstemeier.Tambon
                                 }
                             }
                             RetVal.AdministrativeEntities.Add(lEntity);
+                        }
+                        if ( lChildNode.Name == "includesub" )
+                        {
+                            PopulationDataEntry lEntity = new PopulationDataEntry();
+                            lEntity.Geocode = TambonHelper.GetAttributeOptionalInt(lChildNode, "geocode", 0);
+                            foreach ( XmlNode lSubChildNode in lChildNode.ChildNodes )
+                            {
+                                if ( lSubChildNode.Name == "include" )
+                                {
+                                    PopulationDataEntry lIncludedEntity = new PopulationDataEntry();
+                                    lIncludedEntity.Geocode = TambonHelper.GetAttributeOptionalInt(lSubChildNode, "geocode", 0);
+                                    if ( !RetVal.SubIncludedAdministrativeEntities.ContainsKey(lEntity) )
+                                    {
+                                        RetVal.SubIncludedAdministrativeEntities[lEntity] = new List<PopulationDataEntry>();
+                                    }
+                                    RetVal.SubIncludedAdministrativeEntities[lEntity].Add(lIncludedEntity);
+                                }
+                            }
                         }
                     }
                 }
