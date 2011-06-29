@@ -13,8 +13,8 @@ namespace De.AHoerstemeier.Tambon
         private List<PopulationDataEntry> lAdministrativeEntities = new List<PopulationDataEntry>();
         public List<PopulationDataEntry> AdministrativeEntities
         { get { return lAdministrativeEntities; } }
-        private List<PopulationDataEntry> lExcludedAdministrativeEntities = new List<PopulationDataEntry>();
-        public List<PopulationDataEntry> ExcludedAdministrativeEntities
+        private Dictionary<PopulationDataEntry, List<PopulationDataEntry>> lExcludedAdministrativeEntities = new Dictionary<PopulationDataEntry, List<PopulationDataEntry>>();
+        public Dictionary<PopulationDataEntry, List<PopulationDataEntry>> ExcludedAdministrativeEntities
         { get { return lExcludedAdministrativeEntities; } }
 
         public Int32 NumberOfSeats { get; set; }
@@ -30,13 +30,17 @@ namespace De.AHoerstemeier.Tambon
         {
             NumberOfSeats = value.NumberOfSeats;
             Index = value.Index;
-            foreach (PopulationDataEntry lSubEntity in value.AdministrativeEntities)
+            foreach ( PopulationDataEntry lSubEntity in value.AdministrativeEntities )
             {
                 AdministrativeEntities.Add((PopulationDataEntry)lSubEntity.Clone());
             }
-            foreach (PopulationDataEntry lSubEntity in value.ExcludedAdministrativeEntities)
+            foreach ( var lKeyValuePair in value.ExcludedAdministrativeEntities )
             {
-                ExcludedAdministrativeEntities.Add((PopulationDataEntry)lSubEntity.Clone());
+                ExcludedAdministrativeEntities[lKeyValuePair.Key] = new List<PopulationDataEntry>();
+                foreach ( PopulationDataEntry lSubEntity in lKeyValuePair.Value )
+                {
+                    ExcludedAdministrativeEntities[lKeyValuePair.Key].Add((PopulationDataEntry)lSubEntity.Clone());
+                }
             }
         }
         #endregion
@@ -45,13 +49,16 @@ namespace De.AHoerstemeier.Tambon
         public Int32 Population()
         {
             Int32 lResult = 0;
-            foreach (PopulationDataEntry lEntry in AdministrativeEntities)
+            foreach ( PopulationDataEntry lEntry in AdministrativeEntities )
             {
                 lResult += lEntry.Total;
             }
-            foreach (PopulationDataEntry lEntry in ExcludedAdministrativeEntities)
+            foreach ( var lKeyValuePair in ExcludedAdministrativeEntities )
             {
-                lResult -= lEntry.Total;
+                foreach ( PopulationDataEntry lEntry in lKeyValuePair.Value )
+                {
+                    lResult -= lEntry.Total;
+                }
             }
             return lResult;
         }
@@ -60,27 +67,31 @@ namespace De.AHoerstemeier.Tambon
         {
             ConstituencyEntry RetVal = null;
 
-            if (iNode != null && iNode.Name.Equals("constituency"))
+            if ( iNode != null && iNode.Name.Equals("constituency") )
             {
                 RetVal = new ConstituencyEntry();
-                RetVal.Index = TambonHelper.GetAttributeOptionalInt(iNode, "index",0);
+                RetVal.Index = TambonHelper.GetAttributeOptionalInt(iNode, "index", 0);
                 RetVal.NumberOfSeats = TambonHelper.GetAttributeOptionalInt(iNode, "numberofseats", 1);
 
-                if (iNode.HasChildNodes)
+                if ( iNode.HasChildNodes )
                 {
-                    foreach (XmlNode lChildNode in iNode.ChildNodes)
+                    foreach ( XmlNode lChildNode in iNode.ChildNodes )
                     {
-                        if (lChildNode.Name == "include")
+                        if ( lChildNode.Name == "include" )
                         {
                             PopulationDataEntry lEntity = new PopulationDataEntry();
-                            lEntity.Geocode = TambonHelper.GetAttributeOptionalInt(lChildNode,"geocode",0);
-                            foreach (XmlNode lSubChildNode in lChildNode.ChildNodes)
+                            lEntity.Geocode = TambonHelper.GetAttributeOptionalInt(lChildNode, "geocode", 0);
+                            foreach ( XmlNode lSubChildNode in lChildNode.ChildNodes )
                             {
-                                if (lSubChildNode.Name == "exclude")
+                                if ( lSubChildNode.Name == "exclude" )
                                 {
                                     PopulationDataEntry lExcludedEntity = new PopulationDataEntry();
                                     lExcludedEntity.Geocode = TambonHelper.GetAttributeOptionalInt(lSubChildNode, "geocode", 0);
-                                    RetVal.ExcludedAdministrativeEntities.Add(lExcludedEntity);
+                                    if ( !RetVal.ExcludedAdministrativeEntities.ContainsKey(lEntity) )
+                                    {
+                                        RetVal.ExcludedAdministrativeEntities[lEntity] = new List<PopulationDataEntry>();
+                                    }
+                                    RetVal.ExcludedAdministrativeEntities[lEntity].Add(lExcludedEntity);
                                 }
                             }
                             RetVal.AdministrativeEntities.Add(lEntity);

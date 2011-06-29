@@ -259,8 +259,12 @@ namespace De.AHoerstemeier.Tambon
                         }
                         foreach ( ConstituencyEntry lConstituency in lEntry.ConstituencyList )
                         {
-                            GetPopulationData(lDataEntry, lConstituency.AdministrativeEntities);
-                            GetPopulationData(lDataEntry, lConstituency.ExcludedAdministrativeEntities);
+                            GetPopulationData(lSourcePopulationdataEntry, lConstituency.AdministrativeEntities);
+                            foreach ( var lKeyValuePair in lConstituency.ExcludedAdministrativeEntities )
+                            {
+                                PopulationDataEntry lSourceSubEntity = lDataEntry.FindByCode(lKeyValuePair.Key.Geocode);
+                                GetPopulationData(lSourceSubEntity, lKeyValuePair.Value);
+                            }
                             lPopulation += lConstituency.Population();
                         }
                         if ( (lPopulation > 0) && (lEntry.Total > 0) )
@@ -278,10 +282,30 @@ namespace De.AHoerstemeier.Tambon
 
         private static void GetPopulationData(PopulationDataEntry iPopulation, List<PopulationDataEntry> iData)
         {
+            if ( iPopulation == null )
+            {
+                throw new ArgumentNullException("iPopulation", "No source for population data");
+            }
             List<PopulationDataEntry> lNewEntityList = new List<PopulationDataEntry>();
+            List<PopulationDataEntry> lThesabanList = new List<PopulationDataEntry>();
+            if ( iPopulation.Type == EntityType.Changwat )
+            {
+                lThesabanList = iPopulation.ThesabanList();
+            }
             foreach ( PopulationDataEntry lConstituencyEntry in iData )
             {
-                PopulationDataEntry lPopulationdataEntry = iPopulation.FindByCode(lConstituencyEntry.Geocode);
+                PopulationDataEntry lPopulationdataEntry = null;
+                foreach ( PopulationDataEntry lThesaban in lThesabanList )
+                {
+                    if ( lThesaban.Geocode == lConstituencyEntry.Geocode )
+                    {
+                        lPopulationdataEntry = lThesaban;
+                    }
+                }
+                if ( lPopulationdataEntry == null )
+                {
+                    lPopulationdataEntry = iPopulation.FindByCode(lConstituencyEntry.Geocode);
+                }
                 Debug.Assert(lPopulationdataEntry != null, "Entity with code " + lConstituencyEntry.Geocode.ToString() + " not found");
                 if ( lPopulationdataEntry != null )
                 {
