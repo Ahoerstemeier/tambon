@@ -1102,7 +1102,6 @@
         </constituency>
       </constituencies>
     </entity>
-    <!-- Lampang: does not sum up - 25 citizen of Tambon Hua Wiang in Th.T.Phichai not covered with definition? Or mistake in DOPA numbers? -->
     <entity type="Changwat" geocode="52" name="ลำปาง" english="Lampang">
       <constituencies>
         <constituency index="1" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลนครลำปาง ตำบลบ้านค่า ตำบลบ้านเอื้อม ตำบลบ้านเป้า ตำบลบ่อแฮ้ว ตำบลนิคมพัฒนา ตำบลทุ่งฝาย ตำบลต้นธงชัย และ ตำบลบุญนาคพัฒนา) อำเภอห้างฉัตร">
@@ -1118,6 +1117,11 @@
           <include geocode="520117"/>
           <include geocode="520119"/>
           <include geocode="5212"/>
+
+          <!-- 25 citizen of Tambon Hua Wiang in Th.T.Phichai not covered with definition? Or mistake in DOPA numbers? -->
+          <include geocode="520102">
+            <exclude geocode="5299"/>
+          </include>
         </constituency>
         <constituency index="2" comment="อำเภอเมืองลำปาง (เฉพาะตำบลบ้านแลง) อำเภองาว อำเภอวังเหนือ อำเภอแจ้ห่ม และ อำเภอเมืองปาน">
           <include geocode="520109"/>
@@ -1129,7 +1133,7 @@
         <constituency index="3" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลเมืองเขลางค์นคร ตำบลพิชัย และ ตำบลบ้านเสด็จ) อำเภอแม่ทะ และ อำเภอแม่เมาะ">
           <include geocode="5298"/>
           <include geocode="520111">
-            <exclude geocode="5299"/>
+            <exclude geocode="5299"/>            
           </include>
           <include geocode="520110"/>
           <include geocode="5210"/>
@@ -2542,14 +2546,12 @@
         </constituency>
       </constituencies>
     </entity>
-    <!-- ToDo -->
-    <!-- Udon Thani: Does not sum up due to Thesaban -->
     <entity type="Changwat" geocode="41" name="อุดรธานี" english="Udon Thani" >
       <constituencies>
         <constituency index="1" comment="อำเภอเมืองอุดรธานี (เฉพาะในเขตเทศบาลนครอุดรธานี เทศบาลเมืองหนองสำโรง เทศบาลตำบลบ้านจั่น และ ตำบลบ้านเลื่อม)">
           <include geocode="4199"/>
           <include geocode="4194"/>
-          <include geocode="410117"/>
+          <include geocode="4195"/>
           <include geocode="410112" comment="Only part not in เทศบาลเมืองหนองสำโรง">
             <exclude geocode="4194"/>
           </include>
@@ -2573,9 +2575,12 @@
           <include geocode="410109"/>
           <include geocode="410110"/>
           <include geocode="410114"/>
-          <include geocode="410117"/>
-          <include geocode="410118" comment="Only part not in เทศบาลนครอุดรธานี">
+          <include geocode="410117">
+            <exclude geocode="4195"/>
+          </include>
+          <include geocode="410118" comment="Only part not in เทศบาลนครอุดรธานี and เทศบาลตำบลบ้านจั่น">
             <exclude geocode="4199"/>
+            <exclude geocode="4195"/>
           </include>
           <include geocode="410119"/>
           <include geocode="410121"/>
