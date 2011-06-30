@@ -1935,11 +1935,21 @@
   </entity>
   <entity type="Amphoe" name="สิชล" english="Sichon" geocode="8014" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>8.9639</geo:lat>
+        <geo:long>99.8962</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="มนัส เพ็งสุทธิ์" begin="2009-08-24"/>
         <official title="DistrictOfficer" name="อิศรา ทองธวัช" begin="2007-01-08" end="2009-08-23"/>
         <official title="DistrictOfficer" name="สกล จันทรักษ์" end="2007-01-07" comment="2005"/>
       </officials>
+      <oldlocations>
+        <geo:Point>
+          <geo:lat>9.0071</geo:lat>
+          <geo:long>99.9014</geo:long>
+        </geo:Point>
+      </oldlocations>
     </office>
     <entity type="Tambon" name="สิชล" english="Sichon" geocode="801401" >
       <office type="TAOOffice">
@@ -1961,6 +1971,7 @@
     </entity>
     <entity type="Tambon" name="ทุ่งปรัง" english="Thung Prang" geocode="801402" >
       <office type="TAOOffice">
+        <!-- Google:   8.968257°  99.895217° -->
         <url>http://www.thungprang.go.th/</url>
       </office>
       <entity type="Muban" geocode="80140201" name="บ้านเขาเหล็ก"/>
@@ -2993,6 +3004,10 @@
   </entity>
   <entity type="ThesabanTambon" name="สิชล" english="Sichon" geocode="8078" parent="8014" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>9.0072</geo:lat>
+        <geo:long>99.9018</geo:long>
+      </geo:Point>
       <url>http://www.sichoncity.go.th/</url>
       <officials>
         <official title="Mayor" name="สรรเสริญ สุนทรมัฏฐ์" comment="2010"/>
