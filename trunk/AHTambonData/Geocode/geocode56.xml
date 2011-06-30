@@ -834,7 +834,7 @@
     </entity>
     <entity type="Tambon" name="ป่าสัก" english="Pa Sak" geocode="560802" >
       <office type="TAOOffice">
-        <!--<url>http://pasaklocal.com/</url>-->
+        <url>http://pasaklocal.com/</url>
       </office>
       <entity type="Muban" geocode="56080201" name="บ้านแก"/>
       <entity type="Muban" geocode="56080202" name="บ้านแก"/>
@@ -850,7 +850,7 @@
     <entity type="Tambon" name="ทุ่งกล้วย" english="Thung Kluai" geocode="560803" >
       <office type="TAOOffice">
         <!-- Longdo: 19.5924854278677 100.382720947266-->
-        <!--<url>http://tklocal.com/</url>-->
+        <url>http://tklocal.com/</url>
         <officials>
           <official title="TAOChairman" name="วีรพล อินปั๋น" comment="2011"/>
         </officials>
@@ -870,7 +870,11 @@
     </entity>
     <entity type="Tambon" name="เชียงแรง" english="Chiang Raeng" geocode="560804" >
       <office type="TAOOffice">
-        <url>http://www.chiangrang.com/</url>
+        <geo:Point>
+          <geo:lat>19.6001</geo:lat>
+          <geo:long>100.2941</geo:long>
+        </geo:Point>
+        <!--<url>http://www.chiangrang.com/</url>-->
       </office>
       <entity type="Muban" geocode="56080401" name="บ้านร้อง"/>
       <entity type="Muban" geocode="56080402" name="บ้านร้อง"/>
@@ -885,7 +889,25 @@
       <entity type="Muban" geocode="56080411" name="บ้านศรีไฮคำ"/>
       <entity type="Muban" geocode="56080412" name="บ้านยอดดอย"/>
     </entity>
-    <entity type="Tambon" name="สบบง" english="Sop Bong" geocode="560805" />
+    <entity type="Tambon" name="สบบง" english="Sop Bong" geocode="560805" >
+      <entity type="Muban" geocode="56080501" name="บ้านดอนตัน" english="Ban Don Tan"/>
+      <entity type="Muban" geocode="56080502" name="บ้านสบบง" english="Ban Sop Bong"/>
+      <entity type="Muban" geocode="56080503" name="บ้านสบบง" english="Ban Sop Bong"/>
+      <entity type="Muban" geocode="56080504" name="บ้านฮ่องลึก" english="Ban Hong Luek"/>
+      <entity type="Muban" geocode="56080505" name="บ้านหัวขัว" english="Ban Hua Khao"/>
+      <entity type="Muban" geocode="56080506" name="บ้านปง" english="Ban Pong"/>
+      <entity type="Muban" geocode="56080507" name="บ้านปงหลวง" english="Ban Pong Luang"/>
+      <entity type="Muban" geocode="56080508" name="บ้านปัว" english="Ban Pua"/>
+      <entity type="Muban" geocode="56080509" name="บ้านหล่าย" english="Ban Lai"/>
+      <entity type="Muban" geocode="56080510" name="บ้านสบบง" english="Ban Sop Bong"/>
+      <entity type="Muban" geocode="56080511" name="บ้านใหม่ดอนตัน" english="Ban Mai Don Tan">
+        <history>
+          <rename oldname="บ้านป่าสัก" oldenglish="Ban Pa Sak" name="บ้านใหม่ดอนตัน" english="Ban Mai Don Tan"/>
+          <misspelling name="บ้านใหม่ป่าสัก"/>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="56080512" name="บ้านดอนศรีชุม" english="Ban Don Si Chum"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="ภูกามยาว" english="Phu Kamyao" geocode="5609" >
     <office type="DistrictOffice">
@@ -1008,7 +1030,15 @@
   </entity>
   <entity type="ThesabanTambon" name="สบบง" english="Sop Bong" geocode="5689" parent="5608" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>19.5710</geo:lat>
+        <geo:long>100.3018</geo:long>
+      </geo:Point>
       <url>http://www.sobbonglocal.com/</url>
+      <!--<url>http://www.sobbong.com/</url>-->
+      <officials>
+        <official title="Mayor" name="สมพน พึ่งพวก" comment="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ดงเจน" english="Dong Chen" geocode="5688" parent="5609" >
