@@ -990,7 +990,6 @@
         </constituency>
       </constituencies>
     </entity>
-    <!-- Rayong - does not sum up due to Thesaban  How to limit Map Tha Phut to one district? -->
     <entity type="Changwat" geocode="21" name="ระยอง" english="Rayong" >
       <constituencies>
         <constituency index="1" comment="อำเภอเมืองระยอง (ยกเว้นเทศบาลเมืองมาบตาพุด, เทศบาลตำบลทับมา และ เทศบาลตำบลเนินพระ)">
@@ -999,10 +998,10 @@
             <exclude geocode="2179" comment="เทศบาลตำบลทับมา"/>
             <exclude geocode="210109" comment="Only เทศบาลตำบลเนินพระ"/>
           </include>
-          <include geocode="210109" comment="Workaround as the above removes too much">
-            <exclude geocode="2199"/>
-            <exclude geocode="2197"/>
-          </include>
+          <includesub geocode="210109" comment="Workaround as the above removes too much">
+            <include geocode="2199"/>
+            <include geocode="2197"/>
+          </includesub>
         </constituency>
         <constituency index="2" comment="อำเภอแกลง อำเภอเขาชะเมา">
           <include geocode="2103"/>
@@ -2189,27 +2188,163 @@
         </constituency>
       </constituencies>
     </entity>
-    <!-- ToDo -->
     <entity type="Changwat" geocode="20" name="ชลบุรี" english="Chon Buri" >
-      เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองชลบุรี (เฉพาะตำบลแสนสุข ตำบลอ่างศิลา ตำบลเสม็ด ตำบลห้วยกะปิ ตำบลเหมือง ตำบลบ้านปึก ตำบลหนองข้างคอก ตำบลหนองรี ตำบลนาป่า และตำบลสำนักบก)
-      เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอเมืองชลบุรี (เฉพาะตำบลบางปลาสร้อย ตำบลมะขามหย่ง ตำบลบ้านโขด ตำบลบางทราย ตำบลหนองไม้แดง ตำบลคลองตำหรุ ตำบลดอนหัวฬ่อ และตำบลบ้านสวน) และอำเภอพานทอง (เฉพาะตำบลพานทอง ตำบลเกาะลอย ตำบลโคกขี้หนอน ตำบลบ้านเก่า ตำบลหน้าประดู่ ตำบลบางนาง ตำบลบางหัก ตำบลหนองตำลึง และตำบลหนองกะขะ)
-      เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอพนัสนิคม อำเภอเกาะจันทร์ และอำเภอพานทอง (เฉพาะตำบลมาบโป่ง และตำบลหนองหงษ์)
-      เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอบ้านบึง อำเภอบ่อทอง และอำเภอหนองใหญ่
-      เขตเลือกตั้งที่ ๕ ประกอบด้วย อำเภอศรีราชา (เฉพาะตำบลสุรศักดิ์ ตำบลหนองขาม ตำบลเขาคันทรง ตำบลบางพระ ตำบลบ่อวิน และตำบลศรีราชา)
-      เขตเลือกตั้งที่ ๖ ประกอบด้วย อำเภอเกาะสีชัง อำเภอศรีราชา (เฉพาะตำบลทุ่งสุขลา และตำบลบึง) และอำเภอบางละมุง (เฉพาะตำบลนาเกลือ ตำบลบางละมุง ตำบลหนองปลาไหล และตำบลตะเคียนเตี้ย)
-      เขตเลือกตั้งที่ ๗ ประกอบด้วย อำเภอบางละมุง (เฉพาะตำบลหนองปรือ ตำบลโป่ง ตำบลห้วยใหญ่ และตำบลเขาไม้แก้ว)
-      เขตเลือกตั้งที่ ๘ ประกอบด้วย อำเภอสัตหีบ
+      <constituencies>
+        <constituency index="1" comment="อำเภอเมืองชลบุรี (เฉพาะตำบลแสนสุข ตำบลอ่างศิลา ตำบลเสม็ด ตำบลห้วยกะปิ ตำบลเหมือง ตำบลบ้านปึก ตำบลหนองข้างคอก ตำบลหนองรี ตำบลนาป่า และตำบลสำนักบก)">
+          <include geocode="200104"/>
+          <include geocode="200117"/>
+          <include geocode="200116"/>
+          <include geocode="200115"/>
+          <include geocode="200113"/>
+          <include geocode="200114"/>
+          <include geocode="200108"/>
+          <include geocode="200106"/>
+          <include geocode="200107"/>
+          <include geocode="200118"/>
+        </constituency>
+        <constituency index="2" comment="อำเภอเมืองชลบุรี (เฉพาะตำบลบางปลาสร้อย ตำบลมะขามหย่ง ตำบลบ้านโขด ตำบลบางทราย ตำบลหนองไม้แดง ตำบลคลองตำหรุ ตำบลดอนหัวฬ่อ และ ตำบลบ้านสวน) และ อำเภอพานทอง (เฉพาะตำบลพานทอง ตำบลเกาะลอย ตำบลโคกขี้หนอน ตำบลบ้านเก่า ตำบลหน้าประดู่ ตำบลบางนาง ตำบลบางหัก ตำบลหนองตำลึง และ ตำบลหนองกะขะ)">
+          <include geocode="200101"/>
+          <include geocode="200102"/>
+          <include geocode="200103"/>
+          <include geocode="200111"/>
+          <include geocode="200110"/>
+          <include geocode="200112"/>
+          <include geocode="200109"/>
+          <include geocode="200105"/>
+          <include geocode="200501"/>
+          <include geocode="200510"/>
+          <include geocode="200506"/>
+          <include geocode="200507"/>
+          <include geocode="200508"/>
+          <include geocode="200509"/>
+          <include geocode="200511"/>
+          <include geocode="200502"/>
+          <include geocode="200504"/>
+        </constituency>
+        <constituency index="3" comment="อำเภอพนัสนิคม อำเภอเกาะจันทร์ และ อำเภอพานทอง (เฉพาะตำบลมาบโป่ง และ ตำบลหนองหงษ์)">
+          <include geocode="2006"/>
+          <include geocode="2011"/>
+          <include geocode="200503"/>
+          <include geocode="200505"/>
+        </constituency>
+        <constituency index="4" comment="อำเภอบ้านบึง อำเภอบ่อทอง และ อำเภอหนองใหญ่">
+          <include geocode="2002"/>
+          <include geocode="2010"/>
+          <include geocode="2003"/>
+        </constituency>
+        <constituency index="5" comment="อำเภอศรีราชา (เฉพาะตำบลสุรศักดิ์ ตำบลหนองขาม ตำบลเขาคันทรง ตำบลบางพระ ตำบลบ่อวิน และ ตำบลศรีราชา)">
+          <include geocode="200702"/>
+          <include geocode="200705"/>
+          <include geocode="200706"/>
+          <include geocode="200707"/>
+          <include geocode="200708"/>
+          <include geocode="200701"/>
+        </constituency>
+        <constituency index="6" comment="อำเภอเกาะสีชัง อำเภอศรีราชา (เฉพาะตำบลทุ่งสุขลา และ ตำบลบึง) และ อำเภอบางละมุง (เฉพาะตำบลนาเกลือ ตำบลบางละมุง ตำบลหนองปลาไหล และ ตำบลตะเคียนเตี้ย)">
+          <include geocode="2008"/>
+          <include geocode="200703"/>
+          <include geocode="200704"/>
+          <include geocode="200408"/>
+          <include geocode="200401"/>
+          <include geocode="200403"/>
+          <include geocode="200407"/>
+        </constituency>
+        <constituency index="7" comment="อำเภอบางละมุง (เฉพาะตำบลหนองปรือ ตำบลโป่ง ตำบลห้วยใหญ่ และ ตำบลเขาไม้แก้ว)">
+          <include geocode="200402"/>
+          <include geocode="200404"/>
+          <include geocode="200406"/>
+          <include geocode="200405"/>
+        </constituency>
+        <constituency index="8" comment="อำเภอสัตหีบ">
+          <include geocode="2009"/>
+        </constituency>
+      </constituencies>
     </entity>
-    <!-- ToDo -->
     <entity type="Changwat" geocode="45" name="ร้อยเอ็ด" english="Roi Et" >
-      เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองร้อยเอ็ด และอำเภอจังหาร (เฉพาะตำบลปาฝา และตำบลยางใหญ่)
-      เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอโพธิ์ชัย อำเภอธวัชบุรี (เฉพาะตำบลนิเวศน์ ตำบลมะอึ ตำบลอุ้มเม้า ตำบลหนองพอก ตำบลบึงนคร ตำบลธวัชบุรี และตำบลธงธานี) อำเภอจังหาร (เฉพาะ ตำบลม่วงลาด ตำบลผักแว่น ตำบลดงสิงห์ ตำบลจังหาร ตำบลแสนชาติ และตำบลดินดำ) และอำเภอเชียงขวัญ
-      เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอโพนทอง อำเภอหนองพอก (เฉพาะตำบลหนองพอก ตำบลบึงงาม ตำบลภูเขาทอง ตำบลกกโพธิ์ และตำบลรอบเมือง) และอำเภอเมยวดี
-      เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอเสลภูมิ อำเภอหนองพอก (เฉพาะตำบลผาน้ำย้อย ตำบลท่าสีดา ตำบลโคกสว่าง และตำบลหนองขุ่นใหญ่) และอำเภอทุ่งเขาหลวง (เฉพาะตำบลทุ่งเขาหลวง ตำบลบึงงาม และตำบลมะบ้า)
-      เขตเลือกตั้งที่ ๕ ประกอบด้วย อำเภอพนมไพร อำเภอธวัชบุรี (เฉพาะตำบลเมืองน้อย ตำบลเขวาทุ่ง ตำบลราชธานี ตำบลหนองไผ่ และตำบลไพศาล) อำเภออาจสามารถ (เฉพาะตำบลหน่อม ตำบลบ้านแจ้ง ตำบลหนองหมื่นถ่าน ตำบลโพนเมือง และตำบลอาจสามารถ) อำเภอทุ่งเขาหลวง (เฉพาะตำบลเทอดไทย และตำบลเหล่า) และอำเภอหนองฮี (เฉพาะตำบลหนองฮี และตำบลสาวแห)
-      เขตเลือกตั้งที่ ๖ ประกอบด้วย อำเภอสุวรรณภูมิ อำเภอโพนทราย อำเภอเมืองสรวง(เฉพาะตำบลหนองหิน) และอำเภอหนองฮี (เฉพาะตำบลเด่นราษฎร์ และตำบลดูกอึ่ง)
-      เขตเลือกตั้งที่ ๗ ประกอบด้วย อำเภอเกษตรวิสัย อำเภอปทุมรัตต์ และอำเภอเมืองสรวง(เฉพาะตำบลกกกุง และตำบลคูเมือง)
-      เขตเลือกตั้งที่ ๘ ประกอบด้วย อำเภอจตุรพักตรพิมาน อำเภอศรีสมเด็จ อำเภออาจสามารถ (เฉพาะตำบลบ้านดู่ ตำบลโหรา ตำบลหนองขาม ตำบลหนองบัว และตำบลขี้เหล็ก) และอำเภอเมืองสรวง (เฉพาะตำบลเมืองสรวง และตำบลหนองผือ)
+      <constituencies>
+        <constituency index="1" comment="อำเภอเมืองร้อยเอ็ด และ อำเภอจังหาร (เฉพาะตำบลปาฝา และ ตำบลยางใหญ่)">
+          <include geocode="4501"/>
+          <include geocode="451702"/>
+          <include geocode="451706"/>
+        </constituency>
+        <constituency index="2" comment="อำเภอโพธิ์ชัย อำเภอธวัชบุรี (เฉพาะตำบลนิเวศน์ ตำบลมะอึ ตำบลอุ้มเม้า ตำบลหนองพอก ตำบลบึงนคร ตำบลธวัชบุรี และ ตำบลธงธานี) อำเภอจังหาร (เฉพาะ ตำบลม่วงลาด ตำบลผักแว่น ตำบลดงสิงห์ ตำบลจังหาร ตำบลแสนชาติ และ ตำบลดินดำ) และ อำเภอเชียงขวัญ">
+          <include geocode="4508"/>
+          <include geocode="450501"/>
+          <include geocode="450507"/>
+          <include geocode="450506"/>
+          <include geocode="450524"/>
+          <include geocode="450520"/>
+          <include geocode="450504"/>
+          <include geocode="450502"/>
+          <include geocode="451703"/>
+          <include geocode="451707"/>
+          <include geocode="451705"/>
+          <include geocode="451704"/>
+          <include geocode="451708"/>
+          <include geocode="451701"/>
+          <include geocode="4518"/>
+        </constituency>
+        <constituency index="3" comment="อำเภอโพนทอง อำเภอหนองพอก (เฉพาะตำบลหนองพอก ตำบลบึงงาม ตำบลภูเขาทอง ตำบลกกโพธิ์ และ ตำบลรอบเมือง) และ อำเภอเมยวดี">
+          <include geocode="4507"/>
+          <include geocode="450901"/>
+          <include geocode="450902"/>
+          <include geocode="450903"/>
+          <include geocode="450904"/>
+          <include geocode="450907"/>
+          <include geocode="4515"/>
+        </constituency>
+        <constituency index="4" comment="อำเภอเสลภูมิ อำเภอหนองพอก (เฉพาะตำบลผาน้ำย้อย ตำบลท่าสีดา ตำบลโคกสว่าง และ ตำบลหนองขุ่นใหญ่) และ อำเภอทุ่งเขาหลวง (เฉพาะตำบลทุ่งเขาหลวง ตำบลบึงงาม และ ตำบลมะบ้า)">
+          <include geocode="4510"/>
+          <include geocode="450908"/>
+          <include geocode="450909"/>
+          <include geocode="450905"/>
+          <include geocode="450906"/>
+          <include geocode="452001"/>
+          <include geocode="452003"/>
+          <include geocode="452004"/>
+        </constituency>
+        <constituency index ="5" comment="อำเภอพนมไพร อำเภอธวัชบุรี (เฉพาะตำบลเมืองน้อย ตำบลเขวาทุ่ง ตำบลราชธานี ตำบลหนองไผ่ และ ตำบลไพศาล) อำเภออาจสามารถ (เฉพาะตำบลหน่อม ตำบลบ้านแจ้ง ตำบลหนองหมื่นถ่าน ตำบลโพนเมือง และ ตำบลอาจสามารถ) อำเภอทุ่งเขาหลวง (เฉพาะตำบลเทอดไทย และ ตำบลเหล่า) และ อำเภอหนองฮี (เฉพาะตำบลหนองฮี และ ตำบลสาวแห)">
+          <include geocode="4506"/>
+          <include geocode="450517"/>
+          <include geocode="450510"/>
+          <include geocode="450522"/>
+          <include geocode="450503"/>
+          <include geocode="450515"/>
+          <include geocode="451404"/>
+          <include geocode="451403"/>
+          <include geocode="451405"/>
+          <include geocode="451402"/>
+          <include geocode="451401"/>
+          <include geocode="452002"/>
+          <include geocode="452005"/>
+          <include geocode="451901"/>
+          <include geocode="451902"/>
+        </constituency>
+        <constituency index="6" comment="อำเภอสุวรรณภูมิ อำเภอโพนทราย อำเภอเมืองสรวง (เฉพาะตำบลหนองหิน) และ อำเภอหนองฮี (เฉพาะตำบลเด่นราษฎร์ และ ตำบลดูกอึ่ง)">
+          <include geocode="4511"/>
+          <include geocode="4513"/>
+          <include geocode="451202"/>
+          <include geocode="451904"/>
+          <include geocode="451903"/>
+        </constituency>
+        <constituency index="7" comment="อำเภอเกษตรวิสัย อำเภอปทุมรัตต์ และ อำเภอเมืองสรวง(เฉพาะตำบลกกกุง และ ตำบลคูเมือง)">
+          <include geocode="4502"/>
+          <include geocode="4503"/>
+          <include geocode="451204"/>
+          <include geocode="451203"/>
+        </constituency>
+        <constituency index="8" comment="อำเภอจตุรพักตรพิมาน อำเภอศรีสมเด็จ อำเภออาจสามารถ (เฉพาะตำบลบ้านดู่ ตำบลโหรา ตำบลหนองขาม ตำบลหนองบัว และ ตำบลขี้เหล็ก) และ อำเภอเมืองสรวง (เฉพาะตำบลเมืองสรวง และ ตำบลหนองผือ)">
+          <include geocode="4504"/>
+          <include geocode="4516"/>
+          <include geocode="451410"/>
+          <include geocode="451407"/>
+          <include geocode="451406"/>
+          <include geocode="451408"/>
+          <include geocode="451409"/>
+          <include geocode="451205"/>
+          <include geocode="451201"/>
+        </constituency>
+      </constituencies>
     </entity>
     <entity type="Changwat" geocode="33" name="ศรีสะเกษ" english="Si Sa Ket" >
       <constituencies>
