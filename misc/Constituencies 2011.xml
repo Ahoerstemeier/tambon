@@ -1132,7 +1132,7 @@
         <constituency index="3" comment="อำเภอเมืองลำปาง (เฉพาะเทศบาลเมืองเขลางค์นคร ตำบลพิชัย และ ตำบลบ้านเสด็จ) อำเภอแม่ทะ และ อำเภอแม่เมาะ">
           <include geocode="5298"/>
           <include geocode="520111">
-            <exclude geocode="5299"/>            
+            <exclude geocode="5299"/>
           </include>
           <include geocode="520110"/>
           <include geocode="5210"/>
@@ -1785,14 +1785,115 @@
         </constituency>
       </constituencies>
     </entity>
-    <!-- ToDo -->
     <entity type="Changwat" geocode="67" name="เพชรบูรณ์" english="Phetchabun" >
-      เขตเลือกตั้งที่ ๑ ประกอบด้วย อำเภอเมืองเพชรบูรณ์ (เฉพาะเทศบาลเมืองเพชรบูรณ์ตำบลชอนไพร เทศบาลตำบลวังชมภู ตำบลนาป่า ตำบลตะเบาะ ตำบลนายม ตำบลบ้านโตก ตำบลวังชมภู ตำบลสะเดียง ตำบลน้ำร้อน ตำบลป่าเลา ตำบลห้วยสะแก ตำบลบ้านโคก ตำบลระวิง และตำบลดงมูลเหล็ก)
-      เขตเลือกตั้งที่ ๒ ประกอบด้วย อำเภอเมืองเพชรบูรณ์ (เฉพาะเทศบาลตำบลท่าพล ตำบลท่าพล เทศบาลตำบลนางั่ว และตำบลห้วยใหญ่) อำเภอหล่มสัก (เฉพาะเทศบาลเมืองหล่มสัก ตำบลบุ่งน้ำเต้า ตำบลตาลเดี่ยว ตำบลบ้านกลาง ตำบลวัดป่า ตำบลช้างตะลูด ตำบลหนองไขว่ ตำบลบ้านไร่ ตำบลลานป่า ตำบลปากดุก และตำบลบุ่งคล้า ) และอำเภอเขาค้อ
-      เขตเลือกตั้งที่ ๓ ประกอบด้วย อำเภอหล่มเก่า อำเภอน้ำหนาว และอำเภอหล่มสัก (เฉพาะตำบลปากช่อง ตำบลบ้านโสก ตำบลฝายนาแซง ตำบลบ้านติ้ว ตำบลหนองสว่าง ตำบลห้วยไร่ ตำบลน้ำเฮี้ย ตำบลน้ำก้อ ตำบลสักหลง ตำบลน้ำชุน ตำบลท่าอิบุญ และตำบลบ้านหวาย )
-      เขตเลือกตั้งที่ ๔ ประกอบด้วย อำเภอชนแดน อำเภอวังโป่ง อำเภอหนองไผ่ (เฉพาะเทศบาลตำบลหนองไผ่ เทศบาลตำบลนาเฉลียง เทศบาลตำบลเฉลียงทอง ตำบลห้วยโป่ง ตำบลยางงาม ตำบลหนองไผ่ และเทศบาลตำบลบัววัฒนา)
-      เขตเลือกตั้งที่ ๕ ประกอบด้วย อำเภอบึงสามพัน อำเภอหนองไผ่ (เฉพาะเทศบาลตำบลบ่อไทย ตำบลเพชรละคร ตำบลกองทูล ตำบลวังท่าดี ตำบลบ้านโภชน์ ตำบลวังโบสถ์ ตำบลท่าแดง และตำบลท่าด้วง) และอำเภอวิเชียรบุรี (เฉพาะตำบลสามแยก ตำบลซับน้อย ตำบลโคกปรง ตำบลซับสมบูรณ์ และตำบลบึงกระจับ)
-      เขตเลือกตั้งที่ ๖ ประกอบด้วย อำเภอศรีเทพ และอำเภอวิเชียรบุรี (เฉพาะเทศบาลตำบลวิเชียรบุรี เทศบาลตำบลพุเตย ตำบลพุเตย ตำบลพุขาม ตำบลท่าโรง ตำบลภูน้ำหยด ตำบลสระประดู่ ตำบลวังใหญ่ ตำบลน้ำร้อน ตำบลยางสาว และตำบลบ่อรัง)
+      <constituencies>
+        <constituency index="1" comment="อำเภอเมืองเพชรบูรณ์ (เฉพาะเทศบาลเมืองเพชรบูรณ์ ตำบลชอนไพร เทศบาลตำบลวังชมภู ตำบลนาป่า ตำบลตะเบาะ ตำบลนายม ตำบลบ้านโตก ตำบลวังชมภู ตำบลสะเดียง ตำบลน้ำร้อน ตำบลป่าเลา ตำบลห้วยสะแก ตำบลบ้านโคก ตำบลระวิง และ ตำบลดงมูลเหล็ก)">
+          <include geocode="6799"/>
+          <include geocode="670110"/>
+          <include geocode="6796"/>
+          <include geocode="670111"/>
+          <include geocode="670102"/>
+          <include geocode="670112"/>
+          <include geocode="670103"/>
+          <include geocode="670113">
+            <exclude geocode="6796"/>
+          </include>
+          <include geocode="670104"/>
+          <include geocode="670114"/>
+          <include geocode="670105"/>
+          <include geocode="670115"/>
+          <include geocode="670109"/>
+          <include geocode="670117"/>
+          <include geocode="670108"/>
+        </constituency>
+        <constituency index="2" comment="อำเภอเมืองเพชรบูรณ์ (เฉพาะเทศบาลตำบลท่าพล ตำบลท่าพล เทศบาลตำบลนางั่ว และ ตำบลห้วยใหญ่) อำเภอหล่มสัก (เฉพาะเทศบาลเมืองหล่มสัก ตำบลบุ่งน้ำเต้า ตำบลตาลเดี่ยว ตำบลบ้านกลาง ตำบลวัดป่า ตำบลช้างตะลูด ตำบลหนองไขว่ ตำบลบ้านไร่ ตำบลลานป่า ตำบลปากดุก และ ตำบลบุ่งคล้า ) และ อำเภอเขาค้อ">
+          <include geocode="6797"/>
+          <include geocode="670107">
+            <exclude geocode="6797"/>
+          </include>
+          <include geocode="670106"/>
+          <include geocode="670116"/>
+          <include geocode="6798"/>
+          <include geocode="670318"/>
+          <include geocode="670303"/>
+          <include geocode="670319"/>
+          <include geocode="670302"/>
+          <include geocode="670320"/>
+          <include geocode="670315"/>
+          <include geocode="670321"/>
+          <include geocode="670316"/>
+          <include geocode="670322"/>
+          <include geocode="670317"/>
+          <include geocode="6711"/>
+        </constituency>
+        <constituency index="3" comment="อำเภอหล่มเก่า อำเภอน้ำหนาว และ อำเภอหล่มสัก (เฉพาะตำบลปากช่อง ตำบลบ้านโสก ตำบลฝายนาแซง ตำบลบ้านติ้ว ตำบลหนองสว่าง ตำบลห้วยไร่ ตำบลน้ำเฮี้ย ตำบลน้ำก้อ ตำบลสักหลง ตำบลน้ำชุน ตำบลท่าอิบุญ และ ตำบลบ้านหวาย )">
+          <include geocode="6704"/>
+          <include geocode="6709"/>
+          <include geocode="670313"/>
+          <include geocode="670309"/>
+          <include geocode="670304"/>
+          <include geocode="670310"/>
+          <include geocode="670305"/>
+          <include geocode="670311"/>
+          <include geocode="670306"/>
+          <include geocode="670312"/>
+          <include geocode="670307"/>
+          <include geocode="670314"/>
+          <include geocode="670308"/>
+          <include geocode="670323"/>
+        </constituency>
+        <constituency index="4" comment="อำเภอชนแดน อำเภอวังโป่ง อำเภอหนองไผ่ (เฉพาะเทศบาลตำบลหนองไผ่ เทศบาลตำบลนาเฉลียง เทศบาลตำบลเฉลียงทอง ตำบลห้วยโป่ง ตำบลยางงาม ตำบลหนองไผ่ และ เทศบาลตำบลบัววัฒนา)">
+          <include geocode="6702"/>
+          <include geocode="6710"/>
+          <include geocode="6787"/>
+          <include geocode="6788"/>
+          <include geocode="6783"/>
+          <include geocode="670707"/>
+          <include geocode="670712">
+            <exclude geocode="6788"/>
+          </include>
+          <include geocode="670710">
+            <exclude geocode="6787"/>
+          </include>
+          <include geocode="670709"/>
+        </constituency>
+        <constituency index="5" comment="อำเภอบึงสามพัน อำเภอหนองไผ่ (เฉพาะเทศบาลตำบลบ่อไทย ตำบลเพชรละคร ตำบลกองทูล ตำบลวังท่าดี ตำบลบ้านโภชน์ ตำบลวังโบสถ์ ตำบลท่าแดง และ ตำบลท่าด้วง) และ อำเภอวิเชียรบุรี (เฉพาะตำบลสามแยก ตำบลซับน้อย ตำบลโคกปรง ตำบลซับสมบูรณ์ และ ตำบลบึงกระจับ)">
+          <include geocode="6708"/>
+          <include geocode="6781"/>
+          <include geocode="670705"/>
+          <include geocode="670701"/>
+          <include geocode="670708"/>
+          <include geocode="670703"/>
+          <include geocode="670711"/>
+          <include geocode="670704"/>
+          <include geocode="670713"/>
+          <include geocode="670503"/>
+          <include geocode="670514"/>
+          <include geocode="670504"/>
+          <include geocode="670510"/>
+          <include geocode="670511"/>
+        </constituency>
+        <constituency index="6" comment="อำเภอศรีเทพ และอำเภอวิเชียรบุรี (เฉพาะเทศบาลตำบลวิเชียรบุรี เทศบาลตำบลพุเตย ตำบลพุเตย ตำบลพุขาม ตำบลท่าโรง ตำบลภูน้ำหยด ตำบลสระประดู่ ตำบลวังใหญ่ ตำบลน้ำร้อน ตำบลยางสาว และ ตำบลบ่อรัง)">
+          <include geocode="6706"/>
+          <include geocode="6790"/>
+          <include geocode="6791"/>
+          <include geocode="670507">
+            <exclude geocode="6791"/>
+          </include>
+          <include geocode="670508"/>
+          <include geocode="670501">
+            <exclude geocode="6790"/>
+          </include>
+          <include geocode="670509"/>
+          <include geocode="670502">
+            <exclude geocode="6790"/>
+          </include>
+          <include geocode="670512"/>
+          <include geocode="670505"/>
+          <include geocode="670513"/>
+          <include geocode="670506"/>
+        </constituency>
+      </constituencies>
     </entity>
     <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
       <constituencies>
@@ -2508,12 +2609,12 @@
         <constituency index="3" comment="อำเภอชุมพลบุรี อำเภอท่าตูม อำเภอรัตนบุรี (เฉพาะตำบลกุดขาคีม)">
           <include geocode="3202"/>
           <include geocode="3203"/>
+          <include geocode="320714"/>
+        </constituency>
+        <constituency index="4" comment="อำเภอรัตนบุรี (ยกเว้นตำบลกุดขาคีม) อำเภอสนม อำเภอโนนนารายณ์ อำเภอสำโรงทาบ (เฉพาะตำบลกระออม)">
           <include geocode="3207">
             <exclude geocode="320714"/>
           </include>
-        </constituency>
-        <constituency index="4" comment="อำเภอรัตนบุรี (ยกเว้นตำบลกุดขาคีม) อำเภอสนม อำเภอโนนนารายณ์ อำเภอสำโรงทาบ (เฉพาะตำบลกระออม)">
-          <include geocode="320714"/>
           <include geocode="3208"/>
           <include geocode="3217"/>
           <include geocode="321203"/>
