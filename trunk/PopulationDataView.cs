@@ -105,7 +105,7 @@ namespace De.AHoerstemeier.Tambon
         {
             var lData = CurrentSelectedEntity(sender);
             PopulationDataEntryToListView(lData);
-            btnClipboardAmphoe.Enabled = EntityTypeHelper.IsCompatibleEntityType(lData.Type, EntityType.Amphoe);
+            btnClipboardAmphoe.Enabled = lData.CanWriteForWikipedia();
         }
 
         private PopulationDataEntry CurrentSelectedEntity(object sender)
