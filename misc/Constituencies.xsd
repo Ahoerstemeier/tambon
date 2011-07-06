@@ -99,14 +99,16 @@
   </xs:complexType>
   <xs:complexType name="PartyListResultEntry">
     <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
-    <xs:attribute name="votes" type="xs:positiveInteger" use="required"/>
+    <xs:attribute name="votes" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="seats" type="xs:nonNegativeInteger" use="optional"/>
   </xs:complexType>
   <xs:complexType name="PartyListResult">
     <xs:sequence>
       <xs:element name="party" type="PartyListResultEntry" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
-    <xs:attribute name="invalidvotes" type="xs:positiveInteger" />
-    <xs:attribute name="abstainvotes" type="xs:positiveInteger" />
+    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="required"/>
+    <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="required"/>
+    <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="required"/>
   </xs:complexType>
   <xs:simpleType name="ElectionStatus">
     <xs:restriction base="xs:string">
@@ -151,8 +153,9 @@
     <xs:sequence>
       <xs:element name="candidate" type="CandidateListEntry" minOccurs="1" maxOccurs="unbounded"/>
     </xs:sequence>
-    <xs:attribute name="invalidvotes" type="xs:positiveInteger" />
-    <xs:attribute name="abstainvotes" type="xs:positiveInteger" />
+    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="optional"/>
+    <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="optional"/>
+    <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="optional"/>
   </xs:complexType>
   <xs:simpleType name="ByElectionReason">
     <xs:restriction base="xs:string">
@@ -180,6 +183,5 @@
       <xs:element name="candidates" type="CandidateList" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional"/>
-    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="optional"/>
   </xs:complexType>  
 </xs:schema>
