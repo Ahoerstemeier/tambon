@@ -1716,6 +1716,15 @@
       <office type="TAOOffice">
         <url>http://www.thanprasat.go.th/</url>
       </office>
+      <entity type="Muban" geocode="30100601" name="บ้านสำโรง"/>
+      <entity type="Muban" geocode="30100602" name="บ้านตลาดแค"/>
+
+      <entity type="Muban" geocode="30100604" name="บ้านตะขบ"/>
+
+      <entity type="Muban" geocode="30100611" name="บ้านสระแทด"/>
+      <entity type="Muban" geocode="30100612" name="บ้านสามแยกตลาดแค"/>
+
+      <entity type="Muban" geocode="30100615" name="บ้านตลาดแคตะวันออก"/>
     </entity>
     <entity type="Tambon" name="หลุมข้าว" english="Lum Khao" geocode="301007" >
       <office type="TAOOffice">
@@ -4398,7 +4407,15 @@
       <url>http://www.kaithongs.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="แชะ" english="Chae" geocode="3092" parent="3002" />
+  <entity type="ThesabanTambon" name="แชะ" english="Chae" geocode="3092" parent="3002" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/korat/chae/</url>
+      <!--<url>http://www.chea.th.gs/</url>-->
+      <officials>
+        <official title="Mayor" name="ธนดล ชัยยุตต์" comment="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ไทรโยง-ไชยวาล" english="Saiyong-Chaiwan" geocode="3091" parent="3002" >
     <office type="MunicipalityOffice">
       <url>http://www.saiyong-chaiwan.go.th/</url>
@@ -4437,7 +4454,11 @@
       <url>http://www.banlueammuni.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="จักราช" english="Chakkarat" geocode="3085" parent="3006" />
+  <entity type="ThesabanTambon" name="จักราช" english="Chakkarat" geocode="3085" parent="3006" >
+    <office type="MunicipalityOffice">
+      <!--<url>http://www.chakkaratlocal.go.th/</url>-->
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="โชคชัย" english="Chok Chai" geocode="3084" parent="3007" >
     <office type="MunicipalityOffice">
       <url>http://www.chockchai.go.th/</url>
@@ -4451,7 +4472,19 @@
       <url>http://dankwiancity.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ด่านขุนทด" english="Dan Khun Thot" geocode="3082" parent="3008" />
+  <entity type="ThesabanTambon" name="ด่านขุนทด" english="Dan Khun Thot" geocode="3082" parent="3008" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>15.2099</geo:lat>
+        <geo:long>101.7667</geo:long>
+      </geo:Point>
+      <url>http://www.dankhuntodcity.go.th/</url>
+      <!--<url>http://dankhuntod.tripod.com/</url>-->
+      <officials>
+        <official title="Mayor" name="สาวสลักจิต กิมตระกูล" comment="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หนองกราด" english="Nong Krat" geocode="3081" parent="3008" >
     <office type="MunicipalityOffice">
       <url>http://www.nongkradcity.go.th/</url>
@@ -4467,7 +4500,14 @@
       <url>http://nonthai.net/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ตลาดแค" english="Talad Khae" geocode="3078" parent="3010" />
+  <entity type="ThesabanTambon" name="ตลาดแค" english="Talad Khae" geocode="3078" parent="3010" >
+    <office type="MunicipalityOffice">
+      <url>http://www.taladkae.com/</url>
+      <officials>
+        <official title="Mayor" name="ชัยรัตน์ กิตติหิรัญวัฒน์" comment="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="มะค่า" english="Makha" geocode="3077" parent="3010" >
     <office type="MunicipalityOffice">
       <url>http://www.makhacity.go.th/</url>
@@ -4611,7 +4651,14 @@
       <url>http://www.pruyai.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="วังไทร" english="Wang Sai" geocode="3051" parent="3021" tambon="302111"/>
+  <entity type="ThesabanTambon" name="วังไทร" english="Wang Sai" geocode="3051" parent="3021" tambon="302111">
+    <office type="MunicipalityOffice">
+      <!---><url>http://www.nmt.or.th/korat/wangsai/</url>-->
+      <officials>
+        <official title="Mayor" name="พงษ์ศักดิ์ แตงอ่อน" comment="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หัวทะเล" english="Hua Thale" geocode="3050" parent="3001" tambon="300111">
     <office type="MunicipalityOffice">
       <geo:Point>
