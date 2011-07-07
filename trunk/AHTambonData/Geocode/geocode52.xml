@@ -783,7 +783,14 @@
       <entity type="Muban" geocode="52090111" name="บ้านแพะดอกเข็ม"/>
     </entity>
     <entity type="Tambon" name="ผาปัง" english="Pha Pang" geocode="520902" />
-    <entity type="Tambon" name="แม่ปุ" english="Mae Pu" geocode="520903" />
+    <entity type="Tambon" name="แม่ปุ" english="Mae Pu" geocode="520903" >
+      <entity type="Muban" geocode="52090301" name="บ้านท่าไม้"/>
+      <entity type="Muban" geocode="52090302" name="บ้านแม่ปุ"/>
+      <entity type="Muban" geocode="52090303" name="บ้านต้นธง"/>
+      <entity type="Muban" geocode="52090304" name="บ้านโป่งขาม"/>
+      <entity type="Muban" geocode="52090305" name="บ้านวังผู"/>
+      <entity type="Muban" geocode="52090306" name="บ้านแม่ปุแพะ"/>
+    </entity>
     <entity type="Tambon" name="พระบาทวังตวง" english="Phra Bat Wang Tuang" geocode="520904" >
       <office type="TAOOffice">
         <url>http://www.prabatwangtuang.ob.tc/</url>
@@ -1205,8 +1212,30 @@
       <url>http://www.freewebs.com/sermngam/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="แจ้ห่ม" english="Chae Hom" geocode="5292" parent="5206" />
-  <entity type="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" geocode="5291" parent="5207" />
+  <entity type="ThesabanTambon" name="แจ้ห่ม" english="Chae Hom" geocode="5292" parent="5206" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>18.7029</geo:lat>
+        <geo:long>99.5666</geo:long>
+      </geo:Point>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" geocode="5291" parent="5207" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banmailocal.go.th/</url>
+      <officials>
+        <official title="Mayor" name="จรัส มหามิตร" comment="2011"/>
+      </officials>
+    </office>
+    <entity type="Chumchon" geocode="52910001" name="บ้านเหล่า"/>
+    <entity type="Chumchon" geocode="52910002" name="ทัพป่าเส้า"/>
+    <entity type="Chumchon" geocode="52910003" name="ร่วมใจพัฒนา"/>
+    <entity type="Chumchon" geocode="52910004" name="ก้าวหน้า"/>
+    <entity type="Chumchon" geocode="52910005" name="บ้านเฮือนหลวง"/>
+    <entity type="Chumchon" geocode="52910006" name="ร่มโพธิ์ทอง"/>
+    <entity type="Chumchon" geocode="52910007" name="พญาวัง"/>
+    <entity type="Chumchon" geocode="52910008" name="ใหม่พัฒนา"/>
+  </entity>
   <entity type="ThesabanTambon" name="วังเหนือ" english="Wang Nuea" geocode="5290" parent="5207" >
     <office type="MunicipalityOffice">
       <url>http://www.wangnuea.org/</url>
@@ -1217,7 +1246,14 @@
       <url>http://www.lomrad.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="แม่ปุ" english="Mae Pu" geocode="5288" parent="5209" />
+  <entity type="ThesabanTambon" name="แม่ปุ" english="Mae Pu" geocode="5288" parent="5209" >
+    <office type="MunicipalityOffice">
+      <url>http://maepu.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ณรงค์ เตชะวงศ์" comment="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แม่พริก" english="Mae Phrik" geocode="5287" parent="5209" >
     <office type="MunicipalityOffice">
       <url>http://www.maephrik.com/</url>
