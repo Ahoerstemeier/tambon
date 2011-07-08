@@ -88,8 +88,16 @@
       <entity type="Muban" geocode="37010910" name="บ้านดงบัง"/>
     </entity>
     <entity type="Tambon" name="นาวัง" english="Na Wang" geocode="370110" >
-      <office type="TAOOffice">
-        <url>http://www.navang.org/</url>
+      <office type="MunicipalityOffice">
+        <!-- no hires yet -->
+        <geo:Point>
+          <geo:lat>15.9991</geo:lat>
+          <geo:long>104.5700</geo:long>
+        </geo:Point>
+        <!--<url>http://www.navang.org/</url>-->
+        <officials>
+          <official title="TAOMayor" name="บุญชู จารุจิตร" comment="2009"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="นาหมอม้า" english="Na Mo Ma" geocode="370111" >
@@ -234,11 +242,33 @@
       <entity type="Muban" geocode="37030109" name="บ้านหนองไฮน้อย"/>
     </entity>
     <entity type="Tambon" name="คำโพน" english="Kham Phon" geocode="370302" />
-    <entity type="Tambon" name="นาหว้า" english="Na Wa" geocode="370303" />
+    <entity type="Tambon" name="นาหว้า" english="Na Wa" geocode="370303"/>
     <entity type="Tambon" name="ลือ" english="Lue" geocode="370304" />
     <entity type="Tambon" name="ห้วย" english="Huai" geocode="370305" />
     <entity type="Tambon" name="โนนงาม" english="Non Ngam" geocode="370306" />
-    <entity type="Tambon" name="นาป่าแซง" english="Na Pa Saeng" geocode="370307" />
+    <entity type="Tambon" name="นาป่าแซง" english="Na Pa Saeng" geocode="370307">
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>15.8749</geo:lat>
+          <geo:long>104.8765</geo:long>
+        </geo:Point>
+        <url>http://www.napasang.go.th/</url>
+        <officials>
+          <official title="Mayor" name="สังวาลย์ แก่นกุล" comment="2011"/>
+          <official title="TAOMayor" name="ธงชัย โพธารินทร์" comment="2009"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="37030701" name="บ้านนาป่าแซง"/>
+      <entity type="Muban" geocode="37030701" name="บ้านสามัคคี"/>
+      <entity type="Muban" geocode="37030701" name="บ้านโคกพระ"/>
+      <entity type="Muban" geocode="37030701" name="บ้านวินัยดี"/>
+      <entity type="Muban" geocode="37030701" name="บ้านนาถาวร"/>
+      <entity type="Muban" geocode="37030701" name="บ้านสามแยกชมภู"/>
+      <entity type="Muban" geocode="37030701" name="บ้านยางเครือพัฒนา"/>
+      <entity type="Muban" geocode="37030701" name="บ้านคำย่านาง"/>
+      <entity type="Muban" geocode="37030701" name="บ้านโคกเจริญ"/>
+      <entity type="Muban" geocode="37030701" name="บ้านโคกพระ"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="พนา" english="Phana" geocode="3704" >
     <office type="DistrictOffice">
@@ -418,7 +448,19 @@
         <url>http://www.dongmayang.org/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="เปือย" english="Pueai" geocode="370703" />
+    <entity type="Tambon" name="เปือย" english="Pueai" geocode="370703" >
+      <office type="MunicipalityOffice">
+        <!-- no hires yet -->
+        <geo:Point>
+          <geo:lat>15.6842</geo:lat>
+          <geo:long>104.6903</geo:long>
+        </geo:Point>
+        <url>http://www.puaimuni.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ประสิทธิ์ สุระสาย" comment="2009"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ดงบัง" english="Dong Bang" geocode="370704" />
     <entity type="Tambon" name="ไร่ขี" english="Rai Khi" geocode="370705" />
     <entity type="Tambon" name="แมด" english="Maet" geocode="370706" />

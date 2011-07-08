@@ -338,8 +338,12 @@
     </entity>
     <entity type="Tambon" name="องครักษ์" english="Ongkharak" geocode="150408" />
     <entity type="Tambon" name="โคกพุทรา" english="Khok Phutsa" geocode="150409" >
-      <office type="TAOOffice">
-        <url>http://www.localthai.org/kokputsa/</url>
+      <office type="MunicipalityOffice">
+        <!-- Somewhere around  14.684031° 100.385858° - but not recognizable which building -->
+        <!--<url>http://www.localthai.org/kokputsa/</url>-->
+        <officials>
+          <official title="TAOMayor" name="จิรพัฒน์ ทองมั่น" comment="2009"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="15040901" name="บ้านบางแมว"/>
       <entity type="Muban" geocode="15040902" name="บ้านดอนงิ้ว"/>
@@ -366,8 +370,15 @@
     </entity>
     <entity type="Tambon" name="บ่อแร่" english="Bo Rae" geocode="150411" />
     <entity type="Tambon" name="ทางพระ" english="Thang Phra" geocode="150412" >
-      <office type="TAOOffice">
-        <url>http://www.thangphra.com/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>14.6761</geo:lat>
+          <geo:long>100.3482</geo:long>
+        </geo:Point>
+        <!--<url>http://www.thangphra.com/</url>-->
+        <officials>
+          <official title="TAOMayor" name="สนธยา จันทร์อ้น" comment="2009"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="15041201" name="บ้านทางพระ"/>
       <entity type="Muban" geocode="15041202" name="บ้านทางพระ"/>
@@ -475,8 +486,17 @@
       <entity type="Muban" geocode="15060308" name="บ้านคลองสุคนธ์"/>
     </entity>
     <entity type="Tambon" name="สาวร้องไห้" english="Sao Rong Hai" geocode="150604" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <!-- In 2006 Google Earth just empty lot -->
+        <geo:Point>
+          <geo:lat>14.5367</geo:lat>
+          <geo:long>100.2467</geo:long>
+        </geo:Point>
         <url>http://www.saoronghai.org/</url>
+        <officials>
+          <official title="Mayor" name="เอนก เสือโพธิ์" comment="2011"/>
+          <official title="TAOMayor" name="เอนก เสือโพธิ์" comment="2009"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="ท่าช้าง" english="Tha Chang" geocode="150605" >
