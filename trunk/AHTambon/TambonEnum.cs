@@ -8,6 +8,7 @@ namespace De.AHoerstemeier.Tambon
     public enum EntityType
     {
         Unknown,
+        Country,
         Changwat,
         Amphoe,
         KingAmphoe,
@@ -34,7 +35,8 @@ namespace De.AHoerstemeier.Tambon
         PAO,
         Phak,
         KlumChangwat,
-        Constituency
+        Constituency,
+        ElectoralRegion
     };
     public enum EntityModification
     {

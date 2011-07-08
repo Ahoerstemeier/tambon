@@ -56,7 +56,7 @@ namespace De.AHoerstemeier.Tambon
         static private List<EntityType> CreateAllEntityLevels()
         {
             var retval = new List<EntityType>();
-            foreach (EntityType i in System.Enum.GetValues(typeof(EntityType)))
+            foreach ( EntityType i in System.Enum.GetValues(typeof(EntityType)) )
             {
                 retval.Add(i);
             }
@@ -67,7 +67,7 @@ namespace De.AHoerstemeier.Tambon
         {
             get
             {
-                if (mAllEntityTypes == null)
+                if ( mAllEntityTypes == null )
                 {
                     mAllEntityTypes = CreateAllEntityLevels();
                 }
@@ -89,7 +89,7 @@ namespace De.AHoerstemeier.Tambon
         {
             get
             {
-                if (mEntitySecondLevel == null)
+                if ( mEntitySecondLevel == null )
                 {
                     mEntitySecondLevel = CreateEntitySecondLevel();
                 }
@@ -111,18 +111,18 @@ namespace De.AHoerstemeier.Tambon
         public static EntityType ParseEntityType(string iValue)
         {
             EntityType retval = EntityType.Unknown;
-            if (!String.IsNullOrEmpty(iValue))
+            if ( !String.IsNullOrEmpty(iValue) )
             {
-                foreach (KeyValuePair<EntityType, string> lKeyValuePair in EntityNames)
+                foreach ( KeyValuePair<EntityType, string> lKeyValuePair in EntityNames )
                 {
-                    if (iValue.StartsWith(lKeyValuePair.Value))
+                    if ( iValue.StartsWith(lKeyValuePair.Value) )
                     {
-                        if (retval == EntityType.Unknown)
+                        if ( retval == EntityType.Unknown )
                         {
                             retval = lKeyValuePair.Key;
                         }
                         // special case - Sakha and SakhaTambon might make problems otherwise
-                        else if (lKeyValuePair.Value.Length > EntityNames[retval].Length)
+                        else if ( lKeyValuePair.Value.Length > EntityNames[retval].Length )
                         {
                             retval = lKeyValuePair.Key;
                         }
@@ -130,7 +130,7 @@ namespace De.AHoerstemeier.Tambon
 
                 }
             }
-            if (retval == EntityType.Unknown)
+            if ( retval == EntityType.Unknown )
             {
                 retval = EntityType.Unknown;
             }
@@ -139,7 +139,7 @@ namespace De.AHoerstemeier.Tambon
         public static Boolean IsCompatibleEntityType(EntityType iValue1, EntityType iValue2)
         {
             Boolean retval = false;
-            switch (iValue1)
+            switch ( iValue1 )
             {
                 case EntityType.Bangkok:
                 case EntityType.Changwat:

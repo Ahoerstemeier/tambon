@@ -64,7 +64,7 @@ namespace De.AHoerstemeier.Tambon
                 }
             }
             iTreeView.EndUpdate();
-            
+
         }
 
         private String CalculateData(Int32 iGeocode)
@@ -79,15 +79,15 @@ namespace De.AHoerstemeier.Tambon
             {
                 lEntry = mData.FindByCode(iGeocode);
             }
-            if (lEntry != null)
+            if ( lEntry != null )
             {
                 List<PopulationDataEntry> lList = lEntry.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
                 lList.Add(lEntry);
                 FrequencyCounter lCounter = new FrequencyCounter();
                 Int32 lSeats = 0;
-                foreach (PopulationDataEntry lSubEntry in lList)
+                foreach ( PopulationDataEntry lSubEntry in lList )
                 {
-                    foreach (ConstituencyEntry lConstituency in lSubEntry.ConstituencyList)
+                    foreach ( ConstituencyEntry lConstituency in lSubEntry.ConstituencyList )
                     {
                         lCounter.IncrementForCount(lConstituency.Population() / lConstituency.NumberOfSeats, lSubEntry.Geocode * 100 + lConstituency.Index);
                         lSeats += lConstituency.NumberOfSeats;
@@ -109,6 +109,17 @@ namespace De.AHoerstemeier.Tambon
                     foreach ( var lSubEntry in lCounter.Data[lCounter.MinValue] )
                     {
                         lBuilder.AppendLine(" " + GetEntityConstituencyName(lSubEntry));
+                    }
+                }
+                lBuilder.AppendLine();
+                foreach ( PopulationDataEntry lSubEntry in lList )
+                {
+                    foreach ( ConstituencyEntry lConstituency in lSubEntry.ConstituencyList )
+                    {
+                        lBuilder.AppendLine(
+                            GetEntityConstituencyName(lSubEntry.Geocode * 100 + lConstituency.Index)
+                            + ": " +
+                            lConstituency.Population() / lConstituency.NumberOfSeats);
                     }
                 }
                 lResult = lBuilder.ToString();
