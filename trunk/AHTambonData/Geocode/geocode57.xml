@@ -1286,8 +1286,13 @@
       </officials>
     </office>
     <entity type="Tambon" name="แม่สรวย" english="Mae Suai" geocode="571001" >
-      <office type="TAOOffice">
-        <url>http://www.maesuai.com/</url>
+      <office type="MunicipalityOffice">
+        <!-- TAO renamed to เวียงสรวย with upgrade to municipality -->
+        <!-- Location somewhere around  19.659633°  99.534829° -->
+        <!--<url>http://www.maesuai.com/</url>-->
+        <officials>
+          <official title="TAOMayor" name="สมบัติ จอมกัน" comment="2009"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="57100101" name="บ้านโป่งปูเฟือง"/>
       <entity type="Muban" geocode="57100102" name="บ้านสันกลาง"/>
@@ -2110,7 +2115,14 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่สรวย" english="Mae Suai" geocode="5783" parent="5710" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>19.6521</geo:lat>
+        <geo:long>99.5394</geo:long>
+      </geo:Point>
       <url>http://www.maesuai.org/</url>
+      <officials>
+        <official title="Mayor" name="วีรธรรม ปัญจขันธ์" comment="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="เจดีย์หลวง" english="Chedi Luang" geocode="5782" parent="5710" >
