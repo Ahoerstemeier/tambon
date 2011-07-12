@@ -2497,8 +2497,15 @@
       </officials>
     </office>
     <entity type="Tambon" name="บ้านโคก" english="Ban Khok" geocode="402201" >
-      <office type="TAOOffice">
-        <url comment="Offline?">http://www.bankok.go.th/</url>
+      <office type="MunicipalityOffice">
+        <!-- TAO renamed to ภูผาแดง at upgrade to municipality-->
+        <geo:Point>
+          <!-- no hires yet -->
+          <geo:lat>16.0856</geo:lat>
+          <geo:long>102.3853</geo:long>
+        </geo:Point>
+        <url comment="Empty website?">http://www.puphadaeng.org/</url>
+        <!--<url>http://www.bankok.go.th/</url>-->
       </office>
       <entity type="Muban" geocode="40220101" name="บ้านโคก" english="Ban Khok" comment="Municipal"/>
       <entity type="Muban" geocode="40220102" name="บ้านโสกนาดี" english="Ban Sok Na Di" comment="Partially municipal"/>

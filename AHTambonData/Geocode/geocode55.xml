@@ -821,7 +821,14 @@
     <entity type="Tambon" name="ชนแดน" english="Chon Daen" geocode="550906" newgeocode="551302" />
     <entity type="Tambon" name="ยอด" english="Yot" geocode="550907" newgeocode="551303" />
     <entity type="Tambon" name="พญาแก้ว" english="Phaya Kaeo" geocode="550908" />
-    <entity type="Tambon" name="พระพุทธบาท" english="Phra Phutthabat" geocode="550909" />
+    <entity type="Tambon" name="พระพุทธบาท" english="Phra Phutthabat" geocode="550909" >
+      <office type="MunicipalityOffice">
+        <!-- TAO renamed to พระพุทธบาทเชียงคาน when upgraded to municipality -->
+        <officials>
+          <official title="TAOMayor" name="นิคม จำปาบุญ" comment="2009"/>
+        </officials>
+      </office>
+    </entity>
 
     <entity type="Unknown" name="นาไร่หลวง" english="Na Rai Luang" geocode="550998" newgeocode="551301" />
     <entity type="Unknown" name="ยอด" english="Yot" geocode="550999" newgeocode="551303" />
