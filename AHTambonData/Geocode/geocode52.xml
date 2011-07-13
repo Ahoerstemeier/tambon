@@ -319,8 +319,18 @@
       <entity type="Muban" geocode="52030507" name="บ้านเหล่า-แม่ปูน"/>
     </entity>
     <entity type="Tambon" name="เกาะคา" english="Ko Kha" geocode="520306" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <!-- TAO renamed to สบยาว with upgrade to municipality -->
+        <!-- to be further renamed to เกาะคาแม่ยาว?-->
+        <geo:Point>
+          <geo:lat>18.2073</geo:lat>
+          <geo:long>99.3589</geo:long>
+        </geo:Point>
         <url>http://www.kokhasub.com/</url>
+        <officials>
+          <official title="Mayor" name="เมือง พรหมอย่า" comment="2011"/>
+          <official title="TAOMayor" name="วิชาญ มาเขียว" comment="2009"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="52030601" name="บ้านน้ำล้อม"/>
       <entity type="Muban" geocode="52030602" name="บ้านหัวแต"/>
