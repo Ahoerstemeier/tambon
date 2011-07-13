@@ -98,7 +98,8 @@ namespace De.AHoerstemeier.Tambon
             lBuilder.Append("|title=Population statistics ");
             lBuilder.Append(mYear.ToString());
             lBuilder.Append("}}</ref>");
-            return lBuilder.ToString();
+            String lResult = lBuilder.ToString();
+            return lResult;
         }
 
         private Boolean cached(String iFilename)
