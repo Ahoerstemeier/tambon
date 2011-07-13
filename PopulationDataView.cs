@@ -97,8 +97,11 @@ namespace De.AHoerstemeier.Tambon
         private void btnClipboardAmphoe_Click(object sender, EventArgs e)
         {
             var lData = CurrentSelectedEntity(sender);
-            string lOutput = lData.WriteForWikipedia(mData.WikipediaReference());
-            Clipboard.SetText(lOutput);
+            String lOutput = lData.WriteForWikipedia(mData.WikipediaReference());
+            if (lOutput != String.Empty)
+            {
+                Clipboard.SetText(lOutput);
+            }
         }
 
         private void tv_data_AfterSelect(object sender, TreeViewEventArgs e)
