@@ -322,8 +322,18 @@
       </office>
     </entity>
     <entity type="Tambon" name="รำมะสัก" english="Ram Masak" geocode="150405" >
-      <office type="TAOOffice">
-        <url>http://www.rammasak.com/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <!-- no building visible in 2006 Google Earth data -->
+          <geo:lat>14.6848</geo:lat>
+          <geo:long>100.2327</geo:long>
+        </geo:Point>
+        <!-- TAO renamed to ม่วงคัน with upgrade to municipality-->
+        <!--<url comment="Was it ever online? Not found in whois">http://www.muangkhan.go.th/</url>-->
+        <!--<url>http://www.rammasak.com/</url>-->
+        <officials>
+          <official title="TAOMayor" name="สำเริง ครองตน" comment="2008"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="บางระกำ" english="Bang Rakam" geocode="150406" >
@@ -692,7 +702,17 @@
       </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="รำมะสัก" english="Ram Masak" geocode="1594" parent="1504" />
+  <entity type="ThesabanTambon" name="รำมะสัก" english="Ram Masak" geocode="1594" parent="1504" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>14.6824</geo:lat>
+        <geo:long>100.2559</geo:long>
+      </geo:Point>
+      <officials>
+        <official title="Mayor" name="ประสิทธิ์ ปกป้อง" comment="2008"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="แสวงหา" english="Sawaeng Ha" geocode="1593" parent="1505" >
     <office type="MunicipalityOffice">
       <url>http://www.sawangha.go.th/</url>
