@@ -433,6 +433,10 @@
   </entity>
   <entity type="Amphoe" name="ลืออำนาจ" english="Lue Amnat" geocode="3707" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>15.7016</geo:lat>
+        <geo:long>104.6449</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="สมภพ ร่วมญาติ" begin="2010-02-22"/>
 
@@ -442,7 +446,28 @@
         <official title="DistrictOfficer" name="บรรเจิด อนุเวช" end="2007-10-23"/>
       </officials>
     </office>
-    <entity type="Tambon" name="อำนาจ" english="Amnat" geocode="370701" />
+    <entity type="Tambon" name="อำนาจ" english="Amnat" geocode="370701" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <!-- no hires yet -->
+          <geo:lat>15.6943</geo:lat>
+          <geo:long>104.6634</geo:long>
+        </geo:Point>
+        <!-- TAO renamed to สามหนอง when upgraded to municipality -->
+        <url>http://samhnong.go.th/</url>
+        <officials>
+          <official title="Mayor" name="วิศาล สมศรี" comment="2011"/>
+          <official title="TAOMayor" name="ประสิทธิ์ กาญจนสาร" comment="2009"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="37070103" name="บ้านยางช้า"/>
+
+      <entity type="Muban" geocode="37070107" name="บ้านยางช้า"/>
+      <entity type="Muban" geocode="37070108" name="บ้านหนองไผ่"/>
+      <entity type="Muban" geocode="37070109" name="บ้านหนองหิ้ง"/>
+      <entity type="Muban" geocode="37070110" name="บ้านโคกเจริญ"/>
+      <entity type="Muban" geocode="37070111" name="บ้านหนองไผ่"/>
+    </entity>
     <entity type="Tambon" name="ดงมะยาง" english="Dong Mayang" geocode="370702" >
       <office type="TAOOffice">
         <url>http://www.dongmayang.org/</url>
@@ -511,8 +536,23 @@
   </entity>
   <entity type="ThesabanTambon" name="อำนาจ" english="Amnat" geocode="3792" parent="3707" >
     <office type="MunicipalityOffice">
-      <url>http://www.amnatmuni.com/</url>
+      <geo:Point>
+        <geo:lat>15.7024</geo:lat>
+        <geo:long>104.6450</geo:long>
+      </geo:Point>
+      <url>http://www.amnatmuni.net/</url>
+      <!--<url>http://www.amnatmuni.com/</url>-->
+      <officials>
+        <official title="Mayor" name="ไชยะ เกตุเตียน" comment="2011"/>
+      </officials>
     </office>
+    <!--
+    ชุมชนหมู่หนึ่งพัฒนา
+    ชุมชนหมู่สองร่วมใจ
+    ชุมชนหมู่สี่สามัคคี
+    ชุมชนหมู่ห้าสว่างใจ
+    ชุมชนหมู่หกโนนชัย
+    -->
   </entity>
   <entity type="ThesabanTambon" name="พระเหลา" english="Phra Lao" geocode="3791" parent="3704" tambon="370404">
     <office type="MunicipalityOffice">
