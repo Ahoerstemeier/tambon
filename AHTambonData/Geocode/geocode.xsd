@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- ToDo: Better scheme for renaming and reassignments -->
 <xs:schema xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" />
+  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geocode_point.xsd"/>
   <xs:simpleType name="EntityType">
     <xs:annotation>
       <xs:documentation>Types of administrative entities.</xs:documentation>
