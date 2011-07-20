@@ -62,7 +62,7 @@ namespace De.AHoerstemeier.Tambon
                     {EntityType.Sukhaphiban,"ยุบสุขาภิบาล"},
                     {EntityType.Tambon,"ยุบตำบล หรือ ยุบและเปลี่ยนแปลงเขตตำบล"},
                     {EntityType.TAO,"ยุบองค์การบริหารส่วนตำบล หรือ ยุบรวมองค์การบริหารส่วนตำบล หรือ รวมองค์การบริหารส่วนตำบลกับ"},
-                    {EntityType.TC,"ยุบรวมสภาตำบล"}
+                    {EntityType.SakhaTambon,"ยุบรวมสภาตำบล"}
                 }
              },
              {
@@ -147,11 +147,11 @@ namespace De.AHoerstemeier.Tambon
         private void PerformRequest()
         {
             StringBuilder lRequestString = new StringBuilder();
-            foreach (string s in new List<String> { "ก", "ง", "ข", "ค", "all" })
+            foreach ( string s in new List<String> { "ก", "ง", "ข", "ค", "all" } )
             {
                 lRequestString.Append("chkType=" + MyURLEncode(s) + "&");
             }
-            if (mVolume <= 0)
+            if ( mVolume <= 0 )
             {
                 lRequestString.Append("txtBookNo=&");
             }
@@ -184,7 +184,7 @@ namespace De.AHoerstemeier.Tambon
         {
             WebClient lClient = new WebClient();
             String lSearchURL = String.Empty;
-            if (iPage == 0)
+            if ( iPage == 0 )
             {
                 lSearchURL = SearchPostURL;
             }
@@ -194,7 +194,7 @@ namespace De.AHoerstemeier.Tambon
                 lClient.Headers.Add("Referer", "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_result.jsp");
             }
 
-            if (!String.IsNullOrEmpty(mCookie))
+            if ( !String.IsNullOrEmpty(mCookie) )
             {
                 lClient.Headers.Add("Cookie", mCookie);
             }
@@ -205,18 +205,18 @@ namespace De.AHoerstemeier.Tambon
             lClient.Headers.Add("Accept-Charset", "UTF-8,*");
             Byte[] lResponseData = lClient.DownloadData(lSearchURL + "?" + lRequestString);
             String lCookie = lClient.ResponseHeaders.Get("Set-Cookie");
-            if (!String.IsNullOrEmpty(lCookie))
+            if ( !String.IsNullOrEmpty(lCookie) )
             {
                 mCookie = lCookie;
             }
             String response = Encoding.ASCII.GetString(lResponseData);
             Int32 lPosition = response.LastIndexOf(ResponseDataURL);
             String retval = String.Empty;
-            if (lPosition >= 0)
+            if ( lPosition >= 0 )
             {
                 String lDataURL = response.Substring(lPosition, response.Length - lPosition);
                 lDataURL = lDataURL.Substring(ResponseDataURL.Length, lDataURL.Length - ResponseDataURL.Length);
-                if (lDataURL.Contains("\";"))
+                if ( lDataURL.Contains("\";") )
                 {
                     retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\";"));
                 }
@@ -231,7 +231,7 @@ namespace De.AHoerstemeier.Tambon
         {
             WebClient lClient = new WebClient();
             lClient.Encoding = Encoding.UTF8;
-            if (iPage == 0)
+            if ( iPage == 0 )
             {
                 lClient.Headers.Add("Referer", SearchFormURL);
             }
@@ -239,7 +239,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 lClient.Headers.Add("Referer", SearchPageURL);
             }
-            if (!String.IsNullOrEmpty(mCookie))
+            if ( !String.IsNullOrEmpty(mCookie) )
             {
                 lClient.Headers.Add("Cookie", mCookie);
             }
@@ -282,19 +282,19 @@ namespace De.AHoerstemeier.Tambon
             String lCurrentLine = String.Empty;
             int lDataState = -1;
             StringBuilder lEntryData = new StringBuilder();
-            while ((lCurrentLine = iReader.ReadLine()) != null)
+            while ( (lCurrentLine = iReader.ReadLine()) != null )
             {
-                if (lCurrentLine.Contains(PageStart))
+                if ( lCurrentLine.Contains(PageStart) )
                 {
                     String lTemp = lCurrentLine.Substring(lCurrentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
                     mNumberOfPages = Convert.ToInt32(lTemp);
                 }
-                else if (lCurrentLine.StartsWith(EntryStart))
+                else if ( lCurrentLine.StartsWith(EntryStart) )
                 {
-                    if (lEntryData.Length > 0)
+                    if ( lEntryData.Length > 0 )
                     {
                         var current = ParseSingeItem(lEntryData.ToString());
-                        if (current != null)
+                        if ( current != null )
                         {
                             retval.Add(current);
                         }
@@ -302,15 +302,15 @@ namespace De.AHoerstemeier.Tambon
                     }
                     lDataState++;
                 }
-                else if (lDataState >= 0)
+                else if ( lDataState >= 0 )
                 {
                     lEntryData.Append(lCurrentLine.Trim() + " ");
                 }
             }
-            if (lEntryData.Length > 0)
+            if ( lEntryData.Length > 0 )
             {
                 var current = ParseSingeItem(lEntryData.ToString());
-                if (current != null)
+                if ( current != null )
                 {
                     retval.Add(current);
                 }
@@ -331,7 +331,7 @@ namespace De.AHoerstemeier.Tambon
             iValue = iValue.Replace("\t", "");
             RoyalGazette retval = null;
             Int32 position = iValue.IndexOf(EntryURL);
-            if (position >= 0)
+            if ( position >= 0 )
             {
                 retval = new RoyalGazette();
                 position = position + EntryURL.Length;
@@ -375,11 +375,11 @@ namespace De.AHoerstemeier.Tambon
             {
                 PerformRequest();
                 retval = new RoyalGazetteList();
-                if (mDataUrl != String.Empty)
+                if ( mDataUrl != String.Empty )
                 {
                     System.IO.Stream lData = DoDataDownload(0);
                     retval = DoParseStream(lData);
-                    for (Int32 lPage = 2; lPage <= mNumberOfPages; lPage++)
+                    for ( Int32 lPage = 2 ; lPage <= mNumberOfPages ; lPage++ )
                     {
                         PerformRequestPage(lPage);
                         System.IO.Stream lDataPage = DoDataDownload(lPage);
@@ -387,7 +387,7 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
             }
-            catch (System.Net.WebException e)
+            catch ( System.Net.WebException e )
             {
                 retval = null;
                 // TODO
@@ -397,9 +397,9 @@ namespace De.AHoerstemeier.Tambon
         protected RoyalGazetteList GetListDescription(string iSearchKey, int iVolume, string iDescription)
         {
             RoyalGazetteList retval = DoGetList(iSearchKey, iVolume);
-            if (retval != null)
+            if ( retval != null )
             {
-                foreach (RoyalGazette lEntry in retval)
+                foreach ( RoyalGazette lEntry in retval )
                 {
                     lEntry.Description = iDescription;
                 }
@@ -417,7 +417,7 @@ namespace De.AHoerstemeier.Tambon
         {
             RoyalGazetteList retval = new RoyalGazetteList();
             var lProtecteAreaTypes = new List<ProtectedAreaTypes>();
-            foreach (ProtectedAreaTypes lProtectedArea in Enum.GetValues(typeof(ProtectedAreaTypes)))
+            foreach ( ProtectedAreaTypes lProtectedArea in Enum.GetValues(typeof(ProtectedAreaTypes)) )
             {
                 lProtecteAreaTypes.Add(lProtectedArea);
             }
@@ -425,15 +425,15 @@ namespace De.AHoerstemeier.Tambon
             retval.AddRange(lProtectedAreasList);
 
             var lEntityTypes = new List<EntityType>();
-            foreach (EntityType lEntityType in Enum.GetValues(typeof(EntityType)))
+            foreach ( EntityType lEntityType in Enum.GetValues(typeof(EntityType)) )
             {
-                if (lEntityType != EntityType.Sukhaphiban)
+                if ( lEntityType != EntityType.Sukhaphiban )
                 {
                     lEntityTypes.Add(lEntityType);
                 }
             }
             var lEntityModifications = new List<EntityModification>();
-            foreach (EntityModification lEntityModification in Enum.GetValues(typeof(EntityModification)))
+            foreach ( EntityModification lEntityModification in Enum.GetValues(typeof(EntityModification)) )
             {
                 lEntityModifications.Add(lEntityModification);
             }
@@ -448,16 +448,16 @@ namespace De.AHoerstemeier.Tambon
             Int32 iVolumeBegin = iBeginDate.Year - 2007 + 124;
             Int32 iVolumeEnd = iEndDate.Year - 2007 + 124;
 
-            for (Int32 lVolume = iVolumeBegin; lVolume <= iVolumeEnd; lVolume++)
+            for ( Int32 lVolume = iVolumeBegin ; lVolume <= iVolumeEnd ; lVolume++ )
             {
-                foreach (KeyValuePair<EntityModification, Dictionary<ProtectedAreaTypes, String>> lOuterKeyValuePair in SearchKeysProtectedAreas)
+                foreach ( KeyValuePair<EntityModification, Dictionary<ProtectedAreaTypes, String>> lOuterKeyValuePair in SearchKeysProtectedAreas )
                 {
-                    foreach (KeyValuePair<ProtectedAreaTypes, String> lKeyValuePair in lOuterKeyValuePair.Value)
+                    foreach ( KeyValuePair<ProtectedAreaTypes, String> lKeyValuePair in lOuterKeyValuePair.Value )
                     {
-                        if (iValues.Contains(lKeyValuePair.Key))
+                        if ( iValues.Contains(lKeyValuePair.Key) )
                         {
                             var lList = GetListDescription(lKeyValuePair.Value, lVolume, ModificationText(lOuterKeyValuePair.Key, lKeyValuePair.Key));
-                            if (lList != null)
+                            if ( lList != null )
                             {
                                 retval.AddRange(lList);
                             }
@@ -474,18 +474,18 @@ namespace De.AHoerstemeier.Tambon
             Int32 iVolumeBegin = iBeginDate.Year - 2007 + 124;
             Int32 iVolumeEnd = iEndDate.Year - 2007 + 124;
 
-            for (Int32 lVolume = iVolumeBegin; lVolume <= iVolumeEnd; lVolume++)
+            for ( Int32 lVolume = iVolumeBegin ; lVolume <= iVolumeEnd ; lVolume++ )
             {
-                foreach (KeyValuePair<EntityModification, Dictionary<EntityType, String>> lOuterKeyValuePair in SearchKeys)
+                foreach ( KeyValuePair<EntityModification, Dictionary<EntityType, String>> lOuterKeyValuePair in SearchKeys )
                 {
-                    if (iModifications.Contains(lOuterKeyValuePair.Key))
+                    if ( iModifications.Contains(lOuterKeyValuePair.Key) )
                     {
-                        foreach (KeyValuePair<EntityType, String> lKeyValuePair in lOuterKeyValuePair.Value)
+                        foreach ( KeyValuePair<EntityType, String> lKeyValuePair in lOuterKeyValuePair.Value )
                         {
-                            if (iTypes.Contains(lKeyValuePair.Key))
+                            if ( iTypes.Contains(lKeyValuePair.Key) )
                             {
                                 var lList = GetListDescription(lKeyValuePair.Value, lVolume, ModificationText(lOuterKeyValuePair.Key, lKeyValuePair.Key));
-                                if (lList != null)
+                                if ( lList != null )
                                 {
                                     retval.AddRange(lList);
                                 }
@@ -502,10 +502,10 @@ namespace De.AHoerstemeier.Tambon
             Int32 iVolumeBegin = iBeginDate.Year - 2007 + 124;
             Int32 iVolumeEnd = iEndDate.Year - 2007 + 124;
 
-            for (Int32 lVolume = iVolumeBegin; lVolume <= iVolumeEnd; lVolume++)
+            for ( Int32 lVolume = iVolumeBegin ; lVolume <= iVolumeEnd ; lVolume++ )
             {
                 var lList = GetListDescription(iSearchKey, lVolume, "");
-                if (lList != null)
+                if ( lList != null )
                 {
                     retval.AddRange(lList);
                 }
@@ -529,13 +529,13 @@ namespace De.AHoerstemeier.Tambon
         public void SearchNewsNow()
         {
             RoyalGazetteList lGazetteList = SearchNews(DateTime.Now);
-            if (DateTime.Now.Month == 1)
+            if ( DateTime.Now.Month == 1 )
             {
                 // Check news from last year as well, in case something was added late
                 lGazetteList.AddRange(SearchNews(DateTime.Now.AddYears(-1)));
             }
             lGazetteList.SortByPublicationDate();
-            if (OnProcessingFinished != null)
+            if ( OnProcessingFinished != null )
             {
                 OnProcessingFinished(lGazetteList);
             }

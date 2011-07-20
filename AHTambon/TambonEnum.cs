@@ -31,7 +31,6 @@ namespace De.AHoerstemeier.Tambon
         Bangkok,
         Chumchon,
         TAO,
-        TC,
         PAO,
         Phak,
         KlumChangwat,
