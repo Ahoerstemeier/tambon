@@ -1,4 +1,4 @@
-namespace Tambon
+namespace De.Ahoerstemeier.Tambon
 {
     partial class Form1
     {
