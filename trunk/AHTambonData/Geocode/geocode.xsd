@@ -9,7 +9,9 @@
     <!--Copy from Gazette.xsd - must be put into import file -->
     <xs:restriction base="xs:string">
       <xs:enumeration value="Changwat">
-        <xs:annotation>Province (จังหวัด, changwat).</xs:annotation>
+        <xs:annotation>
+          <xs:documentation>Province (จังหวัด, changwat).</xs:documentation>
+        </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Bangkok">
         <xs:annotation>
@@ -46,43 +48,111 @@
           <xs:documentation>Administrative village (หมู่บ้าน, Muban), subdivision of subdistricts.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Mueang"/>
+      <xs:enumeration value="Mueang">
+        <xs:annotation>
+          <xs:documentation>Special administrative municipality (i.e. Pattaya)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="Monthon">
         <xs:annotation>
           <xs:documentation>Circles (มณฑล or มณฑลเทศาภิบาล, monthon)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Phak"/>
+      <xs:enumeration value="Phak">
+        <xs:annotation>
+          <xs:documentation>Region (ภาค, phak)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="TAO">
         <xs:annotation>
           <xs:documentation>Subdistrict administrative organization (องค์การบริหารส่วนตำบล, TAO or SAO).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="TC"/>
-      <xs:enumeration value="ThesabanTambon"/>
-      <xs:enumeration value="ThesabanMueang"/>
-      <xs:enumeration value="ThesabanNakhon"/>
-      <xs:enumeration value="Sukhaphiban">
+      <xs:enumeration value="SakhaTambon">
         <xs:annotation>
-          <xs:documentation>Sanitary district (สุขาภิบาล, sukhaphiban).</xs:documentation>
+          <xs:documentation>Subdistrict Council (สภาตำบล, Sakha Tambon)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SukhaphibanTambon"/>
-      <xs:enumeration value="SukhaphibanMueang"/>
-      <xs:enumeration value="SakhaTambon"/>
-      <xs:enumeration value="SakhaKhwaeng"/>
-      <xs:enumeration value="Sakha"/>
-      <xs:enumeration value="Chumchon"/>
+      <xs:enumeration value="ThesabanTambon">
+        <xs:annotation>
+          <xs:documentation>Subdistrict municipality (เทศบาลตำบล, Thesaban Tambon).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ThesabanMueang">
+        <xs:annotation>
+          <xs:documentation>Town municipality (เทศบาลเมือง, Thesaban Mueang)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ThesabanNakhon">
+        <xs:annotation>
+          <xs:documentation>City municipality (เทศบาลนคร, Thesaban Nakhon)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sukhaphiban">
+        <xs:annotation>
+          <xs:documentation>Sanitary district (สุขาภิบาล, Sukhaphiban).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SukhaphibanTambon">
+        <xs:annotation>
+          <xs:documentation>Rural sanitary district (สุขาภิบาลตำบล, Sukhaphiban Tambon).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SukhaphibanMueang">
+        <xs:annotation>
+          <xs:documentation>Urban sanitary district (สุขาภิบาลเมือง, Sukhaphiban Mueang).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SakhaKhwaeng">
+        <xs:annotation>
+          <xs:documentation>Subdistrict Council (สภาแขวง, Sakha Khwaeng)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Chumchon">
+        <xs:annotation>
+          <xs:documentation>Borough (ชุมชน, chumchon), subdivision of municipalities.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="PAO">
         <xs:annotation>
           <xs:documentation>Provincial administrative organization (องค์การบริหารส่วนจังหวัด).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="KlumChangwat"/>
-      <xs:enumeration value="Constituency"/>
-      <xs:enumeration value="Unknown"/>
+      <xs:enumeration value="KlumChangwat">
+        <xs:annotation>
+          <xs:documentation>Province cluster (กลุ่มจังหวัด, Klum Changwat)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Constituency">
+        <xs:annotation>
+          <xs:documentation>Constituency (เขตเลือกตั้ง, Khet Lueak Tang), either for local or general elections.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ElectoralRegion">
+        <xs:annotation>
+          <xs:documentation>Electoral region as defined in the 2007 constitution.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="Country">
-        <xs:annotation>Whole of Thailand (ประเทศไทย).</xs:annotation>
+        <xs:annotation>
+          <xs:documentation>Whole of Thailand (ประเทศไทย).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Generic entry for other types.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- Entries which should not be used -->
+      <xs:enumeration value="Thesaban">
+        <xs:annotation>
+          <xs:documentation>Municipality of undefined type (เทศบาล, Thesaban).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sakha">
+        <xs:annotation>
+          <xs:documentation>Council of undefined type (สภา, Sakha).</xs:documentation>
+        </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
