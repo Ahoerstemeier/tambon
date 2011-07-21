@@ -15,7 +15,10 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    /// <summary>
+    /// Geographical point
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4016")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#")]
@@ -27,6 +30,9 @@ namespace De.AHoerstemeier.Tambon {
         
         private decimal longField;
         
+        /// <summary>
+        /// Latitude, northern hemisphere has positive values
+        /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal lat {
@@ -38,6 +44,9 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Longitude, east of Greenwich has positive values
+        /// </summary>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal @long {
