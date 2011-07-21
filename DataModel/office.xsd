@@ -7,18 +7,66 @@
       <xs:documentation>Types of leaders for the administrative entities.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Governor"/>
-      <xs:enumeration value="ViceGovernor"/>
-      <xs:enumeration value="DistrictOfficer"/>
-      <xs:enumeration value="MinorDistrictOfficer"/>
-      <xs:enumeration value="Kamnan"/>
-      <xs:enumeration value="PhuYaiBan"/>
-      <xs:enumeration value="PAOChairman"/>
-      <xs:enumeration value="Mayor"/>
-      <xs:enumeration value="TAOMayor"/>
-      <xs:enumeration value="TAOChairman"/>
-      <xs:enumeration value="SanitaryDistrictChairman"/>
-      <xs:enumeration value="ChumchonChairman"/>
+      <xs:enumeration value="Governor">
+        <xs:annotation>
+          <xs:documentation>Province governor (ผู้ว่าราชการจังหวัด, Phu Wachakan Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ViceGovernor">
+        <xs:annotation>
+          <xs:documentation>Vice province governor (รองผู้ว่าราชการจังหวัด, Rong Phu Wachakan Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DistrictOfficer">
+        <xs:annotation>
+          <xs:documentation>District (head) officer (นายอำเภอ, Nai Amphoe).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MinorDistrictOfficer">
+        <xs:annotation>
+          <xs:documentation>Minor District (head) officer (หัวหน้ากิ่งอำเภอ, Hua Na King Amphoe).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Kamnan">
+        <xs:annotation>
+          <xs:documentation>Subdistrict headman (กำนัน, Kamnan), leader of Tambon.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PhuYaiBan">
+        <xs:annotation>
+          <xs:documentation>Village headman (ผู้ใหญ่บ้าน, Phu Yai Ban), leader of Muban.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAOChairman">
+        <xs:annotation>
+          <xs:documentation>PAO chairman (นายกองค์การบริหารส่วนจังหวัด, Nayok Ongganborihansuan Changwat), directly elected.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mayor">
+        <xs:annotation>
+          <xs:documentation>Mayor (นายกเทศมนตรี, Nayok Thesamontri), leader of Thesaban.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOMayor">
+        <xs:annotation>
+          <xs:documentation>Mayor of TAO (นายกองค์การบริหารส่วนตำบล, Nayok Ongganborihansuan Tambon), directly elected.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOChairman">
+        <xs:annotation>
+          <xs:documentation>Chairman of TAO (ประธานกรรมการบริหารองค์การบริหารส่วนตำบล, Prathan Kromganborihansuan Tambon), chosen by council.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SanitaryDistrictChairman">
+        <xs:annotation>
+          <xs:documentation>Sanitary district chairman (ประธานกรรมการสุขาภิบาล, Prathan Kromgan Sukhaphiban).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChumchonChairman">
+        <xs:annotation>
+          <xs:documentation>Borough headman (ประธานชุมชน, Prathan Chumchon).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="OfficeType">
@@ -26,7 +74,10 @@
       <xs:documentation>Office types for the administrative entities.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="ProvinceHall"/>
+      <xs:enumeration value="ProvinceHall">
+        <xs:annotation>
+          <xs:documentation>Province hall ( , Sala Klang Changwat)</xs:documentation>
+        </xs:annotation></xs:enumeration>
       <xs:enumeration value="PAOOffice"/>
       <xs:enumeration value="DistrictOffice"/>
       <xs:enumeration value="MunicipalityOffice"/>
@@ -195,7 +246,10 @@
     <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
   
+  <!-- Dummy entries to make xsd2code create anything -->
   <xs:element name="MyUriStatus" type="MyUriStatus"/>
+  <xs:element name="OfficeType" type="OfficeType"/>
+  <xs:element name="OfficialType" type="OfficialType"/>
 
   <xs:element name="office" type="Office"/>
 </xs:schema>

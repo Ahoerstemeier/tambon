@@ -162,6 +162,7 @@
     </xs:restriction>
   </xs:simpleType>
 
-  <xs:element name="DummyEntity" type="EntityType"/>
-  <xs:element name="DummyArea" type="AreaUnit"/>
+  <!-- Dummy entries to make xsd2code work -->
+  <xs:element name="EntityType" type="EntityType"/>
+  <xs:element name="AreaUnit" type="AreaUnit"/>
 </xs:schema>
