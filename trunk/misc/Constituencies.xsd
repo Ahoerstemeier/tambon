@@ -112,9 +112,27 @@
   </xs:complexType>
   <xs:simpleType name="ElectionStatus">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="elected"/>
-      <xs:enumeration value="redcard"/>
-      <xs:enumeration value="yellowcard"/>
+      <xs:enumeration value="elected">
+        <xs:annotation>
+          <xs:documentation>Elected and endorsed by Election Commission.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pending">
+        <xs:annotation>
+          <xs:documentation>Elected, but not yet endorsed by Election Commission.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="redcard">
+        <xs:annotation>
+          <xs:documentation>Elected, but red-carded Election Commission, not eligible for by-election.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="yellowcard">
+        <xs:annotation>
+          <xs:documentation>Elected, but yellow-carded Election Commission,eligible for by-election.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <!-- ToDo: can be before election, or after, which are two different status -->
       <xs:enumeration value="disqualified"/>
       <xs:enumeration value="resigned"/>
       <xs:enumeration value="died"/>
