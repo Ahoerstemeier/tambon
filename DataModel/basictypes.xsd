@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:t="http://hoerstemeier.com/tambon/" 
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified" 
+  >
   
   <xs:simpleType name="EntityType">
     <xs:annotation>
       <xs:documentation>Types of administrative entities.</xs:documentation>
     </xs:annotation>
-    <!--Copy from Gazette.xsd - must be put into import file -->
     <xs:restriction base="xs:string">
       <xs:enumeration value="Changwat">
         <xs:annotation>
@@ -155,14 +159,6 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="AreaUnit">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="km²"/>
-      <xs:enumeration value="rai"/>
-    </xs:restriction>
-  </xs:simpleType>
 
-  <!-- Dummy entries to make xsd2code work -->
-  <xs:element name="EntityType" type="EntityType"/>
-  <xs:element name="AreaUnit" type="AreaUnit"/>
+  <xs:element name="EntityType" type="t:EntityType"/>
 </xs:schema>

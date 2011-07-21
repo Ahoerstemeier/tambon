@@ -71,6 +71,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>basictypes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Gazette.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gazette.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="geocode.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>geocode.xsd</DependentUpon>
+    </Compile>
     <Compile Include="geopoint.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +97,14 @@
     <None Include="basictypes.xsd">
       <Generator>xsd2codecustomtool</Generator>
       <LastGenOutput>basictypes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Gazette.xsd">
+      <Generator>xsd2codecustomtool</Generator>
+      <LastGenOutput>Gazette.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="geocode.xsd">
+      <Generator>xsd2codecustomtool</Generator>
+      <LastGenOutput>geocode.Designer.cs</LastGenOutput>
     </None>
     <None Include="geopoint.xsd">
       <Generator>xsd2codecustomtool</Generator>

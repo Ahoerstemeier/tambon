@@ -15,9 +15,10 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4016")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
     public enum EntityType {
         
         /// <remarks/>
@@ -106,18 +107,5 @@ namespace De.AHoerstemeier.Tambon {
         
         /// <remarks/>
         Sakha,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="", IsNullable=false)]
-    public enum AreaUnit {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("km²")]
-        km,
-        
-        /// <remarks/>
-        rai,
     }
 }

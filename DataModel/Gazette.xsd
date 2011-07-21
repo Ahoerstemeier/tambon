@@ -1,36 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" />
-  <xs:simpleType name="EntityType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Changwat"/>
-      <xs:enumeration value="Amphoe"/>
-      <xs:enumeration value="KingAmphoe"/>
-      <xs:enumeration value="Tambon"/>
-      <xs:enumeration value="Khet"/>
-      <xs:enumeration value="Khwaeng"/>
-      <xs:enumeration value="Muban"/>
-      <xs:enumeration value="Mueang"/>
-      <xs:enumeration value="Monthon"/>
-      <xs:enumeration value="Phak"/>
-      <xs:enumeration value="TAO"/>
-      <xs:enumeration value="TC"/>
-      <xs:enumeration value="Bangkok"/>
-      <xs:enumeration value="ThesabanTambon"/>
-      <xs:enumeration value="ThesabanMueang"/>
-      <xs:enumeration value="ThesabanNakhon"/>
-      <xs:enumeration value="Sukhaphiban"/>
-      <xs:enumeration value="SukhaphibanTambon"/>
-      <xs:enumeration value="SukhaphibanMueang"/>
-      <xs:enumeration value="SakhaTambon"/>
-      <xs:enumeration value="SakhaKhwaeng"/>
-      <xs:enumeration value="Sakha"/>
-      <xs:enumeration value="Chumchon"/>
-      <xs:enumeration value="PAO"/>
-      <xs:enumeration value="KlumChangwat"/>
-      <xs:enumeration value="Constituency"/>
-    </xs:restriction>
-  </xs:simpleType>
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified" >
+
+  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd"/>
+  <xs:include schemaLocation="basictypes.xsd"/>
+
   <xs:simpleType name="ParkType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NationalPark"/>
@@ -71,7 +49,7 @@
     </xs:restriction>
     </xs:simpleType>
   <xs:complexType name='GazetteReference'>
-    <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
 
     <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
@@ -80,12 +58,12 @@
     <xs:attribute name="comment" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:complexType name="GazetteOperation">
-    <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
 
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
-    <xs:attribute name="name" type="xs:string" use="optional" />
+    <xs:attribute name="name" type="xs:string" use="required" />
     <xs:attribute name="english" type="xs:string" use="optional" />
-    <xs:attribute name="type" type="EntityType" use="optional" />
+    <xs:attribute name="type" type="t:EntityType" use="required" />
     <xs:attribute name="owner" type="xs:unsignedInt" use="optional" />
     <xs:attribute name="ownername" type="xs:string" use="optional" />
 
@@ -104,7 +82,7 @@
     </xs:sequence>
     <xs:attribute name="name" type="xs:string" use="optional" />
     <xs:attribute name="english" type="xs:string" use="optional" />
-    <xs:attribute name="type" type="ParkType" use="required" />
+    <xs:attribute name="type" type="t:ParkType" use="required" />
     <xs:attribute name="area" type="xs:double" use="optional" />
     <xs:attribute name="arearai" type="xs:double" use="optional" />
     <xs:attribute name="locationgeocode" type="xs:unsignedInt" use="optional"/><!--or maybe better a Thai address child element? -->
@@ -114,7 +92,7 @@
   </xs:complexType>
   <xs:complexType name='GazetteReassign'>
     <xs:complexContent>
-      <xs:extension base="GazetteOperation">
+      <xs:extension base="t:GazetteOperation">
         <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional" />
         <xs:attribute name="newowner" type="xs:unsignedInt" use="optional" />
         <xs:attribute name="newownername" type="xs:string" use="optional" />
@@ -130,14 +108,14 @@
   </xs:complexType>
   <xs:complexType name='GazetteRenumber'>
     <xs:complexContent>
-      <xs:extension base="GazetteOperation">
+      <xs:extension base="t:GazetteOperation">
         <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name='GazetteAreaChange'>
     <xs:complexContent>
-      <xs:extension base="GazetteOperation">
+      <xs:extension base="t:GazetteOperation">
         <xs:attribute name="oldarea" type="xs:float" use="optional" />
         <xs:attribute name="newarea" type="xs:float" use="optional" />
       </xs:extension>
@@ -145,16 +123,15 @@
   </xs:complexType>
   <xs:complexType name='GazetteStatusChange'>
     <xs:complexContent>
-      <xs:extension base="GazetteOperation">
-        <xs:attribute name="old" type="EntityType" use="required" />
-        <xs:attribute name="new" type="EntityType" use="required" />
+      <xs:extension base="t:GazetteOperation">
+        <xs:attribute name="old" type="t:EntityType" use="required" />
+        <xs:attribute name="new" type="t:EntityType" use="required" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name='GazetteRename'>
     <xs:complexContent>
-      <xs:extension base="GazetteOperation">
-        <xs:attribute name="name" type="xs:string" use="required" />
+      <xs:extension base="t:GazetteOperation">
         <xs:attribute name="oldname" type="xs:string" use="required" />
         <xs:attribute name="oldenglish" type="xs:string" use="optional" />
       </xs:extension>
@@ -162,36 +139,30 @@
   </xs:complexType>
   <xs:complexType name='GazetteAbolish'>
     <xs:complexContent>
-      <xs:extension base="GazetteOperation">
-        <xs:attribute name="type" type="EntityType" use="required" />
-        <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="owner" type="xs:unsignedInt" use="optional" />
+      <xs:extension base="t:GazetteOperation">
         <xs:attribute name="ownerenglish" type="xs:string" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name='GazetteCreate'>
     <xs:complexContent>
-      <xs:extension base="GazetteOperation">
-        <xs:attribute name="type" type="EntityType" use="required" />
-        <xs:attribute name="name" type="xs:string" use="optional" />
+      <xs:extension base="t:GazetteOperation">
         <xs:attribute name="oldowner" type="xs:unsignedInt" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteInterpellation">
-    <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="1"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="1"/>
 
     <xs:attribute name="author" type="xs:string" use="optional" />
     <xs:attribute name="number" type="xs:integer" use="optional" />
   </xs:complexType>
   <xs:complexType name='GazetteCapital'>
     <xs:complexContent>
-      <xs:extension base="GazetteOperation">
+      <xs:extension base="t:GazetteOperation">
         <xs:attribute name="capitalname" type="xs:string" use="required" />
         <xs:attribute name="capitalenglish" type="xs:string" use="optional" />
-        <xs:attribute name="capitaltype" type="EntityType" use="optional" />
+        <xs:attribute name="capitaltype" type="t:EntityType" use="optional" />
         <xs:attribute name="capitalgeocode" type="xs:unsignedInt" use="optional" />
         <xs:attribute name="oldcapitalname" type="xs:string" use="optional" />
         <xs:attribute name="oldcapitalenglish" type="xs:string" use="optional" />
@@ -201,27 +172,27 @@
   </xs:complexType>
   <xs:group name="EntryAction" >
     <xs:choice>
-      <xs:element name="reassign" type="GazetteReassign"/>
-      <xs:element name="status" type="GazetteStatusChange"/>
-      <xs:element name="rename" type="GazetteRename"/>
-      <xs:element name="abolish" type="GazetteAbolish"/>
-      <xs:element name="areachange" type="GazetteAreaChange"/>
-      <xs:element name="create" type="GazetteCreate"/>
-      <xs:element name="mention" type="GazetteOperation"/>
-      <xs:element name="constituency" type="GazetteOperation"/>
-      <xs:element name="capital" type="GazetteCapital"/>
-      <xs:element name="correction" type="GazetteReference"/>
-      <xs:element name="renumber" type="GazetteRenumber"/>
-      <xs:element name="related" type="GazetteReference"/>
-      <xs:element name="createpark" type="GazettePark"/>
-      <xs:element name="abolishpark" type="GazettePark"/>
+      <xs:element name="reassign" type="t:GazetteReassign"/>
+      <xs:element name="status" type="t:GazetteStatusChange"/>
+      <xs:element name="rename" type="t:GazetteRename"/>
+      <xs:element name="abolish" type="t:GazetteAbolish"/>
+      <xs:element name="areachange" type="t:GazetteAreaChange"/>
+      <xs:element name="create" type="t:GazetteCreate"/>
+      <xs:element name="mention" type="t:GazetteOperation"/>
+      <xs:element name="constituency" type="t:GazetteOperation"/>
+      <xs:element name="capital" type="t:GazetteCapital"/>
+      <xs:element name="correction" type="t:GazetteReference"/>
+      <xs:element name="renumber" type="t:GazetteRenumber"/>
+      <xs:element name="related" type="t:GazetteReference"/>
+      <xs:element name="createpark" type="t:GazettePark"/>
+      <xs:element name="abolishpark" type="t:GazettePark"/>
 <!--      <xs:element name="renamepark" type="GazettePark"/> -->
-      <xs:element name="areachangepark" type="GazettePark"/>
-      <xs:element name="interpellation" type="GazetteInterpellation"/>
+      <xs:element name="areachangepark" type="t:GazettePark"/>
+      <xs:element name="interpellation" type="t:GazetteInterpellation"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name='GazetteEntry'>
-    <xs:group ref="EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
     <xs:attribute name="description" type="xs:string" use="optional" />
     <xs:attribute name="title" type="xs:string" use="required" />
     <xs:attribute name="volume" type="xs:unsignedByte" use="required" />
@@ -234,12 +205,12 @@
     <xs:attribute name="effective" type="xs:date" use="optional" />
     <xs:attribute name="subtitle" type="xs:string" use="optional" />
     <xs:attribute name="signedby" type="xs:string" use="optional" />
-    <xs:attribute name="signedbyfunction" type="SignByFunction" use="optional" />
+    <xs:attribute name="signedbyfunction" type="t:SignByFunction" use="optional" />
   </xs:complexType>
   <xs:complexType name='GazetteEntryContainer'>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="entry" type="GazetteEntry"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="GazetteEntryContainer"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="entry" type="t:GazetteEntry"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="t:GazetteEntryContainer"/>
     </xs:sequence>
     <xs:attribute name="value" type="xs:string" use="required" />
   </xs:complexType>
@@ -247,9 +218,9 @@
   <xs:element name="gazette">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" name="decade" type="GazetteEntryContainer"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="GazetteEntryContainer"/>
-        <xs:element minOccurs="0" maxOccurs="unbounded" name="entry" type="GazetteEntry"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="decade" type="t:GazetteEntryContainer"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="t:GazetteEntryContainer"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="entry" type="t:GazetteEntry"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
