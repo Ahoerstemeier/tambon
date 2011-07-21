@@ -387,7 +387,7 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
             }
-            catch ( System.Net.WebException e )
+            catch ( System.Net.WebException )
             {
                 retval = null;
                 // TODO
