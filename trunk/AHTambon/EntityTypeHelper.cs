@@ -34,6 +34,7 @@ namespace De.AHoerstemeier.Tambon
               {EntityType.SukhaphibanMueang, "สุขาภิบาลเมือง"},
               {EntityType.Chumchon, "ชุมชน"},
               {EntityType.TAO, "องค์การบริหารส่วนตำบล"},
+              {EntityType.SaphaTambon, "สภาตำบล"},
               {EntityType.Phak, "ภาค"},
               {EntityType.KlumChangwat, "กลุ่มจังหวัด"},
               {EntityType.Constituency, "เขตเลือกตั้ง"}

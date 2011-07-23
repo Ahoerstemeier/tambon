@@ -32,6 +32,7 @@ namespace De.AHoerstemeier.Tambon
         Chumchon,
         TAO,
         PAO,
+        SaphaTambon,
         Phak,
         KlumChangwat,
         Constituency,

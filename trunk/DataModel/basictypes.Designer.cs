@@ -58,7 +58,7 @@ namespace De.AHoerstemeier.Tambon {
         TAO,
         
         /// <remarks/>
-        SakhaTambon,
+        SaphaTambon,
         
         /// <remarks/>
         ThesabanTambon,
@@ -77,9 +77,6 @@ namespace De.AHoerstemeier.Tambon {
         
         /// <remarks/>
         SukhaphibanMueang,
-        
-        /// <remarks/>
-        SakhaKhwaeng,
         
         /// <remarks/>
         Chumchon,
@@ -101,6 +98,12 @@ namespace De.AHoerstemeier.Tambon {
         
         /// <remarks/>
         Unknown,
+        
+        /// <remarks/>
+        SakhaTambon,
+        
+        /// <remarks/>
+        SakhaKhwaeng,
         
         /// <remarks/>
         Thesaban,
