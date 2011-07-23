@@ -79,7 +79,7 @@ namespace De.AHoerstemeier.Tambon
             }
             if (chkTambonCouncil.Checked)
             {
-                lEntityTypes.Add(EntityType.SakhaTambon);
+                lEntityTypes.Add(EntityType.SaphaTambon);
             }
             if (chkCreation.Checked)
             {

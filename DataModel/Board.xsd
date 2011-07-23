@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified" >
+
+  <xs:include schemaLocation="basictypes.xsd"/>
+  <xs:include schemaLocation="gazette.xsd"/>
+
+  <xs:simpleType name="BoardNumber">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="1,2"/>
+      <xs:enumeration value="rename"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BasicOperation">
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="english" type="xs:string" use="optional" />
+    <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="effective" type="xs:date" use="optional"/>
+    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attribute name="index" type="xs:nonNegativeInteger" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name='RenameOperation'>
+    <xs:complexContent>
+      <xs:extension base="t:BasicOperation">
+        <xs:attribute name="type" type="t:EntityType" use="required" />
+        <xs:attribute name="oldname" type="xs:string" use="required" />
+        <xs:attribute name="oldenglish" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='RenameWatOperation'>
+    <xs:complexContent>
+      <xs:extension base="t:BasicOperation">
+        <xs:attribute name="oldname" type="xs:string" use="required" />
+        <xs:attribute name="oldenglish" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='AreaOperation'>
+    <xs:complexContent>
+      <xs:extension base="t:BasicOperation">
+        <xs:attribute name="type" type="t:EntityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='AbolishOperation'>
+    <xs:complexContent>
+      <xs:extension base="t:BasicOperation">
+        <xs:attribute name="type" type="t:EntityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='StatusOperation'>
+    <xs:complexContent>
+      <xs:extension base="t:BasicOperation">
+        <xs:attribute name="old" type="t:EntityType" use="required" />
+        <xs:attribute name="new" type="t:EntityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:group name="EntryActionBoard" >
+    <xs:choice>
+      <xs:element name="status" type="t:StatusOperation"/>
+      <xs:element name="rename" type="t:RenameOperation"/>
+      <xs:element name="areachange" type="t:AreaOperation"/>
+      <xs:element name="abolish" type="t:AbolishOperation"/>
+      <xs:element name="related" type="t:GazetteReference"/>
+      <xs:element name="renamewat" type="t:RenameWatOperation"/>
+    </xs:choice>
+  </xs:group>
+  <xs:complexType name='MeetingEntry'>
+    <xs:group ref="t:EntryActionBoard" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="board" type="t:BoardNumber" use="required" />
+    <xs:attribute name="date" type="xs:date" use="required" />
+    <xs:attribute name="url" type="xs:string" use="optional" />
+  </xs:complexType>
+  <xs:complexType name='MeetingEntryContainer'>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="boardmeeting" type="t:MeetingEntry"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="t:MeetingEntryContainer"/>
+    </xs:sequence>
+    <xs:attribute name="value" type="xs:string" use="required" />
+  </xs:complexType>
+
+
+  <xs:element name="boardmeetings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="t:MeetingEntryContainer"/>
+      </xs:sequence>
+    </xs:complexType>
+
+  </xs:element>
+</xs:schema>

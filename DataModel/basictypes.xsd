@@ -71,9 +71,9 @@
           <xs:documentation>Subdistrict administrative organization (องค์การบริหารส่วนตำบล, TAO or SAO).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SakhaTambon">
+      <xs:enumeration value="SaphaTambon">
         <xs:annotation>
-          <xs:documentation>Subdistrict Council (สภาตำบล, Sakha Tambon)</xs:documentation>
+          <xs:documentation>Subdistrict Council (สภาตำบล, Sapha Tambon)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="ThesabanTambon">
@@ -104,11 +104,6 @@
       <xs:enumeration value="SukhaphibanMueang">
         <xs:annotation>
           <xs:documentation>Urban sanitary district (สุขาภิบาลเมือง, Sukhaphiban Mueang).</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SakhaKhwaeng">
-        <xs:annotation>
-          <xs:documentation>Subdistrict Council (สภาแขวง, Sakha Khwaeng)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Chumchon">
@@ -146,6 +141,16 @@
           <xs:documentation>Generic entry for other types.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="SakhaTambon">
+        <xs:annotation>
+          <xs:documentation>Branch subdistrict (สาขาตำบล, Sakha Tambon)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SakhaKhwaeng">
+        <xs:annotation>
+          <xs:documentation>Branch subdistrict (สาขาแขวง, Sakha Khwaeng)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <!-- Entries which should not be used -->
       <xs:enumeration value="Thesaban">
         <xs:annotation>
@@ -154,7 +159,7 @@
       </xs:enumeration>
       <xs:enumeration value="Sakha">
         <xs:annotation>
-          <xs:documentation>Council of undefined type (สภา, Sakha).</xs:documentation>
+          <xs:documentation>Branch of undefined type (สาขา, Sakha).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
