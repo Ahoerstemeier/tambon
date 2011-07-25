@@ -9,6 +9,68 @@
 
   <xs:include schemaLocation="basictypes.xsd"/>
 
+  <xs:simpleType name="ElectionType">
+    <xs:annotation>
+      <xs:documentation>Types of elections.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Parliament">
+        <xs:annotation>
+          <xs:documentation>House of Representatives.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Senate">
+        <xs:annotation>
+          <xs:documentation>Senate.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAOChairman">
+        <xs:annotation>
+          <xs:documentation>Chairman of the provincial administrative organization.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAOCouncil">
+        <xs:annotation>
+          <xs:documentation>Council of the provincial administrative organization.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOMayor">
+        <xs:annotation>
+          <xs:documentation>Chairman/Mayor of the subdistrict administrative organization.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOCouncil">
+        <xs:annotation>
+          <xs:documentation>Council of the subdistrict administrative organization.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mayor">
+        <xs:annotation>
+          <xs:documentation>Mayor of the municipality.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ThesabanCouncil">
+        <xs:annotation>
+          <xs:documentation>Council of the municipality.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BangkokGovernor">
+        <xs:annotation>
+          <xs:documentation>Governor of Bangkok.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BangkokCouncil">
+        <xs:annotation>
+          <xs:documentation>Council of the BMA.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BangkokDistrictCouncil">
+        <xs:annotation>
+          <xs:documentation>Council of the districts in Bangkok.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="EntityBase">
     <xs:attribute name="type" type="t:EntityType" use="optional" />
     <xs:attribute name="name" type="xs:string" use="optional" />
@@ -26,7 +88,7 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
-    </xs:complexType>
+  </xs:complexType>
   <xs:complexType name="EntityInExclude">
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
@@ -58,11 +120,11 @@
   </xs:complexType>
   <xs:complexType name="Constituency">
     <xs:sequence>
-      <xs:choice minOccurs="1" maxOccurs="unbounded">
-      <xs:element minOccurs="1" maxOccurs="1" name="include" type="t:EntityInclude"/>
-      <xs:element minOccurs="1" maxOccurs="1" name="includesub" type="t:EntityIncludeSub"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="1" maxOccurs="1" name="include" type="t:EntityInclude"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="includesub" type="t:EntityIncludeSub"/>
       </xs:choice>
-      <xs:element minOccurs="0" maxOccurs="1" name="election" type="t:Election"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="election" type="t:Election"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="byelection" type="t:ByElection"/>
     </xs:sequence>
     <xs:attribute name="index" type="xs:unsignedByte" use="required" />
@@ -71,7 +133,7 @@
   </xs:complexType>
   <xs:complexType name="ElectionData">
     <xs:sequence>
-      <xs:element type="t:PartyList" name="parties" minOccurs="0" maxOccurs="1"/> 
+      <xs:element type="t:PartyList" name="parties" minOccurs="0" maxOccurs="1"/>
       <xs:element type="t:ConstituencyEntity" name="entity" minOccurs="1" maxOccurs="1"/>
     </xs:sequence>
   </xs:complexType>
@@ -180,8 +242,10 @@
       <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional"/>
+    <xs:attribute name="type" type="t:ElectionType" use="optional"/>
     <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="optional"/>
-    <xs:attribute name="reason" type="t:ByElectionReason"/>    
+    <xs:attribute name="reason" type="t:ByElectionReason"/>
+    <xs:attribute name="comment" type="xs:string"/>
   </xs:complexType>
 
   <xs:complexType name="Election">
@@ -191,5 +255,6 @@
       <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional"/>
-  </xs:complexType>  
+    <xs:attribute name="type" type="t:ElectionType" use="optional"/>
+  </xs:complexType>
 </xs:schema>
