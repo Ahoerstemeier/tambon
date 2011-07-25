@@ -71,6 +71,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>basictypes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Board.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Board.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Constituencies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Constituencies.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Gazette.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,8 +108,14 @@
       <Generator>xsd2codecustomtool</Generator>
       <LastGenOutput>basictypes.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Board.xsd" />
-    <None Include="Constituencies.xsd" />
+    <None Include="Board.xsd">
+      <Generator>xsd2codecustomtool</Generator>
+      <LastGenOutput>Board.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Constituencies.xsd">
+      <Generator>xsd2codecustomtool</Generator>
+      <LastGenOutput>Constituencies.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Gazette.xsd">
       <Generator>xsd2codecustomtool</Generator>
       <LastGenOutput>Gazette.Designer.cs</LastGenOutput>
