@@ -259,9 +259,37 @@ namespace De.AHoerstemeier.Tambon
     public partial class BasicOperation
     {
 
-        private List<object> itemsField;
+        private GazetteReassign reassignField;
 
-        private List<ItemsChoiceType4> itemsElementNameField;
+        private GazetteStatusChange statusField;
+
+        private GazetteRename renameField;
+
+        private GazetteAbolish abolishField;
+
+        private GazetteAreaChange areachangeField;
+
+        private GazetteCreate createField;
+
+        private GazetteOperation mentionField;
+
+        private GazetteOperation constituencyField;
+
+        private GazetteCapital capitalField;
+
+        private GazetteReference correctionField;
+
+        private GazetteRenumber renumberField;
+
+        private GazetteReference relatedField;
+
+        private GazettePark createparkField;
+
+        private GazettePark abolishparkField;
+
+        private GazettePark areachangeparkField;
+
+        private GazetteInterpellation interpellationField;
 
         private uint geocodeField;
 
@@ -288,52 +316,229 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         public BasicOperation()
         {
-            this.itemsElementNameField = new List<ItemsChoiceType4>();
-            this.itemsField = new List<object>();
+            this.interpellationField = new GazetteInterpellation();
+            this.areachangeparkField = new GazettePark();
+            this.abolishparkField = new GazettePark();
+            this.createparkField = new GazettePark();
+            this.relatedField = new GazetteReference();
+            this.renumberField = new GazetteRenumber();
+            this.correctionField = new GazetteReference();
+            this.capitalField = new GazetteCapital();
+            this.constituencyField = new GazetteOperation();
+            this.mentionField = new GazetteOperation();
+            this.createField = new GazetteCreate();
+            this.areachangeField = new GazetteAreaChange();
+            this.abolishField = new GazetteAbolish();
+            this.renameField = new GazetteRename();
+            this.statusField = new GazetteStatusChange();
+            this.reassignField = new GazetteReassign();
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order = 0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<object> Items
+        public GazetteReassign reassign
         {
             get
             {
-                return this.itemsField;
+                return this.reassignField;
             }
             set
             {
-                this.itemsField = value;
+                this.reassignField = value;
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<ItemsChoiceType4> ItemsElementName
+        public GazetteStatusChange status
         {
             get
             {
-                return this.itemsElementNameField;
+                return this.statusField;
             }
             set
             {
-                this.itemsElementNameField = value;
+                this.statusField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRename rename
+        {
+            get
+            {
+                return this.renameField;
+            }
+            set
+            {
+                this.renameField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAbolish abolish
+        {
+            get
+            {
+                return this.abolishField;
+            }
+            set
+            {
+                this.abolishField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAreaChange areachange
+        {
+            get
+            {
+                return this.areachangeField;
+            }
+            set
+            {
+                this.areachangeField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCreate create
+        {
+            get
+            {
+                return this.createField;
+            }
+            set
+            {
+                this.createField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation mention
+        {
+            get
+            {
+                return this.mentionField;
+            }
+            set
+            {
+                this.mentionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation constituency
+        {
+            get
+            {
+                return this.constituencyField;
+            }
+            set
+            {
+                this.constituencyField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCapital capital
+        {
+            get
+            {
+                return this.capitalField;
+            }
+            set
+            {
+                this.capitalField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference correction
+        {
+            get
+            {
+                return this.correctionField;
+            }
+            set
+            {
+                this.correctionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRenumber renumber
+        {
+            get
+            {
+                return this.renumberField;
+            }
+            set
+            {
+                this.renumberField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference related
+        {
+            get
+            {
+                return this.relatedField;
+            }
+            set
+            {
+                this.relatedField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark createpark
+        {
+            get
+            {
+                return this.createparkField;
+            }
+            set
+            {
+                this.createparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark abolishpark
+        {
+            get
+            {
+                return this.abolishparkField;
+            }
+            set
+            {
+                this.abolishparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark areachangepark
+        {
+            get
+            {
+                return this.areachangeparkField;
+            }
+            set
+            {
+                this.areachangeparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteInterpellation interpellation
+        {
+            get
+            {
+                return this.interpellationField;
+            }
+            set
+            {
+                this.interpellationField = value;
             }
         }
 
@@ -476,61 +681,6 @@ namespace De.AHoerstemeier.Tambon
                 this.indexField = value;
             }
         }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/", IncludeInSchema = false)]
-    public enum ItemsChoiceType4
-    {
-
-        /// <remarks/>
-        abolish,
-
-        /// <remarks/>
-        abolishpark,
-
-        /// <remarks/>
-        areachange,
-
-        /// <remarks/>
-        areachangepark,
-
-        /// <remarks/>
-        capital,
-
-        /// <remarks/>
-        constituency,
-
-        /// <remarks/>
-        correction,
-
-        /// <remarks/>
-        create,
-
-        /// <remarks/>
-        createpark,
-
-        /// <remarks/>
-        interpellation,
-
-        /// <remarks/>
-        mention,
-
-        /// <remarks/>
-        reassign,
-
-        /// <remarks/>
-        related,
-
-        /// <remarks/>
-        rename,
-
-        /// <remarks/>
-        renumber,
-
-        /// <remarks/>
-        status,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
