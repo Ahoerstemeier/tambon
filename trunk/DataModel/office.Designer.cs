@@ -49,6 +49,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool actingFieldSpecified;
         
+        private string inofficeField;
+        
         private string commentField;
         
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -191,6 +193,17 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.actingFieldSpecified = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string inoffice {
+            get {
+                return this.inofficeField;
+            }
+            set {
+                this.inofficeField = value;
             }
         }
         
