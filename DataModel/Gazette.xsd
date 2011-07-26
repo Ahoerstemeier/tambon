@@ -145,7 +145,7 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name='GazetteReference'>
-    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
 
     <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
@@ -154,7 +154,7 @@
     <xs:attribute name="comment" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:complexType name="GazetteOperation">
-    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
 
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
     <xs:attribute name="name" type="xs:string" use="optional" />
@@ -251,7 +251,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteInterpellation">
-    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
 
     <xs:attribute name="author" type="xs:string" use="optional" />
     <xs:attribute name="number" type="xs:integer" use="optional" />
@@ -271,7 +271,7 @@
   </xs:complexType>
 
   <xs:group name="EntryAction">
-    <xs:all>
+    <xs:choice>
       <xs:element name="reassign" type="t:GazetteReassign"/>
       <xs:element name="status" type="t:GazetteStatusChange"/>
       <xs:element name="rename" type="t:GazetteRename"/>
@@ -289,10 +289,10 @@
       <!--      <xs:element name="renamepark" type="GazettePark"/> -->
       <xs:element name="areachangepark" type="t:GazettePark"/>
       <xs:element name="interpellation" type="t:GazetteInterpellation"/>
-    </xs:all>
+    </xs:choice>
   </xs:group>
   <xs:complexType name='GazetteEntry'>
-    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
     <xs:attribute name="description" type="xs:string" use="optional" />
     <xs:attribute name="title" type="xs:string" use="required" />
     <xs:attribute name="volume" type="xs:unsignedByte" use="required" />

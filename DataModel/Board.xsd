@@ -18,7 +18,7 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="BasicOperation">
-    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
     <xs:attribute name="name" type="xs:string" use="required" />
     <xs:attribute name="english" type="xs:string" use="optional" />
