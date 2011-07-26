@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified" >
+
+  <xs:include schemaLocation="basictypes.xsd"/>
+
+  <xs:complexType name="RegionEntity">
+    <xs:complexContent>
+      <xs:extension base="t:EntityBase">
+        <xs:sequence>
+          <xs:element type="t:RegionEntity" name="entity" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="index" type="xs:unsignedInt" use="optional" default="0" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RegionListEntry">
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="entity" type="t:RegionEntity"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string" use="optional" />
+    <xs:attribute name="english" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="RegionList">
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="regions" type="t:RegionListEntry"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="regionlist" type="t:RegionList"/>
+
+</xs:schema>

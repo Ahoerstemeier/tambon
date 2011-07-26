@@ -160,9 +160,37 @@ namespace De.AHoerstemeier.Tambon
     public partial class GazetteEntry
     {
 
-        private List<object> itemsField;
+        private GazetteReassign reassignField;
 
-        private List<ItemsChoiceType3> itemsElementNameField;
+        private GazetteStatusChange statusField;
+
+        private GazetteRename renameField;
+
+        private GazetteAbolish abolishField;
+
+        private GazetteAreaChange areachangeField;
+
+        private GazetteCreate createField;
+
+        private GazetteOperation mentionField;
+
+        private GazetteOperation constituencyField;
+
+        private GazetteCapital capitalField;
+
+        private GazetteReference correctionField;
+
+        private GazetteRenumber renumberField;
+
+        private GazetteReference relatedField;
+
+        private GazettePark createparkField;
+
+        private GazettePark abolishparkField;
+
+        private GazettePark areachangeparkField;
+
+        private GazetteInterpellation interpellationField;
 
         private string descriptionField;
 
@@ -203,52 +231,229 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         public GazetteEntry()
         {
-            this.itemsElementNameField = new List<ItemsChoiceType3>();
-            this.itemsField = new List<object>();
+            this.interpellationField = new GazetteInterpellation();
+            this.areachangeparkField = new GazettePark();
+            this.abolishparkField = new GazettePark();
+            this.createparkField = new GazettePark();
+            this.relatedField = new GazetteReference();
+            this.renumberField = new GazetteRenumber();
+            this.correctionField = new GazetteReference();
+            this.capitalField = new GazetteCapital();
+            this.constituencyField = new GazetteOperation();
+            this.mentionField = new GazetteOperation();
+            this.createField = new GazetteCreate();
+            this.areachangeField = new GazetteAreaChange();
+            this.abolishField = new GazetteAbolish();
+            this.renameField = new GazetteRename();
+            this.statusField = new GazetteStatusChange();
+            this.reassignField = new GazetteReassign();
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order = 0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<object> Items
+        public GazetteReassign reassign
         {
             get
             {
-                return this.itemsField;
+                return this.reassignField;
             }
             set
             {
-                this.itemsField = value;
+                this.reassignField = value;
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<ItemsChoiceType3> ItemsElementName
+        public GazetteStatusChange status
         {
             get
             {
-                return this.itemsElementNameField;
+                return this.statusField;
             }
             set
             {
-                this.itemsElementNameField = value;
+                this.statusField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRename rename
+        {
+            get
+            {
+                return this.renameField;
+            }
+            set
+            {
+                this.renameField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAbolish abolish
+        {
+            get
+            {
+                return this.abolishField;
+            }
+            set
+            {
+                this.abolishField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAreaChange areachange
+        {
+            get
+            {
+                return this.areachangeField;
+            }
+            set
+            {
+                this.areachangeField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCreate create
+        {
+            get
+            {
+                return this.createField;
+            }
+            set
+            {
+                this.createField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation mention
+        {
+            get
+            {
+                return this.mentionField;
+            }
+            set
+            {
+                this.mentionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation constituency
+        {
+            get
+            {
+                return this.constituencyField;
+            }
+            set
+            {
+                this.constituencyField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCapital capital
+        {
+            get
+            {
+                return this.capitalField;
+            }
+            set
+            {
+                this.capitalField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference correction
+        {
+            get
+            {
+                return this.correctionField;
+            }
+            set
+            {
+                this.correctionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRenumber renumber
+        {
+            get
+            {
+                return this.renumberField;
+            }
+            set
+            {
+                this.renumberField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference related
+        {
+            get
+            {
+                return this.relatedField;
+            }
+            set
+            {
+                this.relatedField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark createpark
+        {
+            get
+            {
+                return this.createparkField;
+            }
+            set
+            {
+                this.createparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark abolishpark
+        {
+            get
+            {
+                return this.abolishparkField;
+            }
+            set
+            {
+                this.abolishparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark areachangepark
+        {
+            get
+            {
+                return this.areachangeparkField;
+            }
+            set
+            {
+                this.areachangeparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteInterpellation interpellation
+        {
+            get
+            {
+                return this.interpellationField;
+            }
+            set
+            {
+                this.interpellationField = value;
             }
         }
 
@@ -496,23 +701,247 @@ namespace De.AHoerstemeier.Tambon
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteAbolish", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteAbolish : GazetteOperation
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteReassign", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteReassign : GazetteOperation
     {
 
-        private string ownerenglishField;
+        private uint oldgeocodeField;
+
+        private bool oldgeocodeFieldSpecified;
+
+        private uint newownerField;
+
+        private bool newownerFieldSpecified;
+
+        private string newownernameField;
+
+        private string newownerenglishField;
+
+        private uint mubanField;
+
+        private bool mubanFieldSpecified;
+
+        private uint oldownerField;
+
+        private bool oldownerFieldSpecified;
+
+        private string oldownernameField;
+
+        private uint oldmubanField;
+
+        private bool oldmubanFieldSpecified;
+
+        private uint oldparentField;
+
+        private bool oldparentFieldSpecified;
 
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ownerenglish
+        public uint oldgeocode
         {
             get
             {
-                return this.ownerenglishField;
+                return this.oldgeocodeField;
             }
             set
             {
-                this.ownerenglishField = value;
+                this.oldgeocodeField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldgeocodeSpecified
+        {
+            get
+            {
+                return this.oldgeocodeFieldSpecified;
+            }
+            set
+            {
+                this.oldgeocodeFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint newowner
+        {
+            get
+            {
+                return this.newownerField;
+            }
+            set
+            {
+                this.newownerField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool newownerSpecified
+        {
+            get
+            {
+                return this.newownerFieldSpecified;
+            }
+            set
+            {
+                this.newownerFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string newownername
+        {
+            get
+            {
+                return this.newownernameField;
+            }
+            set
+            {
+                this.newownernameField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string newownerenglish
+        {
+            get
+            {
+                return this.newownerenglishField;
+            }
+            set
+            {
+                this.newownerenglishField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint muban
+        {
+            get
+            {
+                return this.mubanField;
+            }
+            set
+            {
+                this.mubanField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool mubanSpecified
+        {
+            get
+            {
+                return this.mubanFieldSpecified;
+            }
+            set
+            {
+                this.mubanFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldowner
+        {
+            get
+            {
+                return this.oldownerField;
+            }
+            set
+            {
+                this.oldownerField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldownerSpecified
+        {
+            get
+            {
+                return this.oldownerFieldSpecified;
+            }
+            set
+            {
+                this.oldownerFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string oldownername
+        {
+            get
+            {
+                return this.oldownernameField;
+            }
+            set
+            {
+                this.oldownernameField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldmuban
+        {
+            get
+            {
+                return this.oldmubanField;
+            }
+            set
+            {
+                this.oldmubanField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldmubanSpecified
+        {
+            get
+            {
+                return this.oldmubanFieldSpecified;
+            }
+            set
+            {
+                this.oldmubanFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldparent
+        {
+            get
+            {
+                return this.oldparentField;
+            }
+            set
+            {
+                this.oldparentField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldparentSpecified
+        {
+            get
+            {
+                return this.oldparentFieldSpecified;
+            }
+            set
+            {
+                this.oldparentFieldSpecified = value;
             }
         }
     }
@@ -534,9 +963,37 @@ namespace De.AHoerstemeier.Tambon
     public partial class GazetteOperation
     {
 
-        private List<object> itemsField;
+        private GazetteReassign reassignField;
 
-        private List<ItemsChoiceType2> itemsElementNameField;
+        private GazetteStatusChange statusField;
+
+        private GazetteRename renameField;
+
+        private GazetteAbolish abolishField;
+
+        private GazetteAreaChange areachangeField;
+
+        private GazetteCreate createField;
+
+        private GazetteOperation mentionField;
+
+        private GazetteOperation constituencyField;
+
+        private GazetteCapital capitalField;
+
+        private GazetteReference correctionField;
+
+        private GazetteRenumber renumberField;
+
+        private GazetteReference relatedField;
+
+        private GazettePark createparkField;
+
+        private GazettePark abolishparkField;
+
+        private GazettePark areachangeparkField;
+
+        private GazetteInterpellation interpellationField;
 
         private uint geocodeField;
 
@@ -577,52 +1034,229 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         public GazetteOperation()
         {
-            this.itemsElementNameField = new List<ItemsChoiceType2>();
-            this.itemsField = new List<object>();
+            this.interpellationField = new GazetteInterpellation();
+            this.areachangeparkField = new GazettePark();
+            this.abolishparkField = new GazettePark();
+            this.createparkField = new GazettePark();
+            this.relatedField = new GazetteReference();
+            this.renumberField = new GazetteRenumber();
+            this.correctionField = new GazetteReference();
+            this.capitalField = new GazetteCapital();
+            this.constituencyField = new GazetteOperation();
+            this.mentionField = new GazetteOperation();
+            this.createField = new GazetteCreate();
+            this.areachangeField = new GazetteAreaChange();
+            this.abolishField = new GazetteAbolish();
+            this.renameField = new GazetteRename();
+            this.statusField = new GazetteStatusChange();
+            this.reassignField = new GazetteReassign();
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order = 0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<object> Items
+        public GazetteReassign reassign
         {
             get
             {
-                return this.itemsField;
+                return this.reassignField;
             }
             set
             {
-                this.itemsField = value;
+                this.reassignField = value;
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<ItemsChoiceType2> ItemsElementName
+        public GazetteStatusChange status
         {
             get
             {
-                return this.itemsElementNameField;
+                return this.statusField;
             }
             set
             {
-                this.itemsElementNameField = value;
+                this.statusField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRename rename
+        {
+            get
+            {
+                return this.renameField;
+            }
+            set
+            {
+                this.renameField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAbolish abolish
+        {
+            get
+            {
+                return this.abolishField;
+            }
+            set
+            {
+                this.abolishField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAreaChange areachange
+        {
+            get
+            {
+                return this.areachangeField;
+            }
+            set
+            {
+                this.areachangeField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCreate create
+        {
+            get
+            {
+                return this.createField;
+            }
+            set
+            {
+                this.createField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation mention
+        {
+            get
+            {
+                return this.mentionField;
+            }
+            set
+            {
+                this.mentionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation constituency
+        {
+            get
+            {
+                return this.constituencyField;
+            }
+            set
+            {
+                this.constituencyField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCapital capital
+        {
+            get
+            {
+                return this.capitalField;
+            }
+            set
+            {
+                this.capitalField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference correction
+        {
+            get
+            {
+                return this.correctionField;
+            }
+            set
+            {
+                this.correctionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRenumber renumber
+        {
+            get
+            {
+                return this.renumberField;
+            }
+            set
+            {
+                this.renumberField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference related
+        {
+            get
+            {
+                return this.relatedField;
+            }
+            set
+            {
+                this.relatedField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark createpark
+        {
+            get
+            {
+                return this.createparkField;
+            }
+            set
+            {
+                this.createparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark abolishpark
+        {
+            get
+            {
+                return this.abolishparkField;
+            }
+            set
+            {
+                this.abolishparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark areachangepark
+        {
+            get
+            {
+                return this.areachangeparkField;
+            }
+            set
+            {
+                this.areachangeparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteInterpellation interpellation
+        {
+            get
+            {
+                return this.interpellationField;
+            }
+            set
+            {
+                this.interpellationField = value;
             }
         }
 
@@ -861,6 +1495,845 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.parentnameField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteStatusChange", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteStatusChange : GazetteOperation
+    {
+
+        private EntityType oldField;
+
+        private EntityType newField;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType old
+        {
+            get
+            {
+                return this.oldField;
+            }
+            set
+            {
+                this.oldField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType @new
+        {
+            get
+            {
+                return this.newField;
+            }
+            set
+            {
+                this.newField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteRename", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteRename : GazetteOperation
+    {
+
+        private string oldnameField;
+
+        private string oldenglishField;
+
+        private string nameField;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string oldname
+        {
+            get
+            {
+                return this.oldnameField;
+            }
+            set
+            {
+                this.oldnameField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string oldenglish
+        {
+            get
+            {
+                return this.oldenglishField;
+            }
+            set
+            {
+                this.oldenglishField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteAbolish", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteAbolish : GazetteOperation
+    {
+
+        private string ownerenglishField;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ownerenglish
+        {
+            get
+            {
+                return this.ownerenglishField;
+            }
+            set
+            {
+                this.ownerenglishField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteAreaChange", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteAreaChange : GazetteOperation
+    {
+
+        private float oldareaField;
+
+        private bool oldareaFieldSpecified;
+
+        private float newareaField;
+
+        private bool newareaFieldSpecified;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float oldarea
+        {
+            get
+            {
+                return this.oldareaField;
+            }
+            set
+            {
+                this.oldareaField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldareaSpecified
+        {
+            get
+            {
+                return this.oldareaFieldSpecified;
+            }
+            set
+            {
+                this.oldareaFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float newarea
+        {
+            get
+            {
+                return this.newareaField;
+            }
+            set
+            {
+                this.newareaField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool newareaSpecified
+        {
+            get
+            {
+                return this.newareaFieldSpecified;
+            }
+            set
+            {
+                this.newareaFieldSpecified = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteCreate", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteCreate : GazetteOperation
+    {
+
+        private uint oldownerField;
+
+        private bool oldownerFieldSpecified;
+
+        private EntityType typeField;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldowner
+        {
+            get
+            {
+                return this.oldownerField;
+            }
+            set
+            {
+                this.oldownerField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldownerSpecified
+        {
+            get
+            {
+                return this.oldownerFieldSpecified;
+            }
+            set
+            {
+                this.oldownerFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteCapital", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteCapital : GazetteOperation
+    {
+
+        private string capitalnameField;
+
+        private string capitalenglishField;
+
+        private EntityType capitaltypeField;
+
+        private bool capitaltypeFieldSpecified;
+
+        private uint capitalgeocodeField;
+
+        private bool capitalgeocodeFieldSpecified;
+
+        private string oldcapitalnameField;
+
+        private string oldcapitalenglishField;
+
+        private uint oldcapitalgeocodeField;
+
+        private bool oldcapitalgeocodeFieldSpecified;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string capitalname
+        {
+            get
+            {
+                return this.capitalnameField;
+            }
+            set
+            {
+                this.capitalnameField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string capitalenglish
+        {
+            get
+            {
+                return this.capitalenglishField;
+            }
+            set
+            {
+                this.capitalenglishField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType capitaltype
+        {
+            get
+            {
+                return this.capitaltypeField;
+            }
+            set
+            {
+                this.capitaltypeField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool capitaltypeSpecified
+        {
+            get
+            {
+                return this.capitaltypeFieldSpecified;
+            }
+            set
+            {
+                this.capitaltypeFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint capitalgeocode
+        {
+            get
+            {
+                return this.capitalgeocodeField;
+            }
+            set
+            {
+                this.capitalgeocodeField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool capitalgeocodeSpecified
+        {
+            get
+            {
+                return this.capitalgeocodeFieldSpecified;
+            }
+            set
+            {
+                this.capitalgeocodeFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string oldcapitalname
+        {
+            get
+            {
+                return this.oldcapitalnameField;
+            }
+            set
+            {
+                this.oldcapitalnameField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string oldcapitalenglish
+        {
+            get
+            {
+                return this.oldcapitalenglishField;
+            }
+            set
+            {
+                this.oldcapitalenglishField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldcapitalgeocode
+        {
+            get
+            {
+                return this.oldcapitalgeocodeField;
+            }
+            set
+            {
+                this.oldcapitalgeocodeField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldcapitalgeocodeSpecified
+        {
+            get
+            {
+                return this.oldcapitalgeocodeFieldSpecified;
+            }
+            set
+            {
+                this.oldcapitalgeocodeFieldSpecified = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteReference", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteReference
+    {
+
+        private GazetteReassign reassignField;
+
+        private GazetteStatusChange statusField;
+
+        private GazetteRename renameField;
+
+        private GazetteAbolish abolishField;
+
+        private GazetteAreaChange areachangeField;
+
+        private GazetteCreate createField;
+
+        private GazetteOperation mentionField;
+
+        private GazetteOperation constituencyField;
+
+        private GazetteCapital capitalField;
+
+        private GazetteReference correctionField;
+
+        private GazetteRenumber renumberField;
+
+        private GazetteReference relatedField;
+
+        private GazettePark createparkField;
+
+        private GazettePark abolishparkField;
+
+        private GazettePark areachangeparkField;
+
+        private GazetteInterpellation interpellationField;
+
+        private uint volumeField;
+
+        private uint pageField;
+
+        private string issueField;
+
+        private System.DateTime dateField;
+
+        private bool dateFieldSpecified;
+
+        private string commentField;
+
+        /// <summary>
+        /// GazetteReference class constructor
+        /// </summary>
+        public GazetteReference()
+        {
+            this.interpellationField = new GazetteInterpellation();
+            this.areachangeparkField = new GazettePark();
+            this.abolishparkField = new GazettePark();
+            this.createparkField = new GazettePark();
+            this.relatedField = new GazetteReference();
+            this.renumberField = new GazetteRenumber();
+            this.correctionField = new GazetteReference();
+            this.capitalField = new GazetteCapital();
+            this.constituencyField = new GazetteOperation();
+            this.mentionField = new GazetteOperation();
+            this.createField = new GazetteCreate();
+            this.areachangeField = new GazetteAreaChange();
+            this.abolishField = new GazetteAbolish();
+            this.renameField = new GazetteRename();
+            this.statusField = new GazetteStatusChange();
+            this.reassignField = new GazetteReassign();
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReassign reassign
+        {
+            get
+            {
+                return this.reassignField;
+            }
+            set
+            {
+                this.reassignField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteStatusChange status
+        {
+            get
+            {
+                return this.statusField;
+            }
+            set
+            {
+                this.statusField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRename rename
+        {
+            get
+            {
+                return this.renameField;
+            }
+            set
+            {
+                this.renameField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAbolish abolish
+        {
+            get
+            {
+                return this.abolishField;
+            }
+            set
+            {
+                this.abolishField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAreaChange areachange
+        {
+            get
+            {
+                return this.areachangeField;
+            }
+            set
+            {
+                this.areachangeField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCreate create
+        {
+            get
+            {
+                return this.createField;
+            }
+            set
+            {
+                this.createField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation mention
+        {
+            get
+            {
+                return this.mentionField;
+            }
+            set
+            {
+                this.mentionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation constituency
+        {
+            get
+            {
+                return this.constituencyField;
+            }
+            set
+            {
+                this.constituencyField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCapital capital
+        {
+            get
+            {
+                return this.capitalField;
+            }
+            set
+            {
+                this.capitalField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference correction
+        {
+            get
+            {
+                return this.correctionField;
+            }
+            set
+            {
+                this.correctionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRenumber renumber
+        {
+            get
+            {
+                return this.renumberField;
+            }
+            set
+            {
+                this.renumberField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference related
+        {
+            get
+            {
+                return this.relatedField;
+            }
+            set
+            {
+                this.relatedField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark createpark
+        {
+            get
+            {
+                return this.createparkField;
+            }
+            set
+            {
+                this.createparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark abolishpark
+        {
+            get
+            {
+                return this.abolishparkField;
+            }
+            set
+            {
+                this.abolishparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark areachangepark
+        {
+            get
+            {
+                return this.areachangeparkField;
+            }
+            set
+            {
+                this.areachangeparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteInterpellation interpellation
+        {
+            get
+            {
+                return this.interpellationField;
+            }
+            set
+            {
+                this.interpellationField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint volume
+        {
+            get
+            {
+                return this.volumeField;
+            }
+            set
+            {
+                this.volumeField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint page
+        {
+            get
+            {
+                return this.pageField;
+            }
+            set
+            {
+                this.pageField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string issue
+        {
+            get
+            {
+                return this.issueField;
+            }
+            set
+            {
+                this.issueField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date
+        {
+            get
+            {
+                return this.dateField;
+            }
+            set
+            {
+                this.dateField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool dateSpecified
+        {
+            get
+            {
+                return this.dateFieldSpecified;
+            }
+            set
+            {
+                this.dateFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteRenumber", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteRenumber : GazetteOperation
+    {
+
+        private uint oldgeocodeField;
+
+        private bool oldgeocodeFieldSpecified;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldgeocode
+        {
+            get
+            {
+                return this.oldgeocodeField;
+            }
+            set
+            {
+                this.oldgeocodeField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldgeocodeSpecified
+        {
+            get
+            {
+                return this.oldgeocodeFieldSpecified;
+            }
+            set
+            {
+                this.oldgeocodeFieldSpecified = value;
             }
         }
     }
@@ -1132,9 +2605,37 @@ namespace De.AHoerstemeier.Tambon
     public partial class GazetteInterpellation
     {
 
-        private List<object> itemsField;
+        private GazetteReassign reassignField;
 
-        private List<ItemsChoiceType> itemsElementNameField;
+        private GazetteStatusChange statusField;
+
+        private GazetteRename renameField;
+
+        private GazetteAbolish abolishField;
+
+        private GazetteAreaChange areachangeField;
+
+        private GazetteCreate createField;
+
+        private GazetteOperation mentionField;
+
+        private GazetteOperation constituencyField;
+
+        private GazetteCapital capitalField;
+
+        private GazetteReference correctionField;
+
+        private GazetteRenumber renumberField;
+
+        private GazetteReference relatedField;
+
+        private GazettePark createparkField;
+
+        private GazettePark abolishparkField;
+
+        private GazettePark areachangeparkField;
+
+        private GazetteInterpellation interpellationField;
 
         private string authorField;
 
@@ -1145,52 +2646,229 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         public GazetteInterpellation()
         {
-            this.itemsElementNameField = new List<ItemsChoiceType>();
-            this.itemsField = new List<object>();
+            this.interpellationField = new GazetteInterpellation();
+            this.areachangeparkField = new GazettePark();
+            this.abolishparkField = new GazettePark();
+            this.createparkField = new GazettePark();
+            this.relatedField = new GazetteReference();
+            this.renumberField = new GazetteRenumber();
+            this.correctionField = new GazetteReference();
+            this.capitalField = new GazetteCapital();
+            this.constituencyField = new GazetteOperation();
+            this.mentionField = new GazetteOperation();
+            this.createField = new GazetteCreate();
+            this.areachangeField = new GazetteAreaChange();
+            this.abolishField = new GazetteAbolish();
+            this.renameField = new GazetteRename();
+            this.statusField = new GazetteStatusChange();
+            this.reassignField = new GazetteReassign();
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order = 0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<object> Items
+        public GazetteReassign reassign
         {
             get
             {
-                return this.itemsField;
+                return this.reassignField;
             }
             set
             {
-                this.itemsField = value;
+                this.reassignField = value;
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<ItemsChoiceType> ItemsElementName
+        public GazetteStatusChange status
         {
             get
             {
-                return this.itemsElementNameField;
+                return this.statusField;
             }
             set
             {
-                this.itemsElementNameField = value;
+                this.statusField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRename rename
+        {
+            get
+            {
+                return this.renameField;
+            }
+            set
+            {
+                this.renameField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAbolish abolish
+        {
+            get
+            {
+                return this.abolishField;
+            }
+            set
+            {
+                this.abolishField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteAreaChange areachange
+        {
+            get
+            {
+                return this.areachangeField;
+            }
+            set
+            {
+                this.areachangeField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCreate create
+        {
+            get
+            {
+                return this.createField;
+            }
+            set
+            {
+                this.createField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation mention
+        {
+            get
+            {
+                return this.mentionField;
+            }
+            set
+            {
+                this.mentionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteOperation constituency
+        {
+            get
+            {
+                return this.constituencyField;
+            }
+            set
+            {
+                this.constituencyField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteCapital capital
+        {
+            get
+            {
+                return this.capitalField;
+            }
+            set
+            {
+                this.capitalField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference correction
+        {
+            get
+            {
+                return this.correctionField;
+            }
+            set
+            {
+                this.correctionField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRenumber renumber
+        {
+            get
+            {
+                return this.renumberField;
+            }
+            set
+            {
+                this.renumberField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteReference related
+        {
+            get
+            {
+                return this.relatedField;
+            }
+            set
+            {
+                this.relatedField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark createpark
+        {
+            get
+            {
+                return this.createparkField;
+            }
+            set
+            {
+                this.createparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark abolishpark
+        {
+            get
+            {
+                return this.abolishparkField;
+            }
+            set
+            {
+                this.abolishparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazettePark areachangepark
+        {
+            get
+            {
+                return this.areachangeparkField;
+            }
+            set
+            {
+                this.areachangeparkField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteInterpellation interpellation
+        {
+            get
+            {
+                return this.interpellationField;
+            }
+            set
+            {
+                this.interpellationField = value;
             }
         }
 
@@ -1225,974 +2903,6 @@ namespace De.AHoerstemeier.Tambon
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteAreaChange", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteAreaChange : GazetteOperation
-    {
-
-        private float oldareaField;
-
-        private bool oldareaFieldSpecified;
-
-        private float newareaField;
-
-        private bool newareaFieldSpecified;
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float oldarea
-        {
-            get
-            {
-                return this.oldareaField;
-            }
-            set
-            {
-                this.oldareaField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldareaSpecified
-        {
-            get
-            {
-                return this.oldareaFieldSpecified;
-            }
-            set
-            {
-                this.oldareaFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float newarea
-        {
-            get
-            {
-                return this.newareaField;
-            }
-            set
-            {
-                this.newareaField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool newareaSpecified
-        {
-            get
-            {
-                return this.newareaFieldSpecified;
-            }
-            set
-            {
-                this.newareaFieldSpecified = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteCapital", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteCapital : GazetteOperation
-    {
-
-        private string capitalnameField;
-
-        private string capitalenglishField;
-
-        private EntityType capitaltypeField;
-
-        private bool capitaltypeFieldSpecified;
-
-        private uint capitalgeocodeField;
-
-        private bool capitalgeocodeFieldSpecified;
-
-        private string oldcapitalnameField;
-
-        private string oldcapitalenglishField;
-
-        private uint oldcapitalgeocodeField;
-
-        private bool oldcapitalgeocodeFieldSpecified;
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string capitalname
-        {
-            get
-            {
-                return this.capitalnameField;
-            }
-            set
-            {
-                this.capitalnameField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string capitalenglish
-        {
-            get
-            {
-                return this.capitalenglishField;
-            }
-            set
-            {
-                this.capitalenglishField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType capitaltype
-        {
-            get
-            {
-                return this.capitaltypeField;
-            }
-            set
-            {
-                this.capitaltypeField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool capitaltypeSpecified
-        {
-            get
-            {
-                return this.capitaltypeFieldSpecified;
-            }
-            set
-            {
-                this.capitaltypeFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint capitalgeocode
-        {
-            get
-            {
-                return this.capitalgeocodeField;
-            }
-            set
-            {
-                this.capitalgeocodeField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool capitalgeocodeSpecified
-        {
-            get
-            {
-                return this.capitalgeocodeFieldSpecified;
-            }
-            set
-            {
-                this.capitalgeocodeFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string oldcapitalname
-        {
-            get
-            {
-                return this.oldcapitalnameField;
-            }
-            set
-            {
-                this.oldcapitalnameField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string oldcapitalenglish
-        {
-            get
-            {
-                return this.oldcapitalenglishField;
-            }
-            set
-            {
-                this.oldcapitalenglishField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldcapitalgeocode
-        {
-            get
-            {
-                return this.oldcapitalgeocodeField;
-            }
-            set
-            {
-                this.oldcapitalgeocodeField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldcapitalgeocodeSpecified
-        {
-            get
-            {
-                return this.oldcapitalgeocodeFieldSpecified;
-            }
-            set
-            {
-                this.oldcapitalgeocodeFieldSpecified = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteReference", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteReference
-    {
-
-        private List<object> itemsField;
-
-        private List<ItemsChoiceType1> itemsElementNameField;
-
-        private uint volumeField;
-
-        private uint pageField;
-
-        private string issueField;
-
-        private System.DateTime dateField;
-
-        private bool dateFieldSpecified;
-
-        private string commentField;
-
-        /// <summary>
-        /// GazetteReference class constructor
-        /// </summary>
-        public GazetteReference()
-        {
-            this.itemsElementNameField = new List<ItemsChoiceType1>();
-            this.itemsField = new List<object>();
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order = 0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<object> Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<ItemsChoiceType1> ItemsElementName
-        {
-            get
-            {
-                return this.itemsElementNameField;
-            }
-            set
-            {
-                this.itemsElementNameField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint volume
-        {
-            get
-            {
-                return this.volumeField;
-            }
-            set
-            {
-                this.volumeField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint page
-        {
-            get
-            {
-                return this.pageField;
-            }
-            set
-            {
-                this.pageField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string issue
-        {
-            get
-            {
-                return this.issueField;
-            }
-            set
-            {
-                this.issueField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime date
-        {
-            get
-            {
-                return this.dateField;
-            }
-            set
-            {
-                this.dateField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool dateSpecified
-        {
-            get
-            {
-                return this.dateFieldSpecified;
-            }
-            set
-            {
-                this.dateFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment
-        {
-            get
-            {
-                return this.commentField;
-            }
-            set
-            {
-                this.commentField = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteCreate", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteCreate : GazetteOperation
-    {
-
-        private uint oldownerField;
-
-        private bool oldownerFieldSpecified;
-
-        private EntityType typeField;
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldowner
-        {
-            get
-            {
-                return this.oldownerField;
-            }
-            set
-            {
-                this.oldownerField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldownerSpecified
-        {
-            get
-            {
-                return this.oldownerFieldSpecified;
-            }
-            set
-            {
-                this.oldownerFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type
-        {
-            get
-            {
-                return this.typeField;
-            }
-            set
-            {
-                this.typeField = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteReassign", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteReassign : GazetteOperation
-    {
-
-        private uint oldgeocodeField;
-
-        private bool oldgeocodeFieldSpecified;
-
-        private uint newownerField;
-
-        private bool newownerFieldSpecified;
-
-        private string newownernameField;
-
-        private string newownerenglishField;
-
-        private uint mubanField;
-
-        private bool mubanFieldSpecified;
-
-        private uint oldownerField;
-
-        private bool oldownerFieldSpecified;
-
-        private string oldownernameField;
-
-        private uint oldmubanField;
-
-        private bool oldmubanFieldSpecified;
-
-        private uint oldparentField;
-
-        private bool oldparentFieldSpecified;
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldgeocode
-        {
-            get
-            {
-                return this.oldgeocodeField;
-            }
-            set
-            {
-                this.oldgeocodeField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldgeocodeSpecified
-        {
-            get
-            {
-                return this.oldgeocodeFieldSpecified;
-            }
-            set
-            {
-                this.oldgeocodeFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint newowner
-        {
-            get
-            {
-                return this.newownerField;
-            }
-            set
-            {
-                this.newownerField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool newownerSpecified
-        {
-            get
-            {
-                return this.newownerFieldSpecified;
-            }
-            set
-            {
-                this.newownerFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string newownername
-        {
-            get
-            {
-                return this.newownernameField;
-            }
-            set
-            {
-                this.newownernameField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string newownerenglish
-        {
-            get
-            {
-                return this.newownerenglishField;
-            }
-            set
-            {
-                this.newownerenglishField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint muban
-        {
-            get
-            {
-                return this.mubanField;
-            }
-            set
-            {
-                this.mubanField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool mubanSpecified
-        {
-            get
-            {
-                return this.mubanFieldSpecified;
-            }
-            set
-            {
-                this.mubanFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldowner
-        {
-            get
-            {
-                return this.oldownerField;
-            }
-            set
-            {
-                this.oldownerField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldownerSpecified
-        {
-            get
-            {
-                return this.oldownerFieldSpecified;
-            }
-            set
-            {
-                this.oldownerFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string oldownername
-        {
-            get
-            {
-                return this.oldownernameField;
-            }
-            set
-            {
-                this.oldownernameField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldmuban
-        {
-            get
-            {
-                return this.oldmubanField;
-            }
-            set
-            {
-                this.oldmubanField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldmubanSpecified
-        {
-            get
-            {
-                return this.oldmubanFieldSpecified;
-            }
-            set
-            {
-                this.oldmubanFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldparent
-        {
-            get
-            {
-                return this.oldparentField;
-            }
-            set
-            {
-                this.oldparentField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldparentSpecified
-        {
-            get
-            {
-                return this.oldparentFieldSpecified;
-            }
-            set
-            {
-                this.oldparentFieldSpecified = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteRename", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteRename : GazetteOperation
-    {
-
-        private string oldnameField;
-
-        private string oldenglishField;
-
-        private string nameField;
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string oldname
-        {
-            get
-            {
-                return this.oldnameField;
-            }
-            set
-            {
-                this.oldnameField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string oldenglish
-        {
-            get
-            {
-                return this.oldenglishField;
-            }
-            set
-            {
-                this.oldenglishField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name
-        {
-            get
-            {
-                return this.nameField;
-            }
-            set
-            {
-                this.nameField = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteRenumber", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteRenumber : GazetteOperation
-    {
-
-        private uint oldgeocodeField;
-
-        private bool oldgeocodeFieldSpecified;
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldgeocode
-        {
-            get
-            {
-                return this.oldgeocodeField;
-            }
-            set
-            {
-                this.oldgeocodeField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldgeocodeSpecified
-        {
-            get
-            {
-                return this.oldgeocodeFieldSpecified;
-            }
-            set
-            {
-                this.oldgeocodeFieldSpecified = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteStatusChange", Namespace = "http://hoerstemeier.com/tambon/")]
-    public partial class GazetteStatusChange : GazetteOperation
-    {
-
-        private EntityType oldField;
-
-        private EntityType newField;
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType old
-        {
-            get
-            {
-                return this.oldField;
-            }
-            set
-            {
-                this.oldField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType @new
-        {
-            get
-            {
-                return this.newField;
-            }
-            set
-            {
-                this.newField = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/", IncludeInSchema = false)]
-    public enum ItemsChoiceType1
-    {
-
-        /// <remarks/>
-        abolish,
-
-        /// <remarks/>
-        abolishpark,
-
-        /// <remarks/>
-        areachange,
-
-        /// <remarks/>
-        areachangepark,
-
-        /// <remarks/>
-        capital,
-
-        /// <remarks/>
-        constituency,
-
-        /// <remarks/>
-        correction,
-
-        /// <remarks/>
-        create,
-
-        /// <remarks/>
-        createpark,
-
-        /// <remarks/>
-        interpellation,
-
-        /// <remarks/>
-        mention,
-
-        /// <remarks/>
-        reassign,
-
-        /// <remarks/>
-        related,
-
-        /// <remarks/>
-        rename,
-
-        /// <remarks/>
-        renumber,
-
-        /// <remarks/>
-        status,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/", IncludeInSchema = false)]
-    public enum ItemsChoiceType
-    {
-
-        /// <remarks/>
-        abolish,
-
-        /// <remarks/>
-        abolishpark,
-
-        /// <remarks/>
-        areachange,
-
-        /// <remarks/>
-        areachangepark,
-
-        /// <remarks/>
-        capital,
-
-        /// <remarks/>
-        constituency,
-
-        /// <remarks/>
-        correction,
-
-        /// <remarks/>
-        create,
-
-        /// <remarks/>
-        createpark,
-
-        /// <remarks/>
-        interpellation,
-
-        /// <remarks/>
-        mention,
-
-        /// <remarks/>
-        reassign,
-
-        /// <remarks/>
-        related,
-
-        /// <remarks/>
-        rename,
-
-        /// <remarks/>
-        renumber,
-
-        /// <remarks/>
-        status,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     public enum ParkType
     {
@@ -2221,116 +2931,6 @@ namespace De.AHoerstemeier.Tambon
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/", IncludeInSchema = false)]
-    public enum ItemsChoiceType2
-    {
-
-        /// <remarks/>
-        abolish,
-
-        /// <remarks/>
-        abolishpark,
-
-        /// <remarks/>
-        areachange,
-
-        /// <remarks/>
-        areachangepark,
-
-        /// <remarks/>
-        capital,
-
-        /// <remarks/>
-        constituency,
-
-        /// <remarks/>
-        correction,
-
-        /// <remarks/>
-        create,
-
-        /// <remarks/>
-        createpark,
-
-        /// <remarks/>
-        interpellation,
-
-        /// <remarks/>
-        mention,
-
-        /// <remarks/>
-        reassign,
-
-        /// <remarks/>
-        related,
-
-        /// <remarks/>
-        rename,
-
-        /// <remarks/>
-        renumber,
-
-        /// <remarks/>
-        status,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/", IncludeInSchema = false)]
-    public enum ItemsChoiceType3
-    {
-
-        /// <remarks/>
-        abolish,
-
-        /// <remarks/>
-        abolishpark,
-
-        /// <remarks/>
-        areachange,
-
-        /// <remarks/>
-        areachangepark,
-
-        /// <remarks/>
-        capital,
-
-        /// <remarks/>
-        constituency,
-
-        /// <remarks/>
-        correction,
-
-        /// <remarks/>
-        create,
-
-        /// <remarks/>
-        createpark,
-
-        /// <remarks/>
-        interpellation,
-
-        /// <remarks/>
-        mention,
-
-        /// <remarks/>
-        reassign,
-
-        /// <remarks/>
-        related,
-
-        /// <remarks/>
-        rename,
-
-        /// <remarks/>
-        renumber,
-
-        /// <remarks/>
-        status,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     public enum SignByFunction
     {
@@ -2351,10 +2951,13 @@ namespace De.AHoerstemeier.Tambon
         MinistryOfInteriorPermanentSecretary,
 
         /// <remarks/>
+        MinistryOfInteriorDeputyPermanentSecretary,
+
+        /// <remarks/>
         ProvinceGovernor,
 
         /// <remarks/>
-        DeputyProvinceGovernor,
+        ViceProvinceGovernor,
 
         /// <remarks/>
         BangkokGovernor,
@@ -2403,8 +3006,5 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         MunicipalPermanentSecretary,
-
-        /// <remarks/>
-        MinistryOfInteriorDeputyPermanentSecretary,
     }
 }

@@ -141,6 +141,7 @@
           <xs:documentation>Generic entry for other types.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <!-- special types not fully understood -->
       <xs:enumeration value="SakhaTambon">
         <xs:annotation>
           <xs:documentation>Branch subdistrict (สาขาตำบล, Sakha Tambon)</xs:documentation>
@@ -164,6 +165,13 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="EntityBase">
+    <xs:attribute name="type" type="t:EntityType" use="optional" default="Unknown"/>
+    <xs:attribute name="name" type="xs:string" use="optional" />
+    <xs:attribute name="english" type="xs:string" use="optional" />
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" default="0" />
+    <xs:attribute name="comment" type="xs:string" use="optional" />
+  </xs:complexType>
 
   <xs:element name="EntityType" type="t:EntityType"/>
 </xs:schema>

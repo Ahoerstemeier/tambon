@@ -22,34 +22,130 @@
   </xs:simpleType>
   <xs:simpleType name="SignByFunction">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="PrimeMinister"/>
-      <xs:enumeration value="DeputyPrimeMinister"/>
-      <xs:enumeration value="MinisterOfInterior"/>
-      <xs:enumeration value="DeputyMinisterOfInterior"/>
-      <xs:enumeration value="MinistryOfInteriorPermanentSecretary"/>
-      <xs:enumeration value="ProvinceGovernor"/>
-      <xs:enumeration value="DeputyProvinceGovernor"/>
-      <xs:enumeration value="BangkokGovernor"/>
-      <xs:enumeration value="BangkokPermanentSecretary"/>
-      <xs:enumeration value="DeputyBangkokPermanentSecretary"/>
-      <xs:enumeration value="MinisterOfInformationAndCommunicationTechnology"/>
-      <xs:enumeration value="ElectionCommissionPresident"/>
-      <xs:enumeration value="RoyalInstitutePresident"/>
-      <xs:enumeration value="RoyalInstituteActingPresident"/>
-      <xs:enumeration value="DepartmentOfTransportDirectorGeneral"/>
-      <xs:enumeration value="DistrictOfficerBangkok"/>
-      <xs:enumeration value="DistrictOfficer"/>
-      <xs:enumeration value="SpeakerOfParliament"/>
-      <xs:enumeration value="Mayor"/>
-      <xs:enumeration value="TAOMayor"/>
-      <xs:enumeration value="TAOChairman"/>
-      <xs:enumeration value="PAOChairman"/>
-      <xs:enumeration value="MunicipalPermanentSecretary"/>
-      <xs:enumeration value="MinistryOfInteriorDeputyPermanentSecretary"/>
+      <xs:enumeration value="PrimeMinister">
+        <xs:annotation>
+          <xs:documentation>Prime Minister (นายกรัฐมนตรี, Nayok Ratmontri).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeputyPrimeMinister">
+        <xs:annotation>
+          <xs:documentation>Deputy Prime Minister (รองนายกรัฐมนตรี, Rong Nayok Ratmontri)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MinisterOfInterior">
+        <xs:annotation>
+          <xs:documentation>Minister of Interior (รัฐมนตรีว่าการกระทรวงมหาดไทย, Rattamontri Wa Kan Krasuang Mahatthai)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeputyMinisterOfInterior">
+        <xs:annotation>
+          <xs:documentation>Deputy Ministry of Interior (รัฐมนตรีช่วยว่าการกระทรวงมหาดไทย, Rattamontri Chuai Wa Kan Krasuang Mahatthai).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MinistryOfInteriorPermanentSecretary">
+        <xs:annotation>
+          <xs:documentation>Permanent Secretary of the Ministry of Interior (ปลัดกระทรวงมหาดไทย, Palad Krasuang Mahatthai).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MinistryOfInteriorDeputyPermanentSecretary">
+        <xs:annotation>
+          <xs:documentation>Deputy Permanent Secretary of the Ministry of Interior (รองปลัดกระทรวงมหาดไทย, Rong Palad Krasuang Mahatthai). </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProvinceGovernor">
+        <xs:annotation>
+          <xs:documentation>Province governor (ผู้ว่าราชการจังหวัด, Phu Wa Rachakan Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ViceProvinceGovernor">
+        <xs:annotation>
+          <xs:documentation>Vice province governor (รองผู้ว่าราชการจังหวัด, Rong Phu Wachakan Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BangkokGovernor">
+        <xs:annotation>
+          <xs:documentation>Governor of Bangkok (ผู้ว่าราชการกรุงเทพมหานคร, Phu Wa Rachakan Krung Thep Maha Nakhon).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BangkokPermanentSecretary">
+        <xs:annotation>
+          <xs:documentation>Permanent Secretary of Bangkok (ปลัดกรุงเทพ, Palad Krung Thep).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeputyBangkokPermanentSecretary">
+        <xs:annotation>
+          <xs:documentation>Deputy Permanent Secretary of Bangkok (รองปลัดกรุงเทพ, Rong Palad Krung Thep).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MinisterOfInformationAndCommunicationTechnology">
+        <xs:annotation>
+          <xs:documentation>Minister of Information and Communication Technology (รัฐมนตรีว่าการกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ElectionCommissionPresident">
+        <xs:annotation>
+          <xs:documentation>President of the Election Commission (ประธานกรรมการการเลือกตั้ง, Prathan Kammakan Kan Lueang Tang)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RoyalInstitutePresident">
+        <xs:annotation>
+          <xs:documentation>President of the Royal Institute (นายกราชบัณฑิตยสถาน)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RoyalInstituteActingPresident">
+        <xs:annotation>
+          <xs:documentation>Acting President of the Royal Institute (รักษาการตำแหน่งนายกราชบัณฑิตยสถาน)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DepartmentOfTransportDirectorGeneral">
+        <xs:annotation>
+          <xs:documentation>Director General of the Department of Transport (อธิบดีกรมการขนส่งทางบก).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DistrictOfficerBangkok">
+        <xs:annotation>
+          <xs:documentation>District officer in Bangkok (ผู้อำนวยการเขต, Phu Amnuai Kan Khet).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DistrictOfficer">
+        <xs:annotation>
+          <xs:documentation>District (head) officer (นายอำเภอ, Nai Amphoe).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SpeakerOfParliament">
+        <xs:annotation>
+          <xs:documentation>Speaker of the House of Representatives (ประธานสภาผู้แทนราษฎร, Prathan Sapha Phu Thaen Ratsadon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mayor">
+        <xs:annotation>
+          <xs:documentation>Mayor (นายกเทศมนตรี, Nayok Thesamontri), leader of Thesaban.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOMayor">
+        <xs:annotation>
+          <xs:documentation>Mayor of TAO (นายกองค์การบริหารส่วนตำบล, Nayok Ongganborihansuan Tambon), directly elected.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOChairman">
+        <xs:annotation>
+          <xs:documentation>Chairman of TAO (ประธานกรรมการบริหารองค์การบริหารส่วนตำบล, Prathan Kromganborihansuan Tambon), chosen by council.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAOChairman">
+        <xs:annotation>
+          <xs:documentation>PAO chairman (นายกองค์การบริหารส่วนจังหวัด, Nayok Ongganborihansuan Changwat), directly elected.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MunicipalPermanentSecretary">
+        <xs:annotation>
+          <xs:documentation>Permanent Secretary of Municipality (ปลัดเทศบาล, Palad Thesaban).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
-    </xs:simpleType>
+  </xs:simpleType>
   <xs:complexType name='GazetteReference'>
-    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
 
     <xs:attribute name="volume" type="xs:unsignedInt" use="required"/>
     <xs:attribute name="page" type="xs:unsignedInt" use="required"/>
@@ -58,7 +154,7 @@
     <xs:attribute name="comment" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:complexType name="GazetteOperation">
-    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
 
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
     <xs:attribute name="name" type="xs:string" use="optional" />
@@ -85,7 +181,8 @@
     <xs:attribute name="type" type="t:ParkType" use="required" />
     <xs:attribute name="area" type="xs:double" use="optional" />
     <xs:attribute name="arearai" type="xs:double" use="optional" />
-    <xs:attribute name="locationgeocode" type="xs:unsignedInt" use="optional"/><!--or maybe better a Thai address child element? -->
+    <xs:attribute name="locationgeocode" type="xs:unsignedInt" use="optional"/>
+    <!--or maybe better a Thai address child element? -->
     <xs:attribute name="id" type="xs:unsignedInt" use="optional"/>
     <xs:attribute name="index" type="xs:unsignedInt" use="optional" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
@@ -154,7 +251,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteInterpellation">
-    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="1"/>
+    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
 
     <xs:attribute name="author" type="xs:string" use="optional" />
     <xs:attribute name="number" type="xs:integer" use="optional" />
@@ -172,9 +269,9 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
-  <xs:group name="EntryAction" >
-    <xs:choice>
+
+  <xs:group name="EntryAction">
+    <xs:all>
       <xs:element name="reassign" type="t:GazetteReassign"/>
       <xs:element name="status" type="t:GazetteStatusChange"/>
       <xs:element name="rename" type="t:GazetteRename"/>
@@ -189,13 +286,13 @@
       <xs:element name="related" type="t:GazetteReference"/>
       <xs:element name="createpark" type="t:GazettePark"/>
       <xs:element name="abolishpark" type="t:GazettePark"/>
-<!--      <xs:element name="renamepark" type="GazettePark"/> -->
+      <!--      <xs:element name="renamepark" type="GazettePark"/> -->
       <xs:element name="areachangepark" type="t:GazettePark"/>
       <xs:element name="interpellation" type="t:GazetteInterpellation"/>
-    </xs:choice>
+    </xs:all>
   </xs:group>
   <xs:complexType name='GazetteEntry'>
-    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:group ref="t:EntryAction" maxOccurs="1" minOccurs="0"/>
     <xs:attribute name="description" type="xs:string" use="optional" />
     <xs:attribute name="title" type="xs:string" use="required" />
     <xs:attribute name="volume" type="xs:unsignedByte" use="required" />

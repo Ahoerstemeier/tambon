@@ -102,6 +102,11 @@
       <DependentUpon>office.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="region.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>region.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="basictypes.xsd">
@@ -131,6 +136,11 @@
     <None Include="office.xsd">
       <Generator>xsd2codecustomtool</Generator>
       <LastGenOutput>office.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="region.xsd">
+      <SubType>Designer</SubType>
+      <Generator>xsd2codecustomtool</Generator>
+      <LastGenOutput>region.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

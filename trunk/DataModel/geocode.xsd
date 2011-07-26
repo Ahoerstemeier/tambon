@@ -75,10 +75,10 @@
     <xs:group ref="t:History" maxOccurs="unbounded" minOccurs="0"/>
   </xs:complexType>
   <xs:complexType name="Entity">
-    <xs:sequence minOccurs="0">
-      <xs:element minOccurs="0" name="slogan" type="xs:string" />
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element minOccurs="0" maxOccurs="1" name="slogan" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office"/>
-      <xs:element minOccurs="0" name="area" type="t:Area"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:Area"/>
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity"/>
     </xs:sequence>
