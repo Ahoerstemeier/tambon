@@ -71,13 +71,6 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="EntityBase">
-    <xs:attribute name="type" type="t:EntityType" use="optional" />
-    <xs:attribute name="name" type="xs:string" use="optional" />
-    <xs:attribute name="english" type="xs:string" use="optional" />
-    <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
-    <xs:attribute name="comment" type="xs:string" use="optional" />
-  </xs:complexType>
   <xs:complexType name="ConstituencyEntity">
     <xs:complexContent>
       <xs:extension base="t:EntityBase">

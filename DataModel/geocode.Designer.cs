@@ -101,7 +101,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         [System.Xml.Serialization.XmlArrayAttribute(Order = 2)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("data", IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("data", typeof(AreaData), IsNullable = false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<AreaData> area
         {

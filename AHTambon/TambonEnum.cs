@@ -61,8 +61,10 @@ namespace De.AHoerstemeier.Tambon
     {
         Unknown,
         Governor,
+        BangkokGovernor,
         ViceGovernor,
         DistrictOfficer,
+        DistrictOfficerBangkok,
         MinorDistrictOfficer,
         Kamnan,
         PhuYaiBan,
