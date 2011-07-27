@@ -150,12 +150,12 @@
         <xs:documentation>Begin of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="endyear" type="xs:integer" use="optional">
+    <xs:attribute name="endyear" type="xs:gYear" use="optional">
       <xs:annotation>
         <xs:documentation>End of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="beginyear" type="xs:integer" use="optional" >
+    <xs:attribute name="beginyear" type="xs:gYear" use="optional" >
       <xs:annotation>
         <xs:documentation>Begin of term.</xs:documentation>
       </xs:annotation>
@@ -170,7 +170,7 @@
         <xs:documentation>Acting or fully installed office leader.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="inoffice" type="xs:integer" use="optional">
+    <xs:attribute name="inoffice" type="xs:gYear" use="optional">
       <xs:annotation>
         <xs:documentation>Year official was in office, used if being/end of term is not known.</xs:documentation>
       </xs:annotation>

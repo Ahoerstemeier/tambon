@@ -130,7 +130,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string endyear {
             get {
@@ -141,7 +141,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string beginyear {
             get {
@@ -196,7 +196,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string inoffice {
             get {
