@@ -32,6 +32,11 @@
           </election>
         </constituency>
         <constituency index="4">
+          <include geocode="840103"/>
+          <includesub geocode="8499">
+            <include geocode="84010202"/>
+            <include geocode="84010202"/>
+          </includesub>
           <election>
             <candidates>
               <candidate id="1" name="นายธัญเทพ ประดิษฐนิยม"/>
@@ -42,6 +47,18 @@
           </election>
         </constituency>
         <constituency index="5">
+          <include geocode="840107"/>
+          <include geocode="840109"/>
+          <include geocode="840108"/>
+          <include geocode="840111" comment="Both municipal and non-municipal"/>
+          <include geocode="840106" comment="Both municipal and non-municipal"/>
+          <include geocode="840105" comment="Both municipal and non-municipal"/>
+          <includesub geocode="8499">
+            <include geocode="84011001"/>
+            <include geocode="84011002"/>
+            <include geocode="84011003"/>
+            <include geocode="84011004"/>
+          </includesub>
           <election>
             <candidates>
               <candidate id="1" name="นายไพสัณฑ์ ศรีรักษ์"/>
@@ -52,7 +69,109 @@
         </constituency>
       </constituencies>
     </entity>
-
+    <entity type="Amphoe" geocode="8402" name="กาญจนดิษฐ์" english="Kanchanadit">
+      <constituencies>
+        <constituency index="1">
+          <include geocode="8496"/>
+          <include geocode="840207"/>
+          <include geocode="840202"/>
+          <include geocode="840211"/>
+        </constituency>
+        <constituency index="2">
+          <include geocode="8495"/>
+          <include geocode="840204"/>
+          <include geocode="840209"/>
+          <include geocode="840210"/>
+          <include geocode="840201">
+            <exclude geocode="8495"/>
+          </include>
+        </constituency>
+        <constituency index="3">
+          <include geocode="840206"/>
+          <include geocode="840205"/>
+          <include geocode="840208"/>
+          <include geocode="840213"/>
+          <include geocode="840212"/>
+        </constituency>
+      </constituencies>
+    </entity>
+    <entity type="Amphoe" geocode="8417" name="พุนพิน" english="Phunphin">
+      <constituencies>
+        <constituency index="1">
+          <include geocode="8497"/>
+          <include geocode="841715"/>
+          <include geocode="841702"/>
+          <include geocode="84170104"/>
+        </constituency>
+        <constituency index ="2">
+          <include geocode="841706"/>
+          <include geocode="841707"/>
+          <include geocode="841716"/>
+          <include geocode="841704"/>
+          <include geocode="841705"/>
+          <include geocode="841709"/>
+          <include geocode="841711"/>
+          <includesub geocode="841714">
+            <include geocode="84171402"/>
+            <include geocode="84171404"/>
+            <include geocode="84171405"/>
+          </includesub>
+        </constituency>
+        <constituency index="3">
+          <include geocode="841712"/>
+          <include geocode="841713"/>
+          <include geocode="841708"/>
+          <include geocode="841703"/>
+          <include geocode="841710"/>
+          <includesub geocode="841714">
+            <include geocode="84171401"/>
+            <include geocode="84171403"/>
+          </includesub>
+          <include geocode="84170101"/>
+          <include geocode="84170103"/>
+          <include geocode="84170105"/>
+          <include geocode="84170106"/>
+          <include geocode="84170107"/>
+        </constituency>
+      </constituencies>
+    </entity>
+    <entity type="Amphoe" geocode="8412" name="บ้านนาสาร" english="Ban Na San">
+      <constituencies>
+        <constituency index="1">
+          <include geocode="841203"/>
+          <include geocode="841210"/>
+          <include geocode="841207"/>
+          <includesub geocode="8498">
+            <include geocode="84980019" comment="ชุมชนห้วยมุด - but 19 actually named ชุมชนห้วยเรียน"/>
+            <include geocode="84980003"/>
+            <include geocode="84980024"/>
+            <include geocode="84980011"/>
+            <include geocode="84980013"/>
+            <!-- ชุมชนตลาด not found in geocode list, only partially included -->
+          </includesub>
+        </constituency>
+        <constituency index="2">
+          <include geocode="841209"/>
+          <include geocode="841205"/>
+          <include geocode="841206"/>
+          <include geocode="841202"/>
+          <include geocode="841208"/>
+          <includesub geocode="8498">
+            <include geocode="84980012"/>
+            <include geocode="84980016"/>
+            <include geocode="84980005"/>
+            <include geocode="84980022"/>
+            <include geocode="84980023"/>
+            <include geocode="84980007"/>
+            <include geocode="84980017"/>
+            <include geocode="84980008"/>
+            <include geocode="84980010"/>
+            <include geocode="84980015"/>
+            <!-- ชุมชนตลาด not found in geocode list, only partially included -->
+          </includesub>
+        </constituency>
+      </constituencies>
+    </entity>
     <entity type="Amphoe" geocode="8416" name="พระแสง">
       <constituencies>
         <constituency index="1">
