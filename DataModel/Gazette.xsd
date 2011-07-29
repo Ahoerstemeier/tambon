@@ -306,6 +306,8 @@
     <xs:attribute name="subtitle" type="xs:string" use="optional" />
     <xs:attribute name="signedby" type="xs:string" use="optional" />
     <xs:attribute name="signedbyfunction" type="t:SignByFunction" use="optional" />
+    <xs:attribute name="countersignedby" type="xs:string" use="optional" />
+    <xs:attribute name="countersignedbyfunction" type="t:SignByFunction" use="optional" />
   </xs:complexType>
   <xs:complexType name='GazetteEntryContainer'>
     <xs:sequence>
