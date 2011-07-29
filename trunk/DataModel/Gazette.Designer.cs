@@ -198,6 +198,12 @@ namespace De.AHoerstemeier.Tambon
 
         private bool signedbyfunctionFieldSpecified;
 
+        private string countersignedbyField;
+
+        private SignByFunction countersignedbyfunctionField;
+
+        private bool countersignedbyfunctionFieldSpecified;
+
         /// <summary>
         /// GazetteEntry class constructor
         /// </summary>
