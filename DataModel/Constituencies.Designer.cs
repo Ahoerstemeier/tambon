@@ -145,8 +145,6 @@ namespace De.AHoerstemeier.Tambon
 
         private bool typeFieldSpecified;
 
-        private string eligiblevoterField;
-
         private ByElectionReason reasonField;
 
         private bool reasonFieldSpecified;
@@ -231,20 +229,6 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string eligiblevoter
-        {
-            get
-            {
-                return this.eligiblevoterField;
-            }
-            set
-            {
-                this.eligiblevoterField = value;
-            }
-        }
-
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ByElectionReason reason
@@ -304,6 +288,8 @@ namespace De.AHoerstemeier.Tambon
         private string invalidvotesField;
 
         private string abstainvotesField;
+
+        private string commentField;
 
         /// <summary>
         /// CandidateList class constructor
@@ -366,6 +352,20 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.abstainvotesField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
             }
         }
     }
