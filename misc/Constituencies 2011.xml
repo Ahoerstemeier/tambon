@@ -2,7 +2,7 @@
 <electiondata xmlns="http://hoerstemeier.com/tambon/" >
   <parties>
     <party id="1" name="พรรคเพื่อไทย" english="Pheu Thai"/>
-    <party id="2" name="พรรคชาติพัฒนาเพื่อแผ่นดิน"/>
+    <party id="2" name="พรรคชาติพัฒนาเพื่อแผ่นดิน" english="Chart Pattana Puea Pandin"/>
     <party id="3" name="พรรคประชาธิปไตยใหม่"/>
     <party id="4" name="พรรคประชากรไทย"/>
     <party id="5" name="พรรครักประเทศไทย"/>
@@ -632,6 +632,16 @@
             <exclude geocode="950503"/>
           </include>
           <include geocode="9507"/>
+          <election date="2011-07-03">
+            <candidates invalidvotes="10043" abstainvotes="2786" comment="Recount of votes necessary">
+              <candidate id="1" party="1" name="ซูการ์โน มะทา" english="Sugarno Matha" votes="27649"/>
+              <candidate id="7" party="7" name="ชานนท์ เจ๊ะหะมะ" votes="5836"/>
+              <candidate id="10" party="10" name="อับดุลการิม เด็งระกีนา" english="Abdulkarim Dengrakina" votes="28269" status="pending"/>
+              <candidate id="21" party="21" name="อาซือมิ อิตูวา" votes="1416"/> 
+              <candidate id="26" party="26" name="มาหะมะอามิน มูน๊ะ" votes="12636"/>
+              <candidate id="34" party="34" name="นายการิม เปะอะรอมิง" votes="95"/>
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อําเภอยะหา (เฉพาะ ตําบลปะแต) อําเภอกรงปินัง อําเภอบันนังสตา อําเภอธารโต อําเภอเบตง">
           <include geocode="950503"/>
@@ -730,10 +740,18 @@
           <include geocode="4316"/>
           <include geocode="4315"/>
           <election>
-            <candidates>
-              <candidate id="1" party="1" name="สมคิด บาลไธสง" english="Somkid Banthaisong" status="yellowcard"/>
+            <candidates eligiblevoter="121132">
+              <candidate id="1" party="1" name="สมคิด บาลไธสง" english="Somkid Banthaisong" votes="51014" status="yellowcard"/>
+              <candidate id="2" party="2" name="พิทักษ์ ศรีตะบุตรพรรค" english="Pitak Sitabutr" votes="22539"/>
+              <!-- more candiates? -->
             </candidates>
           </election>
+          <byelection date="2011-07-31" reason="yellowcard">
+            <candidates eligiblevoter="121513" invalidvotes="1417" abstainvotes="853">
+              <candidate id="1" party="1" name="สมคิด บาลไธสง" english="Somkid Banthaisong" votes="46403" status="pending"/>
+              <candidate id="2" party="2" name="พิทักษ์ ศรีตะบุตรพรรค" english="Pitak Sitabutr" votes="10726"/>
+            </candidates>
+          </byelection>
         </constituency>
         <constituency index="3" comment="อำเภอเมืองหนองคาย (เฉพาะตำบลพระธาตุบังพวน และตำบลเวียงคุก) อำเภอท่าบ่อ อำเภอศรีเชียงใหม่ อำเภอโพธิ์ตาก และอำเภอสังคม">
           <include geocode="430113"/>
@@ -1259,9 +1277,20 @@
           <include geocode="6498"/>
           <election date="2011-07-03">
             <candidates>
-              <candidate id="16" name="จักรวาล ชัยวิรัตน์นุกูล" english="Chakkrawan Chaiwiratnukul" status="yellowcard"/>
+              <candidate id="16" party="16" name="จักรวาล ชัยวิรัตน์นุกูล" english="Chakkrawan Chaiwiratnukul" votes="23990" status="yellowcard"/>
+              <candidate id="2" party="2" name="สมเจตน์ ลิมปะพันธุ์" english="Somjet Limpapan" votes="23861"/>
+              <!-- other candidates? -->
             </candidates>
           </election>
+          <byelection date="2011-07-31">
+            <candidates eligiblevoter="118308">
+              <candidate id="16" party="16" name="จักรวาล ชัยวิรัตน์นุกูล" english="Chakkrawan Chaiwiratnukul" votes="34232" status="pending"/>
+              <candidate id="2" party="2" name="สมเจตน์ ลิมปะพันธุ์" english="Somjet Limpapan" votes="22882"/>
+              <candidate id="1" party="1" name="พรชัย แสงสว่าง"/>
+              <candidate id="10" party="10" name="สมชาย คำเตือนใจ"/>
+              <candidate id="39" party="39" name="ศุภชัย โตนดดง"/>
+            </candidates>
+          </byelection>
         </constituency>
         <constituency index="4" comment="อำเภอศรีสัชนาลัย อำเภอศรีนคร อำเภอสวรรคโลก (เฉพาะตำบลป่ากุมเกาะ ตำบลในเมือง ตำบลคลองยาง และตำบลนาทุ่ง)">
           <include geocode="6405"/>
