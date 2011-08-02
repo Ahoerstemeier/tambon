@@ -38,6 +38,7 @@
             this.lbl_datum = new System.Windows.Forms.Label();
             this.lbl_geohash = new System.Windows.Forms.Label();
             this.edt_geohash = new System.Windows.Forms.TextBox();
+            this.btnFlyTo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_MGRS
@@ -95,6 +96,7 @@
             this.edt_LatLong.Name = "edt_LatLong";
             this.edt_LatLong.Size = new System.Drawing.Size(186, 20);
             this.edt_LatLong.TabIndex = 5;
+            this.edt_LatLong.TextChanged += new System.EventHandler(this.edt_LatLong_TextChanged);
             // 
             // cbx_datum
             // 
@@ -128,17 +130,31 @@
             // 
             // edt_geohash
             // 
+            this.edt_geohash.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.edt_geohash.Location = new System.Drawing.Point(94, 56);
             this.edt_geohash.Name = "edt_geohash";
             this.edt_geohash.Size = new System.Drawing.Size(186, 20);
             this.edt_geohash.TabIndex = 9;
             this.edt_geohash.TextChanged += new System.EventHandler(this.edt_geohash_TextChanged);
             // 
+            // btnFlyTo
+            // 
+            this.btnFlyTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFlyTo.Location = new System.Drawing.Point(205, 147);
+            this.btnFlyTo.Name = "btnFlyTo";
+            this.btnFlyTo.Size = new System.Drawing.Size(75, 23);
+            this.btnFlyTo.TabIndex = 10;
+            this.btnFlyTo.Text = "Fly To";
+            this.btnFlyTo.UseVisualStyleBackColor = true;
+            this.btnFlyTo.Click += new System.EventHandler(this.btnFlyTo_Click);
+            // 
             // GeoCoordinateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.ClientSize = new System.Drawing.Size(292, 185);
+            this.Controls.Add(this.btnFlyTo);
             this.Controls.Add(this.edt_geohash);
             this.Controls.Add(this.lbl_geohash);
             this.Controls.Add(this.lbl_datum);
@@ -169,5 +185,6 @@
         private System.Windows.Forms.Label lbl_datum;
         private System.Windows.Forms.Label lbl_geohash;
         private System.Windows.Forms.TextBox edt_geohash;
+        private System.Windows.Forms.Button btnFlyTo;
     }
 }

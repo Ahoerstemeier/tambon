@@ -62,54 +62,45 @@ namespace De.AHoerstemeier.Geo
         }
         public GeoPoint(string value)
         {
-            Regex Parser = new Regex(@"([0-9]{1,3})[:|°]\s{0,}([0-9]{1,2})[:|']\s{0,}((?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\\b))[""|\s]\s{0,}?([N|S|E|W])\s{0,}");
+            GeoPoint result = null;
 
-            value = value.Replace(',', '.');
-            value = value.Trim();
-
-            // Now parse using the regex parser
-            MatchCollection matches = Parser.Matches(value);
-            if ( matches.Count != 2 )
+            try
             {
-                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
+                result = GeoPoint.ParseDegMinSec(value);
+            }
+            catch (ArgumentException)
+            {
             }
 
-            foreach ( Match match in matches )
+            if (result == null)
             {
-                // Convert - adjust the sign if necessary
-                Double deg = Double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
-                Double min = Double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
-                Double sec = Double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture);
-                Double result = deg + (min / 60) + (sec / 3600);
-                if ( match.Groups[4].Success )
+                try
                 {
-                    Char ch = match.Groups[4].Value[0];
-                    switch ( ch )
-                    {
-                        case 'S':
-                            {
-                                Latitude = -result;
-                                break;
-                            }
-                        case 'N':
-                            {
-                                Latitude = result;
-                                break;
-                            }
-                        case 'E':
-                            {
-                                Longitude = result;
-                                break;
-                            }
-                        case 'W':
-                            {
-                                Longitude = -result;
-                                break;
-                            }
-                    }
+                    result = GeoPoint.ParseDegMin(value);
+                }
+                catch (ArgumentException)
+                {
                 }
             }
 
+            if (result == null)
+            {
+                try
+                {
+                    result = GeoPoint.ParseDecimalDegree(value);
+                }
+                catch (ArgumentException)
+                {
+                }
+            }
+
+            if (result == null)
+            {
+                throw new ArgumentException("Cannot parse coordinate value "+value, "value");
+            }
+
+            Latitude = result.Latitude;
+            Longitude = result.Longitude;
         }
 
         public GeoPoint(GeoPoint iValue)
@@ -175,11 +166,11 @@ namespace De.AHoerstemeier.Geo
         #endregion
 
         #region methods
-        public bool IsNorthernHemisphere()
+        public Boolean IsNorthernHemisphere()
         {
             return Latitude >= 0;
         }
-        public bool IsWesternLongitude()
+        public Boolean IsWesternLongitude()
         {
             return Longitude < 0;
         }
@@ -482,6 +473,166 @@ namespace De.AHoerstemeier.Geo
             GeoPoint lPoint = De.AHoerstemeier.Geo.GeoHash.DecodeGeoHash(iValue);
             this.Latitude = lPoint.Latitude;
             this.Longitude = lPoint.Longitude;
+        }
+
+        private static GeoPoint ParseDegMinSec(String value)
+        {
+            Regex Parser = new Regex(@"([0-9]{1,3})[:|°]\s{0,}([0-9]{1,2})[:|']\s{0,}((?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b))[""|\s]\s{0,}?([N|S|E|W])\s{0,}");
+
+            value = value.Replace(',', '.');
+            value = value.Trim();
+
+            // Now parse using the regex parser
+            MatchCollection matches = Parser.Matches(value);
+            if (matches.Count != 2)
+            {
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
+            }
+
+            Double latitude = 0.0;
+            Double longitude = 0.0;
+
+            foreach (Match match in matches)
+            {
+                // Convert - adjust the sign if necessary
+                Double deg = Double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
+                Double min = Double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
+                Double sec = Double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture);
+                Double result = deg + (min / 60) + (sec / 3600);
+                if (match.Groups[4].Success)
+                {
+                    Char ch = match.Groups[4].Value[0];
+                    switch (ch)
+                    {
+                        case 'S':
+                            {
+                                latitude = -result;
+                                break;
+                            }
+                        case 'N':
+                            {
+                                latitude = result;
+                                break;
+                            }
+                        case 'E':
+                            {
+                                longitude = result;
+                                break;
+                            }
+                        case 'W':
+                            {
+                                longitude = -result;
+                                break;
+                            }
+                    }
+                }
+            }
+            return new GeoPoint(latitude, longitude);
+        }
+        private static GeoPoint ParseDegMin(String value)
+        {
+            Regex Parser = new Regex(@"([0-9]{1,3})[:|°|\s]\s{0,}((?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b))'{0,1}\s{0,}?([N|S|E|W])\s{0,}");
+
+            value = value.Replace(',', '.');
+            value = value.Trim();
+
+            // Now parse using the regex parser
+            MatchCollection matches = Parser.Matches(value);
+            if (matches.Count != 2)
+            {
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
+            }
+
+            Double latitude = 0.0;
+            Double longitude = 0.0;
+
+            foreach (Match match in matches)
+            {
+                // Convert - adjust the sign if necessary
+                Double deg = Double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
+                Double min = Double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
+                Double result = deg + (min / 60);
+                if (match.Groups[3].Success)
+                {
+                    Char ch = match.Groups[3].Value[0];
+                    switch (ch)
+                    {
+                        case 'S':
+                            {
+                                latitude = -result;
+                                break;
+                            }
+                        case 'N':
+                            {
+                                latitude = result;
+                                break;
+                            }
+                        case 'E':
+                            {
+                                longitude = result;
+                                break;
+                            }
+                        case 'W':
+                            {
+                                longitude = -result;
+                                break;
+                            }
+                    }
+                }
+            }
+            return new GeoPoint(latitude, longitude);
+        }
+        private static GeoPoint ParseDecimalDegree(String value)
+        {
+            Regex Parser = new Regex(@"((?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b))°{0,1}\s{0,}?([N|S|E|W])\s{0,}");
+
+            value = value.Replace(',', '.');
+            value = value.Trim();
+
+            // Now parse using the regex parser
+            MatchCollection matches = Parser.Matches(value);
+            if (matches.Count != 2)
+            {
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
+            }
+
+            Double latitude = 0.0;
+            Double longitude = 0.0;
+
+            foreach (Match match in matches)
+            {
+                // Convert - adjust the sign if necessary
+                Double deg = Double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
+                Double result = deg;
+                if (match.Groups[2].Success)
+                {
+                    Char ch = match.Groups[2].Value[0];
+                    switch (ch)
+                    {
+                        case 'S':
+                            {
+                                latitude = -result;
+                                break;
+                            }
+                        case 'N':
+                            {
+                                latitude = result;
+                                break;
+                            }
+                        case 'E':
+                            {
+                                longitude = result;
+                                break;
+                            }
+                        case 'W':
+                            {
+                                longitude = -result;
+                                break;
+                            }
+                    }
+                }
+            }
+            return new GeoPoint(latitude, longitude);
         }
 
         #endregion
