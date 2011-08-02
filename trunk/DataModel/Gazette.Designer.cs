@@ -495,6 +495,48 @@ namespace De.AHoerstemeier.Tambon
                 this.signedbyfunctionFieldSpecified = value;
             }
         }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string countersignedby
+        {
+            get
+            {
+                return this.countersignedbyField;
+            }
+            set
+            {
+                this.countersignedbyField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SignByFunction countersignedbyfunction
+        {
+            get
+            {
+                return this.countersignedbyfunctionField;
+            }
+            set
+            {
+                this.countersignedbyfunctionField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool countersignedbyfunctionSpecified
+        {
+            get
+            {
+                return this.countersignedbyfunctionFieldSpecified;
+            }
+            set
+            {
+                this.countersignedbyfunctionFieldSpecified = value;
+            }
+        }
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
