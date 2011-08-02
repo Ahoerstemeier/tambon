@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace De.AHoerstemeier.Geo
 {
@@ -58,10 +60,58 @@ namespace De.AHoerstemeier.Geo
             Altitude = iAltitude;
             mDatum = iDatum;
         }
-        public GeoPoint(string iValue)
+        public GeoPoint(string value)
         {
-            throw new NotImplementedException();
+            Regex Parser = new Regex(@"([0-9]{1,3})[:|°]\s{0,}([0-9]{1,2})[:|']\s{0,}((?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\\b))[""|\s]\s{0,}?([N|S|E|W])\s{0,}");
+
+            value = value.Replace(',', '.');
+            value = value.Trim();
+
+            // Now parse using the regex parser
+            MatchCollection matches = Parser.Matches(value);
+            if ( matches.Count != 2 )
+            {
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
+            }
+
+            foreach ( Match match in matches )
+            {
+                // Convert - adjust the sign if necessary
+                Double deg = Double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
+                Double min = Double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
+                Double sec = Double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture);
+                Double result = deg + (min / 60) + (sec / 3600);
+                if ( match.Groups[4].Success )
+                {
+                    Char ch = match.Groups[4].Value[0];
+                    switch ( ch )
+                    {
+                        case 'S':
+                            {
+                                Latitude = -result;
+                                break;
+                            }
+                        case 'N':
+                            {
+                                Latitude = result;
+                                break;
+                            }
+                        case 'E':
+                            {
+                                Longitude = result;
+                                break;
+                            }
+                        case 'W':
+                            {
+                                Longitude = -result;
+                                break;
+                            }
+                    }
+                }
+            }
+
         }
+
         public GeoPoint(GeoPoint iValue)
         {
             Latitude = iValue.Latitude;

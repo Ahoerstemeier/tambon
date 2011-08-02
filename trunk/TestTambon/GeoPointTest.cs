@@ -99,7 +99,7 @@ namespace TestProject1
         {
             UTMPoint lUTMPoint = new UTMPoint("33U 0411777 5655984");
             String lMGRS = lUTMPoint.ToMGRSString(7).Replace(" ", "");
-            Assert.AreEqual("33UVS1177755984",lMGRS);
+            Assert.AreEqual("33UVS1177755984", lMGRS);
         }
         [TestMethod]
         public void TestParseMGRS()
@@ -130,7 +130,16 @@ namespace TestProject1
         {
             GeoPoint lGeoPoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
             String lGeoHash = lGeoPoint.GeoHash;
-            Assert.IsTrue(lGeoHash == mBangkokGeoHash, "Returned " + lGeoHash+" instead of " + mBangkokGeoHash);
+            Assert.IsTrue(lGeoHash == mBangkokGeoHash, "Returned " + lGeoHash + " instead of " + mBangkokGeoHash);
+        }
+        [TestMethod]
+        public void TestParseCoordinate()
+        {
+            // String mCoordinateString = "N 13.7628° E 100.478100°";
+            String mCoordinateString = " 13°45'46.08\" N 100°28'41.16\" E";
+            GeoPoint lGeoPoint = new GeoPoint(mCoordinateString);
+            Assert.IsTrue(Math.Abs(lGeoPoint.Latitude - 13.7628) < 1e-6, "Parsed latitude " + lGeoPoint.Latitude.ToString() + " not fitting to " + mCoordinateString);
+            Assert.IsTrue(Math.Abs(lGeoPoint.Longitude - 100.4781) < 1e-6, "Parsed longitude " + lGeoPoint.Longitude.ToString() + " not fitting to " + mCoordinateString);
         }
 
         [TestMethod]
