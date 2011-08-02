@@ -6,13 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using EARTHLib;
 using De.AHoerstemeier.Geo;
+using System.Threading;
+using System.Xml;
+using System.IO;
 
 namespace De.AHoerstemeier.Tambon
 {
     public partial class GeoCoordinateForm : Form
     {
         private Boolean mChanging = false;
+        private GeoPoint mPoint = null;
 
         public GeoCoordinateForm()
         {
@@ -110,6 +115,8 @@ namespace De.AHoerstemeier.Tambon
                     edt_MGRS.Text = iUTM.ToMGRSString(6);
                 }
             }
+            mPoint = iGeoPoint;
+            btnFlyTo.Enabled = (mPoint != null);
         }
 
         private void edit_MGRS_TextChanged(object sender, EventArgs e)
@@ -191,6 +198,47 @@ namespace De.AHoerstemeier.Tambon
                 mChanging = false;
             }
 
+        }
+
+        private void edt_LatLong_TextChanged(object sender, EventArgs e)
+        {
+            if (!mChanging)
+            {
+                GeoPoint lGeo = null;
+                UTMPoint lUTM = null;
+                try
+                {
+                    mChanging = true;
+                    lGeo = new GeoPoint(edt_LatLong.Text);
+                    lGeo.Datum = (GeoDatum)cbx_datum.SelectedItem;
+                    GeoPoint lGeoOtherDatum = new GeoPoint(lGeo);
+                    lGeoOtherDatum.Datum = (GeoDatum)cbx_datum.SelectedItem;
+                    lUTM = lGeoOtherDatum.CalcUTM();
+                }
+                catch
+                {
+                    // invalid string
+                    lGeo = null;
+                    lUTM = null;
+                }
+                SetValues(lGeo, lUTM, sender);
+                mChanging = false;
+            }
+        }
+
+        private void btnFlyTo_Click(object sender, EventArgs e)
+        {
+            var googleEarth = new ApplicationGEClass();
+
+            String tempKmlFile = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".kml";
+            KmlHelper kmlWriter = new KmlHelper();
+            kmlWriter.AddPoint(mPoint.Latitude, mPoint.Longitude, "Temporary location", "", "","");
+            kmlWriter.SaveToFile(tempKmlFile);
+            while (googleEarth.IsInitialized() == 0)
+            {
+                Thread.Sleep(500);
+            }
+            googleEarth.OpenKmlFile(tempKmlFile, 0);
         }
     }
 }
