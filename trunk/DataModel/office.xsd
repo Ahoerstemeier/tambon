@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema 
-  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" 
-  xmlns:t="http://hoerstemeier.com/tambon/" 
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
   targetNamespace="http://hoerstemeier.com/tambon/"
   attributeFormDefault="unqualified" elementFormDefault="qualified" >
   <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd"/>
@@ -97,7 +97,8 @@
       <xs:enumeration value="ProvinceHall">
         <xs:annotation>
           <xs:documentation>Province hall (ศาลากลางจังหวัด , Sala Klang Changwat)</xs:documentation>
-        </xs:annotation></xs:enumeration>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="PAOOffice">
         <xs:annotation>
           <xs:documentation>PAO office (สำนักงานองค์การบริหารส่วนจังหวัด).</xs:documentation>
@@ -225,6 +226,11 @@
           <xs:documentation>Domain registration has expired.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="broken">
+        <xs:annotation>
+          <xs:documentation>Server alive, but returns no valid webpage, e.g. 404.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="MyUri">
@@ -325,12 +331,45 @@
     <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
   <xs:complexType name='Office'>
+    <xs:annotation>
+      <xs:documentation>Administrative office(s) for the administrative subdivision.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" ref="geo:Point" />
-      <xs:element minOccurs="0" name="address" type="t:ThaiAddress"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="t:MyUri"/>
-      <xs:element minOccurs="0" maxOccurs="1" name="officials" type="t:OfficialList"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="oldlocations" type="t:OldLocation"/>
+      <xs:element minOccurs="0" maxOccurs="1" type='xs:string' name='slogan'>
+        <xs:annotation>
+          <xs:documentation>Slogan (คำขวัญ) of the office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" type='xs:string' name='vision'>
+        <xs:annotation>
+          <xs:documentation>Vision statement (วิสัยทัศน์) of the office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" ref="geo:Point" >
+        <xs:annotation>
+          <xs:documentation>Location of office, pointing approximately at the main entrance.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="address" type="t:ThaiAddress">
+        <xs:annotation>
+          <xs:documentation>Postal address of the office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="t:MyUri">
+        <xs:annotation>
+          <xs:documentation>Website of the office, including former websites with the appropriate status.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="officials" type="t:OfficialList">
+        <xs:annotation>
+          <xs:documentation>List of office leaders.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="oldlocations" type="t:OldLocation">
+        <xs:annotation>
+          <xs:documentation>List of former office locations.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
     <xs:attribute name="type" type="t:OfficeType" use="required" >
       <xs:annotation>
@@ -342,7 +381,11 @@
         <xs:documentation>Office of an administrative entity no longer existing.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attribute name="comment" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Comment for information not fitting in any of the formal fields.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
-  
+
 </xs:schema>
