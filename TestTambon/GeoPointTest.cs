@@ -133,13 +133,18 @@ namespace TestProject1
             Assert.IsTrue(lGeoHash == mBangkokGeoHash, "Returned " + lGeoHash + " instead of " + mBangkokGeoHash);
         }
         [TestMethod]
-        public void TestParseCoordinate()
+        public void TestParseCoordinateDegMinSec()
         {
-            // String mCoordinateString = "N 13.7628° E 100.478100°";
             String mCoordinateString = " 13°45'46.08\" N 100°28'41.16\" E";
             GeoPoint lGeoPoint = new GeoPoint(mCoordinateString);
-            Assert.IsTrue(Math.Abs(lGeoPoint.Latitude - 13.7628) < 1e-6, "Parsed latitude " + lGeoPoint.Latitude.ToString() + " not fitting to " + mCoordinateString);
-            Assert.IsTrue(Math.Abs(lGeoPoint.Longitude - 100.4781) < 1e-6, "Parsed longitude " + lGeoPoint.Longitude.ToString() + " not fitting to " + mCoordinateString);
+            Assert.IsTrue(new GeoPoint(13.7628, 100.478100).Equals(lGeoPoint));
+        }
+        [TestMethod]
+        public void TestParseCoordinateDecimalDegree()
+        {
+            String mCoordinateString = " 13.7628° N 100.478100° E";
+            GeoPoint lGeoPoint = new GeoPoint(mCoordinateString);
+            Assert.IsTrue(new GeoPoint(13.7628, 100.478100).Equals(lGeoPoint));
         }
 
         [TestMethod]

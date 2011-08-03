@@ -228,17 +228,24 @@ namespace De.AHoerstemeier.Tambon
 
         private void btnFlyTo_Click(object sender, EventArgs e)
         {
-            var googleEarth = new ApplicationGEClass();
-
-            String tempKmlFile = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".kml";
-            KmlHelper kmlWriter = new KmlHelper();
-            kmlWriter.AddPoint(mPoint.Latitude, mPoint.Longitude, "Temporary location", "", "","");
-            kmlWriter.SaveToFile(tempKmlFile);
-            while (googleEarth.IsInitialized() == 0)
+            try
             {
-                Thread.Sleep(500);
+                var googleEarth = new ApplicationGEClass();
+
+                String tempKmlFile = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".kml";
+                KmlHelper kmlWriter = new KmlHelper();
+                kmlWriter.AddPoint(mPoint.Latitude, mPoint.Longitude, "Temporary location", "", "", "");
+                kmlWriter.SaveToFile(tempKmlFile);
+                while ( googleEarth.IsInitialized() == 0 )
+                {
+                    Thread.Sleep(500);
+                }
+                googleEarth.OpenKmlFile(tempKmlFile, 0);
             }
-            googleEarth.OpenKmlFile(tempKmlFile, 0);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
