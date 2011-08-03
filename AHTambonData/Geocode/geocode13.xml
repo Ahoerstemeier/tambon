@@ -327,7 +327,7 @@
     <entity type="Tambon" name="บึงบอน" english="Bueng Bon" geocode="130402" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 14.0693</geo:lat>
+          <geo:lat>14.0693</geo:lat>
           <geo:long>100.7561</geo:long>
         </geo:Point>
         <officials>
@@ -338,10 +338,13 @@
     <entity type="Tambon" name="บึงกาสาม" english="Bueng Ka Sam" geocode="130403" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 14.1739</geo:lat>
+          <geo:lat>14.1739</geo:lat>
           <geo:long>100.8244</geo:long>
         </geo:Point>
         <url>http://www.buengkasam.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ไพศาล ศรีธเนศสกุล" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="13040301" name="บ้านบึงสัมพันธ์"/>
       <entity type="Muban" geocode="13040302" name="บ้านบึงสมบูรณ์"/>
@@ -463,7 +466,10 @@
     </office>
     <entity type="Tambon" name="ระแหง" english="Rahaeng" geocode="130501" >
       <office type="TAOOffice">
-        <url>http://rahang.org/</url>
+        <url status="offline">http://rahang.org/</url>
+        <officials>
+          <official title="TAOMayor" name="มาโนชย์ อินทร์ประสิทธิ์" inoffice="2009"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="ลาดหลุมแก้ว" english="Lat Lum Kaeo" geocode="130502" />
@@ -515,8 +521,8 @@
     </entity>
     <entity type="Tambon" name="บ่อเงิน" english="Bo Ngoen" geocode="130506" >
       <office type="TAOOffice">
-        <url>http://www.borngern.org/</url>
-        <url>http://www.borngern.go.th/</url>
+        <url status="offline">http://www.borngern.go.th/</url>
+        <url status="offline">http://www.borngern.org/</url>
         <officials>
           <official title="TAOMayor" name="สายชล เชื้อดี" inoffice="2010"/>
         </officials>
@@ -531,7 +537,14 @@
     </entity>
     <entity type="Tambon" name="หน้าไม้" english="Na Mai" geocode="130507" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.0437</geo:lat>
+          <geo:long>100.3389</geo:long>
+        </geo:Point>
         <url>http://www.namaipathum.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ปี แก้วกาญจน์" inoffice="2011"/>
+        </officials>
       </office>
     </entity>
   </entity>
