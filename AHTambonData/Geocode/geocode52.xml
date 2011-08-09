@@ -558,9 +558,12 @@
       <entity type="Muban" geocode="52060506" name="บ้านไผ่ทอง"/>
     </entity>
     <entity type="Tambon" name="ทุ่งผึ้ง" english="Thung Phueng" geocode="520606" >
-      <office type="TAOOffice">
-        <url>http://thungphung.igetweb.com/</url>
-      </office>
+      <entity type="Muban" geocode="52060601" name="บ้านทุ่งฮ้าง"/>
+      <entity type="Muban" geocode="52060602" name="บ้านแจ้คอน"/>
+      <entity type="Muban" geocode="52060603" name="บ้านหัวฝาย"/>
+      <entity type="Muban" geocode="52060604" name="บ้านทุ่งผึ้ง"/>
+      <entity type="Muban" geocode="52060605" name="บ้านแม่ช่อฟ้า"/>
+      <entity type="Muban" geocode="52060606" name="บ้านแจ้คอน"/>
     </entity>
     <entity type="Tambon" name="วิเชตนคร" english="Wichet Nakhon" geocode="520607" >
       <office type="TAOOffice">
@@ -817,6 +820,12 @@
   </entity>
   <entity type="Amphoe" name="แม่ทะ" english="Mae Tha" geocode="5210" >
     <office type="DistrictOffice">
+      <slogan>
+        ลำน้ำจางหล่อเลี้ยงเศรษฐกิจ พุทธรูปศักดิ์สิทธิ์พระไม้แก่นจันทร์
+        สินแร่สำคัญถ่านหินดินขาว อาชีพยืนยาวไม้แกะสลัก
+        แหล่งประจักษ์ธรรมถ้ำพระสบาย
+      </slogan>
+      <vision>อำเภอแม่ทะน่าอยู่ ผู้คนสามัคคี เศรษฐกิจดีพอเพียง รับฟังเสียงประชาชน</vision>
       <geo:Point>
         <geo:lat>18.1342</geo:lat>
         <geo:long>99.5131</geo:long>
@@ -917,7 +926,17 @@
       <entity type="Muban" geocode="52101008" name="บ้านปางมะโอ"/>
       <entity type="Muban" geocode="52101009" name="บ้านวังเงิน"/>
     </entity>
-    <entity type="Tambon" name="สันดอนแก้ว" english="San Don Kaeo" geocode="521011" />
+    <entity type="Tambon" name="สันดอนแก้ว" english="San Don Kaeo" geocode="521011" >
+      <entity type="Muban" geocode="52101101" name="บ้านสันดอนแก้ว"/>
+      <entity type="Muban" geocode="52101102" name="บ้านด่าน"/>
+      <entity type="Muban" geocode="52101103" name="บ้านแม่วะ"/>
+      <entity type="Muban" geocode="52101104" name="บ้านสบแม่นาง"/>
+      <entity type="Muban" geocode="52101105" name="บ้านสันป่าเปา"/>
+      <entity type="Muban" geocode="52101106" name="บ้านอ้อ"/>
+      <entity type="Muban" geocode="52101107" name="บ้านแม่ทาน"/>
+      <entity type="Muban" geocode="52101108" name="บ้านเด่น"/>
+      <entity type="Muban" geocode="52101109" name="บ้านแม่ทาน"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="สบปราบ" english="Sop Prap" geocode="5211" >
     <office type="DistrictOffice">
@@ -933,9 +952,11 @@
     <entity type="Tambon" name="สบปราบ" english="Sop Prap" geocode="521101" >
       <entity type="Muban" geocode="52110101" name="บ้านสบปราบ"/>
       <entity type="Muban" geocode="52110102" name="บ้านสบปราบ"/>
-
+      <entity type="Muban" geocode="52110103" name="บ้านวังพร้าว"/>
+      
       <entity type="Muban" geocode="52110105" name="บ้านทุ่ง"/>
-
+      <entity type="Muban" geocode="52110106" name="บ้านวัฒนา"/>
+      <entity type="Muban" geocode="52110107" name="บ้านสบเรียง"/>
       <entity type="Muban" geocode="52110108" name="บ้านหล่ายฮ่องปุ๊"/>
       <entity type="Muban" geocode="52110109" name="บ้านทุ่งพัฒนา"/>
 
@@ -1219,7 +1240,11 @@
   </entity>
   <entity type="ThesabanTambon" name="เสริมงาม" english="Soem Ngam" geocode="5293" parent="5204" >
     <office type="MunicipalityOffice">
-      <url>http://www.freewebs.com/sermngam/</url>
+      <url>http://www.sermngamcity.co.cc/</url>
+      <url status="obsolete">http://www.freewebs.com/sermngam/</url>
+      <officials>
+        <official title="Mayor" name="สรยุทธ ใจวัง" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แจ้ห่ม" english="Chae Hom" geocode="5292" parent="5206" >
@@ -1249,11 +1274,21 @@
   <entity type="ThesabanTambon" name="วังเหนือ" english="Wang Nuea" geocode="5290" parent="5207" >
     <office type="MunicipalityOffice">
       <url>http://www.wangnuea.org/</url>
+      <url>http://www.nmt.or.th/lampang/wangnuea/</url>
+      <officials>
+        <official index="4" title="Mayor" name="อุทัย สินพิมลบูรณ์" beginyear="2008"/>
+        <official index="3" title="Mayor" name="พยนต์ วรรณลักษณ์" beginyear="2005" endyear="2008"/>
+        <official index="2" title="Mayor" name="ประพันธ์ สินพิมลบูรณ์" beginyear="2001" endyear="2005"/>
+        <official index="1" title="Mayor" name="พรรณี ตระกูลสมบัติ" beginyear="1999" endyear="2001"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ล้อมแรด" english="Lom Raet" geocode="5289" parent="5208" >
     <office type="MunicipalityOffice">
       <url>http://www.lomrad.com/</url>
+      <officials>
+        <official title="Mayor" name="จุมพร ชมภูรัตน์" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แม่ปุ" english="Mae Pu" geocode="5288" parent="5209" >
@@ -1266,18 +1301,31 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่พริก" english="Mae Phrik" geocode="5287" parent="5209" >
     <office type="MunicipalityOffice">
-      <url>http://www.maephrik.com/</url>
+      <url status="offline">http://www.maephrik.com/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ป่าตันนาครัว" english="Pa Tan Nat Rua" geocode="5286" parent="5210" >
     <office type="TAOOffice">
-      <url>http://www.patunnakure.org/</url>
+      <url>http://patunnakure.go.th/</url>
+      <url status="expired">http://www.patunnakure.org/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สบปราบ" english="Sop Prap" geocode="5285" parent="5211" >
     <office type="TAOOffice">
       <url>http://www.sobprabcity.com/</url>
+      <officials>
+        <official title="Mayor" name="สายัณห์ สุรีย์" inoffice="2011"/>
+      </officials>
     </office>
+    <!-- Chumchon numbers to be confirmed -->
+    <entity type="Chumchon" geocode="52850001" name="ชุมชนบ้านหล่าย" muban="52110101"/>
+    <entity type="Chumchon" geocode="52850002" name="ชุมชนสบปราบเหนือ" muban="52110102"/>
+    <entity type="Chumchon" geocode="52850003" name="ชุมชนวังพร้าว" muban="52110103"/>
+    <entity type="Chumchon" geocode="52850004" name="ชุมชนสบทก" muban="52110103"/>
+    <entity type="Chumchon" geocode="52850005" name="ชุมชนสบเรียง" muban="52110107"/>
+    <entity type="Chumchon" geocode="52850006" name="ชุมชนบ้านหล่ายฮ่องปุ๊" muban="52110108"/>
+    <entity type="Chumchon" geocode="52850007" name="ชุมชนบ้านหล่ายพัฒนา" muban="52110113"/>
+    <entity type="Chumchon" geocode="52850008" name="ชุมชนสบปราบใต้" muban="52110114"/>
   </entity>
   <entity type="ThesabanTambon" name="ห้างฉัตร" english="Hang Chat" geocode="5284" parent="5212" >
     <office type="MunicipalityOffice">
@@ -1301,12 +1349,18 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่เมาะ" english="Mae Mo" geocode="5282" parent="5202" tambon="520204" >
     <office type="MunicipalityOffice">
-      <url>http://www.tasaban-maemoh.org/</url>
+      <vision>ร่วมคิด ร่วมทำ นำพัฒนา พาท้องถิ่นเจริญ</vision>
+      <url>http://www.tasaban-maemoh.go.th/</url>
+      <url status="expired">http://www.tasaban-maemoh.org/</url>
+      <officials>
+        <official title="Mayor" name="ธยานี ศรีโรจนกุล" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สิริราช" english="Sirirat" geocode="5281" parent="5210" tambon="521011" >
     <office type="MunicipalityOffice">
-      <url>http://www.sirirach.net/</url>
+      <url>http://www.tessabansirirach.go.th/</url>
+      <url status="expired">http://www.sirirach.net/</url>
     </office>
     <history>
       <rename oldname="สันดอนแก้ว" oldenglish="San Don Kaeo" name="สิริราช"/>
@@ -1319,23 +1373,27 @@
   </entity>
   <entity type="ThesabanTambon" name="นาแก้ว" english="Na Kaeo" geocode="5279" parent="5203" tambon="520302" >
     <office type="MunicipalityOffice">
-      <url>http://nakaew.org/</url>
+      <url status="offline">http://nakaew.org/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ศาลา" english="Sala" geocode="5278" parent="5203" tambon="520305" >
     <office type="MunicipalityOffice">
-      <url>http://www.tbsala2009.com/</url>
+      <url>http://sala.go.th/</url>
+      <url status="expired">http://www.tbsala2009.com/</url>
+      <officials>
+        <official title="Mayor" name="บุญธรรม พรหมปลูก" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านสา" english="Ban Sa" geocode="5277" parent="5206" tambon="520602" >
     <office type="MunicipalityOffice">
-      <url>http://www.bansa.net/</url>
+      <url status="expired">http://www.bansa.net/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แม่ทะ" english="Mae Tha" geocode="5276" parent="5210" tambon="521001" >
     <office type="MunicipalityOffice">
       <url>http://www.maethacity.org/</url>
-      <url comment="Old website">http://maetha.igetweb.com/</url>
+      <url status="obsolete">http://maetha.igetweb.com/</url>
       <officials>
         <official index="1" title="TAOChairman" beginyear="1996" endyear="1997" name="เขื่อนแก้ว คำชุม"/>
         <official index="2" title="TAOChairman" beginyear="1997" endyear="1999" name="สว่าง ต้องสู้"/>
@@ -1353,13 +1411,22 @@
   </entity>
   <entity type="ThesabanTambon" name="น้ำโจ้" english="Nam Cho" geocode="5275" parent="5210" tambon="521006" >
     <office type="MunicipalityOffice">
+      <url>http://www.namchomn.com/</url>
       <url>http://www.namcho-mn.org/</url>
+      <officials>
+        <official title="Mayor" name="เสริม สูรยกานต์กูล" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
 
   <!-- Geocode nor yet known -->
   <entity type="ThesabanTambon" name="ทุ่งผึ้ง" english="Thung Phueng" geocode="5274" parent="5206" tambon="520606" >
     <office type="MunicipalityOffice">
+      <vision>
+        โครงสร้างพื้นฐานดี มีเศรษฐกิจชุมชนเข้มแข็ง
+        แหล่งท่องเที่ยวเชิงอนุรักษ์ ตระหนักการศึกษา
+        พัฒนาคุณภาพชีวิต
+      </vision>
       <url>http://thungphung.igetweb.com/</url>
     </office>
   </entity>
