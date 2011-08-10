@@ -282,10 +282,16 @@ namespace De.AHoerstemeier.Tambon
         ViceGovernor,
 
         /// <remarks/>
+        DeputyGovernor,
+
+        /// <remarks/>
         DistrictOfficer,
 
         /// <remarks/>
         MinorDistrictOfficer,
+
+        /// <remarks/>
+        AssistantDistrictOfficer,
 
         /// <remarks/>
         DistrictOfficerBangkok,
@@ -304,6 +310,12 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         Mayor,
+
+        /// <remarks/>
+        DeputyMayor,
+
+        /// <remarks/>
+        MunicipalClerk,
 
         /// <remarks/>
         TAOMayor,
