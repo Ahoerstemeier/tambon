@@ -379,9 +379,19 @@
       <entity type="Muban" geocode="65020227" name="บ้านชายทุ่ง"/>
     </entity>
     <entity type="Tambon" name="บ้านแยง" english="Ban Yaeng" geocode="650203" >
-      <entity type="Muban" geocode="65020302" name="บ้านหนองหิน"/>
-
-      <entity type="Muban" geocode="65020313" name="บ้านบางกลางท่าวพัฒนา"/>
+      <entity type="Muban" geocode="65020301" name="บ้านแยง" english="Ban Yaeng"/>
+      <entity type="Muban" geocode="65020302" name="บ้านหนองหิน" english="Ban Nong Hin"/>
+      <entity type="Muban" geocode="65020303" name="บ้านถ้ำพริก" english="Ban Tham Phrik"/>
+      <entity type="Muban" geocode="65020304" name="บ้านเข็กใหญ่" english="Ban Khet Yai"/>
+      <entity type="Muban" geocode="65020305" name="บ้านเกษตรสุข" english="Ban Kaset Rasuk"/>
+      <entity type="Muban" geocode="65020306" name="บ้านประดู่สิน" english="Ban Pratu Sin"/>
+      <entity type="Muban" geocode="65020307" name="บ้านเกษตรสัมพันธ์" english="Ban Kaset Sinphan"/>
+      <entity type="Muban" geocode="65020308" name="บ้านโป่งแค" english="Ban Pong Khae"/>
+      <entity type="Muban" geocode="65020309" name="บ้านเข็กกลาง" english="Ban Khet Klang"/>
+      <entity type="Muban" geocode="65020310" name="บ้านเกษตรสมบูรณ์" english="Ban Kaset Sombun"/>
+      <entity type="Muban" geocode="65020311" name="บ้านทัศนานคร" english="Ban Titna Nakhon"/>
+      <entity type="Muban" geocode="65020312" name="บ้านเข็กพัฒนา" english="Ban Khet Phattana"/>      
+      <entity type="Muban" geocode="65020313" name="บ้านบางกลางท่าวพัฒนา" english="Ban Bang Klang Thao Phatthana" comment="Thesaban website says บ้านบางกลางท่าว"/>
     </entity>
     <entity type="Tambon" name="เนินเพิ่ม" english="Noen Phoem" geocode="650204" >
       <entity type="Muban" geocode="65020408" name="บ้านโคก"/>
@@ -1314,7 +1324,7 @@
         <url>http://noenmaprang.com/</url>
       </office>
       <entity type="Muban" geocode="65090601" name="บ้านใหม่ทองประเสริฐ"/>
-      <entity type="Muban" geocode="65090602" name="บ้านเนินมะปราง"/>
+      <entity type="Muban" geocode="65090602" name="บ้านเนินมะปราง" english="Ban Noen Maprang"/>
       <entity type="Muban" geocode="65090603" name="บ้านหนองขอน"/>
       <entity type="Muban" geocode="65090604" name="บ้านเนินกระบาก"/>
       <entity type="Muban" geocode="65090605" name="บ้านเนินดิน"/>
@@ -1434,10 +1444,45 @@
       </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เนินมะปราง" english="Noen Maprang" geocode="6587" parent="6509" />
-  <entity type="ThesabanTambon" name="บ้านแยง" english="Ban Yaeng" geocode="6586" parent="6502" tambon="650203"/>
-  <entity type="ThesabanTambon" name="ไทรย้อย" english="Sai Yoi" geocode="6585" parent="6509" tambon="650903"/>
-  <entity type="ThesabanTambon" name="พันเสา" english="Phan Sao" geocode="6584" parent="6504" tambon="650403"/>
+  <entity type="ThesabanTambon" name="เนินมะปราง" english="Noen Maprang" geocode="6587" parent="6509" >
+    <office type="MunicipalityOffice">
+      <url>http://noenmaprang.go.th/</url>
+    </office>
+    <entity type="Chumchon" geocode="65870001" name="ชุมชนมะปรางทักษิณ"/>
+    <entity type="Chumchon" geocode="65870002" name="ชุมชนลูกแสนเมือง"/>
+    <entity type="Chumchon" geocode="65870003" name="ชุมชนใหม่ร่วมใจสามัคคี"/>
+    <entity type="Chumchon" geocode="65870004" name="ชุมชนใหม่ร่วมใจพัฒนา"/>
+    <entity type="Chumchon" geocode="65870005" name="ชุมชนใหม่ไทยเจริญ"/>
+    <entity type="Chumchon" geocode="65870006" name="ชุมชนบ้านนาประชาสรรค์"/>
+  </entity>
+  <entity type="ThesabanTambon" name="บ้านแยง" english="Ban Yaeng" geocode="6586" parent="6502" tambon="650203">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.8993</geo:lat>
+        <geo:long>100.8030</geo:long>
+      </geo:Point>
+      <officials>
+        <official title="Mayor" name="สมหมาย โซวสกุล" inoffice="2008"/>
+        <official title="TAOMayor" name="ประสาท ภู่ทองคำ" inoffice="2007"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ไทรย้อย" english="Sai Yoi" geocode="6585" parent="6509" tambon="650903">
+    <office type="MunicipalityOffice">
+      <url>http://www.saiyoi.net/</url>
+      <officials>
+        <official title="Mayor" name="สมเกียรติ เกรียงไกรอนันต์" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="พันเสา" english="Phan Sao" geocode="6584" parent="6504" tambon="650403">
+    <office type="MunicipalityOffice">
+      <url>http://www.pansaw.ob.tc/</url>
+      <officials>
+        <official title="Mayor" name="ปกรณ์ หงษ์วิเศษ" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="พลายชุมพล" english="Phlai Chumphon" geocode="6583" parent="6501" tambon="650115" >
     <office type="MunicipalityOffice">
       <url>http://www.plaiychumpol.com/</url>
