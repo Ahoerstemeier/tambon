@@ -1142,6 +1142,10 @@
   </entity>
   <entity type="Amphoe" name="วังสะพุง" english="Wang Saphung" geocode="4209" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>17.3003</geo:lat>
+        <geo:long>101.7685</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="เสน่ห์ นนทะโชติ" begin="2007-10-24" end="2011-05-01"/>
         <official title="DistrictOfficer" name="สมรรถชัย หวังเจริญ" end="2007-10-23"/>
@@ -1993,10 +1997,14 @@
       </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="วังสะพุง" english="Wang Saphung" geocode="4288" parent="4209" >
+  <entity type="ThesabanMueang" name="วังสะพุง" english="Wang Saphung" geocode="4288" parent="4209" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.2997</geo:lat>
+        <geo:long>101.7621</geo:long>
+      </geo:Point>
       <url>http://www.wangsaphung.go.th/</url>
-      <!--<url>http://www.wangsapung.go.th/</url>-->
+      <url status="offline">http://www.wangsapung.go.th/</url>
       <officials>
         <official title="Mayor" name="เลิศศักดิ์ พัฒนชัยกุล" inoffice="2010"/>
       </officials>
