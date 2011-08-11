@@ -70,6 +70,7 @@ namespace De.AHoerstemeier.Tambon
         PhuYaiBan,
         PAOChairman,
         Mayor,
+        MunicipalClerk,
         TAOMayor,
         TAOChairman,
         SanitaryDistrictChairman,

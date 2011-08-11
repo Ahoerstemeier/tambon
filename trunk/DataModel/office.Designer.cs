@@ -55,6 +55,13 @@ namespace De.AHoerstemeier.Tambon
 
         private string commentField;
 
+        private OfficialEndType endreasonField;
+
+        public OfficialEntry()
+        {
+            this.endreasonField = OfficialEndType.Unknown;
+        }
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public OfficialType title
@@ -264,6 +271,21 @@ namespace De.AHoerstemeier.Tambon
                 this.commentField = value;
             }
         }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(OfficialEndType.Unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OfficialEndType endreason
+        {
+            get
+            {
+                return this.endreasonField;
+            }
+            set
+            {
+                this.endreasonField = value;
+            }
+        }
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
@@ -328,6 +350,34 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         ChumchonChairman,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    public enum OfficialEndType
+    {
+
+        /// <remarks/>
+        EndOfTerm,
+
+        /// <remarks/>
+        Transfer,
+
+        /// <remarks/>
+        Retired,
+
+        /// <remarks/>
+        Resigned,
+
+        /// <remarks/>
+        Death,
+
+        /// <remarks/>
+        Removed,
+
+        /// <remarks/>
+        Unknown,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
