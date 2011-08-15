@@ -70,20 +70,24 @@ namespace De.AHoerstemeier.Tambon
         }
         private void RemoveKnownGeocodes(PopulationDataEntry iEntry)
         {
-            if (iEntry.Geocode!=0)
+            if (iEntry.Geocode != 0)
             {
                 PopulationDataEntry lFoundEntry = mGeocodes.FindByCode(iEntry.Geocode);
-                if (lFoundEntry!=null)
+                if (lFoundEntry != null)
                 {
                     // TODO: Check for spelling changes
                     mGeocodes.SubEntities.Remove(lFoundEntry);
                 }
             }
-            foreach (PopulationDataEntry lEntry in iEntry.SubEntities)
+            if ((!EntityTypeHelper.Thesaban.Contains(iEntry.Type)) &&
+                (iEntry.Type != EntityType.Tambon) &&
+                (iEntry.Type != EntityType.Khwaeng))
             {
-                RemoveKnownGeocodes(lEntry);
+                foreach (PopulationDataEntry lEntry in iEntry.SubEntities)
+                {
+                    RemoveKnownGeocodes(lEntry);
+                }
             }
-
         }
         public void RemoveAllKnownGeocodes()
         {
