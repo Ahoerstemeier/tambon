@@ -154,31 +154,27 @@ namespace De.AHoerstemeier.Tambon
         {
             var RetVal = new Dictionary<PopulationDataEntry, PopulationDataEntry>();
 
-            String lFilename = TambonHelper.GeocodeSourceFile(iChangwat.Geocode);
-            if (File.Exists(lFilename))
+            PopulationData lGeocodes = TambonHelper.GetGeocodeList(iChangwat.Geocode);
+            PopulationDataEntry lChangwat = lGeocodes.Data;
+            foreach (PopulationDataEntry lAmphoe in lChangwat.SubEntities)
             {
-                PopulationData lGeocodes = PopulationData.Load(lFilename);
-                PopulationDataEntry lChangwat = lGeocodes.Data;
-                foreach (PopulationDataEntry lAmphoe in lChangwat.SubEntities)
+                foreach (PopulationDataEntry lTambon in lAmphoe.SubEntities)
                 {
-                    foreach (PopulationDataEntry lTambon in lAmphoe.SubEntities)
+                    foreach (PopulationDataEntry lMuban in lTambon.SubEntities)
                     {
-                        foreach (PopulationDataEntry lMuban in lTambon.SubEntities)
+                        if (lMuban.Type == EntityType.Muban)
                         {
-                            if (lMuban.Type == EntityType.Muban)
+                            PopulationDataEntry lMubanDopa = iChangwat.FindByCode(lMuban.Geocode);
+                            if (lMubanDopa != null)
                             {
-                                PopulationDataEntry lMubanDopa = iChangwat.FindByCode(lMuban.Geocode);
-                                if (lMubanDopa != null)
+                                if (!TambonHelper.IsSameMubanName(lMubanDopa.Name, lMuban.Name))
                                 {
-                                    if (!TambonHelper.IsSameMubanName(lMubanDopa.Name, lMuban.Name))
-                                    {
-                                        RetVal.Add(lMuban, lMubanDopa);
-                                    }
+                                    RetVal.Add(lMuban, lMubanDopa);
                                 }
                             }
                         }
-
                     }
+
                 }
             }
             return RetVal;

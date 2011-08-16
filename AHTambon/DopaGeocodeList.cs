@@ -91,22 +91,11 @@ namespace De.AHoerstemeier.Tambon
         }
         public void RemoveAllKnownGeocodes()
         {
-            List<String> lBroken = new List<string>();
             foreach (var lEntry in TambonHelper.Geocodes)
-            { 
-                String lFilename = TambonHelper.GeocodeSourceFile(lEntry.Geocode);
-
-                try
-                {
-                    PopulationData lCurrentList = PopulationData.Load(lFilename);
-                    RemoveKnownGeocodes(lCurrentList.Data);
-                }
-                catch 
-                {
-                    lBroken.Add(lFilename);
-                }
+            {
+                PopulationData lCurrentList = TambonHelper.GetGeocodeList(lEntry.Geocode);
+                RemoveKnownGeocodes(lCurrentList.Data);
             }
-
         }
 
         public void ExportToXML(String iFilename)

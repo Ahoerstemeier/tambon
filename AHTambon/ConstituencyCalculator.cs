@@ -29,26 +29,35 @@ namespace De.AHoerstemeier.Tambon
             Int32 lTotalPopulation = 0;
             foreach (PopulationDataEntry lEntry in iData.SubEntities)
             {
-                retval.Add(lEntry, 0);
-                lTotalPopulation += lEntry.Total;
+                if (lEntry != null)
+                {
+                    retval.Add(lEntry, 0);
+                    lTotalPopulation += lEntry.Total;
+                }
             }
             double lDivisor = (1.0*iNumberOfSeats) / (1.0*lTotalPopulation);
             Int32 lRemainingSeat = iNumberOfSeats;
             Dictionary<PopulationDataEntry, double> lRemainder = new Dictionary<PopulationDataEntry, double>();
             foreach (PopulationDataEntry lEntry in iData.SubEntities)
             {
-                double lSeats = lEntry.Total * lDivisor;
-                Int32 lActualSeats = Math.Max(1, Convert.ToInt32(Math.Truncate(lSeats)));
-                retval[lEntry] = lActualSeats;
-                lRemainingSeat -= lActualSeats;
-                double lRemainingValue = lSeats - lActualSeats;
-                lRemainder.Add(lEntry, lRemainingValue);
+                if (lEntry != null)
+                {
+                    double lSeats = lEntry.Total * lDivisor;
+                    Int32 lActualSeats = Math.Max(1, Convert.ToInt32(Math.Truncate(lSeats)));
+                    retval[lEntry] = lActualSeats;
+                    lRemainingSeat -= lActualSeats;
+                    double lRemainingValue = lSeats - lActualSeats;
+                    lRemainder.Add(lEntry, lRemainingValue);
+                }
             }
 
             List<PopulationDataEntry> lSortedRemainders = new List<PopulationDataEntry>();
             foreach (PopulationDataEntry lEntry in iData.SubEntities)
             {
-                lSortedRemainders.Add(lEntry);
+                if (lEntry != null)
+                {
+                    lSortedRemainders.Add(lEntry);
+                }
             }
             lSortedRemainders.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return lRemainder[p2].CompareTo(lRemainder[p1]); });
 
