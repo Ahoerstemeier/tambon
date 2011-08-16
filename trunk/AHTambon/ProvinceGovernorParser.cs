@@ -174,8 +174,7 @@ namespace De.AHoerstemeier.Tambon
             foreach (PopulationDataEntry lEntry in mData)
             { 
                 lEntry.Geocode = TambonHelper.GetGeocode(lEntry.Name);
-                String lFilename = TambonHelper.GeocodeSourceFile(lEntry.Geocode);
-                PopulationData lData = PopulationData.Load(lFilename);
+                PopulationData lData = TambonHelper.GetGeocodeList(lEntry.Geocode);
                 lEntry.English = lData.Data.English;
                 foreach (EntityOffice lOffice in lEntry.Offices)
                 {

@@ -56,7 +56,7 @@ namespace De.AHoerstemeier.Tambon
             }
 
             mNumberOfSubEntities.IncrementForCount(lMaxSubEntityIndex, lCreate.Geocode);
-            if (lParentEntities.Count > 0)
+            if (lParentEntities.Any())
             {
                 mNumberOfParentEntities.IncrementForCount(lParentEntities.Count, lCreate.Geocode);
             }
@@ -161,7 +161,7 @@ namespace De.AHoerstemeier.Tambon
             List<KeyValuePair<Int32, Int32>> lSortedParents = new List<KeyValuePair<Int32, Int32>>();
             lSortedParents.AddRange(mCreationsPerParent);
             lSortedParents.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
-            if (lSortedParents.Count > 0)
+            if (lSortedParents.Any())
             {
                 KeyValuePair<Int32, Int32> lFirst = lSortedParents.ElementAt(0);
                 iBuilder.AppendLine("Most "+lEntityName+" created in one " + iParentEntityName + ": " + lFirst.Value.ToString());
@@ -182,7 +182,7 @@ namespace De.AHoerstemeier.Tambon
             lSortedDays.AddRange(EffectiveDayOfYear);
             lSortedDays.Sort(delegate(KeyValuePair<Int32, Int32> x, KeyValuePair<Int32, Int32> y) { return y.Value.CompareTo(x.Value); });
             Int32 lCount = 0;
-            if (lSortedDays.Count > 0)
+            if (lSortedDays.Any())
             {
                 foreach (KeyValuePair<Int32, Int32> lData in lSortedDays)
                 {

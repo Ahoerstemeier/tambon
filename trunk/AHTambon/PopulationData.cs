@@ -4,6 +4,7 @@ using System.Text;
 using System.Net;
 using System.IO;
 using System.Xml;
+using System.Linq;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -51,6 +52,19 @@ namespace De.AHoerstemeier.Tambon
         }
         private PopulationData()
         {
+        }
+        public PopulationData(PopulationDataEntry iEntry)
+        {
+            if (iEntry == null)
+            {
+                throw new ArgumentNullException("iEntry");
+            }
+            if (!EntityTypeHelper.IsCompatibleEntityType(iEntry.Type, EntityType.Changwat))
+            {
+                throw new ArgumentOutOfRangeException("iEntry", iEntry.Type, "Invalid type of base entry");
+            }
+            mGeocode = iEntry.Geocode;
+            mChangwat = iEntry;
         }
         #endregion
         #region constants
@@ -326,13 +340,9 @@ namespace De.AHoerstemeier.Tambon
         {
             if (mChangwat != null)
             {
-                String lFilename = TambonHelper.GeocodeSourceFile(mChangwat.Geocode);
-                if (File.Exists(lFilename))
-                {
-                    PopulationData lGeocodes = PopulationData.Load(lFilename);
-                    mInvalidGeocodes = lGeocodes.Data.InvalidGeocodeEntries();
-                    Data.GetCodes(lGeocodes.Data);
-                }
+                PopulationData lGeocodes = TambonHelper.GetGeocodeList(mChangwat.Geocode);
+                mInvalidGeocodes = lGeocodes.Data.InvalidGeocodeEntries();
+                Data.GetCodes(lGeocodes.Data);
             }
         }
         public String XMLExportFileName()
@@ -370,7 +380,7 @@ namespace De.AHoerstemeier.Tambon
                 }
                 foreach (PopulationDataEntry lThesaban in mThesaban)
                 {
-                    if (lThesaban.SubEntities.Count > 0)
+                    if (lThesaban.SubEntities.Any())
                     {
                         foreach (PopulationDataEntry lTambon in lThesaban.SubEntities)
                         {

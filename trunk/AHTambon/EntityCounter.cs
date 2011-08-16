@@ -59,12 +59,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 if (TambonHelper.IsBaseGeocode(BaseGeocode, lEntry.Geocode))
                 {
-                    String lFilename = TambonHelper.GeocodeSourceFile(lEntry.Geocode);
-                    if (File.Exists(lFilename))
-                    {
-                        PopulationData lEntities = PopulationData.Load(lFilename);
-                        lList.AddRange(lEntities.Data.FlatList(mEntityTypes));
-                    }
+                    PopulationData lEntities = TambonHelper.GetGeocodeList(lEntry.Geocode);
+                    lList.AddRange(lEntities.Data.FlatList(mEntityTypes));
                 }
             }
             return lList;

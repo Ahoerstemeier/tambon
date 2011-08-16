@@ -35,29 +35,24 @@ namespace De.AHoerstemeier.Tambon
         {
             List<PopulationDataEntry> lResult = new List<PopulationDataEntry>();
 
-                String lFilename = TambonHelper.GeocodeSourceFile(mGeocode);
-                if (File.Exists(lFilename))
+            PopulationData lGeocodes = TambonHelper.GetGeocodeList(mGeocode);
+            lGeocodes.ReOrderThesaban();
+            foreach (PopulationDataEntry lEntry in lGeocodes.Thesaban)
+            {
+                if (EntityTypeHelper.Thesaban.Contains(lEntry.Type) & (!lEntry.Obsolete))
                 {
-                    PopulationData lGeocodes = PopulationData.Load(lFilename);
-                    lGeocodes.ReOrderThesaban();
-                    foreach (PopulationDataEntry lEntry in lGeocodes.Thesaban)
-                    { 
-                        if (EntityTypeHelper.Thesaban.Contains(lEntry.Type) & (!lEntry.Obsolete) )
-                        {
-                            Boolean lSuccess = HasConstituencyAnnouncement(lEntry.Geocode, lEntry.Type);
+                    Boolean lSuccess = HasConstituencyAnnouncement(lEntry.Geocode, lEntry.Type);
 
-                            if ((!lSuccess) & (lEntry.GeocodeOfCorrespondingTambon != 0))
-                            {
-                                lSuccess = HasConstituencyAnnouncement(lEntry.GeocodeOfCorrespondingTambon, lEntry.Type);
-                            }
-                            if (!lSuccess)
-                            {
-                                lResult.Add(lEntry);
-                            }
-                        }
+                    if ((!lSuccess) & (lEntry.GeocodeOfCorrespondingTambon != 0))
+                    {
+                        lSuccess = HasConstituencyAnnouncement(lEntry.GeocodeOfCorrespondingTambon, lEntry.Type);
+                    }
+                    if (!lSuccess)
+                    {
+                        lResult.Add(lEntry);
                     }
                 }
-
+            }
             return lResult;
         }
     }
