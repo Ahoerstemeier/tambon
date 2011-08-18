@@ -4,7 +4,8 @@
 //    <NameSpace>De.AHoerstemeier.Tambon</NameSpace><Collection>List</Collection><codeType>CSharp</codeType><EnableDataBinding>False</EnableDataBinding><EnableLazyLoading>False</EnableLazyLoading><TrackingChangesEnable>False</TrackingChangesEnable><GenTrackingClasses>False</GenTrackingClasses><HidePrivateFieldInIDE>False</HidePrivateFieldInIDE><EnableSummaryComment>True</EnableSummaryComment><VirtualProp>False</VirtualProp><IncludeSerializeMethod>False</IncludeSerializeMethod><UseBaseClass>False</UseBaseClass><GenBaseClass>False</GenBaseClass><GenerateCloneMethod>False</GenerateCloneMethod><GenerateDataContracts>True</GenerateDataContracts><CodeBaseTag>Net40</CodeBaseTag><SerializeMethodName>Serialize</SerializeMethodName><DeserializeMethodName>Deserialize</DeserializeMethodName><SaveToFileMethodName>SaveToFile</SaveToFileMethodName><LoadFromFileMethodName>LoadFromFile</LoadFromFileMethodName><GenerateXMLAttributes>True</GenerateXMLAttributes><EnableEncoding>False</EnableEncoding><AutomaticProperties>False</AutomaticProperties><GenerateShouldSerialize>False</GenerateShouldSerialize><DisableDebug>False</DisableDebug><PropNameSpecified>Default</PropNameSpecified><Encoder>UTF8</Encoder><CustomUsings></CustomUsings><ExcludeIncludedTypes>True</ExcludeIncludedTypes><EnableInitializeFields>True</EnableInitializeFields>
 //  </auto-generated>
 // ------------------------------------------------------------------------------
-namespace De.AHoerstemeier.Tambon {
+namespace De.AHoerstemeier.Tambon
+{
     using System;
     using System.Diagnostics;
     using System.Xml.Serialization;
@@ -13,181 +14,199 @@ namespace De.AHoerstemeier.Tambon {
     using System.ComponentModel;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
-    public enum EntityType {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum EntityType
+    {
+
         /// <remarks/>
         Changwat,
-        
+
         /// <remarks/>
         Bangkok,
-        
+
         /// <remarks/>
         Amphoe,
-        
+
         /// <remarks/>
         KingAmphoe,
-        
+
         /// <remarks/>
         Tambon,
-        
+
         /// <remarks/>
         Khet,
-        
+
         /// <remarks/>
         Khwaeng,
-        
+
         /// <remarks/>
         Muban,
-        
+
         /// <remarks/>
         Mueang,
-        
+
         /// <remarks/>
         Monthon,
-        
+
         /// <remarks/>
         Phak,
-        
+
         /// <remarks/>
         TAO,
-        
+
         /// <remarks/>
         SaphaTambon,
-        
+
         /// <remarks/>
         ThesabanTambon,
-        
+
         /// <remarks/>
         ThesabanMueang,
-        
+
         /// <remarks/>
         ThesabanNakhon,
-        
+
         /// <remarks/>
         Sukhaphiban,
-        
+
         /// <remarks/>
         SukhaphibanTambon,
-        
+
         /// <remarks/>
         SukhaphibanMueang,
-        
+
         /// <remarks/>
         Chumchon,
-        
+
         /// <remarks/>
         PAO,
-        
+
         /// <remarks/>
         KlumChangwat,
-        
+
         /// <remarks/>
         Constituency,
-        
+
         /// <remarks/>
         ElectoralRegion,
-        
+
         /// <remarks/>
         Country,
-        
+
         /// <remarks/>
         Unknown,
-        
+
         /// <remarks/>
         SakhaTambon,
-        
+
         /// <remarks/>
         SakhaKhwaeng,
-        
+
         /// <remarks/>
         Thesaban,
-        
+
         /// <remarks/>
         Sakha,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityBase", Namespace="http://hoerstemeier.com/tambon/")]
-    public partial class EntityBase {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityBase", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class EntityBase
+    {
+
         private EntityType typeField;
-        
+
         private string nameField;
-        
+
         private string englishField;
-        
+
         private uint geocodeField;
-        
+
         private string commentField;
-        
-        public EntityBase() {
+
+        public EntityBase()
+        {
             this.typeField = EntityType.Unknown;
             this.geocodeField = ((uint)(0));
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(EntityType.Unknown)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type {
-            get {
+        public EntityType type
+        {
+            get
+            {
                 return this.typeField;
             }
-            set {
+            set
+            {
                 this.typeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
+        public string name
+        {
+            get
+            {
                 return this.nameField;
             }
-            set {
+            set
+            {
                 this.nameField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string english {
-            get {
+        public string english
+        {
+            get
+            {
                 return this.englishField;
             }
-            set {
+            set
+            {
                 this.englishField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint geocode {
-            get {
+        public uint geocode
+        {
+            get
+            {
                 return this.geocodeField;
             }
-            set {
+            set
+            {
                 this.geocodeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment {
-            get {
+        public string comment
+        {
+            get
+            {
                 return this.commentField;
             }
-            set {
+            set
+            {
                 this.commentField = value;
             }
         }
