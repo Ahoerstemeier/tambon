@@ -64,16 +64,47 @@
     <entity type="Tambon" name="หอคำ" english="Ho Kham" geocode="380104">
       <entity type="Muban" name="บ้านหนองเข็ง" english="Ban Nong Kheng" geocode="38010403"/>
     </entity>
-    <entity type="Tambon" name="หนองเลิง" english="Nong Loeng" geocode="380105" />
+    <entity type="Tambon" name="หนองเลิง" english="Nong Loeng" geocode="380105" >
+      <office type="TAOOffice">
+        <url>http://nongloeng.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="มงคล พินทา" inoffice="2011"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="38010501" name="บ้านนาเจริญ"/>
+      <entity type="Muban" geocode="38010502" name="บ้านสุขสำราญ"/>
+      <entity type="Muban" geocode="38010503" name="บ้านโนนมณี"/>
+      <entity type="Muban" geocode="38010504" name="บ้านหนองเลิง"/>
+      <entity type="Muban" geocode="38010505" name="บ้านหนองหมู"/>
+      <entity type="Muban" geocode="38010506" name="บ้านคลองเค็ม"/>
+      <entity type="Muban" geocode="38010507" name="บ้านนาล้อม"/>
+      <entity type="Muban" geocode="38010508" name="บ้านนาเจริญเหนือ"/>
+      <entity type="Muban" geocode="38010509" name="บ้านสรรเสริญ"/>
+      <entity type="Muban" geocode="38010510" name="บ้านเจริญสามัคคี"/>
+      <entity type="Muban" geocode="38010511" name="บ้านคำเจริญ"/>
+      <entity type="Muban" geocode="38010512" name="บ้านโนนสง่า"/>
+      <entity type="Muban" geocode="38010513" name="บ้านนาเจริญกลาง"/>
+    </entity>
     <entity type="Tambon" name="โคกก่อง" english="Khok Kong" geocode="380106" >
       <office type="MunicipalityOffice">
-        <url>http://www.khokkong.com/</url>
+        <url status="hacked">http://www.khokkong.com/</url>
         <officials>
           <official title="Mayor" name="บัวพันธ์ วงศ์จันทร์" inoffice="2010"/>
         </officials>
       </office>
     </entity>
-    <entity type="Tambon" name="นาสวรรค์" english="Na Sawan" geocode="380107" />
+    <entity type="Tambon" name="นาสวรรค์" english="Na Sawan" geocode="380107" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="รองฤทธิ์ พรมบุญ" inoffice="2010"/>
+        </officials>
+      </office>
+      <office type="SubdistrictHeadmanOffice">
+        <officials>
+          <official title="Kamnan" name="สามารถ ดาวเสด็จ" inoffice="2010"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ไคสี" english="Khai Si" geocode="380108" >
       <office type="MunicipalityOffice">
         <geo:Point>
@@ -81,9 +112,32 @@
           <geo:lat>18.4125</geo:lat>
           <geo:long>103.5165</geo:long>
         </geo:Point>
+        <officials>
+          <official title="TAOMayor" name="ทวี จิตวิขาม" inoffice="2009"/>
+        </officials>
       </office>
     </entity>
-    <entity type="Tambon" name="ชัยพร" english="Chaiyaphon" geocode="380109" />
+    <entity type="Tambon" name="ชัยพร" english="Chaiyaphon" geocode="380109" >
+      <office type="TAOOffice">
+        <url>http://chaiyaporn.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="หนูทอง มาตรพระคลัง" inoffice="2011"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="38010901" name="บ้านชัยพร"/>
+      <entity type="Muban" geocode="38010902" name="บ้านห้วยเซือมใต้"/>
+      <entity type="Muban" geocode="38010903" name="บ้านโนนสุพรรณ"/>
+      <entity type="Muban" geocode="38010904" name="บ้านหนองยาว"/>
+      <entity type="Muban" geocode="38010905" name="บ้านคำภู"/>
+      <entity type="Muban" geocode="38010906" name="บ้านนาต้อง"/>
+      <entity type="Muban" geocode="38010907" name="บ้านบังบาตร"/>
+      <entity type="Muban" geocode="38010908" name="บ้านกลาง"/>
+      <entity type="Muban" geocode="38010909" name="บ้านโนนหัวอ่าง"/>
+      <entity type="Muban" geocode="38010910" name="บ้านผาสวรรค์"/>
+      <entity type="Muban" geocode="38010911" name="บ้านใหม่ชัยพร"/>
+      <entity type="Muban" geocode="38010912" name="บ้านโนนสง่า"/>
+      <entity type="Muban" geocode="38010913" name="บ้านโนนอุทัยทอง"/>
+    </entity>
     <entity type="Tambon" name="วิศิษฐ์" english="Wisit" geocode="380110" >
       <entity type="Muban" geocode="38011001" name="บ้านบึงกาฬเหนือ"/>
       <entity type="Muban" geocode="38011002" name="บ้านพันลำ"/>
@@ -542,6 +596,18 @@
       <office type="TAOOffice">
         <!-- Longdo: 18.18614 103.741905 -->
       </office>
+      <entity type="Muban" geocode="38070101" name="บ้านศรีวิไล"/>
+      <entity type="Muban" geocode="38070102" name="บ้านศรีวิไลชุมพร"/>
+      <entity type="Muban" geocode="38070103" name="บ้านศรีวิไลสามัคคี"/>
+      <entity type="Muban" geocode="38070104" name="บ้านใหม่พัฒนา"/>
+      <entity type="Muban" geocode="38070105" name="บ้านหนองจันทร์"/>
+      <entity type="Muban" geocode="38070106" name="บ้านหนองจันทร์สามัคคี"/>
+      <entity type="Muban" geocode="38070107" name="บ้านอู่คำ"/>
+      <entity type="Muban" geocode="38070108" name="บ้านหนองจันทร์โนนมณี"/>
+      <entity type="Muban" geocode="38070109" name="บ้านผาสุข"/>
+      <entity type="Muban" geocode="38070110" name="บ้านประเสริฐ"/>
+      <entity type="Muban" geocode="38070111" name="บ้านศรีวิไลรุ่งเรือง"/>
+      <entity type="Muban" geocode="38070112" name="บ้านศรีวิไลพัฒนา"/>
     </entity>
     <entity type="Tambon" name="ชุมภูพร" english="Chumphu Phon" geocode="380702" >
       <office type="TAOOffice">
@@ -708,7 +774,14 @@
       </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ศรีวิไล" english="Si Wilai" geocode="3890" parent="3807" />
+  <entity type="ThesabanTambon" name="ศรีวิไล" english="Si Wilai" geocode="3890" parent="3807" >
+    <office type="MunicipalityOffice">
+      <url>http://siwirai.igetweb.com/</url>
+      <officials>
+        <official title="Mayor" name="สุรเชษฐ์ คะดุน" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="วิศิษฐ์" english="Wisit" geocode="3889" parent="3801" tambon="380110" >
     <office type="MunicipalityOffice">
       <url status="offline">http://visitlocal.org/</url>
@@ -719,6 +792,7 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองเข็ง" english="Nong Kheng" geocode="3888" parent="3801" tambon="380103" >
+    <!-- To be renamed to Non Sawan (โนนสว่าง) following the subdistrict -->
     <office type="MunicipalityOffice">
       <url>http://nongkheng.go.th/</url>
       <officials>
@@ -731,7 +805,7 @@
     <office type="MunicipalityOffice">
       <!-- Longdo: 18.43348 103.43437 -->
       <officials>
-        <official title="TAOMayor" name="นายอัมพร	ชัยเสนา" inoffice="2008"/>
+        <official title="TAOMayor" name="อัมพร ชัยเสนา" inoffice="2008"/>
       </officials>
     </office>
   </entity>
