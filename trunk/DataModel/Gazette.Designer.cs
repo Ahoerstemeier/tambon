@@ -2454,5 +2454,8 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         MunicipalPermanentSecretary,
+
+        /// <remarks/>
+        FineArtsDepartmentDirectorGeneral,
     }
 }

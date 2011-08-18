@@ -133,6 +133,7 @@ namespace De.AHoerstemeier.Tambon
         TAOChairman,
         PAOChairman,
         MunicipalPermanentSecretary,
-        MinistryOfInteriorDeputyPermanentSecretary
+        MinistryOfInteriorDeputyPermanentSecretary,
+        FineArtsDepartmentDirectorGeneral
     }
 }
