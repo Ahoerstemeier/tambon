@@ -41,12 +41,9 @@ public partial class AmphoeDataDisplay : System.Web.UI.Page
     {
         DropDownList lSender = sender as DropDownList;
         Int32 lGeocode = Convert.ToInt32(lSender.SelectedValue);
-        String lFilename = TambonHelper.GeocodeSourceFile(lGeocode);
         PopulationData lGeocodes = null;
         cbx_amphoe.Items.Clear();
-        if (File.Exists(lFilename))
-        {
-            lGeocodes = PopulationData.Load(lFilename);
+            lGeocodes = TambonHelper.GetGeocodeList(lGeocode);
             foreach (PopulationDataEntry lEntry in lGeocodes.Data.SubEntities)
             {
                 if (!lEntry.Obsolete)
@@ -54,7 +51,5 @@ public partial class AmphoeDataDisplay : System.Web.UI.Page
                     cbx_amphoe.Items.Add(new ListItem(lEntry.English, lEntry.Geocode.ToString()));
                 }
             }
-        }
-
     }
 }
