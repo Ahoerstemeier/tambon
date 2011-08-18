@@ -148,6 +148,7 @@
   </entity>
   <entity type="Amphoe" name="ขุนยวม" english="Khun Yuam" geocode="5802" >
     <office type="DistrictOffice">
+      <slogan>บัวตองบาน ธารน้ำใส น้ำใจงาม นามขุนยวม</slogan>
       <geo:Point>
         <geo:lat>18.8396</geo:lat>
         <geo:long>97.9513</geo:long>
@@ -159,7 +160,11 @@
     </office>
     <entity type="Tambon" name="ขุนยวม" english="Khun Yuam" geocode="580201" >
       <office type="TAOOffice">
-        <url>http://www.khunyoum.com/</url>
+        <geo:Point>
+          <geo:lat>18.8283</geo:lat>
+          <geo:long>97.9330</geo:long>
+        </geo:Point>
+        <url status="offline">http://www.khunyoum.com/</url>
       </office>
     </entity>
     <entity type="Tambon" name="แม่เงา" english="Mae Ngao" geocode="580202" />
@@ -567,12 +572,22 @@
   </entity>
   <entity type="ThesabanTambon" name="ขุนยวม" english="Khun Yuam" geocode="5898" parent="5802" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>18.8305</geo:lat>
+        <geo:long>97.9353</geo:long>
+      </geo:Point>
       <url>http://www.khunyuam.go.th/</url>
-      <!--<url>http://khunyoum.org/</url>-->
+      <url status="expired">http://khunyoum.org/</url>
       <officials>
         <official title="Mayor" name="ศักดิ์ชัย สุภาษา" inoffice="2010"/>
       </officials>
     </office>
+    <!-- 
+Chumchon all named ป๊อก:
+ป๊อกวิทยาทรายมูล 	ป๊อกกลางตลาด
+ป๊อกกุงเจ้าราช 	ป๊อกศาลเจ้า
+ป๊อกเด่นยางแดง 	ป๊อกบ้านขุ่ม
+ป๊อก ส.ภูธร 	ป๊อกโพธาราม -->
   </entity>
   <entity type="ThesabanTambon" name="ปาย" english="Pai" geocode="5897" parent="5803" >
     <office type="MunicipalityOffice">
