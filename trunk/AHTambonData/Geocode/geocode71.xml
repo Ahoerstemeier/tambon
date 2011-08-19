@@ -738,6 +738,10 @@
   </entity>
   <entity type="Amphoe" name="ทองผาภูมิ" english="Thong Pha Phum" geocode="7107" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>14.7460</geo:lat>
+        <geo:long>98.6252</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="ถาวร ลีลาพันธุ์" begin="2010-02-22"/>
         <official title="DistrictOfficer" name="เลิศพรไชย ไชยฤทธิ์" begin="2007-01-08" end="2010-01-24"/>
@@ -745,6 +749,12 @@
       </officials>
     </office>
     <entity type="Tambon" name="ท่าขนุน" english="Tha Khanun" geocode="710701" >
+      <office type="MunicipalityOffice">
+        <url>http://www.thakanun.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="จิรชัย ถนอมวงษ์" inoffice="2010"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="71070101" name="บ้านท่าขนุน"/>
       <entity type="Muban" geocode="71070102" name="บ้านเสาหงษ์"/>
       <entity type="Muban" geocode="71070103" name="บ้านปรังกาสี"/>
@@ -754,6 +764,9 @@
     <entity type="Tambon" name="ปิล๊อก" english="Pilok" geocode="710702" >
       <office type="TAOOffice">
         <url>http://www.pilok.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="สุชาติ นิลเมือง" inoffice="2010"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="71070201" name="บ้านอีต่อง"/>
       <entity type="Muban" geocode="71070202" name="บ้านโบอ่อง"/>
@@ -761,6 +774,16 @@
       <entity type="Muban" geocode="71070204" name="บ้านปิล๊อกคี่"/>
     </entity>
     <entity type="Tambon" name="หินดาด" english="Hin Dat" geocode="710703" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.6154</geo:lat>
+          <geo:long>98.7301</geo:long>
+        </geo:Point>
+        <url>http://www.hindad.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="อำนาจ สุขเจริญ" inoffice="2011"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="71070301" name="บ้านวังหิน"/>
       <entity type="Muban" geocode="71070302" name="บ้านหม่องกะลา"/>
       <entity type="Muban" geocode="71070303" name="บ้านหินดาดตะวันตก"/>
@@ -772,7 +795,11 @@
     </entity>
     <entity type="Tambon" name="ลิ่นถิ่น" english="Linthin" geocode="710704" >
       <office type="TAOOffice">
-        <url>http://www.linthin.org/</url>
+        <url>http://www.linthin.go.th/</url>
+        <url status="offline">http://www.linthin.org/</url>
+        <officials>
+          <official title="TAOMayor" name="ประเสริฐ ถิ่นผาสุวรรณ" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="71070401" name="บ้านพุถ่อง"/>
       <entity type="Muban" geocode="71070402" name="บ้านกุยแหย่"/>
@@ -785,6 +812,9 @@
     <entity type="Tambon" name="ชะแล" english="Cha Lae" geocode="710705" >
       <office type="TAOOffice">
         <url>http://www.chalae.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="บรรจง รสจันทร์" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="71070501" name="บ้านห้วยเสือ"/>
       <entity type="Muban" geocode="71070502" name="บ้านเกริงกระเวีย"/>
@@ -796,7 +826,11 @@
     </entity>
     <entity type="Tambon" name="ห้วยเขย่ง" english="Huai Khayeng" geocode="710706" >
       <office type="TAOOffice">
+        <url>http://www.tumbonhuaykayeng.com/</url>
         <url>http://huaykayeng.igetweb.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ชัชชัย อุดมสถาผล" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="71070601" name="บ้านท่ามะเดื่อ"/>
       <entity type="Muban" geocode="71070602" name="บ้านปากลำปิล๊อก"/>
@@ -809,7 +843,7 @@
     </entity>
     <entity type="Tambon" name="สหกรณ์นิคม" english="Sahakon Nikhom" geocode="710707" >
       <office type="TAOOffice">
-        <url>http://www.sahakornnikom.com/</url>
+        <url status="offline">http://www.sahakornnikom.com/</url>
       </office>
       <entity type="Muban" geocode="71070701" name="บ้านสหกรณ์นิคม"/>
       <entity type="Muban" geocode="71070702" name="บ้านสะพานลาว"/>
@@ -1404,7 +1438,15 @@
   </entity>
   <entity type="ThesabanTambon" name="ทองผาภูมิ" english="Thong Pha Phum" geocode="7180" parent="7107" >
     <office type="MunicipalityOffice">
+      <!-- Position according to Panoramio photos, not visible in satellite yet -->
+      <geo:Point>
+        <geo:lat>14.7505</geo:lat>
+        <geo:long>98.6272</geo:long>
+      </geo:Point>
       <url>http://www.tpm.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ประเทศ บุญยงค์" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="วังกะ" english="Wang Ka" geocode="7179" parent="7108" >
