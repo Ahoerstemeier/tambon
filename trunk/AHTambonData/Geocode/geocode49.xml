@@ -2,7 +2,7 @@
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="มุกดาหาร" english="Mukdahan" geocode="49">
   <office type="ProvinceHall">
     <geo:Point>
-      <geo:lat> 16.5458</geo:lat>
+      <geo:lat>16.5458</geo:lat>
       <geo:long>104.7260</geo:long>
     </geo:Point>
     <url>http://www.mukdahan.go.th</url>
@@ -32,11 +32,14 @@
     </geo:Point>
     <url status="offline">http://www.mukpao.go.th/</url>
     <url status="offline">http://mukpao.org/</url>
+    <officials>
+      <official title="PAOChairman" name="วิริยะ ทองผาที่ปรึกษา" inoffice="2011"/>
+    </officials>
   </office>
   <entity type="Amphoe" name="เมืองมุกดาหาร" english="Mueang Mukdahan" geocode="4901" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 16.5381</geo:lat>
+        <geo:lat>16.5381</geo:lat>
         <geo:long>104.7148</geo:long>
       </geo:Point>
       <officials>
@@ -134,7 +137,7 @@
     <entity type="Tambon" name="ดงมอน" english="Dong Mon" geocode="490112" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 16.6604</geo:lat>
+          <geo:lat>16.6604</geo:lat>
           <geo:long>104.5022</geo:long>
         </geo:Point>
       </office>
@@ -151,7 +154,7 @@
   <entity type="Amphoe" name="นิคมคำสร้อย" english="Nikhom Kham Soi" geocode="4902" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 16.3716</geo:lat>
+        <geo:lat>16.3716</geo:lat>
         <geo:long>104.5507</geo:long>
       </geo:Point>
       <officials>
@@ -206,7 +209,7 @@
   <entity type="Amphoe" name="ดอนตาล" english="Don Tan" geocode="4903" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 16.3165</geo:lat>
+        <geo:lat>16.3165</geo:lat>
         <geo:long>104.9202</geo:long>
       </geo:Point>
       <officials>
@@ -285,7 +288,7 @@
   <entity type="Amphoe" name="ดงหลวง" english="Dong Luang" geocode="4904" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 16.8151</geo:lat>
+        <geo:lat>16.8151</geo:lat>
         <geo:long>104.5377</geo:long>
       </geo:Point>
       <officials>
@@ -333,7 +336,7 @@
     <entity type="Tambon" name="โพนงาม" english="Phon Ngam" geocode="490508" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 16.6623</geo:lat>
+          <geo:lat>16.6623</geo:lat>
           <geo:long>104.4351</geo:long>
         </geo:Point>
         <url>http://www.phonngamsao.ob.tc/</url>
@@ -381,7 +384,7 @@
   <entity type="Amphoe" name="หว้านใหญ่" english="Wan Yai" geocode="4906" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 16.7275</geo:lat>
+        <geo:lat>16.7275</geo:lat>
         <geo:long>104.7388</geo:long>
       </geo:Point>
       <officials>
@@ -427,7 +430,7 @@
   <entity type="Amphoe" name="หนองสูง" english="Nong Sung" geocode="4907" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 16.4868</geo:lat>
+        <geo:lat>16.4868</geo:lat>
         <geo:long>104.3444</geo:long>
       </geo:Point>
       <officials>
@@ -483,12 +486,25 @@
   <entity type="ThesabanMueang" name="มุกดาหาร" english="Mukdahan" geocode="4999" parent="4901" >
     <office type="MunicipalityOffice">
       <geo:Point>
-        <geo:lat> 16.5431</geo:lat>
+        <geo:lat>16.5431</geo:lat>
         <geo:long>104.7228</geo:long>
       </geo:Point>
-      <url>http://tbmuk.org/</url>
-      <officials>
-        <official title="Mayor" name="สัมฤทธิ์ จโภคสวัสดิ์" inoffice="2011"/>
+      <url>http://www.muangmuk.go.th/</url>
+      <url status="offline">http://tbmuk.org/</url>
+      <officials source="http://www.muangmuk.go.th/Mayor%20directory.php">
+        <official title="Mayor" index="13" name="สัมฤทธิ์ จโภคสวัสดิ์" begin="2007-08-21" end="2011-07-14"/>
+        <official title="Mayor" index="12" name="สุเทพ เซียสกุล" begin="2006-10-26" end="2007-05-18" beginreason="Elected"/>
+        <official title="Mayor" index="11" name="อนุรักษ์ ตั้งปณิธานนท์" begin="2002-07-14" end="2006-07-13" beginreason="Elected" endreason="EndOfTerm"/>
+        <official title="Mayor" index="10" name="อนุรักษ์ ตั้งปณิธานนท์" begin="1998-05-31" end="2002-05-30" beginreason="Elected" endreason="EndOfTerm"/>
+        <official title="Mayor" index="9" name="สุรพันธ์ เงินหมื่น" begin="1998-03-27" end="1998-05-30" beginreason="Appointed"/>
+        <official title="Mayor" index="8" name="อนุรักษ์ ตั้งปณิธานนท์" begin="1996-10-04" end="1998-03-26" beginreason="Elected"/>
+        <official title="Mayor" index="7" name="ธวัส สุวุฒิกุล" begin="1996-10-01" end="1996-10-03" beginreason="Appointed"/>
+        <official title="Mayor" index="6" name="ปรีดา นิสสัยเจริญ" begin="1994-04-08" end="1996-09-30" beginreason="Appointed"/>
+        <official title="Mayor" index="5" name="สัมฤทธิ์ โภคสวัสดิ์" begin="1988-04-01" end="1994-01-28" beginreason="Elected"/>
+        <official title="Mayor" index="4" name="ทรงวุฒิ งามมีศรี" begin="1988-03-14" end="1988-03-31" beginreason="Appointed"/>
+        <official title="Mayor" index="3" name="ชาติสง่า โมฬีชาติ" begin="1988-02-19" end="1988-03-13" beginreason="Appointed"/>
+        <official title="Mayor" index="2" name="วันชัย โภคสวัสดิ์" begin="1984-01-19" end="1988-02-18" beginreason="Appointed"/>
+        <official title="Mayor" index="1" name="นิรันดร์ ยิ่งอรุณธรรม" begin="1983-04-21" end="1984-01-18" beginreason="Appointed"/>
       </officials>
     </office>
   </entity>
