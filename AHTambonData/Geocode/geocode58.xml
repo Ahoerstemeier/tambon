@@ -26,6 +26,7 @@
   </office>
   <entity type="Amphoe" name="เมืองแม่ฮ่องสอน" english="Mueang Mae Hong Son" geocode="5801" >
     <office type="DistrictOffice">
+      <slogan>นาวสุดหนาว พันเขาเคล้าทะเลหมอก งามล้ำถ้ำปลาน่ามอง ปางตองครองสง่าคู่พระบารมี</slogan>
       <geo:Point>
         <geo:lat>19.3041</geo:lat>
         <geo:long>97.9774</geo:long>
@@ -58,7 +59,7 @@
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>19.2266</geo:lat>
-          <geo:long> 97.9707</geo:long>
+          <geo:long>97.9707</geo:long>
         </geo:Point>
         <officials>
           <official title="TAOMayor" name="อภิชาติ ปัญญามูลวงษา" inoffice="2010"/>
@@ -76,7 +77,6 @@
       <entity type="Muban" geocode="58010310" name="บ้านหัวน้ำแม่สะกึด"/>
       <entity type="Muban" geocode="58010311" name="บ้านม่อนตะแลง"/>
       <entity type="Muban" geocode="58010312" name="บ้านผาบ่องเหนือ"/>
-      <!-- but should be 13 -->
     </entity>
     <entity type="Tambon" name="ปางหมู" english="Pang Mu" geocode="580104" >
       <office type="TAOOffice">
@@ -99,19 +99,20 @@
       <entity type="Muban" geocode="58010411" name="บ้านขุนกลาง"/>
       <entity type="Muban" geocode="58010412" name="บ้านชานเมือง"/>
       <entity type="Muban" geocode="58010413" name="บ้านดอยแสง"/>
-      <!-- but should be 14 -->
     </entity>
     <entity type="Tambon" name="หมอกจำแป่" english="Mok Champae" geocode="580105" >
-      <entity type="Muban" geocode="58010501" name="บ้านหมอกจำแป่"/>
-      <entity type="Muban" geocode="58010502" name="บ้านแม่สะงา"/>
-      <entity type="Muban" geocode="58010503" name="บ้านห้วยขาน"/>
-      <entity type="Muban" geocode="58010504" name="บ้านนาป่าแปก"/>
-      <entity type="Muban" geocode="58010505" name="บ้านห้วยมะเขือส้ม"/>
-      <entity type="Muban" geocode="58010506" name="บ้านรักไทย"/>
-      <entity type="Muban" geocode="58010507" name="บ้านห้วยโป่งอ่อน"/>
-      <entity type="Muban" geocode="58010508" name="บ้านทบศอก"/>
-      <entity type="Muban" geocode="58010509" name="บ้านยอด"/>
-      <!-- but should be 11 -->
+      <office type="TAOOffice">
+        <!-- guessed: 19.434722, 97.965 -->
+      </office>
+      <entity type="Muban" geocode="58010501" name="บ้านหมอกจำแป่" english="Ban Mok Champae"/>
+      <entity type="Muban" geocode="58010502" name="บ้านแม่สะงา" english="Ban Mae Sa-nga"/>
+      <entity type="Muban" geocode="58010503" name="บ้านห้วยขาน" english="Ban Huai Khan"/>
+      <entity type="Muban" geocode="58010504" name="บ้านนาป่าแปก" english="Ban Nu Pa Paek"/>
+      <entity type="Muban" geocode="58010505" name="บ้านห้วยมะเขือส้ม" english="an Huai Makhuea Som"/>
+      <entity type="Muban" geocode="58010506" name="บ้านรักไทย" english="Ban Rak Thai"/>
+      <entity type="Muban" geocode="58010507" name="บ้านห้วยโป่งอ่อน" english="Ban Huai Pong On"/>
+      <entity type="Muban" geocode="58010508" name="บ้านทบศอก" english="Ban Thotsok"/>
+      <entity type="Muban" geocode="58010509" name="บ้านยอด" english="Ban Yot"/>
     </entity>
     <entity type="Tambon" name="ห้วยผา" english="Huai Pha" geocode="580106" >
       <office type="TAOOffice">
@@ -125,7 +126,6 @@
       <entity type="Muban" geocode="58010606" name="บ้านแม่สุยะใหม่"/>
       <entity type="Muban" geocode="58010607" name="บ้านห้วยส้านใหม่"/>
       <entity type="Muban" geocode="58010608" name="บ้านห้วยส้านใน"/>
-      <!-- but should be 9 -->
     </entity>
     <entity type="Tambon" name="ปางมะผ้า" english="Pang Mapha" geocode="580107" newgeocode="580702" />
     <entity type="Tambon" name="สบป่อง" english="Sop Pong" geocode="580108" newgeocode="580701" />
@@ -164,18 +164,84 @@
           <geo:lat>18.8283</geo:lat>
           <geo:long>97.9330</geo:long>
         </geo:Point>
+        <url status="offline">http://www.khunyoum.go.th/</url>
         <url status="offline">http://www.khunyoum.com/</url>
       </office>
+      <entity type="Muban" geocode="58020101" name="บ้านขุนยวม"/>
+      <entity type="Muban" geocode="58020102" name="บ้านขุนยวม"/>
+      <entity type="Muban" geocode="58020103" name="บ้านแม่สุริน"/>
+      <entity type="Muban" geocode="58020104" name="บ้านแม่สะเป่"/>
+      <entity type="Muban" geocode="58020105" name="บ้านห้วยฟาน"/>
+      <entity type="Muban" geocode="58020106" name="บ้านแม่สะเป่เหนือ"/>
     </entity>
-    <entity type="Tambon" name="แม่เงา" english="Mae Ngao" geocode="580202" />
-    <entity type="Tambon" name="เมืองปอน" english="Mueang Pon" geocode="580203" />
-    <entity type="Tambon" name="แม่ยวมน้อย" english="Mae Yuam Noi" geocode="580204" />
+    <entity type="Tambon" name="แม่เงา" english="Mae Ngao" geocode="580202" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>18.8060</geo:lat>
+          <geo:long>97.9079</geo:long>
+        </geo:Point>
+        <url>http://maengao.igetweb.com/</url>
+      </office>
+      <entity type="Muban" geocode="58020201" name="บ้านต่อแพ"/>
+      <entity type="Muban" geocode="58020202" name="บ้านหัวเงา"/>
+      <entity type="Muban" geocode="58020203" name="บ้านประตูเมือง"/>
+      <entity type="Muban" geocode="58020204" name="บ้านห้วยต้นนุ่น"/>
+      <entity type="Muban" geocode="58020205" name="บ้านห้วยนา"/>
+      <entity type="Muban" geocode="58020206" name="บ้านสวนอ้อย"/>
+      <entity type="Muban" geocode="58020207" name="บ้านนาหัวแหลม"/>
+      <entity type="Muban" geocode="58020208" name="บ้านหลวง"/>
+    </entity>
+    <entity type="Tambon" name="เมืองปอน" english="Mueang Pon" geocode="580203" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>18.7461</geo:lat>
+          <geo:long>97.9269</geo:long>
+        </geo:Point>
+        <url status="offline">http://www.muangpon.org/</url>
+      </office>
+      <entity type="Muban" geocode="58020301" name="บ้านเมืองปอน"/>
+      <entity type="Muban" geocode="58020302" name="บ้านเมืองปอน"/>
+      <entity type="Muban" geocode="58020303" name="บ้านหางปอน"/>
+      <entity type="Muban" geocode="58020304" name="บ้านป่าฝาง"/>
+      <entity type="Muban" geocode="58020305" name="บ้านแม่ซอ"/>
+      <entity type="Muban" geocode="58020306" name="บ้านแม่ลาก๊ะ"/>
+      <entity type="Muban" geocode="58020307" name="บ้านท่าหินส้ม"/>
+      <entity type="Muban" geocode="58020308" name="บ้านมะหินหลวง"/>
+      <entity type="Muban" geocode="58020309" name="บ้านหนองแห้ง"/>
+      <entity type="Muban" geocode="58020310" name="บ้านแม่โข่จู"/>
+    </entity>
+    <entity type="Tambon" name="แม่ยวมน้อย" english="Mae Yuam Noi" geocode="580204" >
+      <entity type="Muban" geocode="58020401" name="บ้านหัวปอน"/>
+      <entity type="Muban" geocode="58020402" name="บ้านแม่โกปี่"/>
+      <entity type="Muban" geocode="58020403" name="บ้านหว่าโน"/>
+      <entity type="Muban" geocode="58020404" name="บ้านแม่ออ"/>
+      <entity type="Muban" geocode="58020405" name="บ้านแม่แจ๊ะ"/>
+      <entity type="Muban" geocode="58020406" name="บ้านแม่หาด"/>
+      <entity type="Muban" geocode="58020407" name="บ้านห้วยมะบวบ"/>
+      <entity type="Muban" geocode="58020408" name="บ้านหัวแม่ลาก๊ะ"/>
+    </entity>
     <entity type="Tambon" name="แม่กิ๊" english="Mae Ki" geocode="580205" >
       <office type="TAOOffice">
-        <url>http://www.geocities.com/maeki_2006/</url>
+        <url>http://www.maeki.go.th/</url>
+        <url status="offline">http://www.geocities.com/maeki_2006/</url>
       </office>
+      <entity type="Muban" geocode="58020501" name="บ้านแม่กิ๊"/>
+      <entity type="Muban" geocode="58020502" name="บ้านห้วยส้าน"/>
+      <entity type="Muban" geocode="58020503" name="บ้านพะโท"/>
+      <entity type="Muban" geocode="58020504" name="บ้านห้วยโป่งเลา"/>
+      <entity type="Muban" geocode="58020505" name="บ้านเปียงหลวง"/>
     </entity>
-    <entity type="Tambon" name="แม่อูคอ" english="Mae Ukho" geocode="580206" />
+    <entity type="Tambon" name="แม่อูคอ" english="Mae Ukho" geocode="580206" >
+      <office type="TAOOffice">
+        <url status="broken">http://maeaukor.org/</url>
+      </office>
+      <entity type="Muban" geocode="58020601" name="บ้านคำสุข"/>
+      <entity type="Muban" geocode="58020602" name="บ้านหัวแม่สุริน"/>
+      <entity type="Muban" geocode="58020603" name="บ้านปางตอง"/>
+      <entity type="Muban" geocode="58020604" name="บ้านใหม่พัฒนา"/>
+      <entity type="Muban" geocode="58020605" name="บ้านแม่อูคอหลวง"/>
+      <entity type="Muban" geocode="58020606" name="บ้านแม่อูคอ"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="ปาย" english="Pai" geocode="5803" >
     <office type="DistrictOffice">
@@ -348,7 +414,7 @@
       <entity type="Muban" geocode="58040501" name="บ้านน้ำดิบ" english="Ban Nam Dip"/>
 
       <entity type="Muban" geocode="58040506" name="บ้านห้วยโผ" english="Ban Huai Pho"/>
-      
+
       <entity type="Muban" geocode="58040513" name="บ้านจอมกิตติ" english="Ban Chom Kitti"/>
     </entity>
     <entity type="Tambon" name="เสาหิน" english="Sao Hin" geocode="580406" >
