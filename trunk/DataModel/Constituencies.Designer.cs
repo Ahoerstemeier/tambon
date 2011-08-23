@@ -437,6 +437,14 @@ namespace De.AHoerstemeier.Tambon
 
         private string commentField;
 
+        private System.DateTime endField;
+
+        private bool endFieldSpecified;
+
+        private ByElectionReason endreasonField;
+
+        private bool endreasonFieldSpecified;
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string party
@@ -534,6 +542,62 @@ namespace De.AHoerstemeier.Tambon
                 this.commentField = value;
             }
         }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime end
+        {
+            get
+            {
+                return this.endField;
+            }
+            set
+            {
+                this.endField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool endSpecified
+        {
+            get
+            {
+                return this.endFieldSpecified;
+            }
+            set
+            {
+                this.endFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ByElectionReason endreason
+        {
+            get
+            {
+                return this.endreasonField;
+            }
+            set
+            {
+                this.endreasonField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool endreasonSpecified
+        {
+            get
+            {
+                return this.endreasonFieldSpecified;
+            }
+            set
+            {
+                this.endreasonFieldSpecified = value;
+            }
+        }
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
@@ -562,6 +626,40 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         died,
+
+        /// <remarks/>
+        moveup,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    public enum ByElectionReason
+    {
+
+        /// <remarks/>
+        redcard,
+
+        /// <remarks/>
+        yellowcard,
+
+        /// <remarks/>
+        resignation,
+
+        /// <remarks/>
+        bankruptcy,
+
+        /// <remarks/>
+        conviction,
+
+        /// <remarks/>
+        death,
+
+        /// <remarks/>
+        disqualification,
+
+        /// <remarks/>
+        other,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
@@ -575,6 +673,10 @@ namespace De.AHoerstemeier.Tambon
 
         private string indexField;
 
+        private System.DateTime beginField;
+
+        private bool beginFieldSpecified;
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string index
@@ -586,6 +688,34 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.indexField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime begin
+        {
+            get
+            {
+                return this.beginField;
+            }
+            set
+            {
+                this.beginField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool beginSpecified
+        {
+            get
+            {
+                return this.beginFieldSpecified;
+            }
+            set
+            {
+                this.beginFieldSpecified = value;
             }
         }
     }
@@ -628,31 +758,6 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         BangkokDistrictCouncil,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    public enum ByElectionReason
-    {
-
-        /// <remarks/>
-        redcard,
-
-        /// <remarks/>
-        yellowcard,
-
-        /// <remarks/>
-        resignation,
-
-        /// <remarks/>
-        death,
-
-        /// <remarks/>
-        disqualification,
-
-        /// <remarks/>
-        other,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
