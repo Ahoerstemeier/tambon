@@ -133,29 +133,85 @@
   <xs:element type="t:ElectionData" name="electiondata"/>
 
   <xs:complexType name="Party">
-    <xs:attribute name="name" type="xs:string"/>
-    <xs:attribute name="english" type="xs:string"/>
-    <xs:attribute name="id" type="xs:nonNegativeInteger"/>
+    <xs:annotation>
+      <xs:documentation>Party contesting in the election.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Thai name of the party.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="english" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>English name of the party.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="id" type="xs:nonNegativeInteger">
+      <xs:annotation>
+        <xs:documentation>Number assigned to the party for the election in question.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="PartyList">
+    <xs:annotation>
+      <xs:documentation>List of parties contesting in the election.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="party" type="t:Party" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="party" type="t:Party" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Party contesting in the election.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="PartyListResultEntry">
-    <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
-    <xs:attribute name="votes" type="xs:nonNegativeInteger" use="required"/>
-    <xs:attribute name="seats" type="xs:nonNegativeInteger" use="optional"/>
+    <xs:attribute name="id" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>Party identified by the number assigned to it.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="votes" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of votes received.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="seats" type="xs:nonNegativeInteger" use="optional">
+      <xs:annotation>
+        <xs:documentation>Number of seats won.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="PartyListResult">
+    <xs:annotation>
+      <xs:documentation>Result of the party list voting.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="party" type="t:PartyListResultEntry" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="party" type="t:PartyListResultEntry" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Result for a single party.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
-    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="required"/>
-    <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="required"/>
-    <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="required"/>
+    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of eligible voters (จำนวนผู้มาใช้สิทธิเลือกตั้ง).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of invalid votes cast (จำนวนบัตรเสีย).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of abstain votes (จำนวนบัตรไม่ประสงค์ลงคะแนน).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:simpleType name="ElectionStatus">
+    <xs:annotation>
+      <xs:documentation>Status of the candidate before or due to the election.</xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="elected">
         <xs:annotation>
@@ -174,13 +230,29 @@
       </xs:enumeration>
       <xs:enumeration value="yellowcard">
         <xs:annotation>
-          <xs:documentation>Elected, but yellow-carded Election Commission,eligible for by-election.</xs:documentation>
+          <xs:documentation>Elected, but yellow-carded Election Commission, eligible for by-election.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <!-- ToDo: can be before election, or after, which are two different status -->
-      <xs:enumeration value="disqualified"/>
-      <xs:enumeration value="resigned"/>
-      <xs:enumeration value="died"/>
+      <xs:enumeration value="disqualified">
+        <xs:annotation>
+          <xs:documentation>Disqualified before election date, might be bankruptcy, conviction, not party member long enough.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="resigned">
+        <xs:annotation>
+          <xs:documentation>Resigned from candidate list before election date.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="died">
+        <xs:annotation>
+          <xs:documentation>Died before election date already filed as candidate.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="moveup">
+        <xs:annotation>
+          <xs:documentation>Move-up candidate on party list.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="Candidate">
@@ -190,6 +262,8 @@
     <xs:attribute name="english" type="xs:string" use="optional"/>
     <xs:attribute name="status" type="t:ElectionStatus" use="optional"/>
     <xs:attribute name="comment" type="xs:string" use="optional"/>
+    <xs:attribute name="end" type="xs:date" use="optional"/>
+    <xs:attribute name="endreason" type="t:ByElectionReason" use="optional"/>
   </xs:complexType>
   <xs:complexType name="CandidateListEntry">
     <xs:complexContent>
@@ -202,7 +276,16 @@
   <xs:complexType name="PartyCandidateListEntry">
     <xs:complexContent>
       <xs:extension base="t:Candidate">
-        <xs:attribute name="index" type="xs:nonNegativeInteger" use="required"/>
+        <xs:attribute name="index" type="xs:nonNegativeInteger" use="required">
+          <xs:annotation>
+            <xs:documentation>Position on the party list.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="begin" type="xs:date" use="optional">
+          <xs:annotation>
+            <xs:documentation>Date of securing seat, only necessary for move-up candidates where entry date is not same as election date.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -222,13 +305,50 @@
     <xs:attribute name="comment" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:simpleType name="ByElectionReason">
+    <xs:annotation>
+      <xs:documentation>Reason a candidate looses his seat.</xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="redcard"/>
-      <xs:enumeration value="yellowcard"/>
-      <xs:enumeration value="resignation"/>
-      <xs:enumeration value="death"/>
-      <xs:enumeration value="disqualification"/>
-      <xs:enumeration value="other"/>
+      <xs:enumeration value="redcard">
+        <xs:annotation>
+          <xs:documentation>Received red card after being initially being endorsed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="yellowcard">
+        <xs:annotation>
+          <xs:documentation>Received yellow card after being initially being endorsed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="resignation">
+        <xs:annotation>
+          <xs:documentation>Resigned from seat.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bankruptcy">
+        <xs:annotation>
+          <xs:documentation>Filed bankruptcy and thus lost right to have seat.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="conviction">
+        <xs:annotation>
+          <xs:documentation>Convicted in criminal case and thus lost right to have seat.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="death">
+        <xs:annotation>
+          <xs:documentation>Died while having seat.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="disqualification">
+        <xs:annotation>
+          <xs:documentation>Disqualified for another reason.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Reason not covered by other types.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="ByElection">
