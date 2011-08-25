@@ -1242,6 +1242,10 @@ namespace De.AHoerstemeier.Tambon
     {
     }
 
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInExclude))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInclude))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstituencyEntity))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
