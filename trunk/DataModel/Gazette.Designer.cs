@@ -224,6 +224,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
@@ -566,6 +567,7 @@ namespace De.AHoerstemeier.Tambon
     }
 
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRenumber))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteOfficial))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCapital))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCreate))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaChange))]
@@ -640,6 +642,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
@@ -1208,6 +1211,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
@@ -1560,6 +1564,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazettePark), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteOperation), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteReference), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order = 0)]
@@ -1733,6 +1738,48 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.typeField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteOfficial", Namespace = "http://hoerstemeier.com/tambon/")]
+    public partial class GazetteOfficial : GazetteOperation
+    {
+
+        private string officialnameField;
+
+        private OfficialType officialtypeField;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string officialname
+        {
+            get
+            {
+                return this.officialnameField;
+            }
+            set
+            {
+                this.officialnameField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OfficialType officialtype
+        {
+            get
+            {
+                return this.officialtypeField;
+            }
+            set
+            {
+                this.officialtypeField = value;
             }
         }
     }
@@ -2169,6 +2216,9 @@ namespace De.AHoerstemeier.Tambon
         mention,
 
         /// <remarks/>
+        official,
+
+        /// <remarks/>
         reassign,
 
         /// <remarks/>
@@ -2222,6 +2272,9 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         mention,
+
+        /// <remarks/>
+        official,
 
         /// <remarks/>
         reassign,
@@ -2307,6 +2360,9 @@ namespace De.AHoerstemeier.Tambon
         mention,
 
         /// <remarks/>
+        official,
+
+        /// <remarks/>
         reassign,
 
         /// <remarks/>
@@ -2360,6 +2416,9 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         mention,
+
+        /// <remarks/>
+        official,
 
         /// <remarks/>
         reassign,
