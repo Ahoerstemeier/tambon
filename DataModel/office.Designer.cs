@@ -371,6 +371,9 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         ChumchonChairman,
+
+        /// <remarks/>
+        MonthonCommissioner,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
