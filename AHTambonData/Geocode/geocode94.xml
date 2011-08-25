@@ -59,7 +59,7 @@
       <office type="TAOOffice">
         <officials>
           <official title="TAOChairman" name="แวสะมาแอ แวหะยี" comment="injured by insurgents 2010-03-01, http://www.manager.co.th/Local/ViewNews.aspx?NewsID=9530000028840"/>
-          <official title="TAOChairman" name="สะมะแอ แวสามะ" english="Sama-ae Waesama" end="2009-06-05" comment="Killed by insurgents, http://thairecent.com/Breaking/2009/31690/"/>
+          <official title="TAOChairman" name="สะมะแอ แวสามะ" english="Sama-ae Waesama" end="2009-06-05" endreason="Death" comment="Killed by insurgents, http://thairecent.com/Breaking/2009/31690/"/>
         </officials>
       </office>
     </entity>
@@ -81,7 +81,7 @@
       <entity type="Muban" geocode="94010908" name="บ้านเจ๊ะดี">
         <office type="VillageHeadmanOffice">
           <officials>
-            <official title="PhuYaiBan" name="ศักดิ์รินทร์ แวดาโอะ" end="2010-07-26" comment="Killed by insurgents"/>
+            <official title="PhuYaiBan" name="ศักดิ์รินทร์ แวดาโอะ" end="2010-07-26" endreason="Death" comment="Killed by insurgents"/>
           </officials>
         </office>
       </entity>
@@ -144,7 +144,7 @@
       <entity type="Muban" geocode="94020502" name="บ้านหลวงจันทร์">
         <office type="VillageHeadmanOffice">
           <officials>
-            <official title="PhuYaiBan" name="อรุณ ทองทราย" end="2010-10-30" comment="Killed by insurgents"/>
+            <official title="PhuYaiBan" name="อรุณ ทองทราย" end="2010-10-30" endreason="Death" comment="Killed by insurgents"/>
           </officials>
         </office>
       </entity>
@@ -316,10 +316,19 @@
       </officials>
     </office>
     <entity type="Tambon" name="ตะลุบัน" english="Taluban" geocode="940701" />
-    <entity type="Tambon" name="ตะบิ้ง" english="Tabing" geocode="940702" />
+    <entity type="Tambon" name="ตะบิ้ง" english="Tabing" geocode="940702" >
+      <office type="TAOOffice">
+        <!-- Longdo:   6.684947° 101.578568° -->
+        <url status="offline">http://www.tabing.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ปะเสยะวอ" english="Pase Yawo" geocode="940703" />
     <entity type="Tambon" name="บางเก่า" english="Bang Kao" geocode="940704" />
-    <entity type="Tambon" name="บือเระ" english="Bue Re" geocode="940705" />
+    <entity type="Tambon" name="บือเระ" english="Bue Re" geocode="940705" >
+      <office type="TAOOffice">
+      <!--   6.714157° 101.559441°  according to Google map, but nothing to see  -->
+    </office>
+    </entity>
     <entity type="Tambon" name="เตราะบอน" english="Tro Bon" geocode="940706" >
       <office type="TAOOffice">
         <geo:Point>
@@ -330,13 +339,34 @@
       </office>
     </entity>
     <entity type="Tambon" name="กะดุนง" english="Kadunong" geocode="940707" />
-    <entity type="Tambon" name="ละหาร" english="Lahan" geocode="940708" />
+    <entity type="Tambon" name="ละหาร" english="Lahan" geocode="940708" >
+      <entity type="Muban" geocode="94070801" name="บ้านละหาร">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="หามิ กือมิ" end="2011-08-24" endreason="Death" comment="Killed by insurgents"/>
+          </officials>
+        </office>
+      </entity>
+    </entity>
     <entity type="Tambon" name="มะนังดาลำ" english="Manang Dalam" geocode="940709" >
       <office type="TAOOffice">
-        <url>http://www.manangdalam.com/</url>
+        <!-- Longdo:   6.668703° 101.609741° -->
+        <url status="offline">http://www.manangdalam.com/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="แป้น" english="Paen" geocode="940710" />
+    <entity type="Tambon" name="แป้น" english="Paen" geocode="940710" >
+      <office type="TAOOffice">
+        <url>http://www.paen.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="94071001" name="บ้านเจาะโบ"/>
+      <entity type="Muban" geocode="94071002" name="บ้านจะเฆ่"/>
+      <entity type="Muban" geocode="94071003" name="บ้านจะเฆ่ตก"/>
+      <entity type="Muban" geocode="94071004" name="บ้านด่าน"/>
+      <entity type="Muban" geocode="94071005" name="บ้านเตราะแก่น"/>
+      <entity type="Muban" geocode="94071006" name="บ้านแป้น"/>
+      <entity type="Muban" geocode="94071007" name="บ้านช่องหมู"/>
+      <entity type="Muban" geocode="94071008" name="บ้านละหาร"/>
+    </entity>
     <entity type="Tambon" name="ทุ่งคล้า" english="Thung Khla" geocode="940711" />
   </entity>
   <entity type="Amphoe" name="ไม้แก่น" english="Mai Kaen" geocode="9408" >
@@ -428,7 +458,7 @@
       <entity type="Muban" geocode="94090805" name="บ้านดินแดน">
         <office type="VillageHeadmanOffice">
           <officials>
-            <official title="PhuYaiBan" name="ยูโซ๊ะ แวกือจิ" end="2011-08-09" comment="Killed by insurgents"/>
+            <official title="PhuYaiBan" name="ยูโซ๊ะ แวกือจิ" end="2011-08-09" endreason="Death" comment="Killed by insurgents"/>
           </officials>
         </office>
       </entity>
