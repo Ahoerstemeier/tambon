@@ -116,6 +116,77 @@ namespace De.AHoerstemeier.Tambon
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum OfficialType
+    {
+
+        /// <remarks/>
+        Governor,
+
+        /// <remarks/>
+        BangkokGovernor,
+
+        /// <remarks/>
+        ViceGovernor,
+
+        /// <remarks/>
+        DeputyGovernor,
+
+        /// <remarks/>
+        DistrictOfficer,
+
+        /// <remarks/>
+        MinorDistrictOfficer,
+
+        /// <remarks/>
+        AssistantDistrictOfficer,
+
+        /// <remarks/>
+        DistrictOfficerBangkok,
+
+        /// <remarks/>
+        DeputyDistrictOfficerBangkok,
+
+        /// <remarks/>
+        Kamnan,
+
+        /// <remarks/>
+        PhuYaiBan,
+
+        /// <remarks/>
+        PAOChairman,
+
+        /// <remarks/>
+        Mayor,
+
+        /// <remarks/>
+        DeputyMayor,
+
+        /// <remarks/>
+        MunicipalClerk,
+
+        /// <remarks/>
+        TAOMayor,
+
+        /// <remarks/>
+        TAOChairman,
+
+        /// <remarks/>
+        TAOCouncilChairman,
+
+        /// <remarks/>
+        SanitaryDistrictChairman,
+
+        /// <remarks/>
+        ChumchonChairman,
+
+        /// <remarks/>
+        MonthonCommissioner,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
+    [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]

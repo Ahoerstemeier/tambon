@@ -172,6 +172,119 @@
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" default="0" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
+  <xs:simpleType name="OfficialType">
+    <xs:annotation>
+      <xs:documentation>Types of leaders or deputy leaders for the administrative entities.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Governor">
+        <xs:annotation>
+          <xs:documentation>Province governor (ผู้ว่าราชการจังหวัด, Phu Wa Rachakan Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BangkokGovernor">
+        <xs:annotation>
+          <xs:documentation>Governor of Bangkok (ผู้ว่าราชการกรุงเทพมหานคร, Phu Wa Rachakan Krung Thep Maha Nakhon).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ViceGovernor">
+        <xs:annotation>
+          <xs:documentation>Vice province governor (รองผู้ว่าราชการจังหวัด, Rong Phu Wachakan Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeputyGovernor">
+        <xs:annotation>
+          <xs:documentation>Deputy province governor (ปลัดจังหวัด , Palad Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DistrictOfficer">
+        <xs:annotation>
+          <xs:documentation>District (head) officer (นายอำเภอ, Nai Amphoe).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MinorDistrictOfficer">
+        <xs:annotation>
+          <xs:documentation>Minor District (head) officer (หัวหน้ากิ่งอำเภอ, Hua Na King Amphoe).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AssistantDistrictOfficer">
+        <xs:annotation>
+          <xs:documentation>Assistant distict officer (ปลัดอำเภอ , Palad Amphoe).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DistrictOfficerBangkok">
+        <xs:annotation>
+          <xs:documentation>District officer in Bangkok (ผู้อำนวยการเขต, Phu Amnuai Kan Khet).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeputyDistrictOfficerBangkok">
+        <xs:annotation>
+          <xs:documentation>Deputy district officer in Bangkok (ผู้ช่วยผู้อำนวยการเขต, Phu Chuai Amnuai Kan Khet).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Kamnan">
+        <xs:annotation>
+          <xs:documentation>Subdistrict headman (กำนัน, Kamnan), leader of Tambon.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PhuYaiBan">
+        <xs:annotation>
+          <xs:documentation>Village headman (ผู้ใหญ่บ้าน, Phu Yai Ban), leader of Muban.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAOChairman">
+        <xs:annotation>
+          <xs:documentation>Chief Executive of PAO (นายกองค์การบริหารส่วนจังหวัด, Nayok Ongganborihansuan Changwat), directly elected.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mayor">
+        <xs:annotation>
+          <xs:documentation>Mayor (นายกเทศมนตรี, Nayok Thesamontri), leader of Thesaban.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeputyMayor">
+        <xs:annotation>
+          <xs:documentation>Deputy Mayor (รองนายกเทศมนตรี, Rong Nayok Thesamontri).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MunicipalClerk">
+        <xs:annotation>
+          <xs:documentation>Municipal clerk (ปลัดเทศบาล, Palad Thesaban).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOMayor">
+        <xs:annotation>
+          <xs:documentation>Mayor of TAO (นายกองค์การบริหารส่วนตำบล, Nayok Ongganborihansuan Tambon), directly elected.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOChairman">
+        <xs:annotation>
+          <xs:documentation>Chairman of TAO (ประธานกรรมการบริหารองค์การบริหารส่วนตำบล, Prathan Kromganborihansuan Tambon), chosen by council.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAOCouncilChairman">
+        <xs:annotation>
+          <xs:documentation>Chairman of the TAO council (ประธานสภาองค์การบริหารส่วนตำบล, Prathan Sapha Ongganborihansuan Tambon)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SanitaryDistrictChairman">
+        <xs:annotation>
+          <xs:documentation>Sanitary district chairman (ประธานกรรมการสุขาภิบาล, Prathan Kromgan Sukhaphiban).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChumchonChairman">
+        <xs:annotation>
+          <xs:documentation>Borough headman (ประธานชุมชน, Prathan Chumchon).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MonthonCommissioner">
+        <xs:annotation>
+          <xs:documentation>Monthon commissioner (ข้าหลวงเทศาภิบาล, Kha Luang Thesaphiban).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:element name="EntityType" type="t:EntityType"/>
+  <xs:element name="OfficialType" type="t:OfficialType"/>
 </xs:schema>
