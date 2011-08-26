@@ -8,6 +8,7 @@
   attributeFormDefault="unqualified" elementFormDefault="qualified" >
 
   <xs:include schemaLocation="basictypes.xsd"/>
+  <xs:include schemaLocation="gazette.xsd"/>
 
   <xs:simpleType name="ElectionType">
     <xs:annotation>
@@ -256,6 +257,9 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="Candidate">
+    <xs:sequence>
+      <xs:element name="gazetteref" type="t:GazetteReference" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
     <xs:attribute name="party" type="xs:nonNegativeInteger" use="optional"/>
     <xs:attribute name="name" type="xs:string" use="required"/>
     <xs:attribute name="title" type="xs:string" use="optional"/>
@@ -354,11 +358,12 @@
   <xs:complexType name="ByElection">
     <xs:sequence>
       <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="gazetteref" type="t:GazetteReference" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional"/>
     <xs:attribute name="type" type="t:ElectionType" use="optional"/>
     <xs:attribute name="reason" type="t:ByElectionReason"/>
-    <xs:attribute name="comment" type="xs:string"/>
+    <xs:attribute name="comment" type="xs:string"/>    
   </xs:complexType>
 
   <xs:complexType name="Election">
@@ -366,6 +371,7 @@
       <xs:element name="partylist" type="t:PartyCandidateList" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="partylistresult" type="t:PartyListResult" minOccurs="0" maxOccurs="1"/>
       <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="gazetteref" type="t:GazetteReference" minOccurs="0" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional"/>
     <xs:attribute name="type" type="t:ElectionType" use="optional"/>
