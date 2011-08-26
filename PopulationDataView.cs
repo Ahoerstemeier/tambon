@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using System.Globalization;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -22,11 +23,11 @@ namespace De.AHoerstemeier.Tambon
         private void SetData(PopulationData value)
         {
             mData = value;
-            if (value != null)
+            if ( value != null )
             {
-                if (mData.Data != null)
+                if ( mData.Data != null )
                 {
-                    this.Text = mData.Data.English + " "+mData.year.ToString();
+                    this.Text = mData.Data.English + " " + mData.year.ToString();
                 }
                 PopulationDataToTreeView(mTreeviewData, mData);
             }
@@ -41,7 +42,7 @@ namespace De.AHoerstemeier.Tambon
         {
             mListviewData.BeginUpdate();
             mListviewData.Items.Clear();
-            foreach (PopulationDataEntry lEntity in iData.SubEntities)
+            foreach ( PopulationDataEntry lEntity in iData.SubEntities )
             {
                 ListViewItem lListViewItem = mListviewData.Items.Add(lEntity.English);
                 lListViewItem.SubItems.Add(lEntity.Name);
@@ -55,10 +56,10 @@ namespace De.AHoerstemeier.Tambon
         private TreeNode PopulationDataEntryToTreeNode(PopulationDataEntry iData)
         {
             TreeNode retval = null;
-            if (iData != null)
+            if ( iData != null )
             {
                 String lName = String.Empty;
-                if (!String.IsNullOrEmpty(iData.English))
+                if ( !String.IsNullOrEmpty(iData.English) )
                 {
                     lName = iData.English;
                 }
@@ -68,11 +69,11 @@ namespace De.AHoerstemeier.Tambon
                 }
                 retval = new TreeNode(lName);
                 retval.Tag = iData;
-                foreach (PopulationDataEntry lEntity in iData.SubEntities)
+                foreach ( PopulationDataEntry lEntity in iData.SubEntities )
                 {
-                    if (!EntityTypeHelper.Thesaban.Contains(lEntity.Type))
+                    if ( !EntityTypeHelper.Thesaban.Contains(lEntity.Type) )
                     {
-                      retval.Nodes.Add(PopulationDataEntryToTreeNode(lEntity));
+                        retval.Nodes.Add(PopulationDataEntryToTreeNode(lEntity));
                     }
                 }
 
@@ -84,10 +85,10 @@ namespace De.AHoerstemeier.Tambon
         {
             iTreeView.BeginUpdate();
             iTreeView.Nodes.Clear();
-            if (iData != null)
+            if ( iData != null )
             {
                 TreeNode lNode = PopulationDataEntryToTreeNode(iData.Data);
-                if (lNode != null)
+                if ( lNode != null )
                 {
                     iTreeView.Nodes.Add(lNode);
                 }
@@ -98,7 +99,7 @@ namespace De.AHoerstemeier.Tambon
         {
             var lData = CurrentSelectedEntity(sender);
             String lOutput = lData.WriteForWikipedia(mData.WikipediaReference());
-            if (lOutput != String.Empty)
+            if ( lOutput != String.Empty )
             {
                 Clipboard.SetText(lOutput);
             }
@@ -109,6 +110,13 @@ namespace De.AHoerstemeier.Tambon
             var lData = CurrentSelectedEntity(sender);
             PopulationDataEntryToListView(lData);
             btnClipboardAmphoe.Enabled = lData.CanWriteForWikipedia();
+            var entityCounter = lData.EntityTypeNumbers();
+            String text = String.Empty;
+            foreach ( KeyValuePair<EntityType, Int32> keyValuePair in entityCounter )
+            {
+                text = text + keyValuePair.Key.ToString() + " " + keyValuePair.Value.ToString(CultureInfo.InvariantCulture) + Environment.NewLine;
+            }
+            textBox1.Text = text;
         }
 
         private PopulationDataEntry CurrentSelectedEntity(object sender)
@@ -128,7 +136,7 @@ namespace De.AHoerstemeier.Tambon
         private void btnGazette_Click(object sender, EventArgs e)
         {
             var lData = CurrentSelectedEntity(sender);
-            if ((lData != null)&&(OnShowGazette != null))
+            if ( (lData != null) && (OnShowGazette != null) )
             {
                 var lList = TambonHelper.GlobalGazetteList.AllAboutEntity(lData.Geocode, true);
                 OnShowGazette(lList);

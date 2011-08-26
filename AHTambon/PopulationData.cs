@@ -87,7 +87,7 @@ namespace De.AHoerstemeier.Tambon
                 System.Net.WebClient lWebClient = new System.Net.WebClient();
                 System.IO.Stream lInputStream = lWebClient.OpenRead(UrlBase + iFilename);
 
-                lOutputStream = new FileStream(FullFilename(iFilename), FileMode.CreateNew);
+                lOutputStream = new FileStream(HtmlCacheFileName(iFilename), FileMode.CreateNew);
                 TambonHelper.StreamCopy(lInputStream, lOutputStream);
                 lOutputStream.Flush();
             }
@@ -96,12 +96,12 @@ namespace De.AHoerstemeier.Tambon
                 lOutputStream.Dispose();
             }
         }
-        private String FullFilename(String iFilename)
+        private String HtmlCacheFileName(String fileName)
         {
-            String lDir = Path.Combine(GlobalSettings.HTMLCacheDir, "DOPA");
-            Directory.CreateDirectory(lDir);
-            String retval = Path.Combine(lDir, iFilename);
-            return retval;
+            String directory = Path.Combine(GlobalSettings.HTMLCacheDir, "DOPA");
+            Directory.CreateDirectory(directory);
+            String result = Path.Combine(directory, fileName);
+            return result;
         }
         public String WikipediaReference()
         {
@@ -116,24 +116,24 @@ namespace De.AHoerstemeier.Tambon
             return lResult;
         }
 
-        private Boolean cached(String iFilename)
+        private Boolean isCached(String fileName)
         {
-            return File.Exists(FullFilename(iFilename));
+            return File.Exists(HtmlCacheFileName(fileName));
         }
-        private void ParseSingleFile(String iFilename)
+        private void ParseSingleFile(String filename)
         {
             if (!mAnyCached)
             {
-                if (!cached(iFilename))
+                if (!isCached(filename))
                 {
-                    Download(iFilename);
+                    Download(filename);
                 }
                 else
                 {
                     mAnyCached = true;
                 }
             }
-            var lReader = new System.IO.StreamReader(FullFilename(iFilename), TambonHelper.ThaiEncoding);
+            var lReader = new System.IO.StreamReader(HtmlCacheFileName(filename), TambonHelper.ThaiEncoding);
 
             String lCurrentLine = String.Empty;
             PopulationDataEntry lCurrentEntry = null;
@@ -369,9 +369,12 @@ namespace De.AHoerstemeier.Tambon
             {
                 foreach (PopulationDataEntry lEntity in mChangwat.SubEntities)
                 {
-                    if (EntityTypeHelper.Thesaban.Contains(lEntity.Type) | EntityTypeHelper.Sakha.Contains(lEntity.Type))
+                    if ( lEntity != null )
                     {
-                        mThesaban.Add(lEntity);
+                        if ( EntityTypeHelper.Thesaban.Contains(lEntity.Type) | EntityTypeHelper.Sakha.Contains(lEntity.Type) )
+                        {
+                            mThesaban.Add(lEntity);
+                        }
                     }
                 }
                 foreach (PopulationDataEntry lThesaban in mThesaban)
@@ -390,7 +393,10 @@ namespace De.AHoerstemeier.Tambon
                 }
                 foreach (PopulationDataEntry entity in mChangwat.SubEntities)
                 {
-                    entity.SortSubEntities();
+                    if ( entity != null )
+                    {
+                        entity.SortSubEntities();
+                    }
                 }
             }
         }

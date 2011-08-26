@@ -31,14 +31,15 @@
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.mTreeviewData = new System.Windows.Forms.TreeView();
             this.mListviewData = new System.Windows.Forms.ListView();
-            this.columnEnglish = new System.Windows.Forms.ColumnHeader();
-            this.columnThai = new System.Windows.Forms.ColumnHeader();
-            this.columnGeocode = new System.Windows.Forms.ColumnHeader();
-            this.columnTotal = new System.Windows.Forms.ColumnHeader();
-            this.columnThesaban = new System.Windows.Forms.ColumnHeader();
+            this.columnEnglish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnGeocode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnThesaban = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSaveXML = new System.Windows.Forms.Button();
             this.btnClipboardAmphoe = new System.Windows.Forms.Button();
             this.btnGazette = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
@@ -46,9 +47,9 @@
             // 
             // splitContainer
             // 
-            this.splitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer.Location = new System.Drawing.Point(3, 5);
             this.splitContainer.Name = "splitContainer";
             // 
@@ -58,6 +59,7 @@
             // 
             // splitContainer.Panel2
             // 
+            this.splitContainer.Panel2.Controls.Add(this.textBox1);
             this.splitContainer.Panel2.Controls.Add(this.mListviewData);
             this.splitContainer.Size = new System.Drawing.Size(471, 444);
             this.splitContainer.SplitterDistance = 157;
@@ -65,9 +67,9 @@
             // 
             // mTreeviewData
             // 
-            this.mTreeviewData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.mTreeviewData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mTreeviewData.Location = new System.Drawing.Point(0, 0);
             this.mTreeviewData.Name = "mTreeviewData";
             this.mTreeviewData.Size = new System.Drawing.Size(154, 444);
@@ -76,9 +78,9 @@
             // 
             // mListviewData
             // 
-            this.mListviewData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.mListviewData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mListviewData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnEnglish,
             this.columnThai,
@@ -87,7 +89,7 @@
             this.columnThesaban});
             this.mListviewData.Location = new System.Drawing.Point(-1, 0);
             this.mListviewData.Name = "mListviewData";
-            this.mListviewData.Size = new System.Drawing.Size(311, 444);
+            this.mListviewData.Size = new System.Drawing.Size(311, 305);
             this.mListviewData.TabIndex = 9;
             this.mListviewData.UseCompatibleStateImageBehavior = false;
             this.mListviewData.View = System.Windows.Forms.View.Details;
@@ -147,6 +149,16 @@
             this.btnGazette.UseVisualStyleBackColor = true;
             this.btnGazette.Click += new System.EventHandler(this.btnGazette_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(0, 311);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(310, 133);
+            this.textBox1.TabIndex = 10;
+            // 
             // PopulationDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +172,7 @@
             this.Text = "PopulationDataView";
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
+            this.splitContainer.Panel2.PerformLayout();
             this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -178,5 +191,6 @@
         private System.Windows.Forms.Button btnClipboardAmphoe;
         private System.Windows.Forms.ColumnHeader columnThesaban;
         private System.Windows.Forms.Button btnGazette;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
