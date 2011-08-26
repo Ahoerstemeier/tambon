@@ -53,6 +53,21 @@ namespace De.AHoerstemeier.Tambon
         {
             get { return mEntityThesaban; }
         }
+        private static List<EntityType> mCentralAdministration = new List<EntityType>() 
+        { 
+                EntityType.Changwat, 
+                EntityType.Amphoe, 
+                EntityType.KingAmphoe, 
+                EntityType.Bangkok, 
+                EntityType.Tambon, 
+                EntityType.Khet,
+                EntityType.Khwaeng,
+                EntityType.Muban
+        };
+        static public List<EntityType> CentralAdministration
+        {
+            get { return mCentralAdministration; }
+        }
         static private List<EntityType> CreateAllEntityLevels()
         {
             var retval = new List<EntityType>();
