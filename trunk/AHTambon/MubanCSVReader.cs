@@ -62,7 +62,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         EntityOffice lOffice = new EntityOffice();
                         lOffice.Type = OfficeType.VillageHeadmanOffice;
-                        UTMPoint lUTMLocation = new UTMPoint(Convert.ToInt32(lEasting), Convert.ToInt32(lNorthing), 47, true);
+                        UtmPoint lUTMLocation = new UtmPoint(Convert.ToInt32(lEasting), Convert.ToInt32(lNorthing), 47, true);
                         lOffice.Location = new GeoPoint(lUTMLocation, GeoDatum.DatumIndian1975());
                         lOffice.Location.Datum = GeoDatum.DatumWGS84();
                         lCurrentMuban.Offices.Add(lOffice);

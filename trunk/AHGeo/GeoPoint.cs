@@ -12,55 +12,59 @@ namespace De.AHoerstemeier.Geo
     {
         #region constants
         private double dScaleFactor = 0.9996; // scale factor, used as k0
-        private double dCvtRad2Deg = 180.0 / Math.PI; // 57.2957795130823208767 ...
-        private GeoDatum mDatum = GeoDatum.DatumWGS84();
-        private Int32 mGeoHashDefaultAccuracy = 9;
-        private Int32 mMaidenheadDefaultAccuracy = 9;
-        private PositionInRectangle mDefaultPositionInRectangle = PositionInRectangle.MiddleMiddle;
+        private double _convertRadianToDegree = 180.0 / Math.PI; // 57.2957795130823208767 ...
+        private GeoDatum _Datum = GeoDatum.DatumWGS84();
+        private Int32 _GeoHashDefaultAccuracy = 9;
+        private Int32 _MaidenheadDefaultAccuracy = 9;
+        private PositionInRectangle _DefaultPositionInRectangle = PositionInRectangle.MiddleMiddle;
         #endregion
 
         #region properties
         public double Altitude { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public GeoDatum Datum { get { return mDatum; } set { SetDatum(value); } }
-        public String GeoHash { get { return CalcGeoHash(mGeoHashDefaultAccuracy); } set { SetGeoHash(value); } }
-        public String Maidenhead { get { return CalcMaidenhead(mMaidenheadDefaultAccuracy); } set { SetMaidenhead(value); } }
+        public GeoDatum Datum { get { return _Datum; } set { SetDatum(value); } }
+        public String GeoHash { get { return CalcGeoHash(_GeoHashDefaultAccuracy); } set { SetGeoHash(value); } }
+        public String Maidenhead { get { return CalcMaidenhead(_MaidenheadDefaultAccuracy); } set { SetMaidenhead(value); } }
 
-        private void SetMaidenhead(String iValue)
-        {
-            Double lLatitude = 0;
-            Double lLongitude = 0;
-            MaidenheadLocator.GeographicalCoordinatesByMaidenheadLocator(iValue, mDefaultPositionInRectangle, out lLatitude, out lLongitude);
-            Datum = GeoDatum.DatumWGS84();
-            Latitude = lLatitude;
-            Longitude = lLongitude;
-        }
-        private String CalcMaidenhead(Int32 iPrecision)
-        {
-
-            String lResult = MaidenheadLocator.GetMaidenheadLocator(Latitude, Latitude, true, iPrecision);
-            return lResult;
-        }
         #endregion
 
         #region constructor
+        /// <summary>
+        /// Initializes a new instance of the GeoPoint class.
+        /// </summary>
         public GeoPoint()
         {
         }
-        public GeoPoint(double iLatitude, double iLongitude)
+        /// <summary>
+        /// Initializes a new instance of the GeoPoint class.
+        /// </summary>
+        /// <param name="latitude">Latitude.</param>
+        /// <param name="longitude">Longitude.</param>
+        public GeoPoint(double latitude, double longitude)
         {
-            Latitude = iLatitude;
-            Longitude = iLongitude;
+            Latitude = latitude;
+            Longitude = longitude;
         }
-        public GeoPoint(double iLatitude, double iLongitude, double iAltitude, GeoDatum iDatum)
+        /// <summary>
+        /// Initializes a new instance of the GeoPoint class.
+        /// </summary>
+        /// <param name="latitude">Latitude.</param>
+        /// <param name="longitude">Longitude.</param>
+        /// <param name="altitude">Altitude.</param>
+        /// <param name="datum">Geographical datum.</param>
+        public GeoPoint(double latitude, double longitude, double altitude, GeoDatum datum)
         {
-            Latitude = iLatitude;
-            Longitude = iLongitude;
-            Altitude = iAltitude;
-            mDatum = iDatum;
+            Latitude = latitude;
+            Longitude = longitude;
+            Altitude = altitude;
+            _Datum = datum;
         }
-        public GeoPoint(string value)
+        /// <summary>
+        /// Initializes a new instance of the GeoPoint class.
+        /// </summary>
+        /// <param name="value">String representation of a geographical coordinate.</param>
+        public GeoPoint(String value)
         {
             GeoPoint result = null;
 
@@ -68,117 +72,133 @@ namespace De.AHoerstemeier.Geo
             {
                 result = GeoPoint.ParseDegMinSec(value);
             }
-            catch (ArgumentException)
+            catch ( ArgumentException )
             {
             }
 
-            if (result == null)
+            if ( result == null )
             {
                 try
                 {
                     result = GeoPoint.ParseDegMin(value);
                 }
-                catch (ArgumentException)
+                catch ( ArgumentException )
                 {
                 }
             }
 
-            if (result == null)
+            if ( result == null )
             {
                 try
                 {
                     result = GeoPoint.ParseDecimalDegree(value);
                 }
-                catch (ArgumentException)
+                catch ( ArgumentException )
                 {
                 }
             }
 
-            if (result == null)
+            if ( result == null )
             {
-                throw new ArgumentException("Cannot parse coordinate value "+value, "value");
+                throw new ArgumentException("Cannot parse coordinate value " + value, "value");
             }
 
             Latitude = result.Latitude;
             Longitude = result.Longitude;
         }
-
-        public GeoPoint(GeoPoint iValue)
+        /// <summary>
+        /// Initializes a new instance of the GeoPoint class.
+        /// </summary>
+        /// <param name="value">GeoPoint to copy data from.</param>
+        public GeoPoint(GeoPoint value)
         {
-            Latitude = iValue.Latitude;
-            Longitude = iValue.Longitude;
-            Altitude = iValue.Altitude;
-            mDatum = (GeoDatum)iValue.Datum.Clone();
+            Latitude = value.Latitude;
+            Longitude = value.Longitude;
+            Altitude = value.Altitude;
+            _Datum = (GeoDatum)value.Datum.Clone();
         }
-        public GeoPoint(UTMPoint iUTMPoint, GeoDatum iDatum)
+        /// <summary>
+        /// Initializes a new instance of the GeoPoint class.
+        /// </summary>
+        /// <param name="utmPoint">UTM coordinates.</param>
+        /// <param name="datum">Geographical datum.</param>
+        public GeoPoint(UtmPoint utmPoint, GeoDatum datum)
         {
-            double eccSquared = iDatum.Ellipsoid.ExcentricitySquared;
-            double dEquatorialRadius = iDatum.Ellipsoid.SemiMajorAxis;
+            Double excentricitySquared = datum.Ellipsoid.ExcentricitySquared;
+            Double equatorialRadius = datum.Ellipsoid.SemiMajorAxis;
 
-            bool bNorthernHemisphere = iUTMPoint.IsNorthernHemisphere;
-            int iZoneNumber = iUTMPoint.ZoneNumber;
+            Boolean northernHemisphere = utmPoint.IsNorthernHemisphere;
+            Int32 zoneNumber = utmPoint.ZoneNumber;
 
-            double x = iUTMPoint.Easting - 500000.0; //remove 500,000 meter offset for longitude
-            double y = iUTMPoint.Northing;
-            if ( !bNorthernHemisphere )
+            Double x = utmPoint.Easting - 500000.0; //remove 500,000 meter offset for longitude
+            Double y = utmPoint.Northing;
+            if ( !northernHemisphere )
             {
                 // point is in southern hemisphere
                 y = y - 10000000.0; // remove 10,000,000 meter offset used for southern hemisphere
             }
 
-            double dLongOrigin = (iZoneNumber - 1) * 6 - 180 + 3; // +3 puts origin in middle of zone
+            Double longOrigin = (zoneNumber - 1) * 6 - 180 + 3; // +3 puts origin in middle of zone
 
-            double eccPrimeSquared = (eccSquared) / (1 - eccSquared);
+            Double excentricityPrimeSquared = (excentricitySquared) / (1 - excentricitySquared);
 
-            double M = y / dScaleFactor;
-            double mu = M / (dEquatorialRadius * (1 - eccSquared / 4 - 3 * eccSquared * eccSquared / 64 - 5 * eccSquared * eccSquared * eccSquared / 256));
+            Double M = y / dScaleFactor;
+            Double mu = M / (equatorialRadius * (1 - excentricitySquared / 4 - 3 * excentricitySquared * excentricitySquared / 64 - 5 * excentricitySquared * excentricitySquared * excentricitySquared / 256));
 
-            double e1 = (1 - Math.Sqrt(1 - eccSquared)) / (1 + Math.Sqrt(1 - eccSquared));
+            Double e1 = (1 - Math.Sqrt(1 - excentricitySquared)) / (1 + Math.Sqrt(1 - excentricitySquared));
             // phi in radians
-            double phi1Rad = mu + (3 * e1 / 2 - 27 * e1 * e1 * e1 / 32) * Math.Sin(2 * mu)
+            Double phi1Rad = mu + (3 * e1 / 2 - 27 * e1 * e1 * e1 / 32) * Math.Sin(2 * mu)
                   + (21 * e1 * e1 / 16 - 55 * e1 * e1 * e1 * e1 / 32) * Math.Sin(4 * mu)
                   + (151 * e1 * e1 * e1 / 96) * Math.Sin(6 * mu);
             // convert to degrees
-            double phi1 = phi1Rad * dCvtRad2Deg;
+            Double phi1 = phi1Rad * _convertRadianToDegree;
 
-            double N1 = dEquatorialRadius / Math.Sqrt(1 - eccSquared * Math.Sin(phi1Rad) * Math.Sin(phi1Rad));
-            double T1 = Math.Tan(phi1Rad) * Math.Tan(phi1Rad);
-            double C1 = eccPrimeSquared * Math.Cos(phi1Rad) * Math.Cos(phi1Rad);
-            double R1 = dEquatorialRadius * (1 - eccSquared) / Math.Pow(1 - eccSquared * Math.Sin(phi1Rad) * Math.Sin(phi1Rad), 1.5);
-            double D = x / (N1 * dScaleFactor);
+            Double N1 = equatorialRadius / Math.Sqrt(1 - excentricitySquared * Math.Sin(phi1Rad) * Math.Sin(phi1Rad));
+            Double T1 = Math.Tan(phi1Rad) * Math.Tan(phi1Rad);
+            Double C1 = excentricityPrimeSquared * Math.Cos(phi1Rad) * Math.Cos(phi1Rad);
+            Double R1 = equatorialRadius * (1 - excentricitySquared) / Math.Pow(1 - excentricitySquared * Math.Sin(phi1Rad) * Math.Sin(phi1Rad), 1.5);
+            Double D = x / (N1 * dScaleFactor);
 
             // phi in radians
-            double dLat = phi1Rad - (N1 * Math.Tan(phi1Rad) / R1) * (D * D / 2 - (5 + 3 * T1 + 10 * C1 - 4 * C1 * C1 - 9 * eccPrimeSquared) * D * D * D * D / 24
-                    + (61 + 90 * T1 + 298 * C1 + 45 * T1 * T1 - 252 * eccPrimeSquared - 3 * C1 * C1) * D * D * D * D * D * D / 720);
+            Double latitude = phi1Rad - (N1 * Math.Tan(phi1Rad) / R1) * (D * D / 2 - (5 + 3 * T1 + 10 * C1 - 4 * C1 * C1 - 9 * excentricityPrimeSquared) * D * D * D * D / 24
+                    + (61 + 90 * T1 + 298 * C1 + 45 * T1 * T1 - 252 * excentricityPrimeSquared - 3 * C1 * C1) * D * D * D * D * D * D / 720);
             // convert to degrees
-            dLat = dLat * dCvtRad2Deg;
+            latitude = latitude * _convertRadianToDegree;
 
             // lon in radians
-            double dLon = (D - (1 + 2 * T1 + C1) * D * D * D / 6 + (5 - 2 * C1 + 28 * T1 - 3 * C1 * C1 + 8 * eccPrimeSquared + 24 * T1 * T1)
+            Double longitude = (D - (1 + 2 * T1 + C1) * D * D * D / 6 + (5 - 2 * C1 + 28 * T1 - 3 * C1 * C1 + 8 * excentricityPrimeSquared + 24 * T1 * T1)
                     * D * D * D * D * D / 120) / Math.Cos(phi1Rad);
             // convert to degrees
-            dLon = dLongOrigin + dLon * dCvtRad2Deg;
+            longitude = longOrigin + longitude * _convertRadianToDegree;
 
-            Longitude = dLon;
-            Latitude = dLat;
-            mDatum = iDatum;
+            Longitude = longitude;
+            Latitude = latitude;
+            _Datum = datum;
         }
         #endregion
 
         #region methods
+        /// <summary>
+        /// Checks whether the point is on the northern hemisphere.
+        /// </summary>
+        /// <returns>True if on northern hemisphere or exactly at equator, false otherwise.</returns>
         public Boolean IsNorthernHemisphere()
         {
             return Latitude >= 0;
         }
+        /// <summary>
+        /// Checks whether the point is west of Greenwich.
+        /// </summary>
+        /// <returns>True if west of Greenwich or exactly on meridian, false otherwise.</returns>
         public Boolean IsWesternLongitude()
         {
-            return Longitude < 0;
+            return Longitude <= 0;
         }
-        protected void SetDatum(GeoDatum iNewDatum)
+        private void SetDatum(GeoDatum newDatum)
         {
             // Source http://home.hiwaay.net/~taylorc/bookshelf/math-science/geodesy/datum/transform/molodensky/
-            double LatRad = Latitude / dCvtRad2Deg;
-            double LongRad = Longitude / dCvtRad2Deg;
+            double LatRad = Latitude / _convertRadianToDegree;
+            double LongRad = Longitude / _convertRadianToDegree;
             double slat = Math.Sin(LatRad);
             double clat = Math.Cos(LatRad);
             double slon = Math.Sin(LongRad);
@@ -188,11 +208,11 @@ namespace De.AHoerstemeier.Geo
             double from_esq = Datum.Ellipsoid.ExcentricitySquared;
             double ssqlat = slat * slat;
             double adb = 1.0 / (1.0 - from_f);  // "a divided by b"
-            double da = iNewDatum.Ellipsoid.SemiMajorAxis - Datum.Ellipsoid.SemiMajorAxis;
-            double df = iNewDatum.Ellipsoid.Flattening - Datum.Ellipsoid.Flattening;
-            double dx = -iNewDatum.deltaX + Datum.deltaX;
-            double dy = -iNewDatum.deltaY + Datum.deltaY;
-            double dz = -iNewDatum.deltaZ + Datum.deltaZ;
+            double da = newDatum.Ellipsoid.SemiMajorAxis - Datum.Ellipsoid.SemiMajorAxis;
+            double df = newDatum.Ellipsoid.Flattening - Datum.Ellipsoid.Flattening;
+            double dx = -newDatum.DeltaX + Datum.DeltaX;
+            double dy = -newDatum.DeltaY + Datum.DeltaY;
+            double dz = -newDatum.DeltaZ + Datum.DeltaZ;
 
             double rn = from_a / Math.Sqrt(1.0 - from_esq * ssqlat);
             double rm = from_a * (1.0 - from_esq) / Math.Pow((1.0 - from_esq * ssqlat), 1.5);
@@ -207,55 +227,55 @@ namespace De.AHoerstemeier.Geo
             double dh = (dx * clat * clon) + (dy * clat * slon) + (dz * slat)
                  - (da * (from_a / rn)) + ((df * rn * ssqlat) / adb);
 
-            Longitude = Longitude + dlon * dCvtRad2Deg;
-            Latitude = Latitude + dlat * dCvtRad2Deg;
+            Longitude = Longitude + dlon * _convertRadianToDegree;
+            Latitude = Latitude + dlat * _convertRadianToDegree;
             Altitude = Altitude + dh;
-            mDatum = iNewDatum;
+            _Datum = newDatum;
         }
-        internal static void ShiftPositionInRectangle(ref Double ioLatitude, ref Double lLongitude, PositionInRectangle lPositionInRectangle, Double iHeight, Double iWidth)
+        internal static void ShiftPositionInRectangle(ref Double latitude, ref Double longitude, PositionInRectangle positionInRectangle, Double height, Double width)
         {
-            switch ( lPositionInRectangle )
+            switch ( positionInRectangle )
             {
                 case PositionInRectangle.TopLeft:
                 case PositionInRectangle.TopMiddle:
                 case PositionInRectangle.TopRight:
-                    ioLatitude += iHeight;
+                    latitude += height;
                     break;
             }
 
-            switch ( lPositionInRectangle )
+            switch ( positionInRectangle )
             {
                 case PositionInRectangle.MiddleLeft:
                 case PositionInRectangle.MiddleMiddle:
                 case PositionInRectangle.MiddleRight:
-                    ioLatitude += iHeight / 2;
+                    latitude += height / 2;
                     break;
             }
 
-            switch ( lPositionInRectangle )
+            switch ( positionInRectangle )
             {
                 case PositionInRectangle.TopRight:
                 case PositionInRectangle.MiddleRight:
                 case PositionInRectangle.BottomRight:
-                    lLongitude += iWidth;
+                    longitude += width;
                     break;
             }
 
-            switch ( lPositionInRectangle )
+            switch ( positionInRectangle )
             {
                 case PositionInRectangle.TopMiddle:
                 case PositionInRectangle.MiddleMiddle:
                 case PositionInRectangle.BottomMiddle:
-                    lLongitude += iWidth / 2;
+                    longitude += width / 2;
                     break;
             }
         }
 
-        public void ExportToKml(XmlNode iNode)
+        public void ExportToKml(XmlNode node)
         {
-            XmlDocument lXmlDocument = Helper.XmlDocumentFromNode(iNode);
+            XmlDocument lXmlDocument = Helper.XmlDocumentFromNode(node);
             var lNewElement = (XmlElement)lXmlDocument.CreateNode("element", "Point", "");
-            iNode.AppendChild(lNewElement);
+            node.AppendChild(lNewElement);
 
             var lCoordinatesElement = (XmlElement)lXmlDocument.CreateNode("element", "coordinates", "");
             lCoordinatesElement.InnerText =
@@ -263,11 +283,11 @@ namespace De.AHoerstemeier.Geo
                 Longitude.ToString(Helper.CultureInfoUS) + ",0";
             lNewElement.AppendChild(lCoordinatesElement);
         }
-        public void ExportToXML(XmlElement iNode)
+        public void ExportToXML(XmlElement node)
         {
-            XmlDocument lXmlDocument = Helper.XmlDocumentFromNode(iNode);
+            XmlDocument lXmlDocument = Helper.XmlDocumentFromNode(node);
             var lNewElement = (XmlElement)lXmlDocument.CreateNode("element", "geo:Point", "");
-            iNode.AppendChild(lNewElement);
+            node.AppendChild(lNewElement);
 
             var lLatitudeElement = (XmlElement)lXmlDocument.CreateNode("element", "geo:lat", "");
             lLatitudeElement.InnerText = Latitude.ToString(Helper.CultureInfoUS);
@@ -277,15 +297,15 @@ namespace De.AHoerstemeier.Geo
             lLongitudeElement.InnerText = Longitude.ToString(Helper.CultureInfoUS);
             lNewElement.AppendChild(lLongitudeElement);
         }
-        public UTMPoint CalcUTM()
+        public UtmPoint CalcUTM()
         {
             //converts lat/long to UTM coords.  Equations from USGS Bulletin 1532 
             //East Longitudes are positive, West longitudes are negative. 
             //North latitudes are positive, South latitudes are negative
             //Lat and Long are in decimal degrees
 
-            double eccSquared = mDatum.Ellipsoid.ExcentricitySquared;
-            double dEquatorialRadius = mDatum.Ellipsoid.SemiMajorAxis;
+            double eccSquared = _Datum.Ellipsoid.ExcentricitySquared;
+            double dEquatorialRadius = _Datum.Ellipsoid.SemiMajorAxis;
 
             double k0 = 0.9996;
 
@@ -295,8 +315,8 @@ namespace De.AHoerstemeier.Geo
             //Make sure the longitude is between -180.00 .. 179.9
             double lLongitude = (Longitude + 180) - Math.Truncate((Longitude + 180) / 360) * 360 - 180; // -180.00 .. 179.9;
 
-            double LatRad = Latitude / dCvtRad2Deg;
-            double LongRad = Longitude / dCvtRad2Deg;
+            double LatRad = Latitude / _convertRadianToDegree;
+            double LongRad = Longitude / _convertRadianToDegree;
 
             Int32 ZoneNumber = (Int32)Math.Truncate((lLongitude + 180) / 6) + 1;
 
@@ -325,7 +345,7 @@ namespace De.AHoerstemeier.Geo
                 }
             }
             LongOrigin = (ZoneNumber - 1) * 6 - 180 + 3;  //+3 puts origin in middle of zone
-            double LongOriginRad = LongOrigin / dCvtRad2Deg;
+            double LongOriginRad = LongOrigin / _convertRadianToDegree;
 
             double N = dEquatorialRadius / Math.Sqrt(1 - eccSquared * Math.Sin(LatRad) * Math.Sin(LatRad));
             double T = Math.Tan(LatRad) * Math.Tan(LatRad);
@@ -346,24 +366,24 @@ namespace De.AHoerstemeier.Geo
             {
                 UTMNorthing += 10000000.0; //10000000 meter offset for southern hemisphere
             }
-            UTMPoint lResult = new UTMPoint(
+            UtmPoint lResult = new UtmPoint(
                 (Int32)Math.Truncate(UTMEasting),
                 (Int32)Math.Truncate(UTMNorthing),
                 ZoneNumber, Latitude >= 0);
             return lResult;
         }
 
-        public static GeoPoint Load(XmlNode iNode)
+        public static GeoPoint Load(XmlNode node)
         {
             GeoPoint RetVal = null;
 
-            if ( iNode != null && iNode.Name.Equals("geo:Point") )
+            if ( node != null && node.Name.Equals("geo:Point") )
             {
                 RetVal = new GeoPoint();
 
-                if ( iNode.HasChildNodes )
+                if ( node.HasChildNodes )
                 {
-                    foreach ( XmlNode lChildNode in iNode.ChildNodes )
+                    foreach ( XmlNode lChildNode in node.ChildNodes )
                     {
                         if ( lChildNode.Name == "geo:lat" )
                         {
@@ -382,14 +402,14 @@ namespace De.AHoerstemeier.Geo
 
         }
 
-        private static String CoordinateToString(string iFormat, double iValue)
+        private static String CoordinateToString(String format, Double value)
         {
-            String lResult = iFormat;
+            String lResult = format;
 
-            lResult = lResult.Replace("%C", Math.Truncate(iValue).ToString());
-            lResult = lResult.Replace("%D", Math.Truncate(Math.Abs(iValue)).ToString());
-            lResult = lResult.Replace("%M", Math.Truncate((Math.Abs(iValue) * 60) % 60).ToString());
-            lResult = lResult.Replace("%S", Math.Truncate((Math.Abs(iValue) * 3600) % 60).ToString());
+            lResult = lResult.Replace("%C", Math.Truncate(value).ToString());
+            lResult = lResult.Replace("%D", Math.Truncate(Math.Abs(value)).ToString());
+            lResult = lResult.Replace("%M", Math.Truncate((Math.Abs(value) * 60) % 60).ToString());
+            lResult = lResult.Replace("%S", Math.Truncate((Math.Abs(value) * 3600) % 60).ToString());
 
             // http://www.codeproject.com/KB/string/llstr.aspx
             // String.Format() ?
@@ -404,7 +424,7 @@ namespace De.AHoerstemeier.Geo
             // %s - decimal seconds, always positive
             return lResult;
         }
-        public String ToString(string iFormat)
+        public String ToString(String format)
         {
             // %H - hemisphere - single character of N,S,E,W
             // %C - integer co-ordinate, may be negative or positive
@@ -416,7 +436,7 @@ namespace De.AHoerstemeier.Geo
             // %m - decimal minutes, always positive
             // %s - decimal seconds, always positive
             // %% - for %
-            String lLatitude = CoordinateToString(iFormat, Latitude);
+            String lLatitude = CoordinateToString(format, Latitude);
             if ( Latitude >= 0 )
             {
                 lLatitude = lLatitude.Replace("%H", "N");
@@ -425,7 +445,7 @@ namespace De.AHoerstemeier.Geo
             {
                 lLatitude = lLatitude.Replace("%H", "S");
             }
-            String lLongitude = CoordinateToString(iFormat, Longitude);
+            String lLongitude = CoordinateToString(format, Longitude);
             if ( Longitude >= 0 )
             {
                 lLongitude = lLongitude.Replace("%H", "E");
@@ -464,15 +484,31 @@ namespace De.AHoerstemeier.Geo
             return lResult;
         }
 
-        private String CalcGeoHash(Int32 iAccuracy)
+        private String CalcGeoHash(Int32 accuracy)
         {
-            return De.AHoerstemeier.Geo.GeoHash.EncodeGeoHash(this, iAccuracy);
+            return De.AHoerstemeier.Geo.GeoHash.EncodeGeoHash(this, accuracy);
         }
-        private void SetGeoHash(String iValue)
+        private void SetGeoHash(String value)
         {
-            GeoPoint lPoint = De.AHoerstemeier.Geo.GeoHash.DecodeGeoHash(iValue);
+            GeoPoint lPoint = De.AHoerstemeier.Geo.GeoHash.DecodeGeoHash(value);
             this.Latitude = lPoint.Latitude;
             this.Longitude = lPoint.Longitude;
+        }
+
+        private void SetMaidenhead(String value)
+        {
+            Double latitude = 0;
+            Double longitude = 0;
+            MaidenheadLocator.GeographicalCoordinatesByMaidenheadLocator(value, _DefaultPositionInRectangle, out latitude, out longitude);
+            Datum = GeoDatum.DatumWGS84();
+            this.Latitude = latitude;
+            this.Longitude = longitude;
+        }
+        private String CalcMaidenhead(Int32 precision)
+        {
+
+            String result = MaidenheadLocator.GetMaidenheadLocator(Latitude, Longitude, true, precision);
+            return result;
         }
 
         private static GeoPoint ParseDegMinSec(String value)
@@ -484,7 +520,7 @@ namespace De.AHoerstemeier.Geo
 
             // Now parse using the regex parser
             MatchCollection matches = Parser.Matches(value);
-            if (matches.Count != 2)
+            if ( matches.Count != 2 )
             {
                 throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
             }
@@ -492,17 +528,17 @@ namespace De.AHoerstemeier.Geo
             Double latitude = 0.0;
             Double longitude = 0.0;
 
-            foreach (Match match in matches)
+            foreach ( Match match in matches )
             {
                 // Convert - adjust the sign if necessary
                 Double deg = Double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
                 Double min = Double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
                 Double sec = Double.Parse(match.Groups[3].Value, CultureInfo.InvariantCulture);
                 Double result = deg + (min / 60) + (sec / 3600);
-                if (match.Groups[4].Success)
+                if ( match.Groups[4].Success )
                 {
                     Char ch = match.Groups[4].Value[0];
-                    switch (ch)
+                    switch ( ch )
                     {
                         case 'S':
                             {
@@ -538,7 +574,7 @@ namespace De.AHoerstemeier.Geo
 
             // Now parse using the regex parser
             MatchCollection matches = Parser.Matches(value);
-            if (matches.Count != 2)
+            if ( matches.Count != 2 )
             {
                 throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
             }
@@ -546,16 +582,16 @@ namespace De.AHoerstemeier.Geo
             Double latitude = 0.0;
             Double longitude = 0.0;
 
-            foreach (Match match in matches)
+            foreach ( Match match in matches )
             {
                 // Convert - adjust the sign if necessary
                 Double deg = Double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
                 Double min = Double.Parse(match.Groups[2].Value, CultureInfo.InvariantCulture);
                 Double result = deg + (min / 60);
-                if (match.Groups[3].Success)
+                if ( match.Groups[3].Success )
                 {
                     Char ch = match.Groups[3].Value[0];
-                    switch (ch)
+                    switch ( ch )
                     {
                         case 'S':
                             {
@@ -591,7 +627,7 @@ namespace De.AHoerstemeier.Geo
 
             // Now parse using the regex parser
             MatchCollection matches = Parser.Matches(value);
-            if (matches.Count != 2)
+            if ( matches.Count != 2 )
             {
                 throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
             }
@@ -599,15 +635,15 @@ namespace De.AHoerstemeier.Geo
             Double latitude = 0.0;
             Double longitude = 0.0;
 
-            foreach (Match match in matches)
+            foreach ( Match match in matches )
             {
                 // Convert - adjust the sign if necessary
                 Double deg = Double.Parse(match.Groups[1].Value, CultureInfo.InvariantCulture);
                 Double result = deg;
-                if (match.Groups[2].Success)
+                if ( match.Groups[2].Success )
                 {
                     Char ch = match.Groups[2].Value[0];
-                    switch (ch)
+                    switch ( ch )
                     {
                         case 'S':
                             {
@@ -646,17 +682,17 @@ namespace De.AHoerstemeier.Geo
 
         #endregion
         #region IEquatable Members
-        const double mAltitudeAccuracy = 0.01;  // 10 cm
-        const double mDegreeAccuracy = 0.00005;  // ca. 0.5 ArcSecond
-        public bool Equals(GeoPoint iObj)
+        const double _AltitudeAccuracy = 0.01;  // 10 cm
+        const double _DegreeAccuracy = 0.00005;  // ca. 0.5 ArcSecond
+        public bool Equals(GeoPoint value)
         {
-            double lAltitudeError = Math.Abs(iObj.Altitude - this.Altitude);
-            double lLatitudeError = Math.Abs(iObj.Latitude - this.Latitude);
-            double lLongitudeError = Math.Abs(iObj.Longitude - this.Longitude);
-            bool lResult = (lAltitudeError < mAltitudeAccuracy)
-                & (lLatitudeError < mDegreeAccuracy)
-                & (lLongitudeError < mDegreeAccuracy)
-                & (iObj.Datum.Equals(this.Datum));
+            double altitudeError = Math.Abs(value.Altitude - this.Altitude);
+            double latitudeError = Math.Abs(value.Latitude - this.Latitude);
+            double longitudeError = Math.Abs(value.Longitude - this.Longitude);
+            bool lResult = (altitudeError < _AltitudeAccuracy)
+                & (latitudeError < _DegreeAccuracy)
+                & (longitudeError < _DegreeAccuracy)
+                & (value.Datum.Equals(this.Datum));
             return lResult;
         }
         #endregion

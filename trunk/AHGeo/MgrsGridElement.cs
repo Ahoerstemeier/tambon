@@ -12,238 +12,238 @@ namespace De.AHoerstemeier.Geo
         private const UInt32 mDefColor = 0xffff0000;
 
         #region properties
-        private UTMPoint mCentralPoint = null;
-        public UTMPoint CentralPoint
+        public UtmPoint CentralPoint
         {
-            get { return mCentralPoint; }
+            get;
+            private set;
         }
-        private Int16 mDigits = UTMPoint.MinDigits;
+        private Int16 _Digits = UtmPoint.MinimumDigits;
         public Int16 Digits
         {
-            get { return mDigits; }
+            get { return _Digits; }
+            private set { _Digits = value; }
         }
         private GeoDatum mDatum = GeoDatum.DatumWGS84();
-        public GeoDatum Datum 
-        { 
-            get { return mDatum; } 
-            set { mDatum = value; } 
+        public GeoDatum Datum
+        {
+            get { return mDatum; }
+            set { mDatum = value; }
         }
-        private String mName = String.Empty;
+        private String _Name = String.Empty;
         public String Name
         {
-            get { return mName; }
+            get { return _Name; }
             set { SetMgrs(value); }
         }
         #endregion
 
         #region methods
-        private static Int32 GridSize(Int16 iDigits)
+        private static Int32 GridSize(Int16 digits)
         {
-            Int16 lDigits = UTMPoint.MakeDigitValid(iDigits);
-            Int32 lResult = Convert.ToInt32(Math.Pow(10, UTMPoint.MaxDigits - lDigits));
-            return lResult;
+            Int16 actualDigits = UtmPoint.MakeDigitValid(digits);
+            Int32 result = Convert.ToInt32(Math.Pow(10, UtmPoint.MaximumDigits - actualDigits));
+            return result;
         }
-        private static UTMPoint MakeCentral(UTMPoint iPoint, Int16 iDigits)
+        private static UtmPoint MakeCentral(UtmPoint point, Int16 digits)
         {
-            String lValue = iPoint.ToUTMString(iDigits);
-            UTMPoint lPoint = new UTMPoint(lValue);
-            Double lDistance = 0.5*GridSize(iDigits);
-            Double lEasting = lPoint.Easting + lDistance;
-            Double lNorthing = lPoint.Northing + lDistance;
-            UTMPoint lMiddlePoint = new UTMPoint(lEasting, lNorthing, lPoint.ZoneNumber, lPoint.IsNorthernHemisphere);
-            return lMiddlePoint;
+            String value = point.ToUtmString(digits);
+            UtmPoint utmPoint = new UtmPoint(value);
+            Double distance = 0.5 * GridSize(digits);
+            Double easting = utmPoint.Easting + distance;
+            Double northing = utmPoint.Northing + distance;
+            UtmPoint middlePoint = new UtmPoint(easting, northing, utmPoint.ZoneNumber, utmPoint.IsNorthernHemisphere);
+            return middlePoint;
         }
 
-        private Boolean SameZone(UTMPoint iPoint)
-        { 
-            GeoPoint lGeo = new GeoPoint(iPoint, mDatum);
-            UTMPoint lRealUtm = lGeo.CalcUTM();
-            Boolean lResult = (mCentralPoint.ZoneNumber == lRealUtm.ZoneNumber);
-            return lResult;
-        }
-        private UTMPoint LimitToZone(UTMPoint iPoint)
+        private Boolean SameZone(UtmPoint point)
         {
-            UTMPoint lResult = new UTMPoint(iPoint);
-            Int32 lMinEasting = 0;
-            Int32 lMaxEasting = 0;
-            if (iPoint.Easting < mCentralPoint.Easting)
+            GeoPoint geoPoint = new GeoPoint(point, mDatum);
+            UtmPoint realUtm = geoPoint.CalcUTM();
+            Boolean result = (CentralPoint.ZoneNumber == realUtm.ZoneNumber);
+            return result;
+        }
+        private UtmPoint LimitToZone(UtmPoint point)
+        {
+            UtmPoint result = new UtmPoint(point);
+            Int32 minEasting = 0;
+            Int32 maxEasting = 0;
+            if ( point.Easting < CentralPoint.Easting )
             {
-                lMinEasting = iPoint.Easting;
-                lMaxEasting = lMinEasting + GridSize(mDigits);
+                minEasting = point.Easting;
+                maxEasting = minEasting + GridSize(_Digits);
             }
             else
             {
-                lMaxEasting = iPoint.Easting;
-                lMinEasting = lMaxEasting - GridSize(mDigits);
+                maxEasting = point.Easting;
+                minEasting = maxEasting - GridSize(_Digits);
             }
-            Int32 lLeftZone = 0;
+            Int32 leftZone = 0;
             {
-                UTMPoint lTemp = new UTMPoint(iPoint);
-                lTemp.Easting = lMinEasting;
-                GeoPoint lTempGeo = new GeoPoint(lTemp, mDatum);
-                lTemp = lTempGeo.CalcUTM();
-                lLeftZone = lTemp.ZoneNumber;
+                UtmPoint tempUtmPoint = new UtmPoint(point);
+                tempUtmPoint.Easting = minEasting;
+                GeoPoint tempGeoPoint = new GeoPoint(tempUtmPoint, mDatum);
+                tempUtmPoint = tempGeoPoint.CalcUTM();
+                leftZone = tempUtmPoint.ZoneNumber;
             }
-            Int32 lDiff = lMaxEasting - lMinEasting;
-            while (lDiff > 1)
+            Int32 eastingDiff = maxEasting - minEasting;
+            while ( eastingDiff > 1 )
             {
-                Int32 lTempEasting = lMinEasting + lDiff / 2;
-                lResult = new UTMPoint(iPoint);
-                lResult.Easting = lTempEasting;
-                GeoPoint lTempGeo = new GeoPoint(lResult, mDatum);
-                UTMPoint lTemp = lTempGeo.CalcUTM();
-                if (lTemp.ZoneNumber > lLeftZone)
+                Int32 tempEasting = minEasting + eastingDiff / 2;
+                result = new UtmPoint(point);
+                result.Easting = tempEasting;
+                GeoPoint tempGeoPoint = new GeoPoint(result, mDatum);
+                UtmPoint empUtmPoint = tempGeoPoint.CalcUTM();
+                if ( empUtmPoint.ZoneNumber > leftZone )
                 {
-                    lMaxEasting = lTempEasting;
+                    maxEasting = tempEasting;
                 }
                 else
                 {
-                    lMinEasting = lTempEasting;
+                    minEasting = tempEasting;
                 }
-                lDiff = lDiff / 2;
+                eastingDiff = eastingDiff / 2;
             }
-            return lResult;
+            return result;
         }
-        public UTMPoint NorthWestCorner()
+        public UtmPoint NorthWestCorner()
         {
-            String lValue = mCentralPoint.ToUTMString(mDigits);
-            UTMPoint lResult = new UTMPoint(lValue);
-            if (!SameZone(lResult))
+            String value = CentralPoint.ToUtmString(_Digits);
+            UtmPoint result = new UtmPoint(value);
+            if ( !SameZone(result) )
             {
-                lResult = LimitToZone(lResult);
+                result = LimitToZone(result);
             }
-            return lResult;
+            return result;
         }
-        public UTMPoint NorthEastCorner()
+        public UtmPoint NorthEastCorner()
         {
-            String lValue = mCentralPoint.ToUTMString(mDigits);
-            UTMPoint lResult = new UTMPoint(lValue);
-            lResult.Easting += GridSize(mDigits);
-            if (!SameZone(lResult))
+            String value = CentralPoint.ToUtmString(_Digits);
+            UtmPoint result = new UtmPoint(value);
+            result.Easting += GridSize(_Digits);
+            if ( !SameZone(result) )
             {
-                lResult = LimitToZone(lResult);
+                result = LimitToZone(result);
             }
-            return lResult;
+            return result;
         }
-        public UTMPoint SouthWestCorner()
+        public UtmPoint SouthWestCorner()
         {
-            String lValue = mCentralPoint.ToUTMString(mDigits);
-            UTMPoint lResult = new UTMPoint(lValue);
-            lResult.Northing += GridSize(mDigits);
-            if (!SameZone(lResult))
+            String value = CentralPoint.ToUtmString(_Digits);
+            UtmPoint result = new UtmPoint(value);
+            result.Northing += GridSize(_Digits);
+            if ( !SameZone(result) )
             {
-                lResult = LimitToZone(lResult);
+                result = LimitToZone(result);
             }
-            return lResult;
+            return result;
         }
-        public UTMPoint SouthEastCorner()
+        public UtmPoint SouthEastCorner()
         {
-            String lValue = mCentralPoint.ToUTMString(mDigits);
-            UTMPoint lResult = new UTMPoint(lValue);
-            lResult.Easting += GridSize(mDigits);
-            lResult.Northing += GridSize(mDigits);
-            if (!SameZone(lResult))
+            String value = CentralPoint.ToUtmString(_Digits);
+            UtmPoint result = new UtmPoint(value);
+            result.Easting += GridSize(_Digits);
+            result.Northing += GridSize(_Digits);
+            if ( !SameZone(result) )
             {
-                lResult = LimitToZone(lResult);
+                result = LimitToZone(result);
             }
-            return lResult;
+            return result;
         }
-        public UTMPoint ActualCentralPoint()
+        public UtmPoint ActualCentralPoint()
         {
-            String lValue = mCentralPoint.ToUTMString(mDigits);
-            UTMPoint lWest = new UTMPoint(lValue);
-            lWest.Northing += GridSize(mDigits) / 2;
-            UTMPoint lEast = new UTMPoint(lWest);
-            lEast.Easting += GridSize(mDigits);
-            if (!SameZone(lWest))
+            String value = CentralPoint.ToUtmString(_Digits);
+            UtmPoint west = new UtmPoint(value);
+            west.Northing += GridSize(_Digits) / 2;
+            UtmPoint east = new UtmPoint(west);
+            east.Easting += GridSize(_Digits);
+            if ( !SameZone(west) )
             {
-                lWest = LimitToZone(lWest);
+                west = LimitToZone(west);
             }
-            if (!SameZone(lEast))
+            if ( !SameZone(east) )
             {
-                lEast = LimitToZone(lEast);
+                east = LimitToZone(east);
             }
-            UTMPoint lResult = new UTMPoint(lValue);
-            lResult.Northing += GridSize(mDigits) / 2;
-            lResult.Easting = (lWest.Easting + lEast.Easting) / 2;
-            return lResult;
+            UtmPoint result = new UtmPoint(value);
+            result.Northing += GridSize(_Digits) / 2;
+            result.Easting = (west.Easting + east.Easting) / 2;
+            return result;
         }
         public Boolean IsValid()
         {
-            Boolean lResult = SameZone(ActualCentralPoint());
-            return lResult; 
+            Boolean result = SameZone(ActualCentralPoint());
+            return result;
         }
 
         public List<MgrsGridElement> SubGrids()
         {
-            List<MgrsGridElement> lResult = new List<MgrsGridElement>();
-            String lStart = mName.Substring(0, 5);
-            String lNumbers = mName.Remove(0, 5);
-            for (Int32 lSubEasting = 0; lSubEasting < 10; lSubEasting++)
+            List<MgrsGridElement> result = new List<MgrsGridElement>();
+            String start = _Name.Substring(0, 5);
+            String numbers = _Name.Remove(0, 5);
+            for ( Int32 subEasting = 0 ; subEasting < 10 ; subEasting++ )
             {
-                for (Int32 lSubNorthing = 0; lSubNorthing < 10; lSubNorthing++)
+                for ( Int32 subNorthing = 0 ; subNorthing < 10 ; subNorthing++ )
                 {
-                    String lEastingString = lNumbers.Substring(0, mDigits-2) + lSubEasting.ToString();
-                    String lNorthingString = lNumbers.Substring(mDigits-2, mDigits-2) + lSubNorthing.ToString();
-                    String lName = lStart + lEastingString + lNorthingString;
-                    MgrsGridElement lSubElement = new MgrsGridElement(lName);
-                    lSubElement.Datum = this.Datum;
-                    if (lSubElement.IsValid())
+                    String eastingString = numbers.Substring(0, _Digits - 2) + subEasting.ToString();
+                    String northingString = numbers.Substring(_Digits - 2, _Digits - 2) + subNorthing.ToString();
+                    String name = start + eastingString + northingString;
+                    MgrsGridElement subElement = new MgrsGridElement(name);
+                    subElement.Datum = this.Datum;
+                    if ( subElement.IsValid() )
                     {
-                        lResult.Add(lSubElement);
+                        result.Add(subElement);
                     }
                 }
             }
-            return lResult;
+            return result;
         }
 
-        private static void AddKmlStyle(KmlHelper iKmlWriter)
+        private static void AddKmlStyle(KmlHelper kmlWriter)
         {
-            XmlNode lNode = iKmlWriter.AddStyle(mDefStyle);
-            iKmlWriter.AddStylePoly(lNode, 2, mDefColor, false);
-            iKmlWriter.AddIconStyle(lNode,new Uri("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png"));
+            XmlNode node = kmlWriter.AddStyle(mDefStyle);
+            kmlWriter.AddStylePoly(node, 2, mDefColor, false);
+            kmlWriter.AddIconStyle(node, new Uri("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png"));
         }
-        public void WriteToKml(KmlHelper iKmlWriter, XmlNode iNode)
+        public void WriteToKml(KmlHelper kmlWriter, XmlNode node)
         {
-            XmlNode lNode = iNode;
-            String lDescription = "MGRS Grid: " + mName;
+            String description = "MGRS Grid: " + _Name;
 
-            GeoPoint lPoint = new GeoPoint(ActualCentralPoint(),mDatum);
+            GeoPoint point = new GeoPoint(ActualCentralPoint(), mDatum);
             // iKmlWriter.AddPoint(iNode, lPoint.Latitude, lPoint.Longitude, mName, mDefStyle, String.Empty, lDescription);
-            List<GeoPoint> lBorder = new List<GeoPoint>();
-            lBorder.Add(new GeoPoint(NorthWestCorner(),mDatum));
-            lBorder.Add(new GeoPoint(NorthEastCorner(),mDatum));
-            lBorder.Add(new GeoPoint(SouthEastCorner(),mDatum));
-            lBorder.Add(new GeoPoint(SouthWestCorner(),mDatum));
-            lBorder.Add(new GeoPoint(NorthWestCorner(),mDatum));
-            iKmlWriter.AddPolygon(iNode, lBorder, mName, mDefStyle, lDescription, true);
+            List<GeoPoint> border = new List<GeoPoint>();
+            border.Add(new GeoPoint(NorthWestCorner(), mDatum));
+            border.Add(new GeoPoint(NorthEastCorner(), mDatum));
+            border.Add(new GeoPoint(SouthEastCorner(), mDatum));
+            border.Add(new GeoPoint(SouthWestCorner(), mDatum));
+            border.Add(new GeoPoint(NorthWestCorner(), mDatum));
+            kmlWriter.AddPolygon(node, border, _Name, mDefStyle, description, true);
         }
-        public void ExportToKml(String iFilename)
+        public void ExportToKml(String fileName)
         {
-            KmlHelper lKmlWriter = StartKmlWriting();
-            WriteToKml(lKmlWriter, lKmlWriter.DocumentNode);
-            lKmlWriter.SaveToFile(iFilename);
+            KmlHelper kmlWriter = StartKmlWriting();
+            WriteToKml(kmlWriter, kmlWriter.DocumentNode);
+            kmlWriter.SaveToFile(fileName);
         }
         public static KmlHelper StartKmlWriting()
         {
-            KmlHelper lKmlWriter = new KmlHelper();
-            AddKmlStyle(lKmlWriter);
-            return lKmlWriter;
+            KmlHelper kmlWriter = new KmlHelper();
+            AddKmlStyle(kmlWriter);
+            return kmlWriter;
         }
         #endregion
 
-        private void SetMgrs(String iValue)
+        private void SetMgrs(String value)
         {
-            String lMgrs = iValue.Replace(" ", "");
-            Int16 lDigits = Convert.ToInt16((lMgrs.Length-1)/2);
-            mCentralPoint = MakeCentral(UTMPoint.ParseMGRSString(iValue), lDigits);
-            mDigits = lDigits;
-            mName = iValue;
+            String mgrs = value.Replace(" ", "");
+            Int16 digits = Convert.ToInt16((mgrs.Length - 1) / 2);
+            CentralPoint = MakeCentral(UtmPoint.ParseMgrsString(value), digits);
+            _Digits = digits;
+            _Name = value;
         }
 
-        public MgrsGridElement(String iMgrs)
+        public MgrsGridElement(String mgrs)
         {
-            SetMgrs(iMgrs);
+            SetMgrs(mgrs);
         }
     }
 }

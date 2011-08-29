@@ -22,17 +22,17 @@ namespace De.AHoerstemeier.Geo
     internal class Helper
     {
         static public CultureInfo CultureInfoUS = new CultureInfo("en-us");
-        internal static XmlDocument XmlDocumentFromNode(XmlNode iNode)
+        internal static XmlDocument XmlDocumentFromNode(XmlNode node)
         {
             XmlDocument retval = null;
 
-            if ( iNode is XmlDocument )
+            if ( node is XmlDocument )
             {
-                retval = (XmlDocument)iNode;
+                retval = (XmlDocument)node;
             }
             else
             {
-                retval = iNode.OwnerDocument;
+                retval = node.OwnerDocument;
             }
 
             return retval;
