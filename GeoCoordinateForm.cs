@@ -16,49 +16,49 @@ namespace De.AHoerstemeier.Tambon
 {
     public partial class GeoCoordinateForm : Form
     {
-        private Boolean mChanging = false;
-        private GeoPoint mPoint = null;
+        private Boolean _Changing = false;
+        private GeoPoint _Point = null;
 
         public GeoCoordinateForm()
         {
             InitializeComponent();
         }
 
-        private String ZoneForThailandMGRS(String iValue)
+        private String ZoneForThailandMgrs(String value)
         {
-            Int32 lZone = 0;
-            char lEastingChar = iValue[0];
-            if ((lEastingChar >= 'A') && (lEastingChar <= 'H'))
+            Int32 zone = 0;
+            Char eastingChar = value[0];
+            if ( (eastingChar >= 'A') && (eastingChar <= 'H') )
             {
-                lZone = 49;
+                zone = 49;
             }
-            else if ((lEastingChar >= 'J') && (lEastingChar <= 'R'))
+            else if ( (eastingChar >= 'J') && (eastingChar <= 'R') )
             {
-                lZone = 47;
+                zone = 47;
             }
-            else if ((lEastingChar >= 'S') && (lEastingChar <= 'Z'))
+            else if ( (eastingChar >= 'S') && (eastingChar <= 'Z') )
             {
-                lZone = 48;
+                zone = 48;
             }
-            char lNorthingChar = iValue[1];
-            String lNorthingCharacters = UTMPoint.MGRSNorthingChars(lZone);
-            Int32 lNorthingCount = lNorthingCharacters.IndexOf(lNorthingChar);
+            Char northingChar = value[1];
+            String northingCharacters = UtmPoint.MgrsNorthingChars(zone);
+            Int32 northingCount = northingCharacters.IndexOf(northingChar);
 
-            char lZoneChar;
-            if (lNorthingCount > 17)
+            Char zoneChar;
+            if ( northingCount > 17 )
             {
-                lZoneChar = 'Q';
+                zoneChar = 'Q';
             }
-            else if (lNorthingCount>8)
+            else if ( northingCount > 8 )
             {
-                lZoneChar = 'P';
+                zoneChar = 'P';
             }
             else
             {
-                lZoneChar = 'N';
+                zoneChar = 'N';
             }
-            String lResult = lZone.ToString() + lZoneChar;
-            return lResult;
+            String result = zone.ToString() + zoneChar;
+            return result;
         }
 
         private void GeoCoordinateForm_Load(object sender, EventArgs e)
@@ -69,160 +69,160 @@ namespace De.AHoerstemeier.Tambon
             cbx_datum.Items.Add(GeoDatum.DatumIndian1954());
         }
 
-        private void SetValues(GeoPoint iGeoPoint, UTMPoint iUTM, object sender)
+        private void SetValues(GeoPoint geoPoint, UtmPoint utmPoint, object sender)
         {
-            if (sender != edt_LatLong)
+            if ( sender != edt_LatLong )
             {
-                if (iGeoPoint == null)
+                if ( geoPoint == null )
                 {
                     edt_LatLong.Text = String.Empty;
                 }
                 else
                 {
-                    edt_LatLong.Text = iGeoPoint.ToString();
+                    edt_LatLong.Text = geoPoint.ToString();
                 }
             }
-            if (sender != edt_geohash)
+            if ( sender != edt_geohash )
             {
-                if (iGeoPoint == null)
+                if ( geoPoint == null )
                 {
                     edt_geohash.Text = String.Empty;
                 }
                 else
                 {
-                    edt_geohash.Text = iGeoPoint.GeoHash;
+                    edt_geohash.Text = geoPoint.GeoHash;
                 }
             }
-            if (sender != edt_UTM)
+            if ( sender != edt_UTM )
             {
-                if (iUTM == null)
+                if ( utmPoint == null )
                 {
                     edt_UTM.Text = String.Empty;
                 }
                 else
                 {
-                    edt_UTM.Text = iUTM.ToString();
+                    edt_UTM.Text = utmPoint.ToString();
                 }
             }
-            if (sender != edt_MGRS)
+            if ( sender != edt_MGRS )
             {
-                if (iUTM == null)
+                if ( utmPoint == null )
                 {
                     edt_MGRS.Text = String.Empty;
                 }
                 else
                 {
-                    edt_MGRS.Text = iUTM.ToMGRSString(6);
+                    edt_MGRS.Text = utmPoint.ToMgrsString(6);
                 }
             }
-            mPoint = iGeoPoint;
-            btnFlyTo.Enabled = (mPoint != null);
+            _Point = geoPoint;
+            btnFlyTo.Enabled = (_Point != null);
         }
 
         private void edit_MGRS_TextChanged(object sender, EventArgs e)
         {
-            if (!mChanging)
+            if ( !_Changing )
             {
-                String lValue = TambonHelper.ReplaceThaiNumerals(edt_MGRS.Text.ToUpper()).Trim();
-                GeoPoint lGeo = null;
-                UTMPoint lUTM = null;
+                String value = TambonHelper.ReplaceThaiNumerals(edt_MGRS.Text.ToUpper()).Trim();
+                GeoPoint geoPoint = null;
+                UtmPoint utmPoint = null;
                 try
                 {
-                    mChanging = true;
-                    if (!TambonHelper.IsNumeric(lValue.Substring(0,2)))
+                    _Changing = true;
+                    if ( !TambonHelper.IsNumeric(value.Substring(0, 2)) )
                     {
-                      lValue = ZoneForThailandMGRS(lValue) + lValue;
+                        value = ZoneForThailandMgrs(value) + value;
                     }
-                    lUTM = UTMPoint.ParseMGRSString(lValue);
-                    lGeo = new GeoPoint(lUTM, (GeoDatum)cbx_datum.SelectedItem);
-                    lGeo.Datum = GeoDatum.DatumWGS84();
+                    utmPoint = UtmPoint.ParseMgrsString(value);
+                    geoPoint = new GeoPoint(utmPoint, (GeoDatum)cbx_datum.SelectedItem);
+                    geoPoint.Datum = GeoDatum.DatumWGS84();
                 }
                 catch
                 {
                     // invalid string
-                    lUTM = null;
-                    lGeo = null;
+                    utmPoint = null;
+                    geoPoint = null;
                 }
-                SetValues(lGeo, lUTM, sender);
-                mChanging = false;
+                SetValues(geoPoint, utmPoint, sender);
+                _Changing = false;
             }
         }
 
         private void edit_UTM_TextChanged(object sender, EventArgs e)
         {
-            if (!mChanging)
+            if ( !_Changing )
             {
-                String lValue = TambonHelper.ReplaceThaiNumerals(edt_UTM.Text.ToUpper()).Trim();
-                GeoPoint lGeo = null;
-                UTMPoint lUTM = null;
+                String value = TambonHelper.ReplaceThaiNumerals(edt_UTM.Text.ToUpper()).Trim();
+                GeoPoint geoPoint = null;
+                UtmPoint utmPoint = null;
                 try
                 {
-                    mChanging = true;
-                    lUTM = UTMPoint.ParseUTMString(lValue);
-                    lGeo = new GeoPoint(lUTM, (GeoDatum)cbx_datum.SelectedItem);
-                    lGeo.Datum = GeoDatum.DatumWGS84();
+                    _Changing = true;
+                    utmPoint = UtmPoint.ParseUtmString(value);
+                    geoPoint = new GeoPoint(utmPoint, (GeoDatum)cbx_datum.SelectedItem);
+                    geoPoint.Datum = GeoDatum.DatumWGS84();
                 }
                 catch
                 {
                     // invalid string
-                    lUTM = null;
-                    lGeo = null;
+                    utmPoint = null;
+                    geoPoint = null;
                 }
-                SetValues(lGeo, lUTM, sender);
-                mChanging = false;
+                SetValues(geoPoint, utmPoint, sender);
+                _Changing = false;
             }
         }
 
         private void edt_geohash_TextChanged(object sender, EventArgs e)
         {
-            if (!mChanging)
+            if ( !_Changing )
             {
-                GeoPoint lGeo = null;
-                UTMPoint lUTM = null;
+                GeoPoint geoPoint = null;
+                UtmPoint utmPoint = null;
                 try
                 {
-                    mChanging = true;
-                    lGeo = new GeoPoint();
-                    lGeo.GeoHash = edt_geohash.Text;
-                    GeoPoint lGeoOtherDatum = new GeoPoint(lGeo);
+                    _Changing = true;
+                    geoPoint = new GeoPoint();
+                    geoPoint.GeoHash = edt_geohash.Text;
+                    GeoPoint lGeoOtherDatum = new GeoPoint(geoPoint);
                     lGeoOtherDatum.Datum = (GeoDatum)cbx_datum.SelectedItem;
-                    lUTM = lGeoOtherDatum.CalcUTM();
+                    utmPoint = lGeoOtherDatum.CalcUTM();
                 }
                 catch
                 {
                     // invalid string
-                    lUTM = null;
-                    lGeo = null;
+                    utmPoint = null;
+                    geoPoint = null;
                 }
-                SetValues(lGeo, lUTM, sender);
-                mChanging = false;
+                SetValues(geoPoint, utmPoint, sender);
+                _Changing = false;
             }
 
         }
 
         private void edt_LatLong_TextChanged(object sender, EventArgs e)
         {
-            if (!mChanging)
+            if ( !_Changing )
             {
-                GeoPoint lGeo = null;
-                UTMPoint lUTM = null;
+                GeoPoint geoPoint = null;
+                UtmPoint utmPoint = null;
                 try
                 {
-                    mChanging = true;
-                    lGeo = new GeoPoint(edt_LatLong.Text);
-                    lGeo.Datum = (GeoDatum)cbx_datum.SelectedItem;
-                    GeoPoint lGeoOtherDatum = new GeoPoint(lGeo);
+                    _Changing = true;
+                    geoPoint = new GeoPoint(edt_LatLong.Text);
+                    geoPoint.Datum = (GeoDatum)cbx_datum.SelectedItem;
+                    GeoPoint lGeoOtherDatum = new GeoPoint(geoPoint);
                     lGeoOtherDatum.Datum = (GeoDatum)cbx_datum.SelectedItem;
-                    lUTM = lGeoOtherDatum.CalcUTM();
+                    utmPoint = lGeoOtherDatum.CalcUTM();
                 }
                 catch
                 {
                     // invalid string
-                    lGeo = null;
-                    lUTM = null;
+                    geoPoint = null;
+                    utmPoint = null;
                 }
-                SetValues(lGeo, lUTM, sender);
-                mChanging = false;
+                SetValues(geoPoint, utmPoint, sender);
+                _Changing = false;
             }
         }
 
@@ -234,7 +234,7 @@ namespace De.AHoerstemeier.Tambon
 
                 String tempKmlFile = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".kml";
                 KmlHelper kmlWriter = new KmlHelper();
-                kmlWriter.AddPoint(mPoint.Latitude, mPoint.Longitude, "Temporary location", "", "", "");
+                kmlWriter.AddPoint(_Point.Latitude, _Point.Longitude, "Temporary location", "", "", "");
                 kmlWriter.SaveToFile(tempKmlFile);
                 while ( googleEarth.IsInitialized() == 0 )
                 {
@@ -242,7 +242,7 @@ namespace De.AHoerstemeier.Tambon
                 }
                 googleEarth.OpenKmlFile(tempKmlFile, 0);
             }
-            catch (Exception ex)
+            catch ( Exception ex )
             {
                 MessageBox.Show(ex.ToString());
             }

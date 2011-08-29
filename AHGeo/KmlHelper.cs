@@ -9,170 +9,170 @@ namespace De.AHoerstemeier.Geo
     {
         #region variables
         private XmlDocument doc = new XmlDocument();
-        private XmlNode mDocumentNode;
+        private XmlNode _DocumentNode;
         #endregion
 
         #region properties
-        public XmlNode DocumentNode { get { return mDocumentNode; } }
+        public XmlNode DocumentNode { get { return _DocumentNode; } }
         #endregion
 
         #region methods
         //this function create the frame of the document, it is standard 
         private void GenerateKml()
         {
-            XmlNode lDocNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
-            doc.AppendChild(lDocNode);
+            XmlNode docNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+            doc.AppendChild(docNode);
 
-            XmlNode lKmlNode = doc.CreateElement("kml");
+            XmlNode kmlNode = doc.CreateElement("kml");
           
-            XmlAttribute lXmlnsAttribute = doc.CreateAttribute("xmlns");
-            lXmlnsAttribute.Value = "http://earth.google.com/kml/2.1";
-            lKmlNode.Attributes.Append(lXmlnsAttribute);
-            doc.AppendChild(lKmlNode);
+            XmlAttribute xmlAttribute = doc.CreateAttribute("xmlns");
+            xmlAttribute.Value = "http://earth.google.com/kml/2.1";
+            kmlNode.Attributes.Append(xmlAttribute);
+            doc.AppendChild(kmlNode);
 
-            mDocumentNode = doc.CreateElement("Document");
-            lKmlNode.AppendChild(mDocumentNode);
+            _DocumentNode = doc.CreateElement("Document");
+            kmlNode.AppendChild(_DocumentNode);
         }
 
-        public XmlNode AddStyle(String iName)
+        public XmlNode AddStyle(String name)
         {            
-            XmlNode lStyleNode = doc.CreateElement("Style");
-            XmlAttribute lStyleAttribute = doc.CreateAttribute("id");
-            lStyleAttribute.Value = iName;
-            lStyleNode.Attributes.Append(lStyleAttribute);
-            mDocumentNode.AppendChild(lStyleNode);
-            return lStyleNode;
+            XmlNode styleNode = doc.CreateElement("Style");
+            XmlAttribute styleAttribute = doc.CreateAttribute("id");
+            styleAttribute.Value = name;
+            styleNode.Attributes.Append(styleAttribute);
+            _DocumentNode.AppendChild(styleNode);
+            return styleNode;
         }
-        public void AddStylePoly(String iName, Int32 iLineWidth, UInt32 iLineColor, Boolean iPolyFill)
+        public void AddStylePoly(String name, Int32 lineWidth, UInt32 lineColor, Boolean polyFill)
         {
-            XmlNode lStyleNode = AddStyle(iName);
-            AddStylePoly(lStyleNode,iLineWidth,iLineColor,iPolyFill);
+            XmlNode lStyleNode = AddStyle(name);
+            AddStylePoly(lStyleNode,lineWidth,lineColor,polyFill);
         }
-        public void AddStylePoly(XmlNode iNode, Int32 iLineWidth, UInt32 iLineColor, Boolean iPolyFill)
+        public void AddStylePoly(XmlNode node, Int32 lineWidth, UInt32 lineColor, Boolean polyFill)
         {
-            XmlNode lPolyStyleNode = doc.CreateElement("PolyStyle");
-            iNode.AppendChild(lPolyStyleNode);
+            XmlNode polyStyleNode = doc.CreateElement("PolyStyle");
+            node.AppendChild(polyStyleNode);
 
-            XmlNode lLineNode = doc.CreateElement("LineStyle");
-            iNode.AppendChild(lLineNode);
-            XmlNode lLineWidthNode = doc.CreateElement("width");
-            lLineWidthNode.InnerText = iLineWidth.ToString();
-            lLineNode.AppendChild(lLineWidthNode);
-            XmlNode lLineColorNode = doc.CreateElement("color");
-            lLineColorNode.InnerText = iLineColor.ToString("X");
-            lLineNode.AppendChild(lLineColorNode);
+            XmlNode lineNode = doc.CreateElement("LineStyle");
+            node.AppendChild(lineNode);
+            XmlNode lineWidthNode = doc.CreateElement("width");
+            lineWidthNode.InnerText = lineWidth.ToString();
+            lineNode.AppendChild(lineWidthNode);
+            XmlNode lineColorNode = doc.CreateElement("color");
+            lineColorNode.InnerText = lineColor.ToString("X");
+            lineNode.AppendChild(lineColorNode);
             
-            XmlNode lFillNode = doc.CreateElement("fill");
-            lFillNode.InnerText = Convert.ToInt32(iPolyFill).ToString();
-            lPolyStyleNode.AppendChild(lFillNode);
+            XmlNode fillNode = doc.CreateElement("fill");
+            fillNode.InnerText = Convert.ToInt32(polyFill).ToString();
+            polyStyleNode.AppendChild(fillNode);
         }
-        public void AddIconStyle(String iName, Uri iIconUrl)
+        public void AddIconStyle(String name, Uri iconUrl)
         {
-            XmlNode lStyleNode = AddStyle(iName);
-            AddIconStyle(lStyleNode, iIconUrl);
+            XmlNode styleNode = AddStyle(name);
+            AddIconStyle(styleNode, iconUrl);
         }
-        public void AddIconStyle(XmlNode iNode, Uri iIconUrl)
+        public void AddIconStyle(XmlNode node, Uri iconUrl)
         {
-            XmlNode lIconStyleNode = doc.CreateElement("IconStyle");
-            iNode.AppendChild(lIconStyleNode);
-            XmlNode lIconNode = doc.CreateElement("Icon");
-            lIconStyleNode.AppendChild(lIconNode);
-            XmlNode lIconHrefNode = doc.CreateElement("href");
-            lIconHrefNode.AppendChild(doc.CreateTextNode(iIconUrl.ToString()));
-            lIconNode.AppendChild(lIconHrefNode);
+            XmlNode iconStyleNode = doc.CreateElement("IconStyle");
+            node.AppendChild(iconStyleNode);
+            XmlNode iconNode = doc.CreateElement("Icon");
+            iconStyleNode.AppendChild(iconNode);
+            XmlNode iconHrefNode = doc.CreateElement("href");
+            iconHrefNode.AppendChild(doc.CreateTextNode(iconUrl.ToString()));
+            iconNode.AppendChild(iconHrefNode);
         }
 
-        public void SaveToFile(String iFilename)
+        public void SaveToFile(String fileName)
         {
-            doc.Save(iFilename);
+            doc.Save(fileName);
         }
         //this function can add a point to the map, if you want extend functionalities you have to create other functions for each google earth shapes ( polygon, line, etc... ) 
-        public XmlNode AddPoint(XmlNode iNode, double iLatitude, double iLongitude, String iName, String iStyle, String iAddress, String iDescription)
+        public XmlNode AddPoint(XmlNode node, Double latitude, Double longitude, String name, String style, String address, String description)
         {
-            XmlNode lPlacemarkNode = AddPlacemarkNode(iNode, iName, iStyle, iDescription);
-            if (!String.IsNullOrEmpty(iAddress))
+            XmlNode placemarkNode = AddPlacemarkNode(node, name, style, description);
+            if (!String.IsNullOrEmpty(address))
             {
-                XmlNode lAddressNode = doc.CreateElement("address");
-                lAddressNode.AppendChild(doc.CreateTextNode(iAddress));
-                lPlacemarkNode.AppendChild(lAddressNode);
+                XmlNode addressNode = doc.CreateElement("address");
+                addressNode.AppendChild(doc.CreateTextNode(address));
+                placemarkNode.AppendChild(addressNode);
             }
-            XmlNode lPointNode = doc.CreateElement("Point");
-            lPlacemarkNode.AppendChild(lPointNode);
-            XmlNode lCoordinateNode = doc.CreateElement("coordinates");
-            lPointNode.AppendChild(lCoordinateNode);
-            lCoordinateNode.AppendChild(doc.CreateTextNode(iLongitude.ToString(Helper.CultureInfoUS) + "," + iLatitude.ToString(Helper.CultureInfoUS)));
-            return lPlacemarkNode;
+            XmlNode pointNode = doc.CreateElement("Point");
+            placemarkNode.AppendChild(pointNode);
+            XmlNode coordinateNode = doc.CreateElement("coordinates");
+            pointNode.AppendChild(coordinateNode);
+            coordinateNode.AppendChild(doc.CreateTextNode(longitude.ToString(Helper.CultureInfoUS) + "," + latitude.ToString(Helper.CultureInfoUS)));
+            return placemarkNode;
         }
 
-        private XmlNode AddPlacemarkNode(XmlNode iNode, String iName, String iStyle, String iDescription)
+        private XmlNode AddPlacemarkNode(XmlNode node, String name, String style, String description)
         {
-            XmlNode lPlacemarkNode = doc.CreateElement("Placemark");
-            iNode.AppendChild(lPlacemarkNode);
-            XmlNode lNameNode = doc.CreateElement("name");
-            lNameNode.AppendChild(doc.CreateTextNode(iName));
-            lPlacemarkNode.AppendChild(lNameNode);
+            XmlNode placemarkNode = doc.CreateElement("Placemark");
+            node.AppendChild(placemarkNode);
+            XmlNode nameNode = doc.CreateElement("name");
+            nameNode.AppendChild(doc.CreateTextNode(name));
+            placemarkNode.AppendChild(nameNode);
 
-            XmlNode lStyleNode = doc.CreateElement("styleUrl");
-            lStyleNode.AppendChild(doc.CreateTextNode('#' + iStyle));
-            lPlacemarkNode.AppendChild(lStyleNode);
-            if (!String.IsNullOrEmpty(iDescription))
+            XmlNode styleNode = doc.CreateElement("styleUrl");
+            styleNode.AppendChild(doc.CreateTextNode('#' + style));
+            placemarkNode.AppendChild(styleNode);
+            if (!String.IsNullOrEmpty(description))
             {
-                XmlNode lDescriptionNode = doc.CreateElement("description");
-                lDescriptionNode.AppendChild(doc.CreateTextNode(iDescription));
-                lPlacemarkNode.AppendChild(lDescriptionNode);
+                XmlNode descriptionNode = doc.CreateElement("description");
+                descriptionNode.AppendChild(doc.CreateTextNode(description));
+                placemarkNode.AppendChild(descriptionNode);
             }
-            return lPlacemarkNode;
+            return placemarkNode;
         }
-        public XmlNode AddPoint(double iLatitude, double iLongitude, String iName, String iStyle, String iAddress, String iDescription)
+        public XmlNode AddPoint(Double latitude, Double longitude, String name, String style, String address, String description)
         {
-            XmlNode RetVal = AddPoint(mDocumentNode, iLatitude, iLongitude, iName, iStyle,iAddress,iDescription);
+            XmlNode RetVal = AddPoint(_DocumentNode, latitude, longitude, name, style,address,description);
             return RetVal;
         }
-        public XmlNode AddFolder(XmlNode iNode, string iName, Boolean iOpen)
+        public XmlNode AddFolder(XmlNode node, String name, Boolean opened)
         {
-            XmlNode lFolderNode = doc.CreateElement("Folder");
-            iNode.AppendChild(lFolderNode);
-            XmlNode lNameNode = doc.CreateElement("name");
-            lNameNode.AppendChild(doc.CreateTextNode(iName));
-            lFolderNode.AppendChild(lNameNode);
-            XmlNode lOpenNode = doc.CreateElement("open");
-            if (iOpen)
+            XmlNode folderNode = doc.CreateElement("Folder");
+            node.AppendChild(folderNode);
+            XmlNode nameNode = doc.CreateElement("name");
+            nameNode.AppendChild(doc.CreateTextNode(name));
+            folderNode.AppendChild(nameNode);
+            XmlNode openNode = doc.CreateElement("open");
+            if (opened)
             {
-                lOpenNode.AppendChild(doc.CreateTextNode("1"));
+                openNode.AppendChild(doc.CreateTextNode("1"));
             }
             else
             {
-                lOpenNode.AppendChild(doc.CreateTextNode("0"));
+                openNode.AppendChild(doc.CreateTextNode("0"));
             }
-            lFolderNode.AppendChild(lOpenNode);
-            return lFolderNode; 
+            folderNode.AppendChild(openNode);
+            return folderNode; 
         }
-        public XmlNode AddPolygon(XmlNode iNode, List<GeoPoint> lBorder, String iName, String iStyle, String iDescription, Boolean iTessellate)
+        public XmlNode AddPolygon(XmlNode node, List<GeoPoint> border, String name, String style, String description, Boolean tessellate)
         {
-            XmlNode lPlacemarkNode = AddPlacemarkNode(iNode, iName, iStyle, iDescription);
-            XmlNode lPolygonNode = doc.CreateElement("Polygon");
-            lPlacemarkNode.AppendChild(lPolygonNode);
-            XmlNode lTessellateNode = doc.CreateElement("tesselate");
-            lTessellateNode.InnerText = Convert.ToInt32(iTessellate).ToString();
-            lPolygonNode.AppendChild(lTessellateNode);
-            XmlNode lOuterBoundaryNode = doc.CreateElement("outerBoundaryIs");
-            lPolygonNode.AppendChild(lOuterBoundaryNode);
-            XmlNode lLinearRingNode = doc.CreateElement("LinearRing");
-            lOuterBoundaryNode.AppendChild(lLinearRingNode);
-            XmlNode lCoordinateNode = doc.CreateElement("coordinates");
-            lLinearRingNode.AppendChild(lCoordinateNode);
+            XmlNode placemarkNode = AddPlacemarkNode(node, name, style, description);
+            XmlNode polygonNode = doc.CreateElement("Polygon");
+            placemarkNode.AppendChild(polygonNode);
+            XmlNode tessellateNode = doc.CreateElement("tesselate");
+            tessellateNode.InnerText = Convert.ToInt32(tessellate).ToString();
+            polygonNode.AppendChild(tessellateNode);
+            XmlNode outerBoundaryNode = doc.CreateElement("outerBoundaryIs");
+            polygonNode.AppendChild(outerBoundaryNode);
+            XmlNode linearRingNode = doc.CreateElement("LinearRing");
+            outerBoundaryNode.AppendChild(linearRingNode);
+            XmlNode coordinateNode = doc.CreateElement("coordinates");
+            linearRingNode.AppendChild(coordinateNode);
 
-            String lCoordinates = String.Empty;
-            foreach (GeoPoint lPoint in lBorder)
+            String coordinates = String.Empty;
+            foreach (GeoPoint point in border)
             {
-                lCoordinates +=
-                    lPoint.Longitude.ToString(Helper.CultureInfoUS) + "," +
-                    lPoint.Latitude.ToString(Helper.CultureInfoUS) + "," +
-                    lPoint.Altitude.ToString(Helper.CultureInfoUS) + Environment.NewLine;
+                coordinates +=
+                    point.Longitude.ToString(Helper.CultureInfoUS) + "," +
+                    point.Latitude.ToString(Helper.CultureInfoUS) + "," +
+                    point.Altitude.ToString(Helper.CultureInfoUS) + Environment.NewLine;
             }
-            lCoordinateNode.InnerText = lCoordinates;
+            coordinateNode.InnerText = coordinates;
 
-            return lPlacemarkNode;
+            return placemarkNode;
 
         }
         #endregion

@@ -13,11 +13,11 @@ namespace TestProject1
     [TestClass]
     public class GeoPointTest
     {
-        const double mLatitudeBangkok = 13.7535;
-        const double mLongitudeBangkok = 100.5018;
-        const double mAltitudeBangkok = 2.0;
-        const String mBangkokGeoHash = "w4rqnzxpv";
-        const String mBangkokMaidenhead = "OK03GS";
+        const double _LatitudeBangkok = 13.7535;
+        const double _LongitudeBangkok = 100.5018;
+        const double _AltitudeBangkok = 2.0;
+        const String _BangkokGeoHash = "w4rqnzxpv";
+        const String _BangkokMaidenhead = "OK03gs";
 
         public GeoPointTest()
         {
@@ -69,98 +69,99 @@ namespace TestProject1
         [TestMethod]
         public void TestGeoPointCopyConstructor()
         {
-            GeoPoint lBasePoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok, mAltitudeBangkok, GeoDatum.DatumWGS84());
-            GeoPoint lClonePoint = new GeoPoint(lBasePoint);
-            Assert.IsTrue(lBasePoint.Equals(lClonePoint));
+            GeoPoint basePoint = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok, _AltitudeBangkok, GeoDatum.DatumWGS84());
+            GeoPoint clonePoint = new GeoPoint(basePoint);
+            Assert.IsTrue(basePoint.Equals(clonePoint));
             // Assert.AreEqual<GeoPoint>(lClonePoint, lBasePoint); // does not use the IEquatable
         }
         [TestMethod]
         public void TestCalcUTM()
         {
             // Dresden according to Wikipedia : 13° 44' 29"E 51° 02' 55"N
-            GeoPoint lBasePoint = new GeoPoint(51.0 + 02.0 / 60.0 + 55.0 / 3600.0, 13.0 + 44.0 / 60.0 + 29.0 / 3600.0);
-            UTMPoint lUTMPoint = lBasePoint.CalcUTM();
+            GeoPoint basePoint = new GeoPoint(51.0 + 02.0 / 60.0 + 55.0 / 3600.0, 13.0 + 44.0 / 60.0 + 29.0 / 3600.0);
+            UtmPoint utmPoint = basePoint.CalcUTM();
 
             // Expected result: Zone 33 North, Northing 5655984 Easting 411777
-            UTMPoint lExpected = new UTMPoint(411777, 5655984, 33, true);
-            Assert.IsTrue(lExpected.Equals(lUTMPoint));
+            UtmPoint expected = new UtmPoint(411777, 5655984, 33, true);
+            Assert.IsTrue(expected.Equals(utmPoint));
         }
         [TestMethod]
         public void TestUTMToGeo()
         {
             // Dresden according to Wikipedia : 13° 44' 29"E 51° 02' 55"N = UTM 33U 0411777 5655984
-            UTMPoint lUTMPoint = new UTMPoint("33U 0411777 5655984");
-            GeoPoint lGeoPoint = new GeoPoint(lUTMPoint, GeoDatum.DatumWGS84());
-            GeoPoint lExpected = new GeoPoint(51.0 + 02.0 / 60.0 + 55.0 / 3600.0, 13.0 + 44.0 / 60.0 + 29.0 / 3600.0);
-            Assert.IsTrue(lExpected.Equals(lGeoPoint));
+            UtmPoint utmPoint = new UtmPoint("33U 0411777 5655984");
+            GeoPoint geoPoint = new GeoPoint(utmPoint, GeoDatum.DatumWGS84());
+            GeoPoint expected = new GeoPoint(51.0 + 02.0 / 60.0 + 55.0 / 3600.0, 13.0 + 44.0 / 60.0 + 29.0 / 3600.0);
+            Assert.IsTrue(expected.Equals(geoPoint));
         }
         [TestMethod]
         public void TestUTMToMGRS()
         {
-            UTMPoint lUTMPoint = new UTMPoint("33U 0411777 5655984");
-            String lMGRS = lUTMPoint.ToMGRSString(7).Replace(" ", "");
-            Assert.AreEqual("33UVS1177755984", lMGRS);
+            UtmPoint utmPoint = new UtmPoint("33U 0411777 5655984");
+            String mgrs = utmPoint.ToMgrsString(7).Replace(" ", "");
+            Assert.AreEqual("33UVS1177755984", mgrs);
         }
         [TestMethod]
         public void TestParseMGRS()
         {
-            UTMPoint lUTMPoint = UTMPoint.ParseMGRSString("33UVS1177755984");
-            UTMPoint lUTMPointExpected = new UTMPoint("33U 0411777 5655984");
-            Assert.IsTrue(lUTMPointExpected.Equals(lUTMPoint));
+            UtmPoint utmPoint = UtmPoint.ParseMgrsString("33UVS1177755984");
+            UtmPoint utmPointExpected = new UtmPoint("33U 0411777 5655984");
+            Assert.IsTrue(utmPointExpected.Equals(utmPoint));
         }
         [TestMethod]
-        public void TestDatumCoversion()
+        public void TestDatumConversion()
         {
             // example as of http://www.colorado.edu/geography/gcraft/notes/datum/gif/molodens.gif
-            GeoPoint lPoint = new GeoPoint(30, -100, 232, GeoDatum.DatumNorthAmerican27MeanConus());
-            lPoint.Datum = GeoDatum.DatumWGS84();
-            GeoPoint lExpected = new GeoPoint(30.0002239, -100.0003696, 194.816, GeoDatum.DatumWGS84());
-            Assert.IsTrue(lExpected.Equals(lPoint));
+            GeoPoint point = new GeoPoint(30, -100, 232, GeoDatum.DatumNorthAmerican27MeanConus());
+            point.Datum = GeoDatum.DatumWGS84();
+            GeoPoint expected = new GeoPoint(30.0002239, -100.0003696, 194.816, GeoDatum.DatumWGS84());
+            Assert.IsTrue(expected.Equals(point));
         }
         [TestMethod]
         public void TestGeoHashToGeo()
         {
-            GeoPoint lGeoPoint = new GeoPoint();
-            lGeoPoint.GeoHash = mBangkokGeoHash;
-            GeoPoint lExpected = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
-            Assert.IsTrue(lExpected.Equals(lGeoPoint));
+            GeoPoint geoPoint = new GeoPoint();
+            geoPoint.GeoHash = _BangkokGeoHash;
+            GeoPoint expected = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
+            Assert.IsTrue(expected.Equals(geoPoint));
         }
         [TestMethod]
         public void TestGeoToGeoHash()
         {
-            GeoPoint lGeoPoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
-            String lGeoHash = lGeoPoint.GeoHash;
-            Assert.IsTrue(lGeoHash == mBangkokGeoHash, "Returned " + lGeoHash + " instead of " + mBangkokGeoHash);
+            GeoPoint geoPoint = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
+            String geoHash = geoPoint.GeoHash;
+            Assert.Equals(geoHash, _BangkokGeoHash);
         }
         [TestMethod]
         public void TestParseCoordinateDegMinSec()
         {
-            String mCoordinateString = " 13°45'46.08\" N 100°28'41.16\" E";
-            GeoPoint lGeoPoint = new GeoPoint(mCoordinateString);
-            Assert.IsTrue(new GeoPoint(13.7628, 100.478100).Equals(lGeoPoint));
+            String coordinateString = " 13°45'46.08\" N 100°28'41.16\" E";
+            GeoPoint geoPoint = new GeoPoint(coordinateString);
+            Assert.IsTrue(new GeoPoint(13.7628, 100.478100).Equals(geoPoint));
         }
         [TestMethod]
         public void TestParseCoordinateDecimalDegree()
         {
-            String mCoordinateString = " 13.7628° N 100.478100° E";
-            GeoPoint lGeoPoint = new GeoPoint(mCoordinateString);
-            Assert.IsTrue(new GeoPoint(13.7628, 100.478100).Equals(lGeoPoint));
+            String coordinateString = " 13.7628° N 100.478100° E";
+            GeoPoint geoPoint = new GeoPoint(coordinateString);
+            Assert.IsTrue(new GeoPoint(13.7628, 100.478100).Equals(geoPoint));
         }
 
         [TestMethod]
         public void TestMaidenheadToGeo()
         {
-            GeoPoint lGeoPoint = new GeoPoint();
-            lGeoPoint.Maidenhead = mBangkokMaidenhead;
-            GeoPoint lExpected = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
-            Assert.IsTrue(lExpected.Equals(lGeoPoint));
+            GeoPoint geoPoint = new GeoPoint();
+            geoPoint.Maidenhead = _BangkokMaidenhead;
+            GeoPoint expected = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
+            Assert.IsTrue(expected.Equals(geoPoint));
         }
         [TestMethod]
         public void TestGeoToMaidenhead()
         {
-            GeoPoint lGeoPoint = new GeoPoint(mLatitudeBangkok, mLongitudeBangkok);
-            String lMaidenhead = lGeoPoint.Maidenhead;
-            Assert.IsTrue(lMaidenhead == mBangkokMaidenhead, "Returned " + lMaidenhead + " instead of " + mBangkokMaidenhead);
+            GeoPoint geoPoint = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
+            String maidenhead = geoPoint.Maidenhead;
+            maidenhead = maidenhead.Substring(0, _BangkokMaidenhead.Length);
+            Assert.AreEqual(_BangkokMaidenhead,maidenhead);
         }
     }
 }
