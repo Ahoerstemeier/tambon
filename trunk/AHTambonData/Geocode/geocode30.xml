@@ -360,6 +360,10 @@
     <entity type="Tambon" name="สุรนารี" english="Suranari" geocode="300120" >
       <office type="TAOOffice">
         <url>http://www.saosuranaree.com/</url>
+        <url status="obsolete">http://www.saosuranaree.com/</url>
+        <officials>
+          <official title="TAOMayor" name="สมยศ รัตนปริยานุช" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="30012001" name="บ้านราชสีมา"/>
       <entity type="Muban" geocode="30012002" name="บ้านโนนไม้แดง"/>
@@ -4385,18 +4389,44 @@
   </entity>
   <entity type="ThesabanMueang" name="ปากช่อง" english="Pak Chong" geocode="3098" parent="3021" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>14.6796</geo:lat>
+        <geo:long>101.3976</geo:long>
+      </geo:Point>
       <url>http://www.pakchongcity.go.th/</url>
     </office>
   </entity>
   <entity type="ThesabanMueang" name="บัวใหญ่" english="Bua Yai" geocode="3097" parent="3012" >
     <office type="MunicipalityOffice">
-      <!-- Longdo: 15.58584, 102.43385 -->
-      <url comment="Offline?">http://www.buayaicity.net/</url>
+      <!-- Longdo: 15.58584, 102.43385 - not visible in Google Earth yet -->
+      <vision>
+        บัวใหญ่เมืองน่าอยู่
+        มุ่งสู่ความเป็นเลิศทุกด้าน
+        ประสานสมานฉันท์กับทุกองค์กร
+        ขจัดปัญหาความเดือดร้อน
+        ประชากรอยู่ดีมีสุขอย่างยั่งยืน
+      </vision>
+      <url>http://www.buayaicity.go.th/</url>
+      <url status="offline">http://www.buayaicity.net/</url>
+      <officials>
+        <official title="Mayor" name="สุเนตร ศิลปะชัยเดช" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="โนนสูง" english="Non Sung" geocode="3096" parent="3010" >
     <office type="MunicipalityOffice">
-      <url>http://www.tb-nonsung.in.th/</url>
+      <vision>
+        ประชาชนมีส่วนร่วม ชุมชนเข้มแข็ง
+        เศรษฐกิจพอเพียงพึ่งตนเองได้ ประชาชนมีคุณภาพชีวิตที่ดี
+        การศึกษามีคุณภาพ สังคมสงบสุข
+        สิ่งแวดล้อมดี มีสภาพภูมิทัศน์สวยงาม
+        เทศบาลตำบลโนนสูงเป็นเมืองน่าอยู่
+      </vision>
+      <url>http://www.nonsung.go.th/</url>
+      <url status="offline">http://www.tb-nonsung.in.th/</url>
+      <officials>
+        <official title="Mayor" name="ปราณี วัชระสุขโพธิ์" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="โคกกรวด" english="Khok Kruat" geocode="3095" parent="3001" >
