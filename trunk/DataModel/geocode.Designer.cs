@@ -567,18 +567,23 @@ namespace De.AHoerstemeier.Tambon
 
         private List<HistoryEntry> itemsField;
 
+        private List<ItemsChoiceType> itemsElementNameField;
+
         /// <summary>
         /// HistoryList class constructor
         /// </summary>
         public HistoryList()
         {
+            this.itemsElementNameField = new List<ItemsChoiceType>();
             this.itemsField = new List<HistoryEntry>();
         }
 
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(HistoryCreate), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("misspelling", typeof(HistorySpelling), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("reformedspelling", typeof(HistorySpelling), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(HistoryRename), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("statuschange", typeof(HistoryStatus), Order = 0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<HistoryEntry> Items
         {
@@ -589,6 +594,21 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.itemsField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order = 1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<ItemsChoiceType> ItemsElementName
+        {
+            get
+            {
+                return this.itemsElementNameField;
+            }
+            set
+            {
+                this.itemsElementNameField = value;
             }
         }
     }
