@@ -69,6 +69,7 @@
       <xs:element maxOccurs="unbounded" name="statuschange" type="t:HistoryStatus"/>
       <xs:element maxOccurs="unbounded" name="create" type="t:HistoryCreate"/>
       <xs:element maxOccurs="unbounded" name="misspelling" type="t:HistorySpelling"/>
+      <xs:element maxOccurs="unbounded" name="reformedspelling" type="t:HistorySpelling"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name="HistoryList">
