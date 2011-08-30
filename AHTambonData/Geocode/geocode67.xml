@@ -58,7 +58,7 @@
   <entity type="Amphoe" name="เมืองเพชรบูรณ์" english="Mueang Phetchabun" geocode="6701" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 16.4430</geo:lat>
+        <geo:lat>16.4430</geo:lat>
         <geo:long>101.1493</geo:long>
       </geo:Point>
       <officials>
@@ -261,6 +261,10 @@
     </entity>
     <entity type="Tambon" name="วังชมภู" english="Wang Chomphu" geocode="670113" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>16.2506</geo:lat>
+          <geo:long>101.0700</geo:long>
+        </geo:Point>
         <url>http://www.wangchompu.net/</url>
         <officials>
           <official title="TAOChairman" name="ชัยอนุชิต ม่วงน้อยเจริญ" inoffice="2010"/>
@@ -611,7 +615,7 @@
     <entity type="Tambon" name="ช้างตะลูด" english="Chang Talut" geocode="670320" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 16.5889</geo:lat>
+          <geo:lat>16.5889</geo:lat>
           <geo:long>101.2954</geo:long>
         </geo:Point>
       </office>
@@ -623,7 +627,7 @@
     <entity type="Tambon" name="ปากดุก" english="Pak Duk" geocode="670322" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 16.7244</geo:lat>
+          <geo:lat>16.7244</geo:lat>
           <geo:long>101.2385</geo:long>
         </geo:Point>
         <url>http://www.parkduke.com/</url>
@@ -1224,7 +1228,7 @@
   <entity type="Amphoe" name="วังโป่ง" english="Wang Pong" geocode="6710" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 16.3412</geo:lat>
+        <geo:lat>16.3412</geo:lat>
         <geo:long>100.7933</geo:long>
       </geo:Point>
       <officials>
@@ -1346,7 +1350,7 @@
       </office>
     </entity>
   </entity>
-  <entity type="KingAmphoe" name="วังชมภู" english="Wang Chom Phu" geocode="6712" obsolete="1" comment="Suggested, but not created"/>
+  <entity type="KingAmphoe" name="วังชมภู" english="Wang Chomphu" geocode="6712" obsolete="1" comment="Suggested, but not created"/>
   <entity type="KingAmphoe" name="พุเตย" english="Phu Toei" geocode="6713" obsolete="1" comment="Suggested, but not created"/>
   <entity type="KingAmphoe" name="ดงขุย" english="Dong Khui" geocode="6714" obsolete="1" comment="Suggested, but not created"/>
   <entity type="KingAmphoe" name="เมืองกลาง" english="Mueang Klang" geocode="6715" obsolete="1" comment="Suggested, but not created"/>
@@ -1380,9 +1384,13 @@
       </geo:Point>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="วังชมภู" english="Wang Chom Phu" geocode="6796" parent="6701" >
+  <entity type="ThesabanTambon" name="วังชมภู" english="Wang Chomohu" geocode="6796" parent="6701" >
     <office type="MunicipalityOffice">
-      <url>http://wangchompu-mu.com/</url>
+      <geo:Point>
+        <geo:lat>16.2627</geo:lat>
+        <geo:long>101.0473</geo:long>
+      </geo:Point>
+      <url status="offline">http://wangchompu-mu.com/</url>
       <officials>
         <official title="Mayor" name="เอนก นาควิจิตร" inoffice="2010"/>
       </officials>
@@ -1439,7 +1447,7 @@
   <entity type="ThesabanTambon" name="นาเฉลียง" english="Na Chaliang" geocode="6788" parent="6707" >
     <office type="MunicipalityOffice">
       <geo:Point>
-        <geo:lat> 16.0801</geo:lat>
+        <geo:lat>16.0801</geo:lat>
         <geo:long>101.0564</geo:long>
       </geo:Point>
       <url>http://www.nachaliang.go.th/</url>
