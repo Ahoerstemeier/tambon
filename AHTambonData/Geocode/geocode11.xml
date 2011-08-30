@@ -90,11 +90,11 @@
     <entity type="Tambon" name="แพรกษา" english="Phraek Sa" geocode="110110" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 13.5807</geo:lat>
+          <geo:lat>13.5807</geo:lat>
           <geo:long>100.6517</geo:long>
         </geo:Point>
         <url>http://www.phrakkasa.com/</url>
-        <!--<url>http://www.prakkasa.com/</url>-->
+        <url status="expired">http://www.prakkasa.com/</url>
         <officials>
           <official title="TAOMayor" name="อิม แพหมอ" inoffice="2006" comment="2006, 2010"/>
         </officials>
@@ -144,7 +144,7 @@
     <entity type="Tambon" name="แพรกษาใหม่" english="Phraek Sa Mai" geocode="110117" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 13.5845</geo:lat>
+          <geo:lat>13.5845</geo:lat>
           <geo:long>100.6666</geo:long>
         </geo:Point>
         <url>http://www.preakasamai.go.th/</url>
@@ -325,7 +325,7 @@
     <entity type="Tambon" name="บางแก้ว" english="Bang Kaeo" geocode="110302" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 13.6371</geo:lat>
+          <geo:lat>13.6371</geo:lat>
           <geo:long>100.6636</geo:long>
         </geo:Point>
         <url comment="Offline?">http://www.obt-bangkaew.com/</url>
@@ -355,7 +355,7 @@
     <entity type="Tambon" name="บางปลา" english="Bang Pla" geocode="110303" >
       <office type="TAOOffice">
         <geo:Point>
-          <geo:lat> 13.5811</geo:lat>
+          <geo:lat>13.5811</geo:lat>
           <geo:long>100.7426</geo:long>
         </geo:Point>
         <url>http://bangpla.go.th/</url>
@@ -381,13 +381,15 @@
     </entity>
     <entity type="Tambon" name="บางโฉลง" english="Bang Chalong" geocode="110304" >
       <office type="TAOOffice">
+        <vision>บ้านเมืองน่าอยู่  คู่ศิลปวัฒนธรรม  และวิถีชีวิตพื้นบ้าน  เพิ่มฐานรายได้ให้กับกลุ่มอาชีพ  เป็นแหล่งรองรับการขยายตัวของสนามบินสุวรรณภูมิ  ประชาชนมีคุณภาพชีวิตที่ดี</vision>
         <geo:Point>
-          <geo:lat> 13.6136</geo:lat>
+          <geo:lat>13.6136</geo:lat>
           <geo:long>100.7513</geo:long>
         </geo:Point>
         <url>http://www.bangchalong.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อุดม บำรุงวัด" inoffice="2006"/>
+          <official title="TAOMayor" name="ชะอุ่ม แตงโสภา" inoffice="2011"/>
+          <official title="TAOMayor" name="อุดม บำรุงวัด" inoffice="2006"/>          
         </officials>
       </office>
       <entity type="Muban" geocode="11030401" name="บ้านคลองบางโฉลง"/>
@@ -626,7 +628,7 @@
   <entity type="Amphoe" name="บางเสาธง" english="Bang Sao Thong" geocode="1106" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 13.5948</geo:lat>
+        <geo:lat>13.5948</geo:lat>
         <geo:long>100.8301</geo:long>
       </geo:Point>
       <officials>
@@ -756,23 +758,27 @@
         <official title="Mayor" name="ผวน บุญช่วย" inoffice="2004"/>
       </officials>
     </office>
-    <!--
- 1. ชุมชนอุบลศรี
- 2. ชุมชนพูนทรัพย์
- 3. ชุมชนวัดแพรกษา 2-4
- 4. ชุมชนวัดแพรกษา 6-8
- 5. ชุมชนพงษ์สกุล
- 6. ชุมชนเสรี 4-5
- 7. ชุมชนบดิพัฒน์
- 8. ชุมชนทรัพย์ธานี
- 9. ชุมชนคลองหกส่วน
- 10. ชุมชนสวัสดี
- 11. ชุมชนคลองหม้อแตก
- 12. ชุมชนแสงปัญญา
- 13. ชุมชนรุ่งทวี
- 14. ชุมชนบ้านเอื้ออาทรสมุทรปราการ 1
- 15. ชุมชนบ้านเอื้ออาทรสมุทรปราการ 2
- -->
+    <!-- numbers to be confirmed -->
+    <entity type="Chumchon" geocode="11920001" name="ชุมชนพูนทรัพย์"/>
+    <entity type="Chumchon" geocode="11920002" name="ชุมชนอุบลศรี"/>
+    <entity type="Chumchon" geocode="11920003" name="ชุมชนเสรี 4,5"/>
+    <entity type="Chumchon" geocode="11920004" name="ชุมชนคลองหกส่วน"/>
+    <entity type="Chumchon" geocode="11920005" name="ชุมชนทรัพย์ธาน"/>
+    <entity type="Chumchon" geocode="11920006" name="ชุมชนพงษ์สกุล"/>
+    <entity type="Chumchon" geocode="11920007" name="ชุมชนสวัสด"/>
+    <entity type="Chumchon" geocode="11920008" name="ชุมชนวัดแพรกษา 2-4"/>
+    <entity type="Chumchon" geocode="11920009" name="ชุมชนวัดแพรกษา 6-8"/>
+    <entity type="Chumchon" geocode="11920010" name="ชุมชนบดิพัฒน์"/>
+    <entity type="Chumchon" geocode="11920011" name="ชุมชนปัญฐิญา"/>
+    <entity type="Chumchon" geocode="11920012" name="ชุมชนรุ่งทวี"/>
+    <entity type="Chumchon" geocode="11920013" name="ชุมชนแสงปัญญา"/>
+    <entity type="Chumchon" geocode="11920014" name="ชุมชนพฤกษา 28"/>
+    <entity type="Chumchon" geocode="11920015" name="ชุมชนพฤกษา 28/1"/>
+    <entity type="Chumchon" geocode="11920016" name="ชุมชนพฤกษา 28/2"/>
+    <entity type="Chumchon" geocode="11920017" name="ชุมชนคลองหม้อแตก"/>
+    <entity type="Chumchon" geocode="11920018" name="ชุมชนเอื้ออาทรสมุทรปราการแพรกษา 14"/>
+    <entity type="Chumchon" geocode="11920019" name="ชุมชนเอื้ออาทรสมุทรปราการแพรกษา 2"/>
+    <entity type="Chumchon" geocode="11920020" name="ชุมชนเอื้ออาทรสมุทรปราการ 1"/>
   </entity>
   <entity type="ThesabanTambon" name="บางปู" english="Bang Pu" geocode="1191" parent="1101" >
     <office type="MunicipalityOffice">
