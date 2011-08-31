@@ -131,10 +131,17 @@
       <entity type="Muban" geocode="43010614" name="บ้านทิพย์ธานี"/>
     </entity>
     <entity type="Tambon" name="หาดคำ" english="Hat Kham" geocode="430107" />
-    <entity type="Tambon" name="หินโงม" english="Hin Ngom" geocode="430108" />
+    <entity type="Tambon" name="หินโงม" english="Hin Ngom" geocode="430108" >
+      <office type="TAOOffice">
+        <url>http://www.hinngom.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="พงษ์ศักดิ์ เผ่าไพศาล" inoffice="2011"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านเดื่อ" english="Ban Duea" geocode="430109" >
       <office type="TAOOffice">
-        <!--<url>http://tambon-bandua.com</url>-->
+        <url status="offline">http://tambon-bandua.com/</url>
       </office>
       <entity type="Muban" geocode="43010901" name="บ้านหมากก่อง"/>
       <entity type="Muban" geocode="43010902" name="บ้านเดื่อเหนือ"/>
@@ -155,7 +162,7 @@
     </entity>
     <entity type="Tambon" name="ค่ายบกหวาน" english="Khai Bok Wan" geocode="430110" >
       <office type="TAOOffice">
-        <!--<url>http://www.khaibokwan.com</url>-->
+        <url status="offline">http://www.khaibokwan.com/</url>
       </office>
       <entity type="Muban" geocode="43011006" name="บ้านโพธิ์ทอง"/>
 
@@ -169,11 +176,17 @@
     </entity>
     <entity type="Tambon" name="โพนสว่าง" english="Phon Sawang" geocode="430111" >
       <office type="TAOOffice">
-        <!--
-        <history>
+        <vision>
+          ตำบลน่าอยู่  การศึกษาถ้วนหน้า  เศรษฐกิจก้าวไกล
+          เทคโนโลยีทันสมัย  ประเพณีวัฒนธรรมคู่ชุมชน
+        </vision>
+        <url>http://www.phonsawang.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ศักดินันท์ ศรีหาพรหม" inoffice="2011"/>
+        </officials>
+        <!--<history>
           <rename oldname="สองห้อง" oldenglish="Song Hong" name="โพนสว่าง" english="Phon Sawang" effective="2010-09-17"/>
-        </history>
-        -->
+        </history>-->
       </office>
       <history>
         <rename oldname="สองห้อง" oldenglish="Song Hong" name="โพนสว่าง" english="Pho Sawang" effective="2010-02-04" />
@@ -203,8 +216,19 @@
     <entity type="Tambon" name="คอกช้าง" english="Khok Chang" geocode="430115" newgeocode="431402" />
     <entity type="Tambon" name="หนองกอมเกาะ" english="Nong Kom Ko" geocode="430116" >
       <office type="TAOOffice">
-        <!--<url>http://www.nonggomgor.com/</url>-->
+        <url status="offline">http://www.nonggomgor.com/</url>
       </office>
+      <entity type="Muban" geocode="43011601" name="บ้านดอนดู่" english="Ban Don Du"/>
+      <entity type="Muban" geocode="43011602" name="บ้านนาไก่" english="Ban Na Kai"/>
+      <entity type="Muban" geocode="43011603" name="บ้านคุยนางขาว" english="Ban Khui Nang Khao"/>
+      <entity type="Muban" geocode="43011604" name="บ้านนาเหลาทอง" english="Ban Na Lao Thong"/>
+      <entity type="Muban" geocode="43011605" name="บ้านนาทา" english="Ban Na Tha"/>
+      <entity type="Muban" geocode="43011606" name="บ้านโนนธาตุ" english="Ban Non That"/>
+      <entity type="Muban" geocode="43011607" name="บ้านหนองเดิ่น" english="Ban Nong Doen"/>
+      <entity type="Muban" geocode="43011608" name="บ้านแจ้งสว่าง" english="Ban Chaeng Sawang"/>
+      <entity type="Muban" geocode="43011609" name="บ้านหนองกอมเกาะ" english="Ban Nong Kom Ko"/>
+      <entity type="Muban" geocode="43011610" name="บ้านหนองขาม" english="Ban Nong Kham"/>
+      <entity type="Muban" geocode="43011611" name="บ้านศรีเจริญ" english="Ban Si Charoen"/>
     </entity>
     <entity type="Tambon" name="ปะโค" english="Pa Kho" geocode="430117" >
       <office type="MunicipalityOffice">
@@ -227,20 +251,80 @@
     </entity>
     <entity type="Tambon" name="สีกาย" english="Si Kai" geocode="430119" >
       <office type="TAOOffice">
+        <vision>แหล่งท่องเที่ยวเชิงอนุรักษ์ จัดภูมิทัศน์สวนสาธารณะร่มรื่น ที่พักปลอดโปร่งอากาศแจ่มใสใกล้ริมโขง เชื่อมโยงชุมชนเข้มแข็ง การบริหารจัดการสิ่งปฏิกูลครบวงจร ราษฎรใช้สารสารอินทรีย์ มีการศึกษา ประชาชนสุขใจ ใฝ่คุณธรรม ค้ำจุนภูมิปัญญาท้องถิ่น</vision>
+        <address>
+          <village number="6" name="บ้านสีกายเหนือ"/>
+          <plot>87</plot>
+          <tambon geocode="430119" name="สีกาย"/>
+          <postcode>43000</postcode>
+        </address>
         <url>http://seekai-nk.com/</url>
-        <!--<url>http://www.seekai.com/</url>-->
+        <url status="expired">http://www.seekai.com/</url>
         <officials>
           <official title="TAOChairman" name="สอนรัก อ่อนพรม" inoffice="2010"/>
         </officials>
       </office>
-      <entity type="Muban" geocode="43011901" name="บ้านจอมแจ้ง" english="Ban Chom Chaeng"/>
-      <entity type="Muban" geocode="43011902" name="บ้านสีกายใต้" english="Ban Si Kai Tai"/>
-      <entity type="Muban" geocode="43011903" name="บ้านฝายแตก" english="Ban Fai Taek"/>
-      <entity type="Muban" geocode="43011904" name="บ้านบง" english="Ban Pong"/>
-      <entity type="Muban" geocode="43011905" name="บ้านดงเวร" english="Ban Dong Wen"/>
-      <entity type="Muban" geocode="43011906" name="บ้านสีกายเหนือ" english="Ban Si Kai Nuea"/>
-      <entity type="Muban" geocode="43011907" name="บ้านสันติสุข" english="Ban Santi Suk"/>
-      <entity type="Muban" geocode="43011908" name="บ้านสังคมพัฒนา" english="Ban Sangkhom Phatthana"/>
+      <office type="SubdistrictHeadmanOffice">
+        <officials>
+          <official title="Kamnan" name="อารี วิพบุตร" inoffice="2011" muban="1"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="43011901" name="บ้านจอมแจ้ง" english="Ban Chom Chaeng">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="อารี วิพบุตร" inoffice="2011"/>
+          </officials>
+        </office>
+      </entity>
+      <entity type="Muban" geocode="43011902" name="บ้านสีกายใต้" english="Ban Si Kai Tai">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="มั่น ไกรยะวงษ์" inoffice="2011"/>
+          </officials>
+        </office>
+      </entity>
+      <entity type="Muban" geocode="43011903" name="บ้านฝายแตก" english="Ban Fai Taek">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="โชค ศักดิ์อุดมกุล" inoffice="2011"/>
+          </officials>
+        </office>
+      </entity>
+      <entity type="Muban" geocode="43011904" name="บ้านบง" english="Ban Pong">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="วานิช ผาทอง" inoffice="2011"/>
+          </officials>
+        </office>
+      </entity>
+      <entity type="Muban" geocode="43011905" name="บ้านดงเวร" english="Ban Dong Wen">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="คำไพ จอมศรี" inoffice="2011"/>
+          </officials>
+        </office>
+      </entity>
+      <entity type="Muban" geocode="43011906" name="บ้านสีกายเหนือ" english="Ban Si Kai Nuea">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="วีระ แก้วอุ่นเมือง" inoffice="2011"/>
+          </officials>
+        </office>
+      </entity>
+      <entity type="Muban" geocode="43011907" name="บ้านสันติสุข" english="Ban Santi Suk">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="คุณศรี นิลเกตุ" inoffice="2011"/>
+          </officials>
+        </office>
+      </entity>
+      <entity type="Muban" geocode="43011908" name="บ้านสังคมพัฒนา" english="Ban Sangkhom Phatthana">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="เรือง เรียงลาด" inoffice="2011"/>
+          </officials>
+        </office>
+      </entity>
     </entity>
   </entity>
   <entity type="Amphoe" name="ท่าบ่อ" english="Tha Bo" geocode="4302" >
@@ -848,7 +932,7 @@
   <entity type="ThesabanTambon" name="ศรีเชียงใหม่" english="Si Chiang Mai" geocode="4389" parent="4307" >
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/nongkhai/srichiangmai/</url>
-      <!--<url>http://www.srichiangmaicity.org/</url>-->
+      <url status="offline">http://www.srichiangmaicity.org/</url>
       <officials>
         <official title="Mayor" name="พรชัย ปุริวัฒน์" inoffice="2010"/>
       </officials>
