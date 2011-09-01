@@ -183,6 +183,9 @@ namespace De.AHoerstemeier.Tambon
 
         /// <remarks/>
         MonthonCommissioner,
+
+        /// <remarks/>
+        MueangGovernor,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.225")]
