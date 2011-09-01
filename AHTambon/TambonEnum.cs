@@ -74,7 +74,8 @@ namespace De.AHoerstemeier.Tambon
         TAOMayor,
         TAOChairman,
         SanitaryDistrictChairman,
-        ChumchonChairman
+        ChumchonChairman,
+        MueangGovernor
     }
     public enum PersonTitle
     {
