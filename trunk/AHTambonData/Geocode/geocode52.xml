@@ -1293,14 +1293,37 @@
   </entity>
   <entity type="ThesabanMueang" name="เขลางค์นคร" english="Khelang Nakhon" geocode="5298" parent="5201" >
     <office type="MunicipalityOffice">
+      <vision>
+        เขลางค์นครน่าอยู่
+        เมืองแห่งการเรียนรู้
+        สิ่งแวดล้อมสวยงาม
+        ธรรมาภิบาลดีเด่น
+        มุ่งเน้นปรัญชาเศรษฐกิจพอเพียง
+        พัฒนาบริการมุ่งสู่ความเป็นเลิศ
+      </vision>
+      <geo:Point>
+        <geo:lat>18.2918</geo:lat>
+        <geo:long>99.5047</geo:long>
+      </geo:Point>
       <url>http://www.kelangnakorn.go.th/</url>
       <officials>
         <official title="Mayor" name="ไพฑูรย์ โพธิ์ทอง" inoffice="2011"/>
       </officials>
     </office>
     <history>
-      <rename oldname="ชมพู" name="เขลางค์นคร" oldenglish="Chomphu" />
+      <rename oldname="ชมพู" name="เขลางค์นคร" oldenglish="Chomphu" effective="2004-03-08"/>
     </history>
+
+    <entity type="Chumchon" geocode="52980063" name="ชุมชนบ้านจอมเมือง" english="Chumchon Ban Chom Mueang" muban="52010607">
+      <office type="ChumchonOffice">
+        <officials>
+          <official title="ChumchonChairman" name="สมศักดิ์ เสริมสุข" begin="2011-06-12"/>
+        </officials>
+      </office>
+      <history>
+        <create type="Chumchon" effective="2011-04-25" comment="Split from ชุมชนบ้านชมพู"/>
+      </history>      
+    </entity>
   </entity>
   <entity type="ThesabanTambon" name="บ่อแฮ้ว" english="Bo Haeo" geocode="5297" parent="5201" >
     <office type="MunicipalityOffice">
@@ -1466,11 +1489,13 @@
   </entity>
   <entity type="ThesabanTambon" name="ลำปางหลวง" english="Lampang Luang" geocode="5280" parent="5203" tambon="520301" >
     <office type="MunicipalityOffice">
-      <url>http://www.lampangluang.com/</url>
+      <url>http://www.lampangluang.go.th/</url>
+      <url status="offline">http://www.lampangluang.com/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="นาแก้ว" english="Na Kaeo" geocode="5279" parent="5203" tambon="520302" >
     <office type="MunicipalityOffice">
+      <url>http://www.nakaew.go.th/</url>
       <url status="offline">http://nakaew.org/</url>
     </office>
   </entity>
@@ -1490,6 +1515,13 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่ทะ" english="Mae Tha" geocode="5276" parent="5210" tambon="521001" >
     <office type="MunicipalityOffice">
+      <slogan>
+        ดินแดนเก่าภูเขาไฟ
+        ศูนย์รวมใจหลวงพ่อเมือง
+        รุ่งเรืองวัฒนธรรม
+        แหล่งหัตถกรรมดอกไม้ประดิษฐ์
+      </slogan>
+      <vision>แม่ทะน่าอยู่ มุ่งสู่คุณภาพชีวิตที่ดี บนพื้นฐานเศรษฐกิจดี ชุมชนมีความเข้มแข็ง</vision>
       <url>http://www.maethacity.org/</url>
       <url status="obsolete">http://maetha.igetweb.com/</url>
       <officials>
