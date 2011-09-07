@@ -66,8 +66,8 @@
   <entity type="Amphoe" name="เมืองนครศรีธรรมราช" english="Mueang Nakhon Si Thammarat" geocode="8001" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat>8.4197</geo:lat>
-        <geo:long>99.9633</geo:long>
+        <geo:lat>8.4199</geo:lat>
+        <geo:long>99.9628</geo:long>
       </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="ราชิต สุดพุ่ม" begin="2010-01-25"/>
@@ -1750,7 +1750,10 @@
     </entity>
     <entity type="Tambon" name="บางพระ" english="Bang Phra" geocode="801212" >
       <office type="TAOOffice">
-        <url>http://www.bangpra.go.th/</url>
+        <url status="broken">http://www.bangpra.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ยงยุทธ สุวรรณโชติ" inoffice="2009"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="80121201" name="บ้านบางวัง"/>
       <entity type="Muban" geocode="80121202" name="บ้านบางกรูด"/>
@@ -1782,8 +1785,7 @@
       <entity type="Muban" geocode="80121504" name="บ้านหมาก"/>
       <entity type="Muban" geocode="80121505" name="บ้านบางหมัน"/>
       <entity type="Muban" geocode="80121506" name="บ้านเพิง"/>
-      <entity type="Muban" geocode="80121507" name="บ้านท่าพยา"/>
-      <!--<entity type="Muban" geocode="80121507" name="บ้านพญา"/>-->
+      <entity type="Muban" geocode="80121507" name="บ้านท่าพยา" comment="Other source spells it บ้านพญา"/>
       <entity type="Muban" geocode="80121508" name="บ้านบางฉัตร"/>
     </entity>
     <entity type="Tambon" name="ท่าพยา" english="Tha Phaya" geocode="801216" >
@@ -2903,7 +2905,7 @@
   </entity>
   <entity type="ThesabanMueang" name="ปากพนัง" english="Pak Phanang" geocode="8098" parent="8012" >
     <office type="MunicipalityOffice">
-      <url comment="Should be http://www.pakphanang.go.th">http://61.7.241.50/</url>
+      <url status="hacked">http://www.pakphanang.in.th/</url>
     </office>
   </entity>
   <entity type="ThesabanMueang" name="ทุ่งสง" english="Thung Song" geocode="8097" parent="8009" >
