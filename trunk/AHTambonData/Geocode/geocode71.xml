@@ -154,23 +154,27 @@
     <entity type="Tambon" name="ด่านมะขามเตี้ย" english="Dan Makham Tia" geocode="710112" newgeocode="711101" />
     <entity type="Tambon" name="บ้านเก่า" english="Ban Kao" geocode="710113" >
       <office type="TAOOffice">
+        <!-- ca.  13.990923°  99.298690° -->
         <url>http://bannkaokan.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ประสาน สงวนพันธ์" inoffice="2011"/>
+        </officials>
       </office>
-      <entity type="Muban" geocode="71011301" name="บ้านเก่า"/>
-      <entity type="Muban" geocode="71011302" name="บ้านห้วยน้ำขาว"/>
-      <entity type="Muban" geocode="71011303" name="บ้านท่าโป๊ะ"/>
-      <entity type="Muban" geocode="71011304" name="บ้านพุน้อย"/>
-      <entity type="Muban" geocode="71011305" name="บ้านลำทหาร"/>
-      <entity type="Muban" geocode="71011306" name="บ้านทุ่งศาลา"/>
-      <entity type="Muban" geocode="71011307" name="บ้านหนองบ้านเก่า"/>
-      <entity type="Muban" geocode="71011308" name="บ้านตอไม้แดง"/>
-      <entity type="Muban" geocode="71011309" name="บ้านลำทราย"/>
-      <entity type="Muban" geocode="71011310" name="บ้านตะเคียนงาม"/>
-      <entity type="Muban" geocode="71011311" name="บ้าน ามหนอง"/>
-      <entity type="Muban" geocode="71011312" name="บ้านพุน้ำร้อน"/>
-      <entity type="Muban" geocode="71011313" name="บ้านทาทุ่งนา"/>
-      <entity type="Muban" geocode="71011314" name="บ้านประตูด่าน"/>
-      <entity type="Muban" geocode="71011315" name="บ้านใหม่ห้วยน้ำขาว"/>
+      <entity type="Muban" geocode="71011301" name="บ้านเก่า" english="Ban Kao"/>
+      <entity type="Muban" geocode="71011302" name="บ้านห้วยน้ำขาว" english="Ban Huai Nam Khao"/>
+      <entity type="Muban" geocode="71011303" name="บ้านท่าโป๊ะ" english="Ban Tapo"/>
+      <entity type="Muban" geocode="71011304" name="บ้านพุน้อย" english="Ban Phu Noi"/>
+      <entity type="Muban" geocode="71011305" name="บ้านลำทหาร" english="Ban Lam Tahan"/>
+      <entity type="Muban" geocode="71011306" name="บ้านทุ่งศาลา" english="Ban Thung Sala"/>
+      <entity type="Muban" geocode="71011307" name="บ้านหนองบ้านเก่า" english="Ban Nong Ban Kao"/>
+      <entity type="Muban" geocode="71011308" name="บ้านตอไม้แดง" english="Ban To Mai Taeng" comment="Split from Mu 3"/>
+      <entity type="Muban" geocode="71011309" name="บ้านลำทราย" english="Ban Lam Tharai" comment="Split from Mu 1"/>
+      <entity type="Muban" geocode="71011310" name="บ้านตะเคียนงาม" english="Ban Takian Ngam" comment="Split from Mu 2"/>
+      <entity type="Muban" geocode="71011311" name="บ้านสามหนอง" english="Ban Sam Nong" comment="Split from Mu 5"/>
+      <entity type="Muban" geocode="71011312" name="บ้านพุน้ำร้อน" english="Ban Phu Nam Ron" comment="Split from Mu 2"/>
+      <entity type="Muban" geocode="71011313" name="บ้านทาทุ่งนา" english="Ban Tha Thung Na" comment="Split from Mu 1"/>
+      <entity type="Muban" geocode="71011314" name="บ้านประตูด่าน" english="Ban Pratu Tan" comment="Split from Mu 7"/>
+      <entity type="Muban" geocode="71011315" name="บ้านใหม่ห้วยน้ำขาว" english="Ban Mai Huai Nam Khao" comment="Split from Mu 2"/>
     </entity>
     <entity type="Tambon" name="จรเข้เผือก" english="Chorakhe Phueak" geocode="710114" newgeocode="711103" />
     <entity type="Tambon" name="กลอนโด" english="Klondo" geocode="710115" newgeocode="711102" />
@@ -183,7 +187,7 @@
       <entity type="Muban" geocode="71011606" name="บ้านลุ่มโป่งเสี้ยว"/>
       <entity type="Muban" geocode="71011607" name="บ้านสะพานหิน"/>
     </entity>
-    <entity type="Tambon" name="71011700" english="???" geocode="710117" obsolete="1" comment="Abolished tambon?"/>
+    <entity type="Tambon" name="710117" english="???" geocode="710117" obsolete="1" comment="Abolished tambon?"/>
   </entity>
   <entity type="Amphoe" name="ไทรโยค" english="Sai Yok" geocode="7102" >
     <office type="DistrictOffice">
@@ -443,8 +447,8 @@
   <entity type="Amphoe" name="ท่ามะกา" english="Tha Maka" geocode="7105" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 13.9207</geo:lat>
-        <geo:long> 99.7654</geo:long>
+        <geo:lat>13.9207</geo:lat>
+        <geo:long>99.7654</geo:long>
       </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="กิตติพงษ์ ศิริสานนท์" begin="2010-01-25" end="2011-05-01"/>
@@ -1215,8 +1219,8 @@
   <entity type="Amphoe" name="ห้วยกระเจา" english="Huai Krachao" geocode="7113" >
     <office type="DistrictOffice">
       <geo:Point>
-        <geo:lat> 14.3272</geo:lat>
-        <geo:long> 99.6666</geo:long>
+        <geo:lat>14.3272</geo:lat>
+        <geo:long>99.6666</geo:long>
       </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="เสกสรร ปาลวัฒน์วิไชย" begin="2010-02-22"/>
@@ -1310,8 +1314,8 @@
   <entity type="ThesabanMueang" name="กาญจนบุรี" english="Kanchanaburi" geocode="7199" parent="7101,7106" >
     <office type="MunicipalityOffice">
       <geo:Point>
-        <geo:lat> 14.0195</geo:lat>
-        <geo:long> 99.5308</geo:long>
+        <geo:lat>14.0195</geo:lat>
+        <geo:long>99.5308</geo:long>
       </geo:Point>
       <url comment="Offline">http://www.muangkancity.go.th/</url>
     </office>
@@ -1518,6 +1522,12 @@
   </entity>
   <entity type="ThesabanTambon" name="ปากแพรก" english="Pak Phraek" geocode="7169" parent="7101" tambon="710103" >
     <office type="MunicipalityOffice">
+      <!-- Longdo: 14.03839 99.546 -->
+      <vision>ปากแพรก คุณภาพชีวิตดีเยี่ยม ประชาเปี่ยมสุข ยกระดับการศึกษา สุขภาพดีถ้วนหน้า ส่งเสริมกีฬา และการท่องเที่ยว</vision>
+      <geo:Point>
+        <geo:lat>14.0384</geo:lat>
+        <geo:long>99.5460</geo:long>
+      </geo:Point>
       <url>http://www.pakpraek.com/</url>
     </office>
   </entity>
