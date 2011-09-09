@@ -139,8 +139,15 @@ namespace De.AHoerstemeier.Tambon
             if ( (lData != null) && (OnShowGazette != null) )
             {
                 var lList = TambonHelper.GlobalGazetteList.AllAboutEntity(lData.Geocode, true);
+                // Also check for old obsolete Geocodes!
                 OnShowGazette(lList);
             }
+        }
+
+        // ToDo: Change it to an event of GobalGazetteList
+        private void PopulationDataView_Enter(object sender, EventArgs e)
+        {
+            btnGazette.Enabled = TambonHelper.GlobalGazetteList.Any();
         }
     }
 }

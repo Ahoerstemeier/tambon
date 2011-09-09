@@ -30,6 +30,7 @@
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.mTreeviewData = new System.Windows.Forms.TreeView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.mListviewData = new System.Windows.Forms.ListView();
             this.columnEnglish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,7 +40,6 @@
             this.btnSaveXML = new System.Windows.Forms.Button();
             this.btnClipboardAmphoe = new System.Windows.Forms.Button();
             this.btnGazette = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
@@ -75,6 +75,16 @@
             this.mTreeviewData.Size = new System.Drawing.Size(154, 444);
             this.mTreeviewData.TabIndex = 8;
             this.mTreeviewData.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tv_data_AfterSelect);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(0, 311);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(310, 133);
+            this.textBox1.TabIndex = 10;
             // 
             // mListviewData
             // 
@@ -149,16 +159,6 @@
             this.btnGazette.UseVisualStyleBackColor = true;
             this.btnGazette.Click += new System.EventHandler(this.btnGazette_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(0, 311);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 133);
-            this.textBox1.TabIndex = 10;
-            // 
             // PopulationDataView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +170,8 @@
             this.Controls.Add(this.splitContainer);
             this.Name = "PopulationDataView";
             this.Text = "PopulationDataView";
+            this.Activated += new System.EventHandler(this.PopulationDataView_Enter);
+            this.Load += new System.EventHandler(this.PopulationDataView_Enter);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
             this.splitContainer.Panel2.PerformLayout();
