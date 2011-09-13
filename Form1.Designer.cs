@@ -62,6 +62,7 @@ namespace De.Ahoerstemeier.Tambon
             this.btnConstituency = new System.Windows.Forms.Button();
             this.btn_PopulationAllProvinces = new System.Windows.Forms.Button();
             this.btn_dopaamphoe = new System.Windows.Forms.Button();
+            this.btnCheckNames = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -414,11 +415,22 @@ namespace De.Ahoerstemeier.Tambon
             this.btn_dopaamphoe.UseVisualStyleBackColor = true;
             this.btn_dopaamphoe.Click += new System.EventHandler(this.btn_dopaamphoe_Click);
             // 
+            // btnCheckNames
+            // 
+            this.btnCheckNames.Location = new System.Drawing.Point(344, 164);
+            this.btnCheckNames.Name = "btnCheckNames";
+            this.btnCheckNames.Size = new System.Drawing.Size(88, 23);
+            this.btnCheckNames.TabIndex = 33;
+            this.btnCheckNames.Text = "Check Names";
+            this.btnCheckNames.UseVisualStyleBackColor = true;
+            this.btnCheckNames.Click += new System.EventHandler(this.btnCheckNames_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.btnCheckNames);
             this.Controls.Add(this.btn_dopaamphoe);
             this.Controls.Add(this.btn_PopulationAllProvinces);
             this.Controls.Add(this.btnConstituency);
@@ -495,6 +507,7 @@ namespace De.Ahoerstemeier.Tambon
         private System.Windows.Forms.Button btnConstituency;
         private System.Windows.Forms.Button btn_PopulationAllProvinces;
         private System.Windows.Forms.Button btn_dopaamphoe;
+        private System.Windows.Forms.Button btnCheckNames;
     }
 }
 
