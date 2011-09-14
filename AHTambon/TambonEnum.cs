@@ -69,10 +69,12 @@ namespace De.AHoerstemeier.Tambon
         Kamnan,
         PhuYaiBan,
         PAOChairman,
+        PAOClerk,
         Mayor,
         MunicipalClerk,
         TAOMayor,
         TAOChairman,
+        TAOClerk,
         SanitaryDistrictChairman,
         ChumchonChairman,
         MueangGovernor
