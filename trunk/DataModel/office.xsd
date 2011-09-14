@@ -191,6 +191,12 @@
         <xs:documentation>Reason why left office.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="muban" type="xs:int" use="optional">
+      <xs:annotation>
+        <xs:documentation>Only for subdistrict headman (Kamnan), Muban number where he/she is also village headman.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+      
   </xs:complexType>
   <xs:complexType name='OfficialList'>
     <xs:annotation>

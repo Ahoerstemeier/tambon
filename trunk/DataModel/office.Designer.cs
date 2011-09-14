@@ -59,6 +59,10 @@ namespace De.AHoerstemeier.Tambon
 
         private OfficialEndType endreasonField;
 
+        private int mubanField;
+
+        private bool mubanFieldSpecified;
+
         public OfficialEntry()
         {
             this.beginreasonField = OfficialBeginType.Unknown;
@@ -302,6 +306,34 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.endreasonField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int muban
+        {
+            get
+            {
+                return this.mubanField;
+            }
+            set
+            {
+                this.mubanField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool mubanSpecified
+        {
+            get
+            {
+                return this.mubanFieldSpecified;
+            }
+            set
+            {
+                this.mubanFieldSpecified = value;
             }
         }
     }
