@@ -167,6 +167,12 @@ namespace De.AHoerstemeier.Tambon
         MunicipalClerk,
 
         /// <remarks/>
+        TAOClerk,
+
+        /// <remarks/>
+        PAOClerk,
+
+        /// <remarks/>
         TAOMayor,
 
         /// <remarks/>
