@@ -45,7 +45,7 @@ namespace De.AHoerstemeier.Tambon
             Int32 northingCount = northingCharacters.IndexOf(northingChar);
 
             Char zoneChar;
-            if ( northingCount > 17 )
+            if ( (northingCount > 17) | (northingCount == 0) )
             {
                 zoneChar = 'Q';
             }
