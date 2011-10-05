@@ -39,9 +39,21 @@
           <xs:documentation>TAO office (สำนักงานองค์การบริหารส่วนตำบล or ที่ว่าการองค์การบริหารส่วนตำบล).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="VillageHeadmanOffice"/>
-      <xs:enumeration value="ChumchonOffice"/>
-      <xs:enumeration value="SubdistrictHeadmanOffice"/>
+      <xs:enumeration value="VillageHeadmanOffice">
+        <xs:annotation>
+          <xs:documentation>Office of village headman.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChumchonOffice">
+        <xs:annotation>
+          <xs:documentation>Office of community leader (ที่ทำการชุมชน).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SubdistrictHeadmanOffice">
+        <xs:annotation>
+          <xs:documentation>Office of subdistrict headman.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="OfficialEndType">
