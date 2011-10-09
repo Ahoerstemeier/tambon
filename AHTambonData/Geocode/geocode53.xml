@@ -487,6 +487,7 @@
   </entity>
   <entity type="Amphoe" name="ฟากท่า" english="Fak Tha" geocode="5305" >
     <office type="DistrictOffice">
+      <!-- approximately  17.992222° 100.878611° -->
       <officials>
         <official title="DistrictOfficer" name="ธาตรี บุญมาก" inoffice="2009" comment="2009-06"/>
       </officials>
@@ -494,6 +495,9 @@
     <entity type="Tambon" name="ฟากท่า" english="Fak Tha" geocode="530501" >
       <office type="TAOOffice">
         <url>http://www.faktha.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ดุสิต กันยา" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="53050101" name="บ้านฟากท่า"/>
       <entity type="Muban" geocode="53050102" name="บ้านนาหน่ำ"/>
@@ -924,7 +928,14 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="วังกะพี้" english="Wang Kaphi" geocode="5396" parent="5301" />
-  <entity type="ThesabanTambon" name="ตรอน" english="Tron" geocode="5395" parent="5302" />
+  <entity type="ThesabanTambon" name="ตรอน" english="Tron" geocode="5395" parent="5302" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/uttaradit/tron/</url>
+      <officials>
+        <official title="Mayor" name="ธิติรัฐ ยานนาวา" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บ้านแก่ง" english="Ban Kaeng" geocode="5394" parent="5302" >
     <office type="MunicipalityOffice">
       <url>http://www.bankang.com/</url>
@@ -944,7 +955,15 @@
       <url>http://www.tessabannampat.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ฟากท่า" english="Fak Tha" geocode="5390" parent="5305" />
+  <entity type="ThesabanTambon" name="ฟากท่า" english="Fak Tha" geocode="5390" parent="5305" >
+    <office type="MunicipalityOffice">
+      <!-- approximately  17.993811° 100.877213° -->
+      <url>http://www.tessabanfaktha.go.th/</url>
+      <officials>
+        <official title="Mayor" name="วิทยา รักสัจจา" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="บ้านโคก" english="Ban Khok" geocode="5389" parent="5306" >
     <office type="MunicipalityOffice">
       <url>http://www.bankhok.com/</url>
