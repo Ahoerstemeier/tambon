@@ -145,7 +145,7 @@
       </office>
       <entity type="Muban" geocode="21010701" name="บ้านแลง"/>
       <entity type="Muban" geocode="21010702" name="บ้านก้นหนอง"/>
-      <entity type="Muban" geocode="21010703" name="บ้านหนองพญา"/>
+      <entity type="Muban" geocode="21010703" name="บ้านหนองพญา" english="Ban Nong Phaya"/>
       <entity type="Muban" geocode="21010704" name="บ้านขวากลิง"/>
       <entity type="Muban" geocode="21010705" name="บ้านหนองหว้า" english="Ban Nong Wa"/>
       <entity type="Muban" geocode="21010706" name="บ้านตระเกราทอง"/>
@@ -162,7 +162,14 @@
       <entity type="Muban" geocode="21010805" name="บ้านเขาวังม่าน"/>
       <entity type="Muban" geocode="21010806" name="บ้านหนองละลอก"/>
     </entity>
-    <entity type="Tambon" name="เนินพระ" english="Noen Phra" geocode="210109" />
+    <entity type="Tambon" name="เนินพระ" english="Noen Phra" geocode="210109">
+      <office type="MunicipalityOffice">
+        <url status="offline">http://www.noenphracity.go.th/</url>
+        <officials>
+          <official title="Mayor" name="เสมียน ขอบชิต" inoffice="2011"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="กะเฉด" english="Kachet" geocode="210110" >
       <office type="TAOOffice">
         <url>http://www.kached.go.th/</url>
@@ -249,7 +256,7 @@
         
         <!-- 
 หลวงแกลงแกล้วกล้า 
-	( ศรี    บุญศิริ )  	  	- 	พ.ศ.  2451
+  ( ศรี    บุญศิริ )  	  	- 	พ.ศ.  2451
 พระกำแพงพลล้าน  	( ชื้น    ศรภูมิ )  	พ.ศ.  2451    	- 	พ.ศ.  2454
 พระแกลงแกล้วกล้า  	( สหาย  สิงหพันธ์ )  	พ.ศ.  2454  	- 	พ.ศ.  2462
 หลวงอดุลย์เถียรเขตต์ 	(สิน    สิโนทก )    	พ.ศ.  2462   	- 	พ.ศ.  2465
