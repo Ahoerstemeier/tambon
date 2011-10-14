@@ -132,18 +132,18 @@
       <entity type="Muban" geocode="13010604" name="บ้านบางนางบุญ"/>
     </entity>
     <entity type="Tambon" name="บางคูวัด" english="Bang Khu Wat" geocode="130107" >
-      <entity type="Muban" geocode="13010701" name="บ้านปลายบัว"/>
-      <entity type="Muban" geocode="13010702" name="บ้านคลองโพธิ์"/>
-      <entity type="Muban" geocode="13010703" name="บ้านคุ้งวัด"/>
-      <entity type="Muban" geocode="13010704" name="บ้านคลองบางคูวัด"/>
+      <entity type="Muban" geocode="13010701" name="บ้านปลายบัว" english="Ban Plai Bua"/>
+      <entity type="Muban" geocode="13010702" name="บ้านคลองโพธิ์" english="Ban Khlong Pho"/>
+      <entity type="Muban" geocode="13010703" name="บ้านคุ้งวัด" english="Ban Khung Wat"/>
+      <entity type="Muban" geocode="13010704" name="บ้านคลองบางคูวัด" english="Ban Khlong Bang Khu Wat"/>
       <entity type="Muban" geocode="13010705" name="บ้านเกาะเกรียง"/>
       <entity type="Muban" geocode="13010706" name="บ้านบางตะไนย์"/>
-      <entity type="Muban" geocode="13010707" name="บ้านศาลเจ้า"/>
+      <entity type="Muban" geocode="13010707" name="บ้านศาลเจ้า" english="Ban San Chao"/>
       <entity type="Muban" geocode="13010708" name="บ้านไผ่ล้อม" english="Ban Phai Lom"/>
       <entity type="Muban" geocode="13010709" name="บ้านตีนเลน"/>
-      <entity type="Muban" geocode="13010710" name="บ้านบางนางบุญ"/>
-      <entity type="Muban" geocode="13010711" name="บ้านฝั่งกลาง"/>
-      <entity type="Muban" geocode="13010712" name="บ้านพะโอย"/>
+      <entity type="Muban" geocode="13010710" name="บ้านบางนางบุญ" english="Ban Bang Nang Bun"/>
+      <entity type="Muban" geocode="13010711" name="บ้านฝั่งกลาง" english="Ban Fang Klang"/>
+      <entity type="Muban" geocode="13010712" name="บ้านพะโอย" english="Ban Pha Oi"/>
     </entity>
     <entity type="Tambon" name="บางหลวง" english="Bang Luang" geocode="130108" >
       <office type="TAOOffice">
@@ -567,11 +567,12 @@
     </office>
     <entity type="Tambon" name="คูคต" english="Khu Khot" geocode="130601" />
     <entity type="Tambon" name="ลาดสวาย" english="Lat Sawai" geocode="130602" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>13.9408</geo:lat>
           <geo:long>100.6915</geo:long>
         </geo:Point>
+        <url status="offline">http://ladsawai.go.th/</url>
         <officials>
           <official title="TAOMayor" name="วินัย สังวาลย์เงิน" inoffice="2010"/>
         </officials>
@@ -839,7 +840,11 @@
       </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บางคูวัด" english="Bang Khu Wat" geocode="1383" parent="1301" tambon="130107" />
+  <entity type="ThesabanTambon" name="บางคูวัด" english="Bang Khu Wat" geocode="1383" parent="1301" tambon="130107" >
+    <office type="MunicipalityOffice">
+      <url>http://www.bkw.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanMueang" name="ลำสามแก้ว" english="Lam Sam Kaeo" geocode="1382" parent="1306" tambon="130601" >
     <office type="MunicipalityOffice">
       <geo:Point>
@@ -849,8 +854,12 @@
       <url>http://www.lamsamkaeo.go.th/</url>
       <officials>
         <official title="Mayor" name="บุญไกร บุญคุ้ม" inoffice="2010"/>
+        <official title="TAOMayor" name="บุญไกร บุญคุ้ม" endyear="2007"/>
       </officials>
     </office>
+    <history>
+      <rename oldname="คูคต" oldenglish="Khu Khot" name="ลำสามแก้ว" english="Lam Sam Kaeo" />
+    </history>
   </entity>
 
   <entity type="SakhaTambon" name="คูคต" geocode="1351" english="Khu Khot" parent="1306" />
