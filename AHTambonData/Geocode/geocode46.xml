@@ -171,7 +171,7 @@
       <entity type="Muban" geocode="46012105" name="บ้านปลาเค้าใหญ่"/>
       <entity type="Muban" geocode="46012106" name="บ้านปลาเค้าน้อย"/>
       <entity type="Muban" geocode="46012107" name="บ้านอัมพวัน"/>
-      <entity type="Muban" geocode="46012108" name="บ้านมิตรสัมพันธ์"/>
+      <entity type="Muban" geocode="46012108" name="บ้านมิตรสัมพันธ์" english="Ban Mit Samphan"/>
       <entity type="Muban" geocode="46012109" name="บ้านสะอาดใต้"/>
       <entity type="Muban" geocode="46012110" name="บ้านหนองม่วง" english="Ban Nong Muang"/>
     </entity>
@@ -764,9 +764,9 @@
       </officials>
     </office>
     <entity type="Tambon" name="ทุ่งคลอง" english="Thung Khlong" geocode="461001" >
-      <entity type="Muban" geocode="46100109" name="บ้านคำม่วง"/>
+      <entity type="Muban" geocode="46100109" name="บ้านคำม่วง" english="Ban Kham Muang"/>
 
-      <entity type="Muban" geocode="46100113" name="บ้านคำม่วงใต้"/>
+      <entity type="Muban" geocode="46100113" name="บ้านคำม่วงใต้" english="Ban Kham Muang Tai"/>
     </entity>
     <entity type="Tambon" name="โพน" english="Phon" geocode="461002" >
       <office type="TAOOffice">
@@ -839,22 +839,30 @@
       <entity type="Muban" geocode="46110411" name="บ้านภูเจริญ"/>
     </entity>
     <entity type="Tambon" name="นาตาล" english="Na Tan" geocode="461105" >
-      <office type="TAOOffice">
-        <url comment="Offline?">http://tambonnatal.org/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>16.9068</geo:lat>
+          <geo:long>103.2404</geo:long>
+        </geo:Point>
+        <url>http://natal.go.th/</url>
+        <url status="offline">http://tambonnatal.org/</url>
+        <officials>
+          <official title="Mayor" name="พละเดช แก้วอินทร์ " inoffice="2011"/>
+        </officials>
       </office>
-      <entity type="Muban" geocode="46110501" name="บ้านนาตาล"/>
+      <entity type="Muban" geocode="46110501" name="บ้านนาตาล" english="Ban Na Tan"/>
 
-      <entity type="Muban" geocode="46110504" name="บ้านหนองแซง"/>
-      <entity type="Muban" geocode="46110505" name="บ้านเกิ้ง นายพันปี"/>
-      <entity type="Muban" geocode="46110506" name="บ้านหนองแซง"/>
-      <entity type="Muban" geocode="46110507" name="บ้านหนองแซง"/>
+      <entity type="Muban" geocode="46110504" name="บ้านหนองแซง" english="Ban Nong Saeng"/>
+      <entity type="Muban" geocode="46110505" name="บ้านเกิ้ง" english="Ban Koeng"/>
+      <entity type="Muban" geocode="46110506" name="บ้านหนองแซง" english="Ban Nong Saeng"/>
+      <entity type="Muban" geocode="46110507" name="บ้านหนองแซง" english="Ban Nong Saeng"/>
       <entity type="Muban" geocode="46110508" name="บ้านโนนอำนวย"/>
       <entity type="Muban" geocode="46110509" name="บ้านโนนอำนวย"/>
-      <entity type="Muban" geocode="46110510" name="บ้านด่านช้าง"/>
-      <entity type="Muban" geocode="46110511" name="บ้านหนองแซง"/>
+      <entity type="Muban" geocode="46110510" name="บ้านด่านช้าง" english="Ban Dan Chang"/>
+      <entity type="Muban" geocode="46110511" name="บ้านหนองแซง" english="Ban Nong Saeng"/>
 
       <entity type="Muban" geocode="46110513" name="บ้านน้อยนามูล"/>
-      <entity type="Muban" geocode="46110514" name="บ้านหนองแซง"/>
+      <entity type="Muban" geocode="46110514" name="บ้านหนองแซง" english="Ban Nong Saeng"/>
     </entity>
     <entity type="Tambon" name="ดงสมบูรณ์" english="Dong Sombun" geocode="461106" />
 
@@ -1223,6 +1231,9 @@
   <entity type="ThesabanTambon" name="นาทัน" english="Na Than" geocode="4666" parent="4610" tambon="461007" >
     <office type="MunicipalityOffice">
       <url>http://www.nt.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ทวี บุริขันธ์" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
 
