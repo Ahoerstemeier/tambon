@@ -184,8 +184,11 @@
       <entity type="Muban" geocode="80011509" name="บ้านทวดเหนือ"/>
     </entity>
     <entity type="Tambon" name="ท่างิ้ว" english="Tha Ngio" geocode="800116" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url>http://www.thangew.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="สมจิตร พูลพิพัฒน์" endyear="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="80011601" name="บ้านป่าไหม้"/>
       <entity type="Muban" geocode="80011602" name="บ้านขวาง"/>
@@ -198,7 +201,8 @@
     </entity>
     <entity type="Tambon" name="ท้ายสำเภา" english="Thai Samphao" geocode="800117" newgeocode="802003" />
     <entity type="Tambon" name="โพธิ์เสด็จ" english="Pho Sadet" geocode="800118" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <vision>ส่งเสริมการเรียนรู้ สู่การพัฒนาสังคม เพื่อชุมชนเข้มแข็ง</vision>
         <url>http://www.posadet.go.th/</url>
       </office>
       <entity type="Muban" geocode="80011801" name="บ้านพระมงกุฎ"/>
@@ -1236,10 +1240,10 @@
     </office>
     <entity type="Tambon" name="ปากแพรก" english="Pak Phraek" geocode="800901" />
     <entity type="Tambon" name="ชะมาย" english="Chamai" geocode="800902" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url>http://www.chamai.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ประพัฒน์ รักษ์ศรีทอง" inoffice="2011"/>
+          <official title="TAOMayor" name="ประพัฒน์ รักษ์ศรีทอง" endyear="2011"/>
         </officials>
       </office>
       <entity type="Muban" geocode="80090201" name="บ้านหนองหว้า" english="Ban Nong Wa"/>
@@ -1379,8 +1383,8 @@
       <entity type="Muban" geocode="80091006" name="บ้านเหนือ" english="Ban Nuea"/>
     </entity>
     <entity type="Tambon" name="ถ้ำใหญ่" english="Tham Yai" geocode="800911" >
-      <office type="TAOOffice">
-        <url>http://www.thamyai.com/</url>
+      <office type="MunicipalityOffice">
+        <url status="expired">http://www.thamyai.com/</url>
       </office>
       <entity type="Muban" geocode="80091101" name="บ้านในเพิก"/>
       <entity type="Muban" geocode="80091102" name="บ้านไสใหญ่"/>
@@ -2015,8 +2019,11 @@
       <entity type="Muban" geocode="80140216" name="บ้านท่าเชี่ยว"/>
     </entity>
     <entity type="Tambon" name="ฉลอง" english="Chalong" geocode="801403" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url>http://www.chalong.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="จิตรณรงค์ ดำเพ็ง" endyear="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="80140301" name="บ้านท่าควาย"/>
       <entity type="Muban" geocode="80140302" name="บ้านคลองไทร"/>
@@ -2163,12 +2170,14 @@
       </officials>
     </office>
     <entity type="Tambon" name="ขนอม" english="Khanom" geocode="801501" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <vision>ขนอมเมืองน่าอยู่ เคียงคู่วัฒนธรรม ก้าวล้ำเกษตรกรรม หนุนนำการท่องเที่ยว สังคมพัฒนา ประชามีการศึกษา มั่งคงเศรษฐกิจ ชีวิตมีคุณภาพ</vision>
         <geo:Point>
           <geo:lat>9.1792</geo:lat>
           <geo:long>99.8569</geo:long>
         </geo:Point>
         <url>http://www.khanom.go.th/</url>
+        <!-- renamed to อ่าวขนอม Ao Khanom with upgrade to municipality -->
       </office>
       <entity type="Muban" geocode="80150101" name="บ้านบางโหนด"/>
       <entity type="Muban" geocode="80150102" name="บ้านพังมะพร้าว"/>

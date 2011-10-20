@@ -624,8 +624,19 @@
       <entity type="Muban" geocode="71060406" name="บ้านหนองสองตอน"/>
     </entity>
     <entity type="Tambon" name="หนองขาว" english="Nong Khao" geocode="710605" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>14.0391</geo:lat>
+          <geo:long>99.5913</geo:long>
+        </geo:Point>
+        <url status="broken">http://www.nongkhao.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="บุญชู ศรีทับทิม" endyear="2011"/>
+        </officials>
+        <!-- renamed to หนองหญ้าดอกขาว Nong Ya Dok Khao with upgrade to municipality -->
+      </office>
       <entity type="Muban" geocode="71060501" name="บ้านหนองขาว"/>
-      <entity type="Muban" geocode="71060502" name="บ้าน ันตะเคียน"/>
+      <entity type="Muban" geocode="71060502" name="บ้านสันตะเคียน"/>
       <entity type="Muban" geocode="71060503" name="บ้านกล้วย"/>
       <entity type="Muban" geocode="71060504" name="บ้านโคกไผ่"/>
       <entity type="Muban" geocode="71060505" name="บ้านนอก"/>
@@ -1441,6 +1452,10 @@
   </entity>
   <entity type="ThesabanTambon" name="หนองขาว" english="Nong Khao" geocode="7182" parent="7106" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>14.0481</geo:lat>
+        <geo:long>99.6289</geo:long>
+      </geo:Point>
       <url>http://www.nongkhao.com/</url>
     </office>
   </entity>
