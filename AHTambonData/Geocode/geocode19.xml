@@ -426,13 +426,20 @@
     <entity type="Tambon" name="หนองหมู" english="Nong Mu" geocode="190401" >
       <office type="TAOOffice">
         <url>http://www.nongmoo.org/</url>
+        <officials>
+          <official title="TAOMayor" name="สำราญ ทองอินทร์" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="19040101" name="บ้านหนองหมูเหนือ" english="Ban Nong Mu Nuea"/>
       <entity type="Muban" geocode="19040102" name="บ้านหนองหมูใต้" english="Ban Nong Mu Tai"/>
       <entity type="Muban" geocode="19040103" name="บ้านคันลำ"/>
       <entity type="Muban" geocode="19040104" name="บ้านสหกรณ์"/>
-      <entity type="Muban" geocode="19040105" name="บ้านจีนใต้"/>
-      <entity type="Muban" geocode="19040106" name="บ้านหัวถนน"/>
+      <entity type="Muban" geocode="19040105" name="บ้านสร้างบุญ" english="Ban Sang Bun">
+        <history>
+          <rename oldname="บ้านจีนใต้" oldenglish="Ban Chin Tai" name="บ้านสร้างบุญ" english="Ban Sang Bun" effective="2011-09-07"/>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="19040106" name="บ้านหัวถนน" english="Ban Hua Thanon"/>
       <entity type="Muban" geocode="19040107" name="บ้านหนองหมู" english="Ban Nong Mu"/>
       <entity type="Muban" geocode="19040108" name="บ้านหนองสามขา"/>
     </entity>
