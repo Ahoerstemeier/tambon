@@ -70,10 +70,13 @@
   </office>
   <entity type="Amphoe" name="เมืองเชียงราย" english="Mueang Chiang Rai" geocode="5701" >
     <office type="DistrictOffice">
+      <slogan>เมืองพญามังราย  สายใยน้ำกก  พระหยกล้ำค่า  ไร่แม่ฟ้าหลวงรวมใจ  น้ำตกใสขุนกรณ์</slogan>
+      <vision>เมืองมั่นคงของเศรษฐกิจ  การเกษตรปลอดภัย  มีความโดดเด่นทางด้านท่องเที่ยว  สืบสานวัฒนธรรมล้านนา  มีการรักษาทรัพยากรธรรมชาติอย่างยั่งยืน  และเป็นที่พึ่งของประชาชน เพื่อสังคมสงบสุข</vision>
       <geo:Point>
         <geo:lat>19.9085</geo:lat>
         <geo:long>99.8325</geo:long>
       </geo:Point>
+      <url>http://www.muangchiangrai.go.th/</url>
       <officials>
         <official title="DistrictOfficer" name="นิมิต วันไชยธนวงศ์" inoffice="2009" comment="2009-06"/>
 
@@ -162,8 +165,8 @@
       <entity type="Muban" geocode="57010618" name="บ้านโป่งผำพัฒนา"/>
     </entity>
     <entity type="Tambon" name="สันทราย" english="San Sai" geocode="570107" >
-      <office type="TAOOffice">
-        <url>http://www.takean.info/</url>
+      <office type="MunicipalityOffice">
+        <url status="offline">http://www.takean.info/</url>
       </office>
       <entity type="Muban" geocode="57010701" name="บ้านสันทรายหลวง"/>
       <entity type="Muban" geocode="57010702" name="บ้านสันทรายน้อย"/>
@@ -455,8 +458,16 @@
       <entity type="Muban" geocode="57030410" name="บ้านภูแกง"/>
     </entity>
     <entity type="Tambon" name="ห้วยซ้อ" english="Huai So" geocode="570305" >
-      <office type="TAOOffice">
-        <url>http://huayso.com/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>20.0364</geo:lat>
+          <geo:long>100.2894</geo:long>
+        </geo:Point>
+        <url>http://huayso.go.th/</url>
+        <url status="offline">http://huayso.com/</url>
+        <officials>
+          <official title="TAOMayor" name="พิชิต ไชยเขียว" endyear="2007"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="57030501" name="บ้านห้วยซ้อเหนือ"/>
       <entity type="Muban" geocode="57030502" name="บ้านห้วยซ้อใต้"/>
@@ -896,8 +907,11 @@
     <entity type="Tambon" name="สันมะค่า" english="San Makha" geocode="570603" />
     <entity type="Tambon" name="โรงช้าง" english="Rong Chang" geocode="570605" />
     <entity type="Tambon" name="ศรีโพธิ์เงิน" english="Si Pho Ngoen" geocode="570606" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url>http://www.sriprogren.ob.tc/</url>
+        <officials>
+          <official title="TAOMayor" name="จรัญ ยามี" endyear="2011"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="57060900" english="???" geocode="570609" obsolete="1" comment="Abolished Tambon?"/>
@@ -956,8 +970,13 @@
       <entity type="Muban" geocode="57070415" name="บ้านป่าเมี้ยง"/>
     </entity>
     <entity type="Tambon" name="สันทราย" english="San Sai" geocode="570705" >
-      <office type="TAOOffice">
-        <!--<url comment="URL expired">http://www.sansailocal.com/</url>-->
+      <office type="MunicipalityOffice">
+        <vision>ชุมชนน่าอยู่ เฟื่องฟูวัฒนธรรม นำด้วยธรรมาภิบาล บนพื้นฐานการมีส่วนร่วมของประชาชน</vision>
+        <url>http://www.sansaimaechan.com/</url>
+        <url status="expired">http://www.sansailocal.com/</url>
+        <officials>
+          <official title="Mayor" name="มนู สุเลียมมา " inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="57070501" name="บ้านสันทราย"/>
       <entity type="Muban" geocode="57070502" name="บ้านจอมจันทร์"/>
@@ -1052,7 +1071,8 @@
       </officials>
     </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="570801" >
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <vision>ชุมชนเข้มแข็ง  แหล่งรวบรวมวัฒนธรรม  งามล้ำสามเหลี่ยมทองคำ  นำการค้าสี่แผ่นดิน</vision>
         <geo:Point>
           <geo:lat>20.2860</geo:lat>
           <geo:long>100.0825</geo:long>
