@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified" >
+
+  <xs:simpleType name="PopulationDataSourceType">
+    <xs:annotation>
+      <xs:documentation>Sources of population data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Actual source not know.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Census">
+        <xs:annotation>
+          <xs:documentation>Official population census.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DOPA">
+        <xs:annotation>
+          <xs:documentation>Registration data.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PopulationDataType">
+    <xs:annotation>
+      <xs:documentation>Type of population data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="total">
+        <xs:annotation>
+          <xs:documentation>Total population.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="municipal">
+        <xs:annotation>
+          <xs:documentation>Municipal population, i.e. population within Thesaban.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nonmunicipal">
+        <xs:annotation>
+          <xs:documentation>Non-municipal population, i.e. population outside the Thesaban.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="agricultural">
+        <xs:annotation>
+          <xs:documentation>Agricultural population, i.e. population having at least ... rai of agricultural land.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nonagricultural">
+        <xs:annotation>
+          <xs:documentation>Non-Agricultural population, i.e. population having none or only little agricultural land.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="privatehouseholds">
+        <xs:annotation>
+          <xs:documentation>Private households, i.e. ....</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="collectivehouseholds">
+        <xs:annotation>
+          <xs:documentation>Collective househodls, i.e. households ....</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="PopulationDataPoint">
+    <xs:sequence>
+      <xs:element name="total" type="xs:integer" default="-1" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="male" type="xs:integer" default="-1" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="female" type="xs:integer" default="-1" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgeTableEntry">
+    <xs:complexContent>
+      <xs:extension base="t:PopulationDataPoint">
+        <xs:attribute name="begin" type="xs:nonNegativeInteger" use="required"/>
+        <xs:attribute name="end" type="xs:nonNegativeInteger" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AgeTable">
+    <xs:sequence>
+      <xs:element name="age" type="t:AgeTableEntry" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="unknown" type="t:PopulationDataPoint" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HouseholdDataPoint">
+    <xs:complexContent>
+      <xs:extension base="t:PopulationDataPoint">
+        <xs:sequence>
+          <xs:element name="households" type="xs:integer" default="-1" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="data" type="t:HouseholdDataPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="agetable" type="t:AgeTable" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="type" type="t:PopulationDataType" use="optional" default="total"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PopulationData">
+    <xs:sequence>
+      <xs:element name="data" type="t:HouseholdDataPoint" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="source" type="t:PopulationDataSourceType" default="Unknown" use="optional"/>
+    <xs:attribute name="referencedate" type="xs:date" use="optional"/>
+    <xs:attribute name="year" type="xs:gYear" use="required"/>
+  </xs:complexType>
+</xs:schema>
