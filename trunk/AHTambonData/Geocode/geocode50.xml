@@ -169,8 +169,8 @@
       <entity type="Muban" geocode="50011603" name="บ้านท่า (ร้องขี้ควาย)"/>
       <entity type="Muban" geocode="50011604" name="บ้านร้องอ้อ"/>
       <entity type="Muban" geocode="50011605" name="บ้านขัวโก"/>
-      <entity type="Muban" geocode="50011606" name="บ้านท่าเดื่อ"/>
-      <entity type="Muban" geocode="50011607" name="บ้านที่หลุก"/>
+      <entity type="Muban" geocode="50011606" name="บ้านท่าเดื่อ" english="Ban Tha Duea"/>
+      <entity type="Muban" geocode="50011607" name="บ้านที่หลุก" english="Ban Thi Luk"/>
       <entity type="Muban" geocode="50011608" name="บ้านสันทราย"/>
       <entity type="Muban" geocode="50011609" name="บ้านสันผีเสื้อสามัคคี"/>
     </entity>
@@ -1673,7 +1673,7 @@
     <entity type="Unknown" name="ทุ่งปี้" english="Thung Pi" geocode="501398" newgeocode="502202" />
     <entity type="Unknown" name="บ้านกาด" english="Ban Kat" geocode="501399" newgeocode="502201" />
   </entity>
-   <entity type="Amphoe" name="สันทราย" english="San Sai" geocode="5014" >
+  <entity type="Amphoe" name="สันทราย" english="San Sai" geocode="5014" >
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.8487</geo:lat>
@@ -2203,7 +2203,7 @@
       </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="ชัยณรงค์ บุญวิวัฒนาการ" end="2011-05-01"/>
-        
+
         <official title="DistrictOfficer" name="วิชัย ลือวรรณ" inoffice="2009" comment="2009-06"/>
 
         <official title="DistrictOfficer" name="ศักดิ์ชัย คุณานุวัฒน์ชัยเดช" begin="2007-01-08"/>
@@ -2766,7 +2766,7 @@
       <url>http://www.wiangphrao.go.th/</url>
       <officials>
         <official title="Mayor" name="กิติพัฒน์ สุนทรพันธุ์" inoffice="2011"/>
-     </officials>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านกลาง" english="Ban Klang" geocode="5084" parent="5012" >
@@ -2847,7 +2847,15 @@
   </entity>
   <entity type="ThesabanTambon" name="ท่าเดื่อ" english="Tha Duea" geocode="5075" parent="5017" >
     <office type="MunicipalityOffice">
-      <url>http://www.thaduae.org/</url>
+      <geo:Point>
+        <geo:lat>17.9509</geo:lat>
+        <geo:long>98.6893</geo:long>
+      </geo:Point>
+      <url>http://www.nmt.or.th/chiangmai/thaduea/</url>
+      <url status="expired">http://www.thaduae.org/</url>
+      <officials>
+        <official title="Mayor" name="บุญเท่ง คำเมา" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="อมก๋อย" english="Omkoi" geocode="5074" parent="5018" >
