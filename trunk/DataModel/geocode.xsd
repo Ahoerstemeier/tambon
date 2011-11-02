@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema 
-  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" 
-  xmlns:t="http://hoerstemeier.com/tambon/" 
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  targetNamespace="http://hoerstemeier.com/tambon/"  
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://hoerstemeier.com/tambon/"
   attributeFormDefault="unqualified" elementFormDefault="qualified" >
-  
+
   <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd"/>
   <xs:include schemaLocation="office.xsd"/>
   <xs:include schemaLocation="basictypes.xsd"/>
+  <xs:include schemaLocation="populationdata.xsd"/>
 
   <xs:simpleType name="AreaUnit">
     <xs:restriction base="xs:string">
@@ -27,13 +28,13 @@
       <xs:element maxOccurs="unbounded" name="data" type="t:AreaData"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="HistoryEntry">
+  <xs:complexType name="HistoryEntryBase" abstract="1">
     <xs:attribute name="effective" type="xs:date" use="optional" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
   <xs:complexType name="HistoryStatus">
     <xs:complexContent>
-      <xs:extension base="t:HistoryEntry">
+      <xs:extension base="t:HistoryEntryBase">
         <xs:attribute name="old" type="t:EntityType" use="required" />
         <xs:attribute name="new" type="t:EntityType" use="required" />
       </xs:extension>
@@ -41,7 +42,7 @@
   </xs:complexType>
   <xs:complexType name="HistoryRename">
     <xs:complexContent>
-      <xs:extension base="t:HistoryEntry">
+      <xs:extension base="t:HistoryEntryBase">
         <xs:attribute name="name" type="xs:string" use="required" />
         <xs:attribute name="oldname" type="xs:string" use="required" />
         <xs:attribute name="oldenglish" type="xs:string" use="optional" />
@@ -49,31 +50,49 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="HistorySpelling">
+  <xs:complexType name="HistorySpellingBase" abstract="1">
     <xs:complexContent>
-      <xs:extension base="t:HistoryEntry">
+      <xs:extension base="t:HistoryEntryBase">
         <xs:attribute name="name" type="xs:string" use="required" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="HistorySpelling">
+    <xs:complexContent>
+      <xs:extension base="t:HistorySpellingBase"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HistoryReformSpelling">
+    <xs:complexContent>
+      <xs:extension base="t:HistorySpellingBase"/>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="HistoryCreate">
     <xs:complexContent>
-      <xs:extension base="t:HistoryEntry">
+      <xs:extension base="t:HistoryEntryBase">
         <xs:attribute name="type" type="t:EntityType" use="required" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:group name="History" >
+  <xs:group name="HistoryEntry" >
+    <xs:annotation>
+      <xs:documentation>Entry in the list of historical changes.</xs:documentation>
+    </xs:annotation>
     <xs:choice>
-      <xs:element maxOccurs="unbounded" name="rename" type="t:HistoryRename"/>
-      <xs:element maxOccurs="unbounded" name="statuschange" type="t:HistoryStatus"/>
-      <xs:element maxOccurs="unbounded" name="create" type="t:HistoryCreate"/>
-      <xs:element maxOccurs="unbounded" name="misspelling" type="t:HistorySpelling"/>
-      <xs:element maxOccurs="unbounded" name="reformedspelling" type="t:HistorySpelling"/>
+      <xs:element name="rename" type="t:HistoryRename"/>
+      <xs:element name="statuschange" type="t:HistoryStatus"/>
+      <xs:element name="create" type="t:HistoryCreate"/>
+      <xs:element name="misspelling" type="t:HistorySpelling"/>
+      <xs:element name="reformedspelling" type="t:HistoryReformSpelling"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name="HistoryList">
-    <xs:group ref="t:History" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:annotation>
+      <xs:documentation>List of historical changes.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref='t:HistoryEntry' minOccurs='1' maxOccurs='unbounded'/>
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Entity">
     <xs:sequence minOccurs="1" maxOccurs="1">
@@ -81,6 +100,7 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:Area"/>
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="population" type="t:PopulationData"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity"/>
     </xs:sequence>
     <xs:attribute name="type" type="t:EntityType" use="required" />
@@ -97,6 +117,6 @@
     <!-- for Chumchon corresponding to a specific Muban-->
     <xs:attribute name="muban" type="xs:unsignedInt" use="optional" />
   </xs:complexType>
-  
+
   <xs:element name="entity" type="t:Entity"/>
 </xs:schema>
