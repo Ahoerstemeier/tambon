@@ -1696,19 +1696,19 @@
         <url>http://www.subyai.go.th/</url>
       </office>
       <entity type="Muban" geocode="36160101" name="บ้านซับใหญ่" english="Ban Sap Yai"/>
-      <entity type="Muban" geocode="36160102" name="บ้านวังพง"/>
+      <entity type="Muban" geocode="36160102" name="บ้านวังพง" english="Ban Wang Phong"/>
       <entity type="Muban" geocode="36160103" name="บ้านโนนสะอาด" english="Ban Non Sa-at"/>
       <entity type="Muban" geocode="36160104" name="บ้านวังขื่อ"/>
-      <entity type="Muban" geocode="36160105" name="บ้านซับเจริญสุข"/>
+      <entity type="Muban" geocode="36160105" name="บ้านซับเจริญสุข" english="Ban Sap Charoen Suk"/>
       <entity type="Muban" geocode="36160106" name="บ้านบุฉนวน"/>
       <entity type="Muban" geocode="36160107" name="บ้านหนองใหญ่" english="Ban Nong Yai"/>
-      <entity type="Muban" geocode="36160108" name="บ้านตลุกคูณ"/>
-      <entity type="Muban" geocode="36160109" name="บ้านซับห่าง"/>
+      <entity type="Muban" geocode="36160108" name="บ้านตลุกคูณ" english="Ban Taluk Khun"/>
+      <entity type="Muban" geocode="36160109" name="บ้านซับห่าง" english="Ban Sap Hang"/>
       <entity type="Muban" geocode="36160110" name="บ้านซับใหญ่พัฒนา" english="Ban Sap Yai Phatthana"/>
       <entity type="Muban" geocode="36160111" name="บ้านหนองบัว" english="Ban Nong Bua"/>
       <entity type="Muban" geocode="36160112" name="บ้านโนนจำปา" english="Ban Non Champa"/>
       <entity type="Muban" geocode="36160113" name="บ้านเขาดินวนา"/>
-      <entity type="Muban" geocode="36160114" name="บ้านซับจาน"/>
+      <entity type="Muban" geocode="36160114" name="บ้านซับจาน" english="Ban Sap Chan"/>
     </entity>
     <entity type="Tambon" name="ท่ากูบ" english="Tha Kup" geocode="361602" />
     <entity type="Tambon" name="ตะโกทอง" english="Tako Thong" geocode="361603" >
@@ -1719,7 +1719,7 @@
         </geo:Point>
         <url>http://www.takotong.go.th/</url>
       </office>
-      <entity type="Muban" geocode="36160306" name="บ้านซับใหม่"/>
+      <entity type="Muban" geocode="36160306" name="บ้านซับใหม่" english="Ban Sap Mai"/>
 
       <entity type="Muban" geocode="36160311" name="บ้านหนองประดู่พัฒนา" english="Ban Nong Pradu Phatthana"/>
     </entity>
@@ -1748,8 +1748,28 @@
       <url>http://khonsawancity.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เกษตรสมบูรณ์" english="Kaset Sombun" geocode="3694" parent="3604" />
-  <entity type="ThesabanTambon" name="บ้านเป้า" english="Ban Pao" geocode="3693" parent="3604" />
+  <entity type="ThesabanTambon" name="เกษตรสมบูรณ์" english="Kaset Sombun" geocode="3694" parent="3604" >
+    <office type="MunicipalityOffice">
+      <!-- Longdo: 16.27788,101.95395 -->
+      <url>http://www.nmt.or.th/chaiyaphum/kasetsombun/</url>
+      <officials>
+        <official title="Mayor" name="ประดิษฐ์ ยั้งระหัด" inoffice="2011"/>
+      </officials>
+    </office>
+    <entity type="Chumchon" geocode="36940001" name="ชุมชนคุ้มเหนือ"/>
+    <entity type="Chumchon" geocode="36940002" name="ชุมชนคุ้มทักษิณ"/>
+    <entity type="Chumchon" geocode="36940003" name="ชุมชนคุ้มเจ้าหัวนาย"/>
+    <entity type="Chumchon" geocode="36940004" name="ชุมชนคุ้มแจ้ง"/>
+    <entity type="Chumchon" geocode="36940005" name="ชุมชนคุ้มกลางนอก"/>
+  </entity>
+  <entity type="ThesabanTambon" name="บ้านเป้า" english="Ban Pao" geocode="3693" parent="3604" >
+    <office type="MunicipalityOffice">
+      <url>http://www.banpao.org/</url>
+      <officials>
+        <official title="Mayor" name="ชวาลวงค์ ฦาปัญญา" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หนองบัวแดง" english="Nong Bua Daeng" geocode="3692" parent="3605" >
     <office type="MunicipalityOffice">
       <slogan>เทศบาลตำบลหนองบัวแดงเป็นเมืองน่าอยู่  ผู้คนน่ารัก  พิทักษ์ความสะอาด  ประชาราษฎร์สามัคคี  แหล่งของดีแตงไทย  งามวิไลต้นกระธูป</slogan>
