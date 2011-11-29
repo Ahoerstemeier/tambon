@@ -94,7 +94,7 @@
       <xs:enumeration value="Unknown">
         <xs:annotation>
           <xs:documentation>No specified reason.</xs:documentation>
-        </xs:annotation>        
+        </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
@@ -135,7 +135,33 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-
+  <xs:complexType name="SocialWebLinks">
+    <xs:annotation>
+      <xs:documentation>List of the social web sites where the entity is present.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="facebook" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>URL of the user account or page in facebook.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="twitter" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Twitter user name.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="googleplus" type="xs:string" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Numerical code of the user or page.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="blog" type="t:MyUri" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Blog URL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="OfficialEntry">
     <xs:attribute name="title" type="t:OfficialType" use="required">
@@ -208,7 +234,7 @@
         <xs:documentation>Only for subdistrict headman (Kamnan), Muban number where he/she is also village headman.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-      
+
   </xs:complexType>
   <xs:complexType name='OfficialList'>
     <xs:annotation>
@@ -391,6 +417,11 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="url" type="t:MyUri">
         <xs:annotation>
           <xs:documentation>Website of the office, including former websites with the appropriate status.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="socialweb" type="t:SocialWebLinks">
+        <xs:annotation>
+          <xs:documentation>Links to the social web sites maintained by the office.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="officials" type="t:OfficialList">

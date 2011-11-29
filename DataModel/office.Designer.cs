@@ -16,6 +16,249 @@ namespace De.AHoerstemeier.Tambon
     using System.Runtime.Serialization;
 
 
+    /// <summary>
+    /// List of the social web sites where the entity is present.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "SocialWebLinks", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class SocialWebLinks
+    {
+
+        private string facebookField;
+
+        private string twitterField;
+
+        private string googleplusField;
+
+        private List<MyUri> blogField;
+
+        /// <summary>
+        /// Creates a new instance of SocialWebLinks.
+        /// </summary>
+        public SocialWebLinks()
+        {
+            this.blogField = new List<MyUri>();
+        }
+
+        /// <summary>
+        /// URL of the user account or page in facebook.
+        /// </summary>
+        /// <value>
+        /// The facebook.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(DataType = "anyURI", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string facebook
+        {
+            get
+            {
+                return this.facebookField;
+            }
+            set
+            {
+                this.facebookField = value;
+            }
+        }
+
+        /// <summary>
+        /// Twitter user name.
+        /// </summary>
+        /// <value>
+        /// The twitter.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string twitter
+        {
+            get
+            {
+                return this.twitterField;
+            }
+            set
+            {
+                this.twitterField = value;
+            }
+        }
+
+        /// <summary>
+        /// Numerical code of the user or page.
+        /// </summary>
+        /// <value>
+        /// The googleplus.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string googleplus
+        {
+            get
+            {
+                return this.googleplusField;
+            }
+            set
+            {
+                this.googleplusField = value;
+            }
+        }
+
+        /// <summary>
+        /// Blog URL.
+        /// </summary>
+        /// <value>
+        /// The blog.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("blog", Order = 3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MyUri> blog
+        {
+            get
+            {
+                return this.blogField;
+            }
+            set
+            {
+                this.blogField = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// URL with an optional comment and status.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "MyUri", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class MyUri
+    {
+
+        private string commentField;
+
+        private MyUriStatus statusField;
+
+        private string valueField;
+
+        /// <summary>
+        /// Creates a new instance of MyUri.
+        /// </summary>
+        public MyUri()
+        {
+            this.statusField = MyUriStatus.unknown;
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(MyUriStatus.unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MyUriStatus status
+        {
+            get
+            {
+                return this.statusField;
+            }
+            set
+            {
+                this.statusField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlTextAttribute(DataType = "anyURI")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Status of a web link.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum MyUriStatus
+    {
+
+        /// <summary>
+        /// Status unknown.
+        /// </summary>
+        unknown,
+
+        /// <summary>
+        /// Website up and running.
+        /// </summary>
+        online,
+
+        /// <summary>
+        /// Website unreachable due to server problems.
+        /// </summary>
+        offline,
+
+        /// <summary>
+        /// Discontinued but still online website.
+        /// </summary>
+        obsolete,
+
+        /// <summary>
+        /// Domain registration has expired.
+        /// </summary>
+        expired,
+
+        /// <summary>
+        /// Server alive, but returns no valid webpage, e.g. 404.
+        /// </summary>
+        broken,
+
+        /// <summary>
+        /// Defaced or spreading malware and blocked by Google safe browsing.
+        /// </summary>
+        hacked,
+    }
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -602,140 +845,6 @@ namespace De.AHoerstemeier.Tambon
     }
 
     /// <summary>
-    /// URL with an optional comment and status.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "MyUri", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class MyUri
-    {
-
-        private string commentField;
-
-        private MyUriStatus statusField;
-
-        private string valueField;
-
-        /// <summary>
-        /// Creates a new instance of MyUri.
-        /// </summary>
-        public MyUri()
-        {
-            this.statusField = MyUriStatus.unknown;
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment
-        {
-            get
-            {
-                return this.commentField;
-            }
-            set
-            {
-                this.commentField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(MyUriStatus.unknown)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MyUriStatus status
-        {
-            get
-            {
-                return this.statusField;
-            }
-            set
-            {
-                this.statusField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlTextAttribute(DataType = "anyURI")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this.valueField;
-            }
-            set
-            {
-                this.valueField = value;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Status of a web link.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
-    public enum MyUriStatus
-    {
-
-        /// <summary>
-        /// Status unknown.
-        /// </summary>
-        unknown,
-
-        /// <summary>
-        /// Website up and running.
-        /// </summary>
-        online,
-
-        /// <summary>
-        /// Website unreachable due to server problems.
-        /// </summary>
-        offline,
-
-        /// <summary>
-        /// Discontinued but still online website.
-        /// </summary>
-        obsolete,
-
-        /// <summary>
-        /// Domain registration has expired.
-        /// </summary>
-        expired,
-
-        /// <summary>
-        /// Server alive, but returns no valid webpage, e.g. 404.
-        /// </summary>
-        broken,
-
-        /// <summary>
-        /// Defaced or spreading malware and blocked by Google safe browsing.
-        /// </summary>
-        hacked,
-    }
-
-    /// <summary>
     /// Village (Muban) part of address.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
@@ -1139,6 +1248,8 @@ namespace De.AHoerstemeier.Tambon
 
         private List<MyUri> urlField;
 
+        private SocialWebLinks socialwebField;
+
         private OfficialList officialsField;
 
         private List<OldLocation> oldlocationsField;
@@ -1158,6 +1269,7 @@ namespace De.AHoerstemeier.Tambon
         {
             this.oldlocationsField = new List<OldLocation>();
             this.officialsField = new OfficialList();
+            this.socialwebField = new SocialWebLinks();
             this.urlField = new List<MyUri>();
             this.addressField = new ThaiAddress();
         }
@@ -1263,12 +1375,32 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
+        /// Links to the social web sites maintained by the office.
+        /// </summary>
+        /// <value>
+        /// The socialweb.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SocialWebLinks socialweb
+        {
+            get
+            {
+                return this.socialwebField;
+            }
+            set
+            {
+                this.socialwebField = value;
+            }
+        }
+
+        /// <summary>
         /// List of office leaders.
         /// </summary>
         /// <value>
         /// The officials.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public OfficialList officials
         {
@@ -1288,7 +1420,7 @@ namespace De.AHoerstemeier.Tambon
         /// <value>
         /// The oldlocations.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("oldlocations", Order = 6)]
+        [System.Xml.Serialization.XmlElementAttribute("oldlocations", Order = 7)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<OldLocation> oldlocations
         {
