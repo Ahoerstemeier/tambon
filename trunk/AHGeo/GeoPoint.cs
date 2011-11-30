@@ -36,34 +36,63 @@ namespace De.AHoerstemeier.Geo
         public GeoPoint()
         {
         }
+
         /// <summary>
         /// Initializes a new instance of the GeoPoint class.
         /// </summary>
-        /// <param name="latitude">Latitude.</param>
-        /// <param name="longitude">Longitude.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when latitude is larger than ±90° or longitude is larger than ±180°</exception>
+        /// <param name="latitude">Latitude in degrees.</param>
+        /// <param name="longitude">Longitude in degrees.</param>
         public GeoPoint(double latitude, double longitude)
         {
+            if ( Math.Abs(latitude) > 90 )
+            {
+                throw new ArgumentOutOfRangeException("latitude");
+            }
+            if ( Math.Abs(longitude) > 180 )
+            {
+                throw new ArgumentOutOfRangeException("longitude");
+            }
             Latitude = latitude;
             Longitude = longitude;
         }
+
         /// <summary>
         /// Initializes a new instance of the GeoPoint class.
         /// </summary>
-        /// <param name="latitude">Latitude.</param>
-        /// <param name="longitude">Longitude.</param>
-        /// <param name="altitude">Altitude.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when latitude is larger than ±90° or longitude is larger than ±180°.</exception>
+        /// <exception cref="ArgumentNullException">Thrown when datum is null.</exception>
+        /// <param name="latitude">Latitude in degrees.</param>
+        /// <param name="longitude">Longitude in degrees.</param>
+        /// <param name="altitude">Altitude in meter.</param>
         /// <param name="datum">Geographical datum.</param>
         public GeoPoint(double latitude, double longitude, double altitude, GeoDatum datum)
         {
+            if ( Math.Abs(latitude) > 90 )
+            {
+                throw new ArgumentOutOfRangeException("latitude");
+            }
+            if ( Math.Abs(longitude) > 180 )
+            {
+                throw new ArgumentOutOfRangeException("longitude");
+            }
+            if ( datum == null )
+            {
+                throw new ArgumentNullException("datum");
+            }
+
             Latitude = latitude;
             Longitude = longitude;
             Altitude = altitude;
             _Datum = datum;
         }
+
         /// <summary>
         /// Initializes a new instance of the GeoPoint class.
         /// </summary>
         /// <param name="value">String representation of a geographical coordinate.</param>
+        /// <exception cref="ArgumentException">Raise when the string could not be parsed.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when parsed latitude is larger than ±90° or longitude is larger than ±180°</exception>
         public GeoPoint(String value)
         {
             GeoPoint result = null;
@@ -106,6 +135,7 @@ namespace De.AHoerstemeier.Geo
             Latitude = result.Latitude;
             Longitude = result.Longitude;
         }
+
         /// <summary>
         /// Initializes a new instance of the GeoPoint class.
         /// </summary>
@@ -117,6 +147,7 @@ namespace De.AHoerstemeier.Geo
             Altitude = value.Altitude;
             _Datum = (GeoDatum)value.Datum.Clone();
         }
+
         /// <summary>
         /// Initializes a new instance of the GeoPoint class.
         /// </summary>
@@ -186,6 +217,7 @@ namespace De.AHoerstemeier.Geo
         {
             return Latitude >= 0;
         }
+
         /// <summary>
         /// Checks whether the point is west of Greenwich.
         /// </summary>
@@ -194,6 +226,7 @@ namespace De.AHoerstemeier.Geo
         {
             return Longitude <= 0;
         }
+
         private void SetDatum(GeoDatum newDatum)
         {
             // Source http://home.hiwaay.net/~taylorc/bookshelf/math-science/geodesy/datum/transform/molodensky/
@@ -490,9 +523,9 @@ namespace De.AHoerstemeier.Geo
         }
         private void SetGeoHash(String value)
         {
-            GeoPoint lPoint = De.AHoerstemeier.Geo.GeoHash.DecodeGeoHash(value);
-            this.Latitude = lPoint.Latitude;
-            this.Longitude = lPoint.Longitude;
+            GeoPoint newPoint = De.AHoerstemeier.Geo.GeoHash.DecodeGeoHash(value);
+            this.Latitude = newPoint.Latitude;
+            this.Longitude = newPoint.Longitude;
         }
 
         private void SetMaidenhead(String value)
@@ -506,7 +539,6 @@ namespace De.AHoerstemeier.Geo
         }
         private String CalcMaidenhead(Int32 precision)
         {
-
             String result = MaidenheadLocator.GetMaidenheadLocator(Latitude, Longitude, true, precision);
             return result;
         }
