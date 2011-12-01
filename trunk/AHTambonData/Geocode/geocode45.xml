@@ -1192,17 +1192,17 @@
       <entity type="Muban" geocode="45100301" name="บ้านเมืองไพร" english="Ban Mueang Phrai"/>
       <entity type="Muban" geocode="45100302" name="บ้านเมืองไพร" english="Ban Mueang Phrai"/>
       <entity type="Muban" geocode="45100303" name="บ้านเมืองไพร" english="Ban Mueang Phrai"/>
-      <entity type="Muban" geocode="45100304" name="บ้านดอนน้ำสร้าง"/>
-      <entity type="Muban" geocode="45100305" name="บ้านนางเหล่ง"/>
-      <entity type="Muban" geocode="45100306" name="บ้านโนนคำ"/>
-      <entity type="Muban" geocode="45100307" name="บ้านดอนน้อย"/>
-      <entity type="Muban" geocode="45100308" name="บ้านโนนสนาม"/>
-      <entity type="Muban" geocode="45100309" name="บ้านเมืองไพร"/>
+      <entity type="Muban" geocode="45100304" name="บ้านดอนน้ำสร้าง" english="Ban Don Nam Sang"/>
+      <entity type="Muban" geocode="45100305" name="บ้านนางเหล่ง" english="Ban Nang Len"/>
+      <entity type="Muban" geocode="45100306" name="บ้านโนนคำ" english="Ban Non Kham"/>
+      <entity type="Muban" geocode="45100307" name="บ้านดอนน้อย" english="Ban Don Noi"/>
+      <entity type="Muban" geocode="45100308" name="บ้านโนนสนาม" english="Ban Non Sanam"/>
+      <entity type="Muban" geocode="45100309" name="บ้านเมืองไพร" english="Ban Mueang Phrai"/>
       <entity type="Muban" geocode="45100310" name="บ้านตาลม" english="Ban Talom"/>
       <entity type="Muban" geocode="45100311" name="บ้านตาลม" english="Ban Talom"/>
       <entity type="Muban" geocode="45100312" name="บ้านท่าแห่" english="Ban Tha Hae"/>
       <entity type="Muban" geocode="45100313" name="บ้านขี้เหล็ก" english="Ban Khilek"/>
-      <entity type="Muban" geocode="45100314" name="บ้านโนนคำ"/>
+      <entity type="Muban" geocode="45100314" name="บ้านโนนคำ" english="Ban Non Kham"/>
     </entity>
     <entity type="Tambon" name="นาแซง" english="Na Saeng" geocode="451004" >
       <office type="MunicipalityOffice">
@@ -2216,11 +2216,25 @@
   <entity type="ThesabanTambon" name="ขวาว" english="Khwao" geocode="4572" parent="4510" tambon="451008" >
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/roiet/khwao/</url>
+      <url status="offline">http://www.khwao.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สถาพร รอเสนา" inoffice="2011"/>
+        <official title="TAOMayor" name="สถาพร รอเสนา" inoffice="2008"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="เมืองไพร" english="Mueang Phrai" geocode="4571" parent="4510" tambon="451003" >
     <office type="MunicipalityOffice">
-      <url>http://www.muangprai.ob.tc/</url>
+      <vision>
+        เมืองไพรน่าอยู่ ด้วยการบริหารจัดการที่ดี และมีความร่วมมือจากทุกภาคส่วนของสังคม
+        โปร่งใสตรวจสอบได้โดยชุมชน มีความเข้มแข็งและยั่งยืน ครอบครัวมีความอบอุ่น
+      </vision>
+      <url>http://muangprai.go.th/</url>
+      <url status="obsolete">http://www.muangprai.ob.tc/</url>
+      <officials>
+        <official title="Mayor" name="ยุทธนา ทาปลัด" inoffice="2011"/>
+        <official title="TAOMayor" name="จันทา อาทิตย์ตั้ง" inoffice="2008"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ดินดำ" english="Din Dam" geocode="4570" parent="4517" tambon="451701" >
