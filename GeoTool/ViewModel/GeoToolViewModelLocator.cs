@@ -105,6 +105,41 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
             }
         }
 
+        private static GeoDataModel _geoDataModel = new GeoDataModel();
+
+        private static GeoDataMapViewModel _geoDataMap;
+
+        /// <summary>
+        /// Gets the GeoDataStatic property.
+        /// </summary>
+        public static GeoDataMapViewModel GeoDataMapStatic
+        {
+            get
+            {
+                if ( _geoDataMap == null )
+                {
+                    CreateGeoDataMap();
+                }
+
+                return _geoDataMap;
+            }
+        }
+
+        /// <summary>
+        /// Gets the GeoData property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+            "CA1822:MarkMembersAsStatic",
+            Justification = "This non-static member is needed for data binding purposes.")]
+        public GeoDataMapViewModel GeoDataMap
+        {
+            get
+            {
+                return GeoDataMapStatic;
+            }
+        }
+
+
         /// <summary>
         /// Provides a deterministic way to delete the GeoDataStatic property.
         /// </summary>
@@ -121,8 +156,27 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
         {
             if ( _geoData == null )
             {
-                var geoDataModel = new GeoDataModel();
-                _geoData = new GeoDataViewModel(geoDataModel);
+                _geoData = new GeoDataViewModel(_geoDataModel);
+            }
+        }
+
+        /// <summary>
+        /// Provides a deterministic way to delete the GeoDataStatic property.
+        /// </summary>
+        public static void ClearGeoDataMap()
+        {
+            _geoDataMap.Cleanup();
+            _geoDataMap = null;
+        }
+
+        /// <summary>
+        /// Provides a deterministic way to create the GeoDataStatic property.
+        /// </summary>
+        public static void CreateGeoDataMap()
+        {
+            if ( _geoDataMap == null )
+            {
+                _geoDataMap = new GeoDataMapViewModel(_geoDataModel);
             }
         }
 
@@ -132,6 +186,7 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
         public static void Cleanup()
         {
             ClearGeoData();
+            ClearGeoDataMap();
         }
     }
 }

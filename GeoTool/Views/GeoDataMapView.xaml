@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="De.AHoerstemeier.GeoTool.Views.GeoDataMapView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+             mc:Ignorable="d" 
+             DataContext="{Binding GeoDataMap, Source={StaticResource Locator}}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <m:Map Name="mapBingMap" CredentialsProvider="{Binding BingMapCredentials}" ZoomLevel="5" Margin="0,0,0,0" Grid.Column="1">
+            <m:Map.Center>
+                <m:Location Latitude="13.755" Longitude="100.472" />
+            </m:Map.Center>
+            <m:Pushpin Location="{Binding PushPinLocation}" IsManipulationEnabled="True" />
+        </m:Map>
+    </Grid>
+</UserControl>

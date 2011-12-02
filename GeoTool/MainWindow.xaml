@@ -4,6 +4,11 @@
         xmlns:geoView="clr-namespace:De.AHoerstemeier.GeoTool.Views"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <geoView:GeoDataView />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="189" />
+            <ColumnDefinition Width="314*" />
+        </Grid.ColumnDefinitions>
+        <geoView:GeoDataView Grid.Column="0" />
+        <geoView:GeoDataMapView Grid.Column="1" />
     </Grid>
 </Window>
