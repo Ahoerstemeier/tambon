@@ -133,7 +133,7 @@
         </geo:Point>
         <url>http://www.sakaeprong.org/</url>
         <officials>
-          <official title="TAOChairman" name="ตุ๋ย ปุลันรัมย์" inoffice="2010"/>
+          <official title="TAOMayor" name="ตุ๋ย ปุลันรัมย์" inoffice="2010"/>
         </officials>
       </office>
     </entity>
@@ -181,7 +181,7 @@
       <office type="TAOOffice">
         <url>http://songhongbr.org/</url>
         <officials>
-          <official title="TAOChairman" name="นพรัตน์  สุขตาม" inoffice="2010"/>
+          <official title="TAOMayor" name="นพรัตน์  สุขตาม" inoffice="2010"/>
         </officials>
       </office>
     </entity>
@@ -512,7 +512,7 @@
       <office type="TAOOffice">
         <url>http://muangphai.igetweb.com/</url>
         <officials>
-          <official title="TAOChairman" name="บุญเลิศ พัดพรม" inoffice="2010"/>
+          <official title="TAOMayor" name="บุญเลิศ พัดพรม" inoffice="2010"/>
         </officials>
       </office>
     </entity>
@@ -633,7 +633,7 @@
     <entity type="Tambon" name="ประโคนชัย" english="Prakhon Chai" geocode="310701" >
       <office type="TAOOffice">
         <officials>
-          <official title="TAOChairman" name="โอกาส ปุยะติ นายก" begin="2009-07-26" endreason="Removed" comment="Yellow-carded in 2010-10, see http://www.ryt9.com/s/nnd/994502"/>
+          <official title="TAOMayor" name="โอกาส ปุยะติ นายก" begin="2009-07-26" endreason="Removed" comment="Yellow-carded in 2010-10, see http://www.ryt9.com/s/nnd/994502"/>
         </officials>
       </office>
     </entity>
@@ -1081,7 +1081,7 @@
     <entity type="Tambon" name="ทุ่งวัง" english="Thung Wang" geocode="311103" >
       <office type="TAOOffice">
         <officials>
-          <official title="TAOChairman" name="สถิตชัย เหรียญสมบูรณ์" begin="2009-07-05" comment="Was red-carded, http://www.ryt9.com/s/nnd/883454"/>
+          <official title="TAOMayor" name="สถิตชัย เหรียญสมบูรณ์" begin="2009-07-05" comment="Was red-carded, http://www.ryt9.com/s/nnd/883454"/>
         </officials>
       </office>
     </entity>
@@ -1292,7 +1292,7 @@
       <office type="TAOOffice">
         <url>http://www.thaisamakee.go.th/</url>
         <officials>
-          <official title="TAOChairman" name="ทศพร พิเศษ"/>
+          <official title="TAOMayor" name="ทศพร พิเศษ"/>
         </officials>
       </office>
     </entity>
@@ -1467,9 +1467,9 @@
     <entity type="Tambon" name="ทุ่งจังหัน" english="Thung Changhan" geocode="311702" >
       <office type="TAOOffice">
         <url>http://www.thungchanghan.go.th/</url>
-        <!--<url>http://tungjanghan.com/</url>-->
+        <url status="offline">http://tungjanghan.com/</url>
         <officials>
-          <official title="TAOChairman" name="บุญเรือง โฉมงาม " inoffice="2011"/>
+          <official title="TAOMayor" name="บุญเรือง โฉมงาม " inoffice="2011"/>
         </officials>
       </office>
       <entity type="Muban" geocode="31170201" name="บ้านทุ่งจังหัน" english="Ban Thung Changhan"/>
@@ -1632,9 +1632,9 @@
         <!-- Longdo: 14.34369, 102.75968 -->
         <!-- MapThai: 14.32261506601896, 102.77094125747680 -->
         <url>http://www.sompoy.go.th/</url>
-        <!--<url>http://www.sompoi-buriram.org/</url>-->
+        <url status="offline">http://www.sompoi-buriram.org/</url>
         <officials>
-          <official title="TAOChairman" name="อดิศักดิ์ นาวีสัมพันธ์" inoffice="2010"/>
+          <official title="TAOMayor" name="อดิศักดิ์ นาวีสัมพันธ์" inoffice="2010"/>
         </officials>
       </office>
     </entity>
@@ -1691,7 +1691,7 @@
       <office type="TAOOffice">
         <url>http://www.nonkhwang.go.th/</url>
         <officials>
-          <official title="TAOChairman" name="ศิริศักดิ์ วงศ์ทองเจริญ" inoffice="2010"/>
+          <official title="TAOMayor" name="ศิริศักดิ์ วงศ์ทองเจริญ" inoffice="2010"/>
         </officials>
       </office>
     </entity>
@@ -1716,7 +1716,7 @@
       <office type="TAOOffice">
         <url>http://www.huafai.go.th/</url>
         <officials>
-          <official title="TAOChairman" name="สมศักดิ์ มีหา" inoffice="2011"/>
+          <official title="TAOMayor" name="สมศักดิ์ มีหา" inoffice="2011"/>
         </officials>
       </office>
       <entity type="Muban" geocode="31220401" name="บ้านโนนสำราญ" english="Ban Non Samran"/>
@@ -1898,7 +1898,11 @@
   <entity type="ThesabanTambon" name="จันทบเพชร" english="Chanthop Phet" geocode="3165" parent="3108" tambon="310808" />
   <entity type="ThesabanTambon" name="สำโรงใหม่" english="Samrong Mai" geocode="3164" parent="3106" tambon="310604" >
     <office type="MunicipalityOffice">
-      <url>http://www.sumrongmai.com/</url>
+      <geo:Point>
+        <geo:lat>14.38044</geo:lat>
+        <geo:long>102.83484</geo:long>
+      </geo:Point>
+      <url status="offline">http://www.sumrongmai.com/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ห้วยหิน" english="Huai Hin" geocode="3163" parent="3114" tambon="311402" >
