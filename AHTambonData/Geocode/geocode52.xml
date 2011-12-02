@@ -389,8 +389,6 @@
     </entity>
     <entity type="Tambon" name="เกาะคา" english="Ko Kha" geocode="520306" >
       <office type="MunicipalityOffice">
-        <!-- TAO renamed to สบยาว with upgrade to municipality -->
-        <!-- to be further renamed to เกาะคาแม่ยาว?-->
         <geo:Point>
           <geo:lat>18.2073</geo:lat>
           <geo:long>99.3589</geo:long>
@@ -400,6 +398,12 @@
           <official title="Mayor" name="เมือง พรหมอย่า" inoffice="2011"/>
           <official title="TAOMayor" name="วิชาญ มาเขียว" inoffice="2009"/>
         </officials>
+        <!--
+        <history>
+          <rename name="สบยาว" english="Sop Yao" oldname="เกาะคา" oldenglish="Ko Kha" effective="2009-10-27" />
+          <rename name="เกาะคาแม่ยาว" english="Ko Kha Mae Yao" oldname="สบยาว" oldenglish="Sop Yao" effective="2011-11-30" />
+        </history>
+        -->
       </office>
       <entity type="Muban" geocode="52030601" name="บ้านน้ำล้อม" english="Ban Nam Lom"/>
       <entity type="Muban" geocode="52030602" name="บ้านหัวแต" english="Ban Hua Tae"/>
@@ -1102,11 +1106,20 @@
         <geo:long>99.3373</geo:long>
       </geo:Point>
       <officials>
-        <official title="DistrictOfficer" name="สมชัย รุ่งสาคร" begin="2010-02-22"/>
-        <official title="DistrictOfficer" name="ศรีโรจน์ นิมมานพัชรินทร์" end="2010-02-21"/>
+        <official title="DistrictOfficer" index="17" name="สมชัย รุ่งสาคร" begin="2010-02-22"/>
+        <official title="DistrictOfficer" index="16" name="ศรีโรจน์ นิมมานพัชรินทร์" end="2010-02-21"/>
+
+        <official title="DistrictOfficer" index="1" name="พยนต์ จันทนาคม" begin="1953-01-01"/>
       </officials>
     </office>
     <entity type="Tambon" name="สบปราบ" english="Sop Prap" geocode="521101" >
+      <office type="TAOOffice">
+        <vision>เศรษฐกิจมั่นคง  ชุมชนเข้มแข็ง  ร่วมแรงพัฒนา  พึ่งพาตนเองเป็นหลัก</vision>
+        <url>http://www.sopprap.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="นายมนัส ใจเรือน" inoffice="2011"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="52110101" name="บ้านสบปราบ"/>
       <entity type="Muban" geocode="52110102" name="บ้านสบปราบ"/>
       <entity type="Muban" geocode="52110103" name="บ้านวังพร้าว"/>
@@ -1572,8 +1585,12 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สบปราบ" english="Sop Prap" geocode="5285" parent="5211" >
-    <office type="TAOOffice">
-      <url>http://www.sobprabcity.com/</url>
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.86609</geo:lat>
+        <geo:long>99.3335</geo:long>
+      </geo:Point>
+      <url status="offline">http://www.sobprabcity.com/</url>
       <officials>
         <official title="Mayor" name="สายัณห์ สุรีย์" inoffice="2011"/>
       </officials>
