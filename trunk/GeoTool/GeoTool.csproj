@@ -66,10 +66,14 @@
     </ApplicationDefinition>
     <Compile Include="GeoDataGlobals.cs" />
     <Compile Include="Model\GeoDataModel.cs" />
+    <Compile Include="ViewModel\GeoDataMapViewModel.cs" />
     <Compile Include="ViewModel\GeoToolViewModelLocator.cs" />
     <Compile Include="ViewModel\GeoDataViewModel.cs" />
     <Compile Include="Views\GeoDataView.xaml.cs">
       <DependentUpon>GeoDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeoDataMapView.xaml.cs">
+      <DependentUpon>GeoDataMapView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +89,10 @@
     </Compile>
     <Page Include="Views\GeoDataView.xaml">
       <SubType>Form</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GeoDataMapView.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

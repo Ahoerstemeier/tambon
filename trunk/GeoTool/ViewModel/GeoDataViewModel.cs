@@ -54,7 +54,6 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
                     RaisePropertyChanged(GeoLocationPropertyName);
                     RaisePropertyChanged(UtmLocationPropertyName);
                     RaisePropertyChanged(MgrsLocationPropertyName);
-                    RaisePropertyChanged(PushPinLocationPropertyName);
                 }
             };
 
@@ -62,31 +61,12 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
             GeoDatums.Add(GeoDatum.DatumWGS84());
             GeoDatums.Add(GeoDatum.DatumIndian1975());
             GeoDatums.Add(GeoDatum.DatumIndian1954());
-
-            MapDoubleClickCommand = new RelayCommand<MouseEventArgs>(MapDoubleClick);
         }
 
         public GeoDataModel Model
         {
             get;
             private set;
-        }
-
-        public override void Cleanup()
-        {
-            // Clean own resources if needed
-
-            base.Cleanup();
-        }
-
-        public CredentialsProvider BingMapCredentials
-        {
-            get
-            {
-                var value = new ApplicationIdCredentialsProvider();
-                value.ApplicationId = GeoDataGlobals.Instance.BingMapsKey;
-                return value;
-            }
         }
 
         /// <summary>
@@ -166,26 +146,6 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
             set { Model.SetMgrsLocation(value); }
         }
 
-        public const String PushPinLocationPropertyName = "PushPinLocation";
-        public Location PushPinLocation
-        {
-            get { return new Location(Model.Location.Latitude, -Model.Location.Longitude); }
-            set
-            {
-                Model.SetGeoLocation(value.Latitude, -value.Longitude);
-            }
-        }
-
-        public RelayCommand<MouseEventArgs> MapDoubleClickCommand
-        {
-            get;
-            private set;
-        }
-
-        private void MapDoubleClick(MouseEventArgs e)
-        {
-            e.Handled = true;
-        }
     }
 
 }

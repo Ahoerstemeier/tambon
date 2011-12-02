@@ -3,28 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
-        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF4"
-        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
-        xmlns:geo="clr-namespace:De.AHoerstemeier.GeoTool"
         mc:Ignorable="d"
         DataContext="{Binding GeoDataStatic, Source={StaticResource Locator}}" d:DesignHeight="314" d:DesignWidth="608">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="191" />
-            <ColumnDefinition Width="312*" />
-        </Grid.ColumnDefinitions>
-        <m:Map Name="mapBingMap" CredentialsProvider="{Binding BingMapCredentials}" ZoomLevel="5" Margin="0,0,0,0" Grid.Column="1">
-            <m:Map.Center>
-                <m:Location Latitude="13.755" Longitude="100.472" />
-            </m:Map.Center>
-            <m:Pushpin Location="{Binding PushPinLocation}" IsManipulationEnabled="True" />
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="MouseDoubleClick" >
-                    <cmd:EventToCommand Command="{Binding Path=MapDoubleClickCommand, Mode=OneWay}" PassEventArgsToCommand="True"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </m:Map>
         <ComboBox Height="23" HorizontalAlignment="Left" Margin="21,35,0,0" Name="cbxGeoDatum" VerticalAlignment="Top" Width="153" ItemsSource="{Binding GeoDatums}" SelectedValue="{Binding CurrentGeoDatum}"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="21,239,0,0" Name="txtGeoHash" VerticalAlignment="Top" Width="153" Text="{Binding GeoHash}" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="21,87,0,0" Name="txtCoordinates" VerticalAlignment="Top" Width="153" Text="{Binding GeoLocation}"/>
