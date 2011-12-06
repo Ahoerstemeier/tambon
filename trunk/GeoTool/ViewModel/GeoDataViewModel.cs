@@ -55,14 +55,23 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
                     RaisePropertyChanged(UtmLocationPropertyName);
                     RaisePropertyChanged(MgrsLocationPropertyName);
                 }
+                GeoPoint point = new GeoPoint(Model.Location);
+                point.Datum = Model.Datum;
+                RaisePropertyChanged(GeoPointPropertyName, _oldLocation, point, true);
+                _oldLocation = point;
             };
 
             GeoDatums = new ObservableCollection<GeoDatum>();
             GeoDatums.Add(GeoDatum.DatumWGS84());
             GeoDatums.Add(GeoDatum.DatumIndian1975());
             GeoDatums.Add(GeoDatum.DatumIndian1954());
+
+            _oldLocation = new GeoPoint(Model.Location);
+            _oldLocation.Datum = Model.Datum;
         }
 
+        private GeoPoint _oldLocation = null;
+        public static String GeoPointPropertyName = "GeoPoint";
         public GeoDataModel Model
         {
             get;

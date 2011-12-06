@@ -21,10 +21,20 @@ namespace De.AHoerstemeier.GeoTool.Model
         #endregion
 
         public const String LocationPropertyName = "Location";
+        private GeoPoint _location = null;
         public GeoPoint Location
         {
-            get;
-            private set;
+            get
+            {
+                return _location;
+            }
+            set
+            {
+                if ( value != null )
+                {
+                    SetGeoLocation(value.Latitude, value.Longitude);
+                }
+            }
         }
 
         public const String DatumPropertyName = "Datum";
@@ -67,7 +77,7 @@ namespace De.AHoerstemeier.GeoTool.Model
 
         public GeoDataModel()
         {
-            Location = GeoDataGlobals.Instance.DefaultLocation;
+            _location = GeoDataGlobals.Instance.DefaultLocation;
             _currentGeoDatum = GeoDatum.DatumWGS84();
         }
 
@@ -199,7 +209,7 @@ namespace De.AHoerstemeier.GeoTool.Model
 
         private void SetLocationValue(GeoPoint geoPoint, UtmPoint utmPoint)
         {
-            Location = geoPoint;
+            _location = geoPoint;
             _UtmPoint = utmPoint;
 
             RaisePropertyChanged(LocationPropertyName);
