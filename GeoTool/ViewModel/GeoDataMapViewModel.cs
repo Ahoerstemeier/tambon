@@ -9,6 +9,7 @@ using Microsoft.Maps.MapControl.WPF.Core;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace De.AHoerstemeier.GeoTool.ViewModel
 {
@@ -33,14 +34,16 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
         /// <param name="model">The model with the actual data.</param>
         public GeoDataMapViewModel(GeoDataModel model)
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real": Connect to service, etc...
-            ////}
+            if ( IsInDesignMode )
+            {
+                // Code runs in Blend --> create design time data.
+            }
+            else
+            {
+                Messenger.Default.Register<PropertyChangedMessage<GeoPoint>>(this, GeoDataModelPropertyChanged);
+
+                // Code runs "for real": Connect to service, etc...
+            }
 
             Model = model;
             Model.PropertyChanged += (s, e) =>
@@ -57,6 +60,12 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
         {
             get;
             set;
+        }
+
+        private void GeoDataModelPropertyChanged(PropertyChangedMessage<GeoPoint> message)
+        {
+            Model.Datum = message.NewValue.Datum;
+            Model.Location = message.NewValue;
         }
 
         /// <summary>

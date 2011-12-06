@@ -105,8 +105,6 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
             }
         }
 
-        private static GeoDataModel _geoDataModel = new GeoDataModel();
-
         private static GeoDataMapViewModel _geoDataMap;
 
         /// <summary>
@@ -156,7 +154,7 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
         {
             if ( _geoData == null )
             {
-                _geoData = new GeoDataViewModel(_geoDataModel);
+                _geoData = new GeoDataViewModel(new GeoDataModel());
             }
         }
 
@@ -176,7 +174,7 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
         {
             if ( _geoDataMap == null )
             {
-                _geoDataMap = new GeoDataMapViewModel(_geoDataModel);
+                _geoDataMap = new GeoDataMapViewModel(new GeoDataModel());
             }
         }
 
