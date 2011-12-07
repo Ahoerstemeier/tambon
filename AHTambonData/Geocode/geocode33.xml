@@ -156,9 +156,6 @@
     <entity type="Tambon" name="ดวนใหญ่" english="Duan Yai" geocode="330120" newgeocode="331603" />
     <entity type="Tambon" name="หนองแก้ว" english="Nong Kaeo" geocode="330121" />
     <entity type="Tambon" name="น้ำคำ" english="Nam Kham" geocode="330122" >
-      <office type="TAOOffice">
-        <url>http://www.numcum.com/</url>
-      </office>
       <entity type="Muban" geocode="33012201" name="บ้านใหม่" english="Ban Mai"/>
       <entity type="Muban" geocode="33012202" name="บ้านง้อ" english="Ban Ngo"/>
       <entity type="Muban" geocode="33012203" name="บ้านหนองโน" english="Ban Nong No"/>
@@ -2033,7 +2030,19 @@
       <url>http://tambon-phokrasang.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="น้ำคำ" english="Nam Kham" geocode="3384" parent="3301" tambon="330122" />
+  <entity type="ThesabanTambon" name="น้ำคำ" english="Nam Kham" geocode="3384" parent="3301" tambon="330122" >
+    <office type="MunicipalityOffice">
+      <vision>
+        เมืองน่าอยู่               คู่เกษตรอินทรีย์
+        สุขภาพดีทั่วหน้า      การศึกษาเป็นเลิศ
+        เทิดวัฒนธรรม          นำการท่องเที่ยว
+        ชุมชนเข้มแข็ง          แหล่งภูมิปัญญา
+        พึ่งพาตนเอง
+      </vision>
+      <url>http://www.numcum.com/</url>
+      <url status="obsolete" comment="Same as numcum.com">http://numcum.igetweb.com/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="กระหวัน" english="Krawan" geocode="3383" parent="3308" tambon="330806" >
     <office type="MunicipalityOffice">
       <geo:Point>
