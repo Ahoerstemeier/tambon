@@ -477,11 +477,11 @@
       <entity type="Muban" geocode="56040201" name="บ้านมาง"/>
       <entity type="Muban" geocode="56040202" name="บ้านแพทย์"/>
       <entity type="Muban" geocode="56040203" name="บ้านหนองหมู" english="Ban Nong Mu"/>
-      <entity type="Muban" geocode="56040204" name="บ้านป่าแขมใต้"/>
+      <entity type="Muban" geocode="56040204" name="บ้านป่าแขมใต้" english="Ban Pa Khaem Tai"/>
       <entity type="Muban" geocode="56040205" name="บ้านทุ่งมอก"/>
       <entity type="Muban" geocode="56040206" name="บ้านบ่อเบี้ย"/>
       <entity type="Muban" geocode="56040207" name="บ้านหนองกลาง"/>
-      <entity type="Muban" geocode="56040208" name="บ้านป่าแขมเหนือ"/>
+      <entity type="Muban" geocode="56040208" name="บ้านป่าแขมเหนือ" english="Ban Pa Khaem Nuea"/>
       <entity type="Muban" geocode="56040209" name="บ้านบ่อตอง"/>
       <entity type="Muban" geocode="56040210" name="บ้านบ่อต้นสัก"/>
       <entity type="Muban" geocode="56040211" name="บ้านทุ่งเจริญ"/>
@@ -678,10 +678,10 @@
         <url>http://phulangka.com/</url>
       </office>
       <entity type="Muban" geocode="56060501" name="บ้านปางค่า"/>
-      <entity type="Muban" geocode="56060502" name="บ้านห้วนกอก"/>
-      <entity type="Muban" geocode="56060503" name="บ้านปางพริก"/>
-      <entity type="Muban" geocode="56060504" name="บ้านปางมะโอ-ห้วยเฟือง"/>
-      <entity type="Muban" geocode="56060505" name="บ้านน้ำต้ม"/>
+      <entity type="Muban" geocode="56060502" name="บ้านห้วนกอก" english="Ban Huai Kok"/>
+      <entity type="Muban" geocode="56060503" name="บ้านปางพริก" english="Ban Bang Phrik"/>
+      <entity type="Muban" geocode="56060504" name="บ้านปางมะโอ-ห้วยเฟือง" english="Ban Pang Ma-o - Huai Fueang"/>
+      <entity type="Muban" geocode="56060505" name="บ้านน้ำต้ม" english="Ban Nam Tom"/>
       <entity type="Muban" geocode="56060506" name="บ้านปางค่าเหนือ"/>
       <entity type="Muban" geocode="56060507" name="บ้านสิบสองพัฒนา"/>
     </entity>
@@ -689,9 +689,9 @@
       <office type="TAOOffice">
         <url>http://naprang.com/</url>
       </office>
-      <entity type="Muban" geocode="56060601" name="บ้านนาปรัง"/>
+      <entity type="Muban" geocode="56060601" name="บ้านนาปรัง" english="Ban Na Prang"/>
 
-      <entity type="Muban" geocode="56060603" name="บ้านหมุ้น"/>
+      <entity type="Muban" geocode="56060603" name="บ้านหมุ้น" english="Ban Mun"/>
 
       <entity type="Muban" geocode="56060606" name="บ้านห้วยแม่แดง"/>
       <entity type="Muban" geocode="56060607" name="บ้านหนองท่าควาย"/>
@@ -957,8 +957,14 @@
     </entity>
     <entity type="Tambon" name="แม่อิง" english="Mae Ing" geocode="560903" >
       <office type="TAOOffice">
-        <url>http://www.mae-ing.com/</url>
+        <url>http://maeeing.com/</url>
+        <url status="obsolete">http://www.maeing.org/</url>
+        <url status="offline">http://www.mae-ing.com/</url>
+        <officials>
+          <official title="TAOMayor" name="รัชพล ล้านแปง" inoffice="2011"/>
+        </officials>
       </office>
+      <entity type="Muban" geocode="56090304" name="บ้านสันป่างิ้ว"/>
     </entity>
   </entity>
   <entity type="KingAmphoe" name="ฟากกว๊าน" english="Fak Kwan" geocode="5610" comment="Proposed, but not created"/>
