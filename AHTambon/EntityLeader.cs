@@ -6,25 +6,26 @@ using System.Xml;
 
 namespace De.AHoerstemeier.Tambon
 {
-    public class EntityLeader: ICloneable
+    public class EntityLeader : ICloneable
     {
         #region properties
-        private String mName = String.Empty;
-        public String Name { get { return mName; } set { SetName(value); } }
+        private String _name = String.Empty;
+        public String Name { get { return _name; } set { SetName(value); } }
         public String English { get; set; }
-        private PersonTitle mTitle = PersonTitle.Unknown;
-        public PersonTitle Title { 
-            get { return mTitle; } 
-            set { mTitle = value; } 
+        private PersonTitle _title = PersonTitle.Unknown;
+        public PersonTitle Title
+        {
+            get { return _title; }
+            set { _title = value; }
         }
         public String Telephone { get; set; }
         public String CellPhone { get; set; }
         public String Comment { get; set; }
-        private EntityLeaderType mPosition = EntityLeaderType.Unknown;
-        public EntityLeaderType Position 
-        { 
-            get { return mPosition; } 
-            set { mPosition = value; } 
+        private EntityLeaderType _position = EntityLeaderType.Unknown;
+        public EntityLeaderType Position
+        {
+            get { return _position; }
+            set { _position = value; }
         }
         public Int32 Index { get; set; }
         public DateTime BeginOfTerm { get; set; }
@@ -37,114 +38,114 @@ namespace De.AHoerstemeier.Tambon
         public EntityLeader()
         {
         }
-        public EntityLeader(EntityLeader iValue)
+        public EntityLeader(EntityLeader value)
         {
-            Name = iValue.Name;
-            English = iValue.English;
-            Title = iValue.Title;
-            Telephone = iValue.Telephone;
-            CellPhone = iValue.CellPhone;
-            Position = iValue.Position;
-            Index = iValue.Index;
-            BeginOfTerm = iValue.BeginOfTerm;
-            BeginOfTermYear = iValue.BeginOfTermYear;
-            EndOfTerm = iValue.EndOfTerm;
-            EndOfTermYear = iValue.EndOfTermYear;
+            Name = value.Name;
+            English = value.English;
+            Title = value.Title;
+            Telephone = value.Telephone;
+            CellPhone = value.CellPhone;
+            Position = value.Position;
+            Index = value.Index;
+            BeginOfTerm = value.BeginOfTerm;
+            BeginOfTermYear = value.BeginOfTermYear;
+            EndOfTerm = value.EndOfTerm;
+            EndOfTermYear = value.EndOfTermYear;
         }
         #endregion
 
         #region methods
-        private void SetName(String iName)
+        private void SetName(String name)
         {
-            mName = iName;
-            foreach (KeyValuePair<String,PersonTitle> lEntry in TambonHelper.PersonTitleStrings)
+            _name = name;
+            foreach ( KeyValuePair<String, PersonTitle> entry in TambonHelper.PersonTitleStrings )
             {
-                String lSearch = lEntry.Key;
-                if (iName.StartsWith(lSearch))
+                String search = entry.Key;
+                if ( name.StartsWith(search) )
                 {
-                    Title = lEntry.Value;
-                    mName = iName.Remove(0, lSearch.Length).Trim();
+                    Title = entry.Value;
+                    _name = name.Remove(0, search.Length).Trim();
                 }
             }
             // TODO Strip persontitle and store it separately in Title property
         }
-        public void ExportToXML(XmlElement iNode)
+        public void ExportToXML(XmlElement node)
         {
-            XmlDocument lXmlDocument = TambonHelper.XmlDocumentFromNode(iNode);
-            var lNewElement = (XmlElement)lXmlDocument.CreateNode("element", "official", "");
-            lNewElement.SetAttribute("title", Position.ToString());
-            if (Index > 0)
+            XmlDocument xmlDocument = TambonHelper.XmlDocumentFromNode(node);
+            var newElement = (XmlElement)xmlDocument.CreateNode("element", "official", "");
+            newElement.SetAttribute("title", Position.ToString());
+            if ( Index > 0 )
             {
-                lNewElement.SetAttribute("index", Index.ToString());
+                newElement.SetAttribute("index", Index.ToString());
             }
-            lNewElement.SetAttribute("name", Name);
-            if (Title != PersonTitle.Unknown)
+            newElement.SetAttribute("name", Name);
+            if ( Title != PersonTitle.Unknown )
             {
-                lNewElement.SetAttribute("nametitle", Title.ToString());
+                newElement.SetAttribute("nametitle", Title.ToString());
             }
-            if (!String.IsNullOrEmpty(English))
+            if ( !String.IsNullOrEmpty(English) )
             {
-                    lNewElement.SetAttribute("english", English);
+                newElement.SetAttribute("english", English);
             }
-            if (!String.IsNullOrEmpty(Telephone))
+            if ( !String.IsNullOrEmpty(Telephone) )
             {
-                lNewElement.SetAttribute("telephone", Telephone);
+                newElement.SetAttribute("telephone", Telephone);
             }
-            if (!String.IsNullOrEmpty(CellPhone))
+            if ( !String.IsNullOrEmpty(CellPhone) )
             {
-                lNewElement.SetAttribute("cellphone", CellPhone);
+                newElement.SetAttribute("cellphone", CellPhone);
             }
-            if ((BeginOfTerm != null)&&(BeginOfTerm.Year>1))
+            if ( (BeginOfTerm != null) && (BeginOfTerm.Year > 1) )
             {
-                lNewElement.SetAttribute("begin", BeginOfTerm.ToString("yyyy-MM-dd", TambonHelper.CultureInfoUS));
+                newElement.SetAttribute("begin", BeginOfTerm.ToString("yyyy-MM-dd", TambonHelper.CultureInfoUS));
             }
-            if (BeginOfTermYear>0)
+            if ( BeginOfTermYear > 0 )
             {
-                lNewElement.SetAttribute("beginyear", BeginOfTermYear.ToString());
+                newElement.SetAttribute("beginyear", BeginOfTermYear.ToString());
             }
-            if ((EndOfTerm != null)&&(EndOfTerm.Year>1))
+            if ( (EndOfTerm != null) && (EndOfTerm.Year > 1) )
             {
-                lNewElement.SetAttribute("begin", EndOfTerm.ToString("yyyy-MM-dd", TambonHelper.CultureInfoUS));
+                newElement.SetAttribute("begin", EndOfTerm.ToString("yyyy-MM-dd", TambonHelper.CultureInfoUS));
             }
-            if (EndOfTermYear > 0)
+            if ( EndOfTermYear > 0 )
             {
-                lNewElement.SetAttribute("endyear", EndOfTermYear.ToString());
+                newElement.SetAttribute("endyear", EndOfTermYear.ToString());
             }
-            if (!String.IsNullOrEmpty(Comment))
+            if ( !String.IsNullOrEmpty(Comment) )
             {
-                lNewElement.SetAttribute("comment", Comment);
+                newElement.SetAttribute("comment", Comment);
             }
-            iNode.AppendChild(lNewElement);
+            node.AppendChild(newElement);
         }
-        internal static EntityLeader Load(XmlNode iNode)
+        internal static EntityLeader Load(XmlNode node)
         {
-            EntityLeader RetVal = null;
+            EntityLeader result = null;
 
-            if (iNode != null && iNode.Name.Equals("official"))
+            if ( node != null && node.Name.Equals("official") )
             {
-                RetVal = new EntityLeader();
-                RetVal.Name = TambonHelper.GetAttribute(iNode, "name");
-                RetVal.English = TambonHelper.GetAttributeOptionalString(iNode, "english");
-                RetVal.Telephone = TambonHelper.GetAttributeOptionalString(iNode, "telephone");
-                RetVal.CellPhone = TambonHelper.GetAttributeOptionalString(iNode, "cellphone");
-                RetVal.Comment = TambonHelper.GetAttributeOptionalString(iNode, "comment");
+                result = new EntityLeader();
+                result.Name = TambonHelper.GetAttribute(node, "name");
+                result.English = TambonHelper.GetAttributeOptionalString(node, "english");
+                result.Telephone = TambonHelper.GetAttributeOptionalString(node, "telephone");
+                result.CellPhone = TambonHelper.GetAttributeOptionalString(node, "cellphone");
+                result.Comment = TambonHelper.GetAttributeOptionalString(node, "comment");
 
-                RetVal.BeginOfTermYear = TambonHelper.GetAttributeOptionalInt(iNode, "beginyear", 0);
-                RetVal.EndOfTermYear = TambonHelper.GetAttributeOptionalInt(iNode, "endyear", 0);
-                RetVal.Index = TambonHelper.GetAttributeOptionalInt(iNode, "index", 0);
-                RetVal.BeginOfTerm = TambonHelper.GetAttributeOptionalDateTime(iNode, "begin");
-                RetVal.EndOfTerm = TambonHelper.GetAttributeOptionalDateTime(iNode, "end");
+                result.BeginOfTermYear = TambonHelper.GetAttributeOptionalInt(node, "beginyear", 0);
+                result.EndOfTermYear = TambonHelper.GetAttributeOptionalInt(node, "endyear", 0);
+                result.Index = TambonHelper.GetAttributeOptionalInt(node, "index", 0);
+                result.BeginOfTerm = TambonHelper.GetAttributeOptionalDateTime(node, "begin");
+                result.EndOfTerm = TambonHelper.GetAttributeOptionalDateTime(node, "end");
 
-                String lPosition = TambonHelper.GetAttribute(iNode, "title");
-                RetVal.Position = (EntityLeaderType)Enum.Parse(typeof(EntityLeaderType), lPosition);
+                String position = TambonHelper.GetAttribute(node, "title");
+                result.Position = (EntityLeaderType)Enum.Parse(typeof(EntityLeaderType), position);
 
-                String lPersonTitle = TambonHelper.GetAttributeOptionalString(iNode, "nametitle");
-                if (!String.IsNullOrEmpty(lPersonTitle))
+                String personTitle = TambonHelper.GetAttributeOptionalString(node, "nametitle");
+                if ( !String.IsNullOrEmpty(personTitle) )
                 {
-                    RetVal.Title = (PersonTitle)Enum.Parse(typeof(PersonTitle), lPosition);
+                    result.Title = (PersonTitle)Enum.Parse(typeof(PersonTitle), position);
                 }
             }
-            return RetVal;
+            return result;
         }
         #endregion
 
