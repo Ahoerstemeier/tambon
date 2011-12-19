@@ -271,6 +271,14 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name='GazetteAreaDefinition'>
+    <xs:complexContent>
+      <xs:extension base="t:GazetteOperationBase">
+        <xs:attribute name="subdivisions" type="xs:int" use="optional" />
+        <xs:attribute name="subdivisiontype" type="t:EntityType" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name='GazetteStatusChange'>
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
@@ -376,6 +384,7 @@
       <xs:element name="rename" type="t:GazetteRename"/>
       <xs:element name="abolish" type="t:GazetteAbolish"/>
       <xs:element name="areachange" type="t:GazetteAreaChange"/>
+      <xs:element name="areadefinition" type="t:GazetteAreaDefinition"/>
       <xs:element name="create" type="t:GazetteCreate"/>
       <xs:element name="mention" type="t:GazetteMention"/>
       <xs:element name="constituency" type="t:GazetteConstituency"/>
@@ -421,41 +430,64 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name='GazetteEntryContainer'>
+  <xs:complexType name='GazetteList'>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="entry" type="t:GazetteEntry">
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded" type="t:GazetteEntry">
         <xs:annotation>
           <xs:documentation>Gazette announcements.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="t:GazetteEntryContainer">
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GazetteListMonth">
+    <xs:complexContent>
+      <xs:extension base="t:GazetteList">
+        <xs:attribute name="value" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GazetteListYear">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="12" name="month" type="t:GazetteListMonth"/>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded" type="t:GazetteEntry">
         <xs:annotation>
-          <xs:documentation>Entries sorted by years.</xs:documentation>
+          <xs:documentation>Gazette announcements.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
     <xs:attribute name="value" type="xs:string" use="required" />
   </xs:complexType>
+  <xs:complexType name="GazetteListDecade">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="10" name="year" type="t:GazetteListYear"/>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded" type="t:GazetteEntry">
+        <xs:annotation>
+          <xs:documentation>Gazette announcements.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="value" type="xs:string" use="required" />
+  </xs:complexType>
+  <xs:complexType name="GazetteListFull">
+    <xs:sequence>
+      <xs:element name="decade" minOccurs="0" maxOccurs="unbounded" type="t:GazetteListDecade">
+        <xs:annotation>
+          <xs:documentation>Entries sorted by decades.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="year" minOccurs="0" maxOccurs="unbounded" type="t:GazetteListYear">
+        <xs:annotation>
+          <xs:documentation>Entries sorted by years.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded" type="t:GazetteEntry">
+        <xs:annotation>
+          <xs:documentation>Gazette announcements.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
-  <xs:element name="gazette">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" name="decade" type="t:GazetteEntryContainer">
-          <xs:annotation>
-            <xs:documentation>Entries sorted by decades.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="t:GazetteEntryContainer">
-          <xs:annotation>
-            <xs:documentation>Entries sorted by years.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-        <xs:element minOccurs="0" maxOccurs="unbounded" name="entry" type="t:GazetteEntry">
-          <xs:annotation>
-            <xs:documentation>Gazette announcements.</xs:documentation>
-          </xs:annotation>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+
+  <xs:element name="gazette" type="t:GazetteListFull"/>
 </xs:schema>

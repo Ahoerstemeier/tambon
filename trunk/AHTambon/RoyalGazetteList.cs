@@ -18,18 +18,18 @@ namespace De.AHoerstemeier.Tambon
             {
                 String lUriX = String.Empty;
                 String lUriY = String.Empty;
-                if (x != null)
+                if ( x != null )
                 {
                     lUriX = x.URI;
                 }
-                if (y != null)
+                if ( y != null )
                 {
                     lUriY = y.URI;
                 }
 
                 int lResult = lUriX.CompareTo(lUriY);
                 return lResult;
-                }
+            }
         }
 
         #region constructor
@@ -46,7 +46,7 @@ namespace De.AHoerstemeier.Tambon
             RoyalGazetteList RetVal = null;
             try
             {
-                if (!String.IsNullOrEmpty(iFromFile) && File.Exists(iFromFile))
+                if ( !String.IsNullOrEmpty(iFromFile) && File.Exists(iFromFile) )
                 {
                     lReader = new StreamReader(iFromFile);
                     lXmlDoc = new XmlDocument();
@@ -56,7 +56,7 @@ namespace De.AHoerstemeier.Tambon
             }
             finally
             {
-                if (lReader != null)
+                if ( lReader != null )
                 {
                     lReader.Close();
                 }
@@ -65,19 +65,23 @@ namespace De.AHoerstemeier.Tambon
         }
         internal static void ParseNode(XmlNode iNode, RoyalGazetteList ioList)
         {
-            if (iNode.HasChildNodes)
+            if ( iNode.HasChildNodes )
             {
-                foreach (XmlNode lChildNode in iNode.ChildNodes)
+                foreach ( XmlNode lChildNode in iNode.ChildNodes )
                 {
-                    if (lChildNode.Name == "year")
+                    if ( lChildNode.Name == "year" )
                     {
                         ParseNode(lChildNode, ioList);
                     }
-                    else if (lChildNode.Name == "decade")
+                    else if ( lChildNode.Name == "decade" )
                     {
                         ParseNode(lChildNode, ioList);
                     }
-                    else if (lChildNode.Name == "entry")
+                    else if ( lChildNode.Name == "month" )
+                    {
+                        ParseNode(lChildNode, ioList);
+                    }
+                    else if ( lChildNode.Name == "entry" )
                     {
                         ioList.Add(RoyalGazette.Load(lChildNode));
                     }
@@ -90,14 +94,14 @@ namespace De.AHoerstemeier.Tambon
         {
             RoyalGazetteList RetVal = null;
 
-            if (iNode != null)
+            if ( iNode != null )
             {
-                foreach (XmlNode lNode in iNode.ChildNodes)
+                foreach ( XmlNode lNode in iNode.ChildNodes )
                 {
-                    if (lNode != null && lNode.Name.Equals("gazette"))
+                    if ( lNode != null && lNode.Name.Equals("gazette") )
                     {
                         RetVal = new RoyalGazetteList();
-                        ParseNode(lNode,RetVal);
+                        ParseNode(lNode, RetVal);
                     }
                 }
             }
@@ -106,7 +110,7 @@ namespace De.AHoerstemeier.Tambon
         }
         public void MirrorAllToCache()
         {
-            foreach (RoyalGazette lEntry in this)
+            foreach ( RoyalGazette lEntry in this )
             {
                 lEntry.MirrorToCache();
             }
@@ -119,9 +123,9 @@ namespace De.AHoerstemeier.Tambon
         public RoyalGazetteList AllAboutEntity(Int32 iGeocode, Boolean iIncludeSubEntities)
         {
             var retval = new RoyalGazetteList();
-            foreach (RoyalGazette lEntry in this)
+            foreach ( RoyalGazette lEntry in this )
             {
-                if (lEntry.IsAboutGeocode(iGeocode,iIncludeSubEntities))
+                if ( lEntry.IsAboutGeocode(iGeocode, iIncludeSubEntities) )
                 {
                     retval.Add(lEntry);
                 }
@@ -133,7 +137,7 @@ namespace De.AHoerstemeier.Tambon
             XmlDocument lXmlDocument = TambonHelper.XmlDocumentFromNode(iNode);
             var lNode = (XmlElement)lXmlDocument.CreateNode("element", "gazette", "");
             iNode.AppendChild(lNode);
-            foreach (RoyalGazette lEntry in this)
+            foreach ( RoyalGazette lEntry in this )
             {
                 lEntry.ExportToXML(lNode);
             }
@@ -144,7 +148,7 @@ namespace De.AHoerstemeier.Tambon
             lFeed.Title = new TextSyndicationContent("Royal Gazette");
             List<SyndicationItem> lItems = new List<SyndicationItem>();
 
-            foreach (RoyalGazette lEntry in this)
+            foreach ( RoyalGazette lEntry in this )
             {
                 lItems.Add(lEntry.ToSyndicationItem());
             }
@@ -164,13 +168,13 @@ namespace De.AHoerstemeier.Tambon
         public RoyalGazetteList FilteredList(RoyalGazetteList iFilter)
         {
             var lResult = new RoyalGazetteList();
-            foreach (RoyalGazette lEntry in this)
+            foreach ( RoyalGazette lEntry in this )
             {
-                if (iFilter == null)
+                if ( iFilter == null )
                 {
                     lResult.Add(lEntry);
                 }
-                else if (!iFilter.Contains(lEntry))
+                else if ( !iFilter.Contains(lEntry) )
                 {
                     lResult.Add(lEntry);
                 }
@@ -186,12 +190,12 @@ namespace De.AHoerstemeier.Tambon
             URIComparer lComparer = new URIComparer();
             lTemp.Sort(lComparer.Compare);
             int lIndex = 0;
-            while (lIndex < lTemp.Count)
+            while ( lIndex < lTemp.Count )
             {
                 RoyalGazette lEntry = lTemp[lIndex];
                 lTemp.RemoveAt(lIndex);
                 int lFound = lTemp.BinarySearch(lEntry, lComparer);
-                if (lFound >= 0)
+                if ( lFound >= 0 )
                 {
                     lResult.Add(lEntry);
                 }

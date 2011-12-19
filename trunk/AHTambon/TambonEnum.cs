@@ -74,6 +74,7 @@ namespace De.AHoerstemeier.Tambon
         MunicipalClerk,
         TAOMayor,
         TAOChairman,
+        TAOCouncilChairman,
         TAOClerk,
         TambonCouncilChairman,
         SanitaryDistrictChairman,
