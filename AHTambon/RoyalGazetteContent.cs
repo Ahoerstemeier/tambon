@@ -21,17 +21,17 @@ namespace De.AHoerstemeier.Tambon
         #region methods
         virtual internal void DoLoad(XmlNode iNode)
         {
-            if (iNode != null)
+            if ( iNode != null )
             {
-                Geocode = TambonHelper.GetAttributeOptionalInt(iNode, "geocode",0);
+                Geocode = TambonHelper.GetAttributeOptionalInt(iNode, "geocode", 0);
                 TambonGeocode = TambonHelper.GetAttributeOptionalInt(iNode, "tambon", 0);
                 Name = TambonHelper.GetAttributeOptionalString(iNode, "name");
                 English = TambonHelper.GetAttributeOptionalString(iNode, "english");
                 Owner = TambonHelper.GetAttributeOptionalInt(iNode, "owner", 0);
-                foreach (XmlNode lNode in iNode.ChildNodes)
+                foreach ( XmlNode lNode in iNode.ChildNodes )
                 {
                     var lContent = RoyalGazetteContent.CreateContentObject(lNode.Name);
-                    if (lContent != null)
+                    if ( lContent != null )
                     {
                         lContent.DoLoad(lNode);
                         mSubEntries.Add(lContent);
@@ -42,7 +42,7 @@ namespace De.AHoerstemeier.Tambon
 
         protected virtual void DoCopy(RoyalGazetteContent iOther)
         {
-            if (iOther != null)
+            if ( iOther != null )
             {
                 Geocode = iOther.Geocode;
                 TambonGeocode = iOther.TambonGeocode;
@@ -50,7 +50,7 @@ namespace De.AHoerstemeier.Tambon
                 Name = iOther.Name;
                 English = iOther.English;
             }
-            foreach (RoyalGazetteContent lContent in iOther.mSubEntries)
+            foreach ( RoyalGazetteContent lContent in iOther.mSubEntries )
             {
                 RoyalGazetteContent lNewContent = (RoyalGazetteContent)lContent.Clone();
                 mSubEntries.Add(lNewContent);
@@ -67,27 +67,27 @@ namespace De.AHoerstemeier.Tambon
         }
         virtual protected void WriteToXmlElement(XmlElement iElement)
         {
-            if (Geocode != 0)
+            if ( Geocode != 0 )
             {
                 iElement.SetAttribute("geocode", Geocode.ToString());
             }
-            if (TambonGeocode != 0)
+            if ( TambonGeocode != 0 )
             {
                 iElement.SetAttribute("tambon", TambonGeocode.ToString());
             }
-            if (Owner != 0)
+            if ( Owner != 0 )
             {
                 iElement.SetAttribute("owner", Owner.ToString());
             }
-            if (!String.IsNullOrEmpty(Name))
+            if ( !String.IsNullOrEmpty(Name) )
             {
                 iElement.SetAttribute("name", Name.ToString());
             }
-            if (!String.IsNullOrEmpty(English))
+            if ( !String.IsNullOrEmpty(English) )
             {
                 iElement.SetAttribute("english", English.ToString());
             }
-            foreach (RoyalGazetteContent lContent in mSubEntries)
+            foreach ( RoyalGazetteContent lContent in mSubEntries )
             {
                 lContent.ExportToXML(iElement);
             }
@@ -97,7 +97,7 @@ namespace De.AHoerstemeier.Tambon
         static internal RoyalGazetteContent CreateContentObject(String iName)
         {
             RoyalGazetteContent retval = null;
-            switch (iName)
+            switch ( iName )
             {
                 case RoyalGazetteContentRename.XmlLabel:
                     {
@@ -117,6 +117,11 @@ namespace De.AHoerstemeier.Tambon
                 case RoyalGazetteContentAreaChange.XmlLabel:
                     {
                         retval = new RoyalGazetteContentAreaChange();
+                        break;
+                    }
+                case RoyalGazetteContentAreaDefinition.XmlLabel:
+                    {
+                        retval = new RoyalGazetteContentAreaDefinition();
                         break;
                     }
                 case RoyalGazetteContentReassign.XmlLabel:
@@ -144,7 +149,7 @@ namespace De.AHoerstemeier.Tambon
                         retval = new RoyalGazetteContentCapital();
                         break;
                     }
-                
+
             }
             return retval;
         }
@@ -154,7 +159,7 @@ namespace De.AHoerstemeier.Tambon
 
         public object Clone()
         {
-            object lNewObject  = Activator.CreateInstance( this.GetType() );
+            object lNewObject = Activator.CreateInstance(this.GetType());
             RoyalGazetteContent lNewContent = lNewObject as RoyalGazetteContent;
             lNewContent.DoCopy(this);
             return lNewContent;
@@ -169,7 +174,7 @@ namespace De.AHoerstemeier.Tambon
             Boolean retval = TambonHelper.IsSameGeocode(iGeocode, Geocode, iIncludeSubEntities);
             retval = retval | TambonHelper.IsSameGeocode(iGeocode, Owner, iIncludeSubEntities);
             retval = retval | TambonHelper.IsSameGeocode(iGeocode, TambonGeocode, iIncludeSubEntities);
-            foreach (RoyalGazetteContent lContent in mSubEntries)
+            foreach ( RoyalGazetteContent lContent in mSubEntries )
             {
                 retval = retval | lContent.IsAboutGeocode(iGeocode, iIncludeSubEntities);
             }

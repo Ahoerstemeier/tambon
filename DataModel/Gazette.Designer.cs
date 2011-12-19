@@ -19,31 +19,37 @@ namespace De.AHoerstemeier.Tambon
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "gazette", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class gazette
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute("gazette", Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteListFull", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class GazetteListFull
     {
 
-        private List<GazetteEntryContainer> decadeField;
+        private List<GazetteListDecade> decadeField;
 
-        private List<GazetteEntryContainer> yearField;
+        private List<GazetteListYear> yearField;
 
         private List<GazetteEntry> entryField;
 
         /// <summary>
-        /// Creates a new instance of gazette.
+        /// Creates a new instance of GazetteListFull.
         /// </summary>
-        public gazette()
+        public GazetteListFull()
         {
             this.entryField = new List<GazetteEntry>();
-            this.yearField = new List<GazetteEntryContainer>();
-            this.decadeField = new List<GazetteEntryContainer>();
+            this.yearField = new List<GazetteListYear>();
+            this.decadeField = new List<GazetteListDecade>();
         }
 
+        /// <summary>
+        /// Entries sorted by decades.
+        /// </summary>
+        /// <value>
+        /// The decade.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("decade", Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<GazetteEntryContainer> decade
+        public List<GazetteListDecade> decade
         {
             get
             {
@@ -55,9 +61,15 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Entries sorted by years.
+        /// </summary>
+        /// <value>
+        /// The year.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("year", Order = 1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<GazetteEntryContainer> year
+        public List<GazetteListYear> year
         {
             get
             {
@@ -69,6 +81,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Gazette announcements.
+        /// </summary>
+        /// <value>
+        /// The entry.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("entry", Order = 2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<GazetteEntry> entry
@@ -89,22 +107,196 @@ namespace De.AHoerstemeier.Tambon
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteEntryContainer", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class GazetteEntryContainer
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteListDecade", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class GazetteListDecade
     {
 
-        private List<GazetteEntry> entryField;
+        private List<GazetteListYear> yearField;
 
-        private List<GazetteEntryContainer> yearField;
+        private List<GazetteEntry> entryField;
 
         private string valueField;
 
         /// <summary>
-        /// Creates a new instance of GazetteEntryContainer.
+        /// Creates a new instance of GazetteListDecade.
         /// </summary>
-        public GazetteEntryContainer()
+        public GazetteListDecade()
         {
-            this.yearField = new List<GazetteEntryContainer>();
+            this.entryField = new List<GazetteEntry>();
+            this.yearField = new List<GazetteListYear>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("year", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<GazetteListYear> year
+        {
+            get
+            {
+                return this.yearField;
+            }
+            set
+            {
+                this.yearField = value;
+            }
+        }
+
+        /// <summary>
+        /// Gazette announcements.
+        /// </summary>
+        /// <value>
+        /// The entry.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("entry", Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<GazetteEntry> entry
+        {
+            get
+            {
+                return this.entryField;
+            }
+            set
+            {
+                this.entryField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteListYear", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class GazetteListYear
+    {
+
+        private List<GazetteListMonth> monthField;
+
+        private List<GazetteEntry> entryField;
+
+        private string valueField;
+
+        /// <summary>
+        /// Creates a new instance of GazetteListYear.
+        /// </summary>
+        public GazetteListYear()
+        {
+            this.entryField = new List<GazetteEntry>();
+            this.monthField = new List<GazetteListMonth>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("month", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<GazetteListMonth> month
+        {
+            get
+            {
+                return this.monthField;
+            }
+            set
+            {
+                this.monthField = value;
+            }
+        }
+
+        /// <summary>
+        /// Gazette announcements.
+        /// </summary>
+        /// <value>
+        /// The entry.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("entry", Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<GazetteEntry> entry
+        {
+            get
+            {
+                return this.entryField;
+            }
+            set
+            {
+                this.entryField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteListMonth", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class GazetteListMonth : GazetteList
+    {
+
+        private string valueField;
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
+        }
+    }
+
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteListMonth))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteList", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class GazetteList
+    {
+
+        private List<GazetteEntry> entryField;
+
+        /// <summary>
+        /// Creates a new instance of GazetteList.
+        /// </summary>
+        public GazetteList()
+        {
             this.entryField = new List<GazetteEntry>();
         }
 
@@ -125,40 +317,6 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.entryField = value;
-            }
-        }
-
-        /// <summary>
-        /// Entries sorted by years.
-        /// </summary>
-        /// <value>
-        /// The year.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("year", Order = 1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<GazetteEntryContainer> year
-        {
-            get
-            {
-                return this.yearField;
-            }
-            set
-            {
-                this.yearField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string value
-        {
-            get
-            {
-                return this.valueField;
-            }
-            set
-            {
-                this.valueField = value;
             }
         }
     }
@@ -768,6 +926,7 @@ namespace De.AHoerstemeier.Tambon
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAbolish))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRename))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteStatusChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaDefinition))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRenumber))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteReassign))]
@@ -800,6 +959,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazetteParkAbolish), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazetteParkAreaChange), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("areadefinition", typeof(GazetteAreaDefinition), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order = 0)]
@@ -867,6 +1027,7 @@ namespace De.AHoerstemeier.Tambon
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAbolish))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRename))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteStatusChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaDefinition))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRenumber))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteReassign))]
@@ -1760,6 +1921,104 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.newField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "GazetteAreaDefinition", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class GazetteAreaDefinition : GazetteOperationBase
+    {
+
+        private int subdivisionsField;
+
+        private bool subdivisionsFieldSpecified;
+
+        private EntityType subdivisiontypeField;
+
+        private bool subdivisiontypeFieldSpecified;
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int subdivisions
+        {
+            get
+            {
+                return this.subdivisionsField;
+            }
+            set
+            {
+                this.subdivisionsField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool subdivisionsSpecified
+        {
+            get
+            {
+                return this.subdivisionsFieldSpecified;
+            }
+            set
+            {
+                this.subdivisionsFieldSpecified = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType subdivisiontype
+        {
+            get
+            {
+                return this.subdivisiontypeField;
+            }
+            set
+            {
+                this.subdivisiontypeField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool subdivisiontypeSpecified
+        {
+            get
+            {
+                return this.subdivisiontypeFieldSpecified;
+            }
+            set
+            {
+                this.subdivisiontypeFieldSpecified = value;
             }
         }
     }
