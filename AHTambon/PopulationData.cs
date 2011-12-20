@@ -404,7 +404,7 @@ namespace De.AHoerstemeier.Tambon
         private void ProcessAllProvinces()
         {
             PopulationDataEntry lData = new PopulationDataEntry();
-            foreach (PopulationDataEntry lEntry in TambonHelper.Geocodes)
+            foreach (PopulationDataEntry lEntry in TambonHelper.ProvinceGeocodes)
             {
                 PopulationData lTempCalculator = new PopulationData(mYear, lEntry.Geocode);
                 lTempCalculator.Process();

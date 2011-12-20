@@ -91,7 +91,7 @@ namespace De.AHoerstemeier.Tambon
         }
         public void RemoveAllKnownGeocodes()
         {
-            foreach (var lEntry in TambonHelper.Geocodes)
+            foreach (var lEntry in TambonHelper.ProvinceGeocodes)
             {
                 PopulationData lCurrentList = TambonHelper.GetGeocodeList(lEntry.Geocode);
                 RemoveKnownGeocodes(lCurrentList.Data);

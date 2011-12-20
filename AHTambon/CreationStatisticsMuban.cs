@@ -48,7 +48,7 @@ namespace De.AHoerstemeier.Tambon
         protected void ProcessContentForName(RoyalGazetteContentCreate iCreate)
         {
             Int32 lTambonGeocode = iCreate.Geocode / 100;
-            String lName = TambonHelper.StripBan(iCreate.Name);
+            String lName = TambonHelper.StripBanOrChumchon(iCreate.Name);
             if (!String.IsNullOrEmpty(lName))
             {
                 String lParentName = String.Empty;
@@ -60,7 +60,7 @@ namespace De.AHoerstemeier.Tambon
                         Debug.Assert(lTambonGeocode == (lSubEntry.Geocode / 100), "Parent muban as a different geocode");
                     }
                 }
-                lParentName = TambonHelper.StripBan(lParentName);
+                lParentName = TambonHelper.StripBanOrChumchon(lParentName);
                 if (!String.IsNullOrEmpty(lParentName))
                 {
                     if (lName.StartsWith(lParentName))

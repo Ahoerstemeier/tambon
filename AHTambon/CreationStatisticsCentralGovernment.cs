@@ -77,7 +77,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 List<String> lChangwat = new List<String>();
                 Int32 lMaxNumber = 1;
-                foreach (PopulationDataEntry lEntry in TambonHelper.Geocodes)
+                foreach (PopulationDataEntry lEntry in TambonHelper.ProvinceGeocodes)
                 {
                     if (mNumberOfCreationsPerChangwat[lEntry.Geocode] > lMaxNumber)
                     {

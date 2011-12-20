@@ -191,9 +191,9 @@ namespace De.AHoerstemeier.Tambon
             {
                 lBuilder.Append(lKeyValuePair.Key.Geocode.ToString());
                 lBuilder.Append(' ');
-                lBuilder.Append(TambonHelper.StripBan(lKeyValuePair.Key.Name));
+                lBuilder.Append(TambonHelper.StripBanOrChumchon(lKeyValuePair.Key.Name));
                 lBuilder.Append(" instead of ");
-                lBuilder.AppendLine(TambonHelper.StripBan(lKeyValuePair.Value.Name));
+                lBuilder.AppendLine(TambonHelper.StripBanOrChumchon(lKeyValuePair.Value.Name));
             }
 
             String RetVal = lBuilder.ToString();
