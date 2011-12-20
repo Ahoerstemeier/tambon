@@ -55,7 +55,7 @@ namespace De.AHoerstemeier.Tambon
         private List<PopulationDataEntry> LoadGeocodeLists()
         {
             var lList = new List<PopulationDataEntry>();
-            foreach (PopulationDataEntry lEntry in TambonHelper.Geocodes)
+            foreach (PopulationDataEntry lEntry in TambonHelper.ProvinceGeocodes)
             {
                 if (TambonHelper.IsBaseGeocode(BaseGeocode, lEntry.Geocode))
                 {
@@ -72,7 +72,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 if (lEntry.Type == EntityType.Muban)
                 {
-                    lEntry.Name = TambonHelper.StripBan(lEntry.Name);
+                    lEntry.Name = TambonHelper.StripBanOrChumchon(lEntry.Name);
                 }
                 if ((!lEntry.IsObsolete()) & (TambonHelper.IsBaseGeocode(BaseGeocode, lEntry.Geocode)))
                 {

@@ -35,7 +35,7 @@ namespace De.AHoerstemeier.Tambon
             TambonHelper.LoadGeocodeList();
 
             cbxProvince.Items.Clear();
-            foreach ( PopulationDataEntry lEntry in TambonHelper.Geocodes )
+            foreach ( PopulationDataEntry lEntry in TambonHelper.ProvinceGeocodes )
             {
                 cbxProvince.Items.Add(lEntry);
                 if ( lEntry.Geocode == TambonHelper.PreferredProvinceGeocode )
