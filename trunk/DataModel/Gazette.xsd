@@ -8,6 +8,7 @@
 
   <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd"/>
   <xs:include schemaLocation="basictypes.xsd"/>
+  <xs:include schemaLocation="constituencies.xsd"/>
 
   <xs:simpleType name="ParkType">
     <xs:restriction base="xs:string">
@@ -349,7 +350,11 @@
   </xs:complexType>
   <xs:complexType name="GazetteConstituency">
     <xs:complexContent>
-      <xs:extension base="t:GazetteOperationBase"/>
+      <xs:extension base="t:GazetteOperationBase">
+        <xs:sequence>
+          <xs:element name="constituencies" type="t:ConstituencyListBase" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>      
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteParkCreate">

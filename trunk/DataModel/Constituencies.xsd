@@ -111,19 +111,34 @@
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:Constituency"/>
     </xs:sequence>
+    <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
   </xs:complexType>
-  <xs:complexType name="Constituency">
+  <xs:complexType name="ConstituencyListBase">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:ConstituencyBase"/>
+    </xs:sequence>
+    <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="ConstituencyBase">
     <xs:sequence>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element minOccurs="1" maxOccurs="1" name="include" type="t:EntityInclude"/>
         <xs:element minOccurs="1" maxOccurs="1" name="includesub" type="t:EntityIncludeSub"/>
       </xs:choice>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="election" type="t:Election"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="byelection" type="t:ByElection"/>
     </xs:sequence>
     <xs:attribute name="index" type="xs:unsignedByte" use="required" />
     <xs:attribute name="numberofseats" type="xs:unsignedByte" use="optional" default="1"/>
     <xs:attribute name="comment" type="xs:string" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="Constituency">
+    <xs:complexContent>
+      <xs:extension base="t:ConstituencyBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="election" type="t:Election"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="byelection" type="t:ByElection"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="ElectionData">
     <xs:sequence>
