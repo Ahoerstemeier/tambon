@@ -20,280 +20,36 @@ namespace De.AHoerstemeier.Tambon
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute("electiondata", Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "ElectionData", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class ElectionData
-    {
-
-        private List<Party> partiesField;
-
-        private ConstituencyEntity entityField;
-
-        /// <summary>
-        /// Creates a new instance of ElectionData.
-        /// </summary>
-        public ElectionData()
-        {
-            this.entityField = new ConstituencyEntity();
-            this.partiesField = new List<Party>();
-        }
-
-        [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("party", IsNullable = false)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<Party> parties
-        {
-            get
-            {
-                return this.partiesField;
-            }
-            set
-            {
-                this.partiesField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ConstituencyEntity entity
-        {
-            get
-            {
-                return this.entityField;
-            }
-            set
-            {
-                this.entityField = value;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Party contesting in the election.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Party", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class Party
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyList", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class ConstituencyList
     {
 
-        private string nameField;
-
-        private string englishField;
-
-        private string idField;
-
-        /// <summary>
-        /// Thai name of the party.
-        /// </summary>
-        /// <value>
-        /// The name.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name
-        {
-            get
-            {
-                return this.nameField;
-            }
-            set
-            {
-                this.nameField = value;
-            }
-        }
-
-        /// <summary>
-        /// English name of the party.
-        /// </summary>
-        /// <value>
-        /// The english.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string english
-        {
-            get
-            {
-                return this.englishField;
-            }
-            set
-            {
-                this.englishField = value;
-            }
-        }
-
-        /// <summary>
-        /// Number assigned to the party for the election in question.
-        /// </summary>
-        /// <value>
-        /// The id.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyEntity", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class ConstituencyEntity : EntityBase
-    {
-
-        private List<ConstituencyEntity> entityField;
-
-        private List<Constituency> constituenciesField;
-
-        private Election electionField;
-
-        /// <summary>
-        /// Creates a new instance of ConstituencyEntity.
-        /// </summary>
-        public ConstituencyEntity()
-        {
-            this.electionField = new Election();
-            this.constituenciesField = new List<Constituency>();
-            this.entityField = new List<ConstituencyEntity>();
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("entity", Order = 0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<ConstituencyEntity> entity
-        {
-            get
-            {
-                return this.entityField;
-            }
-            set
-            {
-                this.entityField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlArrayAttribute(Order = 1)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("constituency", IsNullable = false)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<Constituency> constituencies
-        {
-            get
-            {
-                return this.constituenciesField;
-            }
-            set
-            {
-                this.constituenciesField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Election election
-        {
-            get
-            {
-                return this.electionField;
-            }
-            set
-            {
-                this.electionField = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Constituency", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class Constituency
-    {
-
-        private List<EntityBase> itemsField;
-
-        private List<Election> electionField;
-
-        private List<ByElection> byelectionField;
+        private List<Constituency> constituencyField;
 
         private byte indexField;
 
-        private byte numberofseatsField;
-
-        private string commentField;
+        private bool indexFieldSpecified;
 
         /// <summary>
-        /// Creates a new instance of Constituency.
+        /// Creates a new instance of ConstituencyList.
         /// </summary>
-        public Constituency()
+        public ConstituencyList()
         {
-            this.byelectionField = new List<ByElection>();
-            this.electionField = new List<Election>();
-            this.itemsField = new List<EntityBase>();
-            this.numberofseatsField = ((byte)(1));
+            this.constituencyField = new List<Constituency>();
         }
 
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("include", typeof(EntityInclude), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("includesub", typeof(EntityIncludeSub), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("constituency", Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<EntityBase> Items
+        public List<Constituency> constituency
         {
             get
             {
-                return this.itemsField;
+                return this.constituencyField;
             }
             set
             {
-                this.itemsField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("election", Order = 1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<Election> election
-        {
-            get
-            {
-                return this.electionField;
-            }
-            set
-            {
-                this.electionField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("byelection", Order = 2)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<ByElection> byelection
-        {
-            get
-            {
-                return this.byelectionField;
-            }
-            set
-            {
-                this.byelectionField = value;
+                this.constituencyField = value;
             }
         }
 
@@ -311,32 +67,23 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "1")]
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte numberofseats
+        public bool indexSpecified
         {
             get
             {
-                return this.numberofseatsField;
+                return this.indexFieldSpecified;
             }
             set
             {
-                this.numberofseatsField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment
-        {
-            get
-            {
-                return this.commentField;
-            }
-            set
-            {
-                this.commentField = value;
+                this.indexFieldSpecified = value;
             }
         }
     }
@@ -346,75 +93,48 @@ namespace De.AHoerstemeier.Tambon
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityInclude", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class EntityInclude : EntityBase
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Constituency", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class Constituency : ConstituencyBase
     {
 
-        private List<EntityInExclude> excludeField;
+        private List<Election> electionField;
+
+        private List<ByElection> byelectionField;
 
         /// <summary>
-        /// Creates a new instance of EntityInclude.
+        /// Creates a new instance of Constituency.
         /// </summary>
-        public EntityInclude()
+        public Constituency()
         {
-            this.excludeField = new List<EntityInExclude>();
+            this.byelectionField = new List<ByElection>();
+            this.electionField = new List<Election>();
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("exclude", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("election", Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<EntityInExclude> exclude
+        public List<Election> election
         {
             get
             {
-                return this.excludeField;
+                return this.electionField;
             }
             set
             {
-                this.excludeField = value;
+                this.electionField = value;
             }
         }
-    }
 
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityInExclude", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class EntityInExclude : EntityBase
-    {
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityIncludeSub", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class EntityIncludeSub : EntityBase
-    {
-
-        private List<EntityInExclude> includeField;
-
-        /// <summary>
-        /// Creates a new instance of EntityIncludeSub.
-        /// </summary>
-        public EntityIncludeSub()
-        {
-            this.includeField = new List<EntityInExclude>();
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("include", Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("byelection", Order = 1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<EntityInExclude> include
+        public List<ByElection> byelection
         {
             get
             {
-                return this.includeField;
+                return this.byelectionField;
             }
             set
             {
-                this.includeField = value;
+                this.byelectionField = value;
             }
         }
     }
@@ -1043,409 +763,6 @@ namespace De.AHoerstemeier.Tambon
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "CandidateListEntry", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class CandidateListEntry : Candidate
-    {
-
-        private string idField;
-
-        private string votesField;
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string votes
-        {
-            get
-            {
-                return this.votesField;
-            }
-            set
-            {
-                this.votesField = value;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Result of the party list voting.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "PartyListResult", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class PartyListResult
-    {
-
-        private List<PartyListResultEntry> partyField;
-
-        private string eligiblevoterField;
-
-        private string invalidvotesField;
-
-        private string abstainvotesField;
-
-        /// <summary>
-        /// Creates a new instance of PartyListResult.
-        /// </summary>
-        public PartyListResult()
-        {
-            this.partyField = new List<PartyListResultEntry>();
-        }
-
-        /// <summary>
-        /// Result for a single party.
-        /// </summary>
-        /// <value>
-        /// The party.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("party", Order = 0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<PartyListResultEntry> party
-        {
-            get
-            {
-                return this.partyField;
-            }
-            set
-            {
-                this.partyField = value;
-            }
-        }
-
-        /// <summary>
-        /// Number of eligible voters (จำนวนผู้มาใช้สิทธิเลือกตั้ง).
-        /// </summary>
-        /// <value>
-        /// The eligiblevoter.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string eligiblevoter
-        {
-            get
-            {
-                return this.eligiblevoterField;
-            }
-            set
-            {
-                this.eligiblevoterField = value;
-            }
-        }
-
-        /// <summary>
-        /// Number of invalid votes cast (จำนวนบัตรเสีย).
-        /// </summary>
-        /// <value>
-        /// The invalidvotes.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string invalidvotes
-        {
-            get
-            {
-                return this.invalidvotesField;
-            }
-            set
-            {
-                this.invalidvotesField = value;
-            }
-        }
-
-        /// <summary>
-        /// Number of abstain votes (จำนวนบัตรไม่ประสงค์ลงคะแนน).
-        /// </summary>
-        /// <value>
-        /// The abstainvotes.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string abstainvotes
-        {
-            get
-            {
-                return this.abstainvotesField;
-            }
-            set
-            {
-                this.abstainvotesField = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "PartyListResultEntry", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class PartyListResultEntry
-    {
-
-        private string idField;
-
-        private string votesField;
-
-        private string seatsField;
-
-        /// <summary>
-        /// Party identified by the number assigned to it.
-        /// </summary>
-        /// <value>
-        /// The id.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-
-        /// <summary>
-        /// Number of votes received.
-        /// </summary>
-        /// <value>
-        /// The votes.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string votes
-        {
-            get
-            {
-                return this.votesField;
-            }
-            set
-            {
-                this.votesField = value;
-            }
-        }
-
-        /// <summary>
-        /// Number of seats won.
-        /// </summary>
-        /// <value>
-        /// The seats.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string seats
-        {
-            get
-            {
-                return this.seatsField;
-            }
-            set
-            {
-                this.seatsField = value;
-            }
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "CandidateList", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class CandidateList
-    {
-
-        private List<CandidateListEntry> candidateField;
-
-        private string eligiblevoterField;
-
-        private string invalidvotesField;
-
-        private string abstainvotesField;
-
-        private string commentField;
-
-        /// <summary>
-        /// Creates a new instance of CandidateList.
-        /// </summary>
-        public CandidateList()
-        {
-            this.candidateField = new List<CandidateListEntry>();
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("candidate", Order = 0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<CandidateListEntry> candidate
-        {
-            get
-            {
-                return this.candidateField;
-            }
-            set
-            {
-                this.candidateField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string eligiblevoter
-        {
-            get
-            {
-                return this.eligiblevoterField;
-            }
-            set
-            {
-                this.eligiblevoterField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string invalidvotes
-        {
-            get
-            {
-                return this.invalidvotesField;
-            }
-            set
-            {
-                this.invalidvotesField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string abstainvotes
-        {
-            get
-            {
-                return this.abstainvotesField;
-            }
-            set
-            {
-                this.abstainvotesField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment
-        {
-            get
-            {
-                return this.commentField;
-            }
-            set
-            {
-                this.commentField = value;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Types of elections.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
-    public enum ElectionType
-    {
-
-        /// <summary>
-        /// House of Representatives.
-        /// </summary>
-        Parliament,
-
-        /// <summary>
-        /// Senate.
-        /// </summary>
-        Senate,
-
-        /// <summary>
-        /// Chairman of the provincial administrative organization.
-        /// </summary>
-        PAOChairman,
-
-        /// <summary>
-        /// Council of the provincial administrative organization.
-        /// </summary>
-        PAOCouncil,
-
-        /// <summary>
-        /// Chairman/Mayor of the subdistrict administrative organization.
-        /// </summary>
-        TAOMayor,
-
-        /// <summary>
-        /// Council of the subdistrict administrative organization.
-        /// </summary>
-        TAOCouncil,
-
-        /// <summary>
-        /// Mayor of the municipality.
-        /// </summary>
-        Mayor,
-
-        /// <summary>
-        /// Council of the municipality.
-        /// </summary>
-        ThesabanCouncil,
-
-        /// <summary>
-        /// Governor of Bangkok.
-        /// </summary>
-        BangkokGovernor,
-
-        /// <summary>
-        /// Council of the BMA.
-        /// </summary>
-        BangkokCouncil,
-
-        /// <summary>
-        /// Council of the districts in Bangkok.
-        /// </summary>
-        BangkokDistrictCouncil,
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
     [System.Runtime.Serialization.DataContractAttribute(Name = "ByElection", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
     public partial class ByElection
     {
@@ -1627,23 +944,799 @@ namespace De.AHoerstemeier.Tambon
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyList", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class ConstituencyList
+    [System.Runtime.Serialization.DataContractAttribute(Name = "CandidateList", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class CandidateList
     {
 
-        private List<Constituency> constituencyField;
+        private List<CandidateListEntry> candidateField;
+
+        private string eligiblevoterField;
+
+        private string invalidvotesField;
+
+        private string abstainvotesField;
+
+        private string commentField;
 
         /// <summary>
-        /// Creates a new instance of ConstituencyList.
+        /// Creates a new instance of CandidateList.
         /// </summary>
-        public ConstituencyList()
+        public CandidateList()
         {
-            this.constituencyField = new List<Constituency>();
+            this.candidateField = new List<CandidateListEntry>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("candidate", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<CandidateListEntry> candidate
+        {
+            get
+            {
+                return this.candidateField;
+            }
+            set
+            {
+                this.candidateField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string eligiblevoter
+        {
+            get
+            {
+                return this.eligiblevoterField;
+            }
+            set
+            {
+                this.eligiblevoterField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string invalidvotes
+        {
+            get
+            {
+                return this.invalidvotesField;
+            }
+            set
+            {
+                this.invalidvotesField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string abstainvotes
+        {
+            get
+            {
+                return this.abstainvotesField;
+            }
+            set
+            {
+                this.abstainvotesField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "CandidateListEntry", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class CandidateListEntry : Candidate
+    {
+
+        private string idField;
+
+        private string votesField;
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string votes
+        {
+            get
+            {
+                return this.votesField;
+            }
+            set
+            {
+                this.votesField = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Types of elections.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum ElectionType
+    {
+
+        /// <summary>
+        /// House of Representatives.
+        /// </summary>
+        Parliament,
+
+        /// <summary>
+        /// Senate.
+        /// </summary>
+        Senate,
+
+        /// <summary>
+        /// Chairman of the provincial administrative organization.
+        /// </summary>
+        PAOChairman,
+
+        /// <summary>
+        /// Council of the provincial administrative organization.
+        /// </summary>
+        PAOCouncil,
+
+        /// <summary>
+        /// Chairman/Mayor of the subdistrict administrative organization.
+        /// </summary>
+        TAOMayor,
+
+        /// <summary>
+        /// Council of the subdistrict administrative organization.
+        /// </summary>
+        TAOCouncil,
+
+        /// <summary>
+        /// Mayor of the municipality.
+        /// </summary>
+        Mayor,
+
+        /// <summary>
+        /// Council of the municipality.
+        /// </summary>
+        ThesabanCouncil,
+
+        /// <summary>
+        /// Governor of Bangkok.
+        /// </summary>
+        BangkokGovernor,
+
+        /// <summary>
+        /// Council of the BMA.
+        /// </summary>
+        BangkokCouncil,
+
+        /// <summary>
+        /// Council of the districts in Bangkok.
+        /// </summary>
+        BangkokDistrictCouncil,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "PartyListResultEntry", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class PartyListResultEntry
+    {
+
+        private string idField;
+
+        private string votesField;
+
+        private string seatsField;
+
+        /// <summary>
+        /// Party identified by the number assigned to it.
+        /// </summary>
+        /// <value>
+        /// The id.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+        /// <summary>
+        /// Number of votes received.
+        /// </summary>
+        /// <value>
+        /// The votes.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string votes
+        {
+            get
+            {
+                return this.votesField;
+            }
+            set
+            {
+                this.votesField = value;
+            }
+        }
+
+        /// <summary>
+        /// Number of seats won.
+        /// </summary>
+        /// <value>
+        /// The seats.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string seats
+        {
+            get
+            {
+                return this.seatsField;
+            }
+            set
+            {
+                this.seatsField = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Result of the party list voting.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "PartyListResult", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class PartyListResult
+    {
+
+        private List<PartyListResultEntry> partyField;
+
+        private string eligiblevoterField;
+
+        private string invalidvotesField;
+
+        private string abstainvotesField;
+
+        /// <summary>
+        /// Creates a new instance of PartyListResult.
+        /// </summary>
+        public PartyListResult()
+        {
+            this.partyField = new List<PartyListResultEntry>();
+        }
+
+        /// <summary>
+        /// Result for a single party.
+        /// </summary>
+        /// <value>
+        /// The party.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("party", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<PartyListResultEntry> party
+        {
+            get
+            {
+                return this.partyField;
+            }
+            set
+            {
+                this.partyField = value;
+            }
+        }
+
+        /// <summary>
+        /// Number of eligible voters (จำนวนผู้มาใช้สิทธิเลือกตั้ง).
+        /// </summary>
+        /// <value>
+        /// The eligiblevoter.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string eligiblevoter
+        {
+            get
+            {
+                return this.eligiblevoterField;
+            }
+            set
+            {
+                this.eligiblevoterField = value;
+            }
+        }
+
+        /// <summary>
+        /// Number of invalid votes cast (จำนวนบัตรเสีย).
+        /// </summary>
+        /// <value>
+        /// The invalidvotes.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string invalidvotes
+        {
+            get
+            {
+                return this.invalidvotesField;
+            }
+            set
+            {
+                this.invalidvotesField = value;
+            }
+        }
+
+        /// <summary>
+        /// Number of abstain votes (จำนวนบัตรไม่ประสงค์ลงคะแนน).
+        /// </summary>
+        /// <value>
+        /// The abstainvotes.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string abstainvotes
+        {
+            get
+            {
+                return this.abstainvotesField;
+            }
+            set
+            {
+                this.abstainvotesField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityIncludeSub", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class EntityIncludeSub : EntityBase
+    {
+
+        private List<EntityInExclude> includeField;
+
+        /// <summary>
+        /// Creates a new instance of EntityIncludeSub.
+        /// </summary>
+        public EntityIncludeSub()
+        {
+            this.includeField = new List<EntityInExclude>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("include", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<EntityInExclude> include
+        {
+            get
+            {
+                return this.includeField;
+            }
+            set
+            {
+                this.includeField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityInExclude", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class EntityInExclude : EntityBase
+    {
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityInclude", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class EntityInclude : EntityBase
+    {
+
+        private List<EntityInExclude> excludeField;
+
+        /// <summary>
+        /// Creates a new instance of EntityInclude.
+        /// </summary>
+        public EntityInclude()
+        {
+            this.excludeField = new List<EntityInExclude>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("exclude", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<EntityInExclude> exclude
+        {
+            get
+            {
+                return this.excludeField;
+            }
+            set
+            {
+                this.excludeField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyEntity", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class ConstituencyEntity : EntityBase
+    {
+
+        private List<ConstituencyEntity> entityField;
+
+        private ConstituencyList constituenciesField;
+
+        private Election electionField;
+
+        /// <summary>
+        /// Creates a new instance of ConstituencyEntity.
+        /// </summary>
+        public ConstituencyEntity()
+        {
+            this.electionField = new Election();
+            this.constituenciesField = new ConstituencyList();
+            this.entityField = new List<ConstituencyEntity>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("entity", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<ConstituencyEntity> entity
+        {
+            get
+            {
+                return this.entityField;
+            }
+            set
+            {
+                this.entityField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConstituencyList constituencies
+        {
+            get
+            {
+                return this.constituenciesField;
+            }
+            set
+            {
+                this.constituenciesField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Election election
+        {
+            get
+            {
+                return this.electionField;
+            }
+            set
+            {
+                this.electionField = value;
+            }
+        }
+    }
+
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Constituency))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class ConstituencyBase
+    {
+
+        private List<EntityBase> itemsField;
+
+        private byte indexField;
+
+        private byte numberofseatsField;
+
+        private string commentField;
+
+        /// <summary>
+        /// Creates a new instance of ConstituencyBase.
+        /// </summary>
+        public ConstituencyBase()
+        {
+            this.itemsField = new List<EntityBase>();
+            this.numberofseatsField = ((byte)(1));
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("include", typeof(EntityInclude), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("includesub", typeof(EntityIncludeSub), Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<EntityBase> Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte index
+        {
+            get
+            {
+                return this.indexField;
+            }
+            set
+            {
+                this.indexField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "1")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte numberofseats
+        {
+            get
+            {
+                return this.numberofseatsField;
+            }
+            set
+            {
+                this.numberofseatsField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute("electiondata", Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ElectionData", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class ElectionData
+    {
+
+        private List<Party> partiesField;
+
+        private ConstituencyEntity entityField;
+
+        /// <summary>
+        /// Creates a new instance of ElectionData.
+        /// </summary>
+        public ElectionData()
+        {
+            this.entityField = new ConstituencyEntity();
+            this.partiesField = new List<Party>();
+        }
+
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("party", IsNullable = false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<Party> parties
+        {
+            get
+            {
+                return this.partiesField;
+            }
+            set
+            {
+                this.partiesField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ConstituencyEntity entity
+        {
+            get
+            {
+                return this.entityField;
+            }
+            set
+            {
+                this.entityField = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Party contesting in the election.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Party", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class Party
+    {
+
+        private string nameField;
+
+        private string englishField;
+
+        private string idField;
+
+        /// <summary>
+        /// Thai name of the party.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+
+        /// <summary>
+        /// English name of the party.
+        /// </summary>
+        /// <value>
+        /// The english.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english
+        {
+            get
+            {
+                return this.englishField;
+            }
+            set
+            {
+                this.englishField = value;
+            }
+        }
+
+        /// <summary>
+        /// Number assigned to the party for the election in question.
+        /// </summary>
+        /// <value>
+        /// The id.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyListBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class ConstituencyListBase
+    {
+
+        private List<ConstituencyBase> constituencyField;
+
+        private byte indexField;
+
+        private bool indexFieldSpecified;
+
+        /// <summary>
+        /// Creates a new instance of ConstituencyListBase.
+        /// </summary>
+        public ConstituencyListBase()
+        {
+            this.constituencyField = new List<ConstituencyBase>();
         }
 
         [System.Xml.Serialization.XmlElementAttribute("constituency", Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<Constituency> constituency
+        public List<ConstituencyBase> constituency
         {
             get
             {
@@ -1652,6 +1745,40 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.constituencyField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte index
+        {
+            get
+            {
+                return this.indexField;
+            }
+            set
+            {
+                this.indexField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool indexSpecified
+        {
+            get
+            {
+                return this.indexFieldSpecified;
+            }
+            set
+            {
+                this.indexFieldSpecified = value;
             }
         }
     }
