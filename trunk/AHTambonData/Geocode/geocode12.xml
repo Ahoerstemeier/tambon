@@ -196,7 +196,7 @@
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>13.8765</geo:lat>
-        <geo:long>100.4042</geo:long>
+        <geo:long>100.4039</geo:long>
       </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="สมชาติ ธีรสุวรรณจักร" begin="2009-08-24"/>
@@ -275,8 +275,11 @@
     </entity>
     <entity type="Tambon" name="เสาธงหิน" english="Sao Thong Hin" geocode="120304" >
       <office type="MunicipalityOffice">
-        <!-- Longdo:  13.879696° 100.404686° -->
-        <url status="hacked">http://saothonghin.go.th/</url>
+        <geo:Point>
+          <geo:lat> 13.8782</geo:lat>
+          <geo:long>100.4037</geo:long>
+        </geo:Point>
+        <url>http://saothonghin.go.th/</url>
       </office>
       <entity type="Muban" geocode="12030401" name="บ้านคลองอ้อม" english="Ban Khlong Om"/>
       <entity type="Muban" geocode="12030402" name="บ้านคลองบางใหญ่" english="Ban Khlong Bang Yai"/>
@@ -287,14 +290,7 @@
       <entity type="Muban" geocode="12030407" name="บ้านบางเดื่อ" english="Ban Bang Duea"/>
       <entity type="Muban" geocode="12030408" name="บ้านลาดตะเข้" english="Ban Lat Takhe"/>
     </entity>
-    <entity type="Tambon" name="บางใหญ่" english="Bang Yai" geocode="120305" >
-      <office type="TAOOffice">
-        <geo:Point>
-          <geo:lat>13.8783</geo:lat>
-          <geo:long>100.4040</geo:long>
-        </geo:Point>
-      </office>
-    </entity>
+    <entity type="Tambon" name="บางใหญ่" english="Bang Yai" geocode="120305" />
     <entity type="Tambon" name="บ้านใหม่" english="Ban Mai" geocode="120306" />
   </entity>
   <entity type="Amphoe" name="บางบัวทอง" english="Bang Bua Thong" geocode="1204" >
@@ -626,7 +622,7 @@
         <geo:lat>13.8369</geo:lat>
         <geo:long>100.35906</geo:long>
       </geo:Point>
-      <url>http://www.bangyai.org/</url>
+      <url status="broken">http://www.bangyai.org/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ไทรน้อย" english="Sai Noi" geocode="1291" parent="1205" >
