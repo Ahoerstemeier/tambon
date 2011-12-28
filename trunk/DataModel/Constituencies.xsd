@@ -118,6 +118,7 @@
       <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:ConstituencyBase"/>
     </xs:sequence>
     <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="entity" type="xs:unsignedInt" use="optional" />
   </xs:complexType>
   <xs:complexType name="ConstituencyBase">
     <xs:sequence>
