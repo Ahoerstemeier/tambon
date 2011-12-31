@@ -1385,18 +1385,19 @@
     </entity>
     <entity type="Tambon" name="ถ้ำใหญ่" english="Tham Yai" geocode="800911" >
       <office type="MunicipalityOffice">
+        <url>http://www.thamyaicity.go.th/</url>
         <url status="expired">http://www.thamyai.com/</url>
       </office>
-      <entity type="Muban" geocode="80091101" name="บ้านในเพิก"/>
+      <entity type="Muban" geocode="80091101" name="บ้านในเพิก" english="Ban Nai Phoek" comment="TAO website says บ้านเปิก"/>
       <entity type="Muban" geocode="80091102" name="บ้านไสใหญ่" english="Ban Sai Yai"/>
       <entity type="Muban" geocode="80091103" name="บ้านจำปา" english="Ban Champa"/>
-      <entity type="Muban" geocode="80091104" name="บ้านถ้ำใหญ่"/>
-      <entity type="Muban" geocode="80091105" name="บ้านนาตาแย้ม"/>
+      <entity type="Muban" geocode="80091104" name="บ้านถ้ำใหญ่" english="Ban Tham Yai"/>
+      <entity type="Muban" geocode="80091105" name="บ้านนาตาแย้ม" english="Ban Na Ta Yaem"/>
       <entity type="Muban" geocode="80091106" name="บ้านน้ำพุ" english="Ban Nam Phu"/>
-      <entity type="Muban" geocode="80091107" name="บ้านหน้าค่าย"/>
-      <entity type="Muban" geocode="80091108" name="บ้านไร่ควน"/>
-      <entity type="Muban" geocode="80091109" name="บ้านน้ำรอบ"/>
-      <entity type="Muban" geocode="80091110" name="บ้านห้วยดำ"/>
+      <entity type="Muban" geocode="80091107" name="บ้านหน้าค่าย" english="Ban Na Khai" comment="TAO website says บ้านไสใหญ่เหนือ"/>
+      <entity type="Muban" geocode="80091108" name="บ้านไร่ควน" english="Ban Rai Khuan"/>
+      <entity type="Muban" geocode="80091109" name="บ้านน้ำรอบ" english="Ban Nam Rop"/>
+      <entity type="Muban" geocode="80091110" name="บ้านห้วยดำ" english="Ban Huai Dam"/>
     </entity>
     <entity type="Tambon" name="นาโพธิ์" english="Na Pho" geocode="800912" >
       <office type="TAOOffice">
@@ -2180,7 +2181,9 @@
           <geo:long>99.8569</geo:long>
         </geo:Point>
         <url>http://www.khanom.go.th/</url>
-        <!-- renamed to อ่าวขนอม Ao Khanom with upgrade to municipality -->
+      <!--<history>
+        <rename oldname="ขนอม" oldenglish="Khanom" name="อ่าวขนอม" english="Ao Khanom"/>
+      </history>-->
       </office>
       <entity type="Muban" geocode="80150101" name="บ้านบางโหนด"/>
       <entity type="Muban" geocode="80150102" name="บ้านพังมะพร้าว"/>
