@@ -49,6 +49,25 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="OfficialAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Assign">
+        <xs:annotation>
+          <xs:documentation>Transfer to a new post.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Remove">
+        <xs:annotation>
+          <xs:documentation>Transfer from a post.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Decease">
+        <xs:annotation>
+          <xs:documentation>End of term by death.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+    </xs:simpleType>
   <xs:simpleType name="SignByFunction">
     <xs:restriction base="xs:string">
       <xs:enumeration value="PrimeMinister">
@@ -339,6 +358,7 @@
       <xs:extension base="t:GazetteOperationBase">
         <xs:attribute name="officialname" type="xs:string" use="required" />
         <xs:attribute name="officialtype" type="t:OfficialType" use="required" />
+        <xs:attribute name="action" type="t:OfficialAction" use="required"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

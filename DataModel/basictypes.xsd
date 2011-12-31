@@ -179,7 +179,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="Governor">
         <xs:annotation>
-          <xs:documentation>Province governor (ผู้ว่าราชการจังหวัด, Phu Wa Rachakan Changwat, earlier also ข้าหลวงประจำจังหวัด Kha Luang Pracham Changwat).</xs:documentation>
+          <xs:documentation>Province governor (ผู้ว่าราชการจังหวัด, Phu Wa Rachakan Changwat, earlier also ข้าหลวงประจำจังหวัด Kha Luang Pracham Changwat and ผู้ว่าราชการเมือง Phu Wa Rachakan Mueng).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="BangkokGovernor">
@@ -295,6 +295,11 @@
       <xs:enumeration value="MonthonCommissioner">
         <xs:annotation>
           <xs:documentation>Monthon commissioner (ข้าหลวงเทศาภิบาล, Kha Luang Thesaphiban).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MonthonClerk">
+        <xs:annotation>
+          <xs:documentation>Monthon clerk (ปลัดมณฑล, Palat Monthon).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="MueangGovernor">
