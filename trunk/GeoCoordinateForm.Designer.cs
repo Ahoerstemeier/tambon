@@ -39,6 +39,7 @@
             this.lbl_geohash = new System.Windows.Forms.Label();
             this.edt_geohash = new System.Windows.Forms.TextBox();
             this.btnFlyTo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_MGRS
@@ -149,11 +150,21 @@
             this.btnFlyTo.UseVisualStyleBackColor = true;
             this.btnFlyTo.Click += new System.EventHandler(this.btnFlyTo_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
+            // 
             // GeoCoordinateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 185);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnFlyTo);
             this.Controls.Add(this.edt_geohash);
             this.Controls.Add(this.lbl_geohash);
@@ -186,5 +197,6 @@
         private System.Windows.Forms.Label lbl_geohash;
         private System.Windows.Forms.TextBox edt_geohash;
         private System.Windows.Forms.Button btnFlyTo;
+        private System.Windows.Forms.Label label1;
     }
 }

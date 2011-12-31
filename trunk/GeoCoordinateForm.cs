@@ -71,9 +71,9 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetValues(GeoPoint geoPoint, UtmPoint utmPoint, object sender)
         {
-            if ( sender != edt_LatLong )
+            if (sender != edt_LatLong)
             {
-                if ( geoPoint == null )
+                if (geoPoint == null)
                 {
                     edt_LatLong.Text = String.Empty;
                 }
@@ -82,9 +82,9 @@ namespace De.AHoerstemeier.Tambon
                     edt_LatLong.Text = geoPoint.ToString();
                 }
             }
-            if ( sender != edt_geohash )
+            if (sender != edt_geohash)
             {
-                if ( geoPoint == null )
+                if (geoPoint == null)
                 {
                     edt_geohash.Text = String.Empty;
                 }
@@ -93,9 +93,9 @@ namespace De.AHoerstemeier.Tambon
                     edt_geohash.Text = geoPoint.GeoHash;
                 }
             }
-            if ( sender != edt_UTM )
+            if (sender != edt_UTM)
             {
-                if ( utmPoint == null )
+                if (utmPoint == null)
                 {
                     edt_UTM.Text = String.Empty;
                 }
@@ -104,9 +104,9 @@ namespace De.AHoerstemeier.Tambon
                     edt_UTM.Text = utmPoint.ToString();
                 }
             }
-            if ( sender != edt_MGRS )
+            if (sender != edt_MGRS)
             {
-                if ( utmPoint == null )
+                if (utmPoint == null)
                 {
                     edt_MGRS.Text = String.Empty;
                 }
@@ -117,6 +117,11 @@ namespace De.AHoerstemeier.Tambon
             }
             _Point = geoPoint;
             btnFlyTo.Enabled = (_Point != null);
+
+            if (geoPoint != null)
+            {
+                label1.Text = RtsdMapIndex.IndexL7018(geoPoint);
+            }
         }
 
         private void edit_MGRS_TextChanged(object sender, EventArgs e)
