@@ -43,7 +43,6 @@ namespace De.Ahoerstemeier.Tambon
             this.btn_DownloadCcaatt = new System.Windows.Forms.Button();
             this.btn_GazetteNewsSince1970 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.ButtonThesaban = new System.Windows.Forms.Button();
             this.btnSetup = new System.Windows.Forms.Button();
             this.btnNumerals = new System.Windows.Forms.Button();
             this.btnTambonFrequency = new System.Windows.Forms.Button();
@@ -228,16 +227,6 @@ namespace De.Ahoerstemeier.Tambon
             this.button1.Text = "amphoe.com";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // ButtonThesaban
-            // 
-            this.ButtonThesaban.Location = new System.Drawing.Point(175, 214);
-            this.ButtonThesaban.Name = "ButtonThesaban";
-            this.ButtonThesaban.Size = new System.Drawing.Size(75, 23);
-            this.ButtonThesaban.TabIndex = 15;
-            this.ButtonThesaban.Text = "Thesaban";
-            this.ButtonThesaban.UseVisualStyleBackColor = true;
-            this.ButtonThesaban.Click += new System.EventHandler(this.ButtonThesaban_Click);
             // 
             // btnSetup
             // 
@@ -448,7 +437,6 @@ namespace De.Ahoerstemeier.Tambon
             this.Controls.Add(this.btnTambonFrequency);
             this.Controls.Add(this.btnNumerals);
             this.Controls.Add(this.btnSetup);
-            this.Controls.Add(this.ButtonThesaban);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_GazetteNewsSince1970);
             this.Controls.Add(this.btn_DownloadCcaatt);
@@ -488,7 +476,6 @@ namespace De.Ahoerstemeier.Tambon
         private System.Windows.Forms.Button btn_DownloadCcaatt;
         private System.Windows.Forms.Button btn_GazetteNewsSince1970;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button ButtonThesaban;
         private System.Windows.Forms.Button btnSetup;
         private System.Windows.Forms.Button btnNumerals;
         private System.Windows.Forms.Button btnTambonFrequency;
