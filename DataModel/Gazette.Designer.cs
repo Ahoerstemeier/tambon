@@ -733,6 +733,8 @@ namespace De.AHoerstemeier.Tambon
 
         private OfficialType officialtypeField;
 
+        private OfficialAction actionField;
+
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -772,6 +774,49 @@ namespace De.AHoerstemeier.Tambon
                 this.officialtypeField = value;
             }
         }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OfficialAction action
+        {
+            get
+            {
+                return this.actionField;
+            }
+            set
+            {
+                this.actionField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum OfficialAction
+    {
+
+        /// <summary>
+        /// Transfer to a new post.
+        /// </summary>
+        Assign,
+
+        /// <summary>
+        /// Transfer from a post.
+        /// </summary>
+        Remove,
+
+        /// <summary>
+        /// End of term by death.
+        /// </summary>
+        Decease,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
