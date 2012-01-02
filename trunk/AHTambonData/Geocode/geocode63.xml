@@ -409,9 +409,9 @@
         </officials>
       </office>
       <entity type="Muban" geocode="63030101" name="บ้านป่ายางใต้" english="Ban Pa Yang Tai"/>
-      <entity type="Muban" geocode="63030102" name="บ้านสามเงา"/>
+      <entity type="Muban" geocode="63030102" name="บ้านสามเงา" english="Ban Sam Ngao"/>
 
-      <entity type="Muban" geocode="63030105" name="บ้านท่าปุย"/>
+      <entity type="Muban" geocode="63030105" name="บ้านท่าปุย" english="Ban Tha Phui"/>
       <entity type="Muban" geocode="63030106" name="บ้านเขื่อนภูมิพล" english="Ban Khuean Phum Phon"/>
       <entity type="Muban" geocode="63030107" name="บ้านป่ายางใหม่" english="Ban Pa Yang Mai"/>
     </entity>
@@ -425,12 +425,12 @@
         </officials>
       </office>
       <entity type="Muban" geocode="63030201" name="บ้านปากทางเขื่อน"/>
-      <entity type="Muban" geocode="63030202" name="บ้านวังไคร้ออก"/>
-      <entity type="Muban" geocode="63030203" name="บ้านวังไคร้"/>
-      <entity type="Muban" geocode="63030204" name="บ้านวังหมัน"/>
-      <entity type="Muban" geocode="63030205" name="บ้านโปร่งปลาค้าว"/>
-      <entity type="Muban" geocode="63030206" name="บ้านวังหวาย"/>
-      <entity type="Muban" geocode="63030207" name="บ้านวังวาย"/>
+      <entity type="Muban" geocode="63030202" name="บ้านวังไคร้ออก" english="Ban Wang Khrai Ok"/>
+      <entity type="Muban" geocode="63030203" name="บ้านวังไคร้" english="Ban Wang Khrai"/>
+      <entity type="Muban" geocode="63030204" name="บ้านวังหมัน" english="Ban Wang Man"/>
+      <entity type="Muban" geocode="63030205" name="บ้านโปร่งปลาค้าว" english="Ban Prong Pla Khao"/>
+      <entity type="Muban" geocode="63030206" name="บ้านวังหวาย" english="Ban Wang Wai"/>
+      <entity type="Muban" geocode="63030207" name="บ้านวังวาย" english="Ban Wang Wai"/>
     </entity>
     <entity type="Tambon" name="ยกกระบัตร" english="Yokkrabat" geocode="630303" >
       <office type="TAOOffice">
@@ -1170,7 +1170,7 @@
   มงคลคีรี Mongkhon Khiri
   -->
   <entity type="KingAmphoe" name="ท่าปุย" english="Tha Pui" geocode="6381" obsolete="1"/>
-  <!--old name of Sam Ngoen? - see http://www.policetak.com/samngo.htm -->
+  <!--old name of Sam Ngoen, rename in 1929? - see http://www.policetak.com/samngo.htm -->
 
 
   <entity type="ThesabanMueang" name="ตาก" english="Tak" geocode="6399" parent="6301" >
@@ -1226,11 +1226,12 @@
         <geo:lat>16.7214</geo:lat>
         <geo:long>98.5691</geo:long>
       </geo:Point>
-      <url>http://www.maesod.go.th/</url>
-      <url comment="Offline">http://www.msmun.go.th/</url>
+      <url>http://www.nakhonmaesotcity.go.th/</url>
+      <url status="offline">http://www.maesod.go.th/</url>
+      <url status="offline">http://www.msmun.go.th/</url>
       <officials>
-        <official title="Mayor" name="เทอดเกียรติ ชินสรนันท์" begin="2010-08-28"/>
-        <official title="Mayor" name="เทอดเกียรติ ชินสรนันท์" end="2010-01-28" comment="End of term, was acting till next election"/>
+        <official title="Mayor" name="เทอดเกียรติ ชินสรนันท์" begin="2010-08-28" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="เทอดเกียรติ ชินสรนันท์" end="2010-01-28" endreason="EndOfTerm" comment="End of term, was acting till next election"/>
       </officials>
     </office>
   </entity>
