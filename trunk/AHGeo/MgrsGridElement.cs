@@ -6,11 +6,8 @@ using System.Xml;
 
 namespace De.AHoerstemeier.Geo
 {
-    public class MgrsGridElement
+    public class MgrsGridElement : GeoFrameBase
     {
-        private const string mDefStyle = "Blue";
-        private const UInt32 mDefColor = 0xffff0000;
-
         #region properties
         public UtmPoint CentralPoint
         {
@@ -21,20 +18,9 @@ namespace De.AHoerstemeier.Geo
         public Int16 Digits
         {
             get { return _Digits; }
-            private set { _Digits = value; }
+            private set { _Digits = Math.Max(UtmPoint.MinimumDigits,value); }
         }
-        private GeoDatum mDatum = GeoDatum.DatumWGS84();
-        public GeoDatum Datum
-        {
-            get { return mDatum; }
-            set { mDatum = value; }
-        }
-        private String _Name = String.Empty;
-        public String Name
-        {
-            get { return _Name; }
-            set { SetMgrs(value); }
-        }
+        public GeoDatum Datum { get; set; }
         #endregion
 
         #region methods
@@ -57,7 +43,7 @@ namespace De.AHoerstemeier.Geo
 
         private Boolean SameZone(UtmPoint point)
         {
-            GeoPoint geoPoint = new GeoPoint(point, mDatum);
+            GeoPoint geoPoint = new GeoPoint(point, Datum);
             UtmPoint realUtm = geoPoint.CalcUTM();
             Boolean result = (CentralPoint.ZoneNumber == realUtm.ZoneNumber);
             return result;
@@ -81,7 +67,7 @@ namespace De.AHoerstemeier.Geo
             {
                 UtmPoint tempUtmPoint = new UtmPoint(point);
                 tempUtmPoint.Easting = minEasting;
-                GeoPoint tempGeoPoint = new GeoPoint(tempUtmPoint, mDatum);
+                GeoPoint tempGeoPoint = new GeoPoint(tempUtmPoint, Datum);
                 tempUtmPoint = tempGeoPoint.CalcUTM();
                 leftZone = tempUtmPoint.ZoneNumber;
             }
@@ -91,7 +77,7 @@ namespace De.AHoerstemeier.Geo
                 Int32 tempEasting = minEasting + eastingDiff / 2;
                 result = new UtmPoint(point);
                 result.Easting = tempEasting;
-                GeoPoint tempGeoPoint = new GeoPoint(result, mDatum);
+                GeoPoint tempGeoPoint = new GeoPoint(result, Datum);
                 UtmPoint empUtmPoint = tempGeoPoint.CalcUTM();
                 if ( empUtmPoint.ZoneNumber > leftZone )
                 {
@@ -105,7 +91,7 @@ namespace De.AHoerstemeier.Geo
             }
             return result;
         }
-        public UtmPoint NorthWestCorner()
+        public UtmPoint NorthWestCornerUtm()
         {
             String value = CentralPoint.ToUtmString(_Digits);
             UtmPoint result = new UtmPoint(value);
@@ -115,7 +101,7 @@ namespace De.AHoerstemeier.Geo
             }
             return result;
         }
-        public UtmPoint NorthEastCorner()
+        public UtmPoint NorthEastCornerUtm()
         {
             String value = CentralPoint.ToUtmString(_Digits);
             UtmPoint result = new UtmPoint(value);
@@ -126,7 +112,7 @@ namespace De.AHoerstemeier.Geo
             }
             return result;
         }
-        public UtmPoint SouthWestCorner()
+        public UtmPoint SouthWestCornerUtm()
         {
             String value = CentralPoint.ToUtmString(_Digits);
             UtmPoint result = new UtmPoint(value);
@@ -137,7 +123,7 @@ namespace De.AHoerstemeier.Geo
             }
             return result;
         }
-        public UtmPoint SouthEastCorner()
+        public UtmPoint SouthEastCornerUtm()
         {
             String value = CentralPoint.ToUtmString(_Digits);
             UtmPoint result = new UtmPoint(value);
@@ -175,11 +161,28 @@ namespace De.AHoerstemeier.Geo
             return result;
         }
 
+        protected override GeoPoint GetNorthWestCorner()
+        {
+            return new GeoPoint(NorthWestCornerUtm(),Datum);
+        }
+        protected override GeoPoint GetNorthEastCorner()
+        {
+            return new GeoPoint(NorthEastCornerUtm(), Datum);
+        }
+        protected override GeoPoint GetSouthWestCorner()
+        {
+            return new GeoPoint(SouthWestCornerUtm(), Datum);
+        }
+        protected override GeoPoint GetSouthEastCorner()
+        {
+            return new GeoPoint(SouthEastCornerUtm(), Datum);
+        }
+
         public List<MgrsGridElement> SubGrids()
         {
             List<MgrsGridElement> result = new List<MgrsGridElement>();
-            String start = _Name.Substring(0, 5);
-            String numbers = _Name.Remove(0, 5);
+            String start = Name.Substring(0, 5);
+            String numbers = Name.Remove(0, 5);
             for ( Int32 subEasting = 0 ; subEasting < 10 ; subEasting++ )
             {
                 for ( Int32 subNorthing = 0 ; subNorthing < 10 ; subNorthing++ )
@@ -198,39 +201,12 @@ namespace De.AHoerstemeier.Geo
             return result;
         }
 
-        private static void AddKmlStyle(KmlHelper kmlWriter)
-        {
-            XmlNode node = kmlWriter.AddStyle(mDefStyle);
-            kmlWriter.AddStylePoly(node, 2, mDefColor, false);
-            kmlWriter.AddIconStyle(node, new Uri("http://maps.google.com/mapfiles/kml/paddle/wht-blank.png"));
-        }
-        public void WriteToKml(KmlHelper kmlWriter, XmlNode node)
-        {
-            String description = "MGRS Grid: " + _Name;
-
-            GeoPoint point = new GeoPoint(ActualCentralPoint(), mDatum);
-            // iKmlWriter.AddPoint(iNode, lPoint.Latitude, lPoint.Longitude, mName, mDefStyle, String.Empty, lDescription);
-            List<GeoPoint> border = new List<GeoPoint>();
-            border.Add(new GeoPoint(NorthWestCorner(), mDatum));
-            border.Add(new GeoPoint(NorthEastCorner(), mDatum));
-            border.Add(new GeoPoint(SouthEastCorner(), mDatum));
-            border.Add(new GeoPoint(SouthWestCorner(), mDatum));
-            border.Add(new GeoPoint(NorthWestCorner(), mDatum));
-            kmlWriter.AddPolygon(node, border, _Name, mDefStyle, description, true);
-        }
-        public void ExportToKml(String fileName)
-        {
-            KmlHelper kmlWriter = StartKmlWriting();
-            WriteToKml(kmlWriter, kmlWriter.DocumentNode);
-            kmlWriter.SaveToFile(fileName);
-        }
-        public static KmlHelper StartKmlWriting()
-        {
-            KmlHelper kmlWriter = new KmlHelper();
-            AddKmlStyle(kmlWriter);
-            return kmlWriter;
-        }
         #endregion
+
+        public MgrsGridElement()
+        {
+            Datum = GeoDatum.DatumWGS84();
+        }
 
         private void SetMgrs(String value)
         {
@@ -238,7 +214,7 @@ namespace De.AHoerstemeier.Geo
             Int16 digits = Convert.ToInt16((mgrs.Length - 1) / 2);
             CentralPoint = MakeCentral(UtmPoint.ParseMgrsString(value), digits);
             _Digits = digits;
-            _Name = value;
+            Name = value;
         }
 
         public MgrsGridElement(String mgrs)
