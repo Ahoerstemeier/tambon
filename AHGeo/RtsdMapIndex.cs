@@ -7,6 +7,7 @@ namespace De.AHoerstemeier.Geo
 {
     public class RtsdMapIndex
     {
+
         /* 5541-I   102 45 E - 103 00 E / 16 30 N - 16 15 N
          * 5541-II  102 45 E - 103 00 E / 16 15 N - 16 00 N
          * 5541-III 102 30 E - 102 45 E / 16 15 N - 16 00 N
@@ -19,6 +20,8 @@ namespace De.AHoerstemeier.Geo
          * 
          * northwest corner: 4449
          * northeast corner: 6149
+         * 
+         * http://www.rtsd.mi.th/service/download/vectorsevice.pdf
          */
 
         private static List<Int32> ValidFourSquares = new List<Int32>() 
@@ -101,6 +104,28 @@ namespace De.AHoerstemeier.Geo
             }
 
             return result;
+        }
+
+        private static List<RtdsMapFrame> _mapIndex = new List<RtdsMapFrame>();
+        private static void CalcIndexList()
+        {
+            foreach (var group in ValidFourSquares)
+            {
+                Int32 latitudeIndex = group % 100;
+                Int32 longitudeIndex = group / 100;
+                Double latitude = (latitudeIndex - 42 + 33) / 2.0;
+                Double longitude = (longitudeIndex - 55 + 205) / 2.0;
+                Double extend = 15.0 / 60.0;
+
+                GeoPoint northWestCorner = new GeoPoint(latitude, longitude);
+                _mapIndex.Add(new RtdsMapFrame(northWestCorner, extend, extend, string.Format("{0:####} IV", group)));
+                northWestCorner.Latitude -= extend;
+                _mapIndex.Add(new RtdsMapFrame(northWestCorner, extend, extend, string.Format("{0:####} III", group)));
+                northWestCorner.Longitude += extend;
+                _mapIndex.Add(new RtdsMapFrame(northWestCorner, extend, extend, string.Format("{0:####} II", group)));
+                northWestCorner.Latitude += extend;
+                _mapIndex.Add(new RtdsMapFrame(northWestCorner, extend, extend, string.Format("{0:####} I", group)));
+            }
         }
     }
 }
