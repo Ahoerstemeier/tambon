@@ -4,8 +4,7 @@
 //    <NameSpace>De.AHoerstemeier.Tambon</NameSpace><Collection>List</Collection><codeType>CSharp</codeType><EnableDataBinding>False</EnableDataBinding><EnableLazyLoading>False</EnableLazyLoading><TrackingChangesEnable>False</TrackingChangesEnable><GenTrackingClasses>False</GenTrackingClasses><HidePrivateFieldInIDE>False</HidePrivateFieldInIDE><EnableSummaryComment>True</EnableSummaryComment><VirtualProp>False</VirtualProp><IncludeSerializeMethod>False</IncludeSerializeMethod><UseBaseClass>False</UseBaseClass><GenBaseClass>False</GenBaseClass><GenerateCloneMethod>False</GenerateCloneMethod><GenerateDataContracts>True</GenerateDataContracts><CodeBaseTag>Net40</CodeBaseTag><SerializeMethodName>Serialize</SerializeMethodName><DeserializeMethodName>Deserialize</DeserializeMethodName><SaveToFileMethodName>SaveToFile</SaveToFileMethodName><LoadFromFileMethodName>LoadFromFile</LoadFromFileMethodName><GenerateXMLAttributes>True</GenerateXMLAttributes><EnableEncoding>False</EnableEncoding><AutomaticProperties>False</AutomaticProperties><GenerateShouldSerialize>False</GenerateShouldSerialize><DisableDebug>False</DisableDebug><PropNameSpecified>Default</PropNameSpecified><Encoder>UTF8</Encoder><CustomUsings></CustomUsings><ExcludeIncludedTypes>True</ExcludeIncludedTypes><EnableInitializeFields>True</EnableInitializeFields>
 //  </auto-generated>
 // ------------------------------------------------------------------------------
-namespace De.AHoerstemeier.Tambon
-{
+namespace De.AHoerstemeier.Tambon {
     using System;
     using System.Diagnostics;
     using System.Xml.Serialization;
@@ -14,257 +13,220 @@ namespace De.AHoerstemeier.Tambon
     using System.ComponentModel;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-
-
+    
+    
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HouseholdDataPoint))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AgeTableEntry))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "PopulationDataPoint", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class PopulationDataPoint
-    {
-
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PopulationDataPoint", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class PopulationDataPoint {
+        
         private string totalField;
-
+        
         private string maleField;
-
+        
         private string femaleField;
-
+        
         /// <summary>
         /// Creates a new instance of PopulationDataPoint.
         /// </summary>
-        public PopulationDataPoint()
-        {
+        public PopulationDataPoint() {
             this.totalField = "-1";
             this.maleField = "-1";
             this.femaleField = "-1";
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "integer", Order = 0)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
         [System.ComponentModel.DefaultValueAttribute("-1")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string total
-        {
-            get
-            {
+        public string total {
+            get {
                 return this.totalField;
             }
-            set
-            {
+            set {
                 this.totalField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "integer", Order = 1)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=1)]
         [System.ComponentModel.DefaultValueAttribute("-1")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string male
-        {
-            get
-            {
+        public string male {
+            get {
                 return this.maleField;
             }
-            set
-            {
+            set {
                 this.maleField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "integer", Order = 2)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=2)]
         [System.ComponentModel.DefaultValueAttribute("-1")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string female
-        {
-            get
-            {
+        public string female {
+            get {
                 return this.femaleField;
             }
-            set
-            {
+            set {
                 this.femaleField = value;
             }
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "AgeTable", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class AgeTable
-    {
-
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AgeTable", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class AgeTable {
+        
         private List<AgeTableEntry> ageField;
-
+        
         private PopulationDataPoint unknownField;
-
+        
         /// <summary>
         /// Creates a new instance of AgeTable.
         /// </summary>
-        public AgeTable()
-        {
+        public AgeTable() {
             this.unknownField = new PopulationDataPoint();
             this.ageField = new List<AgeTableEntry>();
         }
-
-        [System.Xml.Serialization.XmlElementAttribute("age", Order = 0)]
+        
+        [System.Xml.Serialization.XmlElementAttribute("age", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<AgeTableEntry> age
-        {
-            get
-            {
+        public List<AgeTableEntry> age {
+            get {
                 return this.ageField;
             }
-            set
-            {
+            set {
                 this.ageField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PopulationDataPoint unknown
-        {
-            get
-            {
+        public PopulationDataPoint unknown {
+            get {
                 return this.unknownField;
             }
-            set
-            {
+            set {
                 this.unknownField = value;
             }
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "AgeTableEntry", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class AgeTableEntry : PopulationDataPoint
-    {
-
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AgeTableEntry", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class AgeTableEntry : PopulationDataPoint {
+        
         private string beginField;
-
+        
         private string endField;
-
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string begin
-        {
-            get
-            {
+        public string begin {
+            get {
                 return this.beginField;
             }
-            set
-            {
+            set {
                 this.beginField = value;
             }
         }
-
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string end
-        {
-            get
-            {
+        public string end {
+            get {
                 return this.endField;
             }
-            set
-            {
+            set {
                 this.endField = value;
             }
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "HouseholdDataPoint", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class HouseholdDataPoint : PopulationDataPoint
-    {
-
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HouseholdDataPoint", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HouseholdDataPoint : PopulationDataPoint {
+        
         private string householdsField;
-
+        
         private List<HouseholdDataPoint> dataField;
-
+        
         private AgeTable agetableField;
-
+        
         private PopulationDataType typeField;
-
+        
         /// <summary>
         /// Creates a new instance of HouseholdDataPoint.
         /// </summary>
-        public HouseholdDataPoint()
-        {
+        public HouseholdDataPoint() {
             this.agetableField = new AgeTable();
             this.dataField = new List<HouseholdDataPoint>();
             this.householdsField = "-1";
             this.typeField = PopulationDataType.total;
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(DataType = "integer", Order = 0)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
         [System.ComponentModel.DefaultValueAttribute("-1")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string households
-        {
-            get
-            {
+        public string households {
+            get {
                 return this.householdsField;
             }
-            set
-            {
+            set {
                 this.householdsField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute("data", Order = 1)]
+        
+        [System.Xml.Serialization.XmlElementAttribute("data", Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<HouseholdDataPoint> data
-        {
-            get
-            {
+        public List<HouseholdDataPoint> data {
+            get {
                 return this.dataField;
             }
-            set
-            {
+            set {
                 this.dataField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public AgeTable agetable
-        {
-            get
-            {
+        public AgeTable agetable {
+            get {
                 return this.agetableField;
             }
-            set
-            {
+            set {
                 this.agetableField = value;
             }
         }
-
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -274,136 +236,121 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(PopulationDataType.total)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PopulationDataType type
-        {
-            get
-            {
+        public PopulationDataType type {
+            get {
                 return this.typeField;
             }
-            set
-            {
+            set {
                 this.typeField = value;
             }
         }
     }
-
+    
     /// <summary>
     /// Type of population data.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
-    public enum PopulationDataType
-    {
-
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum PopulationDataType {
+        
         /// <summary>
         /// Total population.
         /// </summary>
         total,
-
+        
         /// <summary>
         /// Municipal population, i.e. population within Thesaban.
         /// </summary>
         municipal,
-
+        
         /// <summary>
         /// Non-municipal population, i.e. population outside the Thesaban.
         /// </summary>
         nonmunicipal,
-
+        
         /// <summary>
         /// Agricultural population, i.e. population having at least ... rai of agricultural land.
         /// </summary>
         agricultural,
-
+        
         /// <summary>
         /// Non-Agricultural population, i.e. population having none or only little agricultural land.
         /// </summary>
         nonagricultural,
-
+        
         /// <summary>
         /// Private households, i.e. ....
         /// </summary>
         privatehouseholds,
-
+        
         /// <summary>
         /// Collective househodls, i.e. households ....
         /// </summary>
         collectivehouseholds,
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "PopulationData", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class PopulationData
-    {
-
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PopulationData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class PopulationData {
+        
         private List<HouseholdDataPoint> dataField;
-
+        
         private PopulationDataSourceType sourceField;
-
+        
         private System.DateTime referencedateField;
-
+        
         private bool referencedateFieldSpecified;
-
+        
         private string yearField;
-
+        
         /// <summary>
         /// Creates a new instance of PopulationData.
         /// </summary>
-        public PopulationData()
-        {
+        public PopulationData() {
             this.dataField = new List<HouseholdDataPoint>();
             this.sourceField = PopulationDataSourceType.Unknown;
         }
-
-        [System.Xml.Serialization.XmlElementAttribute("data", Order = 0)]
+        
+        [System.Xml.Serialization.XmlElementAttribute("data", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<HouseholdDataPoint> data
-        {
-            get
-            {
+        public List<HouseholdDataPoint> data {
+            get {
                 return this.dataField;
             }
-            set
-            {
+            set {
                 this.dataField = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(PopulationDataSourceType.Unknown)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PopulationDataSourceType source
-        {
-            get
-            {
+        public PopulationDataSourceType source {
+            get {
                 return this.sourceField;
             }
-            set
-            {
+            set {
                 this.sourceField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
+        
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime referencedate
-        {
-            get
-            {
+        public System.DateTime referencedate {
+            get {
                 return this.referencedateField;
             }
-            set
-            {
+            set {
                 this.referencedateField = value;
             }
         }
-
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -412,53 +359,46 @@ namespace De.AHoerstemeier.Tambon
         /// </value>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool referencedateSpecified
-        {
-            get
-            {
+        public bool referencedateSpecified {
+            get {
                 return this.referencedateFieldSpecified;
             }
-            set
-            {
+            set {
                 this.referencedateFieldSpecified = value;
             }
         }
-
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "gYear")]
+        
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string year
-        {
-            get
-            {
+        public string year {
+            get {
                 return this.yearField;
             }
-            set
-            {
+            set {
                 this.yearField = value;
             }
         }
     }
-
+    
     /// <summary>
     /// Sources of population data.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
-    public enum PopulationDataSourceType
-    {
-
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum PopulationDataSourceType {
+        
         /// <summary>
         /// Actual source not know.
         /// </summary>
         Unknown,
-
+        
         /// <summary>
         /// Official population census.
         /// </summary>
         Census,
-
+        
         /// <summary>
         /// Registration data.
         /// </summary>
