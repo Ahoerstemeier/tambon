@@ -7,6 +7,14 @@ namespace De.AHoerstemeier.Geo
 {
     public class RtsdMapIndex
     {
+        public class TupleList<T1, T2> : List<Tuple<T1, T2>>
+        {
+            public void Add(T1 item, T2 item2)
+            {
+                Add(new Tuple<T1, T2>(item, item2));
+            }
+        }
+
 
         /* 5541-I   102 45 E - 103 00 E / 16 30 N - 16 15 N
          * 5541-II  102 45 E - 103 00 E / 16 15 N - 16 00 N
@@ -42,17 +50,139 @@ namespace De.AHoerstemeier.Geo
                                     4836, 4936, 5036, 5136, 5236, 5336, 5436, 5536,
                                     4835, 4935, 5035, 5135, 5235, 5335, 5435, 5535,
                                     4834, 4934, 5034, 5134, 5234, 5334, 5434, 5534,
-                                                                        5433, 5533,
-                                                                        5432, 5532,
-
+                                    4833, 4933,                         5433, 5533,
+                                    4832, 4932,                         5432, 5532,
+                                    4831, 4931,
+                              4730, 4830,
+                              4729, 4829,
+                        4628, 4728, 4828, 4928,
                         4627, 4727, 4827, 4927,
                         4626, 4726, 4826, 4926, 5026,
                         4625, 4725, 4825, 4925, 5025,
                         4624, 4724, 4824, 4924, 5024,
                                     4823, 4923, 5023, 5123,
-                                          4922, 5022, 5122, 5222, 5322,
+                                    4822, 4922, 5022, 5122, 5222, 5322,
                                                 5021, 5121, 5221, 5321, 5421,
-                                                            5220, 5320, 5420, 
+                                                            5220, 5320, 
+        };
+
+        private static TupleList<Int32, Int32> InvalidSheets = new TupleList<Int32, Int32>()
+        { 
+            {4849,4},
+            {5149,1}, {5149,2}, {5149,4},
+
+            {4748,4},
+            {4648,1},
+            {4548,1}, {4548,3}, {4548,4},
+            {5148,1},
+            {5248,1}, {5248,4},
+
+            {4547,3}, {4547,4},
+
+            {4446,1}, {4446,3}, {4446,4},
+
+            {4445,2}, {4445,3}, {4445,4},
+            {5245,1}, {5245,2},
+            {5345,1}, {5345,3}, {5345,4},
+            {5445,1}, {5445,4},
+            {5545,1}, {5545,3}, {5545,4},
+            {5845,1}, {5845,2},
+
+            {4544,3},
+            {5944,1}, {5944,2}, {5944,4},
+
+            {4643,3},  
+
+            {4642,2}, {4642,3}, {4642,4},
+
+            {6041,1},
+
+            {6140,1}, {6140,2},
+
+            {4639,4},
+            {6139,1}, {6139,2},
+
+            {4638,3},
+            {6138,1}, {6138,2},
+
+            {4737,3},
+            {5637,2},
+            {5737,2}, {5737,3},
+            {5837,2}, {5837,3},
+            {5937,2}, {5937,3},
+            {6037,2},
+
+            {5536,2},
+
+            {5035,2},
+            {5135,3}, {5135,4},
+            {5535,1}, {5535,2}, {5535,4},
+
+            {4834,3},
+            {5034,1}, {5034,2}, {5034,3},
+            {5134,3},
+            {5534,1}, {5534,2},
+
+            {4833,3}, {4833,4},
+            {5433,3},
+
+            {4832,1}, {4832,3}, {4832,4},
+            {4932,2},
+            {5432,2}, {5432,3}, {5432,4},
+
+            {4831,4},
+            {4931,1}, {4931,2}, {4931,3},
+
+            {4730,3}, {4730,4},
+
+            {4829,1}, {4829,2},
+
+            {4628,1}, {4628,3}, {4628,4},
+            {4828,1}, {4828,2},
+            {4928,1}, {4928,4},
+
+            {4627,3}, {4627,4},
+
+            {4626,4},
+            {5026,1}, {5026,2}, {5026,4},
+
+            {4625,3}, {4625,4},
+            {5025,1},
+
+            {4624,2}, {4624,3}, {4624,4},
+            {4724,3},
+
+            {4823,3},
+            {5123,1}, {5123,2}, {5123,4},
+
+            {4822,1}, {4822,3}, {4822,4},
+            {5322,1}, {5322,2},
+
+            {5021,1}, {5021,2}, {5021,3},
+            {5121,2}, {5121,3},
+            {5421,1}, {5421,2},
+
+            {5220,2},
+            {5320,2}, {5320,3},
+        };
+
+        private static TupleList<Int32, Int32> SheetsLongitude18Minutes = new TupleList<Int32, Int32>()
+        {
+            {4827,4},
+            {4927,4},
+            {4927,1},
+        };
+        private static TupleList<Int32, Int32> SheetsLatitude185Minutes = new TupleList<Int32, Int32>()
+        {
+            {4928,2},
+            {4928,3},
+        };
+        private static TupleList<Int32, Int32> Sheets3MinutesEast = new TupleList<Int32, Int32>()
+        {
+            {4627,1},
+            {4727,4},
+            {4727,1},
+            {4827,1},
         };
 
         // special cases: 4822 II - different offset in latitude and longitude
@@ -63,68 +193,93 @@ namespace De.AHoerstemeier.Geo
 
         public static String IndexL7018(GeoPoint location)
         {
-            if (location == null)
+            if ( location == null )
             {
                 throw new ArgumentNullException("location");
             }
-
-            Int32 longitude = (Int32)Math.Truncate(location.Longitude * 4.0);
-            Int32 latitude = (Int32)Math.Truncate(location.Latitude * 4.0);
-
-            Int32 latitudeIndex = (latitude / 2) - 33 + 42;
-            Int32 longitudeIndex = (longitude / 2) - 205 + 55;
-
-            Int32 index = longitudeIndex * 100 + latitudeIndex;
-
-            // ToDo: Collect all the rectangles not aligned to 15'
-            // ToDo: Collect all rectangles allowed, to return ArgumentException when out of area
-
-            Int32 segment = ((longitude % 2) * 2 + (latitude % 2));
-            String segmentName = String.Empty;
-            switch (segment)
+            if ( !MapIndexL7018.Any() )
             {
-                case 0: 
-                    segmentName = "III";
-                    break;
-                case 1:
-                    segmentName = "IV";
-                    break;
-                case 2:
-                    segmentName = "II";
-                    break;
-                case 3:
-                    segmentName = "I";
-                    break;
+                CalcIndexList();
             }
 
-            String result = String.Format("{0:####} {1}", index, segmentName);
-            if (!ValidFourSquares.Contains(index))
-            {
-                result = "invalid";
-            }
+            var entry = MapIndexL7018.Find(x => x.IsInside(location));
 
-            return result;
+            if ( entry == null )
+            {
+                throw new ArgumentOutOfRangeException("location");
+            }
+            else
+            {
+                return entry.Name;
+            }
         }
 
-        private static List<RtdsMapFrame> _mapIndex = new List<RtdsMapFrame>();
-        private static void CalcIndexList()
+        public static List<RtdsMapFrame> MapIndexL7018 = new List<RtdsMapFrame>();
+        private static void Add7018Entry(GeoPoint corner, Int32 number, Byte subindex)
         {
-            foreach (var group in ValidFourSquares)
+            if ( !InvalidSheets.Any(x => (x.Item1 == number) && (x.Item2 == subindex)) )
+            {
+                Double standardExtend = 15.0 / 60.0;
+                Double latitudeExtend = standardExtend;
+                Double longitudeExtend = standardExtend;
+
+                GeoPoint actualCorner = new GeoPoint(corner);
+                String subIndexName = String.Empty;
+                switch ( subindex )
+                {
+                    case 1:
+                        subIndexName = "I";
+                        actualCorner.Longitude += standardExtend;
+                        break;
+                    case 2:
+                        subIndexName = "II";
+                        actualCorner.Longitude += standardExtend;
+                        actualCorner.Latitude -= standardExtend;
+                        break;
+                    case 3:
+                        subIndexName = "III";
+                        actualCorner.Latitude -= standardExtend;
+                        break;
+                    case 4:
+                        subIndexName = "IV";
+                        break;
+                }
+
+                if ( SheetsLongitude18Minutes.Any(x => (x.Item1 == number) && (x.Item2 == subindex)) )
+                {
+                    longitudeExtend = 18.0 / 60.0;
+                }
+                if ( SheetsLatitude185Minutes.Any(x => (x.Item1 == number) && (x.Item2 == subindex)) )
+                {
+                    latitudeExtend = 18.5 / 60.0;
+                }
+                if ( Sheets3MinutesEast.Any(x => (x.Item1 == number) && (x.Item2 == subindex)) )
+                {
+                    actualCorner.Longitude += 3.0 / 60.0;
+                }
+                // add more special cases
+
+                MapIndexL7018.Add(new RtdsMapFrame(actualCorner, latitudeExtend, longitudeExtend, string.Format("{0:####} {1}", number, subIndexName)));
+            }
+        }
+        public static void CalcIndexList()
+        {
+            if ( MapIndexL7018.Any() )
+            {
+                return;
+            }
+            foreach ( var group in ValidFourSquares )
             {
                 Int32 latitudeIndex = group % 100;
                 Int32 longitudeIndex = group / 100;
-                Double latitude = (latitudeIndex - 42 + 33) / 2.0;
+                Double latitude = (latitudeIndex - 42 + 34) / 2.0;
                 Double longitude = (longitudeIndex - 55 + 205) / 2.0;
-                Double extend = 15.0 / 60.0;
 
                 GeoPoint northWestCorner = new GeoPoint(latitude, longitude);
-                _mapIndex.Add(new RtdsMapFrame(northWestCorner, extend, extend, string.Format("{0:####} IV", group)));
-                northWestCorner.Latitude -= extend;
-                _mapIndex.Add(new RtdsMapFrame(northWestCorner, extend, extend, string.Format("{0:####} III", group)));
-                northWestCorner.Longitude += extend;
-                _mapIndex.Add(new RtdsMapFrame(northWestCorner, extend, extend, string.Format("{0:####} II", group)));
-                northWestCorner.Latitude += extend;
-                _mapIndex.Add(new RtdsMapFrame(northWestCorner, extend, extend, string.Format("{0:####} I", group)));
+                for ( Byte i = 1 ; i <= 4 ; i++ )
+                {
+                    Add7018Entry(northWestCorner, group, i);
+                }
             }
         }
     }
