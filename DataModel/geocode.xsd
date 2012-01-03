@@ -10,6 +10,7 @@
   <xs:include schemaLocation="office.xsd"/>
   <xs:include schemaLocation="basictypes.xsd"/>
   <xs:include schemaLocation="populationdata.xsd"/>
+  <xs:include schemaLocation="gazette.xsd"/>
 
   <xs:simpleType name="AreaUnit">
     <xs:restriction base="xs:string">
@@ -29,6 +30,9 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="HistoryEntryBase" abstract="1">
+    <xs:sequence>
+      <xs:element name="gazette" type="t:GazetteRelated" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>   
     <xs:attribute name="effective" type="xs:date" use="optional" />
     <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>

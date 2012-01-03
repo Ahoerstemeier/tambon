@@ -4,8 +4,7 @@
 //    <NameSpace>De.AHoerstemeier.Tambon</NameSpace><Collection>List</Collection><codeType>CSharp</codeType><EnableDataBinding>False</EnableDataBinding><EnableLazyLoading>False</EnableLazyLoading><TrackingChangesEnable>False</TrackingChangesEnable><GenTrackingClasses>False</GenTrackingClasses><HidePrivateFieldInIDE>False</HidePrivateFieldInIDE><EnableSummaryComment>True</EnableSummaryComment><VirtualProp>False</VirtualProp><IncludeSerializeMethod>False</IncludeSerializeMethod><UseBaseClass>False</UseBaseClass><GenBaseClass>False</GenBaseClass><GenerateCloneMethod>False</GenerateCloneMethod><GenerateDataContracts>True</GenerateDataContracts><CodeBaseTag>Net40</CodeBaseTag><SerializeMethodName>Serialize</SerializeMethodName><DeserializeMethodName>Deserialize</DeserializeMethodName><SaveToFileMethodName>SaveToFile</SaveToFileMethodName><LoadFromFileMethodName>LoadFromFile</LoadFromFileMethodName><GenerateXMLAttributes>True</GenerateXMLAttributes><EnableEncoding>False</EnableEncoding><AutomaticProperties>False</AutomaticProperties><GenerateShouldSerialize>False</GenerateShouldSerialize><DisableDebug>False</DisableDebug><PropNameSpecified>Default</PropNameSpecified><Encoder>UTF8</Encoder><CustomUsings></CustomUsings><ExcludeIncludedTypes>True</ExcludeIncludedTypes><EnableInitializeFields>True</EnableInitializeFields>
 //  </auto-generated>
 // ------------------------------------------------------------------------------
-namespace De.AHoerstemeier.Tambon
-{
+namespace De.AHoerstemeier.Tambon {
     using System;
     using System.Diagnostics;
     using System.Xml.Serialization;
@@ -14,45 +13,38 @@ namespace De.AHoerstemeier.Tambon
     using System.ComponentModel;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
-
-
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://www.w3.org/2003/01/geo/wgs84_pos#")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://www.w3.org/2003/01/geo/wgs84_pos#", IsNullable = false)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "Point", Namespace = "http://www.w3.org/2003/01/geo/wgs84_pos#", IsReference = true)]
-    public partial class Point
-    {
-
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", IsNullable=false)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Point", Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", IsReference=true)]
+    public partial class Point {
+        
         private decimal latField;
-
+        
         private decimal longField;
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal lat
-        {
-            get
-            {
+        public decimal lat {
+            get {
                 return this.latField;
             }
-            set
-            {
+            set {
                 this.latField = value;
             }
         }
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal @long
-        {
-            get
-            {
+        public decimal @long {
+            get {
                 return this.longField;
             }
-            set
-            {
+            set {
                 this.longField = value;
             }
         }
