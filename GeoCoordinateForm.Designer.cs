@@ -39,7 +39,8 @@
             this.lbl_geohash = new System.Windows.Forms.Label();
             this.edt_geohash = new System.Windows.Forms.TextBox();
             this.btnFlyTo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_L7018Value = new System.Windows.Forms.Label();
+            this.lbl_L7018 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_MGRS
@@ -53,8 +54,8 @@
             // 
             // edt_MGRS
             // 
-            this.edt_MGRS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.edt_MGRS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.edt_MGRS.Location = new System.Drawing.Point(94, 6);
             this.edt_MGRS.Name = "edt_MGRS";
             this.edt_MGRS.Size = new System.Drawing.Size(186, 20);
@@ -72,8 +73,8 @@
             // 
             // edt_UTM
             // 
-            this.edt_UTM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.edt_UTM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.edt_UTM.Location = new System.Drawing.Point(94, 31);
             this.edt_UTM.Name = "edt_UTM";
             this.edt_UTM.Size = new System.Drawing.Size(186, 20);
@@ -91,8 +92,8 @@
             // 
             // edt_LatLong
             // 
-            this.edt_LatLong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.edt_LatLong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.edt_LatLong.Location = new System.Drawing.Point(94, 81);
             this.edt_LatLong.Name = "edt_LatLong";
             this.edt_LatLong.Size = new System.Drawing.Size(186, 20);
@@ -101,8 +102,8 @@
             // 
             // cbx_datum
             // 
-            this.cbx_datum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbx_datum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbx_datum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_datum.FormattingEnabled = true;
             this.cbx_datum.Location = new System.Drawing.Point(94, 106);
@@ -131,8 +132,8 @@
             // 
             // edt_geohash
             // 
-            this.edt_geohash.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.edt_geohash.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.edt_geohash.Location = new System.Drawing.Point(94, 56);
             this.edt_geohash.Name = "edt_geohash";
             this.edt_geohash.Size = new System.Drawing.Size(186, 20);
@@ -150,21 +151,31 @@
             this.btnFlyTo.UseVisualStyleBackColor = true;
             this.btnFlyTo.Click += new System.EventHandler(this.btnFlyTo_Click);
             // 
-            // label1
+            // lblL7018Index
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 152);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
+            this.lbl_L7018Value.AutoSize = true;
+            this.lbl_L7018Value.Location = new System.Drawing.Point(91, 152);
+            this.lbl_L7018Value.Name = "lblL7018Index";
+            this.lbl_L7018Value.Size = new System.Drawing.Size(28, 13);
+            this.lbl_L7018Value.TabIndex = 11;
+            this.lbl_L7018Value.Text = "###";
+            // 
+            // lbl_L7018
+            // 
+            this.lbl_L7018.AutoSize = true;
+            this.lbl_L7018.Location = new System.Drawing.Point(15, 152);
+            this.lbl_L7018.Name = "lbl_L7018";
+            this.lbl_L7018.Size = new System.Drawing.Size(66, 13);
+            this.lbl_L7018.TabIndex = 12;
+            this.lbl_L7018.Text = "L7018 sheet";
             // 
             // GeoCoordinateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 185);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_L7018);
+            this.Controls.Add(this.lbl_L7018Value);
             this.Controls.Add(this.btnFlyTo);
             this.Controls.Add(this.edt_geohash);
             this.Controls.Add(this.lbl_geohash);
@@ -197,6 +208,7 @@
         private System.Windows.Forms.Label lbl_geohash;
         private System.Windows.Forms.TextBox edt_geohash;
         private System.Windows.Forms.Button btnFlyTo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_L7018Value;
+        private System.Windows.Forms.Label lbl_L7018;
     }
 }

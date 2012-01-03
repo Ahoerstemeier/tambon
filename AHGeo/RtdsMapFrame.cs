@@ -5,15 +5,15 @@ using System.Text;
 
 namespace De.AHoerstemeier.Geo
 {
-    class RtdsMapFrame : GeoFrameBase
+    public class RtdsMapFrame : GeoFrameBase
     {
         #region fields
         private GeoPoint _northWestCorner;
         #endregion
 
         #region properties
-        private Double LatitudeExtendDegree { get; private set; }
-        private Double LongitudeExtendDegree { get; private set; }
+        public Double LatitudeExtendDegree { get; private set; }
+        public Double LongitudeExtendDegree { get; private set; }
         #endregion
 
         #region constructor
@@ -47,7 +47,7 @@ namespace De.AHoerstemeier.Geo
         {
             GeoPoint southEastCorner = new GeoPoint(NorthWestCorner);
             southEastCorner.Latitude -= LatitudeExtendDegree;
-            southEastCorner.Longitude += LongitudeExtendDegree;        
+            southEastCorner.Longitude += LongitudeExtendDegree;
             return southEastCorner;
         }
         #endregion

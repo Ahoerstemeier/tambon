@@ -59,7 +59,7 @@ namespace De.AHoerstemeier.Geo
         public void ExportToKml(String fileName)
         {
             KmlHelper kmlWriter = StartKmlWriting();
-            WriteToKml(kmlWriter, kmlWriter.DocumentNode,Name);
+            WriteToKml(kmlWriter, kmlWriter.DocumentNode, Name);
             kmlWriter.SaveToFile(fileName);
         }
         public static KmlHelper StartKmlWriting()
@@ -73,7 +73,29 @@ namespace De.AHoerstemeier.Geo
         #region public methods
         public Boolean IsInside(GeoPoint point)
         {
-            throw new NotImplementedException();
+            if ( point == null )
+            {
+                throw new ArgumentNullException("point");
+            }
+
+            GeoPoint a = NorthWestCorner;
+            GeoPoint b = SouthWestCorner;
+            GeoPoint c = NorthEastCorner;
+            Double bax = b.Latitude - a.Latitude;
+            Double bay = b.Longitude - a.Longitude;
+            Double cax = c.Latitude - a.Latitude;
+            Double cay = c.Longitude - a.Longitude;
+
+            if ( (point.Latitude - a.Latitude) * bax + (point.Longitude - a.Longitude) * bay < 0.0 )
+                return false;
+            if ( (point.Latitude - b.Latitude) * bax + (point.Longitude - b.Longitude) * bay > 0.0 )
+                return false;
+            if ( (point.Latitude - a.Latitude) * cax + (point.Longitude - a.Longitude) * cay < 0.0 )
+                return false;
+            if ( (point.Latitude - c.Latitude) * cax + (point.Longitude - c.Longitude) * cay > 0.0 )
+                return false;
+            return true;
+
         }
         #endregion
     }

@@ -5,10 +5,10 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using De.AHoerstemeier.Geo;
 
-namespace TestProject1
+namespace De.Ahoerstemeier.Test
 {
     /// <summary>
-    /// Summary description for UnitTest1
+    /// Tests for GeoPoint class
     /// </summary>
     [TestClass]
     public class GeoPointTest
@@ -161,7 +161,7 @@ namespace TestProject1
             GeoPoint geoPoint = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
             String maidenhead = geoPoint.Maidenhead;
             maidenhead = maidenhead.Substring(0, _BangkokMaidenhead.Length);
-            Assert.AreEqual(_BangkokMaidenhead,maidenhead);
+            Assert.AreEqual(_BangkokMaidenhead, maidenhead);
         }
     }
 }
