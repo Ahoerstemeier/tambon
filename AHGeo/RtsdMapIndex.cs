@@ -184,6 +184,24 @@ namespace De.AHoerstemeier.Geo
             {4727,1},
             {4827,1},
         };
+        private static TupleList<Int32, Int32> SheetsShifted5MinutesEast = new TupleList<Int32, Int32>()
+        {
+            {4833,1}, {4833,2},
+            {4933,1}, {4933,2}, {4933,3}, {4933,4},
+            {4832,2}, {4932,3},
+            {4831,3}, {4831,2},
+            {4730,1}, {4830,4}, {4830,1},
+
+        };
+        private static TupleList<Int32, Int32> SheetsShifted7Minutes30SecondsEast = new TupleList<Int32, Int32>()
+        {
+            {4729,4}, {4729,1}, {4829,4},
+            {4728,4}, {4728,1}, {4828,4},
+        };
+        private static TupleList<Int32, Int32> UnsureMaps = new TupleList<Int32, Int32>()
+        {
+            {4828,4},
+        };
 
         // special cases: 4822 II - different offset in latitude and longitude
         // special cases: 4827 IV, 4927 IV, 4927 I - 3 minute more wide in longitude
