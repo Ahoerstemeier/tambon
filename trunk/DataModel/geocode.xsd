@@ -32,15 +32,27 @@
   <xs:complexType name="HistoryEntryBase" abstract="1">
     <xs:sequence>
       <xs:element name="gazette" type="t:GazetteRelated" maxOccurs="unbounded" minOccurs="0"/>
-    </xs:sequence>   
-    <xs:attribute name="effective" type="xs:date" use="optional" />
+    </xs:sequence>
+    <xs:attribute name="effective" type="xs:date" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Date the change became officially effective.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
   <xs:complexType name="HistoryStatus">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="old" type="t:EntityType" use="required" />
-        <xs:attribute name="new" type="t:EntityType" use="required" />
+        <xs:attribute name="old" type="t:EntityType" use="required" >
+          <xs:annotation>
+            <xs:documentation>Original type of the entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="new" type="t:EntityType" use="required" >
+          <xs:annotation>
+            <xs:documentation>Type of the entity after the change.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -57,7 +69,11 @@
   <xs:complexType name="HistorySpellingBase" abstract="1">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="name" type="xs:string" use="required" >
+          <xs:annotation>
+            <xs:documentation>Name or spelling of name a given time.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -74,7 +90,27 @@
   <xs:complexType name="HistoryCreate">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="type" type="t:EntityType" use="required" />
+        <xs:attribute name="type" type="t:EntityType" use="required" >
+          <xs:annotation>
+            <xs:documentation>Type of the entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HistoryAbolish">
+    <xs:complexContent>
+      <xs:extension base="t:HistoryEntryBase">
+        <xs:attribute name="type" type="t:EntityType" use="required" >
+          <xs:annotation>
+            <xs:documentation>Type of the entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="mergeto" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode of the entity which took over the area.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -86,6 +122,7 @@
       <xs:element name="rename" type="t:HistoryRename"/>
       <xs:element name="statuschange" type="t:HistoryStatus"/>
       <xs:element name="create" type="t:HistoryCreate"/>
+      <xs:element name="abolished" type="t:HistoryAbolish"/>
       <xs:element name="misspelling" type="t:HistorySpelling"/>
       <xs:element name="reformedspelling" type="t:HistoryReformSpelling"/>
     </xs:choice>
