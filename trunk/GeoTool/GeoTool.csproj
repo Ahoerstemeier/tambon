@@ -56,7 +56,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CE3F83E700984951A265C9FCDE5C76351E2E751D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>779F09588DAC43EA0252C1E841342CE3DA426B6A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>GeoTool_TemporaryKey.pfx</ManifestKeyFile>
@@ -86,16 +86,20 @@
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4, Version=3.0.0.28534, Culture=neutral, PublicKeyToken=1673db7d5906b0ad, processorArchitecture=MSIL" />
-    <Reference Include="GalaSoft.MvvmLight.WPF4, Version=3.0.0.28535, Culture=neutral, PublicKeyToken=63eb5c012e0b3c1c, processorArchitecture=MSIL" />
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WPF4\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF4">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WPF4\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Maps.MapControl.WPF">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Bing Maps WPF Control\Beta\Libraries\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Bing Maps WPF Control\Beta\Libraries\Microsoft.Maps.MapControl.WPF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Windows.Interactivity">
       <HintPath>lib\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
@@ -120,11 +124,11 @@
     <Compile Include="ViewModel\GeoDataMapViewModel.cs" />
     <Compile Include="ViewModel\GeoToolViewModelLocator.cs" />
     <Compile Include="ViewModel\GeoDataViewModel.cs" />
+    <Compile Include="Views\GeoDataMapView.xaml.cs">
+      <DependentUpon>GeoDataMapView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GeoDataView.xaml.cs">
       <DependentUpon>GeoDataView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\GeoDataMapBingView.xaml.cs">
-      <DependentUpon>GeoDataMapBingView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -138,12 +142,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\GeoDataMapView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\GeoDataView.xaml">
       <SubType>Form</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\GeoDataMapBingView.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
