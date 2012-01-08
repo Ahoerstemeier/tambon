@@ -142,6 +142,7 @@ namespace De.AHoerstemeier.Geo
             {4928,1}, {4928,4},
 
             {4627,3}, {4627,4},
+            {4827,1},
 
             {4626,4},
             {5026,1}, {5026,2}, {5026,4},
@@ -172,17 +173,27 @@ namespace De.AHoerstemeier.Geo
             {4927,4},
             {4927,1},
         };
-        private static TupleList<Int32, Int32> SheetsLatitude185Minutes = new TupleList<Int32, Int32>()
+        private static TupleList<Int32, Int32> SheetsLongitude20Minutes = new TupleList<Int32, Int32>()
+        {
+            {4828,4},
+        };
+        private static TupleList<Int32, Int32> SheetsLatitude18Minutes = new TupleList<Int32, Int32>()
         {
             {4928,2},
             {4928,3},
         };
-        private static TupleList<Int32, Int32> Sheets3MinutesEast = new TupleList<Int32, Int32>()
+        private static TupleList<Int32, Int32> SheetsShifted3MinutesNorth = new TupleList<Int32, Int32>()
+        {
+            {4928,2},
+            {4928,3},
+        };
+        private static TupleList<Int32, Int32> SheetsShifted3MinutesEast = new TupleList<Int32, Int32>()
         {
             {4627,1},
             {4727,4},
             {4727,1},
-            {4827,1},
+            {4827,4},
+            {4927,1},
         };
         private static TupleList<Int32, Int32> SheetsShifted5MinutesEast = new TupleList<Int32, Int32>()
         {
@@ -191,14 +202,28 @@ namespace De.AHoerstemeier.Geo
             {4832,2}, {4932,3},
             {4831,3}, {4831,2},
             {4730,1}, {4830,4}, {4830,1},
-
+        };
+        private static TupleList<Int32, Int32> SheetsShifted6MinutesEast = new TupleList<Int32, Int32>()
+        {
+            {4928,2},
         };
         private static TupleList<Int32, Int32> SheetsShifted7Minutes30SecondsEast = new TupleList<Int32, Int32>()
         {
             {4729,4}, {4729,1}, {4829,4},
+        };
+        private static TupleList<Int32, Int32> SheetsShifted5MinutesSouth = new TupleList<Int32, Int32>()
+        {
+            {4822,2},
+        };
+        private static TupleList<Int32, Int32> SheetsShifted7MinutesWest = new TupleList<Int32, Int32>()
+        {
+            {4822,2},
+        };
+        private static TupleList<Int32, Int32> SheetsShifted5MinutesWest = new TupleList<Int32, Int32>()
+        {
             {4728,4}, {4728,1}, {4828,4},
         };
-        private static TupleList<Int32, Int32> NonStandardSheets = new TupleList<Int32, Int32>()
+        public static TupleList<Int32, Int32> NonStandardSheets = new TupleList<Int32, Int32>()
         {
             {4833,1}, {4833,2},
             {4933,1}, {4933,2}, {4933,3}, {4933,4},
@@ -214,22 +239,13 @@ namespace De.AHoerstemeier.Geo
             {4728,4}, {4728,1}, {4828,4},
             {4928,2}, {4928,3},
 
-            {4827,4},
-            {4927,4}, {4927,1},
-
             {4627,1},
             {4727,4}, {4727,1},
-            {4827,1},
+            {4827,4},
             {4927,4}, {4927,1},
 
             {4822,2}
         };
-
-        // special cases: 4822 II - different offset in latitude and longitude
-        // special cases: 4827 IV, 4927 IV, 4927 I - 3 minute more wide in longitude
-        // 4627 I, 4727 IV, 4727 I, 4827 IV - starts 3 minute more east; 4827 IV 4 minute more wide
-        // 4928 II 6 minute more east
-        // 4928 II, 4928 III 18.5 minute more high
 
         public static String IndexL7018(GeoPoint location)
         {
@@ -254,52 +270,78 @@ namespace De.AHoerstemeier.Geo
             }
         }
 
-        public static List<RtdsMapFrame> MapIndexL7018 = new List<RtdsMapFrame>();
-        private static void Add7018Entry(GeoPoint corner, Int32 number, Byte subindex)
+        public static List<RtsdMapFrame> MapIndexL7018 = new List<RtsdMapFrame>();
+        private static void Add7018Entry(GeoPoint corner, Tuple<Int32,Int32> index)
         {
-            if ( !InvalidSheets.Any(x => (x.Item1 == number) && (x.Item2 == subindex)) )
+            if ( !InvalidSheets.Any(x => x.Equals(index) ))
             {
                 Double standardExtend = 15.0 / 60.0;
                 Double latitudeExtend = standardExtend;
                 Double longitudeExtend = standardExtend;
 
                 GeoPoint actualCorner = new GeoPoint(corner);
-                String subIndexName = String.Empty;
-                switch ( subindex )
+                switch ( index.Item2 )
                 {
                     case 1:
-                        subIndexName = "I";
                         actualCorner.Longitude += standardExtend;
                         break;
                     case 2:
-                        subIndexName = "II";
                         actualCorner.Longitude += standardExtend;
                         actualCorner.Latitude -= standardExtend;
                         break;
                     case 3:
-                        subIndexName = "III";
                         actualCorner.Latitude -= standardExtend;
                         break;
                     case 4:
-                        subIndexName = "IV";
                         break;
                 }
 
-                if ( SheetsLongitude18Minutes.Any(x => (x.Item1 == number) && (x.Item2 == subindex)) )
+                if ( SheetsLongitude18Minutes.Any(x => x.Equals(index)))
                 {
                     longitudeExtend = 18.0 / 60.0;
                 }
-                if ( SheetsLatitude185Minutes.Any(x => (x.Item1 == number) && (x.Item2 == subindex)) )
+                if (SheetsLongitude20Minutes.Any(x => x.Equals(index)))
                 {
-                    latitudeExtend = 18.5 / 60.0;
+                    longitudeExtend = 20.0 / 60.0;
                 }
-                if ( Sheets3MinutesEast.Any(x => (x.Item1 == number) && (x.Item2 == subindex)) )
+                if (SheetsLatitude18Minutes.Any(x => x.Equals(index)))
+                {
+                    latitudeExtend = 18.0 / 60.0;
+                }
+                if ( SheetsShifted3MinutesEast.Any(x => x.Equals(index)))
                 {
                     actualCorner.Longitude += 3.0 / 60.0;
                 }
-                // add more special cases
+                if (SheetsShifted5MinutesWest.Any(x => x.Equals(index)))
+                {
+                    actualCorner.Longitude -= 5.0 / 60.0;
+                }
+                if (SheetsShifted5MinutesEast.Any(x => x.Equals(index)))
+                {
+                    actualCorner.Longitude += 5.0 / 60.0;
+                }
+                if (SheetsShifted6MinutesEast.Any(x => x.Equals(index)))
+                {
+                    actualCorner.Longitude += 6.0 / 60.0;
+                }
+                if (SheetsShifted7Minutes30SecondsEast.Any(x => x.Equals(index)))
+                {
+                    actualCorner.Longitude += 7.5 / 60.0;
+                }
+                if (SheetsShifted7MinutesWest.Any(x => x.Equals(index)))
+                {
+                    actualCorner.Longitude -= 7.0 / 60.0;
+                }
+                if (SheetsShifted3MinutesNorth.Any(x => x.Equals(index)))
+                {
+                    actualCorner.Latitude += 3.0 / 60.0;
+                }
+                if (SheetsShifted5MinutesSouth.Any(x => x.Equals(index)))
+                {
+                    actualCorner.Latitude -= 5.0 / 60.0;
+                }
 
-                MapIndexL7018.Add(new RtdsMapFrame(actualCorner, latitudeExtend, longitudeExtend, string.Format("{0:####} {1}", number, subIndexName)));
+                MapIndexL7018.Add(new RtsdMapFrame(actualCorner, latitudeExtend, longitudeExtend, index));
             }
         }
         public static void CalcIndexList()
@@ -316,9 +358,9 @@ namespace De.AHoerstemeier.Geo
                 Double longitude = (longitudeIndex - 55 + 205) / 2.0;
 
                 GeoPoint northWestCorner = new GeoPoint(latitude, longitude);
-                for ( Byte i = 1 ; i <= 4 ; i++ )
+                for ( Int32 i = 1 ; i <= 4 ; i++ )
                 {
-                    Add7018Entry(northWestCorner, group, i);
+                    Add7018Entry(northWestCorner, Tuple.Create(group,i));
                 }
             }
         }
