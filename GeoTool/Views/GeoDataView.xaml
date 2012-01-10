@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         DataContext="{Binding GeoDataStatic, Source={StaticResource Locator}}" d:DesignHeight="314" d:DesignWidth="608">
-    <Grid>
+    <Grid Height="382" Width="607">
         <ComboBox Height="23" HorizontalAlignment="Left" Margin="21,35,0,0" Name="cbxGeoDatum" VerticalAlignment="Top" Width="153" ItemsSource="{Binding GeoDatums}" SelectedValue="{Binding CurrentGeoDatum}"/>
         <TextBox Height="23" HorizontalAlignment="Left" Margin="21,239,0,0" Name="txtGeoHash" VerticalAlignment="Top" Width="153" Text="{Binding GeoHash}" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="21,87,0,0" Name="txtCoordinates" VerticalAlignment="Top" Width="153" Text="{Binding GeoLocation}"/>
@@ -16,5 +16,7 @@
         <Label Content="Geohash" Height="28" HorizontalAlignment="Left" Margin="21,216,0,0" Name="lblGeoHash" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="21,188,0,0" Name="txtMgrs" Text="{Binding MgrsLocation}" VerticalAlignment="Top" Width="153" />
         <Label Content="MGRS" Height="28" HorizontalAlignment="Left" Margin="21,163,0,0" Name="lblMgrs" VerticalAlignment="Top" />
+        <Label Content="1:50000 L7018 Sheet" Height="28" HorizontalAlignment="Left" Margin="21,268,0,0" Name="lblL7018" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="21,291,0,0" Name="cbxL7018" VerticalAlignment="Top" Width="153" ItemsSource="{Binding L7018Index}" SelectedValue="{Binding L7018Frame}"/>
     </Grid>
 </UserControl>

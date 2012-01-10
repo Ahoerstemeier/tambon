@@ -227,5 +227,35 @@ namespace De.AHoerstemeier.GeoTool.Model
             {
             }
         }
+
+        internal void SetL7018Frame(RtsdMapFrame value)
+        {
+            if (value != null)
+            {
+                Location = value.MiddlePoint;
+            }
+        }
+
+        public RtsdMapFrame L7018Frame
+        {
+            get
+            {
+                RtsdMapFrame result = null;
+                try
+                {
+                    result = RtsdMapIndex.IndexL7018(Location);
+                }
+                catch (ArgumentOutOfRangeException)
+                { }
+                return result;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    SetL7018Frame(value);
+                }
+            }
+        }
     }
 }

@@ -25,6 +25,10 @@ namespace De.AHoerstemeier.Geo
         {
             get { return GetSouthEastCorner(); }
         }
+        public GeoPoint MiddlePoint 
+        {
+            get { return GetMiddlePoint(); }
+        }
 
         public String Name { get; set; }
         #endregion
@@ -34,6 +38,16 @@ namespace De.AHoerstemeier.Geo
         protected abstract GeoPoint GetNorthEastCorner();
         protected abstract GeoPoint GetSouthWestCorner();
         protected abstract GeoPoint GetSouthEastCorner();
+
+        protected GeoPoint GetMiddlePoint()
+        {
+            var northWest = NorthWestCorner;
+            var southEast = SouthEastCorner;
+            Double latitude = northWest.Latitude + (southEast.Latitude - northWest.Latitude) / 2.0;
+            Double longitude = northWest.Longitude + (southEast.Longitude - northWest.Longitude) / 2.0;
+            GeoPoint result = new GeoPoint(latitude,longitude);
+            return result;
+        }
         #endregion
 
         #region KML export
