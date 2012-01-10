@@ -247,26 +247,26 @@ namespace De.AHoerstemeier.Geo
             {4822,2}
         };
 
-        public static String IndexL7018(GeoPoint location)
+        public static RtsdMapFrame IndexL7018(GeoPoint location)
         {
-            if ( location == null )
+            if (location == null)
             {
                 throw new ArgumentNullException("location");
             }
-            if ( !MapIndexL7018.Any() )
+            if (!MapIndexL7018.Any())
             {
                 CalcIndexList();
             }
 
             var entry = MapIndexL7018.Find(x => x.IsInside(location));
 
-            if ( entry == null )
+            if (entry == null)
             {
                 throw new ArgumentOutOfRangeException("location");
             }
             else
             {
-                return entry.Name;
+                return entry;
             }
         }
 

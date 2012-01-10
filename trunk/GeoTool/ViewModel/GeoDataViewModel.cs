@@ -54,6 +54,7 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
                     RaisePropertyChanged(GeoLocationPropertyName);
                     RaisePropertyChanged(UtmLocationPropertyName);
                     RaisePropertyChanged(MgrsLocationPropertyName);
+                    RaisePropertyChanged(L7018FramePropertyName);
                 }
                 GeoPoint point = new GeoPoint(Model.Location);
                 point.Datum = Model.Datum;
@@ -65,6 +66,13 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
             GeoDatums.Add(GeoDatum.DatumWGS84());
             GeoDatums.Add(GeoDatum.DatumIndian1975());
             GeoDatums.Add(GeoDatum.DatumIndian1954());
+
+            L7018Index = new ObservableCollection<RtsdMapFrame>();
+            RtsdMapIndex.CalcIndexList();
+            foreach (var entry in RtsdMapIndex.MapIndexL7018)
+            {
+                L7018Index.Add(entry);
+            }
 
             _oldLocation = new GeoPoint(Model.Location);
             _oldLocation.Datum = Model.Datum;
@@ -155,6 +163,44 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
             set { Model.SetMgrsLocation(value); }
         }
 
+        public const String L7018IndexPropertyName = "L7018Index";
+        private ObservableCollection<RtsdMapFrame> _L7018Index = null;
+        public ObservableCollection<RtsdMapFrame> L7018Index
+        {
+            get
+            {
+                return _L7018Index;
+            }
+            set
+            {
+                if (_L7018Index == value)
+                {
+                    return;
+                }
+
+                var oldL7018Index = _L7018Index;
+                _L7018Index = value;
+
+                // Update bindings, no broadcast
+                RaisePropertyChanged(L7018IndexPropertyName);
+
+            }
+
+        }
+
+        public const String L7018FramePropertyName = "L7018Frame";
+        public RtsdMapFrame L7018Frame
+        {
+            get { return Model.L7018Frame; }
+            set
+            {
+                if (Model.L7018Frame == value)
+                {
+                    return;
+                }
+                Model.L7018Frame = value;
+            }
+        }
     }
 
 }

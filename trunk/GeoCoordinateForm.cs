@@ -123,7 +123,11 @@ namespace De.AHoerstemeier.Tambon
             {
                 try
                 {
-                    lbl_L7018Value.Text = RtsdMapIndex.IndexL7018(geoPoint);
+                    var sheet = RtsdMapIndex.IndexL7018(geoPoint);
+                    if (sheet != null)
+                    {
+                        lbl_L7018Value.Text = sheet.Name;
+                    }
                 }
                 catch ( ArgumentOutOfRangeException )
                 {
