@@ -21,13 +21,13 @@ public partial class AmphoeDataDisplay : System.Web.UI.Page
 
     protected void FillChangwatCombobox()
     {
-        if (TambonHelper.Geocodes == null)
+        if (TambonHelper.ProvinceGeocodes == null)
         {
             TambonHelper.LoadGeocodeList();
         }
 
         cbx_changwat.Items.Clear();
-        foreach (PopulationDataEntry lEntry in TambonHelper.Geocodes)
+        foreach (PopulationDataEntry lEntry in TambonHelper.ProvinceGeocodes)
         {
             cbx_changwat.Items.Add(new ListItem(lEntry.English,lEntry.Geocode.ToString()));
         }
