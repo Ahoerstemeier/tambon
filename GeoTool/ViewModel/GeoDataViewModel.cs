@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using De.AHoerstemeier.Geo;
 using De.AHoerstemeier.Tambon;
 using De.AHoerstemeier.GeoTool.Model;
@@ -69,7 +70,7 @@ namespace De.AHoerstemeier.GeoTool.ViewModel
 
             L7018Index = new ObservableCollection<RtsdMapFrame>();
             RtsdMapIndex.CalcIndexList();
-            foreach (var entry in RtsdMapIndex.MapIndexL7018)
+            foreach (var entry in RtsdMapIndex.MapIndexL7018.OrderBy(x => x.Name))
             {
                 L7018Index.Add(entry);
             }

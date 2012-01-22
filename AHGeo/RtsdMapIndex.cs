@@ -167,22 +167,25 @@ namespace De.AHoerstemeier.Geo
             {5320,2}, {5320,3},
         };
 
+        private static TupleList<Int32, Int32> SheetsLongitude17Minutes = new TupleList<Int32, Int32>()
+        {
+            {4927,1},
+        };
         private static TupleList<Int32, Int32> SheetsLongitude18Minutes = new TupleList<Int32, Int32>()
         {
             {4827,4},
             {4927,4},
-            {4927,1},
         };
         private static TupleList<Int32, Int32> SheetsLongitude20Minutes = new TupleList<Int32, Int32>()
         {
             {4828,4},
         };
-        private static TupleList<Int32, Int32> SheetsLatitude18Minutes = new TupleList<Int32, Int32>()
+        private static TupleList<Int32, Int32> SheetsLatitude18_16Minutes = new TupleList<Int32, Int32>()
         {
             {4928,2},
             {4928,3},
         };
-        private static TupleList<Int32, Int32> SheetsShifted3MinutesNorth = new TupleList<Int32, Int32>()
+        private static TupleList<Int32, Int32> SheetsShifted3_16MinutesNorth = new TupleList<Int32, Int32>()
         {
             {4928,2},
             {4928,3},
@@ -295,18 +298,21 @@ namespace De.AHoerstemeier.Geo
                     case 4:
                         break;
                 }
-
                 if ( SheetsLongitude18Minutes.Any(x => x.Equals(index)))
                 {
                     longitudeExtend = 18.0 / 60.0;
+                }
+                if ( SheetsLongitude17Minutes.Any(x => x.Equals(index)))
+                {
+                    longitudeExtend = 17.0 / 60.0;
                 }
                 if (SheetsLongitude20Minutes.Any(x => x.Equals(index)))
                 {
                     longitudeExtend = 20.0 / 60.0;
                 }
-                if (SheetsLatitude18Minutes.Any(x => x.Equals(index)))
+                if (SheetsLatitude18_16Minutes.Any(x => x.Equals(index)))
                 {
-                    latitudeExtend = 18.0 / 60.0;
+                    latitudeExtend = 18.0 / 60.0 + 16.0 / 3600.0;
                 }
                 if ( SheetsShifted3MinutesEast.Any(x => x.Equals(index)))
                 {
@@ -332,9 +338,9 @@ namespace De.AHoerstemeier.Geo
                 {
                     actualCorner.Longitude -= 7.0 / 60.0;
                 }
-                if (SheetsShifted3MinutesNorth.Any(x => x.Equals(index)))
+                if (SheetsShifted3_16MinutesNorth.Any(x => x.Equals(index)))
                 {
-                    actualCorner.Latitude += 3.0 / 60.0;
+                    actualCorner.Latitude += 3.0 / 60.0 + 16.0 / 3600.0;
                 }
                 if (SheetsShifted5MinutesSouth.Any(x => x.Equals(index)))
                 {

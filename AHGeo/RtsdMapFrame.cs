@@ -70,10 +70,5 @@ namespace De.AHoerstemeier.Geo
         }
         #endregion
 
-        public override string ToString()
-        {
-            return Name;
-        }
-
     }
 }
