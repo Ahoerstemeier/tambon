@@ -437,12 +437,17 @@ namespace De.AHoerstemeier.Geo
 
         private static String CoordinateToString(String format, Double value)
         {
-            String lResult = format;
+            String result = format;
 
-            lResult = lResult.Replace("%C", Math.Truncate(value).ToString());
-            lResult = lResult.Replace("%D", Math.Truncate(Math.Abs(value)).ToString());
-            lResult = lResult.Replace("%M", Math.Truncate((Math.Abs(value) * 60) % 60).ToString());
-            lResult = lResult.Replace("%S", Math.Truncate((Math.Abs(value) * 3600) % 60).ToString());
+            result = result.Replace("%C", Math.Truncate(value).ToString());
+            result = result.Replace("%D", Math.Truncate(Math.Abs(value)).ToString());
+            result = result.Replace("%M", Math.Truncate((Math.Abs(value) * 60) % 60).ToString());
+            result = result.Replace("%S", Math.Round((Math.Abs(value) * 3600) % 60).ToString());
+
+            result = result.Replace("%c", value.ToString("##0.####"));
+            result = result.Replace("%d", Math.Abs(value).ToString("##0.####"));
+            result = result.Replace("%m", ((Math.Abs(value) * 60) % 60).ToString("##0.####"));
+            result = result.Replace("%s", ((Math.Abs(value) * 3600) % 60).ToString("##0.##"));
 
             // http://www.codeproject.com/KB/string/llstr.aspx
             // String.Format() ?
@@ -455,66 +460,57 @@ namespace De.AHoerstemeier.Geo
             // %d - decimal degrees, always positive
             // %m - decimal minutes, always positive
             // %s - decimal seconds, always positive
-            return lResult;
+            return result;
         }
+        /// <summary>
+        /// Formats the coordinates according to a given format string.
+        /// </summary>
+        /// <remarks>
+        /// %H - hemisphere - single character of N,S,E,W
+        /// %C - integer co-ordinate, may be negative or positive
+        /// %c - decimal co-ordinate, the entire co-ordinate, may be negative or positive
+        /// %D - integer degrees, always positive
+        /// %M - integer minutes, always positive
+        /// %S - integer seconds, always positive, rounded
+        /// %d - decimal degrees, always positive
+        /// %m - decimal minutes, always positive
+        /// %s - decimal seconds, always positive
+        /// %% - for %
+        /// </remarks>
+        /// <param name="format">Format string.</param>
+        /// <returns>Formatted coordinate values.</returns>
         public String ToString(String format)
         {
-            // %H - hemisphere - single character of N,S,E,W
-            // %C - integer co-ordinate, may be negative or positive
-            // %c - decimal co-ordinate, the entire co-ordinate, may be negative or positive
-            // %D - integer degrees, always positive
-            // %M - integer degrees, always positive
-            // %S - integer seconds, always positive, rounded
-            // %d - decimal degrees, always positive
-            // %m - decimal minutes, always positive
-            // %s - decimal seconds, always positive
-            // %% - for %
-            String lLatitude = CoordinateToString(format, Latitude);
+            String latitudeString = CoordinateToString(format, Latitude);
             if ( Latitude >= 0 )
             {
-                lLatitude = lLatitude.Replace("%H", "N");
+                latitudeString = latitudeString.Replace("%H", "N");
             }
             else
             {
-                lLatitude = lLatitude.Replace("%H", "S");
+                latitudeString = latitudeString.Replace("%H", "S");
             }
-            String lLongitude = CoordinateToString(format, Longitude);
+            String longitudeString = CoordinateToString(format, Longitude);
             if ( Longitude >= 0 )
             {
-                lLongitude = lLongitude.Replace("%H", "E");
+                longitudeString = longitudeString.Replace("%H", "E");
             }
             else
             {
-                lLongitude = lLongitude.Replace("%H", "W");
+                longitudeString = longitudeString.Replace("%H", "W");
             }
 
-            String lResult = lLatitude + ' ' + lLongitude;
-            lResult = lResult.Replace("%%", "%");
-            return lResult;
+            String result = latitudeString + ' ' + longitudeString;
+            result = result.Replace("%%", "%");
+            return result;
         }
+        /// <summary>
+        /// Converts the coordinates to a string formatted with decimal degrees.
+        /// </summary>
+        /// <returns>String represantation of the coordinates.</returns>
         public override String ToString()
         {
-            // TODO use ToString(Format) instead
-            String lLatitude = Math.Abs(Latitude).ToString("#0.0000") + "° ";
-            if ( IsNorthernHemisphere() )
-            {
-                lLatitude = lLatitude + 'N';
-            }
-            else
-            {
-                lLatitude = lLatitude + 'S';
-            }
-            String lLongitude = Math.Abs(Longitude).ToString("##0.0000") + "° ";
-            if ( IsWesternLongitude() )
-            {
-                lLongitude = lLongitude + 'W';
-            }
-            else
-            {
-                lLongitude = lLongitude + 'E';
-            }
-            String lResult = lLatitude + ' ' + lLongitude;
-            return lResult;
+            return ToString("%d° %H");
         }
 
         private String CalcGeoHash(Int32 accuracy)
