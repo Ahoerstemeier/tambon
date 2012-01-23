@@ -41,11 +41,11 @@ namespace De.AHoerstemeier.Tambon
             mYear = iYear;
             mGeocode = iGeocode;
             Int32 lYearShort = mYear + 543 - 2500;
-            if ((lYearShort < 0) | (lYearShort > 99))
+            if ( (lYearShort < 0) | (lYearShort > 99) )
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if ((mGeocode < 0) | (mGeocode > 99))
+            if ( (mGeocode < 0) | (mGeocode > 99) )
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -55,11 +55,11 @@ namespace De.AHoerstemeier.Tambon
         }
         public PopulationData(PopulationDataEntry iEntry)
         {
-            if (iEntry == null)
+            if ( iEntry == null )
             {
                 throw new ArgumentNullException("iEntry");
             }
-            if (!EntityTypeHelper.IsCompatibleEntityType(iEntry.Type, EntityType.Changwat))
+            if ( !EntityTypeHelper.IsCompatibleEntityType(iEntry.Type, EntityType.Changwat) )
             {
                 throw new ArgumentOutOfRangeException("iEntry", iEntry.Type, "Invalid type of base entry");
             }
@@ -74,7 +74,8 @@ namespace De.AHoerstemeier.Tambon
         private const String TableBoldEnd = "</b>";
         private const String TableEntryEnd = "</font></td>";
         //private const String UrlBase = "http://www.dopa.go.th/xstat/";
-        private const String UrlBase = "http://203.113.86.149/xstat/";
+        // private const String UrlBase = "http://203.113.86.149/xstat/";
+        private const String UrlBase = "http://stat.dopa.go.th/xstat/";
 
         #endregion
 
@@ -107,7 +108,7 @@ namespace De.AHoerstemeier.Tambon
         {
             StringBuilder lBuilder = new StringBuilder();
             lBuilder.Append("<ref>{{cite web|url=");
-            lBuilder.Append(UrlBase+SourceFilename(1));
+            lBuilder.Append(UrlBase + SourceFilename(1));
             lBuilder.Append("|publisher=Department of Provincial Administration");
             lBuilder.Append("|title=Population statistics ");
             lBuilder.Append(mYear.ToString());
@@ -122,9 +123,9 @@ namespace De.AHoerstemeier.Tambon
         }
         private void ParseSingleFile(String filename)
         {
-            if (!mAnyCached)
+            if ( !mAnyCached )
             {
-                if (!isCached(filename))
+                if ( !isCached(filename) )
                 {
                     Download(filename);
                 }
@@ -138,19 +139,19 @@ namespace De.AHoerstemeier.Tambon
             String lCurrentLine = String.Empty;
             PopulationDataEntry lCurrentEntry = null;
             int lDataState = 0;
-            while ((lCurrentLine = lReader.ReadLine()) != null)
+            while ( (lCurrentLine = lReader.ReadLine()) != null )
             {
                 #region parse name
-                if (lCurrentLine.StartsWith(TableEntryStart))
+                if ( lCurrentLine.StartsWith(TableEntryStart) )
                 {
                     String lValue = StripTableHtmlFromLine(lCurrentLine);
                     lCurrentEntry = new PopulationDataEntry();
                     lCurrentEntry.ParseName(lValue);
-                    if (mChangwat == null)
+                    if ( mChangwat == null )
                     {
                         mChangwat = lCurrentEntry;
                     }
-                    else if ((mCurrentSubEntry == null) | (EntityTypeHelper.SecondLevelEntity.Contains(lCurrentEntry.Type)))
+                    else if ( (mCurrentSubEntry == null) | (EntityTypeHelper.SecondLevelEntity.Contains(lCurrentEntry.Type)) )
                     {
                         mChangwat.SubEntities.Add(lCurrentEntry);
                         mCurrentSubEntry = lCurrentEntry;
@@ -163,16 +164,16 @@ namespace De.AHoerstemeier.Tambon
                 }
                 #endregion
                 #region parse population data
-                if (lCurrentLine.StartsWith(TableDataStart))
+                if ( lCurrentLine.StartsWith(TableDataStart) )
                 {
-                    if (lCurrentEntry == null)
+                    if ( lCurrentEntry == null )
                     {
                         throw new ArgumentOutOfRangeException();
                     }
                     String lValue = StripTableHtmlFromLine(lCurrentLine);
-                    if (!String.IsNullOrEmpty(lValue))
+                    if ( !String.IsNullOrEmpty(lValue) )
                     {
-                        switch (lDataState)
+                        switch ( lDataState )
                         {
                             case 0:
                                 lCurrentEntry.Male = Int32.Parse(lValue);
@@ -199,11 +200,11 @@ namespace De.AHoerstemeier.Tambon
         private String SourceFilename(Int16 iPage)
         {
             Int32 lYearShort = mYear + 543 - 2500;
-            if ((lYearShort < 0) | (lYearShort > 99))
+            if ( (lYearShort < 0) | (lYearShort > 99) )
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if ((mGeocode < 0) | (mGeocode > 99))
+            if ( (mGeocode < 0) | (mGeocode > 99) )
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -221,7 +222,7 @@ namespace De.AHoerstemeier.Tambon
             Int16 lCount = 0;
             try
             {
-                while (lCount < 99)
+                while ( lCount < 99 )
                 {
                     lCount++;
                     ParseSingleFile(SourceFilename(lCount));
@@ -232,7 +233,7 @@ namespace De.AHoerstemeier.Tambon
                 // TODO: catch selectively the exception expected for HTTP not found/file not found
             }
             mCurrentSubEntry = null;
-            if (mChangwat != null)
+            if ( mChangwat != null )
             {
                 mChangwat.Geocode = mGeocode;
             }
@@ -257,7 +258,7 @@ namespace De.AHoerstemeier.Tambon
             PopulationData RetVal = null;
             try
             {
-                if (!String.IsNullOrEmpty(iFromFile) && File.Exists(iFromFile))
+                if ( !String.IsNullOrEmpty(iFromFile) && File.Exists(iFromFile) )
                 {
                     lReader = new StreamReader(iFromFile);
                     lXmlDoc = new XmlDocument();
@@ -267,7 +268,7 @@ namespace De.AHoerstemeier.Tambon
             }
             finally
             {
-                if (lReader != null)
+                if ( lReader != null )
                 {
                     lReader.Close();
                 }
@@ -276,11 +277,11 @@ namespace De.AHoerstemeier.Tambon
         }
         protected void DoLoad(XmlNode iNode)
         {
-            if (iNode.Name == "entity")
+            if ( iNode.Name == "entity" )
             {
                 mChangwat = PopulationDataEntry.Load(iNode);
             }
-            else if (iNode.Name == "thesaban")
+            else if ( iNode.Name == "thesaban" )
             {
                 LoadXMLThesaban(iNode);
             }
@@ -289,24 +290,24 @@ namespace De.AHoerstemeier.Tambon
         {
             PopulationData RetVal = null;
 
-            if (iNode != null)
+            if ( iNode != null )
             {
                 RetVal = new PopulationData();
-                foreach (XmlNode lNode in iNode.ChildNodes)
+                foreach ( XmlNode lNode in iNode.ChildNodes )
                 {
-                    if (lNode.Name == "year")
+                    if ( lNode.Name == "year" )
                     {
                         RetVal.mYear = Convert.ToInt32(lNode.Attributes.GetNamedItem("value"));
-                        foreach (XmlNode llNode in lNode.ChildNodes)
+                        foreach ( XmlNode llNode in lNode.ChildNodes )
                             RetVal.DoLoad(llNode);
                     }
-                    else 
+                    else
                     {
                         RetVal.DoLoad(lNode);
                     }
                 }
             }
-            if (RetVal.mChangwat != null)
+            if ( RetVal.mChangwat != null )
             {
                 RetVal.mGeocode = RetVal.mChangwat.Geocode;
             }
@@ -315,8 +316,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void LoadXMLThesaban(XmlNode iNode)
         {
-            foreach (XmlNode lNode in iNode.ChildNodes)
-                if (lNode.Name == "entity")
+            foreach ( XmlNode lNode in iNode.ChildNodes )
+                if ( lNode.Name == "entity" )
                 {
                     mThesaban.Add(PopulationDataEntry.Load(lNode));
                 }
@@ -330,7 +331,7 @@ namespace De.AHoerstemeier.Tambon
             Data.ExportToXML(lNode);
             var lNodeThesaban = (XmlElement)lXmlDocument.CreateNode("element", "thesaban", "");
             lNode.AppendChild(lNodeThesaban);
-            foreach (PopulationDataEntry entity in mThesaban)
+            foreach ( PopulationDataEntry entity in mThesaban )
             {
                 entity.ExportToXML(lNodeThesaban);
             }
@@ -338,7 +339,7 @@ namespace De.AHoerstemeier.Tambon
 
         protected void GetGeocodes()
         {
-            if (mChangwat != null)
+            if ( mChangwat != null )
             {
                 PopulationData lGeocodes = TambonHelper.GetGeocodeList(mChangwat.Geocode);
                 mInvalidGeocodes = lGeocodes.Data.InvalidGeocodeEntries();
@@ -348,11 +349,11 @@ namespace De.AHoerstemeier.Tambon
         public String XMLExportFileName()
         {
             String retval = String.Empty;
-            if (mChangwat != null)
+            if ( mChangwat != null )
             {
                 String lDir = Path.Combine(GlobalSettings.XMLOutputDir, "DOPA");
                 Directory.CreateDirectory(lDir);
-                retval = Path.Combine(lDir,"population" + mChangwat.Geocode.ToString("D2") + " " + year.ToString() + ".XML");
+                retval = Path.Combine(lDir, "population" + mChangwat.Geocode.ToString("D2") + " " + year.ToString() + ".XML");
             }
             return retval;
         }
@@ -365,9 +366,9 @@ namespace De.AHoerstemeier.Tambon
 
         public void ReOrderThesaban()
         {
-            if (mChangwat != null)
+            if ( mChangwat != null )
             {
-                foreach (PopulationDataEntry lEntity in mChangwat.SubEntities)
+                foreach ( PopulationDataEntry lEntity in mChangwat.SubEntities )
                 {
                     if ( lEntity != null )
                     {
@@ -377,21 +378,21 @@ namespace De.AHoerstemeier.Tambon
                         }
                     }
                 }
-                foreach (PopulationDataEntry lThesaban in mThesaban)
+                foreach ( PopulationDataEntry lThesaban in mThesaban )
                 {
                     mChangwat.SubEntities.Remove(lThesaban);
                 }
-                foreach (PopulationDataEntry lThesaban in mThesaban)
+                foreach ( PopulationDataEntry lThesaban in mThesaban )
                 {
-                    if (lThesaban.SubEntities.Any())
+                    if ( lThesaban.SubEntities.Any() )
                     {
-                        foreach (PopulationDataEntry lTambon in lThesaban.SubEntities)
+                        foreach ( PopulationDataEntry lTambon in lThesaban.SubEntities )
                         {
                             mChangwat.AddTambonInThesabanToAmphoe(lTambon, lThesaban);
                         }
                     }
                 }
-                foreach (PopulationDataEntry entity in mChangwat.SubEntities)
+                foreach ( PopulationDataEntry entity in mChangwat.SubEntities )
                 {
                     if ( entity != null )
                     {
@@ -404,7 +405,7 @@ namespace De.AHoerstemeier.Tambon
         private void ProcessAllProvinces()
         {
             PopulationDataEntry lData = new PopulationDataEntry();
-            foreach (PopulationDataEntry lEntry in TambonHelper.ProvinceGeocodes)
+            foreach ( PopulationDataEntry lEntry in TambonHelper.ProvinceGeocodes )
             {
                 PopulationData lTempCalculator = new PopulationData(mYear, lEntry.Geocode);
                 lTempCalculator.Process();
@@ -422,7 +423,7 @@ namespace De.AHoerstemeier.Tambon
 
         public void Process()
         {
-            if (mGeocode==0)
+            if ( mGeocode == 0 )
             {
                 ProcessAllProvinces();
             }
@@ -431,7 +432,7 @@ namespace De.AHoerstemeier.Tambon
                 ProcessProvince(mGeocode);
             }
 
-            if (OnProcessingFinished != null)
+            if ( OnProcessingFinished != null )
             {
                 OnProcessingFinished(this);
             }
@@ -444,14 +445,14 @@ namespace De.AHoerstemeier.Tambon
         public List<PopulationDataEntry> EntitiesWithoutGeocode()
         {
             var retval = new List<PopulationDataEntry>();
-            if (mChangwat != null)
+            if ( mChangwat != null )
             {
                 PopulationDataEntry.PopulationDataEntryEvent del = delegate(PopulationDataEntry value)
                              {
                                  retval.Add(value);
                              };
                 mChangwat.IterateEntitiesWithoutGeocode(del);
-                foreach (PopulationDataEntry thesaban in mThesaban)
+                foreach ( PopulationDataEntry thesaban in mThesaban )
                 {
                     thesaban.IterateEntitiesWithoutGeocode(del);
                 }
