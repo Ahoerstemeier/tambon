@@ -219,6 +219,7 @@ namespace De.AHoerstemeier.Geo
 
         public MgrsGridElement(String mgrs)
         {
+            Datum = GeoDatum.DatumWGS84();
             SetMgrs(mgrs);
         }
     }
