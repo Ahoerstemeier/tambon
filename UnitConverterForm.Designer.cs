@@ -49,7 +49,7 @@
             // 
             this.edtRaiInteger.Location = new System.Drawing.Point(12, 12);
             this.edtRaiInteger.Maximum = new decimal(new int[] {
-            10000,
+            1000000,
             0,
             0,
             0});
