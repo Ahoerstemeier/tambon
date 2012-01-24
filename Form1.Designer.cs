@@ -63,6 +63,7 @@ namespace De.Ahoerstemeier.Tambon
             this.btn_dopaamphoe = new System.Windows.Forms.Button();
             this.btnCheckNames = new System.Windows.Forms.Button();
             this.btn_L7018 = new System.Windows.Forms.Button();
+            this.cbxCheckNamesFiltered = new System.Windows.Forms.CheckBox();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
             this.SuspendLayout();
@@ -425,11 +426,23 @@ namespace De.Ahoerstemeier.Tambon
             this.btn_L7018.UseVisualStyleBackColor = true;
             this.btn_L7018.Click += new System.EventHandler(this.btn_L7018_Click);
             // 
+            // cbxCheckNamesFiltered
+            // 
+            this.cbxCheckNamesFiltered.AutoSize = true;
+            this.cbxCheckNamesFiltered.Location = new System.Drawing.Point(344, 191);
+            this.cbxCheckNamesFiltered.Name = "cbxCheckNamesFiltered";
+            this.cbxCheckNamesFiltered.Size = new System.Drawing.Size(90, 17);
+            this.cbxCheckNamesFiltered.TabIndex = 35;
+            this.cbxCheckNamesFiltered.Text = "One province";
+            this.cbxCheckNamesFiltered.UseVisualStyleBackColor = true;
+            this.cbxCheckNamesFiltered.CheckedChanged += new System.EventHandler(this.cbxCheckNamesFiltered_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 503);
+            this.Controls.Add(this.cbxCheckNamesFiltered);
             this.Controls.Add(this.btn_L7018);
             this.Controls.Add(this.btnCheckNames);
             this.Controls.Add(this.btn_dopaamphoe);
@@ -508,6 +521,7 @@ namespace De.Ahoerstemeier.Tambon
         private System.Windows.Forms.Button btn_dopaamphoe;
         private System.Windows.Forms.Button btnCheckNames;
         private System.Windows.Forms.Button btn_L7018;
+        private System.Windows.Forms.CheckBox cbxCheckNamesFiltered;
     }
 }
 
