@@ -329,7 +329,7 @@
     <entity type="Tambon" name="พระงาม" english="Phra Ngam" geocode="170401" >
       <office type="TAOOffice">
         <url>http://prangamlocal.com/</url>
-        <!--<url>http://www.prangam.go.th/</url>-->
+        <url status="offline">http://www.prangam.go.th/</url>
       </office>
     </entity>
     <entity type="Tambon" name="พรหมบุรี" english="Phrom Buri" geocode="170402" />
@@ -375,7 +375,16 @@
         <official title="DistrictOfficer" name="อุทัย วัฒนสิงห์ดำรงค์" end="2007-10-23"/>
       </officials>
     </office>
-    <entity type="Tambon" name="ถอนสมอ" english="Thon Samo" geocode="170501" />
+    <entity type="Tambon" name="ถอนสมอ" english="Thon Samo" geocode="170501" >
+      <entity type="Muban" geocode="17050101" name="บ้านท่าหาดสามัคคี"/>
+      <entity type="Muban" geocode="17050102" name="บ้านสวนกล้วยพัฒนา"/>
+      <entity type="Muban" geocode="17050103" name="บ้านสวนกล้วย"/>
+      <entity type="Muban" geocode="17050104" name="บ้านจำปาทอง"/>
+      <entity type="Muban" geocode="17050105" name="บ้านเสมาทอง"/>
+      <entity type="Muban" geocode="17050106" name="ศิษย์หลวงปู่หยัดพัฒนา"/>
+      <entity type="Muban" geocode="17050107" name="ศิษย์หลวงพ่อหินร่วมใจ"/>
+      <entity type="Muban" geocode="17050108" name="บ้านขุนโลก"/>
+    </entity>
     <entity type="Tambon" name="โพประจักษ์" english="Pho Prachak" geocode="170502" >
       <office type="TAOOffice">
         <url>http://www.phoprajak.go.th/</url>
@@ -394,7 +403,13 @@
         <url comment="Offline">http://wihankaow.net/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="พิกุลทอง" english="Phikun Thong" geocode="170504" />
+    <entity type="Tambon" name="พิกุลทอง" english="Phikun Thong" geocode="170504" >
+      <entity type="Muban" geocode="17050401" name="บ้านอกโรย"/>
+      <entity type="Muban" geocode="17050402" name="บ้านหาดยายสั้น"/>
+      <entity type="Muban" geocode="17050403" name="บ้านพิกุลทองสามัคคี"/>
+      <entity type="Muban" geocode="17050404" name="บ้านพิกุลทอง"/>
+      <entity type="Muban" geocode="17050405" name="บ้านคลองท่าแค"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="อินทร์บุรี" english="In Buri" geocode="1706" >
     <office type="DistrictOffice">
@@ -528,7 +543,7 @@
     </entity>
     <entity type="Tambon" name="น้ำตาล" english="Nam Tan" geocode="170607" >
       <office type="TAOOffice">
-        <!--<url>http://www.numtan.net</url>-->
+        <url status="offline">http://www.numtan.net</url>
       </office>
     </entity>
     <entity type="Tambon" name="ทองเอน" english="Thong En" geocode="170608" >
@@ -605,7 +620,10 @@
   </entity>
   <entity type="ThesabanTambon" name="ถอนสมอ" english="Thon Samo" geocode="1794" parent="1705" >
     <office type="MunicipalityOffice">
-      <!--<url>http://www.Thon Samor.go.th/</url>-->
+      <url>http://www.ThonSamor.go.th/</url>
+      <officials>
+        <official title="Mayor" name="อุดร พาศิรายุธ" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="อินทร์บุรี" english="In Buri" geocode="1793" parent="1706" >
