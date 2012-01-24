@@ -308,6 +308,11 @@
             <xs:documentation>Status of the web link.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="lastchecked" type="xs:date" use="optional">
+          <xs:annotation>
+            <xs:documentation>Date of last check of validity of URL.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
