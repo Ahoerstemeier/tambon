@@ -122,6 +122,14 @@
       <entity type="Muban" geocode="84010208" name="บ้านทรายทอง" english="Ban Sai Thong"/>
     </entity>
     <entity type="Tambon" name="วัดประดู่" english="Wat Pradu" geocode="840103">
+      <office type="SubdistrictHeadmanOffice">
+        <officials source="http://www.watpradoocity.go.th/index.php?options=content&amp;mode=cate&amp;id=1">
+          <official title="Kamnan" name="นิพนธ์ สรการ" beginyear="2004"/>
+          <official title="Kamnan" name="นิพนธ์ สรการ (สั้ว)"/>
+          <official title="Kamnan" name="จ้วน เพชรศักดา"/>
+          <official title="Kamnan" name="ขุนเดช วัดประดู่ (เนียม ทวิชสังข์)" beginyear="1914"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="84010301" name="บ้านบางชุมโถ" english="Ban Bang Chumko"/>
       <entity type="Muban" geocode="84010302" name="บ้านท่ากูบ" english="Ban Tha Kup"/>
       <entity type="Muban" geocode="84010303" name="บ้านวัดประดู่" english="Ban Wat Pradu"/>
@@ -131,7 +139,19 @@
       <entity type="Muban" geocode="84010307" name="บ้านคลองขุด" english="Ban Khlong Khut"/>
       <entity type="Muban" geocode="84010308" name="บ้านบางหมาก" english="Ban Bang Mak"/>
       <entity type="Muban" geocode="84010309" name="บ้านเวียงประสาน" english="Ban Waing Prasam"/>
-      <entity type="Muban" geocode="84010310" name="บ้านบขส." english="Ban Bo Kho So" comment="บขส = บริษัท ขนส่ง, Transport corporation"/>
+      <entity type="Muban" geocode="84010310" name="บ้านบ.ข.ส." english="Ban Bo Kho So" comment="บขส = บริษัท ขนส่ง, Transport corporation"/>
+      <!-- Phuyaiban as of 03-2010
+หมู่ที่ 1 	บ้านบางชุมโถ    	นายวิโรจน์ พรมแก้ว 	2,148 	865
+หมู่ที่ 2 	บ้านท่ากูบ   	นายสุชาติ ขาวเกิด 	2,097 	934 
+หมู่ที่ 3 	บ้านวัดประดู่ 	นายจำเนียร สังข์คร 	1,272 	872
+หมู่ที่ 4 	บ้านวัดมะปริง 	นายสำเริง สรการ 	1,806 	1,091
+หมู่ที่ 5 	บ้านคลองใหม่ 	นายเสกสรรค์  พรหมจันทร์ 	2,304 	615
+หมู่ที่ 6 	บ้านใหม่พัฒนา 	นายเอกชัย เผื่อนประไพ 	1,097 	301
+หมู่ที่ 7 	บ้านค้อล่าง 	นายเวชมนต์ พัฒน์วัฒน์ 	327 	86
+หมู่ที่ 8 	บ้านสมหวัง 	นายพิมล ทวิชสังข์ 	850 	267
+หมู่ที่ 9 	บ้านเวียงประสาน 	นายนายอารมณ์  ทองคำ 	307 	89
+หมู่ที่ 10 	บ้าน บ.ข.ส. 	นางสาวกนกอร ทวิชสังข์ 	1,697 	969      
+      -->
     </entity>
     <entity type="Tambon" name="ขุนทะเล" english="Khun Thale" geocode="840104">
       <history>
@@ -1242,7 +1262,6 @@
         <official index="1" title="DistrictOfficer" name="ภิรมย์ สุขภาคกุล" begin="1978-12-01" end="1978-08-25" />
       </officials>
     </office>
-
     <entity type="Tambon" name="เขาวง" english="Khao Wong" geocode="840901">
       <office type="TAOOffice">
         <url>http://www.khaowonk.go.th/</url>
@@ -1292,13 +1311,19 @@
       <entity type="Muban" geocode="84090309" name="บ้านควนทอง"/>
     </entity>
     <entity type="Tambon" name="เขาพัง" english="Khao Phang" geocode="840904">
-      <entity type="Muban" geocode="84090401" name="บ้านเขาเทพพิทักษ์"/>
+      <entity type="Muban" geocode="84090401" name="บ้านเขาเทพพิทักษ์" english="Ban Khao Thep Phihak"/>
       <entity type="Muban" geocode="84090402" name="บ้านหน้าเขา" english="Ban Na Khao"/>
-      <entity type="Muban" geocode="84090403" name="บ้านหน้าฮะ"/>
-      <entity type="Muban" geocode="84090404" name="บ้านไกรสร"/>
-      <entity type="Muban" geocode="84090405" name="บ้านเชี่ยวหลาน"/>
+      <entity type="Muban" geocode="84090403" name="บ้านหน้าฮะ" english="Ban Na Ha"/>
+      <entity type="Muban" geocode="84090404" name="บ้านไกรสร" english="Ban Kraison"/>
+      <entity type="Muban" geocode="84090405" name="บ้านเชี่ยวหลาน" english="Ban Chiao Lan"/>
     </entity>
-    <entity type="Tambon" name="ไกรสร" english="Krai Son" geocode="840905" obsolete="1" comment="Abolished 1985"/>
+    <entity type="Tambon" name="ไกรสร" english="Kraison" geocode="840905" obsolete="1">
+      <history>
+        <abolished type="Tambon" mergeto="840904" effective="1986-10-01">
+          <gazette volume="103" page="117" issue="219 ง ฉบับพิเศษ" date="1986-12-12"/>
+        </abolished>
+      </history>
+    </entity>
   </entity>
   <entity type="Amphoe" name="พนม" english="Phanom" geocode="8410">
     <office type="DistrictOffice">
@@ -1320,7 +1345,7 @@
       <office type="TAOOffice">
         <url>http://www.phanom.go.th/</url>
       </office>
-      <entity type="Muban" geocode="84100101" name="บ้านพิทักษ์พัฒนา"/>
+      <entity type="Muban" geocode="84100101" name="บ้านพิทักษ์พัฒนา" english="Ban Phihak Phatthana"/>
       <entity type="Muban" geocode="84100102" name="บ้านวัดพนม" english="Ban Wang Phanom"/>
       <entity type="Muban" geocode="84100103" name="บ้านพนมใน" english="Ban Phanom Nai"/>
       <entity type="Muban" geocode="84100104" name="บ้านบางไม้เพาะ" english="Ban Bang Mai Pho"/>
@@ -1330,15 +1355,16 @@
       <entity type="Muban" geocode="84100108" name="บ้านเชี่ยวหมอน"/>
       <entity type="Muban" geocode="84100109" name="บ้านใหญ่" english="Ban Yai"/>
       <entity type="Muban" geocode="84100110" name="บ้านสาคลี่"/>
-      <entity type="Muban" geocode="84100111" name="บ้านทุ่งเจริญ"/>
+      <entity type="Muban" geocode="84100111" name="บ้านทุ่งเจริญ" english="Ban Thung Charoen"/>
       <entity type="Muban" geocode="84100112" name="บ้านบางนิล"/>
       <entity type="Muban" geocode="84100113" name="บ้านหัวลิง" english="Ban Hua Ling"/>
     </entity>
     <entity type="Tambon" name="ต้นยวน" english="Ton Yuan" geocode="841002">
       <office type="TAOOffice">
-        <url>http://www.tonyuan.go.th/</url>
+        <vision> เมืองเกษตร เขตอนุรักษ์ธรรมชาติ ประชาธิปไตยชาวบ้าน</vision>
+        <url lastchecked="2012-02-01">http://www.tonyuan.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="เชวง สมพังกาญจน์" begin="2008-08-31"/>
+          <official title="TAOMayor" name="เชวง สมพังกาญจน์" begin="2008-08-31" end="2012-08-30"/>
           <official title="TAOMayor" name="นพรัตน์ เกษโกศล" endyear="2008"/>
         </officials>
       </office>
@@ -1542,10 +1568,14 @@
     <entity type="Tambon" name="นาสาร" english="Na San" geocode="841201"/>
     <entity type="Tambon" name="พรุพี" english="Phru Phi" geocode="841202">
       <office type="TAOOffice">
+        <vision>
+          ผู้นำการท่องเที่ยวเชิงนิเวศ และเกษตรอินทรีย์ ศูนย์กลางยางพาราครบวงจร
+          จัดการทรัพยากรน้ำให้ยั่งยืน  เป็นชนบทที่น่าอยู่   ศูนย์การเรียนรู้ตลอดชีวิต
+        </vision>
         <!-- Unsure:   8.706814°  99.354248° -->
-        <url>http://www.phruphi.go.th/</url>
+        <url lastchecked="2012-02-01">http://www.phruphi.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ประเวช ลิกขะไชย" begin="2008-08-31"/>
+          <official title="TAOMayor" name="ประเวช ลิกขะไชย" begin="2008-08-31" end="2008-08-30"/>
           <official title="TAOMayor" name="สกุล จงจิตร" endyear="2008"/>
         </officials>
       </office>
@@ -1573,9 +1603,13 @@
     </entity>
     <entity type="Tambon" name="ลำพูน" english="Lamphun" geocode="841204">
       <office type="TAOOffice">
-        <url>http://www.lumphoon.go.th/</url>
+        <vision>
+          ภายในปี พ.ศ.2558 องค์การบริหารส่วนตำบลลำพูน  จะเป็นองค์กรที่การบริหารตามหลัก
+          ธรรมาภิบาล ประชาชนมีคุณภาพชีวิตที่ดี มีโครงสร้างพื้นฐานที่ได้มาตรฐาน ส่งเสริมการศึกษาวัฒนธรรมศาสนาประเพณีท้องถิ่น  กีฬาและการท่องเที่ยว มีสิ่งแวดล้อมอย่างยั่งยืน ด้วยผู้บริหารที่มีวิสัยทัศน์และบุคลากรที่มีศักยภาพสูง
+        </vision>
+        <url lastchecked="2012-02-01">http://www.lumphoon.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="เสกศรรณ กาโห" inoffice="2010"/>
+          <official title="TAOMayor" name="เสกศรรณ กาโห" begin="2012-12-21" end="2012-12-20"/>
         </officials>
       </office>
       <entity type="Muban" geocode="84120401" name="บ้านเขาน้อย" english="Ban Khao Noi"/>
@@ -1734,13 +1768,15 @@
     </entity>
     <entity type="Tambon" name="ท่าเรือ" english="Tha Ruea" geocode="841302">
       <office type="TAOOffice">
+        <vision>ประชาชนสุขภาพดี  มีสาธารณูปโภคครบครัน  ร่วมกันอนุรักษ์สิ่งแวดล้อม  ปกป้องสืบสานประเพณีท้องถิ่น  ยึดปรัชญาเศรษฐกิจพอเพียง</vision>
         <geo:Point>
           <geo:lat>8.9265</geo:lat>
           <geo:long>99.2735</geo:long>
         </geo:Point>
+        <url lastchecked="2012-02-01">http://www.tharua-sao.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สุเทพ นาคสวาท" begin="2008-05-11"/>
-          <official title="TAOMayor" name="มนตรี เพชรขุ้ม" endyear="2008" comment="Resigned"/>
+          <official title="TAOMayor" name="สุเทพ นาคสวาท" begin="2008-05-11" end="2008-05-10"/>
+          <official title="TAOMayor" name="มนตรี เพชรขุ้ม" endyear="2008" endreason="Resigned"/>
         </officials>
       </office>
       <entity type="Muban" geocode="84130201" name="บ้านปากด่าน"/>
@@ -2013,10 +2049,12 @@
     </office>
     <entity type="Tambon" name="อิปัน" english="I-pan" geocode="841601">
       <office type="TAOOffice">
+        <vision>ร่วมคิด   ร่วมทำ   ร่วมรับผิดชอบ   โดยยึดผลประโยชน์ของประชาชนเป็นหลัก</vision>
         <!-- Longdo: 8.57240, 99.22964 -->
-        <url>http://www.eipun.go.th/</url>
+        <url lastchecked="2012-02-01">http://www.eipun.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อัมพร หล่อพันธ์" begin="2008-08-31" comment="Re-elected"/>
+          <official title="TAOMayor" name="อัมพร หล่อพันธ์" begin="2008-08-31" end="2012-08-30"/>
+          <official title="TAOMayor" name="อัมพร หล่อพันธ์" endyear="2008"/>
         </officials>
       </office>
       <entity type="Muban" geocode="84160101" name="บ้านใสนา" english="Ban Sai Na"/>
@@ -2034,19 +2072,26 @@
     </entity>
     <entity type="Tambon" name="สินปุน" english="Sin Pun" geocode="841602">
       <office type="TAOOffice">
+        <vision>
+          องค์การบริหารส่วนตำบลสินปุน   เป็นเมืองน่าอยู่    ด้วยการบริหารจัดการที่ดี
+          คนมีความรู้คู่คุณธรรม    ก้าวนำด้านเศรษฐกิจและเทคโนโลยี     มีความร่วมมือทุก
+          ภาคทุกส่วนของสังคม     ครอบครัวมีความอบอุ่น    ชุมชนเข้มแข็ง
+        </vision>
         <!-- Longdo: 8.25200, 99.27505 -->
+        <url lastchecked="2012-02-01">http://www.sinpun.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อรุณ อุบลกาญจน์" begin="2008-08-31" comment="Re-elected"/>
+          <official title="TAOMayor" name="อรุณ อุบลกาญจน์" begin="2008-08-31" end="2008-08-30"/>
+          <official title="TAOMayor" name="อรุณ อุบลกาญจน์" endyear="2008"/>
         </officials>
       </office>
-      <entity type="Muban" geocode="84160201" name="บ้านโคกมะม่วง"/>
-      <entity type="Muban" geocode="84160202" name="บ้านกันหลา"/>
-      <entity type="Muban" geocode="84160203" name="บ้านบางไผ่"/>
+      <entity type="Muban" geocode="84160201" name="บ้านโคกมะม่วง" english="Ban Khok Mamuang"/>
+      <entity type="Muban" geocode="84160202" name="บ้านกันหลา" english="Ban Kan La"/>
+      <entity type="Muban" geocode="84160203" name="บ้านบางไผ่" english="Ban Bang Phai"/>
       <entity type="Muban" geocode="84160204" name="บ้านควนมหาชัย"/>
       <entity type="Muban" geocode="84160205" name="บ้านเมรัย"/>
       <entity type="Muban" geocode="84160206" name="บ้านปลายคลอง" english="Ban Plai Khlong"/>
-      <entity type="Muban" geocode="84160207" name="บ้านคลองน้ำเย็น"/>
-      <entity type="Muban" geocode="84160208" name="บ้านควนนิยม"/>
+      <entity type="Muban" geocode="84160207" name="บ้านคลองน้ำเย็น" english="Ban Khlong Nam Yen"/>
+      <entity type="Muban" geocode="84160208" name="บ้านควนนิยม" english="Ban Khuan Niyom"/>
       <entity type="Muban" geocode="84160209" name="บ้านเพชรเขาค่าย"/>
       <entity type="Muban" geocode="84160210" name="บ้านโคกตะไคร้"/>
     </entity>
@@ -2054,9 +2099,10 @@
       <office type="TAOOffice">
         <vision>สังคมน่าอยู่  เคียงคู่คุณธรรม  นำประชา พัฒนาแบบยั่งยื่น</vision>
         <!-- Longdo: 8.59194, 99.03097 -->
-        <url>http://www.bangsawan.go.th/</url>
+        <url lastchecked="2012-02-01">http://www.bangsawan.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ภีระย์ สุระกา" begin="2008-08-31" comment="Re-elected"/>
+          <official title="TAOMayor" name="ภีระย์ สุระกา" begin="2008-08-31" end="2012-08-30"/>
+          <official title="TAOMayor" name="ภีระย์ สุระกา" endyear="2008"/>
         </officials>
       </office>
       <entity type="Muban" geocode="84160301" name="บ้านเกาะน้อย" english="Ban Ko Noi"/>
@@ -2076,20 +2122,23 @@
     </entity>
     <entity type="Tambon" name="ไทรขึง" english="Sai Khueng" geocode="841604">
       <office type="TAOOffice">
+        <vision>
+          การคมนาคมสะดวก เศรษฐกิจดี เด็ก เยาวชนมีความรู้ทันสมัย ปลอดภัยจากยาเสพติด ประชาชนอยู่ดี มีความสุข
+        </vision>
         <!-- Longdo: 8.52677, 99.10341 -->
-        <url>http://www.trikung.go.th/</url>
+        <url lastchecked="2012-02-01">http://www.trikung.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="กัณตพล เบญจพันธ์" begin="2008-08-31"/>
+          <official title="TAOMayor" name="กัณตพล เบญจพันธ์" begin="2008-08-31" end="2008-08-30"/>
           <official title="TAOMayor" name="ธานี ชูศรี" endyear="2008"/>
         </officials>
       </office>
-      <entity type="Muban" geocode="84160401" name="บ้านสามพัน"/>
-      <entity type="Muban" geocode="84160402" name="บ้านขอนพอ"/>
+      <entity type="Muban" geocode="84160401" name="บ้านสามพัน" english="Ban Sam Phan"/>
+      <entity type="Muban" geocode="84160402" name="บ้านขอนพอ" english="Ban Kho Pho"/>
       <entity type="Muban" geocode="84160403" name="บ้านควนสว่างวัฒนา"/>
       <entity type="Muban" geocode="84160404" name="บ้านควนคอ"/>
       <entity type="Muban" geocode="84160405" name="บ้านนิคม 1" english="Ban Nikhom 1"/>
-      <entity type="Muban" geocode="84160406" name="บ้านไสท้อน"/>
-      <entity type="Muban" geocode="84160407" name="บ้านบางน้ำเย็น"/>
+      <entity type="Muban" geocode="84160406" name="บ้านไสท้อน" english="Ban Sai Thon"/>
+      <entity type="Muban" geocode="84160407" name="บ้านบางน้ำเย็น" english="Ban Bang Nam Yen"/>
       <entity type="Muban" geocode="84160408" name="บ้านควนยอ"/>
       <entity type="Muban" geocode="84160409" name="บ้านนิคม 2" english="Ban Nikhom 2"/>
       <entity type="Muban" geocode="84160410" name="บ้านหาดเจริญ" english="Ban Hat Charoen"/>
@@ -2099,22 +2148,27 @@
     </entity>
     <entity type="Tambon" name="สินเจริญ" english="Sin Charoen" geocode="841605">
       <office type="TAOOffice">
+        <vision>
+          เกษตรกรรมดีเด่น มุ่งเน้นการศึกษา
+          ส่งเสริมการกีฬา สุขภาพดีถ้วนหน้า
+          พัฒนาด้านเศรษฐกิจแบบพอเพียง
+        </vision>
         <!-- Longdo: 8.41511, 99.23946 -->
-        <url>http://sincharoen.go.th/</url>
+        <url lastchecked="2012-02-01">http://sincharoen.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="เสถียร อุปฐาก" begin="2008-08-31"/>
+          <official title="TAOMayor" name="เสถียร อุปฐาก" begin="2008-08-31" end="2012-08-30"/>
           <official title="TAOMayor" name="ชูสิน ชุมบัวจันทร์" endyear="2008"/>
         </officials>
       </office>
       <entity type="Muban" geocode="84160501" name="บ้านทุ่งหญ้าแดง"/>
-      <entity type="Muban" geocode="84160502" name="บ้านบางกำยาน"/>
-      <entity type="Muban" geocode="84160503" name="บ้านป่าไม้ราชประสงค์"/>
-      <entity type="Muban" geocode="84160504" name="บ้านบางรูป"/>
+      <entity type="Muban" geocode="84160502" name="บ้านบางกำยาน" english="Ban Bang Kamyan"/>
+      <entity type="Muban" geocode="84160503" name="บ้านป่าไม้ราชประสงค์" english="Ban Pa Mai Rat Prasong"/>
+      <entity type="Muban" geocode="84160504" name="บ้านบางรูป" english="Ban Bang Rup"/>
       <entity type="Muban" geocode="84160505" name="บ้านบางเคียน"/>
       <entity type="Muban" geocode="84160506" name="บ้านบางใหญ่" english="Ban Bang Yai"/>
-      <entity type="Muban" geocode="84160507" name="บ้านบางเหรียง"/>
-      <entity type="Muban" geocode="84160508" name="บ้านบางพอ"/>
-      <entity type="Muban" geocode="84160509" name="บ้านราชประชา"/>
+      <entity type="Muban" geocode="84160507" name="บ้านบางเหรียง" english="Ban Bang Rueang"/>
+      <entity type="Muban" geocode="84160508" name="บ้านบางพอ" english="Ban Bang Pho"/>
+      <entity type="Muban" geocode="84160509" name="บ้านราชประชา" english="Ban Rat Pracha"/>
       <entity type="Muban" geocode="84160510" name="บ้านมูลนิธิ" english="Ban Mun Ni Thi"/>
     </entity>
     <entity type="Tambon" name="ไทรโสภา" english="Sai Sopha" geocode="841606">
@@ -2592,7 +2646,7 @@
       </geo:Point>
       <url>http://www.nasancity.org/</url>
       <officials source="http://www.nasancity.org/014.htm">
-        <official title="Mayor" index="21" name="โกศล ศุทธางกรู" begin="2008-05-11" comment="Election on 11th or 18th? Thesaban website says 11" />
+        <official title="Mayor" index="21" name="โกศล ศุทธางกรู" begin="2008-05-11" end="2012-05-10"/>
         <official title="Mayor" index="20" name="โกศล ศุทธางกรู" begin="2004-04-04" end="2008-04-04"/>
         <official title="Mayor" index="19" name="สุวรรณ เจนนพกาญจน์" begin="1999-03-29" end="2003-12-24" comment="In DOPA Excel sheet spelled สุพรรณ เจนนพกาญจน์"/>
         <official title="Mayor" index="18" name="สุวรรณ เจนนพกาญจน์" begin="1998-10-18" end="1999-03-28" comment="In DOPA Excel sheet spelled สุพรรณ เจนนพกาญจน์"/>
@@ -2817,22 +2871,26 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านเชี่ยวหลาน" english="Ban Chiao Lan" geocode="8487" parent="8409">
     <office type="MunicipalityOffice">
-      <url>http://www.chiewlarn.go.th/</url>
+      <!-- Longdo: 8.96728,98.83786 -->
+      <url status="obsolete">http://www.nmt.or.th/surat/banchiaolan/</url>
+      <url status="offline">http://www.chiewlarn.go.th/</url>
       <officials>
-        <official title="Mayor" name="เชาวลิตร ช่วยสงค์" begin="2008-07-20" comment="Re-elected"/>
+        <official title="Mayor" name="เชาวลิตร ช่วยสงค์" begin="2008-07-19" end="2012-07-18"/>
+        <official title="Mayor" name="เชาวลิตร ช่วยสงค์" beginyear="2004" endyear="2008"/>
 
         <official title="Mayor" name="สมเกียรติ ศรีเทพ" inoffice="2003"/>
       </officials>
     </office>
     <history>
-      <rename oldname="เขาพัง" name="บ้านเชี่ยวหลาน" oldenglish="Khao Phang" />
+      <rename oldname="เขาพัง" name="บ้านเชี่ยวหลาน" english="Ban Chiao Lan" oldenglish="Khao Phang" />
     </history>
   </entity>
   <entity type="ThesabanTambon" name="บ้านตาขุน" english="Ban Ta Khun" geocode="8486" parent="8409">
     <office type="MunicipalityOffice">
+      <vision>ใช้งบประมาณอย่างรู้ค่า ชาวประชามีส่วนร่วม</vision>
       <url>http://www.bantakhuncity.go.th/</url>
       <officials>
-        <official title="Mayor" name="สุรวุฒิ ทองพัฒน์" begin="2008-06-01"/>
+        <official title="Mayor" name="สุรวุฒิ ทองพัฒน์" begin="2008-05-25" end="2012-05-24"/>
         <official title="Mayor" name="ฉลอง วิเชียรแก้ว" endyear="2008"/>
 
         <official title="Mayor" name="สุจินต์ ศรีสวัสดิ์" inoffice="2003"/>
@@ -2841,13 +2899,17 @@
     <history>
       <rename oldname="เขาวง" name="บ้านตาขุน" oldenglish="Khao Wong" />
     </history>
+    <entity type="Muban" geocode="84860001" name="ชุมชนบ้านในทอน" english="Chumchon Ban Nai Thon"/>
+    <entity type="Muban" geocode="84860002" name="ชุมชนฝั่งขวา" english="Chumchon Fang Khwa"/>
+    <entity type="Muban" geocode="84860003" name="ชุมชนฝั่งซ้าย" english="Chumchon Fang Chai"/>
   </entity>
   <entity type="ThesabanTambon" name="พนม" english="Phanom" geocode="8485" parent="8410">
     <office type="MunicipalityOffice">
-      <url>http://www.phanommuni.go.th/</url>
+      <vision>พัฒนาโครงสร้างพื้นฐาน  ส่งเสริมคุณภาพชีวิตที่ดี มีความรู้รอบด้าน การบริหารก้าวไกล  อนุรักษ์สิ่งแวดล้อม</vision>
+      <url lastchecked="2012-02-01">http://www.phanommuni.go.th/</url>
       <url status="expired">http://www.phanomcity.org/</url>
       <officials>
-        <official title="Mayor" name="ปราโมทย์ ชูเพชร" begin="2008-03-16"/>
+        <official title="Mayor" name="ปราโมทย์ ชูเพชร" begin="2008-03-09" end="2012-03-08"/>
         <official title="Mayor" name="บำรุง ครรชิต" endyear="2008"/>
 
         <official title="Mayor" name="บำรุง ครรชิต" inoffice="2003"/>
@@ -2934,9 +2996,11 @@
   </entity>
   <entity type="ThesabanTambon" name="ย่านดินแดง" english="Yan Din Daeng" geocode="8479" parent="8416">
     <office type="MunicipalityOffice">
-      <url>http://www.yandindang.org/</url>
+      <vision>การศึกษานำหน้า พัฒนาการกีฬา ส่งเสริมสาธารณสุข เชิงรุกพัฒนาสังคม</vision>
+      <url lastchecked="2012-02-01">http://www.yandindang.go.th/</url>
+      <url status="offline">http://www.yandindang.org/</url>
       <officials>
-        <official title="Mayor" name="พิจิตร ศรีทองศม" begin="2008-05-11"/>
+        <official title="Mayor" name="พิจิตร ศรีทองศม" begin="2008-05-04" end="2008-05-03"/>
         <official title="Mayor" name="ยุทธพงษ์ สุวรรณเมนะ" endyear="2008"/>
 
         <official title="Mayor" name="ทวี พรมด้วง" inoffice="2003"/>
@@ -2954,16 +3018,72 @@
   </entity>
   <entity type="ThesabanTambon" name="วัดประดู่" english="Wat Pradu" geocode="8477" parent="8401" tambon="840103">
     <office type="MunicipalityOffice">
+      <vision>
+        เทศบาลตำบลวัดประดู่  เป็นเมืองน่าอยู่
+        การบริหารโปร่งใส     สิ่งแวดล้อมดี   เศรษฐกิจดี   ประเพณี-กีฬา-การศึกษาเด่น
+      </vision>
       <geo:Point>
         <geo:lat>9.1095</geo:lat>
         <geo:long>99.2892</geo:long>
       </geo:Point>
-      <url>http://www.watpradoocity.go.th/</url>
-      <officials>
-        <official title="Mayor" name="ธงชัย พริกแก้ว" begin="2008-11-23"/>
-        <official title="Mayor" name="สุชาญ ทวิชสังข์" endyear="2008"/>
+      <url lastchecked="2012-01-02">http://www.watpradoocity.go.th/</url>
+      <officials source="http://www.watpradoocity.go.th/index.php?options=content&amp;mode=cate&amp;id=1">
+        <official title="Mayor" name="ธงชัย พริกแก้ว" begin="2008-11-23" end="2012-11-22" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="สุชาญ ทวิชสังข์" beginyear="2004" endyear="2008" beginreason="ElectedDirectly"/>
+        <official title="TAOMayor" name="สุชาญ ทวิชสังข์" endyear="2004"/>
+        <official title="TAOChairman" name="นิพนธ์ สรการ" beginyear="1996"/>
       </officials>
     </office>
+    <entity type="Chumchon" geocode="84770001" name="ชุมชนบ้านด่านภาษี"/>
+    <entity type="Chumchon" geocode="84770002" name="ชุมชนบ้านบางชุมโถ"/>
+    <entity type="Chumchon" geocode="84770003" name="ชุมชนบ้านเกาะเสนอ"/>
+    <entity type="Chumchon" geocode="84770004" name="ชุมชนบ้านค้อล่าง"/>
+    <entity type="Chumchon" geocode="84770005" name="ชุมชนบ้านหัวทุ่น"/>
+    <entity type="Chumchon" geocode="84770006" name="ชุมชนวัดประดู่"/>
+    <entity type="Chumchon" geocode="84770007" name="ชุมชนบ้าน บ.ข.ส." english="Chumchon Ban Bo Kho So"/>
+    <entity type="Chumchon" geocode="84770008" name="ชุมชนวัดมะปริง"/>
+    <entity type="Chumchon" geocode="84770009" name="ชุมชนบ้าน ก.ม.7" english="Chumchon Ban km 7"/>
+    <entity type="Chumchon" geocode="84770010" name="ชุมชนบ้านกรีนวิลล์"/>
+    <entity type="Chumchon" geocode="84770011" name="ชุมชนบ้านตลาดกล้วย"/>
+    <entity type="Chumchon" geocode="84770012" name="ชุมชนบ้านท่ากูบ"/>
+    <entity type="Chumchon" geocode="84770013" name="ชุมชนบ้านบางหมาก"/>
+    <entity type="Chumchon" geocode="84770014" name="ชุมชนบ้านสมหวัง"/>
+    <entity type="Chumchon" geocode="84770015" name="ชุมชนบ้านพังจิก"/>
+    <entity type="Chumchon" geocode="84770016" name="ชุมชนบ้านคลองใหม่-สมหวัง"/>
+    <entity type="Chumchon" geocode="84770017" name="ชุมชนบ้านร่มเกล้า"/>
+    <entity type="Chumchon" geocode="84770018" name="ชุมชนบ้านริมบึง"/>
+    <entity type="Chumchon" geocode="84770019" name="ชุมชนบ้านใหม่พัฒนา"/>
+    <entity type="Chumchon" geocode="84770020" name="ชุมชนบ้านควนทัง-ห้วยน้ำแดง"/>
+    <entity type="Chumchon" geocode="84770021" name="ชุมชนบ้านเวียงประสาน"/>
+    <entity type="Chumchon" geocode="84770022" name="ชุมชนคลองใหม่-พรุบางพระ"/>
+    <entity type="Chumchon" geocode="84770023" name="ชุมชนบ้านเนินเขาเอื้ออาทร"/>
+    <entity type="Chumchon" geocode="84770024" name="ชุมชนบ้านรถจิ๊บ-ห้วยทรายขาว"/>
+    <!-- Chumchon headmen as of 03-2011
+1 	ชุมชนบ้านด่านภาษี   	นายสิงห์ พระจำรง 	080-3269784
+2 	ชุมชนบ้านบางชุมโถ  	นายสมโชค  ชื่นอำไพ         	086-9561351
+ 3  	ชุมชนบ้านเกาะเสนอ  	นางสุจิตรา ชะอุ่ม 	087-3895274
+4 	ชุมชนบ้านค้อล่าง   	นายชาตรี  โปรานานนท์  	087-7952461
+5 	ชุมชนบ้านหัวทุ่น  	นางเกษร แคล้วอ้อม 	083-1810918
+6 	ชุมชนวัดประดู่    	นายเขิม  แทนทวี 	081-0815617
+7 	ชุมชนบ้าน บขส.  	นายเฉลิม  ดอนปัญญาไพร  	089-4748741
+8 	ชุมชนวัดมะปริง  	นายวุฒิพงษ์  คงคาช่วย 	081-9566397
+ 9  	ชุมชนบ้าน ก.ม.7    	ว่าง 	 
+10 	ชุมชนบ้านกรีนวิลล์  	นายภานุวัสส์ โสมติด 	081-0917416
+11 	ชุมชนบ้านตลาดกล้วย   	นายวาทยุทธ  วิเชียร 	087-4665662
+12 	ชุมชนบ้านท่ากูบ  	นายธนายุทธ  ถึงจำรัส  	083-1068732
+ 13  	ชุมชนบ้านบางหมาก  	นายสำลี  เทพทวี 	087-8971240
+14 	ชุมชนบ้านสมหวัง  	นายอภิวัชร์  ไทยชนะ 	081-0804086
+15 	ชุมชนบ้านพังจิก 	นางสมหมาย  เพ็งสวัสดิ์ 	089-9733152
+16 	ชุมชนบ้านคลองใหม่-สมหวัง 	นายชำนาญ  นวลจันทร์   	080-6992826
+17 	ชุมชนบ้านร่มเกล้า  	นายอ่ำ  วิเชียรฉาย 	086-2828365
+18 	ชุมชนบ้านริมบึง 	นายวิระ  ศรีบุญเรือง  	081-3964495
+ 19  	ชุมชนบ้านใหม่พัฒนา  	นายวิจารณ์  ขวัญทอง 	080-5378268
+ 20  	ชุมชนบ้านควนทัง-ห้วยน้ำแดง 	นายนิรุจน์  คนล้ำ 	083-1735914
+21 	ชุมชนบ้านเวียงประสาน 	นายโสรัช  รักเมือง 	089-6490704
+22 	ชุมชนคลองใหม่-พรุบางพระ 	นางศรียุภา ยิ่งยงค์ 	087-4749589
+23 	ชุมชนบ้านเนินเขาเอื้ออาทร 	นายวิชาญ  ดำไสย 	084-8401425
+24 	ชุมชนบ้านรถจิ๊บ-ห้วยทรายขาว 	นายบพิธ  ศรีเชื้อ 	081-6934772
+-->
   </entity>
   <entity type="ThesabanTambon" name="เขานิพันธ์" english="Khao Niphan" geocode="8476" parent="8415" tambon="841505">
     <office type="MunicipalityOffice">
@@ -3007,9 +3127,14 @@
   </entity>
   <entity type="ThesabanTambon" name="คลองชะอุ่น" english="Khlong Cha-un" geocode="8472" parent="8410" tambon="841006">
     <office type="MunicipalityOffice">
-      <url>http://www.klongchaun.go.th/</url>
+      <vision>
+        อนุรักษ์ทรัพยากร          สืบสานภูมิปัญญา
+        พัฒนาคุณภาพชีวิต      เพิ่มคุณภาพผลผลิต
+        เศรษฐกิจยั่งยืน              บนพื้นฐานของคุณธรรม
+      </vision>
+      <url lastchecked="2012-02-01">http://www.klongchaun.go.th/</url>
       <officials>
-        <official title="Mayor" name="ไพทูรณ์ คงเดิม" begin="2008-11-09"/>
+        <official title="Mayor" name="ไพทูรณ์ คงเดิม" begin="2008-11-09" end="2012-11-08"/>
         <official title="TAOMayor" name="จำปี ทองวัน" endyear="2008"/>
       </officials>
     </office>
