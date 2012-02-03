@@ -31,7 +31,17 @@
   </xs:complexType>
   <xs:complexType name="HistoryEntryBase" abstract="1">
     <xs:sequence>
-      <xs:element name="gazette" type="t:GazetteRelated" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element name="gazette" type="t:GazetteRelated" maxOccurs="unbounded" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Gazette announcement which deals with the given change.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="url" type="t:MyUri" maxOccurs="unbounded" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Internet resource which explains the change.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <!-- Book source -->
     </xs:sequence>
     <xs:attribute name="effective" type="xs:date" use="optional" >
       <xs:annotation>
@@ -59,10 +69,26 @@
   <xs:complexType name="HistoryRename">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="name" type="xs:string" use="required" />
-        <xs:attribute name="oldname" type="xs:string" use="required" />
-        <xs:attribute name="oldenglish" type="xs:string" use="optional" />
-        <xs:attribute name="english" type="xs:string" use="optional" />
+        <xs:attribute name="name" type="xs:string" use="required" >
+          <xs:annotation>
+            <xs:documentation>New name in Thai script.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldname" type="xs:string" use="required" >
+          <xs:annotation>
+            <xs:documentation>Previous name in Thai script..</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldenglish" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Romanization of old name.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="english" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Romanization of new name.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -83,8 +109,30 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryReformSpelling">
+    <xs:annotation>
+      <xs:documentation>Alternative spelling during the Thai spelling reform 1942-1945.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:HistorySpellingBase"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HistoryAlternativeName">
+    <xs:annotation>
+      <xs:documentation>Alternative name or spelling, which is more than a plain misspelling.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:HistorySpellingBase">
+        <xs:attribute name="english" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Romanization of name.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="type" type="xs:gYear" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Year in which the alternative name was apparently used.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryCreate">
@@ -125,6 +173,7 @@
       <xs:element name="abolished" type="t:HistoryAbolish"/>
       <xs:element name="misspelling" type="t:HistorySpelling"/>
       <xs:element name="reformedspelling" type="t:HistoryReformSpelling"/>
+      <xs:element name="alternativename" type="t:HistoryAlternativeName"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name="HistoryList">

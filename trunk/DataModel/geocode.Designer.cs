@@ -499,6 +499,7 @@ namespace De.AHoerstemeier.Tambon
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute("abolished", typeof(HistoryAbolish), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("alternativename", typeof(HistoryAlternativeName), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(HistoryCreate), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("misspelling", typeof(HistorySpelling), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("reformedspelling", typeof(HistoryReformSpelling), Order = 0)]
@@ -597,6 +598,7 @@ namespace De.AHoerstemeier.Tambon
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolish))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCreate))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpellingBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAlternativeName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReformSpelling))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpelling))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryRename))]
@@ -612,6 +614,8 @@ namespace De.AHoerstemeier.Tambon
 
         private List<GazetteRelated> gazetteField;
 
+        private List<MyUri> urlField;
+
         private System.DateTime effectiveField;
 
         private bool effectiveFieldSpecified;
@@ -623,9 +627,16 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         public HistoryEntryBase()
         {
+            this.urlField = new List<MyUri>();
             this.gazetteField = new List<GazetteRelated>();
         }
 
+        /// <summary>
+        /// Gazette announcement which deals with the given change.
+        /// </summary>
+        /// <value>
+        /// The gazette.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("gazette", Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<GazetteRelated> gazette
@@ -637,6 +648,26 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.gazetteField = value;
+            }
+        }
+
+        /// <summary>
+        /// Internet resource which explains the change.
+        /// </summary>
+        /// <value>
+        /// The url.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("url", Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MyUri> url
+        {
+            get
+            {
+                return this.urlField;
+            }
+            set
+            {
+                this.urlField = value;
             }
         }
 
@@ -727,6 +758,7 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAlternativeName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReformSpelling))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpelling))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
@@ -761,6 +793,66 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    /// <summary>
+    /// Alternative name or spelling, which is more than a plain misspelling.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "HistoryAlternativeName", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class HistoryAlternativeName : HistorySpellingBase
+    {
+
+        private string englishField;
+
+        private string typeField;
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english
+        {
+            get
+            {
+                return this.englishField;
+            }
+            set
+            {
+                this.englishField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Alternative spelling during the Thai spelling reform 1942-1945.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
