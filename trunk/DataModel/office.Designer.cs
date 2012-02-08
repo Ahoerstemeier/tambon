@@ -125,184 +125,6 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
-    /// <summary>
-    /// URL with an optional comment and status.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "MyUri", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class MyUri
-    {
-
-        private string commentField;
-
-        private MyUriStatus statusField;
-
-        private System.DateTime lastcheckedField;
-
-        private bool lastcheckedFieldSpecified;
-
-        private string valueField;
-
-        /// <summary>
-        /// Creates a new instance of MyUri.
-        /// </summary>
-        public MyUri()
-        {
-            this.statusField = MyUriStatus.unknown;
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment
-        {
-            get
-            {
-                return this.commentField;
-            }
-            set
-            {
-                this.commentField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(MyUriStatus.unknown)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MyUriStatus status
-        {
-            get
-            {
-                return this.statusField;
-            }
-            set
-            {
-                this.statusField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime lastchecked
-        {
-            get
-            {
-                return this.lastcheckedField;
-            }
-            set
-            {
-                this.lastcheckedField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool lastcheckedSpecified
-        {
-            get
-            {
-                return this.lastcheckedFieldSpecified;
-            }
-            set
-            {
-                this.lastcheckedFieldSpecified = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlTextAttribute(DataType = "anyURI")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Value
-        {
-            get
-            {
-                return this.valueField;
-            }
-            set
-            {
-                this.valueField = value;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Status of a web link.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
-    public enum MyUriStatus
-    {
-
-        /// <summary>
-        /// Status unknown.
-        /// </summary>
-        unknown,
-
-        /// <summary>
-        /// Website up and running.
-        /// </summary>
-        online,
-
-        /// <summary>
-        /// Website unreachable due to server problems.
-        /// </summary>
-        offline,
-
-        /// <summary>
-        /// Discontinued but still online website.
-        /// </summary>
-        obsolete,
-
-        /// <summary>
-        /// Domain registration has expired.
-        /// </summary>
-        expired,
-
-        /// <summary>
-        /// Server alive, but returns no valid webpage, e.g. 404.
-        /// </summary>
-        broken,
-
-        /// <summary>
-        /// Defaced or spreading malware and blocked by Google safe browsing.
-        /// </summary>
-        hacked,
-    }
-
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -311,6 +133,8 @@ namespace De.AHoerstemeier.Tambon
     [System.Runtime.Serialization.DataContractAttribute(Name = "OfficialEntry", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
     public partial class OfficialEntry
     {
+
+        private Election electionField;
 
         private OfficialType titleField;
 
@@ -357,6 +181,20 @@ namespace De.AHoerstemeier.Tambon
         {
             this.beginreasonField = OfficialBeginType.Unknown;
             this.endreasonField = OfficialEndType.Unknown;
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Election election
+        {
+            get
+            {
+                return this.electionField;
+            }
+            set
+            {
+                this.electionField = value;
+            }
         }
 
         /// <summary>
@@ -1184,7 +1022,6 @@ namespace De.AHoerstemeier.Tambon
         public OldLocation()
         {
             this.addressField = new ThaiAddress();
-            this.pointField = new Point();
         }
 
         [System.Xml.Serialization.XmlElementAttribute(Namespace = "http://www.w3.org/2003/01/geo/wgs84_pos#", Order = 0)]
