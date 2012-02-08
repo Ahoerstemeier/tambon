@@ -382,12 +382,19 @@
     <xs:attribute name="comment" type="xs:string"/>    
   </xs:complexType>
 
+  <xs:complexType name="ReferenceList">
+    <xs:sequence>
+      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="url" type="t:MyUri" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="Election">
     <xs:sequence>
       <xs:element name="partylist" type="t:PartyCandidateList" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="partylistresult" type="t:PartyListResult" minOccurs="0" maxOccurs="1"/>
       <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional"/>
     <xs:attribute name="type" type="t:ElectionType" use="optional"/>
