@@ -154,14 +154,16 @@
       -->
     </entity>
     <entity type="Tambon" name="ขุนทะเล" english="Khun Thale" geocode="840104">
-      <!-- 
-กำนันคนที่ 1 ชื่อ   	ขุนรักษาทะเลภูมิ  (นายกลั่น  แทนฟู) หมู่ที่ 1
-กำนันคนที่ 2 ชื่อ 	พันอ้าย  เพชรเกตุ (นายอ้าย  เพชรเกตุ) หมู่ที่ 3
-กำนันคนที่ 3 ชื่อ 	กำนันชุ่ม  ดำทน เลิกใช้ระบบศักดินา รับราชการจนกระทั่งถึงแก่กรรม
-กำนันคนที่ 4 ชื่อ 	กำนันประดิษฐ์  ทองคำงาม  บ้านนิคมสร้างตนเอง ซึ่งอยู่ในประมาณปี พ.ศ.2486 ที่กรมประชาสงเคราะห์ได้เข้ามาจัดตั้งนิคมสร้างตนเองขุนทะเล
-กำนันคนที่ 5 ชื่อ 	กำนันบันลือ  สุขเขียว  เป็นกำนัน  2  ปี
-กำนันคนที่ 6 ชื่อ 	กำนันคารม  บัวชู ตั้งแต่ปี พ.ศ.2532 – ปัจจุบัน
--->
+      <office type="SubdistrictHeadmanOffice">
+        <officials>
+          <official title="Kamnan" index="6" name="คารม บัวชู" beginyear="1989"/>
+          <official title="Kamnan" index="5" name="บันลือ สุขเขียว" comment="Was in office 2 years"/>
+          <official title="Kamnan" index="4" name="ประดิษฐ์ ทองคำงาม" inoffice="1943"/>
+          <official title="Kamnan" index="3" name="ชุ่ม ดำทน" endreason="Death"/>
+          <official title="Kamnan" index="2" name="พันอ้าย เพชรเกตุ (นายอ้าย เพชรเกตุ)" muban="3"/>
+          <official title="Kamnan" index="1" name="ขุนรักษาทะเลภูมิ (นายกลั่น แทนฟู)" muban="1"/>
+        </officials>
+      </office>
       <history>
         <reformedspelling name="ขุนทเล" effective="1942-06-01"/>
       </history>
@@ -2445,7 +2447,7 @@
         <vision>เสริมรัฐฯ ช่วยราษฎร์ฯ ให้มั่นคง ยืนยงพัฒนาอย่างถาวร</vision>
         <url lastchecked="2012-02-02">http://www.huatei.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ศุภชัย แสงสุวรรณ" begin="2008-08-31"/>
+          <official title="TAOMayor" name="ศุภชัย แสงสุวรรณ" begin="2008-08-31" end="2012-08-30"/>
           <official title="TAOMayor" name="พูลศักดิ์ พึ่งชาติ" endyear="2008"/>
         </officials>
       </office>
@@ -2467,7 +2469,7 @@
         <url lastchecked="2012-02-02">http://saonongsai.in.th/</url>
         <url status="offline">http://www.nongsai-sao.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ศักดิ์ชาย ไชยชำนิ" begin="2008-08-31"/>
+          <official title="TAOMayor" name="ศักดิ์ชาย ไชยชำนิ" begin="2008-08-31" end="2012-08-30"/>
           <official title="TAOMayor" name="สมบูรณ์ ชำนาญกิจ" endyear="2008"/>
         </officials>
       </office>
@@ -2506,7 +2508,7 @@
     </entity>
     <entity type="Unknown" name="คลองไทร" geocode="841799" english="Khlong Sai" newgeocode="841103"/>
   </entity>
-  english="Ban Song Phraek"<entity type="Amphoe" name="ชัยบุรี" english="Chai Buri" geocode="8418">
+  <entity type="Amphoe" name="ชัยบุรี" english="Chai Buri" geocode="8418">
     <slogan>เมืองชายแดน แผ่นดินปาล์ม งามถ้ำหอม แวดล้อมคุณธรรม</slogan>
     <office type="DistrictOffice">
       <geo:Point>
@@ -2864,6 +2866,12 @@
       </geo:Point>
       <url lastchecked="2012-01-30">http://www.phumriang.go.th/</url>
       <officials>
+        <!-- 
+        election on 2012-02-24
+        candidates 
+        1. นายมูฮำหมัด  จรวิเศษ
+        2. นายสุธี  ยำหลี
+        -->
         <official title="Mayor" name="ถาวร ถาวรสุข" begin="2008-10-12" end="2008-10-11"/>
         <official title="Mayor" name="สกล รุ่งโรจน์วรารักษ์" endyear="2008"/>
 
@@ -3071,6 +3079,12 @@
       </geo:Point>
       <url lastchecked="2012-01-02">http://www.watpradoocity.go.th/</url>
       <officials source="http://www.watpradoocity.go.th/index.php?options=content&amp;mode=cate&amp;id=1">
+        <!-- 
+        election on 2012-02-26
+        candidates 
+        ๑. นายเอนก  แก้วอำไพ
+        ๒. นายสุชาญ  ทวิชสังข์
+        -->
         <official title="Mayor" name="ธงชัย พริกแก้ว" begin="2008-11-23" end="2012-01-04" beginreason="ElectedDirectly" endreason="Death" comment="Assassinated"/>
         <official title="Mayor" name="สุชาญ ทวิชสังข์" beginyear="2004" endyear="2008" beginreason="ElectedDirectly"/>
         <official title="TAOMayor" name="สุชาญ ทวิชสังข์" endyear="2004"/>
