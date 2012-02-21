@@ -745,7 +745,7 @@
       <entity type="Muban" geocode="80060107" name="บ้านบางจันทร์"/>
       <entity type="Muban" geocode="80060108" name="บ้านบางเลียบ" english="Ban Bang Liap"/>
       <entity type="Muban" geocode="80060109" name="บ้านเชียรเขา"/>
-      <entity type="Muban" geocode="80060110" name="บ้านคลองแดน"/>
+      <entity type="Muban" geocode="80060110" name="บ้านคลองแดน" english="Ban Khlong Daen"/>
     </entity>
     <entity type="Tambon" name="เชียรเขา" english="Chian Khao" geocode="800602" newgeocode="802301" />
     <entity type="Tambon" name="ท่าขนาน" english="Tha Khanan" geocode="800603" >
@@ -758,11 +758,11 @@
       <entity type="Muban" geocode="80060304" name="บ้านพรุขวาง" english="Ban Phru Khwang"/>
       <entity type="Muban" geocode="80060305" name="บ้านดอนช้างตาย"/>
       <entity type="Muban" geocode="80060306" name="บ้านคชธรรมราช"/>
-      <entity type="Muban" geocode="80060307" name="บ้านเกาะทวด"/>
+      <entity type="Muban" geocode="80060307" name="บ้านเกาะทวด" english="Ban Ko Thuat"/>
       <entity type="Muban" geocode="80060308" name="บ้านบางในพร"/>
-      <entity type="Muban" geocode="80060309" name="บ้านคลองช้าง"/>
-      <entity type="Muban" geocode="80060310" name="บ้านดอนกำ"/>
-      <entity type="Muban" geocode="80060311" name="บ้านคลองช้างออก"/>
+      <entity type="Muban" geocode="80060309" name="บ้านคลองช้าง" english="Ban Khlong Chang"/>
+      <entity type="Muban" geocode="80060310" name="บ้านดอนกำ" english="Ban Don Kam"/>
+      <entity type="Muban" geocode="80060311" name="บ้านคลองช้างออก" english="Ban Khlong Chang Ok"/>
     </entity>
     <entity type="Tambon" name="บ้านกลาง" english="Ban Klang" geocode="800604" >
       <entity type="Muban" geocode="80060401" name="บ้านคลองขยัน"/>
@@ -1770,8 +1770,8 @@
       <entity type="Muban" geocode="80121102" name="บ้านบางไทร" english="Ban Bang Sai"/>
       <entity type="Muban" geocode="80121103" name="บ้านออก" english="Ban Ok"/>
       <entity type="Muban" geocode="80121104" name="บ้านท่าแพ" english="Ban Tha Phae"/>
-      <entity type="Muban" geocode="80121105" name="บ้านบางศาลา"/>
-      <entity type="Muban" geocode="80121106" name="บ้านบางศาลา"/>
+      <entity type="Muban" geocode="80121105" name="บ้านบางศาลา" english="Ban Bang Sala"/>
+      <entity type="Muban" geocode="80121106" name="บ้านบางศาลา" english="Ban Bang Sala"/>
       <entity type="Muban" geocode="80121107" name="บ้านบางเข็ม"/>
       <entity type="Muban" geocode="80121108" name="บ้านบางยัง"/>
       <entity type="Muban" geocode="80121109" name="บ้านบางไทร" english="Ban Bang Sai"/>
@@ -2393,11 +2393,11 @@
       <entity type="Muban" geocode="80160906" name="บ้านมาบใหญ่"/>
     </entity>
     <entity type="Tambon" name="รามแก้ว" english="Ram Kaeo" geocode="801610" >
-      <entity type="Muban" geocode="80161001" name="บ้านคลองแดน"/>
-      <entity type="Muban" geocode="80161002" name="บ้านรามแก้ว"/>
-      <entity type="Muban" geocode="80161003" name="บ้านโพรงจรเข้"/>
+      <entity type="Muban" geocode="80161001" name="บ้านคลองแดน" english="Ban Khlong Daen"/>
+      <entity type="Muban" geocode="80161002" name="บ้านรามแก้ว" english="Ban Ram Kaeo"/>
+      <entity type="Muban" geocode="80161003" name="บ้านโพรงจรเข้" english="Ban Phrong Chorakhe"/>
       <entity type="Muban" geocode="80161004" name="บ้านปลายคลอง" english="Ban Plai Khlong"/>
-      <entity type="Muban" geocode="80161005" name="บ้านเทพนิมิตร"/>
+      <entity type="Muban" geocode="80161005" name="บ้านเทพนิมิตร" english="Ban Thep Nimit"/>
     </entity>
     <entity type="Tambon" name="เกาะเพชร" english="Ko Phet" geocode="801611" >
       <entity type="Muban" geocode="80161101" name="บ้านบางโหนด"/>
@@ -2634,7 +2634,11 @@
     </entity>
     <entity type="Tambon" name="สามตำบล" english="Sam Tambon" geocode="801906" >
       <office type="TAOOffice">
-        <url>http://www.samtambon.go.th/</url>
+        <vision>สามตำบลน่าอยู่ ชุมชนแห่งการเรียนรู้ ฟื้นฟูเศรษฐกิจ สู่วิถีชีวิตพอเพียง</vision>
+        <url lastchecked="2012-02-21">http://www.samtambon.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ชลิต สุวรรณสิทธ์" inoffice="2011"/>
+        </officials>
       </office>
       <history>
         <misspelling name="สาม" comment="Misnamed in DOPA statistics"/>
@@ -2879,19 +2883,19 @@
       <office type="TAOOffice">
         <url>http://www.chiankhao.go.th/</url>
       </office>
-      <entity type="Muban" geocode="80230101" name="บ้านบางหาร"/>
-      <entity type="Muban" geocode="80230102" name="บ้านบางหว้า"/>
-      <entity type="Muban" geocode="80230103" name="บ้านโคกกะถิน"/>
+      <entity type="Muban" geocode="80230101" name="บ้านบางหาร" english="Ban Bang Han"/>
+      <entity type="Muban" geocode="80230102" name="บ้านบางหว้า" english="Ban Bang Wa"/>
+      <entity type="Muban" geocode="80230103" name="บ้านโคกกะถิน" english="Ban Khok Kathin"/>
       <entity type="Muban" geocode="80230104" name="บ้านคลองบ่อทราย" english="Ban Khlong Bo Sai"/>
       <entity type="Muban" geocode="80230105" name="บ้านเชียรเขา"/>
       <entity type="Muban" geocode="80230106" name="บ้านปลายคลอง" english="Ban Plai Khlong"/>
       <entity type="Muban" geocode="80230107" name="บ้านป่าหวาย" english="Ban Pa Wai"/>
       <entity type="Muban" geocode="80230108" name="บ้านอ่าวตะเคียน" english="Ban Ao Takhian"/>
-      <entity type="Muban" geocode="80230109" name="บ้านสระไคร"/>
+      <entity type="Muban" geocode="80230109" name="บ้านสระไคร" english="Ban Sa Khrai"/>
       <entity type="Muban" geocode="80230110" name="บ้านคลองเรือ" english="Ban Khlong Ruea"/>
-      <entity type="Muban" geocode="80230111" name="บ้านดอนลาน"/>
-      <entity type="Muban" geocode="80230112" name="บ้านคลองแดน"/>
-      <entity type="Muban" geocode="80230113" name="บ้านเนินใหม่"/>
+      <entity type="Muban" geocode="80230111" name="บ้านดอนลาน" english="Ban Don Lan"/>
+      <entity type="Muban" geocode="80230112" name="บ้านคลองแดน" english="Ban Khlong Daen"/>
+      <entity type="Muban" geocode="80230113" name="บ้านเนินใหม่" english="Ban Noen Mai"/>
     </entity>
     <entity type="Tambon" name="ดอนตรอ" english="Don Tro" geocode="802302" >
       <office type="TAOOffice">
