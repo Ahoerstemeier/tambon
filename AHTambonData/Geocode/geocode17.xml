@@ -355,11 +355,28 @@
         </officials>
       </office>
     </entity>
-    <entity type="Tambon" name="หัวป่า" english="Hua Pa" geocode="170406" />
+    <entity type="Tambon" name="หัวป่า" english="Hua Pa" geocode="170406" >
+      <!-- TAO together with Rong Chang -->
+      <entity type="Muban" geocode="17040601" name="บ้านจวนเก่า"/>
+      <entity type="Muban" geocode="17040602" name="บ้านชลอน"/>
+      <entity type="Muban" geocode="17040603" name="บ้านหัวป่า"/>
+      <entity type="Muban" geocode="17040604" name="บ้านหัวงิ้ว"/>
+    </entity>
     <entity type="Tambon" name="โรงช้าง" english="Rong Chang" geocode="170407" >
       <office type="TAOOffice">
-        <url comment="Offline">http://www.rongchang.go.th/</url>
+        <geo:Point>
+          <geo:lat>14.8213</geo:lat>
+          <geo:long>100.4365</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-02-21">http://rongchangsingburi.org/</url>
+        <url status="offline">http://www.rongchang.go.th/</url>
       </office>
+      <entity type="Muban" geocode="17040701" name="บ้านป่าหวาย"/>
+      <entity type="Muban" geocode="17040702" name="บ้านต้นโพธิ์"/>
+      <entity type="Muban" geocode="17040703" name="บ้านพระหฤทัย"/>
+      <entity type="Muban" geocode="17040704" name="บ้านเทพมงคล"/>
+      <entity type="Muban" geocode="17040705" name="บ้านไผ่ดำ"/>
+      <entity type="Muban" geocode="17040706" name="บ้านโรงช้าง"/>
     </entity>
   </entity>
   <entity type="Amphoe" name="ท่าช้าง" english="Tha Chang" geocode="1705" >
