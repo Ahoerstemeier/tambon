@@ -517,7 +517,7 @@ namespace De.AHoerstemeier.Tambon
         Kamnan,
 
         /// <summary>
-        /// Village headman (ผู้ใหญ่บ้าน, Phu Yai Ban), leader of Muban.
+        /// Village headman (ผู้ใหญ่บ้าน [ผญบ], Phu Yai Ban), leader of Muban.
         /// </summary>
         PhuYaiBan,
 

@@ -127,6 +127,7 @@ namespace De.AHoerstemeier.Tambon
         DeputyBangkokPermanentSecretary,
         MinisterOfInformationAndCommunicationTechnology,
         ElectionCommissionPresident,
+        ElectionCommissionActingPresident,
         RoyalInstitutePresident,
         RoyalInstituteActingPresident,
         DepartmentOfTransportDirectorGeneral,

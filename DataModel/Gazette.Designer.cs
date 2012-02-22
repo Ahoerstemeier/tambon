@@ -2796,6 +2796,11 @@ namespace De.AHoerstemeier.Tambon
         ElectionCommissionPresident,
 
         /// <summary>
+        /// Acting President of the Election Commission (ปฏิบัติหน้าที่แทน ประธานกรรมการการเลือกตั้ง, Patibat Nathithaen Prathan Kammakan Kan Lueang Tang)
+        /// </summary>
+        ElectionCommissionActingPresident,
+
+        /// <summary>
         /// President of the Royal Institute (นายกราชบัณฑิตยสถาน)
         /// </summary>
         RoyalInstitutePresident,
