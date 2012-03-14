@@ -419,13 +419,22 @@
     </entity>
     <entity type="Tambon" name="เขาวัว" english="Khao Wua" geocode="220306" >
       <office type="MunicipalityOffice">
-        <!-- named เขาวัว-พลอยแหวน -->
         <geo:Point>
           <geo:lat>12.6322</geo:lat>
           <geo:long>102.0403</geo:long>
         </geo:Point>
-        <url>http://www.khavovl.ob.tc/</url>
-        <url>http://www.khavovl.th.gs/</url>
+        <url status="offline">http://www.khavovl.ob.tc/</url>
+        <url status="offline">http://www.khavovl.th.gs/</url>
+        <officials>
+          <official title="TAOMayor" name="อุทัย เพ่งจิตต์" inoffice="2005"/>
+        </officials>
+        <!--
+        <history>
+          <rename oldname="เขาวัว" oldenglish="Khao Wua" name="เขาวัว-พลอยแหวน" english="Khao Wua - Phloi Waen" effective="2005-11-14">
+            <gazette volume="122" page="6" issue="117 ง" date="2005-12-15"/>
+          </rename>
+        </history>
+        -->
       </office>
       <entity type="Muban" geocode="22030601" name="บ้านเขาวัว" english="Ban Khao Wua"/>
       <entity type="Muban" geocode="22030602" name="บ้านตั้วล้ง" english="Ban Tua Long"/>
