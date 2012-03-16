@@ -168,7 +168,7 @@ namespace De.AHoerstemeier.Tambon
         {
             if ( !_Changing )
             {
-                String value = TambonHelper.ReplaceThaiNumerals(edt_UTM.Text.ToUpper()).Trim();
+                String value = TambonHelper.ReplaceThaiNumerals(edt_UTM.Text.ToUpper()).Replace(",","").Trim();
                 GeoPoint geoPoint = null;
                 UtmPoint utmPoint = null;
                 try

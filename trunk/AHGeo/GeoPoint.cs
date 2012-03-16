@@ -545,6 +545,8 @@ namespace De.AHoerstemeier.Geo
 
             value = value.Replace(',', '.');
             value = value.Trim();
+            value = value.Replace('′', '\'');
+            value = value.Replace('″', '"');
 
             // Now parse using the regex parser
             MatchCollection matches = Parser.Matches(value);
