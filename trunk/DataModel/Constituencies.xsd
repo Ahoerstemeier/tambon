@@ -317,11 +317,30 @@
   </xs:complexType>
   <xs:complexType name="CandidateList">
     <xs:sequence>
-      <xs:element name="candidate" type="t:CandidateListEntry" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="candidate" type="t:CandidateListEntry" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Candidate within the election.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
-    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="optional"/>
-    <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="optional"/>
-    <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="optional"/>
+    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          Number of eligible voters (จำนวนผู้มีสิทธิเลือกตั้งในบัญชีรายชื่อ).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          Number of invalid votes (จำนวนบัตรเสีย).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          Number of ballots marked with "no vote" (จำนวนบัตรไม่ประสงค์จะลงคะแนน).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="comment" type="xs:string" use="optional"/>
   </xs:complexType>
   <xs:simpleType name="ByElectionReason">

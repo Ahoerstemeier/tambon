@@ -470,6 +470,12 @@ namespace De.AHoerstemeier.Tambon
             this.candidateField = new List<CandidateListEntry>();
         }
 
+        /// <summary>
+        /// Candidate within the election.
+        /// </summary>
+        /// <value>
+        /// The candidate.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("candidate", Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<CandidateListEntry> candidate
@@ -484,6 +490,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Number of eligible voters (จำนวนผู้มีสิทธิเลือกตั้งในบัญชีรายชื่อ).
+        /// </summary>
+        /// <value>
+        /// The eligiblevoter.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string eligiblevoter
@@ -498,6 +510,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Number of invalid votes (จำนวนบัตรเสีย).
+        /// </summary>
+        /// <value>
+        /// The invalidvotes.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string invalidvotes
@@ -512,6 +530,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Number of ballots marked with "no vote" (จำนวนบัตรไม่ประสงค์จะลงคะแนน).
+        /// </summary>
+        /// <value>
+        /// The abstainvotes.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string abstainvotes
