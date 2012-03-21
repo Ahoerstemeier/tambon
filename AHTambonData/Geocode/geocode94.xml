@@ -274,6 +274,10 @@
   </entity>
   <entity type="Amphoe" name="ปะนาเระ" english="Panare" geocode="9404" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>6.8602</geo:lat>
+        <geo:long>101.4913</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="ธรรมรงค์ คงวัดใหม่" inoffice="2009" comment="2009-06"/>
       </officials>
@@ -299,7 +303,10 @@
   </entity>
   <entity type="Amphoe" name="มายอ" english="Mayo" geocode="9405" >
     <office type="DistrictOffice">
-      <!-- no hires: 6.718611, 101.41 -->
+      <geo:Point>
+        <geo:lat>6.7186</geo:lat>
+        <geo:long>101.4101</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="จำลอง ไกรดิษฐ์" comment="2010?"/>
       </officials>
@@ -311,16 +318,29 @@
     <entity type="Tambon" name="ลุโบะยิไร" english="Lubo Yirai" geocode="940505" />
     <entity type="Tambon" name="ลางา" english="La-nga" geocode="940506" />
     <entity type="Tambon" name="กระเสาะ" english="Kraso" geocode="940507" />
-    <entity type="Tambon" name="เกาะจัน" english="Ko Chan" geocode="940508" />
+    <entity type="Tambon" name="เกาะจัน" english="Ko Chan" geocode="940508" >
+      <office type="TAOOffice">
+        <url status="broken">http://www.kochan.go.th/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="ปะโด" english="Pado" geocode="940509" >
+      <office type="TAOOffice">
+        <vision>การคมนาคมสะดวก การศึกษาล้ำหน้า พึ่งพาเศรษฐกิจพอเพียง การบริหารโปร่งใส ใส่ใจสิ่งแวดล้อม</vision>
+        <url lastchecked="2012-03-21">http://www.pado.go.th/</url>
+      </office>
+      <entity type="Muban" geocode="94050901" name="บ้านบุดน"/>
+      <entity type="Muban" geocode="94050902" name="บ้านมะหุด"/>
       <entity type="Muban" geocode="94050903" name="บ้านควนหยี" english="Ban Khuan Yi"/>
-
+      <entity type="Muban" geocode="94050904" name="บ้านบูกาสาแลแม"/>
       <entity type="Muban" geocode="94050905" name="บ้านปะโด" english="Ban Pado"/>
     </entity>
     <entity type="Tambon" name="สาคอบน" english="Sakho Bon" geocode="940510" />
     <entity type="Tambon" name="สาคอใต้" english="Sakho Tai" geocode="940511" />
     <entity type="Tambon" name="สะกำ" english="Sakam" geocode="940512" />
-    <entity type="Tambon" name="ปานัน" english="Panan" geocode="940513" />
+    <entity type="Tambon" name="ปานัน" english="Panan" geocode="940513" >
+      <entity type="Muban" geocode="94041301" name="บ้านบาโง"/>
+      <entity type="Muban" geocode="94041302" name="บ้านปานัน"/>
+    </entity>
   </entity>
   <entity type="Amphoe" name="ทุ่งยางแดง" english="Thung Yang Daeng" geocode="9406" >
     <office type="DistrictOffice">
@@ -582,6 +602,10 @@
   </entity>
   <entity type="Amphoe" name="ยะรัง" english="Yarang" geocode="9410" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>6.7601</geo:lat>
+        <geo:long>101.2937</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="วชิระ อัลภาชน์" inoffice="2009" comment="2009-06"/>
 
@@ -677,10 +701,31 @@
     <entity type="Chumchon" geocode="94960006" name="ชุมชนบ้านขาคีม" english="Chumchon Ban Kha Khim"/>
     <entity type="Chumchon" geocode="94960007" name="ชุมชนบ้านต้นเลียบ" english="Chumchon Ban Ton Liap"/>
   </entity>
-  <entity type="ThesabanTambon" name="บ่อทอง" english="Bo Thong" geocode="9495" parent="9403" />
-  <entity type="ThesabanTambon" name="หนองจิก" english="Nong Chik" geocode="9494" parent="9403" />
+  <entity type="ThesabanTambon" name="บ่อทอง" english="Bo Thong" geocode="9495" parent="9403" >
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-03-21" status="obsolete">http://www.nmt.or.th/pattani/bothong/</url>
+      <officials>
+        <official title="Mayor" name="อักดุลกาเดร์ บือราเฮง" inoffice="2009"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หนองจิก" english="Nong Chik" geocode="9494" parent="9403" >
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-03-21">http://www.nmt.or.th/pattani/nongchik/</url>
+      <officials>
+        <official title="Mayor" name="นิมา เลาะนะ" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ปะนาเระ" english="Panare" geocode="9493" parent="9404" />
-  <entity type="ThesabanTambon" name="มายอ" english="Mayo" geocode="9492" parent="9405" />
+  <entity type="ThesabanTambon" name="มายอ" english="Mayo" geocode="9492" parent="9405" >
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-03-21">http://www.nmt.or.th/pattani/mayo/</url>
+      <officials>
+        <official title="Mayor" name="สุปรีย์ ยีสาแม็ง" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ตันหยง" english="Than Yong" geocode="9491" parent="9409" >
     <office type="MunicipalityOffice">
       <url>http://tbtanyong.nanacity.com/</url>
