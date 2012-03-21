@@ -35,7 +35,13 @@
     <entity type="Tambon" name="บางปลาสร้อย" english="Bang Pla Soi" geocode="200101" />
     <entity type="Tambon" name="มะขามหย่ง" english="Makham Yong" geocode="200102" />
     <entity type="Tambon" name="บ้านโขด" english="Ban Khot" geocode="200103" />
-    <entity type="Tambon" name="แสนสุข" english="Saen Suk" geocode="200104" />
+    <entity type="Tambon" name="แสนสุข" english="Saen Suk" geocode="200104" >
+      <office type="SubdistrictHeadmanOffice">
+        <officials>
+          <official title="Kamnan" name="สมชาย คุณปลื้ม" beginyear="1968" endyear="1989" comment="Kamnan Poh"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านสวน" english="Ban Suan" geocode="200105" />
     <entity type="Tambon" name="หนองรี" english="Nong Ri" geocode="200106" >
       <office type="TAOOffice">
@@ -1048,11 +1054,32 @@
   </entity>
   <entity type="ThesabanMueang" name="แสนสุข" english="Saen Suk" geocode="2094" parent="2001" >
     <office type="MunicipalityOffice">
-      <url>http://www.saensukcity.go.th/</url>
+      <url lastchecked="2012-03-21">http://www.saensukcity.go.th/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/saensukcity</facebook>
+      </socialweb>
       <officials>
         <official title="Mayor" name="ณรงค์ชัย คุณปลื้ม" inoffice="2010"/>
+
+        <official title="Mayor" name="สมชาย คุณปลื้ม" beginyear="1989" comment="Kamnan Poh"/>
       </officials>
     </office>
+    <!-- Numbers to be confirmed -->
+    <entity type="Chumchon" geocode="20940001" name="ชุมชนหมู่บ้านโชคดี" english="Chumchon Mu Ban Chok Di"/>
+    <entity type="Chumchon" geocode="20940002" name="ชุมชนบ้านเหมือง" english="Chumchon Ban Mueang"/>
+    <entity type="Chumchon" geocode="20940003" name="ชุมชนบ้านแหลมแท่น" english="Chumchon Ban Laem Thaen"/>
+    <entity type="Chumchon" geocode="20940004" name="ชุมชนท้ายตลาด" english="Chumchon Thai Talat"/>
+    <entity type="Chumchon" geocode="20940005" name="ชุมชนหาดวอนนภา" english="Chumchon Hat Won Napha"/>
+    <entity type="Chumchon" geocode="20940006" name="ชุมชนเขาสามมุข" english="Chumchon Khao Sam Muk"/>
+    <entity type="Chumchon" geocode="20940007" name="ชุมชนร่วมใจพัฒนา" english="Chumchon Ruam Chai Phatthana"/>
+    <entity type="Chumchon" geocode="20940008" name="ชุมชนมุขแสนเจริญ" english="Chumchon Muk Saen Charoen"/>
+    <entity type="Chumchon" geocode="20940009" name="ชุมชนตาลล้อม" english="Chumchon Tan Lom"/>
+    <entity type="Chumchon" geocode="20940010" name="ชุมชนบางเป้ง" english="Chumchon Bang Peng"/>
+    <entity type="Chumchon" geocode="20940011" name="ชุมชนดอนบน" english="Chumchon Don Bon"/>
+    <entity type="Chumchon" geocode="20940012" name="ชุมชนสมใจนึก" english="Chumchon Somchai Muek"/>
+    <entity type="Chumchon" geocode="20940013" name="ชุมชนแสนสุข" english="Chumchon Saen Suk"/>
+    <entity type="Chumchon" geocode="20940014" name="ชุมชนวัดกลางดอน" english="Chumchon Wat Klang Don"/>
+    <entity type="Chumchon" geocode="20940015" name="ชุมชนมาบมะยม" english="Chumchon Map Mayom"/>
   </entity>
   <entity type="ThesabanNakhon" name="แหลมฉบัง" english="Laem Chabang" geocode="2093" parent="2007,2004" >
     <office type="MunicipalityOffice">

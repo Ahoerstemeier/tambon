@@ -439,7 +439,11 @@
         <official title="DistrictOfficer" name="สมศักดิ์ สุขประเสริฐ" end="2007-01-07"/>
       </officials>
     </office>
-    <entity type="Tambon" name="วาริชภูมิ" english="Waritchaphum" geocode="470601" />
+    <entity type="Tambon" name="วาริชภูมิ" english="Waritchaphum" geocode="470601" >
+      <office type="TAOOffice">
+        <!-- Longdo: 17.25779,103.63854 -->
+      </office>
+    </entity>
     <entity type="Tambon" name="ปลาโหล" english="Pla Lo" geocode="470602" />
     <entity type="Tambon" name="หนองลาด" english="Nong Lat" geocode="470603" >
       <office type="MunicipalityOffice">
@@ -1534,24 +1538,24 @@
   </entity>
   <entity type="ThesabanTambon" name="กุสุมาลย์" english="Kusuman" geocode="4796" parent="4702" >
     <office type="MunicipalityOffice">
-      <!-- Longdo: 17.3311 104.31709 -->
-      <url>http://www.kusuman.go.th/</url>
+      <!-- Longdo: 17.3311 104.31709 - but nothing to see there -->
+      <url status="hacked">http://www.kusumal.go.th/</url>
+      <url status="offline">http://www.kusuman.go.th/</url>
       <officials>
         <official title="Mayor" name="อานนท์ จันทร์แก้ว" inoffice="2011"/>
         <official title="Mayor" name="จอมศรี นาพงษ์" inoffice="2008"/>
       </officials>
     </office>
-    <!--
-    1. ชุมชนมเหศักดิ์รักษา หมู่ที่ 1 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    2. ชุมชนส่างธาตุสามัคคี หมู่ที่ 1 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    3. ชุมชนราษฎร์พัฒนา หมู่ที่ 1 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    4. ชุมชนสระหลวงสามัคคี หมู่ที่ 1 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    5. ชุมชนคุ้มหลวง หมู่ที่ 1 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    6. ชุมชนขามเตี้ยประชาธิปไตย หมู่ที่ 6 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    7. ชุมชนบ้านน้อยสันติ หมู่ที่ 6 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    8. ชุมชนพิศาลวิทย์ หมู่ที่ 8 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    9. ชุมชนอรัญอาสา หมู่ที่ 8 บ้านกุสุมาลย์ ตำบลกุสุมาลย์
-    10. ชุมชนโพนธาราม หมู่ที่ 10 บ้านกุสุมาลย์ ตำบลกุสุมาลย์-->
+    <entity type="Chumchon" geocode="47960001" name="ชุมชนมเหศักดิ์รักษา" muban="47020101"/>
+    <entity type="Chumchon" geocode="47960002" name="ชุมชนส่างธาตุสามัคคี" muban="47020101"/>
+    <entity type="Chumchon" geocode="47960003" name="ชุมชนราษฎร์พัฒนา" english="Chumchon Rat Phatthana" muban="47020101"/>
+    <entity type="Chumchon" geocode="47960004" name="ชุมชนสระหลวงสามัคคี" muban="47020101"/>
+    <entity type="Chumchon" geocode="47960005" name="ชุมชนคุ้มหลวง" muban="47020101"/>
+    <entity type="Chumchon" geocode="47960006" name="ชุมชนขามเตี้ยประชาธิปไตย" muban="47020106"/>
+    <entity type="Chumchon" geocode="47960007" name="ชุมชนบ้านน้อยสันติ" muban="47020106"/>
+    <entity type="Chumchon" geocode="47960008" name="ชุมชนพิศาลวิทย์" muban="47020108"/>
+    <entity type="Chumchon" geocode="47960009" name="ชุมชนอรัญอาสา" muban="47020108"/>
+    <entity type="Chumchon" geocode="47960010" name="ชุมชนโพนธาราม" muban="47020110"/>
   </entity>
   <entity type="ThesabanTambon" name="กุดบาก" english="Kut Bak" geocode="4795" parent="4703" >
     <office type="MunicipalityOffice">
@@ -1566,7 +1570,14 @@
   </entity>
   <entity type="ThesabanTambon" name="วาริชภูมิ" english="Waritchaphum" geocode="4792" parent="4706" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.2913</geo:lat>
+        <geo:long>103.6469</geo:long>
+      </geo:Point>
       <url>http://www.nmt.or.th/sakon/waritchaphum/</url>
+      <officials>
+        <official title="Mayor" name="นายเทวัญ ศรีสำราญ" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="วานรนิวาส" english="Wanon Niwat" geocode="4791" parent="4708" >
@@ -1594,7 +1605,15 @@
   </entity>
   <entity type="ThesabanTambon" name="ดอนเขือง" english="Don Khueang" geocode="4787" parent="4712" >
     <office type="MunicipalityOffice">
-      <url comment="Offline?">http://www.donkhuang.go.th/</url>
+      <geo:Point>
+        <geo:lat>17.4235</geo:lat>
+        <geo:long>103.6057</geo:long>
+      </geo:Point>
+      <url>http://www.nmt.or.th/sakon/donkhueang/</url>
+      <url status="offline">http://www.donkhuang.go.th/</url>
+      <officials>
+        <official title="Mayor" name="กอง เริ่มรักษ์" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สว่างแดนดิน" english="Sawang Daen Din" geocode="4786" parent="4712" >
@@ -1602,7 +1621,29 @@
       <url>http://www.nmt.or.th/sakon/sawangdaendin/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ส่องดาว" english="Song Dao" geocode="4785" parent="4713" />
+  <entity type="ThesabanTambon" name="ส่องดาว" english="Song Dao" geocode="4785" parent="4713" >
+    <office type="MunicipalityOffice">
+      <vision>
+        เทศบาลน่าอยู่  เชิดชูคุณธรรม
+        นำเศรษฐกิจ   พัฒนาการศึกษา
+        พาชุมชนเข้มแข็ง
+      </vision>
+      <url lastchecked="2012-03-21">http://www.songdaocity.org/</url>
+    </office>
+    <entity type="Chumchon" geocode="47850001" name="ชุมชนส่องดาว 1"/>
+    <entity type="Chumchon" geocode="47850002" name="ชุมชนส่องดาว 2"/>
+    <entity type="Chumchon" geocode="47850003" name="ชุมชนส่องดาว 3"/>
+    <entity type="Chumchon" geocode="47850004" name="ชุมชนธวัชชัย 1"/>
+    <entity type="Chumchon" geocode="47850005" name="ชุมชนธวัชชัย 2"/>
+    <entity type="Chumchon" geocode="47850006" name="ชุมชนธวัชชัย 3"/>
+    <entity type="Chumchon" geocode="47850007" name="ชุมชนโคกกลาง 1"/>
+    <entity type="Chumchon" geocode="47850008" name="ชุมชนโนนสะอาด 1"/>
+    <entity type="Chumchon" geocode="47850009" name="ชุมชนหนองแดง 1"/>
+    <entity type="Chumchon" geocode="47850010" name="ชุมชนหนองแซง 1"/>
+    <entity type="Chumchon" geocode="47850011" name="ชุมชนหนองแซง 2"/>
+    <entity type="Chumchon" geocode="47850012" name="ชุมชนโพนสว่าง 1"/>
+    <entity type="Chumchon" geocode="47850013" name="ชุมชนโพนสว่าง 2"/>
+  </entity>
   <entity type="ThesabanTambon" name="เจริญศิลป์" english="Charoen Sin" geocode="4784" parent="4716" >
     <office type="MunicipalityOffice">
       <url>http://www.charoensin.org/</url>
