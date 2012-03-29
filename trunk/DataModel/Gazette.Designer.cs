@@ -2864,6 +2864,11 @@ namespace De.AHoerstemeier.Tambon
         /// Minister of Natural Resources and Environment (รัฐมนตรีว่าการกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อม).
         /// </summary>
         MinisterOfNaturalResourcesAndEnvironment,
+
+        /// <summary>
+        /// Director of the National Register Office (ผู้อํานวยการทะเบียนกลาง).
+        /// </summary>
+        RegisterOfficeDirector,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
