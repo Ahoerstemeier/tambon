@@ -141,6 +141,7 @@ namespace De.AHoerstemeier.Tambon
         MunicipalPermanentSecretary,
         MinistryOfInteriorDeputyPermanentSecretary,
         FineArtsDepartmentDirectorGeneral,
-        MinisterOfNaturalResourcesAndEnvironment
+        MinisterOfNaturalResourcesAndEnvironment,
+        RegisterOfficeDirector
     }
 }
