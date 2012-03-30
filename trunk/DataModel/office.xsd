@@ -136,6 +136,44 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="SocialWebStatus">
+    <xs:annotation>
+      <xs:documentation>Status of a social web account.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>Current status not known.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="active">
+        <xs:annotation>
+          <xs:documentation>Currently in use.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="inactive">
+        <xs:annotation>
+          <xs:documentation>Not used for a long time, at least one year in no activity.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="offline">
+        <xs:annotation>
+          <xs:documentation>Account no longer accessible.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SocialWebLink">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="status" type="t:SocialWebStatus" use="optional" default="unknown">
+          <xs:annotation>
+            <xs:documentation>Status of the social web account.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="SocialWebLinks">
     <xs:annotation>
       <xs:documentation>List of the social web sites where the entity is present.</xs:documentation>
@@ -146,12 +184,12 @@
           <xs:documentation>URL of the user account or page in facebook.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="twitter" type="xs:string" minOccurs="0" maxOccurs="1">
+      <xs:element name="twitter" type="t:SocialWebLink" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Twitter user name.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="googleplus" type="xs:string" minOccurs="0" maxOccurs="1">
+      <xs:element name="googleplus" type="t:SocialWebLink" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Numerical code of the user or page.</xs:documentation>
         </xs:annotation>
