@@ -1411,7 +1411,11 @@
       <entity type="Muban" geocode="34152211" name="บ้านโคกเจริญ" english="Ban Khok Charoen"/>
     </entity>
     <entity type="Tambon" name="บุ่งมะแลง" english="Bung Malaeng" geocode="341523" newgeocode="343203" />
-    <entity type="Tambon" name="ห้วยขะยูง" english="Huai Khayung" geocode="341524" />
+    <entity type="Tambon" name="ห้วยขะยุง" english="Huai Khayung" geocode="341524" >
+      <history>
+        <misspelling name="ห้วยขะยูง" comment="DOPA statistics before 2011 had wrong u vowel?"/>
+      </history>
+    </entity>
     <entity type="Tambon" name="แก่งโดม" english="Kaeng Dom" geocode="341525" newgeocode="343201" />
     <entity type="Tambon" name="บุ่งไหม" english="Bung Mai" geocode="341526" />
   </entity>
@@ -2340,9 +2344,10 @@
       <url>http://www.muang30.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ห้วยขะยุง" english="Huai Kha Yung" geocode="3482" parent="3415" >
+  <entity type="ThesabanTambon" name="ห้วยขะยุง" english="Huai Khayung" geocode="3482" parent="3415" >
     <office type="MunicipalityOffice">
-      <url>http://huaikhayung.org/</url>
+      <!--  15.109572° 104.690953° according to Panoramio -->
+      <url status="offline">http://huaikhayung.org/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="อ่างศิลา" english="Ang Sila" geocode="3481" parent="3419" >
