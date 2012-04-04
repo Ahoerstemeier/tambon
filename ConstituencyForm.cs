@@ -167,7 +167,7 @@ namespace De.AHoerstemeier.Tambon
             lBuengKan.CalculateNumbersFromSubEntities();
             lData.SubEntities.Add(lBuengKan);
             lData.CalculateNumbersFromSubEntities();
-            lData.SortSubEntities();
+            lData.SortSubEntitiesByGeocode();
         }
 
         private void rbxNational_CheckedChanged(object sender, EventArgs e)

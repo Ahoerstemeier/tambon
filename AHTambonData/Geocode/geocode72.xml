@@ -1616,19 +1616,12 @@
       <entity type="Muban" geocode="72091204" name="บ้านหนองข้างาย"/>
       <entity type="Muban" geocode="72091205" name="บ้านดอนสุโข"/>
       <entity type="Muban" geocode="72091206" name="บ้านคุ้มกลาง" english="Ban Khum Klang"/>
-      <entity type="Muban" geocode="72091207" name="บ้านฟากทาง"/>
-      <entity type="Muban" geocode="72091208" name="บ้านทุ่งป่าตาล"/>
+      <entity type="Muban" geocode="72091207" name="บ้านฟากทาง" english="Ban Fak Thang"/>
+      <entity type="Muban" geocode="72091208" name="บ้านทุ่งป่าตาล" english="Ban Thung Pa Tan"/>
       <entity type="Muban" geocode="72091209" name="บ้านสุวรรณวัฒน์" english="Ban Suwannawat"/>
-      <entity type="Muban" geocode="72091210" name="บ้านตะวันออก"/>
+      <entity type="Muban" geocode="72091210" name="บ้านตะวันออก" english="Ban Tawan Ok"/>
     </entity>
-    <entity type="Tambon" name="กระจัน" english="Krachan" geocode="720913" >
-      <office type="MunicipalityOffice">
-        <officials>
-          <official title="Mayor" name="พัฒนเศรษฐ ศันสนะพิทยากร" inoffice="2008"/>
-          <official title="TAOMayor" name="ทัศนไชย ศันสนะพิทยากร" inoffice="2008"/>
-        </officials>
-      </office>
-    </entity>
+    <entity type="Tambon" name="กระจัน" english="Krachan" geocode="720913" />
   </entity>
   <entity type="Amphoe" name="หนองหญ้าไซ" english="Nong Ya Sai" geocode="7210" >
     <office type="DistrictOffice">
@@ -2175,4 +2168,13 @@
       </officials>
     </office>
   </entity>
+  <entity type="ThesabanTambon" name="กระจัน" english="Krachan" geocode="7267" parent="7209" tambon="720913" >
+    <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="พัฒนเศรษฐ ศันสนะพิทยากร" inoffice="2008"/>
+        <official title="TAOMayor" name="ทัศนไชย ศันสนะพิทยากร" inoffice="2008"/>
+      </officials>
+    </office>
+  </entity>
+
 </entity>

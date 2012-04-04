@@ -1007,13 +1007,6 @@
       <entity type="Muban" geocode="73060306" name="บ้านปลา" english="Ban Pla"/>
     </entity>
     <entity type="Tambon" name="บางกระทึก" english="Bang Krathuek" geocode="730604" >
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>13.7722</geo:lat>
-          <geo:long>100.2849</geo:long>
-        </geo:Point>
-        <url>http://www.bangkrateuk.com/</url>
-      </office>
       <entity type="Muban" geocode="73060401" name="บ้านคลองเจริญพร" english="Ban Khlong Charoen Phon"/>
       <entity type="Muban" geocode="73060402" name="บ้านคลองบางกระทึก" english="Ban Khlong Bang Krathuek"/>
       <entity type="Muban" geocode="73060403" name="บ้านคลองรางหนอง" english="Ban Khlong Rang Nong"/>
@@ -1413,5 +1406,14 @@
       </officials>
     </office>
   </entity>
+  <entity type="ThesabanTambon" name="บางกระทึก" english="Bang Krathuek" geocode="7381" parent="7306" tambon="730604" >
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.7722</geo:lat>
+        <geo:long>100.2849</geo:long>
+      </geo:Point>
+      <url>http://www.bangkrateuk.com/</url>
+    </office>
+  </entity>
 
-</entity>
+  </entity>

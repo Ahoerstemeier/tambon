@@ -236,12 +236,7 @@
         <url>http://www.samnakthon.go.th/</url>
       </office>
     </entity>
-    <entity type="Tambon" name="พลา" english="Phla" geocode="210202" >
-      <office type="TAOOffice">
-        <url>http://www.palabeach.com/</url>
-        <url status="offline">http://www.geocities.com/kkenggg/</url>
-      </office>
-    </entity>
+    <entity type="Tambon" name="พลา" english="Phla" geocode="210202" />
     <entity type="Tambon" name="บ้านฉาง" english="Ban Chang" geocode="210203" />
   </entity>
   <entity type="Amphoe" name="แกลง" english="Klaeng" geocode="2103" >
@@ -334,9 +329,60 @@
       </office>
     </entity>
     <entity type="Tambon" name="เนินฆ้อ" english="Noen Kho" geocode="210304" >
-      <office type="TAOOffice">
-        <url status="offline">http://www.geocities.com/obtnoenko2002/</url>
+      <office type="SubdistrictHeadmanOffice">
+        <officials source="http://www.neunkho.go.th/aboutus.asp">
+          <official title="Kamnan" index="1" name="ฉิ่ง ฉลอง" beginyear="1914" endyear="1919"/>
+          <official title="Kamnan" index="2" name="ขุนเนินฆ้อ คำนึงการ" beginyear="1919" endyear="1939"/>
+          <official title="Kamnan" index="3" name="ย้อย มั่งคั่ง" beginyear="1939" endyear="1950"/>
+          <official title="Kamnan" index="4" name="พนม สันรัตน์" beginyear="1950" endyear="1959"/>
+          <official title="Kamnan" index="5" name="ผล ประมวล" beginyear="1959" endyear="1967"/>
+          <official title="Kamnan" index="6" name="ศรีนวล รัตนพงศ์" beginyear="1967" endyear="1973"/>
+          <official title="Kamnan" index="7" name="สันต์ เที่ยงชัด" beginyear="1973" endyear="1978"/>
+          <official title="Kamnan" index="8" name="ผัวะ รัตนพงศ์" beginyear="1978" endyear="1978"/>
+          <official title="Kamnan" index="9" name="อำไพ ประมวล" beginyear="1978" endyear="1985"/>
+          <official title="Kamnan" index="10" name="จรอง เจริญรื่น" beginyear="1985" endyear="1993"/>
+          <official title="Kamnan" index="11" name="ณรงค์ สอนหลักทรัพย์" beginyear="1993" endyear="2003"/>
+          <official title="Kamnan" index="12" name="จรัล ชาญเชี่ยว" beginyear="2003" endyear="2008"/>
+          <official title="Kamnan" index="13" name="อำนวย งามเสงี่ยม" beginyear="2008"/>
+        </officials>
       </office>
+      <entity type="Muban" geocode="21030401" name="บ้านเนินทราย"/>
+      <entity type="Muban" geocode="21030402" name="บ้านเนินทราย"/>
+      <entity type="Muban" geocode="21030403" name="บ้านเนินฆ้อ"/>
+      <entity type="Muban" geocode="21030404" name="บ้านถนนกะเพรา"/>
+      <entity type="Muban" geocode="21030405" name="บ้านหนองแพงพวย"/>
+      <entity type="Muban" geocode="21030406" name="บ้านเนินข้าวต้ม"/>
+      <entity type="Muban" geocode="21030407" name="บ้านจำรุง"/>
+      <entity type="Muban" geocode="21030408" name="บ้านถนนนอก"/>
+      <entity type="Muban" geocode="21030409" name="บ้านถนนใน"/>
+      <!--
+      หมู่ที่ 1 บ้านเนินทราย
+      1. นายอนันต์  สุขยิ่ง   ผู้ใหญ่บ้าน
+
+      หมู่ที่ 2 บ้านเนินทราย
+      1. นายนพชัย  ชลเสถียร    ผู้ใหญ่บ้าน
+
+      หมู่ที่ 3 บ้านเนินฆ้อ
+      1. นางประภัสศรี  เจริญรื่น  ผู้ใหญ่บ้าน
+
+      หมู่ที่ 4 บ้านถนนกะเพรา
+      1. นางจำนงค์  ชาญเชี่ยว    ผู้ใหญ่บ้าน
+
+      หมู่ที่ 5 บ้านหนองแพงพวย
+      1. นายกฤษณะ  ราษฎร์รักษา   ผู้ใหญ่บ้าน
+
+      หมู่ที่ 6 บ้านเนินข้าวต้ม
+      1. นายอำนวย  งามเสงี่ยม  กำนันตำบลเนินฆ้อ
+
+      หมู่ที่ 7 บ้านจำรุง
+      1. นายชาติชาย   เหลืองเจริญ  ผู้ใหญ่บ้าน
+
+      หมู่ที่ 8 บ้านถนนนอก
+      1. นายกำจัด  ผุดผ่องใส      ผู้ใหญ่บ้าน
+
+      หมู่ที่ 9 บ้านถนนใน
+      1. นายประเสริฐ  งามสม    ผู้ใหญ่บ้าน
+      -->
     </entity>
     <entity type="Tambon" name="กร่ำ" english="Kram" geocode="210305" >
       <entity type="Muban" geocode="21030502" name="บ้านกร่ำ" english="Ban Kram"/>
@@ -990,6 +1036,29 @@
       <officials>
         <official title="Mayor" name="ประเสริฐ วงษ์ศรี" inoffice="2010"/>
         <official title="TAOMayor" name="มานิตย์ คาดหมายดี"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="เนินฆ้อ" english="Noen Kho" geocode="2178" parent="2103" tambon="210304" >
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-04-02">http://www.neunkho.go.th/</url>
+      <url status="offline">http://www.geocities.com/obtnoenko2002/</url>
+      <officials source="http://www.neunkho.go.th/wizContent.asp?wizConID=68&amp;txtmMenu_ID=43">
+        <official title="Mayor" name="จรัล ชาญเชี่ยว" inoffice="2012"/>
+        <official title="TAOMayor" name="กฤษฎา ดวงแก้ว" beginyear="2000" endyear="2008"/>
+        <official title="TAOChairman" name="สมศักดิ์ บำรุง" beginyear="1998" endyear="2000"/>
+        <official title="TAOChairman" name="ณรงค์ สอนหลักทรัพย์" beginyear="1996" endyear="1998"/>
+      </officials>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="พลา" english="Phla" geocode="2177" parent="2102" tambon="210202" >
+    <office type="MunicipalityOffice">
+      <vision>แหล่งท่องเที่ยว สะอาดตา บำรุงรักษาพัฒนาถนน ดูแลคุณภาพคน ชุมชนน่าอยู่ ฟื้นฟูสิ่งแวดล้อม</vision>
+      <url lastchecked="2012-04-02">http://www.palamunicipal.com/</url>
+      <url status="offline">http://www.palabeach.com/</url>
+      <url status="offline">http://www.geocities.com/kkenggg/</url>
+      <officials>
+        <official title="Mayor" name="สมพร เหลือล้น" inoffice="2011"/>
       </officials>
     </office>
   </entity>

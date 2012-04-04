@@ -396,7 +396,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     if ( entity != null )
                     {
-                        entity.SortSubEntities();
+                        entity.SortSubEntitiesByGeocode();
                     }
                 }
             }
@@ -417,6 +417,15 @@ namespace De.AHoerstemeier.Tambon
         private void ProcessProvince(Int32 iGeocode)
         {
             GetData();
+            // sort Tambon by Population, to avoid double entries in 2012 data to create big mistakes
+            if (Data != null)
+            {
+                foreach (var amphoe in Data.SubEntities)
+                {
+                    amphoe.SubEntities.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return -p1.Total.CompareTo(p2.Total); });
+                }
+            }
+
             GetGeocodes();
             ReOrderThesaban();
         }
@@ -442,19 +451,26 @@ namespace De.AHoerstemeier.Tambon
         {
             return mInvalidGeocodes;
         }
-        public List<PopulationDataEntry> EntitiesWithoutGeocode()
+        public List<Tuple<PopulationDataEntry,Int32>> EntitiesWithoutGeocode()
         {
-            var retval = new List<PopulationDataEntry>();
+            var retval = new List<Tuple<PopulationDataEntry, Int32>>();
             if ( mChangwat != null )
             {
-                PopulationDataEntry.PopulationDataEntryEvent del = delegate(PopulationDataEntry value)
+                PopulationDataEntry.PopulationDataEntryEvent del = delegate(PopulationDataEntry value, PopulationDataEntry parent)
                              {
-                                 retval.Add(value);
+                                 if (parent == null)
+                                 {
+                                     retval.Add(Tuple.Create(value, 0));
+                                 }
+                                 else
+                                 {
+                                     retval.Add(Tuple.Create(value, parent.Geocode));
+                                 }
                              };
-                mChangwat.IterateEntitiesWithoutGeocode(del);
+                mChangwat.IterateEntitiesWithoutGeocode(del,mChangwat);
                 foreach ( PopulationDataEntry thesaban in mThesaban )
                 {
-                    thesaban.IterateEntitiesWithoutGeocode(del);
+                    thesaban.IterateEntitiesWithoutGeocode(del,mChangwat);
                 }
             }
             return retval;
