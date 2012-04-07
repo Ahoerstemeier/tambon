@@ -275,9 +275,11 @@
     </entity>
     <entity type="Tambon" name="ทุ่งคา" english="Thung Kha" geocode="860114" >
       <office type="TAOOffice">
-        <url>http://www.thungkha.go.th/</url>
+        <vision>มุ่งพัฒนาคุณภาพชีวิต  ส่งเสริมเศรษฐกิจชุมชน  อยู่บนพื้นฐานความพอเพียง  เน้นการมีส่วนร่วมพัฒนา  พร้อมอนุรักษ์ภูมิปัญญาท้องถิ่น</vision>
+        <url lastchecked="2012-04-07">http://www.thungkha.in.th/</url>
+        <url status="offline">http://www.thungkha.go.th/</url>
         <officials>
-          <official title="TAOChairman" name="เกียรติศักดิ์ บัวสุวรรณ" inoffice="2010"/>
+          <official title="TAOMayor" name="เกียรติศักดิ์ บัวสุวรรณ" inoffice="2010"/>
         </officials>
       </office>
       <entity type="Muban" geocode="86011401" name="บ้านทุ่งคาใหญ่" english="Ban Thung Kha Yai"/>
@@ -438,6 +440,10 @@
     </entity>
     <entity type="Tambon" name="นากระตาม" english="Na Kratam" geocode="860204" >
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>10.5994</geo:lat>
+          <geo:long>99.1619</geo:long>
+        </geo:Point>
         <url>http://www.nakratham.go.th/</url>
       </office>
     </entity>
@@ -900,7 +906,26 @@
         <official title="DistrictOfficer" name="ธีระยุทธ เอี่ยมตระกูล" begin="2003-10-06" end="2004-10-30" beginreason="Appointed" endreason="Transfer"/>
       </officials>
     </office>
-    <entity type="Tambon" name="นาโพธิ์" english="Na Pho" geocode="860701" />
+    <entity type="Tambon" name="นาโพธิ์" english="Na Pho" geocode="860701" >
+      <office type="TAOOffice">
+        <vision>การคมนาคมสะดวก  เศรษฐกิจดี  มีความรู้ทันสมัย  สิ่งแวดล้อมไม่เป็นพิษ มุ่งพัฒนาคุณภาพชีวิตและสังคมอยู่ดีกินดี   น้อมนำปรัชญาเศรษฐกิจพอเพียง   ยึดมั่นบริหารจัดการตามหลักธรรมาภิบาล</vision>
+        <geo:Point>
+          <geo:lat>10.2103</geo:lat>
+          <geo:long>99.0980</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-04-07">http://www.saonapho.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ทิวา บุญยก" inoffice="2011"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="86070101" name="บ้านพ้อแดง" english="Ban Pho Daeng"/>
+      <entity type="Muban" geocode="86070102" name="บ้านนาคราม" english="Ban Na Khram"/>
+      <entity type="Muban" geocode="86070103" name="บ้านเขาสวนทุเรียน" english="Ban Khao Suan Thurian"/>
+      <entity type="Muban" geocode="86070104" name="บ้านควนสีแท" english="Ban Khuan Si Tae"/>
+
+      <entity type="Muban" geocode="86070107" name="บ้านควนตะล่อม" english="Ban Khuan Talom"/>
+      <entity type="Muban" geocode="86070108" name="บ้านห้วยกรวด" english="Ban Huai Kruat"/>
+    </entity>
     <entity type="Tambon" name="สวี" english="Sawi" geocode="860702">
       <office type="TAOOffice">
         <url>http://www.sawee.go.th/</url>
@@ -1111,8 +1136,18 @@
   </entity>
   <entity type="ThesabanTambon" name="นาโพธิ์" english="Na Pho" geocode="8687" parent="8607" >
     <office type="MunicipalityOffice">
-      <url>http://www.napo.go.th/</url>
+      <vision>สังคมอยู่เย็นเป็นสุขร่วมกัน (Green and Happiness Society) คนไทยมีคุณธรรมนำความรอบรู้  รู้เท่าทันโลก  ครอบครัวอบอุ่น  ชุมชนเข้มแข็ง  สังคมสันติ สุข เศรษฐกิจมีคุณภาพ  เสถียรภาพ  และเป็นธรรม  สิ่งแวดล้อมมีคุณภาพและทรัพยากรธรรมชาติยั่งยืน  อยู่ภายใต้ระบบบริหารจัดการประเทศที่มีธรรมาภิบาล  ดำรงไว้ซึ่งระบอบประชาธิปไตยอันมีพระมหากษัตริย์ทรงเป็นประมุข และอยู่ในประชาคมโลกได้อย่างมีศักดิ์ศรี</vision>
+      <url lastchecked="2012-04-07">http://www.napo.go.th/</url>
+      <officials>
+        <official title="Mayor" name="อุดมศักดิ์ เชาวนะปัญจะ" inoffice="2011"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="86870001" name="ชุมชนตลาดสวี" english="Chumchon Talat Sawi"/>
+    <entity type="Chumchon" geocode="86870002" name="ชุมชนคลองขาง" english="Chumchon Khlong Khang"/>
+    <entity type="Chumchon" geocode="86870003" name="ชุมชนโพธิเกษตร" english="Chumchon Pho Kaset"/>
+    <entity type="Chumchon" geocode="86870004" name="ชุมชนในลุ่ม" english="Chumchon Nai Lum"/>
+    <entity type="Chumchon" geocode="86870005" name="ชุมชนคูสวนหมาก" english="Chumchon Khu Suan Mak"/>
+    <entity type="Chumchon" geocode="86870006" name="ชุมชนบ้านนาโพธิ์" english="Chumchon Ban Na Pho"/>
   </entity>
   <entity type="ThesabanTambon" name="ปากตะโก" english="Pak Tako" geocode="8686" parent="8608" >
     <office type="MunicipalityOffice">
