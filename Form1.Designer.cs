@@ -30,7 +30,7 @@ namespace De.Ahoerstemeier.Tambon
         {
             System.Windows.Forms.Button btn_LoadGazetteXML;
             this.btn_Population = new System.Windows.Forms.Button();
-            this.edt_year = new System.Windows.Forms.NumericUpDown();
+            this.edtYear = new System.Windows.Forms.NumericUpDown();
             this.cbx_changwat = new System.Windows.Forms.ComboBox();
             this.btn_PopulationAll = new System.Windows.Forms.Button();
             this.btn_GazetteLoadAll = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@ namespace De.Ahoerstemeier.Tambon
             this.btn_L7018 = new System.Windows.Forms.Button();
             this.cbxCheckNamesFiltered = new System.Windows.Forms.CheckBox();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_year)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_LoadGazetteXML
@@ -91,21 +91,21 @@ namespace De.Ahoerstemeier.Tambon
             // 
             // edt_year
             // 
-            this.edt_year.Location = new System.Drawing.Point(25, 70);
-            this.edt_year.Maximum = new decimal(new int[] {
+            this.edtYear.Location = new System.Drawing.Point(25, 70);
+            this.edtYear.Maximum = new decimal(new int[] {
             2008,
             0,
             0,
             0});
-            this.edt_year.Minimum = new decimal(new int[] {
+            this.edtYear.Minimum = new decimal(new int[] {
             1993,
             0,
             0,
             0});
-            this.edt_year.Name = "edt_year";
-            this.edt_year.Size = new System.Drawing.Size(57, 20);
-            this.edt_year.TabIndex = 3;
-            this.edt_year.Value = new decimal(new int[] {
+            this.edtYear.Name = "edt_year";
+            this.edtYear.Size = new System.Drawing.Size(57, 20);
+            this.edtYear.TabIndex = 3;
+            this.edtYear.Value = new decimal(new int[] {
             2005,
             0,
             0,
@@ -473,13 +473,13 @@ namespace De.Ahoerstemeier.Tambon
             this.Controls.Add(this.btn_GazetteLoadAll);
             this.Controls.Add(this.btn_PopulationAll);
             this.Controls.Add(this.cbx_changwat);
-            this.Controls.Add(this.edt_year);
+            this.Controls.Add(this.edtYear);
             this.Controls.Add(this.btn_Population);
             this.Controls.Add(btn_LoadGazetteXML);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.edt_year)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edtYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,7 +488,7 @@ namespace De.Ahoerstemeier.Tambon
         #endregion
 
         private System.Windows.Forms.Button btn_Population;
-        private System.Windows.Forms.NumericUpDown edt_year;
+        private System.Windows.Forms.NumericUpDown edtYear;
         private System.Windows.Forms.ComboBox cbx_changwat;
         private System.Windows.Forms.Button btn_PopulationAll;
         private System.Windows.Forms.Button btn_GazetteLoadAll;
