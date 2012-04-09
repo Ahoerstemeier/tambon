@@ -30,6 +30,7 @@ namespace De.AHoerstemeier.Tambon
         private void ConstituencyForm_Load(object sender, EventArgs e)
         {
             edtYear.Maximum = TambonHelper.PopulationStatisticMaxYear;
+            edtYear.Minimum = TambonHelper.PopulationStatisticMinYear;
             edtYear.Value = edtYear.Maximum;
 
             TambonHelper.LoadGeocodeList();
