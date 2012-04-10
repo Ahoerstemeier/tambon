@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -253,9 +254,15 @@ namespace De.AHoerstemeier.Tambon
                     fileWriter.Write(csvCharacter);
                     fileWriter.Write(entity.English);
                     fileWriter.Write(csvCharacter);
-                    fileWriter.Write(entity.Geocode.ToString());
+                    fileWriter.Write(entity.Geocode.ToString(CultureInfo.InvariantCulture));
                     fileWriter.Write(csvCharacter);
-                    fileWriter.Write(entity.Total.ToString());
+                    fileWriter.Write(entity.Total.ToString(CultureInfo.InvariantCulture));
+                    fileWriter.Write(csvCharacter);
+                    fileWriter.Write(entity.Male.ToString(CultureInfo.InvariantCulture));
+                    fileWriter.Write(csvCharacter);
+                    fileWriter.Write(entity.Female.ToString(CultureInfo.InvariantCulture));
+                    fileWriter.Write(csvCharacter);
+                    fileWriter.Write(entity.Households.ToString(CultureInfo.InvariantCulture));
                     if ((compare != null) && (entity.Geocode != 0))
                     {
                         PopulationDataEntry compareEntry = compare.FindByCode(entity.Geocode);
@@ -264,9 +271,9 @@ namespace De.AHoerstemeier.Tambon
                             Int32 populationChange = entity.Total - compareEntry.Total;
                             Double changePercent = 100.0 * populationChange / compareEntry.Total;
                             fileWriter.Write(csvCharacter);
-                            fileWriter.Write(populationChange.ToString());
+                            fileWriter.Write(populationChange.ToString(CultureInfo.InvariantCulture));
                             fileWriter.Write(csvCharacter);
-                            fileWriter.Write(changePercent.ToString("##0.##"));
+                            fileWriter.Write(changePercent.ToString("##0.##", CultureInfo.InvariantCulture));
                         }
                     }
                     fileWriter.WriteLine();
