@@ -739,7 +739,22 @@
     </entity>
     <entity type="Tambon" name="ท่าทอง" english="Tha Thong" geocode="640710" />
     <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="640711" />
-    <entity type="Tambon" name="ป่ากุมเกาะ" english="Pa Kum Ko" geocode="640712" />
+    <entity type="Tambon" name="ป่ากุมเกาะ" english="Pa Kum Ko" geocode="640712" >
+      <entity type="Muban" geocode="64071201" name="บ้านคุ้งยาง"/>
+      <entity type="Muban" geocode="64071202" name="บ้านคุ้งยาง"/>
+      <entity type="Muban" geocode="64071203" name="บ้านป่ากุมเกาะ"/>
+      <entity type="Muban" geocode="64071204" name="บ้านป่ากุมเกาะ"/>
+      <entity type="Muban" geocode="64071205" name="บ้านคุ้งยาง"/>
+      <entity type="Muban" geocode="64071206" name="บ้านคลองหกบาท"/>
+      <entity type="Muban" geocode="64071207" name="บ้านใหม่โพธิ์งาม"/>
+      <entity type="Muban" geocode="64071208" name="บ้านวังหว้า"/>
+      <entity type="Muban" geocode="64071209" name="บ้านวังวน"/>
+      <entity type="Muban" geocode="64071210" name="บ้านดงมะพูด"/>
+      <entity type="Muban" geocode="64071211" name="บ้านคลองแค"/>
+      <entity type="Muban" geocode="64071212" name="บ้านหนองซ้ง"/>
+      <entity type="Muban" geocode="64071213" name="บ้านศรีสังวร"/>
+      <entity type="Muban" geocode="64071214" name="บ้านงิ้วงาม"/>
+    </entity>
     <entity type="Tambon" name="เมืองบางขลัง" english="Mueang Bang Khlang" geocode="640713" >
       <office type="TAOOffice">
         <url>http://www.bangkhung.net/</url>
@@ -972,6 +987,15 @@
   <entity type="ThesabanTambon" name="บ้านกล้วย" english="Ban Kluai" geocode="6486" parent="6401" tambon="640106" >
     <office type="MunicipalityOffice">
       <url>http://www.bankluai.go.th/</url>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ป่ากุมเกาะ" english="Pa Kum Ko" geocode="6485" parent="6407" tambon="640712" >
+    <office type="MunicipalityOffice">
+      <!-- 17.382259,99.791961 according to website, but nothing to see in Google Earth -->
+      <url lastchecked="2012-04-13">http://www.pakumkoa.go.th/</url>
+      <officials>
+        <official title="Mayor" name="บุญชู เพิ่มศักดิ์" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
 </entity>

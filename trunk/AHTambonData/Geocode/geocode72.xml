@@ -1425,24 +1425,7 @@
         <official title="DistrictOfficer" name="เชิดศักดิ์ จำปาเทศ" end="2006-12-24"/>
       </officials>
     </office>
-    <entity type="Tambon" name="อู่ทอง" english="U Thong" geocode="720901" >
-      <office type="MunicipalityOffice">
-        <!-- Longdo: 14.3615 99.8849 -->
-        <geo:Point>
-          <geo:lat>14.3604</geo:lat>
-          <geo:long>99.8852</geo:long>
-        </geo:Point>
-        <officials>
-          <official title="Mayor" name="ฉัฐพนิต มยูขโชติ" beginyear="2008"/>
-          <official title="TAOMayor" name="สาวฉัฐพนิต	มยูขโชติ" endyear="2008"/>
-        </officials>
-        <!--
-        <history>
-          <rename name="ท้าวอู่ทอง" english="Thao U Thong" oldname="อู่ทอง" oldenglish="U Thong" effective="2008-07-24"/>
-        </history>
-        -->
-      </office>
-    </entity>
+    <entity type="Tambon" name="อู่ทอง" english="U Thong" geocode="720901" />
     <entity type="Tambon" name="สระยายโสม" english="Sa Yai Som" geocode="720902" >
       <entity type="Muban" geocode="72090201" name="บ้านดอนเขว้า" english="Ban Don Khwao"/>
       <entity type="Muban" geocode="72090202" name="บ้านบ่อปั้น" english="Ban Bo Pin"/>
@@ -2178,6 +2161,22 @@
         <official title="TAOMayor" name="ทัศนไชย ศันสนะพิทยากร" inoffice="2008"/>
       </officials>
     </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ท้าวอู่ทอง" english="Thao U Thong" geocode="7266" parent="7209" tambon="720901" >
+    <office type="MunicipalityOffice">
+      <!-- Longdo: 14.3615 99.8849 -->
+      <geo:Point>
+        <geo:lat>14.3604</geo:lat>
+        <geo:long>99.8852</geo:long>
+      </geo:Point>
+      <officials>
+        <official title="Mayor" name="ฉัฐพนิต มยูขโชติ" beginyear="2008"/>
+        <official title="TAOMayor" name="สาวฉัฐพนิต	มยูขโชติ" endyear="2008"/>
+      </officials>
+    </office>
+    <history>
+      <rename name="ท้าวอู่ทอง" english="Thao U Thong" oldname="อู่ทอง" oldenglish="U Thong" effective="2008-07-24"/>
+    </history>
   </entity>
 
 </entity>
