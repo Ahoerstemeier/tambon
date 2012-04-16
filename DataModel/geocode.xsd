@@ -187,6 +187,16 @@
   <xs:complexType name="Entity">
     <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element minOccurs="0" maxOccurs="1" name="slogan" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="symboltree" type="xs:string" >
+        <xs:annotation>
+          <xs:documentation>Botanical name of the symbol tree, only applicable for provinces (ต้นไม้ประจำจังหวัด).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="symbolflower" type="xs:string" >
+        <xs:annotation>
+          <xs:documentation>Botanical name of the symbol flower, only applicable for provinces (ดอกไม้ประจำจังหวัด).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:Area"/>
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList"/>
