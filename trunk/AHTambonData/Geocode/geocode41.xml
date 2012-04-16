@@ -117,7 +117,7 @@
       <entity type="Muban" geocode="41010907" name="บ้านจำปา" english="Ban Champa"/>
       <entity type="Muban" geocode="41010908" name="บ้านถ่อนน้อย" english="Ban Thon Noi"/>
       <entity type="Muban" geocode="41010909" name="บ้านหนองตูม" english="Ban Nong Tum"/>
-      <entity type="Muban" geocode="41010910" name="บ้านดอนภู่"/>
+      <entity type="Muban" geocode="41010910" name="บ้านดอนภู่" english="Ban Don Phu"/>
       <entity type="Muban" geocode="41010911" name="บ้านนาหวาน" english="Ban Na Wan"/>
       <entity type="Muban" geocode="41010912" name="บ้านหนองไผ่คา" english="Ban Nong Phai Kha"/>
       <entity type="Muban" geocode="41010913" name="บ้านดอนหัน" english="Ban Don Han"/>
@@ -208,16 +208,16 @@
     </entity>
     <entity type="Tambon" name="หนองไผ่" english="Nong Phai" geocode="410121" >
       <entity type="Muban" geocode="41012101" name="บ้านหนองไผ่" english="Ban Nong Phai"/>
-      <entity type="Muban" geocode="41012102" name="บ้านแม่นนท์"/>
+      <entity type="Muban" geocode="41012102" name="บ้านแม่นนท์" english="Ban Mae Nan"/>
       <entity type="Muban" geocode="41012103" name="บ้านหนองบัวเงิน" english="Ban Nong Bua Ngoen"/>
       <entity type="Muban" geocode="41012104" name="บ้านหนองตะไก้" english="Ban Nong Takai"/>
       <entity type="Muban" geocode="41012105" name="บ้านหนองตะไก้เหนือ" english="Ban Nong Takai Nuea"/>
       <entity type="Muban" geocode="41012106" name="บ้านหนองนาเจริญ" english="Ban Nong Na Charoen"/>
       <entity type="Muban" geocode="41012107" name="บ้านหนองตะไก้น้อย" english="Ban Nong Takai Noi"/>
       <entity type="Muban" geocode="41012108" name="บ้านหนองหิน" english="Ban Nong Hin"/>
-      <entity type="Muban" geocode="41012109" name="บ้านทอนกลาง"/>
+      <entity type="Muban" geocode="41012109" name="บ้านทอนกลาง" english="Ban Thon Klang"/>
       <entity type="Muban" geocode="41012110" name="บ้านหนองบัวทอง" english="Ban Nong Bua Thong"/>
-      <entity type="Muban" geocode="41012111" name="บ้านนาทองคำ"/>
+      <entity type="Muban" geocode="41012111" name="บ้านนาทองคำ" english="Ban Na Thong Kham"/>
       <entity type="Muban" geocode="41012112" name="บ้านหนองตะไก้ใต้" english="Ban Nong Takai Tai"/>
     </entity>
 
@@ -861,12 +861,21 @@
     <entity type="Tambon" name="ดอนกลอย" english="Don Kloi" geocode="410613" newgeocode="412303" />
     <entity type="Tambon" name="หนองไผ่" english="Nong Phai" geocode="410614" >
       <office type="TAOOffice">
-        <!-- Longhdo: 17.320021 103.080083 - but nothing to see in Google Earth yet -->
+        <!-- Longdo: 17.320021 103.080083 - but nothing to see in Google Earth yet -->
         <url status="offline">http://www.nongphaisub.com/</url>
       </office>
+      <entity type="Muban" geocode="41061401" name="บ้านหนองไผ่" english="Ban Nong Phai"/>
+      <entity type="Muban" geocode="41061402" name="บ้านหนองขาม" english="Ban Nong Kham"/>
+      <entity type="Muban" geocode="41061403" name="บ้านหนองสะหนาย" english="Ban Nong Samai"/>
+      <entity type="Muban" geocode="41061404" name="บ้านหนองบัวแดง" english="Ban Nong Bua Daeng"/>
+      <entity type="Muban" geocode="41061405" name="บ้านหนองบัวแดง" english="Ban Nong Bua Daeng"/>
+      <entity type="Muban" geocode="41061406" name="บ้านหนองไผ่น้อย" english="Ban Nong Phai Noi"/>
+      <entity type="Muban" geocode="41061407" name="บ้านโนนสวรรค์" english="Ban Non Sawan"/>
       <entity type="Muban" geocode="41061408" name="บ้านดงบาก" english="Ban Dong Bak"/>
-
-      <entity type="Muban" geocode="41061412" name="บ้านหนองคำยาง"/>
+      <entity type="Muban" geocode="41061409" name="บ้านเพ็ก" english="Ban Phek"/>
+      <entity type="Muban" geocode="41061410" name="บ้านหายโศก" english="Ban Hai Sok"/>
+      <entity type="Muban" geocode="41061411" name="บ้านคำบาก" english="Ban Kham Bak"/>
+      <entity type="Muban" geocode="41061412" name="บ้านหนองคำยาง" english="Ban Nong Kham Yang"/>
     </entity>
     <entity type="Tambon" name="นาทราย" english="Na Sai" geocode="410615" newgeocode="412302" />
     <entity type="Tambon" name="ค้อใหญ่" english="Kho Yai" geocode="410616" newgeocode="412403" />
@@ -2730,11 +2739,20 @@
   <entity type="ThesabanTambon" name="หนองไผ่" english="Nong Phai" geocode="4168" parent="4101" tambon="410121" >
     <office type="MunicipalityOffice">
       <!-- Longdo: 17.25333, 102.89101 -->
-      <url>http://www.nongphaicity.com/</url>
+      <url status="offline">http://www.nongphaicity.com/</url>
+      <url status="offline">http://www.nongphaimuni.com/</url>
       <url status="offline">http://nongpai.org/</url>
+      <socialweb>
+        <twitter status="inactive">nongphai</twitter>
+        <blog>http://nongphai.wordpress.com/</blog>
+      </socialweb>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="หนองไผ่" english="Nong Phai" geocode="4167" parent="4106" tambon="410614" />
+  <entity type="ThesabanTambon" name="หนองไผ่" english="Nong Phai" geocode="4167" parent="4106" tambon="410614" >
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-04-16">http://www.nongphaimu.go.th/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ลำพันชาด" english="Lam Phan Chat" geocode="4166" parent="4110" tambon="411006" />
   <entity type="ThesabanTambon" name="เวียงคำ" english="Wiang Kham" geocode="4165" parent="4104" tambon="410403" />
   <entity type="ThesabanTambon" name="บ้านธาตุ" english="Ban That" geocode="4164" parent="4119" tambon="411902" >
