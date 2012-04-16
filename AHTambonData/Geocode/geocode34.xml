@@ -747,7 +747,16 @@
         <official title="DistrictOfficer" name="จำเริญ สวนทอง" end="2007-01-07"/>
       </officials>
     </office>
-    <entity type="Tambon" name="นาจะหลวย" english="Na Chaluai" geocode="340801" />
+    <entity type="Tambon" name="นาจะหลวย" english="Na Chaluai" geocode="340801" >
+
+      <entity type="Muban" geocode="34080107" name="บ้านห้วยโลก"/>
+      <entity type="Muban" geocode="34080108" name="บ้านหลักเมือง"/>
+      
+      <entity type="Muban" geocode="34080110" name="บ้านศรีพรหม"/>
+      <entity type="Muban" geocode="34080111" name="บ้านกลางเมือง"/>
+      <entity type="Muban" geocode="34080112" name="บ้านห้วยซันใต้"/>
+      <entity type="Muban" geocode="34080113" name="บ้านห้วยซันเหนือ"/>
+    </entity>
     <entity type="Tambon" name="โนนสมบูรณ์" english="Non Sombun" geocode="340802" >
       <office type="TAOOffice">
         <url>http://www.nonsomboon.org/</url>
@@ -895,19 +904,23 @@
     <entity type="Tambon" name="ขี้เหล็ก" english="Khilek" geocode="340905" newgeocode="343303" />
     <entity type="Tambon" name="บุเปือย" english="Bu Pueai" geocode="340906" >
       <office type="TAOOffice">
-        <url>http://www.bupueai.com/</url>
+        <url lastchecked="2012-04-16">http://www.bupueai.go.th/</url>
+        <url status="offline">http://www.bupueai.com/</url>
+        <officials>
+          <official title="TAOMayor" name="นายจักรกรี โสมโสภา" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="34090601" name="บ้านบุเปือย" english="Ban Bu Pueai"/>
       <entity type="Muban" geocode="34090602" name="บ้านน้ำซับ" english="Ban Nam Sap"/>
       <entity type="Muban" geocode="34090603" name="บ้านแก้งโตน" english="Ban Kaeng Ton"/>
       <entity type="Muban" geocode="34090604" name="บ้านสามัคคี" english="Ban Samakkhi"/>
       <entity type="Muban" geocode="34090605" name="บ้านประเสริฐแสนสุข" english="Ban Prasoet Saen Suk"/>
-      <entity type="Muban" geocode="34090606" name="บ้านพืชอุดม"/>
+      <entity type="Muban" geocode="34090606" name="บ้านพืชอุดม" english="Ban Phuet Udom"/>
       <entity type="Muban" geocode="34090607" name="บ้านเกษตรสมบูรณ์" english="Ban Kaset Sombun"/>
       <entity type="Muban" geocode="34090608" name="บ้านเปือย" english="Ban Pueai"/>
       <entity type="Muban" geocode="34090609" name="บ้านพรสวรรค์" english="Ban Phon Sawan"/>
-      <entity type="Muban" geocode="34090610" name="บ้านบุกลาง"/>
-      <entity type="Muban" geocode="34090611" name="บ้านโนนก่อ"/>
+      <entity type="Muban" geocode="34090610" name="บ้านบุกลาง" english="Ban Bu Klang"/>
+      <entity type="Muban" geocode="34090611" name="บ้านโนนก่อ" english="Ban Non Ko"/>
       <entity type="Muban" geocode="34090612" name="บ้านสร้างเชียงอินทร์" english="Ban Sa Chiang In"/>
       <entity type="Muban" geocode="34090613" name="บ้านเกษตรภูทอง" english="Ban Kaset Phu Thong"/>
       <entity type="Muban" geocode="34090614" name="บ้านเกษตรอุดม" english="Ban Kaset Udom"/>
@@ -2300,8 +2313,17 @@
   </entity>
   <entity type="ThesabanTambon" name="นาจะหลวย" english="Na Chaluai" geocode="3488" parent="3408" >
     <office type="MunicipalityOffice">
+      <vision>ประชาสังคมเข็มแข็ง มีคุณภาพชีวิต ข้าวหอมมะลิ สินค้าเกษตร มีมูลค่าเพิ่มขึ้น และเป็นพันธมิตรกับประเทศเพื่อนบ้าน</vision>
+      <url lastchecked="2012-04-16">http://www.najaluay.org/</url>
       <url>http://www.najaluay.com/</url>
+      <socialweb>
+        <twitter status="inactive">najaluay</twitter>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="สุรัตน์ ทองพันธ์" inoffice="2011"/>
+      </officials>
     </office>
+    <!-- เทศบาลตำบลนาจะหลวยจัดเป็นเทศบาลขนาดเล็ก มีเขตการปกครอง 6 หมู่บ้าน  7 ชุมชน คือ หมู่ที่7 บ้านห้วยโลก หมู่ที่8 บ้านหลักเมือง หมู่ที่10 บ้านศรีพรหม หมู่ที่11 บ้านกลางเมือง หมู่ที่12 บ้านห้วยซันใต้ หมู่ที่13 บ้านห้วยซันเหนือ และในการจัดชุมชนจะจัดหมู่บ้าน 1 หมู่บ้านเป็น 1ชุมชน ดังนี้ ชุมชนห้วยโลก ชุมชนศรีพรหม ชุมชนกลางเมือง ชุมชนห้วยซันใต้ ชุมชนห้วยซันเหนือ ยกเว้นบ้านหลักเมืองจัดชุมชนเป็น 2 ชุมชน คือชุมชนหลักเมือง 1 และชุมชนหลักเมือง 2 รวมเป็น 7 ชุมชน     -->
   </entity>
   <entity type="ThesabanTambon" name="น้ำยืน" english="Nam Yuen" geocode="3487" parent="3409" >
     <office type="MunicipalityOffice">
