@@ -202,11 +202,11 @@
         <url lastchecked="2012-04-21">http://www.banrome.go.th/</url>
         <url status="offline">http://banrome.com/</url>
       </office>
-      <entity type="Muban" geocode="14020401" name="บ้านดอนกระสังข์"/>
-      <entity type="Muban" geocode="14020402" name="บ้านโคกกุ่ม"/>
+      <entity type="Muban" geocode="14020401" name="บ้านดอนกระสังข์" english="Ban Don Krasang"/>
+      <entity type="Muban" geocode="14020402" name="บ้านโคกกุ่ม" english="Ban Khok Kum"/>
       <entity type="Muban" geocode="14020403" name="บ้านปากบ่อ" english="Ban Pak Bo"/>
       <entity type="Muban" geocode="14020404" name="บ้านเหนือ" english="Ban Nuea"/>
-      <entity type="Muban" geocode="14020405" name="บ้านดอนประดู่"/>
+      <entity type="Muban" geocode="14020405" name="บ้านดอนประดู่" english="Ban Don Pradu"/>
       <entity type="Muban" geocode="14020406" name="บ้านใต้" english="Ban Tai"/>
       <entity type="Muban" geocode="14020407" name="บ้านร่อม" english="Ban Rom"/>
       <entity type="Muban" geocode="14020408" name="บ้านโคกแค" english="Ban Khok Khae"/>
@@ -831,7 +831,11 @@
     <entity type="Tambon" name="ตาลาน" english="Talan" geocode="140805" />
     <entity type="Tambon" name="ท่าดินแดง" english="Tha Din Daeng" geocode="140806" >
       <office type="TAOOffice">
-        <url>http://thadindang.go.th/</url>
+        <!-- Location appr.  14.421306° 100.385975° -->
+        <url lastchecked="2012-04-26">http://www.thadindang.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="วินัย บรรดาศักดิ์" inoffice="2008"/>
+        </officials>
       </office>
     </entity>
     <entity type="Tambon" name="ดอนลาน" english="Don Lan" geocode="140807" >
@@ -869,7 +873,15 @@
     </entity>
     <entity type="Tambon" name="จักราช" english="Chakkarat" geocode="140812" />
     <entity type="Tambon" name="หนองน้ำใหญ่" english="Nong Nam Yai" geocode="140813" />
-    <entity type="Tambon" name="ลาดชิด" english="Lat Chit" geocode="140814" />
+    <entity type="Tambon" name="ลาดชิด" english="Lat Chit" geocode="140814" >
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>14.4403</geo:lat>
+          <geo:long>100.3590</geo:long>
+        </geo:Point>
+        <url status="broken" lastchecked="2012-04-26">http://www.ladchid.com/</url>
+      </office>
+    </entity>
     <entity type="Tambon" name="หน้าโคก" english="Na Khok" geocode="140815" />
     <entity type="Tambon" name="บ้านใหญ่" english="Ban Yai" geocode="140816" />
   </entity>
@@ -1484,9 +1496,13 @@
       <url comment="Offline?">http://www.pra-intaracha.com/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ผักไห่" english="Phak Hai" geocode="1483" parent="1408" >
+  <entity type="ThesabanMueang" name="ผักไห่" english="Phak Hai" geocode="1483" parent="1408" >
     <office type="MunicipalityOffice">
-      <url>http://www.phakhai.go.th/</url>
+      <geo:Point>
+        <geo:lat>14.4564</geo:lat>
+        <geo:long>100.3670</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-04-26">http://www.phakhai.go.th/</url>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ลาดชะโด" english="Lat Chado" geocode="1482" parent="1408" >
