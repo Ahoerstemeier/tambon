@@ -71,7 +71,8 @@
     <url>http://www.crpao.com/</url>
     <url status="offline">http://pao.chiangrai.net/</url>
     <officials>
-      <official title="PAOChairman" name="รัตนา จงสุทธนามณี" inoffice="2010"/>
+      <!-- election 2012-05-27 -->
+      <official title="PAOChairman" name="รัตนา จงสุทธนามณี" endyear="2012"/>
     </officials>
   </office>
   <entity type="Amphoe" name="เมืองเชียงราย" english="Mueang Chiang Rai" geocode="5701" >
@@ -2538,7 +2539,17 @@
       </geo:Point>
       <url>http://www.chiangraicity.go.th/</url>
       <officials>
-        <official title="Mayor" name="สมพงษ์ กูลวงค์" inoffice="2010"/>
+        <official title="Mayor" name="วันชัย จงสุทธนามณี" begin="2012-05-05">
+          <election type="Mayor" date="2012-05-05">
+            <candidates>
+              <candidate id="1" name="วันชัย จงสุทธนามณี" status="elected"/>
+              <candidate id="2" name="วิทยา ตันติภูวนารถ"/>
+              <candidate id="3" name="สมพงษ์ กูลวงค์และ" comment="Incumbent"/>
+              <candidate id="4" name="ชาตรี อินทยศ"/>
+            </candidates>
+          </election>
+        </official>
+        <official title="Mayor" name="สมพงษ์ กูลวงค์" endyear="2012"/>
       </officials>
     </office>
   </entity>

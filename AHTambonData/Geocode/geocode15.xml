@@ -597,8 +597,12 @@
     </entity>
     <entity type="Tambon" name="สี่ร้อย" english="Si Roi" geocode="150611" />
     <entity type="Tambon" name="ม่วงเตี้ย" english="Muang Tia" geocode="150612" >
-      <office type="TAOOffice">
-        <url>http://www.muangtia.com/</url>
+      <office type="MunicipalityOffice">
+        <url lastchecked="2012-05-07">http://www.muangtia.go.th/</url>
+        <url status="offline">http://www.muangtia.com/</url>
+        <officials>
+          <official title="Mayor" name="สุชาติ นิ่มกุล" inoffice="2011"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="15061201" name="บ้านศาลาดิน" english="Ban Sala Din"/>
       <entity type="Muban" geocode="15061202" name="บ้านศาลาดิน" english="Ban Sala Din"/>
@@ -782,11 +786,4 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="โพสะ" english="Phosa" geocode="1588" parent="1501" tambon="150111"/>
-
-  <!-- no geocode yet -->
-  <entity type="ThesabanTambon" name="ม่วงเตี้ย" english="Muang Tia" geocode="1585" parent="1506" tambon="150612" >
-    <office type="MunicipalityOffice">
-      <url>http://www.muangtia.com/</url>
-    </office>
-  </entity>
 </entity>
