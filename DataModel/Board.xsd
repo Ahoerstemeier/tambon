@@ -81,7 +81,7 @@
     <xs:attribute name="number" type="xs:unsignedByte" use="required" />
     <xs:attribute name="board" type="t:BoardNumber" use="required" />
     <xs:attribute name="date" type="xs:date" use="required" />
-    <xs:attribute name="url" type="xs:string" use="optional" />
+    <xs:attribute name="url" type="xs:anyURI" use="optional" />
   </xs:complexType>
   <xs:complexType name='MeetingEntryContainer'>
     <xs:sequence>
