@@ -22,41 +22,45 @@ namespace De.AHoerstemeier.Tambon
         }
         #endregion
         #region methods
-        internal static BoardMeetingEntry Load(XmlNode iNode)
+        internal static BoardMeetingEntry Load(XmlNode node)
         {
-            BoardMeetingEntry RetVal = null;
+            BoardMeetingEntry result = null;
 
-            if (iNode != null && iNode.Name.Equals("boardmeeting"))
+            if ( node != null && node.Name.Equals("boardmeeting") )
             {
-                RetVal = new BoardMeetingEntry();
-                RetVal.WebLink = new Uri(TambonHelper.GetAttribute(iNode, "url"));
-                RetVal.Date = TambonHelper.GetAttributeDateTime(iNode, "date");
-                RetVal.BoardNumber = TambonHelper.GetAttribute(iNode, "board");
-                RetVal.MeetingNumber = Convert.ToInt32(TambonHelper.GetAttribute(iNode, "number"));
+                result = new BoardMeetingEntry();
+                String url = TambonHelper.GetAttributeOptionalString(node, "url");
+                if ( !String.IsNullOrEmpty(url) )
+                {
+                    result.WebLink = new Uri(url);
+                }
+                result.Date = TambonHelper.GetAttributeDateTime(node, "date");
+                result.BoardNumber = TambonHelper.GetAttribute(node, "board");
+                result.MeetingNumber = Convert.ToInt32(TambonHelper.GetAttribute(node, "number"));
 
-                RetVal.LoadContents(iNode);
+                result.LoadContents(node);
             }
 
-            return RetVal;
+            return result;
         }
 
         private void LoadContents(XmlNode iNode)
         {
-            foreach (XmlNode lNode in iNode.ChildNodes)
+            foreach ( XmlNode lNode in iNode.ChildNodes )
             {
                 RoyalGazetteContent lContent = RoyalGazetteContent.CreateContentObject(lNode.Name);
-                if (lContent != null)
+                if ( lContent != null )
                 {
                     lContent.DoLoad(lNode);
                     BoardMeetingTopic lTopic = new BoardMeetingTopic();
                     lTopic.Topic = lContent;
-                    lTopic.Effective = TambonHelper.GetAttributeOptionalDateTime(lNode,"effective");
+                    lTopic.Effective = TambonHelper.GetAttributeOptionalDateTime(lNode, "effective");
                     String s = TambonHelper.GetAttributeOptionalString(lNode, "type");
-                    if (String.IsNullOrEmpty(s))
+                    if ( String.IsNullOrEmpty(s) )
                     {
                         s = TambonHelper.GetAttributeOptionalString(lNode, "new");
                     }
-                    if (!String.IsNullOrEmpty(s))
+                    if ( !String.IsNullOrEmpty(s) )
                     {
                         lTopic.Type = (EntityType)Enum.Parse(typeof(EntityType), s);
                     }
