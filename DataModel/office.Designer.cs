@@ -738,7 +738,7 @@ namespace De.AHoerstemeier.Tambon
         Transfer,
 
         /// <summary>
-        /// Reaching retirement age.
+        /// Reaching retirement age (เกษียณอายุราชการ).
         /// </summary>
         Retired,
 
