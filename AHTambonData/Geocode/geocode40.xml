@@ -501,12 +501,29 @@
     </office>
     <entity type="Tambon" name="พระยืน" english="Phra Yuen" geocode="400301" >
       <office type="TAOOffice">
-        <url>http://202.143.137.100/phrayuenkk/</url>
+        <url status="offline">http://202.143.137.100/phrayuenkk/</url>
+        <officials>
+          <official title="TAOMayor" name="สุนัน แสนธนู" endyear="2012"/>
+        </officials>
+        <!--<history>
+          <rename name="พระยืนมิ่งมงคล" english="Phra Yuen Ming Mongkhon" oldname="พระยืน" oldenglish="Phra Yuen" effective="2012-04-27" comment="Renamed with upgrade"/>
+        </history>-->
       </office>
+      <entity type="Muban" geocode="40030101" name="บ้านพระยืน" english="Ban Phra Yuen"/>
       <entity type="Muban" geocode="40030102" name="บ้านหัวบึง" english="Ban Hua Bueng"/>
-
+      <entity type="Muban" geocode="40030103" name="บ้านนาล้อม" english="Ban Na Lom"/>
+      <entity type="Muban" geocode="40030104" name="บ้านนาล้อม" english="Ban Na Lom"/>
+      <entity type="Muban" geocode="40030105" name="บ้านหนองคู" english="Ban Nong Khu"/>
+      <entity type="Muban" geocode="40030106" name="บ้านป่าหม้อ" english="Ban Pa Mo"/>
       <entity type="Muban" geocode="40030107" name="บ้านหินเหิบ" english="Ban Hin Hoep"/>
-
+      <entity type="Muban" geocode="40030108" name="บ้านแก่นประดู่" english="Ban Kaen Pradu"/>
+      <entity type="Muban" geocode="40030109" name="บ้านป่าส่าน" english="Ban Pa Sam"/>
+      <entity type="Muban" geocode="40030110" name="บ้านป่าส่าน" english="Ban Pa Sam"/>
+      <entity type="Muban" geocode="40030111" name="บ้านป่าหม้อ" english="Ban Pa Mo"/>
+      <entity type="Muban" geocode="40030112" name="บ้านโนนบ่อ" english="Ban Non Bo"/>
+      <entity type="Muban" geocode="40030113" name="บ้านศิลาทิพย์" english="Ban Sila Thip"/>
+      <entity type="Muban" geocode="40030114" name="บ้านพระยืน" english="Ban Phra Yuen"/>
+      <entity type="Muban" geocode="40030115" name="บ้านโนนบ่อ" english="Ban Non Bo"/>
       <entity type="Muban" geocode="40030116" name="บ้านหินเหิบ" english="Ban Hin Hoep"/>
       <entity type="Muban" geocode="40030117" name="บ้านหัวบึง" english="Ban Hua Bueng"/>
     </entity>
@@ -534,10 +551,11 @@
     <entity type="Tambon" name="บ้านโต้น" english="Ban Ton" geocode="400303" >
       <entity type="Muban" geocode="40030301" name="บ้านโต้น" english="Ban Ton"/>
       <entity type="Muban" geocode="40030302" name="บ้านโต้น" english="Ban Ton"/>
-
+      <entity type="Muban" geocode="40030303" name="บ้านโจดใหญ่" english="Ban Chot Yai"/>
+      <entity type="Muban" geocode="40030304" name="บ้านดงเก่า " english="Ban Dong Kao"/>
       <entity type="Muban" geocode="40030305" name="บ้านดงกลาง" english="Ban Dong Klang"/>
-
-      <entity type="Muban" geocode="40030307" name="บ้านดงกลาง" english="Ban Dong Klang"/>
+      <entity type="Muban" geocode="40030306" name="บ้านดงกลาง" english="Ban Dong Klang"/>
+      <entity type="Muban" geocode="40030307" name="บ้านหินกอง" english="Ban Hin Kong"/>
       <entity type="Muban" geocode="40030308" name="บ้านโต้น" english="Ban Ton"/>
       <entity type="Muban" geocode="40030309" name="บ้านโต้น" english="Ban Ton"/>
     </entity>
@@ -548,6 +566,86 @@
           <official title="TAOMayor" name="ไสว เบ้าจรรยา" inoffice="2010"/>
         </officials>
       </office>
+      <entity type="Muban" geocode="40030401" name="บ้านหนองแวง" english="Ban Nong Waeng"/>
+      <entity type="Muban" geocode="40030402" name="บ้านหนองโพธิ์" english="Ban Nong Pho">
+        <!-- 
+        1. พ่อใหญ่ลุน ไม่มีนามสกุล 2423-2426
+        2. พ่อใหญ่ขันตี ขันหนองโพธิ์ 2426-2454
+        3. พ่อใหญ่นน พุดดี 2454-2476
+        4. พ่อใหญ่สีหาพล ศรีชินเลิศ 2476-2482
+        5. พ่อใหญ่สี ปุริศักดิ์ 2482-2484
+        6. พ่อใหญ่ยา วันนุรักษ์ 2484-2490
+        7. พ่อใหญ่สม กนญารัต 2490-2491
+        8. พ่อใหญ่ยา วันนุรักษ์ 2491-2495
+        9. พ่อใหญ่หนู มาป้อง 2495-2497
+        10. พ่อใหญ่บุญตา วันนุรักษ์ 2497-2501
+        11. พ่อใหญ่ประสิทธิ์ จำปาหอม 2501-2508
+        12. พ่อใหญ่วึม จ้ำหนองโพธิ์ 2508-2514
+        
+        1. ผู้ใหญ่อุบล สุภธีระ 2514-2522
+        2. ผู้ใหญ่ทองอินทร์ ศรีสิงค์ 2522-2532
+        3. ผู้ใหญ่อุบล สุภธีระ 2532-2541
+        Split of Muban
+        1. ผู้ใหญ่อุบล สุภธีระ 2514-2522
+        2. ผู้ใหญ่บัวลา จ้ำหนองโพธิ์ 2522-2532
+        3. ผู้ใหญ่ประสงค์ พลหนุ่ย 2532-2541
+        -->
+      </entity>
+      <entity type="Muban" geocode="40030403" name="บ้านหนองหญ้าข้าวนก" english="Ban Nong Ya Khao Nok">
+        <!-- 
+        1. นายหมั่น ขันคำ พ.ศ. 2468 - 2473
+        2. นายบริบาล พหลทัพ พ.ศ. 2473 - 2480
+        3. นายหา คำสอนทา พ.ศ. 2480 - 2495
+        4. นายลัง นาโสมภักดิ์ พ.ศ. 2495 - 2519
+        5. นายมณี คำสมศรี พ.ศ. 2519 - 2533
+        6. นายอิทธิพล พหลทัพ พ.ศ. 2533 - 2539
+        7. นายจรูญ จ่ายนอก พ.ศ. 2539 - 2544 (หมู่ที่ 3)
+        8. นายเบ็ญจ์ คำสอนทา พ.ศ. 2544 - ปัจจุบัน (หมู่ที่ 3)
+        -->
+      </entity>
+      <entity type="Muban" geocode="40030404" name="บ้านโนนตุ่น" english="Ban Non Tun">
+        <!-- 
+        1. นายสม นามมุงคุณ พ.ศ. 2457 - 2464
+        2. นายที้ ขิมพิมพ์ พ.ศ. 2464 - 2481
+        3. นายชาน หายยะ พ.ศ. 2481 - 2490
+        4. นายตู้ เหง้ามูล พ.ศ. 2490 - 2498
+        5. นายจันทร์ วิชาราช พ.ศ. 2498 - 2516
+        6. นายจรัญ อุดุมพงษ์ พ.ศ. 2516 - 2523
+        7. นายทองขัน โปร่งจิต พ.ศ. 2523 - 2541
+        8. นายชะฎา กองหาโคตร พ.ศ. 2541 - 2547
+        9. นายบุญเรือง ประกอบดี พ.ศ. 2547 - ปัจจุบ        
+        -->
+      </entity>
+      <entity type="Muban" geocode="40030405" name="บ้านหนองจิก" english="Ban Nong Chik">
+        <!-- 
+        1 นายอ่อน ภักดีปัญญา พ.ศ. 2456 - 2463
+        2. นายพรม ด้วงทา พ.ศ. 2463 - 2467
+        3. นายเคน เงาะปก พ.ศ. 2467 - 2470
+        4. นายฮอง สุณทอง พ.ศ. 2470 - 2474
+        5. นายสมบูรณ์ โสมี พ.ศ. 2474 - 2485
+        6. นายเฮียง โฟฟูม พ.ศ. 2485 - 2496
+        7. นายทอง แก้วเฮียง พ.ศ. 2496 - 2500
+        8. นายแหวน โสทอง พ.ศ. 2500 - 2516
+        9. นายพรม นามมุงคุณ พ.ศ. 2516 - 2533
+        10. นายมะลิ มาป้อง พ.ศ. 2533 - 2536
+        11. นายอนงค์ หัดโนนตุ่น พ.ศ. 2536 - 2538
+        12. นายพรชัย มาคะวงศ์ พ.ศ. 2539 - 2542
+        13. นายสุพล ดอนใหญ่ พ.ศ. 2543 - 2548        
+        -->
+      </entity>
+      <entity type="Muban" geocode="40030406" name="บ้านหนองหญ้าข้าวนก" english="Ban Nong Ya Khao Nok" comment="Split from Mu 3 in 1993">
+        <!-- 
+        1. นายไสว เบ้าจรรยา พ.ศ. 2539 - 2548 (หมู่ที่ 6)
+        2. นางอุทิน ชนะบัว พ.ศ. 2548 - ปัจจุบัน (หมู่ที่ 6) 
+        -->
+      </entity>
+      <entity type="Muban" geocode="40030407" name="บ้านหนองแวง" english="Ban Nong Waeng"/>
+      <entity type="Muban" geocode="40030408" name="บ้านหนองโพธิ์" english="Ban Nong Pho" comment="Split from Mu 2 in 1998">
+        <!-- 
+        1. ผู้ใหญ่เข้มแข็ง ละครชัย 2541-2543
+        2. ผู้ใหญ่สำอางค์ จ้ำหนองโพธิ์ 2543-ปัจจุบัน
+        -->
+      </entity>
     </entity>
     <entity type="Tambon" name="ขามป้อม" english="Kham Pom" geocode="400305" >
       <office type="TAOOffice">
@@ -1694,7 +1792,7 @@
       <entity type="Muban" geocode="40130202" name="บ้านหนองแดง" english="Ban Nong Daeng"/>
       <entity type="Muban" geocode="40130203" name="บ้านดอนหัน" english="Ban Don Han"/>
       <entity type="Muban" geocode="40130204" name="บ้านโนนจันทึก" english="Ban Non Chanthuek"/>
-      <entity type="Muban" geocode="40130205" name="บ้านโจดใหญ่" english="Ban Chok Yai"/>
+      <entity type="Muban" geocode="40130205" name="บ้านโจดใหญ่" english="Ban Chot Yai"/>
       <entity type="Muban" geocode="40130206" name="บ้านโสกไผ่" english="Ban Sok Phai"/>
       <entity type="Muban" geocode="40130207" name="บ้านถลุงเหล็ก" english="Ban Thalung Lek"/>
       <entity type="Muban" geocode="40130208" name="บ้านหนองทุ่ม" english="Ban Nong Thum"/>
@@ -2136,7 +2234,7 @@
       <entity type="Muban" geocode="40170107" name="บ้านโจด" english="Ban Chok"/>
       <entity type="Muban" geocode="40170108" name="บ้านดอนยูง" english="Ban Don Yung"/>
       <entity type="Muban" geocode="40170109" name="บ้านเขวา" english="Ban Khwao"/>
-      <entity type="Muban" geocode="40170110" name="บ้านหนองหญ้าข้าวนก" english="Ban Nong Ya Khao Mok"/>
+      <entity type="Muban" geocode="40170110" name="บ้านหนองหญ้าข้าวนก" english="Ban Nong Ya Khao Nok"/>
       <entity type="Muban" geocode="40170111" name="บ้านหนองขาม" english="Ban Nong Kham"/>
       <entity type="Muban" geocode="40170112" name="บ้านหนองม่วง" english="Ban Nong Muang"/>
       <entity type="Muban" geocode="40170113" name="บ้านหัน" english="Ban Han"/>
@@ -2886,6 +2984,10 @@
         <geo:lat>16.3371</geo:lat>
         <geo:long>102.6608</geo:long>
       </geo:Point>
+      <url lastchecked="2012-05-09">http://www.phrayuen.go.th/</url>
+      <officials>
+        <official title="Mayor" name="อัมพร แสนธนู" inoffice="2011"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ดอนโมง" english="Don Mong" geocode="4091" parent="4004" >
