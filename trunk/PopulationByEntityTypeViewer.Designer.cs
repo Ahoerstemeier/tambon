@@ -47,10 +47,11 @@
             this.columnGeocode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnChange = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnChangePercent = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtStatistics = new System.Windows.Forms.TextBox();
             this.chkCompare = new System.Windows.Forms.CheckBox();
             this.edtCompareYear = new System.Windows.Forms.NumericUpDown();
-            this.columnChangePercent = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnCsvAllYears = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grpData)).BeginInit();
             this.grpData.Panel1.SuspendLayout();
             this.grpData.Panel2.SuspendLayout();
@@ -280,6 +281,10 @@
             // 
             this.columnChange.Text = "Change";
             // 
+            // columnChangePercent
+            // 
+            this.columnChangePercent.Text = "Percentage";
+            // 
             // txtStatistics
             // 
             this.txtStatistics.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -313,15 +318,22 @@
             this.edtCompareYear.TabIndex = 25;
             this.edtCompareYear.ValueChanged += new System.EventHandler(this.edtCompareYear_ValueChanged);
             // 
-            // columnChangePercent
+            // btnCsvAllYears
             // 
-            this.columnChangePercent.Text = "Percentage";
+            this.btnCsvAllYears.Location = new System.Drawing.Point(555, 361);
+            this.btnCsvAllYears.Name = "btnCsvAllYears";
+            this.btnCsvAllYears.Size = new System.Drawing.Size(91, 23);
+            this.btnCsvAllYears.TabIndex = 26;
+            this.btnCsvAllYears.Text = "CSV All Years";
+            this.btnCsvAllYears.UseVisualStyleBackColor = true;
+            this.btnCsvAllYears.Click += new System.EventHandler(this.btnCsvAllYears_Click);
             // 
             // PopulationByEntityTypeViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 391);
+            this.Controls.Add(this.btnCsvAllYears);
             this.Controls.Add(this.edtCompareYear);
             this.Controls.Add(this.chkCompare);
             this.Controls.Add(this.grpData);
@@ -377,5 +389,6 @@
         private System.Windows.Forms.CheckBox chkCompare;
         private System.Windows.Forms.NumericUpDown edtCompareYear;
         private System.Windows.Forms.ColumnHeader columnChangePercent;
+        private System.Windows.Forms.Button btnCsvAllYears;
     }
 }

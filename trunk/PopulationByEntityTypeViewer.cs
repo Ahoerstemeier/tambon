@@ -300,5 +300,43 @@ namespace De.AHoerstemeier.Tambon
         {
             UpdateList();
         }
+
+        private void btnCsvAllYears_Click(object sender, EventArgs e)
+        {
+            const Char csvCharacter = ',';
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "CSV Files|*.csv|All files|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Dictionary<Int32, PopulationDataEntry> dataByYear = new Dictionary<Int32, PopulationDataEntry>();
+                for (Int32 year = TambonHelper.PopulationStatisticMinYear; year < TambonHelper.PopulationStatisticMaxYear; year++)
+                {
+                    dataByYear[year] = TambonHelper.GetCountryPopulationData(year);
+                }
+                StreamWriter fileWriter = new StreamWriter(dialog.FileName);
+                var list = CalculateList();
+                foreach (PopulationDataEntry entity in list)
+                {
+                    fileWriter.Write(entity.Name);
+                    fileWriter.Write(csvCharacter);
+                    fileWriter.Write(entity.English);
+                    fileWriter.Write(csvCharacter);
+                    fileWriter.Write(entity.Geocode.ToString(CultureInfo.InvariantCulture));
+
+                    for (Int32 year = TambonHelper.PopulationStatisticMinYear; year < TambonHelper.PopulationStatisticMaxYear; year++)
+                    {
+                        var data = dataByYear[year];
+                        PopulationDataEntry entityEntryOfYear = data.FindByCode(entity.Geocode);
+                        fileWriter.Write(csvCharacter);
+                        if (entityEntryOfYear != null)
+                        {
+                            fileWriter.Write(entityEntryOfYear.Total.ToString(CultureInfo.InvariantCulture));
+                        }
+                    }
+                    fileWriter.WriteLine();
+                }
+                fileWriter.Close();
+            }
+        }
     }
 }
