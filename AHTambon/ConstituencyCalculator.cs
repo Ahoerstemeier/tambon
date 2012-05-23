@@ -13,63 +13,63 @@ namespace De.AHoerstemeier.Tambon
         #endregion
 
         #region methods
-        public static Dictionary<PopulationDataEntry, Int32> Calculate(Int32 iParentGeocode, Int32 iYear, Int32 iNumberOfSeats)
+        public static Dictionary<PopulationDataEntry, Int32> Calculate(Int32 parentGeocode, Int32 year, Int32 numberOfSeats)
         {
             Dictionary<PopulationDataEntry, Int32> retval = null;
 
-            PopulationData lDownloader = new PopulationData(iYear, iParentGeocode);
-            lDownloader.Process();
-            retval = Calculate(lDownloader.Data, iYear, iNumberOfSeats);
+            PopulationData downloader = new PopulationData(year, parentGeocode);
+            downloader.Process();
+            retval = Calculate(downloader.Data, year, numberOfSeats);
             return retval;
         }
-        public static Dictionary<PopulationDataEntry, Int32> Calculate(PopulationDataEntry iData, Int32 iYear, Int32 iNumberOfSeats)
+        public static Dictionary<PopulationDataEntry, Int32> Calculate(PopulationDataEntry data, Int32 year, Int32 numberOfSeats)
         {
-            Dictionary<PopulationDataEntry, Int32> retval = new Dictionary<PopulationDataEntry, Int32>();
+            Dictionary<PopulationDataEntry, Int32> result = new Dictionary<PopulationDataEntry, Int32>();
 
-            Int32 lTotalPopulation = 0;
-            foreach (PopulationDataEntry lEntry in iData.SubEntities)
+            Int32 totalPopulation = 0;
+            foreach (PopulationDataEntry entry in data.SubEntities)
             {
-                if (lEntry != null)
+                if (entry != null)
                 {
-                    retval.Add(lEntry, 0);
-                    lTotalPopulation += lEntry.Total;
+                    result.Add(entry, 0);
+                    totalPopulation += entry.Total;
                 }
             }
-            double lDivisor = (1.0*iNumberOfSeats) / (1.0*lTotalPopulation);
-            Int32 lRemainingSeat = iNumberOfSeats;
-            Dictionary<PopulationDataEntry, double> lRemainder = new Dictionary<PopulationDataEntry, double>();
-            foreach (PopulationDataEntry lEntry in iData.SubEntities)
+            double divisor = (1.0*numberOfSeats) / (1.0*totalPopulation);
+            Int32 remainingSeat = numberOfSeats;
+            Dictionary<PopulationDataEntry, double> remainder = new Dictionary<PopulationDataEntry, double>();
+            foreach (PopulationDataEntry entry in data.SubEntities)
             {
-                if (lEntry != null)
+                if (entry != null)
                 {
-                    double lSeats = lEntry.Total * lDivisor;
-                    Int32 lActualSeats = Math.Max(1, Convert.ToInt32(Math.Truncate(lSeats)));
-                    retval[lEntry] = lActualSeats;
-                    lRemainingSeat -= lActualSeats;
-                    double lRemainingValue = lSeats - lActualSeats;
-                    lRemainder.Add(lEntry, lRemainingValue);
+                    double seats = entry.Total * divisor;
+                    Int32 actualSeats = Math.Max(1, Convert.ToInt32(Math.Truncate(seats)));
+                    result[entry] = actualSeats;
+                    remainingSeat -= actualSeats;
+                    double remainingValue = seats - actualSeats;
+                    remainder.Add(entry, remainingValue);
                 }
             }
 
-            List<PopulationDataEntry> lSortedRemainders = new List<PopulationDataEntry>();
-            foreach (PopulationDataEntry lEntry in iData.SubEntities)
+            List<PopulationDataEntry> sortedRemainders = new List<PopulationDataEntry>();
+            foreach (PopulationDataEntry entry in data.SubEntities)
             {
-                if (lEntry != null)
+                if (entry != null)
                 {
-                    lSortedRemainders.Add(lEntry);
+                    sortedRemainders.Add(entry);
                 }
             }
-            lSortedRemainders.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return lRemainder[p2].CompareTo(lRemainder[p1]); });
+            sortedRemainders.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return remainder[p2].CompareTo(remainder[p1]); });
 
-            while (lRemainingSeat > 0)
+            while (remainingSeat > 0)
             {
-                PopulationDataEntry lFirst = lSortedRemainders.First();
-                retval[lFirst] += 1;
-                lRemainingSeat -= 1;
-                lSortedRemainders.Remove(lFirst);
+                PopulationDataEntry first = sortedRemainders.First();
+                result[first] += 1;
+                remainingSeat -= 1;
+                sortedRemainders.Remove(first);
             }
 
-            return retval;
+            return result;
         }
         #endregion
     }

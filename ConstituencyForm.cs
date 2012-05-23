@@ -14,20 +14,20 @@ namespace De.AHoerstemeier.Tambon
 {
     public partial class ConstituencyForm : Form
     {
-        private Dictionary<Int32, PopulationDataEntry> mDownloadedData = new Dictionary<int, PopulationDataEntry>();
-        private Dictionary<PopulationDataEntry, Int32> mLastCalculation = null;
+        private Dictionary<Int32, PopulationDataEntry> _downloadedData = new Dictionary<int, PopulationDataEntry>();
+        private Dictionary<PopulationDataEntry, Int32> _lastCalculation = null;
 
         public ConstituencyForm()
         {
             InitializeComponent();
         }
 
-        private void rbxProvince_CheckedChanged(object sender, EventArgs e)
+        private void rbxProvince_CheckedChanged(Object sender, EventArgs e)
         {
             cbxProvince.Enabled = rbxProvince.Checked;
         }
 
-        private void ConstituencyForm_Load(object sender, EventArgs e)
+        private void ConstituencyForm_Load(Object sender, EventArgs e)
         {
             edtYear.Maximum = TambonHelper.PopulationStatisticMaxYear;
             edtYear.Minimum = TambonHelper.PopulationStatisticMinYear;
@@ -36,19 +36,19 @@ namespace De.AHoerstemeier.Tambon
             TambonHelper.LoadGeocodeList();
 
             cbxProvince.Items.Clear();
-            foreach ( PopulationDataEntry lEntry in TambonHelper.ProvinceGeocodes )
+            foreach ( PopulationDataEntry entry in TambonHelper.ProvinceGeocodes )
             {
-                cbxProvince.Items.Add(lEntry);
-                if ( lEntry.Geocode == TambonHelper.PreferredProvinceGeocode )
+                cbxProvince.Items.Add(entry);
+                if ( entry.Geocode == TambonHelper.PreferredProvinceGeocode )
                 {
-                    cbxProvince.SelectedItem = lEntry;
+                    cbxProvince.SelectedItem = entry;
                 }
             }
 
             cbxRegion.Items.Clear();
-            foreach ( String lRegionScheme in TambonHelper.RegionSchemes() )
+            foreach ( String regionScheme in TambonHelper.RegionSchemes() )
             {
-                cbxRegion.Items.Add(lRegionScheme);
+                cbxRegion.Items.Add(regionScheme);
             }
             if ( cbxRegion.Items.Count > 0 )
             {
@@ -56,119 +56,125 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        private PopulationDataEntry GetPopulationDataFromCache(Int32 iYear)
+        private PopulationDataEntry GetPopulationDataFromCache(Int32 year)
         {
-            PopulationDataEntry lData = null;
-            if ( mDownloadedData.Keys.Contains(iYear) )
+            PopulationDataEntry data = null;
+            if ( _downloadedData.Keys.Contains(year) )
             {
-                lData = mDownloadedData[iYear];
-                lData = (PopulationDataEntry)lData.Clone();
+                data = _downloadedData[year];
+                data = (PopulationDataEntry)data.Clone();
             }
-            return lData;
+            return data;
         }
-        private PopulationDataEntry GetPopulationData(Int32 iYear)
+        private PopulationDataEntry GetPopulationData(Int32 year)
         {
-            PopulationDataEntry lData = GetPopulationDataFromCache(iYear);
-            if ( lData == null )
+            PopulationDataEntry data = GetPopulationDataFromCache(year);
+            if ( data == null )
             {
-                PopulationData lDownloader = new PopulationData(iYear, 0);
-                lDownloader.Process();
-                lData = lDownloader.Data;
-                StorePopulationDataToCache(lData, iYear);
+                PopulationData downloader = new PopulationData(year, 0);
+                downloader.Process();
+                data = downloader.Data;
+                StorePopulationDataToCache(data, year);
             }
-            return lData;
+            return data;
         }
 
-        private void StorePopulationDataToCache(PopulationDataEntry iData, Int32 iYear)
+        private void StorePopulationDataToCache(PopulationDataEntry data, Int32 year)
         {
-            mDownloadedData[iYear] = (PopulationDataEntry)iData.Clone();
+            _downloadedData[year] = (PopulationDataEntry)data.Clone();
         }
 
-        private void btnCalc_Click(object sender, EventArgs e)
+        private void btnCalc_Click(Object sender, EventArgs e)
         {
-            Int32 lYear = Convert.ToInt32(edtYear.Value);
-            Int32 lNumberOfConstituencies = Convert.ToInt32(edtNumberOfConstituencies.Value);
-            Int32 lGeocode = 0;
-            PopulationDataEntry lData = null;
+            Int32 year = Convert.ToInt32(edtYear.Value);
+            Int32 numberOfConstituencies = Convert.ToInt32(edtNumberOfConstituencies.Value);
+            Int32 geocode = 0;
+            PopulationDataEntry data = null;
             if ( rbxNational.Checked )
             {
-                lData = GetPopulationData(lYear);
+                data = GetPopulationData(year);
             }
             if ( rbxProvince.Checked )
             {
-                var lProvince = (PopulationDataEntry)cbxProvince.SelectedItem;
-                lGeocode = lProvince.Geocode;
-                PopulationData lDownloader = new PopulationData(lYear, lGeocode);
-                lDownloader.Process();
+                var province = (PopulationDataEntry)cbxProvince.SelectedItem;
+                geocode = province.Geocode;
+                PopulationData downloader = new PopulationData(year, geocode);
+                downloader.Process();
 
-                lData = lDownloader.Data;
+                data = downloader.Data;
             }
 
             if ( rbxNational.Checked && chkBuengKan.Checked )
             {
-                ModifyPopulationDataForBuengKan(lData);
+                ModifyPopulationDataForBuengKan(data);
             }
+            data.SortSubEntitiesByEnglishName();
 
-            Dictionary<PopulationDataEntry, Int32> lResult = ConstituencyCalculator.Calculate(lData, lYear, lNumberOfConstituencies);
+            Dictionary<PopulationDataEntry, Int32> result = ConstituencyCalculator.Calculate(data, year, numberOfConstituencies);
 
             if ( chkRegions.Checked )
             {
-                List<PopulationDataEntry> lRegions = TambonHelper.GetRegionBySchemeName(cbxRegion.Text);
-                Dictionary<PopulationDataEntry, Int32> lRegionResult = new Dictionary<PopulationDataEntry, Int32>();
-                foreach ( PopulationDataEntry lRegion in lRegions )
+                List<PopulationDataEntry> regions = TambonHelper.GetRegionBySchemeName(cbxRegion.Text);
+                Dictionary<PopulationDataEntry, Int32> regionResult = new Dictionary<PopulationDataEntry, Int32>();
+                foreach ( PopulationDataEntry region in regions )
                 {
-                    Int32 lConstituencies = 0;
-                    List<PopulationDataEntry> lSub = new List<PopulationDataEntry>();
-                    foreach ( PopulationDataEntry lProvince in lRegion.SubEntities )
+                    Int32 constituencies = 0;
+                    List<PopulationDataEntry> subList = new List<PopulationDataEntry>();
+                    foreach ( PopulationDataEntry province in region.SubEntities )
                     {
-                        PopulationDataEntry lFound = lData.FindByCode(lProvince.Geocode);
-                        if ( lFound != null )
+                        PopulationDataEntry foundEntry = data.FindByCode(province.Geocode);
+                        if ( foundEntry != null )
                         {
-                            lConstituencies = lConstituencies + lResult[lFound];
-                            lSub.Add(lFound);
+                            constituencies = constituencies + result[foundEntry];
+                            subList.Add(foundEntry);
                         }
                     }
-                    lRegion.SubEntities.Clear();
-                    lRegion.SubEntities.AddRange(lSub);
-                    lRegion.CalculateNumbersFromSubEntities();
-                    lRegionResult.Add(lRegion, lConstituencies);
+                    region.SubEntities.Clear();
+                    region.SubEntities.AddRange(subList);
+                    region.CalculateNumbersFromSubEntities();
+                    regionResult.Add(region, constituencies);
                 }
-                lResult = lRegionResult;
+                result = regionResult;
             }
 
-            String lDisplayResult = String.Empty;
-            foreach ( KeyValuePair<PopulationDataEntry, Int32> lEntry in lResult )
+            String displayResult = String.Empty;
+            foreach ( KeyValuePair<PopulationDataEntry, Int32> entry in result )
             {
-                Int32 lVotersPerSeat = 0;
-                if ( lEntry.Value != 0 )
+                Int32 votersPerSeat = 0;
+                if ( entry.Value != 0 )
                 {
-                    lVotersPerSeat = lEntry.Key.Total / lEntry.Value;
+                    votersPerSeat = entry.Key.Total / entry.Value;
                 }
-                lDisplayResult = lDisplayResult + lEntry.Key.English + " " + lEntry.Value.ToString() + " (" + lVotersPerSeat.ToString() + " per seat)" + Environment.NewLine;
+                displayResult = displayResult +
+                    String.Format("{0} {1} ({2} per seat)", entry.Key.English, entry.Value, votersPerSeat) + Environment.NewLine;
             }
-            txtData.Text = lDisplayResult;
-            mLastCalculation = lResult;
+            txtData.Text = displayResult;
+            _lastCalculation = result;
             btnSaveCsv.Enabled = true;
         }
 
-        private static void ModifyPopulationDataForBuengKan(PopulationDataEntry lData)
+        private static void ModifyPopulationDataForBuengKan(PopulationDataEntry data)
         {
-            PopulationDataEntry lBuengKan = new PopulationDataEntry();
-            lBuengKan.English = "Bueng Kan";
-            lBuengKan.Geocode = 38;
-            List<Int32> lBuengKanAmphoeCodes = new List<int>() { 4313, 4311, 4309, 4312, 4303, 4306, 4310, 4304 };
-            PopulationDataEntry lNongKhai = lData.FindByCode(43);
-            foreach ( Int32 lCode in lBuengKanAmphoeCodes )
+            PopulationDataEntry buengKan = data.FindByCode(38);
+            if ( buengKan == null )
             {
-                PopulationDataEntry lEntry = lNongKhai.FindByCode(lCode);
-                lBuengKan.SubEntities.Add(lEntry);
-                lNongKhai.SubEntities.Remove(lEntry);
+                buengKan = new PopulationDataEntry();
+                buengKan.English = "Bueng Kan";
+                buengKan.Geocode = 38;
+                List<Int32> buengKanAmphoeCodes = new List<int>() { 4313, 4311, 4309, 4312, 4303, 4306, 4310, 4304 };
+                data.SubEntities.RemoveAll(p => p == null);
+                PopulationDataEntry nongKhai = data.FindByCode(43);
+                foreach ( Int32 code in buengKanAmphoeCodes )
+                {
+                    PopulationDataEntry entry = nongKhai.FindByCode(code);
+                    buengKan.SubEntities.Add(entry);
+                    nongKhai.SubEntities.Remove(entry);
+                }
+                nongKhai.CalculateNumbersFromSubEntities();
+                buengKan.CalculateNumbersFromSubEntities();
+                data.SubEntities.Add(buengKan);
+                data.CalculateNumbersFromSubEntities();
             }
-            lNongKhai.CalculateNumbersFromSubEntities();
-            lBuengKan.CalculateNumbersFromSubEntities();
-            lData.SubEntities.Add(lBuengKan);
-            lData.CalculateNumbersFromSubEntities();
-            lData.SortSubEntitiesByGeocode();
         }
 
         private void rbxNational_CheckedChanged(object sender, EventArgs e)
@@ -184,11 +190,11 @@ namespace De.AHoerstemeier.Tambon
 
         private void btnSaveCsv_Click(object sender, EventArgs e)
         {
-            Debug.Assert(mLastCalculation != null);
+            Debug.Assert(_lastCalculation != null);
 
             StringBuilder lBuilder = new StringBuilder();
 
-            foreach ( KeyValuePair<PopulationDataEntry, Int32> lEntry in mLastCalculation )
+            foreach ( KeyValuePair<PopulationDataEntry, Int32> lEntry in _lastCalculation )
             {
                 Int32 lVotersPerSeat = 0;
                 if ( lEntry.Value != 0 )
@@ -211,51 +217,53 @@ namespace De.AHoerstemeier.Tambon
 
         }
 
-        private void btnLoadConstituencyXml_Click(object sender, EventArgs e)
+        private void btnLoadConstituencyXml_Click(Object sender, EventArgs e)
         {
-            OpenFileDialog lDlg = new OpenFileDialog();
-            lDlg.Filter = "XML Files|*.xml|All files|*.*";
-            if ( lDlg.ShowDialog() == DialogResult.OK )
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "XML Files|*.xml|All files|*.*";
+            if ( openDialog.ShowDialog() == DialogResult.OK )
             {
-                PopulationData lData = null;
-                StreamReader lReader = null;
+                PopulationData data = null;
+                StreamReader reader = null;
                 try
                 {
 
-                    lReader = new StreamReader(lDlg.FileName);
-                    XmlDocument lXmlDoc = new XmlDocument();
-                    lXmlDoc.LoadXml(lReader.ReadToEnd());
-                    foreach ( XmlNode lNode in lXmlDoc.ChildNodes )
+                    reader = new StreamReader(openDialog.FileName);
+                    XmlDocument xmlDoc = new XmlDocument();
+                    xmlDoc.LoadXml(reader.ReadToEnd());
+                    foreach ( XmlNode node in xmlDoc.ChildNodes )
                     {
-                        if ( lNode.Name == "electiondata" )
+                        if ( node.Name == "electiondata" )
                         {
-                            lData = PopulationData.Load(lNode);
+                            data = PopulationData.Load(node);
                         }
                     }
                 }
                 finally
                 {
-                    if ( lReader != null )
+                    if ( reader != null )
                     {
-                        lReader.Dispose();
+                        reader.Dispose();
                     }
                 }
-                if ( (lData != null) && (lData.Data != null) )
+                if ( (data != null) && (data.Data != null) )
                 {
-                    Int32 lYear = Convert.ToInt32(edtYear.Value);
-                    PopulationDataEntry lDataEntry = GetPopulationData(lYear);
+                    Int32 year = Convert.ToInt32(edtYear.Value);
+                    PopulationDataEntry dataEntry = GetPopulationData(year);
                     if ( rbxNational.Checked && chkBuengKan.Checked )
                     {
-                        ModifyPopulationDataForBuengKan(lDataEntry);
+                        ModifyPopulationDataForBuengKan(dataEntry);
                     }
-                    var lList = lData.Data.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
-                    foreach ( PopulationDataEntry lEntry in lList )
+                    dataEntry.SortSubEntitiesByEnglishName();
+
+                    var entitie = data.Data.FlatList(new List<EntityType>() { EntityType.Bangkok, EntityType.Changwat, EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Khet });
+                    foreach ( PopulationDataEntry entry in entitie )
                     {
-                        lEntry.CopyPopulationToConstituencies(lDataEntry);
+                        entry.CopyPopulationToConstituencies(dataEntry);
                     }
 
-                    ConstituencyStatisticsViewer lDialog = new ConstituencyStatisticsViewer(lData.Data);
-                    lDialog.Show();
+                    ConstituencyStatisticsViewer dialog = new ConstituencyStatisticsViewer(data.Data);
+                    dialog.Show();
                 }
             }
         }
