@@ -67,7 +67,7 @@
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
-    </xs:simpleType>
+  </xs:simpleType>
   <xs:simpleType name="SignByFunction">
     <xs:restriction base="xs:string">
       <xs:enumeration value="PrimeMinister">
@@ -225,21 +225,56 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteOperationBase" abstract="1">
+    <xs:annotation>
+      <xs:documentation>Base gazette operation dealing with an administrative entity.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:EntryActionList">
-        <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="name" type="xs:string" use="optional" />
-        <xs:attribute name="english" type="xs:string" use="optional" />
-        <xs:attribute name="type" type="t:EntityType" use="optional" />
-        <xs:attribute name="owner" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="ownername" type="xs:string" use="optional" />
+        <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode of the entity affected.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Name of the entity affected.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="english" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Romanized name of the entity affected.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="type" type="t:EntityType" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Type of the entity affected.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="owner" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode for parent unit to which the entity belongs.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="ownername" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode for parent unit to which the entity belongs. Used when no geocode can be set.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
 
-        <xs:attribute name="index" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="comment" type="xs:string" use="optional" />
+        <xs:attribute name="index" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Index of the action in the announcement.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="comment" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Special comments.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
 
         <xs:attribute name="tambon" type="xs:unsignedInt" use="optional">
           <xs:annotation>
-            <xs:documentation>Geocode of corresponding Tambon. Used for TAO and former TAO to original main Tambon.</xs:documentation>
+            <xs:documentation>Geocode of corresponding Tambon. Used for TAO and former TAO to identify the original main Tambon.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="parent" type="xs:unsignedInt" use="optional" >
@@ -256,6 +291,9 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteParkBase" abstract="1">
+    <xs:annotation>
+      <xs:documentation>Base gazette operation dealing with a park.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" ref="geo:Point" />
     </xs:sequence>
@@ -271,58 +309,151 @@
     <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
   <xs:complexType name='GazetteReassign'>
+    <xs:annotation>
+      <xs:documentation>Transfer of an administrative entity into a different parent entity.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="newowner" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="newownername" type="xs:string" use="optional" />
-        <xs:attribute name="newownerenglish" type="xs:string" use="optional" />
-        <xs:attribute name="muban" type="xs:unsignedInt" use="optional" />
-        <!-- in case the old owner had no geocode -->
-        <xs:attribute name="oldowner" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="oldownername" type="xs:string" use="optional" />
-        <xs:attribute name="oldmuban" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="oldparent" type="xs:unsignedInt" use="optional" />
+        <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode of the entity before it was transferred.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="newowner" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode of the entity into which the transferred unit was included.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="newownername" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Name of the entity into which the transferred unit was included. Used especially when no geocode could be provided.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="newownerenglish" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>English name of the entity into which the transferred unit was included.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="muban" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Muban number after the transfer. Only applicable when Muban are transferred.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldowner" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode of the entity from which the transferred unit was removed.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldownername" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Name of the entity from which the transferred unit was removed. Used especially when no geocode could be provided.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldmuban" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Muban number before the transfer. Only applicable when Muban are transferred.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldparent" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode of the district which was previously overseeing the minor district. Only applicable for minor districts.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name='GazetteRenumber'>
+    <xs:annotation>
+      <xs:documentation>Change of the number of a Muban.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional" />
+        <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Geocode before the renumber.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name='GazetteAreaChange'>
+    <xs:annotation>
+      <xs:documentation>Change of area of a administrative entity.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="oldarea" type="xs:float" use="optional" />
-        <xs:attribute name="newarea" type="xs:float" use="optional" />
+        <xs:attribute name="oldarea" type="xs:float" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Old area in square kilometer.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="newarea" type="xs:float" use="optional" >
+          <xs:annotation>
+            <xs:documentation>New area in square kilometer.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name='GazetteAreaDefinition'>
+    <xs:annotation>
+      <xs:documentation>Definition of the boundaries of an administrative entity.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="subdivisions" type="xs:int" use="optional" />
-        <xs:attribute name="subdivisiontype" type="t:EntityType" use="optional" />
+        <xs:attribute name="subdivisions" type="xs:int" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Number of subdivisions listed.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="subdivisiontype" type="t:EntityType" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Type of subdivisions listed (usually Muban).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name='GazetteStatusChange'>
+    <xs:annotation>
+      <xs:documentation>Change of the type of the administrative entitiy.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="old" type="t:EntityType" use="required" />
-        <xs:attribute name="new" type="t:EntityType" use="required" />
+        <xs:attribute name="old" type="t:EntityType" use="required" >
+          <xs:annotation>
+            <xs:documentation>Previous type.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="new" type="t:EntityType" use="required" >
+          <xs:annotation>
+            <xs:documentation>New type.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name='GazetteRename'>
+    <xs:annotation>
+      <xs:documentation>Change of name of an administrative entity.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="oldname" type="xs:string" use="required" />
-        <xs:attribute name="oldenglish" type="xs:string" use="optional" />
-        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="oldname" type="xs:string" use="required" >
+          <xs:annotation>
+            <xs:documentation>Old name in Thai.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldenglish" type="xs:string" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Romanized old name.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string" use="required" >
+          <xs:annotation>
+            <xs:documentation>New name in Thai.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -384,7 +515,7 @@
         <xs:sequence>
           <xs:element name="constituencies" type="t:ConstituencyListBase" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
-      </xs:extension>      
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteParkCreate">
