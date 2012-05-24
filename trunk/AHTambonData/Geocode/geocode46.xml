@@ -881,9 +881,9 @@
     <entity type="Tambon" name="ห้วยเม็ก" english="Huai Mek" geocode="460801" >
       <entity type="Muban" geocode="46080101" name="บ้านห้วยเม็ก" english="Ban Huai Mek"/>
 
-      <entity type="Muban" geocode="46080103" name="บ้านหน่อคำ"/>
+      <entity type="Muban" geocode="46080103" name="บ้านหน่อคำ" english="Ban Mo Kham"/>
 
-      <entity type="Muban" geocode="46080110" name="บ้านจันทร์ส่องหล้า"/>
+      <entity type="Muban" geocode="46080110" name="บ้านจันทร์ส่องหล้า" english="Ban Chan Song La"/>
 
       <entity type="Muban" geocode="46080113" name="บ้านห้วยเม็ก" english="Ban Huai Mek"/>
       <entity type="Muban" geocode="46080114" name="บ้านรุ่งอรุณ" english="Ban Rung Arun"/>
@@ -990,11 +990,12 @@
         <geo:lat>16.9226</geo:lat>
         <geo:long>103.6316</geo:long>
       </geo:Point>
-      <officials>
-        <official title="DistrictOfficer" name="เลิศบุศย์ กองทอง" inoffice="2009" comment="2009-06"/>
-
-        <official title="DistrictOfficer" name="บุญเลิศ กองทอง" begin="2007-01-08"/>
-        <official title="DistrictOfficer" name="แพน พรไตรศักดิ์" end="2007-01-07"/>
+      <url lastchecked="2012-05-23">http://www.khammuang.go.th/</url>
+      <officials source="http://www.khammuang.go.th/modules.php?name=Content&amp;pa=showpage&amp;pid=6">
+        <official title="DistrictOfficer" name="สุริยัน หรือโอภาส" inoffice="2012"/>
+        
+        <official index="20" title="DistrictOfficer" name="เลิศบุศย์ กองทอง" begin="2007-01-08"/>
+        <official index="19" title="DistrictOfficer" name="แพน พรไตรศักดิ์" end="2007-01-07"/>
       </officials>
     </office>
     <entity type="Tambon" name="ทุ่งคลอง" english="Thung Khlong" geocode="461001" >
@@ -1773,7 +1774,14 @@
       <url>http://www.nmt.or.th/kalasin/khamyai/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ห้วยเม็ก" english="Huai Mek" geocode="4685" parent="4608" />
+  <entity type="ThesabanTambon" name="ห้วยเม็ก" english="Huai Mek" geocode="4685" parent="4608" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/kalasin/huaimek/</url>
+      <officials>
+        <official title="Mayor" name="ธีระพล ต่างใจเย็น" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="โนนบุรี" english="Non Buri" geocode="4684" parent="4609" >
     <office type="MunicipalityOffice">
       <url>http://www.nonburee.com/</url>
@@ -1781,7 +1789,14 @@
   </entity>
   <entity type="ThesabanTambon" name="คำม่วง" english="Kham Muang" geocode="4683" parent="4610" />
   <entity type="ThesabanTambon" name="โพน" english="Phon" geocode="4682" parent="4610" />
-  <entity type="ThesabanTambon" name="ท่าคันโท" english="Tha Khantho" geocode="4681" parent="4611" />
+  <entity type="ThesabanTambon" name="ท่าคันโท" english="Tha Khantho" geocode="4681" parent="4611" >
+    <office type="MunicipalityOffice">
+      <url>http://www.nmt.or.th/kalasin/thakhantho/</url>
+      <officials>
+        <official title="Mayor" name="ธีระพล ยันตะบุศย์" inoffice="2011"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หนองกุงศรี" english="Nong Kung Si" geocode="4680" parent="4612" >
     <office type="MunicipalityOffice">
       <url>http://www.nongkungsri.go.th/</url>
