@@ -297,6 +297,34 @@
     </xs:attribute>
   </xs:complexType>
 
+  <xs:complexType name='CouncilTerm'>
+    <xs:annotation>
+      <xs:documentation>Term of the council of the administrative entity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="t:OfficialEntry"/>
+      <xs:element name="election" minOccurs="0" maxOccurs="1" type="t:Election"/>
+    </xs:sequence>
+    <xs:attribute name="begin" type="xs:date" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Begin of term.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="end" type="xs:date" use="optional" >
+      <xs:annotation>
+        <xs:documentation>End of term.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name='CouncilList'>
+    <xs:annotation>
+      <xs:documentation>List of council terms of the administrative entity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="term" minOccurs="0" maxOccurs="unbounded" type="t:CouncilTerm"/>
+    </xs:sequence>
+  </xs:complexType>
+
   <xs:complexType name="ThaiAddressVillage">
     <xs:annotation>
       <xs:documentation>Village (Muban) part of address.</xs:documentation>
@@ -412,6 +440,11 @@
       <xs:element minOccurs="0" maxOccurs="1" name="officials" type="t:OfficialList">
         <xs:annotation>
           <xs:documentation>List of office leaders.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="council" type="t:CouncilList">
+        <xs:annotation>
+          <xs:documentation>List of council terms.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="oldlocations" type="t:OldLocation">
