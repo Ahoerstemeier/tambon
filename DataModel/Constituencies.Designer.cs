@@ -218,6 +218,9 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    /// <summary>
+    /// Entity included in the constituency.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -228,6 +231,10 @@ namespace De.AHoerstemeier.Tambon
     {
 
         private List<EntityInExclude> excludeField;
+
+        private byte indexField;
+
+        private bool indexFieldSpecified;
 
         /// <summary>
         /// Creates a new instance of EntityInclude.
@@ -250,8 +257,51 @@ namespace De.AHoerstemeier.Tambon
                 this.excludeField = value;
             }
         }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte index
+        {
+            get
+            {
+                return this.indexField;
+            }
+            set
+            {
+                this.indexField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool indexSpecified
+        {
+            get
+            {
+                return this.indexFieldSpecified;
+            }
+            set
+            {
+                this.indexFieldSpecified = value;
+            }
+        }
     }
 
+    /// <summary>
+    /// Part of the parent entity which is explicitely excluded in the constituency.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1663,6 +1713,9 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    /// <summary>
+    /// Include only the parts of the entities given in the list into the constituency.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1673,6 +1726,10 @@ namespace De.AHoerstemeier.Tambon
     {
 
         private List<EntityInExclude> includeField;
+
+        private byte indexField;
+
+        private bool indexFieldSpecified;
 
         /// <summary>
         /// Creates a new instance of EntityIncludeSub.
@@ -1693,6 +1750,46 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.includeField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte index
+        {
+            get
+            {
+                return this.indexField;
+            }
+            set
+            {
+                this.indexField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool indexSpecified
+        {
+            get
+            {
+                return this.indexFieldSpecified;
+            }
+            set
+            {
+                this.indexFieldSpecified = value;
             }
         }
     }

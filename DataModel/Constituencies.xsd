@@ -84,26 +84,37 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="EntityInExclude">
+    <xs:annotation>
+      <xs:documentation>Part of the parent entity which is explicitely excluded in the constituency.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="EntityInclude">
+    <xs:annotation>
+      <xs:documentation>Entity included in the constituency.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
         <xs:sequence>
           <xs:element type="t:EntityInExclude" name="exclude" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
+        <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="EntityIncludeSub">
+    <xs:annotation>
+      <xs:documentation>Include only the parts of the entities given in the list into the constituency.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
         <xs:sequence>
           <xs:element type="t:EntityInExclude" name="include" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
+        <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -326,19 +337,22 @@
     <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="optional">
       <xs:annotation>
         <xs:documentation>
-          Number of eligible voters (จำนวนผู้มีสิทธิเลือกตั้งในบัญชีรายชื่อ).</xs:documentation>
+          Number of eligible voters (จำนวนผู้มีสิทธิเลือกตั้งในบัญชีรายชื่อ).
+        </xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="optional">
       <xs:annotation>
         <xs:documentation>
-          Number of invalid votes (จำนวนบัตรเสีย).</xs:documentation>
+          Number of invalid votes (จำนวนบัตรเสีย).
+        </xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="optional">
       <xs:annotation>
         <xs:documentation>
-          Number of ballots marked with "no vote" (จำนวนบัตรไม่ประสงค์จะลงคะแนน).</xs:documentation>
+          Number of ballots marked with "no vote" (จำนวนบัตรไม่ประสงค์จะลงคะแนน).
+        </xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="comment" type="xs:string" use="optional"/>
@@ -398,7 +412,7 @@
     <xs:attribute name="date" type="xs:date" use="optional"/>
     <xs:attribute name="type" type="t:ElectionType" use="optional"/>
     <xs:attribute name="reason" type="t:ByElectionReason"/>
-    <xs:attribute name="comment" type="xs:string"/>    
+    <xs:attribute name="comment" type="xs:string"/>
   </xs:complexType>
 
   <xs:complexType name="ReferenceList">
