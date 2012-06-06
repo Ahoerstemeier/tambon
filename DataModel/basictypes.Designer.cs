@@ -537,6 +537,11 @@ namespace De.AHoerstemeier.Tambon
         DeputyMayor,
 
         /// <summary>
+        /// Chairman of the municipal council (ประธานสภาเทศบาล, Prathan Sapha Thesaban).
+        /// </summary>
+        MunicipalityCouncilChairman,
+
+        /// <summary>
         /// Municipal clerk (ปลัดเทศบาล, Palad Thesaban).
         /// </summary>
         MunicipalClerk,
