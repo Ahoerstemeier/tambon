@@ -152,11 +152,14 @@ namespace De.AHoerstemeier.Tambon
 
         private List<MyUri> blogField;
 
+        private List<MyUri> forumField;
+
         /// <summary>
         /// Creates a new instance of SocialWebLinks.
         /// </summary>
         public SocialWebLinks()
         {
+            this.forumField = new List<MyUri>();
             this.blogField = new List<MyUri>();
             this.googleplusField = new SocialWebLink();
             this.twitterField = new SocialWebLink();
@@ -239,6 +242,26 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.blogField = value;
+            }
+        }
+
+        /// <summary>
+        /// Forum URL.
+        /// </summary>
+        /// <value>
+        /// The forum.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("forum", Order = 4)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MyUri> forum
+        {
+            get
+            {
+                return this.forumField;
+            }
+            set
+            {
+                this.forumField = value;
             }
         }
     }
