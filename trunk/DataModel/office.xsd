@@ -204,6 +204,11 @@
           <xs:documentation>Blog URL.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="forum" type="t:MyUri" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Forum URL.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 
