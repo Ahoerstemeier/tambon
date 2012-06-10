@@ -423,8 +423,19 @@
       <entity type="Muban" geocode="41030609" name="บ้านโพธิ์วารี" english="Ban Pho Wari"/>
     </entity>
     <entity type="Tambon" name="โนนหวาย" english="Non Wai" geocode="410307" >
-      <entity type="Muban" geocode="41030704" name="บ้านหนองเม็ก" english="Ban Nong Mek"/>
+      <office type="MunicipalityOffice">
+        <officials>
+          <official title="TAOMayor" name="ทองคูณ สมเพ็ง" endyear="2008"/>
+        </officials>
+      </office>
+      <entity type="Muban" geocode="41030701" name="บ้านโนนหวาย" english="Ban Non Wai"/>
+      <entity type="Muban" geocode="41030702" name="บ้านพังคี" english="Ban Phang Di"/>
 
+      <entity type="Muban" geocode="41030704" name="บ้านหนองเม็ก" english="Ban Nong Mek"/>
+      <entity type="Muban" geocode="41030705" name="บ้านโนนหวายใต้" english="Ban Non Wai Tai"/>
+
+      <entity type="Muban" geocode="41030708" name="บ้านศรีสว่างอารมณ์" english="Ban Si Sawang Arom"/>
+      <entity type="Muban" geocode="41030709" name="บ้านโนนนาคำ" english="Ban Non Na Kham"/>
       <entity type="Muban" geocode="41030710" name="บ้านหนองเม็ก" english="Ban Nong Mek"/>
     </entity>
     <entity type="Tambon" name="หนองวัวซอ" english="Nong Wua So" geocode="410308" />
@@ -860,8 +871,15 @@
       <entity type="Muban" geocode="41061121" name="บ้านศาลา" english="Ban Sala"/>
     </entity>
     <entity type="Tambon" name="ผักตบ" english="Phak Top" geocode="410612" >
-      <office type="TAOOffice">
-        <url>http://www.phaktoblocaladmin.ob.tc/</url>
+      <office type="TAOOffice" comment="To be upgraded to municipality 2012-08-31">
+        <url lastchecked="2012-06-10">http://www.phaktob.go.th/</url>
+        <url status="expired">http://www.phaktoblocaladmin.ob.tc/</url>
+        <officials>
+          <official title="TAOMayor" name="สุรพงษ์ กาญจนกังวานกุล" endyear="2012"/>
+        </officials>
+        <council>
+          <term end="2012-08-30"/>
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="ดอนกลอย" english="Don Kloi" geocode="410613" newgeocode="412303" />
@@ -2637,7 +2655,14 @@
       <url>http://www.nhongwuasore.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="หนองอ้อโนนหวาย" english="Nong O Non Wai" geocode="4187" parent="4103" />
+  <entity type="ThesabanTambon" name="หนองอ้อโนนหวาย" english="Nong O Non Wai" geocode="4187" parent="4103" >
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-06-09">http://nongor-nonwai.net/</url>
+    </office>
+    <history>
+      <rename oldname="หนองอ้อ-โนนหวาย" oldenglish="Nong O - Non Wai" name="ภูผาแดง" english="Phu Pha Daeng" effective="2012-04-05"/>
+    </history>
+  </entity>
   <entity type="ThesabanTambon" name="กุมภวาปี" english="Kumphawapi" geocode="4186" parent="4104" >
     <office type="MunicipalityOffice">
       <url>http://www.kumpawapi.go.th/</url>
