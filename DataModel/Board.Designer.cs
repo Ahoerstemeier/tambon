@@ -134,6 +134,10 @@ namespace De.AHoerstemeier.Tambon
 
         private System.DateTime dateField;
 
+        private System.DateTime timeField;
+
+        private bool timeFieldSpecified;
+
         private string urlField;
 
         /// <summary>
@@ -152,6 +156,7 @@ namespace De.AHoerstemeier.Tambon
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(AbolishOperation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(AreaOperation), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("create", typeof(CreateOperation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(RenameOperation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("renamewat", typeof(RenameWatOperation), Order = 0)]
@@ -211,6 +216,40 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "time")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime time
+        {
+            get
+            {
+                return this.timeField;
+            }
+            set
+            {
+                this.timeField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool timeSpecified
+        {
+            get
+            {
+                return this.timeFieldSpecified;
+            }
+            set
+            {
+                this.timeFieldSpecified = value;
+            }
+        }
+
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "anyURI")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string url
@@ -259,6 +298,7 @@ namespace De.AHoerstemeier.Tambon
     }
 
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(StatusOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CreateOperation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbolishOperation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AreaOperation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RenameWatOperation))]
@@ -557,6 +597,82 @@ namespace De.AHoerstemeier.Tambon
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "CreateOperation", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class CreateOperation : BasicOperation
+    {
+
+        private EntityType typeField;
+
+        private uint ownerField;
+
+        private bool ownerFieldSpecified;
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint owner
+        {
+            get
+            {
+                return this.ownerField;
+            }
+            set
+            {
+                this.ownerField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ownerSpecified
+        {
+            get
+            {
+                return this.ownerFieldSpecified;
+            }
+            set
+            {
+                this.ownerFieldSpecified = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
     [System.Runtime.Serialization.DataContractAttribute(Name = "AreaOperation", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
     public partial class AreaOperation : BasicOperation
     {
@@ -730,6 +846,9 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlEnumAttribute("1,2")]
         Item12,
 
+        /// <summary>
+        /// Board to consider name changes
+        /// </summary>
         rename,
     }
 }
