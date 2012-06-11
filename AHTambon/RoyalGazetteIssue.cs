@@ -5,7 +5,7 @@ using System.Text;
 
 namespace De.AHoerstemeier.Tambon
 {
-    public class RoyalGazetteIssue : IComparable,ICloneable
+    public class RoyalGazetteIssue : IComparable, ICloneable
     {
         static private List<Char> mIssueBookNames = new List<Char>() { 'ก', 'ง', 'ข', 'ค' };
 
@@ -43,38 +43,42 @@ namespace De.AHoerstemeier.Tambon
                 (!String.IsNullOrEmpty(IssuePrefix));
             return !retval;
         }
-        protected void ParseIssue(String iValue)
+        private void ParseIssue(String value)
         {
-            if (!String.IsNullOrEmpty(iValue))
+            if ( !String.IsNullOrEmpty(value) )
             {
-                String lTemp = iValue.Replace("เล่มที่","");
+                String tempValue = value.Replace("เล่มที่", "");
 
                 // Standard format: [พิเศษ] [###] ก [ฉบับพิเศษ]
-                foreach (String lSubString in lTemp.Split(new Char[] { ' ' }))
+                foreach ( String subString in tempValue.Split(new Char[] { ' ' }) )
                 {
-                    if (String.IsNullOrEmpty(lSubString))
+                    if ( String.IsNullOrEmpty(subString) )
                     {
                         // do nothing, just a double space within the source string
                     }
-                    else if (lSubString == "พิเศษ")
+                    else if ( subString == "พิเศษ" )
                     {
-                        IssuePrefix = lSubString;
+                        IssuePrefix = subString;
                     }
-                    else if (lSubString.StartsWith("ฉบับ"))
+                    else if ( subString.StartsWith("ฉบับ") )
                     {
-                        IssuePostfix = lSubString;
+                        IssuePostfix = subString;
                     }
-                    else if (lSubString.Contains('/'))
+                    else if ( subString.StartsWith("***") )
                     {
-                        IssuePostfix = lSubString;
+                        // Strange case, better do nothing then
                     }
-                    else if (mIssueBookNames.Contains(lSubString[0]))
+                    else if ( subString.Contains('/') )
                     {
-                        IssueBook = lSubString[0];
+                        IssuePostfix = subString;
+                    }
+                    else if ( mIssueBookNames.Contains(subString[0]) )
+                    {
+                        IssueBook = subString[0];
                     }
                     else
                     {
-                        IssueNumber = Convert.ToInt32(lSubString);
+                        IssueNumber = Convert.ToInt32(subString);
                     }
                 }
             }
@@ -82,16 +86,16 @@ namespace De.AHoerstemeier.Tambon
         public override String ToString()
         {
             String RetVal = String.Empty;
-            if (!String.IsNullOrEmpty(IssuePrefix))
+            if ( !String.IsNullOrEmpty(IssuePrefix) )
             {
                 RetVal = IssuePrefix + " ";
             }
-            if (IssueNumber >= 0)
+            if ( IssueNumber >= 0 )
             {
                 RetVal = RetVal + IssueNumber.ToString() + " ";
             }
             RetVal = RetVal + IssueBook + " ";
-            if (!String.IsNullOrEmpty(IssuePostfix))
+            if ( !String.IsNullOrEmpty(IssuePostfix) )
             {
                 RetVal = RetVal + IssuePostfix + " ";
             }
@@ -104,18 +108,18 @@ namespace De.AHoerstemeier.Tambon
 
         public int CompareTo(object iOther)
         {
-            if (iOther is RoyalGazetteIssue)
+            if ( iOther is RoyalGazetteIssue )
             {
                 Int32 retval = 0;
                 RoyalGazetteIssue lOther = (RoyalGazetteIssue)iOther;
                 retval = IssueBook.CompareTo(lOther.IssueBook);
-                if (retval == 0)
+                if ( retval == 0 )
                 {
                     retval = IssueNumber.CompareTo(lOther.IssueNumber);
-                    if (retval == 0)
+                    if ( retval == 0 )
                     {
                         retval = String.Compare(IssuePrefix, lOther.IssuePrefix);
-                        if (retval == 0)
+                        if ( retval == 0 )
                         {
                             retval = String.Compare(IssuePostfix, lOther.IssuePostfix);
                         }

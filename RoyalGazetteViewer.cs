@@ -31,13 +31,13 @@ namespace De.AHoerstemeier.Tambon
         private void FillDataTable(RoyalGazetteList iData)
         {
             RoyalGazetteList lData = iData;
-            if (filterToolStripMenuItem.Checked)
+            if ( filterToolStripMenuItem.Checked )
             {
                 lData = lData.FilteredList(TambonHelper.GlobalGazetteList);
             }
 
-            mTable.Rows.Clear();    
-            foreach (RoyalGazette lEntry in lData)
+            mTable.Rows.Clear();
+            foreach ( RoyalGazette lEntry in lData )
             {
                 DataRow lRow = mTable.NewRow();
                 lRow["Description"] = lEntry.Description;
@@ -53,7 +53,7 @@ namespace De.AHoerstemeier.Tambon
                 lRow["Gazette"] = lEntry;
                 mTable.Rows.Add(lRow);
             }
-            grid.DataSource = mTable; 
+            grid.DataSource = mTable;
         }
 
         public RoyalGazetteViewer()
@@ -78,11 +78,11 @@ namespace De.AHoerstemeier.Tambon
         }
         private void SetData(RoyalGazetteList value)
         {
-            if (value != null)
+            if ( value != null )
             {
                 mData = value;
                 FillDataTable(mData);
-                grid.Columns[mTable.Columns.Count-1].Visible = false;
+                grid.Columns[mTable.Columns.Count - 1].Visible = false;
             }
         }
 
@@ -94,7 +94,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if ( e.RowIndex >= 0 )
             {
                 DataGridView lGrid = sender as DataGridView;
                 DataGridViewRow lRow = lGrid.Rows[e.RowIndex];
@@ -106,7 +106,7 @@ namespace De.AHoerstemeier.Tambon
                 // Debug.Assert(lDataRow != null);
 
                 RoyalGazette lGazette = lDataRow["Title"] as RoyalGazette;
-                if (lGazette != null)
+                if ( lGazette != null )
                 {
                     lGazette.ShowPDF();
                 }
@@ -115,7 +115,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void mnuShow_Click(object sender, EventArgs e)
         {
-            foreach (RoyalGazette lGazette in CurrentSelection())
+            foreach ( RoyalGazette lGazette in CurrentSelection() )
             {
                 lGazette.ShowPDF();
             }
@@ -128,7 +128,7 @@ namespace De.AHoerstemeier.Tambon
         private RoyalGazetteList CurrentSelection()
         {
             RoyalGazetteList retval = new RoyalGazetteList();
-            foreach (DataGridViewRow lRow in grid.SelectedRows)
+            foreach ( DataGridViewRow lRow in grid.SelectedRows )
             {
                 DataRowView lRowView = lRow.DataBoundItem as DataRowView;
                 // Debug.Assert(lRowView != null);
@@ -137,7 +137,7 @@ namespace De.AHoerstemeier.Tambon
                 // Debug.Assert(lDataRow != null);
 
                 RoyalGazette lGazette = lDataRow["Title"] as RoyalGazette;
-                if (lGazette != null)
+                if ( lGazette != null )
                 {
                     retval.Add(lGazette);
                 }
@@ -148,12 +148,12 @@ namespace De.AHoerstemeier.Tambon
         private void mnuCitation_Click(object sender, EventArgs e)
         {
             String retval = String.Empty;
-            foreach (RoyalGazette lGazette in CurrentSelection())
+            foreach ( RoyalGazette lGazette in CurrentSelection() )
             {
                 retval = retval + lGazette.Citation() + " ";
             }
             retval = retval.Trim();
-            if (!String.IsNullOrEmpty(retval))
+            if ( !String.IsNullOrEmpty(retval) )
             {
                 Clipboard.SetText(retval);
             }
@@ -167,7 +167,7 @@ namespace De.AHoerstemeier.Tambon
             var lDataForm = new RoyalGazetteViewer();
             lDataForm.Filtered = iFiltered;
             lDataForm.Data = iList;
-            if (!String.IsNullOrEmpty(iTitle))
+            if ( !String.IsNullOrEmpty(iTitle) )
             {
                 lDataForm.Text = iTitle;
             }
@@ -177,15 +177,15 @@ namespace De.AHoerstemeier.Tambon
         internal static void ShowGazetteNewsDialog(RoyalGazetteList iList)
         {
             var lNewGazetteEntries = iList.FilteredList(TambonHelper.GlobalGazetteList);
-            if (lNewGazetteEntries.Count != 0)
+            if ( lNewGazetteEntries.Count != 0 )
             {
-                ShowGazetteDialog(iList,true);
+                ShowGazetteDialog(iList, true);
             }
         }
 
         private void mnuMirror_Click(object sender, EventArgs e)
         {
-            foreach (RoyalGazette lGazette in CurrentSelection())
+            foreach ( RoyalGazette lGazette in CurrentSelection() )
             {
                 lGazette.MirrorToCache();
             }
@@ -193,7 +193,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void mnuDeletePDF_Click(object sender, EventArgs e)
         {
-            foreach (RoyalGazette lGazette in CurrentSelection())
+            foreach ( RoyalGazette lGazette in CurrentSelection() )
             {
                 lGazette.RemoveFromCache();
             }
@@ -201,11 +201,11 @@ namespace De.AHoerstemeier.Tambon
 
         private void btnSaveXml_Click(object sender, EventArgs e)
         {
-            if (mData != null)
+            if ( mData != null )
             {
                 SaveFileDialog lDlg = new SaveFileDialog();
                 lDlg.Filter = "XML Files|*.xml|All files|*.*";
-                if (lDlg.ShowDialog() == DialogResult.OK)
+                if ( lDlg.ShowDialog() == DialogResult.OK )
                 {
                     mData.SaveXML(lDlg.FileName);
                 }
@@ -214,11 +214,11 @@ namespace De.AHoerstemeier.Tambon
 
         private void btnSaveRSS_Click(object sender, EventArgs e)
         {
-            if (mData != null)
+            if ( mData != null )
             {
                 SaveFileDialog lDlg = new SaveFileDialog();
                 lDlg.Filter = "XML Files|*.xml|All files|*.*";
-                if (lDlg.ShowDialog() == DialogResult.OK)
+                if ( lDlg.ShowDialog() == DialogResult.OK )
                 {
                     mData.ExportToRSS(lDlg.FileName);
                 }
@@ -230,17 +230,17 @@ namespace De.AHoerstemeier.Tambon
             String retval = String.Empty;
             XmlDocument lXmlDocument = new XmlDocument();
             XmlNode lBaseNode = lXmlDocument;
-            if (CurrentSelection().Count > 1)
+            if ( CurrentSelection().Count > 1 )
             {
                 lBaseNode = (XmlElement)lXmlDocument.CreateNode("element", "gazette", "");
                 lXmlDocument.AppendChild(lBaseNode);
             }
-            foreach (RoyalGazette lGazette in CurrentSelection())
+            foreach ( RoyalGazette lGazette in CurrentSelection() )
             {
                 lGazette.ExportToXML(lBaseNode);
             }
             retval = lXmlDocument.InnerXml;
-            if (!String.IsNullOrEmpty(retval))
+            if ( !String.IsNullOrEmpty(retval) )
             {
                 Clipboard.SetText(retval);
             }
@@ -250,12 +250,12 @@ namespace De.AHoerstemeier.Tambon
         private void pDFURLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String retval = String.Empty;
-            foreach (RoyalGazette lGazette in CurrentSelection())
+            foreach ( RoyalGazette gazette in CurrentSelection() )
             {
-                retval = retval + lGazette.URL() + Environment.NewLine;
+                retval = retval + gazette.URL() + Environment.NewLine;
             }
-            retval = retval.Substring(0, retval.Length - Environment.NewLine.Length);
-            if (!String.IsNullOrEmpty(retval))
+            retval = retval.Substring(0, Math.Max(0, retval.Length - Environment.NewLine.Length));
+            if ( !String.IsNullOrEmpty(retval) )
             {
                 Clipboard.SetText(retval);
             }
@@ -269,7 +269,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
-            Boolean lHasFilter = ((TambonHelper.GlobalGazetteList != null) && (TambonHelper.GlobalGazetteList.Count>0));
+            Boolean lHasFilter = ((TambonHelper.GlobalGazetteList != null) && (TambonHelper.GlobalGazetteList.Count > 0));
             filterToolStripMenuItem.Visible = (lHasFilter);
             toolStripSeparator1.Visible = (lHasFilter);
         }
@@ -277,7 +277,7 @@ namespace De.AHoerstemeier.Tambon
         private void btnCheck_Click(object sender, EventArgs e)
         {
             RoyalGazetteList lList = mData.FindDuplicates();
-            if (lList.Count > 0)
+            if ( lList.Count > 0 )
             {
                 ShowGazetteDialog(lList, false, "Duplicate entries");
             }
