@@ -11,10 +11,26 @@
 
   <xs:simpleType name="BoardNumber">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="1"/>
-      <xs:enumeration value="2"/>
-      <xs:enumeration value="1,2"/>
-      <xs:enumeration value="rename"/>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Boards to consider draft laws, board 1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Boards to consider draft laws, board 1</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1,2">
+        <xs:annotation>
+          <xs:documentation>Joint meeting of board 1 and 2 of board to consider draft laws</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="rename">
+        <xs:annotation>
+          <xs:documentation>Board to consider name changes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="BasicOperation">
@@ -58,6 +74,18 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name='CreateOperation'>
+    <xs:complexContent>
+      <xs:extension base="t:BasicOperation">
+        <xs:attribute name="type" type="t:EntityType" use="required" />
+        <xs:attribute name="owner" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Geocode of the parent entity in which the new entity will be located.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name='StatusOperation'>
     <xs:complexContent>
       <xs:extension base="t:BasicOperation">
@@ -74,6 +102,7 @@
       <xs:element name="abolish" type="t:AbolishOperation"/>
       <xs:element name="related" type="t:GazetteRelated"/>
       <xs:element name="renamewat" type="t:RenameWatOperation"/>
+      <xs:element name="create" type="t:CreateOperation"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name='MeetingEntry'>
@@ -81,6 +110,7 @@
     <xs:attribute name="number" type="xs:unsignedByte" use="required" />
     <xs:attribute name="board" type="t:BoardNumber" use="required" />
     <xs:attribute name="date" type="xs:date" use="required" />
+    <xs:attribute name="time" type="xs:time" use="optional" />
     <xs:attribute name="url" type="xs:anyURI" use="optional" />
   </xs:complexType>
   <xs:complexType name='MeetingEntryContainer'>
