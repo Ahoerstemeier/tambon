@@ -851,7 +851,7 @@ namespace De.AHoerstemeier.Tambon
 
         private string englishField;
 
-        private string typeField;
+        private string yearField;
 
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -881,15 +881,15 @@ namespace De.AHoerstemeier.Tambon
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string type
+        public string year
         {
             get
             {
-                return this.typeField;
+                return this.yearField;
             }
             set
             {
-                this.typeField = value;
+                this.yearField = value;
             }
         }
     }
