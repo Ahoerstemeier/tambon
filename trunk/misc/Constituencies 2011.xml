@@ -1946,7 +1946,7 @@
           <include geocode="130603"/>
           <election date="2011-07-03">
             <candidates>
-              <candidate id="1" party="1" name="สุเมธ ฤทธาคนี" votes="49524" status="elected" end="2012-08-03" endreason="resignation"/>
+              <candidate id="1" party="1" name="สุเมธ ฤทธาคนี" votes="49524" status="elected" end="2012-08-03" endreason="resignation" comment="Resigned to run for PAO chairman, but failed"/>
               <candidate id="2" party="2" name="ณพิภัช ชัยรัชธนธร" votes="483"/>
               <candidate id="3" party="3" name="ปฏิวัติ พิจารณ์" votes="207"/>
               <candidate id="10" party="10" name="เกียรติศักดิ์ ส่องแสง" votes="34221"/>
@@ -1957,10 +1957,11 @@
           <byelection reason="resignation" date="2012-04-21">
             <candidates eligiblevoter="55943" invalidvotes="667" abstainvotes="2318">
               <candidate id="1" party="1" name="สมชาย รังสิวัฒนศักดิ์" votes="24255"/>
-              <candidate id="2" party="10" name="เกียรติศักดิ์ ส่องแสง" votes="28156" status="pending"/>
+              <candidate id="2" party="10" name="เกียรติศักดิ์ ส่องแสง" votes="28156" status="elected"/>
               <candidate id="3" name="ณรงค์ชัย ปัญญานนทชัย" votes="345"/>
             </candidates>
-            <gazetteref volume="129" page="1" issue="29 ก" date="2012-03-23"/>
+            <gazetteref volume="129" page="1" issue="29 ก" date="2012-03-23" comment="Call for by-election"/>
+            <gazetteref volume="129" page="27" issue="44 ก" date="2012-05-23" comment="By-election result"/>
           </byelection>
         </constituency>
         <constituency index="6" comment="อำเภอหนองเสือ (ยกเว้นตำบลบึงชำอ้อ) อำเภอธัญบุรี (เฉพาะตำบลลำผักกูด ตำบลบึงสนั่น และ ตำบลสนั่นรักษ์) และ อำเภอลำลูกกา (เฉพาะตำบลลำลูกกา ตำบลบึงทองหลาง ตำบลลำไทร ตำบลพืชอุดม และ ตำบลบึงคอไห)">
@@ -3325,7 +3326,11 @@
           <byelection date="2012-06-02" reason="disqualification">
             <candidates>
               <candidate id="1" name="เกษม นิมมลรัตน์" party="1"/>
+              <candidate id="2" name="กัลยภรณ์ เจียมกิจวัฒนา" party="10"/>
+              <candidate id="3" name="อนุชา รุ่งตรานนท์" comment="Phuea Phaendin Party (พรรคเพื่อแผ่นดิน)"/>
             </candidates>
+            <gazetteref volume="129" page="1" issue="39 ก" date="2012-05-04" comment="Call for by-election"/>
+            <gazetteref volume="129" page="23" issue="54 ก" date="2012-06-20" comment="Endorsement of result"/>
           </byelection>
         </constituency>
         <constituency index="4" comment="อำเภอสันทราย อำเภอพร้าว และอำเภอแม่แตง (เฉพาะตำบลแม่หอพระ)">
@@ -3787,7 +3792,7 @@
           </include>
           <election date="2011-07-03">
             <candidates>
-              <candidate id="1" party="1" name="นายการุณ โหสกุล" votes="38351" status="pending"/>
+              <candidate id="1" party="1" name="นายการุณ โหสกุล" english="Karun Hosakul" votes="38351" status="elected" comment="Red card pending"/>
               <candidate id="10" party="10" name="นายแทนคุณ จิตต์อิสระ" votes="30675"/>
               <candidate id="12" party="12" name="ร้อยเอกชมพล ยูสานนท์" votes="1018"/>
               <candidate id="26" party="26" name="นายพฤกพงษ์ เปรมศิริ" votes="681"/>
