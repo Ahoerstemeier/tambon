@@ -482,7 +482,7 @@ namespace De.AHoerstemeier.Tambon
         ViceGovernor,
 
         /// <summary>
-        /// Deputy province governor (ปลัดจังหวัด , Palad Changwat).
+        /// Deputy province governor (ปลัดจังหวัด , Palat Changwat).
         /// </summary>
         DeputyGovernor,
 
@@ -497,7 +497,7 @@ namespace De.AHoerstemeier.Tambon
         MinorDistrictOfficer,
 
         /// <summary>
-        /// Assistant distict officer (ปลัดอำเภอ , Palad Amphoe).
+        /// Assistant distict officer (ปลัดอำเภอ , Palat Amphoe).
         /// </summary>
         AssistantDistrictOfficer,
 
@@ -542,17 +542,17 @@ namespace De.AHoerstemeier.Tambon
         MunicipalityCouncilChairman,
 
         /// <summary>
-        /// Municipal clerk (ปลัดเทศบาล, Palad Thesaban).
+        /// Municipal clerk (ปลัดเทศบาล, Palat Thesaban).
         /// </summary>
         MunicipalClerk,
 
         /// <summary>
-        /// TAO clerk (ปลัดองค์การบริหารส่วนตำบล, Palad O.Bo.To.).
+        /// TAO clerk (ปลัดองค์การบริหารส่วนตำบล, Palat O.Bo.To.).
         /// </summary>
         TAOClerk,
 
         /// <summary>
-        /// PAO clerk (ปลัดองค์การบริหารส่วนจังหวัด, Palad O.Bo.To.).
+        /// PAO clerk (ปลัดองค์การบริหารส่วนจังหวัด, Palat O.Bo.Cho.).
         /// </summary>
         PAOClerk,
 
