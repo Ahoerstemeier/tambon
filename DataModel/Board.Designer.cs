@@ -19,6 +19,86 @@ namespace De.AHoerstemeier.Tambon
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "MeetingReference", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class MeetingReference
+    {
+
+        private byte numberField;
+
+        private BoardNumber boardField;
+
+        private System.DateTime dateField;
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte number
+        {
+            get
+            {
+                return this.numberField;
+            }
+            set
+            {
+                this.numberField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public BoardNumber board
+        {
+            get
+            {
+                return this.boardField;
+            }
+            set
+            {
+                this.boardField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date
+        {
+            get
+            {
+                return this.dateField;
+            }
+            set
+            {
+                this.dateField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum BoardNumber
+    {
+
+        [System.Xml.Serialization.XmlEnumAttribute("1")]
+        Item1,
+
+        [System.Xml.Serialization.XmlEnumAttribute("2")]
+        Item2,
+
+        [System.Xml.Serialization.XmlEnumAttribute("1,2")]
+        Item12,
+
+        /// <summary>
+        /// Board to consider name changes
+        /// </summary>
+        rename,
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
     [System.Runtime.Serialization.DataContractAttribute(Name = "boardmeetings", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
@@ -359,6 +439,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
@@ -828,27 +909,5 @@ namespace De.AHoerstemeier.Tambon
                 this.oldenglishField = value;
             }
         }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
-    public enum BoardNumber
-    {
-
-        [System.Xml.Serialization.XmlEnumAttribute("1")]
-        Item1,
-
-        [System.Xml.Serialization.XmlEnumAttribute("2")]
-        Item2,
-
-        [System.Xml.Serialization.XmlEnumAttribute("1,2")]
-        Item12,
-
-        /// <summary>
-        /// Board to consider name changes
-        /// </summary>
-        rename,
     }
 }

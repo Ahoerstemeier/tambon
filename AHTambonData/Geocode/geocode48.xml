@@ -63,7 +63,7 @@
     <url status="offline">http://www.nkp.go.th/</url>
     <socialweb>
       <facebook>http://www.facebook.com/nkphome</facebook>
-    </socialweb>      
+    </socialweb>
     <officials>
       <!-- election 2012-05-27 -->
       <official title="PAOChairman" index="7" name="สมชอบ นิติพจน์" english="Somchop Nitiphot" begin="2012-05-27" >
@@ -506,7 +506,7 @@
     <entity type="Tambon" name="พนอม" english="Phanom" geocode="480305" />
     <entity type="Tambon" name="พะทาย" english="Phathai" geocode="480306" >
       <office type="TAOOffice">
-        <url comment="Very broken">http://phathai.siam2web.com/</url>
+        <url status="broken">http://phathai.siam2web.com/</url>
       </office>
       <entity type="Muban" geocode="48030608" name="บ้านนาข่าท่า" english="Ban Na Kha Tha"/>
 
@@ -516,7 +516,30 @@
     <entity type="Tambon" name="โพนบก" english="Phon Bok" geocode="480308" newgeocode="481004" />
     <entity type="Tambon" name="โพนสวรรค์" english="Phon Sawan" geocode="480309" newgeocode="481001" />
     <entity type="Tambon" name="บ้านค้อ" english="Ban Kho" geocode="480310" newgeocode="481005" />
-    <entity type="Tambon" name="เวินพระบาท" english="Woen Phrabat" geocode="480311" />
+    <entity type="Tambon" name="เวินพระบาท" english="Woen Phrabat" geocode="480311" >
+      <office type="TAOOffice" comment="To be upgraded to municipality 2012-08-24">
+        <geo:Point>
+          <geo:lat>17.5296</geo:lat>
+          <geo:long>104.6662</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="TAOMayor" name="ปิยะชัย	โชติวุฒิมนตรี" endyear="2012"/>
+        </officials>
+        <council>
+          <term end="2012-08-23"/>
+        </council>
+      </office>
+      <entity type="Muban" geocode="48031101" name="บ้านเวินพระบาท" english="Ban Woen Phrabat"/>
+      <entity type="Muban" geocode="48031102" name="บ้านยางนกเหาะ" english="Ban Yang Nok Ho"/>
+      <entity type="Muban" geocode="48031103" name="บ้านนาโสกใต้" english="Ban Na Sok Tai"/>
+      <entity type="Muban" geocode="48031104" name="บ้านเชียงยืน" english="Ban Chiang Yuen"/>
+      <entity type="Muban" geocode="48031105" name="บ้านปากทวย" english="Ban Pak Thuai"/>
+      <entity type="Muban" geocode="48031106" name="บ้านนาสีดา" english="Ban Na Sida"/>
+      <entity type="Muban" geocode="48031107" name="บ้านม่วง" english="Ban Muang"/>
+      <entity type="Muban" geocode="48031108" name="บ้านนาแค" english="Ban Na Khae"/>
+      <entity type="Muban" geocode="48031109" name="บ้านน้อยชลประทาน" english="Ban Noi Chonprathan"/>
+      <entity type="Muban" geocode="48031110" name="บ้านนาโสกเหนือ" english="Ban Na Sok Nuea"/>
+    </entity>
     <entity type="Tambon" name="รามราช" english="Ram Rat" geocode="480312" />
     <entity type="Tambon" name="นาหัวบ่อ" english="Na Hua Bo" geocode="480313" newgeocode="481002" />
     <entity type="Tambon" name="หนองเทา" english="Nong Thao" geocode="480314" />
