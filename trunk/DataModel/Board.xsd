@@ -33,6 +33,11 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="MeetingReference">
+    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="board" type="t:BoardNumber" use="required" />
+    <xs:attribute name="date" type="xs:date" use="required" />
+  </xs:complexType>
   <xs:complexType name="BasicOperation">
     <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
