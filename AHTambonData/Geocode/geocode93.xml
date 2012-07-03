@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="พัทลุง" english="Phatthalung" geocode="93">
   <office type="ProvinceHall">
+    <geo:Point>
+      <geo:lat>7.6172</geo:lat>
+      <geo:long>100.0730</geo:long>
+    </geo:Point>
     <url>http://www.phatthalung.go.th/</url>
     <officials source="http://www.phatthalung.go.th/governorlist.php">
       <official title="Governor" index="61" name="วิญญู ทองสกุล" beginyear="2011"/>
@@ -76,6 +80,10 @@
   </office>
   <entity type="Amphoe" name="เมืองพัทลุง" english="Mueang Phatthalung" geocode="9301" >
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>7.6192</geo:lat>
+        <geo:long>100.0732</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="นิพนธ์ สกลวารี" begin="2007-10-24" inoffice="2009" comment="2009-06"/>
         <official title="DistrictOfficer" name="เหนือชาย จิระอภิรักษ์" begin="2006-12-25" end="2007-10-23"/>
@@ -1136,8 +1144,39 @@
 
   <entity type="ThesabanMueang" name="พัทลุง" english="Phatthalung" geocode="9399" parent="9301" >
     <office type="MunicipalityOffice">
-      <url>http://www.phatthalungcity.com/</url>
+      <vision>เมืองลุงน่าอยู่ เชิดชูการศึกษา พัฒนาสิ่งแวดล้อม</vision>
+      <geo:Point>
+        <geo:lat>7.6183</geo:lat>
+        <geo:long>100.0733</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-07-02">http://www.phatthalungcity.com/</url>
+      <officials>
+        <official title="Mayor" name="สุเมธ บุญยก" begin="2012-04-21"/>
+        <official title="Mayor" name="โกสินทร์ ไพศาลศิลป์" endyear="2012"/>
+      </officials>
+      <council>
+        <term begin="2012-04-21"/>
+      </council>
     </office>
+    <entity type="Chumchon" geocode="93990001" name="ชุมชนบ้านดอนรุน" english="Chumchon Ban Don Run"/>
+    <entity type="Chumchon" geocode="93990002" name="ชุมชนบ้านปากแพรก" english="Chumchon Ban Pak Phraek"/>
+    <entity type="Chumchon" geocode="93990003" name="ชุมชนบ้านนอก-ม่วงหวาน" english="Chumchon Ban Nok - Muang Wan"/>
+    <entity type="Chumchon" geocode="93990004" name="ชุมชนบ้านพี" english="Chumchon Ban Phi"/>
+    <entity type="Chumchon" geocode="93990005" name="ชุมชนบ้านคูหาสวรรค์" english="Chumchon Ban Khuha Sawan"/>
+    <entity type="Chumchon" geocode="93990006" name="ชุมชนบ้านนางลาด" english="Chumchon Ban Nang Lat"/>
+    <entity type="Chumchon" geocode="93990007" name="ชุมชนบ้านนางลาดเหนือ" english="Chumchon Ban Nang Lat Nuea"/>
+    <entity type="Chumchon" geocode="93990008" name="ชุมชนบ้านหน้าเขาอกทะลุ"/>
+    <entity type="Chumchon" geocode="93990009" name="ชุมชนบ้านป่าไสย-ส้มตรีด"/>
+    <entity type="Chumchon" geocode="93990010" name="ชุมชนบ้านในสวน-ควนปรง"/>
+    <entity type="Chumchon" geocode="93990011" name="ชุมชนบ้านแร่" english="Chumchon Ban Rae"/>
+    <entity type="Chumchon" geocode="93990012" name="ชุมชนบ้านลำปำ" english="Chumchon Ban Lampam"/>
+    <entity type="Chumchon" geocode="93990013" name="ชุมชนบ้านท่าน้ำหัวนอน" english="Chumchon Ban Tha Nam Hua Non"/>
+    <entity type="Chumchon" geocode="93990014" name="ชุมชนบ้านท่ามิหรำ" english="Chumchon Ban Tha Miram"/>
+    <entity type="Chumchon" geocode="93990015" name="ชุมชนบ้านบ่อนเมา" english="Chumchon Ban Bon Mao"/>
+    <entity type="Chumchon" geocode="93990016" name="ชุมชนวัดโคกคีรี-ตำนานนิเวศน์"/>
+    <entity type="Chumchon" geocode="93990017" name="ชุมชนบ้านวังเนียง" english="Chumchon Ban Wang Niang"/>
+    <entity type="Chumchon" geocode="93990018" name="ชุมชนบ้านควนมะพร้าว" english="Chumchon Ban Khuan Maphrao
+"/>
   </entity>
   <entity type="ThesabanTambon" name="เขาชัยสน" english="Khao Chaison" geocode="9398" parent="9303" >
     <office type="MunicipalityOffice">
