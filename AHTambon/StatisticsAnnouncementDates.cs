@@ -10,14 +10,14 @@ namespace De.AHoerstemeier.Tambon
         #region properties
         private FrequencyCounter mDaysBetweenSignAndPublication = new FrequencyCounter();
         private FrequencyCounter mDaysBetweenPublicationAndEffective = new FrequencyCounter();
-        private RoyalGazetteList mStrangeAnnouncements = new RoyalGazetteList();
-        public RoyalGazetteList StrangeAnnouncements { get { return mStrangeAnnouncements; } }
+        public RoyalGazetteList StrangeAnnouncements { get; private set; }
         #endregion
         #region constructor
         public StatisticsAnnouncementDates()
         {
             StartYear = 1883;
             EndYear = DateTime.Now.Year;
+            StrangeAnnouncements = new RoyalGazetteList();
         }
         public StatisticsAnnouncementDates(Int32 iStartYear, Int32 iEndYear)
         {
@@ -31,40 +31,40 @@ namespace De.AHoerstemeier.Tambon
             base.Clear();
             mDaysBetweenPublicationAndEffective = new FrequencyCounter();
             mDaysBetweenSignAndPublication = new FrequencyCounter();
-            mStrangeAnnouncements = new RoyalGazetteList();
+            StrangeAnnouncements = new RoyalGazetteList();
         }
         protected override void ProcessAnnouncement(RoyalGazette iEntry)
         {
             Int32 lWarningOffsetDays = 345;
             Boolean lProcessed = false;
-            if (iEntry.Publication.Year > 1)
+            if ( iEntry.Publication.Year > 1 )
             {
-                if (iEntry.Effective.Year > 1)
+                if ( iEntry.Effective.Year > 1 )
                 {
                     lProcessed = true;
                     TimeSpan iTime = iEntry.Publication.Subtract(iEntry.Effective);
                     mDaysBetweenPublicationAndEffective.IncrementForCount(iTime.Days, 0);
-                    if (Math.Abs(iTime.Days) > lWarningOffsetDays)
+                    if ( Math.Abs(iTime.Days) > lWarningOffsetDays )
                     {
-                        mStrangeAnnouncements.Add(iEntry);
+                        StrangeAnnouncements.Add(iEntry);
                     }
                 }
-                if (iEntry.Sign.Year > 1)
+                if ( iEntry.Sign.Year > 1 )
                 {
                     lProcessed = true;
                     TimeSpan iTime = iEntry.Publication.Subtract(iEntry.Sign);
                     mDaysBetweenSignAndPublication.IncrementForCount(iTime.Days, 0);
-                    if ((iTime.Days < 0) | (iTime.Days > lWarningOffsetDays))
+                    if ( (iTime.Days < 0) | (iTime.Days > lWarningOffsetDays) )
                     {
-                        if (!mStrangeAnnouncements.Contains(iEntry))
+                        if ( !StrangeAnnouncements.Contains(iEntry) )
                         {
-                            mStrangeAnnouncements.Add(iEntry);
+                            StrangeAnnouncements.Add(iEntry);
                         }
                     }
                 }
-                if (lProcessed)
+                if ( lProcessed )
                 {
-                    mNumberOfAnnouncements++;
+                    NumberOfAnnouncements++;
                 }
             }
         }

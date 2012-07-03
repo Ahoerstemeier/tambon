@@ -29,7 +29,7 @@ namespace De.AHoerstemeier.Tambon
         protected Boolean ContentFitting(RoyalGazetteContent iContent)
         {
             Boolean retval = false;
-            if (iContent is RoyalGazetteContentCreate)
+            if ( iContent is RoyalGazetteContentCreate )
             {
                 RoyalGazetteContentCreate lCreate = (RoyalGazetteContentCreate)iContent;
                 retval = EntityFitting(lCreate.Type);
@@ -42,7 +42,7 @@ namespace De.AHoerstemeier.Tambon
             mNumberOfCreations++;
 
             Int32 lChangwatGeocode = lCreate.Geocode;
-            while (lChangwatGeocode > 100)
+            while ( lChangwatGeocode > 100 )
             {
                 lChangwatGeocode = lChangwatGeocode / 100;
             }
@@ -52,28 +52,28 @@ namespace De.AHoerstemeier.Tambon
         {
             Int32 lCount = 0;
             Int32 lProvinceGeocode = 0;
-            foreach (RoyalGazetteContent lContent in iEntry.Content)
+            foreach ( RoyalGazetteContent lContent in iEntry.Content )
             {
-                if (ContentFitting(lContent))
+                if ( ContentFitting(lContent) )
                 {
                     lCount++;
                     ProcessContent(lContent);
                     lProvinceGeocode = lContent.Geocode;
-                    while (lProvinceGeocode / 100 != 0)
+                    while ( lProvinceGeocode / 100 != 0 )
                     {
                         lProvinceGeocode = lProvinceGeocode / 100;
                     }
                 }
             }
-            if (lCount > 0)
+            if ( lCount > 0 )
             {
-                mNumberOfAnnouncements++;
+                NumberOfAnnouncements++;
                 mCreationsPerAnnouncement.IncrementForCount(lCount, lProvinceGeocode);
-                if (iEntry.Effective.Year > 1)
-                { 
-                    DateTime lDummy = new DateTime(2004,iEntry.Effective.Month,iEntry.Effective.Day);
+                if ( iEntry.Effective.Year > 1 )
+                {
+                    DateTime lDummy = new DateTime(2004, iEntry.Effective.Month, iEntry.Effective.Day);
                     Int32 lIndex = lDummy.DayOfYear;
-                    if (!mEffectiveDayOfYear.ContainsKey(lIndex))
+                    if ( !mEffectiveDayOfYear.ContainsKey(lIndex) )
                     {
                         mEffectiveDayOfYear[lIndex] = 0;
                     }

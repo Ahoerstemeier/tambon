@@ -10,13 +10,12 @@ namespace De.AHoerstemeier.Tambon
         #region properties
         public Int32 StartYear { get; set; }
         public Int32 EndYear { get; set; }
-        protected Int32 mNumberOfAnnouncements;
-        public Int32 NumberOfAnnouncements { get { return mNumberOfAnnouncements; } }
+        public Int32 NumberOfAnnouncements { get; protected set; }
         #endregion
         #region methods
         protected virtual void Clear()
         {
-            mNumberOfAnnouncements = 0;
+            NumberOfAnnouncements = 0;
         }
         protected virtual Boolean AnnouncementDateFitting(RoyalGazette iEntry)
         {
@@ -28,9 +27,9 @@ namespace De.AHoerstemeier.Tambon
         {
             Clear();
 
-            foreach (RoyalGazette lEntry in TambonHelper.GlobalGazetteList)
+            foreach ( RoyalGazette lEntry in TambonHelper.GlobalGazetteList )
             {
-                if (AnnouncementDateFitting(lEntry))
+                if ( AnnouncementDateFitting(lEntry) )
                 {
                     ProcessAnnouncement(lEntry);
                 }
