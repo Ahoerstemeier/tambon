@@ -891,6 +891,8 @@ namespace De.AHoerstemeier.Tambon
 
         private bool endFieldSpecified;
 
+        private string commentField;
+
         /// <summary>
         /// Creates a new instance of CouncilTerm.
         /// </summary>
@@ -1004,6 +1006,26 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.endFieldSpecified = value;
+            }
+        }
+
+        /// <summary>
+        /// Comments for information not covered in the formal fields.
+        /// </summary>
+        /// <value>
+        /// The comment.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
             }
         }
     }
