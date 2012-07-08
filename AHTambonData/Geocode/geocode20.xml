@@ -126,7 +126,14 @@
       <entity type="Muban" geocode="20011006" name="บ้านอู่ตะเภา" english="Ban U Taphao"/>
       <entity type="Muban" geocode="20011007" name="บ้านหนองไม้แดง" english="Ban Nong Mai Daeng"/>
     </entity>
-    <entity type="Tambon" name="บางทราย" english="Bang Sai" geocode="200111" />
+    <entity type="Tambon" name="บางทราย" english="Bang Sai" geocode="200111" >
+      <entity type="Muban" geocode="20011101" name="บ้านท่าถ่านล่าง" english="Ban Tha Than Lang"/>
+      <entity type="Muban" geocode="20011102" name="บ้านท่าถ่านบน" english="Ban Tha Than Bon"/>
+      <entity type="Muban" geocode="20011103" name="บ้านคงคาไลย" english="Ban Khong Kha Lai"/>
+      <entity type="Muban" geocode="20011104" name="บ้านบ่อใหญ่" english="Ban Bo Yai"/>
+      <entity type="Muban" geocode="20011105" name="บ้านหัวหินพัฒนา" english="Ban Hua Hin Phatthana"/>
+      <entity type="Muban" geocode="20011106" name="บ้านหน้าวัดเขาบางทราย" english="Ban Na Wat Khao Bang Sai"/>
+    </entity>
     <entity type="Tambon" name="คลองตำหรุ" english="Khlong Tamru" geocode="200112" >
       <office type="TAOOffice">
         <url status="offline">http://www.klongtamru.go.th/</url>
@@ -1084,6 +1091,10 @@
   </entity>
   <entity type="ThesabanMueang" name="แสนสุข" english="Saen Suk" geocode="2094" parent="2001" >
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.2882</geo:lat>
+        <geo:long>100.9144</geo:long>
+      </geo:Point>
       <url lastchecked="2012-03-21">http://www.saensukcity.go.th/</url>
       <socialweb>
         <facebook>http://www.facebook.com/saensukcity</facebook>
@@ -1161,8 +1172,31 @@
   </entity>
   <entity type="ThesabanTambon" name="บางทราย" english="Bang Sai" geocode="2091" parent="2001" >
     <office type="MunicipalityOffice">
-      <url>http://bangsaichonburi.go.th/</url>
+      <geo:Point>
+        <geo:lat>13.3847</geo:lat>
+        <geo:long>100.9856</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-07-08">http://bangsaichonburi.go.th/</url>
+      <officials>
+        <official title="Mayor" name="กำพล วงศ์ทรายทอง" inoffice="2012"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="20910001" name="ชุมชนร่วมใจสามัคคี 1" english="Chumchon Ruam Chai Samakkhi 1"/>
+    <entity type="Chumchon" geocode="20910002" name="ชุมชนร่วมใจสามัคคี 2" english="Chumchon Ruam Chai Samakkhi 2"/>
+    <entity type="Chumchon" geocode="20910003" name="ชุมชนวัดช่องลม" english="Chumchon Wat Chong Lom"/>
+    <entity type="Chumchon" geocode="20910004" name="ชุมชนแสนทวี" english="Chumchon Saen Thawi"/>
+    <entity type="Chumchon" geocode="20910005" name="ชุมชนบ้านคงคาไลย" english="Chumchon Ban Khong Kha Lai"/>
+    <entity type="Chumchon" geocode="20910006" name="ชุมชนคงคาไลยสามัคคี" english="Chumchon Khong Kha Lai Samakkhi"/>
+    <entity type="Chumchon" geocode="20910007" name="ชุมชนบ้านบ่อใหญ่สามัคคี" english="Chumchon Ban Bo Yai Phatthana"/>
+    <entity type="Chumchon" geocode="20910008" name="ชุมชนซอยยี่กุศล" english="Chumchon Soi Yi Kuson"/>
+    <entity type="Chumchon" geocode="20910009" name="ชุมชนหัวหินพัฒนา" english="Chumchon Hua Hin Phatthana"/>
+    <entity type="Chumchon" geocode="20910010" name="ชุมชนบางทรายร่วมใจ" english="Chumchon Bang Sai Ruam Chai"/>
+    <entity type="Chumchon" geocode="20910011" name="ชุมชนซอยสมเด็จ" english="Chumchon Soi Somdet"/>
+    <entity type="Chumchon" geocode="20910012" name="ชุมชนวัดเขาบางทราย" english="Chumchon Wat Khao Bang Sai"/>
+    <entity type="Chumchon" geocode="20910013" name="ชุมชนโรงปูนรักบ้านเรา" english="Chumchon Rong Pun Rak Ban Rao"/>
+    <entity type="Chumchon" geocode="20910014" name="ชุมชนฅนรักบ้าน" english="Chumchon Ton Rak Ban"/>
+    <entity type="Chumchon" geocode="20910015" name="ชุมชนรวมใจรักษ์" english="Chumchon Ruam Chai Rak"/>
+    <entity type="Chumchon" geocode="20910016" name="ชุมชนพิทักษ์สันติธรรม" english="Chumchon Phithak Sonti Tham"/>
   </entity>
   <entity type="ThesabanMueang" name="บ้านสวน" english="Ban Suan" geocode="2090" parent="2001" >
     <office type="MunicipalityOffice">

@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" geocode="80" >
   <office type="ProvinceHall">
+    <vision>นครแห่งการเรียนรู้ เกษตร ท่องเที่ยว น่าอยู่ ชุมชนเข้มแข็ง</vision>
     <geo:Point>
       <geo:lat>8.4186</geo:lat>
       <geo:long>99.9637</geo:long>
     </geo:Point>
     <url>http://www.nakhonsithammarat.go.th/</url>
     <officials source="http://www.nakhonsithammarat.go.th/govdirec.php">
-      <official title="Governor" index="45" name="วิโรจน์ จิวะรังสรรค์" beginyear="2011"/>
-      <official title="Governor" index="44" name="ธีระ มินทราศักดิ์" begin="2009-10-01" endyear="2011"/>
+      <official title="Governor" index="45" name="วิโรจน์ จิวะรังสรรค์" begin="2011-11-28"/>
+      <official title="Governor" index="44" name="ธีระ มินทราศักดิ์" begin="2009-10-01" end="2011-11-27"/>
       <official title="Governor" index="43" name="ภาณุ อุทัยรัตน์" begin="2008-10-20" end="2009-09-30" />
       <official title="Governor" index="42" name="วิชม ทองสงค์" begin="2004-10-01" end="2008-09-30"/>
       <official title="Governor" index="41" name="สวัสดิ์ แกล้วทนงค์" begin="2001-10-01" end="2004-09-30"/>
@@ -55,7 +56,11 @@
     </officials>
   </office>
   <office type="PAOOffice">
-    <!-- Longdo: 8.41985, 99.95975 -->
+    <geo:Point>
+      <!-- nothing to see in 2000 imagery -->
+      <geo:lat>8.4201</geo:lat>
+      <geo:long>99.9599</geo:long>
+    </geo:Point>
     <url>http://www.nakhonsi.go.th/</url>
     <officials>
       <official title="PAOChairman" name="พิชัย บุณยเกียรติ" begin="2010-01-24"/>
@@ -900,6 +905,8 @@
         <official title="DistrictOfficer" name="วีระ เกิดศิริมงคล" end="2007-11-11"/>
 
         <official title="DistrictOfficer" name="สุทธิพงษ์ เทิดรัตนพงศ์" inoffice="2005"/>
+
+        <official title="DistrictOfficer" name="วิโรจน์ จิวะรังสรรค์" begin="1999-11-22" end="2001-10-10"/>
       </officials>
     </office>
     <entity type="Tambon" name="ชะอวด" english="Cha-uat" geocode="800701" >
@@ -1404,8 +1411,15 @@
     </entity>
     <entity type="Tambon" name="ถ้ำใหญ่" english="Tham Yai" geocode="800911" >
       <office type="MunicipalityOffice">
-        <url>http://www.thamyaicity.go.th/</url>
+        <geo:Point>
+          <geo:lat>8.1600</geo:lat>
+          <geo:long>99.7172</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-07-08">http://www.thamyaicity.go.th/</url>
         <url status="expired">http://www.thamyai.com/</url>
+        <officials>
+          <official title="Mayor" name="อนุวัตร นาคฤทธิ์" inoffice="2012"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="80091101" name="บ้านในเพิก" english="Ban Nai Phoek" comment="TAO website says บ้านเปิก"/>
       <entity type="Muban" geocode="80091102" name="บ้านไสใหญ่" english="Ban Sai Yai"/>
@@ -2920,6 +2934,8 @@
         <official title="DistrictOfficer" name="ธวัชชัย แท้เที่ยง" inoffice="2009" end="2011-05-17"/>
 
         <official title="DistrictOfficer" name="วันชัย ภาษิต" inoffice="2005"/>
+
+        <official title="DistrictOfficer" name="วิโรจน์ จิวะรังสรรค์" begin="1999-02-01" end="1999-11-21"/>
       </officials>
     </office>
     <entity type="Tambon" name="เชียรเขา" english="Chian Khao" geocode="802301" >
@@ -2984,7 +3000,10 @@
 
   <entity type="ThesabanNakhon" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" geocode="8099" parent="8001" >
     <office type="MunicipalityOffice">
-      <!-- Longdo: 8.43652,99.96264  -->
+      <geo:Point>
+        <geo:lat>8.4363</geo:lat>
+        <geo:long>99.9627</geo:long>
+      </geo:Point>
       <url lastchecked="2012-05-10">http://www.nakhoncity.org/</url>
       <officials>
         <official title="Mayor" name="สมนึก เกตุชาติ" inoffice="2010"/>
