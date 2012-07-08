@@ -54,7 +54,15 @@
     </officials>
   </office>
   <office type="PAOOffice">
-    <url>http://www.ppao.go.th/</url>
+    <vision>องค์การบริหารส่วนจังหวัดพิษณุโลก ศูนย์กลางการพัฒนาคุณภาพชีวิต</vision>
+    <geo:Point>
+      <geo:lat>16.8174</geo:lat>
+      <geo:long>100.3414</geo:long>
+    </geo:Point>
+    <url lastchecked="2012-07-08">http://www.ppao.go.th/</url>
+    <officials>
+      <official title="PAOChairman" name="สุรินทร์ ฐิติปุญญา" inoffice="2012"/>
+    </officials>
   </office>
   <history>
     <reformedspelling name="พิษนุโลก" effective="1942-06-01"/>
@@ -377,7 +385,36 @@
         <official title="DistrictOfficer" name="สุชาติ แสนดี" end="2007-01-07"/>
       </officials>
     </office>
-    <entity type="Tambon" name="นครไทย" english="Nakhon Thai" geocode="650201" />
+    <entity type="Tambon" name="นครไทย" english="Nakhon Thai" geocode="650201" >
+      <entity type="Muban" geocode="65020101" name="บ้านเหนือ" english="Ban Nuea"/>
+      <entity type="Muban" geocode="65020102" name="บ้านเนินสว่าง" english="Ban Noen Sawang"/>
+      <entity type="Muban" geocode="65020103" name="บ้านนครไทย" english="Ban Nakhon Thai"/>
+      <entity type="Muban" geocode="65020104" name="บ้านหนองน้ำสร้าง" english="Ban Nong Nam Sang"/>
+      <entity type="Muban" geocode="65020105" name="บ้านหนองลาน" english="Ban Nong Lan"/>
+      <entity type="Muban" geocode="65020106" name="บ้านหัวร้อง" english="Ban Hua Rong"/>
+      <entity type="Muban" geocode="65020107" name="บ้านคลองจิก" english="Ban Khlong Chik"/>
+      <entity type="Muban" geocode="65020108" name="บ้านน้ำพาย" english="Ban Nam Phai"/>
+      <entity type="Muban" geocode="65020109" name="บ้านนาหัวเซ" english="Ban Na Hua Che"/>
+      <entity type="Muban" geocode="65020110" name="บ้านด่าน" english="Ban Dan"/>
+      <entity type="Muban" geocode="65020111" name="บ้านโนนจันทร์" english="Ban Non Chan"/>
+      <entity type="Muban" geocode="65020112" name="บ้านสายทอง" english="Ban Sai Thong"/>
+      <entity type="Muban" geocode="65020113" name="บ้านใหม่แสนสุข" english="Ban Mai Saen Suk"/>
+      <!--
+      นายดิลก 	อัครสุริยพันธุ์ 	ผู้ใหญ่บ้านหมู่ที่ 1 (บ้านเหนือ) 	083-623-1191
+      นายสมใจ 	มาปัญญา 	ผู้ใหญ่บ้านหมู่ที่ 2 (บ้านเนินสว่าง) 	087-197-5338
+      นายพยุง 	ทองพูน 	ผู้ใหญ่บ้านหมู่ที่ 3 (บ้านนครไทย) 	055-389-618
+      นางละเอียด 	เสนาไทย 	ผู้ใหญ่บ้านหมู่ที่ 4 (บ้านหนองน้ำสร้าง) 	086-119-1943
+      นายบัญชา 	คงหนองลาน 	กำนันตำบลนครไทย (หมู่ที่ 5 บ้านหนองลาน) 	086-937-0246
+      นางโบตั๋น 	แก้วสีทอง 	ผู้ใหญ่บ้านหมู่ที่ 6 (บ้านหัวร้อง) 	085-049-3568
+      นางแสวง 	สายจันทรา 	ผู้ใหญ่บ้านหมู่ที่ 7 (บ้านคลองจิก) 	081-596-2001
+      นายสุระ 	อินแสง 	ผู้ใหญ่บ้านหมู่ที่ 8 (บ้านน้ำพาย) 	085-566-6035
+      นางบุญเรือง 	สุขมามอญ 	ผู้ใหญ่บ้านหมู่ที่ 9 (บ้านนาหัวเซ) 	081-605-0944
+      นางสุพิชฌาย์ 	คงหนองลาน 	ผู้ใหญ่บ้านหมู่ที่ 10 (บ้านด่าน) 	089-271-4991
+      นางมยุรี 	ทองสน 	ผู้ใหญ่บ้านหมู่ที่ 11 (บ้านโนนจันทร์) 	089-064-7221
+      นายชัยโย 	ม่วงแก่น 	ผู้ใหญ่บ้านหมู่ที่ 12 (บ้านสายทอง) 	089-708-1415
+      นางธิมา 	ธูปทอง 	ผู้ใหญ่บ้านหมู่ที่ 13 (บ้านใหม่แสนสุข) 	086-936-8720
+      -->
+    </entity>
     <entity type="Tambon" name="หนองกะท้าว" english="Nong Kathao" geocode="650202" >
       <office type="TAOOffice">
         <url>http://nongkathao.com/</url>
@@ -1502,16 +1539,39 @@
   </entity>
   <entity type="ThesabanTambon" name="นครไทย" english="Nakhon Thai" geocode="6597" parent="6502" >
     <office type="MunicipalityOffice">
-      <url>http://www.nakhonthai.go.th/</url>
+      <geo:Point>
+        <geo:lat>17.1011</geo:lat>
+        <geo:long>100.8296</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-07-08">http://www.nakhonthai.go.th/</url>
       <officials>
-        <official title="Mayor" name="ภิชาติ อมรรุ่งรัศมี" inoffice="2010"/>
+        <official title="Mayor" name="ภิชาติ อมรรุ่งรัศมี" inoffice="2010" beginyear="2003"/>
       </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ป่าแดง" english="Pa Daeng" geocode="6596" parent="6503" >
     <office type="MunicipalityOffice">
-      <url>http://tessabanpadaeng.com/</url>
+      <geo:Point>
+        <geo:lat>17.2774</geo:lat>
+        <geo:long>100.6156</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-07-08">http://www.padaeng.go.th/</url>
+      <url status="offline">http://tessabanpadaeng.com/</url>
+      <officials>
+        <official title="Mayor" name="อำนวย ม่วงทิม" inoffice="2012"/>
+      </officials>
     </office>
+    <!-- 
+    1 	ชุมชนบ้านป่าแดง 	  	290 	326 	616 	  	 
+  	2 	ชุมชนบ้านนา 	  	466 	432 	898 	  	 
+  	3 	ชุมชนบ้านธนูทอง 	  	249 	268 	517 	  	 
+  	4 	ชุมชนบ้านไทรงาม 	  	435 	407 	842 	  	 
+  	5 	ชุมชนศรีสงคราม 	  	308 	338 	646 	  	 
+  	6 	ชุมชนบ้านร่มเย็น 	  	283 	316 	599 	  	 
+  	8 	ชุมชนบ้านนาเมือง 	  	212 	213 	425 	  	 
+  	ตำบลท่าสะแก 	  	  	  	  	  	 
+  	3 	ชุมชนบ้านน้อย 	  	539 	492 	1,031    
+    -->
   </entity>
   <entity type="ThesabanTambon" name="บางระกำ" english="Bang Rakam" geocode="6595" parent="6504" >
     <office type="MunicipalityOffice">
@@ -1544,7 +1604,21 @@
       </officials>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="พรหมพิราม" english="Phrom Phiram" geocode="6591" parent="6506" />
+  <entity type="ThesabanTambon" name="พรหมพิราม" english="Phrom Phiram" geocode="6591" parent="6506" >
+    <office type="MunicipalityOffice">
+      <slogan>เทศบาลตำบลพรหมพิราม ภูมิทัศน์น่าอยู่ พระพรหมสืบสานงานบุญกลางบ้าน ศาลเจ้าปุนเถ้ากง  ดำรงเศรษฐกิจพอเพียง</slogan>
+      <vision>พรมพิราม เมืองน่าอยู่ ดูแลสิ่งแวดล้อม พร้อมนำ เศรษฐกิจ พัฒนาชีวิต สร้างจิตสำนึก</vision>
+      <geo:Point>
+        <geo:lat>17.0295</geo:lat>
+        <geo:long>100.2027</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-07-08">http://www.phsml.com/</url>
+      <url lastchecked="2012-07-08">http://www.phromphiram.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ภัสศุชดา งดงาม" inoffice="2012"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="วงฆ้อง" english="Wong Khong" geocode="6590" parent="6506" >
     <office type="MunicipalityOffice">
       <url>http://www.wongkong.go.th/</url>

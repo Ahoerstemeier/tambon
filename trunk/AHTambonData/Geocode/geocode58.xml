@@ -65,9 +65,15 @@
   </office>
   <office type="PAOOffice">
     <geo:Point>
+      <!-- within old building of Sala Klang? -->
+      <geo:lat>19.2878</geo:lat>
+      <geo:long>97.9643</geo:long>
+    </geo:Point>
+    <!--<geo:Point>
+      not sure where I found that coordinate...
       <geo:lat>19.3042</geo:lat>
       <geo:long>97.9766</geo:long>
-    </geo:Point>
+    </geo:Point>-->
     <url>http://www.mhs-pao.com/</url>
     <officials>
       <official title="PAOChairman" name="อัครเดช วันไชยธนวงศ์" begin="2011-01-30"/>
@@ -540,8 +546,15 @@
     </entity>
     <entity type="Tambon" name="แม่ยวม" english="Mae Yuam" geocode="580405" >
       <office type="MunicipalityOffice">
-        <url>http://www.maeyuam.net/</url>
+        <geo:Point>
+          <geo:lat>18.1457</geo:lat>
+          <geo:long>97.9224</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-07-08">http://www.maeyuam.net/</url>
         <url status="offline">http://www.maeyuam.go.th/</url>
+        <socialweb>
+          <facebook>http://www.facebook.com/pages/maeyuamnet/187155264695895</facebook>
+        </socialweb>
       </office>
       <entity type="Muban" geocode="58040501" name="บ้านน้ำดิบ" english="Ban Nam Dip"/>
       <entity type="Muban" geocode="58040502" name="บ้านห้วยวอก" english="Ban Huai Wok"/>

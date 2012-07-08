@@ -61,10 +61,21 @@
     </officials>
   </office>
   <office type="PAOOffice">
+    <geo:Point>
+      <!-- finished shortly after 2006-->
+      <geo:lat>18.7994</geo:lat>
+      <geo:long>100.7331</geo:long>
+    </geo:Point>
     <url>http://www.nanpao.org/</url>
     <officials>
       <official title="PAOChairman" name="นรินทร์ เหล่าอารยะ" inoffice="2011"/>
     </officials>
+    <oldlocations>
+      <geo:Point>
+        <geo:lat>18.7763</geo:lat>
+        <geo:long>100.7735</geo:long>
+      </geo:Point>
+    </oldlocations>
   </office>
   <entity type="Amphoe" name="เมืองน่าน" english="Mueang Nan" geocode="5501" >
     <office type="DistrictOffice">
@@ -744,6 +755,9 @@
         <url status="offline">http://www.klangwiang.com/</url>
       </office>
 
+      <entity type="Muban" geocode="55070103" name="บ้านกลางเวียง" english="Ban Klang Wiang"/>
+      <entity type="Muban" geocode="55070104" name="บ้านบุญยืน" english="Ban Bun Yuen"/>
+
       <entity type="Muban" geocode="55070108" name="บ้านหนองนก" english="Ban Nong Nok"/>
 
       <entity type="Muban" geocode="55070114" name="บ้านโพธิ์ชัย" english="Ban Pho Chai" />
@@ -1381,11 +1395,14 @@
   </entity>
   <entity type="ThesabanTambon" name="เวียงสา" english="Wiang Sa" geocode="5594" parent="5507" >
     <office type="MunicipalityOffice">
-      <url>http://www.wiangsa.com/</url>
+      <!-- Panoramio:  18.570353° 100.751153°-->
+      <url lastchecked="2012-07-08">http://www.wiangsa.com/</url>
     </office>
     <history>
       <rename oldname="กลางเวียง" name="เวียงสา" oldenglish="Klang Wiang"/>
     </history>
+    <entity type="Chumchon" geocode="55940001" name="ชุมชนบ้านกลางเวียง" english="Chumchon Ban Klang Wiang"/>
+<entity type="Chumchon" geocode="55940002" name="ชุมชนบ้านบุญยืน" english="Chumchon Ban Bun Yuen"/>
   </entity>
   <entity type="ThesabanTambon" name="ทุ่งช้าง" english="Thung Chang" geocode="5593" parent="5508" >
     <office type="MunicipalityOffice">
