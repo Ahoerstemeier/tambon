@@ -64,7 +64,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="EndOfTerm">
         <xs:annotation>
-          <xs:documentation>End of term.</xs:documentation>
+          <xs:documentation>End of term (ครบวาระ).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Transfer">
@@ -79,7 +79,7 @@
       </xs:enumeration>
       <xs:enumeration value="Resigned">
         <xs:annotation>
-          <xs:documentation>Resigned from office.</xs:documentation>
+          <xs:documentation>Resigned from office (ลาออก).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Death">
@@ -323,6 +323,16 @@
     <xs:attribute name="comment" type="xs:string" use="optional" >
       <xs:annotation>
         <xs:documentation>Comments for information not covered in the formal fields.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="size" type="xs:positiveInteger" use="optional">
+      <xs:annotation>
+        <xs:documentation>Number of councillors.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="type" type="t:EntityType" use="optional">
+      <xs:annotation>
+        <xs:documentation>Type of the entity during the term of the council.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
