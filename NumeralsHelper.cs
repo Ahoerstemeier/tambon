@@ -18,12 +18,12 @@ namespace De.AHoerstemeier.Tambon
 
         private void btnDoConvert_Click(object sender, EventArgs e)
         {
-            String lValue = boxText.Text;
-            lValue = TambonHelper.ReplaceThaiNumerals(lValue);
-            boxText.Text = lValue;
+            String value = boxText.Text;
+            value = TambonHelper.ReplaceThaiNumerals(value);
+            boxText.Text = value;
         }
 
-        private Dictionary<String, String> mMacPDFFixupSoSuea = new Dictionary<string, string>()
+        private Dictionary<String, String> _MacPDFFixupSoSuea = new Dictionary<string, string>()
         {
               {" ะ","สะ"},  
               {" "+Convert.ToChar(0x0E31),"ส"+Convert.ToChar(0x0E31)},  // อั
@@ -49,7 +49,7 @@ namespace De.AHoerstemeier.Tambon
               {" "+Convert.ToChar(0x0E4B),"ส"+Convert.ToChar(0x0E4B)}, // อ๋ 
               {" "+Convert.ToChar(0x0E4C),"ส"+Convert.ToChar(0x0E4C)}  // อ์
         };
-        private Dictionary<Char, Char> mBrokenPDFEncoding = new Dictionary<Char, Char>()
+        private Dictionary<Char, Char> _BrokenPDFEncoding = new Dictionary<Char, Char>()
         {
               {Convert.ToChar(0xF702),Convert.ToChar(0x0E35)},  // อี
 
@@ -69,7 +69,7 @@ namespace De.AHoerstemeier.Tambon
               {Convert.ToChar(0xF712),Convert.ToChar(0x0E47)},  // อ็
               {Convert.ToChar(0xF713),Convert.ToChar(0x0E48)}   // อ่
         };
-        private Dictionary<Char, Char> mMacPDFEncoding = new Dictionary<Char, Char>()
+        private Dictionary<Char, Char> _MacPDFEncoding = new Dictionary<Char, Char>()
             {
               // Letters: กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮ
               {'°','ก'},
@@ -184,62 +184,77 @@ namespace De.AHoerstemeier.Tambon
 
         private void btnEncoding_Click(object sender, EventArgs e)
         {
-            String lValue = boxText.Text;
-            foreach (KeyValuePair<Char, Char> lKeyValuePair in mMacPDFEncoding)
+            StringBuilder value = new StringBuilder(boxText.Text);
+            foreach (KeyValuePair<Char, Char> lKeyValuePair in _MacPDFEncoding)
             {
-                lValue = lValue.Replace(lKeyValuePair.Key,lKeyValuePair.Value);
+                value = value.Replace(lKeyValuePair.Key,lKeyValuePair.Value);
             }
-            lValue = lValue.Replace("OE", "ฮ");
-            foreach (KeyValuePair<String,String> lKeyValuePair in mMacPDFFixupSoSuea)
+            value = value.Replace("OE", "ฮ");
+            foreach (KeyValuePair<String,String> lKeyValuePair in _MacPDFFixupSoSuea)
             {
-                lValue = lValue.Replace(lKeyValuePair.Key, lKeyValuePair.Value);
+                value = value.Replace(lKeyValuePair.Key, lKeyValuePair.Value);
             }
 
-            foreach (KeyValuePair<Char, Char> lKeyValuePair in mBrokenPDFEncoding)
+            foreach (KeyValuePair<Char, Char> lKeyValuePair in _BrokenPDFEncoding)
             {
-                lValue = lValue.Replace(lKeyValuePair.Key, lKeyValuePair.Value);
+                value = value.Replace(lKeyValuePair.Key, lKeyValuePair.Value);
             }
             
-            boxText.Text = lValue;
+            boxText.Text = value.ToString();
         }
 
         private void btnMonths_Click(object sender, EventArgs e)
         {
-            String lValue = boxText.Text;
-            foreach (KeyValuePair<String,Byte> lKeyValuePair in TambonHelper.ThaiMonthNames)
+            StringBuilder value = new StringBuilder(boxText.Text);
+            foreach (KeyValuePair<String,Byte> monthNameThai in TambonHelper.ThaiMonthNames)
             {
-                DateTime lDateTime = new DateTime(2000, lKeyValuePair.Value, 1);
-                String lMonthName = lDateTime.ToString("MMMM");
-                lValue = lValue.Replace(lKeyValuePair.Key,lMonthName);
+                DateTime month = new DateTime(2000, monthNameThai.Value, 1);
+                String monthNameLocal = month.ToString("MMMM");
+                value = value.Replace(monthNameThai.Key,monthNameLocal);
             }
-            foreach (KeyValuePair<String, Byte> lKeyValuePair in TambonHelper.ThaiMonthAbbreviations)
+            foreach (KeyValuePair<String, Byte> monthAbbreviation in TambonHelper.ThaiMonthAbbreviations)
             {
-                DateTime lDateTime = new DateTime(2000, lKeyValuePair.Value, 1);
-                String lMonthName = lDateTime.ToString("MMMM");
-                lValue = lValue.Replace(lKeyValuePair.Key, lMonthName);
+                DateTime month = new DateTime(2000, monthAbbreviation.Value, 1);
+                String monthNameLocal = month.ToString("MMMM");
+                value = value.Replace(monthAbbreviation.Key, monthNameLocal);
             }
-            boxText.Text = lValue;
+
+
+            foreach (var subString in value.ToString().Split(new String[] {" ", Environment.NewLine, "\t"},StringSplitOptions.None))
+            {
+                if (TambonHelper.IsNumeric(subString))
+                {
+                    Int64 number = Convert.ToInt64(subString);
+                    if ((number > 2400) && (number < 2600))
+                    {
+                        number -= 543;
+                        value.Replace(subString, number.ToString());
+                    }
+                }
+            }
+
+            boxText.Text = value.ToString();
         }
 
         private void btnTitles_Click(object sender, EventArgs e)
         {
-            String lValue = boxText.Text;
+            StringBuilder value = new StringBuilder(boxText.Text);
             foreach (KeyValuePair<String, PersonTitle> lKeyValuePair in TambonHelper.PersonTitleStrings)
             {
-                lValue = lValue.Replace(lKeyValuePair.Key, lKeyValuePair.Value.ToString()+" ");
+                value = value.Replace(lKeyValuePair.Key, lKeyValuePair.Value.ToString()+" ");
             }
-            boxText.Text = lValue;
+            boxText.Text = value.ToString();
         }
 
         private void btnInvert_Click(object sender, EventArgs e)
         {
-            String lValue = boxText.Text;
-            StringBuilder lBuilder = new StringBuilder();
-            foreach (String lSubString in lValue.Split('\n'))
+            String value = boxText.Text;
+            StringBuilder builder = new StringBuilder();
+            foreach (String subString in value.Split('\n'))
             {
-                lBuilder.Insert(0, lSubString+'\n');
+                builder.Insert(0, subString+'\n');
             };
-            boxText.Text = lBuilder.ToString();
+            boxText.Text = builder.ToString();
         }
     }
 }
