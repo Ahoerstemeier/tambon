@@ -21,302 +21,6 @@ namespace De.AHoerstemeier.Tambon
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyListBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class ConstituencyListBase
-    {
-
-        private List<ConstituencyBase> constituencyField;
-
-        private byte indexField;
-
-        private bool indexFieldSpecified;
-
-        private uint entityField;
-
-        private bool entityFieldSpecified;
-
-        /// <summary>
-        /// Creates a new instance of ConstituencyListBase.
-        /// </summary>
-        public ConstituencyListBase()
-        {
-            this.constituencyField = new List<ConstituencyBase>();
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("constituency", Order = 0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<ConstituencyBase> constituency
-        {
-            get
-            {
-                return this.constituencyField;
-            }
-            set
-            {
-                this.constituencyField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte index
-        {
-            get
-            {
-                return this.indexField;
-            }
-            set
-            {
-                this.indexField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool indexSpecified
-        {
-            get
-            {
-                return this.indexFieldSpecified;
-            }
-            set
-            {
-                this.indexFieldSpecified = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint entity
-        {
-            get
-            {
-                return this.entityField;
-            }
-            set
-            {
-                this.entityField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool entitySpecified
-        {
-            get
-            {
-                return this.entityFieldSpecified;
-            }
-            set
-            {
-                this.entityFieldSpecified = value;
-            }
-        }
-    }
-
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Constituency))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class ConstituencyBase
-    {
-
-        private List<EntityBase> itemsField;
-
-        private byte indexField;
-
-        private byte numberofseatsField;
-
-        private string commentField;
-
-        /// <summary>
-        /// Creates a new instance of ConstituencyBase.
-        /// </summary>
-        public ConstituencyBase()
-        {
-            this.itemsField = new List<EntityBase>();
-            this.numberofseatsField = ((byte)(1));
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("include", typeof(EntityInclude), Order = 0)]
-        [System.Xml.Serialization.XmlElementAttribute("includesub", typeof(EntityIncludeSub), Order = 0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<EntityBase> Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte index
-        {
-            get
-            {
-                return this.indexField;
-            }
-            set
-            {
-                this.indexField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "1")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte numberofseats
-        {
-            get
-            {
-                return this.numberofseatsField;
-            }
-            set
-            {
-                this.numberofseatsField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment
-        {
-            get
-            {
-                return this.commentField;
-            }
-            set
-            {
-                this.commentField = value;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Entity included in the constituency.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityInclude", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class EntityInclude : EntityBase
-    {
-
-        private List<EntityInExclude> excludeField;
-
-        private byte indexField;
-
-        private bool indexFieldSpecified;
-
-        /// <summary>
-        /// Creates a new instance of EntityInclude.
-        /// </summary>
-        public EntityInclude()
-        {
-            this.excludeField = new List<EntityInExclude>();
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("exclude", Order = 0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<EntityInExclude> exclude
-        {
-            get
-            {
-                return this.excludeField;
-            }
-            set
-            {
-                this.excludeField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte index
-        {
-            get
-            {
-                return this.indexField;
-            }
-            set
-            {
-                this.indexField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool indexSpecified
-        {
-            get
-            {
-                return this.indexFieldSpecified;
-            }
-            set
-            {
-                this.indexFieldSpecified = value;
-            }
-        }
-    }
-
-    /// <summary>
-    /// Part of the parent entity which is explicitely excluded in the constituency.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityInExclude", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class EntityInExclude : EntityBase
-    {
-    }
-
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
     [System.Runtime.Serialization.DataContractAttribute(Name = "ByElection", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
     public partial class ByElection
     {
@@ -1141,6 +845,16 @@ namespace De.AHoerstemeier.Tambon
         /// Council of the districts in Bangkok.
         /// </summary>
         BangkokDistrictCouncil,
+
+        /// <summary>
+        /// Village headman election.
+        /// </summary>
+        VillageHeadman,
+
+        /// <summary>
+        /// Subdistrict headman election.
+        /// </summary>
+        SubdistrictHeadman,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
@@ -1713,6 +1427,192 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Constituency))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class ConstituencyBase
+    {
+
+        private List<EntityBase> itemsField;
+
+        private byte indexField;
+
+        private byte numberofseatsField;
+
+        private string commentField;
+
+        /// <summary>
+        /// Creates a new instance of ConstituencyBase.
+        /// </summary>
+        public ConstituencyBase()
+        {
+            this.itemsField = new List<EntityBase>();
+            this.numberofseatsField = ((byte)(1));
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("include", typeof(EntityInclude), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("includesub", typeof(EntityIncludeSub), Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<EntityBase> Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte index
+        {
+            get
+            {
+                return this.indexField;
+            }
+            set
+            {
+                this.indexField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeof(byte), "1")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte numberofseats
+        {
+            get
+            {
+                return this.numberofseatsField;
+            }
+            set
+            {
+                this.numberofseatsField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment
+        {
+            get
+            {
+                return this.commentField;
+            }
+            set
+            {
+                this.commentField = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Entity included in the constituency.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityInclude", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class EntityInclude : EntityBase
+    {
+
+        private List<EntityInExclude> excludeField;
+
+        private byte indexField;
+
+        private bool indexFieldSpecified;
+
+        /// <summary>
+        /// Creates a new instance of EntityInclude.
+        /// </summary>
+        public EntityInclude()
+        {
+            this.excludeField = new List<EntityInExclude>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("exclude", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<EntityInExclude> exclude
+        {
+            get
+            {
+                return this.excludeField;
+            }
+            set
+            {
+                this.excludeField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte index
+        {
+            get
+            {
+                return this.indexField;
+            }
+            set
+            {
+                this.indexField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool indexSpecified
+        {
+            get
+            {
+                return this.indexFieldSpecified;
+            }
+            set
+            {
+                this.indexFieldSpecified = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Part of the parent entity which is explicitely excluded in the constituency.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityInExclude", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class EntityInExclude : EntityBase
+    {
+    }
+
     /// <summary>
     /// Include only the parts of the entities given in the list into the constituency.
     /// </summary>
@@ -1858,6 +1758,116 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.electionField = value;
+            }
+        }
+    }
+
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "ConstituencyListBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class ConstituencyListBase
+    {
+
+        private List<ConstituencyBase> constituencyField;
+
+        private byte indexField;
+
+        private bool indexFieldSpecified;
+
+        private uint entityField;
+
+        private bool entityFieldSpecified;
+
+        /// <summary>
+        /// Creates a new instance of ConstituencyListBase.
+        /// </summary>
+        public ConstituencyListBase()
+        {
+            this.constituencyField = new List<ConstituencyBase>();
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("constituency", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<ConstituencyBase> constituency
+        {
+            get
+            {
+                return this.constituencyField;
+            }
+            set
+            {
+                this.constituencyField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte index
+        {
+            get
+            {
+                return this.indexField;
+            }
+            set
+            {
+                this.indexField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool indexSpecified
+        {
+            get
+            {
+                return this.indexFieldSpecified;
+            }
+            set
+            {
+                this.indexFieldSpecified = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint entity
+        {
+            get
+            {
+                return this.entityField;
+            }
+            set
+            {
+                this.entityField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool entitySpecified
+        {
+            get
+            {
+                return this.entityFieldSpecified;
+            }
+            set
+            {
+                this.entityFieldSpecified = value;
             }
         }
     }
