@@ -68,7 +68,21 @@
       <geo:lat>10.4932</geo:lat>
       <geo:long>99.1790</geo:long>
     </geo:Point>
-    <url>http://www.chppao.go.th/</url>
+    <url lastchecked="2012-07-26">http://www.chppao.go.th/</url>
+    <officials>
+      <official title="PAOChairman" name="สุพล จุลใส" begin="2012-07-15">
+        <election type="PAOChairman" date="2012-07-15">
+          <candidates eligiblevoter="356763" invalidvotes="5207" abstainvotes="8400">
+            <candidate id="1" name="สุพล จุลใส" votes="122290" status="elected"/>
+            <candidate id="2" name="ศิริศักดิ์ อ่อนละมัย" votes="84693"/>
+            <candidate id="3" name="ทนายเสือธนพล สุขปาน" votes="5476"/>
+          </candidates>
+        </election>
+      </official>
+    </officials>
+    <council>
+      <term begin="2012-07-15" type="PAO"/>
+    </council>
   </office>
   <entity type="Amphoe" name="เมืองชุมพร" english="Mueang Chumphon" geocode="8601" >
     <office type="DistrictOffice">
@@ -232,17 +246,51 @@
     </entity>
     <entity type="Tambon" name="วังใหม่" english="Wang Mai" geocode="860111" >
       <office type="MunicipalityOffice">
+        <vision>
+          ชุมชนเข้มแข็ง    ห่างไกลยาเสพติด    พัฒนาคุณภาพชีวิต   ส่งเสริมเศรษฐกิจพอเพียง    พัฒนาคุณภาพการศึกษา
+          สืบสานศิลปวัฒนธรรมอนุรักษ์ทรัพยากรธรรมชาติและสิ่งแวดล้อม
+        </vision>
+        <geo:Point>
+          <geo:lat>10.5043</geo:lat>
+          <geo:long>98.9853</geo:long>
+        </geo:Point>
         <url>http://www.wangmaicity.com/</url>
         <url>http://wangmai.pantown.com/</url>
         <socialweb>
           <googleplus>108050588750071915563</googleplus>
         </socialweb>
+        <officials>
+          <official title="Mayor" name="พรศักดิ์ พิมาน" begin="2008-10-19"/>
+          <official title="TAOMayor" name="พรศักดิ์ พิมาน" endyear="2008"/>
+        </officials>
+        <council>
+          <term begin="2008-10-19" end="2012-10-18" type="ThesabanTambon" size="12"/>
+          <term end="2008-07-24" type="TAO" size="18"/>
+        </council>
       </office>
       <entity type="Muban" geocode="86011101" name="บ้านนาเนียน" english="Ban Na Nian"/>
       <entity type="Muban" geocode="86011102" name="บ้านเสียบญวน" english="Ban Siap Yuan"/>
       <entity type="Muban" geocode="86011103" name="บ้านน้ำผุด" english="Ban Nam Phut"/>
       <entity type="Muban" geocode="86011104" name="บ้านนาแซะ" english="Ban Na Sae"/>
-      <entity type="Muban" geocode="86011105" name="บ้านท่าไม้ลาย" english="Ban Tha Mai Lai"/>
+      <entity type="Muban" geocode="86011105" name="บ้านท่าไม้ลาย" english="Ban Tha Mai Lai">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="ทัศนีย์ นาคขวัญ" beginyear="2012" beginreason="ElectedDirectly">
+              <election type="VillageHeadman">
+                <candidates eligiblevoter="437" abstainvotes="3" invalidvotes="9">
+                  <candidate id="1" name="วิสันต์ ทองสกุล" votes="176"/>
+                  <candidate id="2" name="ทัศนีย์ นาคขวัญ" votes="191" status="elected"/>
+                  <candidate id="3" name="รุ้งนภา แสงแก้ว" votes="34"/>
+                  <candidate id="4" name="ประวินทร์ ขุนทิพย์" votes="24"/>
+                </candidates>
+                <references>
+                  <url lastchecked="2012-07-26">http://www.wangmaicity.go.th/even/359-m5.html</url>
+                </references>
+              </election>
+            </official>
+          </officials>
+        </office>
+      </entity>
       <entity type="Muban" geocode="86011106" name="บ้านคลองสะเดา" english="Ban Khlong Sadao"/>
       <entity type="Muban" geocode="86011107" name="บ้าน จปร." english="Ban Cho Po Ro"/>
       <entity type="Muban" geocode="86011108" name="บ้านพรุชิง" english="Ban Phru Ching"/>
@@ -1056,7 +1104,13 @@
         <official title="DistrictOfficer" name="ราตรี บุญยง" end="2007-11-11"/>
       </officials>
     </office>
-    <entity type="Tambon" name="ปากตะโก" english="Pak Tako" geocode="860801" />
+    <entity type="Tambon" name="ปากตะโก" english="Pak Tako" geocode="860801" >
+      <entity type="Muban" geocode="86080101" name="บ้านปากน้ำตะโก" english="Ban Pak Nam Tako"/>
+      <entity type="Muban" geocode="86080102" name="บ้านหนองไม้แก่น" english="Ban Nong Mai Kaen"/>
+      <entity type="Muban" geocode="86080103" name="บ้านอ่าวมะม่วง" english="Ban Ao Mamuang"/>
+      <entity type="Muban" geocode="86080104" name="บ้านเกาะแก้ว" english="Ban Ko Kaeo"/>
+      <entity type="Muban" geocode="86080105" name="บ้านรัตนโกสัย" english="Ban Rattana Kosai"/>
+    </entity>
     <entity type="Tambon" name="ทุ่งตะไคร" english="Thung Takhrai" geocode="860802" />
     <entity type="Tambon" name="ตะโก" english="Tako" geocode="860803" >
       <office type="TAOOffice">
@@ -1094,11 +1148,12 @@
 
   <entity type="ThesabanMueang" name="ชุมพร" english="Chumphon" geocode="8699" parent="8601" >
     <office type="MunicipalityOffice">
+      <vision>ชุมพรเมืองน่าอยู่ เคียงคู่ธรรมาภิบาล</vision>
       <geo:Point>
         <geo:lat>10.4938</geo:lat>
         <geo:long>99.1801</geo:long>
       </geo:Point>
-      <url>http://www.chumphontown.go.th/</url>
+      <url lastchecked="2012-07-26">http://www.chumphontown.go.th/</url>
       <officials>
         <official title="Mayor" name="พิศาล นิลยกานนท์" inoffice="2011"/>
       </officials>
@@ -1106,15 +1161,154 @@
   </entity>
   <entity type="ThesabanMueang" name="หลังสวน" english="Lang Suan" geocode="8698" parent="8604" >
     <office type="MunicipalityOffice">
-      <url>http://www.langsuancity.in.th/</url>
+      <vision>การคมนาคมสะดวก   บริหารจัดการที่ดี  เข้มแข็งเศรษฐกิจ   สิ่งแวดล้อมไม่เป็นพิษ   คุณภาพชีวิตดี  ประเพณีวัฒนธรรมดีเลิศ</vision>
+      <!-- current office opened 2003-04-24 -->
+      <url lastchecked="2012-07-26">http://www.langsuancity.go.th/</url>
+      <url status="offline">http://www.langsuancity.in.th/</url>
       <officials>
         <official title="Mayor" name="อวยชัย วรดิลก" inoffice="2011"/>
+
+        <!-- Palat Thesaban 
+ 1
+	 นายโชติ ศิลปสุวรรณ 	
+
+ 1 สิงหาคม 2483
+
+ 2
+	 นายผล อรุณโรจน์ 	
+
+ 7 มกราคม 2488
+
+ 3
+	 นายครัน กุลมาตย์ 	
+
+ 1 กรกฎาคม 2494
+
+ 4
+	 นายนิคม วงศ์ทน 	
+
+ 1 กรกฎาคม 2499
+
+ 5
+	 นายสวัสดิ์ แผลงประพันธ์ 	
+
+ 1 มีนาคม 2504
+
+ 6
+	 นายชุมพร พู่วณิชย์ 	
+
+ 1 ตุลาคม 2505
+
+ 7
+	 นายไพศาล อนันตชาตรี 	
+
+ 15 กุมภาพันธ์ 2509
+
+ 8
+	 นายชาญ กิตติวัฒน์ 	
+
+ 1 ตุลาคม 2510
+
+ 9
+	 นายสำรวล สุวรรณโณ 	
+
+ 1 พฤศจิกายน 2512
+
+ 10
+	 นายปรีชา ลวนะวณิช 	
+
+ 1 ตุลาคม 2517
+
+ 11
+	 นายชด แสงต่าย 	
+
+ 21 พฤษภาคม 2518
+
+ 12
+	 นายนิเวศน์ สังข์ทอง 	
+
+ 2 มิถุนายน 2519
+
+ 13
+	 นายสนิท จักรวรรดิ 	
+
+ 1 มิถุนายน 2520
+
+ 14
+	 นางสาวศรีสุดา ราตรี 	
+
+ 1 มิถุนายน 2521
+
+ 15
+	 นายชาญ กิตติวัฒน์ 	
+
+ 30 กรกฎาคม 2523
+
+ 16
+	 นายวิญญู บุญนาค 	
+
+ 1 มิถุนายน 2524
+
+ 17
+	 นายณรงค์ ณ ระนอง 	
+
+ 1 เมษายน 2526
+
+ 18
+	 นายมนู  ศรีกระจ่าง 	
+
+ 30 กันยายน 2528
+
+ 19
+	 นายบุญล้อม แก้วประพันธ์ 	
+
+ 24 มีนาคม 2529
+
+ 20
+	 นายไสว  อินทรสุวรรณ 	
+
+ 1 ธันวาคม 2529
+
+ 21
+	 นายมนู  ศรีกระจ่าง 	
+
+ 11 ตุลาคม 2531
+
+ 22
+	 นายไสว  ธรฤทธิ์ 	
+
+ 1 ตุลาคม 2533
+
+ 23
+	 นายธนูศักดิ์ ขาวสนิท 	
+
+ 24 มิถุนายน 2534
+
+ 24
+	 นายวิโรจน์ แสงสมอ 	
+
+ 15 มิถุนายน 2535
+
+ 25
+	 นายธวัชชัย พรหมเพ็ญ 	
+
+ 8 ตุลาคม 2541
+
+ 26
+	 นายสมศักดิ์ สิทธิเสรี 	
+
+ 9 ตุลาคม 2543        
+        -->
       </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ปากน้ำชุมพร" english="Paknam Chumphon" geocode="8697" parent="8601" >
     <office type="MunicipalityOffice">
-      <url>http://www.paknumchumphon.go.th/</url>
+      <vision>
+        ปากน้ำชุมพรเมืองน่าอยู่  มุ่งสู่เมืองท่องเที่ยวเชิงอนุรักษ์  ร่วมพิทักษ์สิ่งแวดล้อม
+        พร้อมพัฒนาคุณภาพชีวิต  เสริมสร้างเศรษฐกิจชุมชน  อยู่บนพื้นฐานแห่งคุณธรรม
+      </vision>
+      <url lastchecked="2012-07-26">http://www.paknumchumphon.go.th/</url>
       <officials>
         <official title="Mayor" name="อธิวัส ทรรปณะวิภาส" inoffice="2010"/>
       </officials>
@@ -1122,7 +1316,16 @@
   </entity>
   <entity type="ThesabanTambon" name="วังไผ่" english="Wang Phai" geocode="8696" parent="8601" >
     <office type="MunicipalityOffice">
-      <url>http://www.wangpaicity.com/</url>
+      <vision>บ้านเมืองสวยงาม  สะอาดตา ขับเคลื่อนปรัชญาเศรษฐกิจพอเพียง  สร้างชื่อเสียงด้วยหลักธรรมาภิบาล  ได้มาตรฐานบริการสาธารณะ</vision>
+      <url lastchecked="2012-07-26">http://www.wangpaicity.go.th/</url>
+      <url status="expired">http://www.wangpaicity.com/</url>
+      <url status="obsolete">http://web5001.tripod.com/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/wangpaicity</facebook>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="มาโนช ธัญญาบัตร"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าแซะ" english="Tha Sae" geocode="8695" parent="8602" >
@@ -1140,7 +1343,10 @@
   </entity>
   <entity type="ThesabanTambon" name="เนินสันติ" english="Noen Santi" geocode="8694" parent="8602" >
     <office type="MunicipalityOffice">
-      <url>http://www.nernsanti.go.th/</url>
+      <url lastchecked="2012-07-26">http://www.nernsanti.go.th/</url>
+      <officials>
+        <official title="Mayor" name="นิยม นุ่นแก้ว" inoffice="2012"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ปะทิว" english="Pathio" geocode="8693" parent="8603" >
@@ -1165,12 +1371,32 @@
   </entity>
   <entity type="ThesabanTambon" name="ละแม" english="Lamae" geocode="8689" parent="8605" >
     <office type="MunicipalityOffice">
-      <url>http://www.tassabanlamae.go.th/</url>
+      <vision>
+        ครอบครัวอบอุ่น                ชุมชนเข้มแข็ง
+        สภาพแวดล้อมน่าอยู่           ผู้คนสุขภาพดีถ้วนหน้า
+        ประชาชนมีส่วนร่วมจริง        พึ่งพิงหลักเศรษฐกิจพอเพียง
+      </vision>
+      <!-- 9.77340580157, 99.1019733445 according to website, but does not look like the office building - but imagery is from 2002 -->
+      <url lastchecked="2012-07-26">http://www.lamaecity.go.th/</url>
+      <url status="offline">http://www.tassabanlamae.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ยงยุทธ หลิมวัฒนา" inoffice="2012"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="86890001" name="ชุมชนรุ่งเรือง" comment="หมู่ที่ 9 (ทั้งหมุ่บ้าน)"/>
+    <entity type="Chumchon" geocode="86890002" name="ชุมชนฟ้าใส" comment="หมู่ที่ 2 , 14 (บางส่วน)"/>
+    <entity type="Chumchon" geocode="86890003" name="ชุมชนลุ่มพวา" comment="หมู่ที่ 10 (ทั้งหมู่บ้าน)"/>
   </entity>
   <entity type="ThesabanTambon" name="พะโต๊ะ" english="Phato" geocode="8688" parent="8606" >
     <office type="MunicipalityOffice">
-      <url>http://www.phato.go.th/</url>
+      <vision>
+        เมืองการเกษตรพอเพียง  สิ่งแวดล้อมดี  การศึกษาเด่น  สาธารณูปโภคทั่วถึง  อนุรักษ์ประเพณี
+        วัฒนธรรมท้องถิ่น  ด้วยการบริหารจัดการแบบมุ่งเน้นผลสัมฤทธิ์  โดยยึดหลักธรรมมาภิบาลและการมีส่วนร่วม  เพื่อคุณภาพชีวิตที่ดีของประชาชน
+      </vision>
+      <url lastchecked="2012-07-26">http://www.phato.go.th/</url>
+      <officials>
+        <official title="Mayor" name="จีรวัฒน์ โสภณ" inoffice="2012"/>
+      </officials>
     </office>
     <!-- numbers to be confirmed -->
     <entity type="Chumchon" geocode="86880001" name="บ้านไสงอ" english="Ban Sai Ngo" comment="หมู่ 2,3"/>
@@ -1195,15 +1421,34 @@
   </entity>
   <entity type="ThesabanTambon" name="ปากตะโก" english="Pak Tako" geocode="8686" parent="8608" >
     <office type="MunicipalityOffice">
-      <url>http://www.paktako.go.th/</url>
+      <vision>เมืองท่องเที่ยวเชิงอนุรักษ์ ชุมชนเข้มแข็ง สังคมแห่งความสุข สุขภาพดีถ้วนหน้า</vision>
+      <geo:Point>
+        <geo:lat>10.09745</geo:lat>
+        <geo:long>99.14515</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-07-26">http://www.paktagocity.org/</url>
+      <url status="offline">http://www.paktako.go.th/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/ThesbalTablPakTako</facebook>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="อมร บ่างวิรุฬห์รักษ์" begin="2008-11-30"/>
+      </officials>
+      <council>
+        <term begin="2008-11-30" end="2012-11-29" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่ายาง" english="Tha Yang" geocode="8685" parent="8601" tambon="860103">
     <office type="MunicipalityOffice">
-      <url>http://www.tayangcity.go.th/</url>
+      <vision>ท่ายางตำบลน่าอยู่ สืบสานวัฒนธรรมและมีวิถีชีวิตพอเพียง</vision>
+      <url lastchecked="2012-07-26">http://www.tayangcity.go.th/</url>
       <officials>
-        <official title="Mayor" name="สาวเอี่ยม มากอำไพ" inoffice="2011"/>
+        <official title="Mayor" name="เอี่ยม มากอำไพ" begin="2008-11-01"/>
       </officials>
+      <council>
+        <term begin="2008-11-01" end="2012-10-31" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
     <entity type="Chumchon" geocode="86850001" name="ชุมชนชุมพรธานี" muban="1"/>
     <entity type="Chumchon" geocode="86850002" name="ชุมชนบ้านบางคอย" muban="1" english="Chumchon Ban Bang Khoi"/>
