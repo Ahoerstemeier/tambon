@@ -959,7 +959,16 @@
       <entity type="Muban" geocode="41070113" name="บ้านศรีสงคราม" english="Ban Si Songkhram"/>
     </entity>
     <entity type="Tambon" name="ทุ่งใหญ่" english="Thung Yai" geocode="410702" >
-      <!-- Longdo: 17.48715, 103.20111 -->
+      <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+        <!-- Longdo: 17.48715, 103.20111 -->
+        <officials>
+          <official title="TAOMayor" name="วิเชียร พรมสอน" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20"/>
+        </council>
+      </office>
       <entity type="Muban" geocode="41070201" name="บ้านทุ่งใหญ่" english="Ban Thung Yai"/>
       <entity type="Muban" geocode="41070202" name="บ้านหนองกุง" english="Ban Nong Kung"/>
       <entity type="Muban" geocode="41070203" name="บ้านคำเจริญ" english="Ban Kham Charoen"/>
@@ -2767,7 +2776,14 @@
   <entity type="ThesabanTambon" name="ทุ่งฝน" english="Thung Fon" geocode="4179" parent="4107" >
     <office type="MunicipalityOffice">
       <!-- Longdo: 17.47259, 103.26249 -->
-      <url>http://www.nmt.or.th/udon/thungfon/</url>
+      <url lastchecked="2012-07-27">http://www.tessabantungfon.go.th/</url>
+      <url status="obsolete">http://www.nmt.or.th/udon/thungfon/</url>
+      <officials>
+        <official title="Mayor" name="รัชนาท ภูผินผา" begin="2008-07-27" end="2012-07-26"/>
+      </officials>
+      <council>
+        <term begin="2008-07-27" end="2012-07-26" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ไชยวาน" english="Chai Wan" geocode="4178" parent="4108" >

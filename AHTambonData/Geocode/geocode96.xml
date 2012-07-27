@@ -625,10 +625,19 @@
     <entity type="Tambon" name="สุไหงโก-ลก" english="Su-ngai Ko-Lok" geocode="961001" />
     <entity type="Tambon" name="ปาเสมัส" english="Pasemat" geocode="961002" >
       <office type="TAOOffice">
+        <vision>
+          ตำบลสะอาด สวยงาม สิ่งแวดล้อมดี ผู้คนมีความสุข
+          ตำบลปลอดภัย อุ่นใจทุกครัวเรือน
+          ตำบลน่าอยู่ ทุกคนมีคุณภาพชีวิตที่ดี
+          ตำบลแห่งโอกาส ทุกคนตั้งตัวและเติบโต
+        </vision>
         <url>http://www.pasemat.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สกุลศักดิ์ มะดาโอ๊ะ" english="Sakulsak Mada-oh" inoffice="2010"/>
+          <official title="TAOMayor" name="สกุลศักดิ์ มะดาโอ๊ะ" english="Sakulsak Mada-oh" begin="2008-08-31" end="2012-08-30"/>
         </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="16"/>
+        </council>
       </office>
       <entity type="Muban" geocode="96100201" name="บ้านซารายอ" english="Ban Charayo"/>
       <entity type="Muban" geocode="96100202" name="บ้านตือระ" english="Ban Tuera"/>
@@ -638,12 +647,30 @@
       <entity type="Muban" geocode="96100206" name="บ้านซรายอออ" english="Ban Charayo O"/>
       <entity type="Muban" geocode="96100207" name="บ้านกวาลอซีราออก" english="Ban Kwalosira Ok" comment="must be created between 2003 and 2006, but no announcement"/>
       <entity type="Muban" geocode="96100208" name="บ้านลูโบ๊ะซามา" english="Ban Lubo Chama"/>
+      <!-- 
+- หมู่ที่ 1 บ้านซรายอ โดยมี นายนิมุ สาเมาะ เป็นผู้ใหญ่บ้าน
+- หมู่ที่ 2 บ้านตือระ โดยมี นายมะรอเสะ เจ๊ะโว๊ะ เป็นผู้ใหญ่บ้าน
+- หมู่ที่ 3 บ้านกวาลอซีรา โดยมี นายเจ๊ะอูมา สาเมาะ เป็นผู้ใหญ่บ้าน
+- หมู่ที่ 4 บ้านมือบา โดยมี นายเจ๊ะนาเซ สีหะยะ เป็นผู้ใหญ่บ้าน
+- หมู่ที่ 5 บ้านน้ำตก โดยมี นายมะนอ บินอาหลี เป็นผู้ใหญ่บ้าน
+- หมู่ที่ 6 บ้านซรายอนอก โดยมี นายปฏิวัติ เด่นอร่ามคาน เป็นผู้ใหญ่บ้าน/กำนัน
+- หมู่ที่ 7 บ้านกวาลอซีราออก โดยมี นายยูโซ๊ะ บินลีตี เป็นผู้ใหญ่บ้าน
+- หมู่ที่ 8 บ้านลูโบ๊ะซามา โดยมี นายมาหะมะ อาแวดอเลาะ เป็นผู้ใหญ่บ้าน      -->
     </entity>
     <entity type="Tambon" name="มูโนะ" english="Muno" geocode="961003">
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>6.0734</geo:lat>
+          <geo:long>102.0347</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-07-27">http://www.muno.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="รอปา อีซอ" inoffice="2009"/>
+          <official title="TAOMayor" name="มาหามะสะตา สะแปอิง" begin="2008-08-31" end="2012-08-30"/> 
+          <official title="TAOMayor" name="รอปา อีซอ" inoffice="2007"/>
         </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="10"/>
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="ปูโยะ" english="Puyo" geocode="961004" >
@@ -776,14 +803,22 @@
   </entity>
   <entity type="ThesabanMueang" name="สุไหงโกลก" english="Su-ngai Kolok" geocode="9698" parent="9610" >
     <office type="MunicipalityOffice">
-      <url>http://www.kolokcity.go.th/</url>
+      <geo:Point>
+        <geo:lat>6.0297</geo:lat>
+        <geo:long>101.9668</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-07-27">http://www.kolokcity.go.th/</url>
       <socialweb>
+        <facebook>http://www.facebook.com/kolokcity</facebook>
         <twitter>kolokcity</twitter>
         <blog>http://kolokcity.blogspot.com/</blog>
       </socialweb>
       <officials>
-        <official title="Mayor" name="สุชาดา พันธ์นรา" inoffice="2010"/>
+        <official title="Mayor" name="สุชาดา พันธ์นรา" begin="2008-09-14" end="2012-09-13"/>
       </officials>
+      <council>
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanMueang" size="18"/>
+      </council>
     </office>
     <entity type="Chumchon" geocode="96980001" name="ชุมชนเจริญสุข" english="Chumchon Charoen Suk"/>
     <entity type="Chumchon" geocode="96980002" name="ชุมชนสันติสุข" english="Chumchon Santi Suk"/>
