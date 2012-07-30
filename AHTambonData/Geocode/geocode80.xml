@@ -3044,6 +3044,9 @@
     <entity type="Tambon" name="เชียรเขา" english="Chian Khao" geocode="802301" >
       <office type="TAOOffice">
         <url>http://www.chiankhao.go.th/</url>
+        <council>
+          <term begin="2008-09-07" end="2012-09-06" type="TAO" size="10"/>
+        </council>
       </office>
       <entity type="Muban" geocode="80230101" name="บ้านบางหาร" english="Ban Bang Han"/>
       <entity type="Muban" geocode="80230102" name="บ้านบางหว้า" english="Ban Bang Wa"/>
@@ -3061,7 +3064,14 @@
     </entity>
     <entity type="Tambon" name="ดอนตรอ" english="Don Tro" geocode="802302" >
       <office type="TAOOffice">
-        <url>http://www.dontro.go.th/</url>
+        <!-- To be upgraded to Thesaban Tambon 2012-09-07 -->
+        <url lastchecked="2012-07-30">http://www.dontro.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="นายวัชร สุขเกื้อ" begin="2008-09-07" end="2012-09-06"/>
+        </officials>
+        <council>
+          <term begin="2008-09-07" end="2012-09-06" type="TAO" size="10"/>
+        </council>
       </office>
       <entity type="Muban" geocode="80230201" name="บ้านหัวสะพานชะเมา" english="Ban Hua Saphan Chamao"/>
       <entity type="Muban" geocode="80230202" name="บ้านใต้หล้า" english="Ban Tai La"/>
@@ -3072,6 +3082,10 @@
     <entity type="Tambon" name="สวนหลวง" english="Suan Luang" geocode="802303" >
       <office type="TAOOffice">
         <url>http://www.abtsuanluang.go.th/</url>
+        <!-- TAOMayor not same election date as council -->
+        <council>
+          <term begin="2008-09-07" end="2012-09-06" type="TAO" size="26"/>
+        </council>
       </office>
       <entity type="Muban" geocode="80230301" name="บ้านศาลาฝาชี" english="Ban Sala Fachi"/>
       <entity type="Muban" geocode="80230302" name="บ้านบางต้า" english="Ban Bang Ta"/>
@@ -3412,6 +3426,9 @@
   <entity type="ThesabanTambon" name="ทางพูน" english="Thang Phun" geocode="8073" parent="8023" tambon="802304" >
     <office type="MunicipalityOffice">
       <url>http://www.thangpoon.go.th/</url>
+      <council>
+        <term begin="2008-08-31" end="2012-08-30" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="เกาะเพชร" english="Ko Phet" geocode="8072" parent="8016" tambon="801611" >
