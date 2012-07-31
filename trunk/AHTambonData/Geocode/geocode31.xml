@@ -1857,7 +1857,10 @@
     </office>
     <entity type="Tambon" name="แคนดง" english="Khaen Dong" geocode="312201" />
     <entity type="Tambon" name="ดงพลอง" english="Dong Phlong" geocode="312202" />
-    <entity type="Tambon" name="สระบัว" english="Sa Bua" geocode="312203" />
+    <entity type="Tambon" name="สระบัว" english="Sa Bua" geocode="312203" >
+      <office type="TAOOffice">
+        <url lastchecked="2012-07-31">http://www.srabua.com/</url>
+      </office>
     <entity type="Tambon" name="หัวฝาย" english="Hua Fai" geocode="312204" >
       <office type="TAOOffice">
         <url>http://www.huafai.go.th/</url>
@@ -1909,7 +1912,14 @@
     </office>
   </entity>
   <entity type="ThesabanMueang" name="นางรอง" english="Nang Rong" geocode="3198" parent="3104" />
-  <entity type="ThesabanTambon" name="คูเมือง" english="Khu Mueang" geocode="3197" parent="3102" />
+  <entity type="ThesabanTambon" name="คูเมือง" english="Khu Mueang" geocode="3197" parent="3102" >
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-07-31">http://www.nmt.or.th/burirum/khumueang/</url>
+      <officials>
+        <official title="Mayor" name="นิภาพร เลี้ยงผ่องพันธุ์"/>
+      </officials>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="หินเหล็กไฟ" english="Hin Lek Fai" geocode="3196" parent="3102" />
   <entity type="ThesabanTambon" name="กระสัง" english="Krasang" geocode="3195" parent="3103" >
     <office type="MunicipalityOffice">
