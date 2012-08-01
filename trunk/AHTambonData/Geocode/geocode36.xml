@@ -349,7 +349,14 @@
     </entity>
     <entity type="Tambon" name="ตลาดแร้ง" english="Talat Raeng" geocode="360202" >
       <office type="TAOOffice">
-        <url>http://www.taladrang.org/</url>
+        <!-- to be upgraded to ThesabanTambon 2012-08-24-->
+        <url status="offline">http://www.taladrang.org/</url>
+        <officials>
+          <official title="TAOMayor" name="วิเชียร เจนชัย" begin="2008-08-24" end="2012-08-23"/>
+        </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="36"/>
+        </council>
       </office>
       <entity type="Muban" geocode="36020208" name="บ้านห้วย" english="Ban Huai"/>
 
@@ -369,11 +376,20 @@
         </vision>
         <url lastchecked="2012-05-28">http://www.lumlamchee.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="น้อย คำทวี" endyear="2012"/>
+          <official title="TAOMayor" name="น้อย คำทวี" begin="2008-08-24" end="2012-08-23"/>
         </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="44"/>
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="ชีบน" english="Chi Bon" geocode="360204" >
+      <office type="TAOOffice">
+        <!-- Mayor term not same as council -->
+        <council>          
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24"/>
+        </council>
+      </office>
       <entity type="Muban" geocode="36020401" name="บ้านหนองอ้อ" english="Ban Nong O"/>
 
       <entity type="Muban" geocode="36020403" name="บ้านหนองกระทุ่ม" english="Ban Nong Krathum"/>
@@ -381,13 +397,23 @@
       <entity type="Muban" geocode="36020411" name="บ้านหนองกระทุ่ม" english="Ban Nong Krathum"/>
       <entity type="Muban" geocode="36020412" name="บ้านหนองอ้อ" english="Ban Nong O"/>
     </entity>
-    <entity type="Tambon" name="ภูแลนคา" english="Phu Laen Kha" geocode="360205" />
+    <entity type="Tambon" name="ภูแลนคา" english="Phu Laen Kha" geocode="360205" >
+      <office type="TAOOffice">
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="16"/>
+        </council>
+      </office>
+    </entity>
     <entity type="Tambon" name="โนนแดง" english="Non Daeng" geocode="360206" >
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>15.7818</geo:lat>
           <geo:long>101.8962</geo:long>
         </geo:Point>
+        <!-- Mayor term not same date as council -->
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="18"/>
+        </council>
       </office>
       <entity type="Muban" geocode="36020604" name="บ้านเจริญผล" english="Ban Charoen Phon"/>
 
@@ -1844,7 +1870,13 @@
       <url>http://www.nmt.or.th/chaiyaphum/ladyai/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บ้านเขว้า" english="Ban Khwao" geocode="3696" parent="3602" />
+  <entity type="ThesabanTambon" name="บ้านเขว้า" english="Ban Khwao" geocode="3696" parent="3602" >
+    <office type="MunicipalityOffice">
+      <council>
+        <term begin="2008-06-15" end="2012-06-14" type="ThesabanTambon" size="12"/>
+      </council>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="คอนสวรรค์" english="Khon Sawan" geocode="3695" parent="3603" >
     <office type="MunicipalityOffice">
       <url>http://khonsawancity.com/</url>
