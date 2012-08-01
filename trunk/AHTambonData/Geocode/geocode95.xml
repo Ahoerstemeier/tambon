@@ -333,14 +333,17 @@
     <entity type="Tambon" name="ยะรม" english="Yarom" geocode="950202" >
       <office type="TAOOffice">
         <url>http://www.yarom.go.th/</url>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="16"/>
+        </council>
       </office>
       <entity type="Muban" geocode="95020201" name="บ้านนาข่อย" english="Ban Na Khoi"/>
-      <entity type="Muban" geocode="95020202" name="บ้านจาเราะลอเบาะ"/>
+      <entity type="Muban" geocode="95020202" name="บ้านจาเราะลอเบาะ" english="Ban Charo Labo"/>
       <entity type="Muban" geocode="95020203" name="บ้านยะรม" english="Ban Yarom"/>
       <entity type="Muban" geocode="95020204" name="บ้านจันทรัตน์" english="Ban Chan Rat"/>
       <entity type="Muban" geocode="95020205" name="บ้านราโมง" english="Ban Ramong"/>
       <entity type="Muban" geocode="95020206" name="บ้านใหม่" english="Ban Mai"/>
-      <entity type="Muban" geocode="95020207" name="บ้านบันนังซิแน"/>
+      <entity type="Muban" geocode="95020207" name="บ้านบันนังซิแน" english="Ban Bannang Sinae"/>
       <entity type="Muban" geocode="95020208" name="บ้านบูเก็ตดาราเซ" english="Ban Buket Darase" comment="TAO website spells it บ้านบูเก๊ะดาราเซ"/>
     </entity>
     <entity type="Tambon" name="ตาเนาะแมเราะ" english="Tano Maero" geocode="950203" >
@@ -371,12 +374,20 @@
     </entity>
     <entity type="Tambon" name="ธารน้ำทิพย์" english="Than Nam Thip" geocode="950205" >
       <office type="TAOOffice">
-        <url>http://www.tannamtip.go.th/</url>
+        <!-- To be upgraded to ThesabanTambon 2012-08-31-->
+        <vision>สุดเขตแดนไทย   ชุมชนเข้มแข็ง   ป่าเศรษฐกิจกว้างใหญ่   อยู่คู่คุณภาพชีวิตที่ดี</vision>
+        <url lastchecked="2012-08-01">http://www.tannamtip.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="มะอูโซะ สาลัง" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="8"/>
+        </council>
       </office>
       <entity type="Muban" geocode="95020501" name="บ้านธารน้ำทิพย์" english="Ban Than Nam Thip"/>
-      <entity type="Muban" geocode="95020502" name="บ้านบาแตตูแง"/>
-      <entity type="Muban" geocode="95020503" name="บ้านกาแป๊ะซาลัง"/>
-      <entity type="Muban" geocode="95020504" name="บ้านจาเราะซูซู"/>
+      <entity type="Muban" geocode="95020502" name="บ้านบาแตตูแง" english="Ban Ba Tae Tu Ngae"/>
+      <entity type="Muban" geocode="95020503" name="บ้านกาแป๊ะซาลัง" english="Ban Kapae Salang"/>
+      <entity type="Muban" geocode="95020504" name="บ้านจาเราะซูซู" english="Ban Charo Susu"/>
     </entity>
   </entity>
   <entity type="Amphoe" name="บันนังสตา" english="Bannang Sata" geocode="9503" >
@@ -878,8 +889,11 @@
     <office type="MunicipalityOffice">
       <url>http://www.betongtown.com/</url>
       <officials>
-        <official title="Mayor" name="คุณวุฒิ มงคลประจักษ์" inoffice="2010"/>
+        <official title="Mayor" name="คุณวุฒิ มงคลประจักษ์" begin="2008-05-11" end="2012-05-10"/>
       </officials>
+      <council>
+        <term begin="2008-05-11" end="2012-05-10" type="ThesabanMueang" size="18"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ลำใหม่" english="Lam Mai" geocode="9597" parent="9501" >

@@ -537,11 +537,16 @@
     </office>
     <entity type="Tambon" name="แม่ขรี" english="Mae Khari" geocode="930401" >
       <office type="MunicipalityOffice">
-        <!-- renamed ควนเสาธง when upgraded -->
         <url>http://www.khunsouthong.go.th/</url>
         <officials>
-          <official title="Mayor" name="ทวีศักดิ์ ทักษิณาวานิชย์" inoffice="2011"/>
+          <official title="Mayor" name="ทวีศักดิ์ ทักษิณาวานิชย์" begin="2008-10-19" end="2012-10-18"/>
         </officials>
+        <council>
+          <term begin="2008-10-19" end="2012-10-18" type="ThesabanTambon" size="12"/>
+        </council>
+        <!--<history>
+          <rename name="ควนเสาธง" english="Khuan Sao Thong" oldname="แม่ขรี" oldenglish="Mae Khari"/>
+        </history>-->
       </office>
       <entity type="Muban" geocode="93040101" name="บ้านแม่ขรี" english="Ban Mae Khari"/>
       <entity type="Muban" geocode="93040102" name="บ้านทุ่งเหรียง" english="Ban Thung Riang"/>
@@ -557,17 +562,33 @@
     </entity>
     <entity type="Tambon" name="ตะโหมด" english="Tamot" geocode="930402" >
       <office type="MunicipalityOffice">
-        <!-- Renamed to เขาหัวช้าง on upgrade -->
         <!-- Longdo: 7.28536415099926 100.052024841309-->
         <url>http://www.khaohuachang.go.th/</url>
         <officials>
           <official title="Mayor" name="ชูสินธุ์ ชนะสิทธิ์" inoffice="2010"/>
         </officials>
+        <council>
+          <term begin="2008-09-28" end="2012-09-27" type="ThesabanTambon" size="12"/>
+        </council>
+        <!--<history>
+          <rename name="เขาหัวช้าง" english="Khao Hua Chang" oldname="ตะโหมด" oldenglish="Tamot"/>
+        </history>-->
       </office>
     </entity>
     <entity type="Tambon" name="คลองใหญ่" english="Khlong Yai" geocode="930403" >
       <office type="TAOOffice">
-        <url>http://www.klongyai.go.th/</url>
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+        <vision>
+          การศึกษาก้าวหน้า โครงสร้างพื้นฐานเด่น
+          เน้นเศรษฐกิจ ชีวิตสดใส ดำรงค์สิ่งแวดล้อม พร้อมศาสนา วัฒนธรรม
+        </vision>
+        <url lastchecked="2012-08-01">http://www.klongyai.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="โกมล หนูเสน" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20"/>
+        </council>
       </office>
       <entity type="Muban" geocode="93040301" name="บ้านคลองใหญ่" english="Ban Khlong Yai"/>
       <entity type="Muban" geocode="93040302" name="บ้านเกาะเรียน" english="Ban Ko Rian"/>
@@ -1204,8 +1225,7 @@
     <entity type="Chumchon" geocode="93990015" name="ชุมชนบ้านบ่อนเมา" english="Chumchon Ban Bon Mao"/>
     <entity type="Chumchon" geocode="93990016" name="ชุมชนวัดโคกคีรี-ตำนานนิเวศน์"/>
     <entity type="Chumchon" geocode="93990017" name="ชุมชนบ้านวังเนียง" english="Chumchon Ban Wang Niang"/>
-    <entity type="Chumchon" geocode="93990018" name="ชุมชนบ้านควนมะพร้าว" english="Chumchon Ban Khuan Maphrao
-"/>
+    <entity type="Chumchon" geocode="93990018" name="ชุมชนบ้านควนมะพร้าว" english="Chumchon Ban Khuan Maphrao"/>
   </entity>
   <entity type="ThesabanTambon" name="เขาชัยสน" english="Khao Chaison" geocode="9398" parent="9303" >
     <office type="MunicipalityOffice">
@@ -1223,8 +1243,11 @@
       <!-- The www one is broken! -->
       <url>http://new.maekreecity.go.th/</url>
       <officials>
-        <official title="Mayor" name="สมบัติ ชนะสิทธิ์" inoffice="2010"/>
+        <official title="Mayor" name="สมบัติ ชนะสิทธิ์" begin="2008-12-14" end="2012-12-13"/>
       </officials>
+      <council>
+        <term begin="2008-12-14" end="2012-12-13" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ควนขนุน" english="Khuan Khanun" geocode="9395" parent="9305" >
