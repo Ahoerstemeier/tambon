@@ -179,11 +179,15 @@
     </entity>
     <entity type="Tambon" name="ท่าแค" english="Tha Khae" geocode="930108" >
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
         <!-- TAO website: 7.57156317334, 100.049426455 -->
-        <url>http://www.thakae.go.th/</url>
+        <url status="offline">http://www.thakae.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สุรพล  เพชรย้อย" inoffice="2010"/>
+          <official title="TAOMayor" name="สุรพล เพชรย้อย" begin="2008-08-31" end="2012-08-30"/>
         </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="24"/>
+        </council>
       </office>
       <entity type="Muban" geocode="93010801" name="บ้านยาง" english="Ban Yang"/>
       <entity type="Muban" geocode="93010802" name="บ้านชายนาโคก" english="Ban Chai Na Khok"/>
@@ -224,6 +228,10 @@
     <entity type="Tambon" name="ตำนาน" english="Tamnan" geocode="930110" >
       <office type="TAOOffice">
         <url>http://www.tamnan.go.th/</url>
+        <!-- Mayor has different term than council -->
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="30"/>
+        </council>
       </office>
       <entity type="Muban" geocode="93011001" name="บ้านชายคลอง" english="Ban Chai Khlong"/>
       <entity type="Muban" geocode="93011002" name="บ้านไสยาง" english="Ban Sai Yang"/>
@@ -244,6 +252,9 @@
     <entity type="Tambon" name="ควนมะพร้าว" english="Khuan Maphrao" geocode="930111" >
       <office type="TAOOffice">
         <url>http://www.khuanmaprao.go.th/</url>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="32"/>
+        </council>
       </office>
       <entity type="Muban" geocode="93011101" name="บ้านแร่" english="Ban Rae"/>
       <entity type="Muban" geocode="93011102" name="บ้านแร่" english="Ban Rae"/>
@@ -279,6 +290,9 @@
     <entity type="Tambon" name="ชัยบุรี" english="Chai Buri" geocode="930113" >
       <office type="TAOOffice">
         <url>http://www.chaiburicity.go.th/</url>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="26"/>
+        </council>
       </office>
       <entity type="Muban" geocode="93011301" name="บ้านคอกวัว" english="Ban Khok Wua"/>
       <entity type="Muban" geocode="93011302" name="บ้านอ้ายใหญ่" english="Ban Ai Yai"/>
@@ -297,8 +311,11 @@
     <entity type="Tambon" name="นาโหนด" english="Na Not" geocode="930114" >
       <office type="MunicipalityOffice">
         <officials>
-          <official title="TAOMayor" name="ปรีชา พรหมปลัด" endyear="2012"/>
+          <official title="TAOMayor" name="ปรีชา พรหมปลัด" begin="2008-03-30" end="2012-03-29"/>
         </officials>
+        <council>
+          <term begin="2008-03-30" end="2012-03-29" type="TAO" size="22"/>
+        </council>
       </office>
       <entity type="Muban" geocode="93011401" name="บ้านเกาะจูด" english="Ban Ko Chut"/>
       <entity type="Muban" geocode="93011402" name="บ้านโคกทราย" english="Ban Khok Sai"/>
