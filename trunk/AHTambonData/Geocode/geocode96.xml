@@ -461,12 +461,19 @@
   </entity>
   <entity type="Amphoe" name="รือเสาะ" english="Rueso" geocode="9606" >
     <office type="DistrictOffice">
+      <!-- Longdo: 6.39452,101.51837 -->
       <officials>
         <official title="DistrictOfficer" name="จำลอง ไกรดิษฐ์" begin="2007-01-08" inoffice="2009" comment="2009-06"/>
         <official title="DistrictOfficer" name="ดลเดช พัฒนรัฐ" end="2007-01-07"/>
       </officials>
     </office>
-    <entity type="Tambon" name="รือเสาะ" english="Rueso" geocode="960601" />
+    <entity type="Tambon" name="รือเสาะ" english="Rueso" geocode="960601">
+      <office type="TAOOffice">
+        <socialweb>
+          <googleplus>111219925625685726675</googleplus>
+        </socialweb>
+      </office>
+    </entity>
     <entity type="Tambon" name="สาวอ" english="Sawo" geocode="960602" />
     <entity type="Tambon" name="เรียง" english="Riang" geocode="960603" />
     <entity type="Tambon" name="สามัคคี" english="Samakkhi" geocode="960604" >
@@ -484,8 +491,20 @@
     </entity>
     <entity type="Tambon" name="รือเสาะออก" english="Rueso Ok" geocode="960607" >
       <office type="TAOOffice">
-        <url>http://www.rusoaook.webs.com/</url>
+        <!-- Longdo: 6.39897,101.52193-->
+        <slogan>อบต.คู่ชุมชน สร้างสรรค์สังคมที่ดี ประชาชนพึ่งได้</slogan>
+        <vision>ชุมชนน่าอยู่มีความเข้มแข็ง สิ่งแวดล้อมดี การศึกษาดี การบริการจัดการที่ดี</vision>
+        <url lastchecked="2012-08-13">http://www.ruso-ork.go.th/</url>
+        <url status="obsolete">http://www.rusoaook.webs.com/</url>
+        <officials>
+          <official title="TAOMayor" name="อับดุลเลาะ สะเมาะ" inoffice="2012"/>
+        </officials>
       </office>
+      <entity type="Muban" geocode="96060701" name="บ้านบาลูกา" english="Ban Baluka"/>
+      <entity type="Muban" geocode="96060702" name="บ้านเปาะรามะ" english="Ban Po Rana"/>
+      <entity type="Muban" geocode="96060703" name="บ้านลาเมาะนอก" english="Ban Lamo Nok"/>
+      <entity type="Muban" geocode="96060704" name="บ้านกาโดะ" english="Ban Kado"/>
+      <entity type="Muban" geocode="96060705" name="บ้านลาเมาะใน" english="Ban Lamo Nai"/>
     </entity>
     <entity type="Tambon" name="โคกสะตอ" english="Khok Sato" geocode="960608" />
     <entity type="Tambon" name="สุวารี" english="Suwari" geocode="960609" />
@@ -878,7 +897,15 @@
       </socialweb>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="รือเสาะ" english="Rueso" geocode="9691" parent="9606" />
+  <entity type="ThesabanTambon" name="รือเสาะ" english="Rueso" geocode="9691" parent="9606">
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-08-13">http://www.rusocity.com/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/rusocity</facebook>
+      </socialweb>
+    </office>
+    <!-- Longdo: 6.39409,101.51839 -->
+  </entity>
   <entity type="ThesabanTambon" name="ศรีสาคร" english="Si Sakhon" geocode="9690" parent="9607" />
   <entity type="ThesabanTambon" name="บูเก๊ะตา" english="Buketa" geocode="9689" parent="9608" />
   <entity type="ThesabanTambon" name="แว้ง" english="Waeng" geocode="9688" parent="9608" />
