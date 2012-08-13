@@ -36,6 +36,11 @@
           <xs:documentation>Gazette announcement which deals with the given change.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="meetingreference" type="t:MeetingReference" maxOccurs="unbounded" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Board meeting which deals with the given change.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="url" type="t:MyUri" maxOccurs="unbounded" minOccurs="0">
         <xs:annotation>
           <xs:documentation>Internet resource which explains the change.</xs:documentation>

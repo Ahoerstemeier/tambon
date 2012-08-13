@@ -76,7 +76,7 @@
       <entity type="Muban" geocode="41010207" name="บ้านโนนสง่า" english="Ban Non Sa-nga"/>
       <entity type="Muban" geocode="41010208" name="บ้านนิคมพัฒนา" english="Ban Nikhom Phatthana"/>
       <entity type="Muban" geocode="41010209" name="บ้านส่งเสริมธรรม" english="Ban Song Soem Tham"/>
-      
+
       <entity type="Muban" geocode="41010211" name="บ้านศรีชมชื่น" english="Ban Si Chom Chuen"/>
       <entity type="Muban" geocode="41010212" name="บ้านใหม่ศรีวิไล" english="Ban Mai Si Wilai"/>
     </entity>
@@ -344,6 +344,7 @@
     </entity>
     <entity type="Tambon" name="เชียงเพ็ง" english="Chiang Pheng" geocode="410204" >
       <office type="TAOOffice">
+        <url lastchecked="2012-08-13">http://chiangpengg.org/</url>
         <url status="broken">http://www.chiangpeng.com/</url>
         <url status="offline">http://chiangpeng.org/</url>
         <officials>
@@ -352,13 +353,18 @@
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="16"/>
         </council>
+        <!--<history>
+          <rename oldname="เชียงเพ็ง" oldenglish="Chiang Pheng" name="ยางชุม" english="Yang Chum" comment="Rename with upgrade?">
+            <meetingreference date="2012-08-09" number="4" board="rename"/>
+          </rename>
+        </history>-->
       </office>
       <entity type="Muban" geocode="41020401" name="บ้านสร้างแป้น ๑" english="Ban Sang Paen 1"/>
       <entity type="Muban" geocode="41020402" name="บ้านสร้างแป้น ๒" english="Ban Sang Paen 2"/>
       <entity type="Muban" geocode="41020403" name="บ้านเชียงเพ็ง" english="Ban Chiang Pheng"/>
       <entity type="Muban" geocode="41020404" name="บ้านหนองบึงมอ" english="Ban Nong Bueng Mo"/>
-      <entity type="Muban" geocode="41020405" name="บ้านถนิ่" english="Ban Thani"/>
-      <entity type="Muban" geocode="41020406" name="บ้านจมุ้" english="Ban Chamu" comment="TODO"/>
+      <entity type="Muban" geocode="41020405" name="บ้านถิ่น" english="Ban Thin"/>
+      <entity type="Muban" geocode="41020406" name="บ้านจุ้ม" english="Ban Chum"/>
       <entity type="Muban" geocode="41020407" name="บ้านโนนทอง" english="Ban Non Thong"/>
       <entity type="Muban" geocode="41020408" name="บ้านหนองแปน" english="Ban Nong Paen"/>
       <entity type="Muban" geocode="41020409" name="บ้านหินโงม" english="Ban Hin Ngom"/>
@@ -2813,8 +2819,41 @@
   </entity>
   <entity type="ThesabanTambon" name="เชียงเพ็ง" english="Chiang Pheng" geocode="4191" parent="4102" >
     <office type="MunicipalityOffice">
-      <url>http://chiengpeng.org/</url>
+      <url lastchecked="2012-08-13">http://chiengpengcity.org/</url>       
+      <url status="offline">http://chiengpeng.org/</url>
+      <officials>
+        <official title="Mayor" name="สมศักดิ์ กุญชรน้อย" inoffice="2012"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="41910001" name="ชุมชนโนนเหล่าศรีชมชื่น" english="Chumchon Non Lao Si Chomchuen"/>
+    <entity type="Chumchon" geocode="41910002" name="ชุมชนโนนกลาง" english="Chumchon Non Klang"/>
+    <entity type="Chumchon" geocode="41910003" name="ชุมชนวัดสระบัว" english="Chumchon Wat Sa Bua"/>
+    <entity type="Chumchon" geocode="41910004" name="ชุมชนสร้างแป้น" english="Chumchon Sang Paen"/>
+    <entity type="Chumchon" geocode="41910005" name="ชุมชนหนองบัวแดง" english="Chumchon Nong Bua Daeng"/>
+    <entity type="Chumchon" geocode="41910006" name="ชุมชนสุขสวัสดิ์" english="Chumchon Suk Sawat"/>
+    <entity type="Chumchon" geocode="41910007" name="ชุมชนวัดอัมพวัน" english="Chumchon Wat Amphawan"/>
+    <entity type="Chumchon" geocode="41910008" name="ชุมชนหนองบึงมอ" english="Chumchon Nong Bueng Mo"/>
+    <entity type="Chumchon" geocode="41910009" name="ชุมชนหนองบัว" english="Chumchon Nong Bua"/>
+    <entity type="Chumchon" geocode="41910010" name="ชุมชนหนองแสง" english="Chumchon Nong Saeng"/>
+    <entity type="Chumchon" geocode="41910011" name="ชุมชนโนนยาง" english="Chumchon Non Yang"/>
+    <entity type="Chumchon" geocode="41910012" name="ชุมชนโนนสมบูรณ์" english="Chumchon Non Sombun"/>
+    <entity type="Chumchon" geocode="41910013" name="ชุมชนนาแค" english="Chumchon Na Khae"/>
+    <entity type="Chumchon" geocode="41910014" name="ชุมชนทุ่งขวาง" english="Chumchon Thung Khwang"/>
+    <!-- 
+1.  ชุมชนโนนเหล่าศรีชมชื่น  นายสมภพ  เมืองสูนย์  เป็นประธานชุมชน
+2.  ชุมชนโนนกลาง  นายบุดดี  โสดารส  เป็นประธานชุมชน
+3.  ชุมชนวัดสระบัว  นายสุทิน  หนูว่อง  เป็นประธานชุมชน
+4.  ชุมชนสร้างแป้น  นายสวน  ช้างสาร  เป็นประธานชุมชน 
+5.  ชุมชนหนองบัวแดง  นายพิเศษ  บุญมาตุ่น  เป็นประธานชุมชน 
+6.  ชุมชนสุขสวัสดิ์  นางแสงทอง  ศรีษามิ  เป็นประธานชุมชน 
+7.  ชุมชนวัดอัมพวัน  นายสมใจ  ศรีกฤตยา  เป็นประธานชุมชน 
+8.  ชุมชนหนองบึงมอ  นายประจักษ์  ทาบุญมา  เป็นประธานชุมชน 
+9.  ชุมชนหนองบัว  นายเบ้า  ซุยสียา  เป็นประธานชุมชน 
+10.  ชุมชนหนองแสง  นายสุรศักดิ์  เพ็งแจ่มแจ้ง  เป็นประธานชุมชน 
+11.  ชุมชนโนนยาง  นางอัมพร  ติ่งรุ่งเรือง  เป็นประธานชุมชน 
+12.  ชุมชนโนนสมบูรณ์  นายประดิษฐ์  จันทร์เทศ  เป็นประธานชุมชน 
+13.  ชุมชนนาแค  นายวีระ  หนูว่อง  เป็นประธานชุมชน 
+14.  ชุมชนทุ่งขวาง  นายสิมมา  วงค์พรม  เป็นประธานชุมชน     -->
   </entity>
   <entity type="ThesabanTambon" name="ตาลเลียน" english="Tan Lian" geocode="4190" parent="4102" >
     <office type="MunicipalityOffice">
@@ -2832,7 +2871,9 @@
       <url lastchecked="2012-06-09">http://nongor-nonwai.net/</url>
     </office>
     <history>
-      <rename oldname="หนองอ้อ-โนนหวาย" oldenglish="Nong O - Non Wai" name="ภูผาแดง" english="Phu Pha Daeng" effective="2012-04-05"/>
+      <rename oldname="หนองอ้อ-โนนหวาย" oldenglish="Nong O - Non Wai" name="ภูผาแดง" english="Phu Pha Daeng" effective="2012-04-05">
+        <meetingreference date="2012-04-05" number="2" board="rename"/>
+      </rename>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="กุมภวาปี" english="Kumphawapi" geocode="4186" parent="4104" >

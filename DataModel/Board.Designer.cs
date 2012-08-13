@@ -16,6 +16,9 @@ namespace De.AHoerstemeier.Tambon
     using System.Runtime.Serialization;
 
 
+    /// <summary>
+    /// Reference to a board meeting.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -31,6 +34,12 @@ namespace De.AHoerstemeier.Tambon
 
         private System.DateTime dateField;
 
+        /// <summary>
+        /// Number of the meeting in the given year.
+        /// </summary>
+        /// <value>
+        /// The number.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public byte number
@@ -45,6 +54,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Type of board.
+        /// </summary>
+        /// <value>
+        /// The board.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public BoardNumber board
@@ -59,6 +74,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Date of the board meeting.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime date
@@ -74,6 +95,9 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    /// <summary>
+    /// Type of board.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
@@ -91,7 +115,7 @@ namespace De.AHoerstemeier.Tambon
         Item12,
 
         /// <summary>
-        /// Board to consider name changes
+        /// Board to consider name changes (คณะกรรมการพิจารณาเรื่องการขอเปลี่ยนแปลงชื่อจังหวัด อำเภอ และตำบล หมู่บ้าน หรือสถานที่ราชการอื่น ๆ)
         /// </summary>
         rename,
     }
@@ -210,6 +234,8 @@ namespace De.AHoerstemeier.Tambon
 
         private byte numberField;
 
+        private bool numberFieldSpecified;
+
         private BoardNumber boardField;
 
         private System.DateTime dateField;
@@ -265,6 +291,26 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.numberField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool numberSpecified
+        {
+            get
+            {
+                return this.numberFieldSpecified;
+            }
+            set
+            {
+                this.numberFieldSpecified = value;
             }
         }
 
@@ -460,6 +506,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Geocode of the entity.
+        /// </summary>
+        /// <value>
+        /// The geocode.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint geocode
@@ -494,6 +546,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Name of the entity.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string name
@@ -508,6 +566,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Romanized name of the entity.
+        /// </summary>
+        /// <value>
+        /// The english.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string english
@@ -522,6 +586,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Geocode of the corresponding tambon, used for TAO which have no geocode by themself.
+        /// </summary>
+        /// <value>
+        /// The tambon.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint tambon
@@ -556,6 +626,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Date at which the change becomes effective.
+        /// </summary>
+        /// <value>
+        /// The effective.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime effective
@@ -604,6 +680,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Number of the issue on the agenda of the meeting.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string index

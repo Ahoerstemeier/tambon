@@ -10,50 +10,106 @@
   <xs:include schemaLocation="gazette.xsd"/>
 
   <xs:simpleType name="BoardNumber">
+    <xs:annotation>
+      <xs:documentation>Type of board.</xs:documentation>
+    </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="1">
         <xs:annotation>
-          <xs:documentation>Boards to consider draft laws, board 1</xs:documentation>
+          <xs:documentation>Boards to consider draft laws, board 1 (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๑)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2">
         <xs:annotation>
-          <xs:documentation>Boards to consider draft laws, board 1</xs:documentation>
+          <xs:documentation>Boards to consider draft laws, board 2 (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๒)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="1,2">
         <xs:annotation>
-          <xs:documentation>Joint meeting of board 1 and 2 of board to consider draft laws</xs:documentation>
+          <xs:documentation>
+            Joint meeting of board 1 and 2 of board to consider draft laws (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๑ และคณะที่ ๒ ประชุมร่วมกัน).
+          </xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="rename">
         <xs:annotation>
-          <xs:documentation>Board to consider name changes</xs:documentation>
+          <xs:documentation>Board to consider name changes (คณะกรรมการพิจารณาเรื่องการขอเปลี่ยนแปลงชื่อจังหวัด อำเภอ และตำบล หมู่บ้าน หรือสถานที่ราชการอื่น ๆ)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="MeetingReference">
-    <xs:attribute name="number" type="xs:unsignedByte" use="optional" />
-    <xs:attribute name="board" type="t:BoardNumber" use="required" />
-    <xs:attribute name="date" type="xs:date" use="required" />
+    <xs:annotation>
+      <xs:documentation>Reference to a board meeting.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="number" type="xs:unsignedByte" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of the meeting in the given year.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="board" type="t:BoardNumber" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of board.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="date" type="xs:date" use="required">
+      <xs:annotation>
+        <xs:documentation>Date of the board meeting.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="BasicOperation">
     <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
-    <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" />
-    <xs:attribute name="name" type="xs:string" use="required" />
-    <xs:attribute name="english" type="xs:string" use="optional" />
-    <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />
-    <xs:attribute name="effective" type="xs:date" use="optional"/>
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Geocode of the entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="name" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Name of the entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="english" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Romanized name of the entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="tambon" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Geocode of the corresponding tambon, used for TAO which have no geocode by themself.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="effective" type="xs:date" use="optional">
+      <xs:annotation>
+        <xs:documentation>Date at which the change becomes effective.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="comment" type="xs:string" use="optional" />
-    <xs:attribute name="index" type="xs:nonNegativeInteger" use="optional"/>
+    <xs:attribute name="index" type="xs:nonNegativeInteger" use="optional">
+      <xs:annotation>
+        <xs:documentation>Number of the issue on the agenda of the meeting.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name='RenameOperation'>
     <xs:complexContent>
       <xs:extension base="t:BasicOperation">
-        <xs:attribute name="type" type="t:EntityType" use="required" />
-        <xs:attribute name="oldname" type="xs:string" use="required" />
-        <xs:attribute name="oldenglish" type="xs:string" use="optional" />
+        <xs:attribute name="type" type="t:EntityType" use="required">
+          <xs:annotation>
+            <xs:documentation>Type of the entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldname" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Previous name.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldenglish" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>Previous name romanized.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

@@ -658,6 +658,8 @@ namespace De.AHoerstemeier.Tambon
 
         private List<GazetteRelated> gazetteField;
 
+        private List<MeetingReference> meetingreferenceField;
+
         private List<MyUri> urlField;
 
         private System.DateTime effectiveField;
@@ -672,6 +674,7 @@ namespace De.AHoerstemeier.Tambon
         public HistoryEntryBase()
         {
             this.urlField = new List<MyUri>();
+            this.meetingreferenceField = new List<MeetingReference>();
             this.gazetteField = new List<GazetteRelated>();
         }
 
@@ -696,12 +699,32 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
+        /// Board meeting which deals with the given change.
+        /// </summary>
+        /// <value>
+        /// The meetingreference.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MeetingReference> meetingreference
+        {
+            get
+            {
+                return this.meetingreferenceField;
+            }
+            set
+            {
+                this.meetingreferenceField = value;
+            }
+        }
+
+        /// <summary>
         /// Internet resource which explains the change.
         /// </summary>
         /// <value>
         /// The url.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("url", Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute("url", Order = 2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<MyUri> url
         {
