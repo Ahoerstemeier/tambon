@@ -129,17 +129,41 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="ConstituencyList">
+    <xs:annotation>
+      <xs:documentation>List of constituencies.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
+      <xs:annotation>
+        <xs:documentation>List of constituencies.</xs:documentation>
+      </xs:annotation>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:Constituency"/>
     </xs:sequence>
-    <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
+    <xs:attribute name="index" type="xs:unsignedByte" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Number of the constituency list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ConstituencyListBase">
+    <xs:annotation>
+      <xs:documentation>List of constituencies.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
+      <xs:annotation>
+        <xs:documentation>List of constituencies.</xs:documentation>
+      </xs:annotation>
       <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:ConstituencyBase"/>
     </xs:sequence>
-    <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
-    <xs:attribute name="entity" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="index" type="xs:unsignedByte" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Number of the constituency list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="entity" type="xs:unsignedInt" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Geocode of the entity covered by the constituency list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ConstituencyBase">
     <xs:sequence>
@@ -148,11 +172,26 @@
         <xs:element minOccurs="1" maxOccurs="1" name="includesub" type="t:EntityIncludeSub"/>
       </xs:choice>
     </xs:sequence>
-    <xs:attribute name="index" type="xs:unsignedByte" use="required" />
-    <xs:attribute name="numberofseats" type="xs:unsignedByte" use="optional" default="1"/>
-    <xs:attribute name="comment" type="xs:string" use="optional"/>
+    <xs:attribute name="index" type="xs:unsignedByte" use="required" >
+      <xs:annotation>
+        <xs:documentation>Number of the constituency.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="numberofseats" type="xs:unsignedByte" use="optional" default="1">
+      <xs:annotation>
+        <xs:documentation>Number of seats to be filled in the constituency.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="comment" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Free text comment for information not covered in the formal fields.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="Constituency">
+    <xs:annotation>
+      <xs:documentation>Constituency list including election data.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:ConstituencyBase">
         <xs:sequence>
