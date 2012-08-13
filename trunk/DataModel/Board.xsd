@@ -34,7 +34,7 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="MeetingReference">
-    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="number" type="xs:unsignedByte" use="optional" />
     <xs:attribute name="board" type="t:BoardNumber" use="required" />
     <xs:attribute name="date" type="xs:date" use="required" />
   </xs:complexType>
@@ -112,7 +112,7 @@
   </xs:group>
   <xs:complexType name='MeetingEntry'>
     <xs:group ref="t:EntryActionBoard" maxOccurs="unbounded" minOccurs="0"/>
-    <xs:attribute name="number" type="xs:unsignedByte" use="required" />
+    <xs:attribute name="number" type="xs:unsignedByte" use="optional" />
     <xs:attribute name="board" type="t:BoardNumber" use="required" />
     <xs:attribute name="date" type="xs:date" use="required" />
     <xs:attribute name="time" type="xs:time" use="optional" />
