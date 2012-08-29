@@ -1263,7 +1263,14 @@
     </entity>
     <entity type="Tambon" name="บะยาว" english="Ba Yao" geocode="411003" >
       <office type="TAOOffice">
-        <url>http://www.bayaolocal.go.th/</url>
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+        <url status="offline">http://www.bayaolocal.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ทองแดง โคตรสีเขียว" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="24"/>
+        </council>
       </office>
       <entity type="Muban" geocode="41100301" name="บ้านบะยาว" english="Ban Ba Yao"/>
       <entity type="Muban" geocode="41100302" name="บ้านนาแก" english="Ban Na Kae"/>
@@ -3060,7 +3067,20 @@
       <url lastchecked="2012-04-16">http://www.nongphaimu.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ลำพันชาด" english="Lam Phan Chat" geocode="4166" parent="4110" tambon="411006" />
+  <entity type="ThesabanTambon" name="ลำพันชาด" english="Lam Phan Chat" geocode="4166" parent="4110" tambon="411006" >
+    <office type="MunicipalityOffice">
+      <vision>งานสาธารณูปโภคครบครัน มั่นในวัฒนธรรมประเพณี  มีมาตรฐานการศึกษา พัฒนาอาชีพสร้างรายได้   ใส่ใจสุขภาพประชาชน</vision>
+      <socialweb>
+        <blog>http://lampanchad.wordpress.com/</blog>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="พรมมา กรโสภา" begin="2008-11-23"/>
+      </officials>
+      <council>
+        <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12"/>
+      </council>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="เวียงคำ" english="Wiang Kham" geocode="4165" parent="4104" tambon="410403" />
   <entity type="ThesabanTambon" name="บ้านธาตุ" english="Ban That" geocode="4164" parent="4119" tambon="411902" >
     <office type="MunicipalityOffice">
@@ -3084,6 +3104,13 @@
         <geo:lat>17.1508</geo:lat>
         <geo:long>103.5595</geo:long>
       </geo:Point>
+      <url lastchecked="2012-08-29">http://www.phasuk-wang.com/</url>
+      <officials>
+        <official title="Mayor" name="อนันต์ ผการัตน์" begin="2008-11-23" end="2012-11-22"/>
+      </officials>
+      <council>
+        <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หัวนาคำ" english="Hua Na Kham" geocode="4159" parent="4109" tambon="410904" />
