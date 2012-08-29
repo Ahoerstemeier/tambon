@@ -319,14 +319,18 @@
     </entity>
     <entity type="Tambon" name="ป่าคลอก" english="Pa Khlok" geocode="830304" >
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
         <geo:Point>
           <geo:lat>8.0121</geo:lat>
           <geo:long>98.3988</geo:long>
         </geo:Point>
-        <url>http://www.paklok.go.th/</url>
+        <url lastchecked="2012-08-29">http://www.paklok.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อธิพงษ์ คงนาม" begin="2008-08-31"/>
+          <official title="TAOMayor" name="อธิพงษ์ คงนาม" begin="2008-08-31" end="2012-08-30"/>
         </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18"/>
+        </council>
       </office>
       <entity type="Muban" geocode="83030401" name="บ้านผักฉีด" english="Ban Phak Chit"/>
       <entity type="Muban" geocode="83030402" name="บ้านป่าคลอก" english="Ban Pa Khlok"/>
@@ -400,12 +404,13 @@
             </candidates>
           </election>
         </official>
-        <official title="Mayor" name="สมใจ สุวรรณศุภพนา" beginyear="2008" endyear="2012"/>
+        <official title="Mayor" name="สมใจ สุวรรณศุภพนา" begin="2008-05-11" end="2012-05-10"/>
 
         <official title="Mayor" name="ภูมิศักดิ์ หงษ์หยก" inoffice="2004"/>
       </officials>
       <council>
-        <term begin="2012-06-16"/>
+        <term begin="2012-06-16" end="2016-06-15" type="ThesabanNakhon" size="24"/>
+        <term begin="2008-05-11" end="2012-05-10" type="ThesabanNakhon" size="24"/>
       </council>
     </office>
     <!-- Chumchon numbers to be verified -->
@@ -439,13 +444,15 @@
       <url status="offline">http://www.patongmunicipality.org/</url>
       <officials>
         <!-- election 2012-09-02 -->
-        <official title="Mayor" name="เปี่ยน กี่สิ้น" english="Pian Keesin" beginyear="2008" endyear="2012" endreason="EndOfTerm"/>
+        <official title="Mayor" name="เปี่ยน กี่สิ้น" english="Pian Keesin" begin="2008-07-27" end="2012-07-26" endreason="EndOfTerm"/>
         <official title="Mayor" name="เปี่ยน กี่สิ้น" english="Pian Keesin" begin="2004-06-21" end="2008-06-20" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         <official title="Mayor" name="เฉลิมศักดิ์ มณีศรี" english="Chalermsak Maneesri" beginyear="2002" endyear="2003" endreason="Removed" comment="Order to step down by court due to election fraud"/>
         <official title="Mayor" name="สุรศักดิ์ มณีศรี" english="Surasak Maneesri" beginyear="2001" endyear="2002" endreason="Removed"/>
         <official title="Mayor" index="1" name="เปี่ยน กี่สิ้น" english="Pian Keesin" beginyear="1995" endyear="2001"/>
       </officials>
       <council>
+        <term begin="2012-09-02" end="2016-09-01" type="ThesabanMueang" size="18"/>
+        <term begin="2008-07-27" end="2012-07-26" type="ThesabanMueang" size="18"/>
         <term begin="2004-06-21" end="2008-06-20" type="ThesabanMueang" size="18"/>
       </council>
     </office>
@@ -475,27 +482,32 @@
             </candidates>
           </election>
         </official>
-        <official title="Mayor" name="ทวี ทองแช่ม" english="Tawee Thongcham" beginyear="2008" endyear="2012"/>
+        <official title="Mayor" name="ทวี ทองแช่ม" english="Tawee Thongcham" begin="2008-06-08" end="2012-06-07"/>
 
         <official title="Mayor" name="ทวี ทองแช่ม" english="Tawee Thongcham" inoffice="2004"/>
       </officials>
       <council>
-        <term begin="2012-07-15"/>
+        <term begin="2012-07-15" end="2016-07-14" type="ThesabanTambon" size="12"/>
+        <term begin="2008-06-08" end="2012-06-07" type="ThesabanTambon" size="12"/>
       </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="กะทู้" english="Kathu" geocode="8396" parent="8302" >
     <office type="MunicipalityOffice">
+      <vision>เมืองน่าอยู่ เคียงคู่พัฒนา</vision>
       <geo:Point>
         <geo:lat>7.9112</geo:lat>
         <geo:long>98.3475</geo:long>
       </geo:Point>
-      <url>http://kathucity.go.th/</url>
+      <url lastchecked="2012-08-29">http://kathucity.go.th/</url>
       <officials>
-        <official title="Mayor" name="ชัยอนันท์ สุทธิกุล" inoffice="2010"/>
+        <official title="Mayor" name="ชัยอนันท์ สุทธิกุล" begin="2008-10-12" end="2012-10-11"/>
 
         <official title="Mayor" name="ประเสริฐ ขาวกิจไพศาล" inoffice="2004"/>
       </officials>
+      <council>
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="เชิงทะเล" english="Choeng Thale" geocode="8395" parent="8303" >

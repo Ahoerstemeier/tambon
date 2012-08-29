@@ -407,8 +407,16 @@
     <entity type="Tambon" name="อัมพวา" english="Amphawa" geocode="750301" />
     <entity type="Tambon" name="สวนหลวง" english="Suan Luang" geocode="750302" >
       <office type="TAOOffice">
-        <url>http://www.suanluang-sao.go.th/</url>
-        <url>http://suanluang.8m.com/</url>
+        <!-- To be upgraded to ThesabanTambon 2012-xxx -->
+        <vision>ตำบลน่าอยู่ ศูนย์การท่องเที่ยวเชิงอนุรักษ์ทางเกษตร การศึกษาดนตรีไทย ประชาชนรู้รักสามัคคีเกษตรปลอดสารพิษผลิตอาหารปลอดภัย</vision>
+        <url lastchecked="2012-08-29">http://www.suanluang-sao.go.th/</url>
+        <url status="obsolete">http://suanluang.8m.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ไพฑูรย์ นิยมเวช" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="30"/>
+        </council>
       </office>
       <entity type="Muban" geocode="75030201" name="บ้านแหลมสวนหลวง" english="Ban Laem Suan Luang"/>
       <entity type="Muban" geocode="75030202" name="บ้านแหลมสวนหลวง" english="Ban Laem Suan Luang"/>
@@ -428,7 +436,14 @@
     </entity>
     <entity type="Tambon" name="ท่าคา" english="Tha Kha" geocode="750303" >
       <office type="TAOOffice">
-        <url>http://www.thakha.go.th/</url>
+        <vision>โครงสร้างพื้นฐานดีพร้อม สิ่งแวดล้อมไม่เป็นพิษ เศรษฐกิจก้าวหน้า การศึกษาก้าวไกล โปรงใสการพัฒนา ชาวประชาร่มเย็น โดดเด่นแหล่งท่องเที่ยวเชิงอนุรักษ์</vision>
+        <url lastchecked="2012-08-29">http://www.thakha.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="วินัย นุชอุดม" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="24"/>
+        </council>
       </office>
       <entity type="Muban" geocode="75030301" name="บ้านคลองมะขวิด" english="Ban Khlong Makhwit"/>
       <entity type="Muban" geocode="75030302" name="บ้านคลองศาลา" english="Ban Khlong Sala"/>
@@ -445,7 +460,14 @@
     </entity>
     <entity type="Tambon" name="วัดประดู่" english="Wat Pradu" geocode="750304" >
       <office type="TAOOffice">
-        <url>http://www.watpradoo.go.th/</url>
+        <vision>มุ่งพัฒนาเศรษฐกิจ สังคม และวัฒนธรรม บนพื้นฐานคุณธรรม จริยธรรม ตามหลักธรรมาภิบาล</vision>
+        <url lastchecked="2012-08-29">http://www.watpradoo.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="สำเภา นาคสิงห์" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20"/>
+        </council>
       </office>
       <entity type="Muban" geocode="75030401" name="บ้านวัดประดู่" english="Ban Wat Pradu"/>
       <entity type="Muban" geocode="75030402" name="บ้านบางกะรี้" english="Ban Bang Kari"/>
@@ -460,22 +482,38 @@
     </entity>
     <entity type="Tambon" name="เหมืองใหม่" english="Mueang Mai" geocode="750305" >
       <office type="TAOOffice">
-        <url>http://www.muangmai.com/</url>
+        <vision>โครงสร้างมั่นคง ส่งเสริมรายได้ ร่างกายแข็งแรง แหล่งพลังสามัคคี มีศิลปวัฒนธรรม น้อมนำเศรษฐกิจพอเพียง</vision>
+        <url lastchecked="2012-08-29">http://www.mueangmai.go.th/</url>
+        <url status="offline">http://www.muangmai.com/</url>
+        <officials>
+          <official title="TAOMayor" name="สมศักดิ์ รัตนกรณ์" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="10"/>
+        </council>
+        <!-- TAO only covers Mu 3,4,5,6,8 -->
       </office>
       <entity type="Muban" geocode="75030501" name="บ้านคลองกระทิง" english="Ban Khlong Krathing"/>
       <entity type="Muban" geocode="75030502" name="บ้านคลองเหมืองใหม่" english="Ban Khlong Mueang Mai"/>
       <entity type="Muban" geocode="75030503" name="บ้านปลายคลองเหมืองใหม่" english="Ban Plai Khlong Mueang Mai"/>
       <entity type="Muban" geocode="75030504" name="บ้านปลายคลองอ้อม" english="Ban Plai Khlong Om"/>
       <entity type="Muban" geocode="75030505" name="บ้านคลองวัว" english="Ban Khlong Wua"/>
-      <entity type="Muban" geocode="75030506" name="บ้านปลายคลองชนาง"/>
+      <entity type="Muban" geocode="75030506" name="บ้านปลายคลองชนาง" english="Ban Plai Khlong Chanang"/>
       <entity type="Muban" geocode="75030507" name="บ้านคลองดอน" english="Ban Khlong Don"/>
       <entity type="Muban" geocode="75030508" name="บ้านบางวันทองใน" english="Ban Bang Wan Thong Nai"/>
       <entity type="Muban" geocode="75030509" name="บ้านหัวหาด" english="Ban Hua Hat"/>
-      <entity type="Muban" geocode="75030510" name="บ้านวัดแก้วเจริญ - บางวันทอง"/>
+      <entity type="Muban" geocode="75030510" name="บ้านวัดแก้วเจริญ - บางวันทอง" english="Ban Wat Kaeo Charoen - Bang Wan Thong"/>
     </entity>
     <entity type="Tambon" name="บางช้าง" english="Bang Chang" geocode="750306" >
       <office type="TAOOffice">
-        <url>http://abt-banchang.tripod.com/</url>
+        <url lastchecked="2012-08-29">http://www.bangchangamphawa.go.th/</url>
+        <url status="obsolete">http://abt-banchang.tripod.com/</url>
+        <officials>
+          <official title="TAOMayor" name="นายอรุณ ชูอรุณ" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18"/>
+        </council>
       </office>
       <entity type="Muban" geocode="75030601" name="บ้านคลองลัดตาโชติ" english="Ban Khlong Lat Ta Chot"/>
       <entity type="Muban" geocode="75030602" name="บ้านคลองบางจาก" english="Ban Khlong Bang Chak"/>
@@ -502,7 +540,13 @@
     </entity>
     <entity type="Tambon" name="ปลายโพงพาง" english="Plai Phongphang" geocode="750308" >
       <office type="TAOOffice">
-        <url>http://www.plaiphongphang.go.th/</url>
+        <url lastchecked="2012-08-29">http://www.plaiphongphang.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="จิรวัฒน์ อินทะแสน" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18"/>
+        </council>
       </office>
       <entity type="Muban" geocode="75030801" name="บ้านปากวน" english="Ban Pak Won"/>
       <entity type="Muban" geocode="75030802" name="บ้านวัดประชา" english="Ban Wat Pracha"/>
@@ -527,7 +571,13 @@
     </entity>
     <entity type="Tambon" name="แพรกหนามแดง" english="Phraek Nam Daeng" geocode="750310" >
       <office type="TAOOffice">
-        <url>http://www.phragnamdang.go.th/</url>
+        <url status="offline">http://www.phragnamdang.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ทวีป อมศิริ" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="12"/>
+        </council>
       </office>
       <entity type="Muban" geocode="75031001" name="บ้านคลองขุดเล็ก" english="Ban Khlong Khut Lek"/>
       <entity type="Muban" geocode="75031002" name="บ้านคลองสะพานหัน" english="Ban Khlong Saphan Han"/>
@@ -598,10 +648,13 @@
         <geo:lat>13.4248</geo:lat>
         <geo:long>99.9559</geo:long>
       </geo:Point>
-      <url>http://www.amphawa.go.th/</url>
+      <url lastchecked="2012-08-29">http://www.amphawa.go.th/</url>
       <officials>
-        <official title="Mayor" name="พัชรโรดม อุนสุวรรณ" inoffice="2010"/>
+        <official title="Mayor" name="พัชรโรดม อุนสุวรรณ" begin="2008-03-09" end="2012-03-08"/>
       </officials>
+      <council>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="กระดังงา" english="Kradang-nga" geocode="7597" parent="7502" />
