@@ -886,10 +886,35 @@
     </office>
     <entity type="Tambon" name="อากาศ" english="Akat" geocode="471101" >
       <office type="TAOOffice">
-        <url>http://www.akatlocal.org/</url>
+        <vision>
+          เศรษฐกิจดี  มีไฟสว่าง  หนทางสะดวก  คุณภาพชีวิตดี มีคุณธรรม  นำความรู้พัฒนา
+          ส่งเสริมการศึกษา  ไม่นำพายาเสพติด  สิ่งแวดล้อมไม่เป็นพิษ
+        </vision>
+        <url lastchecked="2012-08-30">http://akat.go.th/</url>
+        <url status="offline">http://www.akatlocal.org/</url>
+        <officials>
+          <official title="TAOMayor" name="ทองมี เดชขันธ์" begin="2008-05-11" end="2012-05-10"/>
+        </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24"/>
+        </council>
       </office>
+      <entity type="Muban" geocode="47110101" name="บ้านอากาศ" english="Ban Akat"/>
+
       <entity type="Muban" geocode="47110103" name="บ้านอากาศ" english="Ban Akat"/>
 
+      <entity type="Muban" geocode="47110105" name="บ้านดอนแดง" english="Ban Don Daeng"/>
+      <entity type="Muban" geocode="47110106" name="บ้านนายอ" english="Ban Na Yo"/>
+      <entity type="Muban" geocode="47110107" name="บ้านเม่นใหญ่" english="Ban Men Yai"/>
+      <entity type="Muban" geocode="47110108" name="บ้านนาเมือง" english="Ban Na Mueang"/>
+      
+      <entity type="Muban" geocode="47110110" name="บ้านอากาศ" english="Ban Akat"/>
+      <entity type="Muban" geocode="47110111" name="บ้านหนองตาไก้" english="Ban Nong Takai"/>
+      <entity type="Muban" geocode="47110112" name="บ้านนาเมือง" english="Ban Na Mueang"/>
+      <entity type="Muban" geocode="47110113" name="บ้านนายอ" english="Ban Na Yo"/>
+      
+      <entity type="Muban" geocode="47110117" name="บ้านอากาศ" english="Ban Akat"/>
+      <entity type="Muban" geocode="47110118" name="บ้านอากาศ" english="Ban Akat"/>
       <entity type="Muban" geocode="47110119" name="บ้านโพธิ์ไทรทอง" english="Ban Pho Sai Thong"/>
     </entity>
     <entity type="Tambon" name="โพนแพง" english="Phon Phaeng" geocode="471102" >
@@ -922,11 +947,18 @@
     </entity>
     <entity type="Tambon" name="วาใหญ่" english="Wa Yai" geocode="471103" >
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-24 -->
         <geo:Point>
           <geo:lat>17.6312</geo:lat>
           <geo:long>103.9488</geo:long>
         </geo:Point>
-        <url>http://www.wayai.com/</url>
+        <url status="offline">http://www.wayai.com/</url>
+        <officials>
+          <official title="TAOMayor" name="คํายา ศรีสร้อย" end="2012-08-23" comment="Begin was after 2008, End due to upgrade"/>
+        </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28"/>
+        </council>
       </office>
       <entity type="Muban" geocode="47110301" name="บ้านกุดจอกน้อย" english="Ban Kut Chok Noi"/>
       <entity type="Muban" geocode="47110302" name="บ้านวาใหญ่" english="Ban Wa Yai"/>
@@ -945,10 +977,13 @@
     </entity>
     <entity type="Tambon" name="โพนงาม" english="Phon Ngam" geocode="471104" >
       <office type="TAOOffice">
-        <url>http://www.phonngam.go.th/</url>
+        <url lastchecked="2012-08-30">http://www.phonngam.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="วิโรจน์  ช่วยรักษา" inoffice="2010"/>
+          <official title="TAOMayor" name="วิโรจน์ ช่วยรักษา" inoffice="2010" comment="Term different with council"/>
         </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26"/>
+        </council>
       </office>
       <entity type="Muban" geocode="47110401" name="บ้านโพนงาม" english="Ban Phon Ngam"/>
       <entity type="Muban" geocode="47110402" name="บ้านโพนงาม" english="Ban Phon Ngam"/>
@@ -1669,8 +1704,11 @@
       <url lastchecked="2012-01-26">http://www.akatumnuay.go.th/</url>
       <url status="broken">http://www.akatumnuay.com/</url>
       <officials>
-        <official title="Mayor" name="มิตรไทย ใครบุตร" inoffice="2011"/>
+        <official title="Mayor" name="มิตรไทย ใครบุตร" begin="2008-07-06" end="2012-07-05"/>
       </officials>
+      <council>
+        <term begin="2008-07-06" end="2012-07-05" type="ThesabanTambon" size="12"/>
+     </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ดอนเขือง" english="Don Khueang" geocode="4787" parent="4712" >
@@ -1726,7 +1764,10 @@
   </entity>
   <entity type="ThesabanTambon" name="สามัคคีพัฒนา" english="Samakkhi Phatthana" geocode="4782" parent="4711" tambon="471108" >
     <office type="MunicipalityOffice">
-      <url>http://samakkhee.org/</url>
+      <url status="offline">http://samakkhee.org/</url>
+      <council>
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บงใต้" english="Bong Tai" geocode="4781" parent="4712" tambon="471211" >
