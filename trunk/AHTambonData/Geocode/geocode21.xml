@@ -593,8 +593,11 @@
         <url lastchecked="2012-01-25">http://www.bankhai.go.th/</url>
         <url status="offline">http://www.bankhai.org/</url>
         <officials>
-          <official title="TAOMayor" name="อาคม เจริญศึกษา" inoffice="2011"/>
+          <official title="TAOMayor" name="อาคม เจริญศึกษา" begin="2008-08-31" end="2012-08-30"/>
         </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="12"/>
+        </council>
         <!--<history>
           <rename oldname="บ้านค่าย" oldenglish="Ban Khai" name="บ้านค่ายพัฒนา" english="Ban Khai Phatthana" comment="Rename with upgrade?">
             <meetingreference date="2012-08-09" number="4" board="rename"/>
@@ -637,13 +640,28 @@
     </entity>
     <entity type="Tambon" name="หนองตะพาน" english="Nong Taphan" geocode="210503" >
       <office type="TAOOffice">
-        <url>http://www.nongtaphan.go.th/</url>
+        <url lastchecked="2012-09-04">http://www.nongtaphan.go.th/</url>
         <url status="offline">http://www.geocities.com/supattra_angsila/</url>
+        <officials>
+          <official title="TAOMayor" name="นคร มนาคม" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="12"/>
+        </council>
       </office>
+      <entity type="Muban" geocode="21050301" name="บ้านไผ่" english="Ban Phai"/>
+      <entity type="Muban" geocode="21050302" name="บ้านเกาะ" english="Ban Ko"/>
+      <entity type="Muban" geocode="21050303" name="บ้านหนองสะพาน" english="Ban Nong Saphan"/>
+      <entity type="Muban" geocode="21050304" name="บ้านปากป่า" english="Ban Pak Pa"/>
+      <entity type="Muban" geocode="21050305" name="บ้านแหลมเหียง" english="Ban Laem Hiang"/>
+      <entity type="Muban" geocode="21050306" name="บ้านคลองช้างตาย" english="Ban Khlong Chang Tai"/>
     </entity>
     <entity type="Tambon" name="ตาขัน" english="Ta Khan" geocode="210504" >
       <office type="TAOOffice">
-        <url>http://www.takhan.go.th/</url>
+        <url status="broken" lastchecked="2012-09-04">http://www.takhan.go.th/</url>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18"/>
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="บางบุตร" english="Bang But" geocode="210505" >
@@ -682,7 +700,11 @@
     </entity>
     <entity type="Tambon" name="ชากบก" english="Chak Bok" geocode="210507" >
       <office type="TAOOffice">
-        <url>http://www.chakkabok.go.th/</url>
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+        <url status="broken" lastchecked="2012-09-04">http://www.chakkabok.go.th/</url>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20"/>
+        </council>
       </office>
       <entity type="Muban" geocode="21050701" name="บ้านชากกอไผ่" english="Ban Chak Ko Phai"/>
       <entity type="Muban" geocode="21050702" name="บ้านชากทองหลาง" english="Ban Chak Thong Lang"/>
@@ -1013,11 +1035,19 @@
         <geo:lat>12.7813</geo:lat>
         <geo:long>101.2926</geo:long>
       </geo:Point>
-      <url>http://www.bankhaicity.net/</url>
+      <url lastchecked="2012-09-04">http://www.bankhaicity.net/</url>
       <officials>
-        <official title="Mayor" name="ยอดยิ่ง งาเจือ" inoffice="2010"/>
+        <official title="Mayor" name="ยอดยิ่ง งาเจือ" begin="2008-09-07" end="2012-09-06"/>
       </officials>
+      <council>
+        <term begin="2008-09-07" end="2012-09-06" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
+    <!-- numbers to be confirmed -->
+    <entity type="Chumchon" geocode="21870001" name="ชุมชนบ้านโขดคลอง" english="Chumchon Ban Khok Khlong"/>
+    <entity type="Chumchon" geocode="21870002" name="ชุมชนบ้านคลองน้ำงู" english="Chumchon Ban Khlong Nam Ngu"/>
+    <entity type="Chumchon" geocode="21870003" name="ชุมชนบ้านพาณีอุทิศ" english="Chumchon Ban Phan Uthit"/>
+    <entity type="Chumchon" geocode="21870004" name="ชุมชนบ้านสามแยก" english="Chumchon Ban Sam Yaek"/>
   </entity>
   <entity type="ThesabanTambon" name="จอมพลเจ้าพระยา" english="Chomphon Chao Phraya" geocode="2186" parent="2106" >
     <office type="MunicipalityOffice">
