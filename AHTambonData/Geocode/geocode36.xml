@@ -386,7 +386,7 @@
     <entity type="Tambon" name="ชีบน" english="Chi Bon" geocode="360204" >
       <office type="TAOOffice">
         <!-- Mayor term not same as council -->
-        <council>          
+        <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24"/>
         </council>
       </office>
@@ -1379,7 +1379,10 @@
           <geo:lat>16.4099</geo:lat>
           <geo:long>102.3738</geo:long>
         </geo:Point>
-        <url>http://abo-banthaen.com/</url>
+        <url status="offline">http://abo-banthaen.com/</url>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24"/>
+        </council>
       </office>
       <entity type="Muban" geocode="36110101" name="บ้านนาดี" english="Ban Na Di"/>
       <entity type="Muban" geocode="36110102" name="บ้านมอญ" english="Ban Mon"/>
@@ -1400,7 +1403,13 @@
     </entity>
     <entity type="Tambon" name="สามสวน" english="Sam Suan" geocode="361102" >
       <office type="TAOOffice">
-        <url>http://samsuan.go.th/</url>
+        <url lastchecked="2012-09-05">http://samsuan.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="โชติ พรมพันใจ" begin="2008-08-24" end="2012-08-23"/>
+        </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="36"/>
+        </council>
       </office>
       <entity type="Muban" geocode="36110201" name="บ้านหลุบค่าย" english="Ban Lup Khai"/>
       <entity type="Muban" geocode="36110202" name="บ้านโนนข่า" english="Ban Non Kha"/>
@@ -1419,13 +1428,30 @@
       <entity type="Muban" geocode="36110215" name="บ้านสระแก้ว" english="Ban Sa Kaeo"/>
       <entity type="Muban" geocode="36110216" name="บ้านป่าเสี้ยว" english="Ban Pa Siao"/>
       <entity type="Muban" geocode="36110217" name="บ้านสามสวนโพธิ์งาม" english="Ban Sam Suan Pho Ngam"/>
-      <entity type="Muban" geocode="36110218" name="บ้านหินลาดโนนกุศล"/>
+      <entity type="Muban" geocode="36110218" name="บ้านหินลาดโนนกุศล" english="Ban Hin Lat Non Kuson"/>
     </entity>
-    <entity type="Tambon" name="สระพัง" english="Sa Phang" geocode="361103" />
+    <entity type="Tambon" name="สระพัง" english="Sa Phang" geocode="361103" >
+      <office type="TAOOffice">
+        <!-- Longdo: 16.41391,102.39499 -->
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านเต่า" english="Ban Tao" geocode="361104" >
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-24 -->
         <!-- Longdo: 16.35522, 102.37910 -->
-        <url>http://www.bantao.go.th/</url>
+        <vision>
+          ตำบลบ้านเต่าเมืองน่าอยู่               มีความรู้ก้าวไกล
+          มีความปลอดภัยในชีวิต                  เศรษฐกิจดีพร้อม
+          สิ่งแวดล้อมไม่เป็นพิษ                     ทุกชีวิตสุขภาพดี
+          มีโครงสร้างพื้นฐาน                       สืบสานตำนานโบราณสถานปรางค์กู่
+        </vision>
+        <url lastchecked="2012-09-05">http://www.bantao.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ประสิทธ์ พงษ์สระพัง" begin="2008-08-24" end="2012-08-23"/>
+        </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26"/>
+        </council>
       </office>
       <entity type="Muban" geocode="36110401" name="บ้านเต่า" english="Ban Tao"/>
       <entity type="Muban" geocode="36110402" name="บ้านหินลาด" english="Ban Hin Lat"/>
