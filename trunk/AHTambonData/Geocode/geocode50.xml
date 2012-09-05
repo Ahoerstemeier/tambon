@@ -35,7 +35,7 @@
     </geo:Point>
     <url>http://www.chiangmai.go.th/</url>
     <officials source="http://www.chiangmai.go.th/cmweb/governor_list.html" >
-      <official title="Governor" index="33" name="ม.ล.ปนัดดา ดิศกุล" begin="2010-10-01"/>
+      <official title="Governor" index="33" name="ม.ล.ปนัดดา ดิศกุล" begin="2010-10-01" endyear="2012" endreason="Transfer"/>
       <official title="Governor" index="32" name="อมรพันธุ์ นิมานันท์" begin="2009-03-01"/>
       <official title="Governor" index="31" name="วิบูลย์ สงวนพงศ์" begin="2007-10-01" end="2009-02-28"/>
       <official title="Governor" index="30" name="วิชัย ศรีขวัญ" begin="2006-11-13" end="2007-09-30"/>
@@ -877,7 +877,8 @@
     </entity>
     <entity type="Tambon" name="ป่าแป๋" english="Pa Pae" geocode="500609" >
       <office type="TAOOffice">
-        <geo:Point><!-- no hires, but visible in streetview -->
+        <geo:Point>
+          <!-- no hires, but visible in streetview -->
           <geo:lat>19.1220</geo:lat>
           <geo:long>98.7093</geo:long>
         </geo:Point>
@@ -1021,7 +1022,15 @@
     </entity>
     <entity type="Tambon" name="ห้วยทราย" english="Huai Sai" geocode="500706" >
       <office type="TAOOffice">
-        <url>http://huaisai-maerim.go.th/</url>
+        <geo:Point>
+          <geo:lat>18.9602</geo:lat>
+          <geo:long>98.9170</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-09-05">http://www.tambonhuaisai.go.th/</url>
+        <url status="offline">http://huaisai-maerim.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ดวงดี ปันจันทร์" inoffice="2012"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50070605" name="บ้านหัวฝาย" english="Ban Hua Fai" comment="Old name: บ้านเหล่า, Ban Lao"/>
     </entity>
@@ -1886,8 +1895,29 @@
         <official title="DistrictOfficer" name="สุรพล พนัสอำพล" end="2006-12-24"/>
       </officials>
     </office>
-    <entity type="Tambon" name="สันกำแพง" english="San Kamphaeng" geocode="501301" />
-    <entity type="Tambon" name="ทรายมูล" english="Sai Mun" geocode="501302" />
+    <entity type="Tambon" name="สันกำแพง" english="San Kamphaeng" geocode="501301">
+      <entity type="Muban" geocode="50130101" name="บ้านป่าเส้า" english="Ban Pa Sao"/>
+      <entity type="Muban" geocode="50130102" name="บ้านป่าเหว" english="Ban Pa We"/>
+      <entity type="Muban" geocode="50130103" name="บ้านเหล่า" english="Ban Lao"/>
+      <entity type="Muban" geocode="50130104" name="บ้านต้นโชค" english="Ban Ton Chok"/>
+      <entity type="Muban" geocode="50130105" name="บ้านสันเหนือ" english="Ban San Nuea"/>
+      <entity type="Muban" geocode="50130106" name="บ้านสันเหนือ" english="Ban San Nuea"/>
+      <entity type="Muban" geocode="50130107" name="บ้านกาด" english="Ban Kat"/>
+      <entity type="Muban" geocode="50130108" name="บ้านสันใต้ตอนล่าง" english="Ban San Tai Don Lang"/>
+      <entity type="Muban" geocode="50130109" name="บ้านสันใต้ตอนบน" english="Ban San Tai Don Bon"/>
+      <entity type="Muban" geocode="50130110" name="บ้านสันไร่" english="Ban San Rai"/>
+      <entity type="Muban" geocode="50130111" name="บ้านน้อย" english="Ban Noi"/>
+      <entity type="Muban" geocode="50130112" name="บ้านออก" english="Ban Ok"/>
+    </entity>
+    <entity type="Tambon" name="ทรายมูล" english="Sai Mun" geocode="501302" >
+      <entity type="Muban" geocode="50130201" name="บ้านดอนมูล" english="Ban Don Mun"/>
+      <entity type="Muban" geocode="50130202" name="บ้านสันโค้งใหม่" english="Ban San Khong Mai"/>
+      <entity type="Muban" geocode="50130203" name="บ้านป่าเป้า" english="Ban Pa Pao"/>
+      <entity type="Muban" geocode="50130204" name="บ้านสันโค้งเก่า" english="Ban San Khong Kao"/>
+      <entity type="Muban" geocode="50130205" name="บ้านหัวทุ่ง" english="Ban Hua Thung"/>
+      <entity type="Muban" geocode="50130206" name="บ้านสันก้างปลา" english="Ban San Kang Pla"/>
+      <entity type="Muban" geocode="50130207" name="บ้านทรายมูล" english="Ban Sai Mun"/>
+    </entity>
     <entity type="Tambon" name="ร้องวัวแดง" english="Rong Wua Daeng" geocode="501303" >
       <office type="TAOOffice">
         <vision>ร้องวัวแดงตำบลน่าอยู่ ควบคู่คุณธรรม นำการพัฒนา ด้วยภูมิปัญญาท้องถิ่น</vision>
@@ -1895,10 +1925,13 @@
           <geo:lat>18.7417</geo:lat>
           <geo:long>99.1700</geo:long>
         </geo:Point>
-        <url lastchecked="2012-04-06">http://www.rongwuadang.go.th/</url>
+        <url lastchecked="2012-09-05">http://www.rongwuadang.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สวัสดิ์ ขัติกุล" inoffice="2011"/>
+          <official title="TAOMayor" name="สวัสดิ์ ขัติกุล" begin="2008-04-10" end="2012-04-09"/>
         </officials>
+        <council>
+          <term begin="2008-04-10" end="2012-04-09" type="TAO" size="22"/>
+        </council>
       </office>
       <entity type="Muban" geocode="50130301" name="บ้านวังธาร" english="Ban Wang Than"/>
       <entity type="Muban" geocode="50130302" name="บ้านใหม่" english="Ban Mai"/>
@@ -1927,7 +1960,8 @@
       <entity type="Muban" geocode="50130504" name="บ้านดงขี้เหล็ก" english="Ban Dong Khilek"/>
       <entity type="Muban" geocode="50130505" name="บ้านดอนปีน" english="Ban Don Pin"/>
       <entity type="Muban" geocode="50130506" name="บ้านป่าไผ่เหนือ" english="Ban Pa Phai Nuea"/>
-
+      <entity type="Muban" geocode="50130507" name="บ้านป่าไผ่กลาง" english="Ban Pa Phai Klang"/>
+      <entity type="Muban" geocode="50130508" name="บ้านป่าไผ่ใต้" english="Ban Pa Phai Tai"/>
       <entity type="Muban" geocode="50130509" name="บ้านหัวฝาย" english="Ban Hua Fai"/>
       <entity type="Muban" geocode="50130510" name="บ้านแม่ซ้อ-โค้งงาม"/>
     </entity>
@@ -1939,12 +1973,54 @@
     <entity type="Tambon" name="ออนเหนือ" english="On Nuea" geocode="501307" newgeocode="502301" />
     <entity type="Tambon" name="บ้านสหกรณ์" english="Ban Sahakon" geocode="501308" newgeocode="502303" />
     <entity type="Tambon" name="ห้วยแก้ว" english="Huai Kaeo" geocode="501309" newgeocode="502304" />
-    <entity type="Tambon" name="แม่ปูคา" english="Mae Pu Kha" geocode="501310" />
-    <entity type="Tambon" name="ห้วยทราย" english="Huai Sai" geocode="501311" />
+    <entity type="Tambon" name="แม่ปูคา" english="Mae Pu Kha" geocode="501310" >
+      <entity type="Muban" geocode="50131001" name="บ้านป่าสักยาว" english="Ban Pa Sak Yao"/>
+      <entity type="Muban" geocode="50131002" name="บ้านสันมะแปบ" english="Ban San Mapaep"/>
+      <entity type="Muban" geocode="50131003" name="บ้านป่าสักน้อย" english="Ban Pa Sak Noi"/>
+      <entity type="Muban" geocode="50131004" name="บ้านปงป่าเอื้อง" english="Ban Pong Pa Ueang"/>
+      <entity type="Muban" geocode="50131005" name="บ้านปูคาเหนือ" english="Ban Pu Kha Nuea"/>
+      <entity type="Muban" geocode="50131006" name="บ้านปูคากลาง" english="Ban Pu Kha Klang"/>
+      <entity type="Muban" geocode="50131007" name="บ้านปูคาใต้" english="Ban Pu Kha Tai"/>
+      <entity type="Muban" geocode="50131008" name="บ้านไร่พัฒนา" english="Ban  Rai Phatthana"/>
+      <entity type="Muban" geocode="50131009" name="บ้านปูคาหัวบ้าน" english="Ban Pu Kha Hua Ban"/>
+    </entity>
+    <entity type="Tambon" name="ห้วยทราย" english="Huai Sai" geocode="501311" >
+      <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-11-01 -->
+        <url lastchecked="2012-09-05">http://huaysaisankampang.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="นคร ปิยะจันทร์" begin="2008-10-26" end="2012-10-25"/>
+        </officials>
+        <council>
+          <term end="2012-11-01" type="TAO"/>
+          <!--- Retired early for upgrade? Not listed in 2012 term end table. -->
+        </council>
+      </office>
+      <entity type="Muban" geocode="50131101" name="บ้านแม่ตาด" english="Ban Mae Tat"/>
+      <entity type="Muban" geocode="50131102" name="บ้านหนองแสะ" english="Ban Nong Sae"/>
+      <entity type="Muban" geocode="50131103" name="บ้านล้านตอง" english="Ban Lan Tong"/>
+      <entity type="Muban" geocode="50131104" name="บ้านสันเข้าแคบ" english="Ban San Khao Khaep"/>
+      <entity type="Muban" geocode="50131105" name="บ้านหม้อ" english="Ban Mo"/>
+      <entity type="Muban" geocode="50131106" name="บ้านดอยซิว" english="Ban Doi Sio"/>
+      <entity type="Muban" geocode="50131107" name="บ้านป่าตึง" english="Ban Pa Tueng"/>
+      <entity type="Muban" geocode="50131108" name="บ้านผาจุก" english="Ban Pha Chuk"/>
+    </entity>
     <entity type="Tambon" name="ต้นเปา" english="Ton Pao" geocode="501312" />
     <entity type="Tambon" name="สันกลาง" english="San Klang" geocode="501313" >
       <office type="TAOOffice">
-        <url>http://www.sunklang.org/</url>
+        <vision>การคมนาคมสะดวก ความรู้ทันสมัย ปลอดภัยจากสิ่งแวดล้อมที่เป็นพิษ เศรษฐกิจดี ประชาชนมีความสุขถ้วนหน้า</vision>
+        <geo:Point>
+          <geo:lat>18.7708</geo:lat>
+          <geo:long>99.0537</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-09-05">http://sanklang.org/</url>
+        <url status="offline">http://www.sunklang.org/</url>
+        <officials>
+          <official title="TAOMayor" name="สมศักดิ์ จีนสกุล" begin="2008-08-24" end="2012-08-23"/>
+        </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="14"/>
+        </council>
       </office>
       <entity type="Muban" geocode="50131301" name="บ้านมอญเหนือ" english="Ban Mon Nuea"/>
       <entity type="Muban" geocode="50131302" name="บ้านมอญใต้" english="Ban Mon Tai"/>
@@ -3227,17 +3303,21 @@
       <officials>
         <official title="Mayor" name="สุภคิน วงศ์ษา" inoffice="2012"/>
         <official title="Mayor" name="ศรีฑูรย์ ไชยซาววงศ์" endyear="2010"/>
-        
+
         <official title="MunicipalClerk" name="โชคชัย ไหวดี" inoffice="2010" comment="Acting Mayor in 2010"/>
       </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สันกำแพง" english="San Kamphaeng" geocode="5081" parent="5013" >
     <office type="MunicipalityOffice">
-      <url>http://www.sankamphaeng.com/</url>
+      <vision>เทศบาลตำบลสันกำแพงจะเป็นเทศบาลแห่งความสุข  มีสิ่งแวดล้อมที่ดี  บริหารงานอย่างมีประสิทธิภาพ  ยึดหลักธรรมาภิบาล  น้อมนำเศรษฐกิจพอเพียง  ให้บริการอย่างมีคุณภาพ  ทันสมัย  ชุมชนมีส่วนร่วม  และเข้มแข็ง  มุ่งประโยชน์สูงสุดของประชาชน</vision>
+      <url lastchecked="2012-09-05">http://www.sankamphaeng.com/</url>
       <officials>
-        <official title="Mayor" name="สุเทพ ปัญญาแก้ว" inoffice="2010"/>
+        <official title="Mayor" name="สุเทพ ปัญญาแก้ว" begin="2008-09-07" end="2012-09-06"/>
       </officials>
+      <council>
+        <term begin="2008-09-07" end="2012-09-06" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanMueang" name="แม่โจ้" english="Mae Cho" geocode="5080" parent="5014" >
@@ -3489,7 +3569,15 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่ปูคา" english="Mae Pu Kha" geocode="5045" parent="5013" tambon="501310" >
     <office type="MunicipalityOffice">
-      <url>http://www.maepuka.com/</url>
+      <vision>มุ่งมั่น  พัฒนา  เข้าถึงปัญหา  ประชาชนมีส่วนร่วม</vision>
+      <url lastchecked="2012-09-05">http://www.maepuka.go.th/</url>
+      <url status="offline">http://www.maepuka.com/</url>
+      <officials>
+        <official title="Mayor" name="จรุงเกียรติ ไชยซาววงศ์" begin="2008-11-30" end="2012-11-29"/>
+      </officials>
+      <council>
+        <term begin="2008-11-30" end="2012-11-29" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สันพระเนตร" english="San Phranet" geocode="5044" parent="5014" tambon="501403" >
@@ -3536,7 +3624,7 @@
     </office>
   </entity>
   <!--<entity type="ThesabanTambon" name="สันปูเลย" english="San Pu Loei" geocode="5040" />-->
-    
+
   <entity type="SakhaKhwaeng" name="กาลวิละ" geocode="5051" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai"/>
   <entity type="SakhaKhwaeng" name="ศรีวิชัย" english="Si Wichai" geocode="5052" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai"/>
   <entity type="SakhaKhwaeng" name="เม็งราย" english="Mengrai" geocode="5053" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai"/>
