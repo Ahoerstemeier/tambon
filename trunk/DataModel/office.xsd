@@ -310,7 +310,7 @@
       <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="t:OfficialEntry"/>
       <xs:element name="election" minOccurs="0" maxOccurs="1" type="t:Election"/>
     </xs:sequence>
-    <xs:attribute name="begin" type="xs:date" use="optional" >
+    <xs:attribute name="begin" type="xs:date" use="required" >
       <xs:annotation>
         <xs:documentation>Begin of term.</xs:documentation>
       </xs:annotation>
@@ -330,7 +330,7 @@
         <xs:documentation>Number of councillors.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="type" type="t:EntityType" use="optional">
+    <xs:attribute name="type" type="t:EntityType" use="required">
       <xs:annotation>
         <xs:documentation>Type of the entity during the term of the council.</xs:documentation>
       </xs:annotation>

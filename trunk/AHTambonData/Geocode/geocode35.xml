@@ -24,8 +24,8 @@
       <official title="PAOChairman" name="สฤษดิ์ ประดับศรี" begin="2008-04-20" end="2012-04-19"/>
     </officials>
     <council>
-      <term begin="2012-07-08"/>
-      <term begin="2008-04-20" end="2012-04-19"/>
+      <term begin="2012-07-08" type="PAO"/>
+      <term begin="2008-04-20" end="2012-04-19" type="PAO"/>
     </council>
   </office>
   <entity type="Amphoe" name="เมืองยโสธร" english="Mueang Yasothon" geocode="3501" >
@@ -719,12 +719,64 @@
       </officials>
     </office>
     <entity type="Tambon" name="น้ำคำ" english="Nam Kham" geocode="350801" newgeocode="350902" />
-    <entity type="Tambon" name="บุ่งค้า" english="Bung Kha" geocode="350802" />
-    <entity type="Tambon" name="สวาท" english="Sawat" geocode="350803" />
+    <entity type="Tambon" name="บุ่งค้า" english="Bung Kha" geocode="350802" >
+      <slogan>
+        บุ่งค้าแหล่งวัฒนธรรม   เด่นล้ำพืชสมุนไพร   ถิ่นภูไทผ้าไหมสวย
+        ห้วยสะแบกแดนสุขสันต์   ภูสูงภูจันทร์ตระการตา   ข้าวปลาดีมีปุ๋ยชีวภาพ
+      </slogan>
+      <office type="MunicipalityOffice">
+        <vision>
+          บุ่งค้าเป็นเมืองน่าอยู่         แหล่งท่องเที่ยวพัฒนา
+          เกษตรอินทรีย์ก้าวหน้า      ชาวประชาอยู่ดีมีสุข
+        </vision>
+        <url lastchecked="2012-09-09">http://www.bungkha.org/</url>
+        <url status="broken">http://www.bungkha.thport.com/</url>
+        <officials>
+          <official title="Mayor" name="สมัย ธรรมปัต" begin="2008-10-12" end="2012-10-11"/>
+        </officials>
+        <council>
+          <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12"/>
+        </council>
+      </office>
+    </entity>
+    <entity type="Tambon" name="สวาท" english="Sawat" geocode="350803" >
+      <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-24 -->
+        <url lastchecked="2012-09-09">http://www.tambonsawat.org/</url>
+        <officials>
+          <official title="TAOMayor" name="สุภีย์ ผ่านเมือง" begin="2008-08-24" end="2012-08-23"/>
+        </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32"/>
+        </council>
+      </office>
+      <entity type="Muban" geocode="35080301" name="บ้านสวาท" english="Ban Sawat"/>
+      <entity type="Muban" geocode="35080302" name="บ้านเลิงนกทา" english="Ban Loeng Nok Tha"/>
+      <entity type="Muban" geocode="35080303" name="บ้านแย" english="Ban Yae"/>
+      <entity type="Muban" geocode="35080304" name="บ้านดอนฮี" english="Ban Don Hi"/>
+      <entity type="Muban" geocode="35080305" name="บ้านกุดโจด" english="Ban Kut Chok"/>
+      <entity type="Muban" geocode="35080306" name="บ้านหนองเม็ก" english="Ban Nong Mek"/>
+      <entity type="Muban" geocode="35080307" name="บ้านพรหมนิยม" english="Ban Phrom Niyom"/>
+      <entity type="Muban" geocode="35080308" name="บ้านหนองสมบูรณ์" english="Ban Nong Sombun"/>
+      <entity type="Muban" geocode="35080309" name="บ้านม่วงกาชัง" english="Ban Muang Ka Chang"/>
+      <entity type="Muban" geocode="35080310" name="บ้านหนองโสน" english="Ban Nong Sano"/>
+      <entity type="Muban" geocode="35080311" name="บ้านนาจาน" english="Ban Na Chan"/>
+      <entity type="Muban" geocode="35080312" name="บ้านแยเหนือ" english="Ban Yae Nuea"/>
+      <entity type="Muban" geocode="35080313" name="บ้านเปงจาน" english="Ban Peng Chan"/>
+      <entity type="Muban" geocode="35080314" name="บ้านศรีเจริญชัย" english="Ban Si Charoen Chai"/>
+      <entity type="Muban" geocode="35080315" name="บ้านนาจาน" english="Ban Na Chan"/>
+      <entity type="Muban" geocode="35080316" name="บ้านหนองสมบูรณ์" english="Ban Nong Sombun"/>
+    </entity>
     <entity type="Tambon" name="ส้มผ่อ" english="Som Pho" geocode="350804" newgeocode="350903" />
     <entity type="Tambon" name="ห้องแซง" english="Hong Saeng" geocode="350805" >
       <office type="MunicipalityOffice">
-        <url>http://www.hongsaeng.go.th/</url>
+        <url lastchecked="2012-09-09">http://www.hongsaeng.go.th/</url>
+        <officials>
+          <official title="Mayor" name="กิติชัย ห้องแซง" begin="2008-11-09" end="2008-11-08"/>
+        </officials>
+        <council>
+          <term begin="2008-11-09" end="2008-11-08" type="ThesabanTambon" size="12"/>
+        </council>
       </office>
       <entity type="Muban" geocode="35080505" name="บ้านห้องแซง" english="Ban Hong Saeng"/>
 
@@ -753,11 +805,39 @@
       <entity type="Muban" geocode="35080614" name="บ้านดงยาง" english="Ban Dong Yang"/>
       <entity type="Muban" geocode="35080615" name="บ้านหวาย" english="Ban Wai"/>
     </entity>
-    <entity type="Tambon" name="กุดเชียงหมี" english="Kut Chiang Mi" geocode="350807" />
+    <entity type="Tambon" name="กุดเชียงหมี" english="Kut Chiang Mi" geocode="350807" >
+      <office type="TAOOffice">
+        <url lastchecked="2012-09-09">http://kcmlocal.ueuo.com/</url>
+        <officials source="http://kcmlocal.ueuo.com/2.html">
+          <official title="TAOMayor" name="รวมสิน สมประสงค์" beginyear="2007" inoffice="2012"/>
+          <official title="TAOMayor" name="สัมพันธ์ ศรีอุบล" beginyear="2004" endyear="2007"/>
+          <official title="TAOMayor" name="รวมสิน สมประสงค์" beginyear="2000" endyear="2003"/>
+          <official title="TAOMayor" name="สมจิตร อ่อนคนา" beginyear="1997" endyear="2000"/>
+          <!--
+Palat
+1.  นายรุจน์  พลไชย                                                   2540-2542
+2.  ส.ต.ท. ธนาธิป  โครตประทุม                                 2542-2546
+3.  จ.ส.ต.สมพงค์  สิทธิหงส์                                       2546-2551
+4.  นายปรัชญา  สารสุข                                              2551-ปัจจุบัน
+-->
+        </officials>
+      </office>
+      <entity type="Muban" geocode="35080701" name="บ้านกุดเชียงหมี" english="Ban Kut Chiang Mi"/>
+      <entity type="Muban" geocode="35080702" name="บ้านห้วยยาง" english="Ban Huai Yang"/>
+      <entity type="Muban" geocode="35080703" name="บ้านสวาสดิ์" english="Ban Sawat Di"/>
+      <entity type="Muban" geocode="35080704" name="บ้านกุดขุ่น" english="Ban Kut Khun"/>
+      <entity type="Muban" geocode="35080705" name="บ้านกุดแข้ด่อน" english="Ban Kut Khae Don"/>
+      <entity type="Muban" geocode="35080706" name="บ้านกุดเชียงหมี" english="Ban Kut Chiang Mi"/>
+      <entity type="Muban" geocode="35080707" name="บ้านหนองบัว" english="Ban Nong Bua"/>
+      <entity type="Muban" geocode="35080708" name="บ้านแก้งนาคำ" english="Ban Kaeng Na Kham"/>
+      <entity type="Muban" geocode="35080709" name="บ้านกุดแข้ด่อน" english="Ban Kut Khae Don"/>
+      <entity type="Muban" geocode="35080710" name="บ้านกุดเชียงหมี" english="Ban Kut Chiang Mi"/>
+      <entity type="Muban" geocode="35080711" name="บ้านแดนสวรรค์" english="Ban Daen Sawan"/>
+      <entity type="Muban" geocode="35080712" name="บ้านกุดแข้ด่อน" english="Ban Kut Khae Don"/>
+    </entity>
     <entity type="Tambon" name="คำเตย" english="Kham Toei" geocode="350808" newgeocode="350904" />
     <entity type="Tambon" name="คำไผ่" english="Kham Phai" geocode="350809" newgeocode="350905" />
     <entity type="Tambon" name="สามแยก" english="Sam Yaek" geocode="350810" >
-      <!-- Longdo: 16.1969 104.5308 -->
     </entity>
     <entity type="Tambon" name="กุดแห่" english="Kut Hae" geocode="350811" >
       <office type="TAOOffice">
@@ -979,10 +1059,27 @@
       <url>http://www.khowangcm.org/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เลิงนกทา" english="Loeng Nok Tha" geocode="3592" parent="3508" />
+  <entity type="ThesabanTambon" name="เลิงนกทา" english="Loeng Nok Tha" geocode="3592" parent="3508" >
+    <office type="MunicipalityOffice">
+      <vision>เลิงนกทาน่าอยู่ เชิดชูคุณธรรม นำการศึกษาก้าวไกล</vision>
+      <url lastchecked="2012-09-09">http://www.loengnokthacity.go.th/</url>
+      <council>
+        <term begin="2008-06-21" end="2012-06-20" type="ThesabanTambon" size="12"/>
+      </council>
+    </office>
+    <entity type="Chumchon" geocode="35920001" name="ชุมชนร่วมมิตรสัมพันธ์" english="Chumchon Ruam Mit Samphan"/>
+    <entity type="Chumchon" geocode="35920002" name="ชุมชนเกษมสุข" english="Chumchon Kasem Suk"/>
+    <entity type="Chumchon" geocode="35920003" name="ชุมชนเปงจน" english="Ban Peng Chon"/>
+    <entity type="Chumchon" geocode="35920004" name="ชุมชนเลิงนกทา" english="Chumchon Loeng Nok Tha"/>
+    <entity type="Chumchon" geocode="35920005" name="ชุมชนสี่เสือพัฒนา" english="Chumchon Si Suea Phatthana"/>
+  </entity>
   <entity type="ThesabanTambon" name="สามแยก" english="Sam Yaek" geocode="3591" parent="3508" >
-    <office type="TAOOffice">
-      <url>http://www.samyakcity.com/</url>
+    <office type="MunicipalityOffice">
+      <!-- Longdo: 16.1969 104.5308 -->
+      <url lastchecked="2012-09-09">http://www.samyakcity.com/</url>
+      <council>
+        <term begin="2008-06-21" end="2012-06-20" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
 </entity>
