@@ -963,7 +963,16 @@
         <official title="DistrictOfficer" name="นาวิน สินธุสอาด" end="2007-10-23"/>
       </officials>
     </office>
-    <entity type="Tambon" name="ริมใต้" english="Rim Tai" geocode="500701" />
+    <entity type="Tambon" name="ริมใต้" english="Rim Tai" geocode="500701" >
+      <entity type="Muban" geocode="50070101" name="บ้านหมื่นถ้อย-น้ำงาม" english="Ban Muen Thoi - Nam Ngam"/>
+      <entity type="Muban" geocode="50070102" name="บ้านดวงดี" english="Ban Duang Di"/>
+      <entity type="Muban" geocode="50070103" name="บ้านขอนตาล" english="Ban Khon Tan"/>
+      <entity type="Muban" geocode="50070104" name="บ้านต้นแก้ว" english="Ban Ton Kaeo"/>
+      <entity type="Muban" geocode="50070105" name="บ้านท่าวัง" english="Ban Tha Wang"/>
+      <entity type="Muban" geocode="50070106" name="บ้านห้วยโจ้" english="Ban Huai Cho"/>
+      <entity type="Muban" geocode="50070107" name="บ้านทุ่งหัวช้าง" english="Ban Thung Hua Chang"/>
+      <entity type="Muban" geocode="50070108" name="บ้านทรายมูล" english="Ban Sai Mun"/>
+    </entity>
     <entity type="Tambon" name="ริมเหนือ" english="Rim Nuea" geocode="500702" >
       <office type="MunicipalityOffice">
         <geo:Point>
@@ -1036,11 +1045,15 @@
     </entity>
     <entity type="Tambon" name="แม่แรม" english="Mae Raem" geocode="500707" >
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-24 -->
         <geo:Point>
           <geo:lat>18.9201</geo:lat>
           <geo:long>98.9176</geo:long>
         </geo:Point>
-        <url>http://www.maeram.go.th/</url>
+        <url lastchecked="2012-09-10">http://www.maeram.go.th/</url>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24"/>
+        </council>        
       </office>
       <entity type="Muban" geocode="50070705" name="บ้านป่าม่วง" english="Ban Pa Muang"/>
 
@@ -2199,7 +2212,7 @@
           <official title="TAOMayor" name="ทรัพย์ทวี คำมา" inoffice="2011"/>
         </officials>
         <council>
-          <term begin="2012-09-06"/>
+          <term begin="2012-09-06" type="TAO"/>
         </council>
         <!--
         <history>
@@ -3236,8 +3249,26 @@
         <geo:lat>18.9163</geo:lat>
         <geo:long>98.9605</geo:long>
       </geo:Point>
-      <url>http://www.tessabanmaerim.com/</url>
+      <url lastchecked="2012-09-10">http://www.tessabanmaerim.com/</url>
+      <officials>
+        <official title="Mayor" name="พีรพันธุ์ สังข์เรือง" begin="2008-06-08" end="2012-06-07" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        <official title="Mayor" name="พีรพันธุ์ สังข์เรือง" begin="2004-05-02" end="2008-05-01" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        <official title="Mayor" name="จุฬา สังข์ชีพรุ่งเรือง" beginyear="2000" endyear="2004" beginreason="ElectedByCouncil"/>
+        <official title="Mayor" name="จุฬา สังข์ชีพรุ่งเรือง" beginyear="1999" endyear="2000" beginreason="ElectedByCouncil"/>
+      </officials>
+      <council>
+        <term begin="2008-06-08" end="2012-06-07" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
+    <entity type="Chumchon" geocode="50900001" name="ชุมชนหมื่นถ้อย-น้ำงาม" english="Chumchon Muen Thoi - Nam Ngam"/>
+    <entity type="Chumchon" geocode="50900002" name="ชุมชนดวงดี" english="Chumchon Duang Di"/>
+    <entity type="Chumchon" geocode="50900003" name="ชุมชนขอนตาล" english="Chumchon Khon Tan"/>
+    <entity type="Chumchon" geocode="50900004" name="ชุมชนต้นแก้ว" english="Chumchon Ton Kaeo"/>
+    <entity type="Chumchon" geocode="50900005" name="ชุมชนท่าวัง" english="Chumchon Tha Wang"/>
+    <entity type="Chumchon" geocode="50900006" name="ชุมชนห้วยโจ้" english="Chumchon Huai Cho"/>
+    <entity type="Chumchon" geocode="50900007" name="ชุมชนทุ่งหัวช้าง" english="Chumchon Thung Hua Chang"/>
+    <entity type="Chumchon" geocode="50900008" name="ชุมชนทรายมูล" english="Chumchon Sai Mun"/>
+    <entity type="Chumchon" geocode="50900009" name="ชุมชนศรีบุญเรือง" english="Chumchon Si Bun Rueang"/>
   </entity>
   <entity type="ThesabanTambon" name="สะเมิงใต้" english="Samoeng Tai" geocode="5089" parent="5008" >
     <office type="MunicipalityOffice">

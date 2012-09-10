@@ -385,11 +385,15 @@
     </entity>
     <entity type="Tambon" name="หนองปลาไหล" english="Nong Pla Lai" geocode="200403" >
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
         <geo:Point>
           <geo:lat>12.9900</geo:lat>
           <geo:long>100.9632</geo:long>
         </geo:Point>
-        <url>http://www.nongplalai.go.th/</url>
+        <url lastchecked="2012-09-10">http://www.nongplalai.go.th/</url>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18"/>
+        </council>
       </office>
       <entity type="Muban" geocode="20040301" name="บ้านหนองเกตุใหญ่" english="Ban Nong Ket Yai"/>
       <entity type="Muban" geocode="20040302" name="บ้านหนองปลาไหล" english="Ban Nong Pla Lai"/>
@@ -1111,10 +1115,13 @@
         <geo:lat>12.9497</geo:lat>
         <geo:long>100.8933</geo:long>
       </geo:Point>
-      <url>http://www.pattaya.go.th/</url>
+      <url status="broken">http://www.pattaya.go.th/</url>
       <officials>
         <official title="Mayor" name="อิทธิพล คุณปลื้ม" english="Itthipol Khunpluem" inoffice="2012"/>
       </officials>
+      <council>
+        <term begin="2008-05-04" end="2012-05-03" type="Mueang" size="24"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanMueang" name="บ้านบึง" english="Ban Bueng" geocode="2095" parent="2002" >
