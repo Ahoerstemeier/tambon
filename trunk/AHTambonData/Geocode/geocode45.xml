@@ -40,8 +40,8 @@
       <official title="PAOChairman" name="มังกร ยนต์ตระกูล" begin="2008-04-20" end="2012-04-19" endreason="EndOfTerm"/>
     </officials>
     <council>
-      <term begin="2012-05-27"/>
-      <term begin="2008-04-20" end="2012-04-19"/>
+      <term begin="2012-05-27" type="PAO"/>
+      <term begin="2008-04-20" end="2012-04-19" type="PAO"/>
     </council>
   </office>
   <entity type="Amphoe" name="เมืองร้อยเอ็ด" english="Mueang Roi Et" geocode="4501" >
@@ -175,7 +175,7 @@
           <official title="TAOMayor" name="อพิเชษฐ สังวิบุตร์" endyear="2012"/>
         </officials>
         <council>
-          <term end="2012-08-23"/>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO"/>
         </council>
       </office>
       <entity type="Muban" geocode="45010801" name="บ้านสีแก้ว" english="Ban Si Kaeo"/>
@@ -1895,6 +1895,9 @@
           <geo:long>103.8970</geo:long>
         </geo:Point>
         <url>http://www.atsamart.go.th/</url>
+        <council>
+          <term begin="2012-08-24" end="2012-08-23" type="TAO" size="30"/>
+        </council>
       </office>
 
       <entity type="Muban" geocode="45140102" name="บ้านหนองขี้เหล็ก" english="Ban Nong Khilek"/>
@@ -1917,10 +1920,10 @@
     <entity type="Tambon" name="โพนเมือง" english="Phon Mueang" geocode="451402" >
       <office type="TAOOffice" comment="To be upgraded to municipality 2012-08-23">
         <officials>
-          <official title="TAOMayor" name="เมษิต เดชพละ" endyear="2012"/>
+          <official title="TAOMayor" name="เมษิต เดชพละ" begin="2012-08-24" end="2012-08-23"/>
         </officials>
         <council>
-          <term end="2012-08-22"/>
+          <term begin="2012-08-24" end="2012-08-23" type="TAO" size="32"/>
         </council>
       </office>
     </entity>
@@ -1929,6 +1932,9 @@
       <office type="TAOOffice">
         <url>http://www.nom101.com/</url>
         <url status="obsolete">http://obt18076.tripod.com/</url>
+        <council>
+          <term begin="2012-08-24" end="2012-08-23" type="TAO" size="26"/>
+        </council>
       </office>
       <entity type="Muban" geocode="45140401" name="บ้านหน่อม" english="Ban Nom"/>
       <entity type="Muban" geocode="45140402" name="บ้านฟ้าเลื่อม" english="Ban Fa Lueam"/>
@@ -1944,8 +1950,20 @@
       <entity type="Muban" geocode="45140412" name="บ้านห้วยสำราญ" english="Ban Huai Samran"/>
       <entity type="Muban" geocode="45140413" name="บ้านหน่อม" english="Ban Nom"/>
     </entity>
-    <entity type="Tambon" name="หนองหมื่นถ่าน" english="Nong Muen Than" geocode="451405" />
-    <entity type="Tambon" name="หนองขาม" english="Nong Kham" geocode="451406" />
+    <entity type="Tambon" name="หนองหมื่นถ่าน" english="Nong Muen Than" geocode="451405" >
+      <office type="TAOOffice">
+        <council>
+          <term begin="2012-08-24" end="2012-08-23" type="TAO" size="34"/>
+        </council>
+      </office>
+    </entity>
+    <entity type="Tambon" name="หนองขาม" english="Nong Kham" geocode="451406" >
+      <office type="TAOOffice">
+        <council>
+          <term begin="2012-08-24" end="2012-08-23" type="TAO" size="38"/>
+        </council>
+      </office>
+    </entity>
     <entity type="Tambon" name="โหรา" english="Hora" geocode="451407" />
     <entity type="Tambon" name="หนองบัว" english="Nong Bua" geocode="451408" />
     <entity type="Tambon" name="ขี้เหล็ก" english="Khilek" geocode="451409" >
