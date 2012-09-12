@@ -107,7 +107,14 @@
     </entity>
     <entity type="Tambon" name="คมบาง" english="Khom Bang" geocode="220105" >
       <office type="TAOOffice">
-        <url>http://www.kombang.com/</url>
+        <vision>มีโครงสร้างพื้นฐานพร้อม  สภาพแวดล้อมสดใสงามตา  ชาวประชาสุขใจ</vision>
+        <url lastchecked="2012-09-12">http://www.kombang.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ทองพูน กองจินดา" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20"/>
+        </council>
       </office>
       <entity type="Muban" geocode="22010501" name="บ้านแถว" english="Ban Thaeo"/>
       <!--in list mu1 listed with บ้าน unlike the other -->
@@ -151,12 +158,16 @@
     </entity>
     <entity type="Tambon" name="บางกะจะ" english="Bang Kacha" geocode="220108" >
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
         <vision>องค์การบริหารส่วนตำบลบางกะจะ ประชาชนต้องมี สุขภาพพลานามัยแข็งแรงอยู่ในสิ่งแวดล้อมที่ดี สังคมน่าอยู่ ดูแลผู้ด้อยโอกาส เป็นสถานที่ท่องเที่ยวของจังหวัดจันทบุรี</vision>
         <url lastchecked="2012-08-14">http://www.bangkaja.go.th/</url>
         <url status="expired">http://www.bangkaja.ob.tc/</url>
         <officials>
-          <official title="TAOMayor" name="สนั่น นาคแก้ว" inoffice="2012"/>
+          <official title="TAOMayor" name="สนั่น นาคแก้ว" begin="2008-08-31" end="2012-08-30"/>
         </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14"/>
+        </council>
         <!--<history>
           <rename oldname="บางกะจะ" oldenglish="Bang Kacha" name="ค่ายเนินวง" english="Khai Noen Wong">
             <meetingreference date="2012-06-26" number="3" board="rename"/>
@@ -216,12 +227,12 @@
     </entity>
     <entity type="Tambon" name="พลับพลา" english="Phlapphla" geocode="220111" >
       <office type="TAOOffice">
-        <url>http://www.plubpla.go.th/</url>
-        <url>http://plubpla.pantown.com/</url>
+        <url lastchecked="2012-09-12">http://www.plubpla.go.th/</url>
+        <url status="broken">http://plubpla.pantown.com/</url>
       </office>
       <entity type="Muban" geocode="22011101" name="บ้านแถวคลอง" english="Ban Thaeo Khlong"/>
       <entity type="Muban" geocode="22011102" name="บ้านทุ่งว่านเหลือง" english="Ban Thung Wan Lueang"/>
-      <entity type="Muban" geocode="22011103" name="บ้านตรอกกะทิ"/>
+      <entity type="Muban" geocode="22011103" name="บ้านตรอกกะทิ" english="Ban Trok Kathi"/>
       <entity type="Muban" geocode="22011104" name="บ้านโป่งล่าง" english="Ban Pong Lang"/>
       <entity type="Muban" geocode="22011105" name="บ้านบ่อลึก" english="Ban Bo Luek"/>
       <entity type="Muban" geocode="22011106" name="บ้านเนินเห็ด" english="Ban Noen Het"/>
@@ -967,6 +978,13 @@
       <entity type="Muban" geocode="22070318" name="บ้านคลองกลาง" english="Ban Khlong Klang"/>
     </entity>
     <entity type="Tambon" name="ทรายขาว" english="Sai Khao" geocode="220704" >
+      <office type="TAOOffice">
+        <vision>ตำบลหน้าอยู่     มุ่งสู่การเกษตร     การศึกษาดี     มีคุณธรรม     นำไปสู่การพัฒนาอย่างยั่งยืน</vision>
+        <url lastchecked="2012-09-12">http://www.saosaikhao.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="เจษฎา จันทบุรานันท์" inoffice="2012"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="22070401" name="บ้านตามูล" english="Ban Ta Mun"/>
       <entity type="Muban" geocode="22070402" name="บ้านสำโรงบน" english="Ban Samrong Bon"/>
       <entity type="Muban" geocode="22070403" name="บ้านตามูลล่าง" english="Ban Ta Mun Lang"/>
@@ -1317,14 +1335,18 @@
 
   <entity type="ThesabanMueang" name="จันทบุรี" english="Chanthaburi" geocode="2299" parent="2201" >
     <office type="MunicipalityOffice">
+      <vision>ประชาชนในเขตเทศบาลเมืองจันทบุรีต้องมีคุณภาพชีวิตที่ดี มีความรู้ คู่คุณธรรม </vision>
       <geo:Point>
         <geo:lat>12.6087</geo:lat>
         <geo:long>102.1040</geo:long>
       </geo:Point>
-      <url>http://www.chanmunic.go.th/</url>
-      <!-- mayor election 2012-03-08 -->
+      <url lastchecked="2012-09-12">http://www.chanmunic.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สุกานดา สุทธิพัฒนกุล" begin="2012-04-21"/>
+      </officials>
       <council>
-        <term begin="2012-03-08" type="ThesabanMueang" size="18"/>
+        <term begin="2012-04-21" type="ThesabanMueang" size="18"/>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12"/>
       </council>
     </office>
   </entity>
@@ -1369,7 +1391,11 @@
   </entity>
   <entity type="ThesabanTambon" name="บางกะจะ" english="Bang Kacha" geocode="2294" parent="2201" >
     <office type="MunicipalityOffice">
-      <url>http://www.bangkajates.com/</url>
+      <vision>ชุมชนน่าอยู่  ลือเลื่องเมืองท่องเที่ยวเชิงอนุรักษ์  พิทักษ์สิ่งแวดล้อม  พรั่งพร้อมสาธารณูปโภค      รุ่งโรจน์ด้านการประมง  มั่นคงภาคการเกษตร</vision>
+      <url lastchecked="2012-09-12">http://www.bangkajates.com/</url>
+      <officials>
+        <official title="Mayor" name="ไชยา จิตสงวน" inoffice="2012" comment="Term end 2012-03-08? Or elected in 2012? Or both"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="พลับพลานารายณ์" english="Phlapphla Narai" geocode="2293" parent="2201" />
@@ -1441,7 +1467,10 @@
   </entity>
   <entity type="ThesabanTambon" name="เกาะขวาง" english="Ko Khwang" geocode="2280" parent="2201" tambon="220104" >
     <office type="MunicipalityOffice">
-      <url>http://www.kohkwang.co.cc/</url>
+      <url lastchecked="2012-09-12">http://www.kohkwang.co.cc/</url>
+      <council>
+        <term begin="2008-09-21" end="2012-09-20" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ตะเคียนทอง" english="Takhian Thong" geocode="2279" parent="2210" tambon="221003" >
