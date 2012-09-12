@@ -57,14 +57,30 @@
   </office>
   <office type="PAOOffice">
     <geo:Point>
+      <!-- officially opened 2007-05-25 -->
       <geo:lat>8.0472</geo:lat>
       <geo:long>98.9088</geo:long>
     </geo:Point>
-    <url>http://www.krabipao.go.th/</url>
+    <url lastchecked="2012-09-12">http://www.krabipao.go.th/</url>
+    <!-- ToDo: Extract terms and names from http://www.krabipao.go.th/home.php -->
     <officials>
-      <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" inoffice="2011"/>
+      <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" begin="2008-04-20" end="2012-04-19" beginreason="ElectedDirectly"/>
+      <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" beginyear="2004" endyear="2008" beginreason="ElectedDirectly"/>
+
+      <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" beginyear="2001" beginreason="ElectedByCouncil"/>
+      <official title="PAOChairman" name="ประกอบ ตุลารักษ์" beginyear="2000" end="2001-01-31" beginreason="ElectedByCouncil" endreason="Resigned"/>
+      <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" beginyear="2000" end="2000-12-15" beginreason="ElectedByCouncil" endreason="Resigned" comment="Resigned to run for Parliament seat"/>
+
+      <official title="ProvinceCouncilChairman" name="เชาว์ เหล่าสกุล" beginyear="1990" beginreason="ElectedByCouncil"/>
     </officials>
-    <oldlocations>
+    <council>
+      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="24"/>
+
+      <term begin="2000-02-04" type="PAO" size="24"/>
+
+      <term begin="1990-10-20" type="ProvinceCouncil" size="24"/>
+    </council>
+    <oldlocations end="2006-12-28">
       <geo:Point>
         <geo:lat>8.0570</geo:lat>
         <geo:long>98.9186</geo:long>
@@ -392,7 +408,14 @@
     </office>
     <entity type="Tambon" name="คลองท่อมใต้" english="Khlong Thom Tai" geocode="810401" >
       <office type="TAOOffice">
-        <url>http://www.khlongthomtai.go.th/</url>
+        <vision>อนุรักษ์ศิลปะ จารีตประเพณีส่งเสริมกลุ่มอาชีพและสตรี จัดให้มีการดูแลผู้สูงอายุและผู้พิการ พัฒนาด้านการศึกษา ส่งเสริมกีฬา ยึดปรัชญาเศรษฐกิจพอเพียง</vision>
+        <url lastchecked="2012-09-12">http://www.khlongthomtai.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="นิติพัฒน์ ศรีขาว" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18"/>
+        </council>
       </office>
       <entity type="Muban" geocode="81040101" name="บ้านเหนือ" english="Ban Nuea"/>
       <entity type="Muban" geocode="81040102" name="บ้านคลองท่อมใต้" english="Ban Khlong Thom Tai"/>
@@ -406,18 +429,37 @@
     </entity>
     <entity type="Tambon" name="คลองท่อมเหนือ" english="Khlong Thom Nuea" geocode="810402" >
       <office type="TAOOffice">
-        <url>http://www.khlongthomnuea.org/</url>
+        <url lastchecked="2012-09-12">http://www.ktn.go.th/</url>
+        <url status="expired">http://www.khlongthomnuea.org/</url>
+        <officials>
+          <official title="TAOMayor" name="มงคล ชนะกุล" inoffice="2012"/>
+        </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16"/>
+        </council>
       </office>
+      <entity type="Muban" geocode="81040201" name="บ้านบางครามเหนือ" english="Ban Bang Khram Nuea"/>
+      <entity type="Muban" geocode="81040202" name="บ้านบางเตียว" english="Ban Bang Tiao"/>
+      <entity type="Muban" geocode="81040203" name="บ้านคลองท่อมเหนือ" english="Ban Khlong Thom Nuea"/>
+      <entity type="Muban" geocode="81040204" name="บ้านบางคราม" english="Ban Bang Khram"/>
+      <entity type="Muban" geocode="81040205" name="บ้านไสรุ่ง" english="Ban Sai Rung"/>
+      <entity type="Muban" geocode="81040206" name="บ้านนิคมหน้าเขา" english="Ban Nikhom Na Khao"/>
+      <entity type="Muban" geocode="81040207" name="บ้านหน้าถ้ำ" english="Ban Na Tham"/>
+      <entity type="Muban" geocode="81040208" name="บ้านบางครามใต้" english="Ban Bang Khram Tai"/>
     </entity>
     <entity type="Tambon" name="คลองพน" english="Khlong Phon" geocode="810403" >
       <office type="TAOOffice">
-        <vision>ท้องถิ่นก้าวไกล ควบคู่วัฒนธรรมประเพณี เศรษฐกิจดี ประชาชนมีคุณภาพ</vision>        
+        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+        <vision>ท้องถิ่นก้าวไกล ควบคู่วัฒนธรรมประเพณี เศรษฐกิจดี ประชาชนมีคุณภาพ</vision>
         <!-- Longdo: 7.80947,99.2005 -->
         <url lastchecked="2012-08-14">http://www.klongphon.go.th/</url>
         <url status="expired">http://www.klongphon.org/</url>
         <officials>
-          <official title="TAOMayor" name="ธรรมรักษ์ จงรักษ์" inoffice="2011"/>
+          <official title="TAOMayor" name="ธรรมรักษ์ จงรักษ์" begin="2008-08-31" end="2012-08-30"/>
         </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="28"/>
+        </council>
         <!--<history>
           <rename oldname="คลองพน" oldenglish="Khlong Phon" name="คลองพนพัฒนา" english="Khlong Phon Phatthana">
             <meetingreference date="2012-06-26" number="3" board="rename"/>
@@ -441,7 +483,15 @@
     </entity>
     <entity type="Tambon" name="ทรายขาว" english="Sai Khao" geocode="810404" >
       <office type="TAOOffice">
-        <url>http://www.saikhawcity.org/</url>
+        <vision>โครงสร้างพื้นฐานบริบูรณ์ เพิ่มพูนเศรษฐกิจ ทุกชีวิตอยู่ดีกินดี คนมีการศึกษา พัฒนาสู่เมืองคุณภาพ</vision>
+        <url lastchecked="2012-09-12">http://www.saikhawkrabi.go.th/</url>
+        <url status="offline">http://www.saikhawcity.org/</url>
+        <officials>
+          <official title="TAOMayor" name="เทียนชัย ลิ่มปิชาติ" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14"/>
+        </council>
       </office>
       <entity type="Muban" geocode="81040401" name="บ้านห้วยลึก" english="Ban Huai Luek"/>
       <entity type="Muban" geocode="81040402" name="บ้านทรายขาว" english="Ban Sai Khao"/>
@@ -453,7 +503,17 @@
     </entity>
     <entity type="Tambon" name="ห้วยน้ำขาว" english="Huai Nam Khao" geocode="810405" >
       <office type="TAOOffice">
-        <url>http://www.huaynamkhaw.go.th/</url>
+        <vision>
+          โครงสร้างพื้นฐานดี  มีการศึกษาและคุณภาพชีวิต  เศรษฐกิจก้าวหน้า
+          ห้วยน้ำขาวน่าอยู่  พัฒนาสู่แหล่งท่องเที่ยวเชิงสุขภาพ
+        </vision>
+        <url lastchecked="2012-09-12">http://www.huaynamkhaw.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="วิเวก ผิวดำ" begin="2008-08-31" end="2012-08-30"/>
+        </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20"/>
+        </council>
       </office>
       <entity type="Muban" geocode="81040501" name="บ้านห้วยน้ำขาว" english="Ban Huai Nam Khao"/>
       <entity type="Muban" geocode="81040502" name="บ้านทุ่งเสม็ด" english="Ban Thung Samet"/>
@@ -469,10 +529,13 @@
     <entity type="Tambon" name="พรุดินนา" english="Phru Din Na" geocode="810406" >
       <office type="TAOOffice">
         <vision>องค์การบริหารส่วนตำบลพรุดินนา เป็นองค์กรปกครองส่วนท้องถิ่น ที่ตอบสนองความต้องการของประชาชน บนพื้นฐานคุณภาพชีวิตและการบริหาร กิจการบ้านเมืองที่ดีาพชีวิตยั่งยืน</vision>
-        <url>http://www.prudinna.go.th/</url>
+        <url lastchecked="2012-09-12">http://www.prudinna.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="คนึง บุญเมือง" inoffice="2011"/>
+          <official title="TAOMayor" name="คนึง บุญเมือง" begin="2008-08-31" end="2012-08-30"/>
         </officials>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="22"/>
+        </council>
       </office>
       <entity type="Muban" geocode="81040602" name="บ้านพรุดินนา" english="Ban Phru Din Na" />
 
@@ -881,22 +944,47 @@
   </entity>
   <entity type="ThesabanTambon" name="เกาะลันตาใหญ่" english="Ko Lanta Yai" geocode="8197" parent="8103" >
     <office type="MunicipalityOffice">
-      <url>http://www.nmt.or.th/krabi/kolantayai</url>
+      <url lastchecked="2012-09-12">http://www.lantayaicity.go.th/</url>
+      <url status="obsolete">http://www.nmt.or.th/krabi/kolantayai</url>
       <url status="offline">http://www.kohlantayaicity.org/</url>
       <officials>
+        <official title="Mayor" name="ณัชฐณิตพา กุลวิจิตรรังสี" inoffice="2012" comment="Elected after 2008"/>
         <official title="Mayor" name="วันชัย กุลวิจิตรรังสี" comment="2010?"/>
       </officials>
+      <council>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="คลองท่อมใต้" english="Khlong Thom Tai" geocode="8196" parent="8104" >
     <office type="MunicipalityOffice">
-      <url>http://www.khlongthomcity.org/</url>
+      <url lastchecked="2012-09-12">http://www.khlongthomcity.go.th/</url>
+      <url status="offline">http://www.khlongthomcity.org/</url>
+      <officials>
+        <official title="Mayor" name="พิริยะ ศรีสุขสมวงศ์" inoffice="2012" comment="Term ended 2012-03-08? Or elected in 2012? Or both?"/>
+      </officials>
+      <council>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="คลองพน" english="Khlong Phon" geocode="8195" parent="8104" >
     <office type="MunicipalityOffice">
-      <url>http://www.klongphoncity.org/</url>
+      <vision>ศูนย์กลางสินค้าการเกษตรและประมง ชุมชนเศรษฐกิจพอเพียง เขตปลอดยาเสพติด ส่งเสริมการศึกษา กีฬา และวัฒนธรรม มุ่งนำรักษาสิ่งแวดล้อม โดยยึดหลักการบริหารจัดการตามหลักธรรมาภิบาล</vision>
+      <url lastchecked="2012-09-12">http://www.khlongphon.go.th/</url>
+      <url status="offline">http://www.klongphoncity.org/</url>
+      <officials>
+        <official title="Mayor" name="นุกูล งานดี" inoffice="2012" comment="Elected after 2008"/>
+      </officials>
+      <council>
+        <term begin="2008-08-19" type="ThesabanTambon" size="12"/>
+        <term begin="2008-07-06" end="2012-07-05" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
+    <entity type="Chumchon" geocode="81950001" name="ชุมชนน้ำท่อ" english="Chumchon Nam Tho"/>
+    <entity type="Chumchon" geocode="81950002" name="ชุมชนท่าคลอง" english="Chumchon Tha Khlong"/>
+    <entity type="Chumchon" geocode="81950003" name="ชุมชนตลาดคลองพน" english="Chumchon Talat Khlong Phon"/>
+    <entity type="Chumchon" geocode="81950004" name="ชุมชนห้วยออก" english="Chumchon Huai Ok"/>
   </entity>
   <entity type="ThesabanTambon" name="แหลมสัก" english="Laem Sak" geocode="8194" parent="8105" >
     <office type="MunicipalityOffice">
