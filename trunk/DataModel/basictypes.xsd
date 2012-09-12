@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema 
-  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-  xmlns:t="http://hoerstemeier.com/tambon/" 
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:t="http://hoerstemeier.com/tambon/"
   targetNamespace="http://hoerstemeier.com/tambon/"
-  attributeFormDefault="unqualified" elementFormDefault="qualified" 
+  attributeFormDefault="unqualified" elementFormDefault="qualified"
   >
-  
+
   <xs:simpleType name="EntityType">
     <xs:annotation>
       <xs:documentation>Types of administrative entities.</xs:documentation>
@@ -108,7 +108,7 @@
       </xs:enumeration>
       <xs:enumeration value="Chumchon">
         <xs:annotation>
-          <xs:documentation>Borough (ชุมชน, chumchon), subdivision of municipalities.</xs:documentation>
+          <xs:documentation>Borough (ชุมชน, Chumchon), subdivision of municipalities.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="PAO">
@@ -116,6 +116,11 @@
           <xs:documentation>Provincial administrative organization (องค์การบริหารส่วนจังหวัด, อบจ).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="ProvinceCouncil">
+        <xs:annotation>
+          <xs:documentation>Provincial council (สภาจังหวัด, Sapha Changwat), the precursor of the PAO.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>      
       <xs:enumeration value="KlumChangwat">
         <xs:annotation>
           <xs:documentation>Province cluster (กลุ่มจังหวัด, Klum Changwat)</xs:documentation>
@@ -234,7 +239,7 @@
       </xs:enumeration>
       <xs:enumeration value="PAOChairman">
         <xs:annotation>
-          <xs:documentation>Chief Executive of PAO (นายกองค์การบริหารส่วนจังหวัด, Nayok Ongkanborihansuan Changwat), directly elected.</xs:documentation>
+          <xs:documentation>Chief Executive of PAO (นายกองค์การบริหารส่วนจังหวัด, Nayok Ongkanborihansuan Changwat), since 2004 directly elected.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Mayor">
@@ -315,6 +320,11 @@
       <xs:enumeration value="MueangGovernor">
         <xs:annotation>
           <xs:documentation>Governor of Mueang (เจ้าเมือง, Chao Mueang).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProvinceCouncilChairman">
+        <xs:annotation>
+          <xs:documentation>Chairman of the province council (ประธาน สภาจังหวัด, Prathan Sapha Changwat).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
