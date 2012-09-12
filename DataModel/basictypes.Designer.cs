@@ -223,7 +223,7 @@ namespace De.AHoerstemeier.Tambon
         SukhaphibanMueang,
 
         /// <summary>
-        /// Borough (ชุมชน, chumchon), subdivision of municipalities.
+        /// Borough (ชุมชน, Chumchon), subdivision of municipalities.
         /// </summary>
         Chumchon,
 
@@ -231,6 +231,11 @@ namespace De.AHoerstemeier.Tambon
         /// Provincial administrative organization (องค์การบริหารส่วนจังหวัด, อบจ).
         /// </summary>
         PAO,
+
+        /// <summary>
+        /// Provincial council (สภาจังหวัด, Sapha Changwat), the precursor of the PAO.
+        /// </summary>
+        ProvinceCouncil,
 
         /// <summary>
         /// Province cluster (กลุ่มจังหวัด, Klum Changwat)
@@ -522,7 +527,7 @@ namespace De.AHoerstemeier.Tambon
         PhuYaiBan,
 
         /// <summary>
-        /// Chief Executive of PAO (นายกองค์การบริหารส่วนจังหวัด, Nayok Ongkanborihansuan Changwat), directly elected.
+        /// Chief Executive of PAO (นายกองค์การบริหารส่วนจังหวัด, Nayok Ongkanborihansuan Changwat), since 2004 directly elected.
         /// </summary>
         PAOChairman,
 
@@ -605,5 +610,10 @@ namespace De.AHoerstemeier.Tambon
         /// Governor of Mueang (เจ้าเมือง, Chao Mueang).
         /// </summary>
         MueangGovernor,
+
+        /// <summary>
+        /// Chairman of the province council (ประธาน สภาจังหวัด, Prathan Sapha Changwat).
+        /// </summary>
+        ProvinceCouncilChairman,
     }
 }

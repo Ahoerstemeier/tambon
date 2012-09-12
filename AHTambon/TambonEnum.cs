@@ -36,7 +36,8 @@ namespace De.AHoerstemeier.Tambon
         Phak,
         KlumChangwat,
         Constituency,
-        ElectoralRegion
+        ElectoralRegion,
+        ProvinceCouncil
     };
     public enum EntityModification
     {
@@ -79,7 +80,8 @@ namespace De.AHoerstemeier.Tambon
         TambonCouncilChairman,
         SanitaryDistrictChairman,
         ChumchonChairman,
-        MueangGovernor
+        MueangGovernor,
+        ProvinceCouncilChairman
     }
     public enum PersonTitle
     {
