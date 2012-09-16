@@ -61,6 +61,11 @@
           <xs:documentation>Circles (มณฑล or มณฑลเทศาภิบาล, monthon)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="ViceRoyality">
+        <xs:annotation>
+          <xs:documentation>Vice royal area (อุปราชมณทล, Uparat Monthon)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="Phak">
         <xs:annotation>
           <xs:documentation>Region (ภาค, phak)</xs:documentation>
@@ -309,7 +314,7 @@
       </xs:enumeration>
       <xs:enumeration value="MonthonCommissioner">
         <xs:annotation>
-          <xs:documentation>Monthon commissioner (ข้าหลวงเทศาภิบาล, Kha Luang Thesaphiban).</xs:documentation>
+          <xs:documentation>Monthon commissioner (ข้าหลวงเทศาภิบาล, Kha Luang Thesaphiban or สมุหเทศาภิบาล, Samut Thesaphiban).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="MonthonClerk">
@@ -325,6 +330,21 @@
       <xs:enumeration value="ProvinceCouncilChairman">
         <xs:annotation>
           <xs:documentation>Chairman of the province council (ประธาน สภาจังหวัด, Prathan Sapha Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ViceRoyal">
+        <xs:annotation>
+          <xs:documentation>Vice royal (อุปราชมณทล, Uparat Monthon).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RegionGovernor">
+        <xs:annotation>
+          <xs:documentation>Region governor (ข้าหลวงภาค, Kha Luang Phak or ผู้ว่าราชการภาค, Phu Waratchakan Phak).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RegionViceGovernor">
+        <xs:annotation>
+          <xs:documentation>Region vice governor (รองผู้ว่าราชการภาค, Rong Phu Waratchakan Phak).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
