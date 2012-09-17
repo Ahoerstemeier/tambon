@@ -773,7 +773,7 @@ namespace De.AHoerstemeier.Tambon
     {
 
         /// <summary>
-        /// End of term.
+        /// End of term (ครบวาระ).
         /// </summary>
         EndOfTerm,
 
@@ -788,7 +788,7 @@ namespace De.AHoerstemeier.Tambon
         Retired,
 
         /// <summary>
-        /// Resigned from office.
+        /// Resigned from office (ลาออก).
         /// </summary>
         Resigned,
 
@@ -885,13 +885,15 @@ namespace De.AHoerstemeier.Tambon
 
         private System.DateTime beginField;
 
-        private bool beginFieldSpecified;
-
         private System.DateTime endField;
 
         private bool endFieldSpecified;
 
         private string commentField;
+
+        private string sizeField;
+
+        private EntityType typeField;
 
         /// <summary>
         /// Creates a new instance of CouncilTerm.
@@ -946,26 +948,6 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.beginField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool beginSpecified
-        {
-            get
-            {
-                return this.beginFieldSpecified;
-            }
-            set
-            {
-                this.beginFieldSpecified = value;
             }
         }
 
@@ -1026,6 +1008,46 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.commentField = value;
+            }
+        }
+
+        /// <summary>
+        /// Number of councillors.
+        /// </summary>
+        /// <value>
+        /// The size.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string size
+        {
+            get
+            {
+                return this.sizeField;
+            }
+            set
+            {
+                this.sizeField = value;
+            }
+        }
+
+        /// <summary>
+        /// Type of the entity during the term of the council.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
             }
         }
     }
@@ -1810,5 +1832,20 @@ namespace De.AHoerstemeier.Tambon
         /// Office of subdistrict headman.
         /// </summary>
         SubdistrictHeadmanOffice,
+
+        /// <summary>
+        /// Office of the Monthon commissioner.
+        /// </summary>
+        MonthonOffice,
+
+        /// <summary>
+        /// Office of the Vice Royal.
+        /// </summary>
+        ViceRoyalOffice,
+
+        /// <summary>
+        /// Office of the Region.
+        /// </summary>
+        RegionOffice,
     }
 }

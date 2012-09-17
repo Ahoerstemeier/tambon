@@ -1304,6 +1304,9 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    /// <summary>
+    /// List of constituencies.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1341,6 +1344,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Number of the constituency list.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public byte index
@@ -1376,6 +1385,9 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    /// <summary>
+    /// Constituency list including election data.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1475,6 +1487,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Number of the constituency.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public byte index
@@ -1489,6 +1507,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Number of seats to be filled in the constituency.
+        /// </summary>
+        /// <value>
+        /// The numberofseats.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(typeof(byte), "1")]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -1504,6 +1528,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Free text comment for information not covered in the formal fields.
+        /// </summary>
+        /// <value>
+        /// The comment.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string comment
@@ -1545,6 +1575,12 @@ namespace De.AHoerstemeier.Tambon
             this.excludeField = new List<EntityInExclude>();
         }
 
+        /// <summary>
+        /// Part of the parent entity which is explicitly excluded.
+        /// </summary>
+        /// <value>
+        /// The exclude.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("exclude", Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<EntityInExclude> exclude
@@ -1601,7 +1637,7 @@ namespace De.AHoerstemeier.Tambon
     }
 
     /// <summary>
-    /// Part of the parent entity which is explicitely excluded in the constituency.
+    /// Part of the parent entity which is explicitely excluded/included in the constituency.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
@@ -1639,6 +1675,12 @@ namespace De.AHoerstemeier.Tambon
             this.includeField = new List<EntityInExclude>();
         }
 
+        /// <summary>
+        /// Part of the parent entity which is explicitly included.
+        /// </summary>
+        /// <value>
+        /// The include.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("include", Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<EntityInExclude> include
@@ -1762,6 +1804,9 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    /// <summary>
+    /// List of constituencies.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1803,6 +1848,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Number of the constituency list.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public byte index
@@ -1837,6 +1888,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Geocode of the entity covered by the constituency list.
+        /// </summary>
+        /// <value>
+        /// The entity.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint entity

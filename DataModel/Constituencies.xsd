@@ -95,7 +95,7 @@
   </xs:complexType>
   <xs:complexType name="EntityInExclude">
     <xs:annotation>
-      <xs:documentation>Part of the parent entity which is explicitely excluded in the constituency.</xs:documentation>
+      <xs:documentation>Part of the parent entity which is explicitely excluded/included in the constituency.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
@@ -109,7 +109,11 @@
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
         <xs:sequence>
-          <xs:element type="t:EntityInExclude" name="exclude" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element type="t:EntityInExclude" name="exclude" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Part of the parent entity which is explicitly excluded.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
         <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
       </xs:extension>
@@ -122,7 +126,11 @@
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
         <xs:sequence>
-          <xs:element type="t:EntityInExclude" name="include" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element type="t:EntityInExclude" name="include" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Part of the parent entity which is explicitly included.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
         <xs:attribute name="index" type="xs:unsignedByte" use="optional" />
       </xs:extension>
