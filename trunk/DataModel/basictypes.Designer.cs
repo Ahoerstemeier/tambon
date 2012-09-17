@@ -178,6 +178,11 @@ namespace De.AHoerstemeier.Tambon
         Monthon,
 
         /// <summary>
+        /// Vice royal area (อุปราชมณทล, Uparat Monthon)
+        /// </summary>
+        ViceRoyality,
+
+        /// <summary>
         /// Region (ภาค, phak)
         /// </summary>
         Phak,
@@ -597,7 +602,7 @@ namespace De.AHoerstemeier.Tambon
         ChumchonChairman,
 
         /// <summary>
-        /// Monthon commissioner (ข้าหลวงเทศาภิบาล, Kha Luang Thesaphiban).
+        /// Monthon commissioner (ข้าหลวงเทศาภิบาล, Kha Luang Thesaphiban or สมุหเทศาภิบาล, Samut Thesaphiban).
         /// </summary>
         MonthonCommissioner,
 
@@ -615,5 +620,20 @@ namespace De.AHoerstemeier.Tambon
         /// Chairman of the province council (ประธาน สภาจังหวัด, Prathan Sapha Changwat).
         /// </summary>
         ProvinceCouncilChairman,
+
+        /// <summary>
+        /// Vice royal (อุปราชมณทล, Uparat Monthon).
+        /// </summary>
+        ViceRoyal,
+
+        /// <summary>
+        /// Region governor (ข้าหลวงภาค, Kha Luang Phak or ผู้ว่าราชการภาค, Phu Waratchakan Phak).
+        /// </summary>
+        RegionGovernor,
+
+        /// <summary>
+        /// Region vice governor (รองผู้ว่าราชการภาค, Rong Phu Waratchakan Phak).
+        /// </summary>
+        RegionViceGovernor,
     }
 }
