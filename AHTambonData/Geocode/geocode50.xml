@@ -1053,7 +1053,7 @@
         <url lastchecked="2012-09-10">http://www.maeram.go.th/</url>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24"/>
-        </council>        
+        </council>
       </office>
       <entity type="Muban" geocode="50070705" name="บ้านป่าม่วง" english="Ban Pa Muang"/>
 
@@ -2482,7 +2482,14 @@
         -->
       </officials>
     </office>
-    <entity type="Tambon" name="อมก๋อย" english="Omkoi" geocode="501801" />
+    <entity type="Tambon" name="อมก๋อย" english="Omkoi" geocode="501801">
+      <office type="TAOOffice">
+        <url lastchecked="2012-09-17">http://www.omkoi.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="วัลลภ ปุกยุ" inoffice="2012"/>
+        </officials>
+      </office>
+    </entity>
     <entity type="Tambon" name="ยางเปียง" english="Yang Piang" geocode="501802" >
       <office type="TAOOffice">
         <url lastchecked="2012-05-11">http://www.yangpiang.go.th/</url>
@@ -2525,7 +2532,7 @@
     </entity>
     <entity type="Tambon" name="ม่อนจอง" english="Mon Chong" geocode="501804" >
       <office type="TAOOffice">
-        <url>http://monjong.wetpaint.com/</url>
+        <url lastchecked="2012-09-17">http://monjong.wetpaint.com/</url>
         <officials>
           <official title="TAOMayor" name="อำนวย หารหม่อง" inoffice="2008"/>
         </officials>
@@ -2533,7 +2540,10 @@
     </entity>
     <entity type="Tambon" name="สบโขง" english="Sop Khong" geocode="501805" >
       <office type="TAOOffice">
-        <url>http://www.sobkhong.org/</url>
+        <url lastchecked="2012-09-17">http://www.sobkhong.org/</url>
+        <officials>
+          <official title="TAOMayor" name="พงศ์เจริญ หย่าจอ" inoffice="2012"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50180501" name="บ้านแม่หลองใต้" english="Ban Mae Long Tai"/>
       <entity type="Muban" geocode="50180502" name="บ้านแม่หลองน้อย" english="Ban Mae Long Noi"/>
@@ -2548,7 +2558,14 @@
       <entity type="Muban" geocode="50180511" name="บ้านพะเบี้ยว" english="Ban Pha Biao"/>
       <entity type="Muban" geocode="50180512" name="บ้านห้วยน้ำผึ้ง" english="Ban Huai Nam Phueng"/>
     </entity>
-    <entity type="Tambon" name="นาเกียน" english="Na Kian" geocode="501806" />
+    <entity type="Tambon" name="นาเกียน" english="Na Kian" geocode="501806">
+      <office type="TAOOffice">
+        <url lastchecked="2012-09-17">http://www.nakian.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ศุภธนิศร์ รุ่งเรืองเลิศไพศาล" inoffice="2012"/>
+        </officials>
+      </office>
+    </entity>
   </entity>
   <entity type="Amphoe" name="สารภี" english="Saraphi" geocode="5019" >
     <office type="DistrictOffice">
@@ -3463,8 +3480,48 @@
         <geo:lat>18.7694</geo:lat>
         <geo:long>98.9499</geo:long>
       </geo:Point>
-      <url>http://www.suthep.go.th/</url>
+      <url lastchecked="2012-09-17">http://www.suthep.go.th/</url>
+      <officials>
+        <official title="Mayor" name="นายธัญศักดิ์ แสงศรีจันทร์" inoffice="2012"/>
+      </officials>
     </office>
+    <entity type="Chumchon" geocode="50690001" name="ชุมชนฝายหิน" muban="1" english="Chumchon Fai Hin"/>
+    <entity type="Chumchon" geocode="50690002" name="ชุมชนบ้านเชิงดอย" muban="1" english="Chumchon Choeng Doi"/>
+    <!-- Mu 2 has no chumchon yet -->
+    <entity type="Chumchon" geocode="50690003" name="ชุมชนกองบิน 41" muban="3" english="Chumchon Kong Bin 41"/>
+    <entity type="Chumchon" geocode="50690004" name="ชุมชนกองพันอากาศโยธิน กองบิน 41" muban="3"/>
+    <entity type="Chumchon" geocode="50690005" name="ชุมชนท่าอากาศยานและวิทยุการบิน เชียงใหม่" muban="3"/>
+    <entity type="Chumchon" geocode="50690006" name="ชุมชนห้วยทรายใต้สามัคคี" muban="4"/>
+    <entity type="Chumchon" geocode="50690007" name="ชุมชนบ้านเหนือร่วมใจสามัคคี" muban="4"/>
+    <entity type="Chumchon" geocode="50690008" name="ชุมชนคนรักบ้าน" muban="4"/>
+    <entity type="Chumchon" geocode="50690009" name="ชุมชนห้วยทรายร่วมใจ" muban="4"/>
+    <entity type="Chumchon" geocode="50690010" name="ชุมชนรวมใจสามัคคี" muban="5" english="Chumchon Ruam Chai Samakkhi"/>
+    <entity type="Chumchon" geocode="50690011" name="ชุมชนบ้านใหม่-ชญยล" muban="5"/>
+    <entity type="Chumchon" geocode="50690012" name="ชุมชนสุเทพาลัย/ไฮแลนด์วิวเพลส" muban="5"/>
+    <entity type="Chumchon" geocode="50690013" name="ชุมชนบ้านบนคนรักป่า" muban="5" english="Chumchon Ban Bon Khon Rak Pa"/>
+    <entity type="Chumchon" geocode="50690014" name="ชุมชนบ้านโป่งน้อย" muban="6" english="Chumchon Pong Noi"/>
+    <entity type="Chumchon" geocode="50690015" name="ชุมชนเชียงใหม่เลคแลนด์" muban="6" english="Chumchon Chiang Mai Lek Laem"/>
+    <entity type="Chumchon" geocode="50690016" name="ชุมชนบ้านต้นกุก" muban="7" english="Chumchon Ton Kuk"/>
+    <entity type="Chumchon" geocode="50690017" name="ชุมชนบ้านพักอุตุ-พนาสวัสดิ์" muban="7"/>
+    <entity type="Chumchon" geocode="50690018" name="ชุมชนช่างทอง" muban="7" english="Chumchon Chang Thong"/>
+    <entity type="Chumchon" geocode="50690019" name="ชุมชนบ้านทุ่งบ้านสัน" muban="7" english="Chumchon Ban Thung Ban San"/>
+    <entity type="Chumchon" geocode="50690020" name="ชุมชนหลิ่งห้า" muban="8" english="Chumchon Ling Ha"/>
+    <entity type="Chumchon" geocode="50690021" name="ชุมชนแดนตะวัน" muban="8" english="Chumchon Daen Tawan"/>
+    <entity type="Chumchon" geocode="50690022" name="ชุมชนเคียงดอย" muban="8" english="Chumchon Khiang Doi"/>
+    <entity type="Chumchon" geocode="50690023" name="ชุมชนดอยสุเทพพลาซ่า" muban="9"/>
+    <entity type="Chumchon" geocode="50690024" name="ชุมชนบ้านอุโมงค์สามัคคี" muban="10" english="Chumchon Umong Samakkhi"/>
+    <entity type="Chumchon" geocode="50690025" name="ชุมชนดอยปุยร่วมใจ" muban="11" english="Chumchon Doi Pui Ruam Chai"/>
+    <entity type="Chumchon" geocode="50690026" name="ชุมชนดอยปุยสามัคคี" muban="11" english="Chumchon Doi Pui Samakkhi"/>
+    <entity type="Chumchon" geocode="50690027" name="ชุมชนดอยปุยรุ่งเรือง" muban="11" english="Chumchon Doi Pui Rung Rueang"/>
+    <entity type="Chumchon" geocode="50690028" name="ชุมชนผาดำ" muban="12" english="Chumchon Pha Dam"/>
+    <entity type="Chumchon" geocode="50690029" name="ชุมชนชาวเราชาวเขา" muban="13" english="CVhumchon Chao Rao Chao Khao"/>
+    <entity type="Chumchon" geocode="50690030" name="ชุมชนอ่างห้วยญ่าใต้" muban="13" english="Chumchon Ang Huai Ya Tai"/>
+    <entity type="Chumchon" geocode="50690031" name="ชุมชนสนามกีฬา" muban="13" english="Chumchon Sanam Kila"/>
+    <entity type="Chumchon" geocode="50690032" name="ชุมชนสันมะฮกฟ้า" muban="13" english="Chumchon San Ma Hok Fa"/>
+    <entity type="Chumchon" geocode="50690033" name="ชุมชนบ้านใหม่หลังมอ" muban="14" english="Chumchon Mai Lang Mo"/>
+    <entity type="Chumchon" geocode="50690034" name="ชุมชนป่าค่ารวมใจ" muban="14" english="Chumchon Pa Kha Ruam Chai"/>
+    <entity type="Chumchon" geocode="50690035" name="ชุมชนป่าแดงงาม" muban="14" english="Chumchon Pa Daeng Ngam"/>
+    <entity type="Chumchon" geocode="50690036" name="ชุมชนทรายคำ" muban="15" english="Chumchon Sai Dam"/>
   </entity>
   <entity type="ThesabanTambon" name="ป่าแดด" english="Pa Daet" geocode="5068" parent="5001" tambon="500110" >
     <office type="MunicipalityOffice">
