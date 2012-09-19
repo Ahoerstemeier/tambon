@@ -703,8 +703,14 @@
     </entity>
     <entity type="Tambon" name="หนองโพ" english="Nong Pho" geocode="700703" >
       <office type="TAOOffice">
-        <url>http://www.nongpho.go.th/</url>
+        <url status="offline">http://www.nongpho.go.th/</url>
       </office>
+      <entity type="Muban" geocode="70070301" name="บ้านใต้" english="Ban Tai"/>
+      <entity type="Muban" geocode="70070302" name="บ้านนอก" english="Ban Nok"/>
+      <entity type="Muban" geocode="70070303" name="บ้านหัวทุ่ง" english="Ban Hua Thung"/>
+      <entity type="Muban" geocode="70070304" name="บ้านต้นตาล" english="Ban Ton Tan"/>
+      <entity type="Muban" geocode="70070305" name="บ้านตลาดใน" english="Ban Talat Nai"/>
+      <entity type="Muban" geocode="70070306" name="บ้านหน้าวัด" english="Ban Na Wat"/>
     </entity>
     <entity type="Tambon" name="บ้านเลือก" english="Ban Lueak" geocode="700704" />
     <entity type="Tambon" name="คลองตาคต" english="Khlong Ta Khot" geocode="700705" >
@@ -1253,22 +1259,46 @@
         บ้านเมืองน่าอยู่  เชิดชูผู้มีพระคุณ  สนับสนุนการศึกษา
         มุ่งเน้นการพัฒนา ประชาชนมีส่วนร่วม  มีระบบการบริหารจัดการที่ดี
       </vision>
-      <url lastchecked="2012-07-29">http://www.nongpho.net/</url>
+      <geo:Point>
+        <geo:lat>13.7422</geo:lat>
+        <geo:long>99.9153</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-09-19">http://www.nongpho.net/</url>
       <url status="offline">http://www.nongpho.go.th/</url>
       <socialweb>
         <facebook>http://www.facebook.com/nongpho</facebook>
         <googleplus>104161071612664869156</googleplus>
       </socialweb>
+      <officials>
+        <official title="Mayor" name="สุกิจ แจ้งคำ" begin="2009-07-26"/>
+      </officials>
+      <council>
+        <term begin="2009-07-26" end="2013-07-25" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
+    <entity type="Muban" geocode="70790001" muban="70070301" name="ชุมชนบ้านใต้" english="Chumchon Ban Tai"/>
+    <entity type="Muban" geocode="70790002" muban="70070302" name="ชุมชนบ้านนอก" english="Chumchon Ban Nok"/>
+    <entity type="Muban" geocode="70790003" muban="70070303" name="ชุมชนบ้านหัวทุ่ง" english="Chumchon Ban Hua Thung"/>
+    <entity type="Muban" geocode="70790004" muban="70070304" name="ชุมชนบ้านต้นตาล" english="Chumchon Ban Ton Tan"/>
+    <entity type="Muban" geocode="70790005" muban="70070305" name="ชุมชนบ้านตลาดใน" english="Chumchon Ban Talat Nai"/>
+    <entity type="Muban" geocode="70790006" muban="70070306" name="ชุมชนบ้านหน้าวัด" english="Chumchon Ban Na Wat"/>
   </entity>
   <entity type="ThesabanTambon" name="ปากท่อ" english="Pak Tho" geocode="7078" parent="7008" >
     <office type="MunicipalityOffice">
+      <vision>ชุมชนน่าอยู่  สู่เมืองสากล  ประชาชนช่วยคิด  เป็นมิตรผู้ใช้บริการ</vision>
+      <url lastchecked="2012-09-19">http://www.pakthomunic.go.th/</url>
       <url status="offline">http://www.pakthocity.net/</url>
+      <officials>
+        <official title="Mayor" name="วิชาญ รังสีวรรธนะ" inoffice="2012"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="วัดเพลง" english="Wat Phleng" geocode="7077" parent="7009" >
     <office type="MunicipalityOffice">
-      <url>http://www.watpleng.go.th/</url>
+      <url lastchecked="2012-09-19">http://www.watpleng.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ธนศักดิ์ มาคะสิระ" inoffice="2012"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านสิงห์" english="Ban Sing" geocode="7076" parent="7007" tambon="700707">
@@ -1286,7 +1316,11 @@
       <url>http://www.krabyai.go.th/</url>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="บ้านฆ้อง" english="Ban Khong" geocode="7074" parent="7007" tambon="700706"/>
+  <entity type="ThesabanTambon" name="บ้านฆ้อง" english="Ban Khong" geocode="7074" parent="7007" tambon="700706">
+    <office type="MunicipalityOffice">
+      <url status="expired">http://bankhong.net/</url>
+    </office>
+  </entity>
   <entity type="ThesabanTambon" name="ทุ่งหลวง" english="Thung Luang" geocode="7073" parent="7008" tambon="700801" />
   <entity type="ThesabanTambon" name="เบิกไพร" english="Boek Phrai" geocode="7072" parent="7002" tambon="700203" >
     <office type="MunicipalityOffice">
@@ -1295,12 +1329,16 @@
   </entity>
   <entity type="ThesabanTambon" name="หลุมดิน" english="Lum Din" geocode="7071" parent="7001" tambon="700117" >
     <office type="MunicipalityOffice">
-      <url>http://www.lhumdin.com/</url>
+      <url lastchecked="2012-09-19">http://www.lumdin.com/</url>
+      <url status="offline">http://www.lhumdin.com/</url>
+      <officials>
+        <official title="Mayor" name="ยุทธนา เจริญภักดี" inoffice="2012"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ดอนทราย" english="Don Sai" geocode="7070" parent="7007" tambon="700708" >
     <office type="MunicipalityOffice">
-      <url lastchecked="2012-09-05">http://www.donsaiphotaram.go.th/</url>
+      <url lastchecked="2012-09-19">http://www.donsaiphotaram.go.th/</url>
       <url status="offline">http://www.geocities.com/ying_pum/</url>
       <council>
         <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12"/>
