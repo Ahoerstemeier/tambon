@@ -697,18 +697,40 @@
         <geo:lat>6.7601</geo:lat>
         <geo:long>101.2937</geo:long>
       </geo:Point>
-      <officials>
+      <officials>        
         <official title="DistrictOfficer" name="วชิระ อัลภาชน์" inoffice="2009" comment="2009-06"/>
 
         <official title="DistrictOfficer" name="เอกรัฐ หลีเส็น" begin="2007-01-08"/>
         <official title="DistrictOfficer" name="บุญไทย กาฬศิริ" end="2007-01-07"/>
+
+        <official title="DistrictOfficer" name="ศักดิ์ชัย ชัยเชื้อ" inoffice="2004"/>
       </officials>
     </office>
-    <entity type="Tambon" name="ยะรัง" english="Yarang" geocode="941001" />
+    <entity type="Tambon" name="ยะรัง" english="Yarang" geocode="941001" >
+      <entity type="Muban" geocode="94100106" name="ต้นทุเรียน" english="Ban Ton Thu Ruean"/>
+    </entity>
     <entity type="Tambon" name="สะดาวา" english="Sadawa" geocode="941002" />
     <entity type="Tambon" name="ประจัน" english="Prachan" geocode="941003" />
     <entity type="Tambon" name="สะนอ" english="Sano" geocode="941004" />
-    <entity type="Tambon" name="ระแว้ง" english="Rawaeng" geocode="941005" />
+    <entity type="Tambon" name="ระแว้ง" english="Rawaeng" geocode="941005">
+      <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>6.7528</geo:lat>
+          <geo:long>101.3190</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="TAOMayor" name="นายบุญเกื้อ มุณีแนม" inoffice="2005" comment="Also in 2009"/>
+        </officials>
+      </office>
+      <!--<entity type="Muban" geocode="94100501">
+        <office type="VillageHeadmanOffice">
+          <officials>
+            <official title="PhuYaiBan" name="คอยา ปาแล" end="2012-10-02" endreason="Death" comment="Killed by insurgents"/>
+          </officials>
+        </office>
+      </entity>-->
+      <entity type="Muban" geocode="94100506" name="บ้านระแว้ง" english="Ban Rawaeng"/>
+    </entity>
     <entity type="Tambon" name="ปิตูมุดี" english="Pitu Mudi" geocode="941006" />
     <entity type="Tambon" name="วัด" english="Wat" geocode="941007" />
     <entity type="Tambon" name="กระโด" english="Krado" geocode="941008" />
