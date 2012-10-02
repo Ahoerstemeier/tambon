@@ -16,17 +16,23 @@ namespace De.AHoerstemeier.Tambon
         }
         #endregion
         #region methods
-        public PopulationDataEntry Parse(Int32 iGeocode)
+        public PopulationDataEntry Parse(Int32 geocode)
         {
-            String lFilename = Path.Combine(GlobalSettings.HTMLCacheDir, "Muban");
-            lFilename = Path.Combine(lFilename, "Muban" + iGeocode.ToString() + ".txt");
-            StreamReader lReader = new StreamReader(lFilename);
-            PopulationDataEntry RetVal = Parse(lReader);
-            lReader.Dispose();
-            RetVal.Geocode = iGeocode;
-            return RetVal;
+            String filename = Path.Combine(GlobalSettings.HTMLCacheDir, "Muban");
+            filename = Path.Combine(filename, "Muban" + geocode.ToString() + ".txt");
+
+            if ( !File.Exists(filename) )
+            {
+                return null;
+            }
+
+            StreamReader reader = new StreamReader(filename);
+            PopulationDataEntry result = Parse(reader);
+            reader.Dispose();
+            result.Geocode = geocode;
+            return result;
         }
-        public PopulationDataEntry Parse(StreamReader iReader)
+        public PopulationDataEntry Parse(StreamReader reader)
         {
             // Column 1 : is number, then use
             // Column 2 : Amphoe name
@@ -38,138 +44,138 @@ namespace De.AHoerstemeier.Tambon
             // Column 8 : Location UTM Easting (47N, Indian 1974)
             // Column 9 : Location UTM Northing (47N, Indian 1974)
 
-            String lCurrentLine = String.Empty;
-            PopulationDataEntry lCurrentChangwat = new PopulationDataEntry();
-            PopulationDataEntry lCurrentAmphoe = new PopulationDataEntry();
-            PopulationDataEntry lCurrentTambon = new PopulationDataEntry();
+            String currentLine = String.Empty;
+            PopulationDataEntry currentChangwat = new PopulationDataEntry();
+            PopulationDataEntry currentAmphoe = new PopulationDataEntry();
+            PopulationDataEntry currentTambon = new PopulationDataEntry();
 
-            while ((lCurrentLine = iReader.ReadLine()) != null)
+            while ( (currentLine = reader.ReadLine()) != null )
             {
-                var lSubStrings = lCurrentLine.Split(new Char[] { '\t' });
-                if ((lSubStrings.Length > 0) & (!String.IsNullOrEmpty(lSubStrings[0])) & TambonHelper.IsNumeric(lSubStrings[0]))
+                var subStrings = currentLine.Split(new Char[] { '\t' });
+                if ( (subStrings.Length > 0) & (!String.IsNullOrEmpty(subStrings[0])) & TambonHelper.IsNumeric(subStrings[0]) )
                 {
-                    PopulationDataEntry lCurrentMuban = new PopulationDataEntry();
-                    String lAmphoe = lSubStrings[1].Replace('"', ' ').Trim();
-                    String lTambon = lSubStrings[2].Replace('"', ' ').Trim();
-                    String lGeocode = lSubStrings[3].Replace('"', ' ').Replace(" ", "").Trim();
-                    lCurrentMuban.Geocode = Convert.ToInt32(lGeocode);
-                    lCurrentMuban.Name = lSubStrings[4].Replace('"', ' ').Trim();
-                    lCurrentMuban.Type = EntityType.Muban;
-                    String lComment = lSubStrings[6].Replace('"', ' ').Trim();
-                    String lEasting = lSubStrings[7].Replace('"', ' ').Replace('E', ' ').Trim();
-                    String lNorthing = lSubStrings[8].Replace('"', ' ').Replace('N', ' ').Trim();
-                    if (TambonHelper.IsNumeric(lEasting) && TambonHelper.IsNumeric(lNorthing))
+                    PopulationDataEntry currentMuban = new PopulationDataEntry();
+                    String amphoe = subStrings[1].Replace('"', ' ').Trim();
+                    String tambon = subStrings[2].Replace('"', ' ').Trim();
+                    String geocode = subStrings[3].Replace('"', ' ').Replace(" ", "").Trim();
+                    currentMuban.Geocode = Convert.ToInt32(geocode);
+                    currentMuban.Name = subStrings[4].Replace('"', ' ').Trim();
+                    currentMuban.Type = EntityType.Muban;
+                    String comment = subStrings[6].Replace('"', ' ').Trim();
+                    String easting = subStrings[7].Replace('"', ' ').Replace('E', ' ').Trim();
+                    String northing = subStrings[8].Replace('"', ' ').Replace('N', ' ').Trim();
+                    if ( TambonHelper.IsNumeric(easting) && TambonHelper.IsNumeric(northing) )
                     {
-                        EntityOffice lOffice = new EntityOffice();
-                        lOffice.Type = OfficeType.VillageHeadmanOffice;
-                        UtmPoint lUTMLocation = new UtmPoint(Convert.ToInt32(lEasting), Convert.ToInt32(lNorthing), 47, true);
-                        lOffice.Location = new GeoPoint(lUTMLocation, GeoDatum.DatumIndian1975());
-                        lOffice.Location.Datum = GeoDatum.DatumWGS84();
-                        lCurrentMuban.Offices.Add(lOffice);
+                        EntityOffice office = new EntityOffice();
+                        office.Type = OfficeType.VillageHeadmanOffice;
+                        UtmPoint utmLocation = new UtmPoint(Convert.ToInt32(easting), Convert.ToInt32(northing), 47, true);
+                        office.Location = new GeoPoint(utmLocation, GeoDatum.DatumIndian1975());
+                        office.Location.Datum = GeoDatum.DatumWGS84();
+                        currentMuban.Offices.Add(office);
                     }
-                    String lMubanString = lSubStrings[5].Replace('"', ' ').Trim();
-                    if (TambonHelper.IsNumeric(lMubanString))
+                    String mubanString = subStrings[5].Replace('"', ' ').Trim();
+                    if ( TambonHelper.IsNumeric(mubanString) )
                     {
-                        Int32 lMuban = Convert.ToInt32(lMubanString);
-                        if (lMuban != (lCurrentMuban.Geocode % 100))
+                        Int32 muban = Convert.ToInt32(mubanString);
+                        if ( muban != (currentMuban.Geocode % 100) )
                         {
-                            lComment = lComment + Environment.NewLine + "Code is " + lCurrentMuban.Geocode.ToString() + ',';
-                            lComment = lComment + " Muban number is " + lMuban.ToString();
-                            lCurrentMuban.Geocode = lCurrentMuban.Geocode - (lCurrentMuban.Geocode % 100) + lMuban;
+                            comment = comment + Environment.NewLine + "Code is " + currentMuban.Geocode.ToString() + ',';
+                            comment = comment + " Muban number is " + muban.ToString();
+                            currentMuban.Geocode = currentMuban.Geocode - (currentMuban.Geocode % 100) + muban;
                         }
                     }
-                    if ((lCurrentMuban.Geocode / 10000) != lCurrentAmphoe.Geocode)
+                    if ( (currentMuban.Geocode / 10000) != currentAmphoe.Geocode )
                     {
-                        lCurrentAmphoe = new PopulationDataEntry();
-                        lCurrentAmphoe.Name = lTambon;
-                        lCurrentAmphoe.Type = EntityType.Amphoe;
-                        lCurrentAmphoe.Geocode = (lCurrentMuban.Geocode / 10000);
-                        lCurrentChangwat.SubEntities.Add(lCurrentAmphoe);
+                        currentAmphoe = new PopulationDataEntry();
+                        currentAmphoe.Name = tambon;
+                        currentAmphoe.Type = EntityType.Amphoe;
+                        currentAmphoe.Geocode = (currentMuban.Geocode / 10000);
+                        currentChangwat.SubEntities.Add(currentAmphoe);
                     }
-                    if ((lCurrentMuban.Geocode / 100) != lCurrentTambon.Geocode)
+                    if ( (currentMuban.Geocode / 100) != currentTambon.Geocode )
                     {
-                        lCurrentTambon = new PopulationDataEntry();
-                        lCurrentTambon.Name = lTambon;
-                        lCurrentTambon.Type = EntityType.Tambon;
-                        lCurrentTambon.Geocode = (lCurrentMuban.Geocode / 100);
-                        lCurrentAmphoe.SubEntities.Add(lCurrentTambon);
+                        currentTambon = new PopulationDataEntry();
+                        currentTambon.Name = tambon;
+                        currentTambon.Type = EntityType.Tambon;
+                        currentTambon.Geocode = (currentMuban.Geocode / 100);
+                        currentAmphoe.SubEntities.Add(currentTambon);
                     }
-                    lCurrentMuban.Comment = lComment;
-                    lCurrentTambon.SubEntities.Add(lCurrentMuban);
+                    currentMuban.Comment = comment;
+                    currentTambon.SubEntities.Add(currentMuban);
                 }
             }
-            lCurrentChangwat.Type = EntityType.Changwat;
-            return lCurrentChangwat;
+            currentChangwat.Type = EntityType.Changwat;
+            return currentChangwat;
 
         }
-        static public void Statistics(PopulationDataEntry iChangwat, FrequencyCounter ioCounter)
+        static public void Statistics(PopulationDataEntry changwat, FrequencyCounter counter)
         {
-            foreach (PopulationDataEntry lAmphoe in iChangwat.SubEntities)
+            foreach ( PopulationDataEntry amphoe in changwat.SubEntities )
             {
-                foreach (PopulationDataEntry lTambon in lAmphoe.SubEntities)
+                foreach ( PopulationDataEntry tambon in amphoe.SubEntities )
                 {
-                    Int32 lNumberOfMuban = lTambon.SubEntities.Count;
-                    ioCounter.IncrementForCount(lNumberOfMuban, lTambon.Geocode);
+                    Int32 lNumberOfMuban = tambon.SubEntities.Count;
+                    counter.IncrementForCount(lNumberOfMuban, tambon.Geocode);
                 }
             }
         }
-        static public FrequencyCounter Statistics(PopulationDataEntry iChangwat)
+        static public FrequencyCounter Statistics(PopulationDataEntry changwat)
         {
-            FrequencyCounter lCounter = new FrequencyCounter();
-            Statistics(iChangwat, lCounter);
-            return lCounter;
+            FrequencyCounter counter = new FrequencyCounter();
+            Statistics(changwat, counter);
+            return counter;
         }
-        static public String StatisticsText(FrequencyCounter iCounter)
+        static public String StatisticsText(FrequencyCounter counter)
         {
-            StringBuilder lBuilder = new StringBuilder();
+            StringBuilder builder = new StringBuilder();
 
-            Int32 lCount = iCounter.NumberOfValues;
-            lBuilder.AppendLine(lCount.ToString() + " Tambon");
-            lBuilder.AppendLine(Math.Round(iCounter.MeanValue * lCount).ToString() + " Muban");
-            lBuilder.AppendLine();
-            lBuilder.AppendLine(iCounter.MeanValue.ToString("F2", CultureInfo.InvariantCulture) + " Muban per Tambon");
-            lBuilder.AppendLine(iCounter.MaxValue.ToString() + " Muban per Tambon max.");
-            String lTambonCodes = String.Empty;
-            if (iCounter.MaxValue != 0)
+            Int32 lCount = counter.NumberOfValues;
+            builder.AppendLine(lCount.ToString() + " Tambon");
+            builder.AppendLine(Math.Round(counter.MeanValue * lCount).ToString() + " Muban");
+            builder.AppendLine();
+            builder.AppendLine(counter.MeanValue.ToString("F2", CultureInfo.InvariantCulture) + " Muban per Tambon");
+            builder.AppendLine(counter.MaxValue.ToString() + " Muban per Tambon max.");
+            String tambonCodes = String.Empty;
+            if ( counter.MaxValue != 0 )
             {
-                foreach (var lEntry in iCounter.Data[iCounter.MaxValue])
+                foreach ( var lEntry in counter.Data[counter.MaxValue] )
                 {
-                    lTambonCodes = lTambonCodes + lEntry.ToString() + ", ";
+                    tambonCodes = tambonCodes + lEntry.ToString() + ", ";
                 }
             }
-            if (lTambonCodes.Length > 0)
+            if ( tambonCodes.Length > 0 )
             {
-                lBuilder.AppendLine(lTambonCodes.Substring(0, lTambonCodes.Length - 2));
+                builder.AppendLine(tambonCodes.Substring(0, tambonCodes.Length - 2));
             }
-            String RetVal = lBuilder.ToString();
-            return RetVal;
+            String result = builder.ToString();
+            return result;
         }
-        static public String StatisticsText(PopulationDataEntry iChangwat)
+        static public String StatisticsText(PopulationDataEntry changwat)
         {
-            FrequencyCounter lStatistics = Statistics(iChangwat);
-            String RetVal = StatisticsText(lStatistics);
-            return RetVal;
+            FrequencyCounter statistics = Statistics(changwat);
+            String result = StatisticsText(statistics);
+            return result;
         }
-        public Dictionary<PopulationDataEntry, PopulationDataEntry> DifferentMubanNames(PopulationDataEntry iChangwat)
+        public Dictionary<PopulationDataEntry, PopulationDataEntry> DifferentMubanNames(PopulationDataEntry changwat)
         {
             var RetVal = new Dictionary<PopulationDataEntry, PopulationDataEntry>();
 
-            PopulationData lGeocodes = TambonHelper.GetGeocodeList(iChangwat.Geocode);
-            PopulationDataEntry lChangwat = lGeocodes.Data;
-            foreach (PopulationDataEntry lAmphoe in lChangwat.SubEntities)
+            PopulationData geocodes = TambonHelper.GetGeocodeList(changwat.Geocode);
+            PopulationDataEntry currentChangwat = geocodes.Data;
+            foreach ( PopulationDataEntry currentAmphoe in currentChangwat.SubEntities )
             {
-                foreach (PopulationDataEntry lTambon in lAmphoe.SubEntities)
+                foreach ( PopulationDataEntry currentTambon in currentAmphoe.SubEntities )
                 {
-                    foreach (PopulationDataEntry lMuban in lTambon.SubEntities)
+                    foreach ( PopulationDataEntry currentMuban in currentTambon.SubEntities )
                     {
-                        if (lMuban.Type == EntityType.Muban)
+                        if ( currentMuban.Type == EntityType.Muban )
                         {
-                            PopulationDataEntry lMubanDopa = iChangwat.FindByCode(lMuban.Geocode);
-                            if (lMubanDopa != null)
+                            PopulationDataEntry mubanDopa = changwat.FindByCode(currentMuban.Geocode);
+                            if ( mubanDopa != null )
                             {
-                                if (!TambonHelper.IsSameMubanName(lMubanDopa.Name, lMuban.Name))
+                                if ( !TambonHelper.IsSameMubanName(mubanDopa.Name, currentMuban.Name) )
                                 {
-                                    RetVal.Add(lMuban, lMubanDopa);
+                                    RetVal.Add(currentMuban, mubanDopa);
                                 }
                             }
                         }
@@ -180,24 +186,24 @@ namespace De.AHoerstemeier.Tambon
             return RetVal;
         }
 
-        public string Information(PopulationDataEntry iChangwat)
+        public string Information(PopulationDataEntry changwat)
         {
-            StringBuilder lBuilder = new StringBuilder();
+            StringBuilder builder = new StringBuilder();
 
-            lBuilder.AppendLine(StatisticsText(iChangwat));
-            lBuilder.AppendLine();
+            builder.AppendLine(StatisticsText(changwat));
+            builder.AppendLine();
 
-            foreach (KeyValuePair<PopulationDataEntry, PopulationDataEntry> lKeyValuePair in DifferentMubanNames(iChangwat))
+            foreach ( KeyValuePair<PopulationDataEntry, PopulationDataEntry> keyValuePair in DifferentMubanNames(changwat) )
             {
-                lBuilder.Append(lKeyValuePair.Key.Geocode.ToString());
-                lBuilder.Append(' ');
-                lBuilder.Append(TambonHelper.StripBanOrChumchon(lKeyValuePair.Key.Name));
-                lBuilder.Append(" instead of ");
-                lBuilder.AppendLine(TambonHelper.StripBanOrChumchon(lKeyValuePair.Value.Name));
+                builder.Append(keyValuePair.Key.Geocode.ToString());
+                builder.Append(' ');
+                builder.Append(TambonHelper.StripBanOrChumchon(keyValuePair.Key.Name));
+                builder.Append(" instead of ");
+                builder.AppendLine(TambonHelper.StripBanOrChumchon(keyValuePair.Value.Name));
             }
 
-            String RetVal = lBuilder.ToString();
-            return RetVal;
+            String result = builder.ToString();
+            return result;
         }
         #endregion
     }
