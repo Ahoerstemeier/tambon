@@ -308,6 +308,10 @@ namespace De.AHoerstemeier.Tambon
 
         private bool lastcheckedFieldSpecified;
 
+        private System.DateTime lastonlineField;
+
+        private bool lastonlineFieldSpecified;
+
         private string valueField;
 
         /// <summary>
@@ -396,6 +400,46 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.lastcheckedFieldSpecified = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime lastonline
+        {
+            get
+            {
+                return this.lastonlineField;
+            }
+            set
+            {
+                this.lastonlineField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool lastonlineSpecified
+        {
+            get
+            {
+                return this.lastonlineFieldSpecified;
+            }
+            set
+            {
+                this.lastonlineFieldSpecified = value;
             }
         }
 
