@@ -412,6 +412,11 @@
             <xs:documentation>Date of last check of validity of URL.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="lastonline" type="xs:date" use="optional">
+          <xs:annotation>
+            <xs:documentation>Date of last successful read of URL.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
