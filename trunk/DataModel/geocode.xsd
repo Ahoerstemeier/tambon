@@ -191,6 +191,11 @@
   </xs:complexType>
   <xs:complexType name="Entity">
     <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element minOccurs="0" maxOccurs="1" name="symbols" type="t:Symbols">
+        <xs:annotation>
+          <xs:documentation>Symbols, slogans and vision statements of the entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="slogan" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="symboltree" type="xs:string" >
         <xs:annotation>

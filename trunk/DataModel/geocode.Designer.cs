@@ -25,6 +25,8 @@ namespace De.AHoerstemeier.Tambon
     public partial class Entity
     {
 
+        private Symbols symbolsField;
+
         private string sloganField;
 
         private string symboltreeField;
@@ -77,9 +79,30 @@ namespace De.AHoerstemeier.Tambon
             this.historyField = new HistoryList();
             this.areaField = new List<AreaData>();
             this.officeField = new List<Office>();
+            this.symbolsField = new Symbols();
         }
 
+        /// <summary>
+        /// Symbols, slogans and vision statements of the entity.
+        /// </summary>
+        /// <value>
+        /// The symbols.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Symbols symbols
+        {
+            get
+            {
+                return this.symbolsField;
+            }
+            set
+            {
+                this.symbolsField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string slogan
         {
@@ -99,7 +122,7 @@ namespace De.AHoerstemeier.Tambon
         /// <value>
         /// The symboltree.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string symboltree
         {
@@ -119,7 +142,7 @@ namespace De.AHoerstemeier.Tambon
         /// <value>
         /// The symbolflower.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string symbolflower
         {
@@ -133,7 +156,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("office", Order = 3)]
+        [System.Xml.Serialization.XmlElementAttribute("office", Order = 4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<Office> office
         {
@@ -147,7 +170,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute(Order = 4)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 5)]
         [System.Xml.Serialization.XmlArrayItemAttribute("data", typeof(AreaData), IsNullable = false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<AreaData> area
@@ -162,7 +185,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute(Order = 5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order = 6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public HistoryList history
         {
@@ -176,7 +199,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("population", Order = 6)]
+        [System.Xml.Serialization.XmlElementAttribute("population", Order = 7)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<PopulationData> population
         {
@@ -190,7 +213,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        [System.Xml.Serialization.XmlElementAttribute("entity", Order = 7)]
+        [System.Xml.Serialization.XmlElementAttribute("entity", Order = 8)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<Entity> entity
         {
