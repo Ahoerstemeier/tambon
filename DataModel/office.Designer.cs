@@ -1838,6 +1838,10 @@ namespace De.AHoerstemeier.Tambon
 
         private bool lastcheckedFieldSpecified;
 
+        private System.DateTime lastonlineField;
+
+        private bool lastonlineFieldSpecified;
+
         private string valueField;
 
         public MyUri()
@@ -1892,6 +1896,31 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.lastcheckedFieldSpecified = value;
+            }
+        }
+
+        public System.DateTime lastonline
+        {
+            get
+            {
+                return this.lastonlineField;
+            }
+            set
+            {
+                this.lastonlineField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool lastonlineSpecified
+        {
+            get
+            {
+                return this.lastonlineFieldSpecified;
+            }
+            set
+            {
+                this.lastonlineFieldSpecified = value;
             }
         }
 
@@ -4623,6 +4652,8 @@ namespace De.AHoerstemeier.Tambon
     public partial class OfficialEntry
     {
 
+        private Vision visionField;
+
         private Election electionField;
 
         private OfficialType titleField;
@@ -4666,8 +4697,21 @@ namespace De.AHoerstemeier.Tambon
         public OfficialEntry()
         {
             this.electionField = new Election();
+            this.visionField = new Vision();
             this.beginreasonField = OfficialBeginType.Unknown;
             this.endreasonField = OfficialEndType.Unknown;
+        }
+
+        public Vision vision
+        {
+            get
+            {
+                return this.visionField;
+            }
+            set
+            {
+                this.visionField = value;
+            }
         }
 
         public Election election
@@ -4914,6 +4958,39 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.mubanFieldSpecified = value;
+            }
+        }
+    }
+
+    public partial class Vision
+    {
+
+        private string yearField;
+
+        private string valueField;
+
+        public string year
+        {
+            get
+            {
+                return this.yearField;
+            }
+            set
+            {
+                this.yearField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string Value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
             }
         }
     }
@@ -5186,6 +5263,85 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    public partial class Symbols
+    {
+
+        private string sloganField;
+
+        private List<Vision> visionField;
+
+        private string symboltreeField;
+
+        private string symbolflowerField;
+
+        private string colorField;
+
+        public Symbols()
+        {
+            this.visionField = new List<Vision>();
+        }
+
+        public string slogan
+        {
+            get
+            {
+                return this.sloganField;
+            }
+            set
+            {
+                this.sloganField = value;
+            }
+        }
+
+        public List<Vision> vision
+        {
+            get
+            {
+                return this.visionField;
+            }
+            set
+            {
+                this.visionField = value;
+            }
+        }
+
+        public string symboltree
+        {
+            get
+            {
+                return this.symboltreeField;
+            }
+            set
+            {
+                this.symboltreeField = value;
+            }
+        }
+
+        public string symbolflower
+        {
+            get
+            {
+                return this.symbolflowerField;
+            }
+            set
+            {
+                this.symbolflowerField = value;
+            }
+        }
+
+        public string color
+        {
+            get
+            {
+                return this.colorField;
+            }
+            set
+            {
+                this.colorField = value;
+            }
+        }
+    }
+
     public partial class ThaiAddressVillage
     {
 
@@ -5429,9 +5585,11 @@ namespace De.AHoerstemeier.Tambon
     public partial class Office
     {
 
+        private Symbols symbolsField;
+
         private string sloganField;
 
-        private string visionField;
+        private Vision visionField;
 
         private Point pointField;
 
@@ -5464,6 +5622,20 @@ namespace De.AHoerstemeier.Tambon
             this.urlField = new List<MyUri>();
             this.addressField = new ThaiAddress();
             this.pointField = new Point();
+            this.visionField = new Vision();
+            this.symbolsField = new Symbols();
+        }
+
+        public Symbols symbols
+        {
+            get
+            {
+                return this.symbolsField;
+            }
+            set
+            {
+                this.symbolsField = value;
+            }
         }
 
         public string slogan
@@ -5478,7 +5650,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        public string vision
+        public Vision vision
         {
             get
             {
@@ -5550,7 +5722,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        [System.Xml.Serialization.XmlArrayAttribute(Order = 7)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 8)]
         [System.Xml.Serialization.XmlArrayItemAttribute("term", IsNullable = false)]
         public List<CouncilTerm> council
         {
