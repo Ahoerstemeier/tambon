@@ -1602,8 +1602,16 @@
       <entity type="Muban" geocode="50110206" name="บ้านหม้อล่าง" english="Ban Mo Lang"/>
     </entity>
     <entity type="Tambon" name="ป่าตุ้ม" english="Pa Tum" geocode="501103" >
-      <office type="TAOOffice">
-        <url>http://pratoom.thaigov.net/</url>
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>19.3675</geo:lat>
+          <geo:long>99.2310</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-10-11">http://patum.go.th/</url>
+        <url status="offline">http://pratoom.thaigov.net/</url>
+        <officials>
+          <official title="Mayor" name="อินเหลา จันทร์ป้อ" inoffice="2012"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50110301" name="บ้านสันคะมอก" english="Ban San Kha Mok"/>
       <entity type="Muban" geocode="50110302" name="บ้านทุ่งกู่" english="Ban Thung Ku"/>
@@ -1621,11 +1629,10 @@
     <entity type="Tambon" name="ป่าไหน่" english="Pa Nai" geocode="501104" >
       <office type="MunicipalityOffice">
         <geo:Point>
-          <!-- nothing visible yet, found via Wikimapia -->
-          <geo:lat>19.4082</geo:lat>
-          <geo:long>99.2097</geo:long>
+          <geo:lat> 19.4090</geo:lat>
+          <geo:long>99.2092</geo:long>
         </geo:Point>
-        <url>http://www.panaiphrao.com/</url>
+        <url status="offline">http://www.panaiphrao.com/</url>
         <officials>
           <official title="Mayor" name="สวาท เนรวรรณ" inoffice="2010"/>
         </officials>
@@ -1643,7 +1650,18 @@
     </entity>
     <entity type="Tambon" name="สันทราย" english="San Sai" geocode="501105" >
       <office type="TAOOffice">
-        <url>http://www.sansaiphrao.com/</url>
+        <symbols>
+          <vision>ธรรมชาติร่มรื่น สังคมร่มเย็น ชีวิตเป็นสุข</vision>
+        </symbols>
+        <geo:Point>
+          <geo:lat>19.4185</geo:lat>
+          <geo:long>99.1882</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-10-11">http://www.sansaiphrao.go.th/</url>
+        <url status="offline">http://www.sansaiphrao.com/</url>
+        <officials>
+          <official title="TAOMayor" name="สมเชาว์ ดวงจันทร์" inoffice="2012"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50110501" name="บ้านห้วยส้าน" english="Ban Huai San"/>
       <entity type="Muban" geocode="50110502" name="บ้านหนองปิด" english="Ban Nong Pit"/>
@@ -1662,6 +1680,12 @@
       <entity type="Muban" geocode="50110515" name="บ้านท่ามะเกี๋ยงเหนือ" english="Ban Tha Ma Kiang Nuea"/>
     </entity>
     <entity type="Tambon" name="บ้านโป่ง" english="Ban Pong" geocode="501106" >
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>19.3732</geo:lat>
+          <geo:long>99.1740</geo:long>
+        </geo:Point>
+      </office>
       <entity type="Muban" geocode="50110601" name="บ้านโป่ง" english="Ban Pong"/>
       <entity type="Muban" geocode="50110602" name="บ้านสันต้นม่วง" english="Ban San Ton Muang"/>
       <entity type="Muban" geocode="50110603" name="บ้านดงหลวง" english="Ban Dong Luang"/>
@@ -1685,6 +1709,18 @@
       <entity type="Muban" geocode="50110708" name="บ้านป่าอ้อ" english="Ban Pa O"/>
     </entity>
     <entity type="Tambon" name="เขื่อนผาก" english="Khuean Phak" geocode="501108" >
+      <office type="TAOOffice">
+        <symbols>
+          <vision>
+            วัฒนธรรมเข้มแข็ง เกษตรมั่นคง
+            คมนาคมสะดวก สิ่งแวดล้อมยั่งยืน ชุมชนสงบสุข มุ่งสู่เศรษฐกิจพอเพียง
+          </vision>
+        </symbols>
+        <url lastchecked="2012-10-11">http://www.khuanphak.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ประพันธ์ บุญส่ง" inoffice="2012"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="50110801" name="บ้านแพะพัฒนา" english="Ban Phae Phatthana" />
       <entity type="Muban" geocode="50110802" name="บ้านเขื่อนผาก" english="Ban Khuean Phak"/>
       <entity type="Muban" geocode="50110803" name="บ้านห้วยบงเหนือ" english="Ban Huai Bong Nuea"/>
@@ -1698,7 +1734,18 @@
     </entity>
     <entity type="Tambon" name="แม่แวน" english="Mae Waen" geocode="501109" >
       <office type="TAOOffice">
-        <url>http://www.maewan.com/</url>
+        <symbols>
+          <vision>ความรู้คู่คุณธรรม นำการพัฒนา ประชาแจ่มใส เกษตรก้าวไกล คงไว้ซื่งอารยธรรม ผู้นำเข้มแข็ง</vision>
+        </symbols>
+        <geo:Point>
+          <geo:lat>19.3119</geo:lat>
+          <geo:long>99.1906</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-10-11">http://www.maewan.go.th/</url>
+        <url status="expired">http://www.maewan.com/</url>
+        <officials>
+          <official title="TAOMayor" name="เชวง บุญพรหม" inoffice="2012"/>
+        </officials>
       </office>
       <entity type="Muban" geocode="50110901" name="บ้านล้อง" english="Ban Long"/>
       <entity type="Muban" geocode="50110902" name="บ้านแม่เหียะ" english="Ban Mae Hia"/>
@@ -1713,6 +1760,13 @@
       <entity type="Muban" geocode="50110911" name="บ้านสามลี่" english="Ban Sam Li"/>
     </entity>
     <entity type="Tambon" name="แม่ปั๋ง" english="Mae Pang" geocode="501110" >
+      <symbols>
+        <slogan>
+          ดอยแม่ปั๋งล้ำค่า งามสง่าประเพณี
+          กินอยู่ดีเกษตรกรรม สวยล้ำน้ำตกม่อนหินไหล
+          น้ำใจมากล้น คนมีอารยธรรม
+        </slogan>
+      </symbols>
       <entity type="Muban" geocode="50111001" name="บ้านห้วยงู" english="Ban Huai Ngu"/>
       <entity type="Muban" geocode="50111002" name="บ้านประดู่" english="Ban Pradu"/>
       <entity type="Muban" geocode="50111003" name="บ้านแม่แพง" english="Ban Mae Phaeng"/>
@@ -2697,14 +2751,16 @@
     </office>
     <entity type="Tambon" name="เมืองแหง" english="Mueang Ngae" geocode="502001" >
       <office type="TAOOffice">
-        <vision>
-          เป็นเมืองท่องเที่ยวทางวัฒนธรรมชนเผ่า
-          และแหล่งท่องเที่ยวทางธรรมชาติที่ดีที่สุด
-          ในจังหวัดเชียงใหม่
-        </vision>
+        <symbols>
+          <vision>
+            เป็นเมืองท่องเที่ยวทางวัฒนธรรมชนเผ่า
+            และแหล่งท่องเที่ยวทางธรรมชาติที่ดีที่สุด
+            ในจังหวัดเชียงใหม่
+          </vision>
+        </symbols>
         <geo:Point>
-          <geo:lat>19.5769</geo:lat>
-          <geo:long>98.6237</geo:long>
+          <geo:lat>19.5771</geo:lat>
+          <geo:long>98.6281</geo:long>
         </geo:Point>
         <url lastchecked="2012-09-12">http://www.muanghaeng.org/</url>
         <officials>
@@ -2727,7 +2783,13 @@
     </entity>
     <entity type="Tambon" name="เปียงหลวง" english="Piang Luang" geocode="502002" >
       <office type="TAOOffice">
-        <url>http://www.piangluang.net/</url>
+        <geo:Point>
+          <geo:lat>19.6493</geo:lat>
+          <geo:long>98.6352</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-10-11">http://piangluang.cmwebdemo.com/</url>
+        <url lastchecked="2012-10-11">http://www.piangluang.go.th/</url>
+        <url status="offline">http://www.piangluang.net/</url>
       </office>
       <entity type="Muban" geocode="50200201" name="บ้านเปียงหลวง" english="Ban Piang Luang"/>
       <entity type="Muban" geocode="50200202" name="บ้านจอง" english="Ban Chong"/>
@@ -2739,11 +2801,14 @@
     <entity type="Tambon" name="แสนไห" english="Saen Hai" geocode="502003">
       <office type="TAOOffice">
         <!-- to be upgraded to municipality 2012-04-06 -->
-        <vision>
-          คมนาคมสะดวก  เศรษฐกิจดี  มีความรู้ทันสมัย  ห่วงใยสิ่งแวดล้อม  ปกป้องประชาชนให้พ้นภัยธรรมชาติ  สุขภาพสมบูรณ์  เทิดทูนวัฒนธรรม
-        </vision>
-        <!-- 19.62669,98.62965 -->
-        <url lastchecked="2012-07-19">http://sanhai.go.th/</url>
+        <symbols>
+          <vision>คมนาคมสะดวก  เศรษฐกิจดี  มีความรู้ทันสมัย  ห่วงใยสิ่งแวดล้อม  ปกป้องประชาชนให้พ้นภัยธรรมชาติ  สุขภาพสมบูรณ์  เทิดทูนวัฒนธรรม</vision>
+        </symbols>
+        <geo:Point>
+          <geo:lat>19.6267</geo:lat>
+          <geo:long>98.6296</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-10-11">http://sanhai.go.th/</url>
         <officials>
           <official title="TAOMayor" name="อินทอน ศรีลิลา" endyear="2012"/>
         </officials>
@@ -3346,11 +3411,14 @@
   </entity>
   <entity type="ThesabanTambon" name="เวียงพร้าว" english="Wiang Phrao" geocode="5085" parent="5011" >
     <office type="MunicipalityOffice">
+      <symbols>
+        <vision>ทำชุมชนให้น่าอยู่ ฟื้นฟูวัฒนธรรม ขยายเขตคมนาคม ชุมชนเข้มแข็ง</vision>
+      </symbols>
       <geo:Point>
         <geo:lat>19.3645</geo:lat>
         <geo:long>99.2022</geo:long>
       </geo:Point>
-      <url>http://www.wiangphrao.go.th/</url>
+      <url lastchecked="2012-10-11">http://www.wiangphrao.go.th/</url>
       <officials>
         <official title="Mayor" name="กิติพัฒน์ สุนทรพันธุ์" inoffice="2011"/>
       </officials>
@@ -3559,13 +3627,18 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่ปั๋ง" english="Mae Pang" geocode="5066" parent="5011" tambon="501110" >
     <office type="MunicipalityOffice">
+      <symbols>
+        <vision>แม่ปั๋งพัฒนา ประชาอยู่ดีมีสุข</vision>
+      </symbols>
       <geo:Point>
         <geo:lat>19.25051</geo:lat>
         <geo:long>99.18393</geo:long>
       </geo:Point>
+      <url lastchecked="2012-10-11">http://www.maepang.go.th/</url>
       <url status="offline">http://www.maepang.org/</url>
       <url status="expired">http://maepung.org/</url>
       <officials>
+        <official title="Mayor" name="อรุณ ธนะหมี" inoffice="2012"/>
         <official title="TAOMayor" name="ศักดิ์ศรี มูลธร" inoffice="2007"/>
       </officials>
     </office>

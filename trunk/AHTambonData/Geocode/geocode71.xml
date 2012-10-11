@@ -444,6 +444,19 @@
       <entity type="Muban" geocode="71040304" name="บ้านท่าทุ่งนา" english="Ban Tha Thung Na"/>
     </entity>
     <entity type="Tambon" name="ท่ากระดาน" english="Tha Kradan" geocode="710404" >
+      <office type="TAOOffice">
+        <symbols>
+          <vision>ร่วมคิด ร่วมทำ ร่วมแก้ไข ด้วยความโปร่งใส และตรวจสอบได้</vision>
+        </symbols>
+        <geo:Point>
+          <geo:lat>14.4455</geo:lat>
+          <geo:long>99.1307</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-10-11">http://www.thakadan.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ไพบูลย์ สุวรรณ์" inoffice="2012"/>
+        </officials>
+      </office>
       <entity type="Muban" geocode="71040401" name="บ้านท่ากระดาน" english="Ban Tha Kradan"/>
       <entity type="Muban" geocode="71040402" name="บ้านท่ากระดาน" english="Ban Tha Kradan"/>
       <entity type="Muban" geocode="71040403" name="บ้านเขาแก่งเรียง" english="Ban Khao Kaeng Riang"/>
@@ -463,12 +476,12 @@
     </entity>
     <entity type="Tambon" name="แม่กระบุง" english="Mae Krabung" geocode="710406" >
       <office type="TAOOffice">
-        <url>http://www.maekrabung.go.th/</url>
+        <url status="offline">http://www.maekrabung.go.th/</url>
       </office>
       <entity type="Muban" geocode="71040601" name="บ้านหาดแตง" english="Ban Hat Daeng"/>
       <entity type="Muban" geocode="71040602" name="บ้านแม่กระบุง" english="Ban Mae Krabung"/>
       <entity type="Muban" geocode="71040603" name="บ้านน้ำมุด" english="Ban Nam Mut"/>
-      <entity type="Muban" geocode="71040604" name="บ้านพุชะนี"/>
+      <entity type="Muban" geocode="71040604" name="บ้านพุชะนี" english="Ban Phu Chani"/>
       <entity type="Muban" geocode="71040605" name="บ้านปลายดินสอ" english="Ban Plai Din So"/>
       <entity type="Muban" geocode="71040606" name="บ้านต้นมะพร้าว" english="Ban Ton Maphrao"/>
     </entity>
@@ -1550,11 +1563,29 @@
   </entity>
   <entity type="ThesabanTambon" name="ลูกแก" english="Luk Kae" geocode="7189" parent="7105" >
     <office type="MunicipalityOffice">
-      <url>http://www.lukkae.go.th/</url>
+      <geo:Point>
+        <geo:lat>13.8708</geo:lat>
+        <geo:long>99.8181</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-10-11">http://www.lukkae.go.th/</url>
+      <officials>
+        <official title="Mayor" name="อรรถพล สิทธิวิไล" inoffice="2012"/>
+        <official title="Mayor" name="ผิน เจนวัฒนวิทย์" inoffice="2008"/>
+      </officials>
     </office>
     <history>
       <rename name="ลูกแก" oldname="ดอนขมิ้น" oldenglish="Don Khamin" />
     </history>
+    <entity type="Chumchon" geocode="71890001" name="ชุมชนใจพัฒนา" english="Chumchon Chai Phatthana"/>
+    <entity type="Chumchon" geocode="71890002" name="ชุมชนร่วมใจ" english="Chumchon Ruam Chai"/>
+    <entity type="Chumchon" geocode="71890003" name="ชุมชนมิตรสัมพันธ์" english="Chumchon Mit Samphan"/>
+    <entity type="Chumchon" geocode="71890004" name="ชุมชนใจรักสามัคคี" english="Chumchon Chai Rak Samakkhi"/>
+    <entity type="Chumchon" geocode="71890005" name="ชุมชนริมน้ำ" english="Chumchon Rim Nam"/>
+    <entity type="Chumchon" geocode="71890006" name="ชุมชนวัดลูกแก" english="Chumchon Wat Luk Kae"/>
+    <entity type="Chumchon" geocode="71890007" name="ชุมชนชนโพธิ์เย็น" english="Chumchon Chon Pho Yen"/>
+    <entity type="Chumchon" geocode="71890008" name="ชุมชนตลาดลูกแก" english="Chumchon Talat Luk Kae"/>
+    <entity type="Chumchon" geocode="71890009" name="ชุมชนร่มโพธิ์พัฒนา" english="Chumchon Rom Pho Phatthana"/>
+    <entity type="Chumchon" geocode="71890010" name="ชุมชนประชาสัมพันธ์" english="Chumchon Pracha Samphan"/>
   </entity>
   <entity type="ThesabanTambon" name="ท่ามะกา" english="Tha Maka" geocode="7188" parent="7105" >
     <office type="MunicipalityOffice">
