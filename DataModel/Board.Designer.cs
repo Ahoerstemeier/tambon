@@ -487,6 +487,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order = 0)]
