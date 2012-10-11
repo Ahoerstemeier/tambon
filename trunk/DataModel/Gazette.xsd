@@ -11,6 +11,19 @@
   <xs:include schemaLocation="constituencies.xsd"/>
   <xs:include schemaLocation="board.xsd"/>
 
+  <xs:simpleType name="Ministry">
+    <xs:annotation>
+      <xs:documentation>Ministries in Thailand.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MOI">
+        <xs:annotation>
+          <xs:documentation>Ministry of Interior (กระทรวงมหาดไทย, มท).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="ParkType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="NationalPark">
@@ -544,6 +557,26 @@
       <xs:extension base="t:GazetteReferenceBase"/>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="MinisterialOrder">
+    <xs:annotation>
+      <xs:documentation>Reference to a ministerial order.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="ministry" type="t:Ministry">
+      <xs:annotation>
+        <xs:documentation>Ministry which issued the order.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="date" type="xs:date">
+      <xs:annotation>
+        <xs:documentation>Date the order was issued.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="title" type="xs:string">      <xs:annotation>
+        <xs:documentation>Title or reference number of the order.</xs:documentation>
+      </xs:annotation>
+</xs:attribute>
+  </xs:complexType>
+
   <xs:group name="EntryAction">
     <xs:choice>
       <xs:element name="reassign" type="t:GazetteReassign"/>
@@ -568,6 +601,7 @@
       <xs:element name="interpellation" type="t:GazetteInterpellation"/>
 
       <xs:element name="meetingreference" type="t:MeetingReference"/>
+      <xs:element name="ministerialorder" type="t:MinisterialOrder"/>
     </xs:choice>
   </xs:group>
   <xs:complexType name="EntryActionList">
