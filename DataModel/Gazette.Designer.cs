@@ -229,6 +229,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order = 0)]
@@ -2296,6 +2297,145 @@ namespace De.AHoerstemeier.Tambon
                 this.numberField = value;
             }
         }
+    }
+
+    /// <summary>
+    /// Reference to a ministerial order.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "MinisterialOrder", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class MinisterialOrder
+    {
+
+        private Ministry ministryField;
+
+        private bool ministryFieldSpecified;
+
+        private System.DateTime dateField;
+
+        private bool dateFieldSpecified;
+
+        private string titleField;
+
+        /// <summary>
+        /// Ministry which issued the order.
+        /// </summary>
+        /// <value>
+        /// The ministry.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Ministry ministry
+        {
+            get
+            {
+                return this.ministryField;
+            }
+            set
+            {
+                this.ministryField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ministrySpecified
+        {
+            get
+            {
+                return this.ministryFieldSpecified;
+            }
+            set
+            {
+                this.ministryFieldSpecified = value;
+            }
+        }
+
+        /// <summary>
+        /// Date the order was issued.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date
+        {
+            get
+            {
+                return this.dateField;
+            }
+            set
+            {
+                this.dateField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool dateSpecified
+        {
+            get
+            {
+                return this.dateFieldSpecified;
+            }
+            set
+            {
+                this.dateFieldSpecified = value;
+            }
+        }
+
+        /// <summary>
+        /// Title or reference number of the order.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string title
+        {
+            get
+            {
+                return this.titleField;
+            }
+            set
+            {
+                this.titleField = value;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Ministries in Thailand.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum Ministry
+    {
+
+        /// <summary>
+        /// Ministry of Interior (กระทรวงมหาดไทย, มท).
+        /// </summary>
+        MOI,
     }
 
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.233")]
