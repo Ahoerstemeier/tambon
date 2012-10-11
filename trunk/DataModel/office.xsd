@@ -424,11 +424,33 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="Emblem">
+    <xs:annotation>
+      <xs:documentation>Emblem (ตรา) of the entity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="reference" minOccurs="0" maxOccurs="1" type="t:ReferenceList">
+        <xs:annotation>
+          <xs:documentation>References on the emblem.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="date" use="optional" type="xs:dateTime">
+      <xs:annotation>
+        <xs:documentation>Date of official adoption of the emblem.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="Symbols">
     <xs:annotation>
       <xs:documentation>Symbols of an entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:Emblem' name='emblem'>
+        <xs:annotation>
+          <xs:documentation>Emblem (ตรา) of the entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" type='xs:string' name='slogan'>
         <xs:annotation>
           <xs:documentation>Slogan (คำขวัญ) of the entity.</xs:documentation>
@@ -606,5 +628,4 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-
 </xs:schema>
