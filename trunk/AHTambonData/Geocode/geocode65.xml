@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="พิษณุโลก" english="Phitsanulok" geocode="65" >
-  <slogan>พระพุทธชินราชงามเลิศ ถิ่นกำเนิดพระนเรศวร สองฝั่งล้วนเรือนแพ หวานฉ่ำแท้กล้วยตาก ถ้ำและน้ำตกหลากตระการตา</slogan>
+  <symbols>
+    <slogan>พระพุทธชินราชงามเลิศ ถิ่นกำเนิดพระนเรศวร สองฝั่งล้วนเรือนแพ หวานฉ่ำแท้กล้วยตาก ถ้ำและน้ำตกหลากตระการตา</slogan>
+    <symboltree>Millingtonia hortensis</symboltree>
+    <symbolflower>Peltophorum pterocarpum</symbolflower>
+  </symbols>  
   <office type="ProvinceHall">
     <geo:Point>
       <geo:lat>16.8263</geo:lat>
@@ -56,15 +60,34 @@
     </officials>
   </office>
   <office type="PAOOffice">
-    <vision>องค์การบริหารส่วนจังหวัดพิษณุโลก ศูนย์กลางการพัฒนาคุณภาพชีวิต</vision>
+    <symbols>
+      <vision>องค์การบริหารส่วนจังหวัดพิษณุโลก ศูนย์กลางการพัฒนาคุณภาพชีวิต</vision>
+    </symbols>    
     <geo:Point>
       <geo:lat>16.8174</geo:lat>
       <geo:long>100.3414</geo:long>
     </geo:Point>
-    <url lastchecked="2012-07-08">http://www.ppao.go.th/</url>
+    <url lastchecked="2012-10-11">http://www.ppao.go.th/</url>
     <officials>
-      <official title="PAOChairman" name="สุรินทร์ ฐิติปุญญา" inoffice="2012"/>
+      <official title="PAOChairman" name="TBD" begin="2012-11-18">
+        <election type="PAOChairman" date="2012-11-18">
+          <candidates>            
+            <candidate id="1" name="ราม ต้นรัตนวงศ์"/>
+            <candidate id="2" name="นายเรืองฤทธิ์ ศิริสวัสดิ์"/>
+            <candidate id="3" name="นายมนต์ชัย วิวัฒน์ธนาฒย์"/>
+            <candidate id="4" name="นางสาววีรี ฐิติปุญญา"/>
+            <candidate id="5" name="นายธวัชชัย กันนะพันธุ์"/>
+          </candidates>
+          <references>
+            <url>http://www.ppao.go.th/vote2555</url>
+          </references>
+        </election>
+      </official>
+      <official title="PAOChairman" name="สุรินทร์ ฐิติปุญญา" begin="2008-09-27" end="2012-09-26"/>
     </officials>
+    <council>
+      <term begin="2008-06-08" end="2012-06-07" type="PAO" size="30"/>
+    </council>
   </office>
   <history>
     <reformedspelling name="พิษนุโลก" effective="1942-06-01"/>
