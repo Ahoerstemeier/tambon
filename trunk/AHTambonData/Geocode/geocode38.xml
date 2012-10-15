@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="บึงกาฬ" english="Bueng Kan" geocode="38">
-  <symboltree>Dalbergia oliveri</symboltree>
-  <symbolflower>Bauhinia sirindhorniae</symbolflower>
-  <office type="ProvinceHall">
+  <symbols>
     <slogan>
       ภูทอกแหล่งพระธรรม  ค่าล้ำยางพารา
       งามตาแก่งอาฮง         บึงโขงหลงเพลินใจ
@@ -10,6 +8,10 @@
       เหนือสุดแดนอีสาน   นมัสการหลวงพ่อใหญ่
       ศูนย์รวมใจศาลสองนาง
     </slogan>
+    <symboltree>Dalbergia oliveri</symboltree>
+  <symbolflower>Bauhinia sirindhorniae</symbolflower>
+  </symbols>
+  <office type="ProvinceHall">
     <!-- Temporary office in district office -->
     <geo:Point>
       <geo:lat>18.3581</geo:lat>
@@ -28,12 +30,14 @@
     </officials>
   </office>
   <office type="PAOOffice">
-    <vision>
-      ศูนย์กลางยางพารา
-      ประตูการค้ากับประเทศเพื่อนบ้าน
-      การท่องเที่ยวเชิงนิเวศน์
-      เศรษฐกิจพอเพียง
-    </vision>
+    <symbols>
+      <vision>
+        ศูนย์กลางยางพารา
+        ประตูการค้ากับประเทศเพื่อนบ้าน
+        การท่องเที่ยวเชิงนิเวศน์
+        เศรษฐกิจพอเพียง
+      </vision>
+    </symbols>
     <geo:Point>
       <geo:lat>18.3589</geo:lat>
       <geo:long>103.6559</geo:long>
@@ -49,12 +53,15 @@
       <official title="PAOChairman" name="นิพนธ์ คนขยัน" begin="2011-07-10"/>
     </officials>
     <council>
-      <term begin="2008-04-26" end="2012-04-25" type="PAO" comment="Split from Nong Khai PAO"/>
+      <term begin="2012-09-02" type="PAO" size="24"/>
+      <term begin="2008-04-26" end="2012-04-25" type="PAO" size="24" comment="Split from Nong Khai PAO"/>
     </council>
   </office>
   <entity type="Amphoe" name="เมืองบึงกาฬ" english="Mueang Bueng Kan" geocode="3801">
     <office type="DistrictOffice">
-      <slogan>สองนางศาลศักดิ์สิทธิ์ อิทธิฤทธิ์หลวงพ่อใหญ่ แหล่งน้ำใสหนองกุดทิง สุดใหญ่ยิ่งแข่งเรือยาว หาดทรายขาวเป็นสง่า น่าทัศนาแก่งอาฮง งามน้ำโขงที่บึงกาฬ สุขสำราญที่ได้ยล</slogan>
+      <symbols>
+        <slogan>สองนางศาลศักดิ์สิทธิ์ อิทธิฤทธิ์หลวงพ่อใหญ่ แหล่งน้ำใสหนองกุดทิง สุดใหญ่ยิ่งแข่งเรือยาว หาดทรายขาวเป็นสง่า น่าทัศนาแก่งอาฮง งามน้ำโขงที่บึงกาฬ สุขสำราญที่ได้ยล</slogan>
+      </symbols>
       <geo:Point>
         <geo:lat>18.3581</geo:lat>
         <geo:long>103.6530</geo:long>
@@ -71,6 +78,7 @@
           <geo:long>103.6552</geo:long>
         </geo:Point>
       </oldlocations>
+    
     </office>
     <entity type="Tambon" name="บึงกาฬ" english="Bueng Kan" geocode="380101" >
       <office type="TAOOffice">
@@ -101,6 +109,7 @@
           <geo:lat>18.3068</geo:lat>
           <geo:long>103.6459</geo:long>
         </geo:Point>
+        <!-- TAO Mayor elected after 2008 -->
         <council>
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="26"/>
         </council>
@@ -291,6 +300,9 @@
         <officials>
           <official title="TAOMayor" name="รังศรี สุภาปุ" begin="2011-07-12"/>
         </officials>
+        <council>
+          <term begin="2011-11-06" type="TAO" size="22"/>
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="วังชมภู" english="Wang Chomphu" geocode="380205" >
@@ -416,6 +428,7 @@
     </entity>
     <entity type="Tambon" name="ถ้ำเจริญ" english="Tham Charoen" geocode="380306" >
       <office type="TAOOffice">
+        <!-- TAOMayor term: 2008-02-24 - 2012-02-23 -->
         <council>
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="24"/>
         </council>
@@ -468,7 +481,12 @@
     <entity type="Tambon" name="ซาง" english="Sang" geocode="380402" >
       <office type="MunicipalityOffice">
         <url status="obsolete">http://www.orbortorsang.th.gs/</url>
-        <!-- election on 2012-02-11 -->
+        <officials>
+          <official title="Mayor" name="สุระ คงเกษม" begin="2012-02-11" beginreason="ElectedDirectly"/>
+        </officials>
+        <council>
+          <term begin="2012-02-11" type="ThesabanTambon" size="12"/>
+        </council>
       </office>
       <entity type="Muban" geocode="38040201" name="บ้านซาง" english="Ban Sang"/>
       <entity type="Muban" geocode="38040202" name="บ้านท่าสำราญ" english="Ban Tha Samran"/>
@@ -522,6 +540,10 @@
     <entity type="Tambon" name="บ้านต้อง" english="Ban Tong" geocode="380404" >
       <office type="TAOOffice">
         <url status="offline">http://www.baantong.org/</url>
+        <officials>
+          <!-- TAOMayor term: 2008-07-12 - 2012-07-11 -->
+          <official title="TAOMayor" name="ปัน ทองทา" endyear="2008"/>
+        </officials>
         <council>
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="30"/>
         </council>
@@ -536,6 +558,9 @@
     <entity type="Tambon" name="ท่าสะอาด" english="Tha Sa-at" geocode="380407">
       <office type="TAOOffice">
         <!-- Longdo: 17.9432 103.7771 -->
+        <officials>
+          <official title="TAOMayor" name="สังวาลย์ ศรีทุมมี" begin="2012-05-20" beginreason="ElectedDirectly"/>
+      </officials>
         <council>
           <term begin="2012-05-20" type="TAO" size="24"/>
           <term begin="2008-04-07" end="2012-04-06" type="TAO" size="24"/>
@@ -575,7 +600,16 @@
       <entity type="Muban" geocode="38050115" name="บ้านทุ่งสว่าง" english="Ban Thung Sawang"/>
       <entity type="Muban" geocode="38050116" name="บ้านท่าสุขสันต์" english="Ban Tha Suk San"/>
     </entity>
-    <entity type="Tambon" name="หนองยอง" english="Nong Yong" geocode="380502" />
+    <entity type="Tambon" name="หนองยอง" english="Nong Yong" geocode="380502" >
+      <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="วุฒิพงษ์ หลานวงศ์" begin="2008-08-30"/>
+      </officials>
+        <council>
+          <term begin="2008-08-30" end="2012-08-29" type="TAO" size="22"/>
+        </council>
+      </office>
+    </entity>
     <entity type="Tambon" name="นากั้ง" english="Na Kang" geocode="380503" >
       <office type="TAOOffice">
         <url>http://nakung.com/</url>
@@ -683,8 +717,8 @@
         <url status="obsolete">http://www.phomakkang.thmy.com/</url>
         <url status="offline">http://www.phomakkang.ob.tc/</url>
         <officials>
-          <official title="TAOMayor" name="นิมนต์ ชานุชิต" beginyear="2012"/>
-          <official title="TAOMayor" name="นิมนต์ ชานุชิต" begin="2008-04-07" end="2012-04-06"/>
+          <official title="TAOMayor" name="นิมนต์ ชานุชิต" begin="2012-05-20" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="นิมนต์ ชานุชิต" begin="2008-04-07" end="2012-04-06" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
           <term begin="2012-05-20" type="TAO" size="30"/>
@@ -709,6 +743,10 @@
     <entity type="Tambon" name="ดงบัง" english="Dong Bang" geocode="380603" >
       <office type="TAOOffice">
         <!-- Longdo: 18.03563,104.15957 -->
+        <officials>
+          <official title="TAOMayor" name="ชูศักดิ์ วสันต์" begin="2012-05-20" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ชูศักดิ์ วสันต์" begin="2008-04-07" end="2012-04-06" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        </officials>
         <council>
           <term begin="2012-05-20" type="TAO" size="22"/>
           <term begin="2008-04-07" end="2012-04-06" type="TAO" size="22"/>
@@ -799,7 +837,7 @@
           <official title="TAOMayor" name="ศรีเทพ สุวรรณไตร" inoffice="2006"/>
         </officials>
         <council>
-          <term begin="2008-08-30" end="2012-08-29" type="TAO" size="18"/>
+          <term begin="2008-08-30" end="2012-08-29" type="TAO" size="26"/>
         </council>
       </office>
     </entity>
@@ -848,10 +886,15 @@
     </entity>
     <entity type="Tambon" name="หนองเดิ่น" english="Nong Doen" geocode="380802" >
       <office type="TAOOffice">
-        <url>http://nongdoen.go.th/</url>
+        <url status="offline" lastonline="2012-10-04">http://nongdoen.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สมัย หล้ากันยา" inoffice="2011"/>
+          <official title="TAOMayor" name="มนตรี ถ้ำเล็บมือ" begin="2012-05-20" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="สมัย หล้ากันยา" begin="2008-04-07" end="2012-04-06" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
+        <council>
+          <term begin="2012-05-20" type="TAO" size="14"/>
+          <term begin="2008-04-07" end="2012-04-06" type="TAO" size="14"/>
+        </council>
       </office>
       <entity type="Muban" geocode="38080201" name="บ้านหนองเดิ่นท่า" english="Ban Nong Doen Tha"/>
       <entity type="Muban" geocode="38080202" name="บ้านหนองเดิ่นเหนือ" english="Ban Nong Doen Nuea"/>
@@ -933,9 +976,11 @@
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/nongkhai/porncharoen/</url>
       <officials>
-        <official title="Mayor" name="ธีระชัย ลี้ลิขิตกุล" begin="2008-06-22"/>
+        <official title="Mayor" name="ธีระชัย ลี้ลิขิตกุล" begin="2012-07-29" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="ธีระชัย ลี้ลิขิตกุล" begin="2008-06-22" end="2012-06-21" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
       </officials>
       <council>
+        <term begin="2012-07-29" type="ThesabanTambon" size="12"/>
         <term begin="2008-06-22" end="2012-06-21" type="ThesabanTambon" size="12"/>
       </council>
     </office>
@@ -1035,4 +1080,5 @@
       </council>
     </office>
   </entity>
+
 </entity>
