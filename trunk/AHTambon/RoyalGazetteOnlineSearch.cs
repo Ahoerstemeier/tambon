@@ -14,28 +14,28 @@ namespace De.AHoerstemeier.Tambon
     public class RoyalGazetteOnlineSearch
     {
         #region variables
-        private const String SearchFormURL = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search.jsp";
-        private const String SearchPostURL = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_load_adv.jsp";
-        private const String SearchPageURL = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_page_load.jsp";
-        private const String BaseURL = "http://www.ratchakitcha.soc.go.th/RKJ/announce/";
-        private const String ResponseDataURL = "parent.location.href=\"";
+        private const String _searchFormUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search.jsp";
+        private const String _searchPostUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_load_adv.jsp";
+        private const String _searchPageUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_page_load.jsp";
+        private const String _baseUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/";
+        private const String _responseDataUrl = "parent.location.href=\"";
 
-        private String mCookie = String.Empty;
-        private String mDataUrl = String.Empty;
-        private String mSearchKey = String.Empty;
-        private Int32 mVolume = 0;
-        private Int32 mNumberOfPages = 0;
+        private String _cookie = String.Empty;
+        private String _dataUrl = String.Empty;
+        private String _searchKey = String.Empty;
+        private Int32 _volume = 0;
+        private Int32 _numberOfPages = 0;
         #endregion
-        public event RoyalGazetteList.ProcessingFinished OnProcessingFinished;
+        public event RoyalGazetteProcessingFinishedHandler ProcessingFinished;
         #region consts
         private static Dictionary<EntityModification, String> EntityModificationText = new Dictionary<EntityModification, String>
         {
-            {EntityModification.Abolishment,"Abolish of %1%"},
-            {EntityModification.AreaChange,"Change of area of %1%"},
-            {EntityModification.Creation,"Creation of %1%"},
-            {EntityModification.Rename,"Rename of %1%"},
-            {EntityModification.StatusChange,"Change of status of %1%"},
-            {EntityModification.Constituency,"Constituencies of %1%"}
+            {EntityModification.Abolishment,"Abolish of {0}"},
+            {EntityModification.AreaChange,"Change of area of {0}"},
+            {EntityModification.Creation,"Creation of {0}"},
+            {EntityModification.Rename,"Rename of {0}"},
+            {EntityModification.StatusChange,"Change of status of {0}"},
+            {EntityModification.Constituency,"Constituencies of {0}"}
         };
         public static Dictionary<EntityModification, Dictionary<EntityType, String>> SearchKeys = new Dictionary<EntityModification, Dictionary<EntityType, String>>
         {
@@ -146,176 +146,176 @@ namespace De.AHoerstemeier.Tambon
         #region methods
         private void PerformRequest()
         {
-            StringBuilder lRequestString = new StringBuilder();
+            StringBuilder requestString = new StringBuilder();
             foreach ( string s in new List<String> { "ก", "ง", "ข", "ค", "all" } )
             {
-                lRequestString.Append("chkType=" + MyURLEncode(s) + "&");
+                requestString.Append("chkType=" + MyUrlEncode(s) + "&");
             }
-            if ( mVolume <= 0 )
+            if ( _volume <= 0 )
             {
-                lRequestString.Append("txtBookNo=&");
+                requestString.Append("txtBookNo=&");
             }
             else
             {
                 //lRequestString.Append("txtBookNo=" + MyURLEncode(Helper.UseThaiNumerals(mVolume.ToString())) + "&");
-                lRequestString.Append("txtBookNo=" + mVolume.ToString() + "&");
+                requestString.Append("txtBookNo=" + _volume.ToString() + "&");
             }
             //request.Append("txtSection=&");
             //request.Append("txtFromDate=&");
             //request.Append("txtToDate=&");
-            lRequestString.Append("chkSpecial=special&");
-            lRequestString.Append("searchOption=adv&");
-            lRequestString.Append("hidNowItem=txtTitle&");
+            requestString.Append("chkSpecial=special&");
+            requestString.Append("searchOption=adv&");
+            requestString.Append("hidNowItem=txtTitle&");
             //request.Append("hidFieldSort=&");
             //request.Append("hidFieldSortText=&");
-            lRequestString.Append("hidFieldList=" + MyURLEncode("txtTitle/txtBookNo/txtSection/txtFromDate/txtToDate/selDocGroup1") + "&");
+            requestString.Append("hidFieldList=" + MyUrlEncode("txtTitle/txtBookNo/txtSection/txtFromDate/txtToDate/selDocGroup1") + "&");
             //request.Append("txtDetail=&");
             //request.Append("selDocGroup=&");
             //request.Append("selFromMonth=&");
             //request.Append("selFromYear=&");
             //request.Append("selToMonth=&");
             //request.Append("selToYear=&");
-            lRequestString.Append("txtTitle=" + MyURLEncode(mSearchKey));
+            requestString.Append("txtTitle=" + MyUrlEncode(_searchKey));
 
-            mDataUrl = GetDataURL(0, lRequestString.ToString());
+            _dataUrl = GetDataUrl(0, requestString.ToString());
         }
 
-        private String GetDataURL(Int32 iPage, String lRequestString)
+        private String GetDataUrl(Int32 page, String requestString)
         {
-            WebClient lClient = new WebClient();
-            String lSearchURL = String.Empty;
-            if ( iPage == 0 )
+            WebClient client = new WebClient();
+            String searchUrl = String.Empty;
+            if ( page == 0 )
             {
-                lSearchURL = SearchPostURL;
+                searchUrl = _searchPostUrl;
             }
             else
             {
-                lSearchURL = SearchPageURL;
-                lClient.Headers.Add("Referer", "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_result.jsp");
+                searchUrl = _searchPageUrl;
+                client.Headers.Add("Referer", "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_result.jsp");
             }
 
-            if ( !String.IsNullOrEmpty(mCookie) )
+            if ( !String.IsNullOrEmpty(_cookie) )
             {
-                lClient.Headers.Add("Cookie", mCookie);
+                client.Headers.Add("Cookie", _cookie);
             }
-            lClient.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11");
-            lClient.Headers.Add("Accept", "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5");
-            lClient.Headers.Add("Accept-Language", "en-us,en;q=0.8,de;q=0.5,th;q=0.3");
-            lClient.Headers.Add("Accept-Encoding", "gzip,deflate");
-            lClient.Headers.Add("Accept-Charset", "UTF-8,*");
-            Byte[] lResponseData = lClient.DownloadData(lSearchURL + "?" + lRequestString);
-            String lCookie = lClient.ResponseHeaders.Get("Set-Cookie");
+            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11");
+            client.Headers.Add("Accept", "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5");
+            client.Headers.Add("Accept-Language", "en-us,en;q=0.8,de;q=0.5,th;q=0.3");
+            client.Headers.Add("Accept-Encoding", "gzip,deflate");
+            client.Headers.Add("Accept-Charset", "UTF-8,*");
+            Byte[] lResponseData = client.DownloadData(searchUrl + "?" + requestString);
+            String lCookie = client.ResponseHeaders.Get("Set-Cookie");
             if ( !String.IsNullOrEmpty(lCookie) )
             {
-                mCookie = lCookie;
+                _cookie = lCookie;
             }
             String response = Encoding.ASCII.GetString(lResponseData);
-            Int32 lPosition = response.LastIndexOf(ResponseDataURL);
-            String retval = String.Empty;
-            if ( lPosition >= 0 )
+            Int32 position = response.LastIndexOf(_responseDataUrl);
+            String result = String.Empty;
+            if ( position >= 0 )
             {
-                String lDataURL = response.Substring(lPosition, response.Length - lPosition);
-                lDataURL = lDataURL.Substring(ResponseDataURL.Length, lDataURL.Length - ResponseDataURL.Length);
-                if ( lDataURL.Contains("\";") )
+                String dataUrl = response.Substring(position, response.Length - position);
+                dataUrl = dataUrl.Substring(_responseDataUrl.Length, dataUrl.Length - _responseDataUrl.Length);
+                if ( dataUrl.Contains("\";") )
                 {
-                    retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\";"));
+                    result = _baseUrl + dataUrl.Substring(0, dataUrl.LastIndexOf("\";"));
                 }
                 else
                 {
-                    retval = BaseURL + lDataURL.Substring(0, lDataURL.LastIndexOf("\"+")) + TambonHelper.GetDateJavaScript(DateTime.Now).ToString() + "#";
+                    result = _baseUrl + dataUrl.Substring(0, dataUrl.LastIndexOf("\"+")) + TambonHelper.GetDateJavaScript(DateTime.Now).ToString() + "#";
                 }
             }
-            return retval;
+            return result;
         }
-        private System.IO.Stream DoDataDownload(Int32 iPage)
+        private Stream DoDataDownload(Int32 page)
         {
-            WebClient lClient = new WebClient();
-            lClient.Encoding = Encoding.UTF8;
-            if ( iPage == 0 )
+            WebClient client = new WebClient();
+            client.Encoding = Encoding.UTF8;
+            if ( page == 0 )
             {
-                lClient.Headers.Add("Referer", SearchFormURL);
+                client.Headers.Add("Referer", _searchFormUrl);
             }
             else
             {
-                lClient.Headers.Add("Referer", SearchPageURL);
+                client.Headers.Add("Referer", _searchPageUrl);
             }
-            if ( !String.IsNullOrEmpty(mCookie) )
+            if ( !String.IsNullOrEmpty(_cookie) )
             {
-                lClient.Headers.Add("Cookie", mCookie);
+                client.Headers.Add("Cookie", _cookie);
             }
-            lClient.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11");
-            lClient.Headers.Add("Accept", "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5");
-            lClient.Headers.Add("Accept-Language", "en-us,en;q=0.8,de;q=0.5,th;q=0.3");
-            lClient.Headers.Add("Accept-Encoding", "gzip,deflate");
-            lClient.Headers.Add("Accept-Charset", "UTF-8,*");
-            System.IO.Stream lStream = lClient.OpenRead(mDataUrl);
+            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11");
+            client.Headers.Add("Accept", "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5");
+            client.Headers.Add("Accept-Language", "en-us,en;q=0.8,de;q=0.5,th;q=0.3");
+            client.Headers.Add("Accept-Encoding", "gzip,deflate");
+            client.Headers.Add("Accept-Charset", "UTF-8,*");
+            System.IO.Stream lStream = client.OpenRead(_dataUrl);
             return lStream;
         }
-        private void PerformRequestPage(Int32 iPage)
+        private void PerformRequestPage(Int32 page)
         {
 
-            StringBuilder lRequestString = new StringBuilder();
+            StringBuilder requestString = new StringBuilder();
             //lRequestString.Append("hidlowerindex=1");
             //lRequestString.Append("hidupperindex=100");
-            lRequestString.Append("txtNowpage=" + iPage.ToString());
-            mDataUrl = GetDataURL(iPage, lRequestString.ToString());
+            requestString.Append("txtNowpage=" + page.ToString());
+            _dataUrl = GetDataUrl(page, requestString.ToString());
         }
-        private string MyURLEncode(string value)
+        private string MyUrlEncode(String value)
         {
             var lByteArray = TambonHelper.ThaiEncoding.GetBytes(value);
-            string s = HttpUtility.UrlEncode(lByteArray, 0, lByteArray.Length);
-            return s;
+            String result = HttpUtility.UrlEncode(lByteArray, 0, lByteArray.Length);
+            return result;
         }
 
         private const string EntryStart = "        <td width=\"50\" align=\"center\" nowrap class=\"row4\">";
         private const string PageStart = "onkeypress=\"EnterPage()\"> จากทั้งหมด";
-        private RoyalGazetteList DoParseStream(Stream iData)
+        private RoyalGazetteList DoParseStream(Stream data)
         {
-            var lReader = new System.IO.StreamReader(iData, TambonHelper.ThaiEncoding);
-            RoyalGazetteList retval = new RoyalGazetteList();
-            retval.AddRange(DoParse(lReader));
-            return retval;
+            var reader = new System.IO.StreamReader(data, TambonHelper.ThaiEncoding);
+            RoyalGazetteList result = new RoyalGazetteList();
+            result.AddRange(DoParse(reader));
+            return result;
         }
-        private RoyalGazetteList DoParse(TextReader iReader)
+        private RoyalGazetteList DoParse(TextReader reader)
         {
-            RoyalGazetteList retval = new RoyalGazetteList();
-            String lCurrentLine = String.Empty;
-            int lDataState = -1;
-            StringBuilder lEntryData = new StringBuilder();
-            while ( (lCurrentLine = iReader.ReadLine()) != null )
+            RoyalGazetteList result = new RoyalGazetteList();
+            String currentLine = String.Empty;
+            int dataState = -1;
+            StringBuilder entryData = new StringBuilder();
+            while ( (currentLine = reader.ReadLine()) != null )
             {
-                if ( lCurrentLine.Contains(PageStart) )
+                if ( currentLine.Contains(PageStart) )
                 {
-                    String lTemp = lCurrentLine.Substring(lCurrentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
-                    mNumberOfPages = Convert.ToInt32(lTemp);
+                    String lTemp = currentLine.Substring(currentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
+                    _numberOfPages = Convert.ToInt32(lTemp);
                 }
-                else if ( lCurrentLine.StartsWith(EntryStart) )
+                else if ( currentLine.StartsWith(EntryStart) )
                 {
-                    if ( lEntryData.Length > 0 )
+                    if ( entryData.Length > 0 )
                     {
-                        var current = ParseSingeItem(lEntryData.ToString());
+                        var current = ParseSingeItem(entryData.ToString());
                         if ( current != null )
                         {
-                            retval.Add(current);
+                            result.Add(current);
                         }
-                        lEntryData.Remove(0, lEntryData.Length);
+                        entryData.Remove(0, entryData.Length);
                     }
-                    lDataState++;
+                    dataState++;
                 }
-                else if ( lDataState >= 0 )
+                else if ( dataState >= 0 )
                 {
-                    lEntryData.Append(lCurrentLine.Trim() + " ");
+                    entryData.Append(currentLine.Trim() + " ");
                 }
             }
-            if ( lEntryData.Length > 0 )
+            if ( entryData.Length > 0 )
             {
-                var current = ParseSingeItem(lEntryData.ToString());
+                var current = ParseSingeItem(entryData.ToString());
                 if ( current != null )
                 {
-                    retval.Add(current);
+                    result.Add(current);
                 }
             }
-            return retval;
+            return result;
         }
 
         private const string EntryVolumeorPage = "<td width=\"50\" align=\"center\" nowrap class=\"row2\">";
@@ -326,218 +326,221 @@ namespace De.AHoerstemeier.Tambon
         private const string ColumnEnd = "</td>";
         private const string EntryTitle = "menubar=no,location=no,scrollbars=auto,resizable');\"-->";
         private const string EntryTitleEnd = "</a></td>";
-        private RoyalGazette ParseSingeItem(string iValue)
+        private RoyalGazette ParseSingeItem(String value)
         {
-            iValue = iValue.Replace("\t", "");
+            value = value.Replace("\t", "");
             RoyalGazette retval = null;
-            Int32 position = iValue.IndexOf(EntryURL);
+            Int32 position = value.IndexOf(EntryURL);
             if ( position >= 0 )
             {
                 retval = new RoyalGazette();
                 position = position + EntryURL.Length;
-                Int32 position2 = iValue.IndexOf(EntryURLend);
-                retval.URI = iValue.Substring(position, position2 - position);
-                iValue = iValue.Substring(position2, iValue.Length - position2);
-                position = iValue.IndexOf(EntryTitle) + EntryTitle.Length;
-                position2 = iValue.IndexOf(EntryTitleEnd);
-                retval.Title = iValue.Substring(position, position2 - position).Trim();
-                iValue = iValue.Substring(position2, iValue.Length - position2);
-                position = iValue.IndexOf(EntryVolumeorPage) + EntryVolumeorPage.Length;
-                position2 = iValue.IndexOf(ColumnEnd, position);
-                string volume = iValue.Substring(position, position2 - position);
+                Int32 position2 = value.IndexOf(EntryURLend);
+                retval.URI = value.Substring(position, position2 - position);
+                value = value.Substring(position2, value.Length - position2);
+                position = value.IndexOf(EntryTitle) + EntryTitle.Length;
+                position2 = value.IndexOf(EntryTitleEnd);
+                retval.Title = value.Substring(position, position2 - position).Trim();
+                value = value.Substring(position2, value.Length - position2);
+                position = value.IndexOf(EntryVolumeorPage) + EntryVolumeorPage.Length;
+                position2 = value.IndexOf(ColumnEnd, position);
+                string volume = value.Substring(position, position2 - position);
                 retval.Volume = Convert.ToInt32(TambonHelper.ReplaceThaiNumerals(volume));
-                iValue = iValue.Substring(position2, iValue.Length - position2);
-                position = iValue.IndexOf(EntryIssue) + EntryIssue.Length;
-                position2 = iValue.IndexOf(ColumnEnd, position);
-                string Issue = TambonHelper.ReplaceThaiNumerals(iValue.Substring(position, position2 - position).Trim());
-                iValue = iValue.Substring(position2, iValue.Length - position2);
+                value = value.Substring(position2, value.Length - position2);
+                position = value.IndexOf(EntryIssue) + EntryIssue.Length;
+                position2 = value.IndexOf(ColumnEnd, position);
+                string Issue = TambonHelper.ReplaceThaiNumerals(value.Substring(position, position2 - position).Trim());
+                value = value.Substring(position2, value.Length - position2);
                 retval.Issue = new RoyalGazetteIssue(Issue);
-                position = iValue.IndexOf(EntryDate) + EntryDate.Length;
-                position2 = iValue.IndexOf(ColumnEnd, position);
-                string Date = iValue.Substring(position, position2 - position);
+                position = value.IndexOf(EntryDate) + EntryDate.Length;
+                position2 = value.IndexOf(ColumnEnd, position);
+                string Date = value.Substring(position, position2 - position);
                 retval.Publication = TambonHelper.ParseThaiDate(Date);
-                iValue = iValue.Substring(position2, iValue.Length - position2);
-                position = iValue.IndexOf(EntryVolumeorPage) + EntryVolumeorPage.Length;
-                position2 = iValue.IndexOf(ColumnEnd, position);
-                string page = iValue.Substring(position, position2 - position);
+                value = value.Substring(position2, value.Length - position2);
+                position = value.IndexOf(EntryVolumeorPage) + EntryVolumeorPage.Length;
+                position2 = value.IndexOf(ColumnEnd, position);
+                string page = value.Substring(position, position2 - position);
                 retval.PageInfo.Page = Convert.ToInt32(TambonHelper.ReplaceThaiNumerals(page));
             }
             return retval;
         }
 
-        public RoyalGazetteList DoGetList(String iSearchKey, Int32 iVolume)
+        public RoyalGazetteList DoGetList(String searchKey, Int32 volume)
         {
-            mSearchKey = iSearchKey;
-            mVolume = iVolume;
-            mCookie = String.Empty;
-            RoyalGazetteList retval = null;
+            _searchKey = searchKey;
+            _volume = volume;
+            _cookie = String.Empty;
+            RoyalGazetteList result = null;
             try
             {
                 PerformRequest();
-                retval = new RoyalGazetteList();
-                if ( mDataUrl != String.Empty )
+                result = new RoyalGazetteList();
+                if ( _dataUrl != String.Empty )
                 {
-                    System.IO.Stream lData = DoDataDownload(0);
-                    retval = DoParseStream(lData);
-                    for ( Int32 lPage = 2 ; lPage <= mNumberOfPages ; lPage++ )
+                    Stream lData = DoDataDownload(0);
+                    result = DoParseStream(lData);
+                    for ( Int32 page = 2 ; page <= _numberOfPages ; page++ )
                     {
-                        PerformRequestPage(lPage);
-                        System.IO.Stream lDataPage = DoDataDownload(lPage);
-                        retval.AddRange(DoParseStream(lDataPage));
+                        PerformRequestPage(page);
+                        Stream lDataPage = DoDataDownload(page);
+                        result.AddRange(DoParseStream(lDataPage));
                     }
                 }
             }
-            catch ( System.Net.WebException )
+            catch ( WebException )
             {
-                retval = null;
+                result = null;
                 // TODO
             }
-            return retval;
+            return result;
         }
-        protected RoyalGazetteList GetListDescription(string iSearchKey, int iVolume, string iDescription)
+        protected RoyalGazetteList GetListDescription(String searchKey, Int32 volume, String description)
         {
-            RoyalGazetteList retval = DoGetList(iSearchKey, iVolume);
-            if ( retval != null )
+            RoyalGazetteList result = DoGetList(searchKey, volume);
+            if ( result != null )
             {
-                foreach ( RoyalGazette lEntry in retval )
+                foreach ( RoyalGazette entry in result )
                 {
-                    lEntry.Description = iDescription;
+                    entry.Description = description;
                 }
             }
-            return retval;
+            return result;
         }
-        public RoyalGazetteList SearchNews(DateTime iDate)
+        public RoyalGazetteList SearchNews(DateTime date)
         {
-            RoyalGazetteList retval = new RoyalGazetteList();
-            retval.AddRange(SearchNewsRange(iDate, iDate));
-            retval.SortByPublicationDate();
-            return retval;
+            RoyalGazetteList result = new RoyalGazetteList();
+            result.AddRange(SearchNewsRange(date, date));
+            result.SortByPublicationDate();
+            return result;
         }
-        public RoyalGazetteList SearchNewsRange(DateTime iBeginDate, DateTime iEndDate)
+        public RoyalGazetteList SearchNewsRange(DateTime beginDate, DateTime endDate)
         {
-            RoyalGazetteList retval = new RoyalGazetteList();
-            var lProtecteAreaTypes = new List<ProtectedAreaTypes>();
-            foreach ( ProtectedAreaTypes lProtectedArea in Enum.GetValues(typeof(ProtectedAreaTypes)) )
+            RoyalGazetteList result = new RoyalGazetteList();
+            var protecteAreaTypes = new List<ProtectedAreaTypes>();
+            foreach ( ProtectedAreaTypes protectedArea in Enum.GetValues(typeof(ProtectedAreaTypes)) )
             {
-                lProtecteAreaTypes.Add(lProtectedArea);
+                protecteAreaTypes.Add(protectedArea);
             }
-            var lProtectedAreasList = SearchNewsProtectedAreas(iBeginDate, iEndDate, lProtecteAreaTypes);
-            retval.AddRange(lProtectedAreasList);
+            var protectedAreasList = SearchNewsProtectedAreas(beginDate, endDate, protecteAreaTypes);
+            result.AddRange(protectedAreasList);
 
-            var lEntityTypes = new List<EntityType>();
-            foreach ( EntityType lEntityType in Enum.GetValues(typeof(EntityType)) )
+            var entityTypes = new List<EntityType>();
+            foreach ( EntityType entityType in Enum.GetValues(typeof(EntityType)) )
             {
-                if ( lEntityType != EntityType.Sukhaphiban )
+                if ( entityType != EntityType.Sukhaphiban )
                 {
-                    lEntityTypes.Add(lEntityType);
+                    entityTypes.Add(entityType);
                 }
             }
-            var lEntityModifications = new List<EntityModification>();
-            foreach ( EntityModification lEntityModification in Enum.GetValues(typeof(EntityModification)) )
+            var entityModifications = new List<EntityModification>();
+            foreach ( EntityModification entityModification in Enum.GetValues(typeof(EntityModification)) )
             {
-                lEntityModifications.Add(lEntityModification);
+                entityModifications.Add(entityModification);
             }
-            var lAdministrativeEntitiesList = SearchNewsRangeAdministrative(iBeginDate, iEndDate, lEntityTypes, lEntityModifications);
-            retval.AddRange(lAdministrativeEntitiesList);
-            retval.SortByPublicationDate();
-            return retval;
+            var administrativeEntitiesList = SearchNewsRangeAdministrative(beginDate, endDate, entityTypes, entityModifications);
+            result.AddRange(administrativeEntitiesList);
+            result.SortByPublicationDate();
+            return result;
         }
-        public RoyalGazetteList SearchNewsProtectedAreas(DateTime iBeginDate, DateTime iEndDate, List<ProtectedAreaTypes> iValues)
+        public RoyalGazetteList SearchNewsProtectedAreas(DateTime beginDate, DateTime endDate, IEnumerable<ProtectedAreaTypes> values)
         {
-            RoyalGazetteList retval = new RoyalGazetteList();
-            Int32 iVolumeBegin = iBeginDate.Year - 2007 + 124;
-            Int32 iVolumeEnd = iEndDate.Year - 2007 + 124;
+            RoyalGazetteList result = new RoyalGazetteList();
+            Int32 volumeBegin = beginDate.Year - 2007 + 124;
+            Int32 volumeEnd = endDate.Year - 2007 + 124;
 
-            for ( Int32 lVolume = iVolumeBegin ; lVolume <= iVolumeEnd ; lVolume++ )
+            for ( Int32 volume = volumeBegin ; volume <= volumeEnd ; volume++ )
             {
-                foreach ( KeyValuePair<EntityModification, Dictionary<ProtectedAreaTypes, String>> lOuterKeyValuePair in SearchKeysProtectedAreas )
+                foreach ( KeyValuePair<EntityModification, Dictionary<ProtectedAreaTypes, String>> outerKeyValuePair in SearchKeysProtectedAreas )
                 {
-                    foreach ( KeyValuePair<ProtectedAreaTypes, String> lKeyValuePair in lOuterKeyValuePair.Value )
+                    foreach ( KeyValuePair<ProtectedAreaTypes, String> keyValuePair in outerKeyValuePair.Value )
                     {
-                        if ( iValues.Contains(lKeyValuePair.Key) )
+                        if ( values.Contains(keyValuePair.Key) )
                         {
-                            var lList = GetListDescription(lKeyValuePair.Value, lVolume, ModificationText(lOuterKeyValuePair.Key, lKeyValuePair.Key));
-                            if ( lList != null )
+                            var list = GetListDescription(keyValuePair.Value, volume, ModificationText(outerKeyValuePair.Key, keyValuePair.Key));
+                            if ( list != null )
                             {
-                                retval.AddRange(lList);
+                                result.AddRange(list);
                             }
                         }
                     }
                 }
             }
-            retval.SortByPublicationDate();
-            return retval;
+            result.SortByPublicationDate();
+            return result;
         }
-        public RoyalGazetteList SearchNewsRangeAdministrative(DateTime iBeginDate, DateTime iEndDate, List<EntityType> iTypes, List<EntityModification> iModifications)
+        public RoyalGazetteList SearchNewsRangeAdministrative(DateTime beginDate, DateTime endDate, IEnumerable<EntityType> types, IEnumerable<EntityModification> modifications)
         {
-            RoyalGazetteList retval = new RoyalGazetteList();
-            Int32 iVolumeBegin = iBeginDate.Year - 2007 + 124;
-            Int32 iVolumeEnd = iEndDate.Year - 2007 + 124;
+            RoyalGazetteList result = new RoyalGazetteList();
+            Int32 volumeBegin = beginDate.Year - 2007 + 124;
+            Int32 volumeEnd = endDate.Year - 2007 + 124;
 
-            for ( Int32 lVolume = iVolumeBegin ; lVolume <= iVolumeEnd ; lVolume++ )
+            for ( Int32 volume = volumeBegin ; volume <= volumeEnd ; volume++ )
             {
-                foreach ( KeyValuePair<EntityModification, Dictionary<EntityType, String>> lOuterKeyValuePair in SearchKeys )
+                foreach ( KeyValuePair<EntityModification, Dictionary<EntityType, String>> outerKeyValuePair in SearchKeys )
                 {
-                    if ( iModifications.Contains(lOuterKeyValuePair.Key) )
+                    if ( modifications.Contains(outerKeyValuePair.Key) )
                     {
-                        foreach ( KeyValuePair<EntityType, String> lKeyValuePair in lOuterKeyValuePair.Value )
+                        foreach ( KeyValuePair<EntityType, String> keyValuePair in outerKeyValuePair.Value )
                         {
-                            if ( iTypes.Contains(lKeyValuePair.Key) )
+                            if ( types.Contains(keyValuePair.Key) )
                             {
-                                var lList = GetListDescription(lKeyValuePair.Value, lVolume, ModificationText(lOuterKeyValuePair.Key, lKeyValuePair.Key));
-                                if ( lList != null )
+                                var list = GetListDescription(keyValuePair.Value, volume, ModificationText(outerKeyValuePair.Key, keyValuePair.Key));
+                                if ( list != null )
                                 {
-                                    retval.AddRange(lList);
+                                    result.AddRange(list);
                                 }
                             }
                         }
                     }
                 }
             }
-            return retval;
+            return result;
         }
-        public RoyalGazetteList SearchString(DateTime iBeginDate, DateTime iEndDate, String iSearchKey)
+        public RoyalGazetteList SearchString(DateTime beginDate, DateTime endDate, String searchKey)
         {
-            RoyalGazetteList retval = new RoyalGazetteList();
-            Int32 iVolumeBegin = iBeginDate.Year - 2007 + 124;
-            Int32 iVolumeEnd = iEndDate.Year - 2007 + 124;
+            RoyalGazetteList result = new RoyalGazetteList();
+            Int32 volumeBegin = beginDate.Year - 2007 + 124;
+            Int32 volumeEnd = endDate.Year - 2007 + 124;
 
-            for ( Int32 lVolume = iVolumeBegin ; lVolume <= iVolumeEnd ; lVolume++ )
+            for ( Int32 volume = volumeBegin ; volume <= volumeEnd ; volume++ )
             {
-                var lList = GetListDescription(iSearchKey, lVolume, "");
-                if ( lList != null )
+                var list = GetListDescription(searchKey, volume, "");
+                if ( list != null )
                 {
-                    retval.AddRange(lList);
+                    result.AddRange(list);
                 }
             }
-            retval.SortByPublicationDate();
-            return retval;
+            result.SortByPublicationDate();
+            return result;
         }
 
-        private String ModificationText(EntityModification iModification, EntityType iEntityType)
+        private String ModificationText(EntityModification modification, EntityType entityType)
         {
-            String retval = EntityModificationText[iModification];
-            retval = retval.Replace("%1%", iEntityType.ToString());
-            return retval;
+            String result = String.Format(EntityModificationText[modification],entityType);
+            return result;
         }
-        private String ModificationText(EntityModification iModification, ProtectedAreaTypes iProtectedAreaType)
+        private String ModificationText(EntityModification modification, ProtectedAreaTypes protectedAreaType)
         {
-            String retval = EntityModificationText[iModification];
-            retval = retval.Replace("%1%", iProtectedAreaType.ToString());
-            return retval;
+            String result = String.Format(EntityModificationText[modification],protectedAreaType);
+            return result;
         }
         public void SearchNewsNow()
         {
-            RoyalGazetteList lGazetteList = SearchNews(DateTime.Now);
+            RoyalGazetteList gazetteList = SearchNews(DateTime.Now);
             if ( DateTime.Now.Month == 1 )
             {
                 // Check news from last year as well, in case something was added late
-                lGazetteList.AddRange(SearchNews(DateTime.Now.AddYears(-1)));
+                gazetteList.AddRange(SearchNews(DateTime.Now.AddYears(-1)));
             }
-            lGazetteList.SortByPublicationDate();
-            if ( OnProcessingFinished != null )
+            gazetteList.SortByPublicationDate();
+            OnProcessingFinished(new RoyalGazetteEventArgs(gazetteList));
+        }
+
+        private void OnProcessingFinished(RoyalGazetteEventArgs e)
+        {
+            if ( ProcessingFinished != null )
             {
-                OnProcessingFinished(lGazetteList);
+                ProcessingFinished(this, e);
             }
         }
 

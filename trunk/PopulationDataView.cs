@@ -14,7 +14,7 @@ namespace De.AHoerstemeier.Tambon
     public partial class PopulationDataView : Form
     {
         private PopulationData mData = null;
-        internal event RoyalGazetteList.ProcessingFinished OnShowGazette;
+        internal event RoyalGazetteProcessingFinishedHandler ShowGazette;
         internal PopulationData Data
         {
             get { return mData; }
@@ -27,7 +27,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( mData.Data != null )
                 {
-                    this.Text = mData.Data.English + " " + mData.year.ToString();
+                    this.Text = mData.Data.English + " " + mData.Year.ToString();
                 }
                 PopulationDataToTreeView(mTreeviewData, mData);
             }
@@ -126,21 +126,21 @@ namespace De.AHoerstemeier.Tambon
             return retval;
         }
 
-        private void btnSaveXML_Click(object sender, EventArgs e)
+        private void btnSaveXML_Click(Object sender, EventArgs e)
         {
             XmlDocument lXmlDocument = new XmlDocument();
             mData.ExportToXML(lXmlDocument);
-            lXmlDocument.Save(mData.XMLExportFileName());
+            lXmlDocument.Save(mData.XmlExportFileName());
         }
 
-        private void btnGazette_Click(object sender, EventArgs e)
+        private void btnGazette_Click(Object sender, EventArgs e)
         {
-            var lData = CurrentSelectedEntity(sender);
-            if ( (lData != null) && (OnShowGazette != null) )
+            var data = CurrentSelectedEntity(sender);
+            if ( (data != null) && (ShowGazette != null) )
             {
-                var lList = TambonHelper.GlobalGazetteList.AllAboutEntity(lData.Geocode, true);
+                var list = TambonHelper.GlobalGazetteList.AllAboutEntity(data.Geocode, true);
                 // Also check for old obsolete Geocodes!
-                OnShowGazette(lList);
+                ShowGazette(this,new RoyalGazetteEventArgs(list));
             }
         }
 

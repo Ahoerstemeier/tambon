@@ -11,11 +11,10 @@ namespace De.AHoerstemeier.Tambon
         internal const String XmlLabel = "constituency";
 
         #region properties
-        private EntityType mType = EntityType.Unknown;
         public EntityType Type
         {
-            get { return mType; }
-            set { mType = value; }
+            get;
+            set;
         }
         #endregion
 
@@ -24,9 +23,9 @@ namespace De.AHoerstemeier.Tambon
         {
             Type = EntityType.Unknown;
         }
-        public RoyalGazetteContentConstituency(RoyalGazetteContentConstituency iOther)
+        public RoyalGazetteContentConstituency(RoyalGazetteContentConstituency other)
         {
-            DoCopy(iOther);
+            DoCopy(other);
         }
 
         #endregion

@@ -34,7 +34,7 @@ namespace De.AHoerstemeier.Tambon
             DoCalculate(lStatistics);
             if (lStatistics.StrangeAnnouncements.Count > 0)
             {
-                Invoke(new RoyalGazetteList.ProcessingFinishedFiltered(RoyalGazetteViewer.ShowGazetteDialog), new object[] { lStatistics.StrangeAnnouncements,false });
+                Invoke(new Action(() => RoyalGazetteViewer.ShowGazetteDialog(lStatistics.StrangeAnnouncements,false)));
             }
         }
 
