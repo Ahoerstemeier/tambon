@@ -33,7 +33,7 @@ namespace De.AHoerstemeier.Tambon
         {
             InitializeComponent();
         }
-        internal event RoyalGazetteList.ProcessingFinished OnSearchFinished;
+        internal event RoyalGazetteProcessingFinishedHandler SearchFinished;
         private void button1_Click(object sender, EventArgs e)
         {
             SearchData data = new SearchData();
@@ -151,7 +151,7 @@ namespace De.AHoerstemeier.Tambon
             RoyalGazetteList list = e.Result as RoyalGazetteList;
             if ( list != null )
             {
-                OnSearchFinished(list);
+                SearchFinished(this,new RoyalGazetteEventArgs(list));
             }
         }
 

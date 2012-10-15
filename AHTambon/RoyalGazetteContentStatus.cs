@@ -10,17 +10,15 @@ namespace De.AHoerstemeier.Tambon
     {
         internal const String XmlLabel = "status";
         #region properties
-        private EntityType mOldStatus = EntityType.Unknown;
         public EntityType OldStatus 
         { 
-            get { return mOldStatus; }
-            set { mOldStatus = value; }
+            get;
+            set;
         }
-        private EntityType mNewStatus = EntityType.Unknown;
         public EntityType NewStatus 
         {
-            get { return mNewStatus; }
-            set { mNewStatus = value; }
+            get;
+            set;
         }
         #endregion
         override internal void DoLoad(XmlNode iNode)
@@ -56,9 +54,9 @@ namespace De.AHoerstemeier.Tambon
         public RoyalGazetteContentStatus()
         {
         }
-        public RoyalGazetteContentStatus(RoyalGazetteContentStatus iOther)
+        public RoyalGazetteContentStatus(RoyalGazetteContentStatus other)
         {
-            DoCopy(iOther);
+            DoCopy(other);
         }
 
         #endregion
@@ -66,14 +64,14 @@ namespace De.AHoerstemeier.Tambon
         {
             return XmlLabel;
         }
-        protected override void DoCopy(RoyalGazetteContent iOther)
+        protected override void DoCopy(RoyalGazetteContent other)
         {
-            if (iOther != null)
+            if (other != null)
             {
-                base.DoCopy(iOther);
-                if (iOther is RoyalGazetteContentStatus)
+                base.DoCopy(other);
+                if (other is RoyalGazetteContentStatus)
                 {
-                    RoyalGazetteContentStatus iOtherStatus = (RoyalGazetteContentStatus)iOther;
+                    RoyalGazetteContentStatus iOtherStatus = (RoyalGazetteContentStatus)other;
                     OldStatus = iOtherStatus.OldStatus;
                     NewStatus = iOtherStatus.NewStatus;
                 }

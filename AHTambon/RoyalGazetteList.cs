@@ -7,10 +7,21 @@ using System.ServiceModel.Syndication;
 
 namespace De.AHoerstemeier.Tambon
 {
+    public class RoyalGazetteEventArgs : EventArgs 
+    {
+        public RoyalGazetteList Data
+        { get; private set; }
+        public RoyalGazetteEventArgs(RoyalGazetteList data):base()
+        {
+            Data = data;
+        }
+    }
+    public delegate void RoyalGazetteProcessingFinishedHandler (Object sender, RoyalGazetteEventArgs e);
+
     public class RoyalGazetteList : List<RoyalGazette>
     {
-        public delegate void ProcessingFinished(RoyalGazetteList data);
-        public delegate void ProcessingFinishedFiltered(RoyalGazetteList data, Boolean filtered);
+        // public delegate void ProcessingFinished(RoyalGazetteList data);
+        // public delegate void ProcessingFinishedFiltered(RoyalGazetteList data, Boolean filtered);
 
         private class URIComparer : IComparer<RoyalGazette>
         {

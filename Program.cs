@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace De.Ahoerstemeier.Tambon
+namespace De.AHoerstemeier.Tambon
 {
     static class Program
     {
