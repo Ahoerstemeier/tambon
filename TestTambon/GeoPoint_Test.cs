@@ -130,21 +130,23 @@ namespace De.Ahoerstemeier.Test
         {
             GeoPoint geoPoint = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
             String geoHash = geoPoint.GeoHash;
-            Assert.Equals(geoHash, _BangkokGeoHash);
+            Assert.AreEqual(geoHash, _BangkokGeoHash);
         }
         [TestMethod]
         public void TestParseCoordinateDegMinSec()
         {
             String coordinateString = " 13°45'46.08\" N 100°28'41.16\" E";
             GeoPoint geoPoint = new GeoPoint(coordinateString);
-            Assert.IsTrue(new GeoPoint(13.7628, 100.478100).Equals(geoPoint));
+            var expected = new GeoPoint(13.7628, 100.478100);
+            Assert.IsTrue(expected.Equals(geoPoint),String.Format("Expected {0}, returned {1}",expected,geoPoint));
         }
         [TestMethod]
         public void TestParseCoordinateDecimalDegree()
         {
             String coordinateString = " 13.7628° N 100.478100° E";
             GeoPoint geoPoint = new GeoPoint(coordinateString);
-            Assert.IsTrue(new GeoPoint(13.7628, 100.478100).Equals(geoPoint));
+            var expected = new GeoPoint(13.7628, 100.478100);
+            Assert.IsTrue(expected.Equals(geoPoint),String.Format("Expected {0}, returned {1}",expected,geoPoint));
         }
 
         [TestMethod]
@@ -153,7 +155,7 @@ namespace De.Ahoerstemeier.Test
             GeoPoint geoPoint = new GeoPoint();
             geoPoint.Maidenhead = _BangkokMaidenhead;
             GeoPoint expected = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
-            Assert.IsTrue(expected.Equals(geoPoint));
+            Assert.IsTrue(expected.Equals(geoPoint),String.Format("Expected {0}, returned {1}",expected,geoPoint));
         }
         [TestMethod]
         public void TestGeoToMaidenhead()

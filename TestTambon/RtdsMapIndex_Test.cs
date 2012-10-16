@@ -64,7 +64,7 @@ namespace De.Ahoerstemeier.Test
         public void TestIndexL7018()
         {
             GeoPoint khonKhaenLocation = new GeoPoint(16.4424, 102.8360);
-            Assert.AreEqual("5541 I", RtsdMapIndex.IndexL7018(khonKhaenLocation));
+            Assert.AreEqual("5541 I", RtsdMapIndex.IndexL7018(khonKhaenLocation).Name);
         }
     }
 }
