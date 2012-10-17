@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เชียงราย" english="Chiang Rai" geocode="57" >
-  <office type="ProvinceHall">
+  <symbols>
     <slogan>
       เหนือสุดในสยาม อร่ามดอยตุง ผดุงวัฒนธรรม
       เลิศล้ำข้าวสาร หอมหวานลิ้นจี่ สตรีโสภา
       ชาเลิศรส สับปะรดนางแล แหล่งแพร่ปลาบึก
     </slogan>
+  </symbols>
+  <office type="ProvinceHall">
     <geo:Point>
       <geo:lat>19.9135</geo:lat>
       <geo:long>99.8269</geo:long>
@@ -83,8 +85,10 @@
   </office>
   <entity type="Amphoe" name="เมืองเชียงราย" english="Mueang Chiang Rai" geocode="5701" >
     <office type="DistrictOffice">
-      <slogan>เมืองพญามังราย  สายใยน้ำกก  พระหยกล้ำค่า  ไร่แม่ฟ้าหลวงรวมใจ  น้ำตกใสขุนกรณ์</slogan>
-      <vision>เมืองมั่นคงของเศรษฐกิจ  การเกษตรปลอดภัย  มีความโดดเด่นทางด้านท่องเที่ยว  สืบสานวัฒนธรรมล้านนา  มีการรักษาทรัพยากรธรรมชาติอย่างยั่งยืน  และเป็นที่พึ่งของประชาชน เพื่อสังคมสงบสุข</vision>
+      <symbols>
+        <slogan>เมืองพญามังราย  สายใยน้ำกก  พระหยกล้ำค่า  ไร่แม่ฟ้าหลวงรวมใจ  น้ำตกใสขุนกรณ์</slogan>
+        <vision>เมืองมั่นคงของเศรษฐกิจ  การเกษตรปลอดภัย  มีความโดดเด่นทางด้านท่องเที่ยว  สืบสานวัฒนธรรมล้านนา  มีการรักษาทรัพยากรธรรมชาติอย่างยั่งยืน  และเป็นที่พึ่งของประชาชน เพื่อสังคมสงบสุข</vision>
+      </symbols>
       <geo:Point>
         <geo:lat>19.9085</geo:lat>
         <geo:long>99.8325</geo:long>
@@ -357,10 +361,12 @@
     </entity>
     <entity type="Tambon" name="ท่าสุด" english="Tha Sut" geocode="570121" >
       <office type="TAOOffice" comment="To be upgraded to municipality 2012-04-08">
-        <vision>
-          ท่าสุดเมืองเจริญ มีเอกลักษณ์ทางวัฒนธรรม การเกษตรพอเพียงและยั่งยืน ทรัพยากร
-          ธรรมชาติอุดมสมบูรณ์ สิ่งแวดล้อมสวยงาม ประชากรอยู่ดีมีสุข
-        </vision>
+        <symbols>
+          <vision>
+            ท่าสุดเมืองเจริญ มีเอกลักษณ์ทางวัฒนธรรม การเกษตรพอเพียงและยั่งยืน ทรัพยากร
+            ธรรมชาติอุดมสมบูรณ์ สิ่งแวดล้อมสวยงาม ประชากรอยู่ดีมีสุข
+          </vision>
+        </symbols>
         <url>http://www.tasud.net/</url>
         <officials>
           <official title="TAOMayor" name="สมศักดิ์ ศรีบุรี" endyear="2012"/>
@@ -432,12 +438,14 @@
     </entity>
     <entity type="Tambon" name="ผางาม" english="Pha Ngam" geocode="570203" >
       <office type="TAOOffice">
-        <vision>
-          ประชาชนมีความเป็นอยู่ที่ดี
-          คมนาคมมีความสะดวกสบาย
-          สืบสายลายศิลป์วัฒนธรรมล้านนา
-          ส่งเสริมการศึกษาเชิงบูรณาการ
-        </vision>
+        <symbols>
+          <vision>
+            ประชาชนมีความเป็นอยู่ที่ดี
+            คมนาคมมีความสะดวกสบาย
+            สืบสายลายศิลป์วัฒนธรรมล้านนา
+            ส่งเสริมการศึกษาเชิงบูรณาการ
+          </vision>
+        </symbols>
         <url>http://www.phangam.com/</url>
         <officials>
           <official title="TAOMayor" name="ประสิทธิ์ ศิริคำฟู" inoffice="2011"/>
@@ -1029,18 +1037,22 @@
       <entity type="Muban" geocode="57050220" name="บ้านสักชัยทอง" english="Ban Sak Thong"/>
     </entity>
     <entity type="Tambon" name="ธารทอง" english="Than Thong" geocode="570503">
-      <slogan>
-        อ่างแสนตออู่ข้าว แม่น้ำลาวอู่ปลา
-        โบราณสถานล้ำค่า พระธาตุกำพร้าวัวทอง
-        ธรรมชาติชวนมองที่ถ้ำพระ
-        ศิลปะปูนปั้นวัดราษฏร์ดำรง
-      </slogan>
+      <symbols>
+        <slogan>
+          อ่างแสนตออู่ข้าว แม่น้ำลาวอู่ปลา
+          โบราณสถานล้ำค่า พระธาตุกำพร้าวัวทอง
+          ธรรมชาติชวนมองที่ถ้ำพระ
+          ศิลปะปูนปั้นวัดราษฏร์ดำรง
+        </slogan>
+      </symbols>
       <office type="TAOOffice">
-        <vision>
-          ธารทองน่าอยู่
-          ศูนย์รวมศิลปวัฒธรรม
-          การศึกษาก้าวไกล
-        </vision>
+        <symbols>
+          <vision>
+            ธารทองน่าอยู่
+            ศูนย์รวมศิลปวัฒธรรม
+            การศึกษาก้าวไกล
+          </vision>
+        </symbols>
         <geo:Point>
           <geo:lat>19.71383</geo:lat>
           <geo:long>99.71721</geo:long>
@@ -1056,15 +1068,19 @@
       <entity type="Muban" geocode="57050311" name="บ้านนคิมแม่ลาวเหนือ"/>
     </entity>
     <entity type="Tambon" name="สันติสุข" english="Santi Suk" geocode="570504" >
-      <slogan>
-        ลำไยหวานฉ่ำ เลิศล้ำลิ้นจี่ ประเพณีล้ำค่า การศึกษาเลื่องลือ
-        งานฝีมือจักสาน เบ่งบานพืชไร่ ผลิตขายปลานิล
-      </slogan>
+      <symbols>
+        <slogan>
+          ลำไยหวานฉ่ำ เลิศล้ำลิ้นจี่ ประเพณีล้ำค่า การศึกษาเลื่องลือ
+          งานฝีมือจักสาน เบ่งบานพืชไร่ ผลิตขายปลานิล
+        </slogan>
+      </symbols>
       <office type="TAOOffice">
-        <vision>
-          เกษตรก้าวหน้าการค้าสดใส คนมีการศึกษาและวินัย
-          ใฝ่ใจวัฒนธรรมท้องถิ่น ทุกชีวิตกินดีอยู่ดี
-        </vision>
+        <symbols>
+          <vision>
+            เกษตรก้าวหน้าการค้าสดใส คนมีการศึกษาและวินัย
+            ใฝ่ใจวัฒนธรรมท้องถิ่น ทุกชีวิตกินดีอยู่ดี
+          </vision>
+        </symbols>
         <url>http://www.tambonsantisuk.com/</url>
         <officials>
           <official title="TAOMayor" name="นายวิมล ตาเมืองมูล" inoffice="2011"/>
@@ -1081,10 +1097,12 @@
       <entity type="Muban" geocode="57050409" name="บ้านป่าก่อ" english="Ban Pa Ko"/>
     </entity>
     <entity type="Tambon" name="ดอยงาม" english="Doi Ngam" geocode="570505" >
-      <slogan>
-        ดินแดนลุ่มน้ำฮ่าง อ่างน้ำหนองควายหลวง
-        บวงสรวงพระธาตุแก้วทันใจ ต้นไม้ใหญ่ดอยงาม
-      </slogan>
+      <symbols>
+        <slogan>
+          ดินแดนลุ่มน้ำฮ่าง อ่างน้ำหนองควายหลวง
+          บวงสรวงพระธาตุแก้วทันใจ ต้นไม้ใหญ่ดอยงาม
+        </slogan>
+      </symbols>
       <office type="TAOOffice">
         <url>http://www.doingam.go.th/</url>
         <officials>
@@ -1157,10 +1175,12 @@
     </entity>
     <entity type="Tambon" name="ม่วงคำ" english="Muang Kham" geocode="570509" >
       <office type="TAOOffice">
-        <vision>
-          สิ่งแวดล้อมดีเริ่มที่บ้าน
-          ฟื้นฟูและสืบสานวัฒนธรรมไทย
-        </vision>
+        <symbols>
+          <vision>
+            สิ่งแวดล้อมดีเริ่มที่บ้าน
+            ฟื้นฟูและสืบสานวัฒนธรรมไทย
+          </vision>
+        </symbols>
         <geo:Point>
           <geo:lat>19.5008</geo:lat>
           <geo:long>99.7466</geo:long>
@@ -1189,11 +1209,15 @@
       <entity type="Muban" geocode="57050917" name="บ้านม่วงทอง" english="Ban Muang Thong"/>
     </entity>
     <entity type="Tambon" name="ทรายขาว" english="Sai Khao" geocode="570510" >
-      <slogan>เที่ยวบ่อน้ำร้อน พักผ่อนหนองผา น้ำตกงามตา แหล่งผ้าพื้นเมือง  วัดอุดมวารีลือเลื่อง กระเดื่องข้าวกล้อง แซ่ซ้องแห่แค่ ของแท้ไม้กวาด สะอาดขนมหวาน สถานศึกษาราชมงคล</slogan>
+      <symbols>
+        <slogan>เที่ยวบ่อน้ำร้อน พักผ่อนหนองผา น้ำตกงามตา แหล่งผ้าพื้นเมือง  วัดอุดมวารีลือเลื่อง กระเดื่องข้าวกล้อง แซ่ซ้องแห่แค่ ของแท้ไม้กวาด สะอาดขนมหวาน สถานศึกษาราชมงคล</slogan>
+      </symbols>
       <office type="TAOOffice">
-        <vision>
-          เกษตรก้าวไกล การศึกษาก้าวหน้า เคียงคู่ประชาชน
-        </vision>
+        <symbols>
+          <vision>
+            เกษตรก้าวไกล การศึกษาก้าวหน้า เคียงคู่ประชาชน
+          </vision>
+        </symbols>
         <url lastchecked="2012-09-12">http://www.saikao.go.th/</url>
         <officials>
           <official title="TAOMayor" name="วีระพล โสมศรีแพง" inoffice="2011"/>
@@ -1318,7 +1342,9 @@
     <entity type="Tambon" name="ป่าแงะ" english="Pa Ngae" geocode="570602" />
     <entity type="Tambon" name="สันมะค่า" english="San Makha" geocode="570603">
       <office type="MunicipalityOffice">
-        <vision>ตำบลน่าอยู่ มุ่งสู่สุขภาวะ</vision>
+        <symbols>
+          <vision>ตำบลน่าอยู่ มุ่งสู่สุขภาวะ</vision>
+        </symbols>
         <url lastchecked="2012-02-27">http://www.sanmaka.go.th/</url>
         <socialweb>
           <googleplus>102919283495072298468</googleplus>
@@ -1445,7 +1471,9 @@
     </entity>
     <entity type="Tambon" name="สันทราย" english="San Sai" geocode="570705" >
       <office type="MunicipalityOffice">
-        <vision>ชุมชนน่าอยู่ เฟื่องฟูวัฒนธรรม นำด้วยธรรมาภิบาล บนพื้นฐานการมีส่วนร่วมของประชาชน</vision>
+        <symbols>
+          <vision>ชุมชนน่าอยู่ เฟื่องฟูวัฒนธรรม นำด้วยธรรมาภิบาล บนพื้นฐานการมีส่วนร่วมของประชาชน</vision>
+        </symbols>
         <url status="offline">http://www.sansaimaechan.com/</url>
         <url status="expired">http://www.sansailocal.com/</url>
         <officials>
@@ -1468,10 +1496,12 @@
     </entity>
     <entity type="Tambon" name="ท่าข้าวเปลือก" english="Tha Khao Plueak" geocode="570706" >
       <office type="MunicipalityOffice">
-        <vision>
-          ส่งเสริมวัฒนธรรม  เน้นการศึกษา  พัฒนาคุณภาพชีวิต
-          ยึดมั่นประชาธิปไตย  ใส่ใจสิ่งแวดล้อม
-        </vision>
+        <symbols>
+          <vision>
+            ส่งเสริมวัฒนธรรม  เน้นการศึกษา  พัฒนาคุณภาพชีวิต
+            ยึดมั่นประชาธิปไตย  ใส่ใจสิ่งแวดล้อม
+          </vision>
+        </symbols>
         <geo:Point>
           <geo:lat>20.1649</geo:lat>
           <geo:long>100.0024</geo:long>
@@ -1534,7 +1564,9 @@
     <entity type="Tambon" name="แม่ไร่" english="Mae Rai" geocode="570710" >
       <office type="TAOOffice">
         <!-- To be upgraded to ThesabanTambon 2012-08-24 -->
-        <vision>ชุมชนเบิกบาน บริหารงานโปร่งใส ใช้ชีวิตพอเพียง ฟังเสียงประชาชน</vision>
+        <symbols>
+          <vision>ชุมชนเบิกบาน บริหารงานโปร่งใส ใช้ชีวิตพอเพียง ฟังเสียงประชาชน</vision>
+        </symbols>
         <url lastchecked="2012-09-06">http://www.maerai.com/</url>
         <officials>
           <official title="TAOMayor" name="สําราญ สันตุ้ยลือ" begin="2008-08-24" end="2012-08-23"/>
@@ -1601,7 +1633,9 @@
     </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="570801" >
       <office type="MunicipalityOffice">
-        <vision>ชุมชนเข้มแข็ง  แหล่งรวบรวมวัฒนธรรม  งามล้ำสามเหลี่ยมทองคำ  นำการค้าสี่แผ่นดิน</vision>
+        <symbols>
+          <vision>ชุมชนเข้มแข็ง  แหล่งรวบรวมวัฒนธรรม  งามล้ำสามเหลี่ยมทองคำ  นำการค้าสี่แผ่นดิน</vision>
+        </symbols>
         <geo:Point>
           <geo:lat>20.2860</geo:lat>
           <geo:long>100.0825</geo:long>
@@ -1656,8 +1690,10 @@
     </entity>
     <entity type="Tambon" name="ศรีดอนมูล" english="Si Don Mun" geocode="570804" >
       <office type="TAOOffice">
-        <slogan>ชุมชนแห่งความเป็นมิตร สุจริตเรื่องทำกิน ท้องถิ่นแห่งศิลปวัฒนธรรมล้านนา</slogan>
-        <vision>อาชีพก้าวหน้า การศึกษาก้าวไกล ทุกคนร่วมใจพัฒนาตำบลศรีดอนมูล</vision>
+        <symbols>
+          <slogan>ชุมชนแห่งความเป็นมิตร สุจริตเรื่องทำกิน ท้องถิ่นแห่งศิลปวัฒนธรรมล้านนา</slogan>
+          <vision>อาชีพก้าวหน้า การศึกษาก้าวไกล ทุกคนร่วมใจพัฒนาตำบลศรีดอนมูล</vision>
+        </symbols>
         <url lastchecked="2012-07-18">http://www.sridonmoon.com/</url>
         <socialweb>
           <googleplus>116030225763387307566</googleplus>
@@ -2021,10 +2057,12 @@
     </entity>
     <entity type="Tambon" name="เจดีย์หลวง" english="Chedi Luang" geocode="571007" >
       <office type="TAOOffice">
-        <vision>
-          เป็นชุมชนแห่งเศรษฐกิจพอเพียง มุ่งพัฒนาการศึกษาให้มีคุณภาพ
-          และพัฒนาโครงสร้างพื้นฐานอย่างทั่วถึง
-        </vision>
+        <symbols>
+          <vision>
+            เป็นชุมชนแห่งเศรษฐกิจพอเพียง มุ่งพัฒนาการศึกษาให้มีคุณภาพ
+            และพัฒนาโครงสร้างพื้นฐานอย่างทั่วถึง
+          </vision>
+        </symbols>
         <url lastchecked="2012-08-13">http://www.chediluang.com/</url>
         <url status="offline">http://www.chediloung.go.th/</url>
         <officials>
@@ -2461,7 +2499,9 @@
     </entity>
     <entity type="Tambon" name="บัวสลี" english="Bua Sali" geocode="571603" >
       <office type="TAOOffice">
-        <vision>แหล่งผลิตการเกษตรและหัตถกรรม ชุมชนเข้มแข็ง มีคุณภาพชีวิตที่ดี แหล่งท่องเที่ยววัฒนธรรมล้านนา </vision>
+        <symbols>
+          <vision>แหล่งผลิตการเกษตรและหัตถกรรม ชุมชนเข้มแข็ง มีคุณภาพชีวิตที่ดี แหล่งท่องเที่ยววัฒนธรรมล้านนา </vision>
+        </symbols>
         <geo:Point>
           <geo:lat>19.8165</geo:lat>
           <geo:long>99.7576</geo:long>
@@ -2795,7 +2835,9 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่สรวย" english="Mae Suai" geocode="5783" parent="5710" >
     <office type="MunicipalityOffice">
-      <vision>เป็นเลิศบริการ บ้านเมืองน่าอยู่ ภูมิทัศน์งามตา พัฒนาคุณภาพชีวิต เศรษฐกิจก้าวไกล ร่วมใจพัฒนา</vision>
+      <symbols>
+        <vision>เป็นเลิศบริการ บ้านเมืองน่าอยู่ ภูมิทัศน์งามตา พัฒนาคุณภาพชีวิต เศรษฐกิจก้าวไกล ร่วมใจพัฒนา</vision>
+      </symbols>
       <geo:Point>
         <geo:lat>19.6521</geo:lat>
         <geo:long>99.5394</geo:long>
