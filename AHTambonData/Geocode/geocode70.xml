@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ราชบุรี" english="Ratchaburi" geocode="70">
   <office type="ProvinceHall">
-    <vision>สร้างผลผลิตสู่สากล สร้างสภาพชุมชนเพื่อชีวิต</vision>
+    <symbols>
+      <vision>สร้างผลผลิตสู่สากล สร้างสภาพชุมชนเพื่อชีวิต</vision>
+    </symbols>
     <geo:Point>
       <geo:lat>13.5290</geo:lat>
       <geo:long>99.8135</geo:long>
@@ -671,7 +673,9 @@
   </entity>
   <entity type="Amphoe" name="โพธาราม" english="Photharam" geocode="7007" >
     <office type="DistrictOffice">
-      <vision>เกษตรกรรมก้าวหน้า พัฒนาท่องเที่ยว สินค้ามาตรฐาน บริการคุณภาพ</vision>
+      <symbols>
+        <vision>เกษตรกรรมก้าวหน้า พัฒนาท่องเที่ยว สินค้ามาตรฐาน บริการคุณภาพ</vision>
+      </symbols>
       <geo:Point>
         <geo:lat>13.6924</geo:lat>
         <geo:long>99.8534</geo:long>
@@ -685,7 +689,9 @@
     <entity type="Tambon" name="โพธาราม" english="Photharam" geocode="700701" />
     <entity type="Tambon" name="ดอนกระเบื้อง" english="Don Krabueang" geocode="700702" >
       <office type="TAOOffice">
-        <vision>สิ่งแวดล้อมดี มีชุมชนเข้มแข็ง เกษตรกรก้าวหน้า การคมนาคมสะดวก</vision>
+        <symbols>
+          <vision>สิ่งแวดล้อมดี มีชุมชนเข้มแข็ง เกษตรกรก้าวหน้า การคมนาคมสะดวก</vision>
+        </symbols>
         <url lastchecked="2012-09-05">http://donkrabeang-sao.org/</url>
         <officials>
           <official title="TAOMayor" name="สงกรานต์ ทรัพย์สิน" begin="2008-08-31" end="2012-08-30"/>
@@ -778,7 +784,9 @@
     </entity>
     <entity type="Tambon" name="ชำแระ" english="Chamrae" geocode="700711" >
       <office type="TAOOffice">
-        <vision>บ้านเมืองน่าอยู่  คู่ชุมชนเข้มแข็ง ร่วมแรงพัฒนา  สภาพแวดล้อมดี  ไม่มีมลพิษ เศรษฐกิจพอเพียง</vision>
+        <symbols>
+          <vision>บ้านเมืองน่าอยู่  คู่ชุมชนเข้มแข็ง ร่วมแรงพัฒนา  สภาพแวดล้อมดี  ไม่มีมลพิษ เศรษฐกิจพอเพียง</vision>
+        </symbols>
         <geo:Point>
           <geo:lat>13.7400</geo:lat>
           <geo:long>99.8204</geo:long>
@@ -826,7 +834,9 @@
     <entity type="Tambon" name="บางโตนด" english="Bang Tanot" geocode="700714" />
     <entity type="Tambon" name="เตาปูน" english="Tao Pun" geocode="700715" >
       <office type="TAOOffice">
-        <vision>องค์การบริหารส่วนตำบลเตาปูน เป็นแหล่งเกษตรกรรม โครงสร้างพื้นฐานพร้อมคุณภาพชีวิตที่ดี</vision>
+        <symbols>
+          <vision>องค์การบริหารส่วนตำบลเตาปูน เป็นแหล่งเกษตรกรรม โครงสร้างพื้นฐานพร้อมคุณภาพชีวิตที่ดี</vision>
+        </symbols>
         <url lastchecked="2012-09-05">http://www.taopoon.org/</url>
         <officials>
           <official title="TAOMayor" name="กิจธนศักดิ์ ขำเจริญ" begin="2008-08-31" end="2012-08-30"/>
@@ -1024,13 +1034,15 @@
     </entity>
     <entity type="Tambon" name="บ้านบึง" english="Ban Bueng" geocode="701002">
       <office type="TAOOffice">
-        <vision>
-          ท่องเที่ยวเชิงนิเวศน์
-          การเกษตรก้าวหน้า
-          พัฒนาคุณภาพชีวิต
-          ส่งเสริมเศรฐกิจชุมชน
-          พัฒนาตำบลตามหลักธรรมาภิบาล
-        </vision>
+        <symbols>
+          <vision>
+            ท่องเที่ยวเชิงนิเวศน์
+            การเกษตรก้าวหน้า
+            พัฒนาคุณภาพชีวิต
+            ส่งเสริมเศรฐกิจชุมชน
+            พัฒนาตำบลตามหลักธรรมาภิบาล
+          </vision>
+        </symbols>
         <url>http://www.banbunglocal.com/</url>
         <officials>
           <official title="TAOMayor" name="พินิจ ร่มโพรีย์" inoffice="2011"/>
@@ -1079,14 +1091,16 @@
   <entity type="ThesabanMueang" name="โพธาราม" english="Photharam" geocode="7097" parent="7007,7001" >
     <!-- In 1993 DOPA data wrong Tambon Na Mueang added to Photharam, thus the 7001 -->
     <office type="MunicipalityOffice">
-      <vision>
-        วัฒนธรรมเด่น
-        เน้นสิ่งแวดล้อม
-        พร้อมส่งเสริมเศรษฐกิจ
-        ชีวิตมั่นคง
-        ร่วมดำรงเมืองน่าอยู่
-        คู่คนสวยโพธาราม
-      </vision>
+      <symbols>
+        <vision>
+          วัฒนธรรมเด่น
+          เน้นสิ่งแวดล้อม
+          พร้อมส่งเสริมเศรษฐกิจ
+          ชีวิตมั่นคง
+          ร่วมดำรงเมืองน่าอยู่
+          คู่คนสวยโพธาราม
+        </vision>
+      </symbols>
       <geo:Point>
         <geo:lat>13.6918</geo:lat>
         <geo:long>99.8531</geo:long>
@@ -1145,10 +1159,12 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านชัฏป่าหวาย" english="Ban Chat Pa Wai" geocode="7091" parent="7003" >
     <office type="MunicipalityOffice">
-      <vision>
-        พัฒนาชุมชนเข้มแข็งและน่าอยู่    ควบคู่การบริหารจัดการที่ดี
-        คนมีการศึกษา   พัฒนาสิ่งแวดล้อม   พร้อมส่งเสริมจริยธรรม
-      </vision>
+      <symbols>
+        <vision>
+          พัฒนาชุมชนเข้มแข็งและน่าอยู่    ควบคู่การบริหารจัดการที่ดี
+          คนมีการศึกษา   พัฒนาสิ่งแวดล้อม   พร้อมส่งเสริมจริยธรรม
+        </vision>
+      </symbols>
       <url lastchecked="2012-02-24">http://www.chatpaway.com/</url>
       <url status="offline">http://www.geocities.com/banchatpaway/</url>
       <socialweb>
@@ -1241,7 +1257,9 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านเลือก" english="Ban Lueak" geocode="7080" parent="7007" >
     <office type="MunicipalityOffice">
-      <vision>สาธารณูปโภคครบครัน  เศรษฐกิจชุมชนเข้มแข็ง  ประชาชนมีคุณภาพชีวิตที่ดี  สภาพแวดล้อมน่าอยู่  การบริหารจัดการมีประสิทธิภาพ  โปร่งใส  การบริการประชาชนสะดวก  รวดเร็ว</vision>
+      <symbols>
+        <vision>สาธารณูปโภคครบครัน  เศรษฐกิจชุมชนเข้มแข็ง  ประชาชนมีคุณภาพชีวิตที่ดี  สภาพแวดล้อมน่าอยู่  การบริหารจัดการมีประสิทธิภาพ  โปร่งใส  การบริการประชาชนสะดวก  รวดเร็ว</vision>
+      </symbols>
       <url lastchecked="2012-09-05">http://www.banlueak.go.th/</url>
       <url status="offline">http://www.banlueak.com/</url>
       <officials>
@@ -1255,10 +1273,12 @@
   </entity>
   <entity type="ThesabanTambon" name="หนองโพ" english="Nong Pho" geocode="7079" parent="7007" >
     <office type="MunicipalityOffice">
-      <vision>
-        บ้านเมืองน่าอยู่  เชิดชูผู้มีพระคุณ  สนับสนุนการศึกษา
-        มุ่งเน้นการพัฒนา ประชาชนมีส่วนร่วม  มีระบบการบริหารจัดการที่ดี
-      </vision>
+      <symbols>
+        <vision>
+          บ้านเมืองน่าอยู่  เชิดชูผู้มีพระคุณ  สนับสนุนการศึกษา
+          มุ่งเน้นการพัฒนา ประชาชนมีส่วนร่วม  มีระบบการบริหารจัดการที่ดี
+        </vision>
+      </symbols>
       <geo:Point>
         <geo:lat>13.7422</geo:lat>
         <geo:long>99.9153</geo:long>
@@ -1285,7 +1305,9 @@
   </entity>
   <entity type="ThesabanTambon" name="ปากท่อ" english="Pak Tho" geocode="7078" parent="7008" >
     <office type="MunicipalityOffice">
-      <vision>ชุมชนน่าอยู่  สู่เมืองสากล  ประชาชนช่วยคิด  เป็นมิตรผู้ใช้บริการ</vision>
+      <symbols>
+        <vision>ชุมชนน่าอยู่  สู่เมืองสากล  ประชาชนช่วยคิด  เป็นมิตรผู้ใช้บริการ</vision>
+      </symbols>
       <url lastchecked="2012-09-19">http://www.pakthomunic.go.th/</url>
       <url status="offline">http://www.pakthocity.net/</url>
       <officials>
@@ -1303,7 +1325,9 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านสิงห์" english="Ban Sing" geocode="7076" parent="7007" tambon="700707">
     <office type="MunicipalityOffice">
-      <vision>เทศบาลตำบลบ้านสิงห์ เป็นตำบลน่าอยู่ ประชาชนมีคุณภาพที่ดี มีความสมานฉันท์  ชุมชนมีความเข้มแข็ง สามารถพึ่งตนเองได้ มีสถานที่พักผ่อนหย่อนใจ  และมีสภาพแวดล้อมที่สะอาดสวยงาม</vision>
+      <symbols>
+        <vision>เทศบาลตำบลบ้านสิงห์ เป็นตำบลน่าอยู่ ประชาชนมีคุณภาพที่ดี มีความสมานฉันท์  ชุมชนมีความเข้มแข็ง สามารถพึ่งตนเองได้ มีสถานที่พักผ่อนหย่อนใจ  และมีสภาพแวดล้อมที่สะอาดสวยงาม</vision>
+      </symbols>
       <geo:Point>
         <geo:lat>13.6722</geo:lat>
         <geo:long>99.8755</geo:long>

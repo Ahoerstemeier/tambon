@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นราธิวาส" english="Narathiwat" geocode="96">
-  <slogan>ทักษิณราชตำหนัก ชนรักศาสนา นราทัศน์เพลินตา ปาโจตรึงใจ แหล่งใหญ่แร่ทอง ลองกองหอมหวาน</slogan>
-  <symboltree>Neobalanocarpus heimii</symboltree>
-  <symbolflower>Odontadenia macrantha</symbolflower>
+  <symbols>
+    <slogan>ทักษิณราชตำหนัก ชนรักศาสนา นราทัศน์เพลินตา ปาโจตรึงใจ แหล่งใหญ่แร่ทอง ลองกองหอมหวาน</slogan>
+    <symboltree>Neobalanocarpus heimii</symboltree>
+    <symbolflower>Odontadenia macrantha</symbolflower>
+  </symbols>
   <office type="ProvinceHall">
     <!-- Longdo: 6.42802, 101.82365 - old location in city? -->
     <geo:Point>
@@ -63,9 +65,11 @@
     <url lastchecked="2012-09-10">http://www.narathiwatpao.go.th/</url>
     <url status="offline">http://122.154.43.42/~abj_nara/</url>
     <officials>
+      <!-- election: 2012-10-14 -->
       <official title="PAOChairman" name="กูเซ็ง ยาวอหะซัน" begin="2008-04-20" end="2012-04-19"/>
     </officials>
     <council>
+      <term begin="2012-10-14" type="PAO" size="30"/>
       <term begin="2008-04-20" end="2012-04-19" type="PAO" size="30"/>
     </council>
   </office>
@@ -498,8 +502,10 @@
     <entity type="Tambon" name="รือเสาะออก" english="Rueso Ok" geocode="960607" >
       <office type="TAOOffice">
         <!-- Longdo: 6.39897,101.52193-->
-        <slogan>อบต.คู่ชุมชน สร้างสรรค์สังคมที่ดี ประชาชนพึ่งได้</slogan>
-        <vision>ชุมชนน่าอยู่มีความเข้มแข็ง สิ่งแวดล้อมดี การศึกษาดี การบริการจัดการที่ดี</vision>
+        <symbols>
+          <slogan>อบต.คู่ชุมชน สร้างสรรค์สังคมที่ดี ประชาชนพึ่งได้</slogan>
+          <vision>ชุมชนน่าอยู่มีความเข้มแข็ง สิ่งแวดล้อมดี การศึกษาดี การบริการจัดการที่ดี</vision>
+        </symbols>
         <url lastchecked="2012-08-13">http://www.ruso-ork.go.th/</url>
         <url status="obsolete">http://www.rusoaook.webs.com/</url>
         <officials>
@@ -658,12 +664,14 @@
     <entity type="Tambon" name="สุไหงโก-ลก" english="Su-ngai Ko-Lok" geocode="961001" />
     <entity type="Tambon" name="ปาเสมัส" english="Pasemat" geocode="961002" >
       <office type="TAOOffice">
-        <vision>
-          ตำบลสะอาด สวยงาม สิ่งแวดล้อมดี ผู้คนมีความสุข
-          ตำบลปลอดภัย อุ่นใจทุกครัวเรือน
-          ตำบลน่าอยู่ ทุกคนมีคุณภาพชีวิตที่ดี
-          ตำบลแห่งโอกาส ทุกคนตั้งตัวและเติบโต
-        </vision>
+        <symbols>
+          <vision>
+            ตำบลสะอาด สวยงาม สิ่งแวดล้อมดี ผู้คนมีความสุข
+            ตำบลปลอดภัย อุ่นใจทุกครัวเรือน
+            ตำบลน่าอยู่ ทุกคนมีคุณภาพชีวิตที่ดี
+            ตำบลแห่งโอกาส ทุกคนตั้งตัวและเติบโต
+          </vision>
+        </symbols>
         <url>http://www.pasemat.go.th/</url>
         <officials>
           <official title="TAOMayor" name="สกุลศักดิ์ มะดาโอ๊ะ" english="Sakulsak Mada-oh" begin="2008-08-31" end="2012-08-30"/>
@@ -698,7 +706,7 @@
         </geo:Point>
         <url lastchecked="2012-07-27">http://www.muno.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="มาหามะสะตา สะแปอิง" begin="2008-08-31" end="2012-08-30"/> 
+          <official title="TAOMayor" name="มาหามะสะตา สะแปอิง" begin="2008-08-31" end="2012-08-30"/>
           <official title="TAOMayor" name="รอปา อีซอ" inoffice="2007"/>
         </officials>
         <council>
