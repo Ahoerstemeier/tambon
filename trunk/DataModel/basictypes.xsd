@@ -6,6 +6,31 @@
   attributeFormDefault="unqualified" elementFormDefault="qualified"
   >
 
+  <xs:attributeGroup name="ThaiNameMandatory">
+    <xs:attribute name="name" type="xs:string" use="required" >
+      <xs:annotation>
+        <xs:documentation>Name in Thai.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="english" type="xs:string" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Romanized name.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="ThaiNameOptional">
+    <xs:attribute name="name" type="xs:string" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Name in Thai.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="english" type="xs:string" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Romanized name.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+
   <xs:simpleType name="EntityType">
     <xs:annotation>
       <xs:documentation>Types of administrative entities.</xs:documentation>

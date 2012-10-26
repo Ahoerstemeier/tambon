@@ -74,11 +74,7 @@
   <xs:complexType name="HistoryRename">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="name" type="xs:string" use="required" >
-          <xs:annotation>
-            <xs:documentation>New name in Thai script.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
+        <xs:attributeGroup ref="t:ThaiNameMandatory"/>
         <xs:attribute name="oldname" type="xs:string" use="required" >
           <xs:annotation>
             <xs:documentation>Previous name in Thai script..</xs:documentation>
@@ -87,11 +83,6 @@
         <xs:attribute name="oldenglish" type="xs:string" use="optional" >
           <xs:annotation>
             <xs:documentation>Romanization of old name.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="english" type="xs:string" use="optional" >
-          <xs:annotation>
-            <xs:documentation>Romanization of new name.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -196,19 +187,6 @@
           <xs:documentation>Symbols, slogans and vision statements of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <!--
-      <xs:element minOccurs="0" maxOccurs="1" name="slogan" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="symboltree" type="xs:string" >
-        <xs:annotation>
-          <xs:documentation>Botanical name of the symbol tree, only applicable for provinces (ต้นไม้ประจำจังหวัด).</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="symbolflower" type="xs:string" >
-        <xs:annotation>
-          <xs:documentation>Botanical name of the symbol flower, only applicable for provinces (ดอกไม้ประจำจังหวัด).</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      -->
       <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office"/>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:Area"/>
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList"/>
@@ -216,8 +194,7 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity"/>
     </xs:sequence>
     <xs:attribute name="type" type="t:EntityType" use="required" />
-    <xs:attribute name="name" type="xs:string" use="required" />
-    <xs:attribute name="english" type="xs:string" use="optional" />
+    <xs:attributeGroup ref="t:ThaiNameMandatory"/>
     <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
     <!--have to find better way for this-->
     <xs:attribute name="newgeocode" type="xs:string" use="optional" />

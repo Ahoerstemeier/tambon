@@ -249,16 +249,7 @@
             <xs:documentation>Geocode of the entity affected.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="name" type="xs:string" use="optional" >
-          <xs:annotation>
-            <xs:documentation>Name of the entity affected.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="english" type="xs:string" use="optional" >
-          <xs:annotation>
-            <xs:documentation>Romanized name of the entity affected.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
+        <xs:attributeGroup ref="t:ThaiNameOptional"/>
         <xs:attribute name="type" type="t:EntityType" use="optional" >
           <xs:annotation>
             <xs:documentation>Type of the entity affected.</xs:documentation>
@@ -311,8 +302,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" ref="geo:Point" />
     </xs:sequence>
-    <xs:attribute name="name" type="xs:string" use="optional" />
-    <xs:attribute name="english" type="xs:string" use="optional" />
+    <xs:attributeGroup ref="t:ThaiNameOptional"/>
     <xs:attribute name="type" type="t:ParkType" use="required" />
     <xs:attribute name="area" type="xs:double" use="optional" />
     <xs:attribute name="arearai" type="xs:double" use="optional" />
