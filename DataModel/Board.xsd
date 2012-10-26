@@ -65,16 +65,7 @@
         <xs:documentation>Geocode of the entity.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="name" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>Name of the entity.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="english" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>Romanized name of the entity.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:ThaiNameMandatory"/>
     <xs:attribute name="tambon" type="xs:unsignedInt" use="optional">
       <xs:annotation>
         <xs:documentation>Geocode of the corresponding tambon, used for TAO which have no geocode by themself.</xs:documentation>

@@ -287,16 +287,7 @@
         <xs:documentation>Running number, if known.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="name" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>Name in Thai script, not including titles.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="english" type="xs:string" use="optional" >
-      <xs:annotation>
-        <xs:documentation>Transcription of name to English.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:ThaiNameMandatory"/>
     <xs:attribute name="begin" type="xs:date" use="optional" >
       <xs:annotation>
         <xs:documentation>Begin of term.</xs:documentation>
