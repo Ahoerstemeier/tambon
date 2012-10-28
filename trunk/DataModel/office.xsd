@@ -345,7 +345,13 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="t:OfficialEntry"/>
+      <xs:element name="reference" minOccurs="0" maxOccurs="1" type="t:ReferenceList">
+        <xs:annotation>
+          <xs:documentation>References for the official list.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
+    <!-- to be moved into the reference list -->
     <xs:attribute name="source" type="xs:string" use="optional" >
       <xs:annotation>
         <xs:documentation>Source of the main part of the list.</xs:documentation>
@@ -407,7 +413,12 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="year" use="optional">
+        <xs:attribute name="year" use="optional" type="xs:gYear">
+          <xs:annotation>
+            <xs:documentation>Year of announcing the vision.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="inuse" use="optional" type="xs:gYear">
           <xs:annotation>
             <xs:documentation>Year of announcing the vision.</xs:documentation>
           </xs:annotation>
