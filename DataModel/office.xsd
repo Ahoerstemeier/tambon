@@ -4,11 +4,11 @@
   xmlns:t="http://hoerstemeier.com/tambon/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   targetNamespace="http://hoerstemeier.com/tambon/"
-  attributeFormDefault="unqualified" elementFormDefault="qualified" >
-  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd"/>
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd" />
 
-  <xs:include schemaLocation="basictypes.xsd"/>
-  <xs:include schemaLocation="constituencies.xsd"/>
+  <xs:include schemaLocation="basictypes.xsd" />
+  <xs:include schemaLocation="constituencies.xsd" />
 
   <xs:simpleType name="OfficeType">
     <xs:annotation>
@@ -266,7 +266,7 @@
 
   <xs:complexType name="OfficialEntry">
     <xs:sequence>
-      <xs:element name="vision" minOccurs="0" maxOccurs="1" type="t:Vision">
+      <xs:element name="vision" minOccurs="0" maxOccurs="1" type="t:VisionSlogan">
         <xs:annotation>
           <xs:documentation>Vision statement of official for his term.</xs:documentation>
         </xs:annotation>
@@ -287,8 +287,8 @@
         <xs:documentation>Running number, if known.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:ThaiNameMandatory"/>
-    <xs:attribute name="begin" type="xs:date" use="optional" >
+    <xs:attributeGroup ref="t:ThaiNameMandatory" />
+    <xs:attribute name="begin" type="xs:date" use="optional">
       <xs:annotation>
         <xs:documentation>Begin of term.</xs:documentation>
       </xs:annotation>
@@ -298,7 +298,7 @@
         <xs:documentation>End of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="beginyear" type="xs:gYear" use="optional" >
+    <xs:attribute name="beginyear" type="xs:gYear" use="optional">
       <xs:annotation>
         <xs:documentation>Begin of term.</xs:documentation>
       </xs:annotation>
@@ -318,7 +318,7 @@
         <xs:documentation>Year official was in office, used if being/end of term is not known.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional" >
+    <xs:attribute name="comment" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>Comments for information not covered in the formal fields.</xs:documentation>
       </xs:annotation>
@@ -344,7 +344,7 @@
       <xs:documentation>List of leaders of the administrative entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="t:OfficialEntry"/>
+      <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="t:OfficialEntry" />
       <xs:element name="reference" minOccurs="0" maxOccurs="1" type="t:ReferenceList">
         <xs:annotation>
           <xs:documentation>References for the official list.</xs:documentation>
@@ -352,7 +352,7 @@
       </xs:element>
     </xs:sequence>
     <!-- to be moved into the reference list -->
-    <xs:attribute name="source" type="xs:string" use="optional" >
+    <xs:attribute name="source" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>Source of the main part of the list.</xs:documentation>
       </xs:annotation>
@@ -364,20 +364,20 @@
       <xs:documentation>Term of the council of the administrative entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="t:OfficialEntry"/>
-      <xs:element name="election" minOccurs="0" maxOccurs="1" type="t:Election"/>
+      <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="t:OfficialEntry" />
+      <xs:element name="election" minOccurs="0" maxOccurs="1" type="t:Election" />
     </xs:sequence>
-    <xs:attribute name="begin" type="xs:date" use="required" >
+    <xs:attribute name="begin" type="xs:date" use="required">
       <xs:annotation>
         <xs:documentation>Begin of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="end" type="xs:date" use="optional" >
+    <xs:attribute name="end" type="xs:date" use="optional">
       <xs:annotation>
         <xs:documentation>End of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional" >
+    <xs:attribute name="comment" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>Comments for information not covered in the formal fields.</xs:documentation>
       </xs:annotation>
@@ -403,24 +403,24 @@
       <xs:documentation>List of council terms of the administrative entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="term" minOccurs="0" maxOccurs="unbounded" type="t:CouncilTerm"/>
+      <xs:element name="term" minOccurs="0" maxOccurs="unbounded" type="t:CouncilTerm" />
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="Vision">
+  <xs:complexType name="VisionSlogan">
     <xs:annotation>
-      <xs:documentation>Vision (วิสัยทัศน์) statement.</xs:documentation>
+      <xs:documentation>Text with temporal information.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="year" use="optional" type="xs:gYear">
+        <xs:attribute name="beginyear" use="optional" type="xs:gYear">
           <xs:annotation>
-            <xs:documentation>Year of announcing the vision.</xs:documentation>
+            <xs:documentation>Year of announcing.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="inuse" use="optional" type="xs:gYear">
           <xs:annotation>
-            <xs:documentation>Year of announcing the vision.</xs:documentation>
+            <xs:documentation>Year in which it was in use.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -453,27 +453,27 @@
           <xs:documentation>Emblem (ตรา) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" type='xs:string' name='slogan'>
+      <xs:element minOccurs="0" maxOccurs="1" type='t:VisionSlogan' name='slogan'>
         <xs:annotation>
           <xs:documentation>Slogan (คำขวัญ) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:Vision' name='vision'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:VisionSlogan' name='vision'>
         <xs:annotation>
           <xs:documentation>Vision statement (วิสัยทัศน์) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="symboltree" type="xs:string" >
+      <xs:element minOccurs="0" maxOccurs="1" name="symboltree" type="xs:string">
         <xs:annotation>
           <xs:documentation>Botanical name of the symbol tree (ต้นไม้ประจำจังหวัด).</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="symbolflower" type="xs:string" >
+      <xs:element minOccurs="0" maxOccurs="1" name="symbolflower" type="xs:string">
         <xs:annotation>
           <xs:documentation>Botanical name of the symbol flower (ดอกไม้ประจำจังหวัด).</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="color" type="xs:string" >
+      <xs:element minOccurs="0" maxOccurs="1" name="color" type="xs:string">
         <xs:annotation>
           <xs:documentation>Symbol color of the entity (in English).</xs:documentation>
         </xs:annotation>
@@ -485,12 +485,12 @@
     <xs:annotation>
       <xs:documentation>Village (Muban) part of address.</xs:documentation>
     </xs:annotation>
-    <xs:attribute name="name" type="xs:string" use="optional" >
+    <xs:attribute name="name" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>Name of the village.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="number" type="xs:unsignedInt" use="required" >
+    <xs:attribute name="number" type="xs:unsignedInt" use="required">
       <xs:annotation>
         <xs:documentation>Number of the village.</xs:documentation>
       </xs:annotation>
@@ -500,12 +500,12 @@
     <xs:annotation>
       <xs:documentation>Subdistrict (Tambon/Khet) part of address.</xs:documentation>
     </xs:annotation>
-    <xs:attribute name="name" type="xs:string" use="required" >
+    <xs:attribute name="name" type="xs:string" use="required">
       <xs:annotation>
         <xs:documentation>Name of subdistrict.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="geocode" type="xs:unsignedInt" use="required" >
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="required">
       <xs:annotation>
         <xs:documentation>Geocode of district.</xs:documentation>
       </xs:annotation>
@@ -549,9 +549,9 @@
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="0" ref="geo:Point" />
-      <xs:element minOccurs="0" name="address" type="t:ThaiAddress"/>
+      <xs:element minOccurs="0" name="address" type="t:ThaiAddress" />
     </xs:sequence>
-    <xs:attribute name="end" type="xs:date" use="optional" >
+    <xs:attribute name="end" type="xs:date" use="optional">
       <xs:annotation>
         <xs:documentation>Date the office was closed at that location.</xs:documentation>
       </xs:annotation>
@@ -580,7 +580,7 @@
         </xs:annotation>
       </xs:element>
       -->
-      <xs:element minOccurs="0" ref="geo:Point" >
+      <xs:element minOccurs="0" ref="geo:Point">
         <xs:annotation>
           <xs:documentation>Location of office, pointing approximately at the main entrance.</xs:documentation>
         </xs:annotation>
@@ -616,12 +616,12 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="type" type="t:OfficeType" use="required" >
+    <xs:attribute name="type" type="t:OfficeType" use="required">
       <xs:annotation>
         <xs:documentation>Office type of the administrative entity.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="obsolete" type="xs:boolean" use="optional" >
+    <xs:attribute name="obsolete" type="xs:boolean" use="optional">
       <xs:annotation>
         <xs:documentation>Office of an administrative entity no longer existing.</xs:documentation>
       </xs:annotation>
