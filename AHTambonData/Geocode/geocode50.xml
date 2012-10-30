@@ -279,14 +279,18 @@
     </entity>
     <entity type="Tambon" name="สบเตี๊ยะ" english="Sop Tia" geocode="500205">
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon -->
         <geo:Point>
           <geo:lat>18.3895</geo:lat>
           <geo:long>98.6780</geo:long>
         </geo:Point>
-        <url>http://www.sobtia.go.th/</url>
+        <url status="broken">http://www.sobtia.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="วิทยา ไชยเทพ" inoffice="2010" />
+          <official title="TAOMayor" name="วิทยา ไชยเทพ" begin="2008-08-24" end="2012-08-23" />
         </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="42" />
+        </council>
       </office>
       <entity type="Muban" geocode="50020501" name="บ้านวังปิน" english="Ban Wang Pin" />
       <entity type="Muban" geocode="50020502" name="บ้านสบเตี๊ยะ" english="Ban Sop Tia" />
