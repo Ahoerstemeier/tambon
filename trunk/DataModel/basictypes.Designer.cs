@@ -15,90 +15,6 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class EntityBase {
-        
-        private EntityType typeField;
-        
-        private string nameField;
-        
-        private string englishField;
-        
-        private uint geocodeField;
-        
-        private string commentField;
-        
-        /// <summary>
-        /// Creates a new instance of EntityBase.
-        /// </summary>
-        public EntityBase() {
-            this.typeField = EntityType.Unknown;
-            this.geocodeField = ((uint)(0));
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(EntityType.Unknown)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string english {
-            get {
-                return this.englishField;
-            }
-            set {
-                this.englishField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint geocode {
-            get {
-                return this.geocodeField;
-            }
-            set {
-                this.geocodeField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment {
-            get {
-                return this.commentField;
-            }
-            set {
-                this.commentField = value;
-            }
-        }
-    }
-    
     /// <summary>
     /// Types of administrative entities.
     /// </summary>
@@ -149,7 +65,7 @@ namespace De.AHoerstemeier.Tambon {
         Muban,
         
         /// <summary>
-        /// Special administrative municipality (i.e. Pattaya)
+        /// Special administrative municipality (องค์กรปกครองส่วนท้องถิ่นรูปแบบพิเศษ, i.e. Pattaya)
         /// </summary>
         Mueang,
         
@@ -267,6 +183,179 @@ namespace De.AHoerstemeier.Tambon {
         /// Branch of undefined type (สาขา, Sakha).
         /// </summary>
         Sakha,
+    }
+    
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInExclude))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInclude))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstituencyEntity))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class EntityBase {
+        
+        private EntityType typeField;
+        
+        private string nameField;
+        
+        private string englishField;
+        
+        private uint geocodeField;
+        
+        private string commentField;
+        
+        /// <summary>
+        /// Creates a new instance of EntityBase.
+        /// </summary>
+        public EntityBase() {
+            this.typeField = EntityType.Unknown;
+            this.geocodeField = ((uint)(0));
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(EntityType.Unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english {
+            get {
+                return this.englishField;
+            }
+            set {
+                this.englishField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint geocode {
+            get {
+                return this.geocodeField;
+            }
+            set {
+                this.geocodeField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReferenceList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class ReferenceList {
+        
+        private List<GazetteRelated> gazetterefField;
+        
+        private List<MyUri> urlField;
+        
+        private List<MeetingReference> meetingreferenceField;
+        
+        private List<MinisterialOrder> ministerialorderField;
+        
+        private List<BookReference> bookField;
+        
+        /// <summary>
+        /// Creates a new instance of ReferenceList.
+        /// </summary>
+        public ReferenceList() {
+            this.bookField = new List<BookReference>();
+            this.ministerialorderField = new List<MinisterialOrder>();
+            this.meetingreferenceField = new List<MeetingReference>();
+            this.urlField = new List<MyUri>();
+            this.gazetterefField = new List<GazetteRelated>();
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("gazetteref", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<GazetteRelated> gazetteref {
+            get {
+                return this.gazetterefField;
+            }
+            set {
+                this.gazetterefField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("url", Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MyUri> url {
+            get {
+                return this.urlField;
+            }
+            set {
+                this.urlField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MeetingReference> meetingreference {
+            get {
+                return this.meetingreferenceField;
+            }
+            set {
+                this.meetingreferenceField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MinisterialOrder> ministerialorder {
+            get {
+                return this.ministerialorderField;
+            }
+            set {
+                this.ministerialorderField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("book", Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<BookReference> book {
+            get {
+                return this.bookField;
+            }
+            set {
+                this.bookField = value;
+            }
+        }
     }
     
     /// <summary>
@@ -465,6 +554,216 @@ namespace De.AHoerstemeier.Tambon {
         /// Defaced or spreading malware and blocked by Google safe browsing.
         /// </summary>
         hacked,
+    }
+    
+    /// <summary>
+    /// Reference to a ministerial order.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MinisterialOrder", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class MinisterialOrder {
+        
+        private Ministry ministryField;
+        
+        private bool ministryFieldSpecified;
+        
+        private System.DateTime dateField;
+        
+        private bool dateFieldSpecified;
+        
+        private string titleField;
+        
+        /// <summary>
+        /// Ministry which issued the order.
+        /// </summary>
+        /// <value>
+        /// The ministry.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Ministry ministry {
+            get {
+                return this.ministryField;
+            }
+            set {
+                this.ministryField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ministrySpecified {
+            get {
+                return this.ministryFieldSpecified;
+            }
+            set {
+                this.ministryFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Date the order was issued.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool dateSpecified {
+            get {
+                return this.dateFieldSpecified;
+            }
+            set {
+                this.dateFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Title or reference number of the order.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Ministries in Thailand.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum Ministry {
+        
+        /// <summary>
+        /// Ministry of Interior (กระทรวงมหาดไทย, มท).
+        /// </summary>
+        MOI,
+    }
+    
+    /// <summary>
+    /// Reference to a book.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookReference", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class BookReference {
+        
+        private string titleField;
+        
+        private string authorField;
+        
+        private string publicationField;
+        
+        private string isbnField;
+        
+        /// <summary>
+        /// Title of the book.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Main author or editor of the book.
+        /// </summary>
+        /// <value>
+        /// The author.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Publication year.
+        /// </summary>
+        /// <value>
+        /// The publication.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string publication {
+            get {
+                return this.publicationField;
+            }
+            set {
+                this.publicationField = value;
+            }
+        }
+        
+        /// <summary>
+        /// ISBN of the book.
+        /// </summary>
+        /// <value>
+        /// The isbn.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string isbn {
+            get {
+                return this.isbnField;
+            }
+            set {
+                this.isbnField = value;
+            }
+        }
     }
     
     /// <summary>
