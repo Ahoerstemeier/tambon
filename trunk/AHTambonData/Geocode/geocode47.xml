@@ -268,9 +268,9 @@
         <officials>
           <official title="Mayor" name="วันนิภา ศรีมุกดา" inoffice="2011" />
         </officials>
-        <!--<history>
+        <history>
           <rename oldname="กุดบาก" oldenglish="Kut Bak" name="กุดแฮด" english="Kut Haet" effective="2009-10-27" />
-        </history>-->
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="โคกภู" english="Khok Phu" geocode="470302" newgeocode="471803" />
@@ -426,11 +426,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
         </council>
-        <!--<history>
+        <history>
           <rename oldname="พังโคน" oldenglish="Phang Khon" name="พังโคนศรีจำปา" english="Phang Khon Si Cham Pa">
             <meetingreference date="2012-08-09" number="4" board="rename" />
           </rename>
-        </history>-->
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="ม่วงไข่" english="Muang Khai" geocode="470502">
@@ -1021,6 +1021,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <ministerialorder ministry="MOI" title="มท 0890.2/8012" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="47110201" name="บ้านแพงน้อย" english="Ban Phaeng Noi" />
       <entity type="Muban" geocode="47110202" name="บ้านแพงใหญ่" english="Ban Phaeng Yai" />
