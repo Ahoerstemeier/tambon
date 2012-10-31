@@ -9,6 +9,7 @@
 
   <xs:include schemaLocation="basictypes.xsd" />
   <xs:include schemaLocation="constituencies.xsd" />
+  <xs:include schemaLocation="geocode.xsd" />
 
   <xs:simpleType name="OfficeType">
     <xs:annotation>
@@ -354,7 +355,7 @@
     <!-- to be moved into the reference list -->
     <xs:attribute name="source" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>Source of the main part of the list.</xs:documentation>
+        <xs:documentation>OBSOLETE - use reference tag instead</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -568,18 +569,6 @@
           <xs:documentation>Symbols, slogan and vision statements of the office.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <!--
-      <xs:element minOccurs="0" maxOccurs="1" type='xs:string' name='slogan'>
-        <xs:annotation>
-          <xs:documentation>Slogan (คำขวัญ) of the office.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" type='t:Vision' name='vision'>
-        <xs:annotation>
-          <xs:documentation>Vision statement (วิสัยทัศน์) of the office.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      -->
       <xs:element minOccurs="0" ref="geo:Point">
         <xs:annotation>
           <xs:documentation>Location of office, pointing approximately at the main entrance.</xs:documentation>
@@ -613,6 +602,11 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="oldlocations" type="t:OldLocation">
         <xs:annotation>
           <xs:documentation>List of former office locations.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList">
+        <xs:annotation>
+          <xs:documentation>Administrative changes concerning the office.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>

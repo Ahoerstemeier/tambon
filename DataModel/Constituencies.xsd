@@ -5,10 +5,10 @@
   xmlns:t="http://hoerstemeier.com/tambon/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   targetNamespace="http://hoerstemeier.com/tambon/"
-  attributeFormDefault="unqualified" elementFormDefault="qualified" >
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
 
-  <xs:include schemaLocation="basictypes.xsd"/>
-  <xs:include schemaLocation="gazette.xsd"/>
+  <xs:include schemaLocation="basictypes.xsd" />
+  <xs:include schemaLocation="gazette.xsd" />
 
   <xs:simpleType name="ElectionType">
     <xs:annotation>
@@ -86,9 +86,9 @@
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
         <xs:sequence>
-          <xs:element type="t:ConstituencyEntity" name="entity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element type="t:ConstituencyList" name="constituencies" minOccurs="0" maxOccurs="1"/>
-          <xs:element type="t:Election" name="election" minOccurs="0" maxOccurs="1"/>
+          <xs:element type="t:ConstituencyEntity" name="entity" minOccurs="0" maxOccurs="unbounded" />
+          <xs:element type="t:ConstituencyList" name="constituencies" minOccurs="0" maxOccurs="1" />
+          <xs:element type="t:Election" name="election" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -144,9 +144,9 @@
       <xs:annotation>
         <xs:documentation>List of constituencies.</xs:documentation>
       </xs:annotation>
-      <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:Constituency"/>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:Constituency" />
     </xs:sequence>
-    <xs:attribute name="index" type="xs:unsignedByte" use="optional" >
+    <xs:attribute name="index" type="xs:unsignedByte" use="optional">
       <xs:annotation>
         <xs:documentation>Number of the constituency list.</xs:documentation>
       </xs:annotation>
@@ -160,14 +160,14 @@
       <xs:annotation>
         <xs:documentation>List of constituencies.</xs:documentation>
       </xs:annotation>
-      <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:ConstituencyBase"/>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="constituency" type="t:ConstituencyBase" />
     </xs:sequence>
-    <xs:attribute name="index" type="xs:unsignedByte" use="optional" >
+    <xs:attribute name="index" type="xs:unsignedByte" use="optional">
       <xs:annotation>
         <xs:documentation>Number of the constituency list.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="entity" type="xs:unsignedInt" use="optional" >
+    <xs:attribute name="entity" type="xs:unsignedInt" use="optional">
       <xs:annotation>
         <xs:documentation>Geocode of the entity covered by the constituency list.</xs:documentation>
       </xs:annotation>
@@ -176,11 +176,11 @@
   <xs:complexType name="ConstituencyBase">
     <xs:sequence>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element minOccurs="1" maxOccurs="1" name="include" type="t:EntityInclude"/>
-        <xs:element minOccurs="1" maxOccurs="1" name="includesub" type="t:EntityIncludeSub"/>
+        <xs:element minOccurs="1" maxOccurs="1" name="include" type="t:EntityInclude" />
+        <xs:element minOccurs="1" maxOccurs="1" name="includesub" type="t:EntityIncludeSub" />
       </xs:choice>
     </xs:sequence>
-    <xs:attribute name="index" type="xs:unsignedByte" use="required" >
+    <xs:attribute name="index" type="xs:unsignedByte" use="required">
       <xs:annotation>
         <xs:documentation>Number of the constituency.</xs:documentation>
       </xs:annotation>
@@ -203,19 +203,19 @@
     <xs:complexContent>
       <xs:extension base="t:ConstituencyBase">
         <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="election" type="t:Election"/>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="byelection" type="t:ByElection"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="election" type="t:Election" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="byelection" type="t:ByElection" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="ElectionData">
     <xs:sequence>
-      <xs:element type="t:PartyList" name="parties" minOccurs="0" maxOccurs="1"/>
-      <xs:element type="t:ConstituencyEntity" name="entity" minOccurs="1" maxOccurs="1"/>
+      <xs:element type="t:PartyList" name="parties" minOccurs="0" maxOccurs="1" />
+      <xs:element type="t:ConstituencyEntity" name="entity" minOccurs="1" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element type="t:ElectionData" name="electiondata"/>
+  <xs:element type="t:ElectionData" name="electiondata" />
 
   <xs:complexType name="Party">
     <xs:annotation>
@@ -342,22 +342,22 @@
   </xs:simpleType>
   <xs:complexType name="Candidate">
     <xs:sequence>
-      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attribute name="party" type="xs:nonNegativeInteger" use="optional"/>
-    <xs:attribute name="name" type="xs:string" use="required"/>
-    <xs:attribute name="title" type="xs:string" use="optional"/>
-    <xs:attribute name="english" type="xs:string" use="optional"/>
-    <xs:attribute name="status" type="t:ElectionStatus" use="optional"/>
-    <xs:attribute name="comment" type="xs:string" use="optional"/>
-    <xs:attribute name="end" type="xs:date" use="optional"/>
-    <xs:attribute name="endreason" type="t:ByElectionReason" use="optional"/>
+    <xs:attribute name="party" type="xs:nonNegativeInteger" use="optional" />
+    <xs:attribute name="name" type="xs:string" use="required" />
+    <xs:attribute name="title" type="xs:string" use="optional" />
+    <xs:attribute name="english" type="xs:string" use="optional" />
+    <xs:attribute name="status" type="t:ElectionStatus" use="optional" />
+    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attribute name="end" type="xs:date" use="optional" />
+    <xs:attribute name="endreason" type="t:ByElectionReason" use="optional" />
   </xs:complexType>
   <xs:complexType name="CandidateListEntry">
     <xs:complexContent>
       <xs:extension base="t:Candidate">
-        <xs:attribute name="id" type="xs:nonNegativeInteger" use="required"/>
-        <xs:attribute name="votes" type="xs:positiveInteger" use="optional"/>
+        <xs:attribute name="id" type="xs:nonNegativeInteger" use="required" />
+        <xs:attribute name="votes" type="xs:positiveInteger" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -379,9 +379,9 @@
   </xs:complexType>
   <xs:complexType name="PartyCandidateList">
     <xs:sequence>
-      <xs:element name="candidate" type="t:PartyCandidateListEntry" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="candidate" type="t:PartyCandidateListEntry" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attribute name="party" type="xs:nonNegativeInteger"/>
+    <xs:attribute name="party" type="xs:nonNegativeInteger" />
   </xs:complexType>
   <xs:complexType name="CandidateList">
     <xs:sequence>
@@ -412,7 +412,7 @@
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional"/>
+    <xs:attribute name="comment" type="xs:string" use="optional" />
   </xs:complexType>
   <xs:simpleType name="ByElectionReason">
     <xs:annotation>
@@ -463,30 +463,23 @@
   </xs:simpleType>
   <xs:complexType name="ByElection">
     <xs:sequence>
-      <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1" />
+      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attribute name="date" type="xs:date" use="optional"/>
-    <xs:attribute name="type" type="t:ElectionType" use="optional"/>
-    <xs:attribute name="reason" type="t:ByElectionReason"/>
-    <xs:attribute name="comment" type="xs:string"/>
-  </xs:complexType>
-
-  <xs:complexType name="ReferenceList">
-    <xs:sequence>
-      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="url" type="t:MyUri" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
+    <xs:attribute name="date" type="xs:date" use="optional" />
+    <xs:attribute name="type" type="t:ElectionType" use="optional" />
+    <xs:attribute name="reason" type="t:ByElectionReason" />
+    <xs:attribute name="comment" type="xs:string" />
   </xs:complexType>
 
   <xs:complexType name="Election">
     <xs:sequence>
-      <xs:element name="partylist" type="t:PartyCandidateList" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="partylistresult" type="t:PartyListResult" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1"/>
-      <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="partylist" type="t:PartyCandidateList" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="partylistresult" type="t:PartyListResult" minOccurs="0" maxOccurs="1" />
+      <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1" />
+      <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
-    <xs:attribute name="date" type="xs:date" use="optional"/>
-    <xs:attribute name="type" type="t:ElectionType" use="optional"/>
+    <xs:attribute name="date" type="xs:date" use="optional" />
+    <xs:attribute name="type" type="t:ElectionType" use="optional" />
   </xs:complexType>
 </xs:schema>

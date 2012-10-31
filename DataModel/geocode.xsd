@@ -4,18 +4,18 @@
   xmlns:t="http://hoerstemeier.com/tambon/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   targetNamespace="http://hoerstemeier.com/tambon/"
-  attributeFormDefault="unqualified" elementFormDefault="qualified" >
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
 
-  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd"/>
-  <xs:include schemaLocation="office.xsd"/>
-  <xs:include schemaLocation="basictypes.xsd"/>
-  <xs:include schemaLocation="populationdata.xsd"/>
-  <xs:include schemaLocation="gazette.xsd"/>
+  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd" />
+  <xs:include schemaLocation="office.xsd" />
+  <xs:include schemaLocation="basictypes.xsd" />
+  <xs:include schemaLocation="populationdata.xsd" />
+  <xs:include schemaLocation="gazette.xsd" />
 
   <xs:simpleType name="AreaUnit">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="km²"/>
-      <xs:enumeration value="rai"/>
+      <xs:enumeration value="km²" />
+      <xs:enumeration value="rai" />
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="AreaData">
@@ -26,44 +26,30 @@
   </xs:complexType>
   <xs:complexType name="Area">
     <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="data" type="t:AreaData"/>
+      <xs:element maxOccurs="unbounded" name="data" type="t:AreaData" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="HistoryEntryBase" abstract="1">
-    <xs:sequence>
-      <xs:element name="gazette" type="t:GazetteRelated" maxOccurs="unbounded" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>Gazette announcement which deals with the given change.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="meetingreference" type="t:MeetingReference" maxOccurs="unbounded" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>Board meeting which deals with the given change.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="url" type="t:MyUri" maxOccurs="unbounded" minOccurs="0">
-        <xs:annotation>
-          <xs:documentation>Internet resource which explains the change.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <!-- Book source -->
-    </xs:sequence>
-    <xs:attribute name="effective" type="xs:date" use="optional" >
-      <xs:annotation>
-        <xs:documentation>Date the change became officially effective.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:complexContent>
+      <xs:extension base="t:ReferenceList">
+        <xs:attribute name="effective" type="xs:date" use="optional">
+          <xs:annotation>
+            <xs:documentation>Date the change became officially effective.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="comment" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryStatus">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="old" type="t:EntityType" use="required" >
+        <xs:attribute name="old" type="t:EntityType" use="required">
           <xs:annotation>
             <xs:documentation>Original type of the entity.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="new" type="t:EntityType" use="required" >
+        <xs:attribute name="new" type="t:EntityType" use="required">
           <xs:annotation>
             <xs:documentation>Type of the entity after the change.</xs:documentation>
           </xs:annotation>
@@ -74,13 +60,13 @@
   <xs:complexType name="HistoryRename">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attributeGroup ref="t:ThaiNameMandatory"/>
-        <xs:attribute name="oldname" type="xs:string" use="required" >
+        <xs:attributeGroup ref="t:ThaiNameMandatory" />
+        <xs:attribute name="oldname" type="xs:string" use="required">
           <xs:annotation>
             <xs:documentation>Previous name in Thai script..</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="oldenglish" type="xs:string" use="optional" >
+        <xs:attribute name="oldenglish" type="xs:string" use="optional">
           <xs:annotation>
             <xs:documentation>Romanization of old name.</xs:documentation>
           </xs:annotation>
@@ -91,7 +77,7 @@
   <xs:complexType name="HistorySpellingBase" abstract="1">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="name" type="xs:string" use="required" >
+        <xs:attribute name="name" type="xs:string" use="required">
           <xs:annotation>
             <xs:documentation>Name or spelling of name a given time.</xs:documentation>
           </xs:annotation>
@@ -101,7 +87,7 @@
   </xs:complexType>
   <xs:complexType name="HistorySpelling">
     <xs:complexContent>
-      <xs:extension base="t:HistorySpellingBase"/>
+      <xs:extension base="t:HistorySpellingBase" />
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryReformSpelling">
@@ -109,7 +95,7 @@
       <xs:documentation>Alternative spelling during the Thai spelling reform 1942-1945.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="t:HistorySpellingBase"/>
+      <xs:extension base="t:HistorySpellingBase" />
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryAlternativeName">
@@ -118,12 +104,12 @@
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:HistorySpellingBase">
-        <xs:attribute name="english" type="xs:string" use="optional" >
+        <xs:attribute name="english" type="xs:string" use="optional">
           <xs:annotation>
             <xs:documentation>Romanization of name.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="year" type="xs:gYear" use="optional" >
+        <xs:attribute name="year" type="xs:gYear" use="optional">
           <xs:annotation>
             <xs:documentation>Year in which the alternative name was apparently used.</xs:documentation>
           </xs:annotation>
@@ -134,7 +120,7 @@
   <xs:complexType name="HistoryCreate">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="type" type="t:EntityType" use="required" >
+        <xs:attribute name="type" type="t:EntityType" use="required">
           <xs:annotation>
             <xs:documentation>Type of the entity.</xs:documentation>
           </xs:annotation>
@@ -145,12 +131,12 @@
   <xs:complexType name="HistoryAbolish">
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="type" type="t:EntityType" use="required" >
+        <xs:attribute name="type" type="t:EntityType" use="required">
           <xs:annotation>
             <xs:documentation>Type of the entity.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="mergeto" type="xs:unsignedInt" use="optional" >
+        <xs:attribute name="mergeto" type="xs:unsignedInt" use="optional">
           <xs:annotation>
             <xs:documentation>Geocode of the entity which took over the area.</xs:documentation>
           </xs:annotation>
@@ -158,18 +144,18 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:group name="HistoryEntry" >
+  <xs:group name="HistoryEntry">
     <xs:annotation>
       <xs:documentation>Entry in the list of historical changes.</xs:documentation>
     </xs:annotation>
     <xs:choice>
-      <xs:element name="rename" type="t:HistoryRename"/>
-      <xs:element name="statuschange" type="t:HistoryStatus"/>
-      <xs:element name="create" type="t:HistoryCreate"/>
-      <xs:element name="abolished" type="t:HistoryAbolish"/>
-      <xs:element name="misspelling" type="t:HistorySpelling"/>
-      <xs:element name="reformedspelling" type="t:HistoryReformSpelling"/>
-      <xs:element name="alternativename" type="t:HistoryAlternativeName"/>
+      <xs:element name="rename" type="t:HistoryRename" />
+      <xs:element name="statuschange" type="t:HistoryStatus" />
+      <xs:element name="create" type="t:HistoryCreate" />
+      <xs:element name="abolished" type="t:HistoryAbolish" />
+      <xs:element name="misspelling" type="t:HistorySpelling" />
+      <xs:element name="reformedspelling" type="t:HistoryReformSpelling" />
+      <xs:element name="alternativename" type="t:HistoryAlternativeName" />
     </xs:choice>
   </xs:group>
   <xs:complexType name="HistoryList">
@@ -177,7 +163,7 @@
       <xs:documentation>List of historical changes.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:group ref='t:HistoryEntry' minOccurs='1' maxOccurs='unbounded'/>
+      <xs:group ref='t:HistoryEntry' minOccurs='1' maxOccurs='unbounded' />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Entity">
@@ -187,14 +173,14 @@
           <xs:documentation>Symbols, slogans and vision statements of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:Area"/>
-      <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="population" type="t:PopulationData"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:Area" />
+      <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="population" type="t:PopulationData" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity" />
     </xs:sequence>
     <xs:attribute name="type" type="t:EntityType" use="required" />
-    <xs:attributeGroup ref="t:ThaiNameMandatory"/>
+    <xs:attributeGroup ref="t:ThaiNameMandatory" />
     <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
     <!--have to find better way for this-->
     <xs:attribute name="newgeocode" type="xs:string" use="optional" />
@@ -207,5 +193,5 @@
     <xs:attribute name="muban" type="xs:unsignedInt" use="optional" />
   </xs:complexType>
 
-  <xs:element name="entity" type="t:Entity"/>
+  <xs:element name="entity" type="t:Entity" />
 </xs:schema>
