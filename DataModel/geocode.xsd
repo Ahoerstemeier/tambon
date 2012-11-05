@@ -19,10 +19,36 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="AreaData">
-    <xs:attribute name="value" type="xs:decimal" use="required" />
-    <xs:attribute name="unit" type="t:AreaUnit" use="required" />
-    <xs:attribute name="source" type="xs:string" use="required" />
-    <xs:attribute name="date" type="xs:unsignedShort" use="optional" />
+    <xs:annotation>
+      <xs:documentation>Area covered by the entity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="reference" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Source(s) for the area value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="value" type="xs:decimal" use="required">
+      <xs:annotation>
+        <xs:documentation>Area value.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="unit" type="t:AreaUnit" use="required">
+      <xs:annotation>
+        <xs:documentation>Unit in which value is given.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="date" type="xs:gYear" use="optional">
+      <xs:annotation>
+        <xs:documentation>Year in which the data was valid.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="comment" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Optional comment.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="Area">
     <xs:sequence>

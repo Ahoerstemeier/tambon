@@ -1032,8 +1032,6 @@ namespace De.AHoerstemeier.Tambon {
         
         private ReferenceList referenceField;
         
-        private string sourceField;
-        
         /// <summary>
         /// Creates a new instance of OfficialList.
         /// </summary>
@@ -1066,23 +1064,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.referenceField = value;
-            }
-        }
-        
-        /// <summary>
-        /// OBSOLETE - use reference tag instead
-        /// </summary>
-        /// <value>
-        /// The source.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string source {
-            get {
-                return this.sourceField;
-            }
-            set {
-                this.sourceField = value;
             }
         }
     }

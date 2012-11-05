@@ -6,7 +6,7 @@
       <geo:long>99.6116</geo:long>
     </geo:Point>
     <url>http://www.trang.go.th/</url>
-    <officials source="http://province.prd.go.th/trang/Governer%201%20.htm">
+    <officials>
       <official title="Governor" index="44" name="ธีระยุทธ เอี่ยมตระกูล" begin="2012-04-27" beginreason="Appointed" />
       <official title="Governor" index="43" name="เสนีย์ จิตตเกษม" beginyear="2011" end="2012-04-26" endreason="Transfer" />
       <official title="Governor" index="42" name="ไมตรี อินทุสุต" begin="2009-10-01" endyear="2011" />
@@ -51,6 +51,9 @@
       <official title="Governor" index="3" name="พระยาเสนีณรงค์ฤทธิ (ถนอม บุญยเกตุ)" beginyear="1902" endyear="1905" />
       <official title="Governor" index="2" name="พระยารัษฏานุประดิษฐ์ (คอซิมบี้ ณ ระนอง)" beginyear="1890" endyear="1902" />
       <official title="Governor" index="1" name="พระยาดำรงค์สุจริต (คอซิมกอง ณ ระนอง)" />
+      <reference>
+        <url>http://province.prd.go.th/trang/Governer%201%20.htm</url>
+      </reference>
     </officials>
   </office>
   <office type="PAOOffice">
@@ -863,16 +866,23 @@
       </history>
     </entity>
     <entity type="Tambon" name="ทุ่งกระบือ" english="Thung Krabue" geocode="920306">
-      <office type="TAOOffice">
-        <url lastchecked="2012-04-19">http://www.thungkrabue.in.th/</url>
+      <office type="MunicipalityOffice">
+        <url status="offline" lastonline="2012-04-19">http://www.thungkrabue.in.th/</url>
         <officials>
+          <!-- Mayor election 2012-11-25 -->
           <official title="TAOMayor" name="ธเนส คืนตัก" begin="2008-08-31" end="2012-08-30" />
           <official title="TAOMayor" name="ยอด คีรีรัตน์" begin="2004-07-25" end="2008-07-24" />
         </officials>
         <council>
+          <term begin="2012-11-25" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="2" number="36" date="2012-05-29" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="92030601" name="บ้านควนอินทนินงาม" english="Ban Khuan In Thanin Ngam" />
       <entity type="Muban" geocode="92030602" name="บ้านคลองปะเหลียน" english="Ban Khlong Palian" />
@@ -2310,10 +2320,12 @@
       </geo:Point>
       <url>http://www.nmt.or.th/trang/khlongteng/</url>
       <officials>
+        <!-- election 2012-11-25 -->
         <official title="Mayor" name="ชวน พลเดช" begin="2008-10-19" end="2012-10-18" />
         <official title="Mayor" name="วิศิษฎ์ ทองกาวแก้ว" begin="2004-09-12" end="2008-09-11" endreason="EndOfTerm" />
       </officials>
       <council>
+        <term begin="2012-11-25" type="ThesabanTambon" size="12" />
         <term begin="2008-10-19" end="2012-10-18" type="ThesabanTambon" size="12" />
         <term begin="2004-09-12" end="2008-09-11" type="ThesabanTambon" size="12" />
       </council>

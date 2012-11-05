@@ -23,7 +23,7 @@
       <geo:long>103.6530</geo:long>
     </geo:Point>
     <url lastchecked="2012-02-09" comment="Will be at http://bungkan.go.th/ later?">http://202.143.171.227/bungkan/</url>
-    <officials source="http://202.143.171.227/bungkan/index.php/bigboss">
+    <officials>
       <official title="Governor" index="2" name="พรศักดิ์ เจียรณัย" begin="2011-11-28" end="2012-10-07" endreason="Transfer" />
       <official title="Governor" index="1" name="สมพงษ์ อรุณโรจน์ปัญญา" begin="2011-05-26" end="2011-11-27" />
       <official title="Governor" name="สมพงษ์ อรุณโรจน์ปัญญา" begin="2011-03-23" end="2011-06-24" acting="1" />
@@ -32,6 +32,9 @@
       <official title="ViceGovernor" index="3" name="เลอเกียรติ แก้วศรีจันทร์" begin="2012-01-09" />
       <official title="ViceGovernor" index="2" name="ศุภชัย เหลืองแสงทอง" begin="2012-04-04" end="2012-01-22" />
       <official title="ViceGovernor" index="1" name="สมพงศ์ อรุณโรจน์ปัญญา" begin="2011-03-23" end="2011-05-25" />
+      <reference>
+        <url>http://202.143.171.227/bungkan/index.php/bigboss</url>
+      </reference>
     </officials>
   </office>
   <office type="PAOOffice">
@@ -520,12 +523,15 @@
           <geo:long>103.7855</geo:long>
         </geo:Point>
         <url status="offline">http://thakokdanglocal.com/</url>
-        <officials source="http://thakokdanglocal.com/Weblink/ceo1.html">
+        <officials>
           <official index="5" title="TAOMayor" name="เจริญชัย คำดีราช" begin="2008-08-30" />
           <official index="4" title="TAOMayor" name="จังหวัด วงค์ก่อ" begin="2005-07-18" end="2008-07-18" />
           <official index="3" title="TAOChairman" name="ศรีคุณ แสนแดง" beginyear="2002" endyear="2005" />
           <official index="2" title="TAOChairman" name="จันทร พุทธา" beginyear="1999" endyear="2002" />
           <official index="1" title="TAOChairman" name="ไตรภพ คูสกุล" beginyear="1996" endyear="1999" />
+          <reference>
+            <url>http://thakokdanglocal.com/Weblink/ceo1.html</url>
+          </reference>
         </officials>
         <council>
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="32" />
@@ -932,7 +938,7 @@
         <url>http://www.khokkueang.go.th/</url>
       </office>
       <office type="SubdistrictHeadmanOffice">
-        <officials source="http://www.khokkueang.go.th/index.php?option=com_content&amp;view=article&amp;id=46&amp;Itemid=57">
+        <officials>
           <official title="Kamnan" name="บุญชู กาศรี" beginyear="1978" endyear="1983" />
           <official title="Kamnan" name="หน่ำ สุวรรณรอด" beginyear="1983" endyear="1986" />
           <official title="Kamnan" name="หงษ์ พรมบุตร" beginyear="1986" endyear="1992" />
@@ -940,6 +946,9 @@
           <official title="Kamnan" name="คำปุ่น เมาไธสงค์" beginyear="1999" endyear="2001" />
           <official title="Kamnan" name="ชื่น สีหมตรี" beginyear="2001" endyear="2005" />
           <official title="Kamnan" name="อำพร แสวงดี" beginyear="2005" />
+          <reference>
+            <url>http://www.khokkueang.go.th/index.php?option=com_content&amp;view=article&amp;id=46&amp;Itemid=57</url>
+          </reference>
         </officials>
       </office>
       <entity type="Muban" geocode="38080301" name="บ้านโคกกว้าง" english="Ban Khok Kwang" />
@@ -977,8 +986,16 @@
       </council>
     </office>
     <area>
-      <data value="1.18" unit="km²" source="http://www.nmt.or.th/nongkhai/buengkan/Lists/List39/AllItems.aspx" />
-      <data value="737.5" unit="rai" source="http://www.nmt.or.th/nongkhai/buengkan/Lists/List39/AllItems.aspx" />
+      <data value="1.18" unit="km²">
+        <reference>
+          <url>http://www.nmt.or.th/nongkhai/buengkan/Lists/List39/AllItems.aspx</url>
+        </reference>
+      </data>
+      <data value="737.5" unit="rai">
+        <reference>
+          <url>http://www.nmt.or.th/nongkhai/buengkan/Lists/List39/AllItems.aspx</url>
+        </reference>
+      </data>
     </area>
     <!-- Numbers to be confirmed -->
     <entity type="Chumchon" geocode="38980001" name="บึงกาฬกลาง" english="Bueng Kan Klang" muban="38030101" />

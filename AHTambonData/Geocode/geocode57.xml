@@ -13,7 +13,7 @@
       <geo:long>99.8269</geo:long>
     </geo:Point>
     <url>http://www.chiangrai.go.th/</url>
-    <officials source="http://www.chiangrai.net/CPOC/2009/Articles/viewArticle.aspx?A=9">
+    <officials>
       <official title="Governor" name="พงษ์ศักดิ์ วังเสมอ" begin="2012-10-08" beginreason="Appointed" />
       <official title="Governor" name="ธานินทร์ สุภาแสน" beginyear="2011" end="2012-10-07" endreason="Transfer" />
       <official title="Governor" name="สมชัย หทยะตันติ" begin="2010-10-01" endyear="2011" />
@@ -60,10 +60,12 @@
       <official title="Governor" name="หลวงอาษาภูธร" beginyear="1902" endyear="1903" />
       <official title="Governor" name="พระพลอาษา" beginyear="1899" endyear="1902" />
       <official title="Governor" name="พระยารัตนาณาเขต" beginyear="1890" endyear="1899" />
-      <!--before> ChaoMueang ตำแหน่งเจ้าเมือง -->
-      <official title="Governor" name="เจ้าหลวงสุริยะ" beginyear="1876" endyear="1890" />
-      <official title="Governor" name="เจ้าหลวงอุ่นเรือน" beginyear="1864" endyear="1876" />
-      <official title="Governor" name="เจ้าหลวงธรรมลังกา" beginyear="1843" endyear="1864" />
+      <official title="MueangGovernor" name="เจ้าหลวงสุริยะ" beginyear="1876" endyear="1890" />
+      <official title="MueangGovernor" name="เจ้าหลวงอุ่นเรือน" beginyear="1864" endyear="1876" />
+      <official title="MueangGovernor" name="เจ้าหลวงธรรมลังกา" beginyear="1843" endyear="1864" />
+      <reference>
+        <url>http://www.chiangrai.net/CPOC/2009/Articles/viewArticle.aspx?A=9</url>
+      </reference>
     </officials>
   </office>
   <office type="PAOOffice">
@@ -765,7 +767,7 @@
         <geo:lat>19.6855</geo:lat>
         <geo:long>100.1934</geo:long>
       </geo:Point>
-      <officials source="http://th.wikipedia.org/wiki/อำเภอเทิง">
+      <officials>
         <official title="DistrictOfficer" index="36" name="ประพันธ์ ภู่งาม" beginyear="2009" end="2011-05-01" />
         <official title="DistrictOfficer" index="35" name="ชัยสิทธิ์ รัตนชัยสิทธิ์" begin="2007-10-24" endyear="2009" />
         <official title="DistrictOfficer" index="34" name="นิมิต วันไชยธนวงศ์" beginyear="2003" end="2007-10-23" />
@@ -802,6 +804,9 @@
         <official title="DistrictOfficer" index="3" name="หลวงปราณีนราการ (ตรี มังตรีสวรรค์)" beginyear="1926" endyear="1927" />
         <official title="DistrictOfficer" index="2" name="หลวงสิทธิประศาสน์ (ควาย บุศบรรณ์)" beginyear="1923" endyear="1925" />
         <official title="DistrictOfficer" index="1" name="ขุนวัฒนานุการ (รองอำมาตย์โทโป๊ะ วัฒนะสมบัติ)" beginyear="1914" endyear="1922" />
+        <reference>
+          <url>http://th.wikipedia.org/wiki/อำเภอเทิง</url>
+        </reference>
       </officials>
     </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="570401">
@@ -946,7 +951,7 @@
         <geo:lat>19.5538</geo:lat>
         <geo:long>99.7406</geo:long>
       </geo:Point>
-      <officials source="http://province.m-culture.go.th/chiangrai/v2010/dbase/p_18aumpher.php?id_aumpher=8">
+      <officials>
         <official title="DistrictOfficer" name="ชัยณรงค์ บุญวิวัฒนาการ" begin="2011-05-02" />
         <official title="DistrictOfficer" name="ชัยณรงค์ บุญวิวัฒนาการ" begin="2010-01-25" end="2011-05-01" acting="1" />
         <official title="DistrictOfficer" name="ชวลิต เมฆจำเริญ" end="2010-01-24" />
@@ -980,6 +985,9 @@
         <official title="DistrictOfficer" index="3" name="ชื่น ไชยศิริ​" beginyear="1927" endyear="1930" />
         <official title="DistrictOfficer" index="2" name="หลวงปรีชานรัฐกิจ" beginyear="1921" endyear="1927" />
         <official title="DistrictOfficer" index="1" name="พระศุภการกำจร" beginyear="1915" endyear="1921" />
+        <reference>
+          <url>http://province.m-culture.go.th/chiangrai/v2010/dbase/p_18aumpher.php?id_aumpher=8</url>
+        </reference>
       </officials>
     </office>
     <entity type="Tambon" name="สันมะเค็ด" english="San Makhet" geocode="570501">
@@ -1001,7 +1009,7 @@
         <!-- Google  19.675109°  99.849368° -->
         <url>http://www.mae-o.go.th/</url>
         <url status="offline">http://mae-or.com/</url>
-        <officials source="http://www.mae-o.go.th/OldBoss.php">
+        <officials>
           <official index="6" title="TAOMayor" name="พิทักพงษ์ คำน้อย" inoffice="2011" beginyear="2009" />
           <official index="5" title="TAOMayor" name="สมคิดศรีมูล" beginyear="2006" endyear="2009" />
           <!-- really two year without Mayor? -->
@@ -1009,10 +1017,13 @@
           <official index="3" title="TAOChairman" name="จิรายุ เผ่ากา" beginyear="2000" endyear="2002" />
           <official index="2" title="TAOChairman" name="สมบัติ นันติ" beginyear="1999" endyear="2000" />
           <official index="1" title="TambonCouncilChairman" name="รัตน์ ทะรินทร์" beginyear="1995" endyear="1999" beginreason="ExOfficio" comment="Kamnan" />
+          <reference>
+            <url>http://www.mae-o.go.th/OldBoss.php</url>
+          </reference>
         </officials>
       </office>
       <office type="SubdistrictHeadmanOffice">
-        <officials source="http://www.mae-o.go.th/history.php">
+        <officials>
           <official index="13" title="Kamnan" name="ชวิน ปวงใจ" beginyear="2009" />
           <official index="12" title="Kamnan" name="รัตน์ ทะรินทร์" beginyear="2004" endyear="2008" />
           <official index="11" title="Kamnan" name="บุญยงค์ กันทร" beginyear="1978" endyear="2004" />
@@ -1026,6 +1037,9 @@
           <official index="3" title="Kamnan" name="น้อยใจ๋" comment="Title พ่อแคว่น, บ้านปอเรียง หมู่ที่ 7 ปัจจุบัน" />
           <official index="2" title="Kamnan" name="หนานต๊ะ" comment="Title พ่อแคว่น, บ้านแม่อ้อ(ไม่ทราบหมู่ใด)" />
           <official index="1" title="Kamnan" name="ธรรมะลังก๋า" />
+          <reference>
+            <url>http://www.mae-o.go.th/history.php</url>
+          </reference>
         </officials>
       </office>
       <entity type="Muban" geocode="57050201" name="บ้านแม่อ้อใน" english="Ban Mae O Nai" />
@@ -1768,7 +1782,7 @@
         <geo:long>99.8832</geo:long>
       </geo:Point>
       <url>http://www.amphoemaesai.com/</url>
-      <officials source="http://www.amphoemaesai.com/atomymaxsite/?name=page&amp;file=page&amp;op=District">
+      <officials>
         <official title="DistrictOfficer" index="30" name="สืบศักดิ์ เอี่ยมวิจารณ์" begin="2011-05-02" />
         <official title="DistrictOfficer" index="29" name="วิศิษฐ์ สิทธิสมบัติ" begin="2008-11-11" end="2011-05-01" />
         <official title="DistrictOfficer" index="28" name="อาณัติ วิทยานุกุล" begin="2007-10-24" end="2008-11-09" />
@@ -1799,6 +1813,9 @@
         <official title="DistrictOfficer" index="3" name="สมชาย กลิ่นแก้ว" begin="1951-06-05" end="1954-05-16" />
         <official title="DistrictOfficer" index="2" name="สุะ โอบอ้อม" begin="1950-10-03" end="1951-06-05" />
         <official title="DistrictOfficer" index="1" name="สนั่น สุวิเศษศักดิ์" begin="1950-06-19" end="1950-10-03" />
+        <reference>
+          <url>http://www.amphoemaesai.com/atomymaxsite/?name=page&amp;file=page&amp;op=District</url>
+        </reference>
       </officials>
     </office>
     <entity type="Tambon" name="แม่สาย" english="Mae Sai" geocode="570901">
@@ -2877,11 +2894,14 @@
   <entity type="ThesabanTambon" name="แม่ขะจาน" english="Mae Khachan" geocode="5781" parent="5711">
     <office type="MunicipalityOffice">
       <url lastchecked="2012-04-17">http://www.maekhachan.com/</url>
-      <officials source="http://www.maekhachan.com/catalog.php?category=32">
+      <officials>
         <official title="Mayor" name="วินัย ทานศิลา" begin="2007-09-23" />
         <official title="Mayor" name="เทอดศักดิ์ ฮั่นตระกูล" begin="2004-08-31" end="2007-08-13" comment="New election? Or new team of deputies only?" />
         <official title="Mayor" name="เทอดศักดิ์ ฮั่นตระกูล" begin="2004-02-18" end="2004-08-20" />
         <official title="Mayor" name="เทอดศักดิ์ ฮั่นตระกูล" begin="1999-07-04" end="2003-07-03" />
+        <reference>
+          <url>http://www.maekhachan.com/catalog.php?category=32</url>
+        </reference>
       </officials>
     </office>
     <entity type="Chumchon" geocode="57810001" name="ชุมชนหนองบัว 1" english="Chumchon Nong Bua 1" />

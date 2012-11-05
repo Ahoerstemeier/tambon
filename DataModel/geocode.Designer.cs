@@ -766,6 +766,9 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    /// <summary>
+    /// Area covered by the entity.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -774,16 +777,39 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="AreaData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class AreaData {
         
+        private ReferenceList referenceField;
+        
         private decimal valueField;
         
         private AreaUnit unitField;
         
-        private string sourceField;
+        private string dateField;
         
-        private ushort dateField;
+        private string commentField;
         
-        private bool dateFieldSpecified;
+        /// <summary>
+        /// Source(s) for the area value.
+        /// </summary>
+        /// <value>
+        /// The reference.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ReferenceList reference {
+            get {
+                return this.referenceField;
+            }
+            set {
+                this.referenceField = value;
+            }
+        }
         
+        /// <summary>
+        /// Area value.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal value {
@@ -795,6 +821,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Unit in which value is given.
+        /// </summary>
+        /// <value>
+        /// The unit.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AreaUnit unit {
@@ -806,20 +838,15 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        /// <summary>
+        /// Year in which the data was valid.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string source {
-            get {
-                return this.sourceField;
-            }
-            set {
-                this.sourceField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ushort date {
+        public string date {
             get {
                 return this.dateField;
             }
@@ -829,19 +856,19 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// Optional comment.
         /// </summary>
         /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
+        /// The comment.
         /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool dateSpecified {
+        public string comment {
             get {
-                return this.dateFieldSpecified;
+                return this.commentField;
             }
             set {
-                this.dateFieldSpecified = value;
+                this.commentField = value;
             }
         }
     }
