@@ -494,6 +494,18 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="GazetteCouncilSize">
+    <xs:complexContent>
+      <xs:extension base="t:GazetteOperationBase">
+        <xs:attribute name="type" type="t:EntityType" use="required" />
+        <xs:attribute type="xs:positiveInteger" name="size" use="required">
+          <xs:annotation>
+            <xs:documentation>Number of councilors in the council.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:complexType name="GazetteMention">
     <xs:complexContent>
@@ -546,6 +558,7 @@
       <xs:element name="create" type="t:GazetteCreate" />
       <xs:element name="mention" type="t:GazetteMention" />
       <xs:element name="constituency" type="t:GazetteConstituency" />
+      <xs:element name="councilsize" type="t:GazetteCouncilSize" />
       <xs:element name="capital" type="t:GazetteCapital" />
       <xs:element name="official" type="t:GazetteOfficial" />
       <xs:element name="correction" type="t:GazetteCorrection" />
