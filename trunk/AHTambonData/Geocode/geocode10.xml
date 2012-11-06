@@ -1,6 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Bangkok" name="กรุงเทพมหานคร" english="Krung Thep Maha Nakhon" geocode="10">
   <office type="MunicipalityOffice">
+    <symbols>
+      <emblem>
+        <reference>
+          <gazetteref volume="90" page="218" issue="70 ก" date="1973-06-19" />
+        </reference>
+      </emblem>
+    </symbols>
     <geo:Point>
       <geo:lat>13.7535</geo:lat>
       <geo:long>100.5018</geo:long>
@@ -27,6 +34,19 @@
       <official title="BangkokGovernor" name="อภิรักษ์ โกษะโยธิน" english="Apirak Kosayodhin" begin="2008-10-05" end="2008-11-19" beginreason="ElectedDirectly" endreason="Resigned" />
       <official title="BangkokGovernor" index="15" name="ศ์สุขุมพันธุ์ บริพัตร" english="Sukhumbhand Paribatra" begin="2009-01-11" beginreason="ElectedDirectly" />
     </officials>
+    <council>
+      <term begin="2010-08-29" type="Bangkok" size="61" />
+      <term begin="2006-07-23" end="2010-07-22" type="Bangkok" size="57" />
+
+      <term begin="1990-01-07" end="1994-01-06" type="Bangkok" />
+      <term begin="1985-11-21" end="1989-11-20" type="Bangkok">
+        <election date="1985-11-21" type="BangkokCouncil">
+          <references>
+            <gazetteref volume="102" page="6" issue="181 ง ฉบับพิเศษ" date="1985-12-01" />
+          </references>
+        </election>
+      </term>
+    </council>
   </office>
   <entity type="Khet" name="พระนคร" english="Phra Nakhon" geocode="1001">
     <office type="DistrictOffice">
@@ -141,6 +161,43 @@
       <officials>
         <official title="DistrictOfficerBangkok" name="ประเสริฐ ทองนุ่น" inoffice="2010" />
       </officials>
+      <council>
+        <term begin="2010-06-06" type="Khet" size="8">
+          <election date="2010-06-06" type="BangkokDistrictCouncil">
+            <references>
+              <gazetteref volume="127" page="39" issue="พิเศษ 77 ง" date="2010-06-21" />
+            </references>
+          </election>
+        </term>
+        <term begin="2006-04-30" end="2010-04-29" type="Khet" size="8">
+          <election date="2006-04-30" type="BangkokDistrictCouncil">
+            <references>
+              <gazetteref volume="123" page="40" issue="พิเศษ 74 ง" date="2006-06-30" />
+            </references>
+          </election>
+        </term>
+        <term begin="2002-03-10" end="2006-03-09" type="Khet" size="7">
+          <election date="2002-03-10" type="BangkokDistrictCouncil">
+            <references>
+              <gazetteref volume="119" page="22" issue="พิเศษ 28 ง" date="2002-03-25" />
+            </references>
+          </election>
+        </term>
+        <term begin="1998-01-11" end="2002-01-10" type="Khet" size="7">
+          <election date="1998-01-11" type="BangkokDistrictCouncil">
+            <references>
+              <gazetteref volume="115" page="37" issue="พิเศษ 8 ง" date="1998-01-23" />
+            </references>
+          </election>
+        </term>
+        <term begin="1993-11-21" end="1997-11-20" type="Khet" size="8">
+          <election date="1993-11-21" type="BangkokDistrictCouncil">
+            <references>
+              <gazetteref volume="110" page="7" issue="213 ง ฉบับพิเศษ" date="1993-12-17" />
+            </references>
+          </election>
+        </term>
+      </council>
     </office>
     <entity type="Khwaeng" name="คลองจั่น" english="Khlong Chan" geocode="100601" />
     <entity type="Khwaeng" name="วังทองหลาง" english="Wang Thonglang" geocode="100602" newgeocode="104501" />
