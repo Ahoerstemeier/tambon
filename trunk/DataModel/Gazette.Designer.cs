@@ -48,6 +48,7 @@ namespace De.AHoerstemeier.Tambon {
     /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteConstituency))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteMention))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCouncilSize))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteOfficial))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCapital))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCreate))]
@@ -401,6 +402,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteOperationBase))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteConstituency))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteMention))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCouncilSize))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteOfficial))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCapital))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCreate))]
@@ -442,6 +444,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=0)]
@@ -1336,6 +1339,53 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.constituenciesField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteCouncilSize", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GazetteCouncilSize : GazetteOperationBase {
+        
+        private EntityType type1Field;
+        
+        private string sizeField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute("type")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType type1 {
+            get {
+                return this.type1Field;
+            }
+            set {
+                this.type1Field = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
             }
         }
     }

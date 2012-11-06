@@ -811,7 +811,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private SocialWebLink twitterField;
         
-        private SocialWebLink googleplusField;
+        private List<GooglePlusLink> googleplusField;
         
         private List<MyUri> blogField;
         
@@ -823,7 +823,7 @@ namespace De.AHoerstemeier.Tambon {
         public SocialWebLinks() {
             this.forumField = new List<MyUri>();
             this.blogField = new List<MyUri>();
-            this.googleplusField = new SocialWebLink();
+            this.googleplusField = new List<GooglePlusLink>();
             this.twitterField = new SocialWebLink();
         }
         
@@ -867,9 +867,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The googleplus.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("googleplus", Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SocialWebLink googleplus {
+        public List<GooglePlusLink> googleplus {
             get {
                 return this.googleplusField;
             }
@@ -913,6 +913,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GooglePlusLink))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1015,6 +1016,67 @@ namespace De.AHoerstemeier.Tambon {
         /// Account no longer accessible.
         /// </summary>
         offline,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GooglePlusLink", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GooglePlusLink : SocialWebLink {
+        
+        private GooglePlusPageType typeField;
+        
+        /// <summary>
+        /// Creates a new instance of GooglePlusLink.
+        /// </summary>
+        public GooglePlusLink() {
+            this.typeField = GooglePlusPageType.user;
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(GooglePlusPageType.user)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GooglePlusPageType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Ways how an official can enter the office.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum GooglePlusPageType {
+        
+        /// <summary>
+        /// User page, mostly used though not the correct type of page for a non-person.
+        /// </summary>
+        user,
+        
+        /// <summary>
+        /// Institution page.
+        /// </summary>
+        page,
+        
+        /// <summary>
+        /// Google plus local page.
+        /// </summary>
+        location,
     }
     
     /// <summary>
