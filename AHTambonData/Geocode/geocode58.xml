@@ -499,17 +499,15 @@
     </entity>
     <entity type="Tambon" name="แม่สะเรียง" english="Mae Sariang" geocode="580402">
       <office type="MunicipalityOffice">
-        <url>http://www.maesariang.net/</url>
+        <url status="offline">http://www.maesariang.net/</url>
         <officials>
           <official title="TAOMayor" name="เฉลิม ปิยะศิริวัฒน์" inoffice="2010" endyear="2011" />
         </officials>
-        <!--
         <history>
           <rename name="เมืองยวมใต้" english="Mueang Yuam Tai" oldname="แม่สะเรียง" oldenglish="Mae Sariang" effective="2011-09-30">
             <meetingreference date="2011-07-26" number="2" board="rename" />
           </rename>
         </history>
-        -->
       </office>
       <entity type="Muban" geocode="58040201" name="บ้านจอมแจ้ง" english="Ban Chom Chaeng" />
       <entity type="Muban" geocode="58040202" name="บ้านในเวียง" english="Ban Nai Wiang" />
@@ -1014,11 +1012,17 @@ Chumchon all named ป๊อก:
   </entity>
   <entity type="ThesabanTambon" name="แม่สะเรียง" english="Mae Sariang" geocode="5896" parent="5804">
     <office type="MunicipalityOffice">
-      <url>http://www.maesariang.go.th/</url>
+      <url lastchecked="2012-11-17">http://www.maesariang.go.th/</url>
       <url status="offline">http://www.maesariang.org/</url>
       <socialweb>
         <googleplus>110258880283327730605</googleplus>
       </socialweb>
+      <officials>
+        <official title="Mayor" name="พัลลภ หว่าละ" inoffice="2012" comment="Begin 2010-12-26?"/>
+      </officials>                 
+      <council>
+        <term begin="2010-12-26" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
     <!--
     ชุมชนในเวียง
