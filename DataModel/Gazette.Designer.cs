@@ -48,6 +48,7 @@ namespace De.AHoerstemeier.Tambon {
     /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteConstituency))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteMention))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteElectionResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCouncilSize))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteOfficial))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCapital))]
@@ -402,6 +403,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteOperationBase))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteConstituency))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteMention))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteElectionResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCouncilSize))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteOfficial))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCapital))]
@@ -447,6 +449,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=0)]
@@ -1452,6 +1455,72 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.type1Field = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteElectionResult", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GazetteElectionResult : GazetteOperationBase {
+        
+        private ElectionType electionTypeField;
+        
+        private System.DateTime dateField;
+        
+        private string constituencyField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectionType electionType {
+            get {
+                return this.electionTypeField;
+            }
+            set {
+                this.electionTypeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="integer")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string constituency {
+            get {
+                return this.constituencyField;
+            }
+            set {
+                this.constituencyField = value;
             }
         }
     }
