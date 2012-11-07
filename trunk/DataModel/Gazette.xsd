@@ -506,6 +506,15 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="GazetteElectionResult">
+    <xs:complexContent>
+      <xs:extension base="t:GazetteOperationBase">
+        <xs:attribute name="electionType" type="t:ElectionType" use="required" />
+        <xs:attribute name="date" type="xs:date" use="required" />
+        <xs:attribute name="constituency" type="xs:integer" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:complexType name="GazetteMention">
     <xs:complexContent>
@@ -559,6 +568,7 @@
       <xs:element name="mention" type="t:GazetteMention" />
       <xs:element name="constituency" type="t:GazetteConstituency" />
       <xs:element name="councilsize" type="t:GazetteCouncilSize" />
+      <xs:element name="electionresult" type="t:GazetteElectionResult" />
       <xs:element name="capital" type="t:GazetteCapital" />
       <xs:element name="official" type="t:GazetteOfficial" />
       <xs:element name="correction" type="t:GazetteCorrection" />
