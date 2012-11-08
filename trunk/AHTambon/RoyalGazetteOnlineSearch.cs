@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Collections.Specialized;
-using System.Net;
-using System.Web;
 using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Web;
 
 // Other interesting search string: เป็นเขตปฏิรูปที่ดิน (area of land reform) - contains maps with Tambon boundaries
 
@@ -14,6 +14,7 @@ namespace De.AHoerstemeier.Tambon
     public class RoyalGazetteOnlineSearch
     {
         #region variables
+
         private const String _searchFormUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search.jsp";
         private const String _searchPostUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_load_adv.jsp";
         private const String _searchPageUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_page_load.jsp";
@@ -25,9 +26,13 @@ namespace De.AHoerstemeier.Tambon
         private String _searchKey = String.Empty;
         private Int32 _volume = 0;
         private Int32 _numberOfPages = 0;
-        #endregion
+
+        #endregion variables
+
         public event RoyalGazetteProcessingFinishedHandler ProcessingFinished;
+
         #region consts
+
         private static Dictionary<EntityModification, String> EntityModificationText = new Dictionary<EntityModification, String>
         {
             {EntityModification.Abolishment,"Abolish of {0}"},
@@ -37,6 +42,7 @@ namespace De.AHoerstemeier.Tambon
             {EntityModification.StatusChange,"Change of status of {0}"},
             {EntityModification.Constituency,"Constituencies of {0}"}
         };
+
         public static Dictionary<EntityModification, Dictionary<EntityType, String>> SearchKeys = new Dictionary<EntityModification, Dictionary<EntityType, String>>
         {
             {
@@ -107,8 +113,8 @@ namespace De.AHoerstemeier.Tambon
                      {EntityType.Thesaban,"การแบ่งเขตเลือกตั้งสมาชิกสภาเทศบาล หรือ เปลี่ยนแปลงแก้ไขเขตเลือกตั้งสมาชิกสภาเทศบาล"}
                  }
              }
-
         };
+
         public static Dictionary<EntityModification, Dictionary<ProtectedAreaTypes, String>> SearchKeysProtectedAreas = new Dictionary<EntityModification, Dictionary<ProtectedAreaTypes, String>>
         {
             {
@@ -135,15 +141,21 @@ namespace De.AHoerstemeier.Tambon
                     {ProtectedAreaTypes.WildlifeSanctuary,"เปลี่ยนแปลงเขตรักษาพันธุ์สัตว์ป่า"},
                     {ProtectedAreaTypes.HistoricalSite,"แก้ไขเขตที่ดินโบราณสถาน"}
                 }
-            }    
+            }
         };
-        #endregion
+
+        #endregion consts
+
         #region constructor
+
         public RoyalGazetteOnlineSearch()
         {
         }
-        #endregion
+
+        #endregion constructor
+
         #region methods
+
         private void PerformRequest()
         {
             StringBuilder requestString = new StringBuilder();
@@ -227,6 +239,7 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
         private Stream DoDataDownload(Int32 page)
         {
             WebClient client = new WebClient();
@@ -251,15 +264,16 @@ namespace De.AHoerstemeier.Tambon
             System.IO.Stream lStream = client.OpenRead(_dataUrl);
             return lStream;
         }
+
         private void PerformRequestPage(Int32 page)
         {
-
             StringBuilder requestString = new StringBuilder();
             //lRequestString.Append("hidlowerindex=1");
             //lRequestString.Append("hidupperindex=100");
             requestString.Append("txtNowpage=" + page.ToString());
             _dataUrl = GetDataUrl(page, requestString.ToString());
         }
+
         private string MyUrlEncode(String value)
         {
             var lByteArray = TambonHelper.ThaiEncoding.GetBytes(value);
@@ -269,6 +283,7 @@ namespace De.AHoerstemeier.Tambon
 
         private const string EntryStart = "        <td width=\"50\" align=\"center\" nowrap class=\"row4\">";
         private const string PageStart = "onkeypress=\"EnterPage()\"> จากทั้งหมด";
+
         private RoyalGazetteList DoParseStream(Stream data)
         {
             var reader = new System.IO.StreamReader(data, TambonHelper.ThaiEncoding);
@@ -276,6 +291,7 @@ namespace De.AHoerstemeier.Tambon
             result.AddRange(DoParse(reader));
             return result;
         }
+
         private RoyalGazetteList DoParse(TextReader reader)
         {
             RoyalGazetteList result = new RoyalGazetteList();
@@ -326,6 +342,7 @@ namespace De.AHoerstemeier.Tambon
         private const string ColumnEnd = "</td>";
         private const string EntryTitle = "menubar=no,location=no,scrollbars=auto,resizable');\"-->";
         private const string EntryTitleEnd = "</a></td>";
+
         private RoyalGazette ParseSingeItem(String value)
         {
             value = value.Replace("\t", "");
@@ -361,6 +378,13 @@ namespace De.AHoerstemeier.Tambon
                 position2 = value.IndexOf(ColumnEnd, position);
                 string page = value.Substring(position, position2 - position);
                 retval.PageInfo.Page = Convert.ToInt32(TambonHelper.ReplaceThaiNumerals(page));
+
+                if ( retval.Title.Contains('[') && retval.Title.EndsWith("]") )
+                {
+                    var beginSubTitle = retval.Title.LastIndexOf('[');
+                    retval.SubTitle = retval.Title.Substring(beginSubTitle + 1, retval.Title.Length - beginSubTitle - 2).Trim();
+                    retval.Title = retval.Title.Substring(0, beginSubTitle - 1).Trim();
+                }
             }
             return retval;
         }
@@ -394,6 +418,7 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
         protected RoyalGazetteList GetListDescription(String searchKey, Int32 volume, String description)
         {
             RoyalGazetteList result = DoGetList(searchKey, volume);
@@ -406,6 +431,7 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
         public RoyalGazetteList SearchNews(DateTime date)
         {
             RoyalGazetteList result = new RoyalGazetteList();
@@ -413,6 +439,7 @@ namespace De.AHoerstemeier.Tambon
             result.SortByPublicationDate();
             return result;
         }
+
         public RoyalGazetteList SearchNewsRange(DateTime beginDate, DateTime endDate)
         {
             RoyalGazetteList result = new RoyalGazetteList();
@@ -442,6 +469,7 @@ namespace De.AHoerstemeier.Tambon
             result.SortByPublicationDate();
             return result;
         }
+
         public RoyalGazetteList SearchNewsProtectedAreas(DateTime beginDate, DateTime endDate, IEnumerable<ProtectedAreaTypes> values)
         {
             RoyalGazetteList result = new RoyalGazetteList();
@@ -468,6 +496,7 @@ namespace De.AHoerstemeier.Tambon
             result.SortByPublicationDate();
             return result;
         }
+
         public RoyalGazetteList SearchNewsRangeAdministrative(DateTime beginDate, DateTime endDate, IEnumerable<EntityType> types, IEnumerable<EntityModification> modifications)
         {
             RoyalGazetteList result = new RoyalGazetteList();
@@ -496,6 +525,7 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
         public RoyalGazetteList SearchString(DateTime beginDate, DateTime endDate, String searchKey)
         {
             RoyalGazetteList result = new RoyalGazetteList();
@@ -516,14 +546,16 @@ namespace De.AHoerstemeier.Tambon
 
         private String ModificationText(EntityModification modification, EntityType entityType)
         {
-            String result = String.Format(EntityModificationText[modification],entityType);
+            String result = String.Format(EntityModificationText[modification], entityType);
             return result;
         }
+
         private String ModificationText(EntityModification modification, ProtectedAreaTypes protectedAreaType)
         {
-            String result = String.Format(EntityModificationText[modification],protectedAreaType);
+            String result = String.Format(EntityModificationText[modification], protectedAreaType);
             return result;
         }
+
         public void SearchNewsNow()
         {
             RoyalGazetteList gazetteList = SearchNews(DateTime.Now);
@@ -544,6 +576,6 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        #endregion
+        #endregion methods
     }
 }
