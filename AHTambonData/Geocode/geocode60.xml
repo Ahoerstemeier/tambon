@@ -627,7 +627,21 @@
           <geo:long>100.6501</geo:long>
         </geo:Point>
         <url>http://www.nongbua.go.th/</url>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="38" />
+        </council>
       </office>
+
+      <entity type="Muban" geocode="60040101" name="บ้านมาบตะคร้อ" english="Ban Map Takhro" />
+      <entity type="Muban" geocode="60040102" name="บ้านเนินน้ำเย็น" english="Ban Noen Nam Yen" />
+      <entity type="Muban" geocode="60040103" name="บ้านกุฏิฤๅษี" english="Ban Ku Ti Ruesi" />
+
+      <entity type="Muban" geocode="60040107" name="บ้านโคกมะขามหวาน" english="Ban Khok Makham Wan" />
+      <entity type="Muban" geocode="60040108" name="บ้านโคกมะตูม" english="Ban Khok Mathum" />
+      <entity type="Muban" geocode="60040109" name="บ้านคลองมะรื่น" english="Ban Khlong Ma Ruen" />
+
+      <entity type="Muban" geocode="60040114" name="บ้านทุ่งท้ายเนิน" english="Ban Thung Thai Noen" />
+
       <entity type="Muban" geocode="60040117" name="บ้านโคกเจริญ" english="Ban Khok Charoen" />
 
       <entity type="Muban" geocode="60040120" name="บ้านสามพันไร่" english="Ban Sam Phan Rai" />
@@ -635,6 +649,9 @@
     <entity type="Tambon" name="หนองกลับ" english="Nong Klap" geocode="600402">
       <office type="TAOOffice">
         <url>http://www.localthai.org/nongklub/</url>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28" />
+        </council>
       </office>
       <entity type="Muban" geocode="60040201" name="บ้านไร่โพธิ์ทอง" english="Ban Rai Pho Thong" />
       <entity type="Muban" geocode="60040202" name="บ้านหนองกลับ" english="Ban Nong Klap" />
@@ -652,6 +669,11 @@
       <entity type="Muban" geocode="60040214" name="บ้านเขาเล็บงา" english="Ban Khao Lep Nga" />
     </entity>
     <entity type="Tambon" name="ธารทหาร" english="Than Thahan" geocode="600403">
+      <office type="TAOOffice">
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="18" />
+        </council>
+      </office>
       <entity type="Muban" geocode="60040303" name="บ้านธารทหาร" english="Ban Than Thahan" />
 
       <entity type="Muban" geocode="60040309" name="บ้านห้วยด้วนพัฒนา" english="Ban Huai Duan Phatthana" />
@@ -671,10 +693,19 @@
       </office>
     </entity>
     <entity type="Tambon" name="ห้วยใหญ่" english="Huai Yai" geocode="600407" />
-    <entity type="Tambon" name="ทุ่งทอง" english="Thung Thong" geocode="600408" />
+    <entity type="Tambon" name="ทุ่งทอง" english="Thung Thong" geocode="600408">
+      <office type="TAOOffice">
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28" />
+        </council>
+      </office>
+    </entity>
     <entity type="Tambon" name="วังบ่อ" english="Wang Bo" geocode="600409">
       <office type="TAOOffice">
         <url>http://www.tambonwangbo.com/</url>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" />
+        </council>
       </office>
       <entity type="Muban" geocode="60040901" name="บ้านเขานางต่วม" english="Ban Khao Nang Tuam" />
 
@@ -1935,8 +1966,14 @@
   </entity>
   <entity type="ThesabanTambon" name="หนองบัว" english="Nong Bua" geocode="6092" parent="6004">
     <office type="MunicipalityOffice">
-      <url>http://www.nongbuamuni.go.th/</url>
+      <symbols>
+        <vision>
+          ประชาชนในเขตเทศบาล ต้องได้รับการบริการที่ดีเลิศ ภายใต้ระบบราชการยุคใหม่ สาธารณูปโภคคลอบคลุม  แหล่งน้ำกินน้ำใช้พอเพียง ในเมืองที่น่าอยู่ คนมีความสุข
+        </vision>
+      </symbols>
+      <url lastchecked="2012-11-08">http://www.nongbuamuni.go.th/</url>
       <officials>
+        <!-- election 2012-11-03 -->
         <official title="Mayor" name="รังสิมันตุ์ ปอพานิชกรณ์" inoffice="2010" />
       </officials>
     </office>
@@ -1968,10 +2005,10 @@
       </symbols>
       <url lastchecked="2012-11-07">http://www.cksm.go.th/</url>
       <officials>
-        <official title="Mayor" name="ธัสสร์อร สกลวิทยานนท์" inoffice="2012" comment="Begin 2010-12-26?"/>
+        <official title="Mayor" name="ธัสสร์อร สกลวิทยานนท์" inoffice="2012" comment="Begin 2010-12-26?" />
       </officials>
       <council>
-        <term begin="2012-12-26" type="ThesabanTambon" size="12"/>
+        <term begin="2012-12-26" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
