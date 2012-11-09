@@ -1044,8 +1044,7 @@
       <entity type="Muban" geocode="47110212" name="บ้านกลาง" english="Ban Klang" />
     </entity>
     <entity type="Tambon" name="วาใหญ่" english="Wa Yai" geocode="471103">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-24 -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>17.6312</geo:lat>
           <geo:long>103.9488</geo:long>
@@ -1057,6 +1056,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="1" number="45" date="2012-07-09" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="47110301" name="บ้านกุดจอกน้อย" english="Ban Kut Chok Noi" />
       <entity type="Muban" geocode="47110302" name="บ้านวาใหญ่" english="Ban Wa Yai" />
