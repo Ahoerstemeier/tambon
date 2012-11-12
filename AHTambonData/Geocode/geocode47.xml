@@ -416,8 +416,7 @@
       </officials>
     </office>
     <entity type="Tambon" name="พังโคน" english="Phang Khon" geocode="470501">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>17.3645</geo:lat>
           <geo:long>103.7089</geo:long>
@@ -430,9 +429,12 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
         </council>
         <history>
-          <rename oldname="พังโคน" oldenglish="Phang Khon" name="พังโคนศรีจำปา" english="Phang Khon Si Cham Pa">
+          <rename oldname="พังโคน" oldenglish="Phang Khon" name="พังโคนศรีจำปา" english="Phang Khon Si Champa" effective="2012-08-24">
             <meetingreference date="2012-08-09" number="4" board="rename" />
           </rename>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="2" number="56" date="2012-08-07" />
+          </statuschange>
         </history>
       </office>
     </entity>
@@ -604,7 +606,7 @@
       </office>
     </entity>
     <entity type="Tambon" name="หนองสนม" english="Nong Sanom" geocode="470804">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url status="expired">http://www.nongsanom.ob.tc/</url>
         <officials>
           <official title="TAOMayor" name="เชียง ผายเงิน" begin="2008-08-24" end="2012-08-23" />
@@ -612,6 +614,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="42" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="2" number="50" date="2012-07-17" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="47080401" name="บ้านบะนกทา" english="Ban Ba Nok Tha" />
       <entity type="Muban" geocode="47080402" name="บ้านตาดโตน" english="Ban Tat Ton" />
