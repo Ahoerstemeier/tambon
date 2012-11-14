@@ -93,6 +93,7 @@
         <official title="PAOCouncilChairman" name="สมชาติ ประดิษฐพร" />
         <election type="PAOCouncil" date="2008-04-20" />
       </term>
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="30" />
     </council>
   </office>
   <history>
@@ -840,10 +841,14 @@
       <slogan>น้ำทะเลสวย หาดทรายขาว มะพร้าวเยอะ</slogan>
     </symbols>
     <office type="DistrictOffice">
+      <symbols>
+        <vision>เกาะสมุยเป็นเมืองท่องเที่ยวและธุรกิจท่องเที่ยวระดับโลก อุดมอาหารทะเลสู่ครัวโลก ชุมชนเกษตรพึ่งตนเอง ยั่งยืนทรัพยากรธรรมชาติ ศูนย์รวมการบริหารจัดการภาครัฐที่มีคุณภาพสู่การเป็นเมืองน่าอยู่ในภูมิภาค</vision>
+      </symbols>
       <geo:Point>
         <geo:lat>9.5365</geo:lat>
         <geo:long>99.9363</geo:long>
       </geo:Point>
+      <url lastchecked="2012-11-14">http://www.kohsamuidistrict.go.th/</url>
       <officials>
         <official title="DistrictOfficer" name="ประเสริฐ จิตมุ่ง" begin="2011-05-02" beginreason="Appointed" />
         <official title="DistrictOfficer" name="ศักดิ์ชัย จ.ผลิต" begin="2008-11-24" end="2011-01-23" beginreason="Appointed" endreason="Transfer" />
@@ -852,13 +857,59 @@
         <official title="DistrictOfficer" name="ธีระยุทธ เอี่ยมตระกูล" begin="2004-11-01" end="2005-12-18" beginreason="Appointed" endreason="Transfer" />
       </officials>
     </office>
-    <entity type="Tambon" name="อ่างทอง" english="Ang Thong" geocode="840401" />
-    <entity type="Tambon" name="ลิปะน้อย" english="Lipa Noi" geocode="840402" />
-    <entity type="Tambon" name="ตลิ่งงาม" english="Taling Ngam" geocode="840403" />
-    <entity type="Tambon" name="หน้าเมือง" english="Na Mueang" geocode="840404" />
-    <entity type="Tambon" name="มะเร็ต" english="Maret" geocode="840405" />
-    <entity type="Tambon" name="บ่อผุด" english="Bo Phut" geocode="840406" />
-    <entity type="Tambon" name="แม่น้ำ" english="Mae Nam" geocode="840407" />
+    <entity type="Tambon" name="อ่างทอง" english="Ang Thong" geocode="840401">
+      <entity type="Muban" geocode="84040101" name="บ้านแหลมดิน" english="Ban Laem Din" />
+      <entity type="Muban" geocode="84040102" name="บ้านหินลาด" english="Ban Hin Lat" />
+      <entity type="Muban" geocode="84040103" name="บ้านหน้าทอน" english="Ban Nathon" />
+      <entity type="Muban" geocode="84040104" name="บ้านตะเคียน" english="Ban Takhian" />
+      <entity type="Muban" geocode="84040105" name="บ้านบางมะขาม" english="Ban Bang Makham" />
+      <entity type="Muban" geocode="84040106" name="บ้านเกาะพลวย" english="Ban Ko Phluai" />
+    </entity>
+    <entity type="Tambon" name="ลิปะน้อย" english="Lipa Noi" geocode="840402">
+      <entity type="Muban" geocode="84040201" name="บ้านตรอกพันรา" english="Ban Trok Phan Ra" />
+      <entity type="Muban" geocode="84040202" name="บ้านทุ่ง" english="Ban Thung" />
+      <entity type="Muban" geocode="84040203" name="บ้านลิปะน้อย" english="Ban Lipa Noi" />
+      <entity type="Muban" geocode="84040204" name="บ้านในบ้าน" english="Ban Nai Ban" />
+      <entity type="Muban" geocode="84040205" name="บ้านสระเกศ" english="Ban Sa Ket" />
+    </entity>
+    <entity type="Tambon" name="ตลิ่งงาม" english="Taling Ngam" geocode="840403">
+      <entity type="Muban" geocode="84040301" name="บ้านสระเกศ" english="Ban Sa Ket" />
+      <entity type="Muban" geocode="84040302" name="บ้านเกาะแตน" english="Ban Ko Ten" />
+      <entity type="Muban" geocode="84040303" name="บ้านตลิ่งงาม" english="Ban Taling Ngam" />
+      <entity type="Muban" geocode="84040304" name="บ้านท้องโตนด" english="Ban Thong Tanot" />
+      <entity type="Muban" geocode="84040305" name="บ้านท้องกรูด" english="Ban Thong Krut" />
+    </entity>
+    <entity type="Tambon" name="หน้าเมือง" english="Na Mueang" geocode="840404">
+      <entity type="Muban" geocode="84040401" name="บ้านหัวเวียง" english="Ban Hua Wiang" />
+      <entity type="Muban" geocode="84040402" name="บ้านสวนทุเรียน" english="Ban Suan Thurian" />
+      <entity type="Muban" geocode="84040403" name="บ้านทะเล" english="Ban Thale" />
+      <entity type="Muban" geocode="84040404" name="บ้านแหลมสอ" english="Ban Laem So" />
+      <entity type="Muban" geocode="84040405" name="บ้านตะพ้อ" english="Ban Tapho" />
+    </entity>
+    <entity type="Tambon" name="มะเร็ต" english="Maret" geocode="840405">
+      <entity type="Muban" geocode="84040501" name="บ้านหัวถนน" english="Ban Hua Thanon" />
+      <entity type="Muban" geocode="84040502" name="บ้านหาญ" english="Ban Han" />
+      <entity type="Muban" geocode="84040503" name="บ้านทุ่ง" english="Ban Thung" />
+      <entity type="Muban" geocode="84040504" name="บ้านละไม" english="Ban Lamai" />
+      <entity type="Muban" geocode="84040505" name="บ้านมะเร็ต" english="Ban Maret" />
+      <entity type="Muban" geocode="84040506" name="บ้านตีนท่า" english="Ban Tin Tha" />
+    </entity>
+    <entity type="Tambon" name="บ่อผุด" english="Bo Phut" geocode="840406">
+      <entity type="Muban" geocode="84040601" name="บ้านบ่อผุด" english="Ban Bo Phut" />
+      <entity type="Muban" geocode="84040602" name="บ้านเฉวงน้อย" english="Ban Chaweng Noi" />
+      <entity type="Muban" geocode="84040603" name="บ้านเกาะฟาน" english="Ban Ko Fan" />
+      <entity type="Muban" geocode="84040604" name="บ้านบางรักษ์" english="Ban Bang Rak" />
+      <entity type="Muban" geocode="84040605" name="บ้านปลายแหลม" english="Ban Plai Laem" />
+      <entity type="Muban" geocode="84040606" name="บ้านเฉวงใหญ่" english="Ban Chaweng Yai" />
+    </entity>
+    <entity type="Tambon" name="แม่น้ำ" english="Mae Nam" geocode="840407">
+      <entity type="Muban" geocode="84040701" name="บ้านแม่น้ำ" english="Ban Mae Nam" />
+      <entity type="Muban" geocode="84040702" name="บ้านเขาแพง" english="Ban Khao Phaeng" />
+      <entity type="Muban" geocode="84040703" name="บ้านทุ่ง" english="Ban Thung" />
+      <entity type="Muban" geocode="84040704" name="บ้านดอนทราย" english="Ban Don Sai" />
+      <entity type="Muban" geocode="84040705" name="บ้านใต้" english="Ban Tai" />
+      <entity type="Muban" geocode="84040706" name="บ้านบางปอ" english="Ban Bang Po" />
+    </entity>
   </entity>
   <entity type="Amphoe" name="เกาะพะงัน" english="Ko Pha-ngan" geocode="8405">
     <symbols>
@@ -3740,7 +3791,7 @@
       <url>http://www.nasancity.org/</url>
       <officials>
         <official title="Mayor" index="21" name="โกศล ศุทธางกรู" begin="2008-05-11" end="2012-05-10" />
-        <official title="Mayor" index="20" name="โกศล ศุทธางกรู" begin="2004-04-04" end="2008-04-04" />
+        <official title="Mayor" index="20" name="โกศล ศุทธางกรู" begin="2004-04-04" end="2008-04-03" />
         <official title="Mayor" index="19" name="สุวรรณ เจนนพกาญจน์" begin="1999-03-29" end="2003-12-24" comment="In DOPA Excel sheet spelled สุพรรณ เจนนพกาญจน์" />
         <official title="Mayor" index="18" name="สุวรรณ เจนนพกาญจน์" begin="1998-10-18" end="1999-03-28" comment="In DOPA Excel sheet spelled สุพรรณ เจนนพกาญจน์" />
         <official title="Mayor" index="17" name="สวัสดิ์ เกษกล้า" begin="1998-09-16" end="1998-12-11" />
@@ -3767,6 +3818,7 @@
       </officials>
       <council>
         <term begin="2008-05-11" end="2012-05-10" type="ThesabanMueang" size="18" />
+        <term begin="2004-04-04" end="2008-04-03" type="ThesabanMueang" size="18" />
       </council>
     </office>
     <entity type="Chumchon" geocode="84980001" name="ชุมชนคลองฉวาง" english="Chumchon Khlong Chawang" />
@@ -3912,27 +3964,33 @@
     <entity type="Chumchon" geocode="84940010" name="ชุมชนบางน้ำจืด" english="Chumchon Bang Nam Chuet" />
     <entity type="Chumchon" geocode="84940011" name="ชุมชนก้าวเจริญ" english="Chumchon Kao Charoen" />
   </entity>
-  <entity type="ThesabanMueang" name="เกาะสมุย" english="Ko Samui" geocode="8493" parent="8404">
+  <entity type="ThesabanNakhon" name="เกาะสมุย" english="Ko Samui" geocode="8493" parent="8404">
     <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>9.5167</geo:lat>
         <geo:long>99.9438</geo:long>
       </geo:Point>
       <url lastchecked="2012-08-23">http://www.kohsamuicity.go.th/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/kohsamuicity</facebook>
+      </socialweb>
       <officials>
         <official title="Mayor" name="รามเนตร ใจกว้าง" english="Ramnet Jaikwang" begin="2008-09-14" end="2012-09-13" />
-        <official title="Mayor" name="วรากรณ์ รัตนรักษ์" english="Varakorn Rattanarak" endyear="2008" />
-
-        <official title="Mayor" name="เชวงศักดิ์ ธรรมทีปกุล" inoffice="2003" />
+        <official title="Mayor" name="วรากรณ์ รัตนรักษ์" english="Varakorn Rattanarak" begin="2004-04-18" end="2008-04-17" />
+        <official title="Mayor" name="เชวงศักดิ์ ธรรมทีปกุล" inoffice="2003" endyear="2004" />
       </officials>
       <council>
         <term begin="2008-09-14" end="2012-09-13" type="ThesabanMueang" size="18" />
+        <term begin="2004-04-18" end="2008-04-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <history>
-      <statuschange old="ThesabanMueang" new="ThesabanNakhon" effective="2012-09-14" />
+      <statuschange old="ThesabanMueang" new="ThesabanNakhon" effective="2012-09-14">
+        <meetingreference board="2" number="51" date="2012-07-18" />
+      </statuschange>
       <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2008-06-09">
         <gazetteref volume="127" page="15" issue="พิเศษ 116 ง" date="2010-10-04" />
+        <meetingreference board="2" number="21" date="2008-03-14" />
       </statuschange>
       <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1999-05-25">
         <gazetteref volume="116" issue="9 ก" page="1" date="1999-02-24" />
@@ -3980,6 +4038,7 @@
       <council>
         <term begin="2012-04-21" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -3995,12 +4054,12 @@
       <url lastchecked="2012-01-30">http://www.phumriang.go.th/</url>
       <officials>
         <official title="Mayor" name="ถาวร ถาวรสุข" begin="2008-10-12" end="2012-10-11" />
-        <official title="Mayor" name="สกล รุ่งโรจน์วรารักษ์" endyear="2008" />
-
-        <official title="Mayor" name="สกล รุ่งโรจน์วรารักษ์" inoffice="2003" />
+        <official title="Mayor" name="สกล รุ่งโรจน์วรารักษ์" begin="2004-09-05" end="2008-09-04" />
+        <official title="Mayor" name="สกล รุ่งโรจน์วรารักษ์" inoffice="2003" endyear="2004" />
       </officials>
       <council>
         <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
+        <term begin="2004-09-05" end="2008-09-04" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <!-- numbers to be confirmed -->
@@ -4026,12 +4085,12 @@
       <url lastchecked="2012-01-30">http://www.thachanacity.go.th/</url>
       <officials>
         <official title="Mayor" name="ณัฐธัญ รัศมี" begin="2008-03-09" end="2012-03-08" />
-        <official title="Mayor" name="สนอง แดงบุญ" endyear="2008" />
-
-        <official title="Mayor" name="เกษม รอดเกิด" inoffice="2003" />
+        <official title="Mayor" name="สนอง แดงบุญ" begin="2004-02-01" end="2008-01-31" />
+        <official title="Mayor" name="เกษม รอดเกิด" inoffice="2003" endyear="2004" />
       </officials>
       <council>
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4061,12 +4120,12 @@
       <url status="obsolete">http://www.nmt.or.th/surat/banchiaolan/</url>
       <officials>
         <official title="Mayor" name="เชาวลิตร ช่วยสงค์" begin="2008-07-19" end="2012-07-18" />
-        <official title="Mayor" name="เชาวลิตร ช่วยสงค์" beginyear="2004" endyear="2008" />
-
-        <official title="Mayor" name="สมเกียรติ ศรีเทพ" inoffice="2003" />
+        <official title="Mayor" name="เชาวลิตร ช่วยสงค์" begin="2004-06-06" end="2008-06-05" />
+        <official title="Mayor" name="สมเกียรติ ศรีเทพ" inoffice="2003" endyear="2004" />
       </officials>
       <council>
         <term begin="2008-07-19" end="2012-07-18" type="ThesabanTambon" size="12" />
+        <term begin="2004-06-06" end="2008-06-05" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <history>
@@ -4081,12 +4140,12 @@
       <url>http://www.bantakhuncity.go.th/</url>
       <officials>
         <official title="Mayor" name="สุรวุฒิ ทองพัฒน์" begin="2008-05-25" end="2012-05-24" />
-        <official title="Mayor" name="ฉลอง วิเชียรแก้ว" endyear="2008" />
-
-        <official title="Mayor" name="สุจินต์ ศรีสวัสดิ์" inoffice="2003" />
+        <official title="Mayor" name="ฉลอง วิเชียรแก้ว" begin="2004-04-18" end="2008-04-17" />
+        <official title="Mayor" name="สุจินต์ ศรีสวัสดิ์" inoffice="2003" endyear="2004" />
       </officials>
       <council>
         <term begin="2008-05-25" end="2012-05-24" type="ThesabanTambon" size="12" />
+        <term begin="2004-04-18" end="2008-04-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <history>
@@ -4117,13 +4176,13 @@
           </election>
         </official>
         <official title="Mayor" name="ปราโมทย์ ชูเพชร" begin="2008-03-09" end="2012-03-08" />
-        <official title="Mayor" name="บำรุง ครรชิต" endyear="2008" />
-
-        <official title="Mayor" name="บำรุง ครรชิต" inoffice="2003" />
+        <official title="Mayor" name="บำรุง ครรชิต" begin="2004-02-01" end="2008-01-31" />
+        <official title="Mayor" name="บำรุง ครรชิต" inoffice="2003" endyear="2004" />
       </officials>
       <council>
         <term begin="2012-04-21" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4143,13 +4202,13 @@
           </election>
         </official>
         <official title="Mayor" name="สมศักดิ์ รักเขียว" begin="2008-03-09" end="2012-03-08" endreason="EndOfTerm" />
-        <official title="Mayor" name="สมศักดิ์ รักเขียว" endyear="2008" />
-
-        <official title="Mayor" name="สมศักดิ์ รักเขียว" inoffice="2003" />
+        <official title="Mayor" name="สมศักดิ์ รักเขียว" begin="2004-02-01" end="2008-01-31" />
+        <official title="Mayor" name="สมศักดิ์ รักเขียว" inoffice="2003" endyear="2004" />
       </officials>
       <council>
         <term begin="2012-04-21" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <entity type="Chumchon" geocode="84840001" name="ชุมชนตลาด" english="Chumchon Talat" />
@@ -4186,13 +4245,13 @@
       </geo:Point>
       <url lastchecked="2012-01-30">http://www.kiansacity.go.th/</url>
       <officials>
-        <official title="Mayor" name="โกวิช แสงตะวันวงศ์" begin="2008-04-20" end="2012-04-11" comment="SuratNews says election was 2012-04-20 contradicting with ECT state end of term is 2012-04-11, also spelled โกวิท แสงตะวันวงศ์" />
-        <official title="Mayor" name="อรรถชัย จินดา" endyear="2008" />
-
-        <official title="Mayor" name="วินัย ฮั่นสกุล" inoffice="2003" />
+        <official title="Mayor" name="โกวิช แสงตะวันวงศ์" begin="2008-04-12" end="2012-04-11" comment="SuratNews says election was 2012-04-20 contradicting with ECT state end of term is 2012-04-11, also spelled โกวิท แสงตะวันวงศ์" />
+        <official title="Mayor" name="อรรถชัย จินดา" begin="2004-03-06" end="2008-03-05" />
+        <official title="Mayor" name="วินัย ฮั่นสกุล" inoffice="2003" endyear="2004" />
       </officials>
       <council>
         <term begin="2008-04-12" end="2012-04-11" type="ThesabanTambon" size="12" />
+        <term begin="2004-03-06" end="2008-03-05" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <entity type="Chumchon" geocode="84820001" name="ชุมชนในบ้าน" english="Chumchon Nai Ban" />
@@ -4245,12 +4304,12 @@
       <url status="offline">http://www.yandindang.org/</url>
       <officials>
         <official title="Mayor" name="พิจิตร ศรีทองศม" begin="2008-05-04" end="2008-05-03" />
-        <official title="Mayor" name="ยุทธพงษ์ สุวรรณเมนะ" endyear="2008" />
-
-        <official title="Mayor" name="ทวี พรมด้วง" inoffice="2003" />
+        <official title="Mayor" name="ยุทธพงษ์ สุวรรณเมนะ" begin="2004-03-28" end="2008-03-27" />
+        <official title="Mayor" name="ทวี พรมด้วง" inoffice="2003" endyear="2004" />
       </officials>
       <council>
-        <term begin="2012-05-04" end="2012-05-03" type="ThesabanTambon" size="12" />
+        <term begin="2008-05-04" end="2012-05-03" type="ThesabanTambon" size="12" />
+        <term begin="2004-03-28" end="2008-03-27" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4262,10 +4321,11 @@
       <url lastchecked="2012-02-02">http://www.bansong.go.th/</url>
       <officials>
         <official title="Mayor" name="คนองศิลป์ ชิตรกุล" begin="2008-11-23" end="2012-11-22" />
-        <official title="Mayor" name="มนูญ อุปลา" endyear="2008" />
+        <official title="Mayor" name="มนูญ อุปลา" begin="2004-10-17" end="2008-10-16" />
       </officials>
       <council>
         <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
+        <term begin="2004-10-17" end="2008-10-16" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4292,7 +4352,7 @@
           </election>
         </official>
         <official title="Mayor" name="ธงชัย พริกแก้ว" begin="2008-11-23" end="2012-01-04" beginreason="ElectedDirectly" endreason="Death" comment="Assassinated" />
-        <official title="Mayor" name="สุชาญ ทวิชสังข์" beginyear="2004" endyear="2008" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="สุชาญ ทวิชสังข์" begin="2004-10-17" end="2008-10-16" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         <official title="TAOMayor" name="สุชาญ ทวิชสังข์" endyear="2004" />
         <official title="TAOChairman" name="นิพนธ์ สรการ" beginyear="1996" />
         <reference>
@@ -4300,7 +4360,8 @@
         </reference>
       </officials>
       <council>
-        <term begin="2012-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
+        <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
+        <term begin="2004-10-17" end="2008-10-16" type="ThesabanTambon" size="12" />
       </council>
       <oldlocations comment="new building built around 2005">
         <geo:Point>
@@ -4368,10 +4429,11 @@
       <url lastchecked="2012-02-02">http://www.khaoniphan.go.th/</url>
       <officials>
         <official title="Mayor" name="พรรณเลิศ ชูช่วยสุวรรณ" begin="2008-11-23" end="2012-11-22" />
-        <official title="Mayor" name="โชคดี ละม้าย" endyear="2008" />
+        <official title="Mayor" name="โชคดี ละม้าย" begin="2004-10-17" end="2008-10-16" />
       </officials>
       <council>
         <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
+        <term begin="2004-10-17" end="2008-10-16" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
