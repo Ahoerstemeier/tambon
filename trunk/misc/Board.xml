@@ -70,10 +70,10 @@
 -->
 <boardmeetings xmlns="http://hoerstemeier.com/tambon/">
   <year value="2012">
-    <boardmeeting board="2" number="68" date="2012-10-30" url="http://www.law.moi.go.th/pdf/2555_10_30(68).pdf">
-      <!-- ToDo: Blog -->
-      <status old="ThesabanTambon" new="ThesabanMueang" name="บางระจัน" english="Bang Rachan" geocode="1798" />
-      <status old="ThesabanTambon" new="ThesabanMueang" name="ลำตาเสา" english="Lam Ta Sao" geocode="1479" />
+
+    <boardmeeting board="2" number="68" date="2012-10-30" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555_10_30(68).pdf">
+      <status old="ThesabanTambon" new="ThesabanMueang" name="บางระจัน" english="Bang Rachan" geocode="1798" effective="2013-03-08" />
+      <status old="ThesabanTambon" new="ThesabanMueang" name="ลำตาเสา" english="Lam Ta Sao" geocode="1479" effective="2012-03-28" />
     </boardmeeting>
     <boardmeeting board="2" number="67" date="2012-10-24" url="http://www.law.moi.go.th/pdf/2555_10_24(67).pdf">
       <!-- ToDo: Blog -->
@@ -81,8 +81,7 @@
       <areachange type="TAO" name="ไทรน้อย" english="Sai Noi" tambon="120501" />
       <areachange type="ThesabanTambon" name="ไทรน้อย" english="Sai Noi" geocode="1291" />
     </boardmeeting>
-    <boardmeeting board="2" number="66" date="2012-10-17" url="http://www.law.moi.go.th/pdf/2555-10-17(66).pdf">
-      <!-- ToDo: Blog -->
+    <boardmeeting board="2" number="66" date="2012-10-17" time="09:00:00+13:30" url="http://www.law.moi.go.th/pdf/2555-10-17(66).pdf">
       <status old="TAO" new="ThesabanTambon" name="ขุนแก้ว" english="Khun Kaeo" tambon="730307" />
     </boardmeeting>
     <boardmeeting board="2" number="65" date="2012-10-16" url="http://www.law.moi.go.th/pdf/2555-10-16(65).pdf">
@@ -130,215 +129,219 @@
       <status old="TAO" new="ThesabanTambon" name="หนองแวงแก้มหอม" english="Nong Waeng Kaem Thom" tambon="410801" effective="2012-10-05" />
     </boardmeeting>
 
-    <boardmeeting board="1" number="55" date="2012-08-27" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_08_27_55_%20N.pdf">
-      <areachange type="TAO" name="ป่าก่อดำ" english="Pa Ko Dam" tambon="571604" />
-      <areachange type="ThesabanTambon" name="ป่าก่อดำ" english="Pa Ko Dam" geocode="5777" />
-      <status old="TAO" new="ThesabanMueang" name="แจระแม" english="Chaeramae" tambon="340109" />
-    </boardmeeting>
-    <boardmeeting board="2" number="58" date="2012-08-21" url="http://www.law.moi.go.th/pdf/2555-08-21-58%20_C_.pdf">
-      <!-- ToDo: Blog -->
-      <status old="TAO" new="ThesabanTambon" name="บึงเนียม" english="Bueng Niam" tambon="400117" />
-      <status old="TAO" new="ThesabanTambon" name="ร่องจิก" english="Rong Chik" tambon="420703" />
-      <status old="TAO" new="ThesabanTambon" name="แสลงพัน" english="Salaeng Phan" tambon="191201" />
-      <status old="TAO" new="ThesabanTambon" name="โดด" english="Dot" tambon="332101" />
-      <status old="TAO" new="ThesabanTambon" name="พุดซา" english="Phutsa" tambon="300114" />
-      <status old="TAO" new="ThesabanTambon" name="พลับพลา" english="Phlapphla" tambon="220111" />
-    </boardmeeting>
-    <boardmeeting board="2" number="57" date="2012-08-08" url="http://www.law.moi.go.th/pdf/2555-08-08-57_y_.pdf">
-      <!-- ToDo: Blog -->
-      <status old="TAO" new="ThesabanTambon" name="หน้าสตน" english="Na Saton" tambon="801602" />
-      <status old="TAO" new="ThesabanTambon" name="หัวถนน" english="Hua Thanon" tambon="200610" />
-      <status old="TAO" new="ThesabanTambon" name="ดงแคนใหญ่" english="Dong Khaen Yai" tambon="350407" />
-      <status old="TAO" new="ThesabanTambon" name="บ้านเสด็จ" english="Ban Sadet" tambon="841405" />
-      <status old="TAO" new="ThesabanTambon" name="หนองเลิง" english="Nong Loeng" tambon="380105" />
-    </boardmeeting>
-    <boardmeeting board="2" number="56" date="2012-08-07" url="http://www.law.moi.go.th/pdf/2555-08-07-56%20_C_.pdf">
-      <!-- ToDo: Blog -->
-      <rename type="TAO" oldname="พังโคน" oldenglish="Phang Khon" name="พังโคนศรีจำปา" english="Phang Khon Si Cham Pa" tambon="470501" />
-      <status old="TAO" new="ThesabanTambon" name="พังโคนศรีจำปา" english="Phang Khon Si Cham Pa" tambon="470501" />
+    <month value="2012-08">
+      <boardmeeting board="1" number="55" date="2012-08-27" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_08_27_55_%20N.pdf">
+        <areachange type="TAO" name="ป่าก่อดำ" english="Pa Ko Dam" tambon="571604" />
+        <areachange type="ThesabanTambon" name="ป่าก่อดำ" english="Pa Ko Dam" geocode="5777" />
+        <status old="TAO" new="ThesabanMueang" name="แจระแม" english="Chaeramae" tambon="340109" />
+      </boardmeeting>
+      <boardmeeting board="2" number="58" date="2012-08-21" url="http://www.law.moi.go.th/pdf/2555-08-21-58%20_C_.pdf">
+        <!-- ToDo: Blog -->
+        <status old="TAO" new="ThesabanTambon" name="บึงเนียม" english="Bueng Niam" tambon="400117" />
+        <status old="TAO" new="ThesabanTambon" name="ร่องจิก" english="Rong Chik" tambon="420703" />
+        <status old="TAO" new="ThesabanTambon" name="แสลงพัน" english="Salaeng Phan" tambon="191201" />
+        <status old="TAO" new="ThesabanTambon" name="โดด" english="Dot" tambon="332101" />
+        <status old="TAO" new="ThesabanTambon" name="พุดซา" english="Phutsa" tambon="300114" />
+        <status old="TAO" new="ThesabanTambon" name="พลับพลา" english="Phlapphla" tambon="220111" />
+      </boardmeeting>
+      <boardmeeting board="2" number="57" date="2012-08-08" url="http://www.law.moi.go.th/pdf/2555-08-08-57_y_.pdf">
+        <!-- ToDo: Blog -->
+        <status old="TAO" new="ThesabanTambon" name="หน้าสตน" english="Na Saton" tambon="801602" />
+        <status old="TAO" new="ThesabanTambon" name="หัวถนน" english="Hua Thanon" tambon="200610" />
+        <status old="TAO" new="ThesabanTambon" name="ดงแคนใหญ่" english="Dong Khaen Yai" tambon="350407" />
+        <status old="TAO" new="ThesabanTambon" name="บ้านเสด็จ" english="Ban Sadet" tambon="841405" />
+        <status old="TAO" new="ThesabanTambon" name="หนองเลิง" english="Nong Loeng" tambon="380105" />
+      </boardmeeting>
+      <boardmeeting board="2" number="56" date="2012-08-07" url="http://www.law.moi.go.th/pdf/2555-08-07-56%20_C_.pdf">
+        <!-- ToDo: Blog -->
+        <rename type="TAO" oldname="พังโคน" oldenglish="Phang Khon" name="พังโคนศรีจำปา" english="Phang Khon Si Cham Pa" tambon="470501" />
+        <status old="TAO" new="ThesabanTambon" name="พังโคนศรีจำปา" english="Phang Khon Si Cham Pa" tambon="470501" />
 
-      <rename type="TAO" oldname="บางขนาก" oldenglish="Bang Khanak" name="คลองแสนแสบ" english="Khlong Saen Suk" tambon="240302" />
-      <status old="TAO" new="ThesabanTambon" name="คลองแสนแสบ" english="Khlong Saen Suk" tambon="240302" />
+        <rename type="TAO" oldname="บางขนาก" oldenglish="Bang Khanak" name="คลองแสนแสบ" english="Khlong Saen Suk" tambon="240302" />
+        <status old="TAO" new="ThesabanTambon" name="คลองแสนแสบ" english="Khlong Saen Suk" tambon="240302" />
 
-      <rename type="TAO" oldname="เชียงเพ็ง" oldenglish="Chiang Pheng" name="ยางชุม" english="Yang Chum" tambon="410204" />
-      <status old="TAO" new="ThesabanTambon" name="ยางชุม" english="Yang Chum" tambon="410204" />
+        <rename type="TAO" oldname="เชียงเพ็ง" oldenglish="Chiang Pheng" name="ยางชุม" english="Yang Chum" tambon="410204" />
+        <status old="TAO" new="ThesabanTambon" name="ยางชุม" english="Yang Chum" tambon="410204" />
 
-      <rename type="TAO" oldname="บ้านค่าย" oldenglish="Ban Khai" name="บ้านค่ายพัฒนา" english="Ban Khai Phatthana" tambon="210501" />
-      <status old="TAO" new="ThesabanTambon" name="บ้านค่ายพัฒนา" english="Ban Khai Phatthana" tambon="210501" />
+        <rename type="TAO" oldname="บ้านค่าย" oldenglish="Ban Khai" name="บ้านค่ายพัฒนา" english="Ban Khai Phatthana" tambon="210501" />
+        <status old="TAO" new="ThesabanTambon" name="บ้านค่ายพัฒนา" english="Ban Khai Phatthana" tambon="210501" />
 
-      <rename type="TAO" oldname="ปาดังเบซาร์" oldenglish="Padang Besa" name="ปาดัง" english="Padang" tambon="901007" />
-      <status old="TAO" new="ThesabanTambon" name="ปาดัง" english="Padang" tambon="901007" />
-    </boardmeeting>
-    <boardmeeting board="2" number="55" date="2012-08-01" url="http://www.law.moi.go.th/pdf/2555-08-01-55%20_C_.pdf">
-      <!-- ToDo: Blog -->
-      <status old="TAO" new="ThesabanTambon" name="นาหนองไผ่" english="Na Nong Phai" tambon="320202" />
-      <status old="TAO" new="ThesabanTambon" name="แม่นะ" english="Mae Na" tambon="500404" />
-      <status old="TAO" new="ThesabanTambon" name="นาโพธิ์" english="Na Pho" tambon="341004" />
-      <status old="TAO" new="ThesabanTambon" name="ธารเกษม" english="Than Kasem" tambon="190903" />
-    </boardmeeting>
+        <rename type="TAO" oldname="ปาดังเบซาร์" oldenglish="Padang Besa" name="ปาดัง" english="Padang" tambon="901007" />
+        <status old="TAO" new="ThesabanTambon" name="ปาดัง" english="Padang" tambon="901007" />
+      </boardmeeting>
+      <boardmeeting board="2" number="55" date="2012-08-01" url="http://www.law.moi.go.th/pdf/2555-08-01-55%20_C_.pdf">
+        <!-- ToDo: Blog -->
+        <status old="TAO" new="ThesabanTambon" name="นาหนองไผ่" english="Na Nong Phai" tambon="320202" />
+        <status old="TAO" new="ThesabanTambon" name="แม่นะ" english="Mae Na" tambon="500404" />
+        <status old="TAO" new="ThesabanTambon" name="นาโพธิ์" english="Na Pho" tambon="341004" />
+        <status old="TAO" new="ThesabanTambon" name="ธารเกษม" english="Than Kasem" tambon="190903" />
+      </boardmeeting>
+    </month>
+    <month value="2012-07">
+      <boardmeeting board="2" number="54" date="2012-07-31" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-31-54 _C_.pdf">
+        <status old="TAO" new="ThesabanTambon" name="สำราญ" english="Samran" tambon="350104" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="นาทับ" english="Na Thap" tambon="900306" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ชากบก" english="Chak Bok" tambon="210507" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="บ้านเต่า" english="Ban Tao" tambon="361104" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="ชลบถวิบูลย์" english="Chonnabot Wibun" tambon="401801" effective="2012-08-24" />
+      </boardmeeting>
+      <boardmeeting board="1" number="49" date="2012-07-23" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_07_23_49_ N.pdf">
+        <status old="TAO" new="ThesabanTambon" name="สวนหลวง" english="Suan Luang" tambon="750302" />
+        <status old="TAO" new="ThesabanTambon" name="โพธิ์ทอง" english="Pho Thong" tambon="450706" />
+      </boardmeeting>
+      <boardmeeting board="2" number="51" date="2012-07-18" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-18-51 _C_.pdf">
+        <status old="ThesabanMueang" new="ThesabanNakhon" name="เกาะสมุย" english="Ko Samui" geocode="8493" effective="2012-09-16" />
+        <status old="TAO" new="ThesabanTambon" name="ปะแต" english="Pa Tae" tambon="950503" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="นาสาร" english="Na San" tambon="802002" effective="2012-09-06" />
+        <status old="TAO" new="ThesabanTambon" name="กำพวน" english="Kamphuan" tambon="850502" />
+      </boardmeeting>
+      <boardmeeting board="2" number="50" date="2012-07-17" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-17-50_k_.pdf">
+        <status old="TAO" new="ThesabanTambon" name="ห้วยทราย" english="Huai Sai" tambon="501311" effective="2012-11-01" />
+        <status old="TAO" new="ThesabanTambon" name="คลองตาคต" english="Khlong Ta Khot" tambon="700705" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="หนองสนม" english="Nong Sanom" tambon="470804" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="สันกลาง" english="San Klang" tambon="501313" effective="2012-08-24" />
+      </boardmeeting>
+      <boardmeeting board="1" number="47" date="2012-07-16" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_07_16_47_ N.pdf">
+        <status old="TAO" new="ThesabanTambon" name="บะยาว" english="Ba Yao" tambon="411003" />
+        <status old="TAO" new="ThesabanTambon" name="ป่าคลอก" english="Pa Khlok" tambon="830304" />
+      </boardmeeting>
+      <boardmeeting board="2" number="48" date="2012-07-10" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-10-48 _C_.pdf">
+        <status old="TAO" new="ThesabanTambon" name="แม่ไร่" english="Mae Rai" tambon="570710" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="นาเหรง" english="Na Reng" tambon="802104" effective="2012-09-07" />
+        <status old="TAO" new="ThesabanTambon" name="ปะโค" english="Pa Kho" tambon="410202" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ธรรมามูล" english="Thammamun" tambon="180107" effective="2012-08-30" />
+        <status old="TAO" new="ThesabanTambon" name="พรุพี" english="Phru Phi" tambon="841202" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ท่าถ่าน" english="Tha Than" tambon="240606" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="สวาท" english="Sawat" tambon="350803" effective="2012-08-24" />
+      </boardmeeting>
+      <boardmeeting board="1" number="45" date="2012-07-09" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_07_09_45_ NN.pdf">
+        <status old="TAO" new="ThesabanTambon" name="วาใหญ่" english="Wa Yai" tambon="471103" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="ท่าช้าง" english="Tha Chang" tambon="343202" effective="2012-08-29" />
+      </boardmeeting>
+      <boardmeeting board="2" number="47" date="2012-07-04" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-04-47_k_.pdf">
+        <!-- ToDo Blog! -->
+        <status old="TAO" new="ThesabanTambon" name="แม่แรม" english="Mae Raem" tambon="500707" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="น้ำคำใหญ่" english="Nam Kham Yai" tambon="350102" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="เหล่าเสือโก้ก" english="Lao Suea Kok" tambon="343101" effective="2012-08-30" />
+        <status old="TAO" new="ThesabanTambon" name="เขาคอก" english="Khao Khok" tambon="310715" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="หนองปลาไหล" english="Nong Pla Lai" tambon="200403" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="หนองใหญ่" english="Nong Yai" tambon="461206" effective="2008-08-30" />
+      </boardmeeting>
+      <boardmeeting board="2" number="46" date="2012-07-03" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-03-46 _C_.pdf">
+        <!-- ToDo Blog! -->
+        <rename type="TAO" oldname="สำโรงพลับ" oldenglish="Samrong Phlap" name="สำโรงพลัน" english="Samrong Phlan" tambon="330604">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="สำโรงพลัน" english="Samrong Phlan" tambon="330604" />
+        <rename type="TAO" oldname="เกาะพะงัน" oldenglish="Ko Pha-ngan" name="เพชรพะงัน" english="Phet Pha-ngan" tambon="840501">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="เพชรพะงัน" english="Phet Pha-ngan" tambon="840501" />
+        <rename type="TAO" oldname="ทุ่งยั้ง" oldenglish="Thung Yang" name="พระเสด็จ" english="Phra Sadet" tambon="530807">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="พระเสด็จ" english="Phra Sadet" tambon="530807" />
+        <rename type="TAO" oldname="บ้านฝาง" oldenglish="Ban Fang" name="แก่นฝาง" english="Kaen Fang" tambon="400206">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="แก่นฝาง" english="Kaen Fang" tambon="400206" />
+        <rename type="TAO" oldname="คลองพน" oldenglish="Khlong Phon" name="คลองพนพัฒนา" english="Khlong Phon Phatthana" tambon="810403">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="คลองพนพัฒนา" english="Khlong Phon Phatthana" tambon="810403" />
+        <rename type="TAO" oldname="บางกะจะ" oldenglish="Bang Kacha" name="ค่ายเนินวง" english="Khai Noen Wong" tambon="220108">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="ค่ายเนินวง" english="Khai Noen Wong" tambon="220108" />
+        <rename type="TAO" oldname="สตึก" oldenglish="Satuek" name="ศรีสตึก" english="Si Satuek" tambon="311101">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="ศรีสตึก" english="Si Satuek" tambon="311101" />
+        <rename type="TAO" oldname="เชียงกลม" oldenglish="Chiang Klom" name="คอนสา" english="Khon Sa" tambon="420402">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="คอนสา" english="Khon Sa" tambon="420402" />
+        <rename type="TAO" oldname="นาโพธิ์" oldenglish="Na Pho" name="นาโพธิ์พัฒนา" english="Na Pho Phatthana">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="นาโพธิ์พัฒนา" english="Na Pho Phatthana" tambon="860701" />
+        <rename type="TAO" oldname="ชนบท" oldenglish="Chonnabot" name="ชลบถวิบูลย์" english="Chonnabot Wibun" tambon="401801">
+          <meetingreference  date="2012-06-26" number="3" board="rename" />
+        </rename>
+        <status old="TAO" new="ThesabanTambon" name="ชนบท" english="Chonnabot" tambon="401801" />
+      </boardmeeting>
+      <boardmeeting board="1" number="43" date="2012-07-02" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_07_02_43_ N.pdf">
+        <areachange type="TAO" name="บ้านผือ" english="Ban Phue" tambon="411701" />
+        <areachange type="ThesabanTambon" name="บ้านผือ" english="Ban Phue" geocode="4174" />
 
-    <boardmeeting board="2" number="54" date="2012-07-31" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-31-54 _C_.pdf">
-      <status old="TAO" new="ThesabanTambon" name="สำราญ" english="Samran" tambon="350104" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="นาทับ" english="Na Thap" tambon="900306" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ชากบก" english="Chak Bok" tambon="210507" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="บ้านเต่า" english="Ban Tao" tambon="361104" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="ชลบถวิบูลย์" english="Chonnabot Wibun" tambon="401801" effective="2012-08-24" />
-    </boardmeeting>
-    <boardmeeting board="1" number="49" date="2012-07-23" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_07_23_49_ N.pdf">
-      <status old="TAO" new="ThesabanTambon" name="สวนหลวง" english="Suan Luang" tambon="750302" />
-      <status old="TAO" new="ThesabanTambon" name="โพธิ์ทอง" english="Pho Thong" tambon="450706" />
-    </boardmeeting>
-    <boardmeeting board="2" number="51" date="2012-07-18" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-18-51 _C_.pdf">
-      <status old="ThesabanMueang" new="ThesabanNakhon" name="เกาะสมุย" english="Ko Samui" geocode="8493" effective="2012-09-16" />
-      <status old="TAO" new="ThesabanTambon" name="ปะแต" english="Pa Tae" tambon="950503" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="นาสาร" english="Na San" tambon="802002" effective="2012-09-06" />
-      <status old="TAO" new="ThesabanTambon" name="กำพวน" english="Kamphuan" tambon="850502" />
-    </boardmeeting>
-    <boardmeeting board="2" number="50" date="2012-07-17" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-17-50_k_.pdf">
-      <status old="TAO" new="ThesabanTambon" name="ห้วยทราย" english="Huai Sai" tambon="501311" effective="2012-11-01" />
-      <status old="TAO" new="ThesabanTambon" name="คลองตาคต" english="Khlong Ta Khot" tambon="700705" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="หนองสนม" english="Nong Sanom" tambon="470804" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="สันกลาง" english="San Klang" tambon="501313" effective="2012-08-24" />
-    </boardmeeting>
-    <boardmeeting board="1" number="47" date="2012-07-16" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_07_16_47_ N.pdf">
-      <status old="TAO" new="ThesabanTambon" name="บะยาว" english="Ba Yao" tambon="411003" />
-      <status old="TAO" new="ThesabanTambon" name="ป่าคลอก" english="Pa Khlok" tambon="830304" />
-    </boardmeeting>
-    <boardmeeting board="2" number="48" date="2012-07-10" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-10-48 _C_.pdf">
-      <status old="TAO" new="ThesabanTambon" name="แม่ไร่" english="Mae Rai" tambon="570710" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="นาเหรง" english="Na Reng" tambon="802104" effective="2012-09-07" />
-      <status old="TAO" new="ThesabanTambon" name="ปะโค" english="Pa Kho" tambon="410202" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ธรรมามูล" english="Thammamun" tambon="180107" effective="2012-08-30" />
-      <status old="TAO" new="ThesabanTambon" name="พรุพี" english="Phru Phi" tambon="841202" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ท่าถ่าน" english="Tha Than" tambon="240606" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="สวาท" english="Sawat" tambon="350803" effective="2012-08-24" />
-    </boardmeeting>
-    <boardmeeting board="1" number="45" date="2012-07-09" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_07_09_45_ NN.pdf">
-      <status old="TAO" new="ThesabanTambon" name="วาใหญ่" english="Wa Yai" tambon="471103" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="ท่าช้าง" english="Tha Chang" tambon="343202" effective="2012-08-29" />
-    </boardmeeting>
-    <boardmeeting board="2" number="47" date="2012-07-04" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-04-47_k_.pdf">
-      <!-- ToDo Blog! -->
-      <status old="TAO" new="ThesabanTambon" name="แม่แรม" english="Mae Raem" tambon="500707" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="น้ำคำใหญ่" english="Nam Kham Yai" tambon="350102" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="เหล่าเสือโก้ก" english="Lao Suea Kok" tambon="343101" effective="2012-08-30" />
-      <status old="TAO" new="ThesabanTambon" name="เขาคอก" english="Khao Khok" tambon="310715" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="หนองปลาไหล" english="Nong Pla Lai" tambon="200403" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="หนองใหญ่" english="Nong Yai" tambon="461206" effective="2008-08-30" />
-    </boardmeeting>
-    <boardmeeting board="2" number="46" date="2012-07-03" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-07-03-46 _C_.pdf">
-      <!-- ToDo Blog! -->
-      <rename type="TAO" oldname="สำโรงพลับ" oldenglish="Samrong Phlap" name="สำโรงพลัน" english="Samrong Phlan" tambon="330604">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="สำโรงพลัน" english="Samrong Phlan" tambon="330604" />
-      <rename type="TAO" oldname="เกาะพะงัน" oldenglish="Ko Pha-ngan" name="เพชรพะงัน" english="Phet Pha-ngan" tambon="840501">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="เพชรพะงัน" english="Phet Pha-ngan" tambon="840501" />
-      <rename type="TAO" oldname="ทุ่งยั้ง" oldenglish="Thung Yang" name="พระเสด็จ" english="Phra Sadet" tambon="530807">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="พระเสด็จ" english="Phra Sadet" tambon="530807" />
-      <rename type="TAO" oldname="บ้านฝาง" oldenglish="Ban Fang" name="แก่นฝาง" english="Kaen Fang" tambon="400206">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="แก่นฝาง" english="Kaen Fang" tambon="400206" />
-      <rename type="TAO" oldname="คลองพน" oldenglish="Khlong Phon" name="คลองพนพัฒนา" english="Khlong Phon Phatthana" tambon="810403">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="คลองพนพัฒนา" english="Khlong Phon Phatthana" tambon="810403" />
-      <rename type="TAO" oldname="บางกะจะ" oldenglish="Bang Kacha" name="ค่ายเนินวง" english="Khai Noen Wong" tambon="220108">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="ค่ายเนินวง" english="Khai Noen Wong" tambon="220108" />
-      <rename type="TAO" oldname="สตึก" oldenglish="Satuek" name="ศรีสตึก" english="Si Satuek" tambon="311101">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="ศรีสตึก" english="Si Satuek" tambon="311101" />
-      <rename type="TAO" oldname="เชียงกลม" oldenglish="Chiang Klom" name="คอนสา" english="Khon Sa" tambon="420402">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="คอนสา" english="Khon Sa" tambon="420402" />
-      <rename type="TAO" oldname="นาโพธิ์" oldenglish="Na Pho" name="นาโพธิ์พัฒนา" english="Na Pho Phatthana">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="นาโพธิ์พัฒนา" english="Na Pho Phatthana" tambon="860701" />
-      <rename type="TAO" oldname="ชนบท" oldenglish="Chonnabot" name="ชลบถวิบูลย์" english="Chonnabot Wibun" tambon="401801">
-        <meetingreference  date="2012-06-26" number="3" board="rename" />
-      </rename>
-      <status old="TAO" new="ThesabanTambon" name="ชนบท" english="Chonnabot" tambon="401801" />
-    </boardmeeting>
-    <boardmeeting board="1" number="43" date="2012-07-02" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_07_02_43_ N.pdf">
-      <areachange type="TAO" name="บ้านผือ" english="Ban Phue" tambon="411701" />
-      <areachange type="ThesabanTambon" name="บ้านผือ" english="Ban Phue" geocode="4174" />
+        <areachange type="TAO" name="น้ำสวย" english="Nam Suai" tambon="420110" />
+        <areachange type="ThesabanTambon" name="น้ำสวย" english="Nam Suai" geocode="4297" />
 
-      <areachange type="TAO" name="น้ำสวย" english="Nam Suai" tambon="420110" />
-      <areachange type="ThesabanTambon" name="น้ำสวย" english="Nam Suai" geocode="4297" />
-
-      <status old="TAO" new="ThesabanTambon" name="หนองขนาน" english="Nong Khanan" tambon="760123" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ท่าสาป" english="Tha Sap" tambon="950108" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="เกาะทวด" english="Ko Thuat" tambon="801206" effective="2012-09-07" />
-    </boardmeeting>
-
-    <boardmeeting board="2" number="45" date="2012-06-27" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-27-45_k_.pdf">
-      <status old="TAO" new="ThesabanTambon" name="พวา" english="Phawa" tambon="220804" effective="2012-08-26" />
-      <status old="TAO" new="ThesabanTambon" name="กองนาง" english="Kong Nang" tambon="430203" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ยุโป" english="Yupo" tambon="950103" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ดอนตรอ" english="Don Tro" tambon="802302" effective="2012-09-07" />
-      <status old="TAO" new="ThesabanTambon" name="หนองบัวสะอาด" english="Nong Bua Sa-at" tambon="301207" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="หลักช้าง" english="Lak Chang" tambon="802202" effective="2012-09-06" />
-      <status old="TAO" new="ThesabanTambon" name="วังตะกอ" english="Wang Tako" geocode="860412" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanMueang" name="ศิลา" english="Sila" tambon="400114" effective="2012-08-24" />
-    </boardmeeting>
-    <boardmeeting board="2" number="44" date="2012-06-26" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-26-44 _C_.pdf">
-      <status old="TAO" new="ThesabanTambon" name="เมืองเพีย" english="Mueang Phia" tambon="410206" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="กลางใหญ่" english="Klang Yai" tambon="411708" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="คำบง" english="Kham Bong" geocode="411704" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="หนองบัว" english="Nong Bua" tambon="400201" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="ขุนทะเล" english="Khun Thale" tambon="800305" effective="2012-09-07" />
-      <status old="TAO" new="ThesabanTambon" name="ตลาดแร้ง" english="Talat Raeng" tambon="360202" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="กุฎโง้ง" english="Kut Ngong" tambon="200609" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="สันมะเค็ด" english="San Makhet" tambon="570501" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="ท่าแค" english="Tha Khae" tambon="930108" effective="2012-08-31" />
-    </boardmeeting>
-    <boardmeeting board="1" number="41" date="2012-06-25" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_06_25_41_ N.pdf">
-      <status old="TAO" new="ThesabanTambon" name="คลองใหญ่" english="Khlong Yai" tambon="930403" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ธารน้ำทิพย์" english="Than Nam Thip" tambon="950205" effective="2012-08-31" />
-    </boardmeeting>
-    <boardmeeting board="2" number="43" date="2012-06-20" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-20-43_k_.pdf">
-      <status old="TAO" new="ThesabanTambon" name="พรุใน" english="Phru Nai" tambon="820203" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ปากปวน" english="Pak Puan" tambon="420905" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="สร่างโศก" english="Sang Sok" tambon="190603" effective="2012-09-07" />
-      <status old="TAO" new="ThesabanTambon" name="โพนสูง" english="Phon Sung" tambon="450304" />
-    </boardmeeting>
-    <boardmeeting board="2" number="42" date="2012-06-19" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-19-42 _C_.pdf">
-      <status old="TAO" new="ThesabanTambon" name="โพนแพง" english="Phon Phaeng" tambon="471102" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="การะเกด" english="Karaket" tambon="800611" effective="2012-09-06" />
-      <status old="TAO" new="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" tambon="300113" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="ดอนมนต์" english="Don Mon" tambon="311109" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="คึกคัก" english="Khuekkhak" tambon="820507" effective="2012-08-25" />
-      <status old="TAO" new="ThesabanTambon" name="ทุ่งรวงทอง" english="Thung Ruang Thong" tambon="560205" effective="2012-08-24" />
-    </boardmeeting>
-    <boardmeeting board="2" number="40" date="2012-06-12" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-12-40 _C_.pdf">
-      <status old="TAO" new="ThesabanTambon" name="นาเพียง" english="Na Phiang" tambon="400509" effective="2012-08-25" />
-      <status old="TAO" new="ThesabanTambon" name="บ้านโพธิ์" english="Ban Pho" tambon="300115" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="ทุ่งแต้" english="Thung Tae" tambon="350109" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="คลองยาง" english="Khlong Yang" tambon="640708" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="สะแก" english="Sakae" tambon="311112" effective="2012-08-24" />
-      <status old="TAO" new="ThesabanTambon" name="ท่าประจะ" english="Tha Pracha" tambon="800703" effective="2012-09-07" />
-      <status old="TAO" new="ThesabanTambon" name="ธาตุทอง" english="That Thong" tambon="361010" effective="2012-08-24" />
-    </boardmeeting>
-    <boardmeeting board="2" number="39" date="2012-06-06" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-06-39_k_.pdf">
-      <status old="ThesabanTambon" new="ThesabanMueang" name="ทับกวาง" english="Thap Kwang" geocode="1994" effective="2012-08-20" />
-      <status old="TAO" new="ThesabanMueang" name="ม่วงงาม" english="Muang Ngam" tambon="901511" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="ปาเสมัส" english="Pasemat" tambon="961002" effective="2012-08-30" />
-      <status old="TAO" new="ThesabanTambon" name="ทุ่งใหญ่" english="Thung Yai" tambon="410702" effective="2012-08-31" />
-      <status old="TAO" new="ThesabanTambon" name="สุรนารี" english="Suranari" tambon="300120" effective="2012-08-26" />
-    </boardmeeting>
+        <status old="TAO" new="ThesabanTambon" name="หนองขนาน" english="Nong Khanan" tambon="760123" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ท่าสาป" english="Tha Sap" tambon="950108" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="เกาะทวด" english="Ko Thuat" tambon="801206" effective="2012-09-07" />
+      </boardmeeting>
+    </month>
+    <month value="2012-06">
+      <boardmeeting board="2" number="45" date="2012-06-27" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-27-45_k_.pdf">
+        <status old="TAO" new="ThesabanTambon" name="พวา" english="Phawa" tambon="220804" effective="2012-08-26" />
+        <status old="TAO" new="ThesabanTambon" name="กองนาง" english="Kong Nang" tambon="430203" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ยุโป" english="Yupo" tambon="950103" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ดอนตรอ" english="Don Tro" tambon="802302" effective="2012-09-07" />
+        <status old="TAO" new="ThesabanTambon" name="หนองบัวสะอาด" english="Nong Bua Sa-at" tambon="301207" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="หลักช้าง" english="Lak Chang" tambon="802202" effective="2012-09-06" />
+        <status old="TAO" new="ThesabanTambon" name="วังตะกอ" english="Wang Tako" geocode="860412" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanMueang" name="ศิลา" english="Sila" tambon="400114" effective="2012-08-24" />
+      </boardmeeting>
+      <boardmeeting board="2" number="44" date="2012-06-26" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-26-44 _C_.pdf">
+        <status old="TAO" new="ThesabanTambon" name="เมืองเพีย" english="Mueang Phia" tambon="410206" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="กลางใหญ่" english="Klang Yai" tambon="411708" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="คำบง" english="Kham Bong" geocode="411704" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="หนองบัว" english="Nong Bua" tambon="400201" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="ขุนทะเล" english="Khun Thale" tambon="800305" effective="2012-09-07" />
+        <status old="TAO" new="ThesabanTambon" name="ตลาดแร้ง" english="Talat Raeng" tambon="360202" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="กุฎโง้ง" english="Kut Ngong" tambon="200609" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="สันมะเค็ด" english="San Makhet" tambon="570501" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="ท่าแค" english="Tha Khae" tambon="930108" effective="2012-08-31" />
+      </boardmeeting>
+      <boardmeeting board="1" number="41" date="2012-06-25" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_06_25_41_ N.pdf">
+        <status old="TAO" new="ThesabanTambon" name="คลองใหญ่" english="Khlong Yai" tambon="930403" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ธารน้ำทิพย์" english="Than Nam Thip" tambon="950205" effective="2012-08-31" />
+      </boardmeeting>
+      <boardmeeting board="2" number="43" date="2012-06-20" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-20-43_k_.pdf">
+        <status old="TAO" new="ThesabanTambon" name="พรุใน" english="Phru Nai" tambon="820203" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ปากปวน" english="Pak Puan" tambon="420905" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="สร่างโศก" english="Sang Sok" tambon="190603" effective="2012-09-07" />
+        <status old="TAO" new="ThesabanTambon" name="โพนสูง" english="Phon Sung" tambon="450304" />
+      </boardmeeting>
+      <boardmeeting board="2" number="42" date="2012-06-19" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-19-42 _C_.pdf">
+        <status old="TAO" new="ThesabanTambon" name="โพนแพง" english="Phon Phaeng" tambon="471102" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="การะเกด" english="Karaket" tambon="800611" effective="2012-09-06" />
+        <status old="TAO" new="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" tambon="300113" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="ดอนมนต์" english="Don Mon" tambon="311109" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="คึกคัก" english="Khuekkhak" tambon="820507" effective="2012-08-25" />
+        <status old="TAO" new="ThesabanTambon" name="ทุ่งรวงทอง" english="Thung Ruang Thong" tambon="560205" effective="2012-08-24" />
+      </boardmeeting>
+      <boardmeeting board="2" number="40" date="2012-06-12" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-12-40 _C_.pdf">
+        <status old="TAO" new="ThesabanTambon" name="นาเพียง" english="Na Phiang" tambon="400509" effective="2012-08-25" />
+        <status old="TAO" new="ThesabanTambon" name="บ้านโพธิ์" english="Ban Pho" tambon="300115" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="ทุ่งแต้" english="Thung Tae" tambon="350109" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="คลองยาง" english="Khlong Yang" tambon="640708" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="สะแก" english="Sakae" tambon="311112" effective="2012-08-24" />
+        <status old="TAO" new="ThesabanTambon" name="ท่าประจะ" english="Tha Pracha" tambon="800703" effective="2012-09-07" />
+        <status old="TAO" new="ThesabanTambon" name="ธาตุทอง" english="That Thong" tambon="361010" effective="2012-08-24" />
+      </boardmeeting>
+      <boardmeeting board="2" number="39" date="2012-06-06" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-06-06-39_k_.pdf">
+        <status old="ThesabanTambon" new="ThesabanMueang" name="ทับกวาง" english="Thap Kwang" geocode="1994" effective="2012-08-20" />
+        <status old="TAO" new="ThesabanMueang" name="ม่วงงาม" english="Muang Ngam" tambon="901511" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="ปาเสมัส" english="Pasemat" tambon="961002" effective="2012-08-30" />
+        <status old="TAO" new="ThesabanTambon" name="ทุ่งใหญ่" english="Thung Yai" tambon="410702" effective="2012-08-31" />
+        <status old="TAO" new="ThesabanTambon" name="สุรนารี" english="Suranari" tambon="300120" effective="2012-08-26" />
+      </boardmeeting>
+    </month>
 
     <boardmeeting board="2" number="37" date="2012-05-30" url="http://www.law.moi.go.th/pdf/2555-05-30(37).pdf">
-      <!-- no transcript, only TOC at website -->
+      <!-- ToDo: Blog -->
       <status old="TAO" new="ThesabanTambon" name="คอนสาย" english="Khon Sai" tambon="412404" />
       <status old="TAO" new="ThesabanTambon" name="ดงมูล" english="Dong Mun" tambon="461207" />
       <status old="TAO" new="ThesabanTambon" name="โนนชัยศรี" english="Non Chai Si" tambon="450707" />
@@ -346,7 +349,7 @@
       <status old="TAO" new="ThesabanTambon" name="เขาคีริส" english="Khao Khirit" tambon="620606" />
     </boardmeeting>
     <boardmeeting board="2" number="36" date="2012-05-29" url="http://www.law.moi.go.th/pdf/2555-05-29(36).pdf">
-      <!-- no transcript, only TOC at website -->
+      <!-- ToDo: Blog -->
       <status old="TAO" new="ThesabanTambon" name="ทุ่งหลวง" english="Thung Luang" tambon="451108" />
       <status old="TAO" new="ThesabanTambon" name="ศรีสมเด็จ" english="Si Somdet" tambon="451602" />
       <status old="TAO" new="ThesabanTambon" name="โยนก" english="Yonok" tambon="570806" />
@@ -407,7 +410,7 @@
     </boardmeeting>
 
     <boardmeeting board="2" number="20" date="2012-03-27" url="http://www.law.moi.go.th/pdf/2555-03-27(20).pdf">
-      <!-- no transcript, only TOC at website -->
+      <!-- ToDo: Blog -->
       <rename type="TAO" name="บึงงาม" english="Bueng Ngam" oldname="บึงโขงหลง" oldenglish="Bueng Khong Long" tambon="380601" />
       <status old="TAO" new="ThesabanTambon" name="บึงงาม" english="Bueng Ngam" tambon="380601" />
       <status old="TAO" new="ThesabanTambon" name="เชิงเนิน" english="Choeng Noen" tambon="210102" />
@@ -441,24 +444,24 @@
       <status old="TAO" new="ThesabanTambon" name="หย่วน" english="Yuan" tambon="560301" effective="2012-04-05" />
       <status old="TAO" new="ThesabanTambon" name="โคกกลาง" english="Khok Klang" tambon="370707" effective="2012-04-06" />
     </boardmeeting>
-
-    <boardmeeting board="1" number="14" date="2012-02-27" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_02_27_14_.pdf">
-      <status old="ThesabanTambon" new="ThesabanMueang" name="บัวขาว" english="Bua Khao" geocode="4690" />
-    </boardmeeting>
-    <boardmeeting board="2" number="11" date="2012-02-21" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-02-21-11%20(C).pdf">
-      <status old="ThesabanTambon" new="ThesabanMueang" name="ดอนสัก" english="Don Sak" geocode="8494" effective="2012-06-21" />
-      <status old="TAO" new="ThesabanMueang" name="อรัญญิก" english="Aranyik" tambon="650117" effective="2012-05-01" />
-    </boardmeeting>
-    <boardmeeting board="1" number="9" date="2012-02-06" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_02_06_09_ N.pdf">
-      <status old="TAO" new="ThesabanTambon" name="บ่อพลับ" english="Bo Phlap" tambon="730110" effective="2012-06-01" />
-      <rename type="TAO" oldname="หางดง" oldenglish="Hang Dong" name="แม่ท่าช้าง" english="Mae Tha Chang" effective="2012-04-06" />
-    </boardmeeting>
-    <boardmeeting board="1" number="8" date="2012-02-01" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_02_1_08_.pdf">
-      <status old="ThesabanTambon" new="ThesabanMueang" name="ผักไห่" english="Phak Hai" geocode="1483" effective="2012-03-09" />
-      <rename type="ThesabanTambon" name="กระนวน" english="Kranuan" oldname="หนองโก" oldenglish="Nong Ko" geocode="4082" effective="2012-03-09" />
-      <status old="ThesabanTambon" new="ThesabanMueang" name="กระนวน" english="Kranuan" geocode="4082" effective="2012-03-09" />
-    </boardmeeting>
-
+    <month value="2">
+      <boardmeeting board="1" number="14" date="2012-02-27" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_02_27_14_.pdf">
+        <status old="ThesabanTambon" new="ThesabanMueang" name="บัวขาว" english="Bua Khao" geocode="4690" />
+      </boardmeeting>
+      <boardmeeting board="2" number="11" date="2012-02-21" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/2555-02-21-11%20(C).pdf">
+        <status old="ThesabanTambon" new="ThesabanMueang" name="ดอนสัก" english="Don Sak" geocode="8494" effective="2012-06-21" />
+        <status old="TAO" new="ThesabanMueang" name="อรัญญิก" english="Aranyik" tambon="650117" effective="2012-05-01" />
+      </boardmeeting>
+      <boardmeeting board="1" number="9" date="2012-02-06" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_02_06_09_ N.pdf">
+        <status old="TAO" new="ThesabanTambon" name="บ่อพลับ" english="Bo Phlap" tambon="730110" effective="2012-06-01" />
+        <rename type="TAO" oldname="หางดง" oldenglish="Hang Dong" name="แม่ท่าช้าง" english="Mae Tha Chang" effective="2012-04-06" />
+      </boardmeeting>
+      <boardmeeting board="1" number="8" date="2012-02-01" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_02_1_08_.pdf">
+        <status old="ThesabanTambon" new="ThesabanMueang" name="ผักไห่" english="Phak Hai" geocode="1483" effective="2012-03-09" />
+        <rename type="ThesabanTambon" name="กระนวน" english="Kranuan" oldname="หนองโก" oldenglish="Nong Ko" geocode="4082" effective="2012-03-09" />
+        <status old="ThesabanTambon" new="ThesabanMueang" name="กระนวน" english="Kranuan" geocode="4082" effective="2012-03-09" />
+      </boardmeeting>
+    </month>
     <boardmeeting board="1" number="6" date="2012-01-23" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2555_01_23_06_ N.pdf">
       <status old="TAO" new="ThesabanTambon" name="สันผีเสื้อ" english="San Phi Suea" tambon="500116" effective="2012-04-06" />
       <status old="TAO" new="ThesabanTambon" name="ท่าสุด" english="Tha Sut" tambon="570121" effective="2012-04-08" />

@@ -4,10 +4,10 @@
   xmlns:t="http://hoerstemeier.com/tambon/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   targetNamespace="http://hoerstemeier.com/tambon/"
-  attributeFormDefault="unqualified" elementFormDefault="qualified" >
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
 
-  <xs:include schemaLocation="basictypes.xsd"/>
-  <xs:include schemaLocation="gazette.xsd"/>
+  <xs:include schemaLocation="basictypes.xsd" />
+  <xs:include schemaLocation="gazette.xsd" />
 
   <xs:simpleType name="BoardNumber">
     <xs:annotation>
@@ -59,13 +59,13 @@
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="BasicOperation">
-    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0"/>
-    <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" >
+    <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0" />
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="optional">
       <xs:annotation>
         <xs:documentation>Geocode of the entity.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:ThaiNameMandatory"/>
+    <xs:attributeGroup ref="t:ThaiNameMandatory" />
     <xs:attribute name="tambon" type="xs:unsignedInt" use="optional">
       <xs:annotation>
         <xs:documentation>Geocode of the corresponding tambon, used for TAO which have no geocode by themself.</xs:documentation>
@@ -146,40 +146,44 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:group name="EntryActionBoard" >
+  <xs:group name="EntryActionBoard">
     <xs:choice>
-      <xs:element name="status" type="t:StatusOperation"/>
-      <xs:element name="rename" type="t:RenameOperation"/>
-      <xs:element name="areachange" type="t:AreaOperation"/>
-      <xs:element name="abolish" type="t:AbolishOperation"/>
-      <xs:element name="related" type="t:GazetteRelated"/>
-      <xs:element name="renamewat" type="t:RenameWatOperation"/>
-      <xs:element name="create" type="t:CreateOperation"/>
+      <xs:element name="status" type="t:StatusOperation" />
+      <xs:element name="rename" type="t:RenameOperation" />
+      <xs:element name="areachange" type="t:AreaOperation" />
+      <xs:element name="abolish" type="t:AbolishOperation" />
+      <xs:element name="related" type="t:GazetteRelated" />
+      <xs:element name="renamewat" type="t:RenameWatOperation" />
+      <xs:element name="create" type="t:CreateOperation" />
     </xs:choice>
   </xs:group>
   <xs:complexType name='MeetingEntry'>
-    <xs:group ref="t:EntryActionBoard" maxOccurs="unbounded" minOccurs="0"/>
+    <xs:group ref="t:EntryActionBoard" maxOccurs="unbounded" minOccurs="0" />
     <xs:attribute name="number" type="xs:unsignedByte" use="optional" />
     <xs:attribute name="board" type="t:BoardNumber" use="required" />
     <xs:attribute name="date" type="xs:date" use="required" />
     <xs:attribute name="time" type="xs:time" use="optional" />
     <xs:attribute name="url" type="xs:anyURI" use="optional" />
   </xs:complexType>
-  <xs:complexType name='MeetingEntryContainer'>
+  <xs:complexType name='MeetingEntryContainerTop'>
+    <xs:choice maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="1" name="year" type="t:MeetingEntryContainerYear" />
+      <xs:element minOccurs="0" maxOccurs="1" name="boardmeeting" type="t:MeetingEntry" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name='MeetingEntryContainerYear'>
+    <xs:choice maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="1" name="month" type="t:MeetingEntryContainerMonth" />
+      <xs:element minOccurs="0" maxOccurs="1" name="boardmeeting" type="t:MeetingEntry" />
+    </xs:choice>
+    <xs:attribute name="value" type="xs:gYear" use="required" />
+  </xs:complexType>
+  <xs:complexType name='MeetingEntryContainerMonth'>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="boardmeeting" type="t:MeetingEntry"/>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="t:MeetingEntryContainer"/>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="boardmeeting" type="t:MeetingEntry" />
     </xs:sequence>
-    <xs:attribute name="value" type="xs:string" use="required" />
+    <xs:attribute name="value" type="xs:gYearMonth" use="required" />
   </xs:complexType>
 
-
-  <xs:element name="boardmeetings">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="unbounded" name="year" type="t:MeetingEntryContainer"/>
-      </xs:sequence>
-    </xs:complexType>
-
-  </xs:element>
+  <xs:element name="boardmeetings" type="t:MeetingEntryContainerTop" />
 </xs:schema>
