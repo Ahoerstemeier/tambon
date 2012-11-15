@@ -126,8 +126,7 @@
     <entity type="Tambon" name="ปทุม" english="Pathum" geocode="340107" />
     <entity type="Tambon" name="ขามใหญ่" english="Kham Yai" geocode="340108" />
     <entity type="Tambon" name="แจระแม" english="Chaeramae" geocode="340109">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanMueang -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>15.2762</geo:lat>
           <geo:long>104.8002</geo:long>
@@ -135,11 +134,16 @@
         <url lastchecked="2012-10-16">http://jaeramae.go.th/</url>
         <url status="expired">http://www.jaeramae.ob.tc/</url>
         <officials>
-          <official title="TAOMayor" name="อุทัยทิพย์ เปราะแดง" endyear="2012" />
+          <official title="TAOMayor" name="อุทัยทิพย์ เปราะแดง" begin="2008-08-30" endyear="2012" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="20" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanMueang" effective="2012-09-05">
+            <meetingreference board="1" number="55" date="2012-08-27" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="34010901" name="บ้านท่าบ่อใต้" english="Ban Tha Bo Tai" />
       <entity type="Muban" geocode="34010902" name="บ้านท่าบ่อเหนือ" english="Ban Tha Bo Nuea" />
