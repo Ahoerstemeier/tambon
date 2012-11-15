@@ -33,7 +33,7 @@
       <entry description="Constituencies of Thesaban Ko Samui, Surat Thani" title="ประกาศคณะกรรมการการเลือกตั้ง เรื่อง การแบ่งเขตเลือกตั้งสมาชิกสภาเทศบาลในจังหวัดสุราษฎร์ธานี" subtitle="เทศบาลนครเกาะสมุย อำเภอเกาะสมุย" volume="129" page="80" issue="106 ก" uri="2555/A/106/80.PDF" publication="2012-11-14" sign="2012-11-08" signedby="อภิชาติ สุขัคคานนท์" signedbyfunction="ElectionCommissionPresident">
         <constituency type="ThesabanNakhon" name="เกาะสมุย" english="Ko Samui" geocode="8493">
           <constituencies entity="8493">
-            <constituency index="1">
+            <constituency index="1" numberofseats="6">
               <includesub geocode="840401">
                 <include geocode="84040101" />
                 <include geocode="84040102" />
@@ -45,7 +45,7 @@
                 <include geocode="84040303" />
               </includesub>
             </constituency>
-            <constituency index="2">
+            <constituency index="2" numberofseats="6">
               <includesub geocode="840403">
                 <include geocode="84040302" />
                 <include geocode="84040304" />
@@ -54,7 +54,7 @@
               <include geocode="840404" />
               <include geocode="840405" />
             </constituency>
-            <constituency index="3">
+            <constituency index="3" numberofseats="6">
               <includesub geocode="840406">
                 <include geocode="84040602" />
                 <include geocode="84040603" />
@@ -63,7 +63,7 @@
                 <include geocode="84040606" />
               </includesub>
             </constituency>
-            <constituency index="4">
+            <constituency index="4" numberofseats="6">
               <includesub geocode="840406">
                 <include geocode="84040601" />
               </includesub>
@@ -4699,7 +4699,29 @@
         <constituency type="ThesabanTambon" name="ท่าลาน" english="Tha Lan" geocode="1988" />
       </entry>
       <entry description="Constituencies of Thesaban in Surat Thani" title="ประกาศคณะกรรมการการเลือกตั้ง เรื่อง การแบ่งเขตเลือกตั้งสมาชิกสภาเทศบาลในจังหวัดสุราษฎร์ธานี [เทศบาลตำบลเกาะสมุย อำเภอเกาะสมุย เทศบาลตำบลดอนสัก อำเภอดอนสัก เทศบาลตำบลเขาวง อำเภอบ้านตาขุน]" volume="121" page="37-39" issue="พิเศษ 11 ก" uri="0AA/00131155.PDF" publication="2004-03-22" sign="2004-02-11">
-        <constituency type="ThesabanTambon" geocode="8493" name="เกาะสมุย" english="Ko Samui" />
+        <constituency type="ThesabanTambon" geocode="8493" name="เกาะสมุย" english="Ko Samui">
+          <constituencies>
+            <constituency index="1" numberofseats="6">
+              <include geocode="840401" />
+              <include geocode="840402" />
+              <include geocode="840403" />
+              <includesub geocode="840404">
+                <include geocode="84040401" />
+                <include geocode="84040402" />
+                <include geocode="84040404" />
+                <include geocode="84040405" />
+              </includesub>
+            </constituency>
+            <constituency index="2" numberofseats="6">
+              <include geocode="840406" />
+              <include geocode="840407" />
+              <include geocode="840405" />
+              <includesub geocode="840404">
+                <include geocode="84040403" />
+              </includesub>
+            </constituency>
+          </constituencies>
+        </constituency>
         <constituency type="ThesabanTambon" name="ดอนสัก" english="Don Sak" geocode="8494" />
         <constituency type="ThesabanTambon" name="เขาวง" english="Khao Wong" geocode="8486" />
       </entry>
