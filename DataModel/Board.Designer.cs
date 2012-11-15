@@ -111,84 +111,35 @@ namespace De.AHoerstemeier.Tambon {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="boardmeetings", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class boardmeetings {
-        
-        private List<MeetingEntryContainer> yearField;
-        
-        /// <summary>
-        /// Creates a new instance of boardmeetings.
-        /// </summary>
-        public boardmeetings() {
-            this.yearField = new List<MeetingEntryContainer>();
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("year", Order=0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MeetingEntryContainer> year {
-            get {
-                return this.yearField;
-            }
-            set {
-                this.yearField = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MeetingEntryContainer", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class MeetingEntryContainer {
+    [System.Xml.Serialization.XmlRootAttribute("boardmeetings", Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MeetingEntryContainerTop", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class MeetingEntryContainerTop {
         
-        private List<MeetingEntry> boardmeetingField;
-        
-        private List<MeetingEntryContainer> yearField;
-        
-        private string valueField;
+        private List<object> itemsField;
         
         /// <summary>
-        /// Creates a new instance of MeetingEntryContainer.
+        /// Creates a new instance of MeetingEntryContainerTop.
         /// </summary>
-        public MeetingEntryContainer() {
-            this.yearField = new List<MeetingEntryContainer>();
-            this.boardmeetingField = new List<MeetingEntry>();
+        public MeetingEntryContainerTop() {
+            this.itemsField = new List<object>();
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("boardmeeting", Order=0)]
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("boardmeeting", typeof(MeetingEntry), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("year", typeof(MeetingEntryContainerYear), Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MeetingEntry> boardmeeting {
+        public List<object> Items {
             get {
-                return this.boardmeetingField;
+                return this.itemsField;
             }
             set {
-                this.boardmeetingField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("year", Order=1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MeetingEntryContainer> year {
-            get {
-                return this.yearField;
-            }
-            set {
-                this.yearField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string value {
-            get {
-                return this.valueField;
-            }
-            set {
-                this.valueField = value;
+                this.itemsField = value;
             }
         }
     }
@@ -422,8 +373,10 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=0)]
@@ -859,6 +812,97 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.oldenglishField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MeetingEntryContainerYear", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class MeetingEntryContainerYear {
+        
+        private List<object> itemsField;
+        
+        private string valueField;
+        
+        /// <summary>
+        /// Creates a new instance of MeetingEntryContainerYear.
+        /// </summary>
+        public MeetingEntryContainerYear() {
+            this.itemsField = new List<object>();
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("boardmeeting", typeof(MeetingEntry), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("month", typeof(MeetingEntryContainerMonth), Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MeetingEntryContainerMonth", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class MeetingEntryContainerMonth {
+        
+        private List<MeetingEntry> boardmeetingField;
+        
+        private string valueField;
+        
+        /// <summary>
+        /// Creates a new instance of MeetingEntryContainerMonth.
+        /// </summary>
+        public MeetingEntryContainerMonth() {
+            this.boardmeetingField = new List<MeetingEntry>();
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("boardmeeting", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MeetingEntry> boardmeeting {
+            get {
+                return this.boardmeetingField;
+            }
+            set {
+                this.boardmeetingField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYearMonth")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
             }
         }
     }
