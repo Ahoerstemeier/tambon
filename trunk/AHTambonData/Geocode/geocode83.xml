@@ -79,6 +79,7 @@
     <council>
       <term begin="2012-08-26" type="PAO" size="24" />
       <term begin="2008-04-20" end="2012-04-19" type="PAO" size="24" />
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="24" />
     </council>
   </office>
   <entity type="Amphoe" name="เมืองภูเก็ต" english="Mueang Phuket" geocode="8301">
@@ -355,8 +356,7 @@
       <entity type="Muban" geocode="83030306" name="บ้านลายัน" english="Ban La Yan" />
     </entity>
     <entity type="Tambon" name="ป่าคลอก" english="Pa Khlok" geocode="830304">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>8.0121</geo:lat>
           <geo:long>98.3988</geo:long>
@@ -367,7 +367,13 @@
         </officials>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="1" number="47" date="2012-07-16" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="83030401" name="บ้านผักฉีด" english="Ban Phak Chit" />
       <entity type="Muban" geocode="83030402" name="บ้านป่าคลอก" english="Ban Pa Khlok" />
@@ -458,8 +464,9 @@
         <official title="Mayor" name="ภูมิศักดิ์ หงษ์หยก" inoffice="2004" />
       </officials>
       <council>
-        <term begin="2012-06-16" end="2016-06-15" type="ThesabanNakhon" size="24" />
+        <term begin="2012-06-16" type="ThesabanNakhon" size="24" />
         <term begin="2008-05-11" end="2012-05-10" type="ThesabanNakhon" size="24" />
+        <term begin="2004-04-04" end="2008-04-03" type="ThesabanMueang" size="18" />
       </council>
     </office>
     <!-- Chumchon numbers to be verified -->
@@ -496,7 +503,7 @@
       <officials>
         <official title="Mayor" name="เปี่ยน กี่สิ้น" english="Pian Keesin" begin="2012-09-02" beginreason="ElectedDirectly" />
         <official title="Mayor" name="เปี่ยน กี่สิ้น" english="Pian Keesin" begin="2008-07-27" end="2012-07-26" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        <official title="Mayor" name="เปี่ยน กี่สิ้น" english="Pian Keesin" begin="2004-06-21" end="2008-06-20" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="Mayor" name="เปี่ยน กี่สิ้น" english="Pian Keesin" begin="2004-06-20" end="2008-06-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         <official title="Mayor" name="เฉลิมศักดิ์ มณีศรี" english="Chalermsak Maneesri" beginyear="2002" endyear="2003" endreason="Removed" comment="Order to step down by court due to election fraud" />
         <official title="Mayor" name="สุรศักดิ์ มณีศรี" english="Surasak Maneesri" beginyear="2001" endyear="2002" endreason="Removed" />
         <official title="Mayor" index="1" name="เปี่ยน กี่สิ้น" english="Pian Keesin" beginyear="1995" endyear="2001" />
@@ -504,7 +511,7 @@
       <council>
         <term begin="2012-09-02" end="2016-09-01" type="ThesabanMueang" size="18" />
         <term begin="2008-07-27" end="2012-07-26" type="ThesabanMueang" size="18" />
-        <term begin="2004-06-21" end="2008-06-20" type="ThesabanMueang" size="18" />
+        <term begin="2004-06-20" end="2008-06-19" type="ThesabanMueang" size="18" />
       </council>
     </office>
     <entity type="Chumchon" geocode="83980001" name="ชุมชนชายวัด" english="Chumchon Chai Wat" />
@@ -542,6 +549,7 @@
       <council>
         <term begin="2012-07-15" end="2016-07-14" type="ThesabanTambon" size="12" />
         <term begin="2008-06-08" end="2012-06-07" type="ThesabanTambon" size="12" />
+        <term begin="2004-05-02" end="2008-05-01" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -556,14 +564,15 @@
       </geo:Point>
       <url lastchecked="2012-10-19">http://kathucity.go.th/</url>
       <officials>
-        <!-- election 2012-11-18 -->
+        <official title="Mayor" name="ชัยอนันท์ สุทธิกุล" english="Chaianan Sutthikul" begin="2012-11-18" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ชัยอนันท์ สุทธิกุล" english="Chaianan Sutthikul" begin="2008-10-12" end="2012-10-11" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-
-        <official title="Mayor" name="ประเสริฐ ขาวกิจไพศาล" english="Prasert Khaokijpaisarn" inoffice="2004" />
+        <official title="Mayor" name="ประเสริฐ ขาวกิจไพศาล" english="Prasert Khaokijpaisarn" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="Mayor" name="ประเสริฐ ขาวกิจไพศาล" english="Prasert Khaokijpaisarn" beginyear="2000" endyear="2004" />
       </officials>
       <council>
         <term begin="2012-11-18" type="ThesabanTambon" size="12" />
         <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
+        <term begin="2004-07-18" end="2008-07-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
