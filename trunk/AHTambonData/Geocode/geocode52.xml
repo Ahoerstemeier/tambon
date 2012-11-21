@@ -1230,8 +1230,7 @@
       <entity type="Muban" geocode="52100110" name="บ้านท่าแหนพัฒนา" english="Ban Tha Nae Phatthana" comment="Constituency เขตที่ 1" />
     </entity>
     <entity type="Tambon" name="นาครัว" english="Na Khrua" geocode="521002">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambonm -->
+      <office type="MunicipalityOffice">
         <url lastchecked="2012-10-30">http://nakrow.go.th/</url>
         <url status="expired">http://www.nakrow.com/</url>
         <officials>
@@ -1240,6 +1239,11 @@
         <council>
           <term begin="2008-10-26" end="2012-10-25" type="ThesabanTambon" size="12" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="1" number="42" date="2012-06-27" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="52100201" name="บ้านน้ำโท้ง" english="Ban Nam Thong" />
       <entity type="Muban" geocode="52100202" name="บ้านหลวง" english="Ban Luang" />
