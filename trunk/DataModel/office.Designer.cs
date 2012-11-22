@@ -161,6 +161,8 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="Emblem", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class Emblem {
         
+        private string descriptionField;
+        
         private ReferenceList referenceField;
         
         private System.DateTime dateField;
@@ -168,12 +170,29 @@ namespace De.AHoerstemeier.Tambon {
         private bool dateFieldSpecified;
         
         /// <summary>
+        /// Description of the emblem (in Thai).
+        /// </summary>
+        /// <value>
+        /// The description.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <summary>
         /// References on the emblem.
         /// </summary>
         /// <value>
         /// The reference.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ReferenceList reference {
             get {

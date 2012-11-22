@@ -459,6 +459,11 @@
       <xs:documentation>Emblem (ตรา) of the entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="description" minOccurs="0" maxOccurs="1" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Description of the emblem (in Thai).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="reference" minOccurs="0" maxOccurs="1" type="t:ReferenceList">
         <xs:annotation>
           <xs:documentation>References on the emblem.</xs:documentation>
