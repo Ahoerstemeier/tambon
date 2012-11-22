@@ -76,10 +76,28 @@
   </office>
   <office type="PAOOffice">
     <!-- Longdo: 7.61797, 100.07342 -->
-    <url>http://www.phatthalungpao.go.th/</url>
+    <url lastchecked="2012-11-22">http://www.phatthalungpao.go.th/</url>
     <officials>
-      <official title="PAOChairman" name="สานันท์ สุพรรณชนะบุรี" inoffice="2010" />
+      <official title="PAOChairman" name="วิสุทธิ์ ธรรมเพชร" begin="2012-06-03" beginreason="ElectedDirectly">
+        <election type="PAOChairman" date="2012-06-03">
+          <candidates eligiblevoter="373978" invalidvotes="7434" abstainvotes="10942">
+            <candidate id="1" name="วิสุทธิ์ ธรรมเพชร" votes="120698" status="elected" />
+            <candidate id="2" name="เจริญ เส้งสุ้น" votes="35776" />
+            <candidate id="3" name="โอภาส รองเงิน" votes="84907" />
+          </candidates>
+          <references>
+            <url>http://www.phatthalungpao.go.th/nayok.htm</url>
+          </references>
+        </election>
+      </official>
+      <official title="PAOChairman" name="สานันท์ สุพรรณชนะบุรี" begin="2008-04-20" end="2012-04-25" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      <official title="PAOChairman" name="สานันท์ สุพรรณชนะบุรี" begin="2004-03-14" end="2008-03-13" beginreason="ElectedDirectly" endreason="EndOfTerm" />
     </officials>
+    <council>
+      <term begin="2012-06-03" type="PAO" size="30" />
+      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="30" />
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="30" />
+    </council>
   </office>
   <entity type="Amphoe" name="เมืองพัทลุง" english="Mueang Phatthalung" geocode="9301">
     <office type="DistrictOffice">
@@ -391,7 +409,23 @@
     </entity>
     <entity type="Tambon" name="คลองเฉลิม" english="Khlong Chaloem" geocode="930203">
       <office type="TAOOffice">
-        <url>http://www.clongchalerm.go.th/</url>
+        <url status="offline">http://www.klongchalerm.go.th/</url>
+        <url status="offline">http://www.clongchalerm.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ดาเร็ต ขำนุรักษ์" begin="2012-10-13" beginreason="ElectedDirectly">
+            <election type="TAOMayor" date="2012-10-13">
+              <candidates>
+                <candidate id="1" name="ดาเร็ต ขำนุรักษ์" votes="3658" status="elected" />
+                <candidate id="2" name="ยงยุทธ ขุนสุด" votes="3345" />
+                <candidate id="3" name="ฮาหรูน ศรีสงคราม" votes="112" />
+              </candidates>
+            </election>
+          </official>
+        </officials>
+        <council>
+          <term begin="2012-10-13" type="TAO" size="28" />
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="28" />
+        </council>
       </office>
       <entity type="Muban" geocode="93020304" name="บ้านคู" english="Ban Khu" />
 
@@ -414,14 +448,21 @@
     </entity>
     <entity type="Tambon" name="สมหวัง" english="Som Wang" geocode="930205">
       <office type="MunicipalityOffice">
-        <!-- to be upgraded to municipality 2012-04-06 -->
         <symbols>
           <vision>สมหวังเมืองน่าอยู่  ชุมชนเข้มแข็ง การเกษตรก้าวหน้า  ใช้หลักเศรษฐกิจพอเพียง</vision>
         </symbols>
         <url lastchecked="2012-05-08">http://www.somwang.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="นราธิป ไกรศิริ" endyear="2012" />
+          <official title="TAOMayor" name="นราธิป ไกรศิริ" begin="2008-04-06" endyear="2012" beginreason="ElectedDirectly" />
         </officials>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="14" />
+        </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-04-06">
+            <meetingreference board="2" number="19" date="2012-03-21" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="93020501" name="บ้านคลองลำ" english="Ban Khlong Lam" />
       <entity type="Muban" geocode="93020502" name="บ้านพังกิ่ง" english="Ban Phang King" />
@@ -551,9 +592,9 @@
         <council>
           <term begin="2008-10-19" end="2012-10-18" type="ThesabanTambon" size="12" />
         </council>
-        <!--<history>
+        <history>
           <rename name="ควนเสาธง" english="Khuan Sao Thong" oldname="แม่ขรี" oldenglish="Mae Khari" />
-        </history>-->
+        </history>
       </office>
       <entity type="Muban" geocode="93040101" name="บ้านแม่ขรี" english="Ban Mae Khari" />
       <entity type="Muban" geocode="93040102" name="บ้านทุ่งเหรียง" english="Ban Thung Riang" />
@@ -577,9 +618,9 @@
         <council>
           <term begin="2008-09-28" end="2012-09-27" type="ThesabanTambon" size="12" />
         </council>
-        <!--<history>
+        <history>
           <rename name="เขาหัวช้าง" english="Khao Hua Chang" oldname="ตะโหมด" oldenglish="Tamot" />
-        </history>-->
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="คลองใหญ่" english="Khlong Yai" geocode="930403">
@@ -796,7 +837,10 @@
       <entity type="Muban" geocode="93060106" name="บ้านไร่" english="Ban Rai" />
     </entity>
     <entity type="Tambon" name="ดอนประดู่" english="Don Pradu" geocode="930602">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <symbols>
+          <vision>เกษตรกรรมดีเด่น  มุ่งเน้นการศึกษา  ส่งเสริมการกีฬา  สุขภาพชีวิตดีถ้วนหน้า  พัฒนาด้านเศรษฐกิจแบบยั่งยืน</vision>
+        </symbols>
         <url status="offline">http://www.donpradoo.go.th/</url>
         <officials>
           <official title="TAOMayor" name="จรัญ จันทร์แก้ว" begin="2008-08-31" end="2012-08-30" />
@@ -804,6 +848,11 @@
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="22" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="1" number="44" date="2012-07-04" />
+          </statuschange>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="เกาะนางคำ" english="Ko Nang Kham" geocode="930603">
@@ -1365,8 +1414,11 @@
         <googleplus>117348790707231805403</googleplus>
       </socialweb>
       <officials>
-        <official title="Mayor" name="มูหำมัด หนุ่นหยู่" inoffice="2010" />
+        <official title="Mayor" name="มูหำมัด หนุ่นหยู่" begin="2008-10-19" endyear="2012" beginreason="ElectedDirectly" />
       </officials>
+      <council>
+        <term begin="2008-10-19" end="2012-10-18" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
 </entity>

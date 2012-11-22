@@ -35,6 +35,7 @@
       <!-- Term: 2005-02-20 - 2009-02-19 -->
     </officials>
     <council>
+      <term begin="2012-05-27" type="PAO" size="24" />
       <term begin="2008-04-20" end="2012-04-19" type="PAO" size="24" />
     </council>
   </office>
@@ -95,12 +96,17 @@
       <entity type="Muban" geocode="82010304" name="บ้านหัวช้าง" english="Ban Hua Chang" />
     </entity>
     <entity type="Tambon" name="บางเตย" english="Bang Toei" geocode="820104">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon -->
+      <office type="MunicipalityOffice">
+        <url status="offline">http://www.bangtoey.in.th/</url>
         <url status="offline">http://www.bangtoey.go.th/</url>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="1" number="44" date="2012-07-04" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="82010401" name="บ้านบางเตยเหนือ" english="Ban Bang Toei Nuea" />
       <entity type="Muban" geocode="82010402" name="บ้านบางเตยกลาง" english="Ban Bang Toei Klang" />
