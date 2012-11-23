@@ -166,7 +166,6 @@
     </entity>
     <entity type="Tambon" name="บางกะจะ" english="Bang Kacha" geocode="220108">
       <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
         <symbols>
           <vision>องค์การบริหารส่วนตำบลบางกะจะ ประชาชนต้องมี สุขภาพพลานามัยแข็งแรงอยู่ในสิ่งแวดล้อมที่ดี สังคมน่าอยู่ ดูแลผู้ด้อยโอกาส เป็นสถานที่ท่องเที่ยวของจังหวัดจันทบุรี</vision>
         </symbols>
@@ -179,6 +178,9 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14" />
         </council>
         <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="2" number="46" date="2012-07-03" />
+          </statuschange>
           <rename oldname="บางกะจะ" oldenglish="Bang Kacha" name="ค่ายเนินวง" english="Khai Noen Wong">
             <meetingreference date="2012-06-26" number="3" board="rename" />
           </rename>
@@ -236,11 +238,15 @@
       <entity type="Muban" geocode="22011011" name="บ้านเสม็ดงาม" english="Ban Samet Ngam" />
     </entity>
     <entity type="Tambon" name="พลับพลา" english="Phlapphla" geocode="220111">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon -->
+      <office type="MunicipalityOffice">
         <url status="offline" lastonline="2012-09-12">http://www.plubpla.go.th/</url>
         <url status="broken">http://plubpla.pantown.com/</url>
         <!-- TAOMayor begin="2008-08-31" endyear="2012" - but council not -->
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-27">
+            <meetingreference board="2" number="58" date="2012-08-21" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="22011101" name="บ้านแถวคลอง" english="Ban Thaeo Khlong" />
       <entity type="Muban" geocode="22011102" name="บ้านทุ่งว่านเหลือง" english="Ban Thung Wan Lueang" />
@@ -500,7 +506,7 @@
       <entity type="Muban" geocode="22030712" name="บ้านเขาลูกช้าง" english="Ban Khao Lukchang" />
     </entity>
     <entity type="Tambon" name="สองพี่น้อง" english="Song Phi Nong" geocode="220308">
-      <office type="TAOOffice" comment="To be upgraded to municipality 2012-08-31">
+      <office type="MunicipalityOffice">
         <url status="offline">http://www.songpinong.net/</url>
         <officials>
           <official title="TAOMayor" name="ประพันธ์ อองดา" endyear="2012" />
@@ -508,6 +514,11 @@
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="2" number="34" date="2012-05-22" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="22030801" name="บ้านสิ้ว" english="Ban Siao" />
       <entity type="Muban" geocode="22030802" name="บ้านแพร่งขาหยั่ง" english="Ban Phraeng Kha Yang" />
@@ -634,7 +645,7 @@
       </officials>
     </office>
     <entity type="Tambon" name="ทับไทร" english="Thap Sai" geocode="220401">
-      <office type="TAOOffice" comment="To be upgraded to municipality 2012-09-01">
+      <office type="MunicipalityOffice">
         <url status="offline">http://www.thabsai.th.gs/</url>
         <officials>
           <official title="TAOMayor" name="สมศักดิ์ พะเนียงทอง" begin="2008-08-31" end="2012-08-30" />
@@ -642,6 +653,11 @@
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-09-01">
+            <meetingreference board="1" number="33" date="2012-05-21" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="22040101" name="บ้านทับไทร" english="Ban Thap Sai" />
       <entity type="Muban" geocode="22040102" name="บ้านวังกระแพร" english="Ban Wang Kra Phaen" />
@@ -1126,8 +1142,7 @@
       <entity type="Muban" geocode="22080310" name="บ้านหนองแหวนนอก" english="Ban Nong Waen Nok" />
     </entity>
     <entity type="Tambon" name="พวา" english="Phawa" geocode="220804">
-      <office type="TAOOffice">
-        <!-- to be upgraded to ThesabanTambon 2012-08-26 -->
+      <office type="MunicipalityOffice">
         <url lastchecked="2012-08-30">http://www.pawa.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ทนง เมธาวรากุล" begin="2008-08-31" end="2012-08-30" />
@@ -1135,6 +1150,11 @@
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="24" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-26">
+            <meetingreference board="2" number="45" date="2012-06-27" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="22080401" name="บ้านวังอีแอ่น" english="Ban Wang I Aen" />
       <entity type="Muban" geocode="22080402" name="บ้านหนองมะค่า" english="Ban Nong Makha" />
@@ -1286,7 +1306,7 @@
       <entity type="Muban" geocode="22100102" name="บ้านทุ่งสะพาน" english="Ban Thung Saphan" />
       <entity type="Muban" geocode="22100103" name="บ้านเนินมะหาด" english="Ban Noen Mahat" />
       <entity type="Muban" geocode="22100104" name="บ้านชากไทย" english="Ban Chak Thai" />
-      <entity type="Muban" geocode="22100105" name="บ้านมูซู" />
+      <entity type="Muban" geocode="22100105" name="บ้านมูซู" english="Ban Musu" />
       <entity type="Muban" geocode="22100106" name="บ้านพัฒนา" english="Ban Phatthana" />
       <entity type="Muban" geocode="22100107" name="บ้านหินลอย" english="Ban Hin Koi" />
       <entity type="Muban" geocode="22100108" name="บ้านว่านเหลือง" english="Ban Wan Lueang" />
@@ -1294,13 +1314,13 @@
     <entity type="Tambon" name="พลวง" english="Phluang" geocode="221002">
       <entity type="Muban" geocode="22100201" name="บ้านดินแดง" english="Ban Din Daeng" />
       <entity type="Muban" geocode="22100202" name="บ้านปากพลวง" english="Ban Pak Phluang" />
-      <entity type="Muban" geocode="22100203" name="บ้านทุ่งตาอิน" />
+      <entity type="Muban" geocode="22100203" name="บ้านทุ่งตาอิน" english="Ban Thung Ta In" />
       <entity type="Muban" geocode="22100204" name="บ้านพลวง" english="Ban Phluang" />
       <entity type="Muban" geocode="22100205" name="บ้านกระทิง" english="Ban Krathing" />
       <entity type="Muban" geocode="22100206" name="บ้านคลองตะเคียน" english="Ban Khlong Takhian" />
       <entity type="Muban" geocode="22100207" name="บ้านคลองน้ำเป็น" english="Ban Khlong Nam Pen" />
       <entity type="Muban" geocode="22100208" name="บ้านคลองเจริญ" english="Ban Khlong Charoen" />
-      <entity type="Muban" geocode="22100209" name="บ้านพังคะแลง" />
+      <entity type="Muban" geocode="22100209" name="บ้านพังคะแลง" english="Ban Phang Khalaeng" />
       <entity type="Muban" geocode="22100210" name="บ้านคลองกระทิง" english="Ban Khlong Krathing" />
     </entity>
     <entity type="Tambon" name="ตะเคียนทอง" english="Takhian Thong" geocode="221003">
@@ -1310,7 +1330,7 @@
       <entity type="Muban" geocode="22100304" name="บ้านตะเคียนทอง" english="Ban Takhian Thong" />
       <entity type="Muban" geocode="22100305" name="บ้านตะเคียนทอง" english="Ban Takhian Thong" />
       <entity type="Muban" geocode="22100306" name="บ้านชำเคราะห์" english="Ban Cham Khro" />
-      <entity type="Muban" geocode="22100307" name="บ้านคลองกระสือ" />
+      <entity type="Muban" geocode="22100307" name="บ้านคลองกระสือ" english="Ban Khlong Krasue" />
       <entity type="Muban" geocode="22100308" name="บ้านคลองน้ำเป็น" english="Ban Khlong Nam Pen" />
       <entity type="Muban" geocode="22100309" name="บ้านคลองไพบูลย์" english="Ban Khlong Phaibun" />
     </entity>
@@ -1327,11 +1347,11 @@
       <entity type="Muban" geocode="22100403" name="บ้านน้ำขุ่น" english="Ban Nam Khun" />
       <entity type="Muban" geocode="22100404" name="บ้านคลองพลู" english="Ban Khlong Phlu" />
       <entity type="Muban" geocode="22100405" name="บ้านคลองพลู" english="Ban Khlong Phlu" />
-      <entity type="Muban" geocode="22100406" name="บ้านทุ่งกบินทร์" />
+      <entity type="Muban" geocode="22100406" name="บ้านทุ่งกบินทร์" english="Ban Thung Kabin" />
       <entity type="Muban" geocode="22100407" name="บ้านชำตาเรือง" english="Ban Cham Ta Rueang" />
       <entity type="Muban" geocode="22100408" name="บ้านหลังเนิน" english="Ban Lang Noen" />
-      <entity type="Muban" geocode="22100409" name="บ้านคลองตาอิน" />
-      <entity type="Muban" geocode="22100410" name="บ้านวังยายมุข" />
+      <entity type="Muban" geocode="22100409" name="บ้านคลองตาอิน" english="Ban Khlong Ta In" />
+      <entity type="Muban" geocode="22100410" name="บ้านวังยายมุข" english="Ban Wang Yai Mut" />
     </entity>
     <entity type="Tambon" name="จันทเขลม" english="Chanthakhlem" geocode="221005">
       <office type="TAOOffice">
@@ -1340,11 +1360,11 @@
       <entity type="Muban" geocode="22100501" name="บ้านคลองใหญ่" english="Ban Khlong Yai" />
       <entity type="Muban" geocode="22100502" name="บ้านจันทเขลม" english="Ban Chanthakhlem" />
       <entity type="Muban" geocode="22100503" name="บ้านสะท้อน" english="Ban Sathon" />
-      <entity type="Muban" geocode="22100504" name="บ้านคลองชีพ" />
-      <entity type="Muban" geocode="22100505" name="บ้านจันตาแป๊ะ" />
-      <entity type="Muban" geocode="22100506" name="บ้านคลองชม" />
-      <entity type="Muban" geocode="22100507" name="บ้านคลองชั้น" />
-      <entity type="Muban" geocode="22100508" name="บ้านจันตาแป๊ะ ๕" />
+      <entity type="Muban" geocode="22100504" name="บ้านคลองชีพ" english="Ban Khlong Chip" />
+      <entity type="Muban" geocode="22100505" name="บ้านจันตาแป๊ะ" english="Ban Wan Ta Pae" />
+      <entity type="Muban" geocode="22100506" name="บ้านคลองชม" english="Ban Khlong Chom" />
+      <entity type="Muban" geocode="22100507" name="บ้านคลองชั้น" english="Ban Khlong Chan" />
+      <entity type="Muban" geocode="22100508" name="บ้านจันตาแป๊ะ ๕" english="Ban Wan Ta Pae 5" />
     </entity>
   </entity>
 

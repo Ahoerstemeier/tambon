@@ -281,8 +281,7 @@
       <entity type="Muban" geocode="50020415" name="บ้านใหม่อังครักษ์" english="Ban Mai Ang Khrak" />
     </entity>
     <entity type="Tambon" name="สบเตี๊ยะ" english="Sop Tia" geocode="500205">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>18.3895</geo:lat>
           <geo:long>98.6780</geo:long>
@@ -294,6 +293,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="42" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-23">
+            <meetingreference board="1" number="42" date="2012-06-27" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="50020501" name="บ้านวังปิน" english="Ban Wang Pin" />
       <entity type="Muban" geocode="50020502" name="บ้านสบเตี๊ยะ" english="Ban Sop Tia" />
@@ -565,8 +569,7 @@
       <entity type="Muban" geocode="50040311" name="บ้านหนองบัว" english="Ban Nong Bua" />
     </entity>
     <entity type="Tambon" name="แม่นะ" english="Mae Na" geocode="500404">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>19.3412</geo:lat>
           <geo:long>98.9604</geo:long>
@@ -578,6 +581,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="2" number="55" date="2012-08-01" />
+          </statuschange>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="เมืองคอง" english="Mueang Khong" geocode="500405">
@@ -1102,8 +1110,7 @@
       <entity type="Muban" geocode="50070605" name="บ้านหัวฝาย" english="Ban Hua Fai" comment="Old name: บ้านเหล่า, Ban Lao" />
     </entity>
     <entity type="Tambon" name="แม่แรม" english="Mae Raem" geocode="500707">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-24 -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>18.9201</geo:lat>
           <geo:long>98.9176</geo:long>
@@ -1112,6 +1119,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="2" number="47" date="2012-07-04" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="50070705" name="บ้านป่าม่วง" english="Ban Pa Muang" />
 
@@ -2207,8 +2219,7 @@
     </entity>
     <entity type="Tambon" name="ต้นเปา" english="Ton Pao" geocode="501312" />
     <entity type="Tambon" name="สันกลาง" english="San Klang" geocode="501313">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-24 -->
+      <office type="MunicipalityOffice">
         <symbols>
           <vision>การคมนาคมสะดวก ความรู้ทันสมัย ปลอดภัยจากสิ่งแวดล้อมที่เป็นพิษ เศรษฐกิจดี ประชาชนมีความสุขถ้วนหน้า</vision>
         </symbols>
@@ -2224,6 +2235,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="14" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="2" number="50" date="2012-07-17" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="50131301" name="บ้านมอญเหนือ" english="Ban Mon Nuea" />
       <entity type="Muban" geocode="50131302" name="บ้านมอญใต้" english="Ban Mon Tai" />
@@ -3975,7 +3991,7 @@
   </entity>
   <!--<entity type="ThesabanTambon" name="สันปูเลย" english="San Pu Loei" geocode="5040" />-->
 
-  <entity type="SakhaKhwaeng" name="กาลวิละ" geocode="5051" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai" />
+  <entity type="SakhaKhwaeng" name="กาลวิละ" english="Kanwila" geocode="5051" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai" />
   <entity type="SakhaKhwaeng" name="ศรีวิชัย" english="Si Wichai" geocode="5052" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai" />
   <entity type="SakhaKhwaeng" name="เม็งราย" english="Mengrai" geocode="5053" parent="5001" comment="Part of Thesaban Nakhon Chiang Mai" />
 </entity>

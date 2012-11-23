@@ -1265,8 +1265,10 @@
     </entity>
     <entity type="Tambon" name="ละหาน" english="Lahan" geocode="360607">
       <office type="TAOOffice">
-        <url>http://www.tumbonlahan.org/</url>
+        <url lastchecked="2012-11-23">http://tambonlahan.org/</url>
+        <url status="expired">http://www.tumbonlahan.org/</url>
         <officials>
+          <official title="TAOMayor" name="บานเย็น พรหมภักดี" inoffice="2012" />
           <official title="TAOMayor" name="พงษ์ศักดิ์ ดีธรรม" begin="2007-09-30" beginreason="ElectedDirectly" />
         </officials>
         <council>
@@ -1282,7 +1284,7 @@
       <entity type="Muban" geocode="36060707" name="บ้านกังกง" english="Ban Kang Kong" />
       <entity type="Muban" geocode="36060708" name="บ้านโคกแพงพวย" english="Ban Khok Phaengphuai" />
       <entity type="Muban" geocode="36060709" name="บ้านลี่" english="Ban Li" />
-      <entity type="Muban" geocode="36060710" name="บ้านหนองมสบูรณ์" />
+      <entity type="Muban" geocode="36060710" name="บ้านหนองสมบูรณ์" english="Ban Nong Sombun"/>
       <entity type="Muban" geocode="36060711" name="บ้านดอนละนาม" english="Ban Don Lanam" />
       <entity type="Muban" geocode="36060712" name="บ้านโนนสง่าสามัคคี" english="Ban Non Sa-nga Samakkhi" />
       <entity type="Muban" geocode="36060713" name="บ้านโนนไฮ" english="Ban Non Hai" />
@@ -1902,8 +1904,7 @@
       <entity type="Muban" geocode="36100913" name="บ้านค้าว" english="Ban Khao" />
     </entity>
     <entity type="Tambon" name="ธาตุทอง" english="That Thong" geocode="361010">
-      <office type="TAOOffice">
-        <!-- to be upgraded to ThesabanTambon 2012-08-24 -->
+      <office type="MunicipalityOffice">
         <symbols>
           <slogan>
             โสกอรางหนองน้ำใหญ่ ผลิตเกษตรแบบปลอดภัย
@@ -1924,6 +1925,11 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="2" number="40" date="2012-06-12" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="36101001" name="บ้านธาตุ" english="Ban That" />
       <entity type="Muban" geocode="36101002" name="บ้านหนองคัน" english="Ban Nong Khan" />

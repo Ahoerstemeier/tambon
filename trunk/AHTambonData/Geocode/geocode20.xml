@@ -387,8 +387,7 @@
       <entity type="Muban" geocode="20040210" name="บ้านหนองเซ่ง" english="Ban Nong Seng" />
     </entity>
     <entity type="Tambon" name="หนองปลาไหล" english="Nong Pla Lai" geocode="200403">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>12.9900</geo:lat>
           <geo:long>100.9632</geo:long>
@@ -397,6 +396,11 @@
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="2" number="47" date="2012-07-04" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="20040301" name="บ้านหนองเกตุใหญ่" english="Ban Nong Ket Yai" />
       <entity type="Muban" geocode="20040302" name="บ้านหนองปลาไหล" english="Ban Nong Pla Lai" />
@@ -665,8 +669,7 @@
       </office>
     </entity>
     <entity type="Tambon" name="กุฎโง้ง" english="Kut Ngong" geocode="200609">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-31-->
+      <office type="MunicipalityOffice">
         <url lastchecked="2012-08-01">http://kudngong.go.th/</url>
         <url status="offline">http://kutngong.org/</url>
         <officials>
@@ -675,6 +678,11 @@
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="12" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="2" number="44" date="2012-06-26" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="20060901" name="บ้านช้าง" english="Ban Chang" />
       <entity type="Muban" geocode="20060902" name="บ้านโพธิ์ตาก" english="Ban Pho Tak" />
@@ -684,12 +692,16 @@
       <entity type="Muban" geocode="20060906" name="บ้านนางู" english="Ban Na Ngu" />
     </entity>
     <entity type="Tambon" name="หัวถนน" english="Hua Thanon" geocode="200610">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon-->
+      <office type="MunicipalityOffice">
         <url>http://www.huatanon.go.th/</url>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="2" number="57" date="2012-08-08" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="20061001" name="บ้านกลาง" english="Ban Klang" />
       <entity type="Muban" geocode="20061002" name="บ้านหนองบก" english="Ban Nong Bok" />
