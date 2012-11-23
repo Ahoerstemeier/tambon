@@ -332,11 +332,15 @@
       <entity type="Muban" geocode="54011412" name="บ้านต้นม่วง" english="Ban Ton Muang" />
     </entity>
     <entity type="Tambon" name="ทุ่งกวาว" english="Thung Kwao" geocode="540115">
-      <office type="TAOOffice" comment="To be upgraded to municipality 2012-08-24">
+      <office type="MunicipalityOffice">
         <symbols>
           <vision>ตำบลทุ่งกวาวเป็นชุมชนกึ่งเมือง ที่คงความเข้มแข็งทางสังคมและวัฒนธรรมประเพณี พัฒนาเศรษฐกิจให้มั่นคง บนรากฐานทรัพยากรที่หลากหลาย สิ่งแวดล้อมมีความยั่งยืนและสุขภาวะชุมชนดี</vision>
         </symbols>
-        <url lastchecked="2012-07-20">http://www.toongkwao.go.th/</url>
+        <geo:Point>
+          <geo:lat>18.1548</geo:lat>
+          <geo:long>100.1666</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-11-23">http://www.toongkwao.go.th/</url>
         <url status="offline">http://tungkwuaw.tecnicadvance.net/</url>
         <officials>
           <official title="TAOMayor" name="พิชิต ปัทมาภรณ์พงศ์" begin="2008-08-24" end="2012-08-23" />
@@ -344,6 +348,12 @@
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="12" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <gazetteref volume="129" page="49" issue="พิเศษ 177 ง" date="2012-11-23"/>
+            <meetingreference board="1" number="31" date="2012-05-14" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="54011501" name="บ้านทุ่งกวาว" english="Ban Thung Kwao">
         <office type="VillageHeadmanOffice">
