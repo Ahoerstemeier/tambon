@@ -64,7 +64,7 @@
     </geo:Point>
     <url lastchecked="2012-06-06">http://www.phuketcity.org/</url>
     <officials>
-      <official title="PAOChairman" name="ไพบูลย์ อุปัติศฤงค์" begin="2012-04-07">
+      <official title="PAOChairman" name="ไพบูลย์ อุปัติศฤงค์" begin="2012-04-07" beginreason="ElectedDirectly">
         <election type="PAOChairman" date="2012-04-07">
           <candidates>
             <candidate id="1" name="ไพบูลย์ อุปัติศฤงค์" english="Paiboon Upatising" status="elected" />
@@ -72,9 +72,9 @@
           </candidates>
         </election>
       </official>
-      <official title="PAOChairman" name="ชวลิต ณ นคร" english="Chawalit Na Nakorn" begin="2009-05-15" end="2009-09-08" acting="1" comment="Acting while Paiboon was facing yellow/red-carded" />
+      <official title="PAOChairman" name="ชวลิต ณ นคร" english="Chawalit Na Nakorn" begin="2009-05-15" end="2009-09-08" acting="1" beginreason="ExOfficio" comment="Acting while Paiboon was facing yellow/red-carded" />
       <official title="PAOChairman" name="ไพบูลย์ อุปัติศฤงค์" english="Paiboon Upatising" begin="2008-04-20" end="2012-02-15" beginreason="ElectedDirectly" endreason="Resigned" />
-      <official title="PAOChairman" name="อัญชลี เทพบุตร" beginyear="2004" endyear="2008" />
+      <official title="PAOChairman" name="อัญชลี เทพบุตร" begin="2004-03-14" end="2008-03-13" beginreason="ElectedDirectly" endreason="EndOfTerm" />
     </officials>
     <council>
       <term begin="2012-08-26" type="PAO" size="24" />
@@ -513,6 +513,10 @@
         <term begin="2008-07-27" end="2012-07-26" type="ThesabanMueang" size="18" />
         <term begin="2004-06-20" end="2008-06-19" type="ThesabanMueang" size="18" />
       </council>
+      <history>
+        <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2002-10-04" />
+        <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1994-04-01" />
+      </history>
     </office>
     <entity type="Chumchon" geocode="83980001" name="ชุมชนชายวัด" english="Chumchon Chai Wat" />
     <entity type="Chumchon" geocode="83980002" name="ชุมชนบ้านมอญ" english="Chumchon Ban Mon" />
@@ -553,7 +557,7 @@
       </council>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="กะทู้" english="Kathu" geocode="8396" parent="8302">
+  <entity type="ThesabanMueang" name="กะทู้" english="Kathu" geocode="8396" parent="8302">
     <office type="MunicipalityOffice">
       <symbols>
         <vision>เมืองน่าอยู่ เคียงคู่พัฒนา</vision>
@@ -562,7 +566,7 @@
         <geo:lat>7.9112</geo:lat>
         <geo:long>98.3475</geo:long>
       </geo:Point>
-      <url lastchecked="2012-10-19">http://kathucity.go.th/</url>
+      <url lastchecked="2012-11-26">http://kathucity.go.th/</url>
       <officials>
         <official title="Mayor" name="ชัยอนันท์ สุทธิกุล" english="Chaianan Sutthikul" begin="2012-11-18" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ชัยอนันท์ สุทธิกุล" english="Chaianan Sutthikul" begin="2008-10-12" end="2012-10-11" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -570,10 +574,13 @@
         <official title="Mayor" name="ประเสริฐ ขาวกิจไพศาล" english="Prasert Khaokijpaisarn" beginyear="2000" endyear="2004" />
       </officials>
       <council>
-        <term begin="2012-11-18" type="ThesabanTambon" size="12" />
-        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
+        <term begin="2012-11-18" type="ThesabanMueang" size="18" />
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanMueang" size="18" />
         <term begin="2004-07-18" end="2008-07-17" type="ThesabanTambon" size="12" />
       </council>
+      <history>
+        <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2008-07-14" />
+      </history>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="เชิงทะเล" english="Choeng Thale" geocode="8395" parent="8303">
