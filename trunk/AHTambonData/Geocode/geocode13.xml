@@ -716,6 +716,9 @@
         <officials>
           <official title="TAOMayor" name="ยอด ภู่เฉลิมตระกูล" inoffice="2012" />
         </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
+        </council>
       </office>
       <entity type="Muban" geocode="13070201" name="บ้านเจดีย์ทอง" english="Ban Chedi Thong" />
       <entity type="Muban" geocode="13070202" name="บ้านคลองสระ" english="Ban Khlong Sa" />
@@ -754,21 +757,51 @@
       <entity type="Muban" geocode="13070402" name="บ้านท่าลาน" english="Ban Tha Lan" />
       <entity type="Muban" geocode="13070403" name="บ้านกระแชงมอญ" english="Ban Krachaeng Mon" />
     </entity>
-    <entity type="Tambon" name="บางโพธิ์เหนือ" english="Bang Pho Nuea" geocode="130705" />
-    <entity type="Tambon" name="เชียงรากใหญ่" english="Chiang Rak Yai" geocode="130706" />
+    <entity type="Tambon" name="บางโพธิ์เหนือ" english="Bang Pho Nuea" geocode="130705">
+      <office type="TAOOffice">
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="6" />
+        </council>
+      </office>
+    </entity>
+    <entity type="Tambon" name="เชียงรากใหญ่" english="Chiang Rak Yai" geocode="130706">
+      <office type="TAOOffice">
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
+        </council>
+      </office>
+    </entity>
     <entity type="Tambon" name="บ้านปทุม" english="Ban Pathum" geocode="130707">
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="สาโรจน์ พลอยจินดา" inoffice="2010" />
         </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
+        </council>
       </office>
     </entity>
-    <entity type="Tambon" name="บ้านงิ้ว" english="Ban Ngio" geocode="130708" />
-    <entity type="Tambon" name="เชียงรากน้อย" english="Chiang Rak Noi" geocode="130709" />
+    <entity type="Tambon" name="บ้านงิ้ว" english="Ban Ngio" geocode="130708">
+      <office type="TAOOffice">
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="10" />
+        </council>
+      </office>
+    </entity>
+    <entity type="Tambon" name="เชียงรากน้อย" english="Chiang Rak Noi" geocode="130709">
+      <office type="TAOOffice">
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="10" />
+        </council>
+      </office>
+    </entity>
     <entity type="Tambon" name="บางกระบือ" english="Bang Krabue" geocode="130710">
       <office type="TAOOffice">
         <url>http://www.bangkrabue.th.gs/</url>
         <url>http://www.bangkrabue.ob.tc/</url>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="6" />
+        </council>
       </office>
       <entity type="Muban" geocode="13071001" name="บ้านท้ายดง" english="Ban Thai Dong" />
       <entity type="Muban" geocode="13071002" name="บ้านบางกระบือ" english="Ban Bang Krabue" />
@@ -880,6 +913,7 @@
       <url>http://khukhot.go.th/</url>
       <officials>
         <official title="Mayor" name="เมธา ใจบริสุทธิ์" inoffice="2011" />
+        <!-- type=""Mayor" begin="2005-02-27" endyear="2009" -->
       </officials>
     </office>
   </entity>
@@ -896,6 +930,9 @@
     <office type="MunicipalityOffice">
       <!-- Longhdo: 13.9916133880665 100.525650024414-->
       <url>http://www.nmt.or.th/pathum/bangluang/</url>
+      <council>
+        <term begin="2005-03-27" end="2009-03-26" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanMueang" name="คลองหลวง" english="Khlong Luang" geocode="1394" parent="1302">
@@ -924,18 +961,18 @@
     <entity type="Chumchon" geocode="13930009" name="ชุมชนรุ่งเรือง" english="Chumchon Rung Rueang" />
     <entity type="Chumchon" geocode="13930010" name="ชุมชนบัญชาอุทิศ" />
     <entity type="Chumchon" geocode="13930011" name="ชุมชนโรงหมู-ศูนย์ราชการ" />
-    <entity type="Chumchon" geocode="13930012" name="ชุมชนสุสวาส 1" english="Chumchon Susawat 1"/>
-    <entity type="Chumchon" geocode="13930013" name="ชุมชนเพชรชมพู 1" english="Chumchon Phet Chomphu 1"/>
+    <entity type="Chumchon" geocode="13930012" name="ชุมชนสุสวาส 1" english="Chumchon Susawat 1" />
+    <entity type="Chumchon" geocode="13930013" name="ชุมชนเพชรชมพู 1" english="Chumchon Phet Chomphu 1" />
     <entity type="Chumchon" geocode="13930014" name="ชุมชนลำภู" english="Chumchon Lam Phu" />
     <entity type="Chumchon" geocode="13930015" name="ชุมชนเจริญทรัพย์" english="Chumchon Charoen Sap" />
     <entity type="Chumchon" geocode="13930016" name="ชุมชนธราดลวิว" />
     <entity type="Chumchon" geocode="13930017" name="ชุมชนสหกรณ์พัฒนา" english="Chumchon Sahakon Phatthana" />
     <entity type="Chumchon" geocode="13930018" name="ชุมชนลำผักกูด" english="Chumchon Lam Phak Kut" />
-    <entity type="Chumchon" geocode="13930019" name="ชุมชนจักรสุภา" english="Chumchon Chak Supha"/>
-    <entity type="Chumchon" geocode="13930020" name="ชุมชนสุสวาส 2" english="Chumchon Susawat 2"/>
+    <entity type="Chumchon" geocode="13930019" name="ชุมชนจักรสุภา" english="Chumchon Chak Supha" />
+    <entity type="Chumchon" geocode="13930020" name="ชุมชนสุสวาส 2" english="Chumchon Susawat 2" />
     <entity type="Chumchon" geocode="13930021" name="ชุมชนวรรณวดี-แสนสุข" />
     <entity type="Chumchon" geocode="13930022" name="ชุมชนบึงบัว" english="Chumchon Bueng Bua" />
-    <entity type="Chumchon" geocode="13930023" name="ชุมชนเรือนสุข 2" english="Chumchon Ruean Suk 2"/>
+    <entity type="Chumchon" geocode="13930023" name="ชุมชนเรือนสุข 2" english="Chumchon Ruean Suk 2" />
     <entity type="Chumchon" geocode="13930024" name="ชุมชนตวันนาวิลล์" />
     <entity type="Chumchon" geocode="13930025" name="ชุมชนธัญญาพร 2" />
     <entity type="Chumchon" geocode="13930026" name="ชุมชนดีดีวิลเลจ" />
@@ -947,14 +984,14 @@
     <entity type="Chumchon" geocode="13930032" name="ชุมชนพฤกษา 2" />
     <entity type="Chumchon" geocode="13930033" name="ชุมชนเรือนสุข 1" />
     <entity type="Chumchon" geocode="13930034" name="ชุมชนแก้วฃวัญ" />
-    <entity type="Chumchon" geocode="13930035" name="ชุมชนพรธิสาร 5" english="Chumchon Phontisan 5"/>
+    <entity type="Chumchon" geocode="13930035" name="ชุมชนพรธิสาร 5" english="Chumchon Phontisan 5" />
     <entity type="Chumchon" geocode="13930036" name="ชุมชนธราดล" />
     <entity type="Chumchon" geocode="13930037" name="ชุมชนเคหะคลอง 7" />
     <entity type="Chumchon" geocode="13930038" name="ชุมชนธันยพฤกษ์" />
     <entity type="Chumchon" geocode="13930039" name="ชุมชนธราดลบุรี" />
     <entity type="Chumchon" geocode="13930040" name="ชุมชนดิสคอฟเวอรี่เพลส" />
     <entity type="Chumchon" geocode="13930041" name="ชุมชนรักษ์ 8,9" english="Chumchon Rak 8,9" />
-    <entity type="Chumchon" geocode="13930042" name="ชุมชน MP การ์เด้นท์" english="Chumchon MP Garden"/>
+    <entity type="Chumchon" geocode="13930042" name="ชุมชน MP การ์เด้นท์" english="Chumchon MP Garden" />
     <entity type="Chumchon" geocode="13930043" name="ชุมชนรวมใจพัฒนา" english="Chumchon Ruam Chai Phatthana" />
     <entity type="Chumchon" geocode="13930044" name="ชุมชนเจริญลาภ 5" english="Chumchon Charoen Lap 5" />
     <!--
