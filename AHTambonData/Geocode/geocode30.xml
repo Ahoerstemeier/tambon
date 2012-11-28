@@ -36,7 +36,8 @@
     </officials>
     <council>
       <term begin="2012-07-22" type="PAO" />
-      <term begin="2008-04-26" end="2012-04-25" type="PAO" />
+      <term begin="2008-04-26" end="2012-04-25" type="PAO" size="48"/>
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="48"/>
     </council>
   </office>
   <entity type="Amphoe" name="เมืองนครราชสีมา" english="Mueang Nakhon Ratchasima" geocode="3001">
@@ -2560,7 +2561,13 @@
           <official title="Mayor" name="ชาติชาตรี งามตะคุ" inoffice="2011" />
         </officials>
         <history>
-          <rename oldname="เมืองปัก" oldenglish="Mueang Pak" name="ปักธงชัย" english="Pak Thong Chai" effective="" />
+          <rename oldname="เมืองปัก" oldenglish="Mueang Pak" name="ปักธงชัย" english="Pak Thong Chai" effective="2008-07-16" >
+            <meetingreference date="2008-06-04" number="3" board="rename"/>
+          </rename>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-16">
+            <meetingreference board="2" number="42" date="2008-06-04" />
+          </statuschange>
+                         
         </history>
       </office>
 
