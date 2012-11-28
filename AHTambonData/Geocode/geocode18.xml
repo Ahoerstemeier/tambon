@@ -165,8 +165,7 @@
       <entity type="Muban" geocode="18010608" name="บ้านมะพลับดก" english="Ban Maphlap Tok" />
     </entity>
     <entity type="Tambon" name="ธรรมามูล" english="Thammamun" geocode="180107">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-30 -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>15.2526</geo:lat>
           <geo:long>100.0964</geo:long>
@@ -178,6 +177,11 @@
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-30">
+            <meetingreference board="2" number="48" date="2012-07-10" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="18010701" name="บ้านธรรมามูลใต้วัด" english="Ban Thammamun Tai Wat" />
       <entity type="Muban" geocode="18010702" name="บ้านธรรมามูลเหนือวัด" english="Ban Thammamun Nuea Wat" />

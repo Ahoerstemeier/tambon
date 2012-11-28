@@ -39,8 +39,8 @@
       <official title="PAOChairman" name="ชิงชัย ก่อประภากิจ" begin="2008-06-01" end="2012-03-15" endreason="Resigned" />
     </officials>
     <council>
-      <term type="PAO" size="30" begin="2012-09-29" />
-      <term type="PAO" size="30" begin="2008-06-01" end="2012-05-31" />
+      <term begin="2012-09-29" type="PAO" size="30" />
+      <term begin="2008-06-01" end="2012-05-31" type="PAO" size="30" />
     </council>
   </office>
   <entity type="Amphoe" name="เมืองตาก" english="Mueang Tak" geocode="6301">
@@ -1335,7 +1335,10 @@
         <geo:lat>16.8710</geo:lat>
         <geo:long>99.1251</geo:long>
       </geo:Point>
-      <url>http://www.tessabantak.go.th/</url>
+      <url lastchecked="2012-11-28">http://www.tessabantak.go.th/</url>
+      <socialweb>
+        <googleplus type="user">114472314388680968078</googleplus>
+      </socialweb>
       <officials>
         <official index="40" title="Mayor" name="อานนท์ ทวีเกื้อกูลกิจ" begin="2012-02-25">
           <election type="Mayor" date="2012-02-25">
@@ -1348,9 +1351,12 @@
               <candidate id="6" name="สุชาติ มีสันทัด" votes="19" />
               <candidate id="7" name="สมชาติ เพ็ชรประเสริฐ" votes="2428" />
             </candidates>
+            <references>
+              <url>http://pr.prd.go.th/tak/ewt_news.php?nid=44</url>
+            </references>
           </election>
         </official>
-        <official index="39" title="Mayor" name="สมชาติ เพ็ชรประเสริฐ" begin="2008-02-16" />
+        <official index="39" title="Mayor" name="สมชาติ เพ็ชรประเสริฐ" begin="2008-02-16" endreason="Resigned" comment="End 2011-06-30 according to source, 2 month before end of term according to news report" />
         <official index="38" title="Mayor" name="สมชาติ เพ็ชรประเสริฐ" begin="2004-02-01" end="2007-12-19" />
         <official index="37" title="MunicipalClerk" name="ถาวร จันทร์กลํ่า" begin="2003-12-25" end="2004-07-29" comment="ปลัดเทศบาล ปฏิบัติหน้าที่นายกเทศมนตรี" />
         <official index="36" title="Mayor" name="ประเสริฐ บุญช่วย" begin="2004-12-23" end="2004-12-24" comment="Appointed (โดยการแต่งตั้ง)" />
@@ -1389,6 +1395,9 @@
           <url>http://www.tessabantak.go.th/staff4.php</url>
         </reference>
       </officials>
+      <council>
+        <term begin="2008-03-16" end="2012-03-15" type="ThesabanMueang" size="18" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanNakhon" name="แม่สอด" english="Mae Sot" geocode="6398" parent="6306">
