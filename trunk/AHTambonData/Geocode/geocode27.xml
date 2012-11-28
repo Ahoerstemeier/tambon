@@ -19,13 +19,15 @@
       <geo:lat>13.8215</geo:lat>
       <geo:long>102.0726</geo:long>
     </geo:Point>
-    <url>http://www.sakaeopao.go.th/</url>
+    <url status="broken">http://www.sakaeopao.go.th/</url>
     <officials>
       <official title="PAOChairman" name="ทรงยศ เทียนทอง" begin="2012-02-26" beginreason="ElectedDirectly" />
       <official title="PAOChairman" name="ทรงยศ เทียนทอง" beginyear="2008" endyear="2008" beginreason="ElectedDirectly" endreason="Resigned" />
     </officials>
     <council>
-      <term begin="2008-04-20" end="2012-04-19" type="PAO" />
+      <term begin="2012-07-08" type="PAO" size="30"/>
+      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="30"/>
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="30"/>
     </council>
   </office>
   <entity type="Amphoe" name="เมืองสระแก้ว" english="Mueang Sa Kaeo" geocode="2701">
@@ -117,6 +119,11 @@
     </entity>
     <entity type="Tambon" name="เขาฉกรรจ์" english="Khao Chakan" geocode="270107" newgeocode="270701" />
     <entity type="Tambon" name="สระขวัญ" english="Sa Khwan" geocode="270108">
+      <office type="TAOOffice">
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="42"/>
+        </council>
+      </office>
       <entity type="Muban" geocode="27010801" name="บ้านน้ำซับ" english="Ban Nam Sap" />
 
       <entity type="Muban" geocode="27010821" name="บ้านสารคาม" english="Ban San Kham" />
@@ -660,6 +667,9 @@
     <entity type="Tambon" name="หนองสังข์" english="Nong Sang" geocode="270610">
       <office type="TAOOffice">
         <url>http://www.tb-nongsang.org/</url>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="16"/>
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="คลองทับจันทร์" english="Khlong Thap Chan" geocode="270611">
@@ -891,6 +901,9 @@
           <geo:long>102.1325</geo:long>
         </geo:Point>
         <url>http://www.wang-tong.org/</url>
+        <council>
+          <term begin="2008-05-17" end="2012-05-16" type="ThesabanTambon" size="12"/>
+        </council>
       </office>
       <entity type="Muban" geocode="27090301" name="บ้านวังทอง" english="Ban Wang Thong" />
       <entity type="Muban" geocode="27090302" name="บ้านคลองเจริญสุข" english="Ban Khlong Charoen Suk" />
@@ -914,16 +927,37 @@
 
   <entity type="ThesabanMueang" name="สระแก้ว" english="Sa Kaeo" geocode="2799" parent="2701">
     <office type="MunicipalityOffice">
+      <symbols>
+        <slogan>
+          ศาลเจ้าพ่อสระแก้วศักดิ์สิทธิ์           เรืองฤทธิ์หลวงพ่อทอง
+          ถิ่นเรืองรองสระแก้ว – สระขวัญ               ปูชนียสถานศาลหลักเมือง
+        </slogan>
+        <vision>
+          เทศบาลเมืองสระแก้วเป็นเมืองน่าอยู่                            ประชาชนมีคุณภาพชีวิตดี
+          มีส่วนร่วมในการพัฒนา                                                    ปลอดยาเสพติดในชุมชน
+          แหล่งท่องเที่ยวประวัติศาสตร์ภูมิทัศน์สวยงาม             การบริหารงานโปร่งใส
+          พัฒนาการศึกษาส่งเสริมคุณธรรม                                   อนุรักษ์วัฒนธรรมประเพณี
+        </vision>
+      </symbols>
       <geo:Point>
         <geo:lat>13.7968</geo:lat>
         <geo:long>102.1373</geo:long>
       </geo:Point>
-      <url comment="Offline">http://www.sakaeocity.go.th/</url>
+      <url lastchecked="2012-11-28">http://www.sakaeocity.go.th/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/profile.php?id=100004320302137</facebook>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="ตระกูล สุขกุล" inoffice="2012"/>
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanMueang" name="อรัญญประเทศ" english="Aranya Prathet" geocode="2798" parent="2706">
     <office type="MunicipalityOffice">
       <url>http://www.tessabanaran.go.th/</url>
+      <council>
+        <term begin="2008-05-11" end="2012-05-10" type="ThesabanMueang" size="18"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าเกษม" english="Tha Kasem" geocode="2797" parent="2701">
