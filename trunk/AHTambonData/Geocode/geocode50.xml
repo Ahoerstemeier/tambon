@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เชียงใหม่" english="Chiang Mai" geocode="50">
+  <!-- http://www2.ect.go.th/content.php?Province=chiangmai&SiteMenuID=356&Action=view&Sys_Page=2&Sys_PageSize=20&DataID=10494 -->
   <office type="PAOOffice">
     <geo:Point>
       <geo:lat>18.8383</geo:lat>
@@ -195,7 +196,7 @@
           <official title="TAOMayor" name="ไกรสี อินต๊ะสาร" endyear="2012" />
         </officials>
         <council>
-          <term begin="2008-05-07" end="2012-04-06" type="ThesabanTambon" size="12" />
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="18" />
         </council>
       </office>
       <entity type="Muban" geocode="50011601" name="บ้านป่าข่อยเหนือ" english="Ban Pa Khoi Nuea" />
@@ -492,8 +493,28 @@
     </entity>
     <entity type="Tambon" name="กองแขก" english="Kong Khaek" geocode="500308">
       <office type="TAOOffice">
-        <url comment="Offline">http://www.kongkhak.org/</url>
+        <url lastchecked="2012-12-03">http://www.kongkhak.go.th/</url>
+        <url status="offline">http://www.kongkhak.org/</url>
+        <officials>
+          <official title="TAOMayor" name="ศรีวรรณ ปภัสสรวัฒนกุล" inoffice="2012" />
+        </officials>
+        <council>
+          <term begin="2012-05-13" type="TAO" size="24" />
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="24" />
+        </council>
       </office>
+      <entity type="Muban" geocode="50030801" name="บ้านอมขูด" english="Ban Om Khut" />
+      <entity type="Muban" geocode="50030802" name="บ้านแม่หลุ" english="Ban Mae Lu" />
+      <entity type="Muban" geocode="50030803" name="บ้านหัวดอย" english="Ban Hua Doi" />
+      <entity type="Muban" geocode="50030804" name="บ้านโหล่งปง" english="Ban Long Pong" />
+      <entity type="Muban" geocode="50030805" name="บ้านอมลาน" english="Ban Om Lan" />
+      <entity type="Muban" geocode="50030806" name="บ้านโม่งหลวง" english="Ban Mong Luang" />
+      <entity type="Muban" geocode="50030807" name="บ้านกองแขกเหนือ" english="Ban Kong Khaek Nuea" />
+      <entity type="Muban" geocode="50030808" name="บ้านอมเม็ง" english="Ban Om Meng" />
+      <entity type="Muban" geocode="50030809" name="บ้านผาผึ้ง" english="Ban Pha Phueng" />
+      <entity type="Muban" geocode="50030810" name="บ้านแม่คงคา" english="Ban Mae Khon Kha" />
+      <entity type="Muban" geocode="50030811" name="บ้านกองแขกใต้" english="Ban Kong Khaek Tai" />
+      <entity type="Muban" geocode="50030812" name="บ้านนายางดิน" english="Ban Na Yang Din" />
     </entity>
     <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="500309" newgeocode="502602" />
     <entity type="Tambon" name="แจ่มหลวง" english="Chaem Luang" geocode="500310" newgeocode="502603" />
@@ -702,6 +723,13 @@
     <entity type="Tambon" name="สง่าบ้าน" english="Sa-nga Ban" geocode="500505">
       <office type="MunicipalityOffice">
         <url>http://www.sangaban.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="วัฒนชัย   โทอึ้น" begin="2012-07-15" />
+        </officials>
+        <council>
+          <term begin="2012-07-15" type="ThesabanTambon" size="12" />
+          <term begin="2008-06-08" end="2012-06-07" type="ThesabanTambon" size="12" />
+        </council>
       </office>
       <entity type="Muban" geocode="50050501" name="บ้านดอกแดง" english="Ban Dok Daeng" />
       <entity type="Muban" geocode="50050502" name="บ้านท่า" english="Ban Tha" />
@@ -882,6 +910,9 @@
           <geo:long>99.0000</geo:long>
         </geo:Point>
         <url status="offline">http://www.maehorpra.go.th/</url>
+        <council>
+          <term begin="2008-03-09" end="2012-03-08" type="TAO" size="18" />
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="สบเปิง" english="Sop Poeng" geocode="500606">
@@ -1244,11 +1275,18 @@
         <officials>
           <official title="TAOMayor" name="ประภัสสร โลโท" inoffice="2012" />
         </officials>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="12" />
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="แม่สาบ" english="Mae Sap" geocode="500803">
       <office type="TAOOffice">
         <url>http://www.maesab.go.th/</url>
+        <!-- No TAOMayor end term in 2012 -->
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="20" />
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="บ่อแก้ว" english="Bo Kaeo" geocode="500804">
@@ -1502,6 +1540,9 @@
       <office type="TAOOffice">
         <!-- Longdo: 20.03145,99.29423 -->
         <url status="offline">http://www.abtmaeai.org/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="10" />
+        </council>
       </office>
       <entity type="Muban" geocode="50100101" name="บ้านดอยแก้ว" english="Ban Doi Kaeo" />
 
@@ -1961,7 +2002,10 @@
     </entity>
     <entity type="Tambon" name="สันกลาง" english="San Klang" geocode="501202">
       <office type="TAOOffice">
-        <url>http://www.sanklanglocal.com/</url>
+        <url status="offline">http://www.sanklanglocal.com/</url>
+        <officials>
+          <official title="TAOMayor" name="นายฉลวย ยาวิลาศ" begin="2008-12-07" endyear="2012" />
+        </officials>
       </office>
       <entity type="Muban" geocode="50120201" name="บ้านทุ่งอ้อ" english="Ban Thung O" />
       <entity type="Muban" geocode="50120202" name="บ้านแม่กุ้งบก" english="Ban Mae Kung Bok" />
@@ -2064,6 +2108,9 @@
     <entity type="Tambon" name="มะขุนหวาน" english="Makhun Wan" geocode="501215">
       <office type="TAOOffice">
         <url>http://www.makhunwan.org/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="10" />
+        </council>
       </office>
       <entity type="Muban" geocode="50121501" name="บ้านสันทรายมูล" english="Ban San Sai Mun" />
       <entity type="Muban" geocode="50121502" name="บ้านขุนคง" english="Ban Khun Khong" />
@@ -2582,8 +2629,11 @@
         <url>http://www.hangdong.go.th/</url>
         <url status="offline">http://www.hangdong.org/</url>
         <officials>
-          <official title="TAOMayor" name="ทรัพย์ทวี คำมา" inoffice="2010" />
+          <official title="TAOMayor" name="ทรัพย์ทวี คำมา" begin="2008-08-24" endyear="2012" />
         </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="14" />
+        </council>
       </office>
       <entity type="Muban" geocode="50160101" name="บ้านช่างคำ" english="Ban Chang Kham" />
       <entity type="Muban" geocode="50160102" name="บ้านล้อง" english="Ban Long" />
@@ -2621,6 +2671,12 @@
       <entity type="Muban" geocode="50160310" name="บ้านใหม่พัฒนา" english="Ban Mai Phatthana" />
     </entity>
     <entity type="Tambon" name="บ่อหลวง" english="Bo Luang" geocode="501604">
+      <symbols>
+        <slogan>
+          พระธาตุดอยเหลี้ยมสูงสง่า     สวนสนป่าเขียวขจี
+          ชาวบ่อหลวงน้ำใจดี     มีศักดิ์ศรีทุกเผ่าชน
+        </slogan>
+      </symbols>
       <entity type="Muban" geocode="50160401" name="บ้านบ่อหลวง" english="Ban Bo Luang" />
       <entity type="Muban" geocode="50160402" name="บ้านวังกอง" english="Ban Wang Kong" />
       <entity type="Muban" geocode="50160403" name="บ้านขุน" english="Ban Khun" />
@@ -2692,11 +2748,18 @@
     </office>
     <entity type="Tambon" name="อมก๋อย" english="Omkoi" geocode="501801">
       <office type="TAOOffice">
-        <url lastchecked="2012-09-17">http://www.omkoi.go.th/</url>
+        <url lastchecked="2012-12-03">http://www.omkoi.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="วัลลภ ปุกยุ" inoffice="2012" />
+          <official title="TAOMayor" name="วัลลภ ปุกยุ" begin="2012-05-13" />
+          <!-- title="TAOMayor" begin="2008-04-06" -->
         </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="40" />
+        </council>
       </office>
+      <entity type="Muban" geocode="50180101" name="บ้านหลิม" english="Ban Lim" />
+
+      <entity type="Muban" geocode="50180109" name="บ้านดง" english="Ban Dong" />
     </entity>
     <entity type="Tambon" name="ยางเปียง" english="Yang Piang" geocode="501802">
       <office type="TAOOffice">
@@ -2708,6 +2771,9 @@
         <officials>
           <official title="TAOMayor" name="อนันต์ อินต๊ะเรือง" inoffice="2011" />
         </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="34" />
+        </council>
       </office>
       <entity type="Muban" geocode="50180201" name="บ้านหลวง" english="Ban Luang" />
       <entity type="Muban" geocode="50180202" name="บ้านยางเปียง" english="Ban Yang Piang" />
@@ -2729,21 +2795,32 @@
     </entity>
     <entity type="Tambon" name="แม่ตื่น" english="Mae Tuen" geocode="501803">
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>17.4067</geo:lat>
+          <geo:long>98.4625</geo:long>
+        </geo:Point>
         <socialweb>
           <facebook>http://www.facebook.com/mae.tuen</facebook>
           <twitter>mae_tuen</twitter>
         </socialweb>
         <officials>
-          <official title="TAOMayor" name="สมยศ ไสยบุญเรือง" inoffice="2008" />
+          <official title="TAOMayor" name="สมยศ ไสยบุญเรือง" begin="2005-07-31" endyear="2009" inoffice="2008" />
         </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="32" />
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="ม่อนจอง" english="Mon Chong" geocode="501804">
       <office type="TAOOffice">
         <url lastchecked="2012-09-17">http://monjong.wetpaint.com/</url>
         <officials>
-          <official title="TAOMayor" name="อำนวย หารหม่อง" inoffice="2008" />
+          <official title="TAOMayor" name="ชลนที อนุรักษ์กสิกร" begin="2011-12-25" />
+          <official title="TAOMayor" name="อำนวย หารหม่อง" begin="2005-07-31" inoffice="2008" endyear="2009" />
         </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="สบโขง" english="Sop Khong" geocode="501805">
@@ -2752,6 +2829,9 @@
         <officials>
           <official title="TAOMayor" name="พงศ์เจริญ หย่าจอ" inoffice="2012" />
         </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
+        </council>
       </office>
       <entity type="Muban" geocode="50180501" name="บ้านแม่หลองใต้" english="Ban Mae Long Tai" />
       <entity type="Muban" geocode="50180502" name="บ้านแม่หลองน้อย" english="Ban Mae Long Noi" />
@@ -2772,6 +2852,9 @@
         <officials>
           <official title="TAOMayor" name="ศุภธนิศร์ รุ่งเรืองเลิศไพศาล" inoffice="2012" />
         </officials>
+        <council>
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="42" />
+        </council>
       </office>
     </entity>
   </entity>
@@ -2897,9 +2980,13 @@
         </geo:Point>
         <url lastchecked="2012-09-12">http://www.muanghaeng.org/</url>
         <officials>
+          <!-- No TAOMayor end term in 2012 -->
           <official title="TAOMayor" name="เหรียญชัย อ้วนคำ" inoffice="2012" />
           <official title="TAOMayor" name="พยอม คารมณ์" inoffice="2010" />
         </officials>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="24" />
+        </council>
       </office>
       <entity type="Muban" geocode="50200101" name="บ้านแม่หาด" english="Ban Mae Hat" />
       <entity type="Muban" geocode="50200102" name="บ้านกองลม" english="Ban Kong Lom" />
@@ -2923,6 +3010,9 @@
         <url lastchecked="2012-10-11">http://piangluang.cmwebdemo.com/</url>
         <url lastchecked="2012-10-11">http://www.piangluang.go.th/</url>
         <url status="offline">http://www.piangluang.net/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="12" />
+        </council>
       </office>
       <entity type="Muban" geocode="50200201" name="บ้านเปียงหลวง" english="Ban Piang Luang" />
       <entity type="Muban" geocode="50200202" name="บ้านจอง" english="Ban Chong" />
@@ -2943,8 +3033,11 @@
         </geo:Point>
         <url lastchecked="2012-10-11">http://sanhai.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อินทอน ศรีลิลา" endyear="2012" />
+          <official title="TAOMayor" name="อินทอน ศรีลิลา" begin="2008-04-06" endyear="2012" />
         </officials>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="10" />
+        </council>
       </office>
     </entity>
   </entity>
@@ -3001,6 +3094,7 @@
     <entity type="Tambon" name="แม่ทะลบ" english="Mae Thalop" geocode="502103">
       <office type="TAOOffice">
         <url>http://www.maetalop.go.th/</url>
+        <!-- type="TAOMayor" begin="2008-01-06" endyear="2012"-->
       </office>
       <entity type="Muban" geocode="50210301" name="บ้านแม่ทะลบ" english="Ban Mae Thalop" />
 
@@ -3057,6 +3151,9 @@
           <geo:lat>18.5861</geo:lat>
           <geo:long>98.8007</geo:long>
         </geo:Point>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
+        </council>
       </office>
       <history>
         <rename oldname="ทุ่งปี้" oldenglish="Thung Pi" name="ทุ่งปี๊" english="Thung Pi" />
@@ -3090,8 +3187,11 @@
         <url lastchecked="2012-04-05">http://www.maewin.go.th/</url>
         <url status="offline">http://www.maewin.org/</url>
         <officials>
-          <official title="TAOMayor" name="บุเจ้ ไศลทองเพริศ" inoffice="2011" />
+          <official title="TAOMayor" name="บุเจ้ ไศลทองเพริศ" begin="2008-08-24" endyear="2012" />
         </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="38" />
+        </council>
       </office>
       <entity type="Muban" geocode="50220401" name="บ้านห้วยอีค่าง" english="Ban Huai I Khang" />
       <entity type="Muban" geocode="50220402" name="บ้านทุ่งหลวง" english="Ban Thung Luang" />
@@ -3146,6 +3246,9 @@
     <entity type="Tambon" name="ออนเหนือ" english="On Nuea" geocode="502301">
       <office type="TAOOffice">
         <url>http://www.onnuar.org/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="20" />
+        </council>
       </office>
       <entity type="Muban" geocode="50230101" name="บ้านแม่รวม" english="Ban Mae Ruam" />
       <entity type="Muban" geocode="50230102" name="บ้านหนองหอย" english="Ban Nong Hoi" />
@@ -3161,6 +3264,9 @@
     <entity type="Tambon" name="ออนกลาง" english="On Klang" geocode="502302">
       <office type="TAOOffice">
         <url>http://www.onklang.org/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="22" />
+        </council>
       </office>
       <entity type="Muban" geocode="50230201" name="บ้านทุ่งเหล่า" english="Ban Thung Lao" />
       <entity type="Muban" geocode="50230202" name="บ้านแม่เลน" english="Ban Mae Lem" />
@@ -3177,6 +3283,9 @@
     <entity type="Tambon" name="บ้านสหกรณ์" english="Ban Sahakon" geocode="502303">
       <office type="TAOOffice">
         <url>http://www.bansahakorn.org/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="16" />
+        </council>
       </office>
       <entity type="Muban" geocode="50230301" name="บ้านสหกรณ์ 1" english="Ban Sahakon 1" />
       <entity type="Muban" geocode="50230302" name="บ้านสหกรณ์ 2" english="Ban Sahakon 2" />
@@ -3190,16 +3299,25 @@
     <entity type="Tambon" name="ห้วยแก้ว" english="Huai Kaeo" geocode="502304">
       <office type="TAOOffice">
         <url>http://www.huaykaew.org/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="16" />
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="แม่ทา" english="Mae Tha" geocode="502305">
       <office type="TAOOffice">
         <url>http://www.maethafasai.com/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="14" />
+        </council>
       </office>
     </entity>
     <entity type="Tambon" name="ทาเหนือ" english="Tha Nuea" geocode="502306">
       <office type="TAOOffice">
         <url>http://www.tanua.net/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="10" />
+        </council>
       </office>
     </entity>
   </entity>
@@ -3218,8 +3336,12 @@
       <office type="TAOOffice">
         <url lastchecked="2012-09-12">http://www.doilor.org/</url>
         <officials>
+          <!-- No TAOMayor end term in 2012 -->
           <official title="TAOMayor" name="วัชระ พรหมเสนใจ" inoffice="2012" />
         </officials>
+        <council>
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="52" />
+        </council>
       </office>
       <entity type="Muban" geocode="50240101" name="บ้านสันหิน" english="Ban San Hin" />
       <entity type="Muban" geocode="50240102" name="บ้านเหล่าป๋วย" english="Ban Lao Puai" />
@@ -3318,6 +3440,9 @@
     <entity type="Tambon" name="แม่แดด" english="Mae Daet" geocode="502502">
       <office type="TAOOffice">
         <url>http://www.maedaed.org/</url>
+        <council>
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="14" />
+        </council>
       </office>
       <entity type="Muban" geocode="50250201" name="บ้านแม่ผาปู" english="Ban Mae Pha Pu" />
       <entity type="Muban" geocode="50250202" name="บ้านแม่ตะละเหนือ" english="Ban Mae Tala Nuea" comment="In DOPA list without Nuea" />
@@ -3346,8 +3471,13 @@
           <googleplus>117797790990746762356</googleplus>
         </socialweb>
         <officials>
-          <official title="TAOMayor" name="ศรีแก้ว คีรีรังสี" inoffice="2012" />
+          <official title="TAOMayor" name="สุขชัย สนวิเศษณ์" begin="2012-05-13" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ศรีแก้ว คีรีรังสี" endyear="2012" />
         </officials>
+        <council>
+          <term begin="2012-05-13" type="TAO" size="14" />
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="14" />
+        </council>
       </office>
       <entity type="Muban" geocode="50250301" name="บ้านขุนแม่รวม" english="Ban Khun Mae Ruam" comment="and บ้านแอเอาะ" />
       <entity type="Muban" geocode="50250302" name="บ้านกิ่วโป่ง" english="Ban Kio Pong" comment="and บ้านใหม่พัฒนา" />
@@ -3381,6 +3511,9 @@
         <official title="Mayor" name="บุญเลิศ บูรณุปกรณ์" beginyear="2004" end="2007-05-04" />
         <official title="Mayor" name="บุญเลิศ บูรณุปกรณ์" beginyear="2000" endyear="2004" />
       </officials>
+      <council>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanNakhon" size="24" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ช้างเผือก" english="Chang Phueak" geocode="5098" parent="5001">
@@ -3406,6 +3539,9 @@
       <officials>
         <official title="Mayor" name="ยุทธ เทพวงศ์" inoffice="2010" />
       </officials>
+      <council>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+      </council>
     </office>
     <history>
       <rename oldname="บ้านหลวง" name="จอมทอง" oldenglish="Ban Luang" />
@@ -3435,9 +3571,11 @@
       </geo:Point>
       <url>http://www.chiangdaocity.go.th/</url>
       <officials>
-        <official title="Mayor" name="ศักดิ์ชัย ห่านตระกูล" begin="2008-03-09" inoffice="2010" />
+        <official title="Mayor" name="ศักดิ์ชัย ห่านตระกูล" begin="2012-07-15" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ศักดิ์ชัย ห่านตระกูล" begin="2008-03-09" end="2012-03-08" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
+        <term begin="2012-07-15" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -3468,8 +3606,12 @@
         <googleplus>118079369670155533984</googleplus>
       </socialweb>
       <officials>
+        <!-- No Mayor end term in 2012 -->
         <official title="Mayor" name="ประดิษฐ์ สอาดล้วน" inoffice="2011" />
       </officials>
+      <council>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+      </council>
     </office>
     <history>
       <rename oldname="เชิงดอย" name="เชิงดอย" oldenglish="Choeng Doi" />
@@ -3495,8 +3637,11 @@
         <blog>http://sanmahapon.wordpress.com/</blog>
       </socialweb>
       <officials>
-        <official title="Mayor" name="สฤษดิ์  ชื่นจิตต์" inoffice="2010" />
+        <official title="Mayor" name="สฤษดิ์ ชื่นจิตต์" begin="2008-09-14" endyear="2012" />
       </officials>
+      <council>
+        <term begin="2008-09-14" end="2012-09-13" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แม่ริม" english="Mae Rim" geocode="5090" parent="5007">
@@ -3505,7 +3650,7 @@
         <geo:lat>18.9163</geo:lat>
         <geo:long>98.9605</geo:long>
       </geo:Point>
-      <url lastchecked="2012-09-10">http://www.tessabanmaerim.com/</url>
+      <url lastchecked="2012-12-03">http://www.tessabanmaerim.com/</url>
       <officials>
         <official title="Mayor" name="พีรพันธุ์ สังข์เรือง" begin="2008-06-08" end="2012-06-07" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         <official title="Mayor" name="พีรพันธุ์ สังข์เรือง" begin="2004-05-02" end="2008-05-01" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -3513,6 +3658,7 @@
         <official title="Mayor" name="จุฬา สังข์ชีพรุ่งเรือง" beginyear="1999" endyear="2000" beginreason="ElectedByCouncil" />
       </officials>
       <council>
+        <term begin="2012-07-15" type="ThesabanTambon" size="12" />
         <term begin="2008-06-08" end="2012-06-07" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -3543,6 +3689,9 @@
   <entity type="ThesabanTambon" name="เวียงฝาง" english="Wiang Fang" geocode="5087" parent="5009">
     <office type="MunicipalityOffice">
       <url>http://wiangfang.tombon.net/</url>
+      <council>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แม่อาย" english="Mae Ai" geocode="5086" parent="5010">
@@ -3625,6 +3774,9 @@
   <entity type="ThesabanTambon" name="สันทรายหลวง" english="San Sai Luang" geocode="5079" parent="5014">
     <office type="MunicipalityOffice">
       <url>http://www.sansailuang.org</url>
+      <council>
+        <term begin="2008-09-14" end="2012-09-13" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองตองพัฒนา" english="Nong Tong Phatthana" geocode="5078" parent="5015">
@@ -3640,8 +3792,11 @@
       </geo:Point>
       <url lastchecked="2012-03-26">http://www.hangdong-mu.org/</url>
       <officials>
-        <official title="Mayor" name="จำรูญ เร่งถนอมทรัพย์" inoffice="2010" />
+        <official title="Mayor" name="จำรูญ เร่งถนอมทรัพย์" begin="2008-03-09" endyear="2012" />
       </officials>
+      <council>
+        <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าข้าม" english="Tha Kham" geocode="5076" parent="5016">
@@ -3652,8 +3807,13 @@
       </geo:Point>
       <url>http://www.ttkhod.org/</url>
       <officials>
-        <official title="Mayor" name="ไพศาล พุทธเหมาะ" inoffice="2009" />
+        <official title="Mayor" name="ไพศาล พุทธเหมาะ" begin="2012-07-15" />
+        <official title="Mayor" name="ไพศาล พุทธเหมาะ" begin="2008-06-08" end="2012-06-07" />
       </officials>
+      <council>
+        <term begin="2012-07-15" type="ThesabanTambon" size="12" />
+        <term begin="2008-06-08" end="2012-06-07" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าเดื่อ" english="Tha Duea" geocode="5075" parent="5017">
@@ -3676,8 +3836,27 @@
   </entity>
   <entity type="ThesabanTambon" name="อมก๋อย" english="Omkoi" geocode="5074" parent="5018">
     <office type="MunicipalityOffice">
-      <url>http://www.omkoiinfo.com/</url>
+      <symbols>
+        <vision>เมืองน่าอยู่  อย่างยั่งยืนตามวิถีพอเพียง</vision>
+      </symbols>
+      <geo:Point>
+        <geo:lat>17.8034</geo:lat>
+        <geo:long>98.3625</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-12-03">http://www.omkoicity.go.th/</url>
+      <url status="expired">http://www.omkoiinfo.com/</url>
+      <officials>
+        <official title="Mayor" name="บุญเย็น ใจตา" inoffice="2012" />
+      </officials>
+      <council>
+        <term begin="2007-07-08" end="2011-07-07" type="ThesabanTambon" size="12" />
+      </council>
     </office>
+    <entity type="Chumchon" geocode="50740001" name="ชุมชนน้ำบ่อแก้ว" english="Chhumchon Nam Bo Kaeo" muban="50180101" />
+    <entity type="Chumchon" geocode="50740002" name="ชุมชนเจริญทัศนา" english="Chumchon Charoen That Na" muban="50180101" />
+    <entity type="Chumchon" geocode="50740003" name="ชุมชนต้นฮักเฉลิมพระเกียรติ" english="Chumchon Ton Hak Chaloem Phra Kiat" muban="50180101" />
+    <entity type="Chumchon" geocode="50740004" name="ชุมชนแสนทอง" english="Chumchon Saen Thong" muban="50180109" />
+    <entity type="Chumchon" geocode="50740005" name="ชุมชนแสนทองร่วมใจพัฒนา" english="Chumchon Saen Thong Ruam Chai Phatthana" muban="50180109" />
   </entity>
   <entity type="ThesabanTambon" name="ยางเนิ้ง" english="Yang Noeng" geocode="5073" parent="5019">
     <office type="MunicipalityOffice">
@@ -3797,12 +3976,16 @@
   <entity type="ThesabanTambon" name="หนองผึ้ง" english="Nong Phueng" geocode="5064" parent="5019" tambon="501907">
     <office type="MunicipalityOffice">
       <url>http://www.nongphueng.go.th/</url>
+      <council>
+        <term begin="2008-03-30" end="2012-03-29" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าศาลา" english="Tha Sala" geocode="5063" parent="5001" tambon="500112">
     <office type="MunicipalityOffice">
       <url>http://www.tazala.org/</url>
       <officials>
+        <!-- election 2011-04-03 -->
         <official title="Mayor" name="ศิริพัฒน์ กาวิละ" inoffice="2008" />
       </officials>
     </office>
@@ -3810,6 +3993,7 @@
   <entity type="ThesabanTambon" name="แม่แฝก" english="Mae Faek" geocode="5062" parent="5014" tambon="501409">
     <office type="MunicipalityOffice">
       <url>http://www.maefag.go.th/</url>
+      <!-- type="Mayor" begin="2008-11-16" endyear="2012" -->
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองหอย" english="Nong Hoi" geocode="5061" parent="5001" tambon="500111">
@@ -3887,9 +4071,12 @@
       </address>
       <url>http://www.cherngdoi.go.th/</url>
       <officials>
-        <official title="Mayor" name="นายมงคล ชัยวุฒิ" inoffice="2010" />
+        <official title="Mayor" name="นายมงคล ชัยวุฒิ" begin="2008-12-21" endyear="2012" />
         <official title="TAOMayor" name="มงคล ชัยวุฒิ" inoffice="2008" />
       </officials>
+      <council>
+        <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แม่โป่ง" english="Mae Pong" geocode="5048" parent="5005" tambon="500512">
@@ -3903,9 +4090,12 @@
       <url>http://www.maepong.net/</url>
       <url status="offline">http://www.maepong.org/</url>
       <officials>
-        <official title="Mayor" name="จรัญ ทาวรรณะ" inoffice="2011" />
+        <official title="Mayor" name="จรัญ ทาวรรณะ" begin="2008-12-21" endyear="2012" />
         <official title="TAOMayor" name="ทองสุข ธาตุอินจันทร์" endyear="2008" endreason="EndOfTerm" />
       </officials>
+      <council>
+        <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ลวงเหนือ" english="Luang Nuea" geocode="5047" parent="5005" tambon="500503">
@@ -3914,10 +4104,18 @@
         <geo:lat>18.9158</geo:lat>
         <geo:long>99.1350</geo:long>
       </geo:Point>
-      <url>http://www.loungnuae.com/</url>
+      <url lastchecked="2012-12-03">http://www.loungnuae.go.th/</url>
+      <url lastchecked="2012-12-03">http://tambonthai.org/loungnuae/</url>
+      <url status="offline">http://www.loungnuae.com/</url>
       <socialweb>
-        <blog>http://tambonloungnuae.wordpress.com/</blog>
+        <blog status="obsolete">http://tambonloungnuae.wordpress.com/</blog>
       </socialweb>
+      <officials>
+        <official title="Mayor" name="นายดวงแก้ว สะอาดล้วน" begin="2008-12-21" endyear="2012" />
+      </officials>
+      <council>
+        <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สันปูเลย" english="San Pu Loei" geocode="5046" parent="5005" tambon="500502">
@@ -3925,8 +4123,12 @@
       <url>http://www.sanpulei.go.th/</url>
       <url status="offline">http://www.spl.go.th/</url>
       <officials>
+        <!-- No Mayor end term in 2012 -->
         <official title="Mayor" name="อรัญ คุณยศยิ่ง" inoffice="2010" />
       </officials>
+      <council>
+        <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แม่ปูคา" english="Mae Pu Kha" geocode="5045" parent="5013" tambon="501310">
@@ -3983,11 +4185,31 @@
         <geo:long>99.0500</geo:long>
       </geo:Point>
       <url>http://papaichiangmai.com/</url>
+      <council>
+        <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ่อหลวง" english="Bo Luang" geocode="5041" parent="5016" tambon="501604">
     <office type="MunicipalityOffice">
-      <url>http://www.baulaung.org/</url>
+      <symbols>
+        <vision>
+          เทศบาลตำบลบ่อหลวงเป็นตำบลที่มีการคมนาคมสะดวก   มีเศรษฐกิจดี
+          ประชาชนในตำบลร่วมกันอนุรักษ์สิ่งแวดล้อม
+        </vision>
+      </symbols>
+      <geo:Point>
+        <geo:lat> 18.1476</geo:lat>
+        <geo:long> 98.3482</geo:long>
+      </geo:Point>
+      <url lastchecked="2012-12-03">http://www.baulaung.org/</url>
+      <officials>
+        <!-- No Mayor end term in 2012 -->
+        <official title="Mayor" name="สุรชาติ ใจตุ้ย" inoffice="2012" />
+      </officials>
+      <council>
+        <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <!--<entity type="ThesabanTambon" name="สันปูเลย" english="San Pu Loei" geocode="5040" />-->
