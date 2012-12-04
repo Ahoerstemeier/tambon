@@ -34,9 +34,9 @@
       <official title="PAOChairman" name="ชาติชาย เจียมศรีพงษ์" endyear="2012" />
     </officials>
     <council>
-      <term begin="2012-09-26" type="PAO" size="30"/>
-      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="30"/>
-      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="30"/>
+      <term begin="2012-09-26" type="PAO" size="30" />
+      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="30" />
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="30" />
     </council>
   </office>
   <entity type="Amphoe" name="เมืองพิจิตร" english="Mueang Phichit" geocode="6601">
@@ -548,11 +548,30 @@
     <entity type="Tambon" name="บางมูลนาก" english="Bang Mun Nak" geocode="660501" />
     <entity type="Tambon" name="บางไผ่" english="Bang Phai" geocode="660502">
       <office type="TAOOffice">
+        <symbols>
+          <vision>แหล่งน้ำพอเพียง  การคมนาคมสะดวก  ประชาชนมีคุณภาพชีวิตตามแนวคิดเศรษฐกิจพอเพียง</vision>
+        </symbols>
         <geo:Point>
           <geo:lat>16.1279</geo:lat>
           <geo:long>100.3965</geo:long>
         </geo:Point>
+        <url lastchecked="2012-12-04">http://www.bangphai-sao.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="อำนวย สุขเย็น" inoffice="2012" />
+        </officials>
       </office>
+      <entity type="Muban" geocode="66050201" name="บ้านโพธิ์แดน" english="Ban Pho Daen" />
+
+      <entity type="Muban" geocode="66050203" name="บ้านสถานีดงตะขบ" english="Ban Sathani Dong Takhop" />
+
+      <entity type="Muban" geocode="66050205" name="บ้านบางไผ่" english="Ban Bang Phai" />
+      <entity type="Muban" geocode="66050206" name="บ้านวังน้ำเต้า" english="Ban Wang Nam Tao" />
+      <entity type="Muban" geocode="66050207" name="บ้านห้วยคต" english="Ban Huai Khot" />
+      <entity type="Muban" geocode="66050208" name="บ้านท่าตะกู" english="Ban Tha Taku" />
+      <entity type="Muban" geocode="66050209" name="บ้านบางไผ่" english="Ban Bang Phai" />
+      <entity type="Muban" geocode="66050210" name="บ้านวังน้ำเต้า" english="Ban Wang Nam Tao" />
+      <entity type="Muban" geocode="66050211" name="บ้านโพธิ์แดน" english="Ban Pho Daen" />
+      <entity type="Muban" geocode="66050212" name="บ้านพฤกษวัน" english="Ban Phrueksa Wan" />
     </entity>
     <entity type="Tambon" name="หอไกร" english="Ho Krai" geocode="660503" />
     <entity type="Tambon" name="เนินมะกอก" english="Noen Makok" geocode="660504">
@@ -1215,7 +1234,11 @@
   </entity>
   <entity type="ThesabanTambon" name="บางไผ่" english="Bang Phai" geocode="6691" parent="6605">
     <office type="MunicipalityOffice">
-      <url>http://www.bangphai.go.th/</url>
+      <url status="offline">http://www.bangphai.go.th/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/BangphaiFanpage</facebook>
+        <googleplus type="user">105010206377231218906</googleplus>
+      </socialweb>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="วังตะกู" english="Wang Taku" geocode="6690" parent="6605">
