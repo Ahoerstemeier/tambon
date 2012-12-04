@@ -397,9 +397,6 @@ namespace De.AHoerstemeier.Tambon {
     /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteEntry))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteInterpellation))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteReferenceBase))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCorrection))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRelated))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteOperationBase))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteConstituency))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteMention))]
@@ -748,6 +745,9 @@ namespace De.AHoerstemeier.Tambon {
     public partial class GazetteRelated : GazetteReferenceBase {
     }
     
+    /// <summary>
+    /// Reference to another gazette announcement.
+    /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCorrection))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRelated))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
@@ -756,7 +756,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="GazetteReferenceBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public abstract partial class GazetteReferenceBase : EntryActionList {
+    public abstract partial class GazetteReferenceBase {
         
         private uint volumeField;
         
@@ -770,12 +770,6 @@ namespace De.AHoerstemeier.Tambon {
         
         private string commentField;
         
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint volume {
@@ -787,12 +781,6 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint page {
@@ -804,12 +792,6 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string issue {
@@ -821,12 +803,6 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime date {
@@ -855,12 +831,6 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string comment {

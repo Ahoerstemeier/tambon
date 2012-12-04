@@ -1,155 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เชียงใหม่" english="Chiang Mai" geocode="50" >
+<entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เชียงใหม่" english="Chiang Mai" geocode="50">
   <population source="Census" year="1960" referencedate="1960-04-25">
-    <data type="total">
-      <total>798483</total>
-      <male>404163</male>
-      <female>394320</female>
+    <data type="total" total="798483" male="404163" female="394320">
       <agetable>
-        <age begin="0" end="0">
-          <total>21853</total>
-          <male>10722</male>
-          <female>11131</female>
-        </age>
-
-        <age begin="85" end="89">
-          <total>699</total>
-          <male>257</male>
-          <female>442</female>
-        </age>
-        <age begin="90" end="94">
-          <total>204</total>
-          <male>64</male>
-          <female>140</female>
-        </age>
-        <age begin="95" end="120">
-          <total>166</total>
-          <male>36</male>
-          <female>130</female>
-        </age>
-        <unknown>
-          <total>741</total>
-          <male>473</male>
-          <female>268</female>
-        </unknown>
+        <age begin="0" end="0" total="21853" male="10722" female="11131" />
+        <age begin="85" end="89" total="699" male="257" female="442" />
+        <age begin="90" end="94" total="204" male="64" female="140" />
+        <age begin="95" end="120" total="166" male="36" female="130" />
+        <unknown total="741" male="473" female="268" />
       </agetable>
     </data>
-    <data type="agricultural">
-      <total>556613</total>
-      <households>111846</households>
-    </data>
-    <data type="nonagricultural">
-      <total>241870</total>
-      <households>53853</households>
-    </data>
-    <data type="municipal">
-      <total>65600</total>
-      <male>34114</male>
-      <female>31486</female>
-    </data>
+    <data type="agricultural" total="556613" households="111846" />
+    <data type="nonagricultural" total="241870" households="53853" />
+    <data type="municipal" total="65600" male="34114" female="31486" />
   </population>
   <population source="Census" year="2000" referencedate="2000-04-01">
-    <data type="total">
-      <total>1500127</total>
-      <male>741726</male>
-      <female>758401</female>
-      <households>432292</households>
+    <data type="total" total="1500127" male="741726" female="758401" households="432292">
       <agetable>
-        <age begin="0" end="4">
-          <total>92576</total>
-          <male>47328</male>
-          <female>45248</female>
-        </age>
+        <age begin="0" end="4" total="92576" male="47328" female="45248" />
       </agetable>
     </data>
-    <data type="privatehouseholds">
-      <total>1468578</total>
-      <male>719378</male>
-      <female>749200</female>
-      <households>430154</households>
-    </data>
-    <data type="collectivehouseholds">
-      <total>31549</total>
-      <male>22348</male>
-      <female>9201</female>
-      <households>2138</households>
-    </data>
-    <data type="municipal">
-      <total>398169</total>
-      <male>191451</male>
-      <female>206718</female>
-      <households>121880</households>
-      <data type="privatehouseholds">
-        <total>378008</total>
-        <male>179190</male>
-        <female>198818</female>
-        <households>121132</households>
-      </data>
-      <data type="collectivehouseholds">
-        <total>20161</total>
-        <male>12261</male>
-        <female>7900</female>
-        <households>748</households>
-      </data>
+    <data type="privatehouseholds" total="1468578" male="719378" female="749200" households="430154" />
+    <data type="collectivehouseholds" total="31549" male="22348" female="9201" households="2138" />
+    <data type="municipal" total="398169" male="191451" female="206718" households="121880">
+      <data type="privatehouseholds" total="378008" male="179190" female="198818" households="121132" />
+      <data type="collectivehouseholds" total="20161" male="12261" female="7900" households="748" />
       <agetable>
-        <age begin="0" end="4">
-          <total>19038</total>
-          <male>9619</male>
-          <female>9419</female>
-        </age>
+        <age begin="0" end="4" total="19038" male="9619" female="9419" />
       </agetable>
     </data>
-    <data type="nonmunicipal">
-      <total>1101958</total>
-      <male>550275</male>
-      <female>551683</female>
+    <data type="nonmunicipal" total="1101958" male="550275" female="551683">
       <agetable>
-        <age begin="0" end="4">
-          <total>73538</total>
-          <male>37709</male>
-          <female>35829</female>
-        </age>
+        <age begin="0" end="4" total="73538" male="37709" female="35829" />
       </agetable>
     </data>
   </population>
 
-  <entity type="Amphoe" name="เมืองเชียงใหม่" english="Mueang Chiang Mai" geocode="5001" >
+  <entity type="Amphoe" name="เมืองเชียงใหม่" english="Mueang Chiang Mai" geocode="5001">
     <population source="Census" year="1960" referencedate="1960-04-25">
-      <data type="total">
-      <total>100158</total>
-      <male>51649</male>
-      <female>48509</female>
-      </data>
-      <data type="agricultural">
-        <total>20212</total>
-        <households>3880</households>
-      </data>
-      <data type="nonagricultural">
-        <total>79946</total>
-        <households>15273</households>
-      </data>
-      <data type="municipal">
-        <total>65600</total>
-        <male>34114</male>
-        <female>31486</female>
-      </data>
+      <data type="total" total="100158" male="51649" female="48509" />
+      <data type="agricultural" total="20212" households="3880" />
+      <data type="nonagricultural" total="79946" households="15273" />
+      <data type="municipal" total="65600" male="34114" female="31486" />
     </population>
   </entity>
-  <entity type="Amphoe" name="จอมทอง" english="Chom Thong" geocode="5002" >
+  <entity type="Amphoe" name="จอมทอง" english="Chom Thong" geocode="5002">
     <population source="Census" year="1960" referencedate="1960-04-25">
-      <data type="total">
-      <total>54121</total>
-      <male>27207</male>
-      <female>26914</female>
-      </data>
-      <data type="agricultural">
-        <total>42668</total>
-        <households>8284</households>
-      </data>
-      <data type="nonagricultural">
-        <total>11453</total>
-        <households>2593</households>
-      </data>
+      <data type="total" total="54121" male="27207" female="26914" />
+      <data type="agricultural" total="42668" households="8284" />
+      <data type="nonagricultural" total="11453" households="2593" />
     </population>
   </entity>
 
@@ -168,7 +67,7 @@
   <entity type="Amphoe" name="หางดง" english="Hang Dong" geocode="5015" />
   <entity type="Amphoe" name="ฮอด" english="Hot" geocode="5016" />
   <entity type="Amphoe" name="อมก๋อย" english="Omkoi" geocode="5018" />
-  <!-- 
+  <!--
 Total	Male	Female	Agr. Household	Agr. Population	Non-Agr. Household	Non-Agr. Population
   Amphur Mae-chaem	21,603	10,781	10,822	3,901	19,964	377	1,639
   Amphur Chiengdao	27,465	14,134	13,331	4,167	19,957	1,860	7,508

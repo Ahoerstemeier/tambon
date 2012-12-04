@@ -11,6 +11,59 @@
   <xs:include schemaLocation="constituencies.xsd" />
   <xs:include schemaLocation="geocode.xsd" />
 
+  <xs:simpleType name="SymbolColor">
+    <xs:annotation>
+      <xs:documentation>Symbol colors.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="orange">
+        <xs:annotation>
+          <xs:documentation>Orange (สีส้ม).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="yellow">
+        <xs:annotation>
+          <xs:documentation>Yellow (สีเหลือง).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="red">
+        <xs:annotation>
+          <xs:documentation>Yellow (สีแดง).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="green">
+        <xs:annotation>
+          <xs:documentation>Green (สีเขียว).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="violet">
+        <xs:annotation>
+          <xs:documentation>Green (สีม่วง).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pink">
+        <xs:annotation>
+          <xs:documentation>Pink/rose (สีชมพู).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="lightblue">
+        <xs:annotation>
+          <xs:documentation>Light blue/sky blue (สีฟ้า).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="darkblue">
+        <xs:annotation>
+          <xs:documentation>Dark blue/navy blue (สีน้ำเงิน).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="magenta">
+        <xs:annotation>
+          <xs:documentation>Magenta (สีเลือดหมู).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="OfficeType">
     <xs:annotation>
       <xs:documentation>Office types for the administrative entities.</xs:documentation>
@@ -506,9 +559,9 @@
           <xs:documentation>Botanical name of the symbol flower (ดอกไม้ประจำจังหวัด).</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="color" type="xs:string">
+      <xs:element minOccurs="0" maxOccurs="1" name="color" type="t:SymbolColor">
         <xs:annotation>
-          <xs:documentation>Symbol color of the entity (in English).</xs:documentation>
+          <xs:documentation>Symbol color of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
