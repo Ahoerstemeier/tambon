@@ -36,7 +36,9 @@ namespace De.AHoerstemeier.Tambon {
         
         private string symbolflowerField;
         
-        private string colorField;
+        private SymbolColor colorField;
+        
+        private bool colorFieldSpecified;
         
         /// <summary>
         /// Creates a new instance of Symbols.
@@ -133,19 +135,36 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Symbol color of the entity (in English).
+        /// Symbol color of the entity.
         /// </summary>
         /// <value>
         /// The color.
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string color {
+        public SymbolColor color {
             get {
                 return this.colorField;
             }
             set {
                 this.colorField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool colorSpecified {
+            get {
+                return this.colorFieldSpecified;
+            }
+            set {
+                this.colorFieldSpecified = value;
             }
         }
     }
@@ -305,6 +324,61 @@ namespace De.AHoerstemeier.Tambon {
                 this.valueField = value;
             }
         }
+    }
+    
+    /// <summary>
+    /// Symbol colors.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum SymbolColor {
+        
+        /// <summary>
+        /// Orange (สีส้ม).
+        /// </summary>
+        orange,
+        
+        /// <summary>
+        /// Yellow (สีเหลือง).
+        /// </summary>
+        yellow,
+        
+        /// <summary>
+        /// Yellow (สีแดง).
+        /// </summary>
+        red,
+        
+        /// <summary>
+        /// Green (สีเขียว).
+        /// </summary>
+        green,
+        
+        /// <summary>
+        /// Green (สีม่วง).
+        /// </summary>
+        violet,
+        
+        /// <summary>
+        /// Pink/rose (สีชมพู).
+        /// </summary>
+        pink,
+        
+        /// <summary>
+        /// Light blue/sky blue (สีฟ้า).
+        /// </summary>
+        lightblue,
+        
+        /// <summary>
+        /// Dark blue/navy blue (สีน้ำเงิน).
+        /// </summary>
+        darkblue,
+        
+        /// <summary>
+        /// Magenta (สีเลือดหมู).
+        /// </summary>
+        magenta,
     }
     
     /// <summary>
@@ -1643,7 +1717,7 @@ namespace De.AHoerstemeier.Tambon {
         Death,
         
         /// <summary>
-        /// Removed from post by higher authorities.
+        /// Removed from post by higher authorities (สั่งให้พ้น, พ้นจากตำแหน่ง).
         /// </summary>
         Removed,
         
@@ -1858,7 +1932,7 @@ namespace De.AHoerstemeier.Tambon {
         StatusChange,
         
         /// <summary>
-        /// Dissolution after order from higher authorities.
+        /// Dissolution after order from higher authorities (ยุบสภา).
         /// </summary>
         DissolutionOrdered,
         
