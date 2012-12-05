@@ -272,6 +272,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private string inuseField;
         
+        private string commentField;
+        
         private string valueField;
         
         /// <summary>
@@ -305,6 +307,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.inuseField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
             }
         }
         

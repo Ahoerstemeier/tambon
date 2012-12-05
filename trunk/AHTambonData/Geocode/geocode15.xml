@@ -146,7 +146,14 @@
     <entity type="Tambon" name="บ้านรี" english="Ban Ri" geocode="150112" />
     <entity type="Tambon" name="คลองวัว" english="Khlong Wua" geocode="150113">
       <office type="TAOOffice">
-        <url comment="Offline">http://www.tambon-klongwao.com/</url>
+        <symbols>
+          <vision>สิ่งแวดล้อมดี สินค้าหัตถกรรมล้ำเลิศ เกิดมามีคุณภาพ ปราบปรามยาเสพติด พัฒนาชีวิตด้วยการศึกษา สาธารณูปโภคพร้อมเพียง</vision>
+        </symbols>
+        <!-- currently at http://www.thaimallplaza.com/center/website/management/website_dragdrop/index_menu.php?site=1206 -->
+        <url status="offline">http://www.tambon-klongwao.com/</url>
+        <officials>
+          <official title="TAOMayor" name="นายสนอง คลืนคลีบ" inoffice="2012" />
+        </officials>
       </office>
       <entity type="Muban" geocode="15011301" name="บ้านบางตาแผ่น" english="Ban Bang Ta Phaen" />
       <entity type="Muban" geocode="15011302" name="บ้านบางต้นทอง" english="Ban Bang Ton Thong" />
@@ -344,7 +351,7 @@
         </geo:Point>
         <url>http://www.intapramul.go.th/</url>
       </office>
-      <entity type="Muban" geocode="15040201" name="บ้านน้ำอาบ" />
+      <entity type="Muban" geocode="15040201" name="บ้านน้ำอาบ" english="Ban Nam Ap" />
       <entity type="Muban" geocode="15040202" name="บ้านอินทประมูล" english="Ban Inthapramun" />
       <entity type="Muban" geocode="15040203" name="บ้านอินทประมูล" english="Ban Inthapramun" />
 
@@ -502,7 +509,8 @@
           <geo:lat>14.7018</geo:lat>
           <geo:long>100.2981</geo:long>
         </geo:Point>
-        <url comment="Strange content">http://www.banpran.go.th/</url>
+        <url status="offline">http://www.banpran.go.th/</url>
+        <url status="offline">http://www.baanparn.com/</url>
       </office>
     </entity>
     <entity type="Tambon" name="วังน้ำเย็น" english="Wang Nam Yen" geocode="150504" />
@@ -768,7 +776,15 @@
   </entity>
   <entity type="ThesabanTambon" name="ไชโย" english="Chaiyo" geocode="1596" parent="1502">
     <office type="MunicipalityOffice">
-      <url comment="Offline">http://jorakaerong.com/</url>
+      <url lastchecked="2012-12-05">http://www.chaiyo.go.th/</url>
+      <url status="offline">http://jorakaerong.com/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/Chaiyo.District.Municipality</facebook>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="อุดม นวมจิตร์" inoffice="2012" />
+        <official title="Mayor" name="บุญสม หวังสะแล่ะฮ์" comment="Inoffice ca. 2010" />
+      </officials>
     </office>
     <history>
       <rename oldname="จรเข้ร้อง" oldenglish="Chorakhe Rong" name="ไชโย" />

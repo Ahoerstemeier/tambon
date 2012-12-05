@@ -36,8 +36,8 @@
     </officials>
     <council>
       <term begin="2012-07-22" type="PAO" />
-      <term begin="2008-04-26" end="2012-04-25" type="PAO" size="48"/>
-      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="48"/>
+      <term begin="2008-04-26" end="2012-04-25" type="PAO" size="48" />
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="48" />
     </council>
   </office>
   <entity type="Amphoe" name="เมืองนครราชสีมา" english="Mueang Nakhon Ratchasima" geocode="3001">
@@ -494,7 +494,13 @@
     </entity>
     <entity type="Tambon" name="พะเนา" english="Phanao" geocode="300123">
       <office type="TAOOffice">
-        <url comment="Currently offline?">http://www.phanaolocal.go.th/</url>
+        <symbols>
+          <vision>ชุมชนเข้มแข็ง ร่วมแรงพัฒนา ประชาเป็นสุข สาธารณสุขก้าวหน้า เศรษฐกิจพึ่งพา การศึกษาทั่วถึง เกษตรปลอดสาร และการอนุรักษ์ประเพณี</vision>
+        </symbols>
+        <url lastchecked="2012-12-05">http://www.phanaolocal.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="เหลือ เพ็ชร์ราม" inoffice="2012" />
+        </officials>
       </office>
       <entity type="Muban" geocode="30012301" name="บ้านมะเริงน้อย" english="Ban Maroeng Noi" />
       <entity type="Muban" geocode="30012302" name="บ้านพุดซา" english="Ban Phutsa" />
@@ -508,7 +514,8 @@
     </entity>
     <entity type="Tambon" name="หนองกระทุ่ม" english="Nong Krathum" geocode="300124">
       <office type="TAOOffice">
-        <url comment="Offline">http://www.nongkratum.com/</url>
+        <url status="broken">http://www.nongkratumkorat.go.th/</url>
+        <url status="expired">http://www.nongkratum.com/</url>
       </office>
       <entity type="Muban" geocode="30012401" name="บ้านหนองหญ้างาม" english="Ban Nong Ya Ngam" />
       <entity type="Muban" geocode="30012402" name="บ้านหนองโพธิ์" english="Ban Nong Pho" />
@@ -817,7 +824,7 @@
         <url>http://www.sukpaiboon.go.th/</url>
       </office>
       <entity type="Muban" geocode="30030501" name="บ้านสุขไพบูลย์" english="Ban Suk Phaibun" />
-      <entity type="Muban" geocode="30030502" name="บ้านดอนแขวน" english="Ban Dong Khwaen" />
+      <entity type="Muban" geocode="30030502" name="บ้านดอนแขวน" english="Ban Don Khwaen" />
       <entity type="Muban" geocode="30030503" name="บ้านสกัดนาค" english="Ban Sakat Nat" />
       <entity type="Muban" geocode="30030504" name="บ้านโคกหน้ากลอง" english="Ban Khok Ma Klong" />
       <entity type="Muban" geocode="30030505" name="บ้านหนองขนาก" english="Ban Nong Khanak" />
@@ -920,7 +927,7 @@
       <office type="TAOOffice">
         <url>http://www.tajan.go.th/</url>
       </office>
-      <entity type="Muban" geocode="30040401" name="บ้านบุสนวนใน" english="Ban Bu Sanuan Nai"/>
+      <entity type="Muban" geocode="30040401" name="บ้านบุสนวนใน" english="Ban Bu Sanuan Nai" />
 
       <entity type="Muban" geocode="30040418" name="บ้านสนวนพัฒนา" english="Ban Sanuan Phatthana" />
     </entity>
@@ -2561,13 +2568,12 @@
           <official title="Mayor" name="ชาติชาตรี งามตะคุ" inoffice="2011" />
         </officials>
         <history>
-          <rename oldname="เมืองปัก" oldenglish="Mueang Pak" name="ปักธงชัย" english="Pak Thong Chai" effective="2008-07-16" >
-            <meetingreference date="2008-06-04" number="3" board="rename"/>
+          <rename oldname="เมืองปัก" oldenglish="Mueang Pak" name="ปักธงชัย" english="Pak Thong Chai" effective="2008-07-16">
+            <meetingreference date="2008-06-04" number="3" board="rename" />
           </rename>
           <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-16">
             <meetingreference board="2" number="42" date="2008-06-04" />
           </statuschange>
-                         
         </history>
       </office>
 

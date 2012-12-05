@@ -46,9 +46,9 @@
       <official title="PAOChairman" name="วิริยะ ทองผาที่ปรึกษา" inoffice="2011" />
     </officials>
     <council>
-      <term begin="2012-10-14" type="PAO" size="24"/>
-      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="24"/>
-      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="24"/>
+      <term begin="2012-10-14" type="PAO" size="24" />
+      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="24" />
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="24" />
     </council>
   </office>
   <entity type="Amphoe" name="เมืองมุกดาหาร" english="Mueang Mukdahan" geocode="4901">
@@ -178,7 +178,11 @@
     </office>
     <entity type="Tambon" name="นิคมคำสร้อย" english="Nikhom Kham Soi" geocode="490201">
       <office type="TAOOffice">
-        <url comment="Offline?">http://www.nikhom.com/</url>
+        <geo:Point>
+          <geo:lat>16.3570</geo:lat>
+          <geo:long>104.5464</geo:long>
+        </geo:Point>
+        <url status="offline">http://www.nikhom.com/</url>
       </office>
     </entity>
     <entity type="Tambon" name="นากอก" english="Na Kok" geocode="490202" />
@@ -288,9 +292,9 @@
       <entity type="Muban" geocode="49030311" name="บ้านโนนสวาท" english="Ban Non Sawat" />
     </entity>
     <entity type="Tambon" name="เหล่าหมี" english="Lao Mi" geocode="490304">
-      <entity type="Muban" geocode="49030404" name="บ้านนาซิง" />
+      <entity type="Muban" geocode="49030404" name="บ้านนาซิง" english="Ban Na Sing" />
 
-      <entity type="Muban" geocode="49030410" name="บ้านนาซิงศรีสมบูรณ์" />
+      <entity type="Muban" geocode="49030410" name="บ้านนาซิงศรีสมบูรณ์" english="Ban Na Sing Si Sombun" />
     </entity>
     <entity type="Tambon" name="บ้านบาก" english="Ban Bak" geocode="490305">
       <office type="TAOOffice">
