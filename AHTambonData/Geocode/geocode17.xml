@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" geocode="17" name="สิงห์บุรี" english="Sing Buri">
+  <!-- http://www2.ect.go.th/about.php?Province=singburi&SiteMenuID=3561 -->
   <symbols>
     <slogan>ถิ่นวีระชนคนกล้า คู่หล้าพระนอน นามกระฉ่อนช่อนแม่ลา เทศกาลกิจปลาประจำปี</slogan>
   </symbols>
@@ -83,8 +84,8 @@
       <official title="PAOChairman" name="สรกฤช เทียนถาวร" begin="2008-01-20" end="2012-01-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
     </officials>
     <council>
-      <term begin="2012-08-26" type="PAO" size="24"/>
-      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="24"/>
+      <term begin="2012-08-26" type="PAO" size="24" />
+      <term begin="2008-04-20" end="2012-04-19" type="PAO" size="24" />
       <term begin="2004-03-14" end="2008-03-13" type="PAO" size="24" />
     </council>
   </office>
@@ -112,7 +113,7 @@
     </entity>
     <entity type="Tambon" name="โพกรวม" english="Phok Ruam" geocode="170103">
       <office type="TAOOffice">
-        <url comment="Offline">http://www.pogruam.go.th/</url>
+        <url status="offline">http://www.pogruam.go.th/</url>
       </office>
     </entity>
     <entity type="Tambon" name="ม่วงหมู่" english="Muang Mu" geocode="170104">
@@ -179,7 +180,24 @@
         <official title="DistrictOfficer" name="ธีระพิบูลย์ สิงหรา ณ อยุธยา" inoffice="2009" comment="2009-06" />
       </officials>
     </office>
-    <entity type="Tambon" name="สิงห์" english="Sing" geocode="170201" />
+    <entity type="Tambon" name="สิงห์" english="Sing" geocode="170201">
+      <office type="TAOOffice" obsolete="1">
+        <history>
+          <abolished type="TAO" mergeto="170205" effective="2004-07-01">
+            <gazetteref volume="121" page="15" issue="พิเศษ 75 ง" date="2004-07-09" />
+          </abolished>
+        </history>
+      </office>
+      <entity type="Muban" geocode="17020201" name="บ้านตลาดโพธิ์" english="Ban Talat Pho" />
+      <entity type="Muban" geocode="17020201" name="บ้านตลาดโพธิ์" english="Ban Talat Pho" />
+      <entity type="Muban" geocode="17020202" name="บ้านตลาดโพธิ์" english="Ban Talat Pho" />
+      <entity type="Muban" geocode="17020203" name="บ้านตลาดโพธิ์" english="Ban Talat Pho" />
+      <entity type="Muban" geocode="17020205" name="บ้านบางวัว" english="Ban Bang Wua" />
+      <entity type="Muban" geocode="17020206" name="บ้านบางวัว" english="Ban Bang Wua" />
+      <entity type="Muban" geocode="17020207" name="บ้านห้วยใหญ่" english="Ban Huai Yai" />
+      <entity type="Muban" geocode="17020208" name="บ้านบางคุณฑี" english="Ban Bang Khun Thi" />
+      <entity type="Muban" geocode="17020209" name="บ้านห้วยชุมแสง" english="Ban Huai Chum Saeng" />
+    </entity>
     <entity type="Tambon" name="ไม้ดัด" english="Mai Dat" geocode="170202">
       <office type="TAOOffice">
         <url>http://www.maidaat.go.th/</url>
@@ -189,11 +207,42 @@
       </office>
     </entity>
     <entity type="Tambon" name="เชิงกลัด" english="Choeng Klat" geocode="170203" />
-    <entity type="Tambon" name="โพชนไก่" english="Pho Chon Kai" geocode="170204" />
+    <entity type="Tambon" name="โพชนไก่" english="Pho Chon Kai" geocode="170204">
+      <office type="TAOOffice" obsolete="1">
+        <history>
+          <abolished type="TAO" mergeto="170205" effective="2004-07-01">
+            <gazetteref volume="121" page="15" issue="พิเศษ 75 ง" date="2004-07-09" />
+          </abolished>
+        </history>
+      </office>
+      <entity type="Muban" geocode="17020401" name="บ้านบางวัว" english="Ban Bang Wua" />
+      <entity type="Muban" geocode="17020402" name="บ้านบางวัว" english="Ban Bang Wua" />
+      <entity type="Muban" geocode="17020403" name="บ้านโพชนไก่" english="Ban Pho Chon Kai" />
+      <entity type="Muban" geocode="17020404" name="บ้านโพชนไก่" english="Ban Pho Chon Kai" />
+      <entity type="Muban" geocode="17020405" name="บ้านท่าศาลเจ้า" english="Ban Tha San Chao" />
+      <entity type="Muban" geocode="17020406" name="บ้านท่าศาลเจ้า" english="Ban Tha San Chao" />
+      <entity type="Muban" geocode="17020407" name="บ้านชัณสูตร" english="Ban Chan Suton" />
+      <entity type="Muban" geocode="17020408" name="บ้านโพธิ์หอม" english="Ban Pho Hom" />
+      <entity type="Muban" geocode="17020409" name="บ้านวังขรณ์" english="Ban Wang Khon" />
+      <entity type="Muban" geocode="17020410" name="บ้านโคกวัด" english="Ban Khok Wat" />
+    </entity>
     <entity type="Tambon" name="แม่ลา" english="Mae La" geocode="170205">
       <office type="TAOOffice">
-        <url comment="Offline">http://www.maela-sao.go.th/</url>
+        <geo:Point>
+          <geo:lat>14.9417</geo:lat>
+          <geo:long>100.3272</geo:long>
+        </geo:Point>
+        <url lastchecked="2012-12-05">http://www.maela-sao.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="อุดมลักษณ์ ผาสุข" inoffice="2012" />
+        </officials>
       </office>
+      <entity type="Muban" geocode="17020501" name="บ้านแหลมกุ่ม" english="Ban Laem Kum" />
+      <entity type="Muban" geocode="17020502" name="บ้านเชิงกลัด" english="Ban  Choeng Klat" />
+      <entity type="Muban" geocode="17020503" name="บ้านโคกนางพระจันทร์" english="Ban Khok Nang Phra Chan" />
+      <entity type="Muban" geocode="17020504" name="บ้านแหลมแค" english="Ban Laem Khae" />
+      <entity type="Muban" geocode="17020505" name="บ้านโคกวัด" english="Ban Khok Wat" />
+      <entity type="Muban" geocode="17020506" name="บ้านห้วยสามัคคี" english="Ban Huai Samakkhi" />
     </entity>
     <entity type="Tambon" name="บ้านจ่า" english="Ban Cha" geocode="170206">
       <office type="TAOOffice">
@@ -608,7 +657,7 @@
     <entity type="Tambon" name="ทองเอน" english="Thong En" geocode="170608">
       <office type="TAOOffice">
         <!-- Longdo: 15.0250778198308 100.365783691407 -->
-        <url comment="Offline">http://www.thongen.go.th/</url>
+        <url status="offline">http://www.thongen.go.th/</url>
       </office>
     </entity>
     <entity type="Tambon" name="ห้วยชัน" english="Huai Chan" geocode="170609">
