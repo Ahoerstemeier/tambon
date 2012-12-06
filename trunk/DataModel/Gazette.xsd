@@ -550,7 +550,9 @@
   </xs:complexType>
   <xs:complexType name="GazetteCorrection">
     <xs:complexContent>
-      <xs:extension base="t:GazetteReferenceBase" />
+      <xs:extension base="t:GazetteReferenceBase">
+        <xs:group ref='t:EntryAction' minOccurs='0' maxOccurs='1' />
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
