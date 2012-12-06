@@ -144,6 +144,9 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryCreate">
+    <xs:annotation>
+      <xs:documentation>Entity was created.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
         <xs:attribute name="type" type="t:EntityType" use="required">
@@ -155,6 +158,9 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryAbolish">
+    <xs:annotation>
+      <xs:documentation>Entity was dissolved.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
         <xs:attribute name="type" type="t:EntityType" use="required">
@@ -165,6 +171,25 @@
         <xs:attribute name="mergeto" type="xs:unsignedInt" use="optional">
           <xs:annotation>
             <xs:documentation>Geocode of the entity which took over the area.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HistoryMergedWith">
+    <xs:annotation>
+      <xs:documentation>Entity was enlarged by taking over responsibility from dissolved entities.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:HistoryEntryBase">
+        <xs:attribute name="type" type="t:EntityType" use="required">
+          <xs:annotation>
+            <xs:documentation>Type of the entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="mergefrom" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Geocode of the entity which was added to the area.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -182,6 +207,7 @@
       <xs:element name="misspelling" type="t:HistorySpelling" />
       <xs:element name="reformedspelling" type="t:HistoryReformSpelling" />
       <xs:element name="alternativename" type="t:HistoryAlternativeName" />
+      <xs:element name="mergedwith" type="t:HistoryMergedWith" />
     </xs:choice>
   </xs:group>
   <xs:complexType name="HistoryList">
