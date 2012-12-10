@@ -83,7 +83,7 @@
     <council>
       <term begin="2012-10-07" type="PAO" size="36" />
       <term begin="2008-04-20" end="2012-04-19" type="PAO" size="36" />
-      <term begin="2004-03-14" end="2008-03-15" type="PAO" size="36" comment="EC 2551 term end list said 2994-03-15" />
+      <term begin="2004-03-14" end="2008-03-13" type="PAO" size="36" comment="EC 2551 term end list said 2004-03-15" />
     </council>
   </office>
   <entity type="Amphoe" name="เมืองเชียงราย" english="Mueang Chiang Rai" geocode="5701">
@@ -276,14 +276,19 @@
       <entity type="Muban" geocode="57011211" name="บ้านร่มเย็น" english="Ban Rom Yen" />
     </entity>
     <entity type="Tambon" name="ห้วยสัก" english="Huai Sak" geocode="570113">
-      <office type="TAOOffice" comment="To be upgraded to municipality 2012-08-24">
-        <url>http://www.huaisak.go.th/</url>
+      <office type="MunicipalityOffice">
+        <url lastchecked="2012-12-10">http://www.huaisak.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ณรงค์ ปรางมณี" endyear="2012" />
+          <official title="TAOMayor" name="ณรงค์ ปรางมณี" begin="2008-08-24" end="2012-08-23" />
         </officials>
         <council>
-          <term begin="2008-06-24" end="2012-08-23" type="TAO" />
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="60" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+            <meetingreference board="1" number="35" date="2012-05-28" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="57011304" name="บ้านป่าก้อ" english="Ban Pa Ko" />
       <entity type="Muban" geocode="57011305" name="บ้านห้วยสัก" english="Ban Huai Sak" />
