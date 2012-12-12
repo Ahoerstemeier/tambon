@@ -36,13 +36,18 @@
           <xs:documentation>Board to consider name changes (คณะกรรมการพิจารณาเรื่องการขอเปลี่ยนแปลงชื่อจังหวัด อำเภอ และตำบล หมู่บ้าน หรือสถานที่ราชการอื่น ๆ)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="cabinet">
+        <xs:annotation>
+          <xs:documentation>Cabinet, council of ministers of national government (คณะรัฐมนตรี).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="MeetingReference">
     <xs:annotation>
       <xs:documentation>Reference to a board meeting.</xs:documentation>
     </xs:annotation>
-    <xs:attribute name="number" type="xs:unsignedByte" use="required">
+    <xs:attribute name="number" type="xs:unsignedByte" use="optional">
       <xs:annotation>
         <xs:documentation>Number of the meeting in the given year.</xs:documentation>
       </xs:annotation>

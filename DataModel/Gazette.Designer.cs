@@ -1313,26 +1313,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="GazetteCouncilSize", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class GazetteCouncilSize : GazetteOperationBase {
         
-        private EntityType type1Field;
-        
         private string sizeField;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute("type")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type1 {
-            get {
-                return this.type1Field;
-            }
-            set {
-                this.type1Field = value;
-            }
-        }
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -1363,8 +1344,6 @@ namespace De.AHoerstemeier.Tambon {
         private uint oldownerField;
         
         private bool oldownerFieldSpecified;
-        
-        private EntityType type1Field;
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -1397,23 +1376,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.oldownerFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute("type")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type1 {
-            get {
-                return this.type1Field;
-            }
-            set {
-                this.type1Field = value;
             }
         }
     }
@@ -1949,8 +1911,6 @@ namespace De.AHoerstemeier.Tambon {
         
         private string oldenglishField;
         
-        private string name1Field;
-        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -1982,23 +1942,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.oldenglishField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute("name")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name1 {
-            get {
-                return this.name1Field;
-            }
-            set {
-                this.name1Field = value;
             }
         }
     }

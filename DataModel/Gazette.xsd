@@ -438,11 +438,11 @@
             <xs:documentation>Romanized old name.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="name" type="xs:string" use="required">
+        <!--<xs:attribute name="name" type="xs:string" use="required">
           <xs:annotation>
             <xs:documentation>New name in Thai.</xs:documentation>
           </xs:annotation>
-        </xs:attribute>
+        </xs:attribute>-->
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -457,7 +457,7 @@
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
         <xs:attribute name="oldowner" type="xs:unsignedInt" use="optional" />
-        <xs:attribute name="type" type="t:EntityType" use="required" />
+        <!--<xs:attribute name="type" type="t:EntityType" use="required" />-->
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -495,7 +495,7 @@
   <xs:complexType name="GazetteCouncilSize">
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="type" type="t:EntityType" use="required" />
+        <!--<xs:attribute name="type" type="t:EntityType" use="required" />-->
         <xs:attribute type="xs:positiveInteger" name="size" use="required">
           <xs:annotation>
             <xs:documentation>Number of councilors in the council.</xs:documentation>
