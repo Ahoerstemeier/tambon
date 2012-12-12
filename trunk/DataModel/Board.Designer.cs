@@ -28,6 +28,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private byte numberField;
         
+        private bool numberFieldSpecified;
+        
         private BoardNumber boardField;
         
         private System.DateTime dateField;
@@ -46,6 +48,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.numberField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool numberSpecified {
+            get {
+                return this.numberFieldSpecified;
+            }
+            set {
+                this.numberFieldSpecified = value;
             }
         }
         
@@ -106,6 +125,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Board to consider name changes (คณะกรรมการพิจารณาเรื่องการขอเปลี่ยนแปลงชื่อจังหวัด อำเภอ และตำบล หมู่บ้าน หรือสถานที่ราชการอื่น ๆ)
         /// </summary>
         rename,
+        
+        /// <summary>
+        /// Cabinet, council of ministers of national government (คณะรัฐมนตรี).
+        /// </summary>
+        cabinet,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
