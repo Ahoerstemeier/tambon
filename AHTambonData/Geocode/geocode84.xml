@@ -818,7 +818,7 @@
         </geo:Point>
         <url lastchecked="2012-12-12">http://www.pakprak.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ปราโมทย์ เพชรรัตน์" beginyear="2011" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ปราโมทย์ เพชรรัตน์" beginyear="2011" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="สมศักดิ์ ไทยสม" begin="2007-10-07" end="2011-10-06" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -960,7 +960,7 @@
       </officials>
     </office>
     <entity type="Tambon" name="เกาะพะงัน" english="Ko Pha-ngan" geocode="840501">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>9.7425</geo:lat>
           <geo:long>99.9961</geo:long>
@@ -1001,11 +1001,11 @@
         <url status="offline">http://www.bantai.go.th/</url>
         <officials>
           <official title="Mayor" name="ธีรยุทธ พลายสุวรรณ" begin="2012-05-12" />
-          <official title="TAOMayor" name="ธีรยุทธ พลายสุวรรฌ" begin="2007-10-07" end="2011-10-06" endreason="EndOfTerm" />
+          <official title="TAOMayor" name="ธีรยุทธ พลายสุวรรฌ" begin="2007-10-07" end="2011-09-30" endreason="StatusChange" />
         </officials>
         <council>
           <term begin="2012-05-12" type="ThesabanTambon" size="12" />
-          <term begin="2007-10-07" end="2011-10-06" type="TAO" size="10" />
+          <term begin="2007-10-07" end="2011-09-30" type="TAO" size="10" endreason="StatusChange" />
         </council>
         <history>
           <!-- upgrade before term end? -->
@@ -1020,18 +1020,17 @@
       <entity type="Muban" geocode="84050206" name="บ้านหาดริ้น" english="Ban Hat Rin" />
     </entity>
     <entity type="Tambon" name="เกาะเต่า" english="Ko Tao" geocode="840503">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-09-01 -->
+      <office type="MunicipalityOffice">
         <url lastchecked="2012-06-19">http://www.kohtao.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ประยุทธ ทองนวล" begin="2009-09-06" />
+          <official title="TAOMayor" name="ประยุทธ ทองนวล" begin="2009-09-06" end="2012-09-20" endreason="StatusChange" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="6" />
+          <term begin="2009-09-06" end="2012-09-20" type="TAO" size="6" endreason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="6" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-09-21">
             <meetingreference board="2" number="63" date="2012-09-18" />
           </statuschange>
         </history>
@@ -1540,7 +1539,7 @@
           <geo:lat>9.0564</geo:lat>
           <geo:long>99.0255</geo:long>
         </geo:Point>
-        <url lastchecked="2012-01-30">http://www.thakradan.go.th/</url>
+        <url lastchecked="2012-12-13">http://www.thakradan.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ประยูร เกื้อด้วง" begin="2008-07-19" end="2012-07-18" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="ธีระยุทธ ชูสุวรรณ" begin="2004-06-05" end="2007-06-04" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -2074,8 +2073,7 @@
     </office>
     <entity type="Tambon" name="นาสาร" english="Na San" geocode="841201" />
     <entity type="Tambon" name="พรุพี" english="Phru Phi" geocode="841202">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+      <office type="MunicipalityOffice">
         <symbols>
           <vision>
             ผู้นำการท่องเที่ยวเชิงนิเวศ และเกษตรอินทรีย์ ศูนย์กลางยางพาราครบวงจร
@@ -2093,7 +2091,7 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
             <meetingreference board="2" number="48" date="2012-07-10" />
           </statuschange>
         </history>
@@ -2496,23 +2494,25 @@
       <entity type="Muban" geocode="84140405" name="บ้านหารดำ" english="Ban Han Dam" />
     </entity>
     <entity type="Tambon" name="บ้านเสด็จ" english="Ban Sadet" geocode="841405">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon-->
+      <office type="MunicipalityOffice">
+        <symbols>
+          <vision>องค์การบริหารส่วนตำบลบ้านเสด็จ    มีครอบครัวที่อบอุ่น    สิ่งแวดล้อมที่ดี    การศึกษาเด่น   ชุมชนเข้มแข็ง    ด้วยการบริหารจัดการที่ดี    และมีความร่วมมือจากทุกภาคส่วนของสังคม</vision>
+        </symbols>
         <geo:Point>
           <geo:lat>8.7630</geo:lat>
           <geo:long>99.0646</geo:long>
         </geo:Point>
-        <url lastchecked="2012-10-25">http://www.bansadet.go.th/</url>
+        <url lastchecked="2012-12-13">http://www.bansadet.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="นพรัตน์ ไทยเกิด" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="สมพร แย้มมะลิ" endyear="2008" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+          <official title="TAOMayor" name="นพรัตน์ ไทยเกิด" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+          <official title="TAOMayor" name="สมพร แย้มมะลิ" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="40" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="40" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-30">
             <meetingreference board="2" number="57" date="2012-08-08" />
           </statuschange>
         </history>
@@ -3258,7 +3258,8 @@
         <symbols>
           <vision>ตำบลตะปาน คมนาคมขนส่งสะดวก สาธารณูปโภคครบครัน</vision>
         </symbols>
-        <url lastchecked="2012-02-02" status="offline">http://www.taphan.go.th/</url>
+        <url lastchecked="2012-12-13">http://www.taparn.go.th/</url>
+        <url lastonline="2012-02-02" status="offline">http://www.taphan.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ธนิก กิจเวชวิสุทธิ์" begin="2009-09-06" />
         </officials>
@@ -3805,8 +3806,9 @@
         <geo:lat>8.7997</geo:lat>
         <geo:long>99.3635</geo:long>
       </geo:Point>
-      <url>http://www.nasancity.org/</url>
+      <url status="hacked">http://www.nasancity.org/</url>
       <officials>
+        <!-- election 2012-06-17 -->
         <official title="Mayor" index="21" name="โกศล ศุทธางกรู" begin="2008-05-11" end="2012-05-10" />
         <official title="Mayor" index="20" name="โกศล ศุทธางกรู" begin="2004-04-04" end="2008-04-03" />
         <official title="Mayor" index="19" name="สุวรรณ เจนนพกาญจน์" begin="1999-03-29" end="2003-12-24" comment="In DOPA Excel sheet spelled สุพรรณ เจนนพกาญจน์" />
@@ -3834,6 +3836,7 @@
         </reference>
       </officials>
       <council>
+        <term begin="2012-06-17" type="ThesabanMueang" size="18" />
         <term begin="2008-05-11" end="2012-05-10" type="ThesabanMueang" size="18" />
         <term begin="2004-04-04" end="2008-04-03" type="ThesabanMueang" size="18" />
       </council>
@@ -4101,13 +4104,23 @@
         <geo:lat>9.3778</geo:lat>
         <geo:long>99.2728</geo:long>
       </geo:Point>
-      <url lastchecked="2012-01-30">http://www.phumriang.go.th/</url>
+      <url status="offline" lastonline="2012-01-30">http://www.phumriang.go.th/</url>
       <officials>
+        <official title="Mayor" name="ยอดชาย พันธ์ครุฑ" begin="2012-11-18" beginreason="ElectedDirectly">
+          <election>
+            <candidates>
+              <candidate id="3" name="นายยอดชาย พันธ์ครุฑ" votes="2201" status="elected" />
+              <candidate id="1" name="นายถาวร ถาวรสุข" votes="2039" comment="Incumbent" />
+              <candidate id="2" name="นายสกล รุ่งโรจวรารักษ์" votes="92" />
+            </candidates>
+          </election>
+        </official>
         <official title="Mayor" name="ถาวร ถาวรสุข" begin="2008-10-12" end="2012-10-11" />
         <official title="Mayor" name="สกล รุ่งโรจน์วรารักษ์" begin="2004-09-05" end="2008-09-04" />
         <official title="Mayor" name="สกล รุ่งโรจน์วรารักษ์" inoffice="2003" endyear="2004" />
       </officials>
       <council>
+        <term begin="2012-11-18" type="ThesabanTambon" size="12" />
         <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
         <term begin="2004-09-05" end="2008-09-04" type="ThesabanTambon" size="12" />
       </council>
@@ -4134,11 +4147,13 @@
       </geo:Point>
       <url lastchecked="2012-01-30">http://www.thachanacity.go.th/</url>
       <officials>
+        <official title="Mayor" name="สนอง แดงบุญ" begin="2012-09-02" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ณัฐธัญ รัศมี" begin="2008-03-09" end="2012-03-08" />
         <official title="Mayor" name="สนอง แดงบุญ" begin="2004-02-01" end="2008-01-31" />
         <official title="Mayor" name="เกษม รอดเกิด" inoffice="2003" endyear="2004" />
       </officials>
       <council>
+        <term begin="2012-09-02" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
         <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
@@ -4410,6 +4425,7 @@
         </reference>
       </officials>
       <council>
+        <term begin="2012-01-05" type="ThesabanTambon" size="12" />
         <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
         <term begin="2004-10-17" end="2008-10-16" type="ThesabanTambon" size="12" />
       </council>
