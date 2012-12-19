@@ -68,7 +68,7 @@
     <!-- ToDo: Extract terms and names from http://www.krabipao.go.th/home.php -->
     <officials>
       <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" begin="2012-07-15" beginreason="ElectedDirectly" />
-      <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" begin="2008-04-20" end="2012-04-19" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+      <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" begin="2008-04-20" end="2012-04-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" beginyear="2004" endyear="2008" beginreason="ElectedDirectly" />
 
       <official title="PAOChairman" name="สมศักดิ์ กิตติธรกุล" beginyear="2001" beginreason="ElectedByCouncil" />
@@ -224,7 +224,7 @@
         </officials>
         <council>
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="16" />
-          </council>
+        </council>
       </office>
       <entity type="Muban" geocode="81011601" name="บ้านช่องพลี" english="Ban Chong Phli" />
       <entity type="Muban" geocode="81011602" name="บ้านอ่าวนาง" english="Ban Ao Nang" />
@@ -575,8 +575,7 @@
       <entity type="Muban" geocode="81040208" name="บ้านบางครามใต้" english="Ban Bang Khram Tai" />
     </entity>
     <entity type="Tambon" name="คลองพน" english="Khlong Phon" geocode="810403">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
+      <office type="MunicipalityOffice">
         <symbols>
           <vision>ท้องถิ่นก้าวไกล ควบคู่วัฒนธรรมประเพณี เศรษฐกิจดี ประชาชนมีคุณภาพ</vision>
         </symbols>
@@ -584,15 +583,20 @@
         <url lastchecked="2012-08-14">http://www.klongphon.go.th/</url>
         <url status="expired">http://www.klongphon.org/</url>
         <officials>
+          <official title="Mayor" name="ณพรวิศิษฎ์ ผลเงาะ" begin="2012-11-18" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="ธรรมรักษ์ จงรักษ์" begin="2008-08-31" end="2012-08-30" />
         </officials>
         <council>
+          <term begin="2012-11-18" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="28" />
         </council>
         <history>
           <rename oldname="คลองพน" oldenglish="Khlong Phon" name="คลองพนพัฒนา" english="Khlong Phon Phatthana">
             <meetingreference date="2012-06-26" number="3" board="rename" />
           </rename>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="2" number="46" date="2012-07-03" />
+          </statuschange>
         </history>
       </office>
       <entity type="Muban" geocode="81040301" name="บ้านคลองพน" english="Ban Khlong Phon" />
@@ -618,9 +622,11 @@
         <url lastchecked="2012-10-22">http://www.saikhawkrabi.go.th/</url>
         <url status="offline">http://www.saikhawcity.org/</url>
         <officials>
+          <official title="Mayor" name="อารีย์ ห้วยลึก" begin="2012-11-18" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="เทียนชัย ลิ่มปิชาติ" begin="2008-08-31" end="2012-08-30" />
         </officials>
         <council>
+          <term begin="2012-11-18" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14" />
         </council>
         <history>
@@ -1223,7 +1229,7 @@
       <url status="offline">http://www.klongphoncity.org/</url>
       <officials>
         <official title="Mayor" name="นุกูล งานดี" inoffice="2012" comment="Elected after 2008" />
-        <!-- begin="2007-11-03" endyear="2011" --> 
+        <!-- begin="2007-11-03" endyear="2011" -->
       </officials>
       <council>
         <term begin="2012-08-19" type="ThesabanTambon" size="12" />
