@@ -1057,15 +1057,24 @@
       <entity type="Muban" geocode="86041112" name="บ้านแหลมทราย" english="Ban Laem Sai" />
     </entity>
     <entity type="Tambon" name="วังตะกอ" english="Wang Tako" geocode="860412">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-31-->
-        <url lastchecked="2012-07-31">http://wangtakor.go.th/</url>
+      <office type="MunicipalityOffice">
+        <url lastonline="2012-07-31" status="offline">http://wangtakor.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สมบัติ ดึงสุวรรณ" begin="2008-08-31" end="2012-08-30" />
+          <official title="Mayor" name="ประวิทย์ ภูมิระวิ" begin="2012-11-27" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สมบัติ ดึงสุวรรณ" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-11-27" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="26" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon">
+            <!-- To be upgraded to ThesabanTambon 2012-08-31-->
+            <!-- not in list of 2012 DOLA changes, but had election! -->
+            <meetingreference board="2" number="45" date="2012-06-27" />
+            <ministerialorder ministry="MOI" date="2012-08-14" title="มท ๐๘๙๐.๒/๘๕๕๑" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="86041201" name="บ้านวังตะกอ" english="Ban Wang Tako" />
       <entity type="Muban" geocode="86041202" name="บ้านนาหมู่" english="Ban Na Mu" />
@@ -1321,14 +1330,17 @@
         </geo:Point>
         <url lastchecked="2012-09-14">http://www.saonapho.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ทิวา บุญยก" begin="2008-08-31" end="2012-08-30" />
+          <official title="Mayor" name="ทิวา บุญยก" begin="2012-11-27" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ทิวา บุญยก" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-11-27" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="12" />
         </council>
         <history>
           <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
             <meetingreference board="2" number="46" date="2012-07-03" />
+            <ministerialorder ministry="MOI" date="2012-08-23" title="มท ๐๘๙๐.๒/๙๒๕๘" />
           </statuschange>
           <rename oldname="นาโพธิ์" oldenglish="Na Pho" name="นาโพธิ์พัฒนา" english="Na Pho Phatthana">
             <meetingreference date="2012-06-26" number="3" board="rename" />
