@@ -96,6 +96,10 @@
     <entity type="Tambon" name="ราชกรูด" english="Ratchakrut" geocode="850102">
       <office type="MunicipalityOffice">
         <url lastchecked="2012-10-25">http://www.ratchakrudcity.go.th/</url>
+        <officials>
+          <official title="Mayor" name="ชัยพรรย์ ร่มเย็น" begin="2012-11-18" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="ชูเชิด สุภา" begin="2008-10-11" end="2012-10-10" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
           <term begin="2012-11-18" type="ThesabanTambon" size="12" />
           <term begin="2008-10-11" end="2012-10-10" type="ThesabanTambon" size="12" />
@@ -190,6 +194,9 @@
           <term begin="2012-03-25" type="ThesabanTambon" size="12" />
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="8" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-07" />
+        </history>
       </office>
       <entity type="Muban" geocode="85010601" name="บ้านบางนอนใน" english="Ban Nang Non Nai" />
       <entity type="Muban" geocode="85010602" name="บ้านเขาพริกไทย" english="Ban Khao Phrik Thai" />
@@ -632,7 +639,6 @@
     </entity>
     <entity type="Tambon" name="กำพวน" english="Kamphuan" geocode="850502">
       <office type="MunicipalityOffice">
-        <!-- To be upgraded to ThesabanTambon 2012-08-31 -->
         <symbols>
           <vision>
             แหล่งท่องเที่ยวสวยงาม  บริหารจัดการที่มีส่วนร่วม
@@ -645,13 +651,18 @@
         </geo:Point>
         <url lastchecked="2012-09-03">http://www.kumpuan.go.th/</url>
         <officials>
-          <!-- election 2012-11-25 -->
-          <official title="TAOMayor" name="อิศมาแอล หาญจิตร" begin="2008-08-31" end="2012-08-30" />
+          <official title="Mayor" name="วรากร กิจการ" begin="2012-11-25" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+          <official title="TAOMayor" name="อิศมาแอล หาญจิตร" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2012-11-25" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+            <meetingreference board="2" number="51" date="2012-07-18" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="85050201" name="บ้านทะเลนอก" english="Ban Thale Nok" />
       <entity type="Muban" geocode="85050202" name="บ้านเหนือ" english="Ban Nuea" />
