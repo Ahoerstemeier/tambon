@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text;
 using De.AHoerstemeier.Geo;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace De.Ahoerstemeier.Test
 {
@@ -13,11 +13,11 @@ namespace De.Ahoerstemeier.Test
     [TestClass]
     public class GeoPointTest
     {
-        const double _LatitudeBangkok = 13.7535;
-        const double _LongitudeBangkok = 100.5018;
-        const double _AltitudeBangkok = 2.0;
-        const String _BangkokGeoHash = "w4rqnzxpv";
-        const String _BangkokMaidenhead = "OK03gs";
+        private const double _LatitudeBangkok = 13.7535;
+        private const double _LongitudeBangkok = 100.5018;
+        private const double _AltitudeBangkok = 2.0;
+        private const String _BangkokGeoHash = "w4rqnzxpv";
+        private const String _BangkokMaidenhead = "OK03gs";
 
         public GeoPointTest()
         {
@@ -45,6 +45,7 @@ namespace De.Ahoerstemeier.Test
         }
 
         #region Additional test attributes
+
         //
         // You can use the following additional attributes as you write your tests:
         //
@@ -56,7 +57,7 @@ namespace De.Ahoerstemeier.Test
         // [ClassCleanup()]
         // public static void MyClassCleanup() { }
         //
-        // Use TestInitialize to run code before running each test 
+        // Use TestInitialize to run code before running each test
         // [TestInitialize()]
         // public void MyTestInitialize() { }
         //
@@ -64,7 +65,8 @@ namespace De.Ahoerstemeier.Test
         // [TestCleanup()]
         // public void MyTestCleanup() { }
         //
-        #endregion
+
+        #endregion Additional test attributes
 
         [TestMethod]
         public void TestGeoPointCopyConstructor()
@@ -74,6 +76,7 @@ namespace De.Ahoerstemeier.Test
             Assert.IsTrue(basePoint.Equals(clonePoint));
             // Assert.AreEqual<GeoPoint>(lClonePoint, lBasePoint); // does not use the IEquatable
         }
+
         [TestMethod]
         public void TestCalcUTM()
         {
@@ -85,6 +88,7 @@ namespace De.Ahoerstemeier.Test
             UtmPoint expected = new UtmPoint(411777, 5655984, 33, true);
             Assert.IsTrue(expected.Equals(utmPoint));
         }
+
         [TestMethod]
         public void TestUTMToGeo()
         {
@@ -94,6 +98,7 @@ namespace De.Ahoerstemeier.Test
             GeoPoint expected = new GeoPoint(51.0 + 02.0 / 60.0 + 55.0 / 3600.0, 13.0 + 44.0 / 60.0 + 29.0 / 3600.0);
             Assert.IsTrue(expected.Equals(geoPoint));
         }
+
         [TestMethod]
         public void TestUTMToMGRS()
         {
@@ -101,6 +106,7 @@ namespace De.Ahoerstemeier.Test
             String mgrs = utmPoint.ToMgrsString(7).Replace(" ", "");
             Assert.AreEqual("33UVS1177755984", mgrs);
         }
+
         [TestMethod]
         public void TestParseMGRS()
         {
@@ -108,6 +114,7 @@ namespace De.Ahoerstemeier.Test
             UtmPoint utmPointExpected = new UtmPoint("33U 0411777 5655984");
             Assert.IsTrue(utmPointExpected.Equals(utmPoint));
         }
+
         [TestMethod]
         public void TestDatumConversion()
         {
@@ -117,6 +124,7 @@ namespace De.Ahoerstemeier.Test
             GeoPoint expected = new GeoPoint(30.0002239, -100.0003696, 194.816, GeoDatum.DatumWGS84());
             Assert.IsTrue(expected.Equals(point));
         }
+
         [TestMethod]
         public void TestGeoHashToGeo()
         {
@@ -125,6 +133,7 @@ namespace De.Ahoerstemeier.Test
             GeoPoint expected = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
             Assert.IsTrue(expected.Equals(geoPoint));
         }
+
         [TestMethod]
         public void TestGeoToGeoHash()
         {
@@ -132,21 +141,23 @@ namespace De.Ahoerstemeier.Test
             String geoHash = geoPoint.GeoHash;
             Assert.AreEqual(geoHash, _BangkokGeoHash);
         }
+
         [TestMethod]
         public void TestParseCoordinateDegMinSec()
         {
             String coordinateString = " 13°45'46.08\" N 100°28'41.16\" E";
             GeoPoint geoPoint = new GeoPoint(coordinateString);
             var expected = new GeoPoint(13.7628, 100.478100);
-            Assert.IsTrue(expected.Equals(geoPoint),String.Format("Expected {0}, returned {1}",expected,geoPoint));
+            Assert.IsTrue(expected.Equals(geoPoint), String.Format("Expected {0}, returned {1}", expected, geoPoint));
         }
+
         [TestMethod]
         public void TestParseCoordinateDecimalDegree()
         {
             String coordinateString = " 13.7628° N 100.478100° E";
             GeoPoint geoPoint = new GeoPoint(coordinateString);
             var expected = new GeoPoint(13.7628, 100.478100);
-            Assert.IsTrue(expected.Equals(geoPoint),String.Format("Expected {0}, returned {1}",expected,geoPoint));
+            Assert.IsTrue(expected.Equals(geoPoint), String.Format("Expected {0}, returned {1}", expected, geoPoint));
         }
 
         [TestMethod]
@@ -155,8 +166,9 @@ namespace De.Ahoerstemeier.Test
             GeoPoint geoPoint = new GeoPoint();
             geoPoint.Maidenhead = _BangkokMaidenhead;
             GeoPoint expected = new GeoPoint(_LatitudeBangkok, _LongitudeBangkok);
-            Assert.IsTrue(expected.Equals(geoPoint),String.Format("Expected {0}, returned {1}",expected,geoPoint));
+            Assert.IsTrue(expected.Equals(geoPoint), String.Format("Expected {0}, returned {1}", expected, geoPoint));
         }
+
         [TestMethod]
         public void TestGeoToMaidenhead()
         {
