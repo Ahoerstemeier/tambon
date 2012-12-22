@@ -323,7 +323,7 @@
       <xs:documentation>List of the social web sites where the entity is present.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="facebook" type="xs:anyURI" minOccurs="0" maxOccurs="1">
+      <xs:element name="facebook" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>URL of the user account or page in facebook.</xs:documentation>
         </xs:annotation>
