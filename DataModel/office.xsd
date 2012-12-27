@@ -146,6 +146,11 @@
           <xs:documentation>Dissolution after order from higher authorities (ยุบสภา).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="ElectionNulled">
+        <xs:annotation>
+          <xs:documentation>Election declared null and void.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="SelfDissolution">
         <xs:annotation>
           <xs:documentation>Council voted for a self-dissolution.</xs:documentation>
@@ -191,6 +196,11 @@
       <xs:enumeration value="Removed">
         <xs:annotation>
           <xs:documentation>Removed from post by higher authorities (สั่งให้พ้น, พ้นจากตำแหน่ง).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RemovedByCouncil">
+        <xs:annotation>
+          <xs:documentation>Removed or forced to resign by council, e.g. a lost confidence vote.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="StatusChange">
