@@ -94,8 +94,15 @@
     </office>
     <entity type="Tambon" name="บ่อยาง" english="Bo Yang" geocode="900101" />
     <entity type="Tambon" name="เขารูปช้าง" english="Khao Rup Chang" geocode="900102">
+      <entity type="Muban" geocode="90010201" name="บ้านบางดาน" english="Ban Bang Dan"/>
       <entity type="Muban" geocode="90010202" name="บ้านเขาแก้ว" english="Ban Khao Kaeo" />
-
+      <entity type="Muban" geocode="90010203" name="บ้านทุ่งใหญ่" english="Ban Thung Yai"/>
+      <entity type="Muban" geocode="90010204" name="บ้านสะพานยาว" english="Ban Saphan Yao"/>
+      <entity type="Muban" geocode="90010205" name="บ้านสวนตูล" english="Ban Suan Tun"/>
+      <entity type="Muban" geocode="90010206" name="บ้านเหล้า" english="Ban Lao"/>
+      <entity type="Muban" geocode="90010207" name="บ้านชายทะเล" english="Ban Chai Thale"/>
+      <entity type="Muban" geocode="90010208" name="บ้านท่าสะอ้าน" english="Ban Tha Sa-an"/>
+      <entity type="Muban" geocode="90010209" name="บ้านการเคหะ" english="Ban Kan Kheha"/>
       <entity type="Muban" geocode="90010210" name="บ้านสำโรง" english="Ban Samrong" />
     </entity>
     <entity type="Tambon" name="เกาะแต้ว" english="Ko Taeo" geocode="900103">
@@ -1708,8 +1715,12 @@
           <geo:long>100.3207</geo:long>
         </geo:Point>
         <url>http://www.thungtamsao.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ชอบ บิณกาญจน์" begin="2003-08-24" />
+        </officials>
         <council>
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="20"/>
+          <term begin="2003-08-24" end="2007-08-23" type="TAO" />
         </council>
       </office>
       <entity type="Muban" geocode="90111201" name="บ้านทุ่งเลียบ" english="Ban Thung Liap" />
@@ -2712,12 +2723,20 @@
         <geo:lat>7.1640</geo:lat>
         <geo:long>100.6325</geo:long>
       </geo:Point>
-      <url>http://www.krc.go.th/</url>
+      <url lastchecked="2012-12-26">http://www.krc.go.th/</url>
       <officials>
-        <official title="Mayor" name="ประสงค์ บริรักษ์" begin="2007-06-24" endyear="2011" />
+        <official title="Mayor" name="ประสงค์ บริรักษ์" begin="2011-09-04" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="ประสงค์ บริรักษ์" begin="2007-06-24" end="2011-05-13" beginreason="ElectedDirectly" endreason="StatusChange" />
+
+        <official title="TAOChairman" name="สมศักดิ์ กาลสงค์" begin="1995-09-24" beginreason="ExOfficio" comment="Kamnan"/>
+        <official title="TAOChairman" name="วิชัย กาลสงค์" begin="1994-03-02" end="1995-08-04" beginreason="ExOfficio" endreason="Retired" comment="Kamnan"/>
       </officials>
       <council>
-        <term begin="2007-06-24" end="2011-06-23" type="ThesabanTambon" size="12"/>
+        <term begin="2011-09-04" type="ThesabanMueang" size="18"/>
+        <term begin="2007-06-24" end="2011-05-13" type="ThesabanTambon" size="12" endreason="StatusChange"/>
+        <term begin="2003-08-24" end="2007-02-28" type="TAO" size="16" endreason="StatusChange"/>
+        <term begin="1999-07-17" end="2003-07-16" type="TAO" size="16" />
+        <term begin="1995-05-21" end="1999-05-20" type="TAO" size="16"/>
       </council>
     </office>
   </entity>
