@@ -3568,7 +3568,21 @@
         <constituency type="ThesabanTambon" name="เขาขวาง" english="Khao Khwang" geocode="7082" />
       </entry>
       <entry description="Constituencies of Thesaban Thap Than, Uthai Thani" title="ประกาศคณะกรรมการการเลือกตั้ง เรื่อง เปลี่ยนแปลงเขตเลือกตั้งสมาชิกสภาเทศบาลในจังหวัดอุทัยธานี  [เทศบาลตำบลทัพทัน อำเภอทัพทัน]" volume="122" page="3" issue="87 ก" uri="2548/00172438.PDF" publication="2005-09-28" sign="2005-09-19">
-        <constituency type="ThesabanTambon" name="ทัพทัน" english="Thap Than" geocode="6197" />
+        <constituency type="ThesabanTambon" name="ทัพทัน" english="Thap Than" geocode="6197" >
+          <constituencies>
+            <constituency index="1" numberofseats="6">
+              <include geocode="610201"/>
+              <include geocode="61020406"/>
+            </constituency>
+            <constituency index="2" numberofseats="6">
+              <include geocode="610204">
+                <exclude geocode="61020406"/>
+              </include>
+              <include geocode="610203"/>
+              <include geocode="610202"/>
+            </constituency>
+          </constituencies>
+        </constituency>
       </entry>
       <entry description="Constituencies of Thesaban Ban Rai, Uthai Thani" title="ประกาศคณะกรรมการการเลือกตั้ง เรื่อง การแบ่งเขตเลือกตั้งสมาชิกสภาเทศบาลในจังหวัดอุทัยธานี  [เทศบาลตำบลบ้านไร่ อำเภอบ้านไร่]" volume="122" page="4-5" issue="87 ก" uri="2548/00172439.PDF" publication="2005-09-28" sign="2005-09-19">
         <constituency type="ThesabanTambon" name="บ้านไร่" english="Ban Rai" geocode="6192" />
