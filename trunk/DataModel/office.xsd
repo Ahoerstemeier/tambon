@@ -475,7 +475,12 @@
     </xs:attribute>
     <xs:attribute name="size" type="xs:positiveInteger" use="optional">
       <xs:annotation>
-        <xs:documentation>Number of councillors.</xs:documentation>
+        <xs:documentation>Number of councillors at begin of term.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="finalsize" type="xs:positiveInteger" use="optional">
+      <xs:annotation>
+        <xs:documentation>Number of councillors at end of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="type" type="t:EntityType" use="required">
