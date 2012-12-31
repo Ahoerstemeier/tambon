@@ -2,7 +2,7 @@
 <electiondata xmlns="http://hoerstemeier.com/tambon/">
   <parties>
     <party id="1" name="พรรคเพื่อไทย" english="Pheu Thai" />
-    <party id="2" name="พรรคชาติพัฒนาเพื่อแผ่นดิน" english="Chart Pattana Puea Pandin" />
+    <party id="2" name="พรรคชาติพัฒนาเพื่อแผ่นดิน" english="Chart Pattana Puea Pandin" comment="2011-09 renamed to พรรคชาติพัฒนา, Chart Pattana" />
     <party id="3" name="พรรคประชาธิปไตยใหม่" />
     <party id="4" name="พรรคประชากรไทย" />
     <party id="5" name="พรรครักประเทศไทย" english="Rak Thailand" />
@@ -41,13 +41,14 @@
     <party id="38" name="พรรคไทยสร้างสรรค์" />
     <party id="39" name="พรรคเพื่อนเกษตรไทย" />
     <party id="40" name="พรรคมหารัฐพัฒนา" />
+    <party id="41" name="อนาคตไทย" comment="Only one candidate in Chumphon" />
   </parties>
   <entity type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
     <entity type="Changwat" geocode="23" name="ตราด" english="Trat">
       <constituencies>
         <constituency index="1" comment="ทั้งจังหวัด">
           <include geocode="23" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="159110" invalidvotes="7390" abstainvotes="5175">
               <candidate party="1" id="1" name="พลโทปรีชา วรรณรัตน์" votes="36198" />
               <candidate party="2" id="2" name="นางสาวสุรวดี มีกลิ่น" votes="612" />
@@ -63,7 +64,7 @@
       <constituencies>
         <constituency index="1" comment="ทั้งจังหวัด">
           <include geocode="26" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="191723" invalidvotes="8730" abstainvotes="6214">
               <candidate party="1" id="1" name="นายเกรียงไกร กิตติธเนศวร" votes="43598" />
               <candidate party="10" id="10" name="นายชาญชัย อิสระเสนารักษ์" votes="45960" />
@@ -122,6 +123,16 @@
             <exclude geocode="180306" />
             <exclude geocode="180307" />
           </include>
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="127603" invalidvotes="6757" abstainvotes="4785">
+              <candidate party="1" id="1" name="จ่าสิบเอกอนันต์ สุขสันต์" votes="30463" />
+              <candidate party="2" id="2" name="นางปิยนุช ปาปี" votes="301" />
+              <candidate party="10" id="10" name="นายสนั่น ทองปาน" votes="17177" />
+              <candidate party="16" id="16" name="นางพรทิวา นาคาศัย" votes="38924" status="elected" />
+              <candidate party="21" id="21" name="พันจ่าอากาศเอกเด็ดดวงดอกรัก คุ้มชนะ" votes="1391" />
+              <candidate party="22" id="22" name="นายวรรณกร มั่นอ่วม" votes="100" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อําเภอสรรคบุีร อําเภอหันคา อําเภอเนินขาม อําเภอหนองมะโมง อําเภอวัดสิงห์ (เฉพาะตําบลวังหมัน ตําบลหนองขุ่น และ ตําบลบ่อแร่)">
           <include geocode="1805" />
@@ -131,6 +142,15 @@
           <include geocode="180311" />
           <include geocode="180306" />
           <include geocode="180307" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="131479" invalidvotes="7718" abstainvotes="2889">
+              <candidate party="1" id="1" name="นายชัยวัฒน์ ทรัพย์รวงทอง" votes="31671" />
+              <candidate party="2" id="2" name="นายสมศักดิ์ คุ่มคุ้ม" votes="397" />
+              <candidate party="10" id="10" name="นายสนธยา ภูษิต" votes="6912" />
+              <candidate party="16" id="16" name="นางนันทนา สงฆ์ประชา" votes="53900" status="elected" />
+              <candidate party="36" id="36" name="นางสาวขวัญใจ อยู่สุข" votes="187" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -141,7 +161,7 @@
           <include geocode="3803" />
           <include geocode="3805" />
           <include geocode="3808" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <partylistresult eligiblevoter="143722" invalidvotes="5276" abstainvotes="768">
               <party id="1" votes="79496" />
               <party id="2" votes="6971" />
@@ -202,7 +222,7 @@
           <include geocode="3802" />
           <include geocode="3807" />
           <include geocode="3806" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <partylistresult eligiblevoter="144491" invalidvotes="6590" abstainvotes="850">
               <party id="1" votes="75441" />
               <party id="2" votes="9164" />
@@ -300,7 +320,7 @@
           <include geocode="5101" />
           <include geocode="5107" />
           <include geocode="5102" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="159311" invalidvotes="6713" abstainvotes="6043">
               <candidate id="1" party="1" name="สงวน พงษ์มณี" votes="89324" status="elected" />
               <candidate id="2" party="2" name="ณัฎฐพัชร์ อํานาจประชา" votes="5318" />
@@ -320,7 +340,7 @@
           <include geocode="5105" />
           <include geocode="5104" />
           <include geocode="5108" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="158416" invalidvotes="10137" abstainvotes="3402">
               <candidate id="1" party="1" name="สถาพร มณีรัตน์" english="Sataporn Maneerat" votes="74817" status="elected" end="2012-07-14" endreason="death" />
               <candidate id="2" party="2" name="ทินกร ไชยศรี" votes="488" />
@@ -421,7 +441,7 @@
         <constituency index="1" comment="อําเภอเมืองกระบี่ อําเภอเหนือคลอง">
           <include geocode="8101" />
           <include geocode="8108" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="113325" invalidvotes="6351" abstainvotes="6480">
               <candidate party="1" id="1" name="นายชัยณรงค์ ช่างเรือ" votes="16420" />
               <candidate party="10" id="10" name="นายสาคร เกี่ยวข้อง" votes="58895" status="elected" />
@@ -434,7 +454,7 @@
           <include geocode="8105" />
           <include geocode="8106" />
           <include geocode="8102" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="99470" invalidvotes="4299" abstainvotes="4207">
               <candidate party="1" id="1" name="นายอมต ภูมิภมร" votes="8332" />
               <candidate party="10" id="10" name="นายสุชีน เอ่งฉ้วน" votes="48968" status="elected" />
@@ -449,7 +469,7 @@
           <include geocode="8104" />
           <include geocode="8107" />
           <include geocode="8103" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="86095" invalidvotes="3915" abstainvotes="3079">
               <candidate party="1" id="1" name="นายทศภณ หนักแน่น" votes="12554" />
               <candidate party="2" id="2" name="นายไพบูลย์ ทองทิพย์" votes="248" />
@@ -467,18 +487,49 @@
         <constituency index="1" comment="อําเภอเมืองจันทบุีร อําเภอแหลมสิงห์">
           <include geocode="2201" />
           <include geocode="2206" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="116820" invalidvotes="4788" abstainvotes="8305">
+              <candidate party="1" id="1" name="พลอากาศเอกชูชาติ ชวนชม" votes="26934" />
+              <candidate party="6" id="6" name="นายวีระ นามพระจันทร์" votes="971" />
+              <candidate party="10" id="10" name="นายธวัชชัย อนามพงษ์" votes="47770" status="elected" />
+              <candidate party="13" id="13" name="นายวิชัย อาภรณ์" votes="65" />
+              <candidate party="18" id="18" name="นายเฉลิมพล ผลประพฤติ" votes="83" />
+              <candidate party="21" id="21" name="นายพงษ์ชัย เจริญยศ" votes="1251" />
+              <candidate party="26" id="26" name="นายขวัญเมือง บำรุงพนิชถาวร" votes="645" />
+              <candidate party="33" id="33" name="นายธีระพันธ์ เจริญสิทธิ์" votes="174" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อําเภอท่าใหม่ อําเภอนายายอาม อําเภอเขาคิชฌกูฏ อําเภอแก่งหางแมว">
           <include geocode="2203" />
           <include geocode="2209" />
           <include geocode="2210" />
           <include geocode="2208" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="126814" invalidvotes="6570" abstainvotes="4618">
+              <candidate party="1" id="1" name="นายวณัฐพงษ์ ชนะสิทธิ์" votes="33665" />
+              <candidate party="10" id="10" name="นายยุคล ชนะวัฒน์ปัญญา" votes="53709" status="elected" />
+              <candidate party="13" id="13" name="นายอ๊อด ไกรนิวรณ์" votes="185" />
+              <candidate party="18" id="18" name="นายลือชา สุนทราพงษ์" votes="39" />
+              <candidate party="19" id="19" name="นายสุรศักดิ์ ศิริชาตรี" votes="474" />
+              <candidate party="36" id="36" name="นางนภสร พานทอง" votes="62" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อําเภอขลุง อําเภอโป่งน้ําร้อน อําเภอสอยดาว อําเภอมะขาม">
           <include geocode="2202" />
           <include geocode="2204" />
           <include geocode="2207" />
           <include geocode="2205" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="141750" invalidvotes="6766" abstainvotes="4322">
+              <candidate party="1" id="1" name="นายพราหมณ์ มุกดาสนิท" votes="30791" />
+              <candidate party="2" id="2" name="นายอิสิวุฒิ ตั้งเกียรติ" votes="29050" />
+              <candidate party="10" id="10" name="นายพงศ์เวช เวชชาชีวะ" votes="37451" status="elected" />
+              <candidate party="13" id="13" name="นายสมชาย สนิทเชื้อ" votes="227" />
+            </candidates>
+          </election>
+
         </constituency>
       </constituencies>
     </entity>
@@ -496,6 +547,16 @@
             <exclude geocode="860710" />
             <exclude geocode="860711" />
           </include>
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="122908" invalidvotes="5555" abstainvotes="8079">
+              <candidate party="1" id="1" name="นายชโยดม สระภูริพงศ์" votes="5517" />
+              <candidate party="2" id="2" name="นายประวิทย์ สายโอภาส" votes="903" />
+              <candidate party="10" id="10" name="นายชุมพล จุลใส" votes="72663" status="elected" />
+              <candidate party="34" id="34" name="นายอัครพงษ์ นิลสุวรรณ" votes="85" />
+              <candidate party="36" id="36" name="ว่าที่ ร้อยตรีหญิงธัญชนก รัตนศิลา" votes="185" />
+              <candidate party="41" id="41" name="นางสาวสุวรรณดี พวงดอกไม้" votes="132" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อําเภอเมืองชุมพร (เฉพาะตําบลวังใหม่ ตําบลบ้านนา ตําบลหาดพันไกร ตําบลบางลึก และ ตําบลถ้ําสิงห์) อําเภอท่าแซะ อําเภอปะทิว">
           <include geocode="860111" />
@@ -505,6 +566,15 @@
           <include geocode="860117" />
           <include geocode="8602" />
           <include geocode="8603" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="117365" invalidvotes="5052" abstainvotes="4017">
+              <candidate party="1" id="1" name="นางสาวรุจินาถ ศรีสุวรรณ" votes="5680" />
+              <candidate party="2" id="2" name="นายต่อศักดิ์ เจียรนัย" votes="671" />
+              <candidate party="10" id="10" name="นายสราวุธ อ่อนละมัย" votes="66743" status="elected" />
+              <candidate party="16" id="16" name="นายสำเริง พุ่มพะเนิน" votes="11330" />
+              <candidate party="36" id="36" name="นางจิราพัชร สุชีพ" votes="77" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อําเภอสวี (เฉพาะ ตําบลเขาทะลุ และ ตําบลเขาค่าย) อําเภอหลังสวน อําเภอละแม อําเภอพะโต๊ะ อําเภอทุ่งตะโก">
           <include geocode="860710" />
@@ -513,6 +583,16 @@
           <include geocode="8605" />
           <include geocode="8606" />
           <include geocode="8608" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="120714" invalidvotes="5979" abstainvotes="6766">
+              <candidate party="1" id="1" name="นายเฉลิมชัย นิยมไท" votes="10614" />
+              <candidate party="2" id="2" name="นายทัพพ์ฐพนธ์ ธรรมภักดี" votes="3420" />
+              <candidate party="10" id="10" name="นายธีระชาติ ปางวิรุฬห์รักษ์" votes="63779" status="elected" />
+              <candidate party="18" id="18" name="นายมงคล จันทร์ทรง" votes="65" />
+              <candidate party="34" id="34" name="นายวินัย เพชรประสงค์" votes="666" />
+              <candidate party="36" id="36" name="นายบุญญฤทธิ์ ยอดอุดม" votes="311" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -525,6 +605,16 @@
             <exclude geocode="630205" />
             <exclude geocode="630207" />
           </include>
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="120013" invalidvotes="6835" abstainvotes="4433">
+              <candidate party="1" id="1" name="นายสมมาตร์ มีศิลป์" votes="17548" />
+              <candidate party="2" id="2" name="นางเบญจเมศ บูรณกูล" votes="244" />
+              <candidate party="10" id="10" name="นายเธียรชัย สุวรรณเพ็ญ" votes="46119" status="elected" />
+              <candidate party="21" id="21" name="นายธนัสถ์ ทวีเกื้อกูลกิจ" votes="16554" />
+              <candidate party="34" id="34" name="นายศักดิ์ระพี ก้อนมณี" votes="31" />
+              <candidate party="36" id="36" name="นายสาโรช นามมงคล" votes="150" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อําเภอแม่สอด (ยกเว้นตําบล แม่กาษา) อําเภอพบพระ อําเภออุ้มผาง">
           <include geocode="6306">
@@ -532,6 +622,15 @@
           </include>
           <include geocode="6307" />
           <include geocode="6308" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="110178" invalidvotes="8965" abstainvotes="3385">
+              <candidate party="1" id="1" name="นายวราทิต ไชยนันทน์" votes="21809" />
+              <candidate party="2" id="2" name="นายจักพล แก้วสว่าง" votes="342" />
+              <candidate party="10" id="10" name="นายชัยวุฒิ บรรณวัฒน์" votes="52608" status="elected" />
+              <candidate party="34" id="34" name="นายชนะ เกิดศิริ" votes="72" />
+              <candidate party="36" id="36" name="นายประพจน์ พรหมสมิฐ" votes="146" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อําเภอสามเงา อําเภอแม่ระมาด อําเภอท่าสองยาง อําเภอบ้านตาก (เฉพาะตําบล เกาะตะเภา และ ตําบลท้องฟ้า) อําเภอแม่สอด (เฉพาะตําบล แม่กาษา)">
           <include geocode="6303" />
@@ -540,6 +639,15 @@
           <include geocode="630205" />
           <include geocode="630207" />
           <include geocode="630605" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="99259" invalidvotes="11743" abstainvotes="1509">
+              <candidate party="1" id="1" name="นายกฤษณะ พุ่มสนธิ์" votes="17452" />
+              <candidate party="2" id="2" name="นายสายัณห์ เตสา" votes="254" />
+              <candidate party="10" id="10" name="นายธนิตพล ไชยนันทน์" votes="32076" status="elected" />
+              <candidate party="16" id="16" name="นางสาวสุกัลยา โชคบำรุง" votes="12991" />
+              <candidate party="34" id="34" name="นายเกรียงศักดิ์ ภูมิรุ่งโรจน์" votes="153" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -806,7 +914,7 @@
             <exclude geocode="950503" />
           </include>
           <include geocode="9507" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates invalidvotes="10043" abstainvotes="2786" comment="Recount of votes necessary">
               <candidate id="1" party="1" name="ซูการ์โน มะทา" english="Sugarno Matha" votes="27649" />
               <candidate id="7" party="7" name="ชานนท์ เจ๊ะหะมะ" votes="5836" />
@@ -1075,6 +1183,13 @@
           <include geocode="240211" />
           <include geocode="240212" />
           <include geocode="240213" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="124251" invalidvotes="6051" abstainvotes="6273">
+              <candidate party="1" id="1" name="นางฐิติมา ฉายแสง" votes="40996" />
+              <candidate party="10" id="10" name="นายบุญเลิศ ไพรินทร์" votes="43510" status="elected" />
+              <candidate party="21" id="21" name="นายสัมพันธ์ ไตรติลานันท์" votes="395" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อำเภอบางน้ำเปรี้ยว อำเภอคลองเขื่อน อำเภอราชสาส์น อำเภอบางคล้า (เฉพาะตำบลบางคล้า ตำบลปากน้ำ ตำบลบางกระเจ็ด ตำบลท่าทองหลวง และ ตำบลหัวไทร) และอำเภอพนมสารคาม (เฉพาะตำบลเมืองเก่า ตำบลหนองยาว และ ตำบลหนองแหน)">
           <include geocode="2403" />
@@ -1088,6 +1203,16 @@
           <include geocode="240604" />
           <include geocode="240605" />
           <include geocode="240607" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="122155" invalidvotes="4766" abstainvotes="2485">
+              <candidate party="1" id="1" name="นายสมชัย อัศวชัยโสภณ" votes="43881" status="elected" />
+              <candidate party="2" id="2" name="นายธวัชชัย เทพสุภา" votes="226" />
+              <candidate party="10" id="10" name="นายชาลี เจริญสุข" votes="17779" />
+              <candidate party="14" id="14" name="นายเฉลิมชัย ตันเจริญ" votes="676" />
+              <candidate party="16" id="16" name="นายณัชพล ตันเจริญ" votes="29361" />
+              <candidate party="23" id="23" name="นางสาวลัดดาวัลย์ สุขเจริญ" votes="268" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อำเภอท่าตะเกียบ อำเภอสนามชัยเขต และอำเภอพนมสารคาม (เฉพาะตำบลเกาะขนุน ตำบลพนมสารคาม ตำบลบ้านซ่อง ตำบลท่าถ่าน และตำบลเขาหินซ้อน)">
           <include geocode="2410" />
@@ -1097,11 +1222,27 @@
           <include geocode="240602" />
           <include geocode="240606" />
           <include geocode="240608" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="124978" invalidvotes="5436" abstainvotes="3278">
+              <candidate party="1" id="1" name="นายรส มะลิผล" votes="41419" status="elected" />
+              <candidate party="10" id="10" name="นายสายัณห์ เกตุประยูร" votes="12825" />
+              <candidate party="16" id="16" name="นายพิเชษฐ์ ตันเจริญ" votes="29873" />
+              <candidate party="18" id="18" name="นายธงไท ขันธนเดช" votes="116" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="4" comment="อำเภอบ้านโพธิ์ อำเภอบางปะกง และ อำเภอแปลงยาว">
           <include geocode="2405" />
           <include geocode="2404" />
           <include geocode="2409" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="132103" invalidvotes="5606" abstainvotes="4375">
+              <candidate party="1" id="1" name="นายวุฒิพงศ์ ฉายแสง" votes="36723" />
+              <candidate party="10" id="10" name="พลตำรวจโทพิทักษ์ จารุสมบัติ" votes="59036" status="elected" />
+              <candidate party="14" id="14" name="นายวีรพันธ์ หัตถโชติ" votes="183" />
+              <candidate party="16" id="16" name="นายจักรวาล ท้วมเจริญ" votes="1246" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -1109,6 +1250,16 @@
       <constituencies>
         <constituency index="1" comment="อําเภอเมืองตรัง">
           <include geocode="9201" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="108882" invalidvotes="5455" abstainvotes="6097">
+              <candidate party="1" id="1" name="นายเจริญ ศรนรายณ์" votes="5502" />
+              <candidate party="2" id="2" name="นายทินกฤต แก้วละเอียด" votes="653" />
+              <candidate party="10" id="10" name="นายสุกิจ อัถโถปกรณ์" votes="69178" status="elected" />
+              <candidate party="12" id="12" name="นางสารภี หนองตรุด" votes="794" />
+              <candidate party="18" id="18" name="นางสุภร ปัญญาพิเคราะห์" votes="277" />
+              <candidate party="34" id="34" name="นายสุรสิงห์ เสียงใส" votes="16" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อําเภอรัษฎา อําเภอห้วยยอด อําเภอวังวิเศษ (ยกเว้น ตําบลวังมะปราง)">
           <include geocode="9209" />
@@ -1116,6 +1267,16 @@
           <include geocode="9207">
             <exclude geocode="920705" />
           </include>
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="110726" invalidvotes="4725" abstainvotes="3632">
+              <candidate party="1" id="1" name="นายชัยพร ชูเสน" votes="6291" />
+              <candidate party="2" id="2" name="นางสาววรวรรณ เปียตี๋" votes="1426" />
+              <candidate party="10" id="10" name="นายสาทิตย์ วงศ์หนองเตย" votes="73769" status="elected" />
+              <candidate party="12" id="12" name="นางทิพย์พร จันทร์เพชร" votes="731" />
+              <candidate party="19" id="19" name="นายชัยทัต สีสุข" votes="273" />
+              <candidate party="34" id="34" name="นายจักรกฤต แก้วทอง" votes="789" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อําเภอนาโยง อําเภอย่านตาขาว (ยกเว้นตําบลทุ่งค่าย ตําบลเกาะเปียะ ตําบลทุ่งกระบือและ ตําบลย่านตาขาว) อําเภอหาดสําราญ อําเภอปะเหลียน">
           <include geocode="9208" />
@@ -1127,6 +1288,14 @@
           </include>
           <include geocode="9210" />
           <include geocode="9204" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="105636" invalidvotes="7553" abstainvotes="4948">
+              <candidate party="1" id="1" name="นายรัตนศักดิ์ นันตสินธุ์" votes="4733" />
+              <candidate party="10" id="10" name="นายสมชาย โล่สถาพรพิพิธ" votes="71802" status="elected" />
+              <candidate party="18" id="18" name="นางสาวเสรี ทองพันธุ์" votes="74" />
+              <candidate party="34" id="34" name="นางวันทา วงศ์ธรรมโอสถ" votes="233" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="4" comment="อําเภอวังวิเศษ (เฉพาะตําบลวังมะปราง) อําเภอสิเกา อําเภอกันตัง อําเภอย่านตาขาว (เฉพาะตําบลทุ่งค่าย ตําบลเกาะเปียะ ตําบลทุ่งกระบือและ ตําบลย่านตาขาว)">
           <include geocode="920705" />
@@ -1136,6 +1305,14 @@
           <include geocode="920308" />
           <include geocode="920306" />
           <include geocode="920301" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="111386" invalidvotes="6102" abstainvotes="4406">
+              <candidate party="1" id="1" name="นายประโวทย์ ศรีจันทร์ทอง" votes="6814" />
+              <candidate party="10" id="10" name="นายสมบูรณ์ อุทัยเวียนกุล" votes="74387" status="elected" />
+              <candidate party="18" id="18" name="นางสาววราภรณ์ จริงจิตร" votes="80" />
+              <candidate party="34" id="34" name="นายปกิต ยอดสนิท" votes="133" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -1301,7 +1478,7 @@
             <exclude geocode="1699" />
           </include>
           <include geocode="160114" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="142920" invalidvotes="5149" abstainvotes="6435">
               <candidate id="1" name="ายพิชัย เกียรติวินัยสกุล" votes="37790" status="elected" />
               <candidate id="2" name="นายดิเรก คำเจริญ" votes="229" />
@@ -1329,7 +1506,7 @@
           <include geocode="160124" />
           <include geocode="1605" />
           <include geocode="1606" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="145549" invalidvotes="5865" abstainvotes="2620">
               <candidate id="1" name="นายสุชาติ ลายน้ำเงิน" votes="34041" />
               <candidate id="10" name="นายเกรียงไกร ธาราภูมิ" votes="6957" />
@@ -1351,7 +1528,7 @@
           <include geocode="160408" />
           <include geocode="160419" />
           <include geocode="160422" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="139652" invalidvotes="9887" abstainvotes="4543">
               <candidate id="1" name="นายอำนวย คลังผา" votes="62091" status="elected" />
               <candidate id="10" name="นายสุรศักดิ์ ศรีแสงเอก" votes="25129" />
@@ -1376,7 +1553,7 @@
           <include geocode="160414" />
           <include geocode="160417" />
           <include geocode="160418" />
-          <election date="2011-07-03" >
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="137061" invalidvotes="6572" abstainvotes="2761">
               <candidate id="1" name="นายพหล วรปัญญา" votes="38862" />
               <candidate id="10" name="นางสายชล มิตรานนท์" votes="14507" />
@@ -1529,7 +1706,7 @@
           <include geocode="640709" />
           <include geocode="640704" />
           <include geocode="6498" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates>
               <candidate id="16" party="16" name="จักรวาล ชัยวิรัตน์นุกูล" english="Chakkrawan Chaiwiratnukul" votes="23990" status="yellowcard" />
               <candidate id="2" party="2" name="สมเจตน์ ลิมปะพันธุ์" english="Somjet Limpapan" votes="23861" />
@@ -1564,7 +1741,7 @@
         <constituency index="1" comment="อำเภอเมืองกาญจนบุรี และอำเภอไทรโยค (เฉพาะตำบลศรีมงคล)">
           <include geocode="7101" />
           <include geocode="710206" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="121526" invalidvotes="4573" abstainvotes="7267">
               <candidate party="1" id="1" name="พลเอกสมชาย วิษณุวงศ์" votes="33501" status="elected" />
               <candidate party="2" id="2" name="นางสาววรสุดา สุขารมณ์" votes="6111" />
@@ -1585,7 +1762,7 @@
           <include geocode="710903" />
           <include geocode="710904" />
           <include geocode="710911" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="128047" invalidvotes="5166" abstainvotes="5420">
               <candidate party="1" id="1" name="พลตรีศรชัย มนตริวัต" votes="28346" />
               <candidate party="2" id="2" name="นายณัฐคมน์ บุญชู" votes="377" />
@@ -1603,7 +1780,7 @@
           <include geocode="710906" />
           <include geocode="710901" />
           <include geocode="710912" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="125113" invalidvotes="4822" abstainvotes="3884">
               <candidate party="1" id="1" name="นายสุรพงษ์ ปิยะโชติ" votes="43546" status="elected" />
               <candidate party="2" id="2" name="พันตำรวจเอกไพฑูรย์ สายทอง" votes="993" />
@@ -1624,7 +1801,7 @@
           <include geocode="710309" />
           <include geocode="7112" />
           <include geocode="710405" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="118993" invalidvotes="7032" abstainvotes="2177">
               <candidate party="1" id="1" name="นายไพบูลย์ พิมพ์พิสิฐถาวร" votes="39413" />
               <candidate party="2" id="2" name="นายประศาสน์ ภูษณะพงษ์" votes="264" />
@@ -1648,7 +1825,7 @@
           <include geocode="710403" />
           <include geocode="710404" />
           <include geocode="710406" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="82096" invalidvotes="3598" abstainvotes="2140">
               <candidate party="1" id="1" name="นายวิทิต มาไพศาลสิน" votes="17746" />
               <candidate party="2" id="2" name="นายพีระภัทร์ ยวงเงิน" votes="182" />
@@ -1937,7 +2114,7 @@
       <constituencies>
         <constituency index="1">
           <include geocode="4601" comment="อําเภอเมืองกาฬสินธุ์" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="107657" invalidvotes="2644" abstainvotes="1857">
               <candidate party="1" id="1" name="นางบุญรื่น ศรีธเรศ" votes="34127" status="elected" />
               <candidate party="2" id="2" name="นางโศภิสรา สุทธิแสน" votes="165" />
@@ -1953,7 +2130,7 @@
         <constituency index="2" comment="อําเภอยางตลาด อําเภอฆ้องชัย">
           <include geocode="4607" />
           <include geocode="4618" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="119647" invalidvotes="2850" abstainvotes="1146">
               <candidate party="1" id="1" name="นายวีระวัฒน์ โอสถานุเคราะห์" votes="54611" status="elected" />
               <candidate party="2" id="2" name="นางสาวณัจยา สุวรรณชาติ" votes="180" />
@@ -1968,7 +2145,7 @@
           <include geocode="4612" />
           <include geocode="4608" />
           <include geocode="4611" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="113189" invalidvotes="3441" abstainvotes="1027">
               <candidate party="1" id="1" name="นายคมเดช ไชยศิวามงคล" votes="32179" status="elected" />
               <candidate party="2" id="2" name="นายวิทยา ภูมิเหล่าแจ้ง" votes="13941" />
@@ -1985,7 +2162,7 @@
           <include geocode="4610" />
           <include geocode="4609" />
           <include geocode="4615" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="131828" invalidvotes="4034" abstainvotes="2011">
               <candidate party="1" id="1" name="นายพีระเพชร ศิริกุล" votes="58867" status="elected" />
               <candidate party="2" id="2" name="นายจิราวุฒิ สุทธิแสน" votes="449" />
@@ -2001,7 +2178,7 @@
           <include geocode="4614" />
           <include geocode="4617" />
           <include geocode="4604" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="134297" invalidvotes="3057" abstainvotes="1078">
               <candidate party="1" id="1" name="นายนิพนธ์ ศรีธเรศ" votes="54178" status="elected" />
               <candidate party="2" id="2" name="นายบุญมี โพธิ์ขี" votes="118" />
@@ -2017,7 +2194,7 @@
           <include geocode="4605" />
           <include geocode="4606" />
           <include geocode="4616" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="127971" invalidvotes="3312" abstainvotes="2219">
               <candidate party="1" id="1" name="นายประเสริฐ บุญเรือง" votes="62573" status="elected" />
               <candidate party="2" id="2" name="นางแววมณี โพธิ์ขี" votes="214" />
@@ -2192,7 +2369,7 @@
           <include geocode="130601" />
           <include geocode="130602" />
           <include geocode="130603" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates>
               <candidate id="1" party="1" name="สุเมธ ฤทธาคนี" votes="49524" status="elected" end="2012-08-03" endreason="resignation" comment="Resigned to run for PAO chairman, but failed" />
               <candidate id="2" party="2" name="ณพิภัช ชัยรัชธนธร" votes="483" />
@@ -2341,7 +2518,7 @@
       <constituencies>
         <constituency index="1" comment="อําเภอเมืองสุราษฎร์ธานี">
           <include geocode="8401" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="119932" invalidvotes="4405" abstainvotes="6769">
               <candidate party="1" id="1" name="พีรพงษ์ สังข์ทอง" votes="6849" />
               <candidate party="2" id="2" name="นายเอกราช รอดเจริญ" votes="787" />
@@ -2365,7 +2542,7 @@
           <include geocode="8403" />
           <include geocode="8404" />
           <include geocode="8405" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="123322" invalidvotes="4648" abstainvotes="5326">
               <candidate party="1" id="1" name="นายชาญยุทธ นพคุณ" votes="7633" />
               <candidate party="2" id="2" name="นายเอกกวี บุรประภัสสร" votes="457" />
@@ -2383,7 +2560,7 @@
           <include geocode="840208" />
           <include geocode="840213" />
           <include geocode="8415" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="121878" invalidvotes="5454" abstainvotes="6640">
               <candidate party="1" id="1" name="นายมานพ เกษมณี" votes="7809" />
               <candidate party="2" id="2" name="นายธาดา บุระประภัสสร" votes="422" />
@@ -2407,7 +2584,7 @@
           <include geocode="8414">
             <exclude geocode="841405" />
           </include>
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="121733" invalidvotes="5554" abstainvotes="4837">
               <candidate party="1" id="1" name="พ.ต.อ.สมพล รัฐกาญจน์" votes="8570" />
               <candidate party="2" id="2" name="นายชัยชนะ สงฤทธิ์" votes="848" />
@@ -2424,7 +2601,7 @@
           <include geocode="8410" />
           <include geocode="8409" />
           <include geocode="841405" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="112656" invalidvotes="3491" abstainvotes="3377">
               <candidate party="1" id="1" name="นายคณิต อินทปัน" votes="4199" />
               <candidate party="2" id="2" name="นายกีรติ ช่วยชนะ" votes="442" />
@@ -2444,7 +2621,7 @@
           <include geocode="840801" />
           <include geocode="840803" />
           <include geocode="840802" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="120808" invalidvotes="4919" abstainvotes="4024">
               <candidate party="1" id="1" name="นายชุมสาย ศรียาภัย" votes="6934" />
               <candidate party="2" id="2" name="นายสรรเสริญ ฤกษ์อุไร" votes="207" />
@@ -2466,6 +2643,16 @@
             <exclude geocode="360113" />
             <exclude geocode="360119" />
           </include>
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="115321" invalidvotes="3373" abstainvotes="3063">
+              <candidate party="1" id="1" name="นายประสิทธิ์ ชัยวิรัตนะ" votes="36819" />
+              <candidate party="10" id="10" name="นายสากล มาชัยภูมิ" votes="3591" />
+              <candidate party="16" id="16" name="นายโอชิษฐ์ เกียรติก้องชูชัย" votes="39944" status="elected" />
+              <candidate party="18" id="18" name="นางจันทร์ฟอง ดิเรกศรี" votes="103" />
+              <candidate party="22" id="22" name="นายจวง สิมมาวงษ์" votes="188" />
+              <candidate party="34" id="34" name="นายกฤตลักษณ์ ศรีรักษ์" votes="56" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อำเภอหนองบัวแดง อำเภอภักดีชุมพล อำเภอเมืองชัยภูมิ (เฉพาะตำบลนาฝาย ตำบลห้วยต้อน และตำบลท่าหินโงม) และ อำเภอเกษตรสมบูรณ์ (เฉพาะตำบลหนองข่า)">
           <include geocode="3605" />
@@ -2474,6 +2661,18 @@
           <include geocode="360114" />
           <include geocode="360113" />
           <include geocode="360408" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="120589" invalidvotes="3098" abstainvotes="1261">
+              <candidate party="1" id="1" name="นายมานะ โลหะวณิชย์" votes="61861" status="elected" />
+              <candidate party="2" id="2" name="นายสมชาย จริยานันทกุล" votes="11667" />
+              <candidate party="10" id="10" name="นางศรีประภา ปัญญาหรรษาวงศ์" votes="3209" />
+              <candidate party="12" id="12" name="นายพสิษฐ์ คำชัย" votes="118" />
+              <candidate party="15" id="15" name="นายทักษิณ แท้ไธสงค์" votes="96" />
+              <candidate party="16" id="16" name="นายราชัน วรรณจงคำ" votes="3495" />
+              <candidate party="18" id="18" name="นางหนูบาย งามผ่อง" votes="43" />
+              <candidate party="34" id="34" name="นายโชคชัย ดีนนทะชัย" votes="18" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อำเภอจัตุรัส อำเภอเนินสง่า อำเภอบ้านเขว้า และอำเภอซับใหญ่ (เฉพาะตำบลท่ากูบ และ ตำบลตะโกทอง)">
           <include geocode="3606" />
@@ -2481,30 +2680,79 @@
           <include geocode="3602" />
           <include geocode="361602" />
           <include geocode="361603" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="123409" invalidvotes="4019" abstainvotes="1262">
+              <candidate party="1" id="1" name="นางสาวปาริชาติ ชาลีเครือ" votes="45583" status="elected" />
+              <candidate party="2" id="2" name="นายศักดา สถิตย์ธรรม" votes="8567" />
+              <candidate party="10" id="10" name="นายอิสระพงศ์ สงวนวงศ์ชัย" votes="4788" />
+              <candidate party="12" id="12" name="นายธีระพงศ์ เสริมเจนไชย" votes="207" />
+              <candidate party="16" id="16" name="นายเชิงชายติณณ์ ชาลีรินทร์" votes="18127" />
+              <candidate party="21" id="21" name="นายอาคม หาญนอก" votes="9556" />
+              <candidate party="39" id="39" name="นายภัทรพร เอื้อศิรินวกุล" votes="32" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="4" comment="อำเภอบำเหน็จณรงค์ อำเภอเทพสถิต อำเภอหนองบัวระเหว และ อำเภอซับใหญ่ (เฉพาะตำบลซับใหญ่)">
           <include geocode="3607" />
           <include geocode="3609" />
           <include geocode="3608" />
           <include geocode="361601" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="118548" invalidvotes="5843" abstainvotes="1285">
+              <candidate party="1" id="1" name="นายอนันต์ ลิมปคุปตถาวร" votes="46026" status="elected" />
+              <candidate party="10" id="10" name="นายพุฒิพงศ์ สงวนวงศ์ชัย" votes="33166" />
+              <candidate party="15" id="15" name="นายธนภัทร ธุระพันธุ์" votes="136" />
+              <candidate party="18" id="18" name="นางสาวดาวตะวัน ประยูรสิงห์" votes="42" />
+              <candidate party="34" id="34" name="นายถาวร ประครองญาติ" votes="61" />
+              <candidate party="39" id="39" name="นายนิพนธ์ ศิลปอนันต์" votes="31" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="5" comment="อำเภอเกษตรสมบูรณ์ (ยกเว้นตำบลหนองข่า) และ อำเภอคอนสาร">
           <include geocode="3604">
             <exclude geocode="360408" />
           </include>
           <include geocode="3613" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="122234" invalidvotes="5407" abstainvotes="1398">
+              <candidate party="1" id="1" name="นายเจริญ จรรย์โกมล" votes="46046" status="elected" />
+              <candidate party="2" id="2" name="นายสมาน สุธรรมาภิวัฒน์" votes="15418" />
+              <candidate party="10" id="10" name="ร้อยตำรวจตรีชัชวาลย์ ดลประสิทธิ์" votes="3794" />
+              <candidate party="18" id="18" name="นางสาวงามใบตอง นิลมณี" votes="55" />
+              <candidate party="21" id="21" name="นายชูเดช เร่งไพบูลย์วงษ์" votes="12472" />
+              <candidate party="26" id="26" name="นายศรวัฒน์ ฦาชา" votes="5491" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="6" comment="อำเภอภูเขียว และอำเภอบ้านแท่น (ยกเว้นตำบลหนองคู)">
           <include geocode="3610" />
           <include geocode="3611">
             <exclude geocode="361105" />
           </include>
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="121595" invalidvotes="4962" abstainvotes="1242">
+              <candidate party="1" id="1" name="นางพรเพ็ญ บุญศิริวัฒนกุล" votes="40298" status="elected" />
+              <candidate party="10" id="10" name="นายปรัชญา หนูจันทร์" votes="1871" />
+              <candidate party="16" id="16" name="นายพีระพล ติ้วสุวรรณ" votes="14248" />
+              <candidate party="18" id="18" name="นายประยูร สุนทริยานนท์" votes="37" />
+              <candidate party="21" id="21" name="นายเชวงศักดิ์ เร่งไพบูลย์วงษ์" votes="20453" />
+              <candidate party="26" id="26" name="ร้อยตรีวัฒนา แก้วศิริ" votes="8727" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="7" comment="อำเภอแก้งคร้อ อำเภอคอนสวรรค์ อำเภอเมืองชัยภูมิ (เฉพาะตำบลซับสีทอง) และ อำเภอบ้านแท่น (เฉพาะตำบลหนองคู)">
           <include geocode="3612" />
           <include geocode="3603" />
           <include geocode="360119" />
           <include geocode="361105" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="114903" invalidvotes="3931" abstainvotes="2010">
+              <candidate party="1" id="1" name="นายสุรวิทย์ คนสมบูรณ์" votes="67891" status="elected" />
+              <candidate party="2" id="2" name="นายอาคม เลิศวาณิชย์กุล" votes="3938" />
+              <candidate party="10" id="10" name="นายเสถียร เที่ยงตรง" votes="5714" />
+              <candidate party="18" id="18" name="นายแผนผา คงนาวัง" votes="139" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -2523,11 +2771,33 @@
           <include geocode="570105" />
           <include geocode="570121" />
           <include geocode="570101" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="129607" invalidvotes="5621" abstainvotes="5394">
+              <candidate party="1" id="1" name="นายสามารถ แก้วมีชัย" votes="49964" status="elected" />
+              <candidate party="2" id="2" name="นางบัณฑิตา ปิงสุขแสน" votes="233" />
+              <candidate party="10" id="10" name="นายสมพงค์ อันพาพรม" votes="8636" />
+              <candidate party="16" id="16" name="นายวันชัย จงสุทธานามณี" votes="31446" />
+              <candidate party="18" id="18" name="นางสาวเวียงคำ มหาวงศ์" votes="101" />
+              <candidate party="36" id="36" name="นายเขมกร ปัญจขันธ์" votes="102" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อำเภอเวียงป่าเป้า อำเภอแม่สรวย และ อำเภอแม่ลาว">
           <include geocode="5711" />
           <include geocode="5710" />
           <include geocode="5716" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="131095" invalidvotes="7837" abstainvotes="2794">
+              <candidate party="1" id="1" name="นายสุรสิทธิ์ เจียมวิจักษณ์" votes="47890" status="elected" />
+              <candidate party="2" id="2" name="นายอภิชา คำบุญเรือง" votes="769" />
+              <candidate party="10" id="10" name="นายชัยธวัช สิทธิสม" votes="10307" />
+              <candidate party="14" id="14" name="นายกิติพงษ์ นามวงศ์" votes="853" />
+              <candidate party="16" id="16" name="นางสาวชัญญา จงสุทธนามณี" votes="33673" />
+              <candidate party="20" id="20" name="นายวรนนทพล เสริฐสนิท" votes="97" />
+              <candidate party="34" id="34" name="นายพีระศักดิ์ อยู่ลือ" votes="146" />
+              <candidate party="39" id="39" name="นายดวงเนตร ปัญญาใจ" votes="52" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อำเภอพาน และอำเภอเมืองเชียงราย (ตำบลดอยลาน ตำบลห้วยสัก ตำบลท่าสาย และ ตำบลป่าอ้อดอนชัย)">
           <include geocode="5705" />
@@ -2535,27 +2805,79 @@
           <include geocode="570113" />
           <include geocode="570118" />
           <include geocode="570116" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="136363" invalidvotes="5073" abstainvotes="3480">
+              <candidate party="1" id="1" name="นางสาววิสาระดี เตชะธีราวัฒน์" votes="78115" status="elected" />
+              <candidate party="2" id="2" name="นายสันทัด ธรรมวงค์" votes="326" />
+              <candidate party="10" id="10" name="นายประดิษฐ์ ศรีอ้วน" votes="10344" />
+              <candidate party="12" id="12" name="นายภาณุพงศ์ พาณิชกระจ่าง" votes="775" />
+              <candidate party="16" id="16" name="นายธีรพงษ์ เผ่ากา" votes="8834" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="4" comment="อำเภอเทิง อำเภอเวียงชัย และ อำเภอป่าแดด">
           <include geocode="5704" />
           <include geocode="5702" />
           <include geocode="5706" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="120510" invalidvotes="4258" abstainvotes="2503">
+              <candidate party="1" id="1" name="นายรังสรรค์ วันไชยธนวงศ์" votes="59837" status="elected" />
+              <candidate party="2" id="2" name="นายเรืองศักดิ์ มะลิหอม" votes="273" />
+              <candidate party="10" id="10" name="นายเกียรติศักดิ์ อุดขา" votes="5725" />
+              <candidate party="16" id="16" name="นายสุธีระพงษ์ วันไชยธนวงศ์" votes="23386" />
+              <candidate party="36" id="36" name="นายตรินัยน์ วิรุฬห์ธันยธร" votes="56" />
+              <candidate party="39" id="39" name="นายดิษฐวัฒน์ วงศ์วุฒิชาญ" votes="51" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="5" comment="อำเภอเชียงของ อำเภอเวียงแก่น อำเภอพญาเม็งราย และ อำเภอขุนตาล">
           <include geocode="5703" />
           <include geocode="5713" />
           <include geocode="5712" />
           <include geocode="5714" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="124332" invalidvotes="5661" abstainvotes="2217">
+              <candidate party="1" id="1" name="นายพิเชษฐ์ เชื้อเมืองพาน" votes="51708" status="elected" />
+              <candidate party="2" id="2" name="นางนงค์คราญ บำรุง" votes="161" />
+              <candidate party="10" id="10" name="นางสาวมิรันตี บุญแก้ว" votes="9490" />
+              <candidate party="12" id="12" name="นายประชัน จันระวังยศ" votes="1082" />
+              <candidate party="16" id="16" name="นางอทิติ วันไชยธนวงศ์" votes="23238" />
+              <candidate party="18" id="18" name="นางอุรา ยศอินต๊ะ" votes="49" />
+              <candidate party="38" id="38" name="นายกิตติศักดิ์ มูลวงศ์" votes="39" />
+              <candidate party="39" id="39" name="นายโพธิ์นิพิฐ นันทะพรหม" votes="44" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="6" comment="อำเภอแม่สาย อำเภอเชียงแสน อำเภอดอยหลวง และ อำเภอเวียงเชียงรุ้ง">
           <include geocode="5709" />
           <include geocode="5708" />
           <include geocode="5718" />
           <include geocode="5717" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="124559" invalidvotes="5090" abstainvotes="3759">
+              <candidate party="1" id="1" name="นายอิทธิเดช แก้วหลวง" votes="49502" />
+              <candidate party="2" id="2" name="นางสาวภัทรชนก แก้วกิจชัย" votes="185" />
+              <candidate party="10" id="10" name="นายธวัชชัย อภิวงค์" votes="7066" />
+              <candidate party="16" id="16" name="นายสุวัฒน์ ตระกูลโรจน์" votes="27513" />
+              <candidate party="18" id="18" name="นางสาวน้ำนวลดิน นาวาบุญนิยม" votes="72" />
+              <candidate party="39" id="39" name="นางสาวศศิกาญจน์ สมบูรณ์" votes="225" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="7" comment="อำเภอแม่จัน และ อำเภอแม่ฟ้าหลวง">
           <include geocode="5707" />
           <include geocode="5715" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="103620" invalidvotes="7807" abstainvotes="3405">
+              <candidate party="1" id="1" name="นางสาวละออง ติยะไพรัช" votes="52646" status="elected" />
+              <candidate party="2" id="2" name="นางเมธินี ธรรมวงค์ชัย" votes="496" />
+              <candidate party="10" id="10" name="นายชูเกียรติ กันทะรส" votes="8713" />
+              <candidate party="21" id="21" name="นายสิขิม รักพงษ์" votes="505" />
+              <candidate party="34" id="34" name="นายวิษณุภตฆ์ พีรเจริญวงส์" votes="79" />
+              <candidate party="36" id="36" name="นายณธนทัต ริยาพันธ์" votes="72" />
+              <candidate party="39" id="39" name="นายนิกร จันทร์หอม" votes="140" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -2743,6 +3065,20 @@
           <include geocode="200106" />
           <include geocode="200107" />
           <include geocode="200118" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="120964" invalidvotes="4756" abstainvotes="7845">
+              <candidate party="1" id="1" name="นายสง่า ธนสงวนวงศ์" votes="17510" />
+              <candidate party="2" id="2" name="นางลภัสรดา เกตุมนตรี" votes="384" />
+              <candidate party="6" id="6" name="นายสุชาติ ชมกลิ่น" votes="33687" />
+              <candidate party="10" id="10" name="พลตำรวจตรีวีระ อนันตกูล" votes="29582" status="elected" />
+              <candidate party="12" id="12" name="นายศุภโชติ ทวิวัฒน์" votes="532" />
+              <candidate party="18" id="18" name="นายวิชาญ จิระเวชบวรกิจ" votes="44" />
+              <candidate party="20" id="20" name="นายกิจ ไกรทิพย์บดี" votes="85" />
+              <candidate party="21" id="21" name="นายกวี กมลวัชย์" votes="204" />
+              <candidate party="26" id="26" name="นายปัณณพัฒน์ นิธิสิริจรรยา" votes="44" />
+              <candidate party="36" id="36" name="นายจักรพล วชิรเสวีกุล" votes="60" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อำเภอเมืองชลบุรี (เฉพาะตำบลบางปลาสร้อย ตำบลมะขามหย่ง ตำบลบ้านโขด ตำบลบางทราย ตำบลหนองไม้แดง ตำบลคลองตำหรุ ตำบลดอนหัวฬ่อ และ ตำบลบ้านสวน) และ อำเภอพานทอง (เฉพาะตำบลพานทอง ตำบลเกาะลอย ตำบลโคกขี้หนอน ตำบลบ้านเก่า ตำบลหน้าประดู่ ตำบลบางนาง ตำบลบางหัก ตำบลหนองตำลึง และ ตำบลหนองกะขะ)">
           <include geocode="200101" />
@@ -2763,19 +3099,18 @@
           <include geocode="200502" />
           <include geocode="200504" />
           <election date="2011-07-03" type="Parliament">
-            <candidates>
-              <candidate id="1" name="มานิตย์ ภาวสุทธิ์" />
-              <candidate id="2" name="ธนรัช ประมงคล" />
-              <candidate id="6" name="อุกฤษณ์ ตั๊นสวัสดิ์" votes="34415" status="elected" end="2012-11-26" endreason="yellowcard">
+            <candidates eligiblevoter="128240" invalidvotes="5418" abstainvotes="7613">
+              <candidate party="1" id="1" name="นายมานิตย์ ภาวสุทธิ์" votes="17702" />
+              <candidate party="6" id="6" name="นายอุกฤษณ์ ตั๊นสวัสดิ์" votes="34415" status="elected" end="2012-11-26" endreason="yellowcard">
                 <gazetteref volume="129" page="1" issue="115 ก" date="2012-12-09" />
               </candidate>
-              <candidate id="10" name="บรรจบ รุ่งโรจน์" />
-              <candidate id="12" name="เปล่งศักดิ์ ชาระ" />
-              <candidate id="15" name="ฐิติรัตน์ ฉลุมาศจารอุดม" />
-              <candidate id="18" name="นฤมล แซ่เตีย" />
-              <candidate id="20" name="ฐาปนา สุทธิธาทิพย์" />
-              <candidate id="26" name="ถนอม พิมพ์ใจชน" />
-              <candidate id="36" name="กูณฑ์ จีนประชา" />
+              <candidate party="10" id="10" name="นายบรรจบ รุ่งโรจน์" votes="32875" />
+              <candidate party="12" id="12" name="นายเปล่งศักดิ์ ชาระ" votes="1014" />
+              <candidate party="15" id="15" name="นางสาวฐิติรัตน์ ฉลุมาศจารุอุดม" votes="35" />
+              <candidate party="18" id="18" name="นางสาวนฤมล แซ่เตีย" votes="21" />
+              <candidate party="20" id="20" name="นายฐาปนา สุทธิธาทิพย์" votes="95" />
+              <candidate party="26" id="26" name="นายถนอม พิมพ์ใจชน" votes="65" />
+              <candidate party="36" id="36" name="จ่าสิบเอกกูณฑ์ จีนประชา" votes="59" />
             </candidates>
           </election>
           <byelection date="2013-01-06" type="Parliament" reason="yellowcard">
@@ -2787,11 +3122,34 @@
           <include geocode="2011" />
           <include geocode="200503" />
           <include geocode="200505" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="126657" invalidvotes="5943" abstainvotes="3908">
+              <candidate party="1" id="1" name="นายประเสริฐ ศิวทัศน์" votes="10546" />
+              <candidate party="2" id="2" name="นางกมลวรรณ ทรงกลด" votes="172" />
+              <candidate party="6" id="6" name="นายรณเทพ อนุวัฒน์" votes="44602" status="elected" />
+              <candidate party="10" id="10" name="นายประมวล เอมเปีย" votes="38685" />
+              <candidate party="12" id="12" name="นายคณิศร กิตติกรปรีดา" votes="128" />
+              <candidate party="15" id="15" name="นางสาวอรกัญญา กมลวรภัทร์" votes="182" />
+              <candidate party="21" id="21" name="นายภักดี อินทร์อุดม" votes="350" />
+              <candidate party="36" id="36" name="นายเฉลิมเกียรติ ศรีชื่น" votes="36" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="4" comment="อำเภอบ้านบึง อำเภอบ่อทอง และ อำเภอหนองใหญ่">
           <include geocode="2002" />
           <include geocode="2010" />
           <include geocode="2003" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="123042" invalidvotes="5610" abstainvotes="4221">
+              <candidate party="1" id="1" name="นายจิรวุฒิ สิงห์โตทอง" votes="30390" />
+              <candidate party="2" id="2" name="นางณัฐดาพรรณ นันทตันติพัฒน์" votes="236" />
+              <candidate party="6" id="6" name="นายสัมฤทธิ์ พงษ์วิรัตน์" votes="4362" />
+              <candidate party="10" id="10" name="นายสรวุฒิ เนื่องจำนงค์" votes="50068" status="elected" />
+              <candidate party="12" id="12" name="นายสมชาย สกลดิลก" votes="252" />
+              <candidate party="21" id="21" name="นายอรรถเวทย์ ชยางศุ" votes="87" />
+              <candidate party="36" id="36" name="นางอนัญพร พ่วงพลี" votes="33" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="5" comment="อำเภอศรีราชา (เฉพาะตำบลสุรศักดิ์ ตำบลหนองขาม ตำบลเขาคันทรง ตำบลบางพระ ตำบลบ่อวิน และ ตำบลศรีราชา)">
           <include geocode="200702" />
@@ -2800,6 +3158,19 @@
           <include geocode="200707" />
           <include geocode="200708" />
           <include geocode="200701" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="121665" invalidvotes="4692" abstainvotes="5958">
+              <candidate party="1" id="1" name="นายชัยศิริมงคล พิริยะภาพสกุล" votes="18000" />
+              <candidate party="2" id="2" name="นายณัชพล แก่นนาคำ" votes="381" />
+              <candidate party="6" id="6" name="นายพันธุ์ศักดิ์ เกตุวัตถา" votes="36550" status="elected" />
+              <candidate party="10" id="10" name="นายฐนโรจน์ โรจนกุลเสฏฐ์" votes="25198" />
+              <candidate party="12" id="12" name="นายสุศิษฎ์ เปรมแหวว" votes="834" />
+              <candidate party="15" id="15" name="นายพงศ์กิตศ สำเร็จกิจสกุล" votes="22" />
+              <candidate party="21" id="21" name="นายมั่นเศรษฐ์ ไตรชลาสินธุ์" votes="250" />
+              <candidate party="26" id="26" name="นายอภิชาติ ประพันธ์" votes="30" />
+              <candidate party="36" id="36" name="นายภาสกร ธีระวัฒน์เดชา" votes="24" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="6" comment="อำเภอเกาะสีชัง อำเภอศรีราชา (เฉพาะตำบลทุ่งสุขลา และ ตำบลบึง) และ อำเภอบางละมุง (เฉพาะตำบลนาเกลือ ตำบลบางละมุง ตำบลหนองปลาไหล และ ตำบลตะเคียนเตี้ย)">
           <include geocode="2008" />
@@ -2809,15 +3180,49 @@
           <include geocode="200401" />
           <include geocode="200403" />
           <include geocode="200407" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="115029" invalidvotes="4645" abstainvotes="5696">
+              <candidate party="1" id="1" name="นางสาวนิชนันท์ วังคะฮาตธัญญกิจ" votes="22526" />
+              <candidate party="2" id="2" name="นายประสงค์ ติยะปัญจนิตย์" votes="196" />
+              <candidate party="6" id="6" name="นางสุกุมล คุณปลื้ม" votes="36463" status="elected" />
+              <candidate party="10" id="10" name="นายจักกฤช ไกรมาตย์" votes="16523" />
+              <candidate party="12" id="12" name="นายประจักษ์ เปรมแหวว" votes="490" />
+              <candidate party="21" id="21" name="นางณัฐนันท์ รัตนพิไชย" votes="286" />
+              <candidate party="36" id="36" name="นางณัฐวัณณ์ เหลี่ยมเพชร" votes="30" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="7" comment="อำเภอบางละมุง (เฉพาะตำบลหนองปรือ ตำบลโป่ง ตำบลห้วยใหญ่ และ ตำบลเขาไม้แก้ว)">
           <include geocode="200402" />
           <include geocode="200404" />
           <include geocode="200406" />
           <include geocode="200405" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="111609" invalidvotes="3957" abstainvotes="5520">
+              <candidate party="1" id="1" name="นายอดิศร ผลลูกอินทร์" votes="22622" />
+              <candidate party="2" id="2" name="นายสุไอนี เพียรดี" votes="514" />
+              <candidate party="6" id="6" name="นายปรเมศวร์ งามพิเชษฐ์" votes="28402" status="elected" />
+              <candidate party="10" id="10" name="นางพจนารถ แก้วผลึก" votes="15839" />
+              <candidate party="12" id="12" name="นายกันต์พจน์ ราษฎร์เจริญดี" votes="240" />
+              <candidate party="21" id="21" name="นายทองสุข ทองนาค" votes="296" />
+              <candidate party="26" id="26" name="นายนิมิต ไมตรีวงศ์" votes="60" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="8" comment="อำเภอสัตหีบ">
           <include geocode="2009" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="114260" invalidvotes="3526" abstainvotes="5748">
+              <candidate party="1" id="1" name="พลเรือเอกสุรพล จันทน์แดง" votes="25340" status="elected" />
+              <candidate party="2" id="2" name="นายธนทร บูรณศิลปิน" votes="697" />
+              <candidate party="6" id="6" name="นาวาเอกวิโรจน์ วังแก้วหิรัญ" votes="21256" />
+              <candidate party="10" id="10" name="นายไมตรี สอยเหลือง" votes="15480" />
+              <candidate party="12" id="12" name="พลเรือตรีหญิงดารา บุรสิกพงศ์ ร.น." votes="1763" />
+              <candidate party="21" id="21" name="นาวาโทสุทัศน์ วงศ์ปรีดี" votes="848" />
+              <candidate party="26" id="26" name="นางสาวเสาวลักษณ์ สุริยาทิพย์" votes="77" />
+              <candidate party="36" id="36" name="นายศิริวัฒน์ เจริญวิทย์" votes="53" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -3470,7 +3875,7 @@
           <include geocode="400106" />
           <include geocode="400115" />
           <include geocode="400111" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="135932" invalidvotes="4436" abstainvotes="9433">
               <candidate party="1" id="1" name="นายจักริน พัฒน์ดำรงจิตร" votes="53579" status="elected" />
               <candidate party="2" id="2" name="นางสาวจันทร์สุดา ปราบอรินท์" votes="215" />
@@ -3499,7 +3904,7 @@
           <include geocode="400113" />
           <include geocode="400114" />
           <include geocode="4021" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="134849" invalidvotes="4117" abstainvotes="3851">
               <candidate party="1" id="1" name="นายภูมิ สาระผล" votes="60465" status="elected" />
               <candidate party="2" id="2" name="นางอรัญยา คำปัจ" votes="223" />
@@ -3516,7 +3921,7 @@
         <constituency index="3" comment="อำเภอกระนวน และ อำเภอน้ำพอง">
           <include geocode="4009" />
           <include geocode="4007" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="144321" invalidvotes="4163" abstainvotes="1971">
               <candidate party="1" id="1" name="นายจตุพร เจริญเชื้อ" votes="66204" status="elected" />
               <candidate party="2" id="2" name="นางกรณิกา สุขพวง" votes="506" />
@@ -3541,7 +3946,7 @@
           <include geocode="4019" />
           <include geocode="4008" />
           <include geocode="4002" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="141136" invalidvotes="4486" abstainvotes="2491">
               <candidate party="1" id="1" name="นางมุกดา พงษ์สมบัติ" votes="73511" status="elected" />
               <candidate party="2" id="2" name="นางสาวกนกวรรณ เบ้าจรรยา" votes="782" />
@@ -3567,7 +3972,7 @@
             <exclude geocode="400610" />
             <exclude geocode="400606" />
           </include>
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="123530" invalidvotes="3200" abstainvotes="1325">
               <candidate party="1" id="1" name="นายสุชาย ศรีสุรพล" votes="60046" status="elected" />
               <candidate party="2" id="2" name="นางสาวสุพิน เกตุมณี" votes="239" />
@@ -3588,7 +3993,7 @@
           <include geocode="400605" />
           <include geocode="400610" />
           <include geocode="400606" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="129232" invalidvotes="5081" abstainvotes="2248">
               <candidate party="1" id="1" name="นายสมศักดิ์ เกียรติสุรนนท์" english="Somsak Kiatsuranont" votes="51416" status="elected" />
               <candidate party="2" id="2" name="นางสาวดวงใจ ลาสุ" votes="223" />
@@ -3605,7 +4010,7 @@
         <constituency index="7" comment="อำเภอหนองเรือ และ อำเภอมัญจาคีรี">
           <include geocode="4004" />
           <include geocode="4017" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="125317" invalidvotes="3507" abstainvotes="1206">
               <candidate party="1" id="1" name="นายนวัธ เตาะเจริญสุข" votes="50854" status="elected" />
               <candidate party="2" id="2" name="นายจงรักษ์ คุณเงิน" votes="30412" />
@@ -3625,7 +4030,7 @@
           <include geocode="4014" />
           <include geocode="4013" />
           <include geocode="4022" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="139027" invalidvotes="3113" abstainvotes="1840">
               <candidate party="1" id="1" name="นางดวงแข อรรณนพพร" votes="77472" status="elected" />
               <candidate party="2" id="2" name="นายบุญเรือง ลาสุ" votes="239" />
@@ -3644,7 +4049,7 @@
           <include geocode="4025" />
           <include geocode="4018" />
           <include geocode="4011" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="129342" invalidvotes="3110" abstainvotes="1976">
               <candidate party="1" id="1" name="ร้อยโทปรีชาพล พงษ์พานิช" votes="74220" status="elected" />
               <candidate party="2" id="2" name="นางสาวนภาวรรณ บุญมา" votes="350" />
@@ -3661,7 +4066,7 @@
           <include geocode="4010" />
           <include geocode="4024" />
           <include geocode="4003" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="127258" invalidvotes="3038" abstainvotes="1321">
               <candidate party="1" id="1" name="นายเรืองเดช สุพรรณฝ่าย" votes="51372" status="elected" />
               <candidate party="2" id="2" name="นางสาวณัชพร ขัดทัด" votes="147" />
@@ -3689,6 +4094,15 @@
           <include geocode="500115" />
           <include geocode="500103" />
           <include geocode="500105" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="113578" invalidvotes="5054" abstainvotes="7920">
+              <candidate party="1" id="1" name="นางสาวทัศนีย์ บูรณุปกรณ์" votes="48567" status="elected" />
+              <candidate party="2" id="2" name="นายเจริญฤทธิ์ รักษ์เจริญ" votes="360" />
+              <candidate party="10" id="10" name="นางวิภาวัลย์ วรพุฒิพงค์" votes="24997" />
+              <candidate party="18" id="18" name="นางรัตนาภรณ์ บุญยัง" votes="193" />
+              <candidate party="39" id="39" name="นายเศวต เวียนทอง" votes="578" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="2" comment="อำเภอเมืองเชียงใหม่ (เฉพาะตำบลวัดเกต ตำบลฟ้าฮ่าม ตำบลหนองหอย ตำบลท่าศาลา ตำบลหนองป่าครั่ง และ ตำบลป่าแดด) และอำเภอสารภี">
           <include geocode="500106" />
@@ -3698,20 +4112,29 @@
           <include geocode="500113" />
           <include geocode="500110" />
           <include geocode="5019" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="127210" invalidvotes="5407" abstainvotes="6191">
+              <candidate party="1" id="1" name="นายกฤษดาภรณ์ เสียมภักดี" votes="65419" status="elected" />
+              <candidate party="2" id="2" name="นางสิริกร ทับทอง" votes="584" />
+              <candidate party="10" id="10" name="นายพรชัย จิตรนวเสถียร" votes="25090" />
+              <candidate party="12" id="12" name="นายยงยุทธ ขันทะสีมา" votes="2028" />
+              <candidate party="18" id="18" name="นางจนแน่ มุ่งมาตาย" votes="125" />
+              <candidate party="36" id="36" name="นางพรรณี แปงชมภู" votes="48" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="3" comment="อำเภอดอยสะเก็ต อำเภอสันกำแพง และ อำเภอแม่ออน">
           <include geocode="5005" />
           <include geocode="5013" />
           <include geocode="5023" />
-
-          <election date="2011-07-03">
-            <candidates>
-              <candidate party="1" id="1" name="นางสาวชินณิชา วงศ์สวัสดิ์" status="elected" endreason="disqualification" end="2012-04-20" />
-              <candidate party="2" id="2" name="นางสาวอภิญญา กันธิยะ" />
-              <candidate party="10" id="10" name="นายวีระวุฒิ เทพเรือง" />
-              <candidate party="14" id="14" name="นายชัยศิลป์ รินแก้ว" />
-              <candidate party="18" id="18" name="นางบุญระบบ มุนีเวช" />
-              <candidate party="39" id="39" name="นายประสิทธิ์ พวงสำลี" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="135013" invalidvotes="6209" abstainvotes="5361">
+              <candidate party="1" id="1" name="นางสาวชินณิชา วงศ์สวัสดิ์" votes="81863" status="elected" endreason="disqualification" end="2012-04-20" />
+              <candidate party="2" id="2" name="นางสาวอภิญญา กันธิยะ" votes="553" />
+              <candidate party="10" id="10" name="นายวีระวุฒิ เทพเรือง" votes="21987" />
+              <candidate party="14" id="14" name="นายชัยศิลป์ รินแก้ว" votes="831" />
+              <candidate party="18" id="18" name="นางบุญระบบ มุนีเวช" votes="62" />
+              <candidate party="39" id="39" name="นายประสิทธิ์ พวงสำลี" votes="83" />
             </candidates>
           </election>
           <byelection date="2012-06-02" reason="disqualification">
@@ -3728,18 +4151,50 @@
           <include geocode="5014" />
           <include geocode="5011" />
           <include geocode="500605" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="137719" invalidvotes="6772" abstainvotes="6208">
+              <candidate party="1" id="1" name="นายวิทยา ทรงคำ" votes="58709" status="elected" />
+              <candidate party="2" id="2" name="นางสาวธีรนันท์ ชูวีระ" votes="1084" />
+              <candidate party="10" id="10" name="นายโสภณ โกชุม" votes="39948" />
+              <candidate party="12" id="12" name="นายฟ้าลั่น ณ วิชัย" votes="1992" />
+              <candidate party="18" id="18" name="นางสาวต้นกล้า มากสุข" votes="113" />
+              <candidate party="19" id="19" name="นายสิทธัญ วงค์ปั๋น" votes="494" />
+              <candidate party="34" id="34" name="นายโสภณ อรุณเนตร์" votes="40" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="5" comment="อำเภอแม่อาย และอำเภอฝาง (ยกเว้นตำบลแม่ข่า)">
           <include geocode="5010" />
           <include geocode="5009">
             <exclude geocode="500911" />
           </include>
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="105419" invalidvotes="7543" abstainvotes="2051">
+              <candidate party="1" id="1" name="นายประสิทธิ์ วุฒินันชัย" votes="37913" status="elected" />
+              <candidate party="2" id="2" name="นายกุลฉัตร ฉัตรกุล ณ อยุธยา" votes="225" />
+              <candidate party="10" id="10" name="นายพรเลิศ ก๋าวินจันทร์" votes="5943" />
+              <candidate party="14" id="14" name="นายบดินทร์ กินาวงศ์" votes="678" />
+              <candidate party="21" id="21" name="นายไกร ดาบธรรม" votes="26753" />
+              <candidate party="33" id="33" name="นายสันติ ตันสุหัช" votes="1850" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="6" comment="อำเภอเชียงดาว อำเภอเวียงแหง อำเภอไชยปราการ และอำเภอฝาง (เฉพาะตำบลแม่ข่า)">
           <include geocode="5004" />
           <include geocode="5020" />
           <include geocode="5021" />
           <include geocode="500911" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="94178" invalidvotes="6485" abstainvotes="2067">
+              <candidate party="1" id="1" name="นายจุลพันธ์ อมรวิวัฒน์" votes="40375" status="elected" />
+              <candidate party="2" id="2" name="นายสัญญพงศ์ ชะเอม" votes="316" />
+              <candidate party="8" id="8" name="นายภูสวัสดิ์ สุขเลี้ยง" votes="103" />
+              <candidate party="10" id="10" name="นายยงยุทธ สุวภาพ" votes="19399" />
+              <candidate party="21" id="21" name="นายณรงค์เดช สมควร" votes="3223" />
+              <candidate party="18" id="18" name="นายวิสิทธิ์ แสงสร้อย" votes="72" />
+              <candidate party="39" id="39" name="นายวุฒิวัฒน์ นิติกุลวรรักษ์" votes="73" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="7" comment="อำเภอแม่ริม และอำเภอแม่แตง (ยกเว้นตำบลแม่หอพระ) และอำเภอเมืองเชียงใหม่ (เฉพาะตำบลสันผีเสื้อ)">
           <include geocode="5007" />
@@ -3747,12 +4202,31 @@
             <exclude geocode="500605" />
           </include>
           <include geocode="500116" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="123398" invalidvotes="6831" abstainvotes="4947">
+              <candidate party="1" id="1" name="นายบุญทรง เตริยาภิรมย์" votes="56543" status="elected" />
+              <candidate party="2" id="2" name="นายศุภชัย ดาราวิไล" votes="393" />
+              <candidate party="10" id="10" name="นางสาวเดือนเต็มดวง ณ เชียงใหม่" votes="33482" />
+              <candidate party="18" id="18" name="นายปางป่า เจิดสิริพันธ์พงศ์" votes="123" />
+              <candidate party="34" id="34" name="นายวรเชษฐ์ บัวสุข" votes="119" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="8" comment="อำเภอหางดง อำเภอสันป่าตอง และอำเภอสะเมิง (เฉพาะตำบลสะเมิงใต้ และตำบลสะเมิงเหนือ)">
           <include geocode="5015" />
           <include geocode="5012" />
           <include geocode="500801" />
           <include geocode="500802" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="130877" invalidvotes="7014" abstainvotes="5267">
+              <candidate party="1" id="1" name="นายนพคุณ รัฐผไท" votes="83696" status="elected" />
+              <candidate party="2" id="2" name="นางหัทยา พลภัทรพิจารณ์" votes="560" />
+              <candidate party="10" id="10" name="นายสุทัศน์ สุทัศนรักษ์" votes="17721" />
+              <candidate party="18" id="18" name="นางทองธรรม เจนชัย" votes="198" />
+              <candidate party="34" id="34" name="นายปริญญา ด่านชัย" votes="95" />
+              <candidate party="39" id="39" name="นางสาวสรวงจรรย์ รัตนอุบล" votes="133" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="9" comment="อำเภอแม่วาง อำเภอจอมทอง อำเภอดอยหล่อ อำเภอกัลยาณิวัฒนา อำเภอแม่แจ่ม (เฉพาะตำบลแม่นาจร) และอำเภอสะเมิง (เฉพาะตำบลยั้งเมิน ตำบลแม่สาบ และตำบลบ่อแก้ว)">
           <include geocode="5022" />
@@ -3763,6 +4237,17 @@
           <include geocode="500805" />
           <include geocode="500803" />
           <include geocode="500804" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="120201" invalidvotes="9530" abstainvotes="2451">
+              <candidate party="1" id="1" name="นายสุรพล เกียรติไชยากร" votes="50696" status="elected" />
+              <candidate party="2" id="2" name="นายอิทธิพล มณีวรรณ" votes="417" />
+              <candidate party="10" id="10" name="นายเกรียงกมล ศรีมา" votes="6130" />
+              <candidate party="12" id="12" name="นายอินสอน วงค์ตา" votes="1938" />
+              <candidate party="18" id="18" name="นายไพร จริยา" votes="225" />
+              <candidate party="21" id="21" name="นายณรงค์ ภูอิทธิวงศ์" votes="34627" />
+              <candidate party="34" id="34" name="นายฤทธิพงศ์ ตันสุหัส" votes="51" />
+            </candidates>
+          </election>
         </constituency>
         <constituency index="10" comment="อำเภอแม่แจ่ม (ยกเว้นตำบลแม่นาจร) อำเภอฮอด อำเภอดอยเต่า และ อำเภออมก๋อย">
           <include geocode="5003">
@@ -3771,6 +4256,14 @@
           <include geocode="5016" />
           <include geocode="5017" />
           <include geocode="5018" />
+          <election date="2011-07-03" type="Parliament">
+            <candidates eligiblevoter="118362" invalidvotes="16300" abstainvotes="2008">
+              <candidate party="1" id="1" name="นายศรีเรศ โกฎคำลือ" votes="51841" status="elected" />
+              <candidate party="10" id="10" name="นายนรพล ตันติมนตรี" votes="26849" />
+              <candidate party="33" id="33" name="นายทรงธรรม โรจนเครือวัลย์" votes="2342" />
+              <candidate party="34" id="34" name="นายจรูญ กันทา" votes="83" />
+            </candidates>
+          </election>
         </constituency>
       </constituencies>
     </entity>
@@ -3938,7 +4431,7 @@
           <include geocode="3032" />
           <include geocode="3007" />
           <include geocode="3022" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates>
               <candidate name="บุญจง วงศ์ไตรรัตน์" id="16" status="elected" end="2011-08-23" endreason="disqualification" comment="Red-carded in by-election of 2010-12-12, therefore banned and lost right to contest" />
             </candidates>
@@ -3981,7 +4474,7 @@
           <include geocode="1001" />
           <include geocode="1008" />
           <include geocode="1013" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="107531" invalidvotes="4284" abstainvotes="8344">
               <candidate id="1" party="1" name="พล.ต.ต. รุ่งโรจน์ เภกะนันทน์" votes="20230" />
               <candidate id="2" party="2" name="นายประวิทย์ ติยะปัญจนิตย์" votes="338" />
@@ -3999,7 +4492,7 @@
           <include geocode="1007" />
           <include geocode="1004" />
           <include geocode="1028" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="140368" invalidvotes="5567" abstainvotes="9794">
               <candidate id="1" party="1" name="ม.ล.ณัฏฐพล เทวกุล" votes="26956" />
               <candidate id="2" party="2" name="นายมนตรี ฐิรโฆไท" votes="314" />
@@ -4017,7 +4510,7 @@
         <constituency index="3" comment="เขตบางคอแหลม เขตยานนาวา">
           <include geocode="1031" />
           <include geocode="1012" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="134186" invalidvotes="5213" abstainvotes="6971">
               <candidate id="1" party="1" name="นายพงษ์พิสุทธิ์ จินตโสภณ" votes="29976" />
               <candidate id="2" party="2" name="นายอรัญ พันธุมจินดา" votes="165" />
@@ -4033,7 +4526,7 @@
         <constituency index="4" comment="เขตคลองเตย เขตวัฒนา">
           <include geocode="1033" />
           <include geocode="1039" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="133672" invalidvotes="5621" abstainvotes="6528">
               <candidate id="1" party="1" name="นายวรพงษ์ ตันติเวชยานนท์" votes="29749" />
               <candidate id="10" party="10" name="นายอนุชา บูรพชัยศรี" votes="44621" status="elected" />
@@ -4050,7 +4543,7 @@
         <constituency index="5" comment="เขตดุสิต เขตราชเทวี">
           <include geocode="1002" />
           <include geocode="1037" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="138354" invalidvotes="5524" abstainvotes="5929">
               <candidate id="1" party="1" name="นางสาวลีลาวดี วัชโรบล" votes="38206" status="elected" />
               <candidate id="2" party="2" name="นายโสภณ ดำนุ้ย" votes="408" />
@@ -4069,7 +4562,7 @@
         <constituency index="6" comment="เขตดินแดง เขตพญาไท">
           <include geocode="1026" />
           <include geocode="1014" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="158519" invalidvotes="6222" abstainvotes="7994">
               <candidate id="1" party="1" name="นายกวี ณ ลำปาง" votes="45792" />
               <candidate id="2" party="2" name="นายกริชชัย อรุณวงษ์ ณ อยุธยา" votes="388" />
@@ -4089,7 +4582,7 @@
           <include geocode="1017" />
           <include geocode="104501" />
           <include geocode="104504" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="113321" invalidvotes="3786" abstainvotes="4481">
               <candidate id="1" party="1" name="นางสาวอนุตตมา อมรวิวัฒน์" votes="32692" />
               <candidate id="2" party="2" name="นายธเนศวร มหาธนินวงศ์" votes="168" />
@@ -4111,7 +4604,7 @@
             <exclude geocode="104501" />
             <exclude geocode="104504" />
           </include>
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="127709" invalidvotes="4586" abstainvotes="5319">
               <candidate id="1" party="1" name="นายสิงห์ทอง บัวชุม" votes="38187" />
               <candidate id="2" party="2" name="นายวรศักดิ์ อิศรางกูร ณ อยุธยา" votes="273" />
@@ -4127,7 +4620,7 @@
         </constituency>
         <constituency index="9" comment="เขตจตุจักร">
           <include geocode="1030" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="126499" invalidvotes="3837" abstainvotes="5172">
               <candidate id="1" party="1" name="นางสาววิลาวัลย์ ธรรมชาติ" votes="37602" />
               <candidate id="2" party="2" name="นายอภิรักษ์ อารีย์มิตร" votes="203" />
@@ -4146,7 +4639,7 @@
         </constituency>
         <constituency index="10" comment="เขตบางซื่อ">
           <include geocode="1029" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="105529" invalidvotes="4102" abstainvotes="4499">
               <candidate id="1" party="1" name="นายเฉลิมชัย จีนะวิจารณะ" votes="30596" />
               <candidate id="2" party="2" name="นายอรรถพล วงศ์รัตน์" votes="153" />
@@ -4161,7 +4654,7 @@
         <constituency index="11" comment="เขตหลักสี่ เขตดอนเมือง (เฉพาะ แขวงสนามบิน)">
           <include geocode="1041" />
           <include geocode="103605" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="106294" invalidvotes="2871" abstainvotes="3787">
               <candidate id="1" party="1" name="นายสุรชาติ เทียนทอง" votes="28376" status="elected" />
               <candidate id="2" party="2" name="นางสาวเยาวภา บุรพลชัย" votes="545" />
@@ -4181,7 +4674,7 @@
           <include geocode="1036">
             <exclude geocode="103605" />
           </include>
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="107261" invalidvotes="3136" abstainvotes="3156">
               <candidate id="1" party="1" name="นายการุณ โหสกุล" english="Karun Hosakul" votes="38351" status="elected" endreason="redcard" />
               <candidate id="2" party="2" name="นายนิรุต จิตชัย" votes="86" />
@@ -4199,7 +4692,7 @@
         </constituency>
         <constituency index="13" comment="เขตสายไหม">
           <include geocode="1042" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="136043" invalidvotes="4389" abstainvotes="4169">
               <candidate id="1" party="1" name="น.อ.อนุดิษฐ์ นาครทรรพ" votes="51765" status="elected" />
               <candidate id="2" party="2" name="น.ต.ปิยะพงษ์ ผิวอ่อน" votes="1538" />
@@ -4217,7 +4710,7 @@
         </constituency>
         <constituency index="14" comment="เขตบางเขน">
           <include geocode="1005" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="144480" invalidvotes="5378" abstainvotes="5278">
               <candidate id="1" party="1" name="นายอนุสรณ์ ปั้นทอง" votes="49829" status="elected" />
               <candidate id="2" party="2" name="นางกรพินธุ์ สุทัศน์ ณ อยุธยา" votes="739" />
@@ -4232,7 +4725,7 @@
         </constituency>
         <constituency index="15" comment="เขตบางกะปิ">
           <include geocode="1006" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="114021" invalidvotes="4058" abstainvotes="4874">
               <candidate id="1" party="1" name="นายภักดีหาญส์ หิมะทองคำ" votes="32737" />
               <candidate id="2" party="2" name="นายศิโรตม์ มโนพัฒนะ" votes="144" />
@@ -4253,7 +4746,7 @@
         <constituency index="16" comment="เขตบึงกุ่ม เขตคันนายาว (เฉพาะ แขวงรามอินทรา)">
           <include geocode="1027" />
           <include geocode="104302" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="148576" invalidvotes="5147" abstainvotes="6191">
               <candidate id="1" party="1" name="นายพลภูมิ วิภัติภูมิประเทศ" votes="4869" status="pending" />
               <candidate id="2" party="2" name="นายไมตรี คำพันธุ์" votes="176" />
@@ -4274,7 +4767,7 @@
           <include geocode="1043">
             <exclude geocode="104302" />
           </include>
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="123744" invalidvotes="4684" abstainvotes="3891">
               <candidate id="1" party="1" name="นายวิชาญ มีนชัยนันท์" votes="4245" status="elected" />
               <candidate id="2" party="2" name="นายยศพงศ์ นาทันรีบ" votes="102" />
@@ -4290,7 +4783,7 @@
         </constituency>
         <constituency index="18" comment="เขตคลองสามวา">
           <include geocode="1046" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="116343" invalidvotes="4284" abstainvotes="3480">
               <candidate id="1" party="1" name="นายจิรายุ ห่วงทรัพย์" votes="39058" status="elected" />
               <candidate id="2" party="2" name="พล.ต.ต.ชาตรี สุทัศน์ ณ อยุธยา" votes="169" />
@@ -4307,7 +4800,7 @@
         </constituency>
         <constituency index="19" comment="เขตหนองจอก">
           <include geocode="1003" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="107011" invalidvotes="5062" abstainvotes="2853">
               <candidate id="1" party="1" name="นายไพโรจน์ อิสระเสรีพงษ์" votes="3653" status="elected" />
               <candidate id="2" party="2" name="นายสุรยุทธ ศิริขันธ์" votes="135" />
@@ -4324,7 +4817,7 @@
         </constituency>
         <constituency index="20" comment="เขตลาดกระบัง">
           <include geocode="1011" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="115338" invalidvotes="4976" abstainvotes="3825">
               <candidate id="1" party="1" name="นางสาวธีรรัตน์ สำเร็จวาณิชย์" votes="44914" status="elected" />
               <candidate id="2" party="2" name="นางกฤษณา ธารีฉัตร" votes="155" />
@@ -4345,7 +4838,7 @@
             <exclude geocode="103202" />
             <exclude geocode="103203" />
           </include>
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="118610" invalidvotes="4529" abstainvotes="4551">
               <candidate id="1" party="1" name="นายเอกพจน์ วงศ์อารยะ" votes="33317" />
               <candidate id="2" party="2" name="นายธิบดี เยาวมาลี" votes="262" />
@@ -4363,7 +4856,7 @@
           <include geocode="1034" />
           <include geocode="103202" />
           <include geocode="103203" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="148142" invalidvotes="6065" abstainvotes="6154">
               <candidate id="1" party="1" name="นายภัทรศักดิ์ โอสถานุเคราะห์" votes="39437" />
               <candidate id="2" party="2" name="นายธานี สาครสินธุ์" votes="252" />
@@ -4381,7 +4874,7 @@
         <constituency index="23" comment="เขตพระโขนง เขตบางนา">
           <include geocode="1009" />
           <include geocode="1047" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="147859" invalidvotes="5864" abstainvotes="6886">
               <candidate id="1" party="1" name="นายวัฒนา เซ่งไพเราะ" votes="39668" />
               <candidate id="2" party="2" name="นายเอก กฤชวงศ์สนิท" votes="189" />
@@ -4401,7 +4894,7 @@
             <exclude geocode="101506" />
           </include>
           <include geocode="1018" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="139583" invalidvotes="6036" abstainvotes="8255">
               <candidate id="1" party="1" name="นายเอนก หุตังคบดี" votes="35789" />
               <candidate id="2" party="2" name="นางศิริลักษณ์ จัตตารีส์" votes="187" />
@@ -4415,7 +4908,7 @@
         <constituency index="25" comment="เขตจอมทอง เขตธนบุีร (เฉพาะ แขวงดาวคะนอง)">
           <include geocode="1035" />
           <include geocode="101506" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="136221" invalidvotes="5309" abstainvotes="5893">
               <candidate id="1" party="1" name="นายสุวัฒน์ ม่วงศิริ" votes="38399" />
               <candidate id="2" party="2" name="นายชัชพรรษ อภิเอกปฐม" votes="207" />
@@ -4430,7 +4923,7 @@
         <constituency index="26" comment="เขตราษฎร์บูรณะ เขตทุ่งครุ">
           <include geocode="1024" />
           <include geocode="1049" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="151778" invalidvotes="6962" abstainvotes="6297">
               <candidate id="1" party="1" name="นางสาวนพสรัญ วรรณศิริกุล" votes="45092" />
               <candidate id="2" party="2" name="นายชุมพล รุ่งวิชานิวัฒน์" votes="250" />
@@ -4447,7 +4940,7 @@
         </constituency>
         <constituency index="27" comment="เขตบางขุนเทียน">
           <include geocode="1021" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="113484" invalidvotes="4116" abstainvotes="4257">
               <candidate id="1" party="1" name="นายพิพัฒน์ชัย ไพบูลย์" votes="33475" />
               <candidate id="2" party="2" name="นายกำชัย สังข์ประไพ" votes="195" />
@@ -4463,7 +4956,7 @@
         <constituency index="28" comment="เขตบางบอน เขตหนองแขม (เฉพาะ แขวงหนองแขม)">
           <include geocode="1050" />
           <include geocode="102302" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="126558" invalidvotes="4685" abstainvotes="5195">
               <candidate id="1" party="1" name="นายวัน อยู่บำรุง" votes="40465" />
               <candidate id="2" party="2" name="นายยุทธนา โตอาจ" votes="306" />
@@ -4480,7 +4973,7 @@
           <include geocode="1023">
             <exclude geocode="102302" />
           </include>
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="111988" invalidvotes="4446" abstainvotes="5098">
               <candidate id="1" party="1" name="นายแสวง ฤกษ์จรัล" votes="34457" />
               <candidate id="2" party="2" name="นางสาวบุณณดา สุปิยพันธุ์" votes="683" />
@@ -4493,7 +4986,7 @@
         </constituency>
         <constituency index="30" comment="เขตบางแค">
           <include geocode="1040" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="146042" invalidvotes="5195" abstainvotes="6063">
               <candidate id="1" party="1" name="ร้อยโทหญิง สุณิสา เลิศภควัต" votes="4342" />
               <candidate id="2" party="2" name="นายวรชาย สูตรสุคนธ์" votes="227" />
@@ -4511,7 +5004,7 @@
         <constituency index="31" comment="เขตภาษีเจริญ เขตบางกอกใหญ่">
           <include geocode="1022" />
           <include geocode="1016" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="157274" invalidvotes="6650" abstainvotes="7284">
               <candidate id="1" party="1" name="นายมานะ คงวุฒิปัญญา" votes="46693" />
               <candidate id="10" party="10" name="นายวิลาศ จันทร์พิทักษ์" votes="50192" status="elected" />
@@ -4527,7 +5020,7 @@
           <include geocode="1019" />
           <include geocode="102005" />
           <include geocode="102007" />
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="141019" invalidvotes="6006" abstainvotes="7132">
               <candidate id="1" party="1" name="นายปิติพงศ์ เต็มเจริญ" votes="40942" />
               <candidate id="2" party="2" name="นางสาวสมนา ติยะปัญจนิตย์" votes="172" />
@@ -4546,7 +5039,7 @@
             <exclude geocode="102005" />
             <exclude geocode="102007" />
           </include>
-          <election date="2011-07-03">
+          <election date="2011-07-03" type="Parliament">
             <candidates eligiblevoter="117594" invalidvotes="4689" abstainvotes="6610">
               <candidate id="1" party="1" name="นายพงศ์พันธ์ ยอดเมืองเจริญ" votes="32217" />
               <candidate id="2" party="2" name="นายวิศรุต สุวรรณปรีชา" votes="184" />
@@ -4561,7 +5054,7 @@
         </constituency>
       </constituencies>
     </entity>
-    <election date="2011-07-03">
+    <election date="2011-07-03" type="Parliament">
       <partylist party="1">
         <candidate index="1" name="น.ส. ยิ่งลักษณ์ ชินวัตร" english="Yingluck Shinawatra" />
         <candidate index="2" name="นายยงยุทธ วิชัยดิษฐ" english="Yongyuth Wichaidit" endreason="resignation" end="2012-10-04">
