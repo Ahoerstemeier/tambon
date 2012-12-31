@@ -44,11 +44,7 @@
         <xs:documentation>Year in which the data was valid.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>Optional comment.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:complexType name="Area">
     <xs:sequence>
@@ -63,7 +59,7 @@
             <xs:documentation>Date the change became officially effective.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="comment" type="xs:string" use="optional" />
+        <xs:attributeGroup ref="t:Comment"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -238,7 +234,7 @@
     <xs:attribute name="newgeocode" type="xs:string" use="optional" />
     <xs:attribute name="obsolete" type="xs:boolean" use="optional" />
     <xs:attribute name="parent" type="xs:string" use="optional" />
-    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attributeGroup ref="t:Comment"/>
     <!-- for Thesaban covering a complete Tambon-->
     <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />
     <!-- for Chumchon corresponding to a specific Muban-->
