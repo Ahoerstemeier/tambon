@@ -221,7 +221,7 @@
     <xs:attribute name="page" type="xs:unsignedInt" use="required" />
     <xs:attribute name="issue" type="xs:string" use="required" />
     <xs:attribute name="date" type="xs:date" use="optional" />
-    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:complexType name="GazetteOperationBase" abstract="1">
     <xs:annotation>
@@ -256,11 +256,7 @@
             <xs:documentation>Index of the action in the announcement.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="comment" type="xs:string" use="optional">
-          <xs:annotation>
-            <xs:documentation>Special comments.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
+        <xs:attributeGroup ref="t:Comment"/>
 
         <xs:attribute name="tambon" type="xs:unsignedInt" use="optional">
           <xs:annotation>
@@ -295,7 +291,7 @@
     <!--or maybe better a Thai address child element? -->
     <xs:attribute name="id" type="xs:unsignedInt" use="optional" />
     <xs:attribute name="index" type="xs:unsignedInt" use="optional" />
-    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:complexType name='GazetteReassign'>
     <xs:annotation>

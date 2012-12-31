@@ -33,6 +33,13 @@
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
+  <xs:attributeGroup name="Comment">
+    <xs:attribute name="comment" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Plain text comment for information not covered in the formal fields.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
 
   <xs:simpleType name="EntityType">
     <xs:annotation>
@@ -208,7 +215,7 @@
     <xs:attribute name="name" type="xs:string" use="optional" />
     <xs:attribute name="english" type="xs:string" use="optional" />
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" default="0" />
-    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:simpleType name="OfficialType">
     <xs:annotation>
@@ -425,11 +432,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:anyURI">
-        <xs:attribute name="comment" type="xs:string" use="optional">
-          <xs:annotation>
-            <xs:documentation>Plain text comment for information not covered in the formal fields.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
+        <xs:attributeGroup ref="t:Comment"/>
         <xs:attribute name="status" type="t:MyUriStatus" use="optional" default="unknown">
           <xs:annotation>
             <xs:documentation>Status of the web link.</xs:documentation>

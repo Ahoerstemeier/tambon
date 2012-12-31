@@ -287,11 +287,7 @@
             <xs:documentation>Status of the social web account.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="comment" type="xs:string" use="optional">
-          <xs:annotation>
-            <xs:documentation>Additional comment.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -415,11 +411,7 @@
         <xs:documentation>Year official was in office, used if being/end of term is not known.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>Comments for information not covered in the formal fields.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
     <xs:attribute name="beginreason" type="t:OfficialBeginType" use="optional" default="Unknown">
       <xs:annotation>
         <xs:documentation>Reason why left office.</xs:documentation>
@@ -468,11 +460,7 @@
         <xs:documentation>End of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>Comments for information not covered in the formal fields.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
     <xs:attribute name="size" type="xs:positiveInteger" use="optional">
       <xs:annotation>
         <xs:documentation>Number of councillors at begin of term.</xs:documentation>
@@ -519,11 +507,7 @@
             <xs:documentation>Year in which it was in use.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="comment" use="optional" type="xs:string">
-          <xs:annotation>
-            <xs:documentation>Additional comments like the type.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -662,7 +646,7 @@
         <xs:documentation>Date the office was closed at that location.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:complexType name='Office'>
     <xs:annotation>
@@ -725,10 +709,6 @@
         <xs:documentation>Office of an administrative entity no longer existing.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>Comment for information not fitting in any of the formal fields.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
 </xs:schema>

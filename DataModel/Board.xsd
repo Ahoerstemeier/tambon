@@ -81,12 +81,12 @@
         <xs:documentation>Date at which the change becomes effective.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional" />
     <xs:attribute name="index" type="xs:nonNegativeInteger" use="optional">
       <xs:annotation>
         <xs:documentation>Number of the issue on the agenda of the meeting.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:complexType name='RenameOperation'>
     <xs:complexContent>

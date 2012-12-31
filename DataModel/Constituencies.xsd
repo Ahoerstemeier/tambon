@@ -190,11 +190,7 @@
         <xs:documentation>Number of seats to be filled in the constituency.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>Free text comment for information not covered in the formal fields.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:complexType name="Constituency">
     <xs:annotation>
@@ -236,6 +232,7 @@
         <xs:documentation>Number assigned to the party for the election in question.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:complexType name="PartyList">
     <xs:annotation>
@@ -349,9 +346,9 @@
     <xs:attribute name="title" type="xs:string" use="optional" />
     <xs:attribute name="english" type="xs:string" use="optional" />
     <xs:attribute name="status" type="t:ElectionStatus" use="optional" />
-    <xs:attribute name="comment" type="xs:string" use="optional" />
     <xs:attribute name="end" type="xs:date" use="optional" />
     <xs:attribute name="endreason" type="t:ByElectionReason" use="optional" />
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:complexType name="CandidateListEntry">
     <xs:complexContent>
@@ -412,7 +409,7 @@
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="comment" type="xs:string" use="optional" />
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
   <xs:simpleType name="ByElectionReason">
     <xs:annotation>
@@ -469,7 +466,7 @@
     <xs:attribute name="date" type="xs:date" use="optional" />
     <xs:attribute name="type" type="t:ElectionType" use="optional" />
     <xs:attribute name="reason" type="t:ByElectionReason" />
-    <xs:attribute name="comment" type="xs:string" />
+    <xs:attributeGroup ref="t:Comment"/>
   </xs:complexType>
 
   <xs:complexType name="Election">
