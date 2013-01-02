@@ -372,9 +372,9 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool effectiveFieldSpecified;
         
-        private string commentField;
-        
         private string indexField;
+        
+        private string commentField;
         
         /// <summary>
         /// Creates a new instance of BasicOperation.
@@ -557,17 +557,6 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment {
-            get {
-                return this.commentField;
-            }
-            set {
-                this.commentField = value;
-            }
-        }
-        
         /// <summary>
         /// Number of the issue on the agenda of the meeting.
         /// </summary>
@@ -582,6 +571,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.indexField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
             }
         }
     }

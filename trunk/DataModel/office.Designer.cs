@@ -657,10 +657,10 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Comment for information not fitting in any of the formal fields.
+        /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
-        /// The comment.
+        /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -919,7 +919,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="SocialWebLinks", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class SocialWebLinks {
         
-        private string facebookField;
+        private List<string> facebookField;
         
         private SocialWebLink twitterField;
         
@@ -937,6 +937,7 @@ namespace De.AHoerstemeier.Tambon {
             this.blogField = new List<MyUri>();
             this.googleplusField = new List<GooglePlusLink>();
             this.twitterField = new SocialWebLink();
+            this.facebookField = new List<string>();
         }
         
         /// <summary>
@@ -945,9 +946,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The facebook.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="anyURI", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("facebook", DataType="anyURI", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string facebook {
+        public List<string> facebook {
             get {
                 return this.facebookField;
             }
@@ -1574,10 +1575,10 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Comments for information not covered in the formal fields.
+        /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
-        /// The comment.
+        /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -1741,6 +1742,11 @@ namespace De.AHoerstemeier.Tambon {
         Removed,
         
         /// <summary>
+        /// Removed or forced to resign by council, e.g. a lost confidence vote.
+        /// </summary>
+        RemovedByCouncil,
+        
+        /// <summary>
         /// Term shortened to allow change of status of entity, e.g. a municipality status upgrade.
         /// </summary>
         StatusChange,
@@ -1775,6 +1781,8 @@ namespace De.AHoerstemeier.Tambon {
         private string commentField;
         
         private string sizeField;
+        
+        private string finalsizeField;
         
         private EntityType typeField;
         
@@ -1862,10 +1870,10 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Comments for information not covered in the formal fields.
+        /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
-        /// The comment.
+        /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -1879,7 +1887,7 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Number of councillors.
+        /// Number of councillors at begin of term.
         /// </summary>
         /// <value>
         /// The size.
@@ -1892,6 +1900,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.sizeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Number of councillors at end of term.
+        /// </summary>
+        /// <value>
+        /// The finalsize.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string finalsize {
+            get {
+                return this.finalsizeField;
+            }
+            set {
+                this.finalsizeField = value;
             }
         }
         
@@ -1954,6 +1979,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Dissolution after order from higher authorities (ยุบสภา).
         /// </summary>
         DissolutionOrdered,
+        
+        /// <summary>
+        /// Election declared null and void.
+        /// </summary>
+        ElectionNulled,
         
         /// <summary>
         /// Council voted for a self-dissolution.
@@ -2050,6 +2080,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string comment {
