@@ -730,6 +730,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string comment {
@@ -933,10 +939,10 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Optional comment.
+        /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
-        /// The comment.
+        /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]

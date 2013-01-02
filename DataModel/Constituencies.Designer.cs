@@ -202,10 +202,10 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Free text comment for information not covered in the formal fields.
+        /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
-        /// The comment.
+        /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -447,6 +447,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string comment {
@@ -552,6 +558,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string comment {
@@ -635,8 +647,6 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool statusFieldSpecified;
         
-        private string commentField;
-        
         private System.DateTime endField;
         
         private bool endFieldSpecified;
@@ -644,6 +654,8 @@ namespace De.AHoerstemeier.Tambon {
         private ByElectionReason endreasonField;
         
         private bool endreasonFieldSpecified;
+        
+        private string commentField;
         
         /// <summary>
         /// Creates a new instance of Candidate.
@@ -735,17 +747,6 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment {
-            get {
-                return this.commentField;
-            }
-            set {
-                this.commentField = value;
-            }
-        }
-        
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime end {
@@ -801,6 +802,98 @@ namespace De.AHoerstemeier.Tambon {
                 this.endreasonFieldSpecified = value;
             }
         }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Types of elections.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum ElectionType {
+        
+        /// <summary>
+        /// House of Representatives.
+        /// </summary>
+        Parliament,
+        
+        /// <summary>
+        /// Senate.
+        /// </summary>
+        Senate,
+        
+        /// <summary>
+        /// Chairman of the provincial administrative organization.
+        /// </summary>
+        PAOChairman,
+        
+        /// <summary>
+        /// Council of the provincial administrative organization (สภาองค์การบริหารส่วนจังหวัด).
+        /// </summary>
+        PAOCouncil,
+        
+        /// <summary>
+        /// Mayor of the subdistrict administrative organization.
+        /// </summary>
+        TAOMayor,
+        
+        /// <summary>
+        /// Council of the subdistrict administrative organization.
+        /// </summary>
+        TAOCouncil,
+        
+        /// <summary>
+        /// Mayor of the municipality.
+        /// </summary>
+        Mayor,
+        
+        /// <summary>
+        /// Council of the municipality.
+        /// </summary>
+        ThesabanCouncil,
+        
+        /// <summary>
+        /// Governor of Bangkok.
+        /// </summary>
+        BangkokGovernor,
+        
+        /// <summary>
+        /// Council of the BMA.
+        /// </summary>
+        BangkokCouncil,
+        
+        /// <summary>
+        /// Council of the districts in Bangkok.
+        /// </summary>
+        BangkokDistrictCouncil,
+        
+        /// <summary>
+        /// Village headman election.
+        /// </summary>
+        VillageHeadman,
+        
+        /// <summary>
+        /// Subdistrict headman election.
+        /// </summary>
+        SubdistrictHeadman,
     }
     
     /// <summary>
@@ -967,81 +1060,6 @@ namespace De.AHoerstemeier.Tambon {
                 this.beginFieldSpecified = value;
             }
         }
-    }
-    
-    /// <summary>
-    /// Types of elections.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
-    public enum ElectionType {
-        
-        /// <summary>
-        /// House of Representatives.
-        /// </summary>
-        Parliament,
-        
-        /// <summary>
-        /// Senate.
-        /// </summary>
-        Senate,
-        
-        /// <summary>
-        /// Chairman of the provincial administrative organization.
-        /// </summary>
-        PAOChairman,
-        
-        /// <summary>
-        /// Council of the provincial administrative organization (สภาองค์การบริหารส่วนจังหวัด).
-        /// </summary>
-        PAOCouncil,
-        
-        /// <summary>
-        /// Mayor of the subdistrict administrative organization.
-        /// </summary>
-        TAOMayor,
-        
-        /// <summary>
-        /// Council of the subdistrict administrative organization.
-        /// </summary>
-        TAOCouncil,
-        
-        /// <summary>
-        /// Mayor of the municipality.
-        /// </summary>
-        Mayor,
-        
-        /// <summary>
-        /// Council of the municipality.
-        /// </summary>
-        ThesabanCouncil,
-        
-        /// <summary>
-        /// Governor of Bangkok.
-        /// </summary>
-        BangkokGovernor,
-        
-        /// <summary>
-        /// Council of the BMA.
-        /// </summary>
-        BangkokCouncil,
-        
-        /// <summary>
-        /// Council of the districts in Bangkok.
-        /// </summary>
-        BangkokDistrictCouncil,
-        
-        /// <summary>
-        /// Village headman election.
-        /// </summary>
-        VillageHeadman,
-        
-        /// <summary>
-        /// Subdistrict headman election.
-        /// </summary>
-        SubdistrictHeadman,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
@@ -1691,6 +1709,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private string idField;
         
+        private string commentField;
+        
         /// <summary>
         /// Thai name of the party.
         /// </summary>
@@ -1739,6 +1759,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.idField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
             }
         }
     }
