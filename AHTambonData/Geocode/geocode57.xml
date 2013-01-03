@@ -1954,7 +1954,7 @@
       <entity type="Muban" geocode="57090907" name="บ้านสันเกร็ดทอง" english="Ban San Kret Thong" />
       <entity type="Muban" geocode="57090908" name="บ้านโป่งเหนือ" english="Ban Pong Nuea" />
       <entity type="Muban" geocode="57090909" name="บ้านโป่ง" english="Ban Pong" />
-      <entity type="Muban" geocode="57090910" name="บ้านอีก้อผาฮี้" />
+      <entity type="Muban" geocode="57090910" name="บ้านอีก้อผาฮี้" english="Ban I-ko Pha Hi" />
       <entity type="Muban" geocode="57090911" name="บ้านมูเซอร์ผาฮี้" english="Ban Mu Soe Phahi" />
       <entity type="Muban" geocode="57090912" name="บ้านถ้ำพัฒนา" english="Ban Tham Phatthana" />
     </entity>
@@ -1974,12 +1974,19 @@
     </office>
     <entity type="Tambon" name="แม่สรวย" english="Mae Suai" geocode="571001">
       <office type="MunicipalityOffice">
-        <!-- TAO renamed to เวียงสรวย with upgrade to municipality -->
-        <!-- Location somewhere around  19.659633°  99.534829° -->
+        <!-- Location somewhere around  19.659633°  99.534829° - maybe 19.66071, 99.53514 ? -->
         <url status="offline">http://www.maesuai.com/</url>
         <officials>
           <official title="TAOMayor" name="สมบัติ จอมกัน" inoffice="2009" />
         </officials>
+        <history>
+          <rename oldname="แม่สรวย" oldenglish="Mae Suai" name="เวียงสรวย" english="Wiang Suai" effective="2009-10-27">
+            <meetingreference date="2009-10-21" number="2" board="rename" />
+          </rename>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27">
+            <meetingreference board="1" date="2009-07-01" number="22" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="57100101" name="บ้านโป่งปูเฟือง" english="Ban Pong Pu Fueang" />
       <entity type="Muban" geocode="57100102" name="บ้านสันกลาง" english="Ban San Klang" />
@@ -2596,7 +2603,7 @@
       <entity type="Muban" geocode="57160207" name="บ้านป่าแดง" english="Ban Pa Daeng" />
       <entity type="Muban" geocode="57160208" name="บ้านท่ามะโอ" english="Ban Tha Ma-o" />
       <entity type="Muban" geocode="57160209" name="บ้านดงมะเฟือง" english="Ban Dong Mafueang" />
-      <entity type="Muban" geocode="57160210" name="บ้านหนองผักเฮือด" />
+      <entity type="Muban" geocode="57160210" name="บ้านหนองผักเฮือด" english="Ban Nong Phak Hueat" />
       <entity type="Muban" geocode="57160211" name="บ้านป่าสัก" english="Ban Pa Sak" />
     </entity>
     <entity type="Tambon" name="บัวสลี" english="Bua Sali" geocode="571603">
