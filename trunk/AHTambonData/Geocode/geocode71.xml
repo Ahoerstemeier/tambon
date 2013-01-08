@@ -1544,6 +1544,9 @@
     </office>
     <entity type="Tambon" name="เลาขวัญ" english="Lao Khwan" geocode="711001">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="บุญทัน ไพบูลย์ผล" begin="2012-08-05" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="30" />
         </council>
@@ -2042,8 +2045,12 @@
   </entity>
   <entity type="ThesabanTambon" name="บ่อพลอย" english="Bo Phloi" geocode="7192" parent="7103">
     <office type="MunicipalityOffice">
-      <url>http://www.boploi.go.th/</url>
+      <url status="offline">http://www.boploi.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ชัยเชษฐ พัฒนะพิชัย" begin="2012-08-19" beginreason="ElectedDirectly" />
+      </officials>
       <council>
+        <term begin="2012-08-19" type="ThesabanTambon" size="12" />
         <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -2228,9 +2235,11 @@
       </geo:Point>
       <url>http://www.tpm.go.th/</url>
       <officials>
-        <official title="Mayor" name="ประเทศ บุญยงค์" begin="2008-07-13" endyear="2012" />
+        <official title="Mayor" name="ประเทศ บุญยงค์" begin="2012-08-26" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ประเทศ บุญยงค์" begin="2008-07-13" end="2012-07-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
+        <!--<term begin="2012-08-26" type="ThesabanTambon" size="12" />-->
         <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" />
       </council>
     </office>
