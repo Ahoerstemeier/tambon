@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ราชบุรี" english="Ratchaburi" geocode="70">
+  <symbols>
+    <vision>สร้างผลผลิตสู่สากล สร้างสภาพชุมชนเพื่อชีวิต</vision>
+  </symbols>
   <office type="ProvinceHall">
     <symbols>
       <vision>สร้างผลผลิตสู่สากล สร้างสภาพชุมชนเพื่อชีวิต</vision>
@@ -213,8 +216,11 @@
     </entity>
     <entity type="Tambon" name="น้ำพุ" english="Nam Phu" geocode="700112">
       <office type="TAOOffice">
-        <url status="offline">http://www.numphu.go.th/</url>
+        <url status="offline" lastonline="2013-01-03">http://www.numphu.go.th/</url>
         <url status="offline">http://numpu.org/</url>
+        <officials>
+          <official title="TAOMayor" name="ไพฑูรย์ ปัตนา" begin="2012-07-08" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2012-10-07" type="TAO" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="12" />
@@ -730,6 +736,13 @@
   </entity>
   <entity type="Amphoe" name="บ้านโป่ง" english="Ban Pong" geocode="7005">
     <office type="DistrictOffice">
+      <symbols>
+        <vision>
+          อุตสาหกรรมนำชื่อ เลื่องลือการศึกษา
+          พัฒนาผลิตภัณฑ์ สร้างสรรค์ศูนย์จำหน่าย
+          แก้ไขสิ่งแวดล้อม เพียบพร้อมวัฒนธรรม
+        </vision>
+      </symbols>
       <geo:Point>
         <geo:lat>13.8141</geo:lat>
         <geo:long>99.8711</geo:long>
@@ -924,15 +937,33 @@
     <entity type="Tambon" name="เบิกไพร" english="Boek Phrai" geocode="700514" />
     <entity type="Tambon" name="ลาดบัวขาว" english="Lat Bua Khao" geocode="700515">
       <office type="TAOOffice">
+        <symbols>
+          <vision>
+            ส่งเสริมการศึกษา พัฒนาสิ่งแวดล้อม
+            พร้อมใจสร้างชุมชน เพิ่มผลิตผลทางการเกษตร
+          </vision>
+        </symbols>
         <geo:Point>
           <geo:lat>13.8505</geo:lat>
           <geo:long>99.8395</geo:long>
         </geo:Point>
-        <url>http://www.tambomladbuakhaw.org/</url>
+        <url lastchecked="2013-01-11">http://ladbuakhaw.org/</url>
+        <url status="offline">http://www.tambomladbuakhaw.org/</url>
+        <officials>
+          <official title="TAOMayor" name="เฉลียว เก็งวิเชียรไชย" begin="2012-07-15" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-07-15" type="TAO" size="14" />
           <term begin="2008-06-08" end="2012-06-07" type="TAO" size="14" />
         </council>
       </office>
+      <entity type="Muban" geocode="70051501" name="บ้านท่าต้นจันทร์" english="Ban Tha Don Chan" />
+      <entity type="Muban" geocode="70051502" name="บ้านขอบลาด" english="Ban Kop Lat" />
+      <entity type="Muban" geocode="70051503" name="บ้านทุ่งทอง" english="Ban Thung Thong" />
+      <entity type="Muban" geocode="70051504" name="บ้านลาดบัวขาว" english="Ban Lat Bua Khao" />
+      <entity type="Muban" geocode="70051505" name="บ้านหลังโรงหีบ" english="Ban Lang Rong Hip" />
+      <entity type="Muban" geocode="70051506" name="บ้านท่าศาลเจ้า" english="Ban Tha San Chao" />
+      <entity type="Muban" geocode="70051507" name="บ้านรางวาลย์" english="Ban Rang Wan" />
     </entity>
   </entity>
   <entity type="Amphoe" name="บางแพ" english="Bang Phae" geocode="7006">
