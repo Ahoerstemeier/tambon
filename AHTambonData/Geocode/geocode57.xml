@@ -349,7 +349,7 @@
       <entity type="Muban" geocode="57011502" name="บ้านจำหวาย" english="Ban Cham Wai" />
       <entity type="Muban" geocode="57011503" name="บ้านทรายงาม" english="Ban Sai Ngam" />
       <entity type="Muban" geocode="57011504" name="บ้านโป่งเกลือ" english="Ban Pong Kluea" />
-      <entity type="Muban" geocode="57011505" name="บ้านร่องขุ่น" english="Ban Ring Khun" />
+      <entity type="Muban" geocode="57011505" name="บ้านร่องขุ่น" english="Ban Rong Khun" />
       <entity type="Muban" geocode="57011506" name="บ้านโป่งช้าง" english="Ban Pong Chang" />
       <entity type="Muban" geocode="57011507" name="บ้านโละป่าตุ้ม" english="Ban Lo Pa Tum" />
       <entity type="Muban" geocode="57011508" name="บ้านดอนเจริญ" english="Ban Don Charoen" />
@@ -2783,7 +2783,7 @@
       <entity type="Muban" geocode="57140201" name="บ้านป่าตาลดอย" english="Ban Pa Tan Doi" />
       <entity type="Muban" geocode="57140202" name="บ้านป่าตาลเหนือ" english="Ban Pa Tan Nuea" />
       <entity type="Muban" geocode="57140203" name="บ้านป่าตาลกลาง" english="Ban Pa Tan Klang" />
-      
+
       <entity type="Muban" geocode="57140205" name="บ้านเจดีย์" english="Ban Chedi" />
       <entity type="Muban" geocode="57140206" name="บ้านร่องขุ่น" english="Ban Rong Khun" />
       <entity type="Muban" geocode="57140207" name="บ้านห้วยห้อม" english="Ban Huai Hom" />
@@ -2794,7 +2794,7 @@
       <entity type="Muban" geocode="57140212" name="บ้านป่าตาลประชาสันติ" english="Ban Pa Tan Pracha Santi" />
       <entity type="Muban" geocode="57140213" name="บ้านห้วยห้อมเหนือ" english="Ban Huai Hom Nuea" />
       <entity type="Muban" geocode="57140214" name="บ้านป่าตาลเวียงแก้ว" english="Ban Pa Tan Wiang Kaeo" />
-      <!-- 
+      <!--
 1)  นายแฝง         กับปินะ            ผู้ใหญ่บ้านป่าตาลดอย              หมู่ที่ 1
   2)  นายแสวง       ขันทะพันธ์        ผู้ใหญ่บ้านป่าตาลเหนือ             หมู่ที่ 2
   3)  นายดำรงศักดิ์  ขันทะพันธ์        ผู้ใหญ่บ้านป่าตาลกลาง             หมู่ที่ 3
@@ -2808,7 +2808,7 @@
  11) นายฉลาด      เงินปุ่นนาค         ผู้ใหญ่บ้านเจดีย์ใหม่                 หมู่ที่ 11
  12) นายองอาจ     ฉายา                ผู้ใหญ่บ้านป่าตาลประชาสันติ     หมู่ที่ 12
  13) นายพชร        วงค์ผา              ผู้ใหญ่บ้านห้วยห้อมเหนือ           หมู่ที่ 13
- 14) นายพุฒิพงษ์ กองสุข               ผู้ใหญ่บ้านป่าตาลเวียงแก้ว         หมู่ที่ 14      
+ 14) นายพุฒิพงษ์ กองสุข               ผู้ใหญ่บ้านป่าตาลเวียงแก้ว         หมู่ที่ 14
       -->
     </entity>
     <entity type="Tambon" name="ยางฮอม" english="Yang Hom" geocode="571403">
@@ -3251,7 +3251,7 @@
       </geo:Point>
       <url>http://www.chiangraicity.go.th/</url>
       <officials>
-        <official title="Mayor" name="วันชัย จงสุทธนามณี" begin="2012-05-05">
+        <official title="Mayor" name="วันชัย จงสุทธนามณี" begin="2012-05-05" beginreason="ElectedDirectly">
           <election type="Mayor" date="2012-05-05">
             <candidates>
               <candidate id="1" name="วันชัย จงสุทธนามณี" status="elected" />
@@ -3261,8 +3261,12 @@
             </candidates>
           </election>
         </official>
-        <official title="Mayor" name="สมพงษ์ กูลวงค์" endyear="2012" />
+        <official title="Mayor" name="สมพงษ์ กูลวงค์" begin="2008-03-23" endyear="2012" beginreason="ElectedDirectly" />
       </officials>
+      <council>
+        <term begin="2012-06-17" type="ThesabanNakhon" size="24" />
+        <term begin="2008-05-11" end="2012-05-10" type="ThesabanNakhon" size="24" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="เวียงชัย" english="Wiang Chai" geocode="5798" parent="5702">
