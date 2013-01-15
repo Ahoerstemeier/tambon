@@ -287,7 +287,7 @@
             <xs:documentation>Status of the social web account.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+        <xs:attributeGroup ref="t:Comment" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -309,6 +309,11 @@
       <xs:enumeration value="location">
         <xs:annotation>
           <xs:documentation>Google plus local page.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="community">
+        <xs:annotation>
+          <xs:documentation>Google plus community.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -411,7 +416,7 @@
         <xs:documentation>Year official was in office, used if being/end of term is not known.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
     <xs:attribute name="beginreason" type="t:OfficialBeginType" use="optional" default="Unknown">
       <xs:annotation>
         <xs:documentation>Reason why left office.</xs:documentation>
@@ -460,7 +465,7 @@
         <xs:documentation>End of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
     <xs:attribute name="size" type="xs:positiveInteger" use="optional">
       <xs:annotation>
         <xs:documentation>Number of councillors at begin of term.</xs:documentation>
@@ -507,7 +512,7 @@
             <xs:documentation>Year in which it was in use.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+        <xs:attributeGroup ref="t:Comment" />
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
@@ -646,7 +651,7 @@
         <xs:documentation>Date the office was closed at that location.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name='Office'>
     <xs:annotation>
@@ -709,6 +714,6 @@
         <xs:documentation>Office of an administrative entity no longer existing.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 </xs:schema>
