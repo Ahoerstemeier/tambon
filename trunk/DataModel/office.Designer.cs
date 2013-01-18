@@ -1208,7 +1208,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="OfficialList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class OfficialList {
         
-        private List<OfficialEntry> officialField;
+        private List<OfficialEntryBase> itemsField;
         
         private ReferenceList referenceField;
         
@@ -1216,17 +1216,24 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of OfficialList.
         /// </summary>
         public OfficialList() {
-            this.officialField = new List<OfficialEntry>();
+            this.itemsField = new List<OfficialEntryBase>();
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("official", Order=0)]
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(OfficialEntry), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("officialterm", typeof(OfficialEntryUnnamed), Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<OfficialEntry> official {
+        public List<OfficialEntryBase> Items {
             get {
-                return this.officialField;
+                return this.itemsField;
             }
             set {
-                this.officialField = value;
+                this.itemsField = value;
             }
         }
         
@@ -1254,45 +1261,21 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="OfficialEntry", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class OfficialEntry {
+    public partial class OfficialEntry : OfficialEntryBase {
         
         private VisionSlogan visionField;
         
         private Election electionField;
         
-        private OfficialType titleField;
-        
-        private int indexField;
-        
-        private bool indexFieldSpecified;
-        
         private string nameField;
         
         private string englishField;
-        
-        private System.DateTime beginField;
-        
-        private bool beginFieldSpecified;
-        
-        private string endyearField;
-        
-        private string beginyearField;
-        
-        private System.DateTime endField;
-        
-        private bool endFieldSpecified;
         
         private bool actingField;
         
         private bool actingFieldSpecified;
         
         private string inofficeField;
-        
-        private string commentField;
-        
-        private OfficialBeginType beginreasonField;
-        
-        private OfficialEndType endreasonField;
         
         private int mubanField;
         
@@ -1303,8 +1286,6 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public OfficialEntry() {
             this.visionField = new VisionSlogan();
-            this.beginreasonField = OfficialBeginType.Unknown;
-            this.endreasonField = OfficialEndType.Unknown;
         }
         
         /// <summary>
@@ -1339,6 +1320,168 @@ namespace De.AHoerstemeier.Tambon {
             set {
                 this.electionField = value;
             }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english {
+            get {
+                return this.englishField;
+            }
+            set {
+                this.englishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool acting {
+            get {
+                return this.actingField;
+            }
+            set {
+                this.actingField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool actingSpecified {
+            get {
+                return this.actingFieldSpecified;
+            }
+            set {
+                this.actingFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string inoffice {
+            get {
+                return this.inofficeField;
+            }
+            set {
+                this.inofficeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int muban {
+            get {
+                return this.mubanField;
+            }
+            set {
+                this.mubanField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool mubanSpecified {
+            get {
+                return this.mubanFieldSpecified;
+            }
+            set {
+                this.mubanFieldSpecified = value;
+            }
+        }
+    }
+    
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfficialEntryUnnamed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfficialEntry))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OfficialEntryBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public abstract partial class OfficialEntryBase {
+        
+        private OfficialType titleField;
+        
+        private int indexField;
+        
+        private bool indexFieldSpecified;
+        
+        private System.DateTime beginField;
+        
+        private bool beginFieldSpecified;
+        
+        private string endyearField;
+        
+        private string beginyearField;
+        
+        private System.DateTime endField;
+        
+        private bool endFieldSpecified;
+        
+        private string commentField;
+        
+        private OfficialBeginType beginreasonField;
+        
+        private OfficialEndType endreasonField;
+        
+        /// <summary>
+        /// Creates a new instance of OfficialEntryBase.
+        /// </summary>
+        public OfficialEntryBase() {
+            this.beginreasonField = OfficialBeginType.Unknown;
+            this.endreasonField = OfficialEndType.Unknown;
         }
         
         /// <summary>
@@ -1389,40 +1532,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.indexFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string english {
-            get {
-                return this.englishField;
-            }
-            set {
-                this.englishField = value;
             }
         }
         
@@ -1529,57 +1638,6 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Acting or fully installed office leader.
-        /// </summary>
-        /// <value>
-        /// The acting.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool acting {
-            get {
-                return this.actingField;
-            }
-            set {
-                this.actingField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool actingSpecified {
-            get {
-                return this.actingFieldSpecified;
-            }
-            set {
-                this.actingFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Year official was in office, used if being/end of term is not known.
-        /// </summary>
-        /// <value>
-        /// The inoffice.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string inoffice {
-            get {
-                return this.inofficeField;
-            }
-            set {
-                this.inofficeField = value;
-            }
-        }
-        
-        /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
@@ -1629,40 +1687,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.endreasonField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Only for subdistrict headman (Kamnan), Muban number where he/she is also village headman.
-        /// </summary>
-        /// <value>
-        /// The muban.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int muban {
-            get {
-                return this.mubanField;
-            }
-            set {
-                this.mubanField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool mubanSpecified {
-            get {
-                return this.mubanFieldSpecified;
-            }
-            set {
-                this.mubanFieldSpecified = value;
             }
         }
     }
@@ -1760,6 +1784,15 @@ namespace De.AHoerstemeier.Tambon {
         /// No specified reason.
         /// </summary>
         Unknown,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OfficialEntryUnnamed", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class OfficialEntryUnnamed : OfficialEntryBase {
     }
     
     /// <summary>
