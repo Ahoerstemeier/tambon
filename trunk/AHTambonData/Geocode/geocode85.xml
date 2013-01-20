@@ -176,7 +176,7 @@
         </geo:Point>
         <url status="offline" lastonline="2012-02-10">http://www.bangnon.go.th/</url>
         <officials>
-          <official title="Mayor" name="ประนอม รอดแคล้ว" begin="2012-03-25">
+          <official title="Mayor" name="ประนอม รอดแคล้ว" begin="2012-03-25" beginreason="ElectedDirectly">
             <election type="Mayor" date="2012-03-25">
               <candidates eligiblevoter="8413" invalidvotes="115" abstainvotes="174">
                 <candidate id="1" name="อรุณรัต์ ใสสุข" votes="1221" />
@@ -188,7 +188,7 @@
               </references>
             </election>
           </official>
-          <official title="TAOMayor" name="บุญจริง แก้วนาบอน" begin="2007-10-07" end="2011-10-06" />
+          <official title="TAOMayor" name="บุญจริง แก้วนาบอน" begin="2007-10-07" end="2011-10-06" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
           <term begin="2012-03-25" type="ThesabanTambon" size="12" />
@@ -505,7 +505,7 @@
       <office type="TAOOffice">
         <url>http://www.pakjun.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อวยชัย นาคเล็ก" begin="2007-10-07" end="2011-10-06" />
+          <official title="TAOMayor" name="อวยชัย นาคเล็ก" begin="2007-10-07" endyear="2011" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="22" />
@@ -701,16 +701,22 @@
       </geo:Point>
       <url>http://www.pakrng.go.th/</url>
       <officials>
-        <official title="Mayor" name="ประยูร บัวสุวรรณ" inoffice="2010" />
+        <official title="Mayor" name="ประยูร บัวสุวรรณ" begin="2007-05-27" endyear="2011" beginreason="ElectedDirectly" />
       </officials>
+      <council>
+        <term begin="2007-05-27" end="2011-05-26" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หงาว" english="Ngao" geocode="8597" parent="8501">
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/ranong/ngao/</url>
       <officials>
-        <official title="Mayor" name="ธรณิช อิ้วตกส้าน" inoffice="2010" />
+        <official title="Mayor" name="ธรณิช อิ้วตกส้าน" begin="2007-05-27" endyear="2011" beginreason="ElectedDirectly" />
       </officials>
+      <council>
+        <term begin="2007-05-27" end="2011-05-26" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ละอุ่น" english="La-un" geocode="8596" parent="8502">
@@ -743,8 +749,11 @@
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/ranong/namchuet/</url>
       <officials>
-        <official title="Mayor" name="อุกฤษฐ์ ตันติธรรมานันท์" inoffice="2010" />
+        <official title="Mayor" name="อุกฤษฐ์ ตันติธรรมานันท์" begin="2007-04-08" endyear="2011" beginreason="ElectedDirectly" />
       </officials>
+      <council>
+        <term begin="2007-04-08" end="2011-04-07" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บางริ้น" english="Bang Rin" geocode="8593" parent="8501" tambon="850104">
@@ -755,6 +764,10 @@
       </geo:Point>
       <url>http://www.bangrin.comyr.com/</url>
       <url status="offline">http://www.bangrin.th.gs/</url>
+      <!-- no Mayor end term in 2011 -->
+      <council>
+        <term begin="2007-11-18" end="2011-11-17" type="ThesabanTambon" size="12"/>
+      </council>
     </office>
   </entity>
 </entity>
