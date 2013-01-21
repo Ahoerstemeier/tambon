@@ -363,6 +363,13 @@
   </xs:complexType>
 
   <xs:complexType abstract="1" name="OfficialEntryBase">
+    <xs:sequence>
+      <xs:element name="election" minOccurs="0" maxOccurs="1" type="t:Election">
+        <xs:annotation>
+          <xs:documentation>Data on the election which got the official into his office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="title" type="t:OfficialType" use="required">
       <xs:annotation>
         <xs:documentation>Type of official.</xs:documentation>
@@ -413,11 +420,6 @@
           <xs:element name="vision" minOccurs="0" maxOccurs="1" type="t:VisionSlogan">
             <xs:annotation>
               <xs:documentation>Vision statement of official for his term.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element name="election" minOccurs="0" maxOccurs="1" type="t:Election">
-            <xs:annotation>
-              <xs:documentation>Data on the election which got the official into his office.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
