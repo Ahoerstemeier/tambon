@@ -1265,8 +1265,6 @@ namespace De.AHoerstemeier.Tambon {
         
         private VisionSlogan visionField;
         
-        private Election electionField;
-        
         private string nameField;
         
         private string englishField;
@@ -1302,23 +1300,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.visionField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Data on the election which got the official into his office.
-        /// </summary>
-        /// <value>
-        /// The election.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Election election {
-            get {
-                return this.electionField;
-            }
-            set {
-                this.electionField = value;
             }
         }
         
@@ -1452,6 +1433,8 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="OfficialEntryBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public abstract partial class OfficialEntryBase {
         
+        private Election electionField;
+        
         private OfficialType titleField;
         
         private int indexField;
@@ -1482,6 +1465,23 @@ namespace De.AHoerstemeier.Tambon {
         public OfficialEntryBase() {
             this.beginreasonField = OfficialBeginType.Unknown;
             this.endreasonField = OfficialEndType.Unknown;
+        }
+        
+        /// <summary>
+        /// Data on the election which got the official into his office.
+        /// </summary>
+        /// <value>
+        /// The election.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Election election {
+            get {
+                return this.electionField;
+            }
+            set {
+                this.electionField = value;
+            }
         }
         
         /// <summary>
