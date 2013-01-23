@@ -1181,7 +1181,10 @@
     <entity type="Tambon" name="นาหนองทุ่ม" english="Na Nong Thum" geocode="400503">
       <office type="TAOOffice">
         <url>http://www.nanongtum.com/</url>
-        <!-- title="TAOMayor" begin="2008-04-30" endyear="2012" -->
+        <officials>
+          <official title="TAOMayor" name="สมจิตต์ มะสันเทียะ" begin="2012-04-22" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สมจิตต์ มะสันเทียะ" begin="2008-04-30" endyear="2012" beginreason="ElectedDirectly" endreason="Resigned" />
+        </officials>
         <council>
           <term begin="2012-09-30" type="TAO" size="26" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26" />
@@ -4383,7 +4386,7 @@
         <official title="Mayor" name="ชุติพนธ์ ด่านสกุลนาวา" begin="2007-08-18" endyear="2011" />
       </officials>
       <council>
-        <term begin="2007-08-18" end="2011-08-17" type="ThesabanTambon" size="12"/>
+        <term begin="2007-08-18" end="2011-08-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4398,7 +4401,7 @@
         <official title="Mayor" name="เกรียงศักดิ์ วิริยะอาชา" begin="2007-06-17" endyear="2011" />
       </officials>
       <council>
-        <term begin="2007-06-17" end="2011-06-16" type="ThesabanTambon" size="12"/>
+        <term begin="2007-06-17" end="2011-06-16" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <entity type="Chumchon" geocode="40900001" name="ชุมชนแสงตะวัน" english="Chumchon Saeng Tawan" />
@@ -4417,7 +4420,7 @@
         <official title="Mayor" name="ประทุมพร บางวิเศษ" begin="2007-08-18" endyear="2011" />
       </officials>
       <council>
-        <term begin="2007-08-18" end="2011-08-17" type="ThesabanTambon" size="12"/>
+        <term begin="2007-08-18" end="2011-08-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <entity type="Chumchon" geocode="40890001" name="ชุมชนบูรพา" english="Chumchon Burapha" />
@@ -4457,7 +4460,7 @@
     <office type="MunicipalityOffice">
       <!-- Longdo: 16.73257,102.80312 -->
       <council>
-        <term begin="2007-04-21" end="2011-04-20" type="ThesabanTambon" size="12"/>
+        <term begin="2007-04-21" end="2011-04-20" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4465,15 +4468,20 @@
     <office type="MunicipalityOffice">
       <url>http://www.wangchai.org/</url>
       <council>
+        <term begin="2012-04-22" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="เขื่อนอุบลรัตน์" english="Khuean Ubolratana" geocode="4083" parent="4008">
     <office type="MunicipalityOffice">
-      <url>http://www.ubolratanamuni.org/</url>
-      <!-- No TAOMayor end term in 2012 -->
+      <url lastchecked="2013-01-23">http://ubr-muni.go.th/</url>
+      <url status="offline">http://www.ubolratanamuni.org/</url>
+      <officials>
+        <!-- No TAOMayor end term in 2012 -->
+      </officials>
       <council>
+        <term begin="2012-04-22" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -4582,7 +4590,12 @@
   <entity type="ThesabanTambon" name="มัญจาคีรี" english="Mancha Khiri" geocode="4076" parent="4017">
     <office type="MunicipalityOffice">
       <url status="offline">http://www.muncha.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ปราโมช กิมรัชต์โชติ" begin="2012-04-22" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ธีรยุทธ์ ต้องสู้" begin="2008-03-09" end="2012-03-08" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
       <council>
+        <term begin="2012-04-22" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -4643,8 +4656,13 @@
         <geo:lat>16.6453</geo:lat>
         <geo:long>101.8980</geo:long>
       </geo:Point>
-      <url>http://www.phuphaman.go.th/</url>
+      <url status="offline">http://www.phuphaman.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ประสิทธิ์ คำภาพันธ์" begin="2012-04-22" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2008-03-09" end="2012-03-08" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
       <council>
+        <term begin="2012-04-22" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -4701,7 +4719,7 @@
         <official title="Mayor" name="ภิญโญ ไทยทองสุขสกุล" begin="2007-06-24" endyear="2011" />
       </officials>
       <council>
-        <term begin="2007-06-24" end="2011-06-23" type="ThesabanTambon" size="12"/>
+        <term begin="2007-06-24" end="2011-06-23" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4728,7 +4746,7 @@
         <!-- no TAOMayor end term in 2011 -->
       </officials>
       <council>
-        <term begin="2007-10-28" end="2011-10-27" type="ThesabanTambon" size="12"/>
+        <term begin="2007-10-28" end="2011-10-27" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4739,7 +4757,7 @@
         <official title="Mayor" name="ภาณุวัฒน์ พงษ์สมบัติ" begin="2007-12-09" endyear="2011" />
       </officials>
       <council>
-        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12"/>
+        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4764,7 +4782,7 @@
         <official title="Mayor" name="วิรัตน์ เย็นสบาย" begin="2007-12-09" endyear="2011" />
       </officials>
       <council>
-        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12"/>
+        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <!--
