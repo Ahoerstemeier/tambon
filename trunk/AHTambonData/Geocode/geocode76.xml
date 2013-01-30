@@ -73,15 +73,15 @@
   </office>
   <office type="PAOOffice">
     <officials>
-      <official title="PAOChairman" name="ชัยยะ อังกินันทน์" begin="2012-08-26">
+      <official title="PAOChairman" name="ชัยยะ อังกินันทน์" begin="2012-08-26" beginreason="ElectedDirectly">
         <election type="PAOChairman" date="2012-08-26">
           <candidates eligiblevoter="346377" abstainvotes="18702" invalidvotes="27063">
             <candidate id="1" name="ชัยยะ อังกินันทน์" votes="166121" status="elected" comment="Incumbent, only candidate" />
           </candidates>
         </election>
       </official>
-      <official title="PAOChairman" name="ชัยยะ อังกินันทน์" begin="2008-04-20" end="2012-04-19" />
-      <official title="PAOChairman" name="ชัยยะ อังกินันทน์" begin="2004-03-14" end="2008-03-13" />
+      <official title="PAOChairman" name="ชัยยะ อังกินันทน์" begin="2008-04-20" end="2012-04-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      <official title="PAOChairman" name="ชัยยะ อังกินันทน์" begin="2004-03-14" end="2008-03-13" beginreason="ElectedDirectly" endreason="EndOfTerm" />
     </officials>
     <council>
       <term begin="2012-08-26" type="PAO" size="24" />
@@ -784,10 +784,27 @@
     </entity>
     <entity type="Tambon" name="ท่าไม้รวก" english="Tha Mai Ruak" geocode="760506">
       <office type="MunicipalityOffice">
-        <url>http://www.thamairuak.com/</url>
+        <url lastchecked="2013-01-30">http://www.thamairuak.com/</url>
+        <socialweb>
+          <facebook>http://www.facebook.com/thamairuak.thayang.1</facebook>
+        </socialweb>
+        <officials>
+          <official title="Mayor" name="สิริศักดิ์ สมบัติทวีพูน" begin="2013-01-06" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="สิริศักดิ์ สมบัติทวีพูน" begin="2008-11-30" end="2012-11-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+          <official title="TAOMayor" name="ฮอนมั้น กรีธาธร" begin="2004-07-17" end="2008-07-16" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+          <!-- Board meeting list & Phetburi phone list have ณัฐกฤช กรีธาธร as TAOMayor - or maybe ณัฐกฤช was DeputyTAOMayor? -->
+          <official title="TAOMayor" name="ฮอนมั้น กรีธาธร" endyear="2004" />
+        </officials>
         <council>
+          <term begin="2013-01-06" type="ThesabanTambon" size="12" />
           <term begin="2008-11-30" end="2012-11-29" type="ThesabanTambon" size="12" />
+          <term begin="2004-07-17" end="2008-07-16" type="TAO" size="26" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2008-10-17">
+            <meetingreference board="2" number="50" date="2008-07-03" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="76050601" name="บ้านท่าไม้รวก" english="Ban Tha Mai Ruak" />
       <entity type="Muban" geocode="76050602" name="บ้านหนองเตียน" english="Ban Nong Tian" />
