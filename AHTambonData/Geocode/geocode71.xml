@@ -286,7 +286,9 @@
     <entity type="Tambon" name="ลุ่มสุ่ม" english="Lum Sum" geocode="710201">
       <office type="TAOOffice">
         <url>http://www.lumsum.org/</url>
-        <!-- type="TAOMayor" begin="2005-01-09" endyear="2009" -->
+        <officials>
+          <officialterm title="TAOMayor" begin="2005-01-09" endyear="2009" />
+        </officials>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
         </council>
@@ -329,9 +331,18 @@
     </entity>
     <entity type="Tambon" name="ไทรโยค" english="Sai Yok" geocode="710204">
       <office type="MunicipalityOffice">
-        <!-- Longdo: 14.4800 98.84813 -->
-        <url status="offline" lastonline="2012-09-17">http://saiyok.org/</url>
+        <geo:Point>
+          <geo:lat>14.4806</geo:lat>
+          <geo:long>98.8473</geo:long>
+        </geo:Point>
+        <url status="expired" lastonline="2012-09-17">http://saiyok.org/</url>
+        <officials>
+          <official title="Mayor" name="เจือ เหรียญทอง" begin="2013-01-12" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ฐนันดร อุดมสินค้า" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+          <official title="TAOMayor" name="ประเทือง กรุดทอง" beginyear="2004" endyear="2008" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
+          <term begin="2013-01-12" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="16" />
         </council>
         <history>
@@ -339,6 +350,11 @@
             <meetingreference board="1" number="42" date="2012-06-27" />
           </statuschange>
         </history>
+      </office>
+      <office type="SubdistrictHeadmanOffice">
+        <officials>
+          <official title="Kamnan" name="เจือ เหรียญทอง" inoffice="2010" />
+        </officials>
       </office>
 
       <entity type="Muban" geocode="71020402" name="บ้านท่าทุ่งนา" english="Ban Tha Thung Na" />
@@ -1234,12 +1250,25 @@
     </entity>
     <entity type="Tambon" name="ลิ่นถิ่น" english="Linthin" geocode="710704">
       <office type="MunicipalityOffice">
-        <url lastchecked="2012-10-30">http://www.linthin.go.th/</url>
+        <symbols>
+          <emblem>
+            <description>
+              ภูเขา: แสดงถึง บนยอดภูเขาที่มีรอยเท้าของพระพุทธบาท ซึ่งเป็นสถานที่ศักดิ์สิทธิ์เคารพบูชาของชุมชนตำบลลิ่นถิ่น
+              ธงธรรมจักร: แสดงถึง พระธรรมคำสอนของพระพุทธเจ้า ซึ่งเป็นสิ่งที่ประชาชนใช้ยึดเหนี่ยวจิตใจเพื่อให้ประพฤติ ปฏิบัติตน ในสิ่งที่ชอบที่ดีงาม
+              ต้นไม้: แสดงถึง ความอุดมสมบูรณ์ของพื้นที่ป่าไม้
+              ทุ่งข้าวไร่: แสดงถึง ประชากรส่วนใหญ่ในตำบลลิ่นถิ่นมีอาชีพทางการเกษตร และปลูกข้าวไร่ไว้รับประทานเอง
+              ช้าง: แสดงถึง ความเข็มแข็ง ความอดทน และความยิ่งใหญ่ ของชุมชนชาวตำบลลิ่นถิ่น
+            </description>
+          </emblem>
+        </symbols>
+        <url lastchecked="2013-02-04">http://www.linthin.go.th/</url>
         <url status="offline">http://www.linthin.org/</url>
         <officials>
-          <official title="TAOMayor" name="ประเสริฐ ถิ่นผาสุวรรณ" begin="2008-08-31" end="2012-08-30" />
+          <official title="Mayor" name="ประเสริฐ ถิ่นผาสุวรรณ" begin="2013-01-12" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประเสริฐ ถิ่นผาสุวรรณ" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2013-01-12" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14" />
         </council>
         <history>
@@ -1435,11 +1464,13 @@
     </entity>
     <entity type="Tambon" name="ดอนเจดีย์" english="Don Chedi" geocode="710904">
       <office type="MunicipalityOffice">
-        <url lastchecked="2012-06-10">http://donchedi.go.th/</url>
+        <url lastchecked="2013-02-04">http://donchedi.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สุรพงษ์ กาญจนกังวานกุล" begin="2008-08-31" endyear="2012" />
+          <official title="Mayor" name="ชุมพล คชายุทธ" begin="2013-01-12" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุรพงษ์ กาญจนกังวานกุล" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2013-01-12" type="ThesabanTambon" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="16" />
         </council>
         <history>
