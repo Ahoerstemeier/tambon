@@ -1281,7 +1281,7 @@
         <geo:long>99.6481</geo:long>
       </geo:Point>
       <officials>
-        <official title="DistrictOfficer" name="สุทธิพงษ์ ตันบุญยศิริเดช" begin="2008-11-24" end="2013-02-03" beginreason="Appointed" endreason="Transfer"/>
+        <official title="DistrictOfficer" name="สุทธิพงษ์ ตันบุญยศิริเดช" begin="2008-11-24" end="2013-02-03" beginreason="Appointed" endreason="Transfer" />
         <official title="DistrictOfficer" name="ผาชัย โปรียานนท์" begin="2007-11-12" end="2008-11-23" />
       </officials>
     </office>
@@ -1431,18 +1431,27 @@
       <officials>
         <official title="Mayor" name="ชัยวัฒน์ แสงมณี" begin="2012-09-01" beginreason="ElectedDirectly" />
         <official title="Mayor" name="จำรัส พริ้มพราย" begin="2008-07-20" end="2012-07-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="Mayor" name="จำรัส พริ้มพราย" begin="2004-06-13" end="2008-06-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
-        <term begin="2012-09-01" type="TAO" size="12" />
-        <term begin="2008-07-20" end="2012-07-19" type="TAO" size="12" />
+        <term begin="2012-09-01" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-20" end="2012-07-19" type="ThesabanTambon" size="12" />
+        <term begin="2004-06-13" end="2008-06-12" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หาดเจ้าสำราญ" english="Hat Chao Samran" geocode="7696" parent="7601">
     <office type="MunicipalityOffice">
-      <url lastchecked="2012-08-31">http://www.hadchaosamran.com/</url>
+      <url lastchecked="2013-02-05">http://www.hadchaosamran.com/</url>
+      <officials>
+        <official title="Mayor" name="บุญยอด มาคล้าย" begin="2012-09-01" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="อิศรพงศ์ แสงมณี" begin="2008-07-20" end="2012-07-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="Mayor" name="อิศรพงศ์ แสงมณี" begin="2004-06-13" end="2008-06-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
       <council>
+        <term begin="2012-09-01" type="TAO" size="12" />
         <term begin="2008-07-20" end="2012-07-19" type="TAO" size="12" />
+        <term begin="2004-06-13" end="2008-06-12" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -1523,9 +1532,16 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านแหลม" english="Ban Laem" geocode="7689" parent="7607">
     <office type="MunicipalityOffice">
-      <url>http://www.banlaem.org/</url>
+      <url status="offline">http://www.banlaem.org/</url>
+      <officials>
+        <official title="Mayor" name="วัน เมฆอัคคี" begin="2012-09-01" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="วัน เมฆอัคคี" begin="2008-07-20" end="2012-07-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="Mayor" name=" นฤมล สุตะวิริยะวัฒน์" english="Narumon Sutawiriyawat" begin="2004-06-13" end="2008-06-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
       <council>
+        <term begin="2012-09-01" type="ThesabanTambon" size="12" />
         <term begin="2008-07-20" end="2012-07-19" type="ThesabanTambon" size="12" />
+        <term begin="2004-06-13" end="2008-06-12" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -1543,3 +1559,23 @@
     </office>
   </entity>
 </entity>
+
+<!--
+title="TAOMayor" begin=2004-02-29"
+อบต.สำมะโรง	คือ นายเลิศ หลินลาโภ
+อบต.โพไร่หวาน	คือ นายคเณต หุ่นพยนต์
+อบต.โพพระ	คือ นายจรูญ สังข์ผาด
+อบต.บางจาก	คือ นายวิชา ทองยืน
+อบต.ตำหรุ	คือ นายธีระสิทธิ์ กันพร้อม
+อบต.ไร่มะขาม	คือ นายสมบัติ สะธรรม
+อบต.ถ้ำรงค์	คือ นายบรรพต กำไลแก้ว
+อบต.บ้านทาน	คือ นายสำรอง สุขโข
+อบต.ท่าช้าง	คือ นายปรีชา มากเกิด
+อบต.ท่าเสน	คือ นายชวน บุญเจือ
+อบต.ไร่โคก	คือ พ.ท.สงกรานต์ อินทร์เลี้ยง
+อบต.บ้านหาด	คือ นายผ่วน เอมดี
+อบต.หนองกะปุ	คือ นายบุญชู พุ่มจิต
+อบต.ห้วยลึก	คือ นายชิต เกิดเกษม
+อบต.ปากทะเล	คือ นายวิโรจน์ ศรีนาค
+อบต.หนองปลาไหล 	คือ นายเฉลา ดอกบัว
+-->
