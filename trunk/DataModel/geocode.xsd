@@ -216,17 +216,26 @@
   </xs:complexType>
   <xs:complexType name="EntityCountType">
     <xs:attribute name="type" type="t:EntityType" use="required" />
-    <xs:attribute name="count" type="xs:unsignedInt" use="required" />
+    <xs:attribute name="count" type="xs:unsignedInt" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of entities of the given type.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="EntityCount">
     <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element minOccurs="1" maxOccurs="unbounded" name="entry" type="t:EntityCountType" />
       <xs:element name="reference" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Sources.</xs:documentation>
+          <xs:documentation>Sources for the numbers.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
+    <xs:attribute name="year" type="xs:gYear" use="required">
+      <xs:annotation>
+        <xs:documentation>Reference year.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="Entity">
     <xs:sequence minOccurs="1" maxOccurs="1">

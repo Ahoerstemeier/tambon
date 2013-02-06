@@ -994,6 +994,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private ReferenceList referenceField;
         
+        private string yearField;
+        
         /// <summary>
         /// Creates a new instance of EntityCount.
         /// </summary>
@@ -1013,7 +1015,7 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Sources.
+        /// Sources for the numbers.
         /// </summary>
         /// <value>
         /// The reference.
@@ -1026,6 +1028,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.referenceField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Reference year.
+        /// </summary>
+        /// <value>
+        /// The year.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string year {
+            get {
+                return this.yearField;
+            }
+            set {
+                this.yearField = value;
             }
         }
     }
@@ -1053,6 +1072,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Number of entities of the given type.
+        /// </summary>
+        /// <value>
+        /// The count.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint count {
