@@ -1705,7 +1705,10 @@
           </vision>
         </symbols>
         <url lastchecked="2012-12-09">http://bankham-kk.go.th/</url>
-        <!-- No TAOMayor end term in 2009 -->
+        <officials>
+          <officialterm title="TAOMayor" begin="2006-03-04" endyear="2010" beginreason="ElectedDirectly" />
+          <!-- No TAOMayor end term in 2009 -->
+        </officials>
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="32" />
         </council>
@@ -2090,7 +2093,10 @@
     </entity>
     <entity type="Tambon" name="หัวนาคำ" english="Hua Na Kham" geocode="400912">
       <office type="TAOOffice">
-        <!-- no TAOMayor election on 2012-09-30 -->
+        <officials>
+          <!-- no TAOMayor end term in 2012 -->
+          <officialterm title="TAOMayor" begin="2006-11-19" endyear="2010" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2012-09-30" type="TAO" size="20" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="20" />
@@ -2315,10 +2321,20 @@
     </entity>
     <entity type="Tambon" name="วังม่วง" english="Wang Muang" geocode="401102">
       <office type="TAOOffice">
-        <url>http://www.wungmuang.go.th/</url>
+        <symbols>
+          <slogan>วังม่วงถิ่นงาม ล้นหลามพันธุ์ไม้ นำใสดินดี มากมีอ้อยมัน สามัคคีกันชาวประชา ตระการตาผ้าไหมงาม</slogan>
+          <vision>ชุมชนน่าอยู่มีความเข้มแข็ง สิ่งแวดล้อมดี  คนมีคุณภาพ และการบริหารจัดการที่ดีแบบมีส่วนร่วมจากทุกภาคส่วน</vision>
+        </symbols>
+        <url lastchecked="2013-02-13">http://www.wang-muang.go.th/</url>
+        <url status="offline">http://www.wungmuang.go.th/</url>
         <url status="offline">http://www.wangmuang.org/</url>
-        <!-- no TAOMayor end term in 2012 -->
-        <!-- title="TAOMayor" begin="2005-09-04" endyear="2009" -->
+        <officials>
+          <official title="TAOMayor" name="เทียนชัย ศรีนาง" inoffice="2012"/>                    
+          <!-- no TAOMayor end term in 2012 -->
+          <!-- contradicting terms - listed in both 2010 and 2009 as have end of term! -->
+          <officialterm title="TAOMayor" begin="2006-08-27" endyear="2010" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2005-09-04" endyear="2009" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2012-09-30" type="TAO" size="16" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="16" />
@@ -2728,6 +2744,9 @@
     </entity>
     <entity type="Tambon" name="ท่านางแนว" english="Tha Nang Naeo" geocode="401403">
       <office type="TAOOffice">
+        <officials>
+          <officialterm title="TAOMayor" begin="2006-03-04" endyear="2010" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -4251,6 +4270,9 @@
     <entity type="Tambon" name="เขาน้อย" english="Khao Noi" geocode="402903">
       <office type="TAOOffice">
         <url>http://www.kownoy.org/</url>
+        <officials>
+          <officialterm title="TAOMayor" begin="2006-08-13" endyear="2010" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
@@ -4442,6 +4464,9 @@
     <office type="MunicipalityOffice">
       <!-- Longdo: 16.59726, 101.99486 -->
       <url>http://www.nonhunlocal.go.th/</url>
+      <council>
+        <term begin="2006-02-19" end="2010-02-18" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สีชมพู" english="Si Chomphu" geocode="4086" parent="4006">
@@ -4529,11 +4554,12 @@
       <url status="offline">http://puaynoi.org/</url>
       <url status="offline">http://www.puaynoi.com/</url>
       <officials>
-        <official title="Mayor" name="ไพฑูรย์ ผิวผาง" begin="2010-12-26" />
-        <official title="Mayor" name="ไพฑูรย์ ผิวผาง" endyear="2010" />
+        <official title="Mayor" name="ไพฑูรย์ ผิวผาง" begin="2010-12-26" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ไพฑูรย์ ผิวผาง" begin="2006-11-19" end="2010-11-18" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
         <term begin="2010-12-26" type="ThesabanTambon" size="12" />
+        <term begin="2006-11-19" end="2010-11-18" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4564,6 +4590,9 @@
   <entity type="ThesabanTambon" name="หนองสองห้อง" english="Nong Song Hong" geocode="4078" parent="4015">
     <office type="MunicipalityOffice">
       <url>http://www.nsh.go.th/</url>
+      <council>
+        <term begin="2006-04-16" end="2010-04-15" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ภูเวียง" english="Phu Wiang" geocode="4077" parent="4016">
@@ -4628,7 +4657,11 @@
       </socialweb>
       <officials>
         <official title="Mayor" name="สมนึก เต็มธนกิจไพศาล" inoffice="2010" />
+        <!-- no Mayor end term in 2010 -->
       </officials>
+      <council>
+        <term begin="2006-01-29" end="2010-01-28" type="ThesabanTambon" size="12" />
+      </council>
     </office>
     <!--
     <constituency name="เขตเลือกตั้งที่ 1">
