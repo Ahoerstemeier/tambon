@@ -2160,6 +2160,9 @@
   <entity type="ThesabanTambon" name="เอราวัณ" english="Erawan" geocode="7190" parent="7104">
     <office type="MunicipalityOffice">
       <url>http://www.erawancity.com/</url>
+      <council>
+        <term begin="2006-11-12" end="2010-11-11" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ลูกแก" english="Luk Kae" geocode="7189" parent="7105">
@@ -2308,6 +2311,9 @@
   <entity type="ThesabanTambon" name="สำรอง" english="Samrong" geocode="7183" parent="7106">
     <office type="MunicipalityOffice">
       <url>http://www.sumrong.go.th/</url>
+      <officials>
+        <officialterm title="Mayor" begin="2006-06-18" endyear="2010" beginreason="ElectedDirectly" />
+      </officials>
       <council>
         <term begin="2005-11-06" end="2009-11-05" type="ThesabanTambon" size="12" />
       </council>
@@ -2320,12 +2326,21 @@
         <geo:long>99.6289</geo:long>
       </geo:Point>
       <url>http://www.nongkhao.com/</url>
+      <officials>
+        <!-- no Mayor end term in 2010 -->
+        <officialterm title="Mayor" begin="2007-05-06" endyear="2011" beginreason="ElectedDirectly" />
+      </officials>
+      <council>
+        <term begin="2006-09-10" end="2010-09-09" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองตากยา" english="Nong Tak Ya" geocode="7181" parent="7106">
     <office type="MunicipalityOffice">
       <url>http://www.nongtakya.go.th/</url>
-      <!-- type="Mayor" begin="2007-05-06" endyear="2011"-->
+      <council>
+        <term begin="2006-02-19" end="2010-02-18" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ทองผาภูมิ" english="Thong Pha Phum" geocode="7180" parent="7107">
@@ -2406,7 +2421,10 @@
   <entity type="ThesabanTambon" name="เลาขวัญ" english="Lao Khwan" geocode="7176" parent="7110">
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/kanchanaburi/laokhwan/</url>
-      <!-- no mayor end term in 2012 -->
+      <officials>
+        <!-- no mayor end term in 2012 -->
+        <officialterm title="Mayor" begin="2006-12-17" endyear="2010" beginreason="ElectedDirectly" />
+      </officials>
       <council>
         <term begin="2012-09-23" type="ThesabanTambon" size="12" />
         <term begin="2008-08-17" end="2012-08-16" type="ThesabanTambon" size="12" />
