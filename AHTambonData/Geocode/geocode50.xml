@@ -1423,7 +1423,10 @@
     <entity type="Tambon" name="แม่สาบ" english="Mae Sap" geocode="500803">
       <office type="TAOOffice">
         <url>http://www.maesab.go.th/</url>
-        <!-- No TAOMayor end term in 2012 -->
+        <officials>
+          <!-- No TAOMayor end term in 2012 -->
+          <officialterm title="TAOMayor" begin="2006-11-12" endyear="2010" beginreason="ElectedDirectly" />
+        </officials>       
         <council>
           <term begin="2012-05-13" type="TAO" size="20" />
           <term begin="2008-04-06" end="2012-04-05" type="TAO" size="20" />
@@ -4111,6 +4114,7 @@
       <officials>
         <!-- No Mayor end term in 2012 -->
         <official title="Mayor" name="ประดิษฐ์ สอาดล้วน" inoffice="2011" />
+        <officialterm title="Mayor" begin="2006-06-25" endyear="2010" beginreason="ElectedDirectly" />
       </officials>
       <council>
         <term begin="2012-04-08" type="ThesabanTambon" size="12" />
@@ -4188,6 +4192,9 @@
       <officials>
         <official title="Mayor" name="ประพันธ์ กาวินนะ" inoffice="2010" />
       </officials>
+      <council>
+        <term begin="2006-01-29" end="2010-01-28" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านแม่ข่า" english="Ban Mae Kha" geocode="5088" parent="5009">
@@ -4231,6 +4238,9 @@
       <officials>
         <official title="Mayor" name="กิติพัฒน์ สุนทรพันธุ์" inoffice="2011" />
       </officials>
+      <council>
+        <term begin="2006-05-14" end="2010-05-13" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="บ้านกลาง" english="Ban Klang" geocode="5084" parent="5012">
@@ -4239,6 +4249,7 @@
       <officials>
         <!-- no Mayor end term in 2009 -->
         <official title="Mayor" name="บุญธง งามวัฒนากุล" inoffice="2010" />
+        <officialterm title="Mayor" begin="2006-01-07" endyear="2010" beginreason="ElectedDirectly" />
       </officials>
       <council>
         <term begin="2005-06-12" end="2009-06-11" type="ThesabanTambon" size="12" />
@@ -4265,10 +4276,13 @@
       <url>http://www.tonpao.go.th/</url>
       <officials>
         <official title="Mayor" name="สุภคิน วงศ์ษา" inoffice="2012" />
-        <official title="Mayor" name="ศรีฑูรย์ ไชยซาววงศ์" endyear="2010" />
+        <official title="Mayor" name="ศรีฑูรย์ ไชยซาววงศ์" begin="2006-10-29" endyear="2010" />
 
         <official title="MunicipalClerk" name="โชคชัย ไหวดี" inoffice="2010" comment="Acting Mayor in 2010" />
       </officials>
+      <council>
+        <term begin="2006-10-29" end="2010-10-28" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สันกำแพง" english="San Kamphaeng" geocode="5081" parent="5013">
@@ -4430,6 +4444,9 @@
         <geo:long>99.0371</geo:long>
       </geo:Point>
       <url>http://www.nongpakhrang.go.th/</url>
+      <council>
+        <term begin="2006-12-17" end="2010-12-16" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สุเทพ" english="Suthep" geocode="5069" parent="5001" tambon="500108">

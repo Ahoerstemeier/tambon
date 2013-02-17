@@ -594,9 +594,9 @@
       <office type="TAOOffice">
         <url status="offline" lastonline="2012-05-14">http://kudhae.go.th/</url>
         <officials>
+          <!-- no TAOMayor term end in 2012 -->
           <official title="TAOMayor" name="สมบูรณ์ ธาตุดี" inoffice="2012" />
-          <official title="TAOMayor" name="วีระ สีมี" inoffice="2008" />
-          <!-- no term end in 2012 -->
+          <official title="TAOMayor" name="วีระ สีมี" begin="2006-03-11" endyear="2010" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2013-01-06" type="TAO" size="28" />
@@ -657,7 +657,7 @@
         <url lastchecked="2013-02-05">http://bantin.go.th/</url>
         <officials>
           <official title="TAOMayor" name="เชย เกตุสงกา" inoffice="2012" />
-          <official title="TAOMayor" name="ภิญโญ ผิวเผื่อน" begin="2005-07-31" endyear="2009" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ภิญโญ ผิวเผื่อน" begin="2005-07-31" endyear="2009" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
@@ -1023,6 +1023,7 @@
         <officials>
           <!-- no term end in 2012 -->
           <official title="TAOMayor" name="วุฒิพงษ์ นิลนามะ" inoffice="2011" />
+          <officialterm title="TAOMayor" begin="2006-07-08" endyear="2010" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="46" />
@@ -1549,9 +1550,9 @@
     </entity>
   </entity>
 
-  <entity type="KingAmphoe" name="กุดดินจี่" english="Kut Din Chi" geocode="3907" comment="Proposed, but not created" />
-  <entity type="KingAmphoe" name="ยางหล่อ" english="Yang Lo" geocode="3908" comment="Proposed, but not created" />
-  <entity type="KingAmphoe" name="หัวนา" english="Hua Na" geocode="3909" comment="Proposed, but not created" />
+  <entity type="KingAmphoe" name="กุดดินจี่" english="Kut Din Chi" geocode="3907" obsolete="1" comment="Proposed, but not created" />
+  <entity type="KingAmphoe" name="ยางหล่อ" english="Yang Lo" geocode="3908" obsolete="1" comment="Proposed, but not created" />
+  <entity type="KingAmphoe" name="หัวนา" english="Hua Na" geocode="3909" obsolete="1" comment="Proposed, but not created" />
 
   <entity type="ThesabanMueang" name="หนองบัวลำภู" english="Nong Bua Lam Phu" geocode="3999" parent="3901">
     <office type="MunicipalityOffice">
@@ -1607,6 +1608,9 @@
       <officials>
         <official title="Mayor" name="ศราวุธ สังฆชาย" inoffice="2011" />
       </officials>
+      <council>
+        <term begin="2006-11-18" end="2010-11-17" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="นากลาง" english="Na Klang" geocode="3994" parent="3902">
@@ -1615,6 +1619,9 @@
       <officials>
         <official title="Mayor" name="ทองมี แจ้งกำพี้" inoffice="2011" />
       </officials>
+      <council>
+        <term begin="2006-08-26" end="2010-08-25" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="กุดดู่" english="Kut Du" geocode="3993" parent="3903">
@@ -1651,6 +1658,9 @@
       <officials>
         <official title="Mayor" name="สาลี ทุมดี" inoffice="2011" />
       </officials>
+      <council>
+        <term begin="2006-11-18" end="2010-11-17" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="โนนสูงเปลือย" english="Non Sung Plueai" geocode="3990" parent="3904">
@@ -1670,10 +1680,11 @@
       </socialweb>
       <officials>
         <official title="Mayor" name="อรรถ ปิ่นคำ" begin="2010-10-25" beginreason="ElectedDirectly" />
-        <official title="Mayor" name="สิทธิศักดิ์ บุญเลิศ" inoffice="2009" endyear="2010" />
+        <official title="Mayor" name="สิทธิศักดิ์ บุญเลิศ" begin="2006-11-18" endyear="2010" beginreason="ElectedDirectly" endreason="Unknown" />
       </officials>
       <council>
         <term begin="2010-12-25" type="ThesabanTambon" size="12" />
+        <term begin="2006-11-18" end="2010-11-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>

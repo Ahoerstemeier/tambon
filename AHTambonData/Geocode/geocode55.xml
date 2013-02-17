@@ -364,8 +364,10 @@
     <entity type="Tambon" name="หมอเมือง" english="Mo Mueang" geocode="550203">
       <office type="TAOOffice">
         <url>http://www.momuang.com/</url>
-        <!-- No TAOMayor end term in 2012 -->
-        <!-- title="TAOMayor" begin="2006-09-10" endyear="2010" -->
+        <officials>
+          <!-- No TAOMayor end term in 2012 -->
+          <officialterm title="TAOMayor" begin="2006-09-10" endyear="2010" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2008-04-06" end="2012-04-05" type="TAO" size="24" />
         </council>
