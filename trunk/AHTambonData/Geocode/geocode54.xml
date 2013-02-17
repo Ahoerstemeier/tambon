@@ -1093,7 +1093,10 @@
     <entity type="Tambon" name="พระหลวง" english="Phra Luang" geocode="540412">
       <office type="TAOOffice">
         <url>http://www.praluang.org/</url>
-        <!-- No TAOMayor end term in 2012 -->
+        <officials>
+          <!-- No TAOMayor end term in 2012 -->
+          <officialterm title="TAOMayor" begin="2006-11-26" endyear="2010" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2008-04-07" end="2012-04-06" type="TAO" size="10" />
         </council>
@@ -1347,6 +1350,7 @@
       <office type="TAOOffice">
         <url>http://www.wangchin.go.th/</url>
         <officials>
+          <officialterm title="TAOMayor" begin="2006-03-12" endyear="2010" beginreason="ElectedDirectly" />
           <!-- no TAOMayor end term in 2009 -->
         </officials>
         <council>
@@ -1734,6 +1738,9 @@
         <geo:long>100.0933</geo:long>
       </geo:Point>
       <url>http://www.tessabanmaechua.go.th/</url>
+      <council>
+        <term begin="2006-09-10" end="2010-09-09" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="สอง" english="Song" geocode="5489" parent="5406">

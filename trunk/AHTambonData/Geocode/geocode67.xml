@@ -1101,6 +1101,9 @@
     </entity>
     <entity type="Tambon" name="สระประดู่" english="Sa Pradu" geocode="670502">
       <office type="TAOOffice">
+        <officials>
+          <officialterm title="TAOMayor" begin="2006-08-20" endyear="2010" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
@@ -1328,6 +1331,7 @@
         <url>http://srakruad.com/</url>
         <officials>
           <!-- no TAOMayor end term in 2012 -->
+          <officialterm title="TAOMayor" begin="2006-12-03" endyear="2010" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28" />
@@ -2133,6 +2137,9 @@
     <office type="MunicipalityOffice">
       <!-- Wikimapia: 16°7'25"N   100°44'6"E -->
       <url>http://www.dongkhui.com/</url>
+      <council>
+        <term begin="2006-08-06" end="2010-08-05" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ท่าข้าม" english="Tha Kham" geocode="6793" parent="6702">
@@ -2142,6 +2149,9 @@
         <geo:long>100.7922</geo:long>
       </geo:Point>
       <url>http://www.thakhamlocal.com/</url>
+      <council>
+        <term begin="2006-08-27" end="2010-08-26" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หล่มเก่า" english="Lom Kao" geocode="6792" parent="6704">
@@ -2174,10 +2184,11 @@
       <url status="offline">http://tessabanwichianburi.tripod.com/</url>
       <officials>
         <official title="Mayor" name="วัฒนพงษ์ เกิดพูล" inoffice="2012" />
-        <officialterm title="Mayor" begin="2007-05-27" endyear="2011" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2007-05-27" end="2011-05-26" beginreason="ElectedDirectly" endreason="StatusChange" />
       </officials>
       <council>
         <term begin="2010-12-26" end="2011-05-26" type="ThesabanTambon" size="12" endreason="StatusChange" />
+        <term begin="2006-11-19" end="2010-11-18" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -2231,6 +2242,9 @@
   <entity type="ThesabanTambon" name="ท้ายดง" english="Thai Dong" geocode="6785" parent="6710">
     <office type="MunicipalityOffice">
       <url>http://www.tessabantaidong.com/</url>
+      <council>
+        <term begin="2006-05-21" end="2010-05-20" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="วังโป่ง" english="Wang Pong" geocode="6784" parent="6710">
