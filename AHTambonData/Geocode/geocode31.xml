@@ -199,7 +199,7 @@
     <entity type="Tambon" name="สวายจีก" english="Sawai Chik" geocode="310106">
       <office type="TAOOffice">
         <officials>
-          <!-- title="TAOMayor" begin="2005-06-19" endyear="2009" -->
+          <officialterm title="TAOMayor" begin="2005-06-19" endyear="2009" />
         </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="38" />
@@ -405,7 +405,9 @@
     </office>
     <entity type="Tambon" name="คูเมือง" english="Khu Mueang" geocode="310201">
       <office type="TAOOffice">
-        <!-- title="TAOMayor" begin="2005-06-19" endyear="2009"-->
+        <officials>
+          <officialterm title="TAOMayor" begin="2005-06-19" endyear="2009" />
+        </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="20" />
         </council>
@@ -425,7 +427,9 @@
     <entity type="Tambon" name="บ้านแพ" english="Ban Phae" geocode="310203">
       <office type="TAOOffice">
         <url>http://www.banpae.go.th/</url>
-        <!-- title="TAOMayor" begin="2005-06-19" endyear="2009"-->
+        <officials>
+          <officialterm title="TAOMayor" begin="2005-06-19" endyear="2009" />
+        </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
         </council>
@@ -1146,7 +1150,7 @@
           <!-- no TAOMayor end term in 2012 -->
           <official title="TAOMayor" name="โอภาส ปุยะติ" index="2012" />
           <official title="TAOMayor" name="โอภาส ปุยะติ" begin="2009-07-26" endreason="Removed" comment="Yellow-carded in 2010-10, see http://www.ryt9.com/s/nnd/994502" />
-          <!-- title="TAOMayor" begin="2005-06-19" endyear="2009" -->
+          <officialterm title="TAOMayor" begin="2005-06-19" endyear="2009" />
         </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
@@ -1803,7 +1807,7 @@
         <url lastchecked="2012-09-13">http://www.by.go.th/</url>
         <officials>
           <official title="TAOMayor" name="สุเทพ พิมพ์เชื้อ" inoffice="2012" />
-          <!-- title="TAOMayor" begin="2008-03-30" endyear="2012" -->
+          <officialterm title="TAOMayor" begin="2008-03-30" endyear="2012" />
         </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26" />
@@ -1835,7 +1839,7 @@
         <url lastchecked="2012-09-13">http://www.khoklam.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ศิวกร วังสนาม" inoffice="2012" />
-          <!-- title="TAOMayor" begin="2007-06-17" endyear="2011"-->
+          <officialterm title="TAOMayor" begin="2007-06-17" endyear="2011" />
         </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
@@ -1991,7 +1995,7 @@
         <officials>
           <!-- no TAOMayor end term in 2012 -->
           <official title="TAOMayor" name="บุญมี ม่วงพาชี" inoffice="2012" />
-          <!-- title="TAOMayor" begin="2005-06-19" endyear="2009" -->
+          <officialterm title="TAOMayor" begin="2005-06-19" endyear="2009" />
         </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="30" />
@@ -3084,9 +3088,34 @@
       </geo:Point>
       <url>http://www.buriramcity.org/</url>
       <officials>
-        <official title="Mayor" name="ปาลีรัตน์ สมานประธาน" inoffice="2010" />
+        <official title="Mayor" name="ปาลีรัตน์ สมานประธาน" begin="2009-01-24" endyear="2013" beginreason="ElectedDirectly" />
       </officials>
+      <council>
+        <term begin="2009-01-24" end="2013-01-23" type="ThesabanMueang" size="18">
+          <official title="MunicipalityCouncilChairman" name="บุญทืศ ดวงจันทร์" beginreason="ElectedByCouncil" />
+        </term>
+      </council>
     </office>
+    <!--
+1 	ชุมชนประปาเก่า 	1,490 	นายสนอง กาญนการุณ
+2 	ชุมชนสะพานยาว 	802 	นายธนะ ฉลาดถ้อย
+3 	ชุมชนหลังสถานีรถไฟ 	1,532 	นายเชาวน์รัตน์ ติยะบวรวงศ์
+4 	ชุมชนโคกกลาง 	901 	นายทรงกลด พุทไธสง
+5 	ชุมชนวัดอิสาณ 	1,847 	นายวันชัย ทองกาญจนา
+6 	ชุมชนหลักเมือง 	1,348 	นายธงชัย ลัทธิ
+7 	ชุมชนหนองปรือ 	2,267 	นางสาวพิมพ์นิภา มโนพันธ์
+8 	ชุมชนชุมเห็ด 	2,238 	นางสาวสุวรรณี ควินรัมย์
+9 	ชุมชนตลาด บ.ข.ส 	1,582 	นายสนอง เทพอักษรณรงค์
+10 	ชุมชนต้นสัก 	2,130 	นายสมสุข กองดำรงค์กุล
+11 	ชุมชนหน้าสถานีรถไฟ 	1,813 	นายธีรเดช สดสวัสดิ์
+12 	ชุมชนตลาดสด 	1,870 	นายเอกธนะชัย รัตนาวงศ์ศรี
+13 	ชุมชนราชภัฏ 	1,041 	นางธัญนันท์ บูรณะขจร
+14 	ชุมชนเทศบาล 	1,894 	นายสมชาย ชื่นภากรณ์
+15 	ชุมชนบุลำดวนใต้ 	1,689 	นางสุรีย์พร ทั่วประโคน
+16 	ชุมชนบุลำดวนเหนือ 	1,696 	ร.ต.อ.ชวลิต วรรณโกษิตย์
+17 	ชุมชนหลังศาล 	1,252 	นางสุนันทา มณีวรรณ
+18 	ชุมชนฝั่งละลม 	471 	นายชุมพร โสมกุล
+    -->
   </entity>
   <entity type="ThesabanMueang" name="นางรอง" english="Nang Rong" geocode="3198" parent="3104">
     <office type="MunicipalityOffice">
@@ -3100,7 +3129,7 @@
       <url lastchecked="2012-07-31">http://www.nmt.or.th/burirum/khumueang/</url>
       <officials>
         <official title="Mayor" name="นิภาพร เลี้ยงผ่องพันธุ์" />
-        <!-- title="Mayor" begin="2007-09-02" endyear="2011"-->
+        <officialterm title="Mayor" begin="2007-09-02" endyear="2011" />
       </officials>
       <council>
         <term begin="2007-01-28" end="2011-01-27" type="ThesabanTambon" size="12" />
@@ -3139,7 +3168,7 @@
       <url>http://www.lahansai.go.th/</url>
       <officials>
         <official title="Mayor" name="ถนอม เฮงวานิชย์" inoffice="2010" />
-        <!-- title="TAOMayor" begin="2005-02-27" endyear="2009"-->
+        <officialterm title="TAOMayor" begin="2005-02-27" endyear="2009" />
       </officials>
       <council>
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
@@ -3157,7 +3186,7 @@
       </council>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ตลาดนิคมปราสาท" english="Talat Nikhom Prasat" geocode="3191" parent="3108" >
+  <entity type="ThesabanTambon" name="ตลาดนิคมปราสาท" english="Talat Nikhom Prasat" geocode="3191" parent="3108">
     <office type="MunicipalityOffice">
       <council>
         <term begin="2006-06-18" end="2010-06-17" type="ThesabanTambon" size="12" />

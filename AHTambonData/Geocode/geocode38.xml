@@ -250,7 +250,7 @@
       <entity type="Muban" geocode="38011012" name="บ้านนาสุขสันต์" english="Ban Na Suk San" />
       <entity type="Muban" geocode="38011013" name="บ้านจักรทิพย์สามัคคี" english="Ban Chak Thip Samakkhi" />
     </entity>
-    <entity type="Tambon" name="คำนาดี" english="Kham Na Di" geocode="380111" >
+    <entity type="Tambon" name="คำนาดี" english="Kham Na Di" geocode="380111">
       <office type="TAOOffice">
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
@@ -357,7 +357,7 @@
       <entity type="Muban" geocode="38020507" name="บ้านเกษตรรุ่งเรือง" english="Ban Kaset Rong Rueang" />
       <entity type="Muban" geocode="38020508" name="บ้านวังชมภู" english="Ban Wang Chomphu" />
     </entity>
-    <entity type="Tambon" name="ป่าแฝก" english="Pa Faek" geocode="380206" >
+    <entity type="Tambon" name="ป่าแฝก" english="Pa Faek" geocode="380206">
       <office type="TAOOffice">
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
@@ -618,7 +618,7 @@
 
       <entity type="Muban" geocode="38040518" name="บ้านทุ่งเจริญ" english="Ban Thung Charoen" />
     </entity>
-    <entity type="Tambon" name="น้ำจั้น" english="Nam Chan" geocode="380406" >
+    <entity type="Tambon" name="น้ำจั้น" english="Nam Chan" geocode="380406">
       <office type="TAOOffice">
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
@@ -647,7 +647,7 @@
 
       <entity type="Muban" geocode="38040813" name="บ้านกุดสิมเหนือ" english="Ban Kut Sim Nuea" />
     </entity>
-    <entity type="Tambon" name="โสกก่าม" english="Sok Kam" geocode="380409" >
+    <entity type="Tambon" name="โสกก่าม" english="Sok Kam" geocode="380409">
       <office type="TAOOffice">
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
@@ -915,9 +915,6 @@
       </officials>
     </office>
     <entity type="Tambon" name="ศรีวิไล" english="Si Wilai" geocode="380701">
-      <office type="TAOOffice">
-        <!-- Longdo: 18.18614 103.741905 -->
-      </office>
       <entity type="Muban" geocode="38070101" name="บ้านศรีวิไล" english="Ban Si Wilai" />
       <entity type="Muban" geocode="38070102" name="บ้านศรีวิไลชุมพร" english="Ban Si Wilai Chumphon" />
       <entity type="Muban" geocode="38070103" name="บ้านศรีวิไลสามัคคี" english="Ban Si Wilai Samakkhi" />
@@ -963,7 +960,7 @@
       </office>
       <entity type="Muban" geocode="38070401" name="บ้านนาสะแบง" english="Ban Na Sabaeng" />
     </entity>
-    <entity type="Tambon" name="นาสิงห์" english="Na Sing" geocode="380705" >
+    <entity type="Tambon" name="นาสิงห์" english="Na Sing" geocode="380705">
       <office type="TAOOffice">
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
@@ -1175,11 +1172,15 @@
   </entity>
   <entity type="ThesabanTambon" name="ศรีวิไล" english="Si Wilai" geocode="3890" parent="3807">
     <office type="MunicipalityOffice">
+      <!-- Longdo: 18.18614 103.741905 - but listed at TAO -->
       <url>http://siwirai.igetweb.com/</url>
       <officials>
-        <official title="Mayor" name="สุรเชษฐ์ คะดุน" inoffice="2011" />
+        <official title="Mayor" name="สุรเชษฐ์ คะดุน" begin="2012-02-12" beginreason="ElectedDirectly" />
       </officials>
       <council>
+        <term begin="2011-02-12" type="ThesabanTambon" size="12">
+          <official title="TAOCouncilChairman" name="อัมพร ฉลาดดี" beginreason="ElectedByCouncil" />
+        </term>
         <term begin="2007-01-06" end="2011-01-05" type="ThesabanTambon" size="12" />
       </council>
     </office>
