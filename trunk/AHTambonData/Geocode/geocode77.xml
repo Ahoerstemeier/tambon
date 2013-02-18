@@ -414,8 +414,10 @@
     </entity>
     <entity type="Tambon" name="พงศ์ประศาสน์" english="Phong Prasat" geocode="770402">
       <office type="TAOOffice">
-        <!-- No TAOMayor end term in 2012 -->
-        <!-- type="TAOMAyor" begin="2005-03-20" endyear="2009" -->
+        <officials>
+          <!-- No TAOMayor end term in 2012 -->
+          <officialterm title="TAOMayor" begin="2005-03-20" endyear="2009" />
+        </officials>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
         </council>
@@ -742,7 +744,9 @@
     <entity type="Tambon" name="ทับใต้" english="Thap Tai" geocode="770705">
       <office type="TAOOffice">
         <url>http://www.tabtai.go.th/</url>
-        <!-- type="TAOMayor" begin="2011-04-03"-->
+        <officials>
+          <officialterm title="TAOMayor" begin="2011-04-03" />
+        </officials>
         <council>
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="28" />
         </council>

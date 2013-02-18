@@ -1095,8 +1095,10 @@
     </entity>
     <entity type="Tambon" name="หนองตางู" english="Nong Ta Ngu" geocode="600511">
       <office type="TAOOffice">
-        <!-- no TAOMayor end term in 2012 -->
-        <!-- title="TAOMayor" begin="2007-01-28" endyear="2011" -->
+        <officials>
+          <!-- no TAOMayor end term in 2012 -->
+          <officialterm title="TAOMayor" begin="2007-01-28" endyear="2011" />
+        </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26" />
         </council>
@@ -2695,7 +2697,9 @@
   </entity>
   <entity type="ThesabanMueang" name="ชุมแสง" english="Chum Saeng" geocode="6098" parent="6003">
     <office type="MunicipalityOffice">
-      <!-- title="Mayor" begin="2008-05-13" endyear="2012" -->
+      <officials>
+        <officialterm title="Mayor" begin="2008-05-13" endyear="2012" />
+      </officials>
       <council>
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanMueang" size="18" />
       </council>
@@ -2704,7 +2708,9 @@
   <entity type="ThesabanMueang" name="ตาคลี" english="Takhli" geocode="6097" parent="6007">
     <office type="MunicipalityOffice">
       <url>http://www.takhlicity.go.th/</url>
-      <!-- title="Mayor" begin="2007-02-18" endyear="2011" -->
+      <officials>
+        <officialterm title="Mayor" begin="2007-02-18" endyear="2011" />
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองเบน" english="Nong Ben" geocode="6096" parent="6001">
@@ -2876,7 +2882,9 @@
   <entity type="ThesabanTambon" name="ศาลเจ้าไก่ต่อ" english="Sanchao Kai To" geocode="6084" parent="6011">
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/nakhonsawan/sanchaokaito/</url>
-      <!-- type="Mayor" begin="2005-07-01" endyear="2009" -->
+      <officials>
+        <officialterm title="Mayor" begin="2005-07-01" endyear="2009" />
+      </officials>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ลาดยาว" english="Lat Yao" geocode="6083" parent="6011">
