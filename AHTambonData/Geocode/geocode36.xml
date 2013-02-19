@@ -120,10 +120,10 @@
         <url>http://phontong.com/</url>
         <url status="offline">http://www.obtphontong.com/</url>
         <officials>
-          <official title="TAOMayor" name="ศานิต กล้าแท้" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ศานิต กล้าแท้" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="24" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
       </office>
@@ -168,10 +168,10 @@
         </symbols>
         <url>http://www.bankailocal.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ทวีศักดิ์ พรไพศาล" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ทวีศักดิ์ พรไพศาล" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="20" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
       </office>
@@ -254,9 +254,11 @@
       <office type="TAOOffice">
         <url>http://www.banlaoorg.com/</url>
         <officials>
-          <official title="TAOMayor" name="ประมวล เติมสมบัติ" begin="2009-12-13" beginreason="ElectedDirectly" />
+          <!-- no TAOMayor end term in 2013??? -->
+          <official title="TAOMayor" name="ประมวล เติมสมบัติ" begin="2009-12-13" beginreason="ElectedDirectly" endreason="Unknown"/>
         </officials>
         <council>
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="30" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="30" />
         </council>
       </office>
@@ -289,21 +291,27 @@
     <entity type="Tambon" name="หนองนาแซง" english="Nong Na Saeng" geocode="360110">
       <office type="TAOOffice">
         <officials>
-          <official title="TAOMayor" name="อุษา โพธิ์ชัย" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="อุษา โพธิ์ชัย" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="24" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
       </office>
     </entity>
     <entity type="Tambon" name="ลาดใหญ่" english="Lat Yai" geocode="360111">
       <office type="TAOOffice">
+        <symbols>
+          <vision>เกษตรกรรมยั่งยืน  อุตสาหกรรมก้าวหน้า   แหล่งท่องเที่ยวชั้นนำ  สังคมมีความสุข</vision>
+        </symbols>
+        <url lastchecked="2013-02-19">http://www.ladyailocal.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สุทัศน์ ชาญรบ" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุทัศน์ ชาญรบ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="18" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" >
+            <official title="TAOCouncilChairman" name="สุทัส ชะนะนอก" beginreason="ElectedByCouncil"/>
+          </term>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
       </office>
@@ -311,10 +319,10 @@
     <entity type="Tambon" name="หนองไผ่" english="Nong Phai" geocode="360112">
       <office type="TAOOffice">
         <officials>
-          <official title="TAOMayor" name="สมทรง สวัสดิ์สลุง" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สมทรง สวัสดิ์สลุง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="28" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="28" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="28" />
         </council>
       </office>
@@ -352,7 +360,9 @@
           <geo:lat>15.9446</geo:lat>
           <geo:long>101.8992</geo:long>
         </geo:Point>
+        <officials><!-- no TAOMayor end term in 2013 --></officials>
         <council>
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
       </office>
@@ -367,10 +377,10 @@
       <office type="TAOOffice">
         <url>http://huaybong.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="วีระ สากูล" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="วีระ สากูล" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="28" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="28" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="28" />
         </council>
       </office>
@@ -426,10 +436,10 @@
         </symbols>
         <url lastchecked="2012-09-25">http://www.abtbungkla.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="แก่ง หาญบุ่งคล้า" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="แก่ง หาญบุ่งคล้า" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="24" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
       </office>
@@ -1057,10 +1067,10 @@
     <entity type="Tambon" name="ถ้ำวัวแดง" english="Tham Wua Daeng" geocode="360503">
       <office type="TAOOffice">
         <officials>
-          <official title="TAOMayor" name="เสริม บุญเสนา" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="เสริม บุญเสนา" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="24" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
       </office>
@@ -1126,10 +1136,10 @@
         <url lastchecked="2013-01-12">http://kumaung.go.th/</url>
         <url status="broken">http://kumuang.com/</url>
         <officials>
-          <official title="TAOMayor" name="วิจิตร คุณอุดม" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="วิจิตร คุณอุดม" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="34" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="34" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="34" />
         </council>
       </office>
@@ -1159,10 +1169,10 @@
         </geo:Point>
         <url>http://www.thayai.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="โกสิต บุญเสนา" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="โกสิต บุญเสนา" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="22" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
       </office>
@@ -1187,10 +1197,10 @@
         </geo:Point>
         <url status="offline">http://www.wangchomphu.net/</url>
         <officials>
-          <official title="TAOMayor" name="ถนอม วายุพล" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ถนอม วายุพล" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" type="TAO" size="22" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
       </office>
