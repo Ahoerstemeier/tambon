@@ -712,8 +712,11 @@
       </office>
     </entity>
     <entity type="Tambon" name="บ้านเซิด" english="Ban Soet" geocode="200604">
-      <office type="TAOOffice">
+      <office type="TAOOffice"> 
         <url>http://www.banserd.go.th/</url>
+        <council>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="16"/>
+        </council>
       </office>
       <entity type="Muban" geocode="20060401" name="บ้านใหญ่" english="Ban Yai" />
       <entity type="Muban" geocode="20060402" name="บ้านสวนป่านตะวันออก" english="Ban Suan Pan Tawan Ok" />
@@ -747,11 +750,7 @@
       <entity type="Muban" geocode="20060514" name="บ้านหนองโคลน" english="Ban Nong Khlon" />
       <entity type="Muban" geocode="20060515" name="บ้านหนองแก" english="Ban Nong Kae" />
     </entity>
-    <entity type="Tambon" name="หมอนนาง" english="Mon Nang" geocode="200606">
-      <office type="TAOOffice">
-        <url>http://tambon-mornnang.tripod.com/</url>
-      </office>
-    </entity>
+    <entity type="Tambon" name="หมอนนาง" english="Mon Nang" geocode="200606"/>
     <entity type="Tambon" name="สระสี่เหลี่ยม" english="Sa Si Liam" geocode="200607">
       <office type="TAOOffice">
         <url>http://www.srasiliam.go.th/</url>
@@ -1950,6 +1949,7 @@
   <entity type="ThesabanTambon" name="หมอนนาง" english="Mon Nang" geocode="2063" parent="2006" tambon="200606">
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/chonburi/monnang/</url>
+        <url status="obsolete">http://tambon-mornnang.tripod.com/</url>
       <officials>
         <official title="Mayor" name="นพลิศ เสริมศักดิ์ศศิธร" inoffice="2011" />
       </officials>
