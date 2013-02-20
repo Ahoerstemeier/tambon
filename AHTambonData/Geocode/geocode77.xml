@@ -414,14 +414,29 @@
     </entity>
     <entity type="Tambon" name="พงศ์ประศาสน์" english="Phong Prasat" geocode="770402">
       <office type="TAOOffice">
+        <symbols>
+          <vision>เป็นตำบลน่าอยู่ การคมนาคมสะดวก เป็นศูนย์กลางการท่องเที่ยว มีสังคม ชุมชนที่เข้มแข็ง และมีการบริหารจัดการที่ดีตามหลักธรรมาภิบาล</vision>
+        </symbols>
+        <url lastchecked="2013-02-20">http://www.pongprasat.go.th/</url>
         <officials>
           <!-- No TAOMayor end term in 2012 -->
-          <officialterm title="TAOMayor" begin="2005-03-20" endyear="2009" />
+          <official title="TAOMayor" name="มลตรี พรมศิลา" begin="2009-04-26" endyear="2013" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2005-03-20" end="2009-03-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
         </council>
       </office>
+      <entity type="Muban" geocode="77040201" name="บ้านฝ่ายท่า" english="Ban Fai Tha" />
+      <entity type="Muban" geocode="77040202" name="บ้านหินกอง" english="Ban Hin Kong" />
+      <entity type="Muban" geocode="77040203" name="บ้านชะม่วง" english="Ban Cha Muang" />
+      <entity type="Muban" geocode="77040204" name="บ้านม้าร้อง" english="Ban Ma Rong" />
+      <entity type="Muban" geocode="77040205" name="บ้านหลักเมือง" english="Ban Lak Mueang" />
+      <entity type="Muban" geocode="77040206" name="บ้านห้วยแก้ว" english="Ban Huai Kaeo" />
+      <entity type="Muban" geocode="77040207" name="บ้านทุ่งมะพร้าว" english="Ban Thung Maphrao" />
+      <entity type="Muban" geocode="77040208" name="บ้านทุ่งขี้ต่าย" english="Ban Thung Khi Tai" />
+      <entity type="Muban" geocode="77040209" name="บ้านต้นทองหลาง" english="Ban Ton Thonglang" />
+      <entity type="Muban" geocode="77040210" name="บ้านทุ่งนุ่น" english="Ban Thung Nun" />
     </entity>
     <entity type="Tambon" name="ร่อนทอง" english="Ron Thong" geocode="770403">
       <office type="TAOOffice">
@@ -596,6 +611,7 @@
         <url>http://www.tambonpranburi.go.th/</url>
         <council>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="10" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="10" />
         </council>
       </office>
       <entity type="Muban" geocode="77060101" name="บ้านเกาะคู่" english="Ban Ko Khu" />
@@ -607,15 +623,29 @@
     </entity>
     <entity type="Tambon" name="เขาน้อย" english="Khao Noi" geocode="770602">
       <office type="MunicipalityOffice">
+        <symbols>
+          <vision>องค์การบริหารส่วนตำบลเขาน้อย เป็นเมืองน่าอยู่ด้วยการบริหารจัดการที่ดี และมีความร่วมมือจากทุกภาคส่วนของสังคม ชุมชนมีความเข้มแข็ง ผู้คนมีการศึกษาและคุณธรรม นำพาครอบครัวเป็นสุข</vision>
+        </symbols>
         <geo:Point>
           <!-- Exact building unsure, source http://cd.m-culture.go.th/prajoub/index.php?c=showitem&item=569 -->
           <geo:lat>12.4018</geo:lat>
           <geo:long>99.8754</geo:long>
         </geo:Point>
-        <url>http://www.khaonoy.go.th/</url>
+        <url lastchecked="2013-02-20">http://www.khaonoy.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สรกฤต ปราณปรีชากุล" begin="2007-02-11" endyear="2011" />
+          <official title="Mayor" name="สรกฤต ปราณปรีชากุล" begin="2011-07-26" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สรกฤต ปราณปรีชากุล" begin="2007-02-11" end="2011-01-18" beginreason="ElectedDirectly" endreason="StatusChange" />
         </officials>
+        <council>
+          <term begin="2011-07-26" type="ThesabanTambon" size="12">
+            <official title="MunicipalityCouncilChairman" name="ธิติพงศ์ จิตต์การุณย์" beginreason="ElectedByCouncil" />
+          </term>
+          <term begin="2008-08-31" end="2011-01-18" type="TAO" size="10" endreason="StatusChange" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="10" />
+        </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-01-19" />
+        </history>
       </office>
       <entity type="Muban" geocode="77060201" name="บ้านตำหรุ" english="Ban Tamru" />
 
@@ -680,6 +710,7 @@
       <office type="TAOOffice">
         <url>http://www.khaojao.go.th/</url>
         <council>
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="12" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
         </council>
       </office>
@@ -953,9 +984,10 @@
     <office type="MunicipalityOffice">
       <url>http://www.kormorhacity.go.th/</url>
       <officials>
-        <official title="Mayor" name="สมนึก ลักษณ์ลาวัณย์" inoffice="2010" />
+        <official title="Mayor" name="สมนึก ลักษณ์ลาวัณย์" begin="2009-06-21" endyear="2013" beginreason="ElectedDirectly" />
       </officials>
       <council>
+        <term begin="2009-06-21" end="2013-06-20" type="ThesabanTambon" size="12" />
         <term begin="2005-05-15" end="2009-05-14" type="ThesabanTambon" size="12" />
       </council>
     </office>
