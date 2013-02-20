@@ -190,7 +190,7 @@
         <xs:documentation>Number of seats to be filled in the constituency.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="Constituency">
     <xs:annotation>
@@ -232,7 +232,7 @@
         <xs:documentation>Number assigned to the party for the election in question.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="PartyList">
     <xs:annotation>
@@ -335,6 +335,11 @@
           <xs:documentation>Move-up candidate on party list.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="partychange">
+        <xs:annotation>
+          <xs:documentation>Change of party membership, thus disqualified as move-up.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="Candidate">
@@ -348,7 +353,7 @@
     <xs:attribute name="status" type="t:ElectionStatus" use="optional" />
     <xs:attribute name="end" type="xs:date" use="optional" />
     <xs:attribute name="endreason" type="t:ByElectionReason" use="optional" />
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="CandidateListEntry">
     <xs:complexContent>
@@ -409,7 +414,7 @@
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:simpleType name="ByElectionReason">
     <xs:annotation>
@@ -466,7 +471,7 @@
     <xs:attribute name="date" type="xs:date" use="optional" />
     <xs:attribute name="type" type="t:ElectionType" use="optional" />
     <xs:attribute name="reason" type="t:ByElectionReason" />
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 
   <xs:complexType name="Election">
