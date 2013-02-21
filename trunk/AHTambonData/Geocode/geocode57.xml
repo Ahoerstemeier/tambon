@@ -621,12 +621,6 @@
       </officials>
     </office>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="570301">
-      <office type="MunicipalityOffice">
-        <url>http://www.wiang.go.th/</url>
-        <council>
-          <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
-        </council>
-      </office>
       <entity type="Muban" geocode="57030101" name="บ้านหัวเวียง" english="Ban Hua Wiang" />
 
       <entity type="Muban" geocode="57030103" name="บ้านสบสม" english="Ban Sop Som" />
@@ -3364,7 +3358,11 @@
   <entity type="ThesabanTambon" name="เวียงเชียงของ" english="Wiang Chiang Khong" geocode="5796" parent="5703">
     <office type="MunicipalityOffice">
       <url>http://www.wckmunic.org/</url>
+      <officials>
+        <official title="Mayor" name="เฉลิม ตาวิยะ" begin="2012-04-28" beginreason="ElectedDirectly" />
+      </officials>
       <council>
+        <term begin="2012-04-28" type="ThesabanTambon" size="12" />
         <term begin="2008-03-16" end="2012-03-15" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -3723,13 +3721,20 @@
       </council>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เชียงของ" english="Chiang Khong" geocode="5770" parent="5703" tambon="570301">
+  <entity type="ThesabanTambon" name="เวียง" english="Wiang" geocode="5770" parent="5703" tambon="570301">
     <office type="MunicipalityOffice">
-      <url>http://www.wiang.go.th/</url>
+      <url lastchecked="2013-02-21">http://www.wiang.go.th/</url>
+      <officials>
+        <official title="Mayor" name="อรทัย ฮงประยูร" begin="2012-11-24" beginreason="ElectedDirectly" />
+      </officials>
+      <council>
+        <term begin="2012-11-24" type="ThesabanTambon" size="12" />
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
+      </council>
     </office>
-    <history>
+    <!--<history>
       <rename oldname="เวียง" oldenglish="Wiang" name="เชียงของ" english="Chiang Khong" />
-    </history>
+    </history>-->
   </entity>
   <entity type="ThesabanTambon" name="ยางฮอม" english="Yang Hom" geocode="5769" parent="5714" tambon="571403">
     <office type="MunicipalityOffice">
