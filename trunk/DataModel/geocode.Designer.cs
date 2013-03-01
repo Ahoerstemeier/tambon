@@ -101,7 +101,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="HistoryMergedWith", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class HistoryMergedWith : HistoryEntryBase {
         
-        private EntityType typeField;
+        private EntityType mergefromtypeField;
         
         private uint mergefromField;
         
@@ -115,12 +115,12 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type {
+        public EntityType mergefromtype {
             get {
-                return this.typeField;
+                return this.mergefromtypeField;
             }
             set {
-                this.typeField = value;
+                this.mergefromtypeField = value;
             }
         }
         
