@@ -178,9 +178,9 @@
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="type" type="t:EntityType" use="required">
+        <xs:attribute name="mergefromtype" type="t:EntityType" use="required">
           <xs:annotation>
-            <xs:documentation>Type of the entity.</xs:documentation>
+            <xs:documentation>Type of the entity merged with.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="mergefrom" type="xs:unsignedInt" use="optional">
