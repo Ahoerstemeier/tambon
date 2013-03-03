@@ -156,6 +156,16 @@
           <xs:documentation>Council voted for a self-dissolution.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="Abolished">
+        <xs:annotation>
+          <xs:documentation>Term ended because of unit abolished.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AreaChange">
+        <xs:annotation>
+          <xs:documentation>Term shortened to allow new election after significant change of area of unit.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="Unknown">
         <xs:annotation>
           <xs:documentation>No specified reason.</xs:documentation>
@@ -163,6 +173,49 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="CouncilSizeChangeReason">
+    <xs:annotation>
+      <xs:documentation>Reasons why a council has changed its size.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoChange">
+        <xs:annotation>
+          <xs:documentation>Council size left unchanged.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="StatusChange">
+        <xs:annotation>
+          <xs:documentation>Size changed due to change of status.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PopulationChange">
+        <xs:annotation>
+          <xs:documentation>Size changed because population reached threshold.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MubanCreation">
+        <xs:annotation>
+          <xs:documentation>Change due to newly created Muban (only for TAO).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AreaChange">
+        <xs:annotation>
+          <xs:documentation>Area added or removed from unit.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Merge">
+        <xs:annotation>
+          <xs:documentation>Merge with another unit.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>No specified reason.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  
   <xs:simpleType name="OfficialEndType">
     <xs:annotation>
       <xs:documentation>Reasons why an official left office.</xs:documentation>
@@ -206,6 +259,16 @@
       <xs:enumeration value="StatusChange">
         <xs:annotation>
           <xs:documentation>Term shortened to allow change of status of entity, e.g. a municipality status upgrade.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Abolished">
+        <xs:annotation>
+          <xs:documentation>Term shortened because of unit abolished.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AreaChange">
+        <xs:annotation>
+          <xs:documentation>Term shortened to allow new election after significant change of area of unit.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Unknown">
@@ -410,7 +473,7 @@
       <xs:annotation>
         <xs:documentation>Reason why left office.</xs:documentation>
       </xs:annotation>
-    </xs:attribute>
+    </xs:attribute>    
   </xs:complexType>
 
   <xs:complexType name="OfficialEntry">
@@ -502,6 +565,11 @@
     <xs:attribute name="endreason" type="t:TermEndType" use="optional" default="EndOfTerm">
       <xs:annotation>
         <xs:documentation>Reason for the end of the term.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="sizechangereason" type="t:CouncilSizeChangeReason" use="optional" default="NoChange">
+      <xs:annotation>
+        <xs:documentation>Reason for a change of council. To be placed at the term with the new size, or for mid-term changes at the term itself.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
