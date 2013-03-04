@@ -1781,6 +1781,16 @@ namespace De.AHoerstemeier.Tambon {
         StatusChange,
         
         /// <summary>
+        /// Term shortened because of unit abolished.
+        /// </summary>
+        Abolished,
+        
+        /// <summary>
+        /// Term shortened to allow new election after significant change of area of unit.
+        /// </summary>
+        AreaChange,
+        
+        /// <summary>
         /// No specified reason.
         /// </summary>
         Unknown,
@@ -1826,12 +1836,15 @@ namespace De.AHoerstemeier.Tambon {
         
         private TermEndType endreasonField;
         
+        private CouncilSizeChangeReason sizechangereasonField;
+        
         /// <summary>
         /// Creates a new instance of CouncilTerm.
         /// </summary>
         public CouncilTerm() {
             this.officialField = new List<OfficialEntry>();
             this.endreasonField = TermEndType.EndOfTerm;
+            this.sizechangereasonField = CouncilSizeChangeReason.NoChange;
         }
         
         [System.Xml.Serialization.XmlElementAttribute("official", Order=0)]
@@ -1992,6 +2005,24 @@ namespace De.AHoerstemeier.Tambon {
                 this.endreasonField = value;
             }
         }
+        
+        /// <summary>
+        /// Reason for a change of council. To be placed at the term with the new size, or for mid-term changes at the term itself.
+        /// </summary>
+        /// <value>
+        /// The sizechangereason.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(CouncilSizeChangeReason.NoChange)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CouncilSizeChangeReason sizechangereason {
+            get {
+                return this.sizechangereasonField;
+            }
+            set {
+                this.sizechangereasonField = value;
+            }
+        }
     }
     
     /// <summary>
@@ -2027,6 +2058,61 @@ namespace De.AHoerstemeier.Tambon {
         /// Council voted for a self-dissolution.
         /// </summary>
         SelfDissolution,
+        
+        /// <summary>
+        /// Term ended because of unit abolished.
+        /// </summary>
+        Abolished,
+        
+        /// <summary>
+        /// Term shortened to allow new election after significant change of area of unit.
+        /// </summary>
+        AreaChange,
+        
+        /// <summary>
+        /// No specified reason.
+        /// </summary>
+        Unknown,
+    }
+    
+    /// <summary>
+    /// Reasons why a council has changed its size.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum CouncilSizeChangeReason {
+        
+        /// <summary>
+        /// Council size left unchanged.
+        /// </summary>
+        NoChange,
+        
+        /// <summary>
+        /// Size changed due to change of status.
+        /// </summary>
+        StatusChange,
+        
+        /// <summary>
+        /// Size changed because population reached threshold.
+        /// </summary>
+        PopulationChange,
+        
+        /// <summary>
+        /// Change due to newly created Muban (only for TAO).
+        /// </summary>
+        MubanCreation,
+        
+        /// <summary>
+        /// Area added or removed from unit.
+        /// </summary>
+        AreaChange,
+        
+        /// <summary>
+        /// Merge with another unit.
+        /// </summary>
+        Merge,
         
         /// <summary>
         /// No specified reason.
