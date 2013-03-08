@@ -378,13 +378,6 @@
     </entity>
     <entity type="Tambon" name="สี่คลอง" english="Si Khlong" geocode="160124" />
     <entity type="Tambon" name="ถนนใหญ่" english="Thanon Yai" geocode="160125">
-      <office type="TAOOffice">
-        <geo:Point>
-          <geo:lat>14.8274</geo:lat>
-          <geo:long>100.6314</geo:long>
-        </geo:Point>
-        <url>http://www.thanonyai.org/</url>
-      </office>
       <entity type="Muban" geocode="16012501" name="บ้านหินสองก้อน" english="Ban Hin Song Kon" />
       <entity type="Muban" geocode="16012502" name="บ้านโคกพุทรา, สิรัญญา 4" english="Ban Khok Phutsa, Si Ranya 4" />
       <entity type="Muban" geocode="16012503" name="บ้านถนนแค" english="Ban Thanon Khae" />
@@ -974,7 +967,7 @@
         </symbols>
         <url lastchecked="2013-03-01">http://thawung.go.th/</url>
         <council>
-          <term begin="2009-10-11" end="2013-10-10" type="TAO" size="18" sizechangereason="Unknown"/>
+          <term begin="2009-10-11" end="2013-10-10" type="TAO" size="18" sizechangereason="Unknown" />
           <!-- change of area of Th. Tha Wung? 18 confirmed by TAO website-->
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -1059,7 +1052,7 @@
           <official title="TAOMayor" name="นายเกษม ประภากร" begin="2009-10-11" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-10-11" end="2013-10-10" type="TAO" size="22" sizechangereason="Unknown"/>
+          <term begin="2009-10-11" end="2013-10-10" type="TAO" size="22" sizechangereason="Unknown" />
           <!-- change of area of Th. Tha Khlong? TAO website suggests Mu 11,12 have no councillor -->
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
         </council>
@@ -1974,6 +1967,10 @@
   </entity>
   <entity type="ThesabanTambon" name="ถนนใหญ่" english="Thanon Yai" geocode="1682" parent="1601" tambon="160125">
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>14.8274</geo:lat>
+        <geo:long>100.6314</geo:long>
+      </geo:Point>
       <url>http://www.thanonyai.org/</url>
       <council>
         <term begin="2013-01-13" type="ThesabanTambon" size="12" />
