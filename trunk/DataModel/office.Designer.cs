@@ -919,9 +919,9 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="SocialWebLinks", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class SocialWebLinks {
         
-        private List<string> facebookField;
+        private List<FacebookLink> facebookField;
         
-        private SocialWebLink twitterField;
+        private TwitterLink twitterField;
         
         private List<GooglePlusLink> googleplusField;
         
@@ -936,8 +936,8 @@ namespace De.AHoerstemeier.Tambon {
             this.forumField = new List<MyUri>();
             this.blogField = new List<MyUri>();
             this.googleplusField = new List<GooglePlusLink>();
-            this.twitterField = new SocialWebLink();
-            this.facebookField = new List<string>();
+            this.twitterField = new TwitterLink();
+            this.facebookField = new List<FacebookLink>();
         }
         
         /// <summary>
@@ -946,9 +946,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The facebook.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("facebook", DataType="anyURI", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("facebook", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<string> facebook {
+        public List<FacebookLink> facebook {
             get {
                 return this.facebookField;
             }
@@ -965,7 +965,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SocialWebLink twitter {
+        public TwitterLink twitter {
             get {
                 return this.twitterField;
             }
@@ -1026,6 +1026,118 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FacebookLink", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class FacebookLink {
+        
+        private FacebookPageType typeField;
+        
+        private string valueField;
+        
+        /// <summary>
+        /// Creates a new instance of FacebookLink.
+        /// </summary>
+        public FacebookLink() {
+            this.typeField = FacebookPageType.user;
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(FacebookPageType.user)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FacebookPageType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlTextAttribute(DataType="anyURI")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Types of pages within facebook.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum FacebookPageType {
+        
+        /// <summary>
+        /// User page, mostly used though not the correct type of page for a non-person.
+        /// </summary>
+        user,
+        
+        /// <summary>
+        /// Institution page.
+        /// </summary>
+        page,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TwitterLink", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class TwitterLink : SocialWebLink {
+        
+        private bool protectedField;
+        
+        /// <summary>
+        /// Creates a new instance of TwitterLink.
+        /// </summary>
+        public TwitterLink() {
+            this.protectedField = false;
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool @protected {
+            get {
+                return this.protectedField;
+            }
+            set {
+                this.protectedField = value;
+            }
+        }
+    }
+    
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(TwitterLink))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GooglePlusLink))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
@@ -1168,7 +1280,7 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
-    /// Ways how an official can enter the office.
+    /// Types of a Google+ page.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
