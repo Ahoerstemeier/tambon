@@ -96,7 +96,7 @@
       <entity type="Muban" geocode="51010501" name="บ้านวังมุย" english="Ban Wang Mui" />
       <entity type="Muban" geocode="51010502" name="บ้านล้องเดื่อ" english="Ban Long Fuea" />
       <entity type="Muban" geocode="51010503" name="บ้านล่ามช้าง" english="Ban Lam Chang" />
-      <entity type="Muban" geocode="51010504" name="บ้านหนองมูล (ประตูป่า)" />
+      <entity type="Muban" geocode="51010504" name="บ้านหนองมูล (ประตูป่า)" english="Ban Nong Mun (Pratu Pa)" />
       <entity type="Muban" geocode="51010505" name="บ้านท่ากว้าง" english="Ban Tha Kwang" />
       <entity type="Muban" geocode="51010506" name="บ้านศรีสุพรรณ" english="Ban Si Suphan" />
       <entity type="Muban" geocode="51010507" name="บ้านร่องเชี่ยว" english="Ban Rong Chiao" />
@@ -662,11 +662,6 @@
       </office>
     </entity>
     <entity type="Tambon" name="ศรีวิชัย" english="Si Wichai" geocode="510409">
-      <office type="TAOOffice">
-        <council>
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
-        </council>
-      </office>
       <entity type="Muban" geocode="51040901" name="บ้านปาง" english="Ban Pang" />
       <entity type="Muban" geocode="51040902" name="บ้านแม่อีไฮ" english="Ban Mae I Hai" />
       <entity type="Muban" geocode="51040903" name="บ้านห้วยบง" english="Ban Huai Bong" />
@@ -756,11 +751,16 @@
       </officials>
     </office>
     <entity type="Tambon" name="ปากบ่อง" english="Pak Bong" geocode="510601">
-      <office type="TAOOffice">
+      <office type="TAOOffice" obsolete="1">
         <geo:Point>
           <geo:lat>18.5348</geo:lat>
           <geo:long>98.9235</geo:long>
         </geo:Point>
+        <history>
+          <abolished type="TAO" mergeto="5189" effective="2004-10-06">
+            <gazetteref volume="121" page="9" issue="พิเศษ 113 ง" date="2004-10-07" />
+          </abolished>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="ป่าซาง" english="Pa Sang" geocode="510602" />
@@ -1303,8 +1303,12 @@
         <googleplus>109124782406657937359</googleplus>
       </socialweb>
       <officials>
-        <official title="Mayor" name="สมยศ กันทะวัง" inoffice="2011" />
+        <official title="Mayor" name="สมยศ กันทะวัง" begin="2010-03-07" beginreason="ElectedDirectly" />
       </officials>
+      <council>
+        <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
+      </council>
     </office>
   </entity>
 </entity>
