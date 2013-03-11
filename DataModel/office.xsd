@@ -215,7 +215,7 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  
+
   <xs:simpleType name="OfficialEndType">
     <xs:annotation>
       <xs:documentation>Reasons why an official left office.</xs:documentation>
@@ -356,7 +356,7 @@
   </xs:complexType>
   <xs:simpleType name="GooglePlusPageType">
     <xs:annotation>
-      <xs:documentation>Ways how an official can enter the office.</xs:documentation>
+      <xs:documentation>Types of a Google+ page.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="user">
@@ -392,17 +392,56 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="TwitterLink">
+    <xs:simpleContent>
+      <xs:extension base="t:SocialWebLink">
+        <xs:attribute name="protected" type="xs:boolean" use="optional" default="false">
+          <xs:annotation>
+            <xs:documentation>Tweets only visible to accepted followers.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="FacebookPageType">
+    <xs:annotation>
+      <xs:documentation>Types of pages within facebook.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="user">
+        <xs:annotation>
+          <xs:documentation>User page, mostly used though not the correct type of page for a non-person.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="page">
+        <xs:annotation>
+          <xs:documentation>Institution page.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FacebookLink">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+        <xs:attribute name="type" type="t:FacebookPageType" use="optional" default="user">
+          <xs:annotation>
+            <xs:documentation>Type of Facebook page.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="SocialWebLinks">
     <xs:annotation>
       <xs:documentation>List of the social web sites where the entity is present.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="facebook" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="facebook" type="t:FacebookLink" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>URL of the user account or page in facebook.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="twitter" type="t:SocialWebLink" minOccurs="0" maxOccurs="1">
+      <xs:element name="twitter" type="t:TwitterLink" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Twitter user name.</xs:documentation>
         </xs:annotation>
@@ -473,7 +512,7 @@
       <xs:annotation>
         <xs:documentation>Reason why left office.</xs:documentation>
       </xs:annotation>
-    </xs:attribute>    
+    </xs:attribute>
   </xs:complexType>
 
   <xs:complexType name="OfficialEntry">
