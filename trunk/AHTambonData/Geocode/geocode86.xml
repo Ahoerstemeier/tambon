@@ -980,7 +980,7 @@
         <url>http://www.nakha.go.th/</url>
         <officials>
           <official title="TAOMayor" name="โชคชัย ว่องกูล" begin="2012-05-20" beginreason="ElectedDirectly" />
-          <!-- Mayor end of term: 2012-04-08 -->
+          <officialterm title="TAOMayor" begin="2008-04-09" end="2012-04-08" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2012-10-14" type="TAO" size="26" />
@@ -1331,10 +1331,10 @@
         <url lastchecked="2012-10-16">http://www.patima.go.th/</url>
         <url status="offline">http://www.phatolocal.go.th/</url>
         <officials>
-          <!-- Mayor election after 2008-08-31 -->
-          <official title="TAOMayor" name="มานพ นุ้ยสอน" inoffice="2012" />
+          <official title="TAOMayor" name="มานพ นุ้ยสอน" begin="2011-09-04" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2012-10-14" type="TAO" size="34" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="34" />
         </council>
       </office>
@@ -1461,7 +1461,7 @@
         <url lastchecked="2012-09-14">http://www.tungraya.go.th/</url>
         <officials>
           <official title="TAOMayor" name="จีราวัฒน์ โกสิทธิ์" begin="2012-10-14" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ชาติชาย บุญมี" begin="2008-08-31" end="2012-08-30" />
+          <official title="TAOMayor" name="ชาติชาย บุญมี" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2012-10-14" type="TAO" size="22" />
@@ -1582,15 +1582,17 @@
     </entity>
     <entity type="Tambon" name="นาสัก" english="Na Sak" geocode="860709">
       <office type="TAOOffice">
-        <url lastchecked="2012-09-14">http://nasak.net/</url>
+        <url lastchecked="2013-03-13">http://nasak.net/</url>
         <url status="broken">http://www.nasak.go.th/</url>
         <officials>
-          <!-- Did resign early? Election wasn't on 2012-10-14 -->
-          <official title="TAOMayor" name="สุพล จุลใส" begin="2008-08-31" endyear="2012" />
+          <official title="TAOMayor" name="สุจิตรา อุสิทธิ์" beginyear="2012" beginreason="ElectedDirectly" comment="ca. 2012-03" />
+          <official title="TAOMayor" name="สุพล จุลใส" begin="2008-08-31" endyear="2012" beginreason="ElectedDirectly" endreason="Unknown" />
+          <official title="TAOMayor" name="เกรียงศักดิ์ เรืองชัย" inoffice="2007" />
         </officials>
         <council>
-          <term begin="2012-10-14" type="TAO" size="36" />
+          <term begin="2012-10-14" type="TAO" size="38" sizechangereason="MubanCreation" comment="Mu 19 created 2012-05-19 - was there still a by-election for old council?" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="36" />
+          <!-- Mu 18 created 2005-10 -->
         </council>
       </office>
       <entity type="Muban" geocode="86070901" name="บ้านนาสัก" english="Ban Na Sak" />
@@ -1611,6 +1613,7 @@
       <entity type="Muban" geocode="86070916" name="บ้านแสนอุดม" english="Ban Saen Udom" />
       <entity type="Muban" geocode="86070917" name="บ้านหนองกรูด" english="Ban Nong Krut" />
       <entity type="Muban" geocode="86070918" name="บ้านน้ำลอดใหญ่" english="Ban Nam Lot Yai" />
+      <entity type="Muban" geocode="86070919" name="บ้านตาหลัด" english="Ban Ta Lat" />
     </entity>
     <entity type="Tambon" name="เขาทะลุ" english="Khao Thalu" geocode="860710">
       <office type="TAOOffice">
@@ -2018,6 +2021,7 @@
         <official title="Mayor" name="ธีรพล พนาวัฒนวรกุล" begin="2008-08-31" endyear="2012" beginreason="ElectedDirectly" endreason="Resigned" />
       </officials>
       <council>
+        <term begin="2012-10-14" type="ThesabanTambon" size="12" />
         <term begin="2008-08-31" end="2012-08-30" type="ThesabanTambon" size="12" />
       </council>
     </office>

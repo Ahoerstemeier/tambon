@@ -490,7 +490,7 @@
     </entity>
     <entity type="Tambon" name="ห้วยขมิ้น" english="Huai Khamin" geocode="190309">
       <office type="TAOOffice">
-        <url>http://huaykhamin.go.th/</url>
+        <url lastchecked="2013-03-13">http://huaykhamin.go.th/</url>
         <officials>
           <!-- no TAOMayor end term in 2013 -->
           <official title="TAOMayor" name="ทองหล่อ ดอกพิกุล" inoffice="2010" />
@@ -1438,7 +1438,7 @@
         <geo:lat>14.8457</geo:lat>
         <geo:long>101.1344</geo:long>
       </geo:Point>
-      <url>http://www.amphoewangmuang.com/</url>
+      <url lastchecked="2013-03-13">http://www.amphoewangmuang.com/</url>
       <officials>
         <official title="DistrictOfficer" name="ชรัส บุญณสะ" end="2011-05-01" inoffice="2009" comment="2009-06" />
 
@@ -1954,11 +1954,18 @@
   </entity>
   <entity type="ThesabanTambon" name="วังม่วง" english="Wang Muang" geocode="1980" parent="1912">
     <office type="MunicipalityOffice">
-      <url>http://wangmuang.go.th/</url>
+      <url lastchecked="2013-03-13" status="broken">http://wangmuang.go.th/</url>
+      <socialweb>
+        <googleplus type="user">106753736255072750957</googleplus>
+      </socialweb>
       <officials>
-        <official title="Mayor" name="สุเทพ ดิบแดง" begin="2007-07-01" endyear="2011" />
+        <official title="Mayor" name="สุเทพ ดิบแดง" begin="2011-08-07" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="สุเทพ ดิบแดง" begin="2007-07-01" end="2011-06-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
+        <term begin="2011-08-07" type="ThesabanTambon" size="12">
+          <official title="MunicipalityCouncilChairman" name="ธนาธิป หัตถรุ่งเรือง" beginreason="ElectedByCouncil" />
+        </term>
         <term begin="2007-07-01" end="2011-06-30" type="ThesabanTambon" size="12" />
       </council>
     </office>
