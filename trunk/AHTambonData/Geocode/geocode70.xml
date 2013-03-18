@@ -1052,7 +1052,20 @@
       <entity type="Muban" geocode="70051317" name="บ้านห้วยยางเหนือ" english="Ban Huai Yang Nuea" />
       <entity type="Muban" geocode="70051318" name="บ้านสระสี่มุม" english="Ban Sa Si Mum" />
     </entity>
-    <entity type="Tambon" name="เบิกไพร" english="Boek Phrai" geocode="700514" />
+    <entity type="Tambon" name="เบิกไพร" english="Boek Phrai" geocode="700514">
+      <entity type="Muban" geocode="70051401" name="บ้านเบิกไพร" english="Ban Boek Phrai" />
+      <entity type="Muban" geocode="70051402" name="บ้านเบิกไพร" english="Ban Boek Phrai" />
+      <entity type="Muban" geocode="70051403" name="บ้านเบิกไพร" english="Ban Boek Phrai" />
+      <entity type="Muban" geocode="70051404" name="บ้านปลักแรด" english="Ban Plak Raet" />
+      <entity type="Muban" geocode="70051405" name="บ้านหัวสระ" english="Ban Hua Sa" />
+      <entity type="Muban" geocode="70051406" name="บ้านหัวเกาะ" english="Ban Hua Ko" />
+      <entity type="Muban" geocode="70051407" name="บ้านหมู่" english="Ban Mu" />
+      <entity type="Muban" geocode="70051408" name="บ้านบางพัง" english="Ban Bang Phang" />
+      <entity type="Muban" geocode="70051409" name="บ้านหัวทุ่ง" english="Ban Hua Thung" />
+      <entity type="Muban" geocode="70051410" name="บ้านหุบกระทิง" english="Ban Hup Krathing" />
+      <entity type="Muban" geocode="70051411" name="บ้านโป่งลาน" english="Ban Pong Lan" />
+      <entity type="Muban" geocode="70051412" name="บ้านตะคร้อ" english="Ban Takhro" />
+    </entity>
     <entity type="Tambon" name="ลาดบัวขาว" english="Lat Bua Khao" geocode="700515">
       <office type="TAOOffice">
         <symbols>
@@ -2108,12 +2121,21 @@
       </council>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="เบิกไพร" english="Boek Phrai" geocode="7072" parent="7002" tambon="700203">
+  <entity type="ThesabanTambon" name="เบิกไพร" english="Boek Phrai" geocode="7072" parent="7005" tambon="700514">
     <office type="MunicipalityOffice">
-      <url>http://www.boegprai.go.th/</url>
+      <url lastchecked="2013-03-18">http://berkprai.go.th/</url>
+      <url status="offline">http://www.boegprai.go.th/</url>
       <officials>
-        <officialterm title="Mayor" begin="2008-01-20" endyear="2012" />
+        <official title="Mayor" name="สินชัย สุวรรณพฤกษ์" begin="2012-02-26" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2008-01-20" end="2012-01-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
+      <council>
+        <term begin="2012-02-26" type="ThesabanTambon" size="12" />
+        <term begin="2008-01-20" end="2012-01-19" type="ThesabanTambon" size="12" />
+      </council>
+      <history>
+        <statuschange old="TAO" new="ThesabanTambon" effective="2009-08-30" />
+      </history>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หลุมดิน" english="Lum Din" geocode="7071" parent="7001" tambon="700117">
