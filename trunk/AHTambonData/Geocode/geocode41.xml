@@ -263,11 +263,20 @@
     </entity>
     <entity type="Tambon" name="หนองไฮ" english="Nong Hai" geocode="410115">
       <office type="TAOOffice">
-        <url>http://www.nonghai.go.th/</url>
+        <symbols>
+          <vision>
+            ครอบครัวอบอุ่น         ชุมชนสันติสุข
+            คุณภาพชีวิตถ้วนหน้า     เศรษฐกิจยั่งยืน
+            พร้อมสรรพความสะดวก บริการด้วยความจริงใจ
+          </vision>
+        </symbols>
+        <url lastchecked="2013-03-21">http://www.nonghai.go.th/</url>
         <officials>
           <!-- no TAOMayor end term in 2012 -->
+          <official title="TAOMayor" name="ถนอมศักดิ์ ยามโสภา" begin="2010-12-19" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2012-10-14" type="TAO" size="32" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="32" />
         </council>
       </office>
@@ -1257,10 +1266,6 @@
     </entity>
     <entity type="Tambon" name="ดอนกลอย" english="Don Kloi" geocode="410613" newgeocode="412303" />
     <entity type="Tambon" name="หนองไผ่" english="Nong Phai" geocode="410614">
-      <office type="TAOOffice">
-        <!-- Longdo: 17.320021 103.080083 - but nothing to see in Google Earth yet -->
-        <url status="offline">http://www.nongphaisub.com/</url>
-      </office>
       <entity type="Muban" geocode="41061401" name="บ้านหนองไผ่" english="Ban Nong Phai" />
       <entity type="Muban" geocode="41061402" name="บ้านหนองขาม" english="Ban Nong Kham" />
       <entity type="Muban" geocode="41061403" name="บ้านหนองสะหนาย" english="Ban Nong Samai" />
@@ -3479,6 +3484,12 @@
   <entity type="ThesabanTambon" name="บ้านจั่น" english="Ban Chan" geocode="4195" parent="4101">
     <office type="MunicipalityOffice">
       <url>http://www.banjan.net/</url>
+      <officials>
+        <official title="Mayor" name="สมเพชร ภักดีวิเศษ" begin="2009-01-30" endyear="2013" beginreason="ElectedDirectly" />
+      </officials>
+      <council>
+        <term begin="2009-01-30" end="2013-01-29" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองสำโรง" english="Nong Samrong" geocode="4194" parent="4101">
@@ -3825,6 +3836,12 @@
   <entity type="ThesabanTambon" name="น้ำโสม" english="Nam Som" geocode="4172" parent="4118">
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/udon/namsom/</url>
+      <officials>
+        <official title="Mayor" name="บัวลอง พรมสวัสดิ์" begin="2009-01-30" endyear="2013" beginreason="ElectedDirectly" />
+      </officials>
+      <council>
+        <term begin="2009-01-30" end="2013-01-29" type="ThesabanTambon" size="12" />
+      </council>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="เพ็ญ" english="Phen" geocode="4171" parent="4119">
@@ -3874,7 +3891,9 @@
   </entity>
   <entity type="ThesabanTambon" name="หนองไผ่" english="Nong Phai" geocode="4167" parent="4106" tambon="410614">
     <office type="MunicipalityOffice">
+      <!-- Longdo: 17.320021 103.080083 - but nothing to see in Google Earth yet -->
       <url lastchecked="2012-04-16">http://www.nongphaimu.go.th/</url>
+      <url status="offline">http://www.nongphaisub.com/</url>
       <council>
         <term begin="2008-11-29" end="2012-11-28" type="ThesabanTambon" size="12" />
       </council>
