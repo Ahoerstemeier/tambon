@@ -637,6 +637,11 @@
             <xs:documentation>Year in which it was in use.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="author" use="optional" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Author of the text.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
         <xs:attributeGroup ref="t:Comment" />
       </xs:extension>
     </xs:simpleContent>
