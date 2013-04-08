@@ -1072,6 +1072,80 @@ namespace De.AHoerstemeier.Tambon {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ElectionApproval", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class ElectionApproval {
+        
+        private List<MeetingReference> meetingField;
+        
+        private List<MyUri> urlField;
+        
+        private string signedbyField;
+        
+        /// <summary>
+        /// Creates a new instance of ElectionApproval.
+        /// </summary>
+        public ElectionApproval() {
+            this.urlField = new List<MyUri>();
+            this.meetingField = new List<MeetingReference>();
+        }
+        
+        /// <summary>
+        /// Meeting in which the election result was approved.
+        /// </summary>
+        /// <value>
+        /// The meeting.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("meeting", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MeetingReference> meeting {
+            get {
+                return this.meetingField;
+            }
+            set {
+                this.meetingField = value;
+            }
+        }
+        
+        /// <summary>
+        /// URL of approval document.
+        /// </summary>
+        /// <value>
+        /// The url.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("url", Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MyUri> url {
+            get {
+                return this.urlField;
+            }
+            set {
+                this.urlField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Official who signed the approval.
+        /// </summary>
+        /// <value>
+        /// The signedby.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string signedby {
+            get {
+                return this.signedbyField;
+            }
+            set {
+                this.signedbyField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="PartyListResultEntry", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class PartyListResultEntry {
         
@@ -1284,6 +1358,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private CandidateList candidatesField;
         
+        private ElectionApproval approvalField;
+        
         private ReferenceList referencesField;
         
         private System.DateTime dateField;
@@ -1298,6 +1374,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of Election.
         /// </summary>
         public Election() {
+            this.approvalField = new ElectionApproval();
             this.candidatesField = new CandidateList();
             this.partylistresultField = new PartyListResult();
             this.partylistField = new List<PartyCandidateList>();
@@ -1337,6 +1414,17 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectionApproval approval {
+            get {
+                return this.approvalField;
+            }
+            set {
+                this.approvalField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ReferenceList references {
             get {

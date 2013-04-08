@@ -41,6 +41,11 @@
           <xs:documentation>Cabinet, council of ministers of national government (คณะรัฐมนตรี).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="electioncommission">
+        <xs:annotation>
+          <xs:documentation>Election commission (คณะกรรมการการเลือกตั้ง).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="MeetingReference">
@@ -86,7 +91,7 @@
         <xs:documentation>Number of the issue on the agenda of the meeting.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name='RenameOperation'>
     <xs:complexContent>
