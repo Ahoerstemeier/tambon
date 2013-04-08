@@ -473,12 +473,34 @@
     <xs:attribute name="reason" type="t:ByElectionReason" />
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
+  <xs:complexType name="ElectionApproval">
+    <xs:sequence>
+      <xs:element name="meeting" type="t:MeetingReference" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Meeting in which the election result was approved.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="url" type="t:MyUri" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>URL of approval document.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="signedby" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>
+          Official who signed the approval.
+        </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
 
   <xs:complexType name="Election">
     <xs:sequence>
       <xs:element name="partylist" type="t:PartyCandidateList" minOccurs="0" maxOccurs="unbounded" />
       <xs:element name="partylistresult" type="t:PartyListResult" minOccurs="0" maxOccurs="1" />
       <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1" />
+      <xs:element name="approval" type="t:ElectionApproval" minOccurs="0" maxOccurs="1" />
       <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
     <xs:attribute name="date" type="xs:date" use="optional" />
