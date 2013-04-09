@@ -194,17 +194,22 @@
     <entity type="Tambon" name="ลานดอกไม้ตก" english="Lan Dokmai Tok" geocode="620108" newgeocode="621103" />
     <entity type="Tambon" name="โกสัมพี" english="Kosamphi" geocode="620109" newgeocode="621101" />
     <entity type="Tambon" name="หนองปลิง" english="Nong Pling" geocode="620110">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon? -->
+      <office type="MunicipalityOffice">
         <!-- 16.52936, 99.49741 ??? -->
         <url status="offline">http://www.nongplingkp.com/</url>
         <officials>
-          <official title="TAOMayor" name="สุรพงษ์ รอดเสียงล้ำ" begin="2009-12-27" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุรพงษ์ รอดเสียงล้ำ" begin="2009-12-27" endyear="2013" beginreason="ElectedDirectly" endreason="StatusChange" />
         </officials>
         <council>
-          <term begin="2011-03-27" type="TAO" size="22" />
+          <term begin="2011-03-27" type="TAO" size="22" endreason="StatusChange" />
           <term begin="2007-02-18" end="2011-02-17" type="TAO" size="22" />
+          <!-- Mu 11 created 2002-05 -->
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanMueang" comment="2013-03-??">
+            <meetingreference board="1" number="17" date="2013-01-16" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="62011006" name="บ้านบ่อสามแสน" english="Ban Bo Sam Saen" />
 
@@ -325,16 +330,16 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="20" />
         </council>
       </office>
-      <entity type="Muban" geocode="62011701" name="บ้านคลองละแวก" english="Ban Khlong Lawaek"/>
-      <entity type="Muban" geocode="62011702" name="บ้านประชารัฐ" english="Ban Pracharat"/>
-      <entity type="Muban" geocode="62011703" name="บ้านคลองแม่ลาย" english="Ban Khlong Mae Lai"/>
-      <entity type="Muban" geocode="62011704" name="บ้านสันติสุข" english="Ban Santi Suk"/>
-      <entity type="Muban" geocode="62011705" name="บ้านมอวรรณทอง" english="Ban Mo Wan Thong"/>
-      <entity type="Muban" geocode="62011706" name="บ้านเขาน้ำเพชร" english="Ban Khao Nam Phet"/>
-      <entity type="Muban" geocode="62011707" name="บ้านปางเรือ" english="Ban Pang Ruea"/>
-      <entity type="Muban" geocode="62011708" name="บ้านยางเลียง" english="Ban Yang Liang"/>
-      <entity type="Muban" geocode="62011709" name="บ้านวงฆ้อง" english="Ban Wong Khong"/>
-      <entity type="Muban" geocode="62011710" name="บ้านมอฝ้าย" english="Ban Mo Fai"/>
+      <entity type="Muban" geocode="62011701" name="บ้านคลองละแวก" english="Ban Khlong Lawaek" />
+      <entity type="Muban" geocode="62011702" name="บ้านประชารัฐ" english="Ban Pracharat" />
+      <entity type="Muban" geocode="62011703" name="บ้านคลองแม่ลาย" english="Ban Khlong Mae Lai" />
+      <entity type="Muban" geocode="62011704" name="บ้านสันติสุข" english="Ban Santi Suk" />
+      <entity type="Muban" geocode="62011705" name="บ้านมอวรรณทอง" english="Ban Mo Wan Thong" />
+      <entity type="Muban" geocode="62011706" name="บ้านเขาน้ำเพชร" english="Ban Khao Nam Phet" />
+      <entity type="Muban" geocode="62011707" name="บ้านปางเรือ" english="Ban Pang Ruea" />
+      <entity type="Muban" geocode="62011708" name="บ้านยางเลียง" english="Ban Yang Liang" />
+      <entity type="Muban" geocode="62011709" name="บ้านวงฆ้อง" english="Ban Wong Khong" />
+      <entity type="Muban" geocode="62011710" name="บ้านมอฝ้าย" english="Ban Mo Fai" />
     </entity>
     <entity type="Tambon" name="ธำมรงค์" english="Thammarong" geocode="620118">
       <office type="TAOOffice">
