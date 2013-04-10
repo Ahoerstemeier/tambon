@@ -248,7 +248,15 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:Area" />
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="population" type="t:PopulationData" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity">
+        <xs:unique name="UniqueGeocode">
+          <xs:annotation>
+            <xs:documentation>Making sure that every geocode is only used once.</xs:documentation>
+          </xs:annotation>
+          <xs:selector xpath="t:entity" />
+          <xs:field xpath="@geocode" />
+        </xs:unique>
+      </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="entitycount" type="t:EntityCount" />
     </xs:sequence>
     <xs:attribute name="type" type="t:EntityType" use="required" />
@@ -265,5 +273,6 @@
     <xs:attribute name="muban" type="xs:unsignedInt" use="optional" />
   </xs:complexType>
 
-  <xs:element name="entity" type="t:Entity" />
+  <xs:element name="entity" type="t:Entity">
+  </xs:element>
 </xs:schema>
