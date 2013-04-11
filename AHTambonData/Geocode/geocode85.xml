@@ -780,19 +780,31 @@
   </entity>
   <entity type="ThesabanTambon" name="บางริ้น" english="Bang Rin" geocode="8593" parent="8501" tambon="850104">
     <office type="MunicipalityOffice">
+      <symbols>
+        <vision>บางริ้นน่าอยู่  ประชาชนอยู่ดีมีสุข  ชุมชนเข้มแข็ง  ใส่ใจทรัพยากรสิ่งแวดล้อม  ส่งเสริมการท่องเที่ยว  เชิดชูคุณธรรม</vision>
+      </symbols>
       <geo:Point>
         <geo:lat> 9.9532</geo:lat>
         <geo:long>98.6344</geo:long>
       </geo:Point>
-      <url>http://www.bangrin.comyr.com/</url>
+      <url lastchecked="2013-04-11">http://www.bangrin.go.th/</url>
+      <url status="offline">http://www.bangrin.comyr.com/</url>
       <url status="offline">http://www.bangrin.th.gs/</url>
       <officials>
-        <officialterm title="Mayor" begin="2009-04-26" endyear="2013" beginreason="ElectedDirectly" />
-        <!-- no Mayor end term in 2011 -->
+        <official title="Mayor" name="ชวลิต เทพประดิษฐ์" begin="2009-04-26" endyear="2013" beginreason="ElectedDirectly" />
       </officials>
       <council>
+        <term begin="2011-12-25" type="ThesabanTambon" size="12" />
         <term begin="2007-11-18" end="2011-11-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" comment="2013-02-28 according to board meeting">
+        <meetingreference board="2" number="20" date="2013-03-20" />
+      </statuschange>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-29">
+        <meetingreference board="2" number="19" date="2007-06-29" />
+      </statuschange>
+    </history>
   </entity>
 </entity>

@@ -70,26 +70,22 @@
 -->
 <boardmeetings xmlns="http://hoerstemeier.com/tambon/">
   <year value="2013">
-    <boardmeeting board="2" number="20" date="2013-03-20" url="http://www.law.moi.go.th/pdf/2556_03_20_(20).pdf">
-      <!--
-      ร่างประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งองค์การบริหารส่วนตำบลสันทราย อำเภอฝาง จังหวัดเชียงใหม่ เป็นเทศบาลตำบลสันทราย
-      ร่างประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งองค์การบริหารส่วนตำบลบางริ้น อำเภอเมืองระนอง จังหวัดระนอง เป็นเทศบาลตำบลบางริ้น
-      ร่างประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งองค์การบริหารส่วนตำบลโพธิ์ไทร อำเภอพิบูลมังสาหาร จังหวัดอุบลราชธานี เป็นเทศบาลตำบลโพธิ์ไทร
-      ร่างประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งองค์การบริหารส่วนตำบลกุดชมภู อำเภอพิบูลมังสาหาร จังหวัดอุบลราชธานี เป็นเทศบาลตำบลกุดชมภู
-      -->
+    <boardmeeting board="2" number="20" date="2013-03-20" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2556_03_20_(20).pdf">
+      <status old="TAO" new="ThesabanTambon" name="สันทราย" english="San Sai" tambon="500906" effective="2013-09-06"/>
+      <status old="ThesabanTambon" new="ThesabanMueang" name="บางริ้น" english="Bang Rin" geocode="8593" tambon="850104" effective="2013-02-28"/>
+      <status old="TAO" new="ThesabanTambon" name="โพธิ์ไทร" english="Pho Sai" tambon="341909" effective="2013-07-13"/>
+      <status old="TAO" new="ThesabanTambon" name="กุดชมภู" english="Kut Chomphu" tambon="341902" effective="2013-06-28"/>
     </boardmeeting>
-    <boardmeeting board="2" number="19" date="2013-03-13" url="http://www.law.moi.go.th/pdf/2556_03_13_(19).pdf">
-      <!--
-      ร่างประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงฐานะเทศบาลตำบลเจ้าพระยาสุรศักดิ์ อำเภอศรีราชา จังหวัดชลบุรี เป็นเทศบาลนครเจ้าพระยาสุรศักดิ์
-      ร่างประกาศกระทรวงมหาดไทย เรื่อง องค์การบริหารส่วนตำบลเวียงแก้ว อำเภอลี้ จังหวัดลำพูน แยกพื้นที่บางส่วนไปรวมกับเทศบาลตำบลแม่ตืน อำเภอลี้ จังหวัดลำพูน
-      ร่างประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงเขตเทศบาลตำบลแม่ตืน อำเภอลี้ จังหวัดลำพูน
-      -->
+    <boardmeeting board="2" number="19" date="2013-03-13" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2556_03_13_(19).pdf">
+      <status old="ThesabanTambon" new="ThesabanNakhon" name="เจ้าพระยาสุรศักดิ์" english="Chao Phraya Surasak" geocode="2080" effective="2013-05-02"/>
+      <areachange type="TAO" name="แม่ตืน" english="Mae Tuen" tambon="510402"/>
+      <areachange type="ThesabanTambon" name="แม่ตืน" english="Mae Tuen" geocode="5192" />
     </boardmeeting>
 
-    <boardmeeting board="1" number="19" date="2013-01-30" time="09:00:00+13:30" url="http://www.law.moi.go.th/pdf/1_2556_1_30_19_a_.pdf">
+    <boardmeeting board="1" number="19" date="2013-01-30" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2556_1_30_19_a_.pdf">
       <status old="TAO" new="ThesabanTambon" name="ศรีบัวบาน" english="Si Bua Ban" tambon="510116" effective="2013-03-02" />
     </boardmeeting>
-    <boardmeeting board="1" number="17" date="2013-01-16" time="09:00:00+13:30" url="http://www.law.moi.go.th/pdf/1_2556_1_16_17_%20y.pdf">
+    <boardmeeting board="1" number="17" date="2013-01-16" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2556_1_16_17_%20y.pdf">
       <status old="TAO" new="ThesabanMueang" name="นครปฐม" english="Nakhon Pathom" tambon="730111" effective="2013-03-01" />
       <status old="TAO" new="ThesabanMueang" name="หนองปลิง" english="Nong Pling" tambon="620110" />
       <areachange type="ThesabanTambon" name="บ้านต๊ำ" english="Ban Tam" geocode="5686" tambon="560106" />
@@ -97,7 +93,7 @@
   </year>
   <year value="2012">
 
-    <boardmeeting board="2" number="74" date="2012-12-26" time="09:00:00+13:30" url="http://www.law.moi.go.th/pdf/2555-12-26-74%20_C_.pdf">
+    <boardmeeting board="2" number="74" date="2012-12-26" time="13:30:00+07:00" url="http://www.law.moi.go.th/pdf/2555-12-26-74%20_C_.pdf">
       <areachange type="TAO" name="แม่พริก" english="Mae Phrik" tambon="520901" />
       <areachange type="ThesabanTambon" name="แม่พริก" english="Mae Phrik" geocode="5287" />
       <areachange type="ThesabanTambon" name="เจ้าพระยาสุรศักดิ์" english="Chao Phraya Surasak" geocode="2080" />
