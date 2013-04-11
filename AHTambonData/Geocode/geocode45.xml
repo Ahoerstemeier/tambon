@@ -938,17 +938,6 @@
       </officials>
     </office>
     <entity type="Tambon" name="นิเวศน์" english="Niwet" geocode="450501">
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>16.0466</geo:lat>
-          <geo:long>103.7196</geo:long>
-        </geo:Point>
-        <url>http://niwes.com/</url>
-        <url>http://tambolniwat101.com</url>
-        <council>
-          <term begin="2008-09-13" end="2012-09-12" type="ThesabanTambon" size="12" />
-        </council>
-      </office>
       <entity type="Muban" geocode="45050101" name="บ้านนิเวศน์" english="Ban Niwet" />
       <entity type="Muban" geocode="45050102" name="บ้านจอมพล" english="Ban Chomphon" />
       <entity type="Muban" geocode="45050103" name="บ้านเหล่าแถม" english="Ban Lao Thaem" />
@@ -1017,12 +1006,6 @@
     <entity type="Tambon" name="หมูม้น" english="Mu Mon" geocode="450505" newgeocode="451805" />
     <entity type="Tambon" name="อุ่มเม้า" english="Um Mao" geocode="450506" />
     <entity type="Tambon" name="มะอึ" english="Ma-ue" geocode="450507">
-      <office type="MunicipalityOffice">
-        <url>http://61.19.250.201/~prangku/</url>
-        <council>
-          <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
-        </council>
-      </office>
       <entity type="Muban" geocode="45050701" name="บ้านดอนแคน" english="Ban Don Khaen" />
       <entity type="Muban" geocode="45050702" name="บ้านดงบ้านนา" english="Ban Dong Ban Na" />
       <entity type="Muban" geocode="45050703" name="บ้านเขตขันธ์" english="Ban Khet Khan" />
@@ -1105,6 +1088,7 @@
         <url>http://www.nongphok.go.th/</url>
         <council>
           <term begin="2008-04-06" end="2012-04-05" type="TAO" size="18" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="18" />
         </council>
       </office>
       <entity type="Muban" geocode="45052401" name="บ้านขัดเค้า" english="Ban Khat Khao" />
@@ -3874,6 +3858,55 @@
     </office>
   </entity>
 
+  <!-- These codes recycled for Ma-ue and Niwet? -->
   <entity type="Unknown" name="โคกล่าม" english="Khok Lam" geocode="4568" />
   <entity type="Unknown" name="ดงแดง" english="Dong Daeng" geocode="4567" />
+
+  <entity type="ThesabanTambon" name="มะอึ" english="Ma-ue" geocode="4566" parent="4505" tambon="450507">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.0834</geo:lat>
+        <geo:long>103.7423</geo:long>
+      </geo:Point>
+      <url status="offline">http://61.19.250.201/~prangku/</url>
+      <officials>
+        <officialterm title="Mayor" begin="2008-11-23" endyear="2012" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="เชษฐา เวียงสิมา" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="20" />
+      </council>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+        <meetingreference board="2" number="51" date="2008-07-04" />
+      </statuschange>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="นิเวศน์" english="Niwet" geocode="4565" parent="4505" tambon="450501">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.0466</geo:lat>
+        <geo:long>103.7196</geo:long>
+      </geo:Point>
+      <url lastchecked="2013-04-11">http://niwes.com/</url>
+      <url status="offline">http://tambolniwat101.com/</url>
+      <officials>
+        <official title="Mayor" name="เยี่ยมเพชร พลเยี่ยม" begin="2012-10-21" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ณรงค์ฤทธิ์ นาอ่อน" begin="2008-09-13" end="2012-09-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="นภดล มารุ่งเรือง" endyear="2008" />
+      </officials>
+      <council>
+        <term begin="2012-10-21" type="ThesabanTambon" size="12" />
+        <term begin="2008-09-13" end="2012-09-12" type="ThesabanTambon" size="12" />
+        <!-- Board meeting transcript says TAO end of term 2008-07-30 - but not listed in ECT table -->
+      </council>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-30">
+        <meetingreference board="2" number="14" date="2008-02-15" />
+      </statuschange>
+    </history>
+  </entity>
 </entity>

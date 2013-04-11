@@ -173,7 +173,8 @@
         <url status="offline">http://www.samran-sao.com/</url>
         <council>
           <term begin="2012-12-23" type="ThesabanTambon" size="12" />
-          <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" />
+          <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="26" />
         </council>
       </office>
     </entity>
@@ -192,6 +193,7 @@
         <council>
           <term begin="2012-09-30" type="TAO" size="28" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
         </council>
       </office>
     </entity>
@@ -209,6 +211,7 @@
         <council>
           <term begin="2012-09-30" type="TAO" size="34" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="34" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="34" />
         </council>
       </office>
       <entity type="Muban" geocode="40010402" name="บ้านหนองโข่ย" english="Ban Nong Khoi" />
@@ -242,11 +245,12 @@
         <url status="broken">http://www.banthum.5u.com/</url>
         <officials>
           <official title="Mayor" name="จีราวัฒน์ อุดมวรรธน์" begin="2008-08-24" endyear="2012" />
-          <official title="TAOMayor" name="เสน่ห์ เสนะไพรวรรณ" endyear="2008" />
+          <official title="TAOMayor" name="เสน่ห์ เสนะไพรวรรณ" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2012-11-18" type="ThesabanMueang" size="18" />
-          <term begin="2008-08-24" end="2012-08-23" type="ThesabanTambon" size="12" />
+          <term begin="2008-08-24" end="2012-08-23" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="36" />
         </council>
         <history>
           <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2012-08-24">
@@ -309,7 +313,8 @@
           <official title="Mayor" name="ยุทธชัย ลาคำ" begin="2009-03-22" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-03-22" end="2013-03-21" type="ThesabanTambon" size="12" />
+          <term begin="2009-03-22" end="2013-03-21" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2004-11-21" end="2008-11-20" type="TAO" size="38" />
         </council>
       </office>
       <entity type="Muban" geocode="40010701" name="บ้านผือ" english="Ban Phue" />
@@ -425,6 +430,7 @@
         <council>
           <term begin="2012-09-30" type="TAO" size="22" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
         </council>
       </office>
     </entity>
@@ -496,8 +502,9 @@
           <officialterm title="TAOMayor" begin="2005-07-02" endyear="2009" />
         </officials>
         <council>
-          <term begin="2012-11-18" type="ThesabanMueang" size="18" />
+          <term begin="2012-11-18" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="56" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="56" />
         </council>
         <history>
           <statuschange old="TAO" new="ThesabanMueang" effective="2012-08-24">
@@ -560,21 +567,17 @@
       <entity type="Muban" geocode="40011523" name="บ้านไทรทอง" english="Ban Sai Thong" />
     </entity>
     <entity type="Tambon" name="หนองตูม" english="Nong Tum" geocode="400116">
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>16.5131</geo:lat>
-          <geo:long>102.9392</geo:long>
-        </geo:Point>
-        <council>
-          <term begin="2012-12-23" type="ThesabanTambon" size="12" />
-          <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
-            <meetingreference board="2" number="49" date="2008-07-02" />
-          </statuschange>
-        </history>
-      </office>
+      <entity type="Muban" geocode="40011601" name="บ้านหนองตูม" english="Ban Nong Tum" />
+      <entity type="Muban" geocode="40011602" name="บ้านหนองตูม" english="Ban Nong Tum" />
+      <entity type="Muban" geocode="40011603" name="บ้านหนองงูเหลือม" english="Ban Nong Ngu Lueam" />
+      <entity type="Muban" geocode="40011604" name="บ้านหนองงูเหลือม" english="Ban Nong Ngu Lueam" />
+      <entity type="Muban" geocode="40011605" name="บ้านโคกท่า" english="Ban Khok Tha" />
+      <entity type="Muban" geocode="40011606" name="บ้านหนองบัวน้อย" english="Ban Nong Bua Noi" />
+      <entity type="Muban" geocode="40011607" name="บ้านเหมือดแอ่" english="Ban Mueat Ae" />
+      <entity type="Muban" geocode="40011608" name="บ้านดอนธาตุ" english="Ban Don That" />
+      <entity type="Muban" geocode="40011609" name="บ้านท่าฉาง" english="Ban Tha Chang" />
+      <entity type="Muban" geocode="40011610" name="บ้านหนองบัวน้อย" english="Ban Nong Bua Noi" />
+      <entity type="Muban" geocode="40011611" name="บ้านโคกท่า" english="Ban Khok Tha" />
     </entity>
     <entity type="Tambon" name="บึงเนียม" english="Bueng Niam" geocode="400117">
       <office type="MunicipalityOffice">
@@ -588,6 +591,7 @@
         </officials>
         <council>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="24" />
         </council>
         <history>
           <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-27">
@@ -1774,13 +1778,20 @@
       <entity type="Muban" geocode="40070514" name="บ้านโนนดงมัน" english="Ban Non Dong Man" />
     </entity>
     <entity type="Tambon" name="ม่วงหวาน" english="Muang Wan" geocode="400706">
-      <office type="MunicipalityOffice">
-        <url>http://muanghwan.org/</url>
-        <council>
-          <term begin="2012-11-18" type="ThesabanTambon" size="12" />
-          <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
-        </council>
-      </office>
+      <entity type="Muban" geocode="40070601" name="บ้านม่วงหวาน" english="Ban Muang Wan" />
+      <entity type="Muban" geocode="40070602" name="บ้านสระกุด" english="Ban Sakut" />
+      <entity type="Muban" geocode="40070603" name="บ้านโนนศรีสวัสดิ์" english="Ban Non Si Sawat" />
+      <entity type="Muban" geocode="40070604" name="บ้านห้วยหินลาด" english="Ban Huai Hin Lat" />
+      <entity type="Muban" geocode="40070605" name="บ้านโนนพยอม" english="Ban Non Phayom" />
+      <entity type="Muban" geocode="40070606" name="บ้านท่าเม่า" english="Ban Tha Mao" />
+      <entity type="Muban" geocode="40070607" name="บ้านคำแก่นคูณ" english="Ban Kham Kaen Khun" />
+      <entity type="Muban" geocode="40070608" name="บ้านคำแก่นคูณน้อย" english="Ban Kham Kaen Khun Noi" />
+      <entity type="Muban" geocode="40070609" name="บ้านคำใหญ่" english="Ban Kham Yai" />
+      <entity type="Muban" geocode="40070610" name="บ้านมิตรภาพ" english="Ban Mittraphap" />
+      <entity type="Muban" geocode="40070611" name="บ้านปันน้ำใจ" english="Ban Pan Nam Chai" />
+      <entity type="Muban" geocode="40070612" name="บ้านคำแก่นคูณ" english="Ban Kham Kaen Khun" />
+      <entity type="Muban" geocode="40070613" name="บ้านม่วงหวาน" english="Ban Muang Wan" />
+      <entity type="Muban" geocode="40070614" name="บ้านสระกุด" english="Ban Sakut" />
     </entity>
     <entity type="Tambon" name="บ้านขาม" english="Ban Kham" geocode="400707">
       <office type="TAOOffice">
@@ -4575,6 +4586,7 @@
       <council>
         <term begin="2012-08-06" type="ThesabanNakhon" size="24" />
         <term begin="2008-04-19" end="2012-04-18" type="ThesabanNakhon" size="24" />
+        <term begin="2004-03-07" end="2008-03-06" type="ThesabanNakhon" size="24" />
       </council>
     </office>
   </entity>
@@ -4633,6 +4645,7 @@
       </officials>
       <council>
         <term begin="2009-01-25" end="2013-01-24" type="ThesabanTambon" size="12" />
+        <term begin="2004-12-19" end="2008-12-18" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -4785,6 +4798,7 @@
       <council>
         <term begin="2012-04-22" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-01-31" end="2008-01-30" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -5173,7 +5187,8 @@
       </officials>
       <council>
         <term begin="2012-12-23" type="ThesabanTambon" size="12" />
-        <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" />
+        <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
       </council>
     </office>
   </entity>
@@ -5224,5 +5239,53 @@
         </term>
       </council>
     </office>
+  </entity>
+  <entity type="ThesabanTambon" name="หนองตูม" english="Nong Tum" geocode="4061" parent="4001" tambon="400116">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.5131</geo:lat>
+        <geo:long>102.9392</geo:long>
+      </geo:Point>
+      <url lastchecked="2013-04-11">http://nongtoom.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สุนทร จำปางาม" begin="2012-12-23" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ทวนทอง ผ่านวงษ์" begin="2008-11-16" end="2012-11-15" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="บุญรอด สังชนา" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-12-23" type="ThesabanTambon" size="12" />
+        <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
+      </council>
+      <history>
+        <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+          <meetingreference board="2" number="49" date="2008-07-02" />
+        </statuschange>
+      </history>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ม่วงหวาน" english="Muang Wan" geocode="4060" parent="4007" tambon="400706">
+    <office type="MunicipalityOffice">
+      <symbols>
+        <vision>เทศบาลตำบลม่วงหวานเป็นบ้านที่น่าอยู่ ทุกคนมีความรู้ ต่อสู้ความยากจน ชุมชนเข้มแข็ง ร่วมแรงพัฒนาทุกภาคส่วน</vision>
+      </symbols>
+      <url lastchecked="2013-04-11">http://www.muangwan.org/</url>
+      <url status="offline">http://muanghwan.org/</url>
+      <officials>
+        <official title="Mayor" name="พนม เย็นสบาย" begin="2012-11-18" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="พนม เย็นสบาย" begin="2008-10-12" end="2012-10-11" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="เมธธี เสียงไพรพันธ์" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-11-18" type="ThesabanTambon" size="12" />
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
+      </council>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+        <meetingreference board="2" number="45" date="2008-06-11" />
+      </statuschange>
+    </history>
   </entity>
 </entity>
