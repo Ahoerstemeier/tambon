@@ -39,6 +39,7 @@ namespace De.AHoerstemeier.Tambon
         ElectoralRegion,
         ProvinceCouncil
     };
+
     public enum EntityModification
     {
         Creation,
@@ -48,6 +49,7 @@ namespace De.AHoerstemeier.Tambon
         AreaChange,
         Constituency
     }
+
     public enum ProtectedAreaTypes
     {
         NationalPark,
@@ -58,6 +60,7 @@ namespace De.AHoerstemeier.Tambon
         HistoricalSite,
         NationalPreservedForest
     }
+
     public enum EntityLeaderType
     {
         Unknown,
@@ -85,6 +88,7 @@ namespace De.AHoerstemeier.Tambon
         MueangGovernor,
         ProvinceCouncilChairman
     }
+
     public enum PersonTitle
     {
         Unknown,
@@ -103,6 +107,7 @@ namespace De.AHoerstemeier.Tambon
         ActingSecondLieutenant,
         SubLieutenant
     }
+
     public enum OfficeType
     {
         Unknown,
@@ -116,6 +121,7 @@ namespace De.AHoerstemeier.Tambon
         SubdistrictHeadmanOffice,
         DistrictMuseum // ???
     }
+
     public enum GazetteSignPosition
     {
         Unknown,
@@ -146,6 +152,7 @@ namespace De.AHoerstemeier.Tambon
         MinistryOfInteriorDeputyPermanentSecretary,
         FineArtsDepartmentDirectorGeneral,
         MinisterOfNaturalResourcesAndEnvironment,
-        RegisterOfficeDirector
+        RegisterOfficeDirector,
+        RegisterOfficeDeputyDirector
     }
 }
