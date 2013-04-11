@@ -1692,10 +1692,10 @@
           </rename>
         </history>
       </office>
-      <entity type="Muban" geocode="90100601" name="บ้านต้นพยอม" english="Ban Ton Phayom" />
-      <entity type="Muban" geocode="90100602" name="บ้านปาดังเบซาร์" english="Ban Padang Besa" />
+      <entity type="Muban" geocode="90100701" name="บ้านต้นพยอม" english="Ban Ton Phayom" />
+      <entity type="Muban" geocode="90100702" name="บ้านปาดังเบซาร์" english="Ban Padang Besa" />
 
-      <entity type="Muban" geocode="90100609" name="บ้านควนขัน" english="Ban Khuan Khan" />
+      <entity type="Muban" geocode="90100709" name="บ้านควนขัน" english="Ban Khuan Khan" />
     </entity>
     <entity type="Tambon" name="สำนักขาม" english="Samnak Kham" geocode="901008">
       <entity type="Muban" geocode="90100801" name="บ้านสำนักขาม" english="Ban Samnak Kham" />
@@ -2403,23 +2403,6 @@
       <entity type="Muban" geocode="90160107" name="บ้านควนกบ" english="Ban Khuan Kop" />
     </entity>
     <entity type="Tambon" name="ทุ่งลาน" english="Thung Lan" geocode="901602">
-      <office type="MunicipalityOffice">
-        <symbols>
-          <vision>
-            ตำบลแห่งคุณภาพชีวิตและความสุข  มีสภาพแวดล้อมที่ดี
-            การพัฒนาที่หลากหลาย ด้วยจิตสาธารณะ
-          </vision>
-        </symbols>
-        <url lastchecked="2013-01-21">http://www.thunglan.go.th/</url>
-        <officials>
-          <official title="Mayor" name="ประสิทธิ์ แก้วมรกต" begin="2012-12-23" beginreason="ElectedDirectly" />
-          <official title="Mayor" name="ทัศนัย แก้วสมบูรณ์" begin="2008-11-16" end="2012-11-15" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-12-23" type="ThesabanTambon" size="12" />
-          <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" />
-        </council>
-      </office>
       <entity type="Muban" geocode="90160201" name="บ้านย่านยาว" english="Ban Yan Yao" />
       <entity type="Muban" geocode="90160202" name="บ้านทุ่งแม่บัว" english="Ban Thung Mae Bua" />
       <entity type="Muban" geocode="90160203" name="บ้านมะพร้าว" english="Ban Maphrao" />
@@ -2436,11 +2419,18 @@
         <officials>
           <official title="Mayor" name="สมนึก บุตรคง" begin="2012-12-23" beginreason="ElectedDirectly" />
           <officialterm title="Mayor" begin="2008-11-16" end="2012-11-15" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+          <official title="TAOMayor" name="รัฐพล ประพรม" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2012-12-23" type="ThesabanTambon" size="12" />
           <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+            <meetingreference board="2" number="47" date="2008-06-26" />
+          </statuschange>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="คลองหลา" english="Khlong La" geocode="901604">
@@ -3100,5 +3090,31 @@
         <term begin="2008-05-04" end="2012-05-03" type="ThesabanTambon" size="12" />
       </council>
     </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ทุ่งลาน" english="Thung Lan" geocode="9069" parent="9016" tambon="901602">
+    <office type="MunicipalityOffice">
+      <symbols>
+        <vision>
+          ตำบลแห่งคุณภาพชีวิตและความสุข  มีสภาพแวดล้อมที่ดี
+          การพัฒนาที่หลากหลาย ด้วยจิตสาธารณะ
+        </vision>
+      </symbols>
+      <url lastchecked="2013-01-21">http://www.thunglan.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ประสิทธิ์ แก้วมรกต" begin="2012-12-23" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ทัศนัย แก้วสมบูรณ์" begin="2008-11-16" end="2012-11-15" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="เจริญ สัมพัชนี" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-12-23" type="ThesabanTambon" size="12" />
+        <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" />
+        <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
+      </council>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+        <meetingreference board="2" number="47" date="2008-06-26" />
+      </statuschange>
+    </history>
   </entity>
 </entity>
