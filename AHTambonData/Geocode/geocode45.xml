@@ -179,7 +179,11 @@
     <entity type="Tambon" name="สะอาดสมบูรณ์" english="Sa-at Sombun" geocode="450106">
       <office type="TAOOffice">
         <url>http://www.saatsombun.com/</url>
+        <officials>
+          <official title="TAOMayor" name="เข็มชาติ โภคาเทพ" begin="2012-09-30" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="32" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" />
         </council>
       </office>
@@ -456,14 +460,25 @@
           <geo:lat>15.7256</geo:lat>
           <geo:long>103.5802</geo:long>
         </geo:Point>
+        <officials>
+          <official title="TAOMayor" name="เถวียง ลุยตัน" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุนทร จันทะเบี้ยว" begin="2008-08-24" end= "2012-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="30" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="30" />
         </council>
       </office>
     </entity>
     <entity type="Tambon" name="สิงห์โคก" english="Sing Khok" geocode="450204">
       <office type="TAOOffice">
+        <officials>
+          <!-- no TAOMayor election on 2012-09-30?  -->
+          <official title="TAOMayor" name="ชนะพันธ์ โยธาจันทร์" begin="2008-08-24" endyear="2012" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ชนะพันธ์ โยธาจันทร์" inoffice="2007" comment="ThaiTambon.com" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="26" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26" />
         </council>
       </office>
@@ -471,7 +486,12 @@
     <entity type="Tambon" name="ดงครั่งใหญ่" english="Dong Khrang Yai" geocode="450205">
       <office type="TAOOffice">
         <url>http://www.dongkrungyai.org/</url>
+        <officials>
+          <official title="TAOMayor" name="อังคาร ยอดแก้ว" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="อังคาร ยอดแก้ว" begin="2008-08-24" end="2012-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="26" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26" />
         </council>
       </office>
@@ -509,7 +529,11 @@
     <entity type="Tambon" name="หนองแวง" english="Nong Waeng" geocode="450207">
       <office type="TAOOffice">
         <url>http://www.nongwhang.org/</url>
+        <officials>
+          <official title="TAOMayor" name="สมศรี โยธาจันทร์" begin="2012-09-30" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="30" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="30" />
         </council>
       </office>
@@ -531,7 +555,11 @@
     </entity>
     <entity type="Tambon" name="กำแพง" english="Kamphaeng" geocode="450208">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="ประจวบ สมภักดี" begin="2012-09-30" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="24" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
         </council>
       </office>
@@ -1134,8 +1162,12 @@
     </entity>
     <entity type="Tambon" name="แสนสุข" english="Saen Suk" geocode="450602">
       <office type="TAOOffice">
-        <!-- Nayok: begin="2008-04-27" endyear="2012" -->
+        <officials>
+          <official title="TAOMayor" name="ชัย สินธุไพร" begin="2012-06-04" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2008-04-27" end="2012-04-26" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="36" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="36" />
         </council>
       </office>
@@ -1143,7 +1175,11 @@
     <entity type="Tambon" name="กุดน้ำใส" english="Kut Nam Sai" geocode="450603">
       <office type="TAOOffice">
         <url>http://www.gudnumsai.org/</url>
+        <officials>
+          <official title="TAOMayor" name="วิชิต กล้าหาญ" begin="2012-09-30" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="20" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="20" />
         </council>
       </office>
@@ -1513,9 +1549,11 @@
         <url lastchecked="2012-08-29">http://www.wangsamakkhi.go.th/</url>
         <url status="offline">http://wungsamakkhi.com/</url>
         <officials>
-          <official title="TAOMayor" name="พรสวรรค์ กิ่งแก้ว" begin="2008-08-24" end="2012-08-23" />
+          <official title="TAOMayor" name="พรสวรรค์ กิ่งแก้ว" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="พรสวรรค์ กิ่งแก้ว" begin="2008-08-24" end="2012-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="24" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
         </council>
       </office>
@@ -2096,11 +2134,13 @@
             วัฒนธรรมที่ดี     เป็นวิถีของชุมชน
           </vision>
         </symbols>
-        <url status="offline">http://srakoo.go.th/</url>
+        <url lastchecked="2013-04-15">http://srakoo.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="นิกร พุกพิลา" begin="2008-08-24" end="2012-08-23" />
+          <official title="TAOMayor" name="สุพรรณ โตหนองหว้า" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="นิกร พุกพิลา" begin="2008-08-24" end="2012-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="42" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="42" />
         </council>
       </office>
@@ -2176,9 +2216,11 @@
         <url status="offline">http://www.nayai.go.th/</url>
         <url status="offline">http://nayai.co.cc/</url>
         <officials>
-          <official title="TAOMayor" name="สุพรรณ พาลี" begin="2008-08-24" end="2012-08-23" />
+          <official title="TAOMayor" name="ภูมิภัทร วิชัย" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุพรรณ พาลี" begin="2008-08-24" end="2012-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="30" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="30" />
         </council>
       </office>
@@ -2287,9 +2329,11 @@
         <url lastchecked="2012-09-21">http://borpunkhan.go.th/</url>
         <url status="obsolete">http://61.19.250.201/~borpunckun/</url>
         <officials>
-          <official title="TAOMayor" name="บัน สุดตา" begin="2008-08-24" end="2012-08-23" />
+          <official title="TAOMayor" name="วันชัย อ้วนหินกอง" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="บัน สุดตา" begin="2008-08-24" end="2012-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="18" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="18" />
         </council>
       </office>
@@ -2353,11 +2397,11 @@
             พัฒนาการศึกษาและการเรียนรู้  อยู่อย่างพอเพียง
           </vision>
         </symbols>
-        <url lastchecked="2012-09-21">http://numkum.com/</url>
-        <url status="offline">http://numkum.org/</url>
+        <url lastchecked="2013-04-15">http://numkum.org/</url>
+        <url lastonline="2012-09-21" status="offline">http://numkum.com/</url>
         <officials>
-          <!-- election 2012-09-30 -->
-          <official title="TAOMayor" name="มนตรี ผุยหัวโทน" begin="2008-08-24" end="2012-08-23" />
+          <official title="TAOMayor" name="อำนาจ ลาสนาม" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="มนตรี ผุยหัวโทน" begin="2008-08-24" end="2012-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2012-09-30" type="TAO" size="32" />
@@ -2397,7 +2441,11 @@
           <geo:long>103.9506</geo:long>
         </geo:Point>
         <url status="offline">http://www.changpouk.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="สมบูรณ์ บุตรบุญชู" begin="2012-09-30" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="22" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
         </council>
       </office>
@@ -2452,6 +2500,7 @@
           <official title="TAOMayor" name="อดุลย์ ดวงเกต" begin="2009-07-26" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="24" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
         </council>
       </office>
@@ -3083,6 +3132,7 @@
           </reference>
         </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="20" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="20" />
         </council>
       </office>
