@@ -1689,12 +1689,24 @@
     <entity type="Tambon" name="ขุหลุ" english="Khulu" geocode="341101" />
     <entity type="Tambon" name="กระเดียน" english="Kradian" geocode="341102">
       <office type="TAOOffice">
-        <url>http://kradian.go.th/</url>
+        <url lastchecked="2013-04-17">http://kradian.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ไพเสริฐ ทองผาย" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
-          <term begin="2005-10-31" end="2009-10-30" type="TAO" size="18" />
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" comment="ECT table claims term end 2009-10-30" />
         </council>
       </office>
+      <entity type="Muban" geocode="34110101" name="บ้านกระเดียน" english="Ban Kradian" />
+      <entity type="Muban" geocode="34110102" name="บ้านกระเดียน" english="Ban Kradian" />
+      <entity type="Muban" geocode="34110103" name="บ้านนาหว้า" english="Ban Na Wa" />
+      <entity type="Muban" geocode="34110104" name="บ้านเล้ากลาง" english="Ban Lao Klang" />
+      <entity type="Muban" geocode="34110105" name="บ้านเวียง" english="Ban Wiang" />
+      <entity type="Muban" geocode="34110106" name="บ้านลาด" english="Ban Lat" />
+      <entity type="Muban" geocode="34110107" name="บ้านชาติ" english="Ban Chat" />
+      <entity type="Muban" geocode="34110108" name="บ้านเหล่า" english="Ban Lao" />
+      <entity type="Muban" geocode="34110109" name="บ้านเวียงสวรรค์" english="Ban Wiang Sawan" />
     </entity>
     <entity type="Tambon" name="เกษม" english="Kasem" geocode="341103">
       <office type="TAOOffice">
@@ -1919,11 +1931,23 @@
     </entity>
     <entity type="Tambon" name="คำเจริญ" english="Kham Charoen" geocode="341123">
       <office type="TAOOffice">
+        <url lastchecked="2013-04-17">http://www.kumj.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="มนต์สิริ วะนา" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="14" />
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" comment="ECT table claims 16, but Mu 1 not in TAO" />
         </council>
       </office>
+
+      <entity type="Muban" geocode="34112302" name="บ้านฮี" english="Ban Hi" />
+      <entity type="Muban" geocode="34112303" name="บ้านฮี" english="Ban Hi" />
+      <entity type="Muban" geocode="34112304" name="บ้านสมสะอาด" english="Ban Som Sa-at" />
+      <entity type="Muban" geocode="34112305" name="บ้านกุง" english="Ban Kung" />
+      <entity type="Muban" geocode="34112306" name="บ้านคำไหล" english="Ban Kham Lai" />
+      <entity type="Muban" geocode="34112307" name="บ้านดอนหมากมาย" english="Ban Don Mak Mai" />
+      <entity type="Muban" geocode="34112308" name="บ้านแพง" english="Ban Phaeng" />
     </entity>
   </entity>
   <entity type="Amphoe" name="กุดข้าวปุ้น" english="Kut Khaopun" geocode="3412">
@@ -3407,10 +3431,15 @@
     <entity type="Tambon" name="โคกชำแระ" english="Khok Chamrae" geocode="342605">
       <office type="TAOOffice">
         <!-- Longdo: 14.73608, 104.91530 -->
+        <officials>
+          <official title="TAOMayor" name="นิรันดร์ บรรประจง" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
-          <term begin="2005-09-09" end="2009-09-08" type="TAO" size="20" />
+          <!-- ECT table claims end term 2009-09-08, board meeting on planned upgrade says 2009-07-30 -->
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
+        <!-- was scheduled to be upgraded to ThesabanTambon 2009-09-31 -->
       </office>
     </entity>
     <entity type="Tambon" name="นาห่อม" english="Na Hom" geocode="342606">

@@ -43,6 +43,8 @@
     <officials>
       <official title="PAOChairman" name="มาลัยรัก ทองผา" begin="2009-08-23" beginreason="ElectedDirectly" />
       <official title="PAOChairman" name="วิริยะ ทองผาที่ปรึกษา" comment="Listed as inoffice 2011, which must be wrong" />
+
+      <officialterm title="PAOChairman" begin="2004-03-14" endyear="2008" beginreason="ElectedDirectly" />
     </officials>
     <council>
       <term begin="2012-10-14" type="PAO" size="24" />
@@ -211,6 +213,7 @@
       <office type="TAOOffice">
         <council>
           <term begin="2008-04-11" end="2012-04-10" type="TAO" size="12" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="12" />
         </council>
       </office>
     </entity>
@@ -316,6 +319,7 @@
         </officials>
         <council>
           <term begin="2008-04-11" end="2012-04-10" type="TAO" size="18" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="18" />
         </council>
       </office>
       <entity type="Muban" geocode="49020601" name="บ้านชัยมงคล" english="Ban Chai Mongkhon" />
@@ -698,6 +702,7 @@
         </officials>
         <council>
           <term begin="2008-04-11" end="2012-04-10" type="TAO" size="10" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="10" />
         </council>
       </office>
     </entity>
@@ -834,9 +839,11 @@
       <url>http://www.cumcha-e.com/</url>
       <officials>
         <officialterm title="Mayor" begin="2008-07-20" endyear="2012" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2004-06-06" end="2008-06-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
         <term begin="2008-03-16" end="2012-03-15" type="ThesabanTambon" size="12" />
+        <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -862,33 +869,78 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านแก้ง" english="Ban Kaeng" geocode="4993" parent="4903" tambon="490307">
     <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="เธียรวุฒิ พิกุลศรี" begin="2008-07-13" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="เธียรวุฒิ พิกุลศรี" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
       <council>
-        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-02-29" end="2008-02-28" type="TAO" size="14" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28">
+        <meetingreference board="2" number="62" date="2007-12-28" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="หนองสูงเหนือ" english="Nong Sung Nuea" geocode="4992" parent="4907" tambon="490706">
     <office type="MunicipalityOffice">
-      <url>http://www.nongsungnuea.org/</url>
+      <url lastchecked="2013-04-17">http://www.nongsungnuea.org/</url>
+      <officials>
+        <official title="Mayor" name="อุตสาหะ กลางประพันธ์" begin="2012-08-19" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="สุภิญโญ กลางประพันธ์" begin="2008-07-13" end="2012-07-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="แสนเจิง อาจวิชัย" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
       <council>
-        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" />
+        <term begin="2012-08-19" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-02-29" end="2008-02-28" type="TAO" size="26" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28">
+        <meetingreference board="2" number="62" date="2007-12-28" />
+      </statuschange>
+      <mergedwith mergefrom="490701" mergefromtype="SaphaTambon" effective="2004-09-24">
+        <gazetteref volume="121" page="1" issue="พิเศษ 108 ง" date="2004-09-29" />
+      </mergedwith>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="บ้านเป้า" english="Ban Pao" geocode="4991" parent="4907" tambon="490704">
     <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="ฉลวย ไตรยวงศ์" begin="2008-07-13" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="สิรพงศ์ นามเหลา" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
       <council>
-        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-02-29" end="2008-02-28" type="TAO" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28">
+        <meetingreference board="2" number="62" date="2007-12-28" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ภูวง" english="Phu Wong" geocode="4990" parent="4907" tambon="490703">
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/mukdahan/phuwong/</url>
+      <officials>
+        <official title="Mayor" name="ประยูร จันปุ่ม" begin="2008-07-13" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="สุภาพร สาผาง" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" />
+      </officials>
       <council>
-        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-02-29" end="2008-02-28" type="TAO" size="14" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28">
+        <meetingreference board="2" number="62" date="2007-12-28" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ร่มเกล้า" english="Rom Klao" geocode="4989" parent="4902" tambon="490207">
     <office type="MunicipalityOffice">
@@ -896,11 +948,18 @@
       <url status="offline">http://romkloa.com/</url>
       <officials>
         <!-- no Mayor end term in 2012 -->
-        <official title="TAOMayor" name="จำนงค์ มาลาสาย" endyear="2007" />
+        <official title="Mayor" name="สมัคร ชุมศรี" begin="2008-07-13" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="จำนงค์ มาลาสาย" begin="2004-02-29" endyear="2008" beginreason="ElectedDirectly" />
       </officials>
       <council>
-        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-13" end="2012-07-12" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-02-29" end="2008-02-28" type="TAO" size="14" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28">
+        <meetingreference board="2" number="62" date="2007-12-28" />
+      </statuschange>
+    </history>
   </entity>
 </entity>
