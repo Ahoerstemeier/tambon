@@ -1737,10 +1737,22 @@
     </entity>
     <entity type="Tambon" name="จันจว้า" english="Chan Chawa" geocode="570702" />
     <entity type="Tambon" name="แม่คำ" english="Mae Kham" geocode="570703">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <url lastchecked="2013-04-19">http://sainamkham.com/</url>
+        <officials>
+          <official title="Mayor" name="สุขคำ เดชอูป" begin="2010-08-29" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2010-08-29" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
+          <!-- Mu 14 created 2005-10 -->
         </council>
+        <history>
+          <rename oldname="แม่คำ" oldenglish="Mae Kham" name="สายน้ำคำ" english="Sai Nam Kham" effective="2009-10-27">
+            <meetingreference date="2009-10-21" number="2" board="rename" />
+          </rename>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" />
+        </history>
       </office>
       <entity type="Muban" geocode="57070301" name="บ้านแม่คำสบเปิน" english="Ban Mae Kham Sop Pen" />
 
@@ -3516,7 +3528,17 @@
   </entity>
   <entity type="ThesabanTambon" name="แม่คำ" english="Mae Kham" geocode="5789" parent="5707">
     <office type="MunicipalityOffice">
-      <url>http://tessabanmaekham.com/</url>
+      <symbols>
+        <vision>
+          แม่คำน่าอยู่ เชิดชูคุณธรรม เกษตรกรรมก้าวหน้า
+          การศึกษาเพื่อลูกหลาน  บริหารตามหลักธรรมาภิบาล
+        </vision>
+      </symbols>
+      <url lastchecked="2013-04-19">http://www.tessabanmaekham.go.th/</url>
+      <url status="expired">http://tessabanmaekham.com/</url>
+      <officials>
+        <official title="Mayor" name="สุเวช ภูมิรัตน์" begin="2009-04-18" endyear="2013" beginreason="ElectedDirectly" />
+      </officials>
       <council>
         <term begin="2009-04-18" end="2013-04-17" type="ThesabanTambon" size="12" />
         <term begin="2005-03-06" end="2009-03-05" type="ThesabanTambon" size="12" />
