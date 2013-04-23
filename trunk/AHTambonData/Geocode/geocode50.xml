@@ -4807,15 +4807,23 @@
   </entity>
   <entity type="ThesabanTambon" name="ท่าศาลา" english="Tha Sala" geocode="5063" parent="5001" tambon="500112">
     <office type="MunicipalityOffice">
-      <url>http://www.tazala.org/</url>
+      <url lastchecked="2013-04-24">http://www.tazala.go.th/</url>
+      <url status="expired">http://www.tazala.org/</url>
       <officials>
-        <!-- election 2011-04-03 -->
-        <official title="Mayor" name="ศิริพัฒน์ กาวิละ" begin="2007-12-02" endyear="2011" />
+        <official title="Mayor" name="ศิริพัฒน์ กาวิละ" begin="2011-04-03" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ศิริพัฒน์ กาวิละ" begin="2007-12-02" endyear="2011" beginreason="ElectedDirectly" endreason="Resigned" />
+        <official title="TAOMayor" name="เจริญ ชัยชมภู" endyear="2007" />
       </officials>
       <council>
+        <term begin="2012-01-08" type="ThesabanTambon" size="12" />
         <term begin="2007-12-02" end="2011-12-01" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23">
+        <meetingreference board="2" date="2007-06-28" number="14" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="แม่แฝก" english="Mae Faek" geocode="5062" parent="5014" tambon="501409">
     <office type="MunicipalityOffice">
