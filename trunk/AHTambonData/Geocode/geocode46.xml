@@ -90,7 +90,7 @@
     <officials>
       <official title="PAOChairman" name="ยงยุทธ หล่อตระกูล" begin="2012-03-03" beginreason="ElectedDirectly" />
       <official title="PAOChairman" name="ชะม้อย วรามิตร" begin="2008-01-20" end="2012-01-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-      <officialterm title="PAOChairman" begin="2004-03-14" endyear="2007" />
+      <officialterm title="PAOChairman" begin="2004-03-14" endyear="2007" beginreason="ElectedDirectly" endreason="Unknown"/>
     </officials>
     <council>
       <term begin="2012-06-02" type="PAO" size="30" />
@@ -343,10 +343,11 @@
       </officials>
     </office>
     <entity type="Tambon" name="นามน" english="Na Mon" geocode="460201">
-      <office type="MunicipalityOffice">
+      <office type="TAOOffice">
         <council>
           <term begin="2012-05-19" type="TAO" size="10" />
-          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="10" />
+          <term begin="2008-04-06" end="2012-04-05" type="TAO" size="10" sizechangereason="Unknown"/>
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="8" comment="ECT claims 4" />
         </council>
       </office>
     </entity>
@@ -1012,11 +1013,16 @@
     </office>
     <entity type="Tambon" name="คุ้มเก่า" english="Khum Kao" geocode="460601">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="กิฬา วรขันธ์" begin="2012-05-19" beginreason="ElectedDirectly"/>
+        </officials>
         <council>
           <term begin="2012-05-19" type="TAO" size="16" />
           <term begin="2008-04-06" end="2012-04-05" type="TAO" size="16" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" finalsize="16" />
           <!-- Mu 16,17,18 created 2006-11 -->
           <!-- Mu 14,15 created 2005-11-->
+          <!-- which one of new Muban belongs to TAO? -->
         </council>
       </office>
       <entity type="Muban" geocode="46060101" name="บ้านคุ้มเก่า" english="Ban Khum Kao" />
@@ -1130,6 +1136,7 @@
         <council>
           <term begin="2012-10-06" type="TAO" size="26" />
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="26" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="26" />
           <!-- Mu 13 created 2003-09 -->
         </council>
       </office>
@@ -1243,6 +1250,7 @@
         <council>
           <term begin="2012-10-06" type="TAO" size="22" />
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="22" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
         </council>
       </office>
     </entity>
@@ -1281,14 +1289,14 @@
           <official title="TAOMayor" name="วิทยา บุญตาโลก" begin="2011-08-06" beginreason="ElectedDirectly" />
           <!-- ??? type="TAOMayor" begin="2005-09-04" endyear="2009" -->
           <official title="TAOMayor" name="ทองคำ ศุภอุดร" beginyear="2008" endyear="2011" />
-          <official title="TAOMayor" name="วิทยา บุญตาโลก" beginyear="2004" endyear="2008" />
+          <official title="TAOMayor" name="วิทยา บุญตาโลก" begin="2004-07-18" endyear="2008" beginreason="ElectedDirectly"/>
           <official title="TAOMayor" name="ชมเชย จำปารัตน์" beginyear="2000" endyear="2004" />
           <official title="TAOChairman" name="สิงห์ ภูชะหาร" beginyear="1996" endyear="2000" beginreason="ExOfficio" comment="Kamnan" />
         </officials>
         <council>
           <term begin="2012-10-06" type="TAO" size="38" />
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="38" />
-          <!-- Mu 19 created 2005-11 -->
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="36" finalsize="38" sizechangereason="MubanCreation" comment="Mu 19 created 2005-11"/>
         </council>
       </office>
       <entity type="Muban" geocode="46071101" name="บ้านขาม" english="Ban Kham" />
@@ -1366,6 +1374,7 @@
         <council>
           <term begin="2012-05-19" type="TAO" size="20" />
           <term begin="2008-04-06" end="2012-04-05" type="TAO" size="20" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="20" />
         </council>
       </office>
     </entity>
@@ -1484,6 +1493,7 @@
         <council>
           <term begin="2012-05-19" type="TAO" size="12" />
           <term begin="2008-04-06" end="2012-04-05" type="TAO" size="12" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="12" />
         </council>
       </office>
     </entity>
@@ -1554,11 +1564,22 @@
     </entity>
     <entity type="Tambon" name="นิคม" english="Nikhom" geocode="460905">
       <office type="MunicipalityOffice">
-        <url>http://www.tambonnikom.ob.tc/</url>
+        <url status="offline">http://www.tambonnikom.ob.tc/</url>
+        <officials>
+          <official title="Mayor" name="นิวัน นาพรม" begin="2012-08-11" beginreason="ElectedDirectly"/>
+
+          <official title="TAOMayor" name="นิวัน นาพรม" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        </officials>
         <council>
           <term begin="2012-08-11" type="ThesabanTambon" size="12" />
           <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="14" comment="ECT table says 7" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2008-03-11">
+            <meetingreference board="2" number="15" date="2008-02-22" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="46090501" name="บ้านเสริมชัยศรี" english="Ban Saroem Chai Si" />
       <entity type="Muban" geocode="46090502" name="บ้านตาดดงเค็ง" english="Ban Tat Dong Kheng" />
@@ -1595,9 +1616,15 @@
     </entity>
     <entity type="Tambon" name="โนนน้ำเกลี้ยง" english="Non Nam Kliang" geocode="460908">
       <office type="MunicipalityOffice">
+        <officials>
+          <official title="Mayor" name="สมพงษ์ ภูผาสุข" begin="2012-08-11" beginreason="ElectedDirectly"/>
+
+          <official title="TAOMayor" name="วิภาภรณ์ มารวิพัฒน์" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        </officials>
         <council>
           <term begin="2012-08-11" type="ThesabanTambon" size="12" />
-          <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" />
+          <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="16" comment="ECT table says 8"/>
         </council>
       </office>
     </entity>
@@ -1858,6 +1885,7 @@
         <council>
           <term begin="2012-10-06" type="TAO" size="38" />
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="38" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="38" />
         </council>
       </office>
     </entity>
@@ -1889,6 +1917,7 @@
         <council>
           <term begin="2012-11-24" type="ThesabanTambon" size="12" />
           <term begin="2008-08-30" end="2012-08-29" type="TAO" size="30" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="30" />
         </council>
         <history>
           <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-30">
@@ -1920,10 +1949,10 @@
           <official title="TAOMayor" name="ภริดา คำเรืองศรี" begin="2008-08-30" end="2012-08-29" />
         </officials>
         <council>
-          <term begin="2012-10-13" type="ThesabanTambon" size="12" />
-          <term begin="2008-08-30" end="2012-08-29" type="TAO" size="24" />
+          <term begin="2012-10-13" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+          <term begin="2008-08-30" end="2012-08-29" type="TAO" size="24" sizechangereason="Unknown"/>
           <!-- Mu 14 created 2006-11, area shared with Th. Nong Hin -->
-          <term begin="2004-07-18" end="2008-07-17" type="TAO" comment="ECT table claims size 13" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="26" />
         </council>
         <history>
           <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-30">
@@ -2159,6 +2188,7 @@
         <council>
           <term begin="2012-05-19" type="TAO" size="18" />
           <term begin="2008-04-06" end="2012-04-05" type="TAO" size="18" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="18" />
         </council>
       </office>
     </entity>
@@ -2542,6 +2572,8 @@
     <entity type="Tambon" name="ฆ้องชัยพัฒนา" english="Khong Chai Phatthana" geocode="461801">
       <office type="MunicipalityOffice">
         <officials>
+          <official title="Mayor" name="ปรีชา ศรีจินดา" begin="2012-08-11" beginreason="ElectedDirectly"/>
+
           <official title="TAOMayor" name="สากล ศรเสนา" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -2651,7 +2683,7 @@
       <officials>
         <official title="Mayor" name="จารุวัฒน์ บุญเพิ่ม" begin="2011-01-09" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ภิญโญ  รัตนศาสตร์" begin="2008-03-09" end="2010-11-12" beginreason="ElectedDirectly" endreason="Removed" />
-        <officialterm title="Mayor" begin="2004-02-01" end="2008-01-31" />
+        <officialterm title="Mayor" begin="2004-02-01" end="2008-01-31" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
       </officials>
       <council>
         <term begin="2012-04-21" type="ThesabanMueang" size="18" />
@@ -2722,11 +2754,12 @@
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/kalasin/rongkham/</url>
       <officials>
-        <official title="Mayor" name="พูลสวัสดิ์ นาทองคำ" begin="2008-03-09" endyear="2012" />
+        <official title="Mayor" name="พูลสวัสดิ์ นาทองคำ" begin="2008-03-09" endyear="2012" beginreason="ElectedDirectly"/>
       </officials>
       <council>
         <term begin="2012-04-21" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-01-31" end="2008-01-30" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -2823,6 +2856,7 @@
       </officials>
       <council>
         <term begin="2008-12-14" end="2012-12-13" type="ThesabanTambon" size="12" />
+        <term begin="2004-11-06" end="2008-11-05" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <!-- numbers to be confirmed-->
@@ -2843,6 +2877,7 @@
       <council>
         <term begin="2012-04-21" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-01-31" end="2008-01-30" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -2855,6 +2890,7 @@
       <council>
         <term begin="2012-07-07" type="ThesabanTambon" size="12" />
         <term begin="2008-05-25" end="2012-05-24" type="ThesabanTambon" size="12" />
+        <term begin="2004-04-18" end="2008-04-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -2872,6 +2908,7 @@
       <council>
         <term begin="2012-07-07" type="ThesabanTambon" size="12" />
         <term begin="2008-05-25" end="2012-05-24" type="ThesabanTambon" size="12" />
+        <term begin="2004-04-18" end="2008-04-17" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -2935,6 +2972,7 @@
       <council>
         <term begin="2012-04-21" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-01-31" end="2008-01-30" type="ThesabanTambon" size="12" />
       </council>
     </office>
   </entity>
@@ -2978,32 +3016,62 @@
   </entity>
   <entity type="ThesabanTambon" name="สระพังทอง" english="Saphang Thong" geocode="4674" parent="4606" tambon="460608">
     <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="วันใหม่ วรรณทอง" begin="2012-08-11" beginreason="ElectedDirectly"/>
+
+        <official title="TAOMayor" name="เสน่ห์จันทร์ วิชาสาร" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+      </officials>
       <council>
         <term begin="2012-08-11" type="ThesabanTambon" size="12" />
-        <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-02-29" end="2008-02-28" type="TAO" size="14" comment="ECT table wrongly says 7" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28">
+        <meetingreference board="2" number="10" date="2008-02-01" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="คำบง" english="Kham Bong" geocode="4673" parent="4614" tambon="461401">
     <office type="MunicipalityOffice">
       <url lastchecked="2012-11-26">http://www.khambong-ks.go.th/</url>
       <officials>
-        <official title="Mayor" name="สุระชัย ไชยทองศรี" begin="2008-10-12" endyear="2012" />
+        <official title="Mayor" name="สงวนศักดิ์ โคตรพัฒน์" begin="2012-11-24" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="สุระชัย ไชยทองศรี" begin="2008-10-12" end="2012-10-11" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="สงวนศักดิ์ โคตรพัฒน์" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm"/>                  
       </officials>
       <council>
         <term begin="2012-11-24" type="ThesabanTambon" size="12" />
-        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="30" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+        <meetingreference board="2" number="38" date="2008-05-22" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ลำคลอง" english="Lam Khlong" geocode="4672" parent="4601" tambon="460121">
     <office type="MunicipalityOffice">
       <url>http://www.tambon-lamklong.com/</url>
+      <officials>
+        <official title="Mayor" name="สถาพร ฉายประดิษฐ์" begin="2012-08-11" beginreason="ElectedDirectly"/>
+
+        <official title="TAOMayor" name="ทองพูล กงมหา" begin="2004-02-29" end="2008-02-28" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+      </officials>
       <council>
         <term begin="2012-08-11" type="ThesabanTambon" size="12" />
-        <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-02-29" end="2008-02-28" type="TAO" size="14" comment="ECT table says 7" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-29">
+        <meetingreference board="2" number="10" date="2008-02-01" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="นาขาม" english="Na Kham" geocode="4671" parent="4605" tambon="460508">
     <office type="MunicipalityOffice">
@@ -3027,11 +3095,20 @@
   <entity type="ThesabanTambon" name="บัวบาน" english="Bua Ban" geocode="4670" parent="4607" tambon="460704">
     <office type="MunicipalityOffice">
       <url>http://www.tessabanbuabaan.co.cc/</url>
+      <officials>
+        <official title="TAOMayor" name="ทองดี แก้วสีขาว" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+      </officials>
       <council>
         <term begin="2012-11-24" type="ThesabanTambon" size="12" />
-        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="46" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+        <meetingreference board="2" number="39" date="2008-05-28" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="หัวนาคำ" english="Hua Na Kham" geocode="4669" parent="4607" tambon="460707">
     <office type="MunicipalityOffice">
@@ -3042,48 +3119,83 @@
       <url>http://www.huanakum.go.th/</url>
       <url status="offline">http://huanakum.com/</url>
       <officials>
-        <official title="Mayor" name="ไพทูรย์ จรทะผา" begin="2008-10-12" endyear="2012" />
-        <official title="TAOMayor" name="จารุวรรณ ดอนมิ่งคุณ" endyear="2008" />
+        <official title="Mayor" name="โสภัณฑ์ ภูพานทอง" begin="2012-11-24" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="ไพทูรย์ จรทะผา" begin="2008-10-12" end="2012-10-11" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="จารุวรรณ ดอนมิ่งคุณ" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
         <term begin="2012-11-24" type="ThesabanTambon" size="12" />
-        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="38" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+        <meetingreference board="2" number="34" date="2008-05-14" />
+      </statuschange>
+    </history>
+
   </entity>
   <entity type="ThesabanTambon" name="ภูสิงห์" english="Phu Sing" geocode="4668" parent="4609" tambon="460901">
     <office type="MunicipalityOffice">
       <url>http://203.113.113.25/poosing/</url>
+      <officials>
+        <official title="Mayor" name="อดิศักดิ์ สมคะเนย์" begin="2012-08-11" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="อดิศักดิ์ สมคะเณย์" begin="2008-07-05" endyear="2012" beginreason="ElectedDirectly"/>
+        <official title="TAOMayor" name="บุญเฮียง ศรีโยธี" begin="2004-02-29" endyear="2008" beginreason="ElectedDirectly" />
+      </officials>
       <council>
         <term begin="2012-08-11" type="ThesabanTambon" size="12" />
-        <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-05" end="2012-07-04" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-02-29" end="2008-02-28" type="TAO" size="18" comment="ECT table says 9" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-03-01">
+        <meetingreference board="2" number="10" date="2008-02-01" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="อิตื้อ" english="Itue" geocode="4667" parent="4607" tambon="460706">
     <office type="MunicipalityOffice">
       <url lastchecked="2013-02-21">http://www.etur.go.th/</url>
       <url status="offline">http://www.tambonetur.com/</url>
       <officials>
-        <official title="Mayor" name="นายประเทือง บุตรวงค์" inoffice="2012" />
+        <official title="Mayor" name="ประเทือง บุตรวงค์" inoffice="2012" />
+
+        <official title="TAOMayor" name="ประเทือง บุตรวงค์" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
       </officials>
       <council>
         <term begin="2012-11-24" type="ThesabanTambon" size="12" />
-        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
-        <!-- Mu 12 created 2005-11 -->
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" finalsize="24" sizechangereason="MubanCreation" comment="Mu 12 created 2005-11"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+        <meetingreference board="2" number="50" date="2008-07-03" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="นาทัน" english="Na Than" geocode="4666" parent="4610" tambon="461007">
     <office type="MunicipalityOffice">
       <url>http://www.nt.go.th/</url>
       <officials>
-        <official title="Mayor" name="ทวี บุริขันธ์" begin="2008-11-23" endyear="2012" />
+        <official title="Mayor" name="ฤกษ์รุต ดีประวี" begin="2013-01-05" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="ทวี บุริขันธ์" begin="2008-11-23" end="2012-11-22" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        <official title="TAOMayor" name="ทวี บุริขันธ์" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
       </officials>
       <council>
-        <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
+        <term begin="2013-01-05" type="ThesabanTambon" size="12"/>
+        <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="32" comment="ECT table says 16" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+        <meetingreference board="2" number="51" date="2008-07-04" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="จุมจัง" english="Chum Chang" geocode="4665" parent="4605" tambon="460504">
     <office type="MunicipalityOffice">
