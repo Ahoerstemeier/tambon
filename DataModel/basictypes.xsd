@@ -215,7 +215,7 @@
     <xs:attribute name="name" type="xs:string" use="optional" />
     <xs:attribute name="english" type="xs:string" use="optional" />
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional" default="0" />
-    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:simpleType name="OfficialType">
     <xs:annotation>
@@ -224,7 +224,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="Governor">
         <xs:annotation>
-          <xs:documentation>Province governor (ผู้ว่าราชการจังหวัด, Phu Wa Rachakan Changwat, earlier also ข้าหลวงประจำจังหวัด Kha Luang Pracham Changwat and ผู้ว่าราชการเมือง Phu Wa Rachakan Mueng).</xs:documentation>
+          <xs:documentation>Province governor (ผู้ว่าราชการจังหวัด [ผวจ], Phu Wa Rachakan Changwat, earlier also ข้าหลวงประจำจังหวัด Kha Luang Pracham Changwat and ผู้ว่าราชการเมือง Phu Wa Rachakan Mueng).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="BangkokGovernor">
@@ -244,7 +244,7 @@
       </xs:enumeration>
       <xs:enumeration value="DistrictOfficer">
         <xs:annotation>
-          <xs:documentation>District (head) officer (นายอำเภอ, Nai Amphoe).</xs:documentation>
+          <xs:documentation>District (head) officer (นายอำเภอ [นอภ], Nai Amphoe).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="MinorDistrictOfficer">
@@ -432,7 +432,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:anyURI">
-        <xs:attributeGroup ref="t:Comment"/>
+        <xs:attributeGroup ref="t:Comment" />
         <xs:attribute name="status" type="t:MyUriStatus" use="optional" default="unknown">
           <xs:annotation>
             <xs:documentation>Status of the web link.</xs:documentation>

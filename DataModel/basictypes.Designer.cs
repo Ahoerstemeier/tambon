@@ -18,7 +18,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Types of administrative entities.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -189,7 +189,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInExclude))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInclude))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ConstituencyEntity))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -279,95 +279,10 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReferenceList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class ReferenceList {
-        
-        private List<GazetteRelated> gazetterefField;
-        
-        private List<MyUri> urlField;
-        
-        private List<MeetingReference> meetingreferenceField;
-        
-        private List<MinisterialOrder> ministerialorderField;
-        
-        private List<BookReference> bookField;
-        
-        /// <summary>
-        /// Creates a new instance of ReferenceList.
-        /// </summary>
-        public ReferenceList() {
-            this.bookField = new List<BookReference>();
-            this.ministerialorderField = new List<MinisterialOrder>();
-            this.meetingreferenceField = new List<MeetingReference>();
-            this.urlField = new List<MyUri>();
-            this.gazetterefField = new List<GazetteRelated>();
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("gazetteref", Order=0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<GazetteRelated> gazetteref {
-            get {
-                return this.gazetterefField;
-            }
-            set {
-                this.gazetterefField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("url", Order=1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MyUri> url {
-            get {
-                return this.urlField;
-            }
-            set {
-                this.urlField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("meetingreference", Order=2)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MeetingReference> meetingreference {
-            get {
-                return this.meetingreferenceField;
-            }
-            set {
-                this.meetingreferenceField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", Order=3)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MinisterialOrder> ministerialorder {
-            get {
-                return this.ministerialorderField;
-            }
-            set {
-                this.ministerialorderField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("book", Order=4)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<BookReference> book {
-            get {
-                return this.bookField;
-            }
-            set {
-                this.bookField = value;
-            }
-        }
-    }
-    
     /// <summary>
     /// URL with an optional comment and status.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -520,7 +435,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Status of a web link.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -562,10 +477,95 @@ namespace De.AHoerstemeier.Tambon {
         hacked,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReferenceList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class ReferenceList {
+        
+        private List<GazetteRelated> gazetterefField;
+        
+        private List<MyUri> urlField;
+        
+        private List<MeetingReference> meetingreferenceField;
+        
+        private List<MinisterialOrder> ministerialorderField;
+        
+        private List<BookReference> bookField;
+        
+        /// <summary>
+        /// Creates a new instance of ReferenceList.
+        /// </summary>
+        public ReferenceList() {
+            this.bookField = new List<BookReference>();
+            this.ministerialorderField = new List<MinisterialOrder>();
+            this.meetingreferenceField = new List<MeetingReference>();
+            this.urlField = new List<MyUri>();
+            this.gazetterefField = new List<GazetteRelated>();
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("gazetteref", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<GazetteRelated> gazetteref {
+            get {
+                return this.gazetterefField;
+            }
+            set {
+                this.gazetterefField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("url", Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MyUri> url {
+            get {
+                return this.urlField;
+            }
+            set {
+                this.urlField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MeetingReference> meetingreference {
+            get {
+                return this.meetingreferenceField;
+            }
+            set {
+                this.meetingreferenceField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MinisterialOrder> ministerialorder {
+            get {
+                return this.ministerialorderField;
+            }
+            set {
+                this.ministerialorderField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("book", Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<BookReference> book {
+            get {
+                return this.bookField;
+            }
+            set {
+                this.bookField = value;
+            }
+        }
+    }
+    
     /// <summary>
     /// Reference to a ministerial order.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -672,7 +672,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Ministries in Thailand.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -687,7 +687,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Reference to a book.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -775,14 +775,14 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Types of leaders or deputy leaders for the administrative entities.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
     public enum OfficialType {
         
         /// <summary>
-        /// Province governor (ผู้ว่าราชการจังหวัด, Phu Wa Rachakan Changwat, earlier also ข้าหลวงประจำจังหวัด Kha Luang Pracham Changwat and ผู้ว่าราชการเมือง Phu Wa Rachakan Mueng).
+        /// Province governor (ผู้ว่าราชการจังหวัด [ผวจ], Phu Wa Rachakan Changwat, earlier also ข้าหลวงประจำจังหวัด Kha Luang Pracham Changwat and ผู้ว่าราชการเมือง Phu Wa Rachakan Mueng).
         /// </summary>
         Governor,
         
@@ -802,7 +802,7 @@ namespace De.AHoerstemeier.Tambon {
         DeputyGovernor,
         
         /// <summary>
-        /// District (head) officer (นายอำเภอ, Nai Amphoe).
+        /// District (head) officer (นายอำเภอ [นอภ], Nai Amphoe).
         /// </summary>
         DistrictOfficer,
         
