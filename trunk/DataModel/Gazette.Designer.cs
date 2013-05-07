@@ -573,6 +573,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Type of park.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ParkType type {
@@ -584,6 +590,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Area in km².
+        /// </summary>
+        /// <value>
+        /// The area.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public double area {
@@ -612,6 +624,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Area in rai.
+        /// </summary>
+        /// <value>
+        /// The arearai.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public double arearai {
@@ -640,6 +658,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Geocode of the lowest possible administrative unit covering the park.
+        /// </summary>
+        /// <value>
+        /// The locationgeocode.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint locationgeocode {
@@ -668,6 +692,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Id of the park.
+        /// </summary>
+        /// <value>
+        /// The id.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint id {
@@ -696,6 +726,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Number of item within the announcement.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint index {
