@@ -289,13 +289,37 @@
       <xs:element minOccurs="0" ref="geo:Point" />
     </xs:sequence>
     <xs:attributeGroup ref="t:ThaiNameOptional" />
-    <xs:attribute name="type" type="t:ParkType" use="required" />
-    <xs:attribute name="area" type="xs:double" use="optional" />
-    <xs:attribute name="arearai" type="xs:double" use="optional" />
-    <xs:attribute name="locationgeocode" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="type" type="t:ParkType" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of park.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="area" type="xs:double" use="optional">
+      <xs:annotation>
+        <xs:documentation>Area in km².</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="arearai" type="xs:double" use="optional">
+      <xs:annotation>
+        <xs:documentation>Area in rai.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="locationgeocode" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Geocode of the lowest possible administrative unit covering the park.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <!--or maybe better a Thai address child element? -->
-    <xs:attribute name="id" type="xs:unsignedInt" use="optional" />
-    <xs:attribute name="index" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="id" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Id of the park.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="index" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Number of item within the announcement.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name='GazetteReassign'>
