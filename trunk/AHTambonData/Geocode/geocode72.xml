@@ -94,10 +94,10 @@
     <entity type="Tambon" name="ท่าพี่เลี้ยง" english="Tha Phi Liang" geocode="720101" />
     <entity type="Tambon" name="รั้วใหญ่" english="Rua Yai" geocode="720102">
       <office type="TAOOffice">
-        <url lastchecked="2013-02-27">http://www.ruayai.go.th/</url>
+        <url lastchecked="2013-05-08">http://www.ruayai.go.th/</url>
         <officials>
-          <!-- no TAOMayor end term in 2012 -->
-          <official title="TAOMayor" name="คเชนทร์ จาดทองคำ" begin="2009-03-08" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ศักดิ์ชัย สถิตสวรรยา" begin="2013-04-21" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="คเชนทร์ จาดทองคำ" begin="2009-03-08" end="2013-03-07" beginreason="ElectedDirectly" endreason="EndOfTerm" />
           <official title="TAOMayor" name="คเชนทร์ จาดทองคำ" begin="2005-01-30" end="2009-01-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -1584,6 +1584,7 @@
         <council>
           <term begin="2012-10-07" type="TAO" size="14" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
         </council>
       </office>
       <entity type="Muban" geocode="72070201" name="บ้านในคลอง" english="Ban Nai Khlong" />
@@ -1634,6 +1635,7 @@
         <council>
           <term begin="2012-10-07" type="TAO" size="12" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="12" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="12" />
         </council>
       </office>
     </entity>
@@ -1743,6 +1745,7 @@
         <council>
           <term begin="2012-10-07" type="TAO" size="28" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="28" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="28" />
         </council>
       </office>
       <entity type="Muban" geocode="72071101" name="บ้านบางลี่เล็ก" english="Ban Bang Lilek" />
@@ -1774,6 +1777,7 @@
         <council>
           <term begin="2012-10-07" type="TAO" size="32" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="32" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="32" />
         </council>
       </office>
       <entity type="Muban" geocode="72071201" name="บ้านบัวขาว" english="Ban Bua Khao" />
@@ -1843,11 +1847,12 @@
         <officials>
           <official title="TAOMayor" name="แหลม ศรีนุ้ย" begin="2012-07-29" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="แหลม ศรีนุ้ย" begin="2008-06-22" end="2012-06-21" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-          <official title="TAOMayor" name="พาณิชดนัย เนียมเพราะ" endyear="2008" />
+          <official title="TAOMayor" name="พาณิชดนัย เนียมเพราะ" begin="2004-05-16" end="2008-05-15" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2012-07-29" type="TAO" size="14" />
           <term begin="2008-06-22" end="2012-06-21" type="TAO" size="14" />
+          <term begin="2004-05-16" end="2008-05-15" type="TAO" size="14" />
         </council>
       </office>
     </entity>
@@ -2439,9 +2444,15 @@
       </officials>
       <council>
         <term begin="2012-09-09" type="ThesabanMueang" size="18" />
-        <term begin="2008-07-27" end="2012-07-26" type="ThesabanMueang" size="18" />
+        <term begin="2008-07-27" end="2012-07-26" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
+        <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2008-01-31">
+        <meetingreference board="2" number="51" date="2007-11-22" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ท่าเสด็จ" english="Tha Sadet" geocode="7297" parent="7201">
     <office type="MunicipalityOffice">
