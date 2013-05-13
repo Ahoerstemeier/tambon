@@ -1018,11 +1018,16 @@
     </entity>
     <entity type="Tambon" name="ขี้เหล็ก" english="Khilek" geocode="500603">
       <office type="TAOOffice">
+        <!-- to be upgraded to ThesabanTambon 2013-05-30 -->
         <geo:Point>
           <geo:lat>19.0625</geo:lat>
           <geo:long>98.9396</geo:long>
         </geo:Point>
-        <url>http://www.kheelek.org/</url>
+        <url lastchecked="2013-05-13">http://www.kheelek.go.th/</url>
+        <url status="offline">http://www.kheelek.org/</url>
+        <officials>
+          <official title="TAOMayor" name="อินสอน โสภา" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
@@ -3045,11 +3050,12 @@
     </entity>
     <entity type="Tambon" name="หนองควาย" english="Nong Khwai" geocode="501509">
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon in 2013? -->
         <geo:Point>
           <geo:lat>18.7235</geo:lat>
           <geo:long>98.9263</geo:long>
         </geo:Point>
-        <url lastchecked="2012-03-30">http://www.nongkhwai.go.th/</url>
+        <url lastchecked="2013-05-13">http://www.nongkhwai.go.th/</url>
         <url status="offline">http://www.nhongkhay.com/</url>
         <officials>
           <official title="TAOMayor" name="สงวนศักดิ์ ใจสม" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
@@ -3548,11 +3554,25 @@
     </entity>
     <entity type="Tambon" name="ป่าบง" english="Pa Bong" geocode="501912">
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2013-09-06- -->
+        <symbols>
+          <vision>อนุรักษ์ภูมิปัญญาท้องถิ่น  รักษาสิ่งแวดล้อม  พร้อมส่งเสริมเศรษฐกิจ  สู่คุณภาพชีวิตที่ดี</vision>
+        </symbols>
+        <url lastchecked="2013-05-13">http://www.pabong.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="สุพัฒน์ นาคำ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="12" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
         </council>
       </office>
+      <entity type="Muban" geocode="50191201" name="บ้านไชยสถาน" english="Ban Chaiya Sathan" />
+      <entity type="Muban" geocode="50191202" name="บ้านร้องดอนชัย" english="Ban Rong Don Chai" />
+      <entity type="Muban" geocode="50191203" name="บ้านศรีคำชมภู" english="Ban Si Kham Chomphu" />
+      <entity type="Muban" geocode="50191204" name="บ้านป่าบงหลวง" english="Ban Pa Bong Luang" />
+      <entity type="Muban" geocode="50191205" name="บ้านเทพาราม" english="Ban Thepha Ram" />
+      <entity type="Muban" geocode="50191206" name="บ้านสุพรรณ" english="Ban Suphan" />
     </entity>
   </entity>
   <entity type="Amphoe" name="เวียงแหง" english="Wiang Haeng" geocode="5020">
