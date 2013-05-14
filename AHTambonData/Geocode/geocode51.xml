@@ -1241,11 +1241,22 @@
   <entity type="ThesabanTambon" name="บ้านธิ" english="Ban Thi" geocode="5186" parent="5107" tambon="510701">
     <office type="MunicipalityOffice">
       <url>http://www.banthi.org/</url>
+      <officials>
+        <official title="Mayor" name="วรชาติ ศรีไม้" begin="2012-09-30" beginreason="ElectedDirectly" />
+
+        <official title="TAOMayor" name="จิรวัฒน์ ดวงเกิด" endyear="2004" />
+      </officials>
       <council>
+        <term begin="2012-09-30" type="ThesabanTambon" size="12" />
         <term begin="2008-08-24" end="2012-08-23" type="ThesabanTambon" size="12" />
-        <term begin="2004-07-18" end="2008-07-17" type="ThesabanTambon" size="12" />
+        <term begin="2004-07-18" end="2008-07-17" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2004-07-19">
+        <meetingreference board="2" number="19" date="2007-05-20" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="แม่แรง" english="Mae Raeng" geocode="5185" parent="5106" tambon="510603">
     <office type="MunicipalityOffice">
