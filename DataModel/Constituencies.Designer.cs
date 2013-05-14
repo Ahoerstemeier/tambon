@@ -841,7 +841,7 @@ namespace De.AHoerstemeier.Tambon {
         Senate,
         
         /// <summary>
-        /// Chairman of the provincial administrative organization.
+        /// Chairman of the provincial administrative organization (นายกองค์การบริหารส่วนจังหวัด).
         /// </summary>
         PAOChairman,
         
@@ -851,22 +851,22 @@ namespace De.AHoerstemeier.Tambon {
         PAOCouncil,
         
         /// <summary>
-        /// Mayor of the subdistrict administrative organization.
+        /// Mayor of the subdistrict administrative organization (นายกองค์การบริหารส่วนตำบล).
         /// </summary>
         TAOMayor,
         
         /// <summary>
-        /// Council of the subdistrict administrative organization.
+        /// Council of the subdistrict administrative organization (สภาองค์การบริหารส่วนตำบล).
         /// </summary>
         TAOCouncil,
         
         /// <summary>
-        /// Mayor of the municipality.
+        /// Mayor of the municipality (นายกเทศมนตรี).
         /// </summary>
         Mayor,
         
         /// <summary>
-        /// Council of the municipality.
+        /// Council of the municipality (สภาเทศบาล).
         /// </summary>
         ThesabanCouncil,
         
