@@ -1753,6 +1753,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private ConstituencyEntity entityField;
         
+        private ReferenceList referencesField;
+        
         /// <summary>
         /// Creates a new instance of ElectionData.
         /// </summary>
@@ -1781,6 +1783,17 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.entityField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ReferenceList references {
+            get {
+                return this.referencesField;
+            }
+            set {
+                this.referencesField = value;
             }
         }
     }

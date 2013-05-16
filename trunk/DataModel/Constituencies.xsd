@@ -209,6 +209,7 @@
     <xs:sequence>
       <xs:element type="t:PartyList" name="parties" minOccurs="0" maxOccurs="1" />
       <xs:element type="t:ConstituencyEntity" name="entity" minOccurs="1" maxOccurs="1" />
+      <xs:element type="t:ReferenceList" name="references" minOccurs="0" maxOccurs="1" />
     </xs:sequence>
   </xs:complexType>
   <xs:element type="t:ElectionData" name="electiondata" />
