@@ -3712,12 +3712,6 @@
       <entity type="Muban" geocode="40170514" name="บ้านห้วยแล้ง" english="Ban Huai Laeng" />
     </entity>
     <entity type="Tambon" name="นาข่า" english="Na Kha" geocode="401706">
-      <office type="TAOOffice">
-        <url status="broken">http://www.naka-sao.com/</url>
-        <council>
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="34" />
-        </council>
-      </office>
       <entity type="Muban" geocode="40170601" name="บ้านขามป้อม" english="Ban Kham Pom" />
       <entity type="Muban" geocode="40170602" name="บ้านหนองก้านเหลือง" english="Ban Nong Kan Lueang" />
       <entity type="Muban" geocode="40170603" name="บ้านหนองต่อ" english="Ban Nong To" />
@@ -4050,21 +4044,16 @@
       <entity type="Muban" geocode="40190307" name="บ้านนาโพธิ์" english="Ban Na Pho" />
     </entity>
     <entity type="Tambon" name="โนนสมบูรณ์" english="Non Sombun" geocode="401904">
-      <office type="MunicipalityOffice">
-        <!-- not yet visible in Google Earth -->
-        <geo:Point>
-          <geo:lat>16.9998</geo:lat>
-          <geo:long>102.7607</geo:long>
-        </geo:Point>
-        <url status="offline">http://www.tnonsomboon.ob.tc/</url>
-        <officials>
-          <official title="Mayor" name="กฤตวัฒน์ พงษ์สมบัติ" begin="2009-12-06" endyear="2013" beginreason="ElectedDirectly" />
-        </officials>
-        <council>
-          <term begin="2009-12-06" end="2013-12-05" type="ThesabanTambon" size="12" />
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
-        </council>
-      </office>
+      <entity type="Muban" geocode="40190401" name="บ้านป่าเปือย" english="Ban Pa Pueai" />
+      <entity type="Muban" geocode="40190402" name="บ้านโนนสมบูรณ์" english="Ban Non Sombun" />
+      <entity type="Muban" geocode="40190403" name="บ้านคำป่าก่อ" english="Ban Kham Pa Ko" />
+      <entity type="Muban" geocode="40190404" name="บ้านโนนเจริญ" english="Ban Non Charoen" />
+      <entity type="Muban" geocode="40190405" name="บ้านหัวฝาย" english="Ban Hua Fai" />
+      <entity type="Muban" geocode="40190406" name="บ้านโคกกลาง" english="Ban Khok Klang" />
+      <entity type="Muban" geocode="40190407" name="บ้านทุ่งโพธิ์ชัย" english="Ban Thung Pho Chai" />
+      <entity type="Muban" geocode="40190408" name="บ้านโนนหัวช้าง" english="Ban Non Hua Chang" />
+      <entity type="Muban" geocode="40190409" name="บ้านเทพอำนวย" english="Ban Thep Amnuai" />
+      <entity type="Muban" geocode="40190410" name="บ้านวังน้ำทิพย์" english="Ban Wang Nam Thip" />
     </entity>
     <entity type="Tambon" name="คำม่วง" english="Kham Muang" geocode="401905">
       <office type="TAOOffice">
@@ -5533,6 +5522,48 @@
     <history>
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
         <meetingreference board="2" number="45" date="2008-06-11" />
+      </statuschange>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="นาข่า" english="Na Kha" geocode="4059" tambon="401706">
+    <office type="MunicipalityOffice">
+      <url status="broken">http://www.naka-sao.com/</url>
+      <officials>
+        <official title="Mayor" name="สมจิตร จันโทศรี" begin="2010-01-17" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="ปะกิไล รุ่งโรจน์" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2010-01-17" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2005-07-31" end="2009-07-30" type="TAO" size="34" />
+      </council>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26">
+        <meetingreference board="1" date="2009-07-14" number="25" />
+      </statuschange>
+    </history>
+  </entity>
+  <entity type="Tambon" name="โนนสมบูรณ์" english="Non Sombun" geocode="4058" tambon="401904">
+    <office type="MunicipalityOffice">
+      <!-- not yet visible in Google Earth -->
+      <geo:Point>
+        <geo:lat>16.9998</geo:lat>
+        <geo:long>102.7607</geo:long>
+      </geo:Point>
+      <url lastchecked="2013-05-22">http://tessabannonsomboon.go.th/</url>
+      <url status="offline">http://www.tnonsomboon.ob.tc/</url>
+      <officials>
+        <official title="Mayor" name="กฤตวัฒน์ พงษ์สมบัติ" begin="2009-12-06" endyear="2013" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="สมบูรณ์ ทิพเนตร" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2009-12-06" end="2013-12-05" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
+      </council>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31">
+        <meetingreference board="1" date="2009-06-17" number="16" />
       </statuschange>
     </history>
   </entity>
