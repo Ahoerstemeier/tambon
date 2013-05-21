@@ -783,26 +783,6 @@
       <entity type="Muban" geocode="57030410" name="บ้านภูแกง" english="Ban Phu Kaeng" />
     </entity>
     <entity type="Tambon" name="ห้วยซ้อ" english="Huai So" geocode="570305">
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>20.0364</geo:lat>
-          <geo:long>100.2894</geo:long>
-        </geo:Point>
-        <url lastchecked="2013-03-18">http://huayso.com/</url>
-        <url status="offline">http://huayso.go.th/</url>
-        <officials>
-          <official title="Mayor" name="ไสว น้อยหมอ" begin="2012-04-01" beginreason="ElectedDirectly" />
-
-          <official title="TAOMayor" name="พิชิต ไชยเขียว" endyear="2007" />
-        </officials>
-        <council>
-          <term begin="2012-04-01" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2007-10-07" end="2011-10-06" type="TAO" size="46" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-07" />
-        </history>
-      </office>
       <entity type="Muban" geocode="57030501" name="บ้านห้วยซ้อเหนือ" english="Ban Huai So Nuea" />
       <entity type="Muban" geocode="57030502" name="บ้านห้วยซ้อใต้" english="Ban Huai So Tai" />
       <entity type="Muban" geocode="57030503" name="บ้านแก่นเหนือ" english="Ban Kaen Nuea" />
@@ -3419,7 +3399,10 @@
         <geo:lat>19.9092</geo:lat>
         <geo:long>99.8268</geo:long>
       </geo:Point>
-      <url>http://www.chiangraicity.go.th/</url>
+      <url lastchecked="2013-05-21">http://www.chiangraicity.go.th/</url>
+      <socialweb>
+        <googleplus type="user">102947101904177620987</googleplus>
+      </socialweb>
       <officials>
         <official title="Mayor" name="วันชัย จงสุทธนามณี" begin="2012-05-05" beginreason="ElectedDirectly">
           <election type="Mayor" date="2012-05-05">
@@ -3896,6 +3879,28 @@
       <council>
         <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" />
       </council>
+    </office>
+  </entity>
+  <entity type="ThesabanTambon" name="ห้วยซ้อ" english="Huai So" geocode="5765" tambon="570305">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>20.0364</geo:lat>
+        <geo:long>100.2894</geo:long>
+      </geo:Point>
+      <url lastchecked="2013-03-18">http://huayso.com/</url>
+      <url status="offline">http://huayso.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ไสว น้อยหมอ" begin="2012-04-01" beginreason="ElectedDirectly" />
+
+        <official title="TAOMayor" name="พิชิต ไชยเขียว" endyear="2007" />
+      </officials>
+      <council>
+        <term begin="2012-04-01" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2007-10-07" end="2011-10-06" type="TAO" size="46" />
+      </council>
+      <history>
+        <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-07" />
+      </history>
     </office>
   </entity>
 </entity>
