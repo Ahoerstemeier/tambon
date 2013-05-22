@@ -4722,14 +4722,21 @@
       <url status="offline">http://www.changsai-sao.go.th/</url>
       <officials>
         <official title="Mayor" name="ชูชัย อุดมศรีโยธิน" begin="2012-01-18" beginreason="ElectedDirectly" />
+        <!-- why not election 2011/12 same date as council-->
         <official title="Mayor" name="ชูชัย อุดมศรีโยธิน" begin="2007-11-17" end="2011-11-16" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="ชูชัย อุดมศรีโยธิน" endyear="2007"/>                  
       </officials>
       <council>
-        <!-- why not election same date as Mayor?-->
         <term begin="2011-12-25" type="ThesabanTambon" size="12" />
-        <term begin="2007-11-17" end="2011-11-16" type="ThesabanTambon" size="12" />
+        <term begin="2007-11-17" end="2011-11-16" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2003-08-30" end="2007-08-29" type="TAO" size="24"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30">
+        <meetingreference board="2" number="21" date="2007-07-06" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ขุนทะเล" english="Khun Thale" geocode="8474" parent="8401" tambon="840104">
     <office type="MunicipalityOffice">
