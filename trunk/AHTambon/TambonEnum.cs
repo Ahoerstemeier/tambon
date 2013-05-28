@@ -144,6 +144,7 @@ namespace De.AHoerstemeier.Tambon
         DistrictOfficerBangkok,
         DistrictOfficer,
         SpeakerOfParliament,
+        DeputySpeakerOfParliament,
         Mayor,
         TAOMayor,
         TAOChairman,
