@@ -1367,13 +1367,24 @@
     <entity type="Tambon" name="สามง่าม" english="Sam Ngam" geocode="730401" />
     <entity type="Tambon" name="ห้วยพระ" english="Huai Phra" geocode="730402">
       <office type="TAOOffice">
-        <url>http://www.huaypra.go.th/</url>
+        <symbols>
+          <vision>ชุมชนน่าอยู่  บ้านเมืองสะอาดตา  อนุรักษ์วัฒนธรรม  เน้นการศึกษา  พัฒนาคุณภาพชีวิต</vision>
+        </symbols>
+        <geo:Point>
+          <geo:lat>13.9291</geo:lat>
+          <geo:long>100.0673</geo:long>
+        </geo:Point>
+        <url lastchecked="2013-06-05">http://www.huaypra.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ชัยวัฒน์ มนัสวงษ์กาญจน์" begin="2012-07-01" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ชัยวัฒน์ มนัสวงษ์กาญจน์" begin="2008-08-31" endyear="2012" beginreason="ElectedDirectly" endreason="Unknown" />
+          <official title="TAOMayor" name="ชัยวัฒน์ มนัสวงษ์กาญจน์" begin="2008-08-31" endyear="2012" beginreason="ElectedDirectly" endreason="Resigned" />
         </officials>
         <council>
-          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="16" />
+          <term begin="2012-10-07" type="TAO" size="18">
+            <official title="TAOCouncilChairman" name="ชวน สีหนู" beginreason="ElectedByCouncil"/>
+          </term>
+          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" comment="ECT table wrongly claims 16" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
       </office>
       <entity type="Muban" geocode="73040201" name="บ้านห้วยพระ" english="Ban Huai Phra" />
@@ -1388,10 +1399,22 @@
     </entity>
     <entity type="Tambon" name="ลำเหย" english="Lam Ye" geocode="730403">
       <office type="TAOOffice">
-        <url>http://www.sao-lumheay.com/</url>
+        <geo:Point>
+          <geo:lat>13.9543</geo:lat>
+          <geo:long>100.0461</geo:long>
+        </geo:Point>
+        <url status="offline">http://www.sao-lumheay.com/</url>
         <url status="offline">http://www.sao-lumheay.org/</url>
+        <officials>
+          <official title="TAOMayor" name="จำปี เหล่าปาสี" begin="2012-10-07" beginreason="ElectedDirectly" comment="info.dla.go.th wrongly claims 2012-09-07"/>
+          <official title="TAOMayor" name="จำปี เหล่าปาสี" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        </officials>
         <council>
+          <term begin="2012-10-07" type="TAO" size="30" comment="info.dla.go.th wrongly claims 2012-09-07">
+            <official title="TAOCouncilChairman" name="พิสิษฐ์ ท้วมสุข" begin="2012-12-12" beginreason="ElectedByCouncil"/>
+          </term>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="30" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="30" />
         </council>
       </office>
       <entity type="Muban" geocode="73040301" name="บ้านทุ่งสีหลง" english="Ban Thung Si Long" />
@@ -1412,23 +1435,56 @@
     </entity>
     <entity type="Tambon" name="ดอนพุทรา" english="Don Phutsa" geocode="730404">
       <office type="TAOOffice">
-        <url>http://www.donphutsa.go.th/</url>
+        <symbols>
+          <vision>
+            เน้นพัฒนาตำบลน่าอยู่               คู่คุณธรรมนำคุณภาพชีวิต
+            แนวเศรษฐกิจพอเพียง               หลีกเลี่ยงยาเสพติด
+            อนุรักษ์สิ่งแวดล้อม                  น้อมนำประเพณีวัฒนธรรมยั่งยืน
+          </vision>
+        </symbols>
+        <geo:Point>
+          <geo:lat>13.9291</geo:lat>
+          <geo:long>100.1134</geo:long>
+        </geo:Point>
+        <url lastchecked="2013-06-05">http://www.donphutsa.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="เมือง รักจ้อย" begin="2008-08-31" endyear="2012" />
+          <official title="TAOMayor" name="เมือง รักจ้อย" begin="2012-10-07" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="เมือง รักจ้อย" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-10-07" type="TAO" size="20"/>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="20" />
         </council>
       </office>
+      <entity type="Muban" geocode="73040401" name="บ้านหัวถนน"/>
+      <entity type="Muban" geocode="73040402" name="บ้านดอนพุทรา"/>
+      <entity type="Muban" geocode="73040403" name="บ้านดอนพุทรา"/>
+      <entity type="Muban" geocode="73040404" name="บ้านปากหว้า"/>
+      <entity type="Muban" geocode="73040405" name="บ้านหนองบอน"/>
+      <entity type="Muban" geocode="73040406" name="บ้านหัวถนน"/>
+      <entity type="Muban" geocode="73040407" name="บ้านหนองควายเฒ่า"/>
+      <entity type="Muban" geocode="73040408" name="บ้านหัวถนน"/>
+      <entity type="Muban" geocode="73040409" name="บ้านหนองปรง"/>
+      <entity type="Muban" geocode="73040410" name="บ้านหัวถนน"/>
     </entity>
     <entity type="Tambon" name="บ้านหลวง" english="Ban Luang" geocode="730405">
       <office type="TAOOffice">
-        <url>http://www.banluang.go.th/</url>
+        <geo:Point>
+          <geo:lat>13.9197</geo:lat>
+          <geo:long>100.1442</geo:long>
+        </geo:Point>
+        <url lastchecked="2013-06-05">http://www.banluang.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สมชัย ห้วยกรดวัฒนา" begin="2007-08-05" endyear="2011" />
+          <official title="TAOMayor" name="เทือง สานแดง" begin="2011-09-11" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="สมชัย ห้วยกรดวัฒนา" begin="2007-08-05" end="2011-08-04" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-10-07" type="TAO" size="10">
+            <official title="TAOCouncilChairman" name="สุรินทร์ วิเชียรณรัตน์" beginreason="ElectedByCouncil"/>
+          </term>
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="10" />
+          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="10" />
         </council>
       </office>
       <entity type="Muban" geocode="73040501" name="บ้านฝั่งคลอง" english="Ban Fang Khlong" />
@@ -1439,9 +1495,19 @@
     </entity>
     <entity type="Tambon" name="ดอนรวก" english="Don Ruak" geocode="730406">
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>13.8896</geo:lat>
+          <geo:long>100.1167</geo:long>
+        </geo:Point>
+        <url lastchecked="2013-06-05">http://www.donruak.org/</url>
         <url status="expired">http://obt-donruak.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ทองใบ บรรเทาวงษ์" begin="2009-09-06" beginreason="ElectedDirectly"/>
+        </officials>
         <council>
-          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="10" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="10" >
+            <official title="TAOCouncilChairman" name="ประกิจ ผุยรอด" beginreason="ElectedByCouncil"/>
+          </term>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="10" />
         </council>
       </office>
@@ -1453,7 +1519,11 @@
     </entity>
     <entity type="Tambon" name="ห้วยด้วน" english="Huai Duan" geocode="730407">
       <office type="TAOOffice">
-        <url>http://www.huayduan.go.th/</url>
+        <geo:Point>
+          <geo:lat>13.8858</geo:lat>
+          <geo:long>100.1058</geo:long>
+        </geo:Point>
+        <url lastchecked="2013-06-05">http://www.huayduan.go.th/</url>
         <officials>
           <official title="TAOMayor" name="วิชาญ โพธิด้วง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
@@ -2294,9 +2364,17 @@
         <geo:lat>13.9610</geo:lat>
         <geo:long>100.0819</geo:long>
       </geo:Point>
-      <url>http://www.samngam.net/</url>
+      <url lastchecked="2013-06-05">http://www.samngam.net/</url>
       <officials>
         <official title="Mayor" name="สมรัก มีใจดี" begin="2009-05-24" endyear="2013" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="สมรัก มีใจดี" begin="2005-04-17" end="2009-04-16" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        <official title="Mayor" name="สมรัก มีใจดี" begin="2001-03-19" end="2005-03-19" />
+        <official title="Mayor" name="พยงค์ พรศิริรัตน์" begin="2000-08-03" end="2001-01-25"/>
+        <official title="Mayor" name="พิเชษฐ์ สามพุ่มพวง" begin="2000-05-18" end="2000-07-21"/>
+        <official title="Mayor" name="ชรินทร์ ลี้ไพบูลย์" begin="1999-05-25" end="2000-01-04"/>
+        <reference>
+          <url>http://www.samngam.net/basic-data/boss_lavel.php</url>
+        </reference>
       </officials>
       <council>
         <term begin="2009-05-24" end="2013-05-23" type="ThesabanTambon" size="12" />
