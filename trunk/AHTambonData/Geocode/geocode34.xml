@@ -3481,12 +3481,31 @@
     </entity>
     <entity type="Tambon" name="นาเรือง" english="Na Rueang" geocode="342903">
       <office type="TAOOffice">
-        <url>http://naruang.com/</url>
+        <!-- To be upgraded to ThesabanTambon 2013-09-06 -->
+        <url lastchecked="2013-06-14">http://www.narung.go.th/</url>
+        <url status="offline">http://naruang.com/</url>
+        <officials>
+          <official title="TAOMayor" name="บุญเลิง ดาราคำ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06">
+            <meetingreference board="1" number="32" date="2013-05-29" />
+          </statuschange>
+        </history>
       </office>
+      <entity type="Muban" geocode="34290301" name="บ้านนาเรือง" english="Ban Na Rueang" />
+      <entity type="Muban" geocode="34290302" name="บ้านม่วงคำ" english="Ban Muang Kham" />
+      <entity type="Muban" geocode="34290303" name="บ้านหินลาด" english="Ban Hin Lat" />
+      <entity type="Muban" geocode="34290304" name="บ้านโนนงาม" english="Ban Non Ngam" />
+      <entity type="Muban" geocode="34290305" name="บ้านหนองกระบือ" english="Ban Nong Krabue" />
+      <entity type="Muban" geocode="34290306" name="บ้านแก้งยาง" english="Ban Kaeng Yang" />
+      <entity type="Muban" geocode="34290307" name="บ้านนาเรืองน้อย" english="Ban Na Rueang Noi" />
+      <entity type="Muban" geocode="34290308" name="บ้านหินลาดน้อย" english="Ban Hin Lat Noi" />
+      <entity type="Muban" geocode="34290309" name="บ้านทุ่งศรีเมือง" english="Ban Thung Si Mueang" />
     </entity>
   </entity>
   <entity type="Amphoe" name="นาตาล" english="Na Tan" geocode="3430">
