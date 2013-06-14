@@ -225,11 +225,11 @@
         <url status="obsolete">http://school.obec.go.th/obtslang/</url>
         <url status="obsolete">http://obtslang.host.sk/</url>
         <officials>
-          <official title="Mayor" name="ทศพล วงษ์กำปั่น" begin="2012-02-05" beginreason="ElectedDirectly"/>
-          <official title="TAOMayor" name="ประจักษ์ บัวสาย" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+          <official title="Mayor" name="ทศพล วงษ์กำปั่น" begin="2012-02-05" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประจักษ์ บัวสาย" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2012-02-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>                
+          <term begin="2012-02-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="20" />
         </council>
         <history>
@@ -1070,10 +1070,10 @@
     <entity type="Tambon" name="เกาะเปริด" english="Ko Perit" geocode="220602">
       <office type="TAOOffice">
         <officials>
-          <official title="TAOMayor" name="บุญเชิด อุดมเลิศวนสิน" begin="2012-10-07" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="บุญเชิด อุดมเลิศวนสิน" begin="2012-10-07" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2012-10-07" type="TAO" size="14"/>
+          <term begin="2012-10-07" type="TAO" size="14" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
         </council>
@@ -1090,10 +1090,10 @@
       <office type="TAOOffice">
         <url>http://www.nongchim.net/</url>
         <officials>
-          <official title="TAOMayor" name="ธนกร ชาวแกลง" begin="2012-10-07" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ธนกร ชาวแกลง" begin="2012-10-07" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2012-10-07" type="TAO" size="20"/>
+          <term begin="2012-10-07" type="TAO" size="20" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="20" />
         </council>
@@ -1134,7 +1134,7 @@
     <entity type="Tambon" name="บางสระเก้า" english="Bang Sa Kao" geocode="220606">
       <office type="TAOOffice">
         <officials>
-          <official title="TAOMayor" name="สมนึก สุขสมัย" begin="2009-09-06" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="สมนึก สุขสมัย" begin="2009-09-06" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="10" />
@@ -1151,10 +1151,10 @@
       <office type="TAOOffice">
         <url>http://www.bangkachai.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="บุญเลิศ บุญมานะ" begin="2012-10-07" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="บุญเลิศ บุญมานะ" begin="2012-10-07" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2012-10-07" type="TAO" size="18"/>
+          <term begin="2012-10-07" type="TAO" size="18" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
@@ -1521,15 +1521,24 @@
     </entity>
     <entity type="Tambon" name="สนามไชย" english="Sanam Chai" geocode="220904">
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2013-09-06 -->
         <geo:Point>
           <geo:lat>12.6230</geo:lat>
           <geo:long>101.8915</geo:long>
         </geo:Point>
-        <url>http://www.saosanamchai.go.th/</url>
+        <url status="offline">http://www.saosanamchai.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="บัญยูน อินทนิน" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06">
+            <meetingreference board="1" number="32" date="2013-05-29" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="22090401" name="บ้านหนองหงษ์" english="Ban Nong Hong" />
       <entity type="Muban" geocode="22090402" name="บ้านตรอกประดู่" english="Ban Trok Pradu" />
@@ -1848,7 +1857,7 @@
     <office type="MunicipalityOffice">
       <url>http://www.paknamlamsinghamunicipal.go.th/</url>
       <council>
-        <term begin="2012-12-09" type="ThesabanTambon" size="12"/>
+        <term begin="2012-12-09" type="ThesabanTambon" size="12" />
         <term begin="2008-11-02" end="2012-11-01" type="ThesabanTambon" size="12" />
         <term begin="2004-09-26" end="2008-09-25" type="ThesabanTambon" size="12" />
       </council>
@@ -1858,10 +1867,10 @@
     <office type="MunicipalityOffice">
       <url>http://www.phliocity.go.th/</url>
       <officials>
-        <official title="Mayor" name="รังสรรค์ เจริญวัย" begin="2012-12-09" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="รังสรรค์ เจริญวัย" begin="2012-12-09" beginreason="ElectedDirectly" />
       </officials>
       <council>
-        <term begin="2012-12-09" type="ThesabanTambon" size="12"/>
+        <term begin="2012-12-09" type="ThesabanTambon" size="12" />
         <term begin="2008-11-02" end="2012-11-01" type="ThesabanTambon" size="12" />
         <term begin="2004-09-26" end="2008-09-25" type="ThesabanTambon" size="12" />
       </council>

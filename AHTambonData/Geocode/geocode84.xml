@@ -2245,11 +2245,15 @@
     </entity>
     <entity type="Tambon" name="ควนศรี" english="Khuan Si" geocode="841206">
       <office type="TAOOffice">
+        <!-- To be upgraded to ThesabanTambon 2013-09-06 -->
+        <symbols>
+          <vision>ตำบลน่าอยู่ เชิดชูประเพณีวัฒนธรรม เลิศล้ำการศึกษา มุ่งหน้าสู่ประชาคมเศรษฐกิจอาเซียน</vision>
+        </symbols>
         <geo:Point>
           <geo:lat>8.7072</geo:lat>
           <geo:long>99.3311</geo:long>
         </geo:Point>
-        <url>http://www.khuansri.go.th/</url>
+        <url lastchecked="2013-06-14">http://www.khuansri.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ธีระ โพธิ์เพชร" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
@@ -2257,6 +2261,11 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06">
+            <meetingreference board="1" number="32" date="2013-05-29" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="84120601" name="บ้านควนมหาชัย" english="Ban Khuan Maha Chai" />
       <entity type="Muban" geocode="84120602" name="บ้านควนศรี" english="Ban Khuan Si" />
@@ -2586,12 +2595,14 @@
           <geo:lat>8.7630</geo:lat>
           <geo:long>99.0646</geo:long>
         </geo:Point>
-        <url lastchecked="2012-12-13">http://www.bansadet.go.th/</url>
+        <url lastchecked="2013-06-14">http://www.bansadet.go.th/</url>
         <officials>
+          <official title="Mayor" name="ศาสตร์สรรค์ จันทร์แก้ว" begin="2013-05-26" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="นพรัตน์ ไทยเกิด" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
           <official title="TAOMayor" name="สมพร แย้มมะลิ" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2013-05-26" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="40" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="40" />
         </council>
