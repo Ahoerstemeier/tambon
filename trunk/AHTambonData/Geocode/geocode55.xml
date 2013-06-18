@@ -1503,16 +1503,37 @@
     </entity>
     <entity type="Tambon" name="งอบ" english="Ngop" geocode="550802">
       <office type="TAOOffice">
+        <!-- to be upgraded to ThesabanTambon 2013-09-06 -->
         <geo:Point>
           <geo:lat>19.4831</geo:lat>
           <geo:long>100.8970</geo:long>
         </geo:Point>
-        <url>http://www.ngoblocal.com/</url>
+        <url lastchecked="2013-06-18">http://www.ngoblocal.go.th/</url>
+        <url status="offline">http://www.ngoblocal.com/</url>
+        <officials>
+          <official title="TAOMayor" name="สม เทพจันตา" begin="2009-09-06" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon">
+            <meetingreference board="2" number="26" date="2013-05-22" />
+          </statuschange>
+        </history>
       </office>
+      <entity type="Muban" geocode="55080201" name="บ้านงอบศาลา" english="Ban Ngop Sala" />
+      <entity type="Muban" geocode="55080202" name="บ้านห้วยสะแตง" english="Ban Huai Sataeng" />
+      <entity type="Muban" geocode="55080203" name="บ้านภูคำ" english="Ban Phu Kham" />
+      <entity type="Muban" geocode="55080204" name="บ้านทุ่งสุน" english="Ban Thung Sun" />
+      <entity type="Muban" geocode="55080205" name="บ้านงอบเหนือ" english="Ban Ngop Nuea" />
+      <entity type="Muban" geocode="55080206" name="บ้านน้ำลาด" english="Ban Nam Lat" />
+      <entity type="Muban" geocode="55080207" name="บ้านขุนน้ำลาด" english="Ban Khun Nam Lat" />
+      <entity type="Muban" geocode="55080208" name="บ้านงอบใต้" english="Ban Ngop Tai" />
+      <entity type="Muban" geocode="55080209" name="บ้านงอบกลาง" english="Ban Ngop Klang" />
+      <entity type="Muban" geocode="55080210" name="บ้านใต้ร่มโพธิ์ทอง" english="Ban Tai Rom Pho Thong" />
+      <entity type="Muban" geocode="55080211" name="บ้านมณีพฤกษ์" english="Ban Mani Phruek" />
     </entity>
     <entity type="Tambon" name="และ" english="Lae" geocode="550803">
       <symbols>
