@@ -2215,7 +2215,9 @@
     <entity type="Tambon" name="นาดูน" english="Na Dun" geocode="441001" />
     <entity type="Tambon" name="หนองไผ่" english="Nong Phai" geocode="441002">
       <office type="TAOOffice">
-        <url>http://hnongpicity.net/</url>
+        <!-- to be upgraded to ThesabanTambon 2013-07-27 -->
+        <url lastchecked="2013-06-18">http://www.nongphinadoon.go.th/</url>
+        <url status="offline">http://hnongpicity.net/</url>
         <officials>
           <official title="TAOMayor" name="ธงชัย แสงสว่าง" begin="2009-07-26" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
@@ -2223,6 +2225,11 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon">
+            <meetingreference board="2" number="26" date="2013-05-22" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="44100201" name="บ้านหนองไผ่" english="Ban Nong Phai" />
       <entity type="Muban" geocode="44100202" name="บ้านลิ้นฟ้า" english="Ban Lin Fa" />

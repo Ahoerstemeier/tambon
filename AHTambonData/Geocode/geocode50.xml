@@ -3120,10 +3120,23 @@
     </entity>
     <entity type="Tambon" name="บ้านปง" english="Ban Pong" geocode="501510">
       <office type="TAOOffice">
+        <!-- to be upgraded to ThesabanTambon 2013-09-06 -->
+        <geo:Point>
+          <geo:lat>18.7502</geo:lat>
+          <geo:long>98.8895</geo:long>
+        </geo:Point>
+        <officials>
+          <official title="TAOMayor" name="ประพันธ์ อินกุนะ" begin="2009-09-06" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon">
+            <meetingreference board="2" number="26" date="2013-05-22" />
+          </statuschange>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="น้ำแพร่" english="Nam Phrae" geocode="501511">
