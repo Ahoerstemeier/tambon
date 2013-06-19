@@ -63,6 +63,28 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="SmallMediumLarge">
+    <xs:annotation>
+      <xs:documentation>Small medium large entity categorization.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Small (ขนาดเล็ก).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>Medium (ขนาดกลาง).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Large (ขนาดใหญ่).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="OfficeType">
     <xs:annotation>
@@ -711,6 +733,22 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:complexType name="LocalAdministrationData">
+    <xs:annotation>
+      <xs:documentation>Data defined by the Department of Local Administration (DOLA).</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="code" use="optional" type="xs:int">
+      <xs:annotation>
+        <xs:documentation>DOLA code for the entitiy.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="SML" use="optional" type="t:SmallMediumLarge">
+      <xs:annotation>
+        <xs:documentation>Categorization of the entity in the SML system.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
   <xs:complexType name="ThaiAddressVillage">
     <xs:annotation>
       <xs:documentation>Village (Muban) part of address.</xs:documentation>
@@ -796,6 +834,11 @@
       <xs:element minOccurs="0" maxOccurs="1" type='t:Symbols' name='symbols'>
         <xs:annotation>
           <xs:documentation>Symbols, slogan and vision statements of the office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs='0' maxOccurs='1' type='t:LocalAdministrationData' name='dola'>
+        <xs:annotation>
+          <xs:documentation>Local administration data.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" ref="geo:Point">

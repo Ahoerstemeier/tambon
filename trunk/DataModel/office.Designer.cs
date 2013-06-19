@@ -452,6 +452,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private Symbols symbolsField;
         
+        private LocalAdministrationData dolaField;
+        
         private Point pointField;
         
         private ThaiAddress addressField;
@@ -487,6 +489,7 @@ namespace De.AHoerstemeier.Tambon {
             this.socialwebField = new SocialWebLinks();
             this.urlField = new List<MyUri>();
             this.addressField = new ThaiAddress();
+            this.dolaField = new LocalAdministrationData();
             this.symbolsField = new Symbols();
         }
         
@@ -508,12 +511,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Local administration data.
+        /// </summary>
+        /// <value>
+        /// The dola.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public LocalAdministrationData dola {
+            get {
+                return this.dolaField;
+            }
+            set {
+                this.dolaField = value;
+            }
+        }
+        
+        /// <summary>
         /// Location of office, pointing approximately at the main entrance.
         /// </summary>
         /// <value>
         /// The Point.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Point Point {
             get {
@@ -530,7 +550,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The address.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ThaiAddress address {
             get {
@@ -547,7 +567,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The url.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("url", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("url", Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<MyUri> url {
             get {
@@ -564,7 +584,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The socialweb.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SocialWebLinks socialweb {
             get {
@@ -581,7 +601,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The officials.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public OfficialList officials {
             get {
@@ -598,7 +618,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The council.
         /// </value>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
         [System.Xml.Serialization.XmlArrayItemAttribute("term", IsNullable=false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<CouncilTerm> council {
@@ -616,7 +636,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The oldlocations.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("oldlocations", Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute("oldlocations", Order=8)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<OldLocation> oldlocations {
             get {
@@ -633,7 +653,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The history.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public HistoryList history {
             get {
@@ -711,6 +731,119 @@ namespace De.AHoerstemeier.Tambon {
                 this.commentField = value;
             }
         }
+    }
+    
+    /// <summary>
+    /// Data defined by the Department of Local Administration (DOLA).
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LocalAdministrationData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class LocalAdministrationData {
+        
+        private int codeField;
+        
+        private bool codeFieldSpecified;
+        
+        private SmallMediumLarge sMLField;
+        
+        private bool sMLFieldSpecified;
+        
+        /// <summary>
+        /// DOLA code for the entitiy.
+        /// </summary>
+        /// <value>
+        /// The code.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int code {
+            get {
+                return this.codeField;
+            }
+            set {
+                this.codeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool codeSpecified {
+            get {
+                return this.codeFieldSpecified;
+            }
+            set {
+                this.codeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Categorization of the entity in the SML system.
+        /// </summary>
+        /// <value>
+        /// The SML.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SmallMediumLarge SML {
+            get {
+                return this.sMLField;
+            }
+            set {
+                this.sMLField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool SMLSpecified {
+            get {
+                return this.sMLFieldSpecified;
+            }
+            set {
+                this.sMLFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Small medium large entity categorization.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum SmallMediumLarge {
+        
+        /// <summary>
+        /// Small (ขนาดเล็ก).
+        /// </summary>
+        S,
+        
+        /// <summary>
+        /// Medium (ขนาดกลาง).
+        /// </summary>
+        M,
+        
+        /// <summary>
+        /// Large (ขนาดใหญ่).
+        /// </summary>
+        L,
     }
     
     /// <summary>
