@@ -2010,6 +2010,11 @@ namespace De.AHoerstemeier.Tambon {
         Appointed,
         
         /// <summary>
+        /// Title of official changed, e.g. change of TAOChairman to TAOMayor
+        /// </summary>
+        OfficialTypeChange,
+        
+        /// <summary>
         /// No specified reason.
         /// </summary>
         Unknown,
@@ -2073,6 +2078,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Term shortened to allow new election after significant change of area of unit.
         /// </summary>
         AreaChange,
+        
+        /// <summary>
+        /// Title of official changed, e.g. change of TAOChairman to TAOMayor
+        /// </summary>
+        OfficialTypeChange,
         
         /// <summary>
         /// No specified reason.
