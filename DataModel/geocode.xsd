@@ -59,6 +59,11 @@
             <xs:documentation>Date the change became officially effective.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="status" type="t:ChangeStatus" use="optional" default="Done">
+          <xs:annotation>
+            <xs:documentation>State of the change.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
         <xs:attributeGroup ref="t:Comment" />
       </xs:extension>
     </xs:complexContent>

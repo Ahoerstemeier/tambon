@@ -452,6 +452,39 @@
     </xs:simpleContent>
   </xs:complexType>
 
+  <xs:simpleType name="ChangeStatus">
+    <xs:annotation>
+      <xs:documentation>Status of a change request.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Gazette">
+        <xs:annotation>
+          <xs:documentation>Change announced in Royal Gazette.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Done">
+        <xs:annotation>
+          <xs:documentation>Change approved and done.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pending">
+        <xs:annotation>
+          <xs:documentation>Change waiting for final approval.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Withdrawn">
+        <xs:annotation>
+          <xs:documentation>Change not done though originally approved.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Denied">
+        <xs:annotation>
+          <xs:documentation>Change not approved.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
   <xs:simpleType name="Ministry">
     <xs:annotation>
       <xs:documentation>Ministries in Thailand.</xs:documentation>
