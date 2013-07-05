@@ -1551,11 +1551,19 @@
     </entity>
     <entity type="Tambon" name="ช้างข้าม" english="Chang Kham" geocode="220905">
       <office type="TAOOffice">
-        <url>http://www.changkham.go.th/</url>
+        <url status="offline">http://www.changkham.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ประเสริฐศักดิ์ รัตโนภาส" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="26" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Pending">
+            <meetingreference board="2" number="30" date="2013-06-19" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="22090501" name="บ้านเตาปูน" english="Ban Tao Pun" />
       <entity type="Muban" geocode="22090502" name="บ้านอ้ายถุย" english="Ban Ai Thui" />
