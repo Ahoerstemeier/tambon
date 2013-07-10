@@ -511,9 +511,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool locationgeocodeFieldSpecified;
         
-        private uint idField;
-        
-        private bool idFieldSpecified;
+        private string idField;
         
         private uint indexField;
         
@@ -700,29 +698,12 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint id {
+        public string id {
             get {
                 return this.idField;
             }
             set {
                 this.idField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool idSpecified {
-            get {
-                return this.idFieldSpecified;
-            }
-            set {
-                this.idFieldSpecified = value;
             }
         }
         

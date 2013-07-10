@@ -313,9 +313,9 @@
       <xs:annotation>
         <xs:documentation>Geocode of the lowest possible administrative unit covering the park.</xs:documentation>
       </xs:annotation>
+      <!--or maybe better a Thai address child element? -->
     </xs:attribute>
-    <!--or maybe better a Thai address child element? -->
-    <xs:attribute name="id" type="xs:unsignedInt" use="optional">
+    <xs:attribute name="id" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>Id of the park.</xs:documentation>
       </xs:annotation>
