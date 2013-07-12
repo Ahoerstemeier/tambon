@@ -330,7 +330,7 @@
       <entity type="Muban" geocode="50020514" name="บ้านแม่เตี๊ยะใต้" english="Ban Mae Tia Tai" />
       <entity type="Muban" geocode="50020515" name="บ้านคะนาอัน" english="Ban Kha Na An" />
       <entity type="Muban" geocode="50020516" name="บ้านบน" english="Ban Bon" />
-      <entity type="Muban" geocode="50020517" name="บ้านหาดนาค" english="Ban Hat Nat" />
+      <entity type="Muban" geocode="50020517" name="บ้านหาดนาค" english="Ban Hat Nak" />
       <entity type="Muban" geocode="50020518" name="บ้านพุทธนิมิตร" english="Ban Phuttha Nimit" />
       <entity type="Muban" geocode="50020519" name="บ้านชาววัง" english="Ban Chao Wang" />
       <entity type="Muban" geocode="50020520" name="บ้านเด่นตะวันใต้" english="Ban Den Tawan Tai" />
@@ -1775,7 +1775,7 @@
       <entity type="Muban" geocode="50091011" name="บ้านแม่ป่าไผ่" english="Ban Mae Pa Phai" />
       <entity type="Muban" geocode="50091012" name="บ้านไร่" english="Ban Rai" />
       <entity type="Muban" geocode="50091013" name="บ้านหนองบวกช้าง" english="Ban Nong Buak Chang" />
-      <entity type="Muban" geocode="50091014" name="บ้านสันดอยนาค" english="Ban San Doi Nat" />
+      <entity type="Muban" geocode="50091014" name="บ้านสันดอยนาค" english="Ban San Doi Nak" />
       <entity type="Muban" geocode="50091015" name="บ้านดอยป่าไผ่" english="Ban Doi Pa Phai" />
     </entity>
     <entity type="Tambon" name="แม่ข่า" english="Mae Kha" geocode="500911">
@@ -3041,7 +3041,7 @@
       <entity type="Muban" geocode="50150403" name="บ้านหนองตอง" english="Ban Nong Tong" />
       <entity type="Muban" geocode="50150404" name="บ้านป่าลาน" english="Ban Pa Lan" />
       <entity type="Muban" geocode="50150405" name="บ้านเกาะ" english="Ban Ko" />
-      <entity type="Muban" geocode="50150406" name="บ้านท่าขี้นาค" english="Ban Tha Khi Nat" />
+      <entity type="Muban" geocode="50150406" name="บ้านท่าขี้นาค" english="Ban Tha Khi Nak" />
       <entity type="Muban" geocode="50150407" name="บ้านหนองช้าง" english="Ban Nong Chang" />
       <entity type="Muban" geocode="50150408" name="บ้านเชียงแสน" english="Ban Chiang Saen" />
       <entity type="Muban" geocode="50150409" name="บ้านหนองไคร้" english="Ban Nong Khrai" />
@@ -4468,12 +4468,13 @@
       </socialweb>
       <officials>
         <!-- No Mayor end term in 2012 -->
-        <official title="Mayor" name="ประดิษฐ์ สอาดล้วน" inoffice="2011" />
-        <officialterm title="Mayor" begin="2006-06-25" endyear="2010" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ประดิษฐ์ สอาดล้วน" begin="2010-08-01" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2006-06-25" end="2010-06-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
         <term begin="2012-04-08" type="ThesabanTambon" size="12" />
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
+        <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
     </office>
     <history>
@@ -5101,13 +5102,19 @@
       </address>
       <url>http://www.cherngdoi.go.th/</url>
       <officials>
-        <official title="Mayor" name="นายมงคล ชัยวุฒิ" begin="2008-12-21" endyear="2012" />
-        <official title="TAOMayor" name="มงคล ชัยวุฒิ" inoffice="2008" />
+        <official title="Mayor" name="มงคล ชัยวุฒิ" begin="2008-12-21" end="2012-12-20" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="มงคล ชัยวุฒิ" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
-        <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" />
+        <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18">
+        <meetingreference board="2" number="46" date="2008-06-25" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="แม่โป่ง" english="Mae Pong" geocode="5048" parent="5005" tambon="500512">
     <office type="MunicipalityOffice">
