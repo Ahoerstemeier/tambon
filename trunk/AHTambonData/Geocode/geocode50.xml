@@ -3111,7 +3111,6 @@
     </entity>
     <entity type="Tambon" name="หนองควาย" english="Nong Khwai" geocode="501509">
       <office type="TAOOffice">
-        <!-- To become ThesabanTambon 2013-09-05 -->
         <geo:Point>
           <geo:lat>18.7235</geo:lat>
           <geo:long>98.9263</geo:long>
@@ -3125,6 +3124,11 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-05" status="Pending">
+            <meetingreference board="2" number="24" date="2013-05-15" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="50150901" name="บ้านตองกาย" english="Ban Tong Kai" />
       <entity type="Muban" geocode="50150902" name="บ้านฟ่อน" english="Ban Fon" />
