@@ -168,7 +168,6 @@
     </entity>
     <entity type="Tambon" name="ท่าแร่" english="Tha Rae" geocode="470107">
       <office type="TAOOffice">
-        <!-- To become ThesabanTambon ... and renamed to เมืองทองท่าแร่ (Mueang Thong Tha Rae) -->
         <geo:Point>
           <geo:lat>17.2607</geo:lat>
           <geo:long>104.1881</geo:long>
@@ -181,6 +180,12 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="14" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" comment="ECT table wrongly says 16 - Mu 1 completely Thesaban" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-05" status="Pending">
+            <meetingreference board="2" number="24" date="2013-05-15" />
+          </statuschange>
+          <rename oldname="ท่าแร่" oldenglish="Tha Rae" name="เมืองทองท่าแร่" english="Mueang Thong Tha Rae" status="Pending" />
+        </history>
       </office>
       <entity type="Muban" geocode="47010701" name="บ้านท่าแร่" english="Ban Tha Rae" />
       <entity type="Muban" geocode="47010702" name="บ้านพะโค" english="Ban Pha Kho" />
@@ -2516,13 +2521,23 @@
   </entity>
   <entity type="ThesabanTambon" name="ท่าแร่" english="Tha Rae" geocode="4797" parent="4701">
     <office type="MunicipalityOffice">
+      <symbols>
+        <vision>
+          สร้างความสมานฉันท์ในชุมชน
+          พัฒนาอาชีพที่สร้างรายได้้
+          ใส่ใจพัฒนาคุณภาพสิ่งแวดล้อม
+          เพียบพร้อมการให้บริการประชาชน
+          มุ่งผลสำเร็จการพัฒนาพื้นฐานที่ยั่งยืน
+          ส่งเสริมฟื้นฟูวัฒนธรรมประเพณี
+        </vision>
+      </symbols>
       <geo:Point>
         <geo:lat>17.2585</geo:lat>
         <geo:long>104.1886</geo:long>
       </geo:Point>
-      <url>http://www.tharae.org/</url>
+      <url lastchecked="2013-07-15">http://www.tharae.org/</url>
       <officials>
-        <!-- no Mayor end term in 2012 -->
+        <official title="Mayor" name="ไพรัช ยงคำชา" begin="2012-01-08" beginreason="ElectedDirectly" />
       </officials>
       <council>
         <term begin="2008-04-19" end="2012-04-18" type="ThesabanTambon" size="12" />
