@@ -34,6 +34,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<VisionSlogan> missionField;
         
+        private List<VisionSlogan> goalField;
+        
         private string symboltreeField;
         
         private string symbolflowerField;
@@ -46,6 +48,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of Symbols.
         /// </summary>
         public Symbols() {
+            this.goalField = new List<VisionSlogan>();
             this.missionField = new List<VisionSlogan>();
             this.visionField = new List<VisionSlogan>();
             this.sloganField = new VisionSlogan();
@@ -121,12 +124,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Goal (เป้าหมาย) of the entity.
+        /// </summary>
+        /// <value>
+        /// The goal.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("goal", Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<VisionSlogan> goal {
+            get {
+                return this.goalField;
+            }
+            set {
+                this.goalField = value;
+            }
+        }
+        
+        /// <summary>
         /// Botanical name of the symbol tree (ต้นไม้ประจำจังหวัด).
         /// </summary>
         /// <value>
         /// The symboltree.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string symboltree {
             get {
@@ -143,7 +163,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The symbolflower.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string symbolflower {
             get {
@@ -160,7 +180,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The color.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SymbolColor color {
             get {
