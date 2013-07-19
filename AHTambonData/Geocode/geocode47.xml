@@ -529,7 +529,6 @@
     </entity>
     <entity type="Tambon" name="วังยาง" english="Wang Yang" geocode="470402">
       <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon in 2013?-->
         <symbols>
           <vision>ภายในปี 2558 องค์การบริหารส่วนตำบลวังยาง น่าอยู่ คู่วิถีชีวิตที่สมดุล และยั่งยืน</vision>
         </symbols>
@@ -543,6 +542,11 @@
           <!-- Mu 11 created 2004-09 -->
           <!-- Mu 10 created 2003-09 -->
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Pending">
+            <meetingreference board="1" number="31" date="2013-05-22" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="47040201" name="บ้านวังยาง" english="Ban Wang Yang" />
       <entity type="Muban" geocode="47040202" name="บ้านเปือย" english="Ban Pueai" />
@@ -606,11 +610,19 @@
     </entity>
     <entity type="Tambon" name="ไร่" english="Rai" geocode="470405">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="ทวีศักดิ์ ประทุม" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="32" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="30" finalsize="32" sizechangereason="MubanCreation" comment="Mu 16 created 2006-12" />
           <!-- Mu 15 created 2003-09 -->
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Pending">
+            <meetingreference board="1" number="36" date="2013-06-26" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="47040501" name="บ้านไร่" english="Ban Rai" />
       <entity type="Muban" geocode="47040502" name="บ้านไฮ่" english="Ban Hai" />
@@ -1597,10 +1609,20 @@
     </entity>
     <entity type="Tambon" name="ท่าก้อน" english="Tha Kon" geocode="471105">
       <office type="TAOOffice">
+        <!-- Longdo: 17.76823,103.96332-->
+        <url lastchecked="2013-07-19" status="hacked">http://takon.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ศิริพงศ์ เคนไชยวงศ์" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Pending">
+            <meetingreference board="1" number="36" date="2013-06-26" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="47110501" name="บ้านท่าก้อน" english="Ban Tha Kon" />
       <entity type="Muban" geocode="47110502" name="บ้านท่าควาย" english="Ban Tha Khwai" />
