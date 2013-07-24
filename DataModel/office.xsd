@@ -730,6 +730,11 @@
           <xs:documentation>Goal (เป้าหมาย) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:VisionSlogan' name='song'>
+        <xs:annotation>
+          <xs:documentation>Text of the song (เพลงประจำจังหวัด) of the entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="symboltree" type="xs:string">
         <xs:annotation>
           <xs:documentation>Botanical name of the symbol tree (ต้นไม้ประจำจังหวัด).</xs:documentation>
@@ -738,6 +743,11 @@
       <xs:element minOccurs="0" maxOccurs="1" name="symbolflower" type="xs:string">
         <xs:annotation>
           <xs:documentation>Botanical name of the symbol flower (ดอกไม้ประจำจังหวัด).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="symbolbird" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Scientific name of the symbol bird (นกประจำจังหวัด).</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="color" type="t:SymbolColor">
