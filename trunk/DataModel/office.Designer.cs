@@ -36,9 +36,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<VisionSlogan> goalField;
         
+        private List<VisionSlogan> songField;
+        
         private string symboltreeField;
         
         private string symbolflowerField;
+        
+        private string symbolbirdField;
         
         private SymbolColor colorField;
         
@@ -48,6 +52,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of Symbols.
         /// </summary>
         public Symbols() {
+            this.songField = new List<VisionSlogan>();
             this.goalField = new List<VisionSlogan>();
             this.missionField = new List<VisionSlogan>();
             this.visionField = new List<VisionSlogan>();
@@ -141,12 +146,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Text of the song (เพลงประจำจังหวัด) of the entity.
+        /// </summary>
+        /// <value>
+        /// The song.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("song", Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<VisionSlogan> song {
+            get {
+                return this.songField;
+            }
+            set {
+                this.songField = value;
+            }
+        }
+        
+        /// <summary>
         /// Botanical name of the symbol tree (ต้นไม้ประจำจังหวัด).
         /// </summary>
         /// <value>
         /// The symboltree.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string symboltree {
             get {
@@ -163,7 +185,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The symbolflower.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string symbolflower {
             get {
@@ -175,12 +197,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Scientific name of the symbol bird (นกประจำจังหวัด).
+        /// </summary>
+        /// <value>
+        /// The symbolbird.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string symbolbird {
+            get {
+                return this.symbolbirdField;
+            }
+            set {
+                this.symbolbirdField = value;
+            }
+        }
+        
+        /// <summary>
         /// Symbol color of the entity.
         /// </summary>
         /// <value>
         /// The color.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SymbolColor color {
             get {
