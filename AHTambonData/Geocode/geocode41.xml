@@ -1885,6 +1885,7 @@
       <entity type="Muban" geocode="41100415" name="บ้านสมสวัสดิ์" english="Ban Som Sawat" />
       <entity type="Muban" geocode="41100416" name="บ้านยางเจริญ" english="Ban Yang Charoen" />
       <entity type="Muban" geocode="41100417" name="บ้านดงเศรษฐี" english="Ban Dong Setthi" />
+      <entity type="Muban" geocode="41100418" name="บ้านดงสวรรค์" english="Ban Dong Sawan" />
     </entity>
     <entity type="Tambon" name="คำโคกสูง" english="Kham Khok Sung" geocode="411005">
       <office type="TAOOffice">
@@ -4226,20 +4227,27 @@
       </council>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="ผาสุก" english="Pha Suk" geocode="4160" parent="4104" tambon="411004">
+  <entity type="ThesabanTambon" name="ผาสุก" english="Pha Suk" geocode="4160" parent="4110" tambon="411004">
     <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>17.1508</geo:lat>
         <geo:long>103.5595</geo:long>
       </geo:Point>
-      <url lastchecked="2012-08-29">http://www.phasuk-wang.com/</url>
+      <url lastonline="2012-08-29" status="expired">http://www.phasuk-wang.com/</url>
       <officials>
-        <official title="Mayor" name="อนันต์ ผการัตน์" begin="2008-11-23" end="2012-11-22" />
+        <official title="Mayor" name="สนธิ สีดากูด" begin="2013-01-06" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="อนันต์ ผการัตน์" begin="2008-11-23" end="2012-11-22" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
-        <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
+        <term begin="2013-01-06" type="ThesabanTambon" size="12" />
+        <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-01">
+        <meetingreference board="2" number="46" date="2008-06-25" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="หัวนาคำ" english="Hua Na Kham" geocode="4159" parent="4109" tambon="410904">
     <office type="MunicipalityOffice">
