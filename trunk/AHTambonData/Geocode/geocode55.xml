@@ -1621,23 +1621,39 @@
     </office>
     <entity type="Tambon" name="เชียงกลาง" english="Chiang Klang" geocode="550901">
       <office type="TAOOffice">
-        <url lastchecked="2013-03-09" comment="hacked?">http://ckpklocal.com/</url>
+        <url lastchecked="2013-07-25" status="hacked">http://ckpklocal.com/</url>
         <url status="offline">http://www.chiangklanglocal.org/</url>
         <officials>
           <official title="TAOMayor" name="สามารถ ขอดเตชะ" begin="2012-05-19" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2012-05-19" type="TAO" size="26" sizechangereason="Unknown" />
-          <!-- Change of area of Th. Chiang Klang? -->
+          <!-- Change of area of Th. Chiang Klang? Mu 1,2 of Phaya Kaeo have very few citizen in TAO, maybe earlier had 0? -->
           <term begin="2008-04-06" end="2012-04-05" type="TAO" size="22" />
           <term begin="2004-02-29" end="2008-02-28" type="TAO" size="22" />
           <!-- Mu 12 created 2003-09 -->
           <!-- Mu 13 created 2005-10 -->
         </council>
+        <history>
+          <rename oldname="เชียงกลาง" oldenglish="Chiang Klang" name="เชียงกลางพญาแก้ว" english="Chiang Klang Phaya Kaeo" status="Pending">
+            <meetingreference board="2" number="32" date="2013-07-03" />
+          </rename>
+          <mergedwith mergefromtype="SaphaTambon" mergefrom="550908" effective="2004-07-09" status="Gazette">
+            <gazetteref volume="121" page="7" issue="พิเศษ 75 ง" date="2004-07-09" />
+          </mergedwith>
+        </history>
       </office>
+      <entity type="Muban" geocode="55090101" name="บ้านศรีอุดม" english="Ban Si Udom" />
+      <entity type="Muban" geocode="55090102" name="บ้านเชียงโคม" english="Ban Chiang Khom" />
+      <entity type="Muban" geocode="55090103" name="บ้านเจดีย์" english="Ban Chedi" />
+      <entity type="Muban" geocode="55090104" name="บ้านดู่" english="Ban Du" />
       <entity type="Muban" geocode="55090105" name="บ้านสบกอน" english="Ban Sop Kon" />
       <entity type="Muban" geocode="55090106" name="บ้านหนอง" english="Ban Nong" />
-
+      <entity type="Muban" geocode="55090107" name="บ้านชี" english="Ban Chi" />
+      <entity type="Muban" geocode="55090108" name="บ้านกอก" english="Ban Kok" />
+      <entity type="Muban" geocode="55090109" name="บ้านงิ้ว" english="Ban Ngio" />
+      <entity type="Muban" geocode="55090110" name="บ้านเจดีย์ 2" english="Ban Chedi 2" />
+      <entity type="Muban" geocode="55090111" name="บ้านสบกอน 2" english="Ban Sop Kon 2" />
       <entity type="Muban" geocode="55090112" name="บ้านร่มไทร" english="Ban Rom Sai" />
       <entity type="Muban" geocode="55090113" name="บ้านสบกอน ๓" english="Ban Sop Kon 3" />
     </entity>
@@ -1681,7 +1697,15 @@
     <entity type="Tambon" name="นาไร่หลวง" english="Na Rai Luang" geocode="550905" newgeocode="551301" />
     <entity type="Tambon" name="ชนแดน" english="Chon Daen" geocode="550906" newgeocode="551302" />
     <entity type="Tambon" name="ยอด" english="Yot" geocode="550907" newgeocode="551303" />
-    <entity type="Tambon" name="พญาแก้ว" english="Phaya Kaeo" geocode="550908" />
+    <entity type="Tambon" name="พญาแก้ว" english="Phaya Kaeo" geocode="550908">
+      <entity type="Muban" geocode="55090801" name="บ้านน้ำคา" english="Ban Nam Kha" />
+      <entity type="Muban" geocode="55090802" name="บ้านคันนา" english="Ban Khan Na" />
+      <entity type="Muban" geocode="55090803" name="บ้านพูล" english="Ban Phun" />
+      <entity type="Muban" geocode="55090804" name="บ้านพญาแก้ว" english="Ban Phaya Kaeo" />
+      <entity type="Muban" geocode="55090805" name="บ้านผาน้ำย้อย" english="Ban Pha Nam Yoi" />
+      <entity type="Muban" geocode="55090806" name="บ้านเกวต" english="Ban Kwet" />
+      <entity type="Muban" geocode="55090807" name="บ้านม่วง" english="Ban Muang" />
+    </entity>
     <entity type="Tambon" name="พระพุทธบาท" english="Phra Phutthabat" geocode="550909">
       <office type="MunicipalityOffice">
         <officials>
