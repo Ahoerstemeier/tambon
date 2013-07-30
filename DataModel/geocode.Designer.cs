@@ -15,8 +15,9 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryMergedWith))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolish))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAreaChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryMergedWith))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCreate))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpellingBase))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAlternativeName))]
@@ -118,75 +119,6 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
-    /// Entity was enlarged by taking over responsibility from dissolved entities.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryMergedWith", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryMergedWith : HistoryEntryBase {
-        
-        private EntityType mergefromtypeField;
-        
-        private uint mergefromField;
-        
-        private bool mergefromFieldSpecified;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType mergefromtype {
-            get {
-                return this.mergefromtypeField;
-            }
-            set {
-                this.mergefromtypeField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint mergefrom {
-            get {
-                return this.mergefromField;
-            }
-            set {
-                this.mergefromField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool mergefromSpecified {
-            get {
-                return this.mergefromFieldSpecified;
-            }
-            set {
-                this.mergefromFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <summary>
     /// Entity was dissolved.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
@@ -251,6 +183,202 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.mergetoFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Area covered by the entity was changed.
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryMergedWith))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryAreaChange", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HistoryAreaChange : HistoryEntryBase {
+        
+        private EntityType typeField;
+        
+        private bool typeFieldSpecified;
+        
+        private double oldareaField;
+        
+        private bool oldareaFieldSpecified;
+        
+        private double newareaField;
+        
+        private bool newareaFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool typeSpecified {
+            get {
+                return this.typeFieldSpecified;
+            }
+            set {
+                this.typeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double oldarea {
+            get {
+                return this.oldareaField;
+            }
+            set {
+                this.oldareaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldareaSpecified {
+            get {
+                return this.oldareaFieldSpecified;
+            }
+            set {
+                this.oldareaFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double newarea {
+            get {
+                return this.newareaField;
+            }
+            set {
+                this.newareaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool newareaSpecified {
+            get {
+                return this.newareaFieldSpecified;
+            }
+            set {
+                this.newareaFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Entity was enlarged by taking over responsibility from dissolved entities.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryMergedWith", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HistoryMergedWith : HistoryAreaChange {
+        
+        private EntityType mergefromtypeField;
+        
+        private uint mergefromField;
+        
+        private bool mergefromFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType mergefromtype {
+            get {
+                return this.mergefromtypeField;
+            }
+            set {
+                this.mergefromtypeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint mergefrom {
+            get {
+                return this.mergefromField;
+            }
+            set {
+                this.mergefromField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool mergefromSpecified {
+            get {
+                return this.mergefromFieldSpecified;
+            }
+            set {
+                this.mergefromFieldSpecified = value;
             }
         }
     }
@@ -873,6 +1001,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute("abolished", typeof(HistoryAbolish), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("alternativename", typeof(HistoryAlternativeName), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(HistoryAreaChange), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(HistoryCreate), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("mergedwith", typeof(HistoryMergedWith), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("misspelling", typeof(HistorySpelling), Order=0)]
