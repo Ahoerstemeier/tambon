@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
 using System.Windows.Forms;
-using System.Globalization;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -16,17 +16,36 @@ namespace De.AHoerstemeier.Tambon
         // ToDo: Sort by Column
         // Export as CSV
 
-        private PopulationDataEntry _baseEntry = null;
-        internal PopulationDataEntry BaseEntry
+        internal PopulationDataEntry Country
         {
-            get { return _baseEntry; }
-            set { SetData(value); }
+            get
+            {
+                return _country;
+            }
+            set
+            {
+                _country = value;
+                BaseEntry = value;
+                UpdateProvinces();
+                UpdateList();
+            }
         }
 
-        private void SetData(PopulationDataEntry value)
+        private PopulationDataEntry _country = null;
+
+        private PopulationDataEntry _baseEntry = null;
+
+        internal PopulationDataEntry BaseEntry
         {
-            _baseEntry = value;
-            UpdateList();
+            get
+            {
+                return _baseEntry;
+            }
+            set
+            {
+                _baseEntry = value;
+                UpdateList();
+            }
         }
 
         public PopulationByEntityTypeViewer()
@@ -45,19 +64,31 @@ namespace De.AHoerstemeier.Tambon
             chkThesabanMueang.Enabled = rbxThesaban.Checked;
             chkThesabanTambon.Enabled = rbxThesaban.Checked;
         }
+
+        private void UpdateProvinces()
+        {
+            cbxChangwat.Items.Clear();
+            cbxChangwat.Items.Add(Country);
+            foreach ( var changwat in Country.SubEntities )
+            {
+                cbxChangwat.Items.Add(changwat);
+            }
+            cbxChangwat.SelectedItem = Country;
+        }
+
         private void UpdateList()
         {
             IEnumerable<PopulationDataEntry> list = CalculateList();
             PopulationDataEntry compare = FindCompare();
             List<Tuple<Int32, Int32, Double>> populationChanges = null;
-            if (compare != null)
+            if ( compare != null )
             {
                 populationChanges = CalcPopulationChanges(list, compare).ToList();
             }
             FillListView(list, populationChanges);
 
             FrequencyCounter counter = new FrequencyCounter();
-            foreach (var entry in list)
+            foreach ( var entry in list )
             {
                 counter.IncrementForCount(entry.Total, entry.Geocode);
             }
@@ -69,7 +100,7 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine("Maximum population: " + counter.MaxValue.ToString("##,###,##0"));
             builder.AppendLine("Minimum population: " + counter.MinValue.ToString("##,###,##0"));
 
-            if ((populationChanges != null) && (populationChanges.Any(x => x.Item2!=0)))
+            if ( (populationChanges != null) && (populationChanges.Any(x => x.Item2 != 0)) )
             {
                 builder.AppendLine();
                 populationChanges.Sort((x, y) => y.Item2.CompareTo(x.Item2));
@@ -77,10 +108,10 @@ namespace De.AHoerstemeier.Tambon
                 var winnerEntry = list.First(x => x.Geocode == winner.Item1);
                 var looser = populationChanges.Last();
                 var looserEntry = list.First(x => x.Geocode == looser.Item1);
-                builder.AppendLine("Biggest winner: " + winner.Item2.ToString("##,###,##0")+" by "+winnerEntry.English+" ("+winner.Item1+")" );
+                builder.AppendLine("Biggest winner: " + winner.Item2.ToString("##,###,##0") + " by " + winnerEntry.English + " (" + winner.Item1 + ")");
                 builder.AppendLine("Biggest looser: " + looser.Item2.ToString("##,###,##0") + " by " + looserEntry.English + " (" + looser.Item1 + ")");
             }
-            if ((populationChanges != null) && (populationChanges.Any(x => x.Item2 != 0)))
+            if ( (populationChanges != null) && (populationChanges.Any(x => x.Item2 != 0)) )
             {
                 builder.AppendLine();
                 populationChanges.Sort((x, y) => y.Item3.CompareTo(x.Item3));
@@ -98,19 +129,19 @@ namespace De.AHoerstemeier.Tambon
         private IEnumerable<Tuple<Int32, Int32, Double>> CalcPopulationChanges(IEnumerable<PopulationDataEntry> entityList, PopulationDataEntry compare)
         {
             List<Tuple<Int32, Int32, Double>> result = new List<Tuple<Int32, Int32, Double>>();
-            if (entityList.Any() && (compare != null))
+            if ( entityList.Any() && (compare != null) )
             {
                 IEnumerable<PopulationDataEntry> thesabanList = null;
-                if ((EntityTypeHelper.IsCompatibleEntityType(EntityType.Thesaban, entityList.First().Type)))
+                if ( (EntityTypeHelper.IsCompatibleEntityType(EntityType.Thesaban, entityList.First().Type)) )
                 {
                     thesabanList = compare.ThesabanList();
                 }
-                foreach (PopulationDataEntry entity in entityList)
+                foreach ( PopulationDataEntry entity in entityList )
                 {
-                    if (entity.Geocode != 0)
+                    if ( entity.Geocode != 0 )
                     {
                         PopulationDataEntry compareEntry;
-                        if (EntityTypeHelper.IsCompatibleEntityType(EntityType.Thesaban, entity.Type))
+                        if ( EntityTypeHelper.IsCompatibleEntityType(EntityType.Thesaban, entity.Type) )
                         {
                             compareEntry = thesabanList.FirstOrDefault(x => x.Geocode == entity.Geocode);
                         }
@@ -118,11 +149,11 @@ namespace De.AHoerstemeier.Tambon
                         {
                             compareEntry = compare.FindByCode(entity.Geocode);
                         }
-                        if ((compareEntry != null) && (compareEntry.Total > 0))
+                        if ( (compareEntry != null) && (compareEntry.Total > 0) )
                         {
                             Int32 populationChange = entity.Total - compareEntry.Total;
                             Double changePercent = 100.0 * populationChange / compareEntry.Total;
-                            result.Add(Tuple.Create(entity.Geocode,populationChange,changePercent));
+                            result.Add(Tuple.Create(entity.Geocode, populationChange, changePercent));
                         }
                     }
                 }
@@ -133,7 +164,7 @@ namespace De.AHoerstemeier.Tambon
         private PopulationDataEntry FindCompare()
         {
             PopulationDataEntry result = null;
-            if (chkCompare.Checked)
+            if ( chkCompare.Checked )
             {
                 Int32 year = Convert.ToInt32(edtCompareYear.Value);
                 result = TambonHelper.GetCountryPopulationData(year);
@@ -145,79 +176,87 @@ namespace De.AHoerstemeier.Tambon
         {
             List<PopulationDataEntry> list = new List<PopulationDataEntry>();
             List<EntityType> entities = new List<EntityType>();
-            if (rbx_Changwat.Checked)
+            if ( rbx_Changwat.Checked )
             {
                 entities.Add(EntityType.Changwat);
                 entities.Add(EntityType.Bangkok);
-                list.AddRange(_baseEntry.FlatList(entities));
+                list.AddRange(BaseEntry.FlatList(entities));
+                if ( entities.Contains(BaseEntry.Type) )
+                {
+                    list.Add(BaseEntry);
+                }
             }
-            else if (rbxAmphoeKhet.Checked)
+            else if ( rbxAmphoeKhet.Checked )
             {
-                if (chkAmphoe.Checked)
+                if ( chkAmphoe.Checked )
                 {
                     entities.Add(EntityType.Amphoe);
                 }
-                if (chkKhet.Checked)
+                if ( chkKhet.Checked )
                 {
                     entities.Add(EntityType.Khet);
                 }
                 list.AddRange(_baseEntry.FlatList(entities));
             }
-            else if (rbxTambonKhwaeng.Checked)
+            else if ( rbxTambonKhwaeng.Checked )
             {
-                if (chkTambon.Checked)
+                if ( chkTambon.Checked )
                 {
                     entities.Add(EntityType.Tambon);
                 }
-                if (chkKhwaeng.Checked)
+                if ( chkKhwaeng.Checked )
                 {
                     entities.Add(EntityType.Khwaeng);
                 }
                 list.AddRange(_baseEntry.FlatList(entities));
             }
-            else if (rbxThesaban.Checked)
+            else if ( rbxThesaban.Checked )
             {
-                if (chkThesabanTambon.Checked)
+                if ( chkThesabanTambon.Checked )
                 {
                     entities.Add(EntityType.ThesabanTambon);
                 }
-                if (chkThesabanMueang.Checked)
+                if ( chkThesabanMueang.Checked )
                 {
                     entities.Add(EntityType.ThesabanMueang);
                 }
-                if (chkThesabanNakhon.Checked)
+                if ( chkThesabanNakhon.Checked )
                 {
                     entities.Add(EntityType.ThesabanNakhon);
                 }
 
-                foreach (PopulationDataEntry entity in _baseEntry.ThesabanList())
+                foreach ( PopulationDataEntry entity in _baseEntry.ThesabanList() )
                 {
-                    if (entities.Contains(entity.Type))
+                    if ( entities.Contains(entity.Type) )
                     {
                         list.Add(entity);
                     }
                 }
             }
 
-            list.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2) { return (p2.Total.CompareTo(p1.Total)); });
+            list.Sort(delegate(PopulationDataEntry p1, PopulationDataEntry p2)
+            {
+                return (p2.Total.CompareTo(p1.Total));
+            });
             return list;
         }
+
         private void FillListView(IEnumerable<PopulationDataEntry> entityList, IEnumerable<Tuple<Int32, Int32, Double>> compare)
         {
             lvData.BeginUpdate();
             lvData.Items.Clear();
-            if (entityList.Any())
+            if ( entityList.Any() )
             {
-                foreach (PopulationDataEntry entity in entityList)
+                foreach ( PopulationDataEntry entity in entityList )
                 {
                     ListViewItem listViewItem = lvData.Items.Add(entity.English);
                     listViewItem.SubItems.Add(entity.Name);
                     listViewItem.SubItems.Add(entity.Geocode.ToString());
                     listViewItem.SubItems.Add(entity.Total.ToString());
-                    if (compare != null)
+                    if ( compare != null )
                     {
                         var compareEntry = compare.FirstOrDefault(x => x.Item1 == entity.Geocode);
-                        if (compareEntry != null)
+                        if ( compareEntry != null )
                         {
                             listViewItem.SubItems.Add(compareEntry.Item2.ToString());
                             listViewItem.SubItems.Add(compareEntry.Item3.ToString("##0.00"));
@@ -232,6 +271,7 @@ namespace De.AHoerstemeier.Tambon
         {
             UpdateList();
         }
+
         private void rbxEntity_CheckedChanged(object sender, EventArgs e)
         {
             UpdateEntityTypeCheckboxes();
@@ -243,12 +283,12 @@ namespace De.AHoerstemeier.Tambon
             const Char csvCharacter = ',';
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "CSV Files|*.csv|All files|*.*";
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if ( dialog.ShowDialog() == DialogResult.OK )
             {
                 StreamWriter fileWriter = new StreamWriter(dialog.FileName);
                 var list = CalculateList();
                 var compare = FindCompare();
-                foreach (PopulationDataEntry entity in list)
+                foreach ( PopulationDataEntry entity in list )
                 {
                     fileWriter.Write(entity.Name);
                     fileWriter.Write(csvCharacter);
@@ -263,10 +303,10 @@ namespace De.AHoerstemeier.Tambon
                     fileWriter.Write(entity.Female.ToString(CultureInfo.InvariantCulture));
                     fileWriter.Write(csvCharacter);
                     fileWriter.Write(entity.Households.ToString(CultureInfo.InvariantCulture));
-                    if ((compare != null) && (entity.Geocode != 0))
+                    if ( (compare != null) && (entity.Geocode != 0) )
                     {
                         PopulationDataEntry compareEntry = compare.FindByCode(entity.Geocode);
-                        if ((compareEntry != null) && (compareEntry.Total > 0))
+                        if ( (compareEntry != null) && (compareEntry.Total > 0) )
                         {
                             Int32 populationChange = entity.Total - compareEntry.Total;
                             Double changePercent = 100.0 * populationChange / compareEntry.Total;
@@ -306,16 +346,16 @@ namespace De.AHoerstemeier.Tambon
             const Char csvCharacter = ',';
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.Filter = "CSV Files|*.csv|All files|*.*";
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if ( dialog.ShowDialog() == DialogResult.OK )
             {
                 Dictionary<Int32, PopulationDataEntry> dataByYear = new Dictionary<Int32, PopulationDataEntry>();
-                for (Int32 year = TambonHelper.PopulationStatisticMinYear; year < TambonHelper.PopulationStatisticMaxYear; year++)
+                for ( Int32 year = TambonHelper.PopulationStatisticMinYear ; year < TambonHelper.PopulationStatisticMaxYear ; year++ )
                 {
                     dataByYear[year] = TambonHelper.GetCountryPopulationData(year);
                 }
                 StreamWriter fileWriter = new StreamWriter(dialog.FileName);
                 var list = CalculateList();
-                foreach (PopulationDataEntry entity in list)
+                foreach ( PopulationDataEntry entity in list )
                 {
                     fileWriter.Write(entity.Name);
                     fileWriter.Write(csvCharacter);
@@ -323,12 +363,12 @@ namespace De.AHoerstemeier.Tambon
                     fileWriter.Write(csvCharacter);
                     fileWriter.Write(entity.Geocode.ToString(CultureInfo.InvariantCulture));
 
-                    for (Int32 year = TambonHelper.PopulationStatisticMinYear; year < TambonHelper.PopulationStatisticMaxYear; year++)
+                    for ( Int32 year = TambonHelper.PopulationStatisticMinYear ; year < TambonHelper.PopulationStatisticMaxYear ; year++ )
                     {
                         var data = dataByYear[year];
                         PopulationDataEntry entityEntryOfYear = data.FindByCode(entity.Geocode);
                         fileWriter.Write(csvCharacter);
-                        if (entityEntryOfYear != null)
+                        if ( entityEntryOfYear != null )
                         {
                             fileWriter.Write(entityEntryOfYear.Total.ToString(CultureInfo.InvariantCulture));
                         }
@@ -337,6 +377,11 @@ namespace De.AHoerstemeier.Tambon
                 }
                 fileWriter.Close();
             }
+        }
+
+        private void cbxChangwat_SelectedValueChanged(object sender, EventArgs e)
+        {
+            BaseEntry = cbxChangwat.SelectedItem as PopulationDataEntry;
         }
     }
 }
