@@ -52,6 +52,7 @@
             this.chkCompare = new System.Windows.Forms.CheckBox();
             this.edtCompareYear = new System.Windows.Forms.NumericUpDown();
             this.btnCsvAllYears = new System.Windows.Forms.Button();
+            this.cbxChangwat = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grpData)).BeginInit();
             this.grpData.Panel1.SuspendLayout();
             this.grpData.Panel2.SuspendLayout();
@@ -329,11 +330,21 @@
             this.btnCsvAllYears.UseVisualStyleBackColor = true;
             this.btnCsvAllYears.Click += new System.EventHandler(this.btnCsvAllYears_Click);
             // 
+            // cbxChangwat
+            // 
+            this.cbxChangwat.FormattingEnabled = true;
+            this.cbxChangwat.Location = new System.Drawing.Point(341, 296);
+            this.cbxChangwat.Name = "cbxChangwat";
+            this.cbxChangwat.Size = new System.Drawing.Size(124, 21);
+            this.cbxChangwat.TabIndex = 27;
+            this.cbxChangwat.SelectedValueChanged += new System.EventHandler(this.cbxChangwat_SelectedValueChanged);
+            // 
             // PopulationByEntityTypeViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 391);
+            this.Controls.Add(this.cbxChangwat);
             this.Controls.Add(this.btnCsvAllYears);
             this.Controls.Add(this.edtCompareYear);
             this.Controls.Add(this.chkCompare);
@@ -391,5 +402,6 @@
         private System.Windows.Forms.NumericUpDown edtCompareYear;
         private System.Windows.Forms.ColumnHeader columnChangePercent;
         private System.Windows.Forms.Button btnCsvAllYears;
+        private System.Windows.Forms.ComboBox cbxChangwat;
     }
 }
