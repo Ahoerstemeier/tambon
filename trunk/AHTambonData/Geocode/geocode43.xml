@@ -1629,7 +1629,14 @@
   <entity type="ThesabanTambon" name="พรเจริญ" english="Phon Charoen" geocode="4392" parent="4304" newgeocode="3896" />
   <entity type="ThesabanTambon" name="โพนพิสัย" english="Phon Phisai" geocode="4391" parent="4305">
     <office type="MunicipalityOffice">
-      <url>http://www.phonphisaicity.org/</url>
+      <geo:Point>
+        <geo:lat>18.0228</geo:lat>
+        <geo:long>103.0826</geo:long>
+      </geo:Point>
+      <url status="offline">http://www.phonphisaicity.org/</url>
+      <socialweb>
+        <googleplus type="page">100706787483199449151</googleplus>
+      </socialweb>
       <officials>
         <official title="Mayor" name="ศัลย์ ประชุม" begin="2010-10-28" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ณรงค์ศักดิ์ ลิมโพธิ์ทอง" endyear="2010" />
@@ -1641,7 +1648,12 @@
       </council>
     </office>
     <history>
-      <rename oldname="จุมพล" name="โพนพิสัย" oldenglish="Chumphon" />
+      <rename oldname="จุมพล" name="โพนพิสัย" oldenglish="Chumphon" comment="2006">
+        <meetingreference board="2" number="29" date="2006-09-14" />
+      </rename>
+      <create type="Sukhaphiban" effective="1956-05-14" status="Gazette">
+        <gazetteref volume="73" page="39" issue="45 ง ฉบับพิเศษ" date="1956-05-30" />
+      </create>
     </history>
     <!-- numbers to be confirmed -->
     <entity type="Chumchon" geocode="43910001" name="มณีโคตร 1" english="Mani Khot 1" />
