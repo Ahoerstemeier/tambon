@@ -332,6 +332,7 @@
             // 
             // cbxChangwat
             // 
+            this.cbxChangwat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbxChangwat.FormattingEnabled = true;
             this.cbxChangwat.Location = new System.Drawing.Point(341, 296);
             this.cbxChangwat.Name = "cbxChangwat";
