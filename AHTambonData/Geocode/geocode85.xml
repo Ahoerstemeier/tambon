@@ -95,6 +95,10 @@
     <entity type="Tambon" name="เขานิเวศน์" english="Khao Niwet" geocode="850101" />
     <entity type="Tambon" name="ราชกรูด" english="Ratchakrut" geocode="850102">
       <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>9.7571</geo:lat>
+          <geo:long>98.5915</geo:long>
+        </geo:Point>
         <url lastchecked="2013-07-25">http://www.ratchakrudcity.go.th/</url>
         <socialweb>
           <facebook>https://www.facebook.com/ratchakrudcity</facebook>
@@ -111,9 +115,12 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="16" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
             <meetingreference board="2" number="45" date="2008-06-11" />
           </statuschange>
+          <create type="TAO" effective="1996-03-20" status="Gazette">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" comment="Index 1421" />
+          </create>
         </history>
       </office>
       <entity type="Muban" geocode="85010201" name="บ้านละออง" english="Ban La-ong" />
