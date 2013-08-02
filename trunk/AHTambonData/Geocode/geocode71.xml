@@ -961,18 +961,27 @@
     </entity>
     <entity type="Tambon" name="พระแท่น" english="Phra Thaen" geocode="710512">
       <office type="TAOOffice">
-        <url lastchecked="2012-05-05">http://www.pratan.org/</url>
+        <url lastonline="2012-05-05" status="offline">http://www.pratan.org/</url>
         <url status="expired">http://www.pra-tan.com/</url>
         <socialweb>
           <googleplus>100511511980680327335</googleplus>
+          <blog status="obsolete">http://obtpratan.blogspot.com/</blog>
         </socialweb>
         <officials>
           <official title="TAOMayor" name="สมปอง คำเที่ยง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" comment="ECT table wrongly states 18" />
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" comment="ECT table wrongly states 22" />
         </council>
+        <history>
+          <rename oldname="พระแท่น" oldenglish="Phra Thaen" name="พระแท่นลำพระยา" english="Phra Thaen Lam Phraya" status="Pending">
+            <meetingreference board="2" number="35" date="2013-07-24" />
+          </rename>
+          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+            <meetingreference board="2" number="35" date="2013-07-24" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="71051201" name="บ้านสำนักเย็น" english="Ban Samnak Yen" />
       <entity type="Muban" geocode="71051202" name="บ้านไร่" english="Ban Rai" />
@@ -1538,6 +1547,11 @@
     </entity>
     <entity type="Tambon" name="ปรังเผล" english="Prang Phle" geocode="710802">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="ไพศาล บัวหลวง" begin="2013-07-14" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="พรรักษ์ ศรประเสริฐ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" endreason="Unknown" />
+          <official title="TAOMayor" name="พรรักษ์ ศรประเสริฐ" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" comment="Source: ThaiTambon" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="8" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="8" />
@@ -1750,8 +1764,11 @@
     </entity>
     <entity type="Tambon" name="ดอนตาเพชร" english="Don Ta Phet" geocode="710912">
       <office type="TAOOffice">
+        <!-- Longdo: 14.18652,99.73133 -->
+        <url lastchecked="2013-08-02">http://dontaphet.go.th/</url>
         <officials>
-          <officialterm title="TAOMayor" begin="2009-07-26" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="อภิรักษ คชนา" begin="2013-07-14" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="อภิรักษ คชนา" begin="2009-07-26" endyear="2013" beginreason="ElectedDirectly" endreason="Resigned" />
         </officials>
         <council>
           <term begin="2012-05-19" type="TAO" size="26" />
@@ -2758,11 +2775,13 @@
   </entity>
   <entity type="ThesabanTambon" name="หนองปรือ" english="Nong Prue" geocode="7173" parent="7112">
     <office type="MunicipalityOffice">
-      <url lastchecked="2012-11-21">http://www.nongpruekan.com/</url>
+      <url lastchecked="2012-11-21" status="hacked">http://www.nongpruekan.com/</url>
       <officials>
+        <official title="Mayor" name="ชำเรือง แห้วเพ็ชร" begin="2013-07-14" beginreason="ElectedDirectly" />
         <official title="Mayor" name="มนตรี อินนา" begin="2009-06-07" endyear="2013" beginreason="ElectedDirectly" />
       </officials>
       <council>
+        <term begin="2013-07-14" type="ThesabanTambon" size="12" />
         <term begin="2009-06-07" end="2013-06-06" type="ThesabanTambon" size="12" />
         <term begin="2005-05-01" end="2009-04-30" type="ThesabanTambon" size="12" />
       </council>
