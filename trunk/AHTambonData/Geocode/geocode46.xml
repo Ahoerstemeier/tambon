@@ -208,8 +208,23 @@
       </office>
     </entity>
     <entity type="Tambon" name="ห้วยโพธิ์" english="Huai Pho" geocode="460109">
+      <entity type="Muban" geocode="46010901" name="บ้านโหมน" english="Ban Mon" />
+      <entity type="Muban" geocode="46010902" name="บ้านโหมน" english="Ban Mon" />
+      <entity type="Muban" geocode="46010903" name="บ้านดงน้อย" english="Ban Dong Noi" />
+      <entity type="Muban" geocode="46010904" name="บ้านเหล่าสูง" english="Ban Lao Sung" />
+      <entity type="Muban" geocode="46010905" name="บ้านดงสวาง" english="Ban Dong Sawang" />
+      <entity type="Muban" geocode="46010906" name="บ้านดงสวาง" english="Ban Dong Sawang" />
+      <entity type="Muban" geocode="46010907" name="บ้านดอนปอแดง" english="Ban Don Po Daeng" />
+      <entity type="Muban" geocode="46010908" name="บ้านดงพยอม" english="Ban Dong Phayom" />
+      <entity type="Muban" geocode="46010909" name="บ้านดอนม่วง" english="Ban Don Muang" />
       <entity type="Muban" geocode="46010910" name="บ้านกลางดง" english="Ban Klang Dong" />
-
+      <entity type="Muban" geocode="46010911" name="บ้านดงบังเก่า" english="Ban Dong Bang Kao" />
+      <entity type="Muban" geocode="46010912" name="บ้านดอนปอแดง" english="Ban Don Po Daeng" />
+      <entity type="Muban" geocode="46010913" name="บ้านดงน้อย" english="Ban Dong Noi" />
+      <entity type="Muban" geocode="46010914" name="บ้านใหม่คำ" english="Ban Mai Kham" />
+      <entity type="Muban" geocode="46010915" name="บ้านโพธิ์ทอง" english="Ban Pho Thong" />
+      <entity type="Muban" geocode="46010916" name="บ้านโหมนคำ" english="Ban Mon Kham" />
+      <entity type="Muban" geocode="46010917" name="บ้านดงสวาง" english="Ban Dong Sawang" />
       <entity type="Muban" geocode="46010918" name="บ้านดงสมบูรณ์" english="Ban Dong Sombun" />
     </entity>
     <entity type="Tambon" name="ม่วงนา" english="Muang Na" geocode="460110" newgeocode="461704" />
@@ -1543,15 +1558,20 @@
       </office>
     </entity>
     <entity type="Tambon" name="นามะเขือ" english="Na Makhuea" geocode="460903">
-      <office type="TAOOffice">
-        <url>http://www.namakuae.go.th/</url>
+      <office type="MunicipalityOffice">
+        <url lastchecked="2013-08-06">http://www.namakuae.go.th/</url>
         <officials>
           <official title="TAOMayor" name="อนันต์ โชติขจรปัญญา" inoffice="2011" />
         </officials>
         <council>
-          <term begin="2010-03-28" type="ThesabanTambon" size="12" />
+          <term begin="2010-03-28" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27">
+            <meetingreference board="2" date="2009-07-13" number="24" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="46090301" name="บ้านนามะเขือ" english="Ban Na Makhuea" />
       <entity type="Muban" geocode="46090302" name="บ้านโคกเจริญ" english="Ban Khok Charoen" />
@@ -3048,12 +3068,27 @@
   </entity>
   <entity type="ThesabanTambon" name="ห้วยโพธิ์" english="Huai Pho" geocode="4675" parent="4601" tambon="460109">
     <office type="MunicipalityOffice">
+      <symbols>
+        <vision>
+          ชุมชนห้วยโพธิ์  ร่วมพัฒนา  ชาวประชามีสุข
+          สุขภาพแข็งแรง  ศึกษาและกีฬาก้าวหน้า
+          เกษตรกรรมอุตสาหกรรมเป็นเลิศ
+          ส่งเสริมอาชีพทั่วถึง  วัฒนธรรมดีงาม
+        </vision>
+      </symbols>
+      <url lastchecked="2013-08-06">http://www.huaypo.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สันติชาย ไชยภา" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+      </officials>
       <council>
         <term begin="2009-09-06" end="2013-09-05" type="ThesabanTambon" size="12" />
         <term begin="2005-07-31" end="2009-07-30" type="ThesabanTambon" size="12" />
         <!-- Mu 18 created 2005-11 -->
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2005-06-03" />
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="สระพังทอง" english="Saphang Thong" geocode="4674" parent="4606" tambon="460608">
     <office type="MunicipalityOffice">
