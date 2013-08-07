@@ -498,13 +498,46 @@
 
   <xs:complexType name="Election">
     <xs:sequence>
-      <xs:element name="partylist" type="t:PartyCandidateList" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="partylistresult" type="t:PartyListResult" minOccurs="0" maxOccurs="1" />
-      <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1" />
-      <xs:element name="approval" type="t:ElectionApproval" minOccurs="0" maxOccurs="1" />
-      <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1" />
+      <xs:element name="partylist" type="t:PartyCandidateList" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>List of political parties participating in the election.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="partylistresult" type="t:PartyListResult" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Result of the proportial party list.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>List of the direct candidates (in case there is just one constituency).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="announce" type="t:ElectionApproval" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>EC meeting reference on which the election date was announced.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="approval" type="t:ElectionApproval" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>EC meeting reference on which the election result was approved.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>References on the election.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
-    <xs:attribute name="date" type="xs:date" use="optional" />
-    <xs:attribute name="type" type="t:ElectionType" use="optional" />
+    <xs:attribute name="date" type="xs:date" use="optional">
+      <xs:annotation>
+        <xs:documentation>Date of the election.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="type" type="t:ElectionType" use="optional">
+      <xs:annotation>
+        <xs:documentation>Type of election.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
 </xs:schema>
