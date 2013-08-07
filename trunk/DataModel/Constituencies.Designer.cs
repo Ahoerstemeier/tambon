@@ -18,7 +18,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// List of constituencies.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -124,7 +124,7 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Constituency))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -222,7 +222,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Entity included in the constituency.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -298,7 +298,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Part of the parent entity which is explicitely excluded/included in the constituency.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -307,7 +307,7 @@ namespace De.AHoerstemeier.Tambon {
     public partial class EntityInExclude : EntityBase {
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -465,7 +465,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -576,7 +576,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -625,7 +625,7 @@ namespace De.AHoerstemeier.Tambon {
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PartyCandidateListEntry))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(CandidateListEntry))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -824,7 +824,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Types of elections.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -899,7 +899,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Status of the candidate before or due to the election.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -954,7 +954,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Reason a candidate looses his seat.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -1001,7 +1001,7 @@ namespace De.AHoerstemeier.Tambon {
         other,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1067,7 +1067,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1141,7 +1141,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1210,7 +1210,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Result of the party list voting.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1302,7 +1302,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1344,7 +1344,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1357,6 +1357,8 @@ namespace De.AHoerstemeier.Tambon {
         private PartyListResult partylistresultField;
         
         private CandidateList candidatesField;
+        
+        private ElectionApproval announceField;
         
         private ElectionApproval approvalField;
         
@@ -1375,11 +1377,18 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public Election() {
             this.approvalField = new ElectionApproval();
+            this.announceField = new ElectionApproval();
             this.candidatesField = new CandidateList();
             this.partylistresultField = new PartyListResult();
             this.partylistField = new List<PartyCandidateList>();
         }
         
+        /// <summary>
+        /// List of political parties participating in the election.
+        /// </summary>
+        /// <value>
+        /// The partylist.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("partylist", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<PartyCandidateList> partylist {
@@ -1391,6 +1400,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Result of the proportial party list.
+        /// </summary>
+        /// <value>
+        /// The partylistresult.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public PartyListResult partylistresult {
@@ -1402,6 +1417,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// List of the direct candidates (in case there is just one constituency).
+        /// </summary>
+        /// <value>
+        /// The candidates.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CandidateList candidates {
@@ -1413,7 +1434,30 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// EC meeting reference on which the election date was announced.
+        /// </summary>
+        /// <value>
+        /// The announce.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectionApproval announce {
+            get {
+                return this.announceField;
+            }
+            set {
+                this.announceField = value;
+            }
+        }
+        
+        /// <summary>
+        /// EC meeting reference on which the election result was approved.
+        /// </summary>
+        /// <value>
+        /// The approval.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ElectionApproval approval {
             get {
@@ -1424,7 +1468,13 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        /// <summary>
+        /// References on the election.
+        /// </summary>
+        /// <value>
+        /// The references.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ReferenceList references {
             get {
@@ -1435,6 +1485,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Date of the election.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime date {
@@ -1463,6 +1519,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Type of election.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ElectionType type {
@@ -1495,7 +1557,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// List of constituencies.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1565,7 +1627,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Constituency list including election data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1611,7 +1673,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Include only the parts of the entities given in the list into the constituency.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1684,7 +1746,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1741,7 +1803,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1801,7 +1863,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Party contesting in the election.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1889,7 +1951,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// List of parties contesting in the election.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18033")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18053")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
