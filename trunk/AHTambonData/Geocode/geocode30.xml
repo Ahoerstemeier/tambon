@@ -1,6 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครราชสีมา" english="Nakhon Ratchasima" geocode="30">
   <office type="ProvinceHall">
+    <symbols>
+      <slogan>เมืองหญิงกล้า ผ้าไหมดี หมี่โคราช ประสาทหิน ดินด่านเกวียน</slogan>
+      <vision>ประตูสู่อีสาน ศูนย์กลางการผลิตอุตสาหกรรมยานยนต์ การแปรรูปสินค้าเกษตรและการท่องเที่ยว</vision>
+      <symboltree>Millettia leucantha</symboltree>
+      <symbolflower>Millettia leucantha</symbolflower>
+      <color>red-orange</color>
+    </symbols>
     <geo:Point>
       <geo:lat>14.9724</geo:lat>
       <geo:long>102.1001</geo:long>
@@ -406,7 +413,11 @@
       <office type="MunicipalityOffice">
         <url>http://www.kokkruad.go.th/</url>
         <url status="expired">http://www.kokkruad.com/</url>
+        <officials>
+          <official title="Mayor" name="รุ่งเรือง กาญจนวัฒนา" begin="2012-02-12" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-02-12" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="30" />
         </council>
         <history>
@@ -618,11 +629,14 @@
     <entity type="Tambon" name="แชะ" english="Chae" geocode="300201">
       <office type="TAOOffice">
         <!-- Longdo: 14.52776 102.24591 -->
+        <url lastchecked="2013-08-07">http://www.chae.go.th/</url>
         <url status="expired">http://chae-khonburi.com/</url>
         <officials>
-          <official title="TAOMayor" name="ไสว แหยงกระโทก" begin="2008-08-24" endyear="2012" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="จารุภา กำเนิกพันธุ์" begin="2012-04-22" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ไสว แหยงกระโทก" begin="2008-08-24" endyear="2012" beginreason="ElectedDirectly" endreason="Resigned" />
         </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="22" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
         </council>
       </office>
@@ -3543,7 +3557,11 @@
     <entity type="Tambon" name="บ่อปลาทอง" english="Bo Pla Thong" geocode="301420">
       <office type="MunicipalityOffice">
         <url>http://www.borplathongcity.go.th/</url>
+        <officials>
+          <official title="Mayor" name="เจริญ วิจารณ์" begin="2012-03-25" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-03-25" type="ThesabanTambon" size="12" />
           <term begin="2008-02-17" end="2012-02-16" type="ThesabanTambon" size="12" />
         </council>
       </office>
@@ -4033,7 +4051,7 @@
       <office type="TAOOffice">
         <url>http://www.tago.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ชวลิต วาปีเต" begin="2012-04-03" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ชวลิต วาปีเต" begin="2012-03-04" beginreason="ElectedDirectly" />
           <officialterm title="TAOMayor" begin="2008-01-27" end="2012-01-26" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -4055,6 +4073,10 @@
     <entity type="Tambon" name="ห้วยแคน" english="Huai Khaen" geocode="301610">
       <office type="TAOOffice">
         <url>http://www.huaycan.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ทิวากร รังปัญญา" begin="2012-10-07" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2009-09-06" end="2012-08-15" beginreason="ElectedDirectly" endreason="Retired" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
@@ -5515,12 +5537,30 @@
     <entity type="Tambon" name="สำนักตะคร้อ" english="Samnak Takhro" geocode="302601">
       <office type="TAOOffice">
         <url>http://www.samnaktakhro.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ศรายุทธ พูขุนทด" begin="2012-09-30" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="32" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="30" finalsize="32" sizechangereason="MubanCreation" comment="Mu 16 created 2006-11" />
         </council>
       </office>
       <entity type="Muban" geocode="30260101" name="บ้านสำนักตะคร้อ" english="Ban Samnak Takhro" />
-
+      <entity type="Muban" geocode="30260102" name="บ้านหนองโพธิ์" english="Ban Nong Pho" />
+      <entity type="Muban" geocode="30260103" name="บ้านเทพนิมิตร" english="Ban Thep Nimit" />
+      <entity type="Muban" geocode="30260104" name="บ้านหัวสระ" english="Ban Hua Sa" />
+      <entity type="Muban" geocode="30260105" name="บ้านทำนบเทวดา" english="Ban Thamnop Thewada" />
+      <entity type="Muban" geocode="30260106" name="บ้านชุมชนพัฒนา" english="Ban Phatthana" />
+      <entity type="Muban" geocode="30260107" name="บ้านโนนสมบูรณ์" english="Ban Non Sombun" />
+      <entity type="Muban" geocode="30260108" name="บ้านหนองโพธิ์เหนือ" english="Ban Nong Pho Nuea" />
+      <entity type="Muban" geocode="30260109" name="บ้านวังกะทะ" english="Ban Wang Katha" />
+      <entity type="Muban" geocode="30260110" name="บ้านศิลาทอง" english="Ban Sila Thong" />
+      <entity type="Muban" geocode="30260111" name="บ้านวังกะทะเหนือ" english="Ban Wang Katha Nuea" />
+      <entity type="Muban" geocode="30260112" name="บ้านโนนทองหลาง" english="Ban Non Thonglang" />
+      <entity type="Muban" geocode="30260113" name="บ้านถนอมเขต" english="Ban Thanom Khet" />
+      <entity type="Muban" geocode="30260114" name="บ้านเทพารักษ์" english="Ban Thepharak" />
+      <entity type="Muban" geocode="30260115" name="บ้านวังกะหาด" english="Ban Wang Kahat" />
       <entity type="Muban" geocode="30260116" name="บ้านสำนักตะคร้อร่วมพัฒนา" english="Ban Samnak Takhro Ruam Phatthana" />
     </entity>
     <entity type="Tambon" name="หนองแวง" english="Nong Waeng" geocode="302602">
@@ -5532,31 +5572,63 @@
             การคมนาคมขนส่งสะดวกรวดเร็ว
           </vision>
         </symbols>
-        <url lastchecked="2012-09-12">http://www.nongwang.go.th/</url>
+        <url lastchecked="2013-08-07">http://www.nongwang.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ชาญชาย ศรีจันทึก" begin="2008-05-11" endyear="2012" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="เพียร แซ่ลี้" begin="2012-06-17" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ชาญชาย ศรีจันทึก" begin="2008-05-11" end="2012-05-10" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
+          <term begin="2012-09-30" type="TAO" size="44" />
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="44" comment="ECT table wrongly says 24" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="44" />
         </council>
       </office>
     </entity>
     <entity type="Tambon" name="บึงปรือ" english="Bueng Prue" geocode="302603">
       <office type="TAOOffice">
         <url>http://www.bungprue.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="กมล ศรีไตรภพ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
       </office>
+      <entity type="Muban" geocode="30260301" name="บ้านมะค่าคุก" english="Ban Makha Khuk" />
+      <entity type="Muban" geocode="30260302" name="บ้านซับสำราญ" english="Ban Sap Samran" />
+      <entity type="Muban" geocode="30260303" name="บ้านเกาะแหลม" english="Ban Ko Laem" />
+      <entity type="Muban" geocode="30260304" name="บ้านมะค่างาม" english="Ban Makha Ngam" />
+      <entity type="Muban" geocode="30260305" name="บ้านดอยเจดีย์" english="Ban Doi Chedi" />
+      <entity type="Muban" geocode="30260306" name="บ้านสะพานเลียบ" english="Ban Saphan Liap" />
+      <entity type="Muban" geocode="30260307" name="บ้านบึงปรือ" english="Ban Bueng Prue" />
+      <entity type="Muban" geocode="30260308" name="บ้านห้วยน้ำเค็ม" english="Ban Huai Nam Khem" />
+      <entity type="Muban" geocode="30260309" name="บ้านน้ำโตน" english="Ban Nam Ton" />
+      <entity type="Muban" geocode="30260310" name="บ้านเขาแตงโม" english="Ban Khao Taengmo" />
+      <entity type="Muban" geocode="30260311" name="บ้านสันติสุข" english="Ban Santi Suk" />
     </entity>
     <entity type="Tambon" name="วังยายทอง" english="Wang Yai Thong" geocode="302604">
       <office type="TAOOffice">
         <url>http://www.wangyaithong.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="มงคล ศิลปชัย" begin="2012-05-13" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-05-13" type="TAO" size="20" />
           <term begin="2008-04-05" end="2012-04-04" type="TAO" size="20" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="20" />
         </council>
       </office>
+      <entity type="Muban" geocode="30260401" name="บ้านสายทองพัฒนา" english="Ban Sai Thong Phatthana" />
+      <entity type="Muban" geocode="30260402" name="บ้านคลองบง" english="Ban Khlong Bong" />
+      <entity type="Muban" geocode="30260403" name="บ้านกุดสระแก้ว" english="Ban Kut Sa Kaeo" />
+      <entity type="Muban" geocode="30260404" name="บ้านวังยายทอง" english="Ban Wang Yai Thong" />
+      <entity type="Muban" geocode="30260405" name="บ้านเมืองทอง" english="Ban Mueang Thong" />
+      <entity type="Muban" geocode="30260406" name="บ้านคลองขามป้อม" english="Ban Khlong Kham Pom" />
+      <entity type="Muban" geocode="30260407" name="บ้านวังม่วงสามัคคี" english="Ban Wang Muang Samakkhi" />
+      <entity type="Muban" geocode="30260408" name="บ้านไทยเจริญ" english="Ban Thai Charoen" />
+      <entity type="Muban" geocode="30260409" name="บ้านมาบพลวง" english="Ban Map Phluang" />
+      <entity type="Muban" geocode="30260410" name="บ้านแสงทองพัฒนา" english="Ban Saeng Thong Phatthana" />
     </entity>
   </entity>
   <entity type="Amphoe" name="เมืองยาง" english="Mueang Yang" geocode="3027" parent="3017">
@@ -5618,6 +5690,9 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="พระทองคำ" english="Phra Thong Kham" geocode="3028" parent="3009">
+    <symbols>
+      <vision>อำเภอพระทองคำ มุ่งนำเกษตรอินทรีย์ มีกองทุนยั่งยืน อนุรักษ์สิ่งแวดล้อม พร้อมการศึกษา ศาสนาวัฒนธรรม การท่องเที่ยวอุตสาหกรรมก้าวหน้า พาสู่ชุมชนเข้มแข็ง สุขภาพแข็งแรง และคุณภาพชีวิตที่ดี</vision>
+    </symbols>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.3067</geo:lat>
@@ -5632,18 +5707,50 @@
     </office>
     <entity type="Tambon" name="สระพระ" english="Sa Phra" geocode="302801">
       <office type="TAOOffice">
+        <symbols>
+          <slogan>เมืองหญิงกล้า ผ้าไหมดี หมี่โคราช ปราสาทหิน ดินด่านเกวียน เหรียญหลวงพ่อคูณ</slogan>
+          <vision>ตำบลน่าอยู่ ชุมชนเข้มแข็ง ประชาชนมีคุณภาพ สิ่งแวดล้อมดี มีการบริหารจัดการที่ดี แบบมีส่วนร่วมจากทุกภาคส่วน</vision>
+        </symbols>
+        <url lastchecked="2013-08-07">http://www.srapra.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ธนานนท์ ชูชื่น" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
       </office>
+      <entity type="Muban" geocode="30280101" name="บ้านปะคำ" english="Ban Pakham" />
+      <entity type="Muban" geocode="30280102" name="บ้านขมาดไพร" english="Ban Khamat Phrai" />
+      <entity type="Muban" geocode="30280103" name="บ้านสระพระ" english="Ban Sa Phra" />
+      <entity type="Muban" geocode="30280104" name="บ้านหนองไทร" english="Ban Nong Sai" />
+      <entity type="Muban" geocode="30280105" name="บ้านห้วยยางใต้" english="Ban Huai Yang Tai" />
+      <entity type="Muban" geocode="30280106" name="บ้านคูเมืองน้อย" english="Ban Khu Mueang Noi" />
+      <entity type="Muban" geocode="30280107" name="บ้านหนองปล้อง" english="Ban Nong Plong" />
+      <entity type="Muban" geocode="30280108" name="บ้านโกรกมะค่า" english="Ban Krok Makha" />
+      <entity type="Muban" geocode="30280109" name="บ้านโกรกมะค่าเหนือ" english="Ban Krok Makha Nuea" />
+      <entity type="Muban" geocode="30280110" name="บ้านปะคำใต้" english="Ban Pakham Tai" />
+      <entity type="Muban" geocode="30280111" name="บ้านสระพระพัฒนา" english="Ban Sa Phra Phatthana" />
     </entity>
     <entity type="Tambon" name="มาบกราด" english="Map Krat" geocode="302802">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="ณัฐวุฒิ จตุพงษ์ไพโรจน์" begin="2012-05-13" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-05-13" type="TAO" size="16" />
           <term begin="2008-04-05" end="2012-04-04" type="TAO" size="16" />
+          <term begin="2004-02-29" end="2008-02-28" type="TAO" size="16" />
         </council>
       </office>
+      <entity type="Muban" geocode="30280201" name="บ้านโคกสุวรรณ" english="Ban Khok Suwan" />
+      <entity type="Muban" geocode="30280202" name="บ้านมาบกราดพัฒนา" english="Ban Map Krat Phatthana" />
+      <entity type="Muban" geocode="30280203" name="บ้านโค้งเจริญ" english="Ban Khong Charoen" />
+      <entity type="Muban" geocode="30280204" name="บ้านเจริญผล" english="Ban Charoen Phon" />
+      <entity type="Muban" geocode="30280205" name="บ้านหนองเขว้า" english="Ban Nong Khwao" />
+      <entity type="Muban" geocode="30280206" name="บ้านมาบกราด" english="Ban Map Krat" />
+      <entity type="Muban" geocode="30280207" name="บ้านหนองหัวรวก" english="Ban Nong Hua Ruak" />
+      <entity type="Muban" geocode="30280208" name="บ้านโกรกพัฒนา" english="Ban Krok Phatthana" />
     </entity>
     <entity type="Tambon" name="พังเทียม" english="Phang Thiam" geocode="302803">
       <office type="TAOOffice">
@@ -5655,10 +5762,13 @@
           <googleplus>103731386367928403776</googleplus>
         </socialweb>
         <officials>
-          <official title="TAOMayor" name="อิทธิศักดิ์ อินทร์จำนงค์" begin="2008-08-24" endyear="2012" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="อิทธิศักดิ์ อินทร์จำนงค์" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="อิทธิศักดิ์ อินทร์จำนงค์" begin="2008-08-24" end="2012-08-23" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="40" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="40" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="40" />
         </council>
       </office>
       <entity type="Muban" geocode="30280301" name="บ้านพังเทียม" english="Ban Phang Thiam" />
@@ -5684,18 +5794,46 @@
     </entity>
     <entity type="Tambon" name="ทัพรั้ง" english="Thap Rang" geocode="302804">
       <office type="TAOOffice">
-        <url>http://www.tuprang.com/</url>
+        <url lastchecked="2013-08-07">http://www.tuprang.go.th/</url>
+        <url status="offline">http://www.tuprang.com/</url>
+        <officials>
+          <official title="TAOMayor" name="สมเกียรติ์ กังศรานนท์" inoffice="2013" />
+        </officials>
         <council>
-          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="38" />
+          <term begin="2013-09-30" type="TAO" size="42" />
+          <term begin="2008-08-24" end="2012-08-23" type="TAO" size="42" comment="ECt table wrongly claims 38" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="42" />
+          <!-- Mu 21 created 2006-11 -->
         </council>
       </office>
-      <entity type="Muban" geocode="30280404" name="บ้านทัพรั้ง" english="Ban Thap Rang" />
-
+      <entity type="Muban" geocode="30280401" name="บ้านทัพรั้ง" english="Ban Thap Rang" />
+      <entity type="Muban" geocode="30280402" name="บ้านกุดตาดำ" english="Ban Kut Ta Dam" />
+      <entity type="Muban" geocode="30280403" name="บ้านดอนขวาง" english="Ban Don Khwang" />
+      <entity type="Muban" geocode="30280404" name="บ้านเดิ่นตะโก" english="Ban Doen Tako" />
+      <entity type="Muban" geocode="30280405" name="บ้านโนนสง่า" english="Ban Non Sa-nga" />
+      <entity type="Muban" geocode="30280406" name="บ้านมาบค่าย" english="Ban Map Khai" />
+      <entity type="Muban" geocode="30280407" name="บ้านหนองยาง" english="Ban Nong Yang" />
+      <entity type="Muban" geocode="30280408" name="บ้านกุดไผ่" english="Ban Kut Phai" />
+      <entity type="Muban" geocode="30280409" name="บ้านโคกดินแดง" english="Ban Khok Din Daeng" />
+      <entity type="Muban" geocode="30280410" name="บ้านห้วยหุงเกลือ" english="Ban Huai Thung Kluea" />
+      <entity type="Muban" geocode="30280411" name="บ้านห้วยสามขา" english="Ban Huai Sam Kha" />
+      <entity type="Muban" geocode="30280412" name="บ้านเต็งเตี้ย" english="Ban Teng Tia" />
+      <entity type="Muban" geocode="30280413" name="บ้านตะเคียนงาม" english="Ban Takian Ngam" />
+      <entity type="Muban" geocode="30280414" name="บ้านโนนสูง" english="Ban Non Sung" />
+      <entity type="Muban" geocode="30280415" name="บ้านโนนงิ้ว" english="Ban Non Ngio" />
+      <entity type="Muban" geocode="30280416" name="บ้านโคกเพชร" english="Ban Khok Phet" />
+      <entity type="Muban" geocode="30280417" name="บ้านตลุกชงโค" english="Ban Taluk Chong Kho" />
+      <entity type="Muban" geocode="30280418" name="บ้านหนองกระทุ่ม" english="Ban Nong Krathum" />
+      <entity type="Muban" geocode="30280419" name="บ้านโกรกมะขามป้อม" english="Ban Krok Makham Pom" />
+      <entity type="Muban" geocode="30280420" name="บ้านมาบลาน" english="Ban Map Lan" />
       <entity type="Muban" geocode="30280421" name="บ้านทัพรั้งพัฒนา" english="Ban Thap Rang Phatthana" />
     </entity>
     <entity type="Tambon" name="หนองหอย" english="Nong Hoi" geocode="302805">
       <office type="TAOOffice">
         <url>http://www.nonghoi.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ธีรชัย ถ่อนสันเทียะ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="30" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="30" />
@@ -5851,15 +5989,30 @@
     </office>
     <entity type="Tambon" name="เมืองพะไล" english="Mueang Phalai" geocode="303001">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="สุริชัย ไชยาวัฒนะ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
       </office>
+      <entity type="Muban" geocode="30300101" name="บ้านฝาผนัง" english="Ban Fa Phanang" />
+      <entity type="Muban" geocode="30300102" name="บ้านแดงน้อย" english="Ban Daeng Noi" />
+      <entity type="Muban" geocode="30300103" name="บ้านพะไล" english="Ban Phalai" />
+      <entity type="Muban" geocode="30300104" name="บ้านหลุบทุ่ม" english="Ban Lup Thum" />
+      <entity type="Muban" geocode="30300105" name="บ้านสระน้ำเที่ยง" english="Ban Sa Nam Thiang" />
+      <entity type="Muban" geocode="30300106" name="บ้านเพ็ดน้อย" english="Ban Phet Noi" />
+      <entity type="Muban" geocode="30300107" name="บ้านหนองเรือ" english="Ban Nong Ruea" />
+      <entity type="Muban" geocode="30300108" name="บ้านโนนสะอาด" english="Ban Non Sa-at" />
+      <entity type="Muban" geocode="30300109" name="บ้านหนองแก" english="Ban Nong Kae" />
     </entity>
     <entity type="Tambon" name="โนนจาน" english="Non Chan" geocode="303002">
       <office type="TAOOffice">
         <url>http://nonjan.com/</url>
+        <officials>
+          <official title="TAOMayor" name="เกษม เทพศรี" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="28" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="28" />
@@ -5882,16 +6035,26 @@
     </entity>
     <entity type="Tambon" name="บัวลาย" english="Bua Lai" geocode="303003">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="สมบูรณ์ พันธ์ทอง" begin="2012-09-30" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="22" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
         </council>
       </office>
     </entity>
     <entity type="Tambon" name="หนองหว้า" english="Nong Wa" geocode="303004">
       <office type="TAOOffice">
         <url>http://nongwa.thport.com/</url>
+        <officials>
+          <official title="TAOMayor" name="กันตพงศ์ พรมกมล" begin="2012-09-30" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-09-30" type="TAO" size="18" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="18" />
+          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="18" />
         </council>
       </office>
       <entity type="Muban" geocode="30300401" name="บ้านหนองแวง" english="Ban Nong Waeng" />
@@ -6623,7 +6786,11 @@
   <entity type="ThesabanTambon" name="หนองบัวลาย" english="Nong Bua Lai" geocode="3056" parent="3030">
     <office type="MunicipalityOffice">
       <url>http://www.nongbualai.org/</url>
+      <officials>
+        <official title="TAOMayor" name="วีรโรจน์ เล่าสถาพร" begin="2011-04-10" beginreason="ElectedDirectly" />
+      </officials>
       <council>
+        <term begin="2011-04-10" type="ThesabanTambon" size="12" />
         <term begin="2007-03-04" end="2011-03-03" type="ThesabanTambon" size="12" />
       </council>
     </office>

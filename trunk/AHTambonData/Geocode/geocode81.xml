@@ -153,7 +153,11 @@
     <entity type="Tambon" name="เขาคราม" english="Khao Khram" geocode="810105">
       <office type="TAOOffice">
         <!-- Longdo: 8.215055 98.809178 -->
+        <officials>
+          <official title="TAOMayor" name="บัณฑูร ภูมิภมร" begin="2011-11-13" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2011-11-13" type="TAO" size="12" />
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="12" />
         </council>
       </office>
@@ -246,9 +250,11 @@
       <office type="TAOOffice">
         <url>http://www.aonang.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="พันคำ กิตติธรกุล" begin="2007-10-07" endyear="2011" />
+          <official title="TAOMayor" name="พันคำ กิตติธรกุล" begin="2011-11-13" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="พันคำ กิตติธรกุล" begin="2007-10-07" end="2011-10-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2011-11-13" type="TAO" size="16" />
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="16" />
         </council>
       </office>
@@ -285,7 +291,11 @@
     </entity>
     <entity type="Tambon" name="คลองประสงค์" english="Khlong Prasong" geocode="810118">
       <office type="TAOOffice">
+        <socialweb>
+          <googleplus type="user">110639272404715604559</googleplus>
+        </socialweb>
         <officials>
+          <official title="TAOMayor" name="ประดิษฐ์ จันทร์ทอง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="กิตติ พรหมภัทร" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -1140,13 +1150,27 @@
           <officialterm title="TAOMayor" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2010-05-02" type="TAO" size="18" />
           <term begin="2006-03-19" end="2010-03-18" type="TAO" size="18" />
         </council>
       </office>
+      <entity type="Muban" geocode="81070101" name="บ้านทรายขาว" english="Ban Sai Khao" />
+      <entity type="Muban" geocode="81070102" name="บ้านนาพรุ" english="Ban Na Phru" />
+      <entity type="Muban" geocode="81070103" name="บ้านหนองปง" english="Ban Nong Pong" />
+      <entity type="Muban" geocode="81070104" name="บ้านพรุขี้กา" english="Ban Phru Khi Ka" />
+      <entity type="Muban" geocode="81070105" name="บ้านลำทับ" english="Ban Lam Thap" />
+      <entity type="Muban" geocode="81070106" name="บ้านควนทราย" english="Ban Khuan Sai" />
+      <entity type="Muban" geocode="81070107" name="บ้านย่านอุดม" english="Ban Yan Udom" />
+      <entity type="Muban" geocode="81070108" name="บ้านไร่พัฒนา" english="Ban Rai Phatthana" />
+      <entity type="Muban" geocode="81070109" name="บ้านภูผา" english="Ban Phu Pha" />
+      <entity type="Muban" geocode="81070110" name="บ้านควนเจริญ" english="Ban Khuan Charoen" />
     </entity>
     <entity type="Tambon" name="ดินอุดม" english="Din Udom" geocode="810702">
       <office type="TAOOffice">
         <url>http://www.dinudom.org/</url>
+        <officials>
+          <official title="TAOMayor" name="วุฒิชัย เป็ดทอง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="14" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
@@ -1169,7 +1193,8 @@
         </geo:Point>
         <url>http://www.thungsaithong.go.th/</url>
         <officials>
-          <officialterm title="TAOMayor" begin="2006-03-26" endyear="2010" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="กุศล ดวงน้ำแก้ว" begin="2010-05-02" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2006-03-26" end="2010-03-25" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="10" />
@@ -1186,6 +1211,9 @@
       <office type="TAOOffice">
         <!-- Longdo: 8.01045, 99.38966 -->
         <url>http://www.dindangcity.org/</url>
+        <officials>
+          <official title="TAOMayor" name="ประจวบ เอียดตน" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="12" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
@@ -1499,10 +1527,11 @@
     <office type="MunicipalityOffice">
       <url>http://www.lamthapcity.go.th/</url>
       <officials>
-        <official title="Mayor" name="สุรศักดิ์ เพ็ชรสุก" inoffice="2011" />
-        <officialterm title="Mayor" begin="2006-04-30" endyear="2010" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="สุรศักดิ์ เพ็ชรสุก" begin="2010-06-13" beginreason="ElectedDirectly" /> />
+        <officialterm title="Mayor" begin="2006-04-30" end="2010-04-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
+        <term begin="2010-06-13" type="ThesabanTambon" size="12" />
         <term begin="2006-04-30" end="2010-04-29" type="ThesabanTambon" size="12" />
       </council>
     </office>
