@@ -2471,6 +2471,11 @@ namespace De.AHoerstemeier.Tambon {
         Merge,
         
         /// <summary>
+        /// Law defining the council size has changed.
+        /// </summary>
+        Law,
+        
+        /// <summary>
         /// No specified reason.
         /// </summary>
         Unknown,
