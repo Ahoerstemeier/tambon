@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C749987-D0C8-4A22-9BAF-B13628863783}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>De.AHoerstemeier.Tambon</RootNamespace>
+    <AssemblyName>TambonMain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\DataModel\basictypes.Designer.cs">
+      <Link>basictypes.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\Board.Designer.cs">
+      <Link>Board.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\Constituencies.Designer.cs">
+      <Link>Constituencies.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\Gazette.Designer.cs">
+      <Link>Gazette.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\geocode.Designer.cs">
+      <Link>geocode.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\geopoint.Designer.cs">
+      <Link>geopoint.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\office.Designer.cs">
+      <Link>office.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\PopulationData.Designer.cs">
+      <Link>PopulationData.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\region.Designer.cs">
+      <Link>region.Designer.cs</Link>
+    </Compile>
+    <Compile Include="AnnouncementStatistics.cs" />
+    <Compile Include="ConstituencyCalculator.cs" />
+    <Compile Include="ConstituencyChecker.cs" />
+    <Compile Include="CouncilTerm.cs" />
+    <Compile Include="CreationStatistics.cs" />
+    <Compile Include="CreationStatisticsAmphoe.cs" />
+    <Compile Include="CreationStatisticsCentralGovernment.cs" />
+    <Compile Include="CreationStatisticsMuban.cs" />
+    <Compile Include="CreationStatisticsTambon.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="EntityCounter.cs" />
+    <Compile Include="EntityTermEnd.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="GazetteEntry.cs" />
+    <Compile Include="GazetteListDecade.cs" />
+    <Compile Include="GazetteListFull.cs" />
+    <Compile Include="GazetteListMonth.cs" />
+    <Compile Include="GazetteListYear.cs" />
+    <Compile Include="GazetteOperationBase.cs" />
+    <Compile Include="GlobalData.cs" />
+    <Compile Include="IGazetteEntries.cs" />
+    <Compile Include="IGeocode.cs" />
+    <Compile Include="OfficialEntryBase.cs" />
+    <Compile Include="PopulationData.cs" />
+    <Compile Include="PopulationDataDownloader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoyalGazetteOnlineSearch.cs" />
+    <Compile Include="StatisticsAnnouncementDates.cs" />
+    <Compile Include="ThaiTranslations.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TambonHelpers\TambonHelpers.csproj">
+      <Project>{6cba0539-37e6-42f9-bcb3-50d81edcbedd}</Project>
+      <Name>TambonHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
