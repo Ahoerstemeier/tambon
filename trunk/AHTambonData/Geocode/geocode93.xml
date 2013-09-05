@@ -208,15 +208,25 @@
     </entity>
     <entity type="Tambon" name="ปรางหมู่" english="Prang Mu" geocode="930107">
       <office type="MunicipalityOffice">
+        <symbols>
+          <vision>การเกษตรก้าวหน้า ชุมชนพัฒนา การศึกษาก้าวไกล</vision>
+        </symbols>
         <!-- Approx.   7.648382° 100.065988° - no hires in Google Earth -->
-        <url>http://www.prangmoo.go.th/</url>
+        <url lastchecked="2013-09-05">http://www.prangmoo.go.th/</url>
         <officials>
-          <official title="Mayor" name="นายอวยพร หนูแก้ว" begin="2009-12-20" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="อวยพร หนูแก้ว" begin="2013-08-11" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="อวยพร หนูแก้ว" begin="2009-12-20" endyear="2013" beginreason="ElectedDirectly" endreason="Resigned" />
         </officials>
         <council>
-          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" />
+          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-12" status="Gazette">
+            <gazetteref volume="128" page="33" issue="พิเศษ 17 ง" date="2011-02-11" />
+            <meetingreference board="2" date="2009-05-20" number="8" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="93010701" name="บ้านดอนแบก" english="Ban Don Baek" />
       <entity type="Muban" geocode="93010702" name="บ้านนางเกรียง" english="Ban Nang Kriang" />
