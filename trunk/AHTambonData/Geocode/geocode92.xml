@@ -773,8 +773,7 @@
       </officials>
     </office>
     <entity type="Tambon" name="ย่านตาขาว" english="Yan Ta Khao" geocode="920301">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2013-09-06 -->
+      <office type="MunicipalityOffice">
         <symbols>
           <vision>โครงสร้างพื้นฐานสะดวก  เศรษฐกิจก้าวหน้า  การศึกษามั่นคง  ชุมชนน่าอยู่</vision>
         </symbols>
@@ -788,7 +787,10 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="10" />
         </council>
         <history>
-          <rename oldname="ย่านตาขาว" oldenglish="Yan Ta Khao" name="ควนโพธิ์" english="Khuan Pho" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Done">
+            <meetingreference board="2" number="22" date="2013-04-10" />
+          </statuschange>
+          <rename oldname="ย่านตาขาว" oldenglish="Yan Ta Khao" name="ควนโพธิ์" english="Khuan Pho" effective="2013-09-06" status="Done" />
         </history>
       </office>
       <entity type="Muban" geocode="92030101" name="บ้านย่านตาขาว" english="Ban Yan Ta Khao" />
@@ -1346,8 +1348,7 @@
       <entity type="Muban" geocode="92050407" name="บ้านนาหละ" english="Ban Na La" />
     </entity>
     <entity type="Tambon" name="นาเมืองเพชร" english="Na Mueang Phet" geocode="920505">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2013-09-06 -->
+      <office type="MunicipalityOffice">
         <symbols>
           <vision>สังคมเข็มแข็ง เน้นพัฒนา ก้าวหน้าเทคโนโลยี สืบสานประเพณีและวัฒนาธรรมท้องถิ่น</vision>
         </symbols>
@@ -1361,6 +1362,11 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="14" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Done">
+            <meetingreference board="2" number="22" date="2013-04-10" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="92050501" name="บ้านห้วยไทร" english="Ban Huai Sai" />
       <entity type="Muban" geocode="92050502" name="บ้านเขาแก้ว" english="Ban Khao Kaeo" />
@@ -1506,9 +1512,11 @@
     </entity>
     <entity type="Tambon" name="เขาขาว" english="Khao Khao" geocode="920608">
       <office type="TAOOffice">
-        <url lastchecked="2012-02-03" status="offline">http://www.khaokoa.com/</url>
+        <url lastchecked="2013-09-06">http://www.khaokoa.go.th/</url>
+        <url lastonline="2012-02-03" status="offline">http://www.khaokoa.com/</url>
         <officials>
-          <official title="TAOMayor" name="ชัยวัฒน์ จิตรแก้ว" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="วีระชัย รุุณแสง" begin="2013-07-28" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ชัยวัฒน์ จิตรแก้ว" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" endreason="Unknown" />
           <official title="TAOMayor" name="วิษณุ จิตรแก้ว" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
