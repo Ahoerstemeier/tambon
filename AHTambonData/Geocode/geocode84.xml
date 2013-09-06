@@ -722,9 +722,10 @@
           <geo:lat>9.0328</geo:lat>
           <geo:long>99.6205</geo:long>
         </geo:Point>
-        <url>http://www.khlongsa.go.th/</url>
+        <url lastchecked="2013-09-06">http://www.khlongsa.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ธรรมรงค์ มณีโชติ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ธรรมรงค์ มณีโชติ" begin="2013-07-28" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ธรรมรงค์ มณีโชติ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" endreason="Resigned" />
         </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20">
@@ -1155,8 +1156,7 @@
       <entity type="Muban" geocode="84060307" name="บ้านไทรงาม" english="Ban Sai Ngam" />
     </entity>
     <entity type="Tambon" name="เวียง" english="Wiang" geocode="840604">
-      <office type="TAOOffice">
-        <!-- To be upgraded to ThesabanTambon 2013-09-06 -->
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>9.3854</geo:lat>
           <geo:long>99.1787</geo:long>
@@ -1169,6 +1169,11 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="10" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="10" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Done">
+            <meetingreference board="2" number="23" date="2013-05-01" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="84060401" name="บ้านเชิงสมอ" english="Ban Choeng Samo" />
       <entity type="Muban" geocode="84060402" name="บ้านกุน" english="Ban Kun" />
