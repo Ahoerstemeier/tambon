@@ -18,7 +18,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Reference to a board meeting.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -106,7 +106,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Type of board.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -137,7 +137,7 @@ namespace De.AHoerstemeier.Tambon {
         electioncommission,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -173,7 +173,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -213,6 +213,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(AbolishOperation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(AreaOperation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(CreateOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(MentionOperation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(RenameOperation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("renamewat", typeof(RenameWatOperation), Order=0)]
@@ -317,7 +318,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -350,8 +351,9 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AbolishOperation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AreaOperation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RenameWatOperation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MentionOperation))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(RenameOperation))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -597,7 +599,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -644,7 +646,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -710,7 +712,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -738,7 +740,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -785,7 +787,35 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MentionOperation", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class MentionOperation : BasicOperation {
+        
+        private EntityType typeField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -851,7 +881,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -900,7 +930,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18046")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
