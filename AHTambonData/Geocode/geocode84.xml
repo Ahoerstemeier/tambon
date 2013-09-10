@@ -1019,10 +1019,13 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="12" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-01">
+          <abolished type="ThesabanTambon" mergeto="8492" status="Pending">
+            <meetingreference board="1" number="49" date="2013-09-02" />
+          </abolished>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-01" status="Done">
             <meetingreference board="2" number="46" date="2012-07-03" />
           </statuschange>
-          <rename oldname="เกาะพะงัน" oldenglish="Ko Pha-ngan" name="เพชรพะงัน" english="Phet Pha-ngan" effective="2012-08-01">
+          <rename oldname="เกาะพะงัน" oldenglish="Ko Pha-ngan" name="เพชรพะงัน" english="Phet Pha-ngan" effective="2012-08-01" status="Done">
             <meetingreference date="2012-06-26" number="3" board="rename" />
           </rename>
         </history>
@@ -1054,8 +1057,10 @@
           </term>
         </council>
         <history>
-          <!-- upgrade before term end? -->
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-01" />
+          <abolished type="ThesabanTambon" mergeto="8492" status="Pending">
+            <meetingreference board="1" number="49" date="2013-09-02" />
+          </abolished>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-01" status="Done" />
         </history>
       </office>
       <entity type="Muban" geocode="84050201" name="บ้านหน้าทับ" english="Ban Na Thap" />
@@ -4279,6 +4284,14 @@
         <term begin="2011-09-18" type="ThesabanTambon" size="12" />
         <term begin="2007-08-11" end="2011-08-10" type="ThesabanTambon" size="12" />
       </council>
+      <history>
+        <mergedwith mergefromtype="ThesabanTambon" mergefrom="840501" status="Pending">
+          <meetingreference board="1" number="49" date="2013-09-02" />
+        </mergedwith>
+        <mergedwith mergefromtype="ThesabanTambon" mergefrom="840502" status="Pending">
+          <meetingreference board="1" number="49" date="2013-09-02" />
+        </mergedwith>
+      </history>
     </office>
     <entity type="Chumchon" geocode="84920001" name="ชุมชนบ้านท้องศาลา" english="Chumchon Thong Sala" />
     <entity type="Chumchon" geocode="84920002" name="ชุมชนบ้านในวก-สวนวัด" english="Chumchon Ban Nai Wok - Suan Wat" />
