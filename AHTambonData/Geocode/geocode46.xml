@@ -506,10 +506,18 @@
     </entity>
     <entity type="Tambon" name="หลักเมือง" english="Lak Mueang" geocode="460302">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="ประจวบ ดอนสมจิตร" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="28" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="28" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+            <meetingreference board="2" number="41" date="2013-08-20" />
+          </statuschange>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="โพนงาม" english="Phon Ngam" geocode="460303">
@@ -2126,16 +2134,33 @@
     </entity>
     <entity type="Tambon" name="ผาเสวย" english="Pha Sawoei" geocode="461306">
       <office type="TAOOffice">
+        <symbols>
+          <vision>
+            พัฒนาตน พัฒนาคน มุ่งผลสำเร็จ
+            ตามหลักปรัชญาเศรษฐกิจพอเพียง นำไปสู่ชุมชนน่าอยู่ตลอดไป
+          </vision>
+        </symbols>
         <geo:Point>
           <geo:lat>16.7589</geo:lat>
           <geo:long>103.7838</geo:long>
         </geo:Point>
-        <url>http://www.pasawoei.go.th/</url>
+        <url lastchecked="2013-09-13">http://www.pasawoei.go.th/</url>
         <url status="offline">http://www.tambon-psv.com/</url>
+        <officials>
+          <official title="TAOMayor" name="จำลอง เอื้อกิจ" begin="2009-12-13" endyear="2013" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-12-13" end="2013-12-12" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+            <meetingreference board="1" number="42" date="2013-08-05" />
+          </statuschange>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Withdrawn">
+            <meetingreference board="2" date="2009-07-20" number="28" />
+          </statuschange>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="ศรีสมเด็จ" english="Si Somdet" geocode="461307">
