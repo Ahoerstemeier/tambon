@@ -3437,9 +3437,10 @@
   </entity>
   <entity type="ThesabanMueang" name="คลองแห" english="Khlong Hae" geocode="9078" parent="9011" tambon="901105">
     <office type="MunicipalityOffice">
-      <url>http://www.klonghaecity.go.th/</url>
+      <url lastchecked="2013-09-13">http://www.klonghaecity.go.th/</url>
       <officials>
-        <official title="Mayor" name="สุภาภรณ์ สังขชาติ" begin="2009-07-05" endyear="2013" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="อนันต์ การันสันติ" begin="2013-08-16" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="สุภาภรณ์ สังขชาติ" begin="2009-07-05" end="2013-07-04" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
         <term begin="2011-11-27" type="ThesabanMueang" size="18" />
@@ -3447,8 +3448,13 @@
       </council>
     </office>
     <history>
-      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2007-08-01" />
-      <statuschange old="TAO" new="ThesabanTambon" effective="2003-10-02" />
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2007-08-01" status="Gazette">
+        <gazetteref volume="124" issue="พิเศษ 84 ง" date="2007-07-13" page="30" />
+        <meetingreference board="2" number="14" date="2007-05-24" />
+      </statuschange>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2003-10-02" status="Gazette">
+        <gazetteref volume="120" page="35" issue="95 ก" date="2003-10-02" />
+      </statuschange>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="สำนักขาม" english="Samnak Kham" geocode="9077" parent="9010">
