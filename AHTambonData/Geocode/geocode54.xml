@@ -961,8 +961,9 @@
     </entity>
     <entity type="Tambon" name="เวียงต้า" english="Wiang Ta" geocode="540304" />
     <entity type="Tambon" name="ปากกาง" english="Pak Kang" geocode="540305">
-      <office type="TAOOffice" comment="Was scheduled to become ThesabanTambon in 2009">
-        <url>http://www.pagkang.net/</url>
+      <office type="TAOOffice">
+        <url lastchecked="2013-09-17">http://pagkang.go.th/</url>
+        <url status="offline">http://www.pagkang.net/</url>
         <officials>
           <official title="TAOMayor" name="พยุงสิทธิ์ เดชสมบูรณ์" begin="2009-12-13" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
@@ -970,6 +971,14 @@
           <term begin="2009-12-13" end="2013-12-12" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+            <meetingreference board="2" number="36" date="2013-07-31" />
+          </statuschange>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Withdrawn">
+            <meetingreference board="2" date="2009-05-14" number="7" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="54030501" name="บ้านร่องบอน" english="Ban Rong Bon" />
       <entity type="Muban" geocode="54030502" name="บ้านปากกาง" english="Ban Pak Kang" />
