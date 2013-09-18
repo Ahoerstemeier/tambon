@@ -21,6 +21,8 @@ namespace De.AHoerstemeier.Tambon
             { "ใหม่พัฒนา", "Mai Phatthana"}, // New Development
             {"ตะวันออก", "Tawan Ok"}, // East
             {"ตะวันตก", "Tawan Tok"}, // West
+            {"ออก", "Ok"}, // up
+            {"ตก", "Tok"}, // down
             {"สอง", "Song"},  // second
             {"กลาง", "Klang"}, // Middle
             {"คำ", "Kham"},  // Word
