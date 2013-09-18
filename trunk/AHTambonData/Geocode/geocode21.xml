@@ -1079,14 +1079,34 @@
     </entity>
     <entity type="Tambon" name="ห้วยทับมอญ" english="Huai Thap Mon" geocode="210702">
       <office type="TAOOffice">
-        <url>http://huaitabmon.go.th/</url>
+        <symbols>
+          <vision>
+            ตำบลห้วยทับมอญเป็นตำบลเข้มแข็ง  เป็นศูนย์กลางการผลิตทางการเกษตร
+            ประชาชนมีคุณภาพชีวิตที่ดี  บริหารงานตามหลักธรรมาภิบาล
+          </vision>
+        </symbols>
+        <url lastchecked="2013-09-18">http://huaitabmon.go.th/</url>
         <officials>
           <official title="TAOMayor" name="สมพร พันธ์เฉลิมชัย" inoffice="2011" />
         </officials>
         <council>
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="16" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+            <meetingreference board="2" number="42" date="2013-08-21" />
+          </statuschange>
+          <rename oldname="ห้วยทับมอญ" oldenglish="Huai Thap Mon" name="เขาชะเมา" english="Khao Chamao" status="Pending" />
+        </history>
       </office>
+      <entity type="Muban" geocode="21070201" name="บ้านคลองหิน" english="Ban Khlong Hin" />
+      <entity type="Muban" geocode="21070202" name="บ้านห้วยทับมอญ" english="Ban Huai Thap Mon" />
+      <entity type="Muban" geocode="21070203" name="บ้านเขาพัง" english="Ban Khao Phang" />
+      <entity type="Muban" geocode="21070204" name="บ้านสีระมัน" english="Ban Siraman" />
+      <entity type="Muban" geocode="21070205" name="บ้านปากแพรก" english="Ban Pak Phraek" />
+      <entity type="Muban" geocode="21070206" name="บ้านยางเอน" english="Ban Yang En" />
+      <entity type="Muban" geocode="21070207" name="บ้านน้ำกร่อย" english="Ban Nam Kroi" />
+      <entity type="Muban" geocode="21070208" name="บ้านห้อยหัว" english="Ban Hoi Hua" />
     </entity>
     <entity type="Tambon" name="ชำฆ้อ" english="Cham Kho" geocode="210703">
       <office type="MunicipalityOffice">
@@ -1097,12 +1117,19 @@
         <url>http://chamkho.ueuo.com/</url>
         <url status="offline">http://www.chamkho.go.th/</url>
         <officials>
-          <official title="Mayor" name="สมชัย ทรงวศิน" inoffice="2012" />
+          <official title="Mayor" name="สมชัย ทรงวศิน" begin="2011-11-27" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="สมชัย ทรงวศิน" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2011-11-27" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-01" status="Gazette">
+            <!-- No board meeting?-->
+            <gazetteref volume="128" page="5" issue="พิเศษ 111 ง" date="2011-09-26" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="21070301" name="บ้านศรีประชา" english="Ban Si Pracha" />
       <entity type="Muban" geocode="21070302" name="บ้านคลองโพล" english="Ban Khlong Phon" />
@@ -1117,7 +1144,11 @@
     <entity type="Tambon" name="เขาน้อย" english="Khao Noi" geocode="210704">
       <office type="TAOOffice">
         <url>http://www.khaonoi-sao.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="สุรเดช ตะเพียรทอง" begin="2012-10-07" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2012-10-07" type="TAO" size="10" />
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="10" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="10" />
         </council>
