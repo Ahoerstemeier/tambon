@@ -529,6 +529,11 @@
   </entity>
   <entity type="Amphoe" name="บันนังสตา" english="Bannang Sata" geocode="9503">
     <office type="DistrictOffice">
+      <geo:Point>
+        <!-- Not sure, might also be building behind or next to it-->
+        <geo:lat>6.2663</geo:lat>
+        <geo:long>101.2648</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="เมธี กาญจนภูวะ" begin="2007-01-08" inoffice="2009" comment="2009-06" />
         <official title="DistrictOfficer" name="ณัฐกฤช สิทธิโอสถ" end="2007-01-07" />
@@ -536,7 +541,14 @@
     </office>
     <entity type="Tambon" name="บันนังสตา" english="Bannang Sata" geocode="950301">
       <office type="TAOOffice">
-        <url>http://www.bannungsta.go.th/</url>
+        <symbols>
+          <vision>เมืองน่าอยู่ เศรษฐกิจพอเพียง สังคมก้าวไกล รักษ์สิ่งแวดล้อม </vision>
+        </symbols>
+        <!-- 6.25628,101.24924 -->
+        <url lastchecked="2013-09-24">http://www.bannungsta.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="หะยีอับดุลเราะห์มาน ติงอุเซ็ง" inoffice="2013" />
+        </officials>
         <council>
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="22" />
         </council>
@@ -661,6 +673,10 @@
   </entity>
   <entity type="Amphoe" name="ธารโต" english="Than To" geocode="9504">
     <office type="DistrictOffice">
+      <geo:Point>
+        <geo:lat>6.1673</geo:lat>
+        <geo:long>101.1795</geo:long>
+      </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="สุรชัย วงศ์ศุภลักษณ์" inoffice="2009" comment="2009-06" />
       </officials>
@@ -1352,7 +1368,7 @@
       <symbols>
         <vision>มุ่งพัฒนาสู่ "สังคมอยู่เย็นเป็นสุขร่วมกัน" มีคุณธรรม รู้เท่าทันโลก ครอบครัวอบอุ่น ชุมชนเข้มแข็ง สังคมสันติสุข เศรษฐกิจมีคุณภาพ สิ่งแวดล้อมดี ภายใต้การบริหารจัดการแบบธรรมาภิบาล</vision>
       </symbols>
-      <url lastchecked="2013-01-07">http://www.bannangsata.go.th/</url>
+      <url lastchecked="2013-09-24">http://www.bannangsata.go.th/</url>
       <officials>
         <!-- Table on TAO website says start in 2010, EC list says end of term with council ??? -->
         <official title="Mayor" index="7" name="อาบีดิง กาจะลากี" begin="2011-01-09" beginreason="ElectedDirectly" />
