@@ -73,6 +73,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MubanHelperForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MubanHelperForm.Designer.cs">
+      <DependentUpon>MubanHelperForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringDisplayForm.cs">
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MubanHelperForm.resx">
+      <DependentUpon>MubanHelperForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

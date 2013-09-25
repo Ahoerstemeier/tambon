@@ -59,8 +59,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnCheckNames_Click(object sender, EventArgs e)
         {
-            List<Tuple<UInt32, String, String, String>> romanizationMistakes = null;
-            var romanizationMissing = new List<Tuple<UInt32, String>>();
+            var romanizationMissing = new List<RomanizationEntry>();
 
             var country = new Entity();
             foreach ( var province in GlobalData.Provinces )
@@ -71,8 +70,11 @@ namespace De.AHoerstemeier.Tambon.UI
             var allEntities = country.FlatList();
             Int32 numberOfEntities = allEntities.Count();
 
-            var romanizations = BuildRomanizationDictionary(out romanizationMistakes, allEntities);
-            var romanizationSuggestions = FindRomanizationSuggestions(out romanizationMissing, allEntities, romanizations);
+            var romanizator = new Romanization();
+            romanizator.Initialize(allEntities);
+            var romanizations = romanizator.Romanizations;
+            var romanizationMistakes = romanizator.RomanizationMistakes;
+            var romanizationSuggestions = romanizator.FindRomanizationSuggestions(out romanizationMissing, allEntities);
 
             UInt32 provinceFilter = 0;
             //if ( cbxCheckNamesFiltered.Checked )
@@ -84,9 +86,9 @@ namespace De.AHoerstemeier.Tambon.UI
             Int32 romanizationMistakeCount = 0;
             foreach ( var entry in romanizationMistakes )
             {
-                if ( GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Item1) )
+                if ( GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Key.Geocode) )
                 {
-                    romanizationMistakesBuilder.AppendLine(String.Format("{0} {1}: {2} vs. {3}", entry.Item1, entry.Item2, entry.Item3, entry.Item4));
+                    romanizationMistakesBuilder.AppendLine(String.Format("{0} {1}: {2} vs. {3}", entry.Key.Geocode, entry.Key.Name, entry.Key.English, entry.Value));
                     romanizationMistakeCount++;
                 }
             }
@@ -103,21 +105,10 @@ namespace De.AHoerstemeier.Tambon.UI
             Int32 romanizationSuggestionCount = 0;
             foreach ( var entry in romanizationSuggestions )
             {
-                if ( GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Item1) )
+                if ( GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Geocode) )
                 {
-                    var entity = allEntities.FirstOrDefault(x => x.geocode == entry.Item1);
-                    var suggestedName = entry.Item3;
-                    switch ( entity.type )
-                    {
-                        case EntityType.Muban:
-                            suggestedName = "Ban " + suggestedName.StripBanOrChumchon();
-                            break;
-                        case EntityType.Chumchon:
-                            suggestedName = "Chumchon " + suggestedName.StripBanOrChumchon();
-                            break;
-                        default:
-                            break;
-                    }
+                    var entity = allEntities.FirstOrDefault(x => x.geocode == entry.Geocode);
+                    var suggestedName = entry.English;
                     romanizationSuggestionBuilder.AppendLine(String.Format("<entity type=\"{0}\" geocode=\"{1}\" name=\"{2}\" english=\"{3}\" />",
                         entity.type, entity.geocode, entity.name, suggestedName));
                     romanizationSuggestionCount++;
@@ -125,23 +116,23 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             if ( romanizationSuggestionCount > 0 )
             {
-                var lForm = new StringDisplayForm(
+                var form = new StringDisplayForm(
                     String.Format("Romanization suggestions ({0}", romanizationSuggestionCount),
                     romanizationSuggestionBuilder.ToString());
-                lForm.Show();
+                form.Show();
 
                 List<Tuple<String, String, Int32>> counter = new List<Tuple<String, String, Int32>>();
                 foreach ( var entry in romanizationSuggestions )
                 {
-                    var found = counter.FirstOrDefault(x => x.Item1 == entry.Item2);
+                    var found = counter.FirstOrDefault(x => x.Item1 == entry.Name);
                     if ( found == null )
                     {
-                        counter.Add(Tuple.Create(entry.Item2, entry.Item3, 1));
+                        counter.Add(Tuple.Create(entry.Name, entry.English, 1));
                     }
                     else
                     {
                         counter.Remove(found);
-                        counter.Add(Tuple.Create(entry.Item2, entry.Item3, found.Item3 + 1));
+                        counter.Add(Tuple.Create(entry.Name, entry.English, found.Item3 + 1));
                     }
                 }
                 counter.RemoveAll(x => x.Item3 < 2);
@@ -172,15 +163,15 @@ namespace De.AHoerstemeier.Tambon.UI
                 List<Tuple<String, Int32>> counter = new List<Tuple<String, Int32>>();
                 foreach ( var entry in romanizationMissing )
                 {
-                    var found = counter.FirstOrDefault(x => x.Item1 == entry.Item2);
+                    var found = counter.FirstOrDefault(x => x.Item1 == entry.Name);
                     if ( found == null )
                     {
-                        counter.Add(Tuple.Create(entry.Item2, 1));
+                        counter.Add(Tuple.Create(entry.Name, 1));
                     }
                     else
                     {
                         counter.Remove(found);
-                        counter.Add(Tuple.Create(entry.Item2, found.Item2 + 1));
+                        counter.Add(Tuple.Create(entry.Name, found.Item2 + 1));
                     }
                 }
                 // counter.RemoveAll(x => x.Item2 < 2);
@@ -209,166 +200,6 @@ namespace De.AHoerstemeier.Tambon.UI
                     lForm2.Show();
                 }
             }
-        }
-
-        private static List<Tuple<UInt32, String, String>> FindRomanizationSuggestions(out List<Tuple<UInt32, String>> romanizationMissing, IEnumerable<Entity> allEntities, IDictionary<String, String> romanizations)
-        {
-            var result = new List<Tuple<UInt32, String, String>>();
-            romanizationMissing = new List<Tuple<UInt32, String>>();
-            foreach ( var entityToCheck in allEntities )
-            {
-                if ( String.IsNullOrEmpty(entityToCheck.name) )
-                {
-                    continue;
-                }
-                if ( String.IsNullOrEmpty(entityToCheck.english) )
-                {
-                    String foundEnglishName = String.Empty;
-                    if ( romanizations.Keys.Contains(entityToCheck.name) )
-                    {
-                        foundEnglishName = entityToCheck.name;
-                    }
-                    else
-                    {
-                        var searchName = entityToCheck.name.StripBanOrChumchon();
-
-                        if ( romanizations.Keys.Contains(searchName) )
-                        {
-                            foundEnglishName = searchName;
-                        }
-                        else
-                        {
-                            // Chumchon may have the name "Chumchon Ban ..."
-                            searchName = searchName.StripBanOrChumchon();
-                            if ( romanizations.Keys.Contains(searchName) )
-                            {
-                                foundEnglishName = searchName;
-                            }
-                        }
-                    }
-
-                    if ( !String.IsNullOrEmpty(foundEnglishName) )
-                    {
-                        result.Add(Tuple.Create(entityToCheck.geocode, entityToCheck.name, romanizations[foundEnglishName]));
-                    }
-                    else
-                    {
-                        Boolean found = false;
-                        String name = entityToCheck.name.StripBanOrChumchon();
-                        name = ThaiNumeralHelper.ReplaceThaiNumerals(name);
-                        List<Char> numerals = new List<Char>() { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-                        foreach ( Char c in numerals )
-                        {
-                            name = name.Replace(c, ' ');
-                        }
-                        name = name.Trim();
-                        foreach ( var keyValuePair in ThaiLanguageHelper.NameSuffixRomanizations )
-                        {
-                            if ( entityToCheck.name.EndsWith(keyValuePair.Key) )
-                            {
-                                String searchString = name.Substring(0, name.Length - keyValuePair.Key.Length).StripBanOrChumchon();
-                                if ( String.IsNullOrEmpty(searchString) )
-                                {
-                                    result.Add(Tuple.Create(entityToCheck.geocode, entityToCheck.name, keyValuePair.Value));
-                                    found = true;
-                                }
-                                else if ( romanizations.Keys.Contains(searchString) )
-                                {
-                                    result.Add(Tuple.Create(entityToCheck.geocode, entityToCheck.name, romanizations[searchString] + " " + keyValuePair.Value));
-                                    found = true;
-                                }
-                            }
-                        }
-                        if ( !found )
-                        {
-                            var prefixes = ThaiLanguageHelper.NamePrefixRomanizations.Union(ThaiLanguageHelper.NameSuffixRomanizations);
-                            foreach ( var keyValuePair in prefixes )
-                            {
-                                if ( name.StartsWith(keyValuePair.Key) )
-                                {
-                                    String searchString = name.Substring(keyValuePair.Key.Length);
-                                    if ( String.IsNullOrEmpty(searchString) )
-                                    {
-                                        result.Add(Tuple.Create(entityToCheck.geocode, entityToCheck.name, keyValuePair.Value));
-                                        found = true;
-                                    }
-                                    else if ( romanizations.Keys.Contains(searchString) )
-                                    {
-                                        result.Add(Tuple.Create(entityToCheck.geocode, entityToCheck.name, keyValuePair.Value + " " + romanizations[searchString]));
-                                        found = true;
-                                    }
-                                }
-                            }
-                        }
-                        if ( !found )
-                        {
-                            romanizationMissing.Add(Tuple.Create(entityToCheck.geocode, entityToCheck.name));
-                        }
-                    }
-                }
-            }
-            return result;
-        }
-
-        private static Dictionary<String, String> BuildRomanizationDictionary(out List<Tuple<UInt32, String, String, String>> romanizationMistakes, IEnumerable<Entity> allEntities)
-        {
-            var result = new Dictionary<String, String>();
-            romanizationMistakes = new List<Tuple<UInt32, String, String, String>>();
-            foreach ( var entityToCheck in allEntities )
-            {
-                if ( !String.IsNullOrEmpty(entityToCheck.english) )
-                {
-                    String name = entityToCheck.name;
-                    String english = entityToCheck.english;
-                    if ( (entityToCheck.type == EntityType.Muban) | (entityToCheck.type == EntityType.Chumchon) )
-                    {
-                        name = name.StripBanOrChumchon();
-
-                        if ( english.StartsWith("Ban ") )
-                        {
-                            english = english.Remove(0, "Ban ".Length).Trim();
-                        }
-                        if ( english.StartsWith("Chumchon ") )
-                        {
-                            english = english.Remove(0, "Chumchon ".Length).Trim();
-                        }
-
-                        if ( entityToCheck.type == EntityType.Chumchon )
-                        {
-                            // Chumchon may have the name "Chumchon Ban ..."
-                            name = name.StripBanOrChumchon();
-
-                            // or even Chumchon Mu Ban
-                            const String ThaiStringMuban = "หมู่บ้าน";
-                            if ( name.StartsWith(ThaiStringMuban, StringComparison.Ordinal) )
-                            {
-                                name = name.Remove(0, ThaiStringMuban.Length).Trim();
-                            }
-
-                            if ( english.StartsWith("Ban ") )
-                            {
-                                english = english.Remove(0, "Ban ".Length).Trim();
-                            }
-                            if ( english.StartsWith("Mu Ban ") )
-                            {
-                                english = english.Remove(0, "Mu Ban ".Length).Trim();
-                            }
-                        }
-                    }
-                    if ( result.Keys.Contains(name) )
-                    {
-                        if ( result[name] != english )
-                        {
-                            romanizationMistakes.Add(Tuple.Create(entityToCheck.geocode, name, english, result[name]));
-                        }
-                    }
-                    else
-                    {
-                        result[name] = english;
-                    }
-                }
-            }
-            return result;
         }
 
         private void btnCheckTerms_Click(object sender, EventArgs e)
@@ -824,6 +655,23 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var formElectionDayOfWeek = new StringDisplayForm("Election days", result);
             formElectionDayOfWeek.Show();
+        }
+
+        private void btnMubanHelper_Click(object sender, EventArgs e)
+        {
+            var country = new Entity();
+            foreach ( var province in GlobalData.Provinces )
+            {
+                var provinceData = GlobalData.GetGeocodeList(province.geocode);
+                country.entity.Add(provinceData);
+            }
+            var allEntities = country.FlatList();
+
+            var romanizator = new Romanization();
+            romanizator.Initialize(allEntities);
+            var form = new MubanHelperForm();
+            form.Romanizator = romanizator;
+            form.Show();
         }
     }
 }
