@@ -725,9 +725,17 @@
     </entity>
     <entity type="Tambon" name="เมืองนะ" english="Mueang Na" geocode="500402">
       <entity type="Muban" geocode="50040201" name="บ้านเมืองนะ" english="Ban Mueang Na" />
-
+      <entity type="Muban" geocode="50040202" name="บ้านแกน้อย" english="Ban Kae Noi" />
+      <entity type="Muban" geocode="50040203" name="บ้านนาหวาย" english="Ban Na Wai" />
+      <entity type="Muban" geocode="50040204" name="บ้านโละป่าหาญ" english="Ban Lo Pahan" />
+      <entity type="Muban" geocode="50040205" name="บ้านโป่งอาง" english="Ban Pong Ang" />
+      <entity type="Muban" geocode="50040206" name="บ้านน้ำรู" english="Ban Nam Ru" />
+      <entity type="Muban" geocode="50040207" name="บ้านห้วยไส้" english="Ban Huai Sai" />
+      <entity type="Muban" geocode="50040208" name="บ้านจองคำ" english="Ban Chong Kham" />
+      <entity type="Muban" geocode="50040209" name="บ้านไชยา" english="Ban Chaiya" />
       <entity type="Muban" geocode="50040210" name="บ้านอรุโณทัย" english="Ban Arunothai" />
-
+      <entity type="Muban" geocode="50040211" name="บ้านหนองแขม" english="Ban Nong Khaem" />
+      <entity type="Muban" geocode="50040212" name="บ้านหนองเขียว" english="Ban Nong Khiao" />
       <entity type="Muban" geocode="50040213" name="บ้านเจียจันทร์" english="Ban Chia Chan" />
       <entity type="Muban" geocode="50040214" name="บ้านใหม่สามัคคี" english="Ban Mai Samakkhi" />
     </entity>
@@ -4216,7 +4224,7 @@
       <entity type="Muban" geocode="50190308" name="บ้านศรีดอนมูล" english="Ban Si Don Mun" />
       <entity type="Muban" geocode="50190309" name="บ้านร่มป่าตอง" english="Ban Rom Pa Tong" />
     </entity>
-    <entity type="Tambon" name="ไชยสถาน" english="Chaiya Sathan" geocode="501904">
+    <entity type="Tambon" name="ไชยสถาน" english="Chaiya Sathan" geocode="501904" comment="Recommended spelling is Chai Sathan, which seems wrong">
       <office type="TAOOffice">
         <url>http://www.chaisathan.go.th/</url>
         <council>
@@ -6003,7 +6011,17 @@
   </entity>
   <entity type="ThesabanTambon" name="เมืองนะ" english="Mueang Na" geocode="5050" parent="5004" tambon="500402">
     <office type="MunicipalityOffice">
+      <symbols>
+        <vision>
+          เศรษฐกิจก้าวหน้า       ประชาสมานฉันทร์
+          รวมศูนย์องค์ความรู้     รู้คุณค่าทรัพยากร องค์กรโปร่งใส
+        </vision>
+      </symbols>
       <!-- Longdo: 19.59298, 98.96130 -->
+      <url lastchecked="2013-09-25">http://www.muangna.com/</url>
+      <socialweb>
+        <googleplus type="user" status="inactive">108095769564829004512</googleplus>
+      </socialweb>
       <officials>
         <official title="Mayor" name="ลาเคละ จะทอ" begin="2013-01-27" beginreason="ElectedDirectly" />
       </officials>
@@ -6011,6 +6029,7 @@
         <term begin="2013-01-27" type="ThesabanTambon" size="12" />
         <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
         <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
+        <!-- Mu 13,14 created 2003-09 -->
       </council>
     </office>
     <history>

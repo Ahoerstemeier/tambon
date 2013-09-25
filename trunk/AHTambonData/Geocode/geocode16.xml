@@ -1397,6 +1397,7 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ท่าหลวง" english="Tha Luang" geocode="1607">
+    <wiki wikidata="Q476832" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.0684</geo:lat>
@@ -1426,7 +1427,11 @@
     </entity>
     <entity type="Tambon" name="แก่งผักกูด" english="Kaeng Phak Kut" geocode="160702">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="ฐิติพงศ์ พรเดชศรีจำปา" begin="2011-11-13" beginreason="ElectedDirectly" />
+        </officials>
         <council>
+          <term begin="2011-11-13" type="TAO" size="26" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="26" />
         </council>
       </office>
@@ -1439,6 +1444,13 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
         </council>
       </office>
+      <entity type="Muban" geocode="16070301" name="บ้านซับจำปา" english="Ban Sap Champa" />
+      <entity type="Muban" geocode="16070302" name="บ้านทรัพย์เจริญ" english="Ban Sap Charoen" />
+      <entity type="Muban" geocode="16070303" name="บ้านโป่งสวอง" english="Ban Pong Sawong" />
+      <entity type="Muban" geocode="16070304" name="บ้านซับลำไย" english="Ban Sap Lam Yai" />
+      <entity type="Muban" geocode="16070305" name="บ้านซับเรือ" english="Ban Sap Ruea" />
+      <entity type="Muban" geocode="16070306" name="บ้านโป่งใต้" english="Ban Pong Tai" />
+      <entity type="Muban" geocode="16070307" name="บ้านคูเมือง" english="Ban Khu Mueang" />
     </entity>
     <entity type="Tambon" name="หนองผักแว่น" english="Nong Phak Waen" geocode="160704">
       <office type="TAOOffice">
@@ -1455,11 +1467,22 @@
     <entity type="Tambon" name="ทะเลวังวัด" english="Thale Wang Wat" geocode="160705" />
     <entity type="Tambon" name="หัวลำ" english="Hua Lam" geocode="160706">
       <office type="TAOOffice">
+        <officials>
+          <official title="TAOMayor" name="วศิน เขมันกิจ" begin="2013-07-28" beginreason="ElectedDirectly" />
+        </officials>
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
       </office>
+      <entity type="Muban" geocode="16070601" name="บ้านซับยาง" english="Ban Sap Yang" />
+      <entity type="Muban" geocode="16070602" name="บ้านหนองแก" english="Ban Nong Kae" />
+      <entity type="Muban" geocode="16070603" name="บ้านซับน้อย" english="Ban Sap Noi" />
+      <entity type="Muban" geocode="16070604" name="บ้านหัวลำ" english="Ban Hua Lam" />
+      <entity type="Muban" geocode="16070605" name="บ้านหนองจาน" english="Ban Nong Chan" />
+      <entity type="Muban" geocode="16070606" name="บ้านทุ่งดินแดง" english="Ban Thung Din Daeng" />
+      <entity type="Muban" geocode="16070607" name="บ้านหัวลำสุด" english="Ban Huai Lam Sut" />
+      <entity type="Muban" geocode="16070608" name="บ้านเขาใหญ่" english="Ban Khao Yai" />
     </entity>
   </entity>
   <entity type="Amphoe" name="สระโบสถ์" english="Sa Bot" geocode="1608">
@@ -1946,11 +1969,17 @@
   </entity>
   <entity type="ThesabanTambon" name="บ้านท่าหลวง" english="Ban Tha Luang" geocode="1689" parent="1607">
     <office type="MunicipalityOffice">
-      <url>http://www.banthaluang.go.th/</url>
+      <geo:Point>
+        <geo:lat>15.0697</geo:lat>
+        <geo:long>101.1181</geo:long>
+      </geo:Point>
+      <url status="offline">http://www.banthaluang.go.th/</url>
       <officials>
-        <official title="Mayor" name="ภิรมย์ ผดุงกลิ่น" begin="2007-06-17" endyear="2012" />
+        <official title="Mayor" name="ภิรมย์ ผดุงกลิ่น" begin="2011-04-10" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ภิรมย์ ผดุงกลิ่น" begin="2007-06-17" endyear="2011" beginreason="ElectedDirectly" endreason="Resigned" />
       </officials>
       <council>
+        <term begin="2011-07-24" type="ThesabanTambon" size="12" />
         <term begin="2007-06-17" end="2011-06-16" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -1978,12 +2007,12 @@
       <council>
         <term begin="2013-04-06" type="ThesabanTambon" size="12" />
         <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
-        <term begin="2004-10-17" end="2008-10-16" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2004-10-17" end="2008-10-16" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
       </council>
     </office>
     <history>
       <statuschange old="TAO" new="ThesabanTambon" effective="2004-08-20" status="Gazette">
-        <gazetteref volume="122" issue="พิเศษ 84 ง" page="1" date="2005-09-14"/>
+        <gazetteref volume="122" issue="พิเศษ 84 ง" page="1" date="2005-09-14" />
         <meetingreference board="2" number="39" date="2004-10-14" />
       </statuschange>
     </history>
