@@ -48,6 +48,7 @@
             this.btnTermEnds = new System.Windows.Forms.Button();
             this.btnTimeBetweenElection = new System.Windows.Forms.Button();
             this.btnElectionWeekday = new System.Windows.Forms.Button();
+            this.btnMubanHelper = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.SuspendLayout();
@@ -259,11 +260,22 @@
             this.btnElectionWeekday.UseVisualStyleBackColor = true;
             this.btnElectionWeekday.Click += new System.EventHandler(this.btnElectionWeekday_Click);
             // 
+            // btnMubanHelper
+            // 
+            this.btnMubanHelper.Location = new System.Drawing.Point(143, 177);
+            this.btnMubanHelper.Name = "btnMubanHelper";
+            this.btnMubanHelper.Size = new System.Drawing.Size(75, 23);
+            this.btnMubanHelper.TabIndex = 54;
+            this.btnMubanHelper.Text = "Muban helper";
+            this.btnMubanHelper.UseVisualStyleBackColor = true;
+            this.btnMubanHelper.Click += new System.EventHandler(this.btnMubanHelper_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 425);
+            this.Controls.Add(this.btnMubanHelper);
             this.Controls.Add(this.btnElectionWeekday);
             this.Controls.Add(this.btnTimeBetweenElection);
             this.Controls.Add(this.btnTermEnds);
@@ -313,6 +325,7 @@
         private System.Windows.Forms.Button btnTermEnds;
         private System.Windows.Forms.Button btnTimeBetweenElection;
         private System.Windows.Forms.Button btnElectionWeekday;
+        private System.Windows.Forms.Button btnMubanHelper;
     }
 }
 
