@@ -72,7 +72,8 @@ namespace De.AHoerstemeier.Tambon
                         {
                             parentName = areaChange.name;
                         }
-                        Debug.Assert(tambonGeocode == (areaChange.geocode / 100), "Parent muban as a different geocode");
+                        // this really happened once, so cannot use this check for sanity of input data
+                        // Debug.Assert(tambonGeocode == (areaChange.geocode / 100), String.Format("Parent muban for {0} has a different geocode {1}", create.geocode, areaChange.geocode));
                     }
                 }
                 parentName = parentName.StripBanOrChumchon();
