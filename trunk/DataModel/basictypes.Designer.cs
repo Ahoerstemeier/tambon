@@ -959,6 +959,10 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool openstreetmapFieldSpecified;
         
+        private int wikimapiaField;
+        
+        private bool wikimapiaFieldSpecified;
+        
         /// <summary>
         /// Wikidata item id, always starting with the letter Q followed by a number. Full URL to the item Q123 is https://www.wikidata.org/wiki/Q123
         /// </summary>
@@ -1007,6 +1011,40 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.openstreetmapFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Wikimapia id. Full URL to the id 123 is http://www.wikimapia.org/123 Office and geographical entity have different ids.
+        /// </summary>
+        /// <value>
+        /// The wikimapia.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int wikimapia {
+            get {
+                return this.wikimapiaField;
+            }
+            set {
+                this.wikimapiaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool wikimapiaSpecified {
+            get {
+                return this.wikimapiaFieldSpecified;
+            }
+            set {
+                this.wikimapiaFieldSpecified = value;
             }
         }
     }
