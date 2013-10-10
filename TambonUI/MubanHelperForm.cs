@@ -29,7 +29,7 @@ namespace De.AHoerstemeier.Tambon.UI
             UInt32 baseGeocode = Convert.ToUInt32(edtGeocode.Value);
             foreach ( var line in edtText.Lines )
             {
-                var name = line.Trim();
+                var name = line.Replace('\t', ' ').Trim();
                 if ( !String.IsNullOrEmpty(name) )
                 {
                     count++;
