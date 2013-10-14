@@ -1182,6 +1182,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<MyUri> forumField;
         
+        private string foursquareField;
+        
         /// <summary>
         /// Creates a new instance of SocialWebLinks.
         /// </summary>
@@ -1275,6 +1277,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.forumField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Foursquare venue ID, last part of the venue URL. URL for venue id 123 is http://foursquare.com/v/123
+        /// </summary>
+        /// <value>
+        /// The foursquare.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string foursquare {
+            get {
+                return this.foursquareField;
+            }
+            set {
+                this.foursquareField = value;
             }
         }
     }
