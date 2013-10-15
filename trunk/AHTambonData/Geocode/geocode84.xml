@@ -578,7 +578,7 @@
         </geo:Point>
         <url lastchecked="2012-01-30">http://www.plaiwass.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ชัยยะ กาญจนดิฐ" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ชัยยะ กาญจนดิฐ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
           <term begin="2013-10-13" type="TAO" size="18" />
@@ -695,6 +695,7 @@
         <!-- Longdo: 9.14620, 99.64454 -->
         <url lastchecked="2013-02-04">http://www.thautae.go.th/</url>
         <officials>
+          <official title="TAOMayor" name="สุทิน วิชัยดิษฐ" begin="2012-10-07" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="สุทิน วิชัยดิษฐ์" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
           <official title="TAOMayor" name="สุทิน วิชัยดิษฐ์" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
@@ -899,7 +900,7 @@
         </geo:Point>
         <url lastchecked="2012-12-12">http://www.pakprak.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ปราโมทย์ เพชรรัตน์" beginyear="2011" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ปราโมทย์ เพชรรัตน์" begin="2011-11-13" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="สมศักดิ์ ไทยสม" begin="2007-10-07" end="2011-10-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -1604,11 +1605,21 @@
     </entity>
     <entity type="Tambon" name="บ้านยาง" english="Ban Yang" geocode="840802">
       <office type="TAOOffice">
-        <url>http://www.banyang.go.th/</url>
+        <symbols>
+          <vision>
+            พัฒนาการศึกษา     พัฒนาคุณภาพชีวิต
+            มุ้งเน้นเศรษฐกิจพอเพียง        ฟังเสียงประชาชนเป็นศูนย์กลาง
+          </vision>
+        </symbols>
+        <url lastchecked="2013-10-15">http://www.banyang.go.th/</url>
         <officials>
+          <official title="TAOMayor" name="พรหมพชร นาเมือง" begin="2011-12-18" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="พรหมพชร นาเมือง" begin="2007-11-11" end="2011-11-10" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2011-12-18" type="TAO" size="22">
+            <official title="TAOCouncilChairman" name="ปรเมศวร์ ศักดา" beginreason="ElectedByCouncil" />
+          </term>
           <term begin="2007-11-11" end="2011-11-10" type="TAO" size="22" />
         </council>
       </office>
@@ -2635,8 +2646,8 @@
         </symbols>
         <url lastchecked="2012-01-31">http://www.khiansa.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="พัฒนศักดิ์ วงศ์เจริญ" beginyear="2010" inoffice="2011" beginreason="ElectedDirectly" />
-          <officialterm title="TAOMayor" begin="2006-03-05" endyear="2010" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="พัฒนศักดิ์ วงศ์เจริญ" begin="2010-04-11" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2006-03-05" endyear="2010" beginreason="ElectedDirectly" endreason="Unknown" />
         </officials>
         <council>
           <term begin="2012-10-07" type="TAO" size="14" />
@@ -2802,16 +2813,20 @@
         <url lastchecked="2012-11-12">http://muangwiang.go.th/</url>
         <url status="offline">http://www.wiangsra.go.th/</url>
         <officials>
-          <official title="Mayor" name="ศุภรักษ์ ติ้วต้ง" inoffice="2010" />
+          <official title="Mayor" name="ศุภรักษ์ ติ้วต้ง" begin="2010-03-07" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="ศุภรักษ์ ติ้วต้ง" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2010-03-07" type="ThesabanTambon" size="12" />
+          <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" />
-          <rename oldname="เวียงสระ" oldenglish="Wiang Sa" name="เมืองเวียง" english="Mueang Wiang" effective="2009-10-27" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done">
+            <meetingreference board="1" date="2009-06-29" number="20" />
+          </statuschange>
+          <rename oldname="เวียงสระ" oldenglish="Wiang Sa" name="เมืองเวียง" english="Mueang Wiang" effective="2009-10-27" status="Done">
+            <meetingreference date="2009-10-13" number="1" board="rename" />
+          </rename>
         </history>
       </office>
       <entity type="Muban" geocode="84150101" name="บ้านห้วยสะพาน" english="Ban Huai Saphan" />
@@ -4561,13 +4576,14 @@
           ประสานใจชุมชน  คนรักษ์ธรรมชาติ  ใสสะอาดคลองพุมดวง
         </vision>
       </symbols>
-      <url>http://www.thakhanoncity.go.th/</url>
+      <url lastchecked="2013-10-15">http://www.thakhanoncity.go.th/</url>
       <officials>
-        <official title="Mayor" name="ชนินทร์ เพชรศรี" inoffice="2010" />
+        <official title="Mayor" name="ชนินทร์ เพชรศรี" begin="2010-02-07" beginreason="ElectedDirectly" />
 
         <official title="Mayor" name="สวัสดิ์ บุญฤทธิ์" inoffice="2003" />
       </officials>
       <council>
+        <term begin="2010-02-07" type="ThesabanTambon" size="12" />
         <term begin="2005-12-29" end="2009-12-28" type="ThesabanTambon" size="12" />
       </council>
     </office>
