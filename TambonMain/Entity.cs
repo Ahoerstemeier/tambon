@@ -394,6 +394,103 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        private IEnumerable<OfficeType> _officesWithElectedOfficials = new List<OfficeType>() { OfficeType.MunicipalityOffice, OfficeType.PAOOffice, OfficeType.TAOOffice };
+
+        private IEnumerable<EntityTermEnd> OfficialElectionsPending()
+        {
+            var result = new List<EntityTermEnd>();
+            foreach ( var officeEntry in office )
+            {
+                if ( (!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type) )
+                {
+                    officeEntry.officials.Items.Sort((x, y) => x.begin.CompareTo(y.begin));
+                    var term = officeEntry.officials.Items.LastOrDefault();
+                    if ( term != null )
+                    // foreach ( var term in office.council )
+                    {
+                        DateTime termEnd;
+                        if ( term.endSpecified )
+                        {
+                            termEnd = term.end;
+                        }
+                        else
+                        {
+                            termEnd = term.begin.AddYears(4).AddDays(-1);
+                        }
+                        if ( (termEnd.CompareTo(DateTime.Now) <= 0) )
+                        {
+                            result.Add(new EntityTermEnd(this, null, term));
+                        }
+                    }
+                    else
+                    {
+                        // no Official list at all, but there should be one...
+                        result.Add(new EntityTermEnd(this, null, new OfficialEntryUnnamed()));
+                    }
+                }
+            }
+            return result;
+        }
+
+        private IEnumerable<EntityTermEnd> CouncilElectionsPending()
+        {
+            var result = new List<EntityTermEnd>();
+            foreach ( var officeEntry in office )
+            {
+                if ( !officeEntry.obsolete )
+                {
+                    officeEntry.council.Sort((x, y) => x.begin.CompareTo(y.begin));
+                    var term = officeEntry.council.LastOrDefault();
+                    if ( term != null )
+                    // foreach ( var term in office.council )
+                    {
+                        DateTime termEnd;
+                        if ( term.endSpecified )
+                        {
+                            termEnd = term.end;
+                        }
+                        else
+                        {
+                            termEnd = term.begin.AddYears(4).AddDays(-1);
+                        }
+                        if ( (termEnd.CompareTo(DateTime.Now) <= 0) )
+                        {
+                            result.Add(new EntityTermEnd(this, term, null));
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
+        private IEnumerable<EntityTermEnd> OfficialTermsEndInTimeSpan(DateTime begin, DateTime end)
+        {
+            var result = new List<EntityTermEnd>();
+            foreach ( var officeEntry in office )
+            {
+                officeEntry.officials.Items.Sort((x, y) => x.begin.CompareTo(y.begin));
+                var term = officeEntry.officials.Items.LastOrDefault();
+                if ( term != null )
+                // foreach ( var term in office.council )
+                {
+                    DateTime termEnd;
+                    if ( term.endSpecified )
+                    {
+                        termEnd = term.end;
+                    }
+                    else
+                    {
+                        termEnd = term.begin.AddYears(4).AddDays(-1);
+                    }
+                    if ( (termEnd.CompareTo(begin) >= 0) & (termEnd.CompareTo(end) <= 0) )
+                    {
+                        result.Add(new EntityTermEnd(this, null, term));
+                    }
+                }
+            }
+            return result;
+        }
+
         private IEnumerable<EntityTermEnd> CouncilTermsEndInTimeSpan(DateTime begin, DateTime end)
         {
             var result = new List<EntityTermEnd>();
@@ -444,9 +541,66 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="year">Year to look for.</param>
         /// <returns>List of entities with council term ends.</returns>
-        public IEnumerable<EntityTermEnd> EntitiesWithOfficialTermEndInYear(Int32 year)
+        public IEnumerable<EntityTermEnd> EntitiesWithCouncilTermEndInYear(Int32 year)
         {
             return EntitiesWithCouncilTermEndInTimeSpan(new DateTime(year, 1, 1), new DateTime(year, 12, 31));
+        }
+
+        /// <summary>
+        /// Calculates list of entities which have a official ending their term within the given timespan.
+        /// </summary>
+        /// <param name="begin">Begin of timespan.</param>
+        /// <param name="end">End of timespan.</param>
+        /// <returns>List of entities with official term ends.</returns>
+        public IEnumerable<EntityTermEnd> EntitiesWithOfficialTermEndInTimeSpan(DateTime begin, DateTime end)
+        {
+            var result = new List<EntityTermEnd>();
+            foreach ( var item in FlatList() )
+            {
+                result.AddRange(item.OfficialTermsEndInTimeSpan(begin, end));
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Calculates list of entities which have a official ending their term within the given <paramref name="year"/>.
+        /// </summary>
+        /// <param name="year">Year to look for.</param>
+        /// <returns>List of entities with official term ends.</returns>
+        public IEnumerable<EntityTermEnd> EntitiesWithOfficialTermEndInYear(Int32 year)
+        {
+            return EntitiesWithOfficialTermEndInTimeSpan(new DateTime(year, 1, 1), new DateTime(year, 12, 31));
+        }
+
+        /// <summary>
+        /// Calculates list of entities which have no elected council currently.
+        /// </summary>
+        /// <returns>List of entities without elected council.</returns>
+        public IEnumerable<EntityTermEnd> EntitiesWithCouncilElectionPending()
+        {
+            var result = new List<EntityTermEnd>();
+            foreach ( var item in FlatList() )
+            {
+                result.AddRange(item.CouncilElectionsPending());
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Calculates list of entities which have no elected official currently.
+        /// </summary>
+        /// <returns>List of entities without elected official.</returns>
+        public IEnumerable<EntityTermEnd> EntitiesWithOfficialElectionPending()
+        {
+            var result = new List<EntityTermEnd>();
+            foreach ( var item in FlatList() )
+            {
+                result.AddRange(item.OfficialElectionsPending());
+            }
+
+            return result;
         }
     }
 }
