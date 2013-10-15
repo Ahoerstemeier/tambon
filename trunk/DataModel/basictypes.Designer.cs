@@ -475,6 +475,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Defaced or spreading malware and blocked by Google safe browsing.
         /// </summary>
         hacked,
+        
+        /// <summary>
+        /// Website removed from free web hosting service.
+        /// </summary>
+        removed,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]

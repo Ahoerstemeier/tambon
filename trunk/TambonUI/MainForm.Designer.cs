@@ -49,6 +49,7 @@
             this.btnTimeBetweenElection = new System.Windows.Forms.Button();
             this.btnElectionWeekday = new System.Windows.Forms.Button();
             this.btnMubanHelper = new System.Windows.Forms.Button();
+            this.btnPendingElections = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.SuspendLayout();
@@ -270,11 +271,22 @@
             this.btnMubanHelper.UseVisualStyleBackColor = true;
             this.btnMubanHelper.Click += new System.EventHandler(this.btnMubanHelper_Click);
             // 
+            // btnPendingElections
+            // 
+            this.btnPendingElections.Location = new System.Drawing.Point(349, 68);
+            this.btnPendingElections.Name = "btnPendingElections";
+            this.btnPendingElections.Size = new System.Drawing.Size(99, 23);
+            this.btnPendingElections.TabIndex = 55;
+            this.btnPendingElections.Text = "Pending elections";
+            this.btnPendingElections.UseVisualStyleBackColor = true;
+            this.btnPendingElections.Click += new System.EventHandler(this.btnPendingElections_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 425);
+            this.Controls.Add(this.btnPendingElections);
             this.Controls.Add(this.btnMubanHelper);
             this.Controls.Add(this.btnElectionWeekday);
             this.Controls.Add(this.btnTimeBetweenElection);
@@ -326,6 +338,7 @@
         private System.Windows.Forms.Button btnTimeBetweenElection;
         private System.Windows.Forms.Button btnElectionWeekday;
         private System.Windows.Forms.Button btnMubanHelper;
+        private System.Windows.Forms.Button btnPendingElections;
     }
 }
 

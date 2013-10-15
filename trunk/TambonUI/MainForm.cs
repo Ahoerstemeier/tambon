@@ -95,10 +95,10 @@ namespace De.AHoerstemeier.Tambon.UI
 
             if ( romanizationMistakeCount > 0 )
             {
-                var lForm = new StringDisplayForm(
+                var displayForm = new StringDisplayForm(
                     String.Format("Romanization problems ({0})", romanizationMistakeCount),
                     romanizationMistakesBuilder.ToString());
-                lForm.Show();
+                displayForm.Show();
             }
 
             StringBuilder romanizationSuggestionBuilder = new StringBuilder();
@@ -150,10 +150,10 @@ namespace De.AHoerstemeier.Tambon.UI
                         sortedBuilder.AppendLine(String.Format("{0}: {1} ({2})", entry.Item1, entry.Item2, entry.Item3));
                         suggestionCounter += entry.Item3;
                     }
-                    var lForm2 = new StringDisplayForm(
+                    var displayForm = new StringDisplayForm(
                         String.Format("Romanization suggestions ({0} of {1})", suggestionCounter, romanizationSuggestionCount),
                         sortedBuilder.ToString());
-                    lForm2.Show();
+                    displayForm.Show();
                 }
             }
 
@@ -194,10 +194,10 @@ namespace De.AHoerstemeier.Tambon.UI
                         sortedBuilder.AppendLine(String.Format("{0}: {1}", entry.Item1, entry.Item2));
                         missingCounter += entry.Item2;
                     }
-                    var lForm2 = new StringDisplayForm(
+                    var displayForm = new StringDisplayForm(
                         String.Format("Romanization missing ({0} of {1})", romanizationMissing.Count, numberOfEntities),
                         sortedBuilder.ToString());
-                    lForm2.Show();
+                    displayForm.Show();
                 }
             }
         }
@@ -533,10 +533,10 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             if ( count > 0 )
             {
-                var lForm = new StringDisplayForm(
+                var displayForm = new StringDisplayForm(
                     String.Format("Term ends ({0})", count),
                     builder.ToString());
-                lForm.Show();
+                displayForm.Show();
             }
         }
 
@@ -672,6 +672,59 @@ namespace De.AHoerstemeier.Tambon.UI
             var form = new MubanHelperForm();
             form.Romanizator = romanizator;
             form.Show();
+        }
+
+        private void btnPendingElections_Click(object sender, EventArgs e)
+        {
+            var itemsWithCouncilElectionsPending = new List<EntityTermEnd>();
+            var itemsWithOfficialElectionsPending = new List<EntityTermEnd>();
+
+            var changwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
+            var fullChangwat = GlobalData.GetGeocodeList(changwatGeocode);
+            var itemWithCouncilElectionPendingInChangwat = fullChangwat.EntitiesWithCouncilElectionPending();
+            itemsWithCouncilElectionsPending.AddRange(itemWithCouncilElectionPendingInChangwat);
+            itemsWithCouncilElectionsPending.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
+
+            var itemWithOfficialElectionPendingInChangwat = fullChangwat.EntitiesWithOfficialElectionPending();
+            itemsWithOfficialElectionsPending.AddRange(itemWithOfficialElectionPendingInChangwat);
+            itemsWithOfficialElectionsPending.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
+
+            var councilBuilder = new StringBuilder();
+            Int32 councilCount = 0;
+            foreach ( var item in itemsWithCouncilElectionsPending )
+            {
+                councilBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, item.CouncilTerm.begin.AddYears(4).AddDays(-1));
+                councilBuilder.AppendLine();
+                councilCount++;
+            }
+            if ( councilCount > 0 )
+            {
+                var displayForm = new StringDisplayForm(
+                    String.Format("{0} LAO council elections pending", councilCount),
+                    councilBuilder.ToString());
+                displayForm.Show();
+            }
+
+            var officialBuilder = new StringBuilder();
+            Int32 officialCount = 0;
+            foreach ( var item in itemsWithOfficialElectionsPending )
+            {
+                String officialTermBegin = "unknown";
+                if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )
+                {
+                    officialTermBegin = String.Format(CultureInfo.CurrentUICulture, "{0:d}", item.OfficialTerm.begin.AddYears(4).AddDays(-1));
+                }
+                officialBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2}", item.Entity.english, item.Entity.geocode, officialTermBegin);
+                officialBuilder.AppendLine();
+                officialCount++;
+            }
+            if ( officialCount > 0 )
+            {
+                var displayForm = new StringDisplayForm(
+                    String.Format("{0} LAO official elections pending", officialCount),
+                    officialBuilder.ToString());
+                displayForm.Show();
+            }
         }
     }
 }
