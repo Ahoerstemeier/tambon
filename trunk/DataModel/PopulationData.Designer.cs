@@ -17,7 +17,7 @@ namespace De.AHoerstemeier.Tambon {
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HouseholdDataPoint))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AgeTableEntry))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -77,7 +77,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -120,7 +120,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -128,9 +128,9 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="AgeTableEntry", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class AgeTableEntry : PopulationDataPoint {
         
-        private string beginField;
+        private uint beginField;
         
-        private string endField;
+        private uint endField;
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -138,9 +138,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string begin {
+        public uint begin {
             get {
                 return this.beginField;
             }
@@ -155,9 +155,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string end {
+        public uint end {
             get {
                 return this.endField;
             }
@@ -167,7 +167,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -255,7 +255,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Type of population data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -297,7 +297,7 @@ namespace De.AHoerstemeier.Tambon {
         collectivehouseholds,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -389,7 +389,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Sources of population data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.17929")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]

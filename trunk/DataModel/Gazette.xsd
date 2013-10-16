@@ -496,7 +496,7 @@
       <xs:extension base='t:EntryActionList'>
 
         <xs:attribute name="author" type="xs:string" use="optional" />
-        <xs:attribute name="number" type="xs:integer" use="optional" />
+        <xs:attribute name="number" type="xs:int" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -526,7 +526,7 @@
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
         <!--<xs:attribute name="type" type="t:EntityType" use="required" />-->
-        <xs:attribute type="xs:positiveInteger" name="size" use="required">
+        <xs:attribute type="xs:unsignedInt" name="size" use="required">
           <xs:annotation>
             <xs:documentation>Number of councilors in the council.</xs:documentation>
           </xs:annotation>
@@ -539,7 +539,7 @@
       <xs:extension base="t:GazetteOperationBase">
         <xs:attribute name="electionType" type="t:ElectionType" use="required" />
         <xs:attribute name="date" type="xs:date" use="required" />
-        <xs:attribute name="constituency" type="xs:integer" use="optional" />
+        <xs:attribute name="constituency" type="xs:int" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

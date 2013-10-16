@@ -2222,9 +2222,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private string commentField;
         
-        private string sizeField;
+        private uint sizeField;
         
-        private string finalsizeField;
+        private bool sizeFieldSpecified;
+        
+        private uint finalsizeField;
+        
+        private bool finalsizeFieldSpecified;
         
         private EntityType typeField;
         
@@ -2337,9 +2341,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The size.
         /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string size {
+        public uint size {
             get {
                 return this.sizeField;
             }
@@ -2349,19 +2353,53 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool sizeSpecified {
+            get {
+                return this.sizeFieldSpecified;
+            }
+            set {
+                this.sizeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
         /// Number of councillors at end of term.
         /// </summary>
         /// <value>
         /// The finalsize.
         /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string finalsize {
+        public uint finalsize {
             get {
                 return this.finalsizeField;
             }
             set {
                 this.finalsizeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool finalsizeSpecified {
+            get {
+                return this.finalsizeFieldSpecified;
+            }
+            set {
+                this.finalsizeFieldSpecified = value;
             }
         }
         

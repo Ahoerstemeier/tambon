@@ -11,43 +11,22 @@ namespace De.AHoerstemeier.Tambon
     public partial class CouncilTerm
     {
         /// <summary>
-        /// Gets or sets the size of the council.
-        /// </summary>
-        /// <value>The size of the council.</value>
-        [XmlIgnore()]
-        public UInt32 Size
-        {
-            get
-            {
-                return Convert.ToUInt32(size, CultureInfo.InvariantCulture);
-            }
-            set
-            {
-                if ( value < 0 )
-                {
-                    throw new ArgumentException("Size must be larger than 0");
-                }
-                size = value.ToString(CultureInfo.InvariantCulture);
-            }
-        }
-
-        /// <summary>
         /// Gets or sets the size of the council at the end of its term.
         /// </summary>
         /// <value>The size of the council at the end of its term.</value>
-        /// <remarks>If <see cref="finalsize"/> is not set, <see cref="Size"/> is returned.</remarks>
+        /// <remarks>If <see cref="finalsize"/> is not set, <see cref="size"/> is returned.</remarks>
         [XmlIgnore()]
         public UInt32 FinalSize
         {
             get
             {
-                if ( String.IsNullOrEmpty(finalsize) )
+                if ( finalsizeFieldSpecified )
                 {
-                    return Size;
+                    return finalsizeField;
                 }
                 else
                 {
-                    return Convert.ToUInt32(finalsize, CultureInfo.InvariantCulture);
+                    return size;
                 }
             }
             set
@@ -56,7 +35,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     throw new ArgumentException("Size must be larger than 0");
                 }
-                finalsize = value.ToString(CultureInfo.InvariantCulture);
+                finalsize = value;
             }
         }
 
@@ -68,7 +47,7 @@ namespace De.AHoerstemeier.Tambon
         {
             get
             {
-                return type.IsValidCouncilSize(Size);
+                return type.IsValidCouncilSize(size);
             }
         }
 
