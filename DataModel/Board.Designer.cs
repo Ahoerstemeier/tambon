@@ -379,7 +379,9 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool effectiveFieldSpecified;
         
-        private string indexField;
+        private uint indexField;
+        
+        private bool indexFieldSpecified;
         
         private string commentField;
         
@@ -570,14 +572,31 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The index.
         /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string index {
+        public uint index {
             get {
                 return this.indexField;
             }
             set {
                 this.indexField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool indexSpecified {
+            get {
+                return this.indexFieldSpecified;
+            }
+            set {
+                this.indexFieldSpecified = value;
             }
         }
         

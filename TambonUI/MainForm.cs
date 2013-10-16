@@ -377,23 +377,23 @@ namespace De.AHoerstemeier.Tambon.UI
                             {
                                 hasInvalidTermData = hasInvalidTermData | lastTerm.end.CompareTo(term.begin) > 0;
                             }
-                            if ( (term.Size != term.FinalSize) & (term.sizechangereason == CouncilSizeChangeReason.NoChange) )
+                            if ( (term.size != term.FinalSize) & (term.sizechangereason == CouncilSizeChangeReason.NoChange) )
                             {
                                 hasInvalidTermData = true;
                             }
-                            if ( (term.type == EntityType.PAO) & (lastTerm.Size > 0) & (term.Size > 0) )
+                            if ( (term.type == EntityType.PAO) & (lastTerm.size > 0) & (term.size > 0) )
                             {
-                                if ( (term.Size != term.FinalSize) & (term.sizechangereason == CouncilSizeChangeReason.NoChange) )
+                                if ( (term.size != term.FinalSize) & (term.sizechangereason == CouncilSizeChangeReason.NoChange) )
                                 {
-                                    hasInvalidTermData = hasInvalidTermData | lastTerm.FinalSize != term.Size;
+                                    hasInvalidTermData = hasInvalidTermData | lastTerm.FinalSize != term.size;
                                 }
                             }
 
-                            if ( (lastTerm.type == EntityType.TAO) & (term.type == EntityType.TAO) & (lastTerm.Size > 0) & (term.Size > 0) )
+                            if ( (lastTerm.type == EntityType.TAO) & (term.type == EntityType.TAO) & (lastTerm.size > 0) & (term.size > 0) )
                             {
                                 if ( (term.sizechangereason == CouncilSizeChangeReason.NoChange) )
                                 {
-                                    hasInvalidTermData = hasInvalidTermData | lastTerm.FinalSize != term.Size;
+                                    hasInvalidTermData = hasInvalidTermData | lastTerm.FinalSize != term.size;
                                 }
                             }
                         }

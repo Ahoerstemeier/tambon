@@ -228,7 +228,7 @@
         <xs:documentation>English name of the party.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="id" type="xs:nonNegativeInteger">
+    <xs:attribute name="id" type="xs:unsignedInt">
       <xs:annotation>
         <xs:documentation>Number assigned to the party for the election in question.</xs:documentation>
       </xs:annotation>
@@ -248,17 +248,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="PartyListResultEntry">
-    <xs:attribute name="id" type="xs:nonNegativeInteger" use="required">
+    <xs:attribute name="id" type="xs:unsignedInt" use="required">
       <xs:annotation>
         <xs:documentation>Party identified by the number assigned to it.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="votes" type="xs:nonNegativeInteger" use="required">
+    <xs:attribute name="votes" type="xs:unsignedInt" use="required">
       <xs:annotation>
         <xs:documentation>Number of votes received.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="seats" type="xs:nonNegativeInteger" use="optional">
+    <xs:attribute name="seats" type="xs:unsignedInt" use="optional">
       <xs:annotation>
         <xs:documentation>Number of seats won.</xs:documentation>
       </xs:annotation>
@@ -275,17 +275,17 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="required">
+    <xs:attribute name="eligiblevoter" type="xs:unsignedInt" use="required">
       <xs:annotation>
         <xs:documentation>Number of eligible voters (จำนวนผู้มาใช้สิทธิเลือกตั้ง).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="required">
+    <xs:attribute name="invalidvotes" type="xs:unsignedInt" use="required">
       <xs:annotation>
         <xs:documentation>Number of invalid votes cast (จำนวนบัตรเสีย).</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="required">
+    <xs:attribute name="abstainvotes" type="xs:unsignedInt" use="required">
       <xs:annotation>
         <xs:documentation>Number of abstain votes (จำนวนบัตรไม่ประสงค์ลงคะแนน).</xs:documentation>
       </xs:annotation>
@@ -347,7 +347,7 @@
     <xs:sequence>
       <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attribute name="party" type="xs:nonNegativeInteger" use="optional" />
+    <xs:attribute name="party" type="xs:unsignedInt" use="optional" />
     <xs:attribute name="name" type="xs:string" use="required" />
     <xs:attribute name="title" type="xs:string" use="optional" />
     <xs:attribute name="english" type="xs:string" use="optional" />
@@ -359,15 +359,15 @@
   <xs:complexType name="CandidateListEntry">
     <xs:complexContent>
       <xs:extension base="t:Candidate">
-        <xs:attribute name="id" type="xs:nonNegativeInteger" use="required" />
-        <xs:attribute name="votes" type="xs:positiveInteger" use="optional" />
+        <xs:attribute name="id" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="votes" type="xs:unsignedInt" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="PartyCandidateListEntry">
     <xs:complexContent>
       <xs:extension base="t:Candidate">
-        <xs:attribute name="index" type="xs:nonNegativeInteger" use="required">
+        <xs:attribute name="index" type="xs:unsignedInt" use="required">
           <xs:annotation>
             <xs:documentation>Position on the party list.</xs:documentation>
           </xs:annotation>
@@ -384,7 +384,7 @@
     <xs:sequence>
       <xs:element name="candidate" type="t:PartyCandidateListEntry" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
-    <xs:attribute name="party" type="xs:nonNegativeInteger" />
+    <xs:attribute name="party" type="xs:unsignedInt" />
   </xs:complexType>
   <xs:complexType name="CandidateList">
     <xs:sequence>
@@ -394,21 +394,21 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="eligiblevoter" type="xs:nonNegativeInteger" use="optional">
+    <xs:attribute name="eligiblevoter" type="xs:unsignedInt" use="optional">
       <xs:annotation>
         <xs:documentation>
           Number of eligible voters (จำนวนผู้มีสิทธิเลือกตั้งในบัญชีรายชื่อ).
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="invalidvotes" type="xs:positiveInteger" use="optional">
+    <xs:attribute name="invalidvotes" type="xs:unsignedInt" use="optional">
       <xs:annotation>
         <xs:documentation>
           Number of invalid votes (จำนวนบัตรเสีย).
         </xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="abstainvotes" type="xs:positiveInteger" use="optional">
+    <xs:attribute name="abstainvotes" type="xs:unsignedInt" use="optional">
       <xs:annotation>
         <xs:documentation>
           Number of ballots marked with "no vote" (จำนวนบัตรไม่ประสงค์จะลงคะแนน).

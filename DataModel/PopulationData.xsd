@@ -79,8 +79,8 @@
   <xs:complexType name="AgeTableEntry">
     <xs:complexContent>
       <xs:extension base="t:PopulationDataPoint">
-        <xs:attribute name="begin" type="xs:nonNegativeInteger" use="required" />
-        <xs:attribute name="end" type="xs:nonNegativeInteger" use="required" />
+        <xs:attribute name="begin" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="end" type="xs:unsignedInt" use="required" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
