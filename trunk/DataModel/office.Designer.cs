@@ -831,7 +831,12 @@ namespace De.AHoerstemeier.Tambon {
         
         private SmallMediumLarge sMLField;
         
-        private bool sMLFieldSpecified;
+        /// <summary>
+        /// Creates a new instance of LocalAdministrationData.
+        /// </summary>
+        public LocalAdministrationData() {
+            this.sMLField = SmallMediumLarge.Undefined;
+        }
         
         /// <summary>
         /// DOLA code for the entitiy.
@@ -874,6 +879,7 @@ namespace De.AHoerstemeier.Tambon {
         /// The SML.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(SmallMediumLarge.Undefined)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SmallMediumLarge SML {
             get {
@@ -881,23 +887,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.sMLField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SMLSpecified {
-            get {
-                return this.sMLFieldSpecified;
-            }
-            set {
-                this.sMLFieldSpecified = value;
             }
         }
     }
@@ -910,6 +899,11 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
     public enum SmallMediumLarge {
+        
+        /// <summary>
+        /// Undefined value.
+        /// </summary>
+        Undefined,
         
         /// <summary>
         /// Small (ขนาดเล็ก).
