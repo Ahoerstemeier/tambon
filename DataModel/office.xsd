@@ -73,6 +73,11 @@
       <xs:documentation>Small medium large entity categorization.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined">
+        <xs:annotation>
+          <xs:documentation>Undefined value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="S">
         <xs:annotation>
           <xs:documentation>Small (ขนาดเล็ก).</xs:documentation>
@@ -782,7 +787,7 @@
         <xs:documentation>DOLA code for the entitiy.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="SML" use="optional" type="t:SmallMediumLarge">
+    <xs:attribute name="SML" use="optional" type="t:SmallMediumLarge" default="Undefined">
       <xs:annotation>
         <xs:documentation>Categorization of the entity in the SML system.</xs:documentation>
       </xs:annotation>
