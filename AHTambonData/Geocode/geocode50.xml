@@ -420,7 +420,7 @@
     </entity>
     <entity type="Tambon" name="ดอยหล่อ" english="Doi Lo" geocode="500208" newgeocode="502401" />
     <entity type="Tambon" name="แม่สอย" english="Mae Soi" geocode="500209">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url lastchecked="2013-09-16">http://www.maesoicity.org/</url>
         <url status="offline">http://www.maesoi.org/</url>
         <officials>
@@ -431,7 +431,7 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="28" finalsize="30" sizechangereason="MubanCreation" comment="Mu 15 created in 2006" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+          <statuschange old="TAO" new="ThesabanTambon" status="Done">
             <meetingreference board="2" number="40" date="2013-08-14" />
           </statuschange>
         </history>
@@ -1154,7 +1154,7 @@
       <entity type="Muban" geocode="50060110" name="บ้านฮ้วยอ๋าง" english="Ban Huai Ang" />
     </entity>
     <entity type="Tambon" name="แม่แตง" english="Mae Taeng" geocode="500602">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>19.1379</geo:lat>
           <geo:long>98.9318</geo:long>
@@ -1167,7 +1167,7 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2013-07-01" status="Pending">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-07-01" status="Done">
             <meetingreference board="2" number="23" date="2013-05-01" />
           </statuschange>
         </history>
@@ -2081,11 +2081,6 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="30" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="30" />
         </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
-            <meetingreference board="2" number="38" date="2013-08-07" />
-          </statuschange>
-        </history>
       </office>
       <entity type="Muban" geocode="50091001" name="บ้านแม่คะ" english="Ban Mae Kha" />
       <entity type="Muban" geocode="50091002" name="บ้านสันป่าก่อ" english="Ban San Pa Ko" />
@@ -2104,7 +2099,7 @@
       <entity type="Muban" geocode="50091015" name="บ้านดอยป่าไผ่" english="Ban Doi Pa Phai" />
     </entity>
     <entity type="Tambon" name="แม่ข่า" english="Mae Kha" geocode="500911">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <symbols>
           <vision>มุ่งให้บริการสาธารณะที่ครบถ้วน</vision>
         </symbols>
@@ -2116,6 +2111,11 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="26" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+            <meetingreference board="2" number="38" date="2013-08-07" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="50091101" name="บ้านสบข่า" english="Ban Sop Kha" />
       <entity type="Muban" geocode="50091102" name="บ้านดงป่าลัน" english="Ban Dong Pa Lan" />
@@ -2933,7 +2933,7 @@
       <entity type="Muban" geocode="50120710" name="บ้านสันกอเก็ต" english="Ban San Ko Ket" />
     </entity>
     <entity type="Tambon" name="ทุ่งสะโตก" english="Thung Satok" geocode="501208">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>18.5851</geo:lat>
           <geo:long>98.8522</geo:long>
@@ -2950,7 +2950,7 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+          <statuschange old="TAO" new="ThesabanTambon" status="Done">
             <meetingreference board="2" number="36" date="2013-07-31" />
           </statuschange>
         </history>
@@ -5978,11 +5978,22 @@
   </entity>
   <entity type="ThesabanTambon" name="ปิงโค้ง" english="Ping Khong" geocode="5055" parent="5004" tambon="500406">
     <office type="MunicipalityOffice">
+      <symbols>
+        <vision>ปิงโค้งน่าอยู่  เชิดชูคุณธรรม เลิศล้ำการศึกษา พัฒนารายได้ ใส่ใจสิ่งแวดล้อม</vision>
+      </symbols>
       <geo:Point>
         <geo:lat>19.4294</geo:lat>
         <geo:long>98.9789</geo:long>
       </geo:Point>
+      <socialweb>
+        <facebook>https://www.facebook.com/pingkhong</facebook>
+        <googleplus type="user" status="inactive">116623407452247797721</googleplus>
+      </socialweb>
+      <officials><official title="Mayor" name="สุทัศน์ บานเย็น" begin="2013-01-07" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="วิม ผ่องแผ้ว" begin="2008-12-21" beginreason="ElectedDirectly" />
+      </officials>
       <council>
+        <!-- Election 2013-01-07 like mayor? Quite quick after end of term... -->
         <term begin="2008-12-21" end="2012-12-20" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
         <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" finalsize="32" sizechangereason="MubanCreation" comment="Mu 15,16 created 2004-10" />
         <!-- Mu 14 created 2003-09 -->
