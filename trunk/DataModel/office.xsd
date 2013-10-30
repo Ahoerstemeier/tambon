@@ -418,28 +418,34 @@
       </xs:enumeration>
       <xs:enumeration value="location">
         <xs:annotation>
-          <xs:documentation>Google plus local page.</xs:documentation>
+          <xs:documentation>Google+ local page.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="community">
         <xs:annotation>
-          <xs:documentation>Google plus community.</xs:documentation>
+          <xs:documentation>Google+ community.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="GooglePlusLink">
+    <xs:annotation>
+      <xs:documentation>Link to a Google+ page.</xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="t:SocialWebLink">
         <xs:attribute name="type" type="t:GooglePlusPageType" use="optional" default="user">
           <xs:annotation>
-            <xs:documentation>Type of Google Plus page.</xs:documentation>
+            <xs:documentation>Type of Google+ page.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="TwitterLink">
+    <xs:annotation>
+      <xs:documentation>Twitter link.</xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="t:SocialWebLink">
         <xs:attribute name="protected" type="xs:boolean" use="optional" default="false">
@@ -468,6 +474,9 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="FacebookLink">
+    <xs:annotation>
+      <xs:documentation>Facebook link.</xs:documentation>
+    </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:anyURI">
         <xs:attribute name="type" type="t:FacebookPageType" use="optional" default="user">
@@ -478,7 +487,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="SocialWebLinks">
+  <xs:complexType name="SocialWebLinkEntry">
     <xs:annotation>
       <xs:documentation>List of the social web sites where the entity is present.</xs:documentation>
     </xs:annotation>
@@ -488,14 +497,14 @@
           <xs:documentation>URL of the user account or page in facebook.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="twitter" type="t:TwitterLink" minOccurs="0" maxOccurs="1">
+      <xs:element name="twitter" type="t:TwitterLink" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>Twitter user name.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="googleplus" type="t:GooglePlusLink" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
-          <xs:documentation>Numerical code of the user or page.</xs:documentation>
+          <xs:documentation>Numerical code of the user, page, location or community in Google+.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="blog" type="t:MyUri" minOccurs="0" maxOccurs="unbounded">
@@ -906,7 +915,7 @@
           <xs:documentation>Website of the office, including former websites with the appropriate status.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="socialweb" type="t:SocialWebLinks">
+      <xs:element minOccurs="0" maxOccurs="1" name="socialweb" type="t:SocialWebLinkEntry">
         <xs:annotation>
           <xs:documentation>Links to the social web sites maintained by the office.</xs:documentation>
         </xs:annotation>

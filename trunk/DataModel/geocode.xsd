@@ -155,6 +155,11 @@
             <xs:documentation>Type of the entity.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="splitfrom" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Geocode of the entity from which the new entity was split off.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
