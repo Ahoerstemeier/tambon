@@ -549,13 +549,36 @@
   </xs:complexType>
 
   <xs:complexType name="ReferenceList">
-    <xs:sequence>
-      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="url" type="t:MyUri" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="meetingreference" type="t:MeetingReference" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="ministerialorder" type="t:MinisterialOrder" minOccurs="0" maxOccurs="unbounded" />
-      <xs:element name="book" type="t:BookReference" minOccurs="0" maxOccurs="unbounded" />
-    </xs:sequence>
+    <xs:annotation>
+      <xs:documentation>List of references.</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Related Royal Gazette entry.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="url" type="t:MyUri" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Web page reference.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="meetingreference" type="t:MeetingReference" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Meeting reference.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ministerialorder" type="t:MinisterialOrder" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ministerial order.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="book" type="t:BookReference" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Reference to a book.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
   </xs:complexType>
 
   <xs:complexType name="Wiki">

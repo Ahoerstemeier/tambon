@@ -482,87 +482,90 @@ namespace De.AHoerstemeier.Tambon {
         removed,
     }
     
+    /// <summary>
+    /// Reference to a book.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReferenceList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class ReferenceList {
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookReference", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class BookReference {
         
-        private List<GazetteRelated> gazetterefField;
+        private string titleField;
         
-        private List<MyUri> urlField;
+        private string authorField;
         
-        private List<MeetingReference> meetingreferenceField;
+        private string publicationField;
         
-        private List<MinisterialOrder> ministerialorderField;
-        
-        private List<BookReference> bookField;
+        private string isbnField;
         
         /// <summary>
-        /// Creates a new instance of ReferenceList.
+        /// Title of the book.
         /// </summary>
-        public ReferenceList() {
-            this.bookField = new List<BookReference>();
-            this.ministerialorderField = new List<MinisterialOrder>();
-            this.meetingreferenceField = new List<MeetingReference>();
-            this.urlField = new List<MyUri>();
-            this.gazetterefField = new List<GazetteRelated>();
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("gazetteref", Order=0)]
+        /// <value>
+        /// The title.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<GazetteRelated> gazetteref {
+        public string title {
             get {
-                return this.gazetterefField;
+                return this.titleField;
             }
             set {
-                this.gazetterefField = value;
+                this.titleField = value;
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("url", Order=1)]
+        /// <summary>
+        /// Main author or editor of the book.
+        /// </summary>
+        /// <value>
+        /// The author.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MyUri> url {
+        public string author {
             get {
-                return this.urlField;
+                return this.authorField;
             }
             set {
-                this.urlField = value;
+                this.authorField = value;
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("meetingreference", Order=2)]
+        /// <summary>
+        /// Publication year.
+        /// </summary>
+        /// <value>
+        /// The publication.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MeetingReference> meetingreference {
+        public string publication {
             get {
-                return this.meetingreferenceField;
+                return this.publicationField;
             }
             set {
-                this.meetingreferenceField = value;
+                this.publicationField = value;
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", Order=3)]
+        /// <summary>
+        /// ISBN of the book.
+        /// </summary>
+        /// <value>
+        /// The isbn.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<MinisterialOrder> ministerialorder {
+        public string isbn {
             get {
-                return this.ministerialorderField;
+                return this.isbnField;
             }
             set {
-                this.ministerialorderField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("book", Order=4)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<BookReference> book {
-            get {
-                return this.bookField;
-            }
-            set {
-                this.bookField = value;
+                this.isbnField = value;
             }
         }
     }
@@ -687,94 +690,6 @@ namespace De.AHoerstemeier.Tambon {
         /// Ministry of Interior (กระทรวงมหาดไทย, มท).
         /// </summary>
         MOI,
-    }
-    
-    /// <summary>
-    /// Reference to a book.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BookReference", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class BookReference {
-        
-        private string titleField;
-        
-        private string authorField;
-        
-        private string publicationField;
-        
-        private string isbnField;
-        
-        /// <summary>
-        /// Title of the book.
-        /// </summary>
-        /// <value>
-        /// The title.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string title {
-            get {
-                return this.titleField;
-            }
-            set {
-                this.titleField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Main author or editor of the book.
-        /// </summary>
-        /// <value>
-        /// The author.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string author {
-            get {
-                return this.authorField;
-            }
-            set {
-                this.authorField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Publication year.
-        /// </summary>
-        /// <value>
-        /// The publication.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string publication {
-            get {
-                return this.publicationField;
-            }
-            set {
-                this.publicationField = value;
-            }
-        }
-        
-        /// <summary>
-        /// ISBN of the book.
-        /// </summary>
-        /// <value>
-        /// The isbn.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string isbn {
-            get {
-                return this.isbnField;
-            }
-            set {
-                this.isbnField = value;
-            }
-        }
     }
     
     /// <summary>
@@ -945,6 +860,48 @@ namespace De.AHoerstemeier.Tambon {
         /// Region vice governor (รองผู้ว่าราชการภาค, Rong Phu Waratchakan Phak).
         /// </summary>
         RegionViceGovernor,
+    }
+    
+    /// <summary>
+    /// List of references.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReferenceList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class ReferenceList {
+        
+        private List<object> itemsField;
+        
+        /// <summary>
+        /// Creates a new instance of ReferenceList.
+        /// </summary>
+        public ReferenceList() {
+            this.itemsField = new List<object>();
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("book", typeof(BookReference), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("gazetteref", typeof(GazetteRelated), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("url", typeof(MyUri), Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
     }
     
     /// <summary>

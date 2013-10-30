@@ -396,6 +396,10 @@ namespace De.AHoerstemeier.Tambon {
         
         private EntityType typeField;
         
+        private uint splitfromField;
+        
+        private bool splitfromFieldSpecified;
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -410,6 +414,40 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.typeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint splitfrom {
+            get {
+                return this.splitfromField;
+            }
+            set {
+                this.splitfromField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool splitfromSpecified {
+            get {
+                return this.splitfromFieldSpecified;
+            }
+            set {
+                this.splitfromFieldSpecified = value;
             }
         }
     }

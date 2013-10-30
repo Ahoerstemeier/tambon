@@ -261,11 +261,18 @@ namespace De.AHoerstemeier.Tambon {
         
         private string descriptionField;
         
-        private ReferenceList referenceField;
+        private List<object> referenceField;
         
         private System.DateTime dateField;
         
         private bool dateFieldSpecified;
+        
+        /// <summary>
+        /// Creates a new instance of Emblem.
+        /// </summary>
+        public Emblem() {
+            this.referenceField = new List<object>();
+        }
         
         /// <summary>
         /// Description of the emblem (in Thai).
@@ -290,9 +297,14 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The reference.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ReferenceList reference {
+        public List<object> reference {
             get {
                 return this.referenceField;
             }
@@ -524,7 +536,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<MyUri> urlField;
         
-        private SocialWebLinks socialwebField;
+        private SocialWebLinkEntry socialwebField;
         
         private OfficialList officialsField;
         
@@ -550,7 +562,7 @@ namespace De.AHoerstemeier.Tambon {
             this.oldlocationsField = new List<OldLocation>();
             this.councilField = new List<CouncilTerm>();
             this.officialsField = new OfficialList();
-            this.socialwebField = new SocialWebLinks();
+            this.socialwebField = new SocialWebLinkEntry();
             this.urlField = new List<MyUri>();
             this.addressField = new ThaiAddress();
             this.dolaField = new LocalAdministrationData();
@@ -667,7 +679,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SocialWebLinks socialweb {
+        public SocialWebLinkEntry socialweb {
             get {
                 return this.socialwebField;
             }
@@ -1163,12 +1175,12 @@ namespace De.AHoerstemeier.Tambon {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SocialWebLinks", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class SocialWebLinks {
+    [System.Runtime.Serialization.DataContractAttribute(Name="SocialWebLinkEntry", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class SocialWebLinkEntry {
         
         private List<FacebookLink> facebookField;
         
-        private TwitterLink twitterField;
+        private List<TwitterLink> twitterField;
         
         private List<GooglePlusLink> googleplusField;
         
@@ -1179,13 +1191,13 @@ namespace De.AHoerstemeier.Tambon {
         private string foursquareField;
         
         /// <summary>
-        /// Creates a new instance of SocialWebLinks.
+        /// Creates a new instance of SocialWebLinkEntry.
         /// </summary>
-        public SocialWebLinks() {
+        public SocialWebLinkEntry() {
             this.forumField = new List<MyUri>();
             this.blogField = new List<MyUri>();
             this.googleplusField = new List<GooglePlusLink>();
-            this.twitterField = new TwitterLink();
+            this.twitterField = new List<TwitterLink>();
             this.facebookField = new List<FacebookLink>();
         }
         
@@ -1212,9 +1224,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The twitter.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("twitter", Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TwitterLink twitter {
+        public List<TwitterLink> twitter {
             get {
                 return this.twitterField;
             }
@@ -1224,7 +1236,7 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Numerical code of the user or page.
+        /// Numerical code of the user, page, location or community in Google+.
         /// </summary>
         /// <value>
         /// The googleplus.
@@ -1292,6 +1304,9 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    /// <summary>
+    /// Facebook link.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1367,6 +1382,9 @@ namespace De.AHoerstemeier.Tambon {
         page,
     }
     
+    /// <summary>
+    /// Twitter link.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1509,6 +1527,9 @@ namespace De.AHoerstemeier.Tambon {
         offline,
     }
     
+    /// <summary>
+    /// Link to a Google+ page.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1565,12 +1586,12 @@ namespace De.AHoerstemeier.Tambon {
         page,
         
         /// <summary>
-        /// Google plus local page.
+        /// Google+ local page.
         /// </summary>
         location,
         
         /// <summary>
-        /// Google plus community.
+        /// Google+ community.
         /// </summary>
         community,
     }
@@ -1588,12 +1609,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<OfficialEntryBase> itemsField;
         
-        private ReferenceList referenceField;
+        private List<object> referenceField;
         
         /// <summary>
         /// Creates a new instance of OfficialList.
         /// </summary>
         public OfficialList() {
+            this.referenceField = new List<object>();
             this.itemsField = new List<OfficialEntryBase>();
         }
         
@@ -1621,9 +1643,14 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The reference.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ReferenceList reference {
+        public List<object> reference {
             get {
                 return this.referenceField;
             }
