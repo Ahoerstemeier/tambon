@@ -2691,12 +2691,12 @@ namespace De.AHoerstemeier.Tambon {
         MinisterOfNaturalResourcesAndEnvironment,
         
         /// <summary>
-        /// Director of the National Register Office (ผู้อํานวยการทะเบียนกลาง).
+        /// Director of the National Register Office (ผู้อำำนวยการทะเบียนกลาง).
         /// </summary>
         RegisterOfficeDirector,
         
         /// <summary>
-        /// Deputy director of the National Register Office (รองผู้อํานวยการทะเบียนกลาง).
+        /// Deputy director of the National Register Office (รองผู้อำำนวยการทะเบียนกลาง).
         /// </summary>
         RegisterOfficeDeputyDirector,
     }
