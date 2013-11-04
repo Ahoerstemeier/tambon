@@ -409,6 +409,9 @@
     <entity type="Tambon" name="บางระจัน" english="Bang Rachan" geocode="170302">
       <office type="TAOOffice">
         <!-- Longdo: 14.80036,100.34588 -->
+        <socialweb>
+          <googleplus type="location">101253461350786717026</googleplus>
+        </socialweb>
         <officials>
           <official title="TAOMayor" name="สุรินทร์ โคกเทียน" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
@@ -417,10 +420,10 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+          <rename oldname="บางระจัน" oldenglish="Bang Rachan" name="ค่ายบางระจัน" english="Khai Bang Rachan" effective="2013-10-18" status="Gazette">
+            <gazetteref volume="130" page="25" issue="พิเศษ 149 ง" date="2013-11-04" />
             <meetingreference board="2" number="42" date="2013-08-21" />
-          </statuschange>
-          <rename oldname="บางระจัน" oldenglish="Bang Rachan" name="ค่ายบางระจัน" english="Khai Bang Rachan" status="Pending" />
+          </rename>
         </history>
       </office>
       <entity type="Muban" geocode="17030201" name="บ้านสี่เหลี่ยม" english="Ban Si Liam" />
@@ -437,7 +440,11 @@
     </entity>
     <entity type="Tambon" name="โพสังโฆ" english="Pho Sangkho" geocode="170303">
       <office type="TAOOffice">
+        <url lastchecked="2013-11-04">http://www.phosangco.net/</url>
         <url status="offline">http://www.phosangco.com/</url>
+        <socialweb>
+          <facebook>https://www.facebook.com/phosangco</facebook>
+        </socialweb>
         <officials>
           <official title="TAOMayor" name="วิโรจน์ บุญสยุมภู" begin="2012-03-04" beginreason="ElectedDirectly" />
           <officialterm title="TAOMayor" begin="2008-01-27" endyear="2012" beginreason="ElectedDirectly" endreason="Unknown" />
@@ -445,14 +452,16 @@
         <council>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
+          <!-- Mu 2,3,5 only Municipality, Mu 5,7 partially Municipality -->
         </council>
       </office>
       <entity type="Muban" geocode="17030301" name="บ้านท้องคุ้งเหนือ" english="Ban Thong Khung Nuea" />
-
+      <entity type="Muban" geocode="17030302" name="บ้านท้องคุ้งกลาง" english="Ban Thong Khung Klang" />
+      <entity type="Muban" geocode="17030303" name="บ้านท้องคุ้งใต้" english="Ban Thong Khung Tai" />
       <entity type="Muban" geocode="17030304" name="บ้านท่าข้ามเหนือ" english="Ban Tha Kham Nuea" />
-      <entity type="Muban" geocode="17030305" name="บ้านท่าข้ามกลาง" english="Ban Tha Kham Klang" comment="Partially municipal" />
-
-      <entity type="Muban" geocode="17030307" name="บ้านวัดพริก" english="Ban Wat Phrik" comment="Partially municipal" />
+      <entity type="Muban" geocode="17030305" name="บ้านท่าข้ามกลาง" english="Ban Tha Kham Klang" />
+      <entity type="Muban" geocode="17030306" name="บ้านท่าข้ามใต้" english="Ban Tha Kham Tai" />
+      <entity type="Muban" geocode="17030307" name="บ้านวัดพริก" english="Ban Wat Phrik" />
       <entity type="Muban" geocode="17030308" name="บ้านวัดฟูกเหนือ" english="Ban Wat Fuk Nuea" />
       <entity type="Muban" geocode="17030309" name="บ้านวัดฟูกใต้" english="Ban Wat Fuk Tai" />
       <entity type="Muban" geocode="17030310" name="บ้านม่วงเหนือ" english="Ban Muang Nuea" />
@@ -493,7 +502,8 @@
       <office type="TAOOffice">
         <url>http://khorsai.com/</url>
         <officials>
-          <official title="TAOMayor" name="สมเกียรติ พึ่งนาม" begin="2009-05-24" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สมเกียรติ พึ่งนาม" begin="2013-06-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สมเกียรติ พึ่งนาม" begin="2009-05-24" end="2013-05-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
           <officialterm title="TAOMayor" begin="2005-07-31" endyear="2009" beginreason="ElectedDirectly" endreason="Unknown" />
         </officials>
         <council>
@@ -501,6 +511,12 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
         </council>
       </office>
+      <entity type="Muban" geocode="17030501" name="บ้านวังกะจับ" english="Ban Wang Krachap" />
+      <entity type="Muban" geocode="17030502" name="บ้านหนองบัว" english="Ban Nong Bua" />
+      <entity type="Muban" geocode="17030503" name="บ้านคอทรายใหญ่" english="Ban Kho Sai Yai" />
+      <entity type="Muban" geocode="17030504" name="บ้านคอทรายน้อย" english="Ban Kho Sai Noi" />
+      <entity type="Muban" geocode="17030505" name="บ้านคอทราย" english="Ban Kho Sai" />
+      <entity type="Muban" geocode="17030506" name="บ้านดอนโพธิ์" english="Ban Don Pho" />
     </entity>
     <entity type="Tambon" name="หนองกระทุ่ม" english="Nong Krathum" geocode="170306">
       <office type="TAOOffice">
@@ -1005,9 +1021,10 @@
   <entity type="ThesabanTambon" name="โพสังโฆ" english="Pho Sangkho" geocode="1797" parent="1703">
     <office type="MunicipalityOffice">
       <officials>
-        <official title="Mayor" name="ประเสริฐ ธรรมศิริกาชัย" begin="2007-02-11" endyear="2011" />
+        <official title="Mayor" name="ประเสริฐ ธรรมศิริกาชัย" begin="2007-02-11" endyear="2011" beginreason="ElectedDirectly" />
       </officials>
       <council>
+        <term begin="2011-03-20" type="ThesabanTambon" size="12" />
         <term begin="2007-02-11" end="2011-02-10" type="ThesabanTambon" size="12" />
       </council>
     </office>
