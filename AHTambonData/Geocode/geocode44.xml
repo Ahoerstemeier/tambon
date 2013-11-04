@@ -1952,12 +1952,6 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="56" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="56" />
         </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
-            <meetingreference board="2" number="42" date="2013-08-21" />
-          </statuschange>
-          <rename oldname="หนองแสง" oldenglish="Nong Saeng" name="วาปีปทุม" english="Wapi Pathum" status="Pending" />
-        </history>
       </office>
       <entity type="Muban" geocode="44090101" name="บ้านวาปี" english="Ban Wapi" />
       <entity type="Muban" geocode="44090102" name="บ้านหนองแสง" english="Ban Nong Saeng" />
@@ -2843,14 +2837,28 @@
       </council>
     </office>
   </entity>
-  <entity type="ThesabanTambon" name="หนองแสง" english="Nong Saeng" geocode="4490" parent="4409">
+  <entity type="ThesabanTambon" name="วาปีปทุม" english="Wapi Pathum" geocode="4490" parent="4409">
     <office type="MunicipalityOffice">
-      <url>http://www.nsw-mu.com/</url>
+      <symbols>
+        <vision>เมืองน่าอยู่  สาธารณูปโภคทั่วถึง  พึ่งพาตนเองได้  สุขภาพอนามัยดี  มีคุณภาพชีวิต  เศรษฐกิจ  ยั่งยืน</vision>
+      </symbols>
+      <url lastchecked="2013-11-04">http://www.nongsangcity.go.th/</url>
+      <url status="offline">http://www.nsw-mu.com/</url>
+      <officials>
+        <official title="Mayor" name="ประภาส กิจจินดาโอภาส" begin="2012-03-18" beginreason="ElectedDirectly" /> />
+      </officials>
       <council>
+        <term begin="2012-05-13" type="ThesabanTambon" size="12" />
         <term begin="2008-03-30" end="2012-03-29" type="ThesabanTambon" size="12" />
         <term begin="2004-02-22" end="2008-02-21" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <rename oldname="หนองแสง" oldenglish="Nong Saeng" name="วาปีปทุม" english="Wapi Pathum" effective="2013-10-18" status="Gazette">
+        <gazetteref volume="130" page="24" issue="พิเศษ 149 ง" date="2013-11-04" />
+        <meetingreference board="2" number="42" date="2013-08-21" />
+      </rename>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="นาดูน" english="Na Dun" geocode="4489" parent="4410">
     <office type="MunicipalityOffice">
