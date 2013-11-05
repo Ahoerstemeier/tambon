@@ -693,7 +693,16 @@ namespace De.AHoerstemeier.Tambon.UI
             Int32 councilCount = 0;
             foreach ( var item in itemsWithCouncilElectionsPending )
             {
-                councilBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, item.CouncilTerm.begin.AddYears(4).AddDays(-1));
+                DateTime end;
+                if ( item.CouncilTerm.endSpecified )
+                {
+                    end = item.CouncilTerm.end;
+                }
+                else
+                {
+                    end = item.CouncilTerm.begin.AddYears(4).AddDays(-1);
+                }
+                councilBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, end);
                 councilBuilder.AppendLine();
                 councilCount++;
             }
@@ -709,12 +718,21 @@ namespace De.AHoerstemeier.Tambon.UI
             Int32 officialCount = 0;
             foreach ( var item in itemsWithOfficialElectionsPending )
             {
-                String officialTermBegin = "unknown";
+                String officialTermEnd = "unknown";
                 if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )
                 {
-                    officialTermBegin = String.Format(CultureInfo.CurrentUICulture, "{0:d}", item.OfficialTerm.begin.AddYears(4).AddDays(-1));
+                    DateTime end;
+                    if ( item.OfficialTerm.endSpecified )
+                    {
+                        end = item.OfficialTerm.end;
+                    }
+                    else
+                    {
+                        end = item.OfficialTerm.begin.AddYears(4).AddDays(-1);
+                    }
+                    officialTermEnd = String.Format(CultureInfo.CurrentUICulture, "{0:d}", end);
                 }
-                officialBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2}", item.Entity.english, item.Entity.geocode, officialTermBegin);
+                officialBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2}", item.Entity.english, item.Entity.geocode, officialTermEnd);
                 officialBuilder.AppendLine();
                 officialCount++;
             }
