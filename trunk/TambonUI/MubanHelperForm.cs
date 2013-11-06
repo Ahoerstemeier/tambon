@@ -36,7 +36,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     var entityType = EntityType.Muban;
                     if ( chkStripBefore.Checked )
                     {
-                        var startPosition = name.IndexOf("บ้าน");
+                        var startPosition = name.IndexOf(ThaiLanguageHelper.Ban);
                         if ( startPosition >= 0 )
                         {
                             name = name.Substring(startPosition);
@@ -80,6 +80,24 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var form = new StringDisplayForm("Muban", mubanListBuilder.ToString());
             form.Show();
+        }
+
+        private void btnAddBan_Click(object sender, EventArgs e)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach ( var line in edtText.Lines )
+            {
+                var value = line.Trim();
+                if ( !String.IsNullOrEmpty(value) )
+                {
+                    if ( !value.StartsWith(ThaiLanguageHelper.Ban) )
+                    {
+                        value = ThaiLanguageHelper.Ban + value;
+                    }
+                    builder.AppendLine(value);
+                }
+            }
+            edtText.Text = builder.ToString();
         }
     }
 }
