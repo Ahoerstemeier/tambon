@@ -50,7 +50,7 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("value");
             }
 
-            const String thaiStringBan = "บ้าน";
+            const String thaiStringBan = ThaiLanguageHelper.Ban;
             const String thaiStringChumchon = "ชุมชน";
             String retval = String.Empty;
             if ( value.StartsWith(thaiStringBan, StringComparison.Ordinal) )

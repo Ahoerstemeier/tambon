@@ -7,6 +7,8 @@ namespace De.AHoerstemeier.Tambon
 {
     public static class ThaiLanguageHelper
     {
+        public const String Ban = "บ้าน";
+
         public static Dictionary<String, String> NameSuffixRomanizations = new Dictionary<String, String>()
         {
             {"เหนือ", "Nuea"},  //North

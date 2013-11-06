@@ -34,6 +34,7 @@
             this.lblGeocode = new System.Windows.Forms.Label();
             this.edtText = new System.Windows.Forms.TextBox();
             this.btnConvert = new System.Windows.Forms.Button();
+            this.btnAddBan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtGeocode)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             0,
             0});
             this.edtGeocode.Name = "edtGeocode";
-            this.edtGeocode.Size = new System.Drawing.Size(120, 20);
+            this.edtGeocode.Size = new System.Drawing.Size(217, 20);
             this.edtGeocode.TabIndex = 2;
             // 
             // lblGeocode
@@ -92,7 +93,7 @@
             this.edtText.Location = new System.Drawing.Point(12, 86);
             this.edtText.Multiline = true;
             this.edtText.Name = "edtText";
-            this.edtText.Size = new System.Drawing.Size(240, 163);
+            this.edtText.Size = new System.Drawing.Size(337, 163);
             this.edtText.TabIndex = 4;
             // 
             // btnConvert
@@ -105,11 +106,22 @@
             this.btnConvert.UseVisualStyleBackColor = true;
             this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
+            // btnAddBan
+            // 
+            this.btnAddBan.Location = new System.Drawing.Point(258, 12);
+            this.btnAddBan.Name = "btnAddBan";
+            this.btnAddBan.Size = new System.Drawing.Size(75, 23);
+            this.btnAddBan.TabIndex = 6;
+            this.btnAddBan.Text = "Add บ้าน";
+            this.btnAddBan.UseVisualStyleBackColor = true;
+            this.btnAddBan.Click += new System.EventHandler(this.btnAddBan_Click);
+            // 
             // MubanHelperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 261);
+            this.ClientSize = new System.Drawing.Size(363, 261);
+            this.Controls.Add(this.btnAddBan);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.edtText);
             this.Controls.Add(this.lblGeocode);
@@ -132,5 +144,6 @@
         private System.Windows.Forms.Label lblGeocode;
         private System.Windows.Forms.TextBox edtText;
         private System.Windows.Forms.Button btnConvert;
+        private System.Windows.Forms.Button btnAddBan;
     }
 }
