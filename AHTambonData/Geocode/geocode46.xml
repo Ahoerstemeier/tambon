@@ -114,11 +114,21 @@
     <entity type="Tambon" name="กาฬสินธุ์" english="Kalasin" geocode="460101" />
     <entity type="Tambon" name="เหนือ" english="Nuea" geocode="460102">
       <office type="MunicipalityOffice">
-        <url>http://www.tambon-nua.com/</url>
+        <url lastchecked="2013-11-07">http://nua.go.th/</url>
+        <url status="offline">http://www.tambon-nua.com/</url>
+        <officials>
+          <official title="Mayor" name="พัสกร มูลศรี" begin="2010-03-28" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="กฤษฎา แจ่มสุวรรณ" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
-          <term begin="2010-03-28" type="ThesabanTambon" size="12" />
+          <term begin="2010-03-28" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-12" status="Done">
+            <meetingreference board="1" date="2009-07-28" number="32" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="46010201" name="บ้านโนนสำราญ" english="Ban Non Samran" />
       <entity type="Muban" geocode="46010202" name="บ้านสิมลี" english="Ban Sim Li" />
@@ -153,11 +163,45 @@
     </entity>
     <entity type="Tambon" name="ไผ่" english="Phai" geocode="460104">
       <office type="MunicipalityOffice">
+        <symbols>
+          <slogan>
+            เทศบาลตำบลไผ่
+            บริหารจัดการด้วยความโปร่งใส     ให้ประชาชนอยู่ดีกินดี
+            มีสาธารณูปโภคครบครัน        มุ่งมั่นให้ชุมชนเข้มแข็ง
+          </slogan>
+        </symbols>
+        <wiki openstreetmap="1809984074" />
+        <geo:Point>
+          <geo:lat>16.5068</geo:lat>
+          <geo:long>103.5760</geo:long>
+        </geo:Point>
+        <url lastchecked="2013-11-07">http://www.phai.go.th/</url>
+        <socialweb>
+          <foursquare>4f4ca6eee4b023d67572e42c</foursquare>
+        </socialweb>
+        <officials>
+          <official title="Mayor" name="ไพรบูรณ์ วิลาชัย" begin="2009-12-20" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สมจิตร ภูคงน้ำ" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
-          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" />
+          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-08-31" status="Done">
+            <meetingreference board="1" date="2009-07-28" number="32" />
+          </statuschange>
+        </history>
       </office>
+      <entity type="Muban" geocode="46010401" name="บ้านหนองโพน" english="Ban Nong Phon" />
+      <entity type="Muban" geocode="46010402" name="บ้านหนองไผ่" english="Ban Nong Phai" />
+      <entity type="Muban" geocode="46010403" name="บ้านโคกล่าม" english="Ban Khok Lam" />
+      <entity type="Muban" geocode="46010404" name="บ้านคำเม็ก" english="Ban Kham Mek" />
+      <entity type="Muban" geocode="46010405" name="บ้านโนนสะอาด" english="Ban Non Sa-at" />
+      <entity type="Muban" geocode="46010406" name="บ้านเริงนาแก" english="Ban Roeng Na Kae" />
+      <entity type="Muban" geocode="46010407" name="บ้านโคกกว้าง" english="Ban Khok Kwang" />
+      <entity type="Muban" geocode="46010408" name="บ้านดอนสวรรค์" english="Ban Don Sawan" />
+      <entity type="Muban" geocode="46010409" name="บ้านโนนทอง" english="Ban Non Thong" />
     </entity>
     <entity type="Tambon" name="ลำปาว" english="Lam Pao" geocode="460105" />
     <entity type="Tambon" name="ลำพาน" english="Lam Phan" geocode="460106">
@@ -230,29 +274,63 @@
     <entity type="Tambon" name="ม่วงนา" english="Muang Na" geocode="460110" newgeocode="461704" />
     <entity type="Tambon" name="ภูปอ" english="Phu Po" geocode="460111">
       <office type="MunicipalityOffice">
-        <url>http://www.phupor.com/</url>
+        <wiki openstreetmap="1811301975" />
+        <geo:Point>
+          <geo:lat>16.5878</geo:lat>
+          <geo:long>103.6169</geo:long>
+        </geo:Point>
+        <url status="broken">http://www.phupor.com/</url>
+        <socialweb>
+          <facebook>https://www.facebook.com/phupor.kalasin</facebook>
+        </socialweb>
+        <officials>
+          <official title="Mayor" name="ปอน คำสีโห" begin="2009-12-20" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประสงค์ คำหงษา" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
-          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" />
+          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
+          <!-- Mu 6,7 not part of Municipality -->
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-08-20" status="Done">
+            <meetingreference board="1" date="2009-07-28" number="32" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="46011101" name="บ้านห้วยแสง" english="Ban Huai Saeng" />
       <entity type="Muban" geocode="46011102" name="บ้านสะอาดสมศรี" english="Ban Sa-at Somsi" />
       <entity type="Muban" geocode="46011103" name="บ้านโนนสวรรค์" english="Ban Non Sawan" />
       <entity type="Muban" geocode="46011104" name="บ้านป่านกขาบ" english="Ban Pa Nok Khap" />
       <entity type="Muban" geocode="46011105" name="บ้านหนองแวงเหนือ" english="Ban Nong Waeng Nuea" />
-
+      <entity type="Muban" geocode="46011106" name="บ้านโจด" english="Ban Chot" />
+      <entity type="Muban" geocode="46011107" name="บ้านโจด" english="Ban Chot" />
       <entity type="Muban" geocode="46011108" name="บ้านหนองแวงใหญ่" english="Ban Nong Waeng Yai" />
       <entity type="Muban" geocode="46011109" name="บ้านห้วยแสงกลาง" english="Ban Huai Saeng Klang" />
     </entity>
     <entity type="Tambon" name="ดงพยุง" english="Dong Phayung" geocode="460112" newgeocode="461703" />
     <entity type="Tambon" name="ภูดิน" english="Phu Din" geocode="460113">
       <office type="MunicipalityOffice">
-        <url>http://www.tambon-phudin.com/</url>
+        <wiki openstreetmap="1812461469" />
+        <geo:Point>
+          <geo:lat>16.6408</geo:lat>
+          <geo:long>103.5091</geo:long>
+        </geo:Point>
+        <url lastchecked="2013-11-07">http://www.phudin.go.th/</url>
+        <url status="offline">http://www.tambon-phudin.com/</url>
+        <officials>
+          <official title="Mayor" name="อุดมชัย ชมเชี่ยวชาญ" begin="2009-12-20" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="นาค ปรีวาสนา" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
-          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" />
+          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="28" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-08-20" status="Done">
+            <meetingreference board="1" date="2009-07-28" number="32" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="46011301" name="บ้านสว่าง" english="Ban Sawang" />
       <entity type="Muban" geocode="46011302" name="บ้านค่ายลูกเสือ" english="Ban Khai Luk Suea" />
@@ -310,20 +388,53 @@
     </entity>
     <entity type="Tambon" name="ขมิ้น" english="Khamin" geocode="460117">
       <office type="MunicipalityOffice">
+        <url lastchecked="2013-11-07">http://www.khaminkalasin.go.th/</url>
+        <officials>
+          <official title="Mayor" name="พวงทอง ทรงเจริญ" begin="2009-12-20" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สนอง อิ่มไสว" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
-          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" />
+          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Done">
+            <meetingreference board="1" date="2009-07-28" number="32" />
+          </statuschange>
+        </history>
       </office>
+      <entity type="Muban" geocode="46011701" name="บ้านขมิ้น" english="Ban Khamin" />
+      <entity type="Muban" geocode="46011702" name="บ้านเหล่าเหนือ" english="Ban Lao Nuea" />
+      <entity type="Muban" geocode="46011703" name="บ้านหนองแวงใต้" english="Ban Nong Waeng Tai" />
+      <entity type="Muban" geocode="46011704" name="บ้านนาโก" english="Ban Na Ko" />
+      <entity type="Muban" geocode="46011705" name="บ้านนาอินทร์แปลง" english="Ban Na In Plaeng" />
+      <entity type="Muban" geocode="46011706" name="บ้านโคกใหญ่" english="Ban Khok Yai" />
+      <entity type="Muban" geocode="46011707" name="บ้านคำปลาฝา" english="Ban Kham Pla Fa" />
+      <entity type="Muban" geocode="46011708" name="บ้านโนนชัย" english="Ban Non Chai" />
+      <entity type="Muban" geocode="46011709" name="บ้านโนนทอง" english="Ban Non Thong" />
+      <entity type="Muban" geocode="46011710" name="บ้านโนนนคร" english="Ban Non Nakhon" />
+      <entity type="Muban" geocode="46011711" name="บ้านไผ่คำบอน" english="Ban Phai Kham Bon" />
     </entity>
     <entity type="Tambon" name="นาจำปา" english="Na Champa" geocode="460118" newgeocode="461705" />
     <entity type="Tambon" name="โพนทอง" english="Phon Thong" geocode="460119">
       <office type="MunicipalityOffice">
         <url status="offline">http://www.tambon-phonthong.com/</url>
+        <socialweb>
+          <googleplus type="user" status="inactive">110845140356900913757</googleplus>
+        </socialweb>
+        <officials>
+          <official title="Mayor" name="ศักดิ์ศรี ศรีบาลแจ่ม" begin="2009-12-20" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ศักดิ์ศรี ศรีบานแจ่ม" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
         <council>
-          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" />
+          <term begin="2009-12-20" end="2013-12-19" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" finalsize="20" sizechangereason="MubanCreation" comment="Mu 10 created 2006-11" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-08-20" status="Done">
+            <meetingreference board="1" date="2009-07-28" number="32" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="46011901" name="บ้านหามแห" english="Ban Ham Hae" />
       <entity type="Muban" geocode="46011902" name="บ้านโพนทอง" english="Ban Phon Thong" />
@@ -1650,6 +1761,11 @@
     </entity>
     <entity type="Tambon" name="นิคม" english="Nikhom" geocode="460905">
       <office type="MunicipalityOffice">
+        <wiki openstreetmap="1812461466" />
+        <geo:Point>
+          <geo:lat>16.685</geo:lat>
+          <geo:long>103.4956</geo:long>
+        </geo:Point>
         <url status="offline">http://www.tambonnikom.ob.tc/</url>
         <officials>
           <official title="Mayor" name="นิวัน นาพรม" begin="2012-08-11" beginreason="ElectedDirectly" />
@@ -2874,6 +2990,11 @@
   </entity>
   <entity type="ThesabanTambon" name="หนองสอ" english="Nong So" geocode="4697" parent="4601">
     <office type="MunicipalityOffice">
+      <wiki openstreetmap="1809984072" />
+      <geo:Point>
+        <geo:lat>16.5582</geo:lat>
+        <geo:long>103.5108</geo:long>
+      </geo:Point>
       <officials>
         <!-- No Mayor end term in 2009 -->
         <officialterm title="Mayor" begin="2011-09-24" />
