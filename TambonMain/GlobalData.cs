@@ -12,6 +12,29 @@ namespace De.AHoerstemeier.Tambon
     public static class GlobalData
     {
         /// <summary>
+        /// Loads the global list of provinces.
+        /// </summary>
+        public static void LoadBasicGeocodeList()
+        {
+            var fileName = BaseXMLDirectory + "\\geocode.xml";
+            using ( var filestream = new FileStream(fileName, FileMode.Open, FileAccess.Read) )
+            {
+                Entity geocodes = XmlManager.XmlToEntity<Entity>(filestream, new XmlSerializer(typeof(Entity)));
+                var provinces = new List<Entity>();
+                foreach ( var entity in geocodes.entity.Where(x => x.type.IsFirstLevelAdministrativeUnit() && !x.IsObsolete) )
+                {
+                    provinces.Add(entity);
+                }
+                provinces.Sort((x, y) => x.english.CompareTo(y.english));
+                Provinces = provinces;
+                geocodes.entity.Clear();
+                _countryEntity = geocodes;
+            }
+        }
+
+        private static Entity _countryEntity = null;
+
+        /// <summary>
         /// List of all gazette announcements.
         /// </summary>
         public static GazetteList AllGazetteAnnouncements
@@ -60,6 +83,21 @@ namespace De.AHoerstemeier.Tambon
                     }
                     _GeocodeCache.Add(provinceCode, result.Clone());
                 }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Returns the tree of administrative subdivisions for the whole country.
+        /// </summary>
+        /// <returns>Tree of subdivisions.</returns>
+        static public Entity CompleteGeocodeList()
+        {
+            var result = _countryEntity.Clone();
+            foreach ( var changwat in GlobalData.Provinces )
+            {
+                var actualChangwat = GetGeocodeList(changwat.geocode);
+                result.entity.Add(actualChangwat);
             }
             return result;
         }
