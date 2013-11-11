@@ -50,6 +50,7 @@
             this.btnElectionWeekday = new System.Windows.Forms.Button();
             this.btnMubanHelper = new System.Windows.Forms.Button();
             this.btnPendingElections = new System.Windows.Forms.Button();
+            this.btnWikiData = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +91,7 @@
             this.btnCreateKml.TabIndex = 43;
             this.btnCreateKml.Text = "Create KML";
             this.btnCreateKml.UseVisualStyleBackColor = true;
+            this.btnCreateKml.Click += new System.EventHandler(this.btnCreateKml_Click);
             // 
             // btn_GazetteShowAll
             // 
@@ -281,11 +283,22 @@
             this.btnPendingElections.UseVisualStyleBackColor = true;
             this.btnPendingElections.Click += new System.EventHandler(this.btnPendingElections_Click);
             // 
+            // btnWikiData
+            // 
+            this.btnWikiData.Location = new System.Drawing.Point(315, 361);
+            this.btnWikiData.Name = "btnWikiData";
+            this.btnWikiData.Size = new System.Drawing.Size(75, 23);
+            this.btnWikiData.TabIndex = 56;
+            this.btnWikiData.Text = "WikiData";
+            this.btnWikiData.UseVisualStyleBackColor = true;
+            this.btnWikiData.Click += new System.EventHandler(this.btnWikiData_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 425);
+            this.Controls.Add(this.btnWikiData);
             this.Controls.Add(this.btnPendingElections);
             this.Controls.Add(this.btnMubanHelper);
             this.Controls.Add(this.btnElectionWeekday);
@@ -339,6 +352,7 @@
         private System.Windows.Forms.Button btnElectionWeekday;
         private System.Windows.Forms.Button btnMubanHelper;
         private System.Windows.Forms.Button btnPendingElections;
+        private System.Windows.Forms.Button btnWikiData;
     }
 }
 

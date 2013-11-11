@@ -23,7 +23,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadBasicGeocodeList();
+            GlobalData.LoadBasicGeocodeList();
 
             FillChangwatDropDown();
         }
@@ -38,22 +38,6 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     cbxChangwat.SelectedItem = entry;
                 }
-            }
-        }
-
-        private static void LoadBasicGeocodeList()
-        {
-            var fileName = GlobalData.BaseXMLDirectory + "\\geocode.xml";
-            using ( var filestream = new FileStream(fileName, FileMode.Open, FileAccess.Read) )
-            {
-                Entity geocodes = XmlManager.XmlToEntity<Entity>(filestream, new XmlSerializer(typeof(Entity)));
-                var provinces = new List<Entity>();
-                foreach ( var entity in geocodes.entity.Where(x => x.type.IsFirstLevelAdministrativeUnit() && !x.IsObsolete) )
-                {
-                    provinces.Add(entity);
-                }
-                provinces.Sort((x, y) => x.english.CompareTo(y.english));
-                GlobalData.Provinces = provinces;
             }
         }
 
@@ -743,6 +727,43 @@ namespace De.AHoerstemeier.Tambon.UI
                     officialBuilder.ToString());
                 displayForm.Show();
             }
+        }
+
+        private void btnCreateKml_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnWikiData_Click(object sender, EventArgs e)
+        {
+            var entities = GlobalData.CompleteGeocodeList();
+            var allEntities = entities.FlatList();
+            var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
+            var allOffices = allEntities.SelectMany(x => x.office);
+            var officesWithWikiData = allOffices.Where(y => y.wiki != null && !String.IsNullOrEmpty(y.wiki.wikidata));
+
+            // write to CSV file?
+
+            var fittingEntitiesByType = entitiesWithWikiData.GroupBy(x => x.type).OrderBy(y => y.Count());
+            var allEntitiesByType = allEntities.GroupBy(x => x.type);
+            StringBuilder builder = new StringBuilder();
+            foreach ( var type in fittingEntitiesByType )
+            {
+                builder.AppendFormat("{0}: {1} of {2}", type.Key, type.Count(), allEntitiesByType.First(x => x.Key == type.Key).Count());
+                builder.AppendLine();
+            }
+            builder.AppendLine();
+
+            var officesWithWikiDataByType = officesWithWikiData.GroupBy(x => x.type).OrderBy(y => y.Count());
+            foreach ( var type in officesWithWikiDataByType )
+            {
+                builder.AppendFormat("{0}: {1}", type.Key, type.Count());
+                builder.AppendLine();
+            }
+
+            var result = builder.ToString();
+
+            var formWikiDataEntries = new StringDisplayForm("Wikidata converage", result);
+            formWikiDataEntries.Show();
         }
     }
 }
