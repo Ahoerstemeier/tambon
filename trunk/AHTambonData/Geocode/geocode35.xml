@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" geocode="35" name="ยโสธร" english="Yasothon">
+  <wiki wikidata="Q506598" />
   <office type="ProvinceHall">
     <geo:Point>
       <geo:lat>15.8024</geo:lat>
@@ -44,6 +45,7 @@
     </council>
   </office>
   <entity type="Amphoe" name="เมืองยโสธร" english="Mueang Yasothon" geocode="3501">
+    <wiki wikidata="Q476116" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.7946</geo:lat>
@@ -104,16 +106,28 @@
     <entity type="Tambon" name="สำราญ" english="Samran" geocode="350104">
       <office type="MunicipalityOffice">
         <!-- Longdo: 15.84042, 104.10553 -->
-        <url status="broken" lastchecked="2012-09-04">http://www.samran.go.th/</url>
+        <symbols>
+          <vision>สำราญเมืองน่าอยู่ ชุมชนเข้มแข็ง ร่วมแรงพัฒนา ชาวประชาเป็นสุข</vision>
+        </symbols>
+        <geo:Point>
+          <geo:lat>15.8515</geo:lat>
+          <geo:long>104.0980</geo:long>
+        </geo:Point>
+        <url lastchecked="2013-11-12">http://www.samran.go.th/</url>
+        <socialweb>
+          <facebook>https://www.facebook.com/samran2012</facebook>
+        </socialweb>
         <officials>
-          <official title="TAOMayor" name="มรกต โคตรุฉิน" begin="2008-08-24" end="2012-08-23" />
+          <official title="Mayor" name="ไพโรจน์ โคตรสมบัติ" begin="2013-01-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="มรกต โคตรุฉิน" begin="2008-08-24" end="2012-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2013-01-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-24" status="Done">
             <meetingreference board="2" number="54" date="2012-07-31" />
           </statuschange>
         </history>
@@ -1453,6 +1467,7 @@
   <entity type="KingAmphoe" name="บดินทรเดชา" english="Badin Thon De Cha" geocode="3510" comment="Proposed, but not created" />
 
   <entity type="ThesabanMueang" name="ยโสธร" english="Yasothon" geocode="3599" parent="3501">
+    <wiki wikidata="Q1017730" />
     <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>15.7972</geo:lat>
