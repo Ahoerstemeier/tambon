@@ -9,6 +9,11 @@ namespace De.AHoerstemeier.Tambon
 {
     public static class TambonExtensions
     {
+        /// <summary>
+        /// Checks whether a string is a number.
+        /// </summary>
+        /// <param name="value">String to check.</param>
+        /// <returns><c>true</c> if string is a number, <c>false</c> otherwise.</returns>
         public static Boolean IsNumeric(this String value)
         {
             if ( value == null )
