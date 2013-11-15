@@ -738,13 +738,14 @@ namespace De.AHoerstemeier.Tambon.UI
             var entities = GlobalData.CompleteGeocodeList();
             var allEntities = entities.FlatList();
             var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
+
             var allOffices = allEntities.SelectMany(x => x.office);
             var officesWithWikiData = allOffices.Where(y => y.wiki != null && !String.IsNullOrEmpty(y.wiki.wikidata));
 
             // write to CSV file?
 
-            var fittingEntitiesByType = entitiesWithWikiData.GroupBy(x => x.type).OrderBy(y => y.Count());
-            var allEntitiesByType = allEntities.GroupBy(x => x.type);
+            var fittingEntitiesByType = entitiesWithWikiData.GroupBy(y => y.type).OrderBy(z => z.Count());
+            var allEntitiesByType = allEntities.Where(x => !x.IsObsolete).GroupBy(y => y.type);
             StringBuilder builder = new StringBuilder();
             foreach ( var type in fittingEntitiesByType )
             {
@@ -762,7 +763,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var result = builder.ToString();
 
-            var formWikiDataEntries = new StringDisplayForm("Wikidata converage", result);
+            var formWikiDataEntries = new StringDisplayForm(
+                String.Format("Wikidata converage ({0})", officesWithWikiData.Count() + entitiesWithWikiData.Count()),
+                result);
             formWikiDataEntries.Show();
         }
     }
