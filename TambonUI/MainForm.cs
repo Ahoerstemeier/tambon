@@ -738,9 +738,12 @@ namespace De.AHoerstemeier.Tambon.UI
             var entities = GlobalData.CompleteGeocodeList();
             var allEntities = entities.FlatList();
             var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
+            var wikiDataLinks = new List<String>();
+            wikiDataLinks.AddRange(entitiesWithWikiData.Select(x => x.wiki.wikidata));
 
             var allOffices = allEntities.SelectMany(x => x.office);
             var officesWithWikiData = allOffices.Where(y => y.wiki != null && !String.IsNullOrEmpty(y.wiki.wikidata));
+            wikiDataLinks.AddRange(officesWithWikiData.Select(x => x.wiki.wikidata));
 
             // write to CSV file?
 
@@ -761,6 +764,15 @@ namespace De.AHoerstemeier.Tambon.UI
                 builder.AppendLine();
             }
 
+            var duplicateWikiDataLinks =wikiDataLinks.GroupBy(x => x).Where(y => y.Count() > 1);
+            if (duplicateWikiDataLinks.Any())
+            {
+                builder.AppendLine("Duplicate links:");
+                foreach (var wikiDataLink in duplicateWikiDataLinks)
+                {
+                    builder.AppendLine(wikiDataLink.Key);
+                }
+            }
             var result = builder.ToString();
 
             var formWikiDataEntries = new StringDisplayForm(
