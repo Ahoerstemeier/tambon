@@ -420,6 +420,8 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="EntryActionList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class EntryActionList {
         
+        private WikiBase wikiField;
+        
         private List<object> itemsField;
         
         /// <summary>
@@ -427,7 +429,181 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public EntryActionList() {
             this.itemsField = new List<object>();
+            this.wikiField = new WikiBase();
         }
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WikiBase wiki {
+            get {
+                return this.wikiField;
+            }
+            set {
+                this.wikiField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazetteParkAbolish), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazetteParkAreaChange), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("areadefinition", typeof(GazetteAreaDefinition), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteRelated", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GazetteRelated : GazetteReferenceBase {
+    }
+    
+    /// <summary>
+    /// Reference to another gazette announcement.
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCorrection))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRelated))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteReferenceBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public abstract partial class GazetteReferenceBase {
+        
+        private uint volumeField;
+        
+        private uint pageField;
+        
+        private string issueField;
+        
+        private System.DateTime dateField;
+        
+        private bool dateFieldSpecified;
+        
+        private string commentField;
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint volume {
+            get {
+                return this.volumeField;
+            }
+            set {
+                this.volumeField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string issue {
+            get {
+                return this.issueField;
+            }
+            set {
+                this.issueField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool dateSpecified {
+            get {
+                return this.dateFieldSpecified;
+            }
+            set {
+                this.dateFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteCorrection", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GazetteCorrection : GazetteReferenceBase {
+        
+        private object itemField;
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -458,12 +634,12 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<object> Items {
+        public object Item {
             get {
-                return this.itemsField;
+                return this.itemField;
             }
             set {
-                this.itemsField = value;
+                this.itemField = value;
             }
         }
     }
@@ -761,115 +937,44 @@ namespace De.AHoerstemeier.Tambon {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteRelated", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class GazetteRelated : GazetteReferenceBase {
-    }
-    
-    /// <summary>
-    /// Reference to another gazette announcement.
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteCorrection))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRelated))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteReferenceBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public abstract partial class GazetteReferenceBase {
-        
-        private uint volumeField;
-        
-        private uint pageField;
-        
-        private string issueField;
-        
-        private System.DateTime dateField;
-        
-        private bool dateFieldSpecified;
-        
-        private string commentField;
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint volume {
-            get {
-                return this.volumeField;
-            }
-            set {
-                this.volumeField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint page {
-            get {
-                return this.pageField;
-            }
-            set {
-                this.pageField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string issue {
-            get {
-                return this.issueField;
-            }
-            set {
-                this.issueField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime date {
-            get {
-                return this.dateField;
-            }
-            set {
-                this.dateField = value;
-            }
-        }
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum ParkType {
         
         /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// National park (อุทยานแห่งชาติ).
         /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool dateSpecified {
-            get {
-                return this.dateFieldSpecified;
-            }
-            set {
-                this.dateFieldSpecified = value;
-            }
-        }
+        NationalPark,
         
         /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// Forest park (วนอุทยานใน).
         /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment {
-            get {
-                return this.commentField;
-            }
-            set {
-                this.commentField = value;
-            }
-        }
+        ForestPark,
+        
+        /// <summary>
+        /// Historical park (อุทยานประวัติศาสตร์).
+        /// </summary>
+        HistoricalPark,
+        
+        /// <summary>
+        /// Wildlife sanctuary (เขตรักษาพันธุ์สัตว์ป่า).
+        /// </summary>
+        WildlifeSanctuary,
+        
+        /// <summary>
+        /// Non-hunting area (เขตห้ามล่าสัตว์ป่า).
+        /// </summary>
+        NonHuntingArea,
+        
+        /// <summary>
+        /// Historical site (เขตที่ดินโบราณสถาน).
+        /// </summary>
+        HistoricalSite,
+        
+        /// <summary>
+        /// National protected forest (ป่าสงวนแห่งชาติ).
+        /// </summary>
+        NationalForest,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
@@ -877,48 +982,17 @@ namespace De.AHoerstemeier.Tambon {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteCorrection", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class GazetteCorrection : GazetteReferenceBase {
-        
-        private object itemField;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazetteParkAbolish), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazetteParkAreaChange), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("areadefinition", typeof(GazetteAreaDefinition), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteParkAreaChange", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GazetteParkAreaChange : GazetteParkBase {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteParkCreate", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GazetteParkCreate : GazetteParkBase {
     }
     
     /// <summary>
@@ -1007,15 +1081,6 @@ namespace De.AHoerstemeier.Tambon {
                 this.newareaFieldSpecified = value;
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteParkAreaChange", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class GazetteParkAreaChange : GazetteParkBase {
     }
     
     /// <summary>
@@ -1407,15 +1472,6 @@ namespace De.AHoerstemeier.Tambon {
                 this.oldownerFieldSpecified = value;
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteParkCreate", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class GazetteParkCreate : GazetteParkBase {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
@@ -2115,48 +2171,6 @@ namespace De.AHoerstemeier.Tambon {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
-    public enum ParkType {
-        
-        /// <summary>
-        /// National park (อุทยานแห่งชาติ).
-        /// </summary>
-        NationalPark,
-        
-        /// <summary>
-        /// Forest park (วนอุทยานใน).
-        /// </summary>
-        ForestPark,
-        
-        /// <summary>
-        /// Historical park (อุทยานประวัติศาสตร์).
-        /// </summary>
-        HistoricalPark,
-        
-        /// <summary>
-        /// Wildlife sanctuary (เขตรักษาพันธุ์สัตว์ป่า).
-        /// </summary>
-        WildlifeSanctuary,
-        
-        /// <summary>
-        /// Non-hunting area (เขตห้ามล่าสัตว์ป่า).
-        /// </summary>
-        NonHuntingArea,
-        
-        /// <summary>
-        /// Historical site (เขตที่ดินโบราณสถาน).
-        /// </summary>
-        HistoricalSite,
-        
-        /// <summary>
-        /// National protected forest (ป่าสงวนแห่งชาติ).
-        /// </summary>
-        NationalForest,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
@@ -2691,12 +2705,12 @@ namespace De.AHoerstemeier.Tambon {
         MinisterOfNaturalResourcesAndEnvironment,
         
         /// <summary>
-        /// Director of the National Register Office (ผู้อำำนวยการทะเบียนกลาง).
+        /// Director of the National Register Office (ผู้อำนวยการทะเบียนกลาง).
         /// </summary>
         RegisterOfficeDirector,
         
         /// <summary>
-        /// Deputy director of the National Register Office (รองผู้อำำนวยการทะเบียนกลาง).
+        /// Deputy director of the National Register Office (รองผู้อำนวยการทะเบียนกลาง).
         /// </summary>
         RegisterOfficeDeputyDirector,
     }

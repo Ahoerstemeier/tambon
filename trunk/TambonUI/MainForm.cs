@@ -763,20 +763,31 @@ namespace De.AHoerstemeier.Tambon.UI
                 builder.AppendFormat("{0}: {1}", type.Key, type.Count());
                 builder.AppendLine();
             }
+            builder.AppendLine();
 
-            var duplicateWikiDataLinks =wikiDataLinks.GroupBy(x => x).Where(y => y.Count() > 1);
-            if (duplicateWikiDataLinks.Any())
+            var announcementsWithWikiData = GlobalData.AllGazetteAnnouncements.entry.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
+            if ( announcementsWithWikiData.Any() )
+            {
+                builder.AppendFormat("Announcements: {0}", announcementsWithWikiData.Count());
+                builder.AppendLine();
+                builder.AppendLine();
+            }
+            wikiDataLinks.AddRange(announcementsWithWikiData.Select(x => x.wiki.wikidata));
+
+            var duplicateWikiDataLinks = wikiDataLinks.GroupBy(x => x).Where(y => y.Count() > 1);
+            if ( duplicateWikiDataLinks.Any() )
             {
                 builder.AppendLine("Duplicate links:");
-                foreach (var wikiDataLink in duplicateWikiDataLinks)
+                foreach ( var wikiDataLink in duplicateWikiDataLinks )
                 {
                     builder.AppendLine(wikiDataLink.Key);
                 }
             }
+
             var result = builder.ToString();
 
             var formWikiDataEntries = new StringDisplayForm(
-                String.Format("Wikidata converage ({0})", officesWithWikiData.Count() + entitiesWithWikiData.Count()),
+                String.Format("Wikidata coverage ({0})", officesWithWikiData.Count() + entitiesWithWikiData.Count()),
                 result);
             formWikiDataEntries.Show();
         }

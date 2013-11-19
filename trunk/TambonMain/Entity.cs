@@ -11,7 +11,13 @@ namespace De.AHoerstemeier.Tambon
         public Entity Clone()
         {
             // Don't I need a deep value copy?
-            return (Entity)(this.MemberwiseClone());
+            var newEntity = (Entity)(this.MemberwiseClone());
+            newEntity.entity = new List<Entity>();
+            foreach ( var subEntity in this.entity )
+            {
+                newEntity.entity.Add(subEntity.Clone());
+            }
+            return newEntity;
         }
 
         private ICollection<Entity> _thesaban = new List<Entity>();
