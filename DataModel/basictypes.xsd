@@ -581,24 +581,34 @@
     </xs:choice>
   </xs:complexType>
 
-  <xs:complexType name="Wiki">
+  <xs:complexType name="WikiBase">
     <xs:annotation>
-      <xs:documentation>Links to various wikis information.</xs:documentation>
+      <xs:documentation>Link to wikidata.</xs:documentation>
     </xs:annotation>
     <xs:attribute name="wikidata" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>Wikidata item id, always starting with the letter Q followed by a number. Full URL to the item Q123 is https://www.wikidata.org/wiki/Q123 </xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="openstreetmap" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>Open street map relation id. Full URL to the id 123 is http://www.openstreetmap.org/browse/relation/123 </xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="wikimapia" type="xs:int" use="optional">
-      <xs:annotation>
-        <xs:documentation>Wikimapia id. Full URL to the id 123 is http://www.wikimapia.org/123 Office and geographical entity have different ids.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="Wiki">
+    <xs:annotation>
+      <xs:documentation>Links to various wikis information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:WikiBase">
+        <xs:attribute name="openstreetmap" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Open street map relation id. Full URL to the id 123 is http://www.openstreetmap.org/browse/relation/123 </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="wikimapia" type="xs:int" use="optional">
+          <xs:annotation>
+            <xs:documentation>Wikimapia id. Full URL to the id 123 is http://www.wikimapia.org/123 Office and geographical entity have different ids.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
 </xs:schema>

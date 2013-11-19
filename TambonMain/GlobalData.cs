@@ -52,7 +52,7 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         public static IEnumerable<Entity> Provinces;
 
-        static private Dictionary<UInt32, Entity> _GeocodeCache = new Dictionary<UInt32, Entity>();
+        static private Dictionary<UInt32, Entity> _geocodeCache = new Dictionary<UInt32, Entity>();
 
         /// <summary>
         /// Returns the tree of administrative subdivisions for a given province.
@@ -68,9 +68,9 @@ namespace De.AHoerstemeier.Tambon
             {
                 throw new ArgumentOutOfRangeException("provinceCode");
             }
-            if ( _GeocodeCache.Keys.Contains(provinceCode) )
+            if ( _geocodeCache.Keys.Contains(provinceCode) )
             {
-                result = _GeocodeCache[provinceCode].Clone();
+                result = _geocodeCache[provinceCode].Clone();
             }
             else
             {
@@ -81,7 +81,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         result = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
                     }
-                    _GeocodeCache.Add(provinceCode, result.Clone());
+                    _geocodeCache.Add(provinceCode, result.Clone());
                 }
             }
             return result;

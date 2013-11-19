@@ -905,25 +905,18 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
-    /// Links to various wikis information.
+    /// Link to wikidata.
     /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Wiki))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Wiki", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class Wiki {
+    [System.Runtime.Serialization.DataContractAttribute(Name="WikiBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class WikiBase {
         
         private string wikidataField;
-        
-        private int openstreetmapField;
-        
-        private bool openstreetmapFieldSpecified;
-        
-        private int wikimapiaField;
-        
-        private bool wikimapiaFieldSpecified;
         
         /// <summary>
         /// Wikidata item id, always starting with the letter Q followed by a number. Full URL to the item Q123 is https://www.wikidata.org/wiki/Q123
@@ -941,12 +934,32 @@ namespace De.AHoerstemeier.Tambon {
                 this.wikidataField = value;
             }
         }
+    }
+    
+    /// <summary>
+    /// Links to various wikis information.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Wiki", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class Wiki : WikiBase {
+        
+        private int openstreetmapField;
+        
+        private bool openstreetmapFieldSpecified;
+        
+        private int wikimapiaField;
+        
+        private bool wikimapiaFieldSpecified;
         
         /// <summary>
-        /// Open street map relation id. Full URL to the id 123 is http://www.openstreetmap.org/browse/relation/123
+        /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
-        /// The openstreetmap.
+        /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -977,10 +990,10 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Wikimapia id. Full URL to the id 123 is http://www.wikimapia.org/123 Office and geographical entity have different ids.
+        /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
-        /// The wikimapia.
+        /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]

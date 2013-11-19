@@ -620,6 +620,7 @@
       <xs:documentation>List of gazette entries.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="wiki" type="t:WikiBase" minOccurs="0" maxOccurs="1" />
       <xs:group ref='t:EntryAction' minOccurs='0' maxOccurs='unbounded' />
     </xs:sequence>
   </xs:complexType>
