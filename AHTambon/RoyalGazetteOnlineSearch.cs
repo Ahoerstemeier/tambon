@@ -361,23 +361,26 @@ namespace De.AHoerstemeier.Tambon
                 value = value.Substring(position2, value.Length - position2);
                 position = value.IndexOf(EntryVolumeorPage) + EntryVolumeorPage.Length;
                 position2 = value.IndexOf(ColumnEnd, position);
-                string volume = value.Substring(position, position2 - position);
+                String volume = value.Substring(position, position2 - position);
                 retval.Volume = Convert.ToInt32(TambonHelper.ReplaceThaiNumerals(volume));
                 value = value.Substring(position2, value.Length - position2);
                 position = value.IndexOf(EntryIssue) + EntryIssue.Length;
                 position2 = value.IndexOf(ColumnEnd, position);
-                string Issue = TambonHelper.ReplaceThaiNumerals(value.Substring(position, position2 - position).Trim());
+                String Issue = TambonHelper.ReplaceThaiNumerals(value.Substring(position, position2 - position).Trim());
                 value = value.Substring(position2, value.Length - position2);
                 retval.Issue = new RoyalGazetteIssue(Issue);
                 position = value.IndexOf(EntryDate) + EntryDate.Length;
                 position2 = value.IndexOf(ColumnEnd, position);
-                string Date = value.Substring(position, position2 - position);
+                String Date = value.Substring(position, position2 - position);
                 retval.Publication = TambonHelper.ParseThaiDate(Date);
                 value = value.Substring(position2, value.Length - position2);
                 position = value.IndexOf(EntryVolumeorPage) + EntryVolumeorPage.Length;
                 position2 = value.IndexOf(ColumnEnd, position);
-                string page = value.Substring(position, position2 - position);
-                retval.PageInfo.Page = Convert.ToInt32(TambonHelper.ReplaceThaiNumerals(page));
+                String page = value.Substring(position, position2 - position);
+                if ( String.IsNullOrEmpty(page) )
+                    retval.PageInfo.Page = 1;
+                else
+                    retval.PageInfo.Page = Convert.ToInt32(TambonHelper.ReplaceThaiNumerals(page));
 
                 if ( retval.Title.Contains('[') && retval.Title.EndsWith("]") )
                 {
