@@ -733,6 +733,15 @@ namespace De.AHoerstemeier.Tambon.UI
         {
         }
 
+        private class EntityTypeGrouping<TKey, TElement> : List<TElement>, IGrouping<TKey, TElement>
+        {
+            public TKey Key
+            {
+                get;
+                set;
+            }
+        }
+
         private void btnWikiData_Click(object sender, EventArgs e)
         {
             var entities = GlobalData.CompleteGeocodeList();
@@ -747,14 +756,30 @@ namespace De.AHoerstemeier.Tambon.UI
 
             // write to CSV file?
 
-            var fittingEntitiesByType = entitiesWithWikiData.GroupBy(y => y.type).OrderBy(z => z.Count());
+            var fittingEntitiesByType = entitiesWithWikiData.GroupBy(y => y.type).OrderBy(z => z.Count()).ToList();
             var allEntitiesByType = allEntities.Where(x => !x.IsObsolete).GroupBy(y => y.type);
+            foreach ( var expectedType in WikiBase.WikiDataItems )
+            {
+                if ( expectedType.Key != EntityType.Country )
+                {
+                    if ( allEntitiesByType.Any(x => x.Key == expectedType.Key) )
+                    {
+                        if ( !fittingEntitiesByType.Any(x => x.Key == expectedType.Key) )
+                        {
+                            var emptyEntry = new EntityTypeGrouping<EntityType, Entity>();
+                            emptyEntry.Key = expectedType.Key;
+                            fittingEntitiesByType.Add(emptyEntry);
+                        }
+                    }
+                }
+            }
             StringBuilder builder = new StringBuilder();
             foreach ( var type in fittingEntitiesByType )
             {
                 builder.AppendFormat("{0}: {1} of {2}", type.Key, type.Count(), allEntitiesByType.First(x => x.Key == type.Key).Count());
                 builder.AppendLine();
             }
+
             builder.AppendLine();
 
             var officesWithWikiDataByType = officesWithWikiData.GroupBy(x => x.type).OrderBy(y => y.Count());
