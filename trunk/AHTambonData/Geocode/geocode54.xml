@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="แพร่" english="Phrae" geocode="54">
+  <wiki wikidata="Q244652" />
   <office type="ProvinceHall">
     <geo:Point>
       <geo:lat>18.1453</geo:lat>
@@ -84,6 +85,7 @@
     </council>
   </office>
   <entity type="Amphoe" name="เมืองแพร่" english="Mueang Phrae" geocode="5401">
+    <wiki wikidata="Q476064" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.1456</geo:lat>
@@ -629,6 +631,7 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="ร้องกวาง" english="Rong Kwang" geocode="5402">
+    <wiki wikidata="Q476571" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.3398</geo:lat>
@@ -639,7 +642,8 @@
       </officials>
     </office>
     <entity type="Tambon" name="ร้องกวาง" english="Rong Kwang" geocode="540201">
-      <office type="TAOOffice" comment="Was scheduled for upgrade to ThesabanTambon in 2009 and rename to ผานางคอย">
+      <wiki wikidata="Q15272296" />
+      <office type="TAOOffice">
         <url>http://www.kwangtong.org/</url>
         <officials>
           <official title="TAOMayor" name="สำราญ อัครทรัพย์ไพศาล" begin="2009-12-13" endyear="2013" beginreason="ElectedDirectly" />
@@ -649,6 +653,14 @@
           <term begin="2009-12-13" end="2013-12-12" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Withdrawn">
+            <meetingreference board="1" date="2009-07-17" number="27" />
+          </statuschange>
+          <rename oldname="ร้องกวาง" oldenglish="Rong Khwang" name="ผานางคอย" english="Pha Nang Khoi" effective="2009-07-31" status="Withdrawn">
+            <meetingreference date="2009-10-21" number="2" board="rename" />
+          </rename>
+        </history>
       </office>
       <entity type="Muban" geocode="54020101" name="บ้านร้องกวาง" english="Ban Rong Kwang" />
       <entity type="Muban" geocode="54020102" name="บ้านร้องกวาง" english="Ban Rong Kwang" />
@@ -666,6 +678,7 @@
     <entity type="Tambon" name="หนองม่วงไข่" english="Nong Muang Khai" geocode="540202" newgeocode="540802" />
     <entity type="Tambon" name="แม่คำมี" english="Mae Kham Mi" geocode="540203" newgeocode="540801" />
     <entity type="Tambon" name="ร้องเข็ม" english="Rong Khem" geocode="540204">
+      <wiki wikidata="Q15272302" />
       <entity type="Muban" geocode="54020401" name="บ้านร้องเข็ม" english="Ban Rong Khem" />
       <entity type="Muban" geocode="54020402" name="บ้านร้องเข็ม" english="Ban Rong Khem" />
       <entity type="Muban" geocode="54020403" name="บ้านน้ำโค้ง" english="Ban Nam Khong" />
@@ -731,6 +744,7 @@
       <entity type="Muban" geocode="54020614" name="บ้านเวียงเหนือ" english="Ban Wiang Nuea" />
     </entity>
     <entity type="Tambon" name="ทุ่งศรี" english="Thung Si" geocode="540207">
+      <wiki wikidata="Q13015061" />
       <entity type="Muban" geocode="54020701" name="บ้านวังหม้อ" english="Ban Wang Mo" />
       <entity type="Muban" geocode="54020702" name="บ้านผาราง" english="Ban Pha Rang" />
       <entity type="Muban" geocode="54020703" name="บ้านทุ่งศรี" english="Ban Thung Si" />
@@ -868,6 +882,7 @@
     <entity type="Unknown" name="แม่คำมี" english="Mae Kham Mi" geocode="540299" newgeocode="540801" />
   </entity>
   <entity type="Amphoe" name="ลอง" english="Long" geocode="5403">
+    <wiki wikidata="Q475915" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.0757</geo:lat>
@@ -961,7 +976,7 @@
     </entity>
     <entity type="Tambon" name="เวียงต้า" english="Wiang Ta" geocode="540304" />
     <entity type="Tambon" name="ปากกาง" english="Pak Kang" geocode="540305">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url lastchecked="2013-09-17">http://pagkang.go.th/</url>
         <url status="offline">http://www.pagkang.net/</url>
         <officials>
@@ -972,7 +987,7 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2013-12-13" status="Done">
             <meetingreference board="2" number="36" date="2013-07-31" />
           </statuschange>
           <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Withdrawn">
@@ -1070,6 +1085,7 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="สูงเม่น" english="Sung Men" geocode="5404">
+    <wiki wikidata="Q476784" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.0521</geo:lat>
@@ -1363,6 +1379,7 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="เด่นชัย" english="Den Chai" geocode="5405">
+    <wiki wikidata="Q475450" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>17.9785</geo:lat>
@@ -1507,6 +1524,7 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="สอง" english="Song" geocode="5406">
+    <wiki wikidata="Q120230" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.4700</geo:lat>
@@ -1878,6 +1896,7 @@
     </entity>
   </entity>
   <entity type="Amphoe" name="หนองม่วงไข่" english="Nong Muang Khai" geocode="5408">
+    <wiki wikidata="Q476266" />
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>18.2646</geo:lat>
@@ -1979,6 +1998,7 @@
   <entity type="KingAmphoe" name="แดนชุมพล" english="Daen Chumphon" geocode="5409" obsolete="1" comment="Proposed, but not created" />
 
   <entity type="ThesabanMueang" name="แพร่" english="Phrae" geocode="5499" parent="5401">
+    <wiki wikidata="Q1207145" />
     <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>18.1453</geo:lat>
