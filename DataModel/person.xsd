@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+  <xs:include schemaLocation="basictypes.xsd" />
+
+  <xs:simpleType name="Gender">
+    <xs:annotation>
+      <xs:documentation>Gender of a person.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>Gender unknown.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="male">
+        <xs:annotation>
+          <xs:documentation>Male.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="female">
+        <xs:annotation>
+          <xs:documentation>Female.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="transgender">
+        <xs:annotation>
+          <xs:documentation>Transgender (Kathoi).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="person">
+    <xs:annotation>
+      <xs:documentation>Information on a person in the local or central administration.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="wiki" type="t:WikiBase" minOccurs="0" maxOccurs="1" />
+      <xs:group ref='t:EntryAction' minOccurs='0' maxOccurs='unbounded' />
+    </xs:sequence>
+    <xs:attribute name="gender" type="t:Gender" use="required" />
+    <xs:attributeGroup ref="t:Comment" />
+    <xs:attributeGroup ref="t:ThaiNameOptional" />
+    <!-- title -> Nai, Nang, Nang Sao, Police Leutnant etc. -->
+    <!-- list of positions -->
+    <!-- number from Nai Amphoe list -->
+    <!-- previous names, misspellings -->
+  </xs:complexType>
+</xs:schema>

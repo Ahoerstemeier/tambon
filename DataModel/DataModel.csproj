@@ -150,6 +150,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Gazette.xsd</DependentUpon>
     </None>
+    <None Include="person.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>person.xsd</DependentUpon>
+    </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="region.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -195,6 +200,11 @@
       <SubType>Designer</SubType>
       <Generator>xsd2codecustomtool</Generator>
       <LastGenOutput>region.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="person.xsd">
+      <SubType>Designer</SubType>
+      <Generator>xsd2codecustomtool</Generator>
+      <LastGenOutput>person.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
