@@ -776,7 +776,22 @@ namespace De.AHoerstemeier.Tambon.UI
             StringBuilder builder = new StringBuilder();
             foreach ( var type in fittingEntitiesByType )
             {
-                builder.AppendFormat("{0}: {1} of {2}", type.Key, type.Count(), allEntitiesByType.First(x => x.Key == type.Key).Count());
+                var fittingAllEntities = allEntitiesByType.First(x => x.Key == type.Key);
+                var expectedCount = fittingAllEntities.Count();
+                var actualCount = type.Count();
+                builder.AppendFormat("{0}: {1} of {2}", type.Key, type.Count(), expectedCount);
+                if (actualCount != expectedCount && expectedCount - actualCount < 5)
+                {
+                    builder.Append(" (");
+                    foreach (var entry in fittingAllEntities)
+                    {
+                        if (!entitiesWithWikiData.Contains(entry))
+                        {
+                            builder.AppendFormat("{0},", entry.geocode);
+                        }
+                    }
+                    builder.Append(")");
+                }
                 builder.AppendLine();
             }
 
