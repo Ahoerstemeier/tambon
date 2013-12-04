@@ -588,7 +588,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
-        private static void CountElectionWeekday(UInt32 geocode, FrequencyCounter counter)
+        private static void CountCouncilElectionWeekday(UInt32 geocode, FrequencyCounter counter)
         {
             var fullChangwat = GlobalData.GetGeocodeList(geocode);
             foreach ( var item in fullChangwat.FlatList() )
@@ -603,12 +603,52 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
+        private static void CountCouncilElectionDate(UInt32 geocode, FrequencyCounter counter)
+        {
+            var zeroDate = new DateTime(2000, 1, 1);
+            var fullChangwat = GlobalData.GetGeocodeList(geocode);
+            foreach ( var item in fullChangwat.FlatList() )
+            {
+                foreach ( var office in item.office )
+                {
+                    foreach ( var term in office.council )
+                    {
+                        var span = term.begin - zeroDate;
+                        counter.IncrementForCount(span.Days, item.geocode);
+                    }
+                }
+            }
+        }
+
+        private static void CountNayokElectionDate(UInt32 geocode, FrequencyCounter counter)
+        {
+            var zeroDate = new DateTime(2000, 1, 1);
+            var fullChangwat = GlobalData.GetGeocodeList(geocode);
+            foreach ( var item in fullChangwat.FlatList() )
+            {
+                foreach ( var office in item.office )
+                {
+                    if ( office.officials != null )
+                    {
+                        foreach ( var officialTerm in office.officials.Items )
+                        {
+                            if ( officialTerm.beginreason == OfficialBeginType.ElectedDirectly )
+                            {
+                                var span = officialTerm.begin - zeroDate;
+                                counter.IncrementForCount(span.Days, item.geocode);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         private void btnElectionWeekday_Click(object sender, EventArgs e)
         {
             var counter = new FrequencyCounter();
             foreach ( var changwat in GlobalData.Provinces )
             {
-                CountElectionWeekday(changwat.geocode, counter);
+                CountCouncilElectionWeekday(changwat.geocode, counter);
             }
             var builder = new StringBuilder();
             builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of elections: {0}", counter.NumberOfValues);
@@ -731,6 +771,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnCreateKml_Click(object sender, EventArgs e)
         {
+            // TODO!
         }
 
         private class EntityTypeGrouping<TKey, TElement> : List<TElement>, IGrouping<TKey, TElement>
@@ -780,12 +821,12 @@ namespace De.AHoerstemeier.Tambon.UI
                 var expectedCount = fittingAllEntities.Count();
                 var actualCount = type.Count();
                 builder.AppendFormat("{0}: {1} of {2}", type.Key, type.Count(), expectedCount);
-                if (actualCount != expectedCount && expectedCount - actualCount < 5)
+                if ( actualCount != expectedCount && expectedCount - actualCount < 5 )
                 {
                     builder.Append(" (");
-                    foreach (var entry in fittingAllEntities)
+                    foreach ( var entry in fittingAllEntities )
                     {
-                        if (!entitiesWithWikiData.Contains(entry))
+                        if ( !entitiesWithWikiData.Contains(entry) )
                         {
                             builder.AppendFormat("{0},", entry.geocode);
                         }
@@ -830,6 +871,36 @@ namespace De.AHoerstemeier.Tambon.UI
                 String.Format("Wikidata coverage ({0})", officesWithWikiData.Count() + entitiesWithWikiData.Count()),
                 result);
             formWikiDataEntries.Show();
+        }
+
+        private void btnElectionDates_Click(object sender, EventArgs e)
+        {
+            var counter = new FrequencyCounter();
+            foreach ( var changwat in GlobalData.Provinces )
+            {
+                CountCouncilElectionDate(changwat.geocode, counter);
+            }
+            var builder = new StringBuilder();
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of elections: {0}", counter.NumberOfValues);
+            builder.AppendLine();
+
+            var zeroDate = new DateTime(2000, 1, 1);
+            var ordered = counter.Data.OrderBy(x => x.Key);
+            foreach ( var entry in ordered )
+            {
+                var count = entry.Value.Count();
+                if ( count > 0 )
+                {
+                    builder.AppendFormat("{0:yyyy-MM-dd}: {1}", zeroDate.AddDays(entry.Key), entry.Value.Count());
+                    builder.AppendLine();
+                }
+            }
+            builder.AppendLine();
+
+            var result = builder.ToString();
+
+            var formElectionDayOfWeek = new StringDisplayForm("Election dates", result);
+            formElectionDayOfWeek.Show();
         }
     }
 }
