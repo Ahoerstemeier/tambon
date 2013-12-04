@@ -51,6 +51,7 @@
             this.btnMubanHelper = new System.Windows.Forms.Button();
             this.btnPendingElections = new System.Windows.Forms.Button();
             this.btnWikiData = new System.Windows.Forms.Button();
+            this.btnElectionDates = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.SuspendLayout();
@@ -293,11 +294,22 @@
             this.btnWikiData.UseVisualStyleBackColor = true;
             this.btnWikiData.Click += new System.EventHandler(this.btnWikiData_Click);
             // 
+            // btnElectionDates
+            // 
+            this.btnElectionDates.Location = new System.Drawing.Point(268, 97);
+            this.btnElectionDates.Name = "btnElectionDates";
+            this.btnElectionDates.Size = new System.Drawing.Size(75, 23);
+            this.btnElectionDates.TabIndex = 57;
+            this.btnElectionDates.Text = "Dates";
+            this.btnElectionDates.UseVisualStyleBackColor = true;
+            this.btnElectionDates.Click += new System.EventHandler(this.btnElectionDates_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 425);
+            this.Controls.Add(this.btnElectionDates);
             this.Controls.Add(this.btnWikiData);
             this.Controls.Add(this.btnPendingElections);
             this.Controls.Add(this.btnMubanHelper);
@@ -353,6 +365,7 @@
         private System.Windows.Forms.Button btnMubanHelper;
         private System.Windows.Forms.Button btnPendingElections;
         private System.Windows.Forms.Button btnWikiData;
+        private System.Windows.Forms.Button btnElectionDates;
     }
 }
 
