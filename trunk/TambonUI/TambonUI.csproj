@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -87,6 +88,12 @@
     <Compile Include="StringDisplayForm.designer.cs">
       <DependentUpon>StringDisplayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WikiData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WikiData.Designer.cs">
+      <DependentUpon>WikiData.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreationStatisticForm.resx">
       <DependentUpon>CreationStatisticForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +116,9 @@
     <EmbeddedResource Include="StringDisplayForm.resx">
       <DependentUpon>StringDisplayForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WikiData.resx">
+      <DependentUpon>WikiData.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,6 +133,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\WikiBase\WikiBase.csproj">
+      <Project>{fc9f81dc-20ad-4fe5-9ea1-dab417f947ea}</Project>
+      <Name>WikiBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AHTambonData\AHTambonData.csproj">
       <Project>{ddfe165d-3c88-4839-bbc7-c80f08a92041}</Project>
       <Name>AHTambonData</Name>

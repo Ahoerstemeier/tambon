@@ -1,0 +1,820 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Wikibase.NET</name>
+    </assembly>
+    <members>
+        <member name="T:Wikibase.Http">
+            <summary>
+            Http related code
+            </summary>
+        </member>
+        <member name="M:Wikibase.Http.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="userAgent">The user agent</param>
+        </member>
+        <member name="M:Wikibase.Http.get(System.String)">
+            <summary>
+            Performs a http get request.
+            </summary>
+            <param name="url">The url</param>
+            <returns>The response</returns>
+        </member>
+        <member name="M:Wikibase.Http.post(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Performs a http post request.
+            </summary>
+            <param name="url">The url</param>
+            <param name="postFields">The post fields</param>
+            <returns>The response</returns>
+        </member>
+        <member name="M:Wikibase.Http.buildQuery(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Builds a http query string.
+            </summary>
+            <param name="fields">The fields</param>
+            <returns>The query string</returns>
+        </member>
+        <member name="P:Wikibase.Http.UserAgent">
+            <summary>
+            The user agent
+            </summary>
+        </member>
+        <member name="T:Wikibase.Api">
+            <summary>
+            Base api class
+            </summary>
+        </member>
+        <member name="M:Wikibase.Api.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="wiki">The base url of the wiki like "http://www.wikidata.org"</param>
+        </member>
+        <member name="M:Wikibase.Api.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="wiki">The base url of the wiki like "https://www.wikidata.org"</param>
+            <param name="userAgent">The user agent</param>
+        </member>
+        <member name="M:Wikibase.Api.get(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Perform a http get request to the api.
+            </summary>
+            <param name="parameters">The parameters</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.Api.post(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Perform a http post request to the api.
+            </summary>
+            <param name="parameters">The parameters</param>
+            <param name="postFields">The post fields</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.Api.getContinueParam(MinimalJson.JsonObject)">
+            <summary>
+            Get the continuation parameter of a query.
+            </summary>
+            <param name="result">The result of the query</param>
+            <returns>An array containing the continuation parameter key at 0 and the continuation parameter value at 1</returns>
+        </member>
+        <member name="M:Wikibase.Api.login(System.String,System.String)">
+            <summary>
+            Do login.
+            </summary>
+            <param name="username">The username</param>
+            <param name="password">The password</param>
+            <returns>If the user is logged in successfully</returns>
+        </member>
+        <member name="M:Wikibase.Api.logout">
+            <summary>
+            Do logout.
+            </summary>
+        </member>
+        <member name="M:Wikibase.Api.getEditToken">
+            <summary>
+            Return the edit token for the current user.
+            </summary>
+            <returns>The edit token</returns>
+        </member>
+        <member name="P:Wikibase.Api.botEdits">
+            <summary>
+            If bot edits should be used
+            </summary>
+        </member>
+        <member name="P:Wikibase.Api.editlimit">
+            <summary>
+            If the edits should be limited
+            </summary>
+        </member>
+        <member name="T:Wikibase.WikibaseApi">
+            <summary>
+            Base class for the Wikibase API.
+            </summary>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="wiki">he base url of the wiki like "https://www.wikidata.org"</param>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="wiki">The base url of the wiki like "https://www.wikidata.org"</param>
+            <param name="userAgent">The user agent</param>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.getEntitiesFromIds(System.String[],System.String[])">
+            <summary>
+            Get the data for the entities in the given languages from the provided ids.
+            </summary>
+            <param name="ids">The ids</param>
+            <param name="languages">The languages</param>
+            <returns>The list of entities</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.getEntitesFromSitelinks(System.String[],System.String[],System.String[])">
+            <summary>
+            Get the data for the entities in the given languages from the provided sites and titles.
+            </summary>
+            <param name="sites">The sites</param>
+            <param name="titles">The titles</param>
+            <param name="languages">The languaes</param>
+            <returns>The list of entities</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.parseGetEntitiesApiResponse(MinimalJson.JsonObject)">
+            <summary>
+            Create a list of entities form an api response.
+            </summary>
+            <param name="result">The result of the api request</param>
+            <returns>The list of entities</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.editEntity(System.String,MinimalJson.JsonObject,System.Int32,System.String)">
+            <summary>
+            Edit an entity.
+            </summary>
+            <param name="id">The id of the entity</param>
+            <param name="data">The serialized data of the entity</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.createEntity(System.String,MinimalJson.JsonObject,System.Int32,System.String)">
+            <summary>
+            Create an entity.
+            </summary>
+            <param name="type">The type of the entity</param>
+            <param name="data">The serialized data of the entity</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.createClaim(System.String,System.String,System.String,Wikibase.DataValues.DataValue,System.Int32,System.String)">
+            <summary>
+            Create a claim.
+            </summary>
+            <param name="entity">The id of the entity you are adding the claim to</param>
+            <param name="snakType">The type of the snak</param>
+            <param name="property">The id of the snak property</param>
+            <param name="value">The value of the snak when creating a claim with a snak that has a value</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.setClaimValue(System.String,System.String,Wikibase.DataValues.DataValue,System.Int32,System.String)">
+            <summary>
+            Set a claim value.
+            </summary>
+            <param name="claim">GUID identifying the claim</param>
+            <param name="snakType">The type of the snak</param>
+            <param name="value">The value of the snak when creating a claim with a snak that has a value</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.removeClaims(System.String[],System.Int32,System.String)">
+            <summary>
+            Remove the claims.
+            </summary>
+            <param name="claims">The claims</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.setReference(System.String,MinimalJson.JsonObject,System.String,System.Int32,System.String)">
+            <summary>
+            Set a reference.
+            </summary>
+            <param name="statement">GUID identifying the statement</param>
+            <param name="snaks">The snaks to set the reference to. Array with property ids pointing to arrays containing the snaks for that property</param>
+            <param name="reference">A hash of the reference that should be updated. When not provided, a new reference is created</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.removeReferences(System.String,System.String[],System.Int32,System.String)">
+            <summary>
+            Remove the references.
+            </summary>
+            <param name="statement">GUID identifying the statement</param>
+            <param name="references">The hashes of the references that should be removed</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The result</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.editAction(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Int32,System.String)">
+            <summary>
+            Perform an edit action.
+            </summary>
+            <param name="parameters">The parameters</param>
+            <param name="postFields">The post fields</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The result</returns>
+        </member>
+        <member name="T:Wikibase.Entity">
+            <summary>
+            An entity
+            </summary>
+        </member>
+        <member name="M:Wikibase.Entity.#ctor(Wikibase.WikibaseApi)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="api">The api</param>
+        </member>
+        <member name="M:Wikibase.Entity.getLabels">
+            <summary>
+            Get all labels.
+            </summary>
+            <returns>The labels</returns>
+        </member>
+        <member name="M:Wikibase.Entity.getLabel(System.String)">
+            <summary>
+            Get the label for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <returns>The label</returns>
+        </member>
+        <member name="M:Wikibase.Entity.setLabel(System.String,System.String)">
+            <summary>
+            Set the label for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <param name="value">The label</param>
+        </member>
+        <member name="M:Wikibase.Entity.removeLabel(System.String)">
+            <summary>
+            Remove the label for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <returns>If the label was removed successfully</returns>
+        </member>
+        <member name="M:Wikibase.Entity.getDescriptions">
+            <summary>
+            Get all descriptions.
+            </summary>
+            <returns>The descriptions</returns>
+        </member>
+        <member name="M:Wikibase.Entity.getDescription(System.String)">
+            <summary>
+            Get the description for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <returns>The description</returns>
+        </member>
+        <member name="M:Wikibase.Entity.setDescription(System.String,System.String)">
+            <summary>
+            Set the description for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <param name="value">The label</param>
+        </member>
+        <member name="M:Wikibase.Entity.removeDescription(System.String)">
+            <summary>
+            Remove the description for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <returns>If the description was removed successfully</returns>
+        </member>
+        <member name="M:Wikibase.Entity.getAliases">
+            <summary>
+            Get all aliases.
+            </summary>
+            <returns>The aliases</returns>
+        </member>
+        <member name="M:Wikibase.Entity.getAlias(System.String)">
+            <summary>
+            Get the aliases for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <returns>The aliases</returns>
+        </member>
+        <member name="M:Wikibase.Entity.addAlias(System.String,System.String)">
+            <summary>
+            Add the alias for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <param name="value">The alias</param>
+        </member>
+        <member name="M:Wikibase.Entity.removeAlias(System.String,System.String)">
+            <summary>
+            Remove the alias for the given language.
+            </summary>
+            <param name="lang">The language</param>
+            <param name="value">The alias</param>
+            <returns>If the alias was removed successfully</returns>
+        </member>
+        <member name="M:Wikibase.Entity.getClaims">
+            <summary>
+            Get all claims.
+            </summary>
+            <returns>The claims</returns>
+        </member>
+        <member name="M:Wikibase.Entity.getClaimsForProperty(System.String)">
+            <summary>
+            Get the claims for the given property.
+            </summary>
+            <param name="property">The property</param>
+            <returns>The claims</returns>
+        </member>
+        <member name="M:Wikibase.Entity.addClaim(Wikibase.Claim)">
+            <summary>
+            Add the claim.
+            </summary>
+            <param name="claim">The claim</param>
+        </member>
+        <member name="M:Wikibase.Entity.removeClaim(Wikibase.Claim)">
+            <summary>
+            Remove the claim.
+            </summary>
+            <param name="claim">The claim</param>
+            <returns>If the claim was removed successfully</returns>
+        </member>
+        <member name="M:Wikibase.Entity.save(System.String)">
+            <summary>
+            Save all changes.
+            </summary>
+            <param name="summary">The edit summary</param>
+        </member>
+        <member name="P:Wikibase.Entity.id">
+            <summary>
+            The entity id
+            </summary>
+        </member>
+        <member name="P:Wikibase.Entity.lastRevisionId">
+            <summary>
+            The last revision id
+            </summary>
+        </member>
+        <member name="P:Wikibase.Entity.api">
+            <summary>
+            The api
+            </summary>
+        </member>
+        <member name="T:Wikibase.EntityId">
+            <summary>
+            Represents an ID of an Entity.
+            </summary>
+        </member>
+        <member name="F:Wikibase.EntityId.prefixes">
+            <summary>
+            The allowed prefixes for entity ids
+            </summary>
+        </member>
+        <member name="M:Wikibase.EntityId.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">The prefix</param>
+            <param name="numericId">The numeric id</param>
+        </member>
+        <member name="M:Wikibase.EntityId.newFromPrefixedId(System.String)">
+            <summary>
+            Constructs an entity id from a prefixed id.
+            </summary>
+            <param name="prefixedId">The prefixed id</param>
+            <returns>The entity id</returns>
+        </member>
+        <member name="M:Wikibase.EntityId.getPrefixedId">
+            <summary>
+            Returns the prefixed id of the entity id.
+            </summary>
+            <returns>The prefixed id</returns>
+        </member>
+        <member name="P:Wikibase.EntityId.prefix">
+            <summary>
+            The prefix
+            </summary>
+        </member>
+        <member name="P:Wikibase.EntityId.numericId">
+            <summary>
+            The numeric
+            </summary>
+        </member>
+        <member name="T:Wikibase.Claim">
+            <summary>
+            A claim
+            </summary>
+        </member>
+        <member name="P:Wikibase.Claim.entity">
+            <summary>
+            The entity
+            </summary>
+        </member>
+        <member name="P:Wikibase.Claim.id">
+            <summary>
+            The id
+            </summary>
+        </member>
+        <member name="P:Wikibase.Claim.internalId">
+            <summary>
+            The id used internally
+            </summary>
+        </member>
+        <member name="P:Wikibase.Claim.mainSnak">
+            <summary>
+            The main snak
+            </summary>
+        </member>
+        <member name="T:Wikibase.Snak">
+            <summary>
+            A snak
+            </summary>
+        </member>
+        <member name="M:Wikibase.Snak.#ctor(System.String,Wikibase.EntityId,Wikibase.DataValues.DataValue)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type">The type</param>
+            <param name="propertyId">The property id</param>
+            <param name="dataValue">The data value</param>
+        </member>
+        <member name="P:Wikibase.Snak.type">
+            <summary>
+            The type
+            </summary>
+        </member>
+        <member name="P:Wikibase.Snak.propertyId">
+            <summary>
+            The property id
+            </summary>
+        </member>
+        <member name="P:Wikibase.Snak.dataValue">
+            <summary>
+            The data value
+            </summary>
+        </member>
+        <member name="T:Wikibase.Statement">
+            <summary>
+            A statement
+            </summary>
+        </member>
+        <member name="M:Wikibase.Statement.getReferences">
+            <summary>
+            Get all references.
+            </summary>
+            <returns>The references</returns>
+        </member>
+        <member name="M:Wikibase.Statement.addReference(Wikibase.Reference)">
+            <summary>
+            Add the reference.
+            </summary>
+            <param name="reference">The reference</param>
+        </member>
+        <member name="M:Wikibase.Statement.removeReference(Wikibase.Reference)">
+            <summary>
+            Remove the reference.
+            </summary>
+            <param name="reference">The reference</param>
+            <returns>If the reference was removed successfully</returns>
+        </member>
+        <member name="M:Wikibase.Statement.createReferenceForSnak(Wikibase.Snak)">
+            <summary>
+            Create a new reference in this statement for the provided snak.
+            </summary>
+            <param name="snak">The snak</param>
+            <returns>The reference</returns>
+        </member>
+        <member name="P:Wikibase.Statement.rank">
+            <summary>
+            The rank of the statement
+            </summary>
+        </member>
+        <member name="T:Wikibase.Reference">
+            <summary>
+            A reference
+            </summary>
+        </member>
+        <member name="M:Wikibase.Reference.getSnaks">
+            <summary>
+            Get all snaks.
+            </summary>
+            <returns>The snaks</returns>
+        </member>
+        <member name="M:Wikibase.Reference.addSnak(Wikibase.Snak)">
+            <summary>
+            Add a snak.
+            </summary>
+            <param name="snak">The snak</param>
+        </member>
+        <member name="M:Wikibase.Reference.removeSnak(Wikibase.Snak)">
+            <summary>
+            Remove the snak.
+            </summary>
+            <param name="snak">The snak</param>
+            <returns>If the snak was removed successfully</returns>
+        </member>
+        <member name="M:Wikibase.Reference.save(System.String)">
+            <summary>
+            Save the reference.
+            </summary>
+            <param name="summary">The summary</param>
+        </member>
+        <member name="M:Wikibase.Reference.deleteAndSave(System.String)">
+            <summary>
+            Delete the reference and save it.
+            </summary>
+            <param name="summary">The summary</param>
+        </member>
+        <member name="P:Wikibase.Reference.statement">
+            <summary>
+            The statement this reference belongs to
+            </summary>
+        </member>
+        <member name="P:Wikibase.Reference.hash">
+            <summary>
+            The hash
+            </summary>
+        </member>
+        <member name="P:Wikibase.Reference.internalId">
+            <summary>
+            The internal id
+            </summary>
+        </member>
+        <member name="T:Wikibase.DataValues.DataValue">
+            <summary>
+            A data value
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.getHash">
+            <summary>
+            Get the hash.
+            </summary>
+            <returns>The hash</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.getType">
+            <summary>
+            Get the type of the data value.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.encode">
+            <summary>
+            Encode the data value to json.
+            </summary>
+            <returns>The json value</returns>
+        </member>
+        <member name="T:Wikibase.Item">
+            <summary>
+            An item
+            </summary>
+        </member>
+        <member name="M:Wikibase.Item.#ctor(Wikibase.WikibaseApi)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="api">The api</param>
+        </member>
+        <member name="M:Wikibase.Item.getSitelinks">
+            <summary>
+            Get all sitelinks.
+            </summary>
+            <returns>The sitelinks</returns>
+        </member>
+        <member name="M:Wikibase.Item.getSitelink(System.String)">
+            <summary>
+            Get the sitelink for the given site.
+            </summary>
+            <param name="site">The site</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wikibase.Item.setSitelink(System.String,System.String)">
+            <summary>
+            Set the sitelink for the given site.
+            </summary>
+            <param name="site">The site</param>
+            <param name="sitelink">The sitelink</param>
+        </member>
+        <member name="M:Wikibase.Item.removeSitelink(System.String)">
+            <summary>
+            Remove the sitelink for the given site.
+            </summary>
+            <param name="site">The site</param>
+            <returns>If the sitelink was removed successfully</returns>
+        </member>
+        <member name="M:Wikibase.Item.createStatementForSnak(Wikibase.Snak)">
+            <summary>
+            Create a new statement in this item for the provided snak.
+            </summary>
+            <param name="snak">The snak</param>
+            <returns>The statement</returns>
+        </member>
+        <member name="T:Wikibase.Property">
+            <summary>
+            A property
+            </summary>
+        </member>
+        <member name="M:Wikibase.Property.#ctor(Wikibase.WikibaseApi)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="api">The api</param>
+        </member>
+        <member name="P:Wikibase.Property.datatype">
+            <summary>
+            The data type
+            </summary>
+        </member>
+        <member name="T:Wikibase.EntityProvider">
+            <summary>
+            Class for getting entities from various requests.
+            </summary>
+        </member>
+        <member name="M:Wikibase.EntityProvider.#ctor(Wikibase.WikibaseApi)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="api">The api</param>
+        </member>
+        <member name="M:Wikibase.EntityProvider.getEntitiesFromIds(Wikibase.EntityId[])">
+            <summary>
+            Get the entities from the given entity ids.
+            </summary>
+            <param name="ids">The entity ids</param>
+            <returns>The entities</returns>
+        </member>
+        <member name="M:Wikibase.EntityProvider.getEntitiesFromIds(Wikibase.EntityId[],System.String[])">
+            <summary>
+            Get the entities from the given entity ids with data in the languages provided.
+            </summary>
+            <param name="ids">The entity ids</param>
+            <param name="languages">The languages</param>
+            <returns>The entities</returns>
+        </member>
+        <member name="M:Wikibase.EntityProvider.getEntityFromId(Wikibase.EntityId)">
+            <summary>
+            Get the entity from the given entity id.
+            </summary>
+            <param name="id">The entity id</param>
+            <returns>The entity</returns>
+        </member>
+        <member name="M:Wikibase.EntityProvider.getEntityFromId(Wikibase.EntityId,System.String[])">
+            <summary>
+            Get the entity from the given entity id with data in the languages provided.
+            </summary>
+            <param name="id">The entity id</param>
+            <param name="languages">The languages</param>
+            <returns>The entity</returns>
+        </member>
+        <member name="M:Wikibase.EntityProvider.getEntitiesFromSitelinks(System.String[],System.String[])">
+            <summary>
+            Get the entities from the given sites and titles.
+            </summary>
+            <param name="sites">The sites</param>
+            <param name="titles">The titles</param>
+            <returns>The entities</returns>
+        </member>
+        <member name="M:Wikibase.EntityProvider.getEntitiesFromSitelinks(System.String[],System.String[],System.String[])">
+            <summary>
+            Get the entities from the given sites and titles with data in the languages provided.
+            </summary>
+            <param name="sites">The sites</param>
+            <param name="titles">The titles</param>
+            <param name="languages">The languages</param>
+            <returns>The entities</returns>
+        </member>
+        <member name="M:Wikibase.EntityProvider.getEntityFromSitelink(System.String,System.String)">
+            <summary>
+            Get the entity from the given site and title.
+            </summary>
+            <param name="site">The site</param>
+            <param name="title">The title</param>
+            <returns>The entity</returns>
+        </member>
+        <member name="M:Wikibase.EntityProvider.getEntityFromSitelink(System.String,System.String,System.String[])">
+            <summary>
+            Get the entity from the given site and title with data in the languages provided.
+            </summary>
+            <param name="site">The site</param>
+            <param name="title">The title</param>
+            <param name="languages">The languages</param>
+            <returns>The entity</returns>
+        </member>
+        <member name="T:Wikibase.DataValues.EntityIdValue">
+            <summary>
+            Data value for entity ids
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.EntityIdValue.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="entityType">The entity type</param>
+            <param name="numericId">The numeric id</param>
+        </member>
+        <member name="P:Wikibase.DataValues.EntityIdValue.entityType">
+            <summary>
+            The entity type
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.EntityIdValue.numericId">
+            <summary>
+            The numeric id
+            </summary>
+        </member>
+        <member name="T:Wikibase.DataValues.GlobeCoordinateValue">
+            <summary>
+            Data value for globe coordinates
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.GlobeCoordinateValue.#ctor(System.Double,System.Double,System.Object,System.Double,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="latitude">The latitude</param>
+            <param name="longitude">The longitude</param>
+            <param name="altitude">The altitude</param>
+            <param name="precision">The precision</param>
+            <param name="globe">The globe on which the location resides</param>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.latitude">
+            <summary>
+            The latitude
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.longitude">
+            <summary>
+            The longitude
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.altitude">
+            <summary>
+            The altitude
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.precision">
+            <summary>
+            The precision
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.globe">
+            <summary>
+            The globe on which the location resides
+            </summary>
+        </member>
+        <member name="T:Wikibase.DataValues.TimeValue">
+            <summary>
+            Data value for times
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.time">
+            <summary>
+            Point in time, represented per ISO8601
+            The year always having 11 digits, the date always be signed, in the format +00000002013-01-01T00:00:00Z
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.timezone">
+            <summary>
+            Timezone information as an offset from UTC in minutes.
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.before">
+            <summary>
+            If the date is uncertain, how many units before the given time could it be?
+            The unit is given by the <see cref="P:Wikibase.DataValues.TimeValue.precision"/>.
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.after">
+            <summary>
+            If the date is uncertain, how many units after the given time could it be?
+            The unit is given by the <see cref="P:Wikibase.DataValues.TimeValue.precision"/>.
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.precision">
+            <summary>
+            Unit used for the <see cref="P:Wikibase.DataValues.TimeValue.after"/> and <see cref="P:Wikibase.DataValues.TimeValue.before"/> values.
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.calendarmodel">
+            <summary>
+            URI identifying the calendar model that should be used to display this time value.
+            Note that time is always saved in proleptic Gregorian, this URI states how the value should be displayed.
+            </summary>
+        </member>
+    </members>
+</doc>
