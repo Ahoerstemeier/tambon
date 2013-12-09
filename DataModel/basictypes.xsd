@@ -590,9 +590,14 @@
         <xs:documentation>Wikidata item id, always starting with the letter Q followed by a number. Full URL to the item Q123 is https://www.wikidata.org/wiki/Q123 </xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="freebase" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Freebase item id, always starting with the letter /m/ followed by a alphanumberic text including underscores. Full URL to the item /m/018k_b is http://www.freebase.com/m/018k_b </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
 
-  <xs:complexType name="Wiki">
+  <xs:complexType name="WikiLocation">
     <xs:annotation>
       <xs:documentation>Links to various wikis information.</xs:documentation>
     </xs:annotation>
