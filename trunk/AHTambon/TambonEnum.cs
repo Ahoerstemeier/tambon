@@ -141,6 +141,7 @@ namespace De.AHoerstemeier.Tambon
         RoyalInstitutePresident,
         RoyalInstituteActingPresident,
         DepartmentOfTransportDirectorGeneral,
+        DeputyDepartmentOfTransportDirectorGeneral,
         DistrictOfficerBangkok,
         DistrictOfficer,
         SpeakerOfParliament,
