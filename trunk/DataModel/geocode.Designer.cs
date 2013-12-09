@@ -694,7 +694,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="Entity", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class Entity {
         
-        private Wiki wikiField;
+        private WikiLocation wikiField;
         
         private Symbols symbolsField;
         
@@ -747,7 +747,6 @@ namespace De.AHoerstemeier.Tambon {
             this.areaField = new List<AreaData>();
             this.officeField = new List<Office>();
             this.symbolsField = new Symbols();
-            this.wikiField = new Wiki();
         }
         
         /// <summary>
@@ -758,7 +757,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Wiki wiki {
+        public WikiLocation wiki {
             get {
                 return this.wikiField;
             }
@@ -1088,7 +1087,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="AreaData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class AreaData {
         
-        private ReferenceList referenceField;
+        private List<object> referenceField;
         
         private decimal valueField;
         
@@ -1099,14 +1098,26 @@ namespace De.AHoerstemeier.Tambon {
         private string commentField;
         
         /// <summary>
+        /// Creates a new instance of AreaData.
+        /// </summary>
+        public AreaData() {
+            this.referenceField = new List<object>();
+        }
+        
+        /// <summary>
         /// Source(s) for the area value.
         /// </summary>
         /// <value>
         /// The reference.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ReferenceList reference {
+        public List<object> reference {
             get {
                 return this.referenceField;
             }
@@ -1206,7 +1217,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<EntityCountType> entryField;
         
-        private ReferenceList referenceField;
+        private List<object> referenceField;
         
         private string yearField;
         
@@ -1214,6 +1225,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of EntityCount.
         /// </summary>
         public EntityCount() {
+            this.referenceField = new List<object>();
             this.entryField = new List<EntityCountType>();
         }
         
@@ -1234,9 +1246,14 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The reference.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ReferenceList reference {
+        public List<object> reference {
             get {
                 return this.referenceField;
             }

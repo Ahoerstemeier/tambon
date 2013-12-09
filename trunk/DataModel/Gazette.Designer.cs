@@ -2650,6 +2650,11 @@ namespace De.AHoerstemeier.Tambon {
         DepartmentOfTransportDirectorGeneral,
         
         /// <summary>
+        /// Deputy Director General of the Department of Transport (รองอธิบดีกรมการขนส่งทางบก).
+        /// </summary>
+        DeputyDepartmentOfTransportDirectorGeneral,
+        
+        /// <summary>
         /// District officer in Bangkok (ผู้อำนวยการเขต, Phu Amnuai Kan Khet).
         /// </summary>
         DistrictOfficerBangkok,

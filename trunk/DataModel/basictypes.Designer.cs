@@ -185,6 +185,145 @@ namespace De.AHoerstemeier.Tambon {
         Sakha,
     }
     
+    /// <summary>
+    /// Link to wikidata.
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WikiLocation))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WikiBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class WikiBase {
+        
+        private string wikidataField;
+        
+        private string freebaseField;
+        
+        /// <summary>
+        /// Wikidata item id, always starting with the letter Q followed by a number. Full URL to the item Q123 is https://www.wikidata.org/wiki/Q123
+        /// </summary>
+        /// <value>
+        /// The wikidata.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string wikidata {
+            get {
+                return this.wikidataField;
+            }
+            set {
+                this.wikidataField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Freebase item id, always starting with the letter /m/ followed by a alphanumberic text including underscores. Full URL to the item /m/018k_b is http://www.freebase.com/m/018k_b
+        /// </summary>
+        /// <value>
+        /// The freebase.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string freebase {
+            get {
+                return this.freebaseField;
+            }
+            set {
+                this.freebaseField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Links to various wikis information.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WikiLocation", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class WikiLocation : WikiBase {
+        
+        private int openstreetmapField;
+        
+        private bool openstreetmapFieldSpecified;
+        
+        private int wikimapiaField;
+        
+        private bool wikimapiaFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int openstreetmap {
+            get {
+                return this.openstreetmapField;
+            }
+            set {
+                this.openstreetmapField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool openstreetmapSpecified {
+            get {
+                return this.openstreetmapFieldSpecified;
+            }
+            set {
+                this.openstreetmapFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int wikimapia {
+            get {
+                return this.wikimapiaField;
+            }
+            set {
+                this.wikimapiaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool wikimapiaSpecified {
+            get {
+                return this.wikimapiaFieldSpecified;
+            }
+            set {
+                this.wikimapiaFieldSpecified = value;
+            }
+        }
+    }
+    
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInExclude))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInclude))]
@@ -900,126 +1039,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.itemsField = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Link to wikidata.
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Wiki))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="WikiBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class WikiBase {
-        
-        private string wikidataField;
-        
-        /// <summary>
-        /// Wikidata item id, always starting with the letter Q followed by a number. Full URL to the item Q123 is https://www.wikidata.org/wiki/Q123
-        /// </summary>
-        /// <value>
-        /// The wikidata.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string wikidata {
-            get {
-                return this.wikidataField;
-            }
-            set {
-                this.wikidataField = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Links to various wikis information.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Wiki", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class Wiki : WikiBase {
-        
-        private int openstreetmapField;
-        
-        private bool openstreetmapFieldSpecified;
-        
-        private int wikimapiaField;
-        
-        private bool wikimapiaFieldSpecified;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int openstreetmap {
-            get {
-                return this.openstreetmapField;
-            }
-            set {
-                this.openstreetmapField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool openstreetmapSpecified {
-            get {
-                return this.openstreetmapFieldSpecified;
-            }
-            set {
-                this.openstreetmapFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int wikimapia {
-            get {
-                return this.wikimapiaField;
-            }
-            set {
-                this.wikimapiaField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool wikimapiaSpecified {
-            get {
-                return this.wikimapiaFieldSpecified;
-            }
-            set {
-                this.wikimapiaFieldSpecified = value;
             }
         }
     }

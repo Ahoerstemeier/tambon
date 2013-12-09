@@ -528,7 +528,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private LocalAdministrationData dolaField;
         
-        private Wiki wikiField;
+        private WikiLocation wikiField;
         
         private Point pointField;
         
@@ -611,7 +611,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Wiki wiki {
+        public WikiLocation wiki {
             get {
                 return this.wikiField;
             }
