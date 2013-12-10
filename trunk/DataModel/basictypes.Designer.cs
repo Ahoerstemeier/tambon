@@ -201,6 +201,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private string freebaseField;
         
+        private string commentField;
+        
         /// <summary>
         /// Wikidata item id, always starting with the letter Q followed by a number. Full URL to the item Q123 is https://www.wikidata.org/wiki/Q123
         /// </summary>
@@ -232,6 +234,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.freebaseField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
             }
         }
     }
