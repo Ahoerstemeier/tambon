@@ -595,6 +595,7 @@
         <xs:documentation>Freebase item id, always starting with the letter /m/ followed by a alphanumberic text including underscores. Full URL to the item /m/018k_b is http://www.freebase.com/m/018k_b </xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 
   <xs:complexType name="WikiLocation">
