@@ -1055,14 +1055,21 @@
     </entity>
     <entity type="Tambon" name="โตนดด้วน" english="Tanot Duan" geocode="930509">
       <office type="MunicipalityOffice">
-        <url>http://www.tanoddoun.go.th/</url>
+        <url lastchecked="2013-12-17">http://www.tanoddoun.go.th/</url>
         <officials>
-          <official title="Mayor" name="วรจิต สายแก้ว" begin="2009-10-25" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="ไกรสิงห์ ทิพย์มาก" begin="2013-11-30" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="วรจิต สายแก้ว" begin="2009-10-25" end="2013-10-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2009-10-25" end="2013-10-24" type="ThesabanTambon" size="12" />
+          <term begin="2013-11-30" type="ThesabanTambon" size="12" />
+          <term begin="2009-10-25" end="2013-10-24" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Done">
+            <meetingreference board="2" date="2009-06-11" number="15" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="93050901" name="บ้านใสคำ" english="Ban Sai Kham" />
       <entity type="Muban" geocode="93050902" name="บ้านโคกโดน" english="Ban Khok Don" />
