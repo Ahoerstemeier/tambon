@@ -608,5 +608,45 @@ namespace De.AHoerstemeier.Tambon
 
             return result;
         }
+
+        public String GetDescription(Language language)
+        {
+            var allEntities = GlobalData.CompleteGeocodeList().FlatList();
+            var typeValue = this.type.Translate(language);
+            var expanded = String.Empty;  // 0 = type, 1 = hierarchy
+            var expandedTopLevel = String.Empty;  // 0 = type
+            var hierarchy = String.Empty;
+            var hierarchyExpand = String.Empty;  // 0 = name, 1 = type
+            switch ( language )
+            {
+                case Language.English:
+                    expanded = "{0} in {1}Thailand";
+                    expandedTopLevel = "{0} of Thailand";
+                    hierarchyExpand = "{0} {1}, ";
+                    break;
+                case Language.German:
+                    expanded = "{0} in {1}Thailand";
+                    expandedTopLevel = "{0} in Thailand";
+                    hierarchyExpand = "{1} {0}, ";
+                    break;
+                case Language.Thai:
+                    expanded = "{0}ใน{1}ประเทศไทย";
+                    expandedTopLevel = "{0}ในประเทศไทย";
+                    hierarchyExpand = "{1}{0} ";
+                    break;
+            }
+            var currentGeocode = geocode;
+            while ( currentGeocode / 100 != 0 )
+            {
+                currentGeocode = currentGeocode / 100;
+                var parentEntity = allEntities.First(x => x.geocode == currentGeocode);
+                var parentType = parentEntity.type.Translate(language);
+                if ( language == Language.Thai )
+                    hierarchy += String.Format(hierarchyExpand, parentEntity.name, parentType);
+                else
+                    hierarchy += String.Format(hierarchyExpand, parentEntity.english, parentType);
+            }
+            return String.Format(expanded, typeValue, hierarchy);
+        }
     }
 }

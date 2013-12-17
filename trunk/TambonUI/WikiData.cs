@@ -141,13 +141,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnCountInterwiki_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the api
-            WikibaseApi api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
-            // Login with username and password
-            var username = ConfigurationManager.AppSettings["WikiDataUsername"];
-            var password = ConfigurationManager.AppSettings["WikiDataPassword"];
-
-            api.login(username, password);
+            WikibaseApi api = OpenConnection();
 
             // Create a new EntityProvider instance and pass the api created above.
             EntityProvider entityProvider = new EntityProvider(api);
@@ -186,6 +180,55 @@ namespace De.AHoerstemeier.Tambon.UI
                 "Wikidata language coverage",
                 result);
             formWikiDataEntries.Show();
+        }
+
+        private void btnTestGet_Click(object sender, EventArgs e)
+        {
+            WikibaseApi api = OpenConnection();
+
+            // Create a new EntityProvider instance and pass the api created above.
+            EntityProvider entityProvider = new EntityProvider(api);
+
+            var entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(AmphoeVibhavadi));
+            var claimTypeOfAdministration = entityById.Claims.Where(x => x.mainSnak.propertyId.ToString() == PropertyIdEntityType.ToLowerInvariant());
+            var firstTypeOfAdministration = claimTypeOfAdministration.FirstOrDefault();
+
+            // ... and finally logout
+            api.logout();
+        }
+
+        private static WikibaseApi OpenConnection()
+        {
+            WikibaseApi api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
+            // Login with username and password
+            var username = ConfigurationManager.AppSettings["WikiDataUsername"];
+            var password = ConfigurationManager.AppSettings["WikiDataPassword"];
+
+            api.login(username, password);
+            return api;
+        }
+
+        private void btnTestSet_Click(object sender, EventArgs e)
+        {
+            var entities = GlobalData.CompleteGeocodeList();
+            var allEntities = entities.FlatList();
+            var testEntity = allEntities.First(x => x.geocode == 841902);
+
+            WikibaseApi api = OpenConnection();
+            // Create a new EntityProvider instance and pass the api created above.
+            EntityProvider entityProvider = new EntityProvider(api);
+
+            var entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(testEntity.wiki.wikidata));
+
+            entityById.setDescription("en", testEntity.GetDescription(Language.English));
+            // entityById.setDescription("de", testEntity.GetDescription(Language.German));
+            entityById.setDescription("th", testEntity.GetDescription(Language.Thai));
+
+            if ( MessageBox.Show("Really do it?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
+            {
+                entityById.save("Added descriptions");
+            }
+            api.logout();
         }
     }
 }

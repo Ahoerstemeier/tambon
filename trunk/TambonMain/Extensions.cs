@@ -23,6 +23,51 @@ namespace De.AHoerstemeier.Tambon
                 EntityType.PAO,
         };
 
+        // TODO: Move to resource and make it translateable there
+        private static Dictionary<EntityType, Dictionary<Language, String>> _entityTranslations = new Dictionary<EntityType, Dictionary<Language, String>>()
+        {
+                {EntityType.Thesaban, new Dictionary<Language,String>(){
+                    {Language.English,"municipality"},
+                    {Language.German,"Stadt"},
+                    {Language.Thai,"เทศบาล"}
+                }},
+                {EntityType.ThesabanTambon, new Dictionary<Language,String>(){
+                    {Language.English,"subdistrict municipality"},
+                    {Language.German,"Kleinstadt"},
+                    {Language.Thai,"เทศบาลตำบล"}
+                }},
+                {EntityType.ThesabanMueang, new Dictionary<Language,String>(){
+                    {Language.English,"town"},
+                    {Language.German,"Kleinstadt"},
+                    {Language.Thai,"เทศบาลเมือง"}
+                }},
+                {EntityType.ThesabanNakhon, new Dictionary<Language,String>(){
+                    {Language.English,"city"},
+                    {Language.German,"Großstadt"},
+                    {Language.Thai,"เทศบาลนคร"}
+                }},
+                {EntityType.Muban, new Dictionary<Language,String>(){
+                    {Language.English,"village"},
+                    {Language.German,"Dorf"},
+                    {Language.Thai,"หมู่บ้าน"}
+                }},
+                {EntityType.Tambon, new Dictionary<Language,String>(){
+                    {Language.English,"subdistrict"},
+                    {Language.German,"Kommune"},
+                    {Language.Thai,"ตำบล"}
+                }},
+                {EntityType.Amphoe, new Dictionary<Language,String>(){
+                    {Language.English,"district"},
+                    {Language.German,"Kreis"},
+                    {Language.Thai,"อำเภอ"}
+                }},
+                {EntityType.Changwat, new Dictionary<Language,String>(){
+                    {Language.English,"province"},
+                    {Language.German,"Provinz"},
+                    {Language.Thai,"จังหวัด"}
+                }},
+        };
+
         /// <summary>
         /// Checks whether a entity type is a local government unit.
         /// </summary>
@@ -218,6 +263,18 @@ namespace De.AHoerstemeier.Tambon
                 default:
                     return 0;  // no council for that kind of entity
             }
+        }
+
+        public static String Translate(this EntityType value, Language language)
+        {
+            var result = String.Empty;
+            if ( _entityTranslations.ContainsKey(value) )
+            {
+                var subDictionary = _entityTranslations[value];
+                if ( subDictionary.ContainsKey(language) )
+                    result = subDictionary[language];
+            }
+            return result;
         }
     }
 }
