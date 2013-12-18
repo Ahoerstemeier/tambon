@@ -198,19 +198,6 @@ namespace De.AHoerstemeier.Tambon
             name = source.name;
         }
 
-        internal IEnumerable<UInt32> ParentGeocodes
-        {
-            get
-            {
-                var result = new List<UInt32>();
-                foreach ( var subString in parent.Split(',') )
-                {
-                    result.Add(Convert.ToUInt32(subString));
-                }
-                return result;
-            }
-        }
-
         internal IEnumerable<String> OldNames
         {
             get
@@ -334,7 +321,7 @@ namespace De.AHoerstemeier.Tambon
 
                     if ( subEntity.type.IsThesaban() | subEntity.type.IsSakha() )
                     {
-                        foreach ( UInt32 parentCode in subEntity.ParentGeocodes )
+                        foreach ( UInt32 parentCode in subEntity.parent )
                         {
                             Entity parentEntity = geocodeSource.entity.FirstOrDefault(x => x.geocode == parentCode);
                             if ( parentEntity != null )
