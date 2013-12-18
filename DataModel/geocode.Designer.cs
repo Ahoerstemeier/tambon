@@ -396,9 +396,14 @@ namespace De.AHoerstemeier.Tambon {
         
         private EntityType typeField;
         
-        private uint splitfromField;
+        private List<uint> splitfromField;
         
-        private bool splitfromFieldSpecified;
+        /// <summary>
+        /// Creates a new instance of HistoryCreate.
+        /// </summary>
+        public HistoryCreate() {
+            this.splitfromField = new List<uint>();
+        }
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -425,29 +430,12 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint splitfrom {
+        public List<uint> splitfrom {
             get {
                 return this.splitfromField;
             }
             set {
                 this.splitfromField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool splitfromSpecified {
-            get {
-                return this.splitfromFieldSpecified;
-            }
-            set {
-                this.splitfromFieldSpecified = value;
             }
         }
     }
@@ -724,7 +712,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool obsoleteFieldSpecified;
         
-        private string parentField;
+        private List<uint> parentField;
         
         private string commentField;
         
@@ -740,6 +728,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of Entity.
         /// </summary>
         public Entity() {
+            this.parentField = new List<uint>();
             this.entitycountField = new EntityCount();
             this.entityField = new List<Entity>();
             this.populationField = new List<PopulationData>();
@@ -945,9 +934,15 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// For KingAmphoe: The Amphoe which is responsible for supervision; for Thesaban: the Amphoe(s) which are covered by the entity.
+        /// </summary>
+        /// <value>
+        /// The parent.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string parent {
+        public List<uint> parent {
             get {
                 return this.parentField;
             }

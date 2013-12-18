@@ -144,6 +144,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="GeocodeList">
+    <xs:annotation>
+      <xs:documentation>List of geocodes.</xs:documentation>
+    </xs:annotation>
+    <xs:list itemType="xs:unsignedInt"></xs:list>
+  </xs:simpleType>
   <xs:complexType name="HistoryCreate">
     <xs:annotation>
       <xs:documentation>Entity was created.</xs:documentation>
@@ -155,9 +161,9 @@
             <xs:documentation>Type of the entity.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="splitfrom" type="xs:unsignedInt" use="optional">
+        <xs:attribute name="splitfrom" type="t:GeocodeList" use="optional">
           <xs:annotation>
-            <xs:documentation>Geocode of the entity from which the new entity was split off.</xs:documentation>
+            <xs:documentation>Geocode(s) of the entities from which the new entity was split off.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -305,7 +311,11 @@
     <!--have to find better way for this-->
     <xs:attribute name="newgeocode" type="xs:string" use="optional" />
     <xs:attribute name="obsolete" type="xs:boolean" use="optional" />
-    <xs:attribute name="parent" type="xs:string" use="optional" />
+    <xs:attribute name="parent" type="t:GeocodeList" use="optional">
+      <xs:annotation>
+        <xs:documentation>For KingAmphoe: The Amphoe which is responsible for supervision; for Thesaban: the Amphoe(s) which are covered by the entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
     <!-- for Thesaban covering a complete Tambon-->
     <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />
