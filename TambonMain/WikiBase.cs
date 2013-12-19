@@ -29,5 +29,20 @@ namespace De.AHoerstemeier.Tambon
             {EntityType.Khwaeng, "Q456876"},
             {EntityType.Chumchon,"Q15253857"},
         };
+
+        public const String PropertyIdEntityType = "P132";
+        public const String PropertyIdCountry = "P17";
+        public const String PropertyIdIsInAdministrativeUnit = "P131";
+        public const String PropertyIdCoordinate = "P625";
+        public const String PropertyIdContainsAdministrativeDivisions = "P150";
+        public const String PropertyIdWebsite = "P856";
+        public const String PropertyIdSharesBorderWith = "P47";
+        public const String PropertyIdHeadOfGovernment = "P6";
+        public const String PropertyIdPostalCode = "P281";
+        public const String PropertyIdTwinCity = "P190";
+        public const String PropertyIdOpenStreetMap = "P402";
+        public const String PropertyIdLocationMap = "P242";
+        public const String PropertyIdFreebaseIdentifier = "P646";
+        public const String PropertyIdReferenceUrl = "P854";
     }
 }

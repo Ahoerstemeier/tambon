@@ -46,9 +46,10 @@ namespace De.AHoerstemeier.Tambon
               {EntityType.ThesabanNakhon, "ทน"},
               {EntityType.ThesabanMueang, "ทม"},
               {EntityType.ThesabanTambon, "ทต"},
-              // {EntityType.KingAmphoe, "กิ่งอำเภอ"},
+              {EntityType.KingAmphoe, "กิ่งอ"},
               {EntityType.TAO, "อบต"},
               {EntityType.PAO, "อบจ"},
+              // Mueang, Khwaeng, Khet
             };
 
         public static Dictionary<EntityType, String> EntityNamesEnglish = new Dictionary<EntityType, String>()
