@@ -596,7 +596,12 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        public String GetDescription(Language language)
+        /// <summary>
+        /// Gets the description ready to be set to WikiData.
+        /// </summary>
+        /// <param name="language">Language.</param>
+        /// <returns>Description of the entity.</returns>
+        public String GetWikiDataDescription(Language language)
         {
             var allEntities = GlobalData.CompleteGeocodeList().FlatList();
             var typeValue = this.type.Translate(language);
@@ -634,6 +639,32 @@ namespace De.AHoerstemeier.Tambon
                     hierarchy += String.Format(hierarchyExpand, parentEntity.english, parentType);
             }
             return String.Format(expanded, typeValue, hierarchy);
+        }
+
+        /// <summary>
+        /// Gets the abbreviated Thai name.
+        /// </summary>
+        /// <value>The abbreviated Thai name.</value>
+        /// <remarks>Abbreviated name consists of the abbreviation of the administrative type followed by the name.</remarks>
+        public String AbbreviatedName
+        {
+            get
+            {
+                return ThaiTranslations.EntityAbbreviations[type] + "." + name;
+            }
+        }
+
+        /// <summary>
+        /// Gets the full Thai name.
+        /// </summary>
+        /// <value>The full Thai name.</value>
+        /// <remarks>Full name consists of the administrative type followed by the name.</remarks>
+        public String FullName
+        {
+            get
+            {
+                return ThaiTranslations.EntityNamesThai[type] + name;
+            }
         }
     }
 }

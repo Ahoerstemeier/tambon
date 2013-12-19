@@ -105,8 +105,13 @@
     <Compile Include="StatisticsAnnouncementDates.cs" />
     <Compile Include="ThaiTranslations.cs" />
     <Compile Include="WikiBase.cs" />
+    <Compile Include="WikiDataHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\wikibase.net.git\trunk\Wikibase.NET\WikiBase.csproj">
+      <Project>{fc9f81dc-20ad-4fe5-9ea1-dab417f947ea}</Project>
+      <Name>WikiBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TambonHelpers\TambonHelpers.csproj">
       <Project>{6cba0539-37e6-42f9-bcb3-50d81edcbedd}</Project>
       <Name>TambonHelpers</Name>

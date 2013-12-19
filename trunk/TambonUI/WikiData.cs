@@ -8,25 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Wikibase;
+using Wikibase.DataValues;
 
 namespace De.AHoerstemeier.Tambon.UI
 {
     public partial class WikiData : Form
     {
-        private const String PropertyIdEntityType = "P132";
-        private const String PropertyIdCountry = "P17";
-        private const String PropertyIdIsInAdministrativeUnit = "P131";
-        private const String PropertyIdCoordinate = "P625";
-        private const String PropertyIdContainsAdministrativeDivisions = "P150";
-        private const String PropertyIdWebsite = "P856";
-        private const String PropertyIdSharesBorderWith = "P47";
-        private const String PropertyIdHeadOfGovernment = "P6";
-        private const String PropertyIdPostalCode = "P281";
-        private const String PropertyIdTwinCity = "P190";
-        private const String PropertyIdOpenStreetMap = "P402";
-        private const String PropertyIdLocationMap = "P242";
-        // const String PropertyIdGeocode = "P...";
-
         public WikiData()
         {
             InitializeComponent();
@@ -134,6 +121,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private const String AmphoeVibhavadi = "Q476980";
         private const String SamuiCity = "Q13025347";
         private const String SuratThaniProvince = "Q240463";
+        private const String SuratThaniCity = "Q840951";
 
         private const String germanWikipediaSiteLink = "dewiki";
         private const String englishWikipediaSiteLink = "enwiki";
@@ -189,8 +177,8 @@ namespace De.AHoerstemeier.Tambon.UI
             // Create a new EntityProvider instance and pass the api created above.
             EntityProvider entityProvider = new EntityProvider(api);
 
-            var entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(AmphoeVibhavadi));
-            var claimTypeOfAdministration = entityById.Claims.Where(x => x.mainSnak.propertyId.ToString() == PropertyIdEntityType.ToLowerInvariant());
+            var entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(SuratThaniCity));
+            var claimTypeOfAdministration = entityById.Claims.Where(x => x.mainSnak.propertyId.ToString() == WikiBase.PropertyIdWebsite.ToLowerInvariant());
             var firstTypeOfAdministration = claimTypeOfAdministration.FirstOrDefault();
 
             // ... and finally logout
@@ -212,22 +200,24 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var entities = GlobalData.CompleteGeocodeList();
             var allEntities = entities.FlatList();
-            var testEntity = allEntities.First(x => x.geocode == 841902);
+            var testEntity = allEntities.First(x => x.geocode == 8412);
 
             WikibaseApi api = OpenConnection();
-            // Create a new EntityProvider instance and pass the api created above.
-            EntityProvider entityProvider = new EntityProvider(api);
+            WikiDataHelper helper = new WikiDataHelper(api);
+            var item = helper.GetWikiDataItemForEntity(testEntity);
+            var countryClaim = helper.IsInCountry(item);
+            // if (countryClaim.Changed)
+            if ( MessageBox.Show("Really save country?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
+                countryClaim.save(helper.GetClaimSaveEditSummary(countryClaim));
 
-            var entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(testEntity.wiki.wikidata));
+            var parentClaim = helper.IsInAdministrativeUnit(item, testEntity);
+            // if (parentClaim.Changed)
+            if ( MessageBox.Show("Really save parent?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
+                parentClaim.save(helper.GetClaimSaveEditSummary(parentClaim));
 
-            entityById.setDescription("en", testEntity.GetDescription(Language.English));
-            // entityById.setDescription("de", testEntity.GetDescription(Language.German));
-            entityById.setDescription("th", testEntity.GetDescription(Language.Thai));
-
-            if ( MessageBox.Show("Really do it?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
-            {
-                entityById.save("Added descriptions");
-            }
+            helper.SetDescriptionsAndLabels(item, testEntity);
+            if ( MessageBox.Show("Really save descriptions?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
+                item.save("Updating description and label in English and Thai");
             api.logout();
         }
     }
