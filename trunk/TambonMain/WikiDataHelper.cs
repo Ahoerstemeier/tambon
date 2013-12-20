@@ -179,5 +179,44 @@ namespace De.AHoerstemeier.Tambon
             item.addAlias("th", entity.AbbreviatedName);
             item.addAlias("th", entity.name);
         }
+
+        /// <summary>
+        /// Gets all statements containing subdivision administrative units which are not present before in the item.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <returns>Enumeration of all missing subdivision statements.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        public IEnumerable<Statement> MissingContainsAdministrativeDivisionsStatements(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+            if ( entity == null )
+                throw new ArgumentNullException("entity");
+            var propertyContainsAdministrativeDivisions = EntityId.newFromPrefixedId(WikiBase.PropertyIdContainsAdministrativeDivisions);
+            var result = new List<Statement>();
+
+            var claims = item.Claims.Where(x => x.mainSnak.propertyId.numericId == propertyContainsAdministrativeDivisions.numericId).ToList();
+            foreach ( var subEntity in entity.entity )
+            {
+                if ( (subEntity.wiki != null) && (!String.IsNullOrEmpty(subEntity.wiki.wikidata)) && (!subEntity.IsObsolete) && (!subEntity.type.IsThesaban()) )
+                {
+                    var subEntityItemId = EntityId.newFromPrefixedId(subEntity.wiki.wikidata);
+                    Boolean claimFound = claims.Any(x => (x.mainSnak.dataValue as EntityIdValue).numericId == subEntityItemId.numericId);
+                    if ( !claimFound )
+                    {
+                        var subEntityDataValue = new EntityIdValue("item", subEntityItemId.numericId);
+                        var subEntitySnak = new Snak("value", propertyContainsAdministrativeDivisions, subEntityDataValue);
+                        var claim = item.createStatementForSnak(subEntitySnak);
+                        result.Add(claim);
+                    }
+                    else
+                    {
+                        claims.RemoveAll(x => (x.mainSnak.dataValue as EntityIdValue).numericId == subEntityItemId.numericId);
+                    }
+                }
+            }
+            return result;
+        }
     }
 }
