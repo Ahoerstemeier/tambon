@@ -278,11 +278,115 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:complexType name="IdentifierValueBase" abstract="1">
+    <xs:annotation>
+      <xs:documentation>Base type containing an identifier.</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="t:Comment"/>
+    <xs:attribute name="value" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Value for the identifier.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="introducedwith" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Name of the publication which the code was introduced, e.g. update number.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="IdentifierOldValue">
+    <xs:annotation>
+      <xs:documentation>Retired value of an identifier.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:IdentifierValueBase">
+        <xs:attribute name="retired" type="xs:date" use="optional">
+          <xs:annotation>
+            <xs:documentation>Date of when the new code was issued and thus this code was retired.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="retiredwith" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>Name of the publication which retired the code, e.g. update number.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Identifier">
+    <xs:annotation>
+      <xs:documentation>Identifier with eventual obsolete old values.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:IdentifierValueBase">
+        <xs:sequence>
+          <xs:element name="oldvalue" type="t:IdentifierOldValue" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Former values of the identifier with information on when and how it was retired.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OtherIdentifier">
+    <xs:annotation>
+      <xs:documentation>Unique identifiers additional to the geocode and the wiki ids.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="hasc" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Hierarchical administrative subdivision code (HASC), defined by Gwillim Law in his book and at http://statoids.com.
+            Format is TH.XX for provinces and TH.XX.YY for districts.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="iso3166" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            ISO 3166-2 code, only applicable for provinces, and the municipality of Pattaya. Format is TH-##.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="fips10" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            FIPS 10 codes. Format is TH##.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="genc" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Geopolitical Entities, Names, and Codes (GENC), follow-up to FIPS10-4.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="salb" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Second Administrative Level Boundaries. Format is THA### for provinces and THA###### for districts.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="gnd" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Integrated Authority File (from German: Gemeinsame Normdatei). Url in catalog for GND 123 is http://d-nb.info/gnd/123
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="Entity">
     <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element minOccurs="0" maxOccurs="1" name="wiki" type="t:WikiLocation">
         <xs:annotation>
           <xs:documentation>Links to wiki pages.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="codes" type="t:OtherIdentifier">
+        <xs:annotation>
+          <xs:documentation>Unique identifiers, other geocode systems or catalogue ids.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="symbols" type="t:Symbols">
