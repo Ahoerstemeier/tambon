@@ -34,6 +34,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdCountry = "P17";
         public const String PropertyIdIsInAdministrativeUnit = "P131";
         public const String PropertyIdCoordinate = "P625";
+        public const String PropertyIdCapital = "P36";
         public const String PropertyIdContainsAdministrativeDivisions = "P150";
         public const String PropertyIdWebsite = "P856";
         public const String PropertyIdSharesBorderWith = "P47";
@@ -44,5 +45,13 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdLocationMap = "P242";
         public const String PropertyIdFreebaseIdentifier = "P646";
         public const String PropertyIdReferenceUrl = "P854";
+        public const String PropertyIdISO3166 = "P300";
+        public const String PropertyIdGND = "P227";
+        public const String PropertyIdFIPS10 = "P901";
+        public const String PropertyIdDmoz = "P998";
+
+        public const String ItemSourceTIS1099BE2535 = "Q15477441";
+        public const String ItemSourceTIS1099BE2548 = "Q15477531";
+        public const String ItemSourceCCAATT = "Q15477767";
     }
 }
