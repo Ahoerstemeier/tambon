@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="ภูเก็ต" english="Phuket" geocode="83">
   <wiki wikidata="Q182565" freebase="/m/01jb7g"/>
+  <codes>
+    <hasc value="TH.PU"/>
+    <iso3166 value="TH-62"/>
+    <fips10 value="62"/>
+    <salb value="THA047"/>
+  </codes>
   <office type="ProvinceHall">
     <geo:Point>
       <geo:lat>7.8900</geo:lat>
@@ -85,6 +91,10 @@
   </office>
   <entity type="Amphoe" name="เมืองภูเก็ต" english="Mueang Phuket" geocode="8301">
     <wiki wikidata="Q476065" freebase="/m/09d78z"/>
+    <codes>
+      <hasc value="TH.PU.PH"/>
+      <salb value="THA047002"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>7.8895</geo:lat>
@@ -106,14 +116,20 @@
         </geo:Point>
       </oldlocations>
     </office>
-    <entity type="Tambon" name="ตลาดใหญ่" english="Talat Yai" geocode="830101" />
-    <entity type="Tambon" name="ตลาดเหนือ" english="Talat Nuea" geocode="830102" />
+    <entity type="Tambon" name="ตลาดใหญ่" english="Talat Yai" geocode="830101" >
+      <wiki wikidata="Q15506989"/>
+    </entity>
+    <entity type="Tambon" name="ตลาดเหนือ" english="Talat Nuea" geocode="830102" >
+      <wiki wikidata="Q15506993"/>
+    </entity>
     <entity type="Tambon" name="เกาะแก้ว" english="Ko Kaeo" geocode="830103">
+      <wiki wikidata="Q15507001"/>
       <office type="TAOOffice">
         <symbols>
           <vision>สังคมดี  เศรษฐกิจเด่น เน้นหลักธรรมาภิบาล</vision>
         </symbols>
         <dola code="6830102" SML="M" />
+        <wiki wikidata="Q15507141"/>
         <geo:Point>
           <geo:lat>7.9366</geo:lat>
           <geo:long>98.3949</geo:long>
@@ -129,7 +145,13 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="14" />
           <term begin="2003-08-30" end="2007-08-29" type="TAO" />
           <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
         </council>
+        <history>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
       </office>
       <entity type="Muban" geocode="83010301" name="บ้านสะปำ" english="Ban Sa Pa" />
       <entity type="Muban" geocode="83010302" name="บ้านบางคู" english="Ban Bang Khu" />
@@ -140,6 +162,7 @@
       <entity type="Muban" geocode="83010307" name="บ้านแหลมหิน" english="Ban Laem Hin" />
     </entity>
     <entity type="Tambon" name="รัษฎา" english="Ratsada" geocode="830104">
+      <wiki wikidata="Q15507007"/>
       <entity type="Muban" geocode="83010401" name="บ้านเกาะสิเหร่" english="Ban Ko Si Re" />
       <entity type="Muban" geocode="83010402" name="บ้านบางชีหล้า" english="Ban Bang Chi La" />
       <entity type="Muban" geocode="83010403" name="บ้านกู้กู" english="Ban Ku Ku" />
@@ -149,6 +172,7 @@
       <entity type="Muban" geocode="83010407" name="บ้านท่าเรือใหม่" english="Ban Tha Ruea Mai" />
     </entity>
     <entity type="Tambon" name="วิชิต" english="Wichit" geocode="830105">
+      <wiki wikidata="Q15507013"/>
       <entity type="Muban" geocode="83010501" name="บ้านนาบอนใต้" english="Ban Na Bon Tai" />
       <entity type="Muban" geocode="83010502" name="บ้านแหลมชั่น" english="Ban Laem Chan" />
       <entity type="Muban" geocode="83010503" name="บ้านตีนเขา" english="Ban Tin Khao" />
@@ -167,6 +191,7 @@
           <vision>จะพัฒนาให้เทศบาลตำบลฉลองเป็นสังคมที่มีความสุขอย่างยั่งยืน ภายใต้ปรัชญาเศรษฐกิจพอเพียง</vision>
         </symbols>
         <dola code="6830103" SML="S" />
+        <wiki wikidata="Q15507153"/>
         <geo:Point>
           <geo:lat>7.8396</geo:lat>
           <geo:long>98.3452</geo:long>
@@ -181,9 +206,13 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="20" />
           <term begin="2003-08-30" end="2007-08-29" type="TAO" />
           <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-01" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-01" status="Done"/>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
         </history>
       </office>
       <entity type="Muban" geocode="83010601" name="บ้านเขาน้อย" english="Ban Khao Noi" />
@@ -208,6 +237,20 @@
       <entity type="Muban" geocode="83010707" name="บ้านใสยวน" english="Ban Sai Yuan" comment="Old name บ้านราไวย์?" />
     </entity>
     <entity type="Tambon" name="กะรน" english="Karon" geocode="830108">
+      <wiki wikidata="Q15507021"/>
+      <office type="TAOOffice" obsolete="1">
+        <council>
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
+        </council>
+        <history>
+          <abolished mergeto="8397" type="TAO" effective="2004-09-15" status="Gazette">
+            <gazetteref volume="121" page="21" issue="พิเศษ 102 ง" date="2004-09-15" />
+          </abolished>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
+      </office>
       <entity type="Muban" geocode="83010801" name="บ้านกะรน" english="Ban Karon" />
       <entity type="Muban" geocode="83010802" name="บ้านกะตะ" english="Ban Kata" />
       <entity type="Muban" geocode="83010803" name="บ้านบางลา" english="Ban Bang La" />
@@ -216,6 +259,10 @@
   </entity>
   <entity type="Amphoe" name="กะทู้" english="Kathu" geocode="8302">
     <wiki wikidata="Q182516" freebase="/m/09t9b3"/>
+    <codes>
+      <hasc value="TH.PU.KA"/>
+      <salb value="THA047001"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>7.9090</geo:lat>
@@ -259,6 +306,7 @@
           </vision>
         </symbols>
         <dola code="6830201" SML="M" />
+        <wiki wikidata="Q15507134"/>
         <geo:Point>
           <geo:lat>7.9453</geo:lat>
           <geo:long>98.2874</geo:long>
@@ -274,7 +322,13 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="12" />
           <term begin="2003-08-30" end="2007-08-29" type="TAO" />
           <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
         </council>
+        <history>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
       </office>
       <entity type="Muban" geocode="83020301" name="บ้านบางหวาน" english="Ban Bang Wan" />
       <entity type="Muban" geocode="83020302" name="บ้านเหนือ" english="Ban Nuea" />
@@ -286,6 +340,10 @@
   </entity>
   <entity type="Amphoe" name="ถลาง" english="Thalang" geocode="8303">
     <wiki wikidata="Q476875" freebase="/m/08_36r"/>
+    <codes>
+      <hasc value="TH.PU.TH"/>
+      <salb value="THA047003"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>8.0316</geo:lat>
@@ -300,11 +358,13 @@
       </officials>
     </office>
     <entity type="Tambon" name="เทพกระษัตรี" english="Thep Krasatti" geocode="830301">
+      <wiki wikidata="Q15506899"/>
       <office type="TAOOffice">
         <symbols>
           <vision>เมืองประวัติศาสตร์ คุณภาพชีวิตดี สิ่งแวดล้อมยั่งยืน ชุมชนเข้มแข็ง</vision>
         </symbols>
         <dola code="6830302" SML="M" />
+        <wiki wikidata="Q15507128"/>
         <geo:Point>
           <geo:lat>8.0232</geo:lat>
           <geo:long>98.3366</geo:long>
@@ -320,7 +380,13 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="22" />
           <term begin="2003-08-30" end="2007-08-29" type="TAO" />
           <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
         </council>
+        <history>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
       </office>
       <entity type="Muban" geocode="83030101" name="บ้านตะเคียน" english="Ban Takhian" />
       <entity type="Muban" geocode="83030102" name="บ้านแขนน" english="Ban Khaenon" />
@@ -335,8 +401,10 @@
       <entity type="Muban" geocode="83030111" name="บ้านควน" english="Ban Khuan" />
     </entity>
     <entity type="Tambon" name="ศรีสุนทร" english="Si Sunthon" geocode="830302">
+      <wiki wikidata="Q15506924"/>
       <office type="MunicipalityOffice">
         <dola code="6830304" SML="S" />
+        <wiki wikidata="Q15507161"/>
         <geo:Point>
           <geo:lat>7.9978</geo:lat>
           <geo:long>98.3508</geo:long>
@@ -352,9 +420,19 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="16" />
           <term begin="2003-08-30" end="2007-08-29" type="TAO" />
           <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-07" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-07" status="Done"/>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+          <abolished type="TAO" effective="1972-12-13" status="Gazette">
+            <gazetteref volume="89" page="122" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+          </abolished>
+          <create type="TAO" effective="1958-03-01" status="Gazette">
+            <gazetteref volume="75" page="2" issue="18 ง ฉบับพิเศษ" date="1958-03-01" />
+          </create>
         </history>
       </office>
       <entity type="Muban" geocode="83030201" name="บ้านลิพอนเขาล้าน" english="Ban Liphon Khao Lan" />
@@ -367,11 +445,13 @@
       <entity type="Muban" geocode="83030208" name="บ้านลิพอนหัวหาน-บ่อแร่" english="Ban Liphon Hua Han - Bo Rae" />
     </entity>
     <entity type="Tambon" name="เชิงทะเล" english="Choeng Thale" geocode="830303">
+      <wiki wikidata="Q15506930"/>
       <office type="TAOOffice">
         <symbols>
           <vision>มุ่งพัฒนาสู่เมืองน่าอยู่  มีคุณภาพชีวิตที่ดี  สถานที่น่าท่องเที่ยว บนพื้นฐานการพัฒนาที่ยั่งยืนและมีดุลยภาพ</vision>
         </symbols>
         <dola code="6830301" SML="M" />
+        <wiki wikidata="Q15507121"/>
         <geo:Point>
           <geo:lat>7.9852</geo:lat>
           <geo:long>98.3025</geo:long>
@@ -390,7 +470,13 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="12" />
           <term begin="2003-08-30" end="2007-08-29" type="TAO" />
           <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
         </council>
+        <history>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
       </office>
       <entity type="Muban" geocode="83030301" name="บ้านเชิงทะเล" english="Ban Choeng Thale" />
       <entity type="Muban" geocode="83030302" name="บ้านบางเทา" english="Ban Bang Thao" />
@@ -400,8 +486,10 @@
       <entity type="Muban" geocode="83030306" name="บ้านลายัน" english="Ban La Yan" />
     </entity>
     <entity type="Tambon" name="ป่าคลอก" english="Pa Khlok" geocode="830304">
+      <wiki wikidata="Q15506939"/>
       <office type="MunicipalityOffice">
         <dola code="6830306" SML="S" />
+        <wiki wikidata="Q15507167"/>
         <geo:Point>
           <geo:lat>8.0121</geo:lat>
           <geo:long>98.3988</geo:long>
@@ -417,9 +505,12 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31" status="Done">
             <meetingreference board="1" number="47" date="2012-07-16" />
           </statuschange>
+          <create type="TAO" effective="1996-03-20" status="Gazette">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
         </history>
       </office>
       <entity type="Muban" geocode="83030401" name="บ้านผักฉีด" english="Ban Phak Chit" />
@@ -436,6 +527,7 @@
       <wiki wikidata="Q13015151" />
       <office type="TAOOffice">
         <dola code="6830303" SML="M" />
+        <wiki wikidata="Q15507112"/>
         <geo:Point>
           <geo:lat>8.1812</geo:lat>
           <geo:long>98.2992</geo:long>
@@ -451,7 +543,13 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="14" />
           <term begin="2003-08-30" end="2007-08-29" type="TAO" />
           <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
         </council>
+        <history>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
       </office>
       <entity type="Muban" geocode="83030501" name="บ้านหมากปรก" english="Ban Mak Prok" />
       <entity type="Muban" geocode="83030502" name="บ้านคอเอน" english="Ban Kho En" />
@@ -462,11 +560,13 @@
       <entity type="Muban" geocode="83030507" name="บ้านหยิด" english="Ban Yit" />
     </entity>
     <entity type="Tambon" name="สาคู" english="Sakhu" geocode="830306">
+      <wiki wikidata="Q15506952"/>
       <office type="TAOOffice">
         <symbols>
           <vision>ชุมชนเข้มแข็ง ทรัพยากรธรรมชาติดี มีคุณภาพชีวิตที่ดี  สถานที่น่าท่องเที่ยว  เพื่อรองรับเมืองนานาชาติ</vision>
         </symbols>
         <dola code="6830305" SML="S" />
+        <wiki wikidata="Q15507103"/>
         <geo:Point>
           <geo:lat>8.0716</geo:lat>
           <geo:long>98.2968</geo:long>
@@ -482,7 +582,13 @@
           <term begin="2007-10-07" end="2011-10-06" type="TAO" size="10" />
           <term begin="2003-08-30" end="2007-08-29" type="TAO" />
           <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+          <term begin="1995-05-21" end="1999-05-20" type="TAO" />
         </council>
+        <history>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
       </office>
       <entity type="Muban" geocode="83030601" name="บ้านในยาง" english="Ban Nai Yang" />
       <entity type="Muban" geocode="83030602" name="บ้านตรอกม่วง" english="Ban Trok Muang" />
@@ -528,6 +634,17 @@
         <term begin="1999-12-25" end="2003-12-24" type="ThesabanMueang" size="18" />
       </council>
     </office>
+    <history>
+      <statuschange old="ThesabanMueang" new="ThesabanNakhon" effective="2004-02-20" status="Gazette">
+        <gazetteref volume="121" page="11" issue="พิเศษ 20 ง" date="2004-02-20" />
+      </statuschange>
+      <statuschange old="SukhaphibanMueang" new="ThesabanMueang" effective="1935-12-10" status="Gazette">
+        <gazetteref volume="52" page="1712" issue="0 ก" date="1935-12-10" />
+      </statuschange>
+      <create type="SukhaphibanMueang" effective="1912-03-17" status="Gazette">
+        <gazetteref volume="28" page="513" issue="0 ก" date="1912-03-17" />
+      </create>
+    </history>
     <!-- Chumchon numbers to be verified -->
     <entity type="Chumchon" geocode="83990001" name="ชุมชนหลังหอประชุม" english="Chumchon Lang Ho Prachum" />
     <entity type="Chumchon" geocode="83990002" name="ชุมชนหลังศาลากลาง" english="Chumchon Lang Sala Klang" />
@@ -548,6 +665,7 @@
     <entity type="Chumchon" geocode="83990017" name="ชุมชนอ่าวเกใน" english="Chumchon Ao Ke Nai" />
   </entity>
   <entity type="ThesabanMueang" name="ป่าตอง" english="Pa Tong" geocode="8398" parent="8302">
+    <wiki wikidata="Q15507095"/>
     <!--<wiki wikidata="Q630024" comment="Is on Patong beach primarily" />-->
     <office type="MunicipalityOffice">
       <symbols>
@@ -585,11 +703,18 @@
         <term begin="1998-10-04" end="2002-10-03" type="ThesabanTambon" size="12" />
         <!--<term end="1998-07-16" type="ThesabanTambon" size="12" comment="Dissolved? Or end term?" />-->
       </council>
-      <history>
-        <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2002-10-04" />
-        <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1994-04-01" />
-      </history>
     </office>
+    <history>
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2002-10-04" status="Gazette">
+        <gazetteref volume="119" page="1" issue="100 ก" date="2002-10-04" />
+      </statuschange>
+      <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1994-04-01" status="Gazette">
+        <gazetteref volume="111" page="22" issue="12 ก" date="1994-04-01" />
+      </statuschange>
+      <create type="Sukhaphiban" effective="1986-09-30" status="Gazette">
+        <gazetteref volume="103" page="4400" issue="168 ง" date="1986-09-30" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="83980001" name="ชุมชนชายวัด" english="Chumchon Chai Wat" />
     <entity type="Chumchon" geocode="83980002" name="ชุมชนบ้านมอญ" english="Chumchon Ban Mon" />
     <entity type="Chumchon" geocode="83980003" name="ชุมชนบ้านไสน้ำเย็น" english="Chumchon Ban Sai Nam Yen" />
@@ -599,6 +724,7 @@
     <entity type="Chumchon" geocode="83980007" name="ชุมชนหาดป่าตอง" english="Chumchon Hat Pa Tong" />
   </entity>
   <entity type="ThesabanTambon" name="กะรน" english="Karon" geocode="8397" parent="8301">
+    <wiki wikidata="Q15507087"/>
     <office type="MunicipalityOffice">
       <symbols>
         <vision>พัฒนาให้เป็นเมืองในสวน (Garden Village) เป็นที่น่าอยู่ของประชาชน น่าพักผ่อนของนักท่องเที่ยวอย่างแท้จริง</vision>
@@ -631,8 +757,20 @@
         <term begin="2000-03-25" end="2004-03-24" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <mergedwith mergefrom="830108" mergefromtype="TAO" effective="2004-09-15" status="Gazette">
+        <gazetteref volume="121" page="21" issue="พิเศษ 102 ง" date="2004-09-15" />
+      </mergedwith>
+      <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1999-05-24" status="Gazette">
+        <gazetteref volume="116" issue="9 ก" page="1" date="1999-02-24" />
+      </statuschange>
+      <create type="Sukhaphiban" effective="1987-06-11" status="Gazette">
+        <gazetteref volume="104" page="3987" issue="110 ง" date="1987-06-11" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="กะทู้" english="Kathu" geocode="8396" parent="8302">
+    <wiki wikidata="Q15507069"/>
     <office type="MunicipalityOffice">
       <symbols>
         <vision>เมืองน่าอยู่ เคียงคู่พัฒนา</vision>
@@ -660,8 +798,20 @@
         <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2008-07-14" />
       </history>
     </office>
+    <history>
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2008-07-14" status="Done">
+        <meetingreference board="2" number="33" date="2008-05-08" />
+      </statuschange>
+      <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1999-05-24" status="Gazette">
+        <gazetteref volume="116" issue="9 ก" page="1" date="1999-02-24" />
+      </statuschange>
+      <create type="Sukhaphiban" effective="1957-01-07" status="Gazette">
+        <gazetteref volume="74" page="79" issue="4 ง ฉบับพิเศษ" date="1957-01-07" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="เชิงทะเล" english="Choeng Thale" geocode="8395" parent="8303">
+    <wiki wikidata="Q15507063"/>
     <office type="MunicipalityOffice">
       <symbols>
         <vision>ชุมชนมีคุณภาพชีวิตที่ดี มีการศึกษา รักษาสิ่งแวดล้อม อนุรักษ์ประเพณีและวัฒนธรรม ส่งเสริมอาชีพ  มีความปลอดภัยในชีวิตและทรัพย์สิน  ยึดหลักการบริหารจัดการที่ดี</vision>
@@ -689,8 +839,17 @@
         <term begin="2007-04-28" end="2011-04-27" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1999-05-24" status="Gazette">
+        <gazetteref volume="116" issue="9 ก" page="1" date="1999-02-24" />
+      </statuschange>
+      <create type="TAO" effective="1963-07-23" status="Gazette">
+        <gazetteref volume="80" page="1824" issue="73 ง" date="1963-07-23" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="เทพกระษัตรี" english="Thep Krasatti" geocode="8394" parent="8303">
+    <wiki wikidata="Q15507058"/>
     <office type="MunicipalityOffice">
       <symbols>
         <vision>เมืองประวัติศาสตร์แห่งการเรียนรู้ ชุมชนน่าอยู่ บริหารจัดการด้วยหลักธรรมาภิบาลเป็นเลิศทางการศึกษา</vision>
@@ -710,8 +869,17 @@
         <term begin="2007-03-10" end="2011-03-09" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1999-05-24" status="Gazette">
+        <gazetteref volume="116" issue="9 ก" page="1" date="1999-02-24" />
+      </statuschange>
+      <create type="TAO" effective="1955-09-17" status="Gazette">
+        <gazetteref volume="72" page="138" issue="74 ง ฉบับพิเศษ" date="1955-09-17" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="รัษฎา" english="Ratsada" geocode="8393" parent="8301" tambon="830104">
+    <wiki wikidata="Q15507053"/>
     <office type="MunicipalityOffice">
       <symbols>
         <vision>
@@ -739,12 +907,16 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30" status="Done">
         <meetingreference board="2" number="24" date="2007-07-19" />
       </statuschange>
+      <create type="TAO" effective="1995-03-03" status="Gazette">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ราไวย์" english="Rawai" geocode="8392" parent="8301" tambon="830107">
+    <wiki wikidata="Q15507045"/>
     <office type="MunicipalityOffice">
       <symbols>
         <vision>ราไวย์เมืองน่าอยู่  ควบคู่แหล่งท่องเที่ยวระดับโลก  ทรัพยากรธรรมชาติและสิ่งแวดล้อมดี  มีวัฒนธรรม ก้าวล้ำเทคโนโลยี</vision>
@@ -772,12 +944,16 @@
         <term begin="2007-11-17" end="2011-11-16" type="ThesabanTambon" size="12" />
         <term begin="2003-08-30" end="2007-08-29" type="TAO" />
         <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+        <term begin="1995-05-21" end="1999-05-20" type="TAO" />
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30" status="Done">
         <meetingreference board="2" number="24" date="2007-07-19" />
       </statuschange>
+      <create type="TAO" effective="1995-03-03" status="Gazette">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="วิชิต" english="Wichit" geocode="8391" parent="8301" tambon="830105">
@@ -803,12 +979,16 @@
         <term begin="2007-11-17" end="2011-11-16" type="ThesabanTambon" size="12" />
         <term begin="2003-08-30" end="2007-08-29" type="TAO" />
         <term begin="1999-07-18" end="2003-07-17" type="TAO" />
+        <term begin="1995-05-21" end="1999-05-20" type="TAO" />
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30" status="Done">
         <meetingreference board="2" number="24" date="2007-07-19" />
       </statuschange>
+      <create type="TAO" effective="1995-03-03" status="Gazette">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
 
