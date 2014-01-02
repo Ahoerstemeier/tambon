@@ -705,8 +705,8 @@ namespace De.AHoerstemeier.Tambon {
         private string englishField;
         
         private uint geocodeField;
-        
-        private string newgeocodeField;
+
+        private List<uint> newgeocodeField;
         
         private bool obsoleteField;
         
@@ -729,6 +729,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public Entity() {
             this.parentField = new List<uint>();
+            this.newgeocodeField = new List<uint>();
             this.entitycountField = new EntityCount();
             this.entityField = new List<Entity>();
             this.populationField = new List<PopulationData>();
@@ -894,10 +895,11 @@ namespace De.AHoerstemeier.Tambon {
                 this.geocodeField = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string newgeocode {
+        public List<uint> newgeocode
+        {
             get {
                 return this.newgeocodeField;
             }
