@@ -413,7 +413,7 @@
     <xs:attributeGroup ref="t:ThaiNameMandatory" />
     <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
     <!--have to find better way for this-->
-    <xs:attribute name="newgeocode" type="xs:string" use="optional" />
+    <xs:attribute name="newgeocode" type="t:GeocodeList" use="optional" />
     <xs:attribute name="obsolete" type="xs:boolean" use="optional" />
     <xs:attribute name="parent" type="t:GeocodeList" use="optional">
       <xs:annotation>

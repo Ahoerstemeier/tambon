@@ -29,7 +29,7 @@ namespace De.AHoerstemeier.Tambon
         {
             get
             {
-                return obsolete | !String.IsNullOrEmpty(newgeocode);
+                return obsolete | newgeocode.Any();
             }
         }
 
@@ -371,7 +371,7 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <returns>The display name of the entity.</returns>
         /// <remarks>Always returns <see cref="Entity.english"/>.</remarks>
-        public override string ToString()
+        public override String ToString()
         {
             return english;
         }
@@ -664,6 +664,15 @@ namespace De.AHoerstemeier.Tambon
             get
             {
                 return ThaiTranslations.EntityNamesThai[type] + name;
+            }
+        }
+
+        public IEnumerable<UInt32> OldGeocodes
+        {
+            get
+            {
+                var entities = GlobalData.CompleteGeocodeList().FlatList().Where(x => x.newgeocode.Contains(this.geocode));
+                return entities.Select(x => x.geocode).ToList();
             }
         }
     }
