@@ -218,5 +218,74 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
+        /// <summary>
+        /// Gets all statements with the geocodes, including the obsolete codes.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <returns>Enumeration of all missing geocode statements.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        public IEnumerable<Statement> MissingGeocodeStatements(Item item, Entity entity)
+        {
+            if (item == null)
+                throw new ArgumentNullException("item");
+            if (entity == null)
+                throw new ArgumentNullException("entity");
+            var propertyGeocode = EntityId.newFromPrefixedId(WikiBase.PropertyIdThaiGeocode);
+            var propertyStatedIn = EntityId.newFromPrefixedId(WikiBase.PropertyIdStatedIn);
+            var result = new List<Statement>();
+
+            var claims = item.Claims.Where(x => x.mainSnak.propertyId.numericId == propertyGeocode.numericId).ToList();
+                var geocodeValue =entity.geocode.ToString();
+                    Boolean claimFound = claims.Any(x => (x.mainSnak.dataValue as StringValue).str == geocodeValue);
+                    if (!claimFound)
+                    {
+                        var geocodeDataValue = new StringValue(geocodeValue);
+                        var geocodeSnak = new Snak("value", propertyGeocode, geocodeDataValue);
+                        var claim = item.createStatementForSnak(geocodeSnak);
+                        if (GeocodeHelper.ProvinceCode(entity.geocode)!=38)
+                        {
+                            if (entity.type.IsCompatibleEntityType(EntityType.Changwat))
+                            {
+                        var referenceTIS1099BE2535SnakValue = new EntityIdValue("item",EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2535).numericId);
+                        var referenceTIS1099BE2535Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2535SnakValue);
+                                claim.createReferenceForSnak(referenceTIS1099BE2535Snak);
+                            }
+                        var referenceTIS1099BE2548SnakValue = new EntityIdValue("item",EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2548).numericId);
+                        var referenceTIS1099BE2548Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2548SnakValue);
+                                claim.createReferenceForSnak(referenceTIS1099BE2548Snak);
+                        }
+                        var referenceCCAATTSnakValue = new EntityIdValue("item",EntityId.newFromPrefixedId(WikiBase.ItemSourceCCAATT).numericId);
+                        var referenceCCAATTSnak = new Snak("value", propertyStatedIn, referenceCCAATTSnakValue);
+                                claim.createReferenceForSnak(referenceCCAATTSnak);
+                        // claim.rank="high";
+                        result.Add(claim);
+                    }
+                    else
+                    {
+                        claims.RemoveAll(x => (x.mainSnak.dataValue as StringValue).str == geocodeValue);
+                    }
+
+
+            foreach (var oldGeocode in entity.OldGeocodes)
+            {
+                var oldGeocodeValue =oldGeocode.ToString();
+                    claimFound = claims.Any(x => (x.mainSnak.dataValue as StringValue).str == oldGeocodeValue);
+                    if (!claimFound)
+                    {
+                        var subEntityDataValue = new StringValue( oldGeocodeValue);
+                        var subEntitySnak = new Snak("value", propertyGeocode, subEntityDataValue);
+                        var claim = item.createStatementForSnak(subEntitySnak);
+                        result.Add(claim);
+                    }
+                    else
+                    {
+                        claims.RemoveAll(x => (x.mainSnak.dataValue as StringValue).str == oldGeocodeValue);
+                    }
+                }
+            
+            return result;
+        }
     }
 }
