@@ -200,11 +200,21 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var entities = GlobalData.CompleteGeocodeList();
             var allEntities = entities.FlatList();
-            var testEntity = allEntities.First(x => x.geocode == 75);
+            var testEntity = allEntities.First(x => x.geocode == 5301);
 
             WikibaseApi api = OpenConnection();
             WikiDataHelper helper = new WikiDataHelper(api);
             var item = helper.GetWikiDataItemForEntity(testEntity);
+            var geocodeClaims = helper.MissingGeocodeStatements(item, testEntity);
+            if (MessageBox.Show("Really save geocodes?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                foreach (var claim in geocodeClaims)
+                {
+                    claim.save(helper.GetClaimSaveEditSummary(claim));
+                }
+            }
+
+            
             var subdivisionClaims = helper.MissingContainsAdministrativeDivisionsStatements(item, testEntity);
             if ( MessageBox.Show("Really save subdivisions?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
             {

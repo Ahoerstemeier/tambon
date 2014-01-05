@@ -49,9 +49,13 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdGND = "P227";
         public const String PropertyIdFIPS10 = "P901";
         public const String PropertyIdDmoz = "P998";
+        public const String PropertyIdThaiGeocode = "P1999";  // to be created
+        public const String PropertyIdStatedIn = "P248";
 
         public const String ItemSourceTIS1099BE2535 = "Q15477441";
         public const String ItemSourceTIS1099BE2548 = "Q15477531";
         public const String ItemSourceCCAATT = "Q15477767";
+
+        public const String ItemSandbox = "Q4115189";
     }
 }
