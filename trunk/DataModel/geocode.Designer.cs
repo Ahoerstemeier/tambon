@@ -684,6 +684,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private WikiLocation wikiField;
         
+        private OtherIdentifier codesField;
+        
         private Symbols symbolsField;
         
         private List<Office> officeField;
@@ -705,7 +707,7 @@ namespace De.AHoerstemeier.Tambon {
         private string englishField;
         
         private uint geocodeField;
-
+        
         private List<uint> newgeocodeField;
         
         private bool obsoleteField;
@@ -737,6 +739,7 @@ namespace De.AHoerstemeier.Tambon {
             this.areaField = new List<AreaData>();
             this.officeField = new List<Office>();
             this.symbolsField = new Symbols();
+            this.codesField = new OtherIdentifier();
         }
         
         /// <summary>
@@ -757,12 +760,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Unique identifiers, other geocode systems or catalogue ids.
+        /// </summary>
+        /// <value>
+        /// The codes.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OtherIdentifier codes {
+            get {
+                return this.codesField;
+            }
+            set {
+                this.codesField = value;
+            }
+        }
+        
+        /// <summary>
         /// Symbols, slogans and vision statements of the entity.
         /// </summary>
         /// <value>
         /// The symbols.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Symbols symbols {
             get {
@@ -773,7 +793,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("office", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("office", Order=3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<Office> office {
             get {
@@ -784,7 +804,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=4)]
         [System.Xml.Serialization.XmlArrayItemAttribute("data", typeof(AreaData), IsNullable=false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<AreaData> area {
@@ -796,7 +816,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public HistoryList history {
             get {
@@ -807,7 +827,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("population", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute("population", Order=6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<PopulationData> population {
             get {
@@ -818,7 +838,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("entity", Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute("entity", Order=7)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<Entity> entity {
             get {
@@ -829,7 +849,7 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public EntityCount entitycount {
             get {
@@ -895,11 +915,10 @@ namespace De.AHoerstemeier.Tambon {
                 this.geocodeField = value;
             }
         }
-
+        
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<uint> newgeocode
-        {
+        public List<uint> newgeocode {
             get {
                 return this.newgeocodeField;
             }
@@ -1023,6 +1042,323 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.mubanFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Unique identifiers additional to the geocode and the wiki ids.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OtherIdentifier", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class OtherIdentifier {
+        
+        private Identifier hascField;
+        
+        private Identifier iso3166Field;
+        
+        private Identifier fips10Field;
+        
+        private Identifier gencField;
+        
+        private Identifier salbField;
+        
+        private Identifier gndField;
+        
+        /// <summary>
+        /// Creates a new instance of OtherIdentifier.
+        /// </summary>
+        public OtherIdentifier() {
+            this.gndField = new Identifier();
+            this.salbField = new Identifier();
+            this.gencField = new Identifier();
+            this.fips10Field = new Identifier();
+            this.iso3166Field = new Identifier();
+            this.hascField = new Identifier();
+        }
+        
+        /// <summary>
+        /// Hierarchical administrative subdivision code (HASC), defined by Gwillim Law in his book and at http://statoids.com.
+        /// Format is TH.XX for provinces and TH.XX.YY for districts.
+        /// </summary>
+        /// <value>
+        /// The hasc.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier hasc {
+            get {
+                return this.hascField;
+            }
+            set {
+                this.hascField = value;
+            }
+        }
+        
+        /// <summary>
+        /// ISO 3166-2 code, only applicable for provinces, and the municipality of Pattaya. Format is TH-##.
+        /// </summary>
+        /// <value>
+        /// The iso3166.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier iso3166 {
+            get {
+                return this.iso3166Field;
+            }
+            set {
+                this.iso3166Field = value;
+            }
+        }
+        
+        /// <summary>
+        /// FIPS 10 codes. Format is TH##.
+        /// </summary>
+        /// <value>
+        /// The fips10.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier fips10 {
+            get {
+                return this.fips10Field;
+            }
+            set {
+                this.fips10Field = value;
+            }
+        }
+        
+        /// <summary>
+        /// Geopolitical Entities, Names, and Codes (GENC), follow-up to FIPS10-4.
+        /// </summary>
+        /// <value>
+        /// The genc.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier genc {
+            get {
+                return this.gencField;
+            }
+            set {
+                this.gencField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Second Administrative Level Boundaries. Format is THA### for provinces and THA###### for districts.
+        /// </summary>
+        /// <value>
+        /// The salb.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier salb {
+            get {
+                return this.salbField;
+            }
+            set {
+                this.salbField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Integrated Authority File (from German: Gemeinsame Normdatei). Url in catalog for GND 123 is http://d-nb.info/gnd/123
+        /// </summary>
+        /// <value>
+        /// The gnd.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier gnd {
+            get {
+                return this.gndField;
+            }
+            set {
+                this.gndField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Identifier with eventual obsolete old values.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Identifier", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class Identifier : IdentifierValueBase {
+        
+        private List<IdentifierOldValue> oldvalueField;
+        
+        /// <summary>
+        /// Creates a new instance of Identifier.
+        /// </summary>
+        public Identifier() {
+            this.oldvalueField = new List<IdentifierOldValue>();
+        }
+        
+        /// <summary>
+        /// Former values of the identifier with information on when and how it was retired.
+        /// </summary>
+        /// <value>
+        /// The oldvalue.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("oldvalue", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<IdentifierOldValue> oldvalue {
+            get {
+                return this.oldvalueField;
+            }
+            set {
+                this.oldvalueField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Retired value of an identifier.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdentifierOldValue", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class IdentifierOldValue : IdentifierValueBase {
+        
+        private System.DateTime retiredField;
+        
+        private bool retiredFieldSpecified;
+        
+        private string retiredwithField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime retired {
+            get {
+                return this.retiredField;
+            }
+            set {
+                this.retiredField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool retiredSpecified {
+            get {
+                return this.retiredFieldSpecified;
+            }
+            set {
+                this.retiredFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string retiredwith {
+            get {
+                return this.retiredwithField;
+            }
+            set {
+                this.retiredwithField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Base type containing an identifier.
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Identifier))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdentifierOldValue))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdentifierValueBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public abstract partial class IdentifierValueBase {
+        
+        private string commentField;
+        
+        private string valueField;
+        
+        private string introducedwithField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Value for the identifier.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Name of the publication which the code was introduced, e.g. update number.
+        /// </summary>
+        /// <value>
+        /// The introducedwith.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string introducedwith {
+            get {
+                return this.introducedwithField;
+            }
+            set {
+                this.introducedwithField = value;
             }
         }
     }
