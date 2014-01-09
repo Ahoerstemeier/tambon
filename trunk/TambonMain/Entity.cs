@@ -425,6 +425,33 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        private IEnumerable<EntityTermEnd> LatestOfficialElectionResultUnknown()
+        {
+            var result = new List<EntityTermEnd>();
+            foreach ( var officeEntry in office )
+            {
+                if ( (!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type) )
+                {
+                    officeEntry.officials.Items.Sort((x, y) => x.begin.CompareTo(y.begin));
+                    var term = officeEntry.officials.Items.LastOrDefault();
+                    if ( term != null )
+                    {
+                        var name = String.Empty;
+                        var officialTerm = term as OfficialEntry;
+                        if ( officialTerm != null )
+                        {
+                            name = officialTerm.name;
+                        }
+                        if ( String.IsNullOrWhiteSpace(name) )
+                        {
+                            result.Add(new EntityTermEnd(this, null, term));
+                        }
+                    }
+                }
+            }
+            return result;
+        }
+
         private IEnumerable<EntityTermEnd> CouncilElectionsPending()
         {
             var result = new List<EntityTermEnd>();
@@ -591,6 +618,21 @@ namespace De.AHoerstemeier.Tambon
             foreach ( var item in FlatList() )
             {
                 result.AddRange(item.OfficialElectionsPending());
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Calculates list of entities without a result for the latest official election.
+        /// </summary>
+        /// <returns>List of entities without a result for the latest official election.</returns>
+        public IEnumerable<EntityTermEnd> EntitiesWithLatestOfficialElectionResultUnknown()
+        {
+            var result = new List<EntityTermEnd>();
+            foreach ( var item in FlatList() )
+            {
+                result.AddRange(item.LatestOfficialElectionResultUnknown());
             }
 
             return result;

@@ -702,16 +702,21 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var itemsWithCouncilElectionsPending = new List<EntityTermEnd>();
             var itemsWithOfficialElectionsPending = new List<EntityTermEnd>();
+            var itemsWithOfficialElectionResultUnknown = new List<EntityTermEnd>();
 
             var changwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
             var fullChangwat = GlobalData.GetGeocodeList(changwatGeocode);
-            var itemWithCouncilElectionPendingInChangwat = fullChangwat.EntitiesWithCouncilElectionPending();
-            itemsWithCouncilElectionsPending.AddRange(itemWithCouncilElectionPendingInChangwat);
+            var itemsWithCouncilElectionPendingInChangwat = fullChangwat.EntitiesWithCouncilElectionPending();
+            itemsWithCouncilElectionsPending.AddRange(itemsWithCouncilElectionPendingInChangwat);
             itemsWithCouncilElectionsPending.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
 
-            var itemWithOfficialElectionPendingInChangwat = fullChangwat.EntitiesWithOfficialElectionPending();
-            itemsWithOfficialElectionsPending.AddRange(itemWithOfficialElectionPendingInChangwat);
+            var itemsWithOfficialElectionPendingInChangwat = fullChangwat.EntitiesWithOfficialElectionPending();
+            itemsWithOfficialElectionsPending.AddRange(itemsWithOfficialElectionPendingInChangwat);
             itemsWithOfficialElectionsPending.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
+
+            var itemsWithOfficialElectionResultUnknownInChangwat = fullChangwat.EntitiesWithLatestOfficialElectionResultUnknown();
+            itemsWithOfficialElectionResultUnknown.AddRange(itemsWithOfficialElectionResultUnknownInChangwat);
+            itemsWithOfficialElectionResultUnknown.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
 
             var councilBuilder = new StringBuilder();
             Int32 councilCount = 0;
@@ -765,6 +770,25 @@ namespace De.AHoerstemeier.Tambon.UI
                 var displayForm = new StringDisplayForm(
                     String.Format("{0} LAO official elections pending", officialCount),
                     officialBuilder.ToString());
+                displayForm.Show();
+            }
+
+            var officialUnknownBuilder = new StringBuilder();
+            Int32 officialUnknownCount = 0;
+            foreach ( var item in itemsWithOfficialElectionResultUnknown )
+            {
+                if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )  // must be always true
+                {
+                    officialUnknownBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, item.OfficialTerm.begin);
+                    officialUnknownBuilder.AppendLine();
+                    officialUnknownCount++;
+                }
+            }
+            if ( officialUnknownCount > 0 )
+            {
+                var displayForm = new StringDisplayForm(
+                    String.Format("{0} LAO official elections result missing", officialUnknownCount),
+                    officialUnknownBuilder.ToString());
                 displayForm.Show();
             }
         }
