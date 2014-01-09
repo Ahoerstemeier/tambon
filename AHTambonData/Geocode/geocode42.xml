@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="เลย" english="Loei" geocode="42">
   <wiki wikidata="Q275388" />
+  <!-- TAO elections: 2013-10-19 - http://www2.ect.go.th/content.php?Province=loei&SiteMenuID=10930&Action=view&Sys_Page=&Sys_PageSize=&DataID=18622 -->
   <office type="ProvinceHall">
     <geo:Point>
       <geo:lat>17.4873</geo:lat>
@@ -749,9 +750,11 @@
         <!-- Longdo: 17.75406 101.976076 - but only an empty field right now in Google Earth -->
         <url lastchecked="2012-09-14">http://huaibosuen.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อารีพร จักรโนวัน" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ดุสิต เจนวิถี" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="อารีพร จักรโนวัน" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="12"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="12" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
         </council>
@@ -767,11 +770,13 @@
       <office type="TAOOffice">
         <!-- Longdo: 18.08723 101.9525 -->
         <officials>
-          <official title="TAOMayor" name="อุเทศ เบ้าแก้ว" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="อุเทศ เบ้าแก้ว" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="อุเทศ เบ้าแก้ว" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="20"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
-          <term begin="2005-08-29" end="2009-08-28" type="TAO" size="20" comment="Really 2005-08-29? Would expect 2005-07-31" />
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" comment="ECT table claims 2005-08-29, but that is too short time between two election. Thus taking same date as other LAO" />
           <!-- Mu 10 created 2004-09 -->
         </council>
       </office>
@@ -2177,12 +2182,15 @@
     <entity type="Tambon" name="โนนป่าซาง" english="Non Pa Sang" geocode="421204">
       <office type="TAOOffice">
         <officials>
+          <officialterm title="TAOMayor" begin="2014-01-19" beginreason="ElectedDirectly"/>
           <official title="TAOMayor" name="ทองอร ชารินทร์" begin="2009-12-13" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2014-01-19" type="TAO" size="24"/>
           <term begin="2009-12-13" end="2013-12-12" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
+        <!-- TAO upgrade planned in 2009? -->
       </office>
       <entity type="Muban" geocode="42120401" name="บ้านโนนป่าซาง" english="Ban Non Pa Sang" />
       <entity type="Muban" geocode="42120402" name="บ้านห้วยยาง" english="Ban Huai Yang" />
