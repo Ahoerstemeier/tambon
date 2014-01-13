@@ -1063,8 +1063,6 @@ namespace De.AHoerstemeier.Tambon {
         
         private Identifier fips10Field;
         
-        private Identifier gencField;
-        
         private Identifier salbField;
         
         private Identifier gndField;
@@ -1075,7 +1073,6 @@ namespace De.AHoerstemeier.Tambon {
         public OtherIdentifier() {
             this.gndField = new Identifier();
             this.salbField = new Identifier();
-            this.gencField = new Identifier();
             this.fips10Field = new Identifier();
             this.iso3166Field = new Identifier();
             this.hascField = new Identifier();
@@ -1134,29 +1131,12 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Geopolitical Entities, Names, and Codes (GENC), follow-up to FIPS10-4.
-        /// </summary>
-        /// <value>
-        /// The genc.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Identifier genc {
-            get {
-                return this.gencField;
-            }
-            set {
-                this.gencField = value;
-            }
-        }
-        
-        /// <summary>
         /// Second Administrative Level Boundaries. Format is THA### for provinces and THA###### for districts.
         /// </summary>
         /// <value>
         /// The salb.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Identifier salb {
             get {
@@ -1173,7 +1153,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The gnd.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Identifier gnd {
             get {
