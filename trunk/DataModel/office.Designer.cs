@@ -2201,9 +2201,14 @@ namespace De.AHoerstemeier.Tambon {
         AreaChange,
         
         /// <summary>
-        /// Title of official changed, e.g. change of TAOChairman to TAOMayor
+        /// Title of official changed, e.g. change of TAOChairman to TAOMayor.
         /// </summary>
         OfficialTypeChange,
+        
+        /// <summary>
+        /// Official stayed in same entity, but was promoted to a higher post, e.g. from vice governor to governor.
+        /// </summary>
+        Promotion,
         
         /// <summary>
         /// No specified reason.

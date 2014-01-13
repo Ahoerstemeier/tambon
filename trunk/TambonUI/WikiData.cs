@@ -193,6 +193,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var password = ConfigurationManager.AppSettings["WikiDataPassword"];
 
             api.login(username, password);
+            api.botEdits = true;
             return api;
         }
 
@@ -206,15 +207,14 @@ namespace De.AHoerstemeier.Tambon.UI
             WikiDataHelper helper = new WikiDataHelper(api);
             var item = helper.GetWikiDataItemForEntity(testEntity);
             var geocodeClaims = helper.MissingGeocodeStatements(item, testEntity);
-            if (MessageBox.Show("Really save geocodes?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if ( MessageBox.Show("Really save geocodes?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
             {
-                foreach (var claim in geocodeClaims)
+                foreach ( var claim in geocodeClaims )
                 {
                     claim.save(helper.GetClaimSaveEditSummary(claim));
                 }
             }
 
-            
             var subdivisionClaims = helper.MissingContainsAdministrativeDivisionsStatements(item, testEntity);
             if ( MessageBox.Show("Really save subdivisions?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
             {
@@ -237,6 +237,57 @@ namespace De.AHoerstemeier.Tambon.UI
             helper.SetDescriptionsAndLabels(item, testEntity);
             if ( MessageBox.Show("Really save descriptions?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
                 item.save("Updating description and label in English and Thai");
+            api.logout();
+        }
+
+        private void WikiData_Load(object sender, EventArgs e)
+        {
+            chkTypes.Items.Add(EntityType.Changwat);
+            chkTypes.Items.Add(EntityType.Amphoe);
+            chkTypes.Items.Add(EntityType.Tambon);
+            chkTypes.Items.Add(EntityType.Muban);
+            chkTypes.Items.Add(EntityType.Thesaban);
+            chkTypes.Items.Add(EntityType.TAO);
+            chkTypes.Items.Add(EntityType.Khet);
+            chkTypes.Items.Add(EntityType.Khwaeng);
+            chkTypes.Items.Add(EntityType.Chumchon);
+            chkTypes.SetItemCheckState(0, CheckState.Checked);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var entityTypes = new List<EntityType>();
+            foreach ( var item in chkTypes.CheckedItems )
+            {
+                entityTypes.Add((EntityType)item);
+            }
+            var entities = GlobalData.CompleteGeocodeList();
+            var allEntities = entities.FlatList();
+            var workItems = allEntities.Where(x => entityTypes.Contains(x.type));
+
+            WikibaseApi api = OpenConnection();
+            WikiDataHelper helper = new WikiDataHelper(api);
+
+            StringBuilder warnings = new StringBuilder();
+            foreach ( var entity in workItems )
+            {
+                var item = helper.GetWikiDataItemForEntity(entity);
+                var oldDescription = item.getDescription("en");
+                var newDescription = entity.GetWikiDataDescription(Language.English);
+
+                if ( String.IsNullOrEmpty(oldDescription) )
+                {
+                    item.setDescription("en", newDescription);
+                    item.save(String.Format("Added english description: {0}", newDescription));
+                }
+                else if ( oldDescription != newDescription )
+                {
+                    warnings.AppendFormat("{0}: {1} already has description \"{2}\"", item.id, entity.english, oldDescription);
+                    warnings.AppendLine();
+                }
+            }
+            edtCollisions.Text = warnings.ToString();
+
             api.logout();
         }
     }
