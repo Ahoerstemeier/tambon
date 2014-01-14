@@ -57,6 +57,7 @@ namespace De.AHoerstemeier.Tambon
             return entityById;
         }
 
+        // TODO: Remove code copy between SetIsInAdministrativeUnit and IsInAdministrativeUnitCorrect
         /// <summary>
         /// Gets the statement containing the parent administrative unit.
         /// </summary>
@@ -64,14 +65,17 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <returns>Statement containing the parent administrative unit.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
-        public Statement IsInAdministrativeUnit(Item item, Entity entity)
+        public Statement SetIsInAdministrativeUnit(Item item, Entity entity, Boolean overrideWrongData)
         {
             if ( item == null )
                 throw new ArgumentNullException("item");
             if ( entity == null )
                 throw new ArgumentNullException("entity");
 
-            Statement claim = item.Claims.FirstOrDefault(x => x.id.ToUpperInvariant() == WikiBase.PropertyIdIsInAdministrativeUnit) as Statement;
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdIsInAdministrativeUnit)) as Statement;
+            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+
             var parentEntity = _allEntities.First(x => x.geocode == entity.geocode / 100);
             var parent = EntityId.newFromPrefixedId(parentEntity.wiki.wikidata);
             var dataValueParent = new EntityIdValue("item", parent.numericId);
@@ -80,7 +84,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 claim = item.createStatementForSnak(parentSnak);
             }
-            else
+            else if ( overrideWrongData )
             {
                 Snak snak = claim.mainSnak;
                 var dataValue = snak.dataValue as EntityIdValue;
@@ -89,21 +93,71 @@ namespace De.AHoerstemeier.Tambon
                     claim.mainSnak = parentSnak;
                 }
             }
+            else
+            {
+                claim = null;
+            }
             return claim as Statement;
         }
 
         /// <summary>
+        /// Checks if the statement containing the parent administrative unit is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <returns>Statement containing the parent administrative unit.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        public WikiDataState IsInAdministrativeUnitCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+            if ( entity == null )
+                throw new ArgumentNullException("entity");
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdIsInAdministrativeUnit)) as Statement;
+            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+
+            var parentEntity = _allEntities.First(x => x.geocode == entity.geocode / 100);
+            var parent = EntityId.newFromPrefixedId(parentEntity.wiki.wikidata);
+            var dataValueParent = new EntityIdValue("item", parent.numericId);
+            var parentSnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit), dataValueParent);
+            if ( claim == null )
+            {
+                return WikiDataState.NotSet;
+            }
+            else
+            {
+                Snak snak = claim.mainSnak;
+                var dataValue = snak.dataValue as EntityIdValue;
+                if ( dataValue.numericId == parent.numericId )
+                {
+                    return WikiDataState.Valid;
+                }
+                else
+                {
+                    return WikiDataState.WrongValue;
+                }
+            }
+        }
+
+        // TODO: Remove code copy between SetIsInCountry and IsInCountryCorrect
+        /// <summary>
         /// Gets the statement containing the country.
         /// </summary>
         /// <param name="item">The WikiData item.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the country.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
-        public Statement IsInCountry(Item item)
+        public Statement SetIsInCountry(Item item, Boolean overrideWrongData)
         {
             if ( item == null )
                 throw new ArgumentNullException("item");
 
-            Statement claim = item.Claims.FirstOrDefault(x => x.id.ToUpperInvariant() == WikiBase.PropertyIdCountry) as Statement;
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
+            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+
             var country = EntityId.newFromPrefixedId(WikiBase.WikiDataItems[EntityType.Country]);
             var dataValueCountry = new EntityIdValue("item", country.numericId);
             var countrySnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry), dataValueCountry);
@@ -111,7 +165,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 claim = item.createStatementForSnak(countrySnak);
             }
-            else
+            else if ( overrideWrongData )
             {
                 Snak snak = claim.mainSnak;
                 var dataValue = snak.dataValue as EntityIdValue;
@@ -120,7 +174,47 @@ namespace De.AHoerstemeier.Tambon
                     claim.mainSnak = countrySnak;
                 }
             }
+            else
+            {
+                claim = null;
+            }
             return claim as Statement;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the country is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState IsInCountryCorrect(Item item)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
+            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+
+            var country = EntityId.newFromPrefixedId(WikiBase.WikiDataItems[EntityType.Country]);
+            var dataValueCountry = new EntityIdValue("item", country.numericId);
+            var countrySnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry), dataValueCountry);
+            if ( claim == null )
+            {
+                return WikiDataState.NotSet;
+            }
+            else
+            {
+                Snak snak = claim.mainSnak;
+                var dataValue = snak.dataValue as EntityIdValue;
+                if ( dataValue.numericId == country.numericId )
+                {
+                    return WikiDataState.Valid;
+                }
+                else
+                {
+                    return WikiDataState.WrongValue;
+                }
+            }
         }
 
         /// <summary>
@@ -139,12 +233,12 @@ namespace De.AHoerstemeier.Tambon
             var entityIdValue = snak.dataValue as EntityIdValue;
             if ( entityIdValue != null )
             {
-                result = String.Format("[[Property:P{0}]] [[Q{1}]]", snak.propertyId.numericId, entityIdValue.numericId);
+                result = String.Format("[[Property:P{0}]]: [[Q{1}]]", snak.propertyId.numericId, entityIdValue.numericId);
             }
             var stringValue = snak.dataValue as StringValue;
             if ( stringValue != null )
             {
-                result = String.Format("[[Property:P{0}]] {1}", snak.propertyId.numericId, stringValue.str);
+                result = String.Format("[[Property:P{0}]]: {1}", snak.propertyId.numericId, stringValue.str);
             }
             return result;
         }
@@ -228,64 +322,71 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public IEnumerable<Statement> MissingGeocodeStatements(Item item, Entity entity)
         {
-            if (item == null)
+            if ( item == null )
                 throw new ArgumentNullException("item");
-            if (entity == null)
+            if ( entity == null )
                 throw new ArgumentNullException("entity");
             var propertyGeocode = EntityId.newFromPrefixedId(WikiBase.PropertyIdThaiGeocode);
             var propertyStatedIn = EntityId.newFromPrefixedId(WikiBase.PropertyIdStatedIn);
             var result = new List<Statement>();
 
             var claims = item.Claims.Where(x => x.mainSnak.propertyId.numericId == propertyGeocode.numericId).ToList();
-                var geocodeValue =entity.geocode.ToString();
-                    Boolean claimFound = claims.Any(x => (x.mainSnak.dataValue as StringValue).str == geocodeValue);
-                    if (!claimFound)
-                    {
-                        var geocodeDataValue = new StringValue(geocodeValue);
-                        var geocodeSnak = new Snak("value", propertyGeocode, geocodeDataValue);
-                        var claim = item.createStatementForSnak(geocodeSnak);
-                        if (GeocodeHelper.ProvinceCode(entity.geocode)!=38)
-                        {
-                            if (entity.type.IsCompatibleEntityType(EntityType.Changwat))
-                            {
-                        var referenceTIS1099BE2535SnakValue = new EntityIdValue("item",EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2535).numericId);
-                        var referenceTIS1099BE2535Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2535SnakValue);
-                                claim.createReferenceForSnak(referenceTIS1099BE2535Snak);
-                            }
-                        var referenceTIS1099BE2548SnakValue = new EntityIdValue("item",EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2548).numericId);
-                        var referenceTIS1099BE2548Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2548SnakValue);
-                                claim.createReferenceForSnak(referenceTIS1099BE2548Snak);
-                        }
-                        var referenceCCAATTSnakValue = new EntityIdValue("item",EntityId.newFromPrefixedId(WikiBase.ItemSourceCCAATT).numericId);
-                        var referenceCCAATTSnak = new Snak("value", propertyStatedIn, referenceCCAATTSnakValue);
-                                claim.createReferenceForSnak(referenceCCAATTSnak);
-                        // claim.rank="high";
-                        result.Add(claim);
-                    }
-                    else
-                    {
-                        claims.RemoveAll(x => (x.mainSnak.dataValue as StringValue).str == geocodeValue);
-                    }
-
-
-            foreach (var oldGeocode in entity.OldGeocodes)
+            var geocodeValue = entity.geocode.ToString();
+            Boolean claimFound = claims.Any(x => (x.mainSnak.dataValue as StringValue).str == geocodeValue);
+            if ( !claimFound )
             {
-                var oldGeocodeValue =oldGeocode.ToString();
-                    claimFound = claims.Any(x => (x.mainSnak.dataValue as StringValue).str == oldGeocodeValue);
-                    if (!claimFound)
+                var geocodeDataValue = new StringValue(geocodeValue);
+                var geocodeSnak = new Snak("value", propertyGeocode, geocodeDataValue);
+                var claim = item.createStatementForSnak(geocodeSnak);
+                if ( GeocodeHelper.ProvinceCode(entity.geocode) != 38 )
+                {
+                    if ( entity.type.IsCompatibleEntityType(EntityType.Changwat) )
                     {
-                        var subEntityDataValue = new StringValue( oldGeocodeValue);
-                        var subEntitySnak = new Snak("value", propertyGeocode, subEntityDataValue);
-                        var claim = item.createStatementForSnak(subEntitySnak);
-                        result.Add(claim);
+                        var referenceTIS1099BE2535SnakValue = new EntityIdValue("item", EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2535).numericId);
+                        var referenceTIS1099BE2535Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2535SnakValue);
+                        claim.createReferenceForSnak(referenceTIS1099BE2535Snak);
                     }
-                    else
-                    {
-                        claims.RemoveAll(x => (x.mainSnak.dataValue as StringValue).str == oldGeocodeValue);
-                    }
+                    var referenceTIS1099BE2548SnakValue = new EntityIdValue("item", EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2548).numericId);
+                    var referenceTIS1099BE2548Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2548SnakValue);
+                    claim.createReferenceForSnak(referenceTIS1099BE2548Snak);
                 }
-            
+                var referenceCCAATTSnakValue = new EntityIdValue("item", EntityId.newFromPrefixedId(WikiBase.ItemSourceCCAATT).numericId);
+                var referenceCCAATTSnak = new Snak("value", propertyStatedIn, referenceCCAATTSnakValue);
+                claim.createReferenceForSnak(referenceCCAATTSnak);
+                // claim.rank="high";
+                result.Add(claim);
+            }
+            else
+            {
+                claims.RemoveAll(x => (x.mainSnak.dataValue as StringValue).str == geocodeValue);
+            }
+
+            foreach ( var oldGeocode in entity.OldGeocodes )
+            {
+                var oldGeocodeValue = oldGeocode.ToString();
+                claimFound = claims.Any(x => (x.mainSnak.dataValue as StringValue).str == oldGeocodeValue);
+                if ( !claimFound )
+                {
+                    var subEntityDataValue = new StringValue(oldGeocodeValue);
+                    var subEntitySnak = new Snak("value", propertyGeocode, subEntityDataValue);
+                    var claim = item.createStatementForSnak(subEntitySnak);
+                    result.Add(claim);
+                }
+                else
+                {
+                    claims.RemoveAll(x => (x.mainSnak.dataValue as StringValue).str == oldGeocodeValue);
+                }
+            }
+
             return result;
         }
+    }
+
+    public enum WikiDataState
+    {
+        Valid,
+        NotSet,
+        WrongValue,
+        Incomplete
     }
 }

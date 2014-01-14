@@ -29,6 +29,8 @@ namespace De.AHoerstemeier.Tambon
                 Provinces = provinces;
                 geocodes.entity.Clear();
                 _countryEntity = geocodes;
+                _countryEntity.wiki = new WikiLocation();
+                _countryEntity.wiki.wikidata = WikiLocation.WikiDataItems[EntityType.Country];
             }
         }
 

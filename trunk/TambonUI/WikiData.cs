@@ -14,6 +14,8 @@ namespace De.AHoerstemeier.Tambon.UI
 {
     public partial class WikiData : Form
     {
+        private WikiDataBot _bot;
+
         public WikiData()
         {
             InitializeComponent();
@@ -118,44 +120,18 @@ namespace De.AHoerstemeier.Tambon.UI
             formWikiDataEntries.Show();
         }
 
-        private const String AmphoeVibhavadi = "Q476980";
-        private const String SamuiCity = "Q13025347";
-        private const String SuratThaniProvince = "Q240463";
-        private const String SuratThaniCity = "Q840951";
-
-        private const String germanWikipediaSiteLink = "dewiki";
-        private const String englishWikipediaSiteLink = "enwiki";
-        private const String thaiWikipediaSiteLink = "thwiki";
-
         private void btnCountInterwiki_Click(object sender, EventArgs e)
         {
-            WikibaseApi api = OpenConnection();
-
-            // Create a new EntityProvider instance and pass the api created above.
-            EntityProvider entityProvider = new EntityProvider(api);
-
+            var entityTypes = CurrentActiveEntityTypes();
             var entities = GlobalData.CompleteGeocodeList();
             var allEntities = entities.FlatList();
-            var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)).Where(x => x.type == EntityType.Tambon);
+            var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
+            var workItems = entitiesWithWikiData.Where(x => entityTypes.Contains(x.type));
 
-            var siteLinkCount = new Dictionary<String, Int32>();
-            foreach ( var tambon in entitiesWithWikiData )
-            {
-                // Get an entity by searching for the id
-                var entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(tambon.wiki.wikidata));
-                var links = (entityById as Item).getSitelinks();
-                foreach ( var key in links.Keys )
-                {
-                    if ( !siteLinkCount.ContainsKey(key) )
-                        siteLinkCount[key] = 0;
-                    siteLinkCount[key]++;
-                }
-            }
-            // ... and finally logout
-            api.logout();
+            var siteLinkCount = _bot.CountSiteLinks(workItems);
 
             StringBuilder builder = new StringBuilder();
-            builder.AppendFormat("{0} Tambon on Wikidata", entitiesWithWikiData.Count());
+            builder.AppendFormat("{0} entities on Wikidata", workItems.Count());
             builder.AppendLine();
             foreach ( var value in siteLinkCount )
             {
@@ -170,21 +146,6 @@ namespace De.AHoerstemeier.Tambon.UI
             formWikiDataEntries.Show();
         }
 
-        private void btnTestGet_Click(object sender, EventArgs e)
-        {
-            WikibaseApi api = OpenConnection();
-
-            // Create a new EntityProvider instance and pass the api created above.
-            EntityProvider entityProvider = new EntityProvider(api);
-
-            var entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(SuratThaniCity));
-            var claimTypeOfAdministration = entityById.Claims.Where(x => x.mainSnak.propertyId.ToString() == WikiBase.PropertyIdWebsite.ToLowerInvariant());
-            var firstTypeOfAdministration = claimTypeOfAdministration.FirstOrDefault();
-
-            // ... and finally logout
-            api.logout();
-        }
-
         private static WikibaseApi OpenConnection()
         {
             WikibaseApi api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
@@ -194,50 +155,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
             api.login(username, password);
             api.botEdits = true;
+            api.editlimit = true;
+            api.editLaps = 1000;  // one edit per second
             return api;
-        }
-
-        private void btnTestSet_Click(object sender, EventArgs e)
-        {
-            var entities = GlobalData.CompleteGeocodeList();
-            var allEntities = entities.FlatList();
-            var testEntity = allEntities.First(x => x.geocode == 5301);
-
-            WikibaseApi api = OpenConnection();
-            WikiDataHelper helper = new WikiDataHelper(api);
-            var item = helper.GetWikiDataItemForEntity(testEntity);
-            var geocodeClaims = helper.MissingGeocodeStatements(item, testEntity);
-            if ( MessageBox.Show("Really save geocodes?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
-            {
-                foreach ( var claim in geocodeClaims )
-                {
-                    claim.save(helper.GetClaimSaveEditSummary(claim));
-                }
-            }
-
-            var subdivisionClaims = helper.MissingContainsAdministrativeDivisionsStatements(item, testEntity);
-            if ( MessageBox.Show("Really save subdivisions?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
-            {
-                foreach ( var claim in subdivisionClaims )
-                {
-                    claim.save(helper.GetClaimSaveEditSummary(claim));
-                }
-            }
-
-            var countryClaim = helper.IsInCountry(item);
-            // if (countryClaim.Changed)
-            if ( MessageBox.Show("Really save country?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
-                countryClaim.save(helper.GetClaimSaveEditSummary(countryClaim));
-
-            var parentClaim = helper.IsInAdministrativeUnit(item, testEntity);
-            // if (parentClaim.Changed)
-            if ( MessageBox.Show("Really save parent?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
-                parentClaim.save(helper.GetClaimSaveEditSummary(parentClaim));
-
-            helper.SetDescriptionsAndLabels(item, testEntity);
-            if ( MessageBox.Show("Really save descriptions?", "Confirm send operation", MessageBoxButtons.YesNo) == DialogResult.Yes )
-                item.save("Updating description and label in English and Thai");
-            api.logout();
         }
 
         private void WikiData_Load(object sender, EventArgs e)
@@ -254,41 +174,59 @@ namespace De.AHoerstemeier.Tambon.UI
             chkTypes.SetItemCheckState(0, CheckState.Checked);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            var entityTypes = CurrentActiveEntityTypes();
+            var entities = GlobalData.CompleteGeocodeList();
+            var allEntities = entities.FlatList();
+            var workItems = allEntities.Where(x => entityTypes.Contains(x.type));
+
+            StringBuilder warnings = new StringBuilder();
+
+            var activity = cbxActivity.SelectedItem as WikiDataTaskInfo;
+            if ( activity != null )
+            {
+                activity.Task(workItems, warnings, chkOverride.Checked);
+            }
+
+            edtCollisions.Text = warnings.ToString();
+        }
+
+        private IEnumerable<EntityType> CurrentActiveEntityTypes()
         {
             var entityTypes = new List<EntityType>();
             foreach ( var item in chkTypes.CheckedItems )
             {
                 entityTypes.Add((EntityType)item);
             }
-            var entities = GlobalData.CompleteGeocodeList();
-            var allEntities = entities.FlatList();
-            var workItems = allEntities.Where(x => entityTypes.Contains(x.type));
+            return entityTypes;
+        }
 
-            WikibaseApi api = OpenConnection();
-            WikiDataHelper helper = new WikiDataHelper(api);
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            var api = OpenConnection();
+            var helper = new WikiDataHelper(api);
+            _bot = new WikiDataBot(helper);
 
-            StringBuilder warnings = new StringBuilder();
-            foreach ( var entity in workItems )
+            foreach ( var activity in _bot.AvailableTasks )
             {
-                var item = helper.GetWikiDataItemForEntity(entity);
-                var oldDescription = item.getDescription("en");
-                var newDescription = entity.GetWikiDataDescription(Language.English);
-
-                if ( String.IsNullOrEmpty(oldDescription) )
-                {
-                    item.setDescription("en", newDescription);
-                    item.save(String.Format("Added english description: {0}", newDescription));
-                }
-                else if ( oldDescription != newDescription )
-                {
-                    warnings.AppendFormat("{0}: {1} already has description \"{2}\"", item.id, entity.english, oldDescription);
-                    warnings.AppendLine();
-                }
+                cbxActivity.Items.Add(activity);
             }
-            edtCollisions.Text = warnings.ToString();
+            btnRun.Enabled = true;
+            btnLogout.Enabled = true;
+            btnLogin.Enabled = false;
+            btnCountInterwiki.Enabled = true;
+        }
 
-            api.logout();
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            _bot.LogOut();
+            _bot = null;
+
+            btnRun.Enabled = false;
+            btnLogout.Enabled = false;
+            btnLogin.Enabled = true;
+            btnCountInterwiki.Enabled = false;
         }
     }
 }
