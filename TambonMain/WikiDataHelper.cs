@@ -57,7 +57,52 @@ namespace De.AHoerstemeier.Tambon
             return entityById;
         }
 
-        // TODO: Remove code copy between SetIsInAdministrativeUnit and IsInAdministrativeUnitCorrect
+        private WikiDataState IsInAdministrativeUnit(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+            if ( entity == null )
+                throw new ArgumentNullException("entity");
+
+            WikiDataState result = WikiDataState.Unknown;
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdIsInAdministrativeUnit)) as Statement;
+            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+
+            var parentEntity = _allEntities.First(x => x.geocode == entity.geocode / 100);
+            var parent = EntityId.newFromPrefixedId(parentEntity.wiki.wikidata);
+            var dataValueParent = new EntityIdValue("item", parent.numericId);
+            var parentSnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit), dataValueParent);
+            if ( claim == null )
+            {
+                result = WikiDataState.NotSet;
+                if ( createStatement )
+                {
+                    claim = item.createStatementForSnak(parentSnak);
+                }
+            }
+            else
+            {
+                Snak snak = claim.mainSnak;
+                var dataValue = snak.dataValue as EntityIdValue;
+                if ( dataValue.numericId == parent.numericId )
+                {
+                    result = WikiDataState.Valid;
+                }
+                else
+                {
+                    result = WikiDataState.WrongValue;
+                    if ( overrideWrongData )
+                    {
+                        claim.mainSnak = parentSnak;
+                    }
+                }
+            }
+            statement = claim as Statement;
+            return result;
+        }
+
         /// <summary>
         /// Gets the statement containing the parent administrative unit.
         /// </summary>
@@ -72,32 +117,10 @@ namespace De.AHoerstemeier.Tambon
             if ( entity == null )
                 throw new ArgumentNullException("entity");
 
-            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdIsInAdministrativeUnit)) as Statement;
-            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit);
-            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+            Statement result;
+            IsInAdministrativeUnit(item, entity, true, overrideWrongData, out result);
 
-            var parentEntity = _allEntities.First(x => x.geocode == entity.geocode / 100);
-            var parent = EntityId.newFromPrefixedId(parentEntity.wiki.wikidata);
-            var dataValueParent = new EntityIdValue("item", parent.numericId);
-            var parentSnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit), dataValueParent);
-            if ( claim == null )
-            {
-                claim = item.createStatementForSnak(parentSnak);
-            }
-            else if ( overrideWrongData )
-            {
-                Snak snak = claim.mainSnak;
-                var dataValue = snak.dataValue as EntityIdValue;
-                if ( dataValue.numericId != parent.numericId )
-                {
-                    claim.mainSnak = parentSnak;
-                }
-            }
-            else
-            {
-                claim = null;
-            }
-            return claim as Statement;
+            return result;
         }
 
         /// <summary>
@@ -114,34 +137,54 @@ namespace De.AHoerstemeier.Tambon
             if ( entity == null )
                 throw new ArgumentNullException("entity");
 
-            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdIsInAdministrativeUnit)) as Statement;
-            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit);
+            Statement dummy;
+            return IsInAdministrativeUnit(item, entity, false, false, out dummy);
+        }
+
+        private WikiDataState IsInCountry(Item item, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            WikiDataState result = WikiDataState.Unknown;
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
+            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry);
             Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
 
-            var parentEntity = _allEntities.First(x => x.geocode == entity.geocode / 100);
-            var parent = EntityId.newFromPrefixedId(parentEntity.wiki.wikidata);
-            var dataValueParent = new EntityIdValue("item", parent.numericId);
-            var parentSnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdIsInAdministrativeUnit), dataValueParent);
+            var country = EntityId.newFromPrefixedId(WikiBase.WikiDataItems[EntityType.Country]);
+            var dataValueCountry = new EntityIdValue("item", country.numericId);
+            var countrySnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry), dataValueCountry);
             if ( claim == null )
             {
-                return WikiDataState.NotSet;
+                result = WikiDataState.NotSet;
+                if ( createStatement )
+                {
+                    claim = item.createStatementForSnak(countrySnak);
+                }
             }
             else
             {
                 Snak snak = claim.mainSnak;
                 var dataValue = snak.dataValue as EntityIdValue;
-                if ( dataValue.numericId == parent.numericId )
+                if ( dataValue.numericId != country.numericId )
                 {
-                    return WikiDataState.Valid;
+                    result = WikiDataState.Valid;
                 }
                 else
                 {
-                    return WikiDataState.WrongValue;
+                    result = WikiDataState.WrongValue;
+                    if ( overrideWrongData )
+                    {
+                        claim.mainSnak = countrySnak;
+                    }
                 }
             }
+
+            statement = claim as Statement;
+            return result;
         }
 
-        // TODO: Remove code copy between SetIsInCountry and IsInCountryCorrect
         /// <summary>
         /// Gets the statement containing the country.
         /// </summary>
@@ -154,31 +197,9 @@ namespace De.AHoerstemeier.Tambon
             if ( item == null )
                 throw new ArgumentNullException("item");
 
-            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
-            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry);
-            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
-
-            var country = EntityId.newFromPrefixedId(WikiBase.WikiDataItems[EntityType.Country]);
-            var dataValueCountry = new EntityIdValue("item", country.numericId);
-            var countrySnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry), dataValueCountry);
-            if ( claim == null )
-            {
-                claim = item.createStatementForSnak(countrySnak);
-            }
-            else if ( overrideWrongData )
-            {
-                Snak snak = claim.mainSnak;
-                var dataValue = snak.dataValue as EntityIdValue;
-                if ( dataValue.numericId != country.numericId )
-                {
-                    claim.mainSnak = countrySnak;
-                }
-            }
-            else
-            {
-                claim = null;
-            }
-            return claim as Statement;
+            Statement result;
+            IsInCountry(item, true, overrideWrongData, out result);
+            return result;
         }
 
         /// <summary>
@@ -191,30 +212,8 @@ namespace De.AHoerstemeier.Tambon
             if ( item == null )
                 throw new ArgumentNullException("item");
 
-            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
-            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry);
-            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
-
-            var country = EntityId.newFromPrefixedId(WikiBase.WikiDataItems[EntityType.Country]);
-            var dataValueCountry = new EntityIdValue("item", country.numericId);
-            var countrySnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdCountry), dataValueCountry);
-            if ( claim == null )
-            {
-                return WikiDataState.NotSet;
-            }
-            else
-            {
-                Snak snak = claim.mainSnak;
-                var dataValue = snak.dataValue as EntityIdValue;
-                if ( dataValue.numericId == country.numericId )
-                {
-                    return WikiDataState.Valid;
-                }
-                else
-                {
-                    return WikiDataState.WrongValue;
-                }
-            }
+            Statement dummy;
+            return IsInCountry(item, false, false, out dummy);
         }
 
         /// <summary>
@@ -384,6 +383,7 @@ namespace De.AHoerstemeier.Tambon
 
     public enum WikiDataState
     {
+        Unknown,
         Valid,
         NotSet,
         WrongValue,
