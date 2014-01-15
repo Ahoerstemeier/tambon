@@ -179,7 +179,8 @@ namespace De.AHoerstemeier.Tambon.UI
             var entityTypes = CurrentActiveEntityTypes();
             var entities = GlobalData.CompleteGeocodeList();
             var allEntities = entities.FlatList();
-            var workItems = allEntities.Where(x => entityTypes.Contains(x.type));
+            var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
+            var workItems = entitiesWithWikiData.Where(x => entityTypes.Contains(x.type));
 
             StringBuilder warnings = new StringBuilder();
 
@@ -189,7 +190,20 @@ namespace De.AHoerstemeier.Tambon.UI
                 activity.Task(workItems, warnings, chkOverride.Checked);
             }
 
-            edtCollisions.Text = warnings.ToString();
+            StringBuilder info = new StringBuilder();
+            info.AppendFormat("{0} items", workItems.Count());
+            info.AppendLine();
+            foreach ( var keyvaluepair in _bot.RunInfo )
+            {
+                if ( keyvaluepair.Value > 0 )
+                {
+                    info.AppendFormat("{0} items had state {1}", keyvaluepair.Value, keyvaluepair.Key);
+                    info.AppendLine();
+                }
+            }
+            info.AppendLine();
+
+            edtCollisions.Text = info.ToString() + warnings.ToString();
         }
 
         private IEnumerable<EntityType> CurrentActiveEntityTypes()

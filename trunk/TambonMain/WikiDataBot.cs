@@ -50,6 +50,16 @@ namespace De.AHoerstemeier.Tambon
 
         private WikiDataHelper _helper;
 
+        private Dictionary<WikiDataState, Int32> _runInfo;
+
+        public Dictionary<WikiDataState, Int32> RunInfo
+        {
+            get
+            {
+                return _runInfo;
+            }
+        }
+
         public WikiDataBot(WikiDataHelper helper)
         {
             if ( helper == null )
@@ -58,6 +68,7 @@ namespace De.AHoerstemeier.Tambon
             }
 
             _helper = helper;
+            _runInfo = new Dictionary<WikiDataState, Int32>();
 
             _availableTasks = new List<WikiDataTaskInfo>();
             WikiDataTaskDelegate setDescriptionEnglish = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetDescription(Language.English, entities, collisionInfo, overrideData);
@@ -87,6 +98,7 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("entities");
             }
             var languageCode = _languageCode[language];
+            ClearRunInfo();
 
             foreach ( var entity in entities )
             {
@@ -115,16 +127,27 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        private void ClearRunInfo()
+        {
+            _runInfo.Clear();
+            foreach ( var state in Enum.GetValues(typeof(WikiDataState)) )
+            {
+                _runInfo[(WikiDataState)state] = 0;
+            }
+        }
+
         private void SetCountry(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
             if ( entities == null )
             {
                 throw new ArgumentNullException("entities");
             }
+            ClearRunInfo();
             foreach ( var entity in entities )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
                 var state = _helper.IsInCountryCorrect(item);
+                _runInfo[state]++;
                 if ( state == WikiDataState.WrongValue )
                 {
                     collisionInfo.AppendFormat("{0}: {1} has wrong country", item.id, entity.english);
@@ -147,10 +170,12 @@ namespace De.AHoerstemeier.Tambon
             {
                 throw new ArgumentNullException("entities");
             }
+            ClearRunInfo();
             foreach ( var entity in entities )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
                 var state = _helper.IsInAdministrativeUnitCorrect(item, entity);
+                _runInfo[state]++;
                 if ( state == WikiDataState.WrongValue )
                 {
                     collisionInfo.AppendFormat("{0}: {1} has wrong parent", item.id, entity.english);
