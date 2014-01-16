@@ -66,6 +66,7 @@ namespace De.AHoerstemeier.Tambon
     public class WikiDataBot
     {
         #region fields
+
         private Dictionary<Language, String> _languageCode;
 
         private List<WikiDataTaskInfo> _availableTasks;
@@ -73,8 +74,11 @@ namespace De.AHoerstemeier.Tambon
         private WikiDataHelper _helper;
 
         private Dictionary<WikiDataState, Int32> _runInfo;
-        #endregion
+
+        #endregion fields
+
         #region properties
+
         /// <summary>
         /// Gets the available tasks.
         /// </summary>
@@ -98,8 +102,11 @@ namespace De.AHoerstemeier.Tambon
                 return _runInfo;
             }
         }
-        #endregion
+
+        #endregion properties
+
         #region constructor
+
         /// <summary>
         /// Creates a new instance of <see cref="WikiDataBot"/>.
         /// </summary>
@@ -107,7 +114,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="helper"/> is <c>null</c>.</exception>
         public WikiDataBot(WikiDataHelper helper)
         {
-            if (helper == null)
+            if ( helper == null )
             {
                 throw new ArgumentNullException("helper");
             }
@@ -136,8 +143,11 @@ namespace De.AHoerstemeier.Tambon
                 {Language.Thai,"th"},
             };
         }
-        #endregion
+
+        #endregion constructor
+
         #region public methods
+
         /// <summary>
         /// Disconnects from WikiData server.
         /// </summary>
@@ -151,115 +161,155 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="entities">Entities to check.</param>
         /// <returns>Number of sitelinks by name of the wiki.</returns>
-        public Dictionary<String, Int32> CountSiteLinks(IEnumerable<Entity> entities)
+        public Dictionary<String, Int32> CountSiteLinks(IEnumerable<Entity> entities, StringBuilder collisionData)
         {
             var result = new Dictionary<String, Int32>();
+            result["Orphan"] = 0;
+            result["Deleted"] = 0;
             // Create a new EntityProvider instance and pass the api created above.
             EntityProvider entityProvider = new EntityProvider(_helper.Api);
-            foreach (var entity in entities)
+            foreach ( var entity in entities )
             {
                 // Get an entity by searching for the id
-                var entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(entity.wiki.wikidata));
-                var links = (entityById as Item).getSitelinks();
-                foreach (var key in links.Keys)
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item != null )
                 {
-                    if (!result.ContainsKey(key))
-                        result[key] = 0;
-                    result[key]++;
+                    var links = item.getSitelinks();
+                    if ( !links.Any() )
+                    {
+                        result["Orphan"]++;
+                        if ( collisionData != null )
+                        {
+                            collisionData.AppendFormat("Orphan: {0} - {1} ({2})", entity.wiki.wikidata, entity.english, entity.geocode);
+                            collisionData.AppendLine();
+                        }
+                    }
+                    foreach ( var key in links.Keys )
+                    {
+                        if ( !result.ContainsKey(key) )
+                            result[key] = 0;
+                        result[key]++;
+                    }
+                }
+                else
+                {
+                    result["Deleted"]++;
+                    if ( collisionData != null )
+                    {
+                        collisionData.AppendFormat("Deleted: {0} - {1} ({2})", entity.wiki.wikidata, entity.english, entity.geocode);
+                        collisionData.AppendLine();
+                    }
                 }
             }
             return result;
         }
-        #endregion
+
+        #endregion public methods
+
         #region private methods
+
         private void SetDescription(Language language, IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
+            if ( entities == null )
             {
                 throw new ArgumentNullException("entities");
             }
             var languageCode = _languageCode[language];
             ClearRunInfo();
 
-            foreach (var entity in entities)
+            foreach ( var entity in entities )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                var oldDescription = item.getDescription(languageCode);
-                var newDescription = entity.GetWikiDataDescription(language);
-
-                if (String.IsNullOrEmpty(oldDescription))
+                if ( item == null )
                 {
-                    _runInfo[WikiDataState.NotSet]++;
-                    item.setDescription(languageCode, newDescription);
-                    item.save(String.Format("Added description [{0}]: {1}", languageCode, newDescription));
-                }
-                else if (oldDescription != newDescription)
-                {
-                    _runInfo[WikiDataState.WrongValue]++;
-                    if (collisionInfo != null)
-                    {
-                        collisionInfo.AppendFormat("{0}: {1} already has description [{2}] \"{3}\"", item.id, entity.english, languageCode, oldDescription);
-                        collisionInfo.AppendLine();
-                    }
-                    if (overrideData)
-                    {
-                        item.setDescription(languageCode, newDescription);
-                        item.save(String.Format("Updated description [{0}]: {1}", languageCode, newDescription));
-                    }
+                    _runInfo[WikiDataState.ItemNotFound]++;
                 }
                 else
                 {
-                    _runInfo[WikiDataState.Valid]++;
+                    var oldDescription = item.getDescription(languageCode);
+                    var newDescription = entity.GetWikiDataDescription(language);
+
+                    if ( String.IsNullOrEmpty(oldDescription) )
+                    {
+                        _runInfo[WikiDataState.NotSet]++;
+                        item.setDescription(languageCode, newDescription);
+                        item.save(String.Format("Added description [{0}]: {1}", languageCode, newDescription));
+                    }
+                    else if ( oldDescription != newDescription )
+                    {
+                        _runInfo[WikiDataState.WrongValue]++;
+                        if ( collisionInfo != null )
+                        {
+                            collisionInfo.AppendFormat("{0}: {1} already has description [{2}] \"{3}\"", item.id, entity.english, languageCode, oldDescription);
+                            collisionInfo.AppendLine();
+                        }
+                        if ( overrideData )
+                        {
+                            item.setDescription(languageCode, newDescription);
+                            item.save(String.Format("Updated description [{0}]: {1}", languageCode, newDescription));
+                        }
+                    }
+                    else
+                    {
+                        _runInfo[WikiDataState.Valid]++;
+                    }
                 }
             }
         }
 
         private void SetLabel(Language language, IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
+            if ( entities == null )
             {
                 throw new ArgumentNullException("entities");
             }
             var languageCode = _languageCode[language];
             ClearRunInfo();
 
-            foreach (var entity in entities)
+            foreach ( var entity in entities )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                var oldLabel = item.getLabel(languageCode);
-                String newLabel;
-                if (language == Language.Thai)
+                if ( item == null )
                 {
-                    newLabel = entity.FullName;
+                    _runInfo[WikiDataState.ItemNotFound]++;
                 }
                 else
                 {
-                    newLabel = entity.english;
-                }
+                    var oldLabel = item.getLabel(languageCode);
+                    String newLabel;
+                    if ( language == Language.Thai )
+                    {
+                        newLabel = entity.FullName;
+                    }
+                    else
+                    {
+                        newLabel = entity.english;
+                    }
 
-                if (String.IsNullOrEmpty(oldLabel))
-                {
-                    _runInfo[WikiDataState.NotSet]++;
-                    item.setLabel(languageCode, newLabel);
-                    item.save(String.Format("Added label [{0}]: {1}", languageCode, newLabel));
-                }
-                else if (oldLabel != newLabel)
-                {
-                    _runInfo[WikiDataState.WrongValue]++;
-                    if (collisionInfo != null)
+                    if ( String.IsNullOrEmpty(oldLabel) )
                     {
-                        collisionInfo.AppendFormat("{0}: {1} already has label [{2}] \"{3}\"", item.id, entity.english, languageCode, oldLabel);
-                        collisionInfo.AppendLine();
+                        _runInfo[WikiDataState.NotSet]++;
+                        item.setLabel(languageCode, newLabel);
+                        item.save(String.Format("Added label [{0}]: {1}", languageCode, newLabel));
                     }
-                    if (overrideData)
+                    else if ( oldLabel != newLabel )
                     {
-                        item.setDescription(languageCode, newLabel);
-                        item.save(String.Format("Updated label [{0}]: {1}", languageCode, newLabel));
+                        _runInfo[WikiDataState.WrongValue]++;
+                        if ( collisionInfo != null )
+                        {
+                            collisionInfo.AppendFormat("{0}: {1} already has label [{2}] \"{3}\"", item.id, entity.english, languageCode, oldLabel);
+                            collisionInfo.AppendLine();
+                        }
+                        if ( overrideData )
+                        {
+                            item.setDescription(languageCode, newLabel);
+                            item.save(String.Format("Updated label [{0}]: {1}", languageCode, newLabel));
+                        }
                     }
-                }
-                else
-                {
-                    _runInfo[WikiDataState.Valid]++;
+                    else
+                    {
+                        _runInfo[WikiDataState.Valid]++;
+                    }
                 }
             }
         }
@@ -267,7 +317,7 @@ namespace De.AHoerstemeier.Tambon
         private void ClearRunInfo()
         {
             _runInfo.Clear();
-            foreach (var state in Enum.GetValues(typeof(WikiDataState)))
+            foreach ( var state in Enum.GetValues(typeof(WikiDataState)) )
             {
                 _runInfo[(WikiDataState)state] = 0;
             }
@@ -275,27 +325,34 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetCountry(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
+            if ( entities == null )
             {
                 throw new ArgumentNullException("entities");
             }
             ClearRunInfo();
-            foreach (var entity in entities)
+            foreach ( var entity in entities )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                var state = _helper.IsInCountryCorrect(item);
-                _runInfo[state]++;
-                if (state == WikiDataState.WrongValue)
+                if ( item == null )
                 {
-                    collisionInfo.AppendFormat("{0}: {1} has wrong country", item.id, entity.english);
-                    collisionInfo.AppendLine();
+                    _runInfo[WikiDataState.ItemNotFound]++;
                 }
-                if (state != WikiDataState.Valid)
+                else
                 {
-                    var statement = _helper.SetIsInCountry(item, overrideData);
-                    if (statement != null)
+                    var state = _helper.IsInCountryCorrect(item);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
                     {
-                        statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        collisionInfo.AppendFormat("{0}: {1} has wrong country", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetIsInCountry(item, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
                     }
                 }
             }
@@ -303,31 +360,39 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetIsInAdministrativeUnit(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
+            if ( entities == null )
             {
                 throw new ArgumentNullException("entities");
             }
             ClearRunInfo();
-            foreach (var entity in entities)
+            foreach ( var entity in entities )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                var state = _helper.IsInAdministrativeUnitCorrect(item, entity);
-                _runInfo[state]++;
-                if (state == WikiDataState.WrongValue)
+                if ( item == null )
                 {
-                    collisionInfo.AppendFormat("{0}: {1} has wrong parent", item.id, entity.english);
-                    collisionInfo.AppendLine();
+                    _runInfo[WikiDataState.ItemNotFound]++;
                 }
-                if (state != WikiDataState.Valid)
+                else
                 {
-                    var statement = _helper.SetIsInAdministrativeUnit(item, entity, overrideData);
-                    if (statement != null)
+                    var state = _helper.IsInAdministrativeUnitCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
                     {
-                        statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        collisionInfo.AppendFormat("{0}: {1} has wrong parent", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetIsInAdministrativeUnit(item, entity, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
                     }
                 }
             }
         }
-        #endregion
+
+        #endregion private methods
     }
 }

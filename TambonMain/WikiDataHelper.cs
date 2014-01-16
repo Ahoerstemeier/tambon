@@ -167,7 +167,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 Snak snak = claim.mainSnak;
                 var dataValue = snak.dataValue as EntityIdValue;
-                if ( dataValue.numericId != country.numericId )
+                if ( dataValue.numericId == country.numericId )
                 {
                     result = WikiDataState.Valid;
                 }
@@ -332,7 +332,7 @@ namespace De.AHoerstemeier.Tambon
             var claims = item.Claims.Where(x => x.mainSnak.propertyId.numericId == propertyGeocode.numericId).ToList();
             var geocodeValue = entity.geocode.ToString();
             result = claims.FirstOrDefault(x => (x.mainSnak.dataValue as StringValue).str == geocodeValue) as Statement;
-            if ( result==null )
+            if ( result == null )
             {
                 var geocodeDataValue = new StringValue(geocodeValue);
                 var geocodeSnak = new Snak("value", propertyGeocode, geocodeDataValue);
@@ -340,7 +340,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( GeocodeHelper.ProvinceCode(entity.geocode) != 38 )
                 {
                     // Bueng Kan not yet in TIS 1099
-                    if (entity.type.IsCompatibleEntityType(EntityType.Changwat) && (entity.geocode != 37) && (entity.geocode != 39) && (entity.geocode != 27))
+                    if ( entity.type.IsCompatibleEntityType(EntityType.Changwat) && (entity.geocode != 37) && (entity.geocode != 39) && (entity.geocode != 27) )
                     {
                         // TIS 1099-2535 had only changwat/Bangkok, and no Sa Kaeo, Nong Bua Lamphu, Amnat Charoen
                         var referenceTIS1099BE2535SnakValue = new EntityIdValue("item", EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2535).numericId);
@@ -371,6 +371,7 @@ namespace De.AHoerstemeier.Tambon
         Valid,
         NotSet,
         WrongValue,
-        Incomplete
+        Incomplete,
+        ItemNotFound
     }
 }

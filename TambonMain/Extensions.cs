@@ -56,6 +56,16 @@ namespace De.AHoerstemeier.Tambon
                     {Language.German,"Kommune"},
                     {Language.Thai,"ตำบล"}
                 }},
+                {EntityType.Khwaeng, new Dictionary<Language,String>(){
+                    {Language.English,"subdistrict"},
+                    {Language.German,"Unterbezirk"},
+                    {Language.Thai,"แขวง"}
+                }},
+                {EntityType.Khet, new Dictionary<Language,String>(){
+                    {Language.English,"district"},
+                    {Language.German,"Bezirk"},
+                    {Language.Thai,"แขวง"}
+                }},
                 {EntityType.Amphoe, new Dictionary<Language,String>(){
                     {Language.English,"district"},
                     {Language.German,"Kreis"},
@@ -65,6 +75,11 @@ namespace De.AHoerstemeier.Tambon
                     {Language.English,"province"},
                     {Language.German,"Provinz"},
                     {Language.Thai,"จังหวัด"}
+                }},
+                {EntityType.Chumchon, new Dictionary<Language,String>(){
+                    {Language.English,"borough"},
+                    {Language.German,"Bezirk"},
+                    {Language.Thai,"ชุมชน"}
                 }},
         };
 

@@ -717,5 +717,59 @@ namespace De.AHoerstemeier.Tambon
                 return entities.Select(x => x.geocode).ToList();
             }
         }
+
+        /// <summary>
+        /// Creates a special entity for the local governments which have no geocode by themself, but are still linked with the Tambon.
+        /// </summary>
+        /// <returns>Newly created entity, or <c>null</c> is instance has no local government to split off.</returns>
+        public Entity CreateLocalGovernmentDummyEntity()
+        {
+            Entity result = null;
+            if ( this.type == EntityType.Tambon )
+            {
+                var office = this.office.SingleOrDefault(x => x.type == OfficeType.TAOOffice || x.type == OfficeType.MunicipalityOffice);
+                if ( office != null )
+                {
+                    result = new Entity();
+                    result.name = this.name;
+                    result.english = this.english;
+                    result.geocode = this.geocode + 50;  // see http://tambon.blogspot.com/2009/07/geocodes-for-municipalities-my-proposal.html
+                    result.obsolete = office.obsolete;
+                    if ( office.type == OfficeType.TAOOffice )
+                    {
+                        result.type = EntityType.TAO;
+                    }
+                    else
+                    {
+                        result.type = EntityType.Thesaban;
+                    }
+                    result.tambon = this.geocode;
+                    result.wiki = office.wiki;
+                    result.office.Add(office);
+                    // history has latest change at beginning
+                    foreach ( var history in office.history.Items.Where(x => x.status == ChangeStatus.Done || x.status == ChangeStatus.Gazette).Reverse() )
+                    {
+                        var rename = history as HistoryRename;
+                        if ( rename != null )
+                        {
+                            result.name = rename.name;
+                            result.english = rename.english;
+                        }
+                        var status = history as HistoryStatus;
+                        if ( status != null )
+                        {
+                            result.type = status.@new;
+                        }
+                        var create = history as HistoryCreate;
+                        if ( create != null )
+                        {
+                            result.type = create.type;
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

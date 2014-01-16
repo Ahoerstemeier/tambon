@@ -16,6 +16,8 @@ namespace De.AHoerstemeier.Tambon.UI
     {
         private WikiDataBot _bot;
 
+        private List<Entity> allEntities = null;
+
         public WikiData()
         {
             InitializeComponent();
@@ -32,15 +34,13 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
-            var entities = GlobalData.CompleteGeocodeList();
-            var allEntities = entities.FlatList();
             var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
             var wikiDataLinks = new List<String>();
             wikiDataLinks.AddRange(entitiesWithWikiData.Select(x => x.wiki.wikidata));
 
             var allOffices = allEntities.SelectMany(x => x.office);
-            var officesWithWikiData = allOffices.Where(y => y.wiki != null && !String.IsNullOrEmpty(y.wiki.wikidata));
-            wikiDataLinks.AddRange(officesWithWikiData.Select(x => x.wiki.wikidata));
+            //var officesWithWikiData = allOffices.Where(y => y.wiki != null && !String.IsNullOrEmpty(y.wiki.wikidata));
+            //wikiDataLinks.AddRange(officesWithWikiData.Select(x => x.wiki.wikidata));
 
             // write to CSV file?
 
@@ -85,13 +85,13 @@ namespace De.AHoerstemeier.Tambon.UI
 
             builder.AppendLine();
 
-            var officesWithWikiDataByType = officesWithWikiData.GroupBy(x => x.type).OrderBy(y => y.Count());
-            foreach ( var type in officesWithWikiDataByType )
-            {
-                builder.AppendFormat("{0}: {1}", type.Key, type.Count());
-                builder.AppendLine();
-            }
-            builder.AppendLine();
+            //var officesWithWikiDataByType = officesWithWikiData.GroupBy(x => x.type).OrderBy(y => y.Count());
+            //foreach ( var type in officesWithWikiDataByType )
+            //{
+            //    builder.AppendFormat("{0}: {1}", type.Key, type.Count());
+            //    builder.AppendLine();
+            //}
+            //builder.AppendLine();
 
             var announcementsWithWikiData = GlobalData.AllGazetteAnnouncements.entry.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
             if ( announcementsWithWikiData.Any() )
@@ -115,7 +115,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var result = builder.ToString();
 
             var formWikiDataEntries = new StringDisplayForm(
-                String.Format("Wikidata coverage ({0})", officesWithWikiData.Count() + entitiesWithWikiData.Count()),
+                String.Format("Wikidata coverage ({0})", entitiesWithWikiData.Count()),
                 result);
             formWikiDataEntries.Show();
         }
@@ -123,12 +123,11 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnCountInterwiki_Click(object sender, EventArgs e)
         {
             var entityTypes = CurrentActiveEntityTypes();
-            var entities = GlobalData.CompleteGeocodeList();
-            var allEntities = entities.FlatList();
             var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
             var workItems = entitiesWithWikiData.Where(x => entityTypes.Contains(x.type));
 
-            var siteLinkCount = _bot.CountSiteLinks(workItems);
+            StringBuilder collisions = new StringBuilder();
+            var siteLinkCount = _bot.CountSiteLinks(workItems, collisions);
 
             StringBuilder builder = new StringBuilder();
             builder.AppendFormat("{0} entities on Wikidata", workItems.Count());
@@ -139,6 +138,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 builder.AppendLine();
             }
             var result = builder.ToString();
+            edtCollisions.Text = collisions.ToString();
 
             var formWikiDataEntries = new StringDisplayForm(
                 "Wikidata language coverage",
@@ -172,13 +172,24 @@ namespace De.AHoerstemeier.Tambon.UI
             chkTypes.Items.Add(EntityType.Khwaeng);
             chkTypes.Items.Add(EntityType.Chumchon);
             chkTypes.SetItemCheckState(0, CheckState.Checked);
+
+            allEntities = new List<Entity>();
+            var entities = GlobalData.CompleteGeocodeList();
+            allEntities.AddRange(entities.FlatList());
+            var allTambon = allEntities.Where(x => x.type == EntityType.Tambon).ToList();
+            foreach ( var tambon in allTambon )
+            {
+                var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
+                if ( localGovernmentEntity != null )
+                {
+                    allEntities.Add(localGovernmentEntity);
+                }
+            }
         }
 
         private void btnRun_Click(object sender, EventArgs e)
         {
             var entityTypes = CurrentActiveEntityTypes();
-            var entities = GlobalData.CompleteGeocodeList();
-            var allEntities = entities.FlatList();
             var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
             var workItems = entitiesWithWikiData.Where(x => entityTypes.Contains(x.type));
 
@@ -212,6 +223,12 @@ namespace De.AHoerstemeier.Tambon.UI
             foreach ( var item in chkTypes.CheckedItems )
             {
                 entityTypes.Add((EntityType)item);
+            }
+            if ( entityTypes.Contains(EntityType.Thesaban) )
+            {
+                entityTypes.Add(EntityType.ThesabanTambon);
+                entityTypes.Add(EntityType.ThesabanMueang);
+                entityTypes.Add(EntityType.ThesabanNakhon);
             }
             return entityTypes;
         }
