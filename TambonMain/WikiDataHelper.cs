@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using Wikibase;
@@ -56,6 +57,8 @@ namespace De.AHoerstemeier.Tambon
             Item entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(entity.wiki.wikidata)) as Item;
             return entityById;
         }
+
+        #region IsInAdministrative
 
         private WikiDataState IsInAdministrativeUnit(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
@@ -141,6 +144,10 @@ namespace De.AHoerstemeier.Tambon
             return IsInAdministrativeUnit(item, entity, false, false, out dummy);
         }
 
+        #endregion IsInAdministrative
+
+        #region IsInCountry
+
         private WikiDataState IsInCountry(Item item, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
             if ( item == null )
@@ -215,6 +222,102 @@ namespace De.AHoerstemeier.Tambon
             Statement dummy;
             return IsInCountry(item, false, false, out dummy);
         }
+
+        #endregion IsInCountry
+
+        #region OpenStreetMapId
+
+        private WikiDataState OpenStreetMap(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            WikiDataState result = WikiDataState.Unknown;
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
+            var property = EntityId.newFromPrefixedId(WikiBase.PropertyIdOpenStreetMap);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+
+            var dataValueOpenStreetMap = new StringValue(entity.wiki.openstreetmap.ToString(CultureInfo.InvariantCulture));
+            var openStreetMapSnak = new Snak("value", EntityId.newFromPrefixedId(WikiBase.PropertyIdOpenStreetMap), dataValueOpenStreetMap);
+            if ( claim == null )
+            {
+                if ( !entity.wiki.openstreetmapSpecified )
+                {
+                    result = WikiDataState.Valid;
+                }
+                else
+                {
+                    result = WikiDataState.NotSet;
+                    if ( createStatement )
+                    {
+                        claim = item.createStatementForSnak(openStreetMapSnak);
+                    }
+                }
+            }
+            else
+            {
+                Snak snak = claim.mainSnak;
+                var dataValue = snak.dataValue as StringValue;
+                if ( dataValue.str == dataValueOpenStreetMap.str )
+                {
+                    result = WikiDataState.Valid;
+                }
+                else
+                {
+                    if ( entity.wiki.openstreetmapSpecified )
+                    {
+                        result = WikiDataState.WrongValue;
+                        if ( overrideWrongData )
+                        {
+                            claim.mainSnak = openStreetMapSnak;
+                        }
+                    }
+                    else
+                    {
+                        result = WikiDataState.DataMissing;
+                    }
+                }
+            }
+
+            statement = claim as Statement;
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the statement containing the open street map id.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the country.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetOpenStreetMap(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            OpenStreetMap(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the open street map id is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState OpenStreetMapCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return OpenStreetMap(item, entity, false, false, out dummy);
+        }
+
+        #endregion OpenStreetMapId
 
         /// <summary>
         /// Get the default edit summary for a claim save.
@@ -365,13 +468,49 @@ namespace De.AHoerstemeier.Tambon
         }
     }
 
+    /// <summary>
+    /// Possible states of data in WikiData vs. Tambon XML.
+    /// </summary>
     public enum WikiDataState
     {
+        /// <summary>
+        /// Unknown state.
+        /// </summary>
         Unknown,
+
+        /// <summary>
+        /// Vaue in Wikidata matches data in Tambon XML.
+        /// </summary>
         Valid,
+
+        /// <summary>
+        /// Value not set in Wikidata.
+        /// </summary>
         NotSet,
+
+        /// <summary>
+        /// Value in WikiData does not match value in Tambon XML.
+        /// </summary>
         WrongValue,
+
+        /// <summary>
+        /// List statement in WikiData does not have all values required by XML.
+        /// </summary>
         Incomplete,
-        ItemNotFound
+
+        /// <summary>
+        /// Item ID does not refer to a valid WikiData item.
+        /// </summary>
+        ItemNotFound,
+
+        /// <summary>
+        /// No data in Tambon XML.
+        /// </summary>
+        NoData,
+
+        /// <summary>
+        /// No data in Tambon XML, but value present in WikiData.
+        /// </summary>
+        DataMissing
     }
 }
