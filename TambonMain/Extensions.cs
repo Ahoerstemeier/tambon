@@ -64,7 +64,7 @@ namespace De.AHoerstemeier.Tambon
                 {EntityType.Khet, new Dictionary<Language,String>(){
                     {Language.English,"district"},
                     {Language.German,"Bezirk"},
-                    {Language.Thai,"แขวง"}
+                    {Language.Thai,"เขต"}
                 }},
                 {EntityType.Amphoe, new Dictionary<Language,String>(){
                     {Language.English,"district"},
