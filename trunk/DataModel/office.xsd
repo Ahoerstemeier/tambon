@@ -402,6 +402,11 @@
             <xs:documentation>Status of the social web account.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="verified" type="xs:boolean" use="optional" default="false">
+          <xs:annotation>
+            <xs:documentation>Indicates that the profile is marked as verified by the social web provider.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
         <xs:attributeGroup ref="t:Comment" />
       </xs:extension>
     </xs:simpleContent>
