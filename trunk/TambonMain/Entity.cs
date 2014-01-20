@@ -677,6 +677,8 @@ namespace De.AHoerstemeier.Tambon
                 var parentType = parentEntity.type.Translate(language);
                 if ( language == Language.Thai )
                     hierarchy += String.Format(hierarchyExpand, parentEntity.name, parentType);
+                else if ( parentEntity.type == EntityType.Bangkok )
+                    hierarchy += String.Format(hierarchyExpand, String.Empty, "Bangkok").TrimStart();
                 else
                     hierarchy += String.Format(hierarchyExpand, parentEntity.english, parentType);
             }
