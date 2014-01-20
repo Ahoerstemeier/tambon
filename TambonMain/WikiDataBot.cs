@@ -303,7 +303,7 @@ namespace De.AHoerstemeier.Tambon
                         }
                         if ( overrideData )
                         {
-                            item.setDescription(languageCode, newLabel);
+                            item.setLabel(languageCode, newLabel);
                             item.save(String.Format("Updated label [{0}]: {1}", languageCode, newLabel));
                         }
                     }

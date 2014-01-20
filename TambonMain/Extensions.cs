@@ -38,7 +38,7 @@ namespace De.AHoerstemeier.Tambon
                 }},
                 {EntityType.ThesabanMueang, new Dictionary<Language,String>(){
                     {Language.English,"town"},
-                    {Language.German,"Kleinstadt"},
+                    {Language.German,"Stadt"},
                     {Language.Thai,"เทศบาลเมือง"}
                 }},
                 {EntityType.ThesabanNakhon, new Dictionary<Language,String>(){
@@ -80,6 +80,16 @@ namespace De.AHoerstemeier.Tambon
                     {Language.English,"borough"},
                     {Language.German,"Bezirk"},
                     {Language.Thai,"ชุมชน"}
+                }},
+                {EntityType.TAO, new Dictionary<Language,String>(){
+                    {Language.English,"subdistrict administrative organization"},
+                    // {Language.German,"Bezirk"},
+                    {Language.Thai,"องค์การบริหารส่วนตำบล"}
+                }},
+                {EntityType.PAO, new Dictionary<Language,String>(){
+                    {Language.English,"provincial administrative organization"},
+                    // {Language.German,"Bezirk"},
+                    {Language.Thai,"องค์การบริหารส่วนจังหวัด"}
                 }},
         };
 
