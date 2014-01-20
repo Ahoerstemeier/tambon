@@ -1433,6 +1433,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private SocialWebStatus statusField;
         
+        private bool verifiedField;
+        
         private string commentField;
         
         private string valueField;
@@ -1442,6 +1444,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public SocialWebLink() {
             this.statusField = SocialWebStatus.unknown;
+            this.verifiedField = false;
         }
         
         /// <summary>
@@ -1459,6 +1462,24 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.statusField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool verified {
+            get {
+                return this.verifiedField;
+            }
+            set {
+                this.verifiedField = value;
             }
         }
         
