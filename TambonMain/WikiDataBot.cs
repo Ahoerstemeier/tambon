@@ -135,6 +135,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set label [th]", setLabelThai));
             _availableTasks.Add(new WikiDataTaskInfo("Set country", SetCountry));
             _availableTasks.Add(new WikiDataTaskInfo("Set is in administrative unit", SetIsInAdministrativeUnit));
+            _availableTasks.Add(new WikiDataTaskInfo("Set type of administrative unit", SetTypeOfAdministrativeUnit));
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
 
             _languageCode = new Dictionary<Language, String>()
@@ -284,7 +285,14 @@ namespace De.AHoerstemeier.Tambon
                     }
                     else
                     {
-                        newLabel = entity.english;
+                        if ( entity.type == EntityType.Chumchon )
+                        {
+                            newLabel = entity.english.StripBanOrChumchon();
+                        }
+                        else
+                        {
+                            newLabel = entity.english;
+                        }
                     }
 
                     if ( String.IsNullOrEmpty(oldLabel) )
@@ -420,6 +428,41 @@ namespace De.AHoerstemeier.Tambon
                     if ( state != WikiDataState.Valid )
                     {
                         var statement = _helper.SetIsInAdministrativeUnit(item, entity, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SetTypeOfAdministrativeUnit(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                }
+                else
+                {
+                    var state = _helper.TypeOfAdministrativeUnitCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong parent", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetTypeOfAdministrativeUnit(item, entity, overrideData);
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));

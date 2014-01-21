@@ -26,6 +26,7 @@ namespace De.AHoerstemeier.Tambon
             {EntityType.Sukhaphiban, "Q7635776"},
             {EntityType.Monthon, "Q1936511"},
             {EntityType.Country, "Q869"},
+            {EntityType.Khet, "Q15634531"},
             {EntityType.Khwaeng, "Q456876"},
             {EntityType.Chumchon,"Q15253857"},
         };
@@ -49,8 +50,9 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdGND = "P227";
         public const String PropertyIdFIPS10 = "P901";
         public const String PropertyIdDmoz = "P998";
-        public const String PropertyIdThaiGeocode = "P1067"; 
+        public const String PropertyIdThaiGeocode = "P1067";
         public const String PropertyIdStatedIn = "P248";
+        public const String PropertyIdInstanceOf = "P31";
 
         public const String ItemSourceTIS1099BE2535 = "Q15477441";
         public const String ItemSourceTIS1099BE2548 = "Q15477531";

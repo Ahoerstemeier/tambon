@@ -707,7 +707,15 @@ namespace De.AHoerstemeier.Tambon
         {
             get
             {
-                return ThaiTranslations.EntityNamesThai[type] + name;
+                var prefix = ThaiTranslations.EntityNamesThai[type];
+                if ( name.StartsWith(prefix) )
+                {
+                    return name;
+                }
+                else
+                {
+                    return ThaiTranslations.EntityNamesThai[type] + name;
+                }
             }
         }
 
