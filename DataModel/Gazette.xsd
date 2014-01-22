@@ -228,6 +228,35 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="GazetteRelation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Relation not defined.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Successor">
+        <xs:annotation>
+          <xs:documentation>Linked announcement is successor to this announcement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Predecessor">
+        <xs:annotation>
+          <xs:documentation>Linked announcement is predecessor to this announcement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AmendmentBase">
+        <xs:annotation>
+          <xs:documentation>Linked announcement is the base announcement to this amendment announcement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Override">
+        <xs:annotation>
+          <xs:documentation>Linked announcement is overridden by this announcement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name='GazetteReferenceBase' abstract='1'>
     <xs:annotation>
       <xs:documentation>Reference to another gazette announcement.</xs:documentation>
@@ -580,7 +609,13 @@
   </xs:complexType>
   <xs:complexType name="GazetteRelated">
     <xs:complexContent>
-      <xs:extension base="t:GazetteReferenceBase" />
+      <xs:extension base="t:GazetteReferenceBase">
+        <xs:attribute name="relation" type="t:GazetteRelation" use="optional" default="Unknown">
+          <xs:annotation>
+            <xs:documentation>Relation of the two announcements.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteCorrection">
