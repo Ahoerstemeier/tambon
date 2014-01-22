@@ -489,6 +489,65 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="GazetteRelated", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class GazetteRelated : GazetteReferenceBase {
+        
+        private GazetteRelation relationField;
+        
+        /// <summary>
+        /// Creates a new instance of GazetteRelated.
+        /// </summary>
+        public GazetteRelated() {
+            this.relationField = GazetteRelation.Unknown;
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(GazetteRelation.Unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public GazetteRelation relation {
+            get {
+                return this.relationField;
+            }
+            set {
+                this.relationField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum GazetteRelation {
+        
+        /// <summary>
+        /// Relation not defined.
+        /// </summary>
+        Unknown,
+        
+        /// <summary>
+        /// Linked announcement is successor to this announcement.
+        /// </summary>
+        Successor,
+        
+        /// <summary>
+        /// Linked announcement is predecessor to this announcement.
+        /// </summary>
+        Predecessor,
+        
+        /// <summary>
+        /// Linked announcement is the base announcement to this amendment announcement.
+        /// </summary>
+        AmendmentBase,
+        
+        /// <summary>
+        /// Linked announcement is overridden by this announcement.
+        /// </summary>
+        Override,
     }
     
     /// <summary>
