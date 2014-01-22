@@ -444,7 +444,7 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("entities");
             }
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach ( var entity in entities.Where(x => x.type != EntityType.Thesaban) )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
                 if ( item == null )
