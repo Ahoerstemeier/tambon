@@ -264,10 +264,17 @@ namespace De.AHoerstemeier.Tambon
 
         #region TypeOfAdministrativeUnit
 
-        private WikiDataState TypeOfAdministrativeUnit(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        private WikiDataState TypeOfAdministrativeUnit(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, Boolean useInstanceOf, out Statement statement)
         {
             var parent = WikiBase.WikiDataItems[entity.type];
-            return CheckPropertyValue(item, WikiBase.PropertyIdEntityType, parent, createStatement, overrideWrongData, out statement);
+            if ( useInstanceOf )
+            {
+                return CheckPropertyValue(item, WikiBase.PropertyIdInstanceOf, parent, createStatement, overrideWrongData, out statement);
+            }
+            else
+            {
+                return CheckPropertyValue(item, WikiBase.PropertyIdEntityType, parent, createStatement, overrideWrongData, out statement);
+            }
         }
 
         /// <summary>
@@ -275,9 +282,10 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
+        /// <param name="useInstanceOf"><c>true</c> to use the instance of property, <c>false</c> to use type of administrative entity.</param>
         /// <returns>Statement containing the type of administrative unit.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
-        public Statement SetTypeOfAdministrativeUnit(Item item, Entity entity, Boolean overrideWrongData)
+        public Statement SetTypeOfAdministrativeUnit(Item item, Entity entity, Boolean overrideWrongData, Boolean useInstanceOf)
         {
             if ( item == null )
                 throw new ArgumentNullException("item");
@@ -285,7 +293,7 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("entity");
 
             Statement result;
-            TypeOfAdministrativeUnit(item, entity, true, overrideWrongData, out result);
+            TypeOfAdministrativeUnit(item, entity, true, overrideWrongData, useInstanceOf, out result);
 
             return result;
         }
@@ -295,9 +303,10 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
+        /// <param name="useInstanceOf"><c>true</c> to use the instance of property, <c>false</c> to use type of administrative entity.</param>
         /// <returns>Statement containing the type of administrative unit.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
-        public WikiDataState TypeOfAdministrativeUnitCorrect(Item item, Entity entity)
+        public WikiDataState TypeOfAdministrativeUnitCorrect(Item item, Entity entity, Boolean useInstanceOf)
         {
             if ( item == null )
                 throw new ArgumentNullException("item");
@@ -305,7 +314,7 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("entity");
 
             Statement dummy;
-            return TypeOfAdministrativeUnit(item, entity, false, false, out dummy);
+            return TypeOfAdministrativeUnit(item, entity, false, false, useInstanceOf, out dummy);
         }
 
         #endregion TypeOfAdministrativeUnit

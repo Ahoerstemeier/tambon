@@ -58,6 +58,11 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemSourceTIS1099BE2548 = "Q15477531";
         public const String ItemSourceCCAATT = "Q15477767";
 
+        public const String ItemCensus2010 = "Q15637207";
+        public const String ItemCensus2000 = "Q15637213";
+        public const String ItemCensus1990 = "Q15637229";
+        public const String ItemCensus1980 = "Q15637237";
+
         public const String ItemSandbox = "Q4115189";
     }
 }
