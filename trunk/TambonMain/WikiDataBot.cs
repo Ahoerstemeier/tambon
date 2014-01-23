@@ -135,7 +135,10 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set label [th]", setLabelThai));
             _availableTasks.Add(new WikiDataTaskInfo("Set country", SetCountry));
             _availableTasks.Add(new WikiDataTaskInfo("Set is in administrative unit", SetIsInAdministrativeUnit));
-            _availableTasks.Add(new WikiDataTaskInfo("Set type of administrative unit", SetTypeOfAdministrativeUnit));
+            WikiDataTaskDelegate setTypeOfAdministrativeUnit = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetTypeOfAdministrativeUnit(entities, collisionInfo, overrideData, false);
+            WikiDataTaskDelegate setInstanceOf = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetTypeOfAdministrativeUnit(entities, collisionInfo, overrideData, true);
+            _availableTasks.Add(new WikiDataTaskInfo("Set type of administrative unit", setTypeOfAdministrativeUnit));
+            _availableTasks.Add(new WikiDataTaskInfo("Set instance of", setInstanceOf));
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
 
             _languageCode = new Dictionary<Language, String>()
@@ -437,7 +440,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        private void SetTypeOfAdministrativeUnit(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        private void SetTypeOfAdministrativeUnit(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData, Boolean useInstanceOf)
         {
             if ( entities == null )
             {
@@ -453,7 +456,7 @@ namespace De.AHoerstemeier.Tambon
                 }
                 else
                 {
-                    var state = _helper.TypeOfAdministrativeUnitCorrect(item, entity);
+                    var state = _helper.TypeOfAdministrativeUnitCorrect(item, entity, useInstanceOf);
                     _runInfo[state]++;
                     if ( state == WikiDataState.WrongValue )
                     {
@@ -462,7 +465,7 @@ namespace De.AHoerstemeier.Tambon
                     }
                     if ( state != WikiDataState.Valid )
                     {
-                        var statement = _helper.SetTypeOfAdministrativeUnit(item, entity, overrideData);
+                        var statement = _helper.SetTypeOfAdministrativeUnit(item, entity, overrideData, useInstanceOf);
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
