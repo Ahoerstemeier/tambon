@@ -208,7 +208,7 @@ namespace De.AHoerstemeier.Tambon
                         {
                             dataPoint.type = PopulationDataType.total;
                         }
-                        else if ( currentEntry.type.IsThesaban() )
+                        else if ( currentEntry.type.IsLocalGovernment() )
                         {
                             dataPoint.type = PopulationDataType.municipal;
                         }
@@ -344,7 +344,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     if ( entity != null )
                     {
-                        if ( entity.type.IsThesaban() | entity.type.IsSakha() )
+                        if ( entity.type.IsLocalGovernment() | entity.type.IsSakha() )
                         {
                             _thesaban.Add(entity);
                         }

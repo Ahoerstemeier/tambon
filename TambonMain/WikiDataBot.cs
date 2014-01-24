@@ -140,6 +140,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set type of administrative unit", setTypeOfAdministrativeUnit));
             _availableTasks.Add(new WikiDataTaskInfo("Set instance of", setInstanceOf));
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
+            _availableTasks.Add(new WikiDataTaskInfo("Set ContainsSubdivisions", SetContainsSubdivisions));
 
             _languageCode = new Dictionary<Language, String>()
             {
@@ -469,6 +470,39 @@ namespace De.AHoerstemeier.Tambon
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SetContainsSubdivisions(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                }
+                else
+                {
+                    foreach ( var subEntity in entity.entity.Where(x => !x.type.IsLocalGovernment()) )
+                    {
+                        var state = _helper.ContainsSubdivisionsCorrect(item, entity, subEntity);
+                        _runInfo[state]++;
+                        if ( state == WikiDataState.Incomplete )
+                        {
+                            var statement = _helper.SetContainsSubdivisions(item, entity, subEntity);
+                            if ( statement != null )
+                            {
+                                statement.save(_helper.GetClaimSaveEditSummary(statement));
+                            }
                         }
                     }
                 }

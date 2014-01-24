@@ -36,7 +36,7 @@ namespace De.AHoerstemeier.Tambon
             geocodes.ReorderThesaban();
             foreach ( var entry in geocodes.Thesaban )
             {
-                if ( entry.type.IsThesaban() & (!entry.obsolete) )
+                if ( entry.type.IsLocalGovernment() & (!entry.obsolete) )
                 {
                     Boolean success = HasConstituencyAnnouncement(entry.geocode, entry.type);
 
