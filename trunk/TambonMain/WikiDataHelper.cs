@@ -169,6 +169,54 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        private WikiDataState CheckPropertyMultiValue(Item item, String propertyId, String expectedItemId, Boolean createStatement, out Statement statement)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            WikiDataState result = WikiDataState.Unknown;
+
+            if ( String.IsNullOrEmpty(expectedItemId) )
+            {
+                statement = null;
+                return result;  // TODO better handling!
+            }
+            var entity = EntityId.newFromPrefixedId(expectedItemId);
+            var dataValue = new EntityIdValue("item", entity.numericId);
+            var snak = new Snak("value", EntityId.newFromPrefixedId(propertyId), dataValue);
+
+            var property = EntityId.newFromPrefixedId(propertyId);
+            Statement foundStatement = null;
+            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.propertyId)) )
+            {
+                Snak oldSnak = claim.mainSnak;
+                var oldDataValue = oldSnak.dataValue as EntityIdValue;
+                if ( oldDataValue.numericId == dataValue.numericId )
+                {
+                    foundStatement = claim as Statement;
+                }
+            }
+
+            if ( foundStatement == null )
+            {
+                if ( String.IsNullOrEmpty(expectedItemId) )
+                {
+                    result = WikiDataState.Valid;
+                }
+                else
+                {
+                    result = WikiDataState.Incomplete;
+                    if ( createStatement )
+                    {
+                        foundStatement = item.createStatementForSnak(snak);
+                    }
+                }
+            }
+
+            statement = foundStatement;
+            return result;
+        }
+
         #endregion private methods
 
         #region public methods
@@ -266,14 +314,14 @@ namespace De.AHoerstemeier.Tambon
 
         private WikiDataState TypeOfAdministrativeUnit(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, Boolean useInstanceOf, out Statement statement)
         {
-            var parent = WikiBase.WikiDataItems[entity.type];
+            var entityType = WikiBase.WikiDataItems[entity.type];
             if ( useInstanceOf )
             {
-                return CheckPropertyValue(item, WikiBase.PropertyIdInstanceOf, parent, createStatement, overrideWrongData, out statement);
+                return CheckPropertyValue(item, WikiBase.PropertyIdInstanceOf, entityType, createStatement, overrideWrongData, out statement);
             }
             else
             {
-                return CheckPropertyValue(item, WikiBase.PropertyIdEntityType, parent, createStatement, overrideWrongData, out statement);
+                return CheckPropertyValue(item, WikiBase.PropertyIdEntityType, entityType, createStatement, overrideWrongData, out statement);
             }
         }
 
@@ -483,7 +531,7 @@ namespace De.AHoerstemeier.Tambon
             var claims = item.Claims.Where(x => x.mainSnak.propertyId.numericId == propertyContainsAdministrativeDivisions.numericId).ToList();
             foreach ( var subEntity in entity.entity )
             {
-                if ( (subEntity.wiki != null) && (!String.IsNullOrEmpty(subEntity.wiki.wikidata)) && (!subEntity.IsObsolete) && (!subEntity.type.IsThesaban()) )
+                if ( (subEntity.wiki != null) && (!String.IsNullOrEmpty(subEntity.wiki.wikidata)) && (!subEntity.IsObsolete) && (!subEntity.type.IsLocalGovernment()) )
                 {
                     var subEntityItemId = EntityId.newFromPrefixedId(subEntity.wiki.wikidata);
                     Boolean claimFound = claims.Any(x => (x.mainSnak.dataValue as EntityIdValue).numericId == subEntityItemId.numericId);
@@ -556,6 +604,29 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion public methods
+
+        public WikiDataState ContainsSubdivisionsCorrect(Item item, Entity entity, Entity subEntity)
+        {
+            var expected = String.Empty;
+            if ( (subEntity.wiki != null) && (!String.IsNullOrEmpty(subEntity.wiki.wikidata)) )
+            {
+                expected = subEntity.wiki.wikidata;
+            }
+            Statement dummy;
+            return CheckPropertyMultiValue(item, WikiBase.PropertyIdContainsAdministrativeDivisions, expected, false, out dummy);
+        }
+
+        public Statement SetContainsSubdivisions(Item item, Entity entity, Entity subEntity)
+        {
+            var expected = String.Empty;
+            if ( (subEntity.wiki != null) && (!String.IsNullOrEmpty(subEntity.wiki.wikidata)) )
+            {
+                expected = subEntity.wiki.wikidata;
+            }
+            Statement result;
+            CheckPropertyMultiValue(item, WikiBase.PropertyIdContainsAdministrativeDivisions, expected, true, out result);
+            return result;
+        }
     }
 
     /// <summary>

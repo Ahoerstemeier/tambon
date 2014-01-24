@@ -102,7 +102,7 @@ namespace De.AHoerstemeier.Tambon
         /// <see cref="EntityType.Mueang"/>, <see cref="EntityType.TAO"/>, <see cref="EntityType.PAO"/> and <see cref="EntityType.Sukhaphiban"/>.
         /// <see cref="EntityType.Bangkok"/> is not included here.
         /// </remarks>
-        static public Boolean IsThesaban(this EntityType type)
+        static public Boolean IsLocalGovernment(this EntityType type)
         {
             return _entityLocalGovernment.Contains(type);
         }
@@ -157,11 +157,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="type">Entity type.</param>
         /// <returns><c>true</c> if is a second level administrative unit, <c>false</c> otherwise.</returns>
         /// <remarks>Second level administrative units are <see cref="EntityType.Amphoe"/>, <see cref="EntityType.KingAmphoe"/> and <see cref="EntityType.Khet"/>,
-        /// or those covered by <see cref="IsThesaban"/> or <see cref="IsSakha"/>.
+        /// or those covered by <see cref="IsLocalGovernment"/> or <see cref="IsSakha"/>.
         /// </remarks>
         static public Boolean IsSecondLevelAdministrativeUnit(this EntityType type)
         {
-            return _entityDistrict.Contains(type) | type.IsThesaban() | type.IsSakha();
+            return _entityDistrict.Contains(type) | type.IsLocalGovernment() | type.IsSakha();
         }
 
         private static IEnumerable<EntityType> _entitySubDistrict = new List<EntityType>()
@@ -220,7 +220,7 @@ namespace De.AHoerstemeier.Tambon
                 case EntityType.ThesabanNakhon:
                 case EntityType.ThesabanMueang:
                 case EntityType.ThesabanTambon:
-                    retval = compare.IsThesaban();
+                    retval = compare.IsLocalGovernment();
                     break;
 
                 default:

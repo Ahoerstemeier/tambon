@@ -47,7 +47,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( subEntity != null )
                 {
-                    if ( subEntity.type.IsThesaban() | subEntity.type.IsSakha() )
+                    if ( subEntity.type.IsLocalGovernment() | subEntity.type.IsSakha() )
                     {
                         _thesaban.Add(subEntity);
                     }
@@ -319,7 +319,7 @@ namespace De.AHoerstemeier.Tambon
                         // Problem!
                     }
 
-                    if ( subEntity.type.IsThesaban() | subEntity.type.IsSakha() )
+                    if ( subEntity.type.IsLocalGovernment() | subEntity.type.IsSakha() )
                     {
                         foreach ( UInt32 parentCode in subEntity.parent )
                         {
@@ -774,6 +774,13 @@ namespace De.AHoerstemeier.Tambon
                         if ( create != null )
                         {
                             result.type = create.type;
+                        }
+                    }
+                    if ( result.type == EntityType.ThesabanTambon || result.type == EntityType.ThesabanMueang || result.type == EntityType.ThesabanNakhon )
+                    {
+                        if ( office.type == OfficeType.TAOOffice )
+                        {
+                            office.type = OfficeType.MunicipalityOffice;
                         }
                     }
                 }
