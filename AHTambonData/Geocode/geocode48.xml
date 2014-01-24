@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครพนม" english="Nakhon Phanom" geocode="48">
   <wiki wikidata="Q468547" openstreetmap="1908789" />
+  <!-- TAO election: 2013-10-12 -->
   <office type="ProvinceHall">
     <geo:Point>
       <geo:lat>17.4072</geo:lat>
@@ -371,7 +372,7 @@
           <official title="Mayor" name="อุทัย โคตสา" begin="2010-03-07" end="2011-05-24" beginreason="ElectedDirectly" endreason="Removed" comment="EC decided 2010-11-06, approved by court of appeal 2011-05-24" />
         </officials>
         <council>
-          <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2010-03-07" end="2014-03-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
         </council>
         <history>
@@ -1001,7 +1002,7 @@
           <official title="Mayor" name="ธวัชชัย มหาผล" begin="2010-03-07" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2010-03-07" end="2014-03-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
         <history>
@@ -1016,17 +1017,17 @@
       </office>
     </entity>
     <entity type="Tambon" name="ฝั่งแดง" english="Fang Daeng" geocode="480502">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url lastchecked="2013-08-06">http://www.fangdaeng.org/</url>
         <officials>
           <official title="Mayor" name="นิวัติ ทอนฮามแก้ว" begin="2010-03-07" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2010-03-07" end="2014-03-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" status="Done">
             <meetingreference board="1" date="2009-06-08" number="13" />
           </statuschange>
         </history>
@@ -1133,17 +1134,31 @@
     </entity>
     <entity type="Tambon" name="ดอนนางหงส์" english="Don Nang Hong" geocode="480507">
       <office type="TAOOffice">
+        <url lastchecked="2014-01-24">http://www.donnanghong.go.th/</url>
+        <socialweb>
+          <googleplus type="user" status="inactive">117013300610361062666</googleplus>
+        </socialweb>
         <officials>
-          <official title="TAOMayor" name="เอก แสนสุข" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ศุภกฤต แสวงวงศ์" begin="2013-10-12" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="เอก แสนสุข" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2013-10-12" type="TAO" size="22" />
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
           <!-- Mu 11 created 2003-09 -->
         </council>
       </office>
+      <entity type="Muban" geocode="48050701" name="บ้านนาแก" english="Ban Na Kae" />
+      <entity type="Muban" geocode="48050702" name="บ้านบึงเหล็ก" english="Ban Bueng Lek" />
+      <entity type="Muban" geocode="48050703" name="บ้านดอนนางหงส์" english="Ban Don Nang Hong" />
+      <entity type="Muban" geocode="48050704" name="บ้านดอนนางหงส์" english="Ban Don Nang Hong" />
+      <entity type="Muban" geocode="48050705" name="บ้านโคกสว่าง" english="Ban Khok Sawang" />
+      <entity type="Muban" geocode="48050706" name="บ้านหนองสะโน" english="Ban Nong Sano" />
+      <entity type="Muban" geocode="48050707" name="บ้านดอนนางหงส์ท่า" english="Ban Don Nang Hong Tha" />
       <entity type="Muban" geocode="48050708" name="บ้านโนนสะอาด" english="Ban Non Sa-at" />
-
+      <entity type="Muban" geocode="48050709" name="บ้านหนองเบ็ญ" english="Ban Nong Ben" />
+      <entity type="Muban" geocode="48050710" name="บ้านบูรพา" english="Ban Burapha" />
       <entity type="Muban" geocode="48050711" name="บ้านนวลพัฒนา" english="Ban Nuan Phatthana" />
     </entity>
     <entity type="Tambon" name="น้ำก่ำ" english="Nam Kam" geocode="480508">
@@ -1151,15 +1166,17 @@
         <symbols>
           <vision>น้ำก่ำบ้านน่าอยู่    เชิดชูศาสนา  พัฒนาสิ่งแวดล้อม  พรั่งพร้อมคุณภาพชีวิต  เศรษฐกิจชุมชนเข้มแข็ง</vision>
         </symbols>
-        <url lastchecked="2013-08-06">http://www.namkam.org/</url>
+        <url lastchecked="2014-01-24">http://www.namkam.org/</url>
         <officials>
-          <official title="Mayor" name="สุระธวิชญ์ ขันติญาราษฎร์" inoffice="2013" />
+          <official title="Mayor" name="สุระธวิชญ์ ขันติญาราษฎร์" begin="2013-03-31" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="วีระวัฒน์ พุทธวงค์" begin="2010-03-07" end="2013-02-01" beginreason="ElectedDirectly" endreason="Resigned" />
         </officials>
         <council>
+          <term begin="2010-03-07" end="2014-03-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="40" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" status="Done">
             <meetingreference board="2" date="2009-06-18" number="17" />
           </statuschange>
         </history>
@@ -1212,7 +1229,7 @@
           <official title="TAOMayor" name="อุ่นหว้า น่านโพธิ์ศรี" begin="2005-07-31" end="2009-07-30" />
         </officials>
         <council>
-          <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2010-03-07" end="2014-03-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
         <history>
