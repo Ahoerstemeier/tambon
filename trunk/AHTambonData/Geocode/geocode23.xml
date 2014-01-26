@@ -187,11 +187,18 @@
     <entity type="Tambon" name="ชำราก" english="Chamrak" geocode="230113">
       <office type="MunicipalityOffice">
         <officials>
-          <official title="Mayor" name="ทัธนา อินทผลึก" begin="2008-09-14" endyear="2012" />
+          <official title="Mayor" name="ประมวล มุสิกรัตน์" begin="2012-10-21" beginreason="ElectedDirectly"/>
+          <official title="Mayor" name="ทัธนา อินทผลึก" begin="2008-09-14" end="2012-09-13" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2008-09-14" end="2012-09-13" type="ThesabanTambon" size="12" />
+          <term begin="2012-10-21" type="ThesabanTambon" size="12"/>
+          <term begin="2008-09-14" end="2012-09-13" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2008-08-01" status="Done">
+            <meetingreference board="2" number="15" date="2008-02-22"/>
+          </statuschange>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="แหลมกลัด" english="Laem Klat" geocode="230114">
