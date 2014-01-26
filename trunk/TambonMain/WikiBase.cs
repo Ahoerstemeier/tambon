@@ -62,6 +62,13 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemCensus2000 = "Q15637213";
         public const String ItemCensus1990 = "Q15637229";
         public const String ItemCensus1980 = "Q15637237";
+        public const String ItemCensus1970 = "Q15639176";
+        public const String ItemCensus1960 = "Q15639232";
+        public const String ItemCensus1947 = "Q15639300";
+        public const String ItemCensus1937 = "Q15639324";
+        public const String ItemCensus1929 = "Q15639341";
+        public const String ItemCensus1919 = "Q15639367";
+        public const String ItemCensus1909 = "Q15639395";
 
         public const String ItemSandbox = "Q4115189";
     }
