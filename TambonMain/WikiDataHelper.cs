@@ -455,6 +455,50 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion OpenStreetMapId
 
+        #region Geocode
+
+        private WikiDataState Geocode(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+                stringValue = entity.geocode.ToString(CultureInfo.InvariantCulture);
+            return CheckStringValue(item, WikiBase.PropertyIdThaiGeocode, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the geocode.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the country.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetGeocode(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if (item == null)
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            Geocode(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the geocode is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState GeocodeCorrect(Item item, Entity entity)
+        {
+            if (item == null)
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return Geocode(item, entity, false, false, out dummy);
+        }
+
+        #endregion OpenStreetMapId
+
         /// <summary>
         /// Get the default edit summary for a claim save.
         /// </summary>

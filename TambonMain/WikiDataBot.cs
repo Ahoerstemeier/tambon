@@ -141,6 +141,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set instance of", setInstanceOf));
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
             _availableTasks.Add(new WikiDataTaskInfo("Set ContainsSubdivisions", SetContainsSubdivisions));
+            _availableTasks.Add(new WikiDataTaskInfo("Set TIS 1099", SetGeocode));
 
             _languageCode = new Dictionary<Language, String>()
             {
@@ -402,6 +403,42 @@ namespace De.AHoerstemeier.Tambon
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
                     }
+                }
+            }
+        }
+
+        private void SetGeocode(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if (entities == null)
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach (var entity in entities)
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if (item == null)
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                }
+                else
+                {
+                    var state = _helper.GeocodeCorrect(item, entity);
+                    _runInfo[state]++;
+                    if (state == WikiDataState.WrongValue)
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong geocode id", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if (state != WikiDataState.Valid)
+                    {
+                        var statement = _helper.SetGeocode(item, entity, overrideData);
+                        if (statement != null)
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                    // TODO: Sources
                 }
             }
         }
