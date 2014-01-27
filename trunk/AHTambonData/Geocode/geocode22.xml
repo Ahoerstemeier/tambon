@@ -398,7 +398,17 @@
     </entity>
     <entity type="Tambon" name="ซึ้ง" english="Sueng" geocode="220207">
       <office type="MunicipalityOffice">
+        <geo:Point>
+          <!-- bigger building is school, not sure if marked correct office building -->
+          <geo:lat>12.4622</geo:lat>
+          <geo:long>102.2415</geo:long>
+        </geo:Point>
         <url status="offline">http://www.seung.go.th/</url>
+        <socialweb>
+          <facebook>https://www.facebook.com/pages/เทศบาลตำบลซึ้ง/173227679468818</facebook>
+          <googleplus type="location" comment="Correct location, wrong type">110908295347271188505</googleplus>
+          <googleplus type="location" comment="Wrong location, correct type">100943688592812922605</googleplus>
+        </socialweb>
         <officials>
           <official title="TAOMayor" name="นิคม  บ่อหลี" endyear="2011" />
         </officials>
@@ -408,7 +418,9 @@
           <!--<term begin="1995-05-21" end="1999-05-20" type="TAO" />-->
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Gazette">
+            <gazetteref volume="131" page="4" issue="พิเศษ 18 ง" date="2014-01-27" />
+          </statuschange>
           <create type="TAO" effective="1995-03-03" status="Gazette">
             <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
           </create>
