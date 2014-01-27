@@ -1149,10 +1149,17 @@
     </entity>
     <entity type="Tambon" name="บ้านใต้" english="Ban Tai" geocode="840502">
       <office type="MunicipalityOffice">
+        <symbols>
+          <vision>
+            บ้านใต้ชุมชนน่าอยู่ คุณภาพชีวิตดี มีการพัฒนาเศรษฐกิจการท่องเที่ยวอย่างยั่งยืน
+            บำรุงรักษาทรัพยากรธรรมชาติและสิ่งแวดล้อม  พร้อมพัฒนาการบริหารจัดการให้เป็นเลิศ
+          </vision>
+        </symbols>
         <geo:Point>
           <geo:lat>9.7021</geo:lat>
           <geo:long>100.0320</geo:long>
         </geo:Point>
+        <url lastchecked="2014-01-25">http://baantai.go.th/</url>
         <url status="offline">http://www.bantai.go.th/</url>
         <officials>
           <official title="Mayor" name="ธีรยุทธ พลายสุวรรณ" begin="2012-05-12" beginreason="ElectedDirectly" />
@@ -1168,7 +1175,9 @@
           <abolished type="ThesabanTambon" mergeto="8492" status="Pending">
             <meetingreference board="1" number="49" date="2013-09-02" />
           </abolished>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-01" status="Done" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-01" status="Gazette">
+            <gazetteref volume="131" page="18" issue="พิเศษ 18 ง" date="2014-01-27" />
+          </statuschange>
         </history>
       </office>
       <entity type="Muban" geocode="84050201" name="บ้านหน้าทับ" english="Ban Na Thap" />
@@ -4703,17 +4712,18 @@
       </council>
     </office>
     <history>
-      <statuschange old="ThesabanMueang" new="ThesabanNakhon" effective="2012-09-14">
+      <statuschange old="ThesabanMueang" new="ThesabanNakhon" effective="2012-09-14" status="Gazette">
+        <gazetteref volume="131" page="1" issue="พิเศษ 18 ง" date="2014-01-27" />
         <meetingreference board="2" number="51" date="2012-07-18" />
       </statuschange>
-      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2008-06-09">
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2008-06-09" status="Gazette">
         <gazetteref volume="127" page="15" issue="พิเศษ 116 ง" date="2010-10-04" />
         <meetingreference board="2" number="21" date="2008-03-14" />
       </statuschange>
-      <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1999-05-25">
+      <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1999-05-25" status="Gazette">
         <gazetteref volume="116" issue="9 ก" page="1" date="1999-02-24" />
       </statuschange>
-      <create type="Sukhaphiban" effective="1956-08-30">
+      <create type="Sukhaphiban" effective="1956-08-30" status="Gazette">
         <gazetteref volume="73" issue="75 ง ฉบับพิเศษ" page="84" date="1956-09-20" comment="Originally only Nathon area" />
       </create>
     </history>
@@ -5281,7 +5291,7 @@
           หลีกเลี่ยงยาเสพติด     ชีวิตมีคุณภาพ    สร้างชุมชนเข้มแข็ง
         </vision>
       </symbols>
-      <url lastchecked="2013-02-04">http://www.khuntalae.go.th/</url>
+      <url lastchecked="2014-01-27">http://www.khuntalae.go.th/</url>
       <officials>
         <official title="Mayor" name="ปราโมทย์ ศรีสมโภชน์" begin="2013-01-06" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ทัพชนะ มะลิเผือก" begin="2008-11-30" end="2012-11-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -5292,12 +5302,12 @@
         <term begin="2008-11-30" end="2012-11-29" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
         <term begin="2004-07-25" end="2008-07-24" type="TAO" size="20" />
       </council>
-      <history>
-        <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
-          <meetingreference board="2" number="30" date="2008-05-01" />
-        </statuschange>
-      </history>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
+        <meetingreference board="2" number="30" date="2008-05-01" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ทุ่งหลวง" english="Thung Luang" geocode="8473" parent="8415" tambon="841504">
     <office type="MunicipalityOffice">
