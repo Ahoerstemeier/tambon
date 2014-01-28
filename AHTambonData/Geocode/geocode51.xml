@@ -756,19 +756,31 @@
     </entity>
     <entity type="Tambon" name="ก้อ" english="Ko" geocode="510405">
       <wiki wikidata="Q6424102" />
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <symbols>
           <vision>อนุรักษ์ธรรมชาติ  เพื่อการเกษตรปลอดภัย  ใส่ใจคุณภาพชีวิต  ตามหลักปรัชญาเศรษฐกิจพอเพียง</vision>
         </symbols>
+        <geo:Point>
+          <geo:lat>17.6392</geo:lat>
+          <geo:long>98.7852</geo:long>
+        </geo:Point>
         <url lastchecked="2012-05-10">http://www.tambonkor.go.th/</url>
         <url status="offline">http://www.tumbonkor.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ชุมพร มะโน" begin="2008-04-05" endyear="2012" />
+          <official title="Mayor" name="ชุมพร มะโน" begin="2012-09-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ชุมพร มะโน" begin="2008-04-05" end="2012-04-04" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2012-09-30" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2008-04-05" end="2012-04-04" type="TAO" size="8" />
           <term begin="2004-02-29" end="2008-02-28" type="TAO" size="8" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-04-05" status="Gazette">
+            <gazetteref volume="131" page="14" issue="พิเศษ 18 ง" date="2014-01-27" />
+            <meetingreference board="2" number="18" date="2012-03-20" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="51040501" name="บ้านก้อทุ่ง" english="Ban Ko Thung" />
       <entity type="Muban" geocode="51040502" name="บ้านก้อหนอง" english="Ban Ko Nong" />
