@@ -529,17 +529,23 @@
     </entity>
     <entity type="Tambon" name="ดอนไก่ดี" english="Don Kai Di" geocode="740208">
       <office type="MunicipalityOffice">
-        <url>http://donkaidee.go.th/</url>
+        <geo:Point>
+          <geo:lat>13.6456</geo:lat>
+          <geo:long>100.2542</geo:long>
+        </geo:Point>
+        <url lastchecked="2014-01-28">http://donkaidee.go.th/</url>
         <officials>
-          <official title="Mayor" name="วิชัย แตงเอี่ยม" begin="2012-10-17" beginreason="ElectedDirectly"/>
+          <official title="Mayor" name="วิชัย แตงเอี่ยม" begin="2012-10-17" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="วิชัย แตงเอี่ยม" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2012-04-17" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+          <term begin="2012-04-17" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="12" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done"/>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Gazette">
+            <gazetteref volume="131" page="15" issue="พิเศษ 18 ง" date="2014-01-27" />
+          </statuschange>
         </history>
       </office>
       <entity type="Muban" geocode="74020801" name="บ้านดอนไก่ดี" english="Ban Don Kai Di" />
