@@ -8,82 +8,171 @@ namespace De.AHoerstemeier.Tambon
     public class AmphoeComData
     {
         // TODO: DistrictOffice String -> ThaiAddress object
+
         #region properties
-        public String AmphoeName { get; set; }
-        public String ChangwatName { get; set; }
-        public String ChangwatSlogan { get; set; }
-        public String AmphoeSlogan { get; set; }
-        public String DistrictOffice { get; set; }
-        public Int32 ProvinceID { get; set;}
-        public Int32 AmphoeID { get; set; }
-        public String Telephone { get; set; }
-        public String Fax { get; set; }
-        public String Website { get; set; }
-        public String History { get; set; }
-        public String Area { get; set; }
-        public String Climate { get; set; }
-        public Int32 Tambon { get; set; }
-        public Int32 Muban { get; set; }
-        public Int32 Thesaban { get; set; }
-        public Int32 TAO { get; set; }
-        #endregion
+
+        public String AmphoeName
+        {
+            get;
+            set;
+        }
+
+        public String ChangwatName
+        {
+            get;
+            set;
+        }
+
+        public String ChangwatSlogan
+        {
+            get;
+            set;
+        }
+
+        public String AmphoeSlogan
+        {
+            get;
+            set;
+        }
+
+        public String DistrictOffice
+        {
+            get;
+            set;
+        }
+
+        public Int32 ProvinceID
+        {
+            get;
+            set;
+        }
+
+        public Int32 AmphoeID
+        {
+            get;
+            set;
+        }
+
+        public String Telephone
+        {
+            get;
+            set;
+        }
+
+        public String Fax
+        {
+            get;
+            set;
+        }
+
+        public String Website
+        {
+            get;
+            set;
+        }
+
+        public String History
+        {
+            get;
+            set;
+        }
+
+        public String Area
+        {
+            get;
+            set;
+        }
+
+        public String Climate
+        {
+            get;
+            set;
+        }
+
+        public Int32 Tambon
+        {
+            get;
+            set;
+        }
+
+        public Int32 Muban
+        {
+            get;
+            set;
+        }
+
+        public Int32 Thesaban
+        {
+            get;
+            set;
+        }
+
+        public Int32 TAO
+        {
+            get;
+            set;
+        }
+
+        #endregion properties
+
         public Int32 Geocode()
         {
-            Int32 iAmphoeID = TambonHelper.GetGeocode(ChangwatName, AmphoeName, EntityType.Amphoe);
-            return iAmphoeID;
+            Int32 amphoeID = TambonHelper.GetGeocode(ChangwatName, AmphoeName, EntityType.Amphoe);
+            return amphoeID;
         }
-        public void ExportToXML(XmlNode iNode)
+
+        public void ExportToXML(XmlNode node)
         {
-            XmlDocument lXmlDocument = TambonHelper.XmlDocumentFromNode(iNode);
-            var lNewElement = (XmlElement)lXmlDocument.CreateNode("element", "entity", "");
+            XmlDocument xmlDocument = TambonHelper.XmlDocumentFromNode(node);
+            var newElement = (XmlElement)xmlDocument.CreateNode("element", "entity", "");
 
-            lNewElement.SetAttribute("geocode", Geocode().ToString());
-            lNewElement.SetAttribute("name", AmphoeName);
-            iNode.AppendChild(lNewElement);
+            newElement.SetAttribute("geocode", Geocode().ToString());
+            newElement.SetAttribute("name", AmphoeName);
+            node.AppendChild(newElement);
 
-            var lNodeAmphoeCom = (XmlElement)lXmlDocument.CreateNode("element", "amphoe.com", "");
-            lNodeAmphoeCom.SetAttribute("amphoe", AmphoeID.ToString());
-            lNodeAmphoeCom.SetAttribute("changwat", ProvinceID.ToString());
-            lNewElement.AppendChild(lNodeAmphoeCom);
+            var nodeAmphoeCom = (XmlElement)xmlDocument.CreateNode("element", "amphoe.com", "");
+            nodeAmphoeCom.SetAttribute("amphoe", AmphoeID.ToString());
+            nodeAmphoeCom.SetAttribute("changwat", ProvinceID.ToString());
+            newElement.AppendChild(nodeAmphoeCom);
 
-            var lNodeSlogan = (XmlElement)lXmlDocument.CreateNode("element", "slogan", "");
-            lNodeSlogan.InnerText = AmphoeSlogan;
-            lNewElement.AppendChild(lNodeSlogan);
+            var nodeSlogan = (XmlElement)xmlDocument.CreateNode("element", "slogan", "");
+            nodeSlogan.InnerText = AmphoeSlogan;
+            newElement.AppendChild(nodeSlogan);
 
-            var lNodeAddress = (XmlElement)lXmlDocument.CreateNode("element", "address", "");
-            lNodeAddress.InnerText = DistrictOffice;
-            lNewElement.AppendChild(lNodeAddress);
+            var nodeAddress = (XmlElement)xmlDocument.CreateNode("element", "address", "");
+            nodeAddress.InnerText = DistrictOffice;
+            newElement.AppendChild(nodeAddress);
 
-            var lNodeHistory = (XmlElement)lXmlDocument.CreateNode("element", "history", "");
-            lNodeHistory.InnerText = History;
-            lNewElement.AppendChild(lNodeHistory);
+            var nodeHistory = (XmlElement)xmlDocument.CreateNode("element", "history", "");
+            nodeHistory.InnerText = History;
+            newElement.AppendChild(nodeHistory);
 
-            var lNodeClimate = (XmlElement)lXmlDocument.CreateNode("element", "climate", "");
-            lNodeClimate.InnerText = Climate;
-            lNewElement.AppendChild(lNodeClimate);
+            var nodeClimate = (XmlElement)xmlDocument.CreateNode("element", "climate", "");
+            nodeClimate.InnerText = Climate;
+            newElement.AppendChild(nodeClimate);
 
-            var lNodeArea = (XmlElement)lXmlDocument.CreateNode("element", "area", "");
-            lNodeArea.InnerText = Area;
-            lNewElement.AppendChild(lNodeArea);
+            var nodeArea = (XmlElement)xmlDocument.CreateNode("element", "area", "");
+            nodeArea.InnerText = Area;
+            newElement.AppendChild(nodeArea);
 
-            var lNodeUrl = (XmlElement)lXmlDocument.CreateNode("element", "website", "");
-            lNodeUrl.InnerText = Website;
-            lNewElement.AppendChild(lNodeUrl);
+            var nodeUrl = (XmlElement)xmlDocument.CreateNode("element", "website", "");
+            nodeUrl.InnerText = Website;
+            newElement.AppendChild(nodeUrl);
 
-            var lNodeTelephone = (XmlElement)lXmlDocument.CreateNode("element", "telephone", "");
-            lNodeTelephone.InnerText = Telephone;
-            lNewElement.AppendChild(lNodeTelephone);
+            var nodeTelephone = (XmlElement)xmlDocument.CreateNode("element", "telephone", "");
+            nodeTelephone.InnerText = Telephone;
+            newElement.AppendChild(nodeTelephone);
 
-            var lNodeFax = (XmlElement)lXmlDocument.CreateNode("element", "fax", "");
-            lNodeFax.InnerText = Fax;
-            lNewElement.AppendChild(lNodeFax);
+            var nodeFax = (XmlElement)xmlDocument.CreateNode("element", "fax", "");
+            nodeFax.InnerText = Fax;
+            newElement.AppendChild(nodeFax);
 
-            var lNodeSubEntities = (XmlElement)lXmlDocument.CreateNode("element", "subdivision", "");
-            lNodeSubEntities.SetAttribute("tambon", Tambon.ToString());
-            lNodeSubEntities.SetAttribute("thesaban", Thesaban.ToString());
-            lNodeSubEntities.SetAttribute("muban", Muban.ToString());
-            lNodeSubEntities.SetAttribute("TAO", TAO.ToString());
-            lNewElement.AppendChild(lNodeSubEntities);
+            var nodeSubEntities = (XmlElement)xmlDocument.CreateNode("element", "subdivision", "");
+            nodeSubEntities.SetAttribute("tambon", Tambon.ToString());
+            nodeSubEntities.SetAttribute("thesaban", Thesaban.ToString());
+            nodeSubEntities.SetAttribute("muban", Muban.ToString());
+            nodeSubEntities.SetAttribute("TAO", TAO.ToString());
+            newElement.AppendChild(nodeSubEntities);
         }
     }
 }

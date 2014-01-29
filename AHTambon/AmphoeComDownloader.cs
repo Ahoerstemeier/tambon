@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -12,6 +12,7 @@ namespace De.AHoerstemeier.Tambon
     public class AmphoeComDownloader
     {
         #region Constants
+
         private const String SearchStringAmphoeChangwat = "<font color=\"#0000FF\" face=\"MS Sans Serif\">";
         private const String SearchStringAmphoeChangwatEnd = "</font></b></td>";
         private const String SearchStringDataLineEnd = "</td>";
@@ -31,7 +32,8 @@ namespace De.AHoerstemeier.Tambon
         private const String SearchStringMuban = "2.หมู่บ้าน";
         private const String SearchStringTAO = "4.อบต";
         private const String SearchStringDataBottom = "<span lang=\"en-us\">";
-        private static Dictionary<String, Int16> mProvinceIDs = new Dictionary<String, Int16>() {
+
+        private static Dictionary<String, Int16> _provinceIds = new Dictionary<String, Int16>() {
             { "กระบี่",1},
             { "กาญจนบุรี",2},
             { "กาฬสินธุ์",3},
@@ -108,7 +110,9 @@ namespace De.AHoerstemeier.Tambon
             { "อุทัยธานี",74},
             { "อุบลราชธานี",75},
         };
-        #endregion
+
+        #endregion Constants
+
         private Int16[][] CreateCodes()
         {
             Int16[][] retval = new Int16[76][];
@@ -189,185 +193,191 @@ namespace De.AHoerstemeier.Tambon
             retval[75] = new Int16[] { 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832 };
             return retval;
         }
-        private Stream DoDownload(Int16 iProvinceID, Int16 iAmphoeID)
+
+        private Stream DoDownload(Int16 provinceId, Int16 amphoeId)
         {
-            WebClient lWebClient = new WebClient();
-            Stream lStream = lWebClient.OpenRead(URL(iProvinceID, iAmphoeID));
-            return lStream;
+            WebClient webClient = new WebClient();
+            Stream stream = webClient.OpenRead(URL(provinceId, amphoeId));
+            return stream;
         }
 
-        private Uri URL(short iProvinceID, short iAmphoeID)
+        private Uri URL(Int16 provinceId, Int16 amphoeId)
         {
-            Uri retval = new Uri("http://www.amphoe.com/menu.php?mid=1&am=" + iAmphoeID.ToString() + "&pv=" + iProvinceID.ToString());
+            Uri retval = new Uri("http://www.amphoe.com/menu.php?mid=1&am=" + amphoeId.ToString() + "&pv=" + provinceId.ToString());
             return retval;
         }
-        private String RemoveHTML(String iLine)
+
+        private String RemoveHTML(String line)
         {
-            String lTempString = iLine.Replace("<br>", Environment.NewLine);
-            lTempString = lTempString.Replace("</td>", "");
-            lTempString = lTempString.Replace("</span>", "");
-            lTempString = lTempString.Replace("</font>", "");
-            lTempString = lTempString.Replace("&nbsp;", " ");
-            return lTempString;
+            String tempString = line.Replace("<br>", Environment.NewLine);
+            tempString = tempString.Replace("</td>", "");
+            tempString = tempString.Replace("</span>", "");
+            tempString = tempString.Replace("</font>", "");
+            tempString = tempString.Replace("&nbsp;", " ");
+            return tempString;
         }
-        private String ParseTopTableData(String iLine)
+
+        private String ParseTopTableData(String line)
         {
-            String lTempString = iLine.Substring(0, iLine.IndexOf(SearchStringDataLineEnd));
-            lTempString = RemoveHTML(lTempString);
-            Int32 lPos = lTempString.LastIndexOf('>') + 1;
-            lTempString = lTempString.Substring(lPos);
-            lTempString = lTempString.Trim();
-            return lTempString;
+            String tempString = line.Substring(0, line.IndexOf(SearchStringDataLineEnd));
+            tempString = RemoveHTML(tempString);
+            Int32 position = tempString.LastIndexOf('>') + 1;
+            tempString = tempString.Substring(position);
+            tempString = tempString.Trim();
+            return tempString;
         }
-        private String ParseSecondDataTable(String iLine)
+
+        private String ParseSecondDataTable(String line)
         {
-            String lTempString = iLine.Substring(0, iLine.IndexOf(SearchStringDataLineEnd));
-            lTempString = RemoveHTML(lTempString).Trim();
-            Int32 lPos = lTempString.LastIndexOf('>') + 1;
-            lTempString = lTempString.Substring(lPos);
-            return lTempString;
+            String tempString = line.Substring(0, line.IndexOf(SearchStringDataLineEnd));
+            tempString = RemoveHTML(tempString).Trim();
+            Int32 position = tempString.LastIndexOf('>') + 1;
+            tempString = tempString.Substring(position);
+            return tempString;
         }
-        private String TrimMultiLine(String iLine)
+
+        private String TrimMultiLine(String line)
         {
-            StringReader lReader = new StringReader(iLine);
+            StringReader reader = new StringReader(line);
             String retval = String.Empty;
-            String lCurrentLine = String.Empty;
-            while ((lCurrentLine = lReader.ReadLine()) != null)
+            String currentLine = String.Empty;
+            while ( (currentLine = reader.ReadLine()) != null )
             {
-                retval = retval + lCurrentLine.Trim() + Environment.NewLine;
+                retval = retval + currentLine.Trim() + Environment.NewLine;
             }
             return retval;
         }
 
-        private void ParseAmphoeChangwatName(String iLine, AmphoeComData ioData)
+        private void ParseAmphoeChangwatName(String line, AmphoeComData data)
         {
-            Int32 lPos1 = iLine.IndexOf(EntityTypeHelper.EntityNames[EntityType.Amphoe]) + EntityTypeHelper.EntityNames[EntityType.Amphoe].Length;
-            Int32 lPos2 = iLine.IndexOf("&nbsp;");
-            ioData.AmphoeName = iLine.Substring(lPos1, lPos2 - lPos1);
-            Int32 lPos3 = iLine.IndexOf(EntityTypeHelper.EntityNames[EntityType.Changwat]) + EntityTypeHelper.EntityNames[EntityType.Changwat].Length;
-            Int32 lPos4 = iLine.IndexOf(SearchStringAmphoeChangwatEnd);
-            ioData.ChangwatName = iLine.Substring(lPos3, lPos4 - lPos3);
+            Int32 pos1 = line.IndexOf(EntityTypeHelper.EntityNames[EntityType.Amphoe]) + EntityTypeHelper.EntityNames[EntityType.Amphoe].Length;
+            Int32 pos2 = line.IndexOf("&nbsp;");
+            data.AmphoeName = line.Substring(pos1, pos2 - pos1);
+            Int32 pos3 = line.IndexOf(EntityTypeHelper.EntityNames[EntityType.Changwat]) + EntityTypeHelper.EntityNames[EntityType.Changwat].Length;
+            Int32 pos4 = line.IndexOf(SearchStringAmphoeChangwatEnd);
+            data.ChangwatName = line.Substring(pos3, pos4 - pos3);
         }
-        private AmphoeComData Parse(Stream iStream)
+
+        private AmphoeComData Parse(Stream stream)
         {
             AmphoeComData retval = new AmphoeComData();
-            var lReader = new StreamReader(iStream, TambonHelper.ThaiEncoding);
-            String lCurrentLine = String.Empty;
-            StringBuilder lEntryData = new StringBuilder();
-            Int32 lDataState = 0;
-            while ((lCurrentLine = lReader.ReadLine()) != null)
+            var reader = new StreamReader(stream, TambonHelper.ThaiEncoding);
+            String currentLine = String.Empty;
+            StringBuilder entryData = new StringBuilder();
+            Int32 dataState = 0;
+            while ( (currentLine = reader.ReadLine()) != null )
             {
-                if (lCurrentLine.Contains(SearchStringAmphoeChangwat))
+                if ( currentLine.Contains(SearchStringAmphoeChangwat) )
                 {
-                    ParseAmphoeChangwatName(lCurrentLine, retval);
+                    ParseAmphoeChangwatName(currentLine, retval);
                 }
-                else if (lCurrentLine.Contains(SearchStringDataCaptionTop))
+                else if ( currentLine.Contains(SearchStringDataCaptionTop) )
                 {
-                    if (lCurrentLine.Contains(SearchStringChangwatSlogan))
+                    if ( currentLine.Contains(SearchStringChangwatSlogan) )
                     {
-                        lDataState = 1;
+                        dataState = 1;
                     }
-                    else if (lCurrentLine.Contains(SearchStringAmphoeSlogan))
+                    else if ( currentLine.Contains(SearchStringAmphoeSlogan) )
                     {
-                        lDataState = 2;
+                        dataState = 2;
                     }
-                    else if (lCurrentLine.Contains(SearchStringDistrictOffice))
+                    else if ( currentLine.Contains(SearchStringDistrictOffice) )
                     {
-                        lDataState = 3;
+                        dataState = 3;
                     }
-                    else if (lCurrentLine.Contains(SearchStringTelephone))
+                    else if ( currentLine.Contains(SearchStringTelephone) )
                     {
-                        lDataState = 4;
+                        dataState = 4;
                     }
-                    else if (lCurrentLine.Contains(SearchStringFax))
+                    else if ( currentLine.Contains(SearchStringFax) )
                     {
-                        lDataState = 5;
+                        dataState = 5;
                     }
-                    else if (lCurrentLine.Contains(SearchStringWebsite))
+                    else if ( currentLine.Contains(SearchStringWebsite) )
                     {
-                        lDataState = 6;
+                        dataState = 6;
                     }
                 }
-                else if (lCurrentLine.Contains(SearchStringHistory))
+                else if ( currentLine.Contains(SearchStringHistory) )
                 {
-                    lDataState = 7;
+                    dataState = 7;
                 }
-                else if (lCurrentLine.Contains(SearchStringArea))
+                else if ( currentLine.Contains(SearchStringArea) )
                 {
-                    lDataState = 8;
+                    dataState = 8;
                 }
-                else if (lCurrentLine.Contains(SearchStringClimate))
+                else if ( currentLine.Contains(SearchStringClimate) )
                 {
-                    lDataState = 9;
+                    dataState = 9;
                 }
-                else if (lCurrentLine.Contains(SearchStringTambon))
+                else if ( currentLine.Contains(SearchStringTambon) )
                 {
-                    retval.Tambon = ParseSubEntityNumber(lCurrentLine);
+                    retval.Tambon = ParseSubEntityNumber(currentLine);
                 }
-                else if (lCurrentLine.Contains(SearchStringMuban))
+                else if ( currentLine.Contains(SearchStringMuban) )
                 {
-                    retval.Muban = ParseSubEntityNumber(lCurrentLine);
+                    retval.Muban = ParseSubEntityNumber(currentLine);
                 }
-                else if (lCurrentLine.Contains(SearchStringThesaban))
+                else if ( currentLine.Contains(SearchStringThesaban) )
                 {
-                    retval.Thesaban = ParseSubEntityNumber(lCurrentLine);
+                    retval.Thesaban = ParseSubEntityNumber(currentLine);
                 }
-                else if (lCurrentLine.Contains(SearchStringTAO))
+                else if ( currentLine.Contains(SearchStringTAO) )
                 {
-                    retval.TAO = ParseSubEntityNumber(lCurrentLine);
+                    retval.TAO = ParseSubEntityNumber(currentLine);
                 }
-                else if (lCurrentLine.Contains(SearchStringDataLineEndTop))
+                else if ( currentLine.Contains(SearchStringDataLineEndTop) )
                 {
-                    String lTempString = ParseTopTableData(lCurrentLine);
-                    switch (lDataState)
+                    String tempString = ParseTopTableData(currentLine);
+                    switch ( dataState )
                     {
                         case 1:
-                            retval.ChangwatSlogan = lTempString;
+                            retval.ChangwatSlogan = tempString;
                             break;
                         case 2:
-                            retval.AmphoeSlogan = lTempString;
+                            retval.AmphoeSlogan = tempString;
                             break;
                         case 3:
-                            retval.DistrictOffice = lTempString;
+                            retval.DistrictOffice = tempString;
                             break;
                         case 4:
-                            retval.Telephone = lTempString;
+                            retval.Telephone = tempString;
                             break;
                         case 5:
-                            retval.Fax = lTempString;
+                            retval.Fax = tempString;
                             break;
                         case 6:
-                            retval.Website = lTempString;
+                            retval.Website = tempString;
                             break;
                     }
                 }
-                else if (lCurrentLine.Contains(SearchStringDataBottom))
+                else if ( currentLine.Contains(SearchStringDataBottom) )
                 {
-                    String lTempString = lCurrentLine;
+                    String tempString = currentLine;
 
-                    while (!lTempString.Contains(SearchStringDataLineEnd))
+                    while ( !tempString.Contains(SearchStringDataLineEnd) )
                     {
-                        if ((lCurrentLine = lReader.ReadLine()) == null)
+                        if ( (currentLine = reader.ReadLine()) == null )
                         {
                             break;
                         }
-                        lTempString = lTempString + lCurrentLine;
+                        tempString = tempString + currentLine;
                     }
-                    lTempString = ParseSecondDataTable(lTempString).Trim();
-                    lTempString = TrimMultiLine(lTempString);
-                    switch (lDataState)
+                    tempString = ParseSecondDataTable(tempString).Trim();
+                    tempString = TrimMultiLine(tempString);
+                    switch ( dataState )
                     {
                         case 7:
-                            retval.History = lTempString;
-                            lDataState = 0;
+                            retval.History = tempString;
+                            dataState = 0;
                             break;
                         case 8:
-                            retval.Area = lTempString;
-                            lDataState = 0;
+                            retval.Area = tempString;
+                            dataState = 0;
                             break;
                         case 9:
-                            retval.Climate = lTempString;
-                            lDataState = 0;
+                            retval.Climate = tempString;
+                            dataState = 0;
                             break;
                     }
                 }
@@ -375,14 +385,14 @@ namespace De.AHoerstemeier.Tambon
             return retval;
         }
 
-        private Int32 ParseSubEntityNumber(String lCurrentLine)
+        private Int32 ParseSubEntityNumber(String currentLine)
         {
-            String lTempString = lCurrentLine.Substring(lCurrentLine.IndexOf(SearchStringDataBottom) + SearchStringDataBottom.Length);
-            lTempString = lTempString.Substring(0, lTempString.IndexOf('<')).Trim();
+            String tempString = currentLine.Substring(currentLine.IndexOf(SearchStringDataBottom) + SearchStringDataBottom.Length);
+            tempString = tempString.Substring(0, tempString.IndexOf('<')).Trim();
             Int32 retval = 0;
             try
             {
-                retval = Convert.ToInt32(lTempString);
+                retval = Convert.ToInt32(tempString);
             }
             catch
             {
@@ -390,82 +400,82 @@ namespace De.AHoerstemeier.Tambon
             return retval;
         }
 
-        public AmphoeComData DoIt(Int16 iProvinceID, Int16 iAmphoeID)
+        public AmphoeComData DoIt(Int16 provinceId, Int16 amphoeId)
         {
-            if (!File.Exists(CacheFileName(iAmphoeID)))
+            if ( !File.Exists(CacheFileName(amphoeId)) )
             {
-                Stream lData = DoDownload(iProvinceID, iAmphoeID);
-                SaveToCache(lData, iAmphoeID);
+                Stream cacheData = DoDownload(provinceId, amphoeId);
+                SaveToCache(cacheData, amphoeId);
             }
-            Stream mData = new FileStream(CacheFileName(iAmphoeID), FileMode.Open);
-            var retval = Parse(mData);
-            retval.AmphoeID = iAmphoeID;
-            retval.ProvinceID = iProvinceID;
+            Stream data = new FileStream(CacheFileName(amphoeId), FileMode.Open);
+            var retval = Parse(data);
+            retval.AmphoeID = amphoeId;
+            retval.ProvinceID = provinceId;
             return retval;
         }
 
-        private void SaveToCache(Stream lData, Int16 iAmphoeID)
+        private void SaveToCache(Stream data, Int16 amphoeId)
         {
-            System.IO.Stream lFileStream = null;
-            String lFileName = CacheFileName(iAmphoeID);
+            System.IO.Stream outFileStream = null;
+            String lFileName = CacheFileName(amphoeId);
             Directory.CreateDirectory(CacheDirectory());
             try
             {
                 try
                 {
-                    lFileStream = new FileStream(lFileName, FileMode.CreateNew);
-                    TambonHelper.StreamCopy(lData, lFileStream);
-                    lFileStream.Flush();
+                    outFileStream = new FileStream(lFileName, FileMode.CreateNew);
+                    TambonHelper.StreamCopy(data, outFileStream);
+                    outFileStream.Flush();
                 }
                 finally
                 {
-                    lFileStream.Dispose();
+                    outFileStream.Dispose();
                 }
             }
             catch
             {
                 File.Delete(lFileName);
             }
-
         }
+
         private String CacheDirectory()
         {
             String lDir = Path.Combine(GlobalSettings.HTMLCacheDir, "amphoe");
             return lDir;
         }
 
-        private String CacheFileName(Int16 iAmphoeID)
+        private String CacheFileName(Int16 amphoeId)
         {
-            String retval = Path.Combine(CacheDirectory(), "amphoe " + iAmphoeID.ToString() + ".html");
+            String retval = Path.Combine(CacheDirectory(), "amphoe " + amphoeId.ToString() + ".html");
             return retval;
         }
-        public List<AmphoeComData> DoItAll(Int32 iProvinceGeocode)
+
+        public List<AmphoeComData> DoItAll(Int32 provinceGeocode)
         {
             List<AmphoeComData> retval = new List<AmphoeComData>();
-            var lCodes = CreateCodes();
-            Int16 lProvinceID = ProvinceIdFromGeocode(iProvinceGeocode);
-            foreach (Int16 lValue in lCodes[lProvinceID])
+            var codes = CreateCodes();
+            Int16 provinceId = ProvinceIdFromGeocode(provinceGeocode);
+            foreach ( Int16 value in codes[provinceId] )
             {
-                retval.Add(DoIt(lProvinceID, lValue));
+                retval.Add(DoIt(provinceId, value));
             }
             return retval;
         }
 
-        private Int16 ProvinceIdFromGeocode(int iProvinceGeocode)
+        private Int16 ProvinceIdFromGeocode(Int32 provinceGeocode)
         {
-            Int16 lProvinceID = 0;
-            XElement lGeocodeXML = XElement.Load(TambonHelper.BasicGeocodeFileName());
+            Int16 provinceId = 0;
 
-            var lQuery = from c in lGeocodeXML.Descendants("entity")
-                         where ((Int32)(c.Attribute("geocode")) == iProvinceGeocode)
-                         select c.Attribute("name");
-            foreach (String s in lQuery)
+            XElement geocodeXml = XElement.Load(TambonHelper.BasicGeocodeFileName());
+
+            var query = from c in geocodeXml.Descendants(TambonHelper.TambonNameSpace + "entity")
+                        where ((Int32)(c.Attribute("geocode")) == provinceGeocode)
+                        select c.Attribute("name");
+            foreach ( String s in query )
             {
-                lProvinceID = mProvinceIDs[s];
+                provinceId = _provinceIds[s];
             }
-            return lProvinceID;
-
+            return provinceId;
         }
     }
-
 }
