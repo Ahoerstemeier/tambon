@@ -745,6 +745,7 @@ namespace De.AHoerstemeier.Tambon
                     result.english = this.english;
                     result.geocode = this.geocode + 50;  // see http://tambon.blogspot.com/2009/07/geocodes-for-municipalities-my-proposal.html
                     result.obsolete = office.obsolete;
+                    result.parent.Add(this.geocode / 100);
                     if ( office.type == OfficeType.TAOOffice )
                     {
                         result.type = EntityType.TAO;

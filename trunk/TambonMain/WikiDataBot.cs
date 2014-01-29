@@ -191,10 +191,13 @@ namespace De.AHoerstemeier.Tambon
                             collisionData.AppendLine();
                         }
                     }
+
                     foreach ( var key in links.Keys )
                     {
                         if ( !result.ContainsKey(key) )
+                        {
                             result[key] = 0;
+                        }
                         result[key]++;
                     }
                 }
@@ -409,15 +412,15 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGeocode(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
+            if ( entities == null )
             {
                 throw new ArgumentNullException("entities");
             }
             ClearRunInfo();
-            foreach (var entity in entities)
+            foreach ( var entity in entities )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if (item == null)
+                if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                 }
@@ -425,15 +428,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.GeocodeCorrect(item, entity);
                     _runInfo[state]++;
-                    if (state == WikiDataState.WrongValue)
+                    if ( state == WikiDataState.WrongValue )
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong geocode id", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if (state != WikiDataState.Valid)
+                    if ( state != WikiDataState.Valid )
                     {
                         var statement = _helper.SetGeocode(item, entity, overrideData);
-                        if (statement != null)
+                        if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }

@@ -254,6 +254,15 @@ namespace De.AHoerstemeier.Tambon
                     parentEntity = _allEntities.FirstOrDefault(x => x.geocode == entity.geocode / 10000);
                 }
             }
+            else if ( entity.type.IsLocalGovernment() )
+            {
+                var parentGeocode = entity.parent.FirstOrDefault();
+                if ( parentGeocode == 0 )
+                {
+                    parentGeocode = entity.geocode / 100;
+                }
+                parentEntity = _allEntities.FirstOrDefault(x => x.geocode == parentGeocode);
+            }
             else
             {
                 parentEntity = _allEntities.FirstOrDefault(x => x.geocode == entity.geocode / 100);
@@ -460,7 +469,7 @@ namespace De.AHoerstemeier.Tambon
         private WikiDataState Geocode(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
             var stringValue = String.Empty;
-                stringValue = entity.geocode.ToString(CultureInfo.InvariantCulture);
+            stringValue = entity.geocode.ToString(CultureInfo.InvariantCulture);
             return CheckStringValue(item, WikiBase.PropertyIdThaiGeocode, stringValue, createStatement, overrideWrongData, out statement);
         }
 
@@ -474,7 +483,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
         public Statement SetGeocode(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
+            if ( item == null )
                 throw new ArgumentNullException("item");
 
             Statement result;
@@ -490,14 +499,14 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
         public WikiDataState GeocodeCorrect(Item item, Entity entity)
         {
-            if (item == null)
+            if ( item == null )
                 throw new ArgumentNullException("item");
 
             Statement dummy;
             return Geocode(item, entity, false, false, out dummy);
         }
 
-        #endregion OpenStreetMapId
+        #endregion Geocode
 
         /// <summary>
         /// Get the default edit summary for a claim save.
