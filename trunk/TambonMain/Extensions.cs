@@ -220,7 +220,10 @@ namespace De.AHoerstemeier.Tambon
                 case EntityType.ThesabanNakhon:
                 case EntityType.ThesabanMueang:
                 case EntityType.ThesabanTambon:
-                    retval = compare.IsLocalGovernment();
+                    retval = compare == EntityType.Thesaban ||
+                             compare == EntityType.ThesabanTambon ||
+                             compare == EntityType.ThesabanMueang ||
+                             compare == EntityType.ThesabanNakhon;
                     break;
 
                 default:

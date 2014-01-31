@@ -29,6 +29,7 @@ namespace De.AHoerstemeier.Tambon
             {EntityType.Khet, "Q15634531"},
             {EntityType.Khwaeng, "Q456876"},
             {EntityType.Chumchon,"Q15253857"},
+            {EntityType.SaphaTambon,"Q15695218"},
         };
 
         public const String PropertyIdEntityType = "P132";
@@ -45,20 +46,35 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdOpenStreetMap = "P402";
         public const String PropertyIdLocationMap = "P242";
         public const String PropertyIdFreebaseIdentifier = "P646";
-        public const String PropertyIdReferenceUrl = "P854";
         public const String PropertyIdISO3166 = "P300";
         public const String PropertyIdGND = "P227";
         public const String PropertyIdFIPS10 = "P901";
         public const String PropertyIdDmoz = "P998";
         public const String PropertyIdThaiGeocode = "P1067";
-        public const String PropertyIdStatedIn = "P248";
         public const String PropertyIdInstanceOf = "P31";
+        public const String PropertyPopulation = "P1082";
+        // public const String PropertyArea = "Pxxxx";
 
+        // for qualifiers
+        public const String PropertyPointInTime = "P585";
+
+        public const String PropertyStartDate = "P580";
+        public const String PropertyEndDate = "P582";
+
+        // for sources
+        public const String PropertyIdStatedIn = "P248";
+
+        public const String PropertyIdReferenceUrl = "P854";
+
+        // source statements for TIS 1099
         public const String ItemSourceTIS1099BE2535 = "Q15477441";
+
         public const String ItemSourceTIS1099BE2548 = "Q15477531";
         public const String ItemSourceCCAATT = "Q15477767";
 
+        // source statements for population
         public const String ItemCensus2010 = "Q15637207";
+
         public const String ItemCensus2000 = "Q15637213";
         public const String ItemCensus1990 = "Q15637229";
         public const String ItemCensus1980 = "Q15637237";
