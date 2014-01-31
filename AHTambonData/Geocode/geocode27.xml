@@ -265,14 +265,23 @@
       </officials>
     </office>
     <entity type="Tambon" name="คลองหาด" english="Khlong Hat" geocode="270201">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>13.4506</geo:lat>
           <geo:long>102.2888</geo:long>
         </geo:Point>
+        <officials>
+          <official title="Mayor" name="ชาตรี จันทกิจ" begin="2010-01-17" beginreason="ElectedDirectly"/>
+        </officials>
         <council>
+          <term begin="2010-01-17" end="2014-01-16" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" status="Done">
+            <meetingreference board="2" date="2009-07-15" number="26"/>
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="27020101" name="บ้านคลองหาด" english="Ban Khlong Hat" />
       <entity type="Muban" geocode="27020102" name="บ้านซับมะกรูด" english="Ban Sap Makrut" />
@@ -907,10 +916,17 @@
       <entity type="Muban" geocode="27060511" name="บ้านนาดง" english="Ban Na Dong" />
     </entity>
     <entity type="Tambon" name="ป่าไร่" english="Pa Rai" geocode="270606">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <officials>
+          <official title="Mayor" name="กิติศักดิ์ พรพรหมวินิจ" begin="2010-01-17" beginreason="ElectedDirectly"/>
+        </officials>
         <council>
+          <term begin="2010-01-17" end="2014-01-16" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" status="Done"/>
+        </history>
       </office>
     </entity>
     <entity type="Tambon" name="ทับพริก" english="Thap Phrik" geocode="270607">
@@ -1016,12 +1032,15 @@
       <entity type="Muban" geocode="27061110" name="บ้านใหม่ไทยเจริญ" english="Ban Mai Thai Charoen" />
     </entity>
     <entity type="Tambon" name="ฟากห้วย" english="Fak Huai" geocode="270612">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <url>http://www.faghuay.net/</url>
         <council>
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
-          <!-- Mu 11 created 2005-11 -->
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" finalsize="22" sizechangereason="MubanCreation" comment="Mu 11 created 2005-11" />
+          <!-- Mu 10 created 2003-09 -->
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" status="Done"/>
+        </history>
       </office>
       <entity type="Muban" geocode="27061202" name="บ้านฟากห้วย" english="Ban Fak Huai" />
       <entity type="Muban" geocode="27061203" name="บ้านหนองผักบุ้ง" english="Ban Nong Phak Bung" />

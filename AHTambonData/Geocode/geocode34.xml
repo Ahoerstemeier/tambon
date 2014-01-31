@@ -1179,14 +1179,19 @@
       <entity type="Muban" geocode="34041112" name="บ้านโพนทอง" english="Ban Phon Thong" />
     </entity>
     <entity type="Tambon" name="บ้านกอก" english="Ban Kok" geocode="340412">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <officials>
           <official title="Mayor" name="อภิรัฐ คำควร" begin="2010-02-21" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2010-02-21" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2010-02-21" end="2014-02-20" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-12" status="Done">
+            <meetingreference board="1" date="2009-07-13" number="24"/>
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="34041201" name="บ้านนาแก้ว" english="Ban Na Kaeo" />
       <entity type="Muban" geocode="34041202" name="บ้านนาแก้ว" english="Ban Na Kaeo" />
