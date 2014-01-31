@@ -61,11 +61,11 @@ namespace De.AHoerstemeier.Tambon
             WikiDataState result = WikiDataState.Unknown;
 
             // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
-            var property = EntityId.newFromPrefixedId(propertyId);
+            var property = new EntityId(propertyId);
             Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
 
             var dataValue = new StringValue(expected);
-            var snak = new Snak("value", EntityId.newFromPrefixedId(propertyId), dataValue);
+            var snak = new Snak("value", new EntityId(propertyId), dataValue);
             if ( claim == null )
             {
                 if ( String.IsNullOrEmpty(expected) )
@@ -85,7 +85,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 Snak oldSnak = claim.mainSnak;
                 var oldDataValue = snak.dataValue as StringValue;
-                if ( oldDataValue.str == dataValue.str )
+                if ( oldDataValue.Value == dataValue.Value )
                 {
                     result = WikiDataState.Valid;
                 }
@@ -118,13 +118,13 @@ namespace De.AHoerstemeier.Tambon
             WikiDataState result = WikiDataState.Unknown;
 
             // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
-            var property = EntityId.newFromPrefixedId(propertyId);
+            var property = new EntityId(propertyId);
             Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
 
-            var entity = EntityId.newFromPrefixedId(expectedItemId);
-            var dataValue = new EntityIdValue("item", entity.numericId);
+            var entity = new EntityId(expectedItemId);
+            var dataValue = new EntityIdValue(entity);
 
-            var snak = new Snak("value", EntityId.newFromPrefixedId(propertyId), dataValue);
+            var snak = new Snak("value", new EntityId(propertyId), dataValue);
             if ( claim == null )
             {
                 if ( String.IsNullOrEmpty(expectedItemId) )
@@ -144,7 +144,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 Snak oldSnak = claim.mainSnak;
                 var oldDataValue = snak.dataValue as EntityIdValue;
-                if ( oldDataValue.numericId == dataValue.numericId )
+                if ( oldDataValue.NumericId == dataValue.NumericId )
                 {
                     result = WikiDataState.Valid;
                 }
@@ -181,17 +181,17 @@ namespace De.AHoerstemeier.Tambon
                 statement = null;
                 return result;  // TODO better handling!
             }
-            var entity = EntityId.newFromPrefixedId(expectedItemId);
-            var dataValue = new EntityIdValue("item", entity.numericId);
-            var snak = new Snak("value", EntityId.newFromPrefixedId(propertyId), dataValue);
+            var entity = new EntityId(expectedItemId);
+            var dataValue = new EntityIdValue(entity);
+            var snak = new Snak("value", new EntityId(propertyId), dataValue);
 
-            var property = EntityId.newFromPrefixedId(propertyId);
+            var property = new EntityId(propertyId);
             Statement foundStatement = null;
             foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.propertyId)) )
             {
                 Snak oldSnak = claim.mainSnak;
                 var oldDataValue = oldSnak.dataValue as EntityIdValue;
-                if ( oldDataValue.numericId == dataValue.numericId )
+                if ( oldDataValue.NumericId == dataValue.NumericId )
                 {
                     foundStatement = claim as Statement;
                 }
@@ -236,7 +236,7 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentException("no wikidata entity yet");
             EntityProvider entityProvider = new EntityProvider(Api);
 
-            Item entityById = entityProvider.getEntityFromId(EntityId.newFromPrefixedId(entity.wiki.wikidata)) as Item;
+            Item entityById = entityProvider.getEntityFromId(new EntityId(entity.wiki.wikidata)) as Item;
             return entityById;
         }
 
@@ -524,12 +524,12 @@ namespace De.AHoerstemeier.Tambon
             var entityIdValue = snak.dataValue as EntityIdValue;
             if ( entityIdValue != null )
             {
-                result = String.Format("[[Property:P{0}]]: [[Q{1}]]", snak.propertyId.numericId, entityIdValue.numericId);
+                result = String.Format("[[Property:P{0}]]: [[Q{1}]]", snak.propertyId.NumericId, entityIdValue.NumericId);
             }
             var stringValue = snak.dataValue as StringValue;
             if ( stringValue != null )
             {
-                result = String.Format("[[Property:P{0}]]: {1}", snak.propertyId.numericId, stringValue.str);
+                result = String.Format("[[Property:P{0}]]: {1}", snak.propertyId.NumericId, stringValue.Value);
             }
             return result;
         }
@@ -578,26 +578,26 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("item");
             if ( entity == null )
                 throw new ArgumentNullException("entity");
-            var propertyContainsAdministrativeDivisions = EntityId.newFromPrefixedId(WikiBase.PropertyIdContainsAdministrativeDivisions);
+            var propertyContainsAdministrativeDivisions = new EntityId(WikiBase.PropertyIdContainsAdministrativeDivisions);
             var result = new List<Statement>();
 
-            var claims = item.Claims.Where(x => x.mainSnak.propertyId.numericId == propertyContainsAdministrativeDivisions.numericId).ToList();
+            var claims = item.Claims.Where(x => x.mainSnak.propertyId.NumericId == propertyContainsAdministrativeDivisions.NumericId).ToList();
             foreach ( var subEntity in entity.entity )
             {
                 if ( (subEntity.wiki != null) && (!String.IsNullOrEmpty(subEntity.wiki.wikidata)) && (!subEntity.IsObsolete) && (!subEntity.type.IsLocalGovernment()) )
                 {
-                    var subEntityItemId = EntityId.newFromPrefixedId(subEntity.wiki.wikidata);
-                    Boolean claimFound = claims.Any(x => (x.mainSnak.dataValue as EntityIdValue).numericId == subEntityItemId.numericId);
+                    var subEntityItemId = new EntityId(subEntity.wiki.wikidata);
+                    Boolean claimFound = claims.Any(x => (x.mainSnak.dataValue as EntityIdValue).NumericId == subEntityItemId.NumericId);
                     if ( !claimFound )
                     {
-                        var subEntityDataValue = new EntityIdValue("item", subEntityItemId.numericId);
+                        var subEntityDataValue = new EntityIdValue(subEntityItemId);
                         var subEntitySnak = new Snak("value", propertyContainsAdministrativeDivisions, subEntityDataValue);
                         var claim = item.createStatementForSnak(subEntitySnak);
                         result.Add(claim);
                     }
                     else
                     {
-                        claims.RemoveAll(x => (x.mainSnak.dataValue as EntityIdValue).numericId == subEntityItemId.numericId);
+                        claims.RemoveAll(x => (x.mainSnak.dataValue as EntityIdValue).NumericId == subEntityItemId.NumericId);
                     }
                 }
             }
@@ -617,13 +617,13 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("item");
             if ( entity == null )
                 throw new ArgumentNullException("entity");
-            var propertyGeocode = EntityId.newFromPrefixedId(WikiBase.PropertyIdThaiGeocode);
-            var propertyStatedIn = EntityId.newFromPrefixedId(WikiBase.PropertyIdStatedIn);
+            var propertyGeocode = new EntityId(WikiBase.PropertyIdThaiGeocode);
+            var propertyStatedIn = new EntityId(WikiBase.PropertyIdStatedIn);
             Statement result = null;
 
-            var claims = item.Claims.Where(x => x.mainSnak.propertyId.numericId == propertyGeocode.numericId).ToList();
+            var claims = item.Claims.Where(x => x.mainSnak.propertyId.NumericId == propertyGeocode.NumericId).ToList();
             var geocodeValue = entity.geocode.ToString();
-            result = claims.FirstOrDefault(x => (x.mainSnak.dataValue as StringValue).str == geocodeValue) as Statement;
+            result = claims.FirstOrDefault(x => (x.mainSnak.dataValue as StringValue).Value == geocodeValue) as Statement;
             if ( result == null )
             {
                 var geocodeDataValue = new StringValue(geocodeValue);
@@ -635,15 +635,15 @@ namespace De.AHoerstemeier.Tambon
                     if ( entity.type.IsCompatibleEntityType(EntityType.Changwat) && (entity.geocode != 37) && (entity.geocode != 39) && (entity.geocode != 27) )
                     {
                         // TIS 1099-2535 had only changwat/Bangkok, and no Sa Kaeo, Nong Bua Lamphu, Amnat Charoen
-                        var referenceTIS1099BE2535SnakValue = new EntityIdValue("item", EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2535).numericId);
+                        var referenceTIS1099BE2535SnakValue = new EntityIdValue(new EntityId(WikiBase.ItemSourceTIS1099BE2535));
                         var referenceTIS1099BE2535Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2535SnakValue);
                         result.createReferenceForSnak(referenceTIS1099BE2535Snak);
                     }
-                    var referenceTIS1099BE2548SnakValue = new EntityIdValue("item", EntityId.newFromPrefixedId(WikiBase.ItemSourceTIS1099BE2548).numericId);
+                    var referenceTIS1099BE2548SnakValue = new EntityIdValue(new EntityId(WikiBase.ItemSourceTIS1099BE2548));
                     var referenceTIS1099BE2548Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2548SnakValue);
                     result.createReferenceForSnak(referenceTIS1099BE2548Snak);
                 }
-                var referenceCCAATTSnakValue = new EntityIdValue("item", EntityId.newFromPrefixedId(WikiBase.ItemSourceCCAATT).numericId);
+                var referenceCCAATTSnakValue = new EntityIdValue(new EntityId(WikiBase.ItemSourceCCAATT));
                 var referenceCCAATTSnak = new Snak("value", propertyStatedIn, referenceCCAATTSnakValue);
                 result.createReferenceForSnak(referenceCCAATTSnak);
                 // claim.rank="high";

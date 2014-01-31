@@ -112,6 +112,26 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
 
+            var noUpgradeHistoryEntry = new List<Entity>();
+            foreach ( var entity in allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Thesaban) && x.tambonSpecified) )
+            {
+                if ( !entity.history.Items.Any(x => x is HistoryStatus) )
+                {
+                    noUpgradeHistoryEntry.Add(entity);
+                }
+            }
+            noUpgradeHistoryEntry.Sort((x, y) => x.geocode.CompareTo(y.geocode));
+            if ( noUpgradeHistoryEntry.Any() )
+            {
+                builder.AppendFormat("No history ({0}):", noUpgradeHistoryEntry.Count);
+                builder.AppendLine();
+                foreach ( var entity in noUpgradeHistoryEntry )
+                {
+                    builder.AppendFormat("{0}: {1}", entity.geocode, entity.english);
+                    builder.AppendLine();
+                }
+            }
+
             var result = builder.ToString();
 
             var formWikiDataEntries = new StringDisplayForm(
@@ -258,6 +278,17 @@ namespace De.AHoerstemeier.Tambon.UI
             btnLogout.Enabled = false;
             btnLogin.Enabled = true;
             btnCountInterwiki.Enabled = false;
+        }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            WikibaseApi api = new WikibaseApi("https://test.wikidata.org", "TambonBot");
+            // Login with username and password
+            var username = ConfigurationManager.AppSettings["WikiDataUsername"];
+            var password = ConfigurationManager.AppSettings["WikiDataPassword"];
+            api.login(username, password);
+            var provider = new EntityProvider(api);
+            provider.getEntityFromId(new EntityId("q", 281));
         }
     }
 }
