@@ -1563,6 +1563,11 @@
         <term begin="2004-02-01" type="ThesabanTambon" size="12" endreason="Unknown" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2003-10-31" status="Gazette">
+        <gazetteref volume="120" page="28" issue="108 ก" date="2003-10-31" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="หลักหก" english="Lak Hok" geocode="1385" parent="1301" tambon="130114">
     <office type="MunicipalityOffice">
@@ -1583,7 +1588,9 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done" />
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done" >
+        <meetingreference board="2" number="20" date="2007-07-05"/>
+      </statuschange>
     </history>
   </entity>
   <entity type="ThesabanMueang" name="บึงยี่โถ" english="Bueng Yitho" geocode="1384" parent="1303" tambon="130302">
@@ -1609,7 +1616,10 @@
       </council>
     </office>
     <history>
-      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2011-11-25" />
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2011-11-25" status="Done"/>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-01" status="Done">
+        <meetingreference board="2" number="15" date="2007-06-07"/>
+      </statuschange>
     </history>
     <entity type="Chumchon" geocode="13840001" name="ชุมชนหมู่บ้านทิวสน" english="Chumchon Mu Ban Thio Son" />
     <entity type="Chumchon" geocode="13840002" name="ชุมชนหมู่บ้านเลคการ์เด้นวิลล์" english="Chumchon Mu Ban Lake Garden" />
@@ -1655,7 +1665,9 @@
       </council>
     </office>
     <history>
-      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2011-11-25" />
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2011-11-25" status="Done">
+        <meetingreference board="2" number="15" date="2007-06-07"/>
+      </statuschange>
     </history>
   </entity>
   <entity type="ThesabanMueang" name="ลำสามแก้ว" english="Lam Sam Kaeo" geocode="1382" parent="1306" tambon="130601">
@@ -1677,7 +1689,12 @@
       </council>
     </office>
     <history>
-      <rename oldname="คูคต" oldenglish="Khu Khot" name="ลำสามแก้ว" english="Lam Sam Kaeo" />
+      <rename oldname="คูคต" oldenglish="Khu Khot" name="ลำสามแก้ว" english="Lam Sam Kaeo" effective="2007-08-01" status="Done">
+        <meetingreference date="2007-06-19" number="1" board="rename"/>
+      </rename>
+      <statuschange old="TAO" new="ThesabanMueang" effective="2007-08-01" status="Done">
+        <meetingreference board="2" number="19" date="2007-06-29" />
+      </statuschange>
     </history>
   </entity>
 
