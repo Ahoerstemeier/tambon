@@ -117,7 +117,7 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="16" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
             <meetingreference board="2" number="36" date="2008-05-16" />
           </statuschange>
         </history>
@@ -155,7 +155,7 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="12" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31" status="Done">
             <meetingreference board="2" number="45" date="2012-06-27" />
           </statuschange>
         </history>
@@ -242,7 +242,7 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="12" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31" status="Done">
             <meetingreference board="1" number="43" date="2012-07-02" />
           </statuschange>
         </history>
@@ -526,7 +526,7 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="8" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31" status="Done">
             <meetingreference board="1" number="41" date="2012-06-25" />
           </statuschange>
         </history>
@@ -836,7 +836,7 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31" status="Done">
             <meetingreference board="2" number="51" date="2012-07-18" />
           </statuschange>
         </history>
@@ -1391,10 +1391,9 @@
       </symbols>
       <url lastchecked="2013-09-24">http://www.bannangsata.go.th/</url>
       <officials>
-        <!-- Table on TAO website says start in 2010, EC list says end of term with council ??? -->
         <official title="Mayor" index="7" name="อาบีดิง กาจะลากี" begin="2011-01-09" beginreason="ElectedDirectly" />
-        <official title="Mayor" index="6" name="สาการียา ยะหริ่ง" beginyear="2009" endyear="2010" />
-        <official title="Mayor" index="5" name="สาการียา ยะหริ่ง" beginyear="2005" endyear="2009" />
+        <official title="Mayor" index="6" name="สาการียา ยะหริ่ง" beginyear="2009" endyear="2010" beginreason="ElectedDirectly"/>
+        <official title="Mayor" index="5" name="สาการียา ยะหริ่ง" begin="2005-05-15" endyear="2009" beginreason="ElectedDirectly"/>
         <official title="Mayor" index="4" name="สาการียา ยะหริ่ง" beginyear="2004" endyear="2005" />
         <official title="Mayor" index="3" name="วิวัฒน์ ดางีดิง" beginyear="2002" endyear="2004" />
         <official title="Mayor" index="2" name="อำนาจ เพชรคง" beginyear="2001" endyear="2002" />
@@ -1477,10 +1476,19 @@
   <entity type="ThesabanTambon" name="เขื่อนบางลาง" english="Khuean Bang Lang" geocode="9591" parent="9503" tambon="950306">
     <office type="MunicipalityOffice">
       <url>http://www.banglangdamcity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="มะยูโซ๊ะ อาลีมามะ" begin="2011-11-13" beginreason="ElectedDirectly"/>
+      </officials>
       <council>
-        <term begin="2007-09-30" end="2011-09-29" type="ThesabanTambon" size="12" />
+        <term begin="2011-11-13" type="ThesabanTambon" size="12" />
+        <term begin="2007-09-30" end="2011-09-29" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-07-01" status="Done">
+        <meetingreference board="2" number="15" date="2007-06-07"/>
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="สะเตงนอก" english="Sateng Nok" geocode="9590" parent="9501" tambon="950116">
     <office type="MunicipalityOffice">
@@ -1502,15 +1510,15 @@
       <council>
         <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
       </council>
+    </office>
       <history>
-        <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2011-12-08">
+        <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2011-12-08" status="Gazette">
           <gazetteref volume="129" page="46" issue="พิเศษ 13 ง" date="2012-01-11" />
         </statuschange>
-        <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23">
+        <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23" status="Done">
           <meetingreference board="2" number="22" date="2007-07-12" />
           <!-- not announced in Royal Gazette yet-->
         </statuschange>
       </history>
-    </office>
   </entity>
 </entity>
