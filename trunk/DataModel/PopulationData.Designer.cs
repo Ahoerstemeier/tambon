@@ -292,7 +292,7 @@ namespace De.AHoerstemeier.Tambon {
         privatehouseholds,
         
         /// <summary>
-        /// Collective househodls, i.e. households ....
+        /// Collective households, i.e. ....
         /// </summary>
         collectivehouseholds,
     }
