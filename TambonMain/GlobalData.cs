@@ -149,6 +149,33 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        public static void LoadPopulationData()
+        {
+            var allFlat = CompleteGeocodeList().FlatList();
+            foreach ( String file in Directory.EnumerateFiles(BaseXMLDirectory + "\\population\\") )
+            {
+                using ( var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read) )
+                {
+                    var data = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
+                    var flat = data.FlatList();
+                    foreach ( var dataPoint in flat.Where(x => x.population.Any()) )
+                    {
+                        var target = allFlat.SingleOrDefault(x => x.geocode == dataPoint.geocode);
+                        if ( target != null )
+                        {
+                            foreach ( var populationEntry in dataPoint.population )
+                            {
+                                if ( !target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate) )
+                                {
+                                    target.population.Add(populationEntry);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         public static Int32 MaximumPossibleElectionYear
         {
             get

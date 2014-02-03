@@ -565,98 +565,9 @@ namespace De.AHoerstemeier.Tambon
             item.addAlias("th", entity.name);
         }
 
-        /// <summary>
-        /// Gets all statements containing subdivision administrative units which are not present before in the item.
-        /// </summary>
-        /// <param name="item">The WikiData item.</param>
-        /// <param name="entity">The administrative unit.</param>
-        /// <returns>Enumeration of all missing subdivision statements.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
-        public IEnumerable<Statement> MissingContainsAdministrativeDivisionsStatements(Item item, Entity entity)
-        {
-            if ( item == null )
-                throw new ArgumentNullException("item");
-            if ( entity == null )
-                throw new ArgumentNullException("entity");
-            var propertyContainsAdministrativeDivisions = new EntityId(WikiBase.PropertyIdContainsAdministrativeDivisions);
-            var result = new List<Statement>();
-
-            var claims = item.Claims.Where(x => x.mainSnak.propertyId.NumericId == propertyContainsAdministrativeDivisions.NumericId).ToList();
-            foreach ( var subEntity in entity.entity )
-            {
-                if ( (subEntity.wiki != null) && (!String.IsNullOrEmpty(subEntity.wiki.wikidata)) && (!subEntity.IsObsolete) && (!subEntity.type.IsLocalGovernment()) )
-                {
-                    var subEntityItemId = new EntityId(subEntity.wiki.wikidata);
-                    Boolean claimFound = claims.Any(x => (x.mainSnak.dataValue as EntityIdValue).NumericId == subEntityItemId.NumericId);
-                    if ( !claimFound )
-                    {
-                        var subEntityDataValue = new EntityIdValue(subEntityItemId);
-                        var subEntitySnak = new Snak("value", propertyContainsAdministrativeDivisions, subEntityDataValue);
-                        var claim = item.createStatementForSnak(subEntitySnak);
-                        result.Add(claim);
-                    }
-                    else
-                    {
-                        claims.RemoveAll(x => (x.mainSnak.dataValue as EntityIdValue).NumericId == subEntityItemId.NumericId);
-                    }
-                }
-            }
-            return result;
-        }
-
-        /// <summary>
-        /// Gets all statements with the geocodes, including the obsolete codes.
-        /// </summary>
-        /// <param name="item">The WikiData item.</param>
-        /// <param name="entity">The administrative unit.</param>
-        /// <returns>Enumeration of all missing geocode statements.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
-        public Statement GeocodeStatements(Item item, Entity entity)
-        {
-            if ( item == null )
-                throw new ArgumentNullException("item");
-            if ( entity == null )
-                throw new ArgumentNullException("entity");
-            var propertyGeocode = new EntityId(WikiBase.PropertyIdThaiGeocode);
-            var propertyStatedIn = new EntityId(WikiBase.PropertyIdStatedIn);
-            Statement result = null;
-
-            var claims = item.Claims.Where(x => x.mainSnak.propertyId.NumericId == propertyGeocode.NumericId).ToList();
-            var geocodeValue = entity.geocode.ToString();
-            result = claims.FirstOrDefault(x => (x.mainSnak.dataValue as StringValue).Value == geocodeValue) as Statement;
-            if ( result == null )
-            {
-                var geocodeDataValue = new StringValue(geocodeValue);
-                var geocodeSnak = new Snak("value", propertyGeocode, geocodeDataValue);
-                result = item.createStatementForSnak(geocodeSnak);
-                if ( GeocodeHelper.ProvinceCode(entity.geocode) != 38 )
-                {
-                    // Bueng Kan not yet in TIS 1099
-                    if ( entity.type.IsCompatibleEntityType(EntityType.Changwat) && (entity.geocode != 37) && (entity.geocode != 39) && (entity.geocode != 27) )
-                    {
-                        // TIS 1099-2535 had only changwat/Bangkok, and no Sa Kaeo, Nong Bua Lamphu, Amnat Charoen
-                        var referenceTIS1099BE2535SnakValue = new EntityIdValue(new EntityId(WikiBase.ItemSourceTIS1099BE2535));
-                        var referenceTIS1099BE2535Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2535SnakValue);
-                        result.createReferenceForSnak(referenceTIS1099BE2535Snak);
-                    }
-                    var referenceTIS1099BE2548SnakValue = new EntityIdValue(new EntityId(WikiBase.ItemSourceTIS1099BE2548));
-                    var referenceTIS1099BE2548Snak = new Snak("value", propertyStatedIn, referenceTIS1099BE2548SnakValue);
-                    result.createReferenceForSnak(referenceTIS1099BE2548Snak);
-                }
-                var referenceCCAATTSnakValue = new EntityIdValue(new EntityId(WikiBase.ItemSourceCCAATT));
-                var referenceCCAATTSnak = new Snak("value", propertyStatedIn, referenceCCAATTSnakValue);
-                result.createReferenceForSnak(referenceCCAATTSnak);
-                // claim.rank="high";
-            }
-            else
-            {
-                // check for sources?
-            }
-
-            return result;
-        }
-
         #endregion public methods
+
+        #region ContainsSubdivisions
 
         public WikiDataState ContainsSubdivisionsCorrect(Item item, Entity entity, Entity subEntity)
         {
@@ -680,6 +591,80 @@ namespace De.AHoerstemeier.Tambon
             CheckPropertyMultiValue(item, WikiBase.PropertyIdContainsAdministrativeDivisions, expected, true, out result);
             return result;
         }
+
+        #endregion ContainsSubdivisions
+
+        #region PopulationData
+
+        private WikiDataState PopulationData(Item item, PopulationData data, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var total = data.data.FirstOrDefault(y => y.type == PopulationDataType.total);
+            var propertyName = WikiBase.PropertyPopulation;
+
+            WikiDataState result = WikiDataState.Unknown;
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
+            var property = new EntityId(propertyName);
+            var propertyPointInTime = new EntityId(WikiBase.PropertyPointInTime);
+            var claimsForProperty = item.Claims.Where(x => property.Equals(x.mainSnak.propertyId));
+            Statement claim = claimsForProperty.FirstOrDefault(
+                x => x.Qualifiers.Any(
+                    y => y.propertyId.Equals(propertyPointInTime) &&
+                         y.dataValue is TimeValue &&
+                         (y.dataValue as TimeValue).DateTime.Year == data.Year)) as Statement;
+
+            var dataValue = new QuantityValue(total.total);
+            var snak = new Snak("value", new EntityId(propertyName), dataValue);
+            if ( claim == null )
+            {
+                result = WikiDataState.NotSet;
+                if ( createStatement )
+                {
+                    claim = item.createStatementForSnak(snak);
+                }
+            }
+            else
+            {
+                Snak oldSnak = claim.mainSnak;
+                var oldDataValue = snak.dataValue as QuantityValue;
+                if ( oldDataValue.Equals(dataValue) )
+                {
+                    result = WikiDataState.Valid;
+                }
+                else
+                {
+                    result = WikiDataState.WrongValue;
+                    if ( overrideWrongData )
+                    {
+                        claim.mainSnak = snak;
+                    }
+                }
+            }
+
+            statement = claim as Statement;
+            return result;
+        }
+
+        public Statement SetPopulationData(Item item, PopulationData data, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            PopulationData(item, data, true, overrideWrongData, out result);
+            return result;
+        }
+
+        public WikiDataState PopulationDataCorrect(Item item, PopulationData data)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return PopulationData(item, data, false, false, out dummy);
+        }
+
+        #endregion PopulationData
     }
 
     /// <summary>

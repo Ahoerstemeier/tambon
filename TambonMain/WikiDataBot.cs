@@ -142,6 +142,8 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
             _availableTasks.Add(new WikiDataTaskInfo("Set ContainsSubdivisions", SetContainsSubdivisions));
             _availableTasks.Add(new WikiDataTaskInfo("Set TIS 1099", SetGeocode));
+            WikiDataTaskDelegate setCensus2010 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2010);
+            _availableTasks.Add(new WikiDataTaskInfo("Set Census 2010", setCensus2010));
 
             _languageCode = new Dictionary<Language, String>()
             {
@@ -525,6 +527,43 @@ namespace De.AHoerstemeier.Tambon
             ClearRunInfo();
             foreach ( var entity in entities )
             {
+                if ( entity.entity.Where(x => !x.type.IsLocalGovernment()).All(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)) )
+                {
+                    var item = _helper.GetWikiDataItemForEntity(entity);
+                    if ( item == null )
+                    {
+                        _runInfo[WikiDataState.ItemNotFound]++;
+                    }
+                    else
+                    {
+                        foreach ( var subEntity in entity.entity.Where(x => !x.type.IsLocalGovernment()) )
+                        {
+                            var state = _helper.ContainsSubdivisionsCorrect(item, entity, subEntity);
+                            _runInfo[state]++;
+                            if ( state == WikiDataState.Incomplete )
+                            {
+                                var statement = _helper.SetContainsSubdivisions(item, entity, subEntity);
+                                if ( statement != null )
+                                {
+                                    statement.save(_helper.GetClaimSaveEditSummary(statement));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SetPopulationData(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData, PopulationDataSourceType dataSource, Int16 year)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            //foreach ( var entity in entities.Where(x => x.geocode == 8419) )
+            foreach ( var entity in entities.Where(x => x.population.Any(y => y.source == dataSource && y.Year == year)) )
+            {
                 var item = _helper.GetWikiDataItemForEntity(entity);
                 if ( item == null )
                 {
@@ -532,17 +571,17 @@ namespace De.AHoerstemeier.Tambon
                 }
                 else
                 {
-                    foreach ( var subEntity in entity.entity.Where(x => !x.type.IsLocalGovernment()) )
+                    var data = entity.population.First(y => y.source == dataSource && y.Year == year);
+
+                    var state = _helper.PopulationDataCorrect(item, data);
+                    _runInfo[state]++;
+                    if ( state != WikiDataState.Valid )
                     {
-                        var state = _helper.ContainsSubdivisionsCorrect(item, entity, subEntity);
-                        _runInfo[state]++;
-                        if ( state == WikiDataState.Incomplete )
+                        var statement = _helper.SetPopulationData(item, data, overrideData);
+                        if ( statement != null )
                         {
-                            var statement = _helper.SetContainsSubdivisions(item, entity, subEntity);
-                            if ( statement != null )
-                            {
-                                statement.save(_helper.GetClaimSaveEditSummary(statement));
-                            }
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                            // TODO: Add source, add qualifier "point in time"
                         }
                     }
                 }

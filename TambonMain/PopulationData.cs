@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,14 @@ namespace De.AHoerstemeier.Tambon
         public void MergeIdenticalEntries()
         {
             // ToDo: Find duplicate entries with same data.type and merge content
+        }
+
+        public Int16 Year
+        {
+            get
+            {
+                return Convert.ToInt16(year, CultureInfo.InvariantCulture);
+            }
         }
     }
 }
