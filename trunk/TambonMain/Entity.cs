@@ -8,6 +8,32 @@ namespace De.AHoerstemeier.Tambon
 {
     public partial class Entity
     {
+        #region fixup serialization
+        public Boolean ShouldSerializehistory()
+        {
+            return history.Items.Any();
+        }
+        public Boolean ShouldSerializearea()
+        {
+            return area.Any();
+        }
+        public Boolean ShouldSerializenewgeocode()
+        {
+            return newgeocode.Any();
+        }
+        public Boolean ShouldSerializeparent()
+        {
+            return parent.Any();
+        }
+        public Boolean ShouldSerializeentitycount()
+        {
+            return !String.IsNullOrEmpty(entitycount.year);
+        }
+        public Boolean ShouldSerializecodes()
+        {
+            return !codes.IsEmpty();
+        }
+        #endregion
         public Entity Clone()
         {
             // Don't I need a deep value copy?
@@ -63,6 +89,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     foreach ( var tambon in thesaban.entity )
                     {
+                        tambon.population.First().data.First().type = PopulationDataType.municipal;
                         AddTambonInThesabanToAmphoe(tambon, thesaban);
                     }
                 }
@@ -85,7 +112,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( mainAmphoe != null )
                 {
-                    mainTambon = (Entity)tambon.MemberwiseClone();
+                    mainTambon = XmlManager.MakeClone<Entity>(tambon);
                     mainAmphoe.entity.Add(mainTambon);
                 }
             }
@@ -196,6 +223,7 @@ namespace De.AHoerstemeier.Tambon
             geocode = source.geocode;
             english = source.english;
             name = source.name;
+            parent.AddRange(source.parent);
         }
 
         internal IEnumerable<String> OldNames
@@ -347,14 +375,14 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
             }
-            foreach ( var newEntry in missedEntities )
+            foreach (var newEntry in missedEntities)
             {
                 var parent = this.entity.FirstOrDefault(x => x.geocode == newEntry.geocode / 100);
-                if ( parent != null )
+                if (parent != null)
                 {
                     parent.entity.Add(newEntry);
+                    parent.entity.Sort((x, y) => x.geocode.CompareTo(y.geocode));
                 }
-                parent.entity.Sort((x, y) => x.geocode.CompareTo(y.geocode));
             }
         }
 

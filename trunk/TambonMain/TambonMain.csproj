@@ -94,9 +94,11 @@
     <Compile Include="GazetteListYear.cs" />
     <Compile Include="GazetteOperationBase.cs" />
     <Compile Include="GlobalData.cs" />
+    <Compile Include="HouseHoldDataPoint.cs" />
     <Compile Include="IGazetteEntries.cs" />
     <Compile Include="IGeocode.cs" />
     <Compile Include="OfficialEntryBase.cs" />
+    <Compile Include="OtherIdentifier.cs" />
     <Compile Include="PopulationData.cs" />
     <Compile Include="PopulationDataDownloader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,7 +111,7 @@
     <Compile Include="WikiDataHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\wikibase.net.git\trunk\Wikibase.NET\WikiBase.csproj">
+    <ProjectReference Include="..\..\wikibase.net\branches\rework\Wikibase.NET\WikiBase.csproj">
       <Project>{fc9f81dc-20ad-4fe5-9ea1-dab417f947ea}</Project>
       <Name>WikiBase</Name>
     </ProjectReference>

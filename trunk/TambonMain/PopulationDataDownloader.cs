@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace De.AHoerstemeier.Tambon
 {
-    internal class PopulationDataDownloader
+    public class PopulationDataDownloader
     {
         public static String CacheDirectory
         {
@@ -198,26 +198,35 @@ namespace De.AHoerstemeier.Tambon
                     String value = StripTableHtmlFromLine(currentLine);
                     if ( !String.IsNullOrEmpty(value) )
                     {
-                        var population = new PopulationData();
-                        population.source = PopulationDataSourceType.DOPA;
-                        population.year = Year.ToString(CultureInfo.InvariantCulture);
-                        population.referencedate = new DateTime(Year - 1, 12, 31);
-                        var dataPoint = new HouseholdDataPoint();
-                        population.data.Add(dataPoint);
-                        if ( currentEntry.type == EntityType.Changwat )
+                        if (!currentEntry.population.Any())
                         {
-                            dataPoint.type = PopulationDataType.total;
+                            var population = new PopulationData();
+                            population.source = PopulationDataSourceType.DOPA;
+                            population.year = Year.ToString(CultureInfo.InvariantCulture);
+                            population.referencedate = new DateTime(Year - 1, 12, 31);
+                            currentEntry.population.Add(population);
+                        }
+                        var dataPointType = PopulationDataType.total;
+                        if (currentEntry.type.IsCompatibleEntityType(EntityType.Changwat) || currentEntry.type.IsCompatibleEntityType(EntityType.Amphoe))
+                        {
+                            dataPointType = PopulationDataType.total;
                         }
                         else if ( currentEntry.type.IsLocalGovernment() )
                         {
-                            dataPoint.type = PopulationDataType.municipal;
+                            dataPointType = PopulationDataType.municipal;
                         }
                         else
                         {
-                            dataPoint.type = PopulationDataType.nonmunicipal;
+                            dataPointType = PopulationDataType.nonmunicipal;
                         }
-                        currentEntry.population.Add(population);
-                        ;
+                        var dataPoint = currentEntry.population.First().data.FirstOrDefault(x => x.type==dataPointType);
+                        if (dataPoint == null)
+                        {
+                            dataPoint = new HouseholdDataPoint();
+                            dataPoint.type = dataPointType;
+                            currentEntry.population.First().data.Add(dataPoint);
+                        }
+                        
                         switch ( dataState )
                         {
                             case 0:
@@ -337,40 +346,9 @@ namespace De.AHoerstemeier.Tambon
 
         public void ReOrderThesaban()
         {
-            if ( Data != null )
+            if (Data != null)
             {
-                var _thesaban = new List<Entity>();
-                foreach ( var entity in Data.entity )
-                {
-                    if ( entity != null )
-                    {
-                        if ( entity.type.IsLocalGovernment() | entity.type.IsSakha() )
-                        {
-                            _thesaban.Add(entity);
-                        }
-                    }
-                }
-                foreach ( var thesaban in _thesaban )
-                {
-                    Data.entity.Remove(thesaban);
-                }
-                foreach ( var thesaban in _thesaban )
-                {
-                    if ( thesaban.english.Any() )
-                    {
-                        foreach ( var tambon in thesaban.entity )
-                        {
-                            Data.AddTambonInThesabanToAmphoe(tambon, thesaban);
-                        }
-                    }
-                }
-                foreach ( var entity in Data.entity )
-                {
-                    if ( entity != null )
-                    {
-                        entity.entity.Sort((x, y) => x.geocode.CompareTo(y.geocode));
-                    }
-                }
+                Data.ReorderThesaban();
             }
         }
 
