@@ -176,13 +176,13 @@
             // 
             // btn_Population
             // 
-            this.btn_Population.Enabled = false;
             this.btn_Population.Location = new System.Drawing.Point(197, 303);
             this.btn_Population.Name = "btn_Population";
             this.btn_Population.Size = new System.Drawing.Size(112, 23);
             this.btn_Population.TabIndex = 35;
             this.btn_Population.Text = "Population";
             this.btn_Population.UseVisualStyleBackColor = true;
+            this.btn_Population.Click += new System.EventHandler(this.btn_Population_Click);
             // 
             // btnCheckTerms
             // 

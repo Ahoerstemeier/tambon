@@ -26,6 +26,16 @@ namespace De.AHoerstemeier.Tambon.UI
             GlobalData.LoadBasicGeocodeList();
 
             FillChangwatDropDown();
+            edtYear.Maximum = GlobalData.PopulationStatisticMaxYear;
+            edtYear.Minimum = GlobalData.PopulationStatisticMinYear;
+            edtYear.Value = edtYear.Maximum;
+
+            // change to real settings
+            //PopulationDataDownloader.CacheDirectory=Path.GetDirectoryName(Application.ExecutablePath) + "\\cache\\";
+            //PopulationDataDownloader.OutputDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\output\\";
+
+            PopulationDataDownloader.CacheDirectory = @"C:\Users\Andy\Documents\Thailand\DOPA\cache";
+            PopulationDataDownloader.OutputDirectory = @"C:\Users\Andy\Documents\Thailand\DOPA\XmlOut";
         }
 
         private void FillChangwatDropDown()
@@ -831,6 +841,15 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var formElectionDayOfWeek = new StringDisplayForm("Election dates", result);
             formElectionDayOfWeek.Show();
+        }
+
+        private void btn_Population_Click(object sender, EventArgs e)
+        {
+            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 84);
+            downloader.Process();
+            var output = XmlManager.EntityToXml<Entity>(downloader.Data);
+            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory,"84.xml"), output);
+            
         }
     }
 }

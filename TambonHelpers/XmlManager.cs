@@ -88,5 +88,16 @@ namespace De.AHoerstemeier.Tambon
                     reader.Close();
             }
         }
+
+        public static T MakeClone<T>(T source)
+        {
+            if (source == null)
+                return default(T);
+
+            var xmlString = EntityToXml<T>(source);
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(xmlString ?? ""));
+            var result = XmlToEntity<T>(stream,new XmlSerializer(typeof(T)));
+            return result;
+        }
     }
 }
