@@ -28,7 +28,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<Emblem> emblemField;
         
-        private VisionSlogan sloganField;
+        private List<VisionSlogan> sloganField;
         
         private List<VisionSlogan> visionField;
         
@@ -46,8 +46,6 @@ namespace De.AHoerstemeier.Tambon {
         
         private SymbolColor colorField;
         
-        private bool colorFieldSpecified;
-        
         /// <summary>
         /// Creates a new instance of Symbols.
         /// </summary>
@@ -56,8 +54,9 @@ namespace De.AHoerstemeier.Tambon {
             this.goalField = new List<VisionSlogan>();
             this.missionField = new List<VisionSlogan>();
             this.visionField = new List<VisionSlogan>();
-            this.sloganField = new VisionSlogan();
+            this.sloganField = new List<VisionSlogan>();
             this.emblemField = new List<Emblem>();
+            this.colorField = SymbolColor.unknown;
         }
         
         /// <summary>
@@ -83,9 +82,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The slogan.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("slogan", Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public VisionSlogan slogan {
+        public List<VisionSlogan> slogan {
             get {
                 return this.sloganField;
             }
@@ -220,6 +219,7 @@ namespace De.AHoerstemeier.Tambon {
         /// The color.
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.ComponentModel.DefaultValueAttribute(SymbolColor.unknown)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SymbolColor color {
             get {
@@ -227,23 +227,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.colorField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool colorSpecified {
-            get {
-                return this.colorFieldSpecified;
-            }
-            set {
-                this.colorFieldSpecified = value;
             }
         }
     }
@@ -463,6 +446,11 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
     public enum SymbolColor {
+        
+        /// <summary>
+        /// Unknown or undefined value.
+        /// </summary>
+        unknown,
         
         /// <summary>
         /// Orange (สีส้ม).

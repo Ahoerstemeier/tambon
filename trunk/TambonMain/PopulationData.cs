@@ -14,20 +14,31 @@ namespace De.AHoerstemeier.Tambon
             return (PopulationData)(this.MemberwiseClone());
         }
 
+        public void CalculateTotal()
+        {
+            if ( !data.Any(x => x.type == PopulationDataType.total) )
+            {
+                var result = new HouseholdDataPoint();
+                result.type = PopulationDataType.total;
+                foreach ( var element in this.data.Where(x => x.type == PopulationDataType.municipal || x.type == PopulationDataType.nonmunicipal) )
+                {
+                    result.female += element.female;
+                    result.male += element.male;
+                    result.total += element.total;
+                    result.households += element.households;
+                }
+                if ( result.total > 0 )
+                {
+                    data.Add(result);
+                }
+            }
+        }
+
         public PopulationDataPoint TotalPopulation
         {
             get
             {
-                var result = new PopulationDataPoint();
-                foreach ( var element in this.data )
-                {
-                    if ( element.female > 0 )
-                        result.female = result.female + element.female;
-                    if ( element.male > 0 )
-                        result.male = result.male + element.male;
-                    if ( element.total > 0 )
-                        result.total = result.total + element.total;
-                }
+                var result = data.FirstOrDefault(x => x.type == PopulationDataType.total);
                 return result;
             }
         }

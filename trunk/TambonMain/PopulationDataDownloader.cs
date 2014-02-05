@@ -198,7 +198,7 @@ namespace De.AHoerstemeier.Tambon
                     String value = StripTableHtmlFromLine(currentLine);
                     if ( !String.IsNullOrEmpty(value) )
                     {
-                        if (!currentEntry.population.Any())
+                        if ( !currentEntry.population.Any() )
                         {
                             var population = new PopulationData();
                             population.source = PopulationDataSourceType.DOPA;
@@ -207,7 +207,7 @@ namespace De.AHoerstemeier.Tambon
                             currentEntry.population.Add(population);
                         }
                         var dataPointType = PopulationDataType.total;
-                        if (currentEntry.type.IsCompatibleEntityType(EntityType.Changwat) || currentEntry.type.IsCompatibleEntityType(EntityType.Amphoe))
+                        if ( currentEntry.type.IsCompatibleEntityType(EntityType.Changwat) )
                         {
                             dataPointType = PopulationDataType.total;
                         }
@@ -219,14 +219,14 @@ namespace De.AHoerstemeier.Tambon
                         {
                             dataPointType = PopulationDataType.nonmunicipal;
                         }
-                        var dataPoint = currentEntry.population.First().data.FirstOrDefault(x => x.type==dataPointType);
-                        if (dataPoint == null)
+                        var dataPoint = currentEntry.population.First().data.FirstOrDefault(x => x.type == dataPointType);
+                        if ( dataPoint == null )
                         {
                             dataPoint = new HouseholdDataPoint();
                             dataPoint.type = dataPointType;
                             currentEntry.population.First().data.Add(dataPoint);
                         }
-                        
+
                         switch ( dataState )
                         {
                             case 0:
@@ -346,7 +346,7 @@ namespace De.AHoerstemeier.Tambon
 
         public void ReOrderThesaban()
         {
-            if (Data != null)
+            if ( Data != null )
             {
                 Data.ReorderThesaban();
             }
@@ -383,6 +383,10 @@ namespace De.AHoerstemeier.Tambon
 
             GetGeocodes();
             ReOrderThesaban();
+            foreach ( var entity in Data.FlatList() )
+            {
+                entity.population.First().CalculateTotal();
+            }
         }
 
         public void Process()
