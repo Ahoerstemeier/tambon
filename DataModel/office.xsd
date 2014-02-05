@@ -16,6 +16,11 @@
       <xs:documentation>Symbol colors.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown or undefined value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="orange">
         <xs:annotation>
           <xs:documentation>Orange (สีส้ม).</xs:documentation>
@@ -749,7 +754,7 @@
           <xs:documentation>Emblem (ตรา) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" type='t:VisionSlogan' name='slogan'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:VisionSlogan' name='slogan'>
         <xs:annotation>
           <xs:documentation>Slogan (คำขวัญ) of the entity.</xs:documentation>
         </xs:annotation>
@@ -789,7 +794,7 @@
           <xs:documentation>Scientific name of the symbol bird (นกประจำจังหวัด).</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="color" type="t:SymbolColor">
+      <xs:element minOccurs="0" maxOccurs="1" name="color" type="t:SymbolColor" default="unknown">
         <xs:annotation>
           <xs:documentation>Symbol color of the entity.</xs:documentation>
         </xs:annotation>

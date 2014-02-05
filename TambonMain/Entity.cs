@@ -9,31 +9,44 @@ namespace De.AHoerstemeier.Tambon
     public partial class Entity
     {
         #region fixup serialization
+
         public Boolean ShouldSerializehistory()
         {
             return history.Items.Any();
         }
+
         public Boolean ShouldSerializearea()
         {
             return area.Any();
         }
+
         public Boolean ShouldSerializenewgeocode()
         {
             return newgeocode.Any();
         }
+
         public Boolean ShouldSerializeparent()
         {
             return parent.Any();
         }
+
         public Boolean ShouldSerializeentitycount()
         {
             return !String.IsNullOrEmpty(entitycount.year);
         }
+
         public Boolean ShouldSerializecodes()
         {
             return !codes.IsEmpty();
         }
-        #endregion
+
+        public Boolean ShouldSerializesymbols()
+        {
+            return !symbols.IsEmpty();
+        }
+
+        #endregion fixup serialization
+
         public Entity Clone()
         {
             // Don't I need a deep value copy?
@@ -105,9 +118,9 @@ namespace De.AHoerstemeier.Tambon
 
         internal void AddTambonInThesabanToAmphoe(Entity tambon, Entity thesaban)
         {
-            var allSubEntities = entity.SelectMany(x => x.entity);
+            var allSubEntities = entity.SelectMany(x => x.entity).ToList();
             var mainTambon = allSubEntities.FirstOrDefault(x => (x.geocode == tambon.geocode) & (x.type == EntityType.Tambon));
-            var mainAmphoe = allSubEntities.FirstOrDefault(x => (x.geocode == tambon.geocode / 100));
+            var mainAmphoe = entity.FirstOrDefault(x => (x.geocode == tambon.geocode / 100));
             if ( mainTambon == null )
             {
                 if ( mainAmphoe != null )
@@ -122,7 +135,20 @@ namespace De.AHoerstemeier.Tambon
             }
             if ( mainAmphoe != null )
             {
-                mainAmphoe.population.First().data.AddRange(tambon.population.First().data);
+                foreach ( var dataPoint in tambon.population.First().data )
+                {
+                    var target = mainAmphoe.population.First().data.FirstOrDefault(x => x.type == dataPoint.type);
+                    if ( target == null )
+                    {
+                        target = new HouseholdDataPoint();
+                        target.type = dataPoint.type;
+                        mainAmphoe.population.First().data.Add(target);
+                    }
+                    target.total += dataPoint.total;
+                    target.male += dataPoint.male;
+                    target.female += dataPoint.female;
+                    target.households += dataPoint.households;
+                }
             }
             if ( mainTambon != null )
             {
@@ -375,10 +401,10 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
             }
-            foreach (var newEntry in missedEntities)
+            foreach ( var newEntry in missedEntities )
             {
                 var parent = this.entity.FirstOrDefault(x => x.geocode == newEntry.geocode / 100);
-                if (parent != null)
+                if ( parent != null )
                 {
                     parent.entity.Add(newEntry);
                     parent.entity.Sort((x, y) => x.geocode.CompareTo(y.geocode));
