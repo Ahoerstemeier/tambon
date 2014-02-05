@@ -62,10 +62,10 @@ namespace De.AHoerstemeier.Tambon
 
             // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
             var property = new EntityId(propertyId);
-            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.PropertyId)) as Statement;
 
             var dataValue = new StringValue(expected);
-            var snak = new Snak("value", new EntityId(propertyId), dataValue);
+            var snak = new Snak(SnakType.Value, new EntityId(propertyId), dataValue);
             if ( claim == null )
             {
                 if ( String.IsNullOrEmpty(expected) )
@@ -84,7 +84,7 @@ namespace De.AHoerstemeier.Tambon
             else
             {
                 Snak oldSnak = claim.mainSnak;
-                var oldDataValue = snak.dataValue as StringValue;
+                var oldDataValue = snak.DataValue as StringValue;
                 if ( oldDataValue.Value == dataValue.Value )
                 {
                     result = WikiDataState.Valid;
@@ -119,12 +119,12 @@ namespace De.AHoerstemeier.Tambon
 
             // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
             var property = new EntityId(propertyId);
-            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.propertyId)) as Statement;
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.PropertyId)) as Statement;
 
             var entity = new EntityId(expectedItemId);
             var dataValue = new EntityIdValue(entity);
 
-            var snak = new Snak("value", new EntityId(propertyId), dataValue);
+            var snak = new Snak(SnakType.Value, new EntityId(propertyId), dataValue);
             if ( claim == null )
             {
                 if ( String.IsNullOrEmpty(expectedItemId) )
@@ -143,7 +143,7 @@ namespace De.AHoerstemeier.Tambon
             else
             {
                 Snak oldSnak = claim.mainSnak;
-                var oldDataValue = snak.dataValue as EntityIdValue;
+                var oldDataValue = snak.DataValue as EntityIdValue;
                 if ( oldDataValue.NumericId == dataValue.NumericId )
                 {
                     result = WikiDataState.Valid;
@@ -183,14 +183,14 @@ namespace De.AHoerstemeier.Tambon
             }
             var entity = new EntityId(expectedItemId);
             var dataValue = new EntityIdValue(entity);
-            var snak = new Snak("value", new EntityId(propertyId), dataValue);
+            var snak = new Snak(SnakType.Value, new EntityId(propertyId), dataValue);
 
             var property = new EntityId(propertyId);
             Statement foundStatement = null;
-            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.propertyId)) )
+            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId)) )
             {
                 Snak oldSnak = claim.mainSnak;
-                var oldDataValue = oldSnak.dataValue as EntityIdValue;
+                var oldDataValue = oldSnak.DataValue as EntityIdValue;
                 if ( oldDataValue.NumericId == dataValue.NumericId )
                 {
                     foundStatement = claim as Statement;
@@ -521,15 +521,15 @@ namespace De.AHoerstemeier.Tambon
 
             var result = String.Empty;
             Snak snak = value.mainSnak;
-            var entityIdValue = snak.dataValue as EntityIdValue;
+            var entityIdValue = snak.DataValue as EntityIdValue;
             if ( entityIdValue != null )
             {
-                result = String.Format("[[Property:P{0}]]: [[Q{1}]]", snak.propertyId.NumericId, entityIdValue.NumericId);
+                result = String.Format("[[Property:P{0}]]: [[Q{1}]]", snak.PropertyId.NumericId, entityIdValue.NumericId);
             }
-            var stringValue = snak.dataValue as StringValue;
+            var stringValue = snak.DataValue as StringValue;
             if ( stringValue != null )
             {
-                result = String.Format("[[Property:P{0}]]: {1}", snak.propertyId.NumericId, stringValue.Value);
+                result = String.Format("[[Property:P{0}]]: {1}", snak.PropertyId.NumericId, stringValue.Value);
             }
             return result;
         }
@@ -606,15 +606,15 @@ namespace De.AHoerstemeier.Tambon
             // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
             var property = new EntityId(propertyName);
             var propertyPointInTime = new EntityId(WikiBase.PropertyPointInTime);
-            var claimsForProperty = item.Claims.Where(x => property.Equals(x.mainSnak.propertyId));
+            var claimsForProperty = item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId));
             Statement claim = claimsForProperty.FirstOrDefault(
                 x => x.Qualifiers.Any(
-                    y => y.propertyId.Equals(propertyPointInTime) &&
-                         y.dataValue is TimeValue &&
-                         (y.dataValue as TimeValue).DateTime.Year == data.Year)) as Statement;
+                    y => y.PropertyId.Equals(propertyPointInTime) &&
+                         y.DataValue is TimeValue &&
+                         (y.DataValue as TimeValue).DateTime.Year == data.Year)) as Statement;
 
             var dataValue = new QuantityValue(total.total);
-            var snak = new Snak("value", new EntityId(propertyName), dataValue);
+            var snak = new Snak(SnakType.Value, new EntityId(propertyName), dataValue);
             if ( claim == null )
             {
                 result = WikiDataState.NotSet;
@@ -626,7 +626,7 @@ namespace De.AHoerstemeier.Tambon
             else
             {
                 Snak oldSnak = claim.mainSnak;
-                var oldDataValue = snak.dataValue as QuantityValue;
+                var oldDataValue = snak.DataValue as QuantityValue;
                 if ( oldDataValue.Equals(dataValue) )
                 {
                     result = WikiDataState.Valid;
