@@ -1667,7 +1667,10 @@
         <geo:lat>14.8457</geo:lat>
         <geo:long>101.1344</geo:long>
       </geo:Point>
-      <url lastchecked="2013-03-13">http://www.amphoewangmuang.com/</url>
+      <url lastonline="2013-03-13" status="offline">http://www.amphoewangmuang.com/</url>
+      <socialweb>
+        <googleplus type="page" verified="1" status="inactive">113620635423401697052</googleplus>
+      </socialweb>
       <officials>
         <official title="DistrictOfficer" name="ชรัส บุญณสะ" end="2011-05-01" inoffice="2009" comment="2009-06" />
 
@@ -2294,10 +2297,19 @@
   </entity>
   <entity type="ThesabanTambon" name="กุดนกเปล้า" english="Kut Nok Plao" geocode="1978" parent="1901" tambon="190112">
     <office type="MunicipalityOffice">
+      <url lastchecked="2014-02-06">http://www.kudnokplao.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สกุล คำมูล" inoffice="2013" />
+      </officials>
       <council>
-        <term begin="2007-12-02" end="2011-12-01" type="ThesabanTambon" size="12" />
+        <term begin="2007-12-02" end="2011-12-01" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-07-19" status="Gazette">
+        <gazetteref volume="125" page="22" issue="พิเศษ 21 ง" date="2008-01-30" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ตะกุด" english="Takut" geocode="1977" parent="1901" tambon="190114">
     <office type="MunicipalityOffice">
@@ -2306,6 +2318,11 @@
         <term begin="2007-12-02" end="2011-12-01" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-29" status="Done">
+        <meetingreference board="2" number="19" date="2007-06-29" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ไผ่ต่ำ" english="Phai Tam" geocode="1976" parent="1903" tambon="190307">
     <office type="MunicipalityOffice">
@@ -2313,6 +2330,11 @@
         <term begin="2007-12-16" end="2011-12-15" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-29" status="Done">
+        <meetingreference board="2" number="22" date="2007-07-12" />
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="คำพราน" english="Kham Phran" geocode="1975" parent="1912" tambon="191202">
     <office type="MunicipalityOffice">
@@ -2320,6 +2342,9 @@
         <term begin="2007-12-16" end="2011-12-15" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done" />
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="พุกร่าง" english="Phu Krang" geocode="1974" parent="1909" tambon="190908">
     <office type="MunicipalityOffice">
@@ -2332,5 +2357,8 @@
         <term begin="2007-12-16" end="2011-12-15" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30" status="Done" />
+    </history>
   </entity>
 </entity>
