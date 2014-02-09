@@ -579,16 +579,20 @@
         <url status="offline">http://www.khavovl.ob.tc/</url>
         <url status="offline">http://www.khavovl.th.gs/</url>
         <officials>
+          <official title="Mayor" name="อุทัย เพ่งจิตต์" begin="2011-02-27" beginreason="ElectedDirectly"/>
           <official title="TAOMayor" name="อุทัย เพ่งจิตต์" inoffice="2005" />
         </officials>
         <council>
+          <term begin="2011-02-27" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="30" />
         </council>
         <history>
-          <rename oldname="เขาวัว" oldenglish="Khao Wua" name="เขาวัว-พลอยแหวน" english="Khao Wua - Phloi Waen" effective="2005-11-14">
+          <rename oldname="เขาวัว" oldenglish="Khao Wua" name="เขาวัว-พลอยแหวน" english="Khao Wua - Phloi Waen" effective="2005-11-14" status="Gazette">
             <gazetteref volume="122" page="6" issue="117 ง" date="2005-12-15" />
           </rename>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done">
+            <meetingreference board="1" date="2009-07-14" number="25"/>
+          </statuschange>
         </history>
       </office>
       <entity type="Muban" geocode="22030601" name="บ้านเขาวัว" english="Ban Khao Wua" />
@@ -954,6 +958,7 @@
       <entity type="Muban" geocode="22050110" name="บ้านท่าระม้าบน" english="Ban Tha Rama Bon" />
     </entity>
     <entity type="Tambon" name="ท่าหลวง" english="Tha Luang" geocode="220502">
+      <wiki wikimapia="24801748"/>
       <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>12.6719</geo:lat>
@@ -961,9 +966,11 @@
         </geo:Point>
         <url>http://www.thaloung.ob.tc/</url>
         <officials>
-          <official title="TAOMayor" name="ขนาน ศุภนันทิ" inoffice="2009" />
+          <official title="Mayor" name="ขนาน ศุภนันทิ" begin="2010-03-07" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ขนาน ศุภนันทิ" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2010-03-07" end="2014-03-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
         <history>
@@ -1742,12 +1749,15 @@
         <url lastchecked="2012-12-20">http://www.chanthaklem.go.th/</url>
         <officials>
           <official title="Mayor" name="สุเนส เฉียงเหนือ" inoffice="2012" />
+          <official title="TAOMayor" name="สุเนส เฉียงเหนือ" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" status="Done">
+            <meetingreference board="1" date="2009-07-14" number="25"/>
+          </statuschange>
         </history>
       </office>
       <entity type="Muban" geocode="22100501" name="บ้านคลองใหญ่" english="Ban Khlong Yai" />
@@ -1983,27 +1993,48 @@
         <geo:lat>13.2337</geo:lat>
         <geo:long>102.1875</geo:long>
       </geo:Point>
+      <officials>
+        <official title="Mayor" name="ลำดวน เพชรน้อย" begin="2012-01-15" beginreason="ElectedDirectly"/>
+      </officials>
       <council>
-        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
+        <term begin="2012-01-15" type="ThesabanTambon" size="12"/>
+        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23" status="Done"/>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="พลวง" english="Phluang" geocode="2282" parent="2210" tambon="221002">
     <office type="MunicipalityOffice">
       <url>http://www.pluangcity.go.th/</url>
+      <officials>
+        <official title="Mayor" name="วันชัย อิงขนร" begin="2012-01-15" beginreason="ElectedDirectly"/>
+      </officials>
       <council>
-        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
+        <term begin="2012-01-15" type="ThesabanTambon" size="12"/>
+        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23" status="Done"/>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="บ่อเวฬุ" english="Bo Welu" geocode="2281" parent="2202" tambon="220212">
     <office type="MunicipalityOffice">
       <url>http://borwenlocal.com/</url>
+      <officials>
+        <official title="Mayor" name="บัญฑูล ศรีสวัสดิ์" begin="2012-01-15" beginreason="ElectedDirectly"/>
+      </officials>
       <council>
-        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
+        <term begin="2012-01-15" type="ThesabanTambon" size="12"/>
+        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
       </council>
     </office>
-  </entity>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done"/>
+    </history>
+  </entity> 
   <entity type="ThesabanTambon" name="เกาะขวาง" english="Ko Khwang" geocode="2280" parent="2201" tambon="220104">
     <office type="MunicipalityOffice">
       <url lastchecked="2012-09-12">http://www.kohkwang.co.cc/</url>
@@ -2019,7 +2050,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="39" date="2008-05-28" />
       </statuschange>
     </history>
@@ -2043,7 +2074,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="44" date="2008-06-06" />
       </statuschange>
     </history>
@@ -2092,7 +2123,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="44" date="2008-06-06" />
       </statuschange>
     </history>
@@ -2109,7 +2140,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="34" date="2008-05-14" />
       </statuschange>
     </history>
@@ -2128,7 +2159,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="48" date="2008-06-27" />
       </statuschange>
     </history>
@@ -2146,7 +2177,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="32" date="2008-05-07" />
       </statuschange>
     </history>
@@ -2166,7 +2197,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new ="ThesabanTambon" effective="2008-07-25">
+      <statuschange old="TAO" new ="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="50" date="2008-07-03" />
       </statuschange>
     </history>
@@ -2185,7 +2216,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="44" date="2008-06-06" />
       </statuschange>
     </history>

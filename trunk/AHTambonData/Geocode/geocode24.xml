@@ -2299,25 +2299,38 @@
   <entity type="ThesabanTambon" name="ดอนเกาะกา" english="Don Ko Ka" geocode="2477" parent="2403" tambon="240306">
     <office type="MunicipalityOffice">
       <council>
-        <term begin="2007-11-18" end="2011-11-17" type="ThesabanTambon" size="12" />
+        <term begin="2007-11-18" end="2011-11-17" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23" status="Done"/>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="วังเย็น" english="Wang Yen" geocode="2476" parent="2409" tambon="240902">
     <office type="MunicipalityOffice">
       <url>http://wangyen.org/</url>
       <council>
-        <term begin="2007-10-14" end="2011-10-13" type="ThesabanTambon" size="12" />
+        <term begin="2007-10-14" end="2011-10-13" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-01" status="Done">
+        <meetingreference board="2" number="15" date="2007-06-07"/>
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="พิมพา" english="Phimpha" geocode="2475" parent="2404" tambon="240409">
     <office type="MunicipalityOffice">
       <url>http://www.phimpha.go.th/</url>
       <council>
-        <term begin="2008-02-03" end="2012-02-02" type="ThesabanTambon" size="12" />
+        <term begin="2008-02-03" end="2012-02-02" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30" status="Done">
+        <meetingreference board="2" number="33" date="2007-08-17"/>
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="บางวัวคณารักษ์" english="Bang Wua Khana Rak" geocode="2474" parent="2404" tambon="240403">
     <office type="MunicipalityOffice">
@@ -2326,11 +2339,16 @@
         <googleplus type="user" status="inactive">103229378439437432336</googleplus>
       </socialweb>
       <council>
-        <term begin="2008-02-03" end="2012-02-02" type="ThesabanTambon" size="12" />
+        <term begin="2008-02-03" end="2012-02-02" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
     <history>
-      <rename oldname="บางวัว" oldenglish="Bang Wua" name="บางวัวคณารักษ์" />
+      <rename oldname="บางวัว" oldenglish="Bang Wua" name="บางวัวคณารักษ์" effective="2007-08-30" status="Done">
+        <meetingreference date="2007-08-15" number="3" board="rename"/>
+      </rename>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30" status="Done">
+        <meetingreference board="2" number="32" date="2007-08-16"/>
+      </statuschange>
     </history>
   </entity>
 </entity>

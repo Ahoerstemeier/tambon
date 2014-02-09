@@ -5839,10 +5839,12 @@
         </term>
         <term begin="2005-01-23" end="2009-01-22" type="ThesabanTambon" size="12" />
       </council>
-      <history>
-        <statuschange old="TAO" new="ThesabanTambon" effective="2004-11-15" />
-      </history>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2004-11-15" status="Gazette">
+        <gazetteref volume="122" page="3" issue="พิเศษ 84 ง" date="2005-09-14" />
+      </statuschange>
+    </history>
     <entity type="Unknown" name="บ้านเป็ด" english="Ban Pet" geocode="406801" />
   </entity>
   <entity type="ThesabanTambon" name="สาวะถี" english="Sawathi" geocode="4067" parent="4001" tambon="400108">
@@ -5856,6 +5858,9 @@
         <term begin="2007-10-28" end="2011-10-27" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-07-31" status="Done"/>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ลำน้ำพอง" english="Lam Nam Phong" geocode="4066" parent="4007" tambon="400701">
     <office type="MunicipalityOffice">
@@ -5867,6 +5872,14 @@
         <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
       </council>
     </office>
+    <history>
+      <rename oldname="น้ำพอง" oldenglish="Nam Phong" name="ลำน้ำพอง" english="Lam Nam Phong" effective="2007-08-30" status="Done">
+        <meetingreference date="2007-08-15" number="3" board="rename"/>
+      </rename>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30" status="Done">
+        <meetingreference board="2" number="32" date="2007-08-16"/>
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="กุดน้ำใส" english="Kut Nam Sai" geocode="4065" parent="4007" tambon="400712">
     <office type="MunicipalityOffice">
@@ -5894,9 +5907,14 @@
         <official title="Mayor" name="วิรัตน์ เย็นสบาย" begin="2007-12-09" endyear="2011" />
       </officials>
       <council>
-        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
+        <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-09-01" status="Done">
+        <meetingreference board="2" number="22" date="2007-07-12"/>
+      </statuschange>
+    </history>
     <!--
     Altogether 31 Chumchon
     บ้านกุดน้ำใส:
@@ -5937,9 +5955,14 @@
         <official title="Mayor" name="มานพ โสมพรมมา" begin="2008-01-13" />
       </officials>
       <council>
-        <term begin="2008-01-13" end="2012-01-12" type="ThesabanTambon" size="12" />
+        <term begin="2008-01-13" end="2012-01-12" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-09-13" status="Done">
+        <meetingreference board="2" number="34" date="2007-08-23"/>
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="โนนท่อน" english="Non Thon" geocode="4063" parent="4001" tambon="400118">
     <office type="MunicipalityOffice">
@@ -5953,6 +5976,11 @@
         <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
+        <meetingreference board="2" number="49" date="2008-07-02"/>
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="เมืองเก่า" english="Mueang Kao" geocode="4062" parent="4001" tambon="400106">
     <office type="MunicipalityOffice">
@@ -5996,11 +6024,16 @@
         <term begin="2012-04-26" type="ThesabanTambon" size="12">
           <official title="MunicipalityCouncilChairman" name="ธนบรรณ อาจต้น" beginreason="ElectedByCouncil" />
         </term>
-        <term begin="2008-02-24" end="2012-02-23" type="ThesabanTambon" size="12">
+        <term begin="2008-02-24" end="2012-02-23" type="ThesabanTambon" size="12" sizechangereason="StatusChange">
           <official title="MunicipalityCouncilChairman" name="ประดิษฐ์ อุ่นสิม" beginreason="ElectedByCouncil" />
         </term>
       </council>
     </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-30" status="Done">
+        <meetingreference board="2" number="25" date="2007-07-20"/>
+      </statuschange>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="หนองตูม" english="Nong Tum" geocode="4061" parent="4001" tambon="400116">
     <office type="MunicipalityOffice">
@@ -6088,7 +6121,8 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Done">
+      <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Gazette">
+        <gazetteref volume="128" page="10" issue="พิเศษ 17 ง" date="2011-02-11" />
         <meetingreference board="1" date="2009-06-17" number="16" />
       </statuschange>
     </history>
