@@ -52,6 +52,7 @@
             this.btnPendingElections = new System.Windows.Forms.Button();
             this.btnWikiData = new System.Windows.Forms.Button();
             this.btnElectionDates = new System.Windows.Forms.Button();
+            this.chkAllProvince = new System.Windows.Forms.CheckBox();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.SuspendLayout();
@@ -125,7 +126,7 @@
             // 
             // btn_GazetteLoadAll
             // 
-            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(301, 12);
+            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(419, 10);
             this.btn_GazetteLoadAll.Name = "btn_GazetteLoadAll";
             this.btn_GazetteLoadAll.Size = new System.Drawing.Size(112, 23);
             this.btn_GazetteLoadAll.TabIndex = 39;
@@ -236,9 +237,9 @@
             // 
             // btnTermEnds
             // 
-            this.btnTermEnds.Location = new System.Drawing.Point(106, 68);
+            this.btnTermEnds.Location = new System.Drawing.Point(266, 97);
             this.btnTermEnds.Name = "btnTermEnds";
-            this.btnTermEnds.Size = new System.Drawing.Size(75, 23);
+            this.btnTermEnds.Size = new System.Drawing.Size(99, 23);
             this.btnTermEnds.TabIndex = 51;
             this.btnTermEnds.Text = "Term ends";
             this.btnTermEnds.UseVisualStyleBackColor = true;
@@ -246,7 +247,7 @@
             // 
             // btnTimeBetweenElection
             // 
-            this.btnTimeBetweenElection.Location = new System.Drawing.Point(187, 68);
+            this.btnTimeBetweenElection.Location = new System.Drawing.Point(163, 45);
             this.btnTimeBetweenElection.Name = "btnTimeBetweenElection";
             this.btnTimeBetweenElection.Size = new System.Drawing.Size(75, 23);
             this.btnTimeBetweenElection.TabIndex = 52;
@@ -256,7 +257,7 @@
             // 
             // btnElectionWeekday
             // 
-            this.btnElectionWeekday.Location = new System.Drawing.Point(268, 68);
+            this.btnElectionWeekday.Location = new System.Drawing.Point(163, 74);
             this.btnElectionWeekday.Name = "btnElectionWeekday";
             this.btnElectionWeekday.Size = new System.Drawing.Size(75, 23);
             this.btnElectionWeekday.TabIndex = 53;
@@ -276,7 +277,7 @@
             // 
             // btnPendingElections
             // 
-            this.btnPendingElections.Location = new System.Drawing.Point(349, 68);
+            this.btnPendingElections.Location = new System.Drawing.Point(266, 68);
             this.btnPendingElections.Name = "btnPendingElections";
             this.btnPendingElections.Size = new System.Drawing.Size(99, 23);
             this.btnPendingElections.TabIndex = 55;
@@ -296,7 +297,7 @@
             // 
             // btnElectionDates
             // 
-            this.btnElectionDates.Location = new System.Drawing.Point(268, 97);
+            this.btnElectionDates.Location = new System.Drawing.Point(163, 102);
             this.btnElectionDates.Name = "btnElectionDates";
             this.btnElectionDates.Size = new System.Drawing.Size(75, 23);
             this.btnElectionDates.TabIndex = 57;
@@ -304,11 +305,22 @@
             this.btnElectionDates.UseVisualStyleBackColor = true;
             this.btnElectionDates.Click += new System.EventHandler(this.btnElectionDates_Click);
             // 
+            // chkAllProvince
+            // 
+            this.chkAllProvince.AutoSize = true;
+            this.chkAllProvince.Location = new System.Drawing.Point(266, 49);
+            this.chkAllProvince.Name = "chkAllProvince";
+            this.chkAllProvince.Size = new System.Drawing.Size(81, 17);
+            this.chkAllProvince.TabIndex = 58;
+            this.chkAllProvince.Text = "All province";
+            this.chkAllProvince.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 425);
+            this.Controls.Add(this.chkAllProvince);
             this.Controls.Add(this.btnElectionDates);
             this.Controls.Add(this.btnWikiData);
             this.Controls.Add(this.btnPendingElections);
@@ -338,6 +350,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -366,6 +379,7 @@
         private System.Windows.Forms.Button btnPendingElections;
         private System.Windows.Forms.Button btnWikiData;
         private System.Windows.Forms.Button btnElectionDates;
+        private System.Windows.Forms.CheckBox chkAllProvince;
     }
 }
 
