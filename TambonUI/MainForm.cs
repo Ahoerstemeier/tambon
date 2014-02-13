@@ -34,8 +34,8 @@ namespace De.AHoerstemeier.Tambon.UI
             //PopulationDataDownloader.CacheDirectory=Path.GetDirectoryName(Application.ExecutablePath) + "\\cache\\";
             //PopulationDataDownloader.OutputDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\output\\";
 
-            PopulationDataDownloader.CacheDirectory = @"C:\Users\Andy\Documents\Thailand\DOPA\cache";
-            PopulationDataDownloader.OutputDirectory = @"C:\Users\Andy\Documents\Thailand\DOPA\XmlOut";
+            PopulationDataDownloader.CacheDirectory = @"C:\Users\Ahoerstemeier.AACHEN\Documents\Thailand\DOPA\cache";
+            PopulationDataDownloader.OutputDirectory = @"C:\Users\Ahoerstemeier.AACHEN\Documents\Thailand\DOPA\XmlOut";
         }
 
         private void FillChangwatDropDown()
@@ -275,8 +275,16 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private static IEnumerable<EntityTermEnd> EntitiesWithCouncilTermEndInTimeSpan(UInt32 changwatGeocode, DateTime begin, DateTime end)
         {
-            var fullChangwat = GlobalData.GetGeocodeList(changwatGeocode);
-            return fullChangwat.EntitiesWithCouncilTermEndInTimeSpan(begin, end);
+            Entity entity;
+            if ( changwatGeocode == 0 )
+            {
+                entity = GlobalData.CompleteGeocodeList();
+            }
+            else
+            {
+                entity = GlobalData.GetGeocodeList(changwatGeocode);
+            }
+            return entity.EntitiesWithCouncilTermEndInTimeSpan(begin, end);
         }
 
         private static IEnumerable<Entity> EntitiesWithOfficialTermEndInYear(UInt32 changwatGeocode, Int32 year)
@@ -287,8 +295,16 @@ namespace De.AHoerstemeier.Tambon.UI
         private static IEnumerable<Entity> EntitiesWithOfficialTermEndInTimeSpan(UInt32 changwatGeocode, DateTime begin, DateTime end)
         {
             var result = new List<Entity>();
-            var fullChangwat = GlobalData.GetGeocodeList(changwatGeocode);
-            foreach ( var item in fullChangwat.FlatList() )
+            Entity entity;
+            if ( changwatGeocode == 0 )
+            {
+                entity = GlobalData.CompleteGeocodeList();
+            }
+            else
+            {
+                entity = GlobalData.GetGeocodeList(changwatGeocode);
+            }
+            foreach ( var item in entity.FlatList() )
             {
                 foreach ( var office in item.office )
                 {
@@ -328,8 +344,16 @@ namespace De.AHoerstemeier.Tambon.UI
         private static IEnumerable<Entity> EntitiesWithoutAnyCouncilTerms(UInt32 changwatGeocode)
         {
             var result = new List<Entity>();
-            var fullChangwat = GlobalData.GetGeocodeList(changwatGeocode);
-            foreach ( var item in fullChangwat.FlatList() )
+            Entity entity;
+            if ( changwatGeocode == 0 )
+            {
+                entity = GlobalData.CompleteGeocodeList();
+            }
+            else
+            {
+                entity = GlobalData.GetGeocodeList(changwatGeocode);
+            }
+            foreach ( var item in entity.FlatList() )
             {
                 foreach ( var office in item.office )
                 {
@@ -353,8 +377,16 @@ namespace De.AHoerstemeier.Tambon.UI
         private static IEnumerable<Entity> EntitiesWithInvalidCouncilTerms(UInt32 changwatGeocode)
         {
             var result = new List<Entity>();
-            var fullChangwat = GlobalData.GetGeocodeList(changwatGeocode);
-            foreach ( var item in fullChangwat.FlatList() )
+            Entity entity;
+            if ( changwatGeocode == 0 )
+            {
+                entity = GlobalData.CompleteGeocodeList();
+            }
+            else
+            {
+                entity = GlobalData.GetGeocodeList(changwatGeocode);
+            }
+            foreach ( var item in entity.FlatList() )
             {
                 Boolean hasInvalidTermData = false;
                 foreach ( var office in item.office )
@@ -410,8 +442,16 @@ namespace De.AHoerstemeier.Tambon.UI
         private static IEnumerable<Entity> EntitiesWithInvalidElectedOfficialsTerms(UInt32 changwatGeocode)
         {
             var result = new List<Entity>();
-            var fullChangwat = GlobalData.GetGeocodeList(changwatGeocode);
-            foreach ( var item in fullChangwat.FlatList() )
+            Entity entity;
+            if ( changwatGeocode == 0 )
+            {
+                entity = GlobalData.CompleteGeocodeList();
+            }
+            else
+            {
+                entity = GlobalData.GetGeocodeList(changwatGeocode);
+            }
+            foreach ( var item in entity.FlatList() )
             {
                 Boolean hasInvalidTermData = false;
                 foreach ( var office in item.office )
@@ -511,9 +551,13 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnTermEnds_Click(object sender, EventArgs e)
         {
             var itemsWithTermEnds = new List<EntityTermEnd>();
-
-            var itemWithCouncilTermEndsInChangwat = EntitiesWithCouncilTermEndInYear((cbxChangwat.SelectedItem as Entity).geocode, DateTime.Now.Year);
-            // var itemWithOfficialTermEndsInChangwat = EntitiesWithCouncilTermEndInYear((cbxChangwat.SelectedItem as Entity).geocode, DateTime.Now.Year);
+            var geocode = (cbxChangwat.SelectedItem as Entity).geocode;
+            if ( chkAllProvince.Checked )
+            {
+                geocode = 0;
+            }
+            var itemWithCouncilTermEndsInChangwat = EntitiesWithCouncilTermEndInYear(geocode, DateTime.Now.Year);
+            // var itemWithOfficialTermEndsInChangwat = EntitiesWithCouncilTermEndInYear(geocode, DateTime.Now.Year);
             itemsWithTermEnds.AddRange(itemWithCouncilTermEndsInChangwat);
             itemsWithTermEnds.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
 
@@ -714,17 +758,25 @@ namespace De.AHoerstemeier.Tambon.UI
             var itemsWithOfficialElectionsPending = new List<EntityTermEnd>();
             var itemsWithOfficialElectionResultUnknown = new List<EntityTermEnd>();
 
-            var changwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
-            var fullChangwat = GlobalData.GetGeocodeList(changwatGeocode);
-            var itemsWithCouncilElectionPendingInChangwat = fullChangwat.EntitiesWithCouncilElectionPending();
+            Entity entity;
+            if ( chkAllProvince.Checked )
+            {
+                entity = GlobalData.CompleteGeocodeList();
+            }
+            else
+            {
+                var changwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
+                entity = GlobalData.GetGeocodeList(changwatGeocode);
+            }
+            var itemsWithCouncilElectionPendingInChangwat = entity.EntitiesWithCouncilElectionPending();
             itemsWithCouncilElectionsPending.AddRange(itemsWithCouncilElectionPendingInChangwat);
             itemsWithCouncilElectionsPending.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
 
-            var itemsWithOfficialElectionPendingInChangwat = fullChangwat.EntitiesWithOfficialElectionPending();
+            var itemsWithOfficialElectionPendingInChangwat = entity.EntitiesWithOfficialElectionPending();
             itemsWithOfficialElectionsPending.AddRange(itemsWithOfficialElectionPendingInChangwat);
             itemsWithOfficialElectionsPending.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
 
-            var itemsWithOfficialElectionResultUnknownInChangwat = fullChangwat.EntitiesWithLatestOfficialElectionResultUnknown();
+            var itemsWithOfficialElectionResultUnknownInChangwat = entity.EntitiesWithLatestOfficialElectionResultUnknown();
             itemsWithOfficialElectionResultUnknown.AddRange(itemsWithOfficialElectionResultUnknownInChangwat);
             itemsWithOfficialElectionResultUnknown.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
 
@@ -845,11 +897,10 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btn_Population_Click(object sender, EventArgs e)
         {
-            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 84);
+            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 83);
             downloader.Process();
             var output = XmlManager.EntityToXml<Entity>(downloader.Data);
-            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory,"84.xml"), output);
-            
+            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, "83.xml"), output);
         }
     }
 }
