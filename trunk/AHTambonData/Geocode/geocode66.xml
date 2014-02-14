@@ -584,11 +584,11 @@
           <official title="Mayor" name="เรียบ โสสุด" begin="2012-02-05" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2012-02-05" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+          <term begin="2012-02-05" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="18" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done"/>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done" />
         </history>
       </office>
       <entity type="Muban" geocode="66030401" name="บ้านใดโพธิ์" english="Ban Dai Pho" />
@@ -2180,7 +2180,8 @@
     <office type="MunicipalityOffice">
       <url status="obsolete">http://www.nmt.or.th/phichit/kamphaengdin/</url>
       <socialweb>
-        <googleplus>113953790361222730212</googleplus>
+        <googleplus type="user" status="inactive">113953790361222730212</googleplus>
+        <googleplus type="location">102666591536322733829</googleplus>
       </socialweb>
       <officials>
         <official title="Mayor" name="ดุษฎี โนรีแพทย์" begin="2010-06-20" beginreason="ElectedDirectly" />
@@ -2193,11 +2194,21 @@
   </entity>
   <entity type="ThesabanTambon" name="สามง่าม" english="Sam Ngam" geocode="6686" parent="6607">
     <office type="MunicipalityOffice">
+      <!-- Google: 16.50895, 100.20418 -->
+      <!-- Foursquare: 16.5054,100.1999 -->
+      <url status="offline">http://www.samngam.go.th/</url>
       <url>http://www.nmt.or.th/phichit/samngam/</url>
+      <socialweb>
+        <googleplus type="user" status="inactive">109062965051299223602</googleplus>
+        <googleplus type="location">101474941496737405651</googleplus>
+        <foursquare>4e166663d1649878a8f22437</foursquare>
+      </socialweb>
       <officials>
-        <official title="Mayor" name="ประมวล ปิ่นมาศ" begin="2008-08-17" endyear="2012" />
+        <official title="Mayor" name="ประมวล ปิ่นมาศ" begin="2012-09-23" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ประมวล ปิ่นมาศ" begin="2008-08-17" end="2012-08-16" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
+        <term begin="2013-09-23" type="ThesabanTambon" size="12" />
         <term begin="2008-08-17" end="2012-08-16" type="ThesabanTambon" size="12" />
         <term begin="2004-07-11" end="2008-07-10" type="ThesabanTambon" size="12" />
       </council>
@@ -2277,7 +2288,6 @@
       <url>http://www.tbt-noenpor.go.th/</url>
       <officials>
         <official title="Mayor" name="จันที พิลึก" begin="2012-01-08" beginreason="ElectedDirectly" />
-        <!-- no Mayor end term in 2012 -->
         <official title="Mayor" name="เอกวัฒน์  อินทรกูล" inoffice="2010" />
       </officials>
       <council>
@@ -2286,7 +2296,7 @@
       </council>
     </office>
     <history>
-      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23" />
+      <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23" status="Done" />
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ดงป่าคำ" english="Dong Pa Kham" geocode="6680" parent="6601" tambon="660112">
