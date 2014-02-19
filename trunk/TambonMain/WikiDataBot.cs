@@ -527,7 +527,7 @@ namespace De.AHoerstemeier.Tambon
             ClearRunInfo();
             foreach ( var entity in entities )
             {
-                if ( entity.entity.Where(x => !x.type.IsLocalGovernment()).All(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)) )
+                if ( entity.entity.Where(x => !x.IsObsolete && !x.type.IsLocalGovernment()).All(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)) )
                 {
                     var item = _helper.GetWikiDataItemForEntity(entity);
                     if ( item == null )

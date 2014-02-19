@@ -113,7 +113,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             var noUpgradeHistoryEntry = new List<Entity>();
-            foreach ( var entity in allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Thesaban) && x.tambonSpecified) )
+            foreach ( var entity in allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Thesaban) && x.tambonSpecified && !x.IsObsolete) )
             {
                 if ( !entity.history.Items.Any(x => x is HistoryStatus) )
                 {
