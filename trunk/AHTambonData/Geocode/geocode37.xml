@@ -101,6 +101,7 @@
       <entity type="Muban" geocode="37010308" name="บ้านโนนสมบูรณ์" english="Ban Non Sombun" />
     </entity>
     <entity type="Tambon" name="ปลาค้าว" english="Pla Khao" geocode="370104">
+      <wiki wikidata="Q15739057" />
       <office type="TAOOffice">
         <url lastonline="2012-08-26" status="offline">http://plakaow.go.th/</url>
         <officials>
@@ -113,7 +114,9 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
       </office>
-      <entity type="Muban" geocode="37010401" name="บ้านปลาค้าว" english="Ban Pla Khao" />
+      <entity type="Muban" geocode="37010401" name="บ้านปลาค้าว" english="Ban Pla Khao">
+        <wiki wikidata="Q4853687" comment="All 3 Muban covered?" />
+      </entity>
       <entity type="Muban" geocode="37010402" name="บ้านปลาค้าว" english="Ban Pla Khao" />
       <entity type="Muban" geocode="37010403" name="บ้านปลาค้าว" english="Ban Pla Khao" />
       <entity type="Muban" geocode="37010404" name="บ้านหนองนำเที่ยง" english="Ban Nong Nam Thiang" />
@@ -1741,12 +1744,12 @@
       </officials>
       <council>
         <term begin="2009-09-13" end="2013-09-12" type="ThesabanTambon" size="12" />
-        <term begin="2005-08-06" end="2009-08-05" type="ThesabanTambon" size="12" sizechangereason="StatusChange"/>
+        <term begin="2005-08-06" end="2009-08-05" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
       </council>
     </office>
-      <history>
-        <statuschange old="TAO" new="ThesabanTambon" effective="2005-06-08" />
-      </history>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2005-06-08" />
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="นายม" english="Na Yom" geocode="3790" parent="3701" tambon="370118">
     <office type="MunicipalityOffice">
