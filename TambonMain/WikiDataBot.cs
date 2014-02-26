@@ -125,7 +125,9 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks = new List<WikiDataTaskInfo>();
             WikiDataTaskDelegate setDescriptionEnglish = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetDescription(Language.English, entities, collisionInfo, overrideData);
             WikiDataTaskDelegate setDescriptionThai = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetDescription(Language.Thai, entities, collisionInfo, overrideData);
+            WikiDataTaskDelegate setDescriptionGerman = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetDescription(Language.German, entities, collisionInfo, overrideData);
             _availableTasks.Add(new WikiDataTaskInfo("Set description [en]", setDescriptionEnglish));
+            _availableTasks.Add(new WikiDataTaskInfo("Set description [de]", setDescriptionGerman));
             _availableTasks.Add(new WikiDataTaskInfo("Set description [th]", setDescriptionThai));
             WikiDataTaskDelegate setLabelEnglish = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.English, entities, collisionInfo, overrideData);
             WikiDataTaskDelegate setLabelGerman = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.German, entities, collisionInfo, overrideData);

@@ -692,6 +692,54 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        private String GetGermanWikiDataDescription()
+        {
+            String expandText = String.Empty;
+            switch ( this.type )
+            {
+                case EntityType.Changwat:
+                    return "Provinz in Thailand";
+                case EntityType.Khet:
+                    return "Bezirk von Bangkok, Thailand";
+                case EntityType.Khwaeng:
+                    expandText = "Unterbezirk von {0}, Bangkok, Thailand";
+                    break;
+                case EntityType.Amphoe:
+                case EntityType.KingAmphoe:
+                    expandText = "Landkreis in der Provinz {0}, Thailand";
+                    break;
+                case EntityType.Tambon:
+                    expandText = "Kommune im Landkreis {0}, Provinz {1}, Thailand";
+                    break;
+                case EntityType.Muban:
+                    expandText = "Dorf in Kommune {0}, Landkreis {1}, Provinz {2}, Thailand";
+                    break;
+                case EntityType.TAO:
+                case EntityType.Thesaban:
+                case EntityType.ThesabanTambon:
+                case EntityType.ThesabanMueang:
+                case EntityType.ThesabanNakhon:
+                    expandText = this.type.Translate(Language.German) + " im Landkreis {0}, Provinz {1}, Thailand";
+                    break;
+            }
+            var allEntities = GlobalData.CompleteGeocodeList().FlatList();
+            var parents = new String[3];
+            var currentGeocode = geocode;
+            var index = 0;
+            while ( currentGeocode / 100 != 0 )
+            {
+                currentGeocode = currentGeocode / 100;
+                var parentEntity = allEntities.First(x => x.geocode == currentGeocode);
+                parents[index] = parentEntity.english;
+                index++;
+            }
+            for ( Int32 i = index ; i < 3 ; i++ )
+            {
+                parents[i] = String.Empty;
+            }
+            return String.Format(expandText, parents);
+        }
+
         /// <summary>
         /// Gets the description ready to be set to WikiData.
         /// </summary>
@@ -699,6 +747,12 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Description of the entity.</returns>
         public String GetWikiDataDescription(Language language)
         {
+            if ( language == Language.German )
+            {
+                // the hierachical expansion does not sound good in German
+                return GetGermanWikiDataDescription();
+            }
+
             var allEntities = GlobalData.CompleteGeocodeList().FlatList();
             var typeValue = this.type.Translate(language);
             var expanded = String.Empty;  // 0 = type, 1 = hierarchy

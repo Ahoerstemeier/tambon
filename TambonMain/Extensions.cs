@@ -83,12 +83,12 @@ namespace De.AHoerstemeier.Tambon
                 }},
                 {EntityType.TAO, new Dictionary<Language,String>(){
                     {Language.English,"subdistrict administrative organization"},
-                    // {Language.German,"Bezirk"},
+                    {Language.German,"Kommunalverwaltungsorganisation"},
                     {Language.Thai,"องค์การบริหารส่วนตำบล"}
                 }},
                 {EntityType.PAO, new Dictionary<Language,String>(){
                     {Language.English,"provincial administrative organization"},
-                    // {Language.German,"Bezirk"},
+                    {Language.German,"Provinzverwaltungsorganisation"},
                     {Language.Thai,"องค์การบริหารส่วนจังหวัด"}
                 }},
         };
