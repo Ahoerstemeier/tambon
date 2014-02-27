@@ -2664,6 +2664,11 @@ namespace De.AHoerstemeier.Tambon {
         ViceProvinceGovernor,
         
         /// <summary>
+        /// Deputy province governor (ปลัดจังหวัด, Palat Changwat).
+        /// </summary>
+        DeputyProvinceGovernor,
+        
+        /// <summary>
         /// Governor of Bangkok (ผู้ว่าราชการกรุงเทพมหานคร, Phu Wa Rachakan Krung Thep Maha Nakhon).
         /// </summary>
         BangkokGovernor,
