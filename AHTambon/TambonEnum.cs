@@ -132,6 +132,7 @@ namespace De.AHoerstemeier.Tambon
         MinistryOfInteriorPermanentSecretary,
         ProvinceGovernor,
         ViceProvinceGovernor,
+        DeputyProvinceGovernor,
         BangkokGovernor,
         BangkokPermanentSecretary,
         DeputyBangkokPermanentSecretary,
