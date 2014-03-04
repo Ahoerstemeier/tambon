@@ -390,7 +390,15 @@
       <entity type="Muban" geocode="76011610" name="บ้านนาเกลื่อน" english="Ban Na Kluean" />
       <entity type="Muban" geocode="76011611" name="บ้านหนองทะเล" english="Ban Nong Thale" />
     </entity>
-    <entity type="Tambon" name="หาดเจ้าสำราญ" english="Hat Chao Samran" geocode="760117" />
+    <entity type="Tambon" name="หาดเจ้าสำราญ" english="Hat Chao Samran" geocode="760117" >
+      <entity type="Muban" geocode="76011701" name="บ้านหาดเจ้า" english="Ban Hat Chao" />
+      <entity type="Muban" geocode="76011702" name="บ้านนอก" english="Ban Nok" />
+      <entity type="Muban" geocode="76011703" name="บ้านโคกพลับ" english="Ban Khok Phlap" />
+      <entity type="Muban" geocode="76011704" name="บ้านบางทะลุ" english="Ban Bang Thalu" />
+      <entity type="Muban" geocode="76011705" name="บ้านสมอลก" english="Ban Samo Lok"/>
+      <entity type="Muban" geocode="76011706" name="บ้านบางกุฬา" english="Ban Bang Kula"/>
+      <entity type="Muban" geocode="76011707" name="บ้านหนองตะพุก" english="Ban Nong Taphuk"/>
+    </entity>
     <entity type="Tambon" name="หัวสะพาน" english="Hua Saphan" geocode="760118" />
     <entity type="Tambon" name="ต้นมะพร้าว" english="Ton Maphrao" geocode="760119">
       <office type="TAOOffice">
@@ -476,6 +484,19 @@
           </statuschange>
         </history>
       </office>
+      <entity type="Muban" geocode="76012301" name="บ้านทับน้อย" english="Ban Thap Noi" />
+      <entity type="Muban" geocode="76012302" name="บ้านดอนคู่" english="Ban Don Khu"/>
+      <entity type="Muban" geocode="76012303" name="บ้านดอนคู่" english="Ban Don Khu"/>
+      <entity type="Muban" geocode="76012304" name="บ้านดอนยางโทน" english="Ban Don Yang Thon" />
+      <entity type="Muban" geocode="76012305" name="บ้านหนองช้างตาย" english="Ban Nong Chang Tai" />
+      <entity type="Muban" geocode="76012306" name="บ้านหนองขนาน" english="Ban Nong Khanan" />
+      <entity type="Muban" geocode="76012307" name="บ้านบ่อโพลง" english="Ban Bo Phlong"/>
+      <entity type="Muban" geocode="76012308" name="บ้านหนองหว้า" english="Ban Nong Wa" />
+      <entity type="Muban" geocode="76012309" name="บ้านนาคลอง" english="Ban Na Khlong" />
+      <entity type="Muban" geocode="76012310" name="บ้านดอนนาลุ่ม" english="Ban Don Na Lum"/>
+      <entity type="Muban" geocode="76012311" name="บ้านดอนนาลุ่ม" english="Ban Don Na Lum"/>
+      <entity type="Muban" geocode="76012312" name="บ้านโตนดน้อย" english="Ban Tanot Noi" />
+      <entity type="Muban" geocode="76012313" name="บ้านบ่อโพลงเหนือ" english="Ban Bo Phlong Nuea"/>
     </entity>
     <entity type="Tambon" name="หนองพลับ" english="Nong Phlap" geocode="760124">
       <office type="TAOOffice">
@@ -1916,15 +1937,15 @@
   <entity type="ThesabanTambon" name="หาดเจ้าสำราญ" english="Hat Chao Samran" geocode="7696" parent="7601">
     <wiki wikidata="Q13025295" />
     <office type="MunicipalityOffice">
-      <url lastchecked="2013-02-05">http://www.hadchaosamran.com/</url>
+      <url lastchecked="2014-03-04">http://www.hadchaosamran.com/</url>
       <officials>
         <official title="Mayor" name="บุญยอด มาคล้าย" begin="2012-09-01" beginreason="ElectedDirectly" />
         <official title="Mayor" name="อิศรพงศ์ แสงมณี" begin="2008-07-20" end="2012-07-19" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         <official title="Mayor" name="อิศรพงศ์ แสงมณี" begin="2004-06-13" end="2008-06-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
-        <term begin="2012-09-01" type="TAO" size="12" />
-        <term begin="2008-07-20" end="2012-07-19" type="TAO" size="12" />
+        <term begin="2012-09-01" type="ThesabanTambon" size="12" />
+        <term begin="2008-07-20" end="2012-07-19" type="ThesabanTambon" size="12" />
         <term begin="2004-06-13" end="2008-06-12" type="ThesabanTambon" size="12" />
       </council>
     </office>
