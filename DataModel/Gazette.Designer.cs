@@ -2782,6 +2782,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Deputy director of the National Register Office (รองผู้อำนวยการทะเบียนกลาง).
         /// </summary>
         RegisterOfficeDeputyDirector,
+
+        /// <summary>
+        /// Director-General of the Department of Provincial Administration (อธิบดีกรมการปกครอง).
+        /// </summary>
+        DirectorGeneralDepartmentOfProvincialAdministration,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
