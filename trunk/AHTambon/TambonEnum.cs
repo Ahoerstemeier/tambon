@@ -156,6 +156,7 @@ namespace De.AHoerstemeier.Tambon
         FineArtsDepartmentDirectorGeneral,
         MinisterOfNaturalResourcesAndEnvironment,
         RegisterOfficeDirector,
-        RegisterOfficeDeputyDirector
+        RegisterOfficeDeputyDirector,
+        DirectorGeneralDepartmentOfProvincialAdministration
     }
 }
