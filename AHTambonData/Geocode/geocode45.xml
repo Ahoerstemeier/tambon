@@ -65,9 +65,8 @@
     <entity type="Tambon" name="รอบเมือง" english="Rop Mueang" geocode="450102">
       <office type="TAOOffice">
         <officials>
-          <official title="TAOMayor" name="มาโนชญ์ สาระโภค" inoffice="2012" beginreason="ElectedDirectly" />
-          <!-- no TAOMayor end term in 2012 -->
-          <officialterm title="TAOMayor" begin="2006-05-07" endyear="2010" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="มาโนชญ์ สาระโภค" begin="2010-06-13" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2006-05-07" end="2010-05-06" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
           <term begin="2012-09-30" type="TAO" size="40" />
@@ -1620,15 +1619,18 @@
     </entity>
     <entity type="Tambon" name="โคกกกม่วง" english="Khok Kok Muang" geocode="450702">
       <office type="MunicipalityOffice">
+        <url status="offline">http://www.kokkokmoung.go.th/</url>
         <officials>
           <official title="Mayor" name="วันชัย หอมสิน" begin="2010-03-07" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ประสิทธิ์ บุตรภักดี" inoffice="2009" />
+          <official title="TAOMayor" name="ประสิทธิ์ บุตรภักดี" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2010-03-07" end="2014-03-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
+          <!-- Mu 13 created 2004-09 -->
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-11-04">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-11-04" status="Done">
             <meetingreference board="2" date="2009-07-02" number="23" />
           </statuschange>
         </history>
@@ -2442,19 +2444,24 @@
     </entity>
     <entity type="Tambon" name="เกาะแก้ว" english="Ko Kaeo" geocode="451011">
       <office type="MunicipalityOffice">
+        <!-- Wikimapia: 16°9'43"N   103°52'6"E (26322062) - nothing to see there -->
+        <symbols>
+          <vision>เกาะแก้วชุมชนน่าอยู่ มุ่งสู่เศรษฐกิจก้าวหน้า พัฒนาคุณภาพชีวิต สิ่งแวดล้อมไม่เป็นพิษ เศรษฐกิจมั่นคง ดำรงไว้ซึ่งวัฒนธรรม ระคมนาคมสะดวก </vision>
+        </symbols>
+        <url lastchecked="2014-03-10">http://kohkaew101.com/</url>
         <socialweb>
           <blog>http://kohkaew101.blogspot.com/</blog>
         </socialweb>
         <officials>
           <official title="Mayor" name="ชัยชนะ รัตนชัยฤทธิ์" begin="2010-03-07" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="จำนงค์	ประเสริฐสังข์" begin="2005-07-31" end="2009-07-30" />
+          <official title="TAOMayor" name="จำนงค์	ประเสริฐสังข์" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+          <term begin="2010-03-07" end="2014-03-06" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="28" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-11-04">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-11-04" status="Done">
             <meetingreference board="2" date="2009-05-13" number="6" />
           </statuschange>
         </history>
@@ -3490,9 +3497,11 @@
       <office type="TAOOffice">
         <url status="offline">http://www.keelek.go.th/</url>
         <officials>
-          <officialterm title="TAOMayor" begin="2009-03-15" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สมพงษ์ สังขทิพย์" begin="2013-04-21" beginreason="ElectedDirectly"/>
+          <officialterm title="TAOMayor" begin="2009-03-15" end="2013-03-14" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-12" type="TAO" size="24"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
@@ -4221,10 +4230,14 @@
     </entity>
     <entity type="Tambon" name="หมูม้น" english="Mu Mon" geocode="451805">
       <office type="TAOOffice">
+        <socialweb>
+          <googleplus type="location">104064402686967757835</googleplus>
+        </socialweb>
         <officials>
           <officialterm title="TAOMayor" begin="2009-03-22" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2013-10-12" type="TAO" size="20"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -4951,11 +4964,12 @@
       </geo:Point>
       <url status="offline">http://61.19.250.201/~prangku/</url>
       <officials>
-        <official title="Mayor" name="อภิชาติ รักพงษ์" inoffice="2013" />
-        <officialterm title="Mayor" begin="2008-11-23" endyear="2012" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="อภิชาติ รักพงษ์" begin="2013-01-05" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2008-11-23" end="2012-11-22" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         <official title="TAOMayor" name="เชษฐา เวียงสิมา" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
+        <term begin="2013-01-05" type="ThesabanTambon" size="12"/>
         <term begin="2008-11-23" end="2012-11-22" type="ThesabanTambon" size="12" />
         <term begin="2004-07-18" end="2008-07-17" type="TAO" size="20" />
       </council>
