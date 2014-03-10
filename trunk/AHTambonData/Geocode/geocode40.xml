@@ -950,12 +950,13 @@
       <entity type="Muban" geocode="40030117" name="บ้านหัวบึง" english="Ban Hua Bueng" />
     </entity>
     <entity type="Tambon" name="พระบุ" english="Phra Bu" geocode="400302">
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <!-- TAO upgrade map suggests a bit further east, this from http://cd.m-culture.go.th/vdn/waypoints.php?page=12&q= -->
         <geo:Point>
           <geo:lat>16.2705</geo:lat>
           <geo:long>102.6895</geo:long>
         </geo:Point>
+        <url lastchecked="2014-03-10">http://phrabu.go.th/</url>
         <url>http://202.143.137.103/taophrabu/</url>
         <officials>
           <official title="Mayor" name="ทวี ผิวขาว" begin="2010-03-07" beginreason="ElectedDirectly" />
@@ -2091,16 +2092,16 @@
       <entity type="Muban" geocode="40070404" name="บ้านบัวใหญ่" english="Ban Bua Yai" />
       <entity type="Muban" geocode="40070405" name="บ้านบัวใหญ่" english="Ban Bua Yai" />
       <entity type="Muban" geocode="40070406" name="บ้านบัวใหญ่" english="Ban Bua Yai" />
-      <entity type="Muban" geocode="40070407" name="บ้านโคกค่อย" english="Ban Khok Khoi"/>
+      <entity type="Muban" geocode="40070407" name="บ้านโคกค่อย" english="Ban Khok Khoi" />
       <entity type="Muban" geocode="40070408" name="บ้านแสนตอ" english="Ban Saen To" />
-      <entity type="Muban" geocode="40070409" name="บ้านคอกคี" english="Ban Khok Khi"/>
-      <entity type="Muban" geocode="40070410" name="บ้านคอกคี" english="Ban Khok Khi"/>
-      <entity type="Muban" geocode="40070411" name="บ้านคำม่วม" english="Ban Kham Muam"/>
+      <entity type="Muban" geocode="40070409" name="บ้านคอกคี" english="Ban Khok Khi" />
+      <entity type="Muban" geocode="40070410" name="บ้านคอกคี" english="Ban Khok Khi" />
+      <entity type="Muban" geocode="40070411" name="บ้านคำม่วม" english="Ban Kham Muam" />
       <entity type="Muban" geocode="40070412" name="บ้านดงเย็น" english="Ban Dong Yen" />
       <entity type="Muban" geocode="40070413" name="บ้านโนนหัวช้าง" english="Ban Non Hua Chang" />
       <entity type="Muban" geocode="40070414" name="บ้านหนองบัวน้อย" english="Ban Nong Bua Noi" />
       <entity type="Muban" geocode="40070415" name="บ้านนาคำน้อย" english="Ban Na Kham Noi" />
-      <entity type="Muban" geocode="40070416" name="บ้านรักชาติ" english="Ban Rak Chat"/>
+      <entity type="Muban" geocode="40070416" name="บ้านรักชาติ" english="Ban Rak Chat" />
       <entity type="Muban" geocode="40070417" name="บ้านศรีภูมิ" english="Ban Si Phum" />
     </entity>
     <entity type="Tambon" name="สะอาด" english="Sa-at" geocode="400705">
@@ -4911,6 +4912,7 @@
     <entity type="Tambon" name="นาแพง" english="Na Phaeng" geocode="402204">
       <office type="MunicipalityOffice">
         <!-- Longdo: 16.10632, 102.43980 -->
+        <url lastchecked="2014-03-10">http://www.napaeng.go.th/</url>
         <officials>
           <official title="Mayor" name="สามารถ ปานเนาว์" begin="2010-03-07" beginreason="ElectedDirectly" />
         </officials>
@@ -4919,7 +4921,9 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done">
+            <meetingreference board="2" date="2009-07-02" number="23" />
+          </statuschange>
         </history>
       </office>
       <entity type="Muban" geocode="40220401" name="บ้านโนนงาม" english="Ban Non Ngam" />
