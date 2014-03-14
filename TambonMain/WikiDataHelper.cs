@@ -531,6 +531,50 @@ namespace De.AHoerstemeier.Tambon
             {
                 result = String.Format("[[Property:P{0}]]: {1}", snak.PropertyId.NumericId, stringValue.Value);
             }
+            var quantityValue = snak.DataValue as QuantityValue;
+            if ( quantityValue != null )
+            {
+                if ( (quantityValue.LowerBound == quantityValue.UpperBound) && (quantityValue.Amount == quantityValue.UpperBound) )
+                {
+                    result = String.Format("[[Property:P{0}]]: {1}", snak.PropertyId.NumericId, quantityValue.Amount);
+                }
+                // TODO: ± if upper and lower not same
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Get the default edit summary for a reference save.
+        /// </summary>
+        /// <param name="value">Reference to ber parsed.</param>
+        /// <returns>Edit summary.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        public String GetReferenceSaveEditSummary(Reference value)
+        {
+            if ( value == null )
+                throw new ArgumentNullException("value");
+
+            var result = String.Empty;
+            Snak snak = value.Statement.mainSnak;
+            result = String.Format("Added reference to claim: [[Property:P{0}]]", snak.PropertyId.NumericId);
+            return result;
+        }
+
+        /// <summary>
+        /// Get the default edit summary for a qualifier save.
+        /// </summary>
+        /// <param name="value">Qualifier to be parsed.</param>
+        /// <returns>Edit summary.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        public String GetReferenceSaveEditSummary(Qualifier value)
+        {
+            if ( value == null )
+                throw new ArgumentNullException("value");
+
+            var result = String.Empty;
+            // TODO - should the qualifier get a statement as its back linking property?
+            //Snak snak = value.Statement.mainSnak;
+            //result = String.Format("‎Changed one qualifier of claim: [[Property:P{0}]]", snak.PropertyId.NumericId);
             return result;
         }
 
@@ -605,7 +649,7 @@ namespace De.AHoerstemeier.Tambon
 
             // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
             var property = new EntityId(propertyName);
-            var propertyPointInTime = new EntityId(WikiBase.PropertyPointInTime);
+            var propertyPointInTime = new EntityId(WikiBase.PropertyIdPointInTime);
             var claimsForProperty = item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId));
             Statement claim = claimsForProperty.FirstOrDefault(
                 x => x.Qualifiers.Any(
@@ -662,6 +706,32 @@ namespace De.AHoerstemeier.Tambon
 
             Statement dummy;
             return PopulationData(item, data, false, false, out dummy);
+        }
+
+        public void AddPopulationDataReferences(Statement statement, PopulationData data)
+        {
+            Reference reference = null;
+            if ( data.source == PopulationDataSourceType.Census )
+            {
+                var statedInItem = String.Empty;
+                if ( WikiBase.ItemCensus.Keys.Contains(data.Year) )
+                {
+                    statedInItem = WikiBase.ItemCensus[data.Year];
+                }
+                var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdStatedIn), new EntityIdValue(new EntityId(statedInItem)));
+                reference = statement.CreateReferenceForSnak(snak);
+            }
+
+            if ( reference != null )
+            {
+                statement.AddReference(reference);
+            }
+        }
+
+        public void AddPopulationDataQualifiers(Statement statement, PopulationData data)
+        {
+            var pointInTimeQualifier = new Qualifier(SnakType.Value, new EntityId(WikiBase.PropertyIdPointInTime), TimeValue.DateValue(data.referencedate));
+            statement.Qualifiers.Add(pointInTimeQualifier);
         }
 
         #endregion PopulationData
