@@ -53,10 +53,12 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdThaiGeocode = "P1067";
         public const String PropertyIdInstanceOf = "P31";
         public const String PropertyPopulation = "P1082";
+        public const String PropertySocialMedia = "P553";
+        public const String PropertySocialMediaAddress = "P554";
         // public const String PropertyArea = "Pxxxx";
 
         // for qualifiers
-        public const String PropertyPointInTime = "P585";
+        public const String PropertyIdPointInTime = "P585";
 
         public const String PropertyStartDate = "P580";
         public const String PropertyEndDate = "P582";
@@ -73,6 +75,21 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemSourceCCAATT = "Q15477767";
 
         // source statements for population
+        public static Dictionary<Int16, String> ItemCensus = new Dictionary<Int16, String>()
+        {
+        {2010,ItemCensus2010},
+        {2000,ItemCensus2000},
+        {1990,ItemCensus1990},
+        {1980,ItemCensus1980},
+        {1970,ItemCensus1970},
+        {1960,ItemCensus1960},
+        {1947,ItemCensus1947},
+        {1937,ItemCensus1937},
+        {1929,ItemCensus1929},
+        {1919,ItemCensus1919},
+        {1909,ItemCensus1909},
+        };
+
         public const String ItemCensus2010 = "Q15637207";
 
         public const String ItemCensus2000 = "Q15637213";
@@ -85,6 +102,11 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemCensus1929 = "Q15639341";
         public const String ItemCensus1919 = "Q15639367";
         public const String ItemCensus1909 = "Q15639395";
+
+        public const String ItemSocialMediaTwitter = "Q918";
+        public const String ItemSocialMediaFacebook = "Q335";
+        public const String ItemSocialMediaGooglePlus = "Q356";
+        public const String ItemSocialMediaFoursquare = "Q51709";
 
         public const String ItemSandbox = "Q4115189";
     }

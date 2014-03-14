@@ -583,7 +583,17 @@ namespace De.AHoerstemeier.Tambon
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
-                            // TODO: Add source, add qualifier "point in time"
+                            _helper.AddPopulationDataReferences(statement, data);
+                            foreach ( var reference in statement.References )
+                            {
+                                reference.Save(_helper.GetReferenceSaveEditSummary(reference));
+                            }
+
+                            _helper.AddPopulationDataQualifiers(statement, data);
+                            foreach ( var qualifier in statement.Qualifiers )
+                            {
+                                // qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                            }
                         }
                     }
                 }
