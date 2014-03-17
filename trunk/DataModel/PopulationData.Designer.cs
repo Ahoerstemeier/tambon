@@ -31,6 +31,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private int femaleField;
         
+        private string commentField;
+        
         /// <summary>
         /// Creates a new instance of PopulationDataPoint.
         /// </summary>
@@ -73,6 +75,108 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.femaleField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HouseholdDataPoint", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HouseholdDataPoint : PopulationDataPoint {
+        
+        private List<HouseholdDataPoint> dataField;
+        
+        private AgeTable agetableField;
+        
+        private PopulationDataType typeField;
+        
+        private int householdsField;
+        
+        /// <summary>
+        /// Creates a new instance of HouseholdDataPoint.
+        /// </summary>
+        public HouseholdDataPoint() {
+            this.agetableField = new AgeTable();
+            this.dataField = new List<HouseholdDataPoint>();
+            this.typeField = PopulationDataType.total;
+            this.householdsField = 0;
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("data", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<HouseholdDataPoint> data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public AgeTable agetable {
+            get {
+                return this.agetableField;
+            }
+            set {
+                this.agetableField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(PopulationDataType.total)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PopulationDataType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int households {
+            get {
+                return this.householdsField;
+            }
+            set {
+                this.householdsField = value;
             }
         }
     }
@@ -167,91 +271,6 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HouseholdDataPoint", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HouseholdDataPoint : PopulationDataPoint {
-        
-        private List<HouseholdDataPoint> dataField;
-        
-        private AgeTable agetableField;
-        
-        private PopulationDataType typeField;
-        
-        private int householdsField;
-        
-        /// <summary>
-        /// Creates a new instance of HouseholdDataPoint.
-        /// </summary>
-        public HouseholdDataPoint() {
-            this.agetableField = new AgeTable();
-            this.dataField = new List<HouseholdDataPoint>();
-            this.typeField = PopulationDataType.total;
-            this.householdsField = 0;
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("data", Order=0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<HouseholdDataPoint> data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public AgeTable agetable {
-            get {
-                return this.agetableField;
-            }
-            set {
-                this.agetableField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(PopulationDataType.total)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PopulationDataType type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int households {
-            get {
-                return this.householdsField;
-            }
-            set {
-                this.householdsField = value;
-            }
-        }
-    }
-    
     /// <summary>
     /// Type of population data.
     /// </summary>
@@ -314,6 +333,8 @@ namespace De.AHoerstemeier.Tambon {
         private bool referencedateFieldSpecified;
         
         private string yearField;
+        
+        private string commentField;
         
         /// <summary>
         /// Creates a new instance of PopulationData.
@@ -382,6 +403,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.yearField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
             }
         }
     }

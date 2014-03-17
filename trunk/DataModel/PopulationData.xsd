@@ -6,6 +6,8 @@
   targetNamespace="http://hoerstemeier.com/tambon/"
   attributeFormDefault="unqualified" elementFormDefault="qualified">
 
+  <xs:include schemaLocation="basictypes.xsd" />
+
   <xs:simpleType name="PopulationDataSourceType">
     <xs:annotation>
       <xs:documentation>Sources of population data.</xs:documentation>
@@ -75,6 +77,7 @@
     <xs:attribute name="total" type="xs:int" default="0" use="optional" />
     <xs:attribute name="male" type="xs:int" default="0" use="optional" />
     <xs:attribute name="female" type="xs:int" default="0" use="optional" />
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="AgeTableEntry">
     <xs:complexContent>
@@ -109,5 +112,6 @@
     <xs:attribute name="source" type="t:PopulationDataSourceType" default="Unknown" use="optional" />
     <xs:attribute name="referencedate" type="xs:date" use="optional" />
     <xs:attribute name="year" type="xs:gYear" use="required" />
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 </xs:schema>
