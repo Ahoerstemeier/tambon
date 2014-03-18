@@ -2069,7 +2069,7 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Reason why left office.
+        /// Reason how entered office.
         /// </summary>
         /// <value>
         /// The beginreason.
