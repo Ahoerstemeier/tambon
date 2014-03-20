@@ -592,7 +592,7 @@ namespace De.AHoerstemeier.Tambon
                             _helper.AddPopulationDataQualifiers(statement, data);
                             foreach ( var qualifier in statement.Qualifiers )
                             {
-                                // qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                                qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
                             }
                         }
                     }
