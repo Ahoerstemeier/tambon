@@ -556,7 +556,14 @@ namespace De.AHoerstemeier.Tambon
 
             var result = String.Empty;
             Snak snak = value.Statement.mainSnak;
-            result = String.Format("Added reference to claim: [[Property:P{0}]]", snak.PropertyId.NumericId);
+            if (String.IsNullOrEmpty(value.Hash))
+            {
+                result = String.Format("Added reference to claim: [[Property:P{0}]]", snak.PropertyId.NumericId);
+            }
+            else
+            {
+                result = String.Format("Modified reference to claim: [[Property:P{0}]]", snak.PropertyId.NumericId);
+            }
             return result;
         }
 
@@ -566,15 +573,21 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="value">Qualifier to be parsed.</param>
         /// <returns>Edit summary.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
-        public String GetReferenceSaveEditSummary(Qualifier value)
+        public String GetQualifierSaveEditSummary(Qualifier value)
         {
             if ( value == null )
                 throw new ArgumentNullException("value");
 
             var result = String.Empty;
-            // TODO - should the qualifier get a statement as its back linking property?
-            //Snak snak = value.Statement.mainSnak;
-            //result = String.Format("‎Changed one qualifier of claim: [[Property:P{0}]]", snak.PropertyId.NumericId);
+            // include qualifier info?
+            if (String.IsNullOrEmpty(value.Hash))
+            {
+                result = String.Format("‎Added one qualifier of claim: [[Property:P{0}]]", value.Statement.mainSnak.PropertyId.NumericId); 
+            }
+            else
+            {
+                result = String.Format("‎Changed one qualifier of claim: [[Property:P{0}]]", value.Statement.mainSnak.PropertyId.NumericId);
+            }
             return result;
         }
 
