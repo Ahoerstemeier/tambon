@@ -730,7 +730,7 @@ namespace De.AHoerstemeier.Tambon
 
         public void AddPopulationDataQualifiers(Statement statement, PopulationData data)
         {
-            var pointInTimeQualifier = new Qualifier(SnakType.Value, new EntityId(WikiBase.PropertyIdPointInTime), TimeValue.DateValue(data.referencedate));
+            var pointInTimeQualifier = new Qualifier(statement, SnakType.Value, new EntityId(WikiBase.PropertyIdPointInTime), TimeValue.DateValue(data.referencedate));
             statement.Qualifiers.Add(pointInTimeQualifier);
         }
 
