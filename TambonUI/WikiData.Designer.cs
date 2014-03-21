@@ -38,6 +38,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
+            this.btnCategory = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStat
@@ -146,11 +147,22 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
+            // btnCategory
+            // 
+            this.btnCategory.Location = new System.Drawing.Point(12, 134);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.Size = new System.Drawing.Size(98, 23);
+            this.btnCategory.TabIndex = 12;
+            this.btnCategory.Text = "Category";
+            this.btnCategory.UseVisualStyleBackColor = true;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.btnCategory);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnLogin);
@@ -181,5 +193,6 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnCategory;
     }
 }
