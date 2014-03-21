@@ -17,6 +17,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private WikiDataBot _bot;
 
         private List<Entity> allEntities = null;
+        private WikiDataHelper _helper;
 
         public WikiData()
         {
@@ -46,13 +47,13 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var fittingEntitiesByType = entitiesWithWikiData.GroupBy(y => y.type).OrderBy(z => z.Count()).ToList();
             var allEntitiesByType = allEntities.Where(x => !x.IsObsolete).GroupBy(y => y.type);
-            foreach ( var expectedType in WikiBase.WikiDataItems )
+            foreach (var expectedType in WikiBase.WikiDataItems)
             {
-                if ( expectedType.Key != EntityType.Country )
+                if (expectedType.Key != EntityType.Country)
                 {
-                    if ( allEntitiesByType.Any(x => x.Key == expectedType.Key) )
+                    if (allEntitiesByType.Any(x => x.Key == expectedType.Key))
                     {
-                        if ( !fittingEntitiesByType.Any(x => x.Key == expectedType.Key) )
+                        if (!fittingEntitiesByType.Any(x => x.Key == expectedType.Key))
                         {
                             var emptyEntry = new EntityTypeGrouping<EntityType, Entity>();
                             emptyEntry.Key = expectedType.Key;
@@ -62,18 +63,18 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
             StringBuilder builder = new StringBuilder();
-            foreach ( var type in fittingEntitiesByType )
+            foreach (var type in fittingEntitiesByType)
             {
                 var fittingAllEntities = allEntitiesByType.First(x => x.Key == type.Key);
                 var expectedCount = fittingAllEntities.Count();
                 var actualCount = type.Count();
                 builder.AppendFormat("{0}: {1} of {2}", type.Key, type.Count(), expectedCount);
-                if ( actualCount != expectedCount && expectedCount - actualCount < 5 )
+                if (actualCount != expectedCount && expectedCount - actualCount < 5)
                 {
                     builder.Append(" (");
-                    foreach ( var entry in fittingAllEntities )
+                    foreach (var entry in fittingAllEntities)
                     {
-                        if ( !entitiesWithWikiData.Contains(entry) )
+                        if (!entitiesWithWikiData.Contains(entry))
                         {
                             builder.AppendFormat("{0},", entry.geocode);
                         }
@@ -94,7 +95,7 @@ namespace De.AHoerstemeier.Tambon.UI
             //builder.AppendLine();
 
             var announcementsWithWikiData = GlobalData.AllGazetteAnnouncements.entry.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
-            if ( announcementsWithWikiData.Any() )
+            if (announcementsWithWikiData.Any())
             {
                 builder.AppendFormat("Announcements: {0}", announcementsWithWikiData.Count());
                 builder.AppendLine();
@@ -103,29 +104,29 @@ namespace De.AHoerstemeier.Tambon.UI
             wikiDataLinks.AddRange(announcementsWithWikiData.Select(x => x.wiki.wikidata));
 
             var duplicateWikiDataLinks = wikiDataLinks.GroupBy(x => x).Where(y => y.Count() > 1);
-            if ( duplicateWikiDataLinks.Any() )
+            if (duplicateWikiDataLinks.Any())
             {
                 builder.AppendLine("Duplicate links:");
-                foreach ( var wikiDataLink in duplicateWikiDataLinks )
+                foreach (var wikiDataLink in duplicateWikiDataLinks)
                 {
                     builder.AppendLine(wikiDataLink.Key);
                 }
             }
 
             var noUpgradeHistoryEntry = new List<Entity>();
-            foreach ( var entity in allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Thesaban) && x.tambonSpecified && !x.IsObsolete) )
+            foreach (var entity in allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Thesaban) && x.tambonSpecified && !x.IsObsolete))
             {
-                if ( !entity.history.Items.Any(x => x is HistoryStatus) )
+                if (!entity.history.Items.Any(x => x is HistoryStatus))
                 {
                     noUpgradeHistoryEntry.Add(entity);
                 }
             }
             noUpgradeHistoryEntry.Sort((x, y) => x.geocode.CompareTo(y.geocode));
-            if ( noUpgradeHistoryEntry.Any() )
+            if (noUpgradeHistoryEntry.Any())
             {
                 builder.AppendFormat("No history ({0}):", noUpgradeHistoryEntry.Count);
                 builder.AppendLine();
-                foreach ( var entity in noUpgradeHistoryEntry )
+                foreach (var entity in noUpgradeHistoryEntry)
                 {
                     builder.AppendFormat("{0}: {1}", entity.geocode, entity.english);
                     builder.AppendLine();
@@ -152,7 +153,7 @@ namespace De.AHoerstemeier.Tambon.UI
             StringBuilder builder = new StringBuilder();
             builder.AppendFormat("{0} entities on Wikidata", workItems.Count());
             builder.AppendLine();
-            foreach ( var value in siteLinkCount )
+            foreach (var value in siteLinkCount)
             {
                 builder.AppendFormat("  {0}: {1}", value.Key, value.Value);
                 builder.AppendLine();
@@ -198,10 +199,10 @@ namespace De.AHoerstemeier.Tambon.UI
             GlobalData.LoadPopulationData();
             allEntities.AddRange(entities.FlatList());
             var allTambon = allEntities.Where(x => x.type == EntityType.Tambon).ToList();
-            foreach ( var tambon in allTambon )
+            foreach (var tambon in allTambon)
             {
                 var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
-                if ( localGovernmentEntity != null )
+                if (localGovernmentEntity != null)
                 {
                     allEntities.Add(localGovernmentEntity);
                 }
@@ -217,7 +218,7 @@ namespace De.AHoerstemeier.Tambon.UI
             StringBuilder warnings = new StringBuilder();
 
             var activity = cbxActivity.SelectedItem as WikiDataTaskInfo;
-            if ( activity != null )
+            if (activity != null)
             {
                 activity.Task(workItems, warnings, chkOverride.Checked);
             }
@@ -225,9 +226,9 @@ namespace De.AHoerstemeier.Tambon.UI
             StringBuilder info = new StringBuilder();
             info.AppendFormat("{0} items", workItems.Count());
             info.AppendLine();
-            foreach ( var keyvaluepair in _bot.RunInfo )
+            foreach (var keyvaluepair in _bot.RunInfo)
             {
-                if ( keyvaluepair.Value > 0 )
+                if (keyvaluepair.Value > 0)
                 {
                     info.AppendFormat("{0} items had state {1}", keyvaluepair.Value, keyvaluepair.Key);
                     info.AppendLine();
@@ -241,11 +242,11 @@ namespace De.AHoerstemeier.Tambon.UI
         private IEnumerable<EntityType> CurrentActiveEntityTypes()
         {
             var entityTypes = new List<EntityType>();
-            foreach ( var item in chkTypes.CheckedItems )
+            foreach (var item in chkTypes.CheckedItems)
             {
                 entityTypes.Add((EntityType)item);
             }
-            if ( entityTypes.Contains(EntityType.Thesaban) )
+            if (entityTypes.Contains(EntityType.Thesaban))
             {
                 entityTypes.Add(EntityType.ThesabanTambon);
                 entityTypes.Add(EntityType.ThesabanMueang);
@@ -257,10 +258,10 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             var api = OpenConnection();
-            var helper = new WikiDataHelper(api);
-            _bot = new WikiDataBot(helper);
+            _helper = new WikiDataHelper(api);
+            _bot = new WikiDataBot(_helper);
 
-            foreach ( var activity in _bot.AvailableTasks )
+            foreach (var activity in _bot.AvailableTasks)
             {
                 cbxActivity.Items.Add(activity);
             }
@@ -289,7 +290,33 @@ namespace De.AHoerstemeier.Tambon.UI
             var password = ConfigurationManager.AppSettings["WikiDataPassword"];
             api.login(username, password);
             var provider = new EntityProvider(api);
-            provider.getEntityFromId(new EntityId("q", 281));
+            var entity = provider.getEntityFromId(new EntityId("q", 281));
+            var statement = entity.Claims.First() as Statement;
+            var qualifier = new Qualifier(statement, SnakType.Value, new EntityId("P11"), new StringValue("abc"));
+            qualifier.Save("Qualifier save");
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            var entityTypes = new List<EntityType>()
+            { 
+            EntityType.Amphoe,
+            EntityType.Thesaban,
+            EntityType.TAO,
+            EntityType.Muban,
+            };
+            foreach (var entity in allEntities.Where(x => x.type == EntityType.Changwat))
+            {
+                foreach (var entityType in entityTypes)
+                {
+                    var wikiDataItem = _helper.FindThaiCategory(entity, entityType);
+                    if (wikiDataItem != null)
+                    {
+                        _helper.AddCategoryCombinesTopic(wikiDataItem, entity, entityType);
+                        _helper.AddCategoryListOf(wikiDataItem, entity, entityType);
+                    }
+                }
+            }
         }
     }
 }

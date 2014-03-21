@@ -56,6 +56,8 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertySocialMedia = "P553";
         public const String PropertySocialMediaAddress = "P554";
         // public const String PropertyArea = "Pxxxx";
+        public const String PropertyCategoryCombinesTopic = "P971";
+        public const String PropertyIsListOf = "P360";
 
         // for qualifiers
         public const String PropertyIdPointInTime = "P585";
