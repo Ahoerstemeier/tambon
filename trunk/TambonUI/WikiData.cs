@@ -303,6 +303,7 @@ namespace De.AHoerstemeier.Tambon.UI
             EntityType.Amphoe,
             EntityType.Thesaban,
             EntityType.TAO,
+            EntityType.Tambon,
             EntityType.Muban,
             };
             foreach (var entity in allEntities.Where(x => x.type == EntityType.Changwat))
