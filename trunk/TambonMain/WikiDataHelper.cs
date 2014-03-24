@@ -87,7 +87,7 @@ namespace De.AHoerstemeier.Tambon
             else
             {
                 Snak oldSnak = claim.mainSnak;
-                var oldDataValue = snak.DataValue as StringValue;
+                var oldDataValue = oldSnak.DataValue as StringValue;
                 if (oldDataValue.Value == dataValue.Value)
                 {
                     result = WikiDataState.Valid;
@@ -146,7 +146,7 @@ namespace De.AHoerstemeier.Tambon
             else
             {
                 Snak oldSnak = claim.mainSnak;
-                var oldDataValue = snak.DataValue as EntityIdValue;
+                var oldDataValue = oldSnak.DataValue as EntityIdValue;
                 if (oldDataValue.NumericId == dataValue.NumericId)
                 {
                     result = WikiDataState.Valid;
@@ -217,6 +217,50 @@ namespace De.AHoerstemeier.Tambon
             }
 
             statement = foundStatement;
+            return result;
+        }
+
+        private WikiDataState CheckCoordinateValue(Item item, String propertyId, Point expected, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            if (item == null)
+                throw new ArgumentNullException("item");
+
+            WikiDataState result = WikiDataState.Unknown;
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
+            var property = new EntityId(propertyId);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.PropertyId)) as Statement;
+
+            var dataValue = new GlobeCoordinateValue(Convert.ToDouble(expected.lat), Convert.ToDouble(expected.@long), 0.0001, Globe.Earth);
+            var snak = new Snak(SnakType.Value, new EntityId(propertyId), dataValue);
+            if (claim == null)
+            {
+                    result = WikiDataState.NotSet;
+                    if (createStatement)
+                    {
+                        claim = item.createStatementForSnak(snak);
+                    }
+            }
+            else
+            {
+                Snak oldSnak = claim.mainSnak;
+                var oldDataValue = oldSnak.DataValue as GlobeCoordinateValue;
+                if ((Math.Abs(oldDataValue.Latitude - dataValue.Latitude) < dataValue.Precision) &&
+                    (Math.Abs(oldDataValue.Longitude - dataValue.Longitude) < dataValue.Precision))
+                {
+                    result = WikiDataState.Valid;
+                }
+                else
+                {
+                    result = WikiDataState.WrongValue;
+                    if (overrideWrongData)
+                    {
+                        claim.mainSnak = snak;
+                    }
+                }
+            }
+
+            statement = claim as Statement;
             return result;
         }
 
@@ -510,6 +554,62 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion Geocode
 
+        #region Location
+
+        private WikiDataState Location(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            Point value=null;
+            var office = entity.office.FirstOrDefault();
+            if (office != null)
+            {
+                value = office.Point;
+            }
+            if (value != null)
+            {
+                return CheckCoordinateValue(item, WikiBase.PropertyIdCoordinate, value, createStatement, overrideWrongData, out statement);
+            }
+            else
+            {
+                statement = null;
+                return WikiDataState.Unknown;
+            }
+        }
+
+        /// <summary>
+        /// Creates the statement containing the location.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the location.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetLocation(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if (item == null)
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            Location(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the location is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState LocationCorrect(Item item, Entity entity)
+        {
+            if (item == null)
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return Location(item, entity, false, false, out dummy);
+        }
+
+        #endregion OpenStreetMapId
+
         /// <summary>
         /// Get the default edit summary for a claim save.
         /// </summary>
@@ -532,6 +632,11 @@ namespace De.AHoerstemeier.Tambon
             if (stringValue != null)
             {
                 result = String.Format("[[Property:P{0}]]: {1}", snak.PropertyId.NumericId, stringValue.Value);
+            }
+            var coordinateValue = snak.DataValue as GlobeCoordinateValue;
+            if (coordinateValue != null)
+            {
+                result = String.Format(CultureInfo.InvariantCulture,"[[Property:P{0}]]: {1:#.####}, {2:#.####}", snak.PropertyId.NumericId, coordinateValue.Latitude,coordinateValue.Longitude);
             }
             var quantityValue = snak.DataValue as QuantityValue;
             if (quantityValue != null)
@@ -751,6 +856,7 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion PopulationData
 
+        #region category
         public Item FindThaiCategory(Entity entity, EntityType entityType)
         {
             var siteLink = "หมวดหมู่:" + entityType.Translate(Language.Thai) + "ในจังหวัด" + entity.name;
@@ -788,6 +894,7 @@ namespace De.AHoerstemeier.Tambon
                 qualifier.Save(GetQualifierSaveEditSummary(qualifier));
             }
         }
+        #endregion
     }
 
     /// <summary>

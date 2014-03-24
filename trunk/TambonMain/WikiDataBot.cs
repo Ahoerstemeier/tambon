@@ -144,6 +144,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
             _availableTasks.Add(new WikiDataTaskInfo("Set ContainsSubdivisions", SetContainsSubdivisions));
             _availableTasks.Add(new WikiDataTaskInfo("Set TIS 1099", SetGeocode));
+            _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
             WikiDataTaskDelegate setCensus2010 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2010);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 2010", setCensus2010));
 
@@ -563,7 +564,6 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("entities");
             }
             ClearRunInfo();
-            //foreach ( var entity in entities.Where(x => x.geocode == 8419) )
             foreach ( var entity in entities.Where(x => x.population.Any(y => y.source == dataSource && y.Year == year)) )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
@@ -593,6 +593,50 @@ namespace De.AHoerstemeier.Tambon
                             foreach ( var qualifier in statement.Qualifiers )
                             {
                                 qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SetLocation(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if (entities == null)
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach (var entity in entities)
+            {
+                Boolean hasValue = false;
+                var office = entity.office.FirstOrDefault();
+                if (office != null)
+                {
+                    hasValue = office.Point != null;
+                }
+                if (hasValue)
+                {
+                    var item = _helper.GetWikiDataItemForEntity(entity);
+                    if (item == null)
+                    {
+                        _runInfo[WikiDataState.ItemNotFound]++;
+                    }
+                    else
+                    {
+                        var state = _helper.LocationCorrect(item, entity);
+                        _runInfo[state]++;
+                        if (state == WikiDataState.WrongValue)
+                        {
+                            collisionInfo.AppendFormat("{0}: {1} has wrong location", item.id, entity.english);
+                            collisionInfo.AppendLine();
+                        }
+                        if (state != WikiDataState.Valid)
+                        {
+                            var statement = _helper.SetLocation(item, entity, overrideData);
+                            if (statement != null)
+                            {
+                                statement.save(_helper.GetClaimSaveEditSummary(statement));
                             }
                         }
                     }
