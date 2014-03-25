@@ -506,7 +506,7 @@ namespace De.AHoerstemeier.Tambon
                     _runInfo[state]++;
                     if ( state == WikiDataState.WrongValue )
                     {
-                        collisionInfo.AppendFormat("{0}: {1} has wrong parent", item.id, entity.english);
+                        collisionInfo.AppendFormat("{0}: {1} has wrong type", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
                     if ( state != WikiDataState.Valid )
