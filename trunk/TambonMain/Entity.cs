@@ -725,6 +725,10 @@ namespace De.AHoerstemeier.Tambon
             var allEntities = GlobalData.CompleteGeocodeList().FlatList();
             var parents = new String[3];
             var currentGeocode = geocode;
+            if (this.parent.Any())
+            {
+                currentGeocode = this.parent.First() * 100;
+            }
             var index = 0;
             while ( currentGeocode / 100 != 0 )
             {
@@ -778,8 +782,12 @@ namespace De.AHoerstemeier.Tambon
                     break;
             }
             var currentGeocode = geocode;
-            while ( currentGeocode / 100 != 0 )
+            if (this.parent.Any())
             {
+                currentGeocode = this.parent.First() * 100;
+            }
+            while ( currentGeocode / 100 != 0 )
+            {                
                 currentGeocode = currentGeocode / 100;
                 var parentEntity = allEntities.First(x => x.geocode == currentGeocode);
                 var parentType = parentEntity.type.Translate(language);
