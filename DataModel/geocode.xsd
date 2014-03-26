@@ -329,11 +329,30 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="PostalCodeList">
+    <xs:list itemType="xs:unsignedInt"></xs:list>
+  </xs:simpleType>
+  <xs:complexType name="PostalCode">
+    <xs:annotation>
+      <xs:documentation>Postal code(s).</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="t:Comment" />
+    <xs:attribute name="value" type="t:PostalCodeList" use="required">
+      <xs:annotation>
+        <xs:documentation>List of postal codes.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="OtherIdentifier">
     <xs:annotation>
       <xs:documentation>Unique identifiers additional to the geocode and the wiki ids.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="post" type="t:PostalCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Postal code(s).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="hasc" type="t:Identifier" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>
