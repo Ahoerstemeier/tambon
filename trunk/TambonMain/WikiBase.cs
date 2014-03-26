@@ -52,18 +52,20 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdDmoz = "P998";
         public const String PropertyIdThaiGeocode = "P1067";
         public const String PropertyIdInstanceOf = "P31";
-        public const String PropertyPopulation = "P1082";
-        public const String PropertySocialMedia = "P553";
-        public const String PropertySocialMediaAddress = "P554";
-        // public const String PropertyArea = "Pxxxx";
-        public const String PropertyCategoryCombinesTopic = "P971";
-        public const String PropertyIsListOf = "P360";
+        public const String PropertyIdPopulation = "P1082";
+        public const String PropertyIdSocialMedia = "P553";
+        public const String PropertyIdSocialMediaAddress = "P554";
+
+        // public const String PropertyIdArea = "Pxxxx";
+        public const String PropertyIdCategoryCombinesTopic = "P971";
+
+        public const String PropertyIdIsListOf = "P360";
 
         // for qualifiers
         public const String PropertyIdPointInTime = "P585";
 
-        public const String PropertyStartDate = "P580";
-        public const String PropertyEndDate = "P582";
+        public const String PropertyIdStartDate = "P580";
+        public const String PropertyIdEndDate = "P582";
 
         // for sources
         public const String PropertyIdStatedIn = "P248";

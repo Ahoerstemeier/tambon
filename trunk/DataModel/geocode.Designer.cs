@@ -1057,6 +1057,8 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="OtherIdentifier", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class OtherIdentifier {
         
+        private PostalCode postField;
+        
         private Identifier hascField;
         
         private Identifier iso3166Field;
@@ -1076,6 +1078,24 @@ namespace De.AHoerstemeier.Tambon {
             this.fips10Field = new Identifier();
             this.iso3166Field = new Identifier();
             this.hascField = new Identifier();
+            this.postField = new PostalCode();
+        }
+        
+        /// <summary>
+        /// Postal code(s).
+        /// </summary>
+        /// <value>
+        /// The post.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PostalCode post {
+            get {
+                return this.postField;
+            }
+            set {
+                this.postField = value;
+            }
         }
         
         /// <summary>
@@ -1085,7 +1105,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The hasc.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Identifier hasc {
             get {
@@ -1102,7 +1122,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The iso3166.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Identifier iso3166 {
             get {
@@ -1119,7 +1139,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The fips10.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Identifier fips10 {
             get {
@@ -1136,7 +1156,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The salb.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Identifier salb {
             get {
@@ -1153,7 +1173,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The gnd.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Identifier gnd {
             get {
@@ -1161,6 +1181,63 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.gndField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Postal code(s).
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PostalCode", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class PostalCode {
+        
+        private string commentField;
+        
+        private List<uint> valueField;
+        
+        /// <summary>
+        /// Creates a new instance of PostalCode.
+        /// </summary>
+        public PostalCode() {
+            this.valueField = new List<uint>();
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// List of postal codes.
+        /// </summary>
+        /// <value>
+        /// The value.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<uint> value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
             }
         }
     }
