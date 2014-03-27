@@ -252,19 +252,24 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        private static String SourceFilename(UInt32 geocode, Int32 year, Int16 page)
+        {
+            Int32 yearShort = year + 543 - 2500;
+            if ((yearShort < 0) | (yearShort > 99))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            if ((geocode < 0) | (geocode > 99))
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            String result = String.Format(CultureInfo.InvariantCulture, "p{0:D2}{1:D2}_{2:D2}.html", yearShort, geocode, page);
+            return result; 
+        }
+
         private String SourceFilename(Int16 page)
         {
-            Int32 yearShort = Year + 543 - 2500;
-            if ( (yearShort < 0) | (yearShort > 99) )
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            if ( (_geocode < 0) | (_geocode > 99) )
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            String result = String.Format(CultureInfo.InvariantCulture, "p{0:D2}{1:D2}_{2:D2}.html", yearShort, _geocode, page);
-            return result;
+            return SourceFilename(_geocode, Year, page);
         }
 
         protected void GetData()
@@ -430,5 +435,10 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion methods
+
+        internal static Uri GetSourceUrl(Int32 year, UInt32 geocode)
+        {
+            return new Uri(_urlBase + SourceFilename(geocode, year, 1));
+        }
     }
 }
