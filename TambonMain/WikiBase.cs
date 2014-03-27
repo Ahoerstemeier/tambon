@@ -71,12 +71,14 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdStatedIn = "P248";
 
         public const String PropertyIdReferenceUrl = "P854";
+        public const String PropertyIdPublisher = "P123";
 
         // source statements for TIS 1099
         public const String ItemSourceTIS1099BE2535 = "Q15477441";
 
         public const String ItemSourceTIS1099BE2548 = "Q15477531";
         public const String ItemSourceCCAATT = "Q15477767";
+        public const String ItemDopa = "Q13012489";
 
         // source statements for population
         public static Dictionary<Int16, String> ItemCensus = new Dictionary<Int16, String>()

@@ -148,6 +148,12 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
             WikiDataTaskDelegate setCensus2010 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2010);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 2010", setCensus2010));
+            //WikiDataTaskDelegate setDopa2013 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2013);
+            //_availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2013", setDopa2013));
+            WikiDataTaskDelegate setCensus2000 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2000);
+            _availableTasks.Add(new WikiDataTaskInfo("Set Census 2000", setCensus2000));
+            WikiDataTaskDelegate setCensus1990 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1990);
+            _availableTasks.Add(new WikiDataTaskInfo("Set Census 1990", setCensus1990));
 
             _languageCode = new Dictionary<Language, String>()
             {
@@ -617,7 +623,7 @@ namespace De.AHoerstemeier.Tambon
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
-                            _helper.AddPopulationDataReferences(statement, data);
+                            _helper.AddPopulationDataReferences(statement, data, entity);
                             foreach ( var reference in statement.References )
                             {
                                 reference.Save(_helper.GetReferenceSaveEditSummary(reference));

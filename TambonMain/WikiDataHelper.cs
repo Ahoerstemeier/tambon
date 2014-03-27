@@ -876,18 +876,27 @@ namespace De.AHoerstemeier.Tambon
             return PopulationData(item, data, false, false, out dummy);
         }
 
-        public void AddPopulationDataReferences(Statement statement, PopulationData data)
+        public void AddPopulationDataReferences(Statement statement, PopulationData data, Entity entity)
         {
             Reference reference = null;
-            if ( data.source == PopulationDataSourceType.Census )
+            Snak snak;
+            switch (data.source)
             {
-                var statedInItem = String.Empty;
-                if ( WikiBase.ItemCensus.Keys.Contains(data.Year) )
-                {
-                    statedInItem = WikiBase.ItemCensus[data.Year];
-                }
-                var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdStatedIn), new EntityIdValue(new EntityId(statedInItem)));
-                reference = statement.CreateReferenceForSnak(snak);
+                case PopulationDataSourceType.Census:
+                    var statedInItem = String.Empty;
+                    if (WikiBase.ItemCensus.Keys.Contains(data.Year))
+                    {
+                        statedInItem = WikiBase.ItemCensus[data.Year];
+                    }
+                    snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdStatedIn), new EntityIdValue(new EntityId(statedInItem)));
+                    reference = statement.CreateReferenceForSnak(snak);
+                    break;
+                case PopulationDataSourceType.DOPA:
+                    Uri source = PopulationDataDownloader.GetSourceUrl(data.Year, entity.geocode % 100);
+                    snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(source.AbsoluteUri));
+                    reference = statement.CreateReferenceForSnak(snak);
+                    reference.AddSnak(new Snak(SnakType.Value,new EntityId(WikiBase.PropertyIdPublisher),new EntityIdValue(new EntityId(WikiBase.ItemDopa)));
+                    break;
             }
 
             if ( reference != null )
