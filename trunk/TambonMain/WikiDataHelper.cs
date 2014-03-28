@@ -880,11 +880,11 @@ namespace De.AHoerstemeier.Tambon
         {
             Reference reference = null;
             Snak snak;
-            switch (data.source)
+            switch ( data.source )
             {
                 case PopulationDataSourceType.Census:
                     var statedInItem = String.Empty;
-                    if (WikiBase.ItemCensus.Keys.Contains(data.Year))
+                    if ( WikiBase.ItemCensus.Keys.Contains(data.Year) )
                     {
                         statedInItem = WikiBase.ItemCensus[data.Year];
                     }
@@ -895,7 +895,7 @@ namespace De.AHoerstemeier.Tambon
                     Uri source = PopulationDataDownloader.GetSourceUrl(data.Year, entity.geocode % 100);
                     snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(source.AbsoluteUri));
                     reference = statement.CreateReferenceForSnak(snak);
-                    reference.AddSnak(new Snak(SnakType.Value,new EntityId(WikiBase.PropertyIdPublisher),new EntityIdValue(new EntityId(WikiBase.ItemDopa)));
+                    reference.AddSnak(new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdPublisher), new EntityIdValue(new EntityId(WikiBase.ItemDopa))));
                     break;
             }
 
