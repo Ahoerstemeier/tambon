@@ -245,6 +245,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -294,6 +295,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -365,6 +367,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -400,6 +403,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -435,6 +439,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -471,6 +476,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -506,6 +512,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -543,6 +550,7 @@ namespace De.AHoerstemeier.Tambon
                     if ( item == null )
                     {
                         _runInfo[WikiDataState.ItemNotFound]++;
+                        collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                     }
                     else
                     {
@@ -577,6 +585,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -610,6 +619,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( item == null )
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
@@ -661,6 +671,7 @@ namespace De.AHoerstemeier.Tambon
                     if ( item == null )
                     {
                         _runInfo[WikiDataState.ItemNotFound]++;
+                        collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                     }
                     else
                     {
