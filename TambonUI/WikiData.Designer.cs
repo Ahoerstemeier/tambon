@@ -39,6 +39,8 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
+            this.edtStartingItemId = new System.Windows.Forms.TextBox();
+            this.lblStartingItemId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStat
@@ -157,11 +159,30 @@
             this.btnCategory.UseVisualStyleBackColor = true;
             this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
+            // edtStartingItemId
+            // 
+            this.edtStartingItemId.Location = new System.Drawing.Point(12, 185);
+            this.edtStartingItemId.Name = "edtStartingItemId";
+            this.edtStartingItemId.Size = new System.Drawing.Size(100, 20);
+            this.edtStartingItemId.TabIndex = 13;
+            this.edtStartingItemId.Text = "16000000";
+            // 
+            // lblStartingItemId
+            // 
+            this.lblStartingItemId.AutoSize = true;
+            this.lblStartingItemId.Location = new System.Drawing.Point(12, 169);
+            this.lblStartingItemId.Name = "lblStartingItemId";
+            this.lblStartingItemId.Size = new System.Drawing.Size(106, 13);
+            this.lblStartingItemId.TabIndex = 14;
+            this.lblStartingItemId.Text = "Starting Statement Id";
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.lblStartingItemId);
+            this.Controls.Add(this.edtStartingItemId);
             this.Controls.Add(this.btnCategory);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnLogout);
@@ -194,5 +215,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnCategory;
+        private System.Windows.Forms.TextBox edtStartingItemId;
+        private System.Windows.Forms.Label lblStartingItemId;
     }
 }
