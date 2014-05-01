@@ -902,5 +902,60 @@ namespace De.AHoerstemeier.Tambon.UI
             var output = XmlManager.EntityToXml<Entity>(downloader.Data);
             File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, "83.xml"), output);
         }
+
+        private void btnNayokResign_Click(object sender, EventArgs e)
+        {
+            UInt32 changwatGeocode = 0;
+            var allTermEnd = EntitiesWithCouncilTermEndInTimeSpan(changwatGeocode, new DateTime(2013, 9, 1), new DateTime(2013, 9, 30));
+            List<EntityTermEnd> processedTermEnds = new List<EntityTermEnd>();
+            foreach (var entry in allTermEnd)
+            {
+                processedTermEnds.Add(new EntityTermEnd(
+                    entry.Entity,
+                    entry.CouncilTerm,
+                    entry.Entity.office.First().officials.Items.FirstOrDefault(y => y.begin == entry.CouncilTerm.begin)));
+            }
+
+            var nayokTermStartedSameDate = processedTermEnds.Where(x => x.OfficialTerm != null).ToList();
+            var nextElectionNormal = nayokTermStartedSameDate.Where(x => x.Entity.office.First().council.Any(y => y.begin>x.CouncilTerm.end && (y.begin - x.CouncilTerm.end).Days < 60)).ToList();
+            var nayokTermEndNormal = nextElectionNormal.Where(x => x.OfficialTerm.end == x.CouncilTerm.end).ToList();
+            var nayokTermEndUnknown = nextElectionNormal.Where(x => x.OfficialTerm.end != x.CouncilTerm.end).ToList();
+            List<EntityTermEnd> nextNayokElectionEarly = new List<EntityTermEnd>();
+            foreach (var entry in nayokTermEndUnknown)
+            {
+                var nextCouncilTerm = entry.Entity.office.First().council.First(y => y.begin > entry.CouncilTerm.end && (y.begin - entry.CouncilTerm.end).Days < 60);
+                var nextNayokTerm = entry.Entity.office.First().officials.Items.FirstOrDefault(y => (y.begin < nextCouncilTerm.begin));
+                if ((nextNayokTerm != null) && (nextNayokTerm.begin.Year == entry.CouncilTerm.end.Year))
+                {
+                    nextNayokElectionEarly.Add(new EntityTermEnd(entry.Entity, nextCouncilTerm, nextNayokTerm));
+                }
+            }
+
+            var builder = new StringBuilder();
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of term ends: {0}", nextElectionNormal.Count);
+            builder.AppendLine();
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of Nayok till end of term: {0}", nayokTermEndNormal.Count);
+            builder.AppendLine();
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of Nayok early election: {0}", nextNayokElectionEarly.Count);
+            builder.AppendLine();
+            builder.AppendLine();
+            foreach (var changwat in GlobalData.Provinces)
+            {
+                var nayokEndTermInChangwat = nayokTermEndNormal.Where(x => GeocodeHelper.ProvinceCode(x.Entity.geocode) == changwat.geocode).Count();
+                var nayokEarlyInChangwat = nextNayokElectionEarly.Where(x => GeocodeHelper.ProvinceCode(x.Entity.geocode) == changwat.geocode).Count();
+                var total =nayokEarlyInChangwat + nayokEndTermInChangwat;
+                if ( total> 0)
+                {
+                    builder.AppendFormat(CultureInfo.CurrentUICulture, "{0}: {1} of {2} normal, {3:P} early", changwat.english, nayokEndTermInChangwat, total, Convert.ToDouble(nayokEarlyInChangwat) / total);
+                    builder.AppendLine();
+                }
+            }
+
+            var result = builder.ToString();
+
+            var formElectionDayOfWeek = new StringDisplayForm("Nayok info", result);
+            formElectionDayOfWeek.Show();
+            
+        }
     }
 }

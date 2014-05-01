@@ -571,9 +571,7 @@ namespace De.AHoerstemeier.Tambon
             foreach ( var officeEntry in office )
             {
                 officeEntry.council.Sort((x, y) => x.begin.CompareTo(y.begin));
-                var term = officeEntry.council.LastOrDefault();
-                if ( term != null )
-                // foreach ( var term in office.council )
+                foreach (var term in officeEntry.council)
                 {
                     DateTime termEnd;
                     if ( term.endSpecified )
