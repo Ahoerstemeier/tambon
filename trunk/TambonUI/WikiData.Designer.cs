@@ -41,6 +41,7 @@
             this.btnCategory = new System.Windows.Forms.Button();
             this.edtStartingItemId = new System.Windows.Forms.TextBox();
             this.lblStartingItemId = new System.Windows.Forms.Label();
+            this.btnAllItems = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStat
@@ -176,11 +177,22 @@
             this.lblStartingItemId.TabIndex = 14;
             this.lblStartingItemId.Text = "Starting Statement Id";
             // 
+            // btnAllItems
+            // 
+            this.btnAllItems.Location = new System.Drawing.Point(15, 70);
+            this.btnAllItems.Name = "btnAllItems";
+            this.btnAllItems.Size = new System.Drawing.Size(95, 23);
+            this.btnAllItems.TabIndex = 15;
+            this.btnAllItems.Text = "All Items";
+            this.btnAllItems.UseVisualStyleBackColor = true;
+            this.btnAllItems.Click += new System.EventHandler(this.btnAllItems_Click);
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.btnAllItems);
             this.Controls.Add(this.lblStartingItemId);
             this.Controls.Add(this.edtStartingItemId);
             this.Controls.Add(this.btnCategory);
@@ -217,5 +229,6 @@
         private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.TextBox edtStartingItemId;
         private System.Windows.Forms.Label lblStartingItemId;
+        private System.Windows.Forms.Button btnAllItems;
     }
 }
