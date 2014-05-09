@@ -912,6 +912,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             var allTermEnd = EntitiesWithCouncilTermEndInTimeSpan(changwatGeocode, new DateTime(2013, 9, 1), new DateTime(2013, 9, 30));
+            var allNextElectionNormal = allTermEnd.Where(x => x.Entity.office.First().council.Any(y => y.begin > x.CouncilTerm.end && (y.begin - x.CouncilTerm.end).Days < 60)).ToList();
             List<EntityTermEnd> processedTermEnds = new List<EntityTermEnd>();
             foreach ( var entry in allTermEnd )
             {
@@ -971,7 +972,13 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             var builder = new StringBuilder();
-            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of term ends: {0}", nextElectionNormal.Count);
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of council term ends: {0}", allTermEnd.Count());
+            builder.AppendLine();
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of council term elections: {0}", allNextElectionNormal.Count());
+            builder.AppendLine();
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of term started together: {0}", nayokTermStartedSameDate.Count);
+            builder.AppendLine();
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of term into consideration: {0}", nextElectionNormal.Count);
             builder.AppendLine();
             builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of Nayok till end of term: {0}", nayokTermEndNormal.Count);
             builder.AppendLine();
