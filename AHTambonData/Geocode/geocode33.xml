@@ -89,6 +89,7 @@
   <entity type="Amphoe" name="เมืองศรีสะเกษ" english="Mueang Si Sa Ket" geocode="3301">
     <wiki wikidata="Q476086" freebase="/m/02q84l5" />
     <codes>
+      <post value="33000"/>
       <hasc value="TH.SI.SS" />
       <salb value="THA061009" />
     </codes>
@@ -514,6 +515,9 @@
   </entity>
   <entity type="Amphoe" name="ยางชุมน้อย" english="Yang Chum Noi" geocode="3302">
     <wiki wikidata="Q477110" />
+    <codes>
+      <post value="33190"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.2619</geo:lat>
@@ -2655,6 +2659,7 @@ Source TH-Wikipedia
   <entity type="Amphoe" name="ไพรบึง" english="Phrai Bueng" geocode="3306">
     <wiki wikidata="Q476453" />
     <codes>
+      <post value="33180"/>
       <hasc value="TH.SI.PB" />
       <salb value="THA061014" />
     </codes>
@@ -3446,6 +3451,7 @@ Source TH-Wikipedia
   <entity type="Amphoe" name="ราษีไศล" english="Rasi Salai" geocode="3309">
     <wiki wikidata="Q114885" freebase="/m/0289v3y" />
     <codes>
+      <post value="33160"/>
       <hasc value="TH.SI.RS" />
       <salb value="THA061017" />
     </codes>
@@ -3900,6 +3906,9 @@ Source TH-Wikipedia
   </entity>
   <entity type="Amphoe" name="อุทุมพรพิสัย" english="Uthumphon Phisai" geocode="3310">
     <wiki wikidata="Q476978" />
+    <codes>
+      <post value="33120"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.1111</geo:lat>
@@ -4602,7 +4611,13 @@ Source TH-Wikipedia
     <entity type="Tambon" name="ผักไหม" english="Phak Mai" geocode="331204">
       <wiki wikidata="Q15985090" />
       <office type="TAOOffice">
-        <url>http://pagmai.org/</url>
+        <!-- Google location: 14.938303, 104.028379 -->
+        <wiki wikidata="Q16859897"/>
+        <url lastchecked="2014-05-11">http://pukmai.com/</url>
+        <url status="offline">http://pagmai.org/</url>
+        <socialweb>
+          <googleplus type="location">101612493691291190691</googleplus>
+        </socialweb>
         <officials>
           <official title="TAOMayor" name="จันทรา หาญสุทธิชัย" begin="2013-09-01" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="จันทรา หาญสุทธิชัย" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" endreason="Resigned" />
@@ -4615,31 +4630,57 @@ Source TH-Wikipedia
           <!-- Mu 16 created 2003-09 -->
         </council>
       </office>
-      <entity type="Muban" geocode="33120401" name="บ้านสิงไคร" english="Ban Sing Khrai" />
-      <entity type="Muban" geocode="33120402" name="บ้านผักไหมน้อย" english="Ban Phak Mai Noi" />
-      <entity type="Muban" geocode="33120403" name="บ้านดู่" english="Ban Du" />
-      <entity type="Muban" geocode="33120404" name="บ้านผักไหมใหญ่" english="Ban Phak Mai Yai" />
-      <entity type="Muban" geocode="33120405" name="บ้านหาด" english="Ban Hat" />
+      <entity type="Muban" geocode="33120401" name="บ้านสิงไคร" english="Ban Sing Khrai" >
+        <wiki wikidata="Q16830169"/>
+      </entity>
+      <entity type="Muban" geocode="33120402" name="บ้านผักไหมน้อย" english="Ban Phak Mai Noi" >
+        <wiki wikidata="Q16830167"/>
+      </entity>
+      <entity type="Muban" geocode="33120403" name="บ้านดู่" english="Ban Du" >
+        <wiki wikidata="Q16830168"/>
+      </entity>
+      <entity type="Muban" geocode="33120404" name="บ้านผักไหมใหญ่" english="Ban Phak Mai Yai" >
+        <wiki wikidata="Q16830166"/>
+      </entity>
+      <entity type="Muban" geocode="33120405" name="บ้านหาด" english="Ban Hat" >
+        <wiki wikidata="Q16830163"/>
+      </entity>
       <entity type="Muban" geocode="33120406" name="บ้านกระสังข์" english="Ban Krasang">
         <wiki wikidata="Q16267650" />
       </entity>
       <entity type="Muban" geocode="33120407" name="บ้านนาทุ่ง" english="Ban Na Thung">
         <wiki wikidata="Q16270784" />
       </entity>
-      <entity type="Muban" geocode="33120408" name="บ้านตาทอง" english="Ban Ta Thong" />
-      <entity type="Muban" geocode="33120409" name="บ้านไฮน้อย" english="Ban Hai Noi" />
-      <entity type="Muban" geocode="33120410" name="บ้านชาด" english="Ban Chat" />
-      <entity type="Muban" geocode="33120411" name="บ้านกระเต็ล" english="Ban Kraten" />
-      <entity type="Muban" geocode="33120412" name="บ้านห่องน้อย" english="Ban Nong Noi" />
-      <entity type="Muban" geocode="33120413" name="บ้านห้วยซันพัฒนา" english="Ban Huai Khan Phatthana" />
+      <entity type="Muban" geocode="33120408" name="บ้านตาทอง" english="Ban Ta Thong" >
+        <wiki wikidata="Q16830161"/>
+      </entity>
+      <entity type="Muban" geocode="33120409" name="บ้านไฮน้อย" english="Ban Hai Noi" >
+        <wiki wikidata="Q16830158"/>
+      </entity>
+      <entity type="Muban" geocode="33120410" name="บ้านชาด" english="Ban Chat" >
+        <wiki wikidata="Q16830157"/>
+      </entity>
+      <entity type="Muban" geocode="33120411" name="บ้านกระเต็ล" english="Ban Kraten" >
+        <wiki wikidata ="Q16830152"/>
+      </entity>
+      <entity type="Muban" geocode="33120412" name="บ้านห่องน้อย" english="Ban Hong Noi">
+        <wiki wikidata ="Q16830151"/>
+      </entity>
+      <entity type="Muban" geocode="33120413" name="บ้านห้วยซันพัฒนา" english="Ban Huai Khan Phatthana" >
+        <wiki wikidata="Q16830156"/>
+      </entity>
       <entity type="Muban" geocode="33120414" name="บ้านหนองลุง" english="Ban Nong Lung">
         <wiki wikidata="Q16269556" />
       </entity>
-      <entity type="Muban" geocode="33120415" name="บ้านไพรพะเนาว์" english="Ban Phrai Pha Nao" />
+      <entity type="Muban" geocode="33120415" name="บ้านไพรพะเนาว์" english="Ban Phrai Pha Nao" >
+        <wiki wikidata="Q16830172"/>
+      </entity>
       <entity type="Muban" geocode="33120416" name="บ้านนาทุ่งเหนือ" english="Ban Na Thung Nuea">
         <wiki wikidata="Q16270787" />
       </entity>
-      <entity type="Muban" geocode="33120417" name="บ้านโคกสำโรง" english="Ban Khok Samrong" />
+      <entity type="Muban" geocode="33120417" name="บ้านโคกสำโรง" english="Ban Khok Samrong" >
+        <wiki wikidata="Q16830177"/>
+      </entity>
     </entity>
     <entity type="Tambon" name="จานแสนไชย" english="Chan Saen Chai" geocode="331205">
       <wiki wikidata="Q15985092" />
@@ -4894,6 +4935,9 @@ Source TH-Wikipedia
   </entity>
   <entity type="Amphoe" name="ศรีรัตนะ" english="Si Rattana" geocode="3314">
     <wiki wikidata="Q476710" />
+    <codes>
+      <post value="33240"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.7933</geo:lat>
@@ -5286,6 +5330,9 @@ Source TH-Wikipedia
   </entity>
   <entity type="Amphoe" name="วังหิน" english="Wang Hin" geocode="3316">
     <wiki wikidata="Q477003" />
+    <codes>
+      <post value="33270"/>
+    </codes>
     <office type="DistrictOffice">
       <officials>
         <official title="DistrictOfficer" name="พิบูลย์ หัตถกิจโกศล" begin="2009-08-24" />
@@ -5515,6 +5562,9 @@ Source TH-Wikipedia
   </entity>
   <entity type="Amphoe" name="ภูสิงห์" english="Phu Sing" geocode="3317">
     <wiki wikidata="Q476491" />
+    <codes>
+      <post value="33140"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.5466</geo:lat>
@@ -5716,6 +5766,9 @@ Source TH-Wikipedia
   </entity>
   <entity type="Amphoe" name="เมืองจันทร์" english="Mueang Chan" geocode="3318">
     <wiki wikidata="Q476006" />
+    <codes>
+      <post value="33120"/>
+    </codes>
     <office type="DistrictOffice">
       <officials>
         <official title="DistrictOfficer" name="นุกูล เรือนแก้ว" inoffice="2012" />
@@ -5836,6 +5889,9 @@ Source TH-Wikipedia
   </entity>
   <entity type="Amphoe" name="เบญจลักษ์" english="Benchalak" geocode="3319">
     <wiki wikidata="Q475271" />
+    <codes>
+      <post value="33110"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.7960</geo:lat>
@@ -5988,6 +6044,9 @@ Source TH-Wikipedia
   </entity>
   <entity type="Amphoe" name="พยุห์" english="Phayu" geocode="3320">
     <wiki wikidata="Q476394" />
+    <codes>
+      <post value="33230"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.9039</geo:lat>
@@ -6148,6 +6207,7 @@ Source TH-Wikipedia
   <entity type="Amphoe" name="โพธิ์ศรีสุวรรณ" english="Pho Si Suwan" geocode="3321">
     <wiki wikidata="Q476412" />
     <codes>
+      <post value="33120"/>
       <hasc value="TH.SI.PS" />
       <salb value="THA061013" />
     </codes>
@@ -6319,6 +6379,7 @@ Source TH-Wikipedia
   <entity type="Amphoe" name="ศิลาลาด" english="Sila Lat" geocode="3322">
     <wiki wikidata="Q476739" />
     <codes>
+      <post value="33160"/>
       <hasc value="TH.SI.SL" />
       <salb value="THA061019" />
     </codes>
