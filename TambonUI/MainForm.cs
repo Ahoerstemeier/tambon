@@ -308,8 +308,8 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 foreach ( var office in item.office )
                 {
-                    office.officials.Items.Sort((x, y) => x.begin.CompareTo(y.begin));
-                    var latestOfficial = office.officials.Items.LastOrDefault();
+                    office.officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
+                    var latestOfficial = office.officials.Items.FirstOrDefault();
                     if ( latestOfficial != null )
                     {
                         DateTime termEnd;
@@ -916,6 +916,7 @@ namespace De.AHoerstemeier.Tambon.UI
             List<EntityTermEnd> processedTermEnds = new List<EntityTermEnd>();
             foreach ( var entry in allTermEnd )
             {
+                entry.Entity.office.First().officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
                 processedTermEnds.Add(new EntityTermEnd(
                     entry.Entity,
                     entry.CouncilTerm,
