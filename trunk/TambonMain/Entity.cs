@@ -450,8 +450,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( (!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type) )
                 {
-                    officeEntry.officials.Items.Sort((x, y) => x.begin.CompareTo(y.begin));
-                    var term = officeEntry.officials.Items.LastOrDefault();
+                    officeEntry.officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
+                    var term = officeEntry.officials.Items.FirstOrDefault();
                     if ( term != null )
                     // foreach ( var term in office.council )
                     {
@@ -486,8 +486,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( (!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type) )
                 {
-                    officeEntry.officials.Items.Sort((x, y) => x.begin.CompareTo(y.begin));
-                    var term = officeEntry.officials.Items.LastOrDefault();
+                    officeEntry.officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
+                    var term = officeEntry.officials.Items.FirstOrDefault();
                     if ( term != null )
                     {
                         var name = String.Empty;
@@ -542,8 +542,8 @@ namespace De.AHoerstemeier.Tambon
             var result = new List<EntityTermEnd>();
             foreach ( var officeEntry in office )
             {
-                officeEntry.officials.Items.Sort((x, y) => x.begin.CompareTo(y.begin));
-                var term = officeEntry.officials.Items.LastOrDefault();
+                officeEntry.officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
+                var term = officeEntry.officials.Items.FirstOrDefault();
                 if ( term != null )
                 // foreach ( var term in office.council )
                 {
@@ -571,7 +571,7 @@ namespace De.AHoerstemeier.Tambon
             foreach ( var officeEntry in office )
             {
                 officeEntry.council.Sort((x, y) => x.begin.CompareTo(y.begin));
-                foreach (var term in officeEntry.council)
+                foreach ( var term in officeEntry.council )
                 {
                     DateTime termEnd;
                     if ( term.endSpecified )
@@ -723,7 +723,7 @@ namespace De.AHoerstemeier.Tambon
             var allEntities = GlobalData.CompleteGeocodeList().FlatList();
             var parents = new String[3];
             var currentGeocode = geocode;
-            if (this.parent.Any())
+            if ( this.parent.Any() )
             {
                 currentGeocode = this.parent.First() * 100;
             }
@@ -780,12 +780,12 @@ namespace De.AHoerstemeier.Tambon
                     break;
             }
             var currentGeocode = geocode;
-            if (this.parent.Any())
+            if ( this.parent.Any() )
             {
                 currentGeocode = this.parent.First() * 100;
             }
             while ( currentGeocode / 100 != 0 )
-            {                
+            {
                 currentGeocode = currentGeocode / 100;
                 var parentEntity = allEntities.First(x => x.geocode == currentGeocode);
                 var parentType = parentEntity.type.Translate(language);
