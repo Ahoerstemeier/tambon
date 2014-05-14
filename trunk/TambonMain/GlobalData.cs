@@ -11,7 +11,7 @@ namespace De.AHoerstemeier.Tambon
 {
     public static class GlobalData
     {
-        public const Int32 PopulationStatisticMaxYear = 2012;
+        public const Int32 PopulationStatisticMaxYear = 2013;
         public const Int32 PopulationStatisticMinYear = 1993;
 
         /// <summary>

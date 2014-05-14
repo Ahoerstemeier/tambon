@@ -892,7 +892,7 @@ namespace De.AHoerstemeier.Tambon
                     reference = statement.CreateReferenceForSnak(snak);
                     break;
                 case PopulationDataSourceType.DOPA:
-                    Uri source = PopulationDataDownloader.GetSourceUrl(data.Year, entity.geocode % 100);
+                    Uri source = PopulationDataDownloader.GetDisplayUrl(data.Year, entity.geocode );
                     snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(source.AbsoluteUri));
                     reference = statement.CreateReferenceForSnak(snak);
                     reference.AddSnak(new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdPublisher), new EntityIdValue(new EntityId(WikiBase.ItemDopa))));

@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MinimalJson;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -20,27 +22,25 @@ namespace De.AHoerstemeier.Tambon
 
     public class PopulationDataDownloader
     {
-        public static String CacheDirectory
-        {
-            get;
-            set;
-        }
-
-        public static String OutputDirectory
-        {
-            get;
-            set;
-        }
-
         #region fields
 
-        private Boolean _anythingCached = false;
+        /// <summary>
+        /// Geocode for which the data is to be downloaded.
+        /// </summary>
         private UInt32 _geocode = 0;
+        /// <summary>
+        /// Year in Buddhist era, shortened to two digits.
+        /// </summary>
+        private Int32 _yearShort = 0;
 
         #endregion fields
 
         #region properties
 
+        /// <summary>
+        /// Gets the population data.
+        /// </summary>
+        /// <value>The data.</value>
         public Entity Data
         {
             get;
@@ -48,24 +48,39 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Gets the year for which is population data is done.
+        /// Gets the year (common era) for which is population data is done.
         /// </summary>
+        /// <value>The year.</value>
         public Int32 Year
         {
             get;
             private set;
         }
 
+        /// <summary>
+        /// Gets or sets the directory to write the processed data as XML files.
+        /// </summary>
+        /// <value>The output directory.</value>
+        public static String OutputDirectory
+        {
+            get;
+            set;
+        }
         #endregion properties
 
         #region constructor
 
+        /// <summary>
+        /// Creates a new instance of <see cref="PopulationDataDownloader"/>.
+        /// </summary>
+        /// <param name="year">Year (common era), must be between 1957 (BE 2500) and 2056 (BE 2599).</param>
+        /// <param name="geocode">Province geocode. 0 means to download all of country.</param>
         public PopulationDataDownloader(Int32 year, UInt32 geocode)
         {
             Year = year;
             _geocode = geocode;
-            Int32 yearShort = Year + 543 - 2500;
-            if ( (yearShort < 0) | (yearShort > 99) )
+            _yearShort = Year + 543 - 2500;
+            if ( (_yearShort < 0) | (_yearShort > 99) )
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -83,15 +98,15 @@ namespace De.AHoerstemeier.Tambon
 
         #region constants
 
-        private const String _tableEntryStart = "<td bgcolor=#fff9a4><font color=3617d2>";
-        private const String _tableDataStart = "<td bgcolor=#ffffcb align=right><font color=0000ff>";
-        private const String _tableBoldStart = "<b>";
-        private const String _tableBoldEnd = "</b>";
-        private const String _tableEntryEnd = "</font></td>";
+        // 0 -> year - 2500
+        // 1 -> geocode, 4 digits
+        private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType=1&year={0}&rcode={1}";
+        private const String _urlDataAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType=1&year={0}&rcode={1}";
 
-        // private const String _urlBase = "http://www.dopa.go.th/xstat/";
-        // private const String _urlBase = "http://203.113.86.149/xstat/";
-        private const String _urlBase = "http://stat.dopa.go.th/xstat/";
+        // 0 -> year - 2500
+        // 1 -> geocode, 2 digits
+        private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType=1&year={0}&rcode={1}";
+        private const String _urlDataChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType=1&year={0}&rcode={1}";
 
         #endregion constants
 
@@ -109,213 +124,25 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion events
 
-        #region methods
-
-        private void DownloadToCache(String filename)
-        {
-            Stream outputStream = null;
-            try
-            {
-                WebClient webClient = new System.Net.WebClient();
-                Stream inputStream = webClient.OpenRead(_urlBase + filename);
-
-                outputStream = new FileStream(HtmlCacheFileName(filename), FileMode.CreateNew);
-                inputStream.CopyTo(outputStream);
-                outputStream.Flush();
-            }
-            finally
-            {
-                outputStream.Dispose();
-            }
-        }
-
-        private String HtmlCacheFileName(String fileName)
-        {
-            String directory = Path.Combine(CacheDirectory, "DOPA");
-            Directory.CreateDirectory(directory);
-            String result = Path.Combine(directory, fileName);
-            return result;
-        }
-
+        #region public methods
+        /// <summary>
+        /// Gets the (english) Wikipedia citation string for the current data element.
+        /// </summary>
+        /// <returns></returns>
         public String WikipediaReference()
         {
             String result = String.Format(CultureInfo.InvariantCulture,
                 "<ref>{{cite web|url={0}|publisher=Department of Provincial Administration|title=Population statistics {1}}}</ref>",
-                _urlBase + SourceFilename(1), Year);
+                String.Format(CultureInfo.InvariantCulture,_urlShowChangwat,_yearShort,_geocode), Year);
             return result;
         }
-
-        private Boolean IsCached(String fileName)
-        {
-            return File.Exists(HtmlCacheFileName(fileName));
-        }
-
-        private void ParseSingleFile(String filename, ref Entity currentSubEntry)
-        {
-            if ( !_anythingCached )
-            {
-                if ( !IsCached(filename) )
-                {
-                    DownloadToCache(filename);
-                }
-                else
-                {
-                    _anythingCached = true;
-                }
-            }
-            var reader = new StreamReader(HtmlCacheFileName(filename), Encoding.GetEncoding(874));
-
-            String currentLine = String.Empty;
-            Entity currentEntry = null;
-            Int32 dataState = 0;
-            while ( (currentLine = reader.ReadLine()) != null )
-            {
-                #region parse name
-
-                if ( currentLine.StartsWith(_tableEntryStart) )
-                {
-                    String value = StripTableHtmlFromLine(currentLine);
-                    currentEntry = new Entity();
-                    currentEntry.ParseName(value);
-                    if ( Data == null )
-                    {
-                        Data = currentEntry;
-                    }
-                    else if ( (currentSubEntry == null) | currentEntry.type.IsSecondLevelAdministrativeUnit() )
-                    {
-                        Data.entity.Add(currentEntry);
-                        currentSubEntry = currentEntry;
-                    }
-                    else
-                    {
-                        currentSubEntry.entity.Add(currentEntry);
-                    }
-                    dataState = 0;
-                }
-
-                #endregion parse name
-
-                #region parse population data
-
-                if ( currentLine.StartsWith(_tableDataStart) )
-                {
-                    if ( currentEntry == null )
-                    {
-                        throw new ArgumentOutOfRangeException();
-                    }
-                    String value = StripTableHtmlFromLine(currentLine);
-                    if ( !String.IsNullOrEmpty(value) )
-                    {
-                        if ( !currentEntry.population.Any() )
-                        {
-                            var population = new PopulationData();
-                            population.source = PopulationDataSourceType.DOPA;
-                            population.year = Year.ToString(CultureInfo.InvariantCulture);
-                            population.referencedate = new DateTime(Year - 1, 12, 31);
-                            currentEntry.population.Add(population);
-                        }
-                        var dataPointType = PopulationDataType.total;
-                        if ( currentEntry.type.IsCompatibleEntityType(EntityType.Changwat) )
-                        {
-                            dataPointType = PopulationDataType.total;
-                        }
-                        else if ( currentEntry.type.IsLocalGovernment() )
-                        {
-                            dataPointType = PopulationDataType.municipal;
-                        }
-                        else
-                        {
-                            dataPointType = PopulationDataType.nonmunicipal;
-                        }
-                        var dataPoint = currentEntry.population.First().data.FirstOrDefault(x => x.type == dataPointType);
-                        if ( dataPoint == null )
-                        {
-                            dataPoint = new HouseholdDataPoint();
-                            dataPoint.type = dataPointType;
-                            currentEntry.population.First().data.Add(dataPoint);
-                        }
-
-                        switch ( dataState )
-                        {
-                            case 0:
-                                dataPoint.male = Int32.Parse(value);
-                                break;
-                            case 1:
-                                dataPoint.female = Int32.Parse(value);
-                                break;
-                            case 2:
-                                dataPoint.total = Int32.Parse(value);
-                                break;
-                            case 3:
-                                dataPoint.households = Int32.Parse(value);
-                                break;
-                            default:
-                                throw new ArgumentOutOfRangeException();
-                        }
-                    }
-                    dataState++;
-                }
-
-                #endregion parse population data
-            }
-        }
-
-        private static String SourceFilename(UInt32 geocode, Int32 year, Int16 page)
-        {
-            Int32 yearShort = year + 543 - 2500;
-            if ( (yearShort < 0) | (yearShort > 99) )
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            if ( (geocode < 0) | (geocode > 99) )
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            String result = String.Format(CultureInfo.InvariantCulture, "p{0:D2}{1:D2}_{2:D2}.html", yearShort, geocode, page);
-            return result;
-        }
-
-        private String SourceFilename(Int16 page)
-        {
-            return SourceFilename(_geocode, Year, page);
-        }
-
-        protected void GetData()
-        {
-            Int16 count = 0;
-            Entity currentSubEntity = null;
-            try
-            {
-                while ( count < 99 )
-                {
-                    count++;
-                    ParseSingleFile(SourceFilename(count), ref currentSubEntity);
-                }
-            }
-            catch
-            {
-                // TODO: catch selectively the exception expected for HTTP not found/file not found
-            }
-            if ( Data != null )
-            {
-                Data.geocode = _geocode;
-            }
-        }
-
-        private static String StripTableHtmlFromLine(String value)
-        {
-            string result = value;
-            result = result.Replace(_tableDataStart, "");
-            result = result.Replace(_tableEntryStart, "");
-            result = result.Replace(_tableBoldStart, "");
-            result = result.Replace(_tableBoldEnd, "");
-            result = result.Replace(_tableEntryEnd, "");
-            result = result.Replace(",", "");
-            result = result.Trim();
-            return result;
-        }
-
-        public static PopulationData Load(String fromFile)
+        
+        /// <summary>
+        /// Loads population data from a XML file.
+        /// </summary>
+        /// <param name="fromFile">File name.</param>
+        /// <returns>Population data.</returns>
+                public static PopulationData Load(String fromFile)
         {
             PopulationData result = null;
             using ( var fileStream = new FileStream(fromFile, FileMode.Open, FileAccess.Read) )
@@ -326,17 +153,11 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        protected void GetGeocodes()
-        {
-            if ( Data != null )
-            {
-                var geocodes = GlobalData.GetGeocodeList(Data.geocode);
-                // _invalidGeocodes = geocodes.InvalidGeocodeEntries();
-                Data.SynchronizeGeocodes(geocodes);
-            }
-        }
-
-        public String XmlExportFileName()
+        /// <summary>
+        /// Gets the filename to which the data would be written.
+        /// </summary>
+        /// <returns>File name of generated file.</returns>
+                public String XmlExportFileName()
         {
             String result = String.Empty;
             if ( Data != null )
@@ -348,6 +169,128 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+#endregion
+
+        #region private methods
+
+        private JsonObject GetDataFromDopa(UInt32 geocode)
+        {
+            String url;
+            if (geocode < 100)
+            {
+                url = String.Format(CultureInfo.InvariantCulture,_urlDataChangwat,_yearShort,geocode);
+            }
+            else
+            {
+                url = String.Format(CultureInfo.InvariantCulture,_urlDataAmphoe,_yearShort,geocode);
+            }
+                WebClient webClient = new System.Net.WebClient();
+                Stream inputStream = webClient.OpenRead(url);
+            String response = StreamToString(inputStream);
+
+            JsonValue result = JsonValue.readFrom(response);
+            if (!result.isObject())
+            {
+                return null;
+            }
+            JsonObject obj = result.asObject();
+            return obj;
+        }
+        /// <summary>
+        /// Reads a stream into a string.
+        /// </summary>
+        /// <param name="stream">Input stream.</param>
+        /// <returns>Content of stream as string.</returns>
+        private static String StreamToString(Stream stream)
+        {
+            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
+
+        public static Uri GetDisplayUrl(Int32 year, UInt32 geocode)
+        {
+            UInt32 changwatGeocode = GeocodeHelper.ProvinceCode(geocode);
+            String url = String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, year + 543 - 2500, geocode);
+            return new Uri(url);
+        }
+
+        private IEnumerable<Entity> ParseJson(JsonObject data)
+        {
+            var result = new List<Entity>();
+            var actualData = data.get("aaData");
+            if (actualData != null)
+            {
+                var array = actualData.asArray();
+                foreach (JsonArray item in array)
+                {
+                    var parsedData = new List<String>();
+                    foreach (JsonValue dataPoint in item)
+                    {
+                        var strippedText = Regex.Replace(dataPoint.asString(), "<.*?>", string.Empty).Replace(",", String.Empty);
+                        if (strippedText == "-")
+                        {
+                            strippedText = "0";
+                        }
+                        parsedData.Add(strippedText);
+                    }
+                    if (parsedData.First() != "00")
+                    {
+                        Entity entity = new Entity();
+                        entity.ParseName(parsedData.ElementAt(1));
+                        entity.geocode = Convert.ToUInt32(parsedData.First(), CultureInfo.InvariantCulture);
+
+                        PopulationData population = new PopulationData();
+                        entity.population.Add(population);
+                        population.source = PopulationDataSourceType.DOPA;
+                        population.referencedate = new DateTime(Year, 12, 31);
+                        HouseholdDataPoint householdDataPoint = new HouseholdDataPoint();
+                        householdDataPoint.male = Convert.ToInt32(parsedData.ElementAt(2), CultureInfo.InvariantCulture);
+                        householdDataPoint.female = Convert.ToInt32(parsedData.ElementAt(3), CultureInfo.InvariantCulture);
+                        householdDataPoint.total = Convert.ToInt32(parsedData.ElementAt(4), CultureInfo.InvariantCulture);
+                        householdDataPoint.households = Convert.ToInt32(parsedData.ElementAt(5), CultureInfo.InvariantCulture);
+                        population.data.Add(householdDataPoint);
+                        result.Add(entity);
+                    }
+                }
+            }
+            return result;
+        }
+
+        protected void GetData()
+        {
+            Data = new Entity();
+            var data = GetDataFromDopa(_geocode);
+            Data.entity.AddRange(ParseJson(data));
+            foreach (var entity in Data.entity)
+            {
+                var subData = GetDataFromDopa(entity.geocode);
+                entity.entity.AddRange(ParseJson(subData)); 
+            }
+            if ( Data != null )
+            {
+                Data.geocode = _geocode;
+            }
+        }
+
+        /// <summary>
+        /// Synchronizes the calculated data with the global geocode list.
+        /// </summary>
+        private void GetGeocodes()
+        {
+            if ( Data != null )
+            {
+                var geocodes = GlobalData.GetGeocodeList(Data.geocode);
+                // _invalidGeocodes = geocodes.InvalidGeocodeEntries();
+                Data.SynchronizeGeocodes(geocodes);
+            }
+        }
+
+        /// <summary>
+        /// Exports the data to a XML in the <see cref="OutputDirectory"/>.
+        /// </summary>
         public void SaveXml()
         {
             var data = XmlManager.EntityToXml<Entity>(Data);
@@ -357,7 +300,7 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        public void ReOrderThesaban()
+        private void ReOrderThesaban()
         {
             if ( Data != null )
             {
@@ -365,6 +308,9 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Gets the data for all provinces, used if <see cref="_geocode"/> is 0.
+        /// </summary>
         private void ProcessAllProvinces()
         {
             var data = new Entity();
@@ -381,19 +327,6 @@ namespace De.AHoerstemeier.Tambon
         private void ProcessProvince(UInt32 geocode)
         {
             GetData();
-            // sort Tambon by Population, to avoid double entries in 2012 data to create big mistakes
-            if ( Data != null )
-            {
-                foreach ( var amphoe in Data.entity )
-                {
-                    amphoe.entity.Sort(
-                        delegate(Entity p1, Entity p2)
-                        {
-                            return -p1.population.First().data.First().total.CompareTo(p2.population.First().data.First().total);
-                        });
-                }
-            }
-
             GetGeocodes();
             ReOrderThesaban();
             foreach ( var entity in Data.FlatList() )
@@ -402,6 +335,9 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Starts the download of the data.
+        /// </summary>
         public void Process()
         {
             if ( _geocode == 0 )
@@ -416,37 +352,7 @@ namespace De.AHoerstemeier.Tambon
             OnProcessingFinished(new EventArgs());
         }
 
-        public IEnumerable<Entity> EntitiesWithInvalidGeocode()
-        {
-            return Data.InvalidGeocodeEntries();
-        }
-
-        private IEnumerable<Tuple<Entity, UInt32>> EntitiesWithoutGeocode(Entity parent)
-        {
-            var result = new List<Tuple<Entity, UInt32>>();
-            var allEntitiesWithoutGeocode = parent.entity.Where(x => x.geocode == 0);
-            foreach ( var x in allEntitiesWithoutGeocode )
-            {
-                result.Add(Tuple.Create(x, parent.geocode));
-            }
-            foreach ( var subEntity in parent.entity )
-            {
-                result.AddRange(EntitiesWithoutGeocode(subEntity));
-            }
-
-            return result;
-        }
-
-        public IEnumerable<Tuple<Entity, UInt32>> EntitiesWithoutGeocode()
-        {
-            return EntitiesWithoutGeocode(Data);
-        }
-
         #endregion methods
 
-        internal static Uri GetSourceUrl(Int32 year, UInt32 geocode)
-        {
-            return new Uri(_urlBase + SourceFilename(geocode, year, 1));
-        }
     }
 }
