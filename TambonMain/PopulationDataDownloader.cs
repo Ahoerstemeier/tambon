@@ -10,6 +10,14 @@ using System.Xml.Serialization;
 
 namespace De.AHoerstemeier.Tambon
 {
+    // http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType=1&year=56&rcode=1001
+    // {"aaData":[["00","ท้องถิ่นเขตพระนคร","27,279","29,405","56,684","19,257"],["10010100","แขวงพระบรมมหาราชวัง","2,695","1,921","4,616","1,304"],...
+    // http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?rcode=10&statType=1&year=56
+
+    // http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType=1&year=56&rcode=10
+    // {"aaData":[["00","กรุงเทพมหานคร","2,694,921","2,991,331","5,686,252","2,593,827"],["1001","ท้องถิ่นเขตพระนคร","27,279","29,405","56,684","19,257"],...
+    // http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?rcode=1001&statType=1&year=56
+
     public class PopulationDataDownloader
     {
         public static String CacheDirectory
@@ -255,16 +263,16 @@ namespace De.AHoerstemeier.Tambon
         private static String SourceFilename(UInt32 geocode, Int32 year, Int16 page)
         {
             Int32 yearShort = year + 543 - 2500;
-            if ((yearShort < 0) | (yearShort > 99))
+            if ( (yearShort < 0) | (yearShort > 99) )
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if ((geocode < 0) | (geocode > 99))
+            if ( (geocode < 0) | (geocode > 99) )
             {
                 throw new ArgumentOutOfRangeException();
             }
             String result = String.Format(CultureInfo.InvariantCulture, "p{0:D2}{1:D2}_{2:D2}.html", yearShort, geocode, page);
-            return result; 
+            return result;
         }
 
         private String SourceFilename(Int16 page)
