@@ -111,6 +111,8 @@ namespace De.AHoerstemeier.Tambon {
         private PopulationDataType typeField;
         
         private int householdsField;
+
+        private int geocodeField;
         
         /// <summary>
         /// Creates a new instance of HouseholdDataPoint.
@@ -120,6 +122,7 @@ namespace De.AHoerstemeier.Tambon {
             this.dataField = new List<HouseholdDataPoint>();
             this.typeField = PopulationDataType.total;
             this.householdsField = 0;
+            this.geocodeField = 0;
         }
         
         [System.Xml.Serialization.XmlElementAttribute("data", Order=0)]
@@ -177,6 +180,27 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.householdsField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int geocode
+        {
+            get
+            {
+                return this.geocodeField;
+            }
+            set
+            {
+                this.geocodeField = value;
             }
         }
     }

@@ -34,7 +34,6 @@ namespace De.AHoerstemeier.Tambon.UI
             //PopulationDataDownloader.CacheDirectory=Path.GetDirectoryName(Application.ExecutablePath) + "\\cache\\";
             //PopulationDataDownloader.OutputDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\output\\";
 
-            PopulationDataDownloader.CacheDirectory = @"C:\Users\Ahoerstemeier.AACHEN\Documents\Thailand\DOPA\cache";
             PopulationDataDownloader.OutputDirectory = @"C:\Users\Ahoerstemeier.AACHEN\Documents\Thailand\DOPA\XmlOut";
         }
 

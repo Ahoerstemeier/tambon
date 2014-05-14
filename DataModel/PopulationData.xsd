@@ -57,26 +57,38 @@
       </xs:enumeration>
       <xs:enumeration value="nonagricultural">
         <xs:annotation>
-          <xs:documentation>Non-Agricultural population, i.e. population having none or only little agricultural land.</xs:documentation>
+          <xs:documentation>Non-agricultural population, i.e. population having none or only little agricultural land.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="privatehouseholds">
         <xs:annotation>
-          <xs:documentation>Private households, i.e. ....</xs:documentation>
+          <xs:documentation>Private households.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="collectivehouseholds">
         <xs:annotation>
-          <xs:documentation>Collective households, i.e. ....</xs:documentation>
+          <xs:documentation>Collective households, i.e. military barracks.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:complexType name="PopulationDataPoint">
-    <xs:attribute name="total" type="xs:int" default="0" use="optional" />
-    <xs:attribute name="male" type="xs:int" default="0" use="optional" />
-    <xs:attribute name="female" type="xs:int" default="0" use="optional" />
+    <xs:attribute name="total" type="xs:int" default="0" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Total population.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="male" type="xs:int" default="0" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Male population.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="female" type="xs:int" default="0" use="optional" >
+      <xs:annotation>
+        <xs:documentation>Female population.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="AgeTableEntry">
@@ -97,11 +109,32 @@
     <xs:complexContent>
       <xs:extension base="t:PopulationDataPoint">
         <xs:sequence>
-          <xs:element name="data" type="t:HouseholdDataPoint" minOccurs="0" maxOccurs="unbounded" />
-          <xs:element name="agetable" type="t:AgeTable" minOccurs="0" maxOccurs="1" />
+          <xs:element name="data" type="t:HouseholdDataPoint" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Data points.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="agetable" type="t:AgeTable" minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation>Population by age.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
-        <xs:attribute name="type" type="t:PopulationDataType" use="optional" default="total" />
-        <xs:attribute name="households" type="xs:int" default="0" use="optional" />
+        <xs:attribute name="type" type="t:PopulationDataType" use="optional" default="total" >
+          <xs:annotation>
+            <xs:documentation>Data type.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="households" type="xs:int" default="0" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Number of households.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="geocode" type="xs:unsignedInt" default="0" use="optional" >
+          <xs:annotation>
+            <xs:documentation>Identifier of the entity. Used for municipal areas in case more than one municipality is within the parent entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

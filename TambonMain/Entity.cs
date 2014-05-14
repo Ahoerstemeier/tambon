@@ -320,8 +320,10 @@ namespace De.AHoerstemeier.Tambon
             return retval;
         }
 
-        internal void SynchronizeGeocodes(Entity geocodeSource)
+        private void SynchronizeGeocodes(Entity geocodeSource)
         {
+            // TODO - simply search by geocode
+
             var missedEntities = new List<Entity>();
 
             if ( geocodeSource != null )
