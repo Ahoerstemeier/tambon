@@ -198,6 +198,8 @@ namespace De.AHoerstemeier.Tambon.UI
             var entities = GlobalData.CompleteGeocodeList();
             GlobalData.LoadPopulationData();
             allEntities.AddRange(entities.FlatList().Where(x => !x.IsObsolete));
+            entities.PropagatePostcodeRecursive();
+
             var allThesaban = allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Thesaban));
             foreach ( var entity in allThesaban )
             {

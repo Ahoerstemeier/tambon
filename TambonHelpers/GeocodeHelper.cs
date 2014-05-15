@@ -24,6 +24,14 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>True if both codes fit together, false otherwise.</returns>
         public static Boolean IsSameGeocode(UInt32 geocodeToFind, UInt32 geocodeToCheck, Boolean includeSubEntities)
         {
+            while ( geocodeToFind % 100 == 0 )
+            {
+                geocodeToFind = geocodeToFind / 100;
+            }
+            while ( geocodeToCheck % 100 == 0 )
+            {
+                geocodeToCheck = geocodeToCheck / 100;
+            }
             Boolean result = false;
             if ( includeSubEntities )
             {

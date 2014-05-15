@@ -1,5 +1,4 @@
-﻿using MinimalJson;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -9,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
+using MinimalJson;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -28,6 +28,7 @@ namespace De.AHoerstemeier.Tambon
         /// Geocode for which the data is to be downloaded.
         /// </summary>
         private UInt32 _geocode = 0;
+
         /// <summary>
         /// Year in Buddhist era, shortened to two digits.
         /// </summary>
@@ -66,6 +67,7 @@ namespace De.AHoerstemeier.Tambon
             get;
             set;
         }
+
         #endregion properties
 
         #region constructor
@@ -101,11 +103,13 @@ namespace De.AHoerstemeier.Tambon
         // 0 -> year - 2500
         // 1 -> geocode, 4 digits
         private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType=1&year={0}&rcode={1}";
+
         private const String _urlDataAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType=1&year={0}&rcode={1}";
 
         // 0 -> year - 2500
         // 1 -> geocode, 2 digits
         private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType=1&year={0}&rcode={1}";
+
         private const String _urlDataChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType=1&year={0}&rcode={1}";
 
         #endregion constants
@@ -125,6 +129,7 @@ namespace De.AHoerstemeier.Tambon
         #endregion events
 
         #region public methods
+
         /// <summary>
         /// Gets the (english) Wikipedia citation string for the current data element.
         /// </summary>
@@ -133,16 +138,16 @@ namespace De.AHoerstemeier.Tambon
         {
             String result = String.Format(CultureInfo.InvariantCulture,
                 "<ref>{{cite web|url={0}|publisher=Department of Provincial Administration|title=Population statistics {1}}}</ref>",
-                String.Format(CultureInfo.InvariantCulture,_urlShowChangwat,_yearShort,_geocode), Year);
+                String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, _geocode), Year);
             return result;
         }
-        
+
         /// <summary>
         /// Loads population data from a XML file.
         /// </summary>
         /// <param name="fromFile">File name.</param>
         /// <returns>Population data.</returns>
-                public static PopulationData Load(String fromFile)
+        public static PopulationData Load(String fromFile)
         {
             PopulationData result = null;
             using ( var fileStream = new FileStream(fromFile, FileMode.Open, FileAccess.Read) )
@@ -157,7 +162,7 @@ namespace De.AHoerstemeier.Tambon
         /// Gets the filename to which the data would be written.
         /// </summary>
         /// <returns>File name of generated file.</returns>
-                public String XmlExportFileName()
+        public String XmlExportFileName()
         {
             String result = String.Empty;
             if ( Data != null )
@@ -169,33 +174,34 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-#endregion
+        #endregion public methods
 
         #region private methods
 
         private JsonObject GetDataFromDopa(UInt32 geocode)
         {
             String url;
-            if (geocode < 100)
+            if ( geocode < 100 )
             {
-                url = String.Format(CultureInfo.InvariantCulture,_urlDataChangwat,_yearShort,geocode);
+                url = String.Format(CultureInfo.InvariantCulture, _urlDataChangwat, _yearShort, geocode);
             }
             else
             {
-                url = String.Format(CultureInfo.InvariantCulture,_urlDataAmphoe,_yearShort,geocode);
+                url = String.Format(CultureInfo.InvariantCulture, _urlDataAmphoe, _yearShort, geocode);
             }
-                WebClient webClient = new System.Net.WebClient();
-                Stream inputStream = webClient.OpenRead(url);
+            WebClient webClient = new System.Net.WebClient();
+            Stream inputStream = webClient.OpenRead(url);
             String response = StreamToString(inputStream);
 
             JsonValue result = JsonValue.readFrom(response);
-            if (!result.isObject())
+            if ( !result.isObject() )
             {
                 return null;
             }
             JsonObject obj = result.asObject();
             return obj;
         }
+
         /// <summary>
         /// Reads a stream into a string.
         /// </summary>
@@ -203,12 +209,11 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Content of stream as string.</returns>
         private static String StreamToString(Stream stream)
         {
-            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+            using ( StreamReader reader = new StreamReader(stream, Encoding.UTF8) )
             {
                 return reader.ReadToEnd();
             }
         }
-
 
         public static Uri GetDisplayUrl(Int32 year, UInt32 geocode)
         {
@@ -221,31 +226,33 @@ namespace De.AHoerstemeier.Tambon
         {
             var result = new List<Entity>();
             var actualData = data.get("aaData");
-            if (actualData != null)
+            if ( actualData != null )
             {
                 var array = actualData.asArray();
-                foreach (JsonArray item in array)
+                foreach ( JsonArray item in array )
                 {
                     var parsedData = new List<String>();
-                    foreach (JsonValue dataPoint in item)
+                    foreach ( JsonValue dataPoint in item )
                     {
                         var strippedText = Regex.Replace(dataPoint.asString(), "<.*?>", string.Empty).Replace(",", String.Empty);
-                        if (strippedText == "-")
+                        if ( strippedText == "-" )
                         {
                             strippedText = "0";
                         }
                         parsedData.Add(strippedText);
                     }
-                    if (parsedData.First() != "00")
+                    if ( parsedData.First() != "00" )
                     {
                         Entity entity = new Entity();
-                        entity.ParseName(parsedData.ElementAt(1));
+                        entity.ParseName(parsedData.ElementAt(1).Replace("ท้องถิ่น", String.Empty));
                         entity.geocode = Convert.ToUInt32(parsedData.First(), CultureInfo.InvariantCulture);
+                        while ( entity.geocode % 100 == 0 )
+                        {
+                            entity.geocode = entity.geocode / 100;
+                        }
 
-                        PopulationData population = new PopulationData();
+                        PopulationData population = CreateEmptyPopulationEntry();
                         entity.population.Add(population);
-                        population.source = PopulationDataSourceType.DOPA;
-                        population.referencedate = new DateTime(Year, 12, 31);
                         HouseholdDataPoint householdDataPoint = new HouseholdDataPoint();
                         householdDataPoint.male = Convert.ToInt32(parsedData.ElementAt(2), CultureInfo.InvariantCulture);
                         householdDataPoint.female = Convert.ToInt32(parsedData.ElementAt(3), CultureInfo.InvariantCulture);
@@ -259,20 +266,31 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        private PopulationData CreateEmptyPopulationEntry()
+        {
+            PopulationData population = new PopulationData();
+            population.source = PopulationDataSourceType.DOPA;
+            population.referencedate = new DateTime(Year, 12, 31);
+            population.year = Year.ToString(CultureInfo.InvariantCulture);
+            return population;
+        }
+
         protected void GetData()
         {
             Data = new Entity();
             var data = GetDataFromDopa(_geocode);
             Data.entity.AddRange(ParseJson(data));
-            foreach (var entity in Data.entity)
+            foreach ( var entity in Data.entity )
             {
                 var subData = GetDataFromDopa(entity.geocode);
-                entity.entity.AddRange(ParseJson(subData)); 
+                entity.entity.AddRange(ParseJson(subData));
             }
-            if ( Data != null )
-            {
-                Data.geocode = _geocode;
-            }
+            Data.geocode = _geocode;
+            Data.population = new List<PopulationData>();
+            PopulationData populationData = CreateEmptyPopulationEntry();
+            HouseholdDataPoint householdDataPoint = new HouseholdDataPoint();
+            populationData.data.Add(householdDataPoint);
+            Data.population.Add(populationData);
         }
 
         /// <summary>
@@ -284,6 +302,17 @@ namespace De.AHoerstemeier.Tambon
             {
                 var geocodes = GlobalData.GetGeocodeList(Data.geocode);
                 // _invalidGeocodes = geocodes.InvalidGeocodeEntries();
+                foreach ( var amphoe in geocodes.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+                {
+                    if ( !Data.entity.Any(x => GeocodeHelper.IsSameGeocode(x.geocode, amphoe.geocode, false)) )
+                    {
+                        // make sure all Amphoe will  be in the result list, in case of a Amphoe which has only Thesaban it will be missing in the DOPA data
+                        Data.entity.Add(new Entity()
+                        {
+                            geocode = amphoe.geocode
+                        });
+                    }
+                }
                 Data.SynchronizeGeocodes(geocodes);
             }
         }
@@ -352,7 +381,6 @@ namespace De.AHoerstemeier.Tambon
             OnProcessingFinished(new EventArgs());
         }
 
-        #endregion methods
-
+        #endregion private methods
     }
 }
