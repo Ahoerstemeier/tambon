@@ -241,12 +241,12 @@ namespace De.AHoerstemeier.Tambon
                         }
                         parsedData.Add(strippedText);
                     }
-                    if ( parsedData.First() != "00" )
+                    if (parsedData.First() != "00")
                     {
                         Entity entity = new Entity();
                         entity.ParseName(parsedData.ElementAt(1).Replace("ท้องถิ่น", String.Empty));
                         entity.geocode = Convert.ToUInt32(parsedData.First(), CultureInfo.InvariantCulture);
-                        while ( entity.geocode % 100 == 0 )
+                        while (entity.geocode % 100 == 0)
                         {
                             entity.geocode = entity.geocode / 100;
                         }
@@ -259,7 +259,11 @@ namespace De.AHoerstemeier.Tambon
                         householdDataPoint.total = Convert.ToInt32(parsedData.ElementAt(4), CultureInfo.InvariantCulture);
                         householdDataPoint.households = Convert.ToInt32(parsedData.ElementAt(5), CultureInfo.InvariantCulture);
                         population.data.Add(householdDataPoint);
-                        result.Add(entity);
+                        if ((householdDataPoint.total > 0) || (householdDataPoint.households > 0))
+                        {
+                            // occasionally there are empty entries, e.g. for 3117 includes an empty 311102
+                            result.Add(entity);
+                        }
                     }
                 }
             }
@@ -271,6 +275,7 @@ namespace De.AHoerstemeier.Tambon
             PopulationData population = new PopulationData();
             population.source = PopulationDataSourceType.DOPA;
             population.referencedate = new DateTime(Year, 12, 31);
+            population.referencedateSpecified = true;
             population.year = Year.ToString(CultureInfo.InvariantCulture);
             return population;
         }
@@ -288,8 +293,6 @@ namespace De.AHoerstemeier.Tambon
             Data.geocode = _geocode;
             Data.population = new List<PopulationData>();
             PopulationData populationData = CreateEmptyPopulationEntry();
-            HouseholdDataPoint householdDataPoint = new HouseholdDataPoint();
-            populationData.data.Add(householdDataPoint);
             Data.population.Add(populationData);
         }
 
@@ -307,10 +310,10 @@ namespace De.AHoerstemeier.Tambon
                     if ( !Data.entity.Any(x => GeocodeHelper.IsSameGeocode(x.geocode, amphoe.geocode, false)) )
                     {
                         // make sure all Amphoe will  be in the result list, in case of a Amphoe which has only Thesaban it will be missing in the DOPA data
-                        Data.entity.Add(new Entity()
-                        {
-                            geocode = amphoe.geocode
-                        });
+                        var newAmphoe = new Entity();
+                        newAmphoe.population.Add(CreateEmptyPopulationEntry());
+                        newAmphoe.geocode = amphoe.geocode;
+                        Data.entity.Add(amphoe);
                     }
                 }
                 Data.SynchronizeGeocodes(geocodes);
@@ -342,15 +345,19 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         private void ProcessAllProvinces()
         {
-            var data = new Entity();
-            foreach ( var entry in GlobalData.Provinces )
+            Data = new Entity();
+            Data.population = new List<PopulationData>();
+            PopulationData populationData = CreateEmptyPopulationEntry();
+            Data.population.Add(populationData);
+            Data.CopyBasicDataFrom(GlobalData.CountryEntity);
+
+            foreach (var entry in GlobalData.Provinces)
             {
                 var tempCalculator = new PopulationDataDownloader(Year, entry.geocode);
                 tempCalculator.Process();
-                data.entity.Add(tempCalculator.Data);
+                Data.entity.Add(tempCalculator.Data);
             }
-            // data.ConsolidatePopulationData();
-            Data = data;
+            Data.CalculatePopulationFromSubEntities();
         }
 
         private void ProcessProvince(UInt32 geocode)
@@ -358,10 +365,20 @@ namespace De.AHoerstemeier.Tambon
             GetData();
             GetGeocodes();
             ReOrderThesaban();
+            var toRemove = new List<Entity>();
             foreach ( var entity in Data.FlatList() )
             {
-                entity.population.First().CalculateTotal();
+                if (entity.population.Any())
+                {
+                    entity.population.First().CalculateTotal();
+                }
+                else
+                {
+                    toRemove.Add(entity);
+                }
             }
+            Data.entity.RemoveAll(x => toRemove.Contains(x));
+            Data.CalculatePopulationFromSubEntities();
         }
 
         /// <summary>

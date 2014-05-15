@@ -96,6 +96,28 @@ namespace De.AHoerstemeier.Tambon
             {
                 entity.Remove(thesaban);
             }
+
+            // set the population data type of the non-municipal items
+            PopulationDataType nonThesabanType = PopulationDataType.total;
+            if (_thesaban.Any())
+            {
+                nonThesabanType = PopulationDataType.nonmunicipal;
+            }
+            foreach (var amphoe in entity)
+            {
+                foreach (var entry in amphoe.FlatList())
+                {
+                    if (entry.population.Any())
+                    {
+                        var data = entry.population.First().data.FirstOrDefault();
+                        if (data != null)
+                        {
+                            data.type = nonThesabanType;
+                        }
+                    }
+                }
+            }
+
             foreach ( var thesaban in _thesaban )
             {
                 if ( thesaban.entity.Any() )
@@ -121,7 +143,7 @@ namespace De.AHoerstemeier.Tambon
         internal void AddTambonInThesabanToAmphoe(Entity tambon, Entity thesaban)
         {
             var allSubEntities = entity.SelectMany(x => x.entity).ToList();
-            var mainTambon = allSubEntities.SingleOrDefault(x => (GeocodeHelper.IsSameGeocode(x.geocode, tambon.geocode, false)) & (x.type == EntityType.Tambon));
+            var mainTambon = allSubEntities.SingleOrDefault(x => (GeocodeHelper.IsSameGeocode(x.geocode, tambon.geocode, false)) & (x.type == tambon.type));
             var mainAmphoe = entity.FirstOrDefault(x => (x.geocode == tambon.geocode / 100));
             if ( mainTambon == null )
             {
@@ -139,31 +161,20 @@ namespace De.AHoerstemeier.Tambon
             {
                 foreach ( var dataPoint in tambon.population.First().data )
                 {
-                    var target = mainAmphoe.population.First().data.FirstOrDefault(x => x.type == dataPoint.type);
-                    if ( target == null )
-                    {
-                        target = new HouseholdDataPoint();
-                        target.type = dataPoint.type;
-                        mainAmphoe.population.First().data.Add(target);
-                    }
-                    target.total += dataPoint.total;
-                    target.male += dataPoint.male;
-                    target.female += dataPoint.female;
-                    target.households += dataPoint.households;
+                    mainAmphoe.population.First().AddDataPoint(dataPoint);
+
                 }
             }
-            if ( mainTambon != null )
+        }
+
+        public void CalculatePopulationFromSubEntities()
+        {
+            foreach (var subEntity in entity)
             {
-                var newEntity = new Entity()
+                foreach (var dataPoint in subEntity.population.First().data)
                 {
-                    geocode = thesaban.geocode,
-                    name = thesaban.name,
-                    english = thesaban.english,
-                    type = thesaban.type
-                };
-                var populationData = mainTambon.population.First();
-                newEntity.population.Add(populationData.Clone());
-                mainTambon.entity.Add(newEntity);
+                    this.population.First().AddDataPoint(dataPoint);
+                }
             }
         }
 
@@ -338,7 +349,7 @@ namespace De.AHoerstemeier.Tambon
                     }
                     else
                     {
-                        CopyBasicDataFrom(source);
+                        entity.CopyBasicDataFrom(source);
                     }
                 }
             }

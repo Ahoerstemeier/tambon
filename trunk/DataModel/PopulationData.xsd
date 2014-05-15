@@ -35,6 +35,11 @@
       <xs:documentation>Type of population data.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
+      <xs:enumeration value="undefined">
+        <xs:annotation>
+          <xs:documentation>Not defined.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="total">
         <xs:annotation>
           <xs:documentation>Total population.</xs:documentation>
@@ -148,7 +153,7 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
-        <xs:attribute name="type" type="t:PopulationDataType" use="optional" default="total">
+        <xs:attribute name="type" type="t:PopulationDataType" use="optional" default="undefined">
           <xs:annotation>
             <xs:documentation>Data type.</xs:documentation>
           </xs:annotation>
