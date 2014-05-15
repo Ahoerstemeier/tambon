@@ -79,6 +79,22 @@ namespace De.AHoerstemeier.Tambon
             { result &= TotalPopulation.VerifySum(agricultural, nonagricultural); }
             return result;
         }
+
+        internal void AddDataPoint(HouseholdDataPoint dataPoint)
+        {
+            var target = data.FirstOrDefault(x => x.type == dataPoint.type);
+            if (target == null)
+            {
+                target = new HouseholdDataPoint();
+                target.type = dataPoint.type;
+                data.Add(target);
+            }
+            target.total += dataPoint.total;
+            target.male += dataPoint.male;
+            target.female += dataPoint.female;
+            target.households += dataPoint.households;
+        }
+
     }
 
     public partial class PopulationDataPoint

@@ -31,13 +31,17 @@ namespace De.AHoerstemeier.Tambon
                 provinces.Sort((x, y) => x.english.CompareTo(y.english));
                 Provinces = provinces;
                 geocodes.entity.Clear();
-                _countryEntity = geocodes;
-                _countryEntity.wiki = new WikiLocation();
-                _countryEntity.wiki.wikidata = WikiLocation.WikiDataItems[EntityType.Country];
+                CountryEntity = geocodes;
+                CountryEntity.wiki = new WikiLocation();
+                CountryEntity.wiki.wikidata = WikiLocation.WikiDataItems[EntityType.Country];
             }
         }
 
-        private static Entity _countryEntity = null;
+        public static Entity CountryEntity
+        { 
+            get; 
+            private set; 
+        }
 
         /// <summary>
         /// List of all gazette announcements.
@@ -98,7 +102,7 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Tree of subdivisions.</returns>
         static public Entity CompleteGeocodeList()
         {
-            var result = _countryEntity.Clone();
+            var result = CountryEntity.Clone();
             foreach ( var changwat in GlobalData.Provinces )
             {
                 var actualChangwat = GetGeocodeList(changwat.geocode);
