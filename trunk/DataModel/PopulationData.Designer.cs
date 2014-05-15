@@ -15,6 +15,9 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
+    /// <summary>
+    /// Population data point.
+    /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HouseholdDataPoint))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AgeTableEntry))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
@@ -42,6 +45,12 @@ namespace De.AHoerstemeier.Tambon {
             this.femaleField = 0;
         }
         
+        /// <summary>
+        /// Total population.
+        /// </summary>
+        /// <value>
+        /// The total.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -54,6 +63,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Male population.
+        /// </summary>
+        /// <value>
+        /// The male.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -66,6 +81,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Female population.
+        /// </summary>
+        /// <value>
+        /// The female.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -96,6 +117,9 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    /// <summary>
+    /// Data point containing population data, age table and household data.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -111,8 +135,8 @@ namespace De.AHoerstemeier.Tambon {
         private PopulationDataType typeField;
         
         private int householdsField;
-
-        private int geocodeField;
+        
+        private uint geocodeField;
         
         /// <summary>
         /// Creates a new instance of HouseholdDataPoint.
@@ -122,9 +146,15 @@ namespace De.AHoerstemeier.Tambon {
             this.dataField = new List<HouseholdDataPoint>();
             this.typeField = PopulationDataType.total;
             this.householdsField = 0;
-            this.geocodeField = 0;
+            this.geocodeField = ((uint)(0));
         }
         
+        /// <summary>
+        /// Data points.
+        /// </summary>
+        /// <value>
+        /// The data.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("data", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<HouseholdDataPoint> data {
@@ -136,6 +166,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Population by age.
+        /// </summary>
+        /// <value>
+        /// The agetable.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public AgeTable agetable {
@@ -182,7 +218,7 @@ namespace De.AHoerstemeier.Tambon {
                 this.householdsField = value;
             }
         }
-
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -190,21 +226,21 @@ namespace De.AHoerstemeier.Tambon {
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(0)]
+        [System.ComponentModel.DefaultValueAttribute(typeof(uint), "0")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int geocode
-        {
-            get
-            {
+        public uint geocode {
+            get {
                 return this.geocodeField;
             }
-            set
-            {
+            set {
                 this.geocodeField = value;
             }
         }
     }
     
+    /// <summary>
+    /// Population by age.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -225,6 +261,12 @@ namespace De.AHoerstemeier.Tambon {
             this.ageField = new List<AgeTableEntry>();
         }
         
+        /// <summary>
+        /// Age table data points.
+        /// </summary>
+        /// <value>
+        /// The age.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("age", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<AgeTableEntry> age {
@@ -236,6 +278,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Data point for unknown age.
+        /// </summary>
+        /// <value>
+        /// The unknown.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public PopulationDataPoint unknown {
@@ -248,6 +296,9 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    /// <summary>
+    /// Data point within the age table.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -325,21 +376,24 @@ namespace De.AHoerstemeier.Tambon {
         agricultural,
         
         /// <summary>
-        /// Non-Agricultural population, i.e. population having none or only little agricultural land.
+        /// Non-agricultural population, i.e. population having none or only little agricultural land.
         /// </summary>
         nonagricultural,
         
         /// <summary>
-        /// Private households, i.e. ....
+        /// Private households.
         /// </summary>
         privatehouseholds,
         
         /// <summary>
-        /// Collective households, i.e. ....
+        /// Collective households, i.e. military barracks.
         /// </summary>
         collectivehouseholds,
     }
     
+    /// <summary>
+    /// Population data.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -368,6 +422,12 @@ namespace De.AHoerstemeier.Tambon {
             this.sourceField = PopulationDataSourceType.Unknown;
         }
         
+        /// <summary>
+        /// Population data points
+        /// </summary>
+        /// <value>
+        /// The data.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("data", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<HouseholdDataPoint> data {
@@ -379,6 +439,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Source of data.
+        /// </summary>
+        /// <value>
+        /// The source.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(PopulationDataSourceType.Unknown)]
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -391,6 +457,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Exact date of reference.
+        /// </summary>
+        /// <value>
+        /// The referencedate.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime referencedate {
@@ -419,6 +491,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Year for which the data is given.
+        /// </summary>
+        /// <value>
+        /// The year.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string year {

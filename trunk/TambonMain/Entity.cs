@@ -102,7 +102,9 @@ namespace De.AHoerstemeier.Tambon
                 {
                     foreach ( var tambon in thesaban.entity )
                     {
-                        tambon.population.First().data.First().type = PopulationDataType.municipal;
+                        var data = tambon.population.First().data.First();
+                        data.type = PopulationDataType.municipal;
+                        data.geocode = thesaban.geocode;
                         AddTambonInThesabanToAmphoe(tambon, thesaban);
                     }
                 }
@@ -119,7 +121,7 @@ namespace De.AHoerstemeier.Tambon
         internal void AddTambonInThesabanToAmphoe(Entity tambon, Entity thesaban)
         {
             var allSubEntities = entity.SelectMany(x => x.entity).ToList();
-            var mainTambon = allSubEntities.FirstOrDefault(x => (x.geocode == tambon.geocode) & (x.type == EntityType.Tambon));
+            var mainTambon = allSubEntities.SingleOrDefault(x => (GeocodeHelper.IsSameGeocode(x.geocode, tambon.geocode, false)) & (x.type == EntityType.Tambon));
             var mainAmphoe = entity.FirstOrDefault(x => (x.geocode == tambon.geocode / 100));
             if ( mainTambon == null )
             {
@@ -320,96 +322,24 @@ namespace De.AHoerstemeier.Tambon
             return retval;
         }
 
-        private void SynchronizeGeocodes(Entity geocodeSource)
+        internal void SynchronizeGeocodes(Entity geocodeSource)
         {
-            // TODO - simply search by geocode
-
             var missedEntities = new List<Entity>();
 
             if ( geocodeSource != null )
             {
-                // this == geocodeSource => copy directly from source
-                if ( ((name == geocodeSource.name) | (geocodeSource.OldNames.Contains(name))) & (type.IsCompatibleEntityType(geocodeSource.type)) )
+                var sourceFlat = geocodeSource.FlatList();
+                foreach ( var entity in this.FlatList() )
                 {
-                    CopyBasicDataFrom(geocodeSource);
-                }
-
-                foreach ( var subEntity in entity )
-                {
-                    // find number of sub entities with same name and type
-                    Int32 position = 0;
-                    if ( subEntity.type != EntityType.Muban )
+                    var source = sourceFlat.FirstOrDefault(x => GeocodeHelper.IsSameGeocode(x.geocode, entity.geocode, false));
+                    if ( source == null )
                     {
-                        foreach ( var find in entity )
-                        {
-                            if ( find == subEntity )
-                            {
-                                break;
-                            }
-                            if ( find.SameNameAndType(subEntity.name, subEntity.type) )
-                            {
-                                position++;
-                            }
-                        }
-                    }
-
-                    Entity sourceEntity = null;
-                    if ( subEntity.type == EntityType.Muban )
-                    {
-                        sourceEntity = sourceEntity.entity.FirstOrDefault(x => x.geocode == subEntity.geocode);
+                        missedEntities.Add(entity);
                     }
                     else
                     {
-                        sourceEntity = geocodeSource.FindByNameAndType(subEntity.name, subEntity.type, false, false, position);
-                        if ( sourceEntity == null )
-                        {
-                            sourceEntity = geocodeSource.FindByNameAndType(subEntity.name, subEntity.type, true, false, position);
-                        }
+                        CopyBasicDataFrom(source);
                     }
-                    if ( sourceEntity != null )
-                    {
-                        subEntity.SynchronizeGeocodes(sourceEntity);
-                    }
-                    else
-                    {
-                        // Problem!
-                    }
-
-                    if ( subEntity.type.IsLocalGovernment() | subEntity.type.IsSakha() )
-                    {
-                        foreach ( UInt32 parentCode in subEntity.parent )
-                        {
-                            Entity parentEntity = geocodeSource.entity.FirstOrDefault(x => x.geocode == parentCode);
-                            if ( parentEntity != null )
-                            {
-                                subEntity.SynchronizeGeocodes(parentEntity);
-                                Entity sourceValue = this.entity.FirstOrDefault(x => x.geocode == parentCode);
-                                if ( sourceValue == null )
-                                {
-                                    var newEntry = (Entity)parentEntity.MemberwiseClone();
-                                    newEntry.entity.Clear();
-                                    Boolean found = false;
-                                    foreach ( var compare in missedEntities )
-                                    {
-                                        found = found | (compare.geocode == newEntry.geocode);
-                                    }
-                                    if ( !found )
-                                    {
-                                        missedEntities.Add(newEntry);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            foreach ( var newEntry in missedEntities )
-            {
-                var parent = this.entity.FirstOrDefault(x => x.geocode == newEntry.geocode / 100);
-                if ( parent != null )
-                {
-                    parent.entity.Add(newEntry);
-                    parent.entity.Sort((x, y) => x.geocode.CompareTo(y.geocode));
                 }
             }
         }
@@ -419,6 +349,37 @@ namespace De.AHoerstemeier.Tambon
             foreach ( var data in population )
             {
                 data.MergeIdenticalEntries();
+            }
+        }
+
+        /// <summary>
+        /// Propagate the post code to the entites within the entity.
+        /// </summary>
+        public void PropagatePostcode()
+        {
+            // only propagate if exactly one postcode
+            if ( (codes != null) && (codes.post != null) && (codes.post.value.Count == 1) )
+            {
+                var postCode = codes.post.value.Single();
+                if ( postCode > 100 )  // don't propagate the province post codes!
+                {
+                    foreach ( var subentity in entity )
+                    {
+                        subentity.codes.post.value.Add(postCode);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Propagate the post code to the entites within the entity, and doing the same for every sub entity.
+        /// </summary>
+        public void PropagatePostcodeRecursive()
+        {
+            PropagatePostcode();
+            foreach ( var subentity in entity )
+            {
+                subentity.PropagatePostcodeRecursive();
             }
         }
 

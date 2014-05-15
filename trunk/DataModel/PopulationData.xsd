@@ -74,17 +74,20 @@
   </xs:simpleType>
 
   <xs:complexType name="PopulationDataPoint">
-    <xs:attribute name="total" type="xs:int" default="0" use="optional" >
+    <xs:annotation>
+      <xs:documentation>Population data point.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="total" type="xs:int" default="0" use="optional">
       <xs:annotation>
         <xs:documentation>Total population.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="male" type="xs:int" default="0" use="optional" >
+    <xs:attribute name="male" type="xs:int" default="0" use="optional">
       <xs:annotation>
         <xs:documentation>Male population.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="female" type="xs:int" default="0" use="optional" >
+    <xs:attribute name="female" type="xs:int" default="0" use="optional">
       <xs:annotation>
         <xs:documentation>Female population.</xs:documentation>
       </xs:annotation>
@@ -92,20 +95,45 @@
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="AgeTableEntry">
+    <xs:annotation>
+      <xs:documentation>Data point within the age table.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:PopulationDataPoint">
-        <xs:attribute name="begin" type="xs:unsignedInt" use="required" />
-        <xs:attribute name="end" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="begin" type="xs:unsignedInt" use="required">
+          <xs:annotation>
+            <xs:documentation>Begin of age range.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="end" type="xs:unsignedInt" use="required">
+          <xs:annotation>
+            <xs:documentation>End of age range.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AgeTable">
+    <xs:annotation>
+      <xs:documentation>Population by age.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="age" type="t:AgeTableEntry" minOccurs="1" maxOccurs="unbounded" />
-      <xs:element name="unknown" type="t:PopulationDataPoint" minOccurs="0" maxOccurs="1" />
+      <xs:element name="age" type="t:AgeTableEntry" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Age table data points.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="unknown" type="t:PopulationDataPoint" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Data point for unknown age.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="HouseholdDataPoint">
+    <xs:annotation>
+      <xs:documentation>Data point containing population data, age table and household data.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:PopulationDataPoint">
         <xs:sequence>
@@ -114,23 +142,23 @@
               <xs:documentation>Data points.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element name="agetable" type="t:AgeTable" minOccurs="0" maxOccurs="1" >
+          <xs:element name="agetable" type="t:AgeTable" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>Population by age.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
-        <xs:attribute name="type" type="t:PopulationDataType" use="optional" default="total" >
+        <xs:attribute name="type" type="t:PopulationDataType" use="optional" default="total">
           <xs:annotation>
             <xs:documentation>Data type.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="households" type="xs:int" default="0" use="optional" >
+        <xs:attribute name="households" type="xs:int" default="0" use="optional">
           <xs:annotation>
             <xs:documentation>Number of households.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="geocode" type="xs:unsignedInt" default="0" use="optional" >
+        <xs:attribute name="geocode" type="xs:unsignedInt" default="0" use="optional">
           <xs:annotation>
             <xs:documentation>Identifier of the entity. Used for municipal areas in case more than one municipality is within the parent entity.</xs:documentation>
           </xs:annotation>
@@ -139,12 +167,31 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="PopulationData">
+    <xs:annotation>
+      <xs:documentation>Population data.</xs:documentation>
+    </xs:annotation>
     <xs:sequence>
-      <xs:element name="data" type="t:HouseholdDataPoint" minOccurs="1" maxOccurs="unbounded" />
+      <xs:element name="data" type="t:HouseholdDataPoint" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Population data points</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
-    <xs:attribute name="source" type="t:PopulationDataSourceType" default="Unknown" use="optional" />
-    <xs:attribute name="referencedate" type="xs:date" use="optional" />
-    <xs:attribute name="year" type="xs:gYear" use="required" />
+    <xs:attribute name="source" type="t:PopulationDataSourceType" default="Unknown" use="optional">
+      <xs:annotation>
+        <xs:documentation>Source of data.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="referencedate" type="xs:date" use="optional">
+      <xs:annotation>
+        <xs:documentation>Exact date of reference.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="year" type="xs:gYear" use="required">
+      <xs:annotation>
+        <xs:documentation>Year for which the data is given.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 </xs:schema>
