@@ -613,6 +613,7 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("entities");
             }
             ClearRunInfo();
+            GlobalData.LoadPopulationData(dataSource, year);
             foreach ( var entity in entities.Where(x => x.population.Any(y => y.source == dataSource && y.Year == year)) )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);

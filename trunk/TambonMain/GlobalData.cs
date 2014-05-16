@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -156,23 +157,43 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        public static void LoadPopulationData()
+        public static void LoadPopulationData(PopulationDataSourceType source, Int16 year)
+        { 
+            if (!GlobalData.CountryEntity.population.Any(x => x.Year==year && x.source==source))
+            {
+            String filename = String.Empty;
+            switch (source)
+            {
+                case PopulationDataSourceType.Census:
+                    filename=BaseXMLDirectory + "\\population\\census{0}.xml";
+                    break;
+                case PopulationDataSourceType.DOPA: 
+                    filename=BaseXMLDirectory + "\\population\\DOPA{0}.xml";
+                    break;
+            }
+            filename = String.Format(CultureInfo.InvariantCulture, filename,year);
+            if (!string.IsNullOrWhiteSpace(filename))
+            {
+                LoadPopulationData(filename);
+            }
+        }
+        }
+
+        private static void LoadPopulationData(String fileName)
         {
             var allFlat = CompleteGeocodeList().FlatList();
-            foreach ( String file in Directory.EnumerateFiles(BaseXMLDirectory + "\\population\\") )
-            {
-                using ( var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read) )
+                using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
                 {
                     var data = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
                     var flat = data.FlatList();
-                    foreach ( var dataPoint in flat.Where(x => x.population.Any()) )
+                    foreach (var dataPoint in flat.Where(x => x.population.Any()))
                     {
                         var target = allFlat.SingleOrDefault(x => x.geocode == dataPoint.geocode);
-                        if ( target != null )
+                        if (target != null)
                         {
-                            foreach ( var populationEntry in dataPoint.population )
+                            foreach (var populationEntry in dataPoint.population)
                             {
-                                if ( !target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate) )
+                                if (!target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate))
                                 {
                                     target.population.Add(populationEntry);
                                 }
@@ -180,6 +201,13 @@ namespace De.AHoerstemeier.Tambon
                         }
                     }
                 }
+            }
+ 
+        public static void LoadPopulationData()
+        {
+            foreach ( String file in Directory.EnumerateFiles(BaseXMLDirectory + "\\population\\") )
+            {
+                LoadPopulationData(file);
             }
         }
 
