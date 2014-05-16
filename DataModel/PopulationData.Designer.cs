@@ -144,7 +144,7 @@ namespace De.AHoerstemeier.Tambon {
         public HouseholdDataPoint() {
             this.agetableField = new AgeTable();
             this.dataField = new List<HouseholdDataPoint>();
-            this.typeField = PopulationDataType.total;
+            this.typeField = PopulationDataType.undefined;
             this.householdsField = 0;
             this.geocodeField = ((uint)(0));
         }
@@ -190,7 +190,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(PopulationDataType.total)]
+        [System.ComponentModel.DefaultValueAttribute(PopulationDataType.undefined)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public PopulationDataType type {
             get {
@@ -354,6 +354,11 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
     public enum PopulationDataType {
+        
+        /// <summary>
+        /// Not defined.
+        /// </summary>
+        undefined,
         
         /// <summary>
         /// Total population.
@@ -524,7 +529,6 @@ namespace De.AHoerstemeier.Tambon {
                 this.commentField = value;
             }
         }
-
     }
     
     /// <summary>

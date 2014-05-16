@@ -99,18 +99,18 @@ namespace De.AHoerstemeier.Tambon
 
             // set the population data type of the non-municipal items
             PopulationDataType nonThesabanType = PopulationDataType.total;
-            if (_thesaban.Any())
+            if ( _thesaban.Any() )
             {
                 nonThesabanType = PopulationDataType.nonmunicipal;
             }
-            foreach (var amphoe in entity)
+            foreach ( var amphoe in entity )
             {
-                foreach (var entry in amphoe.FlatList())
+                foreach ( var entry in amphoe.FlatList() )
                 {
-                    if (entry.population.Any())
+                    if ( entry.population.Any() )
                     {
                         var data = entry.population.First().data.FirstOrDefault();
-                        if (data != null)
+                        if ( data != null )
                         {
                             data.type = nonThesabanType;
                         }
@@ -155,23 +155,40 @@ namespace De.AHoerstemeier.Tambon
             }
             else
             {
-                mainTambon.population.First().data.AddRange(tambon.population.First().data);
+                if ( mainTambon.population.Any() )
+                {
+                    mainTambon.population.First().data.AddRange(tambon.population.First().data);
+                }
+                else
+                {
+                    mainTambon.population.Add(tambon.population.First());
+                }
             }
             if ( mainAmphoe != null )
             {
-                foreach ( var dataPoint in tambon.population.First().data )
+                var population = tambon.population.First();
+                foreach ( var dataPoint in population.data )
                 {
-                    mainAmphoe.population.First().AddDataPoint(dataPoint);
-
+                    var amphoePopulation = mainAmphoe.population.FirstOrDefault();
+                    if ( amphoePopulation == null )
+                    {
+                        amphoePopulation = new PopulationData();
+                        amphoePopulation.referencedate = population.referencedate;
+                        amphoePopulation.referencedateSpecified = population.referencedateSpecified;
+                        amphoePopulation.source = population.source;
+                        amphoePopulation.year = population.year;
+                        mainAmphoe.population.Add(amphoePopulation);
+                    }
+                    amphoePopulation.AddDataPoint(dataPoint);
                 }
             }
         }
 
         public void CalculatePopulationFromSubEntities()
         {
-            foreach (var subEntity in entity)
+            foreach ( var subEntity in entity )
             {
-                foreach (var dataPoint in subEntity.population.First().data)
+                foreach ( var dataPoint in subEntity.population.First().data )
                 {
                     this.population.First().AddDataPoint(dataPoint);
                 }
@@ -876,6 +893,18 @@ namespace De.AHoerstemeier.Tambon
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Sorts the whole tree by its <see cref="Entity.geocode"/>.
+        /// </summary>
+        public void SortByGeocodeRecursively()
+        {
+            entity.Sort((x, y) => x.geocode.CompareTo(y.geocode));
+            foreach ( var subEntity in entity )
+            {
+                subEntity.SortByGeocodeRecursively();
+            }
         }
     }
 }
