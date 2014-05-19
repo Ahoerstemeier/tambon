@@ -1194,16 +1194,106 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="PostalCode", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class PostalCode {
+    public partial class PostalCode : PostalCodeBase {
+        
+        private List<PostalCodeOldValue> oldvalueField;
+        
+        /// <summary>
+        /// Creates a new instance of PostalCode.
+        /// </summary>
+        public PostalCode() {
+            this.oldvalueField = new List<PostalCodeOldValue>();
+        }
+        
+        /// <summary>
+        /// Former postcodes with information on when and how they were retired.
+        /// </summary>
+        /// <value>
+        /// The oldvalue.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("oldvalue", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<PostalCodeOldValue> oldvalue {
+            get {
+                return this.oldvalueField;
+            }
+            set {
+                this.oldvalueField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Retired value of an identifier.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PostalCodeOldValue", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class PostalCodeOldValue : PostalCodeBase {
+        
+        private System.DateTime retiredField;
+        
+        private bool retiredFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime retired {
+            get {
+                return this.retiredField;
+            }
+            set {
+                this.retiredField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool retiredSpecified {
+            get {
+                return this.retiredFieldSpecified;
+            }
+            set {
+                this.retiredFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Postal code(s).
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PostalCode))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PostalCodeOldValue))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PostalCodeBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class PostalCodeBase {
         
         private string commentField;
         
         private List<uint> valueField;
         
         /// <summary>
-        /// Creates a new instance of PostalCode.
+        /// Creates a new instance of PostalCodeBase.
         /// </summary>
-        public PostalCode() {
+        public PostalCodeBase() {
             this.valueField = new List<uint>();
         }
         
