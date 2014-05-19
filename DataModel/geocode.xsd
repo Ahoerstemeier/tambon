@@ -332,7 +332,7 @@
   <xs:simpleType name="PostalCodeList">
     <xs:list itemType="xs:unsignedInt"></xs:list>
   </xs:simpleType>
-  <xs:complexType name="PostalCode">
+  <xs:complexType name="PostalCodeBase">
     <xs:annotation>
       <xs:documentation>Postal code(s).</xs:documentation>
     </xs:annotation>
@@ -342,6 +342,37 @@
         <xs:documentation>List of postal codes.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="PostalCodeOldValue">
+    <xs:annotation>
+      <xs:documentation>Retired value of an identifier.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:PostalCodeBase">
+        <xs:attribute name="retired" type="xs:date" use="optional">
+          <xs:annotation>
+            <xs:documentation>Date of when the new code was issued and thus this code was retired.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="PostalCode">
+    <xs:annotation>
+      <xs:documentation>Postal code(s).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:PostalCodeBase">
+        <xs:sequence>
+          <xs:element name="oldvalue" type="t:PostalCodeOldValue" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Former postcodes with information on when and how they were retired.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="OtherIdentifier">
     <xs:annotation>
