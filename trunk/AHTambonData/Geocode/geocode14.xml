@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya" geocode="14">
   <wiki wikidata="Q476222" openstreetmap="1908806" />
+  <codes>
+    <post value="13" />
+  </codes>
   <symbols>
     <slogan>ราชธานีเก่า อู่ข้าวอู่น้ำ เลิศล้ำกานต์กวี คนดีศรีอยุธยา</slogan>
   </symbols>
@@ -96,6 +99,9 @@
   </office>
   <entity type="Amphoe" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya" geocode="1401">
     <wiki wikidata="Q476434" />
+    <codes>
+      <post value="13000" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.3522</geo:lat>
@@ -383,6 +389,9 @@
   </entity>
   <entity type="Amphoe" name="ท่าเรือ" english="Tha Ruea" geocode="1402">
     <wiki wikidata="Q476847" />
+    <codes>
+      <post value="13130 18270" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.5516</geo:lat>
@@ -397,9 +406,15 @@
     </office>
     <entity type="Tambon" name="ท่าเรือ" english="Tha Ruea" geocode="140201">
       <wiki wikidata="Q16725995" />
+      <codes>
+        <post value="13130" />
+      </codes>
     </entity>
     <entity type="Tambon" name="จำปา" english="Champa" geocode="140202">
       <wiki wikidata="Q16725997" />
+      <codes>
+        <post value="13130" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="สมบัติ หมุดธรรม" begin="2013-10-20" beginreason="ElectedDirectly" />
@@ -423,6 +438,9 @@
     </entity>
     <entity type="Tambon" name="ท่าหลวง" english="Tha Luang" geocode="140203">
       <wiki wikidata="Q16214297" />
+      <codes>
+        <post value="13130 18270" comment="Only Mu 6 18270" />
+      </codes>
       <office type="TAOOffice">
         <url lastchecked="2012-04-21">http://www.sao-thaluang.org/</url>
         <url status="offline">http://www.geocities.com/thaluang101/</url>
@@ -438,19 +456,62 @@
           <term begin="2004-02-29" end="2008-02-28" type="TAO" size="10" />
         </council>
       </office>
-      <entity type="Muban" geocode="14020301" name="บ้านช้าง" english="Ban Chang" />
-      <entity type="Muban" geocode="14020302" name="บ้านหัวหิน" english="Ban Hua Hin" />
-      <entity type="Muban" geocode="14020303" name="บ้านใหม่พัฒนา" english="Ban Mai Phatthana" />
-      <entity type="Muban" geocode="14020304" name="บ้านยางนม" english="Ban Yang Mae" />
-      <entity type="Muban" geocode="14020305" name="บ้านถลุงเหล็ก" english="Ban Thalung Lek" />
-      <entity type="Muban" geocode="14020306" name="บ้านวัดสะตือ" english="Ban Wat Satue" />
-      <entity type="Muban" geocode="14020307" name="บ้านโพธิ์ค่อม" english="Ban Pho Khom" />
-      <entity type="Muban" geocode="14020308" name="บ้านหนองโพธิ์" english="Ban Nong Pho" />
-      <entity type="Muban" geocode="14020309" name="บ้านวัดสะตือ" english="Ban Wat Satue" />
-      <entity type="Muban" geocode="14020310" name="บ้านไก่จ้น" english="Ban Kai Chon" />
+      <entity type="Muban" geocode="14020301" name="บ้านช้าง" english="Ban Chang">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020302" name="บ้านหัวหิน" english="Ban Hua Hin">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020303" name="บ้านใหม่พัฒนา" english="Ban Mai Phatthana">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020304" name="บ้านยางนม" english="Ban Yang Mae">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020305" name="บ้านถลุงเหล็ก" english="Ban Thalung Lek">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020306" name="บ้านวัดสะตือ" english="Ban Wat Satue">
+        <codes>
+          <post value="18270" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020307" name="บ้านโพธิ์ค่อม" english="Ban Pho Khom">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020308" name="บ้านหนองโพธิ์" english="Ban Nong Pho">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020309" name="บ้านวัดสะตือ" english="Ban Wat Satue">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14020310" name="บ้านไก่จ้น" english="Ban Kai Chon">
+        <codes>
+          <post value="13130" />
+        </codes>
+      </entity>
     </entity>
     <entity type="Tambon" name="บ้านร่อม" english="Ban Rom" geocode="140204">
       <wiki wikidata="Q16725998" />
+      <codes>
+        <post value="13130" />
+      </codes>
       <office type="TAOOffice">
         <symbols>
           <vision>บ้านร่อมเมืองน่าอยู่  เชิดชูคุณธรรม  ก้าวนำการศึกษา  พัฒนากลุ่มอาชีพและชุมชนที่ยั่งยืน</vision>
@@ -490,6 +551,9 @@
     </entity>
     <entity type="Tambon" name="ศาลาลอย" english="Sala Loi" geocode="140205">
       <wiki wikidata="Q16725999" />
+      <codes>
+        <post value="13130" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.salaloy.go.th/</url>
         <officials>
@@ -518,6 +582,9 @@
     </entity>
     <entity type="Tambon" name="วังแดง" english="Wang Daeng" geocode="140206">
       <wiki wikidata="Q16726000" />
+      <codes>
+        <post value="13130" />
+      </codes>
       <office type="TAOOffice">
         <symbols>
           <vision>
@@ -547,6 +614,9 @@
     </entity>
     <entity type="Tambon" name="โพธิ์เอน" english="Pho En" geocode="140207">
       <wiki wikidata="Q16726001" />
+      <codes>
+        <post value="13130" />
+      </codes>
       <office type="TAOOffice">
         <url>http://poain.org/</url>
         <officials>
@@ -568,6 +638,9 @@
     </entity>
     <entity type="Tambon" name="ปากท่า" english="Pak Tha" geocode="140208">
       <wiki wikidata="Q16726002" />
+      <codes>
+        <post value="13130" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.tambon-paktha.org/</url>
         <officials>
@@ -591,6 +664,9 @@
     </entity>
     <entity type="Tambon" name="หนองขนาก" english="Nong Khanak" geocode="140209">
       <wiki wikidata="Q16726003" />
+      <codes>
+        <post value="13130" />
+      </codes>
       <office type="TAOOffice">
         <url lastchecked="2013-03-19">http://www.nongkanak.go.th/</url>
         <officials>
@@ -617,6 +693,9 @@
     </entity>
     <entity type="Tambon" name="ท่าเจ้าสนุก" english="Tha Chao Sanuk" geocode="140210">
       <wiki wikidata="Q16726004" />
+      <codes>
+        <post value="13130" />
+      </codes>
       <office type="TAOOffice">
         <symbols>
           <vision>
@@ -647,6 +726,9 @@
   </entity>
   <entity type="Amphoe" name="นครหลวง" english="Nakhon Luang" geocode="1403">
     <wiki wikidata="Q476173" />
+    <codes>
+      <post value="13260" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.4643</geo:lat>
@@ -826,6 +908,9 @@
   </entity>
   <entity type="Amphoe" name="บางไทร" english="Bang Sai" geocode="1404">
     <wiki wikidata="Q475250" />
+    <codes>
+      <post value="13190 13290" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.2128</geo:lat>
@@ -1051,6 +1136,9 @@
   </entity>
   <entity type="Amphoe" name="บางบาล" english="Bang Ban" geocode="1405">
     <wiki wikidata="Q186421" />
+    <codes>
+      <post value="13250" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.3740</geo:lat>
@@ -1194,6 +1282,9 @@
   </entity>
   <entity type="Amphoe" name="บางปะอิน" english="Bang Pa-in" geocode="1406">
     <wiki wikidata="Q475224" />
+    <codes>
+      <post value="13160 13170 13180" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.2275</geo:lat>
@@ -1208,6 +1299,9 @@
     </office>
     <entity type="Tambon" name="บ้านเลน" english="Ban Len" geocode="140601">
       <wiki wikidata="Q16150890" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <entity type="Muban" geocode="14060101" name="บ้านเลนเหนือ" english="Ban Len Nuea" />
       <entity type="Muban" geocode="14060102" name="บ้านเลนเหนือ" english="Ban Len Nuea" />
       <entity type="Muban" geocode="14060103" name="บ้านพราน" english="Ban Phran" />
@@ -1223,6 +1317,9 @@
     </entity>
     <entity type="Tambon" name="เชียงรากน้อย" english="Chiang Rak Noi" geocode="140602">
       <wiki wikidata="Q16658587" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <entity type="Muban" geocode="14060201" name="บ้านหนองหอย" english="Ban Nong Hoi" />
       <entity type="Muban" geocode="14060202" name="บ้านหนองหอย" english="Ban Nong Hoi" />
       <entity type="Muban" geocode="14060203" name="บ้านคลองเปรม" english="Ban Khlong Prem" />
@@ -1237,6 +1334,9 @@
     </entity>
     <entity type="Tambon" name="บ้านโพ" english="Ban Pho" geocode="140603">
       <wiki wikidata="Q16658588" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.banpo.go.th/</url>
         <officials>
@@ -1260,6 +1360,9 @@
     </entity>
     <entity type="Tambon" name="บ้านกรด" english="Ban Krot" geocode="140604">
       <wiki wikidata="Q16658589" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>14.3038</geo:lat>
@@ -1284,6 +1387,9 @@
     </entity>
     <entity type="Tambon" name="บางกระสั้น" english="Bang Krasan" geocode="140605">
       <wiki wikidata="Q16658590" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <entity type="Muban" geocode="14060501" name="บ้านบางลอ" english="Ban Bang Lo" />
       <entity type="Muban" geocode="14060502" name="บ้านบางกระสั้น" english="Ban Bang Krasan" />
       <entity type="Muban" geocode="14060503" name="บ้านบางกระสั้น" english="Ban Bang Krasan" />
@@ -1304,6 +1410,9 @@
     </entity>
     <entity type="Tambon" name="คลองจิก" english="Khlong Chik" geocode="140606">
       <wiki wikidata="Q16658591" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <entity type="Muban" geocode="14060601" name="บ้านคลองจิก" english="Ban Khlong Chik" />
       <entity type="Muban" geocode="14060602" name="บ้านลาว" english="Ban Lao" />
       <entity type="Muban" geocode="14060603" name="บ้านคลองทราย" english="Ban Khlong Sai" />
@@ -1315,6 +1424,9 @@
     </entity>
     <entity type="Tambon" name="บ้านหว้า" english="Ban Wa" geocode="140607">
       <wiki wikidata="Q16658592" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="สาคร ไวยนิทา" begin="2012-01-15" beginreason="ElectedDirectly" />
@@ -1334,6 +1446,9 @@
     </entity>
     <entity type="Tambon" name="วัดยม" english="Wat Yom" geocode="140608">
       <wiki wikidata="Q16658593" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="ปรีชา ไวยมัย" begin="2013-07-21" beginreason="ElectedDirectly" />
@@ -1348,6 +1463,9 @@
     </entity>
     <entity type="Tambon" name="บางประแดง" english="Bang Pradaeng" geocode="140609">
       <wiki wikidata="Q16658594" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="พินิจ ไตรสโมสร" begin="2013-07-21" beginreason="ElectedDirectly" />
@@ -1361,6 +1479,9 @@
     </entity>
     <entity type="Tambon" name="สามเรือน" english="Sam Ruean" geocode="140610">
       <wiki wikidata="Q16658595" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <url lastchecked="2012-07-20">http://www.samruan.org/</url>
         <officials>
@@ -1384,6 +1505,9 @@
     </entity>
     <entity type="Tambon" name="เกาะเกิด" english="Ko Koet" geocode="140611">
       <wiki wikidata="Q16658596" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.kokeod.com/</url>
         <officials>
@@ -1399,6 +1523,9 @@
     </entity>
     <entity type="Tambon" name="บ้านพลับ" english="Ban Phlap" geocode="140612">
       <wiki wikidata="Q16658597" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.banplub.go.th/</url>
         <officials>
@@ -1414,6 +1541,9 @@
     </entity>
     <entity type="Tambon" name="บ้านแป้ง" english="Ban Paeng" geocode="140613">
       <wiki wikidata="Q16658598" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.banpang.org/</url>
         <officials>
@@ -1429,9 +1559,15 @@
     </entity>
     <entity type="Tambon" name="คุ้งลาน" english="Khung Lan" geocode="140614">
       <wiki wikidata="Q16658599" />
+      <codes>
+        <post value="13180" />
+      </codes>
     </entity>
     <entity type="Tambon" name="ตลิ่งชัน" english="Taling Chan" geocode="140615">
       <wiki wikidata="Q16658600" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="สุรพจน์ โอริส" begin="2013-10-20" beginreason="ElectedDirectly" />
@@ -1446,9 +1582,15 @@
     </entity>
     <entity type="Tambon" name="บ้านสร้าง" english="Ban Sang" geocode="140616">
       <wiki wikidata="Q16658602" />
+      <codes>
+        <post value="13170" />
+      </codes>
     </entity>
     <entity type="Tambon" name="ตลาดเกรียบ" english="Talat Kriap" geocode="140617">
       <wiki wikidata="Q16658603" />
+      <codes>
+        <post value="13180" />
+      </codes>
       <office type="MunicipalityOffice">
         <url lastchecked="2014-04-25">http://www.abt-taladkreab.org/</url>
         <officials>
@@ -1467,10 +1609,16 @@
     </entity>
     <entity type="Tambon" name="ขนอนหลวง" english="Khanon Luang" geocode="140618">
       <wiki wikidata="Q16658604" />
+      <codes>
+        <post value="13180" />
+      </codes>
     </entity>
   </entity>
   <entity type="Amphoe" name="บางปะหัน" english="Bang Pahan" geocode="1407">
     <wiki wikidata="Q475226" />
+    <codes>
+      <post value="13220" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.4627</geo:lat>
@@ -1712,6 +1860,9 @@
   </entity>
   <entity type="Amphoe" name="ผักไห่" english="Phak Hai" geocode="1408">
     <wiki wikidata="Q476361" />
+    <codes>
+      <post value="13120 13280" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.4582</geo:lat>
@@ -1724,12 +1875,21 @@
     </office>
     <entity type="Tambon" name="ผักไห่" english="Phak Hai" geocode="140801">
       <wiki wikidata="Q16604171" />
+      <codes>
+        <post value="13120" />
+      </codes>
     </entity>
     <entity type="Tambon" name="อมฤต" english="Ammarit" geocode="140802">
       <wiki wikidata="Q16604170" />
+      <codes>
+        <post value="13120" />
+      </codes>
     </entity>
     <entity type="Tambon" name="บ้านแค" english="Ban Khae" geocode="140803">
       <wiki wikidata="Q16604190" />
+      <codes>
+        <post value="13120" />
+      </codes>
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>14.4906</geo:lat>
@@ -1750,6 +1910,9 @@
     </entity>
     <entity type="Tambon" name="ลาดน้ำเค็ม" english="Lat Nam Khem" geocode="140804">
       <wiki wikidata="Q16604185" />
+      <codes>
+        <post value="13120" />
+      </codes>
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>14.4898</geo:lat>
@@ -1769,9 +1932,15 @@
     </entity>
     <entity type="Tambon" name="ตาลาน" english="Talan" geocode="140805">
       <wiki wikidata="Q16604169" />
+      <codes>
+        <post value="13120" />
+      </codes>
     </entity>
     <entity type="Tambon" name="ท่าดินแดง" english="Tha Din Daeng" geocode="140806">
       <wiki wikidata="Q16604183" />
+      <codes>
+        <post value="13120" />
+      </codes>
       <office type="TAOOffice">
         <!-- Location appr.  14.421306° 100.385975° -->
         <url lastchecked="2012-04-26">http://www.thadindang.go.th/</url>
@@ -1789,6 +1958,9 @@
     </entity>
     <entity type="Tambon" name="ดอนลาน" english="Don Lan" geocode="140807">
       <wiki wikidata="Q16604182" />
+      <codes>
+        <post value="13280" />
+      </codes>
       <office type="TAOOffice">
         <url lastchecked="2013-01-08">http://donlan.go.th/</url>
         <url status="offline">http://www.donlanlocaladmin.com/</url>
@@ -1806,6 +1978,9 @@
     </entity>
     <entity type="Tambon" name="นาคู" english="Na Khu" geocode="140808">
       <wiki wikidata="Q16604176" />
+      <codes>
+        <post value="13280" />
+      </codes>
       <office type="TAOOffice">
         <symbols>
           <vision>การคมนาคมสะดวกแหล่งเรียนรู้ของชุมชนบ้านเมืองสะอาด น่าอยู่ ประชาชนอยู่ดีมีสุขอย่างยังยืน</vision>
@@ -1836,6 +2011,9 @@
     </entity>
     <entity type="Tambon" name="กุฎี" english="Kudi" geocode="140809">
       <wiki wikidata="Q16604175" />
+      <codes>
+        <post value="13120" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="ชัยนะ บัวอ่อน" begin="2013-10-20" beginreason="ElectedDirectly" />
@@ -1850,20 +2028,34 @@
     </entity>
     <entity type="Tambon" name="ลำตะเคียน" english="Lam Takhian" geocode="140810">
       <wiki wikidata="Q16604168" />
+      <codes>
+        <post value="13280" />
+      </codes>
     </entity>
     <entity type="Tambon" name="โคกช้าง" english="Khok Chang" geocode="140811">
       <wiki wikidata="Q16604174" />
+      <codes>
+        <post value="13120" />
+      </codes>
       <!-- SaphaTambon merged into Lat Nam Khem in 2004-->
     </entity>
     <entity type="Tambon" name="จักราช" english="Chakkarat" geocode="140812">
       <wiki wikidata="Q16604167" />
+      <codes>
+        <post value="13280" />
+      </codes>
     </entity>
     <entity type="Tambon" name="หนองน้ำใหญ่" english="Nong Nam Yai" geocode="140813">
       <wiki wikidata="Q16604166" />
+      <codes>
+        <post value="13280" />
+      </codes>
     </entity>
-
     <entity type="Tambon" name="ลาดชิด" english="Lat Chit" geocode="140814">
       <wiki wikidata="Q16604173" />
+      <codes>
+        <post value="13120" />
+      </codes>
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>14.4403</geo:lat>
@@ -1882,6 +2074,9 @@
     </entity>
     <entity type="Tambon" name="หน้าโคก" english="Na Khok" geocode="140815">
       <wiki wikidata="Q16604172" />
+      <codes>
+        <post value="13120" />
+      </codes>
       <office type="TAOOffice">
         <socialweb>
           <googleplus>100809121968485941541</googleplus>
@@ -1899,10 +2094,16 @@
     </entity>
     <entity type="Tambon" name="บ้านใหญ่" english="Ban Yai" geocode="140816">
       <wiki wikidata="Q16604165" />
+      <codes>
+        <post value="13120" />
+      </codes>
     </entity>
   </entity>
   <entity type="Amphoe" name="ภาชี" english="Phachi" geocode="1409">
     <wiki wikidata="Q476359" />
+    <codes>
+      <post value="13230 18250" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.4491</geo:lat>
@@ -1915,9 +2116,15 @@
     </office>
     <entity type="Tambon" name="ภาชี" english="Phachi" geocode="140901">
       <wiki wikidata="Q16547910" />
+      <codes>
+        <post value="13140" />
+      </codes>
     </entity>
     <entity type="Tambon" name="โคกม่วง" english="Khok Muang" geocode="140902">
       <wiki wikidata="Q16547909" />
+      <codes>
+        <post value="13140" />
+      </codes>
       <office type="TAOOffice">
         <url>http://kokemaung.go.th/</url>
         <officials>
@@ -1945,6 +2152,9 @@
     </entity>
     <entity type="Tambon" name="ระโสม" english="Rasom" geocode="140903">
       <wiki wikidata="Q16547908" />
+      <codes>
+        <post value="13140 18250" comment="Mu 5: 18250, other 13140" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.rasom.go.th/</url>
         <officials>
@@ -1956,18 +2166,57 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
       </office>
-      <entity type="Muban" geocode="14090301" name="บ้านซ่อง" english="Ban Song" />
-      <entity type="Muban" geocode="14090302" name="บ้านใหม่" english="Ban Mai" />
-      <entity type="Muban" geocode="14090303" name="บ้านระเขน" english="Ban Rakhen" />
-      <entity type="Muban" geocode="14090304" name="บ้านมาบโพธิ์" english="Ban Map Pho" />
-      <entity type="Muban" geocode="14090305" name="บ้านหนองกรด" english="Ban Nong Krot" />
-      <entity type="Muban" geocode="14090306" name="บ้านระโสม" english="Ban Rasom" />
-      <entity type="Muban" geocode="14090307" name="บ้านหนองปรือ" english="Ban Nong Prue" />
-      <entity type="Muban" geocode="14090308" name="บ้านหนองยอ" english="Ban Nong Yo" />
-      <entity type="Muban" geocode="14090309" name="บ้านหนองนาง" english="Ban Nong Nang" />
+      <entity type="Muban" geocode="14090301" name="บ้านซ่อง" english="Ban Song">
+        <codes>
+          <post value="13140" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14090302" name="บ้านใหม่" english="Ban Mai">
+        <codes>
+          <post value="13140" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14090303" name="บ้านระเขน" english="Ban Rakhen">
+        <codes>
+          <post value="13140" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14090304" name="บ้านมาบโพธิ์" english="Ban Map Pho">
+        <codes>
+          <post value="13140" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14090305" name="บ้านหนองกรด" english="Ban Nong Krot">
+        <codes>
+          <post value="18250" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14090306" name="บ้านระโสม" english="Ban Rasom">
+        <codes>
+          <post value="13140" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14090307" name="บ้านหนองปรือ" english="Ban Nong Prue">
+        <codes>
+          <post value="13140" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14090308" name="บ้านหนองยอ" english="Ban Nong Yo">
+        <codes>
+          <post value="13140" />
+        </codes>
+      </entity>
+      <entity type="Muban" geocode="14090309" name="บ้านหนองนาง" english="Ban Nong Nang">
+        <codes>
+          <post value="13140" />
+        </codes>
+      </entity>
     </entity>
     <entity type="Tambon" name="หนองน้ำใส" english="Nong Nam Sai" geocode="140904">
       <wiki wikidata="Q16547907" />
+      <codes>
+        <post value="13140" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.nongnumsai.go.th/</url>
         <officials>
@@ -1991,6 +2240,9 @@
     </entity>
     <entity type="Tambon" name="ดอนหญ้านาง" english="Don Ya Nang" geocode="140905">
       <wiki wikidata="Q16547903" />
+      <codes>
+        <post value="13140" />
+      </codes>
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>14.4792</geo:lat>
@@ -2020,6 +2272,9 @@
     </entity>
     <entity type="Tambon" name="ไผ่ล้อม" english="Phai Lom" geocode="140906">
       <wiki wikidata="Q16547902" />
+      <codes>
+        <post value="13140" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.pailom.go.th/</url>
         <officials>
@@ -2046,6 +2301,9 @@
     </entity>
     <entity type="Tambon" name="กระจิว" english="Krachio" geocode="140907">
       <wiki wikidata="Q16547898" />
+      <codes>
+        <post value="13140" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.krajiew.go.th/</url>
         <officials>
@@ -2069,6 +2327,9 @@
     </entity>
     <entity type="Tambon" name="พระแก้ว" english="Phra Kaeo" geocode="140908">
       <wiki wikidata="Q16547894" />
+      <codes>
+        <post value="13140" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.prakaew.go.th/</url>
         <officials>
@@ -2092,6 +2353,9 @@
   </entity>
   <entity type="Amphoe" name="ลาดบัวหลวง" english="Lat Bua Luang" geocode="1410">
     <wiki wikidata="Q475900" />
+    <codes>
+      <post value="13230" />
+    </codes>
     <symbols>
       <slogan>เมืองเกษตรปลอดภัย ให้อาหารข้าวทางใบเลื่องชื่อ OTOP ขึ้นชั้นบรรลือ เขตร์นี้คือเมืองคนดีศรีอยุธยา</slogan>
     </symbols>
@@ -2219,6 +2483,9 @@
   </entity>
   <entity type="Amphoe" name="วังน้อย" english="Wang Noi" geocode="1411">
     <wiki wikidata="Q477014" />
+    <codes>
+      <post value="13170 13180" />
+    </codes>
     <symbols>
       <slogan>เมืองข้าวงาม นามวังน้อย ร้อยพันศิลป์ ดินแดนสงฆ์</slogan>
     </symbols>
@@ -2234,9 +2501,15 @@
     </office>
     <entity type="Tambon" name="ลำตาเสา" english="Lam Ta Sao" geocode="141101">
       <wiki wikidata="Q16512756" />
+      <codes>
+        <post value="13170" />
+      </codes>
     </entity>
     <entity type="Tambon" name="บ่อตาโล่" english="Bo Ta Lo" geocode="141102">
       <wiki wikidata="Q16512796" />
+      <codes>
+        <post value="13170" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.tambonbotalo.com/</url>
         <officials>
@@ -2251,6 +2524,9 @@
     </entity>
     <entity type="Tambon" name="วังน้อย" english="Wang Noi" geocode="141103">
       <wiki wikidata="Q16512791" />
+      <codes>
+        <post value="13170" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.wangnoi.go.th/</url>
         <officials>
@@ -2273,6 +2549,9 @@
     </entity>
     <entity type="Tambon" name="ลำไทร" english="Lam Sai" geocode="141104">
       <wiki wikidata="Q16512788" />
+      <codes>
+        <post value="13170" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.lamsai.go.th/</url>
         <officials>
@@ -2292,6 +2571,9 @@
     </entity>
     <entity type="Tambon" name="สนับทึบ" english="Sanap Thuep" geocode="141105">
       <wiki wikidata="Q16512785" />
+      <codes>
+        <post value="13170" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.snt-sao.go.th/</url>
         <officials>
@@ -2311,6 +2593,9 @@
     </entity>
     <entity type="Tambon" name="พยอม" english="Phayom" geocode="141106">
       <wiki wikidata="Q16512778" />
+      <codes>
+        <post value="13170 13180" comment="Mu 5: 13180, others 13170" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="ลือชัย แสงเงินอ่อน" begin="2012-01-15" beginreason="ElectedDirectly" />
@@ -2323,6 +2608,9 @@
     </entity>
     <entity type="Tambon" name="หันตะเภา" english="Han Taphao" geocode="141107">
       <wiki wikidata="Q16512775" />
+      <codes>
+        <post value="13170" />
+      </codes>
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>14.3088</geo:lat>
@@ -2341,6 +2629,9 @@
     </entity>
     <entity type="Tambon" name="วังจุฬา" english="Wang Chula" geocode="141108">
       <wiki wikidata="Q16512767" />
+      <codes>
+        <post value="13170" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.wangchula.go.th/</url>
         <officials>
@@ -2360,6 +2651,9 @@
     </entity>
     <entity type="Tambon" name="ข้าวงาม" english="Khao Ngam" geocode="141109">
       <wiki wikidata="Q16512764" />
+      <codes>
+        <post value="13170" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.khaongam.go.th/</url>
         <officials>
@@ -2381,6 +2675,9 @@
     </entity>
     <entity type="Tambon" name="ชะแมบ" english="Chamaep" geocode="141110">
       <wiki wikidata="Q16512755" />
+      <codes>
+        <post value="13170" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.chameap.go.th/</url>
         <officials>
@@ -2399,6 +2696,9 @@
   </entity>
   <entity type="Amphoe" name="เสนา" english="Sena" geocode="1412">
     <wiki wikidata="Q476680" />
+    <codes>
+      <post value="13110" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.3273</geo:lat>
@@ -2588,6 +2888,9 @@
   </entity>
   <entity type="Amphoe" name="บางซ้าย" english="Bang Sai" geocode="1413">
     <wiki wikidata="Q475251" />
+    <codes>
+      <post value="13270" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.3195</geo:lat>
@@ -2742,6 +3045,9 @@
   </entity>
   <entity type="Amphoe" name="อุทัย" english="Uthai" geocode="1414">
     <wiki wikidata="Q476975" />
+    <codes>
+      <post value="13210 13000" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.3628</geo:lat>
@@ -2756,6 +3062,9 @@
     </office>
     <entity type="Tambon" name="คานหาม" english="Khan Ham" geocode="141401">
       <wiki wikidata="Q16440447" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="สมศักดิ์ สุขประเสริฐ" begin="2011-07-10" beginreason="ElectedDirectly" />
@@ -2768,6 +3077,9 @@
     </entity>
     <entity type="Tambon" name="บ้านช้าง" english="Ban Chang" geocode="141402">
       <wiki wikidata="Q16440446" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="วิทยา คงเวหน" begin="2012-11-18" beginreason="ElectedDirectly" />
@@ -2782,6 +3094,9 @@
     </entity>
     <entity type="Tambon" name="สามบัณฑิต" english="Sam Bandit" geocode="141403">
       <wiki wikidata="Q16440445" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="แทน ทรงวรวิทย์" begin="2013-10-20" beginreason="ElectedDirectly" />
@@ -2796,6 +3111,9 @@
     </entity>
     <entity type="Tambon" name="บ้านหีบ" english="Ban Hip" geocode="141404">
       <wiki wikidata="Q16440443" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="สมศักดิ์ งามสมสุข" begin="2012-12-23" beginreason="ElectedDirectly" />
@@ -2810,6 +3128,9 @@
     </entity>
     <entity type="Tambon" name="หนองไม้ซุง" english="Nong Mai Sung" geocode="141405">
       <wiki wikidata="Q16440439" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.nongmaisung.org/</url>
         <officials>
@@ -2834,6 +3155,9 @@
     </entity>
     <entity type="Tambon" name="อุทัย" english="Uthai" geocode="141406">
       <wiki wikidata="Q16440438" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="สมศรี ทันสมัย" begin="2012-07-15" beginreason="ElectedDirectly" />
@@ -2848,6 +3172,9 @@
     </entity>
     <entity type="Tambon" name="เสนา" english="Sena" geocode="141407">
       <wiki wikidata="Q16440436" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <url>http://sena.siam108site.com/</url>
         <officials>
@@ -2869,6 +3196,9 @@
     </entity>
     <entity type="Tambon" name="หนองน้ำส้ม" english="Nong Nam Som" geocode="141408">
       <wiki wikidata="Q16440434" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="เสน่ห์ ผูกชอบ" begin="2011-05-08" beginreason="ElectedDirectly" />
@@ -2882,6 +3212,9 @@
     </entity>
     <entity type="Tambon" name="โพสาวหาญ" english="Pho Sao Han" geocode="141409">
       <wiki wikidata="Q16440433" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="อุกฤษณ์ คงสมแสวง" begin="2013-10-20" beginreason="ElectedDirectly" />
@@ -2896,6 +3229,9 @@
     </entity>
     <entity type="Tambon" name="ธนู" english="Thanu" geocode="141410">
       <wiki wikidata="Q16440431" />
+      <codes>
+        <post value="13210" />
+      </codes>
       <office type="TAOOffice">
         <url>http://www.abt-thanu.org/</url>
         <officials>
@@ -2909,6 +3245,9 @@
     </entity>
     <entity type="Tambon" name="ข้าวเม่า" english="Khao Mao" geocode="141411">
       <wiki wikidata="Q16440429" />
+      <codes>
+        <post value="13210 13000" comment="Mu 2: 13210, others 13000" />
+      </codes>
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="วิเชียร ธนูบรรพ์" begin="2012-01-15" beginreason="ElectedDirectly" />
@@ -2923,6 +3262,9 @@
   </entity>
   <entity type="Amphoe" name="มหาราช" english="Maha Rat" geocode="1415">
     <wiki wikidata="Q475983" />
+    <codes>
+      <post value="13150" />
+    </codes>
     <symbols>
       <slogan>มหาราชแขวงนครใหญ่ หลากหลายวัฒนธรรม ลุ่มน้ำสามสาย แหล่งขายพริกมัน จักสานไม้ไผ่ ตำหนักไทเจ้าปลุก</slogan>
     </symbols>
@@ -3048,6 +3390,9 @@
   </entity>
   <entity type="Amphoe" name="บ้านแพรก" english="Ban Phraek" geocode="1416">
     <wiki wikidata="Q475161" />
+    <codes>
+      <post value="13240" />
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>14.6479</geo:lat>
