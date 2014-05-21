@@ -701,7 +701,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Get the default edit summary for a reference save.
         /// </summary>
-        /// <param name="value">Reference to ber parsed.</param>
+        /// <param name="value">Reference to be parsed.</param>
         /// <returns>Edit summary.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         public String GetReferenceSaveEditSummary(Reference value)
@@ -973,6 +973,21 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion PostalCode
+
+                /// <summary>
+        /// Get the default edit summary for the creation of a item.
+        /// </summary>
+        /// <param name="value">New item.</param>
+        /// <returns>Edit summary.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public String GetItemCreateSaveSummary(Item item)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+            return item.getLabel("en");
+        }
+
+
     }
 
     /// <summary>

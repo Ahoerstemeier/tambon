@@ -225,6 +225,8 @@ namespace De.AHoerstemeier.Tambon.UI
                     allEntities.Add(localGovernmentEntity);
                 }
             }
+
+            cbxChangwat.Items.AddRange(allEntities.Where(x=> x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
         }
 
         private void btnRun_Click(object sender, EventArgs e)
@@ -306,6 +308,7 @@ namespace De.AHoerstemeier.Tambon.UI
             btnLogout.Enabled = false;
             btnLogin.Enabled = true;
             btnCountInterwiki.Enabled = false;
+            btnCreate.Enabled = false;
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -522,6 +525,56 @@ namespace De.AHoerstemeier.Tambon.UI
             var wikiDataLinks = new List<String>();
             wikiDataLinks.AddRange(entitiesWithWikiData.Select(x => x.wiki.wikidata));
             edtCollisions.Text = String.Join(Environment.NewLine, wikiDataLinks);
+        }
+
+        private void cbxChangwat_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var changwat = cbxChangwat.SelectedItem as Entity;
+            cbxAmphoe.Items.Clear();
+            cbxAmphoe.SelectedItem = null;
+            if (changwat != null)
+            {
+                cbxAmphoe.Items.AddRange(changwat.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Amphoe)).ToArray());
+            }
+        }
+
+        private void cbxAmphoe_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var amphoe = cbxAmphoe.SelectedItem as Entity;
+            lblTambonInfo.Text = String.Empty;
+            if (amphoe != null)
+            {
+                var allTambon = amphoe.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete).ToList();
+                var wikidataCount = allTambon.Count(x => x.wiki != null && !String.IsNullOrWhiteSpace(x.wiki.wikidata));
+                lblTambonInfo.Text = String.Format("{0} of {1} done",
+                    wikidataCount, allTambon.Count);
+                btnCreate.Enabled = (wikidataCount < allTambon.Count) && (_bot!=null);
+            }
+            else
+            {
+                btnCreate.Enabled = false;
+            }
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            var amphoe = cbxAmphoe.SelectedItem as Entity;
+            if (amphoe != null)
+            {
+                var allTambon = amphoe.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete);
+                var missingTambon =allTambon.Where(x => x.wiki == null || String.IsNullOrWhiteSpace(x.wiki.wikidata)).ToList();
+                foreach (var tambon in missingTambon)
+                {
+                    _bot.CreateItem(tambon);
+                    edtCollisions.Text += String.Format("{0}: {1} ({2})\n",
+                        tambon.geocode,
+                        tambon.wiki.wikidata,
+                        tambon.english);
+                }
+                var dummy = new StringBuilder();
+                _bot.SetContainsSubdivisionTask.Task(new List<Entity>(){amphoe},dummy,false);
+            }
+
         }
     }
 }

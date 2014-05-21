@@ -42,6 +42,10 @@
             this.edtStartingItemId = new System.Windows.Forms.TextBox();
             this.lblStartingItemId = new System.Windows.Forms.Label();
             this.btnAllItems = new System.Windows.Forms.Button();
+            this.cbxChangwat = new System.Windows.Forms.ComboBox();
+            this.cbxAmphoe = new System.Windows.Forms.ComboBox();
+            this.lblTambonInfo = new System.Windows.Forms.Label();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStat
@@ -187,11 +191,52 @@
             this.btnAllItems.UseVisualStyleBackColor = true;
             this.btnAllItems.Click += new System.EventHandler(this.btnAllItems_Click);
             // 
+            // cbxChangwat
+            // 
+            this.cbxChangwat.FormattingEnabled = true;
+            this.cbxChangwat.Location = new System.Drawing.Point(12, 225);
+            this.cbxChangwat.Name = "cbxChangwat";
+            this.cbxChangwat.Size = new System.Drawing.Size(204, 21);
+            this.cbxChangwat.TabIndex = 16;
+            this.cbxChangwat.SelectedValueChanged += new System.EventHandler(this.cbxChangwat_SelectedValueChanged);
+            // 
+            // cbxAmphoe
+            // 
+            this.cbxAmphoe.FormattingEnabled = true;
+            this.cbxAmphoe.Location = new System.Drawing.Point(12, 252);
+            this.cbxAmphoe.Name = "cbxAmphoe";
+            this.cbxAmphoe.Size = new System.Drawing.Size(204, 21);
+            this.cbxAmphoe.TabIndex = 17;
+            this.cbxAmphoe.SelectedValueChanged += new System.EventHandler(this.cbxAmphoe_SelectedValueChanged);
+            // 
+            // lblTambonInfo
+            // 
+            this.lblTambonInfo.AutoSize = true;
+            this.lblTambonInfo.Location = new System.Drawing.Point(12, 276);
+            this.lblTambonInfo.Name = "lblTambonInfo";
+            this.lblTambonInfo.Size = new System.Drawing.Size(35, 13);
+            this.lblTambonInfo.TabIndex = 18;
+            this.lblTambonInfo.Text = "label1";
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(124, 279);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(92, 23);
+            this.btnCreate.TabIndex = 19;
+            this.btnCreate.Text = "Create";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.lblTambonInfo);
+            this.Controls.Add(this.cbxAmphoe);
+            this.Controls.Add(this.cbxChangwat);
             this.Controls.Add(this.btnAllItems);
             this.Controls.Add(this.lblStartingItemId);
             this.Controls.Add(this.edtStartingItemId);
@@ -230,5 +275,9 @@
         private System.Windows.Forms.TextBox edtStartingItemId;
         private System.Windows.Forms.Label lblStartingItemId;
         private System.Windows.Forms.Button btnAllItems;
+        private System.Windows.Forms.ComboBox cbxChangwat;
+        private System.Windows.Forms.ComboBox cbxAmphoe;
+        private System.Windows.Forms.Label lblTambonInfo;
+        private System.Windows.Forms.Button btnCreate;
     }
 }
