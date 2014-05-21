@@ -103,6 +103,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        public WikiDataTaskInfo SetContainsSubdivisionTask
+        {
+            get;
+            private set;
+        }
+
         #endregion properties
 
         #region constructor
@@ -142,7 +148,8 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set type of administrative unit", setTypeOfAdministrativeUnit));
             _availableTasks.Add(new WikiDataTaskInfo("Set instance of", setInstanceOf));
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
-            _availableTasks.Add(new WikiDataTaskInfo("Set ContainsSubdivisions", SetContainsSubdivisions));
+            SetContainsSubdivisionTask = new WikiDataTaskInfo("Set ContainsSubdivisions", SetContainsSubdivisions);
+            _availableTasks.Add(SetContainsSubdivisionTask);
             _availableTasks.Add(new WikiDataTaskInfo("Set TIS 1099", SetGeocode));
             _availableTasks.Add(new WikiDataTaskInfo("Set Postal code", SetPostalCode));
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
@@ -224,6 +231,33 @@ namespace De.AHoerstemeier.Tambon
                 }
             }
             return result;
+        }
+
+        public void CreateItem(Entity entity)
+        {
+            var item = new Item(_helper.Api);
+            item.setLabel("en",entity.english);
+            item.setLabel("de", entity.english);
+            item.setLabel("th", entity.FullName);
+            item.setDescription("en",entity.GetWikiDataDescription(Language.English));
+            item.setDescription("de", entity.GetWikiDataDescription(Language.German));
+            item.setDescription("th", entity.GetWikiDataDescription(Language.Thai));
+            item.save(_helper.GetItemCreateSaveSummary(item));
+            if (entity.wiki == null)
+            {
+                entity.wiki = new WikiLocation();
+            }
+            entity.wiki.wikidata = item.id.PrefixedId.ToUpperInvariant();
+            var items = new List<Entity>();
+            items.Add(entity);
+            var dummy = new StringBuilder();
+            SetCountry(items, dummy, false);
+            SetIsInAdministrativeUnit(items, dummy, false);
+            SetTypeOfAdministrativeUnit(items, dummy, false,true);
+            SetTypeOfAdministrativeUnit(items, dummy, false, false);
+            SetGeocode(items,dummy,false);
+            SetPostalCode(items, dummy, false);
+            SetLocation(items, dummy, false);
         }
 
         #endregion public methods
