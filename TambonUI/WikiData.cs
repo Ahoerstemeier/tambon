@@ -226,7 +226,8 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
 
-            cbxChangwat.Items.AddRange(allEntities.Where(x=> x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
+            cbxChangwat.Items.AddRange(allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
+            lblTambonInfo.Text = String.Empty;
         }
 
         private void btnRun_Click(object sender, EventArgs e)
@@ -297,6 +298,7 @@ namespace De.AHoerstemeier.Tambon.UI
             btnLogout.Enabled = true;
             btnLogin.Enabled = false;
             btnCountInterwiki.Enabled = true;
+            RefreshAmphoeSelection();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -478,13 +480,13 @@ namespace De.AHoerstemeier.Tambon.UI
 };
 
             var entites = allEntities.Where(x => tis1099thesaban.Contains(x.geocode));
-            foreach (var entity in entites)
+            foreach ( var entity in entites )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if (_helper.GeocodeCorrect(item, entity) == WikiDataState.NotSet)
+                if ( _helper.GeocodeCorrect(item, entity) == WikiDataState.NotSet )
                 {
                     var statement = _helper.SetGeocode(item, entity, false);
-                    if (statement != null)
+                    if ( statement != null )
                     {
                         statement.save(_helper.GetClaimSaveEditSummary(statement));
                         var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdStatedIn), new EntityIdValue(new EntityId(WikiBase.ItemSourceTIS1099BE2548)));
@@ -531,24 +533,30 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var changwat = cbxChangwat.SelectedItem as Entity;
             cbxAmphoe.Items.Clear();
-            cbxAmphoe.SelectedItem = null;
-            if (changwat != null)
+            if ( changwat != null )
             {
                 cbxAmphoe.Items.AddRange(changwat.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Amphoe)).ToArray());
             }
+            cbxAmphoe.SelectedItem = null;
+            RefreshAmphoeSelection();
         }
 
         private void cbxAmphoe_SelectedValueChanged(object sender, EventArgs e)
         {
+            RefreshAmphoeSelection();
+        }
+
+        private void RefreshAmphoeSelection()
+        {
             var amphoe = cbxAmphoe.SelectedItem as Entity;
             lblTambonInfo.Text = String.Empty;
-            if (amphoe != null)
+            if ( amphoe != null )
             {
                 var allTambon = amphoe.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete).ToList();
                 var wikidataCount = allTambon.Count(x => x.wiki != null && !String.IsNullOrWhiteSpace(x.wiki.wikidata));
                 lblTambonInfo.Text = String.Format("{0} of {1} done",
                     wikidataCount, allTambon.Count);
-                btnCreate.Enabled = (wikidataCount < allTambon.Count) && (_bot!=null);
+                btnCreate.Enabled = (wikidataCount < allTambon.Count) && (_bot != null);
             }
             else
             {
@@ -559,22 +567,22 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnCreate_Click(object sender, EventArgs e)
         {
             var amphoe = cbxAmphoe.SelectedItem as Entity;
-            if (amphoe != null)
+            if ( amphoe != null )
             {
                 var allTambon = amphoe.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete);
-                var missingTambon =allTambon.Where(x => x.wiki == null || String.IsNullOrWhiteSpace(x.wiki.wikidata)).ToList();
-                foreach (var tambon in missingTambon)
+                var missingTambon = allTambon.Where(x => x.wiki == null || String.IsNullOrWhiteSpace(x.wiki.wikidata)).ToList();
+                foreach ( var tambon in missingTambon )
                 {
                     _bot.CreateItem(tambon);
-                    edtCollisions.Text += String.Format("{0}: {1} ({2})\n",
+                    edtCollisions.Text += String.Format("{0}: {1} ({2})",
                         tambon.geocode,
                         tambon.wiki.wikidata,
-                        tambon.english);
+                        tambon.english) + Environment.NewLine;
                 }
                 var dummy = new StringBuilder();
-                _bot.SetContainsSubdivisionTask.Task(new List<Entity>(){amphoe},dummy,false);
+                _bot.SetContainsSubdivisionTask.Task(new List<Entity>() { amphoe }, dummy, false);
+                btnCreate.Enabled = false;
             }
-
         }
     }
 }

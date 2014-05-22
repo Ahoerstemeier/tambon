@@ -233,17 +233,30 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        /// <summary>
+        /// Create a new Wikidata item for the given entity and fills the basic properties.
+        /// </summary>
+        /// <param name="entity">Entity to need new item.</param>
         public void CreateItem(Entity entity)
         {
+            if ( entity == null )
+            {
+                throw new ArgumentNullException("entity");
+            }
+            if ( entity.wiki != null && !String.IsNullOrWhiteSpace(entity.wiki.wikidata) )
+            {
+                throw new ArgumentException("Entity already has a Wikidata item");
+            }
+
             var item = new Item(_helper.Api);
-            item.setLabel("en",entity.english);
+            item.setLabel("en", entity.english);
             item.setLabel("de", entity.english);
             item.setLabel("th", entity.FullName);
-            item.setDescription("en",entity.GetWikiDataDescription(Language.English));
+            item.setDescription("en", entity.GetWikiDataDescription(Language.English));
             item.setDescription("de", entity.GetWikiDataDescription(Language.German));
             item.setDescription("th", entity.GetWikiDataDescription(Language.Thai));
             item.save(_helper.GetItemCreateSaveSummary(item));
-            if (entity.wiki == null)
+            if ( entity.wiki == null )
             {
                 entity.wiki = new WikiLocation();
             }
@@ -253,9 +266,12 @@ namespace De.AHoerstemeier.Tambon
             var dummy = new StringBuilder();
             SetCountry(items, dummy, false);
             SetIsInAdministrativeUnit(items, dummy, false);
-            SetTypeOfAdministrativeUnit(items, dummy, false,true);
+            SetTypeOfAdministrativeUnit(items, dummy, false, true);
             SetTypeOfAdministrativeUnit(items, dummy, false, false);
-            SetGeocode(items,dummy,false);
+            if ( !entity.type.IsCompatibleEntityType(EntityType.Muban) )
+            {
+                SetGeocode(items, dummy, false);
+            }
             SetPostalCode(items, dummy, false);
             SetLocation(items, dummy, false);
         }
