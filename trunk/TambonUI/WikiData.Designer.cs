@@ -193,6 +193,7 @@
             // 
             // cbxChangwat
             // 
+            this.cbxChangwat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxChangwat.FormattingEnabled = true;
             this.cbxChangwat.Location = new System.Drawing.Point(12, 225);
             this.cbxChangwat.Name = "cbxChangwat";
@@ -202,6 +203,7 @@
             // 
             // cbxAmphoe
             // 
+            this.cbxAmphoe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAmphoe.FormattingEnabled = true;
             this.cbxAmphoe.Location = new System.Drawing.Point(12, 252);
             this.cbxAmphoe.Name = "cbxAmphoe";
