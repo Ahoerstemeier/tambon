@@ -569,12 +569,13 @@ namespace De.AHoerstemeier.Tambon.UI
             var amphoe = cbxAmphoe.SelectedItem as Entity;
             if ( amphoe != null )
             {
+                edtCollisions.Text = String.Empty;
                 var allTambon = amphoe.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete);
                 var missingTambon = allTambon.Where(x => x.wiki == null || String.IsNullOrWhiteSpace(x.wiki.wikidata)).ToList();
                 foreach ( var tambon in missingTambon )
                 {
                     _bot.CreateItem(tambon);
-                    edtCollisions.Text += String.Format("{0}: {1} ({2})",
+                    edtCollisions.Text += String.Format("{0} ({2}): <wiki wikidata=\"{1}\" />",
                         tambon.geocode,
                         tambon.wiki.wikidata,
                         tambon.english) + Environment.NewLine;
