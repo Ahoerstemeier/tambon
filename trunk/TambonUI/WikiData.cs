@@ -582,7 +582,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 var dummy = new StringBuilder();
                 _bot.SetContainsSubdivisionTask.Task(new List<Entity>() { amphoe }, dummy, false);
-                btnCreate.Enabled = false;
+                RefreshAmphoeSelection();
             }
         }
     }
