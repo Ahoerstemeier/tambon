@@ -170,7 +170,7 @@
             this.edtStartingItemId.Name = "edtStartingItemId";
             this.edtStartingItemId.Size = new System.Drawing.Size(100, 20);
             this.edtStartingItemId.TabIndex = 13;
-            this.edtStartingItemId.Text = "16000000";
+            this.edtStartingItemId.Text = "17000000";
             // 
             // lblStartingItemId
             // 
