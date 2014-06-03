@@ -45,7 +45,9 @@
             this.cbxChangwat = new System.Windows.Forms.ComboBox();
             this.cbxAmphoe = new System.Windows.Forms.ComboBox();
             this.lblTambonInfo = new System.Windows.Forms.Label();
-            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnCreateTambon = new System.Windows.Forms.Button();
+            this.cbxLocalGovernments = new System.Windows.Forms.ComboBox();
+            this.btnCreateLocalGovernment = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStat
@@ -220,22 +222,44 @@
             this.lblTambonInfo.TabIndex = 18;
             this.lblTambonInfo.Text = "label1";
             // 
-            // btnCreate
+            // btnCreateTambon
             // 
-            this.btnCreate.Location = new System.Drawing.Point(124, 279);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(92, 23);
-            this.btnCreate.TabIndex = 19;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnCreateTambon.Location = new System.Drawing.Point(124, 279);
+            this.btnCreateTambon.Name = "btnCreateTambon";
+            this.btnCreateTambon.Size = new System.Drawing.Size(92, 23);
+            this.btnCreateTambon.TabIndex = 19;
+            this.btnCreateTambon.Text = "Create";
+            this.btnCreateTambon.UseVisualStyleBackColor = true;
+            this.btnCreateTambon.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // cbxLocalGovernments
+            // 
+            this.cbxLocalGovernments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLocalGovernments.FormattingEnabled = true;
+            this.cbxLocalGovernments.Location = new System.Drawing.Point(12, 308);
+            this.cbxLocalGovernments.Name = "cbxLocalGovernments";
+            this.cbxLocalGovernments.Size = new System.Drawing.Size(204, 21);
+            this.cbxLocalGovernments.TabIndex = 20;
+            this.cbxLocalGovernments.SelectedValueChanged += new System.EventHandler(this.cbxLocalGovernments_SelectedValueChanged);
+            // 
+            // btnCreateLocalGovernment
+            // 
+            this.btnCreateLocalGovernment.Location = new System.Drawing.Point(124, 335);
+            this.btnCreateLocalGovernment.Name = "btnCreateLocalGovernment";
+            this.btnCreateLocalGovernment.Size = new System.Drawing.Size(92, 23);
+            this.btnCreateLocalGovernment.TabIndex = 21;
+            this.btnCreateLocalGovernment.Text = "Create";
+            this.btnCreateLocalGovernment.UseVisualStyleBackColor = true;
+            this.btnCreateLocalGovernment.Click += new System.EventHandler(this.btnCreateLocalGovernment_Click);
             // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
-            this.Controls.Add(this.btnCreate);
+            this.Controls.Add(this.btnCreateLocalGovernment);
+            this.Controls.Add(this.cbxLocalGovernments);
+            this.Controls.Add(this.btnCreateTambon);
             this.Controls.Add(this.lblTambonInfo);
             this.Controls.Add(this.cbxAmphoe);
             this.Controls.Add(this.cbxChangwat);
@@ -280,6 +304,8 @@
         private System.Windows.Forms.ComboBox cbxChangwat;
         private System.Windows.Forms.ComboBox cbxAmphoe;
         private System.Windows.Forms.Label lblTambonInfo;
-        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Button btnCreateTambon;
+        private System.Windows.Forms.ComboBox cbxLocalGovernments;
+        private System.Windows.Forms.Button btnCreateLocalGovernment;
     }
 }
