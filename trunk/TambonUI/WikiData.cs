@@ -310,7 +310,7 @@ namespace De.AHoerstemeier.Tambon.UI
             btnLogout.Enabled = false;
             btnLogin.Enabled = true;
             btnCountInterwiki.Enabled = false;
-            btnCreate.Enabled = false;
+            btnCreateTambon.Enabled = false;
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -544,6 +544,19 @@ namespace De.AHoerstemeier.Tambon.UI
         private void cbxAmphoe_SelectedValueChanged(object sender, EventArgs e)
         {
             RefreshAmphoeSelection();
+            RefreshLocalGovernmentSelection();
+        }
+
+        private void RefreshLocalGovernmentSelection()
+        {
+            var amphoe = cbxAmphoe.SelectedItem as Entity;
+            cbxLocalGovernments.Items.Clear();
+            if ( amphoe != null )
+            {
+                var allLocalGovernment = allEntities.Where(x => x.type.IsLocalGovernment() && x.parent.Contains(amphoe.geocode)).ToList();
+                allLocalGovernment.Sort((x, y) => x.geocode.CompareTo(y.geocode));
+                cbxLocalGovernments.Items.AddRange(allLocalGovernment.ToArray());
+            }
         }
 
         private void RefreshAmphoeSelection()
@@ -556,11 +569,11 @@ namespace De.AHoerstemeier.Tambon.UI
                 var wikidataCount = allTambon.Count(x => x.wiki != null && !String.IsNullOrWhiteSpace(x.wiki.wikidata));
                 lblTambonInfo.Text = String.Format("{0} of {1} done",
                     wikidataCount, allTambon.Count);
-                btnCreate.Enabled = (wikidataCount < allTambon.Count) && (_bot != null);
+                btnCreateTambon.Enabled = (wikidataCount < allTambon.Count) && (_bot != null);
             }
             else
             {
-                btnCreate.Enabled = false;
+                btnCreateTambon.Enabled = false;
             }
         }
 
@@ -584,6 +597,23 @@ namespace De.AHoerstemeier.Tambon.UI
                 _bot.SetContainsSubdivisionTask.Task(new List<Entity>() { amphoe }, dummy, false);
                 RefreshAmphoeSelection();
             }
+        }
+
+        private void cbxLocalGovernments_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var localGovernment = cbxLocalGovernments.SelectedItem as Entity;
+            btnCreateLocalGovernment.Enabled = (localGovernment != null) && (localGovernment.wiki == null || String.IsNullOrWhiteSpace(localGovernment.wiki.wikidata));
+        }
+
+        private void btnCreateLocalGovernment_Click(object sender, EventArgs e)
+        {
+            var localGovernment = cbxLocalGovernments.SelectedItem as Entity;
+            _bot.CreateItem(localGovernment);
+            edtCollisions.Text = String.Format("{0} ({2}): <wiki wikidata=\"{1}\" />",
+                localGovernment.geocode,
+                localGovernment.wiki.wikidata,
+                localGovernment.english) + Environment.NewLine;
+            btnCreateLocalGovernment.Enabled = false;
         }
     }
 }

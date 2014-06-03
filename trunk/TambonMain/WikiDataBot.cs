@@ -268,7 +268,7 @@ namespace De.AHoerstemeier.Tambon
             SetIsInAdministrativeUnit(items, dummy, false);
             SetTypeOfAdministrativeUnit(items, dummy, false, true);
             SetTypeOfAdministrativeUnit(items, dummy, false, false);
-            if ( !entity.type.IsCompatibleEntityType(EntityType.Muban) )
+            if ( !entity.type.IsCompatibleEntityType(EntityType.Muban) && !entity.type.IsLocalGovernment() )
             {
                 SetGeocode(items, dummy, false);
             }
