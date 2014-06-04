@@ -602,6 +602,50 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion Geocode
 
+        #region GND
+
+        private WikiDataState Gnd(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+            stringValue = entity.codes.gnd.value;
+            return CheckStringValue(item, WikiBase.PropertyIdGND, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the GND reference.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the country.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetGnd(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            Gnd(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the GND reference is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState GndCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return Gnd(item, entity, false, false, out dummy);
+        }
+
+        #endregion GND
+
         #region Location
 
         private WikiDataState Location(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
@@ -892,7 +936,7 @@ namespace De.AHoerstemeier.Tambon
                     reference = statement.CreateReferenceForSnak(snak);
                     break;
                 case PopulationDataSourceType.DOPA:
-                    Uri source = PopulationDataDownloader.GetDisplayUrl(data.Year, entity.geocode );
+                    Uri source = PopulationDataDownloader.GetDisplayUrl(data.Year, entity.geocode);
                     snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(source.AbsoluteUri));
                     reference = statement.CreateReferenceForSnak(snak);
                     reference.AddSnak(new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdPublisher), new EntityIdValue(new EntityId(WikiBase.ItemDopa))));
@@ -974,7 +1018,7 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion PostalCode
 
-                /// <summary>
+        /// <summary>
         /// Get the default edit summary for the creation of a item.
         /// </summary>
         /// <param name="value">New item.</param>
@@ -986,8 +1030,6 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("item");
             return item.getLabel("en");
         }
-
-
     }
 
     /// <summary>
