@@ -556,6 +556,8 @@ namespace De.AHoerstemeier.Tambon.UI
                 var allLocalGovernment = allEntities.Where(x => x.type.IsLocalGovernment() && x.parent.Contains(amphoe.geocode)).ToList();
                 allLocalGovernment.Sort((x, y) => x.geocode.CompareTo(y.geocode));
                 cbxLocalGovernments.Items.AddRange(allLocalGovernment.ToArray());
+                cbxLocalGovernments.SelectedItem = null;
+                btnCreateLocalGovernment.Enabled = false;
             }
         }
 
@@ -608,12 +610,15 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnCreateLocalGovernment_Click(object sender, EventArgs e)
         {
             var localGovernment = cbxLocalGovernments.SelectedItem as Entity;
-            _bot.CreateItem(localGovernment);
-            edtCollisions.Text = String.Format("{0} ({2}): <wiki wikidata=\"{1}\" />",
-                localGovernment.geocode,
-                localGovernment.wiki.wikidata,
-                localGovernment.english) + Environment.NewLine;
-            btnCreateLocalGovernment.Enabled = false;
+            if ( localGovernment != null )
+            {
+                _bot.CreateItem(localGovernment);
+                edtCollisions.Text = String.Format("{0} ({2}): <wiki wikidata=\"{1}\" />",
+                    localGovernment.geocode,
+                    localGovernment.wiki.wikidata,
+                    localGovernment.english) + Environment.NewLine;
+                btnCreateLocalGovernment.Enabled = false;
+            }
         }
     }
 }
