@@ -2,6 +2,8 @@
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นครสวรรค์" english="Nakhon Sawan" geocode="60">
   <wiki wikidata="Q239844" openstreetmap="1908791" />
   <codes>
+    <post value="60"/>
+    <iso3166 value="TH-60"/>
     <gnd value="7748281-5" />
   </codes>
   <office type="ProvinceHall">
@@ -83,6 +85,9 @@
   </office>
   <entity type="Amphoe" name="เมืองนครสวรรค์" english="Mueang Nakhon Sawan" geocode="6001">
     <wiki wikidata="Q476039" />
+    <codes>
+      <post value="60000 60240"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.7051</geo:lat>
@@ -523,6 +528,9 @@
   </entity>
   <entity type="Amphoe" name="โกรกพระ" english="Krok Phra" geocode="6002">
     <wiki wikidata="Q475836" />
+    <codes>
+      <post value="60170"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.5567</geo:lat>
@@ -723,6 +731,9 @@
   </entity>
   <entity type="Amphoe" name="ชุมแสง" english="Chum Saeng" geocode="6003">
     <wiki wikidata="Q475429" />
+    <codes>
+      <post value="60120 60250"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.8810</geo:lat>
@@ -1000,6 +1011,9 @@
   </entity>
   <entity type="Amphoe" name="หนองบัว" english="Nong Bua" geocode="6004">
     <wiki wikidata="Q476241" />
+    <codes>
+      <post value="60110"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.8648</geo:lat>
@@ -1261,6 +1275,9 @@
   </entity>
   <entity type="Amphoe" name="บรรพตพิสัย" english="Banphot Phisai" geocode="6005">
     <wiki wikidata="Q475269" />
+    <codes>
+      <post value="60180"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.9360</geo:lat>
@@ -1341,12 +1358,19 @@
       <office type="TAOOffice">
         <url>http://www.angthongsao.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อัมรินทร์ พิลึก" begin="2009-12-13" endyear="2013" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2014-01-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="อัมรินทร์ พิลึก" begin="2009-12-13" end="2013-12-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2014-01-19" type="TAO" size="14"/>
           <term begin="2009-12-13" end="2013-12-12" type="TAO" size="14" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" finalsize="14" sizechangereason="MubanCreation" comment="Mu 7 created 2006-12" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Withdrawn">
+            <meetingreference board="2" date="2009-07-20" number="28" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="60050401" name="บ้านท่าแรต" english="Ban Tha Raet" />
       <entity type="Muban" geocode="60050402" name="บ้านคลอง" english="Ban Khlong" />
@@ -1590,6 +1614,9 @@
   </entity>
   <entity type="Amphoe" name="เก้าเลี้ยว" english="Kao Liao" geocode="6006">
     <wiki wikidata="Q475595" />
+    <codes>
+      <post value="60230"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.8503</geo:lat>
@@ -1705,6 +1732,9 @@
   </entity>
   <entity type="Amphoe" name="ตาคลี" english="Takhli" geocode="6007">
     <wiki wikidata="Q476799" />
+    <codes>
+      <post value="60260 60210 60140"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.2631</geo:lat>
@@ -1987,6 +2017,9 @@
   </entity>
   <entity type="Amphoe" name="ท่าตะโก" english="Tha Tako" geocode="6008">
     <wiki wikidata="Q476859" />
+    <codes>
+      <post value="60160"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.6417</geo:lat>
@@ -2327,6 +2360,9 @@
   </entity>
   <entity type="Amphoe" name="ไพศาลี" english="Phaisali" geocode="6009">
     <wiki wikidata="Q1519575" />
+    <codes>
+      <post value="60220"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.5974</geo:lat>
@@ -2347,9 +2383,11 @@
         </symbols>
         <url lastchecked="2012-09-12">http://www.khokduer.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="อุดมศักดิ์ สุขจิตร" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประจวบ เกตุนิล" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="อุดมศักดิ์ สุขจิตร" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="18"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
@@ -2366,9 +2404,11 @@
         <url>http://www.samrongchai.go.th/</url>
         <url status="obsolete">http://obt50038.tripod.com/</url>
         <officials>
-          <official title="TAOMayor" name="สมชาย ศิริมงคล" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประเสริฐ แช่มเดช" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="สมชาย ศิริมงคล" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="42"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="42" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="42" />
         </council>
@@ -2399,9 +2439,11 @@
       <office type="TAOOffice">
         <url>http://www.wangnamlad.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ทองสุข หาเวียง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประยงค์ มาลัย" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ทองสุข หาเวียง" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="20"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -2428,11 +2470,11 @@
         <url lastchecked="2013-03-05">http://www.takrocity.org/</url>
         <url>http://www.localthai.org/takro/</url>
         <officials>
-          <!-- no TAOMayor end term in 2013 -->
-          <official title="TAOMayor" name="ยสดา นิ่มมา" begin="2010-11-11" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ยสดา นิ่มมา" begin="2010-11-11" endyear="2014" beginreason="ElectedDirectly" />
           <officialterm title="TAOMayor" begin="2006-08-27" end="2010-08-26" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="36"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="36" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="36" />
         </council>
@@ -2461,9 +2503,11 @@
         <!-- Longdo: 15.45267, 100.56805 -->
         <url>http://www.phosat.com/</url>
         <officials>
-          <official title="TAOMayor" name="ชูชาติ วงษ์มั่น" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="วินัย มีเพชร" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ชูชาติ วงษ์มั่น" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="26"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="26" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
         </council>
@@ -2486,9 +2530,11 @@
       <office type="TAOOffice">
         <url>http://www.wangkhoi.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ชะลอ เกตุทอง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประจวบ หลงทอง" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ชะลอ เกตุทอง" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="22"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
           <!-- Mu 11 created 2003-09 -->
@@ -2514,9 +2560,11 @@
         <url lastchecked="2012-03-28">http://www.nakhom.go.th/</url>
         <url status="obsolete">http://nakom-loco.tripod.com/</url>
         <officials>
-          <official title="TAOMayor" name="ทัน บุตรพริ้ง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุรินทร์ โพธิ์ทรง" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ทัน บุตรพริ้ง" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="22"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
@@ -2537,12 +2585,14 @@
       <office type="TAOOffice">
         <url>http://www.paisali.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="ประทีป อุดมการเกษตร" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประทีป อุดมการเกษตร" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ประทีป อุดมการเกษตร" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
-          <!-- Mu 5 only Thesaban -->
+          <term begin="2013-10-19" type="TAO" size="14"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="14" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
+          <!-- Mu 5 only Thesaban -->
         </council>
       </office>
       <entity type="Muban" geocode="60090801" name="บ้านห้วยน้ำลาด" english="Ban Huai Nam Lat" />
@@ -2557,6 +2607,9 @@
   </entity>
   <entity type="Amphoe" name="พยุหะคีรี" english="Phayuha Khiri" geocode="6010">
     <wiki wikidata="Q476395" />
+    <codes>
+      <post value="60130"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.4871</geo:lat>
@@ -2574,13 +2627,14 @@
         </geo:Point>
         <url status="offline">http://www.phayuhapao.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สมชาย เพ็ชรโต" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ชำนาญ ศรีเพ็ง" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="สมชาย เพ็ชรโต" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
-          <!-- Mu 7 only Thesaban -->
+          <term begin="2013-10-19" type="TAO" size="14"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="14" />
-          <!-- 14 confirmed by info.dla.go.th -->
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" finalsize="14" sizechangereason="MubanCreation" comment="Mu 9 created 2005-10, ECT table wrongly claims 16" />
+          <!-- Mu 7 only Thesaban -->
         </council>
       </office>
       <entity type="Muban" geocode="60100101" name="บ้านหาดเหนือ" english="Ban Hat Nuea" />
@@ -2671,9 +2725,11 @@
         </symbols>
         <url lastchecked="2012-11-07">http://www.yangkhao.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สวัสดิ์ อ่ำทอง" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สวัสดิ์ อ่ำทอง" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="สวัสดิ์ อ่ำทอง" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="18"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
@@ -2808,9 +2864,11 @@
           <geo:long>100.1421</geo:long>
         </geo:Point>
         <officials>
-          <official title="TAOMayor" name="รุ่งโรจน์ ฤทธิ์เต็ม" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="รุ่งโรจน์ ฤทธิ์เต็ม" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="รุ่งโรจน์ ฤทธิ์เต็ม" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="24"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
@@ -2831,6 +2889,9 @@
   </entity>
   <entity type="Amphoe" name="ลาดยาว" english="Lat Yao" geocode="6011">
     <wiki wikidata="Q475904" />
+    <codes>
+      <post value="60150"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.7515</geo:lat>
@@ -2842,12 +2903,14 @@
       </officials>
     </office>
     <entity type="Tambon" name="ลาดยาว" english="Lat Yao" geocode="601101">
+      <wiki wikidata="Q17143322" />
       <office type="TAOOffice">
         <url>http://www.ladyao.go.th/</url>
         <officials>
           <official title ="TAOMayor" name="ประสิทธิ์ หยัดน้ำ" begin="2011-11-06" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2011-11-06" type="TAO" size="30"/>
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="30" />
         </council>
       </office>
@@ -2868,6 +2931,7 @@
       <entity type="Muban" geocode="60110115" name="บ้านริมบึง" english="Ban Rim Bueng" />
     </entity>
     <entity type="Tambon" name="ห้วยน้ำหอม" english="Huai Nam Hom" geocode="601102">
+      <wiki wikidata="Q17143323" />
       <office type="TAOOffice">
         <url lastchecked="2013-02-12">http://www.huaynamhom.go.th/</url>
         <officials>
@@ -2893,13 +2957,13 @@
       <entity type="Muban" geocode="60110210" name="บ้านเทียนชัย" english="Ban Thian Chai" />
     </entity>
     <entity type="Tambon" name="วังม้า" english="Wang Ma" geocode="601103">
+      <wiki wikidata="Q17143324" />
       <office type="TAOOffice">
         <url lastchecked="2013-02-12">http://www.wangma.go.th/home.php</url>
         <url status="expired">http://www.wang-ma.org/</url>
         <officials>
-          <official title="TAOMayor" name="ประนอม สาระไกร" begin="2010-09-16" beginreason="ElectedDirectly" />
-          <!-- no TAOMayor end term in 2012 -->
-          <officialterm title="TAOMayor" begin="2006-07-16" endyear="2010" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประนอม สาระไกร" begin="2010-09-16" endyear="2014" beginreason="ElectedDirectly" />
+          <officialterm title="TAOMayor" begin="2006-07-16" end="2010-07-15" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
           <term begin="2012-09-30" type="TAO" size="32" />
@@ -2925,13 +2989,19 @@
       <entity type="Muban" geocode="60110316" name="บ้านไร่ใหญ่" english="Ban Rai Yai" />
     </entity>
     <entity type="Tambon" name="วังเมือง" english="Wang Mueang" geocode="601104">
+      <wiki wikidata="Q17143326" />
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>15.6694</geo:lat>
           <geo:long>99.8196</geo:long>
         </geo:Point>
         <url>http://www.wangmung.com/</url>
+        <officials>
+          <official title="TAOMayor" name="มนตรี ขันธารักษ์" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="อุดร นกทอง" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="20"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -2948,13 +3018,19 @@
       <entity type="Muban" geocode="60110410" name="บ้านหนองขอน" english="Ban Nong Khon" />
     </entity>
     <entity type="Tambon" name="สร้อยละคร" english="Soi Lakhon" geocode="601105">
+      <wiki wikidata="Q17143327" />
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>15.7169</geo:lat>
           <geo:long>99.8010</geo:long>
         </geo:Point>
         <url>http://www.soyrakron.go.th/</url>
+        <officials>
+          <official title="TAOMayor" name="ไชยวัฒน์ ดาวเรือง" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ชฎาภรณ์ สลุงอยู่" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="20"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -2971,12 +3047,23 @@
       <entity type="Muban" geocode="60110510" name="บ้านห้วยใหญ่" english="Ban Huai Yai" />
     </entity>
     <entity type="Tambon" name="มาบแก" english="Map Kae" geocode="601106">
+      <wiki wikidata="Q17143328" />
       <office type="TAOOffice">
         <url>http://mabkae.com/</url>
+        <officials>
+          <official title="TAOMayor" name="ชัยวุธ จำปาเกตกุล" begin="2014-01-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ชัยวุธ จำปาเกตกุล" begin="2009-12-13" end="2013-12-12" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
+        </officials>
         <council>
+          <term begin="2014-01-19" type="TAO" size="14"/>
           <term begin="2009-12-13" end="2013-12-12" type="TAO" size="14" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
         </council>
+        <history>
+          <statuschange old="TAO" new="ThesabanTambon" effective="2009-07-31" status="Withdrawn">
+            <meetingreference board="1" date="2009-06-22" number="17" />
+          </statuschange>
+        </history>
       </office>
       <entity type="Muban" geocode="60110601" name="บ้านมาบแก" english="Ban Map Kae" />
       <entity type="Muban" geocode="60110602" name="บ้านท่าสนุ่น" english="Ban Tha Sanun" />
@@ -2987,6 +3074,7 @@
       <entity type="Muban" geocode="60110607" name="บ้านหน้าเขา" english="Ban Na Khao" />
     </entity>
     <entity type="Tambon" name="หนองยาว" english="Nong Yao" geocode="601107">
+      <wiki wikidata="Q17143329" />
       <office type="TAOOffice">
         <url lastchecked="2013-02-12">http://www.nong-yao.go.th/</url>
         <officials>
@@ -3009,6 +3097,7 @@
       <entity type="Muban" geocode="60110709" name="บ้านหนองผำ" english="Ban Nong Pham" />
     </entity>
     <entity type="Tambon" name="หนองนมวัว" english="Nong Nom Wua" geocode="601108">
+      <wiki wikidata="Q17143332" />
       <office type="TAOOffice">
         <url lastchecked="2013-02-12">http://www.nongnomwua.go.th/</url>
         <officials>
@@ -3018,7 +3107,6 @@
           <term begin="2012-09-30" type="TAO" size="18">
             <official title="TAOCouncilChairman" name="วิรงรอง ห่านวิไล" begin="2012-10-25" beginreason="ElectedByCouncil" />
           </term>
-          <term begin="2012-09-30" type="TAO" size="18" />
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="18" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="18" />
         </council>
@@ -3034,6 +3122,7 @@
       <entity type="Muban" geocode="60110809" name="บ้านดอนยาว" english="Ban Don Yao" />
     </entity>
     <entity type="Tambon" name="บ้านไร่" english="Ban Rai" geocode="601109">
+      <wiki wikidata="Q17143333" />
       <office type="TAOOffice">
         <officials>
           <official title="TAOMayor" name="วิชา พรมอุทัย" begin="2011-09-18" beginreason="ElectedDirectly" />
@@ -3077,6 +3166,7 @@
       <entity type="Muban" geocode="60110929" name="บ้านน้ำพุ" english="Ban Nam Phu" />
     </entity>
     <entity type="Tambon" name="เนินขี้เหล็ก" english="Noen Khilek" geocode="601110">
+      <wiki wikidata="Q17143335" />
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>15.8591</geo:lat>
@@ -3117,6 +3207,7 @@
     </entity>
     <entity type="Tambon" name="ปางสวรรค์" english="Pang Sawan" geocode="601115" newgeocode="601502" />
     <entity type="Tambon" name="ศาลเจ้าไก่ต่อ" english="Sanchao Kai To" geocode="601116">
+      <wiki wikidata="Q17143336" />
       <office type="TAOOffice">
         <!-- Wikimapia: 15°48'16"N   99°40'0"E - still an empty field in Google Earth -->
         <url lastchecked="2013-02-12">http://www.sanchaokaitor.go.th/</url>
@@ -3145,6 +3236,7 @@
       <entity type="Muban" geocode="60111612" name="บ้านหนองไทร" english="Ban Nong Sai" />
     </entity>
     <entity type="Tambon" name="สระแก้ว" english="Sa Kaeo" geocode="601117">
+      <wiki wikidata="Q17143337" />
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>15.7832</geo:lat>
@@ -3176,6 +3268,9 @@
   </entity>
   <entity type="Amphoe" name="ตากฟ้า" english="Tak Fa" geocode="6012">
     <wiki wikidata="Q476798" />
+    <codes>
+      <post value="60190"/>
+    </codes>
     <office type="DistrictOffice">
       <geo:Point>
         <geo:lat>15.3488</geo:lat>
@@ -3191,9 +3286,11 @@
       <office type="TAOOffice">
         <url>http://www.takfah.com/</url>
         <officials>
-          <official title="TAOMayor" name="ละมัย สอนอ่อน" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ถนัดกิจ สังข์สุด" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ละมัย สอนอ่อน" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="16"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
@@ -3208,12 +3305,15 @@
       <entity type="Muban" geocode="60120108" name="บ้านมะขามงาม" english="Ban Makham Ngam" />
     </entity>
     <entity type="Tambon" name="ลำพยนต์" english="Lam Phayon" geocode="601202">
+      <wiki wikidata="Q17143313" />
       <office type="TAOOffice">
         <url>http://www.lampayon.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สมบูรณ์ สิงห์ขาว" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ชูชาติ ตันตระกูล" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="สมบูรณ์ สิงห์ขาว" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="20"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -3234,9 +3334,11 @@
       <office type="TAOOffice">
         <url status="offline">http://www.ssr2550.ob.tc/</url>
         <officials>
-          <official title="TAOMayor" name="ดนุ ธนกิจวรบูลย์" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ดนุ ธนกิจวรบูลย์" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="ดนุ ธนกิจวรบูลย์" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="24"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
@@ -3255,11 +3357,14 @@
       <entity type="Muban" geocode="60120312" name="บ้านทุ่งทอง" english="Ban Thung Thong" />
     </entity>
     <entity type="Tambon" name="หนองพิกุล" english="Nong Phikun" geocode="601204">
+      <wiki wikidata="Q17143314" />
       <office type="TAOOffice">
         <officials>
-          <official title="TAOMayor" name="สิณีนาจ บงกชมาศ" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุวรรณา แจ้งมณี" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="สิณีนาจ บงกชมาศ" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="22"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
@@ -3277,12 +3382,15 @@
       <entity type="Muban" geocode="60120411" name="บ้านสุขสมบูรณ์" english="Ban Suk Sombun" />
     </entity>
     <entity type="Tambon" name="พุนกยูง" english="Phu Nok Yung" geocode="601205">
+      <wiki wikidata="Q17143315" />
       <office type="TAOOffice">
         <url>http://www.punokyung.com/</url>
         <officials>
-          <official title="TAOMayor" name="บรรเจิด เรือนเพชร" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="นคร พิมพ์หนู" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="บรรเจิด เรือนเพชร" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="20"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -3299,6 +3407,7 @@
       <entity type="Muban" geocode="60120510" name="บ้านไผ่เจริญ" english="Ban Phai Charoen" />
     </entity>
     <entity type="Tambon" name="อุดมธัญญา" english="Udom Thanya" geocode="601206">
+      <wiki wikidata="Q17143316" />
       <office type="MunicipalityOffice">
         <symbols>
           <vision>
@@ -3320,7 +3429,7 @@
           <term begin="2007-09-30" end="2011-09-12" type="TAO" size="32" endreason="StatusChange" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-12">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-12" status="Done">
             <meetingreference board="1" number="41" date="2011-06-29" />
           </statuschange>
         </history>
@@ -3343,12 +3452,15 @@
       <entity type="Muban" geocode="60120616" name="บ้านหนองรั้ว" english="Ban Nong Rua" />
     </entity>
     <entity type="Tambon" name="เขาชายธง" english="Khao Chai Thong" geocode="601207">
+      <wiki wikidata="Q17143317" />
       <office type="TAOOffice">
         <url>http://61.19.192.250/obt/index.php</url>
         <officials>
-          <official title="TAOMayor" name="วินัย ฟักขาว" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุนทร เฉลยพงษ์" begin="2013-10-19" beginreason="ElectedDirectly"/>
+          <official title="TAOMayor" name="วินัย ฟักขาว" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
         </officials>
         <council>
+          <term begin="2013-10-19" type="TAO" size="18"/>
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
@@ -3366,6 +3478,9 @@
   </entity>
   <entity type="Amphoe" name="แม่วงก์" english="Mae Wong" geocode="6013">
     <wiki wikidata="Q475978" />
+    <codes>
+      <post value="60150"/>
+    </codes>
     <office type="DistrictOffice">
       <officials>
         <official title="DistrictOfficer" name="ขวัญชัย เทิดทูนการค้า" begin="2011-05-18" />
@@ -3373,6 +3488,7 @@
       </officials>
     </office>
     <entity type="Tambon" name="แม่วงก์" english="Mae Wong" geocode="601301">
+      <wiki wikidata="Q17143307" />
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>15.7806</geo:lat>
@@ -3401,15 +3517,15 @@
     </entity>
     <entity type="Tambon" name="ห้วยน้ำหอม" english="Huai Nam Hom" geocode="601302" newgeocode="601102" comment="Was temporarily assigned to this Amphoe" />
     <entity type="Tambon" name="แม่เล่ย์" english="Mae Le" geocode="601303">
+      <wiki wikidata="Q17143308" />
       <office type="TAOOffice">
         <url>http://www.maelay.go.th/</url>
-        <!-- Really election day 2011-11-30? Another TAO has 11-06! -->
         <officials>
-          <official title="TAOMayor" name="นะธี ศรีพุมมา" begin="2011-11-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="นะธี ศรีพุมมา" begin="2011-11-06" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="สมศักดิ์ แจ่มฟ้า" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2011-11-30" type="TAO" size="52" />
+          <term begin="2011-11-06" type="TAO" size="52" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="52" />
         </council>
       </office>
@@ -3441,14 +3557,14 @@
       <entity type="Muban" geocode="60130326" name="บ้านปางข้าวสาร" english="Ban Pang Khao San" />
     </entity>
     <entity type="Tambon" name="วังซ่าน" english="Wang San" geocode="601304">
+      <wiki wikidata="Q17143309" />
       <office type="TAOOffice">
         <url>http://www.wangsan.go.th/</url>
-        <!-- Really election day 2011-11-30? Another TAO has 11-06! -->
         <officials>
-          <official title="TAOMayor" name="สำเภา เนียมสุ่ม" begin="2011-11-30" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สำเภา เนียมสุ่ม" begin="2011-11-06" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2011-11-30" type="TAO" size="28" />
+          <term begin="2011-11-06" type="TAO" size="28" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="28" />
         </council>
       </office>
@@ -3468,6 +3584,7 @@
       <entity type="Muban" geocode="60130414" name="บ้านตะแบกงามใต้" english="Ban Tabaek Ngam Tai" />
     </entity>
     <entity type="Tambon" name="เขาชนกัน" english="Khao Chon Kan" geocode="601305">
+      <wiki wikidata="Q17143310" />
       <office type="TAOOffice">
         <url>http://www.khaochonkan.go.th/</url>
         <officials>
@@ -3502,6 +3619,9 @@
   </entity>
   <entity type="Amphoe" name="แม่เปิน" english="Mae Poen" geocode="6014">
     <wiki wikidata="Q475949" />
+    <codes>
+      <post value="60150"/>
+    </codes>
     <office type="DistrictOffice">
       <officials>
         <official title="DistrictOfficer" name="วสันต์ เวชศิลป์" inoffice="2009" comment="2009-06" />
@@ -3547,6 +3667,9 @@
   </entity>
   <entity type="Amphoe" name="ชุมตาบง" english="Chum Ta Bong" geocode="6015">
     <wiki wikidata="Q475431" />
+    <codes>
+      <post value="60150"/>
+    </codes>
     <office type="DistrictOffice">
       <officials>
         <official title="DistrictOfficer" name="ศุภนัย พวงมณี" begin="2010-02-22" />
@@ -3667,7 +3790,8 @@
         <officialterm title="Mayor" begin="2007-02-18" end="2011-02-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
-        <term begin="2010-01-17" type="ThesabanMueang" size="18" />
+        <term begin="2014-02-23" type="ThesabanMueang" size="18"/>
+        <term begin="2010-01-17" end="2014-01-16" type="ThesabanMueang" size="18" />
       </council>
       <history>
         <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2005-09-25" />
@@ -3764,10 +3888,12 @@
       </symbols>
       <url lastchecked="2012-11-08">http://www.nongbuamuni.go.th/</url>
       <officials>
-        <!-- election 2012-11-03 -->
+        <official title="Mayor" name="ดลฤดี ติยะโสภณจิต" begin="2012-11-03" beginreason="ElectedDirectly"/>
+        <officialterm title="Mayor" beginyear="2011" endyear="2012" beginreason="ElectedDirectly" endreason="Unknown"/>
         <official title="Mayor" name="รังสิมันตุ์ ปอพานิชกรณ์" begin="2007-04-01" endyear="2011" />
       </officials>
       <council>
+        <term begin="2011-08-05" type="ThesabanTambon" size="12"/>
         <term begin="2007-04-01" end="2011-03-31" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -3798,9 +3924,11 @@
         <facebook>https://www.facebook.com/kl60230</facebook>
       </socialweb>
       <officials>
-        <official title="Mayor" name="กิตติวัฒน์ เลิศพรตสมบัติ" inoffice="2012" />
+        <official title="Mayor" name="สุเทพ เรืองชัยเสรีพงษ์" begin="2013-09-01" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="กิตติวัฒน์ เลิศพรตสมบัติ" begin="2009-07-26" end="2013-07-25" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
+        <term begin="2013-09-01" type="ThesabanTambon" size="12"/>
         <term begin="2009-07-26" end="2013-07-25" type="ThesabanTambon" size="12" />
         <term begin="2005-06-19" end="2009-06-18" type="ThesabanTambon" size="12" />
       </council>
@@ -3816,11 +3944,11 @@
       </symbols>
       <url lastchecked="2012-11-07">http://www.cksm.go.th/</url>
       <officials>
-        <official title="Mayor" name="ธัสสร์อร สกลวิทยานนท์" inoffice="2012" comment="Begin 2010-12-26?" />
-        <officialterm title="Mayor" begin="2006-11-19" endyear="2010" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ธัสสร์อร สกลวิทยานนท์" begin="2010-12-26" endyear="2014" beginreason="ElectedDirectly"/>
+        <officialterm title="Mayor" begin="2006-11-19" end="2010-11-18" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
       </officials>
       <council>
-        <term begin="2010-12-26" type="ThesabanTambon" size="12" />
+        <term begin="2010-12-26" end="2014-12-25" type="ThesabanTambon" size="12" />
         <term begin="2006-11-19" end="2010-11-18" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -3869,10 +3997,12 @@
       </symbols>
       <url lastchecked="2012-05-15">http://www.paisalee.com/</url>
       <officials>
-        <official title="Mayor" name="จิรวรรณ แซ่บุ้น" begin="2010-03-28" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2014-05-04" beginreason="ElectedDirectly"/>
+        <official title="Mayor" name="จิรวรรณ แซ่บุ้น" begin="2010-03-28" end="2014-03-27" beginreason="ElectedDirectly" endreason="EndOfTerm"/>
       </officials>
       <council>
-        <term begin="2010-03-28" type="ThesabanTambon" size="12" />
+        <term begin="2014-05-04" type="ThesabanTambon" size="12"/>
+        <term begin="2010-03-28" end="2014-03-27" type="ThesabanTambon" size="12" />
         <term begin="2006-02-19" end="2010-02-18" type="ThesabanTambon" size="12" />
       </council>
     </office>
@@ -3930,8 +4060,10 @@
   <entity type="ThesabanTambon" name="ศาลเจ้าไก่ต่อ" english="Sanchao Kai To" geocode="6084" parent="6011">
     <office type="MunicipalityOffice">
       <url>http://www.nmt.or.th/nakhonsawan/sanchaokaito/</url>
+      <url status="offline">http://www.sanjaokaito.go.th/</url>
       <officials>
-        <officialterm title="Mayor" begin="2009-08-09" endyear="2013" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="อำนาจ แจ่มขุน" begin="2013-03-03" beginreason="ElectedDirectly"/>
+        <officialterm title="Mayor" begin="2009-08-09" endyear="2013" beginreason="ElectedDirectly" endreason="Unknown"/>
         <officialterm title="Mayor" begin="2005-07-01" end="2009-06-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
@@ -3951,10 +4083,11 @@
         <googleplus type="user" status="inactive">113036618981546684545</googleplus>
       </socialweb>
       <officials>
-        <officialterm title="Mayor" begin="2013-02-24" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="วิโรจน์ วิบูลรัตน์" begin="2013-02-24" beginreason="ElectedDirectly" />
         <officialterm title="Mayor" begin="2009-01-18" end="2013-01-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
+        <term begin="2012-04-21" type="ThesabanTambon" size="12"/>
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
         <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
