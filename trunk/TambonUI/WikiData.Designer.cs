@@ -48,6 +48,8 @@
             this.btnCreateTambon = new System.Windows.Forms.Button();
             this.cbxLocalGovernments = new System.Windows.Forms.ComboBox();
             this.btnCreateLocalGovernment = new System.Windows.Forms.Button();
+            this.lblSpecificItemId = new System.Windows.Forms.Label();
+            this.edtSpecificItemId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnStat
@@ -170,7 +172,7 @@
             // 
             this.edtStartingItemId.Location = new System.Drawing.Point(12, 185);
             this.edtStartingItemId.Name = "edtStartingItemId";
-            this.edtStartingItemId.Size = new System.Drawing.Size(100, 20);
+            this.edtStartingItemId.Size = new System.Drawing.Size(98, 20);
             this.edtStartingItemId.TabIndex = 13;
             this.edtStartingItemId.Text = "17000000";
             // 
@@ -179,9 +181,9 @@
             this.lblStartingItemId.AutoSize = true;
             this.lblStartingItemId.Location = new System.Drawing.Point(12, 169);
             this.lblStartingItemId.Name = "lblStartingItemId";
-            this.lblStartingItemId.Size = new System.Drawing.Size(106, 13);
+            this.lblStartingItemId.Size = new System.Drawing.Size(78, 13);
             this.lblStartingItemId.TabIndex = 14;
-            this.lblStartingItemId.Text = "Starting Statement Id";
+            this.lblStartingItemId.Text = "Starting Item Id";
             // 
             // btnAllItems
             // 
@@ -252,11 +254,29 @@
             this.btnCreateLocalGovernment.UseVisualStyleBackColor = true;
             this.btnCreateLocalGovernment.Click += new System.EventHandler(this.btnCreateLocalGovernment_Click);
             // 
+            // lblSpecificItemId
+            // 
+            this.lblSpecificItemId.AutoSize = true;
+            this.lblSpecificItemId.Location = new System.Drawing.Point(121, 169);
+            this.lblSpecificItemId.Name = "lblSpecificItemId";
+            this.lblSpecificItemId.Size = new System.Drawing.Size(80, 13);
+            this.lblSpecificItemId.TabIndex = 23;
+            this.lblSpecificItemId.Text = "Specific Item Id";
+            // 
+            // edtSpecificItemId
+            // 
+            this.edtSpecificItemId.Location = new System.Drawing.Point(121, 185);
+            this.edtSpecificItemId.Name = "edtSpecificItemId";
+            this.edtSpecificItemId.Size = new System.Drawing.Size(98, 20);
+            this.edtSpecificItemId.TabIndex = 22;
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.lblSpecificItemId);
+            this.Controls.Add(this.edtSpecificItemId);
             this.Controls.Add(this.btnCreateLocalGovernment);
             this.Controls.Add(this.cbxLocalGovernments);
             this.Controls.Add(this.btnCreateTambon);
@@ -307,5 +327,7 @@
         private System.Windows.Forms.Button btnCreateTambon;
         private System.Windows.Forms.ComboBox cbxLocalGovernments;
         private System.Windows.Forms.Button btnCreateLocalGovernment;
+        private System.Windows.Forms.Label lblSpecificItemId;
+        private System.Windows.Forms.TextBox edtSpecificItemId;
     }
 }

@@ -234,15 +234,24 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var entityTypes = CurrentActiveEntityTypes();
             var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
-            var workItems = entitiesWithWikiData.Where(x => entityTypes.Contains(x.type));
-            Int32 startingValue = 0;
-            if ( !String.IsNullOrWhiteSpace(edtStartingItemId.Text) )
+            IEnumerable<Entity> workItems = null;
+            if ( !String.IsNullOrWhiteSpace(edtSpecificItemId.Text) )
             {
-                startingValue = Convert.ToInt32(edtStartingItemId.Text);
+                Int32 specificValue = Convert.ToInt32(edtSpecificItemId.Text);
+                workItems = entitiesWithWikiData.Where(x => x.wiki.NumericalWikiData == specificValue);
             }
-            if ( startingValue > 0 )
+            else
             {
-                workItems = workItems.Where(x => x.wiki.NumericalWikiData > startingValue);
+                workItems = entitiesWithWikiData.Where(x => entityTypes.Contains(x.type));
+                Int32 startingValue = 0;
+                if ( !String.IsNullOrWhiteSpace(edtStartingItemId.Text) )
+                {
+                    startingValue = Convert.ToInt32(edtStartingItemId.Text);
+                }
+                if ( startingValue > 0 )
+                {
+                    workItems = workItems.Where(x => x.wiki.NumericalWikiData > startingValue);
+                }
             }
             StringBuilder warnings = new StringBuilder();
 
