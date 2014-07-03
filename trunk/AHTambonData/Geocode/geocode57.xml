@@ -238,25 +238,6 @@
       <codes>
         <post value="57100" />
       </codes>
-      <office type="MunicipalityOffice">
-        <url>http://www.maeyao.go.th/</url>
-        <url status="obsolete">http://www.maeyaomail.com/</url>
-        <officials>
-          <official title="Mayor" name="พงษ์พันธ์ ต๊ะถา" begin="2011-11-27" beginreason="ElectedDirectly" />
-        </officials>
-        <council>
-          <!--<term begin="2014-06-07" type="ThesabanTambon" size="12" comment="Delayed due to coup" />-->
-          <term begin="2010-04-24" end="2014-04-23" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="36" />
-          <!-- Mu 18 created 2004-09 -->
-          <!-- Mu 17 created 2003-09 -->
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" status="Done">
-            <meetingreference board="1" date="2009-07-28" number="32" />
-          </statuschange>
-        </history>
-      </office>
       <entity type="Muban" geocode="57010601" name="บ้านห้วยขมใน" english="Ban Huai Khom Nai" />
       <entity type="Muban" geocode="57010602" name="บ้านรวมมิตร" english="Ban Ruam Mit" />
       <entity type="Muban" geocode="57010603" name="บ้านห้วยทรายขาว" english="Ban Huai Sai Khao" />
@@ -5580,6 +5561,30 @@
     </office>
     <history>
       <statuschange old="TAO" new="ThesabanTambon" effective="2011-10-07" status="Done" />
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="แม่ยาว" english="Mae Yao" geocode="5764" tambon="570106">
+    <office type="MunicipalityOffice">
+      <url>http://www.maeyao.go.th/</url>
+      <url status="obsolete">http://www.maeyaomail.com/</url>
+      <officials>
+        <official title="Mayor" name="พงษ์พันธ์ ต๊ะถา" begin="2011-11-27" beginreason="ElectedDirectly" />
+      </officials>
+      <council>
+        <!--<term begin="2014-06-07" type="ThesabanTambon" size="12" comment="Delayed due to coup" />-->
+        <term begin="2010-04-24" end="2014-04-23" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2005-07-31" end="2009-07-30" type="TAO" size="36" />
+        <!-- Mu 18 created 2004-09 -->
+        <!-- Mu 17 created 2003-09 -->
+      </council>
+      <areacoverage>
+        <entity geocode="570106" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-26" status="Done">
+        <meetingreference board="1" date="2009-07-28" number="32" />
+      </statuschange>
     </history>
   </entity>
 </entity>

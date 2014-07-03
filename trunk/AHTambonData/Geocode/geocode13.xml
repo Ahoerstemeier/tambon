@@ -157,23 +157,6 @@
       <symbols>
         <slogan>ถิ่นภูไทรวมเผ่า วัดเก่าแก่งเมือง ลือเลืองไข่ไก่ ชื่นใจละมุดหวาน ทุกฤดูกาลมีหอมแบ่ง</slogan>
       </symbols>
-      <office type="MunicipalityOffice">
-        <symbols>
-          <vision>ตำบลน่าอยู่ การเกษตรก้าวหน้า ประชาชนสุขภาพดี</vision>
-        </symbols>
-        <url>http://www.baanklang.go.th/</url>
-        <officials>
-          <official title="Mayor" name="สายัณ นพขำ" begin="2012-03-11" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ไล่ คำเหลา" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-03-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2007-09-30" end="2011-09-29" type="TAO" size="10" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done" />
-        </history>
-      </office>
       <entity type="Muban" geocode="13010301" name="บ้านทุ่งตาล" english="Ban Thung Tan" />
       <entity type="Muban" geocode="13010302" name="บ้านใหม่" english="Ban Mai" />
       <entity type="Muban" geocode="13010303" name="บ้านมะขาม" english="Ban Makham" />
@@ -1939,6 +1922,28 @@
       </statuschange>
     </history>
   </entity>
+  <entity type="ThesabanTambon" name="บ้านกลาง" english="Ban Klang" geocode="1381" tambon="130103">
+    <office type="MunicipalityOffice">
+      <symbols>
+        <vision>ตำบลน่าอยู่ การเกษตรก้าวหน้า ประชาชนสุขภาพดี</vision>
+      </symbols>
+      <url>http://www.baanklang.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สายัณ นพขำ" begin="2012-03-11" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="ไล่ คำเหลา" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-03-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2007-09-30" end="2011-09-29" type="TAO" size="10" />
+      </council>
+      <areacoverage>
+        <entity geocode="130103" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done" />
+    </history>
+  </entity>
 
-  <entity type="SakhaTambon" name="คูคต" geocode="1351" english="Khu Khot" parent="1306" />
+  <entity type="SakhaTambon" name="คูคต" geocode="1351" english="Khu Khot" parent="1306" obsolete="1" />
 </entity>
