@@ -818,7 +818,7 @@
           <facebook>https://www.facebook.com/pafaeksao/</facebook>
         </socialweb>
         <officials>
-          <official title="TAOMayor" name="มานพ คำจั่นป้อ" inoffice="2014"/>
+          <official title="TAOMayor" name="มานพ คำจั่นป้อ" inoffice="2014" />
           <official title="TAOMayor" name="เพชรนิล ยิ้มยวน" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
@@ -1438,25 +1438,6 @@
     </office>
     <entity type="Tambon" name="เมืองสวรรคโลก" english="Mueang Sawankhalok" geocode="640701" />
     <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="640702">
-      <office type="MunicipalityOffice">
-        <url lastchecked="2012-05-11">http://www.naimuangst.go.th/</url>
-        <url status="offline">http://www.naimuang.org/</url>
-        <officials>
-          <official title="Mayor" name="สำราญ หนุนนาค" begin="2012-10-21" beginreason="ElectedDirectly" />
-          <official title="Mayor" name="สำราญ หนุนนาค" begin="2008-09-14" end="2012-09-13" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-          <official title="TAOMayor" name="สำราญ หนุนนาค" begin="2004-07-18" end="2008-07-01" beginreason="ElectedDirectly" endreason="StatusChange" />
-        </officials>
-        <council>
-          <term begin="2012-10-21" type="ThesabanTambon" size="12" />
-          <term begin="2008-09-14" end="2012-09-13" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2004-07-18" end="2008-07-01" type="TAO" size="26" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-01" status="Done">
-            <meetingreference board="2" number="19" date="2008-03-07" />
-          </statuschange>
-        </history>
-      </office>
       <entity type="Muban" geocode="64070201" name="บ้านหางคลอง" english="Ban Hang Khlong" />
       <entity type="Muban" geocode="64070202" name="บ้านในเมือง" english="Ban Nai Mueang" />
       <entity type="Muban" geocode="64070203" name="บ้านคลองหอม" english="Ban Khlong Hom" />
@@ -2169,7 +2150,7 @@
   <entity type="ThesabanMueang" name="ศรีสัชนาลัย" english="Si Satchanalai" geocode="6491" parent="6405">
     <wiki wikidata="Q13025272" />
     <office type="MunicipalityOffice">
-      <dola code="5640509" SML="M"/>
+      <dola code="5640509" SML="M" />
       <!-- Google location: 17.40943, 99.79913 -->
       <!-- Website: 17.415498, 99.815179 - no building there -->
       <url lastchecked="2014-02-26">http://www.sisatcity.go.th/</url>
@@ -2308,6 +2289,30 @@
     </office>
     <history>
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
+        <meetingreference board="2" number="19" date="2008-03-07" />
+      </statuschange>
+    </history>
+  </entity>
+  <entity type="Tambon" name="ในเมือง" english="Nai Mueang" geocode="6484" tambon="640702">
+    <office type="MunicipalityOffice">
+      <url lastchecked="2012-05-11">http://www.naimuangst.go.th/</url>
+      <url status="offline">http://www.naimuang.org/</url>
+      <officials>
+        <official title="Mayor" name="สำราญ หนุนนาค" begin="2012-10-21" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="สำราญ หนุนนาค" begin="2008-09-14" end="2012-09-13" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="สำราญ หนุนนาค" begin="2004-07-18" end="2008-07-01" beginreason="ElectedDirectly" endreason="StatusChange" />
+      </officials>
+      <council>
+        <term begin="2012-10-21" type="ThesabanTambon" size="12" />
+        <term begin="2008-09-14" end="2012-09-13" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-01" type="TAO" size="26" />
+      </council>
+      <areacoverage>
+        <entity geocode="640702" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-01" status="Done">
         <meetingreference board="2" number="19" date="2008-03-07" />
       </statuschange>
     </history>
