@@ -534,6 +534,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private HistoryList historyField;
         
+        private List<LocalGovernmentCoverageEntity> areacoverageField;
+        
         private OfficeType typeField;
         
         private bool obsoleteField;
@@ -546,6 +548,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of Office.
         /// </summary>
         public Office() {
+            this.areacoverageField = new List<LocalGovernmentCoverageEntity>();
             this.historyField = new HistoryList();
             this.oldlocationsField = new List<OldLocation>();
             this.councilField = new List<CouncilTerm>();
@@ -742,6 +745,24 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.historyField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Central government entities covered by the office.
+        /// </summary>
+        /// <value>
+        /// The areacoverage.
+        /// </value>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("entity", IsNullable=false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<LocalGovernmentCoverageEntity> areacoverage {
+            get {
+                return this.areacoverageField;
+            }
+            set {
+                this.areacoverageField = value;
             }
         }
         
@@ -2695,6 +2716,108 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
+    /// Central government entity covered by the office.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LocalGovernmentCoverageEntity", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class LocalGovernmentCoverageEntity {
+        
+        private uint geocodeField;
+        
+        private CoverageType coverageField;
+        
+        private string commentField;
+        
+        /// <summary>
+        /// Creates a new instance of LocalGovernmentCoverageEntity.
+        /// </summary>
+        public LocalGovernmentCoverageEntity() {
+            this.coverageField = CoverageType.unknown;
+        }
+        
+        /// <summary>
+        /// Geocode of entity.
+        /// </summary>
+        /// <value>
+        /// The geocode.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint geocode {
+            get {
+                return this.geocodeField;
+            }
+            set {
+                this.geocodeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Which part of the entity is covered by the office.
+        /// </summary>
+        /// <value>
+        /// The coverage.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(CoverageType.unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CoverageType coverage {
+            get {
+                return this.coverageField;
+            }
+            set {
+                this.coverageField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// What part of the area of the entity is covered by the office.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum CoverageType {
+        
+        /// <summary>
+        /// Unknown or undefined value.
+        /// </summary>
+        unknown,
+        
+        /// <summary>
+        /// Part of the area covered.
+        /// </summary>
+        partially,
+        
+        /// <summary>
+        /// All of the area covered.
+        /// </summary>
+        completely,
+    }
+    
+    /// <summary>
     /// Office types for the administrative entities.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
@@ -2787,6 +2910,44 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.termField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Central government entities covered by the office.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LocalGovernmentCoverage", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class LocalGovernmentCoverage {
+        
+        private List<LocalGovernmentCoverageEntity> entityField;
+        
+        /// <summary>
+        /// Creates a new instance of LocalGovernmentCoverage.
+        /// </summary>
+        public LocalGovernmentCoverage() {
+            this.entityField = new List<LocalGovernmentCoverageEntity>();
+        }
+        
+        /// <summary>
+        /// Central government entity covered by the office.
+        /// </summary>
+        /// <value>
+        /// The entity.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("entity", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<LocalGovernmentCoverageEntity> entity {
+            get {
+                return this.entityField;
+            }
+            set {
+                this.entityField = value;
             }
         }
     }

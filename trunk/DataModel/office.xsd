@@ -817,6 +817,56 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:simpleType name="CoverageType">
+    <xs:annotation>
+      <xs:documentation>What part of the area of the entity is covered by the office.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown or undefined value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="partially">
+        <xs:annotation>
+          <xs:documentation>Part of the area covered.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="completely">
+        <xs:annotation>
+          <xs:documentation>All of the area covered.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LocalGovernmentCoverageEntity">
+    <xs:annotation>
+      <xs:documentation>Central government entity covered by the office.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="required">
+      <xs:annotation>
+        <xs:documentation>Geocode of entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="coverage" type="t:CoverageType" use="optional" default="unknown">
+      <xs:annotation>
+        <xs:documentation>Which part of the entity is covered by the office.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
+  <xs:complexType name="LocalGovernmentCoverage">
+    <xs:annotation>
+      <xs:documentation>Central government entities covered by the office.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:LocalGovernmentCoverageEntity' name='entity'>
+        <xs:annotation>
+          <xs:documentation>Central government entity covered by the office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="ThaiAddressVillage">
     <xs:annotation>
@@ -953,6 +1003,11 @@
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList">
         <xs:annotation>
           <xs:documentation>Administrative changes concerning the office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="areacoverage" type="t:LocalGovernmentCoverage">
+        <xs:annotation>
+          <xs:documentation>Central government entities covered by the office.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
