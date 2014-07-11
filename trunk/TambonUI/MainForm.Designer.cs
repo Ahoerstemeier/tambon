@@ -54,6 +54,7 @@
             this.btnElectionDates = new System.Windows.Forms.Button();
             this.chkAllProvince = new System.Windows.Forms.CheckBox();
             this.btnNayokResign = new System.Windows.Forms.Button();
+            this.btnShowEntityData = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.SuspendLayout();
@@ -326,11 +327,22 @@
             this.btnNayokResign.UseVisualStyleBackColor = true;
             this.btnNayokResign.Click += new System.EventHandler(this.btnNayokResign_Click);
             // 
+            // btnShowEntityData
+            // 
+            this.btnShowEntityData.Location = new System.Drawing.Point(325, 10);
+            this.btnShowEntityData.Name = "btnShowEntityData";
+            this.btnShowEntityData.Size = new System.Drawing.Size(75, 23);
+            this.btnShowEntityData.TabIndex = 60;
+            this.btnShowEntityData.Text = "Show Data";
+            this.btnShowEntityData.UseVisualStyleBackColor = true;
+            this.btnShowEntityData.Click += new System.EventHandler(this.btnShowEntityData_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 425);
+            this.Controls.Add(this.btnShowEntityData);
             this.Controls.Add(this.btnNayokResign);
             this.Controls.Add(this.chkAllProvince);
             this.Controls.Add(this.btnElectionDates);
@@ -393,6 +405,7 @@
         private System.Windows.Forms.Button btnElectionDates;
         private System.Windows.Forms.CheckBox chkAllProvince;
         private System.Windows.Forms.Button btnNayokResign;
+        private System.Windows.Forms.Button btnShowEntityData;
     }
 }
 

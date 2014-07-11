@@ -896,10 +896,10 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btn_Population_Click(object sender, EventArgs e)
         {
-            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 83);
+            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
             downloader.Process();
             var output = XmlManager.EntityToXml<Entity>(downloader.Data);
-            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, "83.xml"), output);
+            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
         }
 
         private void btnNayokResign_Click(object sender, EventArgs e)
@@ -1012,6 +1012,13 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var formElectionDayOfWeek = new StringDisplayForm("Nayok info", result);
             formElectionDayOfWeek.Show();
+        }
+
+        private void btnShowEntityData_Click(object sender, EventArgs e)
+        {
+            var formEntityBrowser = new EntityBrowserForm();
+            formEntityBrowser.StartChangwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
+            formEntityBrowser.Show();
         }
     }
 }
