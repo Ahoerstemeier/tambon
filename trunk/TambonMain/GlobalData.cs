@@ -39,9 +39,9 @@ namespace De.AHoerstemeier.Tambon
         }
 
         public static Entity CountryEntity
-        { 
-            get; 
-            private set; 
+        {
+            get;
+            private set;
         }
 
         /// <summary>
@@ -158,51 +158,52 @@ namespace De.AHoerstemeier.Tambon
         }
 
         public static void LoadPopulationData(PopulationDataSourceType source, Int16 year)
-        { 
-            if (!GlobalData.CountryEntity.population.Any(x => x.Year==year && x.source==source))
+        {
+            if ( !GlobalData.CountryEntity.population.Any(x => x.Year == year && x.source == source) )
             {
-            String filename = String.Empty;
-            switch (source)
-            {
-                case PopulationDataSourceType.Census:
-                    filename=BaseXMLDirectory + "\\population\\census{0}.xml";
-                    break;
-                case PopulationDataSourceType.DOPA: 
-                    filename=BaseXMLDirectory + "\\population\\DOPA{0}.xml";
-                    break;
+                String filename = String.Empty;
+                switch ( source )
+                {
+                    case PopulationDataSourceType.Census:
+                        filename = BaseXMLDirectory + "\\population\\census{0}.xml";
+                        break;
+                    case PopulationDataSourceType.DOPA:
+                        filename = BaseXMLDirectory + "\\population\\DOPA{0}.xml";
+                        break;
+                }
+                filename = String.Format(CultureInfo.InvariantCulture, filename, year);
+                if ( !string.IsNullOrWhiteSpace(filename) )
+                {
+                    LoadPopulationData(filename);
+                }
             }
-            filename = String.Format(CultureInfo.InvariantCulture, filename,year);
-            if (!string.IsNullOrWhiteSpace(filename))
-            {
-                LoadPopulationData(filename);
-            }
-        }
         }
 
         private static void LoadPopulationData(String fileName)
         {
-            var allFlat = CompleteGeocodeList().FlatList();
-                using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+            var allFlat = CompleteGeocodeList().FlatList().Where(x => !x.type.IsCompatibleEntityType(EntityType.Muban)).ToDictionary(x => x.geocode);
+            using ( var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read) )
+            {
+                var data = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
+                var flat = data.FlatList();
+                var dataPoints = flat.Where(x => x.population.Any()).ToList();
+                foreach ( var dataPoint in dataPoints )
                 {
-                    var data = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
-                    var flat = data.FlatList();
-                    foreach (var dataPoint in flat.Where(x => x.population.Any()))
+                    Entity target;
+                    if ( allFlat.TryGetValue(dataPoint.geocode, out target) )
                     {
-                        var target = allFlat.SingleOrDefault(x => x.geocode == dataPoint.geocode);
-                        if (target != null)
+                        foreach ( var populationEntry in dataPoint.population )
                         {
-                            foreach (var populationEntry in dataPoint.population)
+                            if ( !target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate) )
                             {
-                                if (!target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate))
-                                {
-                                    target.population.Add(populationEntry);
-                                }
+                                target.population.Add(populationEntry);
                             }
                         }
                     }
                 }
             }
- 
+        }
+
         public static void LoadPopulationData()
         {
             foreach ( String file in Directory.EnumerateFiles(BaseXMLDirectory + "\\population\\") )
