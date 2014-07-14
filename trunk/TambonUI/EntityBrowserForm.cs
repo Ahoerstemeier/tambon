@@ -90,6 +90,26 @@ namespace De.AHoerstemeier.Tambon.UI
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
             EntityToCentralAdministrativeListView(entity);
+            EntitySubDivisionCount(entity);
+        }
+
+        private void EntitySubDivisionCount(Entity entity)
+        {
+            var toCount = localGovernments.Where(x => x.parent.Contains(entity.geocode)||GeocodeHelper.IsBaseGeocode(entity.geocode,x.geocode)).ToList();
+            toCount.AddRange(entity.FlatList().Where(x => !x.IsObsolete));
+            toCount.RemoveAll(x => x.type == EntityType.Unknown);
+            var counted = toCount.GroupBy(x => x.type).Select(group => new
+            {
+                type = group.Key,
+                count = group.Count()
+            });
+
+            var result = String.Empty;
+            foreach (var keyvaluepair in counted)
+            {
+                result += String.Format("{0}: {1}", keyvaluepair.type, keyvaluepair.count)+Environment.NewLine;
+            }
+            txtSubDivisions.Text = result;
         }
 
         private void EntityToCentralAdministrativeListView(Entity entity)
