@@ -840,26 +840,41 @@ namespace De.AHoerstemeier.Tambon
         public Entity CreateLocalGovernmentDummyEntity()
         {
             Entity result = null;
-            if ( this.type == EntityType.Tambon )
+            if ( this.type == EntityType.Tambon || this.type == EntityType.Changwat )
             {
-                var office = this.office.SingleOrDefault(x => x.type == OfficeType.TAOOffice || x.type == OfficeType.MunicipalityOffice);
+                var office = this.office.SingleOrDefault(x => x.type == OfficeType.TAOOffice || x.type == OfficeType.MunicipalityOffice || x.type == OfficeType.PAOOffice);
                 if ( office != null )
                 {
                     result = new Entity();
                     result.name = this.name;
                     result.english = this.english;
-                    result.geocode = this.geocode + 50;  // see http://tambon.blogspot.com/2009/07/geocodes-for-municipalities-my-proposal.html
+                    if ( this.type == EntityType.Tambon )
+                    {
+                        result.geocode = this.geocode + 50;  // see http://tambon.blogspot.com/2009/07/geocodes-for-municipalities-my-proposal.html
+                    }
+                    else
+                    {
+                        result.geocode = this.geocode * 100 * 100 + 50;
+                    }
                     result.obsolete = office.obsolete;
                     result.parent.Add(this.geocode / 100);
                     if ( office.type == OfficeType.TAOOffice )
                     {
                         result.type = EntityType.TAO;
                     }
+                    else if ( office.type == OfficeType.PAOOffice )
+                    {
+                        result.type = EntityType.PAO;
+                    }
                     else
                     {
                         result.type = EntityType.Thesaban;
                     }
-                    result.tambon = this.geocode;
+                    if ( result.type != EntityType.PAO )
+                    {
+                        result.tambon = this.geocode;
+                        result.tambonSpecified = true;
+                    }
                     result.wiki = office.wiki;
                     result.office.Add(office);
                     // history has latest change at beginning

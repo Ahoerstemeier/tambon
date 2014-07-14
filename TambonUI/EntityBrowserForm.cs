@@ -26,8 +26,8 @@ namespace De.AHoerstemeier.Tambon.UI
             baseEntity = GlobalData.CompleteGeocodeList();
             baseEntity.PropagatePostcodeRecursive();
             var allEntities = baseEntity.FlatList().Where(x => !x.IsObsolete).ToList();
-            var allTambon = allEntities.Where(x => x.type == EntityType.Tambon).ToList();
-            foreach ( var tambon in allTambon )
+            var allLocalGovernmentParents = allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
+            foreach ( var tambon in allLocalGovernmentParents )
             {
                 var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
                 if ( localGovernmentEntity != null )
@@ -70,16 +70,16 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             treeviewSelection.BeginUpdate();
             treeviewSelection.Nodes.Clear();
-            foreach ( var entity in baseEntity.entity.Where(x => !x.IsObsolete) )
+
+            TreeNode baseNode = EntityToTreeNode(baseEntity);
+            treeviewSelection.Nodes.Add(baseNode);
+            baseNode.Expand();
+            foreach ( TreeNode node in baseNode.Nodes )
             {
-                TreeNode baseNode = EntityToTreeNode(entity);
-                if ( baseNode != null )
+                if ( ((Entity)(node.Tag)).geocode == StartChangwatGeocode )
                 {
-                    treeviewSelection.Nodes.Add(baseNode);
-                    if ( entity.geocode == StartChangwatGeocode )
-                    {
-                        treeviewSelection.SelectedNode = baseNode;
-                    }
+                    treeviewSelection.SelectedNode = node;
+                    node.Expand();
                 }
             }
             treeviewSelection.EndUpdate();
@@ -90,14 +90,31 @@ namespace De.AHoerstemeier.Tambon.UI
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
             EntityToCentralAdministrativeListView(entity);
-            EntitySubDivisionCount(entity);
+            EntityToLocalAdministrativeListView(entity);
+            SetInfo(entity);
         }
 
-        private void EntitySubDivisionCount(Entity entity)
+        private void SetInfo(Entity entity)
         {
-            var toCount = localGovernments.Where(x => x.parent.Contains(entity.geocode)||GeocodeHelper.IsBaseGeocode(entity.geocode,x.geocode)).ToList();
-            toCount.AddRange(entity.FlatList().Where(x => !x.IsObsolete));
-            toCount.RemoveAll(x => x.type == EntityType.Unknown);
+            var value = String.Empty;
+            var populationData = entity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
+            if ( populationData != null )
+            {
+                value = String.Format("Population: {0} ({1} male,  {2} female)",
+                    populationData.TotalPopulation.total,
+                    populationData.TotalPopulation.male,
+                    populationData.TotalPopulation.female) + Environment.NewLine + Environment.NewLine;
+            }
+            value += EntitySubDivisionCount(entity) + Environment.NewLine;
+
+            txtSubDivisions.Text = value;
+        }
+
+        private String EntitySubDivisionCount(Entity entity)
+        {
+            var toCount = localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).ToList();
+            toCount.AddRange(entity.FlatList().Where(x => !x.type.IsLocalGovernment()));
+            toCount.RemoveAll(x => x.type == EntityType.Unknown || x.IsObsolete);
             var counted = toCount.GroupBy(x => x.type).Select(group => new
             {
                 type = group.Key,
@@ -105,11 +122,11 @@ namespace De.AHoerstemeier.Tambon.UI
             });
 
             var result = String.Empty;
-            foreach (var keyvaluepair in counted)
+            foreach ( var keyvaluepair in counted )
             {
-                result += String.Format("{0}: {1}", keyvaluepair.type, keyvaluepair.count)+Environment.NewLine;
+                result += String.Format("{0}: {1}", keyvaluepair.type, keyvaluepair.count) + Environment.NewLine;
             }
-            txtSubDivisions.Text = result;
+            return result;
         }
 
         private void EntityToCentralAdministrativeListView(Entity entity)
@@ -128,6 +145,44 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
             listviewCentralAdministration.EndUpdate();
+        }
+
+        private void EntityToLocalAdministrativeListView(Entity entity)
+        {
+            listviewLocalAdministration.BeginUpdate();
+            listviewLocalAdministration.Items.Clear();
+            var localGovernmentsInEntity = localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode) && !x.IsObsolete).ToList();
+            foreach ( Entity subEntity in localGovernmentsInEntity )
+            {
+                ListViewItem item = listviewLocalAdministration.Items.Add(subEntity.english);
+                item.SubItems.Add(subEntity.name);
+                item.SubItems.Add(subEntity.type.ToString());
+                if ( subEntity.geocode > 9999 )
+                {
+                    // generated geocode
+                    item.SubItems.Add(String.Empty);
+                }
+                else
+                {
+                    item.SubItems.Add(subEntity.geocode.ToString());
+                }
+                String dolaCode = String.Empty;
+                var office = subEntity.office.FirstOrDefault(x => x.type == OfficeType.TAOOffice || x.type == OfficeType.PAOOffice || x.type == OfficeType.MunicipalityOffice);
+                if ( office != null )
+                {
+                    if ( (office.dola != null) && (office.dola.codeSpecified) )
+                    {
+                        dolaCode = office.dola.code.ToString();
+                    }
+                }
+                item.SubItems.Add(dolaCode);
+                var populationData = subEntity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
+                if ( populationData != null )
+                {
+                    item.SubItems.Add(populationData.TotalPopulation.total.ToString());
+                }
+            }
+            listviewLocalAdministration.EndUpdate();
         }
 
         public UInt32 StartChangwatGeocode
