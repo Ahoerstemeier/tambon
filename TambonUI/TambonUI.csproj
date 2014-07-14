@@ -68,6 +68,12 @@
     <Compile Include="CreationStatisticForm.designer.cs">
       <DependentUpon>CreationStatisticForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntityBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntityBrowserForm.designer.cs">
+      <DependentUpon>EntityBrowserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="CreationStatisticForm.resx">
       <DependentUpon>CreationStatisticForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntityBrowserForm.resx">
+      <DependentUpon>EntityBrowserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -130,10 +139,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\wikibase.net.git\trunk\Wikibase.NET\WikiBase.csproj">
+    <ProjectReference Include="..\..\wikibase.net\branches\rework\Wikibase.NET\WikiBase.csproj">
       <Project>{fc9f81dc-20ad-4fe5-9ea1-dab417f947ea}</Project>
       <Name>WikiBase</Name>
     </ProjectReference>
