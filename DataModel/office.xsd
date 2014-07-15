@@ -802,6 +802,13 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:simpleType name="DolaCodeList">
+    <xs:annotation>
+      <xs:documentation>List of DOLA codes.</xs:documentation>
+    </xs:annotation>
+    <xs:list itemType="xs:unsignedInt"></xs:list>
+  </xs:simpleType>
+
   <xs:complexType name="LocalAdministrationData">
     <xs:annotation>
       <xs:documentation>Data defined by the Department of Local Administration (DOLA).</xs:documentation>
@@ -816,6 +823,12 @@
         <xs:documentation>Categorization of the entity in the SML system.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="oldcodes" use="optional" type="t:DolaCodeList">
+      <xs:annotation>
+        <xs:documentation>DOLA code for the entitiy.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:simpleType name="CoverageType">
     <xs:annotation>

@@ -852,10 +852,15 @@ namespace De.AHoerstemeier.Tambon {
         
         private SmallMediumLarge sMLField;
         
+        private List<uint> oldcodesField;
+        
+        private string commentField;
+        
         /// <summary>
         /// Creates a new instance of LocalAdministrationData.
         /// </summary>
         public LocalAdministrationData() {
+            this.oldcodesField = new List<uint>();
             this.sMLField = SmallMediumLarge.Undefined;
         }
         
@@ -908,6 +913,40 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.sMLField = value;
+            }
+        }
+        
+        /// <summary>
+        /// DOLA code for the entitiy.
+        /// </summary>
+        /// <value>
+        /// The oldcodes.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<uint> oldcodes {
+            get {
+                return this.oldcodesField;
+            }
+            set {
+                this.oldcodesField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
             }
         }
     }
