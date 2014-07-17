@@ -626,14 +626,15 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name='OfficialList'>
+  <xs:complexType name="OfficialList">
     <xs:annotation>
       <xs:documentation>List of leaders of the administrative entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:choice minOccurs="0" maxOccurs='unbounded'>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="official" minOccurs="1" maxOccurs="1" type="t:OfficialEntry" />
         <xs:element name="officialterm" minOccurs="1" maxOccurs="1" type="t:OfficialEntryUnnamed" />
+        <xs:element name="election" minOccurs="1" maxOccurs="1" type="t:CanceledElection" />
       </xs:choice>
       <xs:element name="reference" minOccurs="0" maxOccurs="1" type="t:ReferenceList">
         <xs:annotation>
@@ -643,7 +644,19 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name='CouncilTerm'>
+  <xs:complexType name="CanceledElection">
+    <xs:annotation>
+      <xs:documentation>Election date set already, but election not taking place.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="date" type="xs:date" use="required">
+      <xs:annotation>
+        <xs:documentation>Election date.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <!-- TODO: Election cancel reason -->
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
+  <xs:complexType name="CouncilTerm">
     <xs:annotation>
       <xs:documentation>Term of the council of the administrative entity.</xs:documentation>
     </xs:annotation>
@@ -688,12 +701,15 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name='CouncilList'>
+  <xs:complexType name="CouncilList">
     <xs:annotation>
       <xs:documentation>List of council terms of the administrative entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="term" minOccurs="0" maxOccurs="unbounded" type="t:CouncilTerm" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="1" maxOccurs="1" name="term" type="t:CouncilTerm" />
+        <xs:element minOccurs="1" maxOccurs="1" name="election" type="t:CanceledElection" />
+      </xs:choice>
     </xs:sequence>
   </xs:complexType>
 
@@ -749,32 +765,32 @@
       <xs:documentation>Symbols of an entity.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:Emblem' name='emblem'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:Emblem" name="emblem">
         <xs:annotation>
           <xs:documentation>Emblem (ตรา) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:VisionSlogan' name='slogan'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:VisionSlogan" name="slogan">
         <xs:annotation>
           <xs:documentation>Slogan (คำขวัญ) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:VisionSlogan' name='vision'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:VisionSlogan" name="vision">
         <xs:annotation>
           <xs:documentation>Vision statement (วิสัยทัศน์) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:VisionSlogan' name='mission'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:VisionSlogan" name="mission">
         <xs:annotation>
           <xs:documentation>Mission statement (พันธะกิจ) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:VisionSlogan' name='goal'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:VisionSlogan" name="goal">
         <xs:annotation>
           <xs:documentation>Goal (เป้าหมาย) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:VisionSlogan' name='song'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:VisionSlogan" name="song">
         <xs:annotation>
           <xs:documentation>Text of the song (เพลงประจำจังหวัด) of the entity.</xs:documentation>
         </xs:annotation>
@@ -813,7 +829,7 @@
     <xs:annotation>
       <xs:documentation>Data defined by the Department of Local Administration (DOLA).</xs:documentation>
     </xs:annotation>
-    <xs:attribute name="code" use="optional" type="xs:int">
+    <xs:attribute name="code" use="optional" type="xs:unsignedInt">
       <xs:annotation>
         <xs:documentation>DOLA code for the entitiy.</xs:documentation>
       </xs:annotation>
@@ -873,7 +889,7 @@
       <xs:documentation>Central government entities covered by the office.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type='t:LocalGovernmentCoverageEntity' name='entity'>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:LocalGovernmentCoverageEntity" name="entity">
         <xs:annotation>
           <xs:documentation>Central government entity covered by the office.</xs:documentation>
         </xs:annotation>
@@ -958,17 +974,17 @@
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
-  <xs:complexType name='Office'>
+  <xs:complexType name="Office">
     <xs:annotation>
       <xs:documentation>Administrative office(s) for the administrative subdivision.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" type='t:Symbols' name='symbols'>
+      <xs:element minOccurs="0" maxOccurs="1" type="t:Symbols" name="symbols">
         <xs:annotation>
           <xs:documentation>Symbols, slogan and vision statements of the office.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs='0' maxOccurs='1' type='t:LocalAdministrationData' name='dola'>
+      <xs:element minOccurs="0" maxOccurs="1" type="t:LocalAdministrationData" name="dola">
         <xs:annotation>
           <xs:documentation>Local administration data.</xs:documentation>
         </xs:annotation>

@@ -92,6 +92,64 @@ namespace De.AHoerstemeier.Tambon.UI
             EntityToCentralAdministrativeListView(entity);
             EntityToLocalAdministrativeListView(entity);
             SetInfo(entity);
+            CheckForErrors(entity);
+        }
+
+        private void CheckForErrors(Entity entity)
+        {
+            var text = String.Empty;
+            var wrongGeocodes = entity.WrongGeocodes();
+            if ( wrongGeocodes.Any() )
+            {
+                text += "Wrong geocodes:" + Environment.NewLine;
+                foreach ( var code in wrongGeocodes )
+                {
+                    text += String.Format(" {0}", code) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            var localGovernmentsInEntity = LocalGovernmentEntitiesOf(entity).ToList();
+            var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null).ToList();
+            var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.Dola.codeSpecified).ToList();
+            var allDolaCodes = entitiesWithDolaCode.Select(x => x.Dola.code).ToList();
+            var duplicateDolaCodes = allDolaCodes.GroupBy(s => s).SelectMany(grp => grp.Skip(1)).ToList();
+            if ( duplicateDolaCodes.Any() )
+            {
+                text += "Duplicate DOLA codes:" + Environment.NewLine;
+                foreach ( var code in duplicateDolaCodes )
+                {
+                    text += String.Format(" {0}", code) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            var invalidDolaCodeEntities = entitiesWithDolaCode.Where(x => !x.DolaCodeValid()).ToList();
+            if ( invalidDolaCodeEntities.Any() )
+            {
+                text += "Invalid DOLA codes:" + Environment.NewLine;
+                foreach ( var dolaEntity in invalidDolaCodeEntities )
+                {
+                    text += String.Format(" {0} {1} ({2})", dolaEntity.Dola.code, dolaEntity.english, dolaEntity.type) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            var localGovernmentCoverages = new List<LocalGovernmentCoverageEntity>();
+            foreach ( var item in localEntitiesWithOffice )
+            {
+                localGovernmentCoverages.AddRange(item.LocalGovernmentAreaCoverage);
+            }
+            var tambonWithMoreThanOneCoverage = localGovernmentCoverages.GroupBy(s => s.geocode).SelectMany(grp => grp.Skip(1)).ToList();
+            var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.coverage == CoverageType.completely);
+            if ( duplicateCompletelyCoveredTambon.Any() )
+            {
+                text += "Tambon coverage wrong:" + Environment.NewLine;
+                foreach ( var code in duplicateCompletelyCoveredTambon )
+                {
+                    text += String.Format(" {0}", code.geocode) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            // check areacoverages
+            txtErrors.Text = text;
         }
 
         private void SetInfo(Entity entity)
@@ -147,11 +205,16 @@ namespace De.AHoerstemeier.Tambon.UI
             listviewCentralAdministration.EndUpdate();
         }
 
+        private IEnumerable<Entity> LocalGovernmentEntitiesOf(Entity entity)
+        {
+            return localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode) && !x.IsObsolete);
+        }
+
         private void EntityToLocalAdministrativeListView(Entity entity)
         {
             listviewLocalAdministration.BeginUpdate();
             listviewLocalAdministration.Items.Clear();
-            var localGovernmentsInEntity = localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode) && !x.IsObsolete).ToList();
+            var localGovernmentsInEntity = LocalGovernmentEntitiesOf(entity).ToList();
             foreach ( Entity subEntity in localGovernmentsInEntity )
             {
                 ListViewItem item = listviewLocalAdministration.Items.Add(subEntity.english);
