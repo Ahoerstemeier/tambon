@@ -41,23 +41,31 @@
             this.listviewLocalAdministration = new System.Windows.Forms.ListView();
             this.columnLocalName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLocalType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalGeocode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalDolaCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalPopulation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnLocalType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabSubdivisionData = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabErrors = new System.Windows.Forms.TabPage();
+            this.txtErrors = new System.Windows.Forms.TextBox();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
+            this.tabSubdivisionData.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabErrors.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubDivisions
             // 
-            this.txtSubDivisions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtSubDivisions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSubDivisions.Location = new System.Drawing.Point(201, 351);
+            this.txtSubDivisions.Location = new System.Drawing.Point(6, 6);
             this.txtSubDivisions.Multiline = true;
             this.txtSubDivisions.Name = "txtSubDivisions";
-            this.txtSubDivisions.Size = new System.Drawing.Size(406, 158);
+            this.txtSubDivisions.Size = new System.Drawing.Size(386, 120);
             this.txtSubDivisions.TabIndex = 13;
             // 
             // treeviewSelection
@@ -104,7 +112,7 @@
             this.columnThai,
             this.columnGeocode,
             this.columnPopulation});
-            this.listviewCentralAdministration.Location = new System.Drawing.Point(-4, 6);
+            this.listviewCentralAdministration.Location = new System.Drawing.Point(-1, 3);
             this.listviewCentralAdministration.Name = "listviewCentralAdministration";
             this.listviewCentralAdministration.Size = new System.Drawing.Size(399, 310);
             this.listviewCentralAdministration.TabIndex = 13;
@@ -171,6 +179,11 @@
             this.columnLocalThai.Text = "Thai";
             this.columnLocalThai.Width = 118;
             // 
+            // columnLocalType
+            // 
+            this.columnLocalType.DisplayIndex = 3;
+            this.columnLocalType.Text = "Type";
+            // 
             // columnLocalGeocode
             // 
             this.columnLocalGeocode.DisplayIndex = 2;
@@ -186,17 +199,57 @@
             this.columnLocalPopulation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnLocalPopulation.Width = 71;
             // 
-            // columnLocalType
+            // tabSubdivisionData
             // 
-            this.columnLocalType.DisplayIndex = 3;
-            this.columnLocalType.Text = "Type";
+            this.tabSubdivisionData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabSubdivisionData.Controls.Add(this.tabPage1);
+            this.tabSubdivisionData.Controls.Add(this.tabErrors);
+            this.tabSubdivisionData.Location = new System.Drawing.Point(201, 351);
+            this.tabSubdivisionData.Name = "tabSubdivisionData";
+            this.tabSubdivisionData.SelectedIndex = 0;
+            this.tabSubdivisionData.Size = new System.Drawing.Size(406, 158);
+            this.tabSubdivisionData.TabIndex = 16;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.txtSubDivisions);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(398, 132);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Subdivisions";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabErrors
+            // 
+            this.tabErrors.Controls.Add(this.txtErrors);
+            this.tabErrors.Location = new System.Drawing.Point(4, 22);
+            this.tabErrors.Name = "tabErrors";
+            this.tabErrors.Padding = new System.Windows.Forms.Padding(3);
+            this.tabErrors.Size = new System.Drawing.Size(398, 132);
+            this.tabErrors.TabIndex = 1;
+            this.tabErrors.Text = "Invalid data";
+            this.tabErrors.UseVisualStyleBackColor = true;
+            // 
+            // txtErrors
+            // 
+            this.txtErrors.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtErrors.Location = new System.Drawing.Point(6, 6);
+            this.txtErrors.Multiline = true;
+            this.txtErrors.Name = "txtErrors";
+            this.txtErrors.Size = new System.Drawing.Size(386, 120);
+            this.txtErrors.TabIndex = 14;
             // 
             // EntityBrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 515);
-            this.Controls.Add(this.txtSubDivisions);
+            this.Controls.Add(this.tabSubdivisionData);
             this.Controls.Add(this.treeviewSelection);
             this.Controls.Add(this.tabSubdivisions);
             this.Name = "EntityBrowserForm";
@@ -205,8 +258,12 @@
             this.tabSubdivisions.ResumeLayout(false);
             this.tabPageCentral.ResumeLayout(false);
             this.tabPageLocal.ResumeLayout(false);
+            this.tabSubdivisionData.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabErrors.ResumeLayout(false);
+            this.tabErrors.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -229,6 +286,10 @@
         private System.Windows.Forms.ColumnHeader columnLocalDolaCode;
         private System.Windows.Forms.ColumnHeader columnLocalPopulation;
         private System.Windows.Forms.ColumnHeader columnLocalType;
+        private System.Windows.Forms.TabControl tabSubdivisionData;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabErrors;
+        private System.Windows.Forms.TextBox txtErrors;
 
     }
 }

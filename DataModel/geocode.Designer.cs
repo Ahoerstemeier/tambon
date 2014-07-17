@@ -1044,6 +1044,7 @@ namespace De.AHoerstemeier.Tambon {
                 this.mubanFieldSpecified = value;
             }
         }
+
     }
     
     /// <summary>

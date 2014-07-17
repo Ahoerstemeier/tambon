@@ -441,8 +441,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( (!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type) )
                 {
-                    officeEntry.officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
-                    var term = officeEntry.officials.Items.FirstOrDefault();
+                    officeEntry.officials.SortByDate();
+                    var term = officeEntry.officials.OfficialTerms.LastOrDefault();
                     if ( term != null )
                     // foreach ( var term in office.council )
                     {
@@ -477,8 +477,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( (!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type) )
                 {
-                    officeEntry.officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
-                    var term = officeEntry.officials.Items.FirstOrDefault();
+                    officeEntry.officials.SortByDate();
+                    var term = officeEntry.officials.OfficialTerms.LastOrDefault();
                     if ( term != null )
                     {
                         var name = String.Empty;
@@ -504,8 +504,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( !officeEntry.obsolete )
                 {
-                    officeEntry.council.Sort((x, y) => x.begin.CompareTo(y.begin));
-                    var term = officeEntry.council.LastOrDefault();
+                    officeEntry.council.SortByDate();
+                    var term = officeEntry.council.CouncilTerms.LastOrDefault();
                     if ( term != null )
                     // foreach ( var term in office.council )
                     {
@@ -533,8 +533,8 @@ namespace De.AHoerstemeier.Tambon
             var result = new List<EntityTermEnd>();
             foreach ( var officeEntry in office )
             {
-                officeEntry.officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
-                var term = officeEntry.officials.Items.FirstOrDefault();
+                officeEntry.officials.SortByDate();
+                var term = officeEntry.officials.OfficialTerms.FirstOrDefault();
                 if ( term != null )
                 // foreach ( var term in office.council )
                 {
@@ -561,8 +561,8 @@ namespace De.AHoerstemeier.Tambon
             var result = new List<EntityTermEnd>();
             foreach ( var officeEntry in office )
             {
-                officeEntry.council.Sort((x, y) => x.begin.CompareTo(y.begin));
-                foreach ( var term in officeEntry.council )
+                officeEntry.council.SortByDate();
+                foreach ( var term in officeEntry.council.CouncilTerms )
                 {
                     DateTime termEnd;
                     if ( term.endSpecified )
@@ -857,7 +857,6 @@ namespace De.AHoerstemeier.Tambon
                         result.geocode = this.geocode * 100 * 100 + 50;
                     }
                     result.obsolete = office.obsolete;
-                    result.parent.Add(this.geocode / 100);
                     if ( office.type == OfficeType.TAOOffice )
                     {
                         result.type = EntityType.TAO;
@@ -870,11 +869,17 @@ namespace De.AHoerstemeier.Tambon
                     {
                         result.type = EntityType.Thesaban;
                     }
-                    if ( result.type != EntityType.PAO )
+                    if ( result.type == EntityType.PAO )
+                    {
+                        result.parent.Add(this.geocode);        // Province
+                    }
+                    else
                     {
                         result.tambon = this.geocode;
                         result.tambonSpecified = true;
+                        result.parent.Add(this.geocode / 100);  // Amphoe
                     }
+
                     result.wiki = office.wiki;
                     result.office.Add(office);
                     // history has latest change at beginning
@@ -919,6 +924,98 @@ namespace De.AHoerstemeier.Tambon
             foreach ( var subEntity in entity )
             {
                 subEntity.SortByGeocodeRecursively();
+            }
+        }
+
+        /// <summary>
+        /// Gets an enumeration of all geocodes which are not set correctly.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<UInt32> WrongGeocodes()
+        {
+            var result = new List<UInt32>();
+            var subGeocodes = entity.Select(x => x.geocode);
+            result.AddRange(subGeocodes.Where(x => !GeocodeHelper.IsBaseGeocode(this.geocode, x)));
+            var duplicates = subGeocodes.GroupBy(s => s).SelectMany(grp => grp.Skip(1));
+            result.AddRange(duplicates);
+            foreach ( var subentity in entity )
+            {
+                result.AddRange(subentity.WrongGeocodes());
+            }
+            return result;
+        }
+
+        public LocalAdministrationData Dola
+        {
+            get
+            {
+                var localOffice = office.FirstOrDefault(y => y.type == OfficeType.MunicipalityOffice || y.type == OfficeType.TAOOffice || y.type == OfficeType.PAOOffice);
+                if ( localOffice != null )
+                {
+                    return localOffice.dola;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public IEnumerable<LocalGovernmentCoverageEntity> LocalGovernmentAreaCoverage
+        {
+            get
+            {
+                var localOffice = office.FirstOrDefault(y => y.type == OfficeType.MunicipalityOffice || y.type == OfficeType.TAOOffice || y.type == OfficeType.PAOOffice);
+                if ( localOffice != null )
+                {
+                    return localOffice.areacoverage;
+                }
+                else
+                {
+                    return new List<LocalGovernmentCoverageEntity>();
+                }
+            }
+        }
+
+        public Boolean DolaCodeValid()
+        {
+            var myDola = Dola;
+            if ( (myDola == null) || (!myDola.codeSpecified) )
+            {
+                return true;  // nothing specified -> valid
+            }
+            else
+            {
+                var result = true;
+                var dolaCodeType = myDola.code / 1000000;
+                switch ( type )
+                {
+                    case EntityType.PAO:
+                        result &= (dolaCodeType == 2);
+                        break;
+                    case EntityType.ThesabanNakhon:
+                        result &= (dolaCodeType == 3);
+                        break;
+                    case EntityType.ThesabanMueang:
+                        result &= (dolaCodeType == 4);
+                        break;
+                    case EntityType.ThesabanTambon:
+                        result &= (dolaCodeType == 5);
+                        break;
+                    case EntityType.TAO:
+                        result &= (dolaCodeType == 6);
+                        break;
+                }
+                UInt32 dolaAmphoe = (myDola.code % 1000000) / 100;
+                if ( type == EntityType.PAO )
+                {
+                    result &= dolaAmphoe == (geocode / 10000) * 100 + 1;  // Amphoe Mueang of province
+                }
+                else
+                {
+                    result &= parent.Contains(dolaAmphoe);
+                }
+                return result;
             }
         }
     }

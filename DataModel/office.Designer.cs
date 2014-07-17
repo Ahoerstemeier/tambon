@@ -528,7 +528,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private OfficialList officialsField;
         
-        private List<CouncilTerm> councilField;
+        private CouncilList councilField;
         
         private List<OldLocation> oldlocationsField;
         
@@ -551,7 +551,7 @@ namespace De.AHoerstemeier.Tambon {
             this.areacoverageField = new List<LocalGovernmentCoverageEntity>();
             this.historyField = new HistoryList();
             this.oldlocationsField = new List<OldLocation>();
-            this.councilField = new List<CouncilTerm>();
+            this.councilField = new CouncilList();
             this.officialsField = new OfficialList();
             this.socialwebField = new SocialWebLinkEntry();
             this.urlField = new List<MyUri>();
@@ -702,10 +702,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The council.
         /// </value>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=8)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("term", IsNullable=false)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<CouncilTerm> council {
+        public CouncilList council {
             get {
                 return this.councilField;
             }
@@ -846,7 +845,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="LocalAdministrationData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class LocalAdministrationData {
         
-        private int codeField;
+        private uint codeField;
         
         private bool codeFieldSpecified;
         
@@ -872,7 +871,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int code {
+        public uint code {
             get {
                 return this.codeField;
             }
@@ -1676,7 +1675,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="OfficialList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class OfficialList {
         
-        private List<OfficialEntryBase> itemsField;
+        private List<object> itemsField;
         
         private List<object> referenceField;
         
@@ -1685,7 +1684,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public OfficialList() {
             this.referenceField = new List<object>();
-            this.itemsField = new List<OfficialEntryBase>();
+            this.itemsField = new List<object>();
         }
         
         /// <summary>
@@ -1694,10 +1693,11 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("election", typeof(CanceledElection), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("official", typeof(OfficialEntry), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("officialterm", typeof(OfficialEntryUnnamed), Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<OfficialEntryBase> Items {
+        public List<object> Items {
             get {
                 return this.itemsField;
             }
@@ -1725,6 +1725,56 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.referenceField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Election date set already, but election not taking place.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CanceledElection", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class CanceledElection {
+        
+        private System.DateTime dateField;
+        
+        private string commentField;
+        
+        /// <summary>
+        /// Election date.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
             }
         }
     }
@@ -2292,6 +2342,45 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="OfficialEntryUnnamed", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class OfficialEntryUnnamed : OfficialEntryBase {
+    }
+    
+    /// <summary>
+    /// List of council terms of the administrative entity.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CouncilList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class CouncilList {
+        
+        private List<object> itemsField;
+        
+        /// <summary>
+        /// Creates a new instance of CouncilList.
+        /// </summary>
+        public CouncilList() {
+            this.itemsField = new List<object>();
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("election", typeof(CanceledElection), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("term", typeof(CouncilTerm), Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
     }
     
     /// <summary>
@@ -2919,38 +3008,6 @@ namespace De.AHoerstemeier.Tambon {
         /// Office of the Region.
         /// </summary>
         RegionOffice,
-    }
-    
-    /// <summary>
-    /// List of council terms of the administrative entity.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CouncilList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class CouncilList {
-        
-        private List<CouncilTerm> termField;
-        
-        /// <summary>
-        /// Creates a new instance of CouncilList.
-        /// </summary>
-        public CouncilList() {
-            this.termField = new List<CouncilTerm>();
-        }
-        
-        [System.Xml.Serialization.XmlElementAttribute("term", Order=0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<CouncilTerm> term {
-            get {
-                return this.termField;
-            }
-            set {
-                this.termField = value;
-            }
-        }
     }
     
     /// <summary>
