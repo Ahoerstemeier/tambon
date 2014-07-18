@@ -209,7 +209,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 itemsWithInvalidCouncilTerms.AddRange(itemsWithInvalidCouncilTermsInChangwat);
                 itemsWithInvalidOfficialTerms.AddRange(itemsWithInvalidOfficialTermsInChangwat);
                 itemsWithoutAnyCouncilTerms.AddRange(itemsWithoutAnyCouncilTermsInChangwat);
-                itemsWithUnexplainedCouncilSizeChanges.AddRange(GlobalData.GetGeocodeList(changwat.geocode).FlatList().Where(entity => entity.office.Any(office => office.council.Any(term => term.sizechangereason == CouncilSizeChangeReason.Unknown))));
+                itemsWithUnexplainedCouncilSizeChanges.AddRange(GlobalData.GetGeocodeList(changwat.geocode).FlatList().Where(entity => entity.office.Any(office => office.council.CouncilTerms.Any(term => term.sizechangereason == CouncilSizeChangeReason.Unknown))));
             }
             var builder = new StringBuilder();
             Int32 count = 0;
@@ -307,8 +307,8 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 foreach ( var office in item.office )
                 {
-                    office.officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
-                    var latestOfficial = office.officials.Items.FirstOrDefault();
+                    office.officials.SortByDate();
+                    var latestOfficial = office.officials.OfficialTerms.LastOrDefault();
                     if ( latestOfficial != null )
                     {
                         DateTime termEnd;
@@ -358,7 +358,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     if ( office.type == OfficeType.MunicipalityOffice | office.type == OfficeType.TAOOffice | office.type == OfficeType.PAOOffice )
                     {
-                        if ( !office.obsolete & !office.council.Any() )
+                        if ( !office.obsolete & !office.council.CouncilTerms.Any() )
                         {
                             result.Add(item);
                         }
@@ -390,10 +390,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 Boolean hasInvalidTermData = false;
                 foreach ( var office in item.office )
                 {
-                    office.council.Sort((x, y) => x.begin.CompareTo(y.begin));
+                    office.council.SortByDate();
 
                     CouncilTerm lastTerm = null;
-                    foreach ( var term in office.council )
+                    foreach ( var term in office.council.CouncilTerms )
                     {
                         hasInvalidTermData = hasInvalidTermData | !term.CouncilSizeValid | !term.TermLengthValid(term.type.TermLength()) | !term.TermDatesValid;
                         if ( lastTerm != null )
@@ -455,7 +455,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 Boolean hasInvalidTermData = false;
                 foreach ( var office in item.office )
                 {
-                    var electedOfficials = office.officials.Items.Where(x => (x.title == OfficialType.TAOMayor | x.title == OfficialType.Mayor | x.title == OfficialType.PAOChairman)).ToList();
+                    var electedOfficials = office.officials.OfficialTerms.Where(x => (x.title == OfficialType.TAOMayor | x.title == OfficialType.Mayor | x.title == OfficialType.PAOChairman)).ToList();
                     electedOfficials.RemoveAll(x => !x.beginSpecified);
                     electedOfficials.Sort((x, y) => x.begin.CompareTo(y.begin));
 
@@ -622,10 +622,10 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 foreach ( var office in item.office )
                 {
-                    office.council.Sort((x, y) => x.begin.CompareTo(y.begin));
+                    office.council.SortByDate();
 
                     CouncilTerm lastTerm = null;
-                    foreach ( var term in office.council )
+                    foreach ( var term in office.council.CouncilTerms )
                     {
                         if ( lastTerm != null )
                         {
@@ -648,7 +648,7 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 foreach ( var office in item.office )
                 {
-                    foreach ( var term in office.council )
+                    foreach ( var term in office.council.CouncilTerms )
                     {
                         counter.IncrementForCount((Int32)term.begin.DayOfWeek, item.geocode);
                     }
@@ -664,7 +664,7 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 foreach ( var office in item.office )
                 {
-                    foreach ( var term in office.council )
+                    foreach ( var term in office.council.CouncilTerms )
                     {
                         var span = term.begin - zeroDate;
                         counter.IncrementForCount(span.Days, item.geocode);
@@ -683,7 +683,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     if ( office.officials != null )
                     {
-                        foreach ( var officialTerm in office.officials.Items )
+                        foreach ( var officialTerm in office.officials.OfficialTerms )
                         {
                             if ( officialTerm.beginreason == OfficialBeginType.ElectedDirectly )
                             {
@@ -911,19 +911,19 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             var allTermEnd = EntitiesWithCouncilTermEndInTimeSpan(changwatGeocode, new DateTime(2013, 9, 1), new DateTime(2013, 9, 30));
-            var allNextElectionNormal = allTermEnd.Where(x => x.Entity.office.First().council.Any(y => y.begin > x.CouncilTerm.end && (y.begin - x.CouncilTerm.end).Days < 60)).ToList();
+            var allNextElectionNormal = allTermEnd.Where(x => x.Entity.office.First().council.CouncilTerms.Any(y => y.begin > x.CouncilTerm.end && (y.begin - x.CouncilTerm.end).Days < 60)).ToList();
             List<EntityTermEnd> processedTermEnds = new List<EntityTermEnd>();
             foreach ( var entry in allTermEnd )
             {
-                entry.Entity.office.First().officials.Items.Sort((x, y) => -x.begin.CompareTo(y.begin));
+                entry.Entity.office.First().officials.SortByDate();
                 processedTermEnds.Add(new EntityTermEnd(
                     entry.Entity,
                     entry.CouncilTerm,
-                    entry.Entity.office.First().officials.Items.FirstOrDefault(y => y.begin == entry.CouncilTerm.begin)));
+                    entry.Entity.office.First().officials.OfficialTerms.FirstOrDefault(y => y.begin == entry.CouncilTerm.begin)));
             }
 
             var nayokTermStartedSameDate = processedTermEnds.Where(x => x.OfficialTerm != null).ToList();
-            var nextElectionNormal = nayokTermStartedSameDate.Where(x => x.Entity.office.First().council.Any(y => y.begin > x.CouncilTerm.end && (y.begin - x.CouncilTerm.end).Days < 60)).ToList();
+            var nextElectionNormal = nayokTermStartedSameDate.Where(x => x.Entity.office.First().council.CouncilTerms.Any(y => y.begin > x.CouncilTerm.end && (y.begin - x.CouncilTerm.end).Days < 60)).ToList();
             var nayokTermEndNormal = nextElectionNormal.Where(x => x.OfficialTerm.end == x.CouncilTerm.end).ToList();
             var nayokTermEndUnknown = nextElectionNormal.Where(x => x.OfficialTerm.end != x.CouncilTerm.end).ToList();
             List<EntityTermEnd> nextNayokElectionEarly = new List<EntityTermEnd>();
@@ -933,8 +933,8 @@ namespace De.AHoerstemeier.Tambon.UI
             List<Entity> nayokElectionFailNormal = new List<Entity>();
             foreach ( var entry in nayokTermEndUnknown )
             {
-                var nextCouncilTerm = entry.Entity.office.First().council.First(y => y.begin > entry.CouncilTerm.end && (y.begin - entry.CouncilTerm.end).Days < 60);
-                var nextNayokTerm = entry.Entity.office.First().officials.Items.FirstOrDefault(y => (y.begin < nextCouncilTerm.begin));
+                var nextCouncilTerm = entry.Entity.office.First().council.CouncilTerms.First(y => y.begin > entry.CouncilTerm.end && (y.begin - entry.CouncilTerm.end).Days < 60);
+                var nextNayokTerm = entry.Entity.office.First().officials.OfficialTerms.LastOrDefault(y => (y.begin < nextCouncilTerm.begin));
                 if ( (nextNayokTerm != null) && (nextNayokTerm.begin.Year == entry.CouncilTerm.end.Year) )
                 {
                     nextNayokElectionEarly.Add(new EntityTermEnd(entry.Entity, nextCouncilTerm, nextNayokTerm));
@@ -955,8 +955,8 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             foreach ( var entry in nayokTermEndNormal )
             {
-                var nextCouncilTerm = entry.Entity.office.First().council.First(y => y.begin > entry.CouncilTerm.end && (y.begin - entry.CouncilTerm.end).Days < 60);
-                var nextOfficial = entry.Entity.office.First().officials.Items.FirstOrDefault(y => (y.begin == nextCouncilTerm.begin)) as OfficialEntry;
+                var nextCouncilTerm = entry.Entity.office.First().council.CouncilTerms.First(y => y.begin > entry.CouncilTerm.end && (y.begin - entry.CouncilTerm.end).Days < 60);
+                var nextOfficial = entry.Entity.office.First().officials.OfficialTerms.LastOrDefault(y => (y.begin == nextCouncilTerm.begin)) as OfficialEntry;
                 var previousOfficial = entry.OfficialTerm as OfficialEntry;
                 if ( (nextOfficial != null) && (previousOfficial != null) )
                 {
