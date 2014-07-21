@@ -46,15 +46,18 @@
             this.columnLocalDolaCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalPopulation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabSubdivisionData = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabSubdivision = new System.Windows.Forms.TabPage();
             this.tabErrors = new System.Windows.Forms.TabPage();
             this.txtErrors = new System.Windows.Forms.TextBox();
+            this.tabElection = new System.Windows.Forms.TabPage();
+            this.txtElections = new System.Windows.Forms.TextBox();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
             this.tabSubdivisionData.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabSubdivision.SuspendLayout();
             this.tabErrors.SuspendLayout();
+            this.tabElection.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubDivisions
@@ -203,24 +206,25 @@
             // 
             this.tabSubdivisionData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabSubdivisionData.Controls.Add(this.tabPage1);
+            this.tabSubdivisionData.Controls.Add(this.tabSubdivision);
             this.tabSubdivisionData.Controls.Add(this.tabErrors);
+            this.tabSubdivisionData.Controls.Add(this.tabElection);
             this.tabSubdivisionData.Location = new System.Drawing.Point(201, 351);
             this.tabSubdivisionData.Name = "tabSubdivisionData";
             this.tabSubdivisionData.SelectedIndex = 0;
             this.tabSubdivisionData.Size = new System.Drawing.Size(406, 158);
             this.tabSubdivisionData.TabIndex = 16;
             // 
-            // tabPage1
+            // tabSubdivision
             // 
-            this.tabPage1.Controls.Add(this.txtSubDivisions);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(398, 132);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Subdivisions";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabSubdivision.Controls.Add(this.txtSubDivisions);
+            this.tabSubdivision.Location = new System.Drawing.Point(4, 22);
+            this.tabSubdivision.Name = "tabSubdivision";
+            this.tabSubdivision.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSubdivision.Size = new System.Drawing.Size(398, 132);
+            this.tabSubdivision.TabIndex = 0;
+            this.tabSubdivision.Text = "Subdivisions";
+            this.tabSubdivision.UseVisualStyleBackColor = true;
             // 
             // tabErrors
             // 
@@ -244,6 +248,28 @@
             this.txtErrors.Size = new System.Drawing.Size(386, 120);
             this.txtErrors.TabIndex = 14;
             // 
+            // tabElection
+            // 
+            this.tabElection.Controls.Add(this.txtElections);
+            this.tabElection.Location = new System.Drawing.Point(4, 22);
+            this.tabElection.Name = "tabElection";
+            this.tabElection.Padding = new System.Windows.Forms.Padding(3);
+            this.tabElection.Size = new System.Drawing.Size(398, 132);
+            this.tabElection.TabIndex = 2;
+            this.tabElection.Text = "Election";
+            this.tabElection.UseVisualStyleBackColor = true;
+            // 
+            // txtElections
+            // 
+            this.txtElections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtElections.Location = new System.Drawing.Point(6, 6);
+            this.txtElections.Multiline = true;
+            this.txtElections.Name = "txtElections";
+            this.txtElections.Size = new System.Drawing.Size(386, 120);
+            this.txtElections.TabIndex = 14;
+            // 
             // EntityBrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,10 +285,12 @@
             this.tabPageCentral.ResumeLayout(false);
             this.tabPageLocal.ResumeLayout(false);
             this.tabSubdivisionData.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabSubdivision.ResumeLayout(false);
+            this.tabSubdivision.PerformLayout();
             this.tabErrors.ResumeLayout(false);
             this.tabErrors.PerformLayout();
+            this.tabElection.ResumeLayout(false);
+            this.tabElection.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -287,9 +315,11 @@
         private System.Windows.Forms.ColumnHeader columnLocalPopulation;
         private System.Windows.Forms.ColumnHeader columnLocalType;
         private System.Windows.Forms.TabControl tabSubdivisionData;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabSubdivision;
         private System.Windows.Forms.TabPage tabErrors;
         private System.Windows.Forms.TextBox txtErrors;
+        private System.Windows.Forms.TabPage tabElection;
+        private System.Windows.Forms.TextBox txtElections;
 
     }
 }

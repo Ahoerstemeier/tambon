@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -93,6 +94,99 @@ namespace De.AHoerstemeier.Tambon.UI
             EntityToLocalAdministrativeListView(entity);
             SetInfo(entity);
             CheckForErrors(entity);
+            CalcElectionData(entity);
+        }
+
+        private void CalcElectionData(Entity entity)
+        {
+            var itemsWithCouncilElectionsPending = new List<EntityTermEnd>();
+            var itemsWithOfficialElectionsPending = new List<EntityTermEnd>();
+            var itemsWithOfficialElectionResultUnknown = new List<EntityTermEnd>();
+
+            var itemsWithCouncilElectionPendingInChangwat = entity.EntitiesWithCouncilElectionPending();
+            itemsWithCouncilElectionsPending.AddRange(itemsWithCouncilElectionPendingInChangwat);
+            itemsWithCouncilElectionsPending.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
+
+            var itemsWithOfficialElectionPendingInChangwat = entity.EntitiesWithOfficialElectionPending();
+            itemsWithOfficialElectionsPending.AddRange(itemsWithOfficialElectionPendingInChangwat);
+            itemsWithOfficialElectionsPending.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
+
+            var itemsWithOfficialElectionResultUnknownInChangwat = entity.EntitiesWithLatestOfficialElectionResultUnknown();
+            itemsWithOfficialElectionResultUnknown.AddRange(itemsWithOfficialElectionResultUnknownInChangwat);
+            itemsWithOfficialElectionResultUnknown.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
+
+            var result = String.Empty;
+            var councilBuilder = new StringBuilder();
+            Int32 councilCount = 0;
+            foreach ( var item in itemsWithCouncilElectionsPending )
+            {
+                DateTime end;
+                if ( item.CouncilTerm.endSpecified )
+                {
+                    end = item.CouncilTerm.end;
+                }
+                else
+                {
+                    end = item.CouncilTerm.begin.AddYears(4).AddDays(-1);
+                }
+                councilBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, end);
+                councilBuilder.AppendLine();
+                councilCount++;
+            }
+            if ( councilCount > 0 )
+            {
+                result +=
+                    String.Format("{0} LAO council elections pending", councilCount) + Environment.NewLine +
+                    councilBuilder.ToString() + Environment.NewLine;
+            }
+
+            var officialBuilder = new StringBuilder();
+            Int32 officialCount = 0;
+            foreach ( var item in itemsWithOfficialElectionsPending )
+            {
+                String officialTermEnd = "unknown";
+                if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )
+                {
+                    DateTime end;
+                    if ( item.OfficialTerm.endSpecified )
+                    {
+                        end = item.OfficialTerm.end;
+                    }
+                    else
+                    {
+                        end = item.OfficialTerm.begin.AddYears(4).AddDays(-1);
+                    }
+                    officialTermEnd = String.Format(CultureInfo.CurrentUICulture, "{0:d}", end);
+                }
+                officialBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2}", item.Entity.english, item.Entity.geocode, officialTermEnd);
+                officialBuilder.AppendLine();
+                officialCount++;
+            }
+            if ( officialCount > 0 )
+            {
+                result +=
+                    String.Format("{0} LAO official elections pending", officialCount) + Environment.NewLine +
+                    officialBuilder.ToString() + Environment.NewLine;
+            }
+
+            var officialUnknownBuilder = new StringBuilder();
+            Int32 officialUnknownCount = 0;
+            foreach ( var item in itemsWithOfficialElectionResultUnknown )
+            {
+                if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )  // must be always true
+                {
+                    officialUnknownBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, item.OfficialTerm.begin);
+                    officialUnknownBuilder.AppendLine();
+                    officialUnknownCount++;
+                }
+            }
+            if ( officialUnknownCount > 0 )
+            {
+                result +=
+                    String.Format("{0} LAO official elections result missing", officialUnknownCount) + Environment.NewLine +
+                    officialUnknownBuilder.ToString() + Environment.NewLine;
+            }
+            txtElections.Text = result;
         }
 
         private void CheckForErrors(Entity entity)
