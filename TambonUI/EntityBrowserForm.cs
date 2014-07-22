@@ -99,20 +99,24 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void CalcElectionData(Entity entity)
         {
+            var localGovernmentsInEntity = LocalGovernmentEntitiesOf(entity);
+            var dummyEntity = new Entity();
+            dummyEntity.entity.AddRange(localGovernmentsInEntity);
+
             var itemsWithCouncilElectionsPending = new List<EntityTermEnd>();
             var itemsWithOfficialElectionsPending = new List<EntityTermEnd>();
             var itemsWithOfficialElectionResultUnknown = new List<EntityTermEnd>();
 
-            var itemsWithCouncilElectionPendingInChangwat = entity.EntitiesWithCouncilElectionPending();
-            itemsWithCouncilElectionsPending.AddRange(itemsWithCouncilElectionPendingInChangwat);
+            var itemsWithCouncilElectionPendingInParent = dummyEntity.EntitiesWithCouncilElectionPending();
+            itemsWithCouncilElectionsPending.AddRange(itemsWithCouncilElectionPendingInParent);
             itemsWithCouncilElectionsPending.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
 
-            var itemsWithOfficialElectionPendingInChangwat = entity.EntitiesWithOfficialElectionPending();
-            itemsWithOfficialElectionsPending.AddRange(itemsWithOfficialElectionPendingInChangwat);
+            var itemsWithOfficialElectionPendingInParent = dummyEntity.EntitiesWithOfficialElectionPending();
+            itemsWithOfficialElectionsPending.AddRange(itemsWithOfficialElectionPendingInParent);
             itemsWithOfficialElectionsPending.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
 
-            var itemsWithOfficialElectionResultUnknownInChangwat = entity.EntitiesWithLatestOfficialElectionResultUnknown();
-            itemsWithOfficialElectionResultUnknown.AddRange(itemsWithOfficialElectionResultUnknownInChangwat);
+            var itemsWithOfficialElectionResultUnknownInParent = dummyEntity.EntitiesWithLatestOfficialElectionResultUnknown();
+            itemsWithOfficialElectionResultUnknown.AddRange(itemsWithOfficialElectionResultUnknownInParent);
             itemsWithOfficialElectionResultUnknown.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
 
             var result = String.Empty;
