@@ -210,6 +210,33 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="TermBeginType">
+    <xs:annotation>
+      <xs:documentation>Ways a council has its concillors selected.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown way of councillor selection.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Election">
+        <xs:annotation>
+          <xs:documentation>Normal election ().</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Appointed">
+        <xs:annotation>
+          <xs:documentation>Councillors appointed by a selection committee.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ExOfficio">
+        <xs:annotation>
+          <xs:documentation>Councillors automatically appointed due to another office position held.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="CouncilSizeChangeReason">
     <xs:annotation>
       <xs:documentation>Reasons why a council has changed its size.</xs:documentation>
@@ -688,6 +715,11 @@
     <xs:attribute name="type" type="t:EntityType" use="required">
       <xs:annotation>
         <xs:documentation>Type of the entity during the term of the council.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="beginreason" type="t:TermBeginType" use="optional" default="Election">
+      <xs:annotation>
+        <xs:documentation>Method by which the councillors were chosen.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="endreason" type="t:TermEndType" use="optional" default="EndOfTerm">
