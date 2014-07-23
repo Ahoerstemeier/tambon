@@ -266,7 +266,7 @@ namespace De.AHoerstemeier.Tambon.UI
             txtSubDivisions.Text = value;
         }
 
-        private String EntitySubDivisionCount(Entity entity)
+        private Dictionary<EntityType,Int32> CountSubdivisions(Entity entity)
         {
             var toCount = localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).ToList();
             toCount.AddRange(entity.FlatList().Where(x => !x.type.IsLocalGovernment()));
@@ -276,11 +276,22 @@ namespace De.AHoerstemeier.Tambon.UI
                 type = group.Key,
                 count = group.Count()
             });
+            var result = new Dictionary<EntityType, Int32>();
+            foreach (var keyvaluepair in counted)
+            {
+                result[keyvaluepair.type] = keyvaluepair.count;
+            }
+            return result;
+         }
+
+        private String EntitySubDivisionCount(Entity entity)
+        {
+            var counted = CountSubdivisions(entity);
 
             var result = String.Empty;
             foreach ( var keyvaluepair in counted )
             {
-                result += String.Format("{0}: {1}", keyvaluepair.type, keyvaluepair.count) + Environment.NewLine;
+                result += String.Format("{0}: {1}", keyvaluepair.Key, keyvaluepair.Value) + Environment.NewLine;
             }
             return result;
         }
@@ -363,5 +374,80 @@ namespace De.AHoerstemeier.Tambon.UI
             get;
             set;
         }
+
+        void treeviewSelection_MouseUp(Object sender, MouseEventArgs e)
+{
+  if(e.Button == MouseButtons.Right)
+  {
+    // Select the clicked node
+    treeviewSelection.SelectedNode = treeviewSelection.GetNodeAt(e.X, e.Y);
+
+    if(treeviewSelection.SelectedNode != null)
+    {
+        contextMenuStrip1.Show(treeviewSelection, e.Location);
+    }
+  }
+}
+
+        private void mnuWikipediaGerman_Click(Object sender, EventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            if (entity.type.IsCompatibleEntityType(EntityType.Amphoe))
+            {
+            String header = "=== Provinzverwaltung ==="+Environment.NewLine;
+            String text = "Der Landkreis {0} ist in {1} Kommunen ''([[Tambon]])'' eingeteilt, die sich weiter in {2} Dörfer ''([[Muban]])'' unterteilen."+Environment.NewLine+Environment.NewLine;
+            String tableHeader =
+                "{{| class=\"wikitable\""+Environment.NewLine+
+                "! Nr."+Environment.NewLine+
+                "! Name"+Environment.NewLine+
+                "! Thai"+Environment.NewLine+
+                "! Muban"+Environment.NewLine+
+                "! Einw.<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Einwohnerstatistik {1}}}}}</ref>"+Environment.NewLine;
+            String tableEntry = "|-"+Environment.NewLine+
+                "||{0}.||{1}||{{{{lang|th|{2}}}}}||{3}||{4}"+Environment.NewLine;
+            String tableFooter = "|}" + Environment.NewLine;
+
+            var counted = CountSubdivisions(entity);
+            String result =
+                header +
+                String.Format(text, entity.english, counted[EntityType.Tambon], counted[EntityType.Muban]) +
+                String.Format(tableHeader, "url", PopulationReferenceYear);
+            foreach (var tambon in entity.entity.Where(x => x.type==EntityType.Tambon && !x.IsObsolete))
+            {
+                var subCounted = CountSubdivisions(tambon);
+                var muban = 0;
+                if (!subCounted.TryGetValue(EntityType.Muban,out muban))
+                {
+                    muban = 0;
+                }
+                var citizen = 0;
+                var populationData = tambon.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
+                if ( populationData != null )
+                {
+                    citizen=populationData.TotalPopulation.total;
+                }
+                var geocodeString = (tambon.geocode % 100).ToString();
+                if (entity.geocode % 100 < 10)
+                {
+                    geocodeString = "{{0}}" + geocodeString;
+                }
+                String mubanString;
+                if (muban == 0)
+                {
+                    mubanString = "-";
+                }
+                else if (muban < 10)
+                { mubanString = "{0}" + muban.ToString(); }
+                else
+                { mubanString = muban.ToString(); }
+                var citizenString = citizen.ToString("#,0");
+                result += String.Format(tableEntry, geocodeString, tambon.english, tambon.name, mubanString, citizenString);
+            }
+            result += tableFooter;
+            Clipboard.Clear();
+            Clipboard.SetText(result);
+        }}
+
     }
 }
