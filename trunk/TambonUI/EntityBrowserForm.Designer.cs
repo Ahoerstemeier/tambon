@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtSubDivisions = new System.Windows.Forms.TextBox();
             this.treeviewSelection = new System.Windows.Forms.TreeView();
             this.tabSubdivisions = new System.Windows.Forms.TabControl();
@@ -51,6 +52,8 @@
             this.txtErrors = new System.Windows.Forms.TextBox();
             this.tabElection = new System.Windows.Forms.TabPage();
             this.txtElections = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuWikipediaGerman = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
@@ -58,6 +61,7 @@
             this.tabSubdivision.SuspendLayout();
             this.tabErrors.SuspendLayout();
             this.tabElection.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubDivisions
@@ -80,6 +84,7 @@
             this.treeviewSelection.Size = new System.Drawing.Size(192, 506);
             this.treeviewSelection.TabIndex = 11;
             this.treeviewSelection.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeviewSelection_AfterSelect);
+            this.treeviewSelection.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeviewSelection_MouseUp);
             // 
             // tabSubdivisions
             // 
@@ -270,6 +275,20 @@
             this.txtElections.Size = new System.Drawing.Size(386, 120);
             this.txtElections.TabIndex = 14;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuWikipediaGerman});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(151, 26);
+            // 
+            // mnuWikipediaGerman
+            // 
+            this.mnuWikipediaGerman.Name = "mnuWikipediaGerman";
+            this.mnuWikipediaGerman.Size = new System.Drawing.Size(150, 22);
+            this.mnuWikipediaGerman.Text = "Wikipedia (de)";
+            this.mnuWikipediaGerman.Click += new System.EventHandler(this.mnuWikipediaGerman_Click);
+            // 
             // EntityBrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +310,7 @@
             this.tabErrors.PerformLayout();
             this.tabElection.ResumeLayout(false);
             this.tabElection.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -320,6 +340,8 @@
         private System.Windows.Forms.TextBox txtErrors;
         private System.Windows.Forms.TabPage tabElection;
         private System.Windows.Forms.TextBox txtElections;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuWikipediaGerman;
 
     }
 }
