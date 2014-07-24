@@ -102,13 +102,13 @@ namespace De.AHoerstemeier.Tambon
 
         // 0 -> year - 2500
         // 1 -> geocode, 4 digits
-        private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType=1&year={0}&rcode={1}";
+        private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType=1&year={0}&rcode={1}";
 
         private const String _urlDataAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType=1&year={0}&rcode={1}";
 
         // 0 -> year - 2500
         // 1 -> geocode, 2 digits
-        private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType=1&year={0}&rcode={1}";
+        private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType=1&year={0}&rcode={1}";
 
         private const String _urlDataChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType=1&year={0}&rcode={1}";
 
@@ -131,15 +131,43 @@ namespace De.AHoerstemeier.Tambon
         #region public methods
 
         /// <summary>
+        /// Gets the Wikipedia citation string for the current data element.
+        /// </summary>
+        /// <param name="geocode">Geocode of province.</param>
+        /// <param name="year">Year (4 digit in western style).</param>
+        /// <param name="language">Language.</param>
+        /// <returns>Wikipedia reference string.</returns>
+        public static String WikipediaReference(UInt32 geocode, Int32 year, Language language)
+        {
+            var _yearShort = (year + 543) % 100;
+            String result = String.Empty;
+            switch ( language )
+            {
+                case Language.English:
+                    result = String.Format(CultureInfo.InvariantCulture,
+                        "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Population statistics {1}}}}}</ref>",
+                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year);
+                    break;
+                case Language.German:
+                    result = String.Format(CultureInfo.InvariantCulture,
+                        "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Einwohnerstatistik {1}}}}}</ref>",
+                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year);
+                    break;
+                case Language.Thai:
+                    break;
+                default:
+                    break;
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Gets the (english) Wikipedia citation string for the current data element.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Wikipedia reference string.</returns>
         public String WikipediaReference()
         {
-            String result = String.Format(CultureInfo.InvariantCulture,
-                "<ref>{{cite web|url={0}|publisher=Department of Provincial Administration|title=Population statistics {1}}}</ref>",
-                String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, _geocode), Year);
-            return result;
+            return WikipediaReference(_geocode, Year, Language.English);
         }
 
         /// <summary>
