@@ -55,8 +55,10 @@
             this.chkAllProvince = new System.Windows.Forms.CheckBox();
             this.btnNayokResign = new System.Windows.Forms.Button();
             this.btnShowEntityData = new System.Windows.Forms.Button();
+            this.grpTesting = new System.Windows.Forms.GroupBox();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
+            this.grpTesting.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_LoadGazetteXML
@@ -80,7 +82,7 @@
             // 
             // btn_PopulationAllProvinces
             // 
-            this.btn_PopulationAllProvinces.Location = new System.Drawing.Point(419, 303);
+            this.btn_PopulationAllProvinces.Location = new System.Drawing.Point(230, 48);
             this.btn_PopulationAllProvinces.Name = "btn_PopulationAllProvinces";
             this.btn_PopulationAllProvinces.Size = new System.Drawing.Size(75, 23);
             this.btn_PopulationAllProvinces.TabIndex = 44;
@@ -89,7 +91,7 @@
             // 
             // btnCreateKml
             // 
-            this.btnCreateKml.Location = new System.Drawing.Point(197, 361);
+            this.btnCreateKml.Location = new System.Drawing.Point(8, 106);
             this.btnCreateKml.Name = "btnCreateKml";
             this.btnCreateKml.Size = new System.Drawing.Size(99, 23);
             this.btnCreateKml.TabIndex = 43;
@@ -100,7 +102,7 @@
             // btn_GazetteShowAll
             // 
             this.btn_GazetteShowAll.Enabled = false;
-            this.btn_GazetteShowAll.Location = new System.Drawing.Point(419, 274);
+            this.btn_GazetteShowAll.Location = new System.Drawing.Point(230, 19);
             this.btn_GazetteShowAll.Name = "btn_GazetteShowAll";
             this.btn_GazetteShowAll.Size = new System.Drawing.Size(75, 23);
             this.btn_GazetteShowAll.TabIndex = 42;
@@ -109,7 +111,7 @@
             // 
             // btn_CheckForNews
             // 
-            this.btn_CheckForNews.Location = new System.Drawing.Point(197, 332);
+            this.btn_CheckForNews.Location = new System.Drawing.Point(8, 77);
             this.btn_CheckForNews.Name = "btn_CheckForNews";
             this.btn_CheckForNews.Size = new System.Drawing.Size(112, 23);
             this.btn_CheckForNews.TabIndex = 41;
@@ -119,7 +121,7 @@
             // btn_GazetteShow
             // 
             this.btn_GazetteShow.Enabled = false;
-            this.btn_GazetteShow.Location = new System.Drawing.Point(334, 274);
+            this.btn_GazetteShow.Location = new System.Drawing.Point(145, 19);
             this.btn_GazetteShow.Name = "btn_GazetteShow";
             this.btn_GazetteShow.Size = new System.Drawing.Size(79, 23);
             this.btn_GazetteShow.TabIndex = 40;
@@ -128,7 +130,7 @@
             // 
             // btn_GazetteLoadAll
             // 
-            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(419, 10);
+            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(193, 77);
             this.btn_GazetteLoadAll.Name = "btn_GazetteLoadAll";
             this.btn_GazetteLoadAll.Size = new System.Drawing.Size(112, 23);
             this.btn_GazetteLoadAll.TabIndex = 39;
@@ -139,7 +141,7 @@
             // btn_PopulationAll
             // 
             this.btn_PopulationAll.Enabled = false;
-            this.btn_PopulationAll.Location = new System.Drawing.Point(315, 303);
+            this.btn_PopulationAll.Location = new System.Drawing.Point(126, 48);
             this.btn_PopulationAll.Name = "btn_PopulationAll";
             this.btn_PopulationAll.Size = new System.Drawing.Size(98, 23);
             this.btn_PopulationAll.TabIndex = 38;
@@ -157,7 +159,7 @@
             // 
             // edtYear
             // 
-            this.edtYear.Location = new System.Drawing.Point(12, 277);
+            this.edtYear.Location = new System.Drawing.Point(252, 12);
             this.edtYear.Maximum = new decimal(new int[] {
             2008,
             0,
@@ -179,7 +181,7 @@
             // 
             // btn_Population
             // 
-            this.btn_Population.Location = new System.Drawing.Point(197, 303);
+            this.btn_Population.Location = new System.Drawing.Point(8, 48);
             this.btn_Population.Name = "btn_Population";
             this.btn_Population.Size = new System.Drawing.Size(112, 23);
             this.btn_Population.TabIndex = 35;
@@ -269,11 +271,11 @@
             // 
             // btnMubanHelper
             // 
-            this.btnMubanHelper.Location = new System.Drawing.Point(143, 177);
+            this.btnMubanHelper.Location = new System.Drawing.Point(147, 177);
             this.btnMubanHelper.Name = "btnMubanHelper";
-            this.btnMubanHelper.Size = new System.Drawing.Size(75, 23);
+            this.btnMubanHelper.Size = new System.Drawing.Size(95, 23);
             this.btnMubanHelper.TabIndex = 54;
-            this.btnMubanHelper.Text = "Muban helper";
+            this.btnMubanHelper.Text = "Muban to XML";
             this.btnMubanHelper.UseVisualStyleBackColor = true;
             this.btnMubanHelper.Click += new System.EventHandler(this.btnMubanHelper_Click);
             // 
@@ -289,7 +291,7 @@
             // 
             // btnWikiData
             // 
-            this.btnWikiData.Location = new System.Drawing.Point(315, 361);
+            this.btnWikiData.Location = new System.Drawing.Point(126, 106);
             this.btnWikiData.Name = "btnWikiData";
             this.btnWikiData.Size = new System.Drawing.Size(75, 23);
             this.btnWikiData.TabIndex = 56;
@@ -319,7 +321,7 @@
             // 
             // btnNayokResign
             // 
-            this.btnNayokResign.Location = new System.Drawing.Point(380, 68);
+            this.btnNayokResign.Location = new System.Drawing.Point(266, 126);
             this.btnNayokResign.Name = "btnNayokResign";
             this.btnNayokResign.Size = new System.Drawing.Size(99, 23);
             this.btnNayokResign.TabIndex = 59;
@@ -337,16 +339,35 @@
             this.btnShowEntityData.UseVisualStyleBackColor = true;
             this.btnShowEntityData.Click += new System.EventHandler(this.btnShowEntityData_Click);
             // 
+            // grpTesting
+            // 
+            this.grpTesting.Controls.Add(this.btn_GazetteShow);
+            this.grpTesting.Controls.Add(this.btn_Population);
+            this.grpTesting.Controls.Add(this.btn_PopulationAll);
+            this.grpTesting.Controls.Add(this.btn_CheckForNews);
+            this.grpTesting.Controls.Add(this.btn_GazetteShowAll);
+            this.grpTesting.Controls.Add(this.btnWikiData);
+            this.grpTesting.Controls.Add(this.btnCreateKml);
+            this.grpTesting.Controls.Add(this.btn_PopulationAllProvinces);
+            this.grpTesting.Controls.Add(this.btn_GazetteLoadAll);
+            this.grpTesting.Enabled = false;
+            this.grpTesting.Location = new System.Drawing.Point(18, 244);
+            this.grpTesting.Name = "grpTesting";
+            this.grpTesting.Size = new System.Drawing.Size(329, 157);
+            this.grpTesting.TabIndex = 61;
+            this.grpTesting.TabStop = false;
+            this.grpTesting.Text = "Testing only";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 425);
+            this.ClientSize = new System.Drawing.Size(420, 415);
+            this.Controls.Add(this.grpTesting);
             this.Controls.Add(this.btnShowEntityData);
             this.Controls.Add(this.btnNayokResign);
             this.Controls.Add(this.chkAllProvince);
             this.Controls.Add(this.btnElectionDates);
-            this.Controls.Add(this.btnWikiData);
             this.Controls.Add(this.btnPendingElections);
             this.Controls.Add(this.btnMubanHelper);
             this.Controls.Add(this.btnElectionWeekday);
@@ -358,21 +379,14 @@
             this.Controls.Add(this.btnCreationStatistics);
             this.Controls.Add(this.btnCheckTerms);
             this.Controls.Add(this.btnCheckNames);
-            this.Controls.Add(this.btn_PopulationAllProvinces);
-            this.Controls.Add(this.btnCreateKml);
-            this.Controls.Add(this.btn_GazetteShowAll);
-            this.Controls.Add(this.btn_CheckForNews);
-            this.Controls.Add(this.btn_GazetteShow);
-            this.Controls.Add(this.btn_GazetteLoadAll);
-            this.Controls.Add(this.btn_PopulationAll);
             this.Controls.Add(this.cbxChangwat);
             this.Controls.Add(this.edtYear);
-            this.Controls.Add(this.btn_Population);
             this.Controls.Add(btn_LoadGazetteXML);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).EndInit();
+            this.grpTesting.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,6 +420,7 @@
         private System.Windows.Forms.CheckBox chkAllProvince;
         private System.Windows.Forms.Button btnNayokResign;
         private System.Windows.Forms.Button btnShowEntityData;
+        private System.Windows.Forms.GroupBox grpTesting;
     }
 }
 

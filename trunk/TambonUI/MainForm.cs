@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -35,6 +36,17 @@ namespace De.AHoerstemeier.Tambon.UI
             //PopulationDataDownloader.OutputDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\output\\";
 
             PopulationDataDownloader.OutputDirectory = @"C:\Users\Ahoerstemeier.AACHEN\Documents\Thailand\DOPA\XmlOut";
+
+            Boolean allowTestFeatures =false;
+            try
+            {
+            var allowTestFeaturesConfig = ConfigurationManager.AppSettings["AllowTestFeatures"];
+                allowTestFeatures=Convert.ToBoolean(allowTestFeaturesConfig);
+            }
+            catch (FormatException)
+            {}
+
+            grpTesting.Enabled = allowTestFeatures;
         }
 
         private void FillChangwatDropDown()
@@ -1018,6 +1030,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var formEntityBrowser = new EntityBrowserForm();
             formEntityBrowser.StartChangwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
+            formEntityBrowser.PopulationReferenceYear = Convert.ToInt16(edtYear.Value);
             formEntityBrowser.Show();
         }
     }
