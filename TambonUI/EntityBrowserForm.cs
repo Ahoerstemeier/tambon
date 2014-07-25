@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Wikibase;
 
 namespace De.AHoerstemeier.Tambon.UI
 {
@@ -433,11 +434,17 @@ namespace De.AHoerstemeier.Tambon.UI
                 String tambonCompletePlural = "den kompletten Tambon {0}";
                 String tambonPartiallyPlural = "den Teilen der Tambon {0}";
 
+                var allEntities = entity.entity.ToList();
+                var local = LocalGovernmentEntitiesOf(entity).Where(x => !x.IsObsolete);
+                allEntities.AddRange(local);
+                var wikipediaLinks = RetrieveWikpediaLinks(allEntities, Language.German);
+            
                 var counted = CountSubdivisions(entity);
                 String result =
                     header +
                     String.Format(germanCulture, text, entity.english, counted[EntityType.Tambon], counted[EntityType.Muban]) +
                     String.Format(germanCulture, tableHeader, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.German));
+                
                 var maxPopulation = 0;
                 foreach ( var tambon in entity.entity.Where(x => x.type == EntityType.Tambon && !x.IsObsolete) )
                 {
@@ -485,13 +492,18 @@ namespace De.AHoerstemeier.Tambon.UI
                     {
                         citizenString = "{{0}}" + citizenString;
                     }
-
-                    result += String.Format(germanCulture, tableEntry, geocodeString, tambon.english, tambon.name, mubanString, citizenString);
+                    var english = tambon.english;
+                    var link = String.Empty;
+                    if (wikipediaLinks.TryGetValue(tambon, out link))
+                    {
+                        english = WikiLink(link, english);
+                    }
+                    result += String.Format(germanCulture, tableEntry, geocodeString, english, tambon.name, mubanString, citizenString);
                 }
                 result += tableFooter + Environment.NewLine;
 
                 result += headerLocal;
-                var local = LocalGovernmentEntitiesOf(entity).Where(x => !x.IsObsolete);
+
                 var localTypes = CountSubdivisions(local);
                 var check = new List<EntityType>()
                 {
@@ -515,7 +527,13 @@ namespace De.AHoerstemeier.Tambon.UI
                         }
                         foreach ( var localEntity in local.Where(x => x.type == entityType) )
                         {
-                            result += String.Format(germanCulture, entryLocal, localEntity.english, localEntity.FullName);
+                            var english = localEntity.english;
+                            var link = String.Empty;
+                            if (wikipediaLinks.TryGetValue(localEntity, out link))
+                            {
+                                english = WikiLink(link, english);
+                            }
+                            result += String.Format(germanCulture, entryLocal, english, localEntity.FullName);
                             if ( localEntity.LocalGovernmentAreaCoverage.Any() )
                             {
                                 var coverage = localEntity.LocalGovernmentAreaCoverage.GroupBy(x => x.coverage).Select(group => new
@@ -574,6 +592,52 @@ namespace De.AHoerstemeier.Tambon.UI
                 Clipboard.Clear();
                 Clipboard.SetText(result);
             }
+        }
+
+        private String WikiLink(String link, String title)
+        {
+            if (link == title)
+            {
+                return "[[" + title + "]]";
+            }
+            else 
+            {
+                return "[[" + link + "|" + title + "]]";
+            }
+        }
+
+        private Dictionary<Entity,String> RetrieveWikpediaLinks(IEnumerable<Entity> entities, Language language)
+        {
+            var result = new Dictionary<Entity, String>();
+            var api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
+            var helper = new WikiDataHelper(api);
+            foreach (var entity in entities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)))
+            {
+                var item = helper.GetWikiDataItemForEntity(entity);
+                if (item != null)
+                {
+                    var links = item.getSitelinks();
+                    String languageLink;
+                    String wikiIdentifier = String.Empty;
+                    switch (language)
+                    {
+                        case Language.German:
+                            wikiIdentifier = "dewiki";
+                            break;
+                        case Language.English:
+                            wikiIdentifier = "enwiki";
+                            break;
+                        case Language.Thai:
+                            wikiIdentifier = "thwiki";
+                            break;
+                    }
+                    if (item.getSitelinks().TryGetValue(wikiIdentifier, out languageLink))
+                    {
+                        result[entity] = languageLink;
+                    }
+                }
+            }
+            return result;
         }
     }
 }
