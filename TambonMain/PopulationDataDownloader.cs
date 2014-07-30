@@ -145,13 +145,13 @@ namespace De.AHoerstemeier.Tambon
             {
                 case Language.English:
                     result = String.Format(CultureInfo.InvariantCulture,
-                        "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Population statistics {1}}}}}</ref>",
-                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year);
+                        "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Population statistics {1}|language=Thai|accessdate={2}}}}}</ref>",
+                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year, DateTime.Now.ToString("yyyy-MM-dd"));
                     break;
                 case Language.German:
                     result = String.Format(CultureInfo.InvariantCulture,
-                        "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Einwohnerstatistik {1}}}}}</ref>",
-                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year);
+                        "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Einwohnerstatistik {1}|language=Thai|accessdate={2}}}}}</ref>",
+                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year, DateTime.Now.ToString("yyyy-MM-dd"));
                     break;
                 case Language.Thai:
                     break;
