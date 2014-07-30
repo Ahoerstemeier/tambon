@@ -404,6 +404,20 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void mnuWikipediaGerman_Click(Object sender, EventArgs e)
         {
+            var numberStrings = new Dictionary<Int32, String>() { 
+                { 1, "eine" }, 
+                { 2, "zwei" }, 
+                { 3, "drei" }, 
+                { 4, "view" }, 
+                { 5, "fünf" }, 
+                { 6, "sechs" },
+                { 7, "sieben" }, 
+                { 8, "acht" }, 
+                { 9, "neun" }, 
+                { 10, "zehn" }, 
+                { 11, "elf" }, 
+                { 12, "zwölf" }, 
+            };
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
             if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
@@ -426,6 +440,8 @@ namespace De.AHoerstemeier.Tambon.UI
                 String headerLocal = "=== Lokalverwaltung ===" + Environment.NewLine;
                 String textLocalSingular = "Es gibt eine Kommune mit „{0}“-Status ''({1})'' im Landkreis:" + Environment.NewLine;
                 String textLocalPlural = "Es gibt {0} Kommunen mit „{1}“-Status ''({2})'' im Landkreis:" + Environment.NewLine;
+                String taoWithThesaban = "Außerdem gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{lang|th|องค์การบริหารส่วนตำบล}} – Tambon Administrative Organizations, TAO)";
+                String taoWithoutThesaban = "Im Landkreis gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{lang|th|องค์การบริหารส่วนตำบล}} – Tambon Administrative Organizations, TAO)";
                 String entryLocal = "* {0} (Thai: {{{{lang|th|{1}}}}})";
                 String entryLocalCoverage = " bestehend aus {0}.";
                 String entryLocalCoverageTwo = " bestehend aus {0} und {1}.";
@@ -517,16 +533,36 @@ namespace De.AHoerstemeier.Tambon.UI
                     Int32 count = 0;
                     if ( localTypes.TryGetValue(entityType, out count) )
                     {
-                        if ( count == 1 )
+                        String countAsString;
+                        if (!numberStrings.TryGetValue(count, out countAsString))
                         {
-                            result += String.Format(germanCulture, textLocalSingular, entityType.Translate(Language.German), _deWikipediaLink[entityType]);
+                            countAsString = count.ToString(germanCulture);
+                        }
+                        if (entityType == EntityType.TAO)
+                        {
+                            if (localTypes.Keys.Count == 1)
+                            {
+                                result += String.Format(germanCulture, taoWithoutThesaban, countAsString);
+                            }
+                            else
+                            {
+                                result += String.Format(germanCulture, taoWithThesaban, countAsString);
+                            }
                         }
                         else
                         {
-                            result += String.Format(germanCulture, textLocalPlural, count, entityType.Translate(Language.German), _deWikipediaLink[entityType]);
+                            if (count == 1)
+                            {
+                                result += String.Format(germanCulture, textLocalSingular, entityType.Translate(Language.German), _deWikipediaLink[entityType]);
+                            }
+                            else
+                            {
+                                result += String.Format(germanCulture, textLocalPlural, countAsString, entityType.Translate(Language.German), _deWikipediaLink[entityType]);
+                            }
                         }
                         foreach ( var localEntity in local.Where(x => x.type == entityType) )
                         {
+                            // TODO - How to sort?
                             var english = localEntity.english;
                             var link = String.Empty;
                             if (wikipediaLinks.TryGetValue(localEntity, out link))
