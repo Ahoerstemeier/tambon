@@ -1018,5 +1018,29 @@ namespace De.AHoerstemeier.Tambon
                 return result;
             }
         }
+
+        public Boolean MubanNumberConsistent()
+        {
+            var nrOfMuban = entity.Count(x => x.type == EntityType.Muban);
+            if (nrOfMuban != 0)
+            {
+                if (entity.Last(x => x.type == EntityType.Muban).geocode % 100 != nrOfMuban)
+                {
+                    return false;
+                }
+            }
+            var taoOffice = office.FirstOrDefault(x => x.type == OfficeType.TAOOffice && !x.obsolete);
+            if (taoOffice != null)
+            {
+                var latestTerm = taoOffice.council.CouncilTerms.First();
+                if (latestTerm.FinalSize > nrOfMuban * 2)
+                { 
+                    // check areacoverage of more than one Tambon
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }

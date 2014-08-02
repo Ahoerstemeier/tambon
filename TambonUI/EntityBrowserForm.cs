@@ -13,10 +13,39 @@ namespace De.AHoerstemeier.Tambon.UI
 {
     public partial class EntityBrowserForm : Form
     {
+        #region fields
         private List<Entity> localGovernments = new List<Entity>();
         private Entity baseEntity;
         private Dictionary<EntityType, String> _deWikipediaLink;
+        #endregion
 
+        #region properties
+        public UInt32 StartChangwatGeocode
+        {
+            get;
+            set;
+        }
+
+        public PopulationDataSourceType PopulationDataSource
+        {
+            get;
+            set;
+        }
+
+        public Int16 PopulationReferenceYear
+        {
+            get;
+            set;
+        }
+
+        public Boolean CheckWikiData
+        {
+            get;
+            set;
+        }
+        #endregion
+
+        #region constructor
         public EntityBrowserForm()
         {
             InitializeComponent();
@@ -30,7 +59,9 @@ namespace De.AHoerstemeier.Tambon.UI
                 {EntityType.TAO, "[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]"},
             };
         }
+        #endregion
 
+        #region private methods
         private void EntityBrowserForm_Load(object sender, EventArgs e)
         {
             baseEntity = GlobalData.CompleteGeocodeList();
@@ -103,6 +134,7 @@ namespace De.AHoerstemeier.Tambon.UI
             SetInfo(entity);
             CheckForErrors(entity);
             CalcElectionData(entity);
+            CalcMubanData(entity);
         }
 
         private void CalcElectionData(Entity entity)
@@ -243,17 +275,48 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 localGovernmentCoverages.AddRange(item.LocalGovernmentAreaCoverage);
             }
-            var tambonWithMoreThanOneCoverage = localGovernmentCoverages.GroupBy(s => s.geocode).SelectMany(grp => grp.Skip(1)).ToList();
-            var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.coverage == CoverageType.completely);
+            var localGovernmentCoveragesByTambon =localGovernmentCoverages.GroupBy(s => s.geocode);
+            var tambonWithMoreThanOneCoverage = localGovernmentCoveragesByTambon.Where(x => x.Count() > 1);
+            var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.Any(y => y.coverage == CoverageType.completely)).Select(x => x.Key);
+            // var tambonWithMoreThanOneCoverage = localGovernmentCoveragesByTambon.SelectMany(grp => grp.Skip(1)).ToList();
+            // var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.coverage == CoverageType.completely);
             if ( duplicateCompletelyCoveredTambon.Any() )
             {
-                text += "Tambon coverage wrong:" + Environment.NewLine;
+                text += "Tambon covered completely more than once:" + Environment.NewLine;
                 foreach ( var code in duplicateCompletelyCoveredTambon )
                 {
-                    text += String.Format(" {0}", code.geocode) + Environment.NewLine;
+                    text += String.Format(" {0}", code) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
+            var partialLocalGovernmentCoverages = localGovernmentCoverages.Where(x => x.coverage == CoverageType.partially);
+            var partiallyCoveredTambon = partialLocalGovernmentCoverages.GroupBy(s => s.geocode);
+            var onlyOnePartialCoverage = partiallyCoveredTambon.Select(group => new
+            {
+                code = group.Key,
+                count = group.Count()
+            }).Where(x => x.count==1).Select(y => y.code);
+            if ( onlyOnePartialCoverage.Any() )
+            {
+                text += "Tambon covered partially only once:" + Environment.NewLine;
+                foreach (var code in onlyOnePartialCoverage)
+                {
+                    text += String.Format(" {0}", code) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            var allTambon = entity.FlatList().Where(x => x.type==EntityType.Tambon && !x.IsObsolete);
+            var tambonWithoutCoverage = allTambon.Where(x => !localGovernmentCoveragesByTambon.Any(y => y.Key == x.geocode));
+            if ( tambonWithoutCoverage.Any() )
+            {
+                text += "Tambon without coverage:" + Environment.NewLine;
+                foreach (var tambon in tambonWithoutCoverage)
+                {
+                    text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+
             // check areacoverages
             txtErrors.Text = text;
         }
@@ -272,6 +335,51 @@ namespace De.AHoerstemeier.Tambon.UI
             value += EntitySubDivisionCount(entity) + Environment.NewLine;
 
             txtSubDivisions.Text = value;
+        }
+
+        private void CalcMubanData(Entity entity)
+        {
+            String result = String.Empty;
+            var allTambon = entity.FlatList().Where(x => !x.IsObsolete && x.type == EntityType.Tambon);
+            var allMuban = entity.FlatList().Where(x => !x.IsObsolete && x.type == EntityType.Muban);
+            var mubanNumbers = allTambon.GroupBy(x => x.entity.Count(y => !y.IsObsolete && y.type == EntityType.Muban))
+                .Select(g => g.Key).ToList();
+            mubanNumbers.Sort();
+            if (allMuban.Count() == 0)
+            {
+                result = "No Muban" + Environment.NewLine;
+            }
+            else
+            {
+                result = String.Format("{0} Muban; Tambon have between {1} and {2} Muban" + Environment.NewLine,
+                    allMuban.Count(),
+                    mubanNumbers.First(),
+                    mubanNumbers.Last());
+            }
+            // could add: Muban creations in last years
+            var tambonWithInvalidMubanNumber = TambonWithInvalidMubanNumber(allTambon);
+            if (tambonWithInvalidMubanNumber.Any())
+            {
+                result += Environment.NewLine + "Muban inconsistent for:" + Environment.NewLine;
+                foreach (var tambon in tambonWithInvalidMubanNumber)
+                {
+                    result += String.Format("{0}: {1}", tambon.geocode, tambon.english) + Environment.NewLine;
+                }
+            }
+            txtMuban.Text = result;
+        }
+
+        private IEnumerable<Entity> TambonWithInvalidMubanNumber(IEnumerable<Entity> allTambon)
+        {
+            var result = new List<Entity>();
+            foreach (var tambon in allTambon.Where(x => x.type == EntityType.Tambon))
+            {
+                if (!tambon.MubanNumberConsistent())
+                {
+                    result.Add(tambon);
+                }
+            }
+            return result;
         }
 
         private Dictionary<EntityType, Int32> CountSubdivisions(IEnumerable<Entity> entities)
@@ -370,24 +478,6 @@ namespace De.AHoerstemeier.Tambon.UI
             listviewLocalAdministration.EndUpdate();
         }
 
-        public UInt32 StartChangwatGeocode
-        {
-            get;
-            set;
-        }
-
-        public PopulationDataSourceType PopulationDataSource
-        {
-            get;
-            set;
-        }
-
-        public Int16 PopulationReferenceYear
-        {
-            get;
-            set;
-        }
-
         private void treeviewSelection_MouseUp(Object sender, MouseEventArgs e)
         {
             if ( e.Button == MouseButtons.Right )
@@ -453,9 +543,16 @@ namespace De.AHoerstemeier.Tambon.UI
                 var allEntities = entity.entity.ToList();
                 var local = LocalGovernmentEntitiesOf(entity).Where(x => !x.IsObsolete);
                 allEntities.AddRange(local);
-                var wikipediaLinks = RetrieveWikpediaLinks(allEntities, Language.German);
-            
+                Dictionary<Entity, String> wikipediaLinks = new Dictionary<Entity, String>();
+                if (CheckWikiData)
+                {
+                    wikipediaLinks = RetrieveWikpediaLinks(allEntities, Language.German);
+                }
                 var counted = CountSubdivisions(entity);
+                if (!counted.ContainsKey(EntityType.Muban))
+                {
+                    counted[EntityType.Muban] = 0;
+                }
                 String result =
                     header +
                     String.Format(germanCulture, text, entity.english, counted[EntityType.Tambon], counted[EntityType.Muban]) +
@@ -675,5 +772,6 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             return result;
         }
+        #endregion
     }
 }
