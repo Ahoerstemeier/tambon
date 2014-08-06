@@ -507,6 +507,13 @@
     </entity>
     <entity type="Tambon" name="คลองสวน" english="Khlong Suan" geocode="110206">
       <wiki wikidata="Q15979226" />
+      <office type="TAOOffice" obsolete="1">
+        <history>
+          <abolished type="TAO" mergeto="1189" effective="2004-08-20" status="Gazette">
+            <gazetteref volume="121" page="8" issue="พิเศษ 93 ง" date="2004-08-25" />
+          </abolished>
+        </history>
+      </office>
     </entity>
     <entity type="Tambon" name="เปร็ง" english="Preng" geocode="110207">
       <wiki wikidata="Q15979229" />
@@ -1570,6 +1577,11 @@
         <term begin="2011-01-30" type="ThesabanTambon" size="12" />
         <term begin="2006-12-23" end="2010-12-22" type="ThesabanTambon" size="12" />
       </council>
+      <history>
+        <mergedwith type="ThesabanTambon" mergefromtype="TAO" mergefrom="110206" effective="2004-08-20" status="Gazette">
+          <gazetteref volume="121" page="8" issue="พิเศษ 93 ง" date="2004-08-25" />
+        </mergedwith>
+      </history>
       <areacoverage>
         <entity geocode="110206" coverage="completely" />
       </areacoverage>
