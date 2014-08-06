@@ -2996,6 +2996,9 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="16" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="16" />
         </council>
+        <areacoverage>
+          <entity geocode="401102" coverage="completely"/>
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="40110201" name="บ้านวังม่วง" english="Ban Wang Muang" />
       <entity type="Muban" geocode="40110202" name="บ้านวังม่วง" english="Ban Wang Muang" />
@@ -3017,6 +3020,9 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" finalsize="20" sizechangereason="MubanCreation" comment="Mu 10 created 2005-12" />
         </council>
+        <areacoverage>
+          <entity geocode="401103" coverage="completely"/>
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="40110301" name="บ้านขามป้อม" english="Ban Kham Pom" />
       <entity type="Muban" geocode="40110302" name="บ้านส้มป่อยใหญ่" english="Ban Som Poi Yai" />
@@ -3044,7 +3050,14 @@
           <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done">
             <meetingreference board="2" date="2009-07-14" number="25" />
           </statuschange>
+          <mergedwith type="TAO" mergefromtype="SaphaTambon" mergefrom="401101" effective="2001-03-26" status="Gazette">
+            <gazetteref volume="118" page="4" issue="พิเศษ 31 ง" date="2001-04-01" />
+          </mergedwith>
         </history>
+        <areacoverage>
+          <entity geocode="401101" coverage="partially"/>
+          <entity geocode="401104" coverage="partially"/>
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="40110401" name="บ้านสระแก้ว" english="Ban Sa Kaeo" />
       <entity type="Muban" geocode="40110402" name="บ้านวังหิน" english="Ban Wang Hin" comment="Belongs to Thesaban Pueai Noi" />
@@ -5816,6 +5829,10 @@
         <term begin="2010-12-26" type="ThesabanTambon" size="12" />
         <term begin="2006-11-19" end="2010-11-18" type="ThesabanTambon" size="12" />
       </council>
+      <areacoverage>
+        <entity geocode="401101" coverage="partially"/>
+        <entity geocode="401104" coverage="partially"/>
+      </areacoverage>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="แวงใหญ่" english="Waeng Yai" geocode="4080" parent="4013">
