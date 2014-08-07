@@ -15,6 +15,7 @@ namespace De.AHoerstemeier.Tambon.UI
     {
         #region fields
 
+        private const Boolean _showDolaErrors = false;
         private List<Entity> localGovernments = new List<Entity>();
         private Entity baseEntity;
         private Dictionary<EntityType, String> _deWikipediaLink;
@@ -254,29 +255,33 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
             var localGovernmentsInEntity = LocalGovernmentEntitiesOf(entity).ToList();
-            var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null).ToList();
-            var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.Dola.codeSpecified).ToList();
-            var allDolaCodes = entitiesWithDolaCode.Select(x => x.Dola.code).ToList();
-            var duplicateDolaCodes = allDolaCodes.GroupBy(s => s).SelectMany(grp => grp.Skip(1)).ToList();
-            if ( duplicateDolaCodes.Any() )
+            var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null).ToList();  // Dola != null when there is a local government office
+            if ( _showDolaErrors )
             {
-                text += "Duplicate DOLA codes:" + Environment.NewLine;
-                foreach ( var code in duplicateDolaCodes )
+                var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.Dola.codeSpecified).ToList();
+                var allDolaCodes = entitiesWithDolaCode.Select(x => x.Dola.code).ToList();
+                var duplicateDolaCodes = allDolaCodes.GroupBy(s => s).SelectMany(grp => grp.Skip(1)).ToList();
+                if ( duplicateDolaCodes.Any() )
                 {
-                    text += String.Format(" {0}", code) + Environment.NewLine;
+                    text += "Duplicate DOLA codes:" + Environment.NewLine;
+                    foreach ( var code in duplicateDolaCodes )
+                    {
+                        text += String.Format(" {0}", code) + Environment.NewLine;
+                    }
+                    text += Environment.NewLine;
                 }
-                text += Environment.NewLine;
-            }
-            var invalidDolaCodeEntities = entitiesWithDolaCode.Where(x => !x.DolaCodeValid()).ToList();
-            if ( invalidDolaCodeEntities.Any() )
-            {
-                text += "Invalid DOLA codes:" + Environment.NewLine;
-                foreach ( var dolaEntity in invalidDolaCodeEntities )
+                var invalidDolaCodeEntities = entitiesWithDolaCode.Where(x => !x.DolaCodeValid()).ToList();
+                if ( invalidDolaCodeEntities.Any() )
                 {
-                    text += String.Format(" {0} {1} ({2})", dolaEntity.Dola.code, dolaEntity.english, dolaEntity.type) + Environment.NewLine;
+                    text += "Invalid DOLA codes:" + Environment.NewLine;
+                    foreach ( var dolaEntity in invalidDolaCodeEntities )
+                    {
+                        text += String.Format(" {0} {1} ({2})", dolaEntity.Dola.code, dolaEntity.english, dolaEntity.type) + Environment.NewLine;
+                    }
+                    text += Environment.NewLine;
                 }
-                text += Environment.NewLine;
             }
+            var allTambon = entity.FlatList().Where(x => x.type == EntityType.Tambon && !x.IsObsolete);
             var localGovernmentCoverages = new List<LocalGovernmentCoverageEntity>();
             foreach ( var item in localEntitiesWithOffice )
             {
@@ -285,8 +290,18 @@ namespace De.AHoerstemeier.Tambon.UI
             var localGovernmentCoveragesByTambon = localGovernmentCoverages.GroupBy(s => s.geocode);
             var tambonWithMoreThanOneCoverage = localGovernmentCoveragesByTambon.Where(x => x.Count() > 1);
             var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.Any(y => y.coverage == CoverageType.completely)).Select(x => x.Key);
+            var invalidlocalGovernmentCoverages = localGovernmentCoveragesByTambon.Where(x => !allTambon.Any(y => y.geocode == x.Key));
             // var tambonWithMoreThanOneCoverage = localGovernmentCoveragesByTambon.SelectMany(grp => grp.Skip(1)).ToList();
             // var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.coverage == CoverageType.completely);
+            if ( invalidlocalGovernmentCoverages.Any() )
+            {
+                text += "Invalid Tambon references by areacoverage:" + Environment.NewLine;
+                foreach ( var code in invalidlocalGovernmentCoverages )
+                {
+                    text += String.Format(" {0}", code.Key) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
             if ( duplicateCompletelyCoveredTambon.Any() )
             {
                 text += "Tambon covered completely more than once:" + Environment.NewLine;
@@ -312,7 +327,6 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 text += Environment.NewLine;
             }
-            var allTambon = entity.FlatList().Where(x => x.type == EntityType.Tambon && !x.IsObsolete);
             var tambonWithoutCoverage = allTambon.Where(x => !localGovernmentCoveragesByTambon.Any(y => y.Key == x.geocode));
             if ( tambonWithoutCoverage.Any() )
             {
