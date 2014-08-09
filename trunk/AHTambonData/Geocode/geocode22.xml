@@ -1327,6 +1327,9 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="14" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
         </council>
+        <areacoverage>
+          <entity geocode="220602" coverage="completely"/>
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="22060201" name="บ้านเกาะเปริด" english="Ban Ko Proet" />
       <entity type="Muban" geocode="22060202" name="บ้านเกาะเปริด" english="Ban Ko Proet" />
@@ -1350,6 +1353,9 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="20" />
         </council>
+        <areacoverage>
+          <entity geocode="220603" coverage="completely"/>
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="22060301" name="บ้านท่าหิน" english="Ban Tha Hin" />
       <entity type="Muban" geocode="22060302" name="บ้านท่าเรือ" english="Ban Tha Ruea" />
@@ -1383,6 +1389,13 @@
       <codes>
         <post value="22190" />
       </codes>
+      <office type="TAOOffice" obsolete="1">
+        <history>
+          <abolished type="TAO" mergeto="2286" effective="2004-09-06" status="Gazette">
+            <gazetteref volume="121" page="16" issue="พิเศษ 102 ง" date="2004-09-15" />
+          </abolished>
+        </history>
+      </office>
       <entity type="Muban" geocode="22060501" name="บ้านท่าเรือ" english="Ban Tha Ruea" />
       <entity type="Muban" geocode="22060502" name="บ้านบางเคียน" english="Ban Bang Khian" />
       <entity type="Muban" geocode="22060503" name="บ้านคลองอ่าง" english="Ban Khlong Ang" />
@@ -1404,6 +1417,9 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="10" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="10" />
         </council>
+        <areacoverage>
+          <entity geocode="220606" coverage="completely"/>
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="22060601" name="บ้านเนิน" english="Ban Noen" />
       <entity type="Muban" geocode="22060602" name="บ้านกลาง" english="Ban Klang" />
@@ -1425,6 +1441,9 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
+        <areacoverage>
+          <entity geocode="220607" coverage="completely"/>
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="22060701" name="บ้านแหลมสิงห์" english="Ban Laem Sing" />
       <entity type="Muban" geocode="22060702" name="บ้านแหลมประดู่" english="Ban Laem Pradu" />
@@ -2263,6 +2282,9 @@
         <term begin="2008-11-02" end="2012-11-01" type="ThesabanTambon" size="12" />
         <term begin="2004-09-26" end="2008-09-25" type="ThesabanTambon" size="12" />
       </council>
+      <areacoverage>
+        <entity geocode="220601" coverage="completely"/>
+      </areacoverage>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="พลิ้ว" english="Phlio" geocode="2286" parent="2206">
@@ -2276,6 +2298,18 @@
         <term begin="2008-11-02" end="2012-11-01" type="ThesabanTambon" size="12" />
         <term begin="2004-09-26" end="2008-09-25" type="ThesabanTambon" size="12" />
       </council>
+      <history>
+        <mergedwith type="ThesabanTambon" mergefromtype="SaphaTambon" mergefrom="220604" effective="2004-09-06" status="Gazette">
+          <gazetteref volume="121" page="16" issue="พิเศษ 102 ง" date="2004-09-15" />
+        </mergedwith>
+        <mergedwith type="ThesabanTambon" mergefromtype="TAO" mergefrom="220605" effective="2004-09-06" status="Gazette">
+          <gazetteref volume="121" page="16" issue="พิเศษ 102 ง" date="2004-09-15" />
+        </mergedwith>
+      </history>
+      <areacoverage>
+        <entity geocode="220604" coverage="completely"/>
+        <entity geocode="220605" coverage="completely"/>
+      </areacoverage>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="ทรายขาว" english="Sai Khao" geocode="2285" parent="2207">
