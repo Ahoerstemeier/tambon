@@ -37,14 +37,15 @@ namespace De.AHoerstemeier.Tambon.UI
 
             PopulationDataDownloader.OutputDirectory = @"C:\Users\Ahoerstemeier.AACHEN\Documents\Thailand\DOPA\XmlOut";
 
-            Boolean allowTestFeatures =false;
+            Boolean allowTestFeatures = false;
             try
             {
-            var allowTestFeaturesConfig = ConfigurationManager.AppSettings["AllowTestFeatures"];
-                allowTestFeatures=Convert.ToBoolean(allowTestFeaturesConfig);
+                var allowTestFeaturesConfig = ConfigurationManager.AppSettings["AllowTestFeatures"];
+                allowTestFeatures = Convert.ToBoolean(allowTestFeaturesConfig);
             }
-            catch (FormatException)
-            {}
+            catch ( FormatException )
+            {
+            }
 
             grpTesting.Enabled = allowTestFeatures;
         }
@@ -524,6 +525,23 @@ namespace De.AHoerstemeier.Tambon.UI
                 Boolean hasEntries = (GlobalData.AllGazetteAnnouncements.entry.Any());
                 btn_GazetteShow.Enabled = hasEntries;
                 btn_GazetteShowAll.Enabled = hasEntries;
+
+                foreach ( GazetteAreaDefinition areadefinition in GlobalData.AllGazetteAnnouncements.AllGazetteEntries.SelectMany(x => x.Items.Where(y => y is GazetteAreaDefinition)) )
+                {
+                    if ( areadefinition.subdivisionsSpecified )
+                    {
+                        var entity = GlobalData.LookupGeocode(areadefinition.geocode);
+                        if ( entity != null )
+                        {
+                            entity.entitycount.entry.Add(new EntityCountType()
+                            {
+                                count = Convert.ToUInt32(areadefinition.subdivisions),
+                                type = areadefinition.subdivisiontype,
+                            }
+                            );
+                        }
+                    }
+                }
             }
             else
             {

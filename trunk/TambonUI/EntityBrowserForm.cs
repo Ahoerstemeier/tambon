@@ -281,6 +281,18 @@ namespace De.AHoerstemeier.Tambon.UI
                     text += Environment.NewLine;
                 }
             }
+
+            var localEntitiesWithoutParent = localEntitiesWithOffice.Where(x => !x.parent.Any());
+            if ( localEntitiesWithoutParent.Any() )
+            {
+                text += "Local governments without parent:" + Environment.NewLine;
+                foreach ( var subEntity in localEntitiesWithoutParent )
+                {
+                    text += String.Format(" {0} {1}", subEntity.geocode, subEntity.english) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+
             var allTambon = entity.FlatList().Where(x => x.type == EntityType.Tambon && !x.IsObsolete);
             var localGovernmentCoverages = new List<LocalGovernmentCoverageEntity>();
             foreach ( var item in localEntitiesWithOffice )
