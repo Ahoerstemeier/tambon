@@ -1022,25 +1022,33 @@ namespace De.AHoerstemeier.Tambon
         public Boolean MubanNumberConsistent()
         {
             var nrOfMuban = entity.Count(x => x.type == EntityType.Muban);
-            if (nrOfMuban != 0)
+            if ( nrOfMuban != 0 )
             {
-                if (entity.Last(x => x.type == EntityType.Muban).geocode % 100 != nrOfMuban)
+                if ( entity.Last(x => x.type == EntityType.Muban).geocode % 100 != nrOfMuban )
                 {
                     return false;
                 }
             }
             var taoOffice = office.FirstOrDefault(x => x.type == OfficeType.TAOOffice && !x.obsolete);
-            if (taoOffice != null)
+            if ( taoOffice != null )
             {
-                var latestTerm = taoOffice.council.CouncilTerms.First();
-                if (latestTerm.FinalSize > nrOfMuban * 2)
-                { 
-                    // check areacoverage of more than one Tambon
+                if ( taoOffice.areacoverage.Count < 2 )  // if more than one Tambon, this simple check will fail
+                {
+                    var latestTerm = taoOffice.council.CouncilTerms.First();
+                    if ( latestTerm.FinalSize > Math.Max(6, nrOfMuban * 2) )  // max(6,x) due to minimum size of council
+                    {
+                        return false;
+                    }
+                }
+            }
+            foreach ( var counter in entitycount.entry.Where(x => x.type == EntityType.Muban) )
+            {
+                if ( counter.count > nrOfMuban )
+                {
                     return false;
                 }
             }
             return true;
         }
-
     }
 }
