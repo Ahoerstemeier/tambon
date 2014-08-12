@@ -112,6 +112,11 @@ namespace De.AHoerstemeier.Tambon
 
         private const String _urlDataChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType=1&year={0}&rcode={1}";
 
+        /// <summary>
+        /// Maximum number of retries of a invalid json reply from the DOPA server.
+        /// </summary>
+        private Int32 maxRetry = 256;
+
         #endregion constants
 
         #region events
@@ -218,6 +223,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 url = String.Format(CultureInfo.InvariantCulture, _urlDataAmphoe, _yearShort, geocode);
             }
+            Int32 errorCount = 0;
             while ( obj == null )
             {
                 try
@@ -235,6 +241,11 @@ namespace De.AHoerstemeier.Tambon
                 }
                 catch
                 {
+                    errorCount++;
+                }
+                if ( errorCount > maxRetry )
+                {
+                    throw new InvalidDataException(String.Format("Failed to get parseable json data for {0}", geocode));
                 }
             }
             return obj;
