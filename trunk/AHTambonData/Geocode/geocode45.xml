@@ -1793,7 +1793,7 @@
       <office type="TAOOffice">
         <dola code="6450506" />
         <officials>
-          <officialterm title="TAOMayor" begin="2013-10-12" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="เกรียงไกร ประจัญพล" begin="2013-10-12" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="สุภาวดี ศรีลาภ" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -4480,6 +4480,7 @@
           <official title="TAOMayor" name="พิชัย พลทะกลาง" begin="2005-07-31" endyear="2009" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2013-10-12" type="TAO" size="24" />
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
@@ -5026,6 +5027,13 @@
     </office>
     <entity type="Tambon" name="โพนทราย" english="Phon Sai" geocode="451301">
       <wiki wikidata="Q17304575" />
+      <office type="TAOOffice" obsolete="1">
+        <history>
+          <abolished type="TAO" mergeto="451305" effective="2004-09-06" status="Gazette">
+            <gazetteref volume="121" page="17" issue="พิเศษ 102 ง" date="2004-09-15" />
+          </abolished>
+        </history>
+      </office>
       <entity type="Muban" geocode="45130101" name="บ้านโพนทราย" english="Ban Phon Sai" />
       <entity type="Muban" geocode="45130102" name="บ้านโพนทราย" english="Ban Phon Sai" />
       <entity type="Muban" geocode="45130103" name="บ้านดอนหม่วย" english="Ban Don Muai" />
@@ -5093,9 +5101,8 @@
         </geo:Point>
         <url status="offline">http://www.srisawang.go.th/</url>
         <officials>
-          <officialterm title="TAOMayor" begin="2011-08-28" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="บุญมี ต้นหนองสรวง" begin="2011-08-28" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="ธนาทร พานทอง" inoffice="2008" />
-          <!-- no TAOMayor election on 2012-09-30 -->
         </officials>
         <council>
           <term begin="2012-09-30" type="TAO" size="30" />
@@ -5128,12 +5135,19 @@
         <dola code="6451303" />
         <url>http://yangkham.pantown.com/</url>
         <officials>
-          <official title="TAOMayor" name="สุพจน์ สิงหลสาย" begin="2009-09-06" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุพจน์ สิงหลสาย" begin="2013-10-12" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สุพจน์ สิงหลสาย" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
-          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="26" sizechangereason="Unknown" />
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
+          <term begin="2013-10-12" type="TAO" size="26" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="26" />
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" comment="ECT table wrongly claims 20" />
         </council>
+        <history>
+          <mergedwith type="TAO" mergefromtype="TAO" mergefrom="451301" effective="2004-09-06" status="Gazette">
+            <gazetteref volume="121" page="17" issue="พิเศษ 102 ง" date="2004-09-15" />
+          </mergedwith>
+        </history>
         <areacoverage>
           <entity geocode="451304" coverage="completely" />
           <entity geocode="451301" coverage="partially" />
@@ -5299,6 +5313,7 @@
       <wiki wikidata="Q17304512" />
       <office type="TAOOffice">
         <dola code="6451406" />
+        <url status="offline">http://www.banjeang.co.th/</url>
         <officials>
           <officialterm title="TAOMayor" begin="2009-09-06" beginreason="ElectedDirectly" />
         </officials>
@@ -5524,7 +5539,7 @@
         <dola code="6451407" />
         <url>http://www.bandoo101.com/</url>
         <officials>
-          <officialterm title="TAOMayor" begin="2014-01-19" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="บรรยง บุดดาพันธ์" begin="2014-01-19" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="บรรยง บุดดาพันธ์" begin="2009-12-13" end="2013-12-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -5573,7 +5588,7 @@
         <dola code="5451502" />
         <url>http://www.moeiwadi.com/</url>
         <officials>
-          <officialterm title="Mayor" begin="2014-04-19" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="สมศักดิ์ อินทรวิเชียร" begin="2014-04-19" beginreason="ElectedDirectly" />
           <official title="Mayor" name="ประหยัด ฉลองกิตติศักดิ์" begin="2010-03-07" end="2014-03-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
           <official title="TAOMayor" name="ประหยัด ฉลองกิตติศักดิ์" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
@@ -5646,7 +5661,7 @@
       <office type="MunicipalityOffice">
         <dola code="5451504" />
         <officials>
-          <officialterm title="Mayor" begin="2014-04-19" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="บัญทัย สุวรรณไตร" begin="2014-04-19" beginreason="ElectedDirectly" />
           <official title="Mayor" name="สาคร พลซื่อ" begin="2010-03-07" end="2014-03-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
           <official title="TAOMayor" name="สาคร พลซื่อ" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
@@ -5680,7 +5695,7 @@
         <dola code="5451503" />
         <url>http://www.chomsaart.com/</url>
         <officials>
-          <officialterm title="Mayor" begin="2014-04-19" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="วิชัย วิชัย" begin="2014-04-19" beginreason="ElectedDirectly" />
           <official title="Mayor" name="โสภิษฐ รัตนมณีรัศมี" begin="2010-03-07" end="2014-03-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
           <official title="TAOMayor" name="โสภิษฐ รัตนมณีรัศมี" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
@@ -5825,6 +5840,7 @@
           <official title="TAOMayor" name="ประพงษ์ สุขกำเนิด" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <term begin="2013-10-12" type="TAO" size="16" />
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
@@ -6233,9 +6249,11 @@
         <dola code="6451707" />
         <url>http://www.yangyai.th.gs/</url>
         <officials>
-          <official title="TAOMayor" name="ประทวน ฤทธิมนตรี" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ทองพูล แฝงภักดี" begin="2013-10-12" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="ประทวน ฤทธิมนตรี" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <term begin="2013-10-12" type="TAO" size="20" />
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="20" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
         </council>
@@ -6343,8 +6361,10 @@
       </codes>
       <office type="MunicipalityOffice">
         <dola code="5451801" SML="S" oldcodes="6451801" />
+        <url lastchecked="2014-08-18">http://www.chiangkhwan.go.th/</url>
         <officials>
-          <official title="TAOMayor" name="สำราญ แสนมนตรี" begin="2009-12-13" endyear="2009" beginreason="ElectedDirectly" />
+          <official title="Mayor" name="บุญช่วย คำภักดี" beginyear="2014" />
+          <official title="TAOMayor" name="สำราญ แสนมนตรี" begin="2009-12-13" endyear="2013" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="สำราญ แสนมนตรี" begin="2005-07-31" end="2009-07-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -6784,8 +6804,8 @@
       <office type="TAOOffice">
         <dola code="6452003" />
         <officials>
-          <officialterm title="TAOMayor" begin="2011-07-24" beginreason="ElectedDirectly" />
-          <!-- No nayok end term in 2009, 2013, no names listed in info.dla.go.th -->
+          <official title="TAOMayor" name="สมบัติ สุดานิช" begin="2011-07-24" beginreason="ElectedDirectly" />
+          <!-- No nayok end term in 2009, 2013 -->
         </officials>
         <council>
           <term begin="2013-10-12" type="TAO" size="26" />
@@ -6843,7 +6863,7 @@
       <office type="TAOOffice">
         <dola code="6452005" />
         <officials>
-          <officialterm title="TAOMayor" begin="2014-01-19" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="เสถียร สังฆทิพย์" begin="2014-01-19" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="จำเริญ ศริศิริ" begin="2009-12-13" end="2013-12-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
@@ -7088,7 +7108,7 @@
     <office type="MunicipalityOffice">
       <dola code="5450902" />
       <officials>
-        <officialterm title="Mayor" begin="2013-11-03" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ไพบูลย์ สุทธิประภา" begin="2013-11-03" beginreason="ElectedDirectly" />
         <official title="Mayor" name="วินัย ดวงจำ" begin="2009-09-27" end="2013-09-26" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
@@ -7170,9 +7190,10 @@
   <entity type="ThesabanTambon" name="เมืองสรวง" english="Mueang Suang" geocode="4585" parent="4512">
     <office type="MunicipalityOffice">
       <dola code="5451201" />
-      <url>http://www.nmt.or.th/roiet/mueangsuang/</url>
+      <url status="offline">http://www.mueangsuang.go.th/</url>
+      <url status="obsolete">http://www.nmt.or.th/roiet/mueangsuang/</url>
       <officials>
-        <officialterm title="Mayor" begin="2012-09-16" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="พรธิชา ไชยรัตน์" begin="2012-09-16" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ประวัติ เทพสมบัติ" begin="2008-08-10" end="2012-08-09" beginreason="ElectedDirectly" endreason="EndOfTerm" />
       </officials>
       <council>
