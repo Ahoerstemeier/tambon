@@ -1235,12 +1235,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<MyUri> forumField;
         
-        private string foursquareField;
+        private SocialWebLink foursquareField;
         
         /// <summary>
         /// Creates a new instance of SocialWebLinkEntry.
         /// </summary>
         public SocialWebLinkEntry() {
+            this.foursquareField = new SocialWebLink();
             this.forumField = new List<MyUri>();
             this.blogField = new List<MyUri>();
             this.googleplusField = new List<GooglePlusLink>();
@@ -1341,7 +1342,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string foursquare {
+        public SocialWebLink foursquare {
             get {
                 return this.foursquareField;
             }
