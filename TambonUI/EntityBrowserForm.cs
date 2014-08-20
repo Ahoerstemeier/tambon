@@ -342,8 +342,19 @@ namespace De.AHoerstemeier.Tambon.UI
             var tambonWithoutCoverage = allTambon.Where(x => !localGovernmentCoveragesByTambon.Any(y => y.Key == x.geocode));
             if ( tambonWithoutCoverage.Any() )
             {
-                text += "Tambon without coverage:" + Environment.NewLine;
+                text += String.Format("Tambon without coverage ({0}):", tambonWithoutCoverage.Count()) + Environment.NewLine;
                 foreach ( var tambon in tambonWithoutCoverage )
+                {
+                    text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+
+            var tambonWithoutPostalCode = allTambon.Where(x => !x.codes.post.value.Any());
+            if ( tambonWithoutPostalCode.Any() )
+            {
+                text += String.Format("Tambon without postal code ({0}):", tambonWithoutPostalCode.Count()) + Environment.NewLine;
+                foreach ( var tambon in tambonWithoutPostalCode )
                 {
                     text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
                 }
