@@ -57,6 +57,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdSocialMedia = "P553";
         public const String PropertyIdSocialMediaAddress = "P554";
         public const String PropertyIdFoundationalText = "P457";
+        public const String PropertyIdMotto = "P1451";
 
         // public const String PropertyIdArea = "Pxxxx";
         public const String PropertyIdCategoryCombinesTopic = "P971";

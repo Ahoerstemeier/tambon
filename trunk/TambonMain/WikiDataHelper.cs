@@ -268,6 +268,55 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        private WikiDataState CheckMonoLanguageValue(Item item, String propertyId, Language language, String expectedValue, Boolean createStatement, out Statement statement)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            WikiDataState result = WikiDataState.Unknown;
+
+            if ( String.IsNullOrEmpty(expectedValue) )
+            {
+                statement = null;
+                return result;  // TODO better handling!
+            }
+            var languageCode = language.ToCode();
+            var dataValue = new MonolingualTextValue(expectedValue, languageCode);
+            var snak = new Snak(SnakType.Value, new EntityId(propertyId), dataValue);
+
+            var property = new EntityId(propertyId);
+            Statement foundStatement = null;
+            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId)) )
+            {
+                Snak oldSnak = claim.mainSnak;
+                var oldDataValue = oldSnak.DataValue as MonolingualTextValue;
+                if ( (oldDataValue.Text == dataValue.Text) && (oldDataValue.Language == dataValue.Language) )
+                {
+                    foundStatement = claim as Statement;
+                    result = WikiDataState.Valid;
+                }
+            }
+
+            if ( foundStatement == null )
+            {
+                if ( String.IsNullOrEmpty(expectedValue) )
+                {
+                    result = WikiDataState.Valid;
+                }
+                else
+                {
+                    result = WikiDataState.Incomplete;
+                    if ( createStatement )
+                    {
+                        foundStatement = item.createStatementForSnak(snak);
+                    }
+                }
+            }
+
+            statement = foundStatement;
+            return result;
+        }
+
         private WikiDataState CheckCoordinateValue(Item item, String propertyId, Point expected, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
             if ( item == null )
@@ -1017,6 +1066,40 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion PostalCode
+
+        #region Slogan
+
+        public WikiDataState SloganCorrect(Item item, Entity entity)
+        {
+            var firstSlogan = entity.symbols.slogan.FirstOrDefault();
+            if ( firstSlogan != null )
+            {
+                var expected = firstSlogan.Value;
+                Statement dummy;
+
+                return CheckMonoLanguageValue(item, WikiBase.PropertyIdMotto, Language.Thai, expected, false, out dummy);
+            }
+            else
+            {
+                return WikiDataState.NoData;
+            }
+        }
+
+        public Statement SetSlogan(Item item, Entity entity)
+        {
+            var firstSlogan = entity.symbols.slogan.FirstOrDefault();
+            if ( firstSlogan != null )
+            {
+                var expected = firstSlogan.Value;
+                Statement result;
+
+                CheckMonoLanguageValue(item, WikiBase.PropertyIdMotto, Language.Thai, expected, true, out result);
+                return result;
+            }
+            return null;
+        }
+
+        #endregion Slogan
 
         /// <summary>
         /// Get the default edit summary for the creation of a item.
