@@ -304,5 +304,20 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
+        public static String ToCode(this Language language)
+        {
+            switch ( language )
+            {
+                case Language.English:
+                    return "en";
+                case Language.German:
+                    return "de";
+                case Language.Thai:
+                    return "th";
+                default:
+                    return String.Empty;
+            }
+        }
     }
 }
