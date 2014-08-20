@@ -361,6 +361,48 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
 
+            var allEntites = entity.FlatList().Where(x => !x.IsObsolete);
+            var entitiesWithoutFips = allEntites.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat) && String.IsNullOrEmpty(x.codes.fips10.value));
+            if ( entitiesWithoutFips.Any() )
+            {
+                text += String.Format("Entity without FIPS10-4 code ({0}):", entitiesWithoutFips.Count()) + Environment.NewLine;
+                foreach ( var subEntity in entitiesWithoutFips )
+                {
+                    text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            var entitiesWithoutIso3166 = allEntites.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat) && String.IsNullOrEmpty(x.codes.iso3166.value));
+            if ( entitiesWithoutIso3166.Any() )
+            {
+                text += String.Format("Entity without ISO3166 code ({0}):", entitiesWithoutIso3166.Count()) + Environment.NewLine;
+                foreach ( var subEntity in entitiesWithoutIso3166 )
+                {
+                    text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            var entitiesWithoutHasc = allEntites.Where(x => (x.type.IsCompatibleEntityType(EntityType.Changwat) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) && String.IsNullOrEmpty(x.codes.hasc.value));
+            if ( entitiesWithoutHasc.Any() )
+            {
+                text += String.Format("Entity without HASC code ({0}):", entitiesWithoutHasc.Count()) + Environment.NewLine;
+                foreach ( var subEntity in entitiesWithoutHasc )
+                {
+                    text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            var entitiesWithoutSalb = allEntites.Where(x => (x.type.IsCompatibleEntityType(EntityType.Changwat) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) && String.IsNullOrEmpty(x.codes.salb.value));
+            if ( entitiesWithoutSalb.Any() )
+            {
+                text += String.Format("Entity without SALB code ({0}):", entitiesWithoutSalb.Count()) + Environment.NewLine;
+                foreach ( var subEntity in entitiesWithoutSalb )
+                {
+                    text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+
             // check areacoverages
             txtErrors.Text = text;
         }
