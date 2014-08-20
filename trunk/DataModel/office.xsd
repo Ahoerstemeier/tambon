@@ -559,7 +559,7 @@
           <xs:documentation>Forum URL.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="foursquare" type="xs:string" minOccurs="0" maxOccurs="1">
+      <xs:element name="foursquare" type="t:SocialWebLink" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Foursquare venue ID, last part of the venue URL. URL for venue id 123 is http://foursquare.com/v/123 </xs:documentation>
         </xs:annotation>
