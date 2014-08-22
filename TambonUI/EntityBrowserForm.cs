@@ -491,14 +491,32 @@ namespace De.AHoerstemeier.Tambon.UI
             return CountSubdivisions(toCount);
         }
 
+        private Dictionary<EntityType, Int32> CountSubdivisionsWithoutLocation(Entity entity)
+        {
+            var toCount = localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).ToList();
+            toCount.AddRange(entity.FlatList().Where(x => !x.type.IsLocalGovernment()));
+            toCount.RemoveAll(x => x.type == EntityType.Unknown || x.IsObsolete);
+            toCount.RemoveAll(x => x.office.Any(y => y.Point != null));
+            return CountSubdivisions(toCount);
+        }
+
         private String EntitySubDivisionCount(Entity entity)
         {
             var counted = CountSubdivisions(entity);
+            var noLocation = CountSubdivisionsWithoutLocation(entity);
 
             var result = String.Empty;
             foreach ( var keyvaluepair in counted )
             {
-                result += String.Format("{0}: {1}", keyvaluepair.Key, keyvaluepair.Value) + Environment.NewLine;
+                Int32 noLocationCount = 0;
+                if ( noLocation.TryGetValue(keyvaluepair.Key, out noLocationCount) )
+                {
+                    result += String.Format("{0}: {1} ({2} without location)", keyvaluepair.Key, keyvaluepair.Value, noLocationCount) + Environment.NewLine;
+                }
+                else
+                {
+                    result += String.Format("{0}: {1}", keyvaluepair.Key, keyvaluepair.Value) + Environment.NewLine;
+                }
             }
             return result;
         }
