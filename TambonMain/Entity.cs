@@ -965,7 +965,7 @@ namespace De.AHoerstemeier.Tambon
         {
             get
             {
-                var localOffice = office.FirstOrDefault(y => y.type == OfficeType.MunicipalityOffice || y.type == OfficeType.TAOOffice || y.type == OfficeType.PAOOffice);
+                var localOffice = office.FirstOrDefault(y => !y.obsolete && (y.type == OfficeType.MunicipalityOffice || y.type == OfficeType.TAOOffice || y.type == OfficeType.PAOOffice));
                 if ( localOffice != null )
                 {
                     return localOffice.areacoverage;

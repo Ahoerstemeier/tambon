@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Wikibase;
 
@@ -349,6 +350,16 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 text += Environment.NewLine;
             }
+            var localGovernmentWithoutCoverage = localEntitiesWithOffice.Where(x => x.type != EntityType.PAO && !x.LocalGovernmentAreaCoverage.Any());
+            if ( localGovernmentWithoutCoverage.Any() )
+            {
+                text += String.Format("LAO without coverage ({0}):", localGovernmentWithoutCoverage.Count()) + Environment.NewLine;
+                foreach ( var tambon in localGovernmentWithoutCoverage )
+                {
+                    text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
 
             var tambonWithoutPostalCode = allTambon.Where(x => !x.codes.post.value.Any());
             if ( tambonWithoutPostalCode.Any() )
@@ -361,50 +372,54 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
 
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "FIPS10", (Entity x) => x.codes.fips10.value, "TH\\d\\d");
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "ISO3166", (Entity x) => x.codes.iso3166.value, "TH-(\\d\\d|S)");
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "HASC", (Entity x) => x.codes.hasc.value, "TH(\\.[A-Z]{2}){1,2}");
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "SALB", (Entity x) => x.codes.salb.value, "THA[\\d{3}]{1,2}");
+
+            // check areacoverages
+            txtErrors.Text = text;
+        }
+
+        private String CheckCode(Entity entity, IEnumerable<EntityType> entityTypes, String codeName, Func<Entity, String> selector, String format)
+        {
+            String text = String.Empty;
             var allEntites = entity.FlatList().Where(x => !x.IsObsolete);
-            var entitiesWithoutFips = allEntites.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat) && String.IsNullOrEmpty(x.codes.fips10.value));
-            if ( entitiesWithoutFips.Any() )
+            var allEntityOfFittingType = allEntites.Where(x => x.type.IsCompatibleEntityType(entityTypes));
+            var entitiesWithoutCode = allEntityOfFittingType.Where(x => String.IsNullOrEmpty(selector(x)));
+            if ( entitiesWithoutCode.Any() )
             {
-                text += String.Format("Entity without FIPS10-4 code ({0}):", entitiesWithoutFips.Count()) + Environment.NewLine;
-                foreach ( var subEntity in entitiesWithoutFips )
+                text += String.Format("Entity without {0} code ({1}):", codeName, entitiesWithoutCode.Count()) + Environment.NewLine;
+                foreach ( var subEntity in entitiesWithoutCode )
                 {
                     text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
-            var entitiesWithoutIso3166 = allEntites.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat) && String.IsNullOrEmpty(x.codes.iso3166.value));
-            if ( entitiesWithoutIso3166.Any() )
+            var allCodes = allEntites.Where(x => !String.IsNullOrEmpty(selector(x))).Select(y => selector(y)).ToList();
+            var duplicateCodes = allCodes.GroupBy(s => s).SelectMany(grp => grp.Skip(1)).ToList();
+            if ( duplicateCodes.Any() )
             {
-                text += String.Format("Entity without ISO3166 code ({0}):", entitiesWithoutIso3166.Count()) + Environment.NewLine;
-                foreach ( var subEntity in entitiesWithoutIso3166 )
+                text += String.Format("Duplicate {0} codes:", codeName) + Environment.NewLine;
+                foreach ( var code in duplicateCodes )
                 {
-                    text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
+                    text += String.Format(" {0}", code) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
-            var entitiesWithoutHasc = allEntites.Where(x => (x.type.IsCompatibleEntityType(EntityType.Changwat) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) && String.IsNullOrEmpty(x.codes.hasc.value));
-            if ( entitiesWithoutHasc.Any() )
+            var regex = new Regex(format);
+            var invalidCodes = allCodes.Where(x => !regex.IsMatch(x));
+            if ( invalidCodes.Any() )
             {
-                text += String.Format("Entity without HASC code ({0}):", entitiesWithoutHasc.Count()) + Environment.NewLine;
-                foreach ( var subEntity in entitiesWithoutHasc )
+                text += String.Format("Invalid {0} codes:", codeName) + Environment.NewLine;
+                foreach ( var code in invalidCodes )
                 {
-                    text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
-                }
-                text += Environment.NewLine;
-            }
-            var entitiesWithoutSalb = allEntites.Where(x => (x.type.IsCompatibleEntityType(EntityType.Changwat) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) && String.IsNullOrEmpty(x.codes.salb.value));
-            if ( entitiesWithoutSalb.Any() )
-            {
-                text += String.Format("Entity without SALB code ({0}):", entitiesWithoutSalb.Count()) + Environment.NewLine;
-                foreach ( var subEntity in entitiesWithoutSalb )
-                {
-                    text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
+                    text += String.Format(" {0}", code) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
 
-            // check areacoverages
-            txtErrors.Text = text;
+            return text;
         }
 
         private void SetInfo(Entity entity)

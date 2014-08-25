@@ -196,41 +196,58 @@ namespace De.AHoerstemeier.Tambon
         /// </list></remarks>
         public static Boolean IsCompatibleEntityType(this EntityType value, EntityType compare)
         {
-            Boolean retval = false;
+            Boolean result = false;
             switch ( value )
             {
                 case EntityType.Bangkok:
                 case EntityType.Changwat:
-                    retval = (compare == EntityType.Changwat) | (compare == EntityType.Bangkok);
+                    result = (compare == EntityType.Changwat) | (compare == EntityType.Bangkok);
                     break;
 
                 case EntityType.KingAmphoe:
                 case EntityType.Khet:
                 case EntityType.Sakha:
                 case EntityType.Amphoe:
-                    retval = (compare == EntityType.Amphoe) | (compare == EntityType.KingAmphoe) | (compare == EntityType.Khet) | (compare == EntityType.Sakha);
+                    result = (compare == EntityType.Amphoe) | (compare == EntityType.KingAmphoe) | (compare == EntityType.Khet) | (compare == EntityType.Sakha);
                     break;
 
                 case EntityType.Khwaeng:
                 case EntityType.Tambon:
-                    retval = compare.IsThirdLevelAdministrativeUnit();
+                    result = compare.IsThirdLevelAdministrativeUnit();
                     break;
 
                 case EntityType.Thesaban:
                 case EntityType.ThesabanNakhon:
                 case EntityType.ThesabanMueang:
                 case EntityType.ThesabanTambon:
-                    retval = compare == EntityType.Thesaban ||
+                    result = compare == EntityType.Thesaban ||
                              compare == EntityType.ThesabanTambon ||
                              compare == EntityType.ThesabanMueang ||
                              compare == EntityType.ThesabanNakhon;
                     break;
 
                 default:
-                    retval = (value == compare);
+                    result = (value == compare);
                     break;
             }
-            return retval;
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the entity type is at same level with one of the given values.
+        /// </summary>
+        /// <param name="value">Entity type.</param>
+        /// <param name="compare">Entity types to compare with.</param>
+        /// <returns><c>true</c> if at least one of the <paramref name="compare"/> types are at same administrative level or equal, <c>false otherwise.</c></returns>
+        /// <remarks>See <see cref="IsCompatibleEntityType{EntityType,EntityType}"/>.</remarks>
+        public static Boolean IsCompatibleEntityType(this EntityType value, IEnumerable<EntityType> compareValues)
+        {
+            Boolean result = false;
+            foreach ( var compare in compareValues )
+            {
+                result |= IsCompatibleEntityType(value, compare);
+            }
+            return result;
         }
 
         /// <summary>
