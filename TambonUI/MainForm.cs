@@ -36,6 +36,11 @@ namespace De.AHoerstemeier.Tambon.UI
             //PopulationDataDownloader.OutputDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\output\\";
 
             PopulationDataDownloader.OutputDirectory = @"C:\Users\Ahoerstemeier.AACHEN\Documents\Thailand\DOPA\XmlOut";
+            var pdfDirectory = ConfigurationManager.AppSettings["PdfDirectory"];
+            if ( !String.IsNullOrEmpty(pdfDirectory) )
+            {
+                GlobalData.PdfDirectory = pdfDirectory;
+            }
 
             Boolean allowTestFeatures = false;
             try
