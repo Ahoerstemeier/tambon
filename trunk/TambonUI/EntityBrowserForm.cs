@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -144,6 +145,8 @@ namespace De.AHoerstemeier.Tambon.UI
             CheckForErrors(entity);
             CalcElectionData(entity);
             CalcMubanData(entity);
+
+            mnuMubanDefinitions.Enabled = AreaDefinitionAnnouncements(entity).Any();
         }
 
         private void CalcElectionData(Entity entity)
@@ -611,6 +614,8 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
+        private delegate String CountAsString(Int32 count);
+
         private void mnuWikipediaGerman_Click(Object sender, EventArgs e)
         {
             var numberStrings = new Dictionary<Int32, String>() {
@@ -669,6 +674,16 @@ namespace De.AHoerstemeier.Tambon.UI
                 String tambonCompletePlural = "den kompletten Tambon {0}";
                 String tambonPartiallyPlural = "den Teilen der Tambon {0}";
 
+                CountAsString countAsString = delegate(Int32 count)
+                {
+                    String countAsStringResult;
+                    if ( !numberStrings.TryGetValue(count, out countAsStringResult) )
+                    {
+                        countAsStringResult = count.ToString(germanCulture);
+                    }
+                    return countAsStringResult;
+                };
+
                 var allEntities = entity.entity.ToList();
                 var local = LocalGovernmentEntitiesOf(entity).Where(x => !x.IsObsolete);
                 allEntities.AddRange(local);
@@ -687,13 +702,13 @@ namespace De.AHoerstemeier.Tambon.UI
                 if ( entity.type == EntityType.Khet )
                 {
                     result = headerBangkok +
-                        String.Format(germanCulture, textBangkok, entity.english, counted[EntityType.Khwaeng]) +
+                        String.Format(germanCulture, textBangkok, entity.english, countAsString(counted[EntityType.Khwaeng])) +
                         String.Format(germanCulture, tableHeaderBangkok, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.German));
                 }
                 else
                 {
                     result = headerAmphoe +
-                        String.Format(germanCulture, textAmphoe, entity.english, counted[EntityType.Tambon], counted[EntityType.Muban]) +
+                        String.Format(germanCulture, textAmphoe, entity.english, countAsString(counted[EntityType.Tambon]), countAsString(counted[EntityType.Muban])) +
                         String.Format(germanCulture, tableHeaderAmphoe, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.German));
                 }
                 var maxPopulation = 0;
@@ -777,20 +792,15 @@ namespace De.AHoerstemeier.Tambon.UI
                         Int32 count = 0;
                         if ( localTypes.TryGetValue(entityType, out count) )
                         {
-                            String countAsString;
-                            if ( !numberStrings.TryGetValue(count, out countAsString) )
-                            {
-                                countAsString = count.ToString(germanCulture);
-                            }
                             if ( entityType == EntityType.TAO )
                             {
                                 if ( localTypes.Keys.Count == 1 )
                                 {
-                                    result += String.Format(germanCulture, taoWithoutThesaban, countAsString);
+                                    result += String.Format(germanCulture, taoWithoutThesaban, countAsString(count));
                                 }
                                 else
                                 {
-                                    result += String.Format(germanCulture, taoWithThesaban, countAsString);
+                                    result += String.Format(germanCulture, taoWithThesaban, countAsString(count));
                                 }
                             }
                             else
@@ -922,5 +932,52 @@ namespace De.AHoerstemeier.Tambon.UI
         }
 
         #endregion private methods
+
+        private IEnumerable<GazetteEntry> AreaDefinitionAnnouncements(Entity entity)
+        {
+            var result = new List<GazetteEntry>();
+            var allAboutGeocode = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.IsAboutGeocode(entity.geocode, true));
+            var allAreaDefinitionAnnouncements = allAboutGeocode.Where(x => x.Items.Any(y => y is GazetteAreaDefinition));
+            foreach ( var announcement in allAreaDefinitionAnnouncements )
+            {
+                var areaDefinitions = announcement.Items.Where(x => x is GazetteAreaDefinition);
+                if ( areaDefinitions.Any(x => (x as GazetteAreaDefinition).IsAboutGeocode(entity.geocode, true)) )
+                {
+                    result.Add(announcement);
+                }
+            }
+            return result;
+        }
+
+        private void mnuMubanDefinitions_Click(Object sender, EventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            foreach ( var entry in AreaDefinitionAnnouncements(entity) )
+            {
+                ShowPgf(entry);
+            }
+        }
+
+        private void ShowPgf(GazetteEntry entry)
+        {
+            try
+            {
+                entry.MirrorToCache();
+                System.Diagnostics.Process p = new System.Diagnostics.Process();
+                // TODO
+                String pgfFilename = entry.LocalPdfFileName;
+
+                if ( File.Exists(pgfFilename) )
+                {
+                    p.StartInfo.FileName = pgfFilename;
+                    p.Start();
+                }
+            }
+            catch
+            {
+                // throw;
+            }
+        }
     }
 }

@@ -219,5 +219,22 @@ namespace De.AHoerstemeier.Tambon
                 return DateTime.Now.Year + 5;
             }
         }
+
+        private static String pdfDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\PDF\\";
+
+        /// <summary>
+        /// Gets or sets the folder to store the local cached copies of the Royal Gazette announcement PDFs.
+        /// </summary>
+        public static String PdfDirectory
+        {
+            get
+            {
+                return pdfDirectory;
+            }
+            set
+            {
+                pdfDirectory = value;
+            }
+        }
     }
 }
