@@ -58,6 +58,9 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Copies the PDF from the Royal Gazette webserver into the local cache.
+        /// </summary>
         public void MirrorToCache()
         {
             String cacheFile = LocalPdfFileName;
@@ -101,6 +104,46 @@ namespace De.AHoerstemeier.Tambon
                         File.Delete(cacheFile);
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets the first page from <see cref="page"/>
+        /// </summary>
+        public UInt32 FirstPage
+        {
+            get
+            {
+                UInt32 startPage;
+                UInt32 endPage;
+                ParsePageString(page, out startPage, out endPage);
+                return startPage;
+            }
+        }
+
+        private void ParsePageString(String value, out UInt32 startPage, out UInt32 endPage)
+        {
+            Int32 state = 0;
+            startPage = 0;
+            endPage = 0;
+            foreach ( String SubString in value.Split('-', '–') )
+            {
+                switch ( state )
+                {
+                    case 0:
+                        startPage = Convert.ToUInt32(SubString);
+                        break;
+                    case 1:
+                        endPage = Convert.ToUInt32(SubString);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException("Invalid page string " + value);
+                }
+                state++;
+            }
+            if ( endPage == 0 )
+            {
+                endPage = startPage;
             }
         }
     }

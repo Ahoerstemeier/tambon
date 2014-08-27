@@ -32,7 +32,7 @@ namespace De.AHoerstemeier.Tambon
 
         public Boolean ShouldSerializeentitycount()
         {
-            return !String.IsNullOrEmpty(entitycount.year);
+            return entitycount.Any();
         }
 
         public Boolean ShouldSerializecodes()
@@ -1041,7 +1041,7 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
             }
-            foreach ( var counter in entitycount.entry.Where(x => x.type == EntityType.Muban) )
+            foreach ( var counter in entitycount.SelectMany(x => x.entry.Where(y => y.type == EntityType.Muban)) )
             {
                 if ( counter.count > nrOfMuban )
                 {

@@ -452,7 +452,7 @@
           <xs:field xpath="@geocode" />
         </xs:unique>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="entitycount" type="t:EntityCount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="entitycount" type="t:EntityCount" />
     </xs:sequence>
     <xs:attribute name="type" type="t:EntityType" use="required" />
     <xs:attributeGroup ref="t:ThaiNameMandatory" />

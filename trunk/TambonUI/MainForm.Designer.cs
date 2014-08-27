@@ -130,7 +130,7 @@
             // 
             // btn_GazetteLoadAll
             // 
-            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(193, 77);
+            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(266, 177);
             this.btn_GazetteLoadAll.Name = "btn_GazetteLoadAll";
             this.btn_GazetteLoadAll.Size = new System.Drawing.Size(112, 23);
             this.btn_GazetteLoadAll.TabIndex = 39;
@@ -349,7 +349,6 @@
             this.grpTesting.Controls.Add(this.btnWikiData);
             this.grpTesting.Controls.Add(this.btnCreateKml);
             this.grpTesting.Controls.Add(this.btn_PopulationAllProvinces);
-            this.grpTesting.Controls.Add(this.btn_GazetteLoadAll);
             this.grpTesting.Enabled = false;
             this.grpTesting.Location = new System.Drawing.Point(18, 244);
             this.grpTesting.Name = "grpTesting";
@@ -371,6 +370,7 @@
             this.Controls.Add(this.btnPendingElections);
             this.Controls.Add(this.btnMubanHelper);
             this.Controls.Add(this.btnElectionWeekday);
+            this.Controls.Add(this.btn_GazetteLoadAll);
             this.Controls.Add(this.btnTimeBetweenElection);
             this.Controls.Add(this.btnTermEnds);
             this.Controls.Add(this.btnChumchonStatistics);

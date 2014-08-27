@@ -235,7 +235,7 @@
         <xs:annotation>
           <xs:documentation>Director-General of the Department of Provincial Administration (อธิบดีกรมการปกครอง).</xs:documentation>
         </xs:annotation>
-      </xs:enumeration>      
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="GazetteRelation">
@@ -263,6 +263,16 @@
       <xs:enumeration value="Override">
         <xs:annotation>
           <xs:documentation>Linked announcement is overridden by this announcement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Correction">
+        <xs:annotation>
+          <xs:documentation>Linked announcement is corrected by this announcement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mention">
+        <xs:annotation>
+          <xs:documentation>Linked announcement is mentioned by this announcement.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
