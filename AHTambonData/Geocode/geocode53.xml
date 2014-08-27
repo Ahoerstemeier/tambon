@@ -1369,6 +1369,7 @@
     <entity type="Tambon" name="สองคอน" english="Song Khon" geocode="530502">
       <wiki wikidata="Q7561012" />
       <office type="TAOOffice">
+        <url lastchecked="2014-08-27">http://www.songkhon.go.th/</url>
         <officials>
           <official title="TAOMayor" name="สุนีย์ อุ้ยแก้ว" begin="2013-10-19" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="ปริชาติ ขันสาวะดี" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -1377,11 +1378,19 @@
           <term begin="2013-10-19" type="TAO" size="18" />
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
+          <term begin="2001-06-23" end="2005-06-22" type="TAO" size="18" />
+          <term begin="1997-05-11" end="2001-05-11" type="TAO" size="18" />
         </council>
+        <history>
+          <create type="TAO" effective="1997-02-13" status="Gazette">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="530502" coverage="partially" />
         </areacoverage>
       </office>
+      <!-- 1997 Gazette lists 10 Muban, only Mu 1-5 named identical. Contradicts all other sources! -->
       <entity type="Muban" geocode="53050201" name="บ้านวังกอง" english="Ban Wang Kong" />
       <entity type="Muban" geocode="53050202" name="บ้านโพนดู่" english="Ban Phon Du" />
       <entity type="Muban" geocode="53050203" name="บ้านสองคอน" english="Ban Song Khon" />
@@ -1390,7 +1399,11 @@
       <entity type="Muban" geocode="53050206" name="บ้านใหม่จำปา" english="Ban Mai Champa" />
       <entity type="Muban" geocode="53050207" name="บ้านห้วยไข่เขียด" english="Ban Huai Khai Khiat" />
       <entity type="Muban" geocode="53050208" name="บ้านหนองหัวนา" english="Ban Nong Hua Na" />
-      <entity type="Muban" geocode="53050209" name="บ้านเฉลิมราชย์" english="Ban Chaloem Rat" />
+      <entity type="Muban" geocode="53050209" name="บ้านเฉลิมราชย์" english="Ban Chaloem Rat">
+        <history>
+          <create type="Muban" splitfrom="53050207" status="Done" comment="1996" />
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="บ้านเสี้ยว" english="Ban Siao" geocode="530503">
       <wiki wikidata="Q4853714" />
