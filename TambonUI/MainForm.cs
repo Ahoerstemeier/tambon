@@ -531,19 +531,26 @@ namespace De.AHoerstemeier.Tambon.UI
                 btn_GazetteShow.Enabled = hasEntries;
                 btn_GazetteShowAll.Enabled = hasEntries;
 
-                foreach ( GazetteAreaDefinition areadefinition in GlobalData.AllGazetteAnnouncements.AllGazetteEntries.SelectMany(x => x.Items.Where(y => y is GazetteAreaDefinition)) )
+                foreach ( var gazetteEntry in GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.Items.Any(y => y is GazetteAreaDefinition)) )
                 {
-                    if ( areadefinition.subdivisionsSpecified )
+                    foreach ( GazetteAreaDefinition areadefinition in gazetteEntry.Items.Where(y => y is GazetteAreaDefinition) )
                     {
-                        var entity = GlobalData.LookupGeocode(areadefinition.geocode);
-                        if ( entity != null )
+                        if ( areadefinition.subdivisionsSpecified )
                         {
-                            entity.entitycount.entry.Add(new EntityCountType()
+                            var entity = GlobalData.LookupGeocode(areadefinition.geocode);
+                            if ( entity != null )
                             {
-                                count = Convert.ToUInt32(areadefinition.subdivisions),
-                                type = areadefinition.subdivisiontype,
+                                var entityCount = new EntityCount();
+                                entityCount.year = gazetteEntry.publication.Year.ToString(CultureInfo.InvariantCulture);
+                                entityCount.reference.Add(new GazetteRelated(gazetteEntry));
+                                entityCount.entry.Add(new EntityCountType()
+                                {
+                                    count = Convert.ToUInt32(areadefinition.subdivisions),
+                                    type = areadefinition.subdivisiontype,
+                                }
+                                );
+                                entity.entitycount.Add(entityCount);
                             }
-                            );
                         }
                     }
                 }
