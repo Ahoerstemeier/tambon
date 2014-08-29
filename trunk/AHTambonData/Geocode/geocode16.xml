@@ -84,8 +84,8 @@
       <term begin="2004-03-14" end="2008-03-13" type="PAO" size="30" />
       <term begin="2000-02-05" end="2004-02-04" type="PAO" size="30" />
       <term begin="1995-12-24" end="1999-12-23" type="ProvinceCouncil" />
-      <!--<term begin="1990-10-20" end="1995-10-19" type="ProvinceCouncil" />
-      <term begin="1983-08-25" end="1990-08-24" type="ProvinceCouncil" />-->
+      <!-- term begin="1990-10-20" end="1995-10-19" type="ProvinceCouncil" />
+      <term begin="1983-08-25" end="1990-08-24" type="ProvinceCouncil" /> -->
     </council>
   </office>
   <entity type="Amphoe" name="เมืองลพบุรี" english="Mueang Lop Buri" geocode="1601">
@@ -742,9 +742,9 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="26" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="26" />
         </council>
-      <areacoverage>
-        <entity geocode="160122" coverage="completely" />
-      </areacoverage>
+        <areacoverage>
+          <entity geocode="160122" coverage="completely" />
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="16012201" name="บ้านคลองบางปี่" english="Ban Khlong Bang Pi" />
       <entity type="Muban" geocode="16012202" name="บ้านคลองปริก" english="Ban Khlong Prik" />
@@ -854,7 +854,24 @@
           </rename>
           <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done" />
         </history>
+      <areacoverage>
+        <entity geocode="160201" coverage="partially" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16020101" name="บ้านหนองนาใต้" english="Ban Nong Na Tai" />
+      <entity type="Muban" geocode="16020102" name="บ้านหนองนาเหนือ" english="Ban Nong Na Nuea" />
+      <entity type="Muban" geocode="16020103" name="บ้านห้วยบง" english="Ban Huai Bong" />
+      <entity type="Muban" geocode="16020104" name="บ้านเกษตรพัฒนา" english="Ban Kaset Phatthana" />
+      <entity type="Muban" geocode="16020105" name="บ้านสามแสน" english="Ban Sam Saen" />
+      <entity type="Muban" geocode="16020106" name="บ้านโคกหม้อ" english="Ban Khok Mo" />
+      <entity type="Muban" geocode="16020107" name="บ้านน้ำซับ" english="Ban Nam Sap" />
+      <entity type="Muban" geocode="16020108" name="บ้านราษฎรพัฒนา" english="Ban Ratsadon Phatthana" />
+      <entity type="Muban" geocode="16020109" name="บ้านศิริพัฒนา" english="Ban Siri Phatthana" />
+      <entity type="Muban" geocode="16020110" name="บ้านเจริญพัฒนา" english="Ban Charoen Phatthana" />
+      <entity type="Muban" geocode="16020111" name="บ้านร่วมมิตร" english="Ban Ruam Mit" />
+      <entity type="Muban" geocode="16020112" name="บ้านสิทธิเสรี" english="Ban Sitthi Seri" />
+      <entity type="Muban" geocode="16020113" name="บ้านโคกหม้อ" english="Ban Khok Mo" />
+      <entity type="Muban" geocode="16020114" name="บ้านอุดมสุขพัฒนา" english="Ban Udom Suk Phatthana" />
     </entity>
     <entity type="Tambon" name="ช่องสาริกา" english="Chong Sarika" geocode="160202">
       <codes>
@@ -869,6 +886,9 @@
           <term begin="2011-11-13" type="TAO" size="26" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="26" />
         </council>
+      <areacoverage>
+        <entity geocode="160202" coverage="completely" />
+      </areacoverage>
       </office>
       <entity type="Muban" geocode="16020201" name="บ้านสาริกาพัฒนา" english="Ban Sarika Phatthana" />
       <entity type="Muban" geocode="16020202" name="บ้านด่านกระเบา" english="Ban Dan Krabao" />
@@ -898,13 +918,17 @@
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="16" />
           <!-- Mu 8 created 2005-11 -->
         </council>
+      <areacoverage>
+        <entity geocode="160203" coverage="completely" />
+      </areacoverage>
       </office>
       <entity type="Muban" geocode="16020301" name="บ้านมะนาวหวาน" english="Ban Manao Wan" />
       <entity type="Muban" geocode="16020302" name="บ้านมะนาวหวาน" english="Ban Manao Wan" />
       <entity type="Muban" geocode="16020303" name="บ้านมะนาวหวาน" english="Ban Manao Wan" />
-
+	  <entity type="Muban" geocode="16020304" name="บ้านแสนสุข" english="Ban Saen Suk" />
+	  <entity type="Muban" geocode="16020305" name="บ้านแก่งน้ำเย็น" english="Ban Kaeng Nam Yen" />
       <entity type="Muban" geocode="16020306" name="บ้านท่าตัดลาน" english="Ban Tha Tat Lan" />
-
+	  <entity type="Muban" geocode="16020307" name="บ้านน้ำซับเหนือ" english="Ban Nam Sap Nuea" />
       <entity type="Muban" geocode="16020308" name="บ้านมะนาวหวาน" english="Ban Manao Wan" />
     </entity>
     <entity type="Tambon" name="ดีลัง" english="Di Lang" geocode="160204">
@@ -933,7 +957,21 @@
           <term begin="2011-11-13" type="TAO" size="22" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="22" />
         </council>
+      <areacoverage>
+        <entity geocode="160205" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16020501" name="บ้านโคกสลุง" english="Ban Khok Salung" />
+      <entity type="Muban" geocode="16020502" name="บ้านโคกสลุง" english="Ban Khok Salung" />
+      <entity type="Muban" geocode="16020503" name="บ้านโคกสลุง" english="Ban Khok Salung" />
+      <entity type="Muban" geocode="16020504" name="บ้านโคกสลุง" english="Ban Khok Salung" />
+      <entity type="Muban" geocode="16020505" name="บ้านโคกสลุง" english="Ban Khok Salung" />
+      <entity type="Muban" geocode="16020506" name="บ้านโคกสลุง" english="Ban Khok Salung" />
+      <entity type="Muban" geocode="16020507" name="บ้านโคกสลุง" english="Ban Khok Salung" />
+      <entity type="Muban" geocode="16020508" name="บ้านเขาขวาง" english="Ban Khao Khwang" />
+      <entity type="Muban" geocode="16020509" name="บ้านคันนาหิน" english="Ban Khan Na Hin" />
+      <entity type="Muban" geocode="16020510" name="บ้านห้วยยาง" english="Ban Huai Yang" />
+      <entity type="Muban" geocode="16020511" name="บ้านโคกบ้าน(กุดตาฉิม)" english="Ban Khok Ban (Kut Ta Chim)" />
     </entity>
     <entity type="Tambon" name="ชอนน้อย" english="Chon Noi" geocode="160206">
       <codes>
@@ -952,6 +990,9 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="10" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="10" />
         </council>
+      <areacoverage>
+        <entity geocode="160206" coverage="completely" />
+      </areacoverage>
       </office>
       <entity type="Muban" geocode="16020601" name="บ้านห้วยสำราญพัฒนา" english="Ban Huai Samran Phatthana" />
       <entity type="Muban" geocode="16020602" name="บ้านห้วยแก้วสามัคคี" english="Ban Huai Kaeo Samakkhi" />
@@ -973,6 +1014,9 @@
           <term begin="2011-11-13" type="TAO" size="22" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="22" />
         </council>
+      <areacoverage>
+        <entity geocode="160207" coverage="partially" />
+      </areacoverage>
       </office>
       <entity type="Muban" geocode="16020701" name="บ้านแก่งเสือเต้น" english="Ban Kaeng Suea Ten" />
       <entity type="Muban" geocode="16020702" name="บ้านคำพราน" english="Ban Kham Phran" />
@@ -1000,6 +1044,9 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="22" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="22" />
         </council>
+      <areacoverage>
+        <entity geocode="160208" coverage="completely" />
+      </areacoverage>
       </office>
       <entity type="Muban" geocode="16020801" name="บ้านหัวเขา" english="Ban Hua Khao" />
       <entity type="Muban" geocode="16020802" name="บ้านมะขามคู่" english="Ban Makham Khu" />
@@ -1027,10 +1074,19 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="16" finalsize="18" sizechangereason="MubanCreation" comment="Mu 9 created 2006-11" />
         </council>
+      <areacoverage>
+        <entity geocode="160209" coverage="completely" />
+      </areacoverage>
       </office>
-      <entity type="Muban" geocode="16020901" name="บ้านน้ำสุด" english="Ban Nam Sut" />
-
-      <entity type="Muban" geocode="16020909" name="บ้านช่องแค" english="Ban Chong Khae" />
+	  <entity type="Muban" geocode="16020901" name="บ้านน้ำสุด" english="Ban Nam Sut" />
+	  <entity type="Muban" geocode="16020902" name="บ้านหนองอีอุ่น" english="Ban Nong I Un" />
+	  <entity type="Muban" geocode="16020903" name="บ้านบ่อน้ำเดือด" english="Ban Bo Nam Dueat" />
+	  <entity type="Muban" geocode="16020904" name="บ้านคลองสาริกา" english="Ban Khlong Sarika" />
+	  <entity type="Muban" geocode="16020905" name="บ้านไทรงาม" english="Ban Sai Ngam" />
+	  <entity type="Muban" geocode="16020906" name="บ้านฟ่าวงาม" english="Ban Fao Ngam" />
+	  <entity type="Muban" geocode="16020907" name="บ้านกลุ่มนครสวรรค์" english="Ban Klum Nakhon Sawan" />
+	  <entity type="Muban" geocode="16020908" name="บ้านหนองมะดัน" english="Ban Nong Madan" />
+	  <entity type="Muban" geocode="16020909" name="บ้านช่องแค" english="Ban Chong Khae" />
     </entity>
   </entity>
   <entity type="Amphoe" name="โคกสำโรง" english="Khok Samrong" geocode="1603">
@@ -1068,7 +1124,19 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
+      <areacoverage>
+        <entity geocode="160301" coverage="partially" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16030101" name="บ้านวังกระทุ่ม" english="Ban Wang Krathum" />
+      <entity type="Muban" geocode="16030102" name="บ้านสระยายชี" english="Ban Sa Yai Chi" />
+      <entity type="Muban" geocode="16030103" name="บ้านตะโกพนม" english="Ban Tako Phanom" />
+      <entity type="Muban" geocode="16030104" name="บ้านโคกสำโรง" english="Ban Khok Samrong" />
+      <entity type="Muban" geocode="16030105" name="บ้านแนวถนน" english="Ban Naeo Thanon" />
+      <entity type="Muban" geocode="16030106" name="บ้านหนองพิมาน" english="Ban Nong Phiman" />
+      <entity type="Muban" geocode="16030107" name="บ้านหนองพิมาน" english="Ban Nong Phiman" />
+      <entity type="Muban" geocode="16030108" name="บ้านหนองแร้ง" english="Ban Nong Raeng" />
+      <entity type="Muban" geocode="16030109" name="บ้านสำโรง" english="Ban Samrong" />
     </entity>
     <entity type="Tambon" name="เกาะแก้ว" english="Ko Kaeo" geocode="160302">
       <office type="TAOOffice">
@@ -1081,7 +1149,21 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+      <areacoverage>
+        <entity geocode="160302" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16030201" name="บ้านเกาะแก้ว" english="Ban Ko Kaeo" />
+      <entity type="Muban" geocode="16030202" name="บ้านวังหัวแหวน" english="Ban Wang Hua Waeng" />
+      <entity type="Muban" geocode="16030203" name="บ้านหนองชนะชัย" english="Ban Nong Chana Chai" />
+      <entity type="Muban" geocode="16030204" name="บ้านบุ่งเข้" english="Ban Bung Khe" />
+      <entity type="Muban" geocode="16030205" name="บ้านหนองตานน" english="Ban Nong Ta Non" />
+      <entity type="Muban" geocode="16030206" name="บ้านหน้าพระ" english="Ban Na Phra" />
+      <entity type="Muban" geocode="16030207" name="บ้านชอนอุดม" english="Ban Chon Udom" />
+      <entity type="Muban" geocode="16030208" name="บ้านชอนบอน" english="Ban Chon Bon" />
+      <entity type="Muban" geocode="16030209" name="บ้านเกาะแก้วพัฒนา" english="Ban Na Ko Kaeo Phatthana" />
+      <entity type="Muban" geocode="16030210" name="บ้านชอนอุดม" english="Ban Chon Udom" />
+      <entity type="Muban" geocode="16030211" name="บ้านเกาะสัมพันธ์ตา" english="Ban Ko Samphan Ta" />
     </entity>
     <entity type="Tambon" name="ถลุงเหล็ก" english="Thalung Lek" geocode="160303">
       <wiki wikidata="Q13015053" />
@@ -1095,7 +1177,18 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
+      <areacoverage>
+        <entity geocode="160303" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16030301" name="บ้านหนองบัวหิ่ง" english="Ban Nong Bua Hing" />
+      <entity type="Muban" geocode="16030302" name="บ้านหัวสระ" english="Ban Hua Sa" />
+      <entity type="Muban" geocode="16030303" name="บ้านใต้วัดถลุงเหล็ก" english="Ban Tai Wat Talung Lek" />
+      <entity type="Muban" geocode="16030304" name="บ้านใต้วัดถลุงเหล็ก" english="Ban Tai Wat Talung Lek" />
+      <entity type="Muban" geocode="16030305" name="บ้านหนองผักแว่น" english="Ban Nong Phak Waen" />
+      <entity type="Muban" geocode="16030306" name="บ้านเก่า" english="Ban Kao" />
+      <entity type="Muban" geocode="16030307" name="บ้านเก่า" english="Ban Kao" />
+      <entity type="Muban" geocode="16030308" name="บ้านใหม่เกษตร" english="Ban Mai Kaset" />
     </entity>
     <entity type="Tambon" name="หลุมข้าว" english="Lum Khao" geocode="160304">
       <wiki wikidata="Q13015121" />
@@ -1109,6 +1202,9 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+        <areacoverage>
+          <entity geocode="160304" coverage="completely" />
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="16030401" name="บ้านเนินส้มกบ" english="Ban Noen Somkop" />
       <entity type="Muban" geocode="16030402" name="บ้านเนินส้มกบ" english="Ban Noen Somkop" />
@@ -1135,7 +1231,22 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="24" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="24" />
         </council>
+      <areacoverage>
+        <entity geocode="160305" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16030501" name="บ้านห้วยโป่ง" english="Ban Huai Pong" />
+      <entity type="Muban" geocode="16030502" name="บ้านห้วยโป่ง" english="Ban Huai Pong" />
+      <entity type="Muban" geocode="16030503" name="บ้านสะพานขาว" english="Ban Saphan Khao" />
+      <entity type="Muban" geocode="16030504" name="บ้านหนองหอย" english="Ban Nong Hoi" />
+      <entity type="Muban" geocode="16030505" name="บ้านสามแยกหลุมข้าว" english="Ban Sam Yaek Lum Khao" />
+      <entity type="Muban" geocode="16030506" name="บ้านสระพรานจันทร์" english="Ban Sa Phran Chan" />
+      <entity type="Muban" geocode="16030507" name="บ้านสะพรานนาค" english="Ban Sa Phran Nak" />
+      <entity type="Muban" geocode="16030508" name="บ้านสะพรานนาค" english="Ban Sa Phran Nak" />
+      <entity type="Muban" geocode="16030509" name="บ้านหนองคู" english="Ban Nong Khu" />
+      <entity type="Muban" geocode="16030510" name="บ้านโพธิ์งาม" english="Ban Pho Ngam" />
+      <entity type="Muban" geocode="16030511" name="บ้านสระพรานพุฒ" english="Ban Sa Phran Phut" />
+      <entity type="Muban" geocode="16030512" name="บ้านน้อย" english="Ban Noi" />
     </entity>
     <entity type="Tambon" name="คลองเกตุ" english="Khlong Ket" geocode="160306">
       <wiki wikidata="Q16221036" />
@@ -1148,7 +1259,20 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="20" />
         </council>
+      <areacoverage>
+        <entity geocode="160306" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16030601" name="บ้านมะขามเฒ่า" english="Ban Makham Thao" />
+      <entity type="Muban" geocode="16030602" name="บ้านคลองเกตุ" english="Ban Khlong Ket" />
+      <entity type="Muban" geocode="16030603" name="บ้านโคกกระถิน" english="Ban Khok Krathin" />
+      <entity type="Muban" geocode="16030604" name="บ้านหนองบัว" english="Ban Nong Bua" />
+      <entity type="Muban" geocode="16030605" name="บ้านหัวดง" english="Ban Hua Dong" />
+      <entity type="Muban" geocode="16030606" name="บ้านห้วยรวก" english="Ban Huai Ruak" />
+      <entity type="Muban" geocode="16030607" name="บ้านโคกสะอาด" english="Ban Khok Sa-at" />
+      <entity type="Muban" geocode="16030608" name="บ้านเขาดิน" english="Ban Khao Din" />
+      <entity type="Muban" geocode="16030609" name="บ้านหนองวันเปรียง" english="Ban Nong Wan Priang" />
+      <entity type="Muban" geocode="16030610" name="บ้านเขานมนาง" english="Ban Khao Nom Nang" />
     </entity>
     <entity type="Tambon" name="สะแกราบ" english="Sakae Rap" geocode="160307">
       <office type="TAOOffice">
@@ -1160,7 +1284,25 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="30" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="30" />
         </council>
+      <areacoverage>
+        <entity geocode="160307" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16030701" name="บ้านสะแกราบ" english="Ban Sakae Rap" />
+      <entity type="Muban" geocode="16030702" name="บ้านสะแกราบ" english="Ban Sakae Rap" />
+      <entity type="Muban" geocode="16030703" name="บ้านหนองสำโรง" english="Ban Nong Samrong" />
+      <entity type="Muban" geocode="16030704" name="บ้านสะพานคง" english="Ban Saphan Khong" />
+      <entity type="Muban" geocode="16030705" name="บ้านกุดตะเข้ใหญ่" english="Ban Kut Takhe Yai" />
+      <entity type="Muban" geocode="16030706" name="บ้านทุ่งทอง" english="Ban Thung Thong" />
+      <entity type="Muban" geocode="16030707" name="บ้านหนองขุย" english="Ban Nong Khui" />
+      <entity type="Muban" geocode="16030708" name="บ้านสะแกราบใต้" english="Ban Sakae Rap Tai" />
+      <entity type="Muban" geocode="16030709" name="บ้านสะแกราบน้อย" english="Ban Sakae Rap Noi" />
+      <entity type="Muban" geocode="16030710" name="บ้านรักไทย" english="Ban Rak Thai" />
+      <entity type="Muban" geocode="16030711" name="บ้านหนองเต้าปูน" english="Ban Nong Tao Pun" />
+      <entity type="Muban" geocode="16030712" name="บ้านหนองโพธิ์ทอง" english="Ban Nong Pho Thong" />
+      <entity type="Muban" geocode="16030713" name="บ้านโคกแจงใหญ่" english="Ban Khok Chaeng Yai" />
+      <entity type="Muban" geocode="16030714" name="บ้านเก่าสำโรงน้อย" english="Ban Kao Samrong Noi" />
+      <entity type="Muban" geocode="16030715" name="บ้านใหม่โคกพรม" english="Ban Mai Khok Phrom" />
     </entity>
     <entity type="Tambon" name="เพนียด" english="Phaniat" geocode="160308">
       <office type="TAOOffice">
@@ -1173,6 +1315,9 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="20" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="20" />
         </council>
+      <areacoverage>
+        <entity geocode="160308" coverage="completely" />
+      </areacoverage>
       </office>
       <entity type="Muban" geocode="16030801" name="บ้านเพนียด" english="Ban Phaniat" />
       <entity type="Muban" geocode="16030802" name="บ้านเพนียด" english="Ban Phaniat" />
@@ -1195,7 +1340,23 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="26" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="26" />
         </council>
+      <areacoverage>
+        <entity geocode="160309" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16030901" name="บ้านวังเพลิง" english="Ban Wang Phloeng" />
+      <entity type="Muban" geocode="16030902" name="บ้านมะม่วงเจ็ดต้น" english="Ban Mamuang Chet Ton" />
+      <entity type="Muban" geocode="16030903" name="บ้านชอนม่วง" english="Ban Chon Muang" />
+      <entity type="Muban" geocode="16030904" name="บ้านเขาเตียน" english="Ban Khao Tian" />
+      <entity type="Muban" geocode="16030905" name="บ้านพุหวาย" english="Ban Phu Wai" />
+      <entity type="Muban" geocode="16030906" name="บ้านดอนไชยโย" english="Ban Don Chai Kho" />
+      <entity type="Muban" geocode="16030907" name="บ้านโป่งยอ" english="Ban Pong Yo" />
+      <entity type="Muban" geocode="16030908" name="บ้านโคกกรวด" english="Ban Khok Kruat" />
+      <entity type="Muban" geocode="16030909" name="บ้านวัดเจ็ดต้น" english="Ban Wat Chet Ton" />
+      <entity type="Muban" geocode="16030910" name="บ้านเขาป่าหญ้า" english="Ban Khao Paya" />
+      <entity type="Muban" geocode="16030911" name="บ้านหนองใหญ่" english="Ban Nong Yai" />
+      <entity type="Muban" geocode="16030912" name="บ้านอำนวยสุข" english="Ban Amnuai Suk" />
+      <entity type="Muban" geocode="16030913" name="บ้านคลังเงิน" english="Ban Khlang Ngoen" />
     </entity>
     <entity type="Tambon" name="ดงมะรุม" english="Dong Marum" geocode="160310">
       <office type="TAOOffice">
@@ -1208,6 +1369,9 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="24" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="24" />
         </council>
+      <areacoverage>
+        <entity geocode="160310" coverage="completely" />
+      </areacoverage>
       </office>
       <entity type="Muban" geocode="16031001" name="บ้านเกาะรี" english="Ban Ko Ri" />
       <entity type="Muban" geocode="16031002" name="บ้านดงมะรุม" english="Ban Dong Marum" />
@@ -1240,7 +1404,16 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="12" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
         </council>
+      <areacoverage>
+        <entity geocode="160318" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16031801" name="บ้านดงแก้ว" english="Ban Dong Kaeo" />
+      <entity type="Muban" geocode="16031802" name="บ้านวังขอนขว้าง" english="Ban Wang Khon Khwang" />
+      <entity type="Muban" geocode="16031803" name="บ้านวังขอนขว้าง" english="Ban Wang Khon Khwang" />
+      <entity type="Muban" geocode="16031804" name="บ้านห้วยวัวตาย" english="Ban Huai Wua Tai" />
+      <entity type="Muban" geocode="16031805" name="บ้านวังขอนขว้าง" english="Ban Wang Khon Khwang" />
+      <entity type="Muban" geocode="16031806" name="บ้านวังทอง" english="Ban Wang Thong" />
     </entity>
     <entity type="Tambon" name="ดงดินแดง" english="Dong Din Daeng" geocode="160319" newgeocode="161103" />
     <entity type="Tambon" name="วังจั่น" english="Wang Chan" geocode="160320">
@@ -1255,7 +1428,17 @@
           </term>
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
         </council>
+      <areacoverage>
+        <entity geocode="160320" coverage="completely" />
+      </areacoverage>
       </office>
+      <entity type="Muban" geocode="16032001" name="บ้านวังกระเบียน" english="Ban Wang Krabiang" />
+      <entity type="Muban" geocode="16032002" name="บ้านท่าฉนวน" english="Ban Tha Chanuan" />
+      <entity type="Muban" geocode="16032003" name="บ้านวังจั่น" english="Ban Wang Chan" />
+      <entity type="Muban" geocode="16032004" name="บ้านวังจั่น" english="Ban Wang Chan" />
+      <entity type="Muban" geocode="16032005" name="บ้านวังจั่น" english="Ban Wang Chan" />
+      <entity type="Muban" geocode="16032006" name="บ้านวังจั่นน้อย" english="Ban Wang Chan Noi" />
+      <entity type="Muban" geocode="16032007" name="บ้านนาโคก" english="Ban Na Khok" />
     </entity>
     <entity type="Tambon" name="หนองมะค่า" english="Nong Makha" geocode="160321" newgeocode="160903" />
     <entity type="Tambon" name="หนองแขม" english="Nong Khaem" geocode="160322">
@@ -1271,6 +1454,9 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="26" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
         </council>
+      <areacoverage>
+        <entity geocode="160322" coverage="completely" />
+      </areacoverage>
       </office>
       <entity type="Muban" geocode="16032201" name="บ้านท่าม่วง" english="Ban Tha Muang" />
       <entity type="Muban" geocode="16032202" name="บ้านใหม่พัฒนา" english="Ban Mai Phatthana" />
@@ -3137,6 +3323,9 @@
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
         <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
+      <areacoverage>
+        <entity geocode="160301" coverage="partially" />
+      </areacoverage>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="โคกตูม" english="Khok Tum" geocode="1696" parent="1601">
@@ -3175,6 +3364,9 @@
         <term begin="2008-03-09" end="2012-03-08" type="ThesabanTambon" size="12" />
         <term begin="2004-02-01" end="2008-01-31" type="ThesabanTambon" size="12" />
       </council>
+      <areacoverage>
+        <entity geocode="160207" coverage="partially" />
+      </areacoverage>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="พัฒนานิคม" english="Phatthana Nikhom" geocode="1694" parent="1602">
@@ -3189,6 +3381,9 @@
         <term begin="2009-08-02" end="2013-08-01" type="ThesabanTambon" size="12" />
         <term begin="2005-06-26" end="2009-06-25" type="ThesabanTambon" size="12" />
       </council>
+      <areacoverage>
+        <entity geocode="160201" coverage="partially" />
+      </areacoverage>
     </office>
   </entity>
   <entity type="ThesabanTambon" name="หนองม่วง" english="Nong Muang" geocode="1693" parent="1611">
@@ -3311,6 +3506,9 @@
         <term begin="2012-01-15" type="ThesabanTambon" size="12" />
         <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
       </council>
+      <areacoverage>
+        <entity geocode="160204" coverage="completely" />
+      </areacoverage>
     </office>
     <history>
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done" />
