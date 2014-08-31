@@ -622,7 +622,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 { 1, "eine" },
                 { 2, "zwei" },
                 { 3, "drei" },
-                { 4, "view" },
+                { 4, "vier" },
                 { 5, "fünf" },
                 { 6, "sechs" },
                 { 7, "sieben" },
@@ -664,8 +664,8 @@ namespace De.AHoerstemeier.Tambon.UI
                 String headerLocal = "=== Lokalverwaltung ===" + Environment.NewLine;
                 String textLocalSingular = "Es gibt eine Kommune mit „{0}“-Status ''({1})'' im Landkreis:" + Environment.NewLine;
                 String textLocalPlural = "Es gibt {0} Kommunen mit „{1}“-Status ''({2})'' im Landkreis:" + Environment.NewLine;
-                String taoWithThesaban = "Außerdem gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{lang|th|องค์การบริหารส่วนตำบล}} – Tambon Administrative Organizations, TAO)";
-                String taoWithoutThesaban = "Im Landkreis gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{lang|th|องค์การบริหารส่วนตำบล}} – Tambon Administrative Organizations, TAO)";
+                String taoWithThesaban = "Außerdem gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{lang|th|องค์การบริหารส่วนตำบล}} – Tambon Administrative Organizations, TAO)" + Environment.NewLine;
+                String taoWithoutThesaban = "Im Landkreis gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{lang|th|องค์การบริหารส่วนตำบล}} – Tambon Administrative Organizations, TAO)" + Environment.NewLine;
                 String entryLocal = "* {0} (Thai: {{{{lang|th|{1}}}}})";
                 String entryLocalCoverage = " bestehend aus {0}.";
                 String entryLocalCoverageTwo = " bestehend aus {0} und {1}.";
@@ -811,7 +811,7 @@ namespace De.AHoerstemeier.Tambon.UI
                                 }
                                 else
                                 {
-                                    result += String.Format(germanCulture, textLocalPlural, countAsString, entityType.Translate(Language.German), _deWikipediaLink[entityType]);
+                                    result += String.Format(germanCulture, textLocalPlural, countAsString(count), entityType.Translate(Language.German), _deWikipediaLink[entityType]);
                                 }
                             }
                             foreach ( var localEntity in local.Where(x => x.type == entityType) )
