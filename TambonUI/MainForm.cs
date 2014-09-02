@@ -537,7 +537,20 @@ namespace De.AHoerstemeier.Tambon.UI
                     {
                         if ( areadefinition.subdivisionsSpecified )
                         {
-                            var entity = GlobalData.LookupGeocode(areadefinition.geocode);
+                            var geocode = areadefinition.geocode;
+                            var entity = GlobalData.LookupGeocode(geocode);
+                            while ((entity!=null) && (entity.IsObsolete))
+                            {
+                                geocode = entity.newgeocode.FirstOrDefault();
+                                if (geocode == 0)
+                                {
+                                    entity = null;
+                                }
+                                else
+                                {
+                                    entity = GlobalData.LookupGeocode(geocode);
+                                }
+                            }
                             if ( entity != null )
                             {
                                 var entityCount = new EntityCount();
