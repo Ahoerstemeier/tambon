@@ -57,6 +57,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuWikipediaGerman = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
+            this.wikipediaenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
@@ -306,9 +307,10 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuWikipediaGerman,
+            this.wikipediaenToolStripMenuItem,
             this.mnuMubanDefinitions});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 92);
             // 
             // mnuWikipediaGerman
             // 
@@ -323,6 +325,13 @@
             this.mnuMubanDefinitions.Size = new System.Drawing.Size(171, 22);
             this.mnuMubanDefinitions.Text = "Muban definitions";
             this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
+            // 
+            // wikipediaenToolStripMenuItem
+            // 
+            this.wikipediaenToolStripMenuItem.Name = "wikipediaenToolStripMenuItem";
+            this.wikipediaenToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.wikipediaenToolStripMenuItem.Text = "Wikipedia (en)";
+            this.wikipediaenToolStripMenuItem.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
             // 
             // EntityBrowserForm
             // 
@@ -382,6 +391,7 @@
         private System.Windows.Forms.TabPage tabMuban;
         private System.Windows.Forms.TextBox txtMuban;
         private System.Windows.Forms.ToolStripMenuItem mnuMubanDefinitions;
+        private System.Windows.Forms.ToolStripMenuItem wikipediaenToolStripMenuItem;
 
     }
 }
