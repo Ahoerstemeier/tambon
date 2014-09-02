@@ -17,14 +17,18 @@ namespace De.AHoerstemeier.Tambon.UI
     {
         #region fields
 
-        private const Boolean _showDolaErrors = false;
         private List<Entity> localGovernments = new List<Entity>();
         private Entity baseEntity;
-        private Dictionary<EntityType, String> _deWikipediaLink;
 
         #endregion fields
 
         #region properties
+
+        public Boolean ShowDolaErrors
+        {
+            get;
+            set;
+        }
 
         public UInt32 StartChangwatGeocode
         {
@@ -59,13 +63,6 @@ namespace De.AHoerstemeier.Tambon.UI
             InitializeComponent();
             PopulationDataSource = PopulationDataSourceType.DOPA;
             PopulationReferenceYear = 2013;
-            _deWikipediaLink = new Dictionary<EntityType, String>()
-            {
-                {EntityType.ThesabanNakhon, "[[Thesaban#Großstadt|Thesaban Nakhon]]"},
-                {EntityType.ThesabanMueang, "[[Thesaban#Stadt|Thesaban Mueang]]"},
-                {EntityType.ThesabanTambon, "[[Thesaban#Kleinstadt|Thesaban Tambon]]"},
-                {EntityType.TAO, "[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]"},
-            };
         }
 
         #endregion constructor
@@ -260,7 +257,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var localGovernmentsInEntity = LocalGovernmentEntitiesOf(entity).ToList();
             var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null).ToList();  // Dola != null when there is a local government office
-            if ( _showDolaErrors )
+            if ( ShowDolaErrors )
             {
                 var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.Dola.codeSpecified).ToList();
                 var allDolaCodes = entitiesWithDolaCode.Select(x => x.Dola.code).ToList();
@@ -616,6 +613,56 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private delegate String CountAsString(Int32 count);
 
+        private AmphoeDataForWikipediaExport CalculateAmphoeData(Entity entity, Language language)
+        {
+            if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
+            {
+                var result = new AmphoeDataForWikipediaExport();
+                result.Province = baseEntity.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
+                result.AllTambon.AddRange(entity.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete));
+                result.LocalAdministrations.AddRange(LocalGovernmentEntitiesOf(entity).Where(x => !x.IsObsolete));
+
+                var allEntities = result.AllTambon.ToList();
+                allEntities.AddRange(result.LocalAdministrations);
+                if ( CheckWikiData )
+                {
+                    foreach ( var keyValuePair in RetrieveWikpediaLinks(allEntities, language) )
+                    {
+                        result.WikipediaLinks[keyValuePair.Key] = keyValuePair.Value;
+                    }
+                }
+                var counted = CountSubdivisions(entity);
+                if ( !counted.ContainsKey(EntityType.Muban) )
+                {
+                    counted[EntityType.Muban] = 0;
+                }
+                foreach ( var keyValuePair in counted )
+                {
+                    result.CentralAdministrationCountByEntity[keyValuePair.Key] = keyValuePair.Value;
+                }
+
+                result.MaxPopulation = 0;
+                foreach ( var tambon in result.AllTambon )
+                {
+                    var populationData = tambon.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
+                    if ( populationData != null )
+                    {
+                        result.MaxPopulation = Math.Max(result.MaxPopulation, populationData.TotalPopulation.total);
+                    }
+                }
+
+                foreach ( var keyValuePair in CountSubdivisions(result.LocalAdministrations) )
+                {
+                    result.LocalAdministrationCountByEntity[keyValuePair.Key] = keyValuePair.Value;
+                }
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         private void mnuWikipediaGerman_Click(Object sender, EventArgs e)
         {
             var numberStrings = new Dictionary<Int32, String>() {
@@ -632,14 +679,24 @@ namespace De.AHoerstemeier.Tambon.UI
                 { 11, "elf" },
                 { 12, "zwölf" },
             };
+            var wikipediaLink = new Dictionary<EntityType, String>()
+            {
+                {EntityType.ThesabanNakhon, "[[Thesaban#Großstadt|Thesaban Nakhon]]"},
+                {EntityType.ThesabanMueang, "[[Thesaban#Stadt|Thesaban Mueang]]"},
+                {EntityType.ThesabanTambon, "[[Thesaban#Kleinstadt|Thesaban Tambon]]"},
+                {EntityType.TAO, "[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]"},
+            };
+
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
+
             if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
             {
+                var amphoeData = CalculateAmphoeData(entity, Language.German);
                 var germanCulture = new CultureInfo("de-DE");
 
                 String headerBangkok = "== Verwaltung ==" + Environment.NewLine;
-                String textBangkok = "Der Bezirk {0} ist in {1} ''[[Khwaeng]]'' („Unterbezirke““) eingeteilt." + Environment.NewLine + Environment.NewLine;
+                String textBangkok = "Der Bezirk {0} ist in {1} ''[[Khwaeng]]'' („Unterbezirke“) eingeteilt." + Environment.NewLine + Environment.NewLine;
                 String headerAmphoe = "== Verwaltung ==" + Environment.NewLine + "=== Provinzverwaltung ===" + Environment.NewLine;
                 String textAmphoe = "Der Landkreis {0} ist in {1} ''[[Tambon]]'' („Unterbezirke“ oder „Gemeinden“) eingeteilt, die sich weiter in {2} ''[[Muban]]'' („Dörfer“) unterteilen." + Environment.NewLine + Environment.NewLine;
                 String tableHeaderAmphoe =
@@ -658,14 +715,14 @@ namespace De.AHoerstemeier.Tambon.UI
                 String tableEntryAmphoe = "|-" + Environment.NewLine +
                     "||{0}.||{1}||{{{{lang|th|{2}}}}}||{3}||{4}" + Environment.NewLine;
                 String tableEntryBangkok = "|-" + Environment.NewLine +
-                    "||{0}.||{1}||{{{{lang|th|{2}}}}}||{3}" + Environment.NewLine;
+                    "||{0}.||{1}||{{{{lang|th|{2}}}}}||{4}" + Environment.NewLine;
                 String tableFooter = "|}" + Environment.NewLine;
 
                 String headerLocal = "=== Lokalverwaltung ===" + Environment.NewLine;
                 String textLocalSingular = "Es gibt eine Kommune mit „{0}“-Status ''({1})'' im Landkreis:" + Environment.NewLine;
                 String textLocalPlural = "Es gibt {0} Kommunen mit „{1}“-Status ''({2})'' im Landkreis:" + Environment.NewLine;
-                String taoWithThesaban = "Außerdem gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{lang|th|องค์การบริหารส่วนตำบล}} – Tambon Administrative Organizations, TAO)" + Environment.NewLine;
-                String taoWithoutThesaban = "Im Landkreis gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{lang|th|องค์การบริหารส่วนตำบล}} – Tambon Administrative Organizations, TAO)" + Environment.NewLine;
+                String taoWithThesaban = "Außerdem gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{{{lang|th|องค์การบริหารส่วนตำบล}}}} – Tambon Administrative Organizations, TAO)" + Environment.NewLine;
+                String taoWithoutThesaban = "Im Landkreis gibt es {0} „[[Verwaltungsgliederung Thailands#Tambon-Verwaltungsorganisationen|Tambon-Verwaltungsorganisationen]]“ ({{{{lang|th|องค์การบริหารส่วนตำบล}}}} – Tambon Administrative Organizations, TAO)" + Environment.NewLine;
                 String entryLocal = "* {0} (Thai: {{{{lang|th|{1}}}}})";
                 String entryLocalCoverage = " bestehend aus {0}.";
                 String entryLocalCoverageTwo = " bestehend aus {0} und {1}.";
@@ -684,100 +741,33 @@ namespace De.AHoerstemeier.Tambon.UI
                     return countAsStringResult;
                 };
 
-                var allEntities = entity.entity.ToList();
-                var local = LocalGovernmentEntitiesOf(entity).Where(x => !x.IsObsolete);
-                allEntities.AddRange(local);
-                Dictionary<Entity, String> wikipediaLinks = new Dictionary<Entity, String>();
-                if ( CheckWikiData )
-                {
-                    wikipediaLinks = RetrieveWikpediaLinks(allEntities, Language.German);
-                }
-                var counted = CountSubdivisions(entity);
-                if ( !counted.ContainsKey(EntityType.Muban) )
-                {
-                    counted[EntityType.Muban] = 0;
-                }
-                String result = String.Empty;
-
+                var result = String.Empty;
                 if ( entity.type == EntityType.Khet )
                 {
                     result = headerBangkok +
-                        String.Format(germanCulture, textBangkok, entity.english, countAsString(counted[EntityType.Khwaeng])) +
+                        String.Format(germanCulture, textBangkok, entity.english, countAsString(amphoeData.CentralAdministrationCountByEntity[EntityType.Khwaeng])) +
                         String.Format(germanCulture, tableHeaderBangkok, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.German));
                 }
                 else
                 {
                     result = headerAmphoe +
-                        String.Format(germanCulture, textAmphoe, entity.english, countAsString(counted[EntityType.Tambon]), countAsString(counted[EntityType.Muban])) +
+                        String.Format(germanCulture, textAmphoe, entity.english, countAsString(amphoeData.CentralAdministrationCountByEntity[EntityType.Tambon]), countAsString(amphoeData.CentralAdministrationCountByEntity[EntityType.Muban])) +
                         String.Format(germanCulture, tableHeaderAmphoe, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.German));
                 }
-                var maxPopulation = 0;
-                foreach ( var tambon in entity.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete) )
+                foreach ( var tambon in amphoeData.AllTambon )
                 {
-                    var populationData = tambon.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
-                    if ( populationData != null )
-                    {
-                        maxPopulation = Math.Max(maxPopulation, populationData.TotalPopulation.total);
-                    }
-                }
-                var allTambon = entity.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete).ToList();
-                foreach ( var tambon in allTambon )
-                {
-                    var subCounted = CountSubdivisions(tambon);
-                    var muban = 0;
-                    if ( !subCounted.TryGetValue(EntityType.Muban, out muban) )
-                    {
-                        muban = 0;
-                    }
-                    var citizen = 0;
-                    var populationData = tambon.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
-                    if ( populationData != null )
-                    {
-                        citizen = populationData.TotalPopulation.total;
-                    }
-                    var geocodeString = (tambon.geocode % 100).ToString(germanCulture);
-                    if ( entity.geocode % 100 < 10 )
-                    {
-                        geocodeString = "{{0}}" + geocodeString;
-                    }
-                    String mubanString;
-                    if ( muban == 0 )
-                    {
-                        mubanString = "-";
-                    }
-                    else if ( muban < 10 )
-                    {
-                        mubanString = "{{0}}" + muban.ToString(germanCulture);
-                    }
-                    else
-                    {
-                        mubanString = muban.ToString();
-                    }
-                    var citizenString = citizen.ToString("###,##0");
-                    for ( int i = citizenString.Length ; i < maxPopulation.ToString("###,##0", germanCulture).Length ; i++ )
-                    {
-                        citizenString = "{{0}}" + citizenString;
-                    }
-                    var english = tambon.english;
-                    var link = String.Empty;
-                    if ( wikipediaLinks.TryGetValue(tambon, out link) )
-                    {
-                        english = WikiLink(link, english);
-                    }
-
                     if ( entity.type == EntityType.Khet )
                     {
-                        result += String.Format(germanCulture, tableEntryBangkok, geocodeString, english, tambon.name, citizenString);
+                        result += WikipediaTambonTableEntry(tambon, amphoeData, tableEntryBangkok, germanCulture);
                     }
                     else
                     {
-                        result += String.Format(germanCulture, tableEntryAmphoe, geocodeString, english, tambon.name, mubanString, citizenString);
+                        result += WikipediaTambonTableEntry(tambon, amphoeData, tableEntryAmphoe, germanCulture);
                     }
                 }
                 result += tableFooter + Environment.NewLine;
 
-                var localTypes = CountSubdivisions(local);
-                if ( localTypes.Any() )
+                if ( amphoeData.LocalAdministrationCountByEntity.Any() )
                 {
                     result += headerLocal;
                     var check = new List<EntityType>()
@@ -790,11 +780,11 @@ namespace De.AHoerstemeier.Tambon.UI
                     foreach ( var entityType in check )
                     {
                         Int32 count = 0;
-                        if ( localTypes.TryGetValue(entityType, out count) )
+                        if ( amphoeData.LocalAdministrationCountByEntity.TryGetValue(entityType, out count) )
                         {
                             if ( entityType == EntityType.TAO )
                             {
-                                if ( localTypes.Keys.Count == 1 )
+                                if ( amphoeData.LocalAdministrationCountByEntity.Keys.Count == 1 )
                                 {
                                     result += String.Format(germanCulture, taoWithoutThesaban, countAsString(count));
                                 }
@@ -807,73 +797,26 @@ namespace De.AHoerstemeier.Tambon.UI
                             {
                                 if ( count == 1 )
                                 {
-                                    result += String.Format(germanCulture, textLocalSingular, entityType.Translate(Language.German), _deWikipediaLink[entityType]);
+                                    result += String.Format(germanCulture, textLocalSingular, entityType.Translate(Language.German), wikipediaLink[entityType]);
                                 }
                                 else
                                 {
-                                    result += String.Format(germanCulture, textLocalPlural, countAsString(count), entityType.Translate(Language.German), _deWikipediaLink[entityType]);
+                                    result += String.Format(germanCulture, textLocalPlural, countAsString(count), entityType.Translate(Language.German), wikipediaLink[entityType]);
                                 }
                             }
-                            foreach ( var localEntity in local.Where(x => x.type == entityType) )
+                            foreach ( var localEntity in amphoeData.LocalAdministrations.Where(x => x.type == entityType) )
                             {
-                                // TODO - How to sort?
-                                var english = localEntity.english;
-                                var link = String.Empty;
-                                if ( wikipediaLinks.TryGetValue(localEntity, out link) )
-                                {
-                                    english = WikiLink(link, english);
-                                }
-                                result += String.Format(germanCulture, entryLocal, english, localEntity.FullName);
-                                if ( localEntity.LocalGovernmentAreaCoverage.Any() )
-                                {
-                                    var coverage = localEntity.LocalGovernmentAreaCoverage.GroupBy(x => x.coverage).Select(group => new
-                                    {
-                                        Coverage = group.Key,
-                                        TambonCount = group.Count()
-                                    });
-                                    var textComplete = String.Empty;
-                                    var textPartially = String.Empty;
-
-                                    if ( coverage.Any(x => x.Coverage == CoverageType.completely) )
-                                    {
-                                        var completeTambon = localEntity.LocalGovernmentAreaCoverage.
-                                            Where(x => x.coverage == CoverageType.completely).
-                                            Select(x => entity.FlatList().FirstOrDefault(y => y.geocode == x.geocode));
-                                        var tambonString = String.Join(", ", completeTambon.Select(x => x.english));
-                                        if ( coverage.First(x => x.Coverage == CoverageType.completely).TambonCount == 1 )
-                                        {
-                                            textComplete = String.Format(germanCulture, tambonCompleteSingular, tambonString);
-                                        }
-                                        else
-                                        {
-                                            textComplete = String.Format(germanCulture, tambonCompletePlural, tambonString);
-                                        }
-                                    }
-                                    if ( coverage.Any(x => x.Coverage == CoverageType.partially) )
-                                    {
-                                        var completeTambon = localEntity.LocalGovernmentAreaCoverage.
-                                            Where(x => x.coverage == CoverageType.partially).
-                                            Select(x => entity.FlatList().FirstOrDefault(y => y.geocode == x.geocode));
-                                        var tambonString = String.Join(", ", completeTambon.Select(x => x.english));
-                                        if ( coverage.First(x => x.Coverage == CoverageType.partially).TambonCount == 1 )
-                                        {
-                                            textPartially = String.Format(germanCulture, tambonPartiallySingular, tambonString);
-                                        }
-                                        else
-                                        {
-                                            textPartially = String.Format(germanCulture, tambonPartiallyPlural, tambonString);
-                                        }
-                                    }
-                                    if ( !String.IsNullOrEmpty(textPartially) && !String.IsNullOrEmpty(textComplete) )
-                                    {
-                                        result += String.Format(germanCulture, entryLocalCoverageTwo, textComplete, textPartially);
-                                    }
-                                    else
-                                    {
-                                        result += String.Format(germanCulture, entryLocalCoverage, textComplete + textPartially);
-                                    }
-                                }
-                                result += Environment.NewLine;
+                                result += WikipediaLocalAdministrationTableEntry(
+                                    localEntity,
+                                    amphoeData,
+                                    entryLocal,
+                                    tambonCompleteSingular,
+                                    tambonCompletePlural,
+                                    tambonPartiallySingular,
+                                    tambonPartiallyPlural,
+                                    entryLocalCoverage,
+                                    entryLocalCoverageTwo,
+                                    germanCulture);
                             }
                             result += Environment.NewLine;
                         }
@@ -895,6 +838,126 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 return "[[" + link + "|" + title + "]]";
             }
+        }
+
+        private String WikipediaTambonTableEntry(Entity tambon, AmphoeDataForWikipediaExport amphoeData, String format, CultureInfo culture)
+        {
+            var subCounted = CountSubdivisions(tambon);
+            var muban = 0;
+            if ( !subCounted.TryGetValue(EntityType.Muban, out muban) )
+            {
+                muban = 0;
+            }
+            var citizen = 0;
+            var populationData = tambon.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
+            if ( populationData != null )
+            {
+                citizen = populationData.TotalPopulation.total;
+            }
+            var geocodeString = (tambon.geocode % 100).ToString(culture);
+            if ( tambon.geocode % 100 < 10 )
+            {
+                geocodeString = "{{0}}" + geocodeString;
+            }
+            String mubanString;
+            if ( muban == 0 )
+            {
+                mubanString = "-";
+            }
+            else if ( muban < 10 )
+            {
+                mubanString = "{{0}}" + muban.ToString(culture);
+            }
+            else
+            {
+                mubanString = muban.ToString();
+            }
+            var citizenString = citizen.ToString("###,##0", culture);
+            for ( int i = citizenString.Length ; i < amphoeData.MaxPopulation.ToString("###,##0", culture).Length ; i++ )
+            {
+                citizenString = "{{0}}" + citizenString;
+            }
+            var english = tambon.english;
+            var link = String.Empty;
+            if ( amphoeData.WikipediaLinks.TryGetValue(tambon, out link) )
+            {
+                english = WikiLink(link, english);
+            }
+
+            return String.Format(culture, format, geocodeString, english, tambon.name, mubanString, citizenString);
+        }
+
+        private String WikipediaLocalAdministrationTableEntry(
+            Entity localEntity,
+            AmphoeDataForWikipediaExport amphoeData,
+            String entryLocal,
+            String tambonCompleteSingular,
+            String tambonCompletePlural,
+            String tambonPartiallySingular,
+            String tambonPartiallyPlural,
+            String entryLocalCoverageOne,
+            String entryLocalCoverageTwo,
+            CultureInfo culture)
+        {
+            var result = String.Empty;
+            var english = localEntity.english;
+            var link = String.Empty;
+            if ( amphoeData.WikipediaLinks.TryGetValue(localEntity, out link) )
+            {
+                english = WikiLink(link, english);
+            }
+            result += String.Format(culture, entryLocal, english, localEntity.FullName);
+            if ( localEntity.LocalGovernmentAreaCoverage.Any() )
+            {
+                var coverage = localEntity.LocalGovernmentAreaCoverage.GroupBy(x => x.coverage).Select(group => new
+                {
+                    Coverage = group.Key,
+                    TambonCount = group.Count()
+                });
+                var textComplete = String.Empty;
+                var textPartially = String.Empty;
+
+                if ( coverage.Any(x => x.Coverage == CoverageType.completely) )
+                {
+                    var completeTambon = localEntity.LocalGovernmentAreaCoverage.
+                        Where(x => x.coverage == CoverageType.completely).
+                        Select(x => amphoeData.Province.FlatList().FirstOrDefault(y => y.geocode == x.geocode));
+                    var tambonString = String.Join(", ", completeTambon.Select(x => x.english));
+                    if ( coverage.First(x => x.Coverage == CoverageType.completely).TambonCount == 1 )
+                    {
+                        textComplete = String.Format(culture, tambonCompleteSingular, tambonString);
+                    }
+                    else
+                    {
+                        textComplete = String.Format(culture, tambonCompletePlural, tambonString);
+                    }
+                }
+                if ( coverage.Any(x => x.Coverage == CoverageType.partially) )
+                {
+                    var completeTambon = localEntity.LocalGovernmentAreaCoverage.
+                        Where(x => x.coverage == CoverageType.partially).
+                        Select(x => amphoeData.Province.FlatList().FirstOrDefault(y => y.geocode == x.geocode));
+                    var tambonString = String.Join(", ", completeTambon.Select(x => x.english));
+                    if ( coverage.First(x => x.Coverage == CoverageType.partially).TambonCount == 1 )
+                    {
+                        textPartially = String.Format(culture, tambonPartiallySingular, tambonString);
+                    }
+                    else
+                    {
+                        textPartially = String.Format(culture, tambonPartiallyPlural, tambonString);
+                    }
+                }
+                if ( !String.IsNullOrEmpty(textPartially) && !String.IsNullOrEmpty(textComplete) )
+                {
+                    result += String.Format(culture, entryLocalCoverageTwo, textComplete, textPartially);
+                }
+                else
+                {
+                    result += String.Format(culture, entryLocalCoverageOne, textComplete + textPartially);
+                }
+            }
+            result += Environment.NewLine;
+            return result;
         }
 
         private Dictionary<Entity, String> RetrieveWikpediaLinks(IEnumerable<Entity> entities, Language language)
@@ -978,6 +1041,191 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 // throw;
             }
+        }
+
+        private void mnuWikipediaEnglish_Click(object sender, EventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
+            {
+                var englishCulture = new CultureInfo("en-US");
+                var amphoeData = CalculateAmphoeData(entity, Language.German);
+
+                String headerBangkok = "== Administration ==" + Environment.NewLine;
+                String textBangkok = "The district {0} is subdivided into {1} subdistricts (''[[Khwaeng]]'')." + Environment.NewLine + Environment.NewLine;
+                String headerAmphoe = "== Administration ==" + Environment.NewLine + "=== Central administration ===" + Environment.NewLine;
+                String textAmphoe = "The district {0} is subdivided into {1} subdistrict (''[[Tambon]]''), which are further subdivided into {2} administrative villages (''[[Muban]]'')." + Environment.NewLine + Environment.NewLine;
+                String tableHeaderAmphoe =
+                    "{{| class=\"wikitable\"" + Environment.NewLine +
+                    "! No." + Environment.NewLine +
+                    "! Name" + Environment.NewLine +
+                    "! Thai" + Environment.NewLine +
+                    "! Villages" + Environment.NewLine +
+                    "! [[Population|Inh.]]{0}" + Environment.NewLine;
+                String tableHeaderBangkok =
+                    "{{| class=\"wikitable\"" + Environment.NewLine +
+                    "! No." + Environment.NewLine +
+                    "! Name" + Environment.NewLine +
+                    "! Thai" + Environment.NewLine +
+                    "! [[Population|Inh.]]{0}" + Environment.NewLine;
+                String tableEntryAmphoe = "|-" + Environment.NewLine +
+                    "||{0}.||{1}||{{{{lang|th|{2}}}}}||{3}||{4}" + Environment.NewLine;
+                String tableEntryBangkok = "|-" + Environment.NewLine +
+                    "||{0}.||{1}||{{{{lang|th|{2}}}}}||{3}" + Environment.NewLine;
+                String tableFooter = "|}" + Environment.NewLine;
+
+                String headerLocal = "=== Local administration ===" + Environment.NewLine;
+                String textLocalSingular = "There is one {0} in the district:" + Environment.NewLine;
+                String textLocalPlural = "There are {0} {1} in the district:" + Environment.NewLine;
+                String entryLocal = "* {0} (Thai: {{{{lang|th|{1}}}}})";
+                String entryLocalCoverage = " consisting of {0}.";
+                String entryLocalCoverageTwo = " consisting of {0} and {1}.";
+                String tambonCompleteSingular = "the complete subdistrict {0}";
+                String tambonPartiallySingular = "parts of the subdistrict {0}";
+                String tambonCompletePlural = "the complete subdistrict {0}";
+                String tambonPartiallyPlural = "parts of the subdistricts {0}";
+
+                var enWikipediaLink = new Dictionary<EntityType, String>()
+                {
+                    {EntityType.ThesabanNakhon, "city (''[[Thesaban#City municipality|Thesaban Nakhon]]'')"},
+                    {EntityType.ThesabanMueang, "town (''[[Thesaban#Town municipality|Thesaban Mueang]]'')"},
+                    {EntityType.ThesabanTambon, "subdistrict municipality (''[[Thesaban#Subdistrict municipality|Thesaban Tambon]]'')"},
+                    {EntityType.TAO, "[[Subdistrict administrative organization|subdistrict administrative organization (SAO)]]"},
+                };
+                var enWikipediaLinkPlural = new Dictionary<EntityType, String>()
+                {
+                    {EntityType.ThesabanNakhon, "cities (''[[Thesaban#City municipality|Thesaban Nakhon]]'')"},
+                    {EntityType.ThesabanMueang, "towns (''[[Thesaban#Town municipality|Thesaban Mueang]]'')"},
+                    {EntityType.ThesabanTambon, "subdistrict municipalities (''[[Thesaban#Subdistrict municipality|Thesaban Tambon]]'')"},
+                    {EntityType.TAO, "[[Subdistrict administrative organization|subdistrict administrative organizations (SAO)]]"},
+                };
+
+                var result = String.Empty;
+                if ( entity.type == EntityType.Khet )
+                {
+                    result = headerBangkok +
+                        String.Format(englishCulture, textBangkok, entity.english, amphoeData.CentralAdministrationCountByEntity[EntityType.Khwaeng]) +
+                        String.Format(englishCulture, tableHeaderBangkok, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.English));
+                }
+                else
+                {
+                    result = headerAmphoe +
+                        String.Format(englishCulture, textAmphoe, entity.english, amphoeData.CentralAdministrationCountByEntity[EntityType.Tambon], amphoeData.CentralAdministrationCountByEntity[EntityType.Muban]) +
+                        String.Format(englishCulture, tableHeaderAmphoe, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.English));
+                }
+                foreach ( var tambon in amphoeData.AllTambon )
+                {
+                    if ( entity.type == EntityType.Khet )
+                    {
+                        result += WikipediaTambonTableEntry(tambon, amphoeData, tableEntryBangkok, englishCulture);
+                    }
+                    else
+                    {
+                        result += WikipediaTambonTableEntry(tambon, amphoeData, tableEntryAmphoe, englishCulture);
+                    }
+                }
+                result += tableFooter + Environment.NewLine;
+
+                if ( amphoeData.LocalAdministrationCountByEntity.Any() )
+                {
+                    result += headerLocal;
+                    var check = new List<EntityType>()
+                {
+                    EntityType.ThesabanNakhon,
+                    EntityType.ThesabanMueang,
+                    EntityType.ThesabanTambon,
+                    EntityType.TAO,
+                };
+                    foreach ( var entityType in check )
+                    {
+                        Int32 count = 0;
+                        if ( amphoeData.LocalAdministrationCountByEntity.TryGetValue(entityType, out count) )
+                        {
+                            if ( count == 1 )
+                            {
+                                result += String.Format(englishCulture, textLocalSingular, enWikipediaLink[entityType]);
+                            }
+                            else
+                            {
+                                result += String.Format(englishCulture, textLocalPlural, count, enWikipediaLinkPlural[entityType]);
+                            }
+                            foreach ( var localEntity in amphoeData.LocalAdministrations.Where(x => x.type == entityType) )
+                            {
+                                result += WikipediaLocalAdministrationTableEntry(
+                                    localEntity,
+                                    amphoeData,
+                                    entryLocal,
+                                    tambonCompleteSingular,
+                                    tambonCompletePlural,
+                                    tambonPartiallySingular,
+                                    tambonPartiallyPlural,
+                                    entryLocalCoverage,
+                                    entryLocalCoverageTwo,
+                                    englishCulture);
+                            }
+                            result += Environment.NewLine;
+                        }
+                    }
+                }
+
+                Clipboard.Clear();
+                Clipboard.SetText(result);
+            }
+        }
+    }
+
+    internal class AmphoeDataForWikipediaExport
+    {
+        public Dictionary<Entity, String> WikipediaLinks
+        {
+            get;
+            private set;
+        }
+
+        public Dictionary<EntityType, Int32> CentralAdministrationCountByEntity
+        {
+            get;
+            private set;
+        }
+
+        public Dictionary<EntityType, Int32> LocalAdministrationCountByEntity
+        {
+            get;
+            private set;
+        }
+
+        public Int32 MaxPopulation
+        {
+            get;
+            set;
+        }
+
+        public List<Entity> AllTambon
+        {
+            get;
+            private set;
+        }
+
+        public List<Entity> LocalAdministrations
+        {
+            get;
+            private set;
+        }
+
+        public Entity Province
+        {
+            get;
+            set;
+        }
+
+        public AmphoeDataForWikipediaExport()
+        {
+            WikipediaLinks = new Dictionary<Entity, String>();
+            CentralAdministrationCountByEntity = new Dictionary<EntityType, Int32>();
+            LocalAdministrationCountByEntity = new Dictionary<EntityType, Int32>();
+            AllTambon = new List<Entity>();
+            LocalAdministrations = new List<Entity>();
         }
     }
 }

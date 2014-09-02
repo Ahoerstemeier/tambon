@@ -1061,6 +1061,17 @@ namespace De.AHoerstemeier.Tambon.UI
             var formEntityBrowser = new EntityBrowserForm();
             formEntityBrowser.StartChangwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
             formEntityBrowser.PopulationReferenceYear = Convert.ToInt16(edtYear.Value);
+            Boolean checkWikiData = false;
+            try
+            {
+                var checkWikidataConfig = ConfigurationManager.AppSettings["EntityBrowserCheckWikiData"];
+                checkWikiData = Convert.ToBoolean(checkWikidataConfig);
+            }
+            catch ( FormatException )
+            {
+            }
+            formEntityBrowser.CheckWikiData = checkWikiData;
+
             formEntityBrowser.Show();
         }
     }
