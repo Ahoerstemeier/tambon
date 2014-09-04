@@ -256,7 +256,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
             var localGovernmentsInEntity = LocalGovernmentEntitiesOf(entity).ToList();
-            var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null).ToList();  // Dola != null when there is a local government office
+            var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
             if ( ShowDolaErrors )
             {
                 var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.Dola.codeSpecified).ToList();
@@ -999,14 +999,17 @@ namespace De.AHoerstemeier.Tambon.UI
         private IEnumerable<GazetteEntry> AreaDefinitionAnnouncements(Entity entity)
         {
             var result = new List<GazetteEntry>();
-            var allAboutGeocode = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.IsAboutGeocode(entity.geocode, true));
-            var allAreaDefinitionAnnouncements = allAboutGeocode.Where(x => x.Items.Any(y => y is GazetteAreaDefinition));
-            foreach ( var announcement in allAreaDefinitionAnnouncements )
+            if ( entity.type != EntityType.Country )
             {
-                var areaDefinitions = announcement.Items.Where(x => x is GazetteAreaDefinition);
-                if ( areaDefinitions.Any(x => (x as GazetteAreaDefinition).IsAboutGeocode(entity.geocode, true)) )
+                var allAboutGeocode = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.IsAboutGeocode(entity.geocode, true));
+                var allAreaDefinitionAnnouncements = allAboutGeocode.Where(x => x.Items.Any(y => y is GazetteAreaDefinition));
+                foreach ( var announcement in allAreaDefinitionAnnouncements )
                 {
-                    result.Add(announcement);
+                    var areaDefinitions = announcement.Items.Where(x => x is GazetteAreaDefinition);
+                    if ( areaDefinitions.Any(x => (x as GazetteAreaDefinition).IsAboutGeocode(entity.geocode, true)) )
+                    {
+                        result.Add(announcement);
+                    }
                 }
             }
             return result;
