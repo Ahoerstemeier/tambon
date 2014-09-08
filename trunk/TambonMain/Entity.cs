@@ -1022,6 +1022,7 @@ namespace De.AHoerstemeier.Tambon
         public Boolean MubanNumberConsistent()
         {
             var nrOfMuban = entity.Count(x => x.type == EntityType.Muban);
+            var nrOfActiveMuban = entity.Count(x => x.type == EntityType.Muban && !x.IsObsolete);
             if ( nrOfMuban != 0 )
             {
                 if ( entity.Last(x => x.type == EntityType.Muban).geocode % 100 != nrOfMuban )
@@ -1035,7 +1036,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( taoOffice.areacoverage.Count < 2 )  // if more than one Tambon, this simple check will fail
                 {
                     var latestTerm = taoOffice.council.CouncilTerms.First();
-                    if ( latestTerm.FinalSize > Math.Max(6, nrOfMuban * 2) )  // max(6,x) due to minimum size of council
+                    if ( latestTerm.FinalSize > Math.Max(6, nrOfActiveMuban * 2) )  // max(6,x) due to minimum size of council
                     {
                         return false;
                     }
@@ -1045,7 +1046,11 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( counter.count > nrOfMuban )
                 {
-                    return false;
+                    return false;  // had more Muban in past than now
+                }
+                if ( (counter.count == 0) && (nrOfActiveMuban > 0) )
+                {
+                    return false;  // had no Muban in past, but now has some
                 }
             }
             return true;

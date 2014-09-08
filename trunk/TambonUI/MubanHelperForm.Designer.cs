@@ -35,6 +35,12 @@
             this.edtText = new System.Windows.Forms.TextBox();
             this.btnConvert = new System.Windows.Forms.Button();
             this.btnAddBan = new System.Windows.Forms.Button();
+            this.cbxAmphoe = new System.Windows.Forms.ComboBox();
+            this.cbxChangwat = new System.Windows.Forms.ComboBox();
+            this.lblChangwat = new System.Windows.Forms.Label();
+            this.lblAmphoe = new System.Windows.Forms.Label();
+            this.lblTambon = new System.Windows.Forms.Label();
+            this.cbxTambon = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.edtGeocode)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,14 +72,14 @@
             // 
             this.edtGeocode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.edtGeocode.Location = new System.Drawing.Point(132, 57);
+            this.edtGeocode.Location = new System.Drawing.Point(129, 57);
             this.edtGeocode.Maximum = new decimal(new int[] {
             969900,
             0,
             0,
             0});
             this.edtGeocode.Name = "edtGeocode";
-            this.edtGeocode.Size = new System.Drawing.Size(217, 20);
+            this.edtGeocode.Size = new System.Drawing.Size(220, 20);
             this.edtGeocode.TabIndex = 2;
             // 
             // lblGeocode
@@ -90,10 +96,10 @@
             this.edtText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.edtText.Location = new System.Drawing.Point(12, 86);
+            this.edtText.Location = new System.Drawing.Point(12, 163);
             this.edtText.Multiline = true;
             this.edtText.Name = "edtText";
-            this.edtText.Size = new System.Drawing.Size(337, 163);
+            this.edtText.Size = new System.Drawing.Size(337, 181);
             this.edtText.TabIndex = 4;
             // 
             // btnConvert
@@ -116,11 +122,80 @@
             this.btnAddBan.UseVisualStyleBackColor = true;
             this.btnAddBan.Click += new System.EventHandler(this.btnAddBan_Click);
             // 
+            // cbxAmphoe
+            // 
+            this.cbxAmphoe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxAmphoe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxAmphoe.FormattingEnabled = true;
+            this.cbxAmphoe.Location = new System.Drawing.Point(129, 110);
+            this.cbxAmphoe.Name = "cbxAmphoe";
+            this.cbxAmphoe.Size = new System.Drawing.Size(220, 21);
+            this.cbxAmphoe.TabIndex = 19;
+            this.cbxAmphoe.SelectedValueChanged += new System.EventHandler(this.cbxAmphoe_SelectedValueChanged);
+            // 
+            // cbxChangwat
+            // 
+            this.cbxChangwat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxChangwat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxChangwat.FormattingEnabled = true;
+            this.cbxChangwat.Location = new System.Drawing.Point(129, 83);
+            this.cbxChangwat.Name = "cbxChangwat";
+            this.cbxChangwat.Size = new System.Drawing.Size(220, 21);
+            this.cbxChangwat.TabIndex = 18;
+            this.cbxChangwat.SelectedValueChanged += new System.EventHandler(this.cbxChangwat_SelectedValueChanged);
+            // 
+            // lblChangwat
+            // 
+            this.lblChangwat.AutoSize = true;
+            this.lblChangwat.Location = new System.Drawing.Point(9, 86);
+            this.lblChangwat.Name = "lblChangwat";
+            this.lblChangwat.Size = new System.Drawing.Size(49, 13);
+            this.lblChangwat.TabIndex = 20;
+            this.lblChangwat.Text = "Province";
+            // 
+            // lblAmphoe
+            // 
+            this.lblAmphoe.AutoSize = true;
+            this.lblAmphoe.Location = new System.Drawing.Point(9, 113);
+            this.lblAmphoe.Name = "lblAmphoe";
+            this.lblAmphoe.Size = new System.Drawing.Size(39, 13);
+            this.lblAmphoe.TabIndex = 21;
+            this.lblAmphoe.Text = "District";
+            // 
+            // lblTambon
+            // 
+            this.lblTambon.AutoSize = true;
+            this.lblTambon.Location = new System.Drawing.Point(9, 140);
+            this.lblTambon.Name = "lblTambon";
+            this.lblTambon.Size = new System.Drawing.Size(56, 13);
+            this.lblTambon.TabIndex = 23;
+            this.lblTambon.Text = "Subdistrict";
+            // 
+            // cbxTambon
+            // 
+            this.cbxTambon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbxTambon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTambon.FormattingEnabled = true;
+            this.cbxTambon.Location = new System.Drawing.Point(129, 137);
+            this.cbxTambon.Name = "cbxTambon";
+            this.cbxTambon.Size = new System.Drawing.Size(220, 21);
+            this.cbxTambon.TabIndex = 22;
+            this.cbxTambon.SelectedValueChanged += new System.EventHandler(this.cbxTambon_SelectedValueChanged);
+            // 
             // MubanHelperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 261);
+            this.ClientSize = new System.Drawing.Size(363, 356);
+            this.Controls.Add(this.lblTambon);
+            this.Controls.Add(this.cbxTambon);
+            this.Controls.Add(this.lblAmphoe);
+            this.Controls.Add(this.lblChangwat);
+            this.Controls.Add(this.cbxAmphoe);
+            this.Controls.Add(this.cbxChangwat);
             this.Controls.Add(this.btnAddBan);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.edtText);
@@ -130,6 +205,7 @@
             this.Controls.Add(this.chkStripBefore);
             this.Name = "MubanHelperForm";
             this.Text = "MubanHelperForm";
+            this.Load += new System.EventHandler(this.MubanHelperForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.edtGeocode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,5 +221,11 @@
         private System.Windows.Forms.TextBox edtText;
         private System.Windows.Forms.Button btnConvert;
         private System.Windows.Forms.Button btnAddBan;
+        private System.Windows.Forms.ComboBox cbxAmphoe;
+        private System.Windows.Forms.ComboBox cbxChangwat;
+        private System.Windows.Forms.Label lblChangwat;
+        private System.Windows.Forms.Label lblAmphoe;
+        private System.Windows.Forms.Label lblTambon;
+        private System.Windows.Forms.ComboBox cbxTambon;
     }
 }

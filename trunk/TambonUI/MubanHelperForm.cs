@@ -99,5 +99,40 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             edtText.Text = builder.ToString();
         }
+
+        private void cbxChangwat_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var changwat = cbxChangwat.SelectedItem as Entity;
+            cbxAmphoe.Items.Clear();
+            if ( changwat != null )
+            {
+                cbxAmphoe.Items.AddRange(changwat.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Amphoe)).ToArray());
+            }
+            cbxAmphoe.SelectedItem = null;
+        }
+
+        private void MubanHelperForm_Load(object sender, EventArgs e)
+        {
+            cbxChangwat.Items.AddRange(GlobalData.CompleteGeocodeList().FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
+        }
+
+        private void cbxAmphoe_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var amphoe = cbxAmphoe.SelectedItem as Entity;
+            cbxTambon.Items.Clear();
+            if ( amphoe != null )
+            {
+                cbxTambon.Items.AddRange(amphoe.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Tambon)).ToArray());
+            }
+            cbxTambon.SelectedItem = null;
+        }
+
+        private void cbxTambon_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if ( cbxTambon.SelectedItem != null )
+            {
+                edtGeocode.Value = ((Entity)cbxTambon.SelectedItem).geocode;
+            }
+        }
     }
 }
