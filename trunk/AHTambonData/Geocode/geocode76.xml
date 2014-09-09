@@ -694,12 +694,18 @@
       </codes>
       <office type="MunicipalityOffice">
         <wiki wikidata="Q13025279" />
+        <geo:Point>
+          <geo:lat>13.0206</geo:lat>
+          <geo:long>100.0124</geo:long>
+          <!-- according to Gazette, building hard to recognize in Google Earth -->
+        </geo:Point>
         <url status="broken">http://www.nongkhanan.go.th/</url>
         <url status="offline">http://www.nongkhanan.com/</url>
         <officials>
           <official title="TAOMayor" name="ระวี รุ่งเรือง" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
         </officials>
         <council>
+          <!-- election delayed because area definition pending, gazetted 2014-09-09 -->
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="26" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="26" />
         </council>
@@ -707,6 +713,9 @@
           <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31" status="Done">
             <meetingreference board="1" number="43" date="2012-07-02" />
           </statuschange>
+          <create type="TAO" effective="1996-03-21" status="Gazette">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="760123" coverage="completely" />
