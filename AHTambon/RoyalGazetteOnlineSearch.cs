@@ -298,39 +298,46 @@ namespace De.AHoerstemeier.Tambon
             String currentLine = String.Empty;
             int dataState = -1;
             StringBuilder entryData = new StringBuilder();
-            while ( (currentLine = reader.ReadLine()) != null )
+            try
             {
-                if ( currentLine.Contains(PageStart) )
+                while ( (currentLine = reader.ReadLine()) != null )
                 {
-                    String lTemp = currentLine.Substring(currentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
-                    _numberOfPages = Convert.ToInt32(lTemp);
-                }
-                else if ( currentLine.StartsWith(EntryStart) )
-                {
-                    if ( entryData.Length > 0 )
+                    if ( currentLine.Contains(PageStart) )
                     {
-                        var current = ParseSingeItem(entryData.ToString());
-                        if ( current != null )
-                        {
-                            result.Add(current);
-                        }
-                        entryData.Remove(0, entryData.Length);
+                        String temp = currentLine.Substring(currentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
+                        _numberOfPages = Convert.ToInt32(temp);
                     }
-                    dataState++;
+                    else if ( currentLine.StartsWith(EntryStart) )
+                    {
+                        if ( entryData.Length > 0 )
+                        {
+                            var current = ParseSingeItem(entryData.ToString());
+                            if ( current != null )
+                            {
+                                result.Add(current);
+                            }
+                            entryData.Remove(0, entryData.Length);
+                        }
+                        dataState++;
+                    }
+                    else if ( dataState >= 0 )
+                    {
+                        entryData.Append(currentLine.Trim() + " ");
+                    }
                 }
-                else if ( dataState >= 0 )
+                if ( entryData.Length > 0 )
                 {
-                    entryData.Append(currentLine.Trim() + " ");
+                    var current = ParseSingeItem(entryData.ToString());
+                    if ( current != null )
+                    {
+                        result.Add(current);
+                    }
                 }
             }
-            if ( entryData.Length > 0 )
+            catch ( IOException )
             {
-                var current = ParseSingeItem(entryData.ToString());
-                if ( current != null )
-                {
-                    result.Add(current);
-                }
             }
+
             return result;
         }
 
