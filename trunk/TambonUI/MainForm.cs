@@ -535,14 +535,14 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     foreach ( GazetteAreaDefinition areadefinition in gazetteEntry.Items.Where(y => y is GazetteAreaDefinition) )
                     {
-                        if ( areadefinition.subdivisionsSpecified )
+                        if ( areadefinition.subdivisionsSpecified && areadefinition.subdivisiontypeSpecified && (areadefinition.subdivisiontype != EntityType.Unknown) )
                         {
                             var geocode = areadefinition.geocode;
                             var entity = GlobalData.LookupGeocode(geocode);
-                            while ((entity!=null) && (entity.IsObsolete))
+                            while ( (entity != null) && (entity.IsObsolete) )
                             {
                                 geocode = entity.newgeocode.FirstOrDefault();
-                                if (geocode == 0)
+                                if ( geocode == 0 )
                                 {
                                     entity = null;
                                 }

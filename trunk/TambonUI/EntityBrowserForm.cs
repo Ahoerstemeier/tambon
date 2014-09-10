@@ -256,7 +256,9 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
             var localGovernmentsInEntity = LocalGovernmentEntitiesOf(entity).ToList();
+            // var localGovernmentsInProvince = LocalGovernmentEntitiesOf(this.baseEntity.entity.First(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode))).ToList();
             var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
+            // var localEntitiesInProvinceWithOffice = localGovernmentsInProvince.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
             if ( ShowDolaErrors )
             {
                 var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.Dola.codeSpecified).ToList();
@@ -303,13 +305,13 @@ namespace De.AHoerstemeier.Tambon.UI
             var localGovernmentCoveragesByTambon = localGovernmentCoverages.GroupBy(s => s.geocode);
             var tambonWithMoreThanOneCoverage = localGovernmentCoveragesByTambon.Where(x => x.Count() > 1);
             var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.Any(y => y.coverage == CoverageType.completely)).Select(x => x.Key);
-            var invalidlocalGovernmentCoverages = localGovernmentCoveragesByTambon.Where(x => !allTambon.Any(y => y.geocode == x.Key));
+            var invalidLocalGovernmentCoverages = localGovernmentCoveragesByTambon.Where(x => !allTambon.Any(y => y.geocode == x.Key));
             // var tambonWithMoreThanOneCoverage = localGovernmentCoveragesByTambon.SelectMany(grp => grp.Skip(1)).ToList();
             // var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.coverage == CoverageType.completely);
-            if ( invalidlocalGovernmentCoverages.Any() )
+            if ( invalidLocalGovernmentCoverages.Any() )
             {
                 text += "Invalid Tambon references by areacoverage:" + Environment.NewLine;
-                foreach ( var code in invalidlocalGovernmentCoverages )
+                foreach ( var code in invalidLocalGovernmentCoverages )
                 {
                     text += String.Format(" {0}", code.Key) + Environment.NewLine;
                 }
@@ -370,6 +372,20 @@ namespace De.AHoerstemeier.Tambon.UI
                     text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
+            }
+
+            if ( GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Any() )
+            {
+                var tambonWithoutAreaDefinition = allTambon.Where(x => !x.entitycount.Any());
+                if ( tambonWithoutAreaDefinition.Any() )
+                {
+                    text += String.Format("Tambon without Royal Gazette area definition ({0}):", tambonWithoutAreaDefinition.Count()) + Environment.NewLine;
+                    foreach ( var tambon in tambonWithoutAreaDefinition )
+                    {
+                        text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
+                    }
+                    text += Environment.NewLine;
+                }
             }
 
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "FIPS10", (Entity x) => x.codes.fips10.value, "TH\\d\\d");
