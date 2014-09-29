@@ -1076,18 +1076,18 @@ namespace De.AHoerstemeier.Tambon.UI
                 String headerAmphoe = "== Administration ==" + Environment.NewLine + "=== Central administration ===" + Environment.NewLine;
                 String textAmphoe = "The district {0} is subdivided into {1} subdistrict (''[[Tambon]]''), which are further subdivided into {2} administrative villages (''[[Muban]]'')." + Environment.NewLine + Environment.NewLine;
                 String tableHeaderAmphoe =
-                    "{{| class=\"wikitable\"" + Environment.NewLine +
+                    "{{| class=\"wikitable sortable\"" + Environment.NewLine +
                     "! No." + Environment.NewLine +
                     "! Name" + Environment.NewLine +
                     "! Thai" + Environment.NewLine +
                     "! Villages" + Environment.NewLine +
-                    "! [[Population|Inh.]]{0}" + Environment.NewLine;
+                    "! [[Population|Pop.]]{0}" + Environment.NewLine;
                 String tableHeaderBangkok =
-                    "{{| class=\"wikitable\"" + Environment.NewLine +
+                    "{{| class=\"wikitable sortable\"" + Environment.NewLine +
                     "! No." + Environment.NewLine +
                     "! Name" + Environment.NewLine +
                     "! Thai" + Environment.NewLine +
-                    "! [[Population|Inh.]]{0}" + Environment.NewLine;
+                    "! [[Population|Pop.]]{0}" + Environment.NewLine;
                 String tableEntryAmphoe = "|-" + Environment.NewLine +
                     "||{0}.||{1}||{{{{lang|th|{2}}}}}||{3}||{4}" + Environment.NewLine;
                 String tableEntryBangkok = "|-" + Environment.NewLine +
