@@ -531,10 +531,17 @@ namespace De.AHoerstemeier.Tambon.UI
                 btn_GazetteShow.Enabled = hasEntries;
                 btn_GazetteShowAll.Enabled = hasEntries;
 
+                var duplicateMentionedGeocodes = new List<UInt32>();
                 foreach ( var gazetteEntry in GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.Items.Any(y => y is GazetteAreaDefinition)) )
                 {
+                    var geocodesInAnnouncement = new List<UInt32>();
                     foreach ( GazetteAreaDefinition areadefinition in gazetteEntry.Items.Where(y => y is GazetteAreaDefinition) )
                     {
+                        if ( geocodesInAnnouncement.Contains(areadefinition.geocode) )
+                        {
+                            duplicateMentionedGeocodes.Add(areadefinition.geocode);
+                        }
+                        geocodesInAnnouncement.Add(areadefinition.geocode);
                         if ( areadefinition.subdivisionsSpecified && areadefinition.subdivisiontypeSpecified && (areadefinition.subdivisiontype != EntityType.Unknown) )
                         {
                             var geocode = areadefinition.geocode;
@@ -566,6 +573,10 @@ namespace De.AHoerstemeier.Tambon.UI
                             }
                         }
                     }
+                }
+                if ( duplicateMentionedGeocodes.Any() )
+                {
+                    new StringDisplayForm("Duplicate geocodes", String.Join<UInt32>(Environment.NewLine, duplicateMentionedGeocodes)).Show();
                 }
             }
             else
