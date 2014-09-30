@@ -901,6 +901,7 @@ namespace De.AHoerstemeier.Tambon
                         {
                             result.type = create.type;
                         }
+                        result.history.Items.Add(history);
                     }
                     if ( result.type == EntityType.ThesabanTambon || result.type == EntityType.ThesabanMueang || result.type == EntityType.ThesabanNakhon )
                     {
