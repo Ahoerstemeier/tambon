@@ -793,13 +793,21 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Gets the abbreviated Thai name.
         /// </summary>
-        /// <value>The abbreviated Thai name.</value>
+        /// <value>The abbreviated Thai name, or String.Empty if no abbreviation is available.</value>
         /// <remarks>Abbreviated name consists of the abbreviation of the administrative type followed by the name.</remarks>
         public String AbbreviatedName
         {
             get
             {
-                return ThaiTranslations.EntityAbbreviations[type] + "." + name;
+                var abbreviation = ThaiTranslations.EntityAbbreviations[type];
+                if (String.IsNullOrEmpty(abbreviation))
+                {
+                    return String.Empty;
+                }
+                else
+                {
+                    return String.Format("{0}.{1}",abbreviation,name);
+                }
             }
         }
 

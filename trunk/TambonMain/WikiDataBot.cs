@@ -135,10 +135,11 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set description [th]", setDescriptionThai));
             WikiDataTaskDelegate setLabelEnglish = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.English, entities, collisionInfo, overrideData);
             WikiDataTaskDelegate setLabelGerman = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.German, entities, collisionInfo, overrideData);
-            WikiDataTaskDelegate setLabelThai = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.Thai, entities, collisionInfo, overrideData);
+            WikiDataTaskDelegate setLabelThai = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.Thai, entities, collisionInfo, overrideData);            
             _availableTasks.Add(new WikiDataTaskInfo("Set label [en]", setLabelEnglish));
             _availableTasks.Add(new WikiDataTaskInfo("Set label [de]", setLabelGerman));
             _availableTasks.Add(new WikiDataTaskInfo("Set label [th]", setLabelThai));
+            _availableTasks.Add(new WikiDataTaskInfo("Set Thai abbreviation", SetThaiAbbreviation));
             _availableTasks.Add(new WikiDataTaskInfo("Set country", SetCountry));
             _availableTasks.Add(new WikiDataTaskInfo("Set is in administrative unit", SetIsInAdministrativeUnit));
             WikiDataTaskDelegate setTypeOfAdministrativeUnit = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetTypeOfAdministrativeUnit(entities, collisionInfo, overrideData, false);
@@ -257,6 +258,7 @@ namespace De.AHoerstemeier.Tambon
             var items = new List<Entity>();
             items.Add(entity);
             var dummy = new StringBuilder();
+            SetThaiAbbreviation(items, dummy, false);
             SetCountry(items, dummy, false);
             SetIsInAdministrativeUnit(items, dummy, false);
             SetTypeOfAdministrativeUnit(items, dummy, false, true);
@@ -383,6 +385,44 @@ namespace De.AHoerstemeier.Tambon
                     else
                     {
                         _runInfo[WikiDataState.Valid]++;
+                    }
+                }
+            }
+        }
+
+        private void SetThaiAbbreviation(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if (entities == null)
+            {
+                throw new ArgumentNullException("entities");
+            }
+            var languageCode = Language.Thai.ToCode();
+            ClearRunInfo();
+
+            foreach (var entity in entities)
+            {
+                String newAlias = entity.AbbreviatedName;
+                if (!String.IsNullOrEmpty(newAlias))
+                {
+                    var item = _helper.GetWikiDataItemForEntity(entity);
+                    if (item == null)
+                    {
+                        _runInfo[WikiDataState.ItemNotFound]++;
+                        collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                    }
+                    else
+                    {
+                        var oldAliases = item.getAlias(languageCode);
+                        if ( (oldAliases==null) || !oldAliases.Contains(newAlias))
+                        {
+                            _runInfo[WikiDataState.NotSet]++;
+                            item.addAlias(languageCode, newAlias);
+                            item.save(String.Format("Added alias [{0}]: {1}", languageCode, newAlias));
+                        }
+                        else
+                        {
+                            _runInfo[WikiDataState.Valid]++;
+                        }
                     }
                 }
             }
