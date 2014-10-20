@@ -715,6 +715,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 String textBangkok = "Der Bezirk {0} ist in {1} ''[[Khwaeng]]'' („Unterbezirke“) eingeteilt." + Environment.NewLine + Environment.NewLine;
                 String headerAmphoe = "== Verwaltung ==" + Environment.NewLine + "=== Provinzverwaltung ===" + Environment.NewLine;
                 String textAmphoe = "Der Landkreis {0} ist in {1} ''[[Tambon]]'' („Unterbezirke“ oder „Gemeinden“) eingeteilt, die sich weiter in {2} ''[[Muban]]'' („Dörfer“) unterteilen." + Environment.NewLine + Environment.NewLine;
+                String textAmphoeSingle = "Der Landkreis {0} ist in genau einen ''[[Tambon]]'' („Unterbezirk“ oder „Gemeinde“) eingeteilt, der sich weiter in {2} ''[[Muban]]'' („Dörfer“) unterteilt." + Environment.NewLine + Environment.NewLine;
                 String tableHeaderAmphoe =
                     "{{| class=\"wikitable\"" + Environment.NewLine +
                     "! Nr." + Environment.NewLine +
@@ -764,12 +765,19 @@ namespace De.AHoerstemeier.Tambon.UI
                         String.Format(germanCulture, textBangkok, entity.english, countAsString(amphoeData.CentralAdministrationCountByEntity[EntityType.Khwaeng])) +
                         String.Format(germanCulture, tableHeaderBangkok, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.German));
                 }
+                else if ( amphoeData.CentralAdministrationCountByEntity[EntityType.Tambon] == 1 )
+                {
+                    result = headerAmphoe +
+                        String.Format(germanCulture, textAmphoeSingle, entity.english, countAsString(amphoeData.CentralAdministrationCountByEntity[EntityType.Tambon]), countAsString(amphoeData.CentralAdministrationCountByEntity[EntityType.Muban])) +
+                        String.Format(germanCulture, tableHeaderAmphoe, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.German));
+                }
                 else
                 {
                     result = headerAmphoe +
                         String.Format(germanCulture, textAmphoe, entity.english, countAsString(amphoeData.CentralAdministrationCountByEntity[EntityType.Tambon]), countAsString(amphoeData.CentralAdministrationCountByEntity[EntityType.Muban])) +
                         String.Format(germanCulture, tableHeaderAmphoe, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.German));
                 }
+
                 foreach ( var tambon in amphoeData.AllTambon )
                 {
                     if ( entity.type == EntityType.Khet )
@@ -839,8 +847,23 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
 
-                Clipboard.Clear();
-                Clipboard.SetText(result);
+                Boolean success = false;
+                while ( !success )
+                {
+                    try
+                    {
+                        Clipboard.Clear();
+                        Clipboard.SetText(result);
+                        success = true;
+                    }
+                    catch
+                    {
+                        if ( MessageBox.Show(this, "Copying text to clipboard failed.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) != DialogResult.Retry )
+                        {
+                            break;
+                        }
+                    }
+                }
             }
         }
 
@@ -893,14 +916,14 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 citizenString = "{{0}}" + citizenString;
             }
-            var english = tambon.english;
+            var romanizedName = tambon.english;
             var link = String.Empty;
             if ( amphoeData.WikipediaLinks.TryGetValue(tambon, out link) )
             {
-                english = WikiLink(link, english);
+                romanizedName = WikiLink(link, romanizedName);
             }
 
-            return String.Format(culture, format, geocodeString, english, tambon.name, mubanString, citizenString);
+            return String.Format(culture, format, geocodeString, romanizedName, tambon.name, mubanString, citizenString);
         }
 
         private String WikipediaLocalAdministrationTableEntry(
@@ -1069,12 +1092,13 @@ namespace De.AHoerstemeier.Tambon.UI
             if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
             {
                 var englishCulture = new CultureInfo("en-US");
-                var amphoeData = CalculateAmphoeData(entity, Language.German);
+                var amphoeData = CalculateAmphoeData(entity, Language.English);
 
                 String headerBangkok = "== Administration ==" + Environment.NewLine;
                 String textBangkok = "The district {0} is subdivided into {1} subdistricts (''[[Khwaeng]]'')." + Environment.NewLine + Environment.NewLine;
                 String headerAmphoe = "== Administration ==" + Environment.NewLine + "=== Central administration ===" + Environment.NewLine;
-                String textAmphoe = "The district {0} is subdivided into {1} subdistrict (''[[Tambon]]''), which are further subdivided into {2} administrative villages (''[[Muban]]'')." + Environment.NewLine + Environment.NewLine;
+                String textAmphoe = "The district {0} is subdivided into {1} subdistricts (''[[Tambon]]''), which are further subdivided into {2} administrative villages (''[[Muban]]'')." + Environment.NewLine + Environment.NewLine;
+                String textAmphoeSingleTambon = "The district {0} is subdivided into {1} subdistrict (''[[Tambon]]''), which is further subdivided into {2} administrative villages (''[[Muban]]'')." + Environment.NewLine + Environment.NewLine;
                 String tableHeaderAmphoe =
                     "{{| class=\"wikitable sortable\"" + Environment.NewLine +
                     "! No." + Environment.NewLine +
@@ -1126,6 +1150,12 @@ namespace De.AHoerstemeier.Tambon.UI
                     result = headerBangkok +
                         String.Format(englishCulture, textBangkok, entity.english, amphoeData.CentralAdministrationCountByEntity[EntityType.Khwaeng]) +
                         String.Format(englishCulture, tableHeaderBangkok, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.English));
+                }
+                else if ( amphoeData.CentralAdministrationCountByEntity[EntityType.Tambon] == 1 )
+                {
+                    result = headerAmphoe +
+                        String.Format(englishCulture, textAmphoeSingleTambon, entity.english, amphoeData.CentralAdministrationCountByEntity[EntityType.Tambon], amphoeData.CentralAdministrationCountByEntity[EntityType.Muban]) +
+                        String.Format(englishCulture, tableHeaderAmphoe, PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, Language.English));
                 }
                 else
                 {
@@ -1188,8 +1218,23 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
 
-                Clipboard.Clear();
-                Clipboard.SetText(result);
+                Boolean success = false;
+                while ( !success )
+                {
+                    try
+                    {
+                        Clipboard.Clear();
+                        Clipboard.SetText(result);
+                        success = true;
+                    }
+                    catch
+                    {
+                        if ( MessageBox.Show(this, "Copying text to clipboard failed.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) != DialogResult.Retry )
+                        {
+                            break;
+                        }
+                    }
+                }
             }
         }
     }
