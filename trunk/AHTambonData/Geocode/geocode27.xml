@@ -456,7 +456,7 @@
       <entity type="Muban" geocode="27020303" name="บ้านนาดี" english="Ban Na Di" />
       <entity type="Muban" geocode="27020304" name="บ้านวังวน" english="Ban Wang Won" />
       <entity type="Muban" geocode="27020305" name="บ้านทรัพย์ตะเคียน" english="Ban Sap Takhian" />
-      <entity type="Muban" geocode="27020306" name="บ้านใหม่คคลองยาง" english="Ban Mai Khok Long Yang"/>
+      <entity type="Muban" geocode="27020306" name="บ้านใหม่คคลองยาง" english="Ban Mai Khok Long Yang" />
       <entity type="Muban" geocode="27020307" name="บ้านคลองกลาง" english="Ban Khlong Klang" />
       <entity type="Muban" geocode="27020308" name="บ้านทุ่งเจริญ" english="Ban Thung Charoen" />
       <entity type="Muban" geocode="27020309" name="บ้านวังเดือนห้า" english="Ban Wang Duean Ha" />
@@ -651,7 +651,7 @@
         </areacoverage>
       </office>
       <entity type="Muban" geocode="27030201" name="บ้านโคกเพร็ก" english="Ban Khok Phrek" />
-      <entity type="Muban" geocode="27030202" name="บ้านแสง์" english="Ban Sae"  />
+      <entity type="Muban" geocode="27030202" name="บ้านแสง์" english="Ban Sae" />
       <entity type="Muban" geocode="27030203" name="บ้านเจียงดำ" english="Ban Chiang Dam" />
       <entity type="Muban" geocode="27030204" name="บ้านโคกแจง" english="Ban Khok Chaeng" />
       <entity type="Muban" geocode="27030205" name="บ้านโคกทหาร" english="Ban Khok Thahan" />
@@ -816,6 +816,7 @@
         <socialweb>
           <facebook>https://www.facebook.com/talangnai</facebook>
           <googleplus type="location">114048894236533315563</googleplus>
+          <googleplus type="location">102086063143563265538</googleplus>
         </socialweb>
         <officials>
           <official title="TAOMayor" name="อนันต์ งอนชัยภูมิ" begin="2011-11-06" beginreason="ElectedDirectly" />
@@ -841,13 +842,13 @@
       <entity type="Muban" geocode="27040308" name="บ้านหนองแก" english="Ban Nong Kae" />
       <entity type="Muban" geocode="27040309" name="บ้านโนนทอง" english="Ban Non Thong" />
       <entity type="Muban" geocode="27040310" name="บ้านประตูโขง" english="Ban Pradu Khong" />
-      <entity type="Muban" geocode="27040311" name="บ้านเพชรสำราญ" english="Ban Phet Samran" comment="noplink says บ้านเพชรเจริญ  Ban Phet Charoen" />
+      <entity type="Muban" geocode="27040311" name="บ้านเพชรเจริญ" english="Ban Phet Charoen" />
       <entity type="Muban" geocode="27040312" name="บ้านตาหลังพัฒนา" english="Ban Ta Lang Phatthana" />
       <entity type="Muban" geocode="27040313" name="บ้านใหม่ไชยมงคล" english="Ban Mai Chai Mongkhon" />
       <entity type="Muban" geocode="27040314" name="บ้านวังเพชร" english="Ban Wang Phet" />
       <entity type="Muban" geocode="27040315" name="บ้านหนองเจริญ" english="Ban Nong Charoen" />
       <entity type="Muban" geocode="27040316" name="บ้านตาหลังใหม่ชัยเจริญ" english="Ban Ta Lang Mai Chai Charoen" />
-      <entity type="Muban" geocode="27040317" name="บ้านเพชรเจริญ" english="Ban Phet Charoen"  Comment="noplink says บ้านเพชรสำราญ  Ban Phet Samran" />
+      <entity type="Muban" geocode="27040317" name="บ้านเพชรสำราญ" english="Ban Phet Samran" />
       <entity type="Muban" geocode="27040318" name="บ้านโนนทองพัฒนา" english="Ban Non Thong Phatthana" />
       <entity type="Muban" geocode="27040319" name="บ้านวังหลวง" english="Ban Wang Luang" />
       <entity type="Muban" geocode="27040320" name="บ้านศรีบูรพา" english="Ban Si Burapha" />
@@ -861,7 +862,8 @@
           <geo:lat>13.6225</geo:lat>
           <geo:long>102.1168</geo:long>
         </geo:Point>
-        <url>http://www.klonghinpoon.com/</url>
+        <url status="offline">http://www.klonghinpoon.go.th/</url>
+        <url status="offline">http://www.klonghinpoon.com/</url>
         <officials>
           <official title="TAOMayor" name="ชาญ โต๊ะสิงห์" begin="2011-08-07" beginreason="ElectedDirectly" />
         </officials>
@@ -875,11 +877,17 @@
         <!-- Mu 16 created 2004-09 -->
       </office>
       <!-- noplink omits Mu 15 -->
-      <entity type="Muban" geocode="27040501" name="บ้านค่ายเจริญ" english="Ban Khai Charoen" comment="noplink says บ้านวังเจริญสุข Ban Wang Charoen Suk"/>
+      <entity type="Muban" geocode="27040501" name="บ้านค่ายเจริญ" english="Ban Khai Charoen">
+        <history>
+          <alternativename name="บ้านวังเจริญสุข" english="Ban Wang Charoen Suk" year="1997" comment="fails Google test by 381:39">
+            <gazetteref volume="114" page="235" issue="พิเศษ 77 ง" date="1997-09-03" />
+          </alternativename>
+        </history>
+      </entity>
       <entity type="Muban" geocode="27040502" name="บ้านคลองหินปูน" english="Ban Khlong Hin Pun" />
       <entity type="Muban" geocode="27040503" name="บ้านวังยาว" english="Ban Wang Yao" />
       <entity type="Muban" geocode="27040504" name="บ้านโนนสมบัติ" english="Ban Non Sombat" />
-      <entity type="Muban" geocode="27040505" name="บ้านดอนดินแดน" english="Ban Don Din Daen" comment="noplink says บ้านดอนดินแดง Ban Don Din Daeng"/>
+      <entity type="Muban" geocode="27040505" name="บ้านดอนดินแดง" english="Ban Don Din Daeng" />
       <entity type="Muban" geocode="27040506" name="บ้านบ่อลูกรัง" english="Ban Bo Luk Rang" />
       <entity type="Muban" geocode="27040507" name="บ้านหนองสมบูรณ์" english="Ban Nong Sombun" />
       <entity type="Muban" geocode="27040508" name="บ้านคลองฝักมีด" english="Ban Khlong Fak Mit" />
@@ -888,7 +896,7 @@
       <entity type="Muban" geocode="27040511" name="บ้านทรัพย์เจริญ" english="Ban Sap Charoen" />
       <entity type="Muban" geocode="27040512" name="บ้านนำเจริญ" english="Ban Nam Charoen" />
       <entity type="Muban" geocode="27040513" name="บ้านมิตรไมตรี" english="Ban Mit Mai Tri" />
-      <entity type="Muban" geocode="27040514" name="บ้านเนินสะอาด" english="Ban Noen Sa-at" comment="noplink says บ้านเนินสะดวก Ban Noen Saduak"/>
+      <entity type="Muban" geocode="27040514" name="บ้านเนินสะอาด" english="Ban Noen Sa-at" comment="noplink says บ้านเนินสะดวก Ban Noen Saduak, fails Google test 353:8" />
       <entity type="Muban" geocode="27040515" name="บ้านคลองตาสูตรพัฒนา" english="Ban Khlong Ta Sung Ton Phatthana" />
       <entity type="Muban" geocode="27040516" name="บ้านคลองตะเคียนพัฒนา" english="Ban Khlong Takhian Phatthana" />
     </entity>
@@ -910,7 +918,7 @@
           <entity geocode="270406" coverage="completely" />
         </areacoverage>
       </office>
-      <entity type="Muban" geocode="27040601" name="บ้านทุ่งมหาเจริญ" english="Ban Thung Maha Charoen" comment="noplink says บ้านทุ่งมหาวิบาก Thung Maha Wibak"/>
+      <entity type="Muban" geocode="27040601" name="บ้านทุ่งมหาเจริญ" english="Ban Thung Maha Charoen" comment="noplink says บ้านทุ่งมหาวิบาก Thung Maha Wibak" />
       <entity type="Muban" geocode="27040602" name="บ้านคลองจรเข้" english="Ban Khlong Chorakhe" />
       <entity type="Muban" geocode="27040603" name="บ้านพรสวรรค์" english="Ban Phon Sawan" />
       <entity type="Muban" geocode="27040604" name="บ้านแก่งสะเดา" english="Ban Kaeng Sadao" />
@@ -1810,7 +1818,7 @@
         <!-- Mu 17, 18, 19 created 2004-09 -->
       </office>
       <entity type="Muban" geocode="27070301" name="บ้านพระเพลิง" english="Ban Phra Phloeng" />
-      <entity type="Muban" geocode="27070302" name="บ้านนาคันหัก" english="Ban Na Khan Hak"/>
+      <entity type="Muban" geocode="27070302" name="บ้านนาคันหัก" english="Ban Na Khan Hak" />
       <entity type="Muban" geocode="27070303" name="บ้านเขาจันทร์" english="Ban Khao Chan" />
       <entity type="Muban" geocode="27070304" name="บ้านบึงพระราม" english="Ban Bueng Phra Ram" />
       <entity type="Muban" geocode="27070305" name="บ้านภูเงิน" english="Ban Phu Ngoen" />
