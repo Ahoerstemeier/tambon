@@ -81,18 +81,37 @@
           <entity geocode="270101" coverage="partially" />
         </areacoverage>
       </office>
-      <entity type="Muban" geocode="27010101" name="บ้านโคกนกขุนทอง" english="Ban Khok Nok Khun Thong" />
-      <entity type="Muban" geocode="27010102" name="บ้านใหม่คำเจริญ" english="Ban Mai Kham Charoen" />
-      <entity type="Muban" geocode="27010103" name="บ้านคลองหมี" english="Ban Khlong Mi" />
-      <entity type="Muban" geocode="27010104" name="บ้านเนินสะอาด" english="Ban Noen Sa-at" />
-      <entity type="Muban" geocode="27010105" name="บ้านลัดกระสัง" english="Ban Lat Krasang" />
-      <entity type="Muban" geocode="27010106" name="บ้านคลองกระเบื้อง" english="Ban Khlong Krabueang" />
-      <entity type="Muban" geocode="27010107" name="บ้านสี่แยก" english="Ban Si Yaek" />
-      <entity type="Muban" geocode="27010108" name="บ้านหนองเสม็ด" english="Ban Nong Samet" />
-      <entity type="Muban" geocode="27010109" name="บ้านหนองปรือ" english="Ban Nong Prue" />
-      <entity type="Muban" geocode="27010110" name="บ้านชาติเจริญ" english="Ban Chat Charoen" />
-      <entity type="Muban" geocode="27010111" name="บ้านระเบิดขาม" english="Ban Raboet Kham" />
-      <entity type="Muban" geocode="27010112" name="บ้านเนินกลาง" english="Ban Noen Klang" />
+      <entity type="Muban" geocode="27010101" name="บ้านโคกนกขุนทอง" english="Ban Khok Nok Khun Thong" >
+        <history>
+          <alternativename name="บ้านโคกกำนัน" english="Ban Khok Kamnan" year="1997">
+            <gazetteref volume="114" page="178" issue="พิเศษ 77 ง" date="1997-09-03" />
+          </alternativename>
+        </history>
+      </entity>
+    </entity>
+      <entity type="Muban" geocode="27010102" name="บ้านสระแก้ว" english="Ban Sa Kaeo" obsolete="1" />
+      <entity type="Muban" geocode="27010103" name="บ้านใหม่คำเจริญ" english="Ban Mai Kham Charoen" />
+      <entity type="Muban" geocode="27010104" name="บ้านคลองหมี" english="Ban Khlong Mi" />
+      <entity type="Muban" geocode="27010105" name="บ้านเนินสะอาด" english="Ban Noen Sa-at" />
+      <entity type="Muban" geocode="27010106" name="บ้านห้วย" english="Ban Huai" obsolete="1"/>
+      <entity type="Muban" geocode="27010107" name="บ้านคลองจาน" english="Ban Khlong Chan" obsolete="1"/>
+      <entity type="Muban" geocode="27010108" name="บ้านลัดกระสัง" english="Ban Lat Krasang" />
+      <entity type="Muban" geocode="27010109" name="บ้านคลองกระเบื้อง" english="Ban Khlong Krabueang">
+        <history>
+          <alternativename name="บ้านหนองปรือ" english="Ban Nong Prue" year="1997">
+            <gazetteref volume="114" page="178" issue="พิเศษ 77 ง" date="1997-09-03" />
+            </alternativename>
+</history>
+      </entity> 
+      <entity type="Muban" geocode="27010110" name="บ้านสี่แยก" english="Ban Si Yaek" />
+      <entity type="Muban" geocode="27010111" name="บ้านหนองเสม็ด" english="Ban Nong Samet" />
+      <entity type="Muban" geocode="27010112" name="บ้านหนองกระพ้อ" english="Ban Nong Krapho"  obsolete="1"/>
+      <entity type="Muban" geocode="27010113" name="บ้านหนองปรือ" english="Ban Nong Prue" />
+      <entity type="Muban" geocode="27010114" name="บ้านชาติเจริญ" english="Ban Chat Charoen" />
+      <entity type="Muban" geocode="27010115" name="บ้านเนินรัตนะ" english="Ban Noen Rattana" obsolete="1"/>
+      <entity type="Muban" geocode="27010116" name="บ้านชาติเจริญสุข" english="Ban Chat Charoen Suk" obsolete="1" />
+      <entity type="Muban" geocode="27010117" name="บ้านระเบิดขาม" english="Ban Raboet Kham" />
+      <entity type="Muban" geocode="27010118" name="บ้านเนินกลาง" english="Ban Noen Klang" />
     </entity>
     <entity type="Tambon" name="บ้านแก้ง" english="Ban Kaeng" geocode="270102">
       <wiki wikidata="Q16833120" />
@@ -903,7 +922,15 @@
     <entity type="Tambon" name="ทุ่งมหาเจริญ" english="Thung Maha Charoen" geocode="270406">
       <wiki wikidata="Q16833028" />
       <office type="TAOOffice">
-        <url>http://tungmahajaroen.com/</url>
+        <geo:Point>
+          <geo:lat>13.4917</geo:lat>
+          <geo:long>102.0335</geo:long>
+        </geo:Point>
+        <url status="offline">http://tungmahajaroen.com/</url>
+        <socialweb>
+          <googleplus type="location">112974573392846798056</googleplus>
+          <foursquare>4f0a71cae4b00a275408eb3d</foursquare>
+        </socialweb>
         <officials>
           <official title="TAOMayor" name="สมชาย อุ่นที" begin="2011-11-06" beginreason="ElectedDirectly" />
         </officials>
@@ -918,7 +945,7 @@
           <entity geocode="270406" coverage="completely" />
         </areacoverage>
       </office>
-      <entity type="Muban" geocode="27040601" name="บ้านทุ่งมหาเจริญ" english="Ban Thung Maha Charoen" comment="noplink says บ้านทุ่งมหาวิบาก Thung Maha Wibak" />
+      <entity type="Muban" geocode="27040601" name="บ้านทุ่งมหาวิบาก" english="Ban Thung Maha Wibak" />
       <entity type="Muban" geocode="27040602" name="บ้านคลองจรเข้" english="Ban Khlong Chorakhe" />
       <entity type="Muban" geocode="27040603" name="บ้านพรสวรรค์" english="Ban Phon Sawan" />
       <entity type="Muban" geocode="27040604" name="บ้านแก่งสะเดา" english="Ban Kaeng Sadao" />
@@ -1396,6 +1423,9 @@
           <geo:lat>13.5792</geo:lat>
           <geo:long>102.5300</geo:long>
         </geo:Point>
+        <socialweb>
+          <googleplus type="location">111801766042037034213</googleplus>
+        </socialweb>
         <officials>
           <official title="TAOMayor" name="ปัญญา บัวคำ" begin="2013-10-12" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="ธนวัฒน์ โกมลกุล" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -1411,12 +1441,12 @@
       </office>
       <entity type="Muban" geocode="27060401" name="บ้านคลองน้ำใส" english="Ban Khlong Nam Sai" />
       <entity type="Muban" geocode="27060402" name="บ้านเขาน้อย" english="Ban Khao Noi" />
-      <entity type="Muban" geocode="27060403" name="บ้านสลองค็อง" english="Ban Salong Khong" comment="possible typing error: Ban Salong Khlong?" />
+      <entity type="Muban" geocode="27060403" name="บ้านสลองคอง" english="Ban Salong Khong" comment="noplink misspells as บ้านสลองค็อง" />
       <entity type="Muban" geocode="27060404" name="บ้านกุดหิน" english="Ban Kut Hin" />
       <entity type="Muban" geocode="27060405" name="บ้านผักกาดฮอง" english="Ban Phakkat Hong" />
       <entity type="Muban" geocode="27060406" name="บ้านคลองน้ำใส" english="Ban Khlong Nam Sai" />
       <entity type="Muban" geocode="27060407" name="บ้านแสนสุข" english="Ban Saen Suk" />
-      <entity type="Muban" geocode="27060408" name="บ้านใหม่ปากฮ่อง" />
+      <entity type="Muban" geocode="27060408" name="บ้านใหม่ปากฮ่อง" english="Ban Mai Pak Hong"/>
       <entity type="Muban" geocode="27060409" name="บ้านทุ่งรวงทอง" english="Ban Thung Ruang Thong" />
       <entity type="Muban" geocode="27060410" name="บ้านเขาน้อย" english="Ban Khao Noi" />
       <entity type="Muban" geocode="27060411" name="บ้านศรีวิไล" english="Ban Si Wilai" />
@@ -1553,7 +1583,7 @@
     <entity type="Tambon" name="ผ่านศึก" english="Phan Suek" geocode="270609">
       <wiki wikidata="Q16832862" />
       <office type="TAOOffice">
-        <url>http://www.pansuk.go.th/</url>
+        <url status="offline">http://www.pansuk.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ชาญ สมสุขสันต์" begin="2013-10-12" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="ชาญ สมสุขสันต์" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -1575,11 +1605,11 @@
       <entity type="Muban" geocode="27060906" name="บ้านโนนขี้เหล็ก" english="Ban Non Khilek" />
       <entity type="Muban" geocode="27060907" name="บ้านหนองปรือ" english="Ban Nong Prue" />
       <entity type="Muban" geocode="27060908" name="บ้านไผ่ล้อม" english="Ban Phai Lom" />
-      <entity type="Muban" geocode="27060909" name="บ้านพัฒนานิคม" english="Ban Phatthana Nikhom" comment="noplink: บ้านพัฒนานิคมพัฒนา  Ban Phatthana Nikhom Phatthana ? " />
-      <entity type="Muban" geocode="27060910" name="บ้านประสานมิตรพัฒนา" english="Ban Prasam Mit Phatthana" comment="noplink: บ้านประสานมิตร  Ban Pra San Mit ? " />
-      <entity type="Muban" geocode="27060911" name="บ้านเขารัง" english="Ban Khao Rang" comment="noplink says บ้านเขาวัง Ban Khao Wang" />
+      <entity type="Muban" geocode="27060909" name="บ้านพัฒนานิคม" english="Ban Phatthana Nikhom" comment="noplink misnamed บ้านพัฒนานิคมพัฒนา  Ban Phatthana Nikhom Phatthana ? " />
+      <entity type="Muban" geocode="27060910" name="บ้านประสานมิตรพัฒนา" english="Ban Prasam Mit Phatthana" comment="noplink misnamed บ้านประสานมิตร  Ban Pra San Mit" />
+      <entity type="Muban" geocode="27060911" name="บ้านเขารัง" english="Ban Khao Rang" comment="noplink misspells บ้านเขาวัง Ban Khao Wang" />
       <entity type="Muban" geocode="27060912" name="บ้านสันติสุข" english="Ban Santi Suk" />
-      <entity type="Muban" geocode="27060913" name="บ้านโนนสาวเอ้พัฒนา" english="Ban Non Sao E Phatthana" comment="noplink says บ้านโนนพัฒนา Ban Non Phatthana" />
+      <entity type="Muban" geocode="27060913" name="บ้านโนนพัฒนา" english="Ban Non Phatthana" />
     </entity>
     <entity type="Tambon" name="หนองสังข์" english="Nong Sang" geocode="270610">
       <wiki wikidata="Q16832859" />
@@ -2254,9 +2284,9 @@
         <official title="Mayor" name="วันชัย นารีรักษ์" begin="2011-02-06" beginreason="ElectedDirectly" />
         <official title="Mayor" name="วันชัย นารีรักษ์" begin="2006-12-10" end="2010-12-09" beginreason="ElectedDirectly" endreason="EndOfTerm" />
 
-        <official title="SanitaryDistrictChairman" name="วันชัย นารีรักษ์" beginyear="1994" comment="First elected" />
+        <official title="SanitaryDistrictChairman" name="วันชัย นารีรักษ์" beginyear="1994" beginreason="Elected" comment="First elected" />
 
-        <official title="SanitaryDistrictChairman" name="ประทีป จิราวัฒน์" beginyear="1980" comment="Appointed, district officer Sa Kaeo" />
+        <official title="SanitaryDistrictChairman" name="ประทีป จิราวัฒน์" beginyear="1980" beginreason="Appointed" comment="Appointed, district officer Sa Kaeo" />
       </officials>
       <council>
         <term begin="2011-02-06" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
