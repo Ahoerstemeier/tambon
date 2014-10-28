@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Device.Location;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -359,6 +360,35 @@ namespace De.AHoerstemeier.Tambon
 
             statement = claim as Statement;
             return result;
+        }
+
+        /// <summary>
+        /// Gets the location as a geopoint.
+        /// </summary>
+        /// <param name="item">Item to check.</param>
+        /// <param name="propertyId">Id of the property.</param>
+        /// <returns>Location as geopoint, or <c>null</c> if none is set.</returns>
+        public GeoCoordinate GetCoordinateValue(Item item, String propertyId)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
+            var property = new EntityId(propertyId);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.PropertyId)) as Statement;
+            if ( claim != null )
+            {
+                Snak oldSnak = claim.mainSnak;
+                if ( oldSnak != null )
+                {
+                    var oldDataValue = oldSnak.DataValue as GlobeCoordinateValue;
+                    if ( oldDataValue != null )
+                    {
+                        return new GeoCoordinate(oldDataValue.Latitude, oldDataValue.Longitude);
+                    }
+                }
+            }
+            return null;
         }
 
         #endregion private methods

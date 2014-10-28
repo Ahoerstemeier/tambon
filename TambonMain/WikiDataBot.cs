@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Device.Location;
 using System.Linq;
 using System.Text;
 using Wikibase;
@@ -135,7 +136,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set description [th]", setDescriptionThai));
             WikiDataTaskDelegate setLabelEnglish = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.English, entities, collisionInfo, overrideData);
             WikiDataTaskDelegate setLabelGerman = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.German, entities, collisionInfo, overrideData);
-            WikiDataTaskDelegate setLabelThai = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.Thai, entities, collisionInfo, overrideData);            
+            WikiDataTaskDelegate setLabelThai = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetLabel(Language.Thai, entities, collisionInfo, overrideData);
             _availableTasks.Add(new WikiDataTaskInfo("Set label [en]", setLabelEnglish));
             _availableTasks.Add(new WikiDataTaskInfo("Set label [de]", setLabelGerman));
             _availableTasks.Add(new WikiDataTaskInfo("Set label [th]", setLabelThai));
@@ -392,20 +393,20 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetThaiAbbreviation(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
+            if ( entities == null )
             {
                 throw new ArgumentNullException("entities");
             }
             var languageCode = Language.Thai.ToCode();
             ClearRunInfo();
 
-            foreach (var entity in entities)
+            foreach ( var entity in entities )
             {
                 String newAlias = entity.AbbreviatedName;
-                if (!String.IsNullOrEmpty(newAlias))
+                if ( !String.IsNullOrEmpty(newAlias) )
                 {
                     var item = _helper.GetWikiDataItemForEntity(entity);
-                    if (item == null)
+                    if ( item == null )
                     {
                         _runInfo[WikiDataState.ItemNotFound]++;
                         collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -413,7 +414,7 @@ namespace De.AHoerstemeier.Tambon
                     else
                     {
                         var oldAliases = item.getAlias(languageCode);
-                        if ( (oldAliases==null) || !oldAliases.Contains(newAlias))
+                        if ( (oldAliases == null) || !oldAliases.Contains(newAlias) )
                         {
                             _runInfo[WikiDataState.NotSet]++;
                             item.addAlias(languageCode, newAlias);
@@ -837,7 +838,10 @@ namespace De.AHoerstemeier.Tambon
                         _runInfo[state]++;
                         if ( state == WikiDataState.WrongValue )
                         {
-                            collisionInfo.AppendFormat("{0}: {1} has wrong location", item.id, entity.english);
+                            var expected = new GeoCoordinate(Convert.ToDouble(office.Point.lat), Convert.ToDouble(office.Point.@long));
+                            var actual = _helper.GetCoordinateValue(item, WikiBase.PropertyIdCoordinate);
+                            var distance = expected.GetDistanceTo(actual);
+                            collisionInfo.AppendFormat("{0}: {1} has wrong location, off by {2:0.###}km", item.id, entity.english, distance / 1000.0);
                             collisionInfo.AppendLine();
                         }
                         if ( state != WikiDataState.Valid )
