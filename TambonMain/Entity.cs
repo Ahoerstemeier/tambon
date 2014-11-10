@@ -60,6 +60,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         private ICollection<Entity> _thesaban = new List<Entity>();
+        private IEnumerable<UInt32> _oldGeocode = null;
 
         /// <summary>
         /// Gets whether the entity at the given geocode is active/valid.
@@ -800,13 +801,13 @@ namespace De.AHoerstemeier.Tambon
             get
             {
                 var abbreviation = ThaiTranslations.EntityAbbreviations[type];
-                if (String.IsNullOrEmpty(abbreviation))
+                if ( String.IsNullOrEmpty(abbreviation) )
                 {
                     return String.Empty;
                 }
                 else
                 {
-                    return String.Format("{0}.{1}",abbreviation,name);
+                    return String.Format("{0}.{1}", abbreviation, name);
                 }
             }
         }
@@ -836,8 +837,12 @@ namespace De.AHoerstemeier.Tambon
         {
             get
             {
-                var entities = GlobalData.CompleteGeocodeList().FlatList().Where(x => x.newgeocode.Contains(this.geocode));
-                return entities.Select(x => x.geocode).ToList();
+                if ( _oldGeocode == null )
+                {
+                    var entities = GlobalData.CompleteGeocodeList().FlatList().Where(x => x.newgeocode.Contains(this.geocode));
+                    _oldGeocode = entities.Select(x => x.geocode).ToList();
+                }
+                return _oldGeocode;
             }
         }
 

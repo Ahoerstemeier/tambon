@@ -1040,12 +1040,14 @@ namespace De.AHoerstemeier.Tambon.UI
             var result = new List<GazetteEntry>();
             if ( entity.type != EntityType.Country )
             {
-                var allAboutGeocode = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.IsAboutGeocode(entity.geocode, true));
+                var allAboutGeocode = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x =>
+                    x.IsAboutGeocode(entity.geocode, true) || entity.OldGeocodes.Any(y => x.IsAboutGeocode(y, true)));
                 var allAreaDefinitionAnnouncements = allAboutGeocode.Where(x => x.Items.Any(y => y is GazetteAreaDefinition));
                 foreach ( var announcement in allAreaDefinitionAnnouncements )
                 {
                     var areaDefinitions = announcement.Items.Where(x => x is GazetteAreaDefinition);
-                    if ( areaDefinitions.Any(x => (x as GazetteAreaDefinition).IsAboutGeocode(entity.geocode, true)) )
+                    if ( areaDefinitions.Any(x => (x as GazetteAreaDefinition).IsAboutGeocode(entity.geocode, true) ||
+                        entity.OldGeocodes.Any(y => (x as GazetteAreaDefinition).IsAboutGeocode(y, true))) )
                     {
                         result.Add(announcement);
                     }
