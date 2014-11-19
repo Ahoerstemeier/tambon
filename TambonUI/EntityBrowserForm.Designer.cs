@@ -56,8 +56,10 @@
             this.txtMuban = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuWikipediaGerman = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
             this.wikipediaenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabLocalGoverment = new System.Windows.Forms.TabPage();
+            this.txtLocalGovernment = new System.Windows.Forms.TextBox();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
@@ -67,6 +69,7 @@
             this.tabElection.SuspendLayout();
             this.tabMuban.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.tabLocalGoverment.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubDivisions
@@ -220,6 +223,7 @@
             this.tabSubdivisionData.Controls.Add(this.tabErrors);
             this.tabSubdivisionData.Controls.Add(this.tabElection);
             this.tabSubdivisionData.Controls.Add(this.tabMuban);
+            this.tabSubdivisionData.Controls.Add(this.tabLocalGoverment);
             this.tabSubdivisionData.Location = new System.Drawing.Point(201, 351);
             this.tabSubdivisionData.Name = "tabSubdivisionData";
             this.tabSubdivisionData.SelectedIndex = 0;
@@ -310,7 +314,7 @@
             this.wikipediaenToolStripMenuItem,
             this.mnuMubanDefinitions});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 70);
             // 
             // mnuWikipediaGerman
             // 
@@ -319,6 +323,13 @@
             this.mnuWikipediaGerman.Text = "Wikipedia (de)";
             this.mnuWikipediaGerman.Click += new System.EventHandler(this.mnuWikipediaGerman_Click);
             // 
+            // wikipediaenToolStripMenuItem
+            // 
+            this.wikipediaenToolStripMenuItem.Name = "wikipediaenToolStripMenuItem";
+            this.wikipediaenToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.wikipediaenToolStripMenuItem.Text = "Wikipedia (en)";
+            this.wikipediaenToolStripMenuItem.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
+            // 
             // mnuMubanDefinitions
             // 
             this.mnuMubanDefinitions.Name = "mnuMubanDefinitions";
@@ -326,12 +337,27 @@
             this.mnuMubanDefinitions.Text = "Muban definitions";
             this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
             // 
-            // wikipediaenToolStripMenuItem
+            // tabLocalGoverment
             // 
-            this.wikipediaenToolStripMenuItem.Name = "wikipediaenToolStripMenuItem";
-            this.wikipediaenToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.wikipediaenToolStripMenuItem.Text = "Wikipedia (en)";
-            this.wikipediaenToolStripMenuItem.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
+            this.tabLocalGoverment.Controls.Add(this.txtLocalGovernment);
+            this.tabLocalGoverment.Location = new System.Drawing.Point(4, 22);
+            this.tabLocalGoverment.Name = "tabLocalGoverment";
+            this.tabLocalGoverment.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLocalGoverment.Size = new System.Drawing.Size(398, 132);
+            this.tabLocalGoverment.TabIndex = 4;
+            this.tabLocalGoverment.Text = "LAO";
+            this.tabLocalGoverment.UseVisualStyleBackColor = true;
+            // 
+            // txtLocalGovernment
+            // 
+            this.txtLocalGovernment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLocalGovernment.Location = new System.Drawing.Point(6, 6);
+            this.txtLocalGovernment.Multiline = true;
+            this.txtLocalGovernment.Name = "txtLocalGovernment";
+            this.txtLocalGovernment.Size = new System.Drawing.Size(386, 120);
+            this.txtLocalGovernment.TabIndex = 16;
             // 
             // EntityBrowserForm
             // 
@@ -357,6 +383,8 @@
             this.tabMuban.ResumeLayout(false);
             this.tabMuban.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.tabLocalGoverment.ResumeLayout(false);
+            this.tabLocalGoverment.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -392,6 +420,8 @@
         private System.Windows.Forms.TextBox txtMuban;
         private System.Windows.Forms.ToolStripMenuItem mnuMubanDefinitions;
         private System.Windows.Forms.ToolStripMenuItem wikipediaenToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabLocalGoverment;
+        private System.Windows.Forms.TextBox txtLocalGovernment;
 
     }
 }
