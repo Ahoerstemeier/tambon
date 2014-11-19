@@ -142,6 +142,7 @@ namespace De.AHoerstemeier.Tambon.UI
             CheckForErrors(entity);
             CalcElectionData(entity);
             CalcMubanData(entity);
+            CalcLocalGovernmentData(entity);
 
             mnuMubanDefinitions.Enabled = AreaDefinitionAnnouncements(entity).Any();
         }
@@ -484,6 +485,40 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
             txtMuban.Text = result;
+        }
+
+        private void CalcLocalGovernmentData(Entity entity)
+        {
+            String result = String.Empty;
+
+            var localGovernmentsInEntity = LocalGovernmentEntitiesOf(entity).ToList();
+            // var localGovernmentsInProvince = LocalGovernmentEntitiesOf(this.baseEntity.entity.First(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode))).ToList();
+            var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
+            // var localEntitiesInProvinceWithOffice = localGovernmentsInProvince.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
+            var localEntitiesWithCoverage = localEntitiesWithOffice.Where(x => x.LocalGovernmentAreaCoverage.Any());
+            var localEntitiesWithoutCoverage = localEntitiesWithOffice.Where(x => !x.LocalGovernmentAreaCoverage.Any() && x.type != EntityType.PAO);
+
+            var localGovernmentCoveringMoreThanOneTambon = localEntitiesWithCoverage.Where(x => x.LocalGovernmentAreaCoverage.Count() > 1);
+            var localGovernmentCoveringExactlyOneTambon = localEntitiesWithCoverage.Where(x => x.LocalGovernmentAreaCoverage.Count() == 1 && x.LocalGovernmentAreaCoverage.First().coverage == CoverageType.completely);
+            var localGovernmentCoveringOneTambonPartially = localEntitiesWithCoverage.Where(x => x.LocalGovernmentAreaCoverage.Count() == 1 && x.LocalGovernmentAreaCoverage.First().coverage == CoverageType.partially);
+            var localGovernmentCoveringMoreThanOneTambonAndAllCompletely = localGovernmentCoveringMoreThanOneTambon.Where(x => x.LocalGovernmentAreaCoverage.All(y => y.coverage == CoverageType.completely));
+
+            result += String.Format("LAO: {0}", localEntitiesWithOffice.Count()) + Environment.NewLine;
+            result += String.Format("LAO with coverage: {0}", localEntitiesWithCoverage.Count()) + Environment.NewLine;
+            if ( localEntitiesWithoutCoverage.Any() )
+            {
+                result += String.Format("LAO missing coverage: {0}", localEntitiesWithoutCoverage.Count()) + Environment.NewLine;
+            }
+            result += String.Format("LAO covering exactly one Tambon: {0}", localGovernmentCoveringExactlyOneTambon.Count()) + Environment.NewLine;
+            result += String.Format("LAO covering one Tambon partially: {0}", localGovernmentCoveringOneTambonPartially.Count()) + Environment.NewLine;
+            result += String.Format("LAO covering more than one Tambon: {0} ({1} TAO)",
+                localGovernmentCoveringMoreThanOneTambon.Count(),
+                localGovernmentCoveringMoreThanOneTambon.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+            result += String.Format("LAO covering more than one Tambon and all completely: {0} ({1} TAO)",
+                localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Count(),
+                localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+
+            txtLocalGovernment.Text = result;
         }
 
         private IEnumerable<Entity> TambonWithInvalidMubanNumber(IEnumerable<Entity> allTambon)
