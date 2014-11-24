@@ -629,5 +629,61 @@ namespace De.AHoerstemeier.Tambon.UI
                 btnCreateLocalGovernment.Enabled = false;
             }
         }
+
+        private void btnTambonList_Click(object sender, EventArgs e)
+        {
+            StringBuilder result = new StringBuilder();
+            var codes = new List<String>();
+            foreach ( var province in allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)) )
+            {
+                result.AppendFormat("* {{{{Q|{0}}}}}", province.wiki.wikidata.Remove(0, 1));
+                result.AppendLine();
+                foreach ( var amphoe in province.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+                {
+                    result.AppendFormat("** {{{{Q|{0}}}}}: ", amphoe.wiki.wikidata.Remove(0, 1));
+                    codes.Clear();
+                    foreach ( var tambon in amphoe.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Tambon)) )
+                    {
+                        if ( tambon.wiki != null && !String.IsNullOrEmpty(tambon.wiki.wikidata) )
+                        {
+                            // codes.Add(String.Format("{{{{Q|{0}}}}}", tambon.wiki.wikidata.Remove(0, 1)));
+                            codes.Add(String.Format("[[{0}]]", tambon.wiki.wikidata));
+                        }
+                        else
+                        {
+                            codes.Add(tambon.english);
+                        }
+                    }
+                    result.AppendLine(String.Join(" - ", codes));
+                }
+            }
+            edtCollisions.Text = result.ToString();
+        }
+
+        private void btnLaoList_Click(object sender, EventArgs e)
+        {
+            StringBuilder result = new StringBuilder();
+            var codes = new List<String>();
+            foreach ( var province in allEntities.Where(x => x.type == EntityType.Changwat) )
+            {
+                result.AppendFormat("* {{{{Q|{0}}}}}: ", province.wiki.wikidata.Remove(0, 1));
+                codes.Clear();
+                var localGovernment = allEntities.Where(x => !x.IsObsolete && x.type.IsLocalGovernment() && GeocodeHelper.IsBaseGeocode(province.geocode, x.geocode));
+                foreach ( var lao in localGovernment )
+                {
+                    if ( lao.wiki != null && !String.IsNullOrEmpty(lao.wiki.wikidata) )
+                    {
+                        // codes.Add(String.Format("{{{{Q|{0}}}}}", tambon.wiki.wikidata.Remove(0, 1)));
+                        codes.Add(String.Format("[[{0}]]", lao.wiki.wikidata));
+                    }
+                    else
+                    {
+                        codes.Add(lao.english);
+                    }
+                }
+                result.AppendLine(String.Join(" - ", codes));
+            }
+            edtCollisions.Text = result.ToString();
+        }
     }
 }

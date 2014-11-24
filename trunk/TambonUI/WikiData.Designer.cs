@@ -50,6 +50,8 @@
             this.btnCreateLocalGovernment = new System.Windows.Forms.Button();
             this.lblSpecificItemId = new System.Windows.Forms.Label();
             this.edtSpecificItemId = new System.Windows.Forms.TextBox();
+            this.btnTambonList = new System.Windows.Forms.Button();
+            this.btnLaoList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStat
@@ -187,9 +189,9 @@
             // 
             // btnAllItems
             // 
-            this.btnAllItems.Location = new System.Drawing.Point(15, 70);
+            this.btnAllItems.Location = new System.Drawing.Point(12, 70);
             this.btnAllItems.Name = "btnAllItems";
-            this.btnAllItems.Size = new System.Drawing.Size(95, 23);
+            this.btnAllItems.Size = new System.Drawing.Size(98, 23);
             this.btnAllItems.TabIndex = 15;
             this.btnAllItems.Text = "All Items";
             this.btnAllItems.UseVisualStyleBackColor = true;
@@ -270,11 +272,33 @@
             this.edtSpecificItemId.Size = new System.Drawing.Size(98, 20);
             this.edtSpecificItemId.TabIndex = 22;
             // 
+            // btnTambonList
+            // 
+            this.btnTambonList.Location = new System.Drawing.Point(12, 378);
+            this.btnTambonList.Name = "btnTambonList";
+            this.btnTambonList.Size = new System.Drawing.Size(98, 23);
+            this.btnTambonList.TabIndex = 24;
+            this.btnTambonList.Text = "Tambon List";
+            this.btnTambonList.UseVisualStyleBackColor = true;
+            this.btnTambonList.Click += new System.EventHandler(this.btnTambonList_Click);
+            // 
+            // btnLaoList
+            // 
+            this.btnLaoList.Location = new System.Drawing.Point(124, 378);
+            this.btnLaoList.Name = "btnLaoList";
+            this.btnLaoList.Size = new System.Drawing.Size(92, 23);
+            this.btnLaoList.TabIndex = 25;
+            this.btnLaoList.Text = "LAO List";
+            this.btnLaoList.UseVisualStyleBackColor = true;
+            this.btnLaoList.Click += new System.EventHandler(this.btnLaoList_Click);
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.btnLaoList);
+            this.Controls.Add(this.btnTambonList);
             this.Controls.Add(this.lblSpecificItemId);
             this.Controls.Add(this.edtSpecificItemId);
             this.Controls.Add(this.btnCreateLocalGovernment);
@@ -329,5 +353,7 @@
         private System.Windows.Forms.Button btnCreateLocalGovernment;
         private System.Windows.Forms.Label lblSpecificItemId;
         private System.Windows.Forms.TextBox edtSpecificItemId;
+        private System.Windows.Forms.Button btnTambonList;
+        private System.Windows.Forms.Button btnLaoList;
     }
 }
