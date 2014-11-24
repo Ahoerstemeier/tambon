@@ -473,7 +473,20 @@ namespace De.AHoerstemeier.Tambon.UI
                     allMuban.Count(),
                     mubanNumbers.First(),
                     mubanNumbers.Last());
+                var counter = new FrequencyCounter();
+                foreach ( var tambon in allTambon )
+                {
+                    counter.IncrementForCount(tambon.entity.Count(x => x.type == EntityType.Muban && !x.IsObsolete), tambon.geocode);
+                }
+                result += String.Format("Most common Muban number: {0}", counter.MostCommonValue) + Environment.NewLine;
+                result += String.Format("Median Muban number: {0:0.0}", counter.MeanValue) + Environment.NewLine;
+                List<UInt32> tambonWithNoMuban = null;
+                if ( counter.Data.TryGetValue(0, out tambonWithNoMuban) )
+                {
+                    result += String.Format("Tambon without Muban: {0}", tambonWithNoMuban.Count) + Environment.NewLine;
+                }
             }
+
             // could add: Muban creations in last years
             var tambonWithInvalidMubanNumber = TambonWithInvalidMubanNumber(allTambon);
             if ( tambonWithInvalidMubanNumber.Any() )
