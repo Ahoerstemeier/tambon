@@ -394,6 +394,17 @@ namespace De.AHoerstemeier.Tambon.UI
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "HASC", (Entity x) => x.codes.hasc.value, "TH(\\.[A-Z]{2}){1,2}");
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "SALB", (Entity x) => x.codes.salb.value, "THA[\\d{3}]{1,2}");
 
+            var entityWithoutSlogan = entity.FlatList().Where(x => !x.IsObsolete && (x.type.IsCompatibleEntityType(EntityType.Changwat) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) && !x.symbols.slogan.Any());
+            if ( entityWithoutSlogan.Any() )
+            {
+                text += String.Format("Province/District without slogan ({0}):", entityWithoutSlogan.Count()) + Environment.NewLine;
+                foreach ( var item in entityWithoutSlogan )
+                {
+                    text += String.Format(" {0}: {1}", item.geocode, item.english) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+
             // check areacoverages
             txtErrors.Text = text;
         }
