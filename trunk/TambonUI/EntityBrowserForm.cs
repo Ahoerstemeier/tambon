@@ -502,7 +502,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var tambonWithInvalidMubanNumber = TambonWithInvalidMubanNumber(allTambon);
             if ( tambonWithInvalidMubanNumber.Any() )
             {
-                result += Environment.NewLine + "Muban inconsistent for:" + Environment.NewLine;
+                result += Environment.NewLine + String.Format("Muban inconsistent for {0} Muban:", tambonWithInvalidMubanNumber.Count()) + Environment.NewLine;
                 foreach ( var tambon in tambonWithInvalidMubanNumber )
                 {
                     result += String.Format("{0}: {1}", tambon.geocode, tambon.english) + Environment.NewLine;
