@@ -460,7 +460,7 @@
       </codes>
       <office type="TAOOffice" obsolete="1">
         <history>
-          <abolished mergeto="410112" type="TAO" effective="2004-09-24" status="Gazette">
+          <abolished mergeto="410113" type="TAO" effective="2004-09-24" status="Gazette">
             <gazetteref volume="121" page="7" issue="พิเศษ 108 ง" date="2004-09-29" />
           </abolished>
           <create type="TAO" effective="1997-02-13" status="Gazette">
@@ -468,6 +468,7 @@
           </create>
         </history>
       </office>
+      <!-- 1997 Gazette lists 12 Muban, noplink & ThaiTambon agree on these 7 -->
       <entity type="Muban" geocode="41011201" name="บ้านเลื่อม" english="Ban Lueam" />
       <entity type="Muban" geocode="41011202" name="บ้านไทยสมุทร" english="Ban Thai Samut" />
       <entity type="Muban" geocode="41011203" name="บ้านวัวข้อง" english="Ban Wua Khong" />
@@ -482,7 +483,14 @@
         <post value="41000" />
       </codes>
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>17.4124</geo:lat>
+          <geo:long>102.7210</geo:long>
+        </geo:Point>
         <url lastonline="2013-04-11" status="broken">http://chiangpin.go.th/</url>
+        <socialweb>
+          <googleplus type="location">112872951402522625254</googleplus>
+        </socialweb>
         <officials>
           <!-- no TAOMayor end term in 2012 -->
           <official title="TAOMayor" name="วินัย พิมพ์สาลี" begin="2013-09-14" beginreason="ElectedDirectly" />
@@ -716,6 +724,14 @@
           <entity geocode="410118" coverage="partially" />
         </areacoverage>
       </office>
+      <entity type="Muban" geocode="41011801" name="บ้านหนองแวง" english="Ban Nong Waeng" />
+      <entity type="Muban" geocode="41011802" name="บ้านอุดมพัฒนา" english="Ban Udom Phatthana" />
+      <entity type="Muban" geocode="41011803" name="บ้านเซ" english="Ban Se" />
+      <entity type="Muban" geocode="41011804" name="บ้านค่ายเสนีย์รณยุทธ" english="Ban Khai Seni  Ron Yuttho"/>
+      <entity type="Muban" geocode="41011805" name="บ้านอีเลี่ยน" english="Ban I Lian"/>
+      <entity type="Muban" geocode="41011806" name="บ้านโพนทอง" english="Ban Phon Thong" />
+      <entity type="Muban" geocode="41011807" name="บ้านหนองหิน" english="Ban Nong Hin" />
+      <entity type="Muban" geocode="41011808" name="บ้านหนองแหลม" english="Ban Nong Laem" />
     </entity>
     <entity type="Tambon" name="โคกสะอาด" english="Khok Sa-at" geocode="410119">
       <wiki wikidata="Q16970386" />
@@ -799,14 +815,14 @@
       <entity type="Muban" geocode="41012112" name="บ้านหนองตะไก้ใต้" english="Ban Nong Takai Tai" />
     </entity>
 
-    <entity type="Unknown" name="ขอนยูง" english="Khon Yung" geocode="410190" />
-    <entity type="Unknown" name="ปะโค" english="Pa Kho" geocode="410191" />
+    <entity type="Unknown" name="ขอนยูง" english="Khon Yung" geocode="410190" obsolete="1"/>
+    <entity type="Unknown" name="ปะโค" english="Pa Kho" geocode="410191" obsolete="1"/>
     <entity type="Unknown" name="หนองหว้า" english="Nong Wa" geocode="410194" newgeocode="410416" />
     <entity type="Unknown" name="ขอนยูง" english="Khon Yung" geocode="410195" newgeocode="410203" />
     <entity type="Unknown" name="ปะโค" english="Pa Kho" geocode="410196" newgeocode="410202" />
     <entity type="Unknown" name="เชียงเพ็ง" english="Chiang Pheng" geocode="410197" newgeocode="410204" />
     <entity type="Unknown" name="กุดจับ" english="Kut Chap" geocode="410198" newgeocode="410201" />
-    <entity type="Unknown" name="หนองปุ" geocode="410199" english="Nong Pu" />
+    <entity type="Unknown" name="หนองปุ" geocode="410199" english="Nong Pu" obsolete="1"/>
   </entity>
   <entity type="Amphoe" name="กุดจับ" english="Kut Chap" geocode="4102">
     <wiki wikidata="Q475851" />
