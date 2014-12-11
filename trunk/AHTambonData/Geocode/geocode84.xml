@@ -130,6 +130,14 @@
       <term begin="2004-03-14" end="2008-03-13" type="PAO" size="30" />
     </council>
   </office>
+  <area>
+    <area value="12891.5" unit="km²" />
+    <bounding geocode="80" direction="east" />
+    <bounding geocode="86" direction="north" />
+    <bounding geocode="85" direction="northwest" />
+    <bounding geocode="82" direction="west" />
+    <bounding geocode="81" direction="south" />
+  </area>
   <history>
     <reformedspelling name="สุราสตร์ธานี" effective="1942-06-01" />
     <misspelling name="สุราษฏร์ธานี" comment="Common misspelling" />
@@ -170,12 +178,16 @@
       </officials>
     </office>
     <area>
-      <data value="337.550" unit="km²" date="2007">
+      <area value="337.550" unit="km²" date="2007">
         <reference>
           <url>http://www.amphoe.com/menu.php?mid=1&amp;am=698&amp;pv=66</url>
         </reference>
-      </data>
-      <data value="233.8" unit="km²" date="2000" comment="Census2000" />
+      </area>
+      <area value="233.8" unit="km²" date="2000" comment="Census2000" />
+      <bounding geocode="8402" direction="east" />
+      <bounding geocode="8412" direction="south" />
+      <bounding geocode="8413" direction="south" />
+      <bounding geocode="8417" direction="west" />
     </area>
     <history>
       <reformedspelling name="เมืองสุราสตร์ธานี" effective="1942-06-01" />
@@ -606,7 +618,12 @@
       </officials>
     </office>
     <area>
-      <data value="879.0" unit="km²" comment="Census2000" />
+      <area value="879.0" unit="km²" comment="Census2000" />
+      <bounding geocode="8403" direction="east" />
+      <bounding geocode="8014" direction="southeast" />
+      <bounding geocode="8021" direction="south" />
+      <bounding geocode="8412" direction="south" />
+      <bounding geocode="8401" direction="west" />
     </area>
     <entity type="Tambon" name="ท่าทองใหม่" english="Tha Thong Mai" geocode="840201">
       <wiki wikidata="Q15813219" />
@@ -1539,6 +1556,9 @@
           <entity geocode="840501" coverage="partially" />
         </areacoverage>
       </office>
+      <area>
+        <bounding geocode="840502" />
+      </area>
       <entity type="Muban" geocode="84050101" name="บ้านท้องศาลา" english="Ban Thong Sala">
         <wiki wikidata="Q1725550" />
       </entity>
@@ -1595,6 +1615,9 @@
           <entity geocode="840502" coverage="partially" />
         </areacoverage>
       </office>
+      <area>
+        <bounding geocode="840501" />
+      </area>
       <entity type="Muban" geocode="84050201" name="บ้านหน้าทับ" english="Ban Na Thap" />
       <entity type="Muban" geocode="84050202" name="บ้านนอก" english="Ban Nok" />
       <entity type="Muban" geocode="84050203" name="บ้านเหนือ" english="Ban Nuea" />
@@ -5527,7 +5550,7 @@
       </areacoverage>
     </office>
     <area>
-      <data value="68.97" unit="km²" />
+      <area value="68.97" unit="km²" />
     </area>
     <history>
       <statuschange old="ThesabanMueang" new="ThesabanNakhon" effective="2007-05-04" status="Gazette">
