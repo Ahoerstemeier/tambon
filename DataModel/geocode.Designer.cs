@@ -690,7 +690,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<Office> officeField;
         
-        private List<Area> areaField;
+        private Area areaField;
         
         private HistoryList historyField;
         
@@ -736,7 +736,7 @@ namespace De.AHoerstemeier.Tambon {
             this.entityField = new List<Entity>();
             this.populationField = new List<PopulationData>();
             this.historyField = new HistoryList();
-            this.areaField = new List<Area>();
+            this.areaField = new Area();
             this.officeField = new List<Office>();
             this.symbolsField = new Symbols();
             this.codesField = new OtherIdentifier();
@@ -804,9 +804,9 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
-        [System.Xml.Serialization.XmlElementAttribute("area", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<Area> area {
+        public Area area {
             get {
                 return this.areaField;
             }
