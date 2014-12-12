@@ -17,8 +17,9 @@ namespace De.AHoerstemeier.Tambon.UI
     {
         #region fields
 
-        private List<Entity> localGovernments = new List<Entity>();
-        private Entity baseEntity;
+        private List<Entity> _localGovernments = new List<Entity>();
+        private Entity _baseEntity;
+        private List<Entity> _allEntities;
 
         #endregion fields
 
@@ -71,21 +72,21 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void EntityBrowserForm_Load(object sender, EventArgs e)
         {
-            baseEntity = GlobalData.CompleteGeocodeList();
-            baseEntity.PropagatePostcodeRecursive();
-            var allEntities = baseEntity.FlatList().Where(x => !x.IsObsolete).ToList();
-            var allLocalGovernmentParents = allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
+            _baseEntity = GlobalData.CompleteGeocodeList();
+            _baseEntity.PropagatePostcodeRecursive();
+            _allEntities = _baseEntity.FlatList().Where(x => !x.IsObsolete).ToList();
+            var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
             foreach ( var tambon in allLocalGovernmentParents )
             {
                 var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
                 if ( localGovernmentEntity != null )
                 {
-                    localGovernments.Add(localGovernmentEntity);
+                    _localGovernments.Add(localGovernmentEntity);
                 }
             }
-            foreach ( var item in allEntities.Where(x => x.type.IsLocalGovernment()) )
+            foreach ( var item in _allEntities.Where(x => x.type.IsLocalGovernment()) )
             {
-                localGovernments.Add(item);
+                _localGovernments.Add(item);
             }
 
             GlobalData.LoadPopulationData(PopulationDataSource, PopulationReferenceYear);
@@ -118,7 +119,7 @@ namespace De.AHoerstemeier.Tambon.UI
             treeviewSelection.BeginUpdate();
             treeviewSelection.Nodes.Clear();
 
-            TreeNode baseNode = EntityToTreeNode(baseEntity);
+            TreeNode baseNode = EntityToTreeNode(_baseEntity);
             treeviewSelection.Nodes.Add(baseNode);
             baseNode.Expand();
             foreach ( TreeNode node in baseNode.Nodes )
@@ -389,6 +390,45 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
 
+            var unknownNeighbors = new List<UInt32>();
+            var onewayNeighbors = new List<UInt32>();
+            foreach ( var entityWithNeighbors in entity.FlatList().Where(x => x.area.bounding.Any()) )
+            {
+                foreach ( var neighbor in entityWithNeighbors.area.bounding.Select(x => x.geocode) )
+                {
+                    var targetEntity = _allEntities.FirstOrDefault(x => x.geocode == neighbor);
+                    if ( targetEntity == null )
+                    {
+                        unknownNeighbors.Add(neighbor);
+                    }
+                    else if ( targetEntity.area.bounding.Any() && !targetEntity.area.bounding.Any(x => x.geocode == entityWithNeighbors.geocode) )
+                    {
+                        if ( !onewayNeighbors.Contains(entityWithNeighbors.geocode) )
+                        {
+                            onewayNeighbors.Add(entityWithNeighbors.geocode);
+                        }
+                    }
+                }
+            }
+            if ( unknownNeighbors.Any() )
+            {
+                text += String.Format("Invalid neighboring entities ({0}):", unknownNeighbors.Count()) + Environment.NewLine;
+                foreach ( var code in unknownNeighbors )
+                {
+                    text += String.Format(" {0}", code) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            if ( onewayNeighbors.Any() )
+            {
+                text += String.Format("Neighboring entities not found in both direction ({0}):", onewayNeighbors.Count()) + Environment.NewLine;
+                foreach ( var code in onewayNeighbors )
+                {
+                    text += String.Format(" {0}", code) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "FIPS10", (Entity x) => x.codes.fips10.value, "TH\\d\\d");
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "ISO3166", (Entity x) => x.codes.iso3166.value, "TH-(\\d\\d|S)");
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "HASC", (Entity x) => x.codes.hasc.value, "TH(\\.[A-Z]{2}){1,2}");
@@ -575,7 +615,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private Dictionary<EntityType, Int32> CountSubdivisions(Entity entity)
         {
-            var toCount = localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).ToList();
+            var toCount = _localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).ToList();
             toCount.AddRange(entity.FlatList().Where(x => !x.type.IsLocalGovernment()));
             toCount.RemoveAll(x => x.type == EntityType.Unknown || x.IsObsolete);
             return CountSubdivisions(toCount);
@@ -583,7 +623,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private Dictionary<EntityType, Int32> CountSubdivisionsWithoutLocation(Entity entity)
         {
-            var toCount = localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).ToList();
+            var toCount = _localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).ToList();
             toCount.AddRange(entity.FlatList().Where(x => !x.type.IsLocalGovernment()));
             toCount.RemoveAll(x => x.type == EntityType.Unknown || x.IsObsolete);
             toCount.RemoveAll(x => x.office.Any(y => y.Point != null));
@@ -631,7 +671,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private IEnumerable<Entity> LocalGovernmentEntitiesOf(Entity entity)
         {
-            return localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode) && !x.IsObsolete);
+            return _localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode) && !x.IsObsolete);
         }
 
         private void EntityToLocalAdministrativeListView(Entity entity)
@@ -693,7 +733,7 @@ namespace De.AHoerstemeier.Tambon.UI
             if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
             {
                 var result = new AmphoeDataForWikipediaExport();
-                result.Province = baseEntity.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
+                result.Province = _baseEntity.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
                 result.AllTambon.AddRange(entity.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete));
                 result.LocalAdministrations.AddRange(LocalGovernmentEntitiesOf(entity).Where(x => !x.IsObsolete));
 

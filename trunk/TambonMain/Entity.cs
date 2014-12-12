@@ -17,7 +17,7 @@ namespace De.AHoerstemeier.Tambon
 
         public Boolean ShouldSerializearea()
         {
-            return area.Any();
+            return area.area.Any() || area.bounding.Any();
         }
 
         public Boolean ShouldSerializenewgeocode()

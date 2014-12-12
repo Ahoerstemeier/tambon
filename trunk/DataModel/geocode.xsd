@@ -492,7 +492,7 @@
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:Area" />
+      <xs:element minOccurs="0" maxOccurs="1" name="area" type="t:Area" />
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="population" type="t:PopulationData" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity">
