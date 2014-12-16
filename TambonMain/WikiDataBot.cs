@@ -143,9 +143,9 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Thai abbreviation", SetThaiAbbreviation));
             _availableTasks.Add(new WikiDataTaskInfo("Set country", SetCountry));
             _availableTasks.Add(new WikiDataTaskInfo("Set is in administrative unit", SetIsInAdministrativeUnit));
-            WikiDataTaskDelegate setTypeOfAdministrativeUnit = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetTypeOfAdministrativeUnit(entities, collisionInfo, overrideData, false);
+            // WikiDataTaskDelegate setTypeOfAdministrativeUnit = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetTypeOfAdministrativeUnit(entities, collisionInfo, overrideData, false);
             WikiDataTaskDelegate setInstanceOf = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetTypeOfAdministrativeUnit(entities, collisionInfo, overrideData, true);
-            _availableTasks.Add(new WikiDataTaskInfo("Set type of administrative unit", setTypeOfAdministrativeUnit));
+            // _availableTasks.Add(new WikiDataTaskInfo("Set type of administrative unit", setTypeOfAdministrativeUnit));
             _availableTasks.Add(new WikiDataTaskInfo("Set instance of", setInstanceOf));
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
             SetContainsSubdivisionTask = new WikiDataTaskInfo("Set ContainsSubdivisions", SetContainsSubdivisions);
