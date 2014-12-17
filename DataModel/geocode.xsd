@@ -45,6 +45,28 @@
       <xs:enumeration value="southeast" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="BoundaryType">
+    <xs:annotation>
+      <xs:documentation>Type of boundary.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="land">
+        <xs:annotation>
+          <xs:documentation>Plain land boundary (includes natural boundaries by rivers).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sea">
+        <xs:annotation>
+          <xs:documentation>Boundary through a small body of sea water.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="point">
+        <xs:annotation>
+          <xs:documentation>Entities only connecting at one point, boundary has a length of 0.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="AreaData">
     <xs:annotation>
       <xs:documentation>Area covered by the entity.</xs:documentation>
@@ -85,6 +107,11 @@
     <xs:attribute name="direction" type="t:Direction" default="undefined" use="optional">
       <xs:annotation>
         <xs:documentation>Direction in which the units borders, as seen from the entity in which this tag is located.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="type" type="t:BoundaryType" default="land" use="optional">
+      <xs:annotation>
+        <xs:documentation>Kind of boundary.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
