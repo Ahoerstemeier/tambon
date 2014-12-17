@@ -1762,6 +1762,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private Direction directionField;
         
+        private BoundaryType typeField;
+        
         private string commentField;
         
         /// <summary>
@@ -1769,6 +1771,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public BoundingData() {
             this.directionField = Direction.undefined;
+            this.typeField = BoundaryType.land;
         }
         
         /// <summary>
@@ -1803,6 +1806,24 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.directionField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Kind of boundary.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(BoundaryType.land)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public BoundaryType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
             }
         }
         
@@ -1850,6 +1871,31 @@ namespace De.AHoerstemeier.Tambon {
         southwest,
         
         southeast,
+    }
+    
+    /// <summary>
+    /// Type of boundary.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum BoundaryType {
+        
+        /// <summary>
+        /// Plain land boundary (includes natural boundaries by rivers).
+        /// </summary>
+        land,
+        
+        /// <summary>
+        /// Boundary through a small body of sea water.
+        /// </summary>
+        sea,
+        
+        /// <summary>
+        /// Entities only connecting at one point, boundary has a length of 0.
+        /// </summary>
+        point,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
