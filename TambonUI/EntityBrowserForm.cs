@@ -615,8 +615,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private Dictionary<EntityType, Int32> CountSubdivisions(Entity entity)
         {
-            var toCount = _localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).ToList();
-            toCount.AddRange(entity.FlatList().Where(x => !x.type.IsLocalGovernment()));
+            var toCount = _localGovernments.Where(x => x.parent.Contains(entity.geocode) || GeocodeHelper.IsBaseGeocode(entity.geocode, x.geocode)).SelectMany(x => x.FlatList()).ToList();
+            // Chumchon and local governments are already in list, so filter them out while adding the central government units
+            toCount.AddRange(entity.FlatList().Where(x => !x.type.IsLocalGovernment() && x.type != EntityType.Chumchon));
             toCount.RemoveAll(x => x.type == EntityType.Unknown || x.IsObsolete);
             return CountSubdivisions(toCount);
         }
