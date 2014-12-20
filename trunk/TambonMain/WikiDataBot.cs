@@ -262,8 +262,8 @@ namespace De.AHoerstemeier.Tambon
             SetThaiAbbreviation(items, dummy, false);
             SetCountry(items, dummy, false);
             SetIsInAdministrativeUnit(items, dummy, false);
-            SetTypeOfAdministrativeUnit(items, dummy, false, true);
-            SetTypeOfAdministrativeUnit(items, dummy, false, false);
+            //SetTypeOfAdministrativeUnit(items, dummy, false, true);
+            //SetTypeOfAdministrativeUnit(items, dummy, false, false);
             if ( !entity.type.IsCompatibleEntityType(EntityType.Muban) && !entity.type.IsLocalGovernment() )
             {
                 SetGeocode(items, dummy, false);
