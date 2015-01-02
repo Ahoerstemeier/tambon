@@ -33,8 +33,9 @@ namespace De.AHoerstemeier.Tambon
             {EntityType.KlumChangwat,"Q13012657"}
         };
 
-        public const String PropertyIdEntityType = "P132";
+        // public const String PropertyIdEntityType = "P132";
         public const String PropertyIdCountry = "P17";
+
         public const String PropertyIdIsInAdministrativeUnit = "P131";
         public const String PropertyIdCoordinate = "P625";
         public const String PropertyIdCapital = "P36";
