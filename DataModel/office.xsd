@@ -235,6 +235,11 @@
           <xs:documentation>Councillors automatically appointed due to another office position held.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="TermExtended">
+        <xs:annotation>
+          <xs:documentation>Previous term was extended.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="CouncilSizeChangeReason">
@@ -390,6 +395,11 @@
       <xs:enumeration value="OfficialTypeChange">
         <xs:annotation>
           <xs:documentation>Title of official changed, e.g. change of TAOChairman to TAOMayor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TermExtended">
+        <xs:annotation>
+          <xs:documentation>Previous term was extended.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Unknown">
