@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinimalJson;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -8,7 +9,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
-using MinimalJson;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -82,11 +82,11 @@ namespace De.AHoerstemeier.Tambon
             Year = year;
             _geocode = geocode;
             _yearShort = Year + 543 - 2500;
-            if ( (_yearShort < 0) | (_yearShort > 99) )
+            if ((_yearShort < 0) | (_yearShort > 99))
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if ( (_geocode < 0) | (_geocode > 99) )
+            if ((_geocode < 0) | (_geocode > 99))
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -125,7 +125,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void OnProcessingFinished(EventArgs e)
         {
-            if ( ProcessingFinished != null )
+            if (ProcessingFinished != null)
             {
                 ProcessingFinished(this, e);
             }
@@ -146,20 +146,23 @@ namespace De.AHoerstemeier.Tambon
         {
             var _yearShort = (year + 543) % 100;
             String result = String.Empty;
-            switch ( language )
+            switch (language)
             {
                 case Language.English:
                     result = String.Format(CultureInfo.InvariantCulture,
                         "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Population statistics {1}|language=Thai|accessdate={2}}}}}</ref>",
                         String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year, DateTime.Now.ToString("yyyy-MM-dd"));
                     break;
+
                 case Language.German:
                     result = String.Format(CultureInfo.InvariantCulture,
                         "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Einwohnerstatistik {1}|language=Thai|accessdate={2}}}}}</ref>",
                         String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year, DateTime.Now.ToString("yyyy-MM-dd"));
                     break;
+
                 case Language.Thai:
                     break;
+
                 default:
                     break;
             }
@@ -183,7 +186,7 @@ namespace De.AHoerstemeier.Tambon
         public static PopulationData Load(String fromFile)
         {
             PopulationData result = null;
-            using ( var fileStream = new FileStream(fromFile, FileMode.Open, FileAccess.Read) )
+            using (var fileStream = new FileStream(fromFile, FileMode.Open, FileAccess.Read))
             {
                 result = XmlManager.XmlToEntity<PopulationData>(fileStream, new XmlSerializer(typeof(PopulationData)));
             }
@@ -198,7 +201,7 @@ namespace De.AHoerstemeier.Tambon
         public String XmlExportFileName()
         {
             String result = String.Empty;
-            if ( Data != null )
+            if (Data != null)
             {
                 String outputDirectory = Path.Combine(OutputDirectory, "DOPA");
                 Directory.CreateDirectory(outputDirectory);
@@ -215,7 +218,7 @@ namespace De.AHoerstemeier.Tambon
         {
             JsonObject obj = null;
             String url;
-            if ( geocode < 100 )
+            if (geocode < 100)
             {
                 url = String.Format(CultureInfo.InvariantCulture, _urlDataChangwat, _yearShort, geocode);
             }
@@ -224,7 +227,7 @@ namespace De.AHoerstemeier.Tambon
                 url = String.Format(CultureInfo.InvariantCulture, _urlDataAmphoe, _yearShort, geocode);
             }
             Int32 errorCount = 0;
-            while ( obj == null )
+            while (obj == null)
             {
                 try
                 {
@@ -233,7 +236,7 @@ namespace De.AHoerstemeier.Tambon
                     String response = StreamToString(inputStream);
 
                     JsonValue result = JsonValue.readFrom(response);
-                    if ( !result.isObject() )
+                    if (!result.isObject())
                     {
                         return null;
                     }
@@ -243,7 +246,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     errorCount++;
                 }
-                if ( errorCount > maxRetry )
+                if (errorCount > maxRetry)
                 {
                     throw new InvalidDataException(String.Format("Failed to get parseable json data for {0}", geocode));
                 }
@@ -258,7 +261,7 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Content of stream as string.</returns>
         private static String StreamToString(Stream stream)
         {
-            using ( StreamReader reader = new StreamReader(stream, Encoding.UTF8) )
+            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
             {
                 return reader.ReadToEnd();
             }
@@ -275,28 +278,28 @@ namespace De.AHoerstemeier.Tambon
         {
             var result = new List<Entity>();
             var actualData = data.get("aaData");
-            if ( actualData != null )
+            if (actualData != null)
             {
                 var array = actualData.asArray();
-                foreach ( JsonArray item in array )
+                foreach (JsonArray item in array)
                 {
                     var parsedData = new List<String>();
-                    foreach ( JsonValue dataPoint in item )
+                    foreach (JsonValue dataPoint in item)
                     {
                         var strippedText = Regex.Replace(dataPoint.asString(), "<.*?>", string.Empty).Replace(",", String.Empty);
-                        if ( strippedText == "-" )
+                        if (strippedText == "-")
                         {
                             strippedText = "0";
                         }
                         parsedData.Add(strippedText);
                     }
                     var firstLine = parsedData.First();
-                    if ( !String.IsNullOrWhiteSpace(firstLine) && (firstLine != "00") )
+                    if (!String.IsNullOrWhiteSpace(firstLine) && (firstLine != "00"))
                     {
                         Entity entity = new Entity();
-                        entity.ParseName(parsedData.ElementAt(1).Replace("ท้องถิ่น", String.Empty));
+                        entity.ParseName(parsedData.ElementAt(1).Replace("ท้องถิ่น", String.Empty).Trim());
                         entity.geocode = Convert.ToUInt32(firstLine, CultureInfo.InvariantCulture);
-                        while ( entity.geocode % 100 == 0 )
+                        while (entity.geocode % 100 == 0)
                         {
                             entity.geocode = entity.geocode / 100;
                         }
@@ -309,7 +312,7 @@ namespace De.AHoerstemeier.Tambon
                         householdDataPoint.total = Convert.ToInt32(parsedData.ElementAt(4), CultureInfo.InvariantCulture);
                         householdDataPoint.households = Convert.ToInt32(parsedData.ElementAt(5), CultureInfo.InvariantCulture);
                         population.data.Add(householdDataPoint);
-                        if ( (householdDataPoint.total > 0) || (householdDataPoint.households > 0) )
+                        if ((householdDataPoint.total > 0) || (householdDataPoint.households > 0))
                         {
                             // occasionally there are empty entries, e.g. for 3117 includes an empty 311102
                             result.Add(entity);
@@ -335,7 +338,7 @@ namespace De.AHoerstemeier.Tambon
             Data = new Entity();
             var data = GetDataFromDopa(_geocode);
             Data.entity.AddRange(ParseJson(data));
-            foreach ( var entity in Data.entity )
+            foreach (var entity in Data.entity)
             {
                 var subData = GetDataFromDopa(entity.geocode);
                 entity.entity.AddRange(ParseJson(subData));
@@ -351,19 +354,19 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         private void GetGeocodes()
         {
-            if ( Data != null )
+            if (Data != null)
             {
                 var geocodes = GlobalData.GetGeocodeList(Data.geocode);
                 // _invalidGeocodes = geocodes.InvalidGeocodeEntries();
-                foreach ( var amphoe in geocodes.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+                foreach (var amphoe in geocodes.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)))
                 {
-                    if ( !Data.entity.Any(x => GeocodeHelper.IsSameGeocode(x.geocode, amphoe.geocode, false)) )
+                    if (!Data.entity.Any(x => GeocodeHelper.IsSameGeocode(x.geocode, amphoe.geocode, false)))
                     {
                         // make sure all Amphoe will  be in the result list, in case of a Amphoe which has only Thesaban it will be missing in the DOPA data
                         var newAmphoe = new Entity();
                         newAmphoe.population.Add(CreateEmptyPopulationEntry());
-                        newAmphoe.geocode = amphoe.geocode;
-                        Data.entity.Add(amphoe);
+                        newAmphoe.CopyBasicDataFrom(amphoe);
+                        Data.entity.Add(newAmphoe);
                     }
                 }
                 Data.SynchronizeGeocodes(geocodes);
@@ -376,7 +379,7 @@ namespace De.AHoerstemeier.Tambon
         public void SaveXml()
         {
             var data = XmlManager.EntityToXml<Entity>(Data);
-            using ( var fileStream = new StreamWriter(XmlExportFileName()) )
+            using (var fileStream = new StreamWriter(XmlExportFileName()))
             {
                 fileStream.WriteLine(data);
             }
@@ -384,7 +387,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void ReOrderThesaban()
         {
-            if ( Data != null )
+            if (Data != null)
             {
                 Data.ReorderThesaban();
             }
@@ -402,7 +405,7 @@ namespace De.AHoerstemeier.Tambon
             Data.type = EntityType.Country;
             Data.CopyBasicDataFrom(GlobalData.CountryEntity);
 
-            foreach ( var entry in GlobalData.Provinces )
+            foreach (var entry in GlobalData.Provinces)
             {
                 var tempCalculator = new PopulationDataDownloader(Year, entry.geocode);
                 tempCalculator.Process();
@@ -418,9 +421,9 @@ namespace De.AHoerstemeier.Tambon
             FixupWronglyPlacedAmphoe();
             ReOrderThesaban();
             var toRemove = new List<Entity>();
-            foreach ( var entity in Data.FlatList() )
+            foreach (var entity in Data.FlatList())
             {
-                if ( entity.population.Any() )
+                if (entity.population.Any())
                 {
                     entity.population.First().CalculateTotal();
                 }
@@ -436,24 +439,29 @@ namespace De.AHoerstemeier.Tambon
         private void FixupWronglyPlacedAmphoe()
         {
             var invalidTambon = new List<Entity>();
-            foreach ( var amphoe in Data.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+            foreach (var amphoe in Data.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)))
             {
-                foreach ( var tambon in amphoe.entity.Where(x => !GeocodeHelper.IsBaseGeocode(amphoe.geocode, x.geocode)).ToList() )
+                foreach (var tambon in amphoe.entity.Where(x => !GeocodeHelper.IsBaseGeocode(amphoe.geocode, x.geocode)).ToList())
                 {
                     invalidTambon.Add(tambon);
                     amphoe.entity.Remove(tambon);
                 }
             }
-            foreach ( var tambon in invalidTambon )
+            foreach (var tambon in invalidTambon)
             {
                 var mainTambon = Data.FlatList().FirstOrDefault(x => GeocodeHelper.IsSameGeocode(x.geocode, tambon.geocode, false));
-                if ( mainTambon != null )
+                if (mainTambon != null)
                 {
-                    foreach ( var dataPoint in tambon.population.First().data )
+                    foreach (var dataPoint in tambon.population.First().data)
                     {
                         mainTambon.population.First().AddDataPoint(dataPoint);
                     }
                 }
+            }
+            var emptyAmphoe = Data.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) && !x.entity.Any()).ToList();
+            foreach (var toRemove in emptyAmphoe)
+            {
+                Data.entity.Remove(toRemove);
             }
         }
 
@@ -462,7 +470,7 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         public void Process()
         {
-            if ( _geocode == 0 )
+            if (_geocode == 0)
             {
                 ProcessAllProvinces();
             }
