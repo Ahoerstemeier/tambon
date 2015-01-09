@@ -12,7 +12,14 @@ namespace De.AHoerstemeier.Tambon
 {
     public static class GlobalData
     {
+        /// <summary>
+        /// Latest year for which the DOPA population statistics is available.
+        /// </summary>
         public const Int32 PopulationStatisticMaxYear = 2014;
+
+        /// <summary>
+        /// Earliest year for which the DOPA population statistics is available.
+        /// </summary>
         public const Int32 PopulationStatisticMinYear = 1993;
 
         /// <summary>
@@ -21,11 +28,11 @@ namespace De.AHoerstemeier.Tambon
         public static void LoadBasicGeocodeList()
         {
             var fileName = BaseXMLDirectory + "\\geocode.xml";
-            using ( var filestream = new FileStream(fileName, FileMode.Open, FileAccess.Read) )
+            using (var filestream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
                 Entity geocodes = XmlManager.XmlToEntity<Entity>(filestream, new XmlSerializer(typeof(Entity)));
                 var provinces = new List<Entity>();
-                foreach ( var entity in geocodes.entity.Where(x => x.type.IsFirstLevelAdministrativeUnit() && !x.IsObsolete) )
+                foreach (var entity in geocodes.entity.Where(x => x.type.IsFirstLevelAdministrativeUnit() && !x.IsObsolete))
                 {
                     provinces.Add(entity);
                 }
@@ -74,20 +81,20 @@ namespace De.AHoerstemeier.Tambon
         static public Entity GetGeocodeList(UInt32 provinceCode)
         {
             Entity result = null;
-            if ( !Provinces.Any(entry => entry.geocode == provinceCode) )
+            if (!Provinces.Any(entry => entry.geocode == provinceCode))
             {
                 throw new ArgumentOutOfRangeException("provinceCode");
             }
-            if ( _geocodeCache.Keys.Contains(provinceCode) )
+            if (_geocodeCache.Keys.Contains(provinceCode))
             {
                 result = _geocodeCache[provinceCode].Clone();
             }
             else
             {
                 String fileName = GeocodeSourceFile(provinceCode);
-                if ( File.Exists(fileName) )
+                if (File.Exists(fileName))
                 {
-                    using ( var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read) )
+                    using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
                     {
                         result = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
                     }
@@ -104,7 +111,7 @@ namespace De.AHoerstemeier.Tambon
         static public Entity CompleteGeocodeList()
         {
             var result = CountryEntity.Clone();
-            foreach ( var changwat in GlobalData.Provinces )
+            foreach (var changwat in GlobalData.Provinces)
             {
                 var actualChangwat = GetGeocodeList(changwat.geocode);
                 result.entity.Add(actualChangwat);
@@ -159,20 +166,21 @@ namespace De.AHoerstemeier.Tambon
 
         public static void LoadPopulationData(PopulationDataSourceType source, Int16 year)
         {
-            if ( !GlobalData.CountryEntity.population.Any(x => x.Year == year && x.source == source) )
+            if (!GlobalData.CountryEntity.population.Any(x => x.Year == year && x.source == source))
             {
                 String filename = String.Empty;
-                switch ( source )
+                switch (source)
                 {
                     case PopulationDataSourceType.Census:
                         filename = BaseXMLDirectory + "\\population\\census{0}.xml";
                         break;
+
                     case PopulationDataSourceType.DOPA:
                         filename = BaseXMLDirectory + "\\population\\DOPA{0}.xml";
                         break;
                 }
                 filename = String.Format(CultureInfo.InvariantCulture, filename, year);
-                if ( !string.IsNullOrWhiteSpace(filename) )
+                if (!string.IsNullOrWhiteSpace(filename))
                 {
                     LoadPopulationData(filename);
                 }
@@ -182,19 +190,19 @@ namespace De.AHoerstemeier.Tambon
         private static void LoadPopulationData(String fileName)
         {
             var allFlat = CompleteGeocodeList().FlatList().Where(x => !x.type.IsCompatibleEntityType(EntityType.Muban)).ToDictionary(x => x.geocode);
-            using ( var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read) )
+            using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
                 var data = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
                 var flat = data.FlatList();
                 var dataPoints = flat.Where(x => x.population.Any()).ToList();
-                foreach ( var dataPoint in dataPoints )
+                foreach (var dataPoint in dataPoints)
                 {
                     Entity target;
-                    if ( allFlat.TryGetValue(dataPoint.geocode, out target) )
+                    if (allFlat.TryGetValue(dataPoint.geocode, out target))
                     {
-                        foreach ( var populationEntry in dataPoint.population )
+                        foreach (var populationEntry in dataPoint.population)
                         {
-                            if ( !target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate) )
+                            if (!target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate))
                             {
                                 target.population.Add(populationEntry);
                             }
@@ -206,7 +214,7 @@ namespace De.AHoerstemeier.Tambon
 
         public static void LoadPopulationData()
         {
-            foreach ( String file in Directory.EnumerateFiles(BaseXMLDirectory + "\\population\\") )
+            foreach (String file in Directory.EnumerateFiles(BaseXMLDirectory + "\\population\\"))
             {
                 LoadPopulationData(file);
             }
