@@ -94,7 +94,6 @@ namespace De.AHoerstemeier.Tambon
             target.female += dataPoint.female;
             target.households += dataPoint.households;
         }
-
     }
 
     public partial class PopulationDataPoint
@@ -105,6 +104,7 @@ namespace De.AHoerstemeier.Tambon
             this.male += data.male;
             this.total += data.total;
         }
+
         private Boolean IsEqual(PopulationDataPoint data)
         {
             return
@@ -112,7 +112,8 @@ namespace De.AHoerstemeier.Tambon
             (this.male == data.male) &&
             (this.total == data.total);
         }
-        public  Boolean Verify()
+
+        public Boolean Verify()
         {
             var sum = male + female;
             return (sum == total);
