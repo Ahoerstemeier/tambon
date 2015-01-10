@@ -96,6 +96,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void CalculateLocalGovernmentPopulation()
         {
+            var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
             foreach (var localEntityWithoutPopulation in _localGovernments.Where(x =>
                 x.LocalGovernmentAreaCoverage.Any() && !x.population.Any(
                 y => y.Year == PopulationReferenceYear && y.source == PopulationDataSource)))
@@ -104,7 +105,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 localEntityWithoutPopulation.population.Add(populationData);
                 foreach (var coverage in localEntityWithoutPopulation.LocalGovernmentAreaCoverage)
                 {
-                    var tambon = _allEntities.Single(x => x.geocode == coverage.geocode);
+                    var tambon = allTambon.Single(x => x.geocode == coverage.geocode);
                     var sourcePopulationData = tambon.population.First(y => y.Year == PopulationReferenceYear && y.source == PopulationDataSource);
                     populationData.year = sourcePopulationData.year;
                     populationData.referencedate = sourcePopulationData.referencedate;
@@ -350,7 +351,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
 
-            var allTambon = entity.FlatList().Where(x => x.type == EntityType.Tambon && !x.IsObsolete);
+            var allTambon = entity.FlatList().Where(x => x.type == EntityType.Tambon && !x.IsObsolete).ToList();
             var localGovernmentCoverages = new List<LocalGovernmentCoverageEntity>();
             foreach (var item in localEntitiesWithOffice)
             {
