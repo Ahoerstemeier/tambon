@@ -1237,10 +1237,16 @@ namespace De.AHoerstemeier.Tambon {
         
         private SocialWebLink foursquareField;
         
+        private SocialWebLink zodioField;
+        
+        private SocialWebLink longdoField;
+        
         /// <summary>
         /// Creates a new instance of SocialWebLinkEntry.
         /// </summary>
         public SocialWebLinkEntry() {
+            this.longdoField = new SocialWebLink();
+            this.zodioField = new SocialWebLink();
             this.foursquareField = new SocialWebLink();
             this.forumField = new List<MyUri>();
             this.blogField = new List<MyUri>();
@@ -1348,6 +1354,40 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.foursquareField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Zodio numerical venue ID. URL for venue id 123 is http://www.zodio.com/business/detail/123/
+        /// </summary>
+        /// <value>
+        /// The zodio.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SocialWebLink zodio {
+            get {
+                return this.zodioField;
+            }
+            set {
+                this.zodioField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Longdo map ID. URL for venue id 123 is http://map.longdo.com/p/123/view
+        /// </summary>
+        /// <value>
+        /// The longdo.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SocialWebLink longdo {
+            get {
+                return this.longdoField;
+            }
+            set {
+                this.longdoField = value;
             }
         }
     }

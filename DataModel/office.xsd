@@ -574,6 +574,16 @@
           <xs:documentation>Foursquare venue ID, last part of the venue URL. URL for venue id 123 is http://foursquare.com/v/123 </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="zodio" type="t:SocialWebLink" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Zodio numerical venue ID. URL for venue id 123 is http://www.zodio.com/business/detail/123/ </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="longdo" type="t:SocialWebLink" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Longdo map ID. URL for venue id 123 is http://map.longdo.com/p/123/view </xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 
