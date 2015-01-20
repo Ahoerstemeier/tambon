@@ -106,42 +106,45 @@ namespace De.AHoerstemeier.Tambon.UI
                 foreach (var coverage in localEntityWithoutPopulation.LocalGovernmentAreaCoverage)
                 {
                     var tambon = allTambon.Single(x => x.geocode == coverage.geocode);
-                    var sourcePopulationData = tambon.population.First(y => y.Year == PopulationReferenceYear && y.source == PopulationDataSource);
-                    populationData.year = sourcePopulationData.year;
-                    populationData.referencedate = sourcePopulationData.referencedate;
-                    populationData.referencedateSpecified = sourcePopulationData.referencedateSpecified;
-                    populationData.source = sourcePopulationData.source;
+                    var sourcePopulationData = tambon.population.FirstOrDefault(y => y.Year == PopulationReferenceYear && y.source == PopulationDataSource);
+                    if (sourcePopulationData != null)
+                    {
+                        populationData.year = sourcePopulationData.year;
+                        populationData.referencedate = sourcePopulationData.referencedate;
+                        populationData.referencedateSpecified = sourcePopulationData.referencedateSpecified;
+                        populationData.source = sourcePopulationData.source;
 
-                    List<HouseholdDataPoint> dataPointToClone = new List<HouseholdDataPoint>();
-                    dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.geocode == localEntityWithoutPopulation.geocode));
-                    if (!dataPointToClone.Any())
-                    {
-                        if (coverage.coverage == CoverageType.completely)
+                        List<HouseholdDataPoint> dataPointToClone = new List<HouseholdDataPoint>();
+                        dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.geocode == localEntityWithoutPopulation.geocode));
+                        if (!dataPointToClone.Any())
                         {
-                            dataPointToClone.AddRange(sourcePopulationData.data);
+                            if (coverage.coverage == CoverageType.completely)
+                            {
+                                dataPointToClone.AddRange(sourcePopulationData.data);
+                            }
+                            else
+                            {
+                                dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.type == PopulationDataType.nonmunicipal));
+                            }
                         }
-                        else
+                        foreach (var dataPoint in dataPointToClone)
                         {
-                            dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.type == PopulationDataType.nonmunicipal));
+                            var newDataPoint = new HouseholdDataPoint();
+                            newDataPoint.male = dataPoint.male;
+                            newDataPoint.female = dataPoint.female;
+                            newDataPoint.households = dataPoint.households;
+                            newDataPoint.total = dataPoint.total;
+                            newDataPoint.geocode = coverage.geocode;
+                            newDataPoint.type = dataPoint.type;
+                            populationData.data.Add(newDataPoint);
                         }
                     }
-                    foreach (var dataPoint in dataPointToClone)
+                    if (populationData.data.Count == 1)
                     {
-                        var newDataPoint = new HouseholdDataPoint();
-                        newDataPoint.male = dataPoint.male;
-                        newDataPoint.female = dataPoint.female;
-                        newDataPoint.households = dataPoint.households;
-                        newDataPoint.total = dataPoint.total;
-                        newDataPoint.geocode = coverage.geocode;
-                        newDataPoint.type = dataPoint.type;
-                        populationData.data.Add(newDataPoint);
+                        populationData.data.First().type = PopulationDataType.total;
                     }
+                    populationData.CalculateTotal();
                 }
-                if (populationData.data.Count == 1)
-                {
-                    populationData.data.First().type = PopulationDataType.total;
-                }
-                populationData.CalculateTotal();
             }
         }
 
