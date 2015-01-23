@@ -1,10 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
+  <!-- ToDo: RoiEt, Maha Sarakham, Nong Khai, Loei, Bueng Kan, Udon Thani, Khon Kaen, Nong Bua Lamphu, Amnat Charoen, Chaiyaphum, Yasothon, Ubon Ratchathani, Sisaket, Surin, Buriram -->
+  <population source="Census" year="2010" referencedate="2010-07-01">
+    <data type="total" total="65981659" male="32355032" female="33626627" households="20523470" />
+    <data type="privatehouseholds" total="63723702" male="30706271" female="33017431" households="20364332" />
+    <data type="collectivehouseholds" total="2257957" male="1648761" female="609196" households="159138" />
+    <data type="municipal" total="29133829" male="14120842" female="15012987" households="9775199">
+      <data type="privatehouseholds" total="27697065" male="13089186" female="14607879" households="9685386" />
+      <data type="collectivehouseholds" total="1436764" male="1031656" female="405108" households="89813" />
+    </data>
+    <data type="nonmunicipal" total="36847830" male="18234190" female="18613640" households="10748271">
+      <data type="privatehouseholds" total="36026637" male="17617085" female="18409552" households="10678946" />
+      <data type="collectivehouseholds" total="821193" male="617105" female="204088" households="69325" />
+    </data>
+    <reference>
+      <url>http://popcensus.nso.go.th/report/WholeKingdom_T.pdf</url>
+    </reference>
+  </population>
   <entity type="Bangkok" geocode="10" name="กรุงเทพมหานคร" english="Bangkok">
     <population source="Census" year="2010" referencedate="2010-07-01">
       <data type="total" total="8305218" male="4032586" female="4272632" households="2881752" />
       <data type="privatehouseholds" total="7778353" male="3636697" female="4141656" households="2869224" />
       <data type="collectivehouseholds" total="526865" male="395889" female="130975" households="12528" />
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Bangkok_T.pdf</url>
+      </reference>
     </population>
     <entity type="Khet" name="พระนคร" english="Phra Nakhon" geocode="1001">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -370,6 +390,9 @@
         <data type="privatehouseholds" total="741150" male="364365" female="376785" households="259745" />
         <data type="collectivehouseholds" total="4551" male="3268" female="1283" households="564" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/SamutPrakan_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสมุทรปราการ" english="Mueang Samut Prakan" geocode="1101">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -475,6 +498,9 @@
         <data type="privatehouseholds" total="499721" male="224019" female="275702" households="172532" />
         <data type="collectivehouseholds" total="36623" male="32786" female="3837" households="8159" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Nonthaburi_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองนนทบุรี" english="Mueang Nonthaburi" geocode="1201">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -580,6 +606,9 @@
         <data type="privatehouseholds" total="553980" male="273081" female="280899" households="204749" />
         <data type="collectivehouseholds" total="15992" male="11827" female="4166" households="1115" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/PathumThani_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองปทุมธานี" english="Mueang Pathum Thani" geocode="1301">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -700,6 +729,9 @@
         <data type="privatehouseholds" total="480947" male="231473" female="249474" households="171872" />
         <data type="collectivehouseholds" total="23988" male="17925" female="6063" households="1086" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Ayutthaya_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya" geocode="1401">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -955,6 +987,9 @@
         <data type="privatehouseholds" total="141200" male="67294" female="73907" households="42999" />
         <data type="collectivehouseholds" total="3884" male="2773" female="1112" households="255" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/AngThong_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองอ่างทอง" english="Mueang Ang Thong" geocode="1501">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -1075,6 +1110,9 @@
         <data type="privatehouseholds" total="515254" male="252469" female="262785" households="160292" />
         <data type="collectivehouseholds" total="18843" male="14240" female="4603" households="1232" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/LopBuri_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองลพบุรี" english="Mueang Lop Buri" geocode="1601">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -1255,6 +1293,9 @@
         <data type="privatehouseholds" total="137830" male="65219" female="72611" households="39234" />
         <data type="collectivehouseholds" total="5757" male="4304" female="1452" households="336" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/SingBuri_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสิงห์บุรี" english="Mueang Sing Buri" geocode="1701">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -1360,6 +1401,9 @@
         <data type="privatehouseholds" total="97497" male="47176" female="50321" households="30676" />
         <data type="collectivehouseholds" total="2633" male="1926" female="707" households="159" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/ChaiNat_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองชัยนาท" english="Mueang Chai Nat" geocode="1801">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -1495,6 +1539,9 @@
         <data type="privatehouseholds" total="452631" male="218281" female="234350" households="135900" />
         <data type="collectivehouseholds" total="25141" male="20519" female="4621" households="580" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Saraburi_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสระบุรี" english="Mueang Saraburi" geocode="1901">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -1621,7 +1668,7 @@
         <data type="total" total="65338" male="31683" female="33656" households="18554" />
         <data type="privatehouseholds" total="60745" male="29042" female="31703" households="18449" />
         <data type="collectivehouseholds" total="4593" male="2641" female="1952" households="105" />
-        <data type="municipal" total="34477" male="16369" female="18081" households="7514">
+        <data type="municipal" total="34477" male="16396" female="18081" households="7514" comment="PDF wrongly says male 16369">
           <data type="privatehouseholds" total="32728" male="15459" female="17269" households="7485" />
           <data type="collectivehouseholds" total="1749" male="937" female="812" households="29" />
         </data>
@@ -1655,7 +1702,7 @@
           <data type="privatehouseholds" total="4154" male="1649" female="2505" households="970" />
           <data type="collectivehouseholds" total="608" male="571" female="37" households="7" />
         </data>
-        <data type="nonmunicipal" total="57237" male="28958" female="28285" households="15416">
+        <data type="nonmunicipal" total="57237" male="28952" female="28285" households="15416" comment="PDF wrongly has male 28958">
           <data type="privatehouseholds" total="54435" male="26368" female="28067" households="15313" />
           <data type="collectivehouseholds" total="2802" male="2584" female="218" households="103" />
         </data>
@@ -1666,7 +1713,7 @@
         <data type="total" total="22212" male="10626" female="11586" households="6377" />
         <data type="privatehouseholds" total="21638" male="10249" female="11389" households="6341" />
         <data type="collectivehouseholds" total="574" male="377" female="197" households="36" />
-        <data type="municipal" total="8186" male="4096" female="4117" households="1950">
+        <data type="municipal" total="8186" male="4069" female="4117" households="1950" comment="PDF has wrongly male 4096">
           <data type="privatehouseholds" total="8030" male="3946" female="4085" households="1934" />
           <data type="collectivehouseholds" total="156" male="123" female="32" households="16" />
         </data>
@@ -1680,7 +1727,7 @@
       <population source="Census" year="2010" referencedate="2010-07-01">
         <data type="total" total="40009" male="19985" female="20024" households="11103" />
         <data type="privatehouseholds" total="38291" male="18830" female="19461" households="11035" />
-        <data type="collectivehouseholds" total="1718" male="1156" female="536" households="68" />
+        <data type="collectivehouseholds" total="1718" male="1156" female="563" households="68" comment="PDF wrongly has female 536" />
         <data type="municipal" total="7421" male="3722" female="3699" households="1429">
           <data type="privatehouseholds" total="6730" male="3332" female="3397" households="1407" />
           <data type="collectivehouseholds" total="691" male="390" female="302" households="22" />
@@ -1705,6 +1752,9 @@
         <data type="privatehouseholds" total="383397" male="189188" female="194209" households="132396" />
         <data type="collectivehouseholds" total="12972" male="8929" female="4043" households="1133" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/ChonBuri_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองชลบุรี" english="Mueang Chon Buri" geocode="2001">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -1885,6 +1935,9 @@
         <data type="privatehouseholds" total="362521" male="183370" female="179150" households="115919" />
         <data type="collectivehouseholds" total="12612" male="9881" female="2731" households="476" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Rayong_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองระยอง" english="Mueang Rayong" geocode="2101">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -2020,6 +2073,9 @@
         <data type="privatehouseholds" total="236654" male="117235" female="119419" households="73479" />
         <data type="collectivehouseholds" total="5831" male="3933" female="1898" households="520" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Chanthaburi_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองจันทบุรี" english="Mueang Chanthaburi" geocode="2201">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -2185,6 +2241,9 @@
         <data type="privatehouseholds" total="158572" male="79297" female="79275" households="40833" />
         <data type="collectivehouseholds" total="6510" male="5638" female="872" households="265" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Trat_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองตราด" english="Mueang Trat" geocode="2301">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -2305,6 +2364,9 @@
         <data type="privatehouseholds" total="496909" male="244404" female="252505" households="134840" />
         <data type="collectivehouseholds" total="12444" male="8599" female="3845" households="983" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Chachoengsao_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองฉะเชิงเทรา" english="Mueang Chachoengsao" geocode="2401">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -2488,6 +2550,9 @@
       <reference>
         <url>http://popcensus.nso.go.th/report/PrachinBuri_T.pdf</url>
       </reference>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/PrachinBuri_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองปราจีนบุรี" english="Mueang Prachin Buri" geocode="2501">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -2629,14 +2694,14 @@
     </entity>
     <entity type="Amphoe" name="ปากพลี" english="Pak Phli" geocode="2602">
       <population source="Census" year="2010" referencedate="2010-07-01">
-        <data type="total" total="22515" male="10825" female="11688" households="7401" comment="PDF has wrong female 12688"/>
+        <data type="total" total="22515" male="10825" female="11690" households="7401" comment="PDF has wrong female 12688" />
         <data type="privatehouseholds" total="21881" male="10289" female="11591" households="7345" />
         <data type="collectivehouseholds" total="634" male="536" female="99" households="26" />
-        <data type="municipal" total="1731" male="733" female="998" households="643" comment="PDF has female number from nonmunicipal here">
+        <data type="municipal" total="1731" male="733" female="998" households="643" comment="PDF has wrong female number 11690 (nonmunicipal value with type)">
           <data type="privatehouseholds" total="1708" male="712" female="995" households="638" />
           <data type="collectivehouseholds" total="23" male="21" female="3" households="7" />
         </data>
-        <data type="nonmunicipal" total="20784" male="10092" female="10690" households="6758" comment="PDF has female number from municipal here">
+        <data type="nonmunicipal" total="20784" male="10092" female="10692" households="6758" comment="PDF has female number from municipal here">
           <data type="privatehouseholds" total="20173" male="9577" female="10596" households="6707" />
           <data type="collectivehouseholds" total="611" male="515" female="96" households="19" />
         </data>
@@ -2840,6 +2905,9 @@
         <data type="privatehouseholds" total="1845553" male="908010" female="937543" households="525384" />
         <data type="collectivehouseholds" total="27351" male="20582" female="6768" households="2526" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/NakhonRatchasima_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองนครราชสีมา" english="Mueang Nakhon Ratchasima" geocode="3001">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -3323,6 +3391,10 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="31" name="บุรีรัมย์" english="Buri Ram">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/BuriRam_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองบุรีรัมย์" english="Mueang Buri Ram" geocode="3101">
     </entity>
     <entity type="Amphoe" name="คูเมือง" english="Khu Mueang" geocode="3102">
@@ -3371,6 +3443,10 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="32" name="สุรินทร์" english="Surin">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/Surin_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองสุรินทร์" english="Mueang Surin" geocode="3201">
     </entity>
     <entity type="Amphoe" name="ชุมพลบุรี" english="Chumphon Buri" geocode="3202">
@@ -3407,6 +3483,10 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="33" name="ศรีสะเกษ" english="Si Sa Ket">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/SiSaKet_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองศรีสะเกษ" english="Mueang Si Sa Ket" geocode="3301">
     </entity>
     <entity type="Amphoe" name="ยางชุมน้อย" english="Yang Chum Noi" geocode="3302">
@@ -3453,6 +3533,10 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="34" name="อุบลราชธานี" english="Ubon Ratchathani">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/Ubonatchathani_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองอุบลราชธานี" english="Mueang Ubon Ratchathani" geocode="3401">
     </entity>
     <entity type="Amphoe" name="ศรีเมืองใหม่" english="Si Mueang Mai" geocode="3402">
@@ -3505,6 +3589,10 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="35" name="ยโสธร" english="Yasothon">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/Yasothon_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองยโสธร" english="Mueang Yasothon" geocode="3501">
     </entity>
     <entity type="Amphoe" name="ทรายมูล" english="Sai Mun" geocode="3502">
@@ -3525,6 +3613,11 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="36" name="ชัยภูมิ" english="Chaiyaphum">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/Chaiyaphum_T.pdf</url>
+      </reference>
+
+   -->
     <entity type="Amphoe" name="เมืองชัยภูมิ" english="Mueang Chaiyaphum" geocode="3601">
     </entity>
     <entity type="Amphoe" name="บ้านเขว้า" english="Ban Khwao" geocode="3602">
@@ -3559,6 +3652,10 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="37" name="อำนาจเจริญ" english="Amnat Charoen">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/AmnatCharoen_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองอำนาจเจริญ" english="Mueang Amnat Charoen" geocode="3701" />
     <entity type="Amphoe" name="ชานุมาน" english="Chanuman" geocode="3702" />
     <entity type="Amphoe" name="ปทุมราชวงศา" english="Pathum Ratchawongsa" geocode="3703" />
@@ -3567,8 +3664,16 @@
     <entity type="Amphoe" name="หัวตะพาน" english="Hua Taphan" geocode="3706" />
     <entity type="Amphoe" name="ลืออำนาจ" english="Lue Amnat" geocode="3707" />
   </entity>
-  <!-- Bueng Kan created 2011 -->
+  <!-- Bueng Kan created 2011, but documented with separate PDF -->
+  <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/BuengKan_T.pdf</url>
+      </reference>
+-->
   <entity type="Changwat" geocode="39" name="หนองบัวลำภู" english="Nong Bua Lam Phu">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/NongBuaLamPhu_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองหนองบัวลำภู" english="Mueang Nong Bua Lam Phu" geocode="3901">
     </entity>
     <entity type="Amphoe" name="นากลาง" english="Na Klang" geocode="3902">
@@ -3583,6 +3688,10 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="40" name="ขอนแก่น" english="Khon Kaen">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/KhonKaen_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองขอนแก่น" english="Mueang Khon Kaen" geocode="4001">
     </entity>
     <entity type="Amphoe" name="บ้านฝาง" english="Ban Fang" geocode="4002">
@@ -3637,6 +3746,11 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="41" name="อุดรธานี" english="Udon Thani">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/UdonThani_T.pdf</url>
+      </reference>
+
+  -->
     <entity type="Amphoe" name="เมืองอุดรธานี" english="Mueang Udon Thani" geocode="4101">
     </entity>
     <entity type="Amphoe" name="กุดจับ" english="Kut Chap" geocode="4102">
@@ -3679,6 +3793,8 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="42" name="เลย" english="Loei">
+    <!-- Loei
+ -->
     <entity type="Amphoe" name="เมืองเลย" english="Mueang Loei" geocode="4201">
     </entity>
     <entity type="Amphoe" name="นาด้วง" english="Na Duang" geocode="4202">
@@ -3709,6 +3825,12 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="43" name="หนองคาย" english="Nong Khai">
+    <!--
+       <reference>
+        <url>http://popcensus.nso.go.th/report/NongKhai_T.pdf</url>
+      </reference>
+
+ -->
     <entity type="Amphoe" name="เมืองหนองคาย" english="Mueang Nong Khai" geocode="4301">
     </entity>
     <entity type="Amphoe" name="ท่าบ่อ" english="Tha Bo" geocode="4302">
@@ -3745,6 +3867,11 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="44" name="มหาสารคาม" english="Maha Sarakham">
+    <!--
+          <reference>
+        <url>http://popcensus.nso.go.th/report/MahaSarakham_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองมหาสารคาม" english="Mueang Maha Sarakham" geocode="4401">
     </entity>
     <entity type="Amphoe" name="แกดำ" english="Kae Dam" geocode="4402">
@@ -3773,6 +3900,10 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="45" name="ร้อยเอ็ด" english="Roi Et">
+    <!--       <reference>
+        <url>http://popcensus.nso.go.th/report/RoeiEt_T.pdf</url>
+      </reference>
+-->
     <entity type="Amphoe" name="เมืองร้อยเอ็ด" english="Mueang Roi Et" geocode="4501">
     </entity>
     <entity type="Amphoe" name="เกษตรวิสัย" english="Kaset Wisai" geocode="4502">
@@ -3827,6 +3958,9 @@
         <data type="privatehouseholds" total="392996" male="192402" female="200594" households="113740" />
         <data type="collectivehouseholds" total="2603" male="2402" female="201" households="627" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Kalasin_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองกาฬสินธุ์" english="Mueang Kalasin" geocode="4601">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -4112,6 +4246,9 @@
         <data type="privatehouseholds" total="619048" male="301724" female="317324" households="182681" />
         <data type="collectivehouseholds" total="6975" male="5938" female="1037" households="1025" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/SakonNakhon_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสกลนคร" english="Mueang Sakon Nakhon" geocode="4701">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -4397,6 +4534,9 @@
         <data type="privatehouseholds" total="453134" male="219723" female="233412" households="123304" />
         <data type="collectivehouseholds" total="6871" male="6293" female="578" households="882" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/NakhonPhanom_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองนครพนม" english="Mueang Nakhon Phanom" geocode="4801">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -4592,6 +4732,9 @@
         <data type="privatehouseholds" total="175455" male="86973" female="88481" households="41878" />
         <data type="collectivehouseholds" total="1284" male="1170" female="114" households="262" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Mukdahan_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองมุกดาหาร" english="Mueang Mukdahan" geocode="4901">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -4713,6 +4856,9 @@
         <data type="privatehouseholds" total="750198" male="373501" female="376697" households="241690" />
         <data type="collectivehouseholds" total="19823" male="12600" female="7222" households="1686" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/ChiangMai_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองเชียงใหม่" english="Mueang Chiang Mai" geocode="5001">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -5103,6 +5249,9 @@
         <data type="privatehouseholds" total="147059" male="72827" female="74232" households="49055" />
         <data type="collectivehouseholds" total="2849" male="1861" female="988" households="298" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Lamphun_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองลำพูน" english="Mueang Lamphun" geocode="5101">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -5238,6 +5387,9 @@
         <data type="privatehouseholds" total="365711" male="182764" female="182947" households="116622" />
         <data type="collectivehouseholds" total="4969" male="4384" female="585" households="588" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Lampang_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองลำปาง" english="Mueang Lampang" geocode="5201">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -5601,6 +5753,9 @@
         <data type="privatehouseholds" total="266854" male="130179" female="136675" households="91922" />
         <data type="collectivehouseholds" total="4447" male="2856" female="1591" households="283" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phrae_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองแพร่" english="Mueang Phrae" geocode="5401">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -5736,6 +5891,9 @@
         <data type="privatehouseholds" total="348662" male="173559" female="175103" households="106833" />
         <data type="collectivehouseholds" total="4956" male="3644" female="1311" households="525" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Nan_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองน่าน" english="Mueang Nan" geocode="5501">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -5976,6 +6134,9 @@
         <data type="privatehouseholds" total="190357" male="94116" female="96241" households="64370" />
         <data type="collectivehouseholds" total="5960" male="4303" female="1657" households="323" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phayao_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองพะเยา" english="Mueang Phayao" geocode="5601">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -6126,6 +6287,9 @@
         <data type="privatehouseholds" total="699113" male="344500" female="354613" households="229303" />
         <data type="collectivehouseholds" total="18083" male="13201" female="4882" households="1301" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/ChiangRai_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองเชียงราย" english="Mueang Chiang Rai" geocode="5701">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -6411,6 +6575,9 @@
         <data type="privatehouseholds" total="168780" male="85674" female="83106" households="50783" />
         <data type="collectivehouseholds" total="9445" male="5211" female="4233" households="429" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/MaeHongSon_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองแม่ฮ่องสอน" english="Mueang Mae Hong Son" geocode="5801">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -6531,6 +6698,9 @@
         <data type="privatehouseholds" total="755910" male="365577" female="390333" households="245342" />
         <data type="collectivehouseholds" total="10936" male="9896" female="1040" households="1032" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/NakhonSawan_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองนครสวรรค์" english="Mueang Nakhon Sawan" geocode="6001">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -6771,6 +6941,9 @@
         <data type="privatehouseholds" total="227676" male="109711" female="117965" households="73266" />
         <data type="collectivehouseholds" total="4359" male="3343" female="1016" households="397" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/UthaiThani_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองอุทัยธานี" english="Mueang Uthai Thani" geocode="6101">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -6906,6 +7079,9 @@
         <data type="privatehouseholds" total="572672" male="279577" female="293095" households="176846" />
         <data type="collectivehouseholds" total="12945" male="11268" female="1677" households="650" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/KamphaengPhet_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองกำแพงเพชร" english="Mueang Kamphaeng Phet" geocode="6201">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -7086,6 +7262,9 @@
         <data type="privatehouseholds" total="367810" male="182789" female="185021" households="103603" />
         <data type="collectivehouseholds" total="11802" male="7193" female="4609" households="683" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Tak_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองตาก" english="Mueang Tak" geocode="6301">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -7236,6 +7415,9 @@
         <data type="privatehouseholds" total="458229" male="220604" female="237625" households="146198" />
         <data type="collectivehouseholds" total="4696" male="4071" female="625" households="436" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Sukhothai_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสุโขทัย" english="Mueang Sukhothai" geocode="6401">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -7386,6 +7568,9 @@
         <data type="privatehouseholds" total="678965" male="328088" female="350877" households="235955" />
         <data type="collectivehouseholds" total="32396" male="24319" female="8077" households="1010" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phitsanulok_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองพิษณุโลก" english="Mueang Phitsanulok" geocode="6501">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -7536,6 +7721,9 @@
         <data type="privatehouseholds" total="412734" male="200530" female="212204" households="107186" />
         <data type="collectivehouseholds" total="4225" male="3900" female="324" households="589" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phichit_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองพิจิตร" english="Mueang Phichit" geocode="6601">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -7731,6 +7919,9 @@
         <data type="privatehouseholds" total="753716" male="369382" female="384334" households="211398" />
         <data type="collectivehouseholds" total="14084" male="10800" female="3284" households="1036" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phetchabun_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองเพชรบูรณ์" english="Mueang Phetchabun" geocode="6701">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -7912,6 +8103,9 @@
         <data type="privatehouseholds" total="459192" male="220460" female="238732" households="142040" />
         <data type="collectivehouseholds" total="19670" male="15228" female="4441" households="1433" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Ratchaburi_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองราชบุรี" english="Mueang Ratchaburi" geocode="7001">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -8329,6 +8523,9 @@
         <data type="privatehouseholds" total="609650" male="292598" female="317051" households="175675" />
         <data type="collectivehouseholds" total="7415" male="6035" female="1380" households="629" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Suphanburi_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสุพรรณบุรี" english="Mueang Suphan Buri" geocode="7201">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -8494,6 +8691,9 @@
         <data type="privatehouseholds" total="583227" male="281468" female="301759" households="170966" />
         <data type="collectivehouseholds" total="604155" male="293912" female="310243" households="1078" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/NakhonPathom_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองนครปฐม" english="Mueang Nakhon Pathom" geocode="7301">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -8614,6 +8814,9 @@
         <data type="privatehouseholds" total="403769" male="200826" female="202943" households="149781" />
         <data type="collectivehouseholds" total="4236" male="2969" female="1267" households="375" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/SamutSakhon_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสมุทรสาคร" english="Mueang Samut Sakhon" geocode="7401">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -8674,6 +8877,9 @@
         <data type="privatehouseholds" total="137242" male="66275" female="70967" households="38030" />
         <data type="collectivehouseholds" total="5773" male="4607" female="1166" households="244" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/SamutSongkhram_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสมุทรสงคราม" english="Mueang Samut Songkhram" geocode="7501">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -8734,6 +8940,9 @@
         <data type="privatehouseholds" total="287975" male="140807" female="147168" households="88584" />
         <data type="collectivehouseholds" total="8939" male="6613" female="2325" households="334" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phetchaburi_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองเพชรบุรี" english="Mueang Phetchaburi" geocode="7601">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -8869,6 +9078,9 @@
         <data type="privatehouseholds" total="277381" male="137095" female="140286" households="84769" />
         <data type="collectivehouseholds" total="13073" male="10747" female="2326" households="872" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phachuap_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองประจวบคีรีขันธ์" english="Mueang Prachuap Khiri Khan" geocode="7701">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -9005,6 +9217,9 @@
         <data type="privatehouseholds" total="1168147" male="578978" female="589169" households="344629" />
         <data type="collectivehouseholds" total="16712" male="11000" female="5713" households="843" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/NakhonSoThammarat_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองนครศรีธรรมราช" english="Mueang Nakhon Si Thammarat" geocode="8001">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -9365,6 +9580,9 @@
         <data type="privatehouseholds" total="306284" male="153828" female="152456" households="86116" />
         <data type="collectivehouseholds" total="3052" male="2050" female="1002" households="497" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Krabi_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองกระบี่" english="Mueang Krabi" geocode="8101">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -9500,6 +9718,9 @@
         <data type="privatehouseholds" total="186407" male="92680" female="93727" households="62086" />
         <data type="collectivehouseholds" total="30580" male="18339" female="12241" households="2258" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phangnga_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองพังงา" english="Mueang Phang Nga" geocode="8201">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -9635,6 +9856,9 @@
         <data type="privatehouseholds" total="153794" male="77952" female="75842" households="46514" />
         <data type="collectivehouseholds" total="13755" male="9233" female="4522" households="172" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phuket_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองภูเก็ต" english="Mueang Phuket" geocode="8301">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -10055,6 +10279,9 @@
         <data type="privatehouseholds" total="107873" male="53775" female="54098" households="34034" />
         <data type="collectivehouseholds" total="17549" male="10900" female="6649" households="3474" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Ranong_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองระนอง" english="Mueang Ranong" geocode="8501">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -10145,6 +10372,9 @@
         <data type="privatehouseholds" total="313385" male="158271" female="155114" households="94724" />
         <data type="collectivehouseholds" total="6504" male="4414" female="2090" households="518" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Chumphon_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองชุมพร" english="Mueang Chumphon" geocode="8601">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -10280,6 +10510,9 @@
         <data type="privatehouseholds" total="667528" male="331406" female="336122" households="178860" />
         <data type="collectivehouseholds" total="12523" male="8362" female="4161" households="851" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Songkhla_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสงขลา" english="Mueang Songkhla" geocode="9001">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -10535,6 +10768,9 @@
         <data type="privatehouseholds" total="215975" male="109802" female="106173" households="57694" />
         <data type="collectivehouseholds" total="3615" male="2658" female="957" households="162" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Satun_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองสตูล" english="Mueang Satun" geocode="9101">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -10665,10 +10901,13 @@
           <data type="privatehouseholds" total="64389" male="29555" female="34835" households="20928" />
           <data type="collectivehouseholds" total="2716" male="1914" female="801" households="56" />
         </data>
-        <data type="nonmunicipal" total="81369" male="39048" female="42348" households="23100">
+        <data type="nonmunicipal" total="81396" male="39048" female="42348" households="23100" comment="PDF has total wrongly as 81369">
           <data type="privatehouseholds" total="79101" male="38462" female="40639" households="23061" />
           <data type="collectivehouseholds" total="2294" male="586" female="1709" households="39" />
         </data>
+        <reference>
+          <url>http://popcensus.nso.go.th/report/Trang_T.pdf</url>
+        </reference>
       </population>
     </entity>
     <entity type="Amphoe" name="กันตัง" english="Kantang" geocode="9202">
@@ -10820,6 +11059,9 @@
         <data type="privatehouseholds" total="231439" male="114207" female="117232" households="67535" />
         <data type="collectivehouseholds" total="4753" male="2899" female="1855" households="223" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Phatthalung_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองพัทลุง" english="Mueang Phatthalung" geocode="9301">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -11000,6 +11242,9 @@
         <data type="privatehouseholds" total="486145" male="236154" female="249991" households="119534" />
         <data type="collectivehouseholds" total="18252" male="10580" female="7672" households="312" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Pattani_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองปัตตานี" english="Mueang Pattani" geocode="9401">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -11195,6 +11440,9 @@
         <data type="privatehouseholds" total="310225" male="154367" female="155858" households="73416" />
         <data type="collectivehouseholds" total="3198" male="2237" female="961" households="238" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Yala_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองยะลา" english="Mueang Yala" geocode="9501">
       <population source="Census" year="2010" referencedate="2010-07-01">
@@ -11330,6 +11578,9 @@
         <data type="privatehouseholds" total="531737" male="265008" female="266729" households="120075" />
         <data type="collectivehouseholds" total="4547" male="2566" female="1981" households="145" />
       </data>
+      <reference>
+        <url>http://popcensus.nso.go.th/report/Narathiwat_T.pdf</url>
+      </reference>
     </population>
     <entity type="Amphoe" name="เมืองนราธิวาส" english="Mueang Narathiwat" geocode="9601">
       <population source="Census" year="2010" referencedate="2010-07-01">
