@@ -964,7 +964,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btn_Population_Click(object sender, EventArgs e)
         {
             var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
-            // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 34);
+            // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 50);
             downloader.Process();
             var output = XmlManager.EntityToXml<Entity>(downloader.Data);
             File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
@@ -1099,6 +1099,31 @@ namespace De.AHoerstemeier.Tambon.UI
             formEntityBrowser.CheckWikiData = checkWikiData;
 
             formEntityBrowser.Show();
+        }
+
+        private void btnCheckCensus_Click(object sender, EventArgs e)
+        {
+            var builder = new StringBuilder();
+            var baseEntity = GlobalData.CompleteGeocodeList();
+            GlobalData.LoadPopulationData(PopulationDataSourceType.Census, 2010);
+            var allEntities = baseEntity.FlatList().Where(x => x.population.Any(y => y.source == PopulationDataSourceType.Census && y.Year == 2010)).ToList();
+            foreach (var entity in allEntities)
+            {
+                var population = entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == 2010);
+                foreach (var data in population.data)
+                {
+                    var diff = Math.Abs(data.total - data.male - data.female);
+                    if (diff > 10)
+                    {
+                        builder.AppendFormat("{0} ({1}): {2} differs by {3}", entity.english, entity.geocode, data.type, diff);
+                        builder.AppendLine();
+                    }
+                }
+            }
+            var result = builder.ToString();
+
+            var formCensusProblems = new StringDisplayForm("Census data problems", result);
+            formCensusProblems.Show();
         }
     }
 }
