@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
-  <!-- ToDo: RoiEt, Maha Sarakham, Nong Khai, Loei, Bueng Kan, Udon Thani, Khon Kaen, Nong Bua Lamphu, Amnat Charoen, Chaiyaphum, Yasothon, Ubon Ratchathani, Sisaket, Surin, Buriram -->
+  <!-- ToDo: Roi Et, Maha Sarakham, Nong Khai, Loei, Udon Thani, Khon Kaen, Chaiyaphum, Yasothon, Ubon Ratchathani, Sisaket, Surin, Buriram -->
   <population source="Census" year="2010" referencedate="2010-07-01">
     <data type="total" total="65981659" male="32355032" female="33626627" households="20523470" />
     <data type="privatehouseholds" total="63723702" male="30706271" female="33017431" households="20364332" />
@@ -3652,39 +3652,373 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="37" name="อำนาจเจริญ" english="Amnat Charoen">
-    <!--       <reference>
+    <population source="Census" year="2010" referencedate="2010-07-01">
+      <data type="total" total="283729" male="139958" female="143771" households="81207" />
+      <data type="privatehouseholds" total="279794" male="136613" female="143181" households="80705" />
+      <data type="collectivehouseholds" total="3935" male="3345" female="590" households="502" />
+      <data type="municipal" total="98172" male="48447" female="49725" households="28813">
+        <data type="privatehouseholds" total="96342" male="46804" female="49538" households="28653" />
+        <data type="collectivehouseholds" total="1830" male="1644" female="187" households="160" />
+      </data>
+      <data type="nonmunicipal" total="185557" male="91511" female="94046" households="52394">
+        <data type="privatehouseholds" total="183452" male="89810" female="93643" households="52052" />
+        <data type="collectivehouseholds" total="2105" male="1701" female="403" households="342" />
+      </data>
+      <reference>
         <url>http://popcensus.nso.go.th/report/AmnatCharoen_T.pdf</url>
       </reference>
--->
-    <entity type="Amphoe" name="เมืองอำนาจเจริญ" english="Mueang Amnat Charoen" geocode="3701" />
-    <entity type="Amphoe" name="ชานุมาน" english="Chanuman" geocode="3702" />
-    <entity type="Amphoe" name="ปทุมราชวงศา" english="Pathum Ratchawongsa" geocode="3703" />
-    <entity type="Amphoe" name="พนา" english="Phana" geocode="3704" />
-    <entity type="Amphoe" name="เสนางคนิคม" english="Senangkhanikhom" geocode="3705" />
-    <entity type="Amphoe" name="หัวตะพาน" english="Hua Taphan" geocode="3706" />
-    <entity type="Amphoe" name="ลืออำนาจ" english="Lue Amnat" geocode="3707" />
+    </population>
+    <entity type="Amphoe" name="เมืองอำนาจเจริญ" english="Mueang Amnat Charoen" geocode="3701">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="101768" male="50172" female="51596" households="29749" />
+        <data type="privatehouseholds" total="99553" male="48456" female="51097" households="29552" />
+        <data type="collectivehouseholds" total="2214" male="1715" female="499" households="197" />
+        <data type="municipal" total="40749" male="20166" female="20583" households="12255">
+          <data type="privatehouseholds" total="39502" male="19072" female="20430" households="12181" />
+          <data type="collectivehouseholds" total="1247" male="1094" female="153" households="74" />
+        </data>
+        <data type="nonmunicipal" total="61018" male="30005" female="31013" households="17494">
+          <data type="privatehouseholds" total="60052" male="29384" female="30667" households="17371" />
+          <data type="collectivehouseholds" total="967" male="621" female="346" households="123" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" name="ชานุมาน" english="Chanuman" geocode="3702">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="32283" male="16147" female="16136" households="8887" />
+        <data type="privatehouseholds" total="99553" male="48456" female="51097" households="8834" />
+        <data type="collectivehouseholds" total="248" male="237" female="12" households="53" />
+        <data type="municipal" total="8296" male="4156" female="4140" households="2334">
+          <data type="privatehouseholds" total="39502" male="19072" female="20430" households="2317" />
+          <data type="collectivehouseholds" total="105" male="94" female="10" households="17" />
+        </data>
+        <data type="nonmunicipal" total="23987" male="11991" female="11996" households="6553">
+          <data type="privatehouseholds" total="60052" male="29384" female="30667" households="6517" />
+          <data type="collectivehouseholds" total="143" male="142" female="1" households="36" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" name="ปทุมราชวงศา" english="Pathum Ratchawongsa" geocode="3703">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="35395" male="17661" female="17733" households="9727" />
+        <data type="privatehouseholds" total="35176" male="17445" female="17730" households="9670" />
+        <data type="collectivehouseholds" total="219" male="216" female="3" households="57" />
+        <data type="municipal" total="17790" male="8844" female="8946" households="4932">
+          <data type="privatehouseholds" total="17684" male="8739" female="8945" households="4904" />
+          <data type="collectivehouseholds" total="106" male="105" female="1" households="28" />
+        </data>
+        <data type="nonmunicipal" total="17605" male="8817" female="8787" households="4795">
+          <data type="privatehouseholds" total="17491" male="8706" female="8785" households="4766" />
+          <data type="collectivehouseholds" total="114" male="111" female="2" households="29" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" name="พนา" english="Phana" geocode="3704">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="19482" male="9603" female="9880" households="5879" />
+        <data type="privatehouseholds" total="19122" male="9274" female="9849" households="5832" />
+        <data type="collectivehouseholds" total="360" male="329" female="31" households="47" />
+        <data type="municipal" total="6068" male="2981" female="3087" households="1841">
+          <data type="privatehouseholds" total="5907" male="2830" female="3076" households="1828" />
+          <data type="collectivehouseholds" total="161" male="151" female="11" households="13" />
+        </data>
+        <data type="nonmunicipal" total="13415" male="6622" female="6793" households="4038">
+          <data type="privatehouseholds" total="13216" male="6444" female="6772" households="4004" />
+          <data type="collectivehouseholds" total="199" male="178" female="20" households="34" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" name="เสนางคนิคม" english="Senangkhanikhom" geocode="3705">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="29074" male="14294" female="14781" households="8439" />
+        <data type="privatehouseholds" total="28728" male="13973" female="14755" households="8403" />
+        <data type="collectivehouseholds" total="346" male="321" female="26" households="36" />
+        <data type="municipal" total="4315" male="2078" female="2237" households="1390">
+          <data type="privatehouseholds" total="4304" male="2067" female="2237" households="1387" />
+          <data type="collectivehouseholds" total="11" male="11" female="0" households="3" />
+        </data>
+        <data type="nonmunicipal" total="24759" male="12216" female="12543" households="7049">
+          <data type="privatehouseholds" total="24425" male="11907" female="12518" households="7016" />
+          <data type="collectivehouseholds" total="335" male="309" female="26" households="33" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" name="หัวตะพาน" english="Hua Taphan" geocode="3706">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="37273" male="18163" female="19110" households="10400" />
+        <data type="privatehouseholds" total="36926" male="17835" female="19091" households="10332" />
+        <data type="collectivehouseholds" total="347" male="329" female="18" households="68" />
+        <data type="municipal" total="8482" male="4164" female="4318" households="2428">
+          <data type="privatehouseholds" total="8374" male="4068" female="4307" households="2416" />
+          <data type="collectivehouseholds" total="108" male="96" female="12" households="12" />
+        </data>
+        <data type="nonmunicipal" total="28791" male="13999" female="14791" households="7972">
+          <data type="privatehouseholds" total="28552" male="13767" female="14785" households="7916" />
+          <data type="collectivehouseholds" total="239" male="232" female="7" households="56" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" name="ลืออำนาจ" english="Lue Amnat" geocode="3707">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="28454" male="13918" female="14536" households="8127" />
+        <data type="privatehouseholds" total="28254" male="13719" female="14535" households="8083" />
+        <data type="collectivehouseholds" total="200" male="199" female="1" households="44" />
+        <data type="municipal" total="12472" male="6058" female="6414" households="3633">
+          <data type="privatehouseholds" total="12380" male="5966" female="6414" households="3620" />
+          <data type="collectivehouseholds" total="92" male="92" female="0" households="13" />
+        </data>
+        <data type="nonmunicipal" total="15982" male="7860" female="8122" households="4494">
+          <data type="privatehouseholds" total="15874" male="7753" female="8121" households="4463" />
+          <data type="collectivehouseholds" total="108" male="107" female="1" households="31" />
+        </data>
+      </population>
+    </entity>
   </entity>
   <!-- Bueng Kan created 2011, but documented with separate PDF -->
-  <!--       <reference>
+  <entity type="Changwat" geocode="38" name="บึงกาฬ"  english="Bueng Kan">
+    <population source="Census" year="2010" referencedate="2010-07-01">
+      <data type="total" total="362754" male="179422" female="183333" households="83214" />
+      <data type="privatehouseholds" total="358236" male="175253" female="182983" households="82558" />
+      <data type="collectivehouseholds" total="4519" male="4169" female="350" households="656" />
+      <data type="municipal" total="89227" male="43956" female="45271" households="22663">
+        <data type="privatehouseholds" total="88234" male="43051" female="45183" households="22524" />
+        <data type="collectivehouseholds" total="993" male="905" female="88" households="139" />
+      </data>
+      <data type="nonmunicipal" total="273527" male="135466" female="138062" households="60551">
+        <data type="privatehouseholds" total="270002" male="132202" female="137800" households="60034" />
+        <data type="collectivehouseholds" total="3526" male="3264" female="262" households="517" />
+      </data>
+      <reference>
         <url>http://popcensus.nso.go.th/report/BuengKan_T.pdf</url>
       </reference>
--->
+    </population>
+    <entity name="เมืองบึงกาฬ" type="Amphoe" english="Mueang Bueng Kan" geocode="3801">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="78423" male="39026" female="39396" households="18705" />
+        <data type="privatehouseholds" total="77133" male="37819" female="39313" households="18583" />
+        <data type="collectivehouseholds" total="1290" male="1207" female="83" households="122" />
+        <data type="municipal" total="31380" male="15588" female="15792" households="8181">
+          <data type="privatehouseholds" total="31101" male="15321" female="15780" households="8123" />
+          <data type="collectivehouseholds" total="279" male="267" female="12" households="58" />
+        </data>
+        <data type="nonmunicipal" total="47043" male="23439" female="23604" households="10524">
+          <data type="privatehouseholds" total="46031" male="22498" female="23533" households="10460" />
+          <data type="collectivehouseholds" total="1012" male="940" female="71" households="64" />
+        </data>
+      </population>
+    </entity>
+    <entity name="พรเจริญ" type="Amphoe" english="Phon Charoen" geocode="3802">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="37918" male="18644" female="19273" households="8629" />
+        <data type="privatehouseholds" total="37452" male="18239" female="19213" households="8559" />
+        <data type="collectivehouseholds" total="466" male="406" female="60" households="70" />
+        <data type="municipal" total="16833" male="8174" female="8659" households="4013">
+          <data type="privatehouseholds" total="16575" male="7930" female="8644" households="3981" />
+          <data type="collectivehouseholds" total="259" male="244" female="15" households="32" />
+        </data>
+        <data type="nonmunicipal" total="21085" male="10470" female="10614" households="4616">
+          <data type="privatehouseholds" total="20877" male="10308" female="10569" households="4578" />
+          <data type="collectivehouseholds" total="208" male="162" female="46" households="38" />
+        </data>
+      </population>
+    </entity>
+    <entity name="โซ่พิสัย" type="Amphoe" english="So Phisai" geocode="3803">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="62328" male="30344" female="31984" households="13295" />
+        <data type="privatehouseholds" total="61696" male="29759" female="31937" households="13203" />
+        <data type="collectivehouseholds" total="632" male="586" female="47" households="92" />
+        <data type="municipal" total="5850" male="2788" female="3062" households="1763">
+          <data type="privatehouseholds" total="5761" male="2730" female="3031" households="1753" />
+          <data type="collectivehouseholds" total="89" male="58" female="31" households="10" />
+        </data>
+        <data type="nonmunicipal" total="56478" male="27556" female="28922" households="11532">
+          <data type="privatehouseholds" total="55934" male="27028" female="28906" households="11450" />
+          <data type="collectivehouseholds" total="543" male="528" female="15" households="82" />
+        </data>
+      </population>
+    </entity>
+    <entity name="เซกา" type="Amphoe" english="Seka" geocode="3804">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="74616" male="36883" female="37734" households="17164" />
+        <data type="privatehouseholds" total="73541" male="35921" female="37620" households="17015" />
+        <data type="collectivehouseholds" total="1075" male="962" female="113" households="149" />
+        <data type="municipal" total="11731" male="5794" female="5937" households="2995">
+          <data type="privatehouseholds" total="11556" male="5638" female="5918" households="2982" />
+          <data type="collectivehouseholds" total="175" male="156" female="19" households="13" />
+        </data>
+        <data type="nonmunicipal" total="62885" male="31088" female="31797" households="14169">
+          <data type="privatehouseholds" total="61985" male="30283" female="31702" households="14033" />
+          <data type="collectivehouseholds" total="900" male="806" female="94" households="136" />
+        </data>
+      </population>
+    </entity>
+    <entity name="ปากคาด" type="Amphoe" english="Pak Khat" geocode="3805">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="30590" male="15183" female="15408" households="6858" />
+        <data type="privatehouseholds" total="30362" male="14966" female="15396" households="6802" />
+        <data type="collectivehouseholds" total="228" male="217" female="11" households="56" />
+        <data type="municipal" total="6206" male="3116" female="3090" households="1657">
+          <data type="privatehouseholds" total="6181" male="3091" female="3090" households="1651" />
+          <data type="collectivehouseholds" total="25" male="25" female="0" households="6" />
+        </data>
+        <data type="nonmunicipal" total="24385" male="12067" female="12318" households="5201">
+          <data type="privatehouseholds" total="24182" male="11876" female="12306" households="5151" />
+          <data type="collectivehouseholds" total="203" male="191" female="11" households="50" />
+        </data>
+      </population>
+    </entity>
+    <entity name="บึงโขงหลง" type="Amphoe" english="Bueng Khong Long" geocode="3806">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="32155" male="16194" female="15962" households="7708" />
+        <data type="privatehouseholds" total="31753" male="15806" female="15948" households="7628" />
+        <data type="collectivehouseholds" total="402" male="388" female="14" households="80" />
+        <data type="municipal" total="7937" male="3931" female="4006" households="1654">
+          <data type="privatehouseholds" total="7846" male="3851" female="3995" households="1642" />
+          <data type="collectivehouseholds" total="91" male="79" female="11" households="12" />
+        </data>
+        <data type="nonmunicipal" total="24218" male="12263" female="11956" households="6054">
+          <data type="privatehouseholds" total="23907" male="11954" female="11953" households="5986" />
+          <data type="collectivehouseholds" total="311" male="309" female="2" households="68" />
+        </data>
+      </population>
+    </entity>
+    <entity name="ศรีวิไล" type="Amphoe" english="Si Wilai" geocode="3807">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="34992" male="17369" female="17624" households="8005" />
+        <data type="privatehouseholds" total="34674" male="17067" female="17608" households="7953" />
+        <data type="collectivehouseholds" total="318" male="302" female="16" households="52" />
+        <data type="municipal" total="9290" male="4565" female="4725" households="2400">
+          <data type="privatehouseholds" total="9215" male="4489" female="4725" households="2392" />
+          <data type="collectivehouseholds" total="76" male="76" female="0" households="8" />
+        </data>
+        <data type="nonmunicipal" total="25702" male="12804" female="12898" households="5605">
+          <data type="privatehouseholds" total="25460" male="12577" female="12883" households="5561" />
+          <data type="collectivehouseholds" total="242" male="226" female="16" households="44" />
+        </data>
+      </population>
+    </entity>
+    <entity name="บุ่งคล้า" type="Amphoe" english="Bung Khla" geocode="3808">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="11732" male="5779" female="5953" households="2851" />
+        <data type="privatehouseholds" total="11625" male="5677" female="5948" households="2816" />
+        <data type="collectivehouseholds" total="107" male="102" female="5" households="35" />
+        <data type="municipal" total="0" male="0" female="0" households="0">
+          <data type="privatehouseholds" total="0" male="0" female="0" households="0" />
+          <data type="collectivehouseholds" total="0" male="0" female="0" households="0" />
+        </data>
+        <data type="nonmunicipal" total="11732" male="5779" female="5953" households="2851">
+          <data type="privatehouseholds" total="11625" male="5677" female="5948" households="2816" />
+          <data type="collectivehouseholds" total="107" male="102" female="5" households="35" />
+        </data>
+      </population>
+    </entity>
+  </entity>
   <entity type="Changwat" geocode="39" name="หนองบัวลำภู" english="Nong Bua Lam Phu">
-    <!--       <reference>
+    <population source="Census" year="2010" referencedate="2010-07-01">
+      <data type="total" total="485974" male="236835" female="249139" households="133833" />
+      <data type="privatehouseholds" total="480378" male="231844" female="248534" households="133029" />
+      <data type="collectivehouseholds" total="5596" male="4991" female="604" households="804" />
+      <data type="municipal" total="203143" male="98164" female="104978" households="56895">
+        <data type="privatehouseholds" total="201189" male="96428" female="104760" households="56594" />
+        <data type="collectivehouseholds" total="1954" male="1736" female="218" households="301" />
+      </data>
+      <data type="nonmunicipal" total="282831" male="138671" female="144160" households="76938">
+        <data type="privatehouseholds" total="279189" male="135415" female="143774" households="76435" />
+        <data type="collectivehouseholds" total="3642" male="3255" female="386" households="503" />
+      </data>
+      <reference>
         <url>http://popcensus.nso.go.th/report/NongBuaLamPhu_T.pdf</url>
       </reference>
--->
+    </population>
     <entity type="Amphoe" name="เมืองหนองบัวลำภู" english="Mueang Nong Bua Lam Phu" geocode="3901">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="134116" male="65515" female="68601" households="37873" />
+        <data type="privatehouseholds" total="131444" male="63230" female="68214" households="37577" />
+        <data type="collectivehouseholds" total="2671" male="2285" female="387" households="296" />
+        <data type="municipal" total="35625" male="17233" female="18392" households="10972">
+          <data type="privatehouseholds" total="34860" male="16603" female="18257" households="10866" />
+          <data type="collectivehouseholds" total="765" male="630" female="135" households="106" />
+        </data>
+        <data type="nonmunicipal" total="98491" male="48282" female="50209" households="26901">
+          <data type="privatehouseholds" total="96584" male="46627" female="49957" households="26711" />
+          <data type="collectivehouseholds" total="1907" male="1655" female="252" households="190" />
+        </data>
+      </population>
     </entity>
     <entity type="Amphoe" name="นากลาง" english="Na Klang" geocode="3902">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="87690" male="42635" female="45055" households="23157" />
+        <data type="privatehouseholds" total="87090" male="42073" female="45017" households="23058" />
+        <data type="collectivehouseholds" total="600" male="562" female="38" households="99" />
+        <data type="municipal" total="55540" male="26882" female="28658" households="14761">
+          <data type="privatehouseholds" total="55159" male="26519" female="28640" households="14705" />
+          <data type="collectivehouseholds" total="381" male="363" female="18" households="56" />
+        </data>
+        <data type="nonmunicipal" total="32150" male="15754" female="16396" households="8396">
+          <data type="privatehouseholds" total="31931" male="15554" female="16377" households="8353" />
+          <data type="collectivehouseholds" total="219" male="200" female="19" households="43" />
+        </data>
+      </population>
     </entity>
     <entity type="Amphoe" name="โนนสัง" english="Non Sang" geocode="3903">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="60687" male="29579" female="31108" households="16914" />
+        <data type="privatehouseholds" total="60150" male="29089" female="31061" households="16802" />
+        <data type="collectivehouseholds" total="537" male="490" female="47" households="112" />
+        <data type="municipal" total="24596" male="11877" female="12719" households="6893">
+          <data type="privatehouseholds" total="24386" male="11700" female="12687" households="6844" />
+          <data type="collectivehouseholds" total="210" male="177" female="32" households="49" />
+        </data>
+        <data type="nonmunicipal" total="36091" male="17702" female="18389" households="10021">
+          <data type="privatehouseholds" total="35764" male="17389" female="18375" households="9958" />
+          <data type="collectivehouseholds" total="327" male="313" female="14" households="63" />
+        </data>
+      </population>
     </entity>
     <entity type="Amphoe" name="ศรีบุญเรือง" english="Si Bun Rueang" geocode="3904">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="103518" male="50453" female="53065" households="28594" />
+        <data type="privatehouseholds" total="102540" male="49531" female="53009" households="28443" />
+        <data type="collectivehouseholds" total="979" male="922" female="57" households="151" />
+        <data type="municipal" total="40029" male="19323" female="20706" households="11169">
+          <data type="privatehouseholds" total="39695" male="19000" female="20695" households="11124" />
+          <data type="collectivehouseholds" total="334" male="323" female="11" households="45" />
+        </data>
+        <data type="nonmunicipal" total="63490" male="31130" female="32359" households="17425">
+          <data type="privatehouseholds" total="62845" male="30531" female="32314" households="17319" />
+          <data type="collectivehouseholds" total="645" male="599" female="46" households="106" />
+        </data>
+      </population>
     </entity>
     <entity type="Amphoe" name="สุวรรณคูหา" english="Suwannakhuha" geocode="3905">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="65617" male="31866" female="33750" households="18040" />
+        <data type="privatehouseholds" total="65072" male="31394" female="33678" households="17937" />
+        <data type="collectivehouseholds" total="544" male="472" female="72" households="103" />
+        <data type="municipal" total="40065" male="19335" female="20730" households="11043">
+          <data type="privatehouseholds" total="39840" male="19130" female="20710" households="11003" />
+          <data type="collectivehouseholds" total="225" male="206" female="20" households="40" />
+        </data>
+        <data type="nonmunicipal" total="25551" male="12531" female="13020" households="6997">
+          <data type="privatehouseholds" total="25232" male="12264" female="12968" households="6934" />
+          <data type="collectivehouseholds" total="319" male="267" female="52" households="63" />
+        </data>
+      </population>
     </entity>
     <entity type="Amphoe" name="นาวัง" english="Na Wang" geocode="3906">
+      <population source="Census" year="2010" referencedate="2010-07-01">
+        <data type="total" total="34347" male="16787" female="17559" households="9254" />
+        <data type="privatehouseholds" total="34082" male="16527" female="17555" households="9211" />
+        <data type="collectivehouseholds" total="265" male="260" female="5" households="43" />
+        <data type="municipal" total="7288" male="3515" female="3773" households="2056">
+          <data type="privatehouseholds" total="7248" male="3477" female="3771" households="2051" />
+          <data type="collectivehouseholds" total="39" male="38" female="2" households="5" />
+        </data>
+        <data type="nonmunicipal" total="27059" male="13272" female="13787" households="7198">
+          <data type="privatehouseholds" total="26833" male="13050" female="13784" households="7160" />
+          <data type="collectivehouseholds" total="225" male="222" female="3" households="38" />
+        </data>
+      </population>
     </entity>
   </entity>
   <entity type="Changwat" geocode="40" name="ขอนแก่น" english="Khon Kaen">
