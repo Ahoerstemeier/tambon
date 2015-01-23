@@ -56,6 +56,7 @@
             this.btnNayokResign = new System.Windows.Forms.Button();
             this.btnShowEntityData = new System.Windows.Forms.Button();
             this.grpTesting = new System.Windows.Forms.GroupBox();
+            this.btnCheckCensus = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -82,7 +83,7 @@
             // 
             // btn_PopulationAllProvinces
             // 
-            this.btn_PopulationAllProvinces.Location = new System.Drawing.Point(230, 48);
+            this.btn_PopulationAllProvinces.Location = new System.Drawing.Point(234, 48);
             this.btn_PopulationAllProvinces.Name = "btn_PopulationAllProvinces";
             this.btn_PopulationAllProvinces.Size = new System.Drawing.Size(75, 23);
             this.btn_PopulationAllProvinces.TabIndex = 44;
@@ -91,7 +92,7 @@
             // 
             // btnCreateKml
             // 
-            this.btnCreateKml.Location = new System.Drawing.Point(8, 106);
+            this.btnCreateKml.Location = new System.Drawing.Point(126, 77);
             this.btnCreateKml.Name = "btnCreateKml";
             this.btnCreateKml.Size = new System.Drawing.Size(99, 23);
             this.btnCreateKml.TabIndex = 43;
@@ -102,7 +103,7 @@
             // btn_GazetteShowAll
             // 
             this.btn_GazetteShowAll.Enabled = false;
-            this.btn_GazetteShowAll.Location = new System.Drawing.Point(230, 19);
+            this.btn_GazetteShowAll.Location = new System.Drawing.Point(234, 19);
             this.btn_GazetteShowAll.Name = "btn_GazetteShowAll";
             this.btn_GazetteShowAll.Size = new System.Drawing.Size(75, 23);
             this.btn_GazetteShowAll.TabIndex = 42;
@@ -121,9 +122,9 @@
             // btn_GazetteShow
             // 
             this.btn_GazetteShow.Enabled = false;
-            this.btn_GazetteShow.Location = new System.Drawing.Point(145, 19);
+            this.btn_GazetteShow.Location = new System.Drawing.Point(126, 19);
             this.btn_GazetteShow.Name = "btn_GazetteShow";
-            this.btn_GazetteShow.Size = new System.Drawing.Size(79, 23);
+            this.btn_GazetteShow.Size = new System.Drawing.Size(98, 23);
             this.btn_GazetteShow.TabIndex = 40;
             this.btn_GazetteShow.Text = "Filtered";
             this.btn_GazetteShow.UseVisualStyleBackColor = true;
@@ -291,9 +292,9 @@
             // 
             // btnWikiData
             // 
-            this.btnWikiData.Location = new System.Drawing.Point(126, 106);
+            this.btnWikiData.Location = new System.Drawing.Point(8, 119);
             this.btnWikiData.Name = "btnWikiData";
-            this.btnWikiData.Size = new System.Drawing.Size(75, 23);
+            this.btnWikiData.Size = new System.Drawing.Size(111, 23);
             this.btnWikiData.TabIndex = 56;
             this.btnWikiData.Text = "WikiData";
             this.btnWikiData.UseVisualStyleBackColor = true;
@@ -341,6 +342,7 @@
             // 
             // grpTesting
             // 
+            this.grpTesting.Controls.Add(this.btnCheckCensus);
             this.grpTesting.Controls.Add(this.btn_GazetteShow);
             this.grpTesting.Controls.Add(this.btn_Population);
             this.grpTesting.Controls.Add(this.btn_PopulationAll);
@@ -356,6 +358,16 @@
             this.grpTesting.TabIndex = 61;
             this.grpTesting.TabStop = false;
             this.grpTesting.Text = "Testing only";
+            // 
+            // btnCheckCensus
+            // 
+            this.btnCheckCensus.Location = new System.Drawing.Point(126, 119);
+            this.btnCheckCensus.Name = "btnCheckCensus";
+            this.btnCheckCensus.Size = new System.Drawing.Size(99, 23);
+            this.btnCheckCensus.TabIndex = 57;
+            this.btnCheckCensus.Text = "Check census";
+            this.btnCheckCensus.UseVisualStyleBackColor = true;
+            this.btnCheckCensus.Click += new System.EventHandler(this.btnCheckCensus_Click);
             // 
             // MainForm
             // 
@@ -421,6 +433,7 @@
         private System.Windows.Forms.Button btnNayokResign;
         private System.Windows.Forms.Button btnShowEntityData;
         private System.Windows.Forms.GroupBox grpTesting;
+        private System.Windows.Forms.Button btnCheckCensus;
     }
 }
 
