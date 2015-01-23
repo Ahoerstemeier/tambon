@@ -1,5 +1,4 @@
-﻿using De.AHoerstemeier.Tambon;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -12,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using De.AHoerstemeier.Tambon;
 
 namespace De.AHoerstemeier.Tambon.UI
 {
@@ -38,7 +38,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var xmlOutputDirectory = ConfigurationManager.AppSettings["XmlOutputDirectory"];
             PopulationDataDownloader.OutputDirectory = xmlOutputDirectory;
             var pdfDirectory = ConfigurationManager.AppSettings["PdfDirectory"];
-            if (!String.IsNullOrEmpty(pdfDirectory))
+            if ( !String.IsNullOrEmpty(pdfDirectory) )
             {
                 GlobalData.PdfDirectory = pdfDirectory;
             }
@@ -49,7 +49,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 var allowTestFeaturesConfig = ConfigurationManager.AppSettings["AllowTestFeatures"];
                 allowTestFeatures = Convert.ToBoolean(allowTestFeaturesConfig);
             }
-            catch (FormatException)
+            catch ( FormatException )
             {
             }
 
@@ -59,10 +59,10 @@ namespace De.AHoerstemeier.Tambon.UI
         private void FillChangwatDropDown()
         {
             cbxChangwat.Items.Clear();
-            foreach (var entry in GlobalData.Provinces)
+            foreach ( var entry in GlobalData.Provinces )
             {
                 cbxChangwat.Items.Add(entry);
-                if (entry.geocode == GlobalData.PreferredProvinceGeocode)
+                if ( entry.geocode == GlobalData.PreferredProvinceGeocode )
                 {
                     cbxChangwat.SelectedItem = entry;
                 }
@@ -74,7 +74,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var romanizationMissing = new List<RomanizationEntry>();
 
             var country = new Entity();
-            foreach (var province in GlobalData.Provinces)
+            foreach ( var province in GlobalData.Provinces )
             {
                 var provinceData = GlobalData.GetGeocodeList(province.geocode);
                 country.entity.Add(provinceData);
@@ -96,16 +96,16 @@ namespace De.AHoerstemeier.Tambon.UI
 
             StringBuilder romanizationMistakesBuilder = new StringBuilder();
             Int32 romanizationMistakeCount = 0;
-            foreach (var entry in romanizationMistakes)
+            foreach ( var entry in romanizationMistakes )
             {
-                if (GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Key.Geocode))
+                if ( GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Key.Geocode) )
                 {
                     romanizationMistakesBuilder.AppendLine(String.Format("{0} {1}: {2} vs. {3}", entry.Key.Geocode, entry.Key.Name, entry.Key.English, entry.Value));
                     romanizationMistakeCount++;
                 }
             }
 
-            if (romanizationMistakeCount > 0)
+            if ( romanizationMistakeCount > 0 )
             {
                 var displayForm = new StringDisplayForm(
                     String.Format("Romanization problems ({0})", romanizationMistakeCount),
@@ -115,9 +115,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
             StringBuilder romanizationSuggestionBuilder = new StringBuilder();
             Int32 romanizationSuggestionCount = 0;
-            foreach (var entry in romanizationSuggestions)
+            foreach ( var entry in romanizationSuggestions )
             {
-                if (GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Geocode))
+                if ( GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Geocode) )
                 {
                     var entity = allEntities.FirstOrDefault(x => x.geocode == entry.Geocode);
                     var suggestedName = entry.English;
@@ -126,7 +126,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     romanizationSuggestionCount++;
                 }
             }
-            if (romanizationSuggestionCount > 0)
+            if ( romanizationSuggestionCount > 0 )
             {
                 var form = new StringDisplayForm(
                     String.Format("Romanization suggestions ({0}", romanizationSuggestionCount),
@@ -134,10 +134,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 form.Show();
 
                 List<Tuple<String, String, Int32>> counter = new List<Tuple<String, String, Int32>>();
-                foreach (var entry in romanizationSuggestions)
+                foreach ( var entry in romanizationSuggestions )
                 {
                     var found = counter.FirstOrDefault(x => x.Item1 == entry.Name);
-                    if (found == null)
+                    if ( found == null )
                     {
                         counter.Add(Tuple.Create(entry.Name, entry.English, 1));
                     }
@@ -148,7 +148,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
                 counter.RemoveAll(x => x.Item3 < 2);
-                if (counter.Any())
+                if ( counter.Any() )
                 {
                     counter.Sort(delegate(Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
                     {
@@ -157,7 +157,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
                     Int32 suggestionCounter = 0;
                     StringBuilder sortedBuilder = new StringBuilder();
-                    foreach (var entry in counter)
+                    foreach ( var entry in counter )
                     {
                         sortedBuilder.AppendLine(String.Format("{0}: {1} ({2})", entry.Item1, entry.Item2, entry.Item3));
                         suggestionCounter += entry.Item3;
@@ -170,13 +170,13 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             // show missing romanizations
-            if (romanizationMissing.Any())
+            if ( romanizationMissing.Any() )
             {
                 List<Tuple<String, Int32>> counter = new List<Tuple<String, Int32>>();
-                foreach (var entry in romanizationMissing)
+                foreach ( var entry in romanizationMissing )
                 {
                     var found = counter.FirstOrDefault(x => x.Item1 == entry.Name);
-                    if (found == null)
+                    if ( found == null )
                     {
                         counter.Add(Tuple.Create(entry.Name, 1));
                     }
@@ -187,12 +187,12 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
                 // counter.RemoveAll(x => x.Item2 < 2);
-                if (counter.Any())
+                if ( counter.Any() )
                 {
                     counter.Sort(delegate(Tuple<String, Int32> p1, Tuple<String, Int32> p2)
                     {
                         var result = p2.Item2.CompareTo(p1.Item2);
-                        if (result == 0)
+                        if ( result == 0 )
                         {
                             result = p2.Item1.CompareTo(p1.Item1);
                         }
@@ -201,7 +201,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
                     Int32 missingCounter = 0;
                     StringBuilder sortedBuilder = new StringBuilder();
-                    foreach (var entry in counter)
+                    foreach ( var entry in counter )
                     {
                         sortedBuilder.AppendLine(String.Format("{0}: {1}", entry.Item1, entry.Item2));
                         missingCounter += entry.Item2;
@@ -220,7 +220,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var itemsWithInvalidOfficialTerms = new List<Entity>();
             var itemsWithoutAnyCouncilTerms = new List<Entity>();
             var itemsWithUnexplainedCouncilSizeChanges = new List<Entity>();
-            foreach (var changwat in GlobalData.Provinces)
+            foreach ( var changwat in GlobalData.Provinces )
             {
                 var itemsWithInvalidCouncilTermsInChangwat = EntitiesWithInvalidCouncilTerms(changwat.geocode);
                 var itemsWithoutAnyCouncilTermsInChangwat = EntitiesWithoutAnyCouncilTerms(changwat.geocode);
@@ -232,10 +232,10 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var builder = new StringBuilder();
             Int32 count = 0;
-            if (itemsWithInvalidCouncilTerms.Any())
+            if ( itemsWithInvalidCouncilTerms.Any() )
             {
                 builder.AppendLine("Council term problems:");
-                foreach (var item in itemsWithInvalidCouncilTerms)
+                foreach ( var item in itemsWithInvalidCouncilTerms )
                 {
                     builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1})", item.english, item.geocode);
                     builder.AppendLine();
@@ -243,10 +243,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 builder.AppendLine();
             }
-            if (itemsWithInvalidOfficialTerms.Any())
+            if ( itemsWithInvalidOfficialTerms.Any() )
             {
                 builder.AppendLine("Official term problems:");
-                foreach (var item in itemsWithInvalidOfficialTerms)
+                foreach ( var item in itemsWithInvalidOfficialTerms )
                 {
                     builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1})", item.english, item.geocode);
                     builder.AppendLine();
@@ -254,10 +254,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 builder.AppendLine();
             }
-            if (itemsWithoutAnyCouncilTerms.Any())
+            if ( itemsWithoutAnyCouncilTerms.Any() )
             {
                 builder.AppendLine("No term at all:");
-                foreach (var item in itemsWithoutAnyCouncilTerms)
+                foreach ( var item in itemsWithoutAnyCouncilTerms )
                 {
                     builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1})", item.english, item.geocode);
                     builder.AppendLine();
@@ -265,10 +265,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 builder.AppendLine();
             }
-            if (itemsWithUnexplainedCouncilSizeChanges.Any())
+            if ( itemsWithUnexplainedCouncilSizeChanges.Any() )
             {
                 builder.AppendLine("Unexplained council size changes:");
-                foreach (var item in itemsWithUnexplainedCouncilSizeChanges)
+                foreach ( var item in itemsWithUnexplainedCouncilSizeChanges )
                 {
                     builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1})", item.english, item.geocode);
                     builder.AppendLine();
@@ -277,7 +277,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 builder.AppendLine();
             }
 
-            if (count > 0)
+            if ( count > 0 )
             {
                 var displayForm = new StringDisplayForm(
                     String.Format("Invalid terms ({0})", count),
@@ -294,7 +294,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private static IEnumerable<EntityTermEnd> EntitiesWithCouncilTermEndInTimeSpan(UInt32 changwatGeocode, DateTime begin, DateTime end)
         {
             Entity entity;
-            if (changwatGeocode == 0)
+            if ( changwatGeocode == 0 )
             {
                 entity = GlobalData.CompleteGeocodeList();
             }
@@ -314,7 +314,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var result = new List<Entity>();
             Entity entity;
-            if (changwatGeocode == 0)
+            if ( changwatGeocode == 0 )
             {
                 entity = GlobalData.CompleteGeocodeList();
             }
@@ -322,16 +322,16 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 entity = GlobalData.GetGeocodeList(changwatGeocode);
             }
-            foreach (var item in entity.FlatList())
+            foreach ( var item in entity.FlatList() )
             {
-                foreach (var office in item.office)
+                foreach ( var office in item.office )
                 {
                     office.officials.SortByDate();
                     var latestOfficial = office.officials.OfficialTerms.LastOrDefault();
-                    if (latestOfficial != null)
+                    if ( latestOfficial != null )
                     {
                         DateTime termEnd;
-                        if (latestOfficial.endSpecified)
+                        if ( latestOfficial.endSpecified )
                         {
                             termEnd = latestOfficial.end;
                         }
@@ -339,17 +339,17 @@ namespace De.AHoerstemeier.Tambon.UI
                         {
                             termEnd = latestOfficial.begin.AddYears(4).AddDays(-1);
                         }
-                        if ((termEnd.CompareTo(begin) >= 0) & (termEnd.CompareTo(end) <= 0))
+                        if ( (termEnd.CompareTo(begin) >= 0) & (termEnd.CompareTo(end) <= 0) )
                         {
                             var addOfficial = true;
-                            if (latestOfficial.EndYear > 0)
+                            if ( latestOfficial.EndYear > 0 )
                             {
-                                if ((begin.Year > latestOfficial.EndYear) | (end.Year < latestOfficial.EndYear))
+                                if ( (begin.Year > latestOfficial.EndYear) | (end.Year < latestOfficial.EndYear) )
                                 {
                                     addOfficial = false;
                                 }
                             }
-                            if (addOfficial)
+                            if ( addOfficial )
                                 result.Add(item);
                         }
                     }
@@ -363,7 +363,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var result = new List<Entity>();
             Entity entity;
-            if (changwatGeocode == 0)
+            if ( changwatGeocode == 0 )
             {
                 entity = GlobalData.CompleteGeocodeList();
             }
@@ -371,13 +371,13 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 entity = GlobalData.GetGeocodeList(changwatGeocode);
             }
-            foreach (var item in entity.FlatList())
+            foreach ( var item in entity.FlatList() )
             {
-                foreach (var office in item.office)
+                foreach ( var office in item.office )
                 {
-                    if (office.type == OfficeType.MunicipalityOffice | office.type == OfficeType.TAOOffice | office.type == OfficeType.PAOOffice)
+                    if ( office.type == OfficeType.MunicipalityOffice | office.type == OfficeType.TAOOffice | office.type == OfficeType.PAOOffice )
                     {
-                        if (!office.obsolete & !office.council.CouncilTerms.Any())
+                        if ( !office.obsolete & !office.council.CouncilTerms.Any() )
                         {
                             result.Add(item);
                         }
@@ -396,7 +396,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var result = new List<Entity>();
             Entity entity;
-            if (changwatGeocode == 0)
+            if ( changwatGeocode == 0 )
             {
                 entity = GlobalData.CompleteGeocodeList();
             }
@@ -404,38 +404,38 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 entity = GlobalData.GetGeocodeList(changwatGeocode);
             }
-            foreach (var item in entity.FlatList())
+            foreach ( var item in entity.FlatList() )
             {
                 Boolean hasInvalidTermData = false;
-                foreach (var office in item.office)
+                foreach ( var office in item.office )
                 {
                     office.council.SortByDate();
 
                     CouncilTerm lastTerm = null;
-                    foreach (var term in office.council.CouncilTerms)
+                    foreach ( var term in office.council.CouncilTerms )
                     {
                         hasInvalidTermData = hasInvalidTermData | !term.CouncilSizeValid | !term.TermLengthValid(term.type.TermLength()) | !term.TermDatesValid;
-                        if (lastTerm != null)
+                        if ( lastTerm != null )
                         {
-                            if (lastTerm.endSpecified)
+                            if ( lastTerm.endSpecified )
                             {
                                 hasInvalidTermData = hasInvalidTermData | lastTerm.end.CompareTo(term.begin) > 0;
                             }
-                            if ((term.size != term.FinalSize) & (term.sizechangereason == CouncilSizeChangeReason.NoChange))
+                            if ( (term.size != term.FinalSize) & (term.sizechangereason == CouncilSizeChangeReason.NoChange) )
                             {
                                 hasInvalidTermData = true;
                             }
-                            if ((term.type == EntityType.PAO) & (lastTerm.size > 0) & (term.size > 0))
+                            if ( (term.type == EntityType.PAO) & (lastTerm.size > 0) & (term.size > 0) )
                             {
-                                if ((term.size != term.FinalSize) & (term.sizechangereason == CouncilSizeChangeReason.NoChange))
+                                if ( (term.size != term.FinalSize) & (term.sizechangereason == CouncilSizeChangeReason.NoChange) )
                                 {
                                     hasInvalidTermData = hasInvalidTermData | lastTerm.FinalSize != term.size;
                                 }
                             }
 
-                            if ((lastTerm.type == EntityType.TAO) & (term.type == EntityType.TAO) & (lastTerm.size > 0) & (term.size > 0))
+                            if ( (lastTerm.type == EntityType.TAO) & (term.type == EntityType.TAO) & (lastTerm.size > 0) & (term.size > 0) )
                             {
-                                if ((term.sizechangereason == CouncilSizeChangeReason.NoChange))
+                                if ( (term.sizechangereason == CouncilSizeChangeReason.NoChange) )
                                 {
                                     hasInvalidTermData = hasInvalidTermData | lastTerm.FinalSize != term.size;
                                 }
@@ -444,7 +444,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         lastTerm = term;
                     }
                 }
-                if (hasInvalidTermData)
+                if ( hasInvalidTermData )
                 {
                     result.Add(item);
                 }
@@ -461,7 +461,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var result = new List<Entity>();
             Entity entity;
-            if (changwatGeocode == 0)
+            if ( changwatGeocode == 0 )
             {
                 entity = GlobalData.CompleteGeocodeList();
             }
@@ -469,22 +469,22 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 entity = GlobalData.GetGeocodeList(changwatGeocode);
             }
-            foreach (var item in entity.FlatList())
+            foreach ( var item in entity.FlatList() )
             {
                 Boolean hasInvalidTermData = false;
-                foreach (var office in item.office)
+                foreach ( var office in item.office )
                 {
                     var electedOfficials = office.officials.OfficialTerms.Where(x => (x.title == OfficialType.TAOMayor | x.title == OfficialType.Mayor | x.title == OfficialType.PAOChairman)).ToList();
                     electedOfficials.RemoveAll(x => !x.beginSpecified);
                     electedOfficials.Sort((x, y) => x.begin.CompareTo(y.begin));
 
                     OfficialEntryBase lastOfficialTerm = null;
-                    foreach (var official in electedOfficials)
+                    foreach ( var official in electedOfficials )
                     {
                         hasInvalidTermData = hasInvalidTermData | !official.TermLengthValid(4) | !official.TermDatesValid;
-                        if (lastOfficialTerm != null)
+                        if ( lastOfficialTerm != null )
                         {
-                            if (lastOfficialTerm.endSpecified & official.beginSpecified)
+                            if ( lastOfficialTerm.endSpecified & official.beginSpecified )
                             {
                                 hasInvalidTermData = hasInvalidTermData | lastOfficialTerm.end.CompareTo(official.begin) > 0;
                             }
@@ -492,7 +492,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         lastOfficialTerm = official;
                     }
                 }
-                if (hasInvalidTermData)
+                if ( hasInvalidTermData )
                 {
                     result.Add(item);
                 }
@@ -517,11 +517,11 @@ namespace De.AHoerstemeier.Tambon.UI
             GlobalData.AllGazetteAnnouncements.entry.Clear();
 
             String searchPath = Path.Combine(Application.StartupPath, "gazette");
-            if (Directory.Exists(searchPath))
+            if ( Directory.Exists(searchPath) )
             {
-                foreach (string fileName in Directory.GetFiles(searchPath, "Gazette*.XML"))
+                foreach ( string fileName in Directory.GetFiles(searchPath, "Gazette*.XML") )
                 {
-                    using (var filestream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+                    using ( var filestream = new FileStream(fileName, FileMode.Open, FileAccess.Read) )
                     {
                         var currentGazetteList =
                             XmlManager.XmlToEntity<GazetteListFull>(filestream, new XmlSerializer(typeof(GazetteListFull)));
@@ -533,24 +533,24 @@ namespace De.AHoerstemeier.Tambon.UI
                 btn_GazetteShowAll.Enabled = hasEntries;
 
                 var duplicateMentionedGeocodes = new List<UInt32>();
-                foreach (var gazetteEntry in GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.Items.Any(y => y is GazetteAreaDefinition)))
+                foreach ( var gazetteEntry in GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.Items.Any(y => y is GazetteAreaDefinition)) )
                 {
                     var geocodesInAnnouncement = new List<UInt32>();
-                    foreach (GazetteAreaDefinition areadefinition in gazetteEntry.Items.Where(y => y is GazetteAreaDefinition))
+                    foreach ( GazetteAreaDefinition areadefinition in gazetteEntry.Items.Where(y => y is GazetteAreaDefinition) )
                     {
-                        if (geocodesInAnnouncement.Contains(areadefinition.geocode))
+                        if ( geocodesInAnnouncement.Contains(areadefinition.geocode) )
                         {
                             duplicateMentionedGeocodes.Add(areadefinition.geocode);
                         }
                         geocodesInAnnouncement.Add(areadefinition.geocode);
-                        if (areadefinition.subdivisionsSpecified && areadefinition.subdivisiontypeSpecified && (areadefinition.subdivisiontype != EntityType.Unknown))
+                        if ( areadefinition.subdivisionsSpecified && areadefinition.subdivisiontypeSpecified && (areadefinition.subdivisiontype != EntityType.Unknown) )
                         {
                             var geocode = areadefinition.geocode;
                             var entity = GlobalData.LookupGeocode(geocode);
-                            while ((entity != null) && (entity.IsObsolete))
+                            while ( (entity != null) && (entity.IsObsolete) )
                             {
                                 geocode = entity.newgeocode.FirstOrDefault();
-                                if (geocode == 0)
+                                if ( geocode == 0 )
                                 {
                                     entity = null;
                                 }
@@ -559,7 +559,7 @@ namespace De.AHoerstemeier.Tambon.UI
                                     entity = GlobalData.LookupGeocode(geocode);
                                 }
                             }
-                            if (entity != null)
+                            if ( entity != null )
                             {
                                 var entityCount = new EntityCount();
                                 entityCount.year = gazetteEntry.publication.Year.ToString(CultureInfo.InvariantCulture);
@@ -575,7 +575,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         }
                     }
                 }
-                if (duplicateMentionedGeocodes.Any())
+                if ( duplicateMentionedGeocodes.Any() )
                 {
                     new StringDisplayForm("Duplicate geocodes", String.Join<UInt32>(Environment.NewLine, duplicateMentionedGeocodes)).Show();
                 }
@@ -618,7 +618,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var itemsWithTermEnds = new List<EntityTermEnd>();
             var geocode = (cbxChangwat.SelectedItem as Entity).geocode;
-            if (chkAllProvince.Checked)
+            if ( chkAllProvince.Checked )
             {
                 geocode = 0;
             }
@@ -629,13 +629,13 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var builder = new StringBuilder();
             Int32 count = 0;
-            foreach (var item in itemsWithTermEnds)
+            foreach ( var item in itemsWithTermEnds )
             {
                 builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, item.CouncilTerm.begin.AddYears(4).AddDays(-1));
                 builder.AppendLine();
                 count++;
             }
-            if (count > 0)
+            if ( count > 0 )
             {
                 var displayForm = new StringDisplayForm(
                     String.Format("Term ends ({0})", count),
@@ -647,7 +647,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnTimeBetweenElection_Click(object sender, EventArgs e)
         {
             var counter = new FrequencyCounter();
-            foreach (var changwat in GlobalData.Provinces)
+            foreach ( var changwat in GlobalData.Provinces )
             {
                 CalculateTimeBetweenLocalElection(changwat.geocode, counter);
             }
@@ -662,7 +662,7 @@ namespace De.AHoerstemeier.Tambon.UI
             builder.AppendLine();
             builder.AppendLine();
             builder.AppendLine("Offices with longest interregnum:");
-            foreach (var geocode in counter.Data[counter.MaxValue])
+            foreach ( var geocode in counter.Data[counter.MaxValue] )
             {
                 var entity = GlobalData.LookupGeocode(geocode);
                 builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2} days", entity.english, geocode, counter.MaxValue);
@@ -670,7 +670,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             builder.AppendLine();
             builder.AppendLine("Offices with shortest interregnum:");
-            foreach (var geocode in counter.Data[counter.MinValue])
+            foreach ( var geocode in counter.Data[counter.MinValue] )
             {
                 var entity = GlobalData.LookupGeocode(geocode);
                 builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2} days", entity.english, geocode, counter.MinValue);
@@ -685,18 +685,18 @@ namespace De.AHoerstemeier.Tambon.UI
         private static void CalculateTimeBetweenLocalElection(UInt32 geocode, FrequencyCounter counter)
         {
             var fullChangwat = GlobalData.GetGeocodeList(geocode);
-            foreach (var item in fullChangwat.FlatList())
+            foreach ( var item in fullChangwat.FlatList() )
             {
-                foreach (var office in item.office)
+                foreach ( var office in item.office )
                 {
                     office.council.SortByDate();
 
                     CouncilTerm lastTerm = null;
-                    foreach (var term in office.council.CouncilTerms)
+                    foreach ( var term in office.council.CouncilTerms )
                     {
-                        if (lastTerm != null)
+                        if ( lastTerm != null )
                         {
-                            if (lastTerm.endSpecified)
+                            if ( lastTerm.endSpecified )
                             {
                                 var interregnum = term.begin - lastTerm.end;
                                 counter.IncrementForCount(interregnum.Days, item.geocode);
@@ -711,11 +711,11 @@ namespace De.AHoerstemeier.Tambon.UI
         private static void CountCouncilElectionWeekday(UInt32 geocode, FrequencyCounter counter)
         {
             var fullChangwat = GlobalData.GetGeocodeList(geocode);
-            foreach (var item in fullChangwat.FlatList())
+            foreach ( var item in fullChangwat.FlatList() )
             {
-                foreach (var office in item.office)
+                foreach ( var office in item.office )
                 {
-                    foreach (var term in office.council.CouncilTerms)
+                    foreach ( var term in office.council.CouncilTerms )
                     {
                         counter.IncrementForCount((Int32)term.begin.DayOfWeek, item.geocode);
                     }
@@ -727,11 +727,11 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var zeroDate = new DateTime(2000, 1, 1);
             var fullChangwat = GlobalData.GetGeocodeList(geocode);
-            foreach (var item in fullChangwat.FlatList())
+            foreach ( var item in fullChangwat.FlatList() )
             {
-                foreach (var office in item.office)
+                foreach ( var office in item.office )
                 {
-                    foreach (var term in office.council.CouncilTerms)
+                    foreach ( var term in office.council.CouncilTerms )
                     {
                         var span = term.begin - zeroDate;
                         counter.IncrementForCount(span.Days, item.geocode);
@@ -744,15 +744,15 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var zeroDate = new DateTime(2000, 1, 1);
             var fullChangwat = GlobalData.GetGeocodeList(geocode);
-            foreach (var item in fullChangwat.FlatList())
+            foreach ( var item in fullChangwat.FlatList() )
             {
-                foreach (var office in item.office)
+                foreach ( var office in item.office )
                 {
-                    if (office.officials != null)
+                    if ( office.officials != null )
                     {
-                        foreach (var officialTerm in office.officials.OfficialTerms)
+                        foreach ( var officialTerm in office.officials.OfficialTerms )
                         {
-                            if (officialTerm.beginreason == OfficialBeginType.ElectedDirectly)
+                            if ( officialTerm.beginreason == OfficialBeginType.ElectedDirectly )
                             {
                                 var span = officialTerm.begin - zeroDate;
                                 counter.IncrementForCount(span.Days, item.geocode);
@@ -766,7 +766,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnElectionWeekday_Click(object sender, EventArgs e)
         {
             var counter = new FrequencyCounter();
-            foreach (var changwat in GlobalData.Provinces)
+            foreach ( var changwat in GlobalData.Provinces )
             {
                 CountCouncilElectionWeekday(changwat.geocode, counter);
             }
@@ -775,12 +775,12 @@ namespace De.AHoerstemeier.Tambon.UI
             builder.AppendLine();
             DayOfWeek leastFrequentDay = DayOfWeek.Sunday;
             Int32 leastFrequentDayCount = Int32.MaxValue;
-            foreach (var dataEntry in counter.Data)
+            foreach ( var dataEntry in counter.Data )
             {
                 var count = dataEntry.Value.Count();
                 var day = (DayOfWeek)(dataEntry.Key);
                 builder.AppendFormat(CultureInfo.CurrentUICulture, "{0}: {1} ({2:#0.0%})", day, count, (Double)count / counter.NumberOfValues);
-                if (count < leastFrequentDayCount)
+                if ( count < leastFrequentDayCount )
                 {
                     leastFrequentDayCount = count;
                     leastFrequentDay = day;
@@ -789,7 +789,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             builder.AppendFormat(CultureInfo.CurrentUICulture, "Elections on {0} at ", leastFrequentDay);
-            foreach (var value in counter.Data[(Int32)leastFrequentDay])
+            foreach ( var value in counter.Data[(Int32)leastFrequentDay] )
             {
                 builder.AppendFormat(CultureInfo.CurrentUICulture, "{0},", value);
             }
@@ -804,7 +804,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnMubanHelper_Click(object sender, EventArgs e)
         {
             var country = new Entity();
-            foreach (var province in GlobalData.Provinces)
+            foreach ( var province in GlobalData.Provinces )
             {
                 var provinceData = GlobalData.GetGeocodeList(province.geocode);
                 country.entity.Add(provinceData);
@@ -825,7 +825,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var itemsWithOfficialElectionResultUnknown = new List<EntityTermEnd>();
 
             Entity entity;
-            if (chkAllProvince.Checked)
+            if ( chkAllProvince.Checked )
             {
                 entity = GlobalData.CompleteGeocodeList();
             }
@@ -848,10 +848,10 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var councilBuilder = new StringBuilder();
             Int32 councilCount = 0;
-            foreach (var item in itemsWithCouncilElectionsPending)
+            foreach ( var item in itemsWithCouncilElectionsPending )
             {
                 DateTime end;
-                if (item.CouncilTerm.endSpecified)
+                if ( item.CouncilTerm.endSpecified )
                 {
                     end = item.CouncilTerm.end;
                 }
@@ -863,7 +863,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 councilBuilder.AppendLine();
                 councilCount++;
             }
-            if (councilCount > 0)
+            if ( councilCount > 0 )
             {
                 var displayForm = new StringDisplayForm(
                     String.Format("{0} LAO council elections pending", councilCount),
@@ -873,13 +873,13 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var officialBuilder = new StringBuilder();
             Int32 officialCount = 0;
-            foreach (var item in itemsWithOfficialElectionsPending)
+            foreach ( var item in itemsWithOfficialElectionsPending )
             {
                 String officialTermEnd = "unknown";
-                if ((item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900))
+                if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )
                 {
                     DateTime end;
-                    if (item.OfficialTerm.endSpecified)
+                    if ( item.OfficialTerm.endSpecified )
                     {
                         end = item.OfficialTerm.end;
                     }
@@ -893,7 +893,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 officialBuilder.AppendLine();
                 officialCount++;
             }
-            if (officialCount > 0)
+            if ( officialCount > 0 )
             {
                 var displayForm = new StringDisplayForm(
                     String.Format("{0} LAO official elections pending", officialCount),
@@ -903,16 +903,16 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var officialUnknownBuilder = new StringBuilder();
             Int32 officialUnknownCount = 0;
-            foreach (var item in itemsWithOfficialElectionResultUnknown)
+            foreach ( var item in itemsWithOfficialElectionResultUnknown )
             {
-                if ((item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900))  // must be always true
+                if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )  // must be always true
                 {
                     officialUnknownBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, item.OfficialTerm.begin);
                     officialUnknownBuilder.AppendLine();
                     officialUnknownCount++;
                 }
             }
-            if (officialUnknownCount > 0)
+            if ( officialUnknownCount > 0 )
             {
                 var displayForm = new StringDisplayForm(
                     String.Format("{0} LAO official elections result missing", officialUnknownCount),
@@ -934,7 +934,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnElectionDates_Click(object sender, EventArgs e)
         {
             var counter = new FrequencyCounter();
-            foreach (var changwat in GlobalData.Provinces)
+            foreach ( var changwat in GlobalData.Provinces )
             {
                 CountCouncilElectionDate(changwat.geocode, counter);
             }
@@ -944,10 +944,10 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var zeroDate = new DateTime(2000, 1, 1);
             var ordered = counter.Data.OrderBy(x => x.Key);
-            foreach (var entry in ordered)
+            foreach ( var entry in ordered )
             {
                 var count = entry.Value.Count();
-                if (count > 0)
+                if ( count > 0 )
                 {
                     builder.AppendFormat("{0:yyyy-MM-dd}: {1}", zeroDate.AddDays(entry.Key), entry.Value.Count());
                     builder.AppendLine();
@@ -973,7 +973,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btnNayokResign_Click(object sender, EventArgs e)
         {
             UInt32 changwatGeocode = 0;
-            if (!chkAllProvince.Checked)
+            if ( !chkAllProvince.Checked )
             {
                 changwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
             }
@@ -981,7 +981,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var allTermEnd = EntitiesWithCouncilTermEndInTimeSpan(changwatGeocode, new DateTime(2013, 9, 1), new DateTime(2013, 9, 30));
             var allNextElectionNormal = allTermEnd.Where(x => x.Entity.office.First().council.CouncilTerms.Any(y => y.begin > x.CouncilTerm.end && (y.begin - x.CouncilTerm.end).Days < 60)).ToList();
             List<EntityTermEnd> processedTermEnds = new List<EntityTermEnd>();
-            foreach (var entry in allTermEnd)
+            foreach ( var entry in allTermEnd )
             {
                 entry.Entity.office.First().officials.SortByDate();
                 processedTermEnds.Add(new EntityTermEnd(
@@ -999,18 +999,18 @@ namespace De.AHoerstemeier.Tambon.UI
             List<Entity> nayokElectionFailEarly = new List<Entity>();
             List<Entity> nayokElectedAgainNormal = new List<Entity>();
             List<Entity> nayokElectionFailNormal = new List<Entity>();
-            foreach (var entry in nayokTermEndUnknown)
+            foreach ( var entry in nayokTermEndUnknown )
             {
                 var nextCouncilTerm = entry.Entity.office.First().council.CouncilTerms.First(y => y.begin > entry.CouncilTerm.end && (y.begin - entry.CouncilTerm.end).Days < 60);
                 var nextNayokTerm = entry.Entity.office.First().officials.OfficialTerms.LastOrDefault(y => (y.begin < nextCouncilTerm.begin));
-                if ((nextNayokTerm != null) && (nextNayokTerm.begin.Year == entry.CouncilTerm.end.Year))
+                if ( (nextNayokTerm != null) && (nextNayokTerm.begin.Year == entry.CouncilTerm.end.Year) )
                 {
                     nextNayokElectionEarly.Add(new EntityTermEnd(entry.Entity, nextCouncilTerm, nextNayokTerm));
                     var nextOfficial = nextNayokTerm as OfficialEntry;
                     var previousOfficial = entry.OfficialTerm as OfficialEntry;
-                    if ((nextOfficial != null) && (previousOfficial != null))
+                    if ( (nextOfficial != null) && (previousOfficial != null) )
                     {
-                        if (nextOfficial.name == previousOfficial.name)
+                        if ( nextOfficial.name == previousOfficial.name )
                         {
                             nayokElectedAgainEarly.Add(entry.Entity);
                         }
@@ -1021,14 +1021,14 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
             }
-            foreach (var entry in nayokTermEndNormal)
+            foreach ( var entry in nayokTermEndNormal )
             {
                 var nextCouncilTerm = entry.Entity.office.First().council.CouncilTerms.First(y => y.begin > entry.CouncilTerm.end && (y.begin - entry.CouncilTerm.end).Days < 60);
                 var nextOfficial = entry.Entity.office.First().officials.OfficialTerms.LastOrDefault(y => (y.begin == nextCouncilTerm.begin)) as OfficialEntry;
                 var previousOfficial = entry.OfficialTerm as OfficialEntry;
-                if ((nextOfficial != null) && (previousOfficial != null))
+                if ( (nextOfficial != null) && (previousOfficial != null) )
                 {
-                    if (nextOfficial.name == previousOfficial.name)
+                    if ( nextOfficial.name == previousOfficial.name )
                     {
                         nayokElectedAgainNormal.Add(entry.Entity);
                     }
@@ -1061,14 +1061,14 @@ namespace De.AHoerstemeier.Tambon.UI
             builder.AppendFormat(CultureInfo.CurrentUICulture, "   {0} reelected, {1} changed; {2:P} success rate", success, fail, success / (success + fail));
             builder.AppendLine();
             builder.AppendLine();
-            if (chkAllProvince.Checked)
+            if ( chkAllProvince.Checked )
             {
-                foreach (var changwat in GlobalData.Provinces)
+                foreach ( var changwat in GlobalData.Provinces )
                 {
                     var nayokEndTermInChangwat = nayokTermEndNormal.Where(x => GeocodeHelper.ProvinceCode(x.Entity.geocode) == changwat.geocode).Count();
                     var nayokEarlyInChangwat = nextNayokElectionEarly.Where(x => GeocodeHelper.ProvinceCode(x.Entity.geocode) == changwat.geocode).Count();
                     var total = nayokEarlyInChangwat + nayokEndTermInChangwat;
-                    if (total > 0)
+                    if ( total > 0 )
                     {
                         builder.AppendFormat(CultureInfo.CurrentUICulture, "{0}: {1} of {2} normal, {3:P} early", changwat.english, nayokEndTermInChangwat, total, Convert.ToDouble(nayokEarlyInChangwat) / total);
                         builder.AppendLine();
@@ -1093,7 +1093,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 var checkWikidataConfig = ConfigurationManager.AppSettings["EntityBrowserCheckWikiData"];
                 checkWikiData = Convert.ToBoolean(checkWikidataConfig);
             }
-            catch (FormatException)
+            catch ( FormatException )
             {
             }
             formEntityBrowser.CheckWikiData = checkWikiData;
@@ -1107,16 +1107,25 @@ namespace De.AHoerstemeier.Tambon.UI
             var baseEntity = GlobalData.CompleteGeocodeList();
             GlobalData.LoadPopulationData(PopulationDataSourceType.Census, 2010);
             var allEntities = baseEntity.FlatList().Where(x => x.population.Any(y => y.source == PopulationDataSourceType.Census && y.Year == 2010)).ToList();
-            foreach (var entity in allEntities)
+            foreach ( var entity in allEntities )
             {
                 var population = entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == 2010);
-                foreach (var data in population.data)
+                foreach ( var data in population.data )
                 {
                     var diff = Math.Abs(data.total - data.male - data.female);
-                    if (diff > 10)
+                    if ( diff > 1 )
                     {
                         builder.AppendFormat("{0} ({1}): {2} differs by {3}", entity.english, entity.geocode, data.type, diff);
                         builder.AppendLine();
+                    }
+                    foreach ( var subData in data.data )
+                    {
+                        diff = Math.Abs(data.total - data.male - data.female);
+                        if ( diff > 1 )
+                        {
+                            builder.AppendFormat("{0} ({1}): {2} of {3} differs by {4}", entity.english, entity.geocode, subData.type, data.type, diff);
+                            builder.AppendLine();
+                        }
                     }
                 }
             }
