@@ -194,6 +194,25 @@ namespace De.AHoerstemeier.Tambon
             {
                 var data = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
                 var flat = data.FlatList();
+
+                // propagate population references into the subentities
+                foreach ( var entity in flat )
+                {
+                    if ( entity.population.Any() && entity.entity.Any() )
+                    {
+                        foreach ( var population in entity.population.Where(x => x.reference.Any()) )
+                        {
+                            foreach ( var subEntity in entity.entity )
+                            {
+                                foreach ( var target in subEntity.population.Where(x => !x.reference.Any() && x.source == population.source && x.year == population.year) )
+                                {
+                                    target.reference.AddRange(population.reference);
+                                }
+                            }
+                        }
+                    }
+                }
+
                 var dataPoints = flat.Where(x => x.population.Any()).ToList();
                 foreach ( var dataPoint in dataPoints )
                 {

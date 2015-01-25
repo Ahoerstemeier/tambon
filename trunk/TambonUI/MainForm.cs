@@ -1110,9 +1110,10 @@ namespace De.AHoerstemeier.Tambon.UI
             foreach ( var entity in allEntities )
             {
                 var population = entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == 2010);
+                Int32 diff = 0;
                 foreach ( var data in population.data )
                 {
-                    var diff = Math.Abs(data.total - data.male - data.female);
+                    diff = Math.Abs(data.total - data.male - data.female);
                     if ( diff > 1 )
                     {
                         builder.AppendFormat("{0} ({1}): {2} differs by {3}", entity.english, entity.geocode, data.type, diff);
@@ -1127,6 +1128,12 @@ namespace De.AHoerstemeier.Tambon.UI
                             builder.AppendLine();
                         }
                     }
+                }
+                diff = population.SumError();
+                if ( diff > 1 )
+                {
+                    builder.AppendFormat("{0} ({1}): Sum of parts differs by {2}", entity.english, entity.geocode, diff);
+                    builder.AppendLine();
                 }
             }
             var result = builder.ToString();
