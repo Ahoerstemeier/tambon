@@ -123,8 +123,17 @@ namespace De.AHoerstemeier.Tambon
             return maxError;
         }
 
-        internal void AddDataPoint(HouseholdDataPoint dataPoint)
+        /// <summary>
+        /// Adds the numbers of the datapoint to this.
+        /// </summary>
+        /// <param name="dataPoint">Data point to add.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="dataPoint"/> is <c>null</c>.</exception>
+        public void AddDataPoint(HouseholdDataPoint dataPoint)
         {
+            if ( dataPoint == null )
+            {
+                throw new ArgumentNullException("dataPoint");
+            }
             var target = data.FirstOrDefault(x => x.type == dataPoint.type);
             if ( target == null )
             {
@@ -196,13 +205,24 @@ namespace De.AHoerstemeier.Tambon
             return this.MaxDeviation(sum);
         }
 
-        private Int32 MaxDeviation(PopulationDataPoint sum)
+        /// <summary>
+        /// Checks the difference between this and <paramref name="compare"/>.
+        /// </summary>
+        /// <param name="compare">Data to compare with.</param>
+        /// <returns>Maximum deviation between the two data points.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="compare"/> is <c>null</c>.</exception>
+        public Int32 MaxDeviation(PopulationDataPoint compare)
         {
+            if ( compare == null )
+            {
+                throw new ArgumentNullException("compare");
+            }
+
             return Math.Max(
-                Math.Abs(this.total - sum.total),
+                Math.Abs(this.total - compare.total),
                 Math.Max(
-                    Math.Abs(this.male - sum.male),
-                    Math.Abs(this.female - sum.female))
+                    Math.Abs(this.male - compare.male),
+                    Math.Abs(this.female - compare.female))
                 );
         }
 

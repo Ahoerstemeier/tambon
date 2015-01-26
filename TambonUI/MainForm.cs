@@ -1135,6 +1135,23 @@ namespace De.AHoerstemeier.Tambon.UI
                     builder.AppendFormat("{0} ({1}): Sum of parts differs by {2}", entity.english, entity.geocode, diff);
                     builder.AppendLine();
                 }
+                var sum = new PopulationData();
+                foreach ( var subEntity in entity.entity.Where(x => !x.IsObsolete && x.population.Any()) )
+                {
+                    foreach ( var dataPoint in subEntity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == 2010).data )
+                    {
+                        sum.AddDataPoint(dataPoint);
+                    }
+                }
+                if ( sum.data.Any() )
+                {
+                    diff = sum.TotalPopulation.MaxDeviation(entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == 2010).TotalPopulation);
+                    if ( diff > 1 )
+                    {
+                        builder.AppendFormat("{0} ({1}): Sum of subentities differs by {2}", entity.english, entity.geocode, diff);
+                        builder.AppendLine();
+                    }
+                }
             }
             var result = builder.ToString();
 

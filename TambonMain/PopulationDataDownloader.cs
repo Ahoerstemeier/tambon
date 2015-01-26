@@ -411,7 +411,7 @@ namespace De.AHoerstemeier.Tambon
                 tempCalculator.Process();
                 Data.entity.Add(tempCalculator.Data);
             }
-            Data.CalculatePopulationFromSubEntities();
+            Data.CalculatePopulationFromSubEntities(Year, PopulationDataSourceType.DOPA);
         }
 
         private void ProcessProvince(UInt32 geocode)
@@ -433,7 +433,7 @@ namespace De.AHoerstemeier.Tambon
                 }
             }
             Data.entity.RemoveAll(x => toRemove.Contains(x));
-            Data.CalculatePopulationFromSubEntities();
+            Data.CalculatePopulationFromSubEntities(Year, PopulationDataSourceType.DOPA);
         }
 
         private void FixupWronglyPlacedAmphoe()
