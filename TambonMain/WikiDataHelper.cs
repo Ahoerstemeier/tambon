@@ -809,6 +809,11 @@ namespace De.AHoerstemeier.Tambon
                 }
                 // TODO: ± if upper and lower not same
             }
+            var monoString = snak.DataValue as MonolingualTextValue;
+            if ( monoString != null )
+            {
+                result = String.Format("[[Property:P{0}]]: {1}", snak.PropertyId.NumericId, monoString.Text);
+            }
             return result;
         }
 
@@ -1104,7 +1109,7 @@ namespace De.AHoerstemeier.Tambon
             var firstSlogan = entity.symbols.slogan.FirstOrDefault();
             if ( firstSlogan != null )
             {
-                var expected = firstSlogan.Value;
+                var expected = firstSlogan.SingleLineValue;
                 Statement dummy;
 
                 return CheckMonoLanguageValue(item, WikiBase.PropertyIdMotto, Language.Thai, expected, false, out dummy);
@@ -1120,7 +1125,7 @@ namespace De.AHoerstemeier.Tambon
             var firstSlogan = entity.symbols.slogan.FirstOrDefault();
             if ( firstSlogan != null )
             {
-                var expected = firstSlogan.Value;
+                var expected = firstSlogan.SingleLineValue;
                 Statement result;
 
                 CheckMonoLanguageValue(item, WikiBase.PropertyIdMotto, Language.Thai, expected, true, out result);

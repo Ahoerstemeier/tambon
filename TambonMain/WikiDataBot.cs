@@ -4,6 +4,7 @@ using System.Device.Location;
 using System.Linq;
 using System.Text;
 using Wikibase;
+using Wikibase.DataValues;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -575,6 +576,20 @@ namespace De.AHoerstemeier.Tambon
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
+                            if ( (statement != null) && entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
+                            {
+                                var source = AmphoeComHelper.AmphoeWebsite(entity.geocode);
+                                if ( source != null )
+                                {
+                                    var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(source.AbsoluteUri));
+                                    var sloganReference = statement.CreateReferenceForSnak(snak);
+                                    statement.AddReference(sloganReference);
+                                    foreach ( var reference in statement.References )
+                                    {
+                                        reference.Save(_helper.GetReferenceSaveEditSummary(reference));
+                                    }
+                                }
+                            }
                         }
                     }
                     // TODO: Sources
