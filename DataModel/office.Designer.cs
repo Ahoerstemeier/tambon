@@ -36,7 +36,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<VisionSlogan> goalField;
         
-        private List<VisionSlogan> songField;
+        private List<Song> songField;
         
         private string symboltreeField;
         
@@ -50,7 +50,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of Symbols.
         /// </summary>
         public Symbols() {
-            this.songField = new List<VisionSlogan>();
+            this.songField = new List<Song>();
             this.goalField = new List<VisionSlogan>();
             this.missionField = new List<VisionSlogan>();
             this.visionField = new List<VisionSlogan>();
@@ -152,7 +152,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute("song", Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<VisionSlogan> song {
+        public List<Song> song {
             get {
                 return this.songField;
             }
@@ -334,6 +334,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Text with temporal information.
     /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Song))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -434,6 +435,37 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.valueField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Official song of an entity.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Song", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class Song : VisionSlogan {
+        
+        private string titleField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
             }
         }
     }
