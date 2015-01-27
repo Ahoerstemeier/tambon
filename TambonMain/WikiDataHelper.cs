@@ -1136,6 +1136,27 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion Slogan
 
+        #region Native label
+
+        public WikiDataState NativeLabelCorrect(Item item, Entity entity)
+        {
+            var expected = entity.FullName;
+            Statement dummy;
+
+            return CheckMonoLanguageValue(item, WikiBase.PropertyIdMotto, Language.Thai, expected, false, out dummy);
+        }
+
+        public Statement SetNativeLabel(Item item, Entity entity)
+        {
+            var expected = entity.FullName;
+            Statement result;
+
+            CheckMonoLanguageValue(item, WikiBase.PropertyIdNativeLabel, Language.Thai, expected, true, out result);
+            return result;
+        }
+
+        #endregion Native label
+
         /// <summary>
         /// Get the default edit summary for the creation of a item.
         /// </summary>
