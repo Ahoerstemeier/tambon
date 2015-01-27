@@ -163,6 +163,7 @@ namespace De.AHoerstemeier.Tambon
             WikiDataTaskDelegate setCensus1990 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1990);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 1990", setCensus1990));
             _availableTasks.Add(new WikiDataTaskInfo("Set Slogan", SetSlogan));
+            _availableTasks.Add(new WikiDataTaskInfo("Set native label", SetNativeLabel));
         }
 
         #endregion constructor
@@ -269,6 +270,7 @@ namespace De.AHoerstemeier.Tambon
             }
             SetPostalCode(items, dummy, false);
             SetLocation(items, dummy, false);
+            SetNativeLabel(items, dummy, false);
         }
 
         #endregion public methods
@@ -592,7 +594,42 @@ namespace De.AHoerstemeier.Tambon
                             }
                         }
                     }
-                    // TODO: Sources
+                }
+            }
+        }
+
+        private void SetNativeLabel(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.NativeLabelCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong native label", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetNativeLabel(item, entity);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
                 }
             }
         }
