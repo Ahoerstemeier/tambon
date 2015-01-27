@@ -790,6 +790,21 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="Song">
+    <xs:annotation>
+      <xs:documentation>Official song of an entity.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:VisionSlogan">
+        <xs:attribute name="title" use="optional">
+          <xs:annotation>
+            <xs:documentation>Title of the song.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="Emblem">
     <xs:annotation>
       <xs:documentation>Emblem (ตรา) of the entity.</xs:documentation>
@@ -842,7 +857,7 @@
           <xs:documentation>Goal (เป้าหมาย) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:VisionSlogan" name="song">
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:Song" name="song">
         <xs:annotation>
           <xs:documentation>Text of the song (เพลงประจำจังหวัด) of the entity.</xs:documentation>
         </xs:annotation>
