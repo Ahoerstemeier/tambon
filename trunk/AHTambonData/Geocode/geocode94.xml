@@ -1937,6 +1937,12 @@
       <codes>
         <post value="94110" />
       </codes>
+      <area>
+        <bounding geocode="940703" direction="north" />
+        <bounding geocode="940702" direction="west" />
+        <bounding geocode="940708" direction="south" />
+        <bounding geocode="940803" direction="south" />
+      </area>
     </entity>
     <entity type="Tambon" name="ตะบิ้ง" english="Tabing" geocode="940702">
       <codes>
@@ -3439,6 +3445,11 @@
   <entity type="ThesabanTambon" name="ตะลุบัน" english="Taluban" geocode="9498" parent="9407">
     <wiki wikidata="Q15980656" />
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <!-- directly east of Amphoe office, not sure if really that building -->
+        <geo:lat>6.7012</geo:lat>
+        <geo:long>101.6181</geo:long>
+      </geo:Point>
       <url lastchecked="2015-01-11">http://www.talubun.go.th/</url>
       <officials>
         <!-- no Mayor end term in 2012 -->
@@ -3454,9 +3465,17 @@
         <entity geocode="940701" coverage="completely" />
       </areacoverage>
     </office>
+    <area>
+      <bounding geocode="940753" direction="north" />
+      <bounding geocode="940752" direction="west" />
+      <bounding geocode="940758" direction="south" />
+      <bounding geocode="940853" direction="south" />
+    </area>
     <history>
       <misspelling name="ตะลุปัน" />
-      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2015-01-01" status="Done" />
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2015-01-01" status="Gazette">
+        <gazetteref volume="132" page="11" issue="พิเศษ 29 ง" date="2015-02-04" />
+      </statuschange>
       <create type="ThesabanTambon" effective="1940-10-15" status="Gazette">
         <gazetteref volume="57" page="554" issue="0 ก" date="1940-10-15" />
       </create>
