@@ -877,7 +877,7 @@
   <entity type="Amphoe" name="ท่าปลา" english="Tha Pla" geocode="5303">
     <wiki wikidata="Q167845" />
     <codes>
-      <post value="53150 53190 53110" />
+      <post value="53150 53190" />
       <hasc value="TH.UD.TP" />
       <salb value="THA074007" />
     </codes>
@@ -1095,40 +1095,7 @@
       <entity type="Muban" geocode="53030511" name="บ้านปางหมิ่นเหนือ" english="Ban Pang Min Nuea" />
       <entity type="Muban" geocode="53030512" name="บ้านค่าย" english="Ban Khai" />
     </entity>
-    <entity type="Tambon" name="ท่าแฝก" english="Tha Faek" geocode="530306">
-      <wiki wikidata="Q7708724" />
-      <codes>
-        <post value="53110" />
-      </codes>
-      <office type="TAOOffice">
-        <geo:Point>
-          <geo:lat>17.9454</geo:lat>
-          <geo:long>100.6314</geo:long>
-        </geo:Point>
-        <url status="offline">http://www.thafak.go.th/</url>
-        <officials>
-          <official title="TAOMayor" name="รูม อินแจ้" begin="2010-04-25" endyear="2014" beginreason="ElectedDirectly" />
-          <officialterm title="TAOMayor" begin="2006-03-19" end="2010-03-18" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2013-10-19" type="TAO" size="18" />
-          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
-        </council>
-        <areacoverage>
-          <entity geocode="530306" coverage="completely" />
-        </areacoverage>
-      </office>
-      <entity type="Muban" geocode="53030601" name="บ้านงอมถ้ำ" english="Ban Ngom Tham" />
-      <entity type="Muban" geocode="53030602" name="บ้านงอมมด" english="Ban Ngom Mot" />
-      <entity type="Muban" geocode="53030603" name="บ้านงอมสัก" english="Ban Ngon Sak" />
-      <entity type="Muban" geocode="53030604" name="บ้านห้วยผึ้ง" english="Ban Huai Phueng" />
-      <entity type="Muban" geocode="53030605" name="บ้านป่ากั้ง" english="Ban Pa Kang" />
-      <entity type="Muban" geocode="53030606" name="บ้านเด่นยาว" english="Ban Ten Yao" />
-      <entity type="Muban" geocode="53030607" name="บ้านวังน้ำต้น" english="Ban Wang Nam Ton" />
-      <entity type="Muban" geocode="53030608" name="บ้านห้วยไผ่" english="Ban Huai Phai" />
-      <entity type="Muban" geocode="53030609" name="บ้านผาผึ้งน้อย" english="Ban Pha Phueng Noi" />
-    </entity>
+    <entity type="Tambon" name="ท่าแฝก" english="Tha Faek" geocode="530306" newgeocode="530407" />
     <entity type="Tambon" name="นางพญา" english="Nang Phaya" geocode="530307">
       <wiki wikidata="Q6963435" />
       <codes>
@@ -1377,6 +1344,69 @@
       <entity type="Muban" geocode="53040606" name="บ้านธรรมวงศ์" english="Ban Thammawong" />
       <entity type="Muban" geocode="53040607" name="บ้านส่องสี" english="Ban Song Si" />
       <entity type="Muban" geocode="53040608" name="บ้านมณีแก้ว" english="Ban Mani Kaeo" />
+    </entity>
+    <entity type="Tambon" name="ท่าแฝก" english="Tha Faek" geocode="530407">
+      <wiki wikidata="Q7708724" />
+      <codes>
+        <post value="53110" />
+      </codes>
+      <office type="TAOOffice">
+        <wiki wikidata="Q19244001" />
+        <geo:Point>
+          <geo:lat>17.9454</geo:lat>
+          <geo:long>100.6314</geo:long>
+        </geo:Point>
+        <url lastchecked="2015-02-13">http://thafak.org/</url>
+        <url status="offline">http://www.thafak.go.th/</url>
+        <socialweb>
+          <googleplus type="location">103730999161065690625</googleplus>
+          <zodio>104595892</zodio>
+        </socialweb>
+        <officials>
+          <official title="TAOMayor" name="รูม อินแจ้" begin="2010-04-25" endyear="2014" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="รูม อินแจ้" begin="2006-03-19" end="2010-03-18" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        </officials>
+        <council>
+          <term begin="2013-10-19" type="TAO" size="18" />
+          <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
+          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
+        </council>
+        <history>
+          <create type="TAO" effective="1997-02-13" status="Gazette">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
+        <areacoverage>
+          <entity geocode="530407" coverage="completely" />
+        </areacoverage>
+      </office>
+      <area>
+        <!-- To be confirmed - 551004 (Ping Luang) - might be point, within reservoir anyway -->
+        <bounding geocode="551001" direction="north" />
+        <bounding geocode="530502" direction="east" />
+        <bounding geocode="530503" direction="east" />
+        <bounding geocode="530504" direction="east" />
+        <bounding geocode="530403" direction="east" />
+        <bounding geocode="530402" direction="southeast" />
+        <bounding geocode="530401" direction="south" />
+        <bounding geocode="530303" direction="south" />
+        <bounding geocode="530301" direction="southwest" />
+        <bounding geocode="530307" direction="west" />
+      </area>
+      <history>
+        <reassign oldparent="5303" newparent="5304" oldgeocode="530306" effective="2015-02-14" status="Gazette">
+          <gazetteref volume="132" page="62" issue="10 ก" date="2015-02-13" />
+        </reassign>
+      </history>
+      <entity type="Muban" geocode="53040701" name="บ้านงอมถ้ำ" english="Ban Ngom Tham" />
+      <entity type="Muban" geocode="53040702" name="บ้านงอมมด" english="Ban Ngom Mot" />
+      <entity type="Muban" geocode="53040703" name="บ้านงอมสัก" english="Ban Ngon Sak" />
+      <entity type="Muban" geocode="53040704" name="บ้านห้วยผึ้ง" english="Ban Huai Phueng" />
+      <entity type="Muban" geocode="53040705" name="บ้านป่ากั้ง" english="Ban Pa Kang" />
+      <entity type="Muban" geocode="53040706" name="บ้านเด่นยาว" english="Ban Ten Yao" />
+      <entity type="Muban" geocode="53040707" name="บ้านวังน้ำต้น" english="Ban Wang Nam Ton" />
+      <entity type="Muban" geocode="53040708" name="บ้านห้วยไผ่" english="Ban Huai Phai" />
+      <entity type="Muban" geocode="53040709" name="บ้านผาผึ้งน้อย" english="Ban Pha Phueng Noi" />
     </entity>
   </entity>
   <entity type="Amphoe" name="ฟากท่า" english="Fak Tha" geocode="5305">
