@@ -272,6 +272,35 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="HistoryReassign">
+    <xs:annotation>
+      <xs:documentation>Parent entity changed.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:HistoryEntryBase">
+        <xs:attribute name="type" type="t:EntityType" use="optional">
+          <xs:annotation>
+            <xs:documentation>Type of the entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldparent" type="xs:unsignedInt" use="required">
+          <xs:annotation>
+            <xs:documentation>Geocode of the previous parent entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="newparent" type="xs:unsignedInt" use="required">
+          <xs:annotation>
+            <xs:documentation>Geocode of the new parent entity.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Geocode before the reassign.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="HistoryAbolish">
     <xs:annotation>
       <xs:documentation>Entity was dissolved.</xs:documentation>
@@ -324,6 +353,7 @@
       <xs:element name="alternativename" type="t:HistoryAlternativeName" />
       <xs:element name="mergedwith" type="t:HistoryMergedWith" />
       <xs:element name="areachange" type="t:HistoryAreaChange" />
+      <xs:element name="reassign" type="t:HistoryReassign" />
     </xs:choice>
   </xs:group>
   <xs:complexType name="HistoryList">

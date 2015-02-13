@@ -16,6 +16,7 @@ namespace De.AHoerstemeier.Tambon {
     
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolish))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReassign))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAreaChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryMergedWith))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCreate))]
@@ -183,6 +184,132 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.mergetoFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Parent entity changed.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryReassign", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HistoryReassign : HistoryEntryBase {
+        
+        private EntityType typeField;
+        
+        private bool typeFieldSpecified;
+        
+        private uint oldparentField;
+        
+        private uint newparentField;
+        
+        private uint oldgeocodeField;
+        
+        private bool oldgeocodeFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool typeSpecified {
+            get {
+                return this.typeFieldSpecified;
+            }
+            set {
+                this.typeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldparent {
+            get {
+                return this.oldparentField;
+            }
+            set {
+                this.oldparentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint newparent {
+            get {
+                return this.newparentField;
+            }
+            set {
+                this.newparentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldgeocode {
+            get {
+                return this.oldgeocodeField;
+            }
+            set {
+                this.oldgeocodeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldgeocodeSpecified {
+            get {
+                return this.oldgeocodeFieldSpecified;
+            }
+            set {
+                this.oldgeocodeFieldSpecified = value;
             }
         }
     }
@@ -1541,6 +1668,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(HistoryCreate), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("mergedwith", typeof(HistoryMergedWith), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("misspelling", typeof(HistorySpelling), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(HistoryReassign), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("reformedspelling", typeof(HistoryReformSpelling), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(HistoryRename), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("statuschange", typeof(HistoryStatus), Order=0)]
