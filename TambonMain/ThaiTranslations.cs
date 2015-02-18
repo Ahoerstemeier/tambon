@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace De.AHoerstemeier.Tambon
 {
-    internal static class ThaiTranslations
+    public static class ThaiTranslations
     {
         public static Dictionary<EntityType, String> EntityNamesThai = new Dictionary<EntityType, String>()
             {
