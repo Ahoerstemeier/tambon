@@ -1102,6 +1102,33 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion PostalCode
 
+        #region BoundingEntity
+
+        public WikiDataState BoundingEntityCorrect(Item item, Entity entity, Entity neighboringEntity)
+        {
+            var expected = String.Empty;
+            if ( (neighboringEntity.wiki != null) && (!String.IsNullOrEmpty(neighboringEntity.wiki.wikidata)) )
+            {
+                expected = neighboringEntity.wiki.wikidata;
+            }
+            Statement dummy;
+            return CheckPropertyMultiValue(item, WikiBase.PropertyIdSharesBorderWith, expected, false, out dummy);
+        }
+
+        public Statement SetBoundingEntity(Item item, Entity entity, Entity neighboringEntity)
+        {
+            var expected = String.Empty;
+            if ( (neighboringEntity.wiki != null) && (!String.IsNullOrEmpty(neighboringEntity.wiki.wikidata)) )
+            {
+                expected = neighboringEntity.wiki.wikidata;
+            }
+            Statement result;
+            CheckPropertyMultiValue(item, WikiBase.PropertyIdSharesBorderWith, expected, true, out result);
+            return result;
+        }
+
+        #endregion BoundingEntity
+
         #region Slogan
 
         public WikiDataState SloganCorrect(Item item, Entity entity)

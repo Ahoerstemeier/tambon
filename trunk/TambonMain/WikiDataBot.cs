@@ -164,6 +164,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 1990", setCensus1990));
             _availableTasks.Add(new WikiDataTaskInfo("Set Slogan", SetSlogan));
             _availableTasks.Add(new WikiDataTaskInfo("Set native label", SetNativeLabel));
+            _availableTasks.Add(new WikiDataTaskInfo("Set bounding entities", SetShareBorderWith));
         }
 
         #endregion constructor
@@ -807,6 +808,45 @@ namespace De.AHoerstemeier.Tambon
                             if ( statement != null )
                             {
                                 statement.save(_helper.GetClaimSaveEditSummary(statement));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SetShareBorderWith(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities.Where(x => !x.IsObsolete && x.area.bounding.Any()) )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var allEntities = GlobalData.CompleteGeocodeList().FlatList();
+                    foreach ( var bounding in entity.area.bounding )
+                    {
+                        var boundingEntity = allEntities.FirstOrDefault(x => x.geocode == bounding.geocode);
+                        if ( (boundingEntity != null) && (!String.IsNullOrEmpty(boundingEntity.wiki.wikidata)) )
+                        {
+                            var state = _helper.BoundingEntityCorrect(item, entity, boundingEntity);
+                            _runInfo[state]++;
+                            if ( state == WikiDataState.Incomplete )
+                            {
+                                var statement = _helper.SetBoundingEntity(item, entity, boundingEntity);
+                                if ( statement != null )
+                                {
+                                    statement.save(_helper.GetClaimSaveEditSummary(statement));
+                                }
                             }
                         }
                     }
