@@ -185,6 +185,20 @@ namespace De.AHoerstemeier.Tambon
                     LoadPopulationData(filename);
                 }
             }
+            var allEntities = GlobalData.CompleteGeocodeList().FlatList();
+            foreach ( var item in allEntities.Where(x =>
+                x.newgeocode.Any() &&
+                x.population.Any(y => y.Year == year && y.source == source)).ToList() )
+            {
+                foreach ( var newGeocode in item.newgeocode )
+                {
+                    var newItem = allEntities.FirstOrDefault(x => x.geocode == newGeocode);
+                    if ( newItem != null )
+                    {
+                        newItem.population.Add(item.population.First(y => y.Year == year && y.source == source));
+                    }
+                }
+            }
         }
 
         private static void LoadPopulationData(String fileName)

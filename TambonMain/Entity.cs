@@ -847,17 +847,46 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Gets a list of obsolete geocodes of the entity.
+        /// </summary>
+        /// <value>List of obsolete geocodes of the entity.</value>
         public IEnumerable<UInt32> OldGeocodes
         {
             get
             {
                 if ( _oldGeocode == null )
                 {
-                    var entities = GlobalData.CompleteGeocodeList().FlatList().Where(x => x.newgeocode.Contains(this.geocode));
-                    _oldGeocode = entities.Select(x => x.geocode).ToList();
+                    CalcOldGeocodes(GlobalData.CompleteGeocodeList().FlatList());
                 }
                 return _oldGeocode;
             }
+        }
+
+        private void CalcOldGeocodes(IEnumerable<Entity> allEntities)
+        {
+            if ( _oldGeocode == null )
+            {
+                var entities = allEntities.Where(x => x.newgeocode.Contains(this.geocode));
+                _oldGeocode = entities.Select(x => x.geocode).ToList();
+            }
+        }
+
+        private void CalcOldGeocodesRecursive(IEnumerable<Entity> allEntities)
+        {
+            CalcOldGeocodes(allEntities);
+            foreach ( var subEntity in entity )
+            {
+                subEntity.CalcOldGeocodesRecursive(allEntities);
+            }
+        }
+
+        /// <summary>
+        /// Fills <see cref="OldGeocodes"/> for this entity and all its subentities.
+        /// </summary>
+        public void CalcOldGeocodesRecursive()
+        {
+            CalcOldGeocodesRecursive(GlobalData.CompleteGeocodeList().FlatList().Where(x => x.newgeocode.Any()).ToList());
         }
 
         /// <summary>
