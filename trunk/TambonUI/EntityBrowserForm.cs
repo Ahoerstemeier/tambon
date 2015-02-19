@@ -73,6 +73,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void EntityBrowserForm_Load(object sender, EventArgs e)
         {
             _baseEntity = GlobalData.CompleteGeocodeList();
+            _baseEntity.CalcOldGeocodesRecursive();
             _baseEntity.PropagatePostcodeRecursive();
             _allEntities = _baseEntity.FlatList().Where(x => !x.IsObsolete).ToList();
             var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
@@ -1189,8 +1190,6 @@ namespace De.AHoerstemeier.Tambon.UI
             return result;
         }
 
-        #endregion private methods
-
         private IEnumerable<GazetteEntry> AreaDefinitionAnnouncements(Entity entity)
         {
             var result = new List<GazetteEntry>();
@@ -1218,22 +1217,22 @@ namespace De.AHoerstemeier.Tambon.UI
             var entity = (Entity)(selectedNode.Tag);
             foreach ( var entry in AreaDefinitionAnnouncements(entity) )
             {
-                ShowPgf(entry);
+                ShowPdf(entry);
             }
         }
 
-        private void ShowPgf(GazetteEntry entry)
+        private void ShowPdf(GazetteEntry entry)
         {
             try
             {
                 entry.MirrorToCache();
                 System.Diagnostics.Process p = new System.Diagnostics.Process();
                 // TODO
-                String pgfFilename = entry.LocalPdfFileName;
+                String pdfFilename = entry.LocalPdfFileName;
 
-                if ( File.Exists(pgfFilename) )
+                if ( File.Exists(pdfFilename) )
                 {
-                    p.StartInfo.FileName = pgfFilename;
+                    p.StartInfo.FileName = pdfFilename;
                     p.Start();
                 }
             }
@@ -1395,6 +1394,8 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
         }
+
+        #endregion private methods
     }
 
     internal class AmphoeDataForWikipediaExport
