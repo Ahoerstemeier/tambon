@@ -1886,6 +1886,8 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="BoundingData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class BoundingData {
         
+        private List<string> pointField;
+        
         private uint geocodeField;
         
         private Direction directionField;
@@ -1898,8 +1900,26 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of BoundingData.
         /// </summary>
         public BoundingData() {
+            this.pointField = new List<string>();
             this.directionField = Direction.undefined;
             this.typeField = BoundaryType.land;
+        }
+        
+        /// <summary>
+        /// Points of the boundary as listed in the corresponding Royal Gazette announcement, in Thai UMTS notation.
+        /// </summary>
+        /// <value>
+        /// The point.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("point", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<string> point {
+            get {
+                return this.pointField;
+            }
+            set {
+                this.pointField = value;
+            }
         }
         
         /// <summary>
