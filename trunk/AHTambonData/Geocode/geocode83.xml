@@ -98,6 +98,7 @@
     </council>
   </office>
   <area>
+    <area value="543.034" unit="km²" comment="Muban book" />
     <bounding geocode="82" direction="north" type="sea" />
   </area>
   <entity type="Amphoe" name="เมืองภูเก็ต" english="Mueang Phuket" geocode="8301">
@@ -132,6 +133,11 @@
         </geo:Point>
       </oldlocations>
     </office>
+    <area>
+      <area value="224.0" unit="km²" comment="Muban book" />
+      <bounding geocode="8402" direction="west" />
+      <bounding geocode="8403" direction="north" />
+    </area>
     <entity type="Tambon" name="ตลาดใหญ่" english="Talat Yai" geocode="830101">
       <wiki wikidata="Q15506989" />
       <codes>
@@ -330,11 +336,26 @@
         <official title="DistrictOfficer" name="ขันตี ศิลปะ" comment="Either begin or end in 2007-10-24" />
       </officials>
     </office>
+    <area>
+      <area value="67.034" unit="km²" comment="Muban book" />
+      <bounding geocode="8403" direction="north" />
+      <bounding geocode="8401" direction="east" />
+    </area>
     <entity type="Tambon" name="กะทู้" english="Kathu" geocode="830201">
       <wiki wikidata="Q15391221" />
       <codes>
         <post value="83120" />
       </codes>
+      <area>
+        <bounding geocode="830202" direction="west" />
+        <bounding geocode="830293" direction="northwest" />
+        <bounding geocode="830302" direction="north" />
+        <bounding geocode="830103" direction="northeast" />
+        <bounding geocode="830104" direction="east" />
+        <bounding geocode="830105" direction="southeast" />
+        <bounding geocode="830106" direction="south" />
+        <!-- point boundary with Karon? -->
+      </area>
       <entity type="Muban" geocode="83020101" name="บ้านเก็ตโฮ่" english="Ban Ket Ho" />
       <entity type="Muban" geocode="83020102" name="บ้านกะทู้" english="Ban Kathu" />
       <entity type="Muban" geocode="83020103" name="บ้านกะทู้" english="Ban Kathu" />
@@ -349,6 +370,43 @@
       <codes>
         <post value="83150" />
       </codes>
+      <area>
+        <bounding geocode="830201" direction="north">
+          <point>MJ 209754</point>
+          <point>MJ 210755</point>
+          <point>MJ 213760</point>
+          <point>MJ 216763</point>
+          <point>MJ 220764</point>
+          <point>MJ 230764</point>
+          <point>MJ 240766</point>
+          <point>MJ 242768</point>
+        </bounding>
+        <bounding geocode="830303" direction="east">
+          <point>MJ 242768</point>
+          <point>MJ 243762</point>
+          <point>MJ 245760</point>
+          <point>MJ 250750</point>
+          <point>MJ 256740</point>
+          <point>MJ 257736</point>
+          <point>MJ 254730</point>
+          <point>MJ 255720</point>
+          <point>MJ 252710</point>
+          <point>MJ 258700</point>
+          <point>MJ 259698</point>
+        </bounding>
+        <bounding geocode="830108" direction="south">
+          <point>MJ 259698</point>
+          <point>MJ 251700</point>
+          <point>MJ 240701</point>
+          <point>MJ 230701</point>
+          <point>MJ 228702</point>
+          <point>MJ 222698</point>
+          <point>MJ 220700</point>
+          <point>MJ 210704</point>
+          <point>MJ 206701</point>
+          <point>MJ 202702</point>
+        </bounding>
+      </area>
     </entity>
     <entity type="Tambon" name="กมลา" english="Kamala" geocode="830203">
       <wiki wikidata="Q14220126" />
@@ -390,6 +448,12 @@
           <entity geocode="830203" coverage="completely" />
         </areacoverage>
       </office>
+      <area>
+        <bounding geocode="830202" direction="south" />
+        <bounding geocode="830201" direction="southeast" />
+        <bounding geocode="830302" direction="northeast" />
+        <bounding geocode="830303" direction="north" />
+      </area>
       <entity type="Muban" geocode="83020301" name="บ้านบางหวาน" english="Ban Bang Wan" />
       <entity type="Muban" geocode="83020302" name="บ้านเหนือ" english="Ban Nuea" />
       <entity type="Muban" geocode="83020303" name="บ้านนอกเล" english="Ban Nok Le" />
@@ -418,6 +482,11 @@
         <official title="DistrictOfficer" name="ไพศาล บุญล้อม" end="2007-01-07" />
       </officials>
     </office>
+    <area>
+      <area value="252.0" unit="km²" comment="Muban book" />
+      <bounding geocode="8402" direction="south" />
+      <bounding geocode="8401" direction="south" />
+    </area>
     <entity type="Tambon" name="เทพกระษัตรี" english="Thep Krasatti" geocode="830301">
       <wiki wikidata="Q15506899" />
       <office type="TAOOffice">
