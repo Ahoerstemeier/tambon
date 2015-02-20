@@ -833,7 +833,7 @@ namespace De.AHoerstemeier.Tambon
                 else
                 {
                     var allEntities = GlobalData.CompleteGeocodeList().FlatList();
-                    foreach ( var bounding in entity.area.bounding )
+                    foreach ( var bounding in entity.area.bounding.Where(x => x.type == BoundaryType.land) )
                     {
                         var boundingEntity = allEntities.FirstOrDefault(x => x.geocode == bounding.geocode);
                         if ( (boundingEntity != null) && (!String.IsNullOrEmpty(boundingEntity.wiki.wikidata)) )
