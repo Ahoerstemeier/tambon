@@ -185,6 +185,8 @@ namespace De.AHoerstemeier.Tambon
                     LoadPopulationData(filename);
                 }
             }
+
+            var geocodeToRecalculate = new List<UInt32>();
             var allEntities = GlobalData.CompleteGeocodeList().FlatList();
             foreach ( var item in allEntities.Where(x =>
                 x.newgeocode.Any() &&
@@ -195,7 +197,36 @@ namespace De.AHoerstemeier.Tambon
                     var newItem = allEntities.FirstOrDefault(x => x.geocode == newGeocode);
                     if ( newItem != null )
                     {
-                        newItem.population.Add(item.population.First(y => y.Year == year && y.source == source));
+                        if ( !newItem.IsObsolete )
+                        {
+                            newItem.population.Add(item.population.First(y => y.Year == year && y.source == source));
+                            geocodeToRecalculate.AddRange(GeocodeHelper.ParentGeocodes(newItem.geocode));
+                        }
+                    }
+                }
+                geocodeToRecalculate.AddRange(GeocodeHelper.ParentGeocodes(item.geocode));
+            }
+            foreach ( var recalculate in geocodeToRecalculate.Distinct() )
+            {
+                var entityToRecalculate = allEntities.FirstOrDefault(x => x.geocode == recalculate);
+                if ( entityToRecalculate != null )
+                {
+                    var data = entityToRecalculate.population.FirstOrDefault(y => y.Year == year && y.source == source);
+                    if ( data != null )
+                    {
+                        data.data.Clear();
+                        foreach ( var subentity in entityToRecalculate.entity.Where(x => !x.IsObsolete) )
+                        {
+                            var subData = subentity.population.FirstOrDefault(y => y.Year == year && y.source == source);
+                            if ( subData != null )
+                            {
+                                foreach ( var subDataPoint in subData.data )
+                                {
+                                    data.AddDataPoint(subDataPoint);
+                                }
+                            }
+                        }
+                        data.CalculateTotal();
                     }
                 }
             }

@@ -81,12 +81,34 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        /// <summary>
+        /// Gets the geocode of the province in which the entity with the given geocode is located.
+        /// </summary>
+        /// <param name="geocode">Entity geocode.</param>
+        /// <returns>Province geocode.</returns>
         public static UInt32 ProvinceCode(UInt32 geocode)
         {
             UInt32 result = geocode;
             while ( result > 100 )
             {
                 result = result / 100;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Gets an enumeration of the geocode of all the parents of a given geocode.
+        /// </summary>
+        /// <param name="geocode">Entity geocode.</param>
+        /// <returns>Enumeration of parent geocodes.</returns>
+        public static IEnumerable<UInt32> ParentGeocodes(UInt32 geocode)
+        {
+            var result = new List<UInt32>();
+            var value = geocode / 100;
+            while ( value != 0 )
+            {
+                result.Add(value);
+                value = value / 100;
             }
             return result;
         }
