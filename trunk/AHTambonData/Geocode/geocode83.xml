@@ -135,20 +135,63 @@
     </office>
     <area>
       <area value="224.0" unit="km²" comment="Muban book" />
-      <bounding geocode="8402" direction="west" />
-      <bounding geocode="8403" direction="north" />
+      <bounding geocode="8302" direction="west" />
+      <bounding geocode="8303" direction="north" />
     </area>
     <entity type="Tambon" name="ตลาดใหญ่" english="Talat Yai" geocode="830101">
       <wiki wikidata="Q15506989" />
       <codes>
         <post value="83000" />
       </codes>
+      <area>
+        <bounding geocode="830104" direction="northeast">
+          <point>MJ 313738</point>
+          <point>MJ 315741</point>
+          <point>MJ 320738</point>
+          <point>MJ 329730</point>
+          <point>MJ 344725</point>
+          <point>MJ 350725</point>
+          <point>MJ 350719</point>
+          <point>MJ 350718</point>
+          <point>MJ 354706</point>
+        </bounding>
+        <bounding geocode="830102" direction="west">
+          <point>MJ 332696</point>
+          <point>MJ 331712</point>
+          <point comment="In opposite direction MJ 328721">MJ 328712</point>
+          <point>MJ 327719</point>
+          <point>MJ 322717</point>
+          <point>MJ 323720</point>
+        </bounding>
+        <bounding geocode="830105" direction="west">
+          <point>MJ 323720</point>
+          <point>MJ 313738</point>
+        </bounding>
+      </area>
     </entity>
     <entity type="Tambon" name="ตลาดเหนือ" english="Talat Nuea" geocode="830102">
       <wiki wikidata="Q15506993" />
       <codes>
         <post value="83000" />
       </codes>
+      <area>
+        <bounding geocode="830105" direction="north">
+          <point>MJ 332696</point>
+          <point>MJ 320693</point>
+          <point>MJ 310693</point>
+          <point>MJ 311717</point>
+          <point>MJ 310722</point>
+          <point>MJ 323720</point>
+        </bounding>
+        <bounding geocode="830101" direction="west">
+          <point>MJ 323720</point>
+          <point>MJ 322717</point>
+          <point>MJ 327719</point>
+          <point comment="In opposite direction MJ 328712">MJ 328721</point>
+          <point>MJ 331712</point>
+          <point>MJ 332696</point>
+        </bounding>
+      </area>
     </entity>
     <entity type="Tambon" name="เกาะแก้ว" english="Ko Kaeo" geocode="830103">
       <wiki wikidata="Q15507001" />
@@ -187,6 +230,11 @@
           <entity geocode="830103" coverage="completely" />
         </areacoverage>
       </office>
+      <area>
+        <bounding geocode="830302" direction="north" />
+        <bounding geocode="830104" direction="south" />
+        <bounding geocode="830201" direction="west" />
+      </area>
       <entity type="Muban" geocode="83010301" name="บ้านสะปำ" english="Ban Sa Pa" />
       <entity type="Muban" geocode="83010302" name="บ้านบางคู" english="Ban Bang Khu" />
       <entity type="Muban" geocode="83010303" name="บ้านบางเหนียว" english="Ban Bang Niao" />
@@ -200,6 +248,11 @@
       <codes>
         <post value="83000" />
       </codes>
+      <area>
+        <bounding geocode="830103" direction="north" />
+        <bounding geocode="830101" direction="south" />
+        <bounding geocode="830201" direction="west" />
+      </area>
       <entity type="Muban" geocode="83010401" name="บ้านเกาะสิเหร่" english="Ban Ko Si Re" />
       <entity type="Muban" geocode="83010402" name="บ้านบางชีหล้า" english="Ban Bang Chi La" />
       <entity type="Muban" geocode="83010403" name="บ้านกู้กู" english="Ban Ku Ku" />
@@ -213,6 +266,13 @@
       <codes>
         <post value="83000" />
       </codes>
+      <area>
+        <bounding geocode="830201" direction="northwest" />
+        <bounding geocode="830105" direction="north" />
+        <bounding geocode="830102" direction="north" />
+        <bounding geocode="830101" comment="Missing in Gazette, but Wichit  " />
+        <bounding geocode="830106" direction="west" />
+      </area>
       <entity type="Muban" geocode="83010501" name="บ้านนาบอนใต้" english="Ban Na Bon Tai" />
       <entity type="Muban" geocode="83010502" name="บ้านแหลมชั่น" english="Ban Laem Chan" />
       <entity type="Muban" geocode="83010503" name="บ้านตีนเขา" english="Ban Tin Khao" />
@@ -262,6 +322,13 @@
           <entity geocode="830106" coverage="completely" />
         </areacoverage>
       </office>
+      <area>
+        <bounding geocode="830202" direction="north" />
+        <bounding geocode="830201" direction="north" />
+        <bounding geocode="830105" direction="northeast" />
+        <bounding geocode="830107" direction="south" />
+        <bounding geocode="830108" direction="west" />
+      </area>
       <entity type="Muban" geocode="83010601" name="บ้านเขาน้อย" english="Ban Khao Noi" />
       <entity type="Muban" geocode="83010602" name="บ้านบนสวน" english="Ban Bon Suan" />
       <entity type="Muban" geocode="83010603" name="บ้านป่าไล่" english="Ban Pa Lai" comment="TAO spells it  บ้านป่าหล่าย" />
@@ -278,6 +345,10 @@
       <codes>
         <post value="83130" />
       </codes>
+      <area>
+        <bounding geocode="830106" direction="north" />
+        <bounding geocode="830108" direction="west" />
+      </area>
       <entity type="Muban" geocode="83010701" name="บ้านใสยวน" english="Ban Sai Yuan" />
       <entity type="Muban" geocode="83010702" name="บ้านหาดราไวย์" english="Ban Hat Rawai" />
       <entity type="Muban" geocode="83010703" name="บ้านเกาะโหลน" english="Ban Ko Lon" />
@@ -304,6 +375,11 @@
           </create>
         </history>
       </office>
+      <area>
+        <bounding geocode="830202" direction="north" />
+        <bounding geocode="830106" direction="east" />
+        <bounding geocode="830107" direction="east" />
+      </area>
       <entity type="Muban" geocode="83010801" name="บ้านกะรน" english="Ban Karon" />
       <entity type="Muban" geocode="83010802" name="บ้านกะตะ" english="Ban Kata" />
       <entity type="Muban" geocode="83010803" name="บ้านบางลา" english="Ban Bang La" />
@@ -338,8 +414,8 @@
     </office>
     <area>
       <area value="67.034" unit="km²" comment="Muban book" />
-      <bounding geocode="8403" direction="north" />
-      <bounding geocode="8401" direction="east" />
+      <bounding geocode="8303" direction="north" />
+      <bounding geocode="8301" direction="east" />
     </area>
     <entity type="Tambon" name="กะทู้" english="Kathu" geocode="830201">
       <wiki wikidata="Q15391221" />
@@ -348,13 +424,12 @@
       </codes>
       <area>
         <bounding geocode="830202" direction="west" />
-        <bounding geocode="830293" direction="northwest" />
+        <bounding geocode="830203" direction="northwest" />
         <bounding geocode="830302" direction="north" />
         <bounding geocode="830103" direction="northeast" />
         <bounding geocode="830104" direction="east" />
         <bounding geocode="830105" direction="southeast" />
         <bounding geocode="830106" direction="south" />
-        <!-- point boundary with Karon? -->
       </area>
       <entity type="Muban" geocode="83020101" name="บ้านเก็ตโฮ่" english="Ban Ket Ho" />
       <entity type="Muban" geocode="83020102" name="บ้านกะทู้" english="Ban Kathu" />
@@ -371,7 +446,7 @@
         <post value="83150" />
       </codes>
       <area>
-        <bounding geocode="830201" direction="north">
+        <bounding geocode="830203" direction="north">
           <point>MJ 209754</point>
           <point>MJ 210755</point>
           <point>MJ 213760</point>
@@ -381,7 +456,7 @@
           <point>MJ 240766</point>
           <point>MJ 242768</point>
         </bounding>
-        <bounding geocode="830303" direction="east">
+        <bounding geocode="830201" direction="east">
           <point>MJ 242768</point>
           <point>MJ 243762</point>
           <point>MJ 245760</point>
@@ -394,11 +469,14 @@
           <point>MJ 258700</point>
           <point>MJ 259698</point>
         </bounding>
-        <bounding geocode="830108" direction="south">
+        <bounding geocode="830106" direction="south">
           <point>MJ 259698</point>
           <point>MJ 251700</point>
           <point>MJ 240701</point>
-          <point>MJ 230701</point>
+          <point comment="MJ 230701 - but definition of Karon and Chalong have different">MJ 239701</point>
+        </bounding>
+        <bounding geocode="830108" direction="south">
+          <point comment="MJ 230701 - but definition of Karon and Chalong have different">MJ 239701</point>
           <point>MJ 228702</point>
           <point>MJ 222698</point>
           <point>MJ 220700</point>
@@ -484,8 +562,8 @@
     </office>
     <area>
       <area value="252.0" unit="km²" comment="Muban book" />
-      <bounding geocode="8402" direction="south" />
-      <bounding geocode="8401" direction="south" />
+      <bounding geocode="8302" direction="south" />
+      <bounding geocode="8301" direction="south" />
     </area>
     <entity type="Tambon" name="เทพกระษัตรี" english="Thep Krasatti" geocode="830301">
       <wiki wikidata="Q15506899" />
