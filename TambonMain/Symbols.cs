@@ -19,7 +19,7 @@ namespace De.AHoerstemeier.Tambon
                 !mission.Any() &&
                 !goal.Any() &&
                 !emblem.Any() &&
-                color == SymbolColor.unknown &&
+                !color.Any() &&
                 !song.Any() &&
                 String.IsNullOrEmpty(symbolbird) &&
                 String.IsNullOrEmpty(symboltree) &&
