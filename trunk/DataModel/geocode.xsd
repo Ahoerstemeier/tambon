@@ -95,14 +95,24 @@
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
+  <xs:complexType name="UtmPoint">
+    <xs:annotation>
+      <xs:documentation>Geographic point in the Thai UTM encoding.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attributeGroup ref="t:Comment" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="BoundingData">
     <xs:annotation>
       <xs:documentation>Neighboring entity at same administrative rank.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="point" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="point" type="t:UtmPoint" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
-          <xs:documentation>Points of the boundary as listed in the corresponding Royal Gazette announcement, in Thai UMTS notation.</xs:documentation>
+          <xs:documentation>Points of the boundary as listed in the corresponding Royal Gazette announcement, in Thai UTM notation.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>

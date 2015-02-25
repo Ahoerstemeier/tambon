@@ -11,9 +11,9 @@
   <xs:include schemaLocation="constituencies.xsd" />
   <xs:include schemaLocation="geocode.xsd" />
 
-  <xs:simpleType name="SymbolColor">
+  <xs:simpleType name="Color">
     <xs:annotation>
-      <xs:documentation>Symbol colors.</xs:documentation>
+      <xs:documentation>Colors.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="unknown">
@@ -71,8 +71,17 @@
           <xs:documentation>Red-orange (สีแสด).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="white">
+        <xs:annotation>
+          <xs:documentation>White (สีขาว).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="SymbolColor">
+    <xs:list itemType="t:Color" />
+  </xs:simpleType>
+
   <xs:simpleType name="SmallMediumLarge">
     <xs:annotation>
       <xs:documentation>Small medium large entity categorization.</xs:documentation>
@@ -879,7 +888,7 @@
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="color" type="t:SymbolColor" default="unknown">
         <xs:annotation>
-          <xs:documentation>Symbol color of the entity.</xs:documentation>
+          <xs:documentation>Symbol color(s) of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>

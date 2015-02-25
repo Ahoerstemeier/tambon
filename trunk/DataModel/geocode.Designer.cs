@@ -1886,7 +1886,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="BoundingData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class BoundingData {
         
-        private List<string> pointField;
+        private List<UtmPoint> pointField;
         
         private uint geocodeField;
         
@@ -1900,20 +1900,20 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of BoundingData.
         /// </summary>
         public BoundingData() {
-            this.pointField = new List<string>();
+            this.pointField = new List<UtmPoint>();
             this.directionField = Direction.undefined;
             this.typeField = BoundaryType.land;
         }
         
         /// <summary>
-        /// Points of the boundary as listed in the corresponding Royal Gazette announcement, in Thai UMTS notation.
+        /// Points of the boundary as listed in the corresponding Royal Gazette announcement, in Thai UTM notation.
         /// </summary>
         /// <value>
         /// The point.
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute("point", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<string> point {
+        public List<UtmPoint> point {
             get {
                 return this.pointField;
             }
@@ -1989,6 +1989,56 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.commentField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Geographic point in the Thai UTM encoding.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UtmPoint", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class UtmPoint {
+        
+        private string commentField;
+        
+        private string valueField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
             }
         }
     }

@@ -44,7 +44,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private string symbolbirdField;
         
-        private SymbolColor colorField;
+        private string colorField;
         
         /// <summary>
         /// Creates a new instance of Symbols.
@@ -56,7 +56,7 @@ namespace De.AHoerstemeier.Tambon {
             this.visionField = new List<VisionSlogan>();
             this.sloganField = new List<VisionSlogan>();
             this.emblemField = new List<Emblem>();
-            this.colorField = SymbolColor.unknown;
+            this.colorField = "unknown";
         }
         
         /// <summary>
@@ -213,15 +213,15 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Symbol color of the entity.
+        /// Symbol color(s) of the entity.
         /// </summary>
         /// <value>
         /// The color.
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        [System.ComponentModel.DefaultValueAttribute(SymbolColor.unknown)]
+        [System.ComponentModel.DefaultValueAttribute("unknown")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SymbolColor color {
+        public string color {
             get {
                 return this.colorField;
             }
@@ -468,69 +468,6 @@ namespace De.AHoerstemeier.Tambon {
                 this.titleField = value;
             }
         }
-    }
-    
-    /// <summary>
-    /// Symbol colors.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
-    public enum SymbolColor {
-        
-        /// <summary>
-        /// Unknown or undefined value.
-        /// </summary>
-        unknown,
-        
-        /// <summary>
-        /// Orange (สีส้ม).
-        /// </summary>
-        orange,
-        
-        /// <summary>
-        /// Yellow (สีเหลือง).
-        /// </summary>
-        yellow,
-        
-        /// <summary>
-        /// Yellow (สีแดง).
-        /// </summary>
-        red,
-        
-        /// <summary>
-        /// Green (สีเขียว).
-        /// </summary>
-        green,
-        
-        /// <summary>
-        /// Green (สีม่วง).
-        /// </summary>
-        violet,
-        
-        /// <summary>
-        /// Pink/rose (สีชมพู).
-        /// </summary>
-        pink,
-        
-        /// <summary>
-        /// Light blue/sky blue (สีฟ้า).
-        /// </summary>
-        lightblue,
-        
-        /// <summary>
-        /// Dark blue/navy blue (สีน้ำเงิน, สีฟ้าเข้ม).
-        /// </summary>
-        darkblue,
-        
-        /// <summary>
-        /// Magenta (สีเลือดหมู).
-        /// </summary>
-        magenta,
-        
-        [System.Xml.Serialization.XmlEnumAttribute("red-orange")]
-        redorange,
     }
     
     /// <summary>
@@ -3180,5 +3117,73 @@ namespace De.AHoerstemeier.Tambon {
                 this.entityField = value;
             }
         }
+    }
+    
+    /// <summary>
+    /// Colors.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum Color {
+        
+        /// <summary>
+        /// Unknown or undefined value.
+        /// </summary>
+        unknown,
+        
+        /// <summary>
+        /// Orange (สีส้ม).
+        /// </summary>
+        orange,
+        
+        /// <summary>
+        /// Yellow (สีเหลือง).
+        /// </summary>
+        yellow,
+        
+        /// <summary>
+        /// Yellow (สีแดง).
+        /// </summary>
+        red,
+        
+        /// <summary>
+        /// Green (สีเขียว).
+        /// </summary>
+        green,
+        
+        /// <summary>
+        /// Green (สีม่วง).
+        /// </summary>
+        violet,
+        
+        /// <summary>
+        /// Pink/rose (สีชมพู).
+        /// </summary>
+        pink,
+        
+        /// <summary>
+        /// Light blue/sky blue (สีฟ้า).
+        /// </summary>
+        lightblue,
+        
+        /// <summary>
+        /// Dark blue/navy blue (สีน้ำเงิน, สีฟ้าเข้ม).
+        /// </summary>
+        darkblue,
+        
+        /// <summary>
+        /// Magenta (สีเลือดหมู).
+        /// </summary>
+        magenta,
+        
+        [System.Xml.Serialization.XmlEnumAttribute("red-orange")]
+        redorange,
+        
+        /// <summary>
+        /// White (สีขาว).
+        /// </summary>
+        white,
     }
 }
