@@ -1683,6 +1683,9 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    /// <summary>
+    /// Area and bounding entities.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
