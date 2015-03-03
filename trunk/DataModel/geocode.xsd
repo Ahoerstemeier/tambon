@@ -134,6 +134,9 @@
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="Area">
+    <xs:annotation>
+      <xs:documentation>Area and bounding entities.</xs:documentation>
+    </xs:annotation>
     <xs:sequence minOccurs="1" maxOccurs="1">
       <xs:element minOccurs="0" maxOccurs="unbounded" name="area" type="t:AreaData">
         <xs:annotation>

@@ -505,6 +505,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<LocalGovernmentCoverageEntity> areacoverageField;
         
+        private Area areaField;
+        
         private OfficeType typeField;
         
         private bool obsoleteField;
@@ -517,6 +519,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of Office.
         /// </summary>
         public Office() {
+            this.areaField = new Area();
             this.areacoverageField = new List<LocalGovernmentCoverageEntity>();
             this.historyField = new HistoryList();
             this.oldlocationsField = new List<OldLocation>();
@@ -731,6 +734,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.areacoverageField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Area and neighboring entities.
+        /// </summary>
+        /// <value>
+        /// The area.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Area area {
+            get {
+                return this.areaField;
+            }
+            set {
+                this.areaField = value;
             }
         }
         

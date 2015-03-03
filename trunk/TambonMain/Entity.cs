@@ -937,6 +937,7 @@ namespace De.AHoerstemeier.Tambon
                     }
 
                     result.wiki = office.wiki;
+                    result.area = office.area;
                     result.office.Add(office);
                     // history has latest change at beginning
                     foreach ( var history in office.history.Items.Where(x => x.status == ChangeStatus.Done || x.status == ChangeStatus.Gazette).Reverse() )

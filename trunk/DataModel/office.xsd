@@ -1115,6 +1115,11 @@
           <xs:documentation>Central government entities covered by the office.</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="area" type="t:Area">
+        <xs:annotation>
+          <xs:documentation>Area and neighboring entities.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
     <xs:attribute name="type" type="t:OfficeType" use="required">
       <xs:annotation>
