@@ -1036,7 +1036,23 @@ namespace De.AHoerstemeier.Tambon
         public void AddPopulationDataQualifiers(Statement statement, PopulationData data)
         {
             var pointInTimeQualifier = new Qualifier(statement, SnakType.Value, new EntityId(WikiBase.PropertyIdPointInTime), TimeValue.DateValue(data.referencedate));
-            statement.Qualifiers.Add(pointInTimeQualifier);
+            // statement.Qualifiers.Add(pointInTimeQualifier);  // already added by the constructor
+
+            var method = String.Empty;
+            switch ( data.source )
+            {
+                case PopulationDataSourceType.Census:
+                    method = WikiBase.ItemCensuses;
+                    break;
+                case PopulationDataSourceType.DOPA:
+                    method = WikiBase.ItemRegistration;
+                    break;
+            }
+            if ( !String.IsNullOrEmpty(method) )
+            {
+                var methodQualifier = new Qualifier(statement, SnakType.Value, new EntityId(WikiBase.PropertyIdDeterminationMethod), new EntityIdValue(new EntityId(method)));
+                // statement.Qualifiers.Add(methodQualifier);  // already added by the constructor
+            }
         }
 
         #endregion PopulationData
