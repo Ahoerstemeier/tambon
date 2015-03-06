@@ -60,6 +60,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdFoundationalText = "P457";
         public const String PropertyIdMotto = "P1451";
         public const String PropertyIdNativeLabel = "P1705";
+        public const String PropertyIdDeterminationMethod = "P459";
 
         // public const String PropertyIdArea = "Pxxxx";
         public const String PropertyIdCategoryCombinesTopic = "P971";
@@ -84,6 +85,9 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemSourceTIS1099BE2548 = "Q15477531";
         public const String ItemSourceCCAATT = "Q15477767";
         public const String ItemDopa = "Q13012489";
+
+        public const String ItemCensuses = "Q39825";
+        public const String ItemRegistration = "Q15194024";
 
         // source statements for population
         public static Dictionary<Int16, String> ItemCensus = new Dictionary<Int16, String>()

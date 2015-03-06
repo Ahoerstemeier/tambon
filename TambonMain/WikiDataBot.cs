@@ -889,9 +889,10 @@ namespace De.AHoerstemeier.Tambon
                             }
 
                             _helper.AddPopulationDataQualifiers(statement, data);
-                            // just need to save 1st qualifier, all others are saved with it
-                            var qualifier = statement.Qualifiers.First();
-                            qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                            foreach ( var qualifier in statement.Qualifiers )
+                            {
+                                qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                            }
                         }
                     }
                 }
