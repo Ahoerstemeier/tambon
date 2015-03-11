@@ -75,6 +75,7 @@ namespace De.AHoerstemeier.Tambon.UI
             _baseEntity = GlobalData.CompleteGeocodeList();
             _baseEntity.CalcOldGeocodesRecursive();
             _baseEntity.PropagatePostcodeRecursive();
+            _baseEntity.PropagateObsoleteToSubEntities();
             _allEntities = _baseEntity.FlatList().Where(x => !x.IsObsolete).ToList();
             var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
             _localGovernments.AddRange(_allEntities.Where(x => x.type.IsLocalGovernment()));

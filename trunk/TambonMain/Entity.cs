@@ -419,6 +419,24 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
+        /// Sets <see cref="obsolete"/> to all sub-entities if the parent entity is obsolete.
+        /// </summary>
+        public void PropagateObsoleteToSubEntities()
+        {
+            foreach ( var item in entity.Where(x => x.IsObsolete && x.entity.Any()) )
+            {
+                foreach ( var subItem in item.FlatList() )
+                {
+                    subItem.obsolete = true;
+                }
+            }
+            foreach ( var item in entity.Where(x => !x.IsObsolete) )
+            {
+                item.PropagateObsoleteToSubEntities();
+            }
+        }
+
+        /// <summary>
         /// Gets the display name of the entity.
         /// </summary>
         /// <returns>The display name of the entity.</returns>
