@@ -643,7 +643,7 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
-        /// <returns>Statement containing the country.</returns>
+        /// <returns>Statement containing the geocode.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
         public Statement SetGeocode(Item item, Entity entity, Boolean overrideWrongData)
         {
@@ -687,7 +687,7 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
-        /// <returns>Statement containing the country.</returns>
+        /// <returns>Statement containing the GND.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
         public Statement SetGnd(Item item, Entity entity, Boolean overrideWrongData)
         {
@@ -715,6 +715,50 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion GND
+
+        #region Locator map
+
+        private WikiDataState LocatorMap(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+            stringValue = String.Format("Amphoe {0}.svg", entity.geocode);
+            return CheckStringValue(item, WikiBase.PropertyIdLocationMap, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the locator map.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the locator map.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetLocatorMap(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            LocatorMap(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the locator map is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState LocatorMapCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return LocatorMap(item, entity, false, false, out dummy);
+        }
+
+        #endregion Locator map
 
         #region Location
 

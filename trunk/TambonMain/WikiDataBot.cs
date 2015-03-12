@@ -109,6 +109,12 @@ namespace De.AHoerstemeier.Tambon
             private set;
         }
 
+        public WikiDataTaskInfo SetLocatorMapTask
+        {
+            get;
+            private set;
+        }
+
         #endregion properties
 
         #region constructor
@@ -150,6 +156,8 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set OpenStreetMap", SetOpenStreetMap));
             SetContainsSubdivisionTask = new WikiDataTaskInfo("Set ContainsSubdivisions", SetContainsSubdivisions);
             _availableTasks.Add(SetContainsSubdivisionTask);
+            SetLocatorMapTask = new WikiDataTaskInfo("Set locator map", SetLocatorMap);
+            _availableTasks.Add(SetLocatorMapTask);
             _availableTasks.Add(new WikiDataTaskInfo("Set TIS 1099", SetGeocode));
             _availableTasks.Add(new WikiDataTaskInfo("Set GND reference", SetGnd));
             _availableTasks.Add(new WikiDataTaskInfo("Set Postal code", SetPostalCode));
@@ -735,6 +743,42 @@ namespace De.AHoerstemeier.Tambon
                     if ( state != WikiDataState.Valid )
                     {
                         var statement = _helper.SetTypeOfAdministrativeUnit(item, entity, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SetLocatorMap(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.LocatorMapCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong type", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetLocatorMap(item, entity, overrideData);
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));

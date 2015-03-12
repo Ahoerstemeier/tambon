@@ -320,6 +320,7 @@ namespace De.AHoerstemeier.Tambon.UI
             btnLogin.Enabled = true;
             btnCountInterwiki.Enabled = false;
             btnCreateTambon.Enabled = false;
+            btnMap.Enabled = false;
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -548,6 +549,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             cbxAmphoe.SelectedItem = null;
             RefreshAmphoeSelection();
+            btnMap.Enabled = changwat != null;
         }
 
         private void cbxAmphoe_SelectedValueChanged(object sender, EventArgs e)
@@ -684,6 +686,17 @@ namespace De.AHoerstemeier.Tambon.UI
                 result.AppendLine(String.Join(" - ", codes));
             }
             edtCollisions.Text = result.ToString();
+        }
+
+        private void btnMap_Click(object sender, EventArgs e)
+        {
+            var changwat = cbxChangwat.SelectedItem as Entity;
+            if ( changwat != null )
+            {
+                var amphoe = changwat.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Amphoe));
+                var dummy = new StringBuilder();
+                _bot.SetLocatorMapTask.Task(amphoe, dummy, false);
+            }
         }
     }
 }
