@@ -52,6 +52,7 @@
             this.edtSpecificItemId = new System.Windows.Forms.TextBox();
             this.btnTambonList = new System.Windows.Forms.Button();
             this.btnLaoList = new System.Windows.Forms.Button();
+            this.btnMap = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStat
@@ -292,11 +293,23 @@
             this.btnLaoList.UseVisualStyleBackColor = true;
             this.btnLaoList.Click += new System.EventHandler(this.btnLaoList_Click);
             // 
+            // btnMap
+            // 
+            this.btnMap.Location = new System.Drawing.Point(12, 335);
+            this.btnMap.Name = "btnMap";
+            this.btnMap.Size = new System.Drawing.Size(98, 23);
+            this.btnMap.TabIndex = 26;
+            this.btnMap.Text = "Map";
+            this.btnMap.UseVisualStyleBackColor = true;
+            this.btnMap.Visible = false;
+            this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.btnMap);
             this.Controls.Add(this.btnLaoList);
             this.Controls.Add(this.btnTambonList);
             this.Controls.Add(this.lblSpecificItemId);
@@ -355,5 +368,6 @@
         private System.Windows.Forms.TextBox edtSpecificItemId;
         private System.Windows.Forms.Button btnTambonList;
         private System.Windows.Forms.Button btnLaoList;
+        private System.Windows.Forms.Button btnMap;
     }
 }
