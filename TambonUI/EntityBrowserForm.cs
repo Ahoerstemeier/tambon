@@ -638,6 +638,18 @@ namespace De.AHoerstemeier.Tambon.UI
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Count(),
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
 
+            var localGovernmentExpectingHistory = localGovernmentsInEntity.Where(x => x.Dola != null && x.type != EntityType.PAO);
+            var localGovernmentWithoutLatestHistory = localGovernmentExpectingHistory.Where(x =>
+                !x.history.Items.Any(y => y is HistoryCreate && (y as HistoryCreate).type == x.type) &&
+                !x.history.Items.Any(y => y is HistoryStatus && (y as HistoryStatus).@new == x.type)
+                ).ToList();
+            localGovernmentWithoutLatestHistory.AddRange(localGovernmentExpectingHistory.Where(x =>
+                x.IsObsolete &&
+                !x.history.Items.Any(y => y is HistoryAbolish && (y as HistoryAbolish).type == x.type))
+                );
+            result += Environment.NewLine + String.Format("LAO without latest history: {0} ({1} TAO)",
+                localGovernmentWithoutLatestHistory.Count(),
+                localGovernmentWithoutLatestHistory.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
             txtLocalGovernment.Text = result;
         }
 
