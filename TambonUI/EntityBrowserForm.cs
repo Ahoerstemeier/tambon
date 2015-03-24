@@ -640,8 +640,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var localGovernmentExpectingHistory = localGovernmentsInEntity.Where(x => x.Dola != null && x.type != EntityType.PAO);
             var localGovernmentWithoutLatestHistory = localGovernmentExpectingHistory.Where(x =>
-                !x.history.Items.Any(y => y is HistoryCreate && (y as HistoryCreate).type == x.type) &&
-                !x.history.Items.Any(y => y is HistoryStatus && (y as HistoryStatus).@new == x.type)
+                !x.history.Items.Any(y => y is HistoryCreate) &&
+                (!x.history.Items.Any(y => y is HistoryCreate && (y as HistoryCreate).type == x.type) ||
+                 !x.history.Items.Any(y => y is HistoryStatus && (y as HistoryStatus).@new == x.type))
                 ).ToList();
             localGovernmentWithoutLatestHistory.AddRange(localGovernmentExpectingHistory.Where(x =>
                 x.IsObsolete &&
