@@ -308,6 +308,7 @@ namespace De.AHoerstemeier.Tambon.UI
             btnLogin.Enabled = false;
             btnCountInterwiki.Enabled = true;
             RefreshAmphoeSelection();
+            CalculateCreateLocalGovernmentEnabled();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -614,8 +615,13 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void cbxLocalGovernments_SelectedValueChanged(object sender, EventArgs e)
         {
+            CalculateCreateLocalGovernmentEnabled();
+        }
+
+        private void CalculateCreateLocalGovernmentEnabled()
+        {
             var localGovernment = cbxLocalGovernments.SelectedItem as Entity;
-            btnCreateLocalGovernment.Enabled = (localGovernment != null) && (localGovernment.wiki == null || String.IsNullOrWhiteSpace(localGovernment.wiki.wikidata));
+            btnCreateLocalGovernment.Enabled = (_bot != null) && (localGovernment != null) && (localGovernment.wiki == null || String.IsNullOrWhiteSpace(localGovernment.wiki.wikidata));
         }
 
         private void btnCreateLocalGovernment_Click(object sender, EventArgs e)
