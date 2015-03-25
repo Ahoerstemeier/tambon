@@ -1893,7 +1893,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private uint geocodeField;
         
-        private Direction directionField;
+        private List<Direction> directionField;
         
         private BoundaryType typeField;
         
@@ -1903,8 +1903,8 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of BoundingData.
         /// </summary>
         public BoundingData() {
+            this.directionField = new List<Direction>();
             this.pointField = new List<UtmPoint>();
-            this.directionField = Direction.undefined;
             this.typeField = BoundaryType.land;
         }
         
@@ -1949,9 +1949,8 @@ namespace De.AHoerstemeier.Tambon {
         /// The direction.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(Direction.undefined)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Direction direction {
+        public List<Direction> direction {
             get {
                 return this.directionField;
             }
@@ -2055,23 +2054,60 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
     public enum Direction {
         
+        /// <summary>
+        /// Direction isn't set.
+        /// </summary>
         undefined,
         
+        /// <summary>
+        /// Northern direction.
+        /// </summary>
         north,
         
+        /// <summary>
+        /// Southern direction.
+        /// </summary>
         south,
         
+        /// <summary>
+        /// Western direction.
+        /// </summary>
         west,
         
+        /// <summary>
+        /// Eastern direction.
+        /// </summary>
         east,
         
+        /// <summary>
+        /// Northwestern direction.
+        /// </summary>
         northwest,
         
+        /// <summary>
+        /// Northeastern direction.
+        /// </summary>
         northeast,
         
+        /// <summary>
+        /// Southwestern direction.
+        /// </summary>
         southwest,
         
+        /// <summary>
+        /// Southeastern direction.
+        /// </summary>
         southeast,
+        
+        /// <summary>
+        /// Completely encircled.
+        /// </summary>
+        enclosed,
+        
+        /// <summary>
+        /// Direction cannot be defined.
+        /// </summary>
+        other,
     }
     
     /// <summary>

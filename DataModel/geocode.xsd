@@ -34,17 +34,70 @@
       <xs:documentation>Cardinal direction.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="undefined" />
-      <xs:enumeration value="north" />
-      <xs:enumeration value="south" />
-      <xs:enumeration value="west" />
-      <xs:enumeration value="east" />
-      <xs:enumeration value="northwest" />
-      <xs:enumeration value="northeast" />
-      <xs:enumeration value="southwest" />
-      <xs:enumeration value="southeast" />
+      <xs:enumeration value="undefined">
+        <xs:annotation>
+          <xs:documentation>Direction isn't set.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="north">
+        <xs:annotation>
+          <xs:documentation>Northern direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="south">
+        <xs:annotation>
+          <xs:documentation>Southern direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="west">
+        <xs:annotation>
+          <xs:documentation>Western direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="east">
+        <xs:annotation>
+          <xs:documentation>Eastern direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="northwest">
+        <xs:annotation>
+          <xs:documentation>Northwestern direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="northeast">
+        <xs:annotation>
+          <xs:documentation>Northeastern direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="southwest">
+        <xs:annotation>
+          <xs:documentation>Southwestern direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="southeast">
+        <xs:annotation>
+          <xs:documentation>Southeastern direction.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="enclosed">
+        <xs:annotation>
+          <xs:documentation>Completely encircled.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Direction cannot be defined.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="Directions">
+    <xs:annotation>
+      <xs:documentation>List of directions.</xs:documentation>
+    </xs:annotation>
+    <xs:list itemType="t:Direction"></xs:list>
+  </xs:simpleType>
+
   <xs:simpleType name="BoundaryType">
     <xs:annotation>
       <xs:documentation>Type of boundary.</xs:documentation>
@@ -121,7 +174,7 @@
         <xs:documentation>Geocode of neighboring entity.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="direction" type="t:Direction" default="undefined" use="optional">
+    <xs:attribute name="direction" type="t:Directions" use="optional">
       <xs:annotation>
         <xs:documentation>Direction in which the units borders, as seen from the entity in which this tag is located.</xs:documentation>
       </xs:annotation>
