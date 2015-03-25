@@ -880,7 +880,7 @@ namespace De.AHoerstemeier.Tambon
                     foreach ( var bounding in entity.area.bounding.Where(x => x.type == BoundaryType.land) )
                     {
                         var boundingEntity = allEntities.FirstOrDefault(x => x.geocode == bounding.geocode);
-                        if ( (boundingEntity != null) && (!String.IsNullOrEmpty(boundingEntity.wiki.wikidata)) )
+                        if ( (boundingEntity != null) && (boundingEntity.wiki != null) && (!String.IsNullOrEmpty(boundingEntity.wiki.wikidata)) )
                         {
                             var state = _helper.BoundingEntityCorrect(item, entity, boundingEntity);
                             _runInfo[state]++;

@@ -229,6 +229,7 @@
             // 
             // btnCreateTambon
             // 
+            this.btnCreateTambon.Enabled = false;
             this.btnCreateTambon.Location = new System.Drawing.Point(124, 279);
             this.btnCreateTambon.Name = "btnCreateTambon";
             this.btnCreateTambon.Size = new System.Drawing.Size(92, 23);
@@ -249,6 +250,7 @@
             // 
             // btnCreateLocalGovernment
             // 
+            this.btnCreateLocalGovernment.Enabled = false;
             this.btnCreateLocalGovernment.Location = new System.Drawing.Point(124, 335);
             this.btnCreateLocalGovernment.Name = "btnCreateLocalGovernment";
             this.btnCreateLocalGovernment.Size = new System.Drawing.Size(92, 23);
