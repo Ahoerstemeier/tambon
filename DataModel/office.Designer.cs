@@ -42,6 +42,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private string symbolflowerField;
         
+        private string plantField;
+        
         private string symbolbirdField;
         
         private string colorField;
@@ -196,12 +198,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Botanical name of the royally bestowed plant (พันธุ์ไม้มงคลพระราชทาน).
+        /// </summary>
+        /// <value>
+        /// The plant.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string plant {
+            get {
+                return this.plantField;
+            }
+            set {
+                this.plantField = value;
+            }
+        }
+        
+        /// <summary>
         /// Scientific name of the symbol bird (นกประจำจังหวัด).
         /// </summary>
         /// <value>
         /// The symbolbird.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string symbolbird {
             get {
@@ -218,7 +237,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The color.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
         [System.ComponentModel.DefaultValueAttribute("unknown")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string color {
