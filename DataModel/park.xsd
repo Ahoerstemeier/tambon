@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd" />
+
+  <xs:include schemaLocation="basictypes.xsd" />
+  <xs:include schemaLocation="history.xsd" />
+
+  <xs:complexType name="Park">
+    <xs:annotation>
+      <xs:documentation>Protected area.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" type="t:WikiLocation" name="wiki">
+        <xs:annotation>
+          <xs:documentation>Symbols, slogan and vision statements of the office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" ref="geo:Point">
+        <xs:annotation>
+          <xs:documentation>Location of park, pointing approximately at the main entrance.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList">
+        <xs:annotation>
+          <xs:documentation>List of events concerning the park.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="type" type="t:ParkType" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of the protected area.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="id" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Id of the park, unique within the type.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:ThaiNameMandatory" />
+    <xs:attribute name="obsolete" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>Protected area no longer existing/protected.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="locationgeocode" type="t:GeocodeList" use="optional">
+      <xs:annotation>
+        <xs:documentation>Geocodes of the entites covered by the protected area.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
+</xs:schema>

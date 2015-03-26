@@ -15,792 +15,6 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolish))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReassign))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAreaChange))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryMergedWith))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCreate))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpellingBase))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAlternativeName))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReformSpelling))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpelling))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryRename))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryStatus))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryEntryBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public abstract partial class HistoryEntryBase : ReferenceList {
-        
-        private System.DateTime effectiveField;
-        
-        private bool effectiveFieldSpecified;
-        
-        private ChangeStatus statusField;
-        
-        private string commentField;
-        
-        /// <summary>
-        /// Creates a new instance of HistoryEntryBase.
-        /// </summary>
-        public HistoryEntryBase() {
-            this.statusField = ChangeStatus.Done;
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime effective {
-            get {
-                return this.effectiveField;
-            }
-            set {
-                this.effectiveField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool effectiveSpecified {
-            get {
-                return this.effectiveFieldSpecified;
-            }
-            set {
-                this.effectiveFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(ChangeStatus.Done)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ChangeStatus status {
-            get {
-                return this.statusField;
-            }
-            set {
-                this.statusField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string comment {
-            get {
-                return this.commentField;
-            }
-            set {
-                this.commentField = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Entity was dissolved.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryAbolish", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryAbolish : HistoryEntryBase {
-        
-        private EntityType typeField;
-        
-        private uint mergetoField;
-        
-        private bool mergetoFieldSpecified;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint mergeto {
-            get {
-                return this.mergetoField;
-            }
-            set {
-                this.mergetoField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool mergetoSpecified {
-            get {
-                return this.mergetoFieldSpecified;
-            }
-            set {
-                this.mergetoFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Parent entity changed.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryReassign", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryReassign : HistoryEntryBase {
-        
-        private EntityType typeField;
-        
-        private bool typeFieldSpecified;
-        
-        private uint oldparentField;
-        
-        private uint newparentField;
-        
-        private uint oldgeocodeField;
-        
-        private bool oldgeocodeFieldSpecified;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool typeSpecified {
-            get {
-                return this.typeFieldSpecified;
-            }
-            set {
-                this.typeFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldparent {
-            get {
-                return this.oldparentField;
-            }
-            set {
-                this.oldparentField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint newparent {
-            get {
-                return this.newparentField;
-            }
-            set {
-                this.newparentField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldgeocode {
-            get {
-                return this.oldgeocodeField;
-            }
-            set {
-                this.oldgeocodeField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldgeocodeSpecified {
-            get {
-                return this.oldgeocodeFieldSpecified;
-            }
-            set {
-                this.oldgeocodeFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Area covered by the entity was changed.
-    /// </summary>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryMergedWith))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryAreaChange", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryAreaChange : HistoryEntryBase {
-        
-        private EntityType typeField;
-        
-        private bool typeFieldSpecified;
-        
-        private double oldareaField;
-        
-        private bool oldareaFieldSpecified;
-        
-        private double newareaField;
-        
-        private bool newareaFieldSpecified;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool typeSpecified {
-            get {
-                return this.typeFieldSpecified;
-            }
-            set {
-                this.typeFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double oldarea {
-            get {
-                return this.oldareaField;
-            }
-            set {
-                this.oldareaField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldareaSpecified {
-            get {
-                return this.oldareaFieldSpecified;
-            }
-            set {
-                this.oldareaFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double newarea {
-            get {
-                return this.newareaField;
-            }
-            set {
-                this.newareaField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool newareaSpecified {
-            get {
-                return this.newareaFieldSpecified;
-            }
-            set {
-                this.newareaFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Entity was enlarged by taking over responsibility from dissolved entities.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryMergedWith", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryMergedWith : HistoryAreaChange {
-        
-        private EntityType mergefromtypeField;
-        
-        private uint mergefromField;
-        
-        private bool mergefromFieldSpecified;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType mergefromtype {
-            get {
-                return this.mergefromtypeField;
-            }
-            set {
-                this.mergefromtypeField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint mergefrom {
-            get {
-                return this.mergefromField;
-            }
-            set {
-                this.mergefromField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool mergefromSpecified {
-            get {
-                return this.mergefromFieldSpecified;
-            }
-            set {
-                this.mergefromFieldSpecified = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Entity was created.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryCreate", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryCreate : HistoryEntryBase {
-        
-        private EntityType typeField;
-        
-        private List<uint> splitfromField;
-        
-        /// <summary>
-        /// Creates a new instance of HistoryCreate.
-        /// </summary>
-        public HistoryCreate() {
-            this.splitfromField = new List<uint>();
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType type {
-            get {
-                return this.typeField;
-            }
-            set {
-                this.typeField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<uint> splitfrom {
-            get {
-                return this.splitfromField;
-            }
-            set {
-                this.splitfromField = value;
-            }
-        }
-    }
-    
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAlternativeName))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReformSpelling))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpelling))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistorySpellingBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public abstract partial class HistorySpellingBase : HistoryEntryBase {
-        
-        private string nameField;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Alternative name or spelling, which is more than a plain misspelling.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryAlternativeName", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryAlternativeName : HistorySpellingBase {
-        
-        private string englishField;
-        
-        private string yearField;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string english {
-            get {
-                return this.englishField;
-            }
-            set {
-                this.englishField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string year {
-            get {
-                return this.yearField;
-            }
-            set {
-                this.yearField = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// Alternative spelling during the Thai spelling reform 1942-1945.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryReformSpelling", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryReformSpelling : HistorySpellingBase {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistorySpelling", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistorySpelling : HistorySpellingBase {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryRename", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryRename : HistoryEntryBase {
-        
-        private string nameField;
-        
-        private string englishField;
-        
-        private string oldnameField;
-        
-        private string oldenglishField;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string english {
-            get {
-                return this.englishField;
-            }
-            set {
-                this.englishField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string oldname {
-            get {
-                return this.oldnameField;
-            }
-            set {
-                this.oldnameField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string oldenglish {
-            get {
-                return this.oldenglishField;
-            }
-            set {
-                this.oldenglishField = value;
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryStatus", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryStatus : HistoryEntryBase {
-        
-        private EntityType oldField;
-        
-        private EntityType newField;
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType old {
-            get {
-                return this.oldField;
-            }
-            set {
-                this.oldField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EntityType @new {
-            get {
-                return this.newField;
-            }
-            set {
-                this.newField = value;
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -826,6 +40,8 @@ namespace De.AHoerstemeier.Tambon {
         private List<Entity> entityField;
         
         private List<EntityCount> entitycountField;
+        
+        private List<Park> parkField;
         
         private EntityType typeField;
         
@@ -859,6 +75,7 @@ namespace De.AHoerstemeier.Tambon {
         public Entity() {
             this.parentField = new List<uint>();
             this.newgeocodeField = new List<uint>();
+            this.parkField = new List<Park>();
             this.entitycountField = new List<EntityCount>();
             this.entityField = new List<Entity>();
             this.populationField = new List<PopulationData>();
@@ -920,6 +137,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Offices of the entity.
+        /// </summary>
+        /// <value>
+        /// The office.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("office", Order=3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<Office> office {
@@ -931,6 +154,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Area information.
+        /// </summary>
+        /// <value>
+        /// The area.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Area area {
@@ -942,6 +171,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// List of events concerning the entity.
+        /// </summary>
+        /// <value>
+        /// The history.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public HistoryList history {
@@ -953,6 +188,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Population data.
+        /// </summary>
+        /// <value>
+        /// The population.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("population", Order=6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<PopulationData> population {
@@ -975,6 +216,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Numbers of subentities.
+        /// </summary>
+        /// <value>
+        /// The entitycount.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute("entitycount", Order=8)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<EntityCount> entitycount {
@@ -983,6 +230,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.entitycountField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Protected areas within the entity.
+        /// </summary>
+        /// <value>
+        /// The park.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("park", Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<Park> park {
+            get {
+                return this.parkField;
+            }
+            set {
+                this.parkField = value;
             }
         }
         
@@ -1031,6 +295,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// TIS1099 code of the entity.
+        /// </summary>
+        /// <value>
+        /// The geocode.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint geocode {
@@ -1042,6 +312,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// New geocodes of the entity. Implies that the entity is obsolete.
+        /// </summary>
+        /// <value>
+        /// The newgeocode.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<uint> newgeocode {
@@ -1053,6 +329,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Indication for entities no longer active.
+        /// </summary>
+        /// <value>
+        /// The obsolete.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool obsolete {
@@ -1115,6 +397,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Reference to the corresponding tambon. Only for municipalities which were a TAO.
+        /// </summary>
+        /// <value>
+        /// The tambon.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint tambon {
@@ -1143,6 +431,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Corresponding Muban. Only for Chumchon.
+        /// </summary>
+        /// <value>
+        /// The muban.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public uint muban {
@@ -1632,53 +926,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.introducedwithField = value;
-            }
-        }
-    }
-    
-    /// <summary>
-    /// List of historical changes.
-    /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryList {
-        
-        private List<HistoryEntryBase> itemsField;
-        
-        /// <summary>
-        /// Creates a new instance of HistoryList.
-        /// </summary>
-        public HistoryList() {
-            this.itemsField = new List<HistoryEntryBase>();
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("abolished", typeof(HistoryAbolish), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("alternativename", typeof(HistoryAlternativeName), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(HistoryAreaChange), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(HistoryCreate), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("mergedwith", typeof(HistoryMergedWith), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("misspelling", typeof(HistorySpelling), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(HistoryReassign), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("reformedspelling", typeof(HistoryReformSpelling), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(HistoryRename), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("statuschange", typeof(HistoryStatus), Order=0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<HistoryEntryBase> Items {
-            get {
-                return this.itemsField;
-            }
-            set {
-                this.itemsField = value;
             }
         }
     }

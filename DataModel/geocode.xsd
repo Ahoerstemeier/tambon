@@ -11,6 +11,8 @@
   <xs:include schemaLocation="basictypes.xsd" />
   <xs:include schemaLocation="populationdata.xsd" />
   <xs:include schemaLocation="gazette.xsd" />
+  <xs:include schemaLocation="history.xsd" />
+  <xs:include schemaLocation="park.xsd" />
 
   <xs:simpleType name="AreaUnit">
     <xs:annotation>
@@ -203,240 +205,6 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="HistoryEntryBase" abstract="1">
-    <xs:complexContent>
-      <xs:extension base="t:ReferenceList">
-        <xs:attribute name="effective" type="xs:date" use="optional">
-          <xs:annotation>
-            <xs:documentation>Date the change became officially effective.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="status" type="t:ChangeStatus" use="optional" default="Done">
-          <xs:annotation>
-            <xs:documentation>State of the change.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attributeGroup ref="t:Comment" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistoryStatus">
-    <xs:complexContent>
-      <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="old" type="t:EntityType" use="required">
-          <xs:annotation>
-            <xs:documentation>Original type of the entity.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="new" type="t:EntityType" use="required">
-          <xs:annotation>
-            <xs:documentation>Type of the entity after the change.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistoryRename">
-    <xs:complexContent>
-      <xs:extension base="t:HistoryEntryBase">
-        <xs:attributeGroup ref="t:ThaiNameMandatory" />
-        <xs:attribute name="oldname" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation>Previous name in Thai script..</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="oldenglish" type="xs:string" use="optional">
-          <xs:annotation>
-            <xs:documentation>Romanization of old name.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistorySpellingBase" abstract="1">
-    <xs:complexContent>
-      <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="name" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation>Name or spelling of name a given time.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistorySpelling">
-    <xs:complexContent>
-      <xs:extension base="t:HistorySpellingBase" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistoryReformSpelling">
-    <xs:annotation>
-      <xs:documentation>Alternative spelling during the Thai spelling reform 1942-1945.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:HistorySpellingBase" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistoryAlternativeName">
-    <xs:annotation>
-      <xs:documentation>Alternative name or spelling, which is more than a plain misspelling.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:HistorySpellingBase">
-        <xs:attribute name="english" type="xs:string" use="optional">
-          <xs:annotation>
-            <xs:documentation>Romanization of name.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="year" type="xs:gYear" use="optional">
-          <xs:annotation>
-            <xs:documentation>Year in which the alternative name was apparently used.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="GeocodeList">
-    <xs:annotation>
-      <xs:documentation>List of geocodes.</xs:documentation>
-    </xs:annotation>
-    <xs:list itemType="xs:unsignedInt"></xs:list>
-  </xs:simpleType>
-  <xs:complexType name="HistoryCreate">
-    <xs:annotation>
-      <xs:documentation>Entity was created.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="type" type="t:EntityType" use="required">
-          <xs:annotation>
-            <xs:documentation>Type of the entity.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="splitfrom" type="t:GeocodeList" use="optional">
-          <xs:annotation>
-            <xs:documentation>Geocode(s) of the entities from which the new entity was split off.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistoryAreaChange">
-    <xs:annotation>
-      <xs:documentation>Area covered by the entity was changed.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="type" type="t:EntityType" use="optional">
-          <xs:annotation>
-            <xs:documentation>Type of the entity.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="oldarea" type="xs:double" use="optional">
-          <xs:annotation>
-            <xs:documentation>Area before the change in km².</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="newarea" type="xs:double" use="optional">
-          <xs:annotation>
-            <xs:documentation>Area after the change in km².</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistoryReassign">
-    <xs:annotation>
-      <xs:documentation>Parent entity changed.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="type" type="t:EntityType" use="optional">
-          <xs:annotation>
-            <xs:documentation>Type of the entity.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="oldparent" type="xs:unsignedInt" use="required">
-          <xs:annotation>
-            <xs:documentation>Geocode of the previous parent entity.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="newparent" type="xs:unsignedInt" use="required">
-          <xs:annotation>
-            <xs:documentation>Geocode of the new parent entity.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional">
-          <xs:annotation>
-            <xs:documentation>Geocode before the reassign.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistoryAbolish">
-    <xs:annotation>
-      <xs:documentation>Entity was dissolved.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:HistoryEntryBase">
-        <xs:attribute name="type" type="t:EntityType" use="required">
-          <xs:annotation>
-            <xs:documentation>Type of the entity.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="mergeto" type="xs:unsignedInt" use="optional">
-          <xs:annotation>
-            <xs:documentation>Geocode of the entity which took over the area.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HistoryMergedWith">
-    <xs:annotation>
-      <xs:documentation>Entity was enlarged by taking over responsibility from dissolved entities.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:HistoryAreaChange">
-        <xs:attribute name="mergefromtype" type="t:EntityType" use="required">
-          <xs:annotation>
-            <xs:documentation>Type of the entity merged with.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="mergefrom" type="xs:unsignedInt" use="optional">
-          <xs:annotation>
-            <xs:documentation>Geocode of the entity which was added to the area.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:group name="HistoryEntry">
-    <xs:annotation>
-      <xs:documentation>Entry in the list of historical changes.</xs:documentation>
-    </xs:annotation>
-    <xs:choice>
-      <xs:element name="rename" type="t:HistoryRename" />
-      <xs:element name="statuschange" type="t:HistoryStatus" />
-      <xs:element name="create" type="t:HistoryCreate" />
-      <xs:element name="abolished" type="t:HistoryAbolish" />
-      <xs:element name="misspelling" type="t:HistorySpelling" />
-      <xs:element name="reformedspelling" type="t:HistoryReformSpelling" />
-      <xs:element name="alternativename" type="t:HistoryAlternativeName" />
-      <xs:element name="mergedwith" type="t:HistoryMergedWith" />
-      <xs:element name="areachange" type="t:HistoryAreaChange" />
-      <xs:element name="reassign" type="t:HistoryReassign" />
-    </xs:choice>
-  </xs:group>
-  <xs:complexType name="HistoryList">
-    <xs:annotation>
-      <xs:documentation>List of historical changes.</xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:group ref='t:HistoryEntry' minOccurs='1' maxOccurs='unbounded' />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="EntityCountType">
     <xs:attribute name="type" type="t:EntityType" use="required" />
     <xs:attribute name="count" type="xs:unsignedInt" use="required">
@@ -621,10 +389,26 @@
           <xs:documentation>Symbols, slogans and vision statements of the entity.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office" />
-      <xs:element minOccurs="0" maxOccurs="1" name="area" type="t:Area" />
-      <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="population" type="t:PopulationData" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="office" type="t:Office">
+        <xs:annotation>
+          <xs:documentation>Offices of the entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="area" type="t:Area">
+        <xs:annotation>
+          <xs:documentation>Area information.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList">
+        <xs:annotation>
+          <xs:documentation>List of events concerning the entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="population" type="t:PopulationData">
+        <xs:annotation>
+          <xs:documentation>Population data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity">
         <xs:unique name="UniqueGeocode">
           <xs:annotation>
@@ -634,24 +418,51 @@
           <xs:field xpath="@geocode" />
         </xs:unique>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="entitycount" type="t:EntityCount" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="entitycount" type="t:EntityCount">
+        <xs:annotation>
+          <xs:documentation>Numbers of subentities.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="park" type="t:Park">
+        <xs:annotation>
+          <xs:documentation>Protected areas within the entity.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
     <xs:attribute name="type" type="t:EntityType" use="required" />
     <xs:attributeGroup ref="t:ThaiNameMandatory" />
-    <xs:attribute name="geocode" type="xs:unsignedInt" use="required" />
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="required">
+      <xs:annotation>
+        <xs:documentation>TIS1099 code of the entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <!--have to find better way for this-->
-    <xs:attribute name="newgeocode" type="t:GeocodeList" use="optional" />
-    <xs:attribute name="obsolete" type="xs:boolean" use="optional" />
+    <xs:attribute name="newgeocode" type="t:GeocodeList" use="optional">
+      <xs:annotation>
+        <xs:documentation>New geocodes of the entity. Implies that the entity is obsolete.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="obsolete" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>Indication for entities no longer active.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="parent" type="t:GeocodeList" use="optional">
       <xs:annotation>
         <xs:documentation>For KingAmphoe: The Amphoe which is responsible for supervision; for Thesaban: the Amphoe(s) which are covered by the entity.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
-    <!-- for Thesaban covering a complete Tambon-->
-    <xs:attribute name="tambon" type="xs:unsignedInt" use="optional" />
-    <!-- for Chumchon corresponding to a specific Muban-->
-    <xs:attribute name="muban" type="xs:unsignedInt" use="optional" />
+    <xs:attribute name="tambon" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Reference to the corresponding tambon. Only for municipalities which were a TAO.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="muban" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Corresponding Muban. Only for Chumchon.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
 
   <xs:element name="entity" type="t:Entity">

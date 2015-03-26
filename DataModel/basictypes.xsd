@@ -617,4 +617,11 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+  <xs:simpleType name="GeocodeList">
+    <xs:annotation>
+      <xs:documentation>List of geocodes.</xs:documentation>
+    </xs:annotation>
+    <xs:list itemType="xs:unsignedInt"></xs:list>
+  </xs:simpleType>
 </xs:schema>
