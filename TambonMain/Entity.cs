@@ -437,6 +437,27 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
+        /// Calculates the postal codes from the tambon in the areacoverage list of the LAO office.
+        /// </summary>
+        /// <param name="tambon">List of tambon in the parent of the LAO.</param>
+        public void CalculatePostcodeForLocalAdministration(IEnumerable<Entity> tambon)
+        {
+            var laoOffice = office.FirstOrDefault(x => x.areacoverage.Any());
+            if ( laoOffice != null )
+            {
+                foreach ( var coverage in laoOffice.areacoverage )
+                {
+                    var foundTambon = tambon.FirstOrDefault(x => x.geocode == coverage.geocode);
+                    if ( foundTambon != null )
+                    {
+                        this.codes.post.value.AddRange(foundTambon.codes.post.value);
+                    }
+                }
+                this.codes.post.value = this.codes.post.value.Distinct().ToList();
+            }
+        }
+
+        /// <summary>
         /// Gets the display name of the entity.
         /// </summary>
         /// <returns>The display name of the entity.</returns>
@@ -1134,6 +1155,66 @@ namespace De.AHoerstemeier.Tambon
                 }
             }
             return true;
+        }
+
+        /// <summary>
+        /// Calculates the population for each of the local governments.
+        /// </summary>
+        /// <param name="localGovernments">Local governments to calculate.</param>
+        /// <param name="allTambon">All tambon covered by the local governments.</param>
+        /// <param name="populationDataSource">Data source of the population data.</param>
+        /// <param name="populationYear">Reference year of the population data.</param>
+        public static void CalculateLocalGovernmentPopulation(IEnumerable<Entity> localGovernments, IEnumerable<Entity> allTambon, PopulationDataSourceType populationDataSource, Int16 populationYear)
+        {
+            foreach ( var localEntityWithoutPopulation in localGovernments.Where(x =>
+                x.LocalGovernmentAreaCoverage.Any() && !x.population.Any(
+                y => y.Year == populationYear && y.source == populationDataSource)) )
+            {
+                var populationData = new PopulationData();
+                localEntityWithoutPopulation.population.Add(populationData);
+                foreach ( var coverage in localEntityWithoutPopulation.LocalGovernmentAreaCoverage )
+                {
+                    var tambon = allTambon.Single(x => x.geocode == coverage.geocode);
+                    var sourcePopulationData = tambon.population.FirstOrDefault(y => y.Year == populationYear && y.source == populationDataSource);
+                    if ( sourcePopulationData != null )
+                    {
+                        populationData.year = sourcePopulationData.year;
+                        populationData.referencedate = sourcePopulationData.referencedate;
+                        populationData.referencedateSpecified = sourcePopulationData.referencedateSpecified;
+                        populationData.source = sourcePopulationData.source;
+
+                        List<HouseholdDataPoint> dataPointToClone = new List<HouseholdDataPoint>();
+                        dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.geocode == localEntityWithoutPopulation.geocode));
+                        if ( !dataPointToClone.Any() )
+                        {
+                            if ( coverage.coverage == CoverageType.completely )
+                            {
+                                dataPointToClone.AddRange(sourcePopulationData.data);
+                            }
+                            else
+                            {
+                                dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.type == PopulationDataType.nonmunicipal));
+                            }
+                        }
+                        foreach ( var dataPoint in dataPointToClone )
+                        {
+                            var newDataPoint = new HouseholdDataPoint();
+                            newDataPoint.male = dataPoint.male;
+                            newDataPoint.female = dataPoint.female;
+                            newDataPoint.households = dataPoint.households;
+                            newDataPoint.total = dataPoint.total;
+                            newDataPoint.geocode = coverage.geocode;
+                            newDataPoint.type = dataPoint.type;
+                            populationData.data.Add(newDataPoint);
+                        }
+                    }
+                }
+                if ( populationData.data.Count == 1 )
+                {
+                    populationData.data.First().type = PopulationDataType.total;
+                }
+                populationData.CalculateTotal();
+            }
         }
     }
 }

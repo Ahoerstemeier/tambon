@@ -225,6 +225,11 @@ namespace De.AHoerstemeier.Tambon.UI
                     allEntities.Add(localGovernmentEntity);
                 }
             }
+            var localGovernments = allEntities.Where(x => x.type.IsLocalGovernment());
+            foreach ( var lao in localGovernments )
+            {
+                lao.CalculatePostcodeForLocalAdministration(allTambon);
+            }
 
             cbxChangwat.Items.AddRange(allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
             lblTambonInfo.Text = String.Empty;

@@ -88,64 +88,15 @@ namespace De.AHoerstemeier.Tambon.UI
                     _allEntities.Add(localGovernmentEntity);
                 }
             }
+            var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
+            foreach ( var lao in _localGovernments )
+            {
+                lao.CalculatePostcodeForLocalAdministration(allTambon);
+            }
 
             GlobalData.LoadPopulationData(PopulationDataSource, PopulationReferenceYear);
-            CalculateLocalGovernmentPopulation();
+            Entity.CalculateLocalGovernmentPopulation(_localGovernments, allTambon, PopulationDataSource, PopulationReferenceYear);
             PopulationDataToTreeView();
-        }
-
-        private void CalculateLocalGovernmentPopulation()
-        {
-            var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
-            foreach ( var localEntityWithoutPopulation in _localGovernments.Where(x =>
-                x.LocalGovernmentAreaCoverage.Any() && !x.population.Any(
-                y => y.Year == PopulationReferenceYear && y.source == PopulationDataSource)) )
-            {
-                var populationData = new PopulationData();
-                localEntityWithoutPopulation.population.Add(populationData);
-                foreach ( var coverage in localEntityWithoutPopulation.LocalGovernmentAreaCoverage )
-                {
-                    var tambon = allTambon.Single(x => x.geocode == coverage.geocode);
-                    var sourcePopulationData = tambon.population.FirstOrDefault(y => y.Year == PopulationReferenceYear && y.source == PopulationDataSource);
-                    if ( sourcePopulationData != null )
-                    {
-                        populationData.year = sourcePopulationData.year;
-                        populationData.referencedate = sourcePopulationData.referencedate;
-                        populationData.referencedateSpecified = sourcePopulationData.referencedateSpecified;
-                        populationData.source = sourcePopulationData.source;
-
-                        List<HouseholdDataPoint> dataPointToClone = new List<HouseholdDataPoint>();
-                        dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.geocode == localEntityWithoutPopulation.geocode));
-                        if ( !dataPointToClone.Any() )
-                        {
-                            if ( coverage.coverage == CoverageType.completely )
-                            {
-                                dataPointToClone.AddRange(sourcePopulationData.data);
-                            }
-                            else
-                            {
-                                dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.type == PopulationDataType.nonmunicipal));
-                            }
-                        }
-                        foreach ( var dataPoint in dataPointToClone )
-                        {
-                            var newDataPoint = new HouseholdDataPoint();
-                            newDataPoint.male = dataPoint.male;
-                            newDataPoint.female = dataPoint.female;
-                            newDataPoint.households = dataPoint.households;
-                            newDataPoint.total = dataPoint.total;
-                            newDataPoint.geocode = coverage.geocode;
-                            newDataPoint.type = dataPoint.type;
-                            populationData.data.Add(newDataPoint);
-                        }
-                    }
-                }
-                if ( populationData.data.Count == 1 )
-                {
-                    populationData.data.First().type = PopulationDataType.total;
-                }
-                populationData.CalculateTotal();
-            }
         }
 
         private TreeNode EntityToTreeNode(Entity data)
