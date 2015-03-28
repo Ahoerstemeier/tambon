@@ -440,7 +440,7 @@ namespace De.AHoerstemeier.Tambon
         /// Calculates the postal codes from the tambon in the areacoverage list of the LAO office.
         /// </summary>
         /// <param name="tambon">List of tambon in the parent of the LAO.</param>
-        public Boolean CalculatePostcodeForLocalAdministration(IEnumerable<Entity> tambon)
+        public void CalculatePostcodeForLocalAdministration(IEnumerable<Entity> tambon)
         {
             var laoOffice = office.FirstOrDefault(x => x.areacoverage.Any());
             if ( !this.codes.post.value.Any() && laoOffice != null )
