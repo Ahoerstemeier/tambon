@@ -443,21 +443,28 @@ namespace De.AHoerstemeier.Tambon
         public void CalculatePostcodeForLocalAdministration(IEnumerable<Entity> tambon)
         {
             var laoOffice = office.FirstOrDefault(x => x.areacoverage.Any());
+            // var fullCoveredPostCodes = new List<UInt32>();
             if ( !this.codes.post.value.Any() && laoOffice != null )
             {
+                // fullCoveredPostCodes.Clear();
                 foreach ( var coverage in laoOffice.areacoverage )
                 {
                     var foundTambon = tambon.FirstOrDefault(x => x.geocode == coverage.geocode);
                     if ( foundTambon != null )
                     {
                         this.codes.post.value.AddRange(foundTambon.codes.post.value);
-                        if ( coverage.coverage != CoverageType.completely && foundTambon.codes.post.value.Count > 1 )
+                        if ( coverage.coverage == CoverageType.completely || foundTambon.codes.post.value.Count == 1 )
                         {
-                            this.codes.post.comment = "Might contain too many codes";
+                            this.codes.post.comment = "Postcodes might contain too many values.";
+                            // fullCoveredPostCodes.AddRange(foundTambon.codes.post.value);
                         }
                     }
                 }
                 this.codes.post.value = this.codes.post.value.Distinct().ToList();
+                // if ( this.codes.post.value.Where(x => !fullCoveredPostCodes.Contains(x)).Any() )
+                // {
+                //     this.codes.post.comment = "Postcodes might contain too many values.";
+                // }
             }
         }
 

@@ -1032,7 +1032,17 @@
         <post value="95130 95170" comment="95130: Mu 6,9; 95170: Mu 1-5, 7-8; Mu 10-12 ???" />
       </codes>
       <office type="TAOOffice">
-        <url lastchecked="2013-01-09">http://www.maewad.go.th/</url>
+        <!--<codes>
+          <post value="95130 95170" />
+        </codes>-->
+        <symbols>
+          <vision>
+            พัฒนาโครงสร้างพื้นฐาน จัดการบ้านเมืองที่ดี
+            สามัคคีกัน มีส่วนร่วม
+            เชิดชูคุณธรรม น้อมนำประเพณีที่ยั่งยืน
+          </vision>
+        </symbols>
+        <url lastchecked="2015-03-30">http://www.maewad.go.th/</url>
         <officials>
           <official title="TAOMayor" name="มะยาลี ลาเตะ" begin="2012-10-14" beginreason="ElectedDirectly" />
         </officials>
@@ -2047,9 +2057,6 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
         </council>
         <areacoverage>
-          <entity geocode="950905" coverage="completely" />
-        </areacoverage>
-        <areacoverage>
           <entity geocode="950901" coverage="completely" />
         </areacoverage>
       </office>
@@ -2195,6 +2202,9 @@
             <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
           </create>
         </history>
+        <areacoverage>
+          <entity geocode="950905" coverage="completely" />
+        </areacoverage>
       </office>
       <entity type="Muban" geocode="95090501" name="บ้านพร่อน" english="Ban Phron" />
       <entity type="Muban" geocode="95090502" name="บ้านดูซง" english="Ban Dusong" />
@@ -2522,11 +2532,14 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="คอกช้าง" english="Khok Chang" geocode="9595" parent="9504">
+    <codes>
+      <post value="95170" comment="Seem to cover only Mu 2, hence does not include 95130 of Tambon Mae Wat" />
+    </codes>
     <office type="MunicipalityOffice">
       <symbols>
         <vision>สร้างสังคม  อุดมปัญญา  พัฒนาคุณภาพชีวิต</vision>
       </symbols>
-      <url lastchecked="2013-09-05">http://www.kokchangcity.go.th/</url>
+      <url lastchecked="2015-03-30">http://www.kokchangcity.go.th/</url>
       <officials>
         <official title="Mayor" name="โสพล ขุนอินทร์" begin="2013-08-04" beginreason="ElectedDirectly" />
         <official title="Mayor" name="สุวรรณี ตั้งสิริวรกุล" begin="2009-06-21" end="2013-06-20" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -2539,6 +2552,9 @@
       <areacoverage>
         <entity geocode="950403" coverage="partially" />
       </areacoverage>
+      <area>
+        <bounding geocode="950453" direction="enclosed" />
+      </area>
     </office>
     <history>
       <statuschange old="Sukhaphiban" new="ThesabanTambon" effective="1999-05-25" status="Gazette">
