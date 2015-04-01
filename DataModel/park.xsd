@@ -10,6 +10,29 @@
   <xs:include schemaLocation="basictypes.xsd" />
   <xs:include schemaLocation="history.xsd" />
 
+  <xs:complexType name="AreaPark">
+    <xs:attributeGroup ref="t:Comment" />
+    <xs:attribute name="squarekilometer" type="xs:double" use="required">
+      <xs:annotation>
+        <xs:documentation>Area in square kilometer (km²).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="rai" type="xs:double" use="optional">
+      <xs:annotation>
+        <xs:documentation>Area in rai (ไร่, 1600 m²). Only integer part if ngam and tarangwa are defined.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ngam" type="xs:int" use="optional">
+      <xs:annotation>
+        <xs:documentation>Area part in ngam (งาน, 400 m²). Only if value in rai is integer.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="tarangwa" type="xs:int" use="optional">
+      <xs:annotation>
+        <xs:documentation>Area part in tarangwa (ตารางวา, 4 m²). Only if value in rai is integer.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="Park">
     <xs:annotation>
       <xs:documentation>Protected area.</xs:documentation>
@@ -23,6 +46,11 @@
       <xs:element minOccurs="0" ref="geo:Point">
         <xs:annotation>
           <xs:documentation>Location of park, pointing approximately at the main entrance.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" type="t:AreaPark" name="area">
+        <xs:annotation>
+          <xs:documentation>Area covered by the protected area.</xs:documentation>
         </xs:annotation>
       </xs:element>
 

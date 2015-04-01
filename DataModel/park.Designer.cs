@@ -15,6 +15,167 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AreaPark", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class AreaPark {
+        
+        private string commentField;
+        
+        private double squarekilometerField;
+        
+        private double raiField;
+        
+        private bool raiFieldSpecified;
+        
+        private int ngamField;
+        
+        private bool ngamFieldSpecified;
+        
+        private int tarangwaField;
+        
+        private bool tarangwaFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Area in square kilometer (km²).
+        /// </summary>
+        /// <value>
+        /// The squarekilometer.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double squarekilometer {
+            get {
+                return this.squarekilometerField;
+            }
+            set {
+                this.squarekilometerField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Area in rai (ไร่, 1600 m²). Only integer part if ngam and tarangwa are defined.
+        /// </summary>
+        /// <value>
+        /// The rai.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double rai {
+            get {
+                return this.raiField;
+            }
+            set {
+                this.raiField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool raiSpecified {
+            get {
+                return this.raiFieldSpecified;
+            }
+            set {
+                this.raiFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Area part in ngam (งาน, 400 m²). Only if value in rai is integer.
+        /// </summary>
+        /// <value>
+        /// The ngam.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ngam {
+            get {
+                return this.ngamField;
+            }
+            set {
+                this.ngamField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ngamSpecified {
+            get {
+                return this.ngamFieldSpecified;
+            }
+            set {
+                this.ngamFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Area part in tarangwa (ตารางวา, 4 m²). Only if value in rai is integer.
+        /// </summary>
+        /// <value>
+        /// The tarangwa.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int tarangwa {
+            get {
+                return this.tarangwaField;
+            }
+            set {
+                this.tarangwaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool tarangwaSpecified {
+            get {
+                return this.tarangwaFieldSpecified;
+            }
+            set {
+                this.tarangwaFieldSpecified = value;
+            }
+        }
+    }
+    
     /// <summary>
     /// Protected area.
     /// </summary>
@@ -29,6 +190,8 @@ namespace De.AHoerstemeier.Tambon {
         private WikiLocation wikiField;
         
         private Point pointField;
+        
+        private AreaPark areaField;
         
         private HistoryList historyField;
         
@@ -54,6 +217,7 @@ namespace De.AHoerstemeier.Tambon {
         public Park() {
             this.locationgeocodeField = new List<uint>();
             this.historyField = new HistoryList();
+            this.areaField = new AreaPark();
         }
         
         /// <summary>
@@ -91,12 +255,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Area covered by the protected area.
+        /// </summary>
+        /// <value>
+        /// The area.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public AreaPark area {
+            get {
+                return this.areaField;
+            }
+            set {
+                this.areaField = value;
+            }
+        }
+        
+        /// <summary>
         /// List of events concerning the park.
         /// </summary>
         /// <value>
         /// The history.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public HistoryList history {
             get {
