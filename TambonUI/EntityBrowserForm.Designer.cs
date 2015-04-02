@@ -54,12 +54,13 @@
             this.txtElections = new System.Windows.Forms.TextBox();
             this.tabMuban = new System.Windows.Forms.TabPage();
             this.txtMuban = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuWikipediaGerman = new System.Windows.Forms.ToolStripMenuItem();
-            this.wikipediaenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
             this.tabLocalGoverment = new System.Windows.Forms.TabPage();
             this.txtLocalGovernment = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuWikipediaGerman = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWikipediaEnglish = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWikipediaTambonEnglish = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
@@ -68,8 +69,8 @@
             this.tabErrors.SuspendLayout();
             this.tabElection.SuspendLayout();
             this.tabMuban.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.tabLocalGoverment.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubDivisions
@@ -307,36 +308,6 @@
             this.txtMuban.Size = new System.Drawing.Size(386, 120);
             this.txtMuban.TabIndex = 15;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuWikipediaGerman,
-            this.wikipediaenToolStripMenuItem,
-            this.mnuMubanDefinitions});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 70);
-            // 
-            // mnuWikipediaGerman
-            // 
-            this.mnuWikipediaGerman.Name = "mnuWikipediaGerman";
-            this.mnuWikipediaGerman.Size = new System.Drawing.Size(171, 22);
-            this.mnuWikipediaGerman.Text = "Wikipedia (de)";
-            this.mnuWikipediaGerman.Click += new System.EventHandler(this.mnuWikipediaGerman_Click);
-            // 
-            // wikipediaenToolStripMenuItem
-            // 
-            this.wikipediaenToolStripMenuItem.Name = "wikipediaenToolStripMenuItem";
-            this.wikipediaenToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.wikipediaenToolStripMenuItem.Text = "Wikipedia (en)";
-            this.wikipediaenToolStripMenuItem.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
-            // 
-            // mnuMubanDefinitions
-            // 
-            this.mnuMubanDefinitions.Name = "mnuMubanDefinitions";
-            this.mnuMubanDefinitions.Size = new System.Drawing.Size(171, 22);
-            this.mnuMubanDefinitions.Text = "Muban definitions";
-            this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
-            // 
             // tabLocalGoverment
             // 
             this.tabLocalGoverment.Controls.Add(this.txtLocalGovernment);
@@ -358,6 +329,44 @@
             this.txtLocalGovernment.Name = "txtLocalGovernment";
             this.txtLocalGovernment.Size = new System.Drawing.Size(386, 120);
             this.txtLocalGovernment.TabIndex = 16;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuWikipediaGerman,
+            this.mnuWikipediaEnglish,
+            this.mnuWikipediaTambonEnglish,
+            this.mnuMubanDefinitions});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 114);
+            // 
+            // mnuWikipediaGerman
+            // 
+            this.mnuWikipediaGerman.Name = "mnuWikipediaGerman";
+            this.mnuWikipediaGerman.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaGerman.Text = "Wikipedia (de)";
+            this.mnuWikipediaGerman.Click += new System.EventHandler(this.mnuWikipediaGerman_Click);
+            // 
+            // mnuWikipediaEnglish
+            // 
+            this.mnuWikipediaEnglish.Name = "mnuWikipediaEnglish";
+            this.mnuWikipediaEnglish.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaEnglish.Text = "Wikipedia (en)";
+            this.mnuWikipediaEnglish.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
+            // 
+            // mnuWikipediaTambonEnglish
+            // 
+            this.mnuWikipediaTambonEnglish.Name = "mnuWikipediaTambonEnglish";
+            this.mnuWikipediaTambonEnglish.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaTambonEnglish.Text = "Tambon WP article";
+            this.mnuWikipediaTambonEnglish.Click += new System.EventHandler(this.mnuWikipediaTambonEnglish_Click);
+            // 
+            // mnuMubanDefinitions
+            // 
+            this.mnuMubanDefinitions.Name = "mnuMubanDefinitions";
+            this.mnuMubanDefinitions.Size = new System.Drawing.Size(175, 22);
+            this.mnuMubanDefinitions.Text = "Muban definitions";
+            this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
             // 
             // EntityBrowserForm
             // 
@@ -382,9 +391,9 @@
             this.tabElection.PerformLayout();
             this.tabMuban.ResumeLayout(false);
             this.tabMuban.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.tabLocalGoverment.ResumeLayout(false);
             this.tabLocalGoverment.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -419,9 +428,10 @@
         private System.Windows.Forms.TabPage tabMuban;
         private System.Windows.Forms.TextBox txtMuban;
         private System.Windows.Forms.ToolStripMenuItem mnuMubanDefinitions;
-        private System.Windows.Forms.ToolStripMenuItem wikipediaenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuWikipediaEnglish;
         private System.Windows.Forms.TabPage tabLocalGoverment;
         private System.Windows.Forms.TextBox txtLocalGovernment;
+        private System.Windows.Forms.ToolStripMenuItem mnuWikipediaTambonEnglish;
 
     }
 }

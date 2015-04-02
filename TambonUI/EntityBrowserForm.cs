@@ -153,6 +153,11 @@ namespace De.AHoerstemeier.Tambon.UI
             CalcLocalGovernmentData(entity);
 
             mnuMubanDefinitions.Enabled = AreaDefinitionAnnouncements(entity).Any();
+
+            mnuWikipediaGerman.Enabled = entity.type.IsCompatibleEntityType(EntityType.Amphoe);
+            mnuWikipediaEnglish.Enabled = mnuWikipediaGerman.Enabled;
+
+            mnuWikipediaTambonEnglish.Enabled = entity.type.IsCompatibleEntityType(EntityType.Tambon);
         }
 
         private void CalcElectionData(Entity entity)
@@ -761,49 +766,50 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
-        #endregion private methods
-
         private void mnuWikipediaGerman_Click(Object sender, EventArgs e)
         {
-            var selectedNode = treeviewSelection.SelectedNode;
-            var entity = (Entity)(selectedNode.Tag);
-            var exporter = new WikipediaExporter(_baseEntity, _localGovernments);
-            exporter.CheckWikiData = CheckWikiData;
-            exporter.PopulationReferenceYear = PopulationReferenceYear;
-            exporter.PopulationDataSource = PopulationDataSource;
-
-            var text = exporter.AmphoeToWikipediaGerman(entity);
-
-            Boolean success = false;
-            while ( !success )
-            {
-                try
-                {
-                    Clipboard.Clear();
-                    Clipboard.SetText(text);
-                    success = true;
-                }
-                catch
-                {
-                    if ( MessageBox.Show(this, "Copying text to clipboard failed.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) != DialogResult.Retry )
-                    {
-                        break;
-                    }
-                }
-            }
+            AmphoeToWikipedia(Language.German);
         }
 
         private void mnuWikipediaEnglish_Click(Object sender, EventArgs e)
         {
+            AmphoeToWikipedia(Language.English);
+        }
+
+        private void AmphoeToWikipedia(Language language)
+        {
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
+            if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
+            {
+                var exporter = new WikipediaExporter(_baseEntity, _localGovernments);
+                exporter.CheckWikiData = CheckWikiData;
+                exporter.PopulationReferenceYear = PopulationReferenceYear;
+                exporter.PopulationDataSource = PopulationDataSource;
+                var text = exporter.AmphoeToWikipedia(entity, language);
 
-            var exporter = new WikipediaExporter(_baseEntity, _localGovernments);
-            exporter.CheckWikiData = CheckWikiData;
-            exporter.PopulationReferenceYear = PopulationReferenceYear;
-            exporter.PopulationDataSource = PopulationDataSource;
-            var text = exporter.AmphoeToWikipediaEnglish(entity);
+                CopyToClipboard(text);
+            }
+        }
 
+        private void mnuWikipediaTambonEnglish_Click(Object sender, EventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            if ( entity.type.IsCompatibleEntityType(EntityType.Tambon) )
+            {
+                var exporter = new WikipediaExporter(_baseEntity, _localGovernments);
+                exporter.CheckWikiData = CheckWikiData;
+                exporter.PopulationReferenceYear = PopulationReferenceYear;
+                exporter.PopulationDataSource = PopulationDataSource;
+                var text = exporter.TambonArticle(entity, Language.English);
+
+                CopyToClipboard(text);
+            }
+        }
+
+        private void CopyToClipboard(string text)
+        {
             Boolean success = false;
             while ( !success )
             {
@@ -822,5 +828,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
         }
+
+        #endregion private methods
     }
 }

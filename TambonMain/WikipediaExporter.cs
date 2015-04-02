@@ -18,6 +18,8 @@ namespace De.AHoerstemeier.Tambon
         private IEnumerable<Entity> localGovernments;
 
         private Entity _baseEntity;
+        private WikibaseApi _api;
+        private WikiDataHelper _helper;
 
         #endregion fields
 
@@ -81,6 +83,172 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion constructor
 
+        #region public methods
+
+        /// <summary>
+        /// Creates the administration section for Wikipedia.
+        /// </summary>
+        /// <param name="entity">Entity to export.</param>
+        /// <param name="language">Language to use.</param>
+        /// <returns>Wikipedia text of administration section.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="entity"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException"><paramref name="entity"/> has wrong <see cref="Entity.type"/>.</exception>
+        /// <exception cref="NotImplementedException"><paramref name="language"/> is not yet implemented.</exception>
+        public String AmphoeToWikipedia(Entity entity, Language language)
+        {
+            if ( entity == null )
+            {
+                throw new ArgumentNullException("entity");
+            }
+
+            if ( !entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
+            {
+                throw new ArgumentException(String.Format("Entity type {0} not compatible with Amphoe", entity.type));
+            }
+
+            String result;
+
+            switch ( language )
+            {
+                case Language.German:
+                    result = AmphoeToWikipediaGerman(entity);
+                    break;
+
+                case Language.English:
+                    result = AmphoeToWikipediaEnglish(entity);
+                    break;
+
+                default:
+                    throw new NotImplementedException(String.Format("Unsupported language {0}", language));
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Creates an Wikipedia article stub for a Tambon.
+        /// </summary>
+        /// <param name="entity">Entity to export.</param>
+        /// <param name="language">Language to use.</param>
+        /// <returns>Wikipedia text.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="entity"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException"><paramref name="entity"/> has wrong <see cref="Entity.type"/>.</exception>
+        /// <exception cref="NotImplementedException"><paramref name="language"/> is not yet implemented.</exception>
+        public String TambonArticle(Entity entity, Language language)
+        {
+            if ( entity == null )
+            {
+                throw new ArgumentNullException("entity");
+            }
+
+            if ( !entity.type.IsCompatibleEntityType(EntityType.Tambon) )
+            {
+                throw new ArgumentException(String.Format("Entity type {0} not compatible with Tambon", entity.type));
+            }
+            if ( language != Language.English )
+            {
+                throw new NotImplementedException(String.Format("Unsupported language {0}", language));
+            }
+
+            var englishCulture = new CultureInfo("en-US");
+            var province = _baseEntity.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
+            var amphoe = province.entity.FirstOrDefault(x => GeocodeHelper.IsBaseGeocode(x.geocode, entity.geocode));
+            var tempList = new List<Entity>() { province, amphoe };
+            var links = RetrieveWikpediaLinks(tempList, language);
+            var populationData = entity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSourceType.DOPA);
+            Int32 population = 0;
+            if ( populationData != null )
+            {
+                population = populationData.TotalPopulation.total;
+            }
+
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine("{{Infobox settlement");
+            builder.AppendLine("<!--See the Table at Infobox Settlement for all fields and descriptions of usage-->");
+            builder.AppendLine("<!-- Basic info  ---------------->");
+            builder.AppendFormat(englishCulture, "|official_name          = {0}", entity.english);
+            builder.AppendLine();
+            builder.AppendFormat(englishCulture, "|native_name            = {0}", entity.name);
+            builder.AppendLine();
+            builder.AppendLine("|settlement_type        = [[Tambon]]");
+            builder.AppendLine("|motto                  =");
+            builder.AppendLine("<!-- Location ------------------>");
+            builder.AppendLine("|subdivision_type      = Country ");
+            builder.AppendLine("|subdivision_name      ={{flag|Thailand}} ");
+            builder.AppendLine("|subdivision_type2      = [[Provinces of Thailand|Province]]");
+            builder.AppendFormat(englishCulture, "|subdivision_name2      = {0}", WikiLink(links[province], province.english));
+            builder.AppendLine();
+            builder.AppendLine("|subdivision_type3      = [[Amphoe]]");
+            builder.AppendFormat(englishCulture, "|subdivision_name3      = {0}", WikiLink(links[amphoe], amphoe.english));
+            builder.AppendLine();
+            builder.AppendLine("<!-- Politics ----------------->");
+            builder.AppendLine("|established_title      = ");
+            builder.AppendLine("|established_date       = ");
+            builder.AppendLine("<!-- Area    --------------------->");
+            builder.AppendLine("|area_total_km2           = ");
+            builder.AppendLine("|area_water_km2           =");
+            builder.AppendLine("<!-- Population   ----------------------->");
+            builder.AppendFormat(englishCulture, "|population_as_of               = {0}", PopulationReferenceYear);
+            builder.AppendLine();
+            builder.AppendLine("|population_footnotes           = ");
+            builder.AppendLine("|population_note                = ");
+            builder.AppendFormat(englishCulture, "|population_total               = {0:#,###,###}", population);
+            builder.AppendLine();
+            builder.AppendLine("|population_density_km2         = ");
+            builder.AppendLine("<!-- General information  --------------->");
+            builder.AppendLine("|timezone               = [[Thailand Standard Time|TST]]");
+            builder.AppendLine("|utc_offset             = +7");
+            builder.AppendLine("|latd= |latm= |lats= |latNS=N");
+            builder.AppendLine("|longd= |longm= |longs= |longEW=E");
+            builder.AppendLine("|elevation_footnotes    =  ");
+            builder.AppendLine("|elevation_m            = ");
+            builder.AppendLine("<!-- Area/postal codes & others -------->");
+            builder.AppendLine("|postal_code_type       = Postal code");
+            builder.AppendLine("|postal_code            = {{#property:P281}}");
+            builder.AppendLine("|area_code              = ");
+            builder.AppendLine("|blank_name             = [[TIS 1099]]");
+            builder.AppendLine("|blank_info             = {{#property:P1067}}");
+            builder.AppendLine("|website                = ");
+            builder.AppendLine("|footnotes              = ");
+            builder.AppendLine("}}");
+            builder.AppendLine();
+
+            builder.AppendFormat(englishCulture,
+                "'''{0}''' ({{{{lang-th|{1}}}}}) is a ''[[tambon]]'' (subdistrict) of {2}, in {3}, [[Thailand]]. In {4} it had a total population of {5:#,###,###} people.{6}",
+                entity.english,
+                entity.name,
+                WikiLink(links[amphoe], amphoe.english + " District"),
+                WikiLink(links[province], province.english + " Province"),
+                PopulationReferenceYear,
+                population,
+                PopulationDataDownloader.WikipediaReference(GeocodeHelper.ProvinceCode(entity.geocode), PopulationReferenceYear, language)
+                );
+            builder.AppendLine();
+            builder.AppendLine();
+
+            // administration
+
+            builder.AppendLine("==References==");
+            builder.AppendLine("{{reflist}}");
+            builder.AppendLine();
+            builder.AppendLine("==External links==");
+            builder.AppendFormat("*[http://www.thaitambon.com/tambon/ttambon.asp?ID={0} Thaitambon.com on {1}]", entity.geocode, entity.english);
+            builder.AppendLine();
+            builder.AppendLine();
+
+            builder.AppendFormat("[[Category:Tambon of {0} Province]]", province.english);
+            builder.AppendLine();
+            builder.AppendFormat("[[Category:Populated places in {0} Province]]", province.english);
+            builder.AppendLine();
+            // geostub?
+
+            return builder.ToString();
+        }
+
+        #endregion public methods
+
+        #region private methods
+
         private delegate String CountAsString(Int32 count);
 
         private AmphoeDataForWikipediaExport CalculateAmphoeData(Entity entity, Language language)
@@ -137,21 +305,9 @@ namespace De.AHoerstemeier.Tambon
         /// Creates the administration section for German Wikipedia.
         /// </summary>
         /// <param name="entity">Entity to export.</param>
-        /// <param name="populationReferenceYear">Year of which the population data shall be used.</param>
         /// <returns>German Wikipedia text of administration section.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="entity"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentException"><paramref name="entity"/> has wrong <see cref="Entity.type"/>.</exception>
-        public String AmphoeToWikipediaGerman(Entity entity)
+        private String AmphoeToWikipediaGerman(Entity entity)
         {
-            if ( entity == null )
-            {
-                throw new ArgumentNullException("entity");
-            }
-            if ( !entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
-            {
-                throw new ArgumentException(String.Format("Entity type {0} not compatible with Amphoe", entity.type));
-            }
-
             var numberStrings = new Dictionary<Int32, String>() {
                 { 1, "eine" },
                 { 2, "zwei" },
@@ -320,21 +476,9 @@ namespace De.AHoerstemeier.Tambon
         /// Creates the administration section for English Wikipedia.
         /// </summary>
         /// <param name="entity">Entity to export.</param>
-        /// <param name="populationReferenceYear">Year of which the population data shall be used.</param>
         /// <returns>English Wikipedia text of administration section.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="entity"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentException"><paramref name="entity"/> has wrong <see cref="Entity.type"/>.</exception>
-        public String AmphoeToWikipediaEnglish(Entity entity)
+        private String AmphoeToWikipediaEnglish(Entity entity)
         {
-            if ( entity == null )
-            {
-                throw new ArgumentNullException("entity");
-            }
-
-            if ( !entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
-            {
-                throw new ArgumentException(String.Format("Entity type {0} not compatible with Amphoe", entity.type));
-            }
             var englishCulture = new CultureInfo("en-US");
             var amphoeData = CalculateAmphoeData(entity, Language.English);
 
@@ -596,14 +740,17 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        private static Dictionary<Entity, String> RetrieveWikpediaLinks(IEnumerable<Entity> entities, Language language)
+        private Dictionary<Entity, String> RetrieveWikpediaLinks(IEnumerable<Entity> entities, Language language)
         {
             var result = new Dictionary<Entity, String>();
-            var api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
-            var helper = new WikiDataHelper(api);
+            if ( _api == null )
+            {
+                _api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
+                _helper = new WikiDataHelper(_api);
+            }
             foreach ( var entity in entities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)) )
             {
-                var item = helper.GetWikiDataItemForEntity(entity);
+                var item = _helper.GetWikiDataItemForEntity(entity);
                 if ( item != null )
                 {
                     var links = item.getSitelinks();
@@ -631,6 +778,8 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
+        #endregion private methods
     }
 
     internal class AmphoeDataForWikipediaExport
