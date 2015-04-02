@@ -1227,5 +1227,71 @@ namespace De.AHoerstemeier.Tambon
                 populationData.CalculateTotal();
             }
         }
+
+        /// <summary>
+        /// Counts the types of entites in the given enumeration.
+        /// </summary>
+        /// <param name="entities">Entities to count.</param>
+        /// <returns>Number of entities by entity type.</returns>
+        public static Dictionary<EntityType, Int32> CountSubdivisions(IEnumerable<Entity> entities)
+        {
+            var counted = entities.GroupBy(x => x.type).Select(group => new
+            {
+                type = group.Key,
+                count = group.Count()
+            });
+            var result = new Dictionary<EntityType, Int32>();
+            foreach ( var keyvaluepair in counted )
+            {
+                result[keyvaluepair.type] = keyvaluepair.count;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Calculates the subdivisions within this instance which have no location set.
+        /// </summary>
+        /// <param name="localGovernments">Local governments, to include if below this instance.</param>
+        /// <returns>Number of entities by entity type.</returns>
+        public Dictionary<EntityType, Int32> CountSubdivisionsWithoutLocation(IEnumerable<Entity> localGovernments)
+        {
+            var toCount = new List<Entity>();
+            if ( localGovernments != null )
+            {
+                toCount.AddRange(LocalGovernmentEntitiesOf(localGovernments));
+            }
+            toCount.AddRange(this.FlatList().Where(x => !x.type.IsLocalGovernment()));
+            toCount.RemoveAll(x => x.type == EntityType.Unknown || x.IsObsolete);
+            toCount.RemoveAll(x => x.office.Any(y => y.Point != null));
+            return Entity.CountSubdivisions(toCount);
+        }
+
+        /// <summary>
+        /// Calculates the subdivisions within this instance.
+        /// </summary>
+        /// <param name="localGovernments">Local governments, to include if below this instance.</param>
+        /// <returns>Number of entities by entity type.</returns>
+        public Dictionary<EntityType, Int32> CountAllSubdivisions(IEnumerable<Entity> localGovernments)
+        {
+            var toCount = new List<Entity>();
+            if ( localGovernments != null )
+            {
+                toCount.AddRange(LocalGovernmentEntitiesOf(localGovernments).SelectMany(x => x.FlatList()));
+            }
+            // Chumchon and local governments are already in list, so filter them out while adding the central government units
+            toCount.AddRange(this.FlatList().Where(x => !x.type.IsLocalGovernment() && x.type != EntityType.Chumchon));
+            toCount.RemoveAll(x => x.type == EntityType.Unknown || x.IsObsolete);
+            return Entity.CountSubdivisions(toCount);
+        }
+
+        /// <summary>
+        /// Filters the local governments which are below this instance.
+        /// </summary>
+        /// <param name="localGovernments">Local governments to filter.</param>
+        /// <returns>Filtered local governments.</returns>
+        public IEnumerable<Entity> LocalGovernmentEntitiesOf(IEnumerable<Entity> localGovernments)
+        {
+            return localGovernments.Where(x => x.parent.Contains(this.geocode) || GeocodeHelper.IsBaseGeocode(this.geocode, x.geocode) && !x.IsObsolete);
+        }
     }
 }

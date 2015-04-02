@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MinimalJson">
+      <HintPath>D:\data\Visual Studio 2013\Projects\wikibase.net\bin\Debug\MinimalJson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Device" />
@@ -43,6 +46,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Wikibase">
+      <HintPath>D:\data\Visual Studio 2013\Projects\wikibase.net\bin\Debug\Wikibase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\DataModel\basictypes.Designer.cs">
@@ -63,8 +69,14 @@
     <Compile Include="..\DataModel\geopoint.Designer.cs">
       <Link>geopoint.Designer.cs</Link>
     </Compile>
+    <Compile Include="..\DataModel\history.Designer.cs">
+      <Link>history.Designer.cs</Link>
+    </Compile>
     <Compile Include="..\DataModel\office.Designer.cs">
       <Link>office.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\DataModel\park.Designer.cs">
+      <Link>park.Designer.cs</Link>
     </Compile>
     <Compile Include="..\DataModel\person.Designer.cs">
       <Link>person.Designer.cs</Link>
@@ -117,16 +129,9 @@
     <Compile Include="WikiDataBot.cs" />
     <Compile Include="WikiDataHelper.cs" />
     <Compile Include="WikiLocation.cs" />
+    <Compile Include="WikipediaExporter.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\minimaljson.net\trunk\MinimalJson\MinimalJson.csproj">
-      <Project>{a77d0d6a-8b5d-43f0-9c83-b4733a0fbcd5}</Project>
-      <Name>MinimalJson</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\wikibase\Wikibase.NET\WikiBase.csproj">
-      <Project>{fc9f81dc-20ad-4fe5-9ea1-dab417f947ea}</Project>
-      <Name>WikiBase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TambonHelpers\TambonHelpers.csproj">
       <Project>{6cba0539-37e6-42f9-bcb3-50d81edcbedd}</Project>
       <Name>TambonHelpers</Name>
