@@ -153,7 +153,11 @@ namespace De.AHoerstemeier.Tambon
             var englishCulture = new CultureInfo("en-US");
             var province = _baseEntity.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
             var amphoe = province.entity.FirstOrDefault(x => GeocodeHelper.IsBaseGeocode(x.geocode, entity.geocode));
+            var muban = entity.entity.Where(x => x.type == EntityType.Muban && !x.IsObsolete);
+            var lao = localGovernments.Where(x => x.LocalGovernmentAreaCoverage.Any(y => y.geocode == entity.geocode));
             var tempList = new List<Entity>() { province, amphoe };
+            tempList.AddRange(muban);
+            tempList.AddRange(lao);
             var links = RetrieveWikpediaLinks(tempList, language);
             var populationData = entity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSourceType.DOPA);
             Int32 population = 0;
@@ -226,7 +230,58 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine();
             builder.AppendLine();
 
-            // administration
+            builder.AppendLine("==Administration==");
+            if ( muban.Any() )
+            {
+                builder.AppendLine("===Central administration===");
+                builder.AppendFormat("The ''tambon'' is subdivided into {0} administrative villages (''[[muban]]'').", muban.Count());
+                builder.AppendLine();
+                builder.AppendLine("{| class=\"wikitable sortable\"");
+                builder.AppendLine("! No.");
+                builder.AppendLine("! Name");
+                builder.AppendLine("! Thai");
+                foreach ( var mu in muban )
+                {
+                    builder.AppendLine("|-");
+                    var muEnglish = mu.english;
+                    if ( links.Keys.Contains(mu) )
+                    {
+                        muEnglish = WikiLink(links[mu], mu.english);
+                    }
+                    var muNumber = mu.geocode % 100;
+                    if ( muNumber < 10 )
+                    {
+                        builder.AppendFormat("||{{{{0}}}}{0}.||{1}||{2}", muNumber, muEnglish, mu.name);
+                    }
+                    else
+                    {
+                        builder.AppendFormat("||{0}.||{1}||{2}", muNumber, mu.english, mu.name);
+                    }
+                    builder.AppendLine();
+                }
+                builder.AppendLine("|}");
+                builder.AppendLine();
+
+                if ( lao.Any() )
+                {
+                    var enWikipediaLink = new Dictionary<EntityType, String>()
+                {
+                    {EntityType.ThesabanNakhon, "city (''[[Thesaban#City municipality|Thesaban Nakhon]]'')"},
+                    {EntityType.ThesabanMueang, "town (''[[Thesaban#Town municipality|Thesaban Mueang]]'')"},
+                    {EntityType.ThesabanTambon, "subdistrict municipality (''[[Thesaban#Subdistrict municipality|Thesaban Tambon]]'')"},
+                    {EntityType.TAO, "[[Subdistrict administrative organization|subdistrict administrative organization (SAO)]]"},
+                };
+
+                    builder.AppendLine("===Local administration===");
+                    if ( lao.Count() == 1 )
+                    {
+                        var firstLao = lao.First();
+                        builder.AppendFormat("The whole area of the subdistrict is covered by the {0} {1} ({2})", enWikipediaLink[firstLao.type], firstLao.english, firstLao.FullName);
+                        builder.AppendLine();
+                    }
+                    builder.AppendLine();
+                }
+            }
 
             builder.AppendLine("==References==");
             builder.AppendLine("{{reflist}}");
@@ -234,13 +289,14 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine("==External links==");
             builder.AppendFormat("*[http://www.thaitambon.com/tambon/ttambon.asp?ID={0} Thaitambon.com on {1}]", entity.geocode, entity.english);
             builder.AppendLine();
+            // {{coord|19.0625|N|98.9396|E|source:wikidata-and-enwiki-cat-tree_region:TH|display=title}}
             builder.AppendLine();
 
             builder.AppendFormat("[[Category:Tambon of {0} Province]]", province.english);
             builder.AppendLine();
             builder.AppendFormat("[[Category:Populated places in {0} Province]]", province.english);
             builder.AppendLine();
-            // geostub?
+            // {{ChiangMai-geo-stub}}
 
             return builder.ToString();
         }
