@@ -231,9 +231,9 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine();
 
             builder.AppendLine("==Administration==");
+            builder.AppendLine("===Central administration===");
             if ( muban.Any() )
             {
-                builder.AppendLine("===Central administration===");
                 builder.AppendFormat("The ''tambon'' is subdivided into {0} administrative villages (''[[muban]]'').", muban.Count());
                 builder.AppendLine();
                 builder.AppendLine("{| class=\"wikitable sortable\"");
@@ -261,10 +261,15 @@ namespace De.AHoerstemeier.Tambon
                 }
                 builder.AppendLine("|}");
                 builder.AppendLine();
-
-                if ( lao.Any() )
-                {
-                    var enWikipediaLink = new Dictionary<EntityType, String>()
+            }
+            else
+            {
+                builder.AppendLine("The ''tambon'' has no administrative villages (''[[muban]]'').");
+                builder.AppendLine();
+            }
+            if ( lao.Any() )
+            {
+                var enWikipediaLink = new Dictionary<EntityType, String>()
                 {
                     {EntityType.ThesabanNakhon, "city (''[[Thesaban#City municipality|Thesaban Nakhon]]'')"},
                     {EntityType.ThesabanMueang, "town (''[[Thesaban#Town municipality|Thesaban Mueang]]'')"},
@@ -272,15 +277,36 @@ namespace De.AHoerstemeier.Tambon
                     {EntityType.TAO, "[[Subdistrict administrative organization|subdistrict administrative organization (SAO)]]"},
                 };
 
-                    builder.AppendLine("===Local administration===");
-                    if ( lao.Count() == 1 )
+                builder.AppendLine("===Local administration===");
+                var laoTupel = new List<Tuple<String, String, String>>();
+                foreach ( var laoEntity in lao )
+                {
+                    var laoEnglish = laoEntity.english;
+                    if ( links.Keys.Contains(laoEntity) )
                     {
-                        var firstLao = lao.First();
-                        builder.AppendFormat("The whole area of the subdistrict is covered by the {0} {1} ({2})", enWikipediaLink[firstLao.type], firstLao.english, firstLao.FullName);
-                        builder.AppendLine();
+                        laoEnglish = WikiLink(links[laoEntity], laoEnglish);
                     }
+                    laoTupel.Add(new Tuple<String, String, String>(enWikipediaLink[laoEntity.type], laoEnglish, laoEntity.FullName));
+                }
+
+                if ( lao.Count() == 1 )
+                {
+                    var firstLao = laoTupel.First();
+
+                    builder.AppendFormat("The whole area of the subdistrict is covered by the {0} {1} ({2})", firstLao.Item1, firstLao.Item2, firstLao.Item3);
                     builder.AppendLine();
                 }
+                else
+                {
+                    builder.AppendFormat("The area of the subdistrict is shared by {0} local governments.", lao.Count());
+                    builder.AppendLine();
+                    foreach ( var tupel in laoTupel )
+                    {
+                        builder.AppendFormat("*the {0} {1} ({2})", tupel.Item1, tupel.Item2, tupel.Item3);
+                        builder.AppendLine();
+                    }
+                }
+                builder.AppendLine();
             }
 
             builder.AppendLine("==References==");
