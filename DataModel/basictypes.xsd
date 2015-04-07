@@ -624,4 +624,49 @@
     </xs:annotation>
     <xs:list itemType="xs:unsignedInt"></xs:list>
   </xs:simpleType>
+
+  <xs:simpleType name="ParkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NationalPark">
+        <xs:annotation>
+          <xs:documentation>National park (อุทยานแห่งชาติ).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ForestPark">
+        <xs:annotation>
+          <xs:documentation>Forest park (วนอุทยานใน).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HistoricalPark">
+        <xs:annotation>
+          <xs:documentation>Historical park (อุทยานประวัติศาสตร์).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WildlifeSanctuary">
+        <xs:annotation>
+          <xs:documentation>Wildlife sanctuary (เขตรักษาพันธุ์สัตว์ป่า).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NonHuntingArea">
+        <xs:annotation>
+          <xs:documentation>Non-hunting area (เขตห้ามล่าสัตว์ป่า).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HistoricalSite">
+        <xs:annotation>
+          <xs:documentation>Historical site (เขตที่ดินโบราณสถาน).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NationalForest">
+        <xs:annotation>
+          <xs:documentation>National protected forest (ป่าสงวนแห่งชาติ).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WorldHeritage">
+        <xs:annotation>
+          <xs:documentation>UNESCO world heritage (มรดกโลก).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>

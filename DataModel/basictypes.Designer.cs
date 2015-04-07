@@ -343,6 +343,53 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum ParkType {
+        
+        /// <summary>
+        /// National park (อุทยานแห่งชาติ).
+        /// </summary>
+        NationalPark,
+        
+        /// <summary>
+        /// Forest park (วนอุทยานใน).
+        /// </summary>
+        ForestPark,
+        
+        /// <summary>
+        /// Historical park (อุทยานประวัติศาสตร์).
+        /// </summary>
+        HistoricalPark,
+        
+        /// <summary>
+        /// Wildlife sanctuary (เขตรักษาพันธุ์สัตว์ป่า).
+        /// </summary>
+        WildlifeSanctuary,
+        
+        /// <summary>
+        /// Non-hunting area (เขตห้ามล่าสัตว์ป่า).
+        /// </summary>
+        NonHuntingArea,
+        
+        /// <summary>
+        /// Historical site (เขตที่ดินโบราณสถาน).
+        /// </summary>
+        HistoricalSite,
+        
+        /// <summary>
+        /// National protected forest (ป่าสงวนแห่งชาติ).
+        /// </summary>
+        NationalForest,
+        
+        /// <summary>
+        /// UNESCO world heritage (มรดกโลก).
+        /// </summary>
+        WorldHeritage,
+    }
+    
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInExclude))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityInclude))]

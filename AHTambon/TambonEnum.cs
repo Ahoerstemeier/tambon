@@ -130,6 +130,8 @@ namespace De.AHoerstemeier.Tambon
         MinisterOfInterior,
         DeputyMinisterOfInterior,
         MinistryOfInteriorPermanentSecretary,
+        MinisterOfAgriculture,
+        DeputyMinisterOfAgriculture,
         ProvinceGovernor,
         ViceProvinceGovernor,
         DeputyProvinceGovernor,

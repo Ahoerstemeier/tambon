@@ -225,13 +225,38 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryCreatePark">
+    <xs:annotation>
+      <xs:documentation>Protected area creation.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:HistoryParkBase" />
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="HistoryAbolishPark">
+    <xs:annotation>
+      <xs:documentation>Protected area cancelation.</xs:documentation>
+    </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:HistoryParkBase" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HistoryAreaChangePark">
+    <xs:annotation>
+      <xs:documentation>Protected area area change.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:HistoryParkBase">
+        <xs:attribute name="oldarea" type="xs:double" use="optional">
+          <xs:annotation>
+            <xs:documentation>Area before the change in km².</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="newarea" type="xs:double" use="optional">
+          <xs:annotation>
+            <xs:documentation>Area after the change in km².</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:group name="HistoryEntry">
@@ -251,6 +276,7 @@
       <xs:element name="reassign" type="t:HistoryReassign" />
       <xs:element name="createpark" type="t:HistoryCreatePark" />
       <xs:element name="abolishpark" type="t:HistoryAbolishPark" />
+      <xs:element name="areachangepark" type="t:HistoryAreaChangePark" />
     </xs:choice>
   </xs:group>
   <xs:complexType name="HistoryList">

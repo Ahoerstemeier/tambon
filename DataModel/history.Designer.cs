@@ -16,6 +16,7 @@ namespace De.AHoerstemeier.Tambon {
     
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryParkBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAreaChangePark))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolishPark))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCreatePark))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolish))]
@@ -125,6 +126,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Protected area history base type.
     /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAreaChangePark))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolishPark))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCreatePark))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
@@ -155,6 +157,97 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    /// <summary>
+    /// Protected area area change.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryAreaChangePark", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HistoryAreaChangePark : HistoryParkBase {
+        
+        private double oldareaField;
+        
+        private bool oldareaFieldSpecified;
+        
+        private double newareaField;
+        
+        private bool newareaFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double oldarea {
+            get {
+                return this.oldareaField;
+            }
+            set {
+                this.oldareaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldareaSpecified {
+            get {
+                return this.oldareaFieldSpecified;
+            }
+            set {
+                this.oldareaFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double newarea {
+            get {
+                return this.newareaField;
+            }
+            set {
+                this.newareaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool newareaSpecified {
+            get {
+                return this.newareaFieldSpecified;
+            }
+            set {
+                this.newareaFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Protected area cancelation.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -164,6 +257,9 @@ namespace De.AHoerstemeier.Tambon {
     public partial class HistoryAbolishPark : HistoryParkBase {
     }
     
+    /// <summary>
+    /// Protected area creation.
+    /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -885,6 +981,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(HistoryAbolishPark), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("alternativename", typeof(HistoryAlternativeName), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(HistoryAreaChange), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(HistoryAreaChangePark), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(HistoryCreate), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(HistoryCreatePark), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("mergedwith", typeof(HistoryMergedWith), Order=0)]
