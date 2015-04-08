@@ -12,7 +12,7 @@
 
   <xs:complexType name="AreaPark">
     <xs:attributeGroup ref="t:Comment" />
-    <xs:attribute name="squarekilometer" type="xs:double" use="required">
+    <xs:attribute name="squarekilometer" type="xs:double" use="optional">
       <xs:annotation>
         <xs:documentation>Area in square kilometer (km²).</xs:documentation>
       </xs:annotation>
@@ -32,6 +32,21 @@
         <xs:documentation>Area part in tarangwa (ตารางวา, 4 m²). Only if value in rai is integer.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="year" type="xs:gYear" use="optional">
+      <xs:annotation>
+        <xs:documentation>Year in which the area value was valid.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="obsolete" type="xs:boolean" use="optional" default="false">
+      <xs:annotation>
+        <xs:documentation>Marking area values which are no longer valid.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="locationgeocode" type="t:GeocodeList" use="optional">
+      <xs:annotation>
+        <xs:documentation>Geocodes of the entites covered by the protected area.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="Park">
     <xs:annotation>
@@ -48,7 +63,7 @@
           <xs:documentation>Location of park, pointing approximately at the main entrance.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" type="t:AreaPark" name="area">
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:AreaPark" name="area">
         <xs:annotation>
           <xs:documentation>Area covered by the protected area.</xs:documentation>
         </xs:annotation>
@@ -76,11 +91,7 @@
         <xs:documentation>Protected area no longer existing/protected.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="locationgeocode" type="t:GeocodeList" use="optional">
-      <xs:annotation>
-        <xs:documentation>Geocodes of the entites covered by the protected area.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 </xs:schema>

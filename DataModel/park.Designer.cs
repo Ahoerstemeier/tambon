@@ -27,6 +27,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private double squarekilometerField;
         
+        private bool squarekilometerFieldSpecified;
+        
         private double raiField;
         
         private bool raiFieldSpecified;
@@ -38,6 +40,20 @@ namespace De.AHoerstemeier.Tambon {
         private int tarangwaField;
         
         private bool tarangwaFieldSpecified;
+        
+        private string yearField;
+        
+        private bool obsoleteField;
+        
+        private List<uint> locationgeocodeField;
+        
+        /// <summary>
+        /// Creates a new instance of AreaPark.
+        /// </summary>
+        public AreaPark() {
+            this.locationgeocodeField = new List<uint>();
+            this.obsoleteField = false;
+        }
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -70,6 +86,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.squarekilometerField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool squarekilometerSpecified {
+            get {
+                return this.squarekilometerFieldSpecified;
+            }
+            set {
+                this.squarekilometerFieldSpecified = value;
             }
         }
         
@@ -174,6 +207,58 @@ namespace De.AHoerstemeier.Tambon {
                 this.tarangwaFieldSpecified = value;
             }
         }
+        
+        /// <summary>
+        /// Year in which the area value was valid.
+        /// </summary>
+        /// <value>
+        /// The year.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string year {
+            get {
+                return this.yearField;
+            }
+            set {
+                this.yearField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Marking area values which are no longer valid.
+        /// </summary>
+        /// <value>
+        /// The obsolete.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool obsolete {
+            get {
+                return this.obsoleteField;
+            }
+            set {
+                this.obsoleteField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Geocodes of the entites covered by the protected area.
+        /// </summary>
+        /// <value>
+        /// The locationgeocode.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<uint> locationgeocode {
+            get {
+                return this.locationgeocodeField;
+            }
+            set {
+                this.locationgeocodeField = value;
+            }
+        }
     }
     
     /// <summary>
@@ -191,7 +276,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private Point pointField;
         
-        private AreaPark areaField;
+        private List<AreaPark> areaField;
         
         private HistoryList historyField;
         
@@ -207,17 +292,14 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool obsoleteFieldSpecified;
         
-        private List<uint> locationgeocodeField;
-        
         private string commentField;
         
         /// <summary>
         /// Creates a new instance of Park.
         /// </summary>
         public Park() {
-            this.locationgeocodeField = new List<uint>();
             this.historyField = new HistoryList();
-            this.areaField = new AreaPark();
+            this.areaField = new List<AreaPark>();
         }
         
         /// <summary>
@@ -260,9 +342,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The area.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("area", Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public AreaPark area {
+        public List<AreaPark> area {
             get {
                 return this.areaField;
             }
@@ -387,23 +469,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.obsoleteFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Geocodes of the entites covered by the protected area.
-        /// </summary>
-        /// <value>
-        /// The locationgeocode.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<uint> locationgeocode {
-            get {
-                return this.locationgeocodeField;
-            }
-            set {
-                this.locationgeocodeField = value;
             }
         }
         
