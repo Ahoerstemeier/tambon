@@ -400,6 +400,31 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                     text += Environment.NewLine;
                 }
+
+                var tambonError = String.Empty;
+                var startingDate = new DateTime(1950, 1, 1);
+                var gazetteNewerThan1950 = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.publication > startingDate);
+                var gazetteTambonCreation = gazetteNewerThan1950.Where(x => x.Items.Any(y => y is GazetteCreate && ((GazetteCreate)y).type == EntityType.Tambon)).ToList();
+                var tambonCreation = gazetteTambonCreation.SelectMany(x => x.Items.Where(y => y is GazetteCreate), (Gazette, History) => new
+                {
+                    Gazette,
+                    History
+                }).ToList();
+                var tambonCreationInCurrentEntity = tambonCreation.Where(x => GeocodeHelper.IsBaseGeocode(entity.geocode, ((GazetteCreate)x.History).geocode)).ToList();
+
+                foreach ( var creation in tambonCreationInCurrentEntity )
+                {
+                    var tambon = allTambon.FirstOrDefault(x => x.geocode == ((GazetteCreate)creation.History).geocode);
+                    if ( tambon == null )
+                    {
+                        tambonError += String.Format("Tambon {0} created {1:d} not found in entitylist", ((GazetteCreate)creation.History).geocode, creation.Gazette.publication) + Environment.NewLine;
+                    }
+                    else if ( !tambon.history.Items.Any(x => x is HistoryCreate) )
+                    {
+                        tambonError += String.Format("Tambon {0} ({1}) created {2:d} has no history", tambon.english, ((GazetteCreate)creation.History).geocode, creation.Gazette.publication) + Environment.NewLine;
+                    }
+                }
+                text += tambonError;
             }
 
             var unknownNeighbors = new List<UInt32>();
