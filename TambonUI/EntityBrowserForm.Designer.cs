@@ -56,11 +56,12 @@
             this.txtMuban = new System.Windows.Forms.TextBox();
             this.tabLocalGoverment = new System.Windows.Forms.TabPage();
             this.txtLocalGovernment = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.popupTree = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuWikipediaGerman = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWikipediaEnglish = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWikipediaTambonEnglish = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
@@ -70,7 +71,7 @@
             this.tabElection.SuspendLayout();
             this.tabMuban.SuspendLayout();
             this.tabLocalGoverment.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.popupTree.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubDivisions
@@ -330,15 +331,16 @@
             this.txtLocalGovernment.Size = new System.Drawing.Size(386, 120);
             this.txtLocalGovernment.TabIndex = 16;
             // 
-            // contextMenuStrip1
+            // popupTree
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.popupTree.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuWikipediaGerman,
             this.mnuWikipediaEnglish,
             this.mnuWikipediaTambonEnglish,
-            this.mnuMubanDefinitions});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 114);
+            this.mnuMubanDefinitions,
+            this.mnuHistory});
+            this.popupTree.Name = "contextMenuStrip1";
+            this.popupTree.Size = new System.Drawing.Size(176, 136);
             // 
             // mnuWikipediaGerman
             // 
@@ -368,6 +370,13 @@
             this.mnuMubanDefinitions.Text = "Muban definitions";
             this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
             // 
+            // mnuHistory
+            // 
+            this.mnuHistory.Name = "mnuHistory";
+            this.mnuHistory.Size = new System.Drawing.Size(175, 22);
+            this.mnuHistory.Text = "History XML";
+            this.mnuHistory.Click += new System.EventHandler(this.mnuHistory_Click);
+            // 
             // EntityBrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,7 +402,7 @@
             this.tabMuban.PerformLayout();
             this.tabLocalGoverment.ResumeLayout(false);
             this.tabLocalGoverment.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.popupTree.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -423,7 +432,7 @@
         private System.Windows.Forms.TextBox txtErrors;
         private System.Windows.Forms.TabPage tabElection;
         private System.Windows.Forms.TextBox txtElections;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip popupTree;
         private System.Windows.Forms.ToolStripMenuItem mnuWikipediaGerman;
         private System.Windows.Forms.TabPage tabMuban;
         private System.Windows.Forms.TextBox txtMuban;
@@ -432,6 +441,7 @@
         private System.Windows.Forms.TabPage tabLocalGoverment;
         private System.Windows.Forms.TextBox txtLocalGovernment;
         private System.Windows.Forms.ToolStripMenuItem mnuWikipediaTambonEnglish;
+        private System.Windows.Forms.ToolStripMenuItem mnuHistory;
 
     }
 }

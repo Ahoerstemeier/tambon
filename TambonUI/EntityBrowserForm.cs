@@ -20,6 +20,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private List<Entity> _localGovernments = new List<Entity>();
         private Entity _baseEntity;
         private List<Entity> _allEntities;
+        private Dictionary<UInt32, HistoryList> _creationHistories = new Dictionary<UInt32, HistoryList>();
 
         #endregion fields
 
@@ -156,6 +157,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             mnuWikipediaGerman.Enabled = entity.type.IsCompatibleEntityType(EntityType.Amphoe);
             mnuWikipediaEnglish.Enabled = mnuWikipediaGerman.Enabled;
+            mnuHistory.Enabled = _creationHistories.Keys.Contains(entity.geocode);
 
             mnuWikipediaTambonEnglish.Enabled = entity.type.IsCompatibleEntityType(EntityType.Tambon);
         }
@@ -414,14 +416,38 @@ namespace De.AHoerstemeier.Tambon.UI
 
                 foreach ( var creation in tambonCreationInCurrentEntity )
                 {
-                    var tambon = allTambon.FirstOrDefault(x => x.geocode == ((GazetteCreate)creation.History).geocode);
+                    var gazetteCreate = (GazetteCreate)creation.History;
+                    var tambon = allTambon.FirstOrDefault(x => x.geocode == gazetteCreate.geocode);
                     if ( tambon == null )
                     {
-                        tambonError += String.Format("Tambon {0} created {1:d} not found in entitylist", ((GazetteCreate)creation.History).geocode, creation.Gazette.publication) + Environment.NewLine;
+                        tambonError += String.Format("Tambon {0} created {1:d} not found in entitylist", gazetteCreate.geocode, creation.Gazette.publication) + Environment.NewLine;
                     }
                     else if ( !tambon.history.Items.Any(x => x is HistoryCreate) )
                     {
-                        tambonError += String.Format("Tambon {0} ({1}) created {2:d} has no history", tambon.english, ((GazetteCreate)creation.History).geocode, creation.Gazette.publication) + Environment.NewLine;
+                        tambonError += String.Format("Tambon {0} ({1}) created {2:d} has no history", tambon.english, gazetteCreate.geocode, creation.Gazette.publication) + Environment.NewLine;
+
+                        var newHistory = new HistoryList();
+                        var historyCreate = new HistoryCreate();
+                        historyCreate.type = gazetteCreate.type;
+                        if ( creation.Gazette.effectiveSpecified )
+                        {
+                            historyCreate.effective = creation.Gazette.effective;
+                            historyCreate.effectiveSpecified = true;
+                        }
+                        if ( creation.Gazette.effectiveafterSpecified )
+                        {
+                            historyCreate.effective = creation.Gazette.publication + new TimeSpan(creation.Gazette.effectiveafter, 0, 0, 0);
+                            historyCreate.effectiveSpecified = true;
+                        }
+                        historyCreate.status = ChangeStatus.Gazette;
+                        historyCreate.Items.Add(new GazetteRelated(creation.Gazette)
+                        {
+                            relation = GazetteRelation.Unknown
+                        });
+                        historyCreate.splitfrom.AddRange(gazetteCreate.SplitFrom());
+                        newHistory.Items.Add(historyCreate);
+
+                        _creationHistories[tambon.geocode] = newHistory;
                     }
                 }
                 text += tambonError;
@@ -734,7 +760,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
                 if ( treeviewSelection.SelectedNode != null )
                 {
-                    contextMenuStrip1.Show(treeviewSelection, e.Location);
+                    popupTree.Show(treeviewSelection, e.Location);
                 }
             }
         }
@@ -833,7 +859,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
-        private void CopyToClipboard(string text)
+        private void CopyToClipboard(String text)
         {
             Boolean success = false;
             while ( !success )
@@ -851,6 +877,17 @@ namespace De.AHoerstemeier.Tambon.UI
                         break;
                     }
                 }
+            }
+        }
+
+        private void mnuHistory_Click(object sender, EventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            if ( _creationHistories.Keys.Contains(entity.geocode) )
+            {
+                var historyXml = XmlManager.EntityToXml<HistoryList>(_creationHistories[entity.geocode]);
+                CopyToClipboard(historyXml);
             }
         }
 
