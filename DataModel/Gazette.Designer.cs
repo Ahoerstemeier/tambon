@@ -2583,6 +2583,7 @@ namespace De.AHoerstemeier.Tambon {
                 this.countersignedbyfunctionFieldSpecified = value;
             }
         }
+
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
@@ -3028,5 +3029,6 @@ namespace De.AHoerstemeier.Tambon {
                 this.entryField = value;
             }
         }
+
     }
 }

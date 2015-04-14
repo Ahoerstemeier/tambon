@@ -37,6 +37,26 @@ namespace De.AHoerstemeier.Tambon
         #endregion IGeocode Members
 
         /// <summary>
+        /// Checks whether the announcement matches the given reference.
+        /// </summary>
+        /// <param name="gazetteReference">Gazette reference.</param>
+        /// <returns><c>true</c> if matching the reference, <c>false</c> otherwise.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="gazetteReference"/> is <c>null</c>.</exception>
+        public Boolean IsMatchWith(GazetteRelated gazetteReference)
+        {
+            if ( gazetteReference == null )
+            {
+                throw new ArgumentNullException("gazetteReference");
+            }
+
+            return
+                gazetteReference.volume == this.volume &&
+                gazetteReference.issue == this.issue &&
+                gazetteReference.page == this.FirstPage &&
+                gazetteReference.date == this.publication;
+        }
+
+        /// <summary>
         /// Gets the filename of the locally cached PDF file.
         /// </summary>
         public String LocalPdfFileName

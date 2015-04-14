@@ -747,6 +747,21 @@ namespace De.AHoerstemeier.Tambon
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
+
+                        if ( statement != null )
+                        {
+                            if ( _helper.AddTypeOfAdministrativeQualifiersAndReferences(statement, entity.type, entity) )
+                            {
+                                foreach ( var qualifier in statement.Qualifiers )
+                                {
+                                    qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                                }
+                                foreach ( var reference in statement.References )
+                                {
+                                    reference.Save(_helper.GetReferenceSaveEditSummary(reference));
+                                }
+                            }
+                        }
                     }
                 }
             }

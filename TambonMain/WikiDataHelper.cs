@@ -497,7 +497,8 @@ namespace De.AHoerstemeier.Tambon
         private WikiDataState TypeOfAdministrativeUnit(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
             var entityType = WikiBase.WikiDataItems[entity.type];
-            return CheckPropertyValue(item, WikiBase.PropertyIdInstanceOf, entityType, createStatement, overrideWrongData, out statement);
+            var result = CheckPropertyValue(item, WikiBase.PropertyIdInstanceOf, entityType, createStatement, overrideWrongData, out statement);
+            return result;
         }
 
         /// <summary>
@@ -536,6 +537,74 @@ namespace De.AHoerstemeier.Tambon
 
             Statement dummy;
             return TypeOfAdministrativeUnit(item, entity, false, false, out dummy);
+        }
+
+        /// <summary>
+        /// Adds the start and end date qualifiers to the type statement, and the corresponding Gazette announcement reference.
+        /// </summary>
+        /// <param name="statement">Statement with the entity type.</param>
+        /// <param name="entityType">Entity type to be searched for.</param>
+        /// <param name="entity">Entity.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="statement"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        /// <returns><c>true</c> if qualifiers or references were added, <c>false</c> otherwise.</returns>
+        public Boolean AddTypeOfAdministrativeQualifiersAndReferences(Statement statement, EntityType entityType, Entity entity)
+        {
+            if ( statement == null )
+                throw new ArgumentNullException("statement");
+            if ( entity == null )
+                throw new ArgumentNullException("entity");
+            var result = false;
+
+            foreach ( var historyItem in entity.history.Items )
+            {
+                var entityHistoryCreate = historyItem as HistoryCreate;
+                var entityStatusChange = historyItem as HistoryStatus;
+                var entityAbolish = historyItem as HistoryAbolish;
+                if ( entityHistoryCreate != null && entityHistoryCreate.type == entity.type && entityHistoryCreate.effectiveSpecified )
+                {
+                    // create as requested type
+                    result |= CreateDateQualifierAndReference(statement, WikiBase.PropertyIdStartDate, entityHistoryCreate);
+                }
+                if ( entityStatusChange != null && entityStatusChange.@new == entity.type && entityStatusChange.effectiveSpecified )
+                {
+                    // change to requested type
+                    result |= CreateDateQualifierAndReference(statement, WikiBase.PropertyIdStartDate, entityStatusChange);
+                }
+                if ( entityStatusChange != null && entityStatusChange.old == entity.type && entityStatusChange.effectiveSpecified )
+                {
+                    // change from requested type
+                    result |= CreateDateQualifierAndReference(statement, WikiBase.PropertyIdEndDate, entityStatusChange);
+                }
+                if ( entityAbolish != null && entityAbolish.type == entity.type && entityAbolish.effectiveSpecified )
+                {
+                    // abolish as requested type
+                    result |= CreateDateQualifierAndReference(statement, WikiBase.PropertyIdEndDate, entityAbolish);
+                }
+            }
+            return result;
+        }
+
+        private Boolean CreateDateQualifierAndReference(Statement statement, String propertyId, HistoryEntryBase entityHistory)
+        {
+            var result = false;
+            var startDateQualifier = statement.Qualifiers.FirstOrDefault(x => x.PropertyId.PrefixedId == propertyId);
+            if ( startDateQualifier == null )
+            {
+                startDateQualifier = new Qualifier(statement, SnakType.Value, new EntityId(propertyId), TimeValue.DateValue(entityHistory.effective));
+                result = true;
+            }
+            var gazetteReference = entityHistory.Items.FirstOrDefault(x => x is GazetteRelated) as GazetteRelated;
+            if ( gazetteReference != null )
+            {
+                GazetteEntry gazetteAnnouncement = GlobalData.AllGazetteAnnouncements.FindAnnouncement(gazetteReference);
+                if ( gazetteAnnouncement != null )
+                {
+                    var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(gazetteAnnouncement.DownloadUrl.AbsoluteUri));
+                    var startDateReference = statement.CreateReferenceForSnak(snak);
+                    result = true;
+                }
+            }
+            return result;
         }
 
         #endregion TypeOfAdministrativeUnit
