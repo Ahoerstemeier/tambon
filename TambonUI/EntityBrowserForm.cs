@@ -20,7 +20,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private List<Entity> _localGovernments = new List<Entity>();
         private Entity _baseEntity;
         private List<Entity> _allEntities;
-        private Dictionary<UInt32, HistoryList> _creationHistories = new Dictionary<UInt32, HistoryList>();
+        private Dictionary<UInt32, HistoryList> _creationHistories;
 
         #endregion fields
 
@@ -97,6 +97,12 @@ namespace De.AHoerstemeier.Tambon.UI
 
             GlobalData.LoadPopulationData(PopulationDataSource, PopulationReferenceYear);
             Entity.CalculateLocalGovernmentPopulation(_localGovernments, allTambon, PopulationDataSource, PopulationReferenceYear);
+
+            var allEntities = new List<Entity>();
+            allEntities.AddRange(_localGovernments);
+            allEntities.AddRange(_baseEntity.FlatList());
+            _creationHistories = ExtractHistoriesFromGazette(_baseEntity, allEntities.Distinct());
+
             PopulationDataToTreeView();
         }
 
@@ -402,55 +408,6 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                     text += Environment.NewLine;
                 }
-
-                var tambonError = String.Empty;
-                var startingDate = new DateTime(1950, 1, 1);
-                var gazetteNewerThan1950 = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.publication > startingDate);
-                var gazetteTambonCreation = gazetteNewerThan1950.Where(x => x.Items.Any(y => y is GazetteCreate && ((GazetteCreate)y).type == EntityType.Tambon)).ToList();
-                var tambonCreation = gazetteTambonCreation.SelectMany(x => x.Items.Where(y => y is GazetteCreate), (Gazette, History) => new
-                {
-                    Gazette,
-                    History
-                }).ToList();
-                var tambonCreationInCurrentEntity = tambonCreation.Where(x => GeocodeHelper.IsBaseGeocode(entity.geocode, ((GazetteCreate)x.History).geocode)).ToList();
-
-                foreach ( var creation in tambonCreationInCurrentEntity )
-                {
-                    var gazetteCreate = (GazetteCreate)creation.History;
-                    var tambon = allTambon.FirstOrDefault(x => x.geocode == gazetteCreate.geocode);
-                    if ( tambon == null )
-                    {
-                        tambonError += String.Format("Tambon {0} created {1:d} not found in entitylist", gazetteCreate.geocode, creation.Gazette.publication) + Environment.NewLine;
-                    }
-                    else if ( !tambon.history.Items.Any(x => x is HistoryCreate) )
-                    {
-                        tambonError += String.Format("Tambon {0} ({1}) created {2:d} has no history", tambon.english, gazetteCreate.geocode, creation.Gazette.publication) + Environment.NewLine;
-
-                        var newHistory = new HistoryList();
-                        var historyCreate = new HistoryCreate();
-                        historyCreate.type = gazetteCreate.type;
-                        if ( creation.Gazette.effectiveSpecified )
-                        {
-                            historyCreate.effective = creation.Gazette.effective;
-                            historyCreate.effectiveSpecified = true;
-                        }
-                        if ( creation.Gazette.effectiveafterSpecified )
-                        {
-                            historyCreate.effective = creation.Gazette.publication + new TimeSpan(creation.Gazette.effectiveafter, 0, 0, 0);
-                            historyCreate.effectiveSpecified = true;
-                        }
-                        historyCreate.status = ChangeStatus.Gazette;
-                        historyCreate.Items.Add(new GazetteRelated(creation.Gazette)
-                        {
-                            relation = GazetteRelation.Unknown
-                        });
-                        historyCreate.splitfrom.AddRange(gazetteCreate.SplitFrom());
-                        newHistory.Items.Add(historyCreate);
-
-                        _creationHistories[tambon.geocode] = newHistory;
-                    }
-                }
-                text += tambonError;
             }
 
             var unknownNeighbors = new List<UInt32>();
@@ -510,6 +467,56 @@ namespace De.AHoerstemeier.Tambon.UI
 
             // check areacoverages
             txtErrors.Text = text;
+        }
+
+        private static Dictionary<UInt32, HistoryList> ExtractHistoriesFromGazette(Entity entity, IEnumerable<Entity> allEntity)
+        {
+            // TODO - status change as well
+            var result = new Dictionary<UInt32, HistoryList>();
+            var startingDate = new DateTime(1950, 1, 1);
+            var gazetteNewerThan1950 = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.publication > startingDate);
+            var gazetteCreation = gazetteNewerThan1950.Where(x => x.Items.Any(y => y is GazetteCreate)).ToList();
+            var tambonCreation = gazetteCreation.SelectMany(x => x.Items.Where(y => y is GazetteCreate), (Gazette, History) => new
+            {
+                Gazette,
+                History
+            }).ToList();
+            var entityCreationInCurrentEntity = tambonCreation.Where(x => GeocodeHelper.IsBaseGeocode(entity.geocode, ((GazetteCreate)x.History).geocode)).ToList();
+
+            foreach ( var creation in entityCreationInCurrentEntity )
+            {
+                var gazetteCreate = (GazetteCreate)creation.History;
+                if ( gazetteCreate.geocode != 0 )
+                {
+                    var foundEntity = allEntity.FirstOrDefault(x => x.geocode == gazetteCreate.geocode);
+                    if ( foundEntity != null )
+                    {
+                        var newHistory = new HistoryList();
+                        var historyCreate = new HistoryCreate();
+                        historyCreate.type = gazetteCreate.type;
+                        if ( creation.Gazette.effectiveSpecified )
+                        {
+                            historyCreate.effective = creation.Gazette.effective;
+                            historyCreate.effectiveSpecified = true;
+                        }
+                        if ( creation.Gazette.effectiveafterSpecified )
+                        {
+                            historyCreate.effective = creation.Gazette.publication + new TimeSpan(creation.Gazette.effectiveafter, 0, 0, 0);
+                            historyCreate.effectiveSpecified = true;
+                        }
+                        historyCreate.status = ChangeStatus.Gazette;
+                        historyCreate.Items.Add(new GazetteRelated(creation.Gazette)
+                        {
+                            relation = GazetteRelation.Unknown
+                        });
+                        historyCreate.splitfrom.AddRange(gazetteCreate.SplitFrom());
+                        newHistory.Items.Add(historyCreate);
+
+                        result[foundEntity.geocode] = newHistory;
+                    }
+                }
+            }
+            return result;
         }
 
         private String CheckCode(Entity entity, IEnumerable<EntityType> entityTypes, String codeName, Func<Entity, String> selector, String format)

@@ -16,12 +16,20 @@ namespace De.AHoerstemeier.Tambon
             var parents = new List<UInt32>();
             foreach ( var item in Items )
             {
+                if ( parentSpecified )
+                {
+                    parents.Add(parent);
+                }
                 var itemReassign = item as GazetteReassign;
                 if ( itemReassign != null )
                 {
                     if ( itemReassign.oldgeocodeSpecified )
                     {
                         parents.Add(itemReassign.oldgeocode / 100);
+                    }
+                    if ( itemReassign.oldownerSpecified )
+                    {
+                        parents.Add(itemReassign.oldowner);
                     }
                 }
                 var itemAreaChange = item as GazetteAreaChange;
