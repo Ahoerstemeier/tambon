@@ -473,46 +473,77 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             // TODO - status change as well
             var result = new Dictionary<UInt32, HistoryList>();
-            var startingDate = new DateTime(1950, 1, 1);
-            var gazetteNewerThan1950 = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.publication > startingDate);
-            var gazetteCreation = gazetteNewerThan1950.Where(x => x.Items.Any(y => y is GazetteCreate)).ToList();
-            var tambonCreation = gazetteCreation.SelectMany(x => x.Items.Where(y => y is GazetteCreate), (Gazette, History) => new
+            //var startingDate = new DateTime(1950, 1, 1);
+            //var gazetteNewerThan1950 = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.publication > startingDate);
+            // var gazetteWithCreationOrStatus = gazetteNewerThan1950.Where(x => x.Items.Any(y => y is GazetteCreate || y is GazetteStatusChange)).ToList();
+            var gazetteContent = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.SelectMany(x => x.Items.Where(y => y is GazetteCreate || y is GazetteStatusChange), (Gazette, History) => new
             {
                 Gazette,
                 History
             }).ToList();
-            var entityCreationInCurrentEntity = tambonCreation.Where(x => GeocodeHelper.IsBaseGeocode(entity.geocode, ((GazetteCreate)x.History).geocode)).ToList();
+            // var gazetteContentInCurrentEntity = gazetteContent.Where(x => GeocodeHelper.IsBaseGeocode(entity.geocode, ((GazetteOperationBase)x.History).geocode)).ToList();
 
-            foreach ( var creation in entityCreationInCurrentEntity )
+            foreach ( var creation in gazetteContent )
             {
-                var gazetteCreate = (GazetteCreate)creation.History;
-                if ( gazetteCreate.geocode != 0 )
+                var gazetteOperation = creation.History as GazetteOperationBase;
+                if ( gazetteOperation != null )
                 {
-                    var foundEntity = allEntity.FirstOrDefault(x => x.geocode == gazetteCreate.geocode);
-                    if ( foundEntity != null )
+                    UInt32 geocode = 0;
+                    if ( gazetteOperation.tambonSpecified )
                     {
-                        var newHistory = new HistoryList();
-                        var historyCreate = new HistoryCreate();
-                        historyCreate.type = gazetteCreate.type;
-                        if ( creation.Gazette.effectiveSpecified )
+                        geocode = gazetteOperation.tambon + 50;
+                    }
+                    if ( gazetteOperation.geocodeSpecified )
+                    {
+                        geocode = gazetteOperation.geocode;
+                    }
+                    if ( geocode != 0 )
+                    {
+                        var gazetteCreate = gazetteOperation as GazetteCreate;
+                        var gazetteStatus = gazetteOperation as GazetteStatusChange;
+                        HistoryEntryBase history = null;
+                        if ( gazetteCreate != null )
                         {
-                            historyCreate.effective = creation.Gazette.effective;
-                            historyCreate.effectiveSpecified = true;
+                            var historyCreate = new HistoryCreate();
+                            historyCreate.splitfrom.AddRange(gazetteCreate.SplitFrom());
+                            historyCreate.type = gazetteCreate.type;
+                            history = historyCreate;
                         }
-                        if ( creation.Gazette.effectiveafterSpecified )
+                        if ( gazetteStatus != null )
                         {
-                            historyCreate.effective = creation.Gazette.publication + new TimeSpan(creation.Gazette.effectiveafter, 0, 0, 0);
-                            historyCreate.effectiveSpecified = true;
+                            var historyStatus = new HistoryStatus();
+                            historyStatus.old = gazetteStatus.old;
+                            historyStatus.@new = gazetteStatus.@new;
+                            history = historyStatus;
                         }
-                        historyCreate.status = ChangeStatus.Gazette;
-                        historyCreate.Items.Add(new GazetteRelated(creation.Gazette)
+                        if ( history != null )
                         {
-                            relation = GazetteRelation.Unknown
-                        });
-                        historyCreate.splitfrom.AddRange(gazetteCreate.SplitFrom());
-                        newHistory.Items.Add(historyCreate);
-
-                        result[foundEntity.geocode] = newHistory;
+                            if ( creation.Gazette.effectiveSpecified )
+                            {
+                                history.effective = creation.Gazette.effective;
+                                history.effectiveSpecified = true;
+                            }
+                            if ( creation.Gazette.effectiveafterSpecified )
+                            {
+                                history.effective = creation.Gazette.publication + new TimeSpan(creation.Gazette.effectiveafter, 0, 0, 0);
+                                history.effectiveSpecified = true;
+                            }
+                            history.status = ChangeStatus.Gazette;
+                            history.Items.Add(new GazetteRelated(creation.Gazette)
+                            {
+                                relation = GazetteRelation.Unknown
+                            });
+                            var foundEntity = allEntity.FirstOrDefault(x => x.geocode == geocode);
+                            if ( foundEntity != null )
+                            {
+                                if ( !result.Keys.Contains(foundEntity.geocode) )
+                                {
+                                    result[foundEntity.geocode] = new HistoryList();
+                                }
+                                result[foundEntity.geocode].Items.Add(history);
+                                result[foundEntity.geocode].Items.Sort((x, y) => y.effective.CompareTo(x.effective));
+                            }
+                        }
                     }
                 }
             }
