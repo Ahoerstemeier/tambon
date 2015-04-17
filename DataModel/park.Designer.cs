@@ -37,7 +37,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool ngamFieldSpecified;
         
-        private int tarangwaField;
+        private double tarangwaField;
         
         private bool tarangwaFieldSpecified;
         
@@ -182,7 +182,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int tarangwa {
+        public double tarangwa {
             get {
                 return this.tarangwaField;
             }
