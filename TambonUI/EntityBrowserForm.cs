@@ -501,6 +501,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     {
                         var gazetteCreate = gazetteOperation as GazetteCreate;
                         var gazetteStatus = gazetteOperation as GazetteStatusChange;
+                        var gazetteRename = gazetteOperation as GazetteRename;
                         HistoryEntryBase history = null;
                         if ( gazetteCreate != null )
                         {
@@ -515,6 +516,15 @@ namespace De.AHoerstemeier.Tambon.UI
                             historyStatus.old = gazetteStatus.old;
                             historyStatus.@new = gazetteStatus.@new;
                             history = historyStatus;
+                        }
+                        if ( gazetteRename != null )
+                        {
+                            var historyRename = new HistoryRename();
+                            historyRename.oldname = gazetteRename.oldname;
+                            historyRename.oldenglish = gazetteRename.oldenglish;
+                            historyRename.name = gazetteRename.name;
+                            historyRename.english = gazetteRename.english;
+                            history = historyRename;
                         }
                         if ( history != null )
                         {
