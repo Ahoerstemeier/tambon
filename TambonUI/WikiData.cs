@@ -231,6 +231,9 @@ namespace De.AHoerstemeier.Tambon.UI
                 lao.CalculatePostcodeForLocalAdministration(allTambon);
             }
 
+            GlobalData.LoadPopulationData(PopulationDataSourceType.DOPA, GlobalData.PopulationStatisticMaxYear);
+            Entity.CalculateLocalGovernmentPopulation(localGovernments, allTambon, PopulationDataSourceType.DOPA, GlobalData.PopulationStatisticMaxYear);
+
             cbxChangwat.Items.AddRange(allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
             lblTambonInfo.Text = String.Empty;
         }

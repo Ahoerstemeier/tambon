@@ -64,7 +64,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             InitializeComponent();
             PopulationDataSource = PopulationDataSourceType.DOPA;
-            PopulationReferenceYear = 2013;
+            PopulationReferenceYear = GlobalData.PopulationStatisticMaxYear;
         }
 
         #endregion constructor
