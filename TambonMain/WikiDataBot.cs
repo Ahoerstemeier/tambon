@@ -410,7 +410,7 @@ namespace De.AHoerstemeier.Tambon
             var languageCode = Language.Thai.ToCode();
             ClearRunInfo();
 
-            foreach ( var entity in entities )
+            foreach ( var entity in entities.Where(x => x.type != EntityType.Muban) )
             {
                 String newAlias = entity.AbbreviatedName;
                 if ( !String.IsNullOrEmpty(newAlias) )
