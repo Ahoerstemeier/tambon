@@ -236,6 +236,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
             cbxChangwat.Items.AddRange(allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
             lblTambonInfo.Text = String.Empty;
+
+            var thesabanMueangWithWikiData = localGovernments.Where(x => x.type == EntityType.ThesabanMueang && (x.wiki == null || String.IsNullOrEmpty(x.wiki.wikidata))).Select(x => String.Format("{0} ({1})", x.english, x.geocode)).ToArray();
+            edtCollisions.Text = String.Join(Environment.NewLine, thesabanMueangWithWikiData);
         }
 
         private void btnRun_Click(object sender, EventArgs e)

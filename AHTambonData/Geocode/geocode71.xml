@@ -1801,6 +1801,9 @@
           <rename oldname="หนองขาว" oldenglish="Nong Khao" name="หนองหญ้าดอกขาว" english="Nong Ya Dok Khao">
             <meetingreference date="2011-08-25" number="3" board="rename" />
           </rename>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="710605" coverage="partially" />
@@ -1970,6 +1973,11 @@
           <term begin="2011-11-30" type="TAO" size="14" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="14" />
         </council>
+        <history>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="710610" coverage="partially" />
         </areacoverage>
@@ -2071,6 +2079,11 @@
           <term begin="2011-11-06" type="TAO" size="32" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="32" />
         </council>
+        <history>
+          <create type="TAO" effective="1995-03-03" status="Gazette">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="710613" coverage="partially" />
         </areacoverage>
@@ -3437,6 +3450,7 @@
   <entity type="ThesabanMueang" name="กาญจนบุรี" english="Kanchanaburi" geocode="7199" parent="7101 7106">
     <wiki wikidata="Q239121" />
     <codes>
+      <post value="71000" comment="710604 Mu 1 also has 71000" />
       <gnd value="4735546-3" />
     </codes>
     <office type="MunicipalityOffice">
@@ -3464,9 +3478,18 @@
         <entity geocode="710102" coverage="completely" />
         <entity geocode="710103" coverage="partially" />
         <entity geocode="710104" coverage="partially" />
-        <entity geocode="710604" coverage="partially" />
+        <entity geocode="710604" coverage="partially" comment="Only parts of Mu 1" />
       </areacoverage>
     </office>
+    <history>
+      <areachange type="ThesabanMueang" effective="1974-09-05" status="Gazette">
+        <gazetteref volume="91" page="1" issue="148 ก ฉบับพิเศษ" date="1974-09-05" />
+      </areachange>
+      <create type="ThesabanMueang" effective="1936-03-25" status="Gazette">
+        <gazetteref volume="54" page="1756" issue="0 ก" date="1938-03-07" />
+        <gazetteref volume="52" page="2084" issue="0 ก" date="1936-03-25" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="ท่าเรือพระแท่น" english="Tha Ruea Phra Thaen" geocode="7198" parent="7105">
     <wiki wikidata="Q13025362" />
@@ -4096,11 +4119,17 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done">
         <meetingreference board="2" number="20" date="2007-07-05" />
       </statuschange>
+      <create type="TAO" effective="1995-03-03" status="Gazette">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ท่าล้อ" english="Tha Lo" geocode="7171" parent="7106" tambon="710604">
+    <codes>
+      <post value="71110" comment="Covers all Mu of Tambon, hence all post codes" />
+    </codes>
     <office type="MunicipalityOffice">
-      <url>http://www.thalor.com/</url>
+      <url lastchecked="2015-04-21">http://www.thalor.com/</url>
       <officials>
         <official title="Mayor" name="มนตรี กาญจน์บริรักษ์" begin="2012-01-08" beginreason="ElectedDirectly" />
       </officials>
@@ -4116,6 +4145,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done">
         <meetingreference board="2" number="17" date="2007-06-21" />
       </statuschange>
+      <create type="TAO" effective="1995-03-03" status="Gazette">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="วังศาลา" english="Wang Sala" geocode="7170" parent="7106" tambon="710603">
@@ -4136,6 +4168,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done">
         <meetingreference board="2" number="18" date="2007-06-28" />
       </statuschange>
+      <create type="TAO" effective="1995-03-03" status="Gazette">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ปากแพรก" english="Pak Phraek" geocode="7169" parent="7101" tambon="710103">
