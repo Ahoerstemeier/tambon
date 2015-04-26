@@ -45,5 +45,14 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion IGeocode Members
+
+        /// <summary>
+        /// Converts the gazette operation into a entity history entry.
+        /// </summary>
+        /// <returns>Coresponding history entry.</returns>
+        public virtual HistoryEntryBase ConvertToHistory()
+        {
+            return null;
+        }
     }
 }

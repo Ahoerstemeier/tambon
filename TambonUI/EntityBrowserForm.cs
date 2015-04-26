@@ -471,21 +471,22 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private static Dictionary<UInt32, HistoryList> ExtractHistoriesFromGazette(Entity entity, IEnumerable<Entity> allEntity)
         {
-            // TODO - status change as well
+            // TODO - area change as well
+            // Use IEnumerable<>.OfType/Cast to speed it up?
             var result = new Dictionary<UInt32, HistoryList>();
             //var startingDate = new DateTime(1950, 1, 1);
             //var gazetteNewerThan1950 = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.publication > startingDate);
             // var gazetteWithCreationOrStatus = gazetteNewerThan1950.Where(x => x.Items.Any(y => y is GazetteCreate || y is GazetteStatusChange)).ToList();
-            var gazetteContent = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.SelectMany(x => x.Items.Where(y => y is GazetteCreate || y is GazetteStatusChange), (Gazette, History) => new
+            var gazetteContent = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.SelectMany(x => x.Items.OfType<GazetteOperationBase>().Where(y => y is GazetteCreate || y is GazetteStatusChange || y is GazetteRename), (Gazette, History) => new
             {
                 Gazette,
                 History
             }).ToList();
             // var gazetteContentInCurrentEntity = gazetteContent.Where(x => GeocodeHelper.IsBaseGeocode(entity.geocode, ((GazetteOperationBase)x.History).geocode)).ToList();
 
-            foreach ( var creation in gazetteContent )
+            foreach ( var gazetteHistoryTuple in gazetteContent )
             {
-                var gazetteOperation = creation.History as GazetteOperationBase;
+                var gazetteOperation = gazetteHistoryTuple.History;
                 if ( gazetteOperation != null )
                 {
                     UInt32 geocode = 0;
@@ -499,50 +500,11 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                     if ( geocode != 0 )
                     {
-                        var gazetteCreate = gazetteOperation as GazetteCreate;
-                        var gazetteStatus = gazetteOperation as GazetteStatusChange;
-                        var gazetteRename = gazetteOperation as GazetteRename;
-                        HistoryEntryBase history = null;
-                        if ( gazetteCreate != null )
-                        {
-                            var historyCreate = new HistoryCreate();
-                            historyCreate.splitfrom.AddRange(gazetteCreate.SplitFrom());
-                            historyCreate.type = gazetteCreate.type;
-                            history = historyCreate;
-                        }
-                        if ( gazetteStatus != null )
-                        {
-                            var historyStatus = new HistoryStatus();
-                            historyStatus.old = gazetteStatus.old;
-                            historyStatus.@new = gazetteStatus.@new;
-                            history = historyStatus;
-                        }
-                        if ( gazetteRename != null )
-                        {
-                            var historyRename = new HistoryRename();
-                            historyRename.oldname = gazetteRename.oldname;
-                            historyRename.oldenglish = gazetteRename.oldenglish;
-                            historyRename.name = gazetteRename.name;
-                            historyRename.english = gazetteRename.english;
-                            history = historyRename;
-                        }
+                        HistoryEntryBase history = gazetteOperation.ConvertToHistory();
+
                         if ( history != null )
                         {
-                            if ( creation.Gazette.effectiveSpecified )
-                            {
-                                history.effective = creation.Gazette.effective;
-                                history.effectiveSpecified = true;
-                            }
-                            if ( creation.Gazette.effectiveafterSpecified )
-                            {
-                                history.effective = creation.Gazette.publication + new TimeSpan(creation.Gazette.effectiveafter, 0, 0, 0);
-                                history.effectiveSpecified = true;
-                            }
-                            history.status = ChangeStatus.Gazette;
-                            history.Items.Add(new GazetteRelated(creation.Gazette)
-                            {
-                                relation = GazetteRelation.Unknown
-                            });
+                            history.AddGazetteReference(gazetteHistoryTuple.Gazette);
                             var foundEntity = allEntity.FirstOrDefault(x => x.geocode == geocode);
                             if ( foundEntity != null )
                             {
@@ -932,9 +894,37 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
+            ExportEntityHistory(entity);
+        }
+
+        // TODO
+        private void mnuHistoryLocal_Click(Object sender, EventArgs e)
+        {
+            // var selectedNode = listviewLocalAdministration.SelectedItems;
+            // var entity = (Entity)(selectedNode.Tag);
+            // ExportEntityHistory(entity);
+        }
+
+        private void mnuHistoryCentral_Click(Object sender, EventArgs e)
+        {
+            //  var selectedNode = treeviewSelection.SelectedNode;
+            //  var entity = (Entity)(selectedNode.Tag);
+            //  ExportEntityHistory(entity);
+        }
+
+        private void ExportEntityHistory(Entity entity)
+        {
             if ( _creationHistories.Keys.Contains(entity.geocode) )
             {
                 var historyXml = XmlManager.EntityToXml<HistoryList>(_creationHistories[entity.geocode]);
+                // EntityToXml adds a header with BOM, exports with a different name than used in the entity XMLs
+                historyXml = historyXml.Replace("HistoryList", "history");
+                var startPos = historyXml.IndexOf("<history");
+                historyXml = historyXml.Substring(startPos);
+                // remove namespace from history tag
+                startPos = historyXml.IndexOf(">") + 1;
+                historyXml = "<history>" + historyXml.Substring(startPos);
+
                 CopyToClipboard(historyXml);
             }
         }

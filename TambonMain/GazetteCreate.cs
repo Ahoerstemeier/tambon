@@ -43,5 +43,17 @@ namespace De.AHoerstemeier.Tambon
             }
             return parents.Distinct();
         }
+
+        /// <summary>
+        /// Converts the gazette operation into a entity history entry.
+        /// </summary>
+        /// <returns>Coresponding history entry.</returns>
+        public override HistoryEntryBase ConvertToHistory()
+        {
+            var historyCreate = new HistoryCreate();
+            historyCreate.splitfrom.AddRange(this.SplitFrom());
+            historyCreate.type = this.type;
+            return historyCreate;
+        }
     }
 }
