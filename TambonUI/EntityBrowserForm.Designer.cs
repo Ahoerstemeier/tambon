@@ -62,6 +62,10 @@
             this.mnuWikipediaTambonEnglish = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.popupListviewCentral = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuHistoryCentral = new System.Windows.Forms.ToolStripMenuItem();
+            this.popupListviewLocal = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuHistoryLocal = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
@@ -72,6 +76,8 @@
             this.tabMuban.SuspendLayout();
             this.tabLocalGoverment.SuspendLayout();
             this.popupTree.SuspendLayout();
+            this.popupListviewCentral.SuspendLayout();
+            this.popupListviewLocal.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubDivisions
@@ -89,6 +95,7 @@
             // 
             this.treeviewSelection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.treeviewSelection.ContextMenuStrip = this.popupTree;
             this.treeviewSelection.Location = new System.Drawing.Point(3, 3);
             this.treeviewSelection.Name = "treeviewSelection";
             this.treeviewSelection.Size = new System.Drawing.Size(192, 506);
@@ -130,7 +137,9 @@
             this.columnThai,
             this.columnGeocode,
             this.columnPopulation});
+            this.listviewCentralAdministration.ContextMenuStrip = this.popupListviewCentral;
             this.listviewCentralAdministration.Location = new System.Drawing.Point(-1, 3);
+            this.listviewCentralAdministration.MultiSelect = false;
             this.listviewCentralAdministration.Name = "listviewCentralAdministration";
             this.listviewCentralAdministration.Size = new System.Drawing.Size(399, 310);
             this.listviewCentralAdministration.TabIndex = 13;
@@ -180,7 +189,9 @@
             this.columnLocalGeocode,
             this.columnLocalDolaCode,
             this.columnLocalPopulation});
+            this.listviewLocalAdministration.ContextMenuStrip = this.popupListviewLocal;
             this.listviewLocalAdministration.Location = new System.Drawing.Point(-4, 6);
+            this.listviewLocalAdministration.MultiSelect = false;
             this.listviewLocalAdministration.Name = "listviewLocalAdministration";
             this.listviewLocalAdministration.Size = new System.Drawing.Size(402, 310);
             this.listviewLocalAdministration.TabIndex = 15;
@@ -340,7 +351,7 @@
             this.mnuMubanDefinitions,
             this.mnuHistory});
             this.popupTree.Name = "contextMenuStrip1";
-            this.popupTree.Size = new System.Drawing.Size(176, 136);
+            this.popupTree.Size = new System.Drawing.Size(176, 114);
             // 
             // mnuWikipediaGerman
             // 
@@ -377,6 +388,36 @@
             this.mnuHistory.Text = "History XML";
             this.mnuHistory.Click += new System.EventHandler(this.mnuHistory_Click);
             // 
+            // popupListviewCentral
+            // 
+            this.popupListviewCentral.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuHistoryCentral});
+            this.popupListviewCentral.Name = "popupListviewCentral";
+            this.popupListviewCentral.Size = new System.Drawing.Size(153, 48);
+            this.popupListviewCentral.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewCentral_Opening);
+            // 
+            // mnuHistoryCentral
+            // 
+            this.mnuHistoryCentral.Name = "mnuHistoryCentral";
+            this.mnuHistoryCentral.Size = new System.Drawing.Size(112, 22);
+            this.mnuHistoryCentral.Text = "History";
+            this.mnuHistoryCentral.Click += new System.EventHandler(this.mnuHistoryCentral_Click);
+            // 
+            // popupListviewLocal
+            // 
+            this.popupListviewLocal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuHistoryLocal});
+            this.popupListviewLocal.Name = "popupListviewLocal";
+            this.popupListviewLocal.Size = new System.Drawing.Size(113, 26);
+            this.popupListviewLocal.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewLocal_Opening);
+            // 
+            // mnuHistoryLocal
+            // 
+            this.mnuHistoryLocal.Name = "mnuHistoryLocal";
+            this.mnuHistoryLocal.Size = new System.Drawing.Size(112, 22);
+            this.mnuHistoryLocal.Text = "History";
+            this.mnuHistoryLocal.Click += new System.EventHandler(this.mnuHistoryLocal_Click);
+            // 
             // EntityBrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +444,8 @@
             this.tabLocalGoverment.ResumeLayout(false);
             this.tabLocalGoverment.PerformLayout();
             this.popupTree.ResumeLayout(false);
+            this.popupListviewCentral.ResumeLayout(false);
+            this.popupListviewLocal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -442,6 +485,10 @@
         private System.Windows.Forms.TextBox txtLocalGovernment;
         private System.Windows.Forms.ToolStripMenuItem mnuWikipediaTambonEnglish;
         private System.Windows.Forms.ToolStripMenuItem mnuHistory;
+        private System.Windows.Forms.ContextMenuStrip popupListviewCentral;
+        private System.Windows.Forms.ToolStripMenuItem mnuHistoryCentral;
+        private System.Windows.Forms.ContextMenuStrip popupListviewLocal;
+        private System.Windows.Forms.ToolStripMenuItem mnuHistoryLocal;
 
     }
 }

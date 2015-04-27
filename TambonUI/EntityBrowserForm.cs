@@ -469,8 +469,11 @@ namespace De.AHoerstemeier.Tambon.UI
             txtErrors.Text = text;
         }
 
-        private static Dictionary<UInt32, HistoryList> ExtractHistoriesFromGazette(Entity entity, IEnumerable<Entity> allEntity)
+        private static Dictionary<UInt32, HistoryList> ExtractHistoriesFromGazette(Entity entity, IEnumerable<Entity> allEntities)
         {
+            // converting to dictionary much faster than FirstOrDefault(x => x.geocode) for each item later
+            var allEntityDictionary = allEntities.ToDictionary(x => x.geocode);
+
             // TODO - area change as well
             // Use IEnumerable<>.OfType/Cast to speed it up?
             var result = new Dictionary<UInt32, HistoryList>();
@@ -486,6 +489,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             foreach ( var gazetteHistoryTuple in gazetteContent )
             {
+                Entity foundEntity;
                 var gazetteOperation = gazetteHistoryTuple.History;
                 if ( gazetteOperation != null )
                 {
@@ -505,8 +509,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         if ( history != null )
                         {
                             history.AddGazetteReference(gazetteHistoryTuple.Gazette);
-                            var foundEntity = allEntity.FirstOrDefault(x => x.geocode == geocode);
-                            if ( foundEntity != null )
+                            if ( allEntityDictionary.TryGetValue(geocode, out foundEntity) )
                             {
                                 if ( !result.Keys.Contains(foundEntity.geocode) )
                                 {
@@ -712,6 +715,7 @@ namespace De.AHoerstemeier.Tambon.UI
             foreach ( Entity subEntity in entity.entity.Where(x => !x.IsObsolete && !x.type.IsLocalGovernment()) )
             {
                 ListViewItem item = listviewCentralAdministration.Items.Add(subEntity.english);
+                item.Tag = subEntity;
                 item.SubItems.Add(subEntity.name);
                 item.SubItems.Add(subEntity.geocode.ToString());
                 var populationData = subEntity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
@@ -731,6 +735,7 @@ namespace De.AHoerstemeier.Tambon.UI
             foreach ( Entity subEntity in localGovernmentsInEntity )
             {
                 ListViewItem item = listviewLocalAdministration.Items.Add(subEntity.english);
+                item.Tag = subEntity;
                 item.SubItems.Add(subEntity.name);
                 item.SubItems.Add(subEntity.type.ToString());
                 if ( subEntity.geocode > 9999 )
@@ -897,19 +902,28 @@ namespace De.AHoerstemeier.Tambon.UI
             ExportEntityHistory(entity);
         }
 
-        // TODO
         private void mnuHistoryLocal_Click(Object sender, EventArgs e)
         {
-            // var selectedNode = listviewLocalAdministration.SelectedItems;
-            // var entity = (Entity)(selectedNode.Tag);
-            // ExportEntityHistory(entity);
+            if ( listviewLocalAdministration.SelectedItems.Count == 1 )
+            {
+                foreach ( ListViewItem item in listviewLocalAdministration.SelectedItems )
+                {
+                    var entity = item.Tag as Entity;
+                    ExportEntityHistory(entity);
+                }
+            }
         }
 
         private void mnuHistoryCentral_Click(Object sender, EventArgs e)
         {
-            //  var selectedNode = treeviewSelection.SelectedNode;
-            //  var entity = (Entity)(selectedNode.Tag);
-            //  ExportEntityHistory(entity);
+            if ( listviewCentralAdministration.SelectedItems.Count == 1 )
+            {
+                foreach ( ListViewItem item in listviewCentralAdministration.SelectedItems )
+                {
+                    var entity = item.Tag as Entity;
+                    ExportEntityHistory(entity);
+                }
+            }
         }
 
         private void ExportEntityHistory(Entity entity)
@@ -926,6 +940,33 @@ namespace De.AHoerstemeier.Tambon.UI
                 historyXml = "<history>" + historyXml.Substring(startPos);
 
                 CopyToClipboard(historyXml);
+            }
+        }
+
+        private void popupListviewLocal_Opening(Object sender, CancelEventArgs e)
+        {
+            CheckHistoryAvailable(listviewLocalAdministration, mnuHistoryLocal);
+        }
+
+        private void popupListviewCentral_Opening(Object sender, CancelEventArgs e)
+        {
+            CheckHistoryAvailable(listviewCentralAdministration, mnuHistoryCentral);
+        }
+
+        private void CheckHistoryAvailable(ListView listview, ToolStripMenuItem menuItem)
+        {
+            var history = false;
+            if ( listview.SelectedItems.Count == 1 )
+            {
+                foreach ( ListViewItem item in listview.SelectedItems )
+                {
+                    var entity = item.Tag as Entity;
+                    if ( entity != null )
+                    {
+                        history = _creationHistories.Keys.Contains(entity.geocode);
+                    }
+                }
+                menuItem.Enabled = history;
             }
         }
 
