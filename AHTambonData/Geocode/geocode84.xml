@@ -141,6 +141,9 @@
   <history>
     <reformedspelling name="สุราสตร์ธานี" effective="1942-06-01" />
     <misspelling name="สุราษฏร์ธานี" comment="Common misspelling" />
+    <rename status="Gazette" name="สุราษฎร์ธาน" oldname="ไชยา">
+      <gazetteref volume="32" page="145" issue="0 ก" date="1915-08-08" />
+    </rename>
   </history>
   <entity type="Amphoe" name="เมืองสุราษฎร์ธานี" english="Mueang Surat Thani" geocode="8401">
     <wiki wikidata="Q476097" freebase="/m/073zwd" />
@@ -191,11 +194,11 @@
     </area>
     <history>
       <reformedspelling name="เมืองสุราสตร์ธานี" effective="1942-06-01" />
-      <rename status="Gazette" name="บ้านดอน" english="Ban Don" oldname="เมือง" oldenglish="Mueang">
-        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
-      </rename>
       <rename status="Gazette" name="เมืองสุราษฎร์ธานี" oldname="บ้านดอน">
         <gazetteref volume="55" page="658" issue="0 ก" date="1938-11-14" />
+      </rename>
+      <rename status="Gazette" name="บ้านดอน" english="Ban Don" oldname="เมือง" oldenglish="Mueang">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
       </rename>
     </history>
     <entity type="Tambon" name="ตลาด" english="Talat" geocode="840101">
@@ -923,8 +926,20 @@
       <entity type="Muban" geocode="84020805" name="บ้านกำสนบน" english="Ban Kam Sombon" />
       <entity type="Muban" geocode="84020806" name="บ้านในเกาะ" english="Ban Nai Ko" />
       <entity type="Muban" geocode="84020807" name="บ้านฝ่ายคลอง" english="Ban Fai Khlong" />
-      <entity type="Muban" geocode="84020808" name="บ้านเขาพนม" english="Ban Khao Phanom" />
-      <entity type="Muban" geocode="84020809" name="บ้านห้วยถุน" english="Ban Huai Thun" />
+      <entity type="Muban" geocode="84020808" name="บ้านเขาพนม" english="Ban Khao Phanom">
+        <history>
+          <create effective="2009-11-06" status="Gazette" type="Muban" splitfrom="84020801">
+            <gazetteref volume="127" page="62" issue="พิเศษ 24 ง" date="2010-02-19" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="84020809" name="บ้านห้วยถุน" english="Ban Huai Thun">
+        <history>
+          <create effective="2009-11-06" status="Gazette" type="Muban" splitfrom="84020801">
+            <gazetteref volume="127" page="64" issue="พิเศษ 24 ง" date="2010-02-19" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ตะเคียนทอง" english="Takhian Thong" geocode="840209" comment="DOPA romanization: Takian Thong">
       <wiki wikidata="Q15154242" />
@@ -1173,7 +1188,13 @@
       <entity type="Muban" geocode="84021307" name="บ้านเขาอุ้มลูก" english="Ban Khao Um Luk" />
       <entity type="Muban" geocode="84021308" name="บ้านเขาใต้ป่า" english="Ban Khao Tai Pa" />
       <entity type="Muban" geocode="84021309" name="บ้านเขาหินปูน" english="Ban Khao Hin Pun" />
-      <entity type="Muban" geocode="84021310" name="บ้านปากฮาย" english="Ban Pak Hai" />
+      <entity type="Muban" geocode="84021310" name="บ้านปากฮาย" english="Ban Pak Hai">
+        <history>
+          <create effective="2006-11-03" status="Gazette" type="Muban" splitfrom="84021309">
+            <gazetteref volume="124" page="104" issue="พิเศษ 11 ง" date="2007-01-31" />
+          </create>
+        </history>
+      </entity>
     </entity>
   </entity>
   <entity type="Amphoe" name="ดอนสัก" english="Don Sak" geocode="8403">
@@ -1277,7 +1298,13 @@
       <entity type="Muban" geocode="84030111" name="บ้านเกาะนกเภา" english="Ban Ko Nok Phao" />
       <entity type="Muban" geocode="84030112" name="บ้านเขาแค" english="Ban Khao Khae" />
       <entity type="Muban" geocode="84030113" name="บ้านเขากลอย" english="Ban Khao Kloi" />
-      <entity type="Muban" geocode="84030114" name="บ้านนางกำใหม่" english="Ban Bang Kam Mai" />
+      <entity type="Muban" geocode="84030114" name="บ้านนางกำใหม่" english="Ban Bang Kam Mai">
+        <history>
+          <create effective="2005-10-14" status="Gazette" type="Muban" splitfrom="84030110">
+            <gazetteref volume="123" page="72" issue="พิเศษ 48 ง" date="2006-04-05" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ชลคราม" english="Chonlakhram" geocode="840302">
       <wiki wikidata="Q15814153" />
@@ -2216,7 +2243,13 @@
       <entity type="Muban" geocode="84070323" name="บ้านยวนผึ้ง" english="Ban Yuan Phueng" />
       <entity type="Muban" geocode="84070324" name="บ้านธารน้ำใจ" english="Ban Than Nam Chai" />
       <entity type="Muban" geocode="84070325" name="บ้านน้ำโชร์" english="Ban Nam Cho" />
-      <entity type="Muban" geocode="84070326" name="บ้านหินพ่อตา" english="Ban Hin Phota" />
+      <entity type="Muban" geocode="84070326" name="บ้านหินพ่อตา" english="Ban Hin Phota">
+        <history>
+          <create effective="2009-11-06" status="Gazette" type="Muban" splitfrom="84070319">
+            <gazetteref volume="127" page="80" issue="พิเศษ 24 ง" date="2010-02-19" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="คันธุลี" english="Khan Thuli" geocode="840704">
       <wiki wikidata="Q15977549" />
@@ -2495,7 +2528,13 @@
       <entity type="Muban" geocode="84080308" name="บ้านคลองตุย" english="Ban Khlong Tui" />
       <entity type="Muban" geocode="84080309" name="บ้านหินลาด" english="Ban Hin Lat" />
       <entity type="Muban" geocode="84080310" name="บ้านหวายหนิม" english="Ban Wai Nim" />
-      <entity type="Muban" geocode="84080311" name="บ้านวังถ้ำ" english="Ban Wang Tham" />
+      <entity type="Muban" geocode="84080311" name="บ้านวังถ้ำ" english="Ban Wang Tham">
+        <history>
+          <create effective="2009-11-06" status="Gazette" type="Muban" splitfrom="84080306">
+            <gazetteref volume="127" page="77" issue="พิเศษ 24 ง" date="2010-02-19" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ตะกุกใต้" english="Takuk Tai" geocode="840804" newgeocode="841901" comment="Reassigned" />
     <entity type="Tambon" name="ตะกุกเหนือ" english="Takuk Nuea" geocode="840805" newgeocode="841902" comment="Reassigned" />
@@ -2667,7 +2706,13 @@
       <entity type="Muban" geocode="84080907" name="บ้านบ่อน้ำผุด" english="Ban Bo Nam Phut" />
       <entity type="Muban" geocode="84080908" name="บ้านควนไทยเจริญ" english="Ban Khuan Thai Charoen" />
       <entity type="Muban" geocode="84080909" name="บ้านทรายขาว" english="Ban Sai Khao" />
-      <entity type="Muban" geocode="84080910" name="บ้านร่มจิตต์" english="Ban Rom Chit" />
+      <entity type="Muban" geocode="84080910" name="บ้านร่มจิตต์" english="Ban Rom Chit">
+        <history>
+          <create effective="2005-10-18" status="Gazette" type="Muban" splitfrom="84080907">
+            <gazetteref volume="123" page="75" issue="พิเศษ 48 ง" date="2006-04-05" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="บ้านทำเนียบ" english="Ban Thamniap" geocode="840810">
       <wiki wikidata="Q15154284" />
@@ -3386,6 +3431,14 @@
     <area>
       <area value="839.3" unit="km²" comment="Census2000" />
     </area>
+    <history>
+      <rename status="Gazette" name="บ้านนา" english="Ban Na" oldname="ลำพูน" oldenglish="Lamphun">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+      <rename status="Gazette" name="บ้านนาสาร" oldname="บ้านนา">
+        <gazetteref volume="56" page="354" issue="0 ก" date="1939-04-17" />
+      </rename>
+    </history>
     <entity type="Tambon" name="นาสาร" english="Na San" geocode="841201">
       <wiki wikidata="Q15907494" />
       <codes>
@@ -4509,6 +4562,9 @@
       <statuschange effective="1958-07-22" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="75" page="321" issue="55 ก" date="1958-07-22" />
       </statuschange>
+      <statuschange status="Gazette" old="Amphoe" new="KingAmphoe">
+        <gazetteref volume="55" page="1321" issue="0 ง" date="1938-08-01" />
+      </statuschange>
     </history>
     <entity type="Tambon" name="อิปัน" english="I-pan" geocode="841601">
       <wiki wikidata="Q15977514" />
@@ -4650,7 +4706,13 @@
       <entity type="Muban" geocode="84160311" name="บ้านอ่าวต้นยวน" english="Ban Ao Ton Yuan" />
       <entity type="Muban" geocode="84160312" name="บ้านหน้าเขา" english="Ban Na Khao" />
       <entity type="Muban" geocode="84160313" name="บ้านอ่างน้ำผุด" english="Ban Ang Nam Phut" />
-      <entity type="Muban" geocode="84160314" name="บ้านถ้ำฆ้อง" english="Ban Tham Khong" />
+      <entity type="Muban" geocode="84160314" name="บ้านถ้ำฆ้อง" english="Ban Tham Khong">
+        <history>
+          <create effective="2009-11-06" status="Gazette" type="Muban" splitfrom="84160308">
+            <gazetteref volume="127" page="74" issue="พิเศษ 24 ง" date="2010-02-19" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ไทรขึง" english="Sai Khueng" geocode="841604">
       <wiki wikidata="Q15977517" />
@@ -4745,7 +4807,13 @@
       <entity type="Muban" geocode="84160507" name="บ้านบางเหรียง" english="Ban Bang Riang" />
       <entity type="Muban" geocode="84160508" name="บ้านบางพอ" english="Ban Bang Pho" />
       <entity type="Muban" geocode="84160509" name="บ้านราชประชา" english="Ban Rat Pracha" />
-      <entity type="Muban" geocode="84160510" name="บ้านมูลนิธิ" english="Ban Mun Ni Thi" />
+      <entity type="Muban" geocode="84160510" name="บ้านมูลนิธิ" english="Ban Mun Ni Thi">
+        <history>
+          <create effective="2005-10-18" status="Gazette" type="Muban" splitfrom="84160506">
+            <gazetteref volume="123" page="70" issue="พิเศษ 48 ง" date="2006-04-05" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ไทรโสภา" english="Sai Sopha" geocode="841606">
       <wiki wikidata="Q15977519" />
@@ -4873,6 +4941,14 @@
     <area>
       <area value="1208.7" unit="km²" comment="Census2000" />
     </area>
+    <history>
+      <rename status="Gazette" name="พุนพิน" oldname="ท่าข้าม">
+        <gazetteref volume="56" page="354" issue="0 ก" date="1939-04-17" />
+      </rename>
+      <rename status="Gazette" name="ท่าข้าม" oldname="พุนพิน">
+        <gazetteref volume="37" page="159" issue="0 ก" date="1920-08-08" />
+      </rename>
+    </history>
     <entity type="Tambon" name="ท่าข้าม" english="Tha Kham" geocode="841701">
       <wiki wikidata="Q15900166" />
       <office type="TAOOffice">
@@ -4958,7 +5034,13 @@
       <entity type="Muban" geocode="84170204" name="บ้านหนองจอก" english="Ban Nong Chok" />
       <entity type="Muban" geocode="84170205" name="บ้านเขาพลู" english="Ban Khao Phlu" />
       <entity type="Muban" geocode="84170206" name="บ้านห้วยลึก" english="Ban Huai Luek" />
-      <entity type="Muban" geocode="84170207" name="บ้านศรีเจริญ" english="Ban Si Charoen" />
+      <entity type="Muban" geocode="84170207" name="บ้านศรีเจริญ" english="Ban Si Charoen">
+        <history>
+          <create effective="2009-11-06" status="Gazette" type="Muban" splitfrom="84170202">
+            <gazetteref volume="127" page="69" issue="พิเศษ 24 ง" date="2010-02-19" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ลีเล็ด" english="Lilet" geocode="841703">
       <wiki wikidata="Q13015109" />
@@ -5129,7 +5211,13 @@
       <entity type="Muban" geocode="84170703" name="บ้านแม่แขก" english="Ban Mae Khaek" />
       <entity type="Muban" geocode="84170704" name="บ้านสหกรณ์" english="Ban Sahakon" />
       <entity type="Muban" geocode="84170705" name="บ้านห้วยกระดี่" english="Ban Huai Kradi" />
-      <entity type="Muban" geocode="84170706" name="บ้านพรุแคพัฒนา" english="Ban Phru Khae Phatthana" />
+      <entity type="Muban" geocode="84170706" name="บ้านพรุแคพัฒนา" english="Ban Phru Khae Phatthana">
+        <history>
+          <create effective="2009-11-06" status="Gazette" type="Muban" splitfrom="84170701">
+            <gazetteref volume="127" page="66" issue="พิเศษ 24 ง" date="2010-02-19" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="พุนพิน" english="Phunphin" geocode="841708">
       <wiki wikidata="Q15907571" />
@@ -5198,7 +5286,13 @@
       <entity type="Muban" geocode="84170908" name="บ้านสะพานมอส" english="Ban Sa Phan Mot" />
       <entity type="Muban" geocode="84170909" name="บ้านหนองเคียน" english="Ban Nong Khian" />
       <entity type="Muban" geocode="84170910" name="บ้านภิรมย์ภักดี" english="Ban Phirom Phak Di" />
-      <entity type="Muban" geocode="84170911" name="บ้านสี่ขีด" english="Ban Si Khit" />
+      <entity type="Muban" geocode="84170911" name="บ้านสี่ขีด" english="Ban Si Khit">
+        <history>
+          <create effective="2009-11-06" status="Gazette" type="Muban" splitfrom="84170908">
+            <gazetteref volume="127" page="72" issue="พิเศษ 24 ง" date="2010-02-19" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ศรีวิชัย" english="Si Wichai" geocode="841710">
       <wiki wikidata="Q15907584" />
@@ -5633,7 +5727,13 @@
       <entity type="Muban" geocode="84180307" name="บ้านปลายคลองบางบัด" english="Ban Plai Khlong Bang Bat" comment="DOPA spells it ปลายคลองบางปัด" />
       <entity type="Muban" geocode="84180308" name="บ้านยูงงาม" english="Ban Yung Ngam" />
       <entity type="Muban" geocode="84180309" name="บ้านคลองปราบ" english="Ban Khlong Prap" />
-      <entity type="Muban" geocode="84180310" name="บ้านชาติพัฒนา" english="Ban Chat Phatthana" />
+      <entity type="Muban" geocode="84180310" name="บ้านชาติพัฒนา" english="Ban Chat Phatthana">
+        <history>
+          <create effective="2006-11-03" status="Gazette" type="Muban" splitfrom="84180303">
+            <gazetteref volume="124" page="101" issue="พิเศษ 11 ง" date="2007-01-31" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ไทรทอง" english="Sai Thong" geocode="841804">
       <wiki wikidata="Q15839105" />

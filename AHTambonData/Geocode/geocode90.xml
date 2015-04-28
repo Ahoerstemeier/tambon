@@ -2338,12 +2338,21 @@
         <official title="DistrictOfficer" name="สมบูรณ์ บุญแสงทิพย์" end="2007-10-23" />
       </officials>
     </office>
+    <history>
+      <rename status="Gazette" name="รัตภูมิ" oldname="กำแพงเพชร">
+        <gazetteref volume="56" page="354" issue="0 ก" date="1939-04-17" />
+      </rename>
+      <rename status="Gazette" name="รัฐภูมิ์" english="Rattaphum" oldname="กำแพงเพชร" oldenglish="Kamphaeng Phet">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+    </history>
     <entity type="Tambon" name="กำแพงเพชร" english="Kamphaeng Phet" geocode="900901">
       <wiki wikidata="Q15206544" />
       <codes>
         <post value="90180" />
       </codes>
       <office type="MunicipalityOffice">
+        <wiki wikidata="Q19838152" />
         <!-- ca.   7.144377° 100.289094° - no hires yet -->
         <symbols>
           <vision>คุณธรรมนำบริหาร บูรณาการพัฒนา การศึกษาทันสมัย โปร่งใสการทำงาน ยกเป็นเทศบาลโดยเร็ว</vision>
@@ -2357,7 +2366,9 @@
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="22" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanMueang" effective="2011-07-05" />
+          <statuschange old="TAO" new="ThesabanMueang" effective="2011-07-05" status="Gazette">
+            <gazetteref volume="128" page="5" issue="พิเศษ 105 ง" date="2011-09-14" />
+          </statuschange>
           <create type="TAO" effective="1995-03-03" status="Gazette">
             <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
           </create>
@@ -2381,6 +2392,7 @@
       <entity type="Muban" geocode="90090113" name="บ้านหนองกวางข้อง" english="Ban Nong Kwang Khong" />
     </entity>
     <entity type="Tambon" name="ท่าชะมวง" english="Tha Chamuang" geocode="900902">
+      <wiki wikidata="Q19838157" />
       <codes>
         <post value="90180" />
       </codes>
@@ -2422,6 +2434,7 @@
       <entity type="Muban" geocode="90090215" name="บ้านลลองกรอย" english="Ban Lalong Kroi" />
     </entity>
     <entity type="Tambon" name="คูหาใต้" english="Khuha Tai" geocode="900903">
+      <wiki wikidata="Q19838158" />
       <codes>
         <post value="90180" />
       </codes>
@@ -2458,6 +2471,7 @@
       <entity type="Muban" geocode="90090314" name="บ้านกันใหญ่" english="Ban Kan Yai" />
     </entity>
     <entity type="Tambon" name="ควนรู" english="Khuan Ru" geocode="900904">
+      <wiki wikidata="Q19838159" />
       <codes>
         <post value="90180 90220" comment="Mu 1-2,7: 90180; Mu 3-6,8-9: 90220" />
       </codes>
@@ -2475,6 +2489,11 @@
           <entity geocode="900904" coverage="completely" />
         </areacoverage>
       </office>
+      <!--<history>
+        <create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="900903 900906">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>
+      </history>-->
       <entity type="Muban" geocode="90090401" name="บ้านควนรู" english="Ban Khuan Ru" />
       <entity type="Muban" geocode="90090402" name="บ้านควนศาลาดงจันทร์" english="Ban Khuan Sala Dong Chanot" />
       <entity type="Muban" geocode="90090403" name="บ้านโหล๊ะยาว" english="Ban Lo Yao" />
@@ -2490,6 +2509,7 @@
     <entity type="Tambon" name="บางเหรียง" english="Bang Riang" geocode="900907" newgeocode="901304" />
     <entity type="Tambon" name="ห้วยลึก" english="Huai Luek" geocode="900908" newgeocode="901303" />
     <entity type="Tambon" name="เขาพระ" english="Khao Phra" geocode="900909">
+      <wiki wikidata="Q19838160" />
       <codes>
         <post value="90180" />
       </codes>
@@ -2515,6 +2535,11 @@
           <entity geocode="900909" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1980-07-01" status="Gazette" type="Tambon" splitfrom="900902">
+          <gazetteref volume="97" page="2663" issue="118 ง" date="1980-08-05" />
+        </create>
+      </history>
       <entity type="Muban" geocode="90090901" name="บ้านนาสีทอง" english="Ban Na Si Thong" />
       <entity type="Muban" geocode="90090902" name="บ้านคู" english="Ban Khu" />
       <entity type="Muban" geocode="90090903" name="บ้านนาลึก" english="Ban Na Luek" />
@@ -4465,6 +4490,7 @@
     </office>
   </entity>
   <entity type="ThesabanTambon" name="กำแพงเพชร" english="Kamphaeng Phet" geocode="9088" parent="9009">
+    <wiki wikidata="Q19838150" />
     <office type="MunicipalityOffice">
       <symbols>
         <vision>เทศบาลบริหารจัดการที่ดี สังคมมีคุณธรรม ประชาชนมีคุณภาพ</vision>
