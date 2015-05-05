@@ -65,14 +65,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool tambonFieldSpecified;
         
-        private uint mubanField;
-        
-        private bool mubanFieldSpecified;
+        private List<uint> mubanField;
         
         /// <summary>
         /// Creates a new instance of Entity.
         /// </summary>
         public Entity() {
+            this.mubanField = new List<uint>();
             this.parentField = new List<uint>();
             this.newgeocodeField = new List<uint>();
             this.parkField = new List<Park>();
@@ -432,36 +431,19 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Corresponding Muban. Only for Chumchon.
+        /// Corresponding Muban. Only for Chumchon. Might be more than one if Chumchon boundary don't coincide with Muban boundary.
         /// </summary>
         /// <value>
         /// The muban.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint muban {
+        public List<uint> muban {
             get {
                 return this.mubanField;
             }
             set {
                 this.mubanField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool mubanSpecified {
-            get {
-                return this.mubanFieldSpecified;
-            }
-            set {
-                this.mubanFieldSpecified = value;
             }
         }
     }

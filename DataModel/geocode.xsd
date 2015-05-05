@@ -458,9 +458,9 @@
         <xs:documentation>Reference to the corresponding tambon. Only for municipalities which were a TAO.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="muban" type="xs:unsignedInt" use="optional">
+    <xs:attribute name="muban" type="t:GeocodeList" use="optional">
       <xs:annotation>
-        <xs:documentation>Corresponding Muban. Only for Chumchon.</xs:documentation>
+        <xs:documentation>Corresponding Muban. Only for Chumchon. Might be more than one if Chumchon boundary don't coincide with Muban boundary.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
