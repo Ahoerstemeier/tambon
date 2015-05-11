@@ -28,6 +28,12 @@ namespace De.AHoerstemeier.Tambon
                 effective = gazette.publication + new TimeSpan(gazette.effectiveafter, 0, 0, 0);
                 effectiveSpecified = true;
             }
+            if ( !effectiveSpecified )
+            {
+                // wild guess - using publication date as effective date
+                effective = gazette.publication;
+                effectiveSpecified = true;
+            }
             status = ChangeStatus.Gazette;
             Items.Add(new GazetteRelated(gazette)
             {

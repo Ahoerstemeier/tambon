@@ -60,7 +60,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         private ICollection<Entity> _thesaban = new List<Entity>();
-        private IEnumerable<UInt32> _oldGeocode = null;
+        private List<UInt32> _oldGeocode = null;
 
         /// <summary>
         /// Gets whether the entity at the given geocode is active/valid.
@@ -937,6 +937,17 @@ namespace De.AHoerstemeier.Tambon
         public void CalcOldGeocodesRecursive()
         {
             CalcOldGeocodesRecursive(GlobalData.CompleteGeocodeList().FlatList().Where(x => x.newgeocode.Any()).ToList());
+            foreach ( var thesabanWithTambon in this.FlatList().Where(x => x.tambonSpecified) )
+            {
+                if ( thesabanWithTambon._oldGeocode == null )
+                {
+                    thesabanWithTambon._oldGeocode = new List<UInt32>();
+                }
+                if ( !thesabanWithTambon._oldGeocode.Contains(thesabanWithTambon.tambon + 50) )
+                {
+                    thesabanWithTambon._oldGeocode.Add(thesabanWithTambon.tambon + 50);
+                }
+            }
         }
 
         /// <summary>

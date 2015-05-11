@@ -163,7 +163,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             mnuWikipediaGerman.Enabled = entity.type.IsCompatibleEntityType(EntityType.Amphoe);
             mnuWikipediaEnglish.Enabled = mnuWikipediaGerman.Enabled;
-            mnuHistory.Enabled = _creationHistories.Keys.Contains(entity.geocode);
+            mnuHistory.Enabled = _creationHistories.Keys.Contains(entity.geocode) || entity.OldGeocodes.Any(x => _creationHistories.Keys.Contains(x));
 
             mnuWikipediaTambonEnglish.Enabled = entity.type.IsCompatibleEntityType(EntityType.Tambon);
         }
@@ -472,7 +472,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private static Dictionary<UInt32, HistoryList> ExtractHistoriesFromGazette(Entity entity, IEnumerable<Entity> allEntities)
         {
             // converting to dictionary much faster than FirstOrDefault(x => x.geocode) for each item later
-            var allEntityDictionary = allEntities.ToDictionary(x => x.geocode);
+            // var allEntityDictionary = allEntities.ToDictionary(x => x.geocode);
 
             // TODO - area change as well
             // Use IEnumerable<>.OfType/Cast to speed it up?
@@ -509,14 +509,15 @@ namespace De.AHoerstemeier.Tambon.UI
                         if ( history != null )
                         {
                             history.AddGazetteReference(gazetteHistoryTuple.Gazette);
-                            if ( allEntityDictionary.TryGetValue(geocode, out foundEntity) )
+                            if ( geocode != 0 )
+                            //if ( allEntityDictionary.TryGetValue(geocode, out foundEntity) )
                             {
-                                if ( !result.Keys.Contains(foundEntity.geocode) )
+                                if ( !result.Keys.Contains(geocode) )
                                 {
-                                    result[foundEntity.geocode] = new HistoryList();
+                                    result[geocode] = new HistoryList();
                                 }
-                                result[foundEntity.geocode].Items.Add(history);
-                                result[foundEntity.geocode].Items.Sort((x, y) => y.effective.CompareTo(x.effective));
+                                result[geocode].Items.Add(history);
+                                result[geocode].Items.Sort((x, y) => y.effective.CompareTo(x.effective));
                             }
                         }
                     }
@@ -928,9 +929,22 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void ExportEntityHistory(Entity entity)
         {
+            var histories = new HistoryList();
             if ( _creationHistories.Keys.Contains(entity.geocode) )
             {
-                var historyXml = XmlManager.EntityToXml<HistoryList>(_creationHistories[entity.geocode]);
+                histories.Items.AddRange(_creationHistories[entity.geocode].Items);
+            }
+            foreach ( var oldGeocode in entity.OldGeocodes )
+            {
+                if ( _creationHistories.Keys.Contains(oldGeocode) )
+                {
+                    histories.Items.AddRange(_creationHistories[oldGeocode].Items);
+                }
+            }
+            if ( histories.Items.Any() )
+            {
+                histories.Items.Sort((x, y) => y.effective.CompareTo(x.effective));
+                var historyXml = XmlManager.EntityToXml<HistoryList>(histories);
                 // EntityToXml adds a header with BOM, exports with a different name than used in the entity XMLs
                 historyXml = historyXml.Replace("HistoryList", "history");
                 var startPos = historyXml.IndexOf("<history");
@@ -964,6 +978,10 @@ namespace De.AHoerstemeier.Tambon.UI
                     if ( entity != null )
                     {
                         history = _creationHistories.Keys.Contains(entity.geocode);
+                        foreach ( var oldGeocode in entity.OldGeocodes )
+                        {
+                            history |= _creationHistories.Keys.Contains(oldGeocode);
+                        }
                     }
                 }
                 menuItem.Enabled = history;
