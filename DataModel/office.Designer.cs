@@ -2008,6 +2008,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private Election electionField;
         
+        private List<object> referencesField;
+        
         private OfficialType titleField;
         
         private int indexField;
@@ -2036,6 +2038,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of OfficialEntryBase.
         /// </summary>
         public OfficialEntryBase() {
+            this.referencesField = new List<object>();
             this.beginreasonField = OfficialBeginType.Unknown;
             this.endreasonField = OfficialEndType.Unknown;
         }
@@ -2054,6 +2057,28 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.electionField = value;
+            }
+        }
+        
+        /// <summary>
+        /// References on the official term, election or removal.
+        /// </summary>
+        /// <value>
+        /// The references.
+        /// </value>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> references {
+            get {
+                return this.referencesField;
+            }
+            set {
+                this.referencesField = value;
             }
         }
         

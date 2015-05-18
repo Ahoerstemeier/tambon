@@ -987,9 +987,19 @@ namespace De.AHoerstemeier.Tambon {
         MunicipalClerk,
         
         /// <summary>
+        /// Deputy municipal clerk (รองปลัดเทศบาล, Rong Palat Thesaban).
+        /// </summary>
+        DeputyMunicipalClerk,
+        
+        /// <summary>
         /// TAO clerk (ปลัดองค์การบริหารส่วนตำบล, Palat O.Bo.To.).
         /// </summary>
         TAOClerk,
+        
+        /// <summary>
+        /// Deputy TAO clerk (รองปลัดองค์การบริหารส่วนตำบล, Rong Palat O.Bo.To.).
+        /// </summary>
+        DeputyTAOClerk,
         
         /// <summary>
         /// PAO clerk (ปลัดองค์การบริหารส่วนจังหวัด, Palat O.Bo.Cho.).
@@ -997,9 +1007,19 @@ namespace De.AHoerstemeier.Tambon {
         PAOClerk,
         
         /// <summary>
+        /// Deputy PAO clerk (รองปลัดองค์การบริหารส่วนจังหวัด, Rong Palat O.Bo.Cho.).
+        /// </summary>
+        DeputyPAOClerk,
+        
+        /// <summary>
         /// Mayor of TAO (นายกองค์การบริหารส่วนตำบล, Nayok Ongkanborihansuan Tambon), directly elected.
         /// </summary>
         TAOMayor,
+        
+        /// <summary>
+        /// Deputy Mayor of TAO (รองนายกองค์การบริหารส่วนตำบล, Rong Nayok Ongkanborihansuan Tambon).
+        /// </summary>
+        DeputyTAOMayor,
         
         /// <summary>
         /// Chairman of TAO (ประธานกรรมการบริหารองค์การบริหารส่วนตำบล, Prathan Kromkanborihan Ongkanborihansuan Tambon), chosen by council.
