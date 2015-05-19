@@ -53,6 +53,7 @@
             this.btnTambonList = new System.Windows.Forms.Button();
             this.btnLaoList = new System.Windows.Forms.Button();
             this.btnMap = new System.Windows.Forms.Button();
+            this.btnAmphoeCategory = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStat
@@ -230,7 +231,7 @@
             // btnCreateTambon
             // 
             this.btnCreateTambon.Enabled = false;
-            this.btnCreateTambon.Location = new System.Drawing.Point(124, 279);
+            this.btnCreateTambon.Location = new System.Drawing.Point(124, 292);
             this.btnCreateTambon.Name = "btnCreateTambon";
             this.btnCreateTambon.Size = new System.Drawing.Size(92, 23);
             this.btnCreateTambon.TabIndex = 19;
@@ -242,7 +243,7 @@
             // 
             this.cbxLocalGovernments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLocalGovernments.FormattingEnabled = true;
-            this.cbxLocalGovernments.Location = new System.Drawing.Point(12, 308);
+            this.cbxLocalGovernments.Location = new System.Drawing.Point(12, 321);
             this.cbxLocalGovernments.Name = "cbxLocalGovernments";
             this.cbxLocalGovernments.Size = new System.Drawing.Size(204, 21);
             this.cbxLocalGovernments.TabIndex = 20;
@@ -251,7 +252,7 @@
             // btnCreateLocalGovernment
             // 
             this.btnCreateLocalGovernment.Enabled = false;
-            this.btnCreateLocalGovernment.Location = new System.Drawing.Point(124, 335);
+            this.btnCreateLocalGovernment.Location = new System.Drawing.Point(124, 348);
             this.btnCreateLocalGovernment.Name = "btnCreateLocalGovernment";
             this.btnCreateLocalGovernment.Size = new System.Drawing.Size(92, 23);
             this.btnCreateLocalGovernment.TabIndex = 21;
@@ -277,7 +278,7 @@
             // 
             // btnTambonList
             // 
-            this.btnTambonList.Location = new System.Drawing.Point(12, 378);
+            this.btnTambonList.Location = new System.Drawing.Point(12, 399);
             this.btnTambonList.Name = "btnTambonList";
             this.btnTambonList.Size = new System.Drawing.Size(98, 23);
             this.btnTambonList.TabIndex = 24;
@@ -287,7 +288,7 @@
             // 
             // btnLaoList
             // 
-            this.btnLaoList.Location = new System.Drawing.Point(124, 378);
+            this.btnLaoList.Location = new System.Drawing.Point(124, 399);
             this.btnLaoList.Name = "btnLaoList";
             this.btnLaoList.Size = new System.Drawing.Size(92, 23);
             this.btnLaoList.TabIndex = 25;
@@ -297,7 +298,7 @@
             // 
             // btnMap
             // 
-            this.btnMap.Location = new System.Drawing.Point(12, 335);
+            this.btnMap.Location = new System.Drawing.Point(12, 348);
             this.btnMap.Name = "btnMap";
             this.btnMap.Size = new System.Drawing.Size(98, 23);
             this.btnMap.TabIndex = 26;
@@ -306,11 +307,23 @@
             this.btnMap.Visible = false;
             this.btnMap.Click += new System.EventHandler(this.btnMap_Click);
             // 
+            // btnAmphoeCategory
+            // 
+            this.btnAmphoeCategory.Enabled = false;
+            this.btnAmphoeCategory.Location = new System.Drawing.Point(12, 292);
+            this.btnAmphoeCategory.Name = "btnAmphoeCategory";
+            this.btnAmphoeCategory.Size = new System.Drawing.Size(103, 23);
+            this.btnAmphoeCategory.TabIndex = 28;
+            this.btnAmphoeCategory.Text = "Amphoe Category";
+            this.btnAmphoeCategory.UseVisualStyleBackColor = true;
+            this.btnAmphoeCategory.Click += new System.EventHandler(this.btnAmphoeCategory_Click);
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.btnAmphoeCategory);
             this.Controls.Add(this.btnMap);
             this.Controls.Add(this.btnLaoList);
             this.Controls.Add(this.btnTambonList);
@@ -371,5 +384,6 @@
         private System.Windows.Forms.Button btnTambonList;
         private System.Windows.Forms.Button btnLaoList;
         private System.Windows.Forms.Button btnMap;
+        private System.Windows.Forms.Button btnAmphoeCategory;
     }
 }

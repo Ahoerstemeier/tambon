@@ -65,6 +65,9 @@ namespace De.AHoerstemeier.Tambon
         // public const String PropertyIdArea = "Pxxxx";
         public const String PropertyIdCategoryCombinesTopic = "P971";
 
+        public const String PropertyIdCategoryForTopic = "P910";
+        public const String PropertyIdTopicForCategory = "P301";
+
         public const String PropertyIdIsListOf = "P360";
 
         // for qualifiers
@@ -88,6 +91,8 @@ namespace De.AHoerstemeier.Tambon
 
         public const String ItemCensuses = "Q39825";
         public const String ItemRegistration = "Q15194024";
+
+        public const String ItemWikimediaCategory = "Q4167836";
 
         // source statements for population
         public static Dictionary<Int16, String> ItemCensus = new Dictionary<Int16, String>()

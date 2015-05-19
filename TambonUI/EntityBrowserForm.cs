@@ -489,7 +489,6 @@ namespace De.AHoerstemeier.Tambon.UI
 
             foreach ( var gazetteHistoryTuple in gazetteContent )
             {
-                Entity foundEntity;
                 var gazetteOperation = gazetteHistoryTuple.History;
                 if ( gazetteOperation != null )
                 {
@@ -510,7 +509,6 @@ namespace De.AHoerstemeier.Tambon.UI
                         {
                             history.AddGazetteReference(gazetteHistoryTuple.Gazette);
                             if ( geocode != 0 )
-                            //if ( allEntityDictionary.TryGetValue(geocode, out foundEntity) )
                             {
                                 if ( !result.Keys.Contains(geocode) )
                                 {

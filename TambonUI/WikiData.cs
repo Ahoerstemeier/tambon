@@ -332,6 +332,7 @@ namespace De.AHoerstemeier.Tambon.UI
             btnLogin.Enabled = true;
             btnCountInterwiki.Enabled = false;
             btnCreateTambon.Enabled = false;
+            btnAmphoeCategory.Enabled = false;
             btnMap.Enabled = false;
         }
 
@@ -595,6 +596,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 lblTambonInfo.Text = String.Format("{0} of {1} done",
                     wikidataCount, allTambon.Count);
                 btnCreateTambon.Enabled = (wikidataCount < allTambon.Count) && (_bot != null);
+                btnAmphoeCategory.Enabled = true;
             }
             else
             {
@@ -713,6 +715,18 @@ namespace De.AHoerstemeier.Tambon.UI
                 var amphoe = changwat.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Amphoe));
                 var dummy = new StringBuilder();
                 _bot.SetLocatorMapTask.Task(amphoe, dummy, false);
+            }
+        }
+
+        private void btnAmphoeCategory_Click(object sender, EventArgs e)
+        {
+            var amphoe = cbxAmphoe.SelectedItem as Entity;
+            if ( amphoe != null )
+            {
+                if ( _helper.GetCategoryOfItem(amphoe) == null )
+                {
+                    _bot.CreateCategory(amphoe);
+                }
             }
         }
     }

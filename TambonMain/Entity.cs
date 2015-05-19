@@ -898,6 +898,19 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
+        /// Gets the full English name.
+        /// </summary>
+        /// <value>The full English name.</value>
+        /// <remarks>Full name consists of the romanized name followed by the administrative type.</remarks>
+        public String EnglishFullName
+        {
+            get
+            {
+                return english + " " + ThaiTranslations.EntityNamesEnglish[type];
+            }
+        }
+
+        /// <summary>
         /// Gets a list of obsolete geocodes of the entity.
         /// </summary>
         /// <value>List of obsolete geocodes of the entity.</value>

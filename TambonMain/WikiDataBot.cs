@@ -282,6 +282,53 @@ namespace De.AHoerstemeier.Tambon
             SetNativeLabel(items, dummy, false);
         }
 
+        /// <summary>
+        /// Create a new Wikidata item for the category to the given entity and fills the basic properties.
+        /// </summary>
+        /// <param name="entity">Entity to need new item.</param>
+        public void CreateCategory(Entity entity)
+        {
+            if ( entity == null )
+            {
+                throw new ArgumentNullException("entity");
+            }
+            if ( entity.wiki == null || String.IsNullOrWhiteSpace(entity.wiki.wikidata) )
+            {
+                throw new ArgumentException("Entity has no Wikidata item yet");
+            }
+
+            var item = new Item(_helper.Api);
+            item.setLabel("en", "Category:" + entity.EnglishFullName);
+            // item.setLabel("de", "Kategorie:" + entity.english);
+            item.setLabel("th", "หมวดหมู่:" + entity.FullName);
+            item.setDescription("en", "Wikimedia category page");
+            item.setDescription("de", "Wikimedia-Kategorie");
+            item.setDescription("th", "หน้าหมวดหมู่วิกิพีเดีย");
+            item.save(_helper.GetItemCreateSaveSummary(item));
+
+            Statement instanceStatement;
+            _helper.CheckPropertyValue(item, WikiBase.PropertyIdInstanceOf, WikiBase.ItemWikimediaCategory, true, false, out instanceStatement);
+            if ( instanceStatement != null )
+            {
+                instanceStatement.save(_helper.GetClaimSaveEditSummary(instanceStatement));
+            }
+
+            Statement categoryStatement;
+            _helper.CheckPropertyValue(item, WikiBase.PropertyIdTopicForCategory, entity.wiki.wikidata, true, false, out categoryStatement);
+            if ( categoryStatement != null )
+            {
+                categoryStatement.save(_helper.GetClaimSaveEditSummary(categoryStatement));
+            }
+
+            Statement linkStatement;
+            var entityItem = _helper.GetWikiDataItemForEntity(entity);
+            _helper.CheckPropertyValue(entityItem, WikiBase.PropertyIdCategoryForTopic, item.id.PrefixedId, true, false, out linkStatement);
+            if ( linkStatement != null )
+            {
+                linkStatement.save(_helper.GetClaimSaveEditSummary(linkStatement));
+            }
+        }
+
         #endregion public methods
 
         #region private methods

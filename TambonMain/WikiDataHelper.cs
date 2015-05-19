@@ -113,7 +113,17 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        private WikiDataState CheckPropertyValue(Item item, String propertyId, String expectedItemId, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        /// <summary>
+        /// Checks and evetually sets a link property.
+        /// </summary>
+        /// <param name="item">Wikidata item.</param>
+        /// <param name="propertyId">Id of the property.</param>
+        /// <param name="expectedItemId">Expected item id.</param>
+        /// <param name="createStatement"><c>true</c> to create the statement if not existing yet.</param>
+        /// <param name="overrideWrongData"><c>true</c> to overwrite wrong data.</param>
+        /// <param name="statement">Newly created statement.</param>
+        /// <returns>Status of the link property.</returns>
+        public WikiDataState CheckPropertyValue(Item item, String propertyId, String expectedItemId, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
             if ( item == null )
                 throw new ArgumentNullException("item");
@@ -1157,6 +1167,7 @@ namespace De.AHoerstemeier.Tambon
                 case PopulationDataSourceType.Census:
                     method = WikiBase.ItemCensuses;
                     break;
+
                 case PopulationDataSourceType.DOPA:
                     method = WikiBase.ItemRegistration;
                     break;
@@ -1208,6 +1219,28 @@ namespace De.AHoerstemeier.Tambon
                 var qualifier = new Qualifier(claim, SnakType.Value, new EntityId(WikiBase.PropertyIdIsInAdministrativeUnit), dataValue2);
                 qualifier.Save(GetQualifierSaveEditSummary(qualifier));
             }
+        }
+
+        public EntityId GetCategoryOfItem(Entity entity)
+        {
+            if ( entity == null )
+                throw new ArgumentNullException("entity");
+
+            EntityId result = null;
+            var item = GetWikiDataItemForEntity(entity);
+            if ( item != null )
+            {
+                var categoryClaim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCategoryForTopic));
+                if ( categoryClaim != null )
+                {
+                    var value = categoryClaim.mainSnak.DataValue as EntityIdValue;
+                    if ( value != null )
+                    {
+                        result = new EntityId("P", value.NumericId);
+                    }
+                }
+            }
+            return result;
         }
 
         #endregion category
