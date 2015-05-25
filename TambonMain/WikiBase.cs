@@ -82,6 +82,22 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdReferenceUrl = "P854";
         public const String PropertyIdPublisher = "P123";
 
+        // for Gazette entries
+        public const String PropertyIdSignatory = "P1891";
+
+        public const String PropertyIdPublishedIn = "P1433";
+        public const String ItemIdRoyalGazette = "Q869928";
+        public const String PropertyIdPublicationDate = "P577";
+        public const String PropertyIdOriginalLanguage = "P364";
+        public const String ItemIdThaiLanguage = "Q9217";
+        public const String PropertyIdVolume = "P478";
+        public const String PropertyIdIssue = "P433";
+        public const String PropertyIdPage = "P304";
+        public const String PropertyIdTitle = "P1476";
+        public const String ItemIdStatute = "Q820655";
+        public const String ItemIdRoyalDecree = "Q13017629";
+        public const String ItemIdMinisterialRegulation = "Q6406128";
+
         // source statements for TIS 1099
         public const String ItemSourceTIS1099BE2535 = "Q15477441";
 
