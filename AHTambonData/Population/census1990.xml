@@ -3,7 +3,10 @@
   <population source="Census" year="1990" referencedate="1990-04-01">
     <data type="total" total="54548530" male="27061733" female="27486797" />
   </population>
-  <!-- TODO: Mark King Amphoe, Population Amphoe Sa Kaeo & Nong Bua Lamphu, Changwat data Mukdahan -->
+  <!-- TODO: Mark King Amphoe -->
+  <!-- Population Amphoe of Sa Kaeo & Nong Bua Lamphu -->
+  <!-- male/female numbers for Changwat Mukdahan -->
+  <!-- male/female numbers of all Amphoe -->
   <entity type="Bangkok" geocode="10" name="กรุงเทพมหานคร" english="Bangkok">
     <population source="Census" year="1990" referencedate="1990-04-01">
       <data type="total" total="5882411" male="2831602" female="3050809" />
@@ -2168,7 +2171,10 @@
   </entity>
   <entity type="Changwat" geocode="49" name="มุกดาหาร" english="Mukdahan">
     <population source="Census" year="1990" referencedate="1990-04-01">
-      <data type="total" total="264593" />
+      <data type="total" total="264593" male="133835" female="130758" comment="Male/female number don't sum up" />
+      <reference>
+        <url>http://www.cps.chula.ac.th/cps/pop_info/thai/nop7/nop2/N2-MUKDA.HTM</url>
+      </reference>
     </population>
     <entity type="Amphoe" geocode="4901" name="เมืองมุกดาหาร" english="Mueang Mukdahan">
       <population source="Census" year="1990" referencedate="1990-04-01">
