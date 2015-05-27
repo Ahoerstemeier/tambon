@@ -376,6 +376,21 @@ namespace De.AHoerstemeier.Tambon {
         nonmunicipal,
         
         /// <summary>
+        /// Population in sanitary districts.
+        /// </summary>
+        sanitary,
+        
+        /// <summary>
+        /// Population in urban sanitary districts.
+        /// </summary>
+        urbansanitary,
+        
+        /// <summary>
+        /// Population in rural sanitary districts.
+        /// </summary>
+        ruralsanitary,
+        
+        /// <summary>
         /// Agricultural population, i.e. population having at least ... rai of agricultural land.
         /// </summary>
         agricultural,

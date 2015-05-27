@@ -135,7 +135,7 @@
   </entity>
   <entity type="Changwat" geocode="42" name="เลย" english="Loei">
     <population source="Census" year="1980" referencedate="1980-04-01">
-      <data type="total" total="441342" />
+      <data type="total" total="441342" male="225152" female="216190" />
     </population>
   </entity>
   <entity type="Changwat" geocode="43" name="หนองคาย" english="Nong Khai">
@@ -315,8 +315,14 @@
   </entity>
   <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
     <population source="Census" year="1980" referencedate="1980-04-01">
-      <data type="total" total="588381" />
+      <data type="total" total="588381" male="292009" female="296372" />
     </population>
+    <entitycount year="1980">
+      <entry type="Amphoe" count="16" />
+      <entry type="KingAmphoe" count="1" />
+      <entry type="Tambon" count="109" />
+      <entry type="Muban" count="706" />
+    </entitycount>
   </entity>
   <entity type="Changwat" geocode="85" name="ระนอง" english="Ranong">
     <population source="Census" year="1980" referencedate="1980-04-01">
@@ -363,4 +369,4 @@
       <data type="total" total="397840" />
     </population>
   </entity>
-  </entity>
+</entity>
