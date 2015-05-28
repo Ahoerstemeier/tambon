@@ -2204,6 +2204,8 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="GazetteEntry", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class GazetteEntry : EntryActionList {
         
+        private string commentField;
+        
         private string descriptionField;
         
         private string titleField;
@@ -2243,6 +2245,23 @@ namespace De.AHoerstemeier.Tambon {
         private SignByFunction countersignedbyfunctionField;
         
         private bool countersignedbyfunctionFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -2583,7 +2602,6 @@ namespace De.AHoerstemeier.Tambon {
                 this.countersignedbyfunctionFieldSpecified = value;
             }
         }
-
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
@@ -3029,6 +3047,5 @@ namespace De.AHoerstemeier.Tambon {
                 this.entryField = value;
             }
         }
-
     }
 }
