@@ -4,7 +4,11 @@
     <data type="total" total="9207366" male="4699667" female="4607688" />
   </population>
   <!-- TODO: add provinces dissolved in 1933, add Monthon -->
-  <entity type="Bangkok" geocode="10" name="กรุงเทพฯ" english="Bangkok" />
+  <entity type="Bangkok" geocode="10" name="กรุงเทพฯ" english="Bangkok">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="437294" />
+    </population>
+  </entity>
   <!--
     No geocode for these changwats
     <entity type="Changwat" name="พระนคร" english="Phra Nakhon" />

@@ -5,22 +5,42 @@
   </population>
   <entity type="Bangkok" geocode="10" name="กรุงเทพฯ" english="Bangkok">
     <population source="Census" year="1960" referencedate="1960-04-25">
-      <data type="total" total="2136435" />
+      <data type="total" total="2136435" male="1088902" female="1047533" />
     </population>
-
-    <!--
-    No geocode for these changwats; numbers not add to value for BKK
-    <entity type="Changwat" name="พระนคร" english="Phra Nakhon">
+    <!-- invented Geocodes for Changwat! -->
+    <entity type="Changwat" name="พระนคร" english="Phra Nakhon" geocode="8">
       <population source="Census" year="1960" referencedate="1960-04-25">
-        <data type="total" total="1577003" />
+        <data type="total" total="1577003" male="805753" female="771250" />
+        <data type="municipal" total="1299552" male="611667" female="637885" />
       </population>
+      <entity type="Amphoe" name="พระนคร" english="Phra Nakhon" geocode="1001">
+        <population source="Census" year="1960" referencedate="1960-04-25">
+          <data type="total" total="135401" male="71446" female="63995" />
+        </population>
+      </entity>
+      <entity type="Amphoe" name="บางรัก" english="Bang Rak" geocode="1004">
+        <population source="Census" year="1960" referencedate="1960-04-25">
+          <data type="total" total="102770" male="51111" female="51659" />
+        </population>
+      </entity>
+      <!-- other Amphoe missing -->
     </entity>
-    <entity type="Changwat" name="ธนบุรี" english="Thonburi">
+    <entity type="Changwat" name="ธนบุรี" english="Thonburi" geocode="9">
       <population source="Census" year="1960" referencedate="1960-04-25">
-        <data type="total" total="559376" />
+        <data type="total" total="559432" male="283149" female="276283" />
       </population>
-    </entity
-    -->
+      <entity type="Amphoe" name="ธนบุรี" english="Thon Buri" geocode="1015">
+        <population source="Census" year="1960" referencedate="1960-04-25">
+          <data type="total" total="131250" male="65943" female="65307" />
+        </population>
+      </entity>
+      <entity type="Amphoe" name="บางกอกใหญ่" english="Bangkok Yai" geocode="1016">
+        <population source="Census" year="1960" referencedate="1960-04-25">
+          <data type="total" total="40528" male="21076" female="19452" />
+        </population>
+      </entity>
+      <!-- other Amphoe missing -->
+    </entity>
   </entity>
   <entity type="Changwat" geocode="11" name="สมุทรปราการ" english="Samut Prakan">
     <population source="Census" year="1960" referencedate="1960-04-25">
