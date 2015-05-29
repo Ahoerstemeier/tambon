@@ -217,12 +217,19 @@ namespace De.AHoerstemeier.Tambon
             {
                 throw new ArgumentNullException("compare");
             }
-
+            Int32 maleError = Math.Abs(this.male - compare.male);
+            if ( (this.male == 0) || (compare.male == 0) )
+            {
+                maleError = 0;
+            }
+            Int32 femaleError = Math.Abs(this.female - compare.female);
+            if ( (this.female == 0) || (compare.female == 0) )
+            {
+                femaleError = 0;
+            }
             return Math.Max(
                 Math.Abs(this.total - compare.total),
-                Math.Max(
-                    Math.Abs(this.male - compare.male),
-                    Math.Abs(this.female - compare.female))
+                Math.Max(maleError, femaleError)
                 );
         }
 

@@ -1103,29 +1103,36 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnCheckCensus_Click(object sender, EventArgs e)
         {
+            Int16 year = 2010;
             var builder = new StringBuilder();
             var baseEntity = GlobalData.CompleteGeocodeList();
-            GlobalData.LoadPopulationData(PopulationDataSourceType.Census, 2010);
-            var allEntities = baseEntity.FlatList().Where(x => x.population.Any(y => y.source == PopulationDataSourceType.Census && y.Year == 2010)).ToList();
+            GlobalData.LoadPopulationData(PopulationDataSourceType.Census, year);
+            var allEntities = baseEntity.FlatList().Where(x => x.population.Any(y => y.source == PopulationDataSourceType.Census && y.Year == year)).ToList();
             foreach ( var entity in allEntities )
             {
-                var population = entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == 2010);
+                var population = entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year);
                 Int32 diff = 0;
                 foreach ( var data in population.data )
                 {
-                    diff = Math.Abs(data.total - data.male - data.female);
-                    if ( diff > 1 )
-                    {
-                        builder.AppendFormat("{0} ({1}): {2} differs by {3}", entity.english, entity.geocode, data.type, diff);
-                        builder.AppendLine();
-                    }
-                    foreach ( var subData in data.data )
+                    if ( data.male != 0 && data.female != 0 )
                     {
                         diff = Math.Abs(data.total - data.male - data.female);
                         if ( diff > 1 )
                         {
-                            builder.AppendFormat("{0} ({1}): {2} of {3} differs by {4}", entity.english, entity.geocode, subData.type, data.type, diff);
+                            builder.AppendFormat("{0} ({1}): {2} differs male/female to total by {3}", entity.english, entity.geocode, data.type, diff);
                             builder.AppendLine();
+                        }
+                    }
+                    foreach ( var subData in data.data )
+                    {
+                        if ( data.male != 0 && data.female != 0 )
+                        {
+                            diff = Math.Abs(data.total - data.male - data.female);
+                            if ( diff > 1 )
+                            {
+                                builder.AppendFormat("{0} ({1}): {2} of {3} differs male/female to total by {4}", entity.english, entity.geocode, subData.type, data.type, diff);
+                                builder.AppendLine();
+                            }
                         }
                     }
                 }
@@ -1138,14 +1145,14 @@ namespace De.AHoerstemeier.Tambon.UI
                 var sum = new PopulationData();
                 foreach ( var subEntity in entity.entity.Where(x => !x.IsObsolete && x.population.Any()) )
                 {
-                    foreach ( var dataPoint in subEntity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == 2010).data )
+                    foreach ( var dataPoint in subEntity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year).data )
                     {
                         sum.AddDataPoint(dataPoint);
                     }
                 }
                 if ( sum.data.Any() )
                 {
-                    diff = sum.TotalPopulation.MaxDeviation(entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == 2010).TotalPopulation);
+                    diff = sum.TotalPopulation.MaxDeviation(entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year).TotalPopulation);
                     if ( diff > 1 )
                     {
                         builder.AppendFormat("{0} ({1}): Sum of subentities differs by {2}", entity.english, entity.geocode, diff);
