@@ -183,6 +183,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Branch of undefined type (สาขา, Sakha).
         /// </summary>
         Sakha,
+        
+        /// <summary>
+        /// Regions used by the National Statistical Office.
+        /// </summary>
+        StatisticalRegion,
     }
     
     /// <summary>
