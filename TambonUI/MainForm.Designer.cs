@@ -57,6 +57,7 @@
             this.btnShowEntityData = new System.Windows.Forms.Button();
             this.grpTesting = new System.Windows.Forms.GroupBox();
             this.btnCheckCensus = new System.Windows.Forms.Button();
+            this.cbxCensusYears = new System.Windows.Forms.ComboBox();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -342,6 +343,7 @@
             // 
             // grpTesting
             // 
+            this.grpTesting.Controls.Add(this.cbxCensusYears);
             this.grpTesting.Controls.Add(this.btnCheckCensus);
             this.grpTesting.Controls.Add(this.btn_GazetteShow);
             this.grpTesting.Controls.Add(this.btn_Population);
@@ -368,6 +370,27 @@
             this.btnCheckCensus.Text = "Check census";
             this.btnCheckCensus.UseVisualStyleBackColor = true;
             this.btnCheckCensus.Click += new System.EventHandler(this.btnCheckCensus_Click);
+            // 
+            // cbxCensusYears
+            // 
+            this.cbxCensusYears.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCensusYears.FormattingEnabled = true;
+            this.cbxCensusYears.Items.AddRange(new object[] {
+            "2010",
+            "2000",
+            "1990",
+            "1980",
+            "1970",
+            "1960",
+            "1947",
+            "1937",
+            "1929",
+            "1919",
+            "1909"});
+            this.cbxCensusYears.Location = new System.Drawing.Point(234, 119);
+            this.cbxCensusYears.Name = "cbxCensusYears";
+            this.cbxCensusYears.Size = new System.Drawing.Size(75, 21);
+            this.cbxCensusYears.TabIndex = 58;
             // 
             // MainForm
             // 
@@ -434,6 +457,7 @@
         private System.Windows.Forms.Button btnShowEntityData;
         private System.Windows.Forms.GroupBox grpTesting;
         private System.Windows.Forms.Button btnCheckCensus;
+        private System.Windows.Forms.ComboBox cbxCensusYears;
     }
 }
 

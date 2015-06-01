@@ -31,6 +31,8 @@ namespace De.AHoerstemeier.Tambon.UI
             edtYear.Minimum = GlobalData.PopulationStatisticMinYear;
             edtYear.Value = edtYear.Maximum;
 
+            cbxCensusYears.SelectedItem = cbxCensusYears.Items[0];
+
             // change to real settings
             //PopulationDataDownloader.CacheDirectory=Path.GetDirectoryName(Application.ExecutablePath) + "\\cache\\";
             //PopulationDataDownloader.OutputDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\output\\";
@@ -1103,7 +1105,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnCheckCensus_Click(object sender, EventArgs e)
         {
-            Int16 year = 2010;
+            Int16 year = Convert.ToInt16(cbxCensusYears.SelectedItem as String);
             var builder = new StringBuilder();
             var baseEntity = GlobalData.CompleteGeocodeList();
             GlobalData.LoadPopulationData(PopulationDataSourceType.Census, year);
@@ -1145,9 +1147,13 @@ namespace De.AHoerstemeier.Tambon.UI
                 var sum = new PopulationData();
                 foreach ( var subEntity in entity.entity.Where(x => !x.IsObsolete && x.population.Any()) )
                 {
-                    foreach ( var dataPoint in subEntity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year).data )
+                    var populationToAdd = subEntity.population.FirstOrDefault(y => y.source == PopulationDataSourceType.Census && y.Year == year);
+                    if ( populationToAdd != null )
                     {
-                        sum.AddDataPoint(dataPoint);
+                        foreach ( var dataPoint in populationToAdd.data )
+                        {
+                            sum.AddDataPoint(dataPoint);
+                        }
                     }
                 }
                 if ( sum.data.Any() )
