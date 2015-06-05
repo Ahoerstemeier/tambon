@@ -1108,8 +1108,8 @@ namespace De.AHoerstemeier.Tambon.UI
             Int16 year = Convert.ToInt16(cbxCensusYears.SelectedItem as String);
             var builder = new StringBuilder();
             var baseEntity = GlobalData.CompleteGeocodeList();
-            GlobalData.LoadPopulationData(PopulationDataSourceType.Census, year);
-            var allEntities = baseEntity.FlatList().Where(x => x.population.Any(y => y.source == PopulationDataSourceType.Census && y.Year == year)).ToList();
+            var populationData = GlobalData.LoadPopulationDataUnprocessed(PopulationDataSourceType.Census, year);
+            var allEntities = populationData.FlatList().Where(x => x.population.Any(y => y.source == PopulationDataSourceType.Census && y.Year == year)).ToList();
             foreach ( var entity in allEntities )
             {
                 var population = entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year);

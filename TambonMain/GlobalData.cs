@@ -164,8 +164,9 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        public static void LoadPopulationData(PopulationDataSourceType source, Int16 year)
+        public static Entity LoadPopulationDataUnprocessed(PopulationDataSourceType source, Int16 year)
         {
+            Entity result = null;
             if ( !GlobalData.CountryEntity.population.Any(x => x.Year == year && x.source == source) )
             {
                 String filename = String.Empty;
@@ -182,8 +183,18 @@ namespace De.AHoerstemeier.Tambon
                 filename = String.Format(CultureInfo.InvariantCulture, filename, year);
                 if ( !string.IsNullOrWhiteSpace(filename) )
                 {
-                    LoadPopulationData(filename);
+                    result = LoadPopulationData(filename);
                 }
+            }
+            return result;
+        }
+
+        public static void LoadPopulationData(PopulationDataSourceType source, Int16 year)
+        {
+            var populationData = LoadPopulationDataUnprocessed(source, year);
+            if ( populationData != null )
+            {
+                MergePopulationData(populationData);
             }
 
             var geocodeToRecalculate = new List<UInt32>();
@@ -232,13 +243,35 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        private static void LoadPopulationData(String fileName)
+        private static void MergePopulationData(Entity data)
         {
             var allFlat = CompleteGeocodeList().FlatList().Where(x => !x.type.IsCompatibleEntityType(EntityType.Muban)).ToDictionary(x => x.geocode);
+            var flat = data.FlatList();
+
+            var dataPoints = flat.Where(x => x.population.Any()).ToList();
+            foreach ( var dataPoint in dataPoints )
+            {
+                Entity target;
+                if ( allFlat.TryGetValue(dataPoint.geocode, out target) )
+                {
+                    foreach ( var populationEntry in dataPoint.population )
+                    {
+                        if ( !target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate) )
+                        {
+                            target.population.Add(populationEntry);
+                        }
+                    }
+                }
+            }
+        }
+
+        private static Entity LoadPopulationData(String fileName)
+        {
+            Entity result = null;
             using ( var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read) )
             {
-                var data = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
-                var flat = data.FlatList();
+                result = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
+                var flat = result.FlatList();
 
                 // propagate population references into the subentities
                 foreach ( var entity in flat )
@@ -257,30 +290,16 @@ namespace De.AHoerstemeier.Tambon
                         }
                     }
                 }
-
-                var dataPoints = flat.Where(x => x.population.Any()).ToList();
-                foreach ( var dataPoint in dataPoints )
-                {
-                    Entity target;
-                    if ( allFlat.TryGetValue(dataPoint.geocode, out target) )
-                    {
-                        foreach ( var populationEntry in dataPoint.population )
-                        {
-                            if ( !target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate) )
-                            {
-                                target.population.Add(populationEntry);
-                            }
-                        }
-                    }
-                }
             }
+            return result;
         }
 
         public static void LoadPopulationData()
         {
-            foreach ( String file in Directory.EnumerateFiles(BaseXMLDirectory + "\\population\\") )
+            foreach ( String filename in Directory.EnumerateFiles(BaseXMLDirectory + "\\population\\") )
             {
-                LoadPopulationData(file);
+                var data = LoadPopulationData(filename);
+                MergePopulationData(data);
             }
         }
 
