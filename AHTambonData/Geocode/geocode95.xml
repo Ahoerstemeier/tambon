@@ -1943,6 +1943,19 @@
         <official title="DistrictOfficer" name="นิพนธ์ อินทรสกุล" end="2007-01-07" />
       </officials>
     </office>
+    <area>
+      <area value="451.0" unit="km²" />
+      <bounding geocode="9006" direction="north" />
+      <bounding geocode="9505" direction="east" />
+    </area>
+    <history>
+      <statuschange effective="1997-10-11" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="114" page="24" issue="50 ก" date="1997-09-26" />
+      </statuschange>
+      <create effective="1991-04-01" status="Gazette" type="KingAmphoe" splitfrom="9505">
+        <gazetteref volume="108" page="1068" issue="15 ง" date="1991-01-31" />
+      </create>
+    </history>
     <entity type="Tambon" name="กาบัง" english="Kabang" geocode="950701">
       <wiki wikidata="Q17309980" />
       <office type="TAOOffice">
@@ -1972,7 +1985,13 @@
       <entity type="Muban" geocode="95070103" name="บ้านลูโบ๊ะปันยัง" english="Ban Lobo Panyang" />
       <entity type="Muban" geocode="95070107" name="บ้านกาบัง" english="Ban Kabang" />
       <entity type="Muban" geocode="95070104" name="บ้านยือนัง" english="Ban Yuenang" />
-      <entity type="Muban" geocode="95070108" name="บ้านบาซาตาแป" english="Ban Ba Sat Pae" />
+      <entity type="Muban" geocode="95070108" name="บ้านบาซาตาแป" english="Ban Ba Sat Pae">
+        <history>
+          <create effective="2004-10-22" status="Gazette" type="Muban" splitfrom="95070101">
+            <gazetteref volume="121" page="111" issue="พิเศษ 121 ง" date="2004-10-27" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="บาละ" english="Bala" geocode="950702">
       <wiki wikidata="Q17309981" />
@@ -1996,6 +2015,11 @@
           <entity geocode="950702" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1990-07-01" status="Gazette" type="Tambon" splitfrom="950505">
+          <gazetteref volume="107" page="153" issue="149 ง ฉบับพิเศษ" date="1990-08-17" />
+        </create>
+      </history>
       <entity type="Muban" geocode="95070201" name="บ้านบาละ" english="Ban Bala" />
       <entity type="Muban" geocode="95070202" name="บ้านคลองน้ำใส" english="Ban Khlong Nam Sai" />
       <entity type="Muban" geocode="95070203" name="บ้านหินลูกช้าง" english="Ban Hin Luk Chang" />
@@ -2006,7 +2030,13 @@
       <entity type="Muban" geocode="95070208" name="บ้านคลองชิง" english="Ban Khlong Ching" />
       <entity type="Muban" geocode="95070209" name="บ้านคลองพี" english="Ban Khlong Phi" />
       <entity type="Muban" geocode="95070210" name="บ้านเมาะยี" english="Ban Mo Yi" />
-      <entity type="Muban" geocode="95070211" name="บ้านจุฬาภรณ์พัฒนา" english="Ban Chulabhorn Phatthana" />
+      <entity type="Muban" geocode="95070211" name="บ้านจุฬาภรณ์พัฒนา" english="Ban Chulabhorn Phatthana">
+        <history>
+          <create effective="2012-01-17" status="Gazette" type="Muban" splitfrom="95070203">
+            <gazetteref volume="129" page="174" issue="23 ง" date="2012-03-01" />
+          </create>
+        </history>
+      </entity>
     </entity>
   </entity>
   <entity type="Amphoe" name="กรงปินัง" english="Krong Pinang" geocode="9508">

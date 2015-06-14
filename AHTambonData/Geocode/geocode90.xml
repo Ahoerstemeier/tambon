@@ -130,6 +130,11 @@
         <official title="DistrictOfficer" name="สมโชค สุวรรณมาศ" end="2007-10-23" />
       </officials>
     </office>
+    <history>
+      <rename effective="1917-04-29" status="Gazette" name="เมืองสงขลา" english="Mueang Songkhla" oldname="เมือง" oldenglish="Mueang">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+    </history>
     <entity type="Tambon" name="บ่อยาง" english="Bo Yang" geocode="900101">
       <wiki wikidata="Q16185930" />
       <codes>
@@ -149,7 +154,13 @@
       <entity type="Muban" geocode="90010207" name="บ้านชายทะเล" english="Ban Chai Thale" />
       <entity type="Muban" geocode="90010208" name="บ้านท่าสะอ้าน" english="Ban Tha Sa-an" />
       <entity type="Muban" geocode="90010209" name="บ้านการเคหะ" english="Ban Kan Kheha" />
-      <entity type="Muban" geocode="90010210" name="บ้านสำโรง" english="Ban Samrong" />
+      <entity type="Muban" geocode="90010210" name="บ้านสำโรง" english="Ban Samrong">
+        <history>
+          <create effective="2003-09-26" status="Gazette" type="Muban" splitfrom="90010202">
+            <gazetteref volume="120" page="42" issue="พิเศษ 117 ง" date="2003-10-07" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="เกาะแต้ว" english="Ko Taeo" geocode="900103">
       <codes>
@@ -193,6 +204,11 @@
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="20" />
           <!-- Mu 10 created 2003-09 -->
         </council>
+        <history>
+          <create effective="1995-03-03" status="Gazette" type="TAO">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="900105" coverage="completely" />
         </areacoverage>
@@ -206,7 +222,13 @@
       <entity type="Muban" geocode="90010507" name="บ้านทรายขาว" english="Ban Sai Khao" />
       <entity type="Muban" geocode="90010508" name="บ้านไทรครอบ" english="Ban Rai Khrop" />
       <entity type="Muban" geocode="90010509" name="บ้านยางงาม" english="Ban Yang Ngam" />
-      <entity type="Muban" geocode="90010510" name="บ้านคลองโหนด" english="Ban Khlong Not" />
+      <entity type="Muban" geocode="90010510" name="บ้านคลองโหนด" english="Ban Khlong Not">
+        <history>
+          <create effective="2003-09-26" status="Gazette" type="Muban" splitfrom="90010502">
+            <gazetteref volume="120" page="42" issue="พิเศษ 117 ง" date="2003-10-07" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="เกาะยอ" english="Ko Yo" geocode="900106">
       <wiki wikidata="Q17189243" />
@@ -230,6 +252,11 @@
           <term begin="2008-08-31" end="2012-08-30" type="TAO" size="18" />
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="900106" coverage="completely" />
         </areacoverage>
@@ -4296,6 +4323,17 @@
         <entity geocode="900101" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-11-10" status="Gazette" old="ThesabanMueang" new="ThesabanNakhon">
+        <gazetteref volume="116" page="22" issue="110 ก" date="1999-11-10" />
+      </statuschange>
+      <statuschange effective="1935-12-10" status="Gazette" old="Sukhaphiban" new="ThesabanMueang">
+        <gazetteref volume="52" page="1731" issue="0 ก" date="1935-12-10" />
+      </statuschange>
+      <create effective="1909-09-05" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="26" page="62" issue="0 ก" date="1909-09-05" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="90990001" name="หลังตำหนักเขาน้อย" english="Lang Tamnak Khao Noi" />
     <entity type="Chumchon" geocode="90990002" name="วัดตีนเมรุ" english="Wat Tin Meru" />
     <entity type="Chumchon" geocode="90990003" name="วัดสระเกษ" english="Wat Saket" />
@@ -5026,6 +5064,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-15" status="Done">
         <meetingreference board="2" number="16" date="2007-06-14" />
       </statuschange>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
     <entity type="Chumchon" geocode="90750001" name="ชุมชนบางดาน" english="Chumchon Bang Dan" />
     <entity type="Chumchon" geocode="90750002" name="ชุมชนบ่อรักษ์ชุมชนศรีวนา" english="Chumchon Bo Rak Chumchon Si Na" />
@@ -5201,6 +5242,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-08-25" status="Done">
         <meetingreference board="2" number="34" date="2008-05-14" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ทุ่งลาน" english="Thung Lan" geocode="9068" parent="9016" tambon="901602">

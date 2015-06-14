@@ -100,6 +100,11 @@
     <bounding geocode="54" direction="north" />
     <bounding geocode="53" direction="east" />
   </area>
+  <history>
+    <rename effective="1939-04-17" status="Gazette" name="สุโขทัย" oldname="สวรรคโลก">
+      <gazetteref volume="56" page="351" issue="0 ก" date="1939-04-17" />
+    </rename>
+  </history>
   <entity type="Amphoe" name="เมืองสุโขทัย" english="Mueang Sukhothai" geocode="6401">
     <wiki wikidata="Q476094" />
     <codes>
@@ -120,6 +125,14 @@
         <official title="DistrictOfficer" name="พันธ์เทพ ศรีวนิชย์" end="2006-12-24" />
       </officials>
     </office>
+    <history>
+      <rename effective="1939-04-17" status="Gazette" name="เมืองสุโขทัย" oldname="สุโขทัยธานี">
+        <gazetteref volume="56" page="351" issue="0 ก" date="1939-04-17" />
+      </rename>
+      <rename effective="1917-04-29" status="Gazette" name="ธานี" english="Thani" oldname="เมือง" oldenglish="Mueang">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+    </history>
     <entity type="Tambon" name="ธานี" english="Thani" geocode="640101">
       <wiki wikidata="Q16029550" />
       <codes>
@@ -202,7 +215,13 @@
       <entity type="Muban" geocode="64010308" name="บ้านเชตุพน" english="Ban Chetuphon" />
       <entity type="Muban" geocode="64010309" name="บ้านราวต้นเกลือ" english="Ban Rao Ton Kluea" />
       <entity type="Muban" geocode="64010310" name="บ้านศรีชุม" english="Ban Si Chum" />
-      <entity type="Muban" geocode="64010311" name="บ้านวังใหม่เจริญสุข" english="Ban Wang Mai Charoen Suk" />
+      <entity type="Muban" geocode="64010311" name="บ้านวังใหม่เจริญสุข" english="Ban Wang Mai Charoen Suk">
+        <history>
+          <create effective="2003-08-17" status="Gazette" type="Muban" splitfrom="64010304">
+            <gazetteref volume="120" page="55" issue="พิเศษ 114 ง" date="2003-10-01" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ปากแคว" english="Pak Khwae" geocode="640104">
       <wiki wikidata="Q16246808" />
@@ -294,8 +313,20 @@
       <entity type="Muban" geocode="64010610" name="บ้านคลองนาทุ่ง" english="Ban Khlong Na Thung" />
       <entity type="Muban" geocode="64010611" name="บ้านในดอน" english="Ban Nai Don" />
       <entity type="Muban" geocode="64010612" name="บ้านโพธิ์ทองพัฒนา" english="Ban Pho Thong Phatthana" />
-      <entity type="Muban" geocode="64010613" name="บ้านคลองโพธิ์" english="Ban Khlong Pho" />
-      <entity type="Muban" geocode="64010614" name="บ้านเนินทอง" english="Ban Noen Thong" />
+      <entity type="Muban" geocode="64010613" name="บ้านคลองโพธิ์" english="Ban Khlong Pho">
+        <history>
+          <create effective="2005-11-29" status="Gazette" type="Muban" splitfrom="64010601">
+            <gazetteref volume="123" page="8" issue="พิเศษ 41 ง" date="2006-03-23" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="64010614" name="บ้านเนินทอง" english="Ban Noen Thong">
+        <history>
+          <create effective="2005-11-29" status="Gazette" type="Muban" splitfrom="64010601">
+            <gazetteref volume="123" page="8" issue="พิเศษ 41 ง" date="2006-03-23" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="บ้านหลุม" english="Ban Lum" geocode="640107">
       <wiki wikidata="Q13015090" />
@@ -422,6 +453,11 @@
           <entity geocode="640110" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1981-04-01" status="Gazette" type="Tambon" splitfrom="640103">
+          <gazetteref volume="98" page="1377" issue="71 ง" date="1981-05-12" />
+        </create>
+      </history>
       <entity type="Muban" geocode="64011001" name="บ้านวังทองแดง" english="Ban Wang Thong Daeng" />
       <entity type="Muban" geocode="64011002" name="บ้านไสยาศน์" english="Ban Sai Yat" />
       <entity type="Muban" geocode="64011003" name="บ้านคลองยอ" english="Ban Khlong Yo" />
