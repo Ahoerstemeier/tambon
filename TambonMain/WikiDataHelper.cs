@@ -113,6 +113,49 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        private WikiDataState CheckTimeValue(Item item, String propertyId, DateTime expected, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            WikiDataState result = WikiDataState.Unknown;
+
+            // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
+            var property = new EntityId(propertyId);
+            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.PropertyId)) as Statement;
+
+            var dataValue = TimeValue.DateValue(expected);
+            var snak = new Snak(SnakType.Value, new EntityId(propertyId), dataValue);
+            if ( claim == null )
+            {
+                result = WikiDataState.NotSet;
+                if ( createStatement )
+                {
+                    claim = item.createStatementForSnak(snak);
+                }
+            }
+            else
+            {
+                Snak oldSnak = claim.mainSnak;
+                var oldDataValue = oldSnak.DataValue as TimeValue;
+                if ( oldDataValue.DateTime == dataValue.DateTime )
+                {
+                    result = WikiDataState.Valid;
+                }
+                else
+                {
+                    result = WikiDataState.WrongValue;
+                    if ( overrideWrongData )
+                    {
+                        claim.mainSnak = snak;
+                    }
+                }
+            }
+
+            statement = claim as Statement;
+            return result;
+        }
+
         /// <summary>
         /// Checks and evetually sets a link property.
         /// </summary>
@@ -838,6 +881,52 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion Locator map
+
+        #region Inception
+
+        private WikiDataState Inception(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var history = entity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
+            var hasValue = history != null && history.effectiveSpecified;
+            var timeValue = history.effective;
+
+            return CheckTimeValue(item, WikiBase.PropertyIdInception, timeValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the inception.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the inception.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetInception(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            Inception(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the inception is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState InceptionCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return Inception(item, entity, false, false, out dummy);
+        }
+
+        #endregion Inception
 
         #region Location
 

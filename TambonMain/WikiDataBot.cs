@@ -173,6 +173,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Slogan", SetSlogan));
             _availableTasks.Add(new WikiDataTaskInfo("Set native label", SetNativeLabel));
             _availableTasks.Add(new WikiDataTaskInfo("Set bounding entities", SetShareBorderWith));
+            _availableTasks.Add(new WikiDataTaskInfo("Set Inception", SetInception));
         }
 
         #endregion constructor
@@ -1048,6 +1049,49 @@ namespace De.AHoerstemeier.Tambon
                                 statement.save(_helper.GetClaimSaveEditSummary(statement));
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        private void SetInception(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities )
+            {
+                var history = entity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
+                var hasValue = history != null && history.effectiveSpecified;
+                if ( hasValue )
+                {
+                    var item = _helper.GetWikiDataItemForEntity(entity);
+                    if ( item == null )
+                    {
+                        _runInfo[WikiDataState.ItemNotFound]++;
+                        collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                    }
+                    else
+                    {
+                        var state = _helper.InceptionCorrect(item, entity);
+                        _runInfo[state]++;
+                        if ( state == WikiDataState.WrongValue )
+                        {
+                            collisionInfo.AppendFormat("{0}: {1} has wrong inception date", item.id, entity.english);
+                            collisionInfo.AppendLine();
+                        }
+                        if ( state != WikiDataState.Valid )
+                        {
+                            var statement = _helper.SetInception(item, entity, overrideData);
+                            if ( statement != null )
+                            {
+                                statement.save(_helper.GetClaimSaveEditSummary(statement));
+                            }
+                        }
+
+                        // TODO: Reference!
                     }
                 }
             }

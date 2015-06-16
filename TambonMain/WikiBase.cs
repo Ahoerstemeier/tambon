@@ -54,6 +54,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdDmoz = "P998";
         public const String PropertyIdThaiGeocode = "P1067";
         public const String PropertyIdInstanceOf = "P31";
+        public const String PropertyIdInception = "P571";
         public const String PropertyIdPopulation = "P1082";
         public const String PropertyIdSocialMedia = "P553";
         public const String PropertyIdSocialMediaAddress = "P554";
