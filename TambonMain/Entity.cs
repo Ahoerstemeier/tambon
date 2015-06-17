@@ -942,14 +942,30 @@ namespace De.AHoerstemeier.Tambon
             {
                 subEntity.CalcOldGeocodesRecursive(allEntities);
             }
+            if ( (this.type == EntityType.Tambon) && _oldGeocode != null && _oldGeocode.Any() )
+            {
+                foreach ( var muban in this.entity )
+                {
+                    if ( muban._oldGeocode == null )
+                    {
+                        muban._oldGeocode = new List<UInt32>();
+                    }
+                    foreach ( var oldCode in _oldGeocode )
+                    {
+                        muban._oldGeocode.Add(oldCode * 100 + muban.geocode % 100);
+                    }
+                }
+            }
         }
 
         /// <summary>
         /// Fills <see cref="OldGeocodes"/> for this entity and all its subentities.
         /// </summary>
+        /// <remarks>Usually to be used on country or province entities.</remarks>
         public void CalcOldGeocodesRecursive()
         {
             CalcOldGeocodesRecursive(GlobalData.CompleteGeocodeList().FlatList().Where(x => x.newgeocode.Any()).ToList());
+            var allTambon = this.FlatList().Where(x => x.type == EntityType.Tambon);
             foreach ( var thesabanWithTambon in this.FlatList().Where(x => x.tambonSpecified) )
             {
                 if ( thesabanWithTambon._oldGeocode == null )
@@ -959,6 +975,14 @@ namespace De.AHoerstemeier.Tambon
                 if ( !thesabanWithTambon._oldGeocode.Contains(thesabanWithTambon.tambon + 50) )
                 {
                     thesabanWithTambon._oldGeocode.Add(thesabanWithTambon.tambon + 50);
+                }
+                var tambon = allTambon.FirstOrDefault(x => x.geocode == thesabanWithTambon.tambon);
+                if ( (tambon != null) && (tambon._oldGeocode != null) )
+                {
+                    foreach ( var oldCode in tambon._oldGeocode )
+                    {
+                        thesabanWithTambon._oldGeocode.Add(oldCode + 50);
+                    }
                 }
             }
         }
@@ -1039,6 +1063,17 @@ namespace De.AHoerstemeier.Tambon
                         if ( office.type == OfficeType.TAOOffice )
                         {
                             office.type = OfficeType.MunicipalityOffice;
+                        }
+                    }
+                    if ( this._oldGeocode != null && this._oldGeocode.Any() )
+                    {
+                        if ( result._oldGeocode == null )
+                        {
+                            result._oldGeocode = new List<UInt32>();
+                        }
+                        foreach ( var code in this._oldGeocode )
+                        {
+                            result._oldGeocode.Add(code + 50);
                         }
                     }
                 }
