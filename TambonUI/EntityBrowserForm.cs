@@ -480,7 +480,7 @@ namespace De.AHoerstemeier.Tambon.UI
             //var startingDate = new DateTime(1950, 1, 1);
             //var gazetteNewerThan1950 = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.publication > startingDate);
             // var gazetteWithCreationOrStatus = gazetteNewerThan1950.Where(x => x.Items.Any(y => y is GazetteCreate || y is GazetteStatusChange)).ToList();
-            var gazetteContent = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.SelectMany(x => x.Items.OfType<GazetteOperationBase>().Where(y => y is GazetteCreate || y is GazetteStatusChange || y is GazetteRename), (Gazette, History) => new
+            var gazetteContent = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.SelectMany(x => x.Items.OfType<GazetteOperationBase>().Where(y => y is GazetteCreate || y is GazetteStatusChange || y is GazetteRename || y is GazetteAreaChange), (Gazette, History) => new
             {
                 Gazette,
                 History
