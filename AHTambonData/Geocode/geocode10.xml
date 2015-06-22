@@ -113,6 +113,14 @@
     <bounding geocode="13" direction="north" />
     <bounding geocode="24" direction="east" />
   </area>
+  <history>
+    <statuschange effective="1972-12-13" status="Gazette" old="Changwat" new="Bangkok">
+      <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+    </statuschange>
+    <create effective="1971-12-21" status="Gazette" type="Changwat">
+      <gazetteref volume="88" page="816" issue="144 ก" date="1971-12-21" />
+    </create>
+  </history>
   <entity type="Khet" name="พระนคร" english="Phra Nakhon" geocode="1001">
     <wiki wikidata="Q1525441" openstreetmap="92053" />
     <codes>
@@ -650,12 +658,25 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+    </history>
     <entity type="Khwaeng" name="คลองเตย" english="Khlong Toei" geocode="100901" newgeocode="103301" />
     <entity type="Khwaeng" name="คลองตัน" english="Khlong Tan" geocode="100902" newgeocode="103302" />
     <entity type="Khwaeng" name="พระโขนง" english="Phra Khanong" geocode="100903" newgeocode="103303" />
     <entity type="Khwaeng" name="บางนา" english="Bang Na" geocode="100904" newgeocode="104701" />
     <entity type="Khwaeng" name="บางจาก" english="Bang Chak" geocode="100905">
       <wiki wikidata="Q15735666" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="100904 100903 100909">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>-->
+      </history>
     </entity>
     <entity type="Khwaeng" name="สวนหลวง" english="Suan Luang" geocode="100906" newgeocode="103204" />
     <entity type="Khwaeng" name="หนองบอน" english="Nong Bon" geocode="100907" newgeocode="103202" />
@@ -725,11 +746,26 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+    </history>
     <entity type="Khwaeng" name="มีนบุรี" english="Min Buri" geocode="101001">
       <wiki wikidata="Q15735923" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="แสนแสบ" english="Saen Saep" geocode="101002">
       <wiki wikidata="Q15735922" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="บางชัน" english="Bang Chan" geocode="101003" newgeocode="104603" />
     <entity type="Khwaeng" name="ทรายกองดิน" english="Sai Kong Din" geocode="101004" newgeocode="104604" />
@@ -779,23 +815,70 @@
         <term begin="1989-10-08" end="1993-10-07" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+      <statuschange effective="1957-03-05" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="74" page="543" issue="23 ก" date="1957-03-05" />
+      </statuschange>
+      <statuschange effective="1938-09-01" status="Gazette" old="Amphoe" new="KingAmphoe">
+        <gazetteref volume="55" page="1840" issue="0 ง" date="1938-08-29" />
+      </statuschange>
+      <rename effective="1927-08-14" status="Gazette" name="ลาดกระบัง" oldname="แสนแสบ">
+        <gazetteref volume="44" page="1480" issue="0 ง" date="1927-08-14" />
+      </rename>
+    </history>
     <entity type="Khwaeng" name="ลาดกระบัง" english="Lat Krabang" geocode="101101">
       <wiki wikidata="Q15735921" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="คลองสองต้นนุ่น" english="Khlong Song Ton Nun" geocode="101102">
       <wiki wikidata="Q15735920" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="คลองสามประเวศ" english="Khlong Sam Prawet" geocode="101103">
       <wiki wikidata="Q15735918" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ลำปลาทิว" english="Lam Pla Thio" geocode="101104">
       <wiki wikidata="Q15735917" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ทับยาว" english="Thap Yao" geocode="101105">
       <wiki wikidata="Q15735916" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ขุมทอง" english="Khum Thong" geocode="101106">
       <wiki wikidata="Q15735915" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="1961-05-09" status="Gazette" type="Tambon" splitfrom="101105">
+          <gazetteref volume="78" page="1320" issue="44 ง" date="1961-05-23" />
+        </create>
+      </history>
     </entity>
   </entity>
   <entity type="Khet" name="ยานนาวา" english="Yan Nawa" geocode="1012">
@@ -829,13 +912,34 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+      <rename effective="1939-09-25" status="Gazette" name="ยานนาวา" oldname="บ้านทะวาย">
+        <gazetteref volume="56" page="877" issue="0 ก" date="1939-09-25" />
+      </rename>
+      <create effective="1915-10-31" status="Gazette" type="Amphoe">
+        <gazetteref volume="32" page="335" issue="0 ก" date="1915-10-31" />
+      </create>
+    </history>
     <entity type="Khwaeng" name="ทุ่งวัดดอน" english="Thung Wat Don" geocode="101201" newgeocode="102801" />
     <entity type="Khwaeng" name="ยานนาวา" english="Yan Nawa" geocode="101202" newgeocode="102802" />
     <entity type="Khwaeng" name="ช่องนนทรี" english="Chong Nonsi" geocode="101203">
       <wiki wikidata="Q15735631" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="บางโพงพาง" english="Bang Phongphang" geocode="101204">
       <wiki wikidata="Q15735632" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="วัดพระยาไกร" english="Wat Phraya Krai" geocode="101205" newgeocode="103102" />
     <entity type="Khwaeng" name="บางโคล่" english="Bang Khlo" geocode="101206" newgeocode="103103" />
@@ -874,14 +978,37 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+      <create effective="1915-10-31" status="Gazette" type="Amphoe">
+        <gazetteref volume="32" page="335" issue="0 ก" date="1915-10-31" />
+      </create>
+    </history>
     <entity type="Khwaeng" name="จักรวรรดิ" english="Chakkrawat" geocode="101301">
       <wiki wikidata="Q15735914" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="สัมพันธวงศ์" english="Samphanthawong" geocode="101302">
       <wiki wikidata="Q15735913" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ตลาดน้อย" english="Talat Noi" geocode="101303">
       <wiki wikidata="Q15735912" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
   </entity>
   <entity type="Khet" name="พญาไท" english="Phaya Thai" geocode="1014">
@@ -915,8 +1042,28 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+      <create effective="1966-05-01" status="Gazette" type="Amphoe">
+        <gazetteref volume="83" page="1" issue="39 ก ฉบับพิเศษ" date="1966-05-01" />
+      </create>
+      <!--
+      <statuschange effective="1926-04-01" status="Gazette" old="Amphoe" new="KingAmphoe">
+        <gazetteref volume="42" page="431" issue="0 ก" date="1926-03-31" />
+      </statuschange>
+      <create effective="1915-10-31" status="Gazette" type="Amphoe">
+        <gazetteref volume="32" page="335" issue="0 ก" date="1915-10-31" />
+      </create>-->
+    </history>
     <entity type="Khwaeng" name="สามเสนใน" english="Sam Sen Nai" geocode="101401">
       <wiki wikidata="Q15735663" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ถนนเพชรบุรี" english="Thanon Phetchaburi" geocode="101402" newgeocode="103703" />
     <entity type="Khwaeng" name="ทุ่งพญาไท" english="Thung Phaya Thai" geocode="101403" newgeocode="103701" />
@@ -954,26 +1101,84 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+      <rename effective="1939-04-17" status="Gazette" name="ธนบุรี" oldname="บางยี่เรือ">
+        <gazetteref volume="56" page="354" issue="0 ก" date="1939-04-17" />
+      </rename>
+      <rename effective="1916-07-30" status="Gazette" name="บางยี่เรือ" oldname="ราชคฤห์">
+        <gazetteref volume="33" page="116" issue="0 ก" date="1916-07-30" />
+      </rename>
+      <create effective="1915-10-31" status="Gazette" type="Amphoe">
+        <gazetteref volume="32" page="335" issue="0 ก" date="1915-10-31" />
+      </create>
+    </history>
     <entity type="Khwaeng" name="วัดกัลยาณ์" english="Wat Kanlaya" geocode="101501">
       <wiki wikidata="Q15735911" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="หิรัญรูจี" english="Hiran Ruchi" geocode="101502">
       <wiki wikidata="Q15735910" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="1950-09-01" status="Gazette" type="Tambon">
+          <gazetteref volume="67" page="4121" issue="49 ง" date="1950-09-19" />
+        </create>
+      </history>
     </entity>
     <entity type="Khwaeng" name="บางยี่เรือ" english="Bang Yi Ruea" geocode="101503">
       <wiki wikidata="Q15735909" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="บุคคโล" english="Bukkhalo" geocode="101504">
       <wiki wikidata="Q15735908" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ตลาดพลู" english="Talat Phlu" geocode="101505">
       <wiki wikidata="Q15735907" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ดาวคะนอง" english="Dao Khanong" geocode="101506">
       <wiki wikidata="Q15735906" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="2003-12-01" status="Gazette" type="Khwaeng">
+          <gazetteref volume="120" page="35" issue="พิเศษ 138 ง" date="2003-12-03" />
+        </create>
+      </history>
     </entity>
     <entity type="Khwaeng" name="สำเหร่" english="Samre" geocode="101507">
       <wiki wikidata="Q15735905" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="2003-12-01" status="Gazette" type="Khwaeng">
+          <gazetteref volume="120" page="35" issue="พิเศษ 138 ง" date="2003-12-03" />
+        </create>
+      </history>
     </entity>
 
     <entity type="Unknown" name="คลองสาน" english="Khlong San" geocode="101599" newgeocode="101802" />
@@ -1014,11 +1219,29 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+    </history>
     <entity type="Khwaeng" name="วัดอรุณ" english="Wat Arun" geocode="101601">
       <wiki wikidata="Q15735659" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="วัดท่าพระ" english="Wat Tha Phra" geocode="101602">
       <wiki wikidata="Q15735661" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <rename effective="1949-10-04" status="Gazette" name="วัดท่าพระ" oldname="บางยี่เรือ">
+          <gazetteref volume="66" page="4677" issue="56 ง" date="1949-10-04" />
+        </rename>
+      </history>
     </entity>
   </entity>
   <entity type="Khet" name="ห้วยขวาง" english="Huai Khwang" geocode="1017">
@@ -1055,15 +1278,41 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+    </history>
     <entity type="Khwaeng" name="ห้วยขวาง" english="Huai Khwang" geocode="101701">
       <wiki wikidata="Q15735904" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="1965-12-23" status="Gazette" type="Tambon" splitfrom="101704">
+          <gazetteref volume="83" page="246" issue="6 ง" date="1966-01-18" />
+        </create>
+      </history>
     </entity>
     <entity type="Khwaeng" name="บางกะปิ" english="Bang Kapi" geocode="101702">
       <wiki wikidata="Q15735901" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ดินแดง" english="Din Daeng" geocode="101703" newgeocode="102601" />
     <entity type="Khwaeng" name="สามเสนนอก" english="Sam Sen Nok" geocode="101704">
       <wiki wikidata="Q15735900" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="101702">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>
+      </history>
     </entity>
   </entity>
   <entity type="Khet" name="คลองสาน" english="Khlong San" geocode="1018">
@@ -1099,17 +1348,57 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+      <statuschange effective="1957-08-06" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="74" page="1218" issue="66 ก" date="1957-08-06" />
+      </statuschange>
+      <rename effective="1916-07-30" status="Gazette" name="คลองสาน" oldname="บุปผาราม">
+        <gazetteref volume="33" page="116" issue="0 ก" date="1916-07-30" />
+      </rename>
+      <create effective="1915-10-31" status="Gazette" type="Amphoe">
+        <gazetteref volume="32" page="335" issue="0 ก" date="1915-10-31" />
+      </create>
+    </history>
     <entity type="Khwaeng" name="สมเด็จเจ้าพระยา" english="Somdet Chao Phraya" geocode="101801">
       <wiki wikidata="Q15735896" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="1950-09-01" status="Gazette" type="Tambon" splitfrom="101802">
+          <gazetteref volume="67" page="4121" issue="49 ง" date="1950-09-19" />
+        </create>
+      </history>
     </entity>
     <entity type="Khwaeng" name="คลองสาน" english="Khlong San" geocode="101802">
       <wiki wikidata="Q15735895" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="บางลำภูล่าง" english="Bang Lamphu Lang" geocode="101803">
       <wiki wikidata="Q15735894" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="คลองต้นไทร" english="Khlong Ton Sai" geocode="101804">
       <wiki wikidata="Q15735893" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="1950-09-01" status="Gazette" type="Tambon" splitfrom="101803">
+          <gazetteref volume="67" page="4121" issue="49 ง" date="1950-09-19" />
+        </create>
+      </history>
     </entity>
   </entity>
   <entity type="Khet" name="ตลิ่งชัน" english="Taling Chan" geocode="1019">
@@ -1152,17 +1441,48 @@
         <term begin="1985-11-21" end="1989-11-20" type="Khet" />
       </council>
     </office>
+    <history>
+      <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
+        <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+      </statuschange>
+    </history>
     <entity type="Khwaeng" name="คลองชักพระ" english="Khlong Chak Phra" geocode="101901">
       <wiki wikidata="Q15735892" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ตลิ่งชัน" english="Taling Chan" geocode="101902">
       <wiki wikidata="Q15735891" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ฉิมพลี" english="Chimphli" geocode="101903">
       <wiki wikidata="Q15735890" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="1970-06-01" status="Gazette" type="Tambon" splitfrom="101902">
+          <gazetteref volume="87" page="1915" issue="53 ง" date="1970-06-16" />
+        </create>
+      </history>
     </entity>
     <entity type="Khwaeng" name="บางพรม" english="Bang Phrom" geocode="101904">
       <wiki wikidata="Q15735888" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+        <create effective="1969-06-01" status="Gazette" type="Tambon" splitfrom="101907">
+          <gazetteref volume="86" page="1922" issue="53 ง" date="1969-06-10" />
+        </create>
+      </history>
       <entity type="Muban" geocode="10190410" name="หมู่ 10" english="Mu 10" obsolete="1">
         <office type="VillageHeadmanOffice">
           <geo:Point>
@@ -1174,10 +1494,20 @@
     </entity>
     <entity type="Khwaeng" name="บางระมาด" english="Bang Ramat" geocode="101905">
       <wiki wikidata="Q15735887" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ทวีวัฒนา" english="Thawi Watthana" geocode="101906" newgeocode="104801" />
     <entity type="Khwaeng" name="บางเชือกหนัง" english="Bang Chueak Nang" geocode="101907">
       <wiki wikidata="Q15735886" />
+      <history>
+        <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
+          <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
+        </statuschange>
+      </history>
     </entity>
     <entity type="Khwaeng" name="ศาลาธรรมสพน์" english="Sala Thammasop" geocode="101908" newgeocode="104802" />
   </entity>
