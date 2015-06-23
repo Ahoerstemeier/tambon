@@ -166,5 +166,22 @@ namespace De.AHoerstemeier.Tambon
                 endPage = startPage;
             }
         }
+
+        /// <summary>
+        /// Gets a flat list of all the gazette operation entries within the gazette entry.
+        /// </summary>
+        public IEnumerable<GazetteOperationBase> GazetteOperations()
+        {
+            var result = new List<GazetteOperationBase>();
+            foreach ( var item in Items )
+            {
+                var operationItem = item as GazetteOperationBase;
+                if ( operationItem != null )
+                {
+                    result.AddRange(operationItem.GazetteOperations());
+                }
+            }
+            return result;
+        }
     }
 }

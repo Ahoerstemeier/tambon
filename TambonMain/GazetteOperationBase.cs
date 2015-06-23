@@ -54,5 +54,23 @@ namespace De.AHoerstemeier.Tambon
         {
             return null;
         }
+
+        /// <summary>
+        /// Gets a flat list of all the operation entries nested under the current one, including the current one.
+        /// </summary>
+        public IEnumerable<GazetteOperationBase> GazetteOperations()
+        {
+            var result = new List<GazetteOperationBase>();
+            result.Add(this);
+            foreach ( var item in Items )
+            {
+                var OperationItem = item as GazetteOperationBase;
+                if ( OperationItem != null )
+                {
+                    result.AddRange(OperationItem.GazetteOperations());
+                }
+            }
+            return result;
+        }
     }
 }

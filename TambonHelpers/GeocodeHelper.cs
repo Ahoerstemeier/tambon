@@ -112,5 +112,39 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
+        /// <summary>
+        /// Calculates the geocode level.
+        /// </summary>
+        /// <param name="geocode">Code to check.</param>
+        /// <returns>Level of geocode.
+        /// <list type="bullet">
+        /// <item><term>0</term>
+        /// <description>Country.</description>
+        /// </item>
+        /// <item><term>1</term>
+        /// <description>1st level subdivision, i.e. province (or Bangkok).</description>
+        /// </item>
+        /// <item><term>2</term>
+        /// <description>2nd level subdivision, i.e. district (Amphoe, King Amphoe, Khet), includes municipalities.</description>
+        /// </item>
+        /// <item><term>3</term>
+        /// <description>3rd level subdivision, i.e. subdistrict (Tambon, Khwaeng).</description>
+        /// </item>
+        /// <item><term>4</term>
+        /// <description>4th level subdivision, i.e. administrative villages and communities (Muban, Chumchon).</description>
+        /// </item>
+        /// </list>         /// </returns>
+        public static Byte GeocodeLevel(UInt32 geocode)
+        {
+            Byte result = 0;
+            var value = geocode;
+            while ( value > 0 )
+            {
+                result++;
+                value = value / 100;
+            }
+            return result;
+        }
     }
 }
