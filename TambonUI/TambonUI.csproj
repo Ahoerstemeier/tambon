@@ -60,6 +60,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Wikibase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Wikibase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreationStatisticForm.cs">
@@ -144,10 +148,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\wikibase.net\branches\rework\Wikibase.NET\WikiBase.csproj">
-      <Project>{fc9f81dc-20ad-4fe5-9ea1-dab417f947ea}</Project>
-      <Name>WikiBase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AHTambonData\AHTambonData.csproj">
       <Project>{ddfe165d-3c88-4839-bbc7-c80f08a92041}</Project>
       <Name>AHTambonData</Name>

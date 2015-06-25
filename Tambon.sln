@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tambon", "Tambon.csproj", "{25D7637F-1F4B-4E7D-8B63-E45E9146B8B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AHGeo", "AHGeo\AHGeo.csproj", "{701BEA66-8220-4F60-9A8D-11AAA4E20974}"
@@ -25,6 +27,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TambonUI", "TambonUI\TambonUI.csproj", "{541C1E29-718C-452C-8EA3-220092D0E251}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{51EF1AE9-F7A6-4560-8F94-A0129914C067}"
+	ProjectSection(SolutionItems) = preProject
+		libs\MinimalJson.dll = libs\MinimalJson.dll
+		libs\Wikibase.dll = libs\Wikibase.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -181,7 +189,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
+	GlobalSection(NestedProjects) = preSolution
+		{51EF1AE9-F7A6-4560-8F94-A0129914C067} = {C370D52A-3790-4AA2-A87E-FE3582F6A278}
 	EndGlobalSection
 EndGlobal
