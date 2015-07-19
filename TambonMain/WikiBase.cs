@@ -62,6 +62,8 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdMotto = "P1451";
         public const String PropertyIdNativeLabel = "P1705";
         public const String PropertyIdDeterminationMethod = "P459";
+        public const String PropertyIdFoursquareId = "P1968";
+        public const String PropertyIdShortName = "P1813";  // wrong datatype, wait for it to become multilingual!
 
         // public const String PropertyIdArea = "Pxxxx";
         public const String PropertyIdCategoryCombinesTopic = "P971";
