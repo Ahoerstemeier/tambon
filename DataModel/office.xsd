@@ -896,6 +896,11 @@
           <xs:documentation>Scientific name of the symbol bird (นกประจำจังหวัด).</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="wateranimal" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Scientific name of the symbol water animal (สัตว์น้ำประจำจังหวัด).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="color" type="t:SymbolColor" default="unknown">
         <xs:annotation>
           <xs:documentation>Symbol color(s) of the entity.</xs:documentation>

@@ -46,6 +46,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private string symbolbirdField;
         
+        private string wateranimalField;
+        
         private string colorField;
         
         /// <summary>
@@ -232,12 +234,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Scientific name of the symbol water animal (สัตว์น้ำประจำจังหวัด).
+        /// </summary>
+        /// <value>
+        /// The wateranimal.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string wateranimal {
+            get {
+                return this.wateranimalField;
+            }
+            set {
+                this.wateranimalField = value;
+            }
+        }
+        
+        /// <summary>
         /// Symbol color(s) of the entity.
         /// </summary>
         /// <value>
         /// The color.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         [System.ComponentModel.DefaultValueAttribute("unknown")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string color {
