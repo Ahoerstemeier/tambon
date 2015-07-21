@@ -13,10 +13,19 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Coresponding history entry.</returns>
         public override HistoryEntryBase ConvertToHistory()
         {
-            var historyStatus = new HistoryStatus();
-            historyStatus.old = this.old;
-            historyStatus.@new = this.@new;
-            return historyStatus;
+            if ( this.old == EntityType.SaphaTambon && this.@new == EntityType.TAO )
+            {
+                var historyCreate = new HistoryCreate();
+                historyCreate.type = this.@new;
+                return historyCreate;
+            }
+            else
+            {
+                var historyStatus = new HistoryStatus();
+                historyStatus.old = this.old;
+                historyStatus.@new = this.@new;
+                return historyStatus;
+            }
         }
     }
 }
