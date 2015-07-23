@@ -366,12 +366,12 @@ namespace De.AHoerstemeier.Tambon {
         total,
         
         /// <summary>
-        /// Municipal population, i.e. population within Thesaban.
+        /// Municipal population, i.e. population within Thesaban (ในเขตเทศบาล).
         /// </summary>
         municipal,
         
         /// <summary>
-        /// Non-municipal population, i.e. population outside the Thesaban.
+        /// Non-municipal population, i.e. population outside the Thesaban (นอกเขตเทศบาล).
         /// </summary>
         nonmunicipal,
         
@@ -381,14 +381,19 @@ namespace De.AHoerstemeier.Tambon {
         sanitary,
         
         /// <summary>
-        /// Population in urban sanitary districts.
+        /// Population in urban sanitary districts (เขตเทศบาลสุขาภิบาล-เขตเมือง).
         /// </summary>
         urbansanitary,
         
         /// <summary>
-        /// Population in rural sanitary districts.
+        /// Population in rural sanitary districts (เขตเทศบาลสุขาภิบาล-เขตชนบท).
         /// </summary>
         ruralsanitary,
+        
+        /// <summary>
+        /// Non-municipal and non-sanitary population, i.e. population outside Thesaban and sanitary districts (นอกเขตเทศบาล-สุขาภิบาล).
+        /// </summary>
+        nonmunicipalsanitary,
         
         /// <summary>
         /// Agricultural population, i.e. population having at least ... rai of agricultural land.

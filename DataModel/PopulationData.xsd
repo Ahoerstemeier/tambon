@@ -47,12 +47,12 @@
       </xs:enumeration>
       <xs:enumeration value="municipal">
         <xs:annotation>
-          <xs:documentation>Municipal population, i.e. population within Thesaban.</xs:documentation>
+          <xs:documentation>Municipal population, i.e. population within Thesaban (ในเขตเทศบาล).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="nonmunicipal">
         <xs:annotation>
-          <xs:documentation>Non-municipal population, i.e. population outside the Thesaban.</xs:documentation>
+          <xs:documentation>Non-municipal population, i.e. population outside the Thesaban (นอกเขตเทศบาล).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="sanitary">
@@ -62,12 +62,17 @@
       </xs:enumeration>
       <xs:enumeration value="urbansanitary">
         <xs:annotation>
-          <xs:documentation>Population in urban sanitary districts.</xs:documentation>
+          <xs:documentation>Population in urban sanitary districts (เขตเทศบาลสุขาภิบาล-เขตเมือง).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="ruralsanitary">
         <xs:annotation>
-          <xs:documentation>Population in rural sanitary districts.</xs:documentation>
+          <xs:documentation>Population in rural sanitary districts (เขตเทศบาลสุขาภิบาล-เขตชนบท).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nonmunicipalsanitary">
+        <xs:annotation>
+          <xs:documentation>Non-municipal and non-sanitary population, i.e. population outside Thesaban and sanitary districts (นอกเขตเทศบาล-สุขาภิบาล).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="agricultural">
