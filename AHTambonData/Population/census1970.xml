@@ -49,10 +49,66 @@
   </entity>
   <entity type="Changwat" geocode="12" name="ปทุมธานี" english="Pathum Thani">
     <population source="Census" year="1970" referencedate="1970-04-01">
-      <data type="total" total="233861" male="116858" female="117003" />
-      <data type="municipal" total="4365" male="2331" female="2034" />
-      <data type="nonmunicipal" total="229496" male="114527" female="114969" />
+      <data type="total" total="233861" male="116858" female="117003">
+        <data type="collectivehouseholds" households="198" />
+        <data type="privatehouseholds" households="40419" />
+        <data type="agricultural" households="19321" />
+      </data>
+      <data type="municipal" total="4365" male="2331" female="2034">
+        <data type="collectivehouseholds" households="5" />
+        <data type="privatehouseholds" households="768" />
+        <data type="agricultural" households="38" />
+      </data>
+      <data type="sanitary" total="48019" male="25144" female="228675">
+        <data type="collectivehouseholds" households="26" />
+        <data type="privatehouseholds" households="7933" />
+        <data type="agricultural" households="1797" />
+      </data>
+      <data type="nonmunicipalsanitary" total="181477" male="89383" female="92094">
+        <data type="collectivehouseholds" households="167" />
+        <data type="privatehouseholds" households="31718" />
+        <data type="agricultural" households="17486" />
+      </data>
+      <!--<data type="nonmunicipal" total="229496" male="114527" female="114969" />-->
+      <reference>
+        <url>http://service.nso.go.th/nso/r.jsp?f=nso/nso_images/1000000002_0000000001_0000000006_0000000041_0000000021.png</url>
+      </reference>
     </population>
+    <entity type="Amphoe" name="เมืองปทุมธานี" english="Mueang Pathum Thani" geocode="1301">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="46104" male="22883" female="23221" />
+      </population>
+    </entity>
+    <entity type="Amphoe" name="คลองหลวง" english="Khlong Luang" geocode="1302">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="37271" male="18050" female="19221" />
+      </population>
+    </entity>
+    <entity type="Amphoe" name="ธัญบุรี" english="Thanyaburi" geocode="1303">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="38858" male="20196" female="18162" />
+      </population>
+    </entity>
+    <entity type="Amphoe" name="หนองเสือ" english="Nong Suea" geocode="1304">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="25252" male="12612" female="12640" />
+      </population>
+    </entity>
+    <entity type="Amphoe" name="ลาดหลุมแก้ว" english="Lat Lum Kaeo" geocode="1305">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="23500" male="11683" female="11817" />
+      </population>
+    </entity>
+    <entity type="Amphoe" name="ลำลูกกา" english="Lam Luk Ka" geocode="1306">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="37141" male="18627" female="18514" />
+      </population>
+    </entity>
+    <entity type="Amphoe" name="สามโคก" english="Sam Khok" geocode="1307">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="26235" male="12807" female="18423" />
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="14" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya">
     <population source="Census" year="1970" referencedate="1970-04-01">
