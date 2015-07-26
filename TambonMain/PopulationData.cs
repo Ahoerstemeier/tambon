@@ -86,6 +86,14 @@ namespace De.AHoerstemeier.Tambon
             {
                 result &= TotalPopulation.VerifySum(collectivehouseholds, privatehouseholds);
             }
+            var sanitary = data.FirstOrDefault(x => x.type == PopulationDataType.sanitary);
+            var urbanSanitary = data.FirstOrDefault(x => x.type == PopulationDataType.urbansanitary);
+            var ruralSanitary = data.FirstOrDefault(x => x.type == PopulationDataType.ruralsanitary);
+            if ( (urbanSanitary != null) && (ruralSanitary != null) && (sanitary != null) )
+            {
+                result &= sanitary.VerifySum(collectivehouseholds, privatehouseholds);
+            }
+
             var agricultural = data.FirstOrDefault(x => x.type == PopulationDataType.agricultural);
             var nonagricultural = data.FirstOrDefault(x => x.type == PopulationDataType.nonagricultural);
             if ( (agricultural != null) && (nonagricultural != null) )
@@ -119,6 +127,13 @@ namespace De.AHoerstemeier.Tambon
             if ( (agricultural != null) && (nonagricultural != null) )
             {
                 maxError = Math.Max(maxError, TotalPopulation.SumError(agricultural, nonagricultural));
+            }
+            var sanitary = data.FirstOrDefault(x => x.type == PopulationDataType.sanitary);
+            var urbanSanitary = data.FirstOrDefault(x => x.type == PopulationDataType.urbansanitary);
+            var ruralSanitary = data.FirstOrDefault(x => x.type == PopulationDataType.ruralsanitary);
+            if ( (urbanSanitary != null) && (ruralSanitary != null) && (sanitary != null) )
+            {
+                maxError = Math.Max(maxError, sanitary.SumError(urbanSanitary, ruralSanitary));
             }
             return maxError;
         }
@@ -227,10 +242,12 @@ namespace De.AHoerstemeier.Tambon
             {
                 femaleError = 0;
             }
-            return Math.Max(
-                Math.Abs(this.total - compare.total),
-                Math.Max(maleError, femaleError)
-                );
+            Int32 totalError = Math.Abs(this.total - compare.total);
+            if ( (this.total == 0) || (compare.total == 0) )
+            {
+                totalError = 0;
+            }
+            return Math.Max(Math.Max(maleError, femaleError), totalError);
         }
 
         /// <summary>
