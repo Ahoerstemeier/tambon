@@ -505,13 +505,160 @@
   </entity>
   <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
     <population source="Census" year="1970" referencedate="1970-04-01">
-      <data type="total" total="437437" male="219248" female="218189" />
-      <data type="municipal" total="37022" male="18556" female="18466" />
-      <data type="nonmunicipal" total="400415" male="200692" female="199723" />
+      <data type="total" total="437437" male="219248" female="218189" households="76716" />
+      <data type="privatehouseholds" households="76365" >
+        <data type="agricultural" households="52352" />
+      </data>
+      <data type="collectivehouseholds" households="351" />      
+      <data type="municipal" total="37022" male="18556" female="18466" households="6550">
+        <data type="privatehouseholds" households="6508" >
+          <data type="agricultural" households="912" />
+        </data>
+        <data type="collectivehouseholds" households="42" />        
+      </data>
+      <data type="sanitary" total="65446" male="32574" female="32872" households="11941">
+        <data type="privatehouseholds" households="11881" >
+          <data type="agricultural" households="5692" />
+        </data>
+        <data type="collectivehouseholds" households="60" />        
+      </data>
+      <data type="nonmunicipalsanitary" total="334969" male="168118" female="166851" households="58225">
+        <data type="privatehouseholds" households="57976" >
+          <data type="agricultural" households="45748" />
+        </data>
+        <data type="collectivehouseholds" households="249" />        
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005923</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="8401" name="เมืองสุราษฎร์ธานี" english="Mueang Surat Thani">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="66526" male="33503" female="33023" households="11646" />
+        <data type="privatehouseholds" households="11591" >
+          <data type="agricultural" households="5037" />
+        </data>
+        <data type="collectivehouseholds" households="55" />        
+        <data type="municipal" total="24923" male="12488" female="12435" households="4433">
+          <data type="privatehouseholds" households="4405" >
+            <data type="agricultural" households="187" />
+          </data>
+          <data type="collectivehouseholds" households="28" />          
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8402" name="กาญจนดิษฐ์" english="Kanchanadit">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="47494" male="23711" female="23783" households="8373" />
+        <data type="privatehouseholds" households="8340" > <data type="agricultural" households="6236" /></data>
+        <data type="collectivehouseholds" households="33" />       
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="8403" name="ดอนสัก" english="Don Sak">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="12730" male="6443" female="6287" households="2295" />
+        <data type="privatehouseholds" households="2284" />
+        <data type="collectivehouseholds" households="11" >
+          <data type="agricultural" households="1805"/>
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8404" name="เกาะสมุย" english="Ko Samui">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="34643" male="17170" female="17473" households="6571" />
+        <data type="privatehouseholds" households="6538" >
+          <data type="agricultural" households="4077" />
+        </data>
+        <data type="collectivehouseholds" households="33" />       
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8406" name="ไชยา" english="Chaiya">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="28691" male="13974" female="14717" households="5159" />
+        <data type="privatehouseholds" households="5129" >
+          <data type="agricultural" households="3370" />
+        </data>
+        <data type="collectivehouseholds" households="30" />        
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8407" name="ท่าชนะ" english="Tha Chana">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="21492" male="10564" female="10928" households="3856" />
+        <data type="privatehouseholds" households="3842" >
+          <data type="agricultural" households="2714" />
+        </data>
+        <data type="collectivehouseholds" households="14" />        
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8408" name="คีรีรัฐนิคม" english="Khiri Rat Nikhom">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="29728" male="14989" female="14739" households="5379" />
+        <data type="privatehouseholds" households="5358" >
+          <data type="agricultural" households="4578" />
+        </data>
+        <data type="collectivehouseholds" households="21" />        
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="8410" name="พนม" english="Phanom">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="7149" male="3693" female="3456" households="1486" />
+        <data type="privatehouseholds" households="1478" >
+          <data type="agricultural" households="1324" />
+        </data>
+        <data type="collectivehouseholds" households="8" />        
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8411" name="ท่าฉาง" english="Tha Chang">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="18859" male="9162" female="9697" households="3262" />
+        <data type="privatehouseholds" households="3247" >
+          <data type="agricultural" households="2448" />
+        </data>
+        <data type="collectivehouseholds" households="15" />        
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8412" name="บ้านนาสาร" english="Ban Na San">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="65403" male="33129" female="32274" households="11139" />
+        <data type="privatehouseholds" households="11089" >
+          <data type="agricultural" households="7815" />
+        </data>
+        <data type="collectivehouseholds" households="50" />        
+        <data type="municipal" total="12099" male="6068" female="6031" households="2117">
+          <data type="privatehouseholds" households="2103" >
+            <data type="agricultural" households="725" />
+          </data>
+          <data type="collectivehouseholds" households="14" />          
+        </data>
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="8415" name="เวียงสระ" english="Wiang Sa">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="33145" male="16771" female="16374" households="5426" />
+        <data type="privatehouseholds" households="5409" >
+          <data type="agricultural" households="4380" />
+        </data>
+        <data type="collectivehouseholds" households="17" />        
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8416" name="พระแสง" english="Phrasaeng">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="19976" male="10304" female="9672" households="3435" />
+        <data type="privatehouseholds" households="3422" >
+          <data type="agricultural" households="3057" />
+        </data>
+        <data type="collectivehouseholds" households="13" />        
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8417" name="พุนพิน" english="Phunphin">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="51601" male="25835" female="25766" households="8689" />
+        <data type="privatehouseholds" households="8638" >
+          <data type="agricultural" households="5511" />
+        </data>
+        <data type="collectivehouseholds" households="51" />        
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="85" name="ระนอง" english="Ranong">
     <population source="Census" year="1970" referencedate="1970-04-01">
