@@ -206,6 +206,7 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="EntityCountType">
+    <xs:attributeGroup ref="t:Comment" />
     <xs:attribute name="type" type="t:EntityType" use="required" />
     <xs:attribute name="count" type="xs:unsignedInt" use="required">
       <xs:annotation>

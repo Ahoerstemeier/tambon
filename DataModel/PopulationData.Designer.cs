@@ -381,12 +381,12 @@ namespace De.AHoerstemeier.Tambon {
         sanitary,
         
         /// <summary>
-        /// Population in urban sanitary districts (เขตเทศบาลสุขาภิบาล-เขตเมือง).
+        /// Population in urban sanitary districts (เขตเทศบาลสุขาภิบาล-เขตเมือง), i.e. sanitary districts with more than 5000 citizen.
         /// </summary>
         urbansanitary,
         
         /// <summary>
-        /// Population in rural sanitary districts (เขตเทศบาลสุขาภิบาล-เขตชนบท).
+        /// Population in rural sanitary districts (เขตเทศบาลสุขาภิบาล-เขตชนบท), i.e. sanitary districts with less than 5000 citizen.
         /// </summary>
         ruralsanitary,
         
@@ -396,7 +396,7 @@ namespace De.AHoerstemeier.Tambon {
         nonmunicipalsanitary,
         
         /// <summary>
-        /// Agricultural population, i.e. population having at least ... rai of agricultural land.
+        /// Agricultural population. Exact definition differs.
         /// </summary>
         agricultural,
         
