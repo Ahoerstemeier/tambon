@@ -1231,6 +1231,41 @@ namespace De.AHoerstemeier.Tambon
         /// Calculates the population for each of the local governments.
         /// </summary>
         /// <param name="localGovernments">Local governments to calculate.</param>
+        /// <param name="allEntities">All entities covered by the local governments.</param>
+        /// <param name="populationDataSource">Data source of the population data.</param>
+        /// <param name="populationYear">Reference year of the population data.</param>
+        public static void FillExplicitLocalGovernmentPopulation(IEnumerable<Entity> localGovernments, IEnumerable<Entity> allEntities, PopulationDataSourceType populationDataSource, Int16 populationYear)
+        {
+            var allPopulationData = allEntities.SelectMany(x => x.population.Where(
+                y => y.Year == populationYear && y.source == populationDataSource));
+            // ToList() as the add of population data below will change the enumeration
+            var allPopulationDataWithGeocode = allPopulationData.Where(p => p.data.Any(d => d.geocode != 0)).ToList();
+            foreach ( var sourcePopulationData in allPopulationDataWithGeocode )
+            {
+                foreach ( var populationDataPoint in allPopulationDataWithGeocode.SelectMany(p => p.data.Where(d => d.geocode != 0)) )
+                {
+                    var localGovernment = localGovernments.FirstOrDefault(x => x.geocode == populationDataPoint.geocode);
+                    if ( localGovernment != null )
+                    {
+                        var populationData = new PopulationData();
+                        populationData.year = sourcePopulationData.year;
+                        populationData.referencedate = sourcePopulationData.referencedate;
+                        populationData.referencedateSpecified = sourcePopulationData.referencedateSpecified;
+                        populationData.source = sourcePopulationData.source;
+                        var newDataPoint = new HouseholdDataPoint(populationDataPoint);
+                        newDataPoint.type = PopulationDataType.total;
+                        populationData.data.Add(newDataPoint);
+                        populationData.reference.AddRange(sourcePopulationData.reference);
+                        localGovernment.population.Add(populationData);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Calculates the population for each of the local governments.
+        /// </summary>
+        /// <param name="localGovernments">Local governments to calculate.</param>
         /// <param name="allTambon">All tambon covered by the local governments.</param>
         /// <param name="populationDataSource">Data source of the population data.</param>
         /// <param name="populationYear">Reference year of the population data.</param>
@@ -1268,13 +1303,8 @@ namespace De.AHoerstemeier.Tambon
                         }
                         foreach ( var dataPoint in dataPointToClone )
                         {
-                            var newDataPoint = new HouseholdDataPoint();
-                            newDataPoint.male = dataPoint.male;
-                            newDataPoint.female = dataPoint.female;
-                            newDataPoint.households = dataPoint.households;
-                            newDataPoint.total = dataPoint.total;
+                            var newDataPoint = new HouseholdDataPoint(dataPoint);
                             newDataPoint.geocode = coverage.geocode;
-                            newDataPoint.type = dataPoint.type;
                             populationData.data.Add(newDataPoint);
                         }
                     }

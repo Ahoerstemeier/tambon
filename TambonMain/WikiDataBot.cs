@@ -969,6 +969,7 @@ namespace De.AHoerstemeier.Tambon
             }
             ClearRunInfo();
             GlobalData.LoadPopulationData(dataSource, year);
+            // TODO - local governments are not calculated!
             foreach ( var entity in entities.Where(x => x.population.Any(y => y.source == dataSource && y.Year == year)) )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);

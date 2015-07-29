@@ -217,6 +217,12 @@ namespace De.AHoerstemeier.Tambon
                 }
                 geocodeToRecalculate.AddRange(GeocodeHelper.ParentGeocodes(item.geocode));
             }
+            if ( source == PopulationDataSourceType.Census )
+            {
+                // For DOPA need to be done with CalculateLocalGovernmentPopulation
+                Entity.FillExplicitLocalGovernmentPopulation(allEntities.Where(x => x.type.IsLocalGovernment()), allEntities, source, year);
+            }
+
             foreach ( var recalculate in geocodeToRecalculate.Distinct() )
             {
                 var entityToRecalculate = allEntities.FirstOrDefault(x => x.geocode == recalculate);
