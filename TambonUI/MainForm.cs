@@ -1172,5 +1172,24 @@ namespace De.AHoerstemeier.Tambon.UI
             var formCensusProblems = new StringDisplayForm("Census data problems", result);
             formCensusProblems.Show();
         }
+
+        private void btnAmphoeLocations_Click(object sender, EventArgs e)
+        {
+            var builder = new StringBuilder();
+            var allAmphoe = GlobalData.CompleteGeocodeList().FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) && !x.IsObsolete).ToList();
+            foreach ( var entity in allAmphoe )
+            {
+                var location = String.Empty;
+                var point = entity.office.First().Point;
+                if ( point != null )
+                {
+                    location = String.Format(CultureInfo.InvariantCulture, "{0} N {1} E", point.lat, point.@long);
+                }
+                builder.AppendFormat("{0},{1},{2},{3}", entity.english, entity.name, entity.geocode, location);
+                builder.AppendLine();
+            }
+            Clipboard.Clear();
+            Clipboard.SetText(builder.ToString());
+        }
     }
 }

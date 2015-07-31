@@ -56,8 +56,9 @@
             this.btnNayokResign = new System.Windows.Forms.Button();
             this.btnShowEntityData = new System.Windows.Forms.Button();
             this.grpTesting = new System.Windows.Forms.GroupBox();
-            this.btnCheckCensus = new System.Windows.Forms.Button();
             this.cbxCensusYears = new System.Windows.Forms.ComboBox();
+            this.btnCheckCensus = new System.Windows.Forms.Button();
+            this.btnAmphoeLocations = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -361,16 +362,6 @@
             this.grpTesting.TabStop = false;
             this.grpTesting.Text = "Testing only";
             // 
-            // btnCheckCensus
-            // 
-            this.btnCheckCensus.Location = new System.Drawing.Point(126, 119);
-            this.btnCheckCensus.Name = "btnCheckCensus";
-            this.btnCheckCensus.Size = new System.Drawing.Size(99, 23);
-            this.btnCheckCensus.TabIndex = 57;
-            this.btnCheckCensus.Text = "Check census";
-            this.btnCheckCensus.UseVisualStyleBackColor = true;
-            this.btnCheckCensus.Click += new System.EventHandler(this.btnCheckCensus_Click);
-            // 
             // cbxCensusYears
             // 
             this.cbxCensusYears.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -392,11 +383,32 @@
             this.cbxCensusYears.Size = new System.Drawing.Size(75, 21);
             this.cbxCensusYears.TabIndex = 58;
             // 
+            // btnCheckCensus
+            // 
+            this.btnCheckCensus.Location = new System.Drawing.Point(126, 119);
+            this.btnCheckCensus.Name = "btnCheckCensus";
+            this.btnCheckCensus.Size = new System.Drawing.Size(99, 23);
+            this.btnCheckCensus.TabIndex = 57;
+            this.btnCheckCensus.Text = "Check census";
+            this.btnCheckCensus.UseVisualStyleBackColor = true;
+            this.btnCheckCensus.Click += new System.EventHandler(this.btnCheckCensus_Click);
+            // 
+            // btnAmphoeLocations
+            // 
+            this.btnAmphoeLocations.Location = new System.Drawing.Point(266, 206);
+            this.btnAmphoeLocations.Name = "btnAmphoeLocations";
+            this.btnAmphoeLocations.Size = new System.Drawing.Size(112, 23);
+            this.btnAmphoeLocations.TabIndex = 62;
+            this.btnAmphoeLocations.Text = "Amphoe locations";
+            this.btnAmphoeLocations.UseVisualStyleBackColor = true;
+            this.btnAmphoeLocations.Click += new System.EventHandler(this.btnAmphoeLocations_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 415);
+            this.Controls.Add(this.btnAmphoeLocations);
             this.Controls.Add(this.grpTesting);
             this.Controls.Add(this.btnShowEntityData);
             this.Controls.Add(this.btnNayokResign);
@@ -458,6 +470,7 @@
         private System.Windows.Forms.GroupBox grpTesting;
         private System.Windows.Forms.Button btnCheckCensus;
         private System.Windows.Forms.ComboBox cbxCensusYears;
+        private System.Windows.Forms.Button btnAmphoeLocations;
     }
 }
 
