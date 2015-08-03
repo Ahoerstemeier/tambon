@@ -1156,7 +1156,7 @@
       <entity type="Muban" geocode="19031401" name="บ้านโนนทอง" english="Ban Non Thong" />
       <entity type="Muban" geocode="19031402" name="บ้านหนองรี" english="Ban Nong Ri" />
       <entity type="Muban" geocode="19031403" name="บ้านหนองโสน" english="Ban Nong Sano" />
-      <entity type="Muban" geocode="19031404" name="บ้านหนองตาเดี้ยง" english="Ban Non Ta Diang" />
+      <entity type="Muban" geocode="19031404" name="บ้านหนองตาเดี้ยง" english="Ban Nong Ta Diang" />
       <entity type="Muban" geocode="19031405" name="บ้านหนองตะเฆ่" english="Ban Nong Takhe" />
       <entity type="Muban" geocode="19031406" name="บ้านหนองเขิน" english="Ban Nong Khoen" />
       <entity type="Muban" geocode="19031407" name="บ้านลำบัว (ใต้)" english="Ban Lam Bua (Tai)" />
@@ -1301,6 +1301,17 @@
         <official title="DistrictOfficer" name="ประกิจ โรจนดิลก" end="2007-11-11" />
       </officials>
     </office>
+    <history>
+      <rename effective="1961-04-11" status="Gazette" name="วิหารแดง" english="Wihan Daeng" oldname="หนองหมู" oldenglish="Nong Mu">
+        <gazetteref volume="78" page="382" issue="33 ก" date="1961-04-11" />
+      </rename>
+      <statuschange effective="1958-07-22" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="75" page="321" issue="55 ก" date="1958-07-22" />
+      </statuschange>
+      <!--<create effective="1938-02-28" status="Gazette" type="KingAmphoe" splitfrom="1903">
+        <gazetteref volume="54" page="2915" issue="0 ง" date="1938-02-28" />
+      </create>-->
+    </history>
     <entity type="Tambon" name="หนองหมู" english="Nong Mu" geocode="190401">
       <wiki wikidata="Q16658649" />
       <office type="TAOOffice">
@@ -3346,6 +3357,9 @@
       <statuschange old="ThesabanTambon" new="ThesabanMueang" effective="2008-02-01" status="Done">
         <meetingreference board="2" number="51" date="2007-11-22" />
       </statuschange>
+      <create effective="1944-12-26" status="Gazette" type="ThesabanTambon">
+        <gazetteref volume="61" page="1172" issue="77 ก" date="1944-12-26" />
+      </create>
     </history>
     <!-- Chumchon - unsure if all and correct numbering
     1	หลวงปู่พรหม
@@ -3384,6 +3398,20 @@
         <entity geocode="190301" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <rename effective="1956-04-17" status="Gazette" name="หนองแค" oldname="หนองตาเดี้ยง" oldenglish="Nong Ta Diang">
+        <gazetteref volume="73" page="417" issue="33 ก" date="1956-04-17" />
+      </rename>
+      <areachange effective="1956-04-11" status="Gazette">
+        <gazetteref volume="73" page="1970" issue="56 ง" date="1956-07-17" />
+      </areachange>
+      <areachange effective="1956-04-10" status="Gazette">
+        <gazetteref volume="73" page="409" issue="32 ก" date="1956-04-10" />
+      </areachange>
+      <create effective="1940-10-15" status="Gazette" type="ThesabanTambon">
+        <gazetteref volume="57" page="536" issue="0 ก" date="1940-10-15" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="พระพุทธบาท" english="Phra Phutthabat" geocode="1996" parent="1909">
     <wiki wikidata="Q15310499" />
@@ -3409,6 +3437,23 @@
         <entity geocode="190905" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="2006-01-05" status="Gazette" old="ThesabanTambon" new="ThesabanMueang">
+        <gazetteref volume="123" page="2" issue="พิเศษ 5 ง" date="2006-01-12" />
+      </statuschange>
+      <statuschange effective="1987-11-06" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="104" page="19" issue="224 ก ฉบับพิเศษ" date="1987-11-06" />
+      </statuschange>
+      <areachange effective="1973-04-03" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="90" page="1029" issue="34 ง" date="1973-04-03" />
+      </areachange>
+      <areachange effective="1964-12-01" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="81" page="2861" issue="113 ง" date="1964-12-01" />
+      </areachange>
+      <create effective="1957-01-07" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="74" page="85" issue="4 ง ฉบับพิเศษ" date="1957-01-07" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ป๊อกแป๊ก" english="Pok Paek" geocode="1995" parent="1901">
     <office type="MunicipalityOffice">
@@ -3432,6 +3477,14 @@
         <entity geocode="190108" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1964-09-08" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="81" page="2282" issue="85 ง" date="1964-09-08" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="19950001" name="ชุมชนป๊อกแป๊ก 1" english="Chumchon Pok Paek 1" />
     <entity type="Chumchon" geocode="19950002" name="ชุมชนป๊อกแป๊ก 2" english="Chumchon Pok Paek 2" />
   </entity>
