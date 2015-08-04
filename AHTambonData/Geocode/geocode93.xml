@@ -12,6 +12,7 @@
     <slogan>เมืองหนังโนรา อุ่นาข้าว พราวน้ำตก แหล่งนกน้ำ ทะเลสาบงาม เขาอกทะลุ น้ำพุร้อน</slogan>
     <symboltree>Shorea roxburghii</symboltree>
     <symbolflower>Shorea roxburghii</symbolflower>
+    <wateranimal>Barbonymus schwanenfeldii</wateranimal>
   </symbols>
   <office type="ProvinceHall">
     <geo:Point>
@@ -1042,35 +1043,6 @@
       <entity type="Muban" geocode="93040111" name="บ้านควนล่อน" english="Ban Khuan Lon" />
     </entity>
     <entity type="Tambon" name="ตะโหมด" english="Tamot" geocode="930402">
-      <office type="MunicipalityOffice">
-        <!-- Longdo: 7.28536415099926 100.052024841309-->
-        <url status="offline">http://www.khaohuachang.go.th/</url>
-        <socialweb>
-          <facebook>https://www.facebook.com/khaohuachang</facebook>
-        </socialweb>
-        <officials>
-          <official title="Mayor" name="ทวีรักษ์ เอียดฤทธิ์" begin="2013-08-31" beginreason="ElectedDirectly" />
-          <official title="Mayor" name="ชูสินธุ์ ชนะสิทธิ์" begin="2009-07-19" end="2013-07-18" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-          <officialterm title="Mayor" begin="2008-09-28" endyear="2009" beginreason="ElectedDirectly" endreason="Unknown" />
-          <official title="TAOMayor" name="สถาพร ชนะสิทธิ์" begin="2004-07-25" end="2008-07-01" beginreason="ElectedDirectly" endreason="StatusChange" />
-        </officials>
-        <council>
-          <term begin="2012-11-10" type="ThesabanTambon" size="12" />
-          <term begin="2008-09-28" end="2012-09-27" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2004-07-25" end="2008-07-01" type="TAO" size="24" endreason="StatusChange" />
-        </council>
-        <history>
-          <rename name="เขาหัวช้าง" english="Khao Hua Chang" oldname="ตะโหมด" oldenglish="Tamot" effective="2008-07-01" status="Done">
-            <meetingreference date="2008-04-03" number="2" board="rename" />
-          </rename>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-01" status="Done">
-            <meetingreference board="2" number="27" date="2008-04-04" />
-          </statuschange>
-        </history>
-        <areacoverage>
-          <entity geocode="930402" coverage="partially" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="93040201" name="บ้านทุ่งโพธิ์" english="Ban Thung Pho" />
       <entity type="Muban" geocode="93040202" name="บ้านหัวช้าง" english="Ban Hua Chang" />
       <entity type="Muban" geocode="93040203" name="บ้านตะโหมด" english="Ban Tamot" />
@@ -2761,10 +2733,12 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="โคกม่วง" english="Khok Muang" geocode="9388" tambon="930307" parent="9303">
-    <office type="TAOOffice">
+    <office type="MunicipalityOffice">
       <url status="offline" lastonline="2013-01-09">http://www.kokmuang.go.th/</url>
       <socialweb>
-        <twitter>khokmuang</twitter>
+        <twitter status="inactive">khokmuang</twitter>
+        <googleplus type="location">108777257352418665547</googleplus>
+        <foursquare>4dedc7d4d164f9a5c680f25d</foursquare>
       </socialweb>
       <officials>
         <official title="Mayor" name="วิศิษฐ ชูสง" begin="2012-11-24" beginreason="ElectedDirectly" />
@@ -2924,6 +2898,41 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="31" date="2008-05-02" />
       </statuschange>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="เขาหัวช้าง" english="Khao Hua Chang" geocode="9382" tambon="930402" parent="9302">
+    <office type="MunicipalityOffice">
+      <!-- Longdo: 7.28536415099926 100.052024841309-->
+      <url status="offline">http://www.khaohuachang.go.th/</url>
+      <socialweb>
+        <facebook>https://www.facebook.com/khaohuachang</facebook>
+        <googleplus type="location">101988724835579615269</googleplus>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="ทวีรักษ์ เอียดฤทธิ์" begin="2013-08-31" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ชูสินธุ์ ชนะสิทธิ์" begin="2009-07-19" end="2013-07-18" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <officialterm title="Mayor" begin="2008-09-28" endyear="2009" beginreason="ElectedDirectly" endreason="Unknown" />
+        <official title="TAOMayor" name="สถาพร ชนะสิทธิ์" begin="2004-07-25" end="2008-07-01" beginreason="ElectedDirectly" endreason="StatusChange" />
+      </officials>
+      <council>
+        <term begin="2012-11-10" type="ThesabanTambon" size="12" />
+        <term begin="2008-09-28" end="2012-09-27" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-25" end="2008-07-01" type="TAO" size="24" endreason="StatusChange" />
+      </council>
+      <areacoverage>
+        <entity geocode="930402" coverage="partially" />
+      </areacoverage>
+    </office>
+    <history>
+      <rename name="เขาหัวช้าง" english="Khao Hua Chang" oldname="ตะโหมด" oldenglish="Tamot" effective="2008-07-01" status="Done">
+        <meetingreference date="2008-04-03" number="2" board="rename" />
+      </rename>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-01" status="Done">
+        <meetingreference board="2" number="27" date="2008-04-04" />
+      </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
 </entity>

@@ -4288,27 +4288,6 @@
       <codes>
         <post value="90110 90115" comment="เฉพาะ หมู่ 8 (บ้านพักกองบิน 56) ใช้รหัส 90115(นอกนั้น ใช้รหัส 90230)" />
       </codes>
-      <office type="MunicipalityOffice">
-        <url lastchecked="2014-08-15">http://www.khoakmuang.go.th/</url>
-        <officials>
-          <official title="Mayor" name="สมนึก บุตรคง" begin="2012-12-23" beginreason="ElectedDirectly" />
-          <officialterm title="Mayor" begin="2008-11-16" end="2012-11-15" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-          <official title="TAOMayor" name="รัฐพล ประพรม" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-12-23" type="ThesabanTambon" size="12" />
-          <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" />
-          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
-            <meetingreference board="2" number="47" date="2008-06-26" />
-          </statuschange>
-        </history>
-        <areacoverage>
-          <entity geocode="901603" coverage="completely" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="90160301" name="บ้านโคกเหรียง" english="Ban Khok Riang" />
       <entity type="Muban" geocode="90160302" name="บ้านทุ่งนนท์" english="Ban Thung Non" />
       <entity type="Muban" geocode="90160303" name="บ้านโคกสักตก" english="Ban Khok Sak Tok" />
@@ -5351,6 +5330,35 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="47" date="2008-06-26" />
       </statuschange>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="โคกม่วง" english="Khok Muang" geocode="9067" parent="9016" tambon="901603">
+    <office type="MunicipalityOffice">
+      <url lastchecked="2015-08-03">http://www.khoakmuang.go.th/</url>
+      <socialweb>
+        <googleplus type="location">109363885128073845034</googleplus>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="สมนึก บุตรคง" begin="2012-12-23" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2008-11-16" end="2012-11-15" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="รัฐพล ประพรม" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-12-23" type="ThesabanTambon" size="12" />
+        <term begin="2008-11-16" end="2012-11-15" type="ThesabanTambon" size="12" />
+        <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
+      </council>
+      <areacoverage>
+        <entity geocode="901603" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
+        <meetingreference board="2" number="47" date="2008-06-26" />
+      </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
 </entity>

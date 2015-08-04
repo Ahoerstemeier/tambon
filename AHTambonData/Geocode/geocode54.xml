@@ -1089,34 +1089,6 @@
     </office>
     <entity type="Tambon" name="ห้วยอ้อ" english="Huai O" geocode="540301">
       <wiki wikidata="Q16263953" />
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>18.0539</geo:lat>
-          <geo:long>99.8340</geo:long>
-        </geo:Point>
-        <url lastchecked="2012-07-08">http://www.maelanna.go.th/</url>
-        <url status="offline">http://www.geocities.com/huyor_local/</url>
-        <officials>
-          <official title="Mayor" name="ชูรส คุณาคำ" begin="2012-10-07" beginreason="ElectedDirectly" />
-          <official title="Mayor" name="วินัย ไพบูลย์สิริวัฒน์" begin="2008-10-12" endyear="2012" />
-        </officials>
-        <council>
-          <term begin="2012-11-24" type="ThesabanTambon" size="12" />
-          <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
-        </council>
-        <history>
-          <rename oldname="ห้วยอ้อ" oldenglish="Huai O" name="แม่ลานนา" english="Mae Lan Na" effective="2008-07-18" status="Done">
-            <meetingreference date="2007-10-14" number="5" board="rename" />
-          </rename>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
-            <meetingreference board="2" number="41" date="2008-05-30" />
-          </statuschange>
-        </history>
-        <areacoverage>
-          <entity geocode="540301" coverage="partially" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="54030101" name="บ้านแม่เกี่ยม" english="Ban Mae Kiam" />
       <entity type="Muban" geocode="54030102" name="บ้านแม่จองไฟ" english="Ban Mae Chong Fai" />
       <entity type="Muban" geocode="54030103" name="บ้านนาแก" english="Ban Na Kae" />
@@ -3035,6 +3007,39 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28" status="Done">
         <meetingreference board="2" number="4" date="2008-01-11" />
       </statuschange>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="แม่ลานนา" english="Mae Lan Na" geocode="5482" parent="5403" tambon="540301">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>18.0539</geo:lat>
+        <geo:long>99.8340</geo:long>
+      </geo:Point>
+      <url lastchecked="2015-08-03">http://www.maelanna.go.th/</url>
+      <url status="offline">http://www.geocities.com/huyor_local/</url>
+      <officials>
+        <official title="Mayor" name="ชูรส คุณาคำ" begin="2012-10-07" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="วินัย ไพบูลย์สิริวัฒน์" begin="2008-10-12" endyear="2012" />
+      </officials>
+      <council>
+        <term begin="2012-11-24" type="ThesabanTambon" size="12" />
+        <term begin="2008-10-12" end="2012-10-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
+      </council>
+      <areacoverage>
+        <entity geocode="540301" coverage="partially" />
+      </areacoverage>
+    </office>
+    <history>
+      <rename oldname="ห้วยอ้อ" oldenglish="Huai O" name="แม่ลานนา" english="Mae Lan Na" effective="2008-07-18" status="Done">
+        <meetingreference date="2007-10-14" number="5" board="rename" />
+      </rename>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
+        <meetingreference board="2" number="41" date="2008-05-30" />
+      </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
 </entity>

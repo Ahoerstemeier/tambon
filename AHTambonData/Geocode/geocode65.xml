@@ -658,26 +658,6 @@
       <codes>
         <post value="65000" />
       </codes>
-      <office type="MunicipalityOffice">
-        <url lastchecked="2012-05-10" comment="No content currently">http://www.arunyik.go.th/</url>
-        <officials>
-          <official title="Mayor" name="นรินทร์ วัฒนกุลชัย" begin="2012-09-09" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="นรินทร์ วัฒนกุลชัย" begin="2008-08-24" end="2012-05-01" beginreason="ElectedDirectly" endreason="StatusChange" />
-        </officials>
-        <council>
-          <term begin="2012-09-09" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
-          <term begin="2008-08-24" end="2012-05-01" type="TAO" size="20" endreason="StatusChange" />
-          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="20" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanMueang" effective="2012-05-01" status="Done">
-            <meetingreference board="2" number="11" date="2012-02-21" />
-          </statuschange>
-        </history>
-        <areacoverage>
-          <entity geocode="650117" coverage="completely" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="65011701" name="บ้านคลองคูณ" english="Ban Khlong Khun" />
       <entity type="Muban" geocode="65011702" name="บ้านสนามบิน" english="Ban Sanam Bin" />
       <entity type="Muban" geocode="65011703" name="บ้านโคกมะตูม" english="Ban Khok Mathum" />
@@ -3853,6 +3833,42 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
         <meetingreference board="2" number="48" date="2008-06-27" />
       </statuschange>
+    </history>
+  </entity>
+  <entity type="ThesabanMueang" name="อรัญญิก" english="Aranyik" geocode="6580" parent="6501" tambon="650117">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.8146</geo:lat>
+        <geo:long>100.3051</geo:long>
+      </geo:Point>
+      <url lastchecked="2015-08-03">http://www.muangaranyik.go.th/</url>
+      <url lastonline="2012-05-10" status="offline" comment="No content when last online">http://www.arunyik.go.th/</url>
+      <socialweb>
+        <facebook>https://www.facebook.com/muangaranyik</facebook>
+        <googleplus type="location" comment="Still named TAO">116746120556424535901</googleplus>
+        <googleplus type="location" comment="Still named TAO, wrong location">115662013871770059181</googleplus>
+        <foursquare>4fea8cdde4b04699b7223b1a</foursquare>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="นรินทร์ วัฒนกุลชัย" begin="2012-09-09" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="นรินทร์ วัฒนกุลชัย" begin="2008-08-24" end="2012-05-01" beginreason="ElectedDirectly" endreason="StatusChange" />
+      </officials>
+      <council>
+        <term begin="2012-09-09" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
+        <term begin="2008-08-24" end="2012-05-01" type="TAO" size="20" endreason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="20" />
+      </council>
+      <areacoverage>
+        <entity geocode="650117" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanMueang" effective="2012-05-01" status="Done">
+        <meetingreference board="2" number="11" date="2012-02-21" />
+      </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
 </entity>

@@ -1366,27 +1366,6 @@
           แนบเนียนจักรสาน  เล่าขานส้มโอดี
         </slogan>
       </symbols>
-      <office type="MunicipalityOffice">
-        <url lastchecked="2012-09-11">http://www.pangmaka.go.th/</url>
-        <url status="expired">http://www.pangmaka.com/</url>
-        <officials>
-          <official title="Mayor" name="น้อย วงศ์วิทยานันท์" begin="2012-11-10" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="น้อย วงศ์วิทยานันท์" begin="2011-10-02" end="2012-06-29" beginreason="ElectedDirectly" endreason="StatusChange" />
-        </officials>
-        <council>
-          <term begin="2012-11-10" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
-          <term begin="2011-11-13" end="2012-06-29" type="TAO" size="48" endreason="StatusChange" />
-          <term begin="2007-10-07" end="2011-10-06" type="TAO" size="48" />
-        </council>
-        <history>
-          <statuschange old="TAO" new ="ThesabanMueang" effective="2012-06-29" status="Done">
-            <meetingreference board="1" number="31" date="2012-05-14" />
-          </statuschange>
-        </history>
-        <areacoverage>
-          <entity geocode="620411" coverage="completely" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="62041101" name="บ้านศรีไพศาล" english="Ban Si Phaisan" />
       <entity type="Muban" geocode="62041102" name="บ้านโปร่งแต้" english="Ban Prong Tae" />
       <entity type="Muban" geocode="62041103" name="บ้านคลองสะพานช้าง" english="Ban Khlong Saphan Chang" />
@@ -3445,6 +3424,40 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
         <meetingreference board="2" number="42" date="2008-06-04" />
       </statuschange>
+    </history>
+  </entity>
+  <entity type="ThesabanMueang" name="ปางมะค่า" english="Pang Makha" geocode="6278" parent="6204" tambon="620411">
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>15.9280</geo:lat>
+        <geo:long>99.4800</geo:long>
+      </geo:Point>
+      <url lastchecked="2015-08-03">http://www.pangmaka.go.th/</url>
+      <url status="expired">http://www.pangmaka.com/</url>
+      <socialweb>
+        <blog status="broken">http://pangmaka.blogspot.com/</blog>
+        <longdo>A00002921</longdo>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="น้อย วงศ์วิทยานันท์" begin="2012-11-10" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="น้อย วงศ์วิทยานันท์" begin="2011-10-02" end="2012-06-29" beginreason="ElectedDirectly" endreason="StatusChange" />
+      </officials>
+      <council>
+        <term begin="2012-11-10" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
+        <term begin="2011-11-13" end="2012-06-29" type="TAO" size="48" endreason="StatusChange" />
+        <term begin="2007-10-07" end="2011-10-06" type="TAO" size="48" />
+      </council>
+      <areacoverage>
+        <entity geocode="620411" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new ="ThesabanMueang" effective="2012-06-29" status="Done">
+        <meetingreference board="1" number="31" date="2012-05-14" />
+      </statuschange>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
 </entity>

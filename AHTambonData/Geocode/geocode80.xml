@@ -5286,34 +5286,6 @@
     </entity>
     <entity type="Tambon" name="หน้าสตน" english="Na Saton" geocode="801602">
       <wiki wikidata="Q17364005" />
-      <office type="MunicipalityOffice">
-        <symbols>
-          <vision>
-            สุขภาพสมบูรณ์พร้อม สภาพแวดล้อมสมบูรณ์ดี สถานที่ท่องเที่ยวงามตา การศึกษาทั่วถึง
-            เป็นหนึ่งด้านการผลิตกุ้ง รุ่งเรืองทางด้านเศรษฐกิจ สังคม และวัฒนธรรม ด้านการบริหารจัดการที่ดี
-          </vision>
-        </symbols>
-        <dola code="5801611" />
-        <wiki wikidata="Q13025288" />
-        <url lastchecked="2013-02-08">http://www.nasaton.go.th/</url>
-        <officials>
-          <official title="Mayor" name="ประดับ แก้วพลับ" begin="2013-01-13" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ประดับ แก้วพลับ" begin="2008-09-07" end="2012-09-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2013-01-13" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2008-09-07" end="2012-09-06" type="TAO" size="18" />
-          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-09-07" status="Done">
-            <meetingreference board="2" number="57" date="2012-08-08" />
-          </statuschange>
-        </history>
-        <areacoverage>
-          <entity geocode="801602" coverage="partially" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="80160201" name="บ้านหน้าสตน" english="Ban Na Saton" />
       <entity type="Muban" geocode="80160202" name="บ้านหน้าสตน" english="Ban Na Saton" />
       <entity type="Muban" geocode="80160203" name="บ้านหน้าศาล" english="Ban Na San" />
@@ -7694,8 +7666,6 @@
       </statuschange>
     </history>
   </entity>
-
-  <!-- not yet in DOPA statistics-->
   <entity type="ThesabanTambon" name="เขาพระ" english="Khao Phra" geocode="8071" parent="8005" tambon="800503">
     <wiki wikidata="Q13025320" />
     <office type="MunicipalityOffice">
@@ -7723,6 +7693,43 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="33" date="2008-05-08" />
       </statuschange>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="หน้าสตน" english="Na Saton" geocode="8070" parent="8016" tambon="801602">
+    <wiki wikidata="Q13025288" />
+    <office type="MunicipalityOffice">
+      <!-- somewhere around 8.039347, 100.314445 - but no office visible in Google Earth -->
+      <symbols>
+        <vision>
+          สุขภาพสมบูรณ์พร้อม สภาพแวดล้อมสมบูรณ์ดี สถานที่ท่องเที่ยวงามตา การศึกษาทั่วถึง
+          เป็นหนึ่งด้านการผลิตกุ้ง รุ่งเรืองทางด้านเศรษฐกิจ สังคม และวัฒนธรรม ด้านการบริหารจัดการที่ดี
+        </vision>
+      </symbols>
+      <dola code="5801611" />
+      <url lastchecked="2015-08-03">http://www.nasaton.go.th/</url>
+      <socialweb>
+        <googleplus type="location">113109950062637718338</googleplus>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="ประดับ แก้วพลับ" begin="2013-01-13" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="ประดับ แก้วพลับ" begin="2008-09-07" end="2012-09-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2013-01-13" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2008-09-07" end="2012-09-06" type="TAO" size="18" />
+        <term begin="2004-07-25" end="2008-07-24" type="TAO" size="18" />
+      </council>
+      <areacoverage>
+        <entity geocode="801602" coverage="partially" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2012-09-07" status="Done">
+        <meetingreference board="2" number="57" date="2012-08-08" />
+      </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
 
