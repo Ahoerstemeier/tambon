@@ -72,7 +72,6 @@
           <data type="agricultural" households="17486" />
         </data>
       </data>
-      <!--<data type="nonmunicipal" total="229496" male="114527" female="114969" />-->
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000000041</url>
       </reference>
@@ -535,10 +534,66 @@
   </entity>
   <entity type="Changwat" geocode="83" name="ภูเก็ต" english="Phuket">
     <population source="Census" year="1970" referencedate="1970-04-01">
-      <data type="total" total="100021" male="50800" female="49221" />
-      <data type="municipal" total="34362" male="16957" female="17405" />
-      <data type="nonmunicipal" total="65659" male="33843" female="31816" />
+      <data type="total" total="100021" male="50800" female="49221" households="16175" />
+      <data type="privatehouseholds" households="16086" />
+      <data type="collectivehouseholds" households="89">
+        <data type="agricultural" households="3416" />
+      </data>
+      <data type="municipal" total="34362" male="16957" female="17405" households="5512">
+        <data type="privatehouseholds" households="5487" />
+        <data type="collectivehouseholds" households="25">
+          <data type="agricultural" households="67" />
+        </data>
+      </data>
+      <data type="sanitary" total="14866" male="7583" female="7283" households="2256">
+        <data type="privatehouseholds" households="2237" />
+        <data type="collectivehouseholds" households="19">
+          <data type="agricultural" households="663" />
+        </data>
+      </data>
+      <data type="nonmunicipalsanitary" total="50793" male="26260" female="24533" households="8407">
+        <data type="privatehouseholds" households="8362" />
+        <data type="collectivehouseholds" households="45">
+          <data type="agricultural" households="2686" />
+        </data>
+      </data>
+      <reference>
+        <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005924</url>
+      </reference>
     </population>
+    <entity type="Amphoe" geocode="8301" name="เมืองภูเก็ต" english="Mueang Phuket">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="58492" male="29452" female="29040" households="9470" />
+        <data type="privatehouseholds" households="9418" />
+        <data type="collectivehouseholds" households="52">
+          <data type="agricultural" households="1236" />
+        </data>
+        <data type="municipal" total="34362" male="16957" female="17405" households="5512" geocode="8399">
+          <data type="privatehouseholds" households="5487" />
+          <data type="collectivehouseholds" households="25">
+            <data type="agricultural" households="67" />
+          </data>
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8302" name="กะทู้" english="Kathu">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="9981" male="5134" female="4847" households="1491" />
+        <data type="privatehouseholds" households="1477" />
+        <data type="collectivehouseholds" households="14">
+          <data type="agricultural" households="533" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8303" name="ถลาง" english="Thalang">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="31548" male="16214" female="15334" households="5214" />
+        <data type="privatehouseholds" households="5191" />
+        <data type="collectivehouseholds" households="23">
+          <data type="agricultural" households="1647" />
+        </data>
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
     <population source="Census" year="1970" referencedate="1970-04-01">
