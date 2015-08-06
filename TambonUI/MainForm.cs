@@ -1173,10 +1173,13 @@ namespace De.AHoerstemeier.Tambon.UI
             formCensusProblems.Show();
         }
 
-        private void btnAmphoeLocations_Click(object sender, EventArgs e)
+        private void btnAmphoeList_Click(object sender, EventArgs e)
         {
+            Int16 year = Convert.ToInt16(cbxCensusYears.SelectedItem as String);
+            GlobalData.LoadPopulationData(PopulationDataSourceType.Census, year);
+            var baseEntity = GlobalData.CompleteGeocodeList();
+            var allAmphoe = baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) && !x.IsObsolete).ToList();
             var builder = new StringBuilder();
-            var allAmphoe = GlobalData.CompleteGeocodeList().FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) && !x.IsObsolete).ToList();
             foreach ( var entity in allAmphoe )
             {
                 var location = String.Empty;
@@ -1185,7 +1188,13 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     location = String.Format(CultureInfo.InvariantCulture, "{0} N {1} E", point.lat, point.@long);
                 }
-                builder.AppendFormat("{0},{1},{2},{3}", entity.english, entity.name, entity.geocode, location);
+                Int32 population = 0;
+                var populationData = entity.population.FirstOrDefault(x => x.Year == year && x.source == PopulationDataSourceType.Census);
+                if ( populationData != null )
+                {
+                    population = populationData.TotalPopulation.total;
+                }
+                builder.AppendFormat("{0},{1},{2},{3},{4}", entity.english, entity.name, entity.geocode, population, location);
                 builder.AppendLine();
             }
             Clipboard.Clear();

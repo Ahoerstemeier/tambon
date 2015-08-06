@@ -58,7 +58,7 @@
             this.grpTesting = new System.Windows.Forms.GroupBox();
             this.cbxCensusYears = new System.Windows.Forms.ComboBox();
             this.btnCheckCensus = new System.Windows.Forms.Button();
-            this.btnAmphoeLocations = new System.Windows.Forms.Button();
+            this.btnAmphoeList = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -393,22 +393,22 @@
             this.btnCheckCensus.UseVisualStyleBackColor = true;
             this.btnCheckCensus.Click += new System.EventHandler(this.btnCheckCensus_Click);
             // 
-            // btnAmphoeLocations
+            // btnAmphoeList
             // 
-            this.btnAmphoeLocations.Location = new System.Drawing.Point(266, 206);
-            this.btnAmphoeLocations.Name = "btnAmphoeLocations";
-            this.btnAmphoeLocations.Size = new System.Drawing.Size(112, 23);
-            this.btnAmphoeLocations.TabIndex = 62;
-            this.btnAmphoeLocations.Text = "Amphoe locations";
-            this.btnAmphoeLocations.UseVisualStyleBackColor = true;
-            this.btnAmphoeLocations.Click += new System.EventHandler(this.btnAmphoeLocations_Click);
+            this.btnAmphoeList.Location = new System.Drawing.Point(266, 206);
+            this.btnAmphoeList.Name = "btnAmphoeList";
+            this.btnAmphoeList.Size = new System.Drawing.Size(112, 23);
+            this.btnAmphoeList.TabIndex = 62;
+            this.btnAmphoeList.Text = "Amphoe list";
+            this.btnAmphoeList.UseVisualStyleBackColor = true;
+            this.btnAmphoeList.Click += new System.EventHandler(this.btnAmphoeList_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 415);
-            this.Controls.Add(this.btnAmphoeLocations);
+            this.Controls.Add(this.btnAmphoeList);
             this.Controls.Add(this.grpTesting);
             this.Controls.Add(this.btnShowEntityData);
             this.Controls.Add(this.btnNayokResign);
@@ -470,7 +470,7 @@
         private System.Windows.Forms.GroupBox grpTesting;
         private System.Windows.Forms.Button btnCheckCensus;
         private System.Windows.Forms.ComboBox cbxCensusYears;
-        private System.Windows.Forms.Button btnAmphoeLocations;
+        private System.Windows.Forms.Button btnAmphoeList;
     }
 }
 
