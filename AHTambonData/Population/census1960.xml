@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
   <population source="Census" year="1960" referencedate="1960-04-25">
-    <data type="total" total="26267916" male="13164149" female="13103767" />
+    <data type="total" total="26257916" male="13154149" female="13103767" households="4616654" />
+    <data type="agricultural" total="19454576" households="3410309" />
     <reference>
       <url comment="English">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006601</url>
       <url comment="Thai">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000006067</url>
@@ -251,17 +252,14 @@
   </entity>
   <entity type="Changwat" geocode="12" name="นนทบุรี" english="Nonthaburi">
     <population source="Census" year="1960" referencedate="1960-04-25">
-      <data type="total" total="196196" />
-      <reference>
-        <url comment="English">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006689</url>
-        <url comment="Thai">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005994</url>
-      </reference>
-    </population>
-    <population source="Census" year="1960" referencedate="1960-04-25">
       <data type="total" total="196196" male="100298" female="95898" />
       <data type="agricultural" total="118733" households="19978" comment="In publication households wrongly 19987" />
       <data type="nonagricultural" total="77463" households="12578" />
       <data type="municipal" total="23544" male="14362" female="9182" />
+      <reference>
+        <url comment="English">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006689</url>
+        <url comment="Thai">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005994</url>
+      </reference>
     </population>
     <entity type="Amphoe" geocode="1201" name="เมืองนนทบุรี" english="Mueang Nonthaburi">
       <population source="Census" year="1960" referencedate="1960-04-25">
@@ -702,7 +700,10 @@
   </entity>
   <entity type="Changwat" geocode="19" name="สระบุรี" english="Saraburi">
     <population source="Census" year="1960" referencedate="1960-04-25">
-      <data type="total" total="303505" />
+      <data type="total" total="303505" male="152759" female="150746" />
+      <data type="agricultural" total="202810" households="37161" />
+      <data type="nonagricultural" total="100695" households="18978" />
+      <data type="municipal" total="30809" male="16517" female="14292" />
       <reference>
         <url comment="English">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006698</url>
         <url comment="Thai">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000006024</url>
@@ -1150,21 +1151,204 @@
 
   <entity type="Changwat" geocode="30" name="นครราชสีมา" english="Nakhon Ratchasima">
     <population source="Census" year="1960" referencedate="1960-04-25">
-      <data type="total" total="1094774" />
+      <data type="total" total="1094774" male="548960" female="545814" />
+      <data type="agricultural" total="920402" households="155065" />
+      <data type="nonagricultural" total="174372" households="31330" />
+      <data type="municipal" total="56342" male="28708" female="27634" />
       <reference>
         <url comment="English">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006708</url>
         <url comment="Thai">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005982</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="3001" name="เมืองนครราชสีมา" english="Mueang Nakhon Ratchasima">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="139949" male="72470" female="67479" />
+        <data type="agricultural" total="70780" households="11985" />
+        <data type="nonagricultural" total="69169" households="11763" />
+        <data type="municipal" total="41037" male="20953" female="20084" geocode="3099" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3002" name="ครบุรี" english="Khon Buri">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="35070" male="17416" female="17654" />
+        <data type="agricultural" total="31958" households="5688" />
+        <data type="nonagricultural" total="3112" households="603" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3004" name="คง" english="Khong">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="59493" male="29596" female="29897" />
+        <data type="agricultural" total="56169" households="9248" />
+        <data type="nonagricultural" total="3324" households="559" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3006" name="จักราช" english="Chakkarat">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="40623" male="20134" female="20489" />
+        <data type="agricultural" total="36251" households="5837" />
+        <data type="nonagricultural" total="4372" households="828" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3007" name="โชคชัย" english="Chok Chai">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="47402" male="23444" female="23958" />
+        <data type="agricultural" total="42380" households="7436" />
+        <data type="nonagricultural" total="5022" households="992" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3008" name="ด่านขุนทด" english="Dan Khun Thot">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="66586" male="33533" female="33053" />
+        <data type="agricultural" total="61640" households="10371" />
+        <data type="nonagricultural" total="4946" households="921" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3009" name="โนนไทย" english="Non Thai">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="73952" male="36547" female="37405" />
+        <data type="agricultural" total="68818" households="11891" />
+        <data type="nonagricultural" total="5134" households="1022" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3010" name="โนนสูง" english="Non Sung">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="98994" male="48777" female="50217" />
+        <data type="agricultural" total="91001" households="15457" />
+        <data type="nonagricultural" total="7993" households="1434" />
+        <data type="municipal" total="5444" male="2729" female="2715" geocode="3096" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3012" name="บัวใหญ่" english="Bua Yai">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="174357" male="86774" female="87583" />
+        <data type="agricultural" total="155072" households="25320" />
+        <data type="nonagricultural" total="19285" households="3406" />
+        <data type="municipal" total="9861" male="5026" female="4835" geocode="3097" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3014" name="ปักธงชัย" english="Pak Thong Chai">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="63839" male="31649" female="32190" />
+        <data type="agricultural" total="56123" households="9686" />
+        <data type="nonagricultural" total="7716" households="1455" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3015" name="พิมาย" english="Phimai">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="100599" male="50234" female="50365" />
+        <data type="agricultural" total="88898" households="14627" />
+        <data type="nonagricultural" total="11701" households="2156" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3017" name="ชุมพวง" english="Chum Phuang">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="72686" male="36453" female="36233" />
+        <data type="agricultural" total="65501" households="10236" />
+        <data type="nonagricultural" total="7185" households="1339" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3018" name="สูงเนิน" english="Sung Noen">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="36827" male="18234" female="18593" />
+        <data type="agricultural" total="31221" households="5387" />
+        <data type="nonagricultural" total="5606" households="1109" />
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="3019" name="ขามทะเลสอ" english="Kham Thale So">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="6730" male="3300" female="3430" />
+        <data type="agricultural" total="5557" households="920" />
+        <data type="nonagricultural" total="1173" households="245" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3020" name="สีคิ้ว" english="Sikhio">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="37014" male="19360" female="17654" />
+        <data type="agricultural" total="29682" households="5065" />
+        <data type="nonagricultural" total="7332" households="1201" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3021" name="ปากช่อง" english="Pak Chong">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="40653" male="21039" female="19614" />
+        <data type="agricultural" total="29351" households="5911" />
+        <data type="nonagricultural" total="11302" households="2297" />
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="31" name="บุรีรัมย์" english="Buriram">
     <population source="Census" year="1960" referencedate="1960-04-25">
-      <data type="total" total="583585" />
+      <data type="total" total="583585" male="289829" female="293756" />
+      <data type="agricultural" total="512470" households="82245" />
+      <data type="nonagricultural" total="71115" households="13011" />
+      <data type="municipal" total="12579" male="6423" female="6156" />
       <reference>
         <url comment="English">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006709</url>
         <url comment="Thai">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005983</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="3101" name="เมืองบุรีรัมย์" english="Mueang Buri Ram">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="134201" male="66703" female="67498" />
+        <data type="agricultural" total="113430" households="18036" />
+        <data type="nonagricultural" total="20771" households="3640" />
+        <data type="municipal" total="12579" male="6423" female="6156" geocode="3199" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3102" name="คูเมือง" english="Khu Mueang">
+      <population source="Census" year="1990" referencedate="1990-04-01">
+        <data type="total" total="54298" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3103" name="กระสัง" english="Krasang">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="46283" male="22985" female="23298" />
+        <data type="agricultural" total="38853" households="6188" />
+        <data type="nonagricultural" total="7430" households="1393" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3104" name="นางรอง" english="Nang Rong">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="117716" male="58543" female="59173" />
+        <data type="agricultural" total="104188" households="16974" />
+        <data type="nonagricultural" total="13528" households="2554" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3107" name="ประโคนชัย" english="Prakhon Chai">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="59835" male="29792" female="30043" />
+        <data type="agricultural" total="55126" households="9184" />
+        <data type="nonagricultural" total="4709" households="938" />
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="3108" name="บ้านกรวด" english="Ban Kruat">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="9011" male="4517" female="4494" />
+        <data type="agricultural" total="7765" households="1379" />
+        <data type="nonagricultural" total="1246" households="252" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3109" name="พุทไธสง" english="Phutthaisong">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="64764" male="31832" female="32932" />
+        <data type="agricultural" total="61060" households="10088" />
+        <data type="nonagricultural" total="3704" households="635" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3110" name="ลำปลายมาศ" english="Lam Plai Mat">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="81115" male="40467" female="40648" />
+        <data type="agricultural" total="70762" households="11017" />
+        <data type="nonagricultural" total="10353" households="1833" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3111" name="สตึก" english="Satuek">
+      <population source="Census" year="1960" referencedate="1960-04-25">
+        <data type="total" total="70660" male="34990" female="35670" />
+        <data type="agricultural" total="61286" households="9379" />
+        <data type="nonagricultural" total="9374" households="1766" />
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="32" name="สุรินทร์" english="Surin">
     <population source="Census" year="1960" referencedate="1960-04-25">
@@ -1609,7 +1793,7 @@
         <data type="total" total="182789" male="94261" female="88528" />
         <data type="agricultural" total="131952" households="21277" />
         <data type="nonagricultural" total="50837" households="8604" />
-        <data type="municipal" total="29956" male="15483" female="14482" geocode="4199" />
+        <data type="municipal" total="29965" male="15483" female="14482" geocode="4199" />
       </population>
     </entity>
     <entity type="Amphoe" geocode="4104" name="กุมภวาปี" english="Kumphawapi">
