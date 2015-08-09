@@ -3,6 +3,7 @@
   <population source="Census" year="1960" referencedate="1960-04-25">
     <data type="total" total="26257916" male="13154149" female="13103767" households="4616654" />
     <data type="agricultural" total="19454576" households="3410309" />
+    <data type="municipal" total="3273865" male="1666504" female="1607361" />
     <reference>
       <url comment="English">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006601</url>
       <url comment="Thai">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000006067</url>
@@ -2244,7 +2245,7 @@
         <data type="nonagricultural" total="11887" households="2266" />
       </population>
     </entity>
-    <entity type="KingAmphoe" geocode="4905" name="คำชะอี" english="Khamcha-i">
+    <entity type="KingAmphoe" geocode="4905" name="คำชะอี" english="Khamcha-i" comment="Wrongly listed as King Amphoe, was Amphoe since 1956 already">
       <population source="Census" year="1960" referencedate="1960-04-25">
         <data type="total" total="38080" male="18802" female="19278" />
         <data type="agricultural" total="35993" households="5673" />
@@ -3194,7 +3195,7 @@
         <data type="total" total="40485" male="20437" female="20048" />
         <data type="agricultural" total="34907" households="5694" />
         <data type="nonagricultural" total="5578" households="1142" />
-        <data type="municipal" total="4681" male="2350" female="2331" geocode="5691" comment="Pong was just sanitary district" />
+        <data type="sanitary" total="4681" male="2350" female="2331" geocode="5691" comment="wrongly listed as municipal" />
       </population>
     </entity>
   </entity>
@@ -4171,7 +4172,7 @@
         <data type="total" total="55831" male="27618" female="28213" />
         <data type="agricultural" total="53029" households="9711" />
         <data type="nonagricultural" total="2802" households="544" />
-        <data type="municipal" total="1343" male="695" female="648" geocode="8086" comment="Actually sanitary, not municipal" />
+        <data type="sanitary" total="1343" male="695" female="648" geocode="8086" comment="wrongly listed as municipal" />
       </population>
     </entity>
     <entity type="Amphoe" geocode="8007" name="ชะอวด" english="Cha-uat">
@@ -4179,7 +4180,7 @@
         <data type="total" total="41495" male="20742" female="20753" />
         <data type="agricultural" total="38529" households="7095" />
         <data type="nonagricultural" total="2966" households="599" />
-        <data type="municipal" total="3530" male="1753" female="1777" geocode="8085" comment="Actually sanitary, not municipal" />
+        <data type="sanitary" total="3530" male="1753" female="1777" geocode="8085" comment="wrongly listed as municipal" />
       </population>
     </entity>
     <entity type="Amphoe" geocode="8008" name="ท่าศาลา" english="Tha Sala">
@@ -4217,7 +4218,7 @@
         <data type="total" total="51978" male="26032" female="25946" />
         <data type="agricultural" total="48252" households="8695" />
         <data type="nonagricultural" total="3726" households="675" />
-        <data type="municipal" total="2176" male="1059" female="1117" geocode="8080" comment="Actually sanitary, not municipal" />
+        <data type="sanitary" total="2176" male="1059" female="1117" geocode="8080" comment="wrongly listed as municipal" />
       </population>
     </entity>
     <entity type="Amphoe" geocode="8014" name="สิชล" english="Sichon">
@@ -4755,7 +4756,7 @@
       <data type="municipal" total="13450" male="6728" female="6722" />
       <reference>
         <url comment="English">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006680</url>
-        <url comment="Thai">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006638</url>
+        <url comment="Thai, page with table 1 missing">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=1000006638</url>
       </reference>
     </population>
     <entity type="Amphoe" geocode="8601" name="เมืองชุมพร" english="Mueang Chumphon">
@@ -5218,6 +5219,6 @@
   <entitycount year="1960">
     <entry type="ThesabanNakhon" count="3" />
     <entry type="ThesabanMueang" count="82" />
-    <entry type="ThesabanTambon" count="4" />
+    <entry type="ThesabanTambon" count="35" />
   </entitycount>
 </entity>
