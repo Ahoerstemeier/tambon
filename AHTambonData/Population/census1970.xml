@@ -1974,13 +1974,126 @@
   </entity>
   <entity type="Changwat" geocode="96" name="นราธิวาส" english="Narathiwat">
     <population source="Census" year="1970" referencedate="1970-04-01">
-      <data type="total" total="326633" male="163002" female="163631" />
-      <data type="municipal" total="36118" male="17894" female="18224" />
-      <data type="nonmunicipal" total="290515" male="145108" female="145407" />
+      <data type="total" total="326633" male="163002" female="163631" households="66043" />
+      <data type="privatehouseholds" households="65916" />
+      <data type="collectivehouseholds" households="127">
+        <data type="agricultural" households="33933" />
+      </data>
+      <data type="municipal" total="36118" male="17894" female="18224" households="6777">
+        <data type="privatehouseholds" households="6756" />
+        <data type="collectivehouseholds" households="21">
+          <data type="agricultural" households="515" />
+        </data>
+      </data>
+      <data type="sanitary" total="30936" male="15478" female="15458" households="5874">
+        <data type="privatehouseholds" households="5858" />
+        <data type="collectivehouseholds" households="16">
+          <data type="agricultural" households="1444" />
+        </data>
+      </data>
+      <data type="nonmunicipalsanitary" total="259579" male="129630" female="129949" households="53392">
+        <data type="privatehouseholds" households="53302" />
+        <data type="collectivehouseholds" households="90">
+          <data type="agricultural" households="31974" />
+        </data>
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005918</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="9601" name="เมืองนราธิวาส" english="Mueang Narathiwat">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="50592" male="25108" female="25484" households="9768" />
+        <data type="privatehouseholds" households="9746" />
+        <data type="collectivehouseholds" households="22">
+          <data type="agricultural" households="3803" />
+        </data>
+        <data type="municipal" total="21256" male="10484" female="10772" households="3955" geocode="9699">
+          <data type="privatehouseholds" households="3943" />
+          <data type="collectivehouseholds" households="12">
+            <data type="agricultural" households="219" />
+          </data>
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9602" name="ตากใบ" english="Tak Bai">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="31481" male="15634" female="15847" households="6274" />
+        <data type="privatehouseholds" households="6252" />
+        <data type="collectivehouseholds" households="22">
+          <data type="agricultural" households="4093" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9603" name="บาเจาะ" english="Bacho">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="25601" male="12503" female="13098" households="5278" />
+        <data type="privatehouseholds" households="5265" />
+        <data type="collectivehouseholds" households="13">
+          <data type="agricultural" households="3657" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9604" name="ยี่งอ" english="Yi-ngo">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="23276" male="11520" female="11756" households="5000" />
+        <data type="privatehouseholds" households="4991" />
+        <data type="collectivehouseholds" households="9">
+          <data type="agricultural" households="2558" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9605" name="ระแงะ" english="Ra-ngae">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="70060" male="35174" female="34886" households="14227" />
+        <data type="privatehouseholds" households="14207" />
+        <data type="collectivehouseholds" households="20">
+          <data type="agricultural" households="7387" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9606" name="รือเสาะ" english="Rueso">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="38768" male="19361" female="19407" households="8109" />
+        <data type="privatehouseholds" households="8099" />
+        <data type="collectivehouseholds" households="10">
+          <data type="agricultural" households="4668" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9608" name="แว้ง" english="Waeng">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="29920" male="15254" female="14666" households="6113" />
+        <data type="privatehouseholds" households="6109" />
+        <data type="collectivehouseholds" households="4">
+          <data type="agricultural" households="3496" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9610" name="สุไหงโก-ลก" english="Su-ngai Kolok">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="26023" male="12960" female="13063" households="4925" />
+        <data type="privatehouseholds" households="4914" />
+        <data type="collectivehouseholds" households="11">
+          <data type="agricultural" households="1607" />
+        </data>
+        <data type="municipal" total="14862" male="7410" female="7452" households="2822" geocode="9698">
+          <data type="privatehouseholds" households="2813" />
+          <data type="collectivehouseholds" households="9">
+            <data type="agricultural" households="296" />
+          </data>
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9611" name="สุไหงปาดี" english="Su-ngai Padi">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="30912" male="15488" female="15424" households="6349" />
+        <data type="privatehouseholds" households="6333" />
+        <data type="collectivehouseholds" households="16">
+          <data type="agricultural" households="2664" />
+        </data>
+      </population>
+    </entity>
   </entity>
 
   <entitycount year="1970">
