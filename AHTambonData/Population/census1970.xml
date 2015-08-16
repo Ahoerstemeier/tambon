@@ -1344,11 +1344,11 @@
     </entity>
     <entity type="Amphoe" geocode="1906" name="บ้านหมอ" english="Ban Mo">
       <population source="Census" year="1970" referencedate="1970-04-01">
-        <data type="total" total="11867" male="5786" female="6081" households="2217" />
-        <data type="privatehouseholds" households="2203">
-          <data type="agricultural" households="1506" />
+        <data type="total" total="36574" male="17939" female="18635" households="6869" />
+        <data type="privatehouseholds" households="6830">
+          <data type="agricultural" households="2992" />
         </data>
-        <data type="collectivehouseholds" households="14" />
+        <data type="collectivehouseholds" households="39" />
       </population>
     </entity>
     <entity type="KingAmphoe" geocode="1908" name="หนองโดน" english="Nong Don">
@@ -2413,13 +2413,84 @@
   </entity>
   <entity type="Changwat" geocode="51" name="ลำพูน" english="Lamphun">
     <population source="Census" year="1970" referencedate="1970-04-01">
-      <data type="total" total="310836" male="156361" female="154475" />
-      <data type="municipal" total="11309" male="5507" female="5802" />
-      <data type="nonmunicipal" total="299527" male="150854" female="148673" />
+      <data type="total" total="310836" male="156361" female="154475" households="58297" />
+      <data type="privatehouseholds" households="57960">
+        <data type="agricultural" households="40528" />
+      </data>
+      <data type="collectivehouseholds" households="337" />
+      <data type="municipal" total="11309" male="5507" female="5802" households="2139">
+        <data type="privatehouseholds" households="2114">
+          <data type="agricultural" households="191" />
+        </data>
+        <data type="collectivehouseholds" households="25" />
+      </data>
+      <data type="sanitary" total="19659" male="9785" female="9874" households="3803">
+        <data type="privatehouseholds" households="3785">
+          <data type="agricultural" households="2117" />
+        </data>
+        <data type="collectivehouseholds" households="18" />
+      </data>
+      <data type="nonmunicipalsanitary" total="279868" male="141069" female="138799" households="52355">
+        <data type="privatehouseholds" households="52061">
+          <data type="agricultural" households="38220" />
+        </data>
+        <data type="collectivehouseholds" households="294" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005929</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="5101" name="เมืองลำพูน" english="Mueang Lamphun">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="126848" male="63512" female="63336" households="23656" />
+        <data type="privatehouseholds" households="23505">
+          <data type="agricultural" households="14279" />
+        </data>
+        <data type="collectivehouseholds" households="151" />
+        <data type="municipal" total="11309" male="5507" female="5802" households="2139" geocode="5199">
+          <data type="privatehouseholds" households="2114">
+            <data type="agricultural" households="191" />
+          </data>
+          <data type="collectivehouseholds" households="25" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5102" name="แม่ทา" english="Mae Tha">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="31178" male="15893" female="15285" households="5856" />
+        <data type="privatehouseholds" households="5819">
+          <data type="agricultural" households="4016" />
+        </data>
+        <data type="collectivehouseholds" households="37" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5103" name="บ้านโฮ่ง" english="Ban Hong">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="35450" male="17839" female="17611" households="6696" />
+        <data type="privatehouseholds" households="6666">
+          <data type="agricultural" households="4893" />
+        </data>
+        <data type="collectivehouseholds" households="30" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5104" name="ลี้" english="Li">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="49100" male="24952" female="24148" households="8911" />
+        <data type="privatehouseholds" households="8861">
+          <data type="agricultural" households="7579" />
+        </data>
+        <data type="collectivehouseholds" households="50" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5106" name="ป่าซาง" english="Pa Sang">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="68260" male="34165" female="34095" households="13178" />
+        <data type="privatehouseholds" households="13109">
+          <data type="agricultural" households="9761" />
+        </data>
+        <data type="collectivehouseholds" households="69" />
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="52" name="ลำปาง" english="Lampang">
     <population source="Census" year="1970" referencedate="1970-04-01">
@@ -2553,14 +2624,149 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="60" name="นครสวรรค์" english="Nakhon Sawan">
+    <!-- Omitted:
+    Huai Yai, Nong Bua (600407) - 6 villages, 461 households, 2620 population
+    Huai Thua Nuea, Nong Bua (600406) - 9 villages, 729 households, 4156 population
+      -->
     <population source="Census" year="1970" referencedate="1970-04-01">
-      <data type="total" total="758891" male="377525" female="381366" />
-      <data type="municipal" total="58751" male="28815" female="29936" />
-      <data type="nonmunicipal" total="700140" male="348710" female="351430" />
+      <data type="total" total="758891" male="377525" female="381366" households="138937" />
+      <data type="privatehouseholds" households="138369">
+        <data type="agricultural" households="93459" />
+      </data>
+      <data type="collectivehouseholds" households="568" />
+      <data type="municipal" total="58751" male="28815" female="29936" households="10754">
+        <data type="privatehouseholds" households="10718">
+          <data type="agricultural" households="660" />
+        </data>
+        <data type="collectivehouseholds" households="36" />
+      </data>
+      <data type="sanitary" total="84304" male="41199" female="43105" households="15676">
+        <data type="privatehouseholds" households="15641">
+          <data type="agricultural" households="6235" />
+        </data>
+        <data type="collectivehouseholds" households="35" />
+      </data>
+      <data type="nonmunicipalsanitary" total="615836" male="307511" female="308325" households="112507">
+        <data type="privatehouseholds" households="112010">
+          <data type="agricultural" households="86564" />
+        </data>
+        <data type="collectivehouseholds" households="497" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005933</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="6001" name="เมืองนครสวรรค์" english="Mueang Nakhon Sawan">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="149365" male="75276" female="74089" households="27083" />
+        <data type="privatehouseholds" households="26962">
+          <data type="agricultural" households="10829" />
+        </data>
+        <data type="collectivehouseholds" households="121" />
+        <data type="municipal" total="46853" male="23019" female="23834" households="8533" geocode="6099">
+          <data type="privatehouseholds" households="8501">
+            <data type="agricultural" households="219" />
+          </data>
+          <data type="collectivehouseholds" households="32" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6002" name="โกรกพระ" english="Krok Phra">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="27821" male="13698" female="14123" households="5202" />
+        <data type="privatehouseholds" households="5180">
+          <data type="agricultural" households="4053" />
+        </data>
+        <data type="collectivehouseholds" households="22" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6003" name="ชุมแสง" english="Chum Saeng">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="63723" male="31214" female="32509" households="11484" />
+        <data type="privatehouseholds" households="11436">
+          <data type="agricultural" households="7899" />
+        </data>
+        <data type="collectivehouseholds" households="48" />
+        <data type="municipal" total="11898" male="5796" female="6102" households="2221" geocode="6098">
+          <data type="privatehouseholds" households="2217">
+            <data type="agricultural" households="441" />
+          </data>
+          <data type="collectivehouseholds" households="4" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6004" name="หนองบัว" english="Nong Bua">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="42218" male="21057" female="21161" households="7752" />
+        <data type="privatehouseholds" households="7726">
+          <data type="agricultural" households="6633" />
+        </data>
+        <data type="collectivehouseholds" households="26" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6005" name="บรรพตพิสัย" english="Banphot Phisai">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="66039" male="32404" female="33635" households="12255" />
+        <data type="privatehouseholds" households="12199">
+          <data type="agricultural" households="9380" />
+        </data>
+        <data type="collectivehouseholds" households="56" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6006" name="เก้าเลี้ยว" english="Kao Liao">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="26420" male="13012" female="13408" households="4677" />
+        <data type="privatehouseholds" households="4661">
+          <data type="agricultural" households="3739" />
+        </data>
+        <data type="collectivehouseholds" households="16" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6007" name="ตาคลี" english="Takhli">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="141434" male="71050" female="70384" households="26428" />
+        <data type="privatehouseholds" households="26317">
+          <data type="agricultural" households="15509" />
+        </data>
+        <data type="collectivehouseholds" households="111" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6008" name="ท่าตะโก" english="Tha Tako">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="62977" male="31145" female="31832" households="10980" />
+        <data type="privatehouseholds" households="10938">
+          <data type="agricultural" households="9322" />
+        </data>
+        <data type="collectivehouseholds" households="42" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6009" name="ไพศาลี" english="Phaisali">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="46539" male="23257" female="23282" households="8244" />
+        <data type="privatehouseholds" households="8216">
+          <data type="agricultural" households="7068" />
+        </data>
+        <data type="collectivehouseholds" households="28" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6010" name="พยุหะคีรี" english="Phayuha Khiri">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="54760" male="26877" female="27883" households="10316" />
+        <data type="privatehouseholds" households="10283">
+          <data type="agricultural" households="7529" />
+        </data>
+        <data type="collectivehouseholds" households="33" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6011" name="ลาดยาว" english="Lat Yao">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="77595" male="38535" female="39060" households="14516" />
+        <data type="privatehouseholds" households="14451">
+          <data type="agricultural" households="11498" />
+        </data>
+        <data type="collectivehouseholds" households="65" />
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="61" name="อุทัยธานี" english="Uthai Thani">
     <population source="Census" year="1970" referencedate="1970-04-01">
@@ -2831,23 +3037,229 @@
   </entity>
   <entity type="Changwat" geocode="64" name="สุโขทัย" english="Sukhothai">
     <population source="Census" year="1970" referencedate="1970-04-01">
-      <data type="total" total="402342" male="197714" female="204628" />
-      <data type="municipal" total="23875" male="11706" female="12169" />
-      <data type="nonmunicipal" total="378467" male="186008" female="192459" />
+      <data type="total" total="402342" male="197714" female="204628" households="73356" />
+      <data type="privatehouseholds" households="73103">
+        <data type="agricultural" households="56578" />
+      </data>
+      <data type="collectivehouseholds" households="253" />
+      <data type="municipal" total="23875" male="11706" female="12169" households="4566">
+        <data type="privatehouseholds" households="4542">
+          <data type="agricultural" households="512" />
+        </data>
+        <data type="collectivehouseholds" households="24" />
+      </data>
+      <data type="sanitary" total="44475" male="21704" female="22771" households="8206">
+        <data type="privatehouseholds" households="8177">
+          <data type="agricultural" households="4447" />
+        </data>
+        <data type="collectivehouseholds" households="29" />
+      </data>
+      <data type="nonmunicipalsanitary" total="333992" male="164304" female="169688" households="60584">
+        <data type="privatehouseholds" households="60384">
+          <data type="agricultural" households="51619" />
+        </data>
+        <data type="collectivehouseholds" households="200" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005934</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="6401" name="เมืองสุโขทัย" english="Mueang Sukhothai">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="78389" male="38301" female="40088" households="14784" />
+        <data type="privatehouseholds" households="14738">
+          <data type="agricultural" households="9468" />
+        </data>
+        <data type="collectivehouseholds" households="46" />
+        <data type="municipal" total="15488" male="7662" female="7826" households="3032" geocode="6499">
+          <data type="privatehouseholds" households="3019">
+            <data type="agricultural" households="404" />
+          </data>
+          <data type="collectivehouseholds" households="13" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6402" name="บ้านด่านลานหอย" english="Ban Dan Lan Hoi">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="18371" male="9247" female="9124" households="3272" />
+        <data type="privatehouseholds" households="3262">
+          <data type="agricultural" households="2689" />
+        </data>
+        <data type="collectivehouseholds" households="10" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6403" name="คีรีมาศ" english="Khiri Mat">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="34569" male="16983" female="17586" households="6050" />
+        <data type="privatehouseholds" households="6034">
+          <data type="agricultural" households="5071" />
+        </data>
+        <data type="collectivehouseholds" households="16" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6404" name="กงไกรลาศ" english="Kong Krailat">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="46459" male="22644" female="23815" households="8347" />
+        <data type="privatehouseholds" households="8316">
+          <data type="agricultural" households="7315" />
+        </data>
+        <data type="collectivehouseholds" households="31" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6405" name="ศรีสัชนาลัย" english="Si Satchanalai">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="60923" male="30195" female="30728" households="11314" />
+        <data type="privatehouseholds" households="11274">
+          <data type="agricultural" households="9497" />
+        </data>
+        <data type="collectivehouseholds" households="40" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6406" name="ศรีสำโรง" english="Si Samrong">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="51146" male="24746" female="26400" households="9551" />
+        <data type="privatehouseholds" households="9519">
+          <data type="agricultural" households="7430" />
+        </data>
+        <data type="collectivehouseholds" households="32" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6407" name="สวรรคโลก" english="Sawankhalok">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="81652" male="40063" female="41589" households="14650" />
+        <data type="privatehouseholds" households="14599">
+          <data type="agricultural" households="10560" />
+        </data>
+        <data type="collectivehouseholds" households="51" />
+        <data type="municipal" total="8387" male="4044" female="4343" households="1534" geocode="6498">
+          <data type="privatehouseholds" households="1523">
+            <data type="agricultural" households="108" />
+          </data>
+          <data type="collectivehouseholds" households="11" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6409" name="ทุ่งเสลี่ยม" english="Thung Saliam">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="30833" male="15535" female="15298" households="5388" />
+        <data type="privatehouseholds" households="5361">
+          <data type="agricultural" households="4548" />
+        </data>
+        <data type="collectivehouseholds" households="27" />
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="65" name="พิษณุโลก" english="Phitsanulok">
+    <!--
+        Tambon Noen Phoem, Nakhon Thai (650204): Not counted are two villages 14 and 15.
+        Tambon Nong Kathao, Nakhon Thai (650202): Not counted is village 13.
+      -->
     <population source="Census" year="1970" referencedate="1970-04-01">
-      <data type="total" total="491886" male="244949" female="246937" />
-      <data type="municipal" total="33883" male="16239" female="17644" />
-      <data type="nonmunicipal" total="458003" male="228710" female="229293" />
+      <data type="total" total="491886" male="244949" female="246937" households="88490" />
+      <data type="privatehouseholds" households="88124">
+        <data type="agricultural" households="63480" />
+      </data>
+      <data type="collectivehouseholds" households="366" />
+      <data type="municipal" total="33883" male="16239" female="17644" households="6149">
+        <data type="privatehouseholds" households="6105">
+          <data type="agricultural" households="178" />
+        </data>
+        <data type="collectivehouseholds" households="44" />
+      </data>
+      <data type="sanitary" total="34288" male="16952" female="17336" households="6286">
+        <data type="privatehouseholds" households="6264">
+          <data type="agricultural" households="3358" />
+        </data>
+        <data type="collectivehouseholds" households="22" />
+      </data>
+      <data type="nonmunicipalsanitary" total="423715" male="211758" female="211957" households="76055">
+        <data type="privatehouseholds" households="75755">
+          <data type="agricultural" households="59944" />
+        </data>
+        <data type="collectivehouseholds" households="300" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000005940</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="6501" name="เมืองพิษณุโลก" english="Mueang Phitsanulok">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="142654" male="70331" female="72323" households="26355" />
+        <data type="privatehouseholds" households="26216">
+          <data type="agricultural" households="12493" />
+        </data>
+        <data type="collectivehouseholds" households="139" />
+        <data type="municipal" total="33883" male="16239" female="17644" households="6149" geocode="6599">
+          <data type="privatehouseholds" households="6105">
+            <data type="agricultural" households="178" />
+          </data>
+          <data type="collectivehouseholds" households="44" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6502" name="นครไทย" english="Nakhon Thai">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="44166" male="22313" female="21853" households="7696" />
+        <data type="privatehouseholds" households="7675">
+          <data type="agricultural" households="7021" />
+        </data>
+        <data type="collectivehouseholds" households="21" />
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="6503" name="ชาติตระการ" english="Chat Trakan">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="14518" male="7332" female="7186" households="2479" />
+        <data type="privatehouseholds" households="2476">
+          <data type="agricultural" households="2323" />
+        </data>
+        <data type="collectivehouseholds" households="3" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6504" name="บางระกำ" english="Bang Rakam">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="59959" male="29877" female="30082" households="10447" />
+        <data type="privatehouseholds" households="10405">
+          <data type="agricultural" households="8474" />
+        </data>
+        <data type="collectivehouseholds" households="42" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6505" name="บางกระทุ่ม" english="Bang Krathum">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="42255" male="20617" female="21638" households="7485" />
+        <data type="privatehouseholds" households="7451">
+          <data type="agricultural" households="5593" />
+        </data>
+        <data type="collectivehouseholds" households="34" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6506" name="พรหมพิราม" english="Phrom Phiram">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="65074" male="32162" female="32912" households="12045" />
+        <data type="privatehouseholds" households="12005">
+          <data type="agricultural" households="9356" />
+        </data>
+        <data type="collectivehouseholds" households="40" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6507" name="วัดโบสถ์" english="Wat Bot">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="23936" male="11840" female="12096" households="4766" />
+        <data type="privatehouseholds" households="4750">
+          <data type="agricultural" households="3951" />
+        </data>
+        <data type="collectivehouseholds" households="16" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="6508" name="วังทอง" english="Wang Thong">
+      <population source="Census" year="1970" referencedate="1970-04-01">
+        <data type="total" total="99324" male="50477" female="48847" households="17217" />
+        <data type="privatehouseholds" households="17146">
+          <data type="agricultural" households="14269" />
+        </data>
+        <data type="collectivehouseholds" households="71" />
+      </population>
+    </entity>
   </entity>
   <entity type="Changwat" geocode="66" name="พิจิตร" english="Phichit">
     <population source="Census" year="1970" referencedate="1970-04-01">
