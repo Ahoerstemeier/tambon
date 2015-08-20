@@ -723,13 +723,48 @@ namespace De.AHoerstemeier.Tambon.UI
                 item.Tag = subEntity;
                 item.SubItems.Add(subEntity.name);
                 item.SubItems.Add(subEntity.geocode.ToString());
-                var populationData = subEntity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
-                if ( populationData != null )
-                {
-                    item.SubItems.Add(populationData.TotalPopulation.total.ToString());
-                }
+                AddPopulationToItems(subEntity, item);
+                AddCreationDateToItems(entity, subEntity, item);
             }
             listviewCentralAdministration.EndUpdate();
+        }
+
+        private void AddPopulationToItems(Entity subEntity, ListViewItem item)
+        {
+            var populationData = subEntity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
+            if ( populationData != null )
+            {
+                item.SubItems.Add(populationData.TotalPopulation.total.ToString());
+            }
+            else
+            {
+                item.SubItems.Add(String.Empty);
+            }
+        }
+
+        private void AddCreationDateToItems(Entity entity, Entity subEntity, ListViewItem item)
+        {
+            var creationHistory = subEntity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
+            if ( creationHistory != null )
+            {
+                item.SubItems.Add(creationHistory.effective.ToString("yyyy-MM-dd"));
+            }
+            else
+            {
+                HistoryList histories;
+                if ( _creationHistories.TryGetValue(subEntity.geocode, out histories) )
+                {
+                    creationHistory = histories.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
+                }
+                if ( creationHistory != null )
+                {
+                    item.SubItems.Add("(" + creationHistory.effective.ToString("yyyy-MM-dd") + ")");
+                }
+                else
+                {
+                    item.SubItems.Add(String.Empty);
+                }
+            }
         }
 
         private void EntityToLocalAdministrativeListView(Entity entity)
@@ -762,11 +797,8 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
                 item.SubItems.Add(dolaCode);
-                var populationData = subEntity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
-                if ( populationData != null )
-                {
-                    item.SubItems.Add(populationData.TotalPopulation.total.ToString());
-                }
+                AddPopulationToItems(subEntity, item);
+                AddCreationDateToItems(entity, subEntity, item);
             }
             listviewLocalAdministration.EndUpdate();
         }

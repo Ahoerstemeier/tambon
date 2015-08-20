@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.txtSubDivisions = new System.Windows.Forms.TextBox();
             this.treeviewSelection = new System.Windows.Forms.TreeView();
+            this.popupTree = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuWikipediaGerman = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWikipediaEnglish = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuWikipediaTambonEnglish = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisions = new System.Windows.Forms.TabControl();
             this.tabPageCentral = new System.Windows.Forms.TabPage();
             this.listviewCentralAdministration = new System.Windows.Forms.ListView();
@@ -38,6 +44,8 @@
             this.columnThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnGeocode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnPopulation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.popupListviewCentral = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuHistoryCentral = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPageLocal = new System.Windows.Forms.TabPage();
             this.listviewLocalAdministration = new System.Windows.Forms.ListView();
             this.columnLocalName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,6 +54,8 @@
             this.columnLocalGeocode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalDolaCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalPopulation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.popupListviewLocal = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuHistoryLocal = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisionData = new System.Windows.Forms.TabControl();
             this.tabSubdivision = new System.Windows.Forms.TabPage();
             this.tabErrors = new System.Windows.Forms.TabPage();
@@ -56,28 +66,20 @@
             this.txtMuban = new System.Windows.Forms.TextBox();
             this.tabLocalGoverment = new System.Windows.Forms.TabPage();
             this.txtLocalGovernment = new System.Windows.Forms.TextBox();
-            this.popupTree = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuWikipediaGerman = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuWikipediaEnglish = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuWikipediaTambonEnglish = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMubanDefinitions = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuHistory = new System.Windows.Forms.ToolStripMenuItem();
-            this.popupListviewCentral = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuHistoryCentral = new System.Windows.Forms.ToolStripMenuItem();
-            this.popupListviewLocal = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuHistoryLocal = new System.Windows.Forms.ToolStripMenuItem();
+            this.columnCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLocalCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.popupTree.SuspendLayout();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
+            this.popupListviewCentral.SuspendLayout();
             this.tabPageLocal.SuspendLayout();
+            this.popupListviewLocal.SuspendLayout();
             this.tabSubdivisionData.SuspendLayout();
             this.tabSubdivision.SuspendLayout();
             this.tabErrors.SuspendLayout();
             this.tabElection.SuspendLayout();
             this.tabMuban.SuspendLayout();
             this.tabLocalGoverment.SuspendLayout();
-            this.popupTree.SuspendLayout();
-            this.popupListviewCentral.SuspendLayout();
-            this.popupListviewLocal.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtSubDivisions
@@ -102,6 +104,52 @@
             this.treeviewSelection.TabIndex = 11;
             this.treeviewSelection.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeviewSelection_AfterSelect);
             this.treeviewSelection.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeviewSelection_MouseUp);
+            // 
+            // popupTree
+            // 
+            this.popupTree.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuWikipediaGerman,
+            this.mnuWikipediaEnglish,
+            this.mnuWikipediaTambonEnglish,
+            this.mnuMubanDefinitions,
+            this.mnuHistory});
+            this.popupTree.Name = "contextMenuStrip1";
+            this.popupTree.Size = new System.Drawing.Size(176, 114);
+            // 
+            // mnuWikipediaGerman
+            // 
+            this.mnuWikipediaGerman.Name = "mnuWikipediaGerman";
+            this.mnuWikipediaGerman.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaGerman.Text = "Wikipedia (de)";
+            this.mnuWikipediaGerman.Click += new System.EventHandler(this.mnuWikipediaGerman_Click);
+            // 
+            // mnuWikipediaEnglish
+            // 
+            this.mnuWikipediaEnglish.Name = "mnuWikipediaEnglish";
+            this.mnuWikipediaEnglish.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaEnglish.Text = "Wikipedia (en)";
+            this.mnuWikipediaEnglish.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
+            // 
+            // mnuWikipediaTambonEnglish
+            // 
+            this.mnuWikipediaTambonEnglish.Name = "mnuWikipediaTambonEnglish";
+            this.mnuWikipediaTambonEnglish.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaTambonEnglish.Text = "Tambon WP article";
+            this.mnuWikipediaTambonEnglish.Click += new System.EventHandler(this.mnuWikipediaTambonEnglish_Click);
+            // 
+            // mnuMubanDefinitions
+            // 
+            this.mnuMubanDefinitions.Name = "mnuMubanDefinitions";
+            this.mnuMubanDefinitions.Size = new System.Drawing.Size(175, 22);
+            this.mnuMubanDefinitions.Text = "Muban definitions";
+            this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
+            // 
+            // mnuHistory
+            // 
+            this.mnuHistory.Name = "mnuHistory";
+            this.mnuHistory.Size = new System.Drawing.Size(175, 22);
+            this.mnuHistory.Text = "History XML";
+            this.mnuHistory.Click += new System.EventHandler(this.mnuHistory_Click);
             // 
             // tabSubdivisions
             // 
@@ -136,7 +184,8 @@
             this.columnEnglish,
             this.columnThai,
             this.columnGeocode,
-            this.columnPopulation});
+            this.columnPopulation,
+            this.columnCreation});
             this.listviewCentralAdministration.ContextMenuStrip = this.popupListviewCentral;
             this.listviewCentralAdministration.Location = new System.Drawing.Point(-1, 3);
             this.listviewCentralAdministration.MultiSelect = false;
@@ -166,6 +215,21 @@
             this.columnPopulation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnPopulation.Width = 71;
             // 
+            // popupListviewCentral
+            // 
+            this.popupListviewCentral.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuHistoryCentral});
+            this.popupListviewCentral.Name = "popupListviewCentral";
+            this.popupListviewCentral.Size = new System.Drawing.Size(113, 26);
+            this.popupListviewCentral.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewCentral_Opening);
+            // 
+            // mnuHistoryCentral
+            // 
+            this.mnuHistoryCentral.Name = "mnuHistoryCentral";
+            this.mnuHistoryCentral.Size = new System.Drawing.Size(112, 22);
+            this.mnuHistoryCentral.Text = "History";
+            this.mnuHistoryCentral.Click += new System.EventHandler(this.mnuHistoryCentral_Click);
+            // 
             // tabPageLocal
             // 
             this.tabPageLocal.Controls.Add(this.listviewLocalAdministration);
@@ -188,7 +252,8 @@
             this.columnLocalType,
             this.columnLocalGeocode,
             this.columnLocalDolaCode,
-            this.columnLocalPopulation});
+            this.columnLocalPopulation,
+            this.columnLocalCreation});
             this.listviewLocalAdministration.ContextMenuStrip = this.popupListviewLocal;
             this.listviewLocalAdministration.Location = new System.Drawing.Point(-4, 6);
             this.listviewLocalAdministration.MultiSelect = false;
@@ -227,6 +292,21 @@
             this.columnLocalPopulation.Text = "Population";
             this.columnLocalPopulation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnLocalPopulation.Width = 71;
+            // 
+            // popupListviewLocal
+            // 
+            this.popupListviewLocal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuHistoryLocal});
+            this.popupListviewLocal.Name = "popupListviewLocal";
+            this.popupListviewLocal.Size = new System.Drawing.Size(113, 26);
+            this.popupListviewLocal.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewLocal_Opening);
+            // 
+            // mnuHistoryLocal
+            // 
+            this.mnuHistoryLocal.Name = "mnuHistoryLocal";
+            this.mnuHistoryLocal.Size = new System.Drawing.Size(112, 22);
+            this.mnuHistoryLocal.Text = "History";
+            this.mnuHistoryLocal.Click += new System.EventHandler(this.mnuHistoryLocal_Click);
             // 
             // tabSubdivisionData
             // 
@@ -342,81 +422,13 @@
             this.txtLocalGovernment.Size = new System.Drawing.Size(386, 120);
             this.txtLocalGovernment.TabIndex = 16;
             // 
-            // popupTree
+            // columnCreation
             // 
-            this.popupTree.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuWikipediaGerman,
-            this.mnuWikipediaEnglish,
-            this.mnuWikipediaTambonEnglish,
-            this.mnuMubanDefinitions,
-            this.mnuHistory});
-            this.popupTree.Name = "contextMenuStrip1";
-            this.popupTree.Size = new System.Drawing.Size(176, 114);
+            this.columnCreation.Text = "Creation";
             // 
-            // mnuWikipediaGerman
+            // columnLocalCreation
             // 
-            this.mnuWikipediaGerman.Name = "mnuWikipediaGerman";
-            this.mnuWikipediaGerman.Size = new System.Drawing.Size(175, 22);
-            this.mnuWikipediaGerman.Text = "Wikipedia (de)";
-            this.mnuWikipediaGerman.Click += new System.EventHandler(this.mnuWikipediaGerman_Click);
-            // 
-            // mnuWikipediaEnglish
-            // 
-            this.mnuWikipediaEnglish.Name = "mnuWikipediaEnglish";
-            this.mnuWikipediaEnglish.Size = new System.Drawing.Size(175, 22);
-            this.mnuWikipediaEnglish.Text = "Wikipedia (en)";
-            this.mnuWikipediaEnglish.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
-            // 
-            // mnuWikipediaTambonEnglish
-            // 
-            this.mnuWikipediaTambonEnglish.Name = "mnuWikipediaTambonEnglish";
-            this.mnuWikipediaTambonEnglish.Size = new System.Drawing.Size(175, 22);
-            this.mnuWikipediaTambonEnglish.Text = "Tambon WP article";
-            this.mnuWikipediaTambonEnglish.Click += new System.EventHandler(this.mnuWikipediaTambonEnglish_Click);
-            // 
-            // mnuMubanDefinitions
-            // 
-            this.mnuMubanDefinitions.Name = "mnuMubanDefinitions";
-            this.mnuMubanDefinitions.Size = new System.Drawing.Size(175, 22);
-            this.mnuMubanDefinitions.Text = "Muban definitions";
-            this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
-            // 
-            // mnuHistory
-            // 
-            this.mnuHistory.Name = "mnuHistory";
-            this.mnuHistory.Size = new System.Drawing.Size(175, 22);
-            this.mnuHistory.Text = "History XML";
-            this.mnuHistory.Click += new System.EventHandler(this.mnuHistory_Click);
-            // 
-            // popupListviewCentral
-            // 
-            this.popupListviewCentral.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuHistoryCentral});
-            this.popupListviewCentral.Name = "popupListviewCentral";
-            this.popupListviewCentral.Size = new System.Drawing.Size(153, 48);
-            this.popupListviewCentral.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewCentral_Opening);
-            // 
-            // mnuHistoryCentral
-            // 
-            this.mnuHistoryCentral.Name = "mnuHistoryCentral";
-            this.mnuHistoryCentral.Size = new System.Drawing.Size(112, 22);
-            this.mnuHistoryCentral.Text = "History";
-            this.mnuHistoryCentral.Click += new System.EventHandler(this.mnuHistoryCentral_Click);
-            // 
-            // popupListviewLocal
-            // 
-            this.popupListviewLocal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuHistoryLocal});
-            this.popupListviewLocal.Name = "popupListviewLocal";
-            this.popupListviewLocal.Size = new System.Drawing.Size(113, 26);
-            this.popupListviewLocal.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewLocal_Opening);
-            // 
-            // mnuHistoryLocal
-            // 
-            this.mnuHistoryLocal.Name = "mnuHistoryLocal";
-            this.mnuHistoryLocal.Size = new System.Drawing.Size(112, 22);
-            this.mnuHistoryLocal.Text = "History";
-            this.mnuHistoryLocal.Click += new System.EventHandler(this.mnuHistoryLocal_Click);
+            this.columnLocalCreation.Text = "Creation";
             // 
             // EntityBrowserForm
             // 
@@ -429,9 +441,12 @@
             this.Name = "EntityBrowserForm";
             this.Text = "EntityBrowserForm";
             this.Load += new System.EventHandler(this.EntityBrowserForm_Load);
+            this.popupTree.ResumeLayout(false);
             this.tabSubdivisions.ResumeLayout(false);
             this.tabPageCentral.ResumeLayout(false);
+            this.popupListviewCentral.ResumeLayout(false);
             this.tabPageLocal.ResumeLayout(false);
+            this.popupListviewLocal.ResumeLayout(false);
             this.tabSubdivisionData.ResumeLayout(false);
             this.tabSubdivision.ResumeLayout(false);
             this.tabSubdivision.PerformLayout();
@@ -443,9 +458,6 @@
             this.tabMuban.PerformLayout();
             this.tabLocalGoverment.ResumeLayout(false);
             this.tabLocalGoverment.PerformLayout();
-            this.popupTree.ResumeLayout(false);
-            this.popupListviewCentral.ResumeLayout(false);
-            this.popupListviewLocal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -489,6 +501,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuHistoryCentral;
         private System.Windows.Forms.ContextMenuStrip popupListviewLocal;
         private System.Windows.Forms.ToolStripMenuItem mnuHistoryLocal;
-
+        private System.Windows.Forms.ColumnHeader columnCreation;
+        private System.Windows.Forms.ColumnHeader columnLocalCreation;
     }
 }
