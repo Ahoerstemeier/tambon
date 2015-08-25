@@ -183,7 +183,7 @@
             <xs:documentation>Number of households.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="geocode" type="xs:unsignedInt" default="0" use="optional">
+        <xs:attribute name="geocode" type="t:GeocodeList" use="optional">
           <xs:annotation>
             <xs:documentation>Identifier of the entity. Used for municipal areas in case more than one municipality is within the parent entity.</xs:documentation>
           </xs:annotation>

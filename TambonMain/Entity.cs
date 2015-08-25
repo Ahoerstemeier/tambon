@@ -127,7 +127,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         var data = tambon.population.First().data.First();
                         data.type = PopulationDataType.municipal;
-                        data.geocode = thesaban.geocode;
+                        data.geocode.Add(thesaban.geocode);
                         AddTambonInThesabanToAmphoe(tambon, thesaban);
                     }
                 }
@@ -1239,12 +1239,13 @@ namespace De.AHoerstemeier.Tambon
             var allPopulationData = allEntities.SelectMany(x => x.population.Where(
                 y => y.Year == populationYear && y.source == populationDataSource));
             // ToList() as the add of population data below will change the enumeration
-            var allPopulationDataWithGeocode = allPopulationData.Where(p => p.data.Any(d => d.geocode != 0)).ToList();
+            var allPopulationDataWithGeocode = allPopulationData.Where(p => p.data.Any(d => d.geocode.Any())).ToList();
             foreach ( var sourcePopulationData in allPopulationDataWithGeocode )
             {
-                foreach ( var populationDataPoint in allPopulationDataWithGeocode.SelectMany(p => p.data.Where(d => d.geocode != 0)) )
+                // only use those population data which are exactly on one entity
+                foreach ( var populationDataPoint in allPopulationDataWithGeocode.SelectMany(p => p.data.Where(d => d.geocode.Count == 1)) )
                 {
-                    var localGovernment = localGovernments.FirstOrDefault(x => x.geocode == populationDataPoint.geocode);
+                    var localGovernment = localGovernments.FirstOrDefault(x => populationDataPoint.geocode.Contains(x.geocode));
                     if ( localGovernment != null )
                     {
                         var populationData = new PopulationData();
@@ -1289,7 +1290,7 @@ namespace De.AHoerstemeier.Tambon
                         populationData.source = sourcePopulationData.source;
 
                         List<HouseholdDataPoint> dataPointToClone = new List<HouseholdDataPoint>();
-                        dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.geocode == localEntityWithoutPopulation.geocode));
+                        dataPointToClone.AddRange(sourcePopulationData.data.Where(x => x.geocode.Contains(localEntityWithoutPopulation.geocode)));
                         if ( !dataPointToClone.Any() )
                         {
                             if ( coverage.coverage == CoverageType.completely )
@@ -1304,7 +1305,7 @@ namespace De.AHoerstemeier.Tambon
                         foreach ( var dataPoint in dataPointToClone )
                         {
                             var newDataPoint = new HouseholdDataPoint(dataPoint);
-                            newDataPoint.geocode = coverage.geocode;
+                            newDataPoint.geocode.Add(coverage.geocode);
                             populationData.data.Add(newDataPoint);
                         }
                     }
