@@ -1532,13 +1532,22 @@
     <entity type="Chumchon" geocode="17960005" name="บ้านโภคาภิวัฒน์" english="Ban Phokha Phiwat" />
     <entity type="Chumchon" geocode="17960006" name="วัดโพธิ์เอน" english="Wat Pho En" />
   </entity>
-  <entity type="ThesabanTambon" name="ปากบาง" english="Pak Bang" geocode="1795" parent="1704">
+  <entity type="ThesabanTambon" name="พรหมบุรี" english="Phrom Buri" geocode="1795" parent="1704">
+    <wiki wikidata="Q20876671" />
     <office type="MunicipalityOffice">
       <symbols>
         <vision>เมืองน่าอยู่  คู่คุณภาพเกษตร  เขตวัฒนธรรม  นำการพัฒนา</vision>
       </symbols>
+      <geo:Point>
+        <geo:lat>14.8490</geo:lat>
+        <geo:long>100.4442</geo:long>
+      </geo:Point>
       <url>http://www.nmt.or.th/Sing Buri/pakbang/</url>
       <url status="offline">http://www.pak-bang.go.th/</url>
+      <socialweb>
+        <googleplus type="location">112326301908094924069</googleplus>
+        <foursquare>4cdf5cafffcf370468761982</foursquare>
+      </socialweb>
       <officials>
         <official title="Mayor" name="คมสันต์ เกิดพิทักษ์" begin="2013-09-01" beginreason="ElectedDirectly" />
         <official title="Mayor" name="คมสันต์ เกิดพิทักษ์" begin="2009-07-26" end="2013-07-25" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -1553,6 +1562,20 @@
         <entity geocode="170402" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <rename effective="2015-09-04" status="Gazette" name="พรหมบุรี" english="Phrom Buri" oldname="ปากบาง" oldenglish="Pak Bang">
+        <gazetteref volume="132" page="5" issue="พิเศษ 197 ง" date="2015-08-27" />
+      </rename>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <areachange effective="1972-08-29" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="89" page="404" issue="30 ง" date="1972-08-29" />
+      </areachange>
+      <create effective="1964-01-07" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="81" page="30" issue="2 ง" date="1964-01-07" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ถอนสมอ" english="Thon Samo" geocode="1794" parent="1705">
     <office type="MunicipalityOffice">
