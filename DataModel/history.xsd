@@ -202,9 +202,9 @@
             <xs:documentation>Type of the entity merged with.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="mergefrom" type="xs:unsignedInt" use="optional">
+        <xs:attribute name="mergefrom" type="t:GeocodeList" use="optional">
           <xs:annotation>
-            <xs:documentation>Geocode of the entity which was added to the area.</xs:documentation>
+            <xs:documentation>Geocode(s) of the entity which was added to the area.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
