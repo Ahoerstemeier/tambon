@@ -313,7 +313,7 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine("{{reflist}}");
             builder.AppendLine();
             builder.AppendLine("==External links==");
-            builder.AppendFormat("*[http://www.thaitambon.com/tambon/ttambon.asp?ID={0} Thaitambon.com on {1}]", entity.geocode, entity.english);
+            builder.AppendFormat("*[http://www.thaitambon.com/tambon{0} Thaitambon.com on {1}]", entity.geocode, entity.english);
             builder.AppendLine();
             // {{coord|19.0625|N|98.9396|E|source:wikidata-and-enwiki-cat-tree_region:TH|display=title}}
             builder.AppendLine();
@@ -452,7 +452,7 @@ namespace De.AHoerstemeier.Tambon
             String tambonCompletePlural = "den kompletten Tambon {0}";
             String tambonPartiallyPlural = "den Teilen der Tambon {0}";
 
-            CountAsString countAsString = delegate(Int32 count)
+            CountAsString countAsString = delegate (Int32 count)
             {
                 String countAsStringResult;
                 if ( !numberStrings.TryGetValue(count, out countAsStringResult) )
