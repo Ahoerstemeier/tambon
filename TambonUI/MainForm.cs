@@ -152,7 +152,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 counter.RemoveAll(x => x.Item3 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate(Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
+                    counter.Sort(delegate (Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
                     {
                         return (p2.Item3.CompareTo(p1.Item3));
                     });
@@ -191,7 +191,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 // counter.RemoveAll(x => x.Item2 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate(Tuple<String, Int32> p1, Tuple<String, Int32> p2)
+                    counter.Sort(delegate (Tuple<String, Int32> p1, Tuple<String, Int32> p2)
                     {
                         var result = p2.Item2.CompareTo(p1.Item2);
                         if ( result == 0 )
@@ -1138,6 +1138,26 @@ namespace De.AHoerstemeier.Tambon.UI
                             }
                         }
                     }
+                    if ( data.geocode.Any() )
+                    {
+                        switch ( data.type )
+                        {
+                            case PopulationDataType.ruralsanitary:
+                                if ( (data.total > 4999 * data.geocode.Count) )
+                                {
+                                    builder.AppendFormat("{0} ({1}): Rural sanitary population {2} with just {3} sanitary district(s).", entity.english, entity.geocode, data.total, data.geocode.Count);
+                                    builder.AppendLine();
+                                }
+                                break;
+                            case PopulationDataType.urbansanitary:
+                                if ( (data.total < 5000 * data.geocode.Count) )
+                                {
+                                    builder.AppendFormat("{0} ({1}): Urban sanitary population {2} not possible with {3} sanitary district(s).", entity.english, entity.geocode, data.total, data.geocode.Count);
+                                    builder.AppendLine();
+                                }
+                                break;
+                        }
+                    }
                 }
                 diff = population.SumError();
                 if ( diff > 1 )
@@ -1162,7 +1182,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     diff = sum.TotalPopulation.MaxDeviation(entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year).TotalPopulation);
                     if ( diff > 1 )
                     {
-                        builder.AppendFormat("{0} ({1}): Sum of subentities differs by {2}", entity.english, entity.geocode, diff);
+                        builder.AppendFormat("{0} ({1}): Sum of sub-entities differs by {2}", entity.english, entity.geocode, diff);
                         builder.AppendLine();
                     }
                 }
