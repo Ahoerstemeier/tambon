@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -1451,7 +1452,7 @@ namespace De.AHoerstemeier.Tambon
                 Int16 amphoeCode = 0;
                 if ( _geocodeToAmphoeCom.TryGetValue(geocode, out amphoeCode) )
                 {
-                    return new Uri(String.Format("http://www.amphoe.com/menu.php?mid=1&am={0}&pv={1}", amphoeCode, provinceCode));
+                    return new Uri(String.Format(CultureInfo.InvariantCulture, "http://www.amphoe.com/menu.php?mid=1&am={0}&pv={1}", amphoeCode, provinceCode));
                 }
             }
             return null;
