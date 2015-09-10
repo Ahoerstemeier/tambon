@@ -66,7 +66,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdFacebookPage = "P1997";  // https://www.facebook.com/pages/-/$1
         public const String PropertyIdShortName = "P1813";  // wrong datatype, wait for it to become multilingual!
 
-        // public const String PropertyIdArea = "Pxxxx";
+        public const String PropertyIdArea = "P2046";
         public const String PropertyIdCategoryCombinesTopic = "P971";
 
         public const String PropertyIdCategoryForTopic = "P910";
@@ -113,6 +113,8 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemRegistration = "Q15194024";
 
         public const String ItemWikimediaCategory = "Q4167836";
+
+        public const String ItemSquareKilometer = "Q712226";
 
         // source statements for population
         public static Dictionary<Int16, String> ItemCensus = new Dictionary<Int16, String>()
