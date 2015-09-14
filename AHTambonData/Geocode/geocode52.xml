@@ -1354,6 +1354,13 @@
     </office>
     <entity type="Tambon" name="หลวงเหนือ" english="Luang Nuea" geocode="520501">
       <wiki wikidata="Q6695006" />
+      <office type="TAOOffice" obsolete="1">
+        <history>
+          <abolished effective="2004-07-09" status="Gazette" mergeto="5294" type="TAO">
+            <gazetteref volume="121" page="19" issue="พิเศษ 75 ง" date="2004-07-09" />
+          </abolished>
+        </history>
+      </office>
       <entity type="Muban" geocode="52050101" name="บ้านสบแหง" english="Ban Sop Haeng" />
       <entity type="Muban" geocode="52050102" name="บ้านศรีป้าน" english="Ban Si Pan" />
       <entity type="Muban" geocode="52050103" name="บ้านคุ้ม" english="Ban Khum" />
@@ -3595,6 +3602,17 @@
         <entity geocode="520116" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-11-10" status="Gazette" old="ThesabanMueang" new="ThesabanNakhon">
+        <gazetteref volume="116" page="10" issue="110 ก" date="1999-11-10" />
+      </statuschange>
+      <areachange effective="1991-10-24" status="Gazette" type="ThesabanMueang">
+        <gazetteref volume="108" page="979" issue="186 ก" date="1991-10-24" />
+      </areachange>
+      <create effective="1936-03-25" status="Gazette" type="ThesabanMueang">
+        <gazetteref volume="52" page="2114" issue="0 ก" date="1936-03-25" />
+      </create>
+    </history>
     <!-- Khet == Constituencies
 เขต 1
 1.ชุมชนจามเทวี
@@ -3688,8 +3706,19 @@
       <rename oldname="ชมพู" name="เขลางค์นคร" oldenglish="Chomphu" effective="2004-03-08" status="Gazette">
         <gazetteref volume="121" page="5" issue="พิเศษ 78 ง" date="2004-07-19" />
       </rename>
+      <mergedwith effective="2004-07-09" status="Gazette" mergefrom="520105" mergefromtype="SaphaTambon">
+        <gazetteref volume="121" page="11" issue="พิเศษ 75 ง" date="2004-07-09" />
+      </mergedwith>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <areachange effective="1991-06-24" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="108" page="10640" issue="186 ง" date="1991-06-24" />
+      </areachange>
+      <create effective="1969-03-18" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="86" page="916" issue="22 ง" date="1969-03-18" />
+      </create>
     </history>
-
     <entity type="Chumchon" geocode="52980063" name="ชุมชนบ้านจอมเมือง" english="Chumchon Ban Chom Mueang" muban="52010607">
       <office type="ChumchonOffice">
         <officials>
@@ -3721,6 +3750,14 @@
         <entity geocode="520116" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1993-04-09" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="110" page="9" issue="43 ง ฉบับพิเศษ" date="1993-04-09" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="พิชัย" english="Phichai" geocode="5296" parent="5201">
     <wiki wikidata="Q19838141" />
@@ -3786,6 +3823,14 @@
         <entity geocode="520308" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-08-03" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="71" issue="60 ง ฉบับพิเศษ" date="1956-08-03" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="หลวงเหนือ" english="Luang Nuea" geocode="5294" parent="5205">
     <office type="MunicipalityOffice">
@@ -3808,6 +3853,15 @@
     </office>
     <history>
       <rename oldname="ดอนไชย" name="หลวงเหนือ" oldenglish="Don Chaiya" />
+      <mergedwith effective="2004-07-09" status="Gazette" mergefrom="520501" mergefromtype="TAO">
+        <gazetteref volume="121" page="19" issue="พิเศษ 75 ง" date="2004-07-09" />
+      </mergedwith>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-09-20" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="48" issue="75 ง ฉบับพิเศษ" date="1956-09-20" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="เสริมงาม" english="Soem Ngam" geocode="5293" parent="5204">
@@ -3828,6 +3882,14 @@
         <entity geocode="520404" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1976-06-15" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="93" page="1447" issue="84 ง" date="1976-06-15" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="แจ้ห่ม" english="Chae Hom" geocode="5292" parent="5206">
     <office type="MunicipalityOffice">
@@ -3848,6 +3910,14 @@
         <entity geocode="520601" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-09-20" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="50" issue="75 ง ฉบับพิเศษ" date="1956-09-20" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="บ้านใหม่" english="Ban Mai" geocode="5291" parent="5207">
     <office type="MunicipalityOffice">
@@ -3865,6 +3935,14 @@
         <entity geocode="520702" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1987-07-02" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="104" page="4596" issue="125 ง" date="1987-07-02" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="52910001" name="บ้านเหล่า" english="Ban Lao" />
     <entity type="Chumchon" geocode="52910002" name="บ้านทัพป่าเส้า" english="Ban Thap Pa Sao" />
     <entity type="Chumchon" geocode="52910003" name="บ้านร่วมใจพัฒนา" english="Ban Ruam Chai Phatthana" />
@@ -3894,6 +3972,14 @@
         <entity geocode="520702" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-11-28" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="67" issue="99 ง ฉบับพิเศษ" date="1956-11-28" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="ล้อมแรด" english="Lom Raet" geocode="5289" parent="5208">
     <wiki wikidata="Q13025263" />
@@ -3976,6 +4062,17 @@
         <entity geocode="520903" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <mergedwith effective="2004-07-09" status="Gazette" mergefrom="520903" mergefromtype="SaphaTambon">
+        <gazetteref volume="121" page="11" issue="พิเศษ 75 ง" date="2004-07-09" />
+      </mergedwith>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1988-07-07" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="105" page="5160" issue="107 ง" date="1988-07-07" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="แม่พริก" english="Mae Phrik" geocode="5287" parent="5209">
     <office type="MunicipalityOffice">
@@ -3996,6 +4093,17 @@
         <entity geocode="520901" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <areachange effective="2013-03-14" status="Gazette" type="ThesabanTambon">
+        <gazetteref volume="130" page="14" issue="พิเศษ 34 ง" date="2013-03-14" />
+      </areachange>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-10-15" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="73" issue="83 ง ฉบับพิเศษ" date="1956-10-15" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ป่าตันนาครัว" english="Pa Tan Na Khrua" geocode="5286" parent="5210">
     <office type="TAOOffice">
@@ -4058,6 +4166,14 @@
         <entity geocode="521101" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-10-15" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="75" issue="83 ง ฉบับพิเศษ" date="1956-10-15" />
+      </create>
+    </history>
     <!-- Chumchon numbers to be confirmed -->
     <entity type="Chumchon" geocode="52850001" name="ชุมชนบ้านหล่าย" english="Chumchon Ban Lai" muban="52110101" />
     <entity type="Chumchon" geocode="52850002" name="ชุมชนสบปราบเหนือ" english="Chumchon Sop Prap Nuea" muban="52110102" />
@@ -4095,6 +4211,14 @@
         <entity geocode="521201" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-10-15" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="71" issue="83 ง ฉบับพิเศษ" date="1956-10-15" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="เวียงมอก" english="Wiang Mok" geocode="5283" parent="5208" tambon="520805">
     <office type="MunicipalityOffice">
@@ -4114,6 +4238,9 @@
     </office>
     <history>
       <statuschange old="TAO" new="ThesabanTambon" effective="2005-06-17" status="Done" />
+      <create effective="1997-02-13" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="แม่เมาะ" english="Mae Mo" geocode="5282" parent="5202" tambon="520204">
@@ -4139,6 +4266,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done">
         <meetingreference board="2" number="23" date="2007-07-13" />
       </statuschange>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="สิริราช" english="Siri Rat" geocode="5281" parent="5210" tambon="521011">
@@ -4194,6 +4324,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
         <meetingreference board="2" number="32" date="2008-05-07" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="นาแก้ว" english="Na Kaeo" geocode="5279" parent="5203" tambon="520302">
@@ -4218,6 +4351,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
         <meetingreference board="2" number="47" date="2008-06-26" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ศาลา" english="Sala" geocode="5278" parent="5203" tambon="520305">
@@ -4242,6 +4378,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
         <meetingreference board="2" number="36" date="2008-05-16" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="บ้านสา" english="Ban Sa" geocode="5277" parent="5206" tambon="520602">
@@ -4265,6 +4404,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
         <meetingreference board="2" number="25" date="2008-03-28" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="แม่ทะ" english="Mae Tha" geocode="5276" parent="5210" tambon="521001">
@@ -4374,6 +4516,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done">
         <meetingreference board="2" date="2009-04-29" number="2" />
       </statuschange>
+      <create effective="1997-02-13" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+      </create>
     </history>
   </entity>
 </entity>
