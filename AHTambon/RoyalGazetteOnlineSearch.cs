@@ -159,10 +159,11 @@ namespace De.AHoerstemeier.Tambon
         private void PerformRequest()
         {
             StringBuilder requestString = new StringBuilder();
-            foreach ( string s in new List<String> { "ก", "ง", "ข", "ค", "all" } )
-            {
-                requestString.Append("chkType=" + MyUrlEncode(s) + "&");
-            }
+            //foreach ( String s in new List<String> { "ก", "ง", "ข", "ค", "all" } )
+            //{
+            //    requestString.Append("chkType=" + MyUrlEncode(s) + "&");
+            //}
+            requestString.Append("chkType=all&");
             if ( _volume <= 0 )
             {
                 requestString.Append("txtBookNo=&");
@@ -172,21 +173,24 @@ namespace De.AHoerstemeier.Tambon
                 //lRequestString.Append("txtBookNo=" + MyURLEncode(Helper.UseThaiNumerals(mVolume.ToString())) + "&");
                 requestString.Append("txtBookNo=" + _volume.ToString() + "&");
             }
-            //request.Append("txtSection=&");
-            //request.Append("txtFromDate=&");
-            //request.Append("txtToDate=&");
-            requestString.Append("chkSpecial=special&");
-            requestString.Append("searchOption=adv&");
+            requestString.Append("txtSection=&");
+            requestString.Append("txtFromDate=&");
+            requestString.Append("txtToDate=&");
+            // requestString.Append("chkSpecial=special&");
+            // requestString.Append("searchOption=adv&");
             requestString.Append("hidNowItem=txtTitle&");
-            //request.Append("hidFieldSort=&");
-            //request.Append("hidFieldSortText=&");
+            requestString.Append("hidFieldSort=&");
+            requestString.Append("hidFieldSortText=&");
             requestString.Append("hidFieldList=" + MyUrlEncode("txtTitle/txtBookNo/txtSection/txtFromDate/txtToDate/selDocGroup1") + "&");
             //request.Append("txtDetail=&");
-            //request.Append("selDocGroup=&");
-            //request.Append("selFromMonth=&");
-            //request.Append("selFromYear=&");
-            //request.Append("selToMonth=&");
-            //request.Append("selToYear=&");
+            requestString.Append("selDocGroup1=&");
+            requestString.Append("selFromDay=&");
+            requestString.Append("selFromMonth=&");
+            requestString.Append("selFromYear=&");
+            requestString.Append("selToDay=&");
+            requestString.Append("selToMonth=&");
+            requestString.Append("selToYear=&");
+            requestString.Append("radSearchType=new&");
             requestString.Append("txtTitle=" + MyUrlEncode(_searchKey));
 
             _dataUrl = GetDataUrl(0, requestString.ToString());
@@ -210,18 +214,22 @@ namespace De.AHoerstemeier.Tambon
             {
                 client.Headers.Add("Cookie", _cookie);
             }
-            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11");
-            client.Headers.Add("Accept", "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5");
-            client.Headers.Add("Accept-Language", "en-us,en;q=0.8,de;q=0.5,th;q=0.3");
+            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0");
+            client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+            client.Headers.Add("Accept-Language", "en-us,en;q=0.5");
             client.Headers.Add("Accept-Encoding", "gzip,deflate");
             client.Headers.Add("Accept-Charset", "UTF-8,*");
-            Byte[] lResponseData = client.DownloadData(searchUrl + "?" + requestString);
+
+            client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
+            String response = client.UploadString(searchUrl, requestString);
+
+            // Byte[] lResponseData = client.DownloadData(searchUrl + "?" + requestString);
             String lCookie = client.ResponseHeaders.Get("Set-Cookie");
             if ( !String.IsNullOrEmpty(lCookie) )
             {
                 _cookie = lCookie;
             }
-            String response = Encoding.ASCII.GetString(lResponseData);
+            // String response = Encoding.ASCII.GetString(lResponseData);
             Int32 position = response.LastIndexOf(_responseDataUrl);
             String result = String.Empty;
             if ( position >= 0 )
@@ -256,9 +264,9 @@ namespace De.AHoerstemeier.Tambon
             {
                 client.Headers.Add("Cookie", _cookie);
             }
-            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11");
-            client.Headers.Add("Accept", "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5");
-            client.Headers.Add("Accept-Language", "en-us,en;q=0.8,de;q=0.5,th;q=0.3");
+            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0");
+            client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+            client.Headers.Add("Accept-Language", "en-us,en;q=0.5");
             client.Headers.Add("Accept-Encoding", "gzip,deflate");
             client.Headers.Add("Accept-Charset", "UTF-8,*");
             System.IO.Stream lStream = client.OpenRead(_dataUrl);
@@ -276,17 +284,21 @@ namespace De.AHoerstemeier.Tambon
 
         private string MyUrlEncode(String value)
         {
-            var lByteArray = TambonHelper.ThaiEncoding.GetBytes(value);
-            String result = HttpUtility.UrlEncode(lByteArray, 0, lByteArray.Length);
+            var byteArray = TambonHelper.ThaiEncoding.GetBytes(value);
+            String result = HttpUtility.UrlEncode(byteArray, 0, byteArray.Length);
             return result;
         }
 
-        private const string EntryStart = "        <td width=\"50\" align=\"center\" nowrap class=\"row4\">";
-        private const string PageStart = "onkeypress=\"EnterPage()\"> จากทั้งหมด";
+        private const String EntryStart = "        <td width=\"50\" align=\"center\" nowrap class=\"row4\">";
+
+        private const String PageStart = "onkeypress=\"EnterPage()\"> จากทั้งหมด";
 
         private RoyalGazetteList DoParseStream(Stream data)
         {
             var reader = new System.IO.StreamReader(data, TambonHelper.ThaiEncoding);
+            //var fileStream = new FileStream("c:\\temp\\out.htm", FileMode.OpenOrCreate);
+            //TambonHelper.StreamCopy(data, fileStream);
+            //fileStream.Close();
             RoyalGazetteList result = new RoyalGazetteList();
             result.AddRange(DoParse(reader));
             return result;
