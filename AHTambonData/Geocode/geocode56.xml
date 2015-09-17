@@ -1224,8 +1224,27 @@
         <official title="DistrictOfficer" name="พิเศษ ธีรการุณวงศ์" end="2007-01-07" />
       </officials>
     </office>
+    <history>
+      <reassign effective="1977-08-28" status="Gazette" oldparent="57" newparent="56">
+        <gazetteref volume="94" page="1" issue="69 ก ฉบับพิเศษ" date="1977-07-28" />
+      </reassign>
+      <statuschange effective="1974-03-28" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="91" page="30" issue="54 ก ฉบับพิเศษ" date="1974-03-28" />
+      </statuschange>
+      <create effective="1969-05-12" status="Gazette" type="KingAmphoe" splitfrom="5606">
+        <gazetteref volume="86" page="1729" issue="44 ง" date="1969-05-20" />
+      </create>
+    </history>
     <entity type="Tambon" name="เชียงม่วน" english="Chiang Muan" geocode="560401">
       <wiki wikidata="Q16259786" />
+      <history>
+        <reassign effective="1969-05-12" status="Gazette" oldparent="5606" newparent="5604">
+          <gazetteref volume="86" page="1729" issue="44 ง" date="1969-05-20" />
+        </reassign>
+        <reassign effective="1908-07-12" status="Gazette" oldparent="5501" newparent="5606">
+          <gazetteref volume="25" page="447" issue="15" date="1908-07-12" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="56040101" name="บ้านหลวง" english="Ban Luang" />
       <entity type="Muban" geocode="56040102" name="บ้านปงสนุก" english="Ban Pong Sanuk" />
       <entity type="Muban" geocode="56040103" name="บ้านปิน" english="Ban Pin" />
@@ -1254,6 +1273,11 @@
           <entity geocode="560402" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1970-08-01" status="Gazette" type="Tambon" splitfrom="560401">
+          <gazetteref volume="87" page="2451" issue="83 ง" date="1970-09-01" />
+        </create>
+      </history>
       <entity type="Muban" geocode="56040201" name="บ้านมาง" english="Ban Mang" />
       <entity type="Muban" geocode="56040202" name="บ้านแพทย์" english="Ban Phaet" />
       <entity type="Muban" geocode="56040203" name="บ้านหนองหมู" english="Ban Nong Mu" />
@@ -1283,12 +1307,27 @@
           <entity geocode="560403" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1969-05-12" status="Gazette" oldparent="5606" newparent="5604">
+          <gazetteref volume="86" page="1729" issue="44 ง" date="1969-05-20" />
+        </reassign>
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="560401">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>-->
+      </history>
       <entity type="Muban" geocode="56040301" name="บ้านท่าฟ้าเหนือ" english="Ban Tha Fa Nuea" />
       <entity type="Muban" geocode="56040302" name="บ้านท่าฟ้าใต้" english="Ban Tha Fa Tai" />
       <entity type="Muban" geocode="56040303" name="บ้านสระ" english="Ban Sa" />
       <entity type="Muban" geocode="56040304" name="บ้านสระ" english="Ban Sa" />
       <entity type="Muban" geocode="56040305" name="บ้านทุ่งหนอง" english="Ban Thung Nong" />
-      <entity type="Muban" geocode="56040306" name="บ้านหล่าย" english="Ban Lai" />
+      <entity type="Muban" geocode="56040306" name="บ้านท่าฟ้าหล่าย" english="Ban Tha Fa Lai">
+        <history>
+          <rename oldname="บ้านหล่าย" oldenglish="Ban Lai" name="บ้านท่าฟ้าหล่าย" english="Ban Tha Fa Lai" status="Gazette" effective="2015-07-29">
+            <gazetteref volume="132" page="141" issue="98 ง" date="2015-09-17" />
+            <meetingreference board="rename" date="2015-06-23" number="2" />
+          </rename>
+        </history>
+      </entity>
       <entity type="Muban" geocode="56040307" name="บ้านท่าฟ้าใหม่" english="Ban Tha Fa Mai" />
       <entity type="Muban" geocode="56040308" name="บ้านราษฎร์พัฒนา" english="Ban Rat Phatthana" />
       <entity type="Muban" geocode="56040309" name="บ้านนาบัว" english="Ban Na Bua" />
