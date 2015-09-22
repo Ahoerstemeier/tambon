@@ -3421,11 +3421,379 @@
   </entity>
   <entity type="Changwat" geocode="41" name="อุดรธานี" english="Udon Thani">
     <population source="Census" year="1980" referencedate="1980-04-01">
-      <data type="total" total="1462199" />
+      <data type="total" total="1462199" male="737100" female="725099" households="246048" />
+      <data type="privatehouseholds" total="1446585" male="722875" female="723710" households="244636" />
+      <data type="collectivehouseholds" total="15614" male="14225" female="1389" households="1412" />
+      <data type="agricultural" total="1080940" households="176044" />
+      <data type="municipal" total="71142" male="34979" female="36163" households="13516">
+        <data type="privatehouseholds" total="69276" male="33401" female="35875" households="13458" />
+        <data type="collectivehouseholds" total="1866" male="1578" female="288" households="58" />
+        <data type="agricultural" total="242" households="1265" />
+      </data>
+      <data type="urbansanitary" total="140467" male="70155" female="70312" households="24702">
+        <data type="privatehouseholds" total="138382" male="68771" female="69611" households="24611" />
+        <data type="collectivehouseholds" total="2085" male="1384" female="701" households="91" />
+        <data type="agricultural" total="10521" households="64080" />
+      </data>
+      <data type="ruralsanitary" total="18919" male="9421" female="9498" households="3294">
+        <data type="privatehouseholds" total="18796" male="9301" female="9495" households="3278" />
+        <data type="collectivehouseholds" total="123" male="120" female="3" households="16" />
+        <data type="agricultural" total="1704" households="10634" />
+      </data>
+      <data type="nonmunicipalsanitary" total="1231671" male="622545" female="609126" households="204536">
+        <data type="privatehouseholds" total="1220131" male="611402" female="608729" households="203289" />
+        <data type="collectivehouseholds" total="11540" male="11143" female="397" households="1247" />
+        <data type="agricultural" total="163577" households="1004961" />
+      </data>
       <reference>
         <url comment="Page 35 missing">http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000007726</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="4101" name="เมืองอุดรธานี" english="Mueang Udon Thani">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="307566" male="156136" female="151430" households="54043" />
+        <data type="privatehouseholds" total="298103" male="147720" female="150383" households="53743" />
+        <data type="collectivehouseholds" total="9463" male="8416" female="1047" households="300" />
+        <data type="agricultural" total="133460" households="22058" />
+        <data type="municipal" total="71142" male="34979" female="36163" households="13516" geocode="4199">
+          <data type="privatehouseholds" total="69276" male="33401" female="35875" households="13458" />
+          <data type="collectivehouseholds" total="1866" male="1578" female="288" households="58" />
+          <data type="agricultural" total="242" households="1265" />
+        </data>
+        <data type="urbansanitary" total="39378" male="19497" female="19881" households="7097" geocode="4196">
+          <data type="privatehouseholds" total="38104" male="18866" female="19238" households="7072" />
+          <data type="collectivehouseholds" total="1274" male="631" female="643" households="25" />
+          <data type="agricultural" total="1113" households="6703" />
+        </data>
+        <data type="nonmunicipalsanitary" total="197046" male="101660" female="95386" households="33430">
+          <data type="privatehouseholds" total="190723" male="95453" female="95270" households="33213" />
+          <data type="collectivehouseholds" total="6323" male="6207" female="116" households="217" />
+          <data type="agricultural" total="20703" households="125492" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4102" name="กุดจับ" english="Kut Chap">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="46312" male="23579" female="22733" households="7701" />
+        <data type="privatehouseholds" total="46094" male="23371" female="22723" households="7657" />
+        <data type="collectivehouseholds" total="218" male="208" female="10" households="44" />
+        <data type="agricultural" total="40582" households="6576" />
+        <data type="urbansanitary" total="7626" male="3870" female="3756" households="1319" geocode="4192">
+          <data type="privatehouseholds" total="7596" male="3840" female="3756" households="1316" />
+          <data type="collectivehouseholds" total="30" male="30" female="0" households="3" />
+          <data type="agricultural" total="929" households="5743" />
+        </data>
+        <data type="nonmunicipalsanitary" total="38686" male="19709" female="18977" households="6382">
+          <data type="privatehouseholds" total="38498" male="19531" female="18967" households="6341" />
+          <data type="collectivehouseholds" total="188" male="178" female="10" households="41" />
+          <data type="agricultural" total="5647" households="34839" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4103" name="หนองวัวซอ" english="Nong Wua So">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="46443" male="23361" female="23082" households="7533" />
+        <data type="privatehouseholds" total="46101" male="23048" female="23053" households="7495" />
+        <data type="collectivehouseholds" total="342" male="313" female="29" households="38" />
+        <data type="agricultural" total="35035" households="5546" />
+        <data type="urbansanitary" total="14818" male="7403" female="7415" households="2380" geocode="4188 4187">
+          <data type="privatehouseholds" total="14705" male="7300" female="7405" households="2370" />
+          <data type="collectivehouseholds" total="113" male="103" female="10" households="10" />
+          <data type="agricultural" total="1585" households="10165" />
+        </data>
+        <data type="nonmunicipalsanitary" total="31625" male="15958" female="15667" households="5153">
+          <data type="privatehouseholds" total="31396" male="15748" female="15648" households="5125" />
+          <data type="collectivehouseholds" total="229" male="210" female="19" households="28" />
+          <data type="agricultural" total="3961" households="24870" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4104" name="กุมภวาปี" english="Kumphawapi">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="139000" male="69764" female="69236" households="22964" />
+        <data type="privatehouseholds" total="138158" male="68941" female="69217" households="22815" />
+        <data type="collectivehouseholds" total="842" male="823" female="19" households="149" />
+        <data type="agricultural" total="102317" households="16487" />
+        <data type="urbansanitary" total="15305" male="7602" female="7703" households="2651" geocode="4186 4185">
+          <data type="privatehouseholds" total="15176" male="7479" female="7697" households="2642" />
+          <data type="collectivehouseholds" total="129" male="123" female="6" households="9" />
+          <data type="agricultural" total="444" households="2938" />
+        </data>
+        <data type="ruralsanitary" total="4543" male="2257" female="2286" households="784" geocode="4184">
+          <data type="privatehouseholds" total="4510" male="2224" female="2286" households="779" />
+          <data type="collectivehouseholds" total="33" male="33" female="0" households="5" />
+          <data type="agricultural" total="335" households="2081" />
+        </data>
+        <data type="nonmunicipalsanitary" total="119152" male="59905" female="59247" households="19529">
+          <data type="privatehouseholds" total="118472" male="59238" female="59234" households="19394" />
+          <data type="collectivehouseholds" total="680" male="667" female="13" households="135" />
+          <data type="agricultural" total="15708" households="97298" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4105" name="โนนสะอาด" english="Non Sa-at">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="38246" male="19184" female="19062" households="6358" />
+        <data type="privatehouseholds" total="38074" male="19015" female="19059" households="6325" />
+        <data type="collectivehouseholds" total="172" male="169" female="3" households="33" />
+        <data type="agricultural" total="30099" households="4923" />
+        <data type="ruralsanitary" total="4165" male="2111" female="2054" households="710" geocode="4183">
+          <data type="privatehouseholds" total="4145" male="2091" female="2054" households="707" />
+          <data type="collectivehouseholds" total="20" male="20" female="0" households="3" />
+          <data type="agricultural" total="349" households="2170" />
+        </data>
+        <data type="nonmunicipalsanitary" total="34081" male="17073" female="17008" households="5648">
+          <data type="privatehouseholds" total="33929" male="16924" female="17005" households="5618" />
+          <data type="collectivehouseholds" total="152" male="149" female="3" households="30" />
+          <data type="agricultural" total="4574" households="27929" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4106" name="หนองหาน" english="Nong Han">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="122773" male="61596" female="61177" households="20316" />
+        <data type="privatehouseholds" total="121993" male="60849" female="61144" households="20181" />
+        <data type="collectivehouseholds" total="780" male="747" female="33" households="135" />
+        <data type="agricultural" total="97217" households="15676" />
+        <data type="urbansanitary" total="5275" male="2642" female="2633" households="925" geocode="4180">
+          <data type="privatehouseholds" total="5193" male="2565" female="2628" households="920" />
+          <data type="collectivehouseholds" total="82" male="77" female="5" households="5" />
+          <data type="agricultural" total="358" households="2240" />
+        </data>
+        <data type="nonmunicipalsanitary" total="117498" male="58954" female="58544" households="19391">
+          <data type="privatehouseholds" total="116800" male="58284" female="58516" households="19261" />
+          <data type="collectivehouseholds" total="698" male="670" female="28" households="130" />
+          <data type="agricultural" total="15318" households="94977" />
+        </data>
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="4107" name="ทุ่งฝน" english="Thung Fon">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="20708" male="10320" female="10388" households="3532" />
+        <data type="privatehouseholds" total="20593" male="10205" female="10388" households="3512" />
+        <data type="collectivehouseholds" total="115" male="115" female="0" households="20" />
+        <data type="agricultural" total="17882" households="2977" />
+        <data type="nonmunicipalsanitary" total="20708" male="10320" female="10388" households="3532">
+          <data type="privatehouseholds" total="20593" male="10205" female="10388" households="3512" />
+          <data type="collectivehouseholds" total="115" male="115" female="0" households="20" />
+          <data type="agricultural" total="2977" households="17882" />
+        </data>
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="4108" name="ไชยวาน" english="Chai Wan">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="25970" male="12934" female="13036" households="4059" />
+        <data type="privatehouseholds" total="25867" male="12838" female="13029" households="4044" />
+        <data type="collectivehouseholds" total="103" male="96" female="7" households="15" />
+        <data type="agricultural" total="21603" households="3347" />
+        <data type="nonmunicipalsanitary" total="25970" male="12934" female="13036" households="4059">
+          <data type="privatehouseholds" total="25867" male="12838" female="13029" households="4044" />
+          <data type="collectivehouseholds" total="103" male="96" female="7" households="15" />
+          <data type="agricultural" total="3347" households="21603" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4109" name="ศรีธาตุ" english="Si That">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="33248" male="16679" female="16569" households="5172" />
+        <data type="privatehouseholds" total="33030" male="16470" female="16560" households="5137" />
+        <data type="collectivehouseholds" total="218" male="209" female="9" households="35" />
+        <data type="agricultural" total="28549" households="4349" />
+        <data type="ruralsanitary" total="4162" male="2040" female="2122" households="657" geocode="4177">
+          <data type="privatehouseholds" total="4141" male="2019" female="2122" households="655" />
+          <data type="collectivehouseholds" total="21" male="21" female="0" households="2" />
+          <data type="agricultural" total="480" households="3198" />
+        </data>
+        <data type="nonmunicipalsanitary" total="29086" male="14639" female="14447" households="4515">
+          <data type="privatehouseholds" total="28889" male="14451" female="14438" households="4482" />
+          <data type="collectivehouseholds" total="197" male="188" female="9" households="33" />
+          <data type="agricultural" total="3869" households="25351" />
+        </data>
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="4110" name="วังสามหมอ" english="Wang Sam Mo">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="21955" male="11167" female="10788" households="3652" />
+        <data type="privatehouseholds" total="21882" male="11096" female="10786" households="3635" />
+        <data type="collectivehouseholds" total="73" male="71" female="2" households="17" />
+        <data type="agricultural" total="19650" households="3174" />
+        <data type="nonmunicipalsanitary" total="21955" male="11167" female="10788" households="3652">
+          <data type="privatehouseholds" total="21882" male="11096" female="10786" households="3635" />
+          <data type="collectivehouseholds" total="73" male="71" female="2" households="17" />
+          <data type="agricultural" total="3174" households="19650" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4111" name="บ้านดุง" english="Ban Dung">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="71601" male="36164" female="35437" households="12294" />
+        <data type="privatehouseholds" total="71309" male="35904" female="35405" households="12213" />
+        <data type="collectivehouseholds" total="292" male="260" female="32" households="81" />
+        <data type="agricultural" total="62475" households="10440" />
+        <data type="urbansanitary" total="11076" male="5582" female="5494" households="2003" geocode="4175">
+          <data type="privatehouseholds" total="11029" male="5537" female="5492" households="1996" />
+          <data type="collectivehouseholds" total="47" male="45" female="2" households="7" />
+          <data type="agricultural" total="1126" households="6674" />
+        </data>
+        <data type="nonmunicipalsanitary" total="60525" male="30582" female="29943" households="10291">
+          <data type="privatehouseholds" total="60280" male="30367" female="29913" households="10217" />
+          <data type="collectivehouseholds" total="245" male="215" female="30" households="74" />
+          <data type="agricultural" total="9314" households="55801" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4112" name="หนองบัวลำภู" english="Nong Bua Lam Phu">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="101997" male="51370" female="50627" households="17424" />
+        <data type="privatehouseholds" total="101439" male="50873" female="50566" households="17349" />
+        <data type="collectivehouseholds" total="558" male="497" female="61" households="75" />
+        <data type="agricultural" total="81014" households="13475" />
+        <data type="urbansanitary" total="5211" male="2618" female="2593" households="1020" geocode="3999">
+          <data type="privatehouseholds" total="5152" male="2561" female="2591" households="1016" />
+          <data type="collectivehouseholds" total="59" male="57" female="2" households="4" />
+          <data type="agricultural" total="219" households="1227" />
+        </data>
+        <data type="nonmunicipalsanitary" total="96786" male="48752" female="48034" households="16404">
+          <data type="privatehouseholds" total="96287" male="48312" female="47975" households="16333" />
+          <data type="collectivehouseholds" total="499" male="440" female="59" households="71" />
+          <data type="agricultural" total="13256" households="79787" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4113" name="ศรีบุญเรือง" english="Si Bun Rueang">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="89974" male="45006" female="44968" households="15054" />
+        <data type="privatehouseholds" total="89464" male="44526" female="44938" households="14967" />
+        <data type="collectivehouseholds" total="510" male="480" female="30" households="87" />
+        <data type="agricultural" total="75382" households="12369" />
+        <data type="urbansanitary" total="11039" male="5479" female="5560" households="1938" geocode="3991 3990">
+          <data type="privatehouseholds" total="10956" male="5405" female="5551" households="1929" />
+          <data type="collectivehouseholds" total="83" male="74" female="9" households="9" />
+          <data type="agricultural" total="1093" households="6468" />
+        </data>
+        <data type="nonmunicipalsanitary" total="78935" male="39527" female="39408" households="13116">
+          <data type="privatehouseholds" total="78508" male="39121" female="39387" households="13038" />
+          <data type="collectivehouseholds" total="427" male="406" female="21" households="78" />
+          <data type="agricultural" total="11276" households="68914" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4114" name="นากลาง" english="Na Klang">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="83271" male="42243" female="41028" households="14054" />
+        <data type="privatehouseholds" total="82721" male="41724" female="40997" households="13981" />
+        <data type="collectivehouseholds" total="550" male="519" female="31" households="73" />
+        <data type="agricultural" total="70155" households="11649" />
+        <data type="urbansanitary" total="18459" male="9288" female="9171" households="3192" geocode="3994">
+          <data type="privatehouseholds" total="18304" male="9148" female="9156" households="3182" />
+          <data type="collectivehouseholds" total="155" male="140" female="15" households="10" />
+          <data type="agricultural" total="2405" households="14303" />
+        </data>
+        <data type="nonmunicipalsanitary" total="64812" male="32955" female="31857" households="10862">
+          <data type="privatehouseholds" total="64417" male="32576" female="31841" households="10799" />
+          <data type="collectivehouseholds" total="395" male="379" female="16" households="63" />
+          <data type="agricultural" total="9244" households="55852" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4115" name="สุวรรณคูหา" english="Suwannakhuha">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="38184" male="19462" female="18722" households="6224" />
+        <data type="privatehouseholds" total="38070" male="19349" female="18721" households="6200" />
+        <data type="collectivehouseholds" total="114" male="113" female="1" households="24" />
+        <data type="agricultural" total="32764" households="5287" />
+        <data type="nonmunicipalsanitary" total="38184" male="19462" female="18722" households="6224">
+          <data type="privatehouseholds" total="38070" male="19349" female="18721" households="6200" />
+          <data type="collectivehouseholds" total="114" male="113" female="1" households="24" />
+          <data type="agricultural" total="5287" households="32764" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4116" name="โนนสัง" english="Non Sang">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="59206" male="29367" female="29839" households="9746" />
+        <data type="privatehouseholds" total="58868" male="29039" female="29829" households="9690" />
+        <data type="collectivehouseholds" total="338" male="328" female="10" households="56" />
+        <data type="agricultural" total="45983" households="7346" />
+        <data type="ruralsanitary" total="3331" male="1667" female="1664" households="597" geocode="3992">
+          <data type="privatehouseholds" total="3303" male="1639" female="1664" households="595" />
+          <data type="collectivehouseholds" total="28" male="28" female="0" households="2" />
+          <data type="agricultural" total="290" households="1807" />
+        </data>
+        <data type="nonmunicipalsanitary" total="55875" male="27700" female="28175" households="9149">
+          <data type="privatehouseholds" total="55565" male="27400" female="28165" households="9095" />
+          <data type="collectivehouseholds" total="310" male="300" female="10" households="54" />
+          <data type="agricultural" total="7056" households="44176" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4117" name="บ้านผือ" english="Ban Phue">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="75379" male="37874" female="37505" households="12542" />
+        <data type="privatehouseholds" total="74963" male="37489" female="37474" households="12443" />
+        <data type="collectivehouseholds" total="416" male="385" female="31" households="99" />
+        <data type="agricultural" total="64729" households="10463" />
+        <data type="urbansanitary" total="5766" male="2850" female="2916" households="1101" geocode="4174">
+          <data type="privatehouseholds" total="5702" male="2786" female="2916" households="1096" />
+          <data type="collectivehouseholds" total="64" male="64" female="0" households="5" />
+          <data type="agricultural" total="452" households="2594" />
+        </data>
+        <data type="nonmunicipalsanitary" total="69613" male="35024" female="34589" households="11441">
+          <data type="privatehouseholds" total="69261" male="34703" female="34558" households="11347" />
+          <data type="collectivehouseholds" total="352" male="321" female="31" households="94" />
+          <data type="agricultural" total="10011" households="62135" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4118" name="น้ำโสม" english="Nam Som">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="43318" male="22417" female="20901" households="7188" />
+        <data type="privatehouseholds" total="43190" male="22301" female="20889" households="7159" />
+        <data type="collectivehouseholds" total="128" male="116" female="12" households="29" />
+        <data type="agricultural" total="38593" households="6310" />
+        <data type="urbansanitary" total="6514" male="3324" female="3190" households="1076" geocode="4173">
+          <data type="privatehouseholds" total="6465" male="3284" female="3181" households="1072" />
+          <data type="collectivehouseholds" total="49" male="40" female="9" households="4" />
+          <data type="agricultural" total="797" households="5025" />
+        </data>
+        <data type="nonmunicipalsanitary" total="36804" male="19093" female="17711" households="6112">
+          <data type="privatehouseholds" total="36725" male="19017" female="17708" households="6087" />
+          <data type="collectivehouseholds" total="79" male="76" female="3" households="25" />
+          <data type="agricultural" total="5513" households="33568" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4119" name="เพ็ญ" english="Phen">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="76923" male="38373" female="38550" households="12932" />
+        <data type="privatehouseholds" total="76659" male="38121" female="38538" households="12861" />
+        <data type="collectivehouseholds" total="264" male="252" female="12" households="71" />
+        <data type="agricultural" total="65696" households="10828" />
+        <data type="ruralsanitary" total="2718" male="1346" female="1372" households="546" geocode="4171">
+          <data type="privatehouseholds" total="2697" male="1328" female="1369" households="542" />
+          <data type="collectivehouseholds" total="21" male="18" female="3" households="4" />
+          <data type="agricultural" total="250" households="1378" />
+        </data>
+        <data type="nonmunicipalsanitary" total="74205" male="37027" female="37178" households="12386">
+          <data type="privatehouseholds" total="73962" male="36793" female="37169" households="12319" />
+          <data type="collectivehouseholds" total="243" male="234" female="9" households="67" />
+          <data type="agricultural" total="10578" households="64318" />
+        </data>
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="4120" name="สร้างคอม" english="Sang Khom">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="20125" male="10104" female="10021" households="3260" />
+        <data type="privatehouseholds" total="20007" male="9996" female="10011" households="3229" />
+        <data type="collectivehouseholds" total="118" male="108" female="10" households="31" />
+        <data type="agricultural" total="17755" households="2764" />
+        <data type="nonmunicipalsanitary" total="20125" male="10104" female="10021" households="3260">
+          <data type="privatehouseholds" total="20007" male="9996" female="10011" households="3229" />
+          <data type="collectivehouseholds" total="118" male="108" female="10" households="31" />
+          <data type="agricultural" total="2764" households="17755" />
+        </data>
+      </population>
+    </entity>
     <entitycount year="1980">
       <entry type="Amphoe" count="16" />
       <entry type="KingAmphoe" count="4" />
@@ -3436,11 +3804,199 @@
   </entity>
   <entity type="Changwat" geocode="42" name="เลย" english="Loei">
     <population source="Census" year="1980" referencedate="1980-04-01">
-      <data type="total" total="441342" male="225152" female="216190" />
+      <data type="total" total="441342" male="225152" female="216190" households="80951" />
+      <data type="privatehouseholds" total="437992" male="221953" female="216039" households="80559" />
+      <data type="collectivehouseholds" total="3350" male="3199" female="151" households="392" />
+      <data type="agricultural" total="367196" households="65962" />
+      <data type="municipal" total="14433" male="7146" female="7287" households="2898">
+        <data type="privatehouseholds" total="14344" male="7064" female="7280" households="2892" />
+        <data type="collectivehouseholds" total="89" male="82" female="7" households="6" />
+        <data type="agricultural" total="308" households="1717" />
+      </data>
+      <data type="urbansanitary" total="28475" male="14492" female="13983" households="5533">
+        <data type="privatehouseholds" total="28167" male="14197" female="13970" households="5507" />
+        <data type="collectivehouseholds" total="308" male="295" female="13" households="26" />
+        <data type="agricultural" total="2947" households="16334" />
+      </data>
+      <data type="ruralsanitary" total="8344" male="4302" female="4042" households="1671">
+        <data type="privatehouseholds" total="8219" male="4190" female="4029" households="1661" />
+        <data type="collectivehouseholds" total="125" male="112" female="13" households="10" />
+        <data type="agricultural" total="828" households="4415" />
+      </data>
+      <data type="nonmunicipalsanitary" total="390090" male="199212" female="190878" households="70849">
+        <data type="privatehouseholds" total="387262" male="196502" female="190760" households="70499" />
+        <data type="collectivehouseholds" total="2828" male="2710" female="118" households="350" />
+        <data type="agricultural" total="61879" households="344730" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000007632</url>
       </reference>
     </population>
+    <entity type="Amphoe" geocode="4201" name="เมืองเลย" english="Mueang Loei">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="87643" male="44665" female="42978" households="16160" />
+        <data type="privatehouseholds" total="86083" male="43156" female="42927" households="16067" />
+        <data type="collectivehouseholds" total="1560" male="1509" female="51" households="93" />
+        <data type="agricultural" total="59701" households="10721" />
+        <data type="municipal" total="14433" male="7146" female="7287" households="2898" geocode="4299">
+          <data type="privatehouseholds" total="14344" male="7064" female="7280" households="2892" />
+          <data type="collectivehouseholds" total="89" male="82" female="7" households="6" />
+          <data type="agricultural" total="308" households="1717" />
+        </data>
+        <data type="nonmunicipalsanitary" total="73210" male="37519" female="35691" households="13262">
+          <data type="privatehouseholds" total="71739" male="36092" female="35647" households="13175" />
+          <data type="collectivehouseholds" total="1471" male="1427" female="44" households="87" />
+          <data type="agricultural" total="10413" households="57984" />
+        </data>
+      </population>
+    </entity>
+    <entity type="KingAmphoe" geocode="4202" name="นาด้วง" english="Na Duang">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="15909" male="8157" female="7752" households="2866" />
+        <data type="privatehouseholds" total="15852" male="8100" female="7752" households="2855" />
+        <data type="collectivehouseholds" total="57" male="57" female="0" households="11" />
+        <data type="agricultural" total="14505" households="2588" />
+        <data type="nonmunicipalsanitary" total="15909" male="8157" female="7752" households="2866">
+          <data type="privatehouseholds" total="15852" male="8100" female="7752" households="2855" />
+          <data type="collectivehouseholds" total="57" male="57" female="0" households="11" />
+          <data type="agricultural" total="2588" households="14505" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4203" name="เชียงคาน" english="Chiang Khan">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="47376" male="24019" female="23357" households="9123" />
+        <data type="privatehouseholds" total="47073" male="23731" female="23342" households="9085" />
+        <data type="collectivehouseholds" total="303" male="288" female="15" households="38" />
+        <data type="agricultural" total="40703" households="7673" />
+        <data type="urbansanitary" total="7816" male="3914" female="3902" households="1593" geocode="4295">
+          <data type="privatehouseholds" total="7685" male="3789" female="3896" households="1581" />
+          <data type="collectivehouseholds" total="131" male="125" female="6" households="12" />
+          <data type="agricultural" total="700" households="3859" />
+        </data>
+        <data type="nonmunicipalsanitary" total="39560" male="20105" female="19455" households="7530">
+          <data type="privatehouseholds" total="39388" male="19942" female="19446" households="7504" />
+          <data type="collectivehouseholds" total="172" male="163" female="9" households="26" />
+          <data type="agricultural" total="6973" households="36844" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4204" name="ปากชม" english="Pak Chom">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="23741" male="12328" female="11413" households="4302" />
+        <data type="privatehouseholds" total="23666" male="12257" female="11409" households="4286" />
+        <data type="collectivehouseholds" total="75" male="71" female="4" households="16" />
+        <data type="agricultural" total="21180" households="3746" />
+        <data type="ruralsanitary" total="2119" male="1102" female="1017" households="415" geocode="4293">
+          <data type="privatehouseholds" total="2109" male="1092" female="1017" households="413" />
+          <data type="collectivehouseholds" total="10" male="10" female="0" households="2" />
+          <data type="agricultural" total="257" households="1405" />
+        </data>
+        <data type="nonmunicipalsanitary" total="21622" male="11226" female="10396" households="3887">
+          <data type="privatehouseholds" total="21557" male="11165" female="10392" households="3873" />
+          <data type="collectivehouseholds" total="65" male="61" female="4" households="14" />
+          <data type="agricultural" total="3489" households="19775" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4205" name="ด่านซ้าย" english="Dan Sai">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="34251" male="17349" female="16902" households="5948" />
+        <data type="privatehouseholds" total="34071" male="17184" female="16887" households="5913" />
+        <data type="collectivehouseholds" total="180" male="165" female="15" households="35" />
+        <data type="agricultural" total="29147" households="4886" />
+        <data type="ruralsanitary" total="3849" male="1999" female="1850" households="755" geocode="4292">
+          <data type="privatehouseholds" total="3747" male="1910" female="1837" households="748" />
+          <data type="collectivehouseholds" total="102" male="89" female="13" households="7" />
+          <data type="agricultural" total="283" households="1618" />
+        </data>
+        <data type="nonmunicipalsanitary" total="30402" male="15350" female="15052" households="5193">
+          <data type="privatehouseholds" total="30324" male="15274" female="15050" households="5165" />
+          <data type="collectivehouseholds" total="78" male="76" female="2" households="28" />
+          <data type="agricultural" total="4603" households="27529" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4206" name="นาแห้ว" english="Na Haeo">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="8776" male="4481" female="4295" households="1499" />
+        <data type="privatehouseholds" total="8714" male="4419" female="4295" households="1492" />
+        <data type="collectivehouseholds" total="62" male="62" female="0" households="7" />
+        <data type="agricultural" total="7508" households="1231" />
+        <data type="nonmunicipalsanitary" total="8776" male="4481" female="4295" households="1499">
+          <data type="privatehouseholds" total="8714" male="4419" female="4295" households="1492" />
+          <data type="collectivehouseholds" total="62" male="62" female="0" households="7" />
+          <data type="agricultural" total="1231" households="7508" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4207" name="ภูเรือ" english="Phu Ruea">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="14722" male="7589" female="7133" households="2461" />
+        <data type="privatehouseholds" total="14656" male="7523" female="7133" households="2446" />
+        <data type="collectivehouseholds" total="66" male="66" female="0" households="15" />
+        <data type="agricultural" total="13375" households="2199" />
+        <data type="nonmunicipalsanitary" total="14722" male="7589" female="7133" households="2461">
+          <data type="privatehouseholds" total="14656" male="7523" female="7133" households="2446" />
+          <data type="collectivehouseholds" total="66" male="66" female="0" households="15" />
+          <data type="agricultural" total="2199" households="13375" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4208" name="ท่าลี่" english="Tha Li">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="21822" male="11064" female="10758" households="4245" />
+        <data type="privatehouseholds" total="21731" male="10977" female="10754" households="4223" />
+        <data type="collectivehouseholds" total="91" male="87" female="4" households="22" />
+        <data type="agricultural" total="17492" households="3393" />
+        <data type="ruralsanitary" total="2376" male="1201" female="1175" households="501" geocode="4289">
+          <data type="privatehouseholds" total="2363" male="1188" female="1175" households="500" />
+          <data type="collectivehouseholds" total="13" male="13" female="0" households="1" />
+          <data type="agricultural" total="288" households="1392" />
+        </data>
+        <data type="nonmunicipalsanitary" total="19446" male="9863" female="9583" households="3744">
+          <data type="privatehouseholds" total="19368" male="9789" female="9579" households="3723" />
+          <data type="collectivehouseholds" total="78" male="74" female="4" households="21" />
+          <data type="agricultural" total="3105" households="16100" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4209" name="วังสะพุง" english="Wang Saphung">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="125033" male="63724" female="61309" households="23510" />
+        <data type="privatehouseholds" total="124341" male="63074" female="61267" households="23402" />
+        <data type="collectivehouseholds" total="692" male="650" female="42" households="108" />
+        <data type="agricultural" total="110206" households="20415" />
+        <data type="urbansanitary" total="12703" male="6576" female="6127" households="2501" geocode="4288">
+          <data type="privatehouseholds" total="12549" male="6426" female="6123" households="2493" />
+          <data type="collectivehouseholds" total="154" male="150" female="4" households="8" />
+          <data type="agricultural" total="1325" households="6984" />
+        </data>
+        <data type="nonmunicipalsanitary" total="112330" male="57148" female="55182" households="21009">
+          <data type="privatehouseholds" total="111792" male="56648" female="55144" households="20909" />
+          <data type="collectivehouseholds" total="538" male="500" female="38" households="100" />
+          <data type="agricultural" total="19090" households="103222" />
+        </data>
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="4210" name="ภูกระดึง" english="Phu Kradueng">
+      <population source="Census" year="1980" referencedate="1980-04-01">
+        <data type="total" total="62069" male="31776" female="30293" households="10837" />
+        <data type="privatehouseholds" total="61805" male="31532" female="30273" households="10790" />
+        <data type="collectivehouseholds" total="264" male="244" female="20" households="47" />
+        <data type="agricultural" total="53379" households="9110" />
+        <data type="urbansanitary" total="7956" male="4002" female="3954" households="1439" geocode="4287">
+          <data type="privatehouseholds" total="7933" male="3982" female="3951" households="1433" />
+          <data type="collectivehouseholds" total="23" male="20" female="3" households="6" />
+          <data type="agricultural" total="922" households="5491" />
+        </data>
+        <data type="nonmunicipalsanitary" total="54113" male="27774" female="26339" households="9398">
+          <data type="privatehouseholds" total="53872" male="27550" female="26322" households="9357" />
+          <data type="collectivehouseholds" total="241" male="224" female="17" households="41" />
+          <data type="agricultural" total="8188" households="47888" />
+        </data>
+      </population>
+    </entity>
     <entitycount year="1980">
       <entry type="Amphoe" count="9" />
       <entry type="KingAmphoe" count="1" />
