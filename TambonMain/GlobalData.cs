@@ -220,7 +220,7 @@ namespace De.AHoerstemeier.Tambon
             if ( source == PopulationDataSourceType.Census )
             {
                 // For DOPA need to be done with CalculateLocalGovernmentPopulation
-                Entity.FillExplicitLocalGovernmentPopulation(allEntities.Where(x => x.type.IsLocalGovernment()), allEntities, source, year);
+                Entity.FillExplicitLocalGovernmentPopulation(allEntities.Where(x => x.type.IsLocalGovernment()).ToList(), allEntities, source, year);
             }
 
             foreach ( var recalculate in geocodeToRecalculate.Distinct() )
