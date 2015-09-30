@@ -59,6 +59,7 @@
             this.cbxCensusYears = new System.Windows.Forms.ComboBox();
             this.btnCheckCensus = new System.Windows.Forms.Button();
             this.btnAmphoeList = new System.Windows.Forms.Button();
+            this.btnGovernor = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -344,6 +345,7 @@
             // 
             // grpTesting
             // 
+            this.grpTesting.Controls.Add(this.btnGovernor);
             this.grpTesting.Controls.Add(this.cbxCensusYears);
             this.grpTesting.Controls.Add(this.btnCheckCensus);
             this.grpTesting.Controls.Add(this.btn_GazetteShow);
@@ -402,6 +404,16 @@
             this.btnAmphoeList.Text = "Amphoe list";
             this.btnAmphoeList.UseVisualStyleBackColor = true;
             this.btnAmphoeList.Click += new System.EventHandler(this.btnAmphoeList_Click);
+            // 
+            // btnGovernor
+            // 
+            this.btnGovernor.Location = new System.Drawing.Point(234, 77);
+            this.btnGovernor.Name = "btnGovernor";
+            this.btnGovernor.Size = new System.Drawing.Size(75, 23);
+            this.btnGovernor.TabIndex = 59;
+            this.btnGovernor.Text = "Governor";
+            this.btnGovernor.UseVisualStyleBackColor = true;
+            this.btnGovernor.Click += new System.EventHandler(this.btnGovernor_Click);
             // 
             // MainForm
             // 
@@ -471,6 +483,7 @@
         private System.Windows.Forms.Button btnCheckCensus;
         private System.Windows.Forms.ComboBox cbxCensusYears;
         private System.Windows.Forms.Button btnAmphoeList;
+        private System.Windows.Forms.Button btnGovernor;
     }
 }
 

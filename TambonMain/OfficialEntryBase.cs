@@ -98,5 +98,14 @@ namespace De.AHoerstemeier.Tambon
             }
             return result;
         }
+
+        /// <summary>
+        /// Checks whether the official is still in office.
+        /// </summary>
+        /// <returns><c>true</c> if (presumably) still in office, <c>false</c> otherwise.</returns>
+        public Boolean InOffice()
+        {
+            return (!endSpecified) && String.IsNullOrEmpty(endyear) && (endreason == OfficialEndType.Unknown);
+        }
     }
 }

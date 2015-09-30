@@ -1220,5 +1220,40 @@ namespace De.AHoerstemeier.Tambon.UI
             Clipboard.Clear();
             Clipboard.SetText(builder.ToString());
         }
+
+        private void btnGovernor_Click(object sender, EventArgs e)
+        {
+            var baseEntity = GlobalData.CompleteGeocodeList();
+            var allChangwat = baseEntity.FlatList().Where(x => x.type == EntityType.Changwat && !x.IsObsolete).ToList();
+            List<Entity> vacantChangwat = new List<Entity>();
+            var frequency = new FrequencyCounter();
+            foreach ( var changwat in allChangwat )
+            {
+                var officials = changwat.office.First(y => y.type == OfficeType.ProvinceHall).officials.OfficialTerms;
+                var official = officials.First();
+                if ( !official.InOffice() )
+                {
+                    vacantChangwat.Add(changwat);
+                }
+                else
+                {
+                    var yearsInOffice = DateTime.Now.Year - officials.First().begin.Year;
+                    frequency.IncrementForCount(yearsInOffice, changwat.geocode);
+                }
+            }
+            var builder = new StringBuilder();
+
+            builder.AppendLine(String.Format("Most common number of years in office: {0}", frequency.MostCommonValue));
+            builder.AppendLine(String.Format("Mean number of years in office: {0:F2}", frequency.MeanValue));
+            var longestTermChangwat = frequency.Data[frequency.MaxValue].Select(x => allChangwat.First(y => y.geocode == x)).Select(x => x.english);
+            builder.AppendLine(String.Format("Longest time in office: {0} years (in {1})", frequency.MaxValue, String.Join(", ", longestTermChangwat)));
+            builder.AppendLine();
+            if ( vacantChangwat.Any() )
+            {
+                builder.Append(String.Join(Environment.NewLine, vacantChangwat.Select(x => x.english)));
+            }
+            var formCensusProblems = new StringDisplayForm("Governors", builder.ToString());
+            formCensusProblems.Show();
+        }
     }
 }
