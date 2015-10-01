@@ -5659,7 +5659,27 @@
   </entity>
   <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
     <population source="Census" year="1990" referencedate="1990-04-01">
-      <data type="total" total="747049" male="371566" female="375483" households="168125" />
+      <data type="total" total="747049" male="371566" female="375483" households="168125">
+        <agetable>
+          <age begin="0" end="5" total="62962" male="32065" female="30897" />
+          <age begin="5" end="9" total="79714" male="40682" female="39032" />
+          <age begin="10" end="14" total="85612" male="43771" female="41841" />
+          <age begin="15" end="19" total="83701" male="41975" female="41726" />
+          <age begin="20" end="24" total="77749" male="39379" female="38370" />
+          <age begin="25" end="29" total="67904" male="33605" female="34299" />
+          <age begin="30" end="34" total="57474" male="28343" female="29131" />
+          <age begin="35" end="39" total="45881" male="22480" female="23401" />
+          <age begin="40" end="44" total="37181" male="17871" female="19310" />
+          <age begin="45" end="49" total="32553" male="16018" female="16535" />
+          <age begin="50" end="54" total="30956" male="15108" female="15848" />
+          <age begin="55" end="59" total="26484" male="12613" female="13871" />
+          <age begin="60" end="64" total="20409" male="10047" female="10362" />
+          <age begin="65" end="69" total="13156" male="6441" female="6715" />
+          <age begin="70" end="74" total="9887" male="4616" female="5271" />
+          <age begin="75" end="79" total="6910" male="3040" female="3870" />
+          <age begin="80" end="120" total="8516" male="3512" female="5004" />
+        </agetable>
+      </data>
       <data type="privatehouseholds" total="739476" male="365125" female="374351" households="167765" />
       <data type="collectivehouseholds" total="7573" male="6441" female="1132" households="360" />
       <data type="agricultural" total="467543" households="100819" />
@@ -5694,7 +5714,27 @@
     </population>
     <entity type="Amphoe" geocode="8401" name="เมืองสุราษฎร์ธานี" english="Mueang Surat Thani">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="125257" male="61798" female="63459" households="29632" />
+        <data type="total" total="125257" male="61798" female="63459" households="29632">
+          <agetable>
+            <age begin="0" end="5" total="8599" male="4330" female="4269" />
+            <age begin="5" end="9" total="11061" male="5648" female="5413" />
+            <age begin="10" end="14" total="12742" male="6449" female="6293" />
+            <age begin="15" end="19" total="13986" male="6789" female="7197" />
+            <age begin="20" end="24" total="14643" male="7289" female="7354" />
+            <age begin="25" end="29" total="13493" male="6499" female="6994" />
+            <age begin="30" end="34" total="11472" male="5610" female="5862" />
+            <age begin="35" end="39" total="8937" male="4462" female="4475" />
+            <age begin="40" end="44" total="7035" male="3509" female="3526" />
+            <age begin="45" end="49" total="5468" male="2799" female="2669" />
+            <age begin="50" end="54" total="4900" male="2405" female="2495" />
+            <age begin="55" end="59" total="4036" male="1899" female="2137" />
+            <age begin="60" end="64" total="3222" male="1577" female="1645" />
+            <age begin="65" end="69" total="1819" male="914" female="905" />
+            <age begin="70" end="74" total="1516" male="654" female="862" />
+            <age begin="75" end="79" total="995" male="461" female="534" />
+            <age begin="80" end="120" total="1333" male="504" female="829" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="121309" male="58575" female="62734" households="29544" />
         <data type="collectivehouseholds" total="3948" male="3223" female="725" households="88" />
         <data type="agricultural" total="33603" households="7397" />
@@ -6086,29 +6126,129 @@
   </entity>
   <entity type="Changwat" geocode="85" name="ระนอง" english="Ranong">
     <population source="Census" year="1990" referencedate="1990-04-01">
-      <data type="total" total="116913" male="60299" female="56614" />
+      <data type="total" total="116913" male="60299" female="56614" households="27309" />
+      <data type="privatehouseholds" total="115283" male="59011" female="56272" households="27216" />
+      <data type="collectivehouseholds" total="1630" male="1288" female="342" households="93" />
+      <data type="agricultural" total="51427" households="11579" />
+      <data type="municipal" total="18362" male="9119" female="9243" households="4415">
+        <data type="privatehouseholds" total="17903" male="8739" female="9164" households="4406" />
+        <data type="collectivehouseholds" total="459" male="380" female="79" households="9" />
+        <data type="agricultural" total="699" households="152" />
+      </data>
+      <data type="municipal" total="10685" male="5373" female="5312" households="2537">
+        <data type="privatehouseholds" total="10567" male="5299" female="5268" households="2524" />
+        <data type="collectivehouseholds" total="118" male="74" female="44" households="13" />
+        <data type="agricultural" total="1656" households="339" />
+      </data>
+      <data type="municipal" total="10685" male="5373" female="5312" households="2537">
+        <data type="privatehouseholds" total="10567" male="5299" female="5268" households="2524" />
+        <data type="collectivehouseholds" total="118" male="74" female="44" households="13" />
+        <data type="agricultural" total="1656" households="339" />
+      </data>
+      <data type="urbansanitary" total="87866" male="45807" female="42059" households="20357">
+        <data type="privatehouseholds" total="86813" male="44973" female="41840" households="20286" />
+        <data type="collectivehouseholds" total="1053" male="834" female="219" households="71" />
+        <data type="agricultural" total="49072" households="11088" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000006395</url>
       </reference>
     </population>
     <entity type="Amphoe" geocode="8501" name="เมืองระนอง" english="Mueang Ranong">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="58813" />
+        <data type="total" total="58813" male="30209" female="28604" households="13770" />
+        <data type="privatehouseholds" total="57337" male="29062" female="28275" households="13702" />
+        <data type="collectivehouseholds" total="1476" male="1147" female="329" households="68" />
+        <data type="agricultural" total="9795" households="2103" />
+        <data type="municipal" total="18362" male="9119" female="9243" households="4415" geocode="8599">
+          <data type="privatehouseholds" total="17903" male="8739" female="9164" households="4406" />
+          <data type="collectivehouseholds" total="459" male="380" female="79" households="9" />
+          <data type="agricultural" total="699" households="152" />
+        </data>
+        <data type="municipal" total="5590" male="2885" female="2705" households="1299">
+          <data type="privatehouseholds" total="5484" male="2823" female="2661" households="1287" />
+          <data type="collectivehouseholds" total="106" male="62" female="44" households="12" />
+          <data type="agricultural" total="412" households="89" />
+        </data>
+        <data type="municipal" total="5590" male="2885" female="2705" households="1299" geocode="8598 8597">
+          <data type="privatehouseholds" total="5484" male="2823" female="2661" households="1287" />
+          <data type="collectivehouseholds" total="106" male="62" female="44" households="12" />
+          <data type="agricultural" total="412" households="89" />
+        </data>
+        <data type="urbansanitary" total="34861" male="18205" female="16656" households="8056">
+          <data type="privatehouseholds" total="33950" male="17500" female="16450" households="8009" />
+          <data type="collectivehouseholds" total="911" male="705" female="206" households="47" />
+          <data type="agricultural" total="8684" households="1862" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="8502" name="ละอุ่น" english="La-un">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="9562" />
+        <data type="total" total="9562" male="5021" female="4541" households="2359" />
+        <data type="privatehouseholds" total="9542" male="5003" female="4539" households="2354" />
+        <data type="collectivehouseholds" total="20" male="18" female="2" households="5" />
+        <data type="agricultural" total="7092" households="1778" />
+        <data type="municipal" total="103" male="57" female="46" households="33">
+          <data type="privatehouseholds" total="103" male="57" female="46" households="33" />
+          <data type="collectivehouseholds" total="0" male="0" female="0" households="0" />
+          <data type="agricultural" total="11" households="3" />
+        </data>
+        <data type="municipal" total="103" male="57" female="46" households="33" geocode="8596">
+          <data type="privatehouseholds" total="103" male="57" female="46" households="33" />
+          <data type="collectivehouseholds" total="0" male="0" female="0" households="0" />
+          <data type="agricultural" total="11" households="3" />
+        </data>
+        <data type="urbansanitary" total="9459" male="4964" female="4495" households="2326">
+          <data type="privatehouseholds" total="9439" male="4946" female="4493" households="2321" />
+          <data type="collectivehouseholds" total="20" male="18" female="2" households="5" />
+          <data type="agricultural" total="7081" households="1775" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="8503" name="กะเปอร์" english="Kapoe">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="18900" />
+        <data type="total" total="18900" male="9742" female="9158" households="4125" />
+        <data type="privatehouseholds" total="18866" male="9711" female="9155" households="4117" />
+        <data type="collectivehouseholds" total="34" male="31" female="3" households="8" />
+        <data type="agricultural" total="13447" households="2834" />
+        <data type="municipal" total="1466" male="708" female="758" households="383">
+          <data type="privatehouseholds" total="1466" male="708" female="758" households="383" />
+          <data type="collectivehouseholds" total="0" male="0" female="0" households="0" />
+          <data type="agricultural" total="365" households="83" />
+        </data>
+        <data type="municipal" total="1466" male="708" female="758" households="383" geocode="8595">
+          <data type="privatehouseholds" total="1466" male="708" female="758" households="383" />
+          <data type="collectivehouseholds" total="0" male="0" female="0" households="0" />
+          <data type="agricultural" total="365" households="83" />
+        </data>
+        <data type="urbansanitary" total="17434" male="9034" female="8400" households="3742">
+          <data type="privatehouseholds" total="17400" male="9003" female="8397" households="3734" />
+          <data type="collectivehouseholds" total="34" male="31" female="3" households="8" />
+          <data type="agricultural" total="13082" households="2751" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="8504" name="กระบุรี" english="Kra Buri">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="29638" />
+        <data type="total" total="29638" male="15327" female="14311" households="7055" />
+        <data type="privatehouseholds" total="29538" male="15235" female="14303" households="7043" />
+        <data type="collectivehouseholds" total="100" male="92" female="8" households="12" />
+        <data type="agricultural" total="21093" households="4864" />
+        <data type="municipal" total="3526" male="1723" female="1803" households="822">
+          <data type="privatehouseholds" total="3514" male="1711" female="1803" households="821" />
+          <data type="collectivehouseholds" total="12" male="12" female="0" households="1" />
+          <data type="agricultural" total="868" households="164" />
+        </data>
+        <data type="municipal" total="3526" male="1723" female="1803" households="822" geocode="8594">
+          <data type="privatehouseholds" total="3514" male="1711" female="1803" households="821" />
+          <data type="collectivehouseholds" total="12" male="12" female="0" households="1" />
+          <data type="agricultural" total="868" households="164" />
+        </data>
+        <data type="urbansanitary" total="26112" male="13604" female="12508" households="6233">
+          <data type="privatehouseholds" total="26024" male="13524" female="12500" households="6222" />
+          <data type="collectivehouseholds" total="88" male="80" female="8" households="11" />
+          <data type="agricultural" total="20225" households="4700" />
+        </data>
       </population>
     </entity>
     <entitycount year="1990">
