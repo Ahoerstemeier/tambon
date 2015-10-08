@@ -89,6 +89,8 @@ namespace De.AHoerstemeier.Tambon
         // for Gazette entries
         public const String PropertyIdSignatory = "P1891";
 
+        public const String PropertyFullTextAvailableAt = "P953";
+
         public const String PropertyIdPublishedIn = "P1433";
         public const String ItemIdRoyalGazette = "Q869928";
         public const String PropertyIdPublicationDate = "P577";

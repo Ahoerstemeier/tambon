@@ -676,6 +676,11 @@ namespace De.AHoerstemeier.Tambon.UI
             result += Environment.NewLine + String.Format("LAO without latest history: {0} ({1} TAO)",
                 localGovernmentWithoutLatestHistory.Count(),
                 localGovernmentWithoutLatestHistory.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+            var localGovernmentWithoutCreation = localGovernmentExpectingHistory.Where(x =>
+                !x.history.Items.Any(y => y is HistoryCreate)).ToList();
+            result += String.Format("LAO without creation history: {0} ({1} TAO)",
+                localGovernmentWithoutCreation.Count(),
+                localGovernmentWithoutCreation.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
             txtLocalGovernment.Text = result;
         }
 
