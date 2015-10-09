@@ -1115,6 +1115,19 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 var population = entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year);
                 Int32 diff = 0;
+
+                var notDistinctPopulationDataTypes =
+                    from list in population.data
+                    group list by list.type into grouped
+                    where grouped.Count() > 1
+                    select grouped;
+
+                foreach ( var notDistinctType in notDistinctPopulationDataTypes )
+                {
+                    builder.AppendFormat("{0} ({1}): {2} present {3} times)", entity.english, entity.geocode, notDistinctType.Key, notDistinctType.Count());
+                    builder.AppendLine();
+                }
+
                 foreach ( var data in population.data )
                 {
                     if ( data.male != 0 && data.female != 0 )
@@ -1252,8 +1265,8 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 builder.Append(String.Join(Environment.NewLine, vacantChangwat.Select(x => x.english)));
             }
-            var formCensusProblems = new StringDisplayForm("Governors", builder.ToString());
-            formCensusProblems.Show();
+            var formGovernors = new StringDisplayForm("Governors", builder.ToString());
+            formGovernors.Show();
         }
     }
 }
