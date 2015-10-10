@@ -118,6 +118,15 @@ namespace De.AHoerstemeier.Tambon
 
         public const String ItemSquareKilometer = "Q712226";
 
+        // for symbols
+        public const String PropertyOfficialSymbol = "P2238";
+
+        public const String PropertyGenericAs = "P794";
+        public const String ItemTree = "Q10884";
+        public const String ItemFlower = "Q506";
+        public const String ItemAquaticAnimal = "Q1756633";
+        public const String ItemColor = "Q1075";
+
         // source statements for population
         public static Dictionary<Int16, String> ItemCensus = new Dictionary<Int16, String>()
         {
