@@ -5753,23 +5753,25 @@
     <entity type="Amphoe" geocode="8402" name="กาญจนดิษฐ์" english="Kanchanadit">
       <population source="Census" year="1990" referencedate="1990-04-01">
         <data type="total" total="77214" male="38480" female="38734" households="17255">
-          <age begin="0" end="5" total="5809" male="2949" female="2860" />
-          <age begin="5" end="9" total="8336" male="4318" female="4018" />
-          <age begin="10" end="14" total="9121" male="4756" female="4365" />
-          <age begin="15" end="19" total="8959" male="4432" female="4527" />
-          <age begin="20" end="24" total="7931" male="3969" female="3962" />
-          <age begin="25" end="29" total="6910" male="3338" female="3572" />
-          <age begin="30" end="34" total="5920" male="2921" female="2999" />
-          <age begin="35" end="39" total="4568" male="2276" female="2292" />
-          <age begin="40" end="44" total="3961" male="1906" female="2055" />
-          <age begin="45" end="49" total="3470" male="1673" female="1797" />
-          <age begin="50" end="54" total="3351" male="1646" female="1705" />
-          <age begin="55" end="59" total="2799" male="1337" female="1462" />
-          <age begin="60" end="64" total="2255" male="1200" female="1055" />
-          <age begin="65" end="69" total="1291" male="616" female="675" />
-          <age begin="70" end="74" total="951" male="465" female="486" />
-          <age begin="75" end="79" total="667" male="286" female="381" />
-          <age begin="80" end="120" total="915" male="392" female="523" />
+          <agetable>
+            <age begin="0" end="5" total="5809" male="2949" female="2860" />
+            <age begin="5" end="9" total="8336" male="4318" female="4018" />
+            <age begin="10" end="14" total="9121" male="4756" female="4365" />
+            <age begin="15" end="19" total="8959" male="4432" female="4527" />
+            <age begin="20" end="24" total="7931" male="3969" female="3962" />
+            <age begin="25" end="29" total="6910" male="3338" female="3572" />
+            <age begin="30" end="34" total="5920" male="2921" female="2999" />
+            <age begin="35" end="39" total="4568" male="2276" female="2292" />
+            <age begin="40" end="44" total="3961" male="1906" female="2055" />
+            <age begin="45" end="49" total="3470" male="1673" female="1797" />
+            <age begin="50" end="54" total="3351" male="1646" female="1705" />
+            <age begin="55" end="59" total="2799" male="1337" female="1462" />
+            <age begin="60" end="64" total="2255" male="1200" female="1055" />
+            <age begin="65" end="69" total="1291" male="616" female="675" />
+            <age begin="70" end="74" total="951" male="465" female="486" />
+            <age begin="75" end="79" total="667" male="286" female="381" />
+            <age begin="80" end="120" total="915" male="392" female="523" />
+          </agetable>
         </data>
         <data type="privatehouseholds" total="77088" male="38358" female="38730" households="17233" />
         <data type="collectivehouseholds" total="126" male="122" female="4" households="22" />
@@ -5798,7 +5800,27 @@
     </entity>
     <entity type="Amphoe" geocode="8403" name="ดอนสัก" english="Don Sak">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="29341" male="14588" female="14753" households="6521" />
+        <data type="total" total="29341" male="14588" female="14753" households="6521">
+          <agetable>
+            <age begin="0" end="5" total="2615" male="1303" female="1312" />
+            <age begin="5" end="9" total="3464" male="1750" female="1714" />
+            <age begin="10" end="14" total="3569" male="1777" female="1792" />
+            <age begin="15" end="19" total="3487" male="1793" female="1694" />
+            <age begin="20" end="24" total="2871" male="1435" female="1436" />
+            <age begin="25" end="29" total="2497" male="1242" female="1255" />
+            <age begin="30" end="34" total="2111" male="1014" female="1097" />
+            <age begin="35" end="39" total="1773" male="859" female="914" />
+            <age begin="40" end="44" total="1502" male="696" female="806" />
+            <age begin="45" end="49" total="1341" male="703" female="638" />
+            <age begin="50" end="54" total="1103" male="565" female="538" />
+            <age begin="55" end="59" total="877" male="451" female="426" />
+            <age begin="60" end="64" total="799" male="375" female="424" />
+            <age begin="65" end="69" total="503" male="265" female="238" />
+            <age begin="70" end="74" total="345" male="180" female="165" />
+            <age begin="75" end="79" total="197" male="90" female="107" />
+            <age begin="80" end="120" total="287" male="90" female="197" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="29232" male="14497" female="14735" households="6500" />
         <data type="collectivehouseholds" total="109" male="91" female="18" households="21" />
         <data type="agricultural" total="21095" households="4525" />
@@ -5822,23 +5844,25 @@
     <entity type="Amphoe" geocode="8404" name="เกาะสมุย" english="Ko Samui">
       <population source="Census" year="1990" referencedate="1990-04-01">
         <data type="total" total="29793" male="14548" female="15245" households="8103">
-          <age begin="0" end="5" total="1887" male="1052" female="835" />
-          <age begin="5" end="9" total="2146" male="1085" female="1061" />
-          <age begin="10" end="14" total="2422" male="1176" female="1246" />
-          <age begin="15" end="19" total="2383" male="1148" female="1235" />
-          <age begin="20" end="24" total="3018" male="1436" female="1582" />
-          <age begin="25" end="29" total="3058" male="1512" female="1546" />
-          <age begin="30" end="34" total="2522" male="1265" female="1257" />
-          <age begin="35" end="39" total="2063" male="997" female="1066" />
-          <age begin="40" end="44" total="1712" male="824" female="888" />
-          <age begin="45" end="49" total="1332" male="631" female="701" />
-          <age begin="50" end="54" total="1600" male="743" female="857" />
-          <age begin="55" end="59" total="1532" male="725" female="807" />
-          <age begin="60" end="64" total="1296" male="622" female="674" />
-          <age begin="65" end="69" total="850" male="416" female="434" />
-          <age begin="70" end="74" total="758" male="357" female="401" />
-          <age begin="75" end="79" total="530" male="246" female="284" />
-          <age begin="80" end="120" total="684" male="313" female="371" />
+          <agetable>
+            <age begin="0" end="5" total="1887" male="1052" female="835" />
+            <age begin="5" end="9" total="2146" male="1085" female="1061" />
+            <age begin="10" end="14" total="2422" male="1176" female="1246" />
+            <age begin="15" end="19" total="2383" male="1148" female="1235" />
+            <age begin="20" end="24" total="3018" male="1436" female="1582" />
+            <age begin="25" end="29" total="3058" male="1512" female="1546" />
+            <age begin="30" end="34" total="2522" male="1265" female="1257" />
+            <age begin="35" end="39" total="2063" male="997" female="1066" />
+            <age begin="40" end="44" total="1712" male="824" female="888" />
+            <age begin="45" end="49" total="1332" male="631" female="701" />
+            <age begin="50" end="54" total="1600" male="743" female="857" />
+            <age begin="55" end="59" total="1532" male="725" female="807" />
+            <age begin="60" end="64" total="1296" male="622" female="674" />
+            <age begin="65" end="69" total="850" male="416" female="434" />
+            <age begin="70" end="74" total="758" male="357" female="401" />
+            <age begin="75" end="79" total="530" male="246" female="284" />
+            <age begin="80" end="120" total="684" male="313" female="371" />
+          </agetable>
         </data>
         <data type="privatehouseholds" total="29202" male="14172" female="15030" households="8052" />
         <data type="collectivehouseholds" total="591" male="376" female="215" households="51" />
@@ -5858,23 +5882,25 @@
     <entity type="Amphoe" geocode="8405" name="เกาะพะงัน" english="Ko Pha-ngan">
       <population source="Census" year="1990" referencedate="1990-04-01">
         <data type="total" total="6669" male="3304" female="3365" households="1817">
-          <age begin="0" end="5" total="463" male="252" female="211" />
-          <age begin="5" end="9" total="503" male="242" female="261" />
-          <age begin="10" end="14" total="590" male="311" female="279" />
-          <age begin="15" end="19" total="552" male="262" female="290" />
-          <age begin="20" end="24" total="643" male="326" female="317" />
-          <age begin="25" end="29" total="675" male="347" female="328" />
-          <age begin="30" end="34" total="564" male="288" female="276" />
-          <age begin="35" end="39" total="458" male="218" female="240" />
-          <age begin="40" end="44" total="378" male="197" female="181" />
-          <age begin="45" end="49" total="332" male="152" female="180" />
-          <age begin="50" end="54" total="355" male="173" female="182" />
-          <age begin="55" end="59" total="343" male="158" female="185" />
-          <age begin="60" end="64" total="250" male="119" female="131" />
-          <age begin="65" end="69" total="195" male="90" female="105" />
-          <age begin="70" end="74" total="121" male="62" female="59" />
-          <age begin="75" end="79" total="107" male="40" female="67" />
-          <age begin="80" end="120" total="140" male="67" female="73" />
+          <agetable>
+            <age begin="0" end="5" total="463" male="252" female="211" />
+            <age begin="5" end="9" total="503" male="242" female="261" />
+            <age begin="10" end="14" total="590" male="311" female="279" />
+            <age begin="15" end="19" total="552" male="262" female="290" />
+            <age begin="20" end="24" total="643" male="326" female="317" />
+            <age begin="25" end="29" total="675" male="347" female="328" />
+            <age begin="30" end="34" total="564" male="288" female="276" />
+            <age begin="35" end="39" total="458" male="218" female="240" />
+            <age begin="40" end="44" total="378" male="197" female="181" />
+            <age begin="45" end="49" total="332" male="152" female="180" />
+            <age begin="50" end="54" total="355" male="173" female="182" />
+            <age begin="55" end="59" total="343" male="158" female="185" />
+            <age begin="60" end="64" total="250" male="119" female="131" />
+            <age begin="65" end="69" total="195" male="90" female="105" />
+            <age begin="70" end="74" total="121" male="62" female="59" />
+            <age begin="75" end="79" total="107" male="40" female="67" />
+            <age begin="80" end="120" total="140" male="67" female="73" />
+          </agetable>
         </data>
         <data type="privatehouseholds" total="6604" male="3266" female="3338" households="1807" />
         <data type="collectivehouseholds" total="65" male="38" female="27" households="10" />
@@ -5888,7 +5914,27 @@
     </entity>
     <entity type="Amphoe" geocode="8406" name="ไชยา" english="Chaiya">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="39539" male="19245" female="20294" households="8818" />
+        <data type="total" total="39539" male="19245" female="20294" households="8818">
+          <agetable>
+            <age begin="0" end="5" total="2766" male="1420" female="1346" />
+            <age begin="5" end="9" total="3944" male="1987" female="1957" />
+            <age begin="10" end="14" total="4299" male="2255" female="2044" />
+            <age begin="15" end="19" total="4303" male="2121" female="2182" />
+            <age begin="20" end="24" total="3671" male="1850" female="1821" />
+            <age begin="25" end="29" total="3056" male="1546" female="1510" />
+            <age begin="30" end="34" total="2690" male="1239" female="1451" />
+            <age begin="35" end="39" total="2367" male="1118" female="1249" />
+            <age begin="40" end="44" total="1920" male="847" female="1073" />
+            <age begin="45" end="49" total="1945" male="906" female="1039" />
+            <age begin="50" end="54" total="2010" male="941" female="1069" />
+            <age begin="55" end="59" total="1916" male="889" female="1027" />
+            <age begin="60" end="64" total="1365" male="657" female="708" />
+            <age begin="65" end="69" total="1103" male="512" female="591" />
+            <age begin="70" end="74" total="774" male="371" female="403" />
+            <age begin="75" end="79" total="620" male="253" female="367" />
+            <age begin="80" end="120" total="790" male="333" female="457" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="39211" male="18949" female="20262" households="8792" />
         <data type="collectivehouseholds" total="328" male="296" female="32" households="26" />
         <data type="agricultural" total="26884" households="5882" />
@@ -5916,7 +5962,27 @@
     </entity>
     <entity type="Amphoe" geocode="8407" name="ท่าชนะ" english="Tha Chana">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="29481" male="14535" female="14946" households="7189" />
+        <data type="total" total="29481" male="14535" female="14946" households="7189">
+          <agetable>
+            <age begin="0" end="5" total="2051" male="1084" female="967" />
+            <age begin="5" end="9" total="3099" male="1560" female="1539" />
+            <age begin="10" end="14" total="3539" male="1809" female="1730" />
+            <age begin="15" end="19" total="2965" male="1559" female="1406" />
+            <age begin="20" end="24" total="2546" male="1315" female="1231" />
+            <age begin="25" end="29" total="2184" male="1017" female="1167" />
+            <age begin="30" end="34" total="2103" male="986" female="1117" />
+            <age begin="35" end="39" total="1759" male="872" female="887" />
+            <age begin="40" end="44" total="1588" male="700" female="888" />
+            <age begin="45" end="49" total="1475" male="686" female="789" />
+            <age begin="50" end="54" total="1590" male="767" female="823" />
+            <age begin="55" end="59" total="1426" male="670" female="756" />
+            <age begin="60" end="64" total="1057" male="527" female="530" />
+            <age begin="65" end="69" total="804" male="416" female="388" />
+            <age begin="70" end="74" total="490" male="232" female="258" />
+            <age begin="75" end="79" total="356" male="142" female="214" />
+            <age begin="80" end="120" total="449" male="193" female="256" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="29401" male="14456" female="14945" households="7174" />
         <data type="collectivehouseholds" total="80" male="79" female="1" households="15" />
         <data type="agricultural" total="22027" households="5196" />
@@ -5940,23 +6006,25 @@
     <entity type="Amphoe" geocode="8408" name="คีรีรัฐนิคม" english="Khiri Rat Nikhom">
       <population source="Census" year="1990" referencedate="1990-04-01">
         <data type="total" total="40617" male="20399" female="20218" households="9115">
-          <age begin="0" end="5" total="3326" male="1676" female="1650" />
-          <age begin="5" end="9" total="4240" male="2123" female="2117" />
-          <age begin="10" end="14" total="4682" male="2406" female="2276" />
-          <age begin="15" end="19" total="4746" male="2451" female="2295" />
-          <age begin="20" end="24" total="4468" male="2305" female="2163" />
-          <age begin="25" end="29" total="3554" male="1804" female="1750" />
-          <age begin="30" end="34" total="2882" male="1462" female="1420" />
-          <age begin="35" end="39" total="2379" male="1139" female="1240" />
-          <age begin="40" end="44" total="2016" male="987" female="1029" />
-          <age begin="45" end="49" total="1902" male="935" female="967" />
-          <age begin="50" end="54" total="1813" male="909" female="904" />
-          <age begin="55" end="59" total="1561" male="736" female="825" />
-          <age begin="60" end="64" total="1098" male="537" female="561" />
-          <age begin="65" end="69" total="725" male="376" female="349" />
-          <age begin="70" end="74" total="444" male="222" female="222" />
-          <age begin="75" end="79" total="382" male="170" female="212" />
-          <age begin="80" end="120" total="399" male="161" female="238" />
+          <agetable>
+            <age begin="0" end="5" total="3326" male="1676" female="1650" />
+            <age begin="5" end="9" total="4240" male="2123" female="2117" />
+            <age begin="10" end="14" total="4682" male="2406" female="2276" />
+            <age begin="15" end="19" total="4746" male="2451" female="2295" />
+            <age begin="20" end="24" total="4468" male="2305" female="2163" />
+            <age begin="25" end="29" total="3554" male="1804" female="1750" />
+            <age begin="30" end="34" total="2882" male="1462" female="1420" />
+            <age begin="35" end="39" total="2379" male="1139" female="1240" />
+            <age begin="40" end="44" total="2016" male="987" female="1029" />
+            <age begin="45" end="49" total="1902" male="935" female="967" />
+            <age begin="50" end="54" total="1813" male="909" female="904" />
+            <age begin="55" end="59" total="1561" male="736" female="825" />
+            <age begin="60" end="64" total="1098" male="537" female="561" />
+            <age begin="65" end="69" total="725" male="376" female="349" />
+            <age begin="70" end="74" total="444" male="222" female="222" />
+            <age begin="75" end="79" total="382" male="170" female="212" />
+            <age begin="80" end="120" total="399" male="161" female="238" />
+          </agetable>
         </data>
         <data type="privatehouseholds" total="40554" male="20338" female="20216" households="9103" />
         <data type="collectivehouseholds" total="63" male="61" female="2" households="12" />
@@ -5980,7 +6048,27 @@
     </entity>
     <entity type="Amphoe" geocode="8409" name="บ้านตาขุน" english="Ban Ta Khun">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="11921" male="6047" female="5874" households="2647" />
+        <data type="total" total="11921" male="6047" female="5874" households="2647">
+          <agetable>
+            <age begin="0" end="5" total="1154" male="611" female="543" />
+            <age begin="5" end="9" total="1500" male="790" female="710" />
+            <age begin="10" end="14" total="1452" male="754" female="698" />
+            <age begin="15" end="19" total="1351" male="698" female="653" />
+            <age begin="20" end="24" total="1150" male="593" female="557" />
+            <age begin="25" end="29" total="1004" male="467" female="537" />
+            <age begin="30" end="34" total="925" male="509" female="416" />
+            <age begin="35" end="39" total="678" male="312" female="366" />
+            <age begin="40" end="44" total="535" male="268" female="267" />
+            <age begin="45" end="49" total="464" male="247" female="217" />
+            <age begin="50" end="54" total="410" male="194" female="216" />
+            <age begin="55" end="59" total="389" male="187" female="202" />
+            <age begin="60" end="64" total="283" male="135" female="148" />
+            <age begin="65" end="69" total="221" male="99" female="122" />
+            <age begin="70" end="74" total="143" male="63" female="80" />
+            <age begin="75" end="79" total="119" male="58" female="61" />
+            <age begin="80" end="120" total="143" male="62" female="81" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="11899" male="6027" female="5872" households="2643" />
         <data type="collectivehouseholds" total="22" male="20" female="2" households="4" />
         <data type="agricultural" total="9218" households="1883" />
@@ -6003,7 +6091,27 @@
     </entity>
     <entity type="Amphoe" geocode="8410" name="พนม" english="Phanom">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="20797" male="10619" female="10178" households="4944" />
+        <data type="total" total="20797" male="10619" female="10178" households="4944">
+          <agetable>
+            <age begin="0" end="5" total="2036" male="988" female="1048" />
+            <age begin="5" end="9" total="2425" male="1244" female="1181" />
+            <age begin="10" end="14" total="2550" male="1326" female="1224" />
+            <age begin="15" end="19" total="2244" male="1143" female="1101" />
+            <age begin="20" end="24" total="2102" male="1023" female="1079" />
+            <age begin="25" end="29" total="2077" male="1086" female="991" />
+            <age begin="30" end="34" total="1627" male="864" female="763" />
+            <age begin="35" end="39" total="1203" male="608" female="595" />
+            <age begin="40" end="44" total="1029" male="491" female="538" />
+            <age begin="45" end="49" total="965" male="482" female="483" />
+            <age begin="50" end="54" total="839" male="440" female="399" />
+            <age begin="55" end="59" total="625" male="346" female="279" />
+            <age begin="60" end="64" total="487" male="285" female="202" />
+            <age begin="65" end="69" total="256" male="146" female="110" />
+            <age begin="70" end="74" total="142" male="61" female="81" />
+            <age begin="75" end="79" total="97" male="40" female="57" />
+            <age begin="80" end="120" total="93" male="46" female="47" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="20779" male="10603" female="10176" households="4936" />
         <data type="collectivehouseholds" total="18" male="16" female="2" households="8" />
         <data type="agricultural" total="17920" households="4194" />
@@ -6026,7 +6134,27 @@
     </entity>
     <entity type="Amphoe" geocode="8411" name="ท่าฉาง" english="Tha Chang">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="25698" male="12547" female="13151" households="5562" />
+        <data type="total" total="25698" male="12547" female="13151" households="5562">
+          <agetable>
+            <age begin="0" end="5" total="1945" male="1049" female="896" />
+            <age begin="5" end="9" total="2571" male="1312" female="1259" />
+            <age begin="10" end="14" total="2889" male="1428" female="1461" />
+            <age begin="15" end="19" total="2919" male="1492" female="1427" />
+            <age begin="20" end="24" total="2535" male="1246" female="1289" />
+            <age begin="25" end="29" total="2023" male="1043" female="980" />
+            <age begin="30" end="34" total="1741" male="845" female="896" />
+            <age begin="35" end="39" total="1499" male="710" female="789" />
+            <age begin="40" end="44" total="1372" male="631" female="741" />
+            <age begin="45" end="49" total="1152" male="561" female="591" />
+            <age begin="50" end="54" total="1216" male="528" female="688" />
+            <age begin="55" end="59" total="1000" male="463" female="537" />
+            <age begin="60" end="64" total="913" male="399" female="514" />
+            <age begin="65" end="69" total="641" male="312" female="329" />
+            <age begin="70" end="74" total="524" male="234" female="290" />
+            <age begin="75" end="79" total="353" male="149" female="204" />
+            <age begin="80" end="120" total="405" male="145" female="260" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="25649" male="12498" female="13151" households="5550" />
         <data type="collectivehouseholds" total="49" male="49" female="0" households="12" />
         <data type="agricultural" total="19178" households="4065" />
@@ -6049,7 +6177,27 @@
     </entity>
     <entity type="Amphoe" geocode="8412" name="บ้านนาสาร" english="Ban Na San">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="69312" male="34728" female="34584" households="15089" />
+        <data type="total" total="69312" male="34728" female="34584" households="15089">
+          <agetable>
+            <age begin="0" end="5" total="6288" male="3224" female="3064" />
+            <age begin="5" end="9" total="7809" male="3959" female="3850" />
+            <age begin="10" end="14" total="8355" male="4331" female="4024" />
+            <age begin="15" end="19" total="7928" male="4044" female="3884" />
+            <age begin="20" end="24" total="7056" male="3548" female="3508" />
+            <age begin="25" end="29" total="6319" male="3230" female="3089" />
+            <age begin="30" end="34" total="5220" male="2610" female="2610" />
+            <age begin="35" end="39" total="4155" male="2008" female="2147" />
+            <age begin="40" end="44" total="3234" male="1590" female="1644" />
+            <age begin="45" end="49" total="2885" male="1445" female="1440" />
+            <age begin="50" end="54" total="2596" male="1273" female="1323" />
+            <age begin="55" end="59" total="2323" male="1085" female="1238" />
+            <age begin="60" end="64" total="1754" male="819" female="935" />
+            <age begin="65" end="69" total="1104" male="541" female="563" />
+            <age begin="70" end="74" total="892" male="406" female="486" />
+            <age begin="75" end="79" total="612" male="278" female="334" />
+            <age begin="80" end="120" total="782" male="337" female="445" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="68583" male="34032" female="34551" households="15070" />
         <data type="collectivehouseholds" total="729" male="696" female="33" households="19" />
         <data type="agricultural" total="43393" households="9099" />
@@ -6067,7 +6215,27 @@
     </entity>
     <entity type="KingAmphoe" geocode="8413" name="บ้านนาเดิม" english="Ban Na Doem">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="19987" male="9821" female="10166" households="4399" />
+        <data type="total" total="19987" male="9821" female="10166" households="4399">
+          <agetable>
+            <age begin="0" end="5" total="1877" male="929" female="948" />
+            <age begin="5" end="9" total="2127" male="1054" female="1073" />
+            <age begin="10" end="14" total="2224" male="1125" female="1099" />
+            <age begin="15" end="19" total="2204" male="1081" female="1123" />
+            <age begin="20" end="24" total="2059" male="1046" female="1013" />
+            <age begin="25" end="29" total="1827" male="921" female="906" />
+            <age begin="30" end="34" total="1497" male="737" female="760" />
+            <age begin="35" end="39" total="1245" male="609" female="636" />
+            <age begin="40" end="44" total="990" male="468" female="522" />
+            <age begin="45" end="49" total="889" male="434" female="455" />
+            <age begin="50" end="54" total="756" male="358" female="398" />
+            <age begin="55" end="59" total="645" male="303" female="342" />
+            <age begin="60" end="64" total="557" male="283" female="274" />
+            <age begin="65" end="69" total="340" male="144" female="196" />
+            <age begin="70" end="74" total="295" male="142" female="153" />
+            <age begin="75" end="79" total="216" male="96" female="120" />
+            <age begin="80" end="120" total="239" male="91" female="148" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="19969" male="9803" female="10166" households="4391" />
         <data type="collectivehouseholds" total="18" male="18" female="0" households="8" />
         <data type="agricultural" total="13914" households="2984" />
@@ -6090,7 +6258,27 @@
     </entity>
     <entity type="Amphoe" geocode="8414" name="เคียนซา" english="Khian Sa">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="26613" male="13535" female="13078" households="5823" />
+        <data type="total" total="26613" male="13535" female="13078" households="5823">
+          <agetable>
+            <age begin="0" end="5" total="3200" male="1658" female="1542" />
+            <age begin="5" end="9" total="3590" male="1860" female="1730" />
+            <age begin="10" end="14" total="3188" male="1645" female="1543" />
+            <age begin="15" end="19" total="2863" male="1480" female="1383" />
+            <age begin="20" end="24" total="2696" male="1302" female="1394" />
+            <age begin="25" end="29" total="2518" male="1275" female="1243" />
+            <age begin="30" end="34" total="2101" male="1034" female="1067" />
+            <age begin="35" end="39" total="1527" male="765" female="762" />
+            <age begin="40" end="44" total="1152" male="597" female="555" />
+            <age begin="45" end="49" total="985" male="476" female="509" />
+            <age begin="50" end="54" total="861" male="462" female="399" />
+            <age begin="55" end="59" total="723" male="371" female="352" />
+            <age begin="60" end="64" total="496" male="257" female="239" />
+            <age begin="65" end="69" total="301" male="157" female="144" />
+            <age begin="70" end="74" total="193" male="102" female="91" />
+            <age begin="75" end="79" total="106" male="52" female="54" />
+            <age begin="80" end="120" total="113" male="42" female="71" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="26599" male="13522" female="13077" households="5819" />
         <data type="collectivehouseholds" total="14" male="13" female="1" households="4" />
         <data type="agricultural" total="23210" households="4992" />
@@ -6113,7 +6301,27 @@
     </entity>
     <entity type="Amphoe" geocode="8415" name="เวียงสระ" english="Wiang Sa">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="53081" male="26294" female="26787" households="10854" />
+        <data type="total" total="53081" male="26294" female="26787" households="10854">
+          <agetable>
+            <age begin="0" end="5" total="5401" male="2739" female="2662" />
+            <age begin="5" end="9" total="6441" male="3301" female="3140" />
+            <age begin="10" end="14" total="6668" male="3412" female="3256" />
+            <age begin="15" end="19" total="6378" male="3195" female="3183" />
+            <age begin="20" end="24" total="5298" male="2615" female="2683" />
+            <age begin="25" end="29" total="4599" male="2265" female="2334" />
+            <age begin="30" end="34" total="3836" male="1875" female="1961" />
+            <age begin="35" end="39" total="3075" male="1469" female="1606" />
+            <age begin="40" end="44" total="2273" male="1099" female="1174" />
+            <age begin="45" end="49" total="2049" male="983" female="1066" />
+            <age begin="50" end="54" total="1929" male="909" female="1020" />
+            <age begin="55" end="59" total="1697" male="772" female="925" />
+            <age begin="60" end="64" total="1268" male="667" female="601" />
+            <age begin="65" end="69" total="746" male="352" female="394" />
+            <age begin="70" end="74" total="615" male="300" female="315" />
+            <age begin="75" end="79" total="387" male="171" female="216" />
+            <age begin="80" end="120" total="421" male="170" female="251" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="52977" male="26202" female="26775" households="10843" />
         <data type="collectivehouseholds" total="104" male="92" female="12" households="11" />
         <data type="agricultural" total="36362" households="7273" />
@@ -6136,7 +6344,27 @@
     </entity>
     <entity type="Amphoe" geocode="8416" name="พระแสง" english="Phrasaeng">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="39928" male="20345" female="19583" households="8466" />
+        <data type="total" total="39928" male="20345" female="19583" households="8466">
+          <agetable>
+            <age begin="0" end="5" total="4966" male="2536" female="2430" />
+            <age begin="5" end="9" total="5369" male="2813" female="2556" />
+            <age begin="10" end="14" total="5256" male="2711" female="2545" />
+            <age begin="15" end="19" total="4556" male="2290" female="2266" />
+            <age begin="20" end="24" total="3929" male="1981" female="1948" />
+            <age begin="25" end="29" total="3553" male="1821" female="1732" />
+            <age begin="30" end="34" total="2812" male="1439" female="1373" />
+            <age begin="35" end="39" total="2058" male="1063" female="995" />
+            <age begin="40" end="44" total="1572" male="766" female="806" />
+            <age begin="45" end="49" total="1449" male="696" female="753" />
+            <age begin="50" end="54" total="1296" male="649" female="647" />
+            <age begin="55" end="59" total="1149" male="574" female="575" />
+            <age begin="60" end="64" total="746" male="398" female="348" />
+            <age begin="65" end="69" total="512" male="272" female="240" />
+            <age begin="70" end="74" total="327" male="158" female="169" />
+            <age begin="75" end="79" total="191" male="93" female="98" />
+            <age begin="80" end="120" total="187" male="85" female="102" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="39879" male="20296" female="19583" households="8460" />
         <data type="collectivehouseholds" total="49" male="49" female="0" households="6" />
         <data type="agricultural" total="32940" households="6843" />
@@ -6159,7 +6387,27 @@
     </entity>
     <entity type="Amphoe" geocode="8417" name="พุนพิน" english="Phunphin">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="89880" male="44675" female="45205" households="19408" />
+        <data type="total" total="89880" male="44675" female="45205" households="19408">
+          <agetable>
+            <age begin="0" end="5" total="6976" male="3449" female="3527" />
+            <age begin="5" end="9" total="9412" male="4747" female="4665" />
+            <age begin="10" end="14" total="10527" male="5315" female="5212" />
+            <age begin="15" end="19" total="10446" male="5300" female="5146" />
+            <age begin="20" end="24" total="9984" male="5504" female="4480" />
+            <age begin="25" end="29" total="7549" male="3676" female="3873" />
+            <age begin="30" end="34" total="6624" male="3226" female="3398" />
+            <age begin="35" end="39" total="5521" male="2696" female="2825" />
+            <age begin="40" end="44" total="4489" male="2077" female="2412" />
+            <age begin="45" end="49" total="4081" male="2040" female="2041" />
+            <age begin="50" end="54" total="3929" male="1955" female="1974" />
+            <age begin="55" end="59" total="3135" male="1473" female="1662" />
+            <age begin="60" end="64" total="2367" male="1087" female="1280" />
+            <age begin="65" end="69" total="1589" male="737" female="852" />
+            <age begin="70" end="74" total="1248" male="556" female="692" />
+            <age begin="75" end="79" total="920" male="381" female="539" />
+            <age begin="80" end="120" total="1083" male="456" female="627" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="88671" male="43521" female="45150" households="19372" />
         <data type="collectivehouseholds" total="1209" male="1154" female="55" households="36" />
         <data type="agricultural" total="49435" households="9976" />
@@ -6177,7 +6425,27 @@
     </entity>
     <entity type="KingAmphoe" geocode="8418" name="ชัยบุรี" english="Chai Buri">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="11921" male="6058" female="5863" households="2483" />
+        <data type="total" total="11921" male="6058" female="5863" households="2483">
+          <agetable>
+            <age begin="0" end="5" total="1603" male="816" female="787" />
+            <age begin="5" end="9" total="1677" male="889" female="788" />
+            <age begin="10" end="14" total="1539" male="785" female="754" />
+            <age begin="15" end="19" total="1431" male="697" female="734" />
+            <age begin="20" end="24" total="1149" male="596" female="553" />
+            <age begin="25" end="29" total="1008" male="516" female="492" />
+            <age begin="30" end="34" total="827" male="419" female="408" />
+            <age begin="35" end="39" total="616" male="299" female="317" />
+            <age begin="40" end="44" total="423" male="218" female="205" />
+            <age begin="45" end="49" total="369" male="169" female="200" />
+            <age begin="50" end="54" total="402" male="191" female="211" />
+            <age begin="55" end="59" total="308" male="174" female="134" />
+            <age begin="60" end="64" total="196" male="103" female="93" />
+            <age begin="65" end="69" total="156" male="76" female="80" />
+            <age begin="70" end="74" total="109" male="51" female="58" />
+            <age begin="75" end="79" total="55" male="34" female="21" />
+            <age begin="80" end="120" total="53" male="25" female="28" />
+          </agetable>
+        </data>
         <data type="privatehouseholds" total="11870" male="6010" female="5860" households="2476" />
         <data type="collectivehouseholds" total="51" male="48" female="3" households="7" />
         <data type="agricultural" total="10423" households="2162" />
