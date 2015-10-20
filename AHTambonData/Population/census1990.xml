@@ -5048,7 +5048,30 @@
   </entity>
   <entity type="Changwat" geocode="75" name="สมุทรสงคราม" english="Samut Songkhram">
     <population source="Census" year="1990" referencedate="1990-04-01">
-      <data type="total" total="191125" male="91328" female="99797" />
+      <data type="total" total="191125" male="91328" female="99797" households="43839" />
+      <data type="privatehouseholds" total="188571" male="89078" female="99493" households="43720" />
+      <data type="collectivehouseholds" total="2554" male="2250" female="304" households="119" />
+      <data type="agricultural" total="47211" households="11111" />
+      <data type="municipal" total="43801" male="20606" female="23195" households="9578">
+        <data type="privatehouseholds" total="43203" male="20169" female="23034" households="9549" />
+        <data type="collectivehouseholds" total="598" male="437" female="161" households="29" />
+        <data type="agricultural" total="1949" households="407" />
+      </data>
+      <data type="sanitary" total="4550" male="2070" female="2480" households="1193">
+        <data type="privatehouseholds" total="4513" male="2033" female="2480" households="1189" />
+        <data type="collectivehouseholds" total="37" male="37" female="0" households="4" />
+        <data type="agricultural" total="900" households="251" />
+        <data type="ruralsanitary" total="4550" male="2070" female="2480" households="1193">
+          <data type="privatehouseholds" total="4513" male="2033" female="2480" households="1189" />
+          <data type="collectivehouseholds" total="37" male="37" female="0" households="4" />
+          <data type="agricultural" total="900" households="251" />
+        </data>
+      </data>
+      <data type="nonmunicipalsanitary" total="142774" male="68652" female="74122" households="33068">
+        <data type="privatehouseholds" total="140855" male="66876" female="73979" households="32982" />
+        <data type="collectivehouseholds" total="1919" male="1776" female="143" households="86" />
+        <data type="agricultural" total="44362" households="10453" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000006907</url>
         <book isbn="9748090205" title="สำมะโนประชากรและเคหะ พ.ศ. 2533 จังหวัดสมุทรสงคราม" author="สำนักงานสถิติแห่งชาติ" />
@@ -5056,17 +5079,62 @@
     </population>
     <entity type="Amphoe" geocode="7501" name="เมืองสมุทรสงคราม" english="Mueang Samut Songkhram">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="94059" />
+        <data type="total" total="94059" male="45595" female="48464" households="20524" />
+        <data type="privatehouseholds" total="92564" male="44290" female="48274" households="20467" />
+        <data type="collectivehouseholds" total="1495" male="1305" female="190" households="57" />
+        <data type="agricultural" total="15839" households="3424" />
+        <data type="municipal" total="36027" male="16992" female="19035" households="7766" geocode="7599">
+          <data type="privatehouseholds" total="35535" male="16650" female="18885" households="7743" />
+          <data type="collectivehouseholds" total="492" male="342" female="150" households="23" />
+          <data type="agricultural" total="1158" households="213" />
+        </data>
+        <data type="nonmunicipalsanitary" total="58032" male="28603" female="29429" households="12758">
+          <data type="privatehouseholds" total="57029" male="27640" female="29389" households="12724" />
+          <data type="collectivehouseholds" total="1003" male="963" female="40" households="34" />
+          <data type="agricultural" total="14681" households="3211" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="7502" name="บางคนที" english="Bang Khonthi">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="35542" />
+        <data type="total" total="35542" male="16446" female="19096" households="8993" />
+        <data type="privatehouseholds" total="35286" male="16202" female="19084" households="8973" />
+        <data type="collectivehouseholds" total="256" male="244" female="12" households="20" />
+        <data type="agricultural" total="12621" households="3240" />
+        <data type="sanitary" total="4550" male="2070" female="2480" households="1193">
+          <data type="privatehouseholds" total="4513" male="2033" female="2480" households="1189" />
+          <data type="collectivehouseholds" total="37" male="37" female="0" households="4" />
+          <data type="agricultural" total="900" households="251" />
+          <data type="ruralsanitary" total="4550" male="2070" female="2480" households="1193" geocode="7597 7596">
+            <data type="privatehouseholds" total="4513" male="2033" female="2480" households="1189" />
+            <data type="collectivehouseholds" total="37" male="37" female="0" households="4" />
+            <data type="agricultural" total="900" households="251" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="30992" male="14376" female="16616" households="7800">
+          <data type="privatehouseholds" total="30773" male="14169" female="16604" households="7784" />
+          <data type="collectivehouseholds" total="219" male="207" female="12" households="16" />
+          <data type="agricultural" total="11721" households="2989" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="7503" name="อัมพวา" english="Amphawa">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="61524" />
+        <data type="total" total="61524" male="29287" female="32237" households="14322" />
+        <data type="privatehouseholds" total="60721" male="28586" female="32135" households="14280" />
+        <data type="collectivehouseholds" total="803" male="701" female="102" households="42" />
+        <data type="agricultural" total="18751" households="4447" />
+        <data type="municipal" total="7774" male="3614" female="4160" households="1812" geocode="7598">
+          <data type="privatehouseholds" total="7668" male="3519" female="4149" households="1806" />
+          <data type="collectivehouseholds" total="106" male="95" female="11" households="6" />
+          <data type="agricultural" total="791" households="194" />
+        </data>
+        <!-- 7595 (Mueang Mai) missing, created 1990-02-01 -->
+        <data type="nonmunicipalsanitary" total="53750" male="25673" female="28077" households="12510">
+          <data type="privatehouseholds" total="53053" male="25067" female="27986" households="12474" />
+          <data type="collectivehouseholds" total="697" male="606" female="91" households="36" />
+          <data type="agricultural" total="17960" households="4253" />
+        </data>
       </population>
     </entity>
   </entity>
