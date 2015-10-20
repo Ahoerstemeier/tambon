@@ -225,6 +225,15 @@ namespace De.AHoerstemeier.Tambon.UI
                     allEntities.Add(localGovernmentEntity);
                 }
             }
+            var allChangwat = allEntities.Where(x => x.type == EntityType.Changwat).ToList();
+            foreach ( var changwat in allChangwat )
+            {
+                var pao = changwat.CreateLocalGovernmentDummyEntity();
+                if ( pao != null )
+                {
+                    allEntities.Add(pao);
+                }
+            }
             var localGovernments = allEntities.Where(x => x.type.IsLocalGovernment());
             foreach ( var lao in localGovernments )
             {
