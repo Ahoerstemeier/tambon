@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"  type="Changwat" name="นนทบุรี" english="Nonthaburi" geocode="12">
+<entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" type="Changwat" name="นนทบุรี" english="Nonthaburi" geocode="12">
   <wiki wikidata="Q242932" openstreetmap="1908796" />
   <codes>
     <post value="11" />
@@ -90,6 +90,14 @@
     <bounding geocode="14" direction="north" />
     <bounding geocode="13" direction="east" />
   </area>
+  <history>
+    <create effective="1946-05-09" status="Gazette" type="Changwat" comment="Created from Phra Nakhon and Thon Buri">
+      <gazetteref volume="63" page="315" issue="29 ก" date="1946-05-09" />
+    </create>
+    <abolished type="Changwat" effective="1943-01-01" comment="Split between Phra Nakhon and Thon Buri">
+      <gazetteref volume="59" page="2447" issue="77 ก" date="1942-12-10" />
+    </abolished>
+  </history>
   <entity type="Amphoe" name="เมืองนนทบุรี" english="Mueang Nonthaburi" geocode="1201">
     <wiki wikidata="Q476050" openstreetmap="2688300" />
     <codes>
@@ -112,6 +120,17 @@
         <official title="DistrictOfficer" name="สุกิจ เจริญรัตนกุล" beginyear="1993" endyear="1994" />
       </officials>
     </office>
+    <history>
+      <rename effective="1946-09-24" status="Gazette" name="เมืองนนทบุรี" oldname="นนทบุรี">
+        <gazetteref volume="63" page="486" issue="63 ก" date="1946-09-24" />
+      </rename>
+      <rename effective="1943-01-12" status="Gazette" name="นนทบุรี" oldname="เมืองนนทบุรี">
+        <gazetteref volume="60" page="103" issue="3 ก" date="1943-01-12" />
+      </rename>
+      <rename effective="1938-11-14" status="Gazette" name="เมืองนนทบุรี" oldname="นนทบุรี">
+        <gazetteref volume="55" page="658" issue="0 ก" date="1938-11-14" />
+      </rename>
+    </history>
     <entity type="Tambon" name="สวนใหญ่" english="Suan Yai" geocode="120101">
       <wiki wikidata="Q15895273" />
     </entity>
@@ -302,6 +321,9 @@
           <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-05" status="Done">
             <meetingreference board="2" number="23" date="2013-05-01" />
           </statuschange>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="120203" coverage="completely" />
@@ -410,6 +432,16 @@
     </entity>
     <entity type="Tambon" name="ปลายบาง" english="Plai Bang" geocode="120208">
       <wiki wikidata="Q15895241" />
+      <office type="TAOOffice" obsolete="1">
+        <history>
+          <abolished effective="2004-09-15" status="Gazette" mergeto="1294" type="TAO">
+            <gazetteref volume="121" page="21" issue="พิเศษ 102 ง" date="2004-09-15" />
+          </abolished>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
+      </office>
       <entity type="Muban" geocode="12020801" name="บ้านตลาดศรีประวัติ" english="Ban Talat Si Prawat" />
       <entity type="Muban" geocode="12020802" name="บ้านคลองขื่อขวาง" english="Ban Khlong Khue Khwang" />
       <entity type="Muban" geocode="12020803" name="บ้านคลองปลายบาง" english="Ban Khlong Plai Bang" />
@@ -472,6 +504,9 @@
             <meetingreference date="2011-07-26" number="2" board="rename" />
           </rename>
           <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done" />
+          <create effective="1995-03-03" status="Gazette" type="TAO">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="120301" coverage="partially" comment="เฉพาะหมู่ที่ 1, 3-11, 13-15 และบางส่วนของหมู่ที่ 12" />
@@ -558,7 +593,12 @@
           <term begin="2003-08-24" end="2007-08-23" type="TAO" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done" />
+          <statuschange effective="2011-09-30" status="Gazette" old="TAO" new="ThesabanTambon">
+            <gazetteref volume="128" page="4" issue="พิเศษ 105 ง" date="2011-09-14" />
+          </statuschange>
+          <create effective="1995-03-03" status="Gazette" type="TAO">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="120303" coverage="partially" comment="เฉพาะหมู่ที่ 1-3, 6-10 และบางส่วนของหมู่ที่ 4, 11" />
@@ -598,7 +638,12 @@
           <term begin="2007-09-30" end="2011-09-11" type="TAO" size="16" endreason="StatusChange" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-12" status="Done" />
+          <statuschange effective="2011-09-12" status="Gazette" old="TAO" new="ThesabanTambon">
+            <gazetteref volume="128" page="5" issue="พิเศษ 156 ง" date="2011-12-23" />
+          </statuschange>
+          <create effective="1995-03-03" status="Gazette" type="TAO">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="120304" coverage="partially" comment="เฉพาะหมู่ที่ 4-8 และบางส่วนของหมู่ที่ 1-3" />
@@ -955,6 +1000,11 @@
           <entity geocode="120407" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1980-09-01" status="Gazette" type="Tambon" splitfrom="120402">
+          <gazetteref volume="97" page="20" issue="145 ง ฉบับพิเศษ" date="1980-09-18" />
+        </create>
+      </history>
       <entity type="Muban" geocode="12040701" name="บ้านคลองเจ้า" english="Ban Khlong Chao" />
       <entity type="Muban" geocode="12040702" name="บ้านฝั่งเหนือ" english="Ban Phueng Nuea" />
       <entity type="Muban" geocode="12040703" name="บ้านกล้วย" english="Ban Kluai" />
@@ -987,6 +1037,11 @@
           <entity geocode="120408" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1986-08-01" status="Gazette" type="Tambon" splitfrom="120403">
+          <gazetteref volume="103" page="101" issue="166 ง ฉบับพิเศษ" date="1986-09-26" />
+        </create>
+      </history>
       <entity type="Muban" geocode="12040801" name="บ้านหนองบัวxxx" english="Ban Nong Bua" />
       <entity type="Muban" geocode="12040802" name="บ้านคลองบางแพรก" english="Ban Khlong Bang Phraek" />
       <entity type="Muban" geocode="12040803" name="บ้านคลองนิ้วค่อม" english="Ban Khlong Nio Khom" />
@@ -1240,6 +1295,11 @@
           <entity geocode="120506" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1979-08-01" status="Gazette" type="Tambon" splitfrom="120502">
+          <gazetteref volume="96" page="11" issue="135 ง ฉบับพิเศษ" date="1979-08-08" />
+        </create>
+      </history>
       <entity type="Muban" geocode="12050601" name="บ้านคลองพระพิมลราชา" english="Ban Khlong Phra Phiman Ratcha" />
       <entity type="Muban" geocode="12050602" name="บ้านคลองห้าร้อย" english="Ban Khlong Ha Roi" />
       <entity type="Muban" geocode="12050603" name="บ้านคลองขวาง" english="Ban Khlong Khwang" />
@@ -1274,6 +1334,11 @@
           <entity geocode="120507" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1980-07-01" status="Gazette" type="Tambon" splitfrom="120501">
+          <gazetteref volume="97" page="2166" issue="104 ง" date="1980-07-08" />
+        </create>
+      </history>
       <entity type ="Muban" geocode="12050701" name="บ้านคลองเจ้าทวีวัฒนา" english="Ban Khlong Chao Thawi Wathhana" />
       <entity type ="Muban" geocode="12050702" name="บ้านคลองเจ้าทวีวัฒนา" english="Ban Khlong Chao Thawi Wathhana" />
       <entity type ="Muban" geocode="12050703" name="บ้านคลองสาม" english="Ban Khlong Sam" />
@@ -1688,6 +1753,9 @@
           <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Done">
             <meetingreference board="2" number="41" date="2013-08-20" />
           </statuschange>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="120611" coverage="completely" />
@@ -1721,6 +1789,11 @@
     </entity>
     <entity type="Tambon" name="คลองเกลือ" english="Khlong Kluea" geocode="120612">
       <wiki wikidata="Q15885916" openstreetmap="3322046" />
+      <history>
+        <create effective="1989-01-16" status="Gazette" type="Tambon" splitfrom="120601">
+          <gazetteref volume="106" page="2566" issue="55 ง" date="1989-04-11" />
+        </create>
+      </history>
       <entity type="Muban" geocode="12061201" name="บ้านคลองเกลือ" english="Ban Khlong Kluea" />
       <entity type="Muban" geocode="12061202" name="บ้านคลองเกลือ" english="Ban Khlong Kluea" />
       <entity type="Muban" geocode="12061203" name="บ้านคลองเกลือ" english="Ban Khlong Kluea" />
@@ -1755,6 +1828,17 @@
         <entity geocode="120105" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1995-09-24" status="Gazette" old="ThesabanMueang" new="ThesabanNakhon">
+        <gazetteref volume="112" page="29" issue="40 ก" date="1995-09-24" />
+      </statuschange>
+      <areachange effective="1988-07-25" status="Gazette" type="ThesabanMueang">
+        <gazetteref volume="105" page="1" issue="119 ก ฉบับพิเศษ" date="1988-07-25" />
+      </areachange>
+      <create effective="1937-02-14" status="Gazette" type="ThesabanMueang">
+        <gazetteref volume="53" page="1196" issue="0 ก" date="1937-02-14" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="บางบัวทอง" english="Bang Bua Thong" geocode="1298" parent="1204">
     <wiki wikidata="Q15199201" />
@@ -1788,6 +1872,14 @@
         <entity geocode="120408" coverage="partially" comment="เฉพาะหมู่ที่ 1 และบางส่วนของหมู่ที่ 3, 5, 6" />
       </areacoverage>
     </office>
+    <history>
+      <areachange effective="1995-06-26" status="Gazette" type="ThesabanMueang">
+        <gazetteref volume="112" page="1" issue="22 ก" date="1995-06-26" />
+      </areachange>
+      <create effective="1938-03-14" status="Gazette" type="ThesabanMueang">
+        <gazetteref volume="54" page="1859" issue="0 ก" date="1938-03-14" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanNakhon" name="ปากเกร็ด" english="Pak Kret" geocode="1297" parent="1206">
     <wiki wikidata="Q3360716" />
@@ -1819,6 +1911,23 @@
         <entity geocode="120612" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="2000-02-20" status="Gazette" old="ThesabanMueang" new="ThesabanNakhon">
+        <gazetteref volume="117" page="26" issue="10 ก" date="2000-02-20" />
+      </statuschange>
+      <statuschange effective="1995-08-08" status="Gazette" old="ThesabanTambon" new="ThesabanMueang">
+        <gazetteref volume="112" page="14" issue="32 ก" date="1995-08-08" />
+      </statuschange>
+      <statuschange effective="1991-12-31" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="108" page="97" issue="245 ก ฉบับพิเศษ" date="1991-12-31" />
+      </statuschange>
+      <areachange effective="1972-01-18" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="89" page="97" issue="10 ง" date="1972-01-18" />
+      </areachange>
+      <create effective="1955-09-17" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="72" page="22" issue="74 ง ฉบับพิเศษ" date="1955-09-17" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="12970001" name="ปากเกร็ดร่วมใจ 1" english="Pak Kret Ruam Chai 1" />
     <entity type="Chumchon" geocode="12970002" name="ปากเกร็ดร่วมใจ 2" english="Pak Kret Ruam Chai 2" />
     <entity type="Chumchon" geocode="12970003" name="ปากเกร็ดร่วมใจ 3" english="Pak Kret Ruam Chai 3" />
@@ -1908,6 +2017,17 @@
         <entity geocode="120202" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="2002-12-16" status="Gazette" old="ThesabanTambon" new="ThesabanMueang">
+        <gazetteref volume="119" page="5" issue="122 ก" date="2002-12-16" />
+      </statuschange>
+      <statuschange effective="1994-08-24" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="111" page="26" issue="36 ก" date="1994-08-24" />
+      </statuschange>
+      <create effective="1971-11-16" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="88" page="3204" issue="123 ง" date="1971-11-16" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="บางศรีเมือง" english="Bang Si Mueang" geocode="1295" parent="1201">
     <wiki wikidata="Q13025367" />
@@ -1930,6 +2050,17 @@
         <entity geocode="120108" coverage="partially" comment="เฉพาะหมู่ที่ 1 และบางส่วนของหมู่ที่ 2, 3, 9" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="2006-02-09" status="Gazette" old="ThesabanTambon" new="ThesabanMueang">
+        <gazetteref volume="123" page="5" issue="พิเศษ 29 ง" date="2006-02-23" />
+      </statuschange>
+      <statuschange effective="1997-10-02" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="114" page="17" issue="52 ก" date="1997-10-02" />
+      </statuschange>
+      <create effective="1985-06-01" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="102" page="11" issue="69 ง ฉบับพิเศษ" date="1985-06-01" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ปลายบาง" english="Plai Bang" geocode="1294" parent="1202">
     <wiki wikidata="Q15199188" />
@@ -1954,6 +2085,17 @@
         <entity geocode="120208" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <mergedwith effective="2004-09-15" status="Gazette" mergefrom="120208" mergefromtype="TAO">
+        <gazetteref volume="121" page="21" issue="พิเศษ 102 ง" date="2004-09-15" />
+      </mergedwith>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1994-10-13" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="111" page="21" issue="82 ง" date="1994-10-13" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="บางม่วง" english="Bang Muang" geocode="1293" parent="1203">
     <wiki wikidata="Q13025221" />
@@ -1986,6 +2128,14 @@
         <entity geocode="120304" coverage="partially" comment="เฉพาะบางส่วนของหมู่ที่ 1-3" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-08-03" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="7" issue="60 ง ฉบับพิเศษ" date="1956-08-03" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="บางใหญ่" english="Bang Yai" geocode="1292" parent="1203">
     <wiki wikidata="Q13025232" />
@@ -2017,6 +2167,14 @@
         <entity geocode="120306" coverage="partially" comment="เฉพาะบางส่วนของหมู่ที่ 1, 2, 4" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1990-02-01" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="107" page="1001" issue="19 ง" date="1990-02-01" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ไทรน้อย" english="Sai Noi" geocode="1291" parent="1205">
     <wiki wikidata="Q13025346" />
@@ -2052,6 +2210,20 @@
         <entity geocode="120506" coverage="partially" comment="เฉพาะบางส่วนของหมู่ที่ 1" />
       </areacoverage>
     </office>
+    <history>
+      <areachange effective="2013-03-22" status="Gazette" type="ThesabanTambon">
+        <gazetteref volume="130" page="24" issue="พิเศษ 37 ง" date="2013-03-22" />
+      </areachange>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <rename effective="1999-05-21" status="Gazette" name="ไทรน้อย" oldname="ราษฎร์นิยม">
+        <gazetteref volume="116" page="4" issue="พิเศษ 33 ง" date="1999-05-21" />
+      </rename>
+      <create effective="1956-09-20" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="1" issue="75 ง ฉบับพิเศษ" date="1956-09-20" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="12910001" name="ชุมชนตลาด" english="Chumchon Talat" comment="หมู่ 1 ตำบลคลองขวาง" />
     <entity type="Chumchon" geocode="12910002" name="ชุมชนวัดไทรใหญ่" english="Chumchon Wat Sai Yai" comment="หมู่ 5 ตำบลไทรน้อย" />
     <entity type="Chumchon" geocode="12910003" name="ชุมชนซอย 6" english="Chumchon Soi 6" comment="หมู่ 5 ตำบลไทรน้อย" />
@@ -2087,6 +2259,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2003-10-02" status="Gazette">
         <gazetteref volume="120" page="39" issue="95 ก" date="2003-10-02" />
       </statuschange>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ศาลากลาง" english="Sala Klang" geocode="1289" parent="1202" tambon="120209">
@@ -2115,6 +2290,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
         <meetingreference board="2" number="41" date="2008-05-30" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
 
