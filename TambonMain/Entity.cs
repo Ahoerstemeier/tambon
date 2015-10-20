@@ -186,7 +186,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Calculates the population data by summing up the data of the subentities.
+        /// Calculates the population data by summing up the data of the sub-entities.
         /// </summary>
         /// <param name="year">Year of data.</param>
         /// <param name="dataSource">Data source.</param>
@@ -388,7 +388,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Propagate the post code to the entites within the entity.
+        /// Propagate the post code to the entities within the entity.
         /// </summary>
         public void PropagatePostcode()
         {
@@ -407,7 +407,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Propagate the post code to the entites within the entity, and doing the same for every sub entity.
+        /// Propagate the post code to the entities within the entity, and doing the same for every sub entity.
         /// </summary>
         public void PropagatePostcodeRecursive()
         {
@@ -805,7 +805,7 @@ namespace De.AHoerstemeier.Tambon
         {
             if ( language == Language.German )
             {
-                // the hierachical expansion does not sound good in German
+                // the hierarchical expansion does not sound good in German
                 return GetGermanWikiDataDescription();
             }
 
@@ -959,7 +959,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Fills <see cref="OldGeocodes"/> for this entity and all its subentities.
+        /// Fills <see cref="OldGeocodes"/> for this entity and all its sub-entities.
         /// </summary>
         /// <remarks>Usually to be used on country or province entities.</remarks>
         public void CalcOldGeocodesRecursive()
@@ -988,7 +988,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Creates a special entity for the local governments which have no geocode by themself, but are still linked with the Tambon.
+        /// Creates a special entity for the local governments which have no geocode by themselves, but are still linked with the Tambon.
         /// </summary>
         /// <returns>Newly created entity, or <c>null</c> is instance has no local government to split off.</returns>
         public Entity CreateLocalGovernmentDummyEntity()
@@ -1190,6 +1190,11 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Checks whether the <see cref="EntityType.Muban"/> is consistent.
+        /// </summary>
+        /// <returns><c>true</c> if number is consistent, <c>false</c> otherwise.</returns>
+        /// <remarks>Checks for numbers being consecutively, and the council size <see cref="EntityType.TAO"/> fitting with the number.</remarks>
         public Boolean MubanNumberConsistent()
         {
             var nrOfMuban = entity.Count(x => x.type == EntityType.Muban);
@@ -1319,7 +1324,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Counts the types of entites in the given enumeration.
+        /// Counts the types of entities in the given enumeration.
         /// </summary>
         /// <param name="entities">Entities to count.</param>
         /// <returns>Number of entities by entity type.</returns>
