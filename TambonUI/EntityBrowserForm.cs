@@ -412,6 +412,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var unknownNeighbors = new List<UInt32>();
             var onewayNeighbors = new List<UInt32>();
+            var selfNeighbors = new List<UInt32>();
             foreach ( var entityWithNeighbors in entity.FlatList().Where(x => x.area.bounding.Any()) )
             {
                 foreach ( var neighbor in entityWithNeighbors.area.bounding.Select(x => x.geocode) )
@@ -429,6 +430,10 @@ namespace De.AHoerstemeier.Tambon.UI
                         }
                     }
                 }
+                if ( entityWithNeighbors.area.bounding.Any(x => x.geocode == entityWithNeighbors.geocode) )
+                {
+                    selfNeighbors.Add(entityWithNeighbors.geocode);
+                }
             }
             if ( unknownNeighbors.Any() )
             {
@@ -443,6 +448,15 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 text += String.Format("Neighboring entities not found in both direction ({0}):", onewayNeighbors.Count()) + Environment.NewLine;
                 foreach ( var code in onewayNeighbors )
+                {
+                    text += String.Format(" {0}", code) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+            if ( selfNeighbors.Any() )
+            {
+                text += String.Format("Neighboring entities includes self ({0}):", selfNeighbors.Count()) + Environment.NewLine;
+                foreach ( var code in selfNeighbors )
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
