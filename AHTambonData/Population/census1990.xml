@@ -10,7 +10,15 @@
   <!-- Missing: male/female numbers of all Amphoe -->
   <entity type="Bangkok" geocode="10" name="กรุงเทพมหานคร" english="Bangkok">
     <population source="Census" year="1990" referencedate="1990-04-01">
-      <data type="total" total="5882411" male="2831602" female="3050809" />
+      <data type="total" total="5882411" male="2831602" female="3050809" households="1341668" />
+      <data type="privatehouseholds" total="5719958" male="2727766" female="2992192" households="1333686" />
+      <data type="collectivehouseholds" total="162453" male="103836" female="58617" households="7982" />
+      <data type="agricultural" total="105472" households="20438" />
+      <data type="municipal" total="5882411" male="2831602" female="3050809" households="1341668">
+        <data type="privatehouseholds" total="5719958" male="2727766" female="2992192" households="1333686" />
+        <data type="collectivehouseholds" total="162453" male="103836" female="58617" households="7982" />
+        <data type="agricultural" total="105472" households="20438" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000000071</url>
         <book isbn="9748090566" title="สำมะโนประชากรและเคหะ พ.ศ. 2533 กรุงเทพมหานคร" author="สำนักงานสถิติแห่งชาติ" />
@@ -18,182 +26,290 @@
     </population>
     <entity type="Khet" geocode="1001" name="พระนคร" english="Phra Nakhon">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="103835" />
+        <data type="total" total="103835" male="50359" female="53476" households="21572" />
+        <data type="privatehouseholds" total="97474" male="44845" female="52629" households="21449" />
+        <data type="collectivehouseholds" total="6361" male="5514" female="847" households="123" />
+        <data type="agricultural" total="98" households="19" />
       </population>
     </entity>
     <entity type="Khet" geocode="1002" name="ดุสิต" english="Dusit">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="272465" />
+        <data type="total" total="272465" male="132367" female="140098" households="62149" />
+        <data type="privatehouseholds" total="265641" male="126129" female="139512" households="62053" />
+        <data type="collectivehouseholds" total="6824" male="6238" female="586" households="96" />
+        <data type="agricultural" total="513" households="91" />
       </population>
     </entity>
     <entity type="Khet" geocode="1003" name="หนองจอก" english="Nong Chok">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="56461" />
+        <data type="total" total="56461" male="28301" female="28160" households="11276" />
+        <data type="privatehouseholds" total="55923" male="27876" female="28047" households="11240" />
+        <data type="collectivehouseholds" total="538" male="425" female="113" households="36" />
+        <data type="agricultural" total="16884" households="3042" />
       </population>
     </entity>
     <entity type="Khet" geocode="1004" name="บางรัก" english="Bang Rak">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="79567" />
+        <data type="total" total="79567" male="37425" female="42142" households="18433" />
+        <data type="privatehouseholds" total="77663" male="36321" female="41342" households="18273" />
+        <data type="collectivehouseholds" total="1904" male="1104" female="800" households="160" />
+        <data type="agricultural" total="43" households="11" />
       </population>
     </entity>
     <entity type="Khet" geocode="1005" name="บางเขน" english="Bang Khen">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="202117" />
+        <data type="total" total="202117" male="98682" female="103435" households="49640" />
+        <data type="privatehouseholds" total="197809" male="94980" female="102829" households="49504" />
+        <data type="collectivehouseholds" total="4308" male="3702" female="606" households="136" />
+        <data type="agricultural" total="3097" households="588" />
       </population>
     </entity>
     <entity type="Khet" geocode="1006" name="บางกะปิ" english="Bang Kapi">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="295396" />
+        <data type="total" total="295396" male="139880" female="155516" households="76407" />
+        <data type="privatehouseholds" total="283190" male="134825" female="148365" households="75780" />
+        <data type="collectivehouseholds" total="12206" male="5055" female="7151" households="627" />
+        <data type="agricultural" total="1589" households="305" />
       </population>
     </entity>
     <entity type="Khet" geocode="1007" name="ปทุมวัน" english="Pathum Wan">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="150218" />
+        <data type="total" total="150218" male="71852" female="78366" households="31644" />
+        <data type="privatehouseholds" total="146301" male="69913" female="76388" households="31504" />
+        <data type="collectivehouseholds" total="3917" male="1939" female="1978" households="140" />
+        <data type="agricultural" total="280" households="94" />
       </population>
     </entity>
     <entity type="Khet" geocode="1008" name="ป้อมปราบศัตรูพ่าย" english="Pom Prap Sattru Phai">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="82350" />
+        <data type="total" total="82350" male="39486" female="42864" households="16729" />
+        <data type="privatehouseholds" total="80165" male="38161" female="42004" households="16609" />
+        <data type="collectivehouseholds" total="2185" male="1325" female="860" households="120" />
+        <data type="agricultural" total="74" households="14" />
       </population>
     </entity>
     <entity type="Khet" geocode="1009" name="พระโขนง" english="Phra Khanong">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="196021" />
+        <data type="total" total="196021" male="93677" female="102344" households="45512" />
+        <data type="privatehouseholds" total="191738" male="90633" female="101105" households="45331" />
+        <data type="collectivehouseholds" total="4283" male="3044" female="1239" households="181" />
+        <data type="agricultural" total="574" households="119" />
       </population>
     </entity>
     <entity type="Khet" geocode="1010" name="มีนบุรี" english="Min Buri">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="103403" />
+        <data type="total" total="103403" male="51739" female="51664" households="22603" />
+        <data type="privatehouseholds" total="101154" male="49912" female="51242" households="22521" />
+        <data type="collectivehouseholds" total="2249" male="1827" female="422" households="82" />
+        <data type="agricultural" total="12192" households="2184" />
       </population>
     </entity>
     <entity type="Khet" geocode="1011" name="ลาดกระบัง" english="Lat Krabang">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="77358" />
+        <data type="total" total="77358" male="37926" female="39432" households="17244" />
+        <data type="privatehouseholds" total="75550" male="36990" female="38560" households="17169" />
+        <data type="collectivehouseholds" total="1808" male="936" female="872" households="75" />
+        <data type="agricultural" total="6480" households="1174" />
       </population>
     </entity>
     <entity type="Khet" geocode="1012" name="ยานนาวา" english="Yan Nawa">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="102349" />
+        <data type="total" total="102349" male="49908" female="52441" households="23125" />
+        <data type="privatehouseholds" total="100953" male="49052" female="51901" households="22996" />
+        <data type="collectivehouseholds" total="1396" male="856" female="540" households="129" />
+        <data type="agricultural" total="426" households="80" />
       </population>
     </entity>
     <entity type="Khet" geocode="1013" name="สัมพันธวงศ์" english="Samphanthawong">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="39781" />
+        <data type="total" total="39781" male="19294" female="20487" households="8159" />
+        <data type="privatehouseholds" total="38471" male="18161" female="20310" households="8117" />
+        <data type="collectivehouseholds" total="1310" male="1133" female="177" households="42" />
+        <data type="agricultural" total="14" households="5" />
       </population>
     </entity>
     <entity type="Khet" geocode="1014" name="พญาไท" english="Phaya Thai">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="219767" />
+        <data type="total" total="219767" male="103995" female="115772" households="54004" />
+        <data type="privatehouseholds" total="215092" male="100296" female="114796" households="53898" />
+        <data type="collectivehouseholds" total="4675" male="3699" female="976" households="106" />
+        <data type="agricultural" total="385" households="78" />
       </population>
     </entity>
     <entity type="Khet" geocode="1015" name="ธนบุรี" english="Thon Buri">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="272344" />
+        <data type="total" total="272344" male="131071" female="141273" households="56692" />
+        <data type="privatehouseholds" total="266511" male="127499" female="139012" households="56332" />
+        <data type="collectivehouseholds" total="5833" male="3572" female="2261" households="360" />
+        <data type="agricultural" total="495" households="117" />
       </population>
     </entity>
     <entity type="Khet" geocode="1016" name="บางกอกใหญ่" english="Bangkok Yai">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="96242" />
+        <data type="total" total="96242" male="46856" female="49386" households="21062" />
+        <data type="privatehouseholds" total="91510" male="43355" female="48155" households="20830" />
+        <data type="collectivehouseholds" total="4732" male="3501" female="1231" households="232" />
+        <data type="agricultural" total="339" households="73" />
       </population>
     </entity>
     <entity type="Khet" geocode="1017" name="ห้วยขวาง" english="Huai Khwang">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="255207" />
+        <data type="total" total="255207" male="120200" female="135007" households="61794" />
+        <data type="privatehouseholds" total="249919" male="118048" female="131871" households="61381" />
+        <data type="collectivehouseholds" total="5288" male="2152" female="3136" households="413" />
+        <data type="agricultural" total="970" households="218" />
       </population>
     </entity>
     <entity type="Khet" geocode="1018" name="คลองสาน" english="Khlong San">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="124523" />
+        <data type="total" total="124523" male="59278" female="65245" households="25759" />
+        <data type="privatehouseholds" total="119232" male="56483" female="62749" households="25434" />
+        <data type="collectivehouseholds" total="5291" male="2795" female="2496" households="325" />
+        <data type="agricultural" total="229" households="47" />
       </population>
     </entity>
     <entity type="Khet" geocode="1019" name="ตลิ่งชัน" english="Taling Chan">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="110004" />
+        <data type="total" total="110004" male="53614" female="56390" households="24518" />
+        <data type="privatehouseholds" total="108414" male="52353" female="56061" households="24410" />
+        <data type="collectivehouseholds" total="1590" male="1261" female="329" households="108" />
+        <data type="agricultural" total="13826" households="2734" />
       </population>
     </entity>
     <entity type="Khet" geocode="1020" name="บางกอกน้อย" english="Bangkok Noi">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="164319" />
+        <data type="total" total="164319" male="78586" female="85733" households="36750" />
+        <data type="privatehouseholds" total="159025" male="75332" female="83693" households="36585" />
+        <data type="collectivehouseholds" total="5294" male="3254" female="2040" households="165" />
+        <data type="agricultural" total="1067" households="203" />
       </population>
     </entity>
     <entity type="Khet" geocode="1021" name="บางขุนเทียน" english="Bang Khun Thian">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="145235" />
+        <data type="total" total="145235" male="71973" female="73262" households="32765" />
+        <data type="privatehouseholds" total="136794" male="67163" female="69631" households="32277" />
+        <data type="collectivehouseholds" total="8441" male="4810" female="3631" households="488" />
+        <data type="agricultural" total="11117" households="2362" />
       </population>
     </entity>
     <entity type="Khet" geocode="1022" name="ภาษีเจริญ" english="Phasi Charoen">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="256450" />
+        <data type="total" total="256450" male="125263" female="131187" households="56707" />
+        <data type="privatehouseholds" total="248981" male="120515" female="128466" households="56222" />
+        <data type="collectivehouseholds" total="7469" male="4748" female="2721" households="485" />
+        <data type="agricultural" total="9966" households="1931" />
       </population>
     </entity>
     <entity type="Khet" geocode="1023" name="หนองแขม" english="Nong Khaem">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="84396" />
+        <data type="total" total="84396" male="41411" female="42985" households="19187" />
+        <data type="privatehouseholds" total="82248" male="39900" female="42348" households="19071" />
+        <data type="collectivehouseholds" total="2148" male="1511" female="637" households="116" />
+        <data type="agricultural" total="5240" households="1038" />
       </population>
     </entity>
     <entity type="Khet" geocode="1024" name="ราษฎร์บูรณะ" english="Rat Burana">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="183069" />
+        <data type="total" total="183069" male="89762" female="93307" households="40629" />
+        <data type="privatehouseholds" total="177654" male="86470" female="91184" households="40220" />
+        <data type="collectivehouseholds" total="5415" male="3292" female="2123" households="409" />
+        <data type="agricultural" total="4713" households="918" />
       </population>
     </entity>
     <entity type="Khet" geocode="1025" name="บางพลัด" english="Bang Phlat">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="164608" />
+        <data type="total" total="164608" male="77932" female="86676" households="37148" />
+        <data type="privatehouseholds" total="161810" male="75927" female="85883" households="36955" />
+        <data type="collectivehouseholds" total="2798" male="2005" female="793" households="193" />
+        <data type="agricultural" total="1215" households="252" />
       </population>
     </entity>
     <entity type="Khet" geocode="1027" name="บึงกุ่ม" english="Bueng Kum">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="181417" />
+        <data type="total" total="181417" male="86246" female="95171" households="44547" />
+        <data type="privatehouseholds" total="179474" male="85152" female="94322" households="44401" />
+        <data type="collectivehouseholds" total="1943" male="1094" female="849" households="146" />
+        <data type="agricultural" total="1745" households="320" />
       </population>
     </entity>
     <entity type="Khet" geocode="1028" name="สาทร" english="Sathon">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="130170" />
+        <data type="total" total="130170" male="62348" female="67822" households="29140" />
+        <data type="privatehouseholds" total="127265" male="60755" female="66510" households="28968" />
+        <data type="collectivehouseholds" total="2905" male="1593" female="1312" households="172" />
+        <data type="agricultural" total="246" households="45" />
       </population>
     </entity>
     <entity type="Khet" geocode="1029" name="บางซื่อ" english="Bang Sue">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="301611" />
+        <data type="total" total="301611" male="143579" female="158032" households="69786" />
+        <data type="privatehouseholds" total="299002" male="142046" female="156956" households="69624" />
+        <data type="collectivehouseholds" total="2609" male="1533" female="1076" households="162" />
+        <data type="agricultural" total="779" households="170" />
       </population>
     </entity>
     <entity type="Khet" geocode="1030" name="จตุจักร" english="Chatuchak">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="205872" />
+        <data type="total" total="205872" male="100773" female="105099" households="47836" />
+        <data type="privatehouseholds" total="189112" male="89036" female="100076" households="47597" />
+        <data type="collectivehouseholds" total="16760" male="11737" female="5023" households="239" />
+        <data type="agricultural" total="529" households="126" />
       </population>
     </entity>
     <entity type="Khet" geocode="1031" name="บางคอแหลม" english="Bang Kho Laem">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="130333" />
+        <data type="total" total="130333" male="62965" female="67368" households="28090" />
+        <data type="privatehouseholds" total="125927" male="60538" female="65389" households="27740" />
+        <data type="collectivehouseholds" total="4406" male="2427" female="1979" households="350" />
+        <data type="agricultural" total="438" households="101" />
       </population>
     </entity>
     <entity type="Khet" geocode="1032" name="ประเวศ" english="Prawet">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="228385" />
+        <data type="total" total="228385" male="109533" female="118852" households="49826" />
+        <data type="privatehouseholds" total="223922" male="107075" female="116847" households="49486" />
+        <data type="collectivehouseholds" total="4463" male="2458" female="2005" households="340" />
+        <data type="agricultural" total="3930" households="737" />
       </population>
     </entity>
     <entity type="Khet" geocode="1033" name="คลองเตย" english="Khlong Toei">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="277492" />
+        <data type="total" total="277492" male="131267" female="146225" households="63049" />
+        <data type="privatehouseholds" total="273718" male="129016" female="144702" households="62728" />
+        <data type="collectivehouseholds" total="3774" male="2251" female="1523" households="321" />
+        <data type="agricultural" total="693" households="161" />
       </population>
     </entity>
     <entity type="Khet" geocode="1035" name="จอมทอง" english="Chom Thong">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="166626" />
+        <data type="total" total="166626" male="81669" female="84957" households="36030" />
+        <data type="privatehouseholds" total="160561" male="77867" female="82694" households="35556" />
+        <data type="collectivehouseholds" total="6065" male="3802" female="2263" households="474" />
+        <data type="agricultural" total="3532" households="720" />
       </population>
     </entity>
     <entity type="Khet" geocode="1036" name="ดอนเมือง" english="Don Mueang">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="199891" />
+        <data type="total" total="199891" male="97969" female="101922" households="48616" />
+        <data type="privatehouseholds" total="195014" male="93903" female="101111" households="48447" />
+        <data type="collectivehouseholds" total="4877" male="4066" female="811" households="169" />
+        <data type="agricultural" total="639" households="135" />
       </population>
     </entity>
     <entity type="Khet" geocode="1037" name="ราชเทวี" english="Ratchathewi">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="100672" />
+        <data type="total" total="100672" male="46732" female="53940" households="24720" />
+        <data type="privatehouseholds" total="95931" male="44763" female="51168" households="24567" />
+        <data type="collectivehouseholds" total="4741" male="1969" female="2772" households="153" />
+        <data type="agricultural" total="161" households="38" />
       </population>
     </entity>
     <entity type="Khet" geocode="1038" name="ลาดพร้าว" english="Lat Phrao">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="122457" />
+        <data type="total" total="122457" male="57684" female="64773" households="28520" />
+        <data type="privatehouseholds" total="120810" male="56476" female="64334" households="28411" />
+        <data type="collectivehouseholds" total="1647" male="1208" female="439" households="109" />
+        <data type="agricultural" total="954" households="188" />
       </population>
     </entity>
     <entitycount year="1990">
