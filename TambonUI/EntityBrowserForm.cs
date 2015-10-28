@@ -770,11 +770,19 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             else
             {
-                HistoryList histories;
-                if ( _creationHistories.TryGetValue(subEntity.geocode, out histories) )
+                var histories = new HistoryList();
+                if ( _creationHistories.Keys.Contains(subEntity.geocode) )
                 {
-                    creationHistory = histories.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
+                    histories.Items.AddRange(_creationHistories[subEntity.geocode].Items);
                 }
+                foreach ( var oldGeocode in subEntity.OldGeocodes )
+                {
+                    if ( _creationHistories.Keys.Contains(oldGeocode) )
+                    {
+                        histories.Items.AddRange(_creationHistories[oldGeocode].Items);
+                    }
+                }
+                creationHistory = histories.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
                 if ( creationHistory != null )
                 {
                     item.SubItems.Add("(" + creationHistory.effective.ToString("yyyy-MM-dd") + ")");
