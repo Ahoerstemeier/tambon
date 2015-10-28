@@ -176,18 +176,19 @@ namespace De.AHoerstemeier.Tambon
             requestString.Append("txtSection=&");
             requestString.Append("txtFromDate=&");
             requestString.Append("txtToDate=&");
-            // requestString.Append("chkSpecial=special&");
+            requestString.Append("chkSpecial=special&");
             // requestString.Append("searchOption=adv&");
             requestString.Append("hidNowItem=txtTitle&");
             requestString.Append("hidFieldSort=&");
             requestString.Append("hidFieldSortText=&");
+            // requestString.Append("hidFieldList=" + MyUrlEncode("txtSearchTitle/txtToDate/txtToDate1/txtToDate2") + "&");
             requestString.Append("hidFieldList=" + MyUrlEncode("txtTitle/txtBookNo/txtSection/txtFromDate/txtToDate/selDocGroup1") + "&");
             //request.Append("txtDetail=&");
             requestString.Append("selDocGroup1=&");
             requestString.Append("selFromDay=&");
             requestString.Append("selFromMonth=&");
             requestString.Append("selFromYear=&");
-            requestString.Append("selToDay=&");
+            requestString.Append("selToDay=31&");
             requestString.Append("selToMonth=&");
             requestString.Append("selToYear=&");
             requestString.Append("radSearchType=new&");
@@ -217,7 +218,7 @@ namespace De.AHoerstemeier.Tambon
             client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0");
             client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
             client.Headers.Add("Accept-Language", "en-us,en;q=0.5");
-            client.Headers.Add("Accept-Encoding", "gzip,deflate");
+            // client.Headers.Add("Accept-Encoding", "gzip,deflate");
             client.Headers.Add("Accept-Charset", "UTF-8,*");
 
             client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
@@ -267,10 +268,13 @@ namespace De.AHoerstemeier.Tambon
             client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0");
             client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
             client.Headers.Add("Accept-Language", "en-us,en;q=0.5");
-            client.Headers.Add("Accept-Encoding", "gzip,deflate");
+            // client.Headers.Add("Accept-Encoding", "gzip,deflate");
             client.Headers.Add("Accept-Charset", "UTF-8,*");
-            System.IO.Stream lStream = client.OpenRead(_dataUrl);
-            return lStream;
+            System.IO.Stream receiveStream = client.OpenRead(_dataUrl);
+            MemoryStream memory = new MemoryStream();
+            TambonHelper.StreamCopy(receiveStream, memory);
+            memory.Seek(0, 0);
+            return memory;
         }
 
         private void PerformRequestPage(Int32 page)
@@ -289,7 +293,7 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        private const String EntryStart = "        <td width=\"50\" align=\"center\" nowrap class=\"row4\">";
+        private const String EntryStart = "<td width=\"50\" align=\"center\" nowrap class=\"row4\">";
 
         private const String PageStart = "onkeypress=\"EnterPage()\"> จากทั้งหมด";
 
@@ -308,33 +312,44 @@ namespace De.AHoerstemeier.Tambon
         {
             RoyalGazetteList result = new RoyalGazetteList();
             String currentLine = String.Empty;
-            int dataState = -1;
+            Int32 dataState = -1;
+            Int32 currentLineIndex = 0;
             StringBuilder entryData = new StringBuilder();
             try
             {
                 while ( (currentLine = reader.ReadLine()) != null )
                 {
-                    if ( currentLine.Contains(PageStart) )
+                    currentLineIndex++;
+                    currentLine = currentLine.Trim();
+                    if ( !String.IsNullOrWhiteSpace(currentLine) )
                     {
-                        String temp = currentLine.Substring(currentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
-                        _numberOfPages = Convert.ToInt32(temp);
-                    }
-                    else if ( currentLine.StartsWith(EntryStart) )
-                    {
-                        if ( entryData.Length > 0 )
+                        if ( currentLine.Contains(PageStart) )
                         {
-                            var current = ParseSingeItem(entryData.ToString());
-                            if ( current != null )
-                            {
-                                result.Add(current);
-                            }
-                            entryData.Remove(0, entryData.Length);
+                            String temp = currentLine.Substring(currentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
+                            _numberOfPages = Convert.ToInt32(temp);
                         }
-                        dataState++;
-                    }
-                    else if ( dataState >= 0 )
-                    {
-                        entryData.Append(currentLine.Trim() + " ");
+                        else if ( currentLine.StartsWith(EntryStart) )
+                        {
+                            if ( entryData.Length > 0 )
+                            {
+                                var current = ParseSingeItem(entryData.ToString());
+                                if ( current != null )
+                                {
+                                    result.Add(current);
+                                }
+                                else
+                                {
+                                    dataState++;
+                                    // failed to parse!
+                                }
+                                entryData.Remove(0, entryData.Length);
+                            }
+                            dataState++;
+                        }
+                        else if ( dataState >= 0 )
+                        {
+                            entryData.Append(currentLine.Trim() + " ");
+                        }
                     }
                 }
                 if ( entryData.Length > 0 )
@@ -423,13 +438,13 @@ namespace De.AHoerstemeier.Tambon
                 result = new RoyalGazetteList();
                 if ( _dataUrl != String.Empty )
                 {
-                    Stream lData = DoDataDownload(0);
-                    result = DoParseStream(lData);
+                    Stream receivedData = DoDataDownload(0);
+                    result = DoParseStream(receivedData);
                     for ( Int32 page = 2 ; page <= _numberOfPages ; page++ )
                     {
                         PerformRequestPage(page);
-                        Stream lDataPage = DoDataDownload(page);
-                        result.AddRange(DoParseStream(lDataPage));
+                        Stream receivedDataPage = DoDataDownload(page);
+                        result.AddRange(DoParseStream(receivedDataPage));
                     }
                 }
             }
