@@ -24,5 +24,10 @@ namespace De.AHoerstemeier.Tambon
         /// German (de)
         /// </summary>
         German,
+
+        /// <summary>
+        /// French (fr)
+        /// </summary>
+        French,
     }
 }
