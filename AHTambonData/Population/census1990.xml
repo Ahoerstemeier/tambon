@@ -319,7 +319,35 @@
   </entity>
   <entity type="Changwat" geocode="11" name="สมุทรปราการ" english="Samut Prakan">
     <population source="Census" year="1990" referencedate="1990-04-01">
-      <data type="total" total="769822" male="375053" female="394769" />
+      <data type="total" total="769822" male="375053" female="394769" households="175142" />
+      <data type="privatehouseholds" total="751418" male="365449" female="385969" households="174610" />
+      <data type="collectivehouseholds" total="18404" male="9604" female="8800" households="532" />
+      <data type="agricultural" total="68254" households="13976" />
+      <data type="municipal" total="76300" male="37394" female="38906" households="15522">
+        <data type="privatehouseholds" total="73050" male="34823" female="38227" households="15463" />
+        <data type="collectivehouseholds" total="3250" male="2571" female="679" households="59" />
+        <data type="agricultural" total="1243" households="215" />
+      </data>
+      <data type="sanitary" total="301171" male="146362" female="154809" households="70938">
+        <data type="privatehouseholds" total="288857" male="141245" female="147612" households="70581" />
+        <data type="collectivehouseholds" total="12314" male="5117" female="7197" households="357" />
+        <data type="agricultural" total="6220" households="1200" />
+        <data type="urbansanitary" total="299884" male="145769" female="154115" households="70650">
+          <data type="privatehouseholds" total="287570" male="140652" female="146918" households="70293" />
+          <data type="collectivehouseholds" total="12314" male="5117" female="7197" households="357" />
+          <data type="agricultural" total="5911" households="1142" />
+        </data>
+        <data type="ruralsanitary" total="1287" male="593" female="694" households="288">
+          <data type="privatehouseholds" total="1287" male="593" female="694" households="288" />
+          <data type="collectivehouseholds" total="0" male="0" female="0" households="0" />
+          <data type="agricultural" total="309" households="58" />
+        </data>
+      </data>
+      <data type="nonmunicipalsanitary" total="392351" male="191297" female="201054" households="88682">
+        <data type="privatehouseholds" total="389511" male="189381" female="200130" households="88566" />
+        <data type="collectivehouseholds" total="2840" male="1916" female="924" households="116" />
+        <data type="agricultural" total="60791" households="12561" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000000073</url>
         <book isbn="9748090205" title="สำมะโนประชากรและเคหะ พ.ศ. 2533 จังหวัดสมุทรปราการ" author="สำนักงานสถิติแห่งชาติ" />
@@ -327,65 +355,296 @@
     </population>
     <entity type="Amphoe" geocode="1101" name="เมืองสมุทรปราการ" english="Mueang Samut Prakan">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="306347" />
+        <data type="total" total="306347" male="147944" female="158403" households="69769" />
+        <data type="privatehouseholds" total="299042" male="143809" female="155233" households="69561" />
+        <data type="collectivehouseholds" total="7305" male="4135" female="3170" households="208" />
+        <data type="agricultural" total="5357" households="1014" />
+        <data type="municipal" total="66752" male="32729" female="34023" households="13697" geocode="1199">
+          <data type="privatehouseholds" total="64282" male="30641" female="33641" households="13645" />
+          <data type="collectivehouseholds" total="2470" male="2088" female="382" households="52" />
+          <data type="agricultural" total="1205" households="208" />
+        </data>
+        <data type="sanitary" total="107009" male="51665" female="55344" households="25516">
+          <data type="privatehouseholds" total="103496" male="50090" female="53406" households="25414" />
+          <data type="collectivehouseholds" total="3513" male="1575" female="1938" households="102" />
+          <data type="agricultural" total="2488" households="485" />
+          <data type="urbansanitary" total="107009" male="51665" female="55344" households="25516" geocode="1196">
+            <data type="privatehouseholds" total="103496" male="50090" female="53406" households="25414" />
+            <data type="collectivehouseholds" total="3513" male="1575" female="1938" households="102" />
+            <data type="agricultural" total="2488" households="485" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="132586" male="63550" female="69036" households="30556">
+          <data type="privatehouseholds" total="131264" male="63078" female="68186" households="30502" />
+          <data type="collectivehouseholds" total="1322" male="472" female="850" households="54" />
+          <data type="agricultural" total="1664" households="321" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="1102" name="บางบ่อ" english="Bang Bo">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="79593" />
+        <data type="total" total="79593" male="38987" female="40606" households="16504" />
+        <data type="privatehouseholds" total="79137" male="38570" female="40567" households="16473" />
+        <data type="collectivehouseholds" total="456" male="417" female="39" households="31" />
+        <data type="agricultural" total="21206" households="4082" />
+        <data type="sanitary" total="19236" male="9338" female="9898" households="3970">
+          <data type="privatehouseholds" total="19025" male="9165" female="9860" households="3955" />
+          <data type="collectivehouseholds" total="211" male="173" female="38" households="15" />
+          <data type="agricultural" total="1920" households="340" />
+          <data type="urbansanitary" total="17949" male="8745" female="9204" households="3682" geocode="1190 1188">
+            <data type="privatehouseholds" total="17738" male="8572" female="9166" households="3667" />
+            <data type="collectivehouseholds" total="211" male="173" female="38" households="15" />
+            <data type="agricultural" total="1611" households="282" />
+          </data>
+          <data type="ruralsanitary" total="1287" male="593" female="694" households="288" geocode="1189">
+            <data type="privatehouseholds" total="1287" male="593" female="694" households="288" />
+            <data type="collectivehouseholds" total="0" male="0" female="0" households="0" />
+            <data type="agricultural" total="309" households="58" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="60357" male="29649" female="30708" households="12534">
+          <data type="privatehouseholds" total="60112" male="29405" female="30707" households="12518" />
+          <data type="collectivehouseholds" total="245" male="244" female="1" households="16" />
+          <data type="agricultural" total="19286" households="3742" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="1103" name="บางพลี" english="Bang Phli">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="132271" />
+        <data type="total" total="132271" male="64752" female="67519" households="30137" />
+        <data type="privatehouseholds" total="131676" male="64232" female="67444" households="30105" />
+        <data type="collectivehouseholds" total="595" male="520" female="75" households="32" />
+        <data type="agricultural" total="22641" households="4856" />
+        <data type="sanitary" total="31533" male="15470" female="16063" households="7428">
+          <data type="privatehouseholds" total="31222" male="15211" female="16011" households="7406" />
+          <data type="collectivehouseholds" total="311" male="259" female="52" households="22" />
+          <data type="agricultural" total="557" households="104" />
+          <data type="urbansanitary" total="31533" male="15470" female="16063" households="7428" geocode="1187 1184">
+            <data type="privatehouseholds" total="31222" male="15211" female="16011" households="7406" />
+            <data type="collectivehouseholds" total="311" male="259" female="52" households="22" />
+            <data type="agricultural" total="557" households="104" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="100738" male="49282" female="51456" households="22709">
+          <data type="privatehouseholds" total="100454" male="49021" female="51433" households="22699" />
+          <data type="collectivehouseholds" total="284" male="261" female="23" households="10" />
+          <data type="agricultural" total="22084" households="4752" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="1104" name="พระประแดง" english="Phra Pradaeng">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="181586" />
+        <data type="total" total="181586" male="88564" female="93022" households="41975" />
+        <data type="privatehouseholds" total="172102" male="84579" female="87523" households="41730" />
+        <data type="collectivehouseholds" total="9484" male="3985" female="5499" households="245" />
+        <data type="agricultural" total="4270" households="866" />
+        <data type="municipal" total="9548" male="4665" female="4883" households="1825" geocode="1198">
+          <data type="privatehouseholds" total="8768" male="4182" female="4586" households="1818" />
+          <data type="collectivehouseholds" total="780" male="483" female="297" households="7" />
+          <data type="agricultural" total="38" households="7" />
+        </data>
+        <data type="sanitary" total="143393" male="69889" female="73504" households="34024">
+          <data type="privatehouseholds" total="135114" male="66779" female="68335" households="33806" />
+          <data type="collectivehouseholds" total="8279" male="3110" female="5169" households="218" />
+          <data type="agricultural" total="1255" households="271" />
+          <data type="urbansanitary" total="143393" male="69889" female="73504" households="34024" geocode="1197">
+            <data type="privatehouseholds" total="135114" male="66779" female="68335" households="33806" />
+            <data type="collectivehouseholds" total="8279" male="3110" female="5169" households="218" />
+            <data type="agricultural" total="1255" households="271" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="28645" male="14010" female="14635" households="6126">
+          <data type="privatehouseholds" total="28220" male="13618" female="14602" households="6106" />
+          <data type="collectivehouseholds" total="425" male="392" female="33" households="20" />
+          <data type="agricultural" total="2977" households="588" />
+        </data>
       </population>
     </entity>
     <entity type="KingAmphoe" geocode="1105" name="พระสมุทรเจดีย์" english="Phra Samut Chedi">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="70025" />
+        <data type="total" total="70025" male="34806" female="35219" households="16757" />
+        <data type="privatehouseholds" total="69461" male="34259" female="35202" households="16741" />
+        <data type="collectivehouseholds" total="564" male="547" female="17" households="16" />
+        <data type="agricultural" total="14780" households="3158" />
+        <data type="nonmunicipalsanitary" total="70025" male="34806" female="35219" households="16757">
+          <data type="privatehouseholds" total="69461" male="34259" female="35202" households="16741" />
+          <data type="collectivehouseholds" total="564" male="547" female="17" households="16" />
+          <data type="agricultural" total="14780" households="3158" />
+        </data>
       </population>
     </entity>
   </entity>
   <entity type="Changwat" geocode="12" name="นนทบุรี" english="Nonthaburi">
     <population source="Census" year="1990" referencedate="1990-04-01">
-      <data type="total" total="574702" male="277744" female="296958 " />
+      <data type="total" total="574702" male="277744" female="296958" households="126816" />
+      <data type="privatehouseholds" total="560659" male="266511" female="294148" households="126513" />
+      <data type="collectivehouseholds" total="14043" male="11233" female="2810" households="303" />
+      <data type="agricultural" total="73729" households="15030" />
+      <data type="municipal" total="232843" male="113727" female="119116" households="49961">
+        <data type="privatehouseholds" total="223726" male="105934" female="117792" households="49836" />
+        <data type="collectivehouseholds" total="9117" male="7793" female="1324" households="125" />
+        <data type="agricultural" total="2205" households="437" />
+      </data>
+      <data type="sanitary" total="162471" male="77121" female="85350" households="37243">
+        <data type="privatehouseholds" total="159120" male="74985" female="84135" households="37174" />
+        <data type="collectivehouseholds" total="3351" male="2136" female="1215" households="69" />
+        <data type="agricultural" total="5562" households="1157" />
+        <data type="urbansanitary" total="160950" male="76352" female="84598" households="36875">
+          <data type="privatehouseholds" total="157629" male="74246" female="83383" households="36809" />
+          <data type="collectivehouseholds" total="3321" male="2106" female="1215" households="66" />
+          <data type="agricultural" total="5143" households="1067" />
+        </data>
+        <data type="ruralsanitary" total="1521" male="769" female="752" households="368">
+          <data type="privatehouseholds" total="1491" male="739" female="752" households="365" />
+          <data type="collectivehouseholds" total="30" male="30" female="0" households="3" />
+          <data type="agricultural" total="419" households="90" />
+        </data>
+      </data>
+      <data type="nonmunicipalsanitary" total="179388" male="86896" female="92492" households="39612">
+        <data type="privatehouseholds" total="177813" male="85592" female="92221" households="39503" />
+        <data type="collectivehouseholds" total="1575" male="1304" female="271" households="109" />
+        <data type="agricultural" total="65962" households="13436" />
+      </data>
       <reference>
         <url>http://service.nso.go.th/nso/search/show_picture_main.jsp?id_book=0000000069</url>
       </reference>
     </population>
     <entity type="Amphoe" geocode="1201" name="เมืองนนทบุรี" english="Mueang Nonthaburi">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="256588" />
+        <data type="total" total="256588" male="125307" female="131281" households="55647" />
+        <data type="privatehouseholds" total="247253" male="117266" female="129987" households="55500" />
+        <data type="collectivehouseholds" total="9335" male="8041" female="1294" households="147" />
+        <data type="agricultural" total="7561" households="1597" />
+        <data type="municipal" total="223024" male="108894" female="114130" households="48015" geocode="1299">
+          <data type="privatehouseholds" total="214049" male="101208" female="112841" households="47894" />
+          <data type="collectivehouseholds" total="8975" male="7686" female="1289" households="121" />
+          <data type="agricultural" total="1867" households="382" />
+        </data>
+        <data type="sanitary" total="13375" male="6465" female="6910" households="2971">
+          <data type="privatehouseholds" total="13296" male="6388" female="6908" households="2965" />
+          <data type="collectivehouseholds" total="79" male="77" female="2" households="6" />
+          <data type="agricultural" total="782" households="165" />
+          <data type="urbansanitary" total="13375" male="6465" female="6910" households="2971" geocode="1295">
+            <data type="privatehouseholds" total="13296" male="6388" female="6908" households="2965" />
+            <data type="collectivehouseholds" total="79" male="77" female="2" households="6" />
+            <data type="agricultural" total="782" households="165" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="20189" male="9948" female="10241" households="4661">
+          <data type="privatehouseholds" total="19908" male="9670" female="10238" households="4641" />
+          <data type="collectivehouseholds" total="281" male="278" female="3" households="20" />
+          <data type="agricultural" total="4912" households="1050" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="1202" name="บางกรวย" english="Bang Kruai">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="66200" />
+        <data type="total" total="66200" male="31459" female="34741" households="14872" />
+        <data type="privatehouseholds" total="65653" male="30965" female="34688" households="14834" />
+        <data type="collectivehouseholds" total="547" male="494" female="53" households="38" />
+        <data type="agricultural" total="15815" households="3270" />
+        <data type="sanitary" total="29361" male="13970" female="15391" households="6916">
+          <data type="privatehouseholds" total="29134" male="13791" female="15343" households="6903" />
+          <data type="collectivehouseholds" total="227" male="179" female="48" households="13" />
+          <data type="agricultural" total="2496" households="498" />
+          <data type="urbansanitary" total="29361" male="13970" female="15391" households="6916" geocode="1296">
+            <data type="privatehouseholds" total="29134" male="13791" female="15343" households="6903" />
+            <data type="collectivehouseholds" total="227" male="179" female="48" households="13" />
+            <data type="agricultural" total="2496" households="498" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="36839" male="17489" female="19350" households="7956">
+          <data type="privatehouseholds" total="36519" male="17174" female="19345" households="7931" />
+          <data type="collectivehouseholds" total="320" male="315" female="5" households="25" />
+          <data type="agricultural" total="13319" households="2772" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="1203" name="บางใหญ่" english="Bang Yai">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="34953" />
+        <data type="total" total="34953" male="16913" female="18040" households="7794" />
+        <data type="privatehouseholds" total="34712" male="16681" female="18031" households="7779" />
+        <data type="collectivehouseholds" total="241" male="232" female="9" households="15" />
+        <data type="agricultural" total="13179" households="2835" />
+        <data type="sanitary" total="8055" male="3963" female="4092" households="1747">
+          <data type="privatehouseholds" total="7958" male="3875" female="4083" households="1743" />
+          <data type="collectivehouseholds" total="97" male="88" female="9" households="4" />
+          <data type="agricultural" total="1184" households="266" />
+          <data type="urbansanitary" total="8055" male="3963" female="4092" households="1747" geocode="1293" comment="Missing: Bang Yai (1292) created 1990-02">
+            <data type="privatehouseholds" total="7958" male="3875" female="4083" households="1743" />
+            <data type="collectivehouseholds" total="97" male="88" female="9" households="4" />
+            <data type="agricultural" total="1184" households="266" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="26898" male="12950" female="13948" households="6047">
+          <data type="privatehouseholds" total="26754" male="12806" female="13948" households="6036" />
+          <data type="collectivehouseholds" total="144" male="144" female="0" households="11" />
+          <data type="agricultural" total="11995" households="2569" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="1204" name="บางบัวทอง" english="Bang Bua Thong">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="54057" />
+        <data type="total" total="54057" male="26175" female="27882" households="12258" />
+        <data type="privatehouseholds" total="53722" male="25878" female="27844" households="12243" />
+        <data type="collectivehouseholds" total="335" male="297" female="38" households="15" />
+        <data type="agricultural" total="12345" households="2366" />
+        <data type="municipal" total="9819" male="4833" female="4986" households="1946" geocode="1298">
+          <data type="privatehouseholds" total="9677" male="4726" female="4951" households="1942" />
+          <data type="collectivehouseholds" total="142" male="107" female="35" households="4" />
+          <data type="agricultural" total="338" households="55" />
+        </data>
+        <data type="nonmunicipalsanitary" total="44238" male="21342" female="22896" households="10312">
+          <data type="privatehouseholds" total="44045" male="21152" female="22893" households="10301" />
+          <data type="collectivehouseholds" total="193" male="190" female="3" households="11" />
+          <data type="agricultural" total="12007" households="2311" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="1205" name="ไทรน้อย" english="Sai Noi">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="29423" />
+        <data type="total" total="29423" male="14780" female="14643" households="5980" />
+        <data type="privatehouseholds" total="29219" male="14590" female="14629" households="5963" />
+        <data type="collectivehouseholds" total="204" male="190" female="14" households="17" />
+        <data type="agricultural" total="18833" households="3653" />
+        <data type="sanitary" total="1521" male="769" female="752" households="368">
+          <data type="privatehouseholds" total="1491" male="739" female="752" households="365" />
+          <data type="collectivehouseholds" total="30" male="30" female="0" households="3" />
+          <data type="agricultural" total="419" households="90" />
+          <data type="ruralsanitary" total="1521" male="769" female="752" households="368" geocode="1291">
+            <data type="privatehouseholds" total="1491" male="739" female="752" households="365" />
+            <data type="collectivehouseholds" total="30" male="30" female="0" households="3" />
+            <data type="agricultural" total="419" households="90" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="27902" male="14011" female="13891" households="5612">
+          <data type="privatehouseholds" total="27728" male="13851" female="13877" households="5598" />
+          <data type="collectivehouseholds" total="174" male="160" female="14" households="14" />
+          <data type="agricultural" total="18414" households="3563" />
+        </data>
       </population>
     </entity>
     <entity type="Amphoe" geocode="1206" name="ปากเกร็ด" english="Pak Kret">
       <population source="Census" year="1990" referencedate="1990-04-01">
-        <data type="total" total="133481" />
+        <data type="total" total="133481" male="63110" female="70371" households="30265" />
+        <data type="privatehouseholds" total="130100" male="61131" female="68969" households="30194" />
+        <data type="collectivehouseholds" total="3381" male="1979" female="1402" households="71" />
+        <data type="agricultural" total="5996" households="1309" />
+        <data type="sanitary" total="110159" male="51954" female="58205" households="25241">
+          <data type="privatehouseholds" total="107241" male="50192" female="57049" households="25198" />
+          <data type="collectivehouseholds" total="2918" male="1762" female="1156" households="43" />
+          <data type="agricultural" total="681" households="138" />
+          <data type="urbansanitary" total="110159" male="51954" female="58205" households="25241" geocode="1297">
+            <data type="privatehouseholds" total="107241" male="50192" female="57049" households="25198" />
+            <data type="collectivehouseholds" total="2918" male="1762" female="1156" households="43" />
+            <data type="agricultural" total="681" households="138" />
+          </data>
+        </data>
+        <data type="nonmunicipalsanitary" total="23322" male="11156" female="12166" households="5024">
+          <data type="privatehouseholds" total="22859" male="10939" female="11920" households="4996" />
+          <data type="collectivehouseholds" total="463" male="217" female="246" households="28" />
+          <data type="agricultural" total="5315" households="1171" />
+        </data>
       </population>
     </entity>
   </entity>
