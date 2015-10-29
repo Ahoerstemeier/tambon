@@ -282,9 +282,14 @@ namespace De.AHoerstemeier.Tambon {
         
         private EntityType typeField;
         
-        private uint mergetoField;
+        private List<uint> mergetoField;
         
-        private bool mergetoFieldSpecified;
+        /// <summary>
+        /// Creates a new instance of HistoryAbolish.
+        /// </summary>
+        public HistoryAbolish() {
+            this.mergetoField = new List<uint>();
+        }
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -311,29 +316,12 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint mergeto {
+        public List<uint> mergeto {
             get {
                 return this.mergetoField;
             }
             set {
                 this.mergetoField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool mergetoSpecified {
-            get {
-                return this.mergetoFieldSpecified;
-            }
-            set {
-                this.mergetoFieldSpecified = value;
             }
         }
     }
