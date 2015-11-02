@@ -49,6 +49,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private string englishField;
         
+        private string ipaField;
+        
         private uint geocodeField;
         
         private List<uint> newgeocodeField;
@@ -291,6 +293,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.englishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ipa {
+            get {
+                return this.ipaField;
+            }
+            set {
+                this.ipaField = value;
             }
         }
         

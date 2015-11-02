@@ -838,6 +838,63 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion GND
 
+        #region IPA
+
+        private WikiDataState Ipa(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+            stringValue = entity.ipa;
+            return CheckStringValue(item, WikiBase.PropertyIdIpa, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the pronunciation in IPA.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the Ipa.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetIpa(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            Ipa(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the pronunciation in IPA is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState IpaCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return Ipa(item, entity, false, false, out dummy);
+        }
+
+        /// <summary>
+        /// Adds the qualifiers for the <see cref="WikiBase.PropertyIdIpa"/>.
+        /// </summary>
+        /// <param name="statement">Statement to add qualifier.</param>
+        public void AddIpaQualifiers(Statement statement)
+        {
+            if ( statement != null )
+            {
+                var languageQualifier = new Qualifier(statement, SnakType.Value, new EntityId(WikiBase.PropertyIdLanguageOfWork), new EntityIdValue(new EntityId(WikiBase.ItemIdThaiLanguage)));
+                // statement.Qualifiers.Add(languageQualifier);  // already added by the constructor
+            }
+        }
+
+        #endregion IPA
+
         #region Locator map
 
         private WikiDataState LocatorMap(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)

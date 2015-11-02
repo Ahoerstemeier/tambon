@@ -20,6 +20,11 @@
         <xs:documentation>Romanized name.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="ipa" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Pronunciation of name in IPA.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:attributeGroup>
   <xs:attributeGroup name="ThaiNameOptional">
     <xs:attribute name="name" type="xs:string" use="optional">
@@ -30,6 +35,11 @@
     <xs:attribute name="english" type="xs:string" use="optional">
       <xs:annotation>
         <xs:documentation>Romanized name.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ipa" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Pronunciation of name in IPA.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>

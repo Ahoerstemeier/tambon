@@ -147,6 +147,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set label [en]", setLabelEnglish));
             _availableTasks.Add(new WikiDataTaskInfo("Set label [de]", setLabelGerman));
             _availableTasks.Add(new WikiDataTaskInfo("Set label [th]", setLabelThai));
+            _availableTasks.Add(new WikiDataTaskInfo("Set IPA", SetIpa));
             _availableTasks.Add(new WikiDataTaskInfo("Set Thai abbreviation", SetThaiAbbreviation));
             _availableTasks.Add(new WikiDataTaskInfo("Set country", SetCountry));
             _availableTasks.Add(new WikiDataTaskInfo("Set is in administrative unit", SetIsInAdministrativeUnit));
@@ -685,6 +686,48 @@ namespace De.AHoerstemeier.Tambon
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SetIpa(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.ipa)) )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.IpaCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong IPA", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetIpa(item, entity, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+
+                            _helper.AddIpaQualifiers(statement);
+                            foreach ( var qualifier in statement.Qualifiers )
+                            {
+                                qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                            }
                         }
                     }
                 }

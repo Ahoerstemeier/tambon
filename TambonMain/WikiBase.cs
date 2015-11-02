@@ -65,6 +65,8 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdFoursquareId = "P1968";
         public const String PropertyIdFacebookPage = "P1997";  // https://www.facebook.com/pages/-/$1
         public const String PropertyIdShortName = "P1813";  // wrong datatype, wait for it to become multilingual!
+        public const String PropertyIdIpa = "P898";
+        public const String PropertyIdLanguageOfWork = "P407";  // qualifier for IPA, to be set to ItemIdThaiLanguage
 
         public const String PropertyIdArea = "P2046";
         public const String PropertyIdCategoryCombinesTopic = "P971";

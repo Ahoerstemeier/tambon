@@ -807,9 +807,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private string englishField;
         
+        private string ipaField;
+        
         private string oldnameField;
         
         private string oldenglishField;
+        
+        private string oldipaField;
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -853,6 +857,23 @@ namespace De.AHoerstemeier.Tambon {
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ipa {
+            get {
+                return this.ipaField;
+            }
+            set {
+                this.ipaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string oldname {
             get {
                 return this.oldnameField;
@@ -876,6 +897,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.oldenglishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string oldipa {
+            get {
+                return this.oldipaField;
+            }
+            set {
+                this.oldipaField = value;
             }
         }
     }
