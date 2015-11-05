@@ -1065,7 +1065,7 @@ namespace De.AHoerstemeier.Tambon
                             office.type = OfficeType.MunicipalityOffice;
                         }
                     }
-                    if ( this._oldGeocode != null && this._oldGeocode.Any() )
+                    if ( this._oldGeocode != null )
                     {
                         if ( result._oldGeocode == null )
                         {
