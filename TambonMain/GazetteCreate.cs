@@ -53,6 +53,25 @@ namespace De.AHoerstemeier.Tambon
             var historyCreate = new HistoryCreate();
             historyCreate.splitfrom.AddRange(this.SplitFrom());
             historyCreate.type = this.type;
+            Int32 subdivisions = 0;
+            foreach ( var item in Items )
+            {
+                var itemReassign = item as GazetteReassign;
+                if ( itemReassign != null )
+                {
+                    subdivisions++;
+                    if ( itemReassign.typeSpecified )
+                    {
+                        historyCreate.subdivisiontype = itemReassign.type;
+                        historyCreate.subdivisiontypeSpecified = true;
+                    }
+                }
+            }
+            if ( subdivisions > 0 )
+            {
+                historyCreate.subdivisions = subdivisions;
+                historyCreate.subdivisionsSpecified = true;
+            }
             return historyCreate;
         }
     }

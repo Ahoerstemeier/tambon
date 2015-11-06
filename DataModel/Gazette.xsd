@@ -445,16 +445,7 @@
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="subdivisions" type="xs:int" use="optional">
-          <xs:annotation>
-            <xs:documentation>Number of subdivisions listed.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="subdivisiontype" type="t:EntityType" use="optional">
-          <xs:annotation>
-            <xs:documentation>Type of subdivisions listed (usually Muban).</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
+        <xs:attributeGroup ref="t:Subdivisions" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

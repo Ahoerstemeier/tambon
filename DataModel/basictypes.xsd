@@ -50,6 +50,18 @@
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
+  <xs:attributeGroup name="Subdivisions">
+    <xs:attribute name="subdivisions" type="xs:int" use="optional">
+      <xs:annotation>
+        <xs:documentation>Number of subdivisions listed.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="subdivisiontype" type="t:EntityType" use="optional">
+      <xs:annotation>
+        <xs:documentation>Type of subdivisions listed.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
 
   <xs:simpleType name="EntityType">
     <xs:annotation>

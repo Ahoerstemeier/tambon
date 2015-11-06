@@ -651,6 +651,14 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<uint> splitfromField;
         
+        private int subdivisionsField;
+        
+        private bool subdivisionsFieldSpecified;
+        
+        private EntityType subdivisiontypeField;
+        
+        private bool subdivisiontypeFieldSpecified;
+        
         /// <summary>
         /// Creates a new instance of HistoryCreate.
         /// </summary>
@@ -689,6 +697,74 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.splitfromField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int subdivisions {
+            get {
+                return this.subdivisionsField;
+            }
+            set {
+                this.subdivisionsField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool subdivisionsSpecified {
+            get {
+                return this.subdivisionsFieldSpecified;
+            }
+            set {
+                this.subdivisionsFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public EntityType subdivisiontype {
+            get {
+                return this.subdivisiontypeField;
+            }
+            set {
+                this.subdivisiontypeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool subdivisiontypeSpecified {
+            get {
+                return this.subdivisiontypeFieldSpecified;
+            }
+            set {
+                this.subdivisiontypeFieldSpecified = value;
             }
         }
     }
