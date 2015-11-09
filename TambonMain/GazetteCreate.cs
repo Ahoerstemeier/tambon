@@ -47,13 +47,29 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Converts the gazette operation into a entity history entry.
         /// </summary>
-        /// <returns>Coresponding history entry.</returns>
+        /// <returns>Corresponding history entry.</returns>
         public override HistoryEntryBase ConvertToHistory()
         {
             var historyCreate = new HistoryCreate();
             historyCreate.splitfrom.AddRange(this.SplitFrom());
             historyCreate.type = this.type;
             Int32 subdivisions = 0;
+            switch ( historyCreate.type )
+            {
+                case EntityType.Amphoe:
+                case EntityType.KingAmphoe:
+                    historyCreate.subdivisiontype = EntityType.Tambon;
+                    historyCreate.subdivisiontypeSpecified = true;
+                    break;
+                case EntityType.Tambon:
+                    historyCreate.subdivisiontype = EntityType.Muban;
+                    historyCreate.subdivisiontypeSpecified = true;
+                    break;
+                case EntityType.Khet:
+                    historyCreate.subdivisiontype = EntityType.Khwaeng;
+                    historyCreate.subdivisiontypeSpecified = true;
+                    break;
+            }
             foreach ( var item in Items )
             {
                 var itemReassign = item as GazetteReassign;
@@ -71,6 +87,10 @@ namespace De.AHoerstemeier.Tambon
             {
                 historyCreate.subdivisions = subdivisions;
                 historyCreate.subdivisionsSpecified = true;
+            }
+            else
+            {
+                historyCreate.subdivisiontypeSpecified = false;
             }
             return historyCreate;
         }

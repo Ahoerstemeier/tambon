@@ -632,7 +632,16 @@ namespace De.AHoerstemeier.Tambon.UI
                     result += String.Format("Tambon without Muban: {0}", tambonWithNoMuban.Count) + Environment.NewLine;
                 }
             }
-
+            var mubanCreatedRecently = allMuban.Where(x => x.history.Items.Any(y => y is HistoryCreate)).ToList();
+            if ( mubanCreatedRecently.Any() )
+            {
+                result += String.Format("Muban created recently: {0}", mubanCreatedRecently.Count) + Environment.NewLine;
+                var mubanByYear = mubanCreatedRecently.GroupBy(x => ((HistoryCreate)(x.history.Items.First(y => y is HistoryCreate))).effective.Year).OrderBy(x => x.Key);
+                foreach ( var item in mubanByYear )
+                {
+                    result += String.Format("  {0}: {1}", item.Key, item.Count()) + Environment.NewLine;
+                }
+            }
             // could add: Muban creations in last years
             var tambonWithInvalidMubanNumber = TambonWithInvalidMubanNumber(allTambon);
             if ( tambonWithInvalidMubanNumber.Any() )

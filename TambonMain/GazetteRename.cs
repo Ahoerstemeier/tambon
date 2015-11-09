@@ -10,7 +10,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Converts the gazette operation into a entity history entry.
         /// </summary>
-        /// <returns>Coresponding history entry.</returns>
+        /// <returns>Corresponding history entry.</returns>
         public override HistoryEntryBase ConvertToHistory()
         {
             var historyRename = new HistoryRename();
