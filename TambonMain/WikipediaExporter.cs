@@ -228,7 +228,7 @@ namespace De.AHoerstemeier.Tambon
             }
 
             builder.AppendFormat(englishCulture,
-                "'''{0}''' ({{1}) is a ''[[tambon]]'' (subdistrict) of {2}, in {3}, [[Thailand]]. In {4} it had a total population of {5:#,###,###} people.{6}",
+                "'''{0}''' ({1}) is a ''[[tambon]]'' (subdistrict) of {2}, in {3}, [[Thailand]]. In {4} it had a total population of {5:#,###,###} people.{6}",
                 entity.english,
                 nativeName,
                 WikiLink(links[amphoe], amphoe.english + " District"),
@@ -462,7 +462,7 @@ namespace De.AHoerstemeier.Tambon
             String tambonCompletePlural = "den kompletten Tambon {0}";
             String tambonPartiallyPlural = "den Teilen der Tambon {0}";
 
-            CountAsString countAsString = delegate(Int32 count)
+            CountAsString countAsString = delegate (Int32 count)
             {
                 String countAsStringResult;
                 if ( !numberStrings.TryGetValue(count, out countAsStringResult) )
