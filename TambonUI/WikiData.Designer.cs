@@ -37,7 +37,7 @@
             this.chkOverride = new System.Windows.Forms.CheckBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnTest = new System.Windows.Forms.Button();
+            this.btnCheckCommonsCategory = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
             this.edtStartingItemId = new System.Windows.Forms.TextBox();
             this.lblStartingItemId = new System.Windows.Forms.Label();
@@ -152,15 +152,16 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnTest
+            // btnCheckCommonsCategory
             // 
-            this.btnTest.Location = new System.Drawing.Point(12, 105);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(98, 23);
-            this.btnTest.TabIndex = 11;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            this.btnCheckCommonsCategory.Enabled = false;
+            this.btnCheckCommonsCategory.Location = new System.Drawing.Point(12, 105);
+            this.btnCheckCommonsCategory.Name = "btnCheckCommonsCategory";
+            this.btnCheckCommonsCategory.Size = new System.Drawing.Size(98, 23);
+            this.btnCheckCommonsCategory.TabIndex = 11;
+            this.btnCheckCommonsCategory.Text = "Check Commons";
+            this.btnCheckCommonsCategory.UseVisualStyleBackColor = true;
+            this.btnCheckCommonsCategory.Click += new System.EventHandler(this.btnCheckCommonsCategory_Click);
             // 
             // btnCategory
             // 
@@ -339,7 +340,7 @@
             this.Controls.Add(this.lblStartingItemId);
             this.Controls.Add(this.edtStartingItemId);
             this.Controls.Add(this.btnCategory);
-            this.Controls.Add(this.btnTest);
+            this.Controls.Add(this.btnCheckCommonsCategory);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.chkOverride);
@@ -368,7 +369,7 @@
         private System.Windows.Forms.CheckBox chkOverride;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnCheckCommonsCategory;
         private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.TextBox edtStartingItemId;
         private System.Windows.Forms.Label lblStartingItemId;

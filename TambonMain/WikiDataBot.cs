@@ -385,6 +385,52 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        public String GetCommonsCategory(Entity entity)
+        {
+            var result = String.Empty;
+            var item = _helper.GetWikiDataItemForEntity(entity);
+            if ( item != null )
+            {
+                result = _helper.GetStringClaim(item, WikiBase.PropertyIdCommonsCategory);
+            }
+            return result;
+        }
+
+        public Boolean CheckCommonsCategory(Entity entity)
+        {
+            var result = true;
+            var commonsCategoryOnItem = String.Empty;
+            var item = _helper.GetWikiDataItemForEntity(entity);
+            if ( item != null )
+            {
+                commonsCategoryOnItem = _helper.GetStringClaim(item, WikiBase.PropertyIdCommonsCategory);
+                var categoryItem = _helper.GetItemClaim(item, WikiBase.PropertyIdCategoryForTopic);
+                if ( categoryItem != null )
+                {
+                    var commonsCategoryOnCategory = _helper.GetStringClaim(categoryItem, WikiBase.PropertyIdCommonsCategory);
+                    if ( !String.IsNullOrEmpty(commonsCategoryOnCategory) )
+                    {
+                        result &= commonsCategoryOnItem == commonsCategoryOnCategory;
+                    }
+                    var siteLinks = categoryItem.getSitelinks();
+                    var commonsLink = String.Empty;
+                    if ( siteLinks.ContainsKey(WikiBase.SiteLinkCommons) )
+                    {
+                        commonsLink = categoryItem.getSitelink(WikiBase.SiteLinkCommons);
+                    }
+                    if ( !String.IsNullOrEmpty(commonsCategoryOnItem) )
+                    {
+                        result &= commonsLink == "Category:" + commonsCategoryOnItem;
+                    }
+                    else if ( !String.IsNullOrEmpty(commonsLink) )
+                    {
+                        result = false; // commons link in category, but no commons category property set on main item
+                    }
+                }
+            }
+            return result;
+        }
+
         private void SetLabel(Language language, IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
             if ( entities == null )

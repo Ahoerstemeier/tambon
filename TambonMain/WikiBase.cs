@@ -64,9 +64,11 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdDeterminationMethod = "P459";
         public const String PropertyIdFoursquareId = "P1968";
         public const String PropertyIdFacebookPage = "P1997";  // https://www.facebook.com/pages/-/$1
-        public const String PropertyIdShortName = "P1813";  // wrong datatype, wait for it to become multilingual!
+        public const String PropertyIdShortName = "P1813";  // wrong data type, wait for it to become multilingual!
         public const String PropertyIdIpa = "P898";
         public const String PropertyIdLanguageOfWork = "P407";  // qualifier for IPA, to be set to ItemIdThaiLanguage
+        public const String PropertyIdCommonsCategory = "P373";
+        public const String PropertyIdMainRegulatoryText = "P92";  // qualifier for inception to link to Gazette item
 
         public const String PropertyIdArea = "P2046";
         public const String PropertyIdCategoryCombinesTopic = "P971";
@@ -164,5 +166,10 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemSocialMediaFoursquare = "Q51709";
 
         public const String ItemSandbox = "Q4115189";
+
+        public const String SiteLinkCommons = "commonswiki";
+        public const String SiteLinkThaiWikipedia = "thwiki";
+        public const String SiteLinkEnglishWikipedia = "enwiki";
+        public const String SiteLinkGermanWikipedia = "dewiki";
     }
 }

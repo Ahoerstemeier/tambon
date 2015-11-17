@@ -151,7 +151,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var siteLinkCount = _bot.CountSiteLinks(workItems, collisions);
 
             StringBuilder builder = new StringBuilder();
-            builder.AppendFormat("{0} entities on Wikidata", workItems.Count());
+            builder.AppendFormat("{0} entities on WikiData", workItems.Count());
             builder.AppendLine();
             foreach ( var value in siteLinkCount )
             {
@@ -162,7 +162,7 @@ namespace De.AHoerstemeier.Tambon.UI
             edtCollisions.Text = collisions.ToString();
 
             var formWikiDataEntries = new StringDisplayForm(
-                "Wikidata language coverage",
+                "WikiData language coverage",
                 result);
             formWikiDataEntries.Show();
         }
@@ -170,7 +170,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private static WikibaseApi OpenConnection()
         {
             WikibaseApi api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
-            // Login with username and password
+            // Login with user name and password
             var username = ConfigurationManager.AppSettings["WikiDataUsername"];
             var password = ConfigurationManager.AppSettings["WikiDataPassword"];
 
@@ -211,7 +211,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                     else if ( (office.wiki != null) && !String.IsNullOrEmpty(office.wiki.wikidata) )
                     {
-                        edtCollisions.Text += "Wikidata at office: " + entity.geocode.ToString() + Environment.NewLine;
+                        edtCollisions.Text += "WikiData at office: " + entity.geocode.ToString() + Environment.NewLine;
                     }
                 }
             }
@@ -327,6 +327,7 @@ namespace De.AHoerstemeier.Tambon.UI
             btnLogout.Enabled = true;
             btnLogin.Enabled = false;
             btnCountInterwiki.Enabled = true;
+            btnCheckCommonsCategory.Enabled = true;
             RefreshAmphoeSelection();
             CalculateCreateLocalGovernmentEnabled();
         }
@@ -343,190 +344,26 @@ namespace De.AHoerstemeier.Tambon.UI
             btnCreateTambon.Enabled = false;
             btnAmphoeCategory.Enabled = false;
             btnMap.Enabled = false;
+            btnCheckCommonsCategory.Enabled = false;
         }
 
-        private void btnTest_Click(object sender, EventArgs e)
+        private void btnCheckCommonsCategory_Click(object sender, EventArgs e)
         {
-            //WikibaseApi api = new WikibaseApi("https://test.wikidata.org", "TambonBot");
-            //// Login with username and password
-            //var username = ConfigurationManager.AppSettings["WikiDataUsername"];
-            //var password = ConfigurationManager.AppSettings["WikiDataPassword"];
-            //api.login(username, password);
-            //var provider = new EntityProvider(api);
-            //var entity = provider.getEntityFromId(new EntityId("q", 281));
-            //var statement = entity.Claims.First() as Statement;
-            //var qualifier = new Qualifier(statement, SnakType.Value, new EntityId("P11"), new StringValue("abc"));
-            //qualifier.Save("Qualifier save");
+            StringBuilder builder = new StringBuilder();
 
-            var tis1099thesaban = new List<UInt32>() {
-            1195,
-1196,
-1197,
-1198,
-1199,
-1295,
-1296,
-1297,
-1298,
-1299,
-1396,
-1397,
-1398,
-1399,
-1496,
-1497,
-1498,
-1499,
-1598,
-1599,
-1697,
-1698,
-1699,
-1799,
-1898,
-1899,
-1996,
-1997,
-1998,
-1999,
-2093,
-2094,
-2095,
-2096,
-2097,
-2098,
-2099,
-2197,
-2198,
-2199,
-2297,
-2298,
-2299,
-2399,
-2498,
-2499,
-2598,
-2599,
-2699,
-2798,
-2799,
-3096,
-3097,
-3098,
-3099,
-3198,
-3199,
-3299,
-3399,
-3497,
-3498,
-3499,
-3599,
-3699,
-3799,
-3999,
-4096,
-4097,
-4098,
-4099,
-4199,
-4299,
-4399,
-4499,
-4599,
-4699,
-4799,
-4899,
-4999,
-5099,
-5199,
-5299,
-5398,
-5399,
-5499,
-5599,
-5699,
-5799,
-5899,
-6097,
-6098,
-6099,
-6199,
-6299,
-6398,
-6399,
-6498,
-6499,
-6599,
-6697,
-6698,
-6699,
-6798,
-6799,
-7097,
-7098,
-7099,
-7198,
-7199,
-7298,
-7299,
-7399,
-7497,
-7498,
-7499,
-7598,
-7599,
-7698,
-7699,
-7798,
-7799,
-8097,
-8098,
-8099,
-8199,
-8298,
-8299,
-8398,
-8399,
-8497,
-8498,
-8499,
-8599,
-8698,
-8699,
-9096,
-9097,
-9098,
-9099,
-9199,
-9297,
-9298,
-9299,
-9399,
-9498,
-9499,
-9598,
-9599,
-9698,
-9699,
-};
-
-            var entites = allEntities.Where(x => tis1099thesaban.Contains(x.geocode));
-            foreach ( var entity in entites )
+            var entityTypes = CurrentActiveEntityTypes();
+            var entitiesWithWikiData = allEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
+            var workItems = entitiesWithWikiData.Where(x => entityTypes.Contains(x.type));
+            foreach ( var changwat in workItems )
             {
-                var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( _helper.GeocodeCorrect(item, entity) == WikiDataState.NotSet )
+                if ( !_bot.CheckCommonsCategory(changwat) )
                 {
-                    var statement = _helper.SetGeocode(item, entity, false);
-                    if ( statement != null )
-                    {
-                        statement.save(_helper.GetClaimSaveEditSummary(statement));
-                        var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdStatedIn), new EntityIdValue(new EntityId(WikiBase.ItemSourceTIS1099BE2548)));
-                        var reference = statement.CreateReferenceForSnak(snak);
-                        reference.Save(_helper.GetReferenceSaveEditSummary(reference));
-                    }
+                    String categoryName = _bot.GetCommonsCategory(changwat);
+                    builder.AppendFormat("{0}: {1}", changwat.english, categoryName);
+                    builder.AppendLine();
                 }
             }
+            edtCollisions.Text = builder.ToString();
         }
 
         private void btnCategory_Click(object sender, EventArgs e)

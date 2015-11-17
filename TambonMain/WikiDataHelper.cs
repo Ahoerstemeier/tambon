@@ -59,7 +59,9 @@ namespace De.AHoerstemeier.Tambon
         private WikiDataState CheckStringValue(Item item, String propertyId, String expected, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
             if ( item == null )
+            {
                 throw new ArgumentNullException("item");
+            }
 
             WikiDataState result = WikiDataState.Unknown;
 
@@ -454,13 +456,13 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">Entity to search.</param>
         /// <returns>Wikidata entity.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="entity"/> is <c>null</c>.</exception>
-        /// <exception cref="ArgumentException"><paramref name="entity"/> has no wikidata link.</exception>
+        /// <exception cref="ArgumentException"><paramref name="entity"/> has no WikiData link.</exception>
         public Item GetWikiDataItemForEntity(Entity entity)
         {
             if ( entity == null )
                 throw new ArgumentNullException("entity");
             if ( (entity.wiki == null) || (String.IsNullOrEmpty(entity.wiki.wikidata)) )
-                throw new ArgumentException("no wikidata entity yet");
+                throw new ArgumentException("no WikiData entity yet");
 
             Item entityById = _entityProvider.getEntityFromId(new EntityId(entity.wiki.wikidata)) as Item;
             return entityById;
@@ -1044,7 +1046,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Get the default edit summary for a claim save.
         /// </summary>
-        /// <param name="value">Claim to ber parsed.</param>
+        /// <param name="value">Claim to be parsed.</param>
         /// <returns>Edit summary.</returns>
         /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         public String GetClaimSaveEditSummary(Claim value)
@@ -1504,6 +1506,68 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("item");
             return item.getLabel("en");
         }
+
+        /// <summary>
+        /// Find the (first) statement of the given <paramref name="propertyId"/> and gets the string value set.
+        /// </summary>
+        /// <param name="item">Source item.</param>
+        /// <param name="propertyId">Property id.</param>
+        /// <returns>String value, or <c>String.Empty</c> if not found.</returns>
+        public String GetStringClaim(Item item, String propertyId)
+        {
+            if ( item == null )
+            {
+                throw new ArgumentNullException("item");
+            }
+            if ( String.IsNullOrEmpty(propertyId) )
+            {
+                throw new ArgumentException("Invalid property id");
+            }
+            var result = String.Empty;
+
+            var property = new EntityId(propertyId);
+            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId)) )
+            {
+                Snak oldSnak = claim.mainSnak;
+                if ( oldSnak.Type == SnakType.Value )
+                {
+                    var oldDataValue = oldSnak.DataValue as StringValue;
+                    result = oldDataValue.Value;
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Find the (first) statement of the given <paramref name="propertyId"/> and gets the item set.
+        /// </summary>
+        /// <param name="item">Source item.</param>
+        /// <param name="propertyId">Property id.</param>
+        /// <returns>First linked item, or <c>null</c> if not found.</returns>
+        public Item GetItemClaim(Item item, String propertyId)
+        {
+            if ( item == null )
+            {
+                throw new ArgumentNullException("item");
+            }
+            if ( String.IsNullOrEmpty(propertyId) )
+            {
+                throw new ArgumentException("Invalid property id");
+            }
+            Item result = null;
+
+            var property = new EntityId(propertyId);
+            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId)) )
+            {
+                Snak oldSnak = claim.mainSnak;
+                if ( oldSnak.Type == SnakType.Value )
+                {
+                    var oldDataValue = oldSnak.DataValue as EntityIdValue;
+                    result = _entityProvider.getEntityFromId(new EntityId("Q" + oldDataValue.NumericId.ToString())) as Item;
+                }
+            }
+            return result;
+        }
     }
 
     /// <summary>
@@ -1517,12 +1581,12 @@ namespace De.AHoerstemeier.Tambon
         Unknown,
 
         /// <summary>
-        /// Vaue in Wikidata matches data in Tambon XML.
+        /// Value in WikiData matches data in Tambon XML.
         /// </summary>
         Valid,
 
         /// <summary>
-        /// Value not set in Wikidata.
+        /// Value not set in WikiData.
         /// </summary>
         NotSet,
 

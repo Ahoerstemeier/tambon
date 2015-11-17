@@ -851,15 +851,15 @@ namespace De.AHoerstemeier.Tambon
                     switch ( language )
                     {
                         case Language.German:
-                            wikiIdentifier = "dewiki";
+                            wikiIdentifier = WikiBase.SiteLinkGermanWikipedia;
                             break;
 
                         case Language.English:
-                            wikiIdentifier = "enwiki";
+                            wikiIdentifier = WikiBase.SiteLinkEnglishWikipedia;
                             break;
 
                         case Language.Thai:
-                            wikiIdentifier = "thwiki";
+                            wikiIdentifier = WikiBase.SiteLinkThaiWikipedia;
                             break;
                     }
                     if ( item.getSitelinks().TryGetValue(wikiIdentifier, out languageLink) )
