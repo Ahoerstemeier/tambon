@@ -398,9 +398,28 @@
             <xs:documentation>Muban number before the transfer. Only applicable when Muban are transferred.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="oldparent" type="xs:unsignedInt" use="optional">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name='GazetteParentChange'>
+    <xs:annotation>
+      <xs:documentation>Change of the overseeing district of a minor district.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:GazetteOperationBase">
+        <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional">
           <xs:annotation>
-            <xs:documentation>Geocode of the district which was previously overseeing the minor district. Only applicable for minor districts.</xs:documentation>
+            <xs:documentation>Geocode of the entity before it was transferred.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="newparent" type="xs:unsignedInt" use="required">
+          <xs:annotation>
+            <xs:documentation>Geocode of the district which will be overseeing the minor district.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldparent" type="xs:unsignedInt" use="required">
+          <xs:annotation>
+            <xs:documentation>Geocode of the district which was previously overseeing the minor district.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -611,6 +630,11 @@
   <xs:group name="EntryAction">
     <xs:choice>
       <xs:element name="reassign" type="t:GazetteReassign" />
+      <xs:element name="parentchange" type="t:GazetteParentChange">
+        <xs:annotation>
+          <xs:documentation>Change of overseeing district (only for King Amphoe).</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="status" type="t:GazetteStatusChange" />
       <xs:element name="rename" type="t:GazetteRename" />
       <xs:element name="abolish" type="t:GazetteAbolish" />

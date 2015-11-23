@@ -20,6 +20,8 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolishPark))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCreatePark))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAbolish))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReassignBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryParentChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReassign))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAreaChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryMergedWith))]
@@ -329,13 +331,15 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Parent entity changed.
     /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryParentChange))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReassign))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryReassign", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class HistoryReassign : HistoryEntryBase {
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryReassignBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public abstract partial class HistoryReassignBase : HistoryEntryBase {
         
         private EntityType typeField;
         
@@ -450,6 +454,30 @@ namespace De.AHoerstemeier.Tambon {
                 this.oldgeocodeFieldSpecified = value;
             }
         }
+    }
+    
+    /// <summary>
+    /// Overseeing entity changed (only for King Amphoe).
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryParentChange", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HistoryParentChange : HistoryReassignBase {
+    }
+    
+    /// <summary>
+    /// Parent entity changed.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryReassign", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HistoryReassign : HistoryReassignBase {
     }
     
     /// <summary>
@@ -651,6 +679,10 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<uint> splitfromField;
         
+        private uint parentField;
+        
+        private bool parentFieldSpecified;
+        
         private int subdivisionsField;
         
         private bool subdivisionsFieldSpecified;
@@ -697,6 +729,40 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.splitfromField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool parentSpecified {
+            get {
+                return this.parentFieldSpecified;
+            }
+            set {
+                this.parentFieldSpecified = value;
             }
         }
         
@@ -1076,6 +1142,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(HistoryCreatePark), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("mergedwith", typeof(HistoryMergedWith), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("misspelling", typeof(HistorySpelling), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(HistoryParentChange), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(HistoryReassign), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("reformedspelling", typeof(HistoryReformSpelling), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(HistoryRename), Order=0)]

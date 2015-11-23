@@ -59,6 +59,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaDefinition))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRenumber))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteParentChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteReassign))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -430,6 +431,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaDefinition))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteAreaChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteRenumber))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteParentChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GazetteReassign))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
     [System.SerializableAttribute()]
@@ -485,6 +487,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(GazetteParentChange), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=1)]
@@ -716,6 +719,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(GazetteParentChange), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=0)]
@@ -1788,6 +1792,94 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
+    /// Change of the overseeing district of a minor district.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteParentChange", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GazetteParentChange : GazetteOperationBase {
+        
+        private uint oldgeocodeField;
+        
+        private bool oldgeocodeFieldSpecified;
+        
+        private uint newparentField;
+        
+        private uint oldparentField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldgeocode {
+            get {
+                return this.oldgeocodeField;
+            }
+            set {
+                this.oldgeocodeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldgeocodeSpecified {
+            get {
+                return this.oldgeocodeFieldSpecified;
+            }
+            set {
+                this.oldgeocodeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint newparent {
+            get {
+                return this.newparentField;
+            }
+            set {
+                this.newparentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldparent {
+            get {
+                return this.oldparentField;
+            }
+            set {
+                this.oldparentField = value;
+            }
+        }
+    }
+    
+    /// <summary>
     /// Transfer of an administrative entity into a different parent entity.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
@@ -1823,10 +1915,6 @@ namespace De.AHoerstemeier.Tambon {
         private uint oldmubanField;
         
         private bool oldmubanFieldSpecified;
-        
-        private uint oldparentField;
-        
-        private bool oldparentFieldSpecified;
         
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -2046,40 +2134,6 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.oldmubanFieldSpecified = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public uint oldparent {
-            get {
-                return this.oldparentField;
-            }
-            set {
-                this.oldparentField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool oldparentSpecified {
-            get {
-                return this.oldparentFieldSpecified;
-            }
-            set {
-                this.oldparentFieldSpecified = value;
             }
         }
     }
