@@ -1386,7 +1386,7 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Filtered local governments.</returns>
         public IEnumerable<Entity> LocalGovernmentEntitiesOf(IEnumerable<Entity> localGovernments)
         {
-            return localGovernments.Where(x => x.parent.Contains(this.geocode) || GeocodeHelper.IsBaseGeocode(this.geocode, x.geocode) && !x.IsObsolete);
+            return localGovernments.Where(x => x.parent.Contains(this.geocode) || GeocodeHelper.IsBaseGeocode(this.geocode, x.geocode));
         }
     }
 }

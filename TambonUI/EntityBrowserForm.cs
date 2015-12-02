@@ -479,7 +479,20 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
 
-            // check areacoverages
+            var entitiesToCheckForHistory = entity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) || x.type.IsCompatibleEntityType(EntityType.Tambon) || x.type.IsCompatibleEntityType(EntityType.Changwat));
+            var entitiesToCheckWithCreationHistory = entitiesToCheckForHistory.Where(x => x.history.Items.Any(y => y is HistoryCreate));
+            var entitiesCreationWithoutSubdivisions = entitiesToCheckWithCreationHistory.Where(x => (x.history.Items.FirstOrDefault(y => y is HistoryCreate) as HistoryCreate).subdivisions == 0);
+            if ( entitiesCreationWithoutSubdivisions.Any() )
+            {
+                text += String.Format("Entities with creation but no subdivision number ({0}):", entitiesCreationWithoutSubdivisions.Count()) + Environment.NewLine;
+                foreach ( var item in entitiesCreationWithoutSubdivisions )
+                {
+                    text += String.Format(" {0}: {1}", item.geocode, item.english) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
+
+            // check area coverages
             txtErrors.Text = text;
         }
 
@@ -661,6 +674,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var localGovernmentsInEntity = entity.LocalGovernmentEntitiesOf(_localGovernments).ToList();
             // var localGovernmentsInProvince = LocalGovernmentEntitiesOf(this.baseEntity.entity.First(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode))).ToList();
+            var localGovernmentsObsolete = localGovernmentsInEntity.Where(x => x.IsObsolete);
             var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
             // var localEntitiesInProvinceWithOffice = localGovernmentsInProvince.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
             var localEntitiesWithCoverage = localEntitiesWithOffice.Where(x => x.LocalGovernmentAreaCoverage.Any());
@@ -672,6 +686,10 @@ namespace De.AHoerstemeier.Tambon.UI
             var localGovernmentCoveringMoreThanOneTambonAndAllCompletely = localGovernmentCoveringMoreThanOneTambon.Where(x => x.LocalGovernmentAreaCoverage.All(y => y.coverage == CoverageType.completely));
 
             result += String.Format("LAO: {0}", localEntitiesWithOffice.Count()) + Environment.NewLine;
+            if ( localGovernmentsObsolete.Any() )
+            {
+                result += String.Format("Abolished LAO: {0}", localGovernmentsObsolete.Count()) + Environment.NewLine;
+            }
             result += String.Format("LAO with coverage: {0}", localEntitiesWithCoverage.Count()) + Environment.NewLine;
             if ( localEntitiesWithoutCoverage.Any() )
             {
