@@ -220,11 +220,11 @@ namespace De.AHoerstemeier.Tambon
             String nativeName;
             if ( !String.IsNullOrEmpty(entity.ipa) )
             {
-                nativeName = String.Format(englishCulture, "{{{{lang-th|{0}}}}}; {{{{IPA-th|{1}|IPA}}}})", entity.name, entity.ipa);
+                nativeName = String.Format(englishCulture, "{{{{lang-th|{0}}}}}; {{{{IPA-th|{1}|IPA}}}}", entity.name, entity.ipa);
             }
             else
             {
-                nativeName = String.Format(englishCulture, "{{{{lang-th|{0}}}}})", entity.name);
+                nativeName = String.Format(englishCulture, "{{{{lang-th|{0}}}}}", entity.name);
             }
 
             builder.AppendFormat(englishCulture,
