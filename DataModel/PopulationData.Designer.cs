@@ -18,6 +18,8 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Population data point.
     /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RegisterDataMisc))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PopulationChangeEntry))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HouseholdDataPoint))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AgeTableEntry))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
@@ -118,6 +120,307 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
+    /// Miscellaneous registeration data.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RegisterDataMisc", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class RegisterDataMisc : PopulationDataPoint {
+        
+        private uint marriageField;
+        
+        private bool marriageFieldSpecified;
+        
+        private uint divorceField;
+        
+        private bool divorceFieldSpecified;
+        
+        private uint adoptionField;
+        
+        private bool adoptionFieldSpecified;
+        
+        private uint adoptiondissolutionField;
+        
+        private bool adoptiondissolutionFieldSpecified;
+        
+        private uint childacknowledgeField;
+        
+        private bool childacknowledgeFieldSpecified;
+        
+        private uint familystatusField;
+        
+        private bool familystatusFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint marriage {
+            get {
+                return this.marriageField;
+            }
+            set {
+                this.marriageField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool marriageSpecified {
+            get {
+                return this.marriageFieldSpecified;
+            }
+            set {
+                this.marriageFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint divorce {
+            get {
+                return this.divorceField;
+            }
+            set {
+                this.divorceField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool divorceSpecified {
+            get {
+                return this.divorceFieldSpecified;
+            }
+            set {
+                this.divorceFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint adoption {
+            get {
+                return this.adoptionField;
+            }
+            set {
+                this.adoptionField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool adoptionSpecified {
+            get {
+                return this.adoptionFieldSpecified;
+            }
+            set {
+                this.adoptionFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint adoptiondissolution {
+            get {
+                return this.adoptiondissolutionField;
+            }
+            set {
+                this.adoptiondissolutionField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool adoptiondissolutionSpecified {
+            get {
+                return this.adoptiondissolutionFieldSpecified;
+            }
+            set {
+                this.adoptiondissolutionFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint childacknowledge {
+            get {
+                return this.childacknowledgeField;
+            }
+            set {
+                this.childacknowledgeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool childacknowledgeSpecified {
+            get {
+                return this.childacknowledgeFieldSpecified;
+            }
+            set {
+                this.childacknowledgeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint familystatus {
+            get {
+                return this.familystatusField;
+            }
+            set {
+                this.familystatusField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool familystatusSpecified {
+            get {
+                return this.familystatusFieldSpecified;
+            }
+            set {
+                this.familystatusFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Population change.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PopulationChangeEntry", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class PopulationChangeEntry : PopulationDataPoint {
+        
+        private PopulationChangeType typeField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PopulationChangeType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Type of population change.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum PopulationChangeType {
+        
+        /// <summary>
+        /// Birth (การเกิด).
+        /// </summary>
+        birth,
+        
+        /// <summary>
+        /// Death (การตาย).
+        /// </summary>
+        death,
+        
+        /// <summary>
+        /// Move into entity (การย้ายเข้า).
+        /// </summary>
+        movein,
+        
+        /// <summary>
+        /// Move out of entity (การย้ายออก).
+        /// </summary>
+        moveout,
+    }
+    
+    /// <summary>
     /// Data point containing population data, age table and household data.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
@@ -132,6 +435,12 @@ namespace De.AHoerstemeier.Tambon {
         
         private AgeTable agetableField;
         
+        private PopulationDataPoint foreignerField;
+        
+        private PopulationDataPoint houseregisterField;
+        
+        private PopulationDataPoint movingField;
+        
         private PopulationDataType typeField;
         
         private int householdsField;
@@ -143,6 +452,9 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public HouseholdDataPoint() {
             this.geocodeField = new List<uint>();
+            this.movingField = new PopulationDataPoint();
+            this.houseregisterField = new PopulationDataPoint();
+            this.foreignerField = new PopulationDataPoint();
             this.agetableField = new AgeTable();
             this.dataField = new List<HouseholdDataPoint>();
             this.typeField = PopulationDataType.undefined;
@@ -180,6 +492,57 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.agetableField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Foreign population (ประชากรที่มิใช่สัญชาติไทย).
+        /// </summary>
+        /// <value>
+        /// The foreigner.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PopulationDataPoint foreigner {
+            get {
+                return this.foreignerField;
+            }
+            set {
+                this.foreignerField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Listed in house register (ประชากรที่มีชื่ออยู่ในทะเบียนบ้านกลาง).
+        /// </summary>
+        /// <value>
+        /// The houseregister.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PopulationDataPoint houseregister {
+            get {
+                return this.houseregisterField;
+            }
+            set {
+                this.houseregisterField = value;
+            }
+        }
+        
+        /// <summary>
+        /// In process of moving at time of data (ประชากรที่อยู่ระหว่างการย้าย).
+        /// </summary>
+        /// <value>
+        /// The moving.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PopulationDataPoint moving {
+            get {
+                return this.movingField;
+            }
+            set {
+                this.movingField = value;
             }
         }
         
@@ -428,6 +791,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<HouseholdDataPoint> dataField;
         
+        private RegisterData registerField;
+        
         private List<object> referenceField;
         
         private PopulationDataSourceType sourceField;
@@ -445,6 +810,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public PopulationData() {
             this.referenceField = new List<object>();
+            this.registerField = new RegisterData();
             this.dataField = new List<HouseholdDataPoint>();
             this.sourceField = PopulationDataSourceType.Unknown;
         }
@@ -467,12 +833,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Registeration data.
+        /// </summary>
+        /// <value>
+        /// The register.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public RegisterData register {
+            get {
+                return this.registerField;
+            }
+            set {
+                this.registerField = value;
+            }
+        }
+        
+        /// <summary>
         /// References for the population data.
         /// </summary>
         /// <value>
         /// The reference.
         /// </value>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
         [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
         [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
         [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
@@ -554,6 +937,108 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.yearField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Registration data.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.81.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RegisterData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class RegisterData {
+        
+        private List<PopulationChangeEntry> changeField;
+        
+        private RegisterDataMisc registerField;
+        
+        private List<object> referenceField;
+        
+        private string commentField;
+        
+        /// <summary>
+        /// Creates a new instance of RegisterData.
+        /// </summary>
+        public RegisterData() {
+            this.referenceField = new List<object>();
+            this.registerField = new RegisterDataMisc();
+            this.changeField = new List<PopulationChangeEntry>();
+        }
+        
+        /// <summary>
+        /// Population change.
+        /// </summary>
+        /// <value>
+        /// The change.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("change", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<PopulationChangeEntry> change {
+            get {
+                return this.changeField;
+            }
+            set {
+                this.changeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Miscellaneous registeration data..
+        /// </summary>
+        /// <value>
+        /// The register.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public RegisterDataMisc register {
+            get {
+                return this.registerField;
+            }
+            set {
+                this.registerField = value;
+            }
+        }
+        
+        /// <summary>
+        /// References for the population data.
+        /// </summary>
+        /// <value>
+        /// The reference.
+        /// </value>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> reference {
+            get {
+                return this.referenceField;
+            }
+            set {
+                this.referenceField = value;
             }
         }
         

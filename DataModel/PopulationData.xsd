@@ -97,6 +97,33 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="PopulationChangeType">
+    <xs:annotation>
+      <xs:documentation>Type of population change.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="birth">
+        <xs:annotation>
+          <xs:documentation>Birth (การเกิด).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="death">
+        <xs:annotation>
+          <xs:documentation>Death (การตาย).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="movein">
+        <xs:annotation>
+          <xs:documentation>Move into entity (การย้ายเข้า).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="moveout">
+        <xs:annotation>
+          <xs:documentation>Move out of entity (การย้ายออก).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:complexType name="PopulationDataPoint">
     <xs:annotation>
@@ -172,6 +199,21 @@
               <xs:documentation>Population by age.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element name="foreigner" type="t:PopulationDataPoint" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Foreign population (ประชากรที่มิใช่สัญชาติไทย).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="houseregister" type="t:PopulationDataPoint" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>Listed in house register (ประชากรที่มีชื่ออยู่ในทะเบียนบ้านกลาง).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="moving" type="t:PopulationDataPoint" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>In process of moving at time of data (ประชากรที่อยู่ระหว่างการย้าย).</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
         <xs:attribute name="type" type="t:PopulationDataType" use="optional" default="undefined">
           <xs:annotation>
@@ -201,6 +243,11 @@
           <xs:documentation>Population data points</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="register" type="t:RegisterData" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Registeration data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="reference" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>References for the population data.</xs:documentation>
@@ -222,6 +269,82 @@
         <xs:documentation>Year for which the data is given.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
+  <xs:complexType name="PopulationChangeEntry">
+    <xs:annotation>
+      <xs:documentation>Population change.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:PopulationDataPoint">
+        <xs:attribute name="type" type="t:PopulationChangeType" use="required">
+          <xs:annotation>
+            <xs:documentation>Type of change.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RegisterDataMisc">
+    <xs:annotation>
+      <xs:documentation>Miscellaneous registeration data.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:PopulationDataPoint">
+        <xs:attribute name="marriage" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of marriages registered (ทะเบียนสมรส).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="divorce" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of divorces registered (ทะเบียนหย่า).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="adoption" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of adoptions registered (ทะเบียนรับบุตรบุญธรรม).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="adoptiondissolution" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of dissolved adoptions registered (ทะเบียนเลิกรับบุตรบุญธรรม).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="childacknowledge" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of child acknowledgements registered (ทะเบียนรับรองบุตร).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="familystatus" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of family status changes registered (ทะเบียนบันทึกฐานะแห่งครอบครัว), i.e. family status changes done in other countries.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RegisterData">
+    <xs:annotation>
+      <xs:documentation>Registration data.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="change" type="t:PopulationChangeEntry" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Population change.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="register" type="t:RegisterDataMisc" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Miscellaneous registeration data..</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="reference" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>References for the population data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 </xs:schema>
