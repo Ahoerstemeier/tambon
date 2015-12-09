@@ -45,6 +45,11 @@ namespace De.AHoerstemeier.Tambon
             return !symbols.IsEmpty();
         }
 
+        public Boolean ShouldSerializemuban()
+        {
+            return (muban != null) && muban.Any();
+        }
+
         #endregion fixup serialization
 
         public Entity Clone()

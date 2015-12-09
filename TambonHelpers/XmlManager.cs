@@ -14,21 +14,21 @@ namespace De.AHoerstemeier.Tambon
     public static class XmlManager
     {
         /// <summary>
-        /// Serializes an Entity to Xml using the <see cref="System.Xml.Serialization.XmlSerializer"/>.
+        /// Serializes an Entity to XML using the <see cref="System.Xml.Serialization.XmlSerializer"/>.
         /// </summary>
         /// <typeparam name="T">Type of the Entity.</typeparam>
         /// <param name="entity">the Entity to serialize.</param>
         /// <param name="extraTypes">A Type array of additional object types to serialize. <see cref="System.Type"/></param>
-        /// <returns>the Xml of the Entity as <see cref="System.String"/>.</returns>
+        /// <returns>the XML of the Entity as <see cref="System.String"/>.</returns>
         public static String EntityToXml<T>(T entity, params Type[] extraTypes)
         {
             MemoryStream stream = null;
             TextWriter writer = null;
             try
             {
-                stream = new MemoryStream(); // read xml in memory
+                stream = new MemoryStream(); // read XML in memory
                 writer = new StreamWriter(stream, Encoding.UTF8);
-                // get serialise object
+                // get serialize object
                 XmlSerializer serializer = new XmlSerializer(typeof(T), extraTypes);
                 serializer.Serialize(writer, entity); // read object
                 var count = (Int32)stream.Length; // saves object in memory stream
@@ -54,12 +54,12 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Deserialize an Xml stream to the corresponding Entity T using the <see cref="System.Xml.Serialization.XmlSerializer"/>.
+        /// Deserialize an XML stream to the corresponding Entity T using the <see cref="System.Xml.Serialization.XmlSerializer"/>.
         /// </summary>
         /// <exception cref="InvalidOperationException">Thrown if the <paramref name="xmlStream"/> can not be deserialized to a valid object of type <typeparamref name="T"/>.</exception>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="xmlStream"/> or <paramref name="serializer"/> is null.</exception>
         /// <typeparam name="T">Type of the Entity</typeparam>
-        /// <param name="xmlStream">The xml <see cref="System.IO.Stream"/> to deserialize</param>
+        /// <param name="xmlStream">The XML <see cref="System.IO.Stream"/> to deserialize</param>
         /// <param name="serializer">The XmlSerializer that is being used for deserialization.</param>
         /// <returns>The Entity of Type T</returns>
         public static T XmlToEntity<T>(Stream xmlStream, XmlSerializer serializer)
@@ -76,7 +76,7 @@ namespace De.AHoerstemeier.Tambon
             XmlTextReader reader = null;
             try
             {
-                // serialise to object
+                // serialize to object
                 //XmlSerializer serializer = new XmlSerializer(typeof(T), extraTypes);
                 reader = new XmlTextReader(xmlStream); // create reader
                 // convert reader to object
@@ -91,12 +91,12 @@ namespace De.AHoerstemeier.Tambon
 
         public static T MakeClone<T>(T source)
         {
-            if (source == null)
+            if ( source == null )
                 return default(T);
 
             var xmlString = EntityToXml<T>(source);
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(xmlString ?? ""));
-            var result = XmlToEntity<T>(stream,new XmlSerializer(typeof(T)));
+            var result = XmlToEntity<T>(stream, new XmlSerializer(typeof(T)));
             return result;
         }
     }

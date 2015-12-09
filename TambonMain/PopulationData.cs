@@ -9,6 +9,20 @@ namespace De.AHoerstemeier.Tambon
 {
     public partial class PopulationData
     {
+        #region fixup serialization
+
+        public bool ShouldSerializeregister()
+        {
+            return register.change.Any() || !register.register.IsEmpty();
+        }
+
+        public Boolean ShouldSerializereference()
+        {
+            return reference.Any();
+        }
+
+        #endregion fixup serialization
+
         public PopulationData Clone()
         {
             return (PopulationData)(this.MemberwiseClone());

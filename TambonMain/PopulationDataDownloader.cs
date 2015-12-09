@@ -22,6 +22,16 @@ namespace De.AHoerstemeier.Tambon
 
     public class PopulationDataDownloader
     {
+        private enum DopaStatisticsType
+        {
+            Population = 1,
+            Household = 2,  // strange data, not linked in website, male column is same value as number of households
+            Birth = 3,
+            Death = 4,
+            MoveOut = 5,
+            MoveIn = 6
+        }
+
         #region fields
 
         /// <summary>
@@ -102,20 +112,33 @@ namespace De.AHoerstemeier.Tambon
 
         // 0 -> year - 2500
         // 1 -> geocode, 4 digits
-        private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType=1&year={0}&rcode={1}";
+        private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType={2}&year={0}&rcode={1}";
 
-        private const String _urlDataAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType=1&year={0}&rcode={1}";
+        private const String _urlDataAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType={2}&year={0}&rcode={1}";
 
         // 0 -> year - 2500
         // 1 -> geocode, 2 digits
-        private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType=1&year={0}&rcode={1}";
+        private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType={2}&year={0}&rcode={1}";
 
-        private const String _urlDataChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType=1&year={0}&rcode={1}";
+        private const String _urlDataChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType={2}&year={0}&rcode={1}";
+
+        private const String _urlDataCountry = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatProvince.php?statType={1}&year={0}";
 
         /// <summary>
-        /// Maximum number of retries of a invalid json reply from the DOPA server.
+        /// Maximum number of retries of a invalid JSon reply from the DOPA server.
         /// </summary>
         private Int32 maxRetry = 256;
+
+        /// <summary>
+        /// Translation dictionary from <see cref="DopaStatisticsType"/> to <see cref="PopulationChangeType"/>.
+        /// </summary>
+        private Dictionary<DopaStatisticsType, PopulationChangeType> _populationChangeType = new Dictionary<DopaStatisticsType, PopulationChangeType>()
+        {
+            { DopaStatisticsType.Birth, PopulationChangeType.birth },
+            { DopaStatisticsType.Death, PopulationChangeType.death},
+            { DopaStatisticsType.MoveIn, PopulationChangeType.movein },
+            { DopaStatisticsType.MoveOut, PopulationChangeType.moveout },
+        };
 
         #endregion constants
 
@@ -151,13 +174,13 @@ namespace De.AHoerstemeier.Tambon
                 case Language.English:
                     result = String.Format(CultureInfo.InvariantCulture,
                         "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Population statistics {1}|language=Thai|accessdate={2}}}}}</ref>",
-                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year, DateTime.Now.ToString("yyyy-MM-dd"));
+                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode, (Int32)DopaStatisticsType.Population), year, DateTime.Now.ToString("yyyy-MM-dd"));
                     break;
 
                 case Language.German:
                     result = String.Format(CultureInfo.InvariantCulture,
                         "<ref>{{{{cite web|url={0}|publisher=Department of Provincial Administration|title=Einwohnerstatistik {1}|language=Thai|accessdate={2}}}}}</ref>",
-                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode), year, DateTime.Now.ToString("yyyy-MM-dd"));
+                        String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, _yearShort, geocode, (Int32)DopaStatisticsType.Population), year, DateTime.Now.ToString("yyyy-MM-dd"));
                     break;
 
                 case Language.Thai:
@@ -214,17 +237,17 @@ namespace De.AHoerstemeier.Tambon
 
         #region private methods
 
-        private JsonObject GetDataFromDopa(UInt32 geocode)
+        private JsonObject GetDataFromDopa(UInt32 geocode, DopaStatisticsType statisticsType)
         {
             JsonObject obj = null;
             String url;
             if ( geocode < 100 )
             {
-                url = String.Format(CultureInfo.InvariantCulture, _urlDataChangwat, _yearShort, geocode);
+                url = String.Format(CultureInfo.InvariantCulture, _urlDataChangwat, _yearShort, geocode, (Int32)statisticsType);
             }
             else
             {
-                url = String.Format(CultureInfo.InvariantCulture, _urlDataAmphoe, _yearShort, geocode);
+                url = String.Format(CultureInfo.InvariantCulture, _urlDataAmphoe, _yearShort, geocode, (Int32)statisticsType);
             }
             Int32 errorCount = 0;
             while ( obj == null )
@@ -274,7 +297,7 @@ namespace De.AHoerstemeier.Tambon
             return new Uri(url);
         }
 
-        private IEnumerable<Entity> ParseJson(JsonObject data)
+        private IEnumerable<Entity> ParsePopulationJson(JsonObject data)
         {
             var result = new List<Entity>();
             var actualData = data.get("aaData");
@@ -333,20 +356,70 @@ namespace De.AHoerstemeier.Tambon
             return population;
         }
 
-        protected void GetData()
+        protected void GetProvinceData()
         {
             Data = new Entity();
-            var data = GetDataFromDopa(_geocode);
-            Data.entity.AddRange(ParseJson(data));
+            var populationJsonData = GetDataFromDopa(_geocode, DopaStatisticsType.Population);
+            Data.entity.AddRange(ParsePopulationJson(populationJsonData));
             foreach ( var entity in Data.entity )
             {
-                var subData = GetDataFromDopa(entity.geocode);
-                entity.entity.AddRange(ParseJson(subData));
+                var subPopulationData = GetDataFromDopa(entity.geocode, DopaStatisticsType.Population);
+                entity.entity.AddRange(ParsePopulationJson(subPopulationData));
             }
             Data.geocode = _geocode;
             Data.population = new List<PopulationData>();
             PopulationData populationData = CreateEmptyPopulationEntry();
             Data.population.Add(populationData);
+
+            AddOtherData(populationData, _geocode, DopaStatisticsType.Birth);
+            AddOtherData(populationData, _geocode, DopaStatisticsType.Death);
+            AddOtherData(populationData, _geocode, DopaStatisticsType.MoveIn);
+            AddOtherData(populationData, _geocode, DopaStatisticsType.MoveOut);
+        }
+
+        private void AddOtherData(PopulationData populationData, UInt32 geocode, DopaStatisticsType dataType)
+        {
+            var jsonData = GetDataFromDopa(geocode, dataType);
+            if ( populationData.register == null )
+            {
+                populationData.register = new RegisterData();
+            }
+
+            PopulationChangeEntry otherData = ParseAdditionalJson(jsonData);
+            otherData.type = _populationChangeType[dataType];
+            populationData.register.change.Add(otherData);
+        }
+
+        private PopulationChangeEntry ParseAdditionalJson(JsonObject data)
+        {
+            var result = new PopulationChangeEntry();
+
+            var actualData = data.get("aaData");
+            if ( actualData != null )
+            {
+                var array = actualData.asArray();
+                foreach ( JsonArray item in array )
+                {
+                    var parsedData = new List<String>();
+                    foreach ( JsonValue dataPoint in item )
+                    {
+                        var strippedText = Regex.Replace(dataPoint.asString(), "<.*?>", string.Empty).Replace(",", String.Empty);
+                        if ( strippedText == "-" )
+                        {
+                            strippedText = "0";
+                        }
+                        parsedData.Add(strippedText);
+                    }
+                    var firstLine = parsedData.First();
+                    if ( firstLine == "00" )
+                    {
+                        result.male = Convert.ToInt32(parsedData.ElementAt(2), CultureInfo.InvariantCulture);
+                        result.female = Convert.ToInt32(parsedData.ElementAt(3), CultureInfo.InvariantCulture);
+                        result.total = Convert.ToInt32(parsedData.ElementAt(4), CultureInfo.InvariantCulture);
+                    }
+                }
+            }
+            return result;
         }
 
         /// <summary>
@@ -416,7 +489,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void ProcessProvince(UInt32 geocode)
         {
-            GetData();
+            GetProvinceData();
             GetGeocodes();
             FixupWronglyPlacedAmphoe();
             ReOrderThesaban();

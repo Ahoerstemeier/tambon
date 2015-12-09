@@ -19,11 +19,12 @@ namespace De.AHoerstemeier.Tambon
                 !mission.Any() &&
                 !goal.Any() &&
                 !emblem.Any() &&
-                !color.Any() &&
+                color == "unknown" &&
                 !song.Any() &&
                 String.IsNullOrEmpty(symbolbird) &&
                 String.IsNullOrEmpty(symboltree) &&
-                String.IsNullOrEmpty(symbolflower);
+                String.IsNullOrEmpty(symbolflower) &&
+                String.IsNullOrEmpty(wateranimal);
         }
     }
 }

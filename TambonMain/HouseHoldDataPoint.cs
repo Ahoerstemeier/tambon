@@ -14,6 +14,26 @@ namespace De.AHoerstemeier.Tambon
             return agetable.age.Any();
         }
 
+        public Boolean ShouldSerializeforeigner()
+        {
+            return (foreigner.total != 0);
+        }
+
+        public Boolean ShouldSerializehouseregister()
+        {
+            return (houseregister.total != 0);
+        }
+
+        public Boolean ShouldSerializemoving()
+        {
+            return (moving.total != 0);
+        }
+
+        public Boolean ShouldSerializegeocode()
+        {
+            return (geocode.Any());
+        }
+
         #endregion fixup serialization
 
         /// <summary>
