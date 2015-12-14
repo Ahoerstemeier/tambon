@@ -119,17 +119,17 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        internal static String _BaseXMLDirectory = Path.GetDirectoryName(Application.ExecutablePath);
+        internal static String _baseXMLDirectory = Path.GetDirectoryName(Application.ExecutablePath);
 
         public static String BaseXMLDirectory
         {
             get
             {
-                return _BaseXMLDirectory;
+                return _baseXMLDirectory;
             }
             set
             {
-                _BaseXMLDirectory = value;
+                _baseXMLDirectory = value;
             }
         }
 
@@ -279,7 +279,7 @@ namespace De.AHoerstemeier.Tambon
                 result = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
                 var flat = result.FlatList();
 
-                // propagate population references into the subentities
+                // propagate population references into the sub-entities
                 foreach ( var entity in flat )
                 {
                     if ( entity.population.Any() && entity.entity.Any() )

@@ -56,10 +56,11 @@
             this.btnNayokResign = new System.Windows.Forms.Button();
             this.btnShowEntityData = new System.Windows.Forms.Button();
             this.grpTesting = new System.Windows.Forms.GroupBox();
+            this.btnGovernor = new System.Windows.Forms.Button();
             this.cbxCensusYears = new System.Windows.Forms.ComboBox();
             this.btnCheckCensus = new System.Windows.Forms.Button();
             this.btnAmphoeList = new System.Windows.Forms.Button();
-            this.btnGovernor = new System.Windows.Forms.Button();
+            this.btnAgeTable = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -345,6 +346,7 @@
             // 
             // grpTesting
             // 
+            this.grpTesting.Controls.Add(this.btnAgeTable);
             this.grpTesting.Controls.Add(this.btnGovernor);
             this.grpTesting.Controls.Add(this.cbxCensusYears);
             this.grpTesting.Controls.Add(this.btnCheckCensus);
@@ -363,6 +365,16 @@
             this.grpTesting.TabIndex = 61;
             this.grpTesting.TabStop = false;
             this.grpTesting.Text = "Testing only";
+            // 
+            // btnGovernor
+            // 
+            this.btnGovernor.Location = new System.Drawing.Point(234, 77);
+            this.btnGovernor.Name = "btnGovernor";
+            this.btnGovernor.Size = new System.Drawing.Size(75, 23);
+            this.btnGovernor.TabIndex = 59;
+            this.btnGovernor.Text = "Governor";
+            this.btnGovernor.UseVisualStyleBackColor = true;
+            this.btnGovernor.Click += new System.EventHandler(this.btnGovernor_Click);
             // 
             // cbxCensusYears
             // 
@@ -405,15 +417,15 @@
             this.btnAmphoeList.UseVisualStyleBackColor = true;
             this.btnAmphoeList.Click += new System.EventHandler(this.btnAmphoeList_Click);
             // 
-            // btnGovernor
+            // btnAgeTable
             // 
-            this.btnGovernor.Location = new System.Drawing.Point(234, 77);
-            this.btnGovernor.Name = "btnGovernor";
-            this.btnGovernor.Size = new System.Drawing.Size(75, 23);
-            this.btnGovernor.TabIndex = 59;
-            this.btnGovernor.Text = "Governor";
-            this.btnGovernor.UseVisualStyleBackColor = true;
-            this.btnGovernor.Click += new System.EventHandler(this.btnGovernor_Click);
+            this.btnAgeTable.Location = new System.Drawing.Point(8, 19);
+            this.btnAgeTable.Name = "btnAgeTable";
+            this.btnAgeTable.Size = new System.Drawing.Size(111, 23);
+            this.btnAgeTable.TabIndex = 63;
+            this.btnAgeTable.Text = "DOPA Age table";
+            this.btnAgeTable.UseVisualStyleBackColor = true;
+            this.btnAgeTable.Click += new System.EventHandler(this.btnAgeTable_Click);
             // 
             // MainForm
             // 
@@ -484,6 +496,7 @@
         private System.Windows.Forms.ComboBox cbxCensusYears;
         private System.Windows.Forms.Button btnAmphoeList;
         private System.Windows.Forms.Button btnGovernor;
+        private System.Windows.Forms.Button btnAgeTable;
     }
 }
 

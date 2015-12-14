@@ -285,7 +285,7 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        internal void CopyBasicDataFrom(Entity source)
+        public void CopyBasicDataFrom(Entity source)
         {
             geocode = source.geocode;
             english = source.english;

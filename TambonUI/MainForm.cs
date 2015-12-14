@@ -17,6 +17,11 @@ namespace De.AHoerstemeier.Tambon.UI
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Directory to find the DOPA age table source files.
+        /// </summary>
+        private String _ageDataDirectory;
+
         public MainForm()
         {
             InitializeComponent();
@@ -38,6 +43,8 @@ namespace De.AHoerstemeier.Tambon.UI
             //PopulationDataDownloader.OutputDirectory = Path.GetDirectoryName(Application.ExecutablePath) + "\\output\\";
 
             var xmlOutputDirectory = ConfigurationManager.AppSettings["XmlOutputDirectory"];
+            PopulationDataDownloader.OutputDirectory = xmlOutputDirectory;
+            _ageDataDirectory = ConfigurationManager.AppSettings["AgeDataDirectory"];
             PopulationDataDownloader.OutputDirectory = xmlOutputDirectory;
             var pdfDirectory = ConfigurationManager.AppSettings["PdfDirectory"];
             if ( !String.IsNullOrEmpty(pdfDirectory) )
@@ -963,7 +970,7 @@ namespace De.AHoerstemeier.Tambon.UI
             formElectionDayOfWeek.Show();
         }
 
-        private void btn_Population_Click(object sender, EventArgs e)
+        private void btn_Population_Click(Object sender, EventArgs e)
         {
             var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
             // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 50);
@@ -972,7 +979,7 @@ namespace De.AHoerstemeier.Tambon.UI
             File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
         }
 
-        private void btnNayokResign_Click(object sender, EventArgs e)
+        private void btnNayokResign_Click(Object sender, EventArgs e)
         {
             UInt32 changwatGeocode = 0;
             if ( !chkAllProvince.Checked )
@@ -1084,7 +1091,7 @@ namespace De.AHoerstemeier.Tambon.UI
             formElectionDayOfWeek.Show();
         }
 
-        private void btnShowEntityData_Click(object sender, EventArgs e)
+        private void btnShowEntityData_Click(Object sender, EventArgs e)
         {
             var formEntityBrowser = new EntityBrowserForm();
             formEntityBrowser.StartChangwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
@@ -1104,7 +1111,7 @@ namespace De.AHoerstemeier.Tambon.UI
             formEntityBrowser.Show();
         }
 
-        private void btnCheckCensus_Click(object sender, EventArgs e)
+        private void btnCheckCensus_Click(Object sender, EventArgs e)
         {
             Int16 year = Convert.ToInt16(cbxCensusYears.SelectedItem as String);
             var builder = new StringBuilder();
@@ -1206,7 +1213,7 @@ namespace De.AHoerstemeier.Tambon.UI
             formCensusProblems.Show();
         }
 
-        private void btnAmphoeList_Click(object sender, EventArgs e)
+        private void btnAmphoeList_Click(Object sender, EventArgs e)
         {
             Int16 year = Convert.ToInt16(cbxCensusYears.SelectedItem as String);
             GlobalData.LoadPopulationData(PopulationDataSourceType.Census, year);
@@ -1234,7 +1241,7 @@ namespace De.AHoerstemeier.Tambon.UI
             Clipboard.SetText(builder.ToString());
         }
 
-        private void btnGovernor_Click(object sender, EventArgs e)
+        private void btnGovernor_Click(Object sender, EventArgs e)
         {
             var baseEntity = GlobalData.CompleteGeocodeList();
             var allChangwat = baseEntity.FlatList().Where(x => x.type == EntityType.Changwat && !x.IsObsolete).ToList();
@@ -1267,6 +1274,75 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var formGovernors = new StringDisplayForm("Governors", builder.ToString());
             formGovernors.Show();
+        }
+
+        private void btnAgeTable_Click(Object sender, EventArgs e)
+        {
+            var baseEntity = ActiveProvince();
+            var entity = new Entity();
+            entity.CopyBasicDataFrom(baseEntity);
+            var code = entity.geocode;
+            Int16 year = Convert.ToInt16(edtYear.Value);
+            var path = Path.Combine(_ageDataDirectory, String.Format("{0:00}12cc{1:00}.txt", year - 2000 + 43, code));
+            if ( File.Exists(path) )
+            {
+                String input = File.ReadAllText(path);
+                using ( StringReader reader = new StringReader(input) )
+                {
+                    String line = reader.ReadLine();
+                    var fields = line.Split('|');
+                    var populationData = new PopulationData();
+                    populationData.year = year.ToString(CultureInfo.InvariantCulture);
+                    populationData.source = PopulationDataSourceType.DOPA;
+                    populationData.referencedate = new DateTime(year, 12, 31);
+                    var dataEntry = new HouseholdDataPoint();
+                    dataEntry.type = PopulationDataType.total;
+                    var ageTable = new AgeTable();
+                    dataEntry.agetable = ageTable;
+                    populationData.data.Add(dataEntry);
+                    entity.population.Add(populationData);
+
+                    for ( UInt32 age = 0 ; age <= 101 ; age++ )
+                    {
+                        var ageEntry = new AgeTableEntry();
+                        ageEntry.begin = age;
+                        if ( age > 100 )
+                        {
+                            ageEntry.end = 120;
+                        }
+                        else
+                        {
+                            ageEntry.end = age;
+                        }
+                        ageEntry.male = Convert.ToInt32(fields[age * 2 + 1]);
+                        ageEntry.female = Convert.ToInt32(fields[age * 2 + 2]);
+                        ageEntry.total = ageEntry.male + ageEntry.female;
+                        ageTable.age.Add(ageEntry);
+                    }
+                    ageTable.unknown = new PopulationDataPoint();
+                    ageTable.unknown.male = Convert.ToInt32(fields[205]);
+                    ageTable.unknown.female = Convert.ToInt32(fields[206]);
+                    ageTable.unknown.total = Convert.ToInt32(fields[207]);
+                    dataEntry.houseregister = new PopulationDataPoint();
+                    dataEntry.houseregister.male = Convert.ToInt32(fields[208]);
+                    dataEntry.houseregister.female = Convert.ToInt32(fields[209]);
+                    dataEntry.houseregister.total = Convert.ToInt32(fields[210]);
+                    dataEntry.foreigner = new PopulationDataPoint();
+                    dataEntry.foreigner.male = Convert.ToInt32(fields[211]);
+                    dataEntry.foreigner.female = Convert.ToInt32(fields[212]);
+                    dataEntry.foreigner.total = Convert.ToInt32(fields[213]);
+                    dataEntry.moving = new PopulationDataPoint();
+                    dataEntry.moving.male = Convert.ToInt32(fields[214]);
+                    dataEntry.moving.female = Convert.ToInt32(fields[215]);
+                    dataEntry.moving.total = Convert.ToInt32(fields[216]);
+                    dataEntry.male = Convert.ToInt32(fields[217]);
+                    dataEntry.female = Convert.ToInt32(fields[218]);
+                    dataEntry.total = Convert.ToInt32(fields[219]);
+
+                    var output = XmlManager.EntityToXml<Entity>(entity);
+                    File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, String.Format("age{0} {1}.xml", year, entity.english)), output);
+                }
+            }
         }
     }
 }
