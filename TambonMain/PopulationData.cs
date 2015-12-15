@@ -66,7 +66,7 @@ namespace De.AHoerstemeier.Tambon
         /// Gets the year.
         /// </summary>
         /// <value>The year.</value>
-        /// <remarks>Same as <see cref="year"/>, which has wrong datatype as XSD2Code cannot translate the XSD type year better.</remarks>
+        /// <remarks>Same as <see cref="year"/>, which has wrong data type as XSD2Code cannot translate the XSD type year better.</remarks>
         public Int16 Year
         {
             get
@@ -118,7 +118,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Calculates the maximum deviation of the sum of the partial datapoint.
+        /// Calculates the maximum deviation of the sum of the partial data point.
         /// </summary>
         /// <returns>Maximum deviation, <c>0</c> if all sum up correctly.</returns>
         public Int32 SumError()
@@ -153,7 +153,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Adds the numbers of the datapoint to this.
+        /// Adds the numbers of the data point to this.
         /// </summary>
         /// <param name="dataPoint">Data point to add.</param>
         /// <exception cref="ArgumentNullException"><paramref name="dataPoint"/> is <c>null</c>.</exception>
@@ -179,26 +179,39 @@ namespace De.AHoerstemeier.Tambon
 
     public partial class PopulationDataPoint
     {
-        private void Add(PopulationDataPoint data)
+        /// <summary>
+        /// Adds the values from <paramref name="data"/> to self.
+        /// </summary>
+        /// <param name="data">Data to add.</param>
+        public void Add(PopulationDataPoint data)
         {
+            if ( data == null )
+            {
+                throw new ArgumentNullException("data");
+            }
             this.female += data.female;
             this.male += data.male;
             this.total += data.total;
         }
 
-        private Boolean IsEqual(PopulationDataPoint data)
+        public Boolean IsEqual(PopulationDataPoint data)
         {
+            if ( data == null )
+            {
+                throw new ArgumentNullException("data");
+            }
+
             return
-            (this.female == data.female) &&
-            (this.male == data.male) &&
-            (this.total == data.total);
+                (this.female == data.female) &&
+                (this.male == data.male) &&
+                (this.total == data.total);
         }
 
         /// <summary>
         /// Verifies if <see cref="male"/> and <see cref="female"/> sum up to <see cref="total"/>.
         /// </summary>
         /// <returns><c>true</c> if valid, <c>false</c> otherwise.</returns>
-        public Boolean Verify()
+        public virtual Boolean Verify()
         {
             var sum = male + female;
             return (sum == total);
@@ -217,8 +230,8 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Checks whether the two population data added together are equal with this.
         /// </summary>
-        /// <param name="data1">First datapoint.</param>
-        /// <param name="data2">Second datapoint.</param>
+        /// <param name="data1">First data point.</param>
+        /// <param name="data2">Second data point.</param>
         /// <returns>Maximum deviation in one of the sum, <c>0</c> if equal.</returns>
         public Int32 SumError(PopulationDataPoint data1, PopulationDataPoint data2)
         {
@@ -267,12 +280,49 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Checks whether the two population data added together are equal with this.
         /// </summary>
-        /// <param name="data1">First datapoint.</param>
-        /// <param name="data2">Second datapoint.</param>
+        /// <param name="data1">First data point.</param>
+        /// <param name="data2">Second data point.</param>
         /// <returns><c>true</c> if equal, <c>false</c> otherwise.</returns>
         public Boolean VerifySum(PopulationDataPoint data1, PopulationDataPoint data2)
         {
             return this.SumError(data1, data2) == 0;
+        }
+    }
+
+    public partial class HouseholdDataPoint
+    {
+        /// <summary>
+        /// Verifies if <see cref="male"/> and <see cref="female"/> sum up to <see cref="total"/>,
+        /// and <see cref="agetable"/> is valid if present.
+        /// </summary>
+        /// <returns><c>true</c> if valid, <c>false</c> otherwise.</returns>
+        public override Boolean Verify()
+        {
+            var result = base.Verify();
+            result &= AgeTableValid();
+            return result;
+        }
+
+        /// <summary>
+        /// Checks whether the <see cref="agetable"/> fits to self.
+        /// </summary>
+        /// <returns><c>true</c> if age table if valid, <c>false</c> otherwise.</returns>
+        /// <remarks>Also returns <c>true</c> if there is no age table.</remarks>
+        public Boolean AgeTableValid()
+        {
+            var result = true;
+            if ( agetable != null && agetable.age.Any() )
+            {
+                var ageSum = new PopulationDataPoint();
+                foreach ( var ageEntry in agetable.age )
+                {
+                    ageSum.Add(ageEntry);
+                }
+                ageSum.Add(agetable.unknown);
+                result &= ageSum.IsEqual(this);
+            }
+
+            return result;
         }
     }
 }

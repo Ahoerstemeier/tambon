@@ -1178,6 +1178,11 @@ namespace De.AHoerstemeier.Tambon.UI
                                 break;
                         }
                     }
+                    if ( !data.AgeTableValid() )
+                    {
+                        builder.AppendFormat("{0} ({1}): {2} age table does not sum up", entity.english, entity.geocode, data.type);
+                        builder.AppendLine();
+                    }
                 }
                 diff = population.SumError();
                 if ( diff > 1 )
