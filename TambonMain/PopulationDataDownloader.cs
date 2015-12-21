@@ -293,7 +293,7 @@ namespace De.AHoerstemeier.Tambon
         public static Uri GetDisplayUrl(Int32 year, UInt32 geocode)
         {
             UInt32 changwatGeocode = GeocodeHelper.ProvinceCode(geocode);
-            String url = String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, year + 543 - 2500, changwatGeocode);
+            String url = String.Format(CultureInfo.InvariantCulture, _urlShowChangwat, year + 543 - 2500, changwatGeocode, (Int32)DopaStatisticsType.Population);
             return new Uri(url);
         }
 
