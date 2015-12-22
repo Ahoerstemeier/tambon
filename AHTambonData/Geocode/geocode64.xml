@@ -186,12 +186,19 @@
         <post value="64210" />
       </codes>
       <office type="TAOOffice">
-        <url>http://www.muangkhao.com/</url>
+        <geo:Point>
+          <geo:lat>17.0400</geo:lat>
+          <geo:long>99.6461</geo:long>
+        </geo:Point>
+        <url lastchecked="2015-12-21">http://www.muangkhao.go.th/</url>
+        <url status="offline">http://www.muangkhao.com/</url>
         <officials>
           <official title="TAOMayor" name="บรรจง ทัดนุ่ม" begin="2011-01-08" beginreason="ElectedDirectly" />
         </officials>
         <council>
-          <term begin="2012-09-30" type="TAO" size="22" />
+          <term begin="2012-09-30" type="TAO" size="22">
+            <official title="TAOCouncilChairman" name="อำนาจ ไชยสาลี" beginreason="ElectedByCouncil" />
+          </term>
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
           <!-- Mu 11 created 2003-08 -->
@@ -201,6 +208,13 @@
             <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
           </create>
         </history>
+        <area>
+          <area value="57.16" unit="km²">
+            <reference>
+              <url>http://info.dla.go.th/public/surveyInfo.do?cmd=surveyForm&amp;orgInfoId=35547</url>
+            </reference>
+          </area>
+        </area>
         <areacoverage>
           <entity geocode="640103" coverage="partially" />
         </areacoverage>
@@ -216,6 +230,35 @@
       <entity type="Muban" geocode="64010309" name="บ้านราวต้นเกลือ" english="Ban Rao Ton Kluea" />
       <entity type="Muban" geocode="64010310" name="บ้านศรีชุม" english="Ban Si Chum" />
       <entity type="Muban" geocode="64010311" name="บ้านแสนตอ" english="Ban Saen To">
+        <office type="VillageHeadmanOffice">
+          <geo:Point>
+            <geo:lat>17.0434</geo:lat>
+            <geo:long>99.6687</geo:long>
+          </geo:Point>
+          <socialweb>
+            <googleplus type="location">105684042225643192648</googleplus>
+          </socialweb>
+        </office>
+        <area>
+          <bounding geocode="64011007" direction="north">
+            <point>NU 726875</point>
+            <point>NU 730854</point>
+          </bounding>
+          <bounding geocode="64010305" direction="east" />
+          <bounding geocode="64010310" direction="east">
+            <point>NU 730854</point>
+            <point>NU 723827</point>
+          </bounding>
+          <bounding geocode="64010304" direction="south">
+            <point>NU 723827</point>
+            <point>NU 713833</point>
+          </bounding>
+          <bounding geocode="64010304" direction="west" />
+          <bounding geocode="64010307" direction="west">
+            <point>NU 713833</point>
+            <point>NU 726875</point>
+          </bounding>
+        </area>
         <history>
           <rename oldname="บ้านวังใหม่เจริญสุข" oldenglish="Ban Wang Mai Charoen Suk" name="บ้านแสนตอ" english="Ban Saen To" status="Gazette" effective="2015-10-29">
             <gazetteref volume="132" page="346" issue="130 ง" date="2015-12-17" />
@@ -3581,8 +3624,15 @@
       <symbols>
         <vision>เป็นเมืองน่าอยู่   เชิดชูประเพณีวัฒนธรรม   คุณค่าล้ำแหล่งท่องเที่ยวประวัติศาสตร์        ประชาราษฎรเป็นสุข</vision>
       </symbols>
+      <geo:Point>
+        <geo:lat>17.0188</geo:lat>
+        <geo:long>99.7146</geo:long>
+      </geo:Point>
       <url lastchecked="2013-02-18">http://www.muangkaosukhothai.go.th/</url>
       <url status="offline">http://www.oldcity.go.th/</url>
+      <socialweb>
+        <googleplus type="location">116724425222445861185</googleplus>
+      </socialweb>
       <officials>
         <official title="Mayor" name="สุดาวดี วิริยะพงษ์" begin="2013-07-07" beginreason="ElectedDirectly" />
         <official title="Mayor" name="สุทัศน์ เหมลักษณ์ไพโรจน์" begin="2009-05-31" end="2013-05-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
