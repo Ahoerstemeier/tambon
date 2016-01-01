@@ -848,6 +848,11 @@
         <official title="DistrictOfficer" name="ศิรินิพนธ์ แจ้งจันทร์" end="2007-01-07" />
       </officials>
     </office>
+    <history>
+      <statuschange effective="1956-06-06" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="73" page="657" issue="46 ก" date="1956-06-05" />
+      </statuschange>
+    </history>
     <entity type="Tambon" name="บ้านโฮ่ง" english="Ban Hong" geocode="510301">
       <wiki wikidata="Q4853612" />
       <office type="TAOOffice">
@@ -864,6 +869,9 @@
           <rename name="เวียงกานต์"	english="Wiang Kan"	oldname="บ้านโฮ่ง"	oldenglish="Ban Hong">
             <meetingreference date="2008-09-17" number="5" board="rename" />
           </rename>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="510301" coverage="partially" />
@@ -899,6 +907,11 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="24" finalsize="28" sizechangereason="MubanCreation" comment="Mu 13,14 created 2005-10" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510302" coverage="completely" />
         </areacoverage>
@@ -915,8 +928,20 @@
       <entity type="Muban" geocode="51030210" name="บ้านดอยโตน" english="Ban Doi Ton" />
       <entity type="Muban" geocode="51030211" name="บ้านห้วยโทก" english="Ban Huai Thok" />
       <entity type="Muban" geocode="51030212" name="บ้านเกาะทุ่งม่าน" english="Ban Ko Thung Man" />
-      <entity type="Muban" geocode="51030213" name="บ้านใหม่พัฒนา" english="Ban Mai Phatthana" />
-      <entity type="Muban" geocode="51030214" name="บ้านใหม่ศรีบุญเรือง" english="Ban Mai Si Bun Rueang" />
+      <entity type="Muban" geocode="51030213" name="บ้านใหม่พัฒนา" english="Ban Mai Phatthana">
+        <history>
+          <create effective="2005-10-31" status="Gazette" type="Muban" splitfrom="51030203">
+            <gazetteref volume="123" page="75" issue="พิเศษ 39 ง" date="2006-03-21" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="51030214" name="บ้านใหม่ศรีบุญเรือง" english="Ban Mai Si Bun Rueang">
+        <history>
+          <create effective="2005-10-31" status="Gazette" type="Muban" splitfrom="51030203">
+            <gazetteref volume="123" page="75" issue="พิเศษ 39 ง" date="2006-03-21" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="เหล่ายาว" english="Lao Yao" geocode="510303">
       <wiki wikidata="Q6487818" />
@@ -930,6 +955,11 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="26" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="26" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510303" coverage="completely" />
         </areacoverage>
@@ -946,7 +976,13 @@
       <entity type="Muban" geocode="51030310" name="บ้านเหล่าหมุ้น" english="Ban Lao Mun" />
       <entity type="Muban" geocode="51030311" name="บ้านปากทางม่วงโตน" english="Ban Pak Thang Muang Ton" />
       <entity type="Muban" geocode="51030312" name="บ้านห้วยสร้อย" english="Ban Huai Soi" />
-      <entity type="Muban" geocode="51030313" name="บ้านทุ่งปู่แดง" english="Ban Thung Pu Daeng" />
+      <entity type="Muban" geocode="51030313" name="บ้านทุ่งปู่แดง" english="Ban Thung Pu Daeng">
+        <history>
+          <create effective="2005-10-31" status="Gazette" type="Muban" splitfrom="51030304">
+            <gazetteref volume="123" page="75" issue="พิเศษ 39 ง" date="2006-03-21" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ศรีเตี้ย" english="Si Tia" geocode="510304">
       <wiki wikidata="Q7506451" />
@@ -977,12 +1013,20 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510305" coverage="completely" />
         </areacoverage>
       </office>
       <history>
         <misspelling name="หนองปลาสวาย" comment="Alternative spelling in DOPA population" />
+        <create effective="1977-05-24" status="Gazette" type="Tambon" splitfrom="510304" subdivisions="5" subdivisiontype="Muban">
+          <gazetteref volume="94" page="2533" issue="54 ง" date="1977-06-21" />
+        </create>
       </history>
       <entity type="Muban" geocode="51030501" name="บ้านหนองสูน" english="Ban Nong Sun" />
       <entity type="Muban" geocode="51030502" name="บ้านหนองปลาสะวาย" english="Ban Nong Pla Sawai" />
@@ -990,8 +1034,20 @@
       <entity type="Muban" geocode="51030504" name="บ้านหนองเขียด" english="Ban Nong Khiat" />
       <entity type="Muban" geocode="51030505" name="บ้านห้วยสะแหล" english="Ban Huai Salae" />
       <entity type="Muban" geocode="51030506" name="บ้านหนองเจริญ" english="Ban Nong Charoen" />
-      <entity type="Muban" geocode="51030507" name="บ้านสันเจดีย์ - ริมปิง" english="Ban San Chedi - Rim Ping" />
-      <entity type="Muban" geocode="51030508" name="บ้านปากล้อง" english="Ban Pak Long" />
+      <entity type="Muban" geocode="51030507" name="บ้านสันเจดีย์ - ริมปิง" english="Ban San Chedi - Rim Ping">
+        <history>
+          <create effective="2004-08-31" status="Gazette" type="Muban" splitfrom="51030502">
+            <gazetteref volume="121" page="53" issue="พิเศษ 100 ง" date="2004-09-10" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="51030508" name="บ้านปากล้อง" english="Ban Pak Long">
+        <history>
+          <create effective="2004-08-31" status="Gazette" type="Muban" splitfrom="51030502">
+            <gazetteref volume="121" page="53" issue="พิเศษ 100 ง" date="2004-09-10" />
+          </create>
+        </history>
+      </entity>
     </entity>
   </entity>
   <entity type="Amphoe" name="ลี้" english="Li" ipa="líː" geocode="5104">
@@ -1333,6 +1389,14 @@
         <official title="DistrictOfficer" name="ประจวบ กันธิยะ" end="2007-11-11" />
       </officials>
     </office>
+    <history>
+      <statuschange effective="1993-11-03" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="110" page="1" issue="179 ก ฉบับพิเศษ" date="1993-11-03" />
+      </statuschange>
+      <create effective="1977-02-01" status="Gazette" type="KingAmphoe" splitfrom="5104" subdivisions="3" subdivisiontype="Tambon">
+        <gazetteref volume="94" page="488" issue="11 ง" date="1977-02-08" />
+      </create>
+    </history>
     <entity type="Tambon" name="ทุ่งหัวช้าง" english="Thung Hua Chang" geocode="510501">
       <wiki wikidata="Q7799194" />
       <office type="TAOOffice">
@@ -1350,10 +1414,23 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="16" comment="ECT table wrongly claims 24" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="16" comment="ECT table wrongly claims 22" />
         </council>
+        <history>
+          <areachange effective="2011-11-10" status="Gazette" type="TAO">
+            <gazetteref volume="128" page="39" issue="พิเศษ 134 ง" date="2011-11-10" />
+          </areachange>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510501" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1977-02-01" status="Gazette" oldparent="5104" newparent="5105">
+          <gazetteref volume="94" page="488" issue="11 ง" date="1977-02-08" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="51050101" name="บ้านทุ่งเป็ด" english="Ban Thung Pet" />
       <entity type="Muban" geocode="51050102" name="บ้านหนองป่าตึง" english="Ban Nong Pa Tueng" />
       <entity type="Muban" geocode="51050103" name="บ้านทุ่งหัวช้าง" english="Ban Thung Hua Chang" />
@@ -1379,10 +1456,23 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="22" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510502" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1977-02-01" status="Gazette" oldparent="5104" newparent="5105">
+          <gazetteref volume="94" page="488" issue="11 ง" date="1977-02-08" />
+        </reassign>
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="510501" subdivisions="8" subdivisiontype="Muban">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>-->
+      </history>
       <entity type="Muban" geocode="51050201" name="บ้านแม่บอน" english="Ban Mae Bon" />
       <entity type="Muban" geocode="51050202" name="บ้านห้วยโป่ง" english="Ban Huai Pong" />
       <entity type="Muban" geocode="51050203" name="บ้านห้วยปิง" english="Ban Huai Ping" />
@@ -1410,10 +1500,23 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="24" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="24" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510503" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1977-02-01" status="Gazette" oldparent="5104" newparent="5105">
+          <gazetteref volume="94" page="488" issue="11 ง" date="1977-02-08" />
+        </reassign>
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="510501" subdivisions="9" subdivisiontype="Muban">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>-->
+      </history>
       <entity type="Muban" geocode="51050301" name="บ้านทุ่งข้าวหาง" english="Ban Thung Khao Hang" />
       <entity type="Muban" geocode="51050302" name="บ้านไม้ตะเคียน" english="Ban Mai Takhian" />
       <entity type="Muban" geocode="51050303" name="บ้านป่าตึงงาม" english="Ban Pa Tueng Ngam" />
@@ -1464,6 +1567,9 @@
           <abolished type="TAO" mergeto="5189" effective="2004-10-06" status="Gazette">
             <gazetteref volume="121" page="9" issue="พิเศษ 113 ง" date="2004-10-07" />
           </abolished>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
         </history>
       </office>
       <entity type="Muban" geocode="51060101" name="บ้านสบทา" english="Ban Sop Tha" />
@@ -1519,6 +1625,11 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="16" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="16" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510605" coverage="completely" />
         </areacoverage>
@@ -1555,6 +1666,11 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510607" coverage="completely" />
         </areacoverage>
@@ -1586,6 +1702,11 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="32" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510608" coverage="completely" />
         </areacoverage>
@@ -1603,9 +1724,27 @@
       <entity type="Muban" geocode="51060811" name="บ้านสันป่าฮัก" english="Ban San Pa Hak" />
       <entity type="Muban" geocode="51060812" name="บ้านวังสวนกล้วย" english="Ban Wang Suan Kluai" />
       <entity type="Muban" geocode="51060813" name="บ้านท่าไม้" english="Ban Tha Mai" />
-      <entity type="Muban" geocode="51060814" name="บ้านสันเจริญ" english="Ban San Charoen" />
-      <entity type="Muban" geocode="51060815" name="บ้านใหม่ป่าฝาง" english="Ban Mai Pa Fang" />
-      <entity type="Muban" geocode="51060816" name="บ้านไร่ดงเหนือ" english="Ban Rai Dong Nuea" />
+      <entity type="Muban" geocode="51060814" name="บ้านสันเจริญ" english="Ban San Charoen">
+        <history>
+          <create effective="2004-08-31" status="Gazette" type="Muban" splitfrom="51060801">
+            <gazetteref volume="121" page="49" issue="พิเศษ 100 ง" date="2004-09-10" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="51060815" name="บ้านใหม่ป่าฝาง" english="Ban Mai Pa Fang">
+        <history>
+          <create effective="2005-10-31" status="Gazette" type="Muban" splitfrom="51060803">
+            <gazetteref volume="123" page="69" issue="พิเศษ 39 ง" date="2006-03-21" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="51060816" name="บ้านไร่ดงเหนือ" english="Ban Rai Dong Nuea">
+        <history>
+          <create effective="2005-10-31" status="Gazette" type="Muban" splitfrom="51060803">
+            <gazetteref volume="123" page="69" issue="พิเศษ 39 ง" date="2006-03-21" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="วังผาง" english="Wang Phang" geocode="510609" newgeocode="510803" />
     <entity type="Tambon" name="หนองล่อง" english="Nong Long" geocode="510610" newgeocode="510801" />
@@ -1620,10 +1759,20 @@
           <term begin="2011-11-06" type="TAO" size="26" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="26" />
         </council>
+        <history>
+          <create effective="1995-03-03" status="Gazette" type="TAO">
+            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510611" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1976-06-16" status="Gazette" type="Tambon" splitfrom="510607 510608 510606" subdivisions="6" subdivisiontype="Muban">
+          <gazetteref volume="93" page="1520" issue="85 ง" date="1976-06-22" />
+        </create>
+      </history>
       <entity type="Muban" geocode="51061101" name="บ้านใหม่บวกคะยอม" english="Ban Mai Buak Khayom" />
       <entity type="Muban" geocode="51061102" name="บ้านหนองสมณะ" english="Ban Nong Somna" />
       <entity type="Muban" geocode="51061103" name="บ้านแม่อาว" english="Ban Mae Ao" />
@@ -1636,7 +1785,13 @@
       <entity type="Muban" geocode="51061110" name="บ้านน้ำย้อย" english="Ban Nam Yoi" />
       <entity type="Muban" geocode="51061111" name="บ้านผาเงิบ" english="Ban Pha Ngoep" />
       <entity type="Muban" geocode="51061112" name="บ้านหนองสมณะใต้" english="Ban Nong Somna Tai" />
-      <entity type="Muban" geocode="51061113" name="บ้านหนองเจดีย์" english="Ban Nong Chedi" />
+      <entity type="Muban" geocode="51061113" name="บ้านหนองเจดีย์" english="Ban Nong Chedi">
+        <history>
+          <create effective="2006-11-30" status="Gazette" type="Muban" splitfrom="51061107">
+            <gazetteref volume="124" page="42" issue="พิเศษ 11 ง" date="2007-01-31" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="หนองยวง" english="Nong Yuang" geocode="510612" newgeocode="510802" />
   </entity>
@@ -1667,8 +1822,21 @@
         <official title="DistrictOfficer" name="รักเกียรติ วานิชพิพัฒน์" end="2007-11-11" />
       </officials>
     </office>
+    <history>
+      <statuschange effective="1995-09-07" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="112" page="1" issue="32 ก" date="1995-08-08" />
+      </statuschange>
+      <create effective="1990-04-01" status="Gazette" type="KingAmphoe" splitfrom="5701 5101" subdivisions="2" subdivisiontype="Tambon">
+        <gazetteref volume="107" page="1358" issue="25 ง" date="1990-02-13" />
+      </create>
+    </history>
     <entity type="Tambon" name="บ้านธิ" english="Ban Thi" geocode="510701">
       <wiki wikidata="Q4853720" />
+      <history>
+        <reassign effective="1990-04-01" status="Gazette" oldparent="5101" newparent="5107" oldgeocode="510114">
+          <gazetteref volume="107" page="1358" issue="25 ง" date="1990-02-13" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="51070101" name="บ้านเตาปูน" english="Ban Tao Pun" />
       <entity type="Muban" geocode="51070102" name="บ้านป่าเปา" english="Ban Pa Pao" />
       <entity type="Muban" geocode="51070103" name="บ้านธิหลวง" english="Ban Thi Luang" />
@@ -1704,10 +1872,23 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="32" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="510702" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1990-04-01" status="Gazette" oldparent="5101" newparent="5107" oldgeocode="510115">
+          <gazetteref volume="107" page="1358" issue="25 ง" date="1990-02-13" />
+        </reassign>
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="510114" subdivisions="6" subdivisiontype="Muban">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>-->
+      </history>
       <entity type="Muban" geocode="51070201" name="บ้านแจ้ซ้อน" english="Ban Chae Son" />
       <entity type="Muban" geocode="51070202" name="บ้านห้วยยาบ" english="Ban Huai Yap" />
       <entity type="Muban" geocode="51070203" name="บ้านห้วยม่วง" english="Ban Huai Muang" />
@@ -1722,8 +1903,20 @@
       <entity type="Muban" geocode="51070212" name="บ้านป่าหมอก" english="Ban Pa Mok" />
       <entity type="Muban" geocode="51070213" name="บ้านห้วยไซใหม่พัฒนา" english="Ban Huai Sai Mai Phatthana" />
       <entity type="Muban" geocode="51070214" name="บ้านห้วยไซ" english="Ban Huai Sai" />
-      <entity type="Muban" geocode="51070215" name="บ้านห้วยไซสุขสวัสดิ์" english="Ban Huai Sai Suk Sawat" />
-      <entity type="Muban" geocode="51070216" name="บ้านห้วยม่วง-ไร่พัฒนา" english="Ban Huai Muang - Rai Phatthana" />
+      <entity type="Muban" geocode="51070215" name="บ้านห้วยไซสุขสวัสดิ์" english="Ban Huai Sai Suk Sawat">
+        <history>
+          <create effective="2004-08-31" status="Gazette" type="Muban" splitfrom="51070209">
+            <gazetteref volume="121" page="64" issue="พิเศษ 100 ง" date="2004-09-10" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="51070216" name="บ้านห้วยม่วง-ไร่พัฒนา" english="Ban Huai Muang - Rai Phatthana">
+        <history>
+          <create effective="2006-11-30" status="Gazette" type="Muban" splitfrom="51070203">
+            <gazetteref volume="124" page="55" issue="พิเศษ 11 ง" date="2007-01-31" />
+          </create>
+        </history>
+      </entity>
     </entity>
   </entity>
   <entity type="Amphoe" name="เวียงหนองล่อง" english="Wiang Nong Long" ipa="wīaŋ nɔ̌ːŋ lɔ̂ŋ" geocode="5108">
@@ -1747,8 +1940,24 @@
         <official title="DistrictOfficer" name="ณรงค์ โรจนโสทร" end="2008-11-23" />
       </officials>
     </office>
+    <history>
+      <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
+      </statuschange>
+      <create effective="1995-05-01" status="Gazette" type="KingAmphoe" splitfrom="5106" subdivisions="3" subdivisiontype="Tambon">
+        <gazetteref volume="112" page="62" issue="พิเศษ 9 ง" date="1995-03-22" />
+      </create>
+    </history>
     <entity type="Tambon" name="หนองล่อง" english="Nong Long" geocode="510801">
       <wiki wikidata="Q7049364" />
+      <history>
+        <reassign effective="1995-05-01" status="Gazette" oldparent="5106" newparent="5108" oldgeocode="510610">
+          <gazetteref volume="112" page="62" issue="พิเศษ 9 ง" date="1995-03-22" />
+        </reassign>
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="510609" subdivisions="5" subdivisiontype="Muban">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>-->
+      </history>
       <entity type="Muban" geocode="51080101" name="บ้านหนองล่อง" english="Ban Nong Long" />
       <entity type="Muban" geocode="51080102" name="บ้านต้นผึ้ง" english="Ban Ton Phueng" />
       <entity type="Muban" geocode="51080103" name="บ้านวังสะแกง" english="Ban Wang Sakaeng" />
@@ -1761,6 +1970,14 @@
     </entity>
     <entity type="Tambon" name="หนองยวง" english="Nong Yuang" geocode="510802">
       <wiki wikidata="Q7049384" />
+      <history>
+        <reassign effective="1995-05-01" status="Gazette" oldparent="5106" newparent="5108" oldgeocode="510612">
+          <gazetteref volume="112" page="62" issue="พิเศษ 9 ง" date="1995-03-22" />
+        </reassign>
+        <create effective="1980-09-01" status="Gazette" type="Tambon" splitfrom="510609" subdivisions="5" subdivisiontype="Muban">
+          <gazetteref volume="97" page="2" issue="145 ง ฉบับพิเศษ" date="1980-09-18" />
+        </create>
+      </history>
       <entity type="Muban" geocode="51080201" name="บ้านเหล่าดู่" english="Ban Lao Du" />
       <entity type="Muban" geocode="51080202" name="บ้านห้วยปันจ๊อย" english="Ban Huai Pan Choi" />
       <entity type="Muban" geocode="51080203" name="บ้านหนองยวง" english="Ban Nong Yuang" />
@@ -1769,6 +1986,11 @@
     </entity>
     <entity type="Tambon" name="วังผาง" english="Wang Phang" geocode="510803">
       <wiki wikidata="Q7967569" />
+      <history>
+        <reassign effective="1995-05-01" status="Gazette" oldparent="5106" newparent="5108" oldgeocode="510609">
+          <gazetteref volume="112" page="62" issue="พิเศษ 9 ง" date="1995-03-22" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="51080301" name="บ้านเหล่าแมว" english="Ban Lao Maeo" />
       <entity type="Muban" geocode="51080302" name="บ้านเหล่าปงเสือ" english="Ban Lao Pong Suea" />
       <entity type="Muban" geocode="51080303" name="บ้านร้องธาร-ท่าลี่" english="Ban Rong Than - Tha Li" />
@@ -1952,6 +2174,14 @@
         <entity geocode="510204" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1992-04-22" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="109" page="55" issue="53 ง ฉบับพิเศษ" date="1992-04-22" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="51950001" name="ชุมชนหมื่นข้าว" english="Chumchon Muen Khao" />
     <entity type="Chumchon" geocode="51950002" name="ชุมชนบ้านเหล่า" english="Chumchon Ban Lao" />
     <entity type="Chumchon" geocode="51950003" name="ชุมชนเกาะทราย" english="Chumchon Ko Sai" />
@@ -1981,6 +2211,14 @@
         <entity geocode="510202" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-09-20" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="52" issue="75 ง ฉบับพิเศษ" date="1956-09-20" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="บ้านโฮ่ง" english="Ban Hong" geocode="5193" parent="5103">
     <office type="MunicipalityOffice">
@@ -1999,6 +2237,20 @@
         <entity geocode="510301" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <areachange effective="1983-06-14" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="100" page="1918" issue="97 ง" date="1983-06-14" />
+      </areachange>
+      <areachange effective="1979-05-15" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="96" page="1857" issue="82 ง" date="1979-05-15" />
+      </areachange>
+      <create effective="1956-11-28" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="69" issue="99 ง ฉบับพิเศษ" date="1956-11-28" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="แม่ตืน" english="Mae Tuen" geocode="5192" parent="5104">
     <office type="MunicipalityOffice">
@@ -2027,6 +2279,17 @@
         <entity geocode="510402" coverage="partially" comment="เฉพาะหมู่ที่ 3, 11-12" />
       </areacoverage>
     </office>
+    <history>
+      <areachange effective="2013-06-13" status="Gazette" type="ThesabanTambon">
+        <gazetteref volume="130" page="8" issue="พิเศษ 71 ง" date="2013-06-13" />
+      </areachange>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1993-04-26" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="110" page="1" issue="51 ง ฉบับพิเศษ" date="1993-04-26" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="วังดิน" english="Wang Din" geocode="5191" parent="5104">
     <office type="MunicipalityOffice">
@@ -2047,6 +2310,17 @@
         <entity geocode="510401" coverage="partially" comment="เฉพาะหมู่ที่ 4, 6, 14-15, changed in 2014" />
       </areacoverage>
     </office>
+    <history>
+      <areachange effective="2014-09-30" status="Gazette" type="ThesabanTambon">
+        <gazetteref volume="131" page="13" issue="พิเศษ 193 ง" date="2014-09-30" />
+      </areachange>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-08-03" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="76" issue="60 ง ฉบับพิเศษ" date="1956-08-03" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ทุ่งหัวช้าง" english="Thung Hua Chang" geocode="5190" parent="5105">
     <office type="MunicipalityOffice">
@@ -2071,6 +2345,17 @@
         <entity geocode="510501" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <areachange effective="2011-11-10" status="Gazette" type="ThesabanTambon">
+        <gazetteref volume="128" page="40" issue="พิเศษ 134 ง" date="2011-11-10" />
+      </areachange>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1993-04-26" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="110" page="3" issue="51 ง ฉบับพิเศษ" date="1993-04-26" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ป่าซาง" english="Pa Sang" geocode="5189" parent="5106">
     <office type="MunicipalityOffice">
@@ -2097,6 +2382,20 @@
         <entity geocode="510602" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <mergedwith effective="2004-10-07" status="Gazette" mergefrom="510601" mergefromtype="TAO">
+        <gazetteref volume="121" page="9" issue="พิเศษ 113 ง" date="2004-10-07" />
+      </mergedwith>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <areachange effective="1979-10-30" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="96" page="3888" issue="184 ง" date="1979-10-30" />
+      </areachange>
+      <create effective="1955-09-17" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="72" page="84" issue="74 ง ฉบับพิเศษ" date="1955-09-17" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ม่วงน้อย" english="Muang Noi" geocode="5188" parent="5106">
     <office type="MunicipalityOffice">
@@ -2121,6 +2420,17 @@
         <entity geocode="510604" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <mergedwith effective="2004-07-09" status="Gazette" mergefrom="510604" mergefromtype="SaphaTambon">
+        <gazetteref volume="121" page="11" issue="พิเศษ 75 ง" date="2004-07-09" />
+      </mergedwith>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1982-10-19" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="99" page="4195" issue="153 ง" date="1982-10-19" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="วังผาง" english="Wang Phang" geocode="5187" parent="5108">
     <office type="MunicipalityOffice">
@@ -2142,6 +2452,17 @@
         <entity geocode="510803" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <mergedwith effective="2004-09-29" status="Gazette" mergefrom="510803" mergefromtype="SaphaTambon">
+        <gazetteref volume="121" page="4" issue="พิเศษ 108 ง" date="2004-09-29" />
+      </mergedwith>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1993-04-26" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="110" page="22" issue="51 ง ฉบับพิเศษ" date="1993-04-26" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="บ้านธิ" english="Ban Thi" geocode="5186" parent="5107" tambon="510701">
     <office type="MunicipalityOffice">
@@ -2165,6 +2486,9 @@
         <gazetteref volume="121" issue="พิเศษ 78 ง" date="2004-07-19" page="9" />
         <meetingreference board="2" number="19" date="2004-05-20" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="แม่แรง" english="Mae Raeng" geocode="5185" parent="5106" tambon="510603">
@@ -2192,6 +2516,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2005-06-03" status="Done">
         <meetingreference board="2" number="15" date="2005-05-12" />
       </statuschange>
+      <create effective="1997-02-13" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="เหมืองง่า" english="Mueang Nga" geocode="5184" parent="5101" tambon="510102">
@@ -2225,6 +2552,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done">
         <meetingreference board="2" number="20" date="2007-07-05" />
       </statuschange>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="บ้านกลาง" english="Ban Klang" geocode="5183" parent="5101" tambon="510112">
@@ -2246,6 +2576,9 @@
     </office>
     <history>
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done" />
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="เวียงยอง" english="Wiang Yong" geocode="5182" parent="5101" tambon="510111">
@@ -2280,6 +2613,9 @@
     </office>
     <history>
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done" />
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="มะเขือแจ้" english="Makhuea Chae" geocode="5181" parent="5101" tambon="510113">
@@ -2301,6 +2637,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-23" status="Done">
         <meetingreference board="2" number="21" date="2007-07-06" />
       </statuschange>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="มะกอก" english="Makok" geocode="5180" parent="5106" tambon="510606">
@@ -2328,6 +2667,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
         <meetingreference board="2" number="51" date="2008-07-04" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="หนองยวง" english="Nong Yuang" geocode="5179" parent="5108" tambon="510802">
@@ -2351,6 +2693,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-29" status="Done">
         <meetingreference board="2" number="4" date="2008-01-11" />
       </statuschange>
+      <create effective="1999-12-04" status="Gazette" type="TAO">
+        <gazetteref volume="116" page="3" issue="พิเศษ 82 ง" date="1999-10-15" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="หนองล่อง" english="Nong Long" geocode="5178" parent="5108" tambon="510801">
@@ -2375,6 +2720,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28" status="Done">
         <meetingreference board="2" number="54" date="2007-11-30" />
       </statuschange>
+      <create effective="1999-12-04" status="Gazette" type="TAO">
+        <gazetteref volume="116" page="3" issue="พิเศษ 82 ง" date="1999-10-15" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ทาสบชัย" english="Tha Sop Chai" geocode="5177" parent="5102" tambon="510202">
@@ -2404,6 +2752,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-02-28" status="Done">
         <meetingreference board="2" number="12" date="2008-02-08" />
       </statuschange>
+      <create effective="1999-12-04" status="Gazette" type="TAO">
+        <gazetteref volume="116" page="3" issue="พิเศษ 82 ง" date="1999-10-15" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ศรีเตี้ย" english="Si Tia" geocode="5176" parent="5103" tambon="510304">
@@ -2427,10 +2778,11 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
         <meetingreference board="2" number="51" date="2008-07-04" />
       </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
     </history>
   </entity>
-
-  <!-- no geocode yet -->
   <entity type="ThesabanTambon" name="ศรีวิชัย" english="Si Wichai" geocode="5175" parent="5104" tambon="510409">
     <office type="MunicipalityOffice">
       <symbols>
@@ -2457,6 +2809,9 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done">
         <meetingreference board="2" date="2009-04-29" number="2" />
       </statuschange>
+      <create effective="1997-02-13" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+      </create>
     </history>
   </entity>
 </entity>
