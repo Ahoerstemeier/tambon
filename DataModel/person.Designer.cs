@@ -18,7 +18,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Information on a person in the local or central administration.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -37,6 +37,8 @@ namespace De.AHoerstemeier.Tambon {
         private string nameField;
         
         private string englishField;
+        
+        private string ipaField;
         
         /// <summary>
         /// Creates a new instance of person.
@@ -79,6 +81,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(GazetteParentChange), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=1)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=1)]
@@ -155,12 +158,29 @@ namespace De.AHoerstemeier.Tambon {
                 this.englishField = value;
             }
         }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ipa {
+            get {
+                return this.ipaField;
+            }
+            set {
+                this.ipaField = value;
+            }
+        }
     }
     
     /// <summary>
     /// Gender of a person.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]

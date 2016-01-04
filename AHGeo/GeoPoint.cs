@@ -1,35 +1,83 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using System.Xml;
-using System.Text.RegularExpressions;
 using System.Globalization;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace De.AHoerstemeier.Geo
 {
     public class GeoPoint : ICloneable, IEquatable<GeoPoint>
     {
         #region constants
+
         private double dScaleFactor = 0.9996; // scale factor, used as k0
         private double _convertRadianToDegree = 180.0 / Math.PI; // 57.2957795130823208767 ...
         private GeoDatum _Datum = GeoDatum.DatumWGS84();
         private Int32 _GeoHashDefaultAccuracy = 9;
         private Int32 _MaidenheadDefaultAccuracy = 9;
         private PositionInRectangle _DefaultPositionInRectangle = PositionInRectangle.MiddleMiddle;
-        #endregion
+
+        #endregion constants
 
         #region properties
-        public double Altitude { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
-        public GeoDatum Datum { get { return _Datum; } set { SetDatum(value); } }
-        public String GeoHash { get { return CalcGeoHash(_GeoHashDefaultAccuracy); } set { SetGeoHash(value); } }
-        public String Maidenhead { get { return CalcMaidenhead(_MaidenheadDefaultAccuracy); } set { SetMaidenhead(value); } }
 
-        #endregion
+        public double Altitude
+        {
+            get; set;
+        }
+
+        public double Latitude
+        {
+            get; set;
+        }
+
+        public double Longitude
+        {
+            get; set;
+        }
+
+        public GeoDatum Datum
+        {
+            get
+            {
+                return _Datum;
+            }
+            set
+            {
+                SetDatum(value);
+            }
+        }
+
+        public String GeoHash
+        {
+            get
+            {
+                return CalcGeoHash(_GeoHashDefaultAccuracy);
+            }
+            set
+            {
+                SetGeoHash(value);
+            }
+        }
+
+        public String Maidenhead
+        {
+            get
+            {
+                return CalcMaidenhead(_MaidenheadDefaultAccuracy);
+            }
+            set
+            {
+                SetMaidenhead(value);
+            }
+        }
+
+        #endregion properties
 
         #region constructor
+
         /// <summary>
         /// Initializes a new instance of the GeoPoint class.
         /// </summary>
@@ -206,9 +254,11 @@ namespace De.AHoerstemeier.Geo
             Latitude = latitude;
             _Datum = datum;
         }
-        #endregion
+
+        #endregion constructor
 
         #region methods
+
         /// <summary>
         /// Checks whether the point is on the northern hemisphere.
         /// </summary>
@@ -265,6 +315,7 @@ namespace De.AHoerstemeier.Geo
             Altitude = Altitude + dh;
             _Datum = newDatum;
         }
+
         internal static void ShiftPositionInRectangle(ref Double latitude, ref Double longitude, PositionInRectangle positionInRectangle, Double height, Double width)
         {
             switch ( positionInRectangle )
@@ -316,6 +367,7 @@ namespace De.AHoerstemeier.Geo
                 Longitude.ToString(Helper.CultureInfoUS) + ",0";
             lNewElement.AppendChild(lCoordinatesElement);
         }
+
         public void ExportToXML(XmlElement node)
         {
             XmlDocument lXmlDocument = Helper.XmlDocumentFromNode(node);
@@ -330,10 +382,11 @@ namespace De.AHoerstemeier.Geo
             lLongitudeElement.InnerText = Longitude.ToString(Helper.CultureInfoUS);
             lNewElement.AppendChild(lLongitudeElement);
         }
+
         public UtmPoint CalcUTM()
         {
-            //converts lat/long to UTM coords.  Equations from USGS Bulletin 1532 
-            //East Longitudes are positive, West longitudes are negative. 
+            //converts lat/long to UTM coords.  Equations from USGS Bulletin 1532
+            //East Longitudes are positive, West longitudes are negative.
             //North latitudes are positive, South latitudes are negative
             //Lat and Long are in decimal degrees
 
@@ -432,7 +485,6 @@ namespace De.AHoerstemeier.Geo
                 }
             }
             return RetVal;
-
         }
 
         private static String CoordinateToString(String format, Double value)
@@ -462,6 +514,7 @@ namespace De.AHoerstemeier.Geo
             // %s - decimal seconds, always positive
             return result;
         }
+
         /// <summary>
         /// Formats the coordinates according to a given format string.
         /// </summary>
@@ -504,6 +557,7 @@ namespace De.AHoerstemeier.Geo
             result = result.Replace("%%", "%");
             return result;
         }
+
         /// <summary>
         /// Converts the coordinates to a string formatted with decimal degrees.
         /// </summary>
@@ -517,6 +571,7 @@ namespace De.AHoerstemeier.Geo
         {
             return De.AHoerstemeier.Geo.GeoHash.EncodeGeoHash(this, accuracy);
         }
+
         private void SetGeoHash(String value)
         {
             GeoPoint newPoint = De.AHoerstemeier.Geo.GeoHash.DecodeGeoHash(value);
@@ -533,6 +588,7 @@ namespace De.AHoerstemeier.Geo
             this.Latitude = latitude;
             this.Longitude = longitude;
         }
+
         private String CalcMaidenhead(Int32 precision)
         {
             String result = MaidenheadLocator.GetMaidenheadLocator(Latitude, Longitude, true, precision);
@@ -552,7 +608,7 @@ namespace De.AHoerstemeier.Geo
             MatchCollection matches = Parser.Matches(value);
             if ( matches.Count != 2 )
             {
-                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognized", value));
             }
 
             Double latitude = 0.0;
@@ -595,6 +651,7 @@ namespace De.AHoerstemeier.Geo
             }
             return new GeoPoint(latitude, longitude);
         }
+
         private static GeoPoint ParseDegMin(String value)
         {
             Regex Parser = new Regex(@"([0-9]{1,3})[:|°|\s]\s{0,}((?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b))'{0,1}\s{0,}?([N|S|E|W])\s{0,}");
@@ -606,7 +663,7 @@ namespace De.AHoerstemeier.Geo
             MatchCollection matches = Parser.Matches(value);
             if ( matches.Count != 2 )
             {
-                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognized", value));
             }
 
             Double latitude = 0.0;
@@ -648,6 +705,7 @@ namespace De.AHoerstemeier.Geo
             }
             return new GeoPoint(latitude, longitude);
         }
+
         private static GeoPoint ParseDecimalDegree(String value)
         {
             Regex Parser = new Regex(@"((?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b))°{0,1}\s{0,}?([N|S|E|W])\s{0,}");
@@ -659,7 +717,7 @@ namespace De.AHoerstemeier.Geo
             MatchCollection matches = Parser.Matches(value);
             if ( matches.Count != 2 )
             {
-                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognised", value));
+                throw new ArgumentException(string.Format(CultureInfo.CurrentUICulture, "Lat/long value of '{0}' is not recognized", value));
             }
 
             Double latitude = 0.0;
@@ -701,7 +759,7 @@ namespace De.AHoerstemeier.Geo
             return new GeoPoint(latitude, longitude);
         }
 
-        #endregion
+        #endregion methods
 
         #region ICloneable Members
 
@@ -710,10 +768,13 @@ namespace De.AHoerstemeier.Geo
             return new GeoPoint(this);
         }
 
-        #endregion
+        #endregion ICloneable Members
+
         #region IEquatable Members
-        const double _AltitudeAccuracy = 0.01;  // 10 cm
-        const double _DegreeAccuracy = 0.00005;  // ca. 0.5 ArcSecond
+
+        private const double _AltitudeAccuracy = 0.01;  // 10 cm
+        private const double _DegreeAccuracy = 0.00005;  // ca. 0.5 ArcSecond
+
         public bool Equals(GeoPoint value)
         {
             double altitudeError = Math.Abs(value.Altitude - this.Altitude);
@@ -725,7 +786,7 @@ namespace De.AHoerstemeier.Geo
                 & (value.Datum.Equals(this.Datum));
             return lResult;
         }
-        #endregion
 
+        #endregion IEquatable Members
     }
 }

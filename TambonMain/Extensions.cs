@@ -23,7 +23,7 @@ namespace De.AHoerstemeier.Tambon
                 EntityType.PAO,
         };
 
-        // TODO: Move to resource and make it translateable there
+        // TODO: Move to resource and make it translatable there
         private static Dictionary<EntityType, Dictionary<Language, String>> _entityTranslations = new Dictionary<EntityType, Dictionary<Language, String>>()
         {
                 {EntityType.Thesaban, new Dictionary<Language,String>(){
@@ -179,7 +179,7 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="type">Entity type.</param>
         /// <returns><c>true</c> if is a third level administrative unit, <c>false</c> otherwise.</returns>
-        /// <remarks>Thrid level administrative units are <see cref="EntityType.Tambon"/> and <see cref="EntityType.Khwaeng"/>.</remarks>
+        /// <remarks>Third level administrative units are <see cref="EntityType.Tambon"/> and <see cref="EntityType.Khwaeng"/>.</remarks>
         static public Boolean IsThirdLevelAdministrativeUnit(this EntityType type)
         {
             return _entitySubDistrict.Contains(type);
@@ -289,8 +289,8 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Gets the length of a term for the given entity type.
         /// </summary>
-        /// <param name="value">Tyoe of entity.</param>
-        /// <returns>Length of term in years, <c>0</c> if undefinied.</returns>
+        /// <param name="value">Type of entity.</param>
+        /// <returns>Length of term in years, <c>0</c> if undefined.</returns>
         public static Byte TermLength(this EntityType value)
         {
             switch ( value )

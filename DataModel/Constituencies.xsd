@@ -95,7 +95,7 @@
   </xs:complexType>
   <xs:complexType name="EntityInExclude">
     <xs:annotation>
-      <xs:documentation>Part of the parent entity which is explicitely excluded/included in the constituency.</xs:documentation>
+      <xs:documentation>Part of the parent entity which is explicitly excluded/included in the constituency.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
@@ -505,7 +505,7 @@
       </xs:element>
       <xs:element name="partylistresult" type="t:PartyListResult" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Result of the proportial party list.</xs:documentation>
+          <xs:documentation>Result of the proportional party list.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="candidates" type="t:CandidateList" minOccurs="0" maxOccurs="1">

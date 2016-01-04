@@ -63,7 +63,7 @@ namespace De.AHoerstemeier.Tambon
             position = date.IndexOf(' ');
             monthString = date.Substring(0, position).Trim();
             month = ThaiMonthNames[monthString];
-            // TODO: Kamen da nicht auch welche mit KhoSo vor?
+            // TODO: Weren't there some very old ones with KhoSo as well?
             position = date.IndexOf(BuddhistEra, StringComparison.Ordinal) + BuddhistEra.Length;
             yearString = date.Substring(position, date.Length - position);
             year = Convert.ToInt32(yearString, CultureInfo.InvariantCulture);

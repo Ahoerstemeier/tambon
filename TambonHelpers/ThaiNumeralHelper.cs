@@ -10,7 +10,7 @@ namespace De.AHoerstemeier.Tambon
     public static class ThaiNumeralHelper
     {
         /// <summary>
-        /// Translation table between Thai numeral and arabic numeral.
+        /// Translation table between Thai numeral and Arabic numeral.
         /// </summary>
         internal static Dictionary<Char, Byte> ThaiNumerals = new Dictionary<char, byte>
         {

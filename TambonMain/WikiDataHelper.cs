@@ -159,7 +159,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Checks and evetually sets a link property.
+        /// Checks and eventually sets a link property.
         /// </summary>
         /// <param name="item">Wikidata item.</param>
         /// <param name="propertyId">Id of the property.</param>

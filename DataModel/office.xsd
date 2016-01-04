@@ -221,12 +221,12 @@
   </xs:simpleType>
   <xs:simpleType name="TermBeginType">
     <xs:annotation>
-      <xs:documentation>Ways a council has its concillors selected.</xs:documentation>
+      <xs:documentation>Ways a council has its conciliators selected.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:enumeration value="Unknown">
         <xs:annotation>
-          <xs:documentation>Unknown way of councillor selection.</xs:documentation>
+          <xs:documentation>Unknown way of councilor selection.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Election">
@@ -236,12 +236,12 @@
       </xs:enumeration>
       <xs:enumeration value="Appointed">
         <xs:annotation>
-          <xs:documentation>Councillors appointed by a selection committee.</xs:documentation>
+          <xs:documentation>Councilors appointed by a selection committee.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="ExOfficio">
         <xs:annotation>
-          <xs:documentation>Councillors automatically appointed due to another office position held.</xs:documentation>
+          <xs:documentation>Councilors automatically appointed due to another office position held.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="TermExtended">
@@ -738,12 +738,12 @@
     <xs:attributeGroup ref="t:Comment" />
     <xs:attribute name="size" type="xs:unsignedInt" use="optional">
       <xs:annotation>
-        <xs:documentation>Number of councillors at begin of term.</xs:documentation>
+        <xs:documentation>Number of councilors at begin of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="finalsize" type="xs:unsignedInt" use="optional">
       <xs:annotation>
-        <xs:documentation>Number of councillors at end of term.</xs:documentation>
+        <xs:documentation>Number of councilors at end of term.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="type" type="t:EntityType" use="required">
@@ -753,7 +753,7 @@
     </xs:attribute>
     <xs:attribute name="beginreason" type="t:TermBeginType" use="optional" default="Election">
       <xs:annotation>
-        <xs:documentation>Method by which the councillors were chosen.</xs:documentation>
+        <xs:documentation>Method by which the councilors were chosen.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="endreason" type="t:TermEndType" use="optional" default="EndOfTerm">
@@ -922,7 +922,7 @@
     </xs:annotation>
     <xs:attribute name="code" use="optional" type="xs:unsignedInt">
       <xs:annotation>
-        <xs:documentation>DOLA code for the entitiy.</xs:documentation>
+        <xs:documentation>DOLA code for the entity.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="SML" use="optional" type="t:SmallMediumLarge" default="Undefined">
@@ -932,7 +932,7 @@
     </xs:attribute>
     <xs:attribute name="oldcodes" use="optional" type="t:DolaCodeList">
       <xs:annotation>
-        <xs:documentation>DOLA code for the entitiy.</xs:documentation>
+        <xs:documentation>DOLA code for the entity.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />

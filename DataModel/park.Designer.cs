@@ -15,7 +15,7 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -244,7 +244,7 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Geocodes of the entites covered by the protected area.
+        /// Geocodes of the entities covered by the protected area.
         /// </summary>
         /// <value>
         /// The locationgeocode.
@@ -264,7 +264,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Protected area.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -287,6 +287,8 @@ namespace De.AHoerstemeier.Tambon {
         private string nameField;
         
         private string englishField;
+        
+        private string ipaField;
         
         private bool obsoleteField;
         
@@ -435,6 +437,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.englishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ipa {
+            get {
+                return this.ipaField;
+            }
+            set {
+                this.ipaField = value;
             }
         }
         
