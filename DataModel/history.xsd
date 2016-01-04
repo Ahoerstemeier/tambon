@@ -151,6 +151,11 @@
             <xs:documentation>Area after the change in km².</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="changewith" type="t:GeocodeList" use="optional">
+          <xs:annotation>
+            <xs:documentation>Entities with which area was exchanged.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -261,7 +266,7 @@
   </xs:complexType>
   <xs:complexType name="HistoryAbolishPark">
     <xs:annotation>
-      <xs:documentation>Protected area cancelation.</xs:documentation>
+      <xs:documentation>Protected area cancellation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="t:HistoryParkBase" />
