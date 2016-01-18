@@ -165,8 +165,10 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
             WikiDataTaskDelegate setCensus2010 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2010);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 2010", setCensus2010));
-            WikiDataTaskDelegate setDopa2014 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2014);
-            _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2014", setDopa2014));
+            WikiDataTaskDelegate setDopa2015 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2015);
+            _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2015", setDopa2015));
+            // WikiDataTaskDelegate setDopa2014 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2014);
+            // _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2014", setDopa2014));
             WikiDataTaskDelegate setCensus2000 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2000);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 2000", setCensus2000));
             WikiDataTaskDelegate setCensus1990 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1990);

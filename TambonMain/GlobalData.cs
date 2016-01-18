@@ -15,7 +15,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Latest year for which the DOPA population statistics is available.
         /// </summary>
-        public const Int32 PopulationStatisticMaxYear = 2014;
+        public const Int32 PopulationStatisticMaxYear = 2015;
 
         /// <summary>
         /// Earliest year for which the DOPA population statistics is available.
