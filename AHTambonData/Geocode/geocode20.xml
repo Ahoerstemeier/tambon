@@ -2697,47 +2697,6 @@
       <codes>
         <post value="20250 20251" comment="ภายในบริเวณศูนย์ฝึกทหารใหม่ และ โรงเรียนชุมพลทหารเรือ ใช้รหัส 20251" />
       </codes>
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>12.7592</geo:lat>
-          <geo:long>100.9043</geo:long>
-        </geo:Point>
-        <url lastchecked="2013-01-04">http://www.kledkaew.go.th/</url>
-        <officials>
-          <official title="Mayor" name="ศิริพร ปิ่นล่ม" begin="2012-11-25" beginreason="ElectedDirectly" />
-          <officialterm title="Mayor" begin="2008-10-19" endyear="2012" beginreason="ElectedDirectly" endreason="Unknown" />
-          <official title="TAOMayor" name="เกษม โห้สุวรรณ" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2014-02-16" type="ThesabanTambon" size="12" />
-          <!-- New constituencies announced 2013-12-13 -->
-          <term begin="2008-10-19" end="2012-10-18" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
-        </council>
-        <history>
-          <rename name="เกล็ดแก้ว" english="Klet Kaeo" oldname="บางเสร่" oldenglish="Bang Sare" effective="2008-07-25" status="Done">
-            <meetingreference date="2008-06-04" number="3" board="rename" />
-          </rename>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
-            <meetingreference board="2" number="42" date="2008-06-04" />
-          </statuschange>
-          <create effective="1996-03-20" status="Gazette" type="TAO">
-            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="200904" coverage="partially" />
-        </areacoverage>
-        <!--
-         1. ชุมชนเนินสามัคคี
-          2. ชุมชนทรายแก้ว
-          3. ชุมชนเขาช้าง
-          4. ชุมชนบ้านเขากระทิง
-          5. ชุมชนบ้านหนองหิน
-          6. ชุมชนร่วมพัฒนาวัดใหม่อยู่สงัด
-          7. ชุมชนเกล็ดแก้วพัฒนา
-          8. ชุมชนบ้านโค้งวันเพ็ญ-->
-      </office>
       <entity type="Muban" geocode="20090401" name="บ้านบางเสร่" english="Ban Bang Sare" />
       <entity type="Muban" geocode="20090402" name="บ้านเนินบรรพต" english="Ban Noen Banphot" />
       <entity type="Muban" geocode="20090403" name="บ้านเนินสามัคคี" english="Ban Noen Samakkhi" />
@@ -4588,6 +4547,52 @@
         <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
       </create>
     </history>
+  </entity>
+  <entity type="ThesabanTambon" name="เกล็ดแก้ว" english="Klet Kaeo" geocode="2060" tambon="200904">
+    <!--<codes>
+      <post value="20250 20251" comment="ภายในบริเวณศูนย์ฝึกทหารใหม่ และ โรงเรียนชุมพลทหารเรือ ใช้รหัส 20251" />
+    </codes>-->
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>12.7592</geo:lat>
+        <geo:long>100.9043</geo:long>
+      </geo:Point>
+      <url lastchecked="2013-01-04">http://www.kledkaew.go.th/</url>
+      <officials>
+        <official title="Mayor" name="ศิริพร ปิ่นล่ม" begin="2012-11-25" beginreason="ElectedDirectly" />
+        <officialterm title="Mayor" begin="2008-10-19" endyear="2012" beginreason="ElectedDirectly" endreason="Unknown" />
+        <official title="TAOMayor" name="เกษม โห้สุวรรณ" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2014-02-16" type="ThesabanTambon" size="12" />
+        <!-- New constituencies announced 2013-12-13 -->
+        <term begin="2008-10-19" end="2012-10-18" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
+      </council>
+      <areacoverage>
+        <entity geocode="200904" coverage="partially" />
+      </areacoverage>
+    </office>
+    <history>
+      <rename name="เกล็ดแก้ว" english="Klet Kaeo" oldname="บางเสร่" oldenglish="Bang Sare" effective="2008-07-25" status="Done">
+        <meetingreference date="2008-06-04" number="3" board="rename" />
+      </rename>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-25" status="Done">
+        <meetingreference board="2" number="42" date="2008-06-04" />
+      </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
+    </history>
+    <!--
+         1. ชุมชนเนินสามัคคี
+          2. ชุมชนทรายแก้ว
+          3. ชุมชนเขาช้าง
+          4. ชุมชนบ้านเขากระทิง
+          5. ชุมชนบ้านหนองหิน
+          6. ชุมชนร่วมพัฒนาวัดใหม่อยู่สงัด
+          7. ชุมชนเกล็ดแก้วพัฒนา
+          8. ชุมชนบ้านโค้งวันเพ็ญ-->
   </entity>
 
   <entity type="SakhaTambon" name="บางเสร่" english="Bang Sare" geocode="2051" parent="2009" obsolete="1" />

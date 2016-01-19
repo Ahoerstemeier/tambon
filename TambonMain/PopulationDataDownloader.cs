@@ -491,8 +491,8 @@ namespace De.AHoerstemeier.Tambon
         {
             GetProvinceData();
             GetGeocodes();
-            FixupWronglyPlacedAmphoe();
             ReOrderThesaban();
+            FixupWronglyPlacedAmphoe();
             var toRemove = new List<Entity>();
             foreach ( var entity in Data.FlatList() )
             {
