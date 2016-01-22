@@ -973,7 +973,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btn_Population_Click(Object sender, EventArgs e)
         {
             var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
-            // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 50);
+            // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 13);
             downloader.Process();
             var output = XmlManager.EntityToXml<Entity>(downloader.Data);
             File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
@@ -1116,11 +1116,14 @@ namespace De.AHoerstemeier.Tambon.UI
             Int16 year = Convert.ToInt16(cbxCensusYears.SelectedItem as String);
             var builder = new StringBuilder();
             var baseEntity = GlobalData.CompleteGeocodeList();
-            var populationData = GlobalData.LoadPopulationDataUnprocessed(PopulationDataSourceType.Census, year);
-            var allEntities = populationData.FlatList().Where(x => x.population.Any(y => y.source == PopulationDataSourceType.Census && y.Year == year)).ToList();
+            var type = PopulationDataSourceType.Census;
+            // var type = PopulationDataSourceType.DOPA;
+            // year = 2015;
+            var populationData = GlobalData.LoadPopulationDataUnprocessed(type, year);
+            var allEntities = populationData.FlatList().Where(x => x.population.Any(y => y.source == type && y.Year == year)).ToList();
             foreach ( var entity in allEntities )
             {
-                var population = entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year);
+                var population = entity.population.First(y => y.source == type && y.Year == year);
                 Int32 diff = 0;
 
                 var notDistinctPopulationDataTypes =
@@ -1131,8 +1134,12 @@ namespace De.AHoerstemeier.Tambon.UI
 
                 foreach ( var notDistinctType in notDistinctPopulationDataTypes )
                 {
-                    builder.AppendFormat("{0} ({1}): {2} present {3} times)", entity.english, entity.geocode, notDistinctType.Key, notDistinctType.Count());
-                    builder.AppendLine();
+                    var codes = notDistinctType.Select(x => String.Join(",", x.geocode));
+                    if ( codes.Distinct().Count() != codes.Count() )
+                    {
+                        builder.AppendFormat("{0} ({1}): {2} present {3} times)", entity.english, entity.geocode, notDistinctType.Key, notDistinctType.Count());
+                        builder.AppendLine();
+                    }
                 }
 
                 foreach ( var data in population.data )
@@ -1193,7 +1200,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 var sum = new PopulationData();
                 foreach ( var subEntity in entity.entity.Where(x => !x.IsObsolete && x.population.Any()) )
                 {
-                    var populationToAdd = subEntity.population.FirstOrDefault(y => y.source == PopulationDataSourceType.Census && y.Year == year);
+                    var populationToAdd = subEntity.population.FirstOrDefault(y => y.source == type && y.Year == year);
                     if ( populationToAdd != null )
                     {
                         foreach ( var dataPoint in populationToAdd.data )
@@ -1204,7 +1211,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 if ( sum.data.Any() )
                 {
-                    diff = sum.TotalPopulation.MaxDeviation(entity.population.First(y => y.source == PopulationDataSourceType.Census && y.Year == year).TotalPopulation);
+                    diff = sum.TotalPopulation.MaxDeviation(entity.population.First(y => y.source == type && y.Year == year).TotalPopulation);
                     if ( diff > 1 )
                     {
                         builder.AppendFormat("{0} ({1}): Sum of sub-entities differs by {2}", entity.english, entity.geocode, diff);

@@ -124,7 +124,18 @@ namespace De.AHoerstemeier.Tambon
         public Int32 SumError()
         {
             Int32 maxError = 0;
-            var municipal = data.FirstOrDefault(x => x.type == PopulationDataType.municipal);
+            // DOPA data can contain more than one municipal entry with different geocodes
+            PopulationDataPoint municipal = null;
+            var municipalData = data.Where(x => x.type == PopulationDataType.municipal);
+            if ( municipalData.Any() )
+            {
+                municipal = new PopulationDataPoint();
+                foreach ( var dataPoint in municipalData )
+                {
+                    municipal.Add(dataPoint);
+                }
+            }
+            // var municipal = data.FirstOrDefault(x => x.type == PopulationDataType.municipal);
             var rural = data.FirstOrDefault(x => x.type == PopulationDataType.nonmunicipal);
             if ( (municipal != null) && (rural != null) )
             {
