@@ -491,6 +491,19 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 text += Environment.NewLine;
             }
+            var entitiesWithoutCreation = entity.FlatList().Where(x => !x.IsObsolete && !x.history.Items.Any(y => y is HistoryCreate));
+            var entitiesWithGazetteCreation = entitiesWithoutCreation.Where(x => GazetteCreationHistory(x) != null);
+            // remove those strange 1947 Tambon creation
+            var entitiesWithGazetteCreationFiltered = entitiesWithGazetteCreation.Where(x => x.type != EntityType.Tambon || GazetteCreationHistory(x).effective.Year >= 1950);
+            if ( entitiesWithGazetteCreationFiltered.Any() )
+            {
+                text += String.Format("Entities with creation missing ({0}):", entitiesWithGazetteCreationFiltered.Count()) + Environment.NewLine;
+                foreach ( var item in entitiesWithGazetteCreationFiltered )
+                {
+                    text += String.Format(" {0}: {1}", item.geocode, item.english) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
+            }
 
             // check area coverages
             txtErrors.Text = text;
@@ -797,19 +810,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             else
             {
-                var histories = new HistoryList();
-                if ( _creationHistories.Keys.Contains(subEntity.geocode) )
-                {
-                    histories.Items.AddRange(_creationHistories[subEntity.geocode].Items);
-                }
-                foreach ( var oldGeocode in subEntity.OldGeocodes )
-                {
-                    if ( _creationHistories.Keys.Contains(oldGeocode) )
-                    {
-                        histories.Items.AddRange(_creationHistories[oldGeocode].Items);
-                    }
-                }
-                creationHistory = histories.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
+                creationHistory = GazetteCreationHistory(subEntity);
                 if ( creationHistory != null )
                 {
                     item.SubItems.Add("(" + creationHistory.effective.ToString("yyyy-MM-dd") + ")");
@@ -819,6 +820,25 @@ namespace De.AHoerstemeier.Tambon.UI
                     item.SubItems.Add(String.Empty);
                 }
             }
+        }
+
+        private HistoryCreate GazetteCreationHistory(Entity subEntity)
+        {
+            HistoryCreate creationHistory;
+            var histories = new HistoryList();
+            if ( _creationHistories.Keys.Contains(subEntity.geocode) )
+            {
+                histories.Items.AddRange(_creationHistories[subEntity.geocode].Items);
+            }
+            foreach ( var oldGeocode in subEntity.OldGeocodes )
+            {
+                if ( _creationHistories.Keys.Contains(oldGeocode) )
+                {
+                    histories.Items.AddRange(_creationHistories[oldGeocode].Items);
+                }
+            }
+            creationHistory = histories.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
+            return creationHistory;
         }
 
         private void EntityToLocalAdministrativeListView(Entity entity)
