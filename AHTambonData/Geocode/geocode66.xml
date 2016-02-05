@@ -2334,6 +2334,7 @@
       </create>
     </history>
     <entity type="Tambon" name="สามง่าม" english="Sam Ngam" geocode="660701">
+      <wiki wikidata="Q22582539" />
       <codes>
         <post value="66140" />
       </codes>
@@ -2363,6 +2364,11 @@
           <entity geocode="660701" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1939-04-17" status="Gazette" oldparent="6504" newparent="6607">
+          <gazetteref volume="56" page="346" issue="0 ก" date="1939-04-17" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="66070101" name="บ้านหาดกรวด" english="Ban Hat Kruat" />
       <entity type="Muban" geocode="66070102" name="บ้านวังแดง" english="Ban Wang Daeng" />
       <entity type="Muban" geocode="66070103" name="บ้านสามง่าม" english="Ban Sam Ngam" />
@@ -2381,6 +2387,7 @@
       <entity type="Muban" geocode="66070116" name="บ้านไร่เรือนขวัญ" english="Ban Rai Ruean Khwan" />
     </entity>
     <entity type="Tambon" name="กำแพงดิน" english="Kamphaeng Din" geocode="660702">
+      <wiki wikidata="Q22582540" />
       <codes>
         <post value="66220" />
       </codes>
@@ -2427,6 +2434,7 @@
       <entity type="Muban" geocode="66070212" name="บ้านท่าทอง" english="Ban Tha Thong" />
     </entity>
     <entity type="Tambon" name="รังนก" english="Rang Nok" geocode="660703">
+      <wiki wikidata="Q22582541" />
       <codes>
         <post value="66140" />
       </codes>
@@ -2452,6 +2460,11 @@
           <entity geocode="660703" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1939-04-17" status="Gazette" oldparent="6504" newparent="6607">
+          <gazetteref volume="56" page="346" issue="0 ก" date="1939-04-17" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="66070301" name="บ้านจระเข้ผอม" english="Ban Chorakhe Phom" />
       <entity type="Muban" geocode="66070302" name="บ้านวังขาหยั่ง" english="Ban Wang Khayang" />
       <entity type="Muban" geocode="66070303" name="บ้านรังนก" english="Ban Rang Nok" />
@@ -2468,9 +2481,15 @@
     <entity type="Tambon" name="หนองหลุม" english="Nong Lum" geocode="660704" newgeocode="661204" />
     <entity type="Tambon" name="บ้านนา" english="Ban Na" geocode="660705" newgeocode="661201" />
     <entity type="Tambon" name="เนินปอ" english="Noen Po" geocode="660706">
+      <wiki wikidata="Q22582542" />
       <codes>
         <post value="66140" />
       </codes>
+      <history>
+        <reassign effective="1939-04-17" status="Gazette" oldparent="6504" newparent="6607">
+          <gazetteref volume="56" page="346" issue="0 ก" date="1939-04-17" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="66070601" name="บ้านเนินปอ" english="Ban Noen Po" />
       <entity type="Muban" geocode="66070602" name="บ้านเนินปอ" english="Ban Noen Po" />
       <entity type="Muban" geocode="66070603" name="บ้านเจ็ดหาบ" english="Ban Chet Hap" />
@@ -2493,18 +2512,27 @@
       <entity type="Muban" geocode="66070620" name="บ้านเนินพลวงเหนือ" english="Ban Noen Phluang Nuea" />
     </entity>
     <entity type="Tambon" name="หนองโสน" english="Nong Sano" geocode="660707">
+      <wiki wikidata="Q22582543" />
       <codes>
         <post value="66140" />
       </codes>
       <office type="TAOOffice">
+        <geo:Point>
+          <geo:lat>16.3965</geo:lat>
+          <geo:long>100.0549</geo:long>
+        </geo:Point>
         <symbols>
           <vision>เศรษฐกิจยั่งยืน  พื้นฐานมั่นคง  ซื่อตรงบริการ  บริหารสิ่งแวดล้อมเตรียมพร้อมชุมชน    ผู้คนปลอดภัย</vision>
         </symbols>
-        <url lastchecked="2012-08-31">http://www.nongsano.go.th/</url>
+        <url status="offline" lastonline="2012-08-31">http://www.nongsano.go.th/</url>
+        <socialweb>
+          <facebook>https://www.facebook.com/abtnongsano</facebook>
+        </socialweb>
         <officials>
           <official title="TAOMayor" name="มานพ พุกกลิ่น" begin="2011-11-06" beginreason="ElectedDirectly" />
         </officials>
         <council>
+          <!-- Mu 20 created 2016 -->
           <term begin="2011-11-06" type="TAO" size="38" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="38" />
         </council>
@@ -2522,7 +2550,13 @@
           <gazetteref volume="97" page="3600" issue="163 ง" date="1980-10-21" />
         </create>
       </history>
-      <entity type="Muban" geocode="66070701" name="บ้านหนองโสน" english="Ban Nong Sano" />
+      <entity type="Muban" geocode="66070701" name="บ้านหนองโสน" english="Ban Nong Sano">
+        <area>
+          <bounding geocode="66070720" direction="north east" />
+          <bounding geocode="66070716" direction="south" />
+          <bounding geocode="66070703" direction="west" />
+        </area>
+      </entity>
       <entity type="Muban" geocode="66070702" name="บ้านหนองโสน" english="Ban Nong Sano" />
       <entity type="Muban" geocode="66070703" name="บ้านป่าแซง" english="Ban Pa Saeng" />
       <entity type="Muban" geocode="66070704" name="บ้านมาบกระเปา" english="Ban Map Krapao" />
@@ -2541,6 +2575,19 @@
       <entity type="Muban" geocode="66070717" name="บ้านหนองโสนเหนือ" english="Ban Nong Sano Nuea" />
       <entity type="Muban" geocode="66070718" name="บ้านหนองกระต่อมไก่" english="Ban Nong Kratom Kai" />
       <entity type="Muban" geocode="66070719" name="บ้านหนองจิก" english="Ban Nong Chik" comment="TAO website says บ้านหนองจิกเหนือ" />
+      <entity type="Muban" geocode="66070720" name="บ้านหนองโสน" english="Ban Nong Sano">
+        <area>
+          <bounding geocode="66070707" direction="north" />
+          <bounding geocode="66070717" direction="east" />
+          <bounding geocode="66070716" direction="south" />
+          <bounding geocode="66070702" direction="south west" />
+        </area>
+        <history>
+          <create type="Muban" splitfrom="66070202" status="Gazette" effective="2016-02-05">
+            <gazetteref volume="133" page="235" issue="10 ง" date="2016-02-04" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="วังโมกข์" english="Wang Mok" geocode="660708" newgeocode="661203" />
     <entity type="Tambon" name="บึงบัว" english="Bueng Bua" geocode="660709" newgeocode="661202" />
