@@ -840,6 +840,54 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion GND
 
+        #region FacebookPlaceId
+
+        private WikiDataState FacebookPlaceId(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+            var office = entity.office.FirstOrDefault(y => y.socialweb.facebook.Any(z => z.type == FacebookPageType.place));
+            if ( office != null )
+            {
+                stringValue = office.socialweb.facebook.First(z => z.type == FacebookPageType.place).Value;
+            }
+            return CheckStringValue(item, WikiBase.PropertyIdFacebookPage, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the FacebookPlaceId reference.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the FacebookPlaceId.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetFacebookPlaceId(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            FacebookPlaceId(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the FacebookPlaceId reference is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState FacebookPlaceIdCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return FacebookPlaceId(item, entity, false, false, out dummy);
+        }
+
+        #endregion FacebookPlaceId
+
         #region IPA
 
         private WikiDataState Ipa(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)

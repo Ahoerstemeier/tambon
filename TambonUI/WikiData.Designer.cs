@@ -54,6 +54,7 @@
             this.btnLaoList = new System.Windows.Forms.Button();
             this.btnMap = new System.Windows.Forms.Button();
             this.btnAmphoeCategory = new System.Windows.Forms.Button();
+            this.btnTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStat
@@ -319,11 +320,22 @@
             this.btnAmphoeCategory.UseVisualStyleBackColor = true;
             this.btnAmphoeCategory.Click += new System.EventHandler(this.btnAmphoeCategory_Click);
             // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(124, 105);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(92, 23);
+            this.btnTest.TabIndex = 29;
+            this.btnTest.Text = "Test";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // WikiData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 434);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnAmphoeCategory);
             this.Controls.Add(this.btnMap);
             this.Controls.Add(this.btnLaoList);
@@ -386,5 +398,6 @@
         private System.Windows.Forms.Button btnLaoList;
         private System.Windows.Forms.Button btnMap;
         private System.Windows.Forms.Button btnAmphoeCategory;
+        private System.Windows.Forms.Button btnTest;
     }
 }

@@ -575,5 +575,13 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
         }
+
+        private void btnTest_Click(object sender, EventArgs e)
+        {
+            WikibaseApi api = new WikibaseApi("https://test.wikidata.org", "TambonBot");
+
+            var entityProvider = new EntityProvider(api);
+            var item = entityProvider.getEntityFromId(new EntityId("Q42")) as Item;
+        }
     }
 }
