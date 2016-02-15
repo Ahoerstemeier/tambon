@@ -48,7 +48,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Gets or sets the year of the population data.
         /// </summary>
-        /// <value>The year of the population dsta.</value>
+        /// <value>The year of the population data.</value>
         public Int16 PopulationReferenceYear
         {
             get;
@@ -155,9 +155,17 @@ namespace De.AHoerstemeier.Tambon
             var amphoe = province.entity.FirstOrDefault(x => GeocodeHelper.IsBaseGeocode(x.geocode, entity.geocode));
             var muban = entity.entity.Where(x => x.type == EntityType.Muban && !x.IsObsolete);
             var lao = localGovernments.Where(x => x.LocalGovernmentAreaCoverage.Any(y => y.geocode == entity.geocode));
+            var parentTambon = new List<Entity>();
+            var creationHistory = entity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
+            if ( creationHistory != null )
+            {
+                var allTambon = _baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon));
+                parentTambon.AddRange(creationHistory.splitfrom.Select(x => allTambon.FirstOrDefault(y => x == y.geocode)));
+            }
             var tempList = new List<Entity>() { province, amphoe };
             tempList.AddRange(muban);
             tempList.AddRange(lao);
+            tempList.AddRange(parentTambon);
             var links = RetrieveWikpediaLinks(tempList, language);
             var populationData = entity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSourceType.DOPA);
             Int32 population = 0;
@@ -240,7 +248,37 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine();
             builder.AppendLine();
 
+            if ( creationHistory != null )
+            {
+                builder.AppendLine("==History==");
+
+                var parents = String.Join(", ", parentTambon.Select(x => links.Keys.Contains(x) ? WikiLink(links[x], x.english) : x.english));
+                if ( !parentTambon.Any() )
+                {
+                    builder.AppendFormat(englishCulture, "The subdistrict was created effective {0:MMMM d, yyyy}.", creationHistory.effective);
+                }
+                else if ( creationHistory.subdivisions > 0 )
+                {
+                    builder.AppendFormat(englishCulture, "The subdistrict was created effective {0:MMMM d, yyyy} by splitting off {1} administrative villages from {2}.", creationHistory.effective, creationHistory.subdivisions, parents);
+                }
+                else
+                {
+                    builder.AppendFormat(englishCulture, "The subdistrict was created effective {0:MMMM d, yyyy} by splitting off from {1}.", creationHistory.effective, parents);
+                }
+                var gazetteRef = creationHistory.Items.FirstOrDefault(x => x is GazetteRelated) as GazetteRelated;
+                if ( gazetteRef != null )
+                {
+                    var gazette = GlobalData.AllGazetteAnnouncements.FindAnnouncement(gazetteRef);
+                    if ( gazette != null )
+                    {
+                        builder.AppendFormat("<ref>{0}</ref>", gazette.WikipediaReference(language));
+                    }
+                    builder.AppendLine();
+                }
+            }
+
             builder.AppendLine("==Administration==");
+            builder.AppendLine();
             builder.AppendLine("===Central administration===");
             if ( muban.Any() )
             {
@@ -303,7 +341,7 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var firstLao = laoTupel.First();
 
-                    builder.AppendFormat("The whole area of the subdistrict is covered by the {0} {1} ({2})", firstLao.Item1, firstLao.Item2, firstLao.Item3);
+                    builder.AppendFormat("The whole area of the subdistrict is covered by the {0} {1} ({2}).", firstLao.Item1, firstLao.Item2, firstLao.Item3);
                     builder.AppendLine();
                 }
                 else
@@ -332,7 +370,8 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine();
             builder.AppendFormat("[[Category:Populated places in {0} Province]]", province.english);
             builder.AppendLine();
-            // {{ChiangMai-geo-stub}}
+            builder.AppendLine();
+            builder.AppendFormat("{{{{{0}-geo-stub}}}}", province.english.ToCamelCase());
 
             return builder.ToString();
         }
@@ -840,7 +879,8 @@ namespace De.AHoerstemeier.Tambon
                 _api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
                 _helper = new WikiDataHelper(_api);
             }
-            foreach ( var entity in entities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)) )
+            var actualEntities = entities.Select(x => x.CurrentEntity(_baseEntity));
+            foreach ( var entity in actualEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)) )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
                 if ( item != null )

@@ -70,6 +70,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Gets whether the entity at the given geocode is active/valid.
         /// </summary>
+        /// <value><c>true</c> if entity is obsolete, <c>false</c> if it is valid.</value>
         public Boolean IsObsolete
         {
             get
@@ -78,6 +79,10 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Gets the municipalities.
+        /// </summary>
+        /// <value>The municipalities.</value>
         public IEnumerable<Entity> Thesaban
         {
             get
@@ -256,6 +261,10 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Gets the sub-entities where the geocode does not fit.
+        /// </summary>
+        /// <returns>Sub-entities where the geocode does not fit.</returns>
         public IEnumerable<Entity> InvalidGeocodeEntries()
         {
             var result = new List<Entity>();
@@ -285,8 +294,18 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        /// <summary>
+        /// Copies the basic data from <paramref name="source"/> to self.
+        /// </summary>
+        /// <param name="source">Source entity.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="source"/> is <c>null</c>.</exception>
+        /// <remarks>Copies <see cref="geocode"/>, <see cref="english"/>, <see cref="name"/>, <see cref="type"/> and <see cref="parent"/>.</remarks>
         public void CopyBasicDataFrom(Entity source)
         {
+            if ( source == null )
+            {
+                throw new ArgumentNullException("source");
+            }
             geocode = source.geocode;
             english = source.english;
             name = source.name;
@@ -442,7 +461,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Calculates the postal codes from the tambon in the areacoverage list of the LAO office.
+        /// Calculates the postal codes from the tambon in the area coverage list of the LAO office.
         /// </summary>
         /// <param name="tambon">List of tambon in the parent of the LAO.</param>
         public void CalculatePostcodeForLocalAdministration(IEnumerable<Entity> tambon)
@@ -483,6 +502,10 @@ namespace De.AHoerstemeier.Tambon
             return english;
         }
 
+        /// <summary>
+        /// Places all sub-entities into one flat list.
+        /// </summary>
+        /// <returns>All sub-entities.</returns>
         public IEnumerable<Entity> FlatList()
         {
             var result = new List<Entity>();
@@ -1392,6 +1415,28 @@ namespace De.AHoerstemeier.Tambon
         public IEnumerable<Entity> LocalGovernmentEntitiesOf(IEnumerable<Entity> localGovernments)
         {
             return localGovernments.Where(x => x.parent.Contains(this.geocode) || GeocodeHelper.IsBaseGeocode(this.geocode, x.geocode));
+        }
+
+        /// <summary>
+        /// Gets the current entity in case <see cref="IsObsolete"/> is <c>true</c>.
+        /// </summary>
+        /// <param name="baseEntity">Base entity to lookup for the current entity.</param>
+        /// <returns>Self if <see cref="IsObsolete"/> is <c>false</c>, the active entity referenced by <see cref="newgeocode"/> otherwise.</returns>
+        public Entity CurrentEntity(Entity baseEntity)
+        {
+            var result = this;
+            if ( newgeocode.Any() )
+            {
+                var flatList = baseEntity.FlatList();
+                var newEntities = newgeocode.SelectMany(x => flatList.Where(y => y.geocode == x));
+                result = newEntities.FirstOrDefault(x => !x.IsObsolete);
+                if ( result == null )
+                {
+                    newEntities = newEntities.SelectMany(x => flatList.Where(y => y.geocode == x.geocode));
+                    result = newEntities.FirstOrDefault(x => !x.IsObsolete);
+                }
+            }
+            return result;
         }
     }
 }

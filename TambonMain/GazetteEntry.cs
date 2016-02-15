@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -181,6 +182,49 @@ namespace De.AHoerstemeier.Tambon
                     result.AddRange(operationItem.GazetteOperations());
                 }
             }
+            return result;
+        }
+
+        /// <summary>
+        /// Creates the reference for the Wikipedia in the given language.
+        /// </summary>
+        /// <param name="language">Requested language.</param>
+        /// <returns>Reference wiki text.</returns>
+        /// <exception cref="NotImplementedException"><paramref name="language"/> is not yet supported.</exception>
+        public String WikipediaReference(Language language)
+        {
+            var result = String.Empty;
+            switch ( language )
+            {
+                case Language.English:
+                    result = "{{cite journal|journal=Royal Gazette";
+                    if ( volume != 0 )
+                    {
+                        result += String.Format(CultureInfo.InvariantCulture, "|volume={0}", volume);
+                    }
+                    if ( !String.IsNullOrWhiteSpace(issue) )
+                    {
+                        result += String.Format("|issue={0}", issue);
+                    }
+                    if ( !String.IsNullOrEmpty(page) )
+                    {
+                        result += String.Format("|pages={0}", page);
+                    }
+                    result += String.Format("|title={0}", title);
+                    if ( !String.IsNullOrEmpty(uri) )
+                    {
+                        result += String.Format("|url={0}", DownloadUrl);
+                    }
+                    if ( publication.Year > 1800 )
+                    {
+                        result += String.Format(CultureInfo.InvariantCulture, "|date={0:yyyy-MM-dd}", publication);
+                    }
+                    result += "|language=Thai}}";
+                    break;
+                default:
+                    throw new NotImplementedException(String.Format("Language {0} not yet implemented", language));
+            }
+
             return result;
         }
     }

@@ -32,6 +32,27 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
+        /// Converts a string into a camel-cased string.
+        /// </summary>
+        /// <param name="value">String to convert.</param>
+        /// <returns>Camel-cased string.</returns>
+        public static String ToCamelCase(this String value)
+        {
+            if ( value == null )
+            {
+                throw new ArgumentNullException("value");
+            }
+
+            var parts = value.Split(' ');
+            var result = String.Empty;
+            foreach ( var part in parts.Where(x => !String.IsNullOrWhiteSpace(x)) )
+            {
+                result += part.Substring(0, 1).ToUpperInvariant() + part.Substring(1);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Checks whether two Thai names can be considered identical as name of a Muban.
         /// </summary>
         /// <param name="value">Name of first Muban.</param>
@@ -44,7 +65,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Removes the word Ban (บ้าน) preceeding the name.
+        /// Removes the word Ban (บ้าน) preceding the name.
         /// </summary>
         /// <param name="value">Name of a Muban.</param>
         /// <returns>Name without Ban.</returns>
