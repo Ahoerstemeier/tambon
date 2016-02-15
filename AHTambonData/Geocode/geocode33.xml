@@ -621,6 +621,13 @@
       </officials>
     </office>
     <entity type="Tambon" name="ยางชุมน้อย" english="Yang Chum Noi" geocode="330201">
+      <office type="TAOOffice" obsolete="1">
+        <history>
+          <abolished effective="2004-07-09" status="Gazette" mergeto="3398" type="TAO">
+            <gazetteref volume="121" page="19" issue="พิเศษ 75 ง" date="2004-07-09" />
+          </abolished>
+        </history>
+      </office>
       <entity type="Muban" geocode="33020101" name="บ้านยางชุมน้อย" english="Ban Yang Chum Noi" />
       <entity type="Muban" geocode="33020102" name="บ้านเขวาน้อย" english="Ban Khwao Noi" />
       <entity type="Muban" geocode="33020103" name="บ้านยางชุมน้อย" english="Ban Yang Chum Noi" />
@@ -7873,6 +7880,17 @@ Source TH-Wikipedia
         <entity geocode="330123" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <areachange effective="1987-03-11" status="Gazette" type="ThesabanMueang">
+        <gazetteref volume="104" page="12" issue="44 ก ฉบับพิเศษ" date="1987-03-11" />
+      </areachange>
+      <rename effective="1939-03-06" status="Gazette" name="ศรีสะเกษ" oldname="ขุขันธ์">
+        <gazetteref volume="55" page="968" issue="0 ก" date="1939-03-06" />
+      </rename>
+      <create effective="1936-11-29" status="Gazette" type="ThesabanMueang">
+        <gazetteref volume="53" page="806" issue="0 ก" date="1936-11-29" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ยางชุมน้อย" english="Yang Chum Noi" geocode="3398" parent="3302">
     <office type="MunicipalityOffice">
@@ -7895,6 +7913,17 @@ Source TH-Wikipedia
         <entity geocode="330201" coverage="completely" />
       </areacoverage>
     </office>
+    <history>
+      <mergedwith effective="2004-07-09" status="Gazette" mergefrom="330201" mergefromtype="TAO">
+        <gazetteref volume="121" page="19" issue="พิเศษ 75 ง" date="2004-07-09" />
+      </mergedwith>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1989-07-13" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="106" page="4973" issue="110 ง" date="1989-07-13" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="33980001" name="ชุมชนหนองอ้อ" english="Chumchon Nong O" />
     <entity type="Chumchon" geocode="33980002" name="ชุมชนพูนราษฎร์พัฒนา" english="Chumchon Phun Rat Phatthana" />
     <entity type="Chumchon" geocode="33980003" name="ชุมชนปู่ตา" english="Chumchon Puta" />
@@ -7933,6 +7962,17 @@ Source TH-Wikipedia
         <entity geocode="330301" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <areachange effective="1987-07-02" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="104" page="4610" issue="125 ง" date="1987-07-02" />
+      </areachange>
+      <create effective="1956-11-28" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="71" issue="99 ง ฉบับพิเศษ" date="1956-11-28" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanMueang" name="กันทรลักษ์" english="Kantharalak" geocode="3396" parent="3304">
     <wiki wikidata="Q11980393" />
@@ -8017,7 +8057,15 @@ Source TH-Wikipedia
       </areacoverage>
     </office>
     <history>
-      <rename oldname="ห้วยเหนือ" oldenglish="Huai Nuea" name="เมืองขุขันธ์" english="Mueang Khukhan" effective="2009-12-16" />
+      <rename effective="2009-12-16" status="Gazette" name="เมืองขุขันธ์" english="Mueang Khukhan" oldname="ห้วยเหนือ" oldenglish="Huai Nuea">
+        <gazetteref volume="127" page="38" issue="พิเศษ 17 ง" date="2010-02-02" />
+      </rename>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-05-30" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="33" issue="45 ง ฉบับพิเศษ" date="1956-05-30" />
+      </create>
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ไพรบึง" english="Phrai Bueng" geocode="3394" parent="3306">
@@ -8056,6 +8104,14 @@ Source TH-Wikipedia
         <entity geocode="330604" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1985-06-01" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="102" page="6" issue="69 ง ฉบับพิเศษ" date="1985-06-01" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ปรางค์กู่" english="Prang Ku" geocode="3393" parent="3307">
     <wiki wikidata="Q13025245" />
@@ -8077,6 +8133,14 @@ Source TH-Wikipedia
         <entity geocode="330710" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1972-10-24" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="89" page="2666" issue="159 ง" date="1972-10-24" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="ขุนหาญ" english="Khun Han" geocode="3392" parent="3308">
     <office type="MunicipalityOffice">
@@ -8096,6 +8160,17 @@ Source TH-Wikipedia
         <entity geocode="330808" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <areachange effective="1985-02-28" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="102" page="27" issue="27 ง ฉบับพิเศษ" date="1985-02-28" />
+      </areachange>
+      <create effective="1957-01-07" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="74" page="81" issue="4 ง ฉบับพิเศษ" date="1957-01-07" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="เมืองคง" english="Mueang Khong" geocode="3391" parent="3309">
     <office type="MunicipalityOffice">
@@ -8115,6 +8190,14 @@ Source TH-Wikipedia
         <entity geocode="330901" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1956-08-03" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="73" page="42" issue="60 ง ฉบับพิเศษ" date="1956-08-03" />
+      </create>
+    </history>
   </entity>
   <entity type="ThesabanTambon" name="กำแพง" english="Kamphaeng" geocode="3390" parent="3310">
     <wiki wikidata="Q13025189" />
@@ -8138,6 +8221,14 @@ Source TH-Wikipedia
         <entity geocode="331001" coverage="partially" />
       </areacoverage>
     </office>
+    <history>
+      <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
+        <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
+      </statuschange>
+      <create effective="1955-09-17" status="Gazette" type="Sukhaphiban">
+        <gazetteref volume="72" page="49" issue="74 ง ฉบับพิเศษ" date="1955-09-17" />
+      </create>
+    </history>
     <entity type="Chumchon" geocode="33900001" name="ชุมชนตำแย" english="Chumchon Tamyae" />
     <entity type="Chumchon" geocode="33900002" name="ชุมชนฝั่งธน" english="Chumchon Fang Thon" />
     <entity type="Chumchon" geocode="33900003" name="ชุมชนรุ่งทิพย์" english="Chumchon Rung Thip" />
