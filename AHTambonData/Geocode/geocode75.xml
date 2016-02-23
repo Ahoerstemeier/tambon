@@ -7,6 +7,7 @@
     <iso3166 value="TH-75" />
     <fips10 value="TH54" />
     <salb value="THA058" />
+    <gns-ufi value="-3254709" />
   </codes>
   <symbols>
     <slogan>เมืองหอยหลอด ยอดลิ้นจี่ มีอุทยาน ร.2 แม่กลองไหลผ่าน นมัสการหลวงพ่อบ้านแหลม</slogan>
@@ -63,6 +64,7 @@
       <post value="75000" />
       <hasc value="TH.SM.SS" />
       <salb value="THA058003" />
+      <gns-ufi value="-3251420" />
     </codes>
     <office type="DistrictOffice">
       <geo:Point>
@@ -81,6 +83,17 @@
         <official title="DistrictOfficer" name="พงษ์ศักดิ์ พัฒนศักดิ์ภิญโญ" end="2007-01-07" />
       </officials>
     </office>
+    <history>
+      <rename effective="1938-11-14" status="Gazette" name="เมืองสมุทรสงคราม" oldname="แม่กลอง">
+        <gazetteref volume="55" page="658" issue="0 ก" date="1938-11-14" />
+      </rename>
+      <rename effective="1925-04-05" status="Gazette" name="แม่กลอง" oldname="บ้านปรก">
+        <gazetteref volume="42" page="24" issue="0 ง" date="1925-04-05" />
+      </rename>
+      <rename effective="1917-04-29" status="Gazette" name="บ้านปรก" english="Ban Prok" oldname="เมือง" oldenglish="Mueang">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+    </history>
     <entity type="Tambon" name="แม่กลอง" english="Mae Klong" geocode="750101">
       <wiki wikidata="Q16029448" />
     </entity>
@@ -370,6 +383,7 @@
       <post value="75120" />
       <hasc value="TH.SM.BK" />
       <salb value="THA058002" />
+      <gns-ufi value="-3234734" />
     </codes>
     <office type="DistrictOffice">
       <geo:Point>
@@ -383,6 +397,14 @@
         <official title="DistrictOfficer" name="สุวัฒน์ พรมสุวรรณ" end="2007-01-07" />
       </officials>
     </office>
+    <history>
+      <rename effective="1914-10-11" status="Gazette" name="บางคณฑี" oldname="สี่หมื่น">
+        <gazetteref volume="31" page="1514" issue="0 ง" date="1914-10-11" />
+      </rename>
+      <reassign effective="1913-08-24" status="Gazette" oldparent="70" newparent="75">
+        <gazetteref volume="30" page="1073" issue="0 ง" date="1913-08-24" />
+      </reassign>
+    </history>
     <entity type="Tambon" name="กระดังงา" english="Kradang-nga" geocode="750201">
       <wiki wikidata="Q16029462" />
       <office type="TAOOffice">
@@ -700,7 +722,7 @@
         </geo:Point>
       </office>
       <history>
-        <create effective="1982-08-15" status="Gazette" type="Tambon" splitfrom="750202 750203">
+        <create effective="1982-08-15" status="Gazette" type="Tambon" splitfrom="750202 750203" subdivisions="6" subdivisiontype="Muban">
           <gazetteref volume="99" page="3589" issue="126 ง" date="1982-09-07" />
         </create>
       </history>
@@ -719,6 +741,7 @@
       <hasc value="TH.SM.AM" />
       <salb value="THA058001" />
       <gnd value="4797469-2" />
+      <gns-ufi value="-3232453" />
     </codes>
     <symbols>
       <slogan>ส้มโอรสดี ลิ้นจี่รสหวาน สาวงามอัมพวา</slogan>

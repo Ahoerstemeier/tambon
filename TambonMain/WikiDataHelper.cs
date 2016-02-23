@@ -840,6 +840,50 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion GND
 
+        #region GNS-UFI
+
+        private WikiDataState GNSUFI(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+            stringValue = entity.codes.gnsufi.value;
+            return CheckStringValue(item, WikiBase.PropertyIdGNSUFI, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the GN-SUFI reference.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the GNS-UFI.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetGNSUFI(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            GNSUFI(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the GNS-UFI reference is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState GNSUFICorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return GNSUFI(item, entity, false, false, out dummy);
+        }
+
+        #endregion GNS-UFI
+
         #region FacebookPlaceId
 
         private WikiDataState FacebookPlaceId(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
