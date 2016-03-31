@@ -334,9 +334,9 @@
         <xs:documentation>Area in rai.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="locationgeocode" type="xs:unsignedInt" use="optional">
+    <xs:attribute name="locationgeocode" type="t:GeocodeList" use="optional">
       <xs:annotation>
-        <xs:documentation>Geocode of the lowest possible administrative unit covering the park.</xs:documentation>
+        <xs:documentation>Geocodes of the administrative units covering the park.</xs:documentation>
       </xs:annotation>
       <!--or maybe better a Thai address child element? -->
     </xs:attribute>
