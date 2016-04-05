@@ -3152,7 +3152,14 @@
       </codes>
       <entity type="Muban" geocode="72090201" name="บ้านดอนเขว้า" english="Ban Don Khwao" />
       <entity type="Muban" geocode="72090202" name="บ้านบ่อปั้น" english="Ban Bo Pin" />
-      <entity type="Muban" geocode="72090203" name="บ้านสระยายโสม" english="Ban Sa Yai Som" />
+      <entity type="Muban" geocode="72090203" name="บ้านสระยายโสม" english="Ban Sa Yai Som">
+        <office type="VillageHeadmanOffice">
+          <geo:Point>
+            <geo:lat>14.2820</geo:lat>
+            <geo:long>99.8979</geo:long>
+          </geo:Point>
+        </office>
+      </entity>
       <entity type="Muban" geocode="72090204" name="บ้านโซ่ง" english="Ban Song" />
       <entity type="Muban" geocode="72090205" name="บ้านโป่ง" english="Ban Pong" />
       <entity type="Muban" geocode="72090206" name="บ้านคลองตัน" english="Ban Khlong Tan" />
@@ -4397,10 +4404,11 @@
   <entity type="ThesabanTambon" name="สระยายโสม" english="Sa Yai Som" geocode="7281" parent="7209">
     <wiki wikidata="Q13025273" />
     <office type="MunicipalityOffice">
+      <!-- guess: 14°16'58.696"N, 99°53'52.026"E but cannot verify with streetview -->
       <symbols>
         <vision>ยึดหลักประชาธิปไตย โปร่งใสการจัดการ ชาวบ้านมีส่วนร่วม</vision>
       </symbols>
-      <url lastchecked="2013-03-20">http://srayaisom.go.th/</url>
+      <url lastchecked="2016-04-05">http://srayaisom.go.th/</url>
       <url status="offline">http://www.srayaisom.org/</url>
       <officials>
         <official title="Mayor" name="ประเสริฐศักดิ์ เนตรประภิศ" begin="2012-04-22" beginreason="ElectedDirectly" />
