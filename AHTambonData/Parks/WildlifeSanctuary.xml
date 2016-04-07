@@ -1,7 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"  type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
+  <entity type="Changwat" geocode="32" name="สุรินทร์" english="Surin">
+    <park type="WildlifeSanctuary" id="2038" name="ห้วยทับทัน-ห้วยสำราญ" english="Huai Thap Than - Huai Samran">
+      <wiki wikidata="Q13024471" />
+      <area rai="313445" locationgeocode="" year="2016" />
+      <area rai="313750" locationgeocode="320601 320607 320610 320605 320606 320602 320608 321011 321017 321305 321303" year="1995" obsolete="1" />
+      <history>
+        <areachangepark type="WildlifeSanctuary" oldarea="502" newarea="501.512" status="Gazette" effective="2016-04-07">
+          <gazetteref volume="133" page="7" issue="31 ก" date="2016-04-07" />
+        </areachangepark>
+        <createpark type="WildlifeSanctuary" effective="1995-12-29" status="Gazette">
+          <gazetteref volume="112" page="24" issue="56 ก" date="1995-12-29" />
+        </createpark>
+      </history>
+    </park>
+  </entity>
+
   <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
-    <park type="WildlifeSanctuary" id="23" name="คลองพระยา" english="Khlong Phraya">
+    <park type="WildlifeSanctuary" id="2023" name="คลองพระยา" english="Khlong Phraya">
       <wiki wikidata="Q6401838" />
       <history>
         <areachangepark type="WildlifeSanctuary" newarea="153.6" status="Gazette">
@@ -12,7 +28,7 @@
         </createpark>
       </history>
     </park>
-    <park type="WildlifeSanctuary" name="คลองแสง" english="Khlong Saeng">
+    <park type="WildlifeSanctuary" id="2009" name="คลองแสง" english="Khlong Saeng">
       <wiki wikidata="Q6401841" />
       <history>
         <areachangepark type="WildlifeSanctuary" effective="1986-05-08" status="Gazette">
@@ -29,7 +45,7 @@
         </createpark>
       </history>
     </park>
-    <park type="WildlifeSanctuary" name="คลองยัน" english="Khlong Yan">
+    <park type="WildlifeSanctuary" id="2034" name="คลองยัน" english="Khlong Yan">
       <wiki wikidata="Q6656224" />
       <area locationgeocode="841106 841902 841901 840803 840801 840806 840904" />
       <history>
@@ -41,19 +57,70 @@
   </entity>
 
   <!--
-  Pa Maenam Pachi ป่าแม่น้ำภาชี  Q23669996  Ratchaburi
-  Princess Sirindhorn  ป่าเฉลิมพระเกียรติสมเด็จพระเทพรัตนราชสุดาฯ   Q13024469   Narathiwat
-  Pa Ton Nga Chang  ป่าโตนงาช้าง  Q13024477   Songkhla/Satun
-  Pa Tham Chao Ram  ป่าถ้ำเจ้าราม  Q13024476  Sukhothai
-  Pa Khao Banthat  ป่าเขาบรรทัด  Q13024472  Phatthalung/Trang/Satun/Songkhla
-  Pa Huai Thap Than - Huai Samran  ป่าห้วยทับทัน-ห้วยสำราญ  Q13024471  Surin
-  Pa Wiang Lo  ป่าเวียงลอ  Q13024470  Phayao
-  Pa Dong Yai  ป่าดงใหญ่  Q2570888  Buriram
-  Pa Thung Yai Naresuan  ป่าทุ่งใหญ่นเรศวร  Q422995  Kanchanadit/Tak
-  Pa Khao Ang Rue Nai  ป่าเขาอ่างฤๅไน  Q6400438  Chachoengsao/Sa Kaeo/Rayong/Chanthaburi/Chonburi
-  Ton Pariwat  ป่าโตนปริวรรต  Q7820692  Phang Nga
-  Phu Luang  ภูหลวง  Q7188248  Loei
-  Huai Kha Khaeng  ห้วยขาแข้ง  Q621134  Uthai Thani/Tak
-  Khao Khiao – Khao Chomphu   เขาเขียว-เขาชมภู่  Q6400443   Chonburi
+  2017  Maenam Pachi แม่น้ำภาชี  Q23669996  Ratchaburi
+  2033  Princess Sirindhorn  เฉลิมพระเกียรติสมเด็จพระเทพรัตนราชสุดาฯ   Q13024469   Narathiwat
+  2016  Ton Nga Chang  โตนงาช้าง  Q13024477   Songkhla/Satun
+  2054  Tham Chao Ram  ถ้ำเจ้าราม  Q13024476  Sukhothai
+  2012  Khao Banthat  เขาบรรทัด  Q13024472  Phatthalung/Trang/Satun/Songkhla
+  2044  Wiang Lo  เวียงลอ  Q13024470  Phayao
+  2042  Dong Yai  ดงใหญ่  Q2570888  Buriram
+  2007  Thung Yai Naresuan  ทุ่งใหญ่นเรศวร  Q422995  Kanchanadit/Tak
+  2014  Khao Ang Rue Nai  เขาอ่างฤๅไน (เขาอ่างฤาไน)  Q6400438  Chachoengsao/Sa Kaeo/Rayong/Chanthaburi/Chonburi
+  2056  Ton Pariwat  ป่าโตนปริวรรต  Q7820692  Phang Nga
+  2010  Phu Luang  ภูหลวง  Q7188248  Loei
+  2005  Huai Kha Khaeng  ห้วยขาแข้ง  Q621134  Uthai Thani/Tak
+  2008  Khao Khiao – Khao Chomphu   เขาเขียว-เขาชมภู่  Q6400443   Chonburi
+  -->
+
+  <!--
+  http://www2.dnp.go.th/gis/แบบฟอร์มตารางเขตรักษาพันธุ์.html
+2001	เขตรักษาพันธุ์สัตว์ป่าสลักพระ
+2002	เขตรักษาพันธุ์สัตว์ป่าคลองนาคา
+2003	เขตรักษาพันธุ์สัตว์ป่าภูเขียว
+2004	เขตรักษาพันธุ์สัตว์ป่าเขาสอยดาว
+2005	เขตรักษาพันธุ์สัตว์ป่าห้วยขาแข้ง
+2006	เขตรักษาพันธุ์สัตว์ป่าลุ่มน้ำปาย
+2007	เขตรักษาพันธุ์สัตว์ป่าทุ่งใหญ่นเรศวร
+2008	เขตรักษาพันธุ์สัตว์ป่าเขาเขียว-เขาชมภู่
+2009	เขตรักษาพันธุ์สัตว์ป่าคลองแสง
+2010	เขตรักษาพันธุ์สัตว์ป่าภูหลวง
+2011	เขตรักษาพันธุ์สัตว์ป่าภูวัว
+2012	เขตรักษาพันธุ์สัตว์ป่าเขาบรรทัด
+2013	เขตรักษาพันธุ์สัตว์ป่ายอดโดม
+2014	เขตรักษาพันธุ์สัตว์ป่าเขาอ่างฤาไน
+2015	เขตรักษาพันธุ์สัตว์ป่าภูเมี่ยงและภูทอง
+2016	เขตรักษาพันธุ์สัตว์ป่าโตนงาช้าง
+2017	เขตรักษาพันธุ์สัตว์ป่าแม่น้ำภาชี
+2021	เขตรักษาพันธุ์สัตว์ป่าพนมดงรัก
+2022	เขตรักษาพันธุ์สัตว์ป่าดอยผาเมือง
+2023	เขตรักษาพันธุ์สัตว์ป่าคลองพระยา
+2024	เขตรักษาพันธุ์สัตว์ป่าดอยผาช้าง
+2025	เขตรักษาพันธุ์สัตว์ป่าเขาสนามเพรียง
+2030	เขตรักษาพันธุ์สัตว์ป่าอุ้มผาง
+2031	เขตรักษาพันธุ์สัตว์ป่าภูสีฐาน
+2032	เขตรักษาพันธุ์สัตว์ป่าห้วยศาลา
+2033	เขตรักษาพันธุ์สัตว์ป่าเฉลิมพระเกียรติสมเด็จพระเทพรัตนราชสุดาฯ
+2034	เขตรักษาพันธุ์สัตว์ป่าคลองยัน
+2035	เขตรักษาพันธุ์สัตว์ป่าเขาประ-บางคราม
+2036	เขตรักษาพันธุ์สัตว์ป่าอุทยานเสด็จในกรม-กรมหลวงชุมพร ด้านทิศเหนือตอนบน
+2036	เขตรักษาพันธุ์สัตว์ป่าอุทยานเสด็จในกรม-กรมหลวงชุมพร ด้านทิศเหนือตอนล่าง
+2037	เขตรักษาพันธุ์สัตว์ป่าอุทยานเสด็จในกรม-กรมหลวงชุมพร ด้านทิศใต้
+2038	เขตรักษาพันธุ์สัตว์ป่าห้วยทับทัน-ห้วยสำราญ
+2039	เขตรักษาพันธุ์สัตว์ป่าทุ่งระยะ-นาสัก
+2040	เขตรักษาพันธุ์สัตว์ป่าฮาลา-บาลา
+2042	เขตรักษาพันธุ์สัตว์ป่าดงใหญ่
+2043	เขตรักษาพันธุ์สัตว์ป่าตะเบาะ-ห้วยใหญ่
+2044	เขตรักษาพันธุ์สัตว์ป่าเวียงลอ
+2045	เขตรักษาพันธุ์สัตว์ป่าแม่จริม
+2046	เขตรักษาพันธุ์สัตว์ป่าคลองเครือหวาย
+2047	เขตรักษาพันธุ์สัตว์ป่าควนแม่ยายหม่อน
+2050	เขตรักษาพันธุ์สัตว์ป่าลำน้ำน่านฝั่งขวา
+2053	เขตรักษาพันธุ์สัตว์ป่าผาผึ้ง
+2054	เขตรักษาพันธุ์สัตว์ป่าถ้ำเจ้าราม
+2055	เขตรักษาพันธุ์สัตว์ป่าน้ำปาด
+2056	เขตรักษาพันธุ์สัตว์ป่าโตนปริวรรต
+2057	เขตรักษาพันธุ์สัตว์ป่าภูค้อและภูกระแต
+2058	เขตรักษาพันธุ์สัตว์ป่าบุณฑริก-ยอดมน
+9204	เตรียมการเขตรักษาพันธุ์สัตว์ป่ากระทูน
   -->
 </entity>
