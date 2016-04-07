@@ -10,7 +10,17 @@
   <xs:include schemaLocation="basictypes.xsd" />
   <xs:include schemaLocation="history.xsd" />
 
-  <xs:complexType name="AreaPark">
+  <xs:complexType name="AreaParkBase">
+    <xs:annotation>
+      <xs:documentation>Area definition of a park.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:ParkSite" name="site">
+        <xs:annotation>
+          <xs:documentation>Sites within the area.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
     <xs:attributeGroup ref="t:Comment" />
     <xs:attribute name="squarekilometer" type="xs:double" use="optional">
       <xs:annotation>
@@ -32,22 +42,73 @@
         <xs:documentation>Area part in tarangwa (ตารางวา, 4 m²). Only if value in rai is integer.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="year" type="xs:gYear" use="optional">
-      <xs:annotation>
-        <xs:documentation>Year in which the area value was valid.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="obsolete" type="xs:boolean" use="optional" default="false">
-      <xs:annotation>
-        <xs:documentation>Marking area values which are no longer valid.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
     <xs:attribute name="locationgeocode" type="t:GeocodeList" use="optional">
       <xs:annotation>
         <xs:documentation>Geocodes of the entities covered by the protected area.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:complexType name="AreaPark">
+    <xs:annotation>
+      <xs:documentation>Area definition of a park.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:AreaParkBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" type="t:AreaParkPart" name="areapart">
+            <xs:annotation>
+              <xs:documentation>Area parts defined.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="year" type="xs:gYear" use="optional">
+          <xs:annotation>
+            <xs:documentation>Year in which the area value was valid.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="obsolete" type="xs:boolean" use="optional" default="false">
+          <xs:annotation>
+            <xs:documentation>Marking area values which are no longer valid.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AreaParkPart">
+    <xs:annotation>
+      <xs:documentation>Area part definition of a park.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:AreaParkBase">
+        <xs:attribute name="index" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>Index of the part (not necessarily a numerical index).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ParkSite">
+    <xs:annotation>
+      <xs:documentation>Specifically named site within the park.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="geo:Point">
+        <xs:annotation>
+          <xs:documentation>Location of site.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="t:Comment" />
+    <xs:attributeGroup ref="t:ThaiNameOptional" />
+    <xs:attribute name="index" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Index of the site (not necessarily a numerical index).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
   <xs:complexType name="Park">
     <xs:annotation>
       <xs:documentation>Protected area.</xs:documentation>
@@ -68,7 +129,6 @@
           <xs:documentation>Area covered by the protected area.</xs:documentation>
         </xs:annotation>
       </xs:element>
-
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList">
         <xs:annotation>
           <xs:documentation>List of events concerning the park.</xs:documentation>
@@ -91,7 +151,6 @@
         <xs:documentation>Protected area no longer existing/protected.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 </xs:schema>

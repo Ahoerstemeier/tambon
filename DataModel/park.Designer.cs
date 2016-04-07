@@ -15,13 +15,20 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    /// <summary>
+    /// Area definition of a park.
+    /// </summary>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AreaParkPart))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AreaPark))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AreaPark", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
-    public partial class AreaPark {
+    [System.Runtime.Serialization.DataContractAttribute(Name="AreaParkBase", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class AreaParkBase {
+        
+        private List<ParkSite> siteField;
         
         private string commentField;
         
@@ -41,18 +48,31 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool tarangwaFieldSpecified;
         
-        private string yearField;
-        
-        private bool obsoleteField;
-        
         private List<uint> locationgeocodeField;
         
         /// <summary>
-        /// Creates a new instance of AreaPark.
+        /// Creates a new instance of AreaParkBase.
         /// </summary>
-        public AreaPark() {
+        public AreaParkBase() {
             this.locationgeocodeField = new List<uint>();
-            this.obsoleteField = false;
+            this.siteField = new List<ParkSite>();
+        }
+        
+        /// <summary>
+        /// Sites within the area.
+        /// </summary>
+        /// <value>
+        /// The site.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("site", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<ParkSite> site {
+            get {
+                return this.siteField;
+            }
+            set {
+                this.siteField = value;
+            }
         }
         
         /// <summary>
@@ -209,41 +229,6 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Year in which the area value was valid.
-        /// </summary>
-        /// <value>
-        /// The year.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string year {
-            get {
-                return this.yearField;
-            }
-            set {
-                this.yearField = value;
-            }
-        }
-        
-        /// <summary>
-        /// Marking area values which are no longer valid.
-        /// </summary>
-        /// <value>
-        /// The obsolete.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.ComponentModel.DefaultValueAttribute(false)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool obsolete {
-            get {
-                return this.obsoleteField;
-            }
-            set {
-                this.obsoleteField = value;
-            }
-        }
-        
-        /// <summary>
         /// Geocodes of the entities covered by the protected area.
         /// </summary>
         /// <value>
@@ -262,9 +247,244 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
+    /// Specifically named site within the park.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ParkSite", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class ParkSite {
+        
+        private Point pointField;
+        
+        private string commentField;
+        
+        private string nameField;
+        
+        private string englishField;
+        
+        private string ipaField;
+        
+        private string indexField;
+        
+        /// <summary>
+        /// Location of site.
+        /// </summary>
+        /// <value>
+        /// The Point.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Point Point {
+            get {
+                return this.pointField;
+            }
+            set {
+                this.pointField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english {
+            get {
+                return this.englishField;
+            }
+            set {
+                this.englishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ipa {
+            get {
+                return this.ipaField;
+            }
+            set {
+                this.ipaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Index of the site (not necessarily a numerical index).
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Area part definition of a park.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AreaParkPart", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class AreaParkPart : AreaParkBase {
+        
+        private string indexField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Area definition of a park.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AreaPark", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class AreaPark : AreaParkBase {
+        
+        private List<AreaParkPart> areapartField;
+        
+        private string yearField;
+        
+        private bool obsoleteField;
+        
+        /// <summary>
+        /// Creates a new instance of AreaPark.
+        /// </summary>
+        public AreaPark() {
+            this.areapartField = new List<AreaParkPart>();
+            this.obsoleteField = false;
+        }
+        
+        /// <summary>
+        /// Area parts defined.
+        /// </summary>
+        /// <value>
+        /// The areapart.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("areapart", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<AreaParkPart> areapart {
+            get {
+                return this.areapartField;
+            }
+            set {
+                this.areapartField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string year {
+            get {
+                return this.yearField;
+            }
+            set {
+                this.yearField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool obsolete {
+            get {
+                return this.obsoleteField;
+            }
+            set {
+                this.obsoleteField = value;
+            }
+        }
+    }
+    
+    /// <summary>
     /// Protected area.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
