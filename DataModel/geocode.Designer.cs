@@ -1048,6 +1048,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private string dateField;
         
+        private bool invalidField;
+        
         private string commentField;
         
         /// <summary>
@@ -1055,6 +1057,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public AreaData() {
             this.referenceField = new List<object>();
+            this.invalidField = false;
         }
         
         /// <summary>
@@ -1127,6 +1130,24 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.dateField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Value is wrong, though given as such in source.
+        /// </summary>
+        /// <value>
+        /// The invalid.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool invalid {
+            get {
+                return this.invalidField;
+            }
+            set {
+                this.invalidField = value;
             }
         }
         

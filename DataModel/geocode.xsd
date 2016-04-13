@@ -148,6 +148,11 @@
         <xs:documentation>Year in which the data was valid.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="invalid" type="xs:boolean" use="optional" default="false">
+      <xs:annotation>
+        <xs:documentation>Value is wrong, though given as such in source.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="UtmPoint">

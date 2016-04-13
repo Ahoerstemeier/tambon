@@ -506,6 +506,25 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
 
+            var entitiesWithArea2003 = entity.FlatList().Where(x => !x.IsObsolete && x.area.area.Any(y => y.date == "2003" && !y.invalid));
+            foreach ( var entityWithArea in entitiesWithArea2003 )
+            {
+                var subEntitiesWithArea = entityWithArea.entity.Where(x => !x.IsObsolete && x.area.area.Any(y => y.date == "2003" && !y.invalid));
+                if ( subEntitiesWithArea.Any() )
+                {
+                    Decimal area = 0;
+                    foreach ( var subEntity in subEntitiesWithArea )
+                    {
+                        area += subEntity.area.area.First(x => x.date == "2003" && !x.invalid).value;
+                    }
+                    var expected = entityWithArea.area.area.First(x => x.date == "2003").value;
+                    if ( area != expected )
+                    {
+                        text += String.Format("Area sum not correct for {0} (expected {1}, actual {2}):", entityWithArea.english, expected, area) + Environment.NewLine;
+                    }
+                }
+            }
+
             // check area coverages
             txtErrors.Text = text;
         }

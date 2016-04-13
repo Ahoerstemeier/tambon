@@ -166,6 +166,11 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemSocialMediaGooglePlus = "Q356";
         public const String ItemSocialMediaFoursquare = "Q51709";
 
+        public const String MubanBookVolume1Title = "ทำเนียบท้องที่ พุทธศักราช 2546 เล่ม 1";
+        public const String MubanBookVolume2Title = "ทำเนียบท้องที่ พุทธศักราช 2546 เล่ม 2";
+        public const String ItemMubanBookVolume1 = "Q23793867";
+        public const String ItemMubanBookVolume2 = "Q23793856";
+
         public const String ItemSandbox = "Q4115189";
 
         public const String SiteLinkCommons = "commonswiki";
