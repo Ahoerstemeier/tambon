@@ -160,6 +160,23 @@
         </reference>
       </area>
     </area>
+    <history>
+      <rename effective="1947-10-01" status="Gazette" name="เมืองกาฬสินธุ์" oldname="กาฬสินธุ์">
+        <gazetteref volume="64" page="638" issue="45 ก" date="1947-09-23" />
+      </rename>
+      <reassign effective="1947-10-01" status="Gazette" oldparent="44" newparent="46">
+        <gazetteref volume="64" page="516" issue="36 ก" date="1947-08-12" />
+      </reassign>
+      <rename effective="1938-11-14" status="Gazette" name="กาฬสินธุ์" oldname="หลุบ">
+        <gazetteref volume="55" page="658" issue="0 ก" date="1938-11-14" />
+      </rename>
+      <rename effective="1917-04-29" status="Gazette" name="หลุบ" english="Lup" oldname="เมือง" oldenglish="Mueang">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+      <rename effective="1913-10-16" status="Gazette" name="เมืองกาฬสินธุ์" oldname="อุไทยกาฬสินธุ์">
+        <gazetteref volume="30" page="1619" issue="0 ง" date="1913-10-16" />
+      </rename>
+    </history>
     <entity type="Tambon" name="กาฬสินธุ์" english="Kalasin" geocode="460101">
       <wiki wikidata="Q16144489" />
     </entity>
@@ -2118,6 +2135,17 @@
         </reference>
       </area>
     </area>
+    <history>
+      <reassign effective="1947-10-01" status="Gazette" oldparent="44" newparent="46">
+        <gazetteref volume="64" page="516" issue="36 ก" date="1947-08-12" />
+      </reassign>
+      <rename effective="1917-04-29" status="Gazette" name="ยางตลาด" english="Yang Talat" oldname="ภูแล่นช้าง" oldenglish="Phu Len Chang">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+      <rename effective="1913-10-16" status="Gazette" name="ภูแล่นช้าง" oldname="ปจิมกาฬสินธุ์">
+        <gazetteref volume="30" page="1619" issue="0 ง" date="1913-10-16" />
+      </rename>
+    </history>
     <entity type="Tambon" name="ยางตลาด" english="Yang Talat" geocode="460701">
       <wiki wikidata="Q17279476" />
       <office type="TAOOffice">
@@ -2286,6 +2314,7 @@
     </entity>
     <entity type="Tambon" name="อิตื้อ" english="Itue" geocode="460706">
       <wiki wikidata="Q17279481" />
+      <!-- 1910 named หนองอิตื้อ Nong Itue?  -->
       <entity type="Muban" geocode="46070601" name="บ้านแก ๑" english="Ban Kae 1" />
       <entity type="Muban" geocode="46070602" name="บ้านแก ๒" english="Ban Kae 2" />
       <entity type="Muban" geocode="46070603" name="บ้านแกใต้" english="Ban Kae Tai" />
@@ -2297,7 +2326,13 @@
       <entity type="Muban" geocode="46070609" name="บ้านดอนลำดวน" english="Ban Don Lamduan" />
       <entity type="Muban" geocode="46070610" name="บ้านหนองแวงใต้" english="Ban Nong Waeng Tai" />
       <entity type="Muban" geocode="46070611" name="บ้านคำขอนแก่น" english="Ban Kham Khong Kaen" />
-      <entity type="Muban" geocode="46070612" name="บ้านยางคำเหนือ" english="Ban Yang Kham Nuea" />
+      <entity type="Muban" geocode="46070612" name="บ้านยางคำเหนือ" english="Ban Yang Kham Nuea">
+        <history>
+          <create effective="2005-11-09" status="Gazette" type="Muban" splitfrom="46070607">
+            <gazetteref volume="123" page="46" issue="พิเศษ 23 ง" date="2006-02-15" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="หัวนาคำ" english="Hua Na Kham" geocode="460707">
       <wiki wikidata="Q17279482" />
