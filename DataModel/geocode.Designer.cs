@@ -494,10 +494,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private Identifier gnsufiField;
         
+        private Identifier woeidField;
+        
         /// <summary>
         /// Creates a new instance of OtherIdentifier.
         /// </summary>
         public OtherIdentifier() {
+            this.woeidField = new Identifier();
             this.gnsufiField = new Identifier();
             this.gndField = new Identifier();
             this.gettyField = new Identifier();
@@ -642,6 +645,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.gnsufiField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Where On Earth ID (WOEID). Value is 32bit integer. Url in catalog for WOEID 123 is https://www.flickr.com/places/info/123
+        /// </summary>
+        /// <value>
+        /// The woeid.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier woeid {
+            get {
+                return this.woeidField;
+            }
+            set {
+                this.woeidField = value;
             }
         }
     }
