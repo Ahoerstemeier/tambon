@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
   <!-- Monthon -->
+  <!-- abolished 1933 -->
   <entity type="Monthon" name="นครศรีธรรมราช" english="Nakhon Si Thamarat" geocode="0">
+    <wiki wikidata="Q6905899" />
     <office type="MonthonOffice">
       <officials>
         <official title="MonthonCommissioner" name="เจ้าพระยายมราช (ปั้น สุขุม)" beginyear="1896" endyear="1905" />
@@ -16,6 +18,53 @@
       </officials>
     </office>
   </entity>
+  <entity type="Monthon" name="มหาราษฎร์" english="Maha Rat" geocode="0">
+    <wiki wikidata="Q13018689" />
+  </entity>
+  <entity type="Monthon" name="พายัพ" english="Phayap" geocode="0">
+    <wiki wikidata="Q13018691" />
+  </entity>
+  <entity type="Monthon" name="นครราชสีมา" english="Nakhon Ratchasima" geocode="0">
+    <wiki wikidata="Q13018692" />
+  </entity>
+  <entity type="Monthon" name="พิษณุโลก" english="Phitsanulok" geocode="0">
+    <wiki wikidata="Q16306903" />
+  </entity>
+  <!-- abolished 1932 -->
+  <entity type="Monthon" name="ปัตตานี" english="Pattani" geocode="0">
+    <history>
+      <abolished effective="1932-04-01" type="Monthon" status="Gazette">
+        <gazetteref volume="48" issue="0 ก" page="576" date="1932-02-21" />
+      </abolished>
+    </history>
+  </entity>
+  <entity type="Monthon" name="จันทบุรี" english="Chanthaburi" geocode="0">
+    <wiki wikidata="Q16306895" />
+    <history>
+      <abolished effective="1932-04-01" type="Monthon" status="Gazette">
+        <gazetteref volume="48" issue="0 ก" page="576" date="1932-02-21" />
+      </abolished>
+    </history>
+  </entity>
+  <!--
+  <abolish type="Monthon" english="Nakhon Chai Si" ownerenglish="Ratchaburi" />
+  <abolish type="Monthon" english="Nakhon Sawan" ownerenglish="Ayutthaya, Phitsanulok" />
+  -->
+
+  <!-- abolished 1926 -->
+  <entity type="Monthon" name="สุราษฎร์" english="Surat" geocode="0">
+    <wiki wikidata="Q6905901" />
+    <history>
+      <abolished effective="1926-04-01" type="Monthon" status="Gazette">
+        <gazetteref volume="42" issue="0 ก" page="24" date="1926-03-31" />
+      </abolished>
+    </history>
+  </entity>
+  <!--
+  <abolish type="Monthon" english="Maharat" ownerenglish="Phayap" />
+  <abolish type="Monthon" english="Roi Et" ownerenglish="Nakhon Ratchasima" />
+  <abolish type="Monthon" english="Ubon Ratchathani" ownerenglish="Nakhon Ratchasima" />
+  -->
 
   <!-- Regions 1941-1952 -->
   <entity type="Phak" name="ภาค 5" english="Phak 5" geocode="0">
@@ -86,5 +135,75 @@
         </reference>
       </officials>
     </office>
+  </entity>
+
+  <!-- abolished provinces (not re-created)-->
+  <!-- 1971 -->
+  <entity type="Changwat" name="พระนคร" english="Phra Nakhon" geocode="0" obsolete="1">
+    <wiki wikidata="Q13014111" />
+    <history>
+      <abolished effective="1971-12-21" status="Gazette" type="Changwat" mergeto="10">
+        <gazetteref volume="88" page="816" issue="144 ก" date="1971-12-21" />
+      </abolished>
+    </history>
+  </entity>
+  <entity type="Changwat" name="ธนบุรี" english="Thon Buri" geocode="0" obsolete="1">
+    <wiki wikidata="Q13014101" />
+    <history>
+      <abolished effective="1971-12-21" status="Gazette" type="Changwat" mergeto="10">
+        <gazetteref volume="88" page="816" issue="144 ก" date="1971-12-21" />
+      </abolished>
+    </history>
+  </entity>
+
+  <!-- 1932 -->
+  <entity type="Changwat" name="สายบุรี" english="Sai Buri" geocode="0" obsolete="1">
+    <wiki wikidata="Q13014122" />
+    <history>
+      <abolished effective="1932-04-01" type="Changwat" status="Gazette" mergeto="94 96">
+        <gazetteref volume="48" issue="0 ก" page="576" date="1932-02-21" />
+      </abolished>
+    </history>
+  </entity>
+  <entity type="Changwat" name="หล่มสัก" english="Lom Sak" geocode="0" obsolete="1">
+    <wiki wikidata="Q13014124" />
+    <history>
+      <abolished effective="1932-04-01" type="Changwat" status="Gazette" mergeto="67">
+        <gazetteref volume="48" issue="0 ก" page="576" date="1932-02-21" />
+      </abolished>
+    </history>
+  </entity>
+  <entity type="Changwat" name="ตะกั่วป่า" english="Takua Pa" geocode="0" obsolete="1">
+    <wiki wikidata="Q13014100" />
+    <history>
+      <abolished effective="1932-04-01" type="Changwat" status="Gazette" mergeto="82">
+        <gazetteref volume="48" issue="0 ก" page="576" date="1932-02-21" />
+      </abolished>
+    </history>
+  </entity>
+  <entity type="Changwat" name="หลังสวน" english="Lang Suan" geocode="0" obsolete="1">
+    <wiki wikidata="Q13014127" />
+    <history>
+      <abolished effective="1932-04-01" type="Changwat" status="Gazette" mergeto="86">
+        <gazetteref volume="48" issue="0 ก" page="576" date="1932-02-21" />
+      </abolished>
+    </history>
+  </entity>
+
+  <!--
+  <abolish type="Changwat" english="Sukhothai" ownerenglish="Suwannalok" />
+  <abolish type="Changwat" english="Thanyaburi" ownerenglish="Pathum Thani" />
+  <abolish type="Changwat" english="Phra Pra Daeng" ownerenglish="SamutPrakan, Thonburi" />
+  <abolish type="Changwat" english="Min Buri" ownerenglish="Phra Nakhon, Chachoengsao" />
+  -->
+
+  <!-- 1926 -->
+  <entity type="Changwat" name="กบินทร์บุรี" english="Kabin Buri" geocode="0" obsolete="1">
+    <wiki wikidata="Q15631833" />
+    <history>
+      <abolished effective="1926-04-01" status="Gazette" type="Changwat" mergeto="25">
+        <gazetteref volume="42" issue="0 ก" page="430" date="1926-03-31" />
+      </abolished>
+    </history>
   </entity>
 </entity>
