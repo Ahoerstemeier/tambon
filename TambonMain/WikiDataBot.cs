@@ -853,8 +853,15 @@ namespace De.AHoerstemeier.Tambon
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
+
+                        var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdStatedIn), new EntityIdValue(new EntityId(WikiBase.ItemFlickrShapeFile)));
+                        var woeidReference = statement.CreateReferenceForSnak(snak);
+                        statement.AddReference(woeidReference);
+                        foreach ( var reference in statement.References )
+                        {
+                            reference.Save(_helper.GetReferenceSaveEditSummary(reference));
+                        }
                     }
-                    // TODO: Sources
                 }
             }
         }

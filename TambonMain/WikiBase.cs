@@ -66,6 +66,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdDeterminationMethod = "P459";
         public const String PropertyIdFoursquareId = "P1968";
         public const String PropertyIdFacebookPage = "P1997";  // https://www.facebook.com/pages/-/$1
+        public const String PropertyIdGooglePlusUserName = "P2847";
         public const String PropertyIdShortName = "P1813";  // wrong data type, wait for it to become multilingual!
         public const String PropertyIdIpa = "P898";
         public const String PropertyIdLanguageOfWork = "P407";  // qualifier for IPA, to be set to ItemIdThaiLanguage
@@ -171,6 +172,8 @@ namespace De.AHoerstemeier.Tambon
         public const String MubanBookVolume2Title = "ทำเนียบท้องที่ พุทธศักราช 2546 เล่ม 2";
         public const String ItemMubanBookVolume1 = "Q23793867";
         public const String ItemMubanBookVolume2 = "Q23793856";
+
+        public const String ItemFlickrShapeFile = "Q24010939";  // Reference for PropertyIdWOEID
 
         public const String ItemSandbox = "Q4115189";
 
