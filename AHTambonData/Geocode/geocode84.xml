@@ -2715,11 +2715,11 @@
           <entity geocode="840802" coverage="completely" />
         </areacoverage>
       </office>
-      <history>
-        <create type="Tambon" splitfrom="840801 840807" status="Gazette" effective="1947-10-10">
+      <!--<history>
+        <create effective="1947-10-10" status="Gazette" type="Tambon" splitfrom="840801 840807" subdivisions="8" subdivisiontype="Muban">
           <gazetteref volume="64" page="2739" issue="51 ง" date="1947-10-28" />
         </create>
-      </history>
+      </history>-->
       <entity type="Muban" geocode="84080201" name="บ้านยาง" english="Ban Yang" />
       <entity type="Muban" geocode="84080202" name="บ้านปากหาร" english="Ban Pak Han" />
       <entity type="Muban" geocode="84080203" name="บ้านย่านยาว" english="Ban Yan Yao" />
@@ -2993,7 +2993,7 @@
         </areacoverage>
       </office>
       <history>
-        <create type="Tambon" effective="1981-04-01" splitfrom="840808" status="Gazette">
+        <create effective="1981-04-01" status="Gazette" type="Tambon" splitfrom="840808" subdivisions="7" subdivisiontype="Muban">
           <gazetteref volume="98" page="1367" issue="71 ง" date="1981-05-12" />
         </create>
       </history>
@@ -3061,7 +3061,7 @@
       <statuschange effective="1976-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="93" page="31" issue="109 ก ฉบับพิเศษ" date="1976-09-08" />
       </statuschange>
-      <create effective="1973-07-20" status="Gazette" type="KingAmphoe" splitfrom="8408">
+      <create effective="1973-07-20" status="Gazette" type="KingAmphoe" splitfrom="8408" subdivisions="5" subdivisiontype="Tambon">
         <gazetteref volume="90" page="2153" issue="86 ง" date="1973-07-17" />
       </create>
     </history>
@@ -3093,6 +3093,17 @@
           <entity geocode="840901" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1973-07-20" status="Gazette" oldparent="8408" newparent="8409">
+          <gazetteref volume="90" page="2153" issue="86 ง" date="1973-07-17" />
+        </reassign>
+        <!--<create effective="1947-09-15" status="Gazette" type="Tambon" splitfrom="840903 840902 840808" subdivisions="5" subdivisiontype="Muban">
+          <gazetteref volume="64" page="2507" issue="46 ง" date="1947-09-30" />
+        </create>-->
+        <reassign effective="1936-11-29" status="Gazette" oldparent="8410" newparent="8408">
+          <gazetteref volume="53" page="2281" issue="0 ง" date="1936-11-29" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="84090101" name="บ้านสวนทุเรียน" english="Ban Suan Thurian" />
       <entity type="Muban" geocode="84090102" name="บ้านบางสาว" english="Ban Bang Sao" />
       <entity type="Muban" geocode="84090103" name="บ้านในทอน" english="Ban Nai Thon" />
@@ -3423,7 +3434,7 @@
         </history>
       </office>
       <history>
-        <create effective="1981-04-01" status="Gazette" type="Tambon" splitfrom="841001">
+        <create effective="1981-04-01" status="Gazette" type="Tambon" splitfrom="841001" subdivisions="5" subdivisiontype="Muban">
           <gazetteref volume="98" page="1194" issue="63 ง" date="1981-04-28" />
         </create>
       </history>
@@ -3482,10 +3493,10 @@
       <area value="1167.7" unit="km²" comment="Census2000" />
     </area>
     <history>
-      <statuschange status="Gazette" old="KingAmphoe" new="Amphoe">
+      <statuschange effective="1938-08-01" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="55" page="1321" issue="0 ง" date="1938-08-01" />
       </statuschange>
-      <create status="Gazette" type="KingAmphoe" splitfrom="8406 8417" effective="1908-08-09">
+      <create effective="1908-08-09" status="Gazette" type="KingAmphoe" splitfrom="8406 8417" subdivisions="6" subdivisiontype="Tambon">
         <gazetteref volume="25" page="569" issue="19" date="1908-08-09" />
       </create>
     </history>
@@ -3797,6 +3808,11 @@
           <entity geocode="841202" coverage="completely" />
         </areacoverage>
       </office>
+      <!--<history>
+        <create effective="1940-08-13" status="Gazette" type="Tambon" splitfrom="84120101 841201" subdivisions="5" subdivisiontype="Muban">
+          <gazetteref volume="57" page="1428" issue="0 ง" date="1940-08-13" />
+        </create>
+      </history>-->
       <entity type="Muban" geocode="84120201" name="บ้านตลาดพรุพี" english="Ban Talat Phru Phi" />
       <entity type="Muban" geocode="84120202" name="บ้านทุ่งทือ" english="Ban Thung Thue" />
       <entity type="Muban" geocode="84120203" name="บ้านอินทนิลงาม" english="Ban In Thanin Ngam" />
@@ -3832,6 +3848,14 @@
           <entity geocode="841203" coverage="completely" />
         </areacoverage>
       </office>
+      <!--<history>
+        <create effective="1947-09-15" status="Gazette" type="Tambon" splitfrom="841201 841204" subdivisions="3" subdivisiontype="Muban">
+          <gazetteref volume="64" page="2507" issue="46 ง" date="1947-09-30" />
+        </create>
+        <create effective="1938-12-26" status="Gazette" type="Tambon" splitfrom="841302 841301 841204" subdivisions="6" subdivisiontype="Muban">
+          <gazetteref volume="55" page="3244" issue="0 ง" date="1938-12-26" />
+        </create>
+      </history>-->
       <entity type="Muban" geocode="84120301" name="บ้านหัวถนน" english="Ban Hua Thanon" />
       <entity type="Muban" geocode="84120302" name="บ้านใสใหญ่" english="Ban Sai Nai" />
       <entity type="Muban" geocode="84120303" name="บ้านไร่เหนือ" english="Ban Rai Nuea" />
@@ -3913,6 +3937,11 @@
           <entity geocode="841205" coverage="completely" />
         </areacoverage>
       </office>
+      <!--<history>
+        <create effective="1947-09-15" status="Gazette" type="Tambon" splitfrom="841202" subdivisions="2" subdivisiontype="Muban">
+          <gazetteref volume="64" page="2507" issue="46 ง" date="1947-09-30" />
+        </create>
+      </history>-->
       <entity type="Muban" geocode="84120501" name="บ้านนาควน" english="Ban Na Khuan" />
       <entity type="Muban" geocode="84120502" name="บ้านนาลึก" english="Ban Na Luek" />
       <entity type="Muban" geocode="84120503" name="บ้านบนควน" english="Ban Bon Khuan" />
@@ -3960,7 +3989,7 @@
         </areacoverage>
       </office>
       <history>
-        <create effective="1977-07-01" status="Gazette" type="Tambon" splitfrom="841202">
+        <create effective="1977-07-01" status="Gazette" type="Tambon" splitfrom="841202" subdivisions="5" subdivisiontype="Muban">
           <gazetteref volume="94" page="19" issue="76 ง ฉบับพิเศษ" date="1977-08-17" />
         </create>
       </history>
@@ -4000,7 +4029,7 @@
         </areacoverage>
       </office>
       <history>
-        <create effective="1977-07-01" status="Gazette" type="Tambon" splitfrom="841203">
+        <create effective="1977-07-01" status="Gazette" type="Tambon" splitfrom="841203" subdivisions="4" subdivisiontype="Muban">
           <gazetteref volume="94" page="19" issue="76 ง ฉบับพิเศษ" date="1977-08-17" />
         </create>
       </history>
@@ -4048,7 +4077,7 @@
         </areacoverage>
       </office>
       <history>
-        <create type="Tambon" splitfrom="841202" effective="1985-09-02" status="Gazette">
+        <create effective="1985-09-02" status="Gazette" type="Tambon" splitfrom="841202" subdivisions="5" subdivisiontype="Muban">
           <gazetteref volume="102" page="92" issue="175 ง ฉบับพิเศษ" date="1985-11-25" />
         </create>
       </history>
@@ -4089,8 +4118,8 @@
         </areacoverage>
       </office>
       <history>
-        <create type="Tambon" splitfrom="841205" effective="1986-08-01" status="Gazette">
-          <gazetteref volume="103" page="31" issue="219 ง ฉบับพิเศษ" />
+        <create effective="1986-08-01" status="Gazette" type="Tambon" splitfrom="841205" subdivisions="6" subdivisiontype="Muban">
+          <gazetteref volume="103" page="31" issue="219 ง ฉบับพิเศษ" date="1986-12-12" />
         </create>
       </history>
       <entity type="Muban" geocode="84120901" name="บ้านยางอุง" english="Ban Yang Ung" />
@@ -4127,7 +4156,7 @@
         </areacoverage>
       </office>
       <history>
-        <create type="Tambon" effective="1993-10-10" splitfrom="841203" status="Gazette">
+        <create effective="1993-10-10" status="Gazette" type="Tambon" splitfrom="841203" subdivisions="7" subdivisiontype="Muban">
           <gazetteref volume="110" page="48" issue="201 ง ฉบับพิเศษ" date="1993-12-03" />
         </create>
       </history>
@@ -4170,7 +4199,7 @@
         </areacoverage>
       </office>
       <history>
-        <create type="Tambon" effective="1993-10-10" splitfrom="841204" status="Gazette">
+        <create effective="1993-10-10" status="Gazette" type="Tambon" splitfrom="841204" subdivisions="6" subdivisiontype="Muban">
           <gazetteref volume="110" page="48" issue="201 ง ฉบับพิเศษ" date="1993-12-03" />
         </create>
       </history>
