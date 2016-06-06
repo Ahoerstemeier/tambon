@@ -159,7 +159,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 counter.RemoveAll(x => x.Item3 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate (Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
+                    counter.Sort(delegate(Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
                     {
                         return (p2.Item3.CompareTo(p1.Item3));
                     });
@@ -198,7 +198,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 // counter.RemoveAll(x => x.Item2 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate (Tuple<String, Int32> p1, Tuple<String, Int32> p2)
+                    counter.Sort(delegate(Tuple<String, Int32> p1, Tuple<String, Int32> p2)
                     {
                         var result = p2.Item2.CompareTo(p1.Item2);
                         if ( result == 0 )
@@ -1355,6 +1355,12 @@ namespace De.AHoerstemeier.Tambon.UI
                     File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, String.Format("age{0} {1}.xml", year, entity.english)), output);
                 }
             }
+        }
+
+        private void btnNumbers_Click(object sender, EventArgs e)
+        {
+            var formEntityNumbers = new EntityNumbersForm();
+            formEntityNumbers.Show();
         }
     }
 }

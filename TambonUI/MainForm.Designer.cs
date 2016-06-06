@@ -56,11 +56,12 @@
             this.btnNayokResign = new System.Windows.Forms.Button();
             this.btnShowEntityData = new System.Windows.Forms.Button();
             this.grpTesting = new System.Windows.Forms.GroupBox();
+            this.btnAgeTable = new System.Windows.Forms.Button();
             this.btnGovernor = new System.Windows.Forms.Button();
             this.cbxCensusYears = new System.Windows.Forms.ComboBox();
             this.btnCheckCensus = new System.Windows.Forms.Button();
             this.btnAmphoeList = new System.Windows.Forms.Button();
-            this.btnAgeTable = new System.Windows.Forms.Button();
+            this.btnNumbers = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -366,6 +367,16 @@
             this.grpTesting.TabStop = false;
             this.grpTesting.Text = "Testing only";
             // 
+            // btnAgeTable
+            // 
+            this.btnAgeTable.Location = new System.Drawing.Point(8, 19);
+            this.btnAgeTable.Name = "btnAgeTable";
+            this.btnAgeTable.Size = new System.Drawing.Size(111, 23);
+            this.btnAgeTable.TabIndex = 63;
+            this.btnAgeTable.Text = "DOPA Age table";
+            this.btnAgeTable.UseVisualStyleBackColor = true;
+            this.btnAgeTable.Click += new System.EventHandler(this.btnAgeTable_Click);
+            // 
             // btnGovernor
             // 
             this.btnGovernor.Location = new System.Drawing.Point(234, 77);
@@ -417,21 +428,22 @@
             this.btnAmphoeList.UseVisualStyleBackColor = true;
             this.btnAmphoeList.Click += new System.EventHandler(this.btnAmphoeList_Click);
             // 
-            // btnAgeTable
+            // btnNumbers
             // 
-            this.btnAgeTable.Location = new System.Drawing.Point(8, 19);
-            this.btnAgeTable.Name = "btnAgeTable";
-            this.btnAgeTable.Size = new System.Drawing.Size(111, 23);
-            this.btnAgeTable.TabIndex = 63;
-            this.btnAgeTable.Text = "DOPA Age table";
-            this.btnAgeTable.UseVisualStyleBackColor = true;
-            this.btnAgeTable.Click += new System.EventHandler(this.btnAgeTable_Click);
+            this.btnNumbers.Location = new System.Drawing.Point(147, 206);
+            this.btnNumbers.Name = "btnNumbers";
+            this.btnNumbers.Size = new System.Drawing.Size(95, 23);
+            this.btnNumbers.TabIndex = 63;
+            this.btnNumbers.Text = "Entity numbers";
+            this.btnNumbers.UseVisualStyleBackColor = true;
+            this.btnNumbers.Click += new System.EventHandler(this.btnNumbers_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(420, 415);
+            this.Controls.Add(this.btnNumbers);
             this.Controls.Add(this.btnAmphoeList);
             this.Controls.Add(this.grpTesting);
             this.Controls.Add(this.btnShowEntityData);
@@ -497,6 +509,7 @@
         private System.Windows.Forms.Button btnAmphoeList;
         private System.Windows.Forms.Button btnGovernor;
         private System.Windows.Forms.Button btnAgeTable;
+        private System.Windows.Forms.Button btnNumbers;
     }
 }
 

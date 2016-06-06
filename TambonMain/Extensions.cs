@@ -74,6 +74,12 @@ namespace De.AHoerstemeier.Tambon
                     {Language.Thai,"อำเภอ"},
                     {Language.French,"district" }
                 }},
+                {EntityType.KingAmphoe, new Dictionary<Language,String>(){
+                    {Language.English,"minor district"},
+                    {Language.German,"Unterkreis"},
+                    {Language.Thai,"กิ่งอำเภอ"},
+                    {Language.French,"district mineur" }
+                }},
                 {EntityType.Changwat, new Dictionary<Language,String>(){
                     {Language.English,"province"},
                     {Language.German,"Provinz"},
@@ -84,6 +90,11 @@ namespace De.AHoerstemeier.Tambon
                     {Language.English,"borough"},
                     {Language.German,"Bezirk"},
                     {Language.Thai,"ชุมชน"}
+                }},
+                {EntityType.Sukhaphiban, new Dictionary<Language,String>(){
+                    {Language.English,"sanitary district"},
+                    {Language.German,"Sanitär-Bezirk"},
+                    {Language.Thai,"สุขาภิบาล"}
                 }},
                 {EntityType.TAO, new Dictionary<Language,String>(){
                     {Language.English,"subdistrict administrative organization"},
@@ -224,10 +235,16 @@ namespace De.AHoerstemeier.Tambon
                 case EntityType.ThesabanNakhon:
                 case EntityType.ThesabanMueang:
                 case EntityType.ThesabanTambon:
+                case EntityType.TAO:
+                case EntityType.Sukhaphiban:
+                case EntityType.Mueang:
                     result = compare == EntityType.Thesaban ||
                              compare == EntityType.ThesabanTambon ||
                              compare == EntityType.ThesabanMueang ||
-                             compare == EntityType.ThesabanNakhon;
+                             compare == EntityType.ThesabanNakhon ||
+                             compare == EntityType.Mueang ||
+                             compare == EntityType.TAO ||
+                             compare == EntityType.Sukhaphiban;
                     break;
 
                 default:
