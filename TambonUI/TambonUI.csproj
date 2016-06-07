@@ -52,6 +52,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +78,12 @@
     </Compile>
     <Compile Include="EntityBrowserForm.designer.cs">
       <DependentUpon>EntityBrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EntityNumbersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EntityNumbersForm.designer.cs">
+      <DependentUpon>EntityNumbersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -109,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EntityBrowserForm.resx">
       <DependentUpon>EntityBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EntityNumbersForm.resx">
+      <DependentUpon>EntityNumbersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
