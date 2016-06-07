@@ -67,7 +67,7 @@ namespace De.AHoerstemeier.Tambon
 
             // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
             var property = new EntityId(propertyId);
-            Statement claim = item.Claims.FirstOrDefault(x => property.Equals(x.mainSnak.PropertyId)) as Statement;
+            Statement claim = item.Claims.Select(x => x as Statement).Where(x => x != null).FirstOrDefault(x => property.Equals(x.mainSnak.PropertyId) && x.Rank != Rank.Deprecated);
 
             var dataValue = new StringValue(expected);
             var snak = new Snak(SnakType.Value, new EntityId(propertyId), dataValue);
