@@ -23,7 +23,8 @@ namespace De.AHoerstemeier.Tambon
             }
             else
             {
-                var historiesToCheck = Items.Where(x => x.effectiveSpecified && x.effective < dateToCheck).OrderBy(y => y.effective);
+                // ThenBy for the 2 special cases where Tambon was abolished and created again on same day
+                var historiesToCheck = Items.Where(x => x.effectiveSpecified && x.effective < dateToCheck).OrderBy(y => y.effective).ThenBy(z => z is HistoryCreate);
                 var calculatedType = currentType;
                 if ( Items.Any(x => x is HistoryStatus) )
                 {

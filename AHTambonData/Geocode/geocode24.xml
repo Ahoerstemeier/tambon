@@ -1784,6 +1784,17 @@
         <official title="DistrictOfficer" name="สมชัย อมรวัฒนสวัสดิ์" end="2007-10-23" />
       </officials>
     </office>
+    <history>
+      <rename effective="1917-04-29" status="Gazette" name="บ้านโพธิ์" english="Ban Pho" oldname="เขาดิน" oldenglish="Khao Din">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+      <rename effective="1914-07-26" status="Gazette" name="เขาดิน" oldname="สนามจันทร์">
+        <gazetteref volume="31" page="928" issue="0 ง" date="1914-07-26" />
+      </rename>
+      <create effective="1904-03-06" status="Gazette" type="Amphoe">
+        <gazetteref volume="20" page="833" issue="49" date="1904-03-06" />
+      </create>
+    </history>
     <entity type="Tambon" name="บ้านโพธิ์" english="Ban Pho" geocode="240501">
       <wiki wikidata="Q16601557" />
       <office type="TAOOffice" obsolete="1">
@@ -1862,20 +1873,20 @@
           <mergedwith mergefrom="240511" mergefromtype="TAO" effective="2004-07-01" status="Gazette">
             <gazetteref volume="121" page="15" issue="พิเศษ 75 ง" date="2004-07-09" />
           </mergedwith>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="240504" coverage="completely" />
           <entity geocode="240511" coverage="completely" />
         </areacoverage>
       </office>
-      <history>
-        <mergedwith effective="2004-07-09" status="Gazette" type="TAO" mergefrom="240511" mergefromtype="TAO">
-          <gazetteref volume="121" page="15" issue="พิเศษ 75 ง" date="2004-07-09" />
-        </mergedwith>
-        <create effective="1997-02-13" status="Gazette" type="TAO">
-          <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+      <!--<history>
+        <create effective="1947-08-15" status="Gazette" type="Tambon" splitfrom="240511" subdivisions="3" subdivisiontype="Muban">
+          <gazetteref volume="64" page="1930" issue="33 ง" date="1947-07-29" />
         </create>
-      </history>
+      </history>-->
       <entity type="Muban" geocode="24050401" name="บ้านปากคลองบ้านโพธิ์" english="Ban Pak Khlong Ban Pho" />
       <entity type="Muban" geocode="24050402" name="บ้านดอนชะคราม" english="Ban Don Chakhram" />
       <entity type="Muban" geocode="24050403" name="บ้านปากคลองตันหมัน" english="Ban Pak Khlong Ton Man" />
@@ -3013,7 +3024,7 @@
       <statuschange effective="1996-12-05" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="113" page="5" issue="62 ก" date="1996-11-20" />
       </statuschange>
-      <create effective="1991-04-01" status="Gazette" type="KingAmphoe" splitfrom="2408">
+      <create effective="1991-04-01" status="Gazette" type="KingAmphoe" splitfrom="2408" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="108" page="1063" issue="15 ง" date="1991-01-31" />
       </create>
     </history>
@@ -3033,6 +3044,17 @@
           <entity geocode="241001" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1991-04-01" status="Gazette" oldparent="2408" newparent="2410" oldgeocode="240804">
+          <gazetteref volume="108" page="1063" issue="15 ง" date="1991-01-31" />
+        </reassign>
+        <reassign effective="1966-01-06" status="Gazette" oldparent="2406" newparent="2408">
+          <gazetteref volume="83" page="254" issue="6 ง" date="1966-01-18" />
+        </reassign>
+        <!--<create effective="1947-09-15" status="Gazette" type="Tambon" splitfrom="240601" subdivisions="3" subdivisiontype="Muban">
+          <gazetteref volume="64" page="2507" issue="46 ง" date="1947-09-30" />
+        </create>-->
+      </history>
       <entity type="Muban" geocode="24100101" name="บ้านวังวุ้ง" english="Ban Wang Wung" />
       <entity type="Muban" geocode="24100102" name="บ้านท่าคาน" english="Ban Tha Khan" />
       <entity type="Muban" geocode="24100103" name="บ้านทุ่งยายชี" english="Ban Thung Yai Chi" />
@@ -3085,7 +3107,10 @@
         </areacoverage>
       </office>
       <history>
-        <create effective="1983-07-15" status="Gazette" type="Tambon" splitfrom="240804">
+        <reassign effective="1991-04-01" status="Gazette" oldparent="2408" newparent="2410" oldgeocode="240806">
+          <gazetteref volume="108" page="1063" issue="15 ง" date="1991-01-31" />
+        </reassign>
+        <create effective="1983-07-15" status="Gazette" type="Tambon" splitfrom="240804" subdivisions="6" subdivisiontype="Muban">
           <gazetteref volume="100" page="2693" issue="131 ง" date="1983-08-09" />
         </create>
       </history>
@@ -3151,7 +3176,7 @@
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
       </statuschange>
-      <create effective="1993-05-31" status="Gazette" type="KingAmphoe" splitfrom="2402">
+      <create effective="1993-05-31" status="Gazette" type="KingAmphoe" splitfrom="2402" subdivisions="5" subdivisiontype="Tambon">
         <gazetteref volume="110" page="21" issue="74 ง" date="1993-06-08" />
       </create>
     </history>

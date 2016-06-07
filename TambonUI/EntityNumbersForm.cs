@@ -28,7 +28,6 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             _baseEntity = GlobalData.CompleteGeocodeList();
             _baseEntity.CalcOldGeocodesRecursive();
-            _baseEntity.PropagatePostcodeRecursive();
             _baseEntity.PropagateObsoleteToSubEntities();
             _allEntities = _baseEntity.FlatList()./*Where(x => !x.IsObsolete).*/ToList();
             var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
@@ -56,7 +55,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 EntityType.ThesabanNakhon,
                 EntityType.ThesabanMueang,
                 EntityType.ThesabanTambon,
-                EntityType.TAO,
+                // EntityType.TAO,
             };
             _endYear = DateTime.Now.Year;
 
@@ -87,7 +86,8 @@ namespace De.AHoerstemeier.Tambon.UI
             for ( Int32 year = _startYear ; year <= _endYear ; year++ )
             {
                 result.Add(new Tuple<Int32, Int32>(year, entities.Count(x => x.history.CheckTypeAtDate(entityType, x.type, new DateTime(year, 1, 1)))));
-                // var items = entities.Where(x => x.history.CheckTypeAtDate(entityType, x.type, new DateTime(year, 1, 1))).ToList();
+                //var items = entities.Where(x => x.history.CheckTypeAtDate(entityType, x.type, new DateTime(year, 1, 1))).ToList();
+                //var codes = items.Select(x => x.geocode).ToList();
             }
             return result;
         }
