@@ -1040,10 +1040,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="42" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="42" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="560310" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1972-09-01" status="Gazette" type="Tambon" splitfrom="560309" subdivisions="11" subdivisiontype="Muban">
+          <gazetteref volume="89" page="2307" issue="135 ง" date="1972-09-12" />
+        </create>
+      </history>
       <entity type="Muban" geocode="56031001" name="บ้านร้อง" english="Ban Rong" />
       <entity type="Muban" geocode="56031002" name="บ้านหนอง" english="Ban Nong" />
       <entity type="Muban" geocode="56031003" name="บ้านหนองป่าแพะ" english="Ban Nong Pa Phae" />
@@ -1063,8 +1073,28 @@
       <entity type="Muban" geocode="56031017" name="บ้านคุ้มเจริญ" english="Ban Khum Charoen" />
       <entity type="Muban" geocode="56031018" name="บ้านสบสา" english="Ban Sopsa" />
       <entity type="Muban" geocode="56031019" name="บ้านน้ำยวนพัฒนา" english="Ban Nam Yuan Phatthana" />
-      <entity type="Muban" geocode="56031020" name="บ้านร่องส้านใหม่" english="Ban Rong San Mai" comment="TAO website says บ้านร่องส้าน" />
-      <entity type="Muban" geocode="56031021" name="บ้านประชาพัฒนา" english="Ban Pracha Phatthana" />
+      <entity type="Muban" geocode="56031020" name="บ้านร่องส้านใหม่" english="Ban Rong San Mai" comment="TAO website says บ้านร่องส้าน">
+        <history>
+          <create effective="2002-04-29" status="Gazette" type="Muban" splitfrom="56031008">
+            <gazetteref volume="119" page="142" issue="45 ง" date="2002-06-04" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="56031021" name="บ้านประชาพัฒนา" english="Ban Pracha Phatthana">
+        <history>
+          <create effective="2003-09-09" status="Gazette" type="Muban" splitfrom="56031013">
+            <gazetteref volume="120" page="24" issue="พิเศษ 108 ง" date="2003-09-17" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="56031022" name="บ้านห้วยเดื่อดอยนาง" english="Ban Huai Duea Doi Nang">
+        <history>
+          <create effective="2016-04-05" status="Gazette" type="Muban" splitfrom="56031013">
+            <gazetteref volume="133" page="186" issue="44 ง" date="2016-06-09" />
+            <ministerialorder ministry="MOI" date="2015-12-15" title="มท ๐๓๑๐.๑/ว ๗๔๖๕" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="เชียงบาน" english="Chiang Ban" geocode="560311">
       <wiki wikidata="Q15981276" />

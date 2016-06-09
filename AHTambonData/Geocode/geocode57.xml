@@ -1257,7 +1257,7 @@
     </entity>
     <entity type="Tambon" name="หล่ายงาว" english="Lai Ngao" geocode="570309" newgeocode="571303" />
     <entity type="Tambon" name="ริมโขง" english="Rim Khong" geocode="570310">
-      <wiki wikidata ="Q7334327" />
+      <wiki wikidata="Q7334327" />
       <office type="TAOOffice">
         <geo:Point>
           <geo:lat>20.3725</geo:lat>
@@ -1272,10 +1272,20 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="570310" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1990-06-19" status="Gazette" type="Tambon" splitfrom="570301" subdivisions="5" subdivisiontype="Muban">
+          <gazetteref volume="107" page="68" issue="170 ง ฉบับพิเศษ" date="1990-09-12" />
+        </create>
+      </history>
       <entity type="Muban" geocode="57031001" name="บ้านหาดบ้าย" english="Ban Hat Bai" />
       <entity type="Muban" geocode="57031002" name="บ้านเมืองกาญจน์" english="Ban Mueang Kan" />
       <entity type="Muban" geocode="57031003" name="บ้านดอนที่" english="Ban Don Thi" />
@@ -1284,7 +1294,20 @@
       <entity type="Muban" geocode="57031006" name="บ้านกิ่วกาญจน์" english="Ban Kio Kan" />
       <entity type="Muban" geocode="57031007" name="บ้านห้วยเย็น" english="Ban Huai Yen" />
       <entity type="Muban" geocode="57031008" name="บ้านหาดทรายทอง" english="Ban Hat Sai Thong" />
-      <entity type="Muban" geocode="57031009" name="บ้านม่วงกาญจน์" english="Ban Muang Kan" />
+      <entity type="Muban" geocode="57031009" name="บ้านม่วงกาญจน์" english="Ban Muang Kan">
+        <history>
+          <create effective="2003-09-09" status="Gazette" type="Muban" splitfrom="57031006">
+            <gazetteref volume="120" page="74" issue="พิเศษ 111 ง" date="2003-09-25" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="57031010" name="บ้านกิ่วดอยหลวง" english="Ban Kio Doi Luang">
+        <history>
+          <create effective="2016-04-11" status="Gazette" type="Muban" splitfrom="57031006">
+            <gazetteref volume="133" page="151" issue="44 ง" date="2016-06-09" />
+          </create>
+        </history>
+      </entity>
     </entity>
 
     <entity type="Unknown" name="ปอ" english="Po" geocode="570398" newgeocode="571302" />
@@ -3430,6 +3453,14 @@
             <meetingreference board="rename" date="2015-09-24" number="3" />
             <gazetteref volume="132" page="247" issue="127 ง" date="2015-12-03" />
           </rename>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="57071111" name="บ้านรุ่งเจริญ" english="Ban Rung Charoen">
+        <history>
+          <create effective="2016-04-11" status="Gazette" type="Muban" splitfrom="57071109">
+            <gazetteref volume="133" page="151" issue="44 ง" date="2016-06-09" />
+            <ministerialorder ministry="MOI" date="2012-03-12" title="มท ๐๓๑๐.๑/๓๑๑๓" />
+          </create>
         </history>
       </entity>
     </entity>
@@ -5628,6 +5659,14 @@
           </create>
         </history>
       </entity>
+      <entity type="Muban" geocode="57150227" name="บ้านหินคำ" english="Ban Hin Dam">
+        <history>
+          <create effective="2016-04-11" status="Gazette" type="Muban" splitfrom="57150201">
+            <gazetteref volume="133" page="151" issue="44 ง" date="2016-06-09" />
+            <ministerialorder ministry="MOI" date="2012-03-12" title="มท ๐๓๑๐.๑/๓๑๑๓" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="แม่สลองนอก" english="Mae Salong Nok" geocode="571503">
       <wiki wikidata="Q4119989" />
@@ -6444,6 +6483,7 @@
         <history>
           <create effective="2003-09-09" status="Gazette" type="Muban" splitfrom="57180306">
             <gazetteref volume="120" page="151" issue="พิเศษ 111 ง" date="2003-09-25" />
+            <ministerialorder ministry="MOI" date="2012-03-12" title="มท ๐๓๑๐.๑/๓๑๑๓" />
           </create>
         </history>
       </entity>
