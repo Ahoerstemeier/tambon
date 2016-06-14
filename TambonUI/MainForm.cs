@@ -1362,5 +1362,49 @@ namespace De.AHoerstemeier.Tambon.UI
             var formEntityNumbers = new EntityNumbersForm();
             formEntityNumbers.Show();
         }
+
+        private void btnMubanList_Click(object sender, EventArgs e)
+        {
+            var baseEntity = GlobalData.CompleteGeocodeList();
+            baseEntity.PropagateObsoleteToSubEntities();
+            var allMuban = baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Muban) && !x.IsObsolete).ToList();
+            var builder = new StringBuilder();
+            foreach ( var entity in allMuban )
+            {
+                builder.AppendFormat("{0},{1},{2}", entity.geocode, entity.english, entity.name);
+                builder.AppendLine();
+            }
+            Clipboard.Clear();
+            Clipboard.SetText(builder.ToString());
+        }
+
+        private void btnTambonList_Click(Object sender, EventArgs e)
+        {
+            Int16 year = Convert.ToInt16(edtYear.Value);
+            GlobalData.LoadPopulationData(PopulationDataSourceType.DOPA, year);
+            var baseEntity = GlobalData.CompleteGeocodeList();
+            baseEntity.PropagateObsoleteToSubEntities();
+            var allTambon = baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete).ToList();
+            var builder = new StringBuilder();
+            foreach ( var entity in allTambon )
+            {
+                Int32 population = 0;
+                Int32 households = 0;
+                var populationData = entity.population.FirstOrDefault(x => x.Year == year && x.source == PopulationDataSourceType.DOPA);
+                if ( populationData != null )
+                {
+                    population = populationData.TotalPopulation.total;
+                    var householdData = populationData.TotalPopulation as HouseholdDataPoint;
+                    if ( householdData != null )
+                    {
+                        households = householdData.households;
+                    }
+                }
+                builder.AppendFormat("{0},{1},{2},{3},{4}", entity.geocode, entity.english, entity.name, population, households);
+                builder.AppendLine();
+            }
+            Clipboard.Clear();
+            Clipboard.SetText(builder.ToString());
+        }
     }
 }

@@ -62,6 +62,8 @@
             this.btnCheckCensus = new System.Windows.Forms.Button();
             this.btnAmphoeList = new System.Windows.Forms.Button();
             this.btnNumbers = new System.Windows.Forms.Button();
+            this.btnMubanList = new System.Windows.Forms.Button();
+            this.btnTambonList = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -88,7 +90,7 @@
             // 
             // btn_PopulationAllProvinces
             // 
-            this.btn_PopulationAllProvinces.Location = new System.Drawing.Point(234, 48);
+            this.btn_PopulationAllProvinces.Location = new System.Drawing.Point(240, 48);
             this.btn_PopulationAllProvinces.Name = "btn_PopulationAllProvinces";
             this.btn_PopulationAllProvinces.Size = new System.Drawing.Size(75, 23);
             this.btn_PopulationAllProvinces.TabIndex = 44;
@@ -108,7 +110,7 @@
             // btn_GazetteShowAll
             // 
             this.btn_GazetteShowAll.Enabled = false;
-            this.btn_GazetteShowAll.Location = new System.Drawing.Point(234, 19);
+            this.btn_GazetteShowAll.Location = new System.Drawing.Point(240, 19);
             this.btn_GazetteShowAll.Name = "btn_GazetteShowAll";
             this.btn_GazetteShowAll.Size = new System.Drawing.Size(75, 23);
             this.btn_GazetteShowAll.TabIndex = 42;
@@ -136,7 +138,7 @@
             // 
             // btn_GazetteLoadAll
             // 
-            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(266, 177);
+            this.btn_GazetteLoadAll.Location = new System.Drawing.Point(406, 10);
             this.btn_GazetteLoadAll.Name = "btn_GazetteLoadAll";
             this.btn_GazetteLoadAll.Size = new System.Drawing.Size(112, 23);
             this.btn_GazetteLoadAll.TabIndex = 39;
@@ -207,7 +209,7 @@
             // 
             // btnCreationStatistics
             // 
-            this.btnCreationStatistics.Location = new System.Drawing.Point(18, 102);
+            this.btnCreationStatistics.Location = new System.Drawing.Point(12, 119);
             this.btnCreationStatistics.Name = "btnCreationStatistics";
             this.btnCreationStatistics.Size = new System.Drawing.Size(103, 23);
             this.btnCreationStatistics.TabIndex = 47;
@@ -247,7 +249,7 @@
             // 
             // btnTermEnds
             // 
-            this.btnTermEnds.Location = new System.Drawing.Point(266, 97);
+            this.btnTermEnds.Location = new System.Drawing.Point(252, 97);
             this.btnTermEnds.Name = "btnTermEnds";
             this.btnTermEnds.Size = new System.Drawing.Size(99, 23);
             this.btnTermEnds.TabIndex = 51;
@@ -257,7 +259,7 @@
             // 
             // btnTimeBetweenElection
             // 
-            this.btnTimeBetweenElection.Location = new System.Drawing.Point(163, 45);
+            this.btnTimeBetweenElection.Location = new System.Drawing.Point(144, 39);
             this.btnTimeBetweenElection.Name = "btnTimeBetweenElection";
             this.btnTimeBetweenElection.Size = new System.Drawing.Size(75, 23);
             this.btnTimeBetweenElection.TabIndex = 52;
@@ -267,7 +269,7 @@
             // 
             // btnElectionWeekday
             // 
-            this.btnElectionWeekday.Location = new System.Drawing.Point(163, 74);
+            this.btnElectionWeekday.Location = new System.Drawing.Point(144, 68);
             this.btnElectionWeekday.Name = "btnElectionWeekday";
             this.btnElectionWeekday.Size = new System.Drawing.Size(75, 23);
             this.btnElectionWeekday.TabIndex = 53;
@@ -277,7 +279,7 @@
             // 
             // btnMubanHelper
             // 
-            this.btnMubanHelper.Location = new System.Drawing.Point(147, 177);
+            this.btnMubanHelper.Location = new System.Drawing.Point(143, 177);
             this.btnMubanHelper.Name = "btnMubanHelper";
             this.btnMubanHelper.Size = new System.Drawing.Size(95, 23);
             this.btnMubanHelper.TabIndex = 54;
@@ -287,7 +289,7 @@
             // 
             // btnPendingElections
             // 
-            this.btnPendingElections.Location = new System.Drawing.Point(266, 68);
+            this.btnPendingElections.Location = new System.Drawing.Point(252, 68);
             this.btnPendingElections.Name = "btnPendingElections";
             this.btnPendingElections.Size = new System.Drawing.Size(99, 23);
             this.btnPendingElections.TabIndex = 55;
@@ -307,7 +309,7 @@
             // 
             // btnElectionDates
             // 
-            this.btnElectionDates.Location = new System.Drawing.Point(163, 102);
+            this.btnElectionDates.Location = new System.Drawing.Point(144, 96);
             this.btnElectionDates.Name = "btnElectionDates";
             this.btnElectionDates.Size = new System.Drawing.Size(75, 23);
             this.btnElectionDates.TabIndex = 57;
@@ -318,7 +320,7 @@
             // chkAllProvince
             // 
             this.chkAllProvince.AutoSize = true;
-            this.chkAllProvince.Location = new System.Drawing.Point(266, 49);
+            this.chkAllProvince.Location = new System.Drawing.Point(252, 43);
             this.chkAllProvince.Name = "chkAllProvince";
             this.chkAllProvince.Size = new System.Drawing.Size(81, 17);
             this.chkAllProvince.TabIndex = 58;
@@ -327,7 +329,7 @@
             // 
             // btnNayokResign
             // 
-            this.btnNayokResign.Location = new System.Drawing.Point(266, 126);
+            this.btnNayokResign.Location = new System.Drawing.Point(252, 126);
             this.btnNayokResign.Name = "btnNayokResign";
             this.btnNayokResign.Size = new System.Drawing.Size(99, 23);
             this.btnNayokResign.TabIndex = 59;
@@ -337,7 +339,7 @@
             // 
             // btnShowEntityData
             // 
-            this.btnShowEntityData.Location = new System.Drawing.Point(325, 10);
+            this.btnShowEntityData.Location = new System.Drawing.Point(315, 10);
             this.btnShowEntityData.Name = "btnShowEntityData";
             this.btnShowEntityData.Size = new System.Drawing.Size(75, 23);
             this.btnShowEntityData.TabIndex = 60;
@@ -360,9 +362,9 @@
             this.grpTesting.Controls.Add(this.btnCreateKml);
             this.grpTesting.Controls.Add(this.btn_PopulationAllProvinces);
             this.grpTesting.Enabled = false;
-            this.grpTesting.Location = new System.Drawing.Point(18, 244);
+            this.grpTesting.Location = new System.Drawing.Point(12, 244);
             this.grpTesting.Name = "grpTesting";
-            this.grpTesting.Size = new System.Drawing.Size(329, 157);
+            this.grpTesting.Size = new System.Drawing.Size(502, 157);
             this.grpTesting.TabIndex = 61;
             this.grpTesting.TabStop = false;
             this.grpTesting.Text = "Testing only";
@@ -379,7 +381,7 @@
             // 
             // btnGovernor
             // 
-            this.btnGovernor.Location = new System.Drawing.Point(234, 77);
+            this.btnGovernor.Location = new System.Drawing.Point(240, 77);
             this.btnGovernor.Name = "btnGovernor";
             this.btnGovernor.Size = new System.Drawing.Size(75, 23);
             this.btnGovernor.TabIndex = 59;
@@ -403,7 +405,7 @@
             "1929",
             "1919",
             "1909"});
-            this.cbxCensusYears.Location = new System.Drawing.Point(234, 119);
+            this.cbxCensusYears.Location = new System.Drawing.Point(240, 119);
             this.cbxCensusYears.Name = "cbxCensusYears";
             this.cbxCensusYears.Size = new System.Drawing.Size(75, 21);
             this.cbxCensusYears.TabIndex = 58;
@@ -420,7 +422,7 @@
             // 
             // btnAmphoeList
             // 
-            this.btnAmphoeList.Location = new System.Drawing.Point(266, 206);
+            this.btnAmphoeList.Location = new System.Drawing.Point(406, 68);
             this.btnAmphoeList.Name = "btnAmphoeList";
             this.btnAmphoeList.Size = new System.Drawing.Size(112, 23);
             this.btnAmphoeList.TabIndex = 62;
@@ -430,7 +432,7 @@
             // 
             // btnNumbers
             // 
-            this.btnNumbers.Location = new System.Drawing.Point(147, 206);
+            this.btnNumbers.Location = new System.Drawing.Point(143, 206);
             this.btnNumbers.Name = "btnNumbers";
             this.btnNumbers.Size = new System.Drawing.Size(95, 23);
             this.btnNumbers.TabIndex = 63;
@@ -438,11 +440,33 @@
             this.btnNumbers.UseVisualStyleBackColor = true;
             this.btnNumbers.Click += new System.EventHandler(this.btnNumbers_Click);
             // 
+            // btnMubanList
+            // 
+            this.btnMubanList.Location = new System.Drawing.Point(406, 126);
+            this.btnMubanList.Name = "btnMubanList";
+            this.btnMubanList.Size = new System.Drawing.Size(112, 23);
+            this.btnMubanList.TabIndex = 64;
+            this.btnMubanList.Text = "Muban list";
+            this.btnMubanList.UseVisualStyleBackColor = true;
+            this.btnMubanList.Click += new System.EventHandler(this.btnMubanList_Click);
+            // 
+            // btnTambonList
+            // 
+            this.btnTambonList.Location = new System.Drawing.Point(406, 97);
+            this.btnTambonList.Name = "btnTambonList";
+            this.btnTambonList.Size = new System.Drawing.Size(112, 23);
+            this.btnTambonList.TabIndex = 65;
+            this.btnTambonList.Text = "Tambon list";
+            this.btnTambonList.UseVisualStyleBackColor = true;
+            this.btnTambonList.Click += new System.EventHandler(this.btnTambonList_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 415);
+            this.ClientSize = new System.Drawing.Size(526, 415);
+            this.Controls.Add(this.btnTambonList);
+            this.Controls.Add(this.btnMubanList);
             this.Controls.Add(this.btnNumbers);
             this.Controls.Add(this.btnAmphoeList);
             this.Controls.Add(this.grpTesting);
@@ -510,6 +534,8 @@
         private System.Windows.Forms.Button btnGovernor;
         private System.Windows.Forms.Button btnAgeTable;
         private System.Windows.Forms.Button btnNumbers;
+        private System.Windows.Forms.Button btnMubanList;
+        private System.Windows.Forms.Button btnTambonList;
     }
 }
 
