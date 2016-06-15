@@ -221,6 +221,50 @@ namespace De.AHoerstemeier.Tambon.UI
                     displayForm.Show();
                 }
             }
+
+            var allMuban = allEntities.Where(x => x.type == EntityType.Muban);
+            StringBuilder mubanBuilder = new StringBuilder();
+            Int32 mubanIssues = 0;
+            var mubanNotStartingWithBan = allMuban.Where(x => !String.IsNullOrEmpty(x.english) && !x.english.StartsWith("Ban "));
+            var mubanNotStartingWithBanInThai = allMuban.Where(x => !String.IsNullOrEmpty(x.name) && !x.name.StartsWith("บ้าน"));
+            var mubanWithWrongCapitalization = allMuban.Where(x => !String.IsNullOrEmpty(x.english) && x.english.Split(' ').Any(y => y.Length > 0 && (Char.IsLower(y[0]) && !y.StartsWith("km"))));
+            if ( mubanNotStartingWithBan.Any() )
+            {
+                mubanBuilder.AppendLine("Not starting with Ban:");
+                foreach ( var entry in mubanNotStartingWithBan )
+                {
+                    mubanBuilder.AppendLine(String.Format("{0}: {1} ({2})", entry.geocode, entry.english, entry.name));
+                    mubanIssues++;
+                }
+                mubanBuilder.AppendLine();
+            }
+            if ( mubanNotStartingWithBanInThai.Any() )
+            {
+                mubanBuilder.AppendLine("Not starting with บ้าน:");
+                foreach ( var entry in mubanNotStartingWithBanInThai )
+                {
+                    mubanBuilder.AppendLine(String.Format("{0}: {1}", entry.geocode, entry.name));
+                    mubanIssues++;
+                }
+                mubanBuilder.AppendLine();
+            }
+            if ( mubanWithWrongCapitalization.Any() )
+            {
+                mubanBuilder.AppendLine("Invalid lower-case letters in romanized name:");
+                foreach ( var entry in mubanWithWrongCapitalization )
+                {
+                    mubanBuilder.AppendLine(String.Format("{0}: {1}", entry.geocode, entry.english));
+                    mubanIssues++;
+                }
+                mubanBuilder.AppendLine();
+            }
+            if ( mubanIssues > 0 )
+            {
+                var displayForm = new StringDisplayForm(
+                   String.Format("Muban name issues ({0} of {1})", mubanIssues, allMuban.Count()),
+                   mubanBuilder.ToString());
+                displayForm.Show();
+            }
         }
 
         private void btnCheckTerms_Click(object sender, EventArgs e)
