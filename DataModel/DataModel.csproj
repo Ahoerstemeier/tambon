@@ -130,6 +130,11 @@
       <Generator>xsd2codecustomtool</Generator>
       <LastGenOutput>history.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Identifier.xsd">
+      <SubType>Designer</SubType>
+      <Generator>xsd2codecustomtool</Generator>
+      <LastGenOutput>Identifier.Designer.cs</LastGenOutput>
+    </None>
     <None Include="park.xsd">
       <SubType>Designer</SubType>
       <Generator>xsd2codecustomtool</Generator>
@@ -160,11 +165,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>person.xsd</DependentUpon>
     </None>
-    <None Include="geocode.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>geocode.xsd</DependentUpon>
-    </None>
     <None Include="history.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,6 +174,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>park.xsd</DependentUpon>
+    </None>
+    <None Include="geocode.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>geocode.xsd</DependentUpon>
+    </None>
+    <None Include="Identifier.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Identifier.xsd</DependentUpon>
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="region.Designer.cs">

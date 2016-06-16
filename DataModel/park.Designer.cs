@@ -482,6 +482,124 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
+    /// Unique identifiers additional to the geocode and the wiki ids.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OtherParkIdentifier", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class OtherParkIdentifier {
+        
+        private Identifier wpdaField;
+        
+        private Identifier gettyField;
+        
+        private Identifier gndField;
+        
+        private Identifier gnsufiField;
+        
+        private Identifier woeidField;
+        
+        /// <summary>
+        /// Creates a new instance of OtherParkIdentifier.
+        /// </summary>
+        public OtherParkIdentifier() {
+            this.woeidField = new Identifier();
+            this.gnsufiField = new Identifier();
+            this.gndField = new Identifier();
+            this.gettyField = new Identifier();
+            this.wpdaField = new Identifier();
+        }
+        
+        /// <summary>
+        /// Identifier in World Database on Protected Areas. Url in catalog for wpda 123 is http://www.protectedplanet.net/123.
+        /// </summary>
+        /// <value>
+        /// The wpda.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier wpda {
+            get {
+                return this.wpdaField;
+            }
+            set {
+                this.wpdaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Getty Thesaurus of Geographic Names (TGN). Url in catalog for TGN 123 is http://www.getty.edu/vow/TGNFullDisplay?find=&place=&nation=&english=Y&subjectid=123.
+        /// </summary>
+        /// <value>
+        /// The getty.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier getty {
+            get {
+                return this.gettyField;
+            }
+            set {
+                this.gettyField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Integrated Authority File (from German: Gemeinsame Normdatei). Url in catalog for GND 123 is http://d-nb.info/gnd/123
+        /// </summary>
+        /// <value>
+        /// The gnd.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier gnd {
+            get {
+                return this.gndField;
+            }
+            set {
+                this.gndField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("gns-ufi", Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier gnsufi {
+            get {
+                return this.gnsufiField;
+            }
+            set {
+                this.gnsufiField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Where On Earth ID (WOEID). Value is 32bit integer. Url in catalog for WOEID 123 is https://www.flickr.com/places/info/123
+        /// </summary>
+        /// <value>
+        /// The woeid.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier woeid {
+            get {
+                return this.woeidField;
+            }
+            set {
+                this.woeidField = value;
+            }
+        }
+    }
+    
+    /// <summary>
     /// Protected area.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
@@ -493,6 +611,8 @@ namespace De.AHoerstemeier.Tambon {
     public partial class Park {
         
         private WikiLocation wikiField;
+        
+        private OtherParkIdentifier codesField;
         
         private Point pointField;
         
@@ -522,6 +642,7 @@ namespace De.AHoerstemeier.Tambon {
         public Park() {
             this.historyField = new HistoryList();
             this.areaField = new List<AreaPark>();
+            this.codesField = new OtherParkIdentifier();
         }
         
         /// <summary>
@@ -542,12 +663,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Unique identifiers, other geocode systems or catalog ids.
+        /// </summary>
+        /// <value>
+        /// The codes.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OtherParkIdentifier codes {
+            get {
+                return this.codesField;
+            }
+            set {
+                this.codesField = value;
+            }
+        }
+        
+        /// <summary>
         /// Location of park, pointing approximately at the main entrance.
         /// </summary>
         /// <value>
         /// The Point.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Point Point {
             get {
@@ -564,7 +702,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The area.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("area", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("area", Order=3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<AreaPark> area {
             get {
@@ -581,7 +719,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The history.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public HistoryList history {
             get {

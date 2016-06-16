@@ -13,6 +13,7 @@
   <xs:include schemaLocation="gazette.xsd" />
   <xs:include schemaLocation="history.xsd" />
   <xs:include schemaLocation="park.xsd" />
+  <xs:include schemaLocation="identifier.xsd" />
 
   <xs:simpleType name="AreaUnit">
     <xs:annotation>
@@ -234,57 +235,6 @@
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
-  </xs:complexType>
-  <xs:complexType name="IdentifierValueBase" abstract="1">
-    <xs:annotation>
-      <xs:documentation>Base type containing an identifier.</xs:documentation>
-    </xs:annotation>
-    <xs:attributeGroup ref="t:Comment" />
-    <xs:attribute name="value" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>Value for the identifier.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="introducedwith" type="xs:string" use="optional">
-      <xs:annotation>
-        <xs:documentation>Name of the publication which the code was introduced, e.g. update number.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:complexType name="IdentifierOldValue">
-    <xs:annotation>
-      <xs:documentation>Retired value of an identifier.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:IdentifierValueBase">
-        <xs:attribute name="retired" type="xs:date" use="optional">
-          <xs:annotation>
-            <xs:documentation>Date of when the new code was issued and thus this code was retired.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="retiredwith" type="xs:string" use="optional">
-          <xs:annotation>
-            <xs:documentation>Name of the publication which retired the code, e.g. update number.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Identifier">
-    <xs:annotation>
-      <xs:documentation>Identifier with eventual obsolete old values.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="t:IdentifierValueBase">
-        <xs:sequence>
-          <xs:element name="oldvalue" type="t:IdentifierOldValue" minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>Former values of the identifier with information on when and how it was retired.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="PostalCodeList">
     <xs:list itemType="xs:unsignedInt"></xs:list>

@@ -9,6 +9,7 @@
 
   <xs:include schemaLocation="basictypes.xsd" />
   <xs:include schemaLocation="history.xsd" />
+  <xs:include schemaLocation="identifier.xsd" />
 
   <xs:complexType name="AreaParkBase">
     <xs:annotation>
@@ -108,6 +109,48 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:complexType name="OtherParkIdentifier">
+    <xs:annotation>
+      <xs:documentation>Unique identifiers additional to the geocode and the wiki ids.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="wpda" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Identifier in World Database on Protected Areas. Url in catalog for wpda 123 is http://www.protectedplanet.net/123.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="getty" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Getty Thesaurus of Geographic Names (TGN). Url in catalog for TGN 123 is http://www.getty.edu/vow/TGNFullDisplay?find=&amp;place=&amp;nation=&amp;english=Y&amp;subjectid=123.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="gnd" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Integrated Authority File (from German: Gemeinsame Normdatei). Url in catalog for GND 123 is http://d-nb.info/gnd/123
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="gns-ufi" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            GEONet Name Server - Unique Feature Identifier.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="woeid" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Where On Earth ID (WOEID). Value is 32bit integer. Url in catalog for WOEID 123 is https://www.flickr.com/places/info/123
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
 
   <xs:complexType name="Park">
     <xs:annotation>
@@ -117,6 +160,11 @@
       <xs:element minOccurs="0" maxOccurs="1" type="t:WikiLocation" name="wiki">
         <xs:annotation>
           <xs:documentation>Symbols, slogan and vision statements of the office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="codes" type="t:OtherParkIdentifier">
+        <xs:annotation>
+          <xs:documentation>Unique identifiers, other geocode systems or catalog ids.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" ref="geo:Point">
