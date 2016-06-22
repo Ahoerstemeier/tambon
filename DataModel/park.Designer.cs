@@ -492,7 +492,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="OtherParkIdentifier", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class OtherParkIdentifier {
         
-        private Identifier wpdaField;
+        private Identifier wdpaField;
         
         private Identifier gettyField;
         
@@ -510,23 +510,23 @@ namespace De.AHoerstemeier.Tambon {
             this.gnsufiField = new Identifier();
             this.gndField = new Identifier();
             this.gettyField = new Identifier();
-            this.wpdaField = new Identifier();
+            this.wdpaField = new Identifier();
         }
         
         /// <summary>
-        /// Identifier in World Database on Protected Areas. Url in catalog for wpda 123 is http://www.protectedplanet.net/123.
+        /// Identifier in World Database on Protected Areas. Url in catalog for wdpa 123 is http://www.protectedplanet.net/123.
         /// </summary>
         /// <value>
-        /// The wpda.
+        /// The wdpa.
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Identifier wpda {
+        public Identifier wdpa {
             get {
-                return this.wpdaField;
+                return this.wdpaField;
             }
             set {
-                this.wpdaField = value;
+                this.wdpaField = value;
             }
         }
         
