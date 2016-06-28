@@ -149,6 +149,13 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="geonames" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            GeoNames ID. Value is 32bit integer. Url in catalog for GeoNamesId 123 is http://www.geonames.org/123
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 

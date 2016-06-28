@@ -496,10 +496,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private Identifier woeidField;
         
+        private Identifier geonamesField;
+        
         /// <summary>
         /// Creates a new instance of OtherIdentifier.
         /// </summary>
         public OtherIdentifier() {
+            this.geonamesField = new Identifier();
             this.woeidField = new Identifier();
             this.gnsufiField = new Identifier();
             this.gndField = new Identifier();
@@ -662,6 +665,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.woeidField = value;
+            }
+        }
+        
+        /// <summary>
+        /// GeoNames ID. Value is 32bit integer. Url in catalog for GeoNamesId 123 is http://www.geonames.org/123
+        /// </summary>
+        /// <value>
+        /// The geonames.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier geonames {
+            get {
+                return this.geonamesField;
+            }
+            set {
+                this.geonamesField = value;
             }
         }
     }
