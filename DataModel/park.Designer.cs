@@ -652,7 +652,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool obsoleteField;
         
-        private bool obsoleteFieldSpecified;
+        private bool pendingField;
         
         private string commentField;
         
@@ -663,6 +663,8 @@ namespace De.AHoerstemeier.Tambon {
             this.historyField = new HistoryList();
             this.areaField = new List<AreaPark>();
             this.codesField = new OtherParkIdentifier();
+            this.obsoleteField = false;
+            this.pendingField = false;
         }
         
         /// <summary>
@@ -842,6 +844,7 @@ namespace De.AHoerstemeier.Tambon {
         /// The obsolete.
         /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool obsolete {
             get {
@@ -853,19 +856,20 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// Protected area not yet officially created.
         /// </summary>
         /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
+        /// The pending.
         /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool obsoleteSpecified {
+        public bool pending {
             get {
-                return this.obsoleteFieldSpecified;
+                return this.pendingField;
             }
             set {
-                this.obsoleteFieldSpecified = value;
+                this.pendingField = value;
             }
         }
         

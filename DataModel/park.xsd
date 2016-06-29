@@ -201,9 +201,14 @@
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="t:ThaiNameMandatory" />
-    <xs:attribute name="obsolete" type="xs:boolean" use="optional">
+    <xs:attribute name="obsolete" type="xs:boolean" use="optional" default="0">
       <xs:annotation>
         <xs:documentation>Protected area no longer existing/protected.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="pending" type="xs:boolean" use="optional" default="0">
+      <xs:annotation>
+        <xs:documentation>Protected area not yet officially created.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
