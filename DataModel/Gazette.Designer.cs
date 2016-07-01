@@ -1035,6 +1035,82 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="GazetteParkAreaChange", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class GazetteParkAreaChange : GazetteParkBase {
+        
+        private double areachangeField;
+        
+        private bool areachangeFieldSpecified;
+        
+        private double areachangeraiField;
+        
+        private bool areachangeraiFieldSpecified;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double areachange {
+            get {
+                return this.areachangeField;
+            }
+            set {
+                this.areachangeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool areachangeSpecified {
+            get {
+                return this.areachangeFieldSpecified;
+            }
+            set {
+                this.areachangeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double areachangerai {
+            get {
+                return this.areachangeraiField;
+            }
+            set {
+                this.areachangeraiField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool areachangeraiSpecified {
+            get {
+                return this.areachangeraiFieldSpecified;
+            }
+            set {
+                this.areachangeraiFieldSpecified = value;
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]

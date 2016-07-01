@@ -600,7 +600,18 @@
   </xs:complexType>
   <xs:complexType name="GazetteParkAreaChange">
     <xs:complexContent>
-      <xs:extension base="t:GazetteParkBase" />
+      <xs:extension base="t:GazetteParkBase">
+        <xs:attribute name="areachange" type="xs:double" use="optional">
+          <xs:annotation>
+            <xs:documentation>Change of area in km².</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="areachangerai" type="xs:double" use="optional">
+          <xs:annotation>
+            <xs:documentation>Change of area in rai.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="GazetteParkAbolish">
