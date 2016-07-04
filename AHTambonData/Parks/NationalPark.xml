@@ -1056,11 +1056,21 @@
   <!-- 1102 in 84 -->
   <park type="NationalPark" id="1103" name="ต้นสักใหญ่" english="Ton Sak Yai">
     <wiki wikidata="Q1325578" />
-    <!-- no wpda?  -->
-    <area rai="324240.8" />
+    <codes>
+      <wdpa value="312994" />
+    </codes>
+    <area rai="324240.8" locationgeocode="530401 530404 530405 530117 530303 530904 530901 530902">
+      <part type="NationalForest" name="ป่าน้ำปาด" />
+      <part type="NationalForest" name="ป่าปากห้วยฉลอง" />
+      <part type="NationalForest" name="ป่าห้วยสีเสียด" />
+      <part type="NationalForest" name="ป่าคลองตรอนฝั่งขวา" />
+      <part type="NationalForest" name="ป่าคลองตรอนฝั่งซ้าย" />
+    </area>
     <history>
-      <!-- renamed คลองตรอน Khlong Tron 2012-07-12 -->
-      <createpark type="NationalPark" status="Done" effective="2003-12-04" />
+      <renamepark type="NationalPark" name="ต้นสักใหญ่" english="Ton Sak Yai" oldname="คลองตรอน" oldenglish="Khlong Tron" effective="2012-07-12" status="Done" />
+      <createpark type="NationalPark" status="Gazette" effective="2003-12-04">
+        <gazetteref volume="120" page="1" issue="119 ก" date="2003-12-04" />
+      </createpark>
     </history>
   </park>
   <park type="NationalPark" id="1104" name="ศรีน่าน" english="Si Nan">
@@ -1215,10 +1225,12 @@
   </park>
   <park type="NationalPark" id="1119" name="หมู่เกาะระนอง" english="Mu Ko Ranong">
     <wiki wikidata="Q1968894" />
-    <!-- no wdpa? -->
+    <codes>
+      <wdpa value="313023" />
+    </codes>
     <area rai="222938" />
     <history>
-      <!-- renamed to หมู่เกาะพยาม Mu Ko Phayom -->
+      <renamepark type="NationalPark" name="หมู่เกาะระนอง" english="Mu Ko Ranong" oldname="หมู่เกาะพยาม" oldenglish="Mu Ko Phayom" status="Done" />
       <createpark type="NationalPark" status="Done" effective="2009-12-23" />
     </history>
   </park>
