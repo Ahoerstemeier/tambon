@@ -393,6 +393,11 @@ namespace De.AHoerstemeier.Tambon {
         /// UNESCO world heritage (มรดกโลก).
         /// </summary>
         WorldHeritage,
+        
+        /// <summary>
+        /// UNESCO biosphere reserve (พื้นที่สงวนชีวมณฑล).
+        /// </summary>
+        BiosphereReserve,
     }
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]
