@@ -61,6 +61,11 @@
               <xs:documentation>Area parts defined.</xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element minOccurs="0" maxOccurs="unbounded" type="t:SubdivisionPark" name="part">
+            <xs:annotation>
+              <xs:documentation>Area subdivisions of a different protected area type.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
         </xs:sequence>
         <xs:attribute name="year" type="xs:gYear" use="optional">
           <xs:annotation>
@@ -74,6 +79,22 @@
         </xs:attribute>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SubdivisionPark">
+    <xs:annotation>
+      <xs:documentation>Subdivision of a park.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="type" type="t:ParkType" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of the protected area.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="id" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Id of the park.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:ThaiNameMandatory" />
   </xs:complexType>
   <xs:complexType name="AreaParkPart">
     <xs:annotation>

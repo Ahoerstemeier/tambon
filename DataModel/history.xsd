@@ -296,6 +296,26 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="HistoryRenamePark">
+    <xs:annotation>
+      <xs:documentation>Protected area cancellation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:HistoryParkBase">
+        <xs:attributeGroup ref="t:ThaiNameMandatory" />
+        <xs:attribute name="oldname" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Previous name in Thai script..</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldenglish" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>Romanization of old name.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:group name="HistoryEntry">
     <xs:annotation>
       <xs:documentation>Entry in the list of historical changes.</xs:documentation>
@@ -314,6 +334,7 @@
       <xs:element name="createpark" type="t:HistoryCreatePark" />
       <xs:element name="abolishpark" type="t:HistoryAbolishPark" />
       <xs:element name="areachangepark" type="t:HistoryAreaChangePark" />
+      <xs:element name="renamepark" type="t:HistoryRenamePark" />
       <xs:element name="parentchange" type="t:HistoryParentChange">
         <xs:annotation>
           <xs:documentation>Parent change (only for King Amphoe).</xs:documentation>

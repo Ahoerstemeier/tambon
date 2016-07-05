@@ -416,6 +416,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<AreaParkPart> areapartField;
         
+        private List<SubdivisionPark> partField;
+        
         private string yearField;
         
         private bool obsoleteField;
@@ -424,6 +426,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of AreaPark.
         /// </summary>
         public AreaPark() {
+            this.partField = new List<SubdivisionPark>();
             this.areapartField = new List<AreaParkPart>();
             this.obsoleteField = false;
         }
@@ -442,6 +445,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.areapartField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Area subdivisions of a different protected area type.
+        /// </summary>
+        /// <value>
+        /// The part.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("part", Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<SubdivisionPark> part {
+            get {
+                return this.partField;
+            }
+            set {
+                this.partField = value;
             }
         }
         
@@ -477,6 +497,113 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.obsoleteField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Subdivision of a park.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SubdivisionPark", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class SubdivisionPark {
+        
+        private ParkType typeField;
+        
+        private string idField;
+        
+        private string nameField;
+        
+        private string englishField;
+        
+        private string ipaField;
+        
+        /// <summary>
+        /// Type of the protected area.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ParkType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Id of the park.
+        /// </summary>
+        /// <value>
+        /// The id.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english {
+            get {
+                return this.englishField;
+            }
+            set {
+                this.englishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ipa {
+            get {
+                return this.ipaField;
+            }
+            set {
+                this.ipaField = value;
             }
         }
     }
