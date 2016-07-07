@@ -339,13 +339,16 @@
         <url>http://www.mheung.go.th/</url>
         <officials>
           <official title="Mayor" name="บรรลือ ศรีสำอางค์" begin="2012-03-11" beginreason="ElectedDirectly" />
+          <official title="TAOMayor" name="สมบูรณ์ ผดุงไทยธรรม" endyear="2011" />
         </officials>
         <council>
           <term begin="2012-03-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="10" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done" />
+          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done">
+            <meetingreference board="1" date="2011-08-31" number="56" />
+          </statuschange>
           <create effective="1995-03-03" status="Gazette" type="TAO">
             <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
           </create>
@@ -3064,10 +3067,13 @@
           <!-- Mu 15 created after 1998 -->
         </council>
         <history>
+          <statuschange old="TAO" new="ThesabanMueang" effective="2011-09-30" status="Done">
+            <meetingreference board="1" date="2011-08-31" number="56" />
+          </statuschange>
           <rename oldname="เกาะจันทร์" oldenglish="Ko Chan" name="ปรกฟ้า" english="Prok Fa" effective="2011-09-30" status="Done">
             <meetingreference date="2011-08-25" number="3" board="rename" />
+            <meetingreference board="1" date="2011-08-31" number="56" />
           </rename>
-          <statuschange old="TAO" new="ThesabanMueang" effective="2011-09-30" status="Done" />
           <create effective="1995-03-03" status="Gazette" type="TAO">
             <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
           </create>

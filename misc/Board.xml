@@ -908,19 +908,21 @@
       <status old="ThesabanMueang" new="ThesabanNakhon" name="สกลนคร" english="Sakon Nakhon" geocode="4799" />
     </boardmeeting>
 
-    <boardmeeting board="1" date="2011-08-31" number="56" url="http://www.law.moi.go.th/pdf/1_2554_08_31_56_%20N.pdf">
-      <!--
-ร่างประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่อเทศบาลตำบลหนองเข็ง อำเภอเมืองบึงกาฬ จังหวัดบึงกาฬ เป็นเทศบาลตำบลโนนสว่าง
-ร่างประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่อองค์การบริหารส่วนตำบล หนองขาว อำเภอท่าม่วง จังหวัดกาญจนบุรี เป็นองค์การบริหารส่วนตำบลหนองหญ้าดอกขาว และจัดตั้งเป็นเทศบาลตำบลหนองหญ้าดอกขาว
-ร่างประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่อองค์การบริหารส่วนตำบล โคกกรวด อำเภอเมืองนครราชสีมา จังหวัดนครราชสีมา เป็นองค์การบริหารส่วนตำบลย่าโม และจัดตั้งเป็นเทศบาลตำบลเมืองย่าโม
-ร่างประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่อองค์การบริหารส่วนตำบลนาทวี อำเภอนาทวี จังหวัดสงขลา เป็นองค์การบริหารส่วนตำบลนาทวีนอก และจัดตั้งเป็นเทศบาลตำบลนาทวีนอก
-ร่างประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งองค์การบริหารส่วนตำบลทุ่งลุยลาย อำเภอคอนสาร จังหวัดชัยภูมิ เป็นเทศบาลตำบลทุ่งลุยลาย
-ร่างประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งองค์การบริหารส่วนตำบลกรูด อำเภอกาญจนดิษฐ์ จังหวัดสุราษฎร์ธานี เป็นเทศบาลตำบลกรูด
-ร่างประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งองค์การบริหารส่วนตำบลชะมาย อำเภอทุ่งสง จังหวัดนครศรีธรรมราช เป็นเทศบาลตำบลชะมาย
-ร่างประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนชื่อองค์การบริหารส่วนตำบล เกาะจันทร์ อำเภอเกาะจันทร์ จังหวัดชลบุรี เป็นองค์การบริหารส่วนตำบลปรกฟ้า และจัดตั้งเป็นเทศบาล เมืองปรกฟ้า
-ร่างประกาศกระทรวงมหาดไทย เรื่อง เปลี่ยนแปลงฐานะเทศบาลตำบลบึงยี่โถ อำเภอธัญบุรี จังหวัดปทุมธานี เป็นเทศบาลเมืองบึงยี่โถ
-ร่างประกาศกระทรวงมหาดไทย เรื่อง จัดตั้งองค์การบริหารส่วนตำบลเหมือง อำเภอเมืองชลบุรี จังหวัดชลบุรี เป็นเทศบาลตำบลเหมือง
--->
+    <boardmeeting board="1" number="56" date="2011-08-31" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2554_08_31_56_%20N.pdf">
+      <rename type="ThesabanTambon" name="โนนสว่าง" english="Non Sawang" oldname="หนองเข็ง" oldenglish="Nong Kheng" geocode="3888" tambon="380103" />
+      <rename type="TAO" oldname="หนองขาว" oldenglish="Nong Khao" name="หนองหญ้าดอกขาว" english="Nong Ya Dok Khao" tambon="710605" />
+      <status old="TAO" new="ThesabanTambon" name="หนองหญ้าดอกขาว" english="Nong Ya Dok Khao" tambon="710605" />
+      <rename type="TAO" oldname="โคกกรวด" oldenglish="Khok Kruat" name="เมืองใหม่โคกกรวด" english="Mueang Mai Khok Kruat" tambon="300117" />
+      <status old="TAO" new="ThesabanTambon" name="เมืองใหม่โคกกรวด" english="Mueang Mai Khok Kruat" tambon="300117" />
+      <rename type="TAO" oldname="นาทวี" oldenglish="Na Thawi" name="นาทวีนอก" english="Na Thawi Nok" tambon="900401" />
+      <status old="TAO" new="ThesabanTambon" name="นาทวีนอก" english="Na Thawi Nok" tambon="900401" />
+      <status old="TAO" new="ThesabanTambon" name="ทุ่งลุยลาย" english="Thung Luilai" tambon="361305" />
+      <status old="TAO" new="ThesabanTambon" name="กรูด" english="Krut" tambon="840205" />
+      <status old="TAO" new="ThesabanTambon" name="ชะมาย" english="Chamai" tambon="800902" />
+      <rename type="TAO" oldname="เกาะจันทร์" oldenglish="Ko Chan" name="ปรกฟ้า" english="Prok Fa" tambon="201101" />
+      <status old="TAO" new="ThesabanTambon" name="ปรกฟ้า" english="Prok Fa" tambon="201101" />
+      <status old="ThesabanTambon" new="ThesabanMueang" name="บึงยี่โถ" english="Bueng Yitho" geocode="1384" tambon="130302" />
+      <status old="TAO" new="ThesabanTambon" name="เหมือง" english="Mueang" tambon="200113" />
     </boardmeeting>
     <boardmeeting board="1" number="53" date="2011-08-22" time="09:00:00+07:00" url="http://www.law.moi.go.th/pdf/1_2554_08_22_53_%20N.pdf">
       <status old="ThesabanTambon" new="ThesabanMueang" name="บางคูวัด" english="Bang Khu Wat" tambon="130107" />
