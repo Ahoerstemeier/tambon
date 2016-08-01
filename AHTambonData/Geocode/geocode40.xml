@@ -7734,7 +7734,7 @@
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
       </statuschange>
-      <create effective="1994-04-30" status="Gazette" type="KingAmphoe" splitfrom="4016">
+      <create effective="1994-04-30" status="Gazette" type="KingAmphoe" splitfrom="4016" subdivisions="3" subdivisiontype="Tambon">
         <gazetteref volume="111" page="27" issue="42 ง" date="1994-05-26" />
       </create>
     </history>
@@ -7760,10 +7760,23 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="32" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="32" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="402301" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1994-04-30" status="Gazette" oldparent="4016" newparent="4023" oldgeocode="401609">
+          <gazetteref volume="111" page="27" issue="42 ง" date="1994-05-26" />
+        </reassign>
+        <create effective="1969-07-16" status="Gazette" type="Tambon" splitfrom="401603" subdivisions="10" subdivisiontype="Muban">
+          <gazetteref volume="86" page="2270" issue="67 ง" date="1969-07-22" />
+        </create>
+      </history>
       <entity type="Muban" geocode="40230101" name="บ้านกุดธาตุ" english="Ban Kut That" />
       <entity type="Muban" geocode="40230102" name="บ้านกุดธาตุ" english="Ban Kut That" />
       <entity type="Muban" geocode="40230103" name="บ้านหัวภู" english="Ban Hua Phu" />
@@ -7785,7 +7798,8 @@
       <wiki wikidata="Q19265051" />
       <office type="MunicipalityOffice">
         <dola code="5402301" />
-        <url lastchecked="2013-09-18">http://www.bankok-nongnakum.go.th/</url>
+        <wiki wikidata="Q26206754" />
+        <url lastchecked="2016-08-01">http://www.bankok-nongnakum.go.th/</url>
         <url status="offline">http://www.bankok-nongnakum.org/</url>
         <socialweb>
           <googleplus type="user">110071217735242267103</googleplus>
@@ -7804,11 +7818,19 @@
             <meetingreference board="2" number="42" date="2013-08-21" />
           </statuschange>
           <rename oldname="บ้านโคก" oldenglish="Ban Khok" name="หนองนาคำ" english="Nong Na Kham" effective="2013-09-06" status="Done" />
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="402302" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1994-04-30" status="Gazette" oldparent="4016" newparent="4023" oldgeocode="401603">
+          <gazetteref volume="111" page="27" issue="42 ง" date="1994-05-26" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="40230201" name="บ้านหนองนาคำ" english="Ban Nong Na Kham" />
       <entity type="Muban" geocode="40230202" name="บ้านหนองนาคำ" english="Ban Nong Na Kham" />
       <entity type="Muban" geocode="40230203" name="บ้านนาคูณ" english="Ban Na Khun" />
@@ -7837,11 +7859,22 @@
           <statuschange old="TAO" new="ThesabanTambon" effective="2013-09-06" status="Done">
             <meetingreference board="2" number="33" date="2013-07-10" />
           </statuschange>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
         </history>
         <areacoverage>
           <entity geocode="402303" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1994-04-30" status="Gazette" oldparent="4016" newparent="4023" oldgeocode="401611">
+          <gazetteref volume="111" page="27" issue="42 ง" date="1994-05-26" />
+        </reassign>
+        <create effective="1972-09-15" status="Gazette" type="Tambon" splitfrom="401603" subdivisions="9" subdivisiontype="Muban">
+          <gazetteref volume="89" page="2439" issue="142 ง" date="1972-09-26" />
+        </create>
+      </history>
       <entity type="Muban" geocode="40230301" name="บ้านขนวน" english="Ban Khanuan" />
       <entity type="Muban" geocode="40230302" name="บ้านขนวน" english="Ban Khanuan" />
       <entity type="Muban" geocode="40230303" name="บ้านหนองกุง" english="Ban Nong Kung" />
@@ -8250,10 +8283,12 @@
       <wiki wikidata="Q19264946" />
       <office type="MunicipalityOffice">
         <dola code="5402614" />
+        <wiki wikidata="Q26206148" />
         <geo:Point>
           <geo:lat>16.6775</geo:lat>
           <geo:long>102.2914</geo:long>
         </geo:Point>
+        <url lastchecked="2016-08-01">http://www.nmwk.go.th/</url>
         <url status="offline">http://www.nmwk.org/</url>
         <socialweb>
           <googleplus status="inactive">109849120425949428760</googleplus>
@@ -8823,8 +8858,10 @@
     -->
   </entity>
   <entity type="ThesabanTambon" name="โคกสูงสัมพันธ์" english="Khok Sung Samphan" geocode="4088" parent="4005">
+    <wiki wikidata="Q26205677" />
     <office type="MunicipalityOffice">
       <dola code="5400502" />
+      <url lastchecked="2016-08-01">http://www.khoksungsamphan.go.th/</url>
       <officials>
         <official title="Mayor" name="รังสรรค์ กุลรัตน์" begin="2013-03-03" beginreason="ElectedDirectly" />
         <official title="Mayor" name="รังสรรค์ กุลรัตน์" begin="2009-01-25" end="2013-01-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -8883,13 +8920,15 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="สีชมพู" english="Si Chomphu" geocode="4086" parent="4006">
+    <wiki wikidata="Q26205760" />
     <office type="MunicipalityOffice">
       <dola code="5400601" />
       <geo:Point>
         <geo:lat>16.8012</geo:lat>
         <geo:long>102.1868</geo:long>
       </geo:Point>
-      <url>http://www.sichompu.info/</url>
+      <url lastchecked="2016-08-01">http://sichompu.go.th/</url>
+      <url status="offline">http://www.sichompu.info/</url>
       <officials>
         <official title="Mayor" name="บรรจง ผาคำ" begin="2013-08-18" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ปรัชญา มีโนนทอง" begin="2009-07-12" end="2013-07-11" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -8913,9 +8952,14 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="น้ำพอง" english="Nam Phong" geocode="4085" parent="4007">
+    <wiki wikidata="Q26205729" />
     <office type="MunicipalityOffice">
       <dola code="5400701" />
-      <!-- Longdo: 16.73257,102.80312 -->
+      <geo:Point>
+        <geo:lat>16.7321</geo:lat>
+        <geo:long>102.8033</geo:long>
+      </geo:Point>
+      <url lastchecked="2016-08-01">http://www.nampongcity.go.th/</url>
       <officials>
         <official title="Mayor" name="สุวิทย์ พรสุวรรณ" begin="2011-05-29" beginreason="ElectedDirectly" />
       </officials>
@@ -8963,9 +9007,10 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="เขื่อนอุบลรัตน์" english="Khuean Ubolratana" geocode="4083" parent="4008">
+    <wiki wikidata="Q26205777" />
     <office type="MunicipalityOffice">
       <dola code="5400802" />
-      <url lastchecked="2013-01-23">http://ubr-muni.go.th/</url>
+      <url lastchecked="2016-08-01">http://ubr-muni.go.th/</url>
       <url status="offline">http://www.ubolratanamuni.org/</url>
       <officials>
         <official title="Mayor" name="เจษฎา ตันติบัญชาชัย" begin="2013-02-24" beginreason="ElectedDirectly" />
@@ -9165,13 +9210,15 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ภูเวียง" english="Phu Wiang" geocode="4077" parent="4016">
+    <wiki wikidata="Q26206074" />
     <office type="MunicipalityOffice">
       <dola code="5401601" />
       <geo:Point>
         <geo:lat>16.6517</geo:lat>
         <geo:long>102.3751</geo:long>
       </geo:Point>
-      <url lastchecked="2012-04-20">http://www.phuwieng.org/</url>
+      <url lastchecked="2016-08-01">https://www.phuwiang.go.th/</url>
+      <url status="offline" lastonline="2012-04-20">http://www.phuwieng.org/</url>
       <officials>
         <official title="Mayor" name="ฉิน วรปัญญาสถิต" begin="2012-04-08" beginreason="Elected" />
         <official title="Mayor" name="ฉิน วรปัญญาสถิต" begin="2008-03-09" endyear="2012" beginreason="ElectedDirectly" endreason="Resigned" />
@@ -9189,7 +9236,7 @@
       <statuschange effective="1999-05-25" status="Gazette" old="Sukhaphiban" new="ThesabanTambon">
         <gazetteref volume="116" page="1" issue="9 ก" date="1999-02-24" />
       </statuschange>
-      <rename effective="1999-02-04" status="Gazette" name="ภูเวียง" english="Phu Wiang" oldname="บ้านเรือ" oldenglish="Ban Tuea">
+      <rename effective="1999-02-04" status="Gazette" name="ภูเวียง" english="Phu Wiang" oldname="บ้านเรือ" oldenglish="Ban Ruea">
         <gazetteref volume="116" page="5" issue="10 ง" date="1999-02-04" />
       </rename>
       <create effective="1956-08-03" status="Gazette" type="Sukhaphiban">
@@ -9318,6 +9365,7 @@
     -->
   </entity>
   <entity type="ThesabanTambon" name="ภูผาม่าน" english="Phu Pha Man" geocode="4073" parent="4020">
+    <wiki wikidata="Q26206127" />
     <office type="MunicipalityOffice">
       <dola code="5402001" />
       <wiki openstreetmap="1913931577" />
@@ -9325,7 +9373,7 @@
         <geo:lat>16.6453</geo:lat>
         <geo:long>101.8980</geo:long>
       </geo:Point>
-      <url status="offline">http://www.phuphaman.go.th/</url>
+      <url status="hacked">http://www.phuphaman.go.th/</url>
       <officials>
         <official title="Mayor" name="ประสิทธิ์ คำภาพันธ์" begin="2012-04-22" beginreason="ElectedDirectly" />
         <officialterm title="Mayor" begin="2008-03-09" end="2012-03-08" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -9701,6 +9749,7 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="เมืองเก่า" english="Mueang Kao" geocode="4062" parent="4001" tambon="400106">
+    <wiki wikidata="Q26206687" />
     <office type="MunicipalityOffice">
       <symbols>
         <vision>
@@ -9713,7 +9762,7 @@
         <geo:lat>16.4020</geo:lat>
         <geo:long>102.7881</geo:long>
       </geo:Point>
-      <url lastchecked="2013-02-18">http://www.mueangkao.go.th/</url>
+      <url lastchecked="2016-08-01">http://www.mueangkao.go.th/</url>
       <url status="expired">http://muangkao.org/</url>
       <url status="broken">http://sites.google.com/site/mk20080rg/</url>
       <url status="expired">http://www.muangkao.com/</url>
