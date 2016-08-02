@@ -1450,5 +1450,10 @@ namespace De.AHoerstemeier.Tambon.UI
             Clipboard.Clear();
             Clipboard.SetText(builder.ToString());
         }
+
+        private void btnDisambiguation_Click(object sender, EventArgs e)
+        {
+            new DisambiguationForm().Show();
+        }
     }
 }

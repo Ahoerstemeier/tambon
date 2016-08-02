@@ -64,6 +64,7 @@
             this.btnNumbers = new System.Windows.Forms.Button();
             this.btnMubanList = new System.Windows.Forms.Button();
             this.btnTambonList = new System.Windows.Forms.Button();
+            this.btnDisambiguation = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -349,6 +350,7 @@
             // 
             // grpTesting
             // 
+            this.grpTesting.Controls.Add(this.btnDisambiguation);
             this.grpTesting.Controls.Add(this.btnAgeTable);
             this.grpTesting.Controls.Add(this.btnGovernor);
             this.grpTesting.Controls.Add(this.cbxCensusYears);
@@ -460,6 +462,16 @@
             this.btnTambonList.UseVisualStyleBackColor = true;
             this.btnTambonList.Click += new System.EventHandler(this.btnTambonList_Click);
             // 
+            // btnDisambiguation
+            // 
+            this.btnDisambiguation.Location = new System.Drawing.Point(394, 19);
+            this.btnDisambiguation.Name = "btnDisambiguation";
+            this.btnDisambiguation.Size = new System.Drawing.Size(102, 23);
+            this.btnDisambiguation.TabIndex = 64;
+            this.btnDisambiguation.Text = "Disambiguation";
+            this.btnDisambiguation.UseVisualStyleBackColor = true;
+            this.btnDisambiguation.Click += new System.EventHandler(this.btnDisambiguation_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,6 +548,7 @@
         private System.Windows.Forms.Button btnNumbers;
         private System.Windows.Forms.Button btnMubanList;
         private System.Windows.Forms.Button btnTambonList;
+        private System.Windows.Forms.Button btnDisambiguation;
     }
 }
 
