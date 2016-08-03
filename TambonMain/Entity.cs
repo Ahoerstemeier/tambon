@@ -1140,7 +1140,11 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        public LocalAdministrationData Dola
+        /// <summary>
+        /// Gets the DOLA data entries.
+        /// </summary>
+        /// <value>DOLA data entries.</value>
+        public IEnumerable<LocalAdministrationData> Dola
         {
             get
             {
@@ -1156,6 +1160,10 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Gets the area coverage entries of the local government.
+        /// </summary>
+        /// <value>The area coverage entries of the local government.</value>
         public IEnumerable<LocalGovernmentCoverageEntity> LocalGovernmentAreaCoverage
         {
             get
@@ -1172,17 +1180,44 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Gets the latest code as assigned by DOLA.
+        /// </summary>
+        /// <returns>Latest codes as assigned by DOLA. 0 if no code assigned.</returns>
+        public UInt32 LastedDolaCode()
+        {
+            var myDolaList = Dola;
+            if ( myDolaList == null )
+            {
+                return 0; // nothing specified
+            }
+            var myDola = myDolaList.Where(x => x.codeSpecified).OrderBy(y => y.year).LastOrDefault();
+            if ( myDola == null )
+            {
+                return 0; // no entry with code
+            }
+            else
+            {
+                return myDola.code;
+            }
+        }
+
+        /// <summary>
+        /// Checks whether the <see cref="LatestDolaCode"/> is well-formed.
+        /// </summary>
+        /// <returns><c>true</c> if latest DOLA code is well-formed, <c>false</c> otherwise.</returns>
+        /// <remarks>If no code found, <c>true</c> is returned.</remarks>
         public Boolean DolaCodeValid()
         {
-            var myDola = Dola;
-            if ( (myDola == null) || (!myDola.codeSpecified) )
+            var code = LastedDolaCode();
+            if ( code == 0 )
             {
                 return true;  // nothing specified -> valid
             }
             else
             {
                 var result = true;
-                var dolaCodeType = myDola.code / 1000000;
+                var dolaCodeType = code / 1000000;
                 switch ( type )
                 {
                     case EntityType.PAO:
@@ -1205,7 +1240,7 @@ namespace De.AHoerstemeier.Tambon
                         result &= (dolaCodeType == 6);
                         break;
                 }
-                UInt32 dolaAmphoe = (myDola.code % 1000000) / 100;
+                UInt32 dolaAmphoe = (code % 1000000) / 100;
                 if ( type == EntityType.PAO )
                 {
                     result &= dolaAmphoe == (geocode / 10000) * 100 + 1;  // Amphoe Mueang of province

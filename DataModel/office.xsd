@@ -925,6 +925,13 @@
     <xs:annotation>
       <xs:documentation>Data defined by the Department of Local Administration (DOLA).</xs:documentation>
     </xs:annotation>
+    <xs:sequence>
+      <xs:element name="references" minOccurs="0" maxOccurs="1" type="t:ReferenceList">
+        <xs:annotation>
+          <xs:documentation>References on the official term, election or removal.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="code" use="optional" type="xs:unsignedInt">
       <xs:annotation>
         <xs:documentation>DOLA code for the entity.</xs:documentation>
@@ -935,9 +942,9 @@
         <xs:documentation>Categorization of the entity in the SML system.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="oldcodes" use="optional" type="t:DolaCodeList">
+    <xs:attribute name="year" type="xs:gYear" use="optional">
       <xs:annotation>
-        <xs:documentation>DOLA code for the entity.</xs:documentation>
+        <xs:documentation>Year when the data where valid.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
@@ -1080,7 +1087,7 @@
           <xs:documentation>Symbols, slogan and vision statements of the office.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" type="t:LocalAdministrationData" name="dola">
+      <xs:element minOccurs="0" maxOccurs="unbounded" type="t:LocalAdministrationData" name="dola">
         <xs:annotation>
           <xs:documentation>Local administration data.</xs:documentation>
         </xs:annotation>

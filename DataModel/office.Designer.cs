@@ -18,7 +18,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Symbols of an entity.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -272,7 +272,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Emblem (ตรา) of the entity.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -373,7 +373,7 @@ namespace De.AHoerstemeier.Tambon {
     /// Text with temporal information.
     /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Song))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -480,7 +480,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Official song of an entity.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -511,7 +511,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Administrative office(s) for the administrative subdivision.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -521,7 +521,7 @@ namespace De.AHoerstemeier.Tambon {
         
         private Symbols symbolsField;
         
-        private LocalAdministrationData dolaField;
+        private List<LocalAdministrationData> dolaField;
         
         private WikiLocation wikiField;
         
@@ -566,7 +566,7 @@ namespace De.AHoerstemeier.Tambon {
             this.socialwebField = new SocialWebLinkEntry();
             this.urlField = new List<MyUri>();
             this.addressField = new ThaiAddress();
-            this.dolaField = new LocalAdministrationData();
+            this.dolaField = new List<LocalAdministrationData>();
             this.symbolsField = new Symbols();
         }
         
@@ -593,9 +593,9 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The dola.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("dola", Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public LocalAdministrationData dola {
+        public List<LocalAdministrationData> dola {
             get {
                 return this.dolaField;
             }
@@ -864,7 +864,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Data defined by the Department of Local Administration (DOLA).
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -872,13 +872,15 @@ namespace De.AHoerstemeier.Tambon {
     [System.Runtime.Serialization.DataContractAttribute(Name="LocalAdministrationData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class LocalAdministrationData {
         
+        private List<object> referencesField;
+        
         private uint codeField;
         
         private bool codeFieldSpecified;
         
         private SmallMediumLarge sMLField;
         
-        private List<uint> oldcodesField;
+        private string yearField;
         
         private string commentField;
         
@@ -886,8 +888,30 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of LocalAdministrationData.
         /// </summary>
         public LocalAdministrationData() {
-            this.oldcodesField = new List<uint>();
+            this.referencesField = new List<object>();
             this.sMLField = SmallMediumLarge.Undefined;
+        }
+        
+        /// <summary>
+        /// References on the official term, election or removal.
+        /// </summary>
+        /// <value>
+        /// The references.
+        /// </value>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> references {
+            get {
+                return this.referencesField;
+            }
+            set {
+                this.referencesField = value;
+            }
         }
         
         /// <summary>
@@ -943,19 +967,19 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// DOLA code for the entity.
+        /// Year when the data where valid.
         /// </summary>
         /// <value>
-        /// The oldcodes.
+        /// The year.
         /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<uint> oldcodes {
+        public string year {
             get {
-                return this.oldcodesField;
+                return this.yearField;
             }
             set {
-                this.oldcodesField = value;
+                this.yearField = value;
             }
         }
         
@@ -980,7 +1004,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Small medium large entity categorization.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -1010,7 +1034,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Address in Thailand
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1144,7 +1168,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Village (Muban) part of address.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1194,7 +1218,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Subdistrict (Tambon/Khet) part of address.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1244,7 +1268,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// List of the social web sites where the entity is present.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1422,7 +1446,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Facebook link.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1480,7 +1504,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Types of pages within facebook.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -1505,7 +1529,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Twitter link.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1543,7 +1567,7 @@ namespace De.AHoerstemeier.Tambon {
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(TwitterLink))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(GooglePlusLink))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1641,7 +1665,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Status of a social web account.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -1671,7 +1695,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Link to a Google+ page.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1710,7 +1734,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Types of a Google+ page.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -1740,7 +1764,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// List of leaders of the administrative entity.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1805,7 +1829,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Election date set already, but election not taking place.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1852,7 +1876,7 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -2041,7 +2065,7 @@ namespace De.AHoerstemeier.Tambon {
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfficialEntryUnnamed))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfficialEntry))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -2335,7 +2359,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Ways how an official can enter the office.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -2385,7 +2409,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Reasons why an official left office.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -2457,7 +2481,7 @@ namespace De.AHoerstemeier.Tambon {
         Unknown,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -2469,7 +2493,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// List of council terms of the administrative entity.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -2508,7 +2532,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Term of the council of the administrative entity.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -2787,7 +2811,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Ways a council has its conciliators selected.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -2822,7 +2846,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Reasons why a council has ended its term.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -2872,7 +2896,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Reasons why a council has changed its size.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -2922,7 +2946,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// List of former locations of the office.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -3024,7 +3048,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Central government entity covered by the office.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -3101,7 +3125,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// What part of the area of the entity is covered by the office.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -3126,7 +3150,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Office types for the administrative entities.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -3191,7 +3215,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Central government entities covered by the office.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -3229,7 +3253,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Colors.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]

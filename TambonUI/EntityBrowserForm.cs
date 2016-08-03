@@ -283,8 +283,8 @@ namespace De.AHoerstemeier.Tambon.UI
             // var localEntitiesInProvinceWithOffice = localGovernmentsInProvince.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
             if ( ShowDolaErrors )
             {
-                var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.Dola.codeSpecified).ToList();
-                var allDolaCodes = entitiesWithDolaCode.Select(x => x.Dola.code).ToList();
+                var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.LastedDolaCode() != 0).ToList();
+                var allDolaCodes = entitiesWithDolaCode.Select(x => x.LastedDolaCode()).ToList();
                 var duplicateDolaCodes = allDolaCodes.GroupBy(s => s).SelectMany(grp => grp.Skip(1)).ToList();
                 if ( duplicateDolaCodes.Any() )
                 {
@@ -301,7 +301,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     text += "Invalid DOLA codes:" + Environment.NewLine;
                     foreach ( var dolaEntity in invalidDolaCodeEntities )
                     {
-                        text += String.Format(" {0} {1} ({2})", dolaEntity.Dola.code, dolaEntity.english, dolaEntity.type) + Environment.NewLine;
+                        text += String.Format(" {0} {1} ({2})", dolaEntity.LastedDolaCode(), dolaEntity.english, dolaEntity.type) + Environment.NewLine;
                     }
                     text += Environment.NewLine;
                 }
@@ -886,9 +886,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 var office = subEntity.office.FirstOrDefault(x => x.type == OfficeType.TAOOffice || x.type == OfficeType.PAOOffice || x.type == OfficeType.MunicipalityOffice);
                 if ( office != null )
                 {
-                    if ( (office.dola != null) && (office.dola.codeSpecified) )
+                    var dolaEntry = office.dola.Where(x => x.codeSpecified).OrderBy(y => y.year).LastOrDefault();
+                    if ( dolaEntry != null )
                     {
-                        dolaCode = office.dola.code.ToString();
+                        dolaCode = dolaEntry.code.ToString();
                     }
                 }
                 item.SubItems.Add(dolaCode);
