@@ -188,6 +188,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Regions used by the National Statistical Office.
         /// </summary>
         StatisticalRegion,
+        
+        /// <summary>
+        /// Occupied area under a special administration.
+        /// </summary>
+        OccupiedArea,
     }
     
     /// <summary>
@@ -360,7 +365,7 @@ namespace De.AHoerstemeier.Tambon {
         NationalPark,
         
         /// <summary>
-        /// Forest park (วนอุทยานใน).
+        /// Forest park (วนอุทยาน).
         /// </summary>
         ForestPark,
         
