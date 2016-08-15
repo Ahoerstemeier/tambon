@@ -180,6 +180,7 @@
     </entity>
 
     <entity type="Khet" name="ธนบุรี" english="Thon Buri" geocode="1015">
+      <!-- complete -->
       <park type="HistoricalSite" id="0000128" name="วัดอินทาราม" english="Wat Intharam">
         <history>
           <createpark type="HistoricalSite" status="Gazette" effective="1949-11-22">
@@ -203,8 +204,22 @@
           </createpark>
         </history>
       </park>
-      <!-- 0000131 	วัดราชคฤห์ - 16 สิงหาคม 2520 เล่ม 94 ตอนที่ 75 หน้า 3426 -->
-      <!-- 0000132 	วัดบุปผาราม - 16 สิงหาคม 2520 เล่ม 94 ตอนที่ 75 หน้า 3425 -->
+      <park type="HistoricalSite" id="0000131" name="วัดราชคฤห์" english="Wat Ratchakhue">
+        <area locationgeocode="101503" />
+        <history>
+          <createpark type="HistoricalSite" effective="1977-08-16" status="Gazette">
+            <gazetteref volume="94" page="3426" issue="75 ง" date="1977-08-16" />
+          </createpark>
+        </history>
+      </park>
+      <park type="HistoricalSite" id="0000132" name="วัดบุปผาราม" english="Wat Buppharam">
+        <area locationgeocode="101501" />
+        <history>
+          <createpark type="HistoricalSite" effective="1977-08-16" status="Gazette">
+            <gazetteref volume="94" page="3425" issue="75 ง" date="1977-08-16" />
+          </createpark>
+        </history>
+      </park>
       <park type="HistoricalSite" id="0000133" name="วัดโพธินิมิตร" english="Wat Pho Nimit">
         <wiki wikidata="Q24661990" />
         <area locationgeocode="101503" rai="19" ngam="0" tarangwa="19" />
@@ -222,19 +237,38 @@
           </createpark>
         </history>
       </park>
-      <!-- 0000135 	วัดบุคคโล - 9 กุมภาพันธ์ 2539 เล่ม 113 ตอนพิเศษ 3 ง หน้า 3 -->
+      <park type="HistoricalSite" id="0000135" name="วัดบุคคโล" english="Wat Bukkhalo">
+        <area locationgeocode="101503" rai="2" ngam="1" tarangwa="43" />
+        <history>
+          <createpark type="HistoricalSite" effective="1996-02-09" status="Gazette">
+            <gazetteref volume="113" page="3" issue="พิเศษ 3 ง" date="1996-02-09" />
+          </createpark>
+        </history>
+      </park>
 
-      <!-- 0005422 	วัดบางสะแกนอก -->
-      <!-- 0005423 	วัดใหม่ยายนุ้ย -->
-      <!-- 0005424 	วัดจันทารามวรวิหาร (วัดบางยี่เรือกลาง) Q13020654 -->
+      <park type="HistoricalSite" id="0005422" name="วัดบางสะแกนอก" english="Wat Bang Sakae Nok" pending="1">
+        <area locationgeocode="101505" />
+      </park>
+      <park type="HistoricalSite" id="0005423" name="วัดใหม่ยายนุ้ย" english="Wat Mai Yai Mui" pending="1">
+        <area locationgeocode="101505" />
+      </park>
+      <park type="HistoricalSite" id="0005424" name="วัดจันทารามวรวิหาร (วัดบางยี่เรือกลาง)" english="Wat Chantharam Worawihan (Wat Bang Yi Ruea Klang)" pending="1">
+        <wiki wikidata="Q13020654" />
+        <area locationgeocode="101502" />
+      </park>
       <park type="HistoricalSite" id="0005425" name="พระบรมราชานุสาวรีย์สมเด็จพระเจ้ากรุงธนบุรีและวงเวียนใหญ่" english="Taksin statue and Wong Wian Yai" pending="1">
         <wiki wikidata="Q6629954" />
         <area locationgeocode="101501" />
-        <!-- 22 พฤศจิกายน 2492 เล่ม 66 ตอนที่ 64 หน้า 5280 -->
       </park>
-      <!-- 0005426 	วัดกระจับพินิจ -->
-      <!-- 0005427 	วัดดาวคนอง -->
-      <!-- 0005428 	บ้านเจ้าพระยาประชากิจกรจักร (โรงเรียนอนุบาลวรรณบูรณ์ศึกษา) -->
+      <park type="HistoricalSite" id="0005426" name="วัดกระจับพินิจ" english="Wat Krachap Phinit" pending="1">
+        <area locationgeocode="101504" />
+      </park>
+      <park type="HistoricalSite" id="0005427" name="วัดดาวคนอง" english="Wat Dao Khanong" pending="1">
+        <area locationgeocode="101506" />
+      </park>
+      <park type="HistoricalSite" id="0005427" name="บ้านเจ้าพระยาประชากิจกรจักร (โรงเรียนอนุบาลวรรณบูรณ์ศึกษา)" english="House of Chao Phraya Prachakitkonchak (Wonnabun Sueksa Kindergarten)" pending="1">
+        <area locationgeocode="101506" />
+      </park>
       <park type="HistoricalSite" id="0005429" name="วัดซางตาครู้ส" english="Santa Chruz Church" pending="1">
         <wiki wikidata="Q24250665" />
         <geo:Point>
@@ -243,13 +277,24 @@
         </geo:Point>
         <area locationgeocode="101501" />
       </park>
-      <!-- 0005430 	วัดบางไส้ไก่ -->
+      <park type="HistoricalSite" id="0005430" name="วัดบางไส้ไก่" english="Wat Bang Sai Kai" pending="1">
+        <area locationgeocode="101502" />
+      </park>
 
-      <!-- 0005668 	คลองบางไส้ไก่ - Q18601156 -->
+      <park type="HistoricalSite" id="0005668" name="คลองบางไส้ไก่" english="Khlong Bang Sai Kai" pending="1">
+        <wiki wikidata="Q18601156" />
+        <area locationgeocode="101502 101503 101507" />
+      </park>
 
-      <!-- 0008856 	วัดกลางดาวคนอง -->
-      <!-- 0008859 	วัดวรามาตยภัณฑสาราราม (ขุนจันทร์) -->
-      <!-- 0008862 	วัดหิรัญรูจี -->
+      <park type="HistoricalSite" id="0008856" name="วัดกลางดาวคนอง" english="Wat Klang Dao Khanong" pending="1">
+        <area locationgeocode="101506" />
+      </park>
+      <park type="HistoricalSite" id="0008859" name="วัดวรามาตยภัณฑสาราราม (ขุนจันทร์)" english="Wat Warama Thaya Phantha Sararam (Khun Chan)" pending="1">
+        <area locationgeocode="101505" />
+      </park>
+      <park type="HistoricalSite" id="0008862" name="วัดหิรัญรูจี" english="Wat Hiran Ruchi" pending="1">
+        <area locationgeocode="101502" />
+      </park>
       <park type="HistoricalSite" id="0008876" name="ศาลเจ้าเกียนอันเกง" english="Kuan An Keng Shrine" pending="1">
         <wiki wikidata="Q25543751" />
         <area locationgeocode="101501" />
@@ -263,6 +308,7 @@
       </park>
     </entity>
     <entity type="Khet" name="บางกอกใหญ่" english="Bangkok Yai" geocode="1016">
+      <!-- complete -->
       <park type="HistoricalSite" id="0000136" name="วัดราชสิทธาราม" english="Wat Ratchasittharam">
         <wiki wikidata="Q23777322" />
         <area locationgeocode="101602" />
@@ -416,6 +462,7 @@
     </entity>
 
     <entity type="Khet" name="บางกอกน้อย" english="Bangkok Noi" geocode="1020">
+      <!-- complete -->
       <park type="HistoricalSite" id="0000154" name="วัดสุวรรณาราม" english="Wat Suwannaram">
         <wiki wikidata="Q1416391" />
         <geo:Point>
@@ -1087,6 +1134,7 @@
     </entity>
   </entity>
   <entity type="Changwat" geocode="83" name="ภูเก็ต" english="Phuket">
+    <!-- complete -->
     <park type="HistoricalSite" id="0005113" name="อาคารศาลากลางจังหวัดภูเก็ต" english="Phuket Province Hall">
       <area locationgeocode="830101" rai="0" ngam="2" tarangwa="45" />
       <history>
@@ -1195,6 +1243,7 @@
     </park>
   </entity>
   <entity type="Changwat" name="สุราษฎร์ธานี" english="Surat Thani" geocode="84">
+    <!-- complete -->
     <entity type="Amphoe" name="เมืองสุราษฎร์ธานี" english="Mueang Surat Thani" geocode="8401">
       <park type="HistoricalSite" id="0005123" name="วัดพัฒนาราม" english="Wat Phatthanaram">
         <wiki wikidata="Q16862605" />
@@ -1810,6 +1859,7 @@
   </entity>
 
   <entity type="Changwat" geocode="92" name="ตรัง" english="Trang">
+    <!-- complete -->
     <park type="HistoricalSite" id="0005173" name="ภูเขาชุมทอง" english="Phu Khao Chum Thong">
       <history>
         <createpark type="HistoricalSite" effective="1936-03-08" status="Gazette">
