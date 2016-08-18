@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -1028,7 +1029,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
-        private void mnuHistory_Click(object sender, EventArgs e)
+        private void mnuHistory_Click(Object sender, EventArgs e)
         {
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
@@ -1092,6 +1093,20 @@ namespace De.AHoerstemeier.Tambon.UI
         private void popupListviewLocal_Opening(Object sender, CancelEventArgs e)
         {
             CheckHistoryAvailable(listviewLocalAdministration, mnuHistoryLocal);
+            var hasWebId = false;
+            if ( listviewLocalAdministration.SelectedItems.Count == 1 )
+            {
+                foreach ( ListViewItem item in listviewLocalAdministration.SelectedItems )
+                {
+                    var entity = item.Tag as Entity;
+                    if ( entity != null )
+                    {
+                        hasWebId = entity.office.Any(x => x.webidSpecified);
+                    }
+                }
+            }
+            mnuGeneralInfoPage.Enabled = hasWebId;
+            mnuAdminInfoPage.Enabled = hasWebId;
         }
 
         private void popupListviewCentral_Opening(Object sender, CancelEventArgs e)
@@ -1121,5 +1136,51 @@ namespace De.AHoerstemeier.Tambon.UI
         }
 
         #endregion private methods
+
+        /// <summary>
+        /// Gets the DLA web id of the local government unit corresponding to the selected item in the listview.
+        /// </summary>
+        /// <param name="listView">Listview to check.</param>
+        /// <returns>Web id, or 0 if no id was found.</returns>
+        private Int32 GetWebIdOfSelectedItem(ListView listView)
+        {
+            var webId = 0;
+            if ( listView.SelectedItems.Count == 1 )
+            {
+                foreach ( ListViewItem item in listView.SelectedItems )
+                {
+                    var entity = item.Tag as Entity;
+                    if ( entity != null )
+                    {
+                        var office = entity.office.FirstOrDefault(x => x.webidSpecified);
+                        if ( office != null )
+                        {
+                            webId = office.webid;
+                        }
+                    }
+                }
+            }
+            return webId;
+        }
+
+        private void mnuAdminInfoPage_Click(Object sender, EventArgs e)
+        {
+            var webId = GetWebIdOfSelectedItem(listviewLocalAdministration);
+            if ( webId > 0 )
+            {
+                var url = String.Format(CultureInfo.CurrentUICulture, "http://www.dla.go.th/info/info_councilor.jsp?orgId={0}", webId);
+                Process.Start(url);
+            }
+        }
+
+        private void mnuGeneralInfoPage_Click(Object sender, EventArgs e)
+        {
+            var webId = GetWebIdOfSelectedItem(listviewLocalAdministration);
+            if ( webId > 0 )
+            {
+                var url = String.Format(CultureInfo.CurrentUICulture, "http://info.dla.go.th/public/surveyInfo.do?cmd=surveyForm&orgInfoId={0}", webId);
+                Process.Start(url);
+            }
+        }
     }
 }

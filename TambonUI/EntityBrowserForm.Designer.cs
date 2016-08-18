@@ -44,6 +44,7 @@
             this.columnThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnGeocode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnPopulation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popupListviewCentral = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuHistoryCentral = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPageLocal = new System.Windows.Forms.TabPage();
@@ -54,6 +55,7 @@
             this.columnLocalGeocode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalDolaCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalPopulation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLocalCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popupListviewLocal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuHistoryLocal = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisionData = new System.Windows.Forms.TabControl();
@@ -66,8 +68,8 @@
             this.txtMuban = new System.Windows.Forms.TextBox();
             this.tabLocalGoverment = new System.Windows.Forms.TabPage();
             this.txtLocalGovernment = new System.Windows.Forms.TextBox();
-            this.columnCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnLocalCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mnuAdminInfoPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGeneralInfoPage = new System.Windows.Forms.ToolStripMenuItem();
             this.popupTree.SuspendLayout();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
@@ -114,40 +116,40 @@
             this.mnuMubanDefinitions,
             this.mnuHistory});
             this.popupTree.Name = "contextMenuStrip1";
-            this.popupTree.Size = new System.Drawing.Size(176, 114);
+            this.popupTree.Size = new System.Drawing.Size(175, 114);
             // 
             // mnuWikipediaGerman
             // 
             this.mnuWikipediaGerman.Name = "mnuWikipediaGerman";
-            this.mnuWikipediaGerman.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaGerman.Size = new System.Drawing.Size(174, 22);
             this.mnuWikipediaGerman.Text = "Wikipedia (de)";
             this.mnuWikipediaGerman.Click += new System.EventHandler(this.mnuWikipediaGerman_Click);
             // 
             // mnuWikipediaEnglish
             // 
             this.mnuWikipediaEnglish.Name = "mnuWikipediaEnglish";
-            this.mnuWikipediaEnglish.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaEnglish.Size = new System.Drawing.Size(174, 22);
             this.mnuWikipediaEnglish.Text = "Wikipedia (en)";
             this.mnuWikipediaEnglish.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
             // 
             // mnuWikipediaTambonEnglish
             // 
             this.mnuWikipediaTambonEnglish.Name = "mnuWikipediaTambonEnglish";
-            this.mnuWikipediaTambonEnglish.Size = new System.Drawing.Size(175, 22);
+            this.mnuWikipediaTambonEnglish.Size = new System.Drawing.Size(174, 22);
             this.mnuWikipediaTambonEnglish.Text = "Tambon WP article";
             this.mnuWikipediaTambonEnglish.Click += new System.EventHandler(this.mnuWikipediaTambonEnglish_Click);
             // 
             // mnuMubanDefinitions
             // 
             this.mnuMubanDefinitions.Name = "mnuMubanDefinitions";
-            this.mnuMubanDefinitions.Size = new System.Drawing.Size(175, 22);
+            this.mnuMubanDefinitions.Size = new System.Drawing.Size(174, 22);
             this.mnuMubanDefinitions.Text = "Muban definitions";
             this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
             // 
             // mnuHistory
             // 
             this.mnuHistory.Name = "mnuHistory";
-            this.mnuHistory.Size = new System.Drawing.Size(175, 22);
+            this.mnuHistory.Size = new System.Drawing.Size(174, 22);
             this.mnuHistory.Text = "History XML";
             this.mnuHistory.Click += new System.EventHandler(this.mnuHistory_Click);
             // 
@@ -214,6 +216,10 @@
             this.columnPopulation.Text = "Population";
             this.columnPopulation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnPopulation.Width = 71;
+            // 
+            // columnCreation
+            // 
+            this.columnCreation.Text = "Creation";
             // 
             // popupListviewCentral
             // 
@@ -293,18 +299,24 @@
             this.columnLocalPopulation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnLocalPopulation.Width = 71;
             // 
+            // columnLocalCreation
+            // 
+            this.columnLocalCreation.Text = "Creation";
+            // 
             // popupListviewLocal
             // 
             this.popupListviewLocal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuHistoryLocal});
+            this.mnuHistoryLocal,
+            this.mnuAdminInfoPage,
+            this.mnuGeneralInfoPage});
             this.popupListviewLocal.Name = "popupListviewLocal";
-            this.popupListviewLocal.Size = new System.Drawing.Size(113, 26);
+            this.popupListviewLocal.Size = new System.Drawing.Size(168, 92);
             this.popupListviewLocal.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewLocal_Opening);
             // 
             // mnuHistoryLocal
             // 
             this.mnuHistoryLocal.Name = "mnuHistoryLocal";
-            this.mnuHistoryLocal.Size = new System.Drawing.Size(112, 22);
+            this.mnuHistoryLocal.Size = new System.Drawing.Size(167, 22);
             this.mnuHistoryLocal.Text = "History";
             this.mnuHistoryLocal.Click += new System.EventHandler(this.mnuHistoryLocal_Click);
             // 
@@ -422,13 +434,19 @@
             this.txtLocalGovernment.Size = new System.Drawing.Size(386, 120);
             this.txtLocalGovernment.TabIndex = 16;
             // 
-            // columnCreation
+            // mnuAdminInfoPage
             // 
-            this.columnCreation.Text = "Creation";
+            this.mnuAdminInfoPage.Name = "mnuAdminInfoPage";
+            this.mnuAdminInfoPage.Size = new System.Drawing.Size(167, 22);
+            this.mnuAdminInfoPage.Text = "Admin info page";
+            this.mnuAdminInfoPage.Click += new System.EventHandler(this.mnuAdminInfoPage_Click);
             // 
-            // columnLocalCreation
+            // mnuGeneralInfoPage
             // 
-            this.columnLocalCreation.Text = "Creation";
+            this.mnuGeneralInfoPage.Name = "mnuGeneralInfoPage";
+            this.mnuGeneralInfoPage.Size = new System.Drawing.Size(167, 22);
+            this.mnuGeneralInfoPage.Text = "General info page";
+            this.mnuGeneralInfoPage.Click += new System.EventHandler(this.mnuGeneralInfoPage_Click);
             // 
             // EntityBrowserForm
             // 
@@ -503,5 +521,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuHistoryLocal;
         private System.Windows.Forms.ColumnHeader columnCreation;
         private System.Windows.Forms.ColumnHeader columnLocalCreation;
+        private System.Windows.Forms.ToolStripMenuItem mnuAdminInfoPage;
+        private System.Windows.Forms.ToolStripMenuItem mnuGeneralInfoPage;
     }
 }

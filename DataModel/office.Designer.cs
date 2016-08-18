@@ -523,6 +523,10 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<LocalAdministrationData> dolaField;
         
+        private int webidField;
+        
+        private bool webidFieldSpecified;
+        
         private WikiLocation wikiField;
         
         private Point pointField;
@@ -605,12 +609,46 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Id to access http://info.dla.go.th/ with local government specific pages.
+        /// </summary>
+        /// <value>
+        /// The webid.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int webid {
+            get {
+                return this.webidField;
+            }
+            set {
+                this.webidField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool webidSpecified {
+            get {
+                return this.webidFieldSpecified;
+            }
+            set {
+                this.webidFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
         /// Links to wiki pages.
         /// </summary>
         /// <value>
         /// The wiki.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public WikiLocation wiki {
             get {
@@ -627,7 +665,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The Point.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Point Point {
             get {
@@ -644,7 +682,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The address.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ThaiAddress address {
             get {
@@ -661,7 +699,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The url.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("url", Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute("url", Order=6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<MyUri> url {
             get {
@@ -678,7 +716,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The socialweb.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SocialWebLinkEntry socialweb {
             get {
@@ -695,7 +733,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The officials.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public OfficialList officials {
             get {
@@ -712,7 +750,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The council.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CouncilList council {
             get {
@@ -729,7 +767,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The oldlocations.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("oldlocations", Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute("oldlocations", Order=10)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<OldLocation> oldlocations {
             get {
@@ -746,7 +784,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The history.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public HistoryList history {
             get {
@@ -763,7 +801,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The areacoverage.
         /// </value>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=12)]
         [System.Xml.Serialization.XmlArrayItemAttribute("entity", IsNullable=false)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<LocalGovernmentCoverageEntity> areacoverage {
@@ -781,7 +819,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The area.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Area area {
             get {

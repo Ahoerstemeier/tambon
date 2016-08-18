@@ -914,13 +914,6 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:simpleType name="DolaCodeList">
-    <xs:annotation>
-      <xs:documentation>List of DOLA codes.</xs:documentation>
-    </xs:annotation>
-    <xs:list itemType="xs:unsignedInt"></xs:list>
-  </xs:simpleType>
-
   <xs:complexType name="LocalAdministrationData">
     <xs:annotation>
       <xs:documentation>Data defined by the Department of Local Administration (DOLA).</xs:documentation>
@@ -1090,6 +1083,11 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" type="t:LocalAdministrationData" name="dola">
         <xs:annotation>
           <xs:documentation>Local administration data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" type="xs:int" name="webid">
+        <xs:annotation>
+          <xs:documentation>Id to access http://info.dla.go.th/ with local government specific pages.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="wiki" type="t:WikiLocation">
