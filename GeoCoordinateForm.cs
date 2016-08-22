@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Windows.Forms;
-using EARTHLib;
-using De.AHoerstemeier.Geo;
 using System.Threading;
+using System.Windows.Forms;
 using System.Xml;
-using System.IO;
+using De.AHoerstemeier.Geo;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -124,7 +123,7 @@ namespace De.AHoerstemeier.Tambon
                 try
                 {
                     var sheet = RtsdMapIndex.IndexL7018(geoPoint);
-                    if (sheet != null)
+                    if ( sheet != null )
                     {
                         lbl_L7018Value.Text = sheet.Name;
                     }
@@ -168,7 +167,7 @@ namespace De.AHoerstemeier.Tambon
         {
             if ( !_Changing )
             {
-                String value = TambonHelper.ReplaceThaiNumerals(edt_UTM.Text.ToUpper()).Replace(",","").Trim();
+                String value = TambonHelper.ReplaceThaiNumerals(edt_UTM.Text.ToUpper()).Replace(",", "").Trim();
                 GeoPoint geoPoint = null;
                 UtmPoint utmPoint = null;
                 try
@@ -213,7 +212,6 @@ namespace De.AHoerstemeier.Tambon
                 SetValues(geoPoint, utmPoint, sender);
                 _Changing = false;
             }
-
         }
 
         private void edt_LatLong_TextChanged(object sender, EventArgs e)
@@ -244,24 +242,24 @@ namespace De.AHoerstemeier.Tambon
 
         private void btnFlyTo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var googleEarth = new ApplicationGEClass();
+            //try
+            //{
+            //    var googleEarth = new ApplicationGEClass();
 
-                String tempKmlFile = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".kml";
-                KmlHelper kmlWriter = new KmlHelper();
-                kmlWriter.AddPoint(_Point.Latitude, _Point.Longitude, "Temporary location", "", "", "");
-                kmlWriter.SaveToFile(tempKmlFile);
-                while ( googleEarth.IsInitialized() == 0 )
-                {
-                    Thread.Sleep(500);
-                }
-                googleEarth.OpenKmlFile(tempKmlFile, 0);
-            }
-            catch ( Exception ex )
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            //    String tempKmlFile = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".kml";
+            //    KmlHelper kmlWriter = new KmlHelper();
+            //    kmlWriter.AddPoint(_Point.Latitude, _Point.Longitude, "Temporary location", "", "", "");
+            //    kmlWriter.SaveToFile(tempKmlFile);
+            //    while ( googleEarth.IsInitialized() == 0 )
+            //    {
+            //        Thread.Sleep(500);
+            //    }
+            //    googleEarth.OpenKmlFile(tempKmlFile, 0);
+            //}
+            //catch ( Exception ex )
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //}
         }
     }
 }
