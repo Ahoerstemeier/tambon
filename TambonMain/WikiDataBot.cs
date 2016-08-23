@@ -467,6 +467,10 @@ namespace De.AHoerstemeier.Tambon
                         {
                             newLabel = entity.english.StripBanOrChumchon();
                         }
+                        else if ( entity.type == EntityType.PAO )
+                        {
+                            newLabel = entity.english + " " + entity.type.Translate(language);
+                        }
                         else
                         {
                             newLabel = entity.english;

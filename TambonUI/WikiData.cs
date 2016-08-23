@@ -192,6 +192,7 @@ namespace De.AHoerstemeier.Tambon.UI
             chkTypes.Items.Add(EntityType.Khet);
             chkTypes.Items.Add(EntityType.Khwaeng);
             chkTypes.Items.Add(EntityType.Chumchon);
+            chkTypes.Items.Add(EntityType.PAO);
             chkTypes.SetItemCheckState(0, CheckState.Checked);
 
             allEntities = new List<Entity>();

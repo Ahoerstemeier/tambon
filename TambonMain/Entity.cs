@@ -831,56 +831,72 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Description of the entity.</returns>
         public String GetWikiDataDescription(Language language)
         {
-            if ( language == Language.German )
+            if ( type == EntityType.PAO )
+            {
+                switch ( language )
+                {
+                    case Language.English:
+                        return "local government unit in Thailand";
+                    case Language.German:
+                        return "kommunale Verwaltungseinheit von Thailand";
+                    case Language.Thai:
+                        return "องค์กรปกครองส่วนท้องถิ่นของประเทศไทย";
+                    default:
+                        return String.Empty;
+                }
+            }
+            else if ( language == Language.German )
             {
                 // the hierarchical expansion does not sound good in German
                 return GetGermanWikiDataDescription();
             }
-
-            var allEntities = GlobalData.CompleteGeocodeList().FlatList();
-            var typeValue = this.type.Translate(language);
-            var expanded = String.Empty;  // 0 = type, 1 = hierarchy
-            var expandedTopLevel = String.Empty;  // 0 = type
-            var hierarchy = String.Empty;
-            var hierarchyExpand = String.Empty;  // 0 = name, 1 = type
-            switch ( language )
+            else
             {
-                case Language.English:
-                    expanded = "{0} in {1}Thailand";
-                    expandedTopLevel = "{0} of Thailand";
-                    hierarchyExpand = "{0} {1}, ";
-                    break;
+                var allEntities = GlobalData.CompleteGeocodeList().FlatList();
+                var typeValue = this.type.Translate(language);
+                var expanded = String.Empty;  // 0 = type, 1 = hierarchy
+                var expandedTopLevel = String.Empty;  // 0 = type
+                var hierarchy = String.Empty;
+                var hierarchyExpand = String.Empty;  // 0 = name, 1 = type
+                switch ( language )
+                {
+                    case Language.English:
+                        expanded = "{0} in {1}Thailand";
+                        expandedTopLevel = "{0} of Thailand";
+                        hierarchyExpand = "{0} {1}, ";
+                        break;
 
-                case Language.German:
-                    expanded = "{0} in {1}Thailand";
-                    expandedTopLevel = "{0} in Thailand";
-                    hierarchyExpand = "{1} {0}, ";
-                    break;
+                    case Language.German:
+                        expanded = "{0} in {1}Thailand";
+                        expandedTopLevel = "{0} in Thailand";
+                        hierarchyExpand = "{1} {0}, ";
+                        break;
 
-                case Language.Thai:
-                    expanded = "{0}ใน{1}ประเทศไทย";
-                    expandedTopLevel = "{0}ในประเทศไทย";
-                    hierarchyExpand = "{1}{0} ";
-                    break;
+                    case Language.Thai:
+                        expanded = "{0}ใน{1}ประเทศไทย";
+                        expandedTopLevel = "{0}ในประเทศไทย";
+                        hierarchyExpand = "{1}{0} ";
+                        break;
+                }
+                var currentGeocode = geocode;
+                if ( this.parent.Any() )
+                {
+                    currentGeocode = this.parent.First() * 100;
+                }
+                while ( currentGeocode / 100 != 0 )
+                {
+                    currentGeocode = currentGeocode / 100;
+                    var parentEntity = allEntities.First(x => x.geocode == currentGeocode);
+                    var parentType = parentEntity.type.Translate(language);
+                    if ( language == Language.Thai )
+                        hierarchy += String.Format(hierarchyExpand, parentEntity.name, parentType);
+                    else if ( parentEntity.type == EntityType.Bangkok )
+                        hierarchy += String.Format(hierarchyExpand, String.Empty, "Bangkok").TrimStart();
+                    else
+                        hierarchy += String.Format(hierarchyExpand, parentEntity.english, parentType);
+                }
+                return String.Format(expanded, typeValue, hierarchy);
             }
-            var currentGeocode = geocode;
-            if ( this.parent.Any() )
-            {
-                currentGeocode = this.parent.First() * 100;
-            }
-            while ( currentGeocode / 100 != 0 )
-            {
-                currentGeocode = currentGeocode / 100;
-                var parentEntity = allEntities.First(x => x.geocode == currentGeocode);
-                var parentType = parentEntity.type.Translate(language);
-                if ( language == Language.Thai )
-                    hierarchy += String.Format(hierarchyExpand, parentEntity.name, parentType);
-                else if ( parentEntity.type == EntityType.Bangkok )
-                    hierarchy += String.Format(hierarchyExpand, String.Empty, "Bangkok").TrimStart();
-                else
-                    hierarchy += String.Format(hierarchyExpand, parentEntity.english, parentType);
-            }
-            return String.Format(expanded, typeValue, hierarchy);
         }
 
         /// <summary>
