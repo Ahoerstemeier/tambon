@@ -700,6 +700,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Website removed from free web hosting service.
         /// </summary>
         removed,
+        
+        /// <summary>
+        /// Website cannot be accessed, though Google can update cache.
+        /// </summary>
+        inaccessible,
     }
     
     /// <summary>

@@ -598,6 +598,11 @@
           <xs:documentation>Longdo map ID. URL for venue id 123 is http://map.longdo.com/p/123/view </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="instagram" type="t:SocialWebLink" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Official instagram account. URL for account xyz is https://www.instagram.com/xyz/ </xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
 

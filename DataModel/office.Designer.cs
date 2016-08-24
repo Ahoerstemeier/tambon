@@ -1330,10 +1330,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private SocialWebLink longdoField;
         
+        private SocialWebLink instagramField;
+        
         /// <summary>
         /// Creates a new instance of SocialWebLinkEntry.
         /// </summary>
         public SocialWebLinkEntry() {
+            this.instagramField = new SocialWebLink();
             this.longdoField = new SocialWebLink();
             this.zodioField = new SocialWebLink();
             this.foursquareField = new SocialWebLink();
@@ -1477,6 +1480,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.longdoField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Official instagram account. URL for account xyz is https://www.instagram.com/xyz/
+        /// </summary>
+        /// <value>
+        /// The instagram.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SocialWebLink instagram {
+            get {
+                return this.instagramField;
+            }
+            set {
+                this.instagramField = value;
             }
         }
     }

@@ -481,6 +481,11 @@
           <xs:documentation>Website removed from free web hosting service.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="inaccessible">
+        <xs:annotation>
+          <xs:documentation>Website cannot be accessed, though Google can update cache.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="MyUri">
