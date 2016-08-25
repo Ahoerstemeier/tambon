@@ -23,6 +23,13 @@ namespace De.AHoerstemeier.Tambon
                 EntityType.PAO,
         };
 
+        private static IEnumerable<OfficeType> _officeLocalGovernment = new List<OfficeType>()
+        {
+                OfficeType.MunicipalityOffice,
+                OfficeType.PAOOffice,
+                OfficeType.TAOOffice,
+        };
+
         // TODO: Move to resource and make it translatable there
         private static Dictionary<EntityType, Dictionary<Language, String>> _entityTranslations = new Dictionary<EntityType, Dictionary<Language, String>>()
         {
@@ -120,6 +127,19 @@ namespace De.AHoerstemeier.Tambon
         static public Boolean IsLocalGovernment(this EntityType type)
         {
             return _entityLocalGovernment.Contains(type);
+        }
+
+        /// <summary>
+        /// Checks whether a office type is a local government office.
+        /// </summary>
+        /// <param name="type">Office type.</param>
+        /// <returns><c>true</c> if is a local government office, <c>false</c> otherwise.</returns>
+        /// <remarks>Local government offices are <see cref="OfficeType.MunicipalityOffice"/>,
+        /// <see cref="OfficeType.PAOOffice"/> and <see cref="OfficeType.TAOOffice"/>.
+        /// </remarks>
+        static public Boolean IsLocalGovernmentOffice(this OfficeType type)
+        {
+            return _officeLocalGovernment.Contains(type);
         }
 
         private static IEnumerable<EntityType> _entitySakha = new List<EntityType>()

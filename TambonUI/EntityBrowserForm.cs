@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using Wikibase;
 
 namespace De.AHoerstemeier.Tambon.UI
@@ -81,6 +82,7 @@ namespace De.AHoerstemeier.Tambon.UI
             _allEntities = _baseEntity.FlatList().Where(x => !x.IsObsolete).ToList();
             var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
             _localGovernments.AddRange(_allEntities.Where(x => x.type.IsLocalGovernment()));
+
             foreach ( var tambon in allLocalGovernmentParents )
             {
                 var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
@@ -90,6 +92,21 @@ namespace De.AHoerstemeier.Tambon.UI
                     _allEntities.Add(localGovernmentEntity);
                 }
             }
+            using ( var fileStream = new FileStream(GlobalData.BaseXMLDirectory + "\\DOLA web id.xml", FileMode.Open, FileAccess.Read) )
+            {
+                var dolaWebIds = XmlManager.XmlToEntity<WebIdList>(fileStream, new XmlSerializer(typeof(WebIdList)));
+                foreach ( var entry in dolaWebIds.item )
+                {
+                    var entity = _localGovernments.FirstOrDefault(x => x.geocode == entry.geocode);
+                    if ( entity != null )
+                    {
+                        var office = entity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
+                        office.webid = entry.id;
+                        office.webidSpecified = true;
+                    }
+                }
+            }
+
             var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
             foreach ( var lao in _localGovernments )
             {

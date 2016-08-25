@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+  <xs:include schemaLocation="basictypes.xsd" />
+
+  <xs:complexType name="WebIdListEntry">
+    <xs:annotation>
+      <xs:documentation>Link between geocode and web id.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="id" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>Id at the website to access the data.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="required">
+      <xs:annotation>
+        <xs:documentation>Geocode of corresponding entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
+
+  <xs:complexType name="WebIdList">
+    <xs:annotation>
+      <xs:documentation>Translation table between webid and geocode</xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="item" type="t:WebIdListEntry" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="webid" type="t:WebIdList" />
+</xs:schema>

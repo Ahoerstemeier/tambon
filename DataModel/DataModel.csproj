@@ -110,6 +110,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="webidlist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>webidlist.xsd</DependentUpon>
+    </None>
     <None Include="basictypes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -190,6 +195,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>region.xsd</DependentUpon>
+    </None>
+    <None Include="webidlist.xsd">
+      <SubType>Designer</SubType>
+      <Generator>xsd2codecustomtool</Generator>
+      <LastGenOutput>webidlist.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
