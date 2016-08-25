@@ -336,7 +336,11 @@
         <symbols>
           <vision>เป็นองค์กรด้านการบริการเป็นเลิศ  เทิดทูนสถาบัน  สืบสานวัฒนธรรมประเพณี  พัฒนาชีวิตอย่างยั่งยืน</vision>
         </symbols>
-        <url lastchecked="2015-01-05">http://www.chiangyuen.go.th/</url>
+        <geo:Point>
+          <geo:lat>17.4484</geo:lat>
+          <geo:long>102.6855</geo:long>
+        </geo:Point>
+        <url lastchecked="2016-08-25">http://www.chiangyuen.go.th/</url>
         <url status="expired">http://chiangyuen.com/</url>
         <socialweb>
           <googleplus type="user">114988606397507978433</googleplus>
@@ -360,6 +364,11 @@
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="38" />
           <term begin="2000-06-10" end="2004-06-09" type="TAO" comment="Guessed from Nayok table" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="410108" coverage="completely" />
         </areacoverage>
@@ -380,9 +389,36 @@
       <entity type="Muban" geocode="41010814" name="บ้านเชียงยืน" english="Ban Chiang Yuen" />
       <entity type="Muban" geocode="41010815" name="บ้านเชียงยืน" english="Ban Chiang Yuen" />
       <entity type="Muban" geocode="41010816" name="บ้านหนองหลอด" english="Ban Nong Lot" />
-      <entity type="Muban" geocode="41010817" name="บ้านหนองหลอดพัฒนา" english="Ban Nong Lot Phatthana" />
-      <entity type="Muban" geocode="41010818" name="บ้านบ่อน้อยพัฒนา" english="Ban Bo Noi Phatthana" />
-      <entity type="Muban" geocode="41010819" name="บ้านโพธิ์ชัย" english="Ban Pho Chai" />
+      <entity type="Muban" geocode="41010817" name="บ้านหนองหลอดพัฒนา" english="Ban Nong Lot Phatthana">
+        <history>
+          <create effective="2005-11-07" status="Gazette" type="Muban" splitfrom="41010809">
+            <gazetteref volume="123" page="84" issue="พิเศษ 41 ง" date="2006-03-23" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="41010818" name="บ้านบ่อน้อยพัฒนา" english="Ban Bo Noi Phatthana">
+        <history>
+          <create effective="2007-01-26" status="Gazette" type="Muban" splitfrom="41010811">
+            <gazetteref volume="124" page="65" issue="พิเศษ 61 ง" date="2007-05-21" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="41010819" name="บ้านโพธิ์ชัย" english="Ban Pho Chai">
+        <history>
+          <create effective="2007-01-26" status="Gazette" type="Muban" splitfrom="41010808">
+            <gazetteref volume="124" page="65" issue="พิเศษ 61 ง" date="2007-05-21" />
+          </create>
+        </history>
+      </entity>
+      <entity type="Muban" geocode="41010820" name="" english="" obsolete="1" comment="To be announced" />
+      <entity type="Muban" geocode="41010821"  name="บ้านสุขสำราญ" english="Ban Suk Samran">
+        <history>
+          <create type="Muban" status="Gazette" effective="2016-07-21" splitfrom="41010803">
+            <gazetteref volume="133" page="257" issue="66 ง" date="2016-08-25" />
+            <ministerialorder ministry="MOI" date="2015-12-15" title="มท ๐๓๑๐.๑/ว ๗๔๖๕" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="หนองนาคำ" english="Nong Na Kham" geocode="410109">
       <wiki wikidata="Q16970245" />
