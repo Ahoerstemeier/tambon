@@ -1839,9 +1839,14 @@ namespace De.AHoerstemeier.Tambon {
         Assign,
         
         /// <summary>
-        /// Transfer from a post.
+        /// Permanently remove from a post.
         /// </summary>
         Remove,
+        
+        /// <summary>
+        /// Temporarily remove from a post.
+        /// </summary>
+        Suspend,
         
         /// <summary>
         /// End of term by death.
