@@ -1241,57 +1241,86 @@
   </entity>
 
   <entity type="Changwat" name="กระบี่" english="Krabi" geocode="81">
-    <entity type="Amphoe" name="อ่าวลึก" english="Ao Luek" geocode="8105">
-      <park type="HistoricalSite" name="เขาขาว" english="Khao Khao">
-        <geo:Point>
-          <geo:lat>8.3489</geo:lat>
-          <geo:long>98.8122</geo:long>
-        </geo:Point>
-        <area rai="196" ngam="2" tarangwa="99" squarekilometer="0.314796" locationgeocode="810509">
-          <areapart index="ก" rai="69" ngam="0" tarangwa="85" squarekilometer="0.110740">
-            <site index="1" name="ภาพเขียนสีถ้ำโนราห์">
-              <geo:Point>
-                <geo:lat>8.347922</geo:lat>
-                <geo:long>98.810941</geo:long>
-              </geo:Point>
-            </site>
-          </areapart>
-          <areapart index="ข" rai="79" ngam="0" tarangwa="98" squarekilometer="0.077264">
-            <site index="2" name="เพิงผาช้างนก">
-              <geo:Point>
-                <geo:lat>8.354585</geo:lat>
-                <geo:long>98.812178</geo:long>
-              </geo:Point>
-            </site>
-            <site index="3" name="ภาพเขียนสีถ้ำช้างนอก">
-              <geo:Point>
-                <geo:lat>8.353759</geo:lat>
-                <geo:long>98.812074</geo:long>
-              </geo:Point>
-            </site>
-          </areapart>
-          <areapart index="ค" rai="48" ngam="1" tarangwa="16" squarekilometer="0.126792">
-            <site index="4" name="ถ้ำเขาหินเหล็กไฟ">
-              <geo:Point>
-                <geo:lat>8.351990</geo:lat>
-                <geo:long>98.816408</geo:long>
-              </geo:Point>
-            </site>
-            <site index="5" name="ถ้ำต้นเหรียง">
-              <geo:Point>
-                <geo:lat>8.350740</geo:lat>
-                <geo:long>98.815185</geo:long>
-              </geo:Point>
-            </site>
-          </areapart>
-        </area>
-        <history>
-          <createpark type="HistoricalSite" effective="2016-04-04" status="Gazette">
-            <gazetteref volume="133" page="16" issue="พิเศษ 79 ง" date="2016-04-04" />
-          </createpark>
-        </history>
-      </park>
-    </entity>
+    <park type="HistoricalSite" id="0005090" name="ถ้ำผีหัวโต" english="Tham Phi Hua To">
+      <!-- 8.385015, 98.687736 guessed from map in announcement, below entry in Google Maps -->
+      <geo:Point>
+        <geo:lat>8.3817</geo:lat>
+        <geo:long>98.6827</geo:long>
+      </geo:Point>
+      <area rai="147" ngam="1" tarangwa="62" locationgeocode="810501" />
+      <history>
+        <createpark type="HistoricalSite" effective="2004-05-10" status="Gazette">
+          <gazetteref volume="121" page="3" issue="พิเศษ 52 ง" date="2004-05-10" />
+        </createpark>
+      </history>
+    </park>
+    <park type="HistoricalSite" name="เขาขาว" english="Khao Khao">
+      <geo:Point>
+        <geo:lat>8.3489</geo:lat>
+        <geo:long>98.8122</geo:long>
+      </geo:Point>
+      <area rai="196" ngam="2" tarangwa="99" squarekilometer="0.314796" locationgeocode="810509">
+        <areapart index="ก" rai="69" ngam="0" tarangwa="85" squarekilometer="0.110740">
+          <site index="1" name="ภาพเขียนสีถ้ำโนราห์">
+            <geo:Point>
+              <geo:lat>8.347922</geo:lat>
+              <geo:long>98.810941</geo:long>
+            </geo:Point>
+          </site>
+        </areapart>
+        <areapart index="ข" rai="79" ngam="0" tarangwa="98" squarekilometer="0.077264">
+          <site index="2" name="เพิงผาช้างนก">
+            <geo:Point>
+              <geo:lat>8.354585</geo:lat>
+              <geo:long>98.812178</geo:long>
+            </geo:Point>
+          </site>
+          <site index="3" name="ภาพเขียนสีถ้ำช้างนอก">
+            <geo:Point>
+              <geo:lat>8.353759</geo:lat>
+              <geo:long>98.812074</geo:long>
+            </geo:Point>
+          </site>
+        </areapart>
+        <areapart index="ค" rai="48" ngam="1" tarangwa="16" squarekilometer="0.126792">
+          <site index="4" name="ถ้ำเขาหินเหล็กไฟ">
+            <geo:Point>
+              <geo:lat>8.351990</geo:lat>
+              <geo:long>98.816408</geo:long>
+            </geo:Point>
+          </site>
+          <site index="5" name="ถ้ำต้นเหรียง">
+            <geo:Point>
+              <geo:lat>8.350740</geo:lat>
+              <geo:long>98.815185</geo:long>
+            </geo:Point>
+          </site>
+        </areapart>
+      </area>
+      <history>
+        <createpark type="HistoricalSite" effective="2016-04-04" status="Gazette">
+          <gazetteref volume="133" page="16" issue="พิเศษ 79 ง" date="2016-04-04" />
+        </createpark>
+      </history>
+    </park>
+  </entity>
+  <entity type="Changwat" name="พังงา" english="Phang Nga" geocode="82">
+    <park type="HistoricalSite" id="0005102" name="วัดศรีรัตนาราม" english="Wat Si Rattanaram">
+      <area rai="1" ngam="3" tarangwa="57" locationgeocode="820403" />
+      <history>
+        <createpark type="HistoricalSite" effective="2004-05-10" status="Gazette">
+          <gazetteref volume="121" page="3" issue="พิเศษ 52 ง" date="2004-05-10" />
+        </createpark>
+      </history>
+    </park>
+    <park type="HistoricalSite" id="0005103" name="วัดเจริญรมณาวาส" english="Wat Charoen Romnawat">
+      <area rai="0" ngam="1" tarangwa="41.75" locationgeocode="820403" />
+      <history>
+        <createpark type="HistoricalSite" effective="2004-05-10" status="Gazette">
+          <gazetteref volume="121" page="3" issue="พิเศษ 52 ง" date="2004-05-10" />
+        </createpark>
+      </history>
+    </park>
   </entity>
   <entity type="Changwat" geocode="83" name="ภูเก็ต" english="Phuket">
     <!-- complete -->
@@ -2019,7 +2048,6 @@
   </entity>
 
   <entity type="Changwat" geocode="92" name="ตรัง" english="Trang">
-    <!-- complete -->
     <park type="HistoricalSite" id="0005173" name="ภูเขาชุมทอง" english="Phu Khao Chum Thong">
       <history>
         <createpark type="HistoricalSite" effective="1936-03-08" status="Gazette">
@@ -2082,6 +2110,14 @@
         <alternativename name="ถ้ำเขาสาย" english="Tham Kha Sai" />
         <createpark type="HistoricalSite" effective="1936-03-08" status="Gazette">
           <gazetteref volume="52" page="3679" issue="0 ง" date="1936-03-08" />
+        </createpark>
+      </history>
+    </park>
+    <park type="HistoricalSite" id="0005188" name="เขาโพธิ์โทน" english="Khao Pho Thon">
+      <area rai="74" ngam="0" tarangwa="79" locationgeocode="920616" />
+      <history>
+        <createpark type="HistoricalSite" effective="2004-05-10" status="Gazette">
+          <gazetteref volume="121" page="3" issue="พิเศษ 52 ง" date="2004-05-10" />
         </createpark>
       </history>
     </park>
