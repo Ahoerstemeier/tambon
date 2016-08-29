@@ -163,6 +163,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set GND reference", SetGnd));
             _availableTasks.Add(new WikiDataTaskInfo("Set GNS-UFI reference", SetGNSUFI));
             _availableTasks.Add(new WikiDataTaskInfo("Set Facebook place id", SetFacebookPlaceId));
+            _availableTasks.Add(new WikiDataTaskInfo("Set official website", SetOfficialWebsite));
             _availableTasks.Add(new WikiDataTaskInfo("Set WOEID reference", SetWoeid));
             _availableTasks.Add(new WikiDataTaskInfo("Set Postal code", SetPostalCode));
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
@@ -934,6 +935,43 @@ namespace De.AHoerstemeier.Tambon
                     if ( state != WikiDataState.Valid )
                     {
                         var statement = _helper.SetFacebookPlaceId(item, entity, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                    // TODO: Sources
+                }
+            }
+        }
+
+        private void SetOfficialWebsite(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities.Where(x => x.office.Any(y => !String.IsNullOrEmpty(y.PreferredWebsite))) )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.OfficialWebsiteCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong official website", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetOfficialWebsite(item, entity, overrideData);
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
