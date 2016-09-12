@@ -1775,6 +1775,14 @@ namespace De.AHoerstemeier.Tambon {
         
         private OfficialAction actionField;
         
+        private uint oldgeocodeField;
+        
+        private bool oldgeocodeFieldSpecified;
+        
+        private OfficialType oldofficialtypeField;
+        
+        private bool oldofficialtypeFieldSpecified;
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -1825,6 +1833,74 @@ namespace De.AHoerstemeier.Tambon {
                 this.actionField = value;
             }
         }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldgeocode {
+            get {
+                return this.oldgeocodeField;
+            }
+            set {
+                this.oldgeocodeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldgeocodeSpecified {
+            get {
+                return this.oldgeocodeFieldSpecified;
+            }
+            set {
+                this.oldgeocodeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OfficialType oldofficialtype {
+            get {
+                return this.oldofficialtypeField;
+            }
+            set {
+                this.oldofficialtypeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldofficialtypeSpecified {
+            get {
+                return this.oldofficialtypeFieldSpecified;
+            }
+            set {
+                this.oldofficialtypeFieldSpecified = value;
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
@@ -1834,7 +1910,7 @@ namespace De.AHoerstemeier.Tambon {
     public enum OfficialAction {
         
         /// <summary>
-        /// Transfer to a new post.
+        /// Assignment to a new post.
         /// </summary>
         Assign,
         
@@ -1852,6 +1928,11 @@ namespace De.AHoerstemeier.Tambon {
         /// End of term by death.
         /// </summary>
         Decease,
+        
+        /// <summary>
+        /// Transfer from a previous post to a new post.
+        /// </summary>
+        Transfer,
     }
     
     /// <summary>

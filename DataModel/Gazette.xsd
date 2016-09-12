@@ -15,7 +15,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="Assign">
         <xs:annotation>
-          <xs:documentation>Transfer to a new post.</xs:documentation>
+          <xs:documentation>Assignment to a new post.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Remove">
@@ -31,6 +31,11 @@
       <xs:enumeration value="Decease">
         <xs:annotation>
           <xs:documentation>End of term by death.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Transfer">
+        <xs:annotation>
+          <xs:documentation>Transfer from a previous post to a new post.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -556,9 +561,31 @@
   <xs:complexType name="GazetteOfficial">
     <xs:complexContent>
       <xs:extension base="t:GazetteOperationBase">
-        <xs:attribute name="officialname" type="xs:string" use="required" />
-        <xs:attribute name="officialtype" type="t:OfficialType" use="required" />
-        <xs:attribute name="action" type="t:OfficialAction" use="required" />
+        <xs:attribute name="officialname" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Name of the official (in Thai).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="officialtype" type="t:OfficialType" use="required">
+          <xs:annotation>
+            <xs:documentation>Official type.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="action" type="t:OfficialAction" use="required">
+          <xs:annotation>
+            <xs:documentation>Type of official change.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Geocode of the previous assignment.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="oldofficialtype" type="t:OfficialType" use="optional">
+          <xs:annotation>
+            <xs:documentation>Previous position in case of a transfer.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

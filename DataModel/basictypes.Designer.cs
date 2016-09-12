@@ -1143,6 +1143,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Region vice governor (รองผู้ว่าราชการภาค, Rong Phu Waratchakan Phak).
         /// </summary>
         RegionViceGovernor,
+        
+        /// <summary>
+        /// Unspecified official type.
+        /// </summary>
+        Other,
     }
     
     /// <summary>
