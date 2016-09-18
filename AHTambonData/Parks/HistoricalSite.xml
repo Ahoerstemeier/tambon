@@ -179,6 +179,17 @@
       </park>
     </entity>
 
+    <entity type="Khet" name="ปทุมวัน" english="Pathum Wan" geocode="1007">
+      <park type="HistoricalSite" id="0000109" name="สถานีวิทยุศาลาแดง" english="Sathani Withaju Sala Daeng">
+        <area locationgeocode="100704" rai="1" ngam="2" tarangwa="17" />
+        <history>
+          <createpark type="HistoricalSite" effective="1983-05-31" status="Gazette">
+            <gazetteref volume="100" page="1744" issue="88 ง" date="1983-05-31" />
+          </createpark>
+        </history>
+      </park>
+    </entity>
+
     <entity type="Khet" name="ธนบุรี" english="Thon Buri" geocode="1015">
       <!-- complete -->
       <park type="HistoricalSite" id="0000128" name="วัดอินทาราม" english="Wat Intharam">
@@ -784,6 +795,14 @@
         <history>
           <createpark type="HistoricalSite" effective="1949-11-22" status="Gazette">
             <gazetteref volume="66" page="5280" issue="64 ง" date="1949-11-22" />
+          </createpark>
+        </history>
+      </park>
+      <park type="HistoricalSite" id="0000180" name="พระอุโบสถวัดบางยี่ขัน" english="Ubosot of Wat Bang Yi Khan">
+        <area locationgeocode="102504" rai="1" ngam="3" tarangwa="44" />
+        <history>
+          <createpark type="HistoricalSite" effective="1983-05-31" status="Gazette">
+            <gazetteref volume="100" page="1745" issue="88 ง" date="1983-05-31" />
           </createpark>
         </history>
       </park>
@@ -2013,7 +2032,10 @@
         </history>
       </park>
       <park type="HistoricalSite" id="0005153" name="วัดท่าสะท้อน" english="Wat Tha Sathon">
-        <area rai="0" ngam="3" tarangwa="82.5" locationgeocode="841702" />
+        <area rai="0" ngam="3" tarangwa="82.5" locationgeocode="841702">
+          <site index="1" name="โบสถ์" english="Bot" />
+          <site index="2" name="เจดีย์" english="Chedi" />
+        </area>
         <history>
           <createpark type="HistoricalSite" effective="1983-05-31" status="Gazette">
             <gazetteref volume="100" page="1742" issue="88 ง" date="1983-05-31" />
@@ -2143,9 +2165,11 @@
   </entity>
   <entity type="Changwat" geocode="93" name="พัทลุง" english="Phatthalung">
     <park type="HistoricalSite" id="0005199" name="วังเจ้าเมืองพัทลุง" english="Wang Chao Mueang Phatthalung">
+      <wiki wikidata="Q26925221" />
+      <area locationgeocode="930109" rai="2" ngam="3" tarangwa="75" />
       <history>
         <createpark type="HistoricalSite" effective="1983-05-31" status="Gazette">
-          <!-- 31 พฤษภาคม 2526 เล่ม 100 ตอนที่ 88 -->
+          <gazetteref volume="100" page="1743" issue="88 ง" date="1983-05-31" />
         </createpark>
       </history>
     </park>
