@@ -181,6 +181,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set native label", SetNativeLabel));
             _availableTasks.Add(new WikiDataTaskInfo("Set bounding entities", SetShareBorderWith));
             _availableTasks.Add(new WikiDataTaskInfo("Set Inception", SetInception));
+            _availableTasks.Add(new WikiDataTaskInfo("Set Described by Url", SetDescribedByUrl));
         }
 
         #endregion constructor
@@ -779,7 +780,7 @@ namespace De.AHoerstemeier.Tambon
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
 
-                            _helper.AddIpaQualifiers(statement);
+                            _helper.AddLanguageOfWorkQualifier(statement);
                             foreach ( var qualifier in statement.Qualifiers )
                             {
                                 qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
@@ -975,6 +976,49 @@ namespace De.AHoerstemeier.Tambon
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                    // TODO: Sources
+                }
+            }
+        }
+
+        private void SetDescribedByUrl(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.DescribedByUrlCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong described by URL", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetDescribedByUrl(item, entity, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+
+                        _helper.AddLanguageOfWorkQualifier(statement);
+                        foreach ( var qualifier in statement.Qualifiers )
+                        {
+                            qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
                         }
                     }
                     // TODO: Sources

@@ -1013,6 +1013,7 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <returns>The state of the statement in Wikidata.</returns>
         public WikiDataState OfficialWebsiteCorrect(Item item, Entity entity)
         {
             if ( item == null )
@@ -1025,6 +1026,61 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion OfficialWebsite
+
+        #region DescribedByUrl
+
+        private WikiDataState DescribedByUrl(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+            if ( entity.type.IsCompatibleEntityType(EntityType.Tambon) )
+            {
+                stringValue = String.Format(CultureInfo.InvariantCulture, "http://www.thaitambon.com/tambon/{0}", entity.geocode);
+            }
+            else if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
+            {
+                stringValue = AmphoeComHelper.AmphoeWebsite(entity.geocode).AbsoluteUri;
+            }
+
+            return CheckStringValue(item, WikiBase.PropertyIdDescribedByUrl, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the describe by URL property.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the described by URL.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetDescribedByUrl(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            DescribedByUrl(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the described by URL is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <returns>The state of the statement in Wikidata.</returns>
+        public WikiDataState DescribedByUrlCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+            {
+                throw new ArgumentNullException("item");
+            }
+
+            Statement dummy;
+            return DescribedByUrl(item, entity, false, false, out dummy);
+        }
+
+        #endregion DescribedByUrl
 
         #region IPA
 
@@ -1069,10 +1125,10 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Adds the qualifiers for the <see cref="WikiBase.PropertyIdIpa"/>.
+        /// Adds the qualifiers for the <see cref="WikiBase.PropertyIdIpa"/> and <see cref="WikiBase.PropertyIdDescribedByUrl"/>.
         /// </summary>
         /// <param name="statement">Statement to add qualifier.</param>
-        public void AddIpaQualifiers(Statement statement)
+        public void AddLanguageOfWorkQualifier(Statement statement)
         {
             if ( statement != null )
             {
