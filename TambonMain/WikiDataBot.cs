@@ -289,6 +289,7 @@ namespace De.AHoerstemeier.Tambon
             SetPostalCode(items, dummy, false);
             SetLocation(items, dummy, false);
             SetNativeLabel(items, dummy, false);
+            SetDescribedByUrl(items, dummy, false);
         }
 
         /// <summary>
