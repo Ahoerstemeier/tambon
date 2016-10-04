@@ -51,6 +51,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdISO3166 = "P300";
         public const String PropertyIdGND = "P227";
         public const String PropertyIdWOEID = "P1281";
+        public const String PropertyIdGeonames = "P1566";
         public const String PropertyIdGNSUFI = "P2326";
         public const String PropertyIdFIPS10 = "P901";
         public const String PropertyIdDmoz = "P998";

@@ -165,6 +165,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Facebook place id", SetFacebookPlaceId));
             _availableTasks.Add(new WikiDataTaskInfo("Set official website", SetOfficialWebsite));
             _availableTasks.Add(new WikiDataTaskInfo("Set WOEID reference", SetWoeid));
+            _availableTasks.Add(new WikiDataTaskInfo("Set geonames reference", SetGeonames));
             _availableTasks.Add(new WikiDataTaskInfo("Set Postal code", SetPostalCode));
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
             WikiDataTaskDelegate setCensus2010 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2010);
@@ -867,6 +868,42 @@ namespace De.AHoerstemeier.Tambon
                         foreach ( var reference in statement.References )
                         {
                             reference.Save(_helper.GetReferenceSaveEditSummary(reference));
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SetGeonames(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.geonames.value)) )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.GeonamesCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong geonames", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetGeonames(item, entity, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
                     }
                 }

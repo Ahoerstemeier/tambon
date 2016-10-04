@@ -39,6 +39,11 @@ namespace De.AHoerstemeier.Tambon
             return !String.IsNullOrEmpty(woeid.value);
         }
 
+        public Boolean ShouldSerializegeonames()
+        {
+            return !String.IsNullOrEmpty(geonames.value);
+        }
+
         public Boolean ShouldSerializegetty()
         {
             return !String.IsNullOrEmpty(getty.value);
@@ -48,7 +53,7 @@ namespace De.AHoerstemeier.Tambon
 
         public Boolean IsEmpty()
         {
-            return !(ShouldSerializefips10() || ShouldSerializegnd() || ShouldSerializehasc() || ShouldSerializeiso3166() || ShouldSerializesalb());
+            return !(ShouldSerializefips10() || ShouldSerializegnd() || ShouldSerializehasc() || ShouldSerializeiso3166() || ShouldSerializesalb() || ShouldSerializegeonames());
         }
     }
 }
