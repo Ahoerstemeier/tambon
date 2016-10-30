@@ -978,12 +978,22 @@ namespace De.AHoerstemeier.Tambon {
         /// Vice province governor (รองผู้ว่าราชการจังหวัด, Rong Phu Wachakan Changwat).
         /// </summary>
         ViceGovernor,
-        
+
+        /// <summary>
+        /// Vice governor of Bangkok (รองผู้ว่าราชการกรุงเทพมหานคร, Rong Phu Wa Rachakan Krung Thep Maha Nakhon).
+        /// </summary>
+        ViceBangkokGovernor,
+
         /// <summary>
         /// Deputy province governor (ปลัดจังหวัด , Palat Changwat).
         /// </summary>
         DeputyGovernor,
-        
+
+        /// <summary>
+        /// Permanent secretary for Bangkok (ปลัดกรุงเทพมหานคร , Palat Krung Thep Maha Nakhon).
+        /// </summary>
+        PermanentSecretaryBangkok,
+
         /// <summary>
         /// District (head) officer (นายอำเภอ [นอภ], Nai Amphoe).
         /// </summary>

@@ -3,8 +3,7 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:t="http://hoerstemeier.com/tambon/"
   targetNamespace="http://hoerstemeier.com/tambon/"
-  attributeFormDefault="unqualified" elementFormDefault="qualified"
->
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
 
   <xs:include schemaLocation="board.xsd" />
   <xs:include schemaLocation="gazette.xsd" />
@@ -269,9 +268,19 @@
           <xs:documentation>Vice province governor (รองผู้ว่าราชการจังหวัด, Rong Phu Wachakan Changwat).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="ViceBangkokGovernor">
+        <xs:annotation>
+          <xs:documentation>Vice governor of Bangkok (รองผู้ว่าราชการกรุงเทพมหานคร, Rong Phu Wa Rachakan Krung Thep Maha Nakhon).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="DeputyGovernor">
         <xs:annotation>
           <xs:documentation>Deputy province governor (ปลัดจังหวัด , Palat Changwat).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PermanentSecretaryBangkok">
+        <xs:annotation>
+          <xs:documentation>Permanent secretary for Bangkok (ปลัดกรุงเทพมหานคร , Palat Krung Thep Maha Nakhon).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="DistrictOfficer">
