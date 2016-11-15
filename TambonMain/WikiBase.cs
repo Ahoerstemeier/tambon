@@ -82,6 +82,7 @@ namespace De.AHoerstemeier.Tambon
 
         public const String PropertyIdIsListOf = "P360";
         public const String PropertyIdDescribedByUrl = "P973";
+        public const String PropertyIdNamedBy = "P138";
 
         // for qualifiers
         public const String PropertyIdPointInTime = "P585";

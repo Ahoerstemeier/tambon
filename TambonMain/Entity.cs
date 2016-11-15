@@ -10,41 +10,73 @@ namespace De.AHoerstemeier.Tambon
     {
         #region fixup serialization
 
+        /// <summary>
+        /// Checks whether <see cref="history"/> needs to be serialized.
+        /// </summary>
+        /// <returns><c>true</c> if history needs to be serialized, <c>false</c> otherwise.</returns>
         public Boolean ShouldSerializehistory()
         {
             return history.Items.Any();
         }
 
+        /// <summary>
+        /// Checks whether <see cref="area"/> needs to be serialized.
+        /// </summary>
+        /// <returns><c>true</c> if area needs to be serialized, <c>false</c> otherwise.</returns>
         public Boolean ShouldSerializearea()
         {
             return area.area.Any() || area.bounding.Any();
         }
 
+        /// <summary>
+        /// Checks whether <see cref="newgeocode"/> needs to be serialized.
+        /// </summary>
+        /// <returns><c>true</c> if new geocode list needs to be serialized, <c>false</c> otherwise.</returns>
         public Boolean ShouldSerializenewgeocode()
         {
             return newgeocode.Any();
         }
 
+        /// <summary>
+        /// Checks whether <see cref="parent"/> needs to be serialized.
+        /// </summary>
+        /// <returns><c>true</c> if parent list needs to be serialized, <c>false</c> otherwise.</returns>
         public Boolean ShouldSerializeparent()
         {
             return parent.Any();
         }
 
+        /// <summary>
+        /// Checks whether <see cref="entitycount"/> needs to be serialized.
+        /// </summary>
+        /// <returns><c>true</c> if entity count needs to be serialized, <c>false</c> otherwise.</returns>
         public Boolean ShouldSerializeentitycount()
         {
             return entitycount.Any();
         }
 
+        /// <summary>
+        /// Checks whether <see cref="codes"/> needs to be serialized.
+        /// </summary>
+        /// <returns><c>true</c> if codes needs to be serialized, <c>false</c> otherwise.</returns>
         public Boolean ShouldSerializecodes()
         {
             return !codes.IsEmpty();
         }
 
+        /// <summary>
+        /// Checks whether <see cref="symbols"/> needs to be serialized.
+        /// </summary>
+        /// <returns><c>true</c> if symbols needs to be serialized, <c>false</c> otherwise.</returns>
         public Boolean ShouldSerializesymbols()
         {
             return !symbols.IsEmpty();
         }
 
+        /// <summary>
+        /// Checks whether <see cref="muban"/> needs to be serialized.
+        /// </summary>
+        /// <returns><c>true</c> if muban needs to be serialized, <c>false</c> otherwise.</returns>
         public Boolean ShouldSerializemuban()
         {
             return (muban != null) && muban.Any();
@@ -52,6 +84,10 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion fixup serialization
 
+        /// <summary>
+        /// Creates a new instance copying all the contents.
+        /// </summary>
+        /// <returns>New copied instance.</returns>
         public Entity Clone()
         {
             // Don't I need a deep value copy?
@@ -1485,6 +1521,26 @@ namespace De.AHoerstemeier.Tambon
                 {
                     newEntities = newEntities.SelectMany(x => flatList.Where(y => y.geocode == x.geocode));
                     result = newEntities.FirstOrDefault(x => !x.IsObsolete);
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Calculates the sub-entity after which the entity was named.
+        /// </summary>
+        /// <returns>Sub-entity after which the entity was named. <c>null</c> if not named after any sub-entity.</returns>
+        public Entity NamedAfterEntity()
+        {
+            Entity result = null;
+            var creation = history.Items.OfType<HistoryCreate>().FirstOrDefault(x => x.status == ChangeStatus.Done || x.status == ChangeStatus.Gazette);
+            var subEntity = entity.FirstOrDefault(x => x.name == this.name || x.name.StripBanOrChumchon() == this.name);
+            if ( creation != null && subEntity != null )
+            {
+                var subEntityReassign = subEntity.history.Items.OfType<HistoryReassign>().FirstOrDefault(x => x.effective == creation.effective);
+                if ( subEntityReassign != null )
+                {
+                    result = subEntity;
                 }
             }
             return result;

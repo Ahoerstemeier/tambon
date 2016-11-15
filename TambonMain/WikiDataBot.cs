@@ -183,6 +183,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set bounding entities", SetShareBorderWith));
             _availableTasks.Add(new WikiDataTaskInfo("Set Inception", SetInception));
             _availableTasks.Add(new WikiDataTaskInfo("Set Described by Url", SetDescribedByUrl));
+            _availableTasks.Add(new WikiDataTaskInfo("Set named after subdivision", SetNamedAfterSubdivision));
         }
 
         #endregion constructor
@@ -1057,6 +1058,43 @@ namespace De.AHoerstemeier.Tambon
                         foreach ( var qualifier in statement.Qualifiers )
                         {
                             qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                        }
+                    }
+                    // TODO: Sources
+                }
+            }
+        }
+
+        private void SetNamedAfterSubdivision(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities.Where(x => x.NamedAfterEntity() != null) )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.NamedBySubdivisionCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong named by subdivision", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetNamedBySubdivision(item, entity, overrideData);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
                     }
                     // TODO: Sources

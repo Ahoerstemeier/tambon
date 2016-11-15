@@ -1126,6 +1126,63 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion DescribedByUrl
 
+        #region NamedBySubdivision
+
+        private WikiDataState NamedBySubdivision(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            Entity namedByEntity = entity.NamedAfterEntity();
+            if ( (namedByEntity != null) && (namedByEntity.wiki != null) && (!String.IsNullOrEmpty(namedByEntity.wiki.wikidata)) )
+            {
+                var parent = namedByEntity.wiki.wikidata;
+                return CheckPropertyValue(item, WikiBase.PropertyIdNamedBy, parent, createStatement, overrideWrongData, out statement);
+            }
+            else
+            {
+                statement = null;
+                return WikiDataState.Unknown;
+            }
+        }
+
+        /// <summary>
+        /// Gets the statement containing the named by administrative unit.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <returns>Statement containing the named by administrative unit.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        public Statement SetNamedBySubdivision(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+            if ( entity == null )
+                throw new ArgumentNullException("entity");
+
+            Statement result;
+            NamedBySubdivision(item, entity, true, overrideWrongData, out result);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Checks if the statement containing the named by administrative unit is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <returns>Statement containing the named by administrative unit.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        public WikiDataState NamedBySubdivisionCorrect(Item item, Entity entity)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+            if ( entity == null )
+                throw new ArgumentNullException("entity");
+
+            Statement dummy;
+            return NamedBySubdivision(item, entity, false, false, out dummy);
+        }
+
+        #endregion NamedBySubdivision
+
         #region IPA
 
         private WikiDataState Ipa(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
