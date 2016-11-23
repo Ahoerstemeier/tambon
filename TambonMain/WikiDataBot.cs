@@ -1054,10 +1054,13 @@ namespace De.AHoerstemeier.Tambon
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
 
-                        _helper.AddLanguageOfWorkQualifier(statement);
-                        foreach ( var qualifier in statement.Qualifiers )
+                        if ( !statement.Qualifiers.Any(x => x.PropertyId.PrefixedId == WikiBase.PropertyIdLanguageOfWork) )
                         {
-                            qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                            _helper.AddLanguageOfWorkQualifier(statement);
+                            foreach ( var qualifier in statement.Qualifiers )
+                            {
+                                qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                            }
                         }
                     }
                     // TODO: Sources
