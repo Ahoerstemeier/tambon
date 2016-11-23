@@ -32,6 +32,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReformSpelling))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpelling))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryRename))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCapital))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryStatus))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
@@ -1309,6 +1310,56 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    /// <summary>
+    /// Change of the capital entity, i.e. move of administrative office to a new location.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryCapital", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HistoryCapital : HistoryEntryBase {
+        
+        private uint oldcapitalgeocodeField;
+        
+        private uint newcapitalgeocodeField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldcapitalgeocode {
+            get {
+                return this.oldcapitalgeocodeField;
+            }
+            set {
+                this.oldcapitalgeocodeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint newcapitalgeocode {
+            get {
+                return this.newcapitalgeocodeField;
+            }
+            set {
+                this.newcapitalgeocodeField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1387,6 +1438,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("alternativename", typeof(HistoryAlternativeName), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(HistoryAreaChange), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(HistoryAreaChangePark), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(HistoryCapital), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(HistoryCreate), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(HistoryCreatePark), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("mergedwith", typeof(HistoryMergedWith), Order=0)]
