@@ -1534,13 +1534,28 @@ namespace De.AHoerstemeier.Tambon
         {
             Entity result = null;
             var creation = history.Items.OfType<HistoryCreate>().FirstOrDefault(x => x.status == ChangeStatus.Done || x.status == ChangeStatus.Gazette);
-            var subEntity = entity.FirstOrDefault(x => x.name == this.name || x.name.StripBanOrChumchon() == this.name);
-            if ( creation != null && subEntity != null )
+            if ( creation != null )
             {
-                var subEntityReassign = subEntity.history.Items.OfType<HistoryReassign>().FirstOrDefault(x => x.effective == creation.effective);
-                if ( subEntityReassign != null )
+                if ( this.type.IsLocalGovernment() )
                 {
-                    result = subEntity;
+                    if ( creation.type == EntityType.TAO )
+                    {
+                        var allTambon = GlobalData.CompleteGeocodeList().FlatList().Where(x => x.type == EntityType.Tambon);
+                        var sameNamedTambon = allTambon.Where(x => x.name == this.name).ToList();
+                        result = sameNamedTambon.FirstOrDefault(x => this.LocalGovernmentAreaCoverage.Any(y => y.geocode == x.geocode));
+                    }
+                }
+                else
+                {
+                    var subEntity = entity.FirstOrDefault(x => x.name == this.name || x.name.StripBanOrChumchon() == this.name);
+                    if ( subEntity != null )
+                    {
+                        var subEntityReassign = subEntity.history.Items.OfType<HistoryReassign>().FirstOrDefault(x => x.effective == creation.effective);
+                        if ( subEntityReassign != null )
+                        {
+                            result = subEntity;
+                        }
+                    }
                 }
             }
             return result;

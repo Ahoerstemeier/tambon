@@ -197,6 +197,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             allEntities = new List<Entity>();
             var entities = GlobalData.CompleteGeocodeList();
+            entities.PropagateObsoleteToSubEntities();
             allEntities.AddRange(entities.FlatList().Where(x => !x.IsObsolete));
             entities.PropagatePostcodeRecursive();
 
