@@ -1054,7 +1054,7 @@ namespace De.AHoerstemeier.Tambon
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
 
-                        if ( !statement.Qualifiers.Any(x => x.PropertyId.PrefixedId == WikiBase.PropertyIdLanguageOfWork) )
+                        if ( !statement.Qualifiers.Any(x => x.PropertyId.PrefixedId.Equals(WikiBase.PropertyIdLanguageOfWork, StringComparison.InvariantCultureIgnoreCase)) )
                         {
                             _helper.AddLanguageOfWorkQualifier(statement);
                             foreach ( var qualifier in statement.Qualifiers )
@@ -1466,6 +1466,22 @@ namespace De.AHoerstemeier.Tambon
                             if ( statement != null )
                             {
                                 statement.save(_helper.GetClaimSaveEditSummary(statement));
+                            }
+
+                            var gazetteReference = history.Items.OfType<GazetteRelated>().FirstOrDefault();
+                            if ( gazetteReference != null )
+                            {
+                                var gazette = GlobalData.AllGazetteAnnouncements.FindAnnouncement(gazetteReference);
+                                if ( gazette != null )
+                                {
+                                    var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(gazette.DownloadUrl.AbsoluteUri));
+                                    var urlReference = statement.CreateReferenceForSnak(snak);
+                                    statement.AddReference(urlReference);
+                                    foreach ( var reference in statement.References )
+                                    {
+                                        reference.Save(_helper.GetReferenceSaveEditSummary(reference));
+                                    }
+                                }
                             }
                         }
 

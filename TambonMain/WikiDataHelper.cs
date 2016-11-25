@@ -642,7 +642,7 @@ namespace De.AHoerstemeier.Tambon
         private Boolean CreateDateQualifierAndReference(Statement statement, String propertyId, HistoryEntryBase entityHistory)
         {
             var result = false;
-            var startDateQualifier = statement.Qualifiers.FirstOrDefault(x => x.PropertyId.PrefixedId == propertyId);
+            var startDateQualifier = statement.Qualifiers.FirstOrDefault(x => x.PropertyId.PrefixedId.Equals(propertyId, StringComparison.InvariantCultureIgnoreCase));
             if ( startDateQualifier == null )
             {
                 startDateQualifier = new Qualifier(statement, SnakType.Value, new EntityId(propertyId), TimeValue.DateValue(entityHistory.effective));
@@ -1082,7 +1082,22 @@ namespace De.AHoerstemeier.Tambon
             }
             else if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
             {
-                stringValue = AmphoeComHelper.AmphoeWebsite(entity.geocode).AbsoluteUri;
+                var website = AmphoeComHelper.AmphoeWebsite(entity.geocode);
+                if ( website == null )
+                {
+                    foreach ( var oldGeocode in entity.OldGeocodes )
+                    {
+                        website = AmphoeComHelper.AmphoeWebsite(oldGeocode);
+                        if ( website != null )
+                        {
+                            break;
+                        }
+                    }
+                }
+                if ( website != null )
+                {
+                    stringValue = website.AbsoluteUri;
+                }
             }
 
             return CheckStringValue(item, WikiBase.PropertyIdDescribedByUrl, stringValue, createStatement, overrideWrongData, out statement);
