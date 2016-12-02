@@ -3421,31 +3421,6 @@
       <codes>
         <post value="90110" />
       </codes>
-      <office type="MunicipalityOffice">
-        <geo:Point>
-          <geo:lat>6.9581</geo:lat>
-          <geo:long>100.3207</geo:long>
-        </geo:Point>
-        <url>http://www.thungtamsao.go.th/</url>
-        <officials>
-          <official title="Mayor" name="วิชัย สาสุนีย์" begin="2011-12-25" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ชอบ บิณกาญจน์" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-          <official title="TAOMayor" name="ชอบ บิณกาญจน์" begin="2003-08-24" end="2007-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2011-12-25" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
-          <term begin="2007-09-30" end="2011-09-29" type="TAO" size="20" />
-          <term begin="2003-08-24" end="2007-08-23" type="TAO" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanMueang" effective="2011-09-30">
-            <meetingreference board="1" number="41" date="2011-06-29" />
-          </statuschange>
-        </history>
-        <areacoverage>
-          <entity geocode="901112" coverage="completely" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="90111201" name="บ้านทุ่งเลียบ" english="Ban Thung Liap" />
       <entity type="Muban" geocode="90111202" name="บ้านทุ่งตำเสา" english="Ban Thung Tam Sao" />
       <entity type="Muban" geocode="90111203" name="บ้านหูแร่" english="Ban Hu Rae" />
@@ -5852,5 +5827,33 @@
         <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
       </create>
     </history>
+  </entity>
+  <entity type="ThesabanMueang" name="ทุ่งตำเสา" english="Thung Tam Sao" geocode="9066" parent="9011" tambon="901112">
+    <wiki wikidata="Q27943194" />
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>6.9581</geo:lat>
+        <geo:long>100.3207</geo:long>
+      </geo:Point>
+      <url lastchecked="2016-12-02">http://www.thungtamsao.go.th/</url>
+      <officials>
+        <official title="Mayor" name="วิชัย สาสุนีย์" begin="2011-12-25" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="ชอบ บิณกาญจน์" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="ชอบ บิณกาญจน์" begin="2003-08-24" end="2007-08-23" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2011-12-25" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
+        <term begin="2007-09-30" end="2011-09-29" type="TAO" size="20" />
+        <term begin="2003-08-24" end="2007-08-23" type="TAO" />
+      </council>
+      <history>
+        <statuschange old="TAO" new="ThesabanMueang" effective="2011-09-30">
+          <meetingreference board="1" number="41" date="2011-06-29" />
+        </statuschange>
+      </history>
+      <areacoverage>
+        <entity geocode="901112" coverage="completely" />
+      </areacoverage>
+    </office>
   </entity>
 </entity>

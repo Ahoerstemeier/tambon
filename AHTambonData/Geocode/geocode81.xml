@@ -188,37 +188,6 @@
     </entity>
     <entity type="Tambon" name="กระบี่น้อย" english="Krabi Noi" geocode="810103">
       <wiki wikidata="Q16025046" />
-      <office type="MunicipalityOffice">
-        <!-- 8.17811, 98.96493 - not sure about actual building -->
-        <dola code="6810107" />
-        <url lastchecked="2014-01-26">http://www.krabinoi.go.th/</url>
-        <url status="offline">http://www.krabinoi.org/</url>
-        <socialweb>
-          <facebook>http://www.facebook.com/krabinoi.go.th</facebook>
-          <googleplus type="location">104111972917934265838</googleplus>
-        </socialweb>
-        <officials>
-          <official title="Mayor" name="โชคนรินทร์ ขาวเหลือง" begin="2012-10-14" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="วัฒนุรงค์ เนื้อเกลี้ยง" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-10-14" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2008-08-31" end="2012-08-30" type="TAO" size="26" />
-          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="26" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31" status="Gazette">
-            <gazetteref volume="131" page="2" issue="พิเศษ 18 ง" date="2014-01-27" />
-            <meetingreference board="2" number="20" date="2012-03-27" />
-          </statuschange>
-          <create effective="1996-03-20" status="Gazette" type="TAO">
-            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="810103" coverage="completely" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="81010301" name="บ้านหน้าชิง" english="Ban Na Ching" />
       <entity type="Muban" geocode="81010302" name="บ้านน้ำจาน" english="Ban Nam Chan" />
       <entity type="Muban" geocode="81010303" name="บ้านโพธิ์เรียง" english="Ban Pho Riang" />
@@ -2885,5 +2854,42 @@
         <gazetteref volume="78" page="2188" issue="87 ง" date="1961-10-24" />
       </create>
     </history>
+  </entity>
+  <entity type="ThesabanTambon" name="กระบี่น้อย" english="Krabi Noi" geocode="8189" parent="8101" tambon="810103">
+    <wiki wikidata="Q27943195" />
+    <office type="MunicipalityOffice">
+      <dola code="6810107" />
+      <geo:Point>
+        <geo:lat>8.1776</geo:lat>
+        <geo:long>98.9648</geo:long>
+      </geo:Point>
+      <url lastchecked="2016-12-02">http://www.krabinoi.go.th/</url>
+      <url status="offline">http://www.krabinoi.org/</url>
+      <socialweb>
+        <facebook>http://www.facebook.com/krabinoi.go.th</facebook>
+        <googleplus type="location">104111972917934265838</googleplus>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="โชคนรินทร์ ขาวเหลือง" begin="2012-10-14" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="วัฒนุรงค์ เนื้อเกลี้ยง" begin="2008-08-31" end="2012-08-30" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-10-14" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2008-08-31" end="2012-08-30" type="TAO" size="26" />
+        <term begin="2004-07-25" end="2008-07-24" type="TAO" size="26" />
+      </council>
+      <history>
+        <statuschange old="TAO" new="ThesabanTambon" effective="2012-08-31" status="Gazette">
+          <gazetteref volume="131" page="2" issue="พิเศษ 18 ง" date="2014-01-27" />
+          <meetingreference board="2" number="20" date="2012-03-27" />
+        </statuschange>
+        <create effective="1996-03-20" status="Gazette" type="TAO">
+          <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+        </create>
+      </history>
+      <areacoverage>
+        <entity geocode="810103" coverage="completely" />
+      </areacoverage>
+    </office>
   </entity>
 </entity>

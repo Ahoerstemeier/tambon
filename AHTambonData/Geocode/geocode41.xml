@@ -6057,27 +6057,6 @@
     </entity>
     <entity type="Tambon" name="นาดี" english="Na Di" geocode="412103">
       <wiki wikidata="Q16963377" />
-      <office type="MunicipalityOffice">
-        <officials>
-          <official title="Mayor" name="เจษฎา พรหมสว่าง" begin="2013-01-12" beginreason="ElectedDirectly" />
-        </officials>
-        <council>
-          <term begin="2013-01-12" type="ThesabanTambon" size="12" />
-          <term begin="2008-11-29" end="2012-11-28" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
-            <meetingreference board="2" number="46" date="2008-06-25" />
-          </statuschange>
-          <create effective="1996-03-20" status="Gazette" type="TAO">
-            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="412103" coverage="completely" />
-        </areacoverage>
-      </office>
       <history>
         <create effective="1988-08-01" status="Gazette" type="Tambon" splitfrom="412102" subdivisions="8" subdivisiontype="Muban">
           <gazetteref volume="105" page="138" issue="143 ง ฉบับพิเศษ" date="1988-08-31" />
@@ -8226,5 +8205,36 @@
         <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
       </create>
     </history>
+  </entity>
+  <entity type="ThesabanTambon" name="นาดี" english="Na Di" geocode="4157" parent="4121" tambon="412103">
+    <wiki wikidata="Q27943197" />
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>17.0735</geo:lat>
+        <geo:long>102.8595</geo:long>
+      </geo:Point>
+      <socialweb>
+        <facebook>https://www.facebook.com/nadeenongsang</facebook>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="เจษฎา พรหมสว่าง" begin="2013-01-12" beginreason="ElectedDirectly" />
+      </officials>
+      <council>
+        <term begin="2013-01-12" type="ThesabanTambon" size="12" />
+        <term begin="2008-11-29" end="2012-11-28" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
+      </council>
+      <history>
+        <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
+          <meetingreference board="2" number="46" date="2008-06-25" />
+        </statuschange>
+        <create effective="1996-03-20" status="Gazette" type="TAO">
+          <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+        </create>
+      </history>
+      <areacoverage>
+        <entity geocode="412103" coverage="completely" />
+      </areacoverage>
+    </office>
   </entity>
 </entity>
