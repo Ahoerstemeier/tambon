@@ -1372,6 +1372,10 @@ namespace De.AHoerstemeier.Tambon {
         
         private EntityType newField;
         
+        private uint parentField;
+        
+        private bool parentFieldSpecified;
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -1403,6 +1407,40 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.newField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint parent {
+            get {
+                return this.parentField;
+            }
+            set {
+                this.parentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool parentSpecified {
+            get {
+                return this.parentFieldSpecified;
+            }
+            set {
+                this.parentFieldSpecified = value;
             }
         }
     }

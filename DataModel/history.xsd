@@ -37,6 +37,11 @@
             <xs:documentation>Type of the entity after the change.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
+        <xs:attribute name="parent" type="xs:unsignedInt" use="optional">
+          <xs:annotation>
+            <xs:documentation>Geocode of the parent entity (only for King Amphoe).</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

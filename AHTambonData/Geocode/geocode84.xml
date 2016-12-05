@@ -1348,7 +1348,7 @@
       <statuschange effective="1971-11-16" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="88" page="745" issue="123 ก" date="1971-11-16" />
       </statuschange>
-      <create effective="1969-03-24" status="Gazette" type="KingAmphoe" splitfrom="8402" subdivisions="2" subdivisiontype="Tambon">
+      <create effective="1969-03-24" status="Gazette" type="KingAmphoe" splitfrom="8402" parent="8402" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="86" page="1206" issue="27 ง" date="1969-04-01" />
       </create>
     </history>
@@ -1753,7 +1753,7 @@
       <statuschange effective="1977-04-12" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="94" page="326" issue="31 ก" date="1977-04-12" />
       </statuschange>
-      <create effective="1970-10-01" status="Gazette" type="KingAmphoe" splitfrom="8404" subdivisions="2" subdivisiontype="Tambon">
+      <create effective="1970-10-01" status="Gazette" type="KingAmphoe" splitfrom="8404" parent="8404" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="87" page="2790" issue="90 ง" date="1970-09-29" />
       </create>
     </history>
@@ -1977,10 +1977,10 @@
       <area value="1010.9" unit="km²" date="2000" comment="Census2000" />
     </area>
     <history>
-      <rename effective="1938-11-14" status="Gazette" name="ไชยา" oldname="เมืองไชยา">
+      <rename effective="1938-11-14" status="Gazette" name="ไชยา" oldname="เมืองไชยา" english="Chaiya" oldenglish="Mueang Chaiya">
         <gazetteref volume="55" page="658" issue="0 ก" date="1938-11-14" />
       </rename>
-      <rename effective="1915-08-08" status="Gazette" name="เมืองไชยา" oldname="พุมเรียง">
+      <rename effective="1915-08-08" status="Gazette" name="เมืองไชยา" oldname="พุมเรียง" english="Mueang Chaiya" oldenglish="Phumriang">
         <gazetteref volume="32" page="145" issue="0 ก" date="1915-08-08" />
       </rename>
     </history>
@@ -2314,13 +2314,13 @@
       <statuschange effective="1956-06-06" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="73" page="657" issue="46 ก" date="1956-06-05" />
       </statuschange>
-      <create effective="1948-01-01" status="Gazette" type="KingAmphoe" splitfrom="8406" subdivisions="5" subdivisiontype="Tambon">
+      <create effective="1948-01-01" status="Gazette" type="KingAmphoe" splitfrom="8406" parent="8406" subdivisions="5" subdivisiontype="Tambon">
         <gazetteref volume="64" page="3188" issue="60 ง" date="1947-12-09" />
       </create>
       <abolished type="KingAmphoe" mergeto="8406" comment="named ประสงค์">
         <gazetteref volume="36" page="120" issue="0 ก" date="1919-06-29" />
       </abolished>
-      <statuschange old="Amphoe" new="KingAmphoe" effective="1909-05-02" comment="named ประสงค์">
+      <statuschange old="Amphoe" new="KingAmphoe" effective="1909-05-02" parent="8406" comment="named ประสงค์">
         <gazetteref volume="26" page="137" issue="0 ง" date="1909-05-02" />
       </statuschange>
       <reassign type="Amphoe" effective="1906-09-16" status="Gazette" oldparent="0" newparent="84" comment="Old owner Lang Suan province">
@@ -3329,6 +3329,12 @@
       <statuschange effective="1971-11-16" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="88" page="745" issue="123 ก" date="1971-11-16" />
       </statuschange>
+      <statuschange effective="1910-07-17" status="Gazette" old="Amphoe" new="KingAmphoe" parent="8408">
+        <gazetteref volume="27" page="688" issue="0 ง" date="1910-07-17" />
+      </statuschange>
+      <reassign effective="1906-07-29" status="Gazette" oldparent="80" newparent="84">
+        <gazetteref volume="23" page="408" issue="18" date="1906-07-29" />
+      </reassign>
     </history>
     <entity type="Tambon" name="พนม" english="Phanom" geocode="841001">
       <wiki wikidata="Q15977536" />
@@ -3548,7 +3554,7 @@
       <statuschange effective="1938-08-01" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="55" page="1321" issue="0 ง" date="1938-08-01" />
       </statuschange>
-      <create effective="1908-08-09" status="Gazette" type="KingAmphoe" splitfrom="8406 8417" subdivisions="6" subdivisiontype="Tambon">
+      <create effective="1908-08-09" status="Gazette" type="KingAmphoe" splitfrom="8406 8417" parent="8406" subdivisions="6" subdivisiontype="Tambon">
         <gazetteref volume="25" page="569" issue="19" date="1908-08-09" />
       </create>
     </history>
@@ -4303,7 +4309,7 @@
       <statuschange effective="1990-05-21" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="107" page="1" issue="83 ก ฉบับพิเศษ" date="1990-05-21" />
       </statuschange>
-      <create effective="1976-04-15" status="Gazette" type="KingAmphoe" splitfrom="8412" subdivisions="2" subdivisiontype="Tambon">
+      <create effective="1976-04-15" status="Gazette" type="KingAmphoe" splitfrom="8412" parent="8412" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="93" page="857" issue="58 ง" date="1976-04-13" />
       </create>
     </history>
@@ -4508,7 +4514,7 @@
       <statuschange effective="1974-03-28" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="91" page="30" issue="54 ก ฉบับพิเศษ" date="1974-03-28" />
       </statuschange>
-      <create effective="1970-12-15" status="Gazette" type="KingAmphoe" splitfrom="8412" subdivisions="2" subdivisiontype="Tambon">
+      <create effective="1970-12-15" status="Gazette" type="KingAmphoe" splitfrom="8412" parent="8412" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="87" page="3512" issue="116 ง" date="1970-12-15" />
       </create>
     </history>
@@ -4779,7 +4785,7 @@
       <statuschange effective="1971-11-16" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="88" page="745" issue="123 ก" date="1971-11-16" />
       </statuschange>
-      <create effective="1968-03-10" status="Gazette" type="KingAmphoe" splitfrom="8412" subdivisions="2" subdivisiontype="Tambon">
+      <create effective="1968-03-10" status="Gazette" type="KingAmphoe" splitfrom="8412" parent="8412" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="85" page="797" issue="24 ง" date="1968-03-12" />
       </create>
     </history>
@@ -4999,7 +5005,7 @@
       <statuschange effective="1958-07-22" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="75" page="321" issue="55 ก" date="1958-07-22" />
       </statuschange>
-      <statuschange effective="1938-08-01" status="Gazette" old="Amphoe" new="KingAmphoe">
+      <statuschange effective="1938-08-01" status="Gazette" old="Amphoe" new="KingAmphoe" parent="8412">
         <gazetteref volume="55" page="1321" issue="0 ง" date="1938-08-01" />
       </statuschange>
       <reassign effective="1906-07-29" status="Gazette" oldparent="80" newparent="84">
@@ -6117,7 +6123,7 @@
       <statuschange effective="1994-07-03" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="111" page="32" issue="21 ก" date="1994-06-03" />
       </statuschange>
-      <create effective="1981-06-05" status="Gazette" type="KingAmphoe" splitfrom="8416" subdivisions="2" subdivisiontype="Tambon">
+      <create effective="1981-06-05" status="Gazette" type="KingAmphoe" splitfrom="8416" parent="8416" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="98" page="754" issue="42 ง" date="1981-03-17" />
       </create>
     </history>
@@ -6324,7 +6330,7 @@
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
       </statuschange>
-      <create effective="1992-04-01" status="Gazette" type="KingAmphoe" splitfrom="8408" subdivisions="2" subdivisiontype="Tambon">
+      <create effective="1992-04-01" status="Gazette" type="KingAmphoe" splitfrom="8408" parent="8408" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="109" page="19" issue="53 ง ฉบับพิเศษ" date="1992-04-22" />
       </create>
     </history>
