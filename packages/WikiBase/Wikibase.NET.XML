@@ -1,47 +1,9 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Wikibase.NET</name>
+        <name>Wikibase</name>
     </assembly>
     <members>
-        <member name="T:Wikibase.Http">
-            <summary>
-            Http related code
-            </summary>
-        </member>
-        <member name="M:Wikibase.Http.#ctor(System.String)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="userAgent">The user agent</param>
-        </member>
-        <member name="M:Wikibase.Http.get(System.String)">
-            <summary>
-            Performs a http get request.
-            </summary>
-            <param name="url">The url</param>
-            <returns>The response</returns>
-        </member>
-        <member name="M:Wikibase.Http.post(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
-            <summary>
-            Performs a http post request.
-            </summary>
-            <param name="url">The url</param>
-            <param name="postFields">The post fields</param>
-            <returns>The response</returns>
-        </member>
-        <member name="M:Wikibase.Http.buildQuery(System.Collections.Generic.Dictionary{System.String,System.String})">
-            <summary>
-            Builds a http query string.
-            </summary>
-            <param name="fields">The fields</param>
-            <returns>The query string</returns>
-        </member>
-        <member name="P:Wikibase.Http.UserAgent">
-            <summary>
-            The user agent
-            </summary>
-        </member>
         <member name="T:Wikibase.Api">
             <summary>
             Base api class
@@ -49,46 +11,51 @@
         </member>
         <member name="M:Wikibase.Api.#ctor(System.String)">
             <summary>
-            Constructor
+            Constructor.
             </summary>
-            <param name="wiki">The base url of the wiki like "http://www.wikidata.org"</param>
+            <param name="wiki">The base url of the wiki like "http://www.wikidata.org".</param>
         </member>
         <member name="M:Wikibase.Api.#ctor(System.String,System.String)">
             <summary>
-            Constructor
+            Constructor.
             </summary>
-            <param name="wiki">The base url of the wiki like "https://www.wikidata.org"</param>
-            <param name="userAgent">The user agent</param>
+            <param name="wiki">The base url of the wiki like "https://www.wikidata.org".</param>
+            <param name="userAgent">The user agent.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="userAgent"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="wiki"/> is empty or <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Api.get(System.Collections.Generic.Dictionary{System.String,System.String})">
             <summary>
             Perform a http get request to the api.
             </summary>
-            <param name="parameters">The parameters</param>
-            <returns>The result</returns>
+            <param name="parameters">The parameters.</param>
+            <returns>The result.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="parameters"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Api.post(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String})">
             <summary>
             Perform a http post request to the api.
             </summary>
-            <param name="parameters">The parameters</param>
-            <param name="postFields">The post fields</param>
-            <returns>The result</returns>
+            <param name="parameters">The parameters.</param>
+            <param name="postFields">The post fields.</param>
+            <returns>The result.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="parameters"/> or <paramref name="postFields"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Api.getContinueParam(MinimalJson.JsonObject)">
             <summary>
             Get the continuation parameter of a query.
             </summary>
-            <param name="result">The result of the query</param>
-            <returns>An array containing the continuation parameter key at 0 and the continuation parameter value at 1</returns>
+            <param name="result">The result of the query.</param>
+            <returns>An array containing the continuation parameter key at 0 and the continuation parameter value at 1.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="result"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Api.login(System.String,System.String)">
             <summary>
             Do login.
             </summary>
-            <param name="username">The username</param>
-            <param name="password">The password</param>
-            <returns>If the user is logged in successfully</returns>
+            <param name="userName">The username.</param>
+            <param name="password">The password.</param>
+            <returns><c>true</c> if the user is logged in successfully, <c>false</c> otherwise.</returns>
         </member>
         <member name="M:Wikibase.Api.logout">
             <summary>
@@ -99,267 +66,949 @@
             <summary>
             Return the edit token for the current user.
             </summary>
-            <returns>The edit token</returns>
+            <returns>The edit token.</returns>
+        </member>
+        <member name="P:Wikibase.Api.lastEditTimestamp">
+            <summary>
+            Gets the sets the time stamp of the last API action.
+            </summary>
+            <value>The time stamp of the last API action.</value>
+        </member>
+        <member name="P:Wikibase.Api.editLaps">
+            <summary>
+            Gets the sets the time lap between two consecutive API actions in milliseconds.
+            </summary>
+            <value>The time lap in milliseconds.</value>
         </member>
         <member name="P:Wikibase.Api.botEdits">
             <summary>
-            If bot edits should be used
+            Gets or sets if bot edits should be used.
             </summary>
+            <value><c>true</c> if bot edits are used, <c>false</c> otherwise.</value>
         </member>
         <member name="P:Wikibase.Api.editlimit">
             <summary>
-            If the edits should be limited
+            Gets or sets if the edits should be limited.
+            </summary>
+            <value><c>true</c> if the edits are limited, <c>false</c> otherwise.</value>
+        </member>
+        <member name="T:Wikibase.ApiException">
+            <summary>
+            Specific exception raised by the the wikibase API.
             </summary>
         </member>
-        <member name="T:Wikibase.WikibaseApi">
+        <member name="M:Wikibase.ApiException.#ctor">
             <summary>
-            Base class for the Wikibase API.
+            Creates a new instance of <see cref="T:Wikibase.ApiException"/>.
             </summary>
         </member>
-        <member name="M:Wikibase.WikibaseApi.#ctor(System.String)">
+        <member name="M:Wikibase.ApiException.#ctor(System.String)">
             <summary>
-            Constructor
+            Creates a new instance of <see cref="T:Wikibase.ApiException"/> with the given <paramref name="message"/>.
             </summary>
-            <param name="wiki">he base url of the wiki like "https://www.wikidata.org"</param>
+            <param name="message">Exception message.</param>
         </member>
-        <member name="M:Wikibase.WikibaseApi.#ctor(System.String,System.String)">
+        <member name="T:Wikibase.Claim">
             <summary>
-            Constructor
+            A claim
             </summary>
-            <param name="wiki">The base url of the wiki like "https://www.wikidata.org"</param>
-            <param name="userAgent">The user agent</param>
         </member>
-        <member name="M:Wikibase.WikibaseApi.getEntitiesFromIds(System.String[],System.String[])">
+        <member name="M:Wikibase.Claim.#ctor(Wikibase.Entity,MinimalJson.JsonObject)">
             <summary>
-            Get the data for the entities in the given languages from the provided ids.
+            Creates a new instance.
             </summary>
-            <param name="ids">The ids</param>
-            <param name="languages">The languages</param>
-            <returns>The list of entities</returns>
+            <param name="entity">Entity to which the claim belongs.</param>
+            <param name="data">JSon data to be parsed.</param>
         </member>
-        <member name="M:Wikibase.WikibaseApi.getEntitesFromSitelinks(System.String[],System.String[],System.String[])">
+        <member name="M:Wikibase.Claim.FillData(MinimalJson.JsonObject)">
             <summary>
-            Get the data for the entities in the given languages from the provided sites and titles.
+            Parses the <paramref name="data"/> and adds the results to this instance.
             </summary>
-            <param name="sites">The sites</param>
-            <param name="titles">The titles</param>
-            <param name="languages">The languaes</param>
-            <returns>The list of entities</returns>
+            <param name="data"><see cref="T:MinimalJson.JsonObject"/> to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
         </member>
-        <member name="M:Wikibase.WikibaseApi.parseGetEntitiesApiResponse(MinimalJson.JsonObject)">
+        <member name="M:Wikibase.Claim.newFromSnak(Wikibase.Entity,Wikibase.Snak,System.String)">
             <summary>
-            Create a list of entities form an api response.
+            Create a claim from a <see cref="T:Wikibase.Snak"/>.
             </summary>
-            <param name="result">The result of the api request</param>
-            <returns>The list of entities</returns>
+            <param name="entity">Entity to which the claim should be added.</param>
+            <param name="snak">Snak to be parsed.</param>
+            <param name="type">Type of snak.</param>
+            <returns>Newly created claim.</returns>
         </member>
-        <member name="M:Wikibase.WikibaseApi.editEntity(System.String,MinimalJson.JsonObject,System.Int32,System.String)">
+        <member name="M:Wikibase.Claim.save(System.String)">
             <summary>
-            Edit an entity.
+            Saves the claim to the server.
             </summary>
-            <param name="id">The id of the entity</param>
-            <param name="data">The serialized data of the entity</param>
-            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
-            <param name="summary">The summary for the change</param>
-            <returns>The result</returns>
+            <param name="summary">Edit summary.</param>
         </member>
-        <member name="M:Wikibase.WikibaseApi.createEntity(System.String,MinimalJson.JsonObject,System.Int32,System.String)">
+        <member name="M:Wikibase.Claim.updateDataFromResult(MinimalJson.JsonObject)">
             <summary>
-            Create an entity.
+            Updates instance from API call result.
             </summary>
-            <param name="type">The type of the entity</param>
-            <param name="data">The serialized data of the entity</param>
-            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
-            <param name="summary">The summary for the change</param>
-            <returns>The result</returns>
+            <param name="result">Json result.</param>
         </member>
-        <member name="M:Wikibase.WikibaseApi.createClaim(System.String,System.String,System.String,Wikibase.DataValues.DataValue,System.Int32,System.String)">
+        <member name="M:Wikibase.Claim.deleteAndSave(System.String)">
             <summary>
-            Create a claim.
+            Deletes the claim both within its <see cref="P:Wikibase.Claim.entity"/> as well as on the server.
             </summary>
-            <param name="entity">The id of the entity you are adding the claim to</param>
-            <param name="snakType">The type of the snak</param>
-            <param name="property">The id of the snak property</param>
-            <param name="value">The value of the snak when creating a claim with a snak that has a value</param>
-            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
-            <param name="summary">The summary for the change</param>
-            <returns>The result</returns>
+            <param name="summary">The edit summary.</param>
         </member>
-        <member name="M:Wikibase.WikibaseApi.setClaimValue(System.String,System.String,Wikibase.DataValues.DataValue,System.Int32,System.String)">
+        <member name="M:Wikibase.Claim.IsAboutProperty(System.String)">
             <summary>
-            Set a claim value.
+            Checks whether the claim is about a given property.
             </summary>
-            <param name="claim">GUID identifying the claim</param>
-            <param name="snakType">The type of the snak</param>
-            <param name="value">The value of the snak when creating a claim with a snak that has a value</param>
-            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
-            <param name="summary">The summary for the change</param>
-            <returns>The result</returns>
+            <param name="value">Property identifier string.</param>
+            <returns><c>true</c> if is about the property, <c>false</c> otherwise.</returns>
         </member>
-        <member name="M:Wikibase.WikibaseApi.removeClaims(System.String[],System.Int32,System.String)">
+        <member name="P:Wikibase.Claim.entity">
             <summary>
-            Remove the claims.
+            Gets the entity.
             </summary>
-            <param name="claims">The claims</param>
-            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
-            <param name="summary">The summary for the change</param>
-            <returns>The result</returns>
+            <value>The entitiy.</value>
         </member>
-        <member name="M:Wikibase.WikibaseApi.setReference(System.String,MinimalJson.JsonObject,System.String,System.Int32,System.String)">
+        <member name="P:Wikibase.Claim.id">
             <summary>
-            Set a reference.
+            Gets the id.
             </summary>
-            <param name="statement">GUID identifying the statement</param>
-            <param name="snaks">The snaks to set the reference to. Array with property ids pointing to arrays containing the snaks for that property</param>
-            <param name="reference">A hash of the reference that should be updated. When not provided, a new reference is created</param>
-            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
-            <param name="summary">The summary for the change</param>
-            <returns>The result</returns>
+            <value>The id.</value>
+            <remarks>Consists of the property id plus an internal identifier. Is <c>null</c> if not saved to server yet.</remarks>
         </member>
-        <member name="M:Wikibase.WikibaseApi.removeReferences(System.String,System.String[],System.Int32,System.String)">
+        <member name="P:Wikibase.Claim.internalId">
             <summary>
-            Remove the references.
+            Gets the id used internally.
             </summary>
-            <param name="statement">GUID identifying the statement</param>
-            <param name="references">The hashes of the references that should be removed</param>
-            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
-            <param name="summary">The summary for the change</param>
-            <returns>The result</returns>
+            <value>The internally used id.</value>
+            <remarks>Consists of the property id plus an internal identifier. It is equal to <see cref="P:Wikibase.Claim.id"/> if the claim was parsed from server results.</remarks>
         </member>
-        <member name="M:Wikibase.WikibaseApi.editAction(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Int32,System.String)">
+        <member name="P:Wikibase.Claim.Qualifiers">
             <summary>
-            Perform an edit action.
+            Gets the collection of qualifiers assigned to the statement.
             </summary>
-            <param name="parameters">The parameters</param>
-            <param name="postFields">The post fields</param>
-            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
-            <param name="summary">The summary for the change</param>
-            <returns>The result</returns>
+            <value>Collection of qualifiers.</value>
+        </member>
+        <member name="P:Wikibase.Claim.mainSnak">
+            <summary>
+            The main snak
+            </summary>
+        </member>
+        <member name="T:Wikibase.DataValues.DataValue">
+            <summary>
+            Abstract base class for a data value.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.DataValue.ValueTypeJsonName">
+            <summary>
+            Json name for the datavalue type.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.DataValue.ValueJsonName">
+            <summary>
+            Json name for the datavalue content.
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.getHash">
+            <summary>
+            Get the hash.
+            </summary>
+            <returns>The hash.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.Equals(System.Object)">
+             <summary>
+             Indicates whether the current object is equal to another object of the same
+             type.
+            </summary>
+             <param name="other">An object to compare with this object.</param>
+             <returns><c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.GetHashCode">
+            <summary>
+            Gets a hash code for the current object.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.ToString">
+            <summary>
+            Converts the instance to a string.
+            </summary>
+            <returns>String representation of the instance.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.JsonName">
+            <summary>
+            Get the type of the data value.
+            </summary>
+            <returns>Data type identifier.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.Encode">
+            <summary>
+            Encode the value part of the data value to json.
+            </summary>
+            <returns>The json value.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.DataValue.fullEncode">
+            <summary>
+            Encode the data value to json.
+            </summary>
+            <returns>The json value.</returns>
+        </member>
+        <member name="T:Wikibase.DataValues.DataValueFactory">
+            <summary>
+            Factory to create the correct <see cref="T:Wikibase.DataValues.DataValue"/> from a <see cref="T:MinimalJson.JsonObject"/>.
+            </summary>
+        </member>
+        <member name="T:Wikibase.DataValues.EntityIdValue">
+            <summary>
+            Data value for entity ids
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.EntityIdValue.TypeJsonName">
+            <summary>
+            The identifier of this data type in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.EntityIdValue.NumericIdJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.EntityIdValue.NumericId"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.EntityIdValue.EntityTypeJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.EntityIdValue.EntityType"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.EntityIdValue.#ctor(Wikibase.EntityType,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="entityType">The entity type ("item").</param>
+            <param name="numericId">The numeric id.</param>
+        </member>
+        <member name="M:Wikibase.DataValues.EntityIdValue.#ctor(Wikibase.EntityId)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="entityId">The entity id.</param>
+        </member>
+        <member name="M:Wikibase.DataValues.EntityIdValue.#ctor(MinimalJson.JsonValue)">
+            <summary>
+            Creates a new instance by parsing a JsonValue.
+            </summary>
+            <param name="value">JSonValue to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> contains data which cannot be parsed.</exception>
+        </member>
+        <member name="M:Wikibase.DataValues.EntityIdValue.JsonName">
+            <summary>
+            Get the type of the data value.
+            </summary>
+            <returns>Data type identifier.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.EntityIdValue.Encode">
+            <summary>
+            Encode the value part of the data value to json.
+            </summary>
+            <returns>The json value</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.EntityIdValue.ToString">
+            <summary>
+            Converts the instance to a string.
+            </summary>
+            <returns>String representation of the instance.</returns>
+        </member>
+        <member name="P:Wikibase.DataValues.EntityIdValue.EntityType">
+            <summary>
+            Gets or sets the entity type
+            </summary>
+            <value>The entity type.</value>
+            <remarks>Should be "item" in most cases.</remarks>
+        </member>
+        <member name="P:Wikibase.DataValues.EntityIdValue.NumericId">
+            <summary>
+            Gets or sets the numeric id.
+            </summary>
+            <value>The numeric id.</value>
+        </member>
+        <member name="T:Wikibase.DataValues.Globe">
+            <summary>
+            Possible values for the <see cref="P:Wikibase.DataValues.GlobeCoordinateValue.Globe"/>.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.Globe.Unknown">
+            <summary>
+            Unknown globe value.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.Globe.Earth">
+            <summary>
+            Earth.
+            </summary>
+        </member>
+        <member name="T:Wikibase.DataValues.GlobeCoordinateValue">
+            <summary>
+            Data value for globe coordinates
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.GlobeCoordinateValue.TypeJsonName">
+            <summary>
+            The identifier of this data type in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.GlobeCoordinateValue.LatitudeJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.GlobeCoordinateValue.Latitude"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.GlobeCoordinateValue.LongitudeJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.GlobeCoordinateValue.Longitude"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.GlobeCoordinateValue.AltitudeJsonName">
+            <summary>
+            The name of the deprecated altitude property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.GlobeCoordinateValue.PrecisionJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.GlobeCoordinateValue.Precision"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.GlobeCoordinateValue.GlobeJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.GlobeCoordinateValue.Globe"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.GlobeCoordinateValue.#ctor(System.Double,System.Double,System.Double,Wikibase.DataValues.Globe)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="latitude">The latitude.</param>
+            <param name="longitude">The longitude.</param>
+            <param name="precision">The precision.</param>
+            <param name="globe">The globe on which the location resides.</param>
+        </member>
+        <member name="M:Wikibase.DataValues.GlobeCoordinateValue.#ctor(MinimalJson.JsonValue)">
+            <summary>
+            Parses a <see cref="T:MinimalJson.JsonValue"/> to a globe coordinate value.
+            </summary>
+            <param name="value"><see cref="T:MinimalJson.JsonValue"/> to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.DataValues.GlobeCoordinateValue.JsonName">
+            <summary>
+            Gets the type identifier of the type at server side.
+            </summary>
+            <returns>The type identifier.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.GlobeCoordinateValue.Encode">
+            <summary>
+            Encodes as a <see cref="T:MinimalJson.JsonValue"/>.
+            </summary>
+            <returns>Encoded class.</returns>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Wikibase.DataValues.GlobeCoordinateValue.Globe"/> is <see cref="F:Wikibase.DataValues.Globe.Unknown"/>.</exception>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.Latitude">
+            <summary>
+            Gets or sets the latitude.
+            </summary>
+            <value>The latitude.</value>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.Longitude">
+            <summary>
+            Gets or sets the longitude.
+            </summary>
+            <value>The longitude.</value>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.Precision">
+            <summary>
+            Gets or sets the precision.
+            </summary>
+            <value>The precision.</value>
+        </member>
+        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.Globe">
+            <summary>
+            Gets or sets the globe on which the location resides.
+            </summary>
+            <value>The globe on which the location resides.</value>
+        </member>
+        <member name="T:Wikibase.DataValues.MonolingualTextValue">
+            <summary>
+            Encapsulates the monolingual text value type.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.MonolingualTextValue.TypeJsonName">
+            <summary>
+            The identifier of this data type in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.MonolingualTextValue.TextJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.MonolingualTextValue.Text"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.MonolingualTextValue.LanguageJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.MonolingualTextValue.Language"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.MonolingualTextValue.#ctor(MinimalJson.JsonValue)">
+            <summary>
+            Parses a <see cref="T:MinimalJson.JsonValue"/> to a <see cref="T:Wikibase.DataValues.MonolingualTextValue"/>
+            </summary>
+            <param name="value"><see cref="T:MinimalJson.JsonValue"/> to be parsed.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.DataValues.MonolingualTextValue.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new monolingual text value for the given text and language.
+            </summary>
+            <param name="language">Language.</param>
+            <param name="text">Text.</param>
+        </member>
+        <member name="M:Wikibase.DataValues.MonolingualTextValue.JsonName">
+            <summary>
+            Gets the data type identifier.
+            </summary>
+            <returns>Data type identifier.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.MonolingualTextValue.Encode">
+            <summary>
+            Encodes the instance in a <see cref="T:MinimalJson.JsonValue"/>.
+            </summary>
+            <returns>Encoded instance.</returns>
+        </member>
+        <member name="P:Wikibase.DataValues.MonolingualTextValue.Text">
+            <summary>
+            Gets or sets the text value.
+            </summary>
+            <value>The text value.</value>
+        </member>
+        <member name="P:Wikibase.DataValues.MonolingualTextValue.Language">
+            <summary>
+            Gets or sets the language value.
+            </summary>
+            <value>The language value.</value>
+        </member>
+        <member name="T:Wikibase.DataValues.QuantityValue">
+            <summary>
+            Encapsulates the quantity value type.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.QuantityValue.TypeJsonName">
+            <summary>
+            The identifier of this data type in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.QuantityValue.UpperBoundJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.QuantityValue.UpperBound"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.QuantityValue.LowerBoundJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.QuantityValue.LowerBound"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.QuantityValue.AmountJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.QuantityValue.Amount"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.QuantityValue.UnitJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.QuantityValue.Unit"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.QuantityValue.#ctor(System.Int64)">
+            <summary>
+            Creates a new quantity value for a exact integer value.
+            </summary>
+            <param name="value">Integer value.</param>
+        </member>
+        <member name="M:Wikibase.DataValues.QuantityValue.#ctor(MinimalJson.JsonValue)">
+            <summary>
+            Parses a <see cref="T:MinimalJson.JsonValue"/> to a <see cref="T:Wikibase.DataValues.QuantityValue"/>
+            </summary>
+            <param name="value"><see cref="T:MinimalJson.JsonValue"/> to be parsed.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.DataValues.QuantityValue.JsonName">
+            <summary>
+            Gets the data type identifier.
+            </summary>
+            <returns>Data type identifier.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.QuantityValue.Encode">
+            <summary>
+            Encodes the instance in a <see cref="T:MinimalJson.JsonValue"/>.
+            </summary>
+            <returns>Encoded instance.</returns>
+        </member>
+        <member name="P:Wikibase.DataValues.QuantityValue.Amount">
+            <summary>
+            Gets or sets the string value.
+            </summary>
+            <value>The string value.</value>
+        </member>
+        <member name="P:Wikibase.DataValues.QuantityValue.Unit">
+            <summary>
+            Gets or sets the unit of measurement.
+            </summary>
+            <value>The unit of measurement.</value>
+            <remarks><c>null</c> refers to a dimensionless quantity.</remarks>
+        </member>
+        <member name="P:Wikibase.DataValues.QuantityValue.UpperBound">
+            <summary>
+            Gets or sets the string value.
+            </summary>
+            <value>The string value.</value>
+        </member>
+        <member name="P:Wikibase.DataValues.QuantityValue.LowerBound">
+            <summary>
+            Gets or sets the string value.
+            </summary>
+            <value>The string value.</value>
+        </member>
+        <member name="T:Wikibase.DataValues.StringValue">
+            <summary>
+            Encapsulates the string value type.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.StringValue.TypeJsonName">
+            <summary>
+            The identifier of this data type in the serialized json object.
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.StringValue.#ctor(System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:Wikibase.DataValues.StringValue"/> with the given value.
+            </summary>
+            <param name="value">Value to be added.</param>
+        </member>
+        <member name="M:Wikibase.DataValues.StringValue.#ctor(MinimalJson.JsonValue)">
+            <summary>
+            Parses a <see cref="T:MinimalJson.JsonValue"/> to a <see cref="T:Wikibase.DataValues.StringValue"/>
+            </summary>
+            <param name="value"><see cref="T:MinimalJson.JsonValue"/> to be parsed.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.DataValues.StringValue.JsonName">
+            <summary>
+            Gets the data type identifier.
+            </summary>
+            <returns>Data type identifier.</returns>
+        </member>
+        <member name="M:Wikibase.DataValues.StringValue.Encode">
+            <summary>
+            Encodes the instance in a <see cref="T:MinimalJson.JsonValue"/>.
+            </summary>
+            <returns>Encoded instance.</returns>
+        </member>
+        <member name="P:Wikibase.DataValues.StringValue.Value">
+            <summary>
+            Gets or sets the string value.
+            </summary>
+            <value>The string value.</value>
+        </member>
+        <member name="T:Wikibase.DataValues.TimeValuePrecision">
+            <summary>
+            The precision for a <see cref="T:Wikibase.DataValues.TimeValue"/>.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.GigaYear">
+            <summary>
+            Gigayear, 1 billion years.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.HundredMegaYears">
+            <summary>
+            100 megayears, 100 million years.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.TenMegaYears">
+            <summary>
+            10 megayears, 10 million years.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.MegaYear">
+            <summary>
+            1 megayear, 1 million years.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.HundredKiloYears">
+            <summary>
+            100 kiloyears, 100,000 years.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.TenKiloYears">
+            <summary>
+            10 kiloyears, 10,000 years.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Millenium">
+            <summary>
+            1 kiloyear, 1,000 years or one millenium.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Century">
+            <summary>
+            100 years or one century.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Decade">
+            <summary>
+            10 years or one decade.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Year">
+            <summary>
+            1 year.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Month">
+            <summary>
+            1 month.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Day">
+            <summary>
+            1 day.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Hour">
+            <summary>
+            1 hour.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Minute">
+            <summary>
+            1 minute.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValuePrecision.Second">
+            <summary>
+            1 second.
+            </summary>
+        </member>
+        <member name="T:Wikibase.DataValues.CalendarModel">
+            <summary>
+            The calendar models supported by WikiData.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.CalendarModel.Unknown">
+            <summary>
+            Undefined calendar model.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.CalendarModel.GregorianCalendar">
+            <summary>
+            Gregorian calendar, proleptic if necessary.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.CalendarModel.JulianCalendar">
+            <summary>
+            Julian Calendar.
+            </summary>
+        </member>
+        <member name="T:Wikibase.DataValues.TimeValue">
+            <summary>
+            Data value for times
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValue.TypeJsonName">
+            <summary>
+            The identifier of this data type in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValue.CalendarModelJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.TimeValue.DisplayCalendarModel"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValue.TimeJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.TimeValue.FullValue"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValue.TimeZoneJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.TimeValue.TimeZoneOffset"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValue.BeforeJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.TimeValue.Before"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValue.AfterJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.TimeValue.After"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.DataValues.TimeValue.PrecisionJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.DataValues.TimeValue.Precision"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="M:Wikibase.DataValues.TimeValue.#ctor(System.String,System.Int32,System.Int32,System.Int32,Wikibase.DataValues.TimeValuePrecision,Wikibase.DataValues.CalendarModel)">
+            <summary>
+            Creates a new time value with the given settings.
+            </summary>
+            <param name="time">Time value in ISO8601 format (with 11 year digits).</param>
+            <param name="timeZoneOffset">Time zone offset in minutes.</param>
+            <param name="before">Number of <paramref name="precision">units</paramref> the actual time value could be before the given time value.</param>
+            <param name="after">Number of <paramref name="precision">units</paramref> the actual time value could be after the given time value.</param>
+            <param name="precision">Date/time precision.</param>
+            <param name="calendarModel">Calendar model property.</param>
+        </member>
+        <member name="M:Wikibase.DataValues.TimeValue.DateValue(System.DateTime)">
+            <summary>
+            Creates a new time value for the give <paramref name="time"/> using the <see cref="F:Wikibase.DataValues.TimeValuePrecision.Day"/>.
+            </summary>
+            <param name="time">Date value.</param>
+        </member>
+        <member name="M:Wikibase.DataValues.TimeValue.#ctor(MinimalJson.JsonValue)">
+            <summary>
+            Parses a <see cref="T:MinimalJson.JsonValue"/> to a time value.
+            </summary>
+            <param name="value"><see cref="T:MinimalJson.JsonValue"/> to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.DataValues.TimeValue.Encode">
+            <summary>
+            Encodes as a <see cref="T:MinimalJson.JsonValue"/>.
+            </summary>
+            <returns>Encoded class.</returns>
+            <exception cref="T:System.InvalidOperationException"><see cref="P:Wikibase.DataValues.TimeValue.DisplayCalendarModel"/> is <see cref="F:Wikibase.DataValues.CalendarModel.Unknown"/>.</exception>
+        </member>
+        <member name="M:Wikibase.DataValues.TimeValue.JsonName">
+            <summary>
+            Gets the data type identifier.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.DateTime">
+            <summary>
+            Gets or sets the date and time.
+            </summary>
+            <value>The date and time.</value>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.FullValue">
+            <summary>
+            Point in time, represented per ISO8601
+            The year can have up to 11 digits, the date always be signed, in the format +00000002013-01-01T00:00:00Z
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.TimeZoneOffset">
+            <summary>
+            Timezone information as an offset from UTC in minutes.
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.Before">
+            <summary>
+            If the date is uncertain, how many units before the given time could it be?
+            The unit is given by the <see cref="P:Wikibase.DataValues.TimeValue.Precision"/>.
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.After">
+            <summary>
+            If the date is uncertain, how many units after the given time could it be?
+            The unit is given by the <see cref="P:Wikibase.DataValues.TimeValue.Precision"/>.
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.Precision">
+            <summary>
+            Unit used for the <see cref="P:Wikibase.DataValues.TimeValue.After"/> and <see cref="P:Wikibase.DataValues.TimeValue.Before"/> values.
+            </summary>
+        </member>
+        <member name="P:Wikibase.DataValues.TimeValue.DisplayCalendarModel">
+            <summary>
+            Calendar model that should be used to display this time value.
+            </summary>
+            <remarks>
+            Note that time is always saved in proleptic Gregorian, this URI states how the value should be displayed.
+            </remarks>
         </member>
         <member name="T:Wikibase.Entity">
             <summary>
             An entity
             </summary>
         </member>
+        <member name="F:Wikibase.Entity.labels">
+            <summary>
+            Labels, the actual name. Key is the language editifier, value the label.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Entity.descriptions">
+            <summary>
+            Descriptions, to explain the item. Key is the language editifier, value the description.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Entity.aliases">
+            <summary>
+            Aliases. Key is the language editifier, value a list of aliases in the given language.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Entity.claims">
+            <summary>
+            Claims. Key is the property Id, value a dictionary with the claims internal id as the key and the actual claim as the value.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Entity.changes">
+            <summary>
+            Changes cache.
+            </summary>
+        </member>
         <member name="M:Wikibase.Entity.#ctor(Wikibase.WikibaseApi)">
             <summary>
-            Constructor
+            Constructor creating a blank entity instance.
+            </summary>
+            <param name="api">The api.</param>
+        </member>
+        <member name="M:Wikibase.Entity.#ctor(Wikibase.WikibaseApi,MinimalJson.JsonObject)">
+            <summary>
+            Constructor creating an entitiy from a Json object.
             </summary>
             <param name="api">The api</param>
+            <param name="data">The json object to be parsed.</param>
+        </member>
+        <member name="M:Wikibase.Entity.fillData(MinimalJson.JsonObject)">
+            <summary>
+            Parses the <paramref name="data"/> and adds the results to this instance.
+            </summary>
+            <param name="data"><see cref="T:MinimalJson.JsonObject"/> to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Entity.getLabels">
             <summary>
             Get all labels.
             </summary>
             <returns>The labels</returns>
+            <remarks>Key is the language, value the label.</remarks>
         </member>
         <member name="M:Wikibase.Entity.getLabel(System.String)">
             <summary>
             Get the label for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <returns>The label</returns>
+            <param name="lang">The language.</param>
+            <returns>The label.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="lang"/> is empty string or <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Entity.setLabel(System.String,System.String)">
             <summary>
             Set the label for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <param name="value">The label</param>
+            <param name="lang">The language.</param>
+            <param name="value">The label.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="lang"/> or <paramref name="value"/> is empty string or <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Entity.removeLabel(System.String)">
             <summary>
             Remove the label for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <returns>If the label was removed successfully</returns>
+            <param name="lang">The language.</param>
+            <returns><c>true</c> if the label was removed successfully, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="lang"/> is empty string or <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Entity.getDescriptions">
             <summary>
             Get all descriptions.
             </summary>
-            <returns>The descriptions</returns>
+            <returns>The descriptions.</returns>
+            <remarks>Keys is the language, value the description.</remarks>
         </member>
         <member name="M:Wikibase.Entity.getDescription(System.String)">
             <summary>
             Get the description for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <returns>The description</returns>
+            <param name="lang">The language.</param>
+            <returns>The description.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="lang"/> is empty string or <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Entity.setDescription(System.String,System.String)">
             <summary>
             Set the description for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <param name="value">The label</param>
+            <param name="lang">The language.</param>
+            <param name="value">The description.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="lang"/> or <paramref name="value"/> is empty string or <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Entity.removeDescription(System.String)">
             <summary>
             Remove the description for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <returns>If the description was removed successfully</returns>
+            <param name="lang">The language.</param>
+            <returns><c>true</c> if the description was removed successfully, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="lang"/> is empty string or <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Entity.getAliases">
             <summary>
             Get all aliases.
             </summary>
             <returns>The aliases</returns>
+            <value>Key is the language, value a list of aliases.</value>
         </member>
         <member name="M:Wikibase.Entity.getAlias(System.String)">
             <summary>
             Get the aliases for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <returns>The aliases</returns>
+            <param name="lang">The language.</param>
+            <returns>The aliases, or <c>null</c> if no aliases are defined for the language.</returns>
         </member>
         <member name="M:Wikibase.Entity.addAlias(System.String,System.String)">
             <summary>
-            Add the alias for the given language.
+            Add an alias for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <param name="value">The alias</param>
+            <param name="lang">The language.</param>
+            <param name="value">The alias.</param>
         </member>
         <member name="M:Wikibase.Entity.removeAlias(System.String,System.String)">
             <summary>
             Remove the alias for the given language.
             </summary>
-            <param name="lang">The language</param>
-            <param name="value">The alias</param>
-            <returns>If the alias was removed successfully</returns>
+            <param name="lang">The language.</param>
+            <param name="value">The alias.</param>
+            <returns><c>true</c> if the alias was removed successfully, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="lang"/> or <paramref name="value"/> is empty string or <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.Entity.getClaims">
             <summary>
             Get all claims.
             </summary>
-            <returns>The claims</returns>
+            <returns>The claims.</returns>
+            <remarks>Key is property id, value a dictionary in which the key is the internal id and value is the actual claim.</remarks>
         </member>
         <member name="M:Wikibase.Entity.getClaimsForProperty(System.String)">
             <summary>
             Get the claims for the given property.
             </summary>
-            <param name="property">The property</param>
-            <returns>The claims</returns>
+            <param name="property">The property.</param>
+            <returns>The claims.</returns>
         </member>
         <member name="M:Wikibase.Entity.addClaim(Wikibase.Claim)">
             <summary>
             Add the claim.
             </summary>
-            <param name="claim">The claim</param>
+            <param name="claim">The claim.</param>
         </member>
         <member name="M:Wikibase.Entity.removeClaim(Wikibase.Claim)">
             <summary>
             Remove the claim.
             </summary>
-            <param name="claim">The claim</param>
-            <returns>If the claim was removed successfully</returns>
+            <param name="claim">The claim.</param>
+            <returns><c>true</c> if the claim was removed successfully, <c>false</c> otherwise.</returns>
         </member>
         <member name="M:Wikibase.Entity.save(System.String)">
             <summary>
             Save all changes.
             </summary>
-            <param name="summary">The edit summary</param>
+            <param name="summary">The edit summary.</param>
+        </member>
+        <member name="M:Wikibase.Entity.getType">
+            <summary>
+            Gets the type identifier of the type at server side.
+            </summary>
+            <returns>The type identifier.</returns>
         </member>
         <member name="P:Wikibase.Entity.id">
             <summary>
@@ -374,6 +1023,27 @@
         <member name="P:Wikibase.Entity.api">
             <summary>
             The api
+            </summary>
+        </member>
+        <member name="P:Wikibase.Entity.Claims">
+            <summary>
+            Gets all claims.
+            </summary>
+            <value>All claims.</value>
+        </member>
+        <member name="T:Wikibase.EntityType">
+            <summary>
+            Supported entity types.
+            </summary>
+        </member>
+        <member name="F:Wikibase.EntityType.Property">
+            <summary>
+            Properties, Wikidata URL is https://www.wikidata.org/wiki/Property:P###.
+            </summary>
+        </member>
+        <member name="F:Wikibase.EntityType.Item">
+            <summary>
+            Items, Wikidata URL is https://www.wikidata.org/wiki/Q###.
             </summary>
         </member>
         <member name="T:Wikibase.EntityId">
@@ -393,252 +1063,55 @@
             <param name="prefix">The prefix</param>
             <param name="numericId">The numeric id</param>
         </member>
-        <member name="M:Wikibase.EntityId.newFromPrefixedId(System.String)">
+        <member name="M:Wikibase.EntityId.#ctor(System.String)">
             <summary>
             Constructs an entity id from a prefixed id.
             </summary>
-            <param name="prefixedId">The prefixed id</param>
-            <returns>The entity id</returns>
+            <param name="prefixedId">The prefixed id.</param>
         </member>
-        <member name="M:Wikibase.EntityId.getPrefixedId">
-            <summary>
-            Returns the prefixed id of the entity id.
+        <member name="M:Wikibase.EntityId.Equals(System.Object)">
+             <summary>
+             Indicates whether the current object is equal to another object of the same
+             type.
             </summary>
-            <returns>The prefixed id</returns>
+             <param name="other">An object to compare with this object.</param>
+             <returns><c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.</returns>
         </member>
-        <member name="P:Wikibase.EntityId.prefix">
+        <member name="M:Wikibase.EntityId.GetHashCode">
             <summary>
-            The prefix
+            Gets a hash code for the current object.
             </summary>
+            <returns>A hash code for the current object.</returns>
         </member>
-        <member name="P:Wikibase.EntityId.numericId">
+        <member name="M:Wikibase.EntityId.ToString">
             <summary>
-            The numeric
+            Converts a entity Id to a string.
             </summary>
+            <returns>Entity Id as a string.</returns>
         </member>
-        <member name="T:Wikibase.Claim">
+        <member name="P:Wikibase.EntityId.Type">
             <summary>
-            A claim
+            Gets the entity type.
             </summary>
+            <value>The entity type.</value>
         </member>
-        <member name="P:Wikibase.Claim.entity">
+        <member name="P:Wikibase.EntityId.Prefix">
             <summary>
-            The entity
+            Gets the prefix.
             </summary>
+            <value>The prefix.</value>
         </member>
-        <member name="P:Wikibase.Claim.id">
+        <member name="P:Wikibase.EntityId.NumericId">
             <summary>
-            The id
+            Gets the numeric id.
             </summary>
+            <value>The numeric id.</value>
         </member>
-        <member name="P:Wikibase.Claim.internalId">
+        <member name="P:Wikibase.EntityId.PrefixedId">
             <summary>
-            The id used internally
+            Gets the prefixed id of the entity id.
             </summary>
-        </member>
-        <member name="P:Wikibase.Claim.mainSnak">
-            <summary>
-            The main snak
-            </summary>
-        </member>
-        <member name="T:Wikibase.Snak">
-            <summary>
-            A snak
-            </summary>
-        </member>
-        <member name="M:Wikibase.Snak.#ctor(System.String,Wikibase.EntityId,Wikibase.DataValues.DataValue)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="type">The type</param>
-            <param name="propertyId">The property id</param>
-            <param name="dataValue">The data value</param>
-        </member>
-        <member name="P:Wikibase.Snak.type">
-            <summary>
-            The type
-            </summary>
-        </member>
-        <member name="P:Wikibase.Snak.propertyId">
-            <summary>
-            The property id
-            </summary>
-        </member>
-        <member name="P:Wikibase.Snak.dataValue">
-            <summary>
-            The data value
-            </summary>
-        </member>
-        <member name="T:Wikibase.Statement">
-            <summary>
-            A statement
-            </summary>
-        </member>
-        <member name="M:Wikibase.Statement.getReferences">
-            <summary>
-            Get all references.
-            </summary>
-            <returns>The references</returns>
-        </member>
-        <member name="M:Wikibase.Statement.addReference(Wikibase.Reference)">
-            <summary>
-            Add the reference.
-            </summary>
-            <param name="reference">The reference</param>
-        </member>
-        <member name="M:Wikibase.Statement.removeReference(Wikibase.Reference)">
-            <summary>
-            Remove the reference.
-            </summary>
-            <param name="reference">The reference</param>
-            <returns>If the reference was removed successfully</returns>
-        </member>
-        <member name="M:Wikibase.Statement.createReferenceForSnak(Wikibase.Snak)">
-            <summary>
-            Create a new reference in this statement for the provided snak.
-            </summary>
-            <param name="snak">The snak</param>
-            <returns>The reference</returns>
-        </member>
-        <member name="P:Wikibase.Statement.rank">
-            <summary>
-            The rank of the statement
-            </summary>
-        </member>
-        <member name="T:Wikibase.Reference">
-            <summary>
-            A reference
-            </summary>
-        </member>
-        <member name="M:Wikibase.Reference.getSnaks">
-            <summary>
-            Get all snaks.
-            </summary>
-            <returns>The snaks</returns>
-        </member>
-        <member name="M:Wikibase.Reference.addSnak(Wikibase.Snak)">
-            <summary>
-            Add a snak.
-            </summary>
-            <param name="snak">The snak</param>
-        </member>
-        <member name="M:Wikibase.Reference.removeSnak(Wikibase.Snak)">
-            <summary>
-            Remove the snak.
-            </summary>
-            <param name="snak">The snak</param>
-            <returns>If the snak was removed successfully</returns>
-        </member>
-        <member name="M:Wikibase.Reference.save(System.String)">
-            <summary>
-            Save the reference.
-            </summary>
-            <param name="summary">The summary</param>
-        </member>
-        <member name="M:Wikibase.Reference.deleteAndSave(System.String)">
-            <summary>
-            Delete the reference and save it.
-            </summary>
-            <param name="summary">The summary</param>
-        </member>
-        <member name="P:Wikibase.Reference.statement">
-            <summary>
-            The statement this reference belongs to
-            </summary>
-        </member>
-        <member name="P:Wikibase.Reference.hash">
-            <summary>
-            The hash
-            </summary>
-        </member>
-        <member name="P:Wikibase.Reference.internalId">
-            <summary>
-            The internal id
-            </summary>
-        </member>
-        <member name="T:Wikibase.DataValues.DataValue">
-            <summary>
-            A data value
-            </summary>
-        </member>
-        <member name="M:Wikibase.DataValues.DataValue.getHash">
-            <summary>
-            Get the hash.
-            </summary>
-            <returns>The hash</returns>
-        </member>
-        <member name="M:Wikibase.DataValues.DataValue.getType">
-            <summary>
-            Get the type of the data value.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Wikibase.DataValues.DataValue.encode">
-            <summary>
-            Encode the data value to json.
-            </summary>
-            <returns>The json value</returns>
-        </member>
-        <member name="T:Wikibase.Item">
-            <summary>
-            An item
-            </summary>
-        </member>
-        <member name="M:Wikibase.Item.#ctor(Wikibase.WikibaseApi)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="api">The api</param>
-        </member>
-        <member name="M:Wikibase.Item.getSitelinks">
-            <summary>
-            Get all sitelinks.
-            </summary>
-            <returns>The sitelinks</returns>
-        </member>
-        <member name="M:Wikibase.Item.getSitelink(System.String)">
-            <summary>
-            Get the sitelink for the given site.
-            </summary>
-            <param name="site">The site</param>
-            <returns></returns>
-        </member>
-        <member name="M:Wikibase.Item.setSitelink(System.String,System.String)">
-            <summary>
-            Set the sitelink for the given site.
-            </summary>
-            <param name="site">The site</param>
-            <param name="sitelink">The sitelink</param>
-        </member>
-        <member name="M:Wikibase.Item.removeSitelink(System.String)">
-            <summary>
-            Remove the sitelink for the given site.
-            </summary>
-            <param name="site">The site</param>
-            <returns>If the sitelink was removed successfully</returns>
-        </member>
-        <member name="M:Wikibase.Item.createStatementForSnak(Wikibase.Snak)">
-            <summary>
-            Create a new statement in this item for the provided snak.
-            </summary>
-            <param name="snak">The snak</param>
-            <returns>The statement</returns>
-        </member>
-        <member name="T:Wikibase.Property">
-            <summary>
-            A property
-            </summary>
-        </member>
-        <member name="M:Wikibase.Property.#ctor(Wikibase.WikibaseApi)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="api">The api</param>
-        </member>
-        <member name="P:Wikibase.Property.datatype">
-            <summary>
-            The data type
-            </summary>
+            <value>The prefixed id.</value>
         </member>
         <member name="T:Wikibase.EntityProvider">
             <summary>
@@ -647,24 +1120,26 @@
         </member>
         <member name="M:Wikibase.EntityProvider.#ctor(Wikibase.WikibaseApi)">
             <summary>
-            Constructor
+            Creates a new <see cref="T:Wikibase.EntityProvider"/>.
             </summary>
-            <param name="api">The api</param>
+            <param name="api">The api.</param>
         </member>
         <member name="M:Wikibase.EntityProvider.getEntitiesFromIds(Wikibase.EntityId[])">
             <summary>
             Get the entities from the given entity ids.
             </summary>
-            <param name="ids">The entity ids</param>
-            <returns>The entities</returns>
+            <param name="ids">The entity ids.</param>
+            <returns>The entities.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="ids"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.EntityProvider.getEntitiesFromIds(Wikibase.EntityId[],System.String[])">
             <summary>
             Get the entities from the given entity ids with data in the languages provided.
             </summary>
-            <param name="ids">The entity ids</param>
-            <param name="languages">The languages</param>
-            <returns>The entities</returns>
+            <param name="ids">The entity ids.</param>
+            <param name="languages">The languages. <c>null</c> to get all languages.</param>
+            <returns>The entities.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="ids"/> is <c>null</c>.</exception>
         </member>
         <member name="M:Wikibase.EntityProvider.getEntityFromId(Wikibase.EntityId)">
             <summary>
@@ -715,106 +1190,656 @@
             <param name="languages">The languages</param>
             <returns>The entity</returns>
         </member>
-        <member name="T:Wikibase.DataValues.EntityIdValue">
+        <member name="T:Wikibase.Http">
             <summary>
-            Data value for entity ids
+            Http related code.
             </summary>
         </member>
-        <member name="M:Wikibase.DataValues.EntityIdValue.#ctor(System.String,System.Int32)">
+        <member name="M:Wikibase.Http.#ctor(System.String)">
             <summary>
             Constructor
             </summary>
-            <param name="entityType">The entity type</param>
-            <param name="numericId">The numeric id</param>
+            <param name="userAgent">The user agent</param>
         </member>
-        <member name="P:Wikibase.DataValues.EntityIdValue.entityType">
+        <member name="M:Wikibase.Http.get(System.String)">
             <summary>
-            The entity type
+            Performs a http get request.
+            </summary>
+            <param name="url">The url</param>
+            <returns>The response</returns>
+        </member>
+        <member name="M:Wikibase.Http.post(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Performs a http post request.
+            </summary>
+            <param name="url">The url.</param>
+            <param name="postFields">The post fields.</param>
+            <returns>The response.</returns>
+        </member>
+        <member name="M:Wikibase.Http.buildQuery(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Builds a http query string.
+            </summary>
+            <param name="fields">The fields.</param>
+            <returns>The query string.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="fields"/> is <c>null</c>.</exception>
+        </member>
+        <member name="P:Wikibase.Http.UserAgent">
+            <summary>
+            Gets or sets the user agent.
+            </summary>
+            <value>The user agent.</value>
+        </member>
+        <member name="T:Wikibase.Item">
+            <summary>
+            An item.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.EntityIdValue.numericId">
+        <member name="F:Wikibase.Item.SiteLinksJsonName">
             <summary>
-            The numeric id
+            The name of the <see cref="F:Wikibase.Item.sitelinks"/> property in the serialized json object.
             </summary>
         </member>
-        <member name="T:Wikibase.DataValues.GlobeCoordinateValue">
+        <member name="F:Wikibase.Item.SiteLinksSiteJsonName">
             <summary>
-            Data value for globe coordinates
+            The name of the site property of a sitelink in the serialized json object.
             </summary>
         </member>
-        <member name="M:Wikibase.DataValues.GlobeCoordinateValue.#ctor(System.Double,System.Double,System.Object,System.Double,System.String)">
+        <member name="F:Wikibase.Item.SiteLinksTitleJsonName">
+            <summary>
+            The name of the title property of a sitelink in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Item.SiteLinksBadgesJsonName">
+            <summary>
+            The name of the bagdes property of a sitelink in the serialized json object.
+            </summary>
+        </member>
+        <member name="M:Wikibase.Item.#ctor(Wikibase.WikibaseApi)">
+            <summary>
+            Creates a new instance of <see cref="T:Wikibase.Item"/>.
+            </summary>
+            <param name="api">The api.</param>
+        </member>
+        <member name="M:Wikibase.Item.#ctor(Wikibase.WikibaseApi,MinimalJson.JsonObject)">
+            <summary>
+            Creates a new instance of <see cref="T:Wikibase.Item"/> and fill it with <paramref name="data"/>.
+            </summary>
+            <param name="api">The api.</param>
+            <param name="data">Json object to be parsed and added.</param>
+        </member>
+        <member name="M:Wikibase.Item.fillData(MinimalJson.JsonObject)">
+            <summary>
+            Parses the <paramref name="data"/> and adds the results to this instance.
+            </summary>
+            <param name="data"><see cref="T:MinimalJson.JsonObject"/> to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Item.getSitelinks">
+            <summary>
+            Get all sitelinks.
+            </summary>
+            <returns>The sitelinks.</returns>
+            <remarks>Key is the project name, value the page name. To modify the sitelinks, don't modify this dictionary, but use
+            <see cref="M:Wikibase.Item.setSitelink(System.String,System.String)"/> and <see cref="M:Wikibase.Item.removeSitelink(System.String)"/>.</remarks>
+        </member>
+        <member name="M:Wikibase.Item.getSitelink(System.String)">
+            <summary>
+            Get the sitelink for the given site.
+            </summary>
+            <param name="site">The site</param>
+            <returns></returns>
+        </member>
+        <member name="M:Wikibase.Item.setSitelink(System.String,System.String)">
+            <summary>
+            Set the sitelink for the given site.
+            </summary>
+            <param name="site">The site.</param>
+            <param name="title">The sitelink.</param>
+        </member>
+        <member name="M:Wikibase.Item.removeSitelink(System.String)">
+            <summary>
+            Remove the sitelink for the given site.
+            </summary>
+            <param name="site">The site</param>
+            <returns><c>true</c> if the sitelink was removed successfully, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:Wikibase.Item.getType">
+            <summary>
+            Gets the type identifier of the type at server side.
+            </summary>
+            <returns>The type identifier.</returns>
+        </member>
+        <member name="M:Wikibase.Item.createStatementForSnak(Wikibase.Snak)">
+            <summary>
+            Create a new statement in this item for the provided snak.
+            </summary>
+            <param name="snak">The snak</param>
+            <returns>The statement</returns>
+        </member>
+        <member name="T:Wikibase.Property">
+            <summary>
+            A property
+            </summary>
+        </member>
+        <member name="M:Wikibase.Property.#ctor(Wikibase.WikibaseApi)">
+            <summary>
+            Constructor creating a blank property.
+            </summary>
+            <param name="api">The api</param>
+        </member>
+        <member name="M:Wikibase.Property.#ctor(Wikibase.WikibaseApi,MinimalJson.JsonObject)">
+            <summary>
+            Constructor creating a property from a Json object.
+            </summary>
+            <param name="api">The api</param>
+            <param name="data">The json object to be parsed.</param>
+        </member>
+        <member name="M:Wikibase.Property.fillData(MinimalJson.JsonObject)">
+            <summary>
+            Parses the <paramref name="data"/> and adds the results to this instance.
+            </summary>
+            <param name="data"><see cref="T:MinimalJson.JsonObject"/> to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Property.getType">
+            <summary>
+            Gets the type identifier of the type at server side.
+            </summary>
+            <returns>The type identifier.</returns>
+        </member>
+        <member name="P:Wikibase.Property.datatype">
+            <summary>
+            The data type
+            </summary>
+        </member>
+        <member name="T:Wikibase.Qualifier">
+            <summary>
+            Qualifier, almost identical to a <see cref="T:Wikibase.Snak"/>.
+            </summary>
+        </member>
+        <member name="T:Wikibase.Snak">
+            <summary>
+            A snak, a property with its value.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Snak.SnakTypeJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.Snak.Type"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Snak.PropertyJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.Snak.PropertyId"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Snak.DataValueJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.Snak.DataValue"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Snak._snakTypeIdentifiers">
+            <summary>
+            JSon identifiers for the <see cref="T:Wikibase.SnakType"/>.
+            </summary>
+        </member>
+        <member name="M:Wikibase.Snak.#ctor(Wikibase.SnakType,Wikibase.EntityId,Wikibase.DataValues.DataValue)">
+            <summary>
+            Creates a new <see cref="T:Wikibase.Snak"/> with the given values.
+            </summary>
+            <param name="type">The snak type.</param>
+            <param name="propertyId">The property id.</param>
+            <param name="dataValue">The data value.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="propertyId"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="propertyId"/> has <see cref="P:Wikibase.EntityId.Type"/> not set as <see cref="F:Wikibase.EntityType.Property"/>.</exception>
+        </member>
+        <member name="M:Wikibase.Snak.#ctor(MinimalJson.JsonObject)">
+            <summary>
+            Creates a new snak from the json object.
+            </summary>
+            <param name="data">Json object to parse.</param>
+        </member>
+        <member name="M:Wikibase.Snak.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="M:Wikibase.Snak.FillFromArray(MinimalJson.JsonObject)">
+            <summary>
+            Fills the snak with data parsed from a JSon array.
+            </summary>
+            <param name="data">JSon array to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Snak.Encode">
+            <summary>
+            Encodes as a <see cref="T:MinimalJson.JsonObject"/>.
+            </summary>
+            <returns>Encoded class.</returns>
+        </member>
+        <member name="P:Wikibase.Snak.Type">
+            <summary>
+            Gets the type.
+            </summary>
+            <value>The type.</value>
+        </member>
+        <member name="P:Wikibase.Snak.PropertyId">
+            <summary>
+            Gets the property id.
+            </summary>
+            <value>The property id.</value>
+        </member>
+        <member name="P:Wikibase.Snak.DataValue">
+            <summary>
+            Gets the data value.
+            </summary>
+            <value>The data value.</value>
+        </member>
+        <member name="M:Wikibase.Qualifier.#ctor(Wikibase.Statement,Wikibase.SnakType,Wikibase.EntityId,Wikibase.DataValues.DataValue)">
             <summary>
             Constructor
             </summary>
-            <param name="latitude">The latitude</param>
-            <param name="longitude">The longitude</param>
-            <param name="altitude">The altitude</param>
-            <param name="precision">The precision</param>
-            <param name="globe">The globe on which the location resides</param>
+            <param name="type">The type</param>
+            <param name="propertyId">The property id</param>
+            <param name="dataValue">The data value</param>
+            <param name="statement">The statement this qualifier belongs to.</param>
         </member>
-        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.latitude">
+        <member name="M:Wikibase.Qualifier.#ctor">
             <summary>
-            The latitude
+            Empty constructor.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.longitude">
+        <member name="M:Wikibase.Qualifier.#ctor(Wikibase.Claim,MinimalJson.JsonObject)">
             <summary>
-            The longitude
+            Creates a <see cref="T:Wikibase.Qualifier"/> from a <see cref="T:MinimalJson.JsonObject"/>.
+            </summary>
+            <param name="statement">Statement to which the new qualifier belongs.</param>
+            <param name="data">JSonObject to be parsed.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Qualifier.FillFromArray(MinimalJson.JsonObject)">
+            <summary>
+            Fills the snak with data parsed from a JSon array.
+            </summary>
+            <param name="data">JSon array to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Qualifier.Save(System.String)">
+            <summary>
+            Save the qualifier.
+            </summary>
+            <param name="summary">The summary</param>
+            <exception cref="T:System.InvalidOperationException">Statement has no id because not saved yet.</exception>
+        </member>
+        <member name="M:Wikibase.Qualifier.UpdateDataFromResult(MinimalJson.JsonObject)">
+            <summary>
+            Updates instance from API call result.
+            </summary>
+            <param name="result">Json result.</param>
+        </member>
+        <member name="P:Wikibase.Qualifier.Statement">
+            <summary>
+            Gets the statement this qualifier belongs to.
+            </summary>
+            <value>The statement this qualifier belongs to.</value>
+        </member>
+        <member name="P:Wikibase.Qualifier.Hash">
+            <summary>
+            Gets the hash.
+            </summary>
+            <value>The hash.</value>
+        </member>
+        <member name="T:Wikibase.Reference">
+            <summary>
+            A reference.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.altitude">
+        <member name="M:Wikibase.Reference.#ctor(Wikibase.Statement,MinimalJson.JsonObject)">
             <summary>
-            The altitude
+            Creates a new reference by parsing the JSon result.
+            </summary>
+            <param name="statement">Statement to which the new reference belongs.</param>
+            <param name="data">JsonObject to parse.</param>
+        </member>
+        <member name="M:Wikibase.Reference.FillData(MinimalJson.JsonObject)">
+            <summary>
+            Parses the <paramref name="data"/> and adds the results to this instance.
+            </summary>
+            <param name="data"><see cref="T:MinimalJson.JsonObject"/> to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Reference.#ctor(Wikibase.Statement,System.Collections.Generic.IEnumerable{Wikibase.Snak})">
+            <summary>
+            Create a new references with the given snaks.
+            </summary>
+            <param name="statement">Statement to which the reference should be added.</param>
+            <param name="snaks">Snaks to be part of the reference.</param>
+            <returns>New reference instance.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="statement"/> or <paramref name="snaks"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="snaks"/> is empty.</exception>
+        </member>
+        <member name="M:Wikibase.Reference.getSnaks">
+            <summary>
+            Get all snaks.
+            </summary>
+            <returns>The snaks</returns>
+            <remarks>Key is the prefixed property Id, value is a dictionary with <see cref="M:Wikibase.DataValues.DataValue.getHash"/> as key and the actual snak as value.</remarks>
+        </member>
+        <member name="M:Wikibase.Reference.AddSnak(Wikibase.Snak)">
+            <summary>
+            Add a snak.
+            </summary>
+            <param name="snak">The snak.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snak"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Reference.RemoveSnak(Wikibase.Snak)">
+            <summary>
+            Remove the snak.
+            </summary>
+            <param name="snak">The snak.</param>
+            <returns><c>true</c> if the snak was removed successfully, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snak"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Reference.Save(System.String)">
+            <summary>
+            Save the reference.
+            </summary>
+            <param name="summary">The summary</param>
+            <exception cref="T:System.InvalidOperationException">Statement has no id because not saved yet.</exception>
+        </member>
+        <member name="M:Wikibase.Reference.UpdateDataFromResult(MinimalJson.JsonObject)">
+            <summary>
+            Updates instance from API call result.
+            </summary>
+            <param name="result">Json result.</param>
+        </member>
+        <member name="M:Wikibase.Reference.DeleteAndSave(System.String)">
+            <summary>
+            Delete the reference and save the reference which contained it.
+            </summary>
+            <param name="summary">The edit summary.</param>
+            <exception cref="T:System.InvalidOperationException">Statement has no id because not saved yet.</exception>
+        </member>
+        <member name="P:Wikibase.Reference.Statement">
+            <summary>
+            Gets the statement this reference belongs to.
+            </summary>
+            <value>The statement this reference belongs to.</value>
+        </member>
+        <member name="P:Wikibase.Reference.Hash">
+            <summary>
+            Gets the hash.
+            </summary>
+            <value>The hash.</value>
+        </member>
+        <member name="P:Wikibase.Reference.InternalId">
+            <summary>
+            Gets the internal id.
+            </summary>
+            <value>The internal id.</value>
+        </member>
+        <member name="T:Wikibase.SnakType">
+            <summary>
+            Possible type of snaks, see <see cref="P:Wikibase.Snak.Type"/>.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.precision">
+        <member name="F:Wikibase.SnakType.Value">
             <summary>
-            The precision
+            Snak containing a <see cref="T:Wikibase.DataValues.DataValue"/>.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.GlobeCoordinateValue.globe">
+        <member name="F:Wikibase.SnakType.None">
             <summary>
-            The globe on which the location resides
+            No value.
             </summary>
         </member>
-        <member name="T:Wikibase.DataValues.TimeValue">
+        <member name="F:Wikibase.SnakType.SomeValue">
             <summary>
-            Data value for times
+            Snak should have a value, but it is unknown.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.TimeValue.time">
+        <member name="T:Wikibase.Rank">
             <summary>
-            Point in time, represented per ISO8601
-            The year always having 11 digits, the date always be signed, in the format +00000002013-01-01T00:00:00Z
+            Ranks of statements.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.TimeValue.timezone">
+        <member name="F:Wikibase.Rank.Unknown">
             <summary>
-            Timezone information as an offset from UTC in minutes.
+            Rank not defined.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.TimeValue.before">
+        <member name="F:Wikibase.Rank.Preferred">
             <summary>
-            If the date is uncertain, how many units before the given time could it be?
-            The unit is given by the <see cref="P:Wikibase.DataValues.TimeValue.precision"/>.
+            Preferred statement.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.TimeValue.after">
+        <member name="F:Wikibase.Rank.Normal">
             <summary>
-            If the date is uncertain, how many units after the given time could it be?
-            The unit is given by the <see cref="P:Wikibase.DataValues.TimeValue.precision"/>.
+            Normal statement.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.TimeValue.precision">
+        <member name="F:Wikibase.Rank.Deprecated">
             <summary>
-            Unit used for the <see cref="P:Wikibase.DataValues.TimeValue.after"/> and <see cref="P:Wikibase.DataValues.TimeValue.before"/> values.
+            Deprecated statement.
             </summary>
         </member>
-        <member name="P:Wikibase.DataValues.TimeValue.calendarmodel">
+        <member name="T:Wikibase.Statement">
             <summary>
-            URI identifying the calendar model that should be used to display this time value.
-            Note that time is always saved in proleptic Gregorian, this URI states how the value should be displayed.
+            A statement.
             </summary>
+        </member>
+        <member name="F:Wikibase.Statement.ReferencesJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.Statement.References"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Statement.RankJsonName">
+            <summary>
+            The name of the <see cref="P:Wikibase.Statement.Rank"/> property in the serialized json object.
+            </summary>
+        </member>
+        <member name="F:Wikibase.Statement.references">
+            <summary>
+            Internal dictionary, storing the references by its <see cref="P:Wikibase.Reference.InternalId"/>.
+            </summary>
+        </member>
+        <member name="M:Wikibase.Statement.#ctor(Wikibase.Entity,MinimalJson.JsonObject)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="entity">Entity to which the statement belongs.</param>
+            <param name="data">JSon data to be parsed.</param>
+        </member>
+        <member name="M:Wikibase.Statement.FillData(MinimalJson.JsonObject)">
+            <summary>
+            Parses the <paramref name="data"/> and adds the results to this instance.
+            </summary>
+            <param name="data"><see cref="T:MinimalJson.JsonObject"/> to parse.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="data"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Statement.AddReference(Wikibase.Reference)">
+            <summary>
+            Add the reference.
+            </summary>
+            <param name="reference">The reference to add.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reference"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Statement.RemoveReference(Wikibase.Reference)">
+            <summary>
+            Remove a reference from the statement.
+            </summary>
+            <param name="reference">The reference to be removed.</param>
+            <returns><c>true</c> if the reference was removed successfully, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="reference"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.Statement.CreateReferenceForSnak(Wikibase.Snak)">
+            <summary>
+            Create a new reference in this statement with the provided snak.
+            </summary>
+            <param name="snak">The snak which makes up the reference.</param>
+            <returns>The newly created reference.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snak"/> is <c>null</c>.</exception>
+        </member>
+        <member name="P:Wikibase.Statement.Rank">
+            <summary>
+            Gets the rank of the statement.
+            </summary>
+            <value>The rank of the statement.</value>
+        </member>
+        <member name="P:Wikibase.Statement.References">
+            <summary>
+            Gets the references.
+            </summary>
+            <value>The references.</value>
+        </member>
+        <member name="T:Wikibase.WikibaseApi">
+            <summary>
+            Base class for the Wikibase API.
+            </summary>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="wiki">he base url of the wiki like "https://www.wikidata.org"</param>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="wiki">The base url of the wiki like "https://www.wikidata.org"</param>
+            <param name="userAgent">The user agent</param>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.getEntitiesFromIds(System.String[],System.String[])">
+            <summary>
+            Get the data for the entities in the given languages from the provided ids.
+            </summary>
+            <param name="ids">The ids</param>
+            <param name="languages">The languages</param>
+            <returns>The list of entities</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.getEntitesFromSitelinks(System.String[],System.String[],System.String[])">
+            <summary>
+            Get the data for the entities in the given languages from the provided sites and titles.
+            </summary>
+            <param name="sites">The sites</param>
+            <param name="titles">The titles</param>
+            <param name="languages">The languages</param>
+            <returns>The list of entities</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.parseGetEntitiesApiResponse(MinimalJson.JsonObject)">
+            <summary>
+            Create a list of entities form an api response.
+            </summary>
+            <param name="result">The result of the api request</param>
+            <returns>The list of entities</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="result"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.editEntity(System.String,MinimalJson.JsonObject,System.Int32,System.String)">
+            <summary>
+            Edit an entity.
+            </summary>
+            <param name="id">The id of the entity</param>
+            <param name="data">The serialized data of the entity</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.createEntity(System.String,MinimalJson.JsonObject,System.Int32,System.String)">
+            <summary>
+            Create an entity.
+            </summary>
+            <param name="type">The type of the entity</param>
+            <param name="data">The serialized data of the entity</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.createClaim(System.String,System.String,System.String,Wikibase.DataValues.DataValue,System.Int32,System.String)">
+            <summary>
+            Create a claim.
+            </summary>
+            <param name="entity">The id of the entity you are adding the claim to.</param>
+            <param name="snakType">The type of the snak.</param>
+            <param name="property">The id of the snak property.</param>
+            <param name="value">The value of the snak when creating a claim with a snak that has a value.</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on.</param>
+            <param name="summary">The summary for the change.</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.setClaimValue(System.String,System.String,Wikibase.DataValues.DataValue,System.Int32,System.String)">
+            <summary>
+            Set a claim value.
+            </summary>
+            <param name="claim">GUID identifying the claim</param>
+            <param name="snakType">The type of the snak</param>
+            <param name="value">The value of the snak when creating a claim with a snak that has a value.</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on.</param>
+            <param name="summary">The summary for the change.</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.removeClaims(System.String[],System.Int32,System.String)">
+            <summary>
+            Remove the claims.
+            </summary>
+            <param name="claims">The claims</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.setReference(System.String,MinimalJson.JsonObject,System.String,System.Int32,System.String)">
+            <summary>
+            Set a reference.
+            </summary>
+            <param name="statement">GUID identifying the statement</param>
+            <param name="snaks">The snaks to set the reference to. Array with property ids pointing to arrays containing the snaks for that property</param>
+            <param name="reference">A hash of the reference that should be updated. When not provided, a new reference is created</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.removeReferences(System.String,System.String[],System.Int32,System.String)">
+            <summary>
+            Remove the references.
+            </summary>
+            <param name="statement">GUID identifying the statement</param>
+            <param name="references">The hashes of the references that should be removed</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on</param>
+            <param name="summary">The summary for the change</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.setQualifier(System.String,System.String,System.String,Wikibase.DataValues.DataValue,System.Int32,System.String)">
+            <summary>
+            Set a qualifier.
+            </summary>
+            <param name="statement">GUID identifying the statement</param>
+            <param name="snakType">The type of the snak.</param>
+            <param name="property">The id of the snak property.</param>
+            <param name="value">The value of the snak when creating a claim with a snak that has a value.</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on.</param>
+            <param name="summary">The summary for the change.</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.removeQualifier(System.String,System.String[],System.Int32,System.String)">
+            <summary>
+            Remove the qualifiers.
+            </summary>
+            <param name="statement">GUID identifying the statement.</param>
+            <param name="qualifiers">The hashes of the qualifiers that should be removed.</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on.</param>
+            <param name="summary">The summary for the change.</param>
+            <returns>The returned json object from the server.</returns>
+        </member>
+        <member name="M:Wikibase.WikibaseApi.editAction(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Int32,System.String)">
+            <summary>
+            Perform an edit action.
+            </summary>
+            <param name="parameters">The parameters.</param>
+            <param name="postFields">The post fields.</param>
+            <param name="baseRevisionId">The numeric identifier for the revision to base the modification on.</param>
+            <param name="summary">The summary for the change.</param>
+            <returns>The returned json object from the server.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="parameters"/> or <paramref name="postFields"/> is <c>null</c>.</exception>
         </member>
     </members>
 </doc>

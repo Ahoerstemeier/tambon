@@ -1,0 +1,865 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MinimalJson</name>
+    </assembly>
+    <members>
+        <member name="T:MinimalJson.JsonArray">
+            <summary>
+            Represents a JSON array. A JSON array is a sequence of elements, which are JSON values (see <see cref="T:MinimalJson.JsonValue"/>).
+            Elements can be added using one of the <code>add(name, value)</code> methods. Accepted values are either instances of <see cref="T:MinimalJson.JsonValue"/>, strings, primitive numbers, or bool values. To replace an element of an array, the <code>set(name, value)</code> methods can be used.
+            Elements can be accessed by their index using <see cref="M:MinimalJson.JsonArray.get(System.Int32)"/>. This class also supports iterating over the elements in document order:
+            <example>
+            foreach(JsonValue value in jsonArray)
+            {
+                ...
+            }
+            </example>
+            An equivalent List can be obtained from the method <see cref="M:MinimalJson.JsonValue.asArray"/>.
+            Note that this class is not thread-safe. If multiple threads access a <code>JsonArray</code> instance concurrently, while at least one of these threads modifies the contents of this array, access to the instance must be synchronized externally. Failure to do so may lead to an inconsistent state.
+            This class is <strong>not supposed to be extended</strong> by clients.
+            </summary>
+        </member>
+        <member name="T:MinimalJson.JsonValue">
+            <summary>
+            Represents a JSON value. According to RFC 4627, a JSON value must be an object, an array, a number, a string, or one of the literal names true, false, and null.
+            The literal names true, false, and null are represented by the constants <see cref="F:MinimalJson.JsonValue.TRUE"/>, <see cref="F:MinimalJson.JsonValue.FALSE"/>, and <see cref="F:MinimalJson.JsonValue.NULL"/>.
+            JSON objects and arrays are represented by the subtypes <see cref="T:MinimalJson.JsonObject"/> and <see cref="T:MinimalJson.JsonArray"/>.
+            Instances of these types can be created using the public constructors.
+            Instances for JSON numbers and strings can be created using the static factory methods <see cref="M:MinimalJson.JsonValue.valueOf(System.String)"/>, <see cref="M:MinimalJson.JsonValue.valueOf(System.Int64)"/>, <see cref="M:MinimalJson.JsonValue.valueOf(System.Double)"/> , etc.
+            In order to find out whether an instance of this class is of a certain type, the methods <see cref="M:MinimalJson.JsonValue.isObject"/>, <see cref="M:MinimalJson.JsonValue.isArray"/>, <see cref="M:MinimalJson.JsonValue.isString"/>, <see cref="M:MinimalJson.JsonValue.isNumber"/> etc. can be used.
+            If there is no doubt about the type of a JSON value, one of the methods <see cref="M:MinimalJson.JsonValue.asObject"/>, <see cref="M:MinimalJson.JsonValue.asArray"/>, <see cref="M:MinimalJson.JsonValue.asString"/>, <see cref="M:MinimalJson.JsonValue.asInt"/>, etc. can be used to get this value directly in the appropriate target type.
+            This class is not supposed to be extended by clients.
+            </summary>
+        </member>
+        <member name="F:MinimalJson.JsonValue.TRUE">
+            <summary>
+            Represents the JSON literal <code>true</code>.
+            </summary>
+        </member>
+        <member name="F:MinimalJson.JsonValue.FALSE">
+            <summary>
+            Represents the JSON literal <code>false</code>.
+            </summary>
+        </member>
+        <member name="F:MinimalJson.JsonValue.NULL">
+            <summary>
+            The JSON literal <code>null</code>.
+            </summary>
+        </member>
+        <member name="M:MinimalJson.JsonValue.readFrom(System.IO.TextReader)">
+            <summary>
+            Reads a JSON value from the given reader.
+            Characters are read in chunks and buffered internally, therefore wrapping an existing reader in
+            an additional BufferedReader does not improve reading performance.
+            </summary>
+            <param name="reader">the reader to read the JSON value from</param>
+            <returns>the JSON value that has been read</returns>
+            <exception cref="T:MinimalJson.ParseException">if the input is not valid JSON</exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.readFrom(System.String)">
+            <summary>
+            Reads a JSON value from the given string.
+            </summary>
+            <param name="text">the string that contains the JSON value</param>
+            <returns>the JSON value that has been read</returns>
+            <exception cref="T:MinimalJson.ParseException">if the input is not valid JSON</exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.valueOf(System.Int32)">
+            <summary>
+            Returns a JsonValue instance that represents the given <code>int</code> value.
+            </summary>
+            <param name="value">the value to get a JSON representation for</param>
+            <returns>a JSON value that represents the given value</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.valueOf(System.Int64)">
+            <summary>
+            Returns a JsonValue instance that represents the given <code>long</code> value.
+            </summary>
+            <param name="value">the value to get a JSON representation for</param>
+            <returns>a JSON value that represents the given value</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.valueOf(System.Single)">
+            <summary>
+            Returns a JsonValue instance that represents the given <code>float</code> value.
+            </summary>
+            <param name="value">the value to get a JSON representation for</param>
+            <returns>a JSON value that represents the given value</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.valueOf(System.Double)">
+            <summary>
+            Returns a JsonValue instance that represents the given <code>double</code> value.
+            </summary>
+            <param name="value">the value to get a JSON representation for</param>
+            <returns>a JSON value that represents the given value</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.valueOf(System.String)">
+            <summary>
+            Returns a JsonValue instance that represents the given string.
+            </summary>
+            <param name="str">the string to get a JSON representation for</param>
+            <returns>a JSON value that represents the given string</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.valueOf(System.Boolean)">
+            <summary>
+            Returns a JsonValue instance that represents the given <code>bool</code> value.
+            </summary>
+            <param name="value">the value to get a JSON representation for</param>
+            <returns>a JSON value that represents the given value</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.isObject">
+            <summary>
+            Detects whether this value represents a JSON object. If this is the case, this value is an instance of <see cref="T:MinimalJson.JsonObject"/>.
+            </summary>
+            <returns><code>true</code> if this value is an instance of JsonObject</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.isArray">
+            <summary>
+            Detects whether this value represents a JSON array. If this is the case, this value is an instance of <see cref="T:MinimalJson.JsonArray"/>.
+            </summary>
+            <returns><code>true</code> if this value is an instance of JsonArray</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.isNumber">
+            <summary>
+            Detects whether this value represents a JSON number.
+            </summary>
+            <returns><code>true</code> if this value represents a JSON number</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.isString">
+            <summary>
+            Detects whether this value represents a JSON string.
+            </summary>
+            <returns><code>true</code> if this value represents a JSON string</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.isBool">
+            <summary>
+            Detects whether this value represents a bool value.
+            </summary>
+            <returns><code>true</code> if this value represents either the JSON literal <code>true</code> or <code>false</code></returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.isTrue">
+            <summary>
+            Detects whether this value represents the JSON literal <code>true</code>.
+            </summary>
+            <returns><code>true</code> if this value represents the JSON literal <code>true</code></returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.isFalse">
+            <summary>
+            Detects whether this value represents the JSON literal <code>false</code>.
+            </summary>
+            <returns><code>true</code> if this value represents the JSON literal <code>false</code></returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.isNull">
+            <summary>
+            Detects whether this value represents the JSON literal <code>null</code>.
+            </summary>
+            <returns><code>true</code> if this value represents the JSON literal <code>null</code></returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.asObject">
+            <summary>
+            Returns this JSON value as <see cref="T:MinimalJson.JsonObject"/>, assuming that this value represents a JSON object. If this is not the case, an exception is thrown.
+            </summary>
+            <returns>a JSONObject for this value</returns>
+            <exception cref="T:System.NotSupportedException">if this value is not a JSON object</exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.asArray">
+            <summary>
+            Returns this JSON value as <see cref="T:MinimalJson.JsonArray"/>, assuming that this value represents a JSON array. If this is not the case, an exception is thrown.
+            </summary>
+            <returns>a JSONArray for this value</returns>
+            <exception cref="T:System.NotSupportedException">if this value is not a JSON array</exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.asInt">
+            <summary>
+            Returns this JSON value as an <code>int</code> value, assuming that this value represents a JSON number that can be interpreted as Java <code>int</code>. If this is not the case, an exception is thrown.
+            To be interpreted as C# <code>int</code>, the JSON number must neither contain an exponent nor a fraction part. Moreover, the number must be in the <code>Integer</code> range.
+            </summary>
+            <returns>this value as <code>int</code></returns>
+            <exception cref="T:System.NotSupportedException">if this value is not a JSON number</exception>
+            <exception cref="T:System.FormatException">if this JSON number can not be interpreted as <code>int</code> value</exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.asLong">
+            <summary>
+            Returns this JSON value as a <code>long</code> value, assuming that this value represents a JSON number that can be interpreted as Java <code>long</code>. If this is not the case, an exception is thrown.
+            To be interpreted as C# <code>long</code>, the JSON number must neither contain an exponent nor a fraction part. Moreover, the number must be in the <code>Long</code> range.
+            </summary>
+            <returns>this value as <code>long</code></returns>
+            <exception cref="T:System.NotSupportedException">if this value is not a JSON number</exception>
+            <exception cref="T:System.FormatException">if this JSON number can not be interpreted as <code>long</code> value</exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.asFloat">
+            <summary>
+            Returns this JSON value as a <code>float</code> value, assuming that this value represents a JSON number. If this is not the case, an exception is thrown.
+            If the JSON number is out of the <code>Float</code> range, POSITIVE_INFINITY or NEGATIVE_INFINITY is returned.
+            </summary>
+            <returns>this value as <code>float</code></returns>
+            <exception cref="T:System.NotSupportedException">if this value is not a JSON number</exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.asDouble">
+            <summary>
+            Returns this JSON value as a <code>double</code> value, assuming that this value represents a JSON number. If this is not the case, an exception is thrown.
+            If the JSON number is out of the <code>Double</code> range, POSITIVE_INFINITY or NEGATIVE_INFINITY is returned.
+            </summary>
+            <returns>this value as <code>double</code></returns>
+            <exception cref="T:System.NotSupportedException">if this value is not a JSON number</exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.asString">
+            <summary>
+            Returns this JSON value as string, assuming that this value represents a JSON string. If this is not the case, an exception is thrown.
+            </summary>
+            <returns>the string represented by this value</returns>
+            <exception cref="T:System.NotSupportedException">if this value is not a JSON string</exception>
+            <seealso cref="M:MinimalJson.JsonValue.ToString"/>
+        </member>
+        <member name="M:MinimalJson.JsonValue.asBool">
+            <summary>
+            Returns this JSON value as a <code>bool</code> value, assuming that this value is either <code>true</code> or <code>false</code>. If this is not the case, an exception is thrown.
+            </summary>
+            <returns>this value as <code>bool</code></returns>
+            <exception cref="T:System.NotSupportedException">if this value is neither <code>true</code> or <code>false</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonValue.writeTo(System.IO.TextWriter)">
+            <summary>
+            Writes the JSON representation for this object to the given writer.
+            </summary>
+            <param name="writer">the writer to write this value to</param>
+        </member>
+        <member name="M:MinimalJson.JsonValue.ToString">
+            <summary>
+            Returns the JSON string for this value in its minimal form, without any additional whitespace.
+            The result is guaranteed to be a valid input for the method <see cref="M:MinimalJson.JsonValue.readFrom(System.String)"/> and to create a value that is equal to this object.
+            </summary>
+            <returns>a JSON string that represents this value</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:MinimalJson.JsonValue.Equals(System.Object)">
+            <summary>
+            Indicates whether some other object is "equal to" this one.
+            Two JsonValues are considered equal if and only if they represent the same JSON text. As a consequence, two given JsonObjects may be different even though they contain the same set of names with the same values, but in a different order.
+            </summary>
+            <param name="obj">the reference object with which to compare</param>
+            <returns>true if this object is the same as the object argument; false otherwise</returns>
+        </member>
+        <member name="P:MinimalJson.JsonValue.Item(System.String)">
+            <summary>
+            Gets or sets the named json value.
+            </summary>
+            <param name="name">Name of the json value</param>
+            <returns>Value object.</returns>
+        </member>
+        <member name="P:MinimalJson.JsonValue.Item(System.Int32)">
+            <summary>
+            Gets or sets the json value by index.
+            </summary>
+            <param name="i">Index of the json value</param>
+            <returns>Value object.</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.#ctor">
+            <summary>
+            Creates a new empty JsonArray.
+            </summary>
+        </member>
+        <member name="M:MinimalJson.JsonArray.#ctor(MinimalJson.JsonArray)">
+            <summary>
+            Creates a new JsonArray with the contents of the specified JSON array.
+            </summary>
+            <param name="array">the JsonArray to get the initial contents from, must not be <code>null</code></param>
+        </member>
+        <member name="M:MinimalJson.JsonArray.readFrom(System.IO.TextReader)">
+            <summary>
+            Reads a JSON array from the given reader.
+            Characters are read in chunks and buffered internally, therefore wrapping an existing reader in an additional BufferedReader does not improve reading performance.
+            </summary>
+            <param name="reader">the reader to read the JSON array from</param>
+            <returns>the JSON array that has been read</returns>
+            <exception cref="T:MinimalJson.ParseException">if the input is not valid JSON</exception>
+            <exception cref="T:System.NotSupportedException">if the input does not contain a JSON array</exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.readFrom(System.String)">
+            <summary>
+            Reads a JSON array from the given string.
+            </summary>
+            <param name="str">the string that contains the JSON array</param>
+            <returns>the JSON array that has been read</returns>
+            <exception cref="T:MinimalJson.ParseException">if the input is not valid JSON</exception>
+            <exception cref="T:System.NotSupportedException">if the input does not contain a JSON array</exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.unmodifiableArray(MinimalJson.JsonArray)">
+            <summary>
+            Returns an unmodifiable wrapper for the specified JsonArray. This method allows to provide read-only access to a JsonArray.
+            The returned JsonArray is backed by the given array and reflects subsequent changes.
+            </summary>
+            <param name="array">the JsonArray for which an unmodifiable JsonArray is to be returned</param>
+            <returns>an unmodifiable view of the specified JsonArray</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.add(System.Int32)">
+            <summary>
+            Adds the JSON representation of the specified <code>int</code> value to the array.
+            </summary>
+            <param name="value">the value to add to the array</param>
+            <returns>the array itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.add(System.Int64)">
+            <summary>
+            Adds the JSON representation of the specified <code>long</code> value to the array.
+            </summary>
+            <param name="value">the value to add to the array</param>
+            <returns>the array itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.add(System.Single)">
+            <summary>
+            Adds the JSON representation of the specified <code>float</code> value to the array.
+            </summary>
+            <param name="value">the value to add to the array</param>
+            <returns>the array itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.add(System.Double)">
+            <summary>
+            Adds the JSON representation of the specified <code>double</code> value to the array.
+            </summary>
+            <param name="value">the value to add to the array</param>
+            <returns>the array itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.add(System.Boolean)">
+            <summary>
+            Adds the JSON representation of the specified <code>bool</code> value to the array.
+            </summary>
+            <param name="value">the value to add to the array</param>
+            <returns>the array itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.add(System.String)">
+            <summary>
+            Adds the JSON representation of the specified <code>string</code> value to the array.
+            </summary>
+            <param name="value">the value to add to the array</param>
+            <returns>the array itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.add(MinimalJson.JsonValue)">
+            <summary>
+            Adds the JSON representation of the specified JSON value to the array.
+            </summary>
+            <param name="value">the value to add to the array, must not be <code>null</code></param>
+            <returns>the array itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentNullException">if the value is <code>null</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.set(System.Int32,System.Int64)">
+            <summary>
+            Replaces the element at the specified position in this array with the JSON representation of the specified <code>long</code> value.
+            </summary>
+            <param name="index">the index of the array element to replace</param>
+            <param name="value">the value to be stored at the specified array position</param>
+            <returns>the array itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the index is out of range, i.e. <code>index &lt; 0</code> or <code>index &gt;= size</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.set(System.Int32,System.Single)">
+            <summary>
+            Replaces the element at the specified position in this array with the JSON representation of the specified <code>float</code> value.
+            </summary>
+            <param name="index">the index of the array element to replace</param>
+            <param name="value">the value to be stored at the specified array position</param>
+            <returns>the array itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the index is out of range, i.e. <code>index &lt; 0</code> or <code>index &gt;= size</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.set(System.Int32,System.Double)">
+            <summary>
+            Replaces the element at the specified position in this array with the JSON representation of the specified <code>double</code> value.
+            </summary>
+            <param name="index">the index of the array element to replace</param>
+            <param name="value">the value to be stored at the specified array position</param>
+            <returns>the array itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the index is out of range, i.e. <code>index &lt; 0</code> or <code>index &gt;= size</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.set(System.Int32,System.Boolean)">
+            <summary>
+            Replaces the element at the specified position in this array with the JSON representation of the specified <code>bool</code> value.
+            </summary>
+            <param name="index">the index of the array element to replace</param>
+            <param name="value">the value to be stored at the specified array position</param>
+            <returns>the array itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the index is out of range, i.e. <code>index &lt; 0</code> or <code>index &gt;= size</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.set(System.Int32,System.String)">
+            <summary>
+            Replaces the element at the specified position in this array with the JSON representation of the specified <code>string</code> value.
+            </summary>
+            <param name="index">the index of the array element to replace</param>
+            <param name="value">the value to be stored at the specified array position</param>
+            <returns>the array itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the index is out of range, i.e. <code>index &lt; 0</code> or <code>index &gt;= size</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.set(System.Int32,MinimalJson.JsonValue)">
+            <summary>
+            Replaces the element at the specified position in this array with the JSON representation of the specified JSON value.
+            </summary>
+            <param name="index">the index of the array element to replace</param>
+            <param name="value">the value to be stored at the specified array position, must not be <code>null</code></param>
+            <returns>the array itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentNullException">if the value is <code>null</code></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the index is out of range, i.e. <code>index &lt; 0</code> or <code>index &gt;= size</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.remove(MinimalJson.JsonValue)">
+            <summary>
+            Removes the first appereance of the value in this array.
+            </summary>
+            <param name="value">the value to be removed from this array</param>
+            <returns>true if the value was successfully removed, false if it didn't exist</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.removeAt(System.Int32)">
+            <summary>
+            Removes the element at the specified position in this array.
+            </summary>
+            <param name="index">the index of the array element to replace</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the index is out of range, i.e. <code>index &lt; 0</code> or <code>index &gt;= size</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.get(System.Int32)">
+            <summary>
+            Returns the value of the element at the specified position in this array.
+            </summary>
+            <param name="index">the index of the array element to return</param>
+            <returns>the value of the element at the specified position</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">if the index is out of range, i.e. <code>index &lt; 0</code> or <code>index &gt;= size</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonArray.size">
+            <summary>
+            Returns the number of elements in this array.
+            </summary>
+            <returns>the number of elements in this array</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.isEmpty">
+            <summary>
+            Returns <code>true</code> if this array contains no elements.
+            </summary>
+            <returns><code>true</code> if this array contains no elements</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.getValues">
+            <summary>
+            Returns a list of the values in this array in document order. It cannot be used to modify this array.
+            </summary>
+            <returns>a list of the values in this array</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.isArray">
+            <summary>
+            Detects whether this value represents a JSON array. If this is the case, this value is an instance of <see cref="T:MinimalJson.JsonArray"/>.
+            </summary>
+            <returns><code>true</code> if this value is an instance of JsonArray</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.asArray">
+            <summary>
+            Returns this JSON value as <see cref="T:MinimalJson.JsonArray"/>, assuming that this value represents a JSON array. If this is not the case, an exception is thrown.
+            </summary>
+            <returns>A JSONArray for this value</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.Equals(System.Object)">
+            <summary>
+            Compares this instance with <paramref name="obj"/>.
+            </summary>
+            <param name="obj">Object to compare with.</param>
+            <returns><c>true</c> is both objects have equal content, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:MinimalJson.JsonArray.GetEnumerator">
+            <summary>
+            Gets an enumerator to step through all the named json values.
+            </summary>
+            <returns>Enumerator to step through all the named json values.</returns>
+        </member>
+        <member name="T:MinimalJson.JsonObject">
+            <summary>
+            Represents a JSON object. A JSON object contains a sequence of members, which are pairs of a name and a JSON value (see <see cref="T:MinimalJson.JsonValue"/>). Although JSON objects should be used for unordered collections, this class stores members in document order.
+            Members can be added using one of the <code>add(name, value)</code> methods. Accepted values are either instances of <see cref="T:MinimalJson.JsonValue"/>, strings, primitive numbers, or bool values. To override values in an object, the <code>set(name, value)</code> methods can be used. However, not that the <code>add</code> methods perform better than <code>set</code>.
+            Members can be accessed by their name using <see cref="M:MinimalJson.JsonObject.get(System.String)"/>. A list of all names can be obtained from the method <see cref="M:MinimalJson.JsonObject.names"/>.
+            This class also supports iterating over the members in document order:
+            <example>
+            foreach(JsonObject.Member member in jsonObject)
+            {
+                string name = member.name;
+                JsonValue value = member.value;
+                ...
+            }
+            </example>
+            Note that this class is not thread-safe. If multiple threads access a <code>JsonObject</code> instance concurrently, while at least one of these threads modifies the contents of this object, access to the instance must be synchronized externally. Failure to do so may lead to an inconsistent state.
+            This class is not supposed to be extended by clients.
+            </summary>
+        </member>
+        <member name="M:MinimalJson.JsonObject.#ctor">
+            <summary>
+            Creates a new empty JsonObject.
+            </summary>
+        </member>
+        <member name="M:MinimalJson.JsonObject.#ctor(MinimalJson.JsonObject)">
+            <summary>
+            Creates a new JsonObject, initialized with the contents of the specified JSON object.
+            </summary>
+            <param name="obj">the JSON object to get the initial contents from, must not be <code>null</code></param>
+        </member>
+        <member name="M:MinimalJson.JsonObject.readFrom(System.IO.TextReader)">
+            <summary>
+            Reads a JSON object from the given reader.
+            Characters are read in chunks and buffered internally, therefore wrapping an existing reader in an additional BufferedReader does not improve reading performance.
+            </summary>
+            <param name="reader">the reader to read the JSON object from</param>
+            <returns>the JSON object that has been read</returns>
+            <exception cref="T:MinimalJson.ParseException">if the input is not valid JSON</exception>
+            <exception cref="T:System.NotSupportedException">if the input does not contain a JSON object</exception>
+        </member>
+        <member name="M:MinimalJson.JsonObject.readFrom(System.String)">
+            <summary>
+            Reads a JSON object from the given string.
+            </summary>
+            <param name="str">the string that contains the JSON object</param>
+            <returns>the JSON object that has been read</returns>
+            <exception cref="T:MinimalJson.ParseException">if the input is not valid JSON</exception>
+            <exception cref="T:System.NotSupportedException">if the input does not contain a JSON object</exception>
+        </member>
+        <member name="M:MinimalJson.JsonObject.unmodifiableObject(MinimalJson.JsonObject)">
+            <summary>
+            Returns an unmodifiable JsonObject for the specified one. This method allows to provide read-only access to a JsonObject.
+            The returned JsonObject is backed by the given object and reflect changes that happen to it.
+            </summary>
+            <param name="obj">the JsonObject for which an unmodifiable JsonObject is to be returned</param>
+            <returns>an unmodifiable view of the specified JsonObject</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.add(System.String,System.Int32)">
+            <summary>
+            Adds a new member at the end of this object, with the specified name and the JSON representation of the specified <code>int</code> value.
+            </summary>
+            <param name="name">the name of the member to add</param>
+            <param name="value">the value of the member to add</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.add(System.String,System.Int64)">
+            <summary>
+            Adds a new member at the end of this object, with the specified name and the JSON representation of the specified <code>long</code> value.
+            </summary>
+            <param name="name">the name of the member to add</param>
+            <param name="value">the value of the member to add</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.add(System.String,System.Single)">
+            <summary>
+            Adds a new member at the end of this object, with the specified name and the JSON representation of the specified <code>float</code> value.
+            </summary>
+            <param name="name">the name of the member to add</param>
+            <param name="value">the value of the member to add</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.add(System.String,System.Double)">
+            <summary>
+            Adds a new member at the end of this object, with the specified name and the JSON representation of the specified <code>double</code> value.
+            </summary>
+            <param name="name">the name of the member to add</param>
+            <param name="value">the value of the member to add</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.add(System.String,System.Boolean)">
+            <summary>
+            Adds a new member at the end of this object, with the specified name and the JSON representation of the specified <code>bool</code> value.
+            </summary>
+            <param name="name">the name of the member to add</param>
+            <param name="value">the value of the member to add</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.add(System.String,System.String)">
+            <summary>
+            Adds a new member at the end of this object, with the specified name and the JSON representation of the specified string.
+            </summary>
+            <param name="name">the name of the member to add</param>
+            <param name="value"> the value of the member to add</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.add(System.String,MinimalJson.JsonValue)">
+            <summary>
+            Adds a new member at the end of this object, with the specified name and the specified JSON value.
+            </summary>
+            <param name="name">the name of the member to add</param>
+            <param name="value">the value of the member to add, must not be <code>null</code></param>
+            <returns>the object itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentNullException">if the value is <code>null</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonObject.set(System.String,System.Int32)">
+            <summary>
+            Sets the value of the member with the specified name to the JSON representation of the specified <code>int</code> value.
+            If this object does not contain a member with this name, a new member is added at the end of the object.
+            </summary>
+            <param name="name">the name of the member to replace</param>
+            <param name="value">the value to set to the member</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.set(System.String,System.Int64)">
+            <summary>
+            Sets the value of the member with the specified name to the JSON representation of the specified <code>long</code> value.
+            If this object does not contain a member with this name, a new member is added at the end of the object.
+            </summary>
+            <param name="name">the name of the member to replace</param>
+            <param name="value">the value to set to the member</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.set(System.String,System.Single)">
+            <summary>
+            Sets the value of the member with the specified name to the JSON representation of the specified <code>float</code> value.
+            If this object does not contain a member with this name, a new member is added at the end of the object.
+            </summary>
+            <param name="name">the name of the member to replace</param>
+            <param name="value">the value to set to the member</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.set(System.String,System.Double)">
+            <summary>
+            Sets the value of the member with the specified name to the JSON representation of the specified <code>double</code> value.
+            If this object does not contain a member with this name, a new member is added at the end of the object.
+            </summary>
+            <param name="name">the name of the member to replace</param>
+            <param name="value">the value to set to the member</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.set(System.String,System.Boolean)">
+            <summary>
+            Sets the value of the member with the specified name to the JSON representation of the specified <code>bool</code> value.
+            If this object does not contain a member with this name, a new member is added at the end of the object.
+            </summary>
+            <param name="name">the name of the member to replace</param>
+            <param name="value">the value to set to the member</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.set(System.String,System.String)">
+            <summary>
+            Sets the value of the member with the specified name to the JSON representation of the specified <code>string</code> value.
+            If this object does not contain a member with this name, a new member is added at the end of the object.
+            </summary>
+            <param name="name">the name of the member to replace</param>
+            <param name="value">the value to set to the member</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.set(System.String,MinimalJson.JsonValue)">
+            <summary>
+            Sets the value of the member with the specified name to the JSON representation of the specified JSON value.
+            If this object does not contain a member with this name, a new member is added at the end of the object.
+            </summary>
+            <param name="name">the name of the member to replace</param>
+            <param name="value">the value to set to the member, must not be <code>null</code></param>
+            <returns>the object itself, to enable method chaining</returns>
+            <exception cref="T:System.ArgumentNullException">if the value is <code>null</code></exception>
+        </member>
+        <member name="M:MinimalJson.JsonObject.removeAt(System.String)">
+            <summary>
+            Removes a member with the specified name from this object. If this object does not contain a member with the specified name, the object is not modified.
+            </summary>
+            <param name="name">the name of the member to remove</param>
+            <returns>the object itself, to enable method chaining</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.get(System.String)">
+            <summary>
+            Returns the value of the member with the specified name in this object.
+            </summary>
+            <param name="name">the name of the member whose value is to be returned</param>
+            <returns>the value of the last member with the specified name, or <code>null</code> if this object does not contain a member with that name</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.size">
+            <summary>
+            Returns the number of members (i.e. name/value pairs) in this object.
+            </summary>
+            <returns>the number of members in this object</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.isEmpty">
+            <summary>
+            Returns <code>true</code> if this object contains no members.
+            </summary>
+            <returns><code>true</code> if this object contains no members</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.names">
+            <summary>
+            Returns a list of the names in this object in document order. It cannot be used to modify this object.
+            </summary>
+            <returns>a list of the names in this object</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.isObject">
+            <summary>
+            Detects whether this value represents a JSON object. If this is the case, this value is an instance of <see cref="T:MinimalJson.JsonObject"/>.
+            </summary>
+            <returns><code>true</code> if this value is an instance of JsonObject</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.asObject">
+            <summary>
+            Returns this JSON value as <see cref="T:MinimalJson.JsonObject"/>.
+            </summary>
+            <returns>The JsonObject of this instance.</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current object.</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.Equals(System.Object)">
+            <summary>
+            Compares this instance with <paramref name="obj"/>.
+            </summary>
+            <param name="obj">Object to compare with.</param>
+            <returns><c>true</c> is both objects have equal content, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:MinimalJson.JsonObject.GetEnumerator">
+            <summary>
+            Gets an enumerator to step through all the named json values.
+            </summary>
+            <returns>Enumerator to step through all the named json values.</returns>
+        </member>
+        <member name="P:MinimalJson.JsonObject.Item(System.String)">
+            <summary>
+            Gets or sets the named json value.
+            </summary>
+            <param name="name">Name of the json value.</param>
+            <returns>Value object.</returns>
+        </member>
+        <member name="T:MinimalJson.JsonObject.Member">
+            <summary>
+            Represents a member of a JSON object, i.e. a pair of name and value.
+            </summary>
+        </member>
+        <member name="P:MinimalJson.JsonObject.Member.name">
+            <summary>
+            The name of this member
+            </summary>
+        </member>
+        <member name="P:MinimalJson.JsonObject.Member.value">
+            <summary>
+            The value of this member
+            </summary>
+        </member>
+        <member name="T:MinimalJson.ParseException">
+            <summary>
+            An unchecked exception to indicate that an input does not qualify as valid JSON.
+            </summary>
+        </member>
+        <member name="P:MinimalJson.ParseException.offset">
+            <summary>
+            The absolute index of the character at which the error occurred.
+            The index of the first character of a document is 0.
+            </summary>
+        </member>
+        <member name="P:MinimalJson.ParseException.line">
+            <summary>
+            The number of the line in which the error occurred. The first line counts as 1.
+            </summary>
+        </member>
+        <member name="P:MinimalJson.ParseException.column">
+            <summary>
+            The index of the character at which the error occurred, relative to the line.
+            The index of the first character of a line is 0.
+            </summary>
+        </member>
+        <member name="T:ReadOnlyDictionary`2">
+            <summary>
+            A dictionary which cannot be modified.
+            </summary>
+            <typeparam name="TKey">Key type.</typeparam>
+            <typeparam name="TValue">Value type.</typeparam>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.#ctor">
+            <summary>
+            Creates a new instance of <see cref="T:ReadOnlyDictionary`2"/>.
+            </summary>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.#ctor(System.Collections.Generic.IDictionary{`0,`1})">
+            <summary>
+            Creates a new instance of <see cref="T:ReadOnlyDictionary`2"/> by copying the content of <paramref name="dictionary"/>.
+            </summary>
+            <param name="dictionary">Source dictionary.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="dictionary"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.System#Collections#Generic#IDictionary{TKey@TValue}#Add(`0,`1)">
+            <summary>
+            Adds an element with the provided key and value to the dictionary.
+            </summary>
+            <param name="key">The object to use as the key of the element to add.</param>
+            <param name="value">The object to use as the value of the element to add.</param>
+            <exception cref="M:ReadOnlyDictionary`2.ReadOnlyException">Dictionary is read only.</exception>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.ContainsKey(`0)">
+            <summary>Determines whether the dictionary contains an element with the specified key.</summary>
+            <param name="key">The key to locate.</param>
+            <returns><c>true</c> if the dictionary containsan element with the key; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.System#Collections#Generic#IDictionary{TKey@TValue}#Remove(`0)">
+            <summary>
+            Removes the element with the specified key from the dictionary.
+            </summary>
+            <param name="key">The key of the element to remove.</param>
+            <returns><c>true</c> if the element is successfully removed; otherwise, <c>false</c>.</returns>
+            <exception cref="M:ReadOnlyDictionary`2.ReadOnlyException">Dictionary is read only.</exception>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.TryGetValue(`0,`1@)">
+            <summary>
+            Gets the value associated with the specified key.
+            </summary>
+            <param name="key">The key whose value to get.</param>
+            <param name="value">When this method returns, the value associated with the specified key, if
+            the key is found; otherwise, the default value for the type of the value
+            parameter. This parameter is passed uninitialized.</param>
+            <returns>´<c>true</c> if the dictionary contains an element with the specified key; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.Contains(System.Collections.Generic.KeyValuePair{`0,`1})">
+            <summary>
+            Checks whether a given keyvalue pair is within the dictionary.
+            </summary>
+            <param name="item">Keyvaluepair to find.</param>
+            <returns><c>true</c> if found in dictionary, <c>false</c>c> otherwise.</returns>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">
+            <summary>
+            Copies the elements of the <paramref name="array"/> to the dictionary, starting at <paramref name="arrayIndex"/>.
+            </summary>
+            <param name="array">Array to copy data from.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="M:ReadOnlyDictionary`2.GetEnumerator">
+            <summary>
+            Gets an enumerator on the keyvalue pairs.
+            </summary>
+            <returns>Enumerator for the keyvalue pairs.</returns>
+        </member>
+        <member name="P:ReadOnlyDictionary`2.Keys">
+            <summary>
+            Gets a collection containing the keys of the dictionary.
+            </summary>
+            <value>A collection containing the keys of the dictionary.</value>
+        </member>
+        <member name="P:ReadOnlyDictionary`2.Values">
+            <summary>
+            Gets a collection containing the values of the dictionary.
+            </summary>
+            <value>A collection containing the values of the dictionary.</value>
+        </member>
+        <member name="P:ReadOnlyDictionary`2.Item(`0)">
+            <summary>
+            Gets or sets the element with the specified key.
+            </summary>
+            <param name="key">The key of the element to get or set.</param>
+            <returns>The element with the specified key.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is <c>null</c>.</exception>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">The property is retrieved and key is not found.</exception>
+            <exception cref="T:System.NotSupportedException">The property is set and the dictionary is read-only.</exception>
+        </member>
+        <member name="P:ReadOnlyDictionary`2.Count">
+            <summary>
+            Gets the number of entries in the dictionary.
+            </summary>
+            <value>Number of entries.</value>
+        </member>
+        <member name="P:ReadOnlyDictionary`2.IsReadOnly">
+            <summary>
+            Gets whether the dictionary is read only.
+            </summary>
+            <value><c>true</c> if dictionary is read only, <c>false</c> otherwise.</value>
+        </member>
+    </members>
+</doc>
