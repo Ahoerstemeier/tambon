@@ -1530,11 +1530,12 @@ namespace De.AHoerstemeier.Tambon
         /// Calculates the sub-entity after which the entity was named.
         /// </summary>
         /// <returns>Sub-entity after which the entity was named. <c>null</c> if not named after any sub-entity.</returns>
+        /// <remarks>In case either entity or sub-entity had name changes, <c>null</c> is returned instead of checking the name at creation.</remarks>
         public Entity NamedAfterEntity()
         {
             Entity result = null;
             var creation = history.Items.OfType<HistoryCreate>().FirstOrDefault(x => x.status == ChangeStatus.Done || x.status == ChangeStatus.Gazette);
-            if ( creation != null )
+            if ( creation != null && !creation.Items.OfType<HistoryRename>().Any() )
             {
                 if ( this.type.IsLocalGovernment() )
                 {
@@ -1551,7 +1552,7 @@ namespace De.AHoerstemeier.Tambon
                     if ( subEntity != null )
                     {
                         var subEntityReassign = subEntity.history.Items.OfType<HistoryReassign>().FirstOrDefault(x => x.effective == creation.effective);
-                        if ( subEntityReassign != null )
+                        if ( subEntityReassign != null && !subEntityReassign.Items.OfType<HistoryRename>().Any() )
                         {
                             result = subEntity;
                         }
