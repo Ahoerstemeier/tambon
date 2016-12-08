@@ -2633,7 +2633,7 @@
       <statuschange effective="1994-07-03" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="111" page="32" issue="21 ก" date="1994-06-03" />
       </statuschange>
-      <create effective="1977-02-16" status="Gazette" type="KingAmphoe" splitfrom="2406">
+      <create effective="1977-02-16" status="Gazette" type="KingAmphoe" splitfrom="2406" parent="2406">
         <gazetteref volume="94" page="773" issue="13 ง" date="1977-02-22" />
       </create>
     </history>
@@ -2762,7 +2762,7 @@
       <rename effective="1972-12-14" status="Gazette" name="สนามชัยเขต" oldname="สนามไชย">
         <gazetteref volume="89" page="3015" issue="195 ง" date="1972-12-19" />
       </rename>
-      <create effective="1966-01-06" status="Gazette" type="KingAmphoe" splitfrom="2406">
+      <create effective="1966-01-06" status="Gazette" type="KingAmphoe" splitfrom="2406" parent="2406">
         <gazetteref volume="83" page="254" issue="6 ง" date="1966-01-18" />
       </create>
     </history>
@@ -2979,6 +2979,12 @@
         </reference>
       </area>
     </area>
+    <history>
+      <statuschange effective="1985-03-15" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="102" page="7" issue="33 ก ฉบับพิเศษ" date="1985-03-15" />
+      </statuschange>
+      <create type="KingAmphoe" splitfrom="2402" parent="2402" effective="1978-10-16" status="Done" subdivisions="3" subdivisiontype="Tambon" />
+    </history>
     <entity type="Tambon" name="แปลงยาว" english="Plaeng Yao" geocode="240901">
       <wiki wikidata="Q16571170" />
       <office type="TAOOffice">
@@ -2995,6 +3001,9 @@
           <entity geocode="240901" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1978-10-16" oldparent="2402" newparent="2409" status="Done" />
+      </history>
       <entity type="Muban" geocode="24090101" name="บ้านบางบ่อ" english="Ban Bang Bo" />
       <entity type="Muban" geocode="24090102" name="บ้านคลอง" english="Ban Khlong" />
       <entity type="Muban" geocode="24090103" name="บ้านแปลงยาว" english="Ban Plaeng Yao" />
@@ -3011,6 +3020,9 @@
     </entity>
     <entity type="Tambon" name="วังเย็น" english="Wang Yen" geocode="240902">
       <wiki wikidata="Q16571106" />
+      <history>
+        <reassign effective="1978-10-16" oldparent="2402" newparent="2409" status="Done" />
+      </history>
       <entity type="Muban" geocode="24090201" name="บ้านวังเย็น" english="Ban Wang Yen" />
       <entity type="Muban" geocode="24090202" name="บ้านวังกะจะ" english="Ban Wang Kacha" />
       <entity type="Muban" geocode="24090203" name="บ้านหนองศิลาราม" english="Ban Nong Silaram" />
@@ -3038,6 +3050,12 @@
           <entity geocode="240903" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1978-10-16" oldparent="2402" newparent="2409" status="Done" />
+        <reassign effective="1950-05-19" status="Gazette" oldparent="2406" newparent="2402">
+          <gazetteref volume="67" page="2377" issue="32 ง" date="1950-06-06" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="24090301" name="บ้านใน" english="Ban Nai" />
       <entity type="Muban" geocode="24090302" name="บ้านภูมิเจริญ" english="Ban Phum Charoen" />
       <entity type="Muban" geocode="24090303" name="บ้านกลาง" english="Ban Klang" />
@@ -3124,7 +3142,7 @@
       <statuschange effective="1996-12-05" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="113" page="5" issue="62 ก" date="1996-11-20" />
       </statuschange>
-      <create effective="1991-04-01" status="Gazette" type="KingAmphoe" splitfrom="2408" subdivisions="2" subdivisiontype="Tambon">
+      <create effective="1991-04-01" status="Gazette" type="KingAmphoe" splitfrom="2408" parent="2408" subdivisions="2" subdivisiontype="Tambon">
         <gazetteref volume="108" page="1063" issue="15 ง" date="1991-01-31" />
       </create>
     </history>
@@ -3285,7 +3303,7 @@
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
       </statuschange>
-      <create effective="1993-05-31" status="Gazette" type="KingAmphoe" splitfrom="2402" subdivisions="5" subdivisiontype="Tambon">
+      <create effective="1993-05-31" status="Gazette" type="KingAmphoe" splitfrom="2402" parent="2402" subdivisions="5" subdivisiontype="Tambon">
         <gazetteref volume="110" page="21" issue="74 ง" date="1993-06-08" />
       </create>
     </history>
