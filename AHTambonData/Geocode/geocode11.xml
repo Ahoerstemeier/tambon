@@ -130,6 +130,14 @@
     <bounding geocode="10" direction="north" />
     <bounding geocode="24" direction="east" />
   </area>
+  <history>
+    <create effective="1946-05-09" status="Gazette" type="Changwat" splitfrom="8" subdivisions="4" subdivisiontype="Amphoe">
+      <gazetteref volume="63" page="315" issue="29 ก" date="1946-05-09" />
+    </create>
+    <abolished type="Changwat" effective="1943-01-01" status="Gazette" mergeto="8">
+      <gazetteref volume="59" page="2447" issue="77 ก" date="1942-12-10" />
+    </abolished>
+  </history>
   <entity type="Amphoe" name="เมืองสมุทรปราการ" english="Mueang Samut Prakan" ipa="mɯ̄aŋ sāmùt prāːkāːn" geocode="1101">
     <wiki wikidata="Q2219208" />
     <codes>
@@ -156,6 +164,20 @@
         </reference>
       </area>
     </area>
+    <history>
+      <rename effective="1946-09-24" status="Gazette" name="เมืองสมุทรปราการ" oldname="สมุทรปราการ">
+        <gazetteref volume="63" page="486" issue="63 ก" date="1946-09-24" />
+      </rename>
+      <rename effective="1943-01-12" status="Gazette" name="สมุทรปราการ" oldname="เมืองสมุทรปราการ">
+        <gazetteref volume="60" page="103" issue="3 ก" date="1943-01-12" />
+      </rename>
+      <reassign effective="1943-01-01" status="Gazette" oldparent="8" newparent="11" comment="Reassign from Phra Nakhon">
+        <gazetteref volume="59" page="2447" issue="77 ก" date="1942-12-10" />
+      </reassign>
+      <rename effective="1938-11-14" status="Gazette" name="เมืองสมุทรปราการ" oldname="สมุทรปราการ">
+        <gazetteref volume="55" page="658" issue="0 ก" date="1938-11-14" />
+      </rename>
+    </history>
     <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="110101">
       <wiki wikidata="Q15979206" />
       <codes>
@@ -484,6 +506,9 @@
       </area>
     </area>
     <history>
+      <reassign effective="1943-01-01" status="Gazette" oldparent="8" newparent="11" comment="Reassign from Phra Nakhon">
+        <gazetteref volume="59" page="2447" issue="77 ก" date="1942-12-10" />
+      </reassign>
       <rename effective="1931-02-08" status="Gazette" name="บางบ่อ" english="Bang Bo" oldname="บางเหี้ย" oldenglish="Bang Hia">
         <gazetteref volume="47" page="377" issue="0 ก" date="1931-02-08" />
       </rename>
@@ -866,6 +891,11 @@
         </reference>
       </area>
     </area>
+    <history>
+      <reassign effective="1943-01-01" status="Gazette" oldparent="8" newparent="11" comment="Reassign from Phra Nakhon">
+        <gazetteref volume="59" page="2447" issue="77 ก" date="1942-12-10" />
+      </reassign>
+    </history>
     <entity type="Tambon" name="บางพลีใหญ่" english="Bang Phli Yai" geocode="110301">
       <wiki wikidata="Q15979234" />
       <office type="TAOOffice">
@@ -1200,6 +1230,11 @@
         </reference>
       </area>
     </area>
+    <history>
+      <reassign effective="1943-01-01" status="Gazette" oldparent="8" newparent="11" comment="Reassign from Phra Nakhon">
+        <gazetteref volume="59" page="2447" issue="77 ก" date="1942-12-10" />
+      </reassign>
+    </history>
     <entity type="Tambon" name="ตลาด" english="Talat" geocode="110401">
       <wiki wikidata="Q15979247" />
     </entity>
@@ -1391,7 +1426,7 @@
         </areacoverage>
       </office>
       <history>
-        <create effective="1962-09-20" status="Gazette" type="Tambon" splitfrom="110410">
+        <create effective="1962-09-20" status="Gazette" type="Tambon" splitfrom="110410" subdivisions="11" subdivisiontype="Muban">
           <gazetteref volume="79" page="2080" issue="90 ง" date="1962-10-02" />
         </create>
       </history>
@@ -1507,7 +1542,7 @@
     <entity type="Tambon" name="สำโรง" english="Samrong" geocode="110414">
       <wiki wikidata="Q15979269" />
       <history>
-        <create effective="1988-11-06" status="Gazette" type="Tambon" splitfrom="110407">
+        <create effective="1988-11-06" status="Gazette" type="Tambon" splitfrom="110407" subdivisions="9" subdivisiontype="Muban">
           <gazetteref volume="105" page="65" issue="234 ง ฉบับพิเศษ" date="1988-12-27" />
         </create>
       </history>
@@ -1515,7 +1550,7 @@
     <entity type="Tambon" name="สำโรงกลาง" english="Samrong Klang" geocode="110415">
       <wiki wikidata="Q15979270" />
       <history>
-        <create effective="1990-07-01" status="Gazette" type="Tambon" splitfrom="110407">
+        <create effective="1990-07-01" status="Gazette" type="Tambon" splitfrom="110407" subdivisions="10" subdivisiontype="Muban">
           <gazetteref volume="107" page="17" issue="174 ง ฉบับพิเศษ" date="1990-09-16" />
         </create>
       </history>
@@ -1564,7 +1599,7 @@
       <statuschange effective="1991-07-19" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="108" page="29" issue="107 ก ฉบับพิเศษ" date="1991-06-19" />
       </statuschange>
-      <create effective="1984-12-15" status="Gazette" type="KingAmphoe" splitfrom="1101">
+      <create effective="1984-12-15" status="Gazette" type="KingAmphoe" splitfrom="1101" parent="1101" subdivisions="5" subdivisiontype="Tambon">
         <gazetteref volume="102" page="31" issue="1 ง" date="1985-01-01" />
       </create>
     </history>
@@ -1602,6 +1637,9 @@
       </office>
       <history>
         <rename oldname="สาขลา" oldenglish="Sakhla" name="นาเกลือ" english="Na Kluea" comment="after 1919" />
+        <reassign effective="1984-12-15" status="Gazette" oldparent="1101" newparent="1105" oldgeocode="110105">
+          <gazetteref volume="102" page="31" issue="1 ง" date="1985-01-01" />
+        </reassign>
       </history>
       <entity type="Muban" geocode="11050101" name="บ้านขุนสมุทรไทย" english="Ban Khun Samut Thai" />
       <entity type="Muban" geocode="11050102" name="บ้านคลองนาเกลือ" english="Ban Khlong Na Kluea" />
@@ -1644,7 +1682,10 @@
         </areacoverage>
       </office>
       <history>
-        <create effective="1979-07-15" status="Gazette" type="Tambon" splitfrom="110105">
+        <reassign effective="1984-12-15" status="Gazette" oldparent="1101" newparent="1105">
+          <gazetteref volume="102" page="31" issue="1 ง" date="1985-01-01" />
+        </reassign>
+        <create effective="1979-07-15" status="Gazette" type="Tambon" splitfrom="110105" subdivisions="4" subdivisiontype="Muban">
           <gazetteref volume="96" page="2752" issue="128 ง ฉบับพิเศษ" date="1979-07-31" />
         </create>
       </history>
@@ -1687,6 +1728,11 @@
           <entity geocode="110503" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1984-12-15" status="Gazette" oldparent="1101" newparent="1105" oldgeocode="110106">
+          <gazetteref volume="102" page="31" issue="1 ง" date="1985-01-01" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="11050301" name="บ้านไร่" english="Ban Rai" />
       <entity type="Muban" geocode="11050302" name="บ้านคลองสวน" english="Ban Khlong Suan" />
       <entity type="Muban" geocode="11050303" name="บ้านคลองใหม่" english="Ban Khlong Mai" />
@@ -1703,11 +1749,14 @@
     </entity>
     <entity type="Tambon" name="ปากคลองบางปลากด" english="Pak Khlong Bang Pla Kot" geocode="110504">
       <wiki wikidata="Q15979277" />
-      <!--<history>
-        <create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="110107">
+      <history>
+        <reassign effective="1984-12-15" status="Gazette" oldparent="1101" newparent="1105" oldgeocode="110109">
+          <gazetteref volume="102" page="31" issue="1 ง" date="1985-01-01" />
+        </reassign>
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="110107" subdivisions="4" subdivisiontype="Muban">
           <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
-        </create>
-      </history>-->
+        </create>-->
+      </history>
       <entity type="Muban" geocode="11050401" name="บ้านคลองสองพี่น้อง" english="Ban Khlong Song Phi Nong" />
       <entity type="Muban" geocode="11050402" name="บ้านวัดแค" english="Ban Wat Khae" />
       <entity type="Muban" geocode="11050403" name="บ้านเจดีย์" english="Ban Chedi" />
@@ -1746,6 +1795,11 @@
           <entity geocode="110505" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1984-12-15" status="Gazette" oldparent="1101" newparent="1105" oldgeocode="110107">
+          <gazetteref volume="102" page="31" issue="1 ง" date="1985-01-01" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="11050501" name="บ้านยายสี" english="Ban Yai Si" />
       <entity type="Muban" geocode="11050502" name="บ้านคลองมอญ" english="Ban Khlong Mon" />
       <entity type="Muban" geocode="11050503" name="บ้านบางปลากด" english="Ban Bang Pla Kot" />
@@ -1807,7 +1861,7 @@
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
       </statuschange>
-      <create effective="1995-05-01" status="Gazette" type="KingAmphoe" splitfrom="1103">
+      <create effective="1995-05-01" status="Gazette" type="KingAmphoe" splitfrom="1103" parent="1103" subdivisions="3" subdivisiontype="Tambon">
         <gazetteref volume="112" page="61" issue="พิเศษ 9 ง" date="1995-03-22" />
       </create>
     </history>
@@ -1843,6 +1897,11 @@
           <entity geocode="110601" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1995-05-01" status="Gazette" oldparent="1103" newparent="1106" oldgeocode="110305">
+          <gazetteref volume="112" page="61" issue="พิเศษ 9 ง" date="1995-03-22" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="11060101" name="บ้านคลองสำโรง" english="Ban Khlong Samrong" />
       <entity type="Muban" geocode="11060102" name="บ้านไร่" english="Ban Rai" />
       <entity type="Muban" geocode="11060103" name="บ้านเกษรา" english="Ban Ketsara" />
@@ -1894,6 +1953,11 @@
           <entity geocode="110602" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1995-05-01" status="Gazette" oldparent="1103" newparent="1106" oldgeocode="110307">
+          <gazetteref volume="112" page="61" issue="พิเศษ 9 ง" date="1995-03-22" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="11060201" name="บ้านหัวคู้" english="Ban Hua Khu" />
       <entity type="Muban" geocode="11060202" name="บ้านคลองจรเข้น้อย" english="Ban Khlong Chorakhe Noi" />
       <entity type="Muban" geocode="11060203" name="บ้านคลองจรเข้น้อย" english="Ban Khlong Chorakhe Noi" />
@@ -1937,6 +2001,11 @@
           <entity geocode="110603" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1995-05-01" status="Gazette" oldparent="1103" newparent="1106" oldgeocode="110306">
+          <gazetteref volume="112" page="61" issue="พิเศษ 9 ง" date="1995-03-22" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="11060301" name="บ้านคลองสำโรง" english="Ban Khlong Samrong" />
       <entity type="Muban" geocode="11060302" name="บ้านเกาะพิจิตร" english="Ban Ko Phichit" />
       <entity type="Muban" geocode="11060303" name="บ้านคลองสาระหงษ์" english="Ban Khlong Sarahong" />
