@@ -714,7 +714,7 @@
       <statuschange effective="1981-07-13" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="98" page="7" issue="115 ก ฉบับพิเศษ" date="1981-07-13" />
       </statuschange>
-      <create effective="1975-08-01" status="Gazette" type="KingAmphoe" splitfrom="6601" subdivisions="3" subdivisiontype="Tambon">
+      <create effective="1975-08-01" status="Gazette" type="KingAmphoe" splitfrom="6601" parent="6601" subdivisions="3" subdivisiontype="Tambon">
         <gazetteref volume="92" page="1876" issue="144 ง" date="1975-07-29" />
       </create>
     </history>
@@ -915,7 +915,7 @@
       <statuschange effective="1973-06-28" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="90" page="32" issue="75 ก ฉบับพิเศษ" date="1973-06-28" />
       </statuschange>
-      <create effective="1967-05-01" status="Gazette" type="KingAmphoe" splitfrom="6601 6608" subdivisions="3" subdivisiontype="Tambon">
+      <create effective="1967-05-01" status="Gazette" type="KingAmphoe" splitfrom="6601 6608" parent="6601" subdivisions="3" subdivisiontype="Tambon">
         <gazetteref volume="84" page="1513" issue="45 ง" date="1967-05-23" />
       </create>
     </history>
@@ -1278,6 +1278,14 @@
         </reference>
       </area>
     </area>
+    <history>
+      <statuschange effective="1940-04-01" status="Gazette" old="KingAmphoe" new="Amphoe">
+        <gazetteref volume="57" page="248" issue="0 ง" date="1940-04-16" />
+      </statuschange>
+      <create effective="1937-03-01" status="Gazette" type="KingAmphoe" splitfrom="6601 6605 6606" parent="6601" subdivisions="4" subdivisiontype="Tambon">
+        <gazetteref volume="53" page="2715" issue="0 ง" date="1937-01-24" />
+      </create>
+    </history>
     <entity type="Tambon" name="ตะพานหิน" english="Taphan Hin" geocode="660401">
       <codes>
         <post value="66110" />
@@ -1310,6 +1318,11 @@
           <entity geocode="660404" coverage="completely" />
         </areacoverage>
       </office>
+      <!--<history>
+        <create effective="1948-02-23" status="Gazette" type="Tambon" splitfrom="660401" subdivisions="5" subdivisiontype="Muban">
+          <gazetteref volume="65" page="951" issue="15 ง" date="1948-03-16" />
+        </create>
+      </history>-->
       <entity type="Muban" geocode="66040201" name="บ้านต้นชุมแสง" english="Ban Ton Chum Saeng" />
       <entity type="Muban" geocode="66040202" name="บ้านงิ้วราย" english="Ban Ngio Rai" />
       <entity type="Muban" geocode="66040203" name="บ้านหาดแตงโม" english="Ban Hat Taengmo" />
@@ -1341,6 +1354,11 @@
           <entity geocode="660403" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1937-03-01" status="Gazette" oldparent="6601" newparent="6604">
+          <gazetteref volume="53" page="2715" issue="0 ง" date="1937-01-24" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="66040301" name="บ้านน้ำโจนใต้" english="Ban Nam Chon Tai" />
       <entity type="Muban" geocode="66040302" name="บ้านหาดแตงโม" english="Ban Hat Taengmo" />
       <entity type="Muban" geocode="66040303" name="บ้านหัวดาน" english="Ban Hua Dan" />
@@ -1365,6 +1383,11 @@
           </create>
         </history>
       </office>
+      <!--<history>
+        <create effective="1948-11-09" status="Gazette" type="Tambon" splitfrom="660403" subdivisions="4" subdivisiontype="Muban">
+          <gazetteref volume="65" page="3686" issue="66 ง" date="1948-11-16" />
+        </create>
+      </history>-->
       <entity type="Muban" geocode="66040401" name="บ้านคลองเจ็กเสี่ยง" english="Ban Khlong Chek Siang" />
       <entity type="Muban" geocode="66040402" name="บ้านไทรโรงโขน" english="Ban Sai Rong Khon" />
       <entity type="Muban" geocode="66040403" name="บ้านไผ่ร้อยกอ" english="Ban Phai Roi Ko" />
@@ -1442,6 +1465,11 @@
           <entity geocode="660407" coverage="completely" />
         </areacoverage>
       </office>
+      <!--<history>
+        <create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="660406" subdivisions="8" subdivisiontype="Muban">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>
+      </history>-->
       <entity type="Muban" geocode="66040701" name="บ้านวัดเกาะ" english="Ban Wat Ko" />
       <entity type="Muban" geocode="66040702" name="บ้านดงตะขบ" english="Ban Dong Takhop" />
       <entity type="Muban" geocode="66040703" name="บ้านหนองคล่อ" english="Ban Nong Khlo" />
@@ -1476,6 +1504,11 @@
           <entity geocode="660408" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1937-03-01" status="Gazette" oldparent="6605" newparent="6604">
+          <gazetteref volume="53" page="2715" issue="0 ง" date="1937-01-24" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="66040801" name="บ้านวังไคร้" english="Ban Wang Khrai" />
       <entity type="Muban" geocode="66040802" name="บ้านคลองคูณ" english="Ban Khlong Khun" />
       <entity type="Muban" geocode="66040803" name="บ้านอ้อมหล่ม" english="Ban Om Lom" />
@@ -1506,6 +1539,14 @@
           <entity geocode="660409" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="660408" subdivisions="8" subdivisiontype="Muban">
+          <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
+        </create>-->
+        <reassign effective="1937-03-01" status="Gazette" oldparent="6606" newparent="6604">
+          <gazetteref volume="53" page="2715" issue="0 ง" date="1937-01-24" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="66040901" name="บ้านวังสำโรง" english="Ban Wang Samrong" />
       <entity type="Muban" geocode="66040902" name="บ้านวังสำโรง" english="Ban Wang Samrong" />
       <entity type="Muban" geocode="66040903" name="บ้านสามบึงบาตร" english="Ban Sam Bueng Bat" />
@@ -1712,6 +1753,11 @@
         </reference>
       </area>
     </area>
+    <history>
+      <rename effective="1917-04-29" status="Gazette" name="บางมูลนาก" english="Bang Mun Nak" oldname="ภูมิ" oldenglish="Phumi">
+        <gazetteref volume="34" page="40" issue="0 ก" date="1917-04-29" />
+      </rename>
+    </history>
     <entity type="Tambon" name="บางมูลนาก" english="Bang Mun Nak" geocode="660501">
       <wiki wikidata="Q16150401" />
       <codes>
@@ -2029,6 +2075,11 @@
         </reference>
       </area>
     </area>
+    <history>
+      <rename effective="1939-04-17" status="Gazette" name="โพทะเล" oldname="บางคลาน">
+        <gazetteref volume="56" page="354" issue="0 ก" date="1939-04-17" />
+      </rename>
+    </history>
     <entity type="Tambon" name="โพทะเล" english="Pho Thale" geocode="660601">
       <office type="TAOOffice">
         <officials>
@@ -2740,7 +2791,7 @@
       <statuschange effective="1987-08-12" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="104" page="26" issue="156 ก ฉบับพิเศษ" date="1987-08-12" />
       </statuschange>
-      <create effective="1983-05-01" status="Gazette" type="KingAmphoe" splitfrom="6604" subdivisions="4" subdivisiontype="Tambon">
+      <create effective="1983-05-01" status="Gazette" type="KingAmphoe" splitfrom="6604" parent="6604" subdivisions="4" subdivisiontype="Tambon">
         <gazetteref volume="100" page="1317" issue="65 ง" date="1983-04-26" />
       </create>
     </history>
@@ -2989,7 +3040,7 @@
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
       </statuschange>
-      <create effective="1995-04-01" status="Gazette" type="KingAmphoe" splitfrom="6601" subdivisions="4" subdivisiontype="Tambon">
+      <create effective="1995-04-01" status="Gazette" type="KingAmphoe" splitfrom="6601" parent="6601" subdivisions="4" subdivisiontype="Tambon">
         <gazetteref volume="112" page="68" issue="พิเศษ 9 ง" date="1995-03-22" />
       </create>
     </history>
@@ -3231,7 +3282,7 @@
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
       </statuschange>
-      <create effective="1996-07-15" status="Gazette" type="KingAmphoe" splitfrom="6606" subdivisions="5" subdivisiontype="Tambon">
+      <create effective="1996-07-15" status="Gazette" type="KingAmphoe" splitfrom="6606" parent="6606" subdivisions="5" subdivisiontype="Tambon">
         <gazetteref volume="113" page="21" issue="พิเศษ 18 ง" date="1996-06-26" />
       </create>
     </history>
@@ -3476,7 +3527,7 @@
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="124" page="14" issue="46 ก" date="2007-08-24" />
       </statuschange>
-      <create effective="1996-07-15" status="Gazette" type="KingAmphoe" splitfrom="6605" subdivisions="5" subdivisiontype="Tambon">
+      <create effective="1996-07-15" status="Gazette" type="KingAmphoe" splitfrom="6605" parent="6605" subdivisions="5" subdivisiontype="Tambon">
         <gazetteref volume="113" page="17" issue="พิเศษ 18 ง" date="1996-06-26" />
       </create>
     </history>
