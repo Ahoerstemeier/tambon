@@ -606,11 +606,73 @@
     </xs:sequence>
   </xs:complexType>
 
+  <xs:simpleType name="SuspensionEndType">
+    <xs:annotation>
+      <xs:documentation>Types how a temporary remove from office was ended.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>End unknown, or still suspended.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Remove">
+        <xs:annotation>
+          <xs:documentation>Remove from office was made permanent.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cleared">
+        <xs:annotation>
+          <xs:documentation>Official was reinstanted to office.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Death">
+        <xs:annotation>
+          <xs:documentation>Official died while suspended.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Resign">
+        <xs:annotation>
+          <xs:documentation>Official resigned while suspended.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Suspension">
+    <xs:sequence>
+      <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>References on the election.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="start" type="xs:date" use="required">
+      <xs:annotation>
+        <xs:documentation>Date suspension began.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="end" type="xs:date" use="optional">
+      <xs:annotation>
+        <xs:documentation>Date suspension ended.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="endtype" type="t:SuspensionEndType" use="optional" default="Unknown">
+      <xs:annotation>
+        <xs:documentation>How suspension ended.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
   <xs:complexType abstract="1" name="OfficialEntryBase">
     <xs:sequence>
       <xs:element name="election" minOccurs="0" maxOccurs="1" type="t:Election">
         <xs:annotation>
           <xs:documentation>Data on the election which got the official into his office.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="suspension" minOccurs="0" maxOccurs="unbounded" type="t:Suspension">
+        <xs:annotation>
+          <xs:documentation>Data on temporary removals from office.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="references" minOccurs="0" maxOccurs="1" type="t:ReferenceList">

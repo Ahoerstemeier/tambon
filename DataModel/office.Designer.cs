@@ -2133,6 +2133,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private Election electionField;
         
+        private List<Suspension> suspensionField;
+        
         private List<object> referencesField;
         
         private OfficialType titleField;
@@ -2164,6 +2166,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public OfficialEntryBase() {
             this.referencesField = new List<object>();
+            this.suspensionField = new List<Suspension>();
             this.beginreasonField = OfficialBeginType.Unknown;
             this.endreasonField = OfficialEndType.Unknown;
         }
@@ -2186,12 +2189,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Data on temporary removals from office.
+        /// </summary>
+        /// <value>
+        /// The suspension.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("suspension", Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<Suspension> suspension {
+            get {
+                return this.suspensionField;
+            }
+            set {
+                this.suspensionField = value;
+            }
+        }
+        
+        /// <summary>
         /// References on the official term, election or removal.
         /// </summary>
         /// <value>
         /// The references.
         /// </value>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
         [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
         [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
         [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
@@ -2412,6 +2432,159 @@ namespace De.AHoerstemeier.Tambon {
                 this.endreasonField = value;
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Suspension", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class Suspension {
+        
+        private List<object> referencesField;
+        
+        private System.DateTime startField;
+        
+        private System.DateTime endField;
+        
+        private bool endFieldSpecified;
+        
+        private SuspensionEndType endtypeField;
+        
+        /// <summary>
+        /// Creates a new instance of Suspension.
+        /// </summary>
+        public Suspension() {
+            this.referencesField = new List<object>();
+            this.endtypeField = SuspensionEndType.Unknown;
+        }
+        
+        /// <summary>
+        /// References on the election.
+        /// </summary>
+        /// <value>
+        /// The references.
+        /// </value>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> references {
+            get {
+                return this.referencesField;
+            }
+            set {
+                this.referencesField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Date suspension began.
+        /// </summary>
+        /// <value>
+        /// The start.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime start {
+            get {
+                return this.startField;
+            }
+            set {
+                this.startField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Date suspension ended.
+        /// </summary>
+        /// <value>
+        /// The end.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime end {
+            get {
+                return this.endField;
+            }
+            set {
+                this.endField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool endSpecified {
+            get {
+                return this.endFieldSpecified;
+            }
+            set {
+                this.endFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// How suspension ended.
+        /// </summary>
+        /// <value>
+        /// The endtype.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(SuspensionEndType.Unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SuspensionEndType endtype {
+            get {
+                return this.endtypeField;
+            }
+            set {
+                this.endtypeField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Types how a temporary remove from office was ended.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum SuspensionEndType {
+        
+        /// <summary>
+        /// End unknown, or still suspended.
+        /// </summary>
+        Unknown,
+        
+        /// <summary>
+        /// Remove from office was made permanent.
+        /// </summary>
+        Remove,
+        
+        /// <summary>
+        /// Official was reinstanted to office.
+        /// </summary>
+        Cleared,
+        
+        /// <summary>
+        /// Official died while suspended.
+        /// </summary>
+        Death,
+        
+        /// <summary>
+        /// Official resigned while suspended.
+        /// </summary>
+        Resign,
     }
     
     /// <summary>
