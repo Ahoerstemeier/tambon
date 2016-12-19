@@ -1918,6 +1918,11 @@ namespace De.AHoerstemeier.Tambon {
         Assign,
         
         /// <summary>
+        /// Assignment to a new post acting.
+        /// </summary>
+        AssignActing,
+        
+        /// <summary>
         /// Permanently remove from a post.
         /// </summary>
         Remove,
