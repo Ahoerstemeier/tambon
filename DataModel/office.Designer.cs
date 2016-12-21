@@ -2585,13 +2585,13 @@ namespace De.AHoerstemeier.Tambon {
         /// Official resigned while suspended.
         /// </summary>
         Resign,
-
+        
         /// <summary>
         /// Term ended while suspended.
         /// </summary>
         EndOfTerm,
     }
-
+    
     /// <summary>
     /// Ways how an official can enter the office.
     /// </summary>
@@ -3393,7 +3393,7 @@ namespace De.AHoerstemeier.Tambon {
     public enum OfficeType {
         
         /// <summary>
-        /// Province hall (ศาลากลางจังหวัด , Sala Klang Changwat)
+        /// Province hall (ศาลากลางจังหวัด, Sala Klang Changwat)
         /// </summary>
         ProvinceHall,
         
