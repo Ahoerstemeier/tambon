@@ -980,9 +980,20 @@
     <codes>
       <wdpa value="312937" />
     </codes>
-    <area rai="1065000" />
+    <area squarekilometer="1704" rai="1065000" year="1999" />
+    <!-- ป่าดอยภูคา ป่าผาแดง ป่าแม่น้ำน่านฝั่งตะวันออกตอนใต้ ป่าน้ำว้า และป่าแม่จริม
+    ตำบลห้วยโก๋น ตำบลขุนน่าน อำเภอเฉลิมพระเกียรติ
+    ตำบลปอน ตำบลงอบ ตำบลและ ตำบลทุ่งช้าง อำเภอทุ่งช้าง
+    ตำบลพญาแก้ว อำเภอเชียงกลาง
+    ตำบลภูคา ตำบลศิลาเพชร ตำบลอวน อำเภอปัว
+    ตำบลบ่อเกลือเหนือ ตำบลดงพญา ตำบลบ่อเกลือใต้ ตำบลภูฟ้า อำเภอบ่อเกลือ
+    ตำบลยม อำเภอท่าวังผา ตำบลพงษ์ อำเภอสันติสุข
+    ตำบลแม่จริม ตำบลหนองแดง ตำบลน้ำพาง อำเภอแม่จริม จังหวัดน่าน
+       -->
     <history>
-      <createpark type="NationalPark" status="Done" effective="1999-06-17" />
+      <createpark type="NationalPark" status="Gazette" effective="1999-06-17">
+        <gazetteref volume="116" page="5" issue="48 ก" date="1999-06-17" />
+      </createpark>
     </history>
   </park>
   <park type="NationalPark" id="1095" name="น้ำตกสี่ขีด" english="Namtok Si Khit">
@@ -1148,9 +1159,14 @@
     <codes>
       <wdpa value="313009" />
     </codes>
-    <area rai="153982" />
+    <area squarekilometer="246.3712" rai="153982" year="2009" locationgeocode="551205 551202 551204">
+      <part type="NationalForest" name="ป่าดอยภูคา" />
+      <part type="NationalForest" name="ป่าผาแดง" />
+    </area>
     <history>
-      <createpark type="NationalPark" status="Done" effective="2009-07-15" />
+      <createpark type="NationalPark" effective="2009-07-15" status="Gazette">
+        <gazetteref volume="126" page="100" issue="43 ก" date="2009-07-15" />
+      </createpark>
     </history>
   </park>
   <park type="NationalPark" id="1112" name="แม่วาง" english="Mae Wang">
@@ -1313,6 +1329,43 @@
       <createpark type="NationalPark" status="Done" effective="2012-06-13" />
     </history>
   </park>
+  <park type="NationalPark" id="9115" name="ถ้ำสะเกิน" english="Tham Sakoen">
+    <wiki wikidata="Q6898892" />
+    <geo:Point>
+      <geo:lat>19.3814</geo:lat>
+      <geo:long>100.5388</geo:long>
+    </geo:Point>
+    <area rai="156187" locationgeocode="551302 551303 560310 560312 560605" />
+    <history>
+      <createpark type="NationalPark" effective="2016-04-21" status="Gazette">
+        <gazetteref volume="133" page="52" issue="33 ก" date="2016-04-21" />
+        <meetingreference board="cabinet" date="2016-01-05" />
+        <meetingreference board="cabinet" date="2009-03-17" />
+      </createpark>
+    </history>
+  </park>
+  <park type="NationalPark" id="9120" name="น้ำตกเจ็ดสาวน้อย" english="Nam Tok Chet Sao Noi">
+    <wiki wikidata="Q6652787" />
+    <codes>
+      <wdpa value="555512232" />
+    </codes>
+    <geo:Point>
+      <geo:lat>14.7261</geo:lat>
+      <geo:long>101.1895</geo:long>
+    </geo:Point>
+    <area squarekilometer="41.9802" rai="26238" locationgeocode="191202 191201 191104 191101 302112">
+      <part name="ทับกวาง" type="NationalForest" />
+      <part name="มวกเหล็ก แปลงที่ ๑" type="NationalForest" />
+      <part name="ดงพญาเย็น" type="NationalForest" />
+    </area>
+    <history>
+      <createpark effective="2016-12-26" status="Gazette" type="NationalPark">
+        <gazetteref volume="133" page="30" issue="109 ก" date="2016-12-26" />
+        <meetingreference board="cabinet" date="2016-09-08" />
+        <meetingreference board="cabinet" date="2011-11-15" />
+      </createpark>
+    </history>
+  </park>
 
   <!-- proposed national parks -->
   <park type="NationalPark" id="9101" name="ดอยเวียงผา" english="Doi Wiang Pha" pending="1">
@@ -1401,21 +1454,7 @@
     <area rai="180518" />
   </park>
   <!-- 9114 in 84 -->
-  <park type="NationalPark" id="9115" name="ถ้ำสะเกิน" english="Tham Sakoen">
-    <wiki wikidata="Q6898892" />
-    <geo:Point>
-      <geo:lat>19.3814</geo:lat>
-      <geo:long>100.5388</geo:long>
-    </geo:Point>
-    <area rai="156187" locationgeocode="551302 551303 560310 560312 560605" />
-    <history>
-      <createpark type="NationalPark" effective="2016-04-21" status="Gazette">
-        <gazetteref volume="133" page="52" issue="33 ก" date="2016-04-21" />
-        <meetingreference board="cabinet" date="2016-01-05" />
-        <meetingreference board="cabinet" date="2009-03-17" />
-      </createpark>
-    </history>
-  </park>
+  <!-- 9115 -> 1128? -->
   <park type="NationalPark" id="9116" name="อ่าวมะนาว-เขาตันหยง" english="Ao Manao - Khao Ton Yong" pending="1">
     <wiki wikidata="Q12648229" />
     <codes>
@@ -1441,26 +1480,5 @@
     <wiki wikidata="Q13020523" />
     <area rai="281875" />
   </park>
-  <park type="NationalPark" id="9120" name="น้ำตกเจ็ดสาวน้อย" english="Nam Tok Chet Sao Noi">
-    <wiki wikidata="Q6652787" />
-    <codes>
-      <wdpa value="555512232" />
-    </codes>
-    <geo:Point>
-      <geo:lat>14.7261</geo:lat>
-      <geo:long>101.1895</geo:long>
-    </geo:Point>
-    <area squarekilometer="41.9802" rai="26238" locationgeocode="191202 191201 191104 191101 302112">
-      <part name="ทับกวาง" type="NationalForest" />
-      <part name="มวกเหล็ก แปลงที่ ๑" type="NationalForest" />
-      <part name="ดงพญาเย็น" type="NationalForest" />
-    </area>
-    <history>
-      <createpark effective="2016-12-26" status="Gazette" type="NationalPark">
-        <gazetteref volume="133" page="30" issue="109 ก" date="2016-12-26" />
-        <meetingreference board="cabinet" date="2016-09-08" />
-        <meetingreference board="cabinet" date="2011-11-15" />
-      </createpark>
-    </history>
-  </park>
+  <!-- 9120 -> 1129? -->
 </entity>
