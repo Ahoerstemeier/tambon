@@ -500,7 +500,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
 
-            var entitiesToCheckForHistory = entity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) || x.type.IsCompatibleEntityType(EntityType.Tambon) || x.type.IsCompatibleEntityType(EntityType.Changwat));
+            var entitiesToCheckForHistory = entity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) || (x.type == EntityType.Tambon) || x.type.IsCompatibleEntityType(EntityType.Changwat));
             var entitiesToCheckWithCreationHistory = entitiesToCheckForHistory.Where(x => x.history.Items.Any(y => y is HistoryCreate));
             var entitiesCreationWithoutSubdivisions = entitiesToCheckWithCreationHistory.Where(x => (x.history.Items.FirstOrDefault(y => y is HistoryCreate) as HistoryCreate).subdivisions == 0);
             if ( entitiesCreationWithoutSubdivisions.Any() )
