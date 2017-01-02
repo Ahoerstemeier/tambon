@@ -263,6 +263,18 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="GazetteParkPart">
+    <xs:annotation>
+      <xs:documentation>Part of a protected area mentioned in announcement.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="type" type="t:ParkType" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of park.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:ThaiNameMandatory" />
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
   <xs:complexType name='GazetteReferenceBase' abstract='1'>
     <xs:annotation>
       <xs:documentation>Reference to another gazette announcement.</xs:documentation>
@@ -331,7 +343,16 @@
       <xs:documentation>Base gazette operation dealing with a park.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="0" ref="geo:Point" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="geo:Point">
+        <xs:annotation>
+          <xs:documentation>Location of the protected area.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="part" type="t:GazetteParkPart">
+        <xs:annotation>
+          <xs:documentation>Part of which the protected area consists.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
     <xs:attributeGroup ref="t:ThaiNameOptional" />
     <xs:attribute name="type" type="t:ParkType" use="required">
