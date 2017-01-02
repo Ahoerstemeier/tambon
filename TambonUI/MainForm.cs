@@ -1455,5 +1455,24 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             new DisambiguationForm().Show();
         }
+
+        private void btnPopulationTable_Click(object sender, EventArgs e)
+        {
+            Int16 year = Convert.ToInt16(edtYear.Value);
+            GlobalData.LoadPopulationData(PopulationDataSourceType.DOPA, year);
+            var baseEntity = GlobalData.CompleteGeocodeList();
+            var data = baseEntity.entity.Select(x => new Tuple<UInt32, PopulationData>(x.geocode, x.population.FirstOrDefault(y => y.Year == year && y.source == PopulationDataSourceType.DOPA))).OrderBy(x => x.Item1);
+            var builder = new StringBuilder();
+            foreach ( var item in data )
+            {
+                if ( item.Item2 != null )
+                  {
+                    builder.AppendFormat("{1}", item.Item1, item.Item2.TotalPopulation.total);
+                }
+                builder.AppendLine();
+            }
+            Clipboard.Clear();
+            Clipboard.SetText(builder.ToString());
+        }
     }
 }
