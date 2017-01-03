@@ -522,6 +522,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private string ipaField;
         
+        private string commentField;
+        
         /// <summary>
         /// Type of the protected area.
         /// </summary>
@@ -604,6 +606,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.ipaField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
             }
         }
     }

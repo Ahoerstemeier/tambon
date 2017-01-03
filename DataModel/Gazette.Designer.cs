@@ -761,6 +761,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private Point pointField;
         
+        private List<GazetteParkPart> partField;
+        
         private string nameField;
         
         private string englishField;
@@ -792,9 +794,16 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public GazetteParkBase() {
             this.locationgeocodeField = new List<uint>();
+            this.partField = new List<GazetteParkPart>();
             this.pointField = new Point();
         }
         
+        /// <summary>
+        /// Location of the protected area.
+        /// </summary>
+        /// <value>
+        /// The Point.
+        /// </value>
         [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2003/01/geo/wgs84_pos#", Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public Point Point {
@@ -803,6 +812,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.pointField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Part of which the protected area consists.
+        /// </summary>
+        /// <value>
+        /// The part.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("part", Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<GazetteParkPart> part {
+            get {
+                return this.partField;
+            }
+            set {
+                this.partField = value;
             }
         }
         
@@ -1007,6 +1033,113 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.indexFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Part of a protected area mentioned in announcement.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GazetteParkPart", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class GazetteParkPart {
+        
+        private ParkType typeField;
+        
+        private string nameField;
+        
+        private string englishField;
+        
+        private string ipaField;
+        
+        private string commentField;
+        
+        /// <summary>
+        /// Type of park.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ParkType type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english {
+            get {
+                return this.englishField;
+            }
+            set {
+                this.englishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ipa {
+            get {
+                return this.ipaField;
+            }
+            set {
+                this.ipaField = value;
             }
         }
         
