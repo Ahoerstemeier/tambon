@@ -403,6 +403,16 @@ namespace De.AHoerstemeier.Tambon {
         /// UNESCO biosphere reserve (พื้นที่สงวนชีวมณฑล).
         /// </summary>
         BiosphereReserve,
+        
+        /// <summary>
+        /// Botanical garden (สวนพฤกษศาสตร์).
+        /// </summary>
+        BotanicalGarden,
+        
+        /// <summary>
+        /// Arboretum or forest garden (สวนรุกขชาติ).
+        /// </summary>
+        Arboretum,
     }
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]
