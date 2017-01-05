@@ -580,6 +580,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Linked announcement is mentioned by this announcement.
         /// </summary>
         Mention,
+        
+        /// <summary>
+        /// Linked announcement is revoked by this announcement.
+        /// </summary>
+        Revoke,
     }
     
     /// <summary>

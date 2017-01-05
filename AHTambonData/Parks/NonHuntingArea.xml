@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"  type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
-  <entity type="Changwat" geocode="30" name="นครราชสีมา" english="Nakhon Ratchasima">
-    <park type="NonHuntingArea" name="เขาภูหลวง" english="Khao Phu Luang">
-      <area locationgeocode="302109 302503 302501 301405 301412 301416" rai="145219.923" />
-      <history>
-        <createpark type="NonHuntingArea" effective="2016-03-30" status="Gazette">
-          <gazetteref volume="133" page="26" issue="พิเศษ 75 ง" date="2016-03-30" />
-        </createpark>
-      </history>
-    </park>
-  </entity>
 
   <entity type="Changwat" geocode="80" name="นครศรีธรรมราช" english="Nakhon Si Thammarat">
     <park type="NonHuntingArea" id="3067" name="บ่อล้อ" english="Bo Lo">
@@ -85,6 +75,7 @@
       <createpark type="NonHuntingArea" status="Done" effective="1975-11-11" />
     </history>
   </park>
+  <!-- 3004 in 84 -->
   <park type="NonHuntingArea" id="3005" name="อ่างเก็บน้ำบางพระ" english="Ang Kep Nam Bang Phra">
     <area rai="11600" />
     <history>
@@ -118,6 +109,7 @@
       <createpark type="NonHuntingArea" status="Done" effective="1976-06-08" />
     </history>
   </park>
+  <!-- 3010 in 84 -->
   <park type="NonHuntingArea" id="3011" name="วัดราษฎร์ศรัทธากะยาราม">
     <area rai="47" />
     <history>
@@ -263,6 +255,10 @@
   </park>
   <park type="NonHuntingArea" id="3028" name="ถ้ำผาท่าพล" english="Tham Pha Thaphon">
     <wiki wikidata="Q13024482" comment="To be cleaned up!" />
+    <geo:Point>
+      <geo:lat>16.5111</geo:lat>
+      <geo:long>100.6622</geo:long>
+    </geo:Point>
     <area rai="1775" />
     <history>
       <createpark type="NonHuntingArea" status="Gazette" effective="1983-07-26">
@@ -291,6 +287,7 @@
       <createpark type="NonHuntingArea" status="Done" effective="1984-03-08" />
     </history>
   </park>
+  <!-- 3032 in 80 -->
   <park type="NonHuntingArea" id="3033" name="แม่เลา-แม่แสะ">
     <area rai="153125" />
     <history>
@@ -584,7 +581,9 @@
       </createpark>
     </history>
   </park>
+  <!-- 3067 in 80 -->
 
+  <!-- pending -->
   <park type="NonHuntingArea" id="9306" name="คลองม่วงกลวง" english="Khlong Muang Kluang" pending="1">
     <area rai="81900" />
   </park>
@@ -607,6 +606,15 @@
     <area rai="103850" />
   </park>
 
+  <!-- names guessed! No IDs! -->
+  <park type="NonHuntingArea" name="เขาภูหลวง" english="Khao Phu Luang">
+    <area locationgeocode="302109 302503 302501 301405 301412 301416" rai="145219.923" />
+    <history>
+      <createpark type="NonHuntingArea" effective="2016-03-30" status="Gazette">
+        <gazetteref volume="133" page="26" issue="พิเศษ 75 ง" date="2016-03-30" />
+      </createpark>
+    </history>
+  </park>
   <park type="NonHuntingArea" name="ดอยภูคา" english="Doi Phu Kha">
     <wiki wikidata="Q28104754" />
     <area rai="74553" locationgeocode="551202 551204 550206 550202 550204">
@@ -616,6 +624,73 @@
     <history>
       <createpark type="NonHuntingArea" effective="2016-12-27" status="Gazette">
         <gazetteref volume="133" page="4" issue="พิเศษ 308 ง" date="2016-12-27" />
+      </createpark>
+    </history>
+  </park>
+  <park type="NonHuntingArea" name="เขาพนมทอง" english="Khao Phanom Thong">
+    <geo:Point>
+      <geo:lat>16.6537</geo:lat>
+      <geo:long>100.5719</geo:long>
+    </geo:Point>
+    <area rai="14125" locationgeocode="650807 650802 650901">
+      <part type="NationalForest" name="ป่าลุ่มน้ำวังทองฝั่งซ้าย" english="Lum Nam Wang Thong Fang Sai" />
+    </area>
+    <history>
+      <createpark type="NonHuntingArea" effective="2017-01-05" status="Gazette">
+        <gazetteref volume="134" page="7" issue="พิเศษ 3 ง" date="2017-01-05" />
+      </createpark>
+    </history>
+  </park>
+  <park type="NonHuntingArea" name="หนองเล็งทราย" english="Nong Laeng Sai">
+    <geo:Point>
+      <geo:lat>19.3871</geo:lat>
+      <geo:long>99.8162</geo:long>
+    </geo:Point>
+    <area rai="4003" locationgeocode="560704 560705 560706 560702" />
+    <history>
+      <createpark type="NonHuntingArea" effective="2017-01-05" status="Gazette">
+        <gazetteref volume="134" page="9" issue="พิเศษ 3 ง" date="2017-01-05" />
+      </createpark>
+    </history>
+  </park>
+
+  <park type="NonHuntingArea" name="???" english="???">
+    <area rai="8025" locationgeocode="570120 570111">
+      <part type="NationalForest" name="ป่าแม่ลาวฝั่งซ้ายและป่าแม่กกฝั่งขวา" english="Mae Lao Fang Sai and Mae Kok Fang Khwa" />
+    </area>
+    <history>
+      <createpark type="NonHuntingArea" effective="2017-01-05" status="Gazette">
+        <gazetteref volume="134" page="8" issue="พิเศษ 3 ง" date="2017-01-05" />
+      </createpark>
+    </history>
+  </park>
+  <park type="NonHuntingArea" name="???" english="???">
+    <area rai="4003" locationgeocode="571701">
+      <part type="NationalForest" name="ป่าห้วยสักและป่าแม่กกฝั่งขวา" english="Huai Sak and Mae Kok Fang Khwa" />
+    </area>
+    <history>
+      <createpark type="NonHuntingArea" effective="2017-01-05" status="Gazette">
+        <gazetteref volume="134" page="10" issue="พิเศษ 3 ง" date="2017-01-05" />
+      </createpark>
+    </history>
+  </park>
+  <park type="NonHuntingArea" name="???" english="???">
+    <area rai="5550" locationgeocode="570805 570803">
+      <part type="NationalForest" name="ป่าสบกกฝั่งขวา" />
+    </area>
+    <history>
+      <createpark type="NonHuntingArea" effective="2017-01-05" status="Gazette">
+        <gazetteref volume="134" page="11" issue="พิเศษ 3 ง" date="2017-01-05" />
+      </createpark>
+    </history>
+  </park>
+  <park type="NonHuntingArea" name="???" english="???">
+    <area rai="17536" locationgeocode="571101 571102">
+      <part type="NationalForest" name="ป่าแม่ปูนน้อย ป่าแม่ปูนหลวง และป่าห้วยโป่งเหม็น" english="Mae Pun Noi, Mae Pun Luang and Huai Pong Men" />
+    </area>
+    <history>
+      <createpark type="NonHuntingArea" effective="2017-01-05" status="Gazette">
+        <gazetteref volume="134" page="12" issue="พิเศษ 3 ง" date="2017-01-05" />
       </createpark>
     </history>
   </park>
