@@ -395,9 +395,15 @@
         <post value="10300" />
       </codes>
       <history>
+        <areachange effective="1965-12-23" status="Gazette">
+          <gazetteref volume="83" page="246" issue="6 ง" date="1966-01-18" />
+        </areachange>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
+        <reassign effective="1938-09-01" status="Gazette" oldparent="0" newparent="1002" comment="original Amphoe Bang Sue abolished">
+          <gazetteref volume="55" page="1840" issue="0 ง" date="1938-08-29" />
+        </reassign>
       </history>
     </entity>
 
@@ -1471,10 +1477,13 @@
       <area value="9.6" unit="km²" date="2000" comment="Census2000" />
     </area>
     <history>
+      <areachange effective="1994-01-14" status="Gazette">
+        <gazetteref volume="110" page="3" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+      </areachange>
       <statuschange old="Amphoe" new="Khet" effective="1972-12-13" status="Gazette">
         <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
       </statuschange>
-      <create effective="1966-05-01" status="Gazette" type="Amphoe">
+      <create effective="1966-05-01" status="Gazette" type="Amphoe" splitfrom="1002 1006" subdivisions="6" subdivisiontype="Tambon">
         <gazetteref volume="83" page="1" issue="39 ก ฉบับพิเศษ" date="1966-05-01" />
       </create>
       <!--
@@ -1488,9 +1497,21 @@
     <entity type="Khwaeng" name="สามเสนใน" english="Sam Sen Nai" geocode="101401">
       <wiki wikidata="Q15735663" />
       <history>
+        <areachange effective="1994-01-14" status="Gazette">
+          <gazetteref volume="110" page="29" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </areachange>
+        <areachange effective="1978-05-02" status="Gazette" changewith="101701">
+          <gazetteref volume="95" page="180" issue="48 ก" date="1978-05-02" />
+        </areachange>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
+        <reassign effective="1966-05-01" status="Gazette" oldparent="1002" newparent="1014">
+          <gazetteref volume="83" page="1" issue="39 ก ฉบับพิเศษ" date="1966-05-01" />
+        </reassign>
+        <reassign effective="1938-09-01" status="Gazette" oldparent="0" newparent="1002" comment="original Amphoe Bang Sue abolished">
+          <gazetteref volume="55" page="1840" issue="0 ง" date="1938-08-29" />
+        </reassign>
       </history>
     </entity>
     <entity type="Khwaeng" name="ถนนเพชรบุรี" english="Thanon Phetchaburi" geocode="101402" newgeocode="103703" />
@@ -1762,12 +1783,24 @@
     <entity type="Khwaeng" name="สามเสนนอก" english="Sam Sen Nok" geocode="101704">
       <wiki wikidata="Q15735900" />
       <history>
+        <areachange effective="1994-01-14" status="Gazette">
+          <gazetteref volume="110" page="22" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </areachange>
+        <areachange effective="1989-11-13" status="Gazette" type="Khwaeng">
+          <gazetteref volume="106" page="9036" issue="212 ง" date="1989-11-30" />
+        </areachange>
+        <reassign effective="1978-05-02" status="Gazette" oldparent="1014" newparent="1017">
+          <gazetteref volume="95" page="180" issue="48 ก" date="1978-05-02" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
-        <create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="101702">
+        <!--<create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="101702" subdivisions="6" subdivisiontype="Muban">
           <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
-        </create>
+        </create>-->
+        <reassign effective="1938-09-01" status="Gazette" oldparent="0" newparent="1014" comment="original Amphoe Bang Sue abolished">
+          <gazetteref volume="55" page="1840" issue="0 ง" date="1938-08-29" />
+        </reassign>
       </history>
     </entity>
   </entity>
@@ -2843,13 +2876,19 @@
       <area value="11.5" unit="km²" date="2000" comment="Census2000" />
     </area>
     <history>
-      <create effective="1989-11-09" status="Gazette" type="Khet" splitfrom="1002">
+      <create effective="1989-11-09" status="Gazette" type="Khet" splitfrom="1002" subdivisions="1" subdivisiontype="Khwaeng">
         <gazetteref volume="106" page="8" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
       </create>
     </history>
     <entity type="Khwaeng" name="บางซื่อ" english="Bang Sue" geocode="102901">
       <wiki wikidata="Q15735848" />
       <history>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1002" newparent="1029" oldgeocode="100205">
+          <gazetteref volume="106" page="8" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
+        <reassign effective="1938-09-01" status="Gazette" oldparent="0" newparent="1002" comment="original Amphoe Bang Sue abolished">
+          <gazetteref volume="55" page="1840" issue="0 ง" date="1938-08-29" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -2903,13 +2942,16 @@
       <area value="32.9" unit="km²" date="2000" comment="Census2000" />
     </area>
     <history>
-      <create effective="1989-09-04" status="Gazette" type="Khet" splitfrom="1005">
+      <create effective="1989-09-04" status="Gazette" type="Khet" splitfrom="1005" subdivisions="1" subdivisiontype="Khwaeng">
         <gazetteref volume="106" page="17" issue="155 ง ฉบับพิเศษ" date="1989-09-16" />
       </create>
     </history>
     <entity type="Khwaeng" name="ลาดยาว" english="Lat Yao" geocode="103001">
       <wiki wikidata="Q13026169" />
       <history>
+        <reassign effective="1989-09-04" status="Gazette" oldparent="1005" newparent="1030" oldgeocode="100501">
+          <gazetteref volume="106" page="17" issue="155 ง ฉบับพิเศษ" date="1989-09-16" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -2991,13 +3033,16 @@
       <area value="10.9" unit="km²" date="2000" comment="Census2000" />
     </area>
     <history>
-      <create effective="1989-11-09" status="Gazette" type="Khet" splitfrom="1012">
+      <create effective="1989-11-09" status="Gazette" type="Khet" splitfrom="1012" subdivisions="3" subdivisiontype="Khwaeng">
         <gazetteref volume="106" page="12" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
       </create>
     </history>
     <entity type="Khwaeng" name="บางคอแหลม" english="Bang Kho Laem" geocode="103101">
       <wiki wikidata="Q15735842" />
       <history>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1012" newparent="1031" oldgeocode="101207">
+          <gazetteref volume="106" page="12" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3006,6 +3051,9 @@
     <entity type="Khwaeng" name="วัดพระยาไกร" english="Wat Phraya Krai" geocode="103102">
       <wiki wikidata="Q15735841" />
       <history>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1012" newparent="1031" oldgeocode="101205">
+          <gazetteref volume="106" page="12" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3014,6 +3062,9 @@
     <entity type="Khwaeng" name="บางโคล่" english="Bang Khlo" geocode="103103">
       <wiki wikidata="Q15735839" />
       <history>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1012" newparent="1031" oldgeocode="101206">
+          <gazetteref volume="106" page="12" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3061,13 +3112,28 @@
       <area value="52.5" unit="km²" date="2000" comment="Census2000" />
     </area>
     <history>
-      <create effective="1989-11-09" status="Gazette" type="Khet" splitfrom="1009">
+      <areachange effective="1997-11-21" status="Gazette">
+        <gazetteref volume="114" page="6" issue="พิเศษ 108 ง" date="1997-11-18" />
+      </areachange>
+      <areachange effective="1994-01-14" status="Gazette">
+        <gazetteref volume="110" page="7" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+      </areachange>
+      <create effective="1989-11-09" status="Gazette" type="Khet" splitfrom="1009" subdivisions="4" subdivisiontype="Khwaeng">
         <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
       </create>
     </history>
     <entity type="Khwaeng" name="ประเวศ" english="Prawet" geocode="103201">
       <wiki wikidata="Q15735838" />
       <history>
+        <areachange effective="1997-11-21" status="Gazette">
+          <gazetteref volume="114" page="51" issue="พิเศษ 121 ง" date="1997-12-24" />
+        </areachange>
+        <areachange effective="1994-01-14" status="Gazette">
+          <gazetteref volume="110" page="17" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </areachange>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1009" newparent="1032" oldgeocode="100908">
+          <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3076,6 +3142,15 @@
     <entity type="Khwaeng" name="หนองบอน" english="Nong Bon" geocode="103202">
       <wiki wikidata="Q15735837" />
       <history>
+        <areachange effective="1997-11-21" status="Gazette">
+          <gazetteref volume="114" page="51" issue="พิเศษ 121 ง" date="1997-12-24" />
+        </areachange>
+        <areachange effective="1994-01-14" status="Gazette">
+          <gazetteref volume="110" page="17" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </areachange>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1009" newparent="1032" oldgeocode="100907">
+          <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3087,6 +3162,15 @@
     <entity type="Khwaeng" name="ดอกไม้" english="Dok Mai" geocode="103203">
       <wiki wikidata="Q15735836" />
       <history>
+        <areachange effective="1997-11-21" status="Gazette">
+          <gazetteref volume="114" page="51" issue="พิเศษ 121 ง" date="1997-12-24" />
+        </areachange>
+        <areachange effective="1994-01-14" status="Gazette">
+          <gazetteref volume="110" page="17" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </areachange>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1009" newparent="1032" oldgeocode="100909">
+          <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3137,13 +3221,22 @@
       <area value="13.0" unit="km²" date="2000" comment="Census2000" />
     </area>
     <history>
-      <create effective="1989-11-09" status="Gazette" type="Khet" splitfrom="1009">
+      <create effective="1989-11-09" status="Gazette" type="Khet" splitfrom="1009" subdivisions="3" subdivisiontype="Khwaeng">
         <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
       </create>
     </history>
     <entity type="Khwaeng" name="คลองเตย" english="Khlong Toei" geocode="103301">
       <wiki wikidata="Q7187981" />
       <history>
+        <areachange effective="1998-03-06" status="Gazette">
+          <gazetteref volume="114" page="74" issue="พิเศษ 121 ง" date="1997-12-24" />
+        </areachange>
+        <areachange effective="1994-01-14" status="Gazette">
+          <gazetteref volume="110" page="13" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </areachange>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1009" newparent="1033" oldgeocode="100901">
+          <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3152,6 +3245,15 @@
     <entity type="Khwaeng" name="คลองตัน" english="Khlong Tan" geocode="103302">
       <wiki wikidata="Q15735654" />
       <history>
+        <areachange effective="1998-03-06" status="Gazette">
+          <gazetteref volume="114" page="74" issue="พิเศษ 121 ง" date="1997-12-24" />
+        </areachange>
+        <areachange effective="1994-01-14" status="Gazette">
+          <gazetteref volume="110" page="13" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </areachange>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1009" newparent="1033" oldgeocode="100902">
+          <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3160,6 +3262,15 @@
     <entity type="Khwaeng" name="พระโขนง" english="Phra Khanong" geocode="103303">
       <wiki wikidata="Q15735656" />
       <history>
+        <areachange effective="1998-03-06" status="Gazette">
+          <gazetteref volume="114" page="74" issue="พิเศษ 121 ง" date="1997-12-24" />
+        </areachange>
+        <areachange effective="1994-01-14" status="Gazette">
+          <gazetteref volume="110" page="13" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </areachange>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1009" newparent="1033" oldgeocode="100903">
+          <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
@@ -3212,13 +3323,22 @@
       <area value="23.7" unit="km²" date="2000" comment="Census2000" />
     </area>
     <history>
-      <create effective="1994-01-14" status="Gazette" type="Khet" splitfrom="1032">
+      <areachange effective="1994-01-14" status="Gazette">
+        <gazetteref volume="110" page="7" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+      </areachange>
+      <create effective="1994-01-14" status="Gazette" type="Khet" splitfrom="1032" subdivisions="1" subdivisiontype="Khwaeng">
         <gazetteref volume="110" page="20" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
       </create>
     </history>
     <entity type="Khwaeng" name="สวนหลวง" english="Suan Luang" geocode="103401">
       <wiki wikidata="Q15735653" />
       <history>
+        <reassign effective="1994-01-14" status="Gazette" oldparent="1032" newparent="1034" oldgeocode="103204">
+          <gazetteref volume="110" page="20" issue="184 ง ฉบับพิเศษ" date="1993-11-10" />
+        </reassign>
+        <reassign effective="1989-11-09" status="Gazette" oldparent="1009" newparent="1032" oldgeocode="100906">
+          <gazetteref volume="106" page="13" issue="208 ง ฉบับพิเศษ" date="1989-11-24" />
+        </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
