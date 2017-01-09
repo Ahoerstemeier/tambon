@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -68,7 +69,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 var fittingAllEntities = allEntitiesByType.First(x => x.Key == type.Key);
                 var expectedCount = fittingAllEntities.Count();
                 var actualCount = type.Count();
-                builder.AppendFormat("{0}: {1} of {2}", type.Key, type.Count(), expectedCount);
+                builder.AppendFormat(CultureInfo.CurrentUICulture, "{0}: {1} of {2}", type.Key, type.Count(), expectedCount);
                 if ( actualCount != expectedCount && expectedCount - actualCount < 5 )
                 {
                     builder.Append(" (");
@@ -76,7 +77,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     {
                         if ( !entitiesWithWikiData.Contains(entry) )
                         {
-                            builder.AppendFormat("{0},", entry.geocode);
+                            builder.AppendFormat(CultureInfo.CurrentUICulture, "{0},", entry.geocode);
                         }
                     }
                     builder.Append(")");
@@ -89,7 +90,7 @@ namespace De.AHoerstemeier.Tambon.UI
             //var officesWithWikiDataByType = officesWithWikiData.GroupBy(x => x.type).OrderBy(y => y.Count());
             //foreach ( var type in officesWithWikiDataByType )
             //{
-            //    builder.AppendFormat("{0}: {1}", type.Key, type.Count());
+            //    builder.AppendFormat(CultureInfo.CurrentUICulture,"{0}: {1}", type.Key, type.Count());
             //    builder.AppendLine();
             //}
             //builder.AppendLine();
@@ -97,7 +98,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var announcementsWithWikiData = GlobalData.AllGazetteAnnouncements.entry.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata));
             if ( announcementsWithWikiData.Any() )
             {
-                builder.AppendFormat("Announcements: {0}", announcementsWithWikiData.Count());
+                builder.AppendFormat(CultureInfo.CurrentUICulture, "Announcements: {0}", announcementsWithWikiData.Count());
                 builder.AppendLine();
                 builder.AppendLine();
             }
@@ -124,11 +125,11 @@ namespace De.AHoerstemeier.Tambon.UI
             noUpgradeHistoryEntry.Sort((x, y) => x.geocode.CompareTo(y.geocode));
             if ( noUpgradeHistoryEntry.Any() )
             {
-                builder.AppendFormat("No history ({0}):", noUpgradeHistoryEntry.Count);
+                builder.AppendFormat(CultureInfo.CurrentUICulture, "No history ({0}):", noUpgradeHistoryEntry.Count);
                 builder.AppendLine();
                 foreach ( var entity in noUpgradeHistoryEntry )
                 {
-                    builder.AppendFormat("{0}: {1}", entity.geocode, entity.english);
+                    builder.AppendFormat(CultureInfo.CurrentUICulture, "{0}: {1}", entity.geocode, entity.english);
                     builder.AppendLine();
                 }
             }
@@ -136,7 +137,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var result = builder.ToString();
 
             var formWikiDataEntries = new StringDisplayForm(
-                String.Format("Wikidata coverage ({0})", entitiesWithWikiData.Count()),
+                String.Format(CultureInfo.CurrentUICulture, "Wikidata coverage ({0})", entitiesWithWikiData.Count()),
                 result);
             formWikiDataEntries.Show();
         }
@@ -151,11 +152,11 @@ namespace De.AHoerstemeier.Tambon.UI
             var siteLinkCount = _bot.CountSiteLinks(workItems, collisions);
 
             StringBuilder builder = new StringBuilder();
-            builder.AppendFormat("{0} entities on WikiData", workItems.Count());
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} entities on WikiData", workItems.Count());
             builder.AppendLine();
             foreach ( var value in siteLinkCount )
             {
-                builder.AppendFormat("  {0}: {1}", value.Key, value.Value);
+                builder.AppendFormat(CultureInfo.CurrentUICulture, "  {0}: {1}", value.Key, value.Value);
                 builder.AppendLine();
             }
             var result = builder.ToString();
@@ -209,11 +210,11 @@ namespace De.AHoerstemeier.Tambon.UI
                     var office = entity.office.FirstOrDefault();
                     if ( office == null )
                     {
-                        edtCollisions.Text += "No office: " + entity.geocode.ToString() + Environment.NewLine;
+                        edtCollisions.Text += String.Format(CultureInfo.CurrentUICulture, "No office: {0}" + Environment.NewLine, entity.geocode);
                     }
                     else if ( (office.wiki != null) && !String.IsNullOrEmpty(office.wiki.wikidata) )
                     {
-                        edtCollisions.Text += "WikiData at office: " + entity.geocode.ToString() + Environment.NewLine;
+                        edtCollisions.Text += String.Format(CultureInfo.CurrentUICulture, "WikiData at office: {0}" + Environment.NewLine, entity.geocode);
                     }
                 }
             }
@@ -248,7 +249,7 @@ namespace De.AHoerstemeier.Tambon.UI
             cbxChangwat.Items.AddRange(allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
             lblTambonInfo.Text = String.Empty;
 
-            var thesabanMueangWithWikiData = localGovernments.Where(x => x.type == EntityType.ThesabanMueang && (x.wiki == null || String.IsNullOrEmpty(x.wiki.wikidata))).Select(x => String.Format("{0} ({1})", x.english, x.geocode)).ToArray();
+            var thesabanMueangWithWikiData = localGovernments.Where(x => x.type == EntityType.ThesabanMueang && (x.wiki == null || String.IsNullOrEmpty(x.wiki.wikidata))).Select(x => String.Format(CultureInfo.CurrentUICulture, "{0} ({1})", x.english, x.geocode)).ToArray();
             edtCollisions.Text = String.Join(Environment.NewLine, thesabanMueangWithWikiData);
         }
 
@@ -284,13 +285,13 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             StringBuilder info = new StringBuilder();
-            info.AppendFormat("{0} items", workItems.Count());
+            info.AppendFormat(CultureInfo.CurrentUICulture, "{0} items", workItems.Count());
             info.AppendLine();
             foreach ( var keyvaluepair in _bot.RunInfo )
             {
                 if ( keyvaluepair.Value > 0 )
                 {
-                    info.AppendFormat("{0} items had state {1}", keyvaluepair.Value, keyvaluepair.Key);
+                    info.AppendFormat(CultureInfo.CurrentUICulture, "{0} items had state {1}", keyvaluepair.Value, keyvaluepair.Key);
                     info.AppendLine();
                 }
             }
@@ -361,7 +362,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 if ( !_bot.CheckCommonsCategory(changwat) )
                 {
                     String categoryName = _bot.GetCommonsCategory(changwat);
-                    builder.AppendFormat("{0}: {1}", changwat.english, categoryName);
+                    builder.AppendFormat(CultureInfo.CurrentUICulture, "{0}: {1}", changwat.english, categoryName);
                     builder.AppendLine();
                 }
             }
@@ -441,7 +442,7 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 var allTambon = amphoe.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete).ToList();
                 var wikidataCount = allTambon.Count(x => x.wiki != null && !String.IsNullOrWhiteSpace(x.wiki.wikidata));
-                lblTambonInfo.Text = String.Format("{0} of {1} done",
+                lblTambonInfo.Text = String.Format(CultureInfo.CurrentUICulture, "{0} of {1} done",
                     wikidataCount, allTambon.Count);
                 btnCreateTambon.Enabled = (wikidataCount < allTambon.Count) && (_bot != null);
                 btnAmphoeCategory.Enabled = true;
@@ -463,7 +464,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 foreach ( var tambon in missingTambon )
                 {
                     _bot.CreateItem(tambon);
-                    edtCollisions.Text += String.Format("{0} ({2}): <wiki wikidata=\"{1}\" />",
+                    edtCollisions.Text += String.Format(CultureInfo.InvariantCulture, "{0} ({2}): <wiki wikidata=\"{1}\" />",
                         tambon.geocode,
                         tambon.wiki.wikidata,
                         tambon.english) + Environment.NewLine;
@@ -491,7 +492,7 @@ namespace De.AHoerstemeier.Tambon.UI
             if ( localGovernment != null )
             {
                 _bot.CreateItem(localGovernment);
-                edtCollisions.Text = String.Format("{0} ({2}): <wiki wikidata=\"{1}\" />",
+                edtCollisions.Text = String.Format(CultureInfo.InvariantCulture, "{0} ({2}): <wiki wikidata=\"{1}\" />",
                     localGovernment.geocode,
                     localGovernment.wiki.wikidata,
                     localGovernment.english) + Environment.NewLine;
@@ -505,18 +506,18 @@ namespace De.AHoerstemeier.Tambon.UI
             var codes = new List<String>();
             foreach ( var province in allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)) )
             {
-                result.AppendFormat("* {{{{Q|{0}}}}}", province.wiki.wikidata.Remove(0, 1));
+                result.AppendFormat(CultureInfo.InvariantCulture, "* {{{{Q|{0}}}}}", province.wiki.wikidata.Remove(0, 1));
                 result.AppendLine();
                 foreach ( var amphoe in province.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
                 {
-                    result.AppendFormat("** {{{{Q|{0}}}}}: ", amphoe.wiki.wikidata.Remove(0, 1));
+                    result.AppendFormat(CultureInfo.InvariantCulture, "** {{{{Q|{0}}}}}: ", amphoe.wiki.wikidata.Remove(0, 1));
                     codes.Clear();
                     foreach ( var tambon in amphoe.entity.Where(x => !x.IsObsolete && x.type.IsCompatibleEntityType(EntityType.Tambon)) )
                     {
                         if ( tambon.wiki != null && !String.IsNullOrEmpty(tambon.wiki.wikidata) )
                         {
                             // codes.Add(String.Format("{{{{Q|{0}}}}}", tambon.wiki.wikidata.Remove(0, 1)));
-                            codes.Add(String.Format("[[{0}]]", tambon.wiki.wikidata));
+                            codes.Add(String.Format(CultureInfo.InvariantCulture, "[[{0}]]", tambon.wiki.wikidata));
                         }
                         else
                         {
@@ -535,7 +536,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var codes = new List<String>();
             foreach ( var province in allEntities.Where(x => x.type == EntityType.Changwat) )
             {
-                result.AppendFormat("* {{{{Q|{0}}}}}: ", province.wiki.wikidata.Remove(0, 1));
+                result.AppendFormat(CultureInfo.InvariantCulture, "* {{{{Q|{0}}}}}: ", province.wiki.wikidata.Remove(0, 1));
                 codes.Clear();
                 var localGovernment = allEntities.Where(x => !x.IsObsolete && x.type.IsLocalGovernment() && GeocodeHelper.IsBaseGeocode(province.geocode, x.geocode));
                 foreach ( var lao in localGovernment )
@@ -543,7 +544,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     if ( lao.wiki != null && !String.IsNullOrEmpty(lao.wiki.wikidata) )
                     {
                         // codes.Add(String.Format("{{{{Q|{0}}}}}", tambon.wiki.wikidata.Remove(0, 1)));
-                        codes.Add(String.Format("[[{0}]]", lao.wiki.wikidata));
+                        codes.Add(String.Format(CultureInfo.InvariantCulture, "[[{0}]]", lao.wiki.wikidata));
                     }
                     else
                     {

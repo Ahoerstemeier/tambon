@@ -56,6 +56,7 @@
             this.btnNayokResign = new System.Windows.Forms.Button();
             this.btnShowEntityData = new System.Windows.Forms.Button();
             this.grpTesting = new System.Windows.Forms.GroupBox();
+            this.btnPopulationTable = new System.Windows.Forms.Button();
             this.btnDisambiguation = new System.Windows.Forms.Button();
             this.btnAgeTable = new System.Windows.Forms.Button();
             this.btnGovernor = new System.Windows.Forms.Button();
@@ -65,7 +66,7 @@
             this.btnNumbers = new System.Windows.Forms.Button();
             this.btnMubanList = new System.Windows.Forms.Button();
             this.btnTambonList = new System.Windows.Forms.Button();
-            this.btnPopulationTable = new System.Windows.Forms.Button();
+            this.btnShowPopulation = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -351,6 +352,7 @@
             // 
             // grpTesting
             // 
+            this.grpTesting.Controls.Add(this.btnShowPopulation);
             this.grpTesting.Controls.Add(this.btnPopulationTable);
             this.grpTesting.Controls.Add(this.btnDisambiguation);
             this.grpTesting.Controls.Add(this.btnAgeTable);
@@ -372,6 +374,16 @@
             this.grpTesting.TabIndex = 61;
             this.grpTesting.TabStop = false;
             this.grpTesting.Text = "Testing only";
+            // 
+            // btnPopulationTable
+            // 
+            this.btnPopulationTable.Location = new System.Drawing.Point(394, 48);
+            this.btnPopulationTable.Name = "btnPopulationTable";
+            this.btnPopulationTable.Size = new System.Drawing.Size(102, 23);
+            this.btnPopulationTable.TabIndex = 65;
+            this.btnPopulationTable.Text = "Population CSV";
+            this.btnPopulationTable.UseVisualStyleBackColor = true;
+            this.btnPopulationTable.Click += new System.EventHandler(this.btnPopulationTable_Click);
             // 
             // btnDisambiguation
             // 
@@ -474,15 +486,15 @@
             this.btnTambonList.UseVisualStyleBackColor = true;
             this.btnTambonList.Click += new System.EventHandler(this.btnTambonList_Click);
             // 
-            // btnPopulationTable
+            // btnShowPopulation
             // 
-            this.btnPopulationTable.Location = new System.Drawing.Point(394, 48);
-            this.btnPopulationTable.Name = "btnPopulationTable";
-            this.btnPopulationTable.Size = new System.Drawing.Size(102, 23);
-            this.btnPopulationTable.TabIndex = 65;
-            this.btnPopulationTable.Text = "Population CSV";
-            this.btnPopulationTable.UseVisualStyleBackColor = true;
-            this.btnPopulationTable.Click += new System.EventHandler(this.btnPopulationTable_Click);
+            this.btnShowPopulation.Location = new System.Drawing.Point(394, 77);
+            this.btnShowPopulation.Name = "btnShowPopulation";
+            this.btnShowPopulation.Size = new System.Drawing.Size(102, 23);
+            this.btnShowPopulation.TabIndex = 66;
+            this.btnShowPopulation.Text = "Population view";
+            this.btnShowPopulation.UseVisualStyleBackColor = true;
+            this.btnShowPopulation.Click += new System.EventHandler(this.btnShowPopulation_Click);
             // 
             // MainForm
             // 
@@ -562,6 +574,7 @@
         private System.Windows.Forms.Button btnTambonList;
         private System.Windows.Forms.Button btnDisambiguation;
         private System.Windows.Forms.Button btnPopulationTable;
+        private System.Windows.Forms.Button btnShowPopulation;
     }
 }
 

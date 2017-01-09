@@ -109,15 +109,14 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 if ( GeocodeHelper.IsBaseGeocode(provinceFilter, entry.Key.Geocode) )
                 {
-                    romanizationMistakesBuilder.AppendLine(String.Format("{0} {1}: {2} vs. {3}", entry.Key.Geocode, entry.Key.Name, entry.Key.English, entry.Value));
+                    romanizationMistakesBuilder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "{0} {1}: {2} vs. {3}", entry.Key.Geocode, entry.Key.Name, entry.Key.English, entry.Value));
                     romanizationMistakeCount++;
                 }
             }
 
             if ( romanizationMistakeCount > 0 )
             {
-                var displayForm = new StringDisplayForm(
-                    String.Format("Romanization problems ({0})", romanizationMistakeCount),
+                var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "Romanization problems ({0})", romanizationMistakeCount),
                     romanizationMistakesBuilder.ToString());
                 displayForm.Show();
             }
@@ -130,16 +129,13 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     var entity = allEntities.FirstOrDefault(x => x.geocode == entry.Geocode);
                     var suggestedName = entry.English;
-                    romanizationSuggestionBuilder.AppendLine(String.Format("<entity type=\"{0}\" geocode=\"{1}\" name=\"{2}\" english=\"{3}\" />",
-                        entity.type, entity.geocode, entity.name, suggestedName));
+                    romanizationSuggestionBuilder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "<entity type=\"{0}\" geocode=\"{1}\" name=\"{2}\" english=\"{3}\" />", entity.type, entity.geocode, entity.name, suggestedName));
                     romanizationSuggestionCount++;
                 }
             }
             if ( romanizationSuggestionCount > 0 )
             {
-                var form = new StringDisplayForm(
-                    String.Format("Romanization suggestions ({0}", romanizationSuggestionCount),
-                    romanizationSuggestionBuilder.ToString());
+                var form = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "Romanization suggestions ({0}", romanizationSuggestionCount), romanizationSuggestionBuilder.ToString());
                 form.Show();
 
                 List<Tuple<String, String, Int32>> counter = new List<Tuple<String, String, Int32>>();
@@ -168,12 +164,10 @@ namespace De.AHoerstemeier.Tambon.UI
                     StringBuilder sortedBuilder = new StringBuilder();
                     foreach ( var entry in counter )
                     {
-                        sortedBuilder.AppendLine(String.Format("{0}: {1} ({2})", entry.Item1, entry.Item2, entry.Item3));
+                        sortedBuilder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "{0}: {1} ({2})", entry.Item1, entry.Item2, entry.Item3));
                         suggestionCounter += entry.Item3;
                     }
-                    var displayForm = new StringDisplayForm(
-                        String.Format("Romanization suggestions ({0} of {1})", suggestionCounter, romanizationSuggestionCount),
-                        sortedBuilder.ToString());
+                    var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "Romanization suggestions ({0} of {1})", suggestionCounter, romanizationSuggestionCount), sortedBuilder.ToString());
                     displayForm.Show();
                 }
             }
@@ -212,12 +206,10 @@ namespace De.AHoerstemeier.Tambon.UI
                     StringBuilder sortedBuilder = new StringBuilder();
                     foreach ( var entry in counter )
                     {
-                        sortedBuilder.AppendLine(String.Format("{0}: {1}", entry.Item1, entry.Item2));
+                        sortedBuilder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "{0}: {1}", entry.Item1, entry.Item2));
                         missingCounter += entry.Item2;
                     }
-                    var displayForm = new StringDisplayForm(
-                        String.Format("Romanization missing ({0} of {1})", romanizationMissing.Count, numberOfEntities),
-                        sortedBuilder.ToString());
+                    var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "Romanization missing ({0} of {1})", romanizationMissing.Count, numberOfEntities), sortedBuilder.ToString());
                     displayForm.Show();
                 }
             }
@@ -233,7 +225,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 mubanBuilder.AppendLine("Not starting with Ban:");
                 foreach ( var entry in mubanNotStartingWithBan )
                 {
-                    mubanBuilder.AppendLine(String.Format("{0}: {1} ({2})", entry.geocode, entry.english, entry.name));
+                    mubanBuilder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "{0}: {1} ({2})", entry.geocode, entry.english, entry.name));
                     mubanIssues++;
                 }
                 mubanBuilder.AppendLine();
@@ -243,7 +235,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 mubanBuilder.AppendLine("Not starting with บ้าน:");
                 foreach ( var entry in mubanNotStartingWithBanInThai )
                 {
-                    mubanBuilder.AppendLine(String.Format("{0}: {1}", entry.geocode, entry.name));
+                    mubanBuilder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "{0}: {1}", entry.geocode, entry.name));
                     mubanIssues++;
                 }
                 mubanBuilder.AppendLine();
@@ -253,16 +245,14 @@ namespace De.AHoerstemeier.Tambon.UI
                 mubanBuilder.AppendLine("Invalid lower-case letters in romanized name:");
                 foreach ( var entry in mubanWithWrongCapitalization )
                 {
-                    mubanBuilder.AppendLine(String.Format("{0}: {1}", entry.geocode, entry.english));
+                    mubanBuilder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "{0}: {1}", entry.geocode, entry.english));
                     mubanIssues++;
                 }
                 mubanBuilder.AppendLine();
             }
             if ( mubanIssues > 0 )
             {
-                var displayForm = new StringDisplayForm(
-                   String.Format("Muban name issues ({0} of {1})", mubanIssues, allMuban.Count()),
-                   mubanBuilder.ToString());
+                var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "Muban name issues ({0} of {1})", mubanIssues, allMuban.Count()), mubanBuilder.ToString());
                 displayForm.Show();
             }
         }
@@ -332,9 +322,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             if ( count > 0 )
             {
-                var displayForm = new StringDisplayForm(
-                    String.Format("Invalid terms ({0})", count),
-                    builder.ToString());
+                var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "Invalid terms ({0})", count), builder.ToString());
                 displayForm.Show();
             }
         }
@@ -635,7 +623,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             else
             {
-                MessageBox.Show(this, String.Format("Fatal error: Directory {0} does not exist." + Environment.NewLine + "Application will be terminated.", searchPath), "Directory error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, String.Format(CultureInfo.CurrentUICulture, "Fatal error: Directory {0} does not exist." + Environment.NewLine + "Application will be terminated.", searchPath), "Directory error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }
         }
@@ -690,9 +678,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             if ( count > 0 )
             {
-                var displayForm = new StringDisplayForm(
-                    String.Format("Term ends ({0})", count),
-                    builder.ToString());
+                var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "Term ends ({0})", count), builder.ToString());
                 displayForm.Show();
             }
         }
@@ -918,9 +904,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             if ( councilCount > 0 )
             {
-                var displayForm = new StringDisplayForm(
-                    String.Format("{0} LAO council elections pending", councilCount),
-                    councilBuilder.ToString());
+                var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "{0} LAO council elections pending", councilCount), councilBuilder.ToString());
                 displayForm.Show();
             }
 
@@ -948,9 +932,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             if ( officialCount > 0 )
             {
-                var displayForm = new StringDisplayForm(
-                    String.Format("{0} LAO official elections pending", officialCount),
-                    officialBuilder.ToString());
+                var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "{0} LAO official elections pending", officialCount), officialBuilder.ToString());
                 displayForm.Show();
             }
 
@@ -967,9 +949,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             if ( officialUnknownCount > 0 )
             {
-                var displayForm = new StringDisplayForm(
-                    String.Format("{0} LAO official elections result missing", officialUnknownCount),
-                    officialUnknownBuilder.ToString());
+                var displayForm = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "{0} LAO official elections result missing", officialUnknownCount), officialUnknownBuilder.ToString());
                 displayForm.Show();
             }
         }
@@ -1002,7 +982,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 var count = entry.Value.Count();
                 if ( count > 0 )
                 {
-                    builder.AppendFormat("{0:yyyy-MM-dd}: {1}", zeroDate.AddDays(entry.Key), entry.Value.Count());
+                    builder.AppendFormat(CultureInfo.CurrentUICulture, "{0:yyyy-MM-dd}: {1}", zeroDate.AddDays(entry.Key), entry.Value.Count());
                     builder.AppendLine();
                 }
             }
@@ -1181,7 +1161,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     var codes = notDistinctType.Select(x => String.Join(",", x.geocode));
                     if ( codes.Distinct().Count() != codes.Count() )
                     {
-                        builder.AppendFormat("{0} ({1}): {2} present {3} times)", entity.english, entity.geocode, notDistinctType.Key, notDistinctType.Count());
+                        builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2} present {3} times)", entity.english, entity.geocode, notDistinctType.Key, notDistinctType.Count());
                         builder.AppendLine();
                     }
                 }
@@ -1193,7 +1173,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         diff = Math.Abs(data.total - data.male - data.female);
                         if ( diff > 1 )
                         {
-                            builder.AppendFormat("{0} ({1}): {2} differs male/female to total by {3}", entity.english, entity.geocode, data.type, diff);
+                            builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2} differs male/female to total by {3}", entity.english, entity.geocode, data.type, diff);
                             builder.AppendLine();
                         }
                     }
@@ -1204,7 +1184,7 @@ namespace De.AHoerstemeier.Tambon.UI
                             diff = Math.Abs(data.total - data.male - data.female);
                             if ( diff > 1 )
                             {
-                                builder.AppendFormat("{0} ({1}): {2} of {3} differs male/female to total by {4}", entity.english, entity.geocode, subData.type, data.type, diff);
+                                builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2} of {3} differs male/female to total by {4}", entity.english, entity.geocode, subData.type, data.type, diff);
                                 builder.AppendLine();
                             }
                         }
@@ -1216,14 +1196,14 @@ namespace De.AHoerstemeier.Tambon.UI
                             case PopulationDataType.ruralsanitary:
                                 if ( (data.total > 4999 * data.geocode.Count) )
                                 {
-                                    builder.AppendFormat("{0} ({1}): Rural sanitary population {2} with just {3} sanitary district(s).", entity.english, entity.geocode, data.total, data.geocode.Count);
+                                    builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): Rural sanitary population {2} with just {3} sanitary district(s).", entity.english, entity.geocode, data.total, data.geocode.Count);
                                     builder.AppendLine();
                                 }
                                 break;
                             case PopulationDataType.urbansanitary:
                                 if ( (data.total < 5000 * data.geocode.Count) )
                                 {
-                                    builder.AppendFormat("{0} ({1}): Urban sanitary population {2} not possible with {3} sanitary district(s).", entity.english, entity.geocode, data.total, data.geocode.Count);
+                                    builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): Urban sanitary population {2} not possible with {3} sanitary district(s).", entity.english, entity.geocode, data.total, data.geocode.Count);
                                     builder.AppendLine();
                                 }
                                 break;
@@ -1231,14 +1211,14 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                     if ( !data.AgeTableValid() )
                     {
-                        builder.AppendFormat("{0} ({1}): {2} age table does not sum up", entity.english, entity.geocode, data.type);
+                        builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2} age table does not sum up", entity.english, entity.geocode, data.type);
                         builder.AppendLine();
                     }
                 }
                 diff = population.SumError();
                 if ( diff > 1 )
                 {
-                    builder.AppendFormat("{0} ({1}): Sum of parts differs by {2}", entity.english, entity.geocode, diff);
+                    builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): Sum of parts differs by {2}", entity.english, entity.geocode, diff);
                     builder.AppendLine();
                 }
                 var sum = new PopulationData();
@@ -1258,7 +1238,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     diff = sum.TotalPopulation.MaxDeviation(entity.population.First(y => y.source == type && y.Year == year).TotalPopulation);
                     if ( diff > 1 )
                     {
-                        builder.AppendFormat("{0} ({1}): Sum of sub-entities differs by {2}", entity.english, entity.geocode, diff);
+                        builder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): Sum of sub-entities differs by {2}", entity.english, entity.geocode, diff);
                         builder.AppendLine();
                     }
                 }
@@ -1290,7 +1270,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     population = populationData.TotalPopulation.total;
                 }
-                builder.AppendFormat("{0},{1},{2},{3},{4}", entity.english, entity.name, entity.geocode, population, location);
+                builder.AppendFormat(CultureInfo.CurrentUICulture, "{0},{1},{2},{3},{4}", entity.english, entity.name, entity.geocode, population, location);
                 builder.AppendLine();
             }
             Clipboard.Clear();
@@ -1319,10 +1299,10 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var builder = new StringBuilder();
 
-            builder.AppendLine(String.Format("Most common number of years in office: {0}", frequency.MostCommonValue));
-            builder.AppendLine(String.Format("Mean number of years in office: {0:F2}", frequency.MeanValue));
+            builder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "Most common number of years in office: {0}", frequency.MostCommonValue));
+            builder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "Mean number of years in office: {0:F2}", frequency.MeanValue));
             var longestTermChangwat = frequency.Data[frequency.MaxValue].Select(x => allChangwat.First(y => y.geocode == x)).Select(x => x.english);
-            builder.AppendLine(String.Format("Longest time in office: {0} years (in {1})", frequency.MaxValue, String.Join(", ", longestTermChangwat)));
+            builder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "Longest time in office: {0} years (in {1})", frequency.MaxValue, String.Join(", ", longestTermChangwat)));
             builder.AppendLine();
             if ( vacantChangwat.Any() )
             {
@@ -1339,7 +1319,7 @@ namespace De.AHoerstemeier.Tambon.UI
             entity.CopyBasicDataFrom(baseEntity);
             var code = entity.geocode;
             Int16 year = Convert.ToInt16(edtYear.Value);
-            var path = Path.Combine(_ageDataDirectory, String.Format("{0:00}12cc{1:00}.txt", year - 2000 + 43, code));
+            var path = Path.Combine(_ageDataDirectory, String.Format(CultureInfo.InvariantCulture, "{0:00}12cc{1:00}.txt", year - 2000 + 43, code));
             if ( File.Exists(path) )
             {
                 String input = File.ReadAllText(path);
@@ -1396,18 +1376,18 @@ namespace De.AHoerstemeier.Tambon.UI
                     dataEntry.total = Convert.ToInt32(fields[219]);
 
                     var output = XmlManager.EntityToXml<Entity>(entity);
-                    File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, String.Format("age{0} {1}.xml", year, entity.english)), output);
+                    File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, String.Format(CultureInfo.InvariantCulture, "age{0} {1}.xml", year, entity.english)), output);
                 }
             }
         }
 
-        private void btnNumbers_Click(object sender, EventArgs e)
+        private void btnNumbers_Click(Object sender, EventArgs e)
         {
             var formEntityNumbers = new EntityNumbersForm();
             formEntityNumbers.Show();
         }
 
-        private void btnMubanList_Click(object sender, EventArgs e)
+        private void btnMubanList_Click(Object sender, EventArgs e)
         {
             var baseEntity = GlobalData.CompleteGeocodeList();
             baseEntity.PropagateObsoleteToSubEntities();
@@ -1415,7 +1395,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var builder = new StringBuilder();
             foreach ( var entity in allMuban )
             {
-                builder.AppendFormat("{0},{1},{2}", entity.geocode, entity.english, entity.name);
+                builder.AppendFormat(CultureInfo.InvariantCulture, "{0},{1},{2}", entity.geocode, entity.english, entity.name);
                 builder.AppendLine();
             }
             Clipboard.Clear();
@@ -1444,19 +1424,19 @@ namespace De.AHoerstemeier.Tambon.UI
                         households = householdData.households;
                     }
                 }
-                builder.AppendFormat("{0},{1},{2},{3},{4}", entity.geocode, entity.english, entity.name, population, households);
+                builder.AppendFormat(CultureInfo.InvariantCulture, "{0},{1},{2},{3},{4}", entity.geocode, entity.english, entity.name, population, households);
                 builder.AppendLine();
             }
             Clipboard.Clear();
             Clipboard.SetText(builder.ToString());
         }
 
-        private void btnDisambiguation_Click(object sender, EventArgs e)
+        private void btnDisambiguation_Click(Object sender, EventArgs e)
         {
             new DisambiguationForm().Show();
         }
 
-        private void btnPopulationTable_Click(object sender, EventArgs e)
+        private void btnPopulationTable_Click(Object sender, EventArgs e)
         {
             Int16 year = Convert.ToInt16(edtYear.Value);
             GlobalData.LoadPopulationData(PopulationDataSourceType.DOPA, year);
@@ -1466,13 +1446,21 @@ namespace De.AHoerstemeier.Tambon.UI
             foreach ( var item in data )
             {
                 if ( item.Item2 != null )
-                  {
-                    builder.AppendFormat("{1}", item.Item1, item.Item2.TotalPopulation.total);
+                {
+                    builder.AppendFormat(CultureInfo.InvariantCulture, "{1}", item.Item1, item.Item2.TotalPopulation.total);
                 }
                 builder.AppendLine();
             }
             Clipboard.Clear();
             Clipboard.SetText(builder.ToString());
+        }
+
+        private void btnShowPopulation_Click(Object sender, EventArgs e)
+        {
+            var formPopulationByEntityTypeViewer = new PopulationByEntityTypeViewer();
+            formPopulationByEntityTypeViewer.PopulationReferenceYear = Convert.ToInt16(edtYear.Value);
+            formPopulationByEntityTypeViewer.PopulationDataSource = PopulationDataSourceType.DOPA;
+            formPopulationByEntityTypeViewer.Show();
         }
     }
 }

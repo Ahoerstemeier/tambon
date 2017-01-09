@@ -28,30 +28,50 @@ namespace De.AHoerstemeier.Tambon.UI
 
         #region properties
 
+        /// <summary>
+        /// Gets or sets whether erroneous DOLA codes shall be included in the invalid data list.
+        /// </summary>
+        /// <value><c>true</c> to include wrong DOLA codes in the invalid data list, <c>false</c> otherwise.</value>
         public Boolean ShowDolaErrors
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Gets or sets the geocode of the province which should be selected upon opening the view.
+        /// </summary>
+        /// <value>The geocode of the province which should be selected upon opening the view.</value>
         public UInt32 StartChangwatGeocode
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Gets or sets the data source to be used for the population data.
+        /// </summary>
+        /// <value>The data source to be used for the population data.</value>
         public PopulationDataSourceType PopulationDataSource
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Gets or sets the reference year to be used for the population data.
+        /// </summary>
+        /// <value>The reference year to be used for the population data.</value>
         public Int16 PopulationReferenceYear
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Gets or sets whether wikidata should be checked to include Wikipedia links.
+        /// </summary>
+        /// <value><c>true</c> to check Wikidata for links, <c>false</c> otherwise.</value>
         public Boolean CheckWikiData
         {
             get;

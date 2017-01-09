@@ -15,10 +15,24 @@ namespace De.AHoerstemeier.Tambon
     {
         #region fields
 
-        private IEnumerable<Entity> localGovernments;
+        /// <summary>
+        /// List of the local governments in <see cref="_country"/>.
+        /// </summary>
+        private IEnumerable<Entity> _localGovernments;
 
-        private Entity _baseEntity;
+        /// <summary>
+        /// Entity of the country.
+        /// </summary>
+        private Entity _country;
+
+        /// <summary>
+        /// API to connect to WikiData.
+        /// </summary>
         private WikibaseApi _api;
+
+        /// <summary>
+        /// Helper to connect to WikiData.
+        /// </summary>
         private WikiDataHelper _helper;
 
         #endregion fields
@@ -26,7 +40,7 @@ namespace De.AHoerstemeier.Tambon
         #region properties
 
         /// <summary>
-        /// Whether wikidata should be checked to include Wikipedia links.
+        /// Gets or sets whether wikidata should be checked to include Wikipedia links.
         /// </summary>
         /// <value><c>true</c> to check Wikidata for links, <c>false</c> otherwise.</value>
         public Boolean CheckWikiData
@@ -62,12 +76,12 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Creates a new instance of <see cref="WikipediaExporter"/>.
         /// </summary>
-        /// <param name="baseEntity">Entity representing the country.</param>
+        /// <param name="country">Entity representing the country.</param>
         /// <param name="localGovernments">Enumeration of the local governments.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="baseEntity"/> or <paramref name="localGovernments"/> is <c>null</c>.</exception>
-        public WikipediaExporter(Entity baseEntity, IEnumerable<Entity> localGovernments)
+        /// <exception cref="ArgumentNullException"><paramref name="country"/> or <paramref name="localGovernments"/> is <c>null</c>.</exception>
+        public WikipediaExporter(Entity country, IEnumerable<Entity> localGovernments)
         {
-            if ( baseEntity == null )
+            if ( country == null )
             {
                 throw new ArgumentNullException("baseEntity");
             }
@@ -76,8 +90,8 @@ namespace De.AHoerstemeier.Tambon
                 throw new ArgumentNullException("localGovernments");
             }
 
-            _baseEntity = baseEntity;
-            this.localGovernments = localGovernments;
+            _country = country;
+            this._localGovernments = localGovernments;
             PopulationDataSource = PopulationDataSourceType.DOPA;
         }
 
@@ -103,7 +117,7 @@ namespace De.AHoerstemeier.Tambon
 
             if ( !entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
             {
-                throw new ArgumentException(String.Format("Entity type {0} not compatible with Amphoe", entity.type));
+                throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, "Entity type {0} not compatible with Amphoe", entity.type));
             }
 
             String result;
@@ -119,7 +133,7 @@ namespace De.AHoerstemeier.Tambon
                     break;
 
                 default:
-                    throw new NotImplementedException(String.Format("Unsupported language {0}", language));
+                    throw new NotImplementedException(String.Format(CultureInfo.InvariantCulture, "Unsupported language {0}", language));
             }
 
             return result;
@@ -143,23 +157,23 @@ namespace De.AHoerstemeier.Tambon
 
             if ( !entity.type.IsCompatibleEntityType(EntityType.Tambon) )
             {
-                throw new ArgumentException(String.Format("Entity type {0} not compatible with Tambon", entity.type));
+                throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, "Entity type {0} not compatible with Tambon", entity.type));
             }
             if ( language != Language.English )
             {
-                throw new NotImplementedException(String.Format("Unsupported language {0}", language));
+                throw new NotImplementedException(String.Format(CultureInfo.InvariantCulture, "Unsupported language {0}", language));
             }
 
             var englishCulture = new CultureInfo("en-US");
-            var province = _baseEntity.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
+            var province = _country.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
             var amphoe = province.entity.FirstOrDefault(x => GeocodeHelper.IsBaseGeocode(x.geocode, entity.geocode));
             var muban = entity.entity.Where(x => x.type == EntityType.Muban && !x.IsObsolete);
-            var lao = localGovernments.Where(x => x.LocalGovernmentAreaCoverage.Any(y => y.geocode == entity.geocode));
+            var lao = _localGovernments.Where(x => x.LocalGovernmentAreaCoverage.Any(y => y.geocode == entity.geocode));
             var parentTambon = new List<Entity>();
             var creationHistory = entity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
             if ( creationHistory != null )
             {
-                var allTambon = _baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon));
+                var allTambon = _country.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon));
                 parentTambon.AddRange(creationHistory.splitfrom.Select(x => allTambon.FirstOrDefault(y => x == y.geocode)));
             }
             var tempList = new List<Entity>() { province, amphoe };
@@ -282,7 +296,7 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine("===Central administration===");
             if ( muban.Any() )
             {
-                builder.AppendFormat("The ''tambon'' is subdivided into {0} administrative villages (''[[muban]]'').", muban.Count());
+                builder.AppendFormat(englishCulture, "The ''tambon'' is subdivided into {0} administrative villages (''[[muban]]'').", muban.Count());
                 builder.AppendLine();
                 builder.AppendLine("{| class=\"wikitable sortable\"");
                 builder.AppendLine("! No.");
@@ -299,11 +313,11 @@ namespace De.AHoerstemeier.Tambon
                     var muNumber = mu.geocode % 100;
                     if ( muNumber < 10 )
                     {
-                        builder.AppendFormat("||{{{{0}}}}{0}.||{1}||{2}", muNumber, muEnglish, mu.name);
+                        builder.AppendFormat(englishCulture, "||{{{{0}}}}{0}.||{1}||{2}", muNumber, muEnglish, mu.name);
                     }
                     else
                     {
-                        builder.AppendFormat("||{0}.||{1}||{2}", muNumber, mu.english, mu.name);
+                        builder.AppendFormat(englishCulture, "||{0}.||{1}||{2}", muNumber, mu.english, mu.name);
                     }
                     builder.AppendLine();
                 }
@@ -341,16 +355,16 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var firstLao = laoTupel.First();
 
-                    builder.AppendFormat("The whole area of the subdistrict is covered by the {0} {1} ({2}).", firstLao.Item1, firstLao.Item2, firstLao.Item3);
+                    builder.AppendFormat(englishCulture, "The whole area of the subdistrict is covered by the {0} {1} ({2}).", firstLao.Item1, firstLao.Item2, firstLao.Item3);
                     builder.AppendLine();
                 }
                 else
                 {
-                    builder.AppendFormat("The area of the subdistrict is shared by {0} local governments.", lao.Count());
+                    builder.AppendFormat(englishCulture, "The area of the subdistrict is shared by {0} local governments.", lao.Count());
                     builder.AppendLine();
                     foreach ( var tupel in laoTupel )
                     {
-                        builder.AppendFormat("*the {0} {1} ({2})", tupel.Item1, tupel.Item2, tupel.Item3);
+                        builder.AppendFormat(englishCulture, "*the {0} {1} ({2})", tupel.Item1, tupel.Item2, tupel.Item3);
                         builder.AppendLine();
                     }
                 }
@@ -366,12 +380,12 @@ namespace De.AHoerstemeier.Tambon
             // {{coord|19.0625|N|98.9396|E|source:wikidata-and-enwiki-cat-tree_region:TH|display=title}}
             builder.AppendLine();
 
-            builder.AppendFormat("[[Category:Tambon of {0} Province]]", province.english);
+            builder.AppendFormat(CultureInfo.InvariantCulture, "[[Category:Tambon of {0} Province]]", province.english);
             builder.AppendLine();
-            builder.AppendFormat("[[Category:Populated places in {0} Province]]", province.english);
+            builder.AppendFormat(CultureInfo.InvariantCulture, "[[Category:Populated places in {0} Province]]", province.english);
             builder.AppendLine();
             builder.AppendLine();
-            builder.AppendFormat("{{{{{0}-geo-stub}}}}", province.english.ToCamelCase());
+            builder.AppendFormat(CultureInfo.InvariantCulture, "{{{{{0}-geo-stub}}}}", province.english.ToCamelCase());
 
             return builder.ToString();
         }
@@ -387,9 +401,9 @@ namespace De.AHoerstemeier.Tambon
             if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
             {
                 var result = new AmphoeDataForWikipediaExport();
-                result.Province = _baseEntity.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
+                result.Province = _country.entity.FirstOrDefault(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode));
                 result.AllTambon.AddRange(entity.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete));
-                result.LocalAdministrations.AddRange(entity.LocalGovernmentEntitiesOf(localGovernments).Where(x => !x.IsObsolete));
+                result.LocalAdministrations.AddRange(entity.LocalGovernmentEntitiesOf(_localGovernments).Where(x => !x.IsObsolete));
 
                 var allEntities = result.AllTambon.ToList();
                 allEntities.AddRange(result.LocalAdministrations);
@@ -400,7 +414,7 @@ namespace De.AHoerstemeier.Tambon
                         result.WikipediaLinks[keyValuePair.Key] = keyValuePair.Value;
                     }
                 }
-                var counted = entity.CountAllSubdivisions(localGovernments);
+                var counted = entity.CountAllSubdivisions(_localGovernments);
                 if ( !counted.ContainsKey(EntityType.Muban) )
                 {
                     counted[EntityType.Muban] = 0;
@@ -753,7 +767,7 @@ namespace De.AHoerstemeier.Tambon
 
         private String WikipediaTambonTableEntry(Entity tambon, AmphoeDataForWikipediaExport amphoeData, String format, CultureInfo culture)
         {
-            var subCounted = tambon.CountAllSubdivisions(localGovernments);
+            var subCounted = tambon.CountAllSubdivisions(_localGovernments);
             var muban = 0;
             if ( !subCounted.TryGetValue(EntityType.Muban, out muban) )
             {
@@ -879,7 +893,7 @@ namespace De.AHoerstemeier.Tambon
                 _api = new WikibaseApi("https://www.wikidata.org", "TambonBot");
                 _helper = new WikiDataHelper(_api);
             }
-            var actualEntities = entities.Select(x => x.CurrentEntity(_baseEntity));
+            var actualEntities = entities.Select(x => x.CurrentEntity(_country));
             foreach ( var entity in actualEntities.Where(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)) )
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
