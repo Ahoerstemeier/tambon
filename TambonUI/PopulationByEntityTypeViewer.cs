@@ -28,7 +28,14 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         private Entity _baseEntity;
 
+        /// <summary>
+        /// All local government entities.
+        /// </summary>
         private List<Entity> _localGovernments;
+
+        /// <summary>
+        /// All active entities.
+        /// </summary>
         private List<Entity> _allEntities;
 
         #endregion fields
@@ -130,12 +137,24 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="e">Event arguments.</param>
         private void edtCompareYear_ValueChanged(Object sender, EventArgs e)
         {
+            Int16 newYear = Convert.ToInt16(edtCompareYear.Value);
             if ( chkCompare.Checked )
             {
-                var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
-                GlobalData.LoadPopulationData(PopulationDataSource, PopulationReferenceYear);
-                Entity.CalculateLocalGovernmentPopulation(_localGovernments, allTambon, PopulationDataSource, Convert.ToInt16(edtCompareYear.Value));
+                if ( !_country.population.Any(x => x.source == PopulationDataSource && x.Year == newYear) )
+                {
+                    GlobalData.LoadPopulationData(PopulationDataSource, newYear);
+                    // GlobalData.CompleteGeocodeList creates a clone, thus need to use the new instances to get the new population data
 
+                    _country = GlobalData.CompleteGeocodeList();
+                    _country.PropagateObsoleteToSubEntities();
+                    _allEntities = _country.FlatList().Where(x => !x.IsObsolete).Where(x => x.type != EntityType.Muban && x.type != EntityType.Chumchon).ToList();
+
+                    // re-calculate the local government populations
+                    var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
+                    Entity.CalculateLocalGovernmentPopulation(_localGovernments, allTambon, PopulationDataSource, Convert.ToInt16(edtCompareYear.Value));
+
+                    UpdateBaseEntity();  // need to get _baseEntity
+                }
                 UpdateList();
             }
         }
@@ -147,16 +166,19 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="e">Event arguments.</param>
         private void cbxChangwat_SelectedValueChanged(Object sender, EventArgs e)
         {
-            _baseEntity = cbxChangwat.SelectedItem as Entity;
+            UpdateBaseEntity();
         }
 
         #endregion UI event handler
 
+        /// <summary>
+        /// Initializes the data for the view.
+        /// </summary>
         private void InitializeData()
         {
             _country = GlobalData.CompleteGeocodeList();
             _country.PropagateObsoleteToSubEntities();
-            _allEntities = _country.FlatList().Where(x => !x.IsObsolete).ToList();
+            _allEntities = _country.FlatList().Where(x => !x.IsObsolete).Where(x => x.type != EntityType.Muban && x.type != EntityType.Chumchon).ToList();
             _localGovernments = new List<Entity>();
             var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
             _localGovernments.AddRange(_allEntities.Where(x => x.type.IsLocalGovernment()));
@@ -164,7 +186,7 @@ namespace De.AHoerstemeier.Tambon
             foreach ( var tambon in allLocalGovernmentParents )
             {
                 var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
-                if ( localGovernmentEntity != null )
+                if ( localGovernmentEntity != null && !localGovernmentEntity.IsObsolete )
                 {
                     _localGovernments.Add(localGovernmentEntity);
                     _allEntities.Add(localGovernmentEntity);
@@ -205,6 +227,25 @@ namespace De.AHoerstemeier.Tambon
             cbxChangwat.SelectedItem = _country;
         }
 
+        /// <summary>
+        /// Refreshes <see cref="_baseEntity"/> from the selected item in <see cref="cbxChangwat"/>.
+        /// </summary>
+        private void UpdateBaseEntity()
+        {
+            var newBaseEntity = cbxChangwat.SelectedItem as Entity;
+            if ( newBaseEntity.type == EntityType.Country )
+            {
+                _baseEntity = _country;
+            }
+            else
+            {
+                _baseEntity = _country.entity.FirstOrDefault(x => x.geocode == newBaseEntity.geocode);
+            }
+        }
+
+        /// <summary>
+        /// Updates the calculated data.
+        /// </summary>
         private void UpdateList()
         {
             IEnumerable<Entity> list = CalculateList();
@@ -218,7 +259,7 @@ namespace De.AHoerstemeier.Tambon
             FrequencyCounter counter = new FrequencyCounter();
             foreach ( var entity in list )
             {
-                var populationData = GetPopulationDataPoint(entity, PopulationDataSource, PopulationReferenceYear);
+                var populationData = entity.GetPopulationDataPoint(PopulationDataSource, PopulationReferenceYear);
                 counter.IncrementForCount(populationData.total, entity.geocode);
             }
 
@@ -242,9 +283,9 @@ namespace De.AHoerstemeier.Tambon
             {
                 builder.AppendLine();
                 var ordered = populationChanges.OrderBy(x => x.Item2);
-                var winner = ordered.First();
+                var winner = ordered.Last();
                 var winnerEntry = list.First(x => x.geocode == winner.Item1);
-                var looser = ordered.Last();
+                var looser = ordered.First();
                 var looserEntry = list.First(x => x.geocode == looser.Item1);
                 builder.AppendFormat(CultureInfo.CurrentUICulture, "Biggest winner: {0:##,###,##0} by {1} ({2})", winner.Item2, winnerEntry.english, winner.Item1);
                 builder.AppendLine();
@@ -255,9 +296,9 @@ namespace De.AHoerstemeier.Tambon
             {
                 builder.AppendLine();
                 var ordered = populationChanges.OrderBy(x => x.Item3);
-                var winner = ordered.First();
+                var winner = ordered.Last();
                 var winnerEntry = list.First(x => x.geocode == winner.Item1);
-                var looser = ordered.Last();
+                var looser = ordered.First();
                 var looserEntry = list.First(x => x.geocode == looser.Item1);
                 builder.AppendFormat(CultureInfo.CurrentUICulture, "Biggest winner: {0:##0.00}% by {1} ({2})", winner.Item3, winnerEntry.english, winner.Item1);
                 builder.AppendLine();
@@ -268,6 +309,12 @@ namespace De.AHoerstemeier.Tambon
             txtStatistics.Text = builder.ToString();
         }
 
+        /// <summary>
+        /// Calculates the population changes.
+        /// </summary>
+        /// <param name="entityList">List of entities.</param>
+        /// <param name="year">Year with which the data shall be compared.</param>
+        /// <returns>Enumeration of population changes. For the <see cref="Tuple{T1, T2, T3}"/>, the values are the <see cref="Entity.geocode"/>, the difference in <see cref="PopulationDataPoint.total"/>total population</see> and the percentual change of total population.</returns>
         private IEnumerable<Tuple<UInt32, Int32, Double>> CalcPopulationChanges(IEnumerable<Entity> entityList, Int16 year)
         {
             List<Tuple<UInt32, Int32, Double>> result = new List<Tuple<UInt32, Int32, Double>>();
@@ -277,8 +324,8 @@ namespace De.AHoerstemeier.Tambon
                 {
                     if ( entity.geocode != 0 )
                     {
-                        var currentEntry = GetPopulationDataPoint(entity, PopulationDataSource, PopulationReferenceYear);
-                        var compareEntry = GetPopulationDataPoint(entity, PopulationDataSource, year);
+                        var currentEntry = entity.GetPopulationDataPoint(PopulationDataSource, PopulationReferenceYear);
+                        var compareEntry = entity.GetPopulationDataPoint(PopulationDataSource, year);
                         if ( (compareEntry != null) && (compareEntry.total > 0) )
                         {
                             Int32 populationChange = currentEntry.total - compareEntry.total;
@@ -350,10 +397,10 @@ namespace De.AHoerstemeier.Tambon
                     entityTypes.Add(EntityType.TAO);
                 }
 
-                list.AddRange(_country.LocalGovernmentEntitiesOf(new List<Entity>() { _baseEntity }).Where(x => !x.IsObsolete).Where(x => entityTypes.Contains(x.type)));
+                list.AddRange(_baseEntity.LocalGovernmentEntitiesOf(_localGovernments).Where(x => entityTypes.Contains(x.type)));
             }
 
-            return list.OrderBy(x => GetPopulationDataPoint(x, PopulationDataSource, PopulationReferenceYear).total);
+            return list.OrderBy(x => x.GetPopulationDataPoint(PopulationDataSource, PopulationReferenceYear).total);
         }
 
         private void FillListView(IEnumerable<Entity> entityList, IEnumerable<Tuple<UInt32, Int32, Double>> compare)
@@ -367,7 +414,7 @@ namespace De.AHoerstemeier.Tambon
                     ListViewItem listViewItem = lvData.Items.Add(entity.english);
                     listViewItem.SubItems.Add(entity.name);
                     listViewItem.SubItems.Add(entity.geocode.ToString(CultureInfo.CurrentUICulture));
-                    PopulationDataPoint populationDataPoint = GetPopulationDataPoint(entity, PopulationDataSource, PopulationReferenceYear);
+                    PopulationDataPoint populationDataPoint = entity.GetPopulationDataPoint(PopulationDataSource, PopulationReferenceYear);
                     listViewItem.SubItems.Add(populationDataPoint.total.ToString(CultureInfo.CurrentUICulture));
                     if ( compare != null )
                     {
@@ -381,11 +428,6 @@ namespace De.AHoerstemeier.Tambon
                 }
             }
             lvData.EndUpdate();
-        }
-
-        private static PopulationDataPoint GetPopulationDataPoint(Entity entity, PopulationDataSourceType source, Int16 year)
-        {
-            return entity.population.FirstOrDefault(x => (x.Year == year) && (x.source == source)).TotalPopulation;
         }
     }
 }

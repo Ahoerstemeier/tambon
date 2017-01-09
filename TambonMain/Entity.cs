@@ -100,7 +100,14 @@ namespace De.AHoerstemeier.Tambon
             return newEntity;
         }
 
+        /// <summary>
+        /// List of municipalities within the entity. Only used for <see cref="EntityType.Changwat"/>.
+        /// </summary>
         private ICollection<Entity> _thesaban = new List<Entity>();
+
+        /// <summary>
+        /// List of previous geocodes. <c>null</c> if not yet calculated.
+        /// </summary>
         private List<UInt32> _oldGeocode = null;
 
         /// <summary>
@@ -349,6 +356,10 @@ namespace De.AHoerstemeier.Tambon
             parent.AddRange(source.parent);
         }
 
+        /// <summary>
+        /// Gets a list of previous names.
+        /// </summary>
+        /// <value>List of previous names.</value>
         internal IEnumerable<String> OldNames
         {
             get
@@ -363,6 +374,25 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
                 return result;
+            }
+        }
+
+        /// <summary>
+        /// Gets the population data of the given type and year.
+        /// </summary>
+        /// <param name="source">Data source type.</param>
+        /// <param name="year">Reference year.</param>
+        /// <returns>Population data, or <c>null</c> if none found.</returns>
+        public PopulationDataPoint GetPopulationDataPoint(PopulationDataSourceType source, Int16 year)
+        {
+            var data = this.population.FirstOrDefault(x => (x.Year == year) && (x.source == source));
+            if ( data != null )
+            {
+                return data.TotalPopulation;
+            }
+            else
+            {
+                return null;
             }
         }
 
@@ -873,10 +903,13 @@ namespace De.AHoerstemeier.Tambon
                 {
                     case Language.English:
                         return "local government unit in Thailand";
+
                     case Language.German:
                         return "kommunale Verwaltungseinheit von Thailand";
+
                     case Language.Thai:
                         return "องค์กรปกครองส่วนท้องถิ่นของประเทศไทย";
+
                     default:
                         return String.Empty;
                 }
