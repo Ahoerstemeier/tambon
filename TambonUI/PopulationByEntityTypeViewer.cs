@@ -270,6 +270,8 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine();
             builder.AppendFormat(CultureInfo.CurrentUICulture, "Mean population: {0:##,###,##0.0}", counter.MeanValue);
             builder.AppendLine();
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Standard deviation: {0:##,###,##0.0}", counter.StandardDeviation);
+            builder.AppendLine();
             if ( list.Any() )
             {
                 var maxEntity = list.Last();
