@@ -213,10 +213,24 @@
   </xs:complexType>
   <xs:complexType name="EntityCountType">
     <xs:attributeGroup ref="t:Comment" />
-    <xs:attribute name="type" type="t:EntityType" use="required" />
+    <xs:attribute name="type" type="t:EntityType" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="count" type="xs:unsignedInt" use="required">
       <xs:annotation>
         <xs:documentation>Number of entities of the given type.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="invalid" type="xs:boolean" use="optional" default="false">
+      <xs:annotation>
+        <xs:documentation>Indicate whether value stated in the source is obviously wrong.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="actualcount" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Corrected value of number of entities of the given type.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>

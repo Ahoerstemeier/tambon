@@ -1412,6 +1412,19 @@ namespace De.AHoerstemeier.Tambon {
         
         private uint countField;
         
+        private bool invalidField;
+        
+        private uint actualcountField;
+        
+        private bool actualcountFieldSpecified;
+        
+        /// <summary>
+        /// Creates a new instance of EntityCountType.
+        /// </summary>
+        public EntityCountType() {
+            this.invalidField = false;
+        }
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -1429,6 +1442,12 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        /// <summary>
+        /// Type of entity.
+        /// </summary>
+        /// <value>
+        /// The type.
+        /// </value>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public EntityType type {
@@ -1454,6 +1473,58 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.countField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Indicate whether value stated in the source is obviously wrong.
+        /// </summary>
+        /// <value>
+        /// The invalid.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool invalid {
+            get {
+                return this.invalidField;
+            }
+            set {
+                this.invalidField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Corrected value of number of entities of the given type.
+        /// </summary>
+        /// <value>
+        /// The actualcount.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint actualcount {
+            get {
+                return this.actualcountField;
+            }
+            set {
+                this.actualcountField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool actualcountSpecified {
+            get {
+                return this.actualcountFieldSpecified;
+            }
+            set {
+                this.actualcountFieldSpecified = value;
             }
         }
     }
