@@ -585,6 +585,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Linked announcement is revoked by this announcement.
         /// </summary>
         Revoke,
+        
+        /// <summary>
+        /// Linked announcement is duplicate with this announcement.
+        /// </summary>
+        Duplicate,
     }
     
     /// <summary>
