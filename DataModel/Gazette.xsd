@@ -43,6 +43,11 @@
           <xs:documentation>Transfer from a previous post to a new post.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Action not defined in announcement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="SignByFunction">
@@ -635,7 +640,7 @@
         </xs:attribute>
         <xs:attribute name="officialtype" type="t:OfficialType" use="required">
           <xs:annotation>
-            <xs:documentation>Official type.</xs:documentation>
+            <xs:documentation>Official position, in case of a transfer the new position.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="action" type="t:OfficialAction" use="required">

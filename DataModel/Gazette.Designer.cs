@@ -2084,6 +2084,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Transfer from a previous post to a new post.
         /// </summary>
         Transfer,
+        
+        /// <summary>
+        /// Action not defined in announcement.
+        /// </summary>
+        Unknown,
     }
     
     /// <summary>
