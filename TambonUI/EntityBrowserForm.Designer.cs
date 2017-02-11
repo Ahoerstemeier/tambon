@@ -58,6 +58,8 @@
             this.columnLocalCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popupListviewLocal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuHistoryLocal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAdminInfoPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGeneralInfoPage = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisionData = new System.Windows.Forms.TabControl();
             this.tabSubdivision = new System.Windows.Forms.TabPage();
             this.tabErrors = new System.Windows.Forms.TabPage();
@@ -68,8 +70,7 @@
             this.txtMuban = new System.Windows.Forms.TextBox();
             this.tabLocalGoverment = new System.Windows.Forms.TabPage();
             this.txtLocalGovernment = new System.Windows.Forms.TextBox();
-            this.mnuAdminInfoPage = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuGeneralInfoPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGoogleSearchLocal = new System.Windows.Forms.ToolStripMenuItem();
             this.popupTree.SuspendLayout();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
@@ -116,40 +117,40 @@
             this.mnuMubanDefinitions,
             this.mnuHistory});
             this.popupTree.Name = "contextMenuStrip1";
-            this.popupTree.Size = new System.Drawing.Size(175, 114);
+            this.popupTree.Size = new System.Drawing.Size(176, 114);
             // 
             // mnuWikipediaGerman
             // 
             this.mnuWikipediaGerman.Name = "mnuWikipediaGerman";
-            this.mnuWikipediaGerman.Size = new System.Drawing.Size(174, 22);
+            this.mnuWikipediaGerman.Size = new System.Drawing.Size(175, 22);
             this.mnuWikipediaGerman.Text = "Wikipedia (de)";
             this.mnuWikipediaGerman.Click += new System.EventHandler(this.mnuWikipediaGerman_Click);
             // 
             // mnuWikipediaEnglish
             // 
             this.mnuWikipediaEnglish.Name = "mnuWikipediaEnglish";
-            this.mnuWikipediaEnglish.Size = new System.Drawing.Size(174, 22);
+            this.mnuWikipediaEnglish.Size = new System.Drawing.Size(175, 22);
             this.mnuWikipediaEnglish.Text = "Wikipedia (en)";
             this.mnuWikipediaEnglish.Click += new System.EventHandler(this.mnuWikipediaEnglish_Click);
             // 
             // mnuWikipediaTambonEnglish
             // 
             this.mnuWikipediaTambonEnglish.Name = "mnuWikipediaTambonEnglish";
-            this.mnuWikipediaTambonEnglish.Size = new System.Drawing.Size(174, 22);
+            this.mnuWikipediaTambonEnglish.Size = new System.Drawing.Size(175, 22);
             this.mnuWikipediaTambonEnglish.Text = "Tambon WP article";
             this.mnuWikipediaTambonEnglish.Click += new System.EventHandler(this.mnuWikipediaTambonEnglish_Click);
             // 
             // mnuMubanDefinitions
             // 
             this.mnuMubanDefinitions.Name = "mnuMubanDefinitions";
-            this.mnuMubanDefinitions.Size = new System.Drawing.Size(174, 22);
+            this.mnuMubanDefinitions.Size = new System.Drawing.Size(175, 22);
             this.mnuMubanDefinitions.Text = "Muban definitions";
             this.mnuMubanDefinitions.Click += new System.EventHandler(this.mnuMubanDefinitions_Click);
             // 
             // mnuHistory
             // 
             this.mnuHistory.Name = "mnuHistory";
-            this.mnuHistory.Size = new System.Drawing.Size(174, 22);
+            this.mnuHistory.Size = new System.Drawing.Size(175, 22);
             this.mnuHistory.Text = "History XML";
             this.mnuHistory.Click += new System.EventHandler(this.mnuHistory_Click);
             // 
@@ -308,9 +309,10 @@
             this.popupListviewLocal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuHistoryLocal,
             this.mnuAdminInfoPage,
-            this.mnuGeneralInfoPage});
+            this.mnuGeneralInfoPage,
+            this.mnuGoogleSearchLocal});
             this.popupListviewLocal.Name = "popupListviewLocal";
-            this.popupListviewLocal.Size = new System.Drawing.Size(168, 92);
+            this.popupListviewLocal.Size = new System.Drawing.Size(168, 114);
             this.popupListviewLocal.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewLocal_Opening);
             // 
             // mnuHistoryLocal
@@ -319,6 +321,20 @@
             this.mnuHistoryLocal.Size = new System.Drawing.Size(167, 22);
             this.mnuHistoryLocal.Text = "History";
             this.mnuHistoryLocal.Click += new System.EventHandler(this.mnuHistoryLocal_Click);
+            // 
+            // mnuAdminInfoPage
+            // 
+            this.mnuAdminInfoPage.Name = "mnuAdminInfoPage";
+            this.mnuAdminInfoPage.Size = new System.Drawing.Size(167, 22);
+            this.mnuAdminInfoPage.Text = "Admin info page";
+            this.mnuAdminInfoPage.Click += new System.EventHandler(this.mnuAdminInfoPage_Click);
+            // 
+            // mnuGeneralInfoPage
+            // 
+            this.mnuGeneralInfoPage.Name = "mnuGeneralInfoPage";
+            this.mnuGeneralInfoPage.Size = new System.Drawing.Size(167, 22);
+            this.mnuGeneralInfoPage.Text = "General info page";
+            this.mnuGeneralInfoPage.Click += new System.EventHandler(this.mnuGeneralInfoPage_Click);
             // 
             // tabSubdivisionData
             // 
@@ -434,19 +450,12 @@
             this.txtLocalGovernment.Size = new System.Drawing.Size(386, 120);
             this.txtLocalGovernment.TabIndex = 16;
             // 
-            // mnuAdminInfoPage
+            // mnuGoogleSearchLocal
             // 
-            this.mnuAdminInfoPage.Name = "mnuAdminInfoPage";
-            this.mnuAdminInfoPage.Size = new System.Drawing.Size(167, 22);
-            this.mnuAdminInfoPage.Text = "Admin info page";
-            this.mnuAdminInfoPage.Click += new System.EventHandler(this.mnuAdminInfoPage_Click);
-            // 
-            // mnuGeneralInfoPage
-            // 
-            this.mnuGeneralInfoPage.Name = "mnuGeneralInfoPage";
-            this.mnuGeneralInfoPage.Size = new System.Drawing.Size(167, 22);
-            this.mnuGeneralInfoPage.Text = "General info page";
-            this.mnuGeneralInfoPage.Click += new System.EventHandler(this.mnuGeneralInfoPage_Click);
+            this.mnuGoogleSearchLocal.Name = "mnuGoogleSearchLocal";
+            this.mnuGoogleSearchLocal.Size = new System.Drawing.Size(167, 22);
+            this.mnuGoogleSearchLocal.Text = "Google search";
+            this.mnuGoogleSearchLocal.Click += new System.EventHandler(this.mnuGoogleSearchLocal_Click);
             // 
             // EntityBrowserForm
             // 
@@ -523,5 +532,6 @@
         private System.Windows.Forms.ColumnHeader columnLocalCreation;
         private System.Windows.Forms.ToolStripMenuItem mnuAdminInfoPage;
         private System.Windows.Forms.ToolStripMenuItem mnuGeneralInfoPage;
+        private System.Windows.Forms.ToolStripMenuItem mnuGoogleSearchLocal;
     }
 }

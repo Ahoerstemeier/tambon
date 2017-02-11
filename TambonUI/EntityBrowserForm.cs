@@ -1220,5 +1220,19 @@ namespace De.AHoerstemeier.Tambon.UI
                 Process.Start(url);
             }
         }
+
+        private void mnuGoogleSearchLocal_Click(Object sender, EventArgs e)
+        {
+            if ( listviewLocalAdministration.SelectedItems.Count == 1 )
+            {
+                foreach ( ListViewItem item in listviewLocalAdministration.SelectedItems )
+                {
+                    var entity = item.Tag as Entity;
+
+                    var url = String.Format(CultureInfo.CurrentUICulture, "https://www.google.de/#q={0}", entity.FullName);
+                    Process.Start(url);
+                }
+            }
+        }
     }
 }
