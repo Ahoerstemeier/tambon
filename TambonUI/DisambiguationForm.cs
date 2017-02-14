@@ -87,6 +87,11 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     var province = provinces.FirstOrDefault(x => GeocodeHelper.IsBaseGeocode(x.geocode, subItem.geocode));
                     var amphoe = allAmphoe.FirstOrDefault(x => GeocodeHelper.IsBaseGeocode(x.geocode, subItem.geocode));
+                    if ( amphoe == null && subItem.type.IsLocalGovernment() )
+                    {
+                        var firstTambonCode = subItem.LocalGovernmentAreaCoverage.First().geocode;
+                        amphoe = allAmphoe.FirstOrDefault(x => GeocodeHelper.IsBaseGeocode(x.geocode, firstTambonCode));
+                    }
                     var parentInfo = String.Format("{0} {1}", amphoe.FullName, province.FullName);
                     String disambiguatedName = String.Format("{0} ({1})", subItem.FullName, province.FullName);
                     if ( provincesUsed.Count(x => x == province) > 1 )
