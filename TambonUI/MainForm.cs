@@ -697,7 +697,7 @@ namespace De.AHoerstemeier.Tambon.UI
             builder.AppendLine();
             builder.AppendFormat(CultureInfo.CurrentUICulture, "Maximum days between elections: {0}", counter.MaxValue);
             builder.AppendLine();
-            builder.AppendFormat(CultureInfo.CurrentUICulture, "Mean number of days between elections: {0:#0.0}", counter.MeanValue);
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Mean number of days between elections: {0:#0.0}", counter.MedianValue);
             builder.AppendLine();
             builder.AppendLine();
             builder.AppendLine("Offices with longest interregnum:");
@@ -1300,7 +1300,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var builder = new StringBuilder();
 
             builder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "Most common number of years in office: {0}", frequency.MostCommonValue));
-            builder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "Mean number of years in office: {0:F2}", frequency.MeanValue));
+            builder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "Mean number of years in office: {0:F2}", frequency.MedianValue));
             var longestTermChangwat = frequency.Data[frequency.MaxValue].Select(x => allChangwat.First(y => y.geocode == x)).Select(x => x.english);
             builder.AppendLine(String.Format(CultureInfo.CurrentUICulture, "Longest time in office: {0} years (in {1})", frequency.MaxValue, String.Join(", ", longestTermChangwat)));
             builder.AppendLine();

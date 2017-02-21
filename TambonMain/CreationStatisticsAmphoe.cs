@@ -84,7 +84,7 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine(String.Format("{0} Announcements", NumberOfAnnouncements));
             builder.AppendLine(String.Format("{0} Amphoe created", NumberOfCreations - NumberOfKingAmphoeCreations));
             builder.AppendLine(String.Format("{0} King Amphoe created", NumberOfKingAmphoeCreations));
-            builder.AppendLine(String.Format("Creations per announcements: {0:F2}", CreationsPerAnnouncement.MeanValue));
+            builder.AppendLine(String.Format("Creations per announcements: {0:F2}", CreationsPerAnnouncement.MedianValue));
             builder.AppendLine(String.Format("Maximum creation per announcements: {0}", CreationsPerAnnouncement.MaxValue));
             builder.AppendLine();
         }

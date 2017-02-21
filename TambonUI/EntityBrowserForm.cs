@@ -711,7 +711,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     counter.IncrementForCount(tambon.entity.Count(x => x.type == EntityType.Muban && !x.IsObsolete), tambon.geocode);
                 }
                 result += String.Format("Most common Muban number: {0}", counter.MostCommonValue) + Environment.NewLine;
-                result += String.Format("Median Muban number: {0:0.0}", counter.MeanValue) + Environment.NewLine;
+                result += String.Format("Median Muban number: {0:0.0}", counter.MedianValue) + Environment.NewLine;
                 List<UInt32> tambonWithNoMuban = null;
                 if ( counter.Data.TryGetValue(0, out tambonWithNoMuban) )
                 {

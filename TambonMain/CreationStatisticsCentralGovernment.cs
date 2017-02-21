@@ -73,7 +73,7 @@ namespace De.AHoerstemeier.Tambon
             String entityName = DisplayEntityName();
             builder.AppendLine(String.Format("{0} Announcements", NumberOfAnnouncements));
             builder.AppendLine(String.Format("{0} {1} created", NumberOfCreations, entityName));
-            builder.AppendLine(String.Format("Creations per announcements: {0:F2}", CreationsPerAnnouncement.MeanValue));
+            builder.AppendLine(String.Format("Creations per announcements: {0:F2}", CreationsPerAnnouncement.MedianValue));
             builder.AppendLine(String.Format("Maximum creation per announcements: {0}", CreationsPerAnnouncement.MaxValue));
             builder.AppendLine();
         }
@@ -112,7 +112,7 @@ namespace De.AHoerstemeier.Tambon
             if ( NumberOfCreations > 0 )
             {
                 builder.AppendLine(String.Format("Most common number of {0}: {1} times", subEntityName, _numberOfSubEntities.MostCommonValue));
-                builder.AppendLine(String.Format("Mean number of {0}: {1:F2}", subEntityName, _numberOfSubEntities.MeanValue));
+                builder.AppendLine(String.Format("Mean number of {0}: {1:F2}", subEntityName, _numberOfSubEntities.MedianValue));
                 builder.AppendLine(String.Format("Standard deviation: {0:F2}", _numberOfSubEntities.StandardDeviation));
                 builder.AppendLine(String.Format("Lowest number of {0}: {1}", subEntityName, _numberOfSubEntities.MinValue));
                 if ( _numberOfSubEntities.MinValue > 0 )

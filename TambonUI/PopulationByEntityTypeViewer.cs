@@ -268,7 +268,7 @@ namespace De.AHoerstemeier.Tambon
             builder.AppendLine();
             builder.AppendFormat(CultureInfo.CurrentUICulture, "Number of entities: {0}", counter.NumberOfValues);
             builder.AppendLine();
-            builder.AppendFormat(CultureInfo.CurrentUICulture, "Mean population: {0:##,###,##0.0}", counter.MeanValue);
+            builder.AppendFormat(CultureInfo.CurrentUICulture, "Mean population: {0:##,###,##0.0}", counter.MedianValue);
             builder.AppendLine();
             builder.AppendFormat(CultureInfo.CurrentUICulture, "Standard deviation: {0:##,###,##0.0}", counter.StandardDeviation);
             builder.AppendLine();

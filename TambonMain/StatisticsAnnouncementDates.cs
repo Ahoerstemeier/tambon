@@ -96,7 +96,7 @@ namespace De.AHoerstemeier.Tambon
 
             builder.AppendLine(String.Format("  Maximum: {0}", _daysBetweenSignAndPublication.MaxValue));
             builder.AppendLine(String.Format("  Minimum: {0}", _daysBetweenSignAndPublication.MinValue));
-            builder.AppendLine(String.Format("  Median: {0}", _daysBetweenSignAndPublication.MeanValue));
+            builder.AppendLine(String.Format("  Median: {0}", _daysBetweenSignAndPublication.MedianValue));
             builder.AppendLine(String.Format("  Most common: {0}", _daysBetweenSignAndPublication.MostCommonValue));
             builder.AppendLine();
 
@@ -104,7 +104,7 @@ namespace De.AHoerstemeier.Tambon
 
             builder.AppendLine(String.Format("  Maximum: {0}", _daysBetweenPublicationAndEffective.MaxValue));
             builder.AppendLine(String.Format("  Minimum: {0}", _daysBetweenPublicationAndEffective.MinValue));
-            builder.AppendLine(String.Format("  Median: {0}", _daysBetweenPublicationAndEffective.MeanValue));
+            builder.AppendLine(String.Format("  Median: {0}", _daysBetweenPublicationAndEffective.MedianValue));
             builder.AppendLine(String.Format("  Most common: {0}", _daysBetweenPublicationAndEffective.MostCommonValue));
             builder.AppendLine();
 
