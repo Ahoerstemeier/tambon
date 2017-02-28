@@ -536,7 +536,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var codes = new List<String>();
             foreach ( var province in allEntities.Where(x => x.type == EntityType.Changwat) )
             {
-                result.AppendFormat(CultureInfo.InvariantCulture, "* {{{{Q|{0}}}}}: ", province.wiki.wikidata.Remove(0, 1));
+                result.AppendFormat(CultureInfo.InvariantCulture, "* {{0}}: ", province.EnglishFullName);
                 codes.Clear();
                 var localGovernment = allEntities.Where(x => !x.IsObsolete && x.type.IsLocalGovernment() && GeocodeHelper.IsBaseGeocode(province.geocode, x.geocode));
                 foreach ( var lao in localGovernment )
