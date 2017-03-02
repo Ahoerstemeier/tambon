@@ -1144,7 +1144,7 @@ namespace De.AHoerstemeier.Tambon.UI
             // var type = PopulationDataSourceType.DOPA;
             // year = 2015;
             var populationData = GlobalData.LoadPopulationDataUnprocessed(type, year);
-            var allEntities = populationData.FlatList().Where(x => x.population.Any(y => y.source == type && y.Year == year)).ToList();
+            var allEntities = populationData.FlatList().Where(x => x.population.Any(y => y.source == type && y.Year == year)).ToList().OrderBy(x => x.geocode);
             foreach ( var entity in allEntities )
             {
                 var population = entity.population.First(y => y.source == type && y.Year == year);
@@ -1249,32 +1249,58 @@ namespace De.AHoerstemeier.Tambon.UI
             formCensusProblems.Show();
         }
 
-        private void btnAmphoeList_Click(Object sender, EventArgs e)
+        private String CreateEntityList(EntityType entityType, PopulationDataSourceType populationDataSource, Int16 populationYear)
         {
-            Int16 year = Convert.ToInt16(cbxCensusYears.SelectedItem as String);
-            GlobalData.LoadPopulationData(PopulationDataSourceType.Census, year);
+            var format = "{0},{1},{2},{5}";
+            if ( populationDataSource != PopulationDataSourceType.Unknown )
+            {
+                GlobalData.LoadPopulationData(populationDataSource, populationYear);
+                format = "{0},{1},{2},{3},{4},{5}";
+            }
             var baseEntity = GlobalData.CompleteGeocodeList();
-            var allAmphoe = baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) && !x.IsObsolete).ToList();
+            baseEntity.PropagateObsoleteToSubEntities();
+            var allFittingEntites = baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(entityType) && !x.IsObsolete).OrderBy(x => x.geocode).ToList();
             var builder = new StringBuilder();
-            foreach ( var entity in allAmphoe )
+            Int32 population = 0;
+            Int32 households = 0;
+            foreach ( var entity in allFittingEntites )
             {
                 var location = String.Empty;
-                var point = entity.office.First().Point;
-                if ( point != null )
+                if ( entity.office.Any() )
                 {
-                    location = String.Format(CultureInfo.InvariantCulture, "{0} N {1} E", point.lat, point.@long);
+                    var point = entity.office.First().Point;
+                    if ( point != null )
+                    {
+                        location = String.Format(CultureInfo.InvariantCulture, "{0} N {1} E", point.lat, point.@long);
+                    }
                 }
-                Int32 population = 0;
-                var populationData = entity.population.FirstOrDefault(x => x.Year == year && x.source == PopulationDataSourceType.Census);
-                if ( populationData != null )
+                population = 0;
+                households = 0;
+                if ( populationDataSource != PopulationDataSourceType.Unknown )
                 {
-                    population = populationData.TotalPopulation.total;
+                    var populationData = entity.population.FirstOrDefault(x => x.Year == populationYear && x.source == populationDataSource);
+                    if ( populationData != null )
+                    {
+                        population = populationData.TotalPopulation.total;
+                        var householdData = populationData.TotalPopulation as HouseholdDataPoint;
+                        if ( householdData != null )
+                        {
+                            households = householdData.households;
+                        }
+                    }
                 }
-                builder.AppendFormat(CultureInfo.CurrentUICulture, "{0},{1},{2},{3},{4}", entity.english, entity.name, entity.geocode, population, location);
+                builder.AppendFormat(CultureInfo.CurrentUICulture, format, entity.geocode, entity.english, entity.name, population, households, location);
                 builder.AppendLine();
             }
+            return builder.ToString();
+        }
+
+        private void btnAmphoeList_Click(Object sender, EventArgs e)
+        {
+            Int16 year = Convert.ToInt16(edtYear.Value);
+            var data = CreateEntityList(EntityType.Amphoe, PopulationDataSourceType.DOPA, year);
             Clipboard.Clear();
-            Clipboard.SetText(builder.ToString());
+            Clipboard.SetText(data);
         }
 
         private void btnGovernor_Click(Object sender, EventArgs e)
@@ -1389,46 +1415,17 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnMubanList_Click(Object sender, EventArgs e)
         {
-            var baseEntity = GlobalData.CompleteGeocodeList();
-            baseEntity.PropagateObsoleteToSubEntities();
-            var allMuban = baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Muban) && !x.IsObsolete).ToList();
-            var builder = new StringBuilder();
-            foreach ( var entity in allMuban )
-            {
-                builder.AppendFormat(CultureInfo.InvariantCulture, "{0},{1},{2}", entity.geocode, entity.english, entity.name);
-                builder.AppendLine();
-            }
+            var data = CreateEntityList(EntityType.Muban, PopulationDataSourceType.Unknown, 0);
             Clipboard.Clear();
-            Clipboard.SetText(builder.ToString());
+            Clipboard.SetText(data);
         }
 
         private void btnTambonList_Click(Object sender, EventArgs e)
         {
             Int16 year = Convert.ToInt16(edtYear.Value);
-            GlobalData.LoadPopulationData(PopulationDataSourceType.DOPA, year);
-            var baseEntity = GlobalData.CompleteGeocodeList();
-            baseEntity.PropagateObsoleteToSubEntities();
-            var allTambon = baseEntity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete).ToList();
-            var builder = new StringBuilder();
-            foreach ( var entity in allTambon )
-            {
-                Int32 population = 0;
-                Int32 households = 0;
-                var populationData = entity.population.FirstOrDefault(x => x.Year == year && x.source == PopulationDataSourceType.DOPA);
-                if ( populationData != null )
-                {
-                    population = populationData.TotalPopulation.total;
-                    var householdData = populationData.TotalPopulation as HouseholdDataPoint;
-                    if ( householdData != null )
-                    {
-                        households = householdData.households;
-                    }
-                }
-                builder.AppendFormat(CultureInfo.InvariantCulture, "{0},{1},{2},{3},{4}", entity.geocode, entity.english, entity.name, population, households);
-                builder.AppendLine();
-            }
+            var data = CreateEntityList(EntityType.Tambon, PopulationDataSourceType.DOPA, year);
             Clipboard.Clear();
-            Clipboard.SetText(builder.ToString());
+            Clipboard.SetText(data);
         }
 
         private void btnDisambiguation_Click(Object sender, EventArgs e)
