@@ -140,9 +140,14 @@ namespace De.AHoerstemeier.Tambon {
         ProvinceCouncil,
         
         /// <summary>
-        /// Province cluster (กลุ่มจังหวัด, Klum Changwat)
+        /// Province cluster (กลุ่มจังหวัด, Klum Changwat).
         /// </summary>
         KlumChangwat,
+        
+        /// <summary>
+        /// District cluster (กลุ่มเขต, Klum Khet).
+        /// </summary>
+        KlumKhet,
         
         /// <summary>
         /// Constituency (เขตเลือกตั้ง, Khet Lueak Tang), either for local or general elections.
