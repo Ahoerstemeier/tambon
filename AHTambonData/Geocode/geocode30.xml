@@ -2256,7 +2256,7 @@
       <statuschange effective="1947-11-01" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="64" page="2661" issue="50 ง" date="1947-10-21" />
       </statuschange>
-      <create effective="1939-03-01" status="Gazette" type="KingAmphoe" splitfrom="3012">
+      <create effective="1939-03-01" status="Gazette" type="KingAmphoe" splitfrom="3012" parent="3012" subdivisions="3" subdivisiontype="Tambon">
         <gazetteref volume="55" page="3874" issue="0 ง" date="1939-02-20" />
       </create>
     </history>
@@ -2276,10 +2276,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="36" comment="ECT table wrongly says 26" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="36" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300401" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1939-03-01" status="Gazette" oldparent="0" newparent="3004">
+          <gazetteref volume="55" page="3874" issue="0 ง" date="1939-02-20" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="30040101" name="บ้านห้วยน้อย" english="Ban Huai Noi" />
       <entity type="Muban" geocode="30040102" name="บ้านโคกเพ็ด" english="Ban Khok Phet" />
       <entity type="Muban" geocode="30040103" name="บ้านหนองสรวง" english="Ban Nong Suang" />
@@ -2311,10 +2321,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="42" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="42" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300402" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1969-09-30" status="Gazette" type="Tambon" splitfrom="300401" subdivisions="12" subdivisiontype="Muban">
+          <gazetteref volume="86" page="3369" issue="102 ง" date="1969-11-18" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30040201" name="บ้านปอบิด" english="Ban Po Bit" />
       <entity type="Muban" geocode="30040202" name="บ้านเมืองคง" english="Ban Mueang Khong" />
       <entity type="Muban" geocode="30040203" name="บ้านคูขาด" english="Ban Khu Khat" />
@@ -2352,10 +2372,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="34" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="34" comment="ECT table claims 32?" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300403" coverage="partially" comment="Mu 9,10,15 only Thesaban" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1971-09-30" status="Gazette" type="Tambon" splitfrom="300404" subdivisions="9" subdivisiontype="Muban">
+          <gazetteref volume="88" page="3100" issue="120 ง" date="1971-11-09" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30040301" name="บ้านบุตำแย" english="Ban Bu Tam Yae" />
       <entity type="Muban" geocode="30040302" name="บ้านคอนเมือง" english="Ban Khon Mueang" />
       <entity type="Muban" geocode="30040303" name="บ้านโคกแปะ" english="Ban Khok Pae" />
@@ -2386,10 +2416,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="36" comment="ECT table wrongly says 26" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="34" finalsize="36" sizechangereason="MubanCreation" comment="Mu 18 created 2006-11" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300404" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1939-03-01" status="Gazette" oldparent="3012" newparent="3004">
+          <gazetteref volume="55" page="3874" issue="0 ง" date="1939-02-20" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="30040401" name="บ้านบุสนวนใน" english="Ban Bu Sanuan Nai" />
       <entity type="Muban" geocode="30040402" name="บ้านตาจั่นนอก" english="Ban Ta Chan Nok" />
       <entity type="Muban" geocode="30040403" name="บ้านโคกตะพาบ" english="Ban Khok Taphap" />
@@ -2407,7 +2447,13 @@
       <entity type="Muban" geocode="30040415" name="บ้านโนนทราย" english="Ban Non Sai" />
       <entity type="Muban" geocode="30040416" name="บ้านหนองตายา" english="Ban Nong Ta Ya" />
       <entity type="Muban" geocode="30040417" name="บ้านทุ่งแหลมทอง" english="Ban Thung Laem Thong" />
-      <entity type="Muban" geocode="30040418" name="บ้านสนวนพัฒนา" english="Ban Sanuan Phatthana" />
+      <entity type="Muban" geocode="30040418" name="บ้านสนวนพัฒนา" english="Ban Sanuan Phatthana">
+        <history>
+          <create effective="2006-11-07" status="Gazette" type="Muban" splitfrom="30040401">
+            <gazetteref volume="124" page="81" issue="พิเศษ 111 ง" date="2007-09-07" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="บ้านปรางค์" english="Ban Prang" geocode="300405">
       <office type="TAOOffice">
@@ -2426,10 +2472,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="36" comment="ECT table wrongly claims 26" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="36" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300405" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1950-08-01" status="Gazette" type="Tambon" splitfrom="300502" subdivisions="9" subdivisiontype="Muban">
+          <gazetteref volume="67" page="3434" issue="44 ง" date="1950-08-15" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30040501" name="บ้านปรางค์" english="Ban Prang" />
       <entity type="Muban" geocode="30040502" name="บ้านประคำ" english="Ban Pra Kham" />
       <entity type="Muban" geocode="30040503" name="บ้านดอนทะแยง" english="Ban Nong Thayaeng" />
@@ -2467,10 +2523,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="32" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300406" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1950-08-01" status="Gazette" type="Tambon" splitfrom="300401" subdivisions="10" subdivisiontype="Muban">
+          <gazetteref volume="67" page="3434" issue="44 ง" date="1950-08-15" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30040601" name="บ้านหมัน" english="Ban Man" />
       <entity type="Muban" geocode="30040602" name="บ้านหนองม่วง" english="Ban Nong Muang" />
       <entity type="Muban" geocode="30040603" name="บ้านดอนกลาง" english="Ban Don Klang" />
@@ -2501,10 +2567,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="32" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300407" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1979-09-20" status="Gazette" type="Tambon" splitfrom="300405" subdivisions="10" subdivisiontype="Muban">
+          <gazetteref volume="96" page="4373" issue="192 ง" date="1979-11-20" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30040701" name="บ้านโนนปอแดง" english="Ban Non Po Daeng" />
       <entity type="Muban" geocode="30040702" name="บ้านตากิ่ม" english="Ban Ta Kim" />
       <entity type="Muban" geocode="30040703" name="บ้านห้วยไห" english="Ban Huai Hai" />
@@ -2535,10 +2611,20 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="24" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="24" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300408" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1980-08-15" status="Gazette" type="Tambon" splitfrom="300406" subdivisions="6" subdivisiontype="Muban">
+          <gazetteref volume="97" page="3314" issue="147 ง" date="1980-09-23" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30040801" name="บ้านโนนเต็ง" english="Ban Non Teng" />
       <entity type="Muban" geocode="30040802" name="บ้านหนองกก" english="Ban Nong Kok" />
       <entity type="Muban" geocode="30040803" name="บ้านทองหลาง" english="Ban Thonglang" />
@@ -2565,10 +2651,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="14" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="14" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300409" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1988-10-12" status="Gazette" type="Tambon" splitfrom="300401" subdivisions="7" subdivisiontype="Muban">
+          <gazetteref volume="105" page="122" issue="171 ง ฉบับพิเศษ" date="1988-10-21" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30040901" name="บ้านดอนใหญ่" english="Ban Don Yai" />
       <entity type="Muban" geocode="30040902" name="บ้านศรีนิมิต" english="Ban Si Nimit" />
       <entity type="Muban" geocode="30040903" name="บ้านดอนน้อย" english="Ban Don Noi" />
@@ -2593,10 +2689,20 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="26" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="26" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300410" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1991-07-01" status="Gazette" type="Tambon" splitfrom="300404 300403" subdivisions="8" subdivisiontype="Muban">
+          <gazetteref volume="108" page="81" issue="131 ง ฉบับพิเศษ" date="1991-07-29" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30041001" name="บ้านขาม" english="Ban Kham" />
       <entity type="Muban" geocode="30041002" name="บ้านพะงาด" english="Ban Pha-ngat" />
       <entity type="Muban" geocode="30041003" name="บ้านสระหลวง" english="Ban Sa Luang" />
@@ -2673,7 +2779,7 @@
       <statuschange effective="1987-12-31" status="Gazette" old="KingAmphoe" new="Amphoe">
         <gazetteref volume="104" page="33" issue="278 ก ฉบับพิเศษ" date="1987-12-31" />
       </statuschange>
-      <create effective="1976-10-18" status="Gazette" type="KingAmphoe" splitfrom="3004">
+      <create effective="1976-10-18" status="Gazette" type="KingAmphoe" splitfrom="3004" parent="3004" subdivisions="3" subdivisiontype="Tambon">
         <gazetteref volume="93" page="2972" issue="132 ง ฉบับพิเศษ" date="1976-10-19" />
       </create>
     </history>
@@ -2689,10 +2795,23 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="14" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="14" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300501" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1976-10-18" status="Gazette" oldparent="3004" newparent="3005">
+          <gazetteref volume="93" page="2972" issue="132 ง ฉบับพิเศษ" date="1976-10-19" />
+        </reassign>
+        <create effective="1971-09-30" status="Gazette" type="Tambon" splitfrom="300502" subdivisions="6" subdivisiontype="Muban">
+          <gazetteref volume="88" page="3100" issue="120 ง" date="1971-11-09" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30050101" name="บ้านเหลื่อม" english="Ban Lueam" />
       <entity type="Muban" geocode="30050102" name="บ้านตลาด" english="Ban Talat" />
       <entity type="Muban" geocode="30050103" name="บ้านโต้น" english="Ban Ton" />
@@ -2717,10 +2836,23 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="12" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="12" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300502" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1976-10-18" status="Gazette" oldparent="3004" newparent="3005">
+          <gazetteref volume="93" page="2972" issue="132 ง ฉบับพิเศษ" date="1976-10-19" />
+        </reassign>
+        <reassign effective="1939-03-01" status="Gazette" oldparent="3012" newparent="3004">
+          <gazetteref volume="55" page="3874" issue="0 ง" date="1939-02-20" />
+        </reassign>
+      </history>
       <entity type="Muban" geocode="30050201" name="บ้านห้วยชงโค" english="Ban Huai Chong Kho" />
       <entity type="Muban" geocode="30050202" name="บ้านวังโพธิ์" english="Ban Wang Pho" />
       <entity type="Muban" geocode="30050203" name="บ้านนา" english="Ban Na" />
@@ -2741,10 +2873,23 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="32" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300503" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1976-10-18" status="Gazette" oldparent="3004" newparent="3005">
+          <gazetteref volume="93" page="2972" issue="132 ง ฉบับพิเศษ" date="1976-10-19" />
+        </reassign>
+        <create effective="1971-09-30" status="Gazette" type="Tambon" splitfrom="300502" subdivisions="8" subdivisiontype="Muban">
+          <gazetteref volume="88" page="3100" issue="120 ง" date="1971-11-09" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30050301" name="บ้านโคกกระเบื้อง" english="Ban Khok Krabueang" />
       <entity type="Muban" geocode="30050302" name="บ้านดอนตะหนิน" english="Ban Don Tanin" />
       <entity type="Muban" geocode="30050303" name="บ้านหนองแขม" english="Ban Nong Khaem" />
@@ -2775,10 +2920,20 @@
           <term begin="2009-09-06" end="2013-09-05" type="TAO" size="18" />
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="18" />
         </council>
+        <history>
+          <create effective="1997-02-13" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300504" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1979-09-28" status="Gazette" type="Tambon" splitfrom="300502" subdivisions="6" subdivisiontype="Muban">
+          <gazetteref volume="96" page="4387" issue="192 ง" date="1979-11-20" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30050401" name="บ้านช่อระกา" english="Ban Cho Raka" />
       <entity type="Muban" geocode="30050402" name="บ้านม่วง" english="Ban Muang" />
       <entity type="Muban" geocode="30050403" name="บ้านขามเวียน" english="Ban Kham Wian" />
@@ -2870,10 +3025,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="28" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300601" coverage="partially" />
         </areacoverage>
       </office>
+      <history>
+        <rename effective="1953-04-14" status="Gazette" name="จักราช" oldname="ทองหลาง">
+          <gazetteref volume="70" page="492" issue="25 ก" date="1953-04-14" />
+        </rename>
+      </history>
       <entity type="Muban" geocode="30060101" name="บ้านหนองคล้า" english="Ban Nong Khla" />
       <entity type="Muban" geocode="30060102" name="บ้านโนนพฤกษ์" english="Ban Non Phruek" />
       <entity type="Muban" geocode="30060103" name="บ้านตะกุดเครือปลอก" english="Ban Takut Khruea Plok" />
@@ -2909,10 +3074,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="20" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="20" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300603" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1958-12-01" status="Gazette" type="Tambon" splitfrom="300601" subdivisions="11" subdivisiontype="Muban">
+          <gazetteref volume="75" page="3084" issue="109 ง" date="1958-12-23" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30060301" name="บ้านเหมสูง" english="Ban Hem Sung" />
       <entity type="Muban" geocode="30060302" name="บ้านโนนนางฝ้าย" english="Ban Non Nang Fai" />
       <entity type="Muban" geocode="30060303" name="บ้านเหมต่ำ" english="Ban Hem Tam" />
@@ -2940,6 +3115,11 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="30" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="30" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300604" coverage="completely" />
         </areacoverage>
@@ -2958,7 +3138,13 @@
       <entity type="Muban" geocode="30060412" name="บ้านโนนทรายทอง" english="Ban Non Sai Thong" />
       <entity type="Muban" geocode="30060413" name="บ้านหนองบัวขาว" english="Ban Nong Bua Khao" />
       <entity type="Muban" geocode="30060414" name="บ้านหัวอ่างพระราชดำริ" english="Ban Hua Ang Phra Ratchadamri" />
-      <entity type="Muban" geocode="30060415" name="บ้านโคกศรีสุข" english="Ban Khok Si Suk" />
+      <entity type="Muban" geocode="30060415" name="บ้านโคกศรีสุข" english="Ban Khok Si Suk">
+        <history>
+          <create effective="2006-11-07" status="Gazette" type="Muban" splitfrom="30060403">
+            <gazetteref volume="124" page="90" issue="พิเศษ 111 ง" date="2007-09-07" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="หนองขาม" english="Nong Kham" geocode="300605">
       <office type="TAOOffice">
@@ -2972,10 +3158,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="30" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="28" finalsize="30" sizechangereason="MubanCreation" comment="Mu 15 created 2004-09" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300605" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1964-01-30" status="Gazette" type="Tambon" splitfrom="300604" subdivisions="9" subdivisiontype="Muban">
+          <gazetteref volume="81" page="343" issue="18 ง" date="1964-02-18" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30060501" name="บ้านหนองขาม" english="Ban Nong Kham" />
       <entity type="Muban" geocode="30060502" name="บ้านหนองสะแกเครือ" english="Ban Nong Sakae Khruea" />
       <entity type="Muban" geocode="30060503" name="บ้านโพธิ์" english="Ban Pho" />
@@ -2990,7 +3186,13 @@
       <entity type="Muban" geocode="30060512" name="บ้านโนนรังน้อย" english="Ban Non Rang Noi" />
       <entity type="Muban" geocode="30060513" name="บ้านจาน" english="Ban Chan" />
       <entity type="Muban" geocode="30060514" name="บ้านลุงม่วง" english="Ban Lung Muang" />
-      <entity type="Muban" geocode="30060515" name="บ้านหนองขาม" english="Ban Nong Kham" />
+      <entity type="Muban" geocode="30060515" name="บ้านหนองขาม" english="Ban Nong Kham">
+        <history>
+          <create effective="2004-09-30" status="Gazette" type="Muban" splitfrom="30060501">
+            <gazetteref volume="121" page="65" issue="พิเศษ 114 ง" date="2004-10-11" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="หนองงูเหลือม" english="Nong Ngu Lueam" geocode="300606" newgeocode="303204" />
     <entity type="Tambon" name="หนองพลวง" english="Nong Phluang" geocode="300607">
@@ -3004,10 +3206,23 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="32" comment="ECT table wrongly says 20" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="30" finalsize="32" sizechangereason="MubanCreation" comment="Mu 16 created 2004-09" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300607" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <reassign effective="1968-12-24" status="Gazette" oldparent="3015" newparent="3006">
+          <gazetteref volume="85" page="967" issue="119 ก" date="1968-12-24" />
+        </reassign>
+        <create effective="1968-04-01" status="Gazette" type="Tambon">
+          <gazetteref volume="85" page="1151" issue="33 ง" date="1968-04-14" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30060701" name="บ้านใหม่ขามป้อม" english="Ban Mai Kham Pom" />
       <entity type="Muban" geocode="30060702" name="บ้านหนองพลวง" english="Ban Nong Phluang" />
       <entity type="Muban" geocode="30060703" name="บ้านหนองแมว" english="Ban Nong Maeo" />
@@ -3023,7 +3238,13 @@
       <entity type="Muban" geocode="30060713" name="บ้านน้อย" english="Ban Noi" />
       <entity type="Muban" geocode="30060714" name="บ้านโนนงิ้ว" english="Ban Non Ngio" />
       <entity type="Muban" geocode="30060715" name="บ้านดอน" english="Ban Don" />
-      <entity type="Muban" geocode="30060716" name="บ้านบุ" english="Ban Bu" />
+      <entity type="Muban" geocode="30060716" name="บ้านบุ" english="Ban Bu">
+        <history>
+          <create effective="2004-09-30" status="Gazette" type="Muban" splitfrom="30060708">
+            <gazetteref volume="121" page="59" issue="พิเศษ 114 ง" date="2004-10-11" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="หนองยาง" english="Nong Yang" geocode="300608" newgeocode="303205" />
     <entity type="Tambon" name="พระพุทธ" english="Phra Phut" geocode="300609" newgeocode="303203" />
@@ -3039,10 +3260,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="34" comment="ECt table wrongly says 32" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="32" finalsize="34" sizechangereason="MubanCreation" comment="Mu 17 created 2004-09" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300610" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1985-09-06" status="Gazette" type="Tambon" splitfrom="300604" subdivisions="10" subdivisiontype="Muban">
+          <gazetteref volume="102" page="6095" issue="192 ง" date="1985-12-17" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30061001" name="บ้านตาเงิน" english="Ban Ta Ngoen" />
       <entity type="Muban" geocode="30061002" name="บ้านช่องโค" english="Ban Chong Kho" />
       <entity type="Muban" geocode="30061003" name="บ้านละกอ" english="Ban Lako" />
@@ -3059,7 +3290,13 @@
       <entity type="Muban" geocode="30061014" name="บ้านหนองตะไก้น้อย" english="Ban Nong Takai Noi" />
       <entity type="Muban" geocode="30061015" name="บ้านอรพิมพ์" english="Ban Oraphim" />
       <entity type="Muban" geocode="30061016" name="บ้านอุดมทรัพย์" english="Ban Udom Sap" />
-      <entity type="Muban" geocode="30061017" name="บ้านช่องโค" english="Ban Chong Kho" />
+      <entity type="Muban" geocode="30061017" name="บ้านช่องโค" english="Ban Chong Kho">
+        <history>
+          <create effective="2004-09-30" status="Gazette" type="Muban" splitfrom="30061002">
+            <gazetteref volume="121" page="62" issue="พิเศษ 114 ง" date="2004-10-11" />
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="คลองเมือง" english="Khlong Mueang" geocode="300611">
       <office type="TAOOffice">
@@ -3075,10 +3312,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" comment="ECT table wrongly says 26" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300611" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1987-07-06" status="Gazette" type="Tambon" splitfrom="300605" subdivisions="8" subdivisiontype="Muban">
+          <gazetteref volume="104" page="5122" issue="140 ง" date="1987-07-23" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30061101" name="บ้านโจดกระทิง" english="Ban Chot Krathing" />
       <entity type="Muban" geocode="30061102" name="บ้านคลองเมือง" english="Ban Khlong Mueang" />
       <entity type="Muban" geocode="30061103" name="บ้านพระนารายณ์" english="Ban Phra Narai" />
@@ -3104,10 +3351,20 @@
           <term begin="2008-08-24" end="2012-08-23" type="TAO" size="22" />
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
         </council>
+        <history>
+          <create effective="1996-03-20" status="Gazette" type="TAO">
+            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+          </create>
+        </history>
         <areacoverage>
           <entity geocode="300613" coverage="completely" />
         </areacoverage>
       </office>
+      <history>
+        <create effective="1992-09-30" status="Gazette" type="Tambon" splitfrom="300601" subdivisions="9" subdivisiontype="Muban">
+          <gazetteref volume="109" page="24" issue="151 ง ฉบับพิเศษ" date="1992-11-27" />
+        </create>
+      </history>
       <entity type="Muban" geocode="30061301" name="บ้านหินโคน" english="Ban Hin Khon" />
       <entity type="Muban" geocode="30061302" name="บ้านโนนเสมา" english="Ban Non Sema" />
       <entity type="Muban" geocode="30061303" name="บ้านโนนเสมา" english="Ban Non Sema" />
