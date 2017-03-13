@@ -120,7 +120,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Calculates the maximum deviation of the sum of the partial data point.
         /// </summary>
-        /// <returns>Maximum deviation, <c>0</c> if all sum up correctly.</returns>
+        /// <returns>Maximum deviation, <c>0</c> if all parts sum up correctly.</returns>
         public Int32 SumError()
         {
             Int32 maxError = 0;
@@ -160,6 +160,14 @@ namespace De.AHoerstemeier.Tambon
             {
                 maxError = Math.Max(maxError, sanitary.SumError(urbanSanitary, ruralSanitary));
             }
+
+            var thai = data.FirstOrDefault(x => x.type == PopulationDataType.thai);
+            var foreigner = data.FirstOrDefault(x => x.type == PopulationDataType.foreigner);
+            if ( (thai != null) && (foreigner != null) )
+            {
+                maxError = Math.Max(maxError, TotalPopulation.SumError(thai, foreigner));
+            }
+
             return maxError;
         }
 
@@ -211,7 +219,9 @@ namespace De.AHoerstemeier.Tambon
             {
                 throw new ArgumentNullException("data");
             }
-
+            var diffFemale = this.female - data.female;
+            var diffMale = this.male - data.male;
+            var diffTotal = this.total - data.total;
             return
                 (this.female == data.female) &&
                 (this.male == data.male) &&

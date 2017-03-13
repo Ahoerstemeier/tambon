@@ -1142,7 +1142,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var baseEntity = GlobalData.CompleteGeocodeList();
             var type = PopulationDataSourceType.Census;
             // var type = PopulationDataSourceType.DOPA;
-            // year = 2015;
+            // year = 2016;
             var populationData = GlobalData.LoadPopulationDataUnprocessed(type, year);
             var allEntities = populationData.FlatList().Where(x => x.population.Any(y => y.source == type && y.Year == year)).ToList().OrderBy(x => x.geocode);
             foreach ( var entity in allEntities )
@@ -1340,69 +1340,72 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnAgeTable_Click(Object sender, EventArgs e)
         {
-            var baseEntity = ActiveProvince();
-            var entity = new Entity();
-            entity.CopyBasicDataFrom(baseEntity);
-            var code = entity.geocode;
-            Int16 year = Convert.ToInt16(edtYear.Value);
-            var path = Path.Combine(_ageDataDirectory, String.Format(CultureInfo.InvariantCulture, "{0:00}12cc{1:00}.txt", year - 2000 + 43, code));
-            if ( File.Exists(path) )
+            // foreach ( var baseEntity in GlobalData.CompleteGeocodeList().entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)) )
             {
-                String input = File.ReadAllText(path);
-                using ( StringReader reader = new StringReader(input) )
+                var baseEntity = ActiveProvince();
+                var entity = new Entity();
+                entity.CopyBasicDataFrom(baseEntity);
+                var code = entity.geocode;
+                Int16 year = Convert.ToInt16(edtYear.Value);
+                var path = Path.Combine(_ageDataDirectory, String.Format(CultureInfo.InvariantCulture, "{0:00}12cc{1:00}.txt", year - 2000 + 43, code));
+                if ( File.Exists(path) )
                 {
-                    String line = reader.ReadLine();
-                    var fields = line.Split('|');
-                    var populationData = new PopulationData();
-                    populationData.year = year.ToString(CultureInfo.InvariantCulture);
-                    populationData.source = PopulationDataSourceType.DOPA;
-                    populationData.referencedate = new DateTime(year, 12, 31);
-                    var dataEntry = new HouseholdDataPoint();
-                    dataEntry.type = PopulationDataType.total;
-                    var ageTable = new AgeTable();
-                    dataEntry.agetable = ageTable;
-                    populationData.data.Add(dataEntry);
-                    entity.population.Add(populationData);
-
-                    for ( UInt32 age = 0 ; age <= 101 ; age++ )
+                    String input = File.ReadAllText(path);
+                    using ( StringReader reader = new StringReader(input) )
                     {
-                        var ageEntry = new AgeTableEntry();
-                        ageEntry.begin = age;
-                        if ( age > 100 )
-                        {
-                            ageEntry.end = 120;
-                        }
-                        else
-                        {
-                            ageEntry.end = age;
-                        }
-                        ageEntry.male = Convert.ToInt32(fields[age * 2 + 1]);
-                        ageEntry.female = Convert.ToInt32(fields[age * 2 + 2]);
-                        ageEntry.total = ageEntry.male + ageEntry.female;
-                        ageTable.age.Add(ageEntry);
-                    }
-                    ageTable.unknown = new PopulationDataPoint();
-                    ageTable.unknown.male = Convert.ToInt32(fields[205]);
-                    ageTable.unknown.female = Convert.ToInt32(fields[206]);
-                    ageTable.unknown.total = Convert.ToInt32(fields[207]);
-                    dataEntry.houseregister = new PopulationDataPoint();
-                    dataEntry.houseregister.male = Convert.ToInt32(fields[208]);
-                    dataEntry.houseregister.female = Convert.ToInt32(fields[209]);
-                    dataEntry.houseregister.total = Convert.ToInt32(fields[210]);
-                    dataEntry.foreigner = new PopulationDataPoint();
-                    dataEntry.foreigner.male = Convert.ToInt32(fields[211]);
-                    dataEntry.foreigner.female = Convert.ToInt32(fields[212]);
-                    dataEntry.foreigner.total = Convert.ToInt32(fields[213]);
-                    dataEntry.moving = new PopulationDataPoint();
-                    dataEntry.moving.male = Convert.ToInt32(fields[214]);
-                    dataEntry.moving.female = Convert.ToInt32(fields[215]);
-                    dataEntry.moving.total = Convert.ToInt32(fields[216]);
-                    dataEntry.male = Convert.ToInt32(fields[217]);
-                    dataEntry.female = Convert.ToInt32(fields[218]);
-                    dataEntry.total = Convert.ToInt32(fields[219]);
+                        String line = reader.ReadLine();
+                        var fields = line.Split('|');
+                        var populationData = new PopulationData();
+                        populationData.year = year.ToString(CultureInfo.InvariantCulture);
+                        populationData.source = PopulationDataSourceType.DOPA;
+                        populationData.referencedate = new DateTime(year, 12, 31);
+                        var dataEntry = new HouseholdDataPoint();
+                        dataEntry.type = PopulationDataType.total;
+                        var ageTable = new AgeTable();
+                        dataEntry.agetable = ageTable;
+                        populationData.data.Add(dataEntry);
+                        entity.population.Add(populationData);
 
-                    var output = XmlManager.EntityToXml<Entity>(entity);
-                    File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, String.Format(CultureInfo.InvariantCulture, "age{0} {1}.xml", year, entity.english)), output);
+                        for ( UInt32 age = 0 ; age <= 101 ; age++ )
+                        {
+                            var ageEntry = new AgeTableEntry();
+                            ageEntry.begin = age;
+                            if ( age > 100 )
+                            {
+                                ageEntry.end = 120;
+                            }
+                            else
+                            {
+                                ageEntry.end = age;
+                            }
+                            ageEntry.male = Convert.ToInt32(fields[age * 2 + 1]);
+                            ageEntry.female = Convert.ToInt32(fields[age * 2 + 2]);
+                            ageEntry.total = ageEntry.male + ageEntry.female;
+                            ageTable.age.Add(ageEntry);
+                        }
+                        ageTable.unknown = new PopulationDataPoint();
+                        ageTable.unknown.male = Convert.ToInt32(fields[205]);
+                        ageTable.unknown.female = Convert.ToInt32(fields[206]);
+                        ageTable.unknown.total = Convert.ToInt32(fields[207]);
+                        dataEntry.houseregister = new PopulationDataPoint();
+                        dataEntry.houseregister.male = Convert.ToInt32(fields[208]);
+                        dataEntry.houseregister.female = Convert.ToInt32(fields[209]);
+                        dataEntry.houseregister.total = Convert.ToInt32(fields[210]);
+                        dataEntry.foreigner = new PopulationDataPoint();
+                        dataEntry.foreigner.male = Convert.ToInt32(fields[211]);
+                        dataEntry.foreigner.female = Convert.ToInt32(fields[212]);
+                        dataEntry.foreigner.total = Convert.ToInt32(fields[213]);
+                        dataEntry.moving = new PopulationDataPoint();
+                        dataEntry.moving.male = Convert.ToInt32(fields[214]);
+                        dataEntry.moving.female = Convert.ToInt32(fields[215]);
+                        dataEntry.moving.total = Convert.ToInt32(fields[216]);
+                        dataEntry.male = Convert.ToInt32(fields[217]);
+                        dataEntry.female = Convert.ToInt32(fields[218]);
+                        dataEntry.total = Convert.ToInt32(fields[219]);
+
+                        var output = XmlManager.EntityToXml<Entity>(entity);
+                        File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, String.Format(CultureInfo.InvariantCulture, "age{0} {1}.xml", year, entity.english)), output);
+                    }
                 }
             }
         }
