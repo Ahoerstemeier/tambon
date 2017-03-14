@@ -1320,6 +1320,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<GooglePlusLink> googleplusField;
         
+        private List<SocialWebLink> googlecidField;
+        
         private List<MyUri> blogField;
         
         private List<MyUri> forumField;
@@ -1342,6 +1344,7 @@ namespace De.AHoerstemeier.Tambon {
             this.foursquareField = new SocialWebLink();
             this.forumField = new List<MyUri>();
             this.blogField = new List<MyUri>();
+            this.googlecidField = new List<SocialWebLink>();
             this.googleplusField = new List<GooglePlusLink>();
             this.twitterField = new List<TwitterLink>();
             this.facebookField = new List<FacebookLink>();
@@ -1399,12 +1402,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// Google Customer Id of the location. URL for id 123 is https://maps.google.com/?cid=123
+        /// </summary>
+        /// <value>
+        /// The googlecid.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("googlecid", Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<SocialWebLink> googlecid {
+            get {
+                return this.googlecidField;
+            }
+            set {
+                this.googlecidField = value;
+            }
+        }
+        
+        /// <summary>
         /// Blog URL.
         /// </summary>
         /// <value>
         /// The blog.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("blog", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("blog", Order=4)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<MyUri> blog {
             get {
@@ -1421,7 +1441,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The forum.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("forum", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute("forum", Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<MyUri> forum {
             get {
@@ -1438,7 +1458,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The foursquare.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SocialWebLink foursquare {
             get {
@@ -1455,7 +1475,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The zodio.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SocialWebLink zodio {
             get {
@@ -1472,7 +1492,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The longdo.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SocialWebLink longdo {
             get {
@@ -1489,7 +1509,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The instagram.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public SocialWebLink instagram {
             get {
@@ -1809,7 +1829,7 @@ namespace De.AHoerstemeier.Tambon {
         page,
         
         /// <summary>
-        /// Google+ local page.
+        /// Google+ local page (deprecated).
         /// </summary>
         location,
         

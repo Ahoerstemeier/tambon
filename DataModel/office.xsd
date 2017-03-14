@@ -479,7 +479,7 @@
       </xs:enumeration>
       <xs:enumeration value="location">
         <xs:annotation>
-          <xs:documentation>Google+ local page.</xs:documentation>
+          <xs:documentation>Google+ local page (deprecated).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="community">
@@ -571,6 +571,11 @@
       <xs:element name="googleplus" type="t:GooglePlusLink" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>Numerical code of the user, page, location or community in Google+.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="googlecid" type="t:SocialWebLink" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Google Customer Id of the location. URL for id 123 is https://maps.google.com/?cid=123 </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="blog" type="t:MyUri" minOccurs="0" maxOccurs="unbounded">
