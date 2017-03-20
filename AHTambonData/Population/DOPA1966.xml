@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <entity xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ประเทศไทย" type="Country" english="Thailand" geocode="0" xmlns="http://hoerstemeier.com/tambon/">
   <population year="1966" source="DOPA" referencedate="1966-12-31">
-    <data total="31482456" male="15824509" female="15657947" />
+    <data total="31482456" male="15824509" female="15657947" comment="No sum value in announcement" />
+    <reference>
+      <gazetteref volume="84" page="3015" issue="113 ง" date="1967-11-21" />
+    </reference>
   </population>
   <!-- invented Geocodes for Changwat Phra Nakhon and Thonburi! -->
   <entity type="Changwat" name="พระนคร" english="Phra Nakhon" geocode="8">
@@ -119,11 +122,6 @@
   <entity type="Changwat" name="อุบลราชธานี" english="Ubon Ratchathani" geocode="34">
     <population year="1966" source="DOPA" referencedate="1966-12-31">
       <data total="1322105" male="659831" female="662274" />
-    </population>
-  </entity>
-  <entity type="Changwat" name="ยโสธร" english="Yasothon" geocode="35">
-    <population year="1966" source="DOPA" referencedate="1966-12-31">
-      <data total="" male="" female="" />
     </population>
   </entity>
   <entity type="Changwat" name="ชัยภูมิ" english="Chaiyaphum" geocode="36">
