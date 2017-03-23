@@ -19,6 +19,7 @@ namespace De.AHoerstemeier.Tambon {
     /// Base type containing an identifier.
     /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Identifier))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdentifierDuplicate))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdentifierOldValue))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
@@ -99,10 +100,13 @@ namespace De.AHoerstemeier.Tambon {
         
         private List<IdentifierOldValue> oldvalueField;
         
+        private List<IdentifierDuplicate> duplicateField;
+        
         /// <summary>
         /// Creates a new instance of Identifier.
         /// </summary>
         public Identifier() {
+            this.duplicateField = new List<IdentifierDuplicate>();
             this.oldvalueField = new List<IdentifierOldValue>();
         }
         
@@ -120,6 +124,23 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.oldvalueField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Potential duplicates in the database referring to the same entity.
+        /// </summary>
+        /// <value>
+        /// The duplicate.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("duplicate", Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<IdentifierDuplicate> duplicate {
+            get {
+                return this.duplicateField;
+            }
+            set {
+                this.duplicateField = value;
             }
         }
     }
@@ -191,5 +212,17 @@ namespace De.AHoerstemeier.Tambon {
                 this.retiredwithField = value;
             }
         }
+    }
+    
+    /// <summary>
+    /// Duplicate value of an identifier.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IdentifierDuplicate", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class IdentifierDuplicate : IdentifierValueBase {
     }
 }

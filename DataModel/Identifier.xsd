@@ -43,6 +43,14 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="IdentifierDuplicate">
+    <xs:annotation>
+      <xs:documentation>Duplicate value of an identifier.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="t:IdentifierValueBase" />
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="Identifier">
     <xs:annotation>
       <xs:documentation>Identifier with eventual obsolete old values.</xs:documentation>
@@ -53,6 +61,11 @@
           <xs:element name="oldvalue" type="t:IdentifierOldValue" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Former values of the identifier with information on when and how it was retired.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="duplicate" type="t:IdentifierDuplicate" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Potential duplicates in the database referring to the same entity.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
