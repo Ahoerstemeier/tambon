@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
+  <population source="Census" year="2010" referencedate="2000-04-01">
+    <data type="total" total="60916441" male="30015233" female="30901208" />
+  </population>
+
   <entity type="Bangkok" geocode="10" name="กรุงเทพมหานคร" english="Bangkok">
     <population source="Census" year="2000" referencedate="2000-04-01">
       <data type="total" total="6355144" male="3011711" female="3343433" households="1743752" />
@@ -14941,15 +14945,4 @@
       </population>
     </entity>
   </entity>
-
-  <entitycount year="2010">
-    <entry type="Changwat" count="76" comment="Claims to be as of 2000, but includes Bueng Kan created 2011" />
-    <entry type="Amphoe" count="878" />
-    <entry type="Tambon" count="7255" />
-    <entry type="Muban" count="74956" />
-    <entry type="Thesaban" count="2082" />
-    <entry type="TAO" count="5693" />
-    <!--<entry type="SpecialAdministrativeArea" count="2" />-->
-    <entry type="Khet" count="50" />
-  </entitycount>
 </entity>
