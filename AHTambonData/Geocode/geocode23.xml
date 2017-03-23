@@ -91,6 +91,11 @@
         <geo:lat>12.2315</geo:lat>
         <geo:long>102.5126</geo:long>
       </geo:Point>
+      <socialweb>
+        <googlecid>3704372816694852139</googlecid>
+        <foursquare>4d4679321928a35d41c3cc70</foursquare>
+        <longdo>A00000819</longdo>
+      </socialweb>
       <officials>
         <official title="DistrictOfficer" name="กล้าณรงค์ พงษ์เจริญ" begin="2011-05-02" />
 
@@ -452,10 +457,33 @@
     </entity>
     <entity type="Tambon" name="ตะกาง" english="Takang" geocode="230112">
       <wiki wikidata="Q16344716" />
+      <area>
+        <area value="79.54" unit="km²">
+          <reference>
+            <url>http://takang.localgov59.in.th/เกี่ยวกับหน่วยงาน/สภาพและข้อมูลพื้นฐาน/</url>
+          </reference>
+        </area>
+      </area>
       <entity type="Muban" geocode="23011201" name="บ้านท่าเลื่อน" english="Ban Tha Luean" />
       <entity type="Muban" geocode="23011202" name="บ้านตะกาง" english="Ban Takang" />
       <entity type="Muban" geocode="23011203" name="บ้านตะกาง" english="Ban Takang" />
-      <entity type="Muban" geocode="23011204" name="บ้านเนินสูง" english="Ban Noen Sung" />
+      <entity type="Muban" geocode="23011204" name="บ้านทุ่งบางเพชร" english="Ban Thung Bang Phet">
+        <codes>
+          <gns-ufi value="-3240005">
+            <duplicate value="-3232973" />
+          </gns-ufi>
+          <geonames value="1615973">
+            <duplicate value="1620715" />
+          </geonames>
+        </codes>
+        <history>
+          <rename oldname="บ้านเนินสูง" oldenglish="Ban Noen Sung" name="บ้านทุ่งบางเพชร" english="Ban Thung Bang Phet" status="Gazette" effective="2017-03-23">
+            <gazetteref volume="134" page="161" issue="23 ง" date="2017-03-23" />
+            <ministerialorder ministry="MOI" date="2016-12-30" title="มท ๐๒๐๕.๒/๒๓๔๒๓" />
+            <meetingreference board="rename" date="2016-12-29" number="4" />
+          </rename>
+        </history>
+      </entity>
       <entity type="Muban" geocode="23011205" name="บ้านหนองยาง" english="Ban Nong Yang" />
       <entity type="Muban" geocode="23011206" name="บ้านด่านเนินสูง" english="Ban Dan Noen Sung" />
     </entity>
@@ -1909,7 +1937,16 @@
   </entity>
   <entity type="ThesabanTambon" name="ตะกาง" english="Takang" geocode="2389" parent="2301" tambon="230112">
     <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>12.2288</geo:lat>
+        <geo:long>102.6415</geo:long>
+      </geo:Point>
+      <url lastchecked="2017-03-23">http://takang.localgov.in.th/</url>
       <url status="offline">http://www.takang.ob.tc/</url>
+      <socialweb>
+        <facebook type="page">https://www.facebook.com/1098776560132510/</facebook>
+        <googlecid>12726181482263546147</googlecid>
+      </socialweb>
       <officials>
         <official title="Mayor" name="อภิเดช บุญล้อม" begin="2012-08-19" beginreason="ElectedDirectly" />
         <official title="Mayor" name="อภิเดช บุญล้อม" begin="2008-07-13" end="2012-07-12" beginreason="ElectedDirectly" endreason="EndOfTerm" />
