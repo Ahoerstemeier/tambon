@@ -65,7 +65,7 @@ namespace De.AHoerstemeier.Tambon {
         Muban,
         
         /// <summary>
-        /// Special administrative municipality (องค์กรปกครองส่วนท้องถิ่นรูปแบบพิเศษ, i.e. Pattaya)
+        /// Special administrative municipality (องค์กรปกครองส่วนท้องถิ่นรูปแบบพิเศษ, i.e. Phattaya)
         /// </summary>
         Mueang,
         
@@ -198,6 +198,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Occupied area under a special administration.
         /// </summary>
         OccupiedArea,
+        
+        /// <summary>
+        /// Special administrative unit (การปกครองท้องถิ่นรูปแบบพิเศษ), collective term including Bangkok and Phattaya.
+        /// </summary>
+        SpecialAdministrativeUnit,
     }
     
     /// <summary>
