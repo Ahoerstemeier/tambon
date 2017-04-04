@@ -131,7 +131,9 @@ namespace De.AHoerstemeier.Tambon
         // for symbols
         public const String PropertyOfficialSymbol = "P2238";
 
-        public const String PropertyGenericAs = "P794";
+        // public const String PropertyGenericAs = "P794";
+        public const String PropertyObjectHasRole = "P3831";
+
         public const String ItemTree = "Q10884";
         public const String ItemFlower = "Q506";
         public const String ItemAquaticAnimal = "Q1756633";
