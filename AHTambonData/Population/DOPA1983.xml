@@ -1,9 +1,605 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <entity xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ประเทศไทย" type="Country" english="Thailand" geocode="0" xmlns="http://hoerstemeier.com/tambon/">
-  <population year="1980" source="DOPA" referencedate="1983-12-31">
-    <data total="49229561" male="24739120" female="24490441" />
+  <population year="1983" source="DOPA" referencedate="1983-12-31">
+    <data total="49515074" male="24911684" female="24603390" />
     <reference>
       <gazetteref volume="101" page="1" issue="39 ง ฉบับพิเศษ" date="1984-03-24" />
     </reference>
   </population>
+  <population year="1983" source="DOPA" referencedate="1983-06-30">
+    <data total="49229561" male="24739120" female="24490441" />
+    <reference>
+      <gazetteref volume="100" page="21" issue="143 ง ฉบับพิเศษ" date="1983-09-01" />
+    </reference>
+  </population>
+
+  <entity type="Bangkok" name="กรุงเทพฯ" english="Bangkok" geocode="10">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="5018327" male="2552800" female="2465527" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="5535048" male="2802867" female="2732181" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สมุทรปราการ" english="Samut Prakan" geocode="11">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="623514" male="319917" female="303597" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="599663" male="298130" female="301533" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="นนทบุรี" english="Nonthaburi" geocode="12">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="456588" male="232141" female="224447" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="430393" male="216093" female="214300" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ปทุมธานี" english="Pathum Thani" geocode="13">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="357809" male="179647" female="178162" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="346622" male="173488" female="173134" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya" geocode="14">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="630799" male="308411" female="322388" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="625876" male="305994" female="319882" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="อ่างทอง" english="Ang Thong" geocode="15">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="264216" male="127865" female="136351" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="257921" male="124632" female="133289" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ลพบุรี" english="Lop Buri" geocode="16">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="664398" male="336835" female="327563" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="658327" male="333434" female="324893" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สิงห์บุรี" english="Sing Buri" geocode="17">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="206144" male="100191" female="105953" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="206043" male="100046" female="105997" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ชัยนาท" english="Chai Nat" geocode="18">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="329830" male="161405" female="168425" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="328689" male="160579" female="168110" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สระบุรี" english="Saraburi" geocode="19">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="483315" male="241129" female="242186" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="480485" male="239819" female="240666" />
+    </population>
+  </entity>
+
+  <entity type="Changwat" name="ชลบุรี" english="Chon Buri" geocode="20">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="769581" male="396331" female="373250" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="754394" male="387352" female="367042" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ระยอง" english="Rayong" geocode="21">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="392554" male="201873" female="190681" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="381027" male="195949" female="185078" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="จันทบุรี" english="Chanthaburi" geocode="22">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="364440" male="185606" female="178834" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="352955" male="179101" female="173854" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ตราด" english="Trat" geocode="23">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="157813" male="81365" female="76448" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="144898" male="74378" female="70520" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ฉะเชิงเทรา" english="Chachoengsao" geocode="24">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="503184" male="249286" female="253898" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="509434" male="252807" female="256627" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ปราจีนบุรี" english="Prachin Buri" geocode="25">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="729029" male="370194" female="358835" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="711742" male="361746" female="349996" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="นครนายก" english="Nakhon Nayok" geocode="26">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="205838" male="102192" female="103646" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="204608" male="101531" female="103077" />
+    </population>
+  </entity>
+
+  <entity type="Changwat" name="นครราชสีมา" english="Nakhon Ratchasima" geocode="30">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="2054841" male="1033639" female="1021202" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1993481" male="999512" female="993969" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="บุรีรัมย์" english="Buri Ram" geocode="31">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1227105" male="615846" female="611259" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1209464" male="607470" female="601994" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สุรินทร์" english="Surin" geocode="32">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="555819" male="564714" female="555819" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="538185" male="546841" female="538185" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ศรีสะเกษ" english="Si Sa Ket" geocode="33">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1150505" male="578071" female="572434" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1130685" male="567910" female="562775" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="อุบลราชธานี" english="Ubon Ratchathani" geocode="34">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1683798" male="846121" female="837677" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1648187" male="826628" female="821559" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ยโสธร" english="Yasothon" geocode="35">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="475068" male="235292" female="239776" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="471835" male="233718" female="238117" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ชัยภูมิ" english="Chaiyaphum" geocode="36">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="902770" male="452689" female="450081" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="891095" male="447422" female="443673" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ขอนแก่น" english="Khon Kaen" geocode="40">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1463001" male="737384" female="725617" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1421312" male="715968" female="705344" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="อุดรธานี" english="Udon Thani" geocode="41">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1564283" male="780789" female="783494" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1523413" male="761596" female="761817" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="เลย" english="Loei" geocode="42">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="486407" male="249335" female="237072" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="479816" male="246126" female="233690" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="หนองคาย" english="Nong Khai" geocode="43">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="736934" male="374631" female="362303" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="737568" male="372997" female="364571" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="มหาสารคาม" english="Maha Sarakham" geocode="44">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="807157" male="403739" female="403418" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="783205" male="393644" female="389561" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ร้อยเอ็ด" english="Roi Et" geocode="45">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1117834" male="556418" female="561416" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1100463" male="544068" female="556395" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="กาฬสินธุ์" english="Kalasin" geocode="46">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="793200" male="397120" female="396080" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="790110" male="395528" female="394582" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สกลนคร" english="Sakon Nakhon" geocode="47">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="820559" male="413269" female="407290" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="812847" male="410088" female="402759" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="นครพนม" english="Nakhon Phanom" geocode="48">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="566953" male="282380" female="284573" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="547611" male="271893" female="275718" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="มุกดาหาร" english="Mukdahan" geocode="49">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="248358" male="122679" female="125679" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="245568" male="121871" female="123697" />
+    </population>
+  </entity>
+
+  <entity type="Changwat" name="เชียงใหม่" english="Chiang Mai" geocode="50">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1232967" male="625216" female="607751" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1206337" male="611613" female="594724" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ลำพูน" english="Lamphun" geocode="51">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="382632" male="193949" female="188683" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="369855" male="187013" female="182842" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ลำปาง" english="Lampang" geocode="52">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="712877" male="356895" female="355982" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="679923" male="341572" female="338351" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="อุตรดิตถ์" english="Uttaradit" geocode="53">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="430483" male="217418" female="213065" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="443092" male="222867" female="220225" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="แพร่" english="Phrae" geocode="54">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="466862" male="235773" female="231089" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="457529" male="231936" female="225593" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="น่าน" english="Nan" geocode="55">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="396354" male="199710" female="196644" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="393824" male="198321" female="195503" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="พะเยา" english="Phayao" geocode="56">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="467320" male="236150" female="231170" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="461141" male="232619" female="228522" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="เชียงราย" english="Chiang Rai" geocode="57">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="954601" male="480738" female="473863" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="949398" male="479005" female="470393" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="แม่ฮ่องสอน" english="Mae Hong Son" geocode="58">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="144936" male="74089" female="70847" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="142991" male="72613" female="70378" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="นครสวรรค์" english="Nakhon Sawan" geocode="60">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1008236" male="504203" female="504033" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1003629" male="502093" female="501536" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="อุทัยธานี" english="Uthai Thani" geocode="61">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="276369" male="138273" female="138096" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="276097" male="137908" female="138189" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="กำแพงเพชร" english="Kamphaeng Phet" geocode="62">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="616467" male="309250" female="307217" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="590216" male="296989" female="293227" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ตาก" english="Tak" geocode="63">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="305823" male="155179" female="150644" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="294563" male="149263" female="145300" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สุโขทัย" english="Sukhothai" geocode="64">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="281482" male="275315" female="281482" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="277433" male="270841" female="277433" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="พิษณุโลก" english="Phitsanulok" geocode="65">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="722503" male="364325" female="358178" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="711298" male="358559" female="352739" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="พิจิตร" english="Phichit" geocode="66">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="545532" male="270755" female="274777" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="549823" male="275170" female="274653" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="เพชรบูรณ์" english="Phetchabun" geocode="67">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="885226" male="451015" female="434211" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="846070" male="428567" female="417503" />
+    </population>
+  </entity>
+
+  <entity type="Changwat" name="ราชบุรี" english="Ratchaburi" geocode="70">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="663889" male="332769" female="331120" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="660690" male="331522" female="329168" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="กาญจนบุรี" english="Kanchanaburi" geocode="71">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="593829" male="302020" female="291809" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="591066" male="303382" female="287684" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สุพรรณบุรี" english="Suphanburi" geocode="72">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="376155" male="366692" female="376155" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="371605" male="362747" female="371605" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="นครปฐม" english="Nakhon Pathom" geocode="73">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="585931" male="288838" female="297093" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="594298" male="294319" female="299979" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สมุทรสาคร" english="Samut Sakhon" geocode="74">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="296714" male="148493" female="148221" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="281619" male="139917" female="141702" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สมุทรสงคราม" english="Samut Songkhram" geocode="75">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="198273" male="97598" female="100675" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="197350" male="96669" female="100681" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="เพชรบุรี" english="Phetchaburi" geocode="76">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="392971" male="193441" female="199530" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="380383" male="187844" female="192539" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ประจวบคีรีขันธ์" english="Prachuap Khiri Khan" geocode="77">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="391861" male="202657" female="189204" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="389198" male="201786" female="187412" />
+    </population>
+  </entity>
+
+  <entity type="Changwat" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" geocode="80">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="1310672" male="658437" female="652235" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="1296332" male="651177" female="645155" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="กระบี่" english="Krabi" geocode="81">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="244590" male="125133" female="119457" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="242254" male="123821" female="118433" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="พังงา" english="Phang Nga" geocode="82">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="186691" male="95384" female="91307" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="183054" male="93524" female="89530" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ภูเก็ต" english="Phuket" geocode="83">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="141863" male="70319" female="71544" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="140266" male="69640" female="70626" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สุราษฎร์ธานี" english="Surat Thani" geocode="84">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="321906" male="319192" female="321906" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="311510" male="310297" female="311510" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ระนอง" english="Ranong" geocode="85">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="91462" male="46755" female="44707" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="90137" male="46183" female="43954" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ชุมพร" english="Chumphon" geocode="86">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="341658" male="172812" female="168846" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="340431" male="172342" female="168089" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สงขลา" english="Songkhla" geocode="90">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="930123" male="469062" female="461061" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="903852" male="454042" female="449810" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สตูล" english="Satun" geocode="91">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="179565" male="91919" female="87646" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="176433" male="90362" female="86071" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ตรัง" english="Trang" geocode="92">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="452669" male="229562" female="223107" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="443809" male="224913" female="218896" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="พัทลุง" english="Phattalung" geocode="93">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="417176" male="205284" female="211892" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="417602" male="204950" female="212652" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ปัตตานี" english="Pattani" geocode="94">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="467621" male="230301" female="237320" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="467517" male="228626" female="238891" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="ยะลา" english="Yala" geocode="95">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="291166" male="148925" female="142241" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="289740" male="149781" female="139959" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="นราธิวาส" english="Narathiwat" geocode="96">
+    <population year="1983" source="DOPA" referencedate="1983-12-31">
+      <data total="469735" male="236534" female="233201" />
+    </population>
+    <population year="1983" source="DOPA" referencedate="1983-06-30">
+      <data total="463500" male="233101" female="230399" />
+    </population>
+  </entity>
 </entity>
