@@ -36,6 +36,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private int femaleField;
         
+        private bool validField;
+        
         private string commentField;
         
         /// <summary>
@@ -45,6 +47,7 @@ namespace De.AHoerstemeier.Tambon {
             this.totalField = 0;
             this.maleField = 0;
             this.femaleField = 0;
+            this.validField = true;
         }
         
         /// <summary>
@@ -98,6 +101,24 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.femaleField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Indicates whether the datapoint is valid.
+        /// </summary>
+        /// <value>
+        /// The valid.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(true)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool valid {
+            get {
+                return this.validField;
+            }
+            set {
+                this.validField = value;
             }
         }
         
