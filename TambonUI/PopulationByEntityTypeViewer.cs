@@ -402,7 +402,7 @@ namespace De.AHoerstemeier.Tambon
                 list.AddRange(_baseEntity.LocalGovernmentEntitiesOf(_localGovernments).Where(x => entityTypes.Contains(x.type)));
             }
 
-            return list.OrderBy(x => x.GetPopulationDataPoint(PopulationDataSource, PopulationReferenceYear).total);
+            return list.Where(x => x.GetPopulationDataPoint(PopulationDataSource, PopulationReferenceYear) != null).OrderBy(x => x.GetPopulationDataPoint(PopulationDataSource, PopulationReferenceYear).total);
         }
 
         private void FillListView(IEnumerable<Entity> entityList, IEnumerable<Tuple<UInt32, Int32, Double>> compare)

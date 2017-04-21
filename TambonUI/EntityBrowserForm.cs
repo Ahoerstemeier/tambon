@@ -249,7 +249,7 @@ namespace De.AHoerstemeier.Tambon.UI
             if ( councilCount > 0 )
             {
                 result +=
-                    String.Format("{0} LAO council elections pending", councilCount) + Environment.NewLine +
+                    String.Format(CultureInfo.CurrentUICulture, "{0} LAO council elections pending", councilCount) + Environment.NewLine +
                     councilBuilder.ToString() + Environment.NewLine;
             }
 
@@ -278,7 +278,7 @@ namespace De.AHoerstemeier.Tambon.UI
             if ( officialCount > 0 )
             {
                 result +=
-                    String.Format("{0} LAO official elections pending", officialCount) + Environment.NewLine +
+                    String.Format(CultureInfo.CurrentUICulture, "{0} LAO official elections pending", officialCount) + Environment.NewLine +
                     officialBuilder.ToString() + Environment.NewLine;
             }
 
@@ -296,7 +296,7 @@ namespace De.AHoerstemeier.Tambon.UI
             if ( officialUnknownCount > 0 )
             {
                 result +=
-                    String.Format("{0} LAO official elections result missing", officialUnknownCount) + Environment.NewLine +
+                    String.Format(CultureInfo.CurrentUICulture, "{0} LAO official elections result missing", officialUnknownCount) + Environment.NewLine +
                     officialUnknownBuilder.ToString() + Environment.NewLine;
             }
             txtElections.Text = result;
@@ -841,7 +841,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 ListViewItem item = listviewCentralAdministration.Items.Add(subEntity.english);
                 item.Tag = subEntity;
                 item.SubItems.Add(subEntity.name);
-                item.SubItems.Add(subEntity.geocode.ToString());
+                item.SubItems.Add(subEntity.geocode.ToString(CultureInfo.CurrentUICulture));
                 AddPopulationToItems(subEntity, item);
                 AddCreationDateToItems(entity, subEntity, item);
             }
@@ -851,9 +851,9 @@ namespace De.AHoerstemeier.Tambon.UI
         private void AddPopulationToItems(Entity subEntity, ListViewItem item)
         {
             var populationData = subEntity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
-            if ( populationData != null )
+            if ( populationData != null && populationData.TotalPopulation != null )
             {
-                item.SubItems.Add(populationData.TotalPopulation.total.ToString());
+                item.SubItems.Add(populationData.TotalPopulation.total.ToString(CultureInfo.CurrentUICulture));
             }
             else
             {
@@ -866,14 +866,14 @@ namespace De.AHoerstemeier.Tambon.UI
             var creationHistory = subEntity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
             if ( creationHistory != null )
             {
-                item.SubItems.Add(creationHistory.effective.ToString("yyyy-MM-dd"));
+                item.SubItems.Add(creationHistory.effective.ToString("yyyy-MM-dd", CultureInfo.CurrentUICulture));
             }
             else
             {
                 creationHistory = GazetteCreationHistory(subEntity);
                 if ( creationHistory != null )
                 {
-                    item.SubItems.Add("(" + creationHistory.effective.ToString("yyyy-MM-dd") + ")");
+                    item.SubItems.Add("(" + creationHistory.effective.ToString("yyyy-MM-dd", CultureInfo.CurrentUICulture) + ")");
                 }
                 else
                 {
@@ -919,7 +919,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 else
                 {
-                    item.SubItems.Add(subEntity.geocode.ToString());
+                    item.SubItems.Add(subEntity.geocode.ToString(CultureInfo.CurrentUICulture));
                 }
                 String dolaCode = String.Empty;
                 var office = subEntity.office.FirstOrDefault(x => x.type == OfficeType.TAOOffice || x.type == OfficeType.PAOOffice || x.type == OfficeType.MunicipalityOffice);
@@ -928,7 +928,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     var dolaEntry = office.dola.Where(x => x.codeSpecified).OrderBy(y => y.year).LastOrDefault();
                     if ( dolaEntry != null )
                     {
-                        dolaCode = dolaEntry.code.ToString();
+                        dolaCode = dolaEntry.code.ToString(CultureInfo.CurrentUICulture);
                     }
                 }
                 item.SubItems.Add(dolaCode);
