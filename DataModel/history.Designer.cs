@@ -27,6 +27,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAreaChange))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryMergedWith))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryCreate))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryRomanization))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpellingBase))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAlternativeName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReformSpelling))]
@@ -1085,6 +1086,113 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
+    /// <summary>
+    /// Wrong or outdated alternative romanization.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistoryRomanization", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class HistoryRomanization : HistoryEntryBase {
+        
+        private string englishField;
+        
+        private string yearField;
+        
+        private RomanizationStatus typeField;
+        
+        /// <summary>
+        /// Creates a new instance of HistoryRomanization.
+        /// </summary>
+        public HistoryRomanization() {
+            this.typeField = RomanizationStatus.Unknown;
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english {
+            get {
+                return this.englishField;
+            }
+            set {
+                this.englishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string year {
+            get {
+                return this.yearField;
+            }
+            set {
+                this.yearField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(RomanizationStatus.Unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public RomanizationStatus type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Status of romanization.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum RomanizationStatus {
+        
+        /// <summary>
+        /// Undefined status.
+        /// </summary>
+        Unknown,
+        
+        /// <summary>
+        /// Currently endorsed romanization.
+        /// </summary>
+        Active,
+        
+        /// <summary>
+        /// Old official romanization, overridden by a new one.
+        /// </summary>
+        Obsolete,
+        
+        /// <summary>
+        /// Apparently wrong romanization.
+        /// </summary>
+        Error,
+    }
+    
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryAlternativeName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistoryReformSpelling))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HistorySpelling))]
@@ -1486,6 +1594,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("reformedspelling", typeof(HistoryReformSpelling), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(HistoryRename), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("renamepark", typeof(HistoryRenamePark), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("romanization", typeof(HistoryRomanization), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("statuschange", typeof(HistoryStatus), Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<HistoryEntryBase> Items {

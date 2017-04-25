@@ -72,6 +72,7 @@
         <xs:documentation>Date of the board meeting.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="BasicOperation">
     <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0" />
