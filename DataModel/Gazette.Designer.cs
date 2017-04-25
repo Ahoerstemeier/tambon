@@ -2086,6 +2086,11 @@ namespace De.AHoerstemeier.Tambon {
         Transfer,
         
         /// <summary>
+        /// Confirm election.
+        /// </summary>
+        Elect,
+        
+        /// <summary>
         /// Action not defined in announcement.
         /// </summary>
         Unknown,

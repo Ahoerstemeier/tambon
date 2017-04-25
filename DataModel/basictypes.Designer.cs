@@ -1070,6 +1070,16 @@ namespace De.AHoerstemeier.Tambon {
         MunicipalityCouncilChairman,
         
         /// <summary>
+        /// Chairman of the Bangkok city council (ประธานสภากรุงเทพมหานคร, Prathan Sapha Krung Thep Maha Nakhon).
+        /// </summary>
+        BangkokCouncilChairman,
+        
+        /// <summary>
+        /// Deputy chairman of the Bangkok city council (รองประธานสภากรุงเทพมหานคร, Rong Prathan Sapha Krung Thep Maha Nakhon).
+        /// </summary>
+        BangkokCouncilDeputyChairman,
+        
+        /// <summary>
         /// Municipal clerk (ปลัดเทศบาล, Palat Thesaban).
         /// </summary>
         MunicipalClerk,
