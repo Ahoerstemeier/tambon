@@ -1462,5 +1462,35 @@ namespace De.AHoerstemeier.Tambon.UI
             formPopulationByEntityTypeViewer.PopulationDataSource = PopulationDataSourceType.DOPA;
             formPopulationByEntityTypeViewer.Show();
         }
+
+        private void btnLaoList_Click(object sender, EventArgs e)
+        {
+            var baseEntity = GlobalData.CompleteGeocodeList();
+            baseEntity.PropagateObsoleteToSubEntities();
+            var flatList = baseEntity.FlatList().Where(x => !x.IsObsolete && x.type != EntityType.Muban).ToList();
+            var localGovernments = flatList.Where(x => x.type.IsCompatibleEntityType(EntityType.Thesaban)).OrderBy(x => x.geocode).ToList();
+            var tambon = flatList.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon)).ToList();
+            foreach ( var item in tambon )
+            {
+                var lao = item.CreateLocalGovernmentDummyEntity();
+                if ( lao != null )
+                {
+                    localGovernments.Add(lao);
+                }
+            }
+            var amphoe = flatList.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)).ToList();
+            var changwat = flatList.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToList();
+            var builder = new StringBuilder();
+            foreach ( var entity in localGovernments )
+            {
+                var tambonCode = entity.office.First().areacoverage.First().geocode;
+                var amphoeCode = tambonCode / 100;
+                var changwatCode = amphoeCode / 100;
+                builder.AppendFormat(CultureInfo.CurrentUICulture, "{0},{1},{3},{2}", entity.geocode, entity.name, entity.type, amphoe.First(x => x.geocode == amphoeCode).name, changwat.First(x => x.geocode == changwatCode).name);
+                builder.AppendLine();
+            }
+            Clipboard.Clear();
+            Clipboard.SetText(builder.ToString());
+        }
     }
 }

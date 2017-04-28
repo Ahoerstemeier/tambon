@@ -56,6 +56,7 @@
             this.btnNayokResign = new System.Windows.Forms.Button();
             this.btnShowEntityData = new System.Windows.Forms.Button();
             this.grpTesting = new System.Windows.Forms.GroupBox();
+            this.btnShowPopulation = new System.Windows.Forms.Button();
             this.btnPopulationTable = new System.Windows.Forms.Button();
             this.btnDisambiguation = new System.Windows.Forms.Button();
             this.btnAgeTable = new System.Windows.Forms.Button();
@@ -66,7 +67,7 @@
             this.btnNumbers = new System.Windows.Forms.Button();
             this.btnMubanList = new System.Windows.Forms.Button();
             this.btnTambonList = new System.Windows.Forms.Button();
-            this.btnShowPopulation = new System.Windows.Forms.Button();
+            this.btnLaoList = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -375,6 +376,16 @@
             this.grpTesting.TabStop = false;
             this.grpTesting.Text = "Testing only";
             // 
+            // btnShowPopulation
+            // 
+            this.btnShowPopulation.Location = new System.Drawing.Point(394, 77);
+            this.btnShowPopulation.Name = "btnShowPopulation";
+            this.btnShowPopulation.Size = new System.Drawing.Size(102, 23);
+            this.btnShowPopulation.TabIndex = 66;
+            this.btnShowPopulation.Text = "Population view";
+            this.btnShowPopulation.UseVisualStyleBackColor = true;
+            this.btnShowPopulation.Click += new System.EventHandler(this.btnShowPopulation_Click);
+            // 
             // btnPopulationTable
             // 
             this.btnPopulationTable.Location = new System.Drawing.Point(394, 48);
@@ -468,7 +479,7 @@
             // 
             // btnMubanList
             // 
-            this.btnMubanList.Location = new System.Drawing.Point(406, 126);
+            this.btnMubanList.Location = new System.Drawing.Point(406, 127);
             this.btnMubanList.Name = "btnMubanList";
             this.btnMubanList.Size = new System.Drawing.Size(112, 23);
             this.btnMubanList.TabIndex = 64;
@@ -486,21 +497,22 @@
             this.btnTambonList.UseVisualStyleBackColor = true;
             this.btnTambonList.Click += new System.EventHandler(this.btnTambonList_Click);
             // 
-            // btnShowPopulation
+            // btnLaoList
             // 
-            this.btnShowPopulation.Location = new System.Drawing.Point(394, 77);
-            this.btnShowPopulation.Name = "btnShowPopulation";
-            this.btnShowPopulation.Size = new System.Drawing.Size(102, 23);
-            this.btnShowPopulation.TabIndex = 66;
-            this.btnShowPopulation.Text = "Population view";
-            this.btnShowPopulation.UseVisualStyleBackColor = true;
-            this.btnShowPopulation.Click += new System.EventHandler(this.btnShowPopulation_Click);
+            this.btnLaoList.Location = new System.Drawing.Point(406, 155);
+            this.btnLaoList.Name = "btnLaoList";
+            this.btnLaoList.Size = new System.Drawing.Size(112, 23);
+            this.btnLaoList.TabIndex = 66;
+            this.btnLaoList.Text = "LAO list";
+            this.btnLaoList.UseVisualStyleBackColor = true;
+            this.btnLaoList.Click += new System.EventHandler(this.btnLaoList_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 415);
+            this.Controls.Add(this.btnLaoList);
             this.Controls.Add(this.btnTambonList);
             this.Controls.Add(this.btnMubanList);
             this.Controls.Add(this.btnNumbers);
@@ -575,6 +587,7 @@
         private System.Windows.Forms.Button btnDisambiguation;
         private System.Windows.Forms.Button btnPopulationTable;
         private System.Windows.Forms.Button btnShowPopulation;
+        private System.Windows.Forms.Button btnLaoList;
     }
 }
 
