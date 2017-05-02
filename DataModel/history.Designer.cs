@@ -942,6 +942,12 @@ namespace De.AHoerstemeier.Tambon {
         
         private bool subdivisiontypeFieldSpecified;
         
+        private string nameField;
+        
+        private string englishField;
+        
+        private string ipaField;
+        
         /// <summary>
         /// Creates a new instance of HistoryCreate.
         /// </summary>
@@ -1082,6 +1088,57 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.subdivisiontypeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string english {
+            get {
+                return this.englishField;
+            }
+            set {
+                this.englishField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ipa {
+            get {
+                return this.ipaField;
+            }
+            set {
+                this.ipaField = value;
             }
         }
     }

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
+  <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
+    <entity type="PAO" name="สุราษฎร์ธานี" english="Surat Thani" geocode="840050">
+      <office type="PAOOffice">
+        <dola code="2840101" year="2017" />
+      </office>
+    </entity>
+
+    <entity type="ThesabanNakhon" name="สุราษฎร์ธานี" english="Surat Thani" geocode="8499">
+      <office type="MunicipalityOffice">
+        <dola SML="L" code="3840102" year="2017" />
+      </office>
+      <area>
+        <area value="67.13" unit="km²" date="2017" />
+      </area>
+    </entity>
+
+    <entitycount year="2017">
+      <entry type="PAO" count="1" />
+      <entry type="ThesabanNakhon" count="2" />
+      <entry type="ThesabanMueang" count="3" />
+      <entry type="ThesabanTambon" count="35" />
+      <entry type="TAO" count="97" />
+    </entitycount>
+  </entity>
+  <entitycount year="2017">
+    <entry type="PAO" count="76" />
+    <entry type="ThesabanNakhon" count="30" />
+    <entry type="ThesabanMueang" count="178" />
+    <entry type="ThesabanTambon" count="2233" />
+    <entry type="TAO" count="5334" />
+    <entry type="SpecialAdministrativeUnit" count="2" />
+    <reference>
+      <url>http://www.dla.go.th/work/abt/download/summary_25600331.doc</url>
+      <url>http://www.dla.go.th/work/abt/download/tesaban_25600331.xls</url>
+      <url>http://www.dla.go.th/work/abt/download/province_25581106.xls</url>
+      <url>http://www.dla.go.th/work/abt/download/abz_25581106.xls</url>
+    </reference>
+  </entitycount>
+</entity>

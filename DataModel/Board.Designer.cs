@@ -238,6 +238,7 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(AreaOperation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("create", typeof(CreateOperation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("mention", typeof(MentionOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(OfficialOperation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("rename", typeof(RenameOperation), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("renamewat", typeof(RenameWatOperation), Order=0)]
@@ -949,6 +950,186 @@ namespace De.AHoerstemeier.Tambon {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="OfficialOperation", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class OfficialOperation {
+        
+        private string officialnameField;
+        
+        private OfficialType officialtypeField;
+        
+        private OfficialAction actionField;
+        
+        private uint oldgeocodeField;
+        
+        private bool oldgeocodeFieldSpecified;
+        
+        private OfficialType oldofficialtypeField;
+        
+        private bool oldofficialtypeFieldSpecified;
+        
+        private uint geocodeField;
+        
+        private bool geocodeFieldSpecified;
+        
+        /// <summary>
+        /// Name of the official (in Thai).
+        /// </summary>
+        /// <value>
+        /// The officialname.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string officialname {
+            get {
+                return this.officialnameField;
+            }
+            set {
+                this.officialnameField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Official position, in case of a transfer the new position.
+        /// </summary>
+        /// <value>
+        /// The officialtype.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OfficialType officialtype {
+            get {
+                return this.officialtypeField;
+            }
+            set {
+                this.officialtypeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Type of official change.
+        /// </summary>
+        /// <value>
+        /// The action.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OfficialAction action {
+            get {
+                return this.actionField;
+            }
+            set {
+                this.actionField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Geocode of the previous assignment.
+        /// </summary>
+        /// <value>
+        /// The oldgeocode.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint oldgeocode {
+            get {
+                return this.oldgeocodeField;
+            }
+            set {
+                this.oldgeocodeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldgeocodeSpecified {
+            get {
+                return this.oldgeocodeFieldSpecified;
+            }
+            set {
+                this.oldgeocodeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Previous position in case of a transfer.
+        /// </summary>
+        /// <value>
+        /// The oldofficialtype.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public OfficialType oldofficialtype {
+            get {
+                return this.oldofficialtypeField;
+            }
+            set {
+                this.oldofficialtypeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool oldofficialtypeSpecified {
+            get {
+                return this.oldofficialtypeFieldSpecified;
+            }
+            set {
+                this.oldofficialtypeFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Geocode of the entity of the new position.
+        /// </summary>
+        /// <value>
+        /// The geocode.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint geocode {
+            get {
+                return this.geocodeField;
+            }
+            set {
+                this.geocodeField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool geocodeSpecified {
+            get {
+                return this.geocodeFieldSpecified;
+            }
+            set {
+                this.geocodeFieldSpecified = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="MeetingEntryContainerYear", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class MeetingEntryContainerYear {
         
@@ -1024,6 +1205,291 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYearMonth")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute("ministerialorders", Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MinisterialOrderDetailContainerTop", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class MinisterialOrderDetailContainerTop {
+        
+        private List<object> itemsField;
+        
+        /// <summary>
+        /// Creates a new instance of MinisterialOrderDetailContainerTop.
+        /// </summary>
+        public MinisterialOrderDetailContainerTop() {
+            this.itemsField = new List<object>();
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("order", typeof(MinisterialOrderDetail), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("year", typeof(MinisterialOrderDetailContainerYear), Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MinisterialOrderDetail", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class MinisterialOrderDetail {
+        
+        private List<object> itemsField;
+        
+        private List<object> referenceField;
+        
+        private Ministry ministryField;
+        
+        private bool ministryFieldSpecified;
+        
+        private System.DateTime dateField;
+        
+        private bool dateFieldSpecified;
+        
+        private string titleField;
+        
+        private System.DateTime effectiveField;
+        
+        private bool effectiveFieldSpecified;
+        
+        /// <summary>
+        /// Creates a new instance of MinisterialOrderDetail.
+        /// </summary>
+        public MinisterialOrderDetail() {
+            this.referenceField = new List<object>();
+            this.itemsField = new List<object>();
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(AbolishOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(AreaOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("create", typeof(CreateOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(MentionOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(OfficialOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(RenameOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("renamewat", typeof(RenameWatOperation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("status", typeof(StatusOperation), Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Source(s) for the area value.
+        /// </summary>
+        /// <value>
+        /// The reference.
+        /// </value>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> reference {
+            get {
+                return this.referenceField;
+            }
+            set {
+                this.referenceField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Ministry or Department which issued the order.
+        /// </summary>
+        /// <value>
+        /// The ministry.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Ministry ministry {
+            get {
+                return this.ministryField;
+            }
+            set {
+                this.ministryField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ministrySpecified {
+            get {
+                return this.ministryFieldSpecified;
+            }
+            set {
+                this.ministryFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Date the order was issued.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool dateSpecified {
+            get {
+                return this.dateFieldSpecified;
+            }
+            set {
+                this.dateFieldSpecified = value;
+            }
+        }
+        
+        /// <summary>
+        /// Title or reference number of the order.
+        /// </summary>
+        /// <value>
+        /// The title.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Date on which the order became effective.
+        /// </summary>
+        /// <value>
+        /// The effective.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime effective {
+            get {
+                return this.effectiveField;
+            }
+            set {
+                this.effectiveField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool effectiveSpecified {
+            get {
+                return this.effectiveFieldSpecified;
+            }
+            set {
+                this.effectiveFieldSpecified = value;
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MinisterialOrderDetailContainerYear", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class MinisterialOrderDetailContainerYear {
+        
+        private List<MinisterialOrderDetail> itemsField;
+        
+        private string valueField;
+        
+        /// <summary>
+        /// Creates a new instance of MinisterialOrderDetailContainerYear.
+        /// </summary>
+        public MinisterialOrderDetailContainerYear() {
+            this.itemsField = new List<MinisterialOrderDetail>();
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("boardmeeting", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<MinisterialOrderDetail> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string value {
             get {

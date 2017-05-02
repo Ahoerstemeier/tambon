@@ -798,21 +798,77 @@
     <xs:complexContent>
       <xs:extension base='t:EntryActionList'>
         <xs:attributeGroup ref="t:Comment" />
-        <xs:attribute name="description" type="xs:string" use="optional" />
-        <xs:attribute name="title" type="xs:string" use="required" />
-        <xs:attribute name="volume" type="xs:unsignedByte" use="required" />
-        <xs:attribute name="page" type="xs:string" use="required" />
-        <xs:attribute name="issue" type="xs:string" use="required" />
+        <xs:attribute name="description" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>English translation or summary of title.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="title" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Title of announcement.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="volume" type="xs:unsignedByte" use="required">
+          <xs:annotation>
+            <xs:documentation>Volume number.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="page" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Page range.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="issue" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Issue number.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="uri" type="xs:string" use="required" />
-        <xs:attribute name="publication" type="xs:date" use="required" />
-        <xs:attribute name="effectiveafter" type="xs:unsignedByte" use="optional" />
-        <xs:attribute name="sign" type="xs:date" use="optional" />
-        <xs:attribute name="effective" type="xs:date" use="optional" />
-        <xs:attribute name="subtitle" type="xs:string" use="optional" />
-        <xs:attribute name="signedby" type="xs:string" use="optional" />
-        <xs:attribute name="signedbyfunction" type="t:SignByFunction" use="optional" />
-        <xs:attribute name="countersignedby" type="xs:string" use="optional" />
-        <xs:attribute name="countersignedbyfunction" type="t:SignByFunction" use="optional" />
+        <xs:attribute name="publication" type="xs:date" use="required">
+          <xs:annotation>
+            <xs:documentation>Date on which the announcement was published in the Royal Gazette.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="effectiveafter" type="xs:unsignedByte" use="optional">
+          <xs:annotation>
+            <xs:documentation>Number of days after publication until announcement became effective.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="sign" type="xs:date" use="optional">
+          <xs:annotation>
+            <xs:documentation>Date on which the announcement was signed.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="effective" type="xs:date" use="optional">
+          <xs:annotation>
+            <xs:documentation>Date on which the announcement became effective.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="subtitle" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>Additional title, usually added by Royal Gazette website..</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="signedby" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>Name of person who signed the announcement.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="signedbyfunction" type="t:SignByFunction" use="optional">
+          <xs:annotation>
+            <xs:documentation>Official position of the person who signed the announcement.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="countersignedby" type="xs:string" use="optional">
+          <xs:annotation>
+            <xs:documentation>Name of person who counter-signed the royally signed announcement.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="countersignedbyfunction" type="t:SignByFunction" use="optional">
+          <xs:annotation>
+            <xs:documentation>Official position of the person who counter-signed the announcement.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

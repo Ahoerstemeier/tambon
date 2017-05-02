@@ -506,6 +506,53 @@ namespace De.AHoerstemeier.Tambon {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum OfficialAction {
+        
+        /// <summary>
+        /// Assignment to a new post.
+        /// </summary>
+        Assign,
+        
+        /// <summary>
+        /// Assignment to a new post acting.
+        /// </summary>
+        AssignActing,
+        
+        /// <summary>
+        /// Permanently remove from a post.
+        /// </summary>
+        Remove,
+        
+        /// <summary>
+        /// Temporarily remove from a post.
+        /// </summary>
+        Suspend,
+        
+        /// <summary>
+        /// End of term by death.
+        /// </summary>
+        Decease,
+        
+        /// <summary>
+        /// Transfer from a previous post to a new post.
+        /// </summary>
+        Transfer,
+        
+        /// <summary>
+        /// Confirm election.
+        /// </summary>
+        Elect,
+        
+        /// <summary>
+        /// Action not defined in announcement.
+        /// </summary>
+        Unknown,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
@@ -2047,53 +2094,6 @@ namespace De.AHoerstemeier.Tambon {
                 this.oldofficialtypeFieldSpecified = value;
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
-    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
-    public enum OfficialAction {
-        
-        /// <summary>
-        /// Assignment to a new post.
-        /// </summary>
-        Assign,
-        
-        /// <summary>
-        /// Assignment to a new post acting.
-        /// </summary>
-        AssignActing,
-        
-        /// <summary>
-        /// Permanently remove from a post.
-        /// </summary>
-        Remove,
-        
-        /// <summary>
-        /// Temporarily remove from a post.
-        /// </summary>
-        Suspend,
-        
-        /// <summary>
-        /// End of term by death.
-        /// </summary>
-        Decease,
-        
-        /// <summary>
-        /// Transfer from a previous post to a new post.
-        /// </summary>
-        Transfer,
-        
-        /// <summary>
-        /// Confirm election.
-        /// </summary>
-        Elect,
-        
-        /// <summary>
-        /// Action not defined in announcement.
-        /// </summary>
-        Unknown,
     }
     
     /// <summary>

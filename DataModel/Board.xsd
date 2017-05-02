@@ -173,6 +173,39 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name='OfficialOperation'>
+    <xs:attribute name="officialname" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Name of the official (in Thai).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="officialtype" type="t:OfficialType" use="required">
+      <xs:annotation>
+        <xs:documentation>Official position, in case of a transfer the new position.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="action" type="t:OfficialAction" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of official change.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="oldgeocode" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Geocode of the previous assignment.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="oldofficialtype" type="t:OfficialType" use="optional">
+      <xs:annotation>
+        <xs:documentation>Previous position in case of a transfer.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="geocode" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Geocode of the entity of the new position.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
   <xs:group name="EntryActionBoard">
     <xs:choice>
       <xs:element name="status" type="t:StatusOperation" />
@@ -183,6 +216,7 @@
       <xs:element name="renamewat" type="t:RenameWatOperation" />
       <xs:element name="create" type="t:CreateOperation" />
       <xs:element name="mention" type="t:MentionOperation" />
+      <xs:element name="official" type="t:OfficialOperation" />
     </xs:choice>
   </xs:group>
   <xs:complexType name='MeetingEntry'>
@@ -213,5 +247,49 @@
     <xs:attribute name="value" type="xs:gYearMonth" use="required" />
   </xs:complexType>
 
+  <xs:complexType name='MinisterialOrderDetail'>
+    <xs:sequence>
+      <xs:group ref="t:EntryActionBoard" maxOccurs="unbounded" minOccurs="0" />
+      <xs:element name="reference" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Source(s) for the area value.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="ministry" type="t:Ministry">
+      <xs:annotation>
+        <xs:documentation>Ministry or Department which issued the order.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="date" type="xs:date">
+      <xs:annotation>
+        <xs:documentation>Date the order was issued.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="title" type="xs:string">
+      <xs:annotation>
+        <xs:documentation>Title or reference number of the order.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="effective" type="xs:date" use="optional">
+      <xs:annotation>
+        <xs:documentation>Date on which the order became effective.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name='MinisterialOrderDetailContainerTop'>
+    <xs:choice maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="1" name="year" type="t:MinisterialOrderDetailContainerYear" />
+      <xs:element minOccurs="0" maxOccurs="1" name="order" type="t:MinisterialOrderDetail" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name='MinisterialOrderDetailContainerYear'>
+    <xs:choice maxOccurs="unbounded">
+      <xs:element minOccurs="0" maxOccurs="1" name="boardmeeting" type="t:MinisterialOrderDetail" />
+    </xs:choice>
+    <xs:attribute name="value" type="xs:gYear" use="required" />
+  </xs:complexType>
+
   <xs:element name="boardmeetings" type="t:MeetingEntryContainerTop" />
+  <xs:element name="ministerialorders" type="t:MinisterialOrderDetailContainerTop" />
 </xs:schema>

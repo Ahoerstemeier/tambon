@@ -875,7 +875,7 @@ namespace De.AHoerstemeier.Tambon {
         private string titleField;
         
         /// <summary>
-        /// Ministry which issued the order.
+        /// Ministry or department which issued the order.
         /// </summary>
         /// <value>
         /// The ministry.
@@ -961,7 +961,7 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
-    /// Ministries in Thailand.
+    /// Ministries/Departments in Thailand.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
     [System.SerializableAttribute()]
@@ -973,6 +973,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Ministry of Interior (กระทรวงมหาดไทย, มท).
         /// </summary>
         MOI,
+        
+        /// <summary>
+        /// Department of Provincial Administration (กรมการปกครอง).
+        /// </summary>
+        DOPA,
     }
     
     /// <summary>
