@@ -103,7 +103,7 @@ namespace De.AHoerstemeier.Tambon
                        {EntityType.Khwaeng,"เปลี่ยนแปลงพื้นที่แขวง"},
                        {EntityType.Phak,"เปลี่ยนแปลงเขตภาค"},
                        {EntityType.Khet,"เปลี่ยนแปลงพื้นที่เขต กรุงเทพมหานคร"},
-                       {EntityType.Muban,"เปลี่ยนแปลงเขตท้องที่ และ หมู่บ้าน"}
+                       {EntityType.Muban,"เปลี่ยนแปลงเขต และ หมู่บ้าน"}
                    }
              },
              {
