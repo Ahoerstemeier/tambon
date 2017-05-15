@@ -45,6 +45,11 @@ namespace De.AHoerstemeier.Tambon {
         KingAmphoe,
         
         /// <summary>
+        /// Special district (ส่วนรัฐ, Suan Rat), used during WWII once.
+        /// </summary>
+        SpecialDistrict,
+        
+        /// <summary>
         /// Subdistrict (ตำบล, tambon), subdivision of districts.
         /// </summary>
         Tambon,
