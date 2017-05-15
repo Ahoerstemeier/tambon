@@ -126,6 +126,30 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
             }
+            try
+            {
+                using ( var fileStream = new FileStream(GlobalData.BaseXMLDirectory + "\\DOLA\\DOLA2560.xml", FileMode.Open, FileAccess.Read) )
+                {
+                    var dolaData = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
+                    foreach ( var sourceEntity in dolaData.FlatList() )
+                    {
+                        var targetEntity = _localGovernments.FirstOrDefault(x => x.geocode == sourceEntity.geocode);
+                        if ( targetEntity != null )
+                        {
+                            var sourceOffice = sourceEntity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
+                            var targetOffice = targetEntity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
+                            if ( sourceOffice != null && targetOffice != null )
+                            {
+                                targetOffice.dola.AddRange(sourceOffice.dola);
+                            }
+                        }
+                        targetEntity.area.area.AddRange(sourceEntity.area.area);
+                    }
+                }
+            }
+            catch ( Exception ex )
+            {
+            }
 
             var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
             foreach ( var lao in _localGovernments )

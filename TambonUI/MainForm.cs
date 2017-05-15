@@ -155,7 +155,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 counter.RemoveAll(x => x.Item3 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate(Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
+                    counter.Sort(delegate (Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
                     {
                         return (p2.Item3.CompareTo(p1.Item3));
                     });
@@ -192,7 +192,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 // counter.RemoveAll(x => x.Item2 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate(Tuple<String, Int32> p1, Tuple<String, Int32> p2)
+                    counter.Sort(delegate (Tuple<String, Int32> p1, Tuple<String, Int32> p2)
                     {
                         var result = p2.Item2.CompareTo(p1.Item2);
                         if ( result == 0 )
@@ -1200,6 +1200,7 @@ namespace De.AHoerstemeier.Tambon.UI
                                     builder.AppendLine();
                                 }
                                 break;
+
                             case PopulationDataType.urbansanitary:
                                 if ( (data.total < 5000 * data.geocode.Count) )
                                 {
@@ -1473,7 +1474,7 @@ namespace De.AHoerstemeier.Tambon.UI
             foreach ( var item in tambon )
             {
                 var lao = item.CreateLocalGovernmentDummyEntity();
-                if ( lao != null )
+                if ( lao != null && !lao.IsObsolete )
                 {
                     localGovernments.Add(lao);
                 }
