@@ -126,9 +126,9 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
             }
-            try
+            foreach ( var file in Directory.EnumerateFiles(GlobalData.BaseXMLDirectory + "\\DOLA\\") )
             {
-                using ( var fileStream = new FileStream(GlobalData.BaseXMLDirectory + "\\DOLA\\DOLA2560.xml", FileMode.Open, FileAccess.Read) )
+                using ( var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read) )
                 {
                     var dolaData = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
                     foreach ( var sourceEntity in dolaData.FlatList() )
@@ -141,14 +141,16 @@ namespace De.AHoerstemeier.Tambon.UI
                             if ( sourceOffice != null && targetOffice != null )
                             {
                                 targetOffice.dola.AddRange(sourceOffice.dola);
+                                targetOffice.dola.Sort((x, y) => y.year.CompareTo(x.year));
                             }
+
+                            targetEntity.area.area.AddRange(sourceEntity.area.area);
+                            // targetEntity.area.area.Sort((x, y) => String.Compare(y.date,x.date));
+                            targetEntity.entitycount.AddRange(sourceEntity.entitycount);
+                            targetEntity.entitycount.Sort((x, y) => y.year.CompareTo(x.year));
                         }
-                        targetEntity.area.area.AddRange(sourceEntity.area.area);
                     }
                 }
-            }
-            catch ( Exception ex )
-            {
             }
 
             var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
@@ -584,7 +586,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     var expected = entityWithArea.area.area.First(x => x.date == "2003").value;
                     if ( area != expected )
                     {
-                        text += String.Format("Area sum not correct for {0} (expected {1}, actual {2}):", entityWithArea.english, expected, area) + Environment.NewLine;
+                        text += String.Format("Area sum in 2003 not correct for {0} (expected {1}, actual {2}):", entityWithArea.english, expected, area) + Environment.NewLine;
                     }
                 }
             }
@@ -782,24 +784,24 @@ namespace De.AHoerstemeier.Tambon.UI
             var localGovernmentCoveringOneTambonPartially = localEntitiesWithCoverage.Where(x => x.LocalGovernmentAreaCoverage.Count() == 1 && x.LocalGovernmentAreaCoverage.First().coverage == CoverageType.partially);
             var localGovernmentCoveringMoreThanOneTambonAndAllCompletely = localGovernmentCoveringMoreThanOneTambon.Where(x => x.LocalGovernmentAreaCoverage.All(y => y.coverage == CoverageType.completely));
 
-            result += String.Format("LAO: {0}", localEntitiesWithOffice.Count()) + Environment.NewLine;
+            result += String.Format(CultureInfo.CurrentUICulture, "LAO: {0}", localEntitiesWithOffice.Count()) + Environment.NewLine;
             if ( localGovernmentsObsolete.Any() )
             {
-                result += String.Format("Abolished LAO: {0}", localGovernmentsObsolete.Count()) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "Abolished LAO: {0}", localGovernmentsObsolete.Count()) + Environment.NewLine;
             }
-            result += String.Format("LAO with coverage: {0}", localEntitiesWithCoverage.Count()) + Environment.NewLine;
+            result += String.Format(CultureInfo.CurrentUICulture, "LAO with coverage: {0}", localEntitiesWithCoverage.Count()) + Environment.NewLine;
             if ( localEntitiesWithoutCoverage.Any() )
             {
-                result += String.Format("LAO missing coverage: {0}", localEntitiesWithoutCoverage.Count()) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "LAO missing coverage: {0}", localEntitiesWithoutCoverage.Count()) + Environment.NewLine;
             }
-            result += String.Format("LAO covering exactly one Tambon: {0}", localGovernmentCoveringExactlyOneTambon.Count()) + Environment.NewLine;
-            result += String.Format("LAO covering one Tambon partially: {0}", localGovernmentCoveringOneTambonPartially.Count()) + Environment.NewLine;
-            result += String.Format("LAO covering more than one Tambon: {0} ({1} TAO)",
+            result += String.Format(CultureInfo.CurrentUICulture, "LAO covering exactly one Tambon: {0}", localGovernmentCoveringExactlyOneTambon.Count()) + Environment.NewLine;
+            result += String.Format(CultureInfo.CurrentUICulture, "LAO covering one Tambon partially: {0}", localGovernmentCoveringOneTambonPartially.Count()) + Environment.NewLine;
+            result += String.Format(CultureInfo.CurrentUICulture, "LAO covering more than one Tambon: {0} ({1} TAO)",
                 localGovernmentCoveringMoreThanOneTambon.Count(),
                 localGovernmentCoveringMoreThanOneTambon.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
-            result += String.Format("LAO covering more than one Tambon and all completely: {0} ({1} TAO)",
+            result += String.Format(CultureInfo.CurrentUICulture, "LAO covering more than one Tambon and all completely: {0} ({1} TAO)",
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Count(),
-                localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+                localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine + Environment.NewLine;
 
             var localGovernmentExpectingHistory = localGovernmentsInEntity.Where(x => x.Dola != null && x.type != EntityType.PAO);
             var localGovernmentWithoutLatestHistory = localGovernmentExpectingHistory.Where(x =>
@@ -811,14 +813,75 @@ namespace De.AHoerstemeier.Tambon.UI
                 x.IsObsolete &&
                 !x.history.Items.Any(y => y is HistoryAbolish && (y as HistoryAbolish).type == x.type))
                 );
-            result += Environment.NewLine + String.Format("LAO without latest history: {0} ({1} TAO)",
-                localGovernmentWithoutLatestHistory.Count(),
-                localGovernmentWithoutLatestHistory.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+            if ( localGovernmentWithoutLatestHistory.Count() > 0 )
+            {
+                result += String.Format(CultureInfo.CurrentUICulture, "LAO without latest history: {0} ({1} TAO)",
+                   localGovernmentWithoutLatestHistory.Count(),
+                   localGovernmentWithoutLatestHistory.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+            }
             var localGovernmentWithoutCreation = localGovernmentExpectingHistory.Where(x =>
                 !x.history.Items.Any(y => y is HistoryCreate)).ToList();
-            result += String.Format("LAO without creation history: {0} ({1} TAO)",
-                localGovernmentWithoutCreation.Count(),
-                localGovernmentWithoutCreation.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+            if ( localGovernmentWithoutCreation.Count() > 0 )
+            {
+                result += String.Format(CultureInfo.CurrentUICulture, "LAO without creation history: {0} ({1} TAO)",
+                   localGovernmentWithoutCreation.Count(),
+                   localGovernmentWithoutCreation.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+            }
+
+            // initialize empty SML data dictionary
+            var sml = new Dictionary<EntityType, Dictionary<SmallMediumLarge, Int32>>();
+            var smlTypes = new List<SmallMediumLarge>() { SmallMediumLarge.L, SmallMediumLarge.M, SmallMediumLarge.S, SmallMediumLarge.Undefined };
+            var laoTypes = new List<EntityType>() { EntityType.ThesabanNakhon, EntityType.ThesabanMueang, EntityType.ThesabanTambon, EntityType.TAO, EntityType.Mueang, EntityType.SpecialAdministrativeUnit, EntityType.PAO };
+            foreach ( var laoType in laoTypes )
+            {
+                var smlData = new Dictionary<SmallMediumLarge, Int32>();
+                foreach ( var smlType in smlTypes )
+                {
+                    smlData[smlType] = 0;
+                }
+                sml[laoType] = smlData;
+            }
+            // fill SML data
+            foreach ( var lao in localGovernmentsInEntity )
+            {
+                if ( lao.Dola != null )
+                {
+                    var dola = lao.Dola.FirstOrDefault();
+                    if ( dola != null )
+                    {
+                        {
+                            sml[lao.type][dola.SML]++;
+                        }
+                    }
+                }
+            }
+            // Convert to display
+            foreach ( var laoType in laoTypes )
+            {
+                var smlData = sml[laoType];
+                var count = 0;
+                foreach ( var smlType in smlTypes )
+                {
+                    count += smlData[smlType];
+                }
+                if ( count > 0 )
+                {
+                    var data = String.Empty;
+                    foreach ( var smlType in smlTypes )
+                    {
+                        if ( smlData[smlType] > 0 )
+                        {
+                            data += String.Format(CultureInfo.CurrentUICulture, "{0}: {1}, ", smlType, smlData[smlType]);
+                        }
+                    }
+                    data = data.Remove(data.Length - 2, 2);
+                    if ( laoType != EntityType.PAO )
+                    {
+                        result += String.Format(CultureInfo.CurrentUICulture, "{0}: {1}", laoType, data) + Environment.NewLine;
+                    }
+                }
+            }
+
             txtLocalGovernment.Text = result;
         }
 
