@@ -115,15 +115,31 @@ namespace De.AHoerstemeier.Tambon.UI
             using ( var fileStream = new FileStream(GlobalData.BaseXMLDirectory + "\\DOLA web id.xml", FileMode.Open, FileAccess.Read) )
             {
                 var dolaWebIds = XmlManager.XmlToEntity<WebIdList>(fileStream, new XmlSerializer(typeof(WebIdList)));
+                var errors = string.Empty;
                 foreach ( var entry in dolaWebIds.item )
                 {
-                    var entity = _localGovernments.FirstOrDefault(x => x.geocode == entry.geocode);
+                    var entity = _localGovernments.FirstOrDefault(x => x.geocode == entry.geocode || x.OldGeocodes.Contains(entry.geocode));
                     if ( entity != null )
                     {
                         var office = entity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
-                        office.webid = entry.id;
-                        office.webidSpecified = true;
+                        if ( !office.webidSpecified )
+                        {
+                            office.webid = entry.id;
+                            office.webidSpecified = true;
+                        }
+                        else
+                        {
+                            errors += String.Format("Duplicate webId {0}", entry.id) + Environment.NewLine;
+                        }
                     }
+                    else
+                    {
+                        errors += String.Format("WebId {0} refers to invalid LAO {1}", entry.id, entry.geocode) + Environment.NewLine;
+                    }
+                }
+                if ( !String.IsNullOrEmpty(errors) )
+                {
+                    MessageBox.Show(errors, "WebId errors");
                 }
             }
             foreach ( var file in Directory.EnumerateFiles(GlobalData.BaseXMLDirectory + "\\DOLA\\") )
@@ -589,6 +605,17 @@ namespace De.AHoerstemeier.Tambon.UI
                         text += String.Format("Area sum in 2003 not correct for {0} (expected {1}, actual {2}):", entityWithArea.english, expected, area) + Environment.NewLine;
                     }
                 }
+            }
+
+            var laoWithoutWebId = localGovernmentsInEntity.Where(x => !x.IsObsolete && !x.office.First().webidSpecified).ToList();
+            if ( laoWithoutWebId.Any() )
+            {
+                text += String.Format("Entities without DOLA web id ({0}):", laoWithoutWebId.Count()) + Environment.NewLine;
+                foreach ( var item in laoWithoutWebId )
+                {
+                    text += String.Format(" {0}: {1}", item.geocode, item.english) + Environment.NewLine;
+                }
+                text += Environment.NewLine;
             }
 
             // check area coverages
