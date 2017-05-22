@@ -1833,14 +1833,26 @@ namespace De.AHoerstemeier.Tambon
 
         #region Native label
 
+        /// <summary>
+        /// Checks whether <see cref="WikiBase.PropertyIdNativeLabel"/> is set correctly for the given entity/item.
+        /// </summary>
+        /// <param name="item">Wikidata item to check.</param>
+        /// <param name="entity">Corresponding entity.</param>
+        /// <returns>State of correctness of the Wikidata item.</returns>
         public WikiDataState NativeLabelCorrect(Item item, Entity entity)
         {
             var expected = entity.FullName;
             Statement dummy;
 
-            return CheckMonoLanguageValue(item, WikiBase.PropertyIdMotto, Language.Thai, expected, false, out dummy);
+            return CheckMonoLanguageValue(item, WikiBase.PropertyIdNativeLabel, Language.Thai, expected, false, out dummy);
         }
 
+        /// <summary>
+        /// Sets the <see cref="WikiBase.PropertyIdNativeLabel"/> at the given <paramref name="item"/> with the value from <paramref name="entity"/>.
+        /// </summary>
+        /// <param name="item">Wikidata item to set.</param>
+        /// <param name="entity">Corresponding entity.</param>
+        /// <returns>Wikidata statement created or modified.</returns>
         public Statement SetNativeLabel(Item item, Entity entity)
         {
             var expected = entity.FullName;
@@ -1851,6 +1863,39 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion Native label
+
+        #region Official name
+
+        /// <summary>
+        /// Checks whether <see cref="WikiBase.PropertyIdOfficialName"/> is set correctly for the given entity/item.
+        /// </summary>
+        /// <param name="item">Wikidata item to check.</param>
+        /// <param name="entity">Corresponding entity.</param>
+        /// <returns>State of correctness of the Wikidata item.</returns>
+        public WikiDataState OfficialNameCorrect(Item item, Entity entity)
+        {
+            var expected = entity.FullName;
+            Statement dummy;
+
+            return CheckMonoLanguageValue(item, WikiBase.PropertyIdOfficialName, Language.Thai, expected, false, out dummy);
+        }
+
+        /// <summary>
+        /// Sets the <see cref="WikiBase.PropertyIdOfficialName"/> at the given <paramref name="item"/> with the value from <paramref name="entity"/>.
+        /// </summary>
+        /// <param name="item">Wikidata item to set.</param>
+        /// <param name="entity">Corresponding entity.</param>
+        /// <returns>Wikidata statement created or modified.</returns>
+        public Statement SetOfficialName(Item item, Entity entity)
+        {
+            var expected = entity.FullName;
+            Statement result;
+
+            CheckMonoLanguageValue(item, WikiBase.PropertyIdOfficialName, Language.Thai, expected, true, out result);
+            return result;
+        }
+
+        #endregion Official name
 
         /// <summary>
         /// Get the default edit summary for the creation of a item.

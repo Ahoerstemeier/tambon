@@ -182,6 +182,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 1990", setCensus1990));
             _availableTasks.Add(new WikiDataTaskInfo("Set Slogan", SetSlogan));
             _availableTasks.Add(new WikiDataTaskInfo("Set native label", SetNativeLabel));
+            _availableTasks.Add(new WikiDataTaskInfo("Set official name", SetOfficialName));
             _availableTasks.Add(new WikiDataTaskInfo("Set bounding entities", SetShareBorderWith));
             _availableTasks.Add(new WikiDataTaskInfo("Set Inception", SetInception));
             _availableTasks.Add(new WikiDataTaskInfo("Set Described by Url", SetDescribedByUrl));
@@ -293,6 +294,7 @@ namespace De.AHoerstemeier.Tambon
             SetPostalCode(items, dummy, false);
             SetLocation(items, dummy, false);
             SetNativeLabel(items, dummy, false);
+            SetOfficialName(items, dummy, false);
             SetDescribedByUrl(items, dummy, false);
         }
 
@@ -718,6 +720,13 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Sets <see cref="WikiBase.PropertyIdNativeLabel"/> for the given <paramref name="entities"/>.
+        /// </summary>
+        /// <param name="entities">Entities to set.</param>
+        /// <param name="collisionInfo">Container to fill with information on any problems.</param>
+        /// <param name="overrideData"><c>true</c> to override wrong data, <c>false</c> otherwise.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="entities"/> is <c>null</c>.</exception>
         private void SetNativeLabel(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
             if ( entities == null )
@@ -745,6 +754,49 @@ namespace De.AHoerstemeier.Tambon
                     if ( state != WikiDataState.Valid )
                     {
                         var statement = _helper.SetNativeLabel(item, entity);
+                        if ( statement != null )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets <see cref="WikiBase.PropertyIdOfficialName"/> for the given <paramref name="entities"/>.
+        /// </summary>
+        /// <param name="entities">Entities to set.</param>
+        /// <param name="collisionInfo">Container to fill with information on any problems.</param>
+        /// <param name="overrideData"><c>true</c> to override wrong data, <c>false</c> otherwise.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="entities"/> is <c>null</c>.</exception>
+        private void SetOfficialName(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.OfficialNameCorrect(item, entity);
+                    _runInfo[state]++;
+                    if ( state == WikiDataState.WrongValue )
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong official name", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statement = _helper.SetOfficialName(item, entity);
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));

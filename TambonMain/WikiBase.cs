@@ -64,6 +64,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdFoundationalText = "P457";
         public const String PropertyIdMotto = "P1451";
         public const String PropertyIdNativeLabel = "P1705";
+        public const String PropertyIdOfficialName = "P1448";
         public const String PropertyIdDeterminationMethod = "P459";
         public const String PropertyIdFoursquareId = "P1968";
         public const String PropertyIdFacebookPage = "P1997";  // https://www.facebook.com/pages/-/$1
