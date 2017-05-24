@@ -159,6 +159,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Council of the local government unit (สภาท้องถิ่น).
         /// </summary>
         localcouncil,
+        
+        /// <summary>
+        /// Parlament (lower house, house of representatives) (สภาผู้แทนราษฎร).
+        /// </summary>
+        parliament,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
