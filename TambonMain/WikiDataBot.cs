@@ -180,6 +180,12 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 2000", setCensus2000));
             WikiDataTaskDelegate setCensus1990 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1990);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 1990", setCensus1990));
+            WikiDataTaskDelegate setCensus1980 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1980);
+            _availableTasks.Add(new WikiDataTaskInfo("Set Census 1980", setCensus1980));
+            WikiDataTaskDelegate setCensus1970 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1970);
+            _availableTasks.Add(new WikiDataTaskInfo("Set Census 1970", setCensus1970));
+            WikiDataTaskDelegate setCensus1960 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1960);
+            _availableTasks.Add(new WikiDataTaskInfo("Set Census 1960", setCensus1960));
             _availableTasks.Add(new WikiDataTaskInfo("Set Slogan", SetSlogan));
             _availableTasks.Add(new WikiDataTaskInfo("Set native label", SetNativeLabel));
             _availableTasks.Add(new WikiDataTaskInfo("Set official name", SetOfficialName));
@@ -187,6 +193,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Inception", SetInception));
             _availableTasks.Add(new WikiDataTaskInfo("Set Described by Url", SetDescribedByUrl));
             _availableTasks.Add(new WikiDataTaskInfo("Set named after subdivision", SetNamedAfterSubdivision));
+            _availableTasks.Add(new WikiDataTaskInfo("Cleanup population data", CleanupPopulationData));
         }
 
         #endregion constructor
@@ -1540,6 +1547,37 @@ namespace De.AHoerstemeier.Tambon
                         }
 
                         // TODO: Reference!
+                    }
+                }
+            }
+        }
+
+        private void CleanupPopulationData(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            if ( entities == null )
+            {
+                throw new ArgumentNullException("entities");
+            }
+            ClearRunInfo();
+            foreach ( var entity in entities )
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if ( item == null )
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.CheckPopulationData(item);
+                    _runInfo[state]++;
+                    if ( state != WikiDataState.Valid )
+                    {
+                        var statements = _helper.CleanupPopulationData(item);
+                        foreach ( var statement in statements )
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
                     }
                 }
             }

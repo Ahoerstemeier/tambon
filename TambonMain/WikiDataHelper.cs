@@ -1947,6 +1947,8 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="item">Source item.</param>
         /// <param name="propertyId">Property id.</param>
         /// <returns>First linked item, or <c>null</c> if not found.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentException"><paramref name="propertyId"/> is <c>null</c> or <see cref=" String.Empty"/>.</exception>
         public Item GetItemClaim(Item item, String propertyId)
         {
             if ( item == null )
@@ -1969,6 +1971,122 @@ namespace De.AHoerstemeier.Tambon
                     result = _entityProvider.getEntityFromId(new EntityId("Q" + oldDataValue.NumericId.ToString())) as Item;
                 }
             }
+            return result;
+        }
+
+        /// <summary>
+        /// Checks the item for the population data to be valid.
+        /// </summary>
+        /// <param name="item">Source item.</param>
+        /// <returns><see cref="WikiDataState.Valid"/> is everything is valid, <see cref="WikiDataState.Inconsistent"/> otherwise.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <remarks>Checks whether <see cref="QuantityValue.LowerBound"/> and <see cref="QuantityValue.UpperBound"/> are empty, and the latest datapoint is marked as </remarks>
+        public WikiDataState CheckPopulationData(Item item)
+        {
+            if ( item == null )
+            {
+                throw new ArgumentNullException("item");
+            }
+            var result = WikiDataState.Valid;
+            var property = new EntityId(WikiBase.PropertyIdPopulation);
+            var pointInTime = new EntityId(WikiBase.PropertyIdPointInTime);
+            Nullable<DateTime> preferredDate = null;
+            DateTime lastedDate = new DateTime(1900, 1, 1);
+            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId)) )
+            {
+                var data = claim.mainSnak.DataValue as QuantityValue;
+                if ( data == null )
+                {
+                    result = WikiDataState.Inconsistent;
+                }
+                else
+                {
+                    if ( !String.IsNullOrEmpty(data.LowerBound) || !String.IsNullOrEmpty(data.UpperBound) )
+                    {
+                        result = WikiDataState.Inconsistent;
+                    }
+                    var date = claim.Qualifiers.FirstOrDefault(x => pointInTime.Equals(x.PropertyId));
+                    if ( date == null )
+                    {
+                        result = WikiDataState.Inconsistent;
+                    }
+                    else
+                    {
+                        var dateSnak = date.DataValue as TimeValue;
+                        if ( dateSnak.DateTime > lastedDate )
+                        {
+                            lastedDate = dateSnak.DateTime;
+                        }
+                        if ( dateSnak == null )
+                        {
+                            result = WikiDataState.Inconsistent;
+                        }
+                        else if ( (claim as Statement).Rank == Rank.Preferred )
+                        {
+                            preferredDate = dateSnak.DateTime;
+                        }
+                    }
+                }
+            }
+            if ( preferredDate == null || preferredDate.Value != lastedDate )
+            {
+                // result = WikiDataState.Inconsistent;
+            }
+
+            return result;
+        }
+
+        public IEnumerable<Statement> CleanupPopulationData(Item item)
+        {
+            if ( item == null )
+            {
+                throw new ArgumentNullException("item");
+            }
+            var result = new List<Statement>();
+            var property = new EntityId(WikiBase.PropertyIdPopulation);
+            var pointInTime = new EntityId(WikiBase.PropertyIdPointInTime);
+            DateTime lastedDate = new DateTime(1900, 1, 1);
+            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId)) )
+            {
+                var date = claim.Qualifiers.FirstOrDefault(x => pointInTime.Equals(x.PropertyId));
+                if ( date != null )
+                {
+                    var dateSnak = date.DataValue as TimeValue;
+                    if ( dateSnak.DateTime > lastedDate )
+                    {
+                        lastedDate = dateSnak.DateTime;
+                    }
+                }
+            }
+
+            foreach ( var claim in item.Claims.Where(x => property.Equals(x.mainSnak.PropertyId)) )
+            {
+                var data = claim.mainSnak.DataValue as QuantityValue;
+                if ( data != null )
+                {
+                    var date = claim.Qualifiers.FirstOrDefault(x => pointInTime.Equals(x.PropertyId));
+                    if ( date != null )
+                    {
+                        result.Add(claim as Statement);
+
+                        data.LowerBound = String.Empty;
+                        data.UpperBound = String.Empty;
+
+                        claim.mainSnak = new Snak(SnakType.Value, claim.mainSnak.PropertyId, data);
+
+                        var dateSnak = date.DataValue as TimeValue;
+                        if ( dateSnak.DateTime == lastedDate )
+                        {
+                            // (claim as Statement).Rank = Rank.Preferred;  // setting Rank not yet supported by Wikibase!
+                        }
+                        else
+                        {
+                            // (claim as Statement).Rank = Rank.Normal;  // setting Rank not yet supported by Wikibase!
+                        }
+                    }
+                }
+            }
+
             return result;
         }
     }
@@ -2016,6 +2134,11 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// No data in Tambon XML, but value present in WikiData.
         /// </summary>
-        DataMissing
+        DataMissing,
+
+        /// <summary>
+        /// WikiData has inconsistent data.
+        /// </summary>
+        Inconsistent
     }
 }

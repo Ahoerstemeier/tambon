@@ -1389,8 +1389,7 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="populationYear">Reference year of the population data.</param>
         public static void FillExplicitLocalGovernmentPopulation(IEnumerable<Entity> localGovernments, IEnumerable<Entity> allEntities, PopulationDataSourceType populationDataSource, Int16 populationYear)
         {
-            var allPopulationData = allEntities.SelectMany(x => x.population.Where(
-                y => y.Year == populationYear && y.source == populationDataSource));
+            var allPopulationData = allEntities.SelectMany(x => x.population.Where(y => y.Year == populationYear && y.source == populationDataSource));
             // ToList() as the add of population data below will change the enumeration
             var allPopulationDataWithGeocode = allPopulationData.Where(p => p.data.Any(d => d.geocode.Any())).ToList();
             foreach ( var sourcePopulationData in allPopulationDataWithGeocode )
@@ -1399,7 +1398,7 @@ namespace De.AHoerstemeier.Tambon
                 foreach ( var populationDataPoint in allPopulationDataWithGeocode.SelectMany(p => p.data.Where(d => d.geocode.Count == 1)) )
                 {
                     var localGovernment = localGovernments.FirstOrDefault(x => populationDataPoint.geocode.Contains(x.geocode));
-                    if ( localGovernment != null )
+                    if ( localGovernment != null && !localGovernment.population.Any(x => x.year == sourcePopulationData.year && x.source == sourcePopulationData.source) )
                     {
                         var populationData = new PopulationData();
                         populationData.year = sourcePopulationData.year;
