@@ -211,7 +211,34 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="EntityCountByPopulation">
+    <xs:annotation>
+      <xs:documentation>Entity count value with a population range.</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="t:Comment" />
+    <xs:attribute name="count" type="xs:unsignedInt" use="required">
+      <xs:annotation>
+        <xs:documentation>Number of entities of the given type in the population range.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="minimum" type="xs:unsignedInt" use="required">
+      <xs:annotation>
+        <xs:documentation>Minimum population value covered.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="maximum" type="xs:unsignedInt" use="required">
+      <xs:annotation>
+        <xs:documentation>Maximum population value covered.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="EntityCountType">
+    <xs:annotation>
+      <xs:documentation>Entity count value.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="bypopulation" type="t:EntityCountByPopulation" />
+    </xs:sequence>
     <xs:attributeGroup ref="t:Comment" />
     <xs:attribute name="type" type="t:EntityType" use="required">
       <xs:annotation>

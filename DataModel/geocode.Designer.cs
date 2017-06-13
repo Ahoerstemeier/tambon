@@ -15,7 +15,7 @@ namespace De.AHoerstemeier.Tambon {
     using System.Runtime.Serialization;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -470,7 +470,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Unique identifiers additional to the geocode and the wiki ids.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -689,7 +689,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Postal code(s).
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -727,7 +727,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Retired value of an identifier.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -779,7 +779,7 @@ namespace De.AHoerstemeier.Tambon {
     /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PostalCode))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PostalCodeOldValue))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -836,7 +836,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Area and bounding entities.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -894,7 +894,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Area covered by the entity.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1034,7 +1034,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Unit in which an area value was given.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -1052,7 +1052,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Neighboring entity at same administrative rank.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1169,7 +1169,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Geographic point in the Thai UTM encoding.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1219,7 +1219,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Cardinal direction.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -1284,7 +1284,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Type of boundary.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -1306,7 +1306,7 @@ namespace De.AHoerstemeier.Tambon {
         point,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -1398,13 +1398,18 @@ namespace De.AHoerstemeier.Tambon {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    /// <summary>
+    /// Entity count value.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="EntityCountType", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class EntityCountType {
+        
+        private List<EntityCountByPopulation> bypopulationField;
         
         private string commentField;
         
@@ -1422,7 +1427,19 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of EntityCountType.
         /// </summary>
         public EntityCountType() {
+            this.bypopulationField = new List<EntityCountByPopulation>();
             this.invalidField = false;
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("bypopulation", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<EntityCountByPopulation> bypopulation {
+            get {
+                return this.bypopulationField;
+            }
+            set {
+                this.bypopulationField = value;
+            }
         }
         
         /// <summary>
@@ -1525,6 +1542,94 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.actualcountFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Entity count value with a population range.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2046.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityCountByPopulation", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class EntityCountByPopulation {
+        
+        private string commentField;
+        
+        private uint countField;
+        
+        private uint minimumField;
+        
+        private uint maximumField;
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Number of entities of the given type in the population range.
+        /// </summary>
+        /// <value>
+        /// The count.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint count {
+            get {
+                return this.countField;
+            }
+            set {
+                this.countField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Minimum population value covered.
+        /// </summary>
+        /// <value>
+        /// The minimum.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint minimum {
+            get {
+                return this.minimumField;
+            }
+            set {
+                this.minimumField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Maximum population value covered.
+        /// </summary>
+        /// <value>
+        /// The maximum.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint maximum {
+            get {
+                return this.maximumField;
+            }
+            set {
+                this.maximumField = value;
             }
         }
     }
