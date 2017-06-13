@@ -186,6 +186,10 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 1970", setCensus1970));
             WikiDataTaskDelegate setCensus1960 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1960);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 1960", setCensus1960));
+            WikiDataTaskDelegate setCensus1947 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1947);
+            _availableTasks.Add(new WikiDataTaskInfo("Set Census 1947", setCensus1947));
+            WikiDataTaskDelegate setCensus1937 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 1937);
+            _availableTasks.Add(new WikiDataTaskInfo("Set Census 1937", setCensus1937));
             _availableTasks.Add(new WikiDataTaskInfo("Set Slogan", SetSlogan));
             _availableTasks.Add(new WikiDataTaskInfo("Set native label", SetNativeLabel));
             _availableTasks.Add(new WikiDataTaskInfo("Set official name", SetOfficialName));
