@@ -3,17 +3,16 @@
   <population source="Census" year="1919" referencedate="1919-04-01">
     <data type="total" total="9207366" male="4699667" female="4607688" />
   </population>
-  <!-- TODO: add provinces dissolved in 1933, add Monthon -->
+  <!-- TODO: add Monthon -->
+  <!-- TODO: find correct numbers, only southern region mostly correct in 1952 yearbook -->
   <entity type="Bangkok" geocode="10" name="กรุงเทพฯ" english="Bangkok">
     <population source="Census" year="1919" referencedate="1919-04-01">
       <data type="total" total="437294" />
     </population>
+    <!-- Invented geocodes -->
+    <entity type="Changwat" geocode="8" name="พระนคร" english="Phra Nakhon" />
+    <entity type="Changwat" geocode="9" name="ธนบุรี" english="Thonburi" />
   </entity>
-  <!--
-    No geocode for these changwats
-    <entity type="Changwat" name="พระนคร" english="Phra Nakhon" />
-    <entity type="Changwat" name="ธนบุรี" english="Thonburi" />
-    -->
   <entity type="Changwat" geocode="11" name="สมุทรปราการ" english="Samut Prakan" />
   <entity type="Changwat" geocode="12" name="นนทบุรี" english="Nonthaburi" />
   <entity type="Changwat" geocode="12" name="ปทุมธานี" english="Pathum Thani" />
@@ -23,6 +22,9 @@
   <entity type="Changwat" geocode="17" name="สิงห์บุรี" english="Singburi" />
   <entity type="Changwat" geocode="18" name="ชัยนาท" english="Chainat" />
   <entity type="Changwat" geocode="19" name="สระบุรี" english="Saraburi" />
+  <entity type="Changwat" name="ธัญญบุรี" english="Thanyaburi" />
+  <entity type="Changwat" name="พระประแดง" english="Phra Pra Daeng" />
+  <entity type="Changwat" name="มีนบุรี" english="Min Buri" />
 
   <entity type="Changwat" geocode="20" name="ชลบุรี" english="Chonburi" />
   <entity type="Changwat" geocode="21" name="ระยอง" english="Rayong" />
@@ -31,11 +33,12 @@
   <entity type="Changwat" geocode="24" name="ฉะเชิงเทรา" english="Chachoengsao" />
   <entity type="Changwat" geocode="25" name="ปราจีนบุรี" english="Prachinburi" />
   <entity type="Changwat" geocode="26" name="นครนายก" english="Nakhon Nayok" />
+  <entity type="Changwat" name="กบินทร์บุรี" english="Kabin Buri" comment="Abolished 1926" />
 
   <entity type="Changwat" geocode="30" name="นครราชสีมา" english="Nakhon Ratchasima" />
   <entity type="Changwat" geocode="31" name="บุรีรัมย์" english="Buriram" />
   <entity type="Changwat" geocode="32" name="สุรินทร์" english="Surin" />
-  <entity type="Changwat" geocode="33" name="ศรีสะเกษ" english="Si Sa Ket" />
+  <entity type="Changwat" geocode="33" name="ขุขันธ์" english="Khu Khan" />
   <entity type="Changwat" geocode="34" name="อุบลราชธานี" english="Ubon Ratchathani" />
   <entity type="Changwat" geocode="36" name="ชัยภูมิ" english="Chaiyaphum" />
   <entity type="Changwat" geocode="40" name="ขอนแก่น" english="Khon Kaen" />
@@ -60,7 +63,8 @@
   <entity type="Changwat" geocode="61" name="อุทัยธานี" english="Uthai Thani" />
   <entity type="Changwat" geocode="62" name="กำแพงเพชร" english="Kamphaeng Phet" />
   <entity type="Changwat" geocode="63" name="ตาก" english="Tak" />
-  <entity type="Changwat" geocode="64" name="สุโขทัย" english="Sukhothai" />
+  <entity type="Changwat" geocode="64" name="สวรรคโลก" english="Sawankhalok" />
+  <entity type="Changwat" name="สุโขทัย" english="Sukhothai" comment="Abolished 1933, Sawankhalok renamed 1939" />
   <entity type="Changwat" geocode="65" name="พิษณุโลก" english="Phitsanulok" />
   <entity type="Changwat" geocode="66" name="พิจิตร" english="Phichit" />
   <entity type="Changwat" geocode="67" name="เพชรบูรณ์" english="Phetchabun" />
@@ -74,18 +78,80 @@
   <entity type="Changwat" geocode="76" name="เพชรบุรี" english="Phetchaburi" />
   <entity type="Changwat" geocode="77" name="ประจวบคีรีขันธ์" english="Prachuap Khiri Khan" />
 
-  <entity type="Changwat" geocode="80" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" />
-  <entity type="Changwat" geocode="81" name="กระบี่" english="Krabi" />
-  <entity type="Changwat" geocode="82" name="พังงา" english="Phang Nga" />
-  <entity type="Changwat" geocode="83" name="ภูเก็ต" english="Phuket" />
-  <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani" />
-  <entity type="Changwat" geocode="85" name="ระนอง" english="Ranong" />
-  <entity type="Changwat" geocode="86" name="ชุมพร" english="Chumphon" />
-  <entity type="Changwat" geocode="90" name="สงขลา" english="Songkhkla" />
-  <entity type="Changwat" geocode="91" name="สตูล" english="Satun" />
-  <entity type="Changwat" geocode="92" name="ตรัง" english="Trang" />
-  <entity type="Changwat" geocode="93" name="พัทลุง" english="Phatthalung" />
-  <entity type="Changwat" geocode="94" name="ปัตตานี" english="Pattani" />
-  <entity type="Changwat" geocode="95" name="ยะลา" english="Yala" />
-  <entity type="Changwat" geocode="96" name="นราธิวาส" english="Narathiwat" />
+  <entity type="Changwat" geocode="80" name="นครศรีธรรมราช" english="Nakhon Si Thammarat">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="251477" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="81" name="กระบี่" english="Krabi">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="33352" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="82" name="พังงา" english="Phang Nga">
+    <!-- numbers including Takua Pa abolished in 1933? -->
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="30386" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="83" name="ภูเก็ต" english="Phuket">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="45505" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="151153" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="85" name="ระนอง" english="Ranong">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="17062" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="86" name="ชุมพร" english="Chumphon">
+    <!-- numbers including Lang Suan abolished in 1933? -->
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="34241" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="หลังสวน" english="Lang Suan" comment="Abolished 1933" />
+  <entity type="Changwat" name="ตะกั่วป่า" english="Takua Pa" comment="Abolished 1933" />
+  <entity type="Changwat" geocode="90" name="สงขลา" english="Songkhkla">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="186611" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="91" name="สตูล" english="Satun">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="33042" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="92" name="ตรัง" english="Trang">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="83135" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="93" name="พัทลุง" english="Phatthalung">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="87945" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="94" name="ปัตตานี" english="Pattani">
+    <!-- numbers including Saiburi abolished in 1933? -->
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="171145" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="95" name="ยะลา" english="Yala">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="48822" />
+    </population>
+  </entity>
+  <entity type="Changwat" geocode="96" name="นราธิวาส" english="Narathiwat">
+    <population source="Census" year="1919" referencedate="1919-04-01">
+      <data type="total" total="79921" />
+    </population>
+  </entity>
+  <entity type="Changwat" name="สายบุรี" english="Sai Buri" comment="Abolished 1933, added to Pattani and Narathiwat" />
 </entity>
