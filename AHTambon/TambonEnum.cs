@@ -37,7 +37,8 @@ namespace De.AHoerstemeier.Tambon
         KlumChangwat,
         Constituency,
         ElectoralRegion,
-        ProvinceCouncil
+        ProvinceCouncil,
+        OccupiedArea
     };
 
     public enum EntityModification
@@ -86,7 +87,13 @@ namespace De.AHoerstemeier.Tambon
         SanitaryDistrictChairman,
         ChumchonChairman,
         MueangGovernor,
-        ProvinceCouncilChairman
+        ProvinceCouncilChairman,
+        ViceRoyal,
+        RegionGovernor,
+        RegionViceGovernor,
+        MunicipalityCouncilor,
+        TAOCouncilor,
+        Other,
     }
 
     public enum PersonTitle
@@ -159,6 +166,7 @@ namespace De.AHoerstemeier.Tambon
         MinisterOfNaturalResourcesAndEnvironment,
         RegisterOfficeDirector,
         RegisterOfficeDeputyDirector,
-        DirectorGeneralDepartmentOfProvincialAdministration
+        DirectorGeneralDepartmentOfProvincialAdministration,
+        MinisterOfEnvironment
     }
 }
