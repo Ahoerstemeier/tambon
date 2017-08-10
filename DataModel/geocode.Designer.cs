@@ -1320,6 +1320,10 @@ namespace De.AHoerstemeier.Tambon {
         
         private string yearField;
         
+        private System.DateTime referencedateField;
+        
+        private bool referencedateFieldSpecified;
+        
         private string commentField;
         
         /// <summary>
@@ -1377,6 +1381,40 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.yearField = value;
+            }
+        }
+        
+        /// <summary>
+        /// The reference date of the numbers.
+        /// </summary>
+        /// <value>
+        /// The referencedate.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime referencedate {
+            get {
+                return this.referencedateField;
+            }
+            set {
+                this.referencedateField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool referencedateSpecified {
+            get {
+                return this.referencedateFieldSpecified;
+            }
+            set {
+                this.referencedateFieldSpecified = value;
             }
         }
         

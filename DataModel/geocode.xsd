@@ -275,6 +275,11 @@
         <xs:documentation>Reference year.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="referencedate" type="xs:date" use="optional">
+      <xs:annotation>
+        <xs:documentation>The reference date of the numbers.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:simpleType name="PostalCodeList">
