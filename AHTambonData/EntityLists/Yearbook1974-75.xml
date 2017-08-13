@@ -3,10 +3,10 @@
   <!-- Amphoe numbers include King Amphoe -->
   <entity type="Bangkok" geocode="10" name="กรุงเทพมหานคร" english="Bangkok">
     <entitycount year="1975">
-      <entry type="Amphoe" count="24" />
-      <entry type="Tambon" count="149" />
+      <entry type="Khet" count="24" />
+      <entry type="Khwaeng" count="149" />
       <entry type="Muban" count="727" />
-      <entry type="Sukhaphiban" count="11" />
+      <entry type="Sukhaphiban" count="11" invalid="1" actualcount="0" comment="Abolished with the Thesaban" />
     </entitycount>
   </entity>
   <entity type="Changwat" geocode="11" name="สมุทรปราการ" english="Samut Prakan">
@@ -645,11 +645,11 @@
   </entity>
 
   <entitycount year="1975">
-    <entry type="Amphoe" count="642" comment="Includes KingAmphoe" />
-    <entry type="Tambon" count="5505" />
+    <entry type="Amphoe" count="642" comment="Includes KingAmphoe, Khet" />
+    <entry type="Tambon" count="5505" comment="Including 149 Khwaeng" />
     <entry type="Muban" count="49178" />
     <entry type="Thesaban" count="118" />
-    <entry type="Sukhaphiban" count="694" />
+    <entry type="Sukhaphiban" count="694" invalid="1" actualcount="683" comment="Bangkok Sukhaphiban still counted" />
     <reference>
       <book title="Statistical Yearbook Thailand 2517/18" author="National Statistical Office" publication="1975" />
     </reference>
