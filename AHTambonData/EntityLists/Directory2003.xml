@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
-  <entity type="Bangkok" geocode="10" name="กรุงเทพมหานคร" english="Bangkok" />
+  <!--<entity type="Bangkok" geocode="10" name="กรุงเทพมหานคร" english="Bangkok" />-->
   <entity type="Changwat" geocode="11" name="สมุทรปราการ" english="Samut Prakan">
     <entitycount year="2003">
       <entry type="Amphoe" count="5" />
@@ -1030,4 +1030,8 @@
       </reference>
     </entitycount>
   </entity>
+
+  <entitycount year="2003" referencedate="2003-12-31" comment="Calculated sum, not listed in book">
+    <entry type="Changwat" count="75" />
+  </entitycount>
 </entity>
