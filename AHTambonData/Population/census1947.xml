@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
+  <!-- Amphoe-Population Total/Thai - Page 156,158, 194 - Thai population column incomplete -->
+
   <population source="Census" year="1947" referencedate="1947-04-26">
     <data type="total" total="17442689" male="8722155" female="8720534" />
     <data type="municipal" total="1736582" />
@@ -532,7 +534,32 @@
       <data type="total" total="291598" male="143161" female="148437" />
       <data type="municipal" total="6488" />
       <data type="nonmunicipal" total="285110" />
+      <data type="thai" total="290192" male="142264" female="147928" />
     </population>
+    <entity type="Amphoe" geocode="3601" name="เมืองชัยภูมิ" english="Mueang Chaiyaphum">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="103188" male="50544" female="52644" />
+        <data type="thai" total="102416" male="50070" female="52346" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3604" name="เกษตรสมบูรณ์" english="Kaset Sombun">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="35599" male="17597" female="18002" />
+        <data type="thai" total="35541" male="17558" female="17983" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3606" name="จัตุรัส" english="Chatturat">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="61299" male="30234" female="31065" />
+        <data type="thai" total="60853" male="29956" female="30897" comment="In table female number wrongly 30887" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="3610" name="ภูเขียว" english="Phu Khiao">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="91512" male="44786" female="46726" />
+        <data type="thai" total="91382" male="44680" female="46702" />
+      </population>
+    </entity>
     <entitycount year="1947">
       <entry type="Tambon" count="35">
         <bypopulation count="1" minimum="0" maximum="2499" />
@@ -700,7 +727,87 @@
       <data type="total" total="535664" male="270757" female="264907" />
       <data type="municipal" total="38111" />
       <data type="nonmunicipal" total="497553" />
+      <data type="thai" total="530289" male="267390" female="262899" />
     </population>
+    <entity type="Amphoe" geocode="5001" name="เมืองเชียงใหม่" english="Mueang Chiang Mai">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="75715" male="38042" female="37673" />
+        <data type="thai" total="73406" male="36497" female="36909" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5002" name="จอมทอง" english="Chom Thong">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="51380" male="26087" female="25293" />
+        <data type="thai" total="51239" male="25969" female="25270" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5004" name="เชียงดาว" english="Chiang Dao">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="19175" male="9709" female="9466" />
+        <data type="thai" total="18858" male="9542" female="9316" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5005" name="ดอยสะเก็ด" english="Doi Saket">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="32638" male="16541" female="16097" />
+        <data type="thai" total="32561" male="16481" female="16080" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5006" name="แม่แตง" english="Mae Taeng">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="32500" male="16612" female="15888" />
+        <data type="thai" total="32430" male="16554" female="15876" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5007" name="แม่ริม" english="Mae Rim">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="34886" male="17748" female="17138" />
+        <data type="thai" total="34748" male="17652" female="17096" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5009" name="ฝาง" english="Fang">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="48580" male="24663" female="23917" />
+        <data type="thai" total="47642" male="24163" female="23479" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5011" name="พร้าว" english="Phrao">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="28210" male="14227" female="13983" />
+        <data type="thai" total="27828" male="14015" female="13813" comment="In table male number wrongly as 14085" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5012" name="สันป่าตอง" english="San Pa Tong">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="65883" male="33191" female="32692" />
+        <data type="thai" total="65180" male="32799" female="32381" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5013" name="สันกำแพง" english="San Kamphaeng">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="39352" male="19965" female="19387" />
+        <data type="thai" total="39287" male="19909" female="19378" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5014" name="สันทราย" english="San Sai">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="30776" male="15651" female="15125" />
+        <data type="thai" total="30720" male="15613" female="15107" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5016" name="ฮอด" english="Hot">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="36209" male="18022" female="18187" />
+        <data type="thai" total="36182" male="18001" female="18181" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5019" name="สารภี" english="Saraphi">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="40360" male="20299" female="20061" />
+        <data type="thai" total="40208" male="20195" female="20013" />
+      </population>
+    </entity>
+
     <entitycount year="1947">
       <entry type="Tambon" count="132">
         <bypopulation count="33" minimum="0" maximum="2499" />
@@ -778,7 +885,63 @@
       <data type="total" total="485080" male="241083" female="243997" />
       <data type="municipal" total="21161" />
       <data type="nonmunicipal" total="463919" />
+      <data type="thai" total="480335" male="238299" female="242036" />
     </population>
+    <entity type="Amphoe" geocode="5701" name="เมืองเชียงราย" english="Mueang Chiang Rai">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="76512" male="38919" female="37593" />
+        <data type="thai" total="75555" male="38320" female="37235" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5703" name="เชียงของ" english="Chiang Khong">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="23665" male="11871" female="11794" />
+        <data type="thai" total="23518" male="11776" female="11742" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5704" name="เทิง" english="Thoeng">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="46157" male="23010" female="23147" />
+        <data type="thai" total="46093" male="22973" female="23120" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5705" name="พาน" english="Phan">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="81432" male="40551" female="40881" />
+        <data type="thai" total="81032" male="40304" female="40728" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5707" name="แม่จัน" english="Mae Chan">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="69003" male="32124" female="36879" />
+        <data type="thai" total="67674" male="31404" female="36270" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5710" name="แม่สรวย" english="Mae Suai">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="18655" male="9352" female="9303" />
+        <data type="thai" total="17872" male="8953" female="8919" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5711" name="เวียงป่าเป้า" english="Wiang Pa Pao">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="24685" male="12299" female="12386" />
+        <data type="thai" total="24586" male="12233" female="12353" />
+      </population>
+    </entity>
+
+    <entity type="Amphoe" geocode="5601" name="พะเยา" english="Phayao">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="94640" male="47766" female="46874" />
+        <data type="thai" total="93717" male="47166" female="46551" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5603" name="เชียงคำ" english="Chiang Kham">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="50331" male="25191" female="25140" />
+        <data type="thai" total="50288" male="25170" female="25118" />
+      </population>
+    </entity>
     <entitycount year="1947">
       <entry type="Tambon" count="74">
         <bypopulation count="5" minimum="0" maximum="2499" />
@@ -1167,7 +1330,38 @@
       <data type="total" total="118460" male="60474" female="57986" />
       <data type="municipal" total="9826" />
       <data type="nonmunicipal" total="108634" />
+      <data type="thai" total="113567" male="57120" female="56447" />
     </population>
+    <entity type="Amphoe" geocode="8601" name="เมืองชุมพร" english="Mueang Chumphon">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="42509" male="21822" female="20687" />
+        <data type="thai" total="39990" male="20222" female="19768" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8602" name="ท่าแซะ" english="Tha Sae">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="14529" male="7298" female="7231" />
+        <data type="thai" total="14399" male="7186" female="7213" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8603" name="ปะทิว" english="Pathio">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="7715" male="3911" female="3804" />
+        <data type="thai" total="7526" male="3762" female="3764" comment="In table female number wrongly as 3765" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8604" name="หลังสวน" english="Lang Suan">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="31670" male="16317" female="15353" />
+        <data type="thai" total="30400" male="15424" female="14976" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="8607" name="สวี" english="Sawi">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="22037" male="11126" female="10911" />
+        <data type="thai" total="21252" male="10526" female="10726" />
+      </population>
+    </entity>
     <entitycount year="1947">
       <entry type="Tambon" count="44">
         <bypopulation count="23" minimum="0" maximum="2499" />
@@ -1206,7 +1400,38 @@
       <data type="total" total="151739" male="77321" female="74418" />
       <data type="municipal" total="14709" />
       <data type="nonmunicipal" total="137030" />
+      <data type="thai" total="143326" male="72021" female="71305" />
     </population>
+    <entity type="Amphoe" geocode="9201" name="เมืองตรัง" english="Mueang Trang">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="60279" male="30667" female="29612" />
+        <data type="thai" total="58027" male="29208" female="28819" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9202" name="กันตัง" english="Kantang">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="31510" male="16048" female="15462" />
+        <data type="thai" total="29359" male="14611" female="14748" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9204" name="ปะเหลียน" english="Palian">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="21775" male="11086" female="10689" comment="In table total number wrongly 21795" />
+        <data type="thai" total="18768" male="9356" female="9412" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9205" name="สิเกา" english="Sikao">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="11379" male="5896" female="5483" />
+        <data type="thai" total="11310" male="5829" female="5481" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9206" name="ห้วยยอด" english="Huai Yot">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="26796" male="13624" female="13172" />
+        <data type="thai" total="25862" male="13017" female="12845" comment="In table male number wrongly 25962" />
+      </population>
+    </entity>
     <entitycount year="1947">
       <entry type="Tambon" count="62">
         <bypopulation count="35" minimum="0" maximum="2499" />
