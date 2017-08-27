@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
   <!-- Amphoe-Population Total/Thai - Page 156,158, 194 - Thai population column incomplete -->
-  <!-- Amphoe-Population Total/Thai - Page 216 missing -->
+  <!-- Amphoe-Population Total/Thai - Page 216 missing (Narathiwat, Nan) -->
 
   <population source="Census" year="1947" referencedate="1947-04-26">
     <data type="total" total="17442689" male="8722155" female="8720534" />
@@ -1078,6 +1078,27 @@
       <data type="municipal" total="10143" />
       <data type="nonmunicipal" total="200715" />
     </population>
+    <entity type="Amphoe" geocode="5501" name="เมืองน่าน" english="Mueang Nan" comment="Page missing" />
+    <entity type="Amphoe" geocode="5504" name="นาน้อย" english="Na Noi" comment="Page missing" />
+    <entity type="Amphoe" geocode="5505" name="ปัว" english="Pua">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="50926" male="25390" female="25536" />
+        <data type="thai" total="50853" male="25332" female="25521" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5507" name="สา" english="Sa" comment="Page missing" />
+    <entity type="Amphoe" geocode="5508" name="และ" english="Lae">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="21321" male="10681" female="10640" />
+        <data type="thai" total="21303" male="10671" female="10632" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5606" name="ปง" english="Pong">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="32288" male="16388" female="15900" />
+        <data type="thai" total="32262" male="16370" female="15892" />
+      </population>
+    </entity>
     <entitycount year="1947">
       <entry type="Tambon" count="42">
         <bypopulation count="5" minimum="0" maximum="2499" />
