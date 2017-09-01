@@ -1096,6 +1096,13 @@
     <entity type="Khwaeng" name="หนองบอน" english="Nong Bon" geocode="100907" newgeocode="103202" />
     <entity type="Khwaeng" name="ประเวศ" english="Prawet" geocode="100908" newgeocode="103201" />
     <entity type="Khwaeng" name="ดอกไม้" english="Dokmai" geocode="100909" newgeocode="103203" />
+    <entity type="Khwaeng" name="พระโขนงใต้" english="Phra Khanong Tai" geocode="100910">
+      <history>
+        <create type="Khwaeng" splitfrom="100905" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="41" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
 
     <entity type="Unknown" name="พระโขนง" english="Phra Khanong" geocode="100997" newgeocode="103303" />
     <entity type="Unknown" name="คลองตัน" english="Khlong Tan" geocode="100998" newgeocode="103302" />
@@ -1546,6 +1553,13 @@
     <entity type="Khwaeng" name="ทุ่งพญาไท" english="Thung Phaya Thai" geocode="101403" newgeocode="103701" />
     <entity type="Khwaeng" name="มักกะสัน" english="Makkasan" geocode="101404" newgeocode="103704" />
     <entity type="Khwaeng" name="ถนนพญาไท" english="Thanon Phaya Thai" geocode="101405" newgeocode="103702" />
+    <entity type="Khwaeng" name="พญาไท" english="Phaya Thai" geocode="101406">
+      <history>
+        <create type="Khwaeng" splitfrom="101401" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="36" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
 
     <entity type="Unknown" name="ทุ่งพญาไท" english="Thung Phaya Thai" geocode="101499" newgeocode="103701" />
   </entity>
@@ -2760,6 +2774,13 @@
         </statuschange>
       </history>
     </entity>
+    <entity type="Khwaeng" name="รัชดาภิเษก" english="Ratchadaphisek" geocode="102602">
+      <history>
+        <create type="Khwaeng" splitfrom="102601" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="38" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
   </entity>
   <entity type="Khet" name="บึงกุ่ม" english="Bueng Kum" ipa="bɯ̄ŋ kùm" geocode="1027">
     <wiki wikidata="Q1001823" openstreetmap="2946805" />
@@ -3449,6 +3470,21 @@
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
+      </history>
+    </entity>
+    <!-- Geocodes unsure! -->
+    <entity type="Khwaeng" name="อ่อนนุช" english="On Nut" geocode="103402">
+      <history>
+        <create type="Khwaeng" splitfrom="103401" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="44" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
+    <entity type="Khwaeng" name="พัฒนาการ" english="Phatthanakan" geocode="103403">
+      <history>
+        <create type="Khwaeng" splitfrom="103401" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="44" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
       </history>
     </entity>
   </entity>
@@ -4373,6 +4409,21 @@
         </statuschange>
       </history>
     </entity>
+    <!-- Geocodes unsure! -->
+    <entity type="Khwaeng" name="ราษฎร์พัฒนา" english="Rat Phatthana" geocode="104402">
+      <history>
+        <create type="Khwaeng" splitfrom="104401" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="47" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
+    <entity type="Khwaeng" name="ทับช้าง" english="Thap Chang" geocode="104403">
+      <history>
+        <create type="Khwaeng" splitfrom="104401" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="47" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
   </entity>
   <entity type="Khet" name="วังทองหลาง" english="Wang Thonglang" ipa="wāŋ tʰɔ̄ːŋlǎːŋ" geocode="1045">
     <wiki wikidata="Q1019428" openstreetmap="2939956" />
@@ -4625,9 +4676,12 @@
         <gazetteref volume="114" page="35" issue="พิเศษ 108 ง" date="1997-11-18" />
       </create>
     </history>
-    <entity type="Khwaeng" name="บางนา" english="Bang Na" geocode="104701">
+    <entity type="Khwaeng" name="บางนา" english="Bang Na" geocode="104701" obsolete="1">
       <wiki wikidata="Q15735646" />
       <history>
+        <abolished type="Khwaeng" status="Gazette" effective="2017-08-31" mergeto="104702 104703">
+          <gazetteref volume="134" page="50" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </abolished>
         <reassign effective="1998-03-06" status="Gazette" oldparent="1009" newparent="1047" oldgeocode="100904">
           <gazetteref volume="114" page="35" issue="พิเศษ 108 ง" date="1997-11-18" />
         </reassign>
@@ -4637,6 +4691,21 @@
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
+      </history>
+    </entity>
+    <!-- Geocodes unsure! -->
+    <entity type="Khwaeng" name="บางนาเหนือ" english="Bang Na Nuea" geocode="104702">
+      <history>
+        <create type="Khwaeng" splitfrom="104701" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="50" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
+    <entity type="Khwaeng" name="บางนาใต้" english="Bang Na Tai" geocode="104703">
+      <history>
+        <create type="Khwaeng" splitfrom="104701" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="50" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
       </history>
     </entity>
   </entity>
@@ -4824,15 +4893,47 @@
         <gazetteref volume="114" page="61" issue="พิเศษ 108 ง" date="1997-11-18" />
       </create>
     </history>
-    <entity type="Khwaeng" name="บางบอน" english="Bang Bon" geocode="105001">
+    <entity type="Khwaeng" name="บางบอน" english="Bang Bon" geocode="105001" obsolete="1">
       <wiki wikidata="Q15379979" />
       <history>
+        <abolished type="Khwaeng" status="Gazette" effective="2017-08-31" mergeto="105002 105003 105004 105005">
+          <gazetteref volume="134" page="53" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </abolished>
         <reassign effective="1998-03-06" status="Gazette" oldparent="1021" newparent="1050" oldgeocode="102104">
           <gazetteref volume="114" page="61" issue="พิเศษ 108 ง" date="1997-11-18" />
         </reassign>
         <statuschange old="Tambon" new="Khwaeng" effective="1972-12-13" status="Gazette">
           <gazetteref volume="89" page="187" issue="190 ก ฉบับพิเศษ" date="1972-12-13" />
         </statuschange>
+      </history>
+    </entity>
+    <!-- Geocodes unsure -->
+    <entity type="Khwaeng" name="บางบอนเหนือ" english="Bang Bon Nuea" geocode="105002">
+      <history>
+        <create type="Khwaeng" splitfrom="105001" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="53" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
+    <entity type="Khwaeng" name="บางบอนใต้" english="Bang Bon Tai" geocode="105003">
+      <history>
+        <create type="Khwaeng" splitfrom="105001" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="53" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
+    <entity type="Khwaeng" name="คลองบางพราน" english="Khlong Bang Phran" geocode="105004">
+      <history>
+        <create type="Khwaeng" splitfrom="105001" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="53" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
+      </history>
+    </entity>
+    <entity type="Khwaeng" name="คลองบางบอน" english="Khlong Bang Bon" geocode="105005">
+      <history>
+        <create type="Khwaeng" splitfrom="105001" status="Gazette" effective="2017-08-31">
+          <gazetteref volume="134" page="53" issue="พิเศษ 215 ง" date="2017-08-31" />
+        </create>
       </history>
     </entity>
   </entity>
