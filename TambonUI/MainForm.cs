@@ -1153,7 +1153,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 var notDistinctPopulationDataTypes =
                     from list in population.data
                     group list by list.type into grouped
-                    where grouped.Count() > 1
+                    where grouped.Count(x => x.valid) > 1
                     select grouped;
 
                 foreach ( var notDistinctType in notDistinctPopulationDataTypes )
@@ -1246,7 +1246,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var result = builder.ToString();
 
-            var formCensusProblems = new StringDisplayForm("Census data problems", result);
+            var formCensusProblems = new StringDisplayForm(String.Format(CultureInfo.CurrentUICulture, "Census data problems {0}", year), result);
             formCensusProblems.Show();
         }
 

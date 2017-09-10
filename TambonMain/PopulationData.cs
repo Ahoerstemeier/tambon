@@ -82,38 +82,51 @@ namespace De.AHoerstemeier.Tambon
         public Boolean Verify()
         {
             Boolean result = true;
+            var validData = data.Where(x => x.valid);
 
-            foreach ( var entry in data )
+            foreach ( var entry in validData )
             {
                 result &= entry.Verify();
             }
 
-            var municipal = data.FirstOrDefault(x => x.type == PopulationDataType.municipal);
-            var rural = data.FirstOrDefault(x => x.type == PopulationDataType.nonmunicipal);
+            var municipal = validData.FirstOrDefault(x => x.type == PopulationDataType.municipal);
+            var rural = validData.FirstOrDefault(x => x.type == PopulationDataType.nonmunicipal);
             if ( (municipal != null) && (rural != null) )
             {
                 result &= TotalPopulation.VerifySum(municipal, rural);
             }
-            var collectivehouseholds = data.FirstOrDefault(x => x.type == PopulationDataType.collectivehouseholds);
-            var privatehouseholds = data.FirstOrDefault(x => x.type == PopulationDataType.privatehouseholds);
+            var collectivehouseholds = validData.FirstOrDefault(x => x.type == PopulationDataType.collectivehouseholds);
+            var privatehouseholds = validData.FirstOrDefault(x => x.type == PopulationDataType.privatehouseholds);
             if ( (collectivehouseholds != null) && (privatehouseholds != null) )
             {
                 result &= TotalPopulation.VerifySum(collectivehouseholds, privatehouseholds);
             }
-            var sanitary = data.FirstOrDefault(x => x.type == PopulationDataType.sanitary);
-            var urbanSanitary = data.FirstOrDefault(x => x.type == PopulationDataType.urbansanitary);
-            var ruralSanitary = data.FirstOrDefault(x => x.type == PopulationDataType.ruralsanitary);
+            var sanitary = validData.FirstOrDefault(x => x.type == PopulationDataType.sanitary);
+            var urbanSanitary = validData.FirstOrDefault(x => x.type == PopulationDataType.urbansanitary);
+            var ruralSanitary = validData.FirstOrDefault(x => x.type == PopulationDataType.ruralsanitary);
             if ( (urbanSanitary != null) && (ruralSanitary != null) && (sanitary != null) )
             {
                 result &= sanitary.VerifySum(collectivehouseholds, privatehouseholds);
             }
 
-            var agricultural = data.FirstOrDefault(x => x.type == PopulationDataType.agricultural);
-            var nonagricultural = data.FirstOrDefault(x => x.type == PopulationDataType.nonagricultural);
+            var agricultural = validData.FirstOrDefault(x => x.type == PopulationDataType.agricultural);
+            var nonagricultural = validData.FirstOrDefault(x => x.type == PopulationDataType.nonagricultural);
             if ( (agricultural != null) && (nonagricultural != null) )
             {
                 result &= TotalPopulation.VerifySum(agricultural, nonagricultural);
             }
+
+            var thai = validData.FirstOrDefault(x => x.type == PopulationDataType.thai);
+            var foreigner = validData.FirstOrDefault(x => x.type == PopulationDataType.foreigner);
+            if ( (thai != null) && (foreigner != null) )
+            {
+                result &= TotalPopulation.VerifySum(thai, foreigner);
+            }
+            else if ( thai != null )
+            {
+                result &= TotalPopulation.VerifyLessOrEqual(thai);
+            }
+
             return result;
         }
 
@@ -124,9 +137,10 @@ namespace De.AHoerstemeier.Tambon
         public Int32 SumError()
         {
             Int32 maxError = 0;
+            var validData = data.Where(x => x.valid);
             // DOPA data can contain more than one municipal entry with different geocodes
             PopulationDataPoint municipal = null;
-            var municipalData = data.Where(x => x.type == PopulationDataType.municipal);
+            var municipalData = validData.Where(x => x.type == PopulationDataType.municipal);
             if ( municipalData.Any() )
             {
                 municipal = new PopulationDataPoint();
@@ -135,34 +149,33 @@ namespace De.AHoerstemeier.Tambon
                     municipal.Add(dataPoint);
                 }
             }
-            // var municipal = data.FirstOrDefault(x => x.type == PopulationDataType.municipal);
-            var rural = data.FirstOrDefault(x => x.type == PopulationDataType.nonmunicipal);
+            var rural = validData.FirstOrDefault(x => x.type == PopulationDataType.nonmunicipal);
             if ( (municipal != null) && (rural != null) )
             {
                 maxError = Math.Max(maxError, TotalPopulation.SumError(municipal, rural));
             }
-            var collectivehouseholds = data.FirstOrDefault(x => x.type == PopulationDataType.collectivehouseholds);
-            var privatehouseholds = data.FirstOrDefault(x => x.type == PopulationDataType.privatehouseholds);
+            var collectivehouseholds = validData.FirstOrDefault(x => x.type == PopulationDataType.collectivehouseholds);
+            var privatehouseholds = validData.FirstOrDefault(x => x.type == PopulationDataType.privatehouseholds);
             if ( (collectivehouseholds != null) && (privatehouseholds != null) )
             {
                 maxError = Math.Max(maxError, TotalPopulation.SumError(collectivehouseholds, privatehouseholds));
             }
-            var agricultural = data.FirstOrDefault(x => x.type == PopulationDataType.agricultural);
-            var nonagricultural = data.FirstOrDefault(x => x.type == PopulationDataType.nonagricultural);
+            var agricultural = validData.FirstOrDefault(x => x.type == PopulationDataType.agricultural);
+            var nonagricultural = validData.FirstOrDefault(x => x.type == PopulationDataType.nonagricultural);
             if ( (agricultural != null) && (nonagricultural != null) )
             {
                 maxError = Math.Max(maxError, TotalPopulation.SumError(agricultural, nonagricultural));
             }
-            var sanitary = data.FirstOrDefault(x => x.type == PopulationDataType.sanitary);
-            var urbanSanitary = data.FirstOrDefault(x => x.type == PopulationDataType.urbansanitary);
-            var ruralSanitary = data.FirstOrDefault(x => x.type == PopulationDataType.ruralsanitary);
+            var sanitary = validData.FirstOrDefault(x => x.type == PopulationDataType.sanitary);
+            var urbanSanitary = validData.FirstOrDefault(x => x.type == PopulationDataType.urbansanitary);
+            var ruralSanitary = validData.FirstOrDefault(x => x.type == PopulationDataType.ruralsanitary);
             if ( (urbanSanitary != null) && (ruralSanitary != null) && (sanitary != null) )
             {
                 maxError = Math.Max(maxError, sanitary.SumError(urbanSanitary, ruralSanitary));
             }
 
-            var thai = data.FirstOrDefault(x => x.type == PopulationDataType.thai);
-            var foreigner = data.FirstOrDefault(x => x.type == PopulationDataType.foreigner);
+            var thai = validData.FirstOrDefault(x => x.type == PopulationDataType.thai);
+            var foreigner = validData.FirstOrDefault(x => x.type == PopulationDataType.foreigner);
             if ( (thai != null) && (foreigner != null) )
             {
                 maxError = Math.Max(maxError, TotalPopulation.SumError(thai, foreigner));
@@ -307,6 +320,16 @@ namespace De.AHoerstemeier.Tambon
         public Boolean VerifySum(PopulationDataPoint data1, PopulationDataPoint data2)
         {
             return this.SumError(data1, data2) == 0;
+        }
+
+        /// <summary>
+        /// Checks whether data has less or equal data.
+        /// </summary>
+        /// <param name="data">Data point.</param>
+        /// <returns><c>true</c> if less or equal, <c>false</c> otherwise.</returns>
+        public Boolean VerifyLessOrEqual(PopulationDataPoint data)
+        {
+            return this.total <= data.total && this.male <= data.male && this.female <= data.female;
         }
     }
 
