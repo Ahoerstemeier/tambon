@@ -31,6 +31,7 @@
             this.cbxEntityType = new System.Windows.Forms.ComboBox();
             this.lbxNames = new System.Windows.Forms.ListBox();
             this.btnThaiWikipedia = new System.Windows.Forms.Button();
+            this.cbxProvinces = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cbxEntityType
@@ -45,9 +46,9 @@
             // lbxNames
             // 
             this.lbxNames.FormattingEnabled = true;
-            this.lbxNames.Location = new System.Drawing.Point(16, 51);
+            this.lbxNames.Location = new System.Drawing.Point(16, 77);
             this.lbxNames.Name = "lbxNames";
-            this.lbxNames.Size = new System.Drawing.Size(256, 173);
+            this.lbxNames.Size = new System.Drawing.Size(256, 147);
             this.lbxNames.TabIndex = 1;
             // 
             // btnThaiWikipedia
@@ -60,11 +61,21 @@
             this.btnThaiWikipedia.UseVisualStyleBackColor = true;
             this.btnThaiWikipedia.Click += new System.EventHandler(this.btnThaiWikipedia_Click);
             // 
+            // cbxProvinces
+            // 
+            this.cbxProvinces.FormattingEnabled = true;
+            this.cbxProvinces.Location = new System.Drawing.Point(12, 39);
+            this.cbxProvinces.Name = "cbxProvinces";
+            this.cbxProvinces.Size = new System.Drawing.Size(260, 21);
+            this.cbxProvinces.TabIndex = 3;
+            this.cbxProvinces.SelectedValueChanged += new System.EventHandler(this.cbxProvinces_SelectedValueChanged);
+            // 
             // DisambiguationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.cbxProvinces);
             this.Controls.Add(this.btnThaiWikipedia);
             this.Controls.Add(this.lbxNames);
             this.Controls.Add(this.cbxEntityType);
@@ -80,5 +91,6 @@
         private System.Windows.Forms.ComboBox cbxEntityType;
         private System.Windows.Forms.ListBox lbxNames;
         private System.Windows.Forms.Button btnThaiWikipedia;
+        private System.Windows.Forms.ComboBox cbxProvinces;
     }
 }

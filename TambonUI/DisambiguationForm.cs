@@ -43,12 +43,13 @@ namespace De.AHoerstemeier.Tambon.UI
             allEntities = new List<Entity>();
             var entities = GlobalData.CompleteGeocodeList();
             allEntities.AddRange(entities.FlatList().Where(x => !x.IsObsolete));
+            cbxProvinces.Items.AddRange(allEntities.Where(x => x.type == EntityType.Changwat).ToArray());
 
             var allTambon = allEntities.Where(x => x.type == EntityType.Tambon).ToList();
             foreach ( var tambon in allTambon )
             {
                 var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
-                if ( localGovernmentEntity != null )
+                if ( localGovernmentEntity != null && !localGovernmentEntity.IsObsolete )
                 {
                     allEntities.Add(localGovernmentEntity);
                 }
@@ -57,13 +58,27 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void cbxEntityType_SelectedValueChanged(Object sender, EventArgs e)
         {
+            UpdateDisambiguationList();
+        }
+
+        private void UpdateDisambiguationList()
+        {
             lbxNames.Items.Clear();
+            UInt32 geocode = 0;
+            if ( cbxProvinces.SelectedItem != null )
+            {
+                geocode = (cbxProvinces.SelectedItem as Entity).geocode;
+            }
             if ( cbxEntityType.SelectedItem != null )
             {
                 var selectedType = (EntityType)cbxEntityType.SelectedItem;
                 var currentEntities = allEntities.Where(x => x.type == selectedType).ToList();
                 var names = currentEntities.GroupBy(x => x.name).Where(y => y.Count() > 1).OrderByDescending(z => z.Count()).ThenBy(z => z.First().english);
                 var currentNames = names.Select(x => new EntityList(x.OrderBy(y => y.geocode)));
+                if ( geocode != 0 )
+                {
+                    currentNames = currentNames.Where(x => x.Entities.Any(y => GeocodeHelper.IsBaseGeocode(geocode, y.geocode)));
+                }
                 foreach ( var x in currentNames )
                 {
                     lbxNames.Items.Add(x);
@@ -107,6 +122,11 @@ namespace De.AHoerstemeier.Tambon.UI
                 Clipboard.Clear();
                 Clipboard.SetText(builder.ToString());
             }
+        }
+
+        private void cbxProvinces_SelectedValueChanged(Object sender, EventArgs e)
+        {
+            UpdateDisambiguationList();
         }
     }
 }
