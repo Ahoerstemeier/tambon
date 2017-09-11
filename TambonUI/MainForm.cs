@@ -1166,7 +1166,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
 
-                foreach ( var data in population.data )
+                foreach ( var data in population.data.Where(x => x.valid) )
                 {
                     if ( data.male != 0 && data.female != 0 )
                     {
@@ -1228,7 +1228,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     var populationToAdd = subEntity.population.FirstOrDefault(y => y.source == type && y.Year == year);
                     if ( populationToAdd != null )
                     {
-                        foreach ( var dataPoint in populationToAdd.data )
+                        foreach ( var dataPoint in populationToAdd.data.Where(x => x.valid) )
                         {
                             sum.AddDataPoint(dataPoint);
                         }
