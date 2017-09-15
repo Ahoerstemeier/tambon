@@ -270,7 +270,12 @@ namespace De.AHoerstemeier.Tambon
                         entityType = entityTypeName.Key;
                     }
                 }
-                if ( (entityType == EntityType.Unknown) | (entityType == EntityType.Bangkok) )
+                if ( value.StartsWith("หมู่ที่") )
+                {
+                    entityType = EntityType.Muban;
+                    name = value.Split(' ').ElementAtOrDefault(2);
+                }
+                else if ( (entityType == EntityType.Unknown) | (entityType == EntityType.Bangkok) )
                 {
                     name = value;
                 }

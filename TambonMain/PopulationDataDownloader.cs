@@ -22,13 +22,41 @@ namespace De.AHoerstemeier.Tambon
 
     public class PopulationDataDownloader
     {
+        /// <summary>
+        /// Statistics data types provided by DOPA.
+        /// </summary>
         private enum DopaStatisticsType
         {
+            /// <summary>
+            /// Population data - total, male, female, household.
+            /// </summary>
             Population = 1,
-            Household = 2,  // strange data, not linked in website, male column is same value as number of households
+
+            /// <summary>
+            /// Household data.
+            /// </summary>
+            /// <remarks>Strange data, not linked in website. Male column is same value as number of households.</remarks>
+            [Obsolete]
+            Household = 2,
+
+            /// <summary>
+            /// Birth numbers.
+            /// </summary>
             Birth = 3,
+
+            /// <summary>
+            /// Death numbers.
+            /// </summary>
             Death = 4,
+
+            /// <summary>
+            /// Move out numbers.
+            /// </summary>
             MoveOut = 5,
+
+            /// <summary>
+            /// Move in numbers.
+            /// </summary>
             MoveIn = 6
         }
 
@@ -43,6 +71,11 @@ namespace De.AHoerstemeier.Tambon
         /// Year in Buddhist era, shortened to two digits.
         /// </summary>
         private Int32 _yearShort = 0;
+
+        /// <summary>
+        /// Whether the download should go down to Muban level.
+        /// </summary>
+        private Boolean _downloadMuban = false;
 
         #endregion fields
 
@@ -110,19 +143,74 @@ namespace De.AHoerstemeier.Tambon
 
         #region constants
 
-        // 0 -> year - 2500
-        // 1 -> geocode, 4 digits
+        /// <summary>
+        /// URL to show the population data of an Amphoe.
+        /// </summary>
+        /// <remarks>
+        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
+        /// <para>{1} is expanded by the geocode (4 digits).</para>
+        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
+        /// </remarks>
         private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType={2}&year={0}&rcode={1}";
 
+        /// <summary>
+        /// URL to download the population data of an Amphoe in JSON format.
+        /// </summary>
+        /// <remarks>
+        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
+        /// <para>{1} is expanded by the geocode (4 digits).</para>
+        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
+        /// </remarks>
         private const String _urlDataAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType={2}&year={0}&rcode={1}";
 
-        // 0 -> year - 2500
-        // 1 -> geocode, 2 digits
+        /// <summary>
+        /// URL to show the population data of a province.
+        /// </summary>
+        /// <remarks>
+        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
+        /// <para>{1} is expanded by the geocode (2 digits).</para>
+        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
+        /// </remarks>
         private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType={2}&year={0}&rcode={1}";
 
+        /// <summary>
+        /// URL to download the population data of a province in JSON format.
+        /// </summary>
+        /// <remarks>
+        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
+        /// <para>{1} is expanded by the geocode (2 digits).</para>
+        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
+        /// </remarks>
         private const String _urlDataChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType={2}&year={0}&rcode={1}";
 
+        /// <summary>
+        /// URL to download the population data of the country in JSON format.
+        /// </summary>
+        /// <remarks>
+        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
+        /// <para>{1} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
+        /// </remarks>
         private const String _urlDataCountry = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatProvince.php?statType={1}&year={0}";
+
+        /// <summary>
+        /// URL to show the population data of a tambon.
+        /// </summary>
+        /// <remarks>
+        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
+        /// <para>{1} is expanded by the geocode (8 digits, see <see cref="TambonGeocodeForDataRetrieval"/>).</para>
+        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
+        /// </remarks>
+        private const String _urlShowTambon = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showVillageData.php?rcode={1}&statType={2}&year={0}";
+
+        /// <summary>
+        /// URL to download the population data of a tambon.
+        /// </summary>
+        /// <remarks>
+        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
+        /// <para>{1} is expanded by the geocode (8 digits, see <see cref="TambonGeocodeForDataRetrieval"/>).</para>
+        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
+        /// </remarks>
+        private const String _urlDataTambon = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatVillage.php?rcode={1}&statType={2}&year={0}";
 
         /// <summary>
         /// Maximum number of retries of a invalid JSon reply from the DOPA server.
@@ -144,8 +232,15 @@ namespace De.AHoerstemeier.Tambon
 
         #region events
 
+        /// <summary>
+        /// Occurs when the processing is completed.
+        /// </summary>
         public EventHandler<EventArgs> ProcessingFinished;
 
+        /// <summary>
+        /// Throws the <see cref="ProcessingFinished"/> event.
+        /// </summary>
+        /// <param name="e">Event arguments.</param>
         private void OnProcessingFinished(EventArgs e)
         {
             if ( ProcessingFinished != null )
@@ -237,6 +332,23 @@ namespace De.AHoerstemeier.Tambon
 
         #region private methods
 
+        /// <summary>
+        /// Calculates the geocode needed to retrieve the Tambon data from DOPA.
+        /// </summary>
+        /// <param name="geocode">Geocode of the Tambon (6 digits).</param>
+        /// <param name="parentGeocode">Geocode of the parent (Amphoe or Thesaban, 4 digits)</param>
+        /// <returns>Combined geocode.</returns>
+        private UInt32 TambonGeocodeForDataRetrieval(UInt32 geocode, UInt32 parentGeocode)
+        {
+            return parentGeocode * 10000 + geocode % 10000;
+        }
+
+        /// <summary>
+        /// Download the population data from DOPA.
+        /// </summary>
+        /// <param name="geocode">Geocode of the entity.</param>
+        /// <param name="statisticsType">Statistics type.</param>
+        /// <returns>JSON object returned from website.</returns>
         private JsonObject GetDataFromDopa(UInt32 geocode, DopaStatisticsType statisticsType)
         {
             JsonObject obj = null;
@@ -245,9 +357,13 @@ namespace De.AHoerstemeier.Tambon
             {
                 url = String.Format(CultureInfo.InvariantCulture, _urlDataChangwat, _yearShort, geocode, (Int32)statisticsType);
             }
-            else
+            else if ( geocode < 10000 )
             {
                 url = String.Format(CultureInfo.InvariantCulture, _urlDataAmphoe, _yearShort, geocode, (Int32)statisticsType);
+            }
+            else
+            {
+                url = String.Format(CultureInfo.InvariantCulture, _urlDataTambon, _yearShort, geocode, (Int32)statisticsType);
             }
             Int32 errorCount = 0;
             while ( obj == null )
@@ -290,6 +406,12 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
+        /// <summary>
+        /// Gets the URL to display the population data of a province.
+        /// </summary>
+        /// <param name="year">Year number.</param>
+        /// <param name="geocode">Geocode of the province.</param>
+        /// <returns>URL to display the data.</returns>
         public static Uri GetDisplayUrl(Int32 year, UInt32 geocode)
         {
             UInt32 changwatGeocode = GeocodeHelper.ProvinceCode(geocode);
@@ -297,6 +419,11 @@ namespace De.AHoerstemeier.Tambon
             return new Uri(url);
         }
 
+        /// <summary>
+        /// Parsing the JSON data returned from DOPA website.
+        /// </summary>
+        /// <param name="data">JSON data.</param>
+        /// <returns>Entities with population data.</returns>
         private IEnumerable<Entity> ParsePopulationJson(JsonObject data)
         {
             var result = new List<Entity>();
@@ -346,6 +473,10 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        /// <summary>
+        /// Creates an empty population entry for the current download.
+        /// </summary>
+        /// <returns>Empty population data.</returns>
         private PopulationData CreateEmptyPopulationEntry()
         {
             PopulationData population = new PopulationData();
@@ -356,7 +487,7 @@ namespace De.AHoerstemeier.Tambon
             return population;
         }
 
-        protected void GetProvinceData()
+        private void GetProvinceData()
         {
             Data = new Entity();
             var populationJsonData = GetDataFromDopa(_geocode, DopaStatisticsType.Population);
@@ -365,6 +496,14 @@ namespace De.AHoerstemeier.Tambon
             {
                 var subPopulationData = GetDataFromDopa(entity.geocode, DopaStatisticsType.Population);
                 entity.entity.AddRange(ParsePopulationJson(subPopulationData));
+                if ( _geocode > 10 && _downloadMuban )  // Bangkok has no Muban
+                {
+                    foreach ( var tambonEntity in entity.entity )
+                    {
+                        var mubanPopulationData = GetDataFromDopa(TambonGeocodeForDataRetrieval(tambonEntity.geocode, entity.geocode), DopaStatisticsType.Population);
+                        tambonEntity.entity.AddRange(ParsePopulationJson(mubanPopulationData));
+                    }
+                }
             }
             Data.geocode = _geocode;
             Data.population = new List<PopulationData>();
@@ -490,7 +629,9 @@ namespace De.AHoerstemeier.Tambon
         private void ProcessProvince(UInt32 geocode)
         {
             GetProvinceData();
+            // TODO: Special handling of Mu 0 (หมู่ที่ 0) entries
             GetGeocodes();
+            // TODO: special handling of Muban and Thesaban, also to be done in ReOrderThesaban()?
             ReOrderThesaban();
             FixupWronglyPlacedAmphoe();
             var toRemove = new List<Entity>();
