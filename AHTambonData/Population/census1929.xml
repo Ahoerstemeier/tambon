@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
   <population source="Census" year="1929" referencedate="1929-07-16">
-    <data type="total" total="11506207" male="6796066" female="6711142" />
+    <data type="total" total="11506207" male="5795066" female="5711142" />
   </population>
   <!-- TODO: add Monthon, find numbers for provinces abolished in 1932 -->
   <entity type="Bangkok" geocode="10" name="กรุงเทพฯ" english="Bangkok">
@@ -31,7 +31,8 @@
   </entity>
   <entity type="Changwat" geocode="12" name="นนทบุรี" english="Nonthaburi">
     <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="102394" male="52533" female="49864" />
+      <data type="total" total="102394" />
+      <data type="total" total="102394" male="52533" female="49864" valid="0" comment="Yearbook 1952, male/female don't sum up" />
     </population>
   </entity>
   <entity type="Changwat" geocode="12" name="ปทุมธานี" english="Pathum Thani">
