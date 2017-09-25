@@ -155,7 +155,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 counter.RemoveAll(x => x.Item3 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate (Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
+                    counter.Sort(delegate(Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
                     {
                         return (p2.Item3.CompareTo(p1.Item3));
                     });
@@ -192,7 +192,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 // counter.RemoveAll(x => x.Item2 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate (Tuple<String, Int32> p1, Tuple<String, Int32> p2)
+                    counter.Sort(delegate(Tuple<String, Int32> p1, Tuple<String, Int32> p2)
                     {
                         var result = p2.Item2.CompareTo(p1.Item2);
                         if ( result == 0 )
@@ -997,7 +997,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void btn_Population_Click(Object sender, EventArgs e)
         {
             var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
-            // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 13);
+            // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 83);
             downloader.Process();
             var output = XmlManager.EntityToXml<Entity>(downloader.Data);
             File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
