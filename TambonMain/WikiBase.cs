@@ -90,6 +90,7 @@ namespace De.AHoerstemeier.Tambon
 
         public const String PropertyIdStartDate = "P580";
         public const String PropertyIdEndDate = "P582";
+        public const String PropertyAppliesToPart = "P518";
 
         // for sources
         public const String PropertyIdStatedIn = "P248";
@@ -168,6 +169,10 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemCensus1929 = "Q15639341";
         public const String ItemCensus1919 = "Q15639367";
         public const String ItemCensus1909 = "Q15639395";
+
+        public const String ItemSeatOfLocalGovernment = "Q543654";
+        public const String ItemDistrictOffice = "Q41769254";
+        public const String ItemProvinceHall = "Q41769446";
 
         public const String ItemSocialMediaTwitter = "Q918";
         public const String ItemSocialMediaFacebook = "Q335";
