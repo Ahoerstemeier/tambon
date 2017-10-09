@@ -578,6 +578,11 @@
           <xs:documentation>Google Customer Id of the location. URL for id 123 is https://maps.google.com/?cid=123 </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="googleplace" type="t:SocialWebLink" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Google Place Id of the location. URL for id 123 is https://www.google.com/maps/place/?q=place_id:123 </xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="blog" type="t:MyUri" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>Blog URL.</xs:documentation>

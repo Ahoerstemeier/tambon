@@ -401,6 +401,13 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element name="googleplace" type="t:Identifier" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Google Place ID. Url in catalog for PlaceId 123 is https://www.google.com/maps/place/?q=place_id:123
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="Entity">
