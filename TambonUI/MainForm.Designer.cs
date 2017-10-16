@@ -68,6 +68,7 @@
             this.btnMubanList = new System.Windows.Forms.Button();
             this.btnTambonList = new System.Windows.Forms.Button();
             this.btnLaoList = new System.Windows.Forms.Button();
+            this.btnYearbookCompare = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -353,6 +354,7 @@
             // 
             // grpTesting
             // 
+            this.grpTesting.Controls.Add(this.btnYearbookCompare);
             this.grpTesting.Controls.Add(this.btnShowPopulation);
             this.grpTesting.Controls.Add(this.btnPopulationTable);
             this.grpTesting.Controls.Add(this.btnDisambiguation);
@@ -507,6 +509,16 @@
             this.btnLaoList.UseVisualStyleBackColor = true;
             this.btnLaoList.Click += new System.EventHandler(this.btnLaoList_Click);
             // 
+            // btnYearbookCompare
+            // 
+            this.btnYearbookCompare.Location = new System.Drawing.Point(394, 117);
+            this.btnYearbookCompare.Name = "btnYearbookCompare";
+            this.btnYearbookCompare.Size = new System.Drawing.Size(102, 23);
+            this.btnYearbookCompare.TabIndex = 67;
+            this.btnYearbookCompare.Text = "Yearbook";
+            this.btnYearbookCompare.UseVisualStyleBackColor = true;
+            this.btnYearbookCompare.Click += new System.EventHandler(this.btnYearbookCompare_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,6 +600,7 @@
         private System.Windows.Forms.Button btnPopulationTable;
         private System.Windows.Forms.Button btnShowPopulation;
         private System.Windows.Forms.Button btnLaoList;
+        private System.Windows.Forms.Button btnYearbookCompare;
     }
 }
 

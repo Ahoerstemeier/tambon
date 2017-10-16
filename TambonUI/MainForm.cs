@@ -155,7 +155,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 counter.RemoveAll(x => x.Item3 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate(Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
+                    counter.Sort(delegate (Tuple<String, String, Int32> p1, Tuple<String, String, Int32> p2)
                     {
                         return (p2.Item3.CompareTo(p1.Item3));
                     });
@@ -192,7 +192,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 // counter.RemoveAll(x => x.Item2 < 2);
                 if ( counter.Any() )
                 {
-                    counter.Sort(delegate(Tuple<String, Int32> p1, Tuple<String, Int32> p2)
+                    counter.Sort(delegate (Tuple<String, Int32> p1, Tuple<String, Int32> p2)
                     {
                         var result = p2.Item2.CompareTo(p1.Item2);
                         if ( result == 0 )
@@ -1464,7 +1464,7 @@ namespace De.AHoerstemeier.Tambon.UI
             formPopulationByEntityTypeViewer.Show();
         }
 
-        private void btnLaoList_Click(object sender, EventArgs e)
+        private void btnLaoList_Click(Object sender, EventArgs e)
         {
             var baseEntity = GlobalData.CompleteGeocodeList();
             baseEntity.PropagateObsoleteToSubEntities();
@@ -1492,6 +1492,57 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             Clipboard.Clear();
             Clipboard.SetText(builder.ToString());
+        }
+
+        private void btnYearbookCompare_Click(Object sender, EventArgs e)
+        {
+            var dialog = new OpenFileDialog();
+            dialog.InitialDirectory = Path.Combine(GlobalData.BaseXMLDirectory, "EntityLists");
+            dialog.Multiselect = true;
+            dialog.ShowDialog();
+            if ( dialog.FileNames.Count() == 2 )
+            {
+                var builder = new StringBuilder();
+                List<EntityType> entityTypes = new List<EntityType>() { EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Tambon, EntityType.Muban, EntityType.Thesaban, EntityType.Sukhaphiban };
+
+                Entity dataOne = null;
+                using ( var fileStream = new FileStream(dialog.FileNames.First(), FileMode.Open, FileAccess.Read) )
+                {
+                    dataOne = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
+                }
+                Entity dataTwo = null;
+                using ( var fileStream = new FileStream(dialog.FileNames.Last(), FileMode.Open, FileAccess.Read) )
+                {
+                    dataTwo = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
+                }
+                var dataTwoFlat = dataTwo.FlatList();
+                foreach ( var entity in dataOne.FlatList() )
+                {
+                    var compare = dataTwoFlat.FirstOrDefault(x => x.geocode == entity.geocode);
+                    if ( compare != null )
+                    {
+                        builder.AppendFormat("{0},{1}", entity.english, entity.geocode);
+                        foreach ( var entityType in entityTypes )
+                        {
+                            Int32 value = 0;
+                            var oldItem = entity.entitycount.First().entry.FirstOrDefault(x => x.type == entityType);
+                            if ( oldItem != null )
+                            {
+                                value += Convert.ToInt32(oldItem.count);
+                            }
+                            var newItem = compare.entitycount.First().entry.FirstOrDefault(x => x.type == entityType);
+                            if ( newItem != null )
+                            {
+                                value += Convert.ToInt32(newItem.count);
+                            }
+                            builder.AppendFormat(",{0}", value);
+                        }
+                        builder.AppendLine();
+                    }
+                }
+                Clipboard.Clear();
+                Clipboard.SetText(builder.ToString());
+            }
         }
     }
 }
