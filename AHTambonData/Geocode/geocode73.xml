@@ -459,39 +459,6 @@
     </entity>
     <entity type="Tambon" name="บ่อพลับ" english="Bo Phlap" geocode="730110">
       <wiki wikidata="Q17365471" />
-      <office type="MunicipalityOffice">
-        <symbols>
-          <vision>
-            ชุมชนน่าอยู่ ผู้คนมีการศึกษา เศรษฐกิจก้าวหน้า
-            คมนาคมสะดวก ครอบครัวอบอุ่น มีคุณภาพชีวิตที่ดี
-          </vision>
-        </symbols>
-        <url lastchecked="2014-04-22">http://www.borplub.com/</url>
-        <socialweb>
-          <googleplus type="user" status="active">114683665896692437008</googleplus>
-          <googleplus type="user" status="unknown">102427428256449783350</googleplus>
-        </socialweb>
-        <officials>
-          <official title="Mayor" name="ณรงค์เดช สุระเสียง" begin="2012-07-08" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ณรงค์เดช สุระเสียง" begin="2008-08-31" end="2012-05-31" beginreason="ElectedDirectly" endreason="StatusChange" />
-        </officials>
-        <council>
-          <term begin="2012-07-08" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2008-08-31" end="2012-05-31" type="TAO" size="16" endreason="StatusChange" />
-          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="16" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2012-06-01" status="Done">
-            <meetingreference board="1" number="9" date="2012-02-06" />
-          </statuschange>
-          <create effective="1996-03-20" status="Gazette" type="TAO">
-            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="730110" coverage="partially" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="73011001" name="บ้านไผ่เกาะ" english="Ban Phai Ko" />
       <entity type="Muban" geocode="73011002" name="บ้านหนองจอก" english="Ban Nong Chok" />
       <entity type="Muban" geocode="73011003" name="บ้านท่าทราย" english="Ban Tha Sai" />
@@ -5055,6 +5022,42 @@
       </create>
     </history>
   </entity>
-  <!-- 7380|ท้องถิ่นเทศบาลตำบลบ่อพลับ
--->
+  <entity type="ThesabanTambon" name="บ่อพลับ" english="Bo Phlap" geocode="7380" parent="7301" tambon="730110">
+    <wiki wikidata="Q42171638" />
+    <office type="MunicipalityOffice">
+      <symbols>
+        <vision>
+          ชุมชนน่าอยู่ ผู้คนมีการศึกษา เศรษฐกิจก้าวหน้า
+          คมนาคมสะดวก ครอบครัวอบอุ่น มีคุณภาพชีวิตที่ดี
+        </vision>
+      </symbols>
+      <url lastchecked="2017-10-17">http://www.borplub.go.th/</url>
+      <url lastchecked="2014-04-22">http://www.borplub.com/</url>
+      <socialweb>
+        <googleplus type="user" status="active">114683665896692437008</googleplus>
+        <googleplus type="user" status="unknown">102427428256449783350</googleplus>
+        <foursquare>5268ad32498e929085c606df</foursquare>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="ณรงค์เดช สุระเสียง" begin="2012-07-08" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="ณรงค์เดช สุระเสียง" begin="2008-08-31" end="2012-05-31" beginreason="ElectedDirectly" endreason="StatusChange" />
+      </officials>
+      <council>
+        <term begin="2012-07-08" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2008-08-31" end="2012-05-31" type="TAO" size="16" endreason="StatusChange" />
+        <term begin="2004-07-25" end="2008-07-24" type="TAO" size="16" />
+      </council>
+      <areacoverage>
+        <entity geocode="730110" coverage="partially" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2012-06-01" status="Done">
+        <meetingreference board="1" number="9" date="2012-02-06" />
+      </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
+    </history>
+  </entity>
 </entity>

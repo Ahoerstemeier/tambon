@@ -432,32 +432,6 @@
     </entity>
     <entity type="Tambon" name="บางพูน" english="Bang Phun" geocode="130111">
       <wiki wikidata="Q16878980" />
-      <office type="MunicipalityOffice">
-        <wiki wikidata="Q15980694" />
-        <url>http://www.bangpoon.go.th/</url>
-        <socialweb>
-          <twitter>bangpoonpoon</twitter>
-        </socialweb>
-        <officials>
-          <official title="Mayor" name="อำนวย นาคบุรินทร์" begin="2012-03-11" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="อำนวย นาคบุรินทร์" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-03-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2007-09-30" end="2011-09-29" type="TAO" size="12" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done">
-            <meetingreference board="1" number="53" date="2011-08-22" />
-          </statuschange>
-          <create effective="1995-03-03" status="Gazette" type="TAO">
-            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="130111" coverage="completely" />
-        </areacoverage>
-      </office>
       <!--<history>
         <create effective="1947-06-01" status="Gazette" type="Tambon" splitfrom="130114" subdivisions="5" subdivisiontype="Muban">
           <gazetteref volume="64" page="1114" issue="26 ง" date="1947-06-10" />
@@ -3083,7 +3057,39 @@
       </create>
     </history>
   </entity>
-  <!-- 1380|ท้องถิ่นเทศบาลตำบลบางพูน
--->
+  <entity type="ThesabanTambon" name="บางพูน" english="Bang Phun" geocode="1380" parent="1301" tambon="130111">
+    <wiki wikidata="Q15980694" />
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.9968</geo:lat>
+        <geo:long>100.5891</geo:long>
+      </geo:Point>
+      <url lastchecked="2017-10-17">http://www.bangpoon.org/</url>
+      <url status="offline">http://www.bangpoon.go.th/</url>
+      <socialweb>
+        <twitter>bangpoonpoon</twitter>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="อำนวย นาคบุรินทร์" begin="2012-03-11" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="อำนวย นาคบุรินทร์" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-03-11" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2007-09-30" end="2011-09-29" type="TAO" size="12" />
+      </council>
+      <areacoverage>
+        <entity geocode="130111" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done">
+        <meetingreference board="1" number="53" date="2011-08-22" />
+      </statuschange>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
+    </history>
+  </entity>
+
   <entity type="SakhaTambon" name="คูคต" geocode="1351" english="Khu Khot" parent="1306" obsolete="1" />
 </entity>
