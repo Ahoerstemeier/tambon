@@ -1,134 +1,469 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
-  <population source="Census" year="1929" referencedate="1929-07-16">
-    <data type="total" total="11506207" male="5795066" female="5711142" />
+  <population source="Census" year="1929" referencedate="1929-07-26">
+    <data type="total" total="11506207" male="5795065" female="5711142" />
+    <data type="thai" total="10493304" male="5193554" female="5299750" />
   </population>
-  <!-- TODO: add Monthon, find numbers for provinces abolished in 1932 -->
-  <entity type="Bangkok" geocode="10" name="กรุงเทพฯ" english="Bangkok">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="713384" />
+
+  <entity type="Monthon" name="กรุงเทพ" english="Krung Thep" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="921617" male="498895" female="422722" />
+      <data type="thai" total="645806" male="320311" female="325495" />
     </population>
-    <!-- Invented geocodes -->
-    <entity type="Changwat" geocode="8" name="พระนคร" english="Phra Nakhon">
-      <!-- Including Min Buri province, abolished 1932 -->
+
+    <entity type="Bangkok" geocode="10" name="กรุงเทพฯ" english="Bangkok">
       <population source="Census" year="1929" referencedate="1929-07-16">
-        <data type="total" total="529971" male="294340" female="235631" />
+        <data type="total" total="713384" />
+      </population>
+      <!-- Invented geocodes -->
+      <entity type="Changwat" geocode="8" name="พระนคร" english="Phra Nakhon">
+        <!-- Including Min Buri province, abolished 1932 -->
+        <population source="Census" year="1929" referencedate="1929-07-16">
+          <data type="total" total="529971" male="294340" female="235631" />
+        </population>
+      </entity>
+      <entity type="Changwat" geocode="9" name="ธนบุรี" english="Thonburi">
+        <population source="Census" year="1929" referencedate="1929-07-16">
+          <data type="total" total="183413" />
+          <data type="total" total="209667" male="110561" female="98106" valid="0" comment="Yearbook 1952" />
+        </population>
+      </entity>
+    </entity>
+    <entity type="Changwat" geocode="11" name="สมุทรปราการ" english="Samut Prakan">
+      <!-- Including Phra Pradaeng province, abolished 1932 -->
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="105839" />
+        <data type="total" total="79585" male="41461" female="38124" valid="0" comment="Yearbook 1952" />
       </population>
     </entity>
-    <entity type="Changwat" geocode="9" name="ธนบุรี" english="Thonburi">
+    <entity type="Changwat" geocode="12" name="นนทบุรี" english="Nonthaburi">
       <population source="Census" year="1929" referencedate="1929-07-16">
-        <data type="total" total="183413" />
-        <data type="total" total="209667" male="110561" female="98106" valid="0" comment="Yearbook 1952" />
+        <data type="total" total="102394" />
+        <data type="total" total="102394" male="52533" female="49864" valid="0" comment="Yearbook 1952, male/female don't sum up" />
+      </population>
+    </entity>
+    <entity type="Changwat" name="พระประแดง" english="Phra Pra Daeng" geocode="0">
+    </entity>
+    <entity type="Changwat" name="มีนบุรี" english="Min Buri" geocode="0">
+    </entity>
+  </entity>
+  <entity type="Monthon" name="อยุธยา" english="Ayutthaya" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="839775" male="426578" female="413197" />
+      <data type="thai" total="814703" male="408169" female="406534" />
+    </population>
+
+    <entity type="Changwat" geocode="12" name="ปทุมธานี" english="Pathum Thani">
+      <!-- Including Thanya Buri province, abolished 1932 -->
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="104803" male="54239" female="50564" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="14" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="273654" />
+        <data type="total" total="272001" male="137103" female="134898" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="15" name="อ่างทอง" english="Ang Thong">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="106880" />
+        <data type="total" total="108435" male="54494" female="53941" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="16" name="ลพบุรี" english="Lopburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="120206" />
+        <data type="total" total="117616" male="60675" female="56941" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="17" name="สิงห์บุรี" english="Singburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="83400" />
+        <data type="total" total="79859" male="39473" female="40386" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="19" name="สระบุรี" english="Saraburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="149447" />
+        <data type="total" total="157361" male="80894" female="76467" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" name="ธัญญบุรี" english="Thanyaburi" geocode="0">
+    </entity>
+  </entity>
+  <entity type="Monthon" name="จันทบุรี" english="Chanthaburi" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="169626" male="86605" female="83021" />
+      <data type="thai" total="160853" male="80892" female="79961" />
+    </population>
+    <entity type="Changwat" geocode="21" name="ระยอง" english="Rayong">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="54951" male="27653" female="27298" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="22" name="จันทบุรี" english="Chanthaburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="83217" male="42602" female="40615" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="23" name="ตราด" english="Trat">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="31458" male="16350" female="15108" />
       </population>
     </entity>
   </entity>
-  <entity type="Changwat" geocode="11" name="สมุทรปราการ" english="Samut Prakan">
-    <!-- Including Phra Pradaeng province, abolished 1932 -->
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="105839" />
-      <data type="total" total="79585" male="41461" female="38124" valid="0" comment="Yearbook 1952" />
+  <entity type="Monthon" name="นครชัยศรี" english="Nakhon Chai Si" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="474542" male="242028" female="232514" />
+      <data type="thai" total="445423" male="222657" female="222766" />
     </population>
+    <entity type="Changwat" geocode="72" name="สุพรรณบุรี" english="Suphanburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="222100" />
+        <data type="total" total="220845" male="111744" female="109101" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="73" name="นครปฐม" english="Nakhon Pathom">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="186581" male="96303" female="90278" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="74" name="สมุทรสาคร" english="Samut Sakhon">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="67116" male="33981" female="33135" />
+      </population>
+    </entity>
   </entity>
-  <entity type="Changwat" geocode="12" name="นนทบุรี" english="Nonthaburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="102394" />
-      <data type="total" total="102394" male="52533" female="49864" valid="0" comment="Yearbook 1952, male/female don't sum up" />
+  <entity type="Monthon" name="นครราชสีมา" english="Nakhon Ratchasima" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="2822710" male="1374746" female="1447964" />
+      <data type="thai" total="2760173" male="1340113" female="1420060" />
     </population>
+    <entity type="Changwat" geocode="30" name="นครราชสีมา" english="Nakhon Ratchasima">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="426505" />
+        <data type="total" total="729064" male="219600" female="218729" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="31" name="บุรีรัมย์" english="Buriram">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="170309" male="85336" female="84973" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="36" name="ชัยภูมิ" english="Chaiyaphum">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="175275" male="85745" female="89530" />
+      </population>
+    </entity>
   </entity>
-  <entity type="Changwat" geocode="12" name="ปทุมธานี" english="Pathum Thani">
-    <!-- Including Thanya Buri province, abolished 1932 -->
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="104803" male="54239" female="50564" />
+  <entity type="Monthon" name="นครสวรรค์" english="Nakhon Sawan" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="512971" male="260103" female="252868" />
+      <data type="thai" total="488057" male="244600" female="243457" />
     </population>
+    <entity type="Changwat" geocode="60" name="นครสวรรค์" english="Nakhon Sawan">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="207321" />
+        <data type="total" total="206635" male="105806" female="100829" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="61" name="อุทัยธานี" english="Uthai Thani">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="74006" />
+        <data type="total" total="73060" male="36473" female="36587" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="62" name="กำแพงเพชร" english="Kamphaeng Phet">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="42503" male="21757" female="20746" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="63" name="ตาก" english="Tak">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="71775" />
+        <data type="total" total="71696" male="35946" female="35750" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="18" name="ชัยนาท" english="Chainat">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="118131" />
+        <data type="total" total="119077" male="60121" female="58956" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
   </entity>
-  <entity type="Changwat" geocode="14" name="พระนครศรีอยุธยา" english="Phra Nakhon Si Ayutthaya">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="273654" />
-      <data type="total" total="272001" male="137103" female="134898" valid="0" comment="Yearbook 1952" />
+  <entity type="Monthon" name="นครศรีธรรมราช" english="Nakhon Si Thammarat" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="909175" male="461698" female="447477" />
+      <data type="thai" total="821475" male="409146" female="412329" />
     </population>
+    <entity type="Changwat" geocode="90" name="สงขลา" english="Songkhla">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="241646" male="122406" female="119240" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="80" name="นครศรีธรรมราช" english="Nakhon Si Thammarat">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="306891" male="154901" female="151990" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="93" name="พัทลุง" english="Phattalung">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="98312" />
+        <data type="total" total="98312" male="49101" female="49302" valid="false" comment="Male plus female off by 91 as of Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="142927" male="73421" female="69506" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="86" name="ชุมพร" english="Chumphon">
+      <!-- Including Lang Suan province, abolished 1932 -->
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="83724" male="43638" female="40086" />
+      </population>
+    </entity>
+    <entity type="Changwat" name="หลังสวน" english="Lang Suan" geocode="0">
+    </entity>
   </entity>
-  <entity type="Changwat" geocode="15" name="อ่างทอง" english="Ang Thong">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="106880" />
-      <data type="total" total="108435" male="54494" female="53941" valid="0" comment="Yearbook 1952" />
+  <entity type="Monthon" name="ปัตตานี" english="Pattani" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="335148" male="169145" female="166003" />
+      <data type="thai" total="55628" male="27960" female="27668" />
     </population>
+    <entity type="Changwat" geocode="94" name="ปัตตานี" english="Pattani">
+      <!-- Including Sai Buri province, abolished 1932 -->
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="182268" male="90662" female="91606" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="95" name="ยะลา" english="Yala">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="59596" male="30995" female="28601" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="96" name="นราธิวาส" english="Narathiwat">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="93284" male="47488" female="45796" />
+      </population>
+    </entity>
+    <entity type="Changwat" name="สายบุรี" english="Sai Buri" geocode="0" comment="Abolished 1933, added to Pattani and Narathiwat">
+    </entity>
   </entity>
-  <entity type="Changwat" geocode="16" name="ลพบุรี" english="Lopburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="120206" />
-      <data type="total" total="117616" male="60675" female="56941" valid="0" comment="Yearbook 1952" />
+  <entity type="Monthon" name="ปราจีนบุรี" english="Prachin Buri" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="508339" male="260990" female="247349" />
+      <data type="thai" total="457942" male="228834" female="229108" />
     </population>
+    <entity type="Changwat" geocode="20" name="ชลบุรี" english="Chonburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="123718" male="63927" female="59791" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="24" name="ฉะเชิงเทรา" english="Chachoengsao">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="163322" male="84010" female="79312" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="25" name="ปราจีนบุรี" english="Prachinburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="141375" male="72361" female="69014" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="26" name="นครนายก" english="Nakhon Nayok">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="79924" />
+        <data type="total" total="70924" male="72361" female="69014" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
   </entity>
-  <entity type="Changwat" geocode="17" name="สิงห์บุรี" english="Singburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="83400" />
-      <data type="total" total="79859" male="39473" female="40386" valid="0" comment="Yearbook 1952" />
+  <entity type="Monthon" name="พิษณุโลก" english="Phitsanulok" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="576951" male="291528" female="285423" />
+      <data type="thai" total="567562" male="283748" female="283814" />
     </population>
+    <entity type="Changwat" geocode="64" name="สวรรคโลก" english="Sawankhalok">
+      <!-- Including Sukhothai province, abolished 1932. Renamed 1939 -->
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="115159" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="65" name="พิษณุโลก" english="Phitsanulok">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="122624" />
+        <data type="total" total="122677" male="61937" female="60740" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" name="สุโขทัย" english="Sukhothai" geocode="0" comment="Abolished 1933, Sawankhalok renamed 1939">
+    </entity>
+    <entity type="Changwat" geocode="66" name="พิจิตร" english="Phichit">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="122405" />
+        <data type="total" total="122961" male="63367" female="59594" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="67" name="เพชรบูรณ์" english="Phetchabun">
+      <!-- Including Lom Sak province, abolished 1932 -->
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="102622" male="51206" female="51416" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="53" name="อุตรดิตถ์" english="Uttaradit">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="113506" />
+        <data type="total" total="113161" male="57034" female="56127" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" name="หล่มสัก" english="Lom Sak" geocode="0">
+    </entity>
   </entity>
-  <entity type="Changwat" geocode="18" name="ชัยนาท" english="Chainat">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="118131" />
-      <data type="total" total="119077" male="60121" female="58956" valid="0" comment="Yearbook 1952" />
+  <entity type="Monthon" name="พายัพ" english="Phayap" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="1549390" male="776780" female="772610" />
+      <data type="thai" total="1442213" male="719974" female="722239" />
     </population>
+    <entity type="Changwat" geocode="50" name="เชียงใหม่" english="Chiang Mai">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="440897" />
+        <data type="total" total="440694" male="222371" female="218323" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="57" name="เชียงราย" english="Chiang Rai">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="335697" />
+        <data type="total" total="335900" male="168871" female="167029" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="58" name="แม่ฮ่องสอน" english="Mae Hong Son">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="55725" male="27239" female="28486" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="51" name="ลำพูน" english="Lamphun">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="142689" male="70886" female="71803" />
+      </population>
+    </entity>
   </entity>
-  <entity type="Changwat" geocode="19" name="สระบุรี" english="Saraburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="149447" />
-      <data type="total" total="157361" male="80894" female="76467" valid="0" comment="Yearbook 1952" />
+  <entity type="Monthon" name="ภูเก็จ" english="Phuket" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="242041" male="127437" female="114604" />
+      <data type="thai" total="224412" male="112993" female="111419" />
     </population>
+    <entity type="Changwat" geocode="81" name="กระบี่" english="Krabi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="41201" male="20920" female="20281" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="82" name="พังงา" english="Phang Nga">
+      <!-- Including Takua Pa province, abolished 1932 -->
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="47907" male="26077" female="21830" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="83" name="ภูเก็ต" english="Phuket">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="32161" male="17609" female="14552" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="85" name="ระนอง" english="Ranong">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="18068" male="10035" female="8033" />
+      </population>
+    </entity>
+    <entity type="Changwat" name="ตะกั่วป่า" english="Takua Pa" geocode="0">
+    </entity>
+    <entity type="Changwat" geocode="91" name="สตูล" english="Satun">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="35675" male="18322" female="17353" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="92" name="ตรัง" english="Trang">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="102704" />
+        <data type="total" total="102704" male="52796" female="59908" valid="false" comment="Male plus female off by 10000 as of Yearbook 1952" />
+      </population>
+    </entity>
   </entity>
-  <!--<entity type="Changwat" name="ธัญญบุรี" english="Thanyaburi" />
-  <entity type="Changwat" name="พระประแดง" english="Phra Pra Daeng" />
-  <entity type="Changwat" name="มีนบุรี" english="Min Buri" />-->
+  <entity type="Monthon" name="ราชบุรี" english="Ratchaburi" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="579357" male="294951" female="284406" />
+      <data type="thai" total="550473" male="274240" female="276233" />
+    </population>
+    <entity type="Changwat" geocode="70" name="ราชบุรี" english="Ratchaburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="229329" />
+        <data type="total" total="258216" male="132114" female="126102" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="71" name="กาญจนบุรี" english="Kanchanaburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="85116" />
+        <data type="total" total="56229" male="28775" female="27454" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="75" name="สมุทรสงคราม" english="Samut Songkhram">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="83928" male="41812" female="42116" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="76" name="เพชรบุรี" english="Phetchaburi">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="136129" />
+        <data type="total" total="136399" male="68748" female="67651" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="77" name="ประจวบคีรีขันธ์" english="Prachuap Khiri Khan">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="44855" />
+        <data type="total" total="44585" male="23502" female="21083" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+  </entity>
+  <entity type="Monthon" name="อุดร" english="Udon" geocode="0">
+    <population source="Census" year="1929" referencedate="1929-07-26">
+      <data type="total" total="1064565" male="523581" female="540984" />
+      <data type="thai" total="1058584" male="519917" female="538667" />
+    </population>
+    <entity type="Changwat" geocode="40" name="ขอนแก่น" english="Khon Kaen">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="327510" male="161005" female="166505" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="41" name="อุดรธานี" english="Udon Thani">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="182900" />
+        <data type="total" total="187139" male="92660" female="94479" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="42" name="เลย" english="Loei">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="91418" />
+        <data type="total" total="90555" male="45233" female="45322" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="43" name="หนองคาย" english="Nong Khai">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="88389" />
+        <data type="total" total="85013" male="41764" female="43249" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="47" name="สกลนคร" english="Sakon Nakhon">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="173241" male="84777" female="88464" />
+      </population>
+    </entity>
+    <entity type="Changwat" geocode="48" name="นครพนม" english="Nakhon Phanom">
+      <population source="Census" year="1929" referencedate="1929-07-16">
+        <data type="total" total="200606" />
+        <data type="total" total="201107" male="98142" female="102965" valid="0" comment="Yearbook 1952" />
+      </population>
+    </entity>
+  </entity>
 
-  <entity type="Changwat" geocode="20" name="ชลบุรี" english="Chonburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="123718" male="63927" female="59791" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="21" name="ระยอง" english="Rayong">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="54951" male="27653" female="27298" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="22" name="จันทบุรี" english="Chanthaburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="83217" male="42602" female="40615" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="23" name="ตราด" english="Trat">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="31458" male="16350" female="15108" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="24" name="ฉะเชิงเทรา" english="Chachoengsao">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="163322" male="84010" female="79312" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="25" name="ปราจีนบุรี" english="Prachinburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="141375" male="72361" female="69014" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="26" name="นครนายก" english="Nakhon Nayok">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="79924" />
-      <data type="total" total="70924" male="72361" female="69014" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
+  <!-- TODO: sort to right Monthon -->
 
-  <entity type="Changwat" geocode="30" name="นครราชสีมา" english="Nakhon Ratchasima">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="426505" />
-      <data type="total" total="729064" male="219600" female="218729" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="31" name="บุรีรัมย์" english="Buriram">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="170309" male="85336" female="84973" />
-    </population>
-  </entity>
   <entity type="Changwat" geocode="32" name="สุรินทร์" english="Surin">
     <population source="Census" year="1929" referencedate="1929-07-16">
       <data type="total" total="259351" male="127614" female="131737" />
@@ -146,34 +481,6 @@
       <data type="total" total="635427" male="161005" female="166505" valid="0" comment="Yearbook 1952" />
     </population>
   </entity>
-  <entity type="Changwat" geocode="36" name="ชัยภูมิ" english="Chaiyaphum">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="175275" male="85745" female="89530" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="40" name="ขอนแก่น" english="Khon Kaen">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="327510" male="161005" female="166505" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="41" name="อุดรธานี" english="Udon Thani">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="182900" />
-      <data type="total" total="187139" male="92660" female="94479" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="42" name="เลย" english="Loei">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="91418" />
-      <data type="total" total="90555" male="45233" female="45322" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="43" name="หนองคาย" english="Nong Khai">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="88389" />
-      <data type="total" total="85013" male="41764" female="43249" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
   <entity type="Changwat" geocode="44" name="มหาสารคาม" english="Maha Sarakham">
     <population source="Census" year="1929" referencedate="1929-07-16">
       <data type="total" total="475707" />
@@ -187,39 +494,11 @@
       <data type="total" total="381037" male="182629" female="198408" valid="0" comment="Yearbook 1952" />
     </population>
   </entity>
-  <entity type="Changwat" geocode="47" name="สกลนคร" english="Sakon Nakhon">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="173241" male="84777" female="88464" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="48" name="นครพนม" english="Nakhon Phanom">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="200606" />
-      <data type="total" total="201107" male="98142" female="102965" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
 
-  <entity type="Changwat" geocode="50" name="เชียงใหม่" english="Chiang Mai">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="440897" />
-      <data type="total" total="440694" male="222371" female="218323" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="51" name="ลำพูน" english="Lamphun">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="142689" male="70886" female="71803" />
-    </population>
-  </entity>
   <entity type="Changwat" geocode="52" name="ลำปาง" english="Lampang">
     <population source="Census" year="1929" referencedate="1929-07-16">
       <data type="total" total="258093" />
       <data type="total" total="287140" male="143708" female="143432" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="53" name="อุตรดิตถ์" english="Uttaradit">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="113506" />
-      <data type="total" total="113161" male="57034" female="56127" valid="0" comment="Yearbook 1952" />
     </population>
   </entity>
   <entity type="Changwat" geocode="54" name="แพร่" english="Phrae">
@@ -233,189 +512,4 @@
       <data type="total" total="169365" male="84894" female="84471" />
     </population>
   </entity>
-  <entity type="Changwat" geocode="57" name="เชียงราย" english="Chiang Rai">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="335697" />
-      <data type="total" total="335900" male="168871" female="167029" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="58" name="แม่ฮ่องสอน" english="Mae Hong Son">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="55725" male="27239" female="28486" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="60" name="นครสวรรค์" english="Nakhon Sawan">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="207321" />
-      <data type="total" total="206635" male="105806" female="100829" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="61" name="อุทัยธานี" english="Uthai Thani">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="74006" />
-      <data type="total" total="73060" male="36473" female="36587" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="62" name="กำแพงเพชร" english="Kamphaeng Phet">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="42503" male="21757" female="20746" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="63" name="ตาก" english="Tak">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="71775" />
-      <data type="total" total="71696" male="35946" female="35750" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="64" name="สวรรคโลก" english="Sawankhalok">
-    <!-- Including Sukhothai province, abolished 1932. Renamed 1939 -->
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="115159" />
-    </population>
-  </entity>
-  <!--<entity type="Changwat" name="สุโขทัย" english="Sukhothai" comment="Abolished 1932, Sawankhalok renamed 1939" />-->
-  <entity type="Changwat" geocode="65" name="พิษณุโลก" english="Phitsanulok">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="122624" />
-      <data type="total" total="122677" male="61937" female="60740" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="66" name="พิจิตร" english="Phichit">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="122405" />
-      <data type="total" total="122961" male="63367" female="59594" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="67" name="เพชรบูรณ์" english="Phetchabun">
-    <!-- Including Lom Sak province, abolished 1932 -->
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="102622" male="51206" female="51416" />
-    </population>
-  </entity>
-  <!--<entity type="Changwat" name="หล่มสัก" english="Lom Sak" comment="Abolished 1932" />-->
-
-  <entity type="Changwat" geocode="70" name="ราชบุรี" english="Ratchaburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="229329" />
-      <data type="total" total="258216" male="132114" female="126102" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="71" name="กาญจนบุรี" english="Kanchanaburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="85116" />
-      <data type="total" total="56229" male="28775" female="27454" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="72" name="สุพรรณบุรี" english="Suphanburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="222100" />
-      <data type="total" total="220845" male="111744" female="109101" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="73" name="นครปฐม" english="Nakhon Pathom">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="186581" male="96303" female="90278" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="74" name="สมุทรสาคร" english="Samut Sakhon">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="67116" male="33981" female="33135" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="75" name="สมุทรสงคราม" english="Samut Songkhram">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="83928" male="41812" female="42116" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="76" name="เพชรบุรี" english="Phetchaburi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="136129" />
-      <data type="total" total="136399" male="68748" female="67651" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="77" name="ประจวบคีรีขันธ์" english="Prachuap Khiri Khan">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="44855" />
-      <data type="total" total="44585" male="23502" female="21083" valid="0" comment="Yearbook 1952" />
-    </population>
-  </entity>
-
-  <entity type="Changwat" geocode="80" name="นครศรีธรรมราช" english="Nakhon Si Thammarat">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="306891" male="154901" female="151990" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="81" name="กระบี่" english="Krabi">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="41201" male="20920" female="20281" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="82" name="พังงา" english="Phang Nga">
-    <!-- Including Takua Pa province, abolished 1932 -->
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="47907" male="26077" female="21830" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="83" name="ภูเก็ต" english="Phuket">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="32161" male="17609" female="14552" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="84" name="สุราษฎร์ธานี" english="Surat Thani">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="142927" male="73421" female="69506" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="85" name="ระนอง" english="Ranong">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="18068" male="10035" female="8033" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="86" name="ชุมพร" english="Chumphon">
-    <!-- Including Lang Suan province, abolished 1932 -->
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="83724" male="43638" female="40086" />
-    </population>
-  </entity>
-  <!-- <entity type="Changwat" name="หลังสวน" english="Lang Suan" comment="Abolished 1932" />
-  <entity type="Changwat" name="ตะกั่วป่า" english="Takua Pa" comment="Abolished 1932" />-->
-  <entity type="Changwat" geocode="90" name="สงขลา" english="Songkhla">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="241646" male="122406" female="119240" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="91" name="สตูล" english="Satun">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="35675" male="18322" female="17353" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="92" name="ตรัง" english="Trang">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="102704" />
-      <data type="total" total="102704" male="52796" female="59908" valid="false" comment="Male plus female off by 10000 as of Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="93" name="พัทลุง" english="Phattalung">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="98312" />
-      <data type="total" total="98312" male="49101" female="49302" valid="false" comment="Male plus female off by 91 as of Yearbook 1952" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="94" name="ปัตตานี" english="Pattani">
-    <!-- Including Sai Buri province, abolished 1932 -->
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="182268" male="90662" female="91606" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="95" name="ยะลา" english="Yala">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="59596" male="30995" female="28601" />
-    </population>
-  </entity>
-  <entity type="Changwat" geocode="96" name="นราธิวาส" english="Narathiwat">
-    <population source="Census" year="1929" referencedate="1929-07-16">
-      <data type="total" total="93284" male="47488" female="45796" />
-    </population>
-  </entity>
-  <!--<entity type="Changwat" name="สายบุรี" english="Sai Buri" comment="Abolished 1932, added to Pattani and Narathiwat" />-->
 </entity>
