@@ -24,6 +24,14 @@ namespace De.AHoerstemeier.Tambon
         public Boolean IsAboutGeocode(UInt32 geocode, Boolean includeSubEntities)
         {
             var result = false;
+            foreach ( var entry in section )
+            {
+                var toTest = entry as IGeocode;
+                if ( toTest != null )
+                {
+                    result = result | toTest.IsAboutGeocode(geocode, includeSubEntities);
+                }
+            }
             foreach ( var entry in Items )
             {
                 var toTest = entry as IGeocode;

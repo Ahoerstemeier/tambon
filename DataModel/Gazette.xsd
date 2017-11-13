@@ -795,13 +795,48 @@
       <xs:element name="ministerialorder" type="t:MinisterialOrder" />
     </xs:choice>
   </xs:group>
+  <xs:attributeGroup name="GazetteSectionAttributes">
+    <xs:attributeGroup ref="t:ThaiNameOptional" />
+    <xs:attribute name="index" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Index number/character of the subdivision.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="page" type="xs:unsignedInt" use="optional">
+      <xs:annotation>
+        <xs:documentation>Page on which the subdivision starts.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:attributeGroup>
+
+  <xs:complexType name="EntryActionListSubSection">
+    <xs:annotation>
+      <xs:documentation>Sub-section of gazette entries.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:group ref="t:EntryAction" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attributeGroup ref="t:GazetteSectionAttributes" />
+  </xs:complexType>
+  <xs:complexType name="EntryActionListSection">
+    <xs:annotation>
+      <xs:documentation>Section of gazette entries.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="subsection" type="t:EntryActionListSubSection" minOccurs="0" maxOccurs="unbounded" />
+      <xs:group ref="t:EntryAction" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attributeGroup ref="t:GazetteSectionAttributes" />
+  </xs:complexType>
   <xs:complexType name="EntryActionList">
     <xs:annotation>
       <xs:documentation>List of gazette entries.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element name="wiki" type="t:WikiBase" minOccurs="0" maxOccurs="1" />
-      <xs:group ref='t:EntryAction' minOccurs='0' maxOccurs='unbounded' />
+      <xs:element name="section" type="t:EntryActionListSection" minOccurs="0" maxOccurs="unbounded" />
+      <xs:group ref="t:EntryAction" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name='GazetteEntry'>

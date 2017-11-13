@@ -443,6 +443,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private WikiBase wikiField;
         
+        private List<EntryActionListSection> sectionField;
+        
         private List<object> itemsField;
         
         /// <summary>
@@ -450,6 +452,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public EntryActionList() {
             this.itemsField = new List<object>();
+            this.sectionField = new List<EntryActionListSection>();
             this.wikiField = new WikiBase();
         }
         
@@ -464,35 +467,46 @@ namespace De.AHoerstemeier.Tambon {
             }
         }
         
+        [System.Xml.Serialization.XmlElementAttribute("section", Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<EntryActionListSection> section {
+            get {
+                return this.sectionField;
+            }
+            set {
+                this.sectionField = value;
+            }
+        }
+        
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
         /// <value>
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazetteParkAbolish), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazetteParkAreaChange), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("areadefinition", typeof(GazetteAreaDefinition), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(GazetteParentChange), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazetteParkAbolish), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazetteParkAreaChange), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("areadefinition", typeof(GazetteAreaDefinition), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(GazetteParentChange), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<object> Items {
             get {
@@ -2594,6 +2608,254 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.newField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Sub-section of gazette entries.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntryActionListSubSection", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class EntryActionListSubSection {
+        
+        private List<object> itemsField;
+        
+        private string indexField;
+        
+        private uint pageField;
+        
+        private bool pageFieldSpecified;
+        
+        /// <summary>
+        /// Creates a new instance of EntryActionListSubSection.
+        /// </summary>
+        public EntryActionListSubSection() {
+            this.itemsField = new List<object>();
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazetteParkAbolish), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazetteParkAreaChange), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("areadefinition", typeof(GazetteAreaDefinition), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(GazetteParentChange), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool pageSpecified {
+            get {
+                return this.pageFieldSpecified;
+            }
+            set {
+                this.pageFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Section of gazette entries.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntryActionListSection", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class EntryActionListSection {
+        
+        private List<EntryActionListSubSection> subsectionField;
+        
+        private List<object> itemsField;
+        
+        private string indexField;
+        
+        private uint pageField;
+        
+        private bool pageFieldSpecified;
+        
+        /// <summary>
+        /// Creates a new instance of EntryActionListSection.
+        /// </summary>
+        public EntryActionListSection() {
+            this.itemsField = new List<object>();
+            this.subsectionField = new List<EntryActionListSubSection>();
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute("subsection", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<EntryActionListSubSection> subsection {
+            get {
+                return this.subsectionField;
+            }
+            set {
+                this.subsectionField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazetteParkAbolish), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazetteParkAreaChange), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("areadefinition", typeof(GazetteAreaDefinition), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(GazetteParentChange), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public uint page {
+            get {
+                return this.pageField;
+            }
+            set {
+                this.pageField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool pageSpecified {
+            get {
+                return this.pageFieldSpecified;
+            }
+            set {
+                this.pageFieldSpecified = value;
             }
         }
     }
