@@ -106,8 +106,10 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdPublishedIn = "P1433";
         public const String ItemIdRoyalGazette = "Q869928";
         public const String PropertyIdPublicationDate = "P577";
-        public const String PropertyIdOriginalLanguage = "P364";
+
+        // public const String PropertyIdOriginalLanguage = "P364";  // deprecated for written work, use PropertyIdLanguageOfWork
         public const String ItemIdThaiLanguage = "Q9217";
+
         public const String PropertyIdVolume = "P478";
         public const String PropertyIdIssue = "P433";
         public const String PropertyIdPage = "P304";
