@@ -1134,6 +1134,11 @@ namespace De.AHoerstemeier.Tambon {
         TAOClerkChiefOfficer,
         
         /// <summary>
+        /// Chief Officer of PAO clerk (หัวหน้าสำนักปลัดองค์การบริหารส่วนจังหวัด, Hua Na Samnak Palat O.Bo.Cho.).
+        /// </summary>
+        PAOClerkChiefOfficer,
+        
+        /// <summary>
         /// Technical director of TAO (ผู้อำนวยการกองช่างองค์การบริหารส่วนตำบล, Phu Amnuai Kan Kong Sang O.Bo.To.).
         /// </summary>
         TAOTechnicalDirector,
