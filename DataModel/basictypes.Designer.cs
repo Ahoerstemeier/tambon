@@ -1084,6 +1084,11 @@ namespace De.AHoerstemeier.Tambon {
         PAOChairman,
         
         /// <summary>
+        /// Deputy of Chief Executive of PAO (รองนายกองค์การบริหารส่วนจังหวัด, Rong Nayok Ongkanborihansuan Changwat).
+        /// </summary>
+        DeputyPAOChairman,
+        
+        /// <summary>
         /// Mayor (นายกเทศมนตรี, Nayok Thesamontri), leader of Thesaban.
         /// </summary>
         Mayor,

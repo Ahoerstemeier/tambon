@@ -82,45 +82,43 @@
         <section index="2" name="ข้าราชการพลเรือน" english="civil officer" comment="6 officials, omitted in XML" />
         <section index="3" name="พนักงานอื่นของรัฐ" english="other state employee" comment="2 officials, omitted in XML" />
         <section index="3" name="ผู้บริหารและผู้มีตําแหน่งในองค์กรปกครองส่วนท้องถิ่น" english="local government executives">
-          <!--
-1.นายอัครเดช ทองใจสด นายก อบจ.เพชรบูรณ์
-2.นายชาญ พวงเพ็ชร์ นายก อบจ.ปทุมธานี
-3.นายธนาวุฒิ ทิมสุวรรณ นายก อบจ.เลย
-4.นายชัยมงคล ไชยรบ นายก อบจ.สกลนคร
-5.นายสุทัศน์ เรืองศรี รองนายก อบจ.อุบลราชธานี
-6.นาย เชาวน์วัศ เสนพงศ์ นายกเทศมนตรีนครศรีธรรมราช
-7.นายปิยะศักดิ์ ยโสธนชัย นายกเทศมนตรีเมืองแม่โจ้ อ.สันทราย จ.เชียงใหม่
-8.นางสุกานดา สุทธิพัฒนกุล นายกเทศมนตรีเมืองจันทบุรี
-9.นายประเสริฐ ค่ายทอง นายกเทศมนตรีเมืองคลองหลวง จ.ปทุมธานี
-10.นายวิเชียร อุดมศักดิ์ นายกเทศมนตรีเมืองอำนาจเจริญ
-11.นายชูโชติ โกยกุล นายกเทศมนตรีเมืองพังงา
-12.นายกรชัย กุลศรีวรทัย นายกเทศมนตรีเมืองอรัญประเทศ จ.สระแก้ว
-13.นายจรัส ไชยยา นายกเทศมนตรีเมืองเมืองแกนพัฒนา อ.แม่แตง จ.เชียงใหม่
-14.นายวิทยา ศุภศิริโภคา นายกเทศมนตรีตำบลดอนยายหอม อ.เมืองนครปฐม จ.นครปฐม
-15.นายลือกฤต เพชรบดี นายกเทศมนตรีตำบลสำโรงเหนือ อ.เมืองสมุทรปราการ จ.สมุทรปราการ
-16.นายสมพงษ์ ธรรมเจริญ นายกเทศมนตรีตำบลลำพญา อ.บางเลน จ.นครปฐม
-17.นายทิวา บุญยก นายกเทศมนตรีตำบลนาโพธิ์พัฒนา อ.สวี จ.ชุมพร
-18.นายไพรัช ยงคำชา นายกเทศมนตรีตำบลท่าแร่ อ.เมืองสกลนคร จ.สกลนคร
-19.น.ส.ศิรประภา เต็มธนกิจไพศาล นายกเทศมนตรีตำบลลำน้ำพอง อ.น้ำพอง จ.ขอนแก่น
-20.นางวรพงศ์ ฮอมหนัก นายกเทศมนตรีตำบลแม่ต้าน อ.ท่าสองยาง จ.ตาก
-21.นายนิยม นุ่นแก้ว นายกเทศมนตรีตำบลเนินสันติ อ.ท่าแซะ จ.ชุมพร
-22.นายอำพนธ์ เพชรชู นายกเทศมนตรีตำบลท่าทองใหม่ อ.กาญจนดิษฐ์ จ.สุราษฎร์ธานี
-23. นายสิทธิชัย เจริญธนะจินดา นายกเทศมนตรีตำบลท่าเสา อ.เมืองอุตรดิตถ์ จ.อุตรดิตถ์
-24.นายพงษ์พิพัฒน์ เต็มธนกิจไพศาล รองนายกเทศมนตรีตำบลลำน้ำพอง อ.น้ำพอง จ.ขอนแก่น
-25.นายสุรเชษฐ จำปาศรี รองนายกเทศมนตรีตำบลดอนยายหอม อ.เมืองนครปฐม จ.นครปฐม
-26.นายประดับ กลิ่นขำ นายก อบต.พรหมพิราม อ.พรหมพิราม จ.พิษณุโลก
-27.นายบำรุง ผลทวี นายก อบต.มะรุ่ย อ.ทับปุด จ.พังงา
-28.นายนำศักดิ์ อุทัยศรีสม นายก อบต.คลองหก อ.คลองหลวง จั.ปทุมธานี
-29.ด.ต.โต๊ะ ไชยฮ้อย นายก อบต.บ้านถ่อน อ.สว่างแดนดิน จ.สกลนคร
-30.นายวสุธร พานทอง นายก อบต.เจริญผล อ.บรรพตพิสัย จ.นครสวรรค์
-31.นายไทยสมุทร สมงาม นายก อบต.คำเขื่อนแก้ว อ.ชานุมาน จ.อำนาจเจริญ
-32.นายเฉลิม แสงรุ่ง นายก อบต.สร้างนกทา อ.เมืองอำนาจเจริญ จ.อำนาจเจริญ
-33.นายกฤตรัตนชัย ทองเรือง นายก อบต.กุดลาด อ.เมืองอุบลราชธานี จ.อุบลราชธานี
-34. นายมาลา ซ้งคำ นายก อบต.บ่อแก้ว อ.สะเมิง จ.เชียงใหม่
-35.นายอำนวย สุวะมาศ นายก อบต.ไร่น้อย อ.เมืองอุบลราชธานี จ.อุบลราชธานี
-36.นายกิตติ หาญสมุทร นายก อบต.บัวงาม อ.บุณฑริก จ.อุบลราชธานี
-37.นายวิจารณ์ ณรงค์รุ่งเรือง นายก อบต.แม่ยวมน้อย อ.ขุนยวม จ.แม่ฮ่องสอน
--->
+          <official index="1" action="Suspend" officialname="อัครเดช ทองใจสด" officialtype="PAOChairman" type="PAO" geocode="67" />
+          <official index="2" action="Suspend" officialname="ชาญ พวงเพ็ชร์" officialtype="PAOChairman" type="PAO" geocode="13" />
+          <official index="3" action="Suspend" officialname="ธนาวุฒิ ทิมสุวรรณ" officialtype="PAOChairman" type="PAO" geocode="42" />
+          <official index="4" action="Suspend" officialname="ชัยมงคล ไชยรบ" officialtype="PAOChairman" type="PAO" geocode="47" />
+          <official index="5" action="Suspend" officialname="สุทัศน์ เรืองศรี" officialtype="DeputyPAOChairman" type="PAO" geocode="34" />
+          <official index="6" action="Suspend" officialname="เชาวน์วัศ เสนพงศ์" officialtype="Mayor" type="ThesabanNakhon" geocode="8099" />
+          <official index="7" action="Suspend" officialname="ปิยะศักดิ์ ยโสธนชัย" officialtype="Mayor" type="ThesabanMueang" geocode="เมืองแม่โจ้ อ.สันทราย จ.เชียงใหม่" />
+          <official index="8" action="Suspend" officialname="สุกานดา สุทธิพัฒนกุล" officialtype="Mayor" type="ThesabanMueang" geocode="เมืองจันทบุรี" />
+          <official index="9" action="Suspend" officialname="ประเสริฐ ค่ายทอง" officialtype="Mayor" type="ThesabanMueang" geocode="เมืองคลองหลวง จ.ปทุมธานี" />
+          <official index="10" action="Suspend" officialname="วิเชียร อุดมศักดิ์" officialtype="Mayor" type="ThesabanMueang" geocode="เมืองอำนาจเจริญ" />
+          <official index="11" action="Suspend" officialname="ชูโชติ โกยกุล" officialtype="Mayor" type="ThesabanMueang" geocode="เมืองพังงา" />
+          <official index="12" action="Suspend" officialname="กรชัย กุลศรีวรทัย" officialtype="Mayor" type="ThesabanMueang" geocode="เมืองอรัญประเทศ จ.สระแก้ว" />
+          <official index="13" action="Suspend" officialname="จรัส ไชยยา" officialtype="Mayor" type="ThesabanMueang" geocode="เมืองเมืองแกนพัฒนา อ.แม่แตง จ.เชียงใหม่" />
+          <official index="14" action="Suspend" officialname="วิทยา ศุภศิริโภคา" officialtype="Mayor" type="ThesabanTambon" geocode="ดอนยายหอม อ.เมืองนครปฐม จ.นครปฐม" />
+          <official index="15" action="Suspend" officialname="ลือกฤต เพชรบดี" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลสำโรงเหนือ อ.เมืองสมุทรปราการ จ.สมุทรปราการ" />
+          <official index="16" action="Suspend" officialname="สมพงษ์ ธรรมเจริญ" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลลำพญา อ.บางเลน จ.นครปฐม" />
+          <official index="17" action="Suspend" officialname="ทิวา บุญยก" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลนาโพธิ์พัฒนา อ.สวี จ.ชุมพร" />
+          <official index="18" action="Suspend" officialname="ไพรัช ยงคำชา" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลท่าแร่ อ.เมืองสกลนคร จ.สกลนคร" />
+          <official index="19" action="Suspend" officialname="ศิรประภา เต็มธนกิจไพศาล" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลลำน้ำพอง อ.น้ำพอง จ.ขอนแก่น" />
+          <official index="20" action="Suspend" officialname="วรพงศ์ ฮอมหนัก" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลแม่ต้าน อ.ท่าสองยาง จ.ตาก" />
+          <official index="21" action="Suspend" officialname="นิยม นุ่นแก้ว" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลเนินสันติ อ.ท่าแซะ จ.ชุมพร" />
+          <official index="22" action="Suspend" officialname="อำพนธ์ เพชรชู" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลท่าทองใหม่ อ.กาญจนดิษฐ์ จ.สุราษฎร์ธานี" />
+          <official index="23" action="Suspend" officialname="สิทธิชัย เจริญธนะจินดา" officialtype="Mayor" type="ThesabanTambon" geocode="ตำบลท่าเสา อ.เมืองอุตรดิตถ์ จ.อุตรดิตถ์" />
+          <official index="24" action="Suspend" officialname="พงษ์พิพัฒน์ เต็มธนกิจไพศาล" officialtype="DeputyMayor" type="ThesabanTambon" geocode="ตำบลลำน้ำพอง อ.น้ำพอง จ.ขอนแก่น" />
+          <official index="25" action="Suspend" officialname="สุรเชษฐ จำปาศรี" officialtype="DeputyMayor" type="ThesabanTambon" geocode="ตำบลดอนยายหอม อ.เมืองนครปฐม จ.นครปฐม" />
+          <official index="26" action="Suspend" officialname="ประดับ กลิ่นขำ" officialtype="TAOMayor" type="TAO" tambon="อบต.พรหมพิราม อ.พรหมพิราม จ.พิษณุโลก" />
+          <official index="27" action="Suspend" officialname="บำรุง ผลทวี" officialtype="TAOMayor" type="TAO" tambon="อบต.มะรุ่ย อ.ทับปุด จ.พังงา" />
+          <official index="28" action="Suspend" officialname="นำศักดิ์ อุทัยศรีสม" officialtype="TAOMayor" type="TAO" tambon="อบต.คลองหก อ.คลองหลวง จั.ปทุมธานี" />
+          <official index="29" action="Suspend" officialname="โต๊ะ ไชยฮ้อย" officialtype="TAOMayor" type="TAO" tambon="อบต.บ้านถ่อน อ.สว่างแดนดิน จ.สกลนคร" />
+          <official index="30" action="Suspend" officialname="วสุธร พานทอง" officialtype="TAOMayor" type="TAO" tambon="อบต.เจริญผล อ.บรรพตพิสัย จ.นครสวรรค์" />
+          <official index="31" action="Suspend" officialname="ไทยสมุทร สมงาม" officialtype="TAOMayor" type="TAO" tambon="อบต.คำเขื่อนแก้ว อ.ชานุมาน จ.อำนาจเจริญ" />
+          <official index="32" action="Suspend" officialname="เฉลิม แสงรุ่ง" officialtype="TAOMayor" type="TAO" tambon="อบต.สร้างนกทา อ.เมืองอำนาจเจริญ จ.อำนาจเจริญ" />
+          <official index="33" action="Suspend" officialname="กฤตรัตนชัย ทองเรือง" officialtype="TAOMayor" type="TAO" tambon="อบต.กุดลาด อ.เมืองอุบลราชธานี จ.อุบลราชธานี" />
+          <official index="34" action="Suspend" officialname="มาลา ซ้งคำ" officialtype="TAOMayor" type="TAO" tambon="อบต.บ่อแก้ว อ.สะเมิง จ.เชียงใหม่" />
+          <official index="25" action="Suspend" officialname="อำนวย สุวะมาศ" officialtype="TAOMayor" type="TAO" tambon="อบต.ไร่น้อย อ.เมืองอุบลราชธานี จ.อุบลราชธานี" />
+          <official index="36" action="Suspend" officialname="กิตติ หาญสมุทร" officialtype="TAOMayor" type="TAO" tambon="อบต.บัวงาม อ.บุณฑริก จ.อุบลราชธานี" />
+          <official index="37" action="Suspend" officialname="วิจารณ์ ณรงค์รุ่งเรือง" officialtype="TAOMayor" type="TAO" tambon="อบต.แม่ยวมน้อย อ.ขุนยวม จ.แม่ฮ่องสอน" />
         </section>
         <section index="4" name="ข้าราชการองค์กรปกครองส่วนท้องถิ่น" english="local government official">
           <official index="1" action="Suspend" officialname="สนั่น ศิลารัตน์" officialtype="PAOClerk" type="PAO" geocode="80" comment="Also acting PAOChairman" />
@@ -128,25 +126,25 @@
           <official index="3" action="Suspend" officialname="สถิตย์ เฮียงราช" officialtype="PAOClerk" type="PAO" geocode="47" />
           <official index="4" action="Suspend" officialname="สำรวม รักษาพราหมณ์" officialtype="PAOClerk" type="PAO" geocode="90" />
           <official index="5" action="Suspend" officialname="สมสิทธิ์ จิตหาญ" officialtype="MunicipalClerk" type="ThesabanMueang" geocode="3799" />
-          <official index="6" action="Suspend" officialname="ทวีวิทย์ พันธชาติ" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="เทศบาลตำบลหลักหก อ.เมืองปทุมธานี" />
-          <official index="7" action="Suspend" officialname="กมล เสถียรดี" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="เทศบาลตำบลสำโรงเหนือ อ.เมืองสมุทรปราการ" />
-          <official index="8" action="Suspend" officialname="บังอร นาคทอง" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="เทศบาลตำบลท่าแร่ อ.เมืองสกลนคร" />
-          <official index="9" action="Suspend" officialname="สำรวม ไชยสิม" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="เทศบาลตำบลวังสวรรค์ อ.บ้านแฮด จ.ขอนแก่น" />
-          <official index="10" action="Suspend" officialname="เศรษฐศักดิ์ พรหมมา" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="เทศบาลตำบลบ้านแซว อ.เชียงแสน จ.เชียงราย" />
-          <official index="11" action="Suspend" officialname="กมลทิพย์ สมนึก" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="เทศบาลตำบลแม่ลานนา อ.ลอง จ.แพร่" />
-          <official index="12" action="Suspend" officialname="ธรรมรัตน์ สวนสุข" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="เทศบาลตำบลท่าเสา อ.เมืองอุตรดิตถ์" />
-          <official index="13" action="Suspend" officialname="ตีรนันท์ ป้องกัน" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="เทศบาลตำบลหนองลาน อ.ท่ามะกา จ.กาญจนบุรี" />
-          <official index="14" action="Suspend" officialname="วสันต์ สายสวัสดิ์" officialtype="TAOClerk" type="TAO" geocode="อบต.แม่ยวมน้อย อ.ขุนยวม จ.แม่ฮ่องสอน" />
-          <official index="15" action="Suspend" officialname="ชิตพล สุวรรณโสภา" officialtype="TAOClerk" type="TAO" geocode="อบต.สะแบง อ.หนองหาน จ.อุดรธานี" />
-          <official index="16" action="Suspend" officialname="วินิจ จดจำ" officialtype="TAOClerk" type="TAO" geocode="อบต.บ้านถ่อน อ.สว่างแดนดิน จ.สกลนคร" />
-          <official index="17" action="Suspend" officialname="ชายแดน สุนนท์ชัย" officialtype="TAOClerk" type="TAO" geocode="อบต.โนนค้อ อ.บุณฑริก จ.อุบลราชธานี" />
-          <official index="18" action="Suspend" officialname="ธดาพร คำผิว" officialtype="TAOClerk" type="TAO" geocode="อบต.ศรีสุข ปฏิบัติหน้าที่นายก อบต.ศรีสุข อ.กันทรวิชัย จ.ขอนแก่น" />
-          <official index="19" action="Suspend" officialname="อดุลย์ศุภเดช พงษ์ประเสริฐ" officialtype="DeputyMunicipalClerk" type="ThesabanMueang" geocode="เทศบาลเมืองพิบูลมังสาหาร อ.พิบูลมังสาหาร จ.อุบลราชธานี" />
-          <official index="20" action="Suspend" officialname="จ่าเอก ยุทธศักดิ์ บุษนาม" officialtype="DeputyTAOClerk" type="TAO" geocode="อบต.ม่วงลาย อ.เมืองสกลนคร" />
+          <official index="6" action="Suspend" officialname="ทวีวิทย์ พันธชาติ" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="1385" />
+          <official index="7" action="Suspend" officialname="กมล เสถียรดี" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="1196" />
+          <official index="8" action="Suspend" officialname="บังอร นาคทอง" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="4797" />
+          <official index="9" action="Suspend" officialname="สำรวม ไชยสิม" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="402451" />
+          <official index="10" action="Suspend" officialname="เศรษฐศักดิ์ พรหมมา" officialtype="MunicipalClerk" type="ThesabanTambon" tambon="570853" />
+          <official index="11" action="Suspend" officialname="กมลทิพย์ สมนึก" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="5482" />
+          <official index="12" action="Suspend" officialname="ธรรมรัตน์ สวนสุข" officialtype="MunicipalClerk" type="ThesabanTambon" geocode="5377" />
+          <official index="13" action="Suspend" officialname="ตีรนันท์ ป้องกัน" officialtype="MunicipalClerk" type="ThesabanTambon" tambon="710517" />
+          <official index="14" action="Suspend" officialname="วสันต์ สายสวัสดิ์" officialtype="TAOClerk" type="TAO" tambon="580204" />
+          <official index="15" action="Suspend" officialname="ชิตพล สุวรรณโสภา" officialtype="TAOClerk" type="TAO" tambon="410606" />
+          <official index="16" action="Suspend" officialname="วินิจ จดจำ" officialtype="TAOClerk" type="TAO" tambon="471221" />
+          <official index="17" action="Suspend" officialname="ชายแดน สุนนท์ชัย" officialtype="TAOClerk" type="TAO" tambon="341006" />
+          <official index="18" action="Suspend" officialname="ธดาพร คำผิว" officialtype="TAOClerk" type="TAO" tambon="400602" comment="Also acting Nayok" />
+          <official index="19" action="Suspend" officialname="อดุลย์ศุภเดช พงษ์ประเสริฐ" officialtype="DeputyMunicipalClerk" type="ThesabanMueang" geocode="3497" />
+          <official index="20" action="Suspend" officialname="จ่าเอก ยุทธศักดิ์ บุษนาม" officialtype="DeputyTAOClerk" type="TAO" tambon="470109" />
           <official index="21" action="Suspend" officialname="เยี่ยมยรรยง อ่อนโก้ก" officialtype="PAOClerkChiefOfficer" type="PAO" geocode="42" />
-          <official index="22" action="Suspend" officialname="สุมณทรา โภชน์ธัญการ" officialtype="TAOClerkChiefOfficer" type="TAO" geocode="อบต.เจริญผล อ.บรรพตพิสัย จ.นครสวรรค์" />
-          <official index="23" action="Suspend" officialname="ไพโรจน์ กุลณะ" officialtype="TAOTechnicalDirector" type="TAO" geocode="อบต.แม่ยวมน้อย อ.ขุนยวม จ.แม่ฮ่องสอน" />
-          <official index="24" action="Suspend" officialname="เดชา นามสมบัติ" officialtype="TAOTechnicalDirector" type="TAO" geocode="อบต.บ้านถ่อน อ.สว่างแดนดิน จ.สกลนคร" />
+          <official index="22" action="Suspend" officialname="สุมณทรา โภชน์ธัญการ" officialtype="TAOClerkChiefOfficer" type="TAO" tambon="600513" />
+          <official index="23" action="Suspend" officialname="ไพโรจน์ กุลณะ" officialtype="TAOTechnicalDirector" type="TAO" tambon="580204" />
+          <official index="24" action="Suspend" officialname="เดชา นามสมบัติ" officialtype="TAOTechnicalDirector" type="TAO" tambon="471221" />
         </section>
       </entry>
       <entry title="แก้คำผิด คำสั่งหัวหน้าคณะรักษาความสงบแห่งชาติ ที่ ๓๕/๒๕๖๐ เรื่อง ประกาศรายชื่อเจ้าหน้าที่ของรัฐที่อยู่ระหว่างการถูกตรวจสอบเพิ่มเติม ครั้งที่ ๙" subtitle="ซึ่งประกาศในราชกิจจานุเบกษา ฉบับประกาศและงานทั่วไป เล่ม ๑๓๔ ตอนพิเศษ ๑๙๐ งวันที่ ๒๕ กรกฎาคม ๒๕๖๐ เอกสารแนบท้าย หน้า ๕" volume="134" page="25" issue="พิเศษ 192 ง" uri="2560/E/192/25.PDF" publication="2017-07-27">
