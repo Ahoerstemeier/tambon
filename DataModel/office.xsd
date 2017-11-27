@@ -657,7 +657,7 @@
     <xs:sequence>
       <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>References on the election.</xs:documentation>
+          <xs:documentation>References on the suspension.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
@@ -811,6 +811,7 @@
     <xs:sequence>
       <xs:element name="official" minOccurs="0" maxOccurs="unbounded" type="t:OfficialEntry" />
       <xs:element name="election" minOccurs="0" maxOccurs="1" type="t:Election" />
+      <xs:element name="dissolution" minOccurs="0" maxOccurs="1" type="t:DissolutionCouncil" />
     </xs:sequence>
     <xs:attribute name="begin" type="xs:date" use="required">
       <xs:annotation>
@@ -864,6 +865,23 @@
         <xs:element minOccurs="1" maxOccurs="1" name="election" type="t:CanceledElection" />
       </xs:choice>
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DissolutionCouncil">
+    <xs:annotation>
+      <xs:documentation>Dissolution of a council of an administrative entity.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="references" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>References on the dissolution.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="date" type="xs:date">
+      <xs:annotation>
+        <xs:documentation>Date the dissolution became effective.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
 
   <xs:complexType name="VisionSlogan">

@@ -2501,7 +2501,7 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// References on the election.
+        /// References on the suspension.
         /// </summary>
         /// <value>
         /// The references.
@@ -2820,6 +2820,8 @@ namespace De.AHoerstemeier.Tambon {
         
         private Election electionField;
         
+        private DissolutionCouncil dissolutionField;
+        
         private System.DateTime beginField;
         
         private System.DateTime endField;
@@ -2848,6 +2850,7 @@ namespace De.AHoerstemeier.Tambon {
         /// Creates a new instance of CouncilTerm.
         /// </summary>
         public CouncilTerm() {
+            this.dissolutionField = new DissolutionCouncil();
             this.officialField = new List<OfficialEntry>();
             this.beginreasonField = TermBeginType.Election;
             this.endreasonField = TermEndType.EndOfTerm;
@@ -2873,6 +2876,17 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.electionField = value;
+            }
+        }
+        
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DissolutionCouncil dissolution {
+            get {
+                return this.dissolutionField;
+            }
+            set {
+                this.dissolutionField = value;
             }
         }
         
@@ -3080,6 +3094,87 @@ namespace De.AHoerstemeier.Tambon {
             }
             set {
                 this.sizechangereasonField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Dissolution of a council of an administrative entity.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DissolutionCouncil", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class DissolutionCouncil {
+        
+        private List<object> referencesField;
+        
+        private System.DateTime dateField;
+        
+        private bool dateFieldSpecified;
+        
+        /// <summary>
+        /// Creates a new instance of DissolutionCouncil.
+        /// </summary>
+        public DissolutionCouncil() {
+            this.referencesField = new List<object>();
+        }
+        
+        /// <summary>
+        /// References on the dissolution.
+        /// </summary>
+        /// <value>
+        /// The references.
+        /// </value>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable=false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable=false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> references {
+            get {
+                return this.referencesField;
+            }
+            set {
+                this.referencesField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Date the dissolution became effective.
+        /// </summary>
+        /// <value>
+        /// The date.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="date")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool dateSpecified {
+            get {
+                return this.dateFieldSpecified;
+            }
+            set {
+                this.dateFieldSpecified = value;
             }
         }
     }
