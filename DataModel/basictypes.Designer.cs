@@ -428,6 +428,11 @@ namespace De.AHoerstemeier.Tambon {
         /// Arboretum or forest garden (สวนรุกขชาติ).
         /// </summary>
         Arboretum,
+        
+        /// <summary>
+        /// Paleontological survey area (เขตสำรวจและศึกษาวิจัยเกี่ยวกับแหล่งซากดึกดำบรรพ์หรือซากดึกดำบรรพ์).
+        /// </summary>
+        Paleontological,
     }
     
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]

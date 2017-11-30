@@ -3380,6 +3380,11 @@ namespace De.AHoerstemeier.Tambon {
         DeputyDepartmentOfTransportDirectorGeneral,
         
         /// <summary>
+        /// Director General of the Department of Mineral Resources (อธิบดีกรมทรัพยากรธรณี).
+        /// </summary>
+        DepartmentOfMineralResourceDirectorGeneral,
+        
+        /// <summary>
         /// District officer in Bangkok (ผู้อำนวยการเขต, Phu Amnuai Kan Khet).
         /// </summary>
         DistrictOfficerBangkok,
