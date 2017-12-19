@@ -6439,6 +6439,12 @@
     <entity type="Tambon" name="หนองแปน" english="Nong Paen" geocode="471605">
       <wiki wikidata="Q17254137" />
       <office type="TAOOffice">
+        <wiki wikidata="Q45979068" />
+        <geo:Point>
+          <geo:lat>17.7028</geo:lat>
+          <geo:long>103.4351</geo:long>
+        </geo:Point>
+        <url lastchecked="2017-12-18">http://www.obtnongpan.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ประดิษฐ์ ดีกุดเรือ" begin="2013-10-19" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="ชาติชาย แพงพา" begin="2009-09-06" end="2013-09-05" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -6449,9 +6455,10 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="22" />
         </council>
         <history>
-          <create effective="1997-02-13" status="Gazette" type="TAO">
+          <statuschange old="SaphaTambon" new="TAO" effective="1997-02-13" status="Gazette">
             <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
-          </create>
+          </statuschange>
+          <create type="SaphaTambon" status="Done" effective="1980-09-15" comment="Created automatically when Tambon was created" />
         </history>
         <areacoverage>
           <entity geocode="471605" coverage="completely" />
