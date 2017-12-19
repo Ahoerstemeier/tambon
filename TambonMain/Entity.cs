@@ -1576,7 +1576,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( this.type.IsLocalGovernment() )
                 {
-                    if ( creation.type == EntityType.TAO )
+                    if ( creation.type == EntityType.TAO || creation.type == EntityType.SaphaTambon )
                     {
                         var allTambon = GlobalData.CompleteGeocodeList().FlatList().Where(x => x.type == EntityType.Tambon);
                         var sameNamedTambon = allTambon.Where(x => x.name == this.name).ToList();

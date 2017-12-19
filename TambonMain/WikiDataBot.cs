@@ -1150,16 +1150,16 @@ namespace De.AHoerstemeier.Tambon
                 }
                 else
                 {
-                    var state = _helper.NamedBySubdivisionCorrect(item, entity);
+                    var state = _helper.NamedAfterSubdivisionCorrect(item, entity);
                     _runInfo[state]++;
                     if ( state == WikiDataState.WrongValue )
                     {
-                        collisionInfo.AppendFormat("{0}: {1} has wrong named by subdivision", item.id, entity.english);
+                        collisionInfo.AppendFormat("{0}: {1} has wrong named after subdivision", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
                     if ( state != WikiDataState.Valid )
                     {
-                        var statement = _helper.SetNamedBySubdivision(item, entity, overrideData);
+                        var statement = _helper.SetNamedAfterSubdivision(item, entity, overrideData);
                         if ( statement != null )
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
