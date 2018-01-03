@@ -1913,6 +1913,7 @@
       <gns-ufi value="-3248761" />
       <woeid value="28341092" />
       <geonames value="1610186" />
+      <googleplace value="ChIJnUl5jcX8ITEREGLeyM9pBAM" />
     </codes>
     <symbols>
       <slogan>
@@ -2057,35 +2058,9 @@
     </entity>
     <entity type="Tambon" name="บ้านเดื่อ" english="Ban Duea" geocode="360403">
       <wiki wikidata="Q17251445" />
-      <office type="MunicipalityOffice">
-        <wiki openstreetmap="1861485124" />
-        <geo:Point>
-          <geo:lat>16.1253</geo:lat>
-          <geo:long>101.8967</geo:long>
-        </geo:Point>
-        <url>http://www.bandua.org/</url>
-        <officials>
-          <official title="Mayor" name="บรรยง ศิลรักษา" begin="2012-11-04" beginreason="ElectedDirectly" />
-          <official title="Mayor" name="ประเทือง ธรรมโชติ" begin="2008-09-28" end="2012-09-27" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-          <official title="TAOMayor" name="ประเทือง ธรรมโชติ" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-11-04" type="ThesabanTambon" size="12" />
-          <term begin="2008-09-28" end="2012-09-27" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2004-07-18" end="2008-07-17" type="TAO" size="42" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
-            <meetingreference board="2" number="37" date="2008-05-21" />
-          </statuschange>
-          <create effective="1996-03-20" status="Gazette" type="TAO">
-            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="360403" coverage="completely" />
-        </areacoverage>
-      </office>
+      <codes>
+        <googleplace value="ChIJQ-ewS7hQHzERACzfyM9pBAQ" />
+      </codes>
       <history>
         <create effective="1970-08-01" status="Gazette" type="Tambon" splitfrom="360406" subdivisions="11" subdivisiontype="Muban">
           <gazetteref volume="87" page="2430" issue="83 ง" date="1970-09-01" />
@@ -4569,9 +4544,12 @@
         </areacoverage>
       </office>
       <history>
-        <create effective="1965-08-26" status="Gazette" type="Tambon">
+        <create effective="1965-08-26" status="Gazette" type="Tambon" subdivisions="16" subdivisiontype="Muban">
           <gazetteref volume="82" page="2263" issue="73 ง" date="1965-09-07" />
         </create>
+        <abolished effective="1965-08-26" status="Gazette" type="Tambon">
+          <gazetteref volume="82" page="2268" issue="73 ง" date="1965-09-07" />
+        </abolished>
       </history>
       <entity type="Muban" geocode="36100301" name="บ้านหนองบัวพรม" english="Ban Nong Bua Phrom" />
       <entity type="Muban" geocode="36100302" name="บ้านโนนข่า" english="Ban Non Kha" />
@@ -7590,6 +7568,43 @@
       <create effective="1996-03-20" status="Gazette" type="TAO">
         <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
       </create>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="บ้านเดื่อ" english="Ban Duea" geocode="3677" parent="3604" tambon="360403">
+    <wiki wikidata="Q47016496" openstreetmap="1861485124"/>
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>16.1253</geo:lat>
+        <geo:long>101.8967</geo:long>
+      </geo:Point>
+      <url lastchecked="2018-01-02">http://www.tambonbandua.go.th/</url>
+      <url status="offline">http://www.bandua.org/</url>
+      <socialweb>
+        <googlecid comment="TAO, obsolete">9142480289426135230</googlecid>
+        <googleplace comment="TAO, obsolete">ChIJIY9IT1xXHzERvlhBYWKd4H4</googleplace>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="บรรยง ศิลรักษา" begin="2012-11-04" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ประเทือง ธรรมโชติ" begin="2008-09-28" end="2012-09-27" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+        <official title="TAOMayor" name="ประเทือง ธรรมโชติ" begin="2004-07-18" end="2008-07-17" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-11-04" type="ThesabanTambon" size="12" />
+        <term begin="2008-09-28" end="2012-09-27" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-18" end="2008-07-17" type="TAO" size="42" />
+      </council>
+      <areacoverage>
+        <entity geocode="360403" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-18" status="Done">
+        <meetingreference board="2" number="37" date="2008-05-21" />
+      </statuschange>
+      <statuschange effective="1996-03-20" status="Gazette" old="SaphaTambon" new="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </statuschange>
+      <create type="SaphaTambon" effective="1975-09-18" status="Done" />
     </history>
   </entity>
 
