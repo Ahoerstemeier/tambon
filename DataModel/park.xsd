@@ -49,6 +49,44 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
+  <xs:complexType name="SpeciesList">
+    <xs:annotation>
+      <xs:documentation>Protected species in the park.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" type="t:SpeciesListEntry" name="species">
+        <xs:annotation>
+          <xs:documentation>Species list entry.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="t:Comment" />
+    <xs:attribute type="xs:gYear" name="year" use="optional">
+      <xs:annotation>
+        <xs:documentation>Year in which the species list was published.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="SpeciesListEntry">
+    <xs:annotation>
+      <xs:documentation>Species list entry.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="index" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>Index in the list.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="taxon" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Taxonomic name.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="alias" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Alternative taxonomic name.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="AreaPark">
     <xs:annotation>
       <xs:documentation>Area definition of a park.</xs:documentation>
@@ -204,6 +242,11 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" type="t:AreaPark" name="area">
         <xs:annotation>
           <xs:documentation>Area covered by the protected area.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" type="t:SpeciesList" name="specieslist">
+        <xs:annotation>
+          <xs:documentation>List of species protected in the area.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="history" type="t:HistoryList">

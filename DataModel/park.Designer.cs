@@ -20,7 +20,7 @@ namespace De.AHoerstemeier.Tambon {
     /// </summary>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AreaParkPart))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AreaPark))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -249,7 +249,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Specifically named site within the park.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -375,7 +375,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Area part definition of a park.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -406,7 +406,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Area definition of a park.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -504,7 +504,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Subdivision of a park.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -628,9 +628,154 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
+    /// Protected species in the park.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SpeciesList", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class SpeciesList {
+        
+        private List<SpeciesListEntry> speciesField;
+        
+        private string commentField;
+        
+        private string yearField;
+        
+        /// <summary>
+        /// Creates a new instance of SpeciesList.
+        /// </summary>
+        public SpeciesList() {
+            this.speciesField = new List<SpeciesListEntry>();
+        }
+        
+        /// <summary>
+        /// Species list entry.
+        /// </summary>
+        /// <value>
+        /// The species.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("species", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<SpeciesListEntry> species {
+            get {
+                return this.speciesField;
+            }
+            set {
+                this.speciesField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string comment {
+            get {
+                return this.commentField;
+            }
+            set {
+                this.commentField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Year in which the species list was published.
+        /// </summary>
+        /// <value>
+        /// The year.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string year {
+            get {
+                return this.yearField;
+            }
+            set {
+                this.yearField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Species list entry.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SpeciesListEntry", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class SpeciesListEntry {
+        
+        private int indexField;
+        
+        private string taxonField;
+        
+        private string aliasField;
+        
+        /// <summary>
+        /// Index in the list.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Taxonomic name.
+        /// </summary>
+        /// <value>
+        /// The taxon.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string taxon {
+            get {
+                return this.taxonField;
+            }
+            set {
+                this.taxonField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Alternative taxonomic name.
+        /// </summary>
+        /// <value>
+        /// The alias.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string alias {
+            get {
+                return this.aliasField;
+            }
+            set {
+                this.aliasField = value;
+            }
+        }
+    }
+    
+    /// <summary>
     /// Unique identifiers additional to the geocode and the wiki ids.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -768,7 +913,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Protected area.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -783,6 +928,8 @@ namespace De.AHoerstemeier.Tambon {
         private Point pointField;
         
         private List<AreaPark> areaField;
+        
+        private SpeciesList specieslistField;
         
         private HistoryList historyField;
         
@@ -807,6 +954,7 @@ namespace De.AHoerstemeier.Tambon {
         /// </summary>
         public Park() {
             this.historyField = new HistoryList();
+            this.specieslistField = new SpeciesList();
             this.areaField = new List<AreaPark>();
             this.codesField = new OtherParkIdentifier();
             this.obsoleteField = false;
@@ -882,12 +1030,29 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
+        /// List of species protected in the area.
+        /// </summary>
+        /// <value>
+        /// The specieslist.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SpeciesList specieslist {
+            get {
+                return this.specieslistField;
+            }
+            set {
+                this.specieslistField = value;
+            }
+        }
+        
+        /// <summary>
         /// List of events concerning the park.
         /// </summary>
         /// <value>
         /// The history.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public HistoryList history {
             get {
