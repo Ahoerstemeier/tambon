@@ -134,6 +134,28 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="Registrar">
+    <xs:annotation>
+      <xs:documentation>Types of registrars.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Central">
+        <xs:annotation>
+          <xs:documentation>Central registrar (ทะเบียนบ้านกลาง).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Local">
+        <xs:annotation>
+          <xs:documentation>Local registrar (ทะเบียนบ้าน).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Moving">
+        <xs:annotation>
+          <xs:documentation>Not registered because of moving.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:complexType name="PopulationDataPoint">
     <xs:annotation>
@@ -340,11 +362,33 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="RegistrationPopulationData">
+    <xs:annotation>
+      <xs:documentation>Population data by registrar.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="data" type="t:HouseholdDataPoint" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Population data points</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="registrar" type="t:Registrar" use="required">
+      <xs:annotation>
+        <xs:documentation>Registrar.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
   <xs:complexType name="RegisterData">
     <xs:annotation>
       <xs:documentation>Registration data.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
+      <xs:element name="population" type="t:RegistrationPopulationData" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Population data by registrar type.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="change" type="t:PopulationChangeEntry" minOccurs="0" maxOccurs="unbounded">
         <xs:annotation>
           <xs:documentation>Population change.</xs:documentation>
@@ -352,7 +396,7 @@
       </xs:element>
       <xs:element name="register" type="t:RegisterDataMisc" minOccurs="0" maxOccurs="1">
         <xs:annotation>
-          <xs:documentation>Miscellaneous registration data..</xs:documentation>
+          <xs:documentation>Miscellaneous registration data.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element name="reference" type="t:ReferenceList" minOccurs="0" maxOccurs="1">

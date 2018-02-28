@@ -167,6 +167,7 @@ namespace De.AHoerstemeier.Tambon
         RegisterOfficeDirector,
         RegisterOfficeDeputyDirector,
         DirectorGeneralDepartmentOfProvincialAdministration,
-        MinisterOfEnvironment
+        MinisterOfEnvironment,
+        DepartmentOfMineralResourceDirectorGeneral
     }
 }

@@ -22,7 +22,7 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PopulationChangeEntry))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HouseholdDataPoint))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AgeTableEntry))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -143,7 +143,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Miscellaneous registration data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -383,7 +383,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Population change.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -414,7 +414,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Type of population change.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -444,7 +444,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Data point containing population data, age table and household data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -624,7 +624,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Population by age.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -682,7 +682,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Data point within the age table.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -732,7 +732,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Type of population data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
@@ -812,7 +812,7 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Population data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
@@ -992,13 +992,15 @@ namespace De.AHoerstemeier.Tambon {
     /// <summary>
     /// Registration data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="RegisterData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class RegisterData {
+        
+        private List<RegistrationPopulationData> populationField;
         
         private List<PopulationChangeEntry> changeField;
         
@@ -1015,6 +1017,24 @@ namespace De.AHoerstemeier.Tambon {
             this.referenceField = new List<object>();
             this.registerField = new RegisterDataMisc();
             this.changeField = new List<PopulationChangeEntry>();
+            this.populationField = new List<RegistrationPopulationData>();
+        }
+        
+        /// <summary>
+        /// Population data by registrar type.
+        /// </summary>
+        /// <value>
+        /// The population.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("population", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<RegistrationPopulationData> population {
+            get {
+                return this.populationField;
+            }
+            set {
+                this.populationField = value;
+            }
         }
         
         /// <summary>
@@ -1023,7 +1043,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The change.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("change", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("change", Order=1)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<PopulationChangeEntry> change {
             get {
@@ -1035,12 +1055,12 @@ namespace De.AHoerstemeier.Tambon {
         }
         
         /// <summary>
-        /// Miscellaneous registration data..
+        /// Miscellaneous registration data.
         /// </summary>
         /// <value>
         /// The register.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public RegisterDataMisc register {
             get {
@@ -1057,7 +1077,7 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// The reference.
         /// </value>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
         [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable=false)]
         [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable=false)]
         [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable=false)]
@@ -1092,9 +1112,91 @@ namespace De.AHoerstemeier.Tambon {
     }
     
     /// <summary>
+    /// Population data by registrar.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationPopulationData", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
+    public partial class RegistrationPopulationData {
+        
+        private List<HouseholdDataPoint> dataField;
+        
+        private Registrar registrarField;
+        
+        /// <summary>
+        /// Creates a new instance of RegistrationPopulationData.
+        /// </summary>
+        public RegistrationPopulationData() {
+            this.dataField = new List<HouseholdDataPoint>();
+        }
+        
+        /// <summary>
+        /// Population data points
+        /// </summary>
+        /// <value>
+        /// The data.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("data", Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<HouseholdDataPoint> data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <summary>
+        /// Registrar.
+        /// </summary>
+        /// <value>
+        /// The registrar.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Registrar registrar {
+            get {
+                return this.registrarField;
+            }
+            set {
+                this.registrarField = value;
+            }
+        }
+    }
+    
+    /// <summary>
+    /// Types of registrars.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
+    public enum Registrar {
+        
+        /// <summary>
+        /// Central registrar (ทะเบียนบ้านกลาง).
+        /// </summary>
+        Central,
+        
+        /// <summary>
+        /// Local registrar (ทะเบียนบ้าน).
+        /// </summary>
+        Local,
+        
+        /// <summary>
+        /// Not registered because of moving.
+        /// </summary>
+        Moving,
+    }
+    
+    /// <summary>
     /// Sources of population data.
     /// </summary>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1064.2")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=false)]
