@@ -4913,8 +4913,13 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="นาป่า" english="Na Pa" geocode="2068" parent="2001" tambon="200107">
+    <wiki wikidata="Q51726627" />
     <office type="MunicipalityOffice">
-      <url>http://www.napachon.go.th/</url>
+      <geo:Point>
+        <geo:lat>13.3956</geo:lat>
+        <geo:long>101.0232</geo:long>
+      </geo:Point>
+      <url lastchecked="2018-04-10">http://www.napachon.go.th/</url>
       <url status="offline">http://napachon.pansz.com/</url>
       <officials>
         <official title="Mayor" name="สามารถ สุขสว่าง" begin="2012-01-15" beginreason="ElectedDirectly" />
@@ -4931,9 +4936,10 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done">
         <meetingreference board="2" number="23" date="2007-07-13" />
       </statuschange>
-      <create effective="1995-03-03" status="Gazette" type="TAO">
+      <statuschange old="SaphaTambon" new="TAO" effective="1995-03-03" status="Gazette">
         <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
-      </create>
+      </statuschange>
+      <create type="SaphaTambon" effective="1975-09-18" status="Done" />
     </history>
   </entity>
   <entity type="ThesabanTambon" name="ห้วยกะปิ" english="Huai Kapi" geocode="2067" parent="2001" tambon="200115">
