@@ -21,6 +21,16 @@ namespace De.AHoerstemeier.Tambon
         private const String _baseUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/";
         private const String _responseDataUrl = "parent.location.href=\"";
 
+        private const String _defaultCookie =
+            "/RKJ/announce/search_result.jsp=sc1|; " +
+            "/RKJ/announce/search.jspfirsttimeload=0; " +
+            "/RKJ/announce/search.jsp=; " +
+            "/RKJ/announce/search_result.jspfirsttimeload=0; " +
+            "_ga=GA1.3.2080536661.1524126213; " +
+            "_gid=GA1.3.1570106343.1526028472; " +
+            "_gat=1; " +
+            "JSESSIONID=\"1234567890ABCDED0000000000000000\"";
+
         private String _cookie = String.Empty;
         private String _dataUrl = String.Empty;
         private String _searchKey = String.Empty;
@@ -158,13 +168,20 @@ namespace De.AHoerstemeier.Tambon
 
         private void PerformRequest()
         {
+            InitConnection();
+
             StringBuilder requestString = new StringBuilder();
             //foreach ( String s in new List<String> { "ก", "ง", "ข", "ค", "all" } )
             //{
             //    requestString.Append("chkType=" + MyUrlEncode(s) + "&");
             //}
-            requestString.Append("chkType=all&");
-            if ( _volume <= 0 )
+
+            requestString.Append("hidFieldSort=" + MyUrlEncode("BOOKNO,TOPICTYPE_CODE,SECTION_NO,SECTION_SUBSECTION,PAGENO") + "&");
+            requestString.Append("searchOption=adv&");
+            requestString.Append("hidFieldSortText=%E0%C5%E8%C1%2C%BB%C3%D0%E0%C0%B7%E0%C3%D7%E8%CD%A7%2C%B5%CD%B9%2C%B5%CD%B9%BE%D4%E0%C8%C9%2C%CB%B9%E9%D2&");
+            requestString.Append("hidFieldList=" + MyUrlEncode("txtTitle/txtBookNo/txtSection/txtFromDate/txtToDate/selDocGroup1") + "&");
+            requestString.Append("hidNowItem=txtTitle&");
+            if (_volume <= 0)
             {
                 requestString.Append("txtBookNo=&");
             }
@@ -174,25 +191,37 @@ namespace De.AHoerstemeier.Tambon
                 requestString.Append("txtBookNo=" + _volume.ToString() + "&");
             }
             requestString.Append("txtSection=&");
-            requestString.Append("txtFromDate=&");
-            requestString.Append("txtToDate=&");
             requestString.Append("chkSpecial=special&");
-            // requestString.Append("searchOption=adv&");
-            requestString.Append("hidNowItem=txtTitle&");
-            requestString.Append("hidFieldSort=&");
-            requestString.Append("hidFieldSortText=&");
-            // requestString.Append("hidFieldList=" + MyUrlEncode("txtSearchTitle/txtToDate/txtToDate1/txtToDate2") + "&");
-            requestString.Append("hidFieldList=" + MyUrlEncode("txtTitle/txtBookNo/txtSection/txtFromDate/txtToDate/selDocGroup1") + "&");
-            //request.Append("txtDetail=&");
-            requestString.Append("selDocGroup1=&");
+            requestString.Append("txtFromDate=&");
             requestString.Append("selFromDay=&");
             requestString.Append("selFromMonth=&");
             requestString.Append("selFromYear=&");
-            requestString.Append("selToDay=31&");
+            requestString.Append("txtToDate=&");
+            requestString.Append("selToDay=&");
             requestString.Append("selToMonth=&");
             requestString.Append("selToYear=&");
-            requestString.Append("radSearchType=new&");
-            requestString.Append("txtTitle=" + MyUrlEncode(_searchKey));
+            requestString.Append("selDocGroup1=&");
+            requestString.Append("txtDetail=&");
+
+            //hidFieldSort: BOOKNO%2CTOPICTYPE_CODE%2CSECTION_NO%2CSECTION_SUBSECTION%2CPAGENO
+            //searchOption: adv
+            //hidFieldSortText: %E0%C5%E8%C1%2C%BB%C3%D0%E0%C0%B7%E0%C3%D7%E8%CD%A7%2C%B5%CD%B9%2C%B5%CD%B9%BE%D4%E0%C8%C9%2C%CB%B9%E9%D2
+            //hidFieldList: txtTitle%2FtxtBookNo%2FtxtSection%2FtxtFromDate%2FtxtToDate%2FselDocGroup1
+            //hidNowItem: txtTitle
+            //txtTitle: p
+            //txtBookNo:
+            //txtSection:
+            //chkSpecial: special
+            //txtFromDate:
+            //selFromDay:
+            //selFromMonth:
+            //selFromYear:
+            //txtToDate:
+            //selToDay:
+            //selToMonth:
+            //selToYear:
+            //selDocGroup1:
+            //txtDetail:
 
             _dataUrl = GetDataUrl(0, requestString.ToString());
         }
@@ -201,7 +230,7 @@ namespace De.AHoerstemeier.Tambon
         {
             WebClient client = new WebClient();
             String searchUrl = String.Empty;
-            if ( page == 0 )
+            if (page == 0)
             {
                 searchUrl = _searchPostUrl;
             }
@@ -211,33 +240,33 @@ namespace De.AHoerstemeier.Tambon
                 client.Headers.Add("Referer", "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_result.jsp");
             }
 
-            if ( !String.IsNullOrEmpty(_cookie) )
+            if (!String.IsNullOrEmpty(_cookie))
             {
                 client.Headers.Add("Cookie", _cookie);
             }
-            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0");
-            client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36");
+            client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
             client.Headers.Add("Accept-Language", "en-us,en;q=0.5");
-            // client.Headers.Add("Accept-Encoding", "gzip,deflate");
-            client.Headers.Add("Accept-Charset", "UTF-8,*");
+            client.Headers.Add("Host", "www.ratchakitcha.soc.go.th");
+            client.Headers.Add("Origin", "http://www.ratchakitcha.soc.go.th/");
+            client.Headers.Add("Upgrade-Insecure-Requests", "1");
+            //client.Headers.Add("Accept-Encoding", "gzip,deflate");
+            //client.Headers.Add("Accept-Charset", "UTF-8,*");
 
             client.Headers[HttpRequestHeader.ContentType] = "application/x-www-form-urlencoded";
             String response = client.UploadString(searchUrl, requestString);
 
             // Byte[] lResponseData = client.DownloadData(searchUrl + "?" + requestString);
-            String lCookie = client.ResponseHeaders.Get("Set-Cookie");
-            if ( !String.IsNullOrEmpty(lCookie) )
-            {
-                _cookie = lCookie;
-            }
+            String newCookie = client.ResponseHeaders.Get("Set-Cookie");
+            AddCookies(newCookie);
             // String response = Encoding.ASCII.GetString(lResponseData);
             Int32 position = response.LastIndexOf(_responseDataUrl);
             String result = String.Empty;
-            if ( position >= 0 )
+            if (position >= 0)
             {
                 String dataUrl = response.Substring(position, response.Length - position);
                 dataUrl = dataUrl.Substring(_responseDataUrl.Length, dataUrl.Length - _responseDataUrl.Length);
-                if ( dataUrl.Contains("\";") )
+                if (dataUrl.Contains("\";"))
                 {
                     result = _baseUrl + dataUrl.Substring(0, dataUrl.LastIndexOf("\";"));
                 }
@@ -249,11 +278,45 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
+        private void InitConnection()
+        {
+            WebClient client = new WebClient();
+            client.Encoding = Encoding.UTF8;
+            if (!String.IsNullOrEmpty(_cookie))
+            {
+                client.Headers.Add("Cookie", _cookie);
+            }
+            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36");
+            client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
+            client.Headers.Add("Accept-Language", "en-US;q=0.8,en;q=0.7");
+            client.Headers.Add("Host", "www.ratchakitcha.soc.go.th");
+            client.Headers.Add("Upgrade-Insecure-Requests", "1");
+            client.OpenRead(_searchFormUrl);
+            String newCookie = client.ResponseHeaders.Get("Set-Cookie");
+            AddCookies(newCookie);
+        }
+
+        private void AddCookies(String newCookie)
+        {
+            if (!String.IsNullOrWhiteSpace(newCookie))
+            {
+                foreach (var cookie in newCookie.Split(','))
+                {
+                    var cookieToAdd = cookie.Split(';').First();
+                    if (_cookie != String.Empty)
+                    {
+                        _cookie = _cookie + "; ";
+                    }
+                    _cookie = _cookie + cookieToAdd;
+                }
+            }
+        }
+
         private Stream DoDataDownload(Int32 page)
         {
             WebClient client = new WebClient();
             client.Encoding = Encoding.UTF8;
-            if ( page == 0 )
+            if (page == 0)
             {
                 client.Headers.Add("Referer", _searchFormUrl);
             }
@@ -261,13 +324,16 @@ namespace De.AHoerstemeier.Tambon
             {
                 client.Headers.Add("Referer", _searchPageUrl);
             }
-            if ( !String.IsNullOrEmpty(_cookie) )
+            if (!String.IsNullOrEmpty(_cookie))
             {
                 client.Headers.Add("Cookie", _cookie);
             }
-            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0");
-            client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-            client.Headers.Add("Accept-Language", "en-us,en;q=0.5");
+            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36");
+            client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
+            client.Headers.Add("Accept-Language", "en-US;q=0.8,en;q=0.7");
+            client.Headers.Add("Host", "www.ratchakitcha.soc.go.th");
+            client.Headers.Add("Upgrade-Insecure-Requests", "1");
+
             // client.Headers.Add("Accept-Encoding", "gzip,deflate");
             client.Headers.Add("Accept-Charset", "UTF-8,*");
             System.IO.Stream receiveStream = client.OpenRead(_dataUrl);
@@ -280,9 +346,8 @@ namespace De.AHoerstemeier.Tambon
         private void PerformRequestPage(Int32 page)
         {
             StringBuilder requestString = new StringBuilder();
-            //lRequestString.Append("hidlowerindex=1");
-            //lRequestString.Append("hidupperindex=100");
             requestString.Append("txtNowpage=" + page.ToString());
+            InitConnection();
             _dataUrl = GetDataUrl(page, requestString.ToString());
         }
 
@@ -300,9 +365,11 @@ namespace De.AHoerstemeier.Tambon
         private RoyalGazetteList DoParseStream(Stream data)
         {
             var reader = new System.IO.StreamReader(data, TambonHelper.ThaiEncoding);
-            //var fileStream = new FileStream("c:\\temp\\out.htm", FileMode.OpenOrCreate);
-            //TambonHelper.StreamCopy(data, fileStream);
-            //fileStream.Close();
+
+            var fileStream = new FileStream("c:\\temp\\out.htm", FileMode.OpenOrCreate);
+            TambonHelper.StreamCopy(data, fileStream);
+            fileStream.Close();
+
             RoyalGazetteList result = new RoyalGazetteList();
             result.AddRange(DoParse(reader));
             return result;
@@ -317,23 +384,23 @@ namespace De.AHoerstemeier.Tambon
             StringBuilder entryData = new StringBuilder();
             try
             {
-                while ( (currentLine = reader.ReadLine()) != null )
+                while ((currentLine = reader.ReadLine()) != null)
                 {
                     currentLineIndex++;
                     currentLine = currentLine.Trim();
-                    if ( !String.IsNullOrWhiteSpace(currentLine) )
+                    if (!String.IsNullOrWhiteSpace(currentLine))
                     {
-                        if ( currentLine.Contains(PageStart) )
+                        if (currentLine.Contains(PageStart))
                         {
                             String temp = currentLine.Substring(currentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
                             _numberOfPages = Convert.ToInt32(temp);
                         }
-                        else if ( currentLine.StartsWith(EntryStart) )
+                        else if (currentLine.StartsWith(EntryStart))
                         {
-                            if ( entryData.Length > 0 )
+                            if (entryData.Length > 0)
                             {
                                 var current = ParseSingeItem(entryData.ToString());
-                                if ( current != null )
+                                if (current != null)
                                 {
                                     result.Add(current);
                                 }
@@ -346,22 +413,22 @@ namespace De.AHoerstemeier.Tambon
                             }
                             dataState++;
                         }
-                        else if ( dataState >= 0 )
+                        else if (dataState >= 0)
                         {
                             entryData.Append(currentLine.Trim() + " ");
                         }
                     }
                 }
-                if ( entryData.Length > 0 )
+                if (entryData.Length > 0)
                 {
                     var current = ParseSingeItem(entryData.ToString());
-                    if ( current != null )
+                    if (current != null)
                     {
                         result.Add(current);
                     }
                 }
             }
-            catch ( IOException )
+            catch (IOException)
             {
             }
 
@@ -382,7 +449,7 @@ namespace De.AHoerstemeier.Tambon
             value = value.Replace("\t", "");
             RoyalGazette retval = null;
             Int32 position = value.IndexOf(EntryURL);
-            if ( position >= 0 )
+            if (position >= 0)
             {
                 retval = new RoyalGazette();
                 position = position + EntryURL.Length;
@@ -411,12 +478,12 @@ namespace De.AHoerstemeier.Tambon
                 position = value.IndexOf(EntryVolumeorPage) + EntryVolumeorPage.Length;
                 position2 = value.IndexOf(ColumnEnd, position);
                 String page = value.Substring(position, position2 - position);
-                if ( String.IsNullOrEmpty(page) )
+                if (String.IsNullOrEmpty(page))
                     retval.PageInfo.Page = 1;
                 else
                     retval.PageInfo.Page = Convert.ToInt32(TambonHelper.ReplaceThaiNumerals(page));
 
-                if ( retval.Title.Contains('[') && retval.Title.EndsWith("]") )
+                if (retval.Title.Contains('[') && retval.Title.EndsWith("]"))
                 {
                     var beginSubTitle = retval.Title.LastIndexOf('[');
                     retval.SubTitle = retval.Title.Substring(beginSubTitle + 1, retval.Title.Length - beginSubTitle - 2).Trim();
@@ -429,18 +496,18 @@ namespace De.AHoerstemeier.Tambon
         public RoyalGazetteList DoGetList(String searchKey, Int32 volume)
         {
             _searchKey = searchKey;
-            _volume = volume;
+            _volume = Math.Max(0, volume);
             _cookie = String.Empty;
             RoyalGazetteList result = null;
             try
             {
                 PerformRequest();
                 result = new RoyalGazetteList();
-                if ( _dataUrl != String.Empty )
+                if (_dataUrl != String.Empty)
                 {
                     Stream receivedData = DoDataDownload(0);
                     result = DoParseStream(receivedData);
-                    for ( Int32 page = 2 ; page <= _numberOfPages ; page++ )
+                    for (Int32 page = 2; page <= _numberOfPages; page++)
                     {
                         PerformRequestPage(page);
                         Stream receivedDataPage = DoDataDownload(page);
@@ -448,7 +515,7 @@ namespace De.AHoerstemeier.Tambon
                     }
                 }
             }
-            catch ( WebException )
+            catch (WebException)
             {
                 result = null;
                 // TODO
@@ -459,9 +526,9 @@ namespace De.AHoerstemeier.Tambon
         protected RoyalGazetteList GetListDescription(String searchKey, Int32 volume, String description)
         {
             RoyalGazetteList result = DoGetList(searchKey, volume);
-            if ( result != null )
+            if (result != null)
             {
-                foreach ( RoyalGazette entry in result )
+                foreach (RoyalGazette entry in result)
                 {
                     entry.Description = description;
                 }
@@ -481,7 +548,7 @@ namespace De.AHoerstemeier.Tambon
         {
             RoyalGazetteList result = new RoyalGazetteList();
             var protecteAreaTypes = new List<ProtectedAreaTypes>();
-            foreach ( ProtectedAreaTypes protectedArea in Enum.GetValues(typeof(ProtectedAreaTypes)) )
+            foreach (ProtectedAreaTypes protectedArea in Enum.GetValues(typeof(ProtectedAreaTypes)))
             {
                 protecteAreaTypes.Add(protectedArea);
             }
@@ -489,15 +556,15 @@ namespace De.AHoerstemeier.Tambon
             result.AddRange(protectedAreasList);
 
             var entityTypes = new List<EntityType>();
-            foreach ( EntityType entityType in Enum.GetValues(typeof(EntityType)) )
+            foreach (EntityType entityType in Enum.GetValues(typeof(EntityType)))
             {
-                if ( entityType != EntityType.Sukhaphiban )
+                if (entityType != EntityType.Sukhaphiban)
                 {
                     entityTypes.Add(entityType);
                 }
             }
             var entityModifications = new List<EntityModification>();
-            foreach ( EntityModification entityModification in Enum.GetValues(typeof(EntityModification)) )
+            foreach (EntityModification entityModification in Enum.GetValues(typeof(EntityModification)))
             {
                 entityModifications.Add(entityModification);
             }
@@ -513,16 +580,16 @@ namespace De.AHoerstemeier.Tambon
             Int32 volumeBegin = beginDate.Year - 2007 + 124;
             Int32 volumeEnd = endDate.Year - 2007 + 124;
 
-            for ( Int32 volume = volumeBegin ; volume <= volumeEnd ; volume++ )
+            for (Int32 volume = volumeBegin; volume <= volumeEnd; volume++)
             {
-                foreach ( KeyValuePair<EntityModification, Dictionary<ProtectedAreaTypes, String>> outerKeyValuePair in SearchKeysProtectedAreas )
+                foreach (KeyValuePair<EntityModification, Dictionary<ProtectedAreaTypes, String>> outerKeyValuePair in SearchKeysProtectedAreas)
                 {
-                    foreach ( KeyValuePair<ProtectedAreaTypes, String> keyValuePair in outerKeyValuePair.Value )
+                    foreach (KeyValuePair<ProtectedAreaTypes, String> keyValuePair in outerKeyValuePair.Value)
                     {
-                        if ( values.Contains(keyValuePair.Key) )
+                        if (values.Contains(keyValuePair.Key))
                         {
                             var list = GetListDescription(keyValuePair.Value, volume, ModificationText(outerKeyValuePair.Key, keyValuePair.Key));
-                            if ( list != null )
+                            if (list != null)
                             {
                                 result.AddRange(list);
                             }
@@ -540,18 +607,18 @@ namespace De.AHoerstemeier.Tambon
             Int32 volumeBegin = beginDate.Year - 2007 + 124;
             Int32 volumeEnd = endDate.Year - 2007 + 124;
 
-            for ( Int32 volume = volumeBegin ; volume <= volumeEnd ; volume++ )
+            for (Int32 volume = volumeBegin; volume <= volumeEnd; volume++)
             {
-                foreach ( KeyValuePair<EntityModification, Dictionary<EntityType, String>> outerKeyValuePair in SearchKeys )
+                foreach (KeyValuePair<EntityModification, Dictionary<EntityType, String>> outerKeyValuePair in SearchKeys)
                 {
-                    if ( modifications.Contains(outerKeyValuePair.Key) )
+                    if (modifications.Contains(outerKeyValuePair.Key))
                     {
-                        foreach ( KeyValuePair<EntityType, String> keyValuePair in outerKeyValuePair.Value )
+                        foreach (KeyValuePair<EntityType, String> keyValuePair in outerKeyValuePair.Value)
                         {
-                            if ( types.Contains(keyValuePair.Key) )
+                            if (types.Contains(keyValuePair.Key))
                             {
                                 var list = GetListDescription(keyValuePair.Value, volume, ModificationText(outerKeyValuePair.Key, keyValuePair.Key));
-                                if ( list != null )
+                                if (list != null)
                                 {
                                     result.AddRange(list);
                                 }
@@ -569,10 +636,10 @@ namespace De.AHoerstemeier.Tambon
             Int32 volumeBegin = beginDate.Year - 2007 + 124;
             Int32 volumeEnd = endDate.Year - 2007 + 124;
 
-            for ( Int32 volume = volumeBegin ; volume <= volumeEnd ; volume++ )
+            for (Int32 volume = volumeBegin; volume <= volumeEnd; volume++)
             {
                 var list = GetListDescription(searchKey, volume, "");
-                if ( list != null )
+                if (list != null)
                 {
                     result.AddRange(list);
                 }
@@ -596,7 +663,7 @@ namespace De.AHoerstemeier.Tambon
         public void SearchNewsNow()
         {
             RoyalGazetteList gazetteList = SearchNews(DateTime.Now);
-            if ( DateTime.Now.Month == 1 )
+            if (DateTime.Now.Month == 1)
             {
                 // Check news from last year as well, in case something was added late
                 gazetteList.AddRange(SearchNews(DateTime.Now.AddYears(-1)));
@@ -607,7 +674,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void OnProcessingFinished(RoyalGazetteEventArgs e)
         {
-            if ( ProcessingFinished != null )
+            if (ProcessingFinished != null)
             {
                 ProcessingFinished(this, e);
             }
