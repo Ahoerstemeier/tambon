@@ -49,6 +49,14 @@
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
+  <xs:attributeGroup name="ReferenceYear">
+    <xs:attribute name="year" type="xs:gYear" use="optional">
+      <xs:annotation>
+        <xs:documentation>Year in which the data was valid.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+
   <xs:attributeGroup name="Subdivisions">
     <xs:attribute name="subdivisions" type="xs:int" use="optional">
       <xs:annotation>
@@ -61,6 +69,54 @@
       </xs:annotation>
     </xs:attribute>
   </xs:attributeGroup>
+
+  <xs:simpleType name="Level">
+    <xs:annotation>
+      <xs:documentation>Level () of subdivision.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>Undefined value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Level 1.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Level 2.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Level 3.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Level 4.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Level 5.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Special">
+        <xs:annotation>
+          <xs:documentation>Special level.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoValue">
+        <xs:annotation>
+          <xs:documentation>No level assigned.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="EntityType">
     <xs:annotation>

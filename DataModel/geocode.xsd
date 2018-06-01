@@ -144,11 +144,7 @@
         <xs:documentation>Unit in which value is given.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="date" type="xs:gYear" use="optional">
-      <xs:annotation>
-        <xs:documentation>Year in which the data was valid.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:ReferenceYear" />
     <xs:attribute name="invalid" type="xs:boolean" use="optional" default="false">
       <xs:annotation>
         <xs:documentation>Value is wrong, though given as such in source.</xs:documentation>
@@ -193,6 +189,18 @@
       </xs:annotation>
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
+  <xs:complexType name="LevelData">
+    <xs:annotation>
+      <xs:documentation>Level (ชั้น) of the entity.</xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="t:Comment" />
+    <xs:attributeGroup ref="t:ReferenceYear" />
+    <xs:attribute name="value" type="t:Level" use="required">
+      <xs:annotation>
+        <xs:documentation>Level.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="Area">
     <xs:annotation>
@@ -260,6 +268,11 @@
         <xs:documentation>Corrected value of number of entities of the given type.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="coverage" type="t:CoverageType" use="optional" default="completely">
+      <xs:annotation>
+        <xs:documentation>Indicates whether the subdivisions are fully or partially within the entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="EntityCount">
     <xs:sequence minOccurs="1" maxOccurs="1">
@@ -270,11 +283,7 @@
         </xs:annotation>
       </xs:element>
     </xs:sequence>
-    <xs:attribute name="year" type="xs:gYear" use="required">
-      <xs:annotation>
-        <xs:documentation>Reference year.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:attributeGroup ref="t:ReferenceYear" />
     <xs:attribute name="referencedate" type="xs:date" use="optional">
       <xs:annotation>
         <xs:documentation>The reference date of the numbers.</xs:documentation>
@@ -445,6 +454,11 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="population" type="t:PopulationData">
         <xs:annotation>
           <xs:documentation>Population data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="level" type="t:LevelData">
+        <xs:annotation>
+          <xs:documentation>Level data.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="entity" type="t:Entity">

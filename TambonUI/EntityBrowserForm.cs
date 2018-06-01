@@ -103,26 +103,26 @@ namespace De.AHoerstemeier.Tambon.UI
             var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
             _localGovernments.AddRange(_allEntities.Where(x => x.type.IsLocalGovernment()));
 
-            foreach ( var tambon in allLocalGovernmentParents )
+            foreach (var tambon in allLocalGovernmentParents)
             {
                 var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
-                if ( localGovernmentEntity != null )
+                if (localGovernmentEntity != null)
                 {
                     _localGovernments.Add(localGovernmentEntity);
                     _allEntities.Add(localGovernmentEntity);
                 }
             }
-            using ( var fileStream = new FileStream(GlobalData.BaseXMLDirectory + "\\DOLA web id.xml", FileMode.Open, FileAccess.Read) )
+            using (var fileStream = new FileStream(GlobalData.BaseXMLDirectory + "\\DOLA web id.xml", FileMode.Open, FileAccess.Read))
             {
                 var dolaWebIds = XmlManager.XmlToEntity<WebIdList>(fileStream, new XmlSerializer(typeof(WebIdList)));
                 var errors = string.Empty;
-                foreach ( var entry in dolaWebIds.item )
+                foreach (var entry in dolaWebIds.item)
                 {
                     var entity = _localGovernments.FirstOrDefault(x => x.geocode == entry.geocode || x.OldGeocodes.Contains(entry.geocode));
-                    if ( entity != null )
+                    if (entity != null)
                     {
                         var office = entity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
-                        if ( !office.webidSpecified )
+                        if (!office.webidSpecified)
                         {
                             office.webid = entry.id;
                             office.webidSpecified = true;
@@ -137,24 +137,24 @@ namespace De.AHoerstemeier.Tambon.UI
                         errors += String.Format("WebId {0} refers to invalid LAO {1}", entry.id, entry.geocode) + Environment.NewLine;
                     }
                 }
-                if ( !String.IsNullOrEmpty(errors) )
+                if (!String.IsNullOrEmpty(errors))
                 {
                     MessageBox.Show(errors, "WebId errors");
                 }
             }
-            foreach ( var file in Directory.EnumerateFiles(GlobalData.BaseXMLDirectory + "\\DOLA\\") )
+            foreach (var file in Directory.EnumerateFiles(GlobalData.BaseXMLDirectory + "\\DOLA\\"))
             {
-                using ( var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read) )
+                using (var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read))
                 {
                     var dolaData = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
-                    foreach ( var sourceEntity in dolaData.FlatList() )
+                    foreach (var sourceEntity in dolaData.FlatList())
                     {
                         var targetEntity = _localGovernments.FirstOrDefault(x => x.geocode == sourceEntity.geocode);
-                        if ( targetEntity != null )
+                        if (targetEntity != null)
                         {
                             var sourceOffice = sourceEntity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
                             var targetOffice = targetEntity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
-                            if ( sourceOffice != null && targetOffice != null )
+                            if (sourceOffice != null && targetOffice != null)
                             {
                                 targetOffice.dola.AddRange(sourceOffice.dola);
                                 targetOffice.dola.Sort((x, y) => y.year.CompareTo(x.year));
@@ -170,7 +170,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
-            foreach ( var lao in _localGovernments )
+            foreach (var lao in _localGovernments)
             {
                 lao.CalculatePostcodeForLocalAdministration(allTambon);
             }
@@ -189,15 +189,15 @@ namespace De.AHoerstemeier.Tambon.UI
         private TreeNode EntityToTreeNode(Entity data)
         {
             TreeNode retval = null;
-            if ( data != null )
+            if (data != null)
             {
                 retval = new TreeNode(data.english);
                 retval.Tag = data;
-                if ( !data.type.IsThirdLevelAdministrativeUnit() )  // No Muban in Treeview
+                if (!data.type.IsThirdLevelAdministrativeUnit())  // No Muban in Treeview
                 {
-                    foreach ( Entity entity in data.entity )
+                    foreach (Entity entity in data.entity)
                     {
-                        if ( !entity.IsObsolete && !entity.type.IsLocalGovernment() )
+                        if (!entity.IsObsolete && !entity.type.IsLocalGovernment())
                         {
                             retval.Nodes.Add(EntityToTreeNode(entity));
                         }
@@ -216,9 +216,9 @@ namespace De.AHoerstemeier.Tambon.UI
             TreeNode baseNode = EntityToTreeNode(_baseEntity);
             treeviewSelection.Nodes.Add(baseNode);
             baseNode.Expand();
-            foreach ( TreeNode node in baseNode.Nodes )
+            foreach (TreeNode node in baseNode.Nodes)
             {
-                if ( ((Entity)(node.Tag)).geocode == StartChangwatGeocode )
+                if (((Entity)(node.Tag)).geocode == StartChangwatGeocode)
                 {
                     treeviewSelection.SelectedNode = node;
                     node.Expand();
@@ -273,10 +273,10 @@ namespace De.AHoerstemeier.Tambon.UI
             var result = String.Empty;
             var councilBuilder = new StringBuilder();
             Int32 councilCount = 0;
-            foreach ( var item in itemsWithCouncilElectionsPending )
+            foreach (var item in itemsWithCouncilElectionsPending)
             {
                 DateTime end;
-                if ( item.CouncilTerm.endSpecified )
+                if (item.CouncilTerm.endSpecified)
                 {
                     end = item.CouncilTerm.end;
                 }
@@ -288,7 +288,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 councilBuilder.AppendLine();
                 councilCount++;
             }
-            if ( councilCount > 0 )
+            if (councilCount > 0)
             {
                 result +=
                     String.Format(CultureInfo.CurrentUICulture, "{0} LAO council elections pending", councilCount) + Environment.NewLine +
@@ -297,13 +297,13 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var officialBuilder = new StringBuilder();
             Int32 officialCount = 0;
-            foreach ( var item in itemsWithOfficialElectionsPending )
+            foreach (var item in itemsWithOfficialElectionsPending)
             {
                 String officialTermEnd = "unknown";
-                if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )
+                if ((item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900))
                 {
                     DateTime end;
-                    if ( item.OfficialTerm.endSpecified )
+                    if (item.OfficialTerm.endSpecified)
                     {
                         end = item.OfficialTerm.end;
                     }
@@ -317,7 +317,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 officialBuilder.AppendLine();
                 officialCount++;
             }
-            if ( officialCount > 0 )
+            if (officialCount > 0)
             {
                 result +=
                     String.Format(CultureInfo.CurrentUICulture, "{0} LAO official elections pending", officialCount) + Environment.NewLine +
@@ -326,16 +326,16 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var officialUnknownBuilder = new StringBuilder();
             Int32 officialUnknownCount = 0;
-            foreach ( var item in itemsWithOfficialElectionResultUnknown )
+            foreach (var item in itemsWithOfficialElectionResultUnknown)
             {
-                if ( (item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900) )  // must be always true
+                if ((item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900))  // must be always true
                 {
                     officialUnknownBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2:d}", item.Entity.english, item.Entity.geocode, item.OfficialTerm.begin);
                     officialUnknownBuilder.AppendLine();
                     officialUnknownCount++;
                 }
             }
-            if ( officialUnknownCount > 0 )
+            if (officialUnknownCount > 0)
             {
                 result +=
                     String.Format(CultureInfo.CurrentUICulture, "{0} LAO official elections result missing", officialUnknownCount) + Environment.NewLine +
@@ -348,10 +348,10 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var text = String.Empty;
             var wrongGeocodes = entity.WrongGeocodes();
-            if ( wrongGeocodes.Any() )
+            if (wrongGeocodes.Any())
             {
                 text += "Wrong geocodes:" + Environment.NewLine;
-                foreach ( var code in wrongGeocodes )
+                foreach (var code in wrongGeocodes)
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
@@ -361,25 +361,25 @@ namespace De.AHoerstemeier.Tambon.UI
             // var localGovernmentsInProvince = LocalGovernmentEntitiesOf(this.baseEntity.entity.First(x => x.geocode == GeocodeHelper.ProvinceCode(entity.geocode))).ToList();
             var localEntitiesWithOffice = localGovernmentsInEntity.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
             // var localEntitiesInProvinceWithOffice = localGovernmentsInProvince.Where(x => x.Dola != null && !x.IsObsolete).ToList();  // Dola != null when there is a local government office
-            if ( ShowDolaErrors )
+            if (ShowDolaErrors)
             {
                 var entitiesWithDolaCode = localEntitiesWithOffice.Where(x => x.LastedDolaCode() != 0).ToList();
                 var allDolaCodes = entitiesWithDolaCode.Select(x => x.LastedDolaCode()).ToList();
                 var duplicateDolaCodes = allDolaCodes.GroupBy(s => s).SelectMany(grp => grp.Skip(1)).ToList();
-                if ( duplicateDolaCodes.Any() )
+                if (duplicateDolaCodes.Any())
                 {
                     text += "Duplicate DOLA codes:" + Environment.NewLine;
-                    foreach ( var code in duplicateDolaCodes )
+                    foreach (var code in duplicateDolaCodes)
                     {
                         text += String.Format(" {0}", code) + Environment.NewLine;
                     }
                     text += Environment.NewLine;
                 }
                 var invalidDolaCodeEntities = entitiesWithDolaCode.Where(x => !x.DolaCodeValid()).ToList();
-                if ( invalidDolaCodeEntities.Any() )
+                if (invalidDolaCodeEntities.Any())
                 {
                     text += "Invalid DOLA codes:" + Environment.NewLine;
-                    foreach ( var dolaEntity in invalidDolaCodeEntities )
+                    foreach (var dolaEntity in invalidDolaCodeEntities)
                     {
                         text += String.Format(" {0} {1} ({2})", dolaEntity.LastedDolaCode(), dolaEntity.english, dolaEntity.type) + Environment.NewLine;
                     }
@@ -388,10 +388,10 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             var localEntitiesWithoutParent = localEntitiesWithOffice.Where(x => !x.parent.Any());
-            if ( localEntitiesWithoutParent.Any() )
+            if (localEntitiesWithoutParent.Any())
             {
                 text += "Local governments without parent:" + Environment.NewLine;
-                foreach ( var subEntity in localEntitiesWithoutParent )
+                foreach (var subEntity in localEntitiesWithoutParent)
                 {
                     text += String.Format(" {0} {1}", subEntity.geocode, subEntity.english) + Environment.NewLine;
                 }
@@ -400,7 +400,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var allTambon = entity.FlatList().Where(x => x.type == EntityType.Tambon && !x.IsObsolete).ToList();
             var localGovernmentCoverages = new List<LocalGovernmentCoverageEntity>();
-            foreach ( var item in localEntitiesWithOffice )
+            foreach (var item in localEntitiesWithOffice)
             {
                 localGovernmentCoverages.AddRange(item.LocalGovernmentAreaCoverage);
             }
@@ -410,19 +410,19 @@ namespace De.AHoerstemeier.Tambon.UI
             var invalidLocalGovernmentCoverages = localGovernmentCoveragesByTambon.Where(x => !allTambon.Any(y => y.geocode == x.Key));
             // var tambonWithMoreThanOneCoverage = localGovernmentCoveragesByTambon.SelectMany(grp => grp.Skip(1)).ToList();
             // var duplicateCompletelyCoveredTambon = tambonWithMoreThanOneCoverage.Where(x => x.coverage == CoverageType.completely);
-            if ( invalidLocalGovernmentCoverages.Any() )
+            if (invalidLocalGovernmentCoverages.Any())
             {
                 text += "Invalid Tambon references by areacoverage:" + Environment.NewLine;
-                foreach ( var code in invalidLocalGovernmentCoverages )
+                foreach (var code in invalidLocalGovernmentCoverages)
                 {
                     text += String.Format(" {0}", code.Key) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
-            if ( duplicateCompletelyCoveredTambon.Any() )
+            if (duplicateCompletelyCoveredTambon.Any())
             {
                 text += "Tambon covered completely more than once:" + Environment.NewLine;
-                foreach ( var code in duplicateCompletelyCoveredTambon )
+                foreach (var code in duplicateCompletelyCoveredTambon)
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
@@ -435,30 +435,30 @@ namespace De.AHoerstemeier.Tambon.UI
                 code = group.Key,
                 count = group.Count()
             }).Where(x => x.count == 1).Select(y => y.code);
-            if ( onlyOnePartialCoverage.Any() )
+            if (onlyOnePartialCoverage.Any())
             {
                 text += "Tambon covered partially only once:" + Environment.NewLine;
-                foreach ( var code in onlyOnePartialCoverage )
+                foreach (var code in onlyOnePartialCoverage)
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
             var tambonWithoutCoverage = allTambon.Where(x => !localGovernmentCoveragesByTambon.Any(y => y.Key == x.geocode));
-            if ( tambonWithoutCoverage.Any() )
+            if (tambonWithoutCoverage.Any())
             {
                 text += String.Format("Tambon without coverage ({0}):", tambonWithoutCoverage.Count()) + Environment.NewLine;
-                foreach ( var tambon in tambonWithoutCoverage )
+                foreach (var tambon in tambonWithoutCoverage)
                 {
                     text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
             var localGovernmentWithoutCoverage = localEntitiesWithOffice.Where(x => x.type != EntityType.PAO && !x.LocalGovernmentAreaCoverage.Any());
-            if ( localGovernmentWithoutCoverage.Any() )
+            if (localGovernmentWithoutCoverage.Any())
             {
                 text += String.Format("LAO without coverage ({0}):", localGovernmentWithoutCoverage.Count()) + Environment.NewLine;
-                foreach ( var tambon in localGovernmentWithoutCoverage )
+                foreach (var tambon in localGovernmentWithoutCoverage)
                 {
                     text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
                 }
@@ -466,23 +466,23 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             var tambonWithoutPostalCode = allTambon.Where(x => !x.codes.post.value.Any());
-            if ( tambonWithoutPostalCode.Any() )
+            if (tambonWithoutPostalCode.Any())
             {
                 text += String.Format("Tambon without postal code ({0}):", tambonWithoutPostalCode.Count()) + Environment.NewLine;
-                foreach ( var tambon in tambonWithoutPostalCode )
+                foreach (var tambon in tambonWithoutPostalCode)
                 {
                     text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
 
-            if ( GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Any() )
+            if (GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Any())
             {
                 var tambonWithoutAreaDefinition = allTambon.Where(x => !x.entitycount.Any());
-                if ( tambonWithoutAreaDefinition.Any() )
+                if (tambonWithoutAreaDefinition.Any())
                 {
                     text += String.Format("Tambon without Royal Gazette area definition ({0}):", tambonWithoutAreaDefinition.Count()) + Environment.NewLine;
-                    foreach ( var tambon in tambonWithoutAreaDefinition )
+                    foreach (var tambon in tambonWithoutAreaDefinition)
                     {
                         text += String.Format(" {0}", tambon.geocode) + Environment.NewLine;
                     }
@@ -493,50 +493,50 @@ namespace De.AHoerstemeier.Tambon.UI
             var unknownNeighbors = new List<UInt32>();
             var onewayNeighbors = new List<UInt32>();
             var selfNeighbors = new List<UInt32>();
-            foreach ( var entityWithNeighbors in entity.FlatList().Where(x => x.area.bounding.Any()) )
+            foreach (var entityWithNeighbors in entity.FlatList().Where(x => x.area.bounding.Any()))
             {
-                foreach ( var neighbor in entityWithNeighbors.area.bounding.Select(x => x.geocode) )
+                foreach (var neighbor in entityWithNeighbors.area.bounding.Select(x => x.geocode))
                 {
                     var targetEntity = _allEntities.FirstOrDefault(x => x.geocode == neighbor);
-                    if ( targetEntity == null )
+                    if (targetEntity == null)
                     {
                         unknownNeighbors.Add(neighbor);
                     }
-                    else if ( targetEntity.area.bounding.Any() && !targetEntity.area.bounding.Any(x => x.geocode == entityWithNeighbors.geocode) )
+                    else if (targetEntity.area.bounding.Any() && !targetEntity.area.bounding.Any(x => x.geocode == entityWithNeighbors.geocode))
                     {
-                        if ( !onewayNeighbors.Contains(entityWithNeighbors.geocode) )
+                        if (!onewayNeighbors.Contains(entityWithNeighbors.geocode))
                         {
                             onewayNeighbors.Add(entityWithNeighbors.geocode);
                         }
                     }
                 }
-                if ( entityWithNeighbors.area.bounding.Any(x => x.geocode == entityWithNeighbors.geocode) )
+                if (entityWithNeighbors.area.bounding.Any(x => x.geocode == entityWithNeighbors.geocode))
                 {
                     selfNeighbors.Add(entityWithNeighbors.geocode);
                 }
             }
-            if ( unknownNeighbors.Any() )
+            if (unknownNeighbors.Any())
             {
                 text += String.Format("Invalid neighboring entities ({0}):", unknownNeighbors.Count()) + Environment.NewLine;
-                foreach ( var code in unknownNeighbors )
+                foreach (var code in unknownNeighbors)
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
-            if ( onewayNeighbors.Any() )
+            if (onewayNeighbors.Any())
             {
                 text += String.Format("Neighboring entities not found in both direction ({0}):", onewayNeighbors.Count()) + Environment.NewLine;
-                foreach ( var code in onewayNeighbors )
+                foreach (var code in onewayNeighbors)
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
-            if ( selfNeighbors.Any() )
+            if (selfNeighbors.Any())
             {
                 text += String.Format("Neighboring entities includes self ({0}):", selfNeighbors.Count()) + Environment.NewLine;
-                foreach ( var code in selfNeighbors )
+                foreach (var code in selfNeighbors)
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
@@ -552,10 +552,10 @@ namespace De.AHoerstemeier.Tambon.UI
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "geonames", (Entity x) => x.codes.geonames.value, "^\\d+$");
 
             var entityWithoutSlogan = entity.FlatList().Where(x => !x.IsObsolete && (x.type.IsCompatibleEntityType(EntityType.Changwat) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) && !x.symbols.slogan.Any());
-            if ( entityWithoutSlogan.Any() )
+            if (entityWithoutSlogan.Any())
             {
                 text += String.Format("Province/District without slogan ({0}):", entityWithoutSlogan.Count()) + Environment.NewLine;
-                foreach ( var item in entityWithoutSlogan )
+                foreach (var item in entityWithoutSlogan)
                 {
                     text += String.Format(" {0}: {1}", item.geocode, item.english) + Environment.NewLine;
                 }
@@ -565,10 +565,10 @@ namespace De.AHoerstemeier.Tambon.UI
             var entitiesToCheckForHistory = entity.FlatList().Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) || (x.type == EntityType.Tambon) || x.type.IsCompatibleEntityType(EntityType.Changwat));
             var entitiesToCheckWithCreationHistory = entitiesToCheckForHistory.Where(x => x.history.Items.Any(y => y is HistoryCreate));
             var entitiesCreationWithoutSubdivisions = entitiesToCheckWithCreationHistory.Where(x => (x.history.Items.FirstOrDefault(y => y is HistoryCreate) as HistoryCreate).subdivisions == 0);
-            if ( entitiesCreationWithoutSubdivisions.Any() )
+            if (entitiesCreationWithoutSubdivisions.Any())
             {
                 text += String.Format("Entities with creation but no subdivision number ({0}):", entitiesCreationWithoutSubdivisions.Count()) + Environment.NewLine;
-                foreach ( var item in entitiesCreationWithoutSubdivisions )
+                foreach (var item in entitiesCreationWithoutSubdivisions)
                 {
                     text += String.Format(" {0}: {1}", item.geocode, item.english) + Environment.NewLine;
                 }
@@ -578,29 +578,29 @@ namespace De.AHoerstemeier.Tambon.UI
             var entitiesWithGazetteCreation = entitiesWithoutCreation.Where(x => GazetteCreationHistory(x) != null);
             // remove those strange 1947 Tambon creation
             var entitiesWithGazetteCreationFiltered = entitiesWithGazetteCreation.Where(x => x.type != EntityType.Tambon || GazetteCreationHistory(x).effective.Year >= 1950);
-            if ( entitiesWithGazetteCreationFiltered.Any() )
+            if (entitiesWithGazetteCreationFiltered.Any())
             {
                 text += String.Format("Entities with creation missing ({0}):", entitiesWithGazetteCreationFiltered.Count()) + Environment.NewLine;
-                foreach ( var item in entitiesWithGazetteCreationFiltered )
+                foreach (var item in entitiesWithGazetteCreationFiltered)
                 {
                     text += String.Format(" {0}: {1}", item.geocode, item.english) + Environment.NewLine;
                 }
                 text += Environment.NewLine;
             }
 
-            var entitiesWithArea2003 = entity.FlatList().Where(x => !x.IsObsolete && x.area.area.Any(y => y.date == "2003" && !y.invalid));
-            foreach ( var entityWithArea in entitiesWithArea2003 )
+            var entitiesWithArea2003 = entity.FlatList().Where(x => !x.IsObsolete && x.area.area.Any(y => y.year == "2003" && !y.invalid));
+            foreach (var entityWithArea in entitiesWithArea2003)
             {
-                var subEntitiesWithArea = entityWithArea.entity.Where(x => !x.IsObsolete && x.area.area.Any(y => y.date == "2003" && !y.invalid));
-                if ( subEntitiesWithArea.Any() )
+                var subEntitiesWithArea = entityWithArea.entity.Where(x => !x.IsObsolete && x.area.area.Any(y => y.year == "2003" && !y.invalid));
+                if (subEntitiesWithArea.Any())
                 {
                     Decimal area = 0;
-                    foreach ( var subEntity in subEntitiesWithArea )
+                    foreach (var subEntity in subEntitiesWithArea)
                     {
-                        area += subEntity.area.area.First(x => x.date == "2003" && !x.invalid).value;
+                        area += subEntity.area.area.First(x => x.year == "2003" && !x.invalid).value;
                     }
-                    var expected = entityWithArea.area.area.First(x => x.date == "2003").value;
-                    if ( area != expected )
+                    var expected = entityWithArea.area.area.First(x => x.year == "2003").value;
+                    if (area != expected)
                     {
                         text += String.Format("Area sum in 2003 not correct for {0} (expected {1}, actual {2}):", entityWithArea.english, expected, area) + Environment.NewLine;
                     }
@@ -608,10 +608,10 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             var laoWithoutWebId = localGovernmentsInEntity.Where(x => !x.IsObsolete && !x.office.First().webidSpecified).ToList();
-            if ( laoWithoutWebId.Any() )
+            if (laoWithoutWebId.Any())
             {
                 text += String.Format("Entities without DOLA web id ({0}):", laoWithoutWebId.Count()) + Environment.NewLine;
-                foreach ( var item in laoWithoutWebId )
+                foreach (var item in laoWithoutWebId)
                 {
                     text += String.Format(" {0}: {1}", item.geocode, item.english) + Environment.NewLine;
                 }
@@ -640,36 +640,36 @@ namespace De.AHoerstemeier.Tambon.UI
             }).ToList();
             // var gazetteContentInCurrentEntity = gazetteContent.Where(x => GeocodeHelper.IsBaseGeocode(entity.geocode, ((GazetteOperationBase)x.History).geocode)).ToList();
 
-            foreach ( var gazetteHistoryTuple in gazetteContent )
+            foreach (var gazetteHistoryTuple in gazetteContent)
             {
                 var gazetteOperation = gazetteHistoryTuple.History;
-                if ( gazetteOperation != null )
+                if (gazetteOperation != null)
                 {
                     UInt32 geocode = 0;
-                    if ( gazetteOperation.tambonSpecified )
+                    if (gazetteOperation.tambonSpecified)
                     {
                         geocode = gazetteOperation.tambon + 50;
                     }
-                    if ( gazetteOperation.geocodeSpecified )
+                    if (gazetteOperation.geocodeSpecified)
                     {
                         geocode = gazetteOperation.geocode;
                     }
-                    if ( geocode != 0 )
+                    if (geocode != 0)
                     {
                         HistoryEntryBase history = gazetteOperation.ConvertToHistory();
 
-                        if ( history != null )
+                        if (history != null)
                         {
                             history.AddGazetteReference(gazetteHistoryTuple.Gazette);
                             var doAdd = true;
-                            if ( (GeocodeHelper.GeocodeLevel(geocode) == 4) && (history is HistoryReassign) )
+                            if ((GeocodeHelper.GeocodeLevel(geocode) == 4) && (history is HistoryReassign))
                             {
                                 // skip the reassign for Muban as the Muban geocodes are not stable!
                                 doAdd = false;
                             }
-                            if ( doAdd )
+                            if (doAdd)
                             {
-                                if ( !result.Keys.Contains(geocode) )
+                                if (!result.Keys.Contains(geocode))
                                 {
                                     result[geocode] = new HistoryList();
                                 }
@@ -689,10 +689,10 @@ namespace De.AHoerstemeier.Tambon.UI
             var allEntites = entity.FlatList().Where(x => !x.IsObsolete);
             var allEntityOfFittingType = allEntites.Where(x => x.type.IsCompatibleEntityType(entityTypes));
             var entitiesWithoutCode = allEntityOfFittingType.Where(x => String.IsNullOrEmpty(selector(x)));
-            if ( entitiesWithoutCode.Any() )
+            if (entitiesWithoutCode.Any())
             {
                 text += String.Format("Entity without {0} code ({1}):", codeName, entitiesWithoutCode.Count()) + Environment.NewLine;
-                foreach ( var subEntity in entitiesWithoutCode )
+                foreach (var subEntity in entitiesWithoutCode)
                 {
                     text += String.Format(" {0}", subEntity.geocode) + Environment.NewLine;
                 }
@@ -700,10 +700,10 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var allCodes = allEntites.Where(x => !String.IsNullOrEmpty(selector(x))).Select(y => selector(y)).ToList();
             var duplicateCodes = allCodes.GroupBy(s => s).SelectMany(grp => grp.Skip(1)).ToList();
-            if ( duplicateCodes.Any() )
+            if (duplicateCodes.Any())
             {
                 text += String.Format("Duplicate {0} codes:", codeName) + Environment.NewLine;
-                foreach ( var code in duplicateCodes )
+                foreach (var code in duplicateCodes)
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
@@ -711,10 +711,10 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var regex = new Regex(format);
             var invalidCodes = allCodes.Where(x => !regex.IsMatch(x));
-            if ( invalidCodes.Any() )
+            if (invalidCodes.Any())
             {
                 text += String.Format("Invalid {0} codes:", codeName) + Environment.NewLine;
-                foreach ( var code in invalidCodes )
+                foreach (var code in invalidCodes)
                 {
                     text += String.Format(" {0}", code) + Environment.NewLine;
                 }
@@ -728,7 +728,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var value = String.Empty;
             var populationData = entity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
-            if ( populationData != null )
+            if (populationData != null)
             {
                 value = String.Format("Population: {0} ({1} male,  {2} female)",
                     populationData.TotalPopulation.total,
@@ -748,7 +748,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var mubanNumbers = allTambon.GroupBy(x => x.entity.Count(y => !y.IsObsolete && y.type == EntityType.Muban))
                 .Select(g => g.Key).ToList();
             mubanNumbers.Sort();
-            if ( allMuban.Count() == 0 )
+            if (allMuban.Count() == 0)
             {
                 result = "No Muban" + Environment.NewLine;
             }
@@ -759,34 +759,34 @@ namespace De.AHoerstemeier.Tambon.UI
                     mubanNumbers.First(),
                     mubanNumbers.Last());
                 var counter = new FrequencyCounter();
-                foreach ( var tambon in allTambon )
+                foreach (var tambon in allTambon)
                 {
                     counter.IncrementForCount(tambon.entity.Count(x => x.type == EntityType.Muban && !x.IsObsolete), tambon.geocode);
                 }
                 result += String.Format("Most common Muban number: {0}", counter.MostCommonValue) + Environment.NewLine;
                 result += String.Format("Median Muban number: {0:0.0}", counter.MedianValue) + Environment.NewLine;
                 List<UInt32> tambonWithNoMuban = null;
-                if ( counter.Data.TryGetValue(0, out tambonWithNoMuban) )
+                if (counter.Data.TryGetValue(0, out tambonWithNoMuban))
                 {
                     result += String.Format("Tambon without Muban: {0}", tambonWithNoMuban.Count) + Environment.NewLine;
                 }
             }
             var mubanCreatedRecently = allMuban.Where(x => x.history.Items.Any(y => y is HistoryCreate)).ToList();
-            if ( mubanCreatedRecently.Any() )
+            if (mubanCreatedRecently.Any())
             {
                 result += String.Format("Muban created recently: {0}", mubanCreatedRecently.Count) + Environment.NewLine;
                 var mubanByYear = mubanCreatedRecently.GroupBy(x => ((HistoryCreate)(x.history.Items.First(y => y is HistoryCreate))).effective.Year).OrderBy(x => x.Key);
-                foreach ( var item in mubanByYear )
+                foreach (var item in mubanByYear)
                 {
                     result += String.Format("  {0}: {1}", item.Key, item.Count()) + Environment.NewLine;
                 }
             }
             // could add: Muban creations in last years
             var tambonWithInvalidMubanNumber = TambonWithInvalidMubanNumber(allTambon);
-            if ( tambonWithInvalidMubanNumber.Any() )
+            if (tambonWithInvalidMubanNumber.Any())
             {
                 result += Environment.NewLine + String.Format("Muban inconsistent for {0} Muban:", tambonWithInvalidMubanNumber.Count()) + Environment.NewLine;
-                foreach ( var tambon in tambonWithInvalidMubanNumber )
+                foreach (var tambon in tambonWithInvalidMubanNumber)
                 {
                     result += String.Format("{0}: {1}", tambon.geocode, tambon.english) + Environment.NewLine;
                 }
@@ -812,12 +812,12 @@ namespace De.AHoerstemeier.Tambon.UI
             var localGovernmentCoveringMoreThanOneTambonAndAllCompletely = localGovernmentCoveringMoreThanOneTambon.Where(x => x.LocalGovernmentAreaCoverage.All(y => y.coverage == CoverageType.completely));
 
             result += String.Format(CultureInfo.CurrentUICulture, "LAO: {0}", localEntitiesWithOffice.Count()) + Environment.NewLine;
-            if ( localGovernmentsObsolete.Any() )
+            if (localGovernmentsObsolete.Any())
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "Abolished LAO: {0}", localGovernmentsObsolete.Count()) + Environment.NewLine;
             }
             result += String.Format(CultureInfo.CurrentUICulture, "LAO with coverage: {0}", localEntitiesWithCoverage.Count()) + Environment.NewLine;
-            if ( localEntitiesWithoutCoverage.Any() )
+            if (localEntitiesWithoutCoverage.Any())
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "LAO missing coverage: {0}", localEntitiesWithoutCoverage.Count()) + Environment.NewLine;
             }
@@ -840,7 +840,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 x.IsObsolete &&
                 !x.history.Items.Any(y => y is HistoryAbolish && (y as HistoryAbolish).type == x.type))
                 );
-            if ( localGovernmentWithoutLatestHistory.Count() > 0 )
+            if (localGovernmentWithoutLatestHistory.Count() > 0)
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "LAO without latest history: {0} ({1} TAO)",
                    localGovernmentWithoutLatestHistory.Count(),
@@ -848,7 +848,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
             var localGovernmentWithoutCreation = localGovernmentExpectingHistory.Where(x =>
                 !x.history.Items.Any(y => y is HistoryCreate)).ToList();
-            if ( localGovernmentWithoutCreation.Count() > 0 )
+            if (localGovernmentWithoutCreation.Count() > 0)
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "LAO without creation history: {0} ({1} TAO)",
                    localGovernmentWithoutCreation.Count(),
@@ -859,22 +859,22 @@ namespace De.AHoerstemeier.Tambon.UI
             var sml = new Dictionary<EntityType, Dictionary<SmallMediumLarge, Int32>>();
             var smlTypes = new List<SmallMediumLarge>() { SmallMediumLarge.L, SmallMediumLarge.M, SmallMediumLarge.S, SmallMediumLarge.Undefined };
             var laoTypes = new List<EntityType>() { EntityType.ThesabanNakhon, EntityType.ThesabanMueang, EntityType.ThesabanTambon, EntityType.TAO, EntityType.Mueang, EntityType.SpecialAdministrativeUnit, EntityType.PAO };
-            foreach ( var laoType in laoTypes )
+            foreach (var laoType in laoTypes)
             {
                 var smlData = new Dictionary<SmallMediumLarge, Int32>();
-                foreach ( var smlType in smlTypes )
+                foreach (var smlType in smlTypes)
                 {
                     smlData[smlType] = 0;
                 }
                 sml[laoType] = smlData;
             }
             // fill SML data
-            foreach ( var lao in localGovernmentsInEntity )
+            foreach (var lao in localGovernmentsInEntity)
             {
-                if ( lao.Dola != null )
+                if (lao.Dola != null)
                 {
                     var dola = lao.Dola.FirstOrDefault();
-                    if ( dola != null )
+                    if (dola != null)
                     {
                         {
                             sml[lao.type][dola.SML]++;
@@ -883,26 +883,26 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
             // Convert to display
-            foreach ( var laoType in laoTypes )
+            foreach (var laoType in laoTypes)
             {
                 var smlData = sml[laoType];
                 var count = 0;
-                foreach ( var smlType in smlTypes )
+                foreach (var smlType in smlTypes)
                 {
                     count += smlData[smlType];
                 }
-                if ( count > 0 )
+                if (count > 0)
                 {
                     var data = String.Empty;
-                    foreach ( var smlType in smlTypes )
+                    foreach (var smlType in smlTypes)
                     {
-                        if ( smlData[smlType] > 0 )
+                        if (smlData[smlType] > 0)
                         {
                             data += String.Format(CultureInfo.CurrentUICulture, "{0}: {1}, ", smlType, smlData[smlType]);
                         }
                     }
                     data = data.Remove(data.Length - 2, 2);
-                    if ( laoType != EntityType.PAO )
+                    if (laoType != EntityType.PAO)
                     {
                         result += String.Format(CultureInfo.CurrentUICulture, "{0}: {1}", laoType, data) + Environment.NewLine;
                     }
@@ -915,9 +915,9 @@ namespace De.AHoerstemeier.Tambon.UI
         private IEnumerable<Entity> TambonWithInvalidMubanNumber(IEnumerable<Entity> allTambon)
         {
             var result = new List<Entity>();
-            foreach ( var tambon in allTambon.Where(x => x.type == EntityType.Tambon) )
+            foreach (var tambon in allTambon.Where(x => x.type == EntityType.Tambon))
             {
-                if ( !tambon.MubanNumberConsistent() )
+                if (!tambon.MubanNumberConsistent())
                 {
                     result.Add(tambon);
                 }
@@ -931,10 +931,10 @@ namespace De.AHoerstemeier.Tambon.UI
             var noLocation = entity.CountSubdivisionsWithoutLocation(_localGovernments);
 
             var result = String.Empty;
-            foreach ( var keyvaluepair in counted )
+            foreach (var keyvaluepair in counted)
             {
                 Int32 noLocationCount = 0;
-                if ( noLocation.TryGetValue(keyvaluepair.Key, out noLocationCount) )
+                if (noLocation.TryGetValue(keyvaluepair.Key, out noLocationCount))
                 {
                     result += String.Format("{0}: {1} ({2} without location)", keyvaluepair.Key, keyvaluepair.Value, noLocationCount) + Environment.NewLine;
                 }
@@ -950,7 +950,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             listviewCentralAdministration.BeginUpdate();
             listviewCentralAdministration.Items.Clear();
-            foreach ( Entity subEntity in entity.entity.Where(x => !x.IsObsolete && !x.type.IsLocalGovernment()) )
+            foreach (Entity subEntity in entity.entity.Where(x => !x.IsObsolete && !x.type.IsLocalGovernment()))
             {
                 ListViewItem item = listviewCentralAdministration.Items.Add(subEntity.english);
                 item.Tag = subEntity;
@@ -965,7 +965,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void AddPopulationToItems(Entity subEntity, ListViewItem item)
         {
             var populationData = subEntity.population.FirstOrDefault(x => x.Year == PopulationReferenceYear && x.source == PopulationDataSource);
-            if ( populationData != null && populationData.TotalPopulation != null )
+            if (populationData != null && populationData.TotalPopulation != null)
             {
                 item.SubItems.Add(populationData.TotalPopulation.total.ToString(CultureInfo.CurrentUICulture));
             }
@@ -978,14 +978,14 @@ namespace De.AHoerstemeier.Tambon.UI
         private void AddCreationDateToItems(Entity entity, Entity subEntity, ListViewItem item)
         {
             var creationHistory = subEntity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
-            if ( creationHistory != null )
+            if (creationHistory != null)
             {
                 item.SubItems.Add(creationHistory.effective.ToString("yyyy-MM-dd", CultureInfo.CurrentUICulture));
             }
             else
             {
                 creationHistory = GazetteCreationHistory(subEntity);
-                if ( creationHistory != null )
+                if (creationHistory != null)
                 {
                     item.SubItems.Add("(" + creationHistory.effective.ToString("yyyy-MM-dd", CultureInfo.CurrentUICulture) + ")");
                 }
@@ -1000,13 +1000,13 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             HistoryCreate creationHistory;
             var histories = new HistoryList();
-            if ( _creationHistories.Keys.Contains(subEntity.geocode) )
+            if (_creationHistories.Keys.Contains(subEntity.geocode))
             {
                 histories.Items.AddRange(_creationHistories[subEntity.geocode].Items);
             }
-            foreach ( var oldGeocode in subEntity.OldGeocodes )
+            foreach (var oldGeocode in subEntity.OldGeocodes)
             {
-                if ( _creationHistories.Keys.Contains(oldGeocode) )
+                if (_creationHistories.Keys.Contains(oldGeocode))
                 {
                     histories.Items.AddRange(_creationHistories[oldGeocode].Items);
                 }
@@ -1020,13 +1020,13 @@ namespace De.AHoerstemeier.Tambon.UI
             listviewLocalAdministration.BeginUpdate();
             listviewLocalAdministration.Items.Clear();
             var localGovernmentsInEntity = entity.LocalGovernmentEntitiesOf(_localGovernments).ToList();
-            foreach ( Entity subEntity in localGovernmentsInEntity )
+            foreach (Entity subEntity in localGovernmentsInEntity)
             {
                 ListViewItem item = listviewLocalAdministration.Items.Add(subEntity.english);
                 item.Tag = subEntity;
                 item.SubItems.Add(subEntity.name);
                 item.SubItems.Add(subEntity.type.ToString());
-                if ( subEntity.geocode > 9999 )
+                if (subEntity.geocode > 9999)
                 {
                     // generated geocode
                     item.SubItems.Add(String.Empty);
@@ -1037,10 +1037,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 String dolaCode = String.Empty;
                 var office = subEntity.office.FirstOrDefault(x => x.type == OfficeType.TAOOffice || x.type == OfficeType.PAOOffice || x.type == OfficeType.MunicipalityOffice);
-                if ( office != null )
+                if (office != null)
                 {
                     var dolaEntry = office.dola.Where(x => x.codeSpecified).OrderBy(y => y.year).LastOrDefault();
-                    if ( dolaEntry != null )
+                    if (dolaEntry != null)
                     {
                         dolaCode = dolaEntry.code.ToString(CultureInfo.CurrentUICulture);
                     }
@@ -1054,12 +1054,12 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void treeviewSelection_MouseUp(Object sender, MouseEventArgs e)
         {
-            if ( e.Button == MouseButtons.Right )
+            if (e.Button == MouseButtons.Right)
             {
                 // Select the clicked node
                 treeviewSelection.SelectedNode = treeviewSelection.GetNodeAt(e.X, e.Y);
 
-                if ( treeviewSelection.SelectedNode != null )
+                if (treeviewSelection.SelectedNode != null)
                 {
                     popupTree.Show(treeviewSelection, e.Location);
                 }
@@ -1069,16 +1069,16 @@ namespace De.AHoerstemeier.Tambon.UI
         private IEnumerable<GazetteEntry> AreaDefinitionAnnouncements(Entity entity)
         {
             var result = new List<GazetteEntry>();
-            if ( entity.type != EntityType.Country )
+            if (entity.type != EntityType.Country)
             {
                 var allAboutGeocode = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x =>
                     x.IsAboutGeocode(entity.geocode, true) || entity.OldGeocodes.Any(y => x.IsAboutGeocode(y, true)));
                 var allAreaDefinitionAnnouncements = allAboutGeocode.Where(x => x.Items.Any(y => y is GazetteAreaDefinition));
-                foreach ( var announcement in allAreaDefinitionAnnouncements )
+                foreach (var announcement in allAreaDefinitionAnnouncements)
                 {
                     var areaDefinitions = announcement.Items.Where(x => x is GazetteAreaDefinition);
-                    if ( areaDefinitions.Any(x => (x as GazetteAreaDefinition).IsAboutGeocode(entity.geocode, true) ||
-                        entity.OldGeocodes.Any(y => (x as GazetteAreaDefinition).IsAboutGeocode(y, true))) )
+                    if (areaDefinitions.Any(x => (x as GazetteAreaDefinition).IsAboutGeocode(entity.geocode, true) ||
+                        entity.OldGeocodes.Any(y => (x as GazetteAreaDefinition).IsAboutGeocode(y, true))))
                     {
                         result.Add(announcement);
                     }
@@ -1091,7 +1091,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
-            foreach ( var entry in AreaDefinitionAnnouncements(entity) )
+            foreach (var entry in AreaDefinitionAnnouncements(entity))
             {
                 ShowPdf(entry);
             }
@@ -1106,7 +1106,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 // TODO
                 String pdfFilename = entry.LocalPdfFileName;
 
-                if ( File.Exists(pdfFilename) )
+                if (File.Exists(pdfFilename))
                 {
                     p.StartInfo.FileName = pdfFilename;
                     p.Start();
@@ -1132,7 +1132,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
-            if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
+            if (entity.type.IsCompatibleEntityType(EntityType.Amphoe))
             {
                 var exporter = new WikipediaExporter(_baseEntity, _localGovernments);
                 exporter.CheckWikiData = CheckWikiData;
@@ -1148,7 +1148,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var selectedNode = treeviewSelection.SelectedNode;
             var entity = (Entity)(selectedNode.Tag);
-            if ( entity.type.IsCompatibleEntityType(EntityType.Tambon) )
+            if (entity.type.IsCompatibleEntityType(EntityType.Tambon))
             {
                 var exporter = new WikipediaExporter(_baseEntity, _localGovernments);
                 exporter.CheckWikiData = CheckWikiData;
@@ -1163,7 +1163,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void CopyToClipboard(String text)
         {
             Boolean success = false;
-            while ( !success )
+            while (!success)
             {
                 try
                 {
@@ -1173,7 +1173,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 catch
                 {
-                    if ( MessageBox.Show(this, "Copying text to clipboard failed.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) != DialogResult.Retry )
+                    if (MessageBox.Show(this, "Copying text to clipboard failed.", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) != DialogResult.Retry)
                     {
                         break;
                     }
@@ -1190,9 +1190,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void mnuHistoryLocal_Click(Object sender, EventArgs e)
         {
-            if ( listviewLocalAdministration.SelectedItems.Count == 1 )
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
             {
-                foreach ( ListViewItem item in listviewLocalAdministration.SelectedItems )
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
                 {
                     var entity = item.Tag as Entity;
                     ExportEntityHistory(entity);
@@ -1202,9 +1202,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void mnuHistoryCentral_Click(Object sender, EventArgs e)
         {
-            if ( listviewCentralAdministration.SelectedItems.Count == 1 )
+            if (listviewCentralAdministration.SelectedItems.Count == 1)
             {
-                foreach ( ListViewItem item in listviewCentralAdministration.SelectedItems )
+                foreach (ListViewItem item in listviewCentralAdministration.SelectedItems)
                 {
                     var entity = item.Tag as Entity;
                     ExportEntityHistory(entity);
@@ -1215,18 +1215,18 @@ namespace De.AHoerstemeier.Tambon.UI
         private void ExportEntityHistory(Entity entity)
         {
             var histories = new HistoryList();
-            if ( _creationHistories.Keys.Contains(entity.geocode) )
+            if (_creationHistories.Keys.Contains(entity.geocode))
             {
                 histories.Items.AddRange(_creationHistories[entity.geocode].Items);
             }
-            foreach ( var oldGeocode in entity.OldGeocodes )
+            foreach (var oldGeocode in entity.OldGeocodes)
             {
-                if ( _creationHistories.Keys.Contains(oldGeocode) )
+                if (_creationHistories.Keys.Contains(oldGeocode))
                 {
                     histories.Items.AddRange(_creationHistories[oldGeocode].Items);
                 }
             }
-            if ( histories.Items.Any() )
+            if (histories.Items.Any())
             {
                 histories.Items.Sort((x, y) => y.effective.CompareTo(x.effective));
                 var historyXml = XmlManager.EntityToXml<HistoryList>(histories);
@@ -1246,12 +1246,12 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             CheckHistoryAvailable(listviewLocalAdministration, mnuHistoryLocal);
             var hasWebId = false;
-            if ( listviewLocalAdministration.SelectedItems.Count == 1 )
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
             {
-                foreach ( ListViewItem item in listviewLocalAdministration.SelectedItems )
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
                 {
                     var entity = item.Tag as Entity;
-                    if ( entity != null )
+                    if (entity != null)
                     {
                         hasWebId = entity.office.Any(x => x.webidSpecified);
                     }
@@ -1269,15 +1269,15 @@ namespace De.AHoerstemeier.Tambon.UI
         private void CheckHistoryAvailable(ListView listview, ToolStripMenuItem menuItem)
         {
             var history = false;
-            if ( listview.SelectedItems.Count == 1 )
+            if (listview.SelectedItems.Count == 1)
             {
-                foreach ( ListViewItem item in listview.SelectedItems )
+                foreach (ListViewItem item in listview.SelectedItems)
                 {
                     var entity = item.Tag as Entity;
-                    if ( entity != null )
+                    if (entity != null)
                     {
                         history = _creationHistories.Keys.Contains(entity.geocode);
-                        foreach ( var oldGeocode in entity.OldGeocodes )
+                        foreach (var oldGeocode in entity.OldGeocodes)
                         {
                             history |= _creationHistories.Keys.Contains(oldGeocode);
                         }
@@ -1297,15 +1297,15 @@ namespace De.AHoerstemeier.Tambon.UI
         private Int32 GetWebIdOfSelectedItem(ListView listView)
         {
             var webId = 0;
-            if ( listView.SelectedItems.Count == 1 )
+            if (listView.SelectedItems.Count == 1)
             {
-                foreach ( ListViewItem item in listView.SelectedItems )
+                foreach (ListViewItem item in listView.SelectedItems)
                 {
                     var entity = item.Tag as Entity;
-                    if ( entity != null )
+                    if (entity != null)
                     {
                         var office = entity.office.FirstOrDefault(x => x.webidSpecified);
-                        if ( office != null )
+                        if (office != null)
                         {
                             webId = office.webid;
                         }
@@ -1318,7 +1318,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void mnuAdminInfoPage_Click(Object sender, EventArgs e)
         {
             var webId = GetWebIdOfSelectedItem(listviewLocalAdministration);
-            if ( webId > 0 )
+            if (webId > 0)
             {
                 var url = String.Format(CultureInfo.CurrentUICulture, "http://www.dla.go.th/info/info_councilor.jsp?orgId={0}", webId);
                 Process.Start(url);
@@ -1328,7 +1328,7 @@ namespace De.AHoerstemeier.Tambon.UI
         private void mnuGeneralInfoPage_Click(Object sender, EventArgs e)
         {
             var webId = GetWebIdOfSelectedItem(listviewLocalAdministration);
-            if ( webId > 0 )
+            if (webId > 0)
             {
                 var url = String.Format(CultureInfo.CurrentUICulture, "http://info.dla.go.th/public/surveyInfo.do?cmd=surveyForm&orgInfoId={0}", webId);
                 Process.Start(url);
@@ -1337,9 +1337,9 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void mnuGoogleSearchLocal_Click(Object sender, EventArgs e)
         {
-            if ( listviewLocalAdministration.SelectedItems.Count == 1 )
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
             {
-                foreach ( ListViewItem item in listviewLocalAdministration.SelectedItems )
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
                 {
                     var entity = item.Tag as Entity;
 
