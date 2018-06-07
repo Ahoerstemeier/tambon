@@ -18,10 +18,21 @@ namespace De.AHoerstemeier.Tambon
         private const String _searchFormUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search.jsp";
         private const String _searchPostUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_load_adv.jsp";
         private const String _searchPageUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_page_load.jsp";
+        private const String _searchReferrer = "http://www.ratchakitcha.soc.go.th/RKJ/announce/search_adv.jsp";
         private const String _baseUrl = "http://www.ratchakitcha.soc.go.th/RKJ/announce/";
         private const String _responseDataUrl = "parent.location.href=\"";
 
         private const String _defaultCookie =
+            "/RKJ/announce/search.jsp=; " +
+            "/RKJ/announce/search_result.jsp=; " +
+            "/RKJ/announce/search.jspfirsttimeload=0; " +
+            "/RKJ/announce/search_result.jspfirsttimeload=0; " +
+            "_gat=1; " +
+            // "__cfduid=d6838f4fd0cd375e5b5fe547e918111831524126358; " +
+            "_ga=GA1.3.2080536661.1524126213; " +
+            "_gid=GA1.3.2037963748.1528297832";
+
+        /* private const String _defaultCookie =
             "/RKJ/announce/search_result.jsp=sc1|; " +
             "/RKJ/announce/search.jspfirsttimeload=0; " +
             "/RKJ/announce/search.jsp=; " +
@@ -30,8 +41,8 @@ namespace De.AHoerstemeier.Tambon
             "_gid=GA1.3.1570106343.1526028472; " +
             "_gat=1; " +
             "JSESSIONID=\"1234567890ABCDED0000000000000000\"";
-
-        private String _cookie = String.Empty;
+        */
+        private String _cookie = _defaultCookie;
         private String _dataUrl = String.Empty;
         private String _searchKey = String.Empty;
         private Int32 _volume = 0;
@@ -202,6 +213,7 @@ namespace De.AHoerstemeier.Tambon
             requestString.Append("selToYear=&");
             requestString.Append("selDocGroup1=&");
             requestString.Append("txtDetail=&");
+            requestString.Append("txtTitle=&" + MyUrlEncode(_searchKey));
 
             //hidFieldSort: BOOKNO%2CTOPICTYPE_CODE%2CSECTION_NO%2CSECTION_SUBSECTION%2CPAGENO
             //searchOption: adv
@@ -318,7 +330,7 @@ namespace De.AHoerstemeier.Tambon
             client.Encoding = Encoding.UTF8;
             if (page == 0)
             {
-                client.Headers.Add("Referer", _searchFormUrl);
+                client.Headers.Add("Referer", _searchPostUrl);
             }
             else
             {
@@ -366,9 +378,9 @@ namespace De.AHoerstemeier.Tambon
         {
             var reader = new System.IO.StreamReader(data, TambonHelper.ThaiEncoding);
 
-            var fileStream = new FileStream("c:\\temp\\out.htm", FileMode.OpenOrCreate);
-            TambonHelper.StreamCopy(data, fileStream);
-            fileStream.Close();
+            //var fileStream = new FileStream("c:\\temp\\out.htm", FileMode.OpenOrCreate);
+            //TambonHelper.StreamCopy(data, fileStream);
+            //fileStream.Close();
 
             RoyalGazetteList result = new RoyalGazetteList();
             result.AddRange(DoParse(reader));
@@ -497,7 +509,8 @@ namespace De.AHoerstemeier.Tambon
         {
             _searchKey = searchKey;
             _volume = Math.Max(0, volume);
-            _cookie = String.Empty;
+            // _cookie = String.Empty;
+            _cookie = _defaultCookie;
             RoyalGazetteList result = null;
             try
             {
