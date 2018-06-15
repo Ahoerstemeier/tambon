@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 
 // Other interesting search string: เป็นเขตปฏิรูปที่ดิน (area of land reform) - contains maps with Tambon boundaries
@@ -30,7 +31,7 @@ namespace De.AHoerstemeier.Tambon
             "_gat=1; " +
             // "__cfduid=d6838f4fd0cd375e5b5fe547e918111831524126358; " +
             "_ga=GA1.3.2080536661.1524126213; " +
-            "_gid=GA1.3.2037963748.1528297832";
+            "_gid=_gid=GA1.3.1741403628.1528882212";
 
         /* private const String _defaultCookie =
             "/RKJ/announce/search_result.jsp=sc1|; " +
@@ -192,6 +193,7 @@ namespace De.AHoerstemeier.Tambon
             requestString.Append("hidFieldSortText=%E0%C5%E8%C1%2C%BB%C3%D0%E0%C0%B7%E0%C3%D7%E8%CD%A7%2C%B5%CD%B9%2C%B5%CD%B9%BE%D4%E0%C8%C9%2C%CB%B9%E9%D2&");
             requestString.Append("hidFieldList=" + MyUrlEncode("txtTitle/txtBookNo/txtSection/txtFromDate/txtToDate/selDocGroup1") + "&");
             requestString.Append("hidNowItem=txtTitle&");
+            requestString.Append("txtTitle=" + MyUrlEncode(_searchKey) + "&");
             if (_volume <= 0)
             {
                 requestString.Append("txtBookNo=&");
@@ -213,7 +215,6 @@ namespace De.AHoerstemeier.Tambon
             requestString.Append("selToYear=&");
             requestString.Append("selDocGroup1=&");
             requestString.Append("txtDetail=&");
-            requestString.Append("txtTitle=&" + MyUrlEncode(_searchKey));
 
             //hidFieldSort: BOOKNO%2CTOPICTYPE_CODE%2CSECTION_NO%2CSECTION_SUBSECTION%2CPAGENO
             //searchOption: adv
@@ -367,7 +368,9 @@ namespace De.AHoerstemeier.Tambon
         {
             var byteArray = TambonHelper.ThaiEncoding.GetBytes(value);
             String result = HttpUtility.UrlEncode(byteArray, 0, byteArray.Length);
-            return result;
+            Regex reg = new Regex(@"%[a-f0-9]{2}");
+            String resultUpper = reg.Replace(result, m => m.Value.ToUpperInvariant());
+            return resultUpper;
         }
 
         private const String EntryStart = "<td width=\"50\" align=\"center\" nowrap class=\"row4\">";
@@ -404,8 +407,13 @@ namespace De.AHoerstemeier.Tambon
                     {
                         if (currentLine.Contains(PageStart))
                         {
-                            String temp = currentLine.Substring(currentLine.LastIndexOf(PageStart) + PageStart.Length, 3).Trim();
+                            String temp = currentLine.Substring(currentLine.LastIndexOf(PageStart) + PageStart.Length + 1, 6);
+                            temp = temp.Substring(0, temp.IndexOf(' ')).Trim();
                             _numberOfPages = Convert.ToInt32(temp);
+                            if (_numberOfPages > 100)
+                            {
+                                _numberOfPages = 1;  // something terrible went wrong with the search
+                            }
                         }
                         else if (currentLine.StartsWith(EntryStart))
                         {
@@ -511,6 +519,9 @@ namespace De.AHoerstemeier.Tambon
             _volume = Math.Max(0, volume);
             // _cookie = String.Empty;
             _cookie = _defaultCookie;
+            _dataUrl = String.Empty;
+            _numberOfPages = 0;
+
             RoyalGazetteList result = null;
             try
             {
@@ -530,7 +541,7 @@ namespace De.AHoerstemeier.Tambon
             }
             catch (WebException)
             {
-                result = null;
+                // result = null;
                 // TODO
             }
             return result;
