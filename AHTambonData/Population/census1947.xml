@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <entity xmlns="http://hoerstemeier.com/tambon/" type="Country" geocode="0" name="ประเทศไทย" english="Thailand">
   <!-- Amphoe-Population Total/Thai - Page 156,158 (Phra Nakhon), 194 (Thonburi) - Thai population column incomplete -->
-  <!-- Amphoe-Population Total/Thai - Page 216 missing (Narathiwat, Nan) -->
 
   <population source="Census" year="1947" referencedate="1947-04-26">
     <data type="total" total="17442689" male="8722155" female="8720534" />
@@ -1949,16 +1948,32 @@
       <data type="total" total="210858" male="105079" female="105779" />
       <data type="municipal" total="10143" />
       <data type="nonmunicipal" total="200715" />
+      <data type="thai" total="209912" male="104457" female="105375" />
     </population>
-    <entity type="Amphoe" geocode="5501" name="เมืองน่าน" english="Mueang Nan" comment="Page missing" />
-    <entity type="Amphoe" geocode="5504" name="นาน้อย" english="Na Noi" comment="Page missing" />
+    <entity type="Amphoe" geocode="5501" name="เมืองน่าน" english="Mueang Nan">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="54017" male="26855" female="27162" />
+        <data type="thai" total="53237" male="26405" female="26832" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="5504" name="นาน้อย" english="Na Noi">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="22187" male="10851" female="11336" />
+        <data type="thai" total="22179" male="10844" female="11335" />
+      </population>
+    </entity>
     <entity type="Amphoe" geocode="5505" name="ปัว" english="Pua">
       <population source="Census" year="1947" referencedate="1947-04-26">
         <data type="total" total="50926" male="25390" female="25536" />
         <data type="thai" total="50853" male="25332" female="25521" />
       </population>
     </entity>
-    <entity type="Amphoe" geocode="5507" name="สา" english="Sa" comment="Page missing" />
+    <entity type="Amphoe" geocode="5507" name="สา" english="Sa">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="30119" male="14914" female="15205" />
+        <data type="thai" total="29998" male="14835" female="15163" />
+      </population>
+    </entity>
     <entity type="Amphoe" geocode="5508" name="และ" english="Lae">
       <population source="Census" year="1947" referencedate="1947-04-26">
         <data type="total" total="21321" male="10681" female="10640" />
@@ -3381,8 +3396,18 @@
         <data type="thai" total="27914" male="13999" female="13915" />
       </population>
     </entity>
-    <entity type="Amphoe" geocode="9606" name="รือเสาะ" english="Rueso" comment="Page 216 missing" />
-    <entity type="Amphoe" geocode="9608" name="แว้ง" english="Waeng" comment="Page 216 missing" />
+    <entity type="Amphoe" geocode="9606" name="รือเสาะ" english="Rueso">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="17205" male="8801" female="8344" />
+        <data type="thai" total="16688" male="8490" female="8198" />
+      </population>
+    </entity>
+    <entity type="Amphoe" geocode="9608" name="แว้ง" english="Waeng">
+      <population source="Census" year="1947" referencedate="1947-04-26">
+        <data type="total" total="10873" male="5537" female="5336" />
+        <data type="thai" total="9421" male="4732" female="4689" />
+      </population>
+    </entity>
     <entity type="Amphoe" geocode="9611" name="สุไหงปาดี" english="Su-ngai Padi">
       <population source="Census" year="1947" referencedate="1947-04-26">
         <data type="total" total="27238" male="13795" female="13443" />
