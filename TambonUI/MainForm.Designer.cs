@@ -56,6 +56,7 @@
             this.btnNayokResign = new System.Windows.Forms.Button();
             this.btnShowEntityData = new System.Windows.Forms.Button();
             this.grpTesting = new System.Windows.Forms.GroupBox();
+            this.btnYearbookCompare = new System.Windows.Forms.Button();
             this.btnShowPopulation = new System.Windows.Forms.Button();
             this.btnPopulationTable = new System.Windows.Forms.Button();
             this.btnDisambiguation = new System.Windows.Forms.Button();
@@ -68,7 +69,7 @@
             this.btnMubanList = new System.Windows.Forms.Button();
             this.btnTambonList = new System.Windows.Forms.Button();
             this.btnLaoList = new System.Windows.Forms.Button();
-            this.btnYearbookCompare = new System.Windows.Forms.Button();
+            this.btnConstituency = new System.Windows.Forms.Button();
             btn_LoadGazetteXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.edtYear)).BeginInit();
             this.grpTesting.SuspendLayout();
@@ -378,6 +379,16 @@
             this.grpTesting.TabStop = false;
             this.grpTesting.Text = "Testing only";
             // 
+            // btnYearbookCompare
+            // 
+            this.btnYearbookCompare.Location = new System.Drawing.Point(394, 117);
+            this.btnYearbookCompare.Name = "btnYearbookCompare";
+            this.btnYearbookCompare.Size = new System.Drawing.Size(102, 23);
+            this.btnYearbookCompare.TabIndex = 67;
+            this.btnYearbookCompare.Text = "Yearbook";
+            this.btnYearbookCompare.UseVisualStyleBackColor = true;
+            this.btnYearbookCompare.Click += new System.EventHandler(this.btnYearbookCompare_Click);
+            // 
             // btnShowPopulation
             // 
             this.btnShowPopulation.Location = new System.Drawing.Point(394, 77);
@@ -509,21 +520,22 @@
             this.btnLaoList.UseVisualStyleBackColor = true;
             this.btnLaoList.Click += new System.EventHandler(this.btnLaoList_Click);
             // 
-            // btnYearbookCompare
+            // btnConstituency
             // 
-            this.btnYearbookCompare.Location = new System.Drawing.Point(394, 117);
-            this.btnYearbookCompare.Name = "btnYearbookCompare";
-            this.btnYearbookCompare.Size = new System.Drawing.Size(102, 23);
-            this.btnYearbookCompare.TabIndex = 67;
-            this.btnYearbookCompare.Text = "Yearbook";
-            this.btnYearbookCompare.UseVisualStyleBackColor = true;
-            this.btnYearbookCompare.Click += new System.EventHandler(this.btnYearbookCompare_Click);
+            this.btnConstituency.Location = new System.Drawing.Point(406, 206);
+            this.btnConstituency.Name = "btnConstituency";
+            this.btnConstituency.Size = new System.Drawing.Size(112, 23);
+            this.btnConstituency.TabIndex = 67;
+            this.btnConstituency.Text = "Constituency";
+            this.btnConstituency.UseVisualStyleBackColor = true;
+            this.btnConstituency.Click += new System.EventHandler(this.btnConstituency_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 415);
+            this.Controls.Add(this.btnConstituency);
             this.Controls.Add(this.btnLaoList);
             this.Controls.Add(this.btnTambonList);
             this.Controls.Add(this.btnMubanList);
@@ -601,6 +613,7 @@
         private System.Windows.Forms.Button btnShowPopulation;
         private System.Windows.Forms.Button btnLaoList;
         private System.Windows.Forms.Button btnYearbookCompare;
+        private System.Windows.Forms.Button btnConstituency;
     }
 }
 

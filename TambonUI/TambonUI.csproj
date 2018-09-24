@@ -67,6 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstituencyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConstituencyForm.Designer.cs">
+      <DependentUpon>ConstituencyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreationStatisticForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <Compile Include="WikiData.Designer.cs">
       <DependentUpon>WikiData.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConstituencyForm.resx">
+      <DependentUpon>ConstituencyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreationStatisticForm.resx">
       <DependentUpon>CreationStatisticForm.cs</DependentUpon>
     </EmbeddedResource>

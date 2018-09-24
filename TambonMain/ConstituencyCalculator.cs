@@ -17,17 +17,22 @@ namespace De.AHoerstemeier.Tambon
 
         #region methods
 
-        public static Dictionary<Entity, Int32> Calculate(UInt32 parentGeocode, Int32 year, Int32 numberOfSeats)
+        public static Dictionary<Entity, Int32> Calculate(UInt32 parentGeocode, Int16 year, Int16 numberOfSeats)
         {
             Dictionary<Entity, Int32> result = null;
 
-            var downloader = new PopulationDataDownloader(year, parentGeocode);
-            downloader.Process();
-            result = Calculate(downloader.Data, year, numberOfSeats);
+            var data = GlobalData.CompleteGeocodeList();
+            data = data.FlatList().First(x => x.geocode == parentGeocode);
+            if ( data.GetPopulationDataPoint(PopulationDataSourceType.DOPA, year) == null )
+            {
+                GlobalData.LoadPopulationData(PopulationDataSourceType.DOPA, year);
+            }
+
+            result = Calculate(data, year, numberOfSeats);
             return result;
         }
 
-        public static Dictionary<Entity, Int32> Calculate(Entity data, Int32 year, Int32 numberOfSeats)
+        public static Dictionary<Entity, Int32> Calculate(Entity data, Int16 year, Int16 numberOfSeats)
         {
             if ( data == null )
             {
@@ -75,7 +80,7 @@ namespace De.AHoerstemeier.Tambon
                     sortedRemainders.Add(entry);
                 }
             }
-            sortedRemainders.Sort(delegate(Entity p1, Entity p2)
+            sortedRemainders.Sort(delegate (Entity p1, Entity p2)
             {
                 return remainder[p2].CompareTo(remainder[p1]);
             });

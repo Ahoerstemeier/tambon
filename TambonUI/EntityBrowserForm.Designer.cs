@@ -60,6 +60,7 @@
             this.mnuHistoryLocal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAdminInfoPage = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGeneralInfoPage = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGoogleSearchLocal = new System.Windows.Forms.ToolStripMenuItem();
             this.tabSubdivisionData = new System.Windows.Forms.TabControl();
             this.tabSubdivision = new System.Windows.Forms.TabPage();
             this.tabErrors = new System.Windows.Forms.TabPage();
@@ -70,7 +71,7 @@
             this.txtMuban = new System.Windows.Forms.TextBox();
             this.tabLocalGoverment = new System.Windows.Forms.TabPage();
             this.txtLocalGovernment = new System.Windows.Forms.TextBox();
-            this.mnuGoogleSearchLocal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuConstituency = new System.Windows.Forms.ToolStripMenuItem();
             this.popupTree.SuspendLayout();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
@@ -115,9 +116,10 @@
             this.mnuWikipediaEnglish,
             this.mnuWikipediaTambonEnglish,
             this.mnuMubanDefinitions,
-            this.mnuHistory});
+            this.mnuHistory,
+            this.mnuConstituency});
             this.popupTree.Name = "contextMenuStrip1";
-            this.popupTree.Size = new System.Drawing.Size(176, 114);
+            this.popupTree.Size = new System.Drawing.Size(176, 158);
             // 
             // mnuWikipediaGerman
             // 
@@ -312,7 +314,7 @@
             this.mnuGeneralInfoPage,
             this.mnuGoogleSearchLocal});
             this.popupListviewLocal.Name = "popupListviewLocal";
-            this.popupListviewLocal.Size = new System.Drawing.Size(168, 114);
+            this.popupListviewLocal.Size = new System.Drawing.Size(168, 92);
             this.popupListviewLocal.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewLocal_Opening);
             // 
             // mnuHistoryLocal
@@ -335,6 +337,13 @@
             this.mnuGeneralInfoPage.Size = new System.Drawing.Size(167, 22);
             this.mnuGeneralInfoPage.Text = "General info page";
             this.mnuGeneralInfoPage.Click += new System.EventHandler(this.mnuGeneralInfoPage_Click);
+            // 
+            // mnuGoogleSearchLocal
+            // 
+            this.mnuGoogleSearchLocal.Name = "mnuGoogleSearchLocal";
+            this.mnuGoogleSearchLocal.Size = new System.Drawing.Size(167, 22);
+            this.mnuGoogleSearchLocal.Text = "Google search";
+            this.mnuGoogleSearchLocal.Click += new System.EventHandler(this.mnuGoogleSearchLocal_Click);
             // 
             // tabSubdivisionData
             // 
@@ -450,12 +459,12 @@
             this.txtLocalGovernment.Size = new System.Drawing.Size(386, 120);
             this.txtLocalGovernment.TabIndex = 16;
             // 
-            // mnuGoogleSearchLocal
+            // mnuConstituency
             // 
-            this.mnuGoogleSearchLocal.Name = "mnuGoogleSearchLocal";
-            this.mnuGoogleSearchLocal.Size = new System.Drawing.Size(167, 22);
-            this.mnuGoogleSearchLocal.Text = "Google search";
-            this.mnuGoogleSearchLocal.Click += new System.EventHandler(this.mnuGoogleSearchLocal_Click);
+            this.mnuConstituency.Name = "mnuConstituency";
+            this.mnuConstituency.Size = new System.Drawing.Size(175, 22);
+            this.mnuConstituency.Text = "Constituency";
+            this.mnuConstituency.Click += new System.EventHandler(this.mnuConstituency_Click);
             // 
             // EntityBrowserForm
             // 
@@ -533,5 +542,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuAdminInfoPage;
         private System.Windows.Forms.ToolStripMenuItem mnuGeneralInfoPage;
         private System.Windows.Forms.ToolStripMenuItem mnuGoogleSearchLocal;
+        private System.Windows.Forms.ToolStripMenuItem mnuConstituency;
     }
 }

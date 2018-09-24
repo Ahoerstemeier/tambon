@@ -1544,5 +1544,11 @@ namespace De.AHoerstemeier.Tambon.UI
                 Clipboard.SetText(builder.ToString());
             }
         }
+
+        private void btnConstituency_Click(object sender, EventArgs e)
+        {
+            var form = new ConstituencyForm();
+            form.Show();
+        }
     }
 }
