@@ -233,6 +233,11 @@
         <xs:documentation>Number assigned to the party for the election in question.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="wikidata" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Wikidata item about the party.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="PartyList">
@@ -354,6 +359,11 @@
     <xs:attribute name="status" type="t:ElectionStatus" use="optional" />
     <xs:attribute name="end" type="xs:date" use="optional" />
     <xs:attribute name="endreason" type="t:ByElectionReason" use="optional" />
+    <xs:attribute name="wikidata" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>Wikidata item about the candidate.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="CandidateListEntry">
