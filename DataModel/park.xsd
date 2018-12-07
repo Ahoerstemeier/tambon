@@ -51,12 +51,12 @@
   </xs:complexType>
   <xs:complexType name="SpeciesList">
     <xs:annotation>
-      <xs:documentation>Protected species in the park.</xs:documentation>
+      <xs:documentation>Protected taxons in the park.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="unbounded" type="t:SpeciesListEntry" name="species">
         <xs:annotation>
-          <xs:documentation>Species list entry.</xs:documentation>
+          <xs:documentation>Species (taxon) list entry.</xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:sequence>
