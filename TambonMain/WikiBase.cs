@@ -30,7 +30,8 @@ namespace De.AHoerstemeier.Tambon
             {EntityType.Khwaeng, "Q456876"},
             {EntityType.Chumchon,"Q15253857"},
             {EntityType.SaphaTambon,"Q15695218"},
-            {EntityType.KlumChangwat,"Q13012657"}
+            {EntityType.KlumChangwat,"Q13012657"},
+            {EntityType.ViceRoyality,"Q60480158"},
         };
 
         // public const String PropertyIdEntityType = "P132";
