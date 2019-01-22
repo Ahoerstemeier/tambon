@@ -170,6 +170,8 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
             WikiDataTaskDelegate setCensus2010 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2010);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 2010", setCensus2010));
+            WikiDataTaskDelegate setDopa2018 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2018);
+            _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2018", setDopa2018));
             WikiDataTaskDelegate setDopa2017 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2017);
             _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2017", setDopa2017));
             WikiDataTaskDelegate setDopa2016 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2016);
