@@ -492,7 +492,13 @@
           <entity geocode="410108" coverage="completely" />
         </areacoverage>
       </office>
-      <entity type="Muban" geocode="41010801" name="บ้านเชียงยืน" english="Ban Chiang Yuen" />
+      <entity type="Muban" geocode="41010801" name="บ้านเชียงยืน" english="Ban Chiang Yuen">
+        <history>
+          <areachange changewith="41010814" effective="2019-02-14" status="Gazette">
+            <gazetteref volume="136" page="87" issue="13 ง" date="2019-02-14" />
+          </areachange>
+        </history>
+      </entity>
       <entity type="Muban" geocode="41010802" name="บ้านเชียงยืน" english="Ban Chiang Yuen" />
       <entity type="Muban" geocode="41010803" name="บ้านอีหลุ่ง" english="Ban I Lung" />
       <entity type="Muban" geocode="41010804" name="บ้านดงหนองโพธิ์" english="Ban Dong Nong Phi" />
@@ -505,7 +511,11 @@
       <entity type="Muban" geocode="41010811" name="บ้านบ่อน้อย" english="Ban Bo Noi" />
       <entity type="Muban" geocode="41010812" name="บ้านหนองเป็ด" english="Ban Nong Pet" />
       <entity type="Muban" geocode="41010813" name="บ้านโนนสวรรค์" english="Ban Non Sawan" />
-      <entity type="Muban" geocode="41010814" name="บ้านเชียงยืน" english="Ban Chiang Yuen" />
+      <entity type="Muban" geocode="41010814" name="บ้านเชียงยืน" english="Ban Chiang Yuen">
+        <history>
+          <create type="Muban" effective="1995-08-08" splitfrom="41010801" status="Done"/>
+        </history>
+      </entity>
       <entity type="Muban" geocode="41010815" name="บ้านเชียงยืน" english="Ban Chiang Yuen" />
       <entity type="Muban" geocode="41010816" name="บ้านหนองหลอด" english="Ban Nong Lot" />
       <entity type="Muban" geocode="41010817" name="บ้านหนองหลอดพัฒนา" english="Ban Nong Lot Phatthana">
@@ -529,8 +539,15 @@
           </create>
         </history>
       </entity>
-      <entity type="Muban" geocode="41010820" name="" english="" obsolete="1" comment="To be announced" />
-      <entity type="Muban" geocode="41010821"  name="บ้านสุขสำราญ" english="Ban Suk Samran">
+      <entity type="Muban" geocode="41010820" name="บ้านเชียงยืน" english="Ban Chiang Yuen" >
+        <history>
+          <create type="Muban" status="Gazette" effective="2019-04-25" splitfrom="41010801">
+            <gazetteref volume="136" page="42" issue="31 ง" date="2019-04-25" />
+            <ministerialorder ministry="MOI" date="2018-12-15" title="มท ๐๓๑๐.๑/ว ๗๔๖๕"/>
+          </create>
+        </history>        
+      </entity>
+      <entity type="Muban" geocode="41010821" name="บ้านสุขสำราญ" english="Ban Suk Samran">
         <history>
           <create type="Muban" status="Gazette" effective="2016-07-21" splitfrom="41010803">
             <gazetteref volume="133" page="257" issue="66 ง" date="2016-08-25" />
