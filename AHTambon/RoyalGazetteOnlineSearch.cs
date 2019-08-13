@@ -459,7 +459,8 @@ namespace De.AHoerstemeier.Tambon
         private const string EntryIssue = "<td width=\"100\" align=\"center\" nowrap class=\"row3\">";
         private const string EntryDate = "<td width=\"150\" align=\"center\" nowrap class=\"row3\">";
         private const string EntryURL = "<a href=\"/DATA/PDF/";
-        private const string EntryURLend = "\" target=\"_blank\"  class=\"topictitle\">";
+        // private const string EntryURLend = "\" target=\"_blank\"  class=\"topictitle\">";
+        private const string EntryURLend = "\" target=\"_blank\" class=\"topictitle\">";
         private const string ColumnEnd = "</td>";
         private const string EntryTitle = "menubar=no,location=no,scrollbars=auto,resizable');\"-->";
         private const string EntryTitleEnd = "</a></td>";
@@ -467,6 +468,7 @@ namespace De.AHoerstemeier.Tambon
         private RoyalGazette ParseSingeItem(String value)
         {
             value = value.Replace("\t", "");
+            value.Replace("  ", " ");
             RoyalGazette retval = null;
             Int32 position = value.IndexOf(EntryURL);
             if (position >= 0)
