@@ -119,6 +119,7 @@
     <None Include="Election\Constituencies 2019.xml">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="DOLA\DOLA2562.xml" />
     <Content Include="EntityLists\1970.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -911,10 +912,10 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>xcopy /Y "$(TargetDir)geocode.xml" "$(SolutionDir)Website\App_Data\geocode.xml"
-xcopy /Y "$(TargetDir)regions.xml" "$(SolutionDir)Website\App_Data\regions.xml"
-xcopy /Y "$(TargetDir)geocode\*.xml" "$(SolutionDir)Website\App_Data\geocode\"
-xcopy /Y "$(TargetDir)gazette\*.xml" "$(SolutionDir)Website\App_Data\gazette\"
+    <PostBuildEvent>rem xcopy /Y "$(TargetDir)geocode.xml" "$(SolutionDir)Website\App_Data\geocode.xml"
+rem xcopy /Y "$(TargetDir)regions.xml" "$(SolutionDir)Website\App_Data\regions.xml"
+rem xcopy /Y "$(TargetDir)geocode\*.xml" "$(SolutionDir)Website\App_Data\geocode\"
+rem xcopy /Y "$(TargetDir)gazette\*.xml" "$(SolutionDir)Website\App_Data\gazette\"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
