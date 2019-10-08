@@ -8,8 +8,11 @@
   <xs:import namespace="http://www.w3.org/2003/01/geo/wgs84_pos#" schemaLocation="geopoint.xsd" />
 
   <xs:include schemaLocation="basictypes.xsd" />
-  <xs:include schemaLocation="constituencies.xsd" />
-  <xs:include schemaLocation="geocode.xsd" />
+  <xs:include schemaLocation="history.xsd" />
+  <xs:include schemaLocation="constituencies.xsd" /> 
+  <!--<xs:include schemaLocation="geocode.xsd" />-->
+  <xs:include schemaLocation="references.xsd" />
+  <xs:include schemaLocation="area.xsd" />
 
   <xs:simpleType name="Color">
     <xs:annotation>
