@@ -1255,12 +1255,27 @@
       <entity type="Muban" geocode="45021201" name="บ้านโพนหิน" english="Ban Phon Hin" />
       <entity type="Muban" geocode="45021202" name="บ้านเขวาตะคลอง" english="Ban Khwao Ta Khlong" />
       <entity type="Muban" geocode="45021203" name="บ้านเขวาตะคลอง" english="Ban Khwao Ta Khlong" />
-      <entity type="Muban" geocode="45021204" name="บ้านเขวาหรดี" english="Ban Khwao Horadi" />
+      <entity type="Muban" geocode="45021204" name="บ้านเขวาหรดี" english="Ban Khwao Horadi" >
+        <history>
+          <areachange type="Muban" changewith="45021210" effective="2019-09-01" status="Gazette">
+            <gazetteref volume="136" page="106" issue="31 ง" date="2019-09-26" />
+            <ministerialorder ministry="MOI" date="2019-07-12" title="มท ๐๓๑๐.๑/ว ๔๑๓๙"/>
+          </areachange>
+        </history>
+      </entity>
       <entity type="Muban" geocode="45021205" name="บ้านโพนตูม" english="Ban Phon Tum" />
       <entity type="Muban" geocode="45021206" name="บ้านซึกวึก" english="Ban Suek Wuek" />
       <entity type="Muban" geocode="45021207" name="บ้านหนองแวงยาว" english="Ban Nong Waeng Yao" />
       <entity type="Muban" geocode="45021208" name="บ้านโพนข่อย" english="Ban Phon Khoi" />
       <entity type="Muban" geocode="45021209" name="บ้านโนนไผ่ลุ่ม" english="Ban Non Phai Lum" />
+      <entity type="Muban" geocode="45021210" name="บ้านเขวาสามัคคี" english="Ban Khwao Samakkhi" >
+        <history>
+          <create type="Muban" splitfrom="45021204" effective="2019-09-01" status="Gazette">
+            <gazetteref volume="136" page="106" issue="31 ง" date="2019-09-26" />
+            <ministerialorder ministry="MOI" date="2019-07-12" title="มท ๐๓๑๐.๑/ว ๔๑๓๙"/>
+          </create>
+        </history>
+      </entity>
     </entity>
     <entity type="Tambon" name="ดงครั่งน้อย" english="Dong Khrang Noi" geocode="450213">
       <wiki wikidata="Q13015036" />
@@ -2311,7 +2326,7 @@
     </office>
     <area>
       <area value="374.0" unit="km²" year="2015" comment="Census2000" />
-      <area value="374.001" unit="km²" date="2005" comment="amphoe.com" />
+      <area value="374.001" unit="km²" year="2005" comment="amphoe.com" />
       <area value="555.507" unit="km²" year="2003" invalid="1" comment="Includes Thung Khao Luang">
         <reference>
           <book title="ทำเนียบท้องที่ พุทธศักราช 2546 เล่ม 2" author="กระทรวงมหาดไทย กรมการปกครอง" publication="2003" page="116" />
@@ -4393,7 +4408,7 @@
       <gns-ufi value="-3252150" />
       <woeid value="28341185" />
       <geonames value="1608187" />
-      <googleplace>ChIJ9YcYFrh2PTERwGlgE0G1AgM</googleplace>
+      <googleplace value="ChIJ9YcYFrh2PTERwGlgE0G1AgM"/>
     </codes>
     <symbols>
       <slogan>
@@ -8979,7 +8994,7 @@
     </office>
     <area>
       <area value="138.9" unit="km²" year="2015" comment="Census2000" />
-      <area value="158.66" unit="km²" date="2005" comment="Amphoe.com" />
+      <area value="158.66" unit="km²" year="2005" comment="Amphoe.com" />
     </area>
     <history>
       <statuschange effective="2007-09-08" status="Gazette" old="KingAmphoe" new="Amphoe">
