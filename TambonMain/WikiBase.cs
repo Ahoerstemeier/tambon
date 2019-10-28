@@ -75,6 +75,8 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdLanguageOfWork = "P407";  // qualifier for IPA, to be set to ItemIdThaiLanguage
         public const String PropertyIdCommonsCategory = "P373";
         public const String PropertyIdMainRegulatoryText = "P92";  // qualifier for inception to link to Gazette item
+        public const String PropertyIdTerritoryOverlaps = "P3179";
+        public const String PropertyIdTerritoryIdentical = "P3403";
 
         public const String PropertyIdArea = "P2046";
         public const String PropertyIdCategoryCombinesTopic = "P971";
@@ -173,7 +175,7 @@ namespace De.AHoerstemeier.Tambon
         public const String ItemCensus1919 = "Q15639367";
         public const String ItemCensus1909 = "Q15639395";
 
-        public const String ItemSeatOfLocalGovernment = "Q543654";
+        public const String ItemSeatOfLocalGovernment = "Q25550691";
         public const String ItemDistrictOffice = "Q41769254";
         public const String ItemProvinceHall = "Q41769446";
 

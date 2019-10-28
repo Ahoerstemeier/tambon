@@ -1401,6 +1401,51 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion Location
 
+        #region Overlap
+
+        private WikiDataState OverlapCorrect(Item item, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+
+         
+            Statement dummy;
+            return CheckPropertyMultiValue(item, WikiBase.PropertyIdTerritoryIdentical, identical, false, out dummy);
+
+        }
+
+        /// <summary>
+        /// Gets the statement containing the territory overlap.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the overlapy.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public Statement SetOverlap(Item item, Boolean overrideWrongData)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement result;
+            OverlapCorrect(item, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the overlap is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        public WikiDataState IsOverlapCorrect(Item item)
+        {
+            if ( item == null )
+                throw new ArgumentNullException("item");
+
+            Statement dummy;
+            return OverlapCorrect(item, false, false, out dummy);
+        }
+
+        #endregion 
+
+
         /// <summary>
         /// Get the default edit summary for a claim save.
         /// </summary>
