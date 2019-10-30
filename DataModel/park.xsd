@@ -10,6 +10,7 @@
   <xs:include schemaLocation="basictypes.xsd" />
   <xs:include schemaLocation="history.xsd" />
   <xs:include schemaLocation="identifier.xsd" />
+  <xs:include schemaLocation="references.xsd" />
 
   <xs:complexType name="AreaParkBase">
     <xs:annotation>
@@ -278,4 +279,8 @@
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
+
+  <xs:element name="park" type="t:Park">
+  </xs:element>
+
 </xs:schema>

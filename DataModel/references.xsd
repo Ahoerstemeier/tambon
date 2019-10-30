@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:t="http://hoerstemeier.com/tambon/"
+  targetNamespace="http://hoerstemeier.com/tambon/"
+  attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+  <xs:include schemaLocation="basictypes.xsd" />
+
+
+  <xs:complexType name="BookReference">
+    <xs:annotation>
+      <xs:documentation>Reference to a book.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="title" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Title of the book.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="author" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Main author or editor of the book.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="publication" type="xs:gYear" use="optional">
+      <xs:annotation>
+        <xs:documentation>Publication year.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="page" type="xs:int" use="optional">
+      <xs:annotation>
+        <xs:documentation>Page where the data is found.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="isbn" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>ISBN of the book.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ReferenceList">
+    <xs:annotation>
+      <xs:documentation>List of references.</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Related Royal Gazette entry.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="url" type="t:MyUri" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Web page reference.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="meetingreference" type="t:MeetingReference" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Meeting reference.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ministerialorder" type="t:MinisterialOrder" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ministerial order.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="book" type="t:BookReference" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Reference to a book.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name='GazetteReferenceBase' abstract='1'>
+    <xs:annotation>
+      <xs:documentation>Reference to another gazette announcement.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="volume" type="xs:unsignedInt" use="required" />
+    <xs:attribute name="page" type="xs:unsignedInt" use="required" />
+    <xs:attribute name="issue" type="xs:string" use="required" />
+    <xs:attribute name="date" type="xs:date" use="optional" />
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
+  <xs:complexType name="GazetteRelated">
+    <xs:complexContent>
+      <xs:extension base="t:GazetteReferenceBase">
+        <xs:attribute name="relation" type="t:GazetteRelation" use="optional" default="Unknown">
+          <xs:annotation>
+            <xs:documentation>Relation of the two announcements.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MeetingReference">
+    <xs:annotation>
+      <xs:documentation>Reference to a board meeting.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="number" type="xs:unsignedByte" use="optional">
+      <xs:annotation>
+        <xs:documentation>Number of the meeting in the given year.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="board" type="t:BoardNumber" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of board.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="date" type="xs:date" use="required">
+      <xs:annotation>
+        <xs:documentation>Date of the board meeting.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
+
+</xs:schema>
