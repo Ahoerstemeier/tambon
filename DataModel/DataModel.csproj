@@ -110,13 +110,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="area.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="references.Designer.cs" />
-    <None Include="references.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="webidlist.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,17 +180,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>park.xsd</DependentUpon>
     </None>
-    <None Include="Identifier.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Identifier.xsd</DependentUpon>
-    </None>
     <None Include="geocode.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>geocode.xsd</DependentUpon>
     </None>
-    <None Include="area.Designer.cs" />
+    <None Include="Identifier.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Identifier.xsd</DependentUpon>
+    </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="region.Designer.cs">
       <AutoGen>True</AutoGen>
