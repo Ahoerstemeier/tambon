@@ -249,8 +249,16 @@ namespace De.AHoerstemeier.Tambon.UI
             cbxChangwat.Items.AddRange(allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
             lblTambonInfo.Text = String.Empty;
 
-            var thesabanMueangWithWikiData = localGovernments.Where(x => x.type == EntityType.ThesabanMueang && (x.wiki == null || String.IsNullOrEmpty(x.wiki.wikidata))).Select(x => String.Format(CultureInfo.CurrentUICulture, "{0} ({1})", x.english, x.geocode)).ToArray();
-            edtCollisions.Text = String.Join(Environment.NewLine, thesabanMueangWithWikiData);
+            var thesabanMueangWithoutWikiData = localGovernments.Where(x => x.type == EntityType.ThesabanMueang && (x.wiki == null || String.IsNullOrEmpty(x.wiki.wikidata))).Select(x => String.Format(CultureInfo.CurrentUICulture, "{0} ({1})", x.english, x.geocode)).ToArray();
+            if ( thesabanMueangWithoutWikiData.Any() )
+            {
+                edtCollisions.Text = "Missing Thesaban Mueang" + Environment.NewLine + String.Join(Environment.NewLine, thesabanMueangWithoutWikiData);
+            }
+            var thesabanNakhonWithoutWikiData = localGovernments.Where(x => x.type == EntityType.ThesabanNakhon && (x.wiki == null || String.IsNullOrEmpty(x.wiki.wikidata))).Select(x => String.Format(CultureInfo.CurrentUICulture, "{0} ({1})", x.english, x.geocode)).ToArray();
+            if ( thesabanNakhonWithoutWikiData.Any() )
+            {
+                edtCollisions.Text = "Missing Thesaban Nakhon" + Environment.NewLine + String.Join(Environment.NewLine, thesabanNakhonWithoutWikiData);
+            }
         }
 
         private void btnRun_Click(object sender, EventArgs e)
