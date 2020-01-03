@@ -5,6 +5,9 @@
   targetNamespace="http://hoerstemeier.com/tambon/"
   attributeFormDefault="unqualified" elementFormDefault="qualified">
 
+  <xs:include schemaLocation="board.xsd" />
+  <xs:include schemaLocation="gazette.xsd" />
+
   <xs:attributeGroup name="ThaiNameMandatory">
     <xs:attribute name="name" type="xs:string" use="required">
       <xs:annotation>
@@ -707,6 +710,69 @@
     </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
+  <xs:complexType name="BookReference">
+    <xs:annotation>
+      <xs:documentation>Reference to a book.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="title" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Title of the book.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="author" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Main author or editor of the book.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="publication" type="xs:gYear" use="optional">
+      <xs:annotation>
+        <xs:documentation>Publication year.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="page" type="xs:int" use="optional">
+      <xs:annotation>
+        <xs:documentation>Page where the data is found.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="isbn" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>ISBN of the book.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+
+  <xs:complexType name="ReferenceList">
+    <xs:annotation>
+      <xs:documentation>List of references.</xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="gazetteref" type="t:GazetteRelated" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Related Royal Gazette entry.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="url" type="t:MyUri" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Web page reference.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="meetingreference" type="t:MeetingReference" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Meeting reference.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ministerialorder" type="t:MinisterialOrder" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Ministerial order.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="book" type="t:BookReference" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Reference to a book.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:choice>
+  </xs:complexType>
 
   <xs:complexType name="WikiBase">
     <xs:annotation>
@@ -814,102 +880,9 @@
           <xs:documentation>Paleontological survey area (เขตสำรวจและศึกษาวิจัยเกี่ยวกับแหล่งซากดึกดำบรรพ์หรือซากดึกดำบรรพ์).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="GazetteRelation">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Unknown">
+      <xs:enumeration value="Environment">
         <xs:annotation>
-          <xs:documentation>Relation not defined.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Successor">
-        <xs:annotation>
-          <xs:documentation>Linked announcement is successor to this announcement.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Predecessor">
-        <xs:annotation>
-          <xs:documentation>Linked announcement is predecessor to this announcement.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="AmendmentBase">
-        <xs:annotation>
-          <xs:documentation>Linked announcement is the base announcement to this amendment announcement.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Override">
-        <xs:annotation>
-          <xs:documentation>Linked announcement is overridden by this announcement.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Correction">
-        <xs:annotation>
-          <xs:documentation>Linked announcement is corrected by this announcement.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Mention">
-        <xs:annotation>
-          <xs:documentation>Linked announcement is mentioned by this announcement.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Revoke">
-        <xs:annotation>
-          <xs:documentation>Linked announcement is revoked by this announcement.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Duplicate">
-        <xs:annotation>
-          <xs:documentation>Linked announcement is duplicate with this announcement.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="BoardNumber">
-    <xs:annotation>
-      <xs:documentation>Type of board.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="1">
-        <xs:annotation>
-          <xs:documentation>Boards to consider draft laws, board 1 (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๑)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2">
-        <xs:annotation>
-          <xs:documentation>Boards to consider draft laws, board 2 (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๒)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="1,2">
-        <xs:annotation>
-          <xs:documentation>
-            Joint meeting of board 1 and 2 of board to consider draft laws (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๑ และคณะที่ ๒ ประชุมร่วมกัน).
-          </xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="rename">
-        <xs:annotation>
-          <xs:documentation>Board to consider name changes (คณะกรรมการพิจารณาเรื่องการขอเปลี่ยนแปลงชื่อจังหวัด อำเภอ และตำบล หมู่บ้าน หรือสถานที่ราชการอื่น ๆ)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="cabinet">
-        <xs:annotation>
-          <xs:documentation>Cabinet, council of ministers of national government (คณะรัฐมนตรี).</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="electioncommission">
-        <xs:annotation>
-          <xs:documentation>Election commission (คณะกรรมการการเลือกตั้ง).</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="localcouncil">
-        <xs:annotation>
-          <xs:documentation>Council of the local government unit (สภาท้องถิ่น).</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="parliament">
-        <xs:annotation>
-          <xs:documentation>Parlament (lower house, house of representatives) (สภาผู้แทนราษฎร).</xs:documentation>
+          <xs:documentation>Environment protection area (เขตพื้นที่คุ้มครองสิ่งแวดล้อม).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>

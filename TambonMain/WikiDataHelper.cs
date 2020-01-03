@@ -1407,8 +1407,9 @@ namespace De.AHoerstemeier.Tambon
         {
 
          
-            Statement dummy;
-            return CheckPropertyMultiValue(item, WikiBase.PropertyIdTerritoryIdentical, identical, false, out dummy);
+            Statement dummy = null;
+            statement = dummy;
+            return WikiDataState.Unknown; // CheckPropertyMultiValue(item, WikiBase.PropertyIdTerritoryIdentical, identical, false, out dummy);
 
         }
 

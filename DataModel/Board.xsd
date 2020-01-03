@@ -8,8 +8,77 @@
 
   <xs:include schemaLocation="basictypes.xsd" />
   <xs:include schemaLocation="gazette.xsd" />
-  <xs:include schemaLocation="references.xsd" />
 
+  <xs:simpleType name="BoardNumber">
+    <xs:annotation>
+      <xs:documentation>Type of board.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Boards to consider draft laws, board 1 (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๑)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Boards to consider draft laws, board 2 (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๒)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1,2">
+        <xs:annotation>
+          <xs:documentation>
+            Joint meeting of board 1 and 2 of board to consider draft laws (คณะกรรมการพิจารณาร่างกฎหมายของกระทรวงมหาดไทย คณะที่ ๑ และคณะที่ ๒ ประชุมร่วมกัน).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="rename">
+        <xs:annotation>
+          <xs:documentation>Board to consider name changes (คณะกรรมการพิจารณาเรื่องการขอเปลี่ยนแปลงชื่อจังหวัด อำเภอ และตำบล หมู่บ้าน หรือสถานที่ราชการอื่น ๆ)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cabinet">
+        <xs:annotation>
+          <xs:documentation>Cabinet, council of ministers of national government (คณะรัฐมนตรี).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="electioncommission">
+        <xs:annotation>
+          <xs:documentation>Election commission (คณะกรรมการการเลือกตั้ง).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="localcouncil">
+        <xs:annotation>
+          <xs:documentation>Council of the local government unit (สภาท้องถิ่น).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="parliament">
+        <xs:annotation>
+          <xs:documentation>Parlament (lower house, house of representatives) (สภาผู้แทนราษฎร).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MeetingReference">
+    <xs:annotation>
+      <xs:documentation>Reference to a board meeting.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="number" type="xs:unsignedByte" use="optional">
+      <xs:annotation>
+        <xs:documentation>Number of the meeting in the given year.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="board" type="t:BoardNumber" use="required">
+      <xs:annotation>
+        <xs:documentation>Type of board.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="date" type="xs:date" use="required">
+      <xs:annotation>
+        <xs:documentation>Date of the board meeting.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="t:Comment" />
+  </xs:complexType>
   <xs:complexType name="BasicOperation">
     <xs:group ref="t:EntryAction" maxOccurs="unbounded" minOccurs="0" />
     <xs:attribute name="geocode" type="xs:unsignedInt" use="optional">
