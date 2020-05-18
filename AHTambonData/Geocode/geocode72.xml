@@ -1005,29 +1005,6 @@
     </entity>
     <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="720205">
       <wiki wikidata="Q54366279" />
-      <office type="MunicipalityOffice">
-        <officials>
-          <official title="Mayor" name="เสนอ น้ำจันทร์" begin="2012-07-01" beginreason="ElectedDirectly" />
-          <official title="Mayor" name="ธาตรี อยู่อ่อน" begin="2008-08-10" endyear="2012" beginreason="ElectedDirectly" endreason="Unknown" />
-          <official title="TAOMayor" name="เสนอ น้ำจันทร์" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-09-16" type="ThesabanTambon" size="12" />
-          <term begin="2008-08-10" end="2012-08-09" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-01" status="Done">
-            <meetingreference board="2" number="2" date="2008-01-04" />
-          </statuschange>
-          <create effective="1996-03-20" status="Gazette" type="TAO">
-            <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="720205" coverage="completely" />
-        </areacoverage>
-      </office>
       <!--<history>
         <create effective="1949-09-10" status="Gazette" type="Tambon" splitfrom="720202" subdivisions="6" subdivisiontype="Muban">
           <gazetteref volume="66" page="4812" issue="57 ง" date="1949-10-11" />
@@ -5828,6 +5805,31 @@
       </rename>
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-24" status="Done">
         <meetingreference board="2" number="12" date="2008-02-08" />
+      </statuschange>
+      <create effective="1996-03-20" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
+      </create>
+    </history>
+  </entity>
+  <entity type="Tambon" name="ปากน้ำ" english="Pak Nam" geocode="7265" parent="7202" tambon="720205">
+    <office type="MunicipalityOffice">
+      <officials>
+        <official title="Mayor" name="เสนอ น้ำจันทร์" begin="2012-07-01" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="ธาตรี อยู่อ่อน" begin="2008-08-10" endyear="2012" beginreason="ElectedDirectly" endreason="Unknown" />
+        <official title="TAOMayor" name="เสนอ น้ำจันทร์" begin="2004-07-25" end="2008-07-24" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-09-16" type="ThesabanTambon" size="12" />
+        <term begin="2008-08-10" end="2012-08-09" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2004-07-25" end="2008-07-24" type="TAO" size="14" />
+      </council>
+      <areacoverage>
+        <entity geocode="720205" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-01" status="Done">
+        <meetingreference board="2" number="2" date="2008-01-04" />
       </statuschange>
       <create effective="1996-03-20" status="Gazette" type="TAO">
         <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
