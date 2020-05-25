@@ -35,6 +35,7 @@
     </geo:Point>
     <url lastchecked="2016-09-14">http://www.kalasin.go.th/</url>
     <officials>
+      <official title="Governor" name="ชัยธวัช เนียมศิริ" inoffice="2019" beginreason="Appointed"/>
       <official title="Governor" index="54" name="ไกรสร กองฉลาด" begin="2017-10-01" beginreason="Appointed" />
       <official title="Governor" index="53" name="สุวิทย์ คําดี" begin="2017-04-04" end="2017-09-30" beginreason="Appointed" endreason="Transfer" />
       <official title="Governor" index="52" name="ณัฐภัทร สุวรรณประทีป" begin="2016-10-01" end="2017-04-04" beginreason="Appointed" endreason="Transfer" />
@@ -3410,8 +3411,12 @@
           </create>
         </history>
       </entity>
-      <entity type="Muban" geocode="46080115" name="บ้านธาตุ" english="Ban That">
+      <entity type="Muban" geocode="46080115"  name="บ้านพระธาตุพนม" english="Ban Phra That Phanom">
         <history>
+          <rename oldname="บ้านธาตุ" oldenglish="Ban That" name="บ้านพระธาตุพนม" english="Ban Phra That Phanom" status="Gazette" effective="2020-01-16">
+            <gazetteref volume="137" page="138" issue="5 ง" date="2020-01-16" />
+            <meetingreference board="rename" number="2" date="2019-09-19"/>
+          </rename>
           <create effective="2006-11-22" status="Gazette" type="Muban" splitfrom="46080103">
             <gazetteref volume="124" page="6" issue="พิเศษ 45 ง" date="2007-04-11" />
           </create>
@@ -7645,7 +7650,11 @@
   </entity>
   <entity type="ThesabanTambon" name="คำบง" english="Kham Bong" geocode="4673" parent="4614" tambon="461401">
     <office type="MunicipalityOffice">
-      <url lastchecked="2012-11-26">http://www.khambong-ks.go.th/</url>
+      <geo:Point>
+        <geo:lat>16.6682</geo:lat>
+        <geo:long>103.8188</geo:long>
+      </geo:Point>
+      <url status="inaccessible" lastchecked="2020-05-22">http://www.khambong-ks.go.th/</url>
       <officials>
         <official title="Mayor" name="สงวนศักดิ์ โคตรพัฒน์" begin="2012-11-24" beginreason="ElectedDirectly" />
         <official title="Mayor" name="สุระชัย ไชยทองศรี" begin="2008-10-12" end="2012-10-11" beginreason="ElectedDirectly" endreason="EndOfTerm" />

@@ -418,6 +418,9 @@
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="38" />
         </council>
         <history>
+          <abolished type="TAO" mergeto="3475" status="Pending">
+            <meetingreference board="1" number="1" date="2020-01-22"/>
+          </abolished>
           <create effective="1995-03-03" status="Gazette" type="TAO">
             <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
           </create>
@@ -2225,7 +2228,14 @@
       </history>
       <entity type="Muban" geocode="34050701" name="บ้านหนองผือ" english="Ban Nong Phue" />
       <entity type="Muban" geocode="34050702" name="บ้านบ๋าพอก" english="Ban Ba Phok" />
-      <entity type="Muban" geocode="34050703" name="บ้านบ๋าฮี" english="Ban Ba Hi" />
+      <entity type="Muban" geocode="34050703" name="บ้านพรเจริญชัย" english="Ban Phra Charoen Chai" >
+        <history>
+          <rename oldname="บ้านบ๋าฮี" oldenglish="Ban Ba Hi" name="บ้านพรเจริญชัย" english="Ban Phra Charoen Chai" status="Gazette" effective="2019-11-04" >
+            <gazetteref volume="137" page="65" issue="3 ง" date="2020-01-09" />
+            <meetingreference board="rename" number="2" date="2019-09-19"/>
+          </rename>
+        </history>
+      </entity>
       <entity type="Muban" geocode="34050704" name="บ้านอุดมพร" english="Ban Udom Phon" />
       <entity type="Muban" geocode="34050705" name="บ้านบึงหอม" english="Ban Bueng Hom" />
       <entity type="Muban" geocode="34050706" name="บ้านบาก" english="Ban Bak" />
@@ -6350,35 +6360,6 @@
       <codes>
         <post value="34190" />
       </codes>
-      <office type="MunicipalityOffice">
-        <url>http://www.kamnamsab.go.th/</url>
-        <url status="offline">http://www.kamnamsab.org/</url>
-        <socialweb>
-          <facebook>https://www.facebook.com/kamnamsab2013</facebook>
-          <twitter status="inactive">kamnamsab</twitter>
-          <googleplus type="location">107537348181047521823</googleplus>
-        </socialweb>
-        <officials>
-          <official title="Mayor" name="สุเมธ ตรีศูลรัตน์" begin="2014-04-20" beginreason="ElectedDirectly" />
-          <official title="Mayor" name="สุเมธ ตรีศูลรัตน์" begin="2010-03-07" end="2014-03-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2014-04-20" type="ThesabanTambon" size="12" />
-          <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done">
-            <meetingreference board="2" date="2009-06-04" number="13" />
-          </statuschange>
-          <create effective="1997-02-13" status="Gazette" type="TAO">
-            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="341510" coverage="completely" />
-        </areacoverage>
-      </office>
       <history>
         <create effective="1976-08-31" status="Gazette" type="Tambon" splitfrom="341502" subdivisions="12" subdivisiontype="Muban">
           <gazetteref volume="93" page="3331" issue="143 ง" date="1976-11-16" />
@@ -6850,31 +6831,6 @@
     </entity>
     <entity type="Tambon" name="กุดชมภู" english="Kut Chomphu" geocode="341902">
       <wiki wikidata="Q29688227" />
-      <office type="MunicipalityOffice">
-        <url lastchecked="2013-04-11" status="broken">http://kudchompu.go.th/</url>
-        <url status="online">http://www.kutchompu.org/</url>
-        <url status="offline">http://kudchomphulocal.org/</url>
-        <officials>
-          <official title="Mayor" name="ทองใบ ทองเกิด" begin="2013-09-22" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ประมิตร โกศัลวัฒน์" begin="2009-06-28" end="2013-06-27" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2013-09-22" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
-          <term begin="2009-09-06" end="2013-06-28" type="TAO" size="38" endreason="StatusChange" />
-          <term begin="2005-07-31" end="2009-07-30" type="TAO" size="38" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanTambon" effective="2013-06-28" status="Done">
-            <meetingreference board="2" number="20" date="2013-03-20" />
-          </statuschange>
-          <create effective="1997-02-13" status="Gazette" type="TAO">
-            <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="341902" coverage="completely" />
-        </areacoverage>
-      </office>
       <history>
         <create effective="1951-06-04" status="Gazette" type="Tambon" splitfrom="341901" subdivisions="16" subdivisiontype="Muban">
           <gazetteref volume="68" page="2525" issue="38 ง" date="1951-06-19" />
@@ -6977,7 +6933,7 @@
         </areacoverage>
       </office>
       <area>
-        <area value="19165.27" unit="rai" date="2017">
+        <area value="19165.27" unit="rai" year="2017">
           <reference>
             <url>http://saimoon.go.th/index.php/about-us/general</url>
           </reference>
@@ -11353,6 +11309,9 @@
       </areacoverage>
     </office>
     <history>
+      <mergedwith mergefromtype="TAO" mergefrom="340107 340162" status="Pending">
+        <meetingreference board="1" number="1" date="2020-01-22"/>
+      </mergedwith>
       <statuschange old="TAO" new="ThesabanTambon" effective="2007-08-24" status="Done" />
       <create effective="1995-03-03" status="Gazette" type="TAO">
         <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
@@ -11459,6 +11418,9 @@
       </areacoverage>
     </office>
     <history>
+      <abolished type="TAO" mergeto="3475" status="Pending">
+        <meetingreference board="1" number="1" date="2020-01-22"/>
+      </abolished>
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-17" status="Done">
         <meetingreference board="2" number="46" date="2008-06-25" />
       </statuschange>
@@ -11675,6 +11637,67 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Gazette">
         <gazetteref volume="128" page="61" issue="พิเศษ 17 ง" date="2011-02-11" />
         <meetingreference board="1" date="2009-06-22" number="17" />
+      </statuschange>
+      <create effective="1997-02-13" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+      </create>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="คำน้ำแซบ" english="Kham Nam Saep" geocode="3464" parent="3415" tambon="341510">
+    <codes>
+      <post value="34190" />
+    </codes>
+    <office type="MunicipalityOffice">
+      <url>http://www.kamnamsab.go.th/</url>
+      <url status="offline">http://www.kamnamsab.org/</url>
+      <socialweb>
+        <facebook>https://www.facebook.com/kamnamsab2013</facebook>
+        <twitter status="inactive">kamnamsab</twitter>
+        <googleplus type="location">107537348181047521823</googleplus>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="สุเมธ ตรีศูลรัตน์" begin="2014-04-20" beginreason="ElectedDirectly" />
+        <official title="Mayor" name="สุเมธ ตรีศูลรัตน์" begin="2010-03-07" end="2014-03-06" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2014-04-20" type="ThesabanTambon" size="12" />
+        <term begin="2010-03-07" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2005-07-31" end="2009-07-30" type="TAO" size="20" />
+      </council>
+      <areacoverage>
+        <entity geocode="341510" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2009-10-27" status="Done">
+        <meetingreference board="2" date="2009-06-04" number="13" />
+      </statuschange>
+      <create effective="1997-02-13" status="Gazette" type="TAO">
+        <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
+      </create>
+    </history>
+  </entity>
+  <entity type="ThesabanTambon" name="กุดชมภู" english="Kut Chomphu" geocode="3463" parent="3419" tambon="341902">
+    <office type="MunicipalityOffice">
+      <url lastchecked="2013-04-11" status="broken">http://kudchompu.go.th/</url>
+      <url status="online">http://www.kutchompu.org/</url>
+      <url status="offline">http://kudchomphulocal.org/</url>
+      <officials>
+        <official title="Mayor" name="ทองใบ ทองเกิด" begin="2013-09-22" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="ประมิตร โกศัลวัฒน์" begin="2009-06-28" end="2013-06-27" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2013-09-22" type="ThesabanTambon" size="12" sizechangereason="StatusChange" />
+        <term begin="2009-09-06" end="2013-06-28" type="TAO" size="38" endreason="StatusChange" />
+        <term begin="2005-07-31" end="2009-07-30" type="TAO" size="38" />
+      </council>
+      <areacoverage>
+        <entity geocode="341902" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanTambon" effective="2013-06-28" status="Done">
+        <meetingreference board="2" number="20" date="2013-03-20" />
       </statuschange>
       <create effective="1997-02-13" status="Gazette" type="TAO">
         <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />

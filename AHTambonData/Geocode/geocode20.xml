@@ -2293,6 +2293,7 @@
           <geo:lat>13.5067</geo:lat>
           <geo:long>101.2090</geo:long>
         </geo:Point>
+        <url lastchecked="2019-12-29" status="inaccessible">http://www.nongpruepanas.com/</url>
         <url lastchecked="2013-07-16">http://www.nongprue.go.th/</url>
         <officials>
           <official title="TAOMayor" name="สมานมิตร เหลืองอ่อน" begin="2012-10-07" beginreason="ElectedDirectly" />
@@ -3410,12 +3411,12 @@
     </entity>
     <entity type="Tambon" name="บ่อกวางทอง" english="Bo Kwang Thong" geocode="201003">
       <wiki wikidata="Q51749583" />
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <geo:Point>
-          <geo:lat> 13.3148</geo:lat>
+          <geo:lat>13.3148</geo:lat>
           <geo:long>101.3215</geo:long>
         </geo:Point>
-        <url>http://www.bokwangthong.go.th/</url>
+        <url status="inaccessible" lastchecked="2020-04-17">http://www.bokwangthong.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ภูเบศ พงษ์ชมพร" begin="2011-11-13" beginreason="ElectedDirectly" />
         </officials>
@@ -3425,9 +3426,10 @@
           <!-- Mu 8 created 2004-10 -->
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+          <statuschange old="TAO" new="ThesabanTambon" status="Gazette" effective="2020-04-17">
+            <gazetteref volume="137" page="8" issue="พิเศษ 90 ง" date="2020-04-17" />
             <meetingreference board="2" number="35" date="2019-08-14"/>
-          </statuschange>                        
+          </statuschange>
           <create effective="1995-03-03" status="Gazette" type="TAO">
             <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
           </create>
@@ -3596,35 +3598,6 @@
     </history>
     <entity type="Tambon" name="เกาะจันทร์" english="Ko Chan" geocode="201101">
       <wiki wikidata="Q15982692" />
-      <office type="MunicipalityOffice">
-        <wiki wikidata="Q13025374" />
-        <url lastchecked="2013-05-15">http://prokfacity.go.th/</url>
-        <url status="offline">http://www.koachan.go.th/</url>
-        <officials>
-          <official title="Mayor" name="สุทิน สุดถิ่น" begin="2012-03-11" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="ประชุม มิ่งสอน" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-03-11" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
-          <term begin="2007-09-30" end="2011-09-29" type="TAO" size="28" />
-          <!-- Mu 15 created after 1998 -->
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanMueang" effective="2011-09-30" status="Done">
-            <meetingreference board="1" date="2011-08-31" number="56" />
-          </statuschange>
-          <rename oldname="เกาะจันทร์" oldenglish="Ko Chan" name="ปรกฟ้า" english="Prok Fa" effective="2011-09-30" status="Done">
-            <meetingreference date="2011-08-25" number="3" board="rename" />
-            <meetingreference board="1" date="2011-08-31" number="56" />
-          </rename>
-          <create effective="1995-03-03" status="Gazette" type="TAO">
-            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="201101" coverage="partially" />
-        </areacoverage>
-      </office>
       <history>
         <reassign effective="1997-07-01" status="Gazette" oldparent="2006" newparent="2011" oldgeocode="200619">
           <gazetteref volume="114" page="5" issue="พิเศษ 51 ง" date="1997-06-25" />
@@ -4931,8 +4904,9 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="หนองไม้แดง" english="Nong Mai Daeng" geocode="2069" parent="2001" tambon="200110">
+    <wiki wikidata="Q91936094"/>
     <office type="MunicipalityOffice">
-      <url>http://www.nongmaidaeng.go.th/</url>
+      <url lastchecked="2020-04-25">http://www.nongmaidaeng.go.th/</url>
       <officials>
         <official title="Mayor" name="ตวงทิพย์ ภาวสุทธิ์ชัยกิจ" begin="2011-01-15" beginreason="ElectedDirectly" />
       </officials>
@@ -5056,6 +5030,10 @@
     <entity type="Chumchon" geocode="20660008" name="ชุมชนบ้านมาบสามเกลียว" english="Chumchon Ban Map Sam Kliao" />
   </entity>
   <entity type="ThesabanTambon" name="เสม็ด" english="Samet" geocode="2065" parent="2001" tambon="200116">
+    <wiki wikidata="Q91937776"/>
+    <codes>
+      <post value="20000" comment="only Mu 1-3 of Tambon, which are only 20000" />
+    </codes>
     <office type="MunicipalityOffice">
       <symbols>
         <slogan>เสม็ดเมืองน่าอยู่ ศูนย์รวมบริการ มีคุณภาพชีวิตที่ดี รักษ์สิ่งแวดล้อม</slogan>
@@ -5064,7 +5042,8 @@
         <geo:lat>13.3418</geo:lat>
         <geo:long>100.9438</geo:long>
       </geo:Point>
-      <url lastchecked="2012-01-30">http://www.samed.go.th/</url>
+      <url status="inaccessible" lastchecked="2020-04-20">http://www.samedcity.go.th/</url>
+      <url status="offline" lastchecked="2012-01-30">http://www.samed.go.th/</url>
       <officials>
         <official title="Mayor" name="ยุทธนา สุภาภรณ์" begin="2012-01-15" beginreason="ElectedDirectly" />
         <official title="Mayor" name="ยุทธนา สุภาภรณ์" begin="2007-12-09" end="2011-12-08" beginreason="ElectedDirectly" endreason="EndOfTerm" />
@@ -5075,7 +5054,7 @@
         <term begin="2007-12-09" end="2011-12-08" type="ThesabanTambon" size="12" />
       </council>
       <areacoverage>
-        <entity geocode="200116" coverage="partially" />
+        <entity geocode="200116" coverage="partially" comment="Mu 1-3" />
       </areacoverage>
     </office>
     <history>
@@ -5255,6 +5234,37 @@
           6. ชุมชนร่วมพัฒนาวัดใหม่อยู่สงัด
           7. ชุมชนเกล็ดแก้วพัฒนา
           8. ชุมชนบ้านโค้งวันเพ็ญ-->
+  </entity>
+  <entity type="ThesabanMueang" name="ปรกฟ้า" english="Prok Fa" geocode="2059" parent="2011" tambon="201101">
+    <wiki wikidata="Q13025374" />
+    <office type="MunicipalityOffice">
+      <url lastchecked="2013-05-15">http://prokfacity.go.th/</url>
+      <url status="offline">http://www.koachan.go.th/</url>
+      <officials>
+        <official title="Mayor" name="สุทิน สุดถิ่น" begin="2012-03-11" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="ประชุม มิ่งสอน" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-03-11" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
+        <term begin="2007-09-30" end="2011-09-29" type="TAO" size="28" />
+        <!-- Mu 15 created after 1998 -->
+      </council>
+      <areacoverage>
+        <entity geocode="201101" coverage="partially" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanMueang" effective="2011-09-30" status="Done">
+        <meetingreference board="1" date="2011-08-31" number="56" />
+      </statuschange>
+      <rename oldname="เกาะจันทร์" oldenglish="Ko Chan" name="ปรกฟ้า" english="Prok Fa" effective="2011-09-30" status="Done">
+        <meetingreference date="2011-08-25" number="3" board="rename" />
+        <meetingreference board="1" date="2011-08-31" number="56" />
+      </rename>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
+    </history>
   </entity>
 
   <entity type="SakhaTambon" name="บางเสร่" english="Bang Sare" geocode="2051" parent="2009" obsolete="1" />

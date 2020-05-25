@@ -248,7 +248,7 @@
         <history>
           <statuschange old="TAO" new="ThesabanMueang" status="Pending">
             <meetingreference board="2" number="37" date="2019-09-04"/>
-          </statuschange>                        
+          </statuschange>
           <create effective="1995-03-03" status="Gazette" type="TAO">
             <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
           </create>
@@ -687,12 +687,13 @@
     </entity>
     <entity type="Tambon" name="บางแม่นาง" english="Bang Mae Nang" geocode="120302">
       <wiki wikidata="Q15895222" />
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <wiki wikidata="Q93436354"/>
         <geo:Point>
           <geo:lat>13.8815</geo:lat>
           <geo:long>100.3759</geo:long>
         </geo:Point>
-        <url lastchecked="2013-09-13">http://bangmaenang.go.th/</url>
+        <url lastchecked="2020-05-06">http://bangmaenang.go.th/</url>
         <socialweb>
           <facebook>http://www.facebook.com/bangmaenang</facebook>
           <googleplus type="page" status="inactive">101506531903563575561</googleplus>
@@ -708,7 +709,8 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="36" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+          <statuschange old="TAO" new="ThesabanMueang" status="Gazette" effective="2020-03-20">
+            <gazetteref volume="137" page="8" issue="พิเศษ 66 ง" date="2020-03-20"/>
             <meetingreference board="2" number="35" date="2019-08-14"/>
           </statuschange>
           <create effective="1997-02-13" status="Gazette" type="TAO">
@@ -2493,7 +2495,8 @@
         <geo:lat>13.8369</geo:lat>
         <geo:long>100.35906</geo:long>
       </geo:Point>
-      <url lastchecked="2014-03-25">http://www.bym.go.th/</url>
+      <url lastchecked="2020-05-06">https://www.bangyaimunicipality.go.th/</url>
+      <url lastonline="2014-03-25" status="offline">http://www.bym.go.th/</url>
       <url status="broken">http://www.bangyai.org/</url>
       <socialweb>
         <googleplus type="page" status="inactive">111078625325313462862</googleplus>
@@ -2602,6 +2605,9 @@
       </areacoverage>
     </office>
     <history>
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" status="Pending">
+        <meetingreference board="1" number="1" date="2020-01-22"/>
+      </statuschange>
       <statuschange old="TAO" new="ThesabanTambon" effective="2003-10-02" status="Gazette">
         <gazetteref volume="120" page="39" issue="95 ก" date="2003-10-02" />
       </statuschange>

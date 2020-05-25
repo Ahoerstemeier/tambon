@@ -175,6 +175,11 @@
     <entity type="Tambon" name="บึงกาฬ" english="Bueng Kan" geocode="380101">
       <wiki wikidata="Q17616255" />
       <office type="TAOOffice">
+        <wiki wikidata="Q88475294"/>
+        <geo:Point>
+          <geo:lat>18.3642</geo:lat>
+          <geo:long>103.6546</geo:long>
+        </geo:Point>
         <url lastchecked="2017-02-06">http://buengkan-sao.go.th/</url>
         <officials>
           <official title="TAOMayor" name="ราชันย์ วะนาพรม" begin="2011-10-09" beginreason="ElectedDirectly" />
@@ -187,6 +192,9 @@
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
         </council>
         <history>
+          <abolished type="TAO" mergeto="3898" status="Pending">
+            <meetingreference board="1" number="5" date="2020-02-19"/>
+          </abolished>
           <create effective="1996-03-20" status="Gazette" type="TAO">
             <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
           </create>
@@ -1593,6 +1601,9 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="34" finalsize="36" sizechangereason="MubanCreation" comment="Mu 18 created 2005-12" />
         </council>
         <history>
+          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+            <meetingreference board="1" number="5" date="2020-02-19"/>
+          </statuschange>
           <create effective="1997-02-13" status="Gazette" type="TAO">
             <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
           </create>
@@ -2834,7 +2845,8 @@
         <street>ถนนชาญสินธุ์</street>
         <postcode>43140</postcode>
       </address>
-      <url lastchecked="2017-02-06">http://www.smbuengkan.go.th/</url>
+      <url lastchecked="2020-03-24">https://www.buengkhanml.go.th/</url>
+      <url lastchecked="2017-02-06" status="offline">http://www.smbuengkan.go.th/</url>
       <url status="obsolete">http://www.nmt.or.th/nongkhai/buengkan/</url>
       <url status="expired">http://www.bungkanmunicipality.com/</url>
       <socialweb>
@@ -2868,6 +2880,16 @@
       </area>
     </area>
     <history>
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" status="Pending">
+        <meetingreference board="1" number="5" date="2020-02-19"/>
+      </statuschange>
+      <mergedwith mergefromtype="ThesabanTambon" mergefrom="3889" status="Pending">
+        <meetingreference board="1" number="5" date="2020-02-19"/>
+      </mergedwith>
+      <mergedwith mergefromtype="TAO" mergefrom="380151" status="Pending">
+        <meetingreference board="1" number="5" date="2020-02-19"/>
+      </mergedwith>
+
       <reassign oldparent="43" newparent="38" oldgeocode="4394" effective="2011-03-22" status="Gazette">
         <gazetteref volume="128" page="1" issue="18 ก" date="2011-03-22" />
       </reassign>
@@ -3116,12 +3138,14 @@
     </history>
   </entity>
   <entity type="ThesabanTambon" name="วิศิษฐ์" english="Wisit" geocode="3889" parent="3801" tambon="380110">
+    <wiki wikidata="Q88472045"/>
     <office type="MunicipalityOffice">
       <geo:Point>
         <geo:lat>18.3627</geo:lat>
         <geo:long>103.6083</geo:long>
       </geo:Point>
-      <url lastchecked="2012-09-25">http://visitlocal.go.th/</url>
+      <url lastchecked="2020-03-24">http://visit-buengkan.go.th/</url>
+      <url lastchecked="2012-09-25" status="offline">http://visitlocal.go.th/</url>
       <url status="offline">http://visitlocal.org/</url>
       <officials>
         <official title="Mayor" name="เผด็จ ดงยะโสภา" begin="2012-09-30" beginreason="ElectedDirectly" />
@@ -3138,6 +3162,9 @@
       </areacoverage>
     </office>
     <history>
+      <abolished type="ThesabanTambon" mergeto="3898" status="Pending">
+        <meetingreference board="1" number="5" date="2020-02-19"/>
+      </abolished>
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-09" status="Done">
         <meetingreference board="2" number="6" date="2008-01-18" />
       </statuschange>

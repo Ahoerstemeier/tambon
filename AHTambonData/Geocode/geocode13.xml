@@ -1091,6 +1091,9 @@
           <term begin="2007-09-30" end="2011-09-29" type="TAO" size="26" />
         </council>
         <history>
+          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+            <meetingreference board="1" number="1" date="2020-01-22"/>
+          </statuschange>
           <create type="TAO" effective="1995-03-03" status="Gazette">
             <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
           </create>
@@ -1546,37 +1549,6 @@
       <codes>
         <post value="12150" />
       </codes>
-      <office type="MunicipalityOffice">
-        <wiki wikidata="Q28790202" wikimapia="15361697" />
-        <geo:Point>
-          <geo:lat>13.9408</geo:lat>
-          <geo:long>100.6915</geo:long>
-        </geo:Point>
-        <url status="offline">http://ladsawai.go.th/</url>
-        <socialweb>
-          <googleplus type="user" status="active">106375937507829700327</googleplus>
-          <googleplus type="page" status="inactive" comment="Still named TAO">100796406280404467204</googleplus>
-          <foursquare>4f011d5f490182a1a8d8a4af</foursquare>
-          <longdo>A10100187</longdo>
-        </socialweb>
-        <officials>
-          <official title="Mayor" name="เฉลิมพล เจษฎางกูล ณ อยุธยา" begin="2012-03-25" beginreason="ElectedDirectly" />
-          <official title="TAOMayor" name="วินัย สังวาลย์เงิน" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
-        </officials>
-        <council>
-          <term begin="2012-03-25" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
-          <term begin="2007-09-30" end="2011-09-29" type="TAO" size="22" />
-        </council>
-        <history>
-          <statuschange old="TAO" new="ThesabanMueang" effective="2011-10-01" status="Done" />
-          <create effective="1995-03-03" status="Gazette" type="TAO">
-            <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
-          </create>
-        </history>
-        <areacoverage>
-          <entity geocode="130602" coverage="completely" />
-        </areacoverage>
-      </office>
       <entity type="Muban" geocode="13060201" name="บ้านคลองห้า" english="Ban Khlong Ha" />
       <entity type="Muban" geocode="13060202" name="บ้านคลองห้า" english="Ban Khlong Ha" />
       <entity type="Muban" geocode="13060203" name="บ้านคลองหกวา" english="Ban Khlong Hok Wa" />
@@ -2047,7 +2019,12 @@
     </entity>
     <entity type="Tambon" name="เชียงรากใหญ่" english="Chiang Rak Yai" geocode="130706">
       <wiki wikidata="Q15999740" />
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
+        <geo:Point>
+          <geo:lat>14.0640</geo:lat>
+          <geo:long>100.5692</geo:long>
+        </geo:Point>
+        <url lastchecked="2020-05-13">http://chiangrakyai.go.th/</url>
         <officials>
           <official title="TAOMayor" name="เสวก ประเสริฐสุข" begin="2013-09-13" beginreason="ElectedDirectly" />
           <official title="TAOMayor" name="เสวก ประเสริฐสุข" begin="2009-09-06" endyear="2013" beginreason="ElectedDirectly" endreason="Unknown" />
@@ -2058,6 +2035,10 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="14" />
         </council>
         <history>
+          <statuschange old="TAO" new="ThesabanTambon" status="Gazette" effective="2020-05-13">
+            <gazetteref volume="137" page="2" issue="พิเศษ 112 ง" date="2020-05-13" />
+            <meetingreference board="1" number="1" date="2020-01-22"/>
+          </statuschange>
           <create effective="1997-02-13" status="Gazette" type="TAO">
             <gazetteref volume="113" page="1" issue="พิเศษ 52 ง" date="1996-12-25" />
           </create>
@@ -3103,6 +3084,42 @@
       <statuschange old="TAO" new="ThesabanTambon" effective="2011-09-30" status="Done">
         <meetingreference board="1" number="53" date="2011-08-22" />
       </statuschange>
+      <create effective="1995-03-03" status="Gazette" type="TAO">
+        <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
+      </create>
+    </history>
+  </entity>
+  <entity type="ThesabanMueang" name="ลาดสวาย" english="Lat Sawai" geocode="1379" parent="1306" tambon="130602">
+    <wiki wikidata="Q28790202" wikimapia="15361697" />
+    <codes>
+      <post value="12150" />
+    </codes>
+    <office type="MunicipalityOffice">
+      <geo:Point>
+        <geo:lat>13.9668</geo:lat>
+        <geo:long>100.6903</geo:long>
+      </geo:Point>
+      <url lastchecked="2020-05-13">http://ladsawai.go.th/</url>
+      <socialweb>
+        <googleplus type="user" status="active">106375937507829700327</googleplus>
+        <googleplus type="page" status="inactive" comment="Still named TAO">100796406280404467204</googleplus>
+        <foursquare>4f011d5f490182a1a8d8a4af</foursquare>
+        <longdo>A10100187</longdo>
+      </socialweb>
+      <officials>
+        <official title="Mayor" name="เฉลิมพล เจษฎางกูล ณ อยุธยา" begin="2012-03-25" beginreason="ElectedDirectly" />
+        <official title="TAOMayor" name="วินัย สังวาลย์เงิน" begin="2007-09-30" end="2011-09-29" beginreason="ElectedDirectly" endreason="EndOfTerm" />
+      </officials>
+      <council>
+        <term begin="2012-03-25" type="ThesabanMueang" size="18" sizechangereason="StatusChange" />
+        <term begin="2007-09-30" end="2011-09-29" type="TAO" size="22" />
+      </council>
+      <areacoverage>
+        <entity geocode="130602" coverage="completely" />
+      </areacoverage>
+    </office>
+    <history>
+      <statuschange old="TAO" new="ThesabanMueang" effective="2011-10-01" status="Done" />
       <create effective="1995-03-03" status="Gazette" type="TAO">
         <gazetteref volume="112" page="1" issue="พิเศษ 6 ง" date="1995-03-03" />
       </create>
