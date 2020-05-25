@@ -59,7 +59,8 @@ namespace De.AHoerstemeier.Tambon
         NonHuntingArea,
         HistoricalPark,
         HistoricalSite,
-        NationalPreservedForest
+        NationalPreservedForest,
+        AquaticAnimalSanctuary
     }
 
     public enum EntityLeaderType
