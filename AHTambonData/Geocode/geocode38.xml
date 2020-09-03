@@ -98,7 +98,7 @@
     </council>
   </office>
   <area>
-    <area value="4305.746" unit="km²" date="2013" />
+    <area value="4305.746" unit="km²" year="2013" />
     <bounding geocode="43" direction="west" />
     <bounding geocode="47" direction="south" />
     <bounding geocode="48" direction="south" />
@@ -174,7 +174,7 @@
     </history>
     <entity type="Tambon" name="บึงกาฬ" english="Bueng Kan" geocode="380101">
       <wiki wikidata="Q17616255" />
-      <office type="TAOOffice">
+      <office type="TAOOffice" obsolete="1">
         <wiki wikidata="Q88475294"/>
         <geo:Point>
           <geo:lat>18.3642</geo:lat>
@@ -192,7 +192,8 @@
           <term begin="2004-07-18" end="2008-07-17" type="TAO" size="22" />
         </council>
         <history>
-          <abolished type="TAO" mergeto="3898" status="Pending">
+          <abolished type="TAO" mergeto="3898" status="Gazette" effective="2020-08-05">
+            <gazetteref volume="137" page="3" issue="พิเศษ 179 ง" date="2020-08-05" />
             <meetingreference board="1" number="5" date="2020-02-19"/>
           </abolished>
           <create effective="1996-03-20" status="Gazette" type="TAO">
@@ -1587,7 +1588,7 @@
     </entity>
     <entity type="Tambon" name="ป่งไฮ" english="Pong Hai" geocode="380405">
       <wiki wikidata="Q17616216" />
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <socialweb>
           <googleplus type="page">115022070411205136261</googleplus>
         </socialweb>
@@ -1601,7 +1602,8 @@
           <term begin="2005-07-31" end="2009-07-30" type="TAO" size="34" finalsize="36" sizechangereason="MubanCreation" comment="Mu 18 created 2005-12" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+          <statuschange old="TAO" new="ThesabanTambon" status="Gazette" effective="2020-08-05">
+            <gazetteref volume="137" page="5" issue="พิเศษ 179 ง" date="2020-08-05" />
             <meetingreference board="1" number="5" date="2020-02-19"/>
           </statuschange>
           <create effective="1997-02-13" status="Gazette" type="TAO">
@@ -2880,7 +2882,8 @@
       </area>
     </area>
     <history>
-      <statuschange old="ThesabanTambon" new="ThesabanMueang" status="Pending">
+      <statuschange old="ThesabanTambon" new="ThesabanMueang" status="Gazette" effective="2020-08-05">
+        <gazetteref volume="137" page="3" issue="พิเศษ 179 ง" date="2020-08-05" />
         <meetingreference board="1" number="5" date="2020-02-19"/>
       </statuschange>
       <mergedwith mergefromtype="ThesabanTambon" mergefrom="3889" status="Pending">
@@ -3137,7 +3140,7 @@
       </create>
     </history>
   </entity>
-  <entity type="ThesabanTambon" name="วิศิษฐ์" english="Wisit" geocode="3889" parent="3801" tambon="380110">
+  <entity type="ThesabanTambon" name="วิศิษฐ์" english="Wisit" geocode="3889" parent="3801" tambon="380110" obsolete="1">
     <wiki wikidata="Q88472045"/>
     <office type="MunicipalityOffice">
       <geo:Point>
@@ -3162,7 +3165,8 @@
       </areacoverage>
     </office>
     <history>
-      <abolished type="ThesabanTambon" mergeto="3898" status="Pending">
+      <abolished type="ThesabanTambon" mergeto="3898" status="Gazette" effective="2020-08-05">
+        <gazetteref volume="137" page="3" issue="พิเศษ 179 ง" date="2020-08-05" />
         <meetingreference board="1" number="5" date="2020-02-19"/>
       </abolished>
       <statuschange old="TAO" new="ThesabanTambon" effective="2008-07-09" status="Done">
