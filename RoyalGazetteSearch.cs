@@ -174,6 +174,7 @@ namespace De.AHoerstemeier.Tambon
             edtYearEnd.Maximum = DateTime.Now.Year;
             edtYearEnd.Value = DateTime.Now.Year;
             edtYearStart.Maximum = DateTime.Now.Year;
+            edtYearStart.Value = DateTime.Now.Year;
         }
     }
 }
