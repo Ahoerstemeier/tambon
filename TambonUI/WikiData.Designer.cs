@@ -55,13 +55,15 @@
             this.btnMap = new System.Windows.Forms.Button();
             this.btnAmphoeCategory = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
+            this.lblLaoInfo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStat
             // 
-            this.btnStat.Location = new System.Drawing.Point(12, 12);
+            this.btnStat.Location = new System.Drawing.Point(16, 15);
+            this.btnStat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStat.Name = "btnStat";
-            this.btnStat.Size = new System.Drawing.Size(98, 23);
+            this.btnStat.Size = new System.Drawing.Size(131, 28);
             this.btnStat.TabIndex = 0;
             this.btnStat.Text = "Statistics";
             this.btnStat.UseVisualStyleBackColor = true;
@@ -70,9 +72,10 @@
             // btnCountInterwiki
             // 
             this.btnCountInterwiki.Enabled = false;
-            this.btnCountInterwiki.Location = new System.Drawing.Point(12, 41);
+            this.btnCountInterwiki.Location = new System.Drawing.Point(16, 50);
+            this.btnCountInterwiki.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCountInterwiki.Name = "btnCountInterwiki";
-            this.btnCountInterwiki.Size = new System.Drawing.Size(98, 23);
+            this.btnCountInterwiki.Size = new System.Drawing.Size(131, 28);
             this.btnCountInterwiki.TabIndex = 1;
             this.btnCountInterwiki.Text = "by Language";
             this.btnCountInterwiki.UseVisualStyleBackColor = true;
@@ -81,9 +84,10 @@
             // btnRun
             // 
             this.btnRun.Enabled = false;
-            this.btnRun.Location = new System.Drawing.Point(124, 41);
+            this.btnRun.Location = new System.Drawing.Point(165, 50);
+            this.btnRun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(92, 23);
+            this.btnRun.Size = new System.Drawing.Size(123, 28);
             this.btnRun.TabIndex = 4;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -94,9 +98,10 @@
             this.chkTypes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkTypes.FormattingEnabled = true;
-            this.chkTypes.Location = new System.Drawing.Point(222, 64);
+            this.chkTypes.Location = new System.Drawing.Point(296, 79);
+            this.chkTypes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkTypes.Name = "chkTypes";
-            this.chkTypes.Size = new System.Drawing.Size(348, 94);
+            this.chkTypes.Size = new System.Drawing.Size(463, 106);
             this.chkTypes.TabIndex = 5;
             // 
             // cbxActivity
@@ -104,9 +109,10 @@
             this.cbxActivity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxActivity.FormattingEnabled = true;
-            this.cbxActivity.Location = new System.Drawing.Point(222, 14);
+            this.cbxActivity.Location = new System.Drawing.Point(296, 17);
+            this.cbxActivity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxActivity.Name = "cbxActivity";
-            this.cbxActivity.Size = new System.Drawing.Size(348, 21);
+            this.cbxActivity.Size = new System.Drawing.Size(463, 24);
             this.cbxActivity.TabIndex = 6;
             // 
             // edtCollisions
@@ -114,10 +120,11 @@
             this.edtCollisions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.edtCollisions.Location = new System.Drawing.Point(222, 164);
+            this.edtCollisions.Location = new System.Drawing.Point(296, 202);
+            this.edtCollisions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtCollisions.Multiline = true;
             this.edtCollisions.Name = "edtCollisions";
-            this.edtCollisions.Size = new System.Drawing.Size(348, 258);
+            this.edtCollisions.Size = new System.Drawing.Size(463, 317);
             this.edtCollisions.TabIndex = 7;
             // 
             // chkOverride
@@ -125,18 +132,20 @@
             this.chkOverride.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkOverride.AutoSize = true;
-            this.chkOverride.Location = new System.Drawing.Point(222, 41);
+            this.chkOverride.Location = new System.Drawing.Point(296, 50);
+            this.chkOverride.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkOverride.Name = "chkOverride";
-            this.chkOverride.Size = new System.Drawing.Size(66, 17);
+            this.chkOverride.Size = new System.Drawing.Size(85, 21);
             this.chkOverride.TabIndex = 8;
             this.chkOverride.Text = "Override";
             this.chkOverride.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(124, 12);
+            this.btnLogin.Location = new System.Drawing.Point(165, 15);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(92, 23);
+            this.btnLogin.Size = new System.Drawing.Size(123, 28);
             this.btnLogin.TabIndex = 9;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -145,9 +154,10 @@
             // btnLogout
             // 
             this.btnLogout.Enabled = false;
-            this.btnLogout.Location = new System.Drawing.Point(124, 70);
+            this.btnLogout.Location = new System.Drawing.Point(165, 86);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(92, 25);
+            this.btnLogout.Size = new System.Drawing.Size(123, 31);
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -156,9 +166,10 @@
             // btnCheckCommonsCategory
             // 
             this.btnCheckCommonsCategory.Enabled = false;
-            this.btnCheckCommonsCategory.Location = new System.Drawing.Point(12, 105);
+            this.btnCheckCommonsCategory.Location = new System.Drawing.Point(16, 129);
+            this.btnCheckCommonsCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckCommonsCategory.Name = "btnCheckCommonsCategory";
-            this.btnCheckCommonsCategory.Size = new System.Drawing.Size(98, 23);
+            this.btnCheckCommonsCategory.Size = new System.Drawing.Size(131, 28);
             this.btnCheckCommonsCategory.TabIndex = 11;
             this.btnCheckCommonsCategory.Text = "Check Commons";
             this.btnCheckCommonsCategory.UseVisualStyleBackColor = true;
@@ -166,9 +177,10 @@
             // 
             // btnCategory
             // 
-            this.btnCategory.Location = new System.Drawing.Point(12, 134);
+            this.btnCategory.Location = new System.Drawing.Point(16, 165);
+            this.btnCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(98, 23);
+            this.btnCategory.Size = new System.Drawing.Size(131, 28);
             this.btnCategory.TabIndex = 12;
             this.btnCategory.Text = "Category";
             this.btnCategory.UseVisualStyleBackColor = true;
@@ -176,26 +188,29 @@
             // 
             // edtStartingItemId
             // 
-            this.edtStartingItemId.Location = new System.Drawing.Point(12, 185);
+            this.edtStartingItemId.Location = new System.Drawing.Point(16, 228);
+            this.edtStartingItemId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtStartingItemId.Name = "edtStartingItemId";
-            this.edtStartingItemId.Size = new System.Drawing.Size(98, 20);
+            this.edtStartingItemId.Size = new System.Drawing.Size(129, 22);
             this.edtStartingItemId.TabIndex = 13;
             this.edtStartingItemId.Text = "17000000";
             // 
             // lblStartingItemId
             // 
             this.lblStartingItemId.AutoSize = true;
-            this.lblStartingItemId.Location = new System.Drawing.Point(12, 169);
+            this.lblStartingItemId.Location = new System.Drawing.Point(16, 208);
+            this.lblStartingItemId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStartingItemId.Name = "lblStartingItemId";
-            this.lblStartingItemId.Size = new System.Drawing.Size(78, 13);
+            this.lblStartingItemId.Size = new System.Drawing.Size(102, 17);
             this.lblStartingItemId.TabIndex = 14;
             this.lblStartingItemId.Text = "Starting Item Id";
             // 
             // btnAllItems
             // 
-            this.btnAllItems.Location = new System.Drawing.Point(12, 70);
+            this.btnAllItems.Location = new System.Drawing.Point(16, 86);
+            this.btnAllItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAllItems.Name = "btnAllItems";
-            this.btnAllItems.Size = new System.Drawing.Size(98, 23);
+            this.btnAllItems.Size = new System.Drawing.Size(131, 28);
             this.btnAllItems.TabIndex = 15;
             this.btnAllItems.Text = "All Items";
             this.btnAllItems.UseVisualStyleBackColor = true;
@@ -205,9 +220,10 @@
             // 
             this.cbxChangwat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxChangwat.FormattingEnabled = true;
-            this.cbxChangwat.Location = new System.Drawing.Point(12, 225);
+            this.cbxChangwat.Location = new System.Drawing.Point(16, 277);
+            this.cbxChangwat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxChangwat.Name = "cbxChangwat";
-            this.cbxChangwat.Size = new System.Drawing.Size(204, 21);
+            this.cbxChangwat.Size = new System.Drawing.Size(271, 24);
             this.cbxChangwat.TabIndex = 16;
             this.cbxChangwat.SelectedValueChanged += new System.EventHandler(this.cbxChangwat_SelectedValueChanged);
             // 
@@ -215,27 +231,30 @@
             // 
             this.cbxAmphoe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAmphoe.FormattingEnabled = true;
-            this.cbxAmphoe.Location = new System.Drawing.Point(12, 252);
+            this.cbxAmphoe.Location = new System.Drawing.Point(16, 310);
+            this.cbxAmphoe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxAmphoe.Name = "cbxAmphoe";
-            this.cbxAmphoe.Size = new System.Drawing.Size(204, 21);
+            this.cbxAmphoe.Size = new System.Drawing.Size(271, 24);
             this.cbxAmphoe.TabIndex = 17;
             this.cbxAmphoe.SelectedValueChanged += new System.EventHandler(this.cbxAmphoe_SelectedValueChanged);
             // 
             // lblTambonInfo
             // 
             this.lblTambonInfo.AutoSize = true;
-            this.lblTambonInfo.Location = new System.Drawing.Point(12, 276);
+            this.lblTambonInfo.Location = new System.Drawing.Point(16, 340);
+            this.lblTambonInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTambonInfo.Name = "lblTambonInfo";
-            this.lblTambonInfo.Size = new System.Drawing.Size(35, 13);
+            this.lblTambonInfo.Size = new System.Drawing.Size(83, 17);
             this.lblTambonInfo.TabIndex = 18;
-            this.lblTambonInfo.Text = "label1";
+            this.lblTambonInfo.Text = "TambonInfo";
             // 
             // btnCreateTambon
             // 
             this.btnCreateTambon.Enabled = false;
-            this.btnCreateTambon.Location = new System.Drawing.Point(124, 292);
+            this.btnCreateTambon.Location = new System.Drawing.Point(165, 359);
+            this.btnCreateTambon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateTambon.Name = "btnCreateTambon";
-            this.btnCreateTambon.Size = new System.Drawing.Size(92, 23);
+            this.btnCreateTambon.Size = new System.Drawing.Size(123, 28);
             this.btnCreateTambon.TabIndex = 19;
             this.btnCreateTambon.Text = "Create";
             this.btnCreateTambon.UseVisualStyleBackColor = true;
@@ -245,18 +264,20 @@
             // 
             this.cbxLocalGovernments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLocalGovernments.FormattingEnabled = true;
-            this.cbxLocalGovernments.Location = new System.Drawing.Point(12, 321);
+            this.cbxLocalGovernments.Location = new System.Drawing.Point(16, 395);
+            this.cbxLocalGovernments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxLocalGovernments.Name = "cbxLocalGovernments";
-            this.cbxLocalGovernments.Size = new System.Drawing.Size(204, 21);
+            this.cbxLocalGovernments.Size = new System.Drawing.Size(271, 24);
             this.cbxLocalGovernments.TabIndex = 20;
             this.cbxLocalGovernments.SelectedValueChanged += new System.EventHandler(this.cbxLocalGovernments_SelectedValueChanged);
             // 
             // btnCreateLocalGovernment
             // 
             this.btnCreateLocalGovernment.Enabled = false;
-            this.btnCreateLocalGovernment.Location = new System.Drawing.Point(124, 348);
+            this.btnCreateLocalGovernment.Location = new System.Drawing.Point(165, 428);
+            this.btnCreateLocalGovernment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCreateLocalGovernment.Name = "btnCreateLocalGovernment";
-            this.btnCreateLocalGovernment.Size = new System.Drawing.Size(92, 23);
+            this.btnCreateLocalGovernment.Size = new System.Drawing.Size(123, 28);
             this.btnCreateLocalGovernment.TabIndex = 21;
             this.btnCreateLocalGovernment.Text = "Create";
             this.btnCreateLocalGovernment.UseVisualStyleBackColor = true;
@@ -265,24 +286,27 @@
             // lblSpecificItemId
             // 
             this.lblSpecificItemId.AutoSize = true;
-            this.lblSpecificItemId.Location = new System.Drawing.Point(121, 169);
+            this.lblSpecificItemId.Location = new System.Drawing.Point(161, 208);
+            this.lblSpecificItemId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSpecificItemId.Name = "lblSpecificItemId";
-            this.lblSpecificItemId.Size = new System.Drawing.Size(80, 13);
+            this.lblSpecificItemId.Size = new System.Drawing.Size(102, 17);
             this.lblSpecificItemId.TabIndex = 23;
             this.lblSpecificItemId.Text = "Specific Item Id";
             // 
             // edtSpecificItemId
             // 
-            this.edtSpecificItemId.Location = new System.Drawing.Point(121, 185);
+            this.edtSpecificItemId.Location = new System.Drawing.Point(161, 228);
+            this.edtSpecificItemId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edtSpecificItemId.Name = "edtSpecificItemId";
-            this.edtSpecificItemId.Size = new System.Drawing.Size(98, 20);
+            this.edtSpecificItemId.Size = new System.Drawing.Size(129, 22);
             this.edtSpecificItemId.TabIndex = 22;
             // 
             // btnTambonList
             // 
-            this.btnTambonList.Location = new System.Drawing.Point(12, 399);
+            this.btnTambonList.Location = new System.Drawing.Point(16, 491);
+            this.btnTambonList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTambonList.Name = "btnTambonList";
-            this.btnTambonList.Size = new System.Drawing.Size(98, 23);
+            this.btnTambonList.Size = new System.Drawing.Size(131, 28);
             this.btnTambonList.TabIndex = 24;
             this.btnTambonList.Text = "Tambon List";
             this.btnTambonList.UseVisualStyleBackColor = true;
@@ -290,9 +314,10 @@
             // 
             // btnLaoList
             // 
-            this.btnLaoList.Location = new System.Drawing.Point(124, 399);
+            this.btnLaoList.Location = new System.Drawing.Point(165, 491);
+            this.btnLaoList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLaoList.Name = "btnLaoList";
-            this.btnLaoList.Size = new System.Drawing.Size(92, 23);
+            this.btnLaoList.Size = new System.Drawing.Size(123, 28);
             this.btnLaoList.TabIndex = 25;
             this.btnLaoList.Text = "LAO List";
             this.btnLaoList.UseVisualStyleBackColor = true;
@@ -300,9 +325,10 @@
             // 
             // btnMap
             // 
-            this.btnMap.Location = new System.Drawing.Point(12, 348);
+            this.btnMap.Location = new System.Drawing.Point(16, 449);
+            this.btnMap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMap.Name = "btnMap";
-            this.btnMap.Size = new System.Drawing.Size(98, 23);
+            this.btnMap.Size = new System.Drawing.Size(131, 28);
             this.btnMap.TabIndex = 26;
             this.btnMap.Text = "Map";
             this.btnMap.UseVisualStyleBackColor = true;
@@ -312,9 +338,10 @@
             // btnAmphoeCategory
             // 
             this.btnAmphoeCategory.Enabled = false;
-            this.btnAmphoeCategory.Location = new System.Drawing.Point(12, 292);
+            this.btnAmphoeCategory.Location = new System.Drawing.Point(16, 359);
+            this.btnAmphoeCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAmphoeCategory.Name = "btnAmphoeCategory";
-            this.btnAmphoeCategory.Size = new System.Drawing.Size(103, 23);
+            this.btnAmphoeCategory.Size = new System.Drawing.Size(137, 28);
             this.btnAmphoeCategory.TabIndex = 28;
             this.btnAmphoeCategory.Text = "Amphoe Category";
             this.btnAmphoeCategory.UseVisualStyleBackColor = true;
@@ -322,19 +349,31 @@
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(124, 105);
+            this.btnTest.Location = new System.Drawing.Point(165, 129);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(92, 23);
+            this.btnTest.Size = new System.Drawing.Size(123, 28);
             this.btnTest.TabIndex = 29;
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
+            // lblLaoInfo
+            // 
+            this.lblLaoInfo.AutoSize = true;
+            this.lblLaoInfo.Location = new System.Drawing.Point(16, 428);
+            this.lblLaoInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLaoInfo.Name = "lblLaoInfo";
+            this.lblLaoInfo.Size = new System.Drawing.Size(59, 17);
+            this.lblLaoInfo.TabIndex = 30;
+            this.lblLaoInfo.Text = "LAOInfo";
+            // 
             // WikiData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 434);
+            this.ClientSize = new System.Drawing.Size(776, 534);
+            this.Controls.Add(this.lblLaoInfo);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnAmphoeCategory);
             this.Controls.Add(this.btnMap);
@@ -362,6 +401,7 @@
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.btnCountInterwiki);
             this.Controls.Add(this.btnStat);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WikiData";
             this.Text = "WikiData";
             this.Load += new System.EventHandler(this.WikiData_Load);
@@ -399,5 +439,6 @@
         private System.Windows.Forms.Button btnMap;
         private System.Windows.Forms.Button btnAmphoeCategory;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Label lblLaoInfo;
     }
 }

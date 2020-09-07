@@ -248,6 +248,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             cbxChangwat.Items.AddRange(allEntities.Where(x => x.type.IsCompatibleEntityType(EntityType.Changwat)).ToArray());
             lblTambonInfo.Text = String.Empty;
+            lblLaoInfo.Text = String.Empty;
 
             var thesabanMueangWithoutWikiData = localGovernments.Where(x => x.type == EntityType.ThesabanMueang && (x.wiki == null || String.IsNullOrEmpty(x.wiki.wikidata))).Select(x => String.Format(CultureInfo.CurrentUICulture, "{0} ({1})", x.english, x.geocode)).ToArray();
             if ( thesabanMueangWithoutWikiData.Any() )
@@ -432,6 +433,7 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var amphoe = cbxAmphoe.SelectedItem as Entity;
             cbxLocalGovernments.Items.Clear();
+            lblLaoInfo.Text = String.Empty;
             if ( amphoe != null )
             {
                 var allLocalGovernment = allEntities.Where(x => x.type.IsLocalGovernment() && x.parent.Contains(amphoe.geocode)).ToList();
@@ -439,6 +441,8 @@ namespace De.AHoerstemeier.Tambon.UI
                 cbxLocalGovernments.Items.AddRange(allLocalGovernment.ToArray());
                 cbxLocalGovernments.SelectedItem = null;
                 btnCreateLocalGovernment.Enabled = false;
+                var wikidataCount = allLocalGovernment.Count(x => x.wiki != null && !String.IsNullOrWhiteSpace(x.wiki.wikidata));
+                lblLaoInfo.Text = String.Format(CultureInfo.CurrentUICulture, "{0} of {1} done", wikidataCount, allLocalGovernment.Count);
             }
         }
 
@@ -450,8 +454,7 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 var allTambon = amphoe.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) && !x.IsObsolete).ToList();
                 var wikidataCount = allTambon.Count(x => x.wiki != null && !String.IsNullOrWhiteSpace(x.wiki.wikidata));
-                lblTambonInfo.Text = String.Format(CultureInfo.CurrentUICulture, "{0} of {1} done",
-                    wikidataCount, allTambon.Count);
+                lblTambonInfo.Text = String.Format(CultureInfo.CurrentUICulture, "{0} of {1} done", wikidataCount, allTambon.Count);
                 btnCreateTambon.Enabled = (wikidataCount < allTambon.Count) && (_bot != null);
                 btnAmphoeCategory.Enabled = true;
             }
