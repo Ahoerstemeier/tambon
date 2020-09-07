@@ -543,7 +543,7 @@
     </entity>
     <entity type="Tambon" name="หินกอง" english="Hin Kong" geocode="700114">
       <wiki wikidata="Q15981378" />
-      <office type="TAOOffice">
+      <office type="MunicipalityOffice">
         <geo:Point>
           <geo:lat>15.6395</geo:lat>
           <geo:long>103.7093</geo:long>
@@ -558,7 +558,8 @@
           <term begin="2004-07-25" end="2008-07-24" type="TAO" size="22" />
         </council>
         <history>
-          <statuschange old="TAO" new="ThesabanTambon" status="Pending">
+          <statuschange old="TAO" new="ThesabanTambon" effective="2020-06-11" status="Gazette">
+            <gazetteref volume="137" page="3" issue="พิเศษ 137 ง" date="2020-06-11" />
             <meetingreference board="2" number="5" date="2020-02-19" />
           </statuschange>
           <create effective="1996-03-20" status="Gazette" type="TAO">
@@ -873,6 +874,12 @@
           <!-- Mu 1 not part of TAO -->
         </council>
         <history>
+          <statuschange old="TAO" new="ThesabanMueang" status="Pending">
+            <meetingreference board="2" number="14" date="2020-06-17"/>
+          </statuschange>
+          <rename oldname="จอมบึง" name="จอมพล" english="Chomphon" oldenglish="Chom Bueng" status="Pending">
+            <meetingreference board="2" number="14" date="2020-06-17"/>
+          </rename>
           <create effective="1996-03-20" status="Gazette" type="TAO">
             <gazetteref volume="113" page="5" issue="9 ง" date="1996-01-30" />
           </create>
