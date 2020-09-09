@@ -436,7 +436,7 @@ namespace De.AHoerstemeier.Tambon.UI
             lblLaoInfo.Text = String.Empty;
             if ( amphoe != null )
             {
-                var allLocalGovernment = allEntities.Where(x => x.type.IsLocalGovernment() && x.parent.Contains(amphoe.geocode)).ToList();
+                var allLocalGovernment = allEntities.Where(x => x.type.IsLocalGovernment() && x.parent.Contains(amphoe.geocode) && !x.IsObsolete).ToList();
                 allLocalGovernment.Sort((x, y) => x.geocode.CompareTo(y.geocode));
                 cbxLocalGovernments.Items.AddRange(allLocalGovernment.ToArray());
                 cbxLocalGovernments.SelectedItem = null;
