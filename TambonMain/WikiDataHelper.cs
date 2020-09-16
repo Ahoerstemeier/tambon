@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Device.Location;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using Wikibase;
 using Wikibase.DataValues;
 
@@ -43,9 +42,7 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="api">The WikiData API encapsulation.</param>
         public WikiDataHelper(WikibaseApi api)
         {
-            if (api == null)
-                throw new ArgumentNullException("api");
-            Api = api;
+            Api = api ?? throw new ArgumentNullException(nameof(api));
             _entityProvider = new EntityProvider(Api);
 
             var entities = GlobalData.CompleteGeocodeList();
@@ -58,10 +55,7 @@ namespace De.AHoerstemeier.Tambon
 
         private WikiDataState CheckStringValue(Item item, String propertyId, String expected, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             WikiDataState result = WikiDataState.Unknown;
 
@@ -117,8 +111,7 @@ namespace De.AHoerstemeier.Tambon
 
         private WikiDataState CheckTimeValue(Item item, String propertyId, DateTime expected, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             WikiDataState result = WikiDataState.Unknown;
 
@@ -170,8 +163,7 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Status of the link property.</returns>
         public WikiDataState CheckPropertyValue(Item item, String propertyId, String expectedItemId, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             WikiDataState result = WikiDataState.Unknown;
 
@@ -229,7 +221,7 @@ namespace De.AHoerstemeier.Tambon
 
         private WikiDataState CheckPropertyMultiValue(Item item, String propertyId, String expectedItemId, Boolean createStatement, out Statement statement)
         {
-            _ = item ?? throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             WikiDataState result = WikiDataState.Unknown;
 
@@ -277,8 +269,7 @@ namespace De.AHoerstemeier.Tambon
 
         private WikiDataState CheckStringMultiValue(Item item, String propertyId, String expectedValue, Boolean createStatement, out Statement statement)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             WikiDataState result = WikiDataState.Unknown;
 
@@ -325,8 +316,7 @@ namespace De.AHoerstemeier.Tambon
 
         private WikiDataState CheckMonoLanguageValue(Item item, String propertyId, Language language, String expectedValue, Boolean createStatement, out Statement statement)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             WikiDataState result = WikiDataState.Unknown;
 
@@ -374,8 +364,7 @@ namespace De.AHoerstemeier.Tambon
 
         private WikiDataState CheckCoordinateValue(Item item, String propertyId, Point expected, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             WikiDataState result = WikiDataState.Unknown;
 
@@ -424,8 +413,7 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Location as geopoint, or <c>null</c> if none is set.</returns>
         public GeoCoordinate GetCoordinateValue(Item item, String propertyId)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             // Statement claim = item.Claims.FirstOrDefault(x => x.IsAboutProperty(WikiBase.PropertyIdCountry)) as Statement;
             var property = new EntityId(propertyId);
@@ -458,8 +446,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentException"><paramref name="entity"/> has no WikiData link.</exception>
         public Item GetWikiDataItemForEntity(Entity entity)
         {
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
             if ((entity.wiki == null) || (String.IsNullOrEmpty(entity.wiki.wikidata)))
                 throw new ArgumentException("no WikiData entity yet");
 
@@ -515,10 +502,8 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetIsInAdministrativeUnit(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             IsInAdministrativeUnit(item, entity, true, overrideWrongData, out result);
@@ -535,10 +520,8 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState IsInAdministrativeUnitCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return IsInAdministrativeUnit(item, entity, false, false, out dummy);
@@ -564,10 +547,8 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetTypeOfAdministrativeUnit(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             TypeOfAdministrativeUnit(item, entity, true, overrideWrongData, out result);
@@ -584,10 +565,8 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState TypeOfAdministrativeUnitCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return TypeOfAdministrativeUnit(item, entity, false, false, out dummy);
@@ -603,10 +582,9 @@ namespace De.AHoerstemeier.Tambon
         /// <returns><c>true</c> if qualifiers or references were added, <c>false</c> otherwise.</returns>
         public Boolean AddTypeOfAdministrativeQualifiersAndReferences(Statement statement, EntityType entityType, Entity entity)
         {
-            if (statement == null)
-                throw new ArgumentNullException("statement");
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = statement ?? throw new ArgumentNullException(nameof(statement));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+
             var result = false;
 
             foreach (var historyItem in entity.history.Items)
@@ -680,8 +658,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
         public Statement SetIsInCountry(Item item, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             Statement result;
             IsInCountry(item, true, overrideWrongData, out result);
@@ -695,8 +672,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
         public WikiDataState IsInCountryCorrect(Item item)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
 
             Statement dummy;
             return IsInCountry(item, false, false, out dummy);
@@ -723,11 +699,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the country.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetOpenStreetMap(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             OpenStreetMap(item, entity, true, overrideWrongData, out result);
@@ -739,11 +715,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState OpenStreetMapCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return OpenStreetMap(item, entity, false, false, out dummy);
@@ -767,11 +743,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the geocode.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetGeocode(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             Geocode(item, entity, true, overrideWrongData, out result);
@@ -783,11 +759,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState GeocodeCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return Geocode(item, entity, false, false, out dummy);
@@ -811,11 +787,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the WOEID.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetWoeid(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             Woeid(item, entity, true, overrideWrongData, out result);
@@ -827,11 +803,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState WoeidCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return Woeid(item, entity, false, false, out dummy);
@@ -855,11 +831,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the Geonames.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetGeonames(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             Geonames(item, entity, true, overrideWrongData, out result);
@@ -871,11 +847,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState GeonamesCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return Geonames(item, entity, false, false, out dummy);
@@ -899,11 +875,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the GND.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetGnd(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             Gnd(item, entity, true, overrideWrongData, out result);
@@ -915,11 +891,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState GndCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return Gnd(item, entity, false, false, out dummy);
@@ -943,11 +919,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the GNS-UFI.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetGNSUFI(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             GNSUFI(item, entity, true, overrideWrongData, out result);
@@ -959,11 +935,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState GNSUFICorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return GNSUFI(item, entity, false, false, out dummy);
@@ -991,11 +967,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the FacebookPlaceId.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetFacebookPlaceId(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             FacebookPlaceId(item, entity, true, overrideWrongData, out result);
@@ -1007,11 +983,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState FacebookPlaceIdCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return FacebookPlaceId(item, entity, false, false, out dummy);
@@ -1039,11 +1015,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the official website.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetOfficialWebsite(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             OfficialWebsite(item, entity, true, overrideWrongData, out result);
@@ -1055,14 +1031,12 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         /// <returns>The state of the statement in Wikidata.</returns>
         public WikiDataState OfficialWebsiteCorrect(Item item, Entity entity)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return OfficialWebsite(item, entity, false, false, out dummy);
@@ -1109,11 +1083,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the described by URL.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetDescribedByUrl(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             DescribedByUrl(item, entity, true, overrideWrongData, out result);
@@ -1125,14 +1099,12 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         /// <returns>The state of the statement in Wikidata.</returns>
         public WikiDataState DescribedByUrlCorrect(Item item, Entity entity)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return DescribedByUrl(item, entity, false, false, out dummy);
@@ -1166,10 +1138,8 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetNamedAfterSubdivision(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             NamedAfterSubdivision(item, entity, true, overrideWrongData, out result);
@@ -1186,10 +1156,8 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState NamedAfterSubdivisionCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return NamedAfterSubdivision(item, entity, false, false, out dummy);
@@ -1213,11 +1181,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the Ipa.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetIpa(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             Ipa(item, entity, true, overrideWrongData, out result);
@@ -1229,11 +1197,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState IpaCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return Ipa(item, entity, false, false, out dummy);
@@ -1270,11 +1238,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the locator map.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetLocatorMap(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             LocatorMap(item, entity, true, overrideWrongData, out result);
@@ -1286,11 +1254,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState LocatorMapCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return LocatorMap(item, entity, false, false, out dummy);
@@ -1316,11 +1284,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the inception.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetInception(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             Inception(item, entity, true, overrideWrongData, out result);
@@ -1332,11 +1300,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState InceptionCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return Inception(item, entity, false, false, out dummy);
@@ -1372,11 +1340,11 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">The administrative unit.</param>
         /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
         /// <returns>Statement containing the location.</returns>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public Statement SetLocation(Item item, Entity entity, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement result;
             Location(item, entity, true, overrideWrongData, out result);
@@ -1388,11 +1356,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
         public WikiDataState LocationCorrect(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             Statement dummy;
             return Location(item, entity, false, false, out dummy);
@@ -1554,10 +1522,9 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         public String GetReferenceSaveEditSummary(Reference value)
         {
-            if (value == null)
-                throw new ArgumentNullException("value");
+            _ = value ?? throw new ArgumentNullException(nameof(value));
 
-            var result = String.Empty;
+            String result;
             Snak snak = value.Statement.mainSnak;
             if (String.IsNullOrEmpty(value.Hash))
             {
@@ -1578,10 +1545,9 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="value"/> is <c>null</c>.</exception>
         public String GetQualifierSaveEditSummary(Qualifier value)
         {
-            if (value == null)
-                throw new ArgumentNullException("value");
+            _ = value ?? throw new ArgumentNullException(nameof(value));
 
-            var result = String.Empty;
+            String result;
             // include qualifier info?
             if (String.IsNullOrEmpty(value.Hash))
             {
@@ -1611,10 +1577,8 @@ namespace De.AHoerstemeier.Tambon
         /// </remarks>
         public void SetDescriptionsAndLabels(Item item, Entity entity)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             item.setDescription("en", entity.GetWikiDataDescription(Language.English));
             // entityById.setDescription("de", testEntity.GetWikiDataDescription(Language.German));
@@ -1707,8 +1671,8 @@ namespace De.AHoerstemeier.Tambon
 
         public Statement SetPopulationData(Item item, PopulationData data, Boolean overrideWrongData)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = data ?? throw new ArgumentNullException(nameof(data));
 
             Statement result;
             PopulationData(item, data, true, overrideWrongData, out result);
@@ -1717,8 +1681,8 @@ namespace De.AHoerstemeier.Tambon
 
         public WikiDataState PopulationDataCorrect(Item item, PopulationData data)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = data ?? throw new ArgumentNullException(nameof(data));
 
             Statement dummy;
             return PopulationData(item, data, false, false, out dummy);
@@ -1829,8 +1793,7 @@ namespace De.AHoerstemeier.Tambon
 
         public EntityId GetCategoryOfItem(Entity entity)
         {
-            if (entity == null)
-                throw new ArgumentNullException("entity");
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
 
             EntityId result = null;
             var item = GetWikiDataItemForEntity(entity);
@@ -2005,8 +1968,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="item"/> is <c>null</c>.</exception>
         public String GetItemCreateSaveSummary(Item item)
         {
-            if (item == null)
-                throw new ArgumentNullException("item");
+            _ = item ?? throw new ArgumentNullException(nameof(item));
             return item.getLabel("en");
         }
 
@@ -2018,10 +1980,7 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>String value, or <c>String.Empty</c> if not found.</returns>
         public String GetStringClaim(Item item, String propertyId)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
+            _ = item ?? throw new ArgumentNullException(nameof(item));
             if (String.IsNullOrEmpty(propertyId))
             {
                 throw new ArgumentException("Invalid property id");
@@ -2051,10 +2010,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentException"><paramref name="propertyId"/> is <c>null</c> or <see cref=" String.Empty"/>.</exception>
         public Item GetItemClaim(Item item, String propertyId)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
+            _ = item ?? throw new ArgumentNullException(nameof(item));
             if (String.IsNullOrEmpty(propertyId))
             {
                 throw new ArgumentException("Invalid property id");
@@ -2083,10 +2039,7 @@ namespace De.AHoerstemeier.Tambon
         /// <remarks>Checks whether <see cref="QuantityValue.LowerBound"/> and <see cref="QuantityValue.UpperBound"/> are empty, and the latest datapoint is marked as </remarks>
         public WikiDataState CheckPopulationData(Item item)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
+            _ = item ?? throw new ArgumentNullException(nameof(item));
             var result = WikiDataState.Valid;
             var property = new EntityId(WikiBase.PropertyIdPopulation);
             var pointInTime = new EntityId(WikiBase.PropertyIdPointInTime);
@@ -2138,10 +2091,7 @@ namespace De.AHoerstemeier.Tambon
 
         public IEnumerable<Statement> CleanupPopulationData(Item item)
         {
-            if (item == null)
-            {
-                throw new ArgumentNullException("item");
-            }
+            _ = item ?? throw new ArgumentNullException(nameof(item));
             var result = new List<Statement>();
             var property = new EntityId(WikiBase.PropertyIdPopulation);
             var pointInTime = new EntityId(WikiBase.PropertyIdPointInTime);

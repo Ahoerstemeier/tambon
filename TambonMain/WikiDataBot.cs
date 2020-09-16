@@ -126,10 +126,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="helper"/> is <c>null</c>.</exception>
         public WikiDataBot(WikiDataHelper helper)
         {
-            if (helper == null)
-            {
-                throw new ArgumentNullException("helper");
-            }
+            _ = helper ?? throw new ArgumentNullException(nameof(helper));
 
             _helper = helper;
             _runInfo = new Dictionary<WikiDataState, Int32>();
@@ -276,10 +273,8 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">Entity to need new item.</param>
         public void CreateItem(Entity entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+
             if (entity.wiki != null && !String.IsNullOrWhiteSpace(entity.wiki.wikidata))
             {
                 throw new ArgumentException("Entity already has a Wikidata item");
@@ -324,10 +319,7 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">Entity to need new item.</param>
         public void CreateCategory(Entity entity)
         {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
             if (entity.wiki == null || String.IsNullOrWhiteSpace(entity.wiki.wikidata))
             {
                 throw new ArgumentException("Entity has no Wikidata item yet");
@@ -371,10 +363,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetDescription(Language language, IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             var languageCode = language.ToCode();
             ClearRunInfo();
 
@@ -467,10 +457,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetLabel(Language language, IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             var languageCode = language.ToCode();
             ClearRunInfo();
 
@@ -536,10 +524,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetThaiAbbreviation(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             var languageCode = Language.Thai.ToCode();
             ClearRunInfo();
 
@@ -583,10 +569,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetCountry(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -660,10 +644,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetOpenStreetMap(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => x.wiki.openstreetmapSpecified))
             {
@@ -696,10 +678,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGeocode(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -733,10 +713,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetSlogan(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -790,10 +768,8 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="entities"/> is <c>null</c>.</exception>
         private void SetNativeLabel(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -833,10 +809,8 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="entities"/> is <c>null</c>.</exception>
         private void SetOfficialName(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -869,10 +843,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetIpa(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.ipa)))
             {
@@ -911,10 +883,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGnd(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gnd.value)))
             {
@@ -948,10 +918,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetWoeid(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.woeid.value)))
             {
@@ -992,10 +960,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGeonames(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.geonames.value)))
             {
@@ -1028,10 +994,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGNSUFI(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gnsufi.value)))
             {
@@ -1065,10 +1029,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetFacebookPlaceId(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => x.office.Any(y => y.socialweb.facebook.Any(z => z.type == FacebookPageType.place))))
             {
@@ -1102,10 +1064,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetOfficialWebsite(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => x.office.Any(y => !String.IsNullOrEmpty(y.PreferredWebsite))))
             {
@@ -1139,10 +1099,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetDescribedByUrl(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) || x.type.IsCompatibleEntityType(EntityType.Amphoe)))
             {
@@ -1185,10 +1143,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetNamedAfterSubdivision(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => x.NamedAfterEntity() != null))
             {
@@ -1222,10 +1178,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetIsInAdministrativeUnit(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -1258,10 +1212,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetTypeOfAdministrativeUnit(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => x.type != EntityType.Thesaban))
             {
@@ -1309,10 +1261,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetLocatorMap(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)))
             {
@@ -1345,10 +1295,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetContainsSubdivisions(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -1382,10 +1330,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetPostalCode(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => !x.IsObsolete && x.codes != null && x.codes.post != null && x.codes.post.value.Any()))
             {
@@ -1416,10 +1362,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetShareBorderWith(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities.Where(x => !x.IsObsolete && x.area.bounding.Any()))
             {
@@ -1455,10 +1399,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetPopulationData(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData, PopulationDataSourceType dataSource, Int16 year)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             GlobalData.LoadPopulationData(dataSource, year);
             // TODO - local governments are not calculated!
@@ -1501,10 +1443,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetLocation(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -1549,10 +1489,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetInception(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
@@ -1608,10 +1546,8 @@ namespace De.AHoerstemeier.Tambon
 
         private void CleanupPopulationData(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if (entities == null)
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             foreach (var entity in entities)
             {
