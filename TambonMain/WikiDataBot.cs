@@ -126,10 +126,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="helper"/> is <c>null</c>.</exception>
         public WikiDataBot(WikiDataHelper helper)
         {
-            if ( helper == null )
-            {
-                throw new ArgumentNullException("helper");
-            }
+            _ = helper ?? throw new ArgumentNullException(nameof(helper));
 
             _helper = helper;
             _runInfo = new Dictionary<WikiDataState, Int32>();
@@ -175,9 +172,9 @@ namespace De.AHoerstemeier.Tambon
             WikiDataTaskDelegate setDopa2018 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2018);
             _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2018", setDopa2018));
             WikiDataTaskDelegate setDopa2017 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2017);
-//            _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2017", setDopa2017));
-//            WikiDataTaskDelegate setDopa2016 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2016);
-//            _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2016", setDopa2016));
+            //            _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2017", setDopa2017));
+            //            WikiDataTaskDelegate setDopa2016 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2016);
+            //            _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2016", setDopa2016));
             WikiDataTaskDelegate setDopa2015 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2015);
             _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2015", setDopa2015));
             // WikiDataTaskDelegate setDopa2014 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2014);
@@ -231,26 +228,26 @@ namespace De.AHoerstemeier.Tambon
             result["Deleted"] = 0;
             // Create a new EntityProvider instance and pass the api created above.
             EntityProvider entityProvider = new EntityProvider(_helper.Api);
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 // Get an entity by searching for the id
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item != null )
+                if (item != null)
                 {
                     var links = item.getSitelinks();
-                    if ( !links.Any() )
+                    if (!links.Any())
                     {
                         result["Orphan"]++;
-                        if ( collisionData != null )
+                        if (collisionData != null)
                         {
                             collisionData.AppendFormat("Orphan: {0} - {1} ({2})", entity.wiki.wikidata, entity.english, entity.geocode);
                             collisionData.AppendLine();
                         }
                     }
 
-                    foreach ( var key in links.Keys )
+                    foreach (var key in links.Keys)
                     {
-                        if ( !result.ContainsKey(key) )
+                        if (!result.ContainsKey(key))
                         {
                             result[key] = 0;
                         }
@@ -260,7 +257,7 @@ namespace De.AHoerstemeier.Tambon
                 else
                 {
                     result["Deleted"]++;
-                    if ( collisionData != null )
+                    if (collisionData != null)
                     {
                         collisionData.AppendFormat("Deleted: {0} - {1} ({2})", entity.wiki.wikidata, entity.english, entity.geocode);
                         collisionData.AppendLine();
@@ -276,11 +273,9 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">Entity to need new item.</param>
         public void CreateItem(Entity entity)
         {
-            if ( entity == null )
-            {
-                throw new ArgumentNullException("entity");
-            }
-            if ( entity.wiki != null && !String.IsNullOrWhiteSpace(entity.wiki.wikidata) )
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+
+            if (entity.wiki != null && !String.IsNullOrWhiteSpace(entity.wiki.wikidata))
             {
                 throw new ArgumentException("Entity already has a Wikidata item");
             }
@@ -293,7 +288,7 @@ namespace De.AHoerstemeier.Tambon
             item.setDescription("de", entity.GetWikiDataDescription(Language.German));
             item.setDescription("th", entity.GetWikiDataDescription(Language.Thai));
             item.save(_helper.GetItemCreateSaveSummary(item));
-            if ( entity.wiki == null )
+            if (entity.wiki == null)
             {
                 entity.wiki = new WikiLocation();
             }
@@ -305,7 +300,7 @@ namespace De.AHoerstemeier.Tambon
             SetCountry(items, dummy, false);
             SetIsInAdministrativeUnit(items, dummy, false);
             SetTypeOfAdministrativeUnit(items, dummy, false);
-            if ( !entity.type.IsCompatibleEntityType(EntityType.Muban) && !entity.type.IsLocalGovernment() )
+            if (!entity.type.IsCompatibleEntityType(EntityType.Muban) && !entity.type.IsLocalGovernment())
             {
                 SetGeocode(items, dummy, false);
             }
@@ -314,6 +309,8 @@ namespace De.AHoerstemeier.Tambon
             SetNativeLabel(items, dummy, false);
             SetOfficialName(items, dummy, false);
             SetDescribedByUrl(items, dummy, false);
+            SetNamedAfterSubdivision(items, dummy, false);
+            SetOverlap(items, dummy, false);
         }
 
         /// <summary>
@@ -322,11 +319,8 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="entity">Entity to need new item.</param>
         public void CreateCategory(Entity entity)
         {
-            if ( entity == null )
-            {
-                throw new ArgumentNullException("entity");
-            }
-            if ( entity.wiki == null || String.IsNullOrWhiteSpace(entity.wiki.wikidata) )
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+            if (entity.wiki == null || String.IsNullOrWhiteSpace(entity.wiki.wikidata))
             {
                 throw new ArgumentException("Entity has no Wikidata item yet");
             }
@@ -342,14 +336,14 @@ namespace De.AHoerstemeier.Tambon
 
             Statement instanceStatement;
             _helper.CheckPropertyValue(item, WikiBase.PropertyIdInstanceOf, WikiBase.ItemWikimediaCategory, true, false, out instanceStatement);
-            if ( instanceStatement != null )
+            if (instanceStatement != null)
             {
                 instanceStatement.save(_helper.GetClaimSaveEditSummary(instanceStatement));
             }
 
             Statement categoryStatement;
             _helper.CheckPropertyValue(item, WikiBase.PropertyIdTopicForCategory, entity.wiki.wikidata, true, false, out categoryStatement);
-            if ( categoryStatement != null )
+            if (categoryStatement != null)
             {
                 categoryStatement.save(_helper.GetClaimSaveEditSummary(categoryStatement));
             }
@@ -357,7 +351,7 @@ namespace De.AHoerstemeier.Tambon
             Statement linkStatement;
             var entityItem = _helper.GetWikiDataItemForEntity(entity);
             _helper.CheckPropertyValue(entityItem, WikiBase.PropertyIdCategoryForTopic, item.id.PrefixedId, true, false, out linkStatement);
-            if ( linkStatement != null )
+            if (linkStatement != null)
             {
                 linkStatement.save(_helper.GetClaimSaveEditSummary(linkStatement));
             }
@@ -369,17 +363,15 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetDescription(Language language, IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             var languageCode = language.ToCode();
             ClearRunInfo();
 
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -389,21 +381,21 @@ namespace De.AHoerstemeier.Tambon
                     var oldDescription = item.getDescription(languageCode);
                     var newDescription = entity.GetWikiDataDescription(language);
 
-                    if ( String.IsNullOrEmpty(oldDescription) )
+                    if (String.IsNullOrEmpty(oldDescription))
                     {
                         _runInfo[WikiDataState.NotSet]++;
                         item.setDescription(languageCode, newDescription);
                         item.save(String.Format("Added description [{0}]: {1}", languageCode, newDescription));
                     }
-                    else if ( oldDescription != newDescription )
+                    else if (oldDescription != newDescription)
                     {
                         _runInfo[WikiDataState.WrongValue]++;
-                        if ( collisionInfo != null )
+                        if (collisionInfo != null)
                         {
                             collisionInfo.AppendFormat("{0}: {1} already has description [{2}] \"{3}\"", item.id, entity.english, languageCode, oldDescription);
                             collisionInfo.AppendLine();
                         }
-                        if ( overrideData )
+                        if (overrideData)
                         {
                             item.setDescription(languageCode, newDescription);
                             item.save(String.Format("Updated description [{0}]: {1}", languageCode, newDescription));
@@ -421,7 +413,7 @@ namespace De.AHoerstemeier.Tambon
         {
             var result = String.Empty;
             var item = _helper.GetWikiDataItemForEntity(entity);
-            if ( item != null )
+            if (item != null)
             {
                 result = _helper.GetStringClaim(item, WikiBase.PropertyIdCommonsCategory);
             }
@@ -433,28 +425,28 @@ namespace De.AHoerstemeier.Tambon
             var result = true;
             var commonsCategoryOnItem = String.Empty;
             var item = _helper.GetWikiDataItemForEntity(entity);
-            if ( item != null )
+            if (item != null)
             {
                 commonsCategoryOnItem = _helper.GetStringClaim(item, WikiBase.PropertyIdCommonsCategory);
                 var categoryItem = _helper.GetItemClaim(item, WikiBase.PropertyIdCategoryForTopic);
-                if ( categoryItem != null )
+                if (categoryItem != null)
                 {
                     var commonsCategoryOnCategory = _helper.GetStringClaim(categoryItem, WikiBase.PropertyIdCommonsCategory);
-                    if ( !String.IsNullOrEmpty(commonsCategoryOnCategory) )
+                    if (!String.IsNullOrEmpty(commonsCategoryOnCategory))
                     {
                         result &= commonsCategoryOnItem == commonsCategoryOnCategory;
                     }
                     var siteLinks = categoryItem.getSitelinks();
                     var commonsLink = String.Empty;
-                    if ( siteLinks.ContainsKey(WikiBase.SiteLinkCommons) )
+                    if (siteLinks.ContainsKey(WikiBase.SiteLinkCommons))
                     {
                         commonsLink = categoryItem.getSitelink(WikiBase.SiteLinkCommons);
                     }
-                    if ( !String.IsNullOrEmpty(commonsCategoryOnItem) )
+                    if (!String.IsNullOrEmpty(commonsCategoryOnItem))
                     {
                         result &= commonsLink == "Category:" + commonsCategoryOnItem;
                     }
-                    else if ( !String.IsNullOrEmpty(commonsLink) )
+                    else if (!String.IsNullOrEmpty(commonsLink))
                     {
                         result = false; // commons link in category, but no commons category property set on main item
                     }
@@ -465,17 +457,15 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetLabel(Language language, IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             var languageCode = language.ToCode();
             ClearRunInfo();
 
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -484,17 +474,17 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var oldLabel = item.getLabel(languageCode);
                     String newLabel;
-                    if ( language == Language.Thai )
+                    if (language == Language.Thai)
                     {
                         newLabel = entity.FullName;
                     }
                     else
                     {
-                        if ( entity.type == EntityType.Chumchon )
+                        if (entity.type == EntityType.Chumchon)
                         {
                             newLabel = entity.english.StripBanOrChumchon();
                         }
-                        else if ( entity.type == EntityType.PAO )
+                        else if (entity.type == EntityType.PAO)
                         {
                             newLabel = entity.english + " " + entity.type.Translate(language);
                         }
@@ -504,21 +494,21 @@ namespace De.AHoerstemeier.Tambon
                         }
                     }
 
-                    if ( String.IsNullOrEmpty(oldLabel) )
+                    if (String.IsNullOrEmpty(oldLabel))
                     {
                         _runInfo[WikiDataState.NotSet]++;
                         item.setLabel(languageCode, newLabel);
                         item.save(String.Format("Added label [{0}]: {1}", languageCode, newLabel));
                     }
-                    else if ( oldLabel != newLabel )
+                    else if (oldLabel != newLabel)
                     {
                         _runInfo[WikiDataState.WrongValue]++;
-                        if ( collisionInfo != null )
+                        if (collisionInfo != null)
                         {
                             collisionInfo.AppendFormat("{0}: {1} already has label [{2}] \"{3}\"", item.id, entity.english, languageCode, oldLabel);
                             collisionInfo.AppendLine();
                         }
-                        if ( overrideData )
+                        if (overrideData)
                         {
                             item.setLabel(languageCode, newLabel);
                             item.save(String.Format("Updated label [{0}]: {1}", languageCode, newLabel));
@@ -534,20 +524,18 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetThaiAbbreviation(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             var languageCode = Language.Thai.ToCode();
             ClearRunInfo();
 
-            foreach ( var entity in entities.Where(x => x.type != EntityType.Muban) )
+            foreach (var entity in entities.Where(x => x.type != EntityType.Muban))
             {
                 String newAlias = entity.AbbreviatedName;
-                if ( !String.IsNullOrEmpty(newAlias) )
+                if (!String.IsNullOrEmpty(newAlias))
                 {
                     var item = _helper.GetWikiDataItemForEntity(entity);
-                    if ( item == null )
+                    if (item == null)
                     {
                         _runInfo[WikiDataState.ItemNotFound]++;
                         collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -555,7 +543,7 @@ namespace De.AHoerstemeier.Tambon
                     else
                     {
                         var oldAliases = item.getAlias(languageCode);
-                        if ( (oldAliases == null) || !oldAliases.Contains(newAlias) )
+                        if ((oldAliases == null) || !oldAliases.Contains(newAlias))
                         {
                             _runInfo[WikiDataState.NotSet]++;
                             item.addAlias(languageCode, newAlias);
@@ -573,7 +561,7 @@ namespace De.AHoerstemeier.Tambon
         private void ClearRunInfo()
         {
             _runInfo.Clear();
-            foreach ( var state in Enum.GetValues(typeof(WikiDataState)) )
+            foreach (var state in Enum.GetValues(typeof(WikiDataState)))
             {
                 _runInfo[(WikiDataState)state] = 0;
             }
@@ -581,15 +569,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetCountry(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -598,15 +584,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.IsInCountryCorrect(item);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong country", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetIsInCountry(item, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -624,42 +610,30 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="overrideData"><c>true</c> to override faulty data, <c>false</c> otherwise.</param>
         private void SetOverlap(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException("entities");
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
-                    var territoryIdentical = new List<Entity>();
-                    var territoryOverlap = new List<Entity>();
-                    if ( entity.type == EntityType.Tambon )
-                    {
-                    }
-                    else if ( entity.type.IsLocalGovernment() )
-                    {
+                    var state = _helper.IsOverlapCorrect(item, entity);
 
-                    }
-
-                    var state = _helper.IsOverlapCorrect(item);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong overlap", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
-                        var statement = _helper.SetOverlap(item, overrideData);
-                        if ( statement != null )
+                        var statements = _helper.SetOverlap(item, entity, overrideData);
+                        foreach (var statement in statements)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -670,15 +644,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetOpenStreetMap(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => x.wiki.openstreetmapSpecified) )
+            foreach (var entity in entities.Where(x => x.wiki.openstreetmapSpecified))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -687,15 +659,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.OpenStreetMapCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong OpenStreetMap id", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetOpenStreetMap(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -706,15 +678,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGeocode(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -723,15 +693,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.GeocodeCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong geocode id", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetGeocode(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -743,15 +713,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetSlogan(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -760,26 +728,26 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.SloganCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong slogan", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetSlogan(item, entity);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
-                            if ( (statement != null) && entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
+                            if ((statement != null) && entity.type.IsCompatibleEntityType(EntityType.Amphoe))
                             {
                                 var source = AmphoeComHelper.AmphoeWebsite(entity.geocode);
-                                if ( source != null )
+                                if (source != null)
                                 {
                                     var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(source.AbsoluteUri));
                                     var sloganReference = statement.CreateReferenceForSnak(snak);
                                     statement.AddReference(sloganReference);
-                                    foreach ( var reference in statement.References )
+                                    foreach (var reference in statement.References)
                                     {
                                         reference.Save(_helper.GetReferenceSaveEditSummary(reference));
                                     }
@@ -800,15 +768,13 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="entities"/> is <c>null</c>.</exception>
         private void SetNativeLabel(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -817,15 +783,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.NativeLabelCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong native label", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetNativeLabel(item, entity);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -843,15 +809,13 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="entities"/> is <c>null</c>.</exception>
         private void SetOfficialName(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -860,15 +824,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.OfficialNameCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong official name", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetOfficialName(item, entity);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -879,15 +843,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetIpa(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.ipa)) )
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.ipa)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -896,20 +858,20 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.IpaCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong IPA", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetIpa(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
 
                             _helper.AddLanguageOfWorkQualifier(statement);
-                            foreach ( var qualifier in statement.Qualifiers )
+                            foreach (var qualifier in statement.Qualifiers)
                             {
                                 qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
                             }
@@ -921,15 +883,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGnd(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gnd.value)) )
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gnd.value)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -938,15 +898,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.GndCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong GND id", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetGnd(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -958,15 +918,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetWoeid(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.woeid.value)) )
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.woeid.value)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -975,15 +933,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.WoeidCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong WOEID", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetWoeid(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -991,7 +949,7 @@ namespace De.AHoerstemeier.Tambon
                         var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdStatedIn), new EntityIdValue(new EntityId(WikiBase.ItemFlickrShapeFile)));
                         var woeidReference = statement.CreateReferenceForSnak(snak);
                         statement.AddReference(woeidReference);
-                        foreach ( var reference in statement.References )
+                        foreach (var reference in statement.References)
                         {
                             reference.Save(_helper.GetReferenceSaveEditSummary(reference));
                         }
@@ -1002,15 +960,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGeonames(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.geonames.value)) )
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.geonames.value)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1019,15 +975,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.GeonamesCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong geonames", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetGeonames(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -1038,15 +994,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetGNSUFI(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gnsufi.value)) )
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gnsufi.value)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1055,15 +1009,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.GNSUFICorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong GNS-UFI id", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetGNSUFI(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -1075,15 +1029,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetFacebookPlaceId(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => x.office.Any(y => y.socialweb.facebook.Any(z => z.type == FacebookPageType.place))) )
+            foreach (var entity in entities.Where(x => x.office.Any(y => y.socialweb.facebook.Any(z => z.type == FacebookPageType.place))))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1092,15 +1044,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.FacebookPlaceIdCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong facebook place id", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetFacebookPlaceId(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -1112,15 +1064,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetOfficialWebsite(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => x.office.Any(y => !String.IsNullOrEmpty(y.PreferredWebsite))) )
+            foreach (var entity in entities.Where(x => x.office.Any(y => !String.IsNullOrEmpty(y.PreferredWebsite))))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1129,15 +1079,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.OfficialWebsiteCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong official website", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetOfficialWebsite(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -1149,15 +1099,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetDescribedByUrl(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+            foreach (var entity in entities.Where(x => x.type.IsCompatibleEntityType(EntityType.Tambon) || x.type.IsCompatibleEntityType(EntityType.Amphoe)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1166,23 +1114,23 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.DescribedByUrlCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong described by URL", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetDescribedByUrl(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
 
-                        if ( !statement.Qualifiers.Any(x => x.PropertyId.PrefixedId.Equals(WikiBase.PropertyIdLanguageOfWork, StringComparison.InvariantCultureIgnoreCase)) )
+                        if (!statement.Qualifiers.Any(x => x.PropertyId.PrefixedId.Equals(WikiBase.PropertyIdLanguageOfWork, StringComparison.InvariantCultureIgnoreCase)))
                         {
                             _helper.AddLanguageOfWorkQualifier(statement);
-                            foreach ( var qualifier in statement.Qualifiers )
+                            foreach (var qualifier in statement.Qualifiers)
                             {
                                 qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
                             }
@@ -1195,15 +1143,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetNamedAfterSubdivision(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => x.NamedAfterEntity() != null) )
+            foreach (var entity in entities.Where(x => x.NamedAfterEntity() != null))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1212,15 +1158,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.NamedAfterSubdivisionCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong named after subdivision", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetNamedAfterSubdivision(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -1232,15 +1178,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetIsInAdministrativeUnit(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1249,15 +1193,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.IsInAdministrativeUnitCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong parent", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetIsInAdministrativeUnit(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -1268,15 +1212,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetTypeOfAdministrativeUnit(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => x.type != EntityType.Thesaban) )
+            foreach (var entity in entities.Where(x => x.type != EntityType.Thesaban))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1285,28 +1227,28 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.TypeOfAdministrativeUnitCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong type", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetTypeOfAdministrativeUnit(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
 
-                        if ( statement != null )
+                        if (statement != null)
                         {
-                            if ( _helper.AddTypeOfAdministrativeQualifiersAndReferences(statement, entity.type, entity) )
+                            if (_helper.AddTypeOfAdministrativeQualifiersAndReferences(statement, entity.type, entity))
                             {
-                                foreach ( var qualifier in statement.Qualifiers )
+                                foreach (var qualifier in statement.Qualifiers)
                                 {
                                     qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
                                 }
-                                foreach ( var reference in statement.References )
+                                foreach (var reference in statement.References)
                                 {
                                     reference.Save(_helper.GetReferenceSaveEditSummary(reference));
                                 }
@@ -1319,15 +1261,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetLocatorMap(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+            foreach (var entity in entities.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1336,15 +1276,15 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.LocatorMapCorrect(item, entity);
                     _runInfo[state]++;
-                    if ( state == WikiDataState.WrongValue )
+                    if (state == WikiDataState.WrongValue)
                     {
                         collisionInfo.AppendFormat("{0}: {1} has wrong type", item.id, entity.english);
                         collisionInfo.AppendLine();
                     }
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetLocatorMap(item, entity, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
@@ -1355,31 +1295,29 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetContainsSubdivisions(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
-                if ( entity.entity.Where(x => !x.IsObsolete && !x.type.IsLocalGovernment()).All(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)) )
+                if (entity.entity.Where(x => !x.IsObsolete && !x.type.IsLocalGovernment()).All(x => x.wiki != null && !String.IsNullOrEmpty(x.wiki.wikidata)))
                 {
                     var item = _helper.GetWikiDataItemForEntity(entity);
-                    if ( item == null )
+                    if (item == null)
                     {
                         _runInfo[WikiDataState.ItemNotFound]++;
                         collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                     }
                     else
                     {
-                        foreach ( var subEntity in entity.entity.Where(x => !x.type.IsLocalGovernment()) )
+                        foreach (var subEntity in entity.entity.Where(x => !x.type.IsLocalGovernment()))
                         {
                             var state = _helper.ContainsSubdivisionsCorrect(item, entity, subEntity);
                             _runInfo[state]++;
-                            if ( state == WikiDataState.Incomplete )
+                            if (state == WikiDataState.Incomplete)
                             {
                                 var statement = _helper.SetContainsSubdivisions(item, entity, subEntity);
-                                if ( statement != null )
+                                if (statement != null)
                                 {
                                     statement.save(_helper.GetClaimSaveEditSummary(statement));
                                 }
@@ -1392,29 +1330,27 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetPostalCode(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => !x.IsObsolete && x.codes != null && x.codes.post != null && x.codes.post.value.Any()) )
+            foreach (var entity in entities.Where(x => !x.IsObsolete && x.codes != null && x.codes.post != null && x.codes.post.value.Any()))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
                 }
                 else
                 {
-                    foreach ( var code in entity.codes.post.value )
+                    foreach (var code in entity.codes.post.value)
                     {
                         var state = _helper.PostalCodeCorrect(item, entity, code);
                         _runInfo[state]++;
-                        if ( state == WikiDataState.Incomplete )
+                        if (state == WikiDataState.Incomplete)
                         {
                             var statement = _helper.SetPostalCode(item, entity, code);
-                            if ( statement != null )
+                            if (statement != null)
                             {
                                 statement.save(_helper.GetClaimSaveEditSummary(statement));
                             }
@@ -1426,15 +1362,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetShareBorderWith(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities.Where(x => !x.IsObsolete && x.area.bounding.Any()) )
+            foreach (var entity in entities.Where(x => !x.IsObsolete && x.area.bounding.Any()))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1442,17 +1376,17 @@ namespace De.AHoerstemeier.Tambon
                 else
                 {
                     var allEntities = GlobalData.CompleteGeocodeList().FlatList();
-                    foreach ( var bounding in entity.area.bounding.Where(x => x.type == BoundaryType.land) )
+                    foreach (var bounding in entity.area.bounding.Where(x => x.type == BoundaryType.land))
                     {
                         var boundingEntity = allEntities.FirstOrDefault(x => x.geocode == bounding.geocode);
-                        if ( (boundingEntity != null) && (boundingEntity.wiki != null) && (!String.IsNullOrEmpty(boundingEntity.wiki.wikidata)) )
+                        if ((boundingEntity != null) && (boundingEntity.wiki != null) && (!String.IsNullOrEmpty(boundingEntity.wiki.wikidata)))
                         {
                             var state = _helper.BoundingEntityCorrect(item, entity, boundingEntity);
                             _runInfo[state]++;
-                            if ( state == WikiDataState.Incomplete )
+                            if (state == WikiDataState.Incomplete)
                             {
                                 var statement = _helper.SetBoundingEntity(item, entity, boundingEntity);
-                                if ( statement != null )
+                                if (statement != null)
                                 {
                                     statement.save(_helper.GetClaimSaveEditSummary(statement));
                                 }
@@ -1465,17 +1399,15 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetPopulationData(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData, PopulationDataSourceType dataSource, Int16 year)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
             GlobalData.LoadPopulationData(dataSource, year);
             // TODO - local governments are not calculated!
-            foreach ( var entity in entities.Where(x => x.population.Any(y => y.source == dataSource && y.Year == year)) )
+            foreach (var entity in entities.Where(x => x.population.Any(y => y.source == dataSource && y.Year == year)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1486,20 +1418,20 @@ namespace De.AHoerstemeier.Tambon
 
                     var state = _helper.PopulationDataCorrect(item, data);
                     _runInfo[state]++;
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statement = _helper.SetPopulationData(item, data, overrideData);
-                        if ( statement != null )
+                        if (statement != null)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                             _helper.AddPopulationDataReferences(statement, data, entity);
-                            foreach ( var reference in statement.References )
+                            foreach (var reference in statement.References)
                             {
                                 reference.Save(_helper.GetReferenceSaveEditSummary(reference));
                             }
 
                             _helper.AddPopulationDataQualifiers(statement, data);
-                            foreach ( var qualifier in statement.Qualifiers )
+                            foreach (var qualifier in statement.Qualifiers)
                             {
                                 qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
                             }
@@ -1511,23 +1443,21 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetLocation(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 Boolean hasValue = false;
                 var office = entity.office.FirstOrDefault();
-                if ( office != null )
+                if (office != null)
                 {
                     hasValue = office.Point != null;
                 }
-                if ( hasValue )
+                if (hasValue)
                 {
                     var item = _helper.GetWikiDataItemForEntity(entity);
-                    if ( item == null )
+                    if (item == null)
                     {
                         _runInfo[WikiDataState.ItemNotFound]++;
                         collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1536,7 +1466,7 @@ namespace De.AHoerstemeier.Tambon
                     {
                         var state = _helper.LocationCorrect(item, entity);
                         _runInfo[state]++;
-                        if ( state == WikiDataState.WrongValue )
+                        if (state == WikiDataState.WrongValue)
                         {
                             var expected = new GeoCoordinate(Convert.ToDouble(office.Point.lat), Convert.ToDouble(office.Point.@long));
                             var actual = _helper.GetCoordinateValue(item, WikiBase.PropertyIdCoordinate);
@@ -1544,10 +1474,10 @@ namespace De.AHoerstemeier.Tambon
                             collisionInfo.AppendFormat("{0}: {1} has wrong location, off by {2:0.###}km", item.id, entity.english, distance / 1000.0);
                             collisionInfo.AppendLine();
                         }
-                        if ( state != WikiDataState.Valid )
+                        if (state != WikiDataState.Valid)
                         {
                             var statement = _helper.SetLocation(item, entity, overrideData);
-                            if ( statement != null )
+                            if (statement != null)
                             {
                                 statement.save(_helper.GetClaimSaveEditSummary(statement));
                             }
@@ -1559,19 +1489,17 @@ namespace De.AHoerstemeier.Tambon
 
         private void SetInception(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var history = entity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
                 var hasValue = history != null && history.effectiveSpecified;
-                if ( hasValue )
+                if (hasValue)
                 {
                     var item = _helper.GetWikiDataItemForEntity(entity);
-                    if ( item == null )
+                    if (item == null)
                     {
                         _runInfo[WikiDataState.ItemNotFound]++;
                         collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1580,29 +1508,29 @@ namespace De.AHoerstemeier.Tambon
                     {
                         var state = _helper.InceptionCorrect(item, entity);
                         _runInfo[state]++;
-                        if ( state == WikiDataState.WrongValue )
+                        if (state == WikiDataState.WrongValue)
                         {
                             collisionInfo.AppendFormat("{0}: {1} has wrong inception date", item.id, entity.english);
                             collisionInfo.AppendLine();
                         }
-                        if ( state != WikiDataState.Valid )
+                        if (state != WikiDataState.Valid)
                         {
                             var statement = _helper.SetInception(item, entity, overrideData);
-                            if ( statement != null )
+                            if (statement != null)
                             {
                                 statement.save(_helper.GetClaimSaveEditSummary(statement));
                             }
 
                             var gazetteReference = history.Items.OfType<GazetteRelated>().FirstOrDefault();
-                            if ( gazetteReference != null )
+                            if (gazetteReference != null)
                             {
                                 var gazette = GlobalData.AllGazetteAnnouncements.FindAnnouncement(gazetteReference);
-                                if ( gazette != null )
+                                if (gazette != null)
                                 {
                                     var snak = new Snak(SnakType.Value, new EntityId(WikiBase.PropertyIdReferenceUrl), new StringValue(gazette.DownloadUrl.AbsoluteUri));
                                     var urlReference = statement.CreateReferenceForSnak(snak);
                                     statement.AddReference(urlReference);
-                                    foreach ( var reference in statement.References )
+                                    foreach (var reference in statement.References)
                                     {
                                         reference.Save(_helper.GetReferenceSaveEditSummary(reference));
                                     }
@@ -1618,15 +1546,13 @@ namespace De.AHoerstemeier.Tambon
 
         private void CleanupPopulationData(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
         {
-            if ( entities == null )
-            {
-                throw new ArgumentNullException("entities");
-            }
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
             ClearRunInfo();
-            foreach ( var entity in entities )
+            foreach (var entity in entities)
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
-                if ( item == null )
+                if (item == null)
                 {
                     _runInfo[WikiDataState.ItemNotFound]++;
                     collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
@@ -1635,10 +1561,10 @@ namespace De.AHoerstemeier.Tambon
                 {
                     var state = _helper.CheckPopulationData(item);
                     _runInfo[state]++;
-                    if ( state != WikiDataState.Valid )
+                    if (state != WikiDataState.Valid)
                     {
                         var statements = _helper.CleanupPopulationData(item);
-                        foreach ( var statement in statements )
+                        foreach (var statement in statements)
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
