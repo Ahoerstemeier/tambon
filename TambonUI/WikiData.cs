@@ -269,7 +269,7 @@ namespace De.AHoerstemeier.Tambon.UI
             IEnumerable<Entity> workItems = null;
             if ( !String.IsNullOrWhiteSpace(edtSpecificItemId.Text) )
             {
-                Int32 specificValue = Convert.ToInt32(edtSpecificItemId.Text);
+                Int32 specificValue = Convert.ToInt32(edtSpecificItemId.Text.Replace("Q",""));
                 workItems = entitiesWithWikiData.Where(x => x.wiki.NumericalWikiData == specificValue);
             }
             else
