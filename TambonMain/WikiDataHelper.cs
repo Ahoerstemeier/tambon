@@ -815,6 +815,50 @@ namespace De.AHoerstemeier.Tambon
 
         #endregion WOEID
 
+        #region HASC
+
+        private WikiDataState HASC(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+            stringValue = entity.codes.hasc.value;
+            return CheckStringValue(item, WikiBase.PropertyIdHASC, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the HASC reference.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the HASC.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        public Statement SetHASC(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+
+            Statement result;
+            HASC(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the HASC reference is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        public WikiDataState HASCCorrect(Item item, Entity entity)
+        {
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+
+            Statement dummy;
+            return HASC(item, entity, false, false, out dummy);
+        }
+
+        #endregion HASC
+
         #region Geonames
 
         private WikiDataState Geonames(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)

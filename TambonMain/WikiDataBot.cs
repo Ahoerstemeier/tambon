@@ -162,6 +162,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set Facebook place id", SetFacebookPlaceId));
             _availableTasks.Add(new WikiDataTaskInfo("Set official website", SetOfficialWebsite));
             _availableTasks.Add(new WikiDataTaskInfo("Set WOEID reference", SetWoeid));
+            _availableTasks.Add(new WikiDataTaskInfo("Set HASC reference", SetHASC));
             _availableTasks.Add(new WikiDataTaskInfo("Set geonames reference", SetGeonames));
             _availableTasks.Add(new WikiDataTaskInfo("Set Postal code", SetPostalCode));
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
@@ -954,6 +955,41 @@ namespace De.AHoerstemeier.Tambon
                             reference.Save(_helper.GetReferenceSaveEditSummary(reference));
                         }
                     }
+                }
+            }
+        }
+
+        private void SetHASC(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
+            ClearRunInfo();
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.hasc.value)))
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if (item == null)
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.HASCCorrect(item, entity);
+                    _runInfo[state]++;
+                    if (state == WikiDataState.WrongValue)
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong HASC id", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if (state != WikiDataState.Valid)
+                    {
+                        var statement = _helper.SetHASC(item, entity, overrideData);
+                        if (statement != null)
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
+                    // TODO: Sources
                 }
             }
         }
