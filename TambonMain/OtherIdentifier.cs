@@ -49,6 +49,16 @@ namespace De.AHoerstemeier.Tambon
             return !String.IsNullOrEmpty(getty.value);
         }
 
+        public Boolean ShouldSerializegoogleplace()
+        {
+            return !String.IsNullOrEmpty(googleplace.value);
+        }
+
+        public Boolean ShouldSerializegadm()
+        {
+            return !String.IsNullOrEmpty(gadm.value);
+        }
+
         #endregion fixup serialization
 
         public Boolean IsEmpty()
