@@ -77,6 +77,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdMainRegulatoryText = "P92";  // qualifier for inception to link to Gazette item
         public const String PropertyIdTerritoryOverlaps = "P3179";
         public const String PropertyIdTerritoryIdentical = "P3403";
+        public const String PropertyIdGadm = "P8714";
 
         public const String PropertyIdArea = "P2046";
         public const String PropertyIdCategoryCombinesTopic = "P971";
