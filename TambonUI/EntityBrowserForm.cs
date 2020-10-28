@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -11,7 +10,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using Wikibase;
 
 namespace De.AHoerstemeier.Tambon.UI
 {
@@ -550,7 +548,7 @@ namespace De.AHoerstemeier.Tambon.UI
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "GNS-UFI", (Entity x) => x.codes.gnsufi.value, "^[-]{0,1}\\d+$");
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "WOEID", (Entity x) => x.codes.woeid.value, "^\\d+$");
             text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "geonames", (Entity x) => x.codes.geonames.value, "^\\d+$");
-            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "GADM", (Entity x) => x.codes.gadm.value, "^THA(\\.\\d{1,2}){1,3}_\\d$");
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe, EntityType.Tambon }, "GADM", (Entity x) => x.codes.gadm.value, "^THA(\\.\\d{1,2}){1,3}_\\d$");
 
             var entityWithoutSlogan = entity.FlatList().Where(x => !x.IsObsolete && (x.type.IsCompatibleEntityType(EntityType.Changwat) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) && !x.symbols.slogan.Any());
             if ( entityWithoutSlogan.Any() )
