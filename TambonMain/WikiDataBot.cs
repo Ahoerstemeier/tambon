@@ -964,7 +964,7 @@ namespace De.AHoerstemeier.Tambon
             _ = entities ?? throw new ArgumentNullException(nameof(entities));
 
             ClearRunInfo();
-            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.woeid.value)))
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gadm.value)))
             {
                 var item = _helper.GetWikiDataItemForEntity(entity);
                 if (item == null)
