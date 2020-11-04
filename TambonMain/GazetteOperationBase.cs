@@ -31,7 +31,7 @@ namespace De.AHoerstemeier.Tambon
             if (tambonFieldSpecified)
             {
                 result = result | GeocodeHelper.IsSameGeocode(geocode, this.tambon, includeSubEntities);
-                if (GeocodeHelper.GeocodeLevel(geocode) == 3 && (geocode % 50 >= 50))
+                if (GeocodeHelper.GeocodeLevel(geocode) == 3 && (geocode % 100 >= 50))
                 {
                     result = result | GeocodeHelper.IsSameGeocode(geocode - 50, this.tambon, includeSubEntities);
                 }

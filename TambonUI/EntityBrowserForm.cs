@@ -921,6 +921,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var gazetteConstituency = GlobalData.AllGazetteAnnouncements.AllGazetteEntries.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency)).ToList();
 
             var latestConstituencyGazettes = new List<(Entity Entity, GazetteEntry Gazette)>();
+            var laoWithoutConstituency = new List<Entity>();
 
             foreach (var lao in localGovernmentsInEntity)
             {
@@ -929,11 +930,23 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     latestConstituencyGazettes.Add((lao, gazette.Last()));
                 }
+                else if (lao.type!= EntityType.TAO)
+                {
+                    laoWithoutConstituency.Add(lao);
+                }
             }
             var latestConstituencyGazettesSorted = latestConstituencyGazettes.OrderBy(x => x.Gazette.publication);
             foreach (var item in latestConstituencyGazettesSorted)
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "{0} ({1}): {2:yyyy}", item.Entity.english, item.Entity.geocode, item.Gazette.publication) + Environment.NewLine;
+            }
+            if (laoWithoutConstituency.Any())
+            {
+                result += Environment.NewLine + "No constituency:" + Environment.NewLine;
+                foreach (var item in laoWithoutConstituency)
+                {
+                    result += String.Format(CultureInfo.CurrentUICulture, "{0} ({1})", item.english, item.geocode) + Environment.NewLine;
+                }
             }
 
             txtConstituency.Text = result;
