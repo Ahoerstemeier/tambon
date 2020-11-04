@@ -20,23 +20,27 @@ namespace De.AHoerstemeier.Tambon
         public Boolean IsAboutGeocode(UInt32 geocode, Boolean includeSubEntities)
         {
             Boolean result = false;
-            if ( geocodeSpecified )
+            if (geocodeSpecified)
             {
                 result = result | GeocodeHelper.IsSameGeocode(geocode, this.geocode, includeSubEntities);
             }
-            if ( ownerFieldSpecified )
+            if (ownerFieldSpecified)
             {
                 result = result | GeocodeHelper.IsSameGeocode(geocode, this.owner, includeSubEntities);
             }
-            if ( tambonFieldSpecified )
+            if (tambonFieldSpecified)
             {
                 result = result | GeocodeHelper.IsSameGeocode(geocode, this.tambon, includeSubEntities);
+                if (GeocodeHelper.GeocodeLevel(geocode) == 3 && (geocode % 50 >= 50))
+                {
+                    result = result | GeocodeHelper.IsSameGeocode(geocode - 50, this.tambon, includeSubEntities);
+                }
             }
 
-            foreach ( var entry in Items )
+            foreach (var entry in Items)
             {
                 var toTest = entry as IGeocode;
-                if ( toTest != null )
+                if (toTest != null)
                 {
                     result = result | toTest.IsAboutGeocode(geocode, includeSubEntities);
                 }
@@ -62,10 +66,10 @@ namespace De.AHoerstemeier.Tambon
         {
             var result = new List<GazetteOperationBase>();
             result.Add(this);
-            foreach ( var item in Items )
+            foreach (var item in Items)
             {
                 var OperationItem = item as GazetteOperationBase;
-                if ( OperationItem != null )
+                if (OperationItem != null)
                 {
                     result.AddRange(OperationItem.GazetteOperations());
                 }
