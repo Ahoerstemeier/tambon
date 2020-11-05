@@ -925,7 +925,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
             foreach (var lao in localGovernmentsInEntity)
             {
-                var gazette = gazetteConstituency.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency && y.IsAboutGeocode(lao.geocode, false))).OrderBy(x => x.publication);
+                var gazette = gazetteConstituency.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency && (y.IsAboutGeocode(lao.geocode, false)|| (lao.tambonSpecified && y.IsAboutGeocode(lao.tambon, false))))).OrderBy(x => x.publication);
                 if (gazette.Any())
                 {
                     latestConstituencyGazettes.Add((lao, gazette.Last()));
