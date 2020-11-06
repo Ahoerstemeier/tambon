@@ -1086,6 +1086,18 @@ namespace De.AHoerstemeier.Tambon
             return OfficialWebsite(item, entity, false, false, out dummy);
         }
 
+        /// <summary>
+        /// Add the qualifier to a URL statement defining the language of work.
+        /// </summary>
+        /// <param name="statement">Statement to modify.</param>
+        public void AddWebsiteQualifiers(Statement statement)
+        {
+            _ = statement ?? throw new ArgumentNullException(nameof(statement));
+
+            var languageQualifier = new Qualifier(statement, SnakType.Value, new EntityId(WikiBase.PropertyIdLanguageOfWork), new EntityIdValue(new EntityId(WikiBase.ItemIdThaiLanguage)));
+            // statement.Qualifiers.Add(languageQualifier);  // already added by the constructor
+        }
+
         #endregion OfficialWebsite
 
         #region DescribedByUrl
@@ -1408,6 +1420,43 @@ namespace De.AHoerstemeier.Tambon
 
             Statement dummy;
             return Location(item, entity, false, false, out dummy);
+        }
+
+        /// <summary>
+        /// Add the qualifier to a location statement defining the type of office referenced.
+        /// </summary>
+        /// <param name="statement">Statement to modify.</param>
+        /// <param name="entity">Entity.</param>
+        public void AddLocationQualifiers(Statement statement, Entity entity)
+        {
+            _ = statement ?? throw new ArgumentNullException(nameof(statement));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+
+            var placeType = String.Empty;
+            switch (entity.type)
+            {
+                case EntityType.Thesaban:
+                case EntityType.ThesabanMueang:
+                case EntityType.ThesabanNakhon:
+                case EntityType.ThesabanTambon:
+                case EntityType.TAO:
+                case EntityType.Mueang:
+                case EntityType.Bangkok:
+                    placeType = WikiBase.ItemSeatOfLocalGovernment;
+                    break;
+                case EntityType.Amphoe:
+                case EntityType.KingAmphoe:
+                    placeType = WikiBase.ItemDistrictOffice;
+                    break;
+                case EntityType.Changwat:
+                    placeType = WikiBase.ItemProvinceHall;
+                    break;
+            }
+            if (!String.IsNullOrEmpty(placeType))
+            {
+                var partQualifier = new Qualifier(statement, SnakType.Value, new EntityId(WikiBase.PropertyIdAppliesToPart), new EntityIdValue(new EntityId(placeType)));
+                // statement.Qualifiers.Add(partQualifier);  // already added by the constructor
+            }
         }
 
         #endregion Location
