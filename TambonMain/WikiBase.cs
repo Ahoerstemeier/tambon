@@ -93,7 +93,7 @@ namespace De.AHoerstemeier.Tambon
 
         public const String PropertyIdStartDate = "P580";
         public const String PropertyIdEndDate = "P582";
-        public const String PropertyAppliesToPart = "P518";
+        public const String PropertyIdAppliesToPart = "P518";
 
         // for sources
         public const String PropertyIdStatedIn = "P248";

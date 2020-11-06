@@ -1091,8 +1091,13 @@ namespace De.AHoerstemeier.Tambon
                         {
                             statement.save(_helper.GetClaimSaveEditSummary(statement));
                         }
+                        _helper.AddWebsiteQualifiers(statement);
+                        foreach (var qualifier in statement.Qualifiers)
+                        {
+                            qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                        }
                     }
-                    // TODO: Sources
+
                 }
             }
         }
@@ -1481,6 +1486,12 @@ namespace De.AHoerstemeier.Tambon
                             {
                                 statement.save(_helper.GetClaimSaveEditSummary(statement));
                             }
+                            _helper.AddLocationQualifiers(statement, entity);
+                            foreach (var qualifier in statement.Qualifiers)
+                            {
+                                qualifier.Save(_helper.GetQualifierSaveEditSummary(qualifier));
+                            }
+
                         }
                     }
                 }
