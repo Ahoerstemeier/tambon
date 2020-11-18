@@ -1370,7 +1370,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var webId = GetWebIdOfSelectedItem(listviewLocalAdministration);
             if (webId > 0)
             {
-                var url = String.Format(CultureInfo.CurrentUICulture, "http://info.dla.go.th/public/surveyInfo.do?cmd=surveyForm&orgInfoId={0}", webId);
+                var url = String.Format(CultureInfo.CurrentUICulture, "http://infov1.dla.go.th/public/surveyInfo.do?cmd=surveyForm&orgInfoId={0}", webId);
                 Process.Start(url);
             }
         }
