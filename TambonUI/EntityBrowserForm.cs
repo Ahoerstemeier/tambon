@@ -1246,6 +1246,8 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             CheckHistoryAvailable(listviewLocalAdministration, mnuHistoryLocal);
             var hasWebId = false;
+            var hasWikidata = false;
+            var hasWebsite = false;
             if ( listviewLocalAdministration.SelectedItems.Count == 1 )
             {
                 foreach ( ListViewItem item in listviewLocalAdministration.SelectedItems )
@@ -1254,11 +1256,15 @@ namespace De.AHoerstemeier.Tambon.UI
                     if ( entity != null )
                     {
                         hasWebId = entity.office.Any(x => x.webidSpecified);
+                        hasWikidata = !String.IsNullOrEmpty(entity?.wiki?.wikidata);
+                        hasWebsite = entity.office.First().url.Any();
                     }
                 }
             }
             mnuGeneralInfoPage.Enabled = hasWebId;
             mnuAdminInfoPage.Enabled = hasWebId;
+            mnuWikidataLocal.Enabled = hasWikidata;
+            mnuWebsite.Enabled = hasWebsite;
         }
 
         private void popupListviewCentral_Opening(Object sender, CancelEventArgs e)
@@ -1349,6 +1355,22 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
+        private void mnuWikidata_Click(Object sender, EventArgs e)
+        {
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    if (!String.IsNullOrEmpty(entity?.wiki?.wikidata))
+                    {
+                        var url = String.Format(CultureInfo.CurrentUICulture, "https://www.wikidata.org/wiki/{0}", entity.wiki.wikidata);
+                        Process.Start(url);
+                    }
+                }
+            }
+        }
+
         private void mnuConstituency_Click(object sender, EventArgs e)
         {
             var selectedNode = treeviewSelection.SelectedNode;
@@ -1371,6 +1393,22 @@ namespace De.AHoerstemeier.Tambon.UI
             }
 
             new StringDisplayForm(String.Format("Constituencies {0}", PopulationReferenceYear), displayResult).Show();
+        }
+
+        private void mnuWebsite_Click(object sender, EventArgs e)
+        {
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    var urls = entity.office.First().url;
+                    if (urls.Any())
+                    {
+                        Process.Start(urls.OrderByDescending(x => x.lastchecked).First().Value);
+                    }
+                }
+            }
         }
     }
 }
