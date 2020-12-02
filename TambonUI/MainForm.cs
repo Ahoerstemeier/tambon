@@ -1503,7 +1503,7 @@ namespace De.AHoerstemeier.Tambon.UI
             if ( dialog.FileNames.Count() == 2 )
             {
                 var builder = new StringBuilder();
-                List<EntityType> entityTypes = new List<EntityType>() { EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Tambon, EntityType.Muban, EntityType.Thesaban, EntityType.Sukhaphiban };
+                List<EntityType> entityTypes = new List<EntityType>() { EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Tambon, EntityType.Muban, EntityType.Thesaban, EntityType.TAO, EntityType.Sukhaphiban };
 
                 Entity dataOne = null;
                 using ( var fileStream = new FileStream(dialog.FileNames.First(), FileMode.Open, FileAccess.Read) )
@@ -1528,7 +1528,7 @@ namespace De.AHoerstemeier.Tambon.UI
                             var oldItem = entity.entitycount.First().entry.FirstOrDefault(x => x.type == entityType);
                             if ( oldItem != null )
                             {
-                                value += Convert.ToInt32(oldItem.count);
+                                value -= Convert.ToInt32(oldItem.count);
                             }
                             var newItem = compare.entitycount.First().entry.FirstOrDefault(x => x.type == entityType);
                             if ( newItem != null )
