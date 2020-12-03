@@ -24,18 +24,18 @@ namespace De.AHoerstemeier.Tambon
         public Boolean IsAboutGeocode(UInt32 geocode, Boolean includeSubEntities)
         {
             var result = false;
-            foreach ( var entry in section )
+            foreach (var entry in section)
             {
                 var toTest = entry as IGeocode;
-                if ( toTest != null )
+                if (toTest != null)
                 {
                     result = result | toTest.IsAboutGeocode(geocode, includeSubEntities);
                 }
             }
-            foreach ( var entry in Items )
+            foreach (var entry in Items)
             {
                 var toTest = entry as IGeocode;
-                if ( toTest != null )
+                if (toTest != null)
                 {
                     result = result | toTest.IsAboutGeocode(geocode, includeSubEntities);
                 }
@@ -53,7 +53,7 @@ namespace De.AHoerstemeier.Tambon
         /// <exception cref="ArgumentNullException"><paramref name="gazetteReference"/> is <c>null</c>.</exception>
         public Boolean IsMatchWith(GazetteRelated gazetteReference)
         {
-            if ( gazetteReference == null )
+            if (gazetteReference == null)
             {
                 throw new ArgumentNullException("gazetteReference");
             }
@@ -93,7 +93,7 @@ namespace De.AHoerstemeier.Tambon
         public void MirrorToCache()
         {
             String cacheFile = LocalPdfFileName;
-            if ( !File.Exists(cacheFile) )
+            if (!File.Exists(cacheFile))
             {
                 System.IO.Stream fileStream = null;
                 try
@@ -104,13 +104,13 @@ namespace De.AHoerstemeier.Tambon
                         Stream webStream = webClient.OpenRead(DownloadUrl);
                         DirectoryInfo dirInfo = new DirectoryInfo(@GlobalData.PdfDirectory);
                         string s = Path.GetDirectoryName(uri);
-                        if ( !String.IsNullOrEmpty(s) )
+                        if (!String.IsNullOrEmpty(s))
                         {
                             dirInfo.CreateSubdirectory(s);
                         }
                         Stream memoryStream = new MemoryStream();
                         BasicHelper.StreamCopy(webStream, memoryStream);
-                        if ( memoryStream.Length > 0 )
+                        if (memoryStream.Length > 0)
                         {
                             memoryStream.Seek(0, SeekOrigin.Begin);
                             fileStream = new FileStream(cacheFile, FileMode.CreateNew);
@@ -120,7 +120,7 @@ namespace De.AHoerstemeier.Tambon
                     }
                     finally
                     {
-                        if ( fileStream != null )
+                        if (fileStream != null)
                         {
                             fileStream.Dispose();
                         }
@@ -128,7 +128,7 @@ namespace De.AHoerstemeier.Tambon
                 }
                 catch
                 {
-                    if ( File.Exists(cacheFile) )
+                    if (File.Exists(cacheFile))
                     {
                         File.Delete(cacheFile);
                     }
@@ -155,9 +155,9 @@ namespace De.AHoerstemeier.Tambon
             Int32 state = 0;
             startPage = 0;
             endPage = 0;
-            foreach ( String SubString in value.Split('-', '–') )
+            foreach (String SubString in value.Split('-', '–'))
             {
-                switch ( state )
+                switch (state)
                 {
                     case 0:
                         startPage = Convert.ToUInt32(SubString);
@@ -170,9 +170,21 @@ namespace De.AHoerstemeier.Tambon
                 }
                 state++;
             }
-            if ( endPage == 0 )
+            if (endPage == 0)
             {
                 endPage = startPage;
+            }
+        }
+
+        private void AddGazetteOperations(IEnumerable<Object> items, List<GazetteOperationBase> listToAdd)
+        {
+            foreach (var item in items)
+            {
+                var operationItem = item as GazetteOperationBase;
+                if (operationItem != null)
+                {
+                    listToAdd.AddRange(operationItem.GazetteOperations());
+                }
             }
         }
 
@@ -182,12 +194,14 @@ namespace De.AHoerstemeier.Tambon
         public IEnumerable<GazetteOperationBase> GazetteOperations()
         {
             var result = new List<GazetteOperationBase>();
-            foreach ( var item in Items )
+
+            AddGazetteOperations(Items, result);
+            foreach (var sectionItem in section)
             {
-                var operationItem = item as GazetteOperationBase;
-                if ( operationItem != null )
+                AddGazetteOperations(sectionItem.Items, result);
+                foreach (var subSectionItem in sectionItem.subsection)
                 {
-                    result.AddRange(operationItem.GazetteOperations());
+                    AddGazetteOperations(subSectionItem.Items, result);
                 }
             }
             return result;
@@ -202,28 +216,28 @@ namespace De.AHoerstemeier.Tambon
         public String WikipediaReference(Language language)
         {
             var result = String.Empty;
-            switch ( language )
+            switch (language)
             {
                 case Language.English:
                     result = "{{cite journal|journal=Royal Gazette";
-                    if ( volume != 0 )
+                    if (volume != 0)
                     {
                         result += String.Format(CultureInfo.InvariantCulture, "|volume={0}", volume);
                     }
-                    if ( !String.IsNullOrWhiteSpace(issue) )
+                    if (!String.IsNullOrWhiteSpace(issue))
                     {
                         result += String.Format("|issue={0}", issue);
                     }
-                    if ( !String.IsNullOrEmpty(page) )
+                    if (!String.IsNullOrEmpty(page))
                     {
                         result += String.Format("|pages={0}", page);
                     }
                     result += String.Format("|title={0}", title);
-                    if ( !String.IsNullOrEmpty(uri) )
+                    if (!String.IsNullOrEmpty(uri))
                     {
                         result += String.Format("|url={0}", DownloadUrl);
                     }
-                    if ( publication.Year > 1800 )
+                    if (publication.Year > 1800)
                     {
                         result += String.Format(CultureInfo.InvariantCulture, "|date={0:yyyy-MM-dd}", publication);
                     }
