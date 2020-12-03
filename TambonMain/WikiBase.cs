@@ -53,6 +53,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdGND = "P227";
         public const String PropertyIdWOEID = "P1281";
         public const String PropertyIdGeonames = "P1566";
+        public const String PropertyIdHASC = "P8119";
         public const String PropertyIdGNSUFI = "P2326";
         public const String PropertyIdFIPS10 = "P901";
         public const String PropertyIdDmoz = "P998";
@@ -77,6 +78,7 @@ namespace De.AHoerstemeier.Tambon
         public const String PropertyIdMainRegulatoryText = "P92";  // qualifier for inception to link to Gazette item
         public const String PropertyIdTerritoryOverlaps = "P3179";
         public const String PropertyIdTerritoryIdentical = "P3403";
+        public const String PropertyIdGadm = "P8714";
 
         public const String PropertyIdArea = "P2046";
         public const String PropertyIdCategoryCombinesTopic = "P971";
@@ -93,7 +95,7 @@ namespace De.AHoerstemeier.Tambon
 
         public const String PropertyIdStartDate = "P580";
         public const String PropertyIdEndDate = "P582";
-        public const String PropertyAppliesToPart = "P518";
+        public const String PropertyIdAppliesToPart = "P518";
 
         // for sources
         public const String PropertyIdStatedIn = "P248";

@@ -596,6 +596,8 @@ namespace De.AHoerstemeier.Tambon
 
         private Identifier googleplaceField;
 
+        private Identifier gadmField;
+
         /// <summary>
         /// Creates a new instance of OtherIdentifier.
         /// </summary>
@@ -612,6 +614,7 @@ namespace De.AHoerstemeier.Tambon
             this.iso3166Field = new Identifier();
             this.hascField = new Identifier();
             this.postField = new PostalCode();
+            this.gadmField = new Identifier();
         }
 
         /// <summary>
@@ -834,7 +837,28 @@ namespace De.AHoerstemeier.Tambon
                 this.googleplaceField = value;
             }
         }
+
+        /// <summary>
+        /// Global Administrative Area database (GADM).
+        /// </summary>
+        /// <value>
+        /// The gadm.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 11)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Identifier gadm
+        {
+            get
+            {
+                return this.gadmField;
+            }
+            set
+            {
+                this.gadmField = value;
+            }
+        }
     }
+
 
     /// <summary>
     /// Postal code(s).

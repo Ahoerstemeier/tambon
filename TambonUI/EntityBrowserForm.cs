@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -11,7 +10,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using Wikibase;
 
 namespace De.AHoerstemeier.Tambon.UI
 {
@@ -543,13 +541,14 @@ namespace De.AHoerstemeier.Tambon.UI
                 text += Environment.NewLine;
             }
 
-            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "FIPS10", (Entity x) => x.codes.fips10.value, "^TH\\d\\d$");
-            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "ISO3166", (Entity x) => x.codes.iso3166.value, "^TH-(\\d\\d|S)$");
-            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "HASC", (Entity x) => x.codes.hasc.value, "^TH(\\.[A-Z]{2}){1,2}$");
-            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "SALB", (Entity x) => x.codes.salb.value, "^THA(\\d{3}){1,2}$");
-            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "GNS-UFI", (Entity x) => x.codes.gnsufi.value, "^[-]{0,1}\\d+$");
-            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "WOEID", (Entity x) => x.codes.woeid.value, "^\\d+$");
-            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "geonames", (Entity x) => x.codes.geonames.value, "^\\d+$");
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "FIPS10", (Entity x) => x.codes.fips10.value, "^TH\\d\\d$", true);
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat }, "ISO3166", (Entity x) => x.codes.iso3166.value, "^TH-(\\d\\d|S)$", true);
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "HASC", (Entity x) => x.codes.hasc.value, "^TH(\\.[A-Z]{2}){1,2}$", true);
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "SALB", (Entity x) => x.codes.salb.value, "^THA(\\d{3}){1,2}$", false);
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "GNS-UFI", (Entity x) => x.codes.gnsufi.value, "^[-]{0,1}\\d+$", true);
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "WOEID", (Entity x) => x.codes.woeid.value, "^\\d+$", true);
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe }, "geonames", (Entity x) => x.codes.geonames.value, "^\\d+$", true);
+            text += CheckCode(entity, new List<EntityType>() { EntityType.Changwat, EntityType.Amphoe, EntityType.Tambon }, "GADM", (Entity x) => x.codes.gadm.value, "^THA(\\.\\d{1,2}){1,3}_\\d$", false);
 
             var entityWithoutSlogan = entity.FlatList().Where(x => !x.IsObsolete && (x.type.IsCompatibleEntityType(EntityType.Changwat) || x.type.IsCompatibleEntityType(EntityType.Amphoe)) && !x.symbols.slogan.Any());
             if ( entityWithoutSlogan.Any() )
@@ -683,13 +682,13 @@ namespace De.AHoerstemeier.Tambon.UI
             return result;
         }
 
-        private String CheckCode(Entity entity, IEnumerable<EntityType> entityTypes, String codeName, Func<Entity, String> selector, String format)
+        private String CheckCode(Entity entity, IEnumerable<EntityType> entityTypes, String codeName, Func<Entity, String> selector, String format, Boolean checkMissing)
         {
             String text = String.Empty;
             var allEntites = entity.FlatList().Where(x => !x.IsObsolete);
             var allEntityOfFittingType = allEntites.Where(x => x.type.IsCompatibleEntityType(entityTypes));
             var entitiesWithoutCode = allEntityOfFittingType.Where(x => String.IsNullOrEmpty(selector(x)));
-            if ( entitiesWithoutCode.Any() )
+            if ( checkMissing && entitiesWithoutCode.Any() )
             {
                 text += String.Format("Entity without {0} code ({1}):", codeName, entitiesWithoutCode.Count()) + Environment.NewLine;
                 foreach ( var subEntity in entitiesWithoutCode )
