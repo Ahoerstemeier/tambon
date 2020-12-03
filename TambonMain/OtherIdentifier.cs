@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace De.AHoerstemeier.Tambon
 {
-    public partial class OtherIdentifier
+    public partial class OtherIdentifier :IIsEmpty
     {
         #region fixup serialization
 
@@ -49,11 +46,22 @@ namespace De.AHoerstemeier.Tambon
             return !String.IsNullOrEmpty(getty.value);
         }
 
+        public Boolean ShouldSerializegoogleplace()
+        {
+            return !String.IsNullOrEmpty(googleplace.value);
+        }
+
+        public Boolean ShouldSerializegadm()
+        {
+            return !String.IsNullOrEmpty(gadm.value);
+        }
+
         #endregion fixup serialization
 
+        /// <inheritdoc/>
         public Boolean IsEmpty()
         {
-            return !(ShouldSerializefips10() || ShouldSerializegnd() || ShouldSerializehasc() || ShouldSerializeiso3166() || ShouldSerializesalb() || ShouldSerializegeonames());
+            return !(ShouldSerializefips10() || ShouldSerializegnd() || ShouldSerializehasc() || ShouldSerializeiso3166() || ShouldSerializesalb() || ShouldSerializegeonames() || ShouldSerializegadm() || ShouldSerializegoogleplace() || ShouldSerializegetty() || ShouldSerializewoeid());
         }
     }
 }

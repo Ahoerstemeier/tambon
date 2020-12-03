@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace De.AHoerstemeier.Tambon
 {
-    public partial class Symbols
+    public partial class Symbols: IIsEmpty
     {
-        /// <summary>
-        /// Checks whether the class contains any data or not.
-        /// </summary>
-        /// <returns><c>true</c> if the class is effectively empty, <c>false</c> if there is anything set.</returns>
+        /// <inheritdoc/>
         public Boolean IsEmpty()
         {
             return
