@@ -804,6 +804,7 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="item">The WikiData item.</param>
         /// <param name="entity">The administrative unit.</param>
         /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        /// <returns>State of WOEID statement in Wikidata.</returns>
         public WikiDataState WoeidCorrect(Item item, Entity entity)
         {
             _ = item ?? throw new ArgumentNullException(nameof(item));
@@ -858,6 +859,51 @@ namespace De.AHoerstemeier.Tambon
         }
 
         #endregion HASC
+
+        #region GADM
+
+        private WikiDataState Gadm(Item item, Entity entity, Boolean createStatement, Boolean overrideWrongData, out Statement statement)
+        {
+            var stringValue = String.Empty;
+            stringValue = entity.codes.gadm.value;
+            return CheckStringValue(item, WikiBase.PropertyIdGadm, stringValue, createStatement, overrideWrongData, out statement);
+        }
+
+        /// <summary>
+        /// Gets the statement containing the GADM reference.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <param name="overrideWrongData"><c>true</c> is a wrong claim should be overwritten, <c>false</c> otherwise.</param>
+        /// <returns>Statement containing the GADM.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        public Statement SetGadm(Item item, Entity entity, Boolean overrideWrongData)
+        {
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+
+            Statement result;
+            Gadm(item, entity, true, overrideWrongData, out result);
+            return result;
+        }
+
+        /// <summary>
+        /// Gets whether the statement containing the GADM reference is set correctly.
+        /// </summary>
+        /// <param name="item">The WikiData item.</param>
+        /// <param name="entity">The administrative unit.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="item"/> or <paramref name="entity"/> is <c>null</c>.</exception>
+        /// <returns>State of GADM statement in Wikidata.</returns>
+        public WikiDataState GadmCorrect(Item item, Entity entity)
+        {
+            _ = item ?? throw new ArgumentNullException(nameof(item));
+            _ = entity ?? throw new ArgumentNullException(nameof(entity));
+
+            Statement dummy;
+            return Gadm(item, entity, false, false, out dummy);
+        }
+
+        #endregion GADM
 
         #region Geonames
 

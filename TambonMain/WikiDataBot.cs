@@ -163,6 +163,7 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set official website", SetOfficialWebsite));
             _availableTasks.Add(new WikiDataTaskInfo("Set WOEID reference", SetWoeid));
             _availableTasks.Add(new WikiDataTaskInfo("Set HASC reference", SetHASC));
+            _availableTasks.Add(new WikiDataTaskInfo("Set GADM reference", SetGadm));
             _availableTasks.Add(new WikiDataTaskInfo("Set geonames reference", SetGeonames));
             _availableTasks.Add(new WikiDataTaskInfo("Set Postal code", SetPostalCode));
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
@@ -990,6 +991,40 @@ namespace De.AHoerstemeier.Tambon
                         }
                     }
                     // TODO: Sources
+                }
+            }
+        }
+
+        private void SetGadm(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
+            ClearRunInfo();
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gadm.value)))
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if (item == null)
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.GadmCorrect(item, entity);
+                    _runInfo[state]++;
+                    if (state == WikiDataState.WrongValue)
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong GADM", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if (state != WikiDataState.Valid)
+                    {
+                        var statement = _helper.SetGadm(item, entity, overrideData);
+                        if (statement != null)
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
                 }
             }
         }
