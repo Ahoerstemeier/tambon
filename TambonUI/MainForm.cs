@@ -1542,6 +1542,9 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 Clipboard.Clear();
                 Clipboard.SetText(builder.ToString());
+
+                var form = new StringDisplayForm("Yearbook compare", builder.ToString());
+                form.Show();
             }
         }
 
