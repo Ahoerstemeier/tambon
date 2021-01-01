@@ -5,21 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Xml;
 using System.Xml.Serialization;
 using MinimalJson;
 
 namespace De.AHoerstemeier.Tambon
 {
-    // http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType=1&year=56&rcode=1001
-    // {"aaData":[["00","ท้องถิ่นเขตพระนคร","27,279","29,405","56,684","19,257"],["10010100","แขวงพระบรมมหาราชวัง","2,695","1,921","4,616","1,304"],...
-    // http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?rcode=10&statType=1&year=56
-
-    // http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType=1&year=56&rcode=10
-    // {"aaData":[["00","กรุงเทพมหานคร","2,694,921","2,991,331","5,686,252","2,593,827"],["1001","ท้องถิ่นเขตพระนคร","27,279","29,405","56,684","19,257"],...
-    // http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?rcode=1001&statType=1&year=56
-
     public class PopulationDataDownloader
     {
         /// <summary>
@@ -87,6 +77,11 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         private Boolean _downloadMuban = false;
 
+        /// <summary>
+        /// Access to the whole geocode table.
+        /// </summary>
+        private IEnumerable<Entity> _allEntities;
+
         #endregion fields
 
         #region properties
@@ -143,6 +138,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 throw new ArgumentOutOfRangeException();
             }
+            _allEntities = GlobalData.CompleteGeocodeList().FlatList();
         }
 
         private PopulationDataDownloader()
@@ -424,14 +420,27 @@ namespace De.AHoerstemeier.Tambon
             foreach (JsonObject item in data)
             {
                 Entity entity = new Entity();
-                entity.geocode = Convert.ToUInt32(item.get("lsrcode").asString().Replace("\"", ""));
-                if (item.get("lstt") != null)
+                var baseGeocode= Convert.ToUInt32(item.get("lsrcode").asString().Replace("\"", "")); ;                
+                var mubanName = item.get("lsmmDesc").asString().Replace("\"", "").Trim();
+                var changwat = Convert.ToUInt32(item.get("lscc").asInt());
+                var amphoe = Convert.ToUInt32(item.get("lsaa").asInt());
+                var tambon = Convert.ToUInt32(item.get("lstt").asInt());
+                var muban = Convert.ToUInt32(item.get("lsmm").asInt());
+                if (tambon>0 )
                 {
-                    var tambon = Convert.ToUInt32(item.get("lstt").asInt());
-                    if (tambon > 0)
-                    {
-                        entity.geocode = entity.geocode * 100 + tambon;
-                    }
+                    // for tambon/muban, always need to start with amphoe, not with the thesaban rcode
+                    baseGeocode = changwat * 100 + amphoe;
+                }
+                if (!String.IsNullOrEmpty(mubanName) && muban == 0)
+                {
+                    // Mu 0 occurs in JSON. Using magic 99 instead, then the stripping of final 00s will not fail
+                    muban = 99;  
+                }
+                entity.geocode = (baseGeocode * 100 + tambon) * 100 + muban;
+                // normalize geocode by stripping final 00s
+                while (entity.geocode % 100 == 0)
+                {
+                    entity.geocode = entity.geocode / 100;
                 }
 
                 PopulationData population = CreateEmptyPopulationEntry();
@@ -441,14 +450,14 @@ namespace De.AHoerstemeier.Tambon
                 householdDataPoint.female = item.get("lssumtotFemale").asInt();
                 householdDataPoint.total = item.get("lssumtotPop").asInt();
                 householdDataPoint.households = item.get("lssumtotHouse").asInt();
+                // oddly, the website displays the value "lssumnotTermDate".
+                // seems that lssumnotTermDate + lssumtermDate = lssumtotHouse
                 population.data.Add(householdDataPoint);
                 if ((householdDataPoint.total > 0) && (householdDataPoint.households > 0))
                 {
                     // occasionally there are empty entries, e.g. for 3117 includes an empty 311102
                     result.Add(entity);
                 }
-
-
             }
             return result;
         }
