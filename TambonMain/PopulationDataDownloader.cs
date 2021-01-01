@@ -449,9 +449,10 @@ namespace De.AHoerstemeier.Tambon
                 householdDataPoint.male = item.get("lssumtotMale").asInt();
                 householdDataPoint.female = item.get("lssumtotFemale").asInt();
                 householdDataPoint.total = item.get("lssumtotPop").asInt();
-                householdDataPoint.households = item.get("lssumtotHouse").asInt();
-                // oddly, the website displays the value "lssumnotTermDate".
+                householdDataPoint.households = item.get("lssumnotTermDate").asInt();
+                // oddly, the website displays the value "lssumnotTermDate" and not lssumtotHouse.
                 // seems that lssumnotTermDate + lssumtermDate = lssumtotHouse
+                // older API did also return the value now in lssumnotTermDate, so take that value for compatibility 
                 population.data.Add(householdDataPoint);
                 if ((householdDataPoint.total > 0) && (householdDataPoint.households > 0))
                 {
