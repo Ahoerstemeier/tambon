@@ -60,6 +60,16 @@ namespace De.AHoerstemeier.Tambon
             MoveIn = 6
         }
 
+        /// <summary>
+        /// Translation table from the statistics type to the code used in the URLs.
+        /// </summary>
+        private Dictionary<DopaStatisticsType, String> _statisticTypeNames = new Dictionary<DopaStatisticsType, String>()
+        {
+            { DopaStatisticsType.Population, "statpop" },
+            { DopaStatisticsType.Birth, "statbirth" },
+
+        };
+
         #region fields
 
         /// <summary>
@@ -125,11 +135,11 @@ namespace De.AHoerstemeier.Tambon
             Year = year;
             _geocode = geocode;
             _yearShort = Year + 543 - 2500;
-            if ( (_yearShort < 0) | (_yearShort > 99) )
+            if ((_yearShort < 0) | (_yearShort > 99))
             {
                 throw new ArgumentOutOfRangeException();
             }
-            if ( (_geocode < 0) | (_geocode > 99) )
+            if ((_geocode < 0) | (_geocode > 99))
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -150,18 +160,10 @@ namespace De.AHoerstemeier.Tambon
         /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
         /// <para>{1} is expanded by the geocode (4 digits).</para>
         /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
+        /// <para>{3} is expanded by the province geocode.</para>
         /// </remarks>
-        private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType={2}&year={0}&rcode={1}";
-
-        /// <summary>
-        /// URL to download the population data of an Amphoe in JSON format.
-        /// </summary>
-        /// <remarks>
-        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
-        /// <para>{1} is expanded by the geocode (4 digits).</para>
-        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
-        /// </remarks>
-        private const String _urlDataAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatZone.php?statType={2}&year={0}&rcode={1}";
+        // private const String _urlShowAmphoe = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showZoneData.php?statType={2}&year={0}&rcode={1}";
+        private const String _urlShowAmphoe = "https://stat.bora.dopa.go.th/stat/statnew/statyear/#/TableTemplate4/Area/statpop?yymm={0}&&topic={2}&ccNo={2}&rcodeNo={1}";
 
         /// <summary>
         /// URL to show the population data of a province.
@@ -171,26 +173,8 @@ namespace De.AHoerstemeier.Tambon
         /// <para>{1} is expanded by the geocode (2 digits).</para>
         /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
         /// </remarks>
-        private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType={2}&year={0}&rcode={1}";
-
-        /// <summary>
-        /// URL to download the population data of a province in JSON format.
-        /// </summary>
-        /// <remarks>
-        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
-        /// <para>{1} is expanded by the geocode (2 digits).</para>
-        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
-        /// </remarks>
-        private const String _urlDataChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatDistrict.php?statType={2}&year={0}&rcode={1}";
-
-        /// <summary>
-        /// URL to download the population data of the country in JSON format.
-        /// </summary>
-        /// <remarks>
-        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
-        /// <para>{1} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
-        /// </remarks>
-        private const String _urlDataCountry = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatProvince.php?statType={1}&year={0}";
+        //private const String _urlShowChangwat = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showDistrictData.php?statType={2}&year={0}&rcode={1}";
+        private const String _urlShowChangwat = "https://stat.bora.dopa.go.th/stat/statnew/statyear/#/TableTemplate3/Area/statpop?yymm={0}&topic={2}&ccNo={1}";
 
         /// <summary>
         /// URL to show the population data of a tambon.
@@ -203,19 +187,9 @@ namespace De.AHoerstemeier.Tambon
         private const String _urlShowTambon = "http://stat.dopa.go.th/stat/statnew/statTDD/views/showVillageData.php?rcode={1}&statType={2}&year={0}";
 
         /// <summary>
-        /// URL to download the population data of a tambon.
-        /// </summary>
-        /// <remarks>
-        /// <para>{0} is expanded by the last two digits of the year in Buddhist era.</para>
-        /// <para>{1} is expanded by the geocode (8 digits, see <see cref="TambonGeocodeForDataRetrieval"/>).</para>
-        /// <para>{2} is expanded by the data type (see <see cref="DopaStatisticsType"/>).</para>
-        /// </remarks>
-        private const String _urlDataTambon = "http://stat.dopa.go.th/stat/statnew/statTDD/datasource/showStatVillage.php?rcode={1}&statType={2}&year={0}";
-
-        /// <summary>
         /// Maximum number of retries of a invalid JSon reply from the DOPA server.
         /// </summary>
-        private Int32 maxRetry = 256;
+        private Int32 maxRetry = 8;
 
         /// <summary>
         /// Translation dictionary from <see cref="DopaStatisticsType"/> to <see cref="PopulationChangeType"/>.
@@ -243,7 +217,7 @@ namespace De.AHoerstemeier.Tambon
         /// <param name="e">Event arguments.</param>
         private void OnProcessingFinished(EventArgs e)
         {
-            if ( ProcessingFinished != null )
+            if (ProcessingFinished != null)
             {
                 ProcessingFinished(this, e);
             }
@@ -264,7 +238,7 @@ namespace De.AHoerstemeier.Tambon
         {
             var _yearShort = (year + 543) % 100;
             String result = String.Empty;
-            switch ( language )
+            switch (language)
             {
                 case Language.English:
                     result = String.Format(CultureInfo.InvariantCulture,
@@ -304,7 +278,7 @@ namespace De.AHoerstemeier.Tambon
         public static PopulationData Load(String fromFile)
         {
             PopulationData result = null;
-            using ( var fileStream = new FileStream(fromFile, FileMode.Open, FileAccess.Read) )
+            using (var fileStream = new FileStream(fromFile, FileMode.Open, FileAccess.Read))
             {
                 result = XmlManager.XmlToEntity<PopulationData>(fileStream, new XmlSerializer(typeof(PopulationData)));
             }
@@ -319,7 +293,7 @@ namespace De.AHoerstemeier.Tambon
         public String XmlExportFileName()
         {
             String result = String.Empty;
-            if ( Data != null )
+            if (Data != null)
             {
                 String outputDirectory = Path.Combine(OutputDirectory, "DOPA");
                 Directory.CreateDirectory(outputDirectory);
@@ -348,25 +322,45 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="geocode">Geocode of the entity.</param>
         /// <param name="statisticsType">Statistics type.</param>
-        /// <returns>JSON object returned from website.</returns>
-        private JsonObject GetDataFromDopa(UInt32 geocode, DopaStatisticsType statisticsType)
+        /// <returns>JSON array returned from website.</returns>
+        private JsonArray GetDataFromDopa(UInt32 geocode, DopaStatisticsType statisticsType)
         {
-            JsonObject obj = null;
-            String url;
-            if ( geocode < 100 )
+            JsonArray obj = null;
+            String urlData = String.Empty;
+            switch (statisticsType)
             {
-                url = String.Format(CultureInfo.InvariantCulture, _urlDataChangwat, _yearShort, geocode, (Int32)statisticsType);
+                case DopaStatisticsType.Population:
+                    urlData = "https://stat.bora.dopa.go.th/stat/statnew/connectSAPI/stat_forward.php?API=/api/statpophouse/v1/statpop/list?action={4}&yymmBegin={0}12&yymmEnd={0}12&statType=0&statSubType=999&subType=99&cc={1}&rcode={2}&tt={3}&mm=0";
+                    break;
+                case DopaStatisticsType.Birth:
+                    urlData = "https://stat.bora.dopa.go.th/stat/statnew/connectSAPI/stat_forward.php?API=/api/stattranall/v1/statbirth/list?action=191&yymmBegin={0}12&yymmEnd={0}12&statType=0&statSubType=999&subType=99&cc={1}&rcode={2}&tt={3}&tt=0&mm=0";
+                    break;
+                case DopaStatisticsType.Death:
+                    urlData = "https://stat.bora.dopa.go.th/stat/statnew/connectSAPI/stat_forward.php?API=/api/stattranall/v1/statdeath/list?action=191&yymmBegin={0}12&yymmEnd={0}12&statType=0&statSubType=999&subType=99&cc={1}&rcode={2}&tt={3}&mm=0";
+                    break;
+                case DopaStatisticsType.MoveIn:
+                    urlData = "https://stat.bora.dopa.go.th/stat/statnew/connectSAPI/stat_forward.php?API=/api/stattranall/v1/statmovein/list?action=191&yymmBegin={0}12&yymmEnd={0}12&statType=1&statSubType=999&subType=99&cc={1}&rcode={2}&tt={3}&mm=0";
+                    break;
+                case DopaStatisticsType.MoveOut:
+                    urlData = "https://stat.bora.dopa.go.th/stat/statnew/connectSAPI/stat_forward.php?API=/api/stattranall/v1/statmoveout/list?action=191&yymmBegin={0}12&yymmEnd={0}12&statType=1&statSubType=999&subType=99&region=3&cc={1}&rcode=0&tt=0&mm=0";
+                    break;
             }
-            else if ( geocode < 10000 )
+
+            String url;
+            if (geocode < 100)
             {
-                url = String.Format(CultureInfo.InvariantCulture, _urlDataAmphoe, _yearShort, geocode, (Int32)statisticsType);
+                url = String.Format(CultureInfo.InvariantCulture, urlData, _yearShort, geocode, 0, 0, 193);
+            }
+            else if (geocode < 10000)
+            {
+                url = String.Format(CultureInfo.InvariantCulture, urlData, _yearShort, geocode / 100, geocode, 0, 194);
             }
             else
             {
-                url = String.Format(CultureInfo.InvariantCulture, _urlDataTambon, _yearShort, geocode, (Int32)statisticsType);
+                url = String.Format(CultureInfo.InvariantCulture, urlData, _yearShort, geocode / 10000, geocode / 100, geocode % 100, 195);
             }
             Int32 errorCount = 0;
-            while ( obj == null )
+            while (obj == null)
             {
                 try
                 {
@@ -375,17 +369,17 @@ namespace De.AHoerstemeier.Tambon
                     String response = StreamToString(inputStream);
 
                     JsonValue result = JsonValue.readFrom(response);
-                    if ( !result.isObject() )
+                    if (!result.isArray())
                     {
                         return null;
                     }
-                    obj = result.asObject();
+                    obj = result.asArray();
                 }
                 catch
                 {
                     errorCount++;
                 }
-                if ( errorCount > maxRetry )
+                if (errorCount > maxRetry)
                 {
                     throw new InvalidDataException(String.Format("Failed to get parseable json data for {0}", geocode));
                 }
@@ -400,7 +394,7 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>Content of stream as string.</returns>
         private static String StreamToString(Stream stream)
         {
-            using ( StreamReader reader = new StreamReader(stream, Encoding.UTF8) )
+            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
             {
                 return reader.ReadToEnd();
             }
@@ -424,51 +418,37 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         /// <param name="data">JSON data.</param>
         /// <returns>Entities with population data.</returns>
-        private IEnumerable<Entity> ParsePopulationJson(JsonObject data)
+        private IEnumerable<Entity> ParsePopulationJson(JsonArray data)
         {
             var result = new List<Entity>();
-            var actualData = data.get("aaData");
-            if ( actualData != null )
+            foreach (JsonObject item in data)
             {
-                var array = actualData.asArray();
-                foreach ( JsonArray item in array )
+                Entity entity = new Entity();
+                entity.geocode = Convert.ToUInt32(item.get("lsrcode").asString().Replace("\"", ""));
+                if (item.get("lstt") != null)
                 {
-                    var parsedData = new List<String>();
-                    foreach ( JsonValue dataPoint in item )
+                    var tambon = Convert.ToUInt32(item.get("lstt").asInt());
+                    if (tambon > 0)
                     {
-                        var strippedText = Regex.Replace(dataPoint.asString(), "<.*?>", string.Empty).Replace(",", String.Empty);
-                        if ( strippedText == "-" )
-                        {
-                            strippedText = "0";
-                        }
-                        parsedData.Add(strippedText);
-                    }
-                    var firstLine = parsedData.First();
-                    if ( !String.IsNullOrWhiteSpace(firstLine) && (firstLine != "00") )
-                    {
-                        Entity entity = new Entity();
-                        entity.ParseName(parsedData.ElementAt(1).Replace("ท้องถิ่น", String.Empty).Trim());
-                        entity.geocode = Convert.ToUInt32(firstLine, CultureInfo.InvariantCulture);
-                        while ( entity.geocode % 100 == 0 )
-                        {
-                            entity.geocode = entity.geocode / 100;
-                        }
-
-                        PopulationData population = CreateEmptyPopulationEntry();
-                        entity.population.Add(population);
-                        HouseholdDataPoint householdDataPoint = new HouseholdDataPoint();
-                        householdDataPoint.male = Convert.ToInt32(parsedData.ElementAt(2), CultureInfo.InvariantCulture);
-                        householdDataPoint.female = Convert.ToInt32(parsedData.ElementAt(3), CultureInfo.InvariantCulture);
-                        householdDataPoint.total = Convert.ToInt32(parsedData.ElementAt(4), CultureInfo.InvariantCulture);
-                        householdDataPoint.households = Convert.ToInt32(parsedData.ElementAt(5), CultureInfo.InvariantCulture);
-                        population.data.Add(householdDataPoint);
-                        if ( (householdDataPoint.total > 0) || (householdDataPoint.households > 0) )
-                        {
-                            // occasionally there are empty entries, e.g. for 3117 includes an empty 311102
-                            result.Add(entity);
-                        }
+                        entity.geocode = entity.geocode * 100 + tambon;
                     }
                 }
+
+                PopulationData population = CreateEmptyPopulationEntry();
+                entity.population.Add(population);
+                HouseholdDataPoint householdDataPoint = new HouseholdDataPoint();
+                householdDataPoint.male = item.get("lssumtotMale").asInt();
+                householdDataPoint.female = item.get("lssumtotFemale").asInt();
+                householdDataPoint.total = item.get("lssumtotPop").asInt();
+                householdDataPoint.households = item.get("lssumtotHouse").asInt();
+                population.data.Add(householdDataPoint);
+                if ((householdDataPoint.total > 0) && (householdDataPoint.households > 0))
+                {
+                    // occasionally there are empty entries, e.g. for 3117 includes an empty 311102
+                    result.Add(entity);
+                }
+
+
             }
             return result;
         }
@@ -492,13 +472,13 @@ namespace De.AHoerstemeier.Tambon
             Data = new Entity();
             var populationJsonData = GetDataFromDopa(_geocode, DopaStatisticsType.Population);
             Data.entity.AddRange(ParsePopulationJson(populationJsonData));
-            foreach ( var entity in Data.entity )
+            foreach (var entity in Data.entity)
             {
                 var subPopulationData = GetDataFromDopa(entity.geocode, DopaStatisticsType.Population);
                 entity.entity.AddRange(ParsePopulationJson(subPopulationData));
-                if ( _geocode > 10 && _downloadMuban )  // Bangkok has no Muban
+                if (_geocode > 10 && _downloadMuban)  // Bangkok has no Muban
                 {
-                    foreach ( var tambonEntity in entity.entity )
+                    foreach (var tambonEntity in entity.entity)
                     {
                         var mubanPopulationData = GetDataFromDopa(TambonGeocodeForDataRetrieval(tambonEntity.geocode, entity.geocode), DopaStatisticsType.Population);
                         tambonEntity.entity.AddRange(ParsePopulationJson(mubanPopulationData));
@@ -519,60 +499,70 @@ namespace De.AHoerstemeier.Tambon
         private void AddOtherData(PopulationData populationData, UInt32 geocode, DopaStatisticsType dataType)
         {
             var jsonData = GetDataFromDopa(geocode, dataType);
-            if ( populationData.register == null )
+            if (populationData.register == null)
             {
                 populationData.register = new RegisterData();
             }
 
-            PopulationChangeEntry otherData = ParseAdditionalJson(jsonData);
+            PopulationChangeEntry otherData = null;
+            switch (dataType)
+            {
+                case DopaStatisticsType.Birth:
+                    otherData = ParseAdditionalJsonBirth(jsonData);
+                    break;
+                case DopaStatisticsType.Death:
+                    otherData = ParseAdditionalJson(jsonData);
+                    break;
+                case DopaStatisticsType.MoveIn:
+                case DopaStatisticsType.MoveOut:
+                    otherData = ParseAdditionalJson(jsonData);
+                    break;
+            }
             otherData.type = _populationChangeType[dataType];
             populationData.register.change.Add(otherData);
         }
 
-        private PopulationChangeEntry ParseAdditionalJson(JsonObject data)
+        private PopulationChangeEntry ParseAdditionalJsonBirth(JsonArray data)
         {
             var result = new PopulationChangeEntry();
 
-            var actualData = data.get("aaData");
-            if ( actualData != null )
+            foreach (JsonObject item in data)
             {
-                var array = actualData.asArray();
-                foreach ( JsonArray item in array )
-                {
-                    var parsedData = new List<String>();
-                    foreach ( JsonValue dataPoint in item )
-                    {
-                        var strippedText = Regex.Replace(dataPoint.asString(), "<.*?>", string.Empty).Replace(",", String.Empty);
-                        if ( strippedText == "-" )
-                        {
-                            strippedText = "0";
-                        }
-                        parsedData.Add(strippedText);
-                    }
-                    var firstLine = parsedData.First();
-                    if ( firstLine == "00" )
-                    {
-                        result.male = Convert.ToInt32(parsedData.ElementAt(2), CultureInfo.InvariantCulture);
-                        result.female = Convert.ToInt32(parsedData.ElementAt(3), CultureInfo.InvariantCulture);
-                        result.total = Convert.ToInt32(parsedData.ElementAt(4), CultureInfo.InvariantCulture);
-                    }
-                }
+                result.male += item.get("lssumtotalBoy").asInt();
+                result.female += item.get("lssumtotalGirl").asInt();
+                result.total += item.get("lssumtotalAll").asInt();
             }
+
             return result;
         }
+
+        private PopulationChangeEntry ParseAdditionalJson(JsonArray data)
+        {
+            var result = new PopulationChangeEntry();
+
+            foreach (JsonObject item in data)
+            {
+                result.male += item.get("lssumtotMale").asInt();
+                result.female += item.get("lssumtotFemale").asInt();
+                result.total += item.get("lssumtotTot").asInt();
+            }
+
+            return result;
+        }
+
 
         /// <summary>
         /// Synchronizes the calculated data with the global geocode list.
         /// </summary>
         private void GetGeocodes()
         {
-            if ( Data != null )
+            if (Data != null)
             {
                 var geocodes = GlobalData.GetGeocodeList(Data.geocode);
                 // _invalidGeocodes = geocodes.InvalidGeocodeEntries();
-                foreach ( var amphoe in geocodes.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+                foreach (var amphoe in geocodes.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)))
                 {
-                    if ( !Data.entity.Any(x => GeocodeHelper.IsSameGeocode(x.geocode, amphoe.geocode, false)) )
+                    if (!Data.entity.Any(x => GeocodeHelper.IsSameGeocode(x.geocode, amphoe.geocode, false)))
                     {
                         // make sure all Amphoe will  be in the result list, in case of a Amphoe which has only Thesaban it will be missing in the DOPA data
                         var newAmphoe = new Entity();
@@ -591,7 +581,7 @@ namespace De.AHoerstemeier.Tambon
         public void SaveXml()
         {
             var data = XmlManager.EntityToXml<Entity>(Data);
-            using ( var fileStream = new StreamWriter(XmlExportFileName()) )
+            using (var fileStream = new StreamWriter(XmlExportFileName()))
             {
                 fileStream.WriteLine(data);
             }
@@ -599,7 +589,7 @@ namespace De.AHoerstemeier.Tambon
 
         private void ReOrderThesaban()
         {
-            if ( Data != null )
+            if (Data != null)
             {
                 Data.ReorderThesaban();
             }
@@ -617,7 +607,7 @@ namespace De.AHoerstemeier.Tambon
             Data.type = EntityType.Country;
             Data.CopyBasicDataFrom(GlobalData.CountryEntity);
 
-            foreach ( var entry in GlobalData.Provinces )
+            foreach (var entry in GlobalData.Provinces)
             {
                 var tempCalculator = new PopulationDataDownloader(Year, entry.geocode);
                 tempCalculator.Process();
@@ -635,9 +625,9 @@ namespace De.AHoerstemeier.Tambon
             ReOrderThesaban();
             FixupWronglyPlacedAmphoe();
             var toRemove = new List<Entity>();
-            foreach ( var entity in Data.FlatList() )
+            foreach (var entity in Data.FlatList())
             {
-                if ( entity.population.Any() )
+                if (entity.population.Any())
                 {
                     entity.population.First().CalculateTotal();
                 }
@@ -653,27 +643,27 @@ namespace De.AHoerstemeier.Tambon
         private void FixupWronglyPlacedAmphoe()
         {
             var invalidTambon = new List<Entity>();
-            foreach ( var amphoe in Data.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)) )
+            foreach (var amphoe in Data.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe)))
             {
-                foreach ( var tambon in amphoe.entity.Where(x => !GeocodeHelper.IsBaseGeocode(amphoe.geocode, x.geocode)).ToList() )
+                foreach (var tambon in amphoe.entity.Where(x => !GeocodeHelper.IsBaseGeocode(amphoe.geocode, x.geocode)).ToList())
                 {
                     invalidTambon.Add(tambon);
                     amphoe.entity.Remove(tambon);
                 }
             }
-            foreach ( var tambon in invalidTambon )
+            foreach (var tambon in invalidTambon)
             {
                 var mainTambon = Data.FlatList().FirstOrDefault(x => GeocodeHelper.IsSameGeocode(x.geocode, tambon.geocode, false));
-                if ( mainTambon != null )
+                if (mainTambon != null)
                 {
-                    foreach ( var dataPoint in tambon.population.First().data )
+                    foreach (var dataPoint in tambon.population.First().data)
                     {
                         mainTambon.population.First().AddDataPoint(dataPoint);
                     }
                 }
             }
             var emptyAmphoe = Data.entity.Where(x => x.type.IsCompatibleEntityType(EntityType.Amphoe) && !x.entity.Any()).ToList();
-            foreach ( var toRemove in emptyAmphoe )
+            foreach (var toRemove in emptyAmphoe)
             {
                 Data.entity.Remove(toRemove);
             }
@@ -684,7 +674,7 @@ namespace De.AHoerstemeier.Tambon
         /// </summary>
         public void Process()
         {
-            if ( _geocode == 0 )
+            if (_geocode == 0)
             {
                 ProcessAllProvinces();
             }
