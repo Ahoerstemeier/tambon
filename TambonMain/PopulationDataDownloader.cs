@@ -62,7 +62,7 @@ namespace De.AHoerstemeier.Tambon
             { DopaStatisticsType.Birth, "statbirth" },
             { DopaStatisticsType.Death, "statdeath" },
             { DopaStatisticsType.MoveIn, "statmovein" },
-            { DopaStatisticsType.MoveIn, "statmoveout" },
+            { DopaStatisticsType.MoveOut, "statmoveout" },
          };
 
         #region fields
