@@ -103,7 +103,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// List of municipalities within the entity. Only used for <see cref="EntityType.Changwat"/>.
         /// </summary>
-        private ICollection<Entity> _thesaban = new List<Entity>();
+        private readonly ICollection<Entity> _thesaban = new List<Entity>();
 
         /// <summary>
         /// List of previous geocodes. <c>null</c> if not yet calculated.
@@ -226,11 +226,13 @@ namespace De.AHoerstemeier.Tambon
                     var amphoePopulation = mainAmphoe.population.FirstOrDefault();
                     if ( amphoePopulation == null )
                     {
-                        amphoePopulation = new PopulationData();
-                        amphoePopulation.referencedate = population.referencedate;
-                        amphoePopulation.referencedateSpecified = population.referencedateSpecified;
-                        amphoePopulation.source = population.source;
-                        amphoePopulation.year = population.year;
+                        amphoePopulation = new PopulationData
+                        {
+                            referencedate = population.referencedate,
+                            referencedateSpecified = population.referencedateSpecified,
+                            source = population.source,
+                            year = population.year
+                        };
                         mainAmphoe.population.Add(amphoePopulation);
                     }
                     amphoePopulation.AddDataPoint(dataPoint);
@@ -372,8 +374,7 @@ namespace De.AHoerstemeier.Tambon
                 var result = new List<String>();
                 foreach ( var item in history.Items )
                 {
-                    var itemRename = item as HistoryRename;
-                    if ( itemRename != null )
+                    if (item is HistoryRename itemRename)
                     {
                         result.Add(itemRename.oldname);
                     }
@@ -408,8 +409,7 @@ namespace De.AHoerstemeier.Tambon
 
         private Entity FindByNameAndType(String findName, EntityType findType, Boolean allowOldNames)
         {
-            Entity result = null;
-            result = FindByNameAndType(findName, findType, allowOldNames, false, 0);
+            var result = FindByNameAndType(findName, findType, allowOldNames, false, 0);
             if ( result == null )
             {
                 result = FindByNameAndType(findName, findType, allowOldNames, true, 0);
@@ -579,8 +579,10 @@ namespace De.AHoerstemeier.Tambon
         /// <returns>All sub-entities.</returns>
         public IEnumerable<Entity> FlatList()
         {
-            var result = new List<Entity>();
-            result.Add(this);
+            var result = new List<Entity>
+            {
+                this
+            };
             foreach ( var subEntity in entity )
             {
                 result.AddRange(subEntity.FlatList());
@@ -588,7 +590,7 @@ namespace De.AHoerstemeier.Tambon
             return result;
         }
 
-        private IEnumerable<OfficeType> _officesWithElectedOfficials = new List<OfficeType>() { OfficeType.MunicipalityOffice, OfficeType.PAOOffice, OfficeType.TAOOffice };
+        private readonly IEnumerable<OfficeType> _officesWithElectedOfficials = new List<OfficeType>() { OfficeType.MunicipalityOffice, OfficeType.PAOOffice, OfficeType.TAOOffice };
 
         private IEnumerable<EntityTermEnd> OfficialElectionsPending()
         {
@@ -638,8 +640,7 @@ namespace De.AHoerstemeier.Tambon
                     if ( term != null )
                     {
                         var name = String.Empty;
-                        var officialTerm = term as OfficialEntry;
-                        if ( officialTerm != null )
+                        if (term is OfficialEntry officialTerm)
                         {
                             name = officialTerm.name;
                         }
@@ -1117,9 +1118,11 @@ namespace De.AHoerstemeier.Tambon
                 var office = this.office.SingleOrDefault(x => x.type == OfficeType.TAOOffice || x.type == OfficeType.MunicipalityOffice || x.type == OfficeType.PAOOffice);
                 if ( office != null )
                 {
-                    result = new Entity();
-                    result.name = this.name;
-                    result.english = this.english;
+                    result = new Entity
+                    {
+                        name = this.name,
+                        english = this.english
+                    };
                     if ( this.type == EntityType.Tambon )
                     {
                         result.geocode = this.geocode + 50;  // see http://tambon.blogspot.com/2009/07/geocodes-for-municipalities-my-proposal.html
@@ -1158,19 +1161,16 @@ namespace De.AHoerstemeier.Tambon
                     // history has latest change at beginning
                     foreach ( var history in office.history.Items.Where(x => x.status == ChangeStatus.Done || x.status == ChangeStatus.Gazette).Reverse() )
                     {
-                        var rename = history as HistoryRename;
-                        if ( rename != null )
+                        if (history is HistoryRename rename)
                         {
                             result.name = rename.name;
                             result.english = rename.english;
                         }
-                        var status = history as HistoryStatus;
-                        if ( status != null )
+                        if (history is HistoryStatus status)
                         {
                             result.type = status.@new;
                         }
-                        var create = history as HistoryCreate;
-                        if ( create != null )
+                        if (history is HistoryCreate create)
                         {
                             result.type = create.type;
                         }
@@ -1405,13 +1405,17 @@ namespace De.AHoerstemeier.Tambon
                     var localGovernment = localGovernments.FirstOrDefault(x => populationDataPoint.geocode.Contains(x.geocode));
                     if ( localGovernment != null && !localGovernment.population.Any(x => x.year == sourcePopulationData.year && x.source == sourcePopulationData.source) )
                     {
-                        var populationData = new PopulationData();
-                        populationData.year = sourcePopulationData.year;
-                        populationData.referencedate = sourcePopulationData.referencedate;
-                        populationData.referencedateSpecified = sourcePopulationData.referencedateSpecified;
-                        populationData.source = sourcePopulationData.source;
-                        var newDataPoint = new HouseholdDataPoint(populationDataPoint);
-                        newDataPoint.type = PopulationDataType.total;
+                        var newDataPoint = new HouseholdDataPoint(populationDataPoint)
+                        {
+                            type = PopulationDataType.total
+                        };
+                        var populationData = new PopulationData
+                        {
+                            year = sourcePopulationData.year,
+                            referencedate = sourcePopulationData.referencedate,
+                            referencedateSpecified = sourcePopulationData.referencedateSpecified,
+                            source = sourcePopulationData.source
+                        };
                         populationData.data.Add(newDataPoint);
                         populationData.reference.AddRange(sourcePopulationData.reference);
                         localGovernment.population.Add(populationData);

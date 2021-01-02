@@ -602,8 +602,10 @@ namespace De.AHoerstemeier.Tambon.UI
                             }
                             if ( entity != null )
                             {
-                                var entityCount = new EntityCount();
-                                entityCount.year = gazetteEntry.publication.Year.ToString(CultureInfo.InvariantCulture);
+                                var entityCount = new EntityCount
+                                {
+                                    year = gazetteEntry.publication.Year.ToString(CultureInfo.InvariantCulture)
+                                };
                                 entityCount.reference.Add(new GazetteRelated(gazetteEntry));
                                 entityCount.entry.Add(new EntityCountType()
                                 {
@@ -852,8 +854,10 @@ namespace De.AHoerstemeier.Tambon.UI
 
             var romanizator = new Romanization();
             romanizator.Initialize(allEntities);
-            var form = new MubanHelperForm();
-            form.Romanizator = romanizator;
+            var form = new MubanHelperForm
+            {
+                Romanizator = romanizator
+            };
             form.Show();
         }
 
@@ -1039,11 +1043,9 @@ namespace De.AHoerstemeier.Tambon.UI
                 if ( (nextNayokTerm != null) && (nextNayokTerm.begin.Year == entry.CouncilTerm.end.Year) )
                 {
                     nextNayokElectionEarly.Add(new EntityTermEnd(entry.Entity, nextCouncilTerm, nextNayokTerm));
-                    var nextOfficial = nextNayokTerm as OfficialEntry;
-                    var previousOfficial = entry.OfficialTerm as OfficialEntry;
-                    if ( (nextOfficial != null) && (previousOfficial != null) )
+                    if ((nextNayokTerm is OfficialEntry nextOfficial) && (entry.OfficialTerm is OfficialEntry previousOfficial))
                     {
-                        if ( nextOfficial.name == previousOfficial.name )
+                        if (nextOfficial.name == previousOfficial.name)
                         {
                             nayokElectedAgainEarly.Add(entry.Entity);
                         }
@@ -1057,11 +1059,9 @@ namespace De.AHoerstemeier.Tambon.UI
             foreach ( var entry in nayokTermEndNormal )
             {
                 var nextCouncilTerm = entry.Entity.office.First().council.CouncilTerms.First(y => y.begin > entry.CouncilTerm.end && (y.begin - entry.CouncilTerm.end).Days < 60);
-                var nextOfficial = entry.Entity.office.First().officials.OfficialTerms.LastOrDefault(y => (y.begin == nextCouncilTerm.begin)) as OfficialEntry;
-                var previousOfficial = entry.OfficialTerm as OfficialEntry;
-                if ( (nextOfficial != null) && (previousOfficial != null) )
+                if ((entry.Entity.office.First().officials.OfficialTerms.LastOrDefault(y => (y.begin == nextCouncilTerm.begin)) is OfficialEntry nextOfficial) && (entry.OfficialTerm is OfficialEntry previousOfficial))
                 {
-                    if ( nextOfficial.name == previousOfficial.name )
+                    if (nextOfficial.name == previousOfficial.name)
                     {
                         nayokElectedAgainNormal.Add(entry.Entity);
                     }
@@ -1117,10 +1117,12 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnShowEntityData_Click(Object sender, EventArgs e)
         {
-            var formEntityBrowser = new EntityBrowserForm();
-            formEntityBrowser.StartChangwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode;
-            formEntityBrowser.PopulationReferenceYear = Convert.ToInt16(edtYear.Value);
-            formEntityBrowser.PopulationDataSource = PopulationDataSourceType.DOPA;
+            var formEntityBrowser = new EntityBrowserForm
+            {
+                StartChangwatGeocode = (cbxChangwat.SelectedItem as Entity).geocode,
+                PopulationReferenceYear = Convert.ToInt16(edtYear.Value),
+                PopulationDataSource = PopulationDataSourceType.DOPA
+            };
             Boolean checkWikiData = false;
             try
             {
@@ -1283,8 +1285,7 @@ namespace De.AHoerstemeier.Tambon.UI
                     if ( populationData != null )
                     {
                         population = populationData.TotalPopulation.total;
-                        var householdData = populationData.TotalPopulation as HouseholdDataPoint;
-                        if ( householdData != null )
+                        if (populationData.TotalPopulation is HouseholdDataPoint householdData)
                         {
                             households = householdData.households;
                         }
@@ -1356,12 +1357,16 @@ namespace De.AHoerstemeier.Tambon.UI
                     {
                         String line = reader.ReadLine();
                         var fields = line.Split('|');
-                        var populationData = new PopulationData();
-                        populationData.year = year.ToString(CultureInfo.InvariantCulture);
-                        populationData.source = PopulationDataSourceType.DOPA;
-                        populationData.referencedate = new DateTime(year, 12, 31);
-                        var dataEntry = new HouseholdDataPoint();
-                        dataEntry.type = PopulationDataType.total;
+                        var populationData = new PopulationData
+                        {
+                            year = year.ToString(CultureInfo.InvariantCulture),
+                            source = PopulationDataSourceType.DOPA,
+                            referencedate = new DateTime(year, 12, 31)
+                        };
+                        var dataEntry = new HouseholdDataPoint
+                        {
+                            type = PopulationDataType.total
+                        };
                         var ageTable = new AgeTable();
                         dataEntry.agetable = ageTable;
                         populationData.data.Add(dataEntry);
@@ -1369,8 +1374,10 @@ namespace De.AHoerstemeier.Tambon.UI
 
                         for ( UInt32 age = 0 ; age <= 101 ; age++ )
                         {
-                            var ageEntry = new AgeTableEntry();
-                            ageEntry.begin = age;
+                            var ageEntry = new AgeTableEntry
+                            {
+                                begin = age
+                            };
                             if ( age > 100 )
                             {
                                 ageEntry.end = 120;
@@ -1384,22 +1391,30 @@ namespace De.AHoerstemeier.Tambon.UI
                             ageEntry.total = ageEntry.male + ageEntry.female;
                             ageTable.age.Add(ageEntry);
                         }
-                        ageTable.unknown = new PopulationDataPoint();
-                        ageTable.unknown.male = Convert.ToInt32(fields[205]);
-                        ageTable.unknown.female = Convert.ToInt32(fields[206]);
-                        ageTable.unknown.total = Convert.ToInt32(fields[207]);
-                        dataEntry.houseregister = new PopulationDataPoint();
-                        dataEntry.houseregister.male = Convert.ToInt32(fields[208]);
-                        dataEntry.houseregister.female = Convert.ToInt32(fields[209]);
-                        dataEntry.houseregister.total = Convert.ToInt32(fields[210]);
-                        dataEntry.foreigner = new PopulationDataPoint();
-                        dataEntry.foreigner.male = Convert.ToInt32(fields[211]);
-                        dataEntry.foreigner.female = Convert.ToInt32(fields[212]);
-                        dataEntry.foreigner.total = Convert.ToInt32(fields[213]);
-                        dataEntry.moving = new PopulationDataPoint();
-                        dataEntry.moving.male = Convert.ToInt32(fields[214]);
-                        dataEntry.moving.female = Convert.ToInt32(fields[215]);
-                        dataEntry.moving.total = Convert.ToInt32(fields[216]);
+                        ageTable.unknown = new PopulationDataPoint
+                        {
+                            male = Convert.ToInt32(fields[205]),
+                            female = Convert.ToInt32(fields[206]),
+                            total = Convert.ToInt32(fields[207])
+                        };
+                        dataEntry.houseregister = new PopulationDataPoint
+                        {
+                            male = Convert.ToInt32(fields[208]),
+                            female = Convert.ToInt32(fields[209]),
+                            total = Convert.ToInt32(fields[210])
+                        };
+                        dataEntry.foreigner = new PopulationDataPoint
+                        {
+                            male = Convert.ToInt32(fields[211]),
+                            female = Convert.ToInt32(fields[212]),
+                            total = Convert.ToInt32(fields[213])
+                        };
+                        dataEntry.moving = new PopulationDataPoint
+                        {
+                            male = Convert.ToInt32(fields[214]),
+                            female = Convert.ToInt32(fields[215]),
+                            total = Convert.ToInt32(fields[216])
+                        };
                         dataEntry.male = Convert.ToInt32(fields[217]);
                         dataEntry.female = Convert.ToInt32(fields[218]);
                         dataEntry.total = Convert.ToInt32(fields[219]);
@@ -1458,9 +1473,11 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnShowPopulation_Click(Object sender, EventArgs e)
         {
-            var formPopulationByEntityTypeViewer = new PopulationByEntityTypeViewer();
-            formPopulationByEntityTypeViewer.PopulationReferenceYear = Convert.ToInt16(edtYear.Value);
-            formPopulationByEntityTypeViewer.PopulationDataSource = PopulationDataSourceType.DOPA;
+            var formPopulationByEntityTypeViewer = new PopulationByEntityTypeViewer
+            {
+                PopulationReferenceYear = Convert.ToInt16(edtYear.Value),
+                PopulationDataSource = PopulationDataSourceType.DOPA
+            };
             formPopulationByEntityTypeViewer.Show();
         }
 
@@ -1496,9 +1513,11 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btnYearbookCompare_Click(Object sender, EventArgs e)
         {
-            var dialog = new OpenFileDialog();
-            dialog.InitialDirectory = Path.Combine(GlobalData.BaseXMLDirectory, "EntityLists");
-            dialog.Multiselect = true;
+            var dialog = new OpenFileDialog
+            {
+                InitialDirectory = Path.Combine(GlobalData.BaseXMLDirectory, "EntityLists"),
+                Multiselect = true
+            };
             dialog.ShowDialog();
             if ( dialog.FileNames.Count() == 2 )
             {

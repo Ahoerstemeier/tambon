@@ -17,7 +17,7 @@ namespace De.AHoerstemeier.Tambon.UI
     {
         #region fields
 
-        private List<Entity> _localGovernments = new List<Entity>();
+        private readonly List<Entity> _localGovernments = new List<Entity>();
         private Entity _baseEntity;
         private List<Entity> _allEntities;
         private Dictionary<UInt32, HistoryList> _creationHistories;
@@ -189,8 +189,10 @@ namespace De.AHoerstemeier.Tambon.UI
             TreeNode retval = null;
             if ( data != null )
             {
-                retval = new TreeNode(data.english);
-                retval.Tag = data;
+                retval = new TreeNode(data.english)
+                {
+                    Tag = data
+                };
                 if ( !data.type.IsThirdLevelAdministrativeUnit() )  // No Muban in Treeview
                 {
                     foreach ( Entity entity in data.entity )
@@ -764,8 +766,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 result += String.Format("Most common Muban number: {0}", counter.MostCommonValue) + Environment.NewLine;
                 result += String.Format("Median Muban number: {0:0.0}", counter.MedianValue) + Environment.NewLine;
-                List<UInt32> tambonWithNoMuban = null;
-                if ( counter.Data.TryGetValue(0, out tambonWithNoMuban) )
+                if (counter.Data.TryGetValue(0, out List<UInt32> tambonWithNoMuban))
                 {
                     result += String.Format("Tambon without Muban: {0}", tambonWithNoMuban.Count) + Environment.NewLine;
                 }
@@ -932,8 +933,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var result = String.Empty;
             foreach ( var keyvaluepair in counted )
             {
-                Int32 noLocationCount = 0;
-                if ( noLocation.TryGetValue(keyvaluepair.Key, out noLocationCount) )
+                if (noLocation.TryGetValue(keyvaluepair.Key, out Int32 noLocationCount))
                 {
                     result += String.Format("{0}: {1} ({2} without location)", keyvaluepair.Key, keyvaluepair.Value, noLocationCount) + Environment.NewLine;
                 }
@@ -976,15 +976,14 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void AddCreationDateToItems(Entity entity, Entity subEntity, ListViewItem item)
         {
-            var creationHistory = subEntity.history.Items.FirstOrDefault(x => x is HistoryCreate) as HistoryCreate;
-            if ( creationHistory != null )
+            if (subEntity.history.Items.FirstOrDefault(x => x is HistoryCreate) is HistoryCreate creationHistory)
             {
                 item.SubItems.Add(creationHistory.effective.ToString("yyyy-MM-dd", CultureInfo.CurrentUICulture));
             }
             else
             {
                 creationHistory = GazetteCreationHistory(subEntity);
-                if ( creationHistory != null )
+                if (creationHistory != null)
                 {
                     item.SubItems.Add("(" + creationHistory.effective.ToString("yyyy-MM-dd", CultureInfo.CurrentUICulture) + ")");
                 }
@@ -1133,10 +1132,12 @@ namespace De.AHoerstemeier.Tambon.UI
             var entity = (Entity)(selectedNode.Tag);
             if ( entity.type.IsCompatibleEntityType(EntityType.Amphoe) )
             {
-                var exporter = new WikipediaExporter(_baseEntity, _localGovernments);
-                exporter.CheckWikiData = CheckWikiData;
-                exporter.PopulationReferenceYear = PopulationReferenceYear;
-                exporter.PopulationDataSource = PopulationDataSource;
+                var exporter = new WikipediaExporter(_baseEntity, _localGovernments)
+                {
+                    CheckWikiData = CheckWikiData,
+                    PopulationReferenceYear = PopulationReferenceYear,
+                    PopulationDataSource = PopulationDataSource
+                };
                 var text = exporter.AmphoeToWikipedia(entity, language);
 
                 CopyToClipboard(text);
@@ -1149,10 +1150,12 @@ namespace De.AHoerstemeier.Tambon.UI
             var entity = (Entity)(selectedNode.Tag);
             if ( entity.type.IsCompatibleEntityType(EntityType.Tambon) )
             {
-                var exporter = new WikipediaExporter(_baseEntity, _localGovernments);
-                exporter.CheckWikiData = CheckWikiData;
-                exporter.PopulationReferenceYear = PopulationReferenceYear;
-                exporter.PopulationDataSource = PopulationDataSource;
+                var exporter = new WikipediaExporter(_baseEntity, _localGovernments)
+                {
+                    CheckWikiData = CheckWikiData,
+                    PopulationReferenceYear = PopulationReferenceYear,
+                    PopulationDataSource = PopulationDataSource
+                };
                 var text = exporter.TambonArticle(entity, Language.English);
 
                 CopyToClipboard(text);
@@ -1249,8 +1252,7 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 foreach ( ListViewItem item in listviewLocalAdministration.SelectedItems )
                 {
-                    var entity = item.Tag as Entity;
-                    if ( entity != null )
+                    if (item.Tag is Entity entity)
                     {
                         hasWebId = entity.office.Any(x => x.webidSpecified);
                     }
@@ -1272,11 +1274,10 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 foreach ( ListViewItem item in listview.SelectedItems )
                 {
-                    var entity = item.Tag as Entity;
-                    if ( entity != null )
+                    if (item.Tag is Entity entity)
                     {
                         history = _creationHistories.Keys.Contains(entity.geocode);
-                        foreach ( var oldGeocode in entity.OldGeocodes )
+                        foreach (var oldGeocode in entity.OldGeocodes)
                         {
                             history |= _creationHistories.Keys.Contains(oldGeocode);
                         }
@@ -1300,11 +1301,10 @@ namespace De.AHoerstemeier.Tambon.UI
             {
                 foreach ( ListViewItem item in listView.SelectedItems )
                 {
-                    var entity = item.Tag as Entity;
-                    if ( entity != null )
+                    if (item.Tag is Entity entity)
                     {
                         var office = entity.office.FirstOrDefault(x => x.webidSpecified);
-                        if ( office != null )
+                        if (office != null)
                         {
                             webId = office.webid;
                         }

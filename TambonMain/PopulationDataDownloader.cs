@@ -611,7 +611,7 @@ namespace De.AHoerstemeier.Tambon
             Data.CalculatePopulationFromSubEntities(Year, PopulationDataSourceType.DOPA);
         }
 
-        private void ProcessProvince(UInt32 geocode)
+        private void ProcessProvince()
         {
             GetProvinceData();
             // TODO: Special handling of Mu 0 (หมู่ที่ 0) entries
@@ -675,7 +675,7 @@ namespace De.AHoerstemeier.Tambon
             }
             else
             {
-                ProcessProvince(_geocode);
+                ProcessProvince();
             }
             Data.SortByGeocodeRecursively();
             OnProcessingFinished(new EventArgs());

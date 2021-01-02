@@ -40,11 +40,17 @@ namespace De.AHoerstemeier.Tambon
                 Provinces = provinces;
                 geocodes.entity.Clear();
                 CountryEntity = geocodes;
-                CountryEntity.wiki = new WikiLocation();
-                CountryEntity.wiki.wikidata = WikiLocation.WikiDataItems[EntityType.Country];
+                CountryEntity.wiki = new WikiLocation
+                {
+                    wikidata = WikiLocation.WikiDataItems[EntityType.Country]
+                };
             }
         }
 
+        /// <summary>
+        /// Gets the entity for the whole country.
+        /// </summary>
+        /// <value>The country entity.</value>
         public static Entity CountryEntity
         {
             get;
@@ -62,14 +68,17 @@ namespace De.AHoerstemeier.Tambon
             }
         }
 
-        private static GazetteList _allGazetteAnnouncements = new GazetteList();
+        /// <summary>
+        /// Cache to all gazette announcements.
+        /// </summary>
+        private static readonly GazetteList _allGazetteAnnouncements = new GazetteList();
 
         /// <summary>
         /// List of all provinces, without any of the sub-entities.
         /// </summary>
         public static IEnumerable<Entity> Provinces;
 
-        static private Dictionary<UInt32, Entity> _geocodeCache = new Dictionary<UInt32, Entity>();
+        private static readonly Dictionary<UInt32, Entity> _geocodeCache = new Dictionary<UInt32, Entity>();
 
         /// <summary>
         /// Returns the tree of administrative subdivisions for a given province.
@@ -257,12 +266,11 @@ namespace De.AHoerstemeier.Tambon
             var dataPoints = flat.Where(x => x.population.Any()).ToList();
             foreach ( var dataPoint in dataPoints )
             {
-                Entity target;
-                if ( allFlat.TryGetValue(dataPoint.geocode, out target) )
+                if (allFlat.TryGetValue(dataPoint.geocode, out Entity target))
                 {
-                    foreach ( var populationEntry in dataPoint.population )
+                    foreach (var populationEntry in dataPoint.population)
                     {
-                        if ( !target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate) )
+                        if (!target.population.Any(x => x.source == populationEntry.source && x.referencedate == populationEntry.referencedate))
                         {
                             target.population.Add(populationEntry);
                         }
