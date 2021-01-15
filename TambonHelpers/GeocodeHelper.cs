@@ -32,7 +32,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 geocodeToCheck = geocodeToCheck / 100;
             }
-            Boolean result = false;
+            Boolean result;
             if ( includeSubEntities )
             {
                 result = IsBaseGeocode(geocodeToFind, geocodeToCheck);
@@ -53,7 +53,7 @@ namespace De.AHoerstemeier.Tambon
         /// <returns><c>true</c>c> if code is under base code, or base code is zero; <c>false</c> otherwise.</returns>
         public static Boolean IsBaseGeocode(UInt32 baseGeocode, UInt32 geocodeToCheck)
         {
-            Boolean result = false;
+            Boolean result;
             if ( baseGeocode == 0 )
             {
                 result = true;

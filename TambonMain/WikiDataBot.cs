@@ -163,11 +163,14 @@ namespace De.AHoerstemeier.Tambon
             _availableTasks.Add(new WikiDataTaskInfo("Set official website", SetOfficialWebsite));
             _availableTasks.Add(new WikiDataTaskInfo("Set WOEID reference", SetWoeid));
             _availableTasks.Add(new WikiDataTaskInfo("Set HASC reference", SetHASC));
+            _availableTasks.Add(new WikiDataTaskInfo("Set GADM reference", SetGadm));
             _availableTasks.Add(new WikiDataTaskInfo("Set geonames reference", SetGeonames));
             _availableTasks.Add(new WikiDataTaskInfo("Set Postal code", SetPostalCode));
             _availableTasks.Add(new WikiDataTaskInfo("Set Location", SetLocation));
             WikiDataTaskDelegate setCensus2010 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.Census, 2010);
             _availableTasks.Add(new WikiDataTaskInfo("Set Census 2010", setCensus2010));
+            WikiDataTaskDelegate setDopa2020 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2020);
+            _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2020", setDopa2020));
             WikiDataTaskDelegate setDopa2019 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2019);
             _availableTasks.Add(new WikiDataTaskInfo("Set DOPA population 2019", setDopa2019));
             WikiDataTaskDelegate setDopa2018 = (IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData) => SetPopulationData(entities, collisionInfo, overrideData, PopulationDataSourceType.DOPA, 2018);
@@ -990,6 +993,40 @@ namespace De.AHoerstemeier.Tambon
                         }
                     }
                     // TODO: Sources
+                }
+            }
+        }
+
+        private void SetGadm(IEnumerable<Entity> entities, StringBuilder collisionInfo, Boolean overrideData)
+        {
+            _ = entities ?? throw new ArgumentNullException(nameof(entities));
+
+            ClearRunInfo();
+            foreach (var entity in entities.Where(x => !String.IsNullOrWhiteSpace(x.codes.gadm.value)))
+            {
+                var item = _helper.GetWikiDataItemForEntity(entity);
+                if (item == null)
+                {
+                    _runInfo[WikiDataState.ItemNotFound]++;
+                    collisionInfo.AppendFormat("{0}: {1} was deleted!", entity.wiki.wikidata, entity.english);
+                }
+                else
+                {
+                    var state = _helper.GadmCorrect(item, entity);
+                    _runInfo[state]++;
+                    if (state == WikiDataState.WrongValue)
+                    {
+                        collisionInfo.AppendFormat("{0}: {1} has wrong GADM", item.id, entity.english);
+                        collisionInfo.AppendLine();
+                    }
+                    if (state != WikiDataState.Valid)
+                    {
+                        var statement = _helper.SetGadm(item, entity, overrideData);
+                        if (statement != null)
+                        {
+                            statement.save(_helper.GetClaimSaveEditSummary(statement));
+                        }
+                    }
                 }
             }
         }
