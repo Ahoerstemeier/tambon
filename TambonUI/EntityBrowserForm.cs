@@ -91,99 +91,6 @@ namespace De.AHoerstemeier.Tambon.UI
 
         #region private methods
 
-        private void EntityBrowserForm_Load(object sender, EventArgs e)
-        {
-            _baseEntity = GlobalData.CompleteGeocodeList();
-            _baseEntity.CalcOldGeocodesRecursive();
-            _baseEntity.PropagatePostcodeRecursive();
-            _baseEntity.PropagateObsoleteToSubEntities();
-            _allEntities = _baseEntity.FlatList().Where(x => !x.IsObsolete).ToList();
-            var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
-            _localGovernments.AddRange(_allEntities.Where(x => x.type.IsLocalGovernment()));
-
-            foreach (var tambon in allLocalGovernmentParents)
-            {
-                var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
-                if (localGovernmentEntity != null)
-                {
-                    _localGovernments.Add(localGovernmentEntity);
-                    _allEntities.Add(localGovernmentEntity);
-                }
-            }
-            using (var fileStream = new FileStream(GlobalData.BaseXMLDirectory + "\\DOLA web id.xml", FileMode.Open, FileAccess.Read))
-            {
-                var dolaWebIds = XmlManager.XmlToEntity<WebIdList>(fileStream, new XmlSerializer(typeof(WebIdList)));
-                var errors = string.Empty;
-                foreach (var entry in dolaWebIds.item)
-                {
-                    var entity = _localGovernments.FirstOrDefault(x => x.geocode == entry.geocode || x.OldGeocodes.Contains(entry.geocode));
-                    if (entity != null)
-                    {
-                        var office = entity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
-                        if (!office.webidSpecified)
-                        {
-                            office.webid = entry.id;
-                            office.webidSpecified = true;
-                        }
-                        else
-                        {
-                            errors += String.Format("Duplicate webId {0}", entry.id) + Environment.NewLine;
-                        }
-                    }
-                    else
-                    {
-                        errors += String.Format("WebId {0} refers to invalid LAO {1}", entry.id, entry.geocode) + Environment.NewLine;
-                    }
-                }
-                if (!String.IsNullOrEmpty(errors))
-                {
-                    MessageBox.Show(errors, "WebId errors");
-                }
-            }
-            foreach (var file in Directory.EnumerateFiles(GlobalData.BaseXMLDirectory + "\\DOLA\\"))
-            {
-                using (var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read))
-                {
-                    var dolaData = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
-                    foreach (var sourceEntity in dolaData.FlatList())
-                    {
-                        var targetEntity = _localGovernments.FirstOrDefault(x => x.geocode == sourceEntity.geocode);
-                        if (targetEntity != null)
-                        {
-                            var sourceOffice = sourceEntity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
-                            var targetOffice = targetEntity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
-                            if (sourceOffice != null && targetOffice != null)
-                            {
-                                targetOffice.dola.AddRange(sourceOffice.dola);
-                                targetOffice.dola.Sort((x, y) => y.year.CompareTo(x.year));
-                            }
-
-                            targetEntity.area.area.AddRange(sourceEntity.area.area);
-                            // targetEntity.area.area.Sort((x, y) => String.Compare(y.date,x.date));
-                            targetEntity.entitycount.AddRange(sourceEntity.entitycount);
-                            targetEntity.entitycount.Sort((x, y) => y.year.CompareTo(x.year));
-                        }
-                    }
-                }
-            }
-
-            var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
-            foreach (var lao in _localGovernments)
-            {
-                lao.CalculatePostcodeForLocalAdministration(allTambon);
-            }
-
-            GlobalData.LoadPopulationData(PopulationDataSource, PopulationReferenceYear);
-            Entity.CalculateLocalGovernmentPopulation(_localGovernments, allTambon, PopulationDataSource, PopulationReferenceYear);
-
-            var allEntities = new List<Entity>();
-            allEntities.AddRange(_localGovernments);
-            allEntities.AddRange(_baseEntity.FlatList());
-            _creationHistories = ExtractHistoriesFromGazette(_baseEntity, allEntities.Distinct());
-
-            PopulationDataToTreeView();
-        }
-
         private TreeNode EntityToTreeNode(Entity data)
         {
             TreeNode retval = null;
@@ -225,28 +132,6 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
             treeviewSelection.EndUpdate();
-        }
-
-        private void treeviewSelection_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            var selectedNode = treeviewSelection.SelectedNode;
-            var entity = (Entity)(selectedNode.Tag);
-            EntityToCentralAdministrativeListView(entity);
-            EntityToLocalAdministrativeListView(entity);
-            SetInfo(entity);
-            CheckForErrors(entity);
-            CalcElectionData(entity);
-            CalcMubanData(entity);
-            CalcLocalGovernmentData(entity);
-            CalcLocalGovernmentConstituencies(entity);
-
-            mnuMubanDefinitions.Enabled = AreaDefinitionAnnouncements(entity).Any();
-
-            mnuWikipediaGerman.Enabled = entity.type.IsCompatibleEntityType(EntityType.Amphoe);
-            mnuWikipediaEnglish.Enabled = mnuWikipediaGerman.Enabled;
-            mnuHistory.Enabled = _creationHistories.Keys.Contains(entity.geocode) || entity.OldGeocodes.Any(x => _creationHistories.Keys.Contains(x));
-
-            mnuWikipediaTambonEnglish.Enabled = entity.type.IsCompatibleEntityType(EntityType.Tambon);
         }
 
         private void CalcElectionData(Entity entity)
@@ -1083,25 +968,15 @@ namespace De.AHoerstemeier.Tambon.UI
                         dolaCode = dolaEntry.code.ToString(CultureInfo.CurrentUICulture);
                     }
                 }
-                item.SubItems.Add(dolaCode);
                 AddPopulationToItems(subEntity, item);
                 AddCreationDateToItems(entity, subEntity, item);
+                var currentOfficialTerm = office.officials.OfficialTerms.OrderByDescending(x => x.begin).FirstOrDefault();
+                item.SubItems.Add(currentOfficialTerm?.begin.ToString("yyyy-mm-dd") ?? String.Empty);
+                var currentCouncilTerm = office.council.CouncilTerms.OrderByDescending(x => x.begin).FirstOrDefault();
+                item.SubItems.Add(currentCouncilTerm?.begin.ToString("yyyy-mm-dd") ?? String.Empty);
+                item.SubItems.Add(dolaCode);
             }
             listviewLocalAdministration.EndUpdate();
-        }
-
-        private void treeviewSelection_MouseUp(Object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                // Select the clicked node
-                treeviewSelection.SelectedNode = treeviewSelection.GetNodeAt(e.X, e.Y);
-
-                if (treeviewSelection.SelectedNode != null)
-                {
-                    popupTree.Show(treeviewSelection, e.Location);
-                }
-            }
         }
 
         private IEnumerable<GazetteEntry> AreaDefinitionAnnouncements(Entity entity)
@@ -1125,16 +1000,6 @@ namespace De.AHoerstemeier.Tambon.UI
             return result;
         }
 
-        private void mnuMubanDefinitions_Click(Object sender, EventArgs e)
-        {
-            var selectedNode = treeviewSelection.SelectedNode;
-            var entity = (Entity)(selectedNode.Tag);
-            foreach (var entry in AreaDefinitionAnnouncements(entity))
-            {
-                ShowPdf(entry);
-            }
-        }
-
         private void ShowPdf(GazetteEntry entry)
         {
             try
@@ -1156,16 +1021,6 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
-        private void mnuWikipediaGerman_Click(Object sender, EventArgs e)
-        {
-            AmphoeToWikipedia(Language.German);
-        }
-
-        private void mnuWikipediaEnglish_Click(Object sender, EventArgs e)
-        {
-            AmphoeToWikipedia(Language.English);
-        }
-
         private void AmphoeToWikipedia(Language language)
         {
             var selectedNode = treeviewSelection.SelectedNode;
@@ -1179,24 +1034,6 @@ namespace De.AHoerstemeier.Tambon.UI
                     PopulationDataSource = PopulationDataSource
                 };
                 var text = exporter.AmphoeToWikipedia(entity, language);
-
-                CopyToClipboard(text);
-            }
-        }
-
-        private void mnuWikipediaTambonEnglish_Click(Object sender, EventArgs e)
-        {
-            var selectedNode = treeviewSelection.SelectedNode;
-            var entity = (Entity)(selectedNode.Tag);
-            if (entity.type.IsCompatibleEntityType(EntityType.Tambon))
-            {
-                var exporter = new WikipediaExporter(_baseEntity, _localGovernments)
-                {
-                    CheckWikiData = CheckWikiData,
-                    PopulationReferenceYear = PopulationReferenceYear,
-                    PopulationDataSource = PopulationDataSource
-                };
-                var text = exporter.TambonArticle(entity, Language.English);
 
                 CopyToClipboard(text);
             }
@@ -1219,37 +1056,6 @@ namespace De.AHoerstemeier.Tambon.UI
                     {
                         break;
                     }
-                }
-            }
-        }
-
-        private void mnuHistory_Click(Object sender, EventArgs e)
-        {
-            var selectedNode = treeviewSelection.SelectedNode;
-            var entity = (Entity)(selectedNode.Tag);
-            ExportEntityHistory(entity);
-        }
-
-        private void mnuHistoryLocal_Click(Object sender, EventArgs e)
-        {
-            if (listviewLocalAdministration.SelectedItems.Count == 1)
-            {
-                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
-                {
-                    var entity = item.Tag as Entity;
-                    ExportEntityHistory(entity);
-                }
-            }
-        }
-
-        private void mnuHistoryCentral_Click(Object sender, EventArgs e)
-        {
-            if (listviewCentralAdministration.SelectedItems.Count == 1)
-            {
-                foreach (ListViewItem item in listviewCentralAdministration.SelectedItems)
-                {
-                    var entity = item.Tag as Entity;
-                    ExportEntityHistory(entity);
                 }
             }
         }
@@ -1284,29 +1090,6 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
-        private void popupListviewLocal_Opening(Object sender, CancelEventArgs e)
-        {
-            CheckHistoryAvailable(listviewLocalAdministration, mnuHistoryLocal);
-            var hasWebId = false;
-            if (listviewLocalAdministration.SelectedItems.Count == 1)
-            {
-                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
-                {
-                    if (item.Tag is Entity entity)
-                    {
-                        hasWebId = entity.office.Any(x => x.webidSpecified);
-                    }
-                }
-            }
-            mnuGeneralInfoPage.Enabled = hasWebId;
-            mnuAdminInfoPage.Enabled = hasWebId;
-        }
-
-        private void popupListviewCentral_Opening(Object sender, CancelEventArgs e)
-        {
-            CheckHistoryAvailable(listviewCentralAdministration, mnuHistoryCentral);
-        }
-
         private void CheckHistoryAvailable(ListView listview, ToolStripMenuItem menuItem)
         {
             var history = false;
@@ -1326,8 +1109,6 @@ namespace De.AHoerstemeier.Tambon.UI
                 menuItem.Enabled = history;
             }
         }
-
-        #endregion private methods
 
         /// <summary>
         /// Gets the DLA web id of the local government unit corresponding to the selected item in the listview.
@@ -1352,6 +1133,206 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
             }
             return webId;
+        }
+
+        #endregion private methods
+
+        #region event handler
+
+        private void EntityBrowserForm_Load(object sender, EventArgs e)
+        {
+            _baseEntity = GlobalData.CompleteGeocodeList();
+            _baseEntity.CalcOldGeocodesRecursive();
+            _baseEntity.PropagatePostcodeRecursive();
+            _baseEntity.PropagateObsoleteToSubEntities();
+            _allEntities = _baseEntity.FlatList().Where(x => !x.IsObsolete).ToList();
+            var allLocalGovernmentParents = _allEntities.Where(x => x.type == EntityType.Tambon || x.type == EntityType.Changwat).ToList();
+            _localGovernments.AddRange(_allEntities.Where(x => x.type.IsLocalGovernment()));
+
+            foreach (var tambon in allLocalGovernmentParents)
+            {
+                var localGovernmentEntity = tambon.CreateLocalGovernmentDummyEntity();
+                if (localGovernmentEntity != null)
+                {
+                    _localGovernments.Add(localGovernmentEntity);
+                    _allEntities.Add(localGovernmentEntity);
+                }
+            }
+            using (var fileStream = new FileStream(GlobalData.BaseXMLDirectory + "\\DOLA web id.xml", FileMode.Open, FileAccess.Read))
+            {
+                var dolaWebIds = XmlManager.XmlToEntity<WebIdList>(fileStream, new XmlSerializer(typeof(WebIdList)));
+                var errors = string.Empty;
+                foreach (var entry in dolaWebIds.item)
+                {
+                    var entity = _localGovernments.FirstOrDefault(x => x.geocode == entry.geocode || x.OldGeocodes.Contains(entry.geocode));
+                    if (entity != null)
+                    {
+                        var office = entity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
+                        if (!office.webidSpecified)
+                        {
+                            office.webid = entry.id;
+                            office.webidSpecified = true;
+                        }
+                        else
+                        {
+                            errors += String.Format("Duplicate webId {0}", entry.id) + Environment.NewLine;
+                        }
+                    }
+                    else
+                    {
+                        errors += String.Format("WebId {0} refers to invalid LAO {1}", entry.id, entry.geocode) + Environment.NewLine;
+                    }
+                }
+                if (!String.IsNullOrEmpty(errors))
+                {
+                    MessageBox.Show(errors, "WebId errors");
+                }
+            }
+            foreach (var file in Directory.EnumerateFiles(GlobalData.BaseXMLDirectory + "\\DOLA\\"))
+            {
+                using (var fileStream = new FileStream(file, FileMode.Open, FileAccess.Read))
+                {
+                    var dolaData = XmlManager.XmlToEntity<Entity>(fileStream, new XmlSerializer(typeof(Entity)));
+                    foreach (var sourceEntity in dolaData.FlatList())
+                    {
+                        var targetEntity = _localGovernments.FirstOrDefault(x => x.geocode == sourceEntity.geocode);
+                        if (targetEntity != null)
+                        {
+                            var sourceOffice = sourceEntity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
+                            var targetOffice = targetEntity.office.FirstOrDefault(x => x.type.IsLocalGovernmentOffice());
+                            if (sourceOffice != null && targetOffice != null)
+                            {
+                                targetOffice.dola.AddRange(sourceOffice.dola);
+                                targetOffice.dola.Sort((x, y) => y.year.CompareTo(x.year));
+                            }
+
+                            targetEntity.area.area.AddRange(sourceEntity.area.area);
+                            // targetEntity.area.area.Sort((x, y) => String.Compare(y.date,x.date));
+                            targetEntity.entitycount.AddRange(sourceEntity.entitycount);
+                            targetEntity.entitycount.Sort((x, y) => y.year.CompareTo(x.year));
+                        }
+                    }
+                }
+            }
+
+            var allTambon = _allEntities.Where(x => x.type == EntityType.Tambon).ToList();
+            foreach (var lao in _localGovernments)
+            {
+                lao.CalculatePostcodeForLocalAdministration(allTambon);
+            }
+
+            GlobalData.LoadPopulationData(PopulationDataSource, PopulationReferenceYear);
+            Entity.CalculateLocalGovernmentPopulation(_localGovernments, allTambon, PopulationDataSource, PopulationReferenceYear);
+
+            var allEntities = new List<Entity>();
+            allEntities.AddRange(_localGovernments);
+            allEntities.AddRange(_baseEntity.FlatList());
+            _creationHistories = ExtractHistoriesFromGazette(_baseEntity, allEntities.Distinct());
+
+            PopulationDataToTreeView();
+        }
+
+        private void treeviewSelection_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            EntityToCentralAdministrativeListView(entity);
+            EntityToLocalAdministrativeListView(entity);
+            SetInfo(entity);
+            CheckForErrors(entity);
+            CalcElectionData(entity);
+            CalcMubanData(entity);
+            CalcLocalGovernmentData(entity);
+
+            mnuMubanDefinitions.Enabled = AreaDefinitionAnnouncements(entity).Any();
+
+            mnuWikipediaGerman.Enabled = entity.type.IsCompatibleEntityType(EntityType.Amphoe);
+            mnuWikipediaEnglish.Enabled = mnuWikipediaGerman.Enabled;
+            mnuHistory.Enabled = _creationHistories.Keys.Contains(entity.geocode) || entity.OldGeocodes.Any(x => _creationHistories.Keys.Contains(x));
+
+            mnuWikipediaTambonEnglish.Enabled = entity.type.IsCompatibleEntityType(EntityType.Tambon);
+        }
+
+        private void mnuMubanDefinitions_Click(Object sender, EventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            foreach (var entry in AreaDefinitionAnnouncements(entity))
+            {
+                ShowPdf(entry);
+            }
+        }
+
+
+        private void mnuWikipediaTambonEnglish_Click(Object sender, EventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            if (entity.type.IsCompatibleEntityType(EntityType.Tambon))
+            {
+                var exporter = new WikipediaExporter(_baseEntity, _localGovernments)
+                {
+                    CheckWikiData = CheckWikiData,
+                    PopulationReferenceYear = PopulationReferenceYear,
+                    PopulationDataSource = PopulationDataSource
+                };
+                var text = exporter.TambonArticle(entity, Language.English);
+
+                CopyToClipboard(text);
+            }
+        }
+
+        private void mnuWikipediaGerman_Click(Object sender, EventArgs e)
+        {
+            AmphoeToWikipedia(Language.German);
+        }
+
+        private void mnuWikipediaEnglish_Click(Object sender, EventArgs e)
+        {
+            AmphoeToWikipedia(Language.English);
+        }
+
+        private void treeviewSelection_MouseUp(Object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                // Select the clicked node
+                treeviewSelection.SelectedNode = treeviewSelection.GetNodeAt(e.X, e.Y);
+
+                if (treeviewSelection.SelectedNode != null)
+                {
+                    popupTree.Show(treeviewSelection, e.Location);
+                }
+            }
+        }
+
+        private void popupListviewLocal_Opening(Object sender, CancelEventArgs e)
+        {
+            CheckHistoryAvailable(listviewLocalAdministration, mnuHistoryLocal);
+            var hasWebId = false;
+            var hasWikidata = false;
+            var hasWebsite = false;
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
+                {
+                    if (item.Tag is Entity entity)
+                    {
+                        hasWebId = entity.office.Any(x => x.webidSpecified);
+                        hasWikidata = !String.IsNullOrEmpty(entity?.wiki?.wikidata);
+                        hasWebsite = entity.office.First().url.Any();
+                    }
+                }
+            }
+            mnuGeneralInfoPage.Enabled = hasWebId;
+            mnuAdminInfoPage.Enabled = hasWebId;
+            mnuWikidataLocal.Enabled = hasWikidata;
+            mnuWebsite.Enabled = hasWebsite;
+        }
+
+        private void popupListviewCentral_Opening(Object sender, CancelEventArgs e)
+        {
+            CheckHistoryAvailable(listviewCentralAdministration, mnuHistoryCentral);
         }
 
         private void mnuAdminInfoPage_Click(Object sender, EventArgs e)
@@ -1388,6 +1369,53 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
+        private void mnuWikidata_Click(Object sender, EventArgs e)
+        {
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    if (!String.IsNullOrEmpty(entity?.wiki?.wikidata))
+                    {
+                        var url = String.Format(CultureInfo.CurrentUICulture, "https://www.wikidata.org/wiki/{0}", entity.wiki.wikidata);
+                        Process.Start(url);
+                    }
+                }
+            }
+        }
+
+        private void mnuHistory_Click(Object sender, EventArgs e)
+        {
+            var selectedNode = treeviewSelection.SelectedNode;
+            var entity = (Entity)(selectedNode.Tag);
+            ExportEntityHistory(entity);
+        }
+
+        private void mnuHistoryLocal_Click(Object sender, EventArgs e)
+        {
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    ExportEntityHistory(entity);
+                }
+            }
+        }
+
+        private void mnuHistoryCentral_Click(Object sender, EventArgs e)
+        {
+            if (listviewCentralAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewCentralAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    ExportEntityHistory(entity);
+                }
+            }
+        }
+
         private void mnuConstituency_Click(object sender, EventArgs e)
         {
             var selectedNode = treeviewSelection.SelectedNode;
@@ -1411,5 +1439,22 @@ namespace De.AHoerstemeier.Tambon.UI
 
             new StringDisplayForm(String.Format("Constituencies {0}", PopulationReferenceYear), displayResult).Show();
         }
+
+        private void mnuWebsite_Click(object sender, EventArgs e)
+        {
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    var urls = entity.office.First().url;
+                    if (urls.Any())
+                    {
+                        Process.Start(urls.OrderByDescending(x => x.lastchecked).First().Value);
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }
