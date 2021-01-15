@@ -57,6 +57,8 @@
             this.columnLocalDolaCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalPopulation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLocalMayorTerm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLocalCouncilTerm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popupListviewLocal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuHistoryLocal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAdminInfoPage = new System.Windows.Forms.ToolStripMenuItem();
@@ -278,9 +280,11 @@
             this.columnLocalThai,
             this.columnLocalType,
             this.columnLocalGeocode,
-            this.columnLocalDolaCode,
             this.columnLocalPopulation,
-            this.columnLocalCreation});
+            this.columnLocalCreation,
+            this.columnLocalMayorTerm,
+            this.columnLocalCouncilTerm,
+            this.columnLocalDolaCode});
             this.listviewLocalAdministration.ContextMenuStrip = this.popupListviewLocal;
             this.listviewLocalAdministration.HideSelection = false;
             this.listviewLocalAdministration.Location = new System.Drawing.Point(-5, 7);
@@ -304,12 +308,10 @@
             // 
             // columnLocalType
             // 
-            this.columnLocalType.DisplayIndex = 3;
             this.columnLocalType.Text = "Type";
             // 
             // columnLocalGeocode
             // 
-            this.columnLocalGeocode.DisplayIndex = 2;
             this.columnLocalGeocode.Text = "Geocode";
             // 
             // columnLocalDolaCode
@@ -325,6 +327,17 @@
             // columnLocalCreation
             // 
             this.columnLocalCreation.Text = "Creation";
+            this.columnLocalCreation.Width = 80;
+            // 
+            // columnLocalMayorTerm
+            // 
+            this.columnLocalMayorTerm.Text = "Term mayor";
+            this.columnLocalMayorTerm.Width = 80;
+            // 
+            // columnLocalCouncilTerm
+            // 
+            this.columnLocalCouncilTerm.Text = "Council";
+            this.columnLocalCouncilTerm.Width = 80;
             // 
             // popupListviewLocal
             // 
@@ -337,48 +350,48 @@
             this.mnuWikidataLocal,
             this.mnuWebsite});
             this.popupListviewLocal.Name = "popupListviewLocal";
-            this.popupListviewLocal.Size = new System.Drawing.Size(211, 176);
+            this.popupListviewLocal.Size = new System.Drawing.Size(198, 148);
             this.popupListviewLocal.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewLocal_Opening);
             // 
             // mnuHistoryLocal
             // 
             this.mnuHistoryLocal.Name = "mnuHistoryLocal";
-            this.mnuHistoryLocal.Size = new System.Drawing.Size(210, 24);
+            this.mnuHistoryLocal.Size = new System.Drawing.Size(197, 24);
             this.mnuHistoryLocal.Text = "History";
             this.mnuHistoryLocal.Click += new System.EventHandler(this.mnuHistoryLocal_Click);
             // 
             // mnuAdminInfoPage
             // 
             this.mnuAdminInfoPage.Name = "mnuAdminInfoPage";
-            this.mnuAdminInfoPage.Size = new System.Drawing.Size(210, 24);
+            this.mnuAdminInfoPage.Size = new System.Drawing.Size(197, 24);
             this.mnuAdminInfoPage.Text = "Admin info page";
             this.mnuAdminInfoPage.Click += new System.EventHandler(this.mnuAdminInfoPage_Click);
             // 
             // mnuGeneralInfoPage
             // 
             this.mnuGeneralInfoPage.Name = "mnuGeneralInfoPage";
-            this.mnuGeneralInfoPage.Size = new System.Drawing.Size(210, 24);
+            this.mnuGeneralInfoPage.Size = new System.Drawing.Size(197, 24);
             this.mnuGeneralInfoPage.Text = "General info page";
             this.mnuGeneralInfoPage.Click += new System.EventHandler(this.mnuGeneralInfoPage_Click);
             // 
             // mnuGoogleSearchLocal
             // 
             this.mnuGoogleSearchLocal.Name = "mnuGoogleSearchLocal";
-            this.mnuGoogleSearchLocal.Size = new System.Drawing.Size(210, 24);
+            this.mnuGoogleSearchLocal.Size = new System.Drawing.Size(197, 24);
             this.mnuGoogleSearchLocal.Text = "Google search";
             this.mnuGoogleSearchLocal.Click += new System.EventHandler(this.mnuGoogleSearchLocal_Click);
             // 
             // mnuWikidataLocal
             // 
             this.mnuWikidataLocal.Name = "mnuWikidataLocal";
-            this.mnuWikidataLocal.Size = new System.Drawing.Size(210, 24);
+            this.mnuWikidataLocal.Size = new System.Drawing.Size(197, 24);
             this.mnuWikidataLocal.Text = "Wikidata";
             this.mnuWikidataLocal.Click += new System.EventHandler(this.mnuWikidata_Click);
             // 
             // mnuWebsite
             // 
             this.mnuWebsite.Name = "mnuWebsite";
-            this.mnuWebsite.Size = new System.Drawing.Size(210, 24);
+            this.mnuWebsite.Size = new System.Drawing.Size(197, 24);
             this.mnuWebsite.Text = "Website";
             this.mnuWebsite.Click += new System.EventHandler(this.mnuWebsite_Click);
             // 
@@ -586,5 +599,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuConstituency;
         private System.Windows.Forms.ToolStripMenuItem mnuWikidataLocal;
         private System.Windows.Forms.ToolStripMenuItem mnuWebsite;
+        private System.Windows.Forms.ColumnHeader columnLocalMayorTerm;
+        private System.Windows.Forms.ColumnHeader columnLocalCouncilTerm;
     }
 }

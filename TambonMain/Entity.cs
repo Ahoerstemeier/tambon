@@ -666,9 +666,13 @@ namespace De.AHoerstemeier.Tambon
                     // foreach ( var term in office.council )
                     {
                         DateTime termEnd;
-                        if ( term.endSpecified )
+                        if (term.endSpecified)
                         {
                             termEnd = term.end;
+                        }
+                        else if (term.beginreason == TermBeginType.TermExtended)
+                        {
+                            termEnd = new DateTime(2050, 1, 1);  // just a dummy future date
                         }
                         else
                         {
@@ -695,9 +699,13 @@ namespace De.AHoerstemeier.Tambon
                 // foreach ( var term in office.council )
                 {
                     DateTime termEnd;
-                    if ( term.endSpecified )
+                    if (term.endSpecified)
                     {
                         termEnd = term.end;
+                    }
+                    else if (term.beginreason == OfficialBeginType.TermExtended)
+                    {
+                        termEnd = new DateTime(2050, 1, 1);  // just a dummy future date
                     }
                     else
                     {
