@@ -971,9 +971,9 @@ namespace De.AHoerstemeier.Tambon.UI
                 AddPopulationToItems(subEntity, item);
                 AddCreationDateToItems(entity, subEntity, item);
                 var currentOfficialTerm = office.officials.OfficialTerms.OrderByDescending(x => x.begin).FirstOrDefault();
-                item.SubItems.Add(currentOfficialTerm?.begin.ToString("yyyy-mm-dd") ?? String.Empty);
+                item.SubItems.Add(currentOfficialTerm?.begin.ToString("yyyy-MM-dd") ?? String.Empty);
                 var currentCouncilTerm = office.council.CouncilTerms.OrderByDescending(x => x.begin).FirstOrDefault();
-                item.SubItems.Add(currentCouncilTerm?.begin.ToString("yyyy-mm-dd") ?? String.Empty);
+                item.SubItems.Add(currentCouncilTerm?.begin.ToString("yyyy-MM-dd") ?? String.Empty);
                 item.SubItems.Add(dolaCode);
             }
             listviewLocalAdministration.EndUpdate();
