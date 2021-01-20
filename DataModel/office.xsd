@@ -732,7 +732,7 @@
   <xs:complexType name="OfficialVacancy">
     <xs:complexContent>
       <xs:extension base="t:OfficialOrVacancyEntry" >
-        <xs:attribute name="year" type="xs:date" use="optional">
+        <xs:attribute name="year" type="xs:gYear" use="optional">
           <xs:annotation>
             <xs:documentation>Year in which the office was vacant, if begin date unknown.</xs:documentation>
           </xs:annotation>
