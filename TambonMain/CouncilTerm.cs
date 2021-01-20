@@ -60,7 +60,7 @@ namespace De.AHoerstemeier.Tambon
             get
             {
                 var result = (begin.Year > 1900) & (begin.Year < GlobalData.MaximumPossibleElectionYear);
-                if ( endFieldSpecified )
+                if ( endSpecified )
                 {
                     result &= (end.Year > 1900) & (end.Year < GlobalData.MaximumPossibleElectionYear);
                     result &= end.CompareTo(begin) > 0;
@@ -77,7 +77,7 @@ namespace De.AHoerstemeier.Tambon
         public Boolean TermLengthValid(Byte maximumTermLength)
         {
             Boolean result = true;
-            if ( endFieldSpecified )
+            if ( endSpecified )
             {
                 var expectedEndTerm = begin.AddYears(maximumTermLength);
                 var compare = expectedEndTerm.CompareTo(end);
