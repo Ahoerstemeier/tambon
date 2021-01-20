@@ -2150,6 +2150,7 @@ namespace De.AHoerstemeier.Tambon
         [System.Xml.Serialization.XmlElementAttribute("election", typeof(CanceledElection), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("official", typeof(OfficialEntry), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("officialterm", typeof(OfficialEntryUnnamed), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("vacant", typeof(OfficialVacancy), Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<object> Items
         {
@@ -2470,20 +2471,10 @@ namespace De.AHoerstemeier.Tambon
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
     [System.Runtime.Serialization.DataContractAttribute(Name = "OfficialEntryBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public abstract partial class OfficialEntryBase
+    public abstract partial class OfficialOrVacancyEntry
     {
 
-        private Election electionField;
-
-        private List<Suspension> suspensionField;
-
-        private List<object> referencesField;
-
         private OfficialType titleField;
-
-        private int indexField;
-
-        private bool indexFieldSpecified;
 
         private System.DateTime beginField;
 
@@ -2499,84 +2490,11 @@ namespace De.AHoerstemeier.Tambon
 
         private string commentField;
 
-        private OfficialBeginType beginreasonField;
-
-        private OfficialEndType endreasonField;
-
         /// <summary>
-        /// Creates a new instance of OfficialEntryBase.
+        /// Creates a new instance of OfficialOrVacancyEntry.
         /// </summary>
-        public OfficialEntryBase()
+        public OfficialOrVacancyEntry()
         {
-            this.referencesField = new List<object>();
-            this.suspensionField = new List<Suspension>();
-            this.beginreasonField = OfficialBeginType.Unknown;
-            this.endreasonField = OfficialEndType.Unknown;
-        }
-
-        /// <summary>
-        /// Data on the election which got the official into his office.
-        /// </summary>
-        /// <value>
-        /// The election.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Election election
-        {
-            get
-            {
-                return this.electionField;
-            }
-            set
-            {
-                this.electionField = value;
-            }
-        }
-
-        /// <summary>
-        /// Data on temporary removals from office.
-        /// </summary>
-        /// <value>
-        /// The suspension.
-        /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("suspension", Order = 1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<Suspension> suspension
-        {
-            get
-            {
-                return this.suspensionField;
-            }
-            set
-            {
-                this.suspensionField = value;
-            }
-        }
-
-        /// <summary>
-        /// References on the official term, election or removal.
-        /// </summary>
-        /// <value>
-        /// The references.
-        /// </value>
-        [System.Xml.Serialization.XmlArrayAttribute(Order = 2)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable = false)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable = false)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable = false)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable = false)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable = false)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<object> references
-        {
-            get
-            {
-                return this.referencesField;
-            }
-            set
-            {
-                this.referencesField = value;
-            }
         }
 
         /// <summary>
@@ -2596,46 +2514,6 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.titleField = value;
-            }
-        }
-
-        /// <summary>
-        /// Running number, if known.
-        /// </summary>
-        /// <value>
-        /// The index.
-        /// </value>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int index
-        {
-            get
-            {
-                return this.indexField;
-            }
-            set
-            {
-                this.indexField = value;
-            }
-        }
-
-        /// <summary>
-        /// Auto generated comment tag to suppress XML code documentation warning.
-        /// </summary>
-        /// <value>
-        /// Auto generated value tag to suppress XML code documentation warning.
-        /// </value>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool indexSpecified
-        {
-            get
-            {
-                return this.indexFieldSpecified;
-            }
-            set
-            {
-                this.indexFieldSpecified = value;
             }
         }
 
@@ -2776,6 +2654,192 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.commentField = value;
+            }
+        }
+
+    }
+
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfficialEntryUnnamed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfficialEntry))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "OfficialEntryBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class OfficialVacancy : OfficialOrVacancyEntry
+    {
+
+        private string yearField;
+
+        /// <summary>
+        /// Creates a new instance of OfficialVacancy.
+        /// </summary>
+        public OfficialVacancy() : base()
+        {
+        }
+
+        /// <summary>
+        /// Year in which the office was vacant, if begin date unknown.
+        /// </summary>
+        /// <value>
+        /// The year.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "gYear")]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string year
+        {
+            get
+            {
+                return this.yearField;
+            }
+            set
+            {
+                this.yearField = value;
+            }
+        }
+
+
+    }
+
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfficialEntryUnnamed))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(OfficialEntry))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "OfficialEntryBase", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public abstract partial class OfficialEntryBase : OfficialOrVacancyEntry
+    {
+
+        private Election electionField;
+
+        private List<Suspension> suspensionField;
+
+        private List<object> referencesField;
+
+        private int indexField;
+
+        private bool indexFieldSpecified;
+
+        private OfficialBeginType beginreasonField;
+
+        private OfficialEndType endreasonField;
+
+        /// <summary>
+        /// Creates a new instance of OfficialEntryBase.
+        /// </summary>
+        public OfficialEntryBase():base()
+        {
+            this.referencesField = new List<object>();
+            this.suspensionField = new List<Suspension>();
+            this.beginreasonField = OfficialBeginType.Unknown;
+            this.endreasonField = OfficialEndType.Unknown;
+        }
+
+        /// <summary>
+        /// Data on the election which got the official into his office.
+        /// </summary>
+        /// <value>
+        /// The election.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Election election
+        {
+            get
+            {
+                return this.electionField;
+            }
+            set
+            {
+                this.electionField = value;
+            }
+        }
+
+        /// <summary>
+        /// Data on temporary removals from office.
+        /// </summary>
+        /// <value>
+        /// The suspension.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute("suspension", Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<Suspension> suspension
+        {
+            get
+            {
+                return this.suspensionField;
+            }
+            set
+            {
+                this.suspensionField = value;
+            }
+        }
+
+        /// <summary>
+        /// References on the official term, election or removal.
+        /// </summary>
+        /// <value>
+        /// The references.
+        /// </value>
+        [System.Xml.Serialization.XmlArrayAttribute(Order = 2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("book", typeof(BookReference), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("gazetteref", typeof(GazetteRelated), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("meetingreference", typeof(MeetingReference), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("ministerialorder", typeof(MinisterialOrder), IsNullable = false)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("url", typeof(MyUri), IsNullable = false)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<object> references
+        {
+            get
+            {
+                return this.referencesField;
+            }
+            set
+            {
+                this.referencesField = value;
+            }
+        }
+
+        /// <summary>
+        /// Running number, if known.
+        /// </summary>
+        /// <value>
+        /// The index.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int index
+        {
+            get
+            {
+                return this.indexField;
+            }
+            set
+            {
+                this.indexField = value;
+            }
+        }
+
+        /// <summary>
+        /// Auto generated comment tag to suppress XML code documentation warning.
+        /// </summary>
+        /// <value>
+        /// Auto generated value tag to suppress XML code documentation warning.
+        /// </value>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool indexSpecified
+        {
+            get
+            {
+                return this.indexFieldSpecified;
+            }
+            set
+            {
+                this.indexFieldSpecified = value;
             }
         }
 
@@ -3050,6 +3114,33 @@ namespace De.AHoerstemeier.Tambon
     }
 
     /// <summary>
+    /// Reasons why a council was vacant.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum CouncilVacancyReason
+    {
+
+        /// <summary>
+        /// Unknown vacancy reason.
+        /// </summary>
+        Unknown,
+
+        /// <summary>
+        /// Election not possible due to missing constituencies.
+        /// </summary>
+        NoConstituencies,
+
+        /// <summary>
+        /// Election not possible due to natural desaster.
+        /// </summary>
+        NaturalDesaster,
+    }
+
+
+    /// <summary>
     /// Reasons why an official left office.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
@@ -3165,6 +3256,7 @@ namespace De.AHoerstemeier.Tambon
         /// </value>
         [System.Xml.Serialization.XmlElementAttribute("election", typeof(CanceledElection), Order = 0)]
         [System.Xml.Serialization.XmlElementAttribute("term", typeof(CouncilTerm), Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute("vacant", typeof(CouncilVacancy), Order = 0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<object> Items
         {
@@ -3188,16 +3280,8 @@ namespace De.AHoerstemeier.Tambon
     [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
     [System.Runtime.Serialization.DataContractAttribute(Name = "CouncilTerm", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
-    public partial class CouncilTerm
+    public abstract partial class CouncilTermOrVacancy
     {
-
-        private List<CouncillorNumber> councillorsField;
-
-        private List<OfficialEntry> officialField;
-
-        private Election electionField;
-
-        private DissolutionCouncil dissolutionField;
 
         private System.DateTime beginField;
 
@@ -3213,90 +3297,7 @@ namespace De.AHoerstemeier.Tambon
 
         private string commentField;
 
-        private uint sizeField;
 
-        private bool sizeFieldSpecified;
-
-        private uint finalsizeField;
-
-        private bool finalsizeFieldSpecified;
-
-        private EntityType typeField;
-
-        private TermBeginType beginreasonField;
-
-        private TermEndType endreasonField;
-
-        private CouncilSizeChangeReason sizechangereasonField;
-
-        /// <summary>
-        /// Creates a new instance of CouncilTerm.
-        /// </summary>
-        public CouncilTerm()
-        {
-            this.dissolutionField = new DissolutionCouncil();
-            this.officialField = new List<OfficialEntry>();
-            this.councillorsField = new List<CouncillorNumber>();
-            this.beginreasonField = TermBeginType.Election;
-            this.endreasonField = TermEndType.EndOfTerm;
-            this.sizechangereasonField = CouncilSizeChangeReason.NoChange;
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("councillors", Order = 0)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<CouncillorNumber> councillors
-        {
-            get
-            {
-                return this.councillorsField;
-            }
-            set
-            {
-                this.councillorsField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute("official", Order = 1)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public List<OfficialEntry> official
-        {
-            get
-            {
-                return this.officialField;
-            }
-            set
-            {
-                this.officialField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Election election
-        {
-            get
-            {
-                return this.electionField;
-            }
-            set
-            {
-                this.electionField = value;
-            }
-        }
-
-        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public DissolutionCouncil dissolution
-        {
-            get
-            {
-                return this.dissolutionField;
-            }
-            set
-            {
-                this.dissolutionField = value;
-            }
-        }
 
         /// <summary>
         /// Begin of term.
@@ -3435,6 +3436,157 @@ namespace De.AHoerstemeier.Tambon
             set
             {
                 this.commentField = value;
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// Term of the council of the administrative entity.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "CouncilVacancy", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class CouncilVacancy : CouncilTermOrVacancy
+    {
+        private CouncilVacancyReason reasonField;
+
+        /// <summary>
+        /// Creates a new instance of CouncilTermOrVacancy.
+        /// </summary>
+        public CouncilVacancy()
+        {
+            this.reasonField = CouncilVacancyReason.Unknown;
+        }
+
+        /// <summary>
+        /// Reason for the vacancy.
+        /// </summary>
+        /// <value>
+        /// The reason.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(CouncilVacancyReason.Unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public CouncilVacancyReason reason
+        {
+            get
+            {
+                return this.reasonField;
+            }
+            set
+            {
+                this.reasonField = value;
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// Term of the council of the administrative entity.
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "CouncilTerm", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
+    public partial class CouncilTerm: CouncilTermOrVacancy
+    {
+
+        private List<CouncillorNumber> councillorsField;
+
+        private List<OfficialEntry> officialField;
+
+        private Election electionField;
+
+        private DissolutionCouncil dissolutionField;
+
+        private uint sizeField;
+
+        private bool sizeFieldSpecified;
+
+        private uint finalsizeField;
+
+        private bool finalsizeFieldSpecified;
+
+        private EntityType typeField;
+
+        private TermBeginType beginreasonField;
+
+        private TermEndType endreasonField;
+
+        private CouncilSizeChangeReason sizechangereasonField;
+
+        /// <summary>
+        /// Creates a new instance of CouncilTerm.
+        /// </summary>
+        public CouncilTerm()
+        {
+            this.dissolutionField = new DissolutionCouncil();
+            this.officialField = new List<OfficialEntry>();
+            this.councillorsField = new List<CouncillorNumber>();
+            this.beginreasonField = TermBeginType.Election;
+            this.endreasonField = TermEndType.EndOfTerm;
+            this.sizechangereasonField = CouncilSizeChangeReason.NoChange;
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("councillors", Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<CouncillorNumber> councillors
+        {
+            get
+            {
+                return this.councillorsField;
+            }
+            set
+            {
+                this.councillorsField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute("official", Order = 1)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public List<OfficialEntry> official
+        {
+            get
+            {
+                return this.officialField;
+            }
+            set
+            {
+                this.officialField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 2)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Election election
+        {
+            get
+            {
+                return this.electionField;
+            }
+            set
+            {
+                this.electionField = value;
+            }
+        }
+
+        [System.Xml.Serialization.XmlElementAttribute(Order = 3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public DissolutionCouncil dissolution
+        {
+            get
+            {
+                return this.dissolutionField;
+            }
+            set
+            {
+                this.dissolutionField = value;
             }
         }
 
