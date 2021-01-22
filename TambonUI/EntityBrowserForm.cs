@@ -100,7 +100,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     Tag = data
                 };
-                if ( !data.type.IsThirdLevelAdministrativeUnit() )  // No Muban in Treeview
+                if (!data.type.IsThirdLevelAdministrativeUnit())  // No Muban in Treeview
                 {
                     foreach (Entity entity in data.entity)
                     {
@@ -576,7 +576,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var allEntites = entity.FlatList().Where(x => !x.IsObsolete);
             var allEntityOfFittingType = allEntites.Where(x => x.type.IsCompatibleEntityType(entityTypes));
             var entitiesWithoutCode = allEntityOfFittingType.Where(x => String.IsNullOrEmpty(selector(x)));
-            if ( checkMissing && entitiesWithoutCode.Any() )
+            if (checkMissing && entitiesWithoutCode.Any())
             {
                 text += String.Format("Entity without {0} code ({1}):", codeName, entitiesWithoutCode.Count()) + Environment.NewLine;
                 foreach (var subEntity in entitiesWithoutCode)
@@ -810,12 +810,12 @@ namespace De.AHoerstemeier.Tambon.UI
 
             foreach (var lao in localGovernmentsInEntity)
             {
-                var gazette = gazetteConstituency.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency && (y.IsAboutGeocode(lao.geocode, false)|| (lao.tambonSpecified && y.IsAboutGeocode(lao.tambon, false))))).OrderBy(x => x.publication);
+                var gazette = gazetteConstituency.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency && (y.IsAboutGeocode(lao.geocode, false) || (lao.tambonSpecified && y.IsAboutGeocode(lao.tambon, false))))).OrderBy(x => x.publication);
                 if (gazette.Any())
                 {
                     latestConstituencyGazettes.Add((lao, gazette.Last()));
                 }
-                else if (lao.type!= EntityType.TAO)
+                else if (lao.type != EntityType.TAO)
                 {
                     laoWithoutConstituency.Add(lao);
                 }
@@ -1456,5 +1456,55 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
         #endregion
+
+        private void listviewLocalAdministration_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            var entity = listviewLocalAdministration.SelectedItems[0]?.Tag as Entity;
+            var office = entity?.office.FirstOrDefault();
+            txtLocalGovernment.Text = String.Empty;
+            if (office != null && !office.obsolete)
+            {
+                office.council.SortByDate();
+                var term = office.council.CouncilTerms.LastOrDefault();
+                if (term != null && term.beginreason != TermBeginType.TermExtended)
+                {
+                    term.end = term.begin.AddYears(4).AddDays(-1);
+                    term.endreason = TermEndType.EndOfTerm;
+                    var newTerm = new CouncilTerm()
+                    {
+                        begin = term.begin.AddYears(4),
+                        beginreason = TermBeginType.TermExtended,
+                        size = term.size,
+                        type = term.type,
+                    };
+
+                    var txt = 
+                        String.Format("<term begin=\"{0:yyyy-MM-dd}\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
+                        String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin,term.end, term.type, term.size) + Environment.NewLine;
+                    txtLocalGovernment.Text += txt;
+                }
+                office.officials.SortByDate();
+                var official = office.officials.OfficialTerms.LastOrDefault() as OfficialEntry;
+                if (official != null && official.beginreason != OfficialBeginType.TermExtended)
+                {
+                    official.end = official.begin.AddYears(4).AddDays(-1);
+                    official.endreason = OfficialEndType.EndOfTerm;
+                    var newOfficial = new OfficialEntry()
+                    {
+                        begin = official.begin.AddYears(4),
+                        beginreason = OfficialBeginType.TermExtended,
+                        name = official.name,
+                        title = official.title,
+                    };
+
+                    var txt =
+                        String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" beginreason=\"TermExtended\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
+                        String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endReason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
+
+                    txtLocalGovernment.Text += txt;
+                }
+
+            }
+        }
     }
 }
