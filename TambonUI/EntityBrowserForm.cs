@@ -1459,51 +1459,54 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void listviewLocalAdministration_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            var entity = listviewLocalAdministration.SelectedItems[0]?.Tag as Entity;
-            var office = entity?.office.FirstOrDefault();
-            txtLocalGovernment.Text = String.Empty;
-            if (office != null && !office.obsolete)
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
             {
-                office.council.SortByDate();
-                var term = office.council.CouncilTerms.LastOrDefault();
-                if (term != null && term.beginreason != TermBeginType.TermExtended)
+                var entity = listviewLocalAdministration.SelectedItems[0]?.Tag as Entity;
+                var office = entity?.office.FirstOrDefault();
+                txtLocalGovernment.Text = String.Empty;
+                if (office != null && !office.obsolete)
                 {
-                    term.end = term.begin.AddYears(4).AddDays(-1);
-                    term.endreason = TermEndType.EndOfTerm;
-                    var newTerm = new CouncilTerm()
+                    office.council.SortByDate();
+                    var term = office.council.CouncilTerms.LastOrDefault();
+                    if (term != null && term.beginreason != TermBeginType.TermExtended)
                     {
-                        begin = term.begin.AddYears(4),
-                        beginreason = TermBeginType.TermExtended,
-                        size = term.size,
-                        type = term.type,
-                    };
+                        term.end = term.begin.AddYears(4).AddDays(-1);
+                        term.endreason = TermEndType.EndOfTerm;
+                        var newTerm = new CouncilTerm()
+                        {
+                            begin = term.begin.AddYears(4),
+                            beginreason = TermBeginType.TermExtended,
+                            size = term.size,
+                            type = term.type,
+                        };
 
-                    var txt = 
-                        String.Format("<term begin=\"{0:yyyy-MM-dd}\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
-                        String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin,term.end, term.type, term.size) + Environment.NewLine;
-                    txtLocalGovernment.Text += txt;
-                }
-                office.officials.SortByDate();
-                var official = office.officials.OfficialTerms.LastOrDefault() as OfficialEntry;
-                if (official != null && official.beginreason != OfficialBeginType.TermExtended)
-                {
-                    official.end = official.begin.AddYears(4).AddDays(-1);
-                    official.endreason = OfficialEndType.EndOfTerm;
-                    var newOfficial = new OfficialEntry()
+                        var txt =
+                            String.Format("<term begin=\"{0:yyyy-MM-dd}\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
+                            String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin, term.end, term.type, term.size) + Environment.NewLine;
+                        txtLocalGovernment.Text += txt;
+                    }
+                    office.officials.SortByDate();
+                    var official = office.officials.OfficialTerms.LastOrDefault() as OfficialEntry;
+                    if (official != null && official.beginreason != OfficialBeginType.TermExtended)
                     {
-                        begin = official.begin.AddYears(4),
-                        beginreason = OfficialBeginType.TermExtended,
-                        name = official.name,
-                        title = official.title,
-                    };
+                        official.end = official.begin.AddYears(4).AddDays(-1);
+                        official.endreason = OfficialEndType.EndOfTerm;
+                        var newOfficial = new OfficialEntry()
+                        {
+                            begin = official.begin.AddYears(4),
+                            beginreason = OfficialBeginType.TermExtended,
+                            name = official.name,
+                            title = official.title,
+                        };
 
-                    var txt =
-                        String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" beginreason=\"TermExtended\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
-                        String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endReason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
+                        var txt =
+                            String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" beginreason=\"TermExtended\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
+                            String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endReason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
 
-                    txtLocalGovernment.Text += txt;
+                        txtLocalGovernment.Text += txt;
+                    }
+
                 }
-
             }
         }
     }
