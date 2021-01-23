@@ -1501,7 +1501,7 @@ namespace De.AHoerstemeier.Tambon.UI
 
                         var txt =
                             String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" beginreason=\"TermExtended\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
-                            String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endReason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
+                            String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
 
                         txtLocalGovernment.Text += txt;
                     }
