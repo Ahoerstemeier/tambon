@@ -769,9 +769,9 @@ namespace De.AHoerstemeier.Tambon {
     [System.Xml.Serialization.XmlRootAttribute(Namespace="http://hoerstemeier.com/tambon/", IsNullable=true)]
     [System.Runtime.Serialization.DataContractAttribute(Name="GazetteCorrection", Namespace="http://hoerstemeier.com/tambon/", IsReference=true)]
     public partial class GazetteCorrection : GazetteReferenceBase {
-        
-        private object itemField;
-        
+
+        private List<GazetteEntry> entryField;
+
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>
@@ -802,16 +802,28 @@ namespace De.AHoerstemeier.Tambon {
         [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.itemField;
+        public List<GazetteEntry> entry
+        {
+            get
+            {
+                return this.entryField;
             }
-            set {
-                this.itemField = value;
+            set
+            {
+                this.entryField = value;
             }
         }
+
+        /// <summary>
+        /// Creates a new instance of GazetteListDecade.
+        /// </summary>
+        public GazetteCorrection()
+        {
+            this.entryField = new List<GazetteEntry>();
+        }
+
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
     [System.SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
