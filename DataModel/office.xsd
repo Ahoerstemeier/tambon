@@ -219,6 +219,33 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="ElectionCancelReason">
+    <xs:annotation>
+      <xs:documentation>Reasons why an election can be canceled or nulled.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown election canceling.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Nulled">
+        <xs:annotation>
+          <xs:documentation>Election took place, but results were nulled or not approved.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NaturalDisaster">
+        <xs:annotation>
+          <xs:documentation>Election could not take place due to a natural disaster (e.g. flooding).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Coup">
+        <xs:annotation>
+          <xs:documentation>Election canceled due to coup.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="TermBeginType">
     <xs:annotation>
       <xs:documentation>Ways a council has its councillors selected.</xs:documentation>
@@ -842,7 +869,11 @@
         <xs:documentation>Election date.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <!-- TODO: Election cancel reason -->
+    <xs:attribute name="reason" type="t:ElectionCancelReason" use="optional" default="Unknown">
+      <xs:annotation>
+        <xs:documentation>Reason why election was canceled.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
   <xs:complexType name="CouncillorNumber">

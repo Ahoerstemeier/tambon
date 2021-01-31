@@ -2206,6 +2206,8 @@ namespace De.AHoerstemeier.Tambon
 
         private string commentField;
 
+        private ElectionCancelReason reasonField;
+
         /// <summary>
         /// Election date.
         /// </summary>
@@ -2225,6 +2227,28 @@ namespace De.AHoerstemeier.Tambon
                 this.dateField = value;
             }
         }
+
+        /// <summary>
+        /// Reason why election was canceled.
+        /// </summary>
+        /// <value>
+        /// The reason.
+        /// </value>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.ComponentModel.DefaultValueAttribute(ElectionCancelReason.Unknown)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ElectionCancelReason reason
+        {
+            get
+            {
+                return this.reasonField;
+            }
+            set
+            {
+                this.reasonField = value;
+            }
+        }
+
 
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
@@ -3853,6 +3877,37 @@ namespace De.AHoerstemeier.Tambon
                 this.numberFieldSpecified = value;
             }
         }
+    }
+
+    /// <summary>
+    /// Reasons why an election can be canceled or nulled..
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://hoerstemeier.com/tambon/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://hoerstemeier.com/tambon/", IsNullable = false)]
+    public enum ElectionCancelReason
+    {
+
+        /// <summary>
+        /// Unknown election canceling.
+        /// </summary>
+        Unknown,
+
+        /// <summary>
+        /// Election took place, but results were nulled or not approved.
+        /// </summary>
+        Nulled,
+
+        /// <summary>
+        /// Election could not take place due to a natural disaster (e.g. flooding).
+        /// </summary>
+        NaturalDisaster,
+
+        /// <summary>
+        /// Election canceled due to coup.
+        /// </summary>
+        Coup,
     }
 
     /// <summary>
