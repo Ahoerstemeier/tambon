@@ -778,29 +778,6 @@ namespace De.AHoerstemeier.Tambon {
         /// <value>
         /// Auto generated value tag to suppress XML code documentation warning.
         /// </value>
-        [System.Xml.Serialization.XmlElementAttribute("abolish", typeof(GazetteAbolish), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("abolishpark", typeof(GazetteParkAbolish), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachange", typeof(GazetteAreaChange), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("areachangepark", typeof(GazetteParkAreaChange), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("areadefinition", typeof(GazetteAreaDefinition), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("capital", typeof(GazetteCapital), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("constituency", typeof(GazetteConstituency), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("correction", typeof(GazetteCorrection), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("councilsize", typeof(GazetteCouncilSize), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("create", typeof(GazetteCreate), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("createpark", typeof(GazetteParkCreate), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("electionresult", typeof(GazetteElectionResult), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("interpellation", typeof(GazetteInterpellation), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("meetingreference", typeof(MeetingReference), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("mention", typeof(GazetteMention), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("ministerialorder", typeof(MinisterialOrder), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("official", typeof(GazetteOfficial), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("parentchange", typeof(GazetteParentChange), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("reassign", typeof(GazetteReassign), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("related", typeof(GazetteRelated), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("rename", typeof(GazetteRename), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("renumber", typeof(GazetteRenumber), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("status", typeof(GazetteStatusChange), Order=0)]
         [System.Runtime.Serialization.DataMemberAttribute()]
         public List<GazetteEntry> entry
         {
