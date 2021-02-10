@@ -802,6 +802,11 @@ namespace De.AHoerstemeier.Tambon
         /// Website cannot be accessed, though Google can update cache.
         /// </summary>
         inaccessible,
+
+        /// <summary>
+        /// URL now used by a different Thai administrative unit.
+        /// </summary>
+        changeowner,
     }
 
     /// <summary>
