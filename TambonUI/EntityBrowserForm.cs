@@ -100,7 +100,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     Tag = data
                 };
-                if ( !data.type.IsThirdLevelAdministrativeUnit() )  // No Muban in Treeview
+                if (!data.type.IsThirdLevelAdministrativeUnit())  // No Muban in Treeview
                 {
                     foreach (Entity entity in data.entity)
                     {
@@ -576,7 +576,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var allEntites = entity.FlatList().Where(x => !x.IsObsolete);
             var allEntityOfFittingType = allEntites.Where(x => x.type.IsCompatibleEntityType(entityTypes));
             var entitiesWithoutCode = allEntityOfFittingType.Where(x => String.IsNullOrEmpty(selector(x)));
-            if ( checkMissing && entitiesWithoutCode.Any() )
+            if (checkMissing && entitiesWithoutCode.Any())
             {
                 text += String.Format("Entity without {0} code ({1}):", codeName, entitiesWithoutCode.Count()) + Environment.NewLine;
                 foreach (var subEntity in entitiesWithoutCode)
@@ -810,12 +810,12 @@ namespace De.AHoerstemeier.Tambon.UI
 
             foreach (var lao in localGovernmentsInEntity)
             {
-                var gazette = gazetteConstituency.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency && (y.IsAboutGeocode(lao.geocode, false)|| (lao.tambonSpecified && y.IsAboutGeocode(lao.tambon, false))))).OrderBy(x => x.publication);
+                var gazette = gazetteConstituency.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency && (y.IsAboutGeocode(lao.geocode, false) || (lao.tambonSpecified && y.IsAboutGeocode(lao.tambon, false))))).OrderBy(x => x.publication);
                 if (gazette.Any())
                 {
                     latestConstituencyGazettes.Add((lao, gazette.Last()));
                 }
-                else if (lao.type!= EntityType.TAO)
+                else if (lao.type != EntityType.TAO)
                 {
                     laoWithoutConstituency.Add(lao);
                 }
@@ -1312,6 +1312,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var hasWebId = false;
             var hasWikidata = false;
             var hasWebsite = false;
+            var hasLocation = false;
             if (listviewLocalAdministration.SelectedItems.Count == 1)
             {
                 foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
@@ -1321,6 +1322,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         hasWebId = entity.office.Any(x => x.webidSpecified);
                         hasWikidata = !String.IsNullOrEmpty(entity?.wiki?.wikidata);
                         hasWebsite = entity.office.First().url.Any();
+                        hasLocation = entity.office.First().Point != null;
                     }
                 }
             }
@@ -1328,6 +1330,7 @@ namespace De.AHoerstemeier.Tambon.UI
             mnuAdminInfoPage.Enabled = hasWebId;
             mnuWikidataLocal.Enabled = hasWikidata;
             mnuWebsite.Enabled = hasWebsite;
+            mnuLocation.Enabled = hasLocation;
         }
 
         private void popupListviewCentral_Opening(Object sender, CancelEventArgs e)
@@ -1451,6 +1454,23 @@ namespace De.AHoerstemeier.Tambon.UI
                     if (urls.Any())
                     {
                         Process.Start(urls.OrderByDescending(x => x.lastchecked).First().Value);
+                    }
+                }
+            }
+        }
+
+        private void mnuLocation_Click(object sender, EventArgs e)
+        {
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    var location = entity.office.FirstOrDefault()?.Point;
+                    if (location != null)
+                    {
+                        var url = String.Format(CultureInfo.CurrentUICulture, "https://maps.google.com/maps?ll={0},{1}&q={0},{1}&hl=en&t=m&z=15", location.lat, location.@long);
+                        Process.Start(url);
                     }
                 }
             }

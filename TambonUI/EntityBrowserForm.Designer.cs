@@ -54,11 +54,11 @@
             this.columnLocalThai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalGeocode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnLocalDolaCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalPopulation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalCreation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalMayorTerm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnLocalCouncilTerm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnLocalDolaCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.popupListviewLocal = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuHistoryLocal = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAdminInfoPage = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,6 +78,7 @@
             this.txtLocalGovernment = new System.Windows.Forms.TextBox();
             this.tabConstituency = new System.Windows.Forms.TabPage();
             this.txtConstituency = new System.Windows.Forms.TextBox();
+            this.mnuLocation = new System.Windows.Forms.ToolStripMenuItem();
             this.popupTree.SuspendLayout();
             this.tabSubdivisions.SuspendLayout();
             this.tabPageCentral.SuspendLayout();
@@ -99,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSubDivisions.Location = new System.Drawing.Point(8, 7);
-            this.txtSubDivisions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSubDivisions.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubDivisions.Multiline = true;
             this.txtSubDivisions.Name = "txtSubDivisions";
             this.txtSubDivisions.Size = new System.Drawing.Size(513, 147);
@@ -111,7 +112,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.treeviewSelection.ContextMenuStrip = this.popupTree;
             this.treeviewSelection.Location = new System.Drawing.Point(4, 4);
-            this.treeviewSelection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.treeviewSelection.Margin = new System.Windows.Forms.Padding(4);
             this.treeviewSelection.Name = "treeviewSelection";
             this.treeviewSelection.Size = new System.Drawing.Size(255, 622);
             this.treeviewSelection.TabIndex = 11;
@@ -181,7 +182,7 @@
             this.tabSubdivisions.Controls.Add(this.tabPageCentral);
             this.tabSubdivisions.Controls.Add(this.tabPageLocal);
             this.tabSubdivisions.Location = new System.Drawing.Point(268, 4);
-            this.tabSubdivisions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSubdivisions.Margin = new System.Windows.Forms.Padding(4);
             this.tabSubdivisions.Name = "tabSubdivisions";
             this.tabSubdivisions.SelectedIndex = 0;
             this.tabSubdivisions.Size = new System.Drawing.Size(541, 421);
@@ -191,9 +192,9 @@
             // 
             this.tabPageCentral.Controls.Add(this.listviewCentralAdministration);
             this.tabPageCentral.Location = new System.Drawing.Point(4, 25);
-            this.tabPageCentral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageCentral.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageCentral.Name = "tabPageCentral";
-            this.tabPageCentral.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageCentral.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageCentral.Size = new System.Drawing.Size(533, 392);
             this.tabPageCentral.TabIndex = 0;
             this.tabPageCentral.Text = "Central";
@@ -213,7 +214,7 @@
             this.listviewCentralAdministration.ContextMenuStrip = this.popupListviewCentral;
             this.listviewCentralAdministration.HideSelection = false;
             this.listviewCentralAdministration.Location = new System.Drawing.Point(-1, 4);
-            this.listviewCentralAdministration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listviewCentralAdministration.Margin = new System.Windows.Forms.Padding(4);
             this.listviewCentralAdministration.MultiSelect = false;
             this.listviewCentralAdministration.Name = "listviewCentralAdministration";
             this.listviewCentralAdministration.Size = new System.Drawing.Size(531, 381);
@@ -265,9 +266,9 @@
             // 
             this.tabPageLocal.Controls.Add(this.listviewLocalAdministration);
             this.tabPageLocal.Location = new System.Drawing.Point(4, 25);
-            this.tabPageLocal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageLocal.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageLocal.Name = "tabPageLocal";
-            this.tabPageLocal.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPageLocal.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageLocal.Size = new System.Drawing.Size(533, 392);
             this.tabPageLocal.TabIndex = 1;
             this.tabPageLocal.Text = "Local";
@@ -291,7 +292,7 @@
             this.listviewLocalAdministration.ContextMenuStrip = this.popupListviewLocal;
             this.listviewLocalAdministration.HideSelection = false;
             this.listviewLocalAdministration.Location = new System.Drawing.Point(-5, 7);
-            this.listviewLocalAdministration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listviewLocalAdministration.Margin = new System.Windows.Forms.Padding(4);
             this.listviewLocalAdministration.MultiSelect = false;
             this.listviewLocalAdministration.Name = "listviewLocalAdministration";
             this.listviewLocalAdministration.Size = new System.Drawing.Size(535, 381);
@@ -317,10 +318,6 @@
             // 
             this.columnLocalGeocode.Text = "Geocode";
             // 
-            // columnLocalDolaCode
-            // 
-            this.columnLocalDolaCode.Text = "DOLA code";
-            // 
             // columnLocalPopulation
             // 
             this.columnLocalPopulation.Text = "Population";
@@ -342,6 +339,10 @@
             this.columnLocalCouncilTerm.Text = "Council";
             this.columnLocalCouncilTerm.Width = 80;
             // 
+            // columnLocalDolaCode
+            // 
+            this.columnLocalDolaCode.Text = "DOLA code";
+            // 
             // popupListviewLocal
             // 
             this.popupListviewLocal.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -351,50 +352,51 @@
             this.mnuGeneralInfoPage,
             this.mnuGoogleSearchLocal,
             this.mnuWikidataLocal,
-            this.mnuWebsite});
+            this.mnuWebsite,
+            this.mnuLocation});
             this.popupListviewLocal.Name = "popupListviewLocal";
-            this.popupListviewLocal.Size = new System.Drawing.Size(198, 100);
+            this.popupListviewLocal.Size = new System.Drawing.Size(211, 200);
             this.popupListviewLocal.Opening += new System.ComponentModel.CancelEventHandler(this.popupListviewLocal_Opening);
             // 
             // mnuHistoryLocal
             // 
             this.mnuHistoryLocal.Name = "mnuHistoryLocal";
-            this.mnuHistoryLocal.Size = new System.Drawing.Size(197, 24);
+            this.mnuHistoryLocal.Size = new System.Drawing.Size(210, 24);
             this.mnuHistoryLocal.Text = "History";
             this.mnuHistoryLocal.Click += new System.EventHandler(this.mnuHistoryLocal_Click);
             // 
             // mnuAdminInfoPage
             // 
             this.mnuAdminInfoPage.Name = "mnuAdminInfoPage";
-            this.mnuAdminInfoPage.Size = new System.Drawing.Size(197, 24);
+            this.mnuAdminInfoPage.Size = new System.Drawing.Size(210, 24);
             this.mnuAdminInfoPage.Text = "Admin info page";
             this.mnuAdminInfoPage.Click += new System.EventHandler(this.mnuAdminInfoPage_Click);
             // 
             // mnuGeneralInfoPage
             // 
             this.mnuGeneralInfoPage.Name = "mnuGeneralInfoPage";
-            this.mnuGeneralInfoPage.Size = new System.Drawing.Size(197, 24);
+            this.mnuGeneralInfoPage.Size = new System.Drawing.Size(210, 24);
             this.mnuGeneralInfoPage.Text = "General info page";
             this.mnuGeneralInfoPage.Click += new System.EventHandler(this.mnuGeneralInfoPage_Click);
             // 
             // mnuGoogleSearchLocal
             // 
             this.mnuGoogleSearchLocal.Name = "mnuGoogleSearchLocal";
-            this.mnuGoogleSearchLocal.Size = new System.Drawing.Size(197, 24);
+            this.mnuGoogleSearchLocal.Size = new System.Drawing.Size(210, 24);
             this.mnuGoogleSearchLocal.Text = "Google search";
             this.mnuGoogleSearchLocal.Click += new System.EventHandler(this.mnuGoogleSearchLocal_Click);
             // 
             // mnuWikidataLocal
             // 
             this.mnuWikidataLocal.Name = "mnuWikidataLocal";
-            this.mnuWikidataLocal.Size = new System.Drawing.Size(197, 24);
+            this.mnuWikidataLocal.Size = new System.Drawing.Size(210, 24);
             this.mnuWikidataLocal.Text = "Wikidata";
             this.mnuWikidataLocal.Click += new System.EventHandler(this.mnuWikidata_Click);
             // 
             // mnuWebsite
             // 
             this.mnuWebsite.Name = "mnuWebsite";
-            this.mnuWebsite.Size = new System.Drawing.Size(197, 24);
+            this.mnuWebsite.Size = new System.Drawing.Size(210, 24);
             this.mnuWebsite.Text = "Website";
             this.mnuWebsite.Click += new System.EventHandler(this.mnuWebsite_Click);
             // 
@@ -409,7 +411,7 @@
             this.tabSubdivisionData.Controls.Add(this.tabLocalGoverment);
             this.tabSubdivisionData.Controls.Add(this.tabConstituency);
             this.tabSubdivisionData.Location = new System.Drawing.Point(268, 432);
-            this.tabSubdivisionData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSubdivisionData.Margin = new System.Windows.Forms.Padding(4);
             this.tabSubdivisionData.Name = "tabSubdivisionData";
             this.tabSubdivisionData.SelectedIndex = 0;
             this.tabSubdivisionData.Size = new System.Drawing.Size(541, 194);
@@ -419,9 +421,9 @@
             // 
             this.tabSubdivision.Controls.Add(this.txtSubDivisions);
             this.tabSubdivision.Location = new System.Drawing.Point(4, 25);
-            this.tabSubdivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSubdivision.Margin = new System.Windows.Forms.Padding(4);
             this.tabSubdivision.Name = "tabSubdivision";
-            this.tabSubdivision.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabSubdivision.Padding = new System.Windows.Forms.Padding(4);
             this.tabSubdivision.Size = new System.Drawing.Size(533, 165);
             this.tabSubdivision.TabIndex = 0;
             this.tabSubdivision.Text = "Subdivisions";
@@ -431,9 +433,9 @@
             // 
             this.tabErrors.Controls.Add(this.txtErrors);
             this.tabErrors.Location = new System.Drawing.Point(4, 25);
-            this.tabErrors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabErrors.Margin = new System.Windows.Forms.Padding(4);
             this.tabErrors.Name = "tabErrors";
-            this.tabErrors.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabErrors.Padding = new System.Windows.Forms.Padding(4);
             this.tabErrors.Size = new System.Drawing.Size(533, 165);
             this.tabErrors.TabIndex = 1;
             this.tabErrors.Text = "Invalid data";
@@ -445,7 +447,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtErrors.Location = new System.Drawing.Point(8, 7);
-            this.txtErrors.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtErrors.Margin = new System.Windows.Forms.Padding(4);
             this.txtErrors.Multiline = true;
             this.txtErrors.Name = "txtErrors";
             this.txtErrors.Size = new System.Drawing.Size(513, 147);
@@ -455,9 +457,9 @@
             // 
             this.tabElection.Controls.Add(this.txtElections);
             this.tabElection.Location = new System.Drawing.Point(4, 25);
-            this.tabElection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabElection.Margin = new System.Windows.Forms.Padding(4);
             this.tabElection.Name = "tabElection";
-            this.tabElection.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabElection.Padding = new System.Windows.Forms.Padding(4);
             this.tabElection.Size = new System.Drawing.Size(533, 165);
             this.tabElection.TabIndex = 2;
             this.tabElection.Text = "Election";
@@ -469,7 +471,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtElections.Location = new System.Drawing.Point(8, 7);
-            this.txtElections.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtElections.Margin = new System.Windows.Forms.Padding(4);
             this.txtElections.Multiline = true;
             this.txtElections.Name = "txtElections";
             this.txtElections.Size = new System.Drawing.Size(513, 147);
@@ -479,9 +481,9 @@
             // 
             this.tabMuban.Controls.Add(this.txtMuban);
             this.tabMuban.Location = new System.Drawing.Point(4, 25);
-            this.tabMuban.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabMuban.Margin = new System.Windows.Forms.Padding(4);
             this.tabMuban.Name = "tabMuban";
-            this.tabMuban.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabMuban.Padding = new System.Windows.Forms.Padding(4);
             this.tabMuban.Size = new System.Drawing.Size(533, 165);
             this.tabMuban.TabIndex = 3;
             this.tabMuban.Text = "Muban";
@@ -493,7 +495,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMuban.Location = new System.Drawing.Point(8, 7);
-            this.txtMuban.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMuban.Margin = new System.Windows.Forms.Padding(4);
             this.txtMuban.Multiline = true;
             this.txtMuban.Name = "txtMuban";
             this.txtMuban.Size = new System.Drawing.Size(513, 147);
@@ -503,9 +505,9 @@
             // 
             this.tabLocalGoverment.Controls.Add(this.txtLocalGovernment);
             this.tabLocalGoverment.Location = new System.Drawing.Point(4, 25);
-            this.tabLocalGoverment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabLocalGoverment.Margin = new System.Windows.Forms.Padding(4);
             this.tabLocalGoverment.Name = "tabLocalGoverment";
-            this.tabLocalGoverment.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabLocalGoverment.Padding = new System.Windows.Forms.Padding(4);
             this.tabLocalGoverment.Size = new System.Drawing.Size(533, 165);
             this.tabLocalGoverment.TabIndex = 4;
             this.tabLocalGoverment.Text = "LAO";
@@ -517,7 +519,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLocalGovernment.Location = new System.Drawing.Point(8, 7);
-            this.txtLocalGovernment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLocalGovernment.Margin = new System.Windows.Forms.Padding(4);
             this.txtLocalGovernment.Multiline = true;
             this.txtLocalGovernment.Name = "txtLocalGovernment";
             this.txtLocalGovernment.Size = new System.Drawing.Size(513, 147);
@@ -546,6 +548,13 @@
             this.txtConstituency.Size = new System.Drawing.Size(513, 147);
             this.txtConstituency.TabIndex = 17;
             // 
+            // locationToolStripMenuItem
+            // 
+            this.mnuLocation.Name = "locationToolStripMenuItem";
+            this.mnuLocation.Size = new System.Drawing.Size(210, 24);
+            this.mnuLocation.Text = "Location";
+            this.mnuLocation.Click += new System.EventHandler(this.mnuLocation_Click);
+            // 
             // EntityBrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -554,7 +563,7 @@
             this.Controls.Add(this.tabSubdivisionData);
             this.Controls.Add(this.treeviewSelection);
             this.Controls.Add(this.tabSubdivisions);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EntityBrowserForm";
             this.Text = "EntityBrowserForm";
             this.Load += new System.EventHandler(this.EntityBrowserForm_Load);
@@ -632,5 +641,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuWebsite;
         private System.Windows.Forms.ColumnHeader columnLocalMayorTerm;
         private System.Windows.Forms.ColumnHeader columnLocalCouncilTerm;
+        private System.Windows.Forms.ToolStripMenuItem mnuLocation;
     }
 }
