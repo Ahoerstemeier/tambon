@@ -3161,6 +3161,11 @@ namespace De.AHoerstemeier.Tambon
         /// Election not possible due to natural desaster.
         /// </summary>
         NaturalDesaster,
+
+        /// <summary>
+        /// Status change was pending, but withdrawn.
+        /// </summary>
+        WithdrawnStatusChange,
     }
 
 
