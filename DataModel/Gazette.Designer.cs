@@ -3444,9 +3444,14 @@ namespace De.AHoerstemeier.Tambon {
         DirectorGeneralDepartmentOfProvincialAdministration,
         
         /// <summary>
-        /// Minister of Natural Resources and Environment (รัฐมนตรีว่าการกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อมของไทย)
+        /// Minister of Natural Resources and Environment (รัฐมนตรีว่าการกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อมของไทย).
         /// </summary>
         MinisterOfEnvironment,
+
+        /// <summary>
+        /// Director of the National Bureau of Buddhism (ผู้อำนวยการสำนักงานพระพุทธศาสนาแห่งชาติ).
+        /// </summary>
+        DirectorOfNationalBureauOfBuddhism,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]

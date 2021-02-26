@@ -459,6 +459,16 @@ namespace De.AHoerstemeier.Tambon
         /// Paleontological survey area (เขตสำรวจและศึกษาวิจัยเกี่ยวกับแหล่งซากดึกดำบรรพ์หรือซากดึกดำบรรพ์).
         /// </summary>
         Paleontological,
+
+        /// <summary>
+        /// Environment protection area (เขตพื้นที่คุ้มครองสิ่งแวดล้อม).
+        /// </summary>
+        Environment,
+
+        /// <summary>
+        /// Buddhist temple (วัด).
+        /// </summary>
+        Wat,
     }
 
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]

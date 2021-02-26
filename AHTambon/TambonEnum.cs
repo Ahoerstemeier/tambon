@@ -168,6 +168,7 @@ namespace De.AHoerstemeier.Tambon
         RegisterOfficeDeputyDirector,
         DirectorGeneralDepartmentOfProvincialAdministration,
         MinisterOfEnvironment,
-        DepartmentOfMineralResourceDirectorGeneral
+        DepartmentOfMineralResourceDirectorGeneral,
+        DirectorOfNationalBureauOfBuddhism
     }
 }
