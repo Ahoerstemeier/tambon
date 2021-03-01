@@ -666,7 +666,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( !officeEntry.obsolete )
                 {
                     officeEntry.council.SortByDate();
-                    var term = officeEntry.council.CouncilTerms.LastOrDefault();
+                    var term = officeEntry.council.CouncilTerms.FirstOrDefault();
                     if ( term != null )
                     // foreach ( var term in office.council )
                     {
