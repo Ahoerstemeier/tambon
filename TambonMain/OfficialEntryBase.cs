@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace De.AHoerstemeier.Tambon
@@ -23,15 +18,15 @@ namespace De.AHoerstemeier.Tambon
                 var result =
                     (BeginYear > GlobalData.MaximumPossibleElectionYear) &
                     (EndYear < GlobalData.MaximumPossibleElectionYear);
-                if ( EndYear > 0 )
+                if (EndYear > 0)
                 {
                     result &= BeginYear <= EndYear;
                 }
 
                 if (endSpecified & beginSpecified)
-                { 
-                    result &= end.CompareTo(begin) > 0; 
-                }                
+                {
+                    result &= end.CompareTo(begin) > 0;
+                }
                 return result;
             }
         }
@@ -44,11 +39,11 @@ namespace De.AHoerstemeier.Tambon
             get
             {
                 var beginYear = 0;
-                if ( beginSpecified )
+                if (beginSpecified)
                 {
                     beginYear = begin.Year;
                 }
-                else if ( !String.IsNullOrEmpty(beginyear) )
+                else if (!String.IsNullOrEmpty(beginyear))
                 {
                     beginYear = Convert.ToInt32(beginyear);
                 }
@@ -64,11 +59,11 @@ namespace De.AHoerstemeier.Tambon
             get
             {
                 var endYear = 0;
-                if ( endSpecified )
+                if (endSpecified)
                 {
                     endYear = end.Year;
                 }
-                else if ( !String.IsNullOrEmpty(endyear) )
+                else if (!String.IsNullOrEmpty(endyear))
                 {
                     endYear = Convert.ToInt32(endyear);
                 }
@@ -85,15 +80,15 @@ namespace De.AHoerstemeier.Tambon
         {
             Boolean result = true;
 
-            if ( endSpecified & beginSpecified )
+            if (endSpecified & beginSpecified)
             {
-                if ( BeginYear > FirstYearWithElectedLocalOfficeHolder )
+                if (BeginYear > FirstYearWithElectedLocalOfficeHolder)
                 {
                     var expectedEndTerm = begin.AddYears(maximumTermLength).AddDays(-1);
                     var compare = expectedEndTerm.CompareTo(end);
                     result = compare >= 0;
 
-                    if ( endreason == OfficialEndType.EndOfTerm )
+                    if (endreason == OfficialEndType.EndOfTerm)
                         result = (compare == 0);
                 }
             }
@@ -108,5 +103,6 @@ namespace De.AHoerstemeier.Tambon
         {
             return (!endSpecified) && String.IsNullOrEmpty(endyear) && (endreason == OfficialEndType.Unknown);
         }
+
     }
 }

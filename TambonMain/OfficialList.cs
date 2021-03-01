@@ -31,7 +31,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Gets an enumeration of official terms.
+        /// Gets an ordered enumeration of official terms.
         /// </summary>
         /// <value>An enumeration of official terms.</value>
         public IEnumerable<OfficialEntryBase> OfficialTerms
@@ -47,8 +47,31 @@ namespace De.AHoerstemeier.Tambon
                         result.Add(term);
                     }
                 }
-                return result;
+                return result.OrderByDescending(x => x.TimeStamp); 
             }
         }
+
+        /// <summary>
+        /// Gets an ordered enumeration of official terms and vacancies.
+        /// </summary>
+        /// <value>An enumeration of official terms and vacancies.</value>
+        public IEnumerable<OfficialOrVacancyEntry> OfficialTermsOrVacancies
+        {
+            get
+            {
+                var result = new List<OfficialOrVacancyEntry>();
+                foreach (var item in Items)
+                {
+                    var term = item as OfficialOrVacancyEntry;
+                    if (term != null)
+                    {
+                        result.Add(term);
+                    }
+                }
+                return result.OrderByDescending(x => x.TimeStamp);
+            }
+        }
+
+        
     }
 }
