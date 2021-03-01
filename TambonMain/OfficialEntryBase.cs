@@ -21,17 +21,18 @@ namespace De.AHoerstemeier.Tambon
             get
             {
                 var result =
-                    (BeginYear < GlobalData.MaximumPossibleElectionYear) &
+                    (BeginYear > GlobalData.MaximumPossibleElectionYear) &
                     (EndYear < GlobalData.MaximumPossibleElectionYear);
                 if ( EndYear > 0 )
                 {
-                    result = BeginYear <= EndYear;
+                    result &= BeginYear <= EndYear;
                 }
 
-                if ( endFieldSpecified & beginFieldSpecified )
-                    return end.CompareTo(begin) > 0;
-                else
-                    return true;
+                if (endSpecified & beginSpecified)
+                { 
+                    result &= end.CompareTo(begin) > 0; 
+                }                
+                return result;
             }
         }
 
@@ -43,7 +44,7 @@ namespace De.AHoerstemeier.Tambon
             get
             {
                 var beginYear = 0;
-                if ( beginFieldSpecified )
+                if ( beginSpecified )
                 {
                     beginYear = begin.Year;
                 }
@@ -63,7 +64,7 @@ namespace De.AHoerstemeier.Tambon
             get
             {
                 var endYear = 0;
-                if ( endFieldSpecified )
+                if ( endSpecified )
                 {
                     endYear = end.Year;
                 }
@@ -84,7 +85,7 @@ namespace De.AHoerstemeier.Tambon
         {
             Boolean result = true;
 
-            if ( endFieldSpecified & beginFieldSpecified )
+            if ( endSpecified & beginSpecified )
             {
                 if ( BeginYear > FirstYearWithElectedLocalOfficeHolder )
                 {
