@@ -31,7 +31,7 @@ namespace De.AHoerstemeier.Tambon
         }
 
         /// <summary>
-        /// Gets an enumeration of council terms.
+        /// Gets an ordered enumeration of council terms.
         /// </summary>
         /// <value>An enumeration of council terms.</value>
         public IEnumerable<CouncilTerm> CouncilTerms
@@ -41,13 +41,32 @@ namespace De.AHoerstemeier.Tambon
                 var result = new List<CouncilTerm>();
                 foreach ( var item in Items )
                 {
-                    var term = item as CouncilTerm;
-                    if ( term != null )
+                    if (item is CouncilTerm term)
                     {
                         result.Add(term);
                     }
                 }
-                return result;
+                return result.OrderByDescending(x => x.begin);
+            }
+        }
+
+        /// <summary>
+        /// Gets an ordered enumeration of council terms and vacancies.
+        /// </summary>
+        /// <value>An enumeration of council terms and vacancies.</value>
+        public IEnumerable<CouncilTermOrVacancy> CouncilTermsOrVacancies
+        {
+            get
+            {
+                var result = new List<CouncilTermOrVacancy>();
+                foreach (var item in Items)
+                {
+                    if (item is CouncilTermOrVacancy term)
+                    {
+                        result.Add(term);
+                    }
+                }
+                return result.OrderByDescending(x => x.begin);
             }
         }
     }

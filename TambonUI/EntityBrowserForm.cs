@@ -716,14 +716,14 @@ namespace De.AHoerstemeier.Tambon.UI
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Count(),
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine + Environment.NewLine;
 
-            var localEntitiesWithVacantMayor = localEntitiesWithOffice.Where(x => x.office.First().officials.Items.FirstOrDefault() as OfficialVacancy != null);
+            var localEntitiesWithVacantMayor = localEntitiesWithOffice.Where(x => x.office.First().officials.OfficialTermsOrVacancies.FirstOrDefault() as OfficialVacancy != null);
             if (localEntitiesWithVacantMayor.Any())
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "LAO with vacant mayor: {0} ({1} TAO)",
                 localEntitiesWithVacantMayor.Count(),
                 localEntitiesWithVacantMayor.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
             }
-            var localEntitiesWithVacantCouncil = localEntitiesWithOffice.Where(x => x.office.First().council.Items.FirstOrDefault() as CouncilVacancy != null);
+            var localEntitiesWithVacantCouncil = localEntitiesWithOffice.Where(x => x.office.First().council.CouncilTermsOrVacancies.FirstOrDefault() as CouncilVacancy != null);
             if (localEntitiesWithVacantCouncil.Any())
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "LAO with vacant council: {0} ({1} TAO)",
