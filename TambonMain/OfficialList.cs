@@ -9,17 +9,17 @@ namespace De.AHoerstemeier.Tambon
     {
         private DateTime GetDateFromItem(Object x)
         {
-            var term = x as OfficialEntryBase;
+            var term = x as OfficialOrVacancyEntry;
             if ( term != null )
             {
-                return term.begin;
+                return term.TimeStamp;
             }
             var electionDate = x as CanceledElection;
             if ( electionDate != null )
             {
                 return electionDate.date;
             }
-            return new DateTime(1900, 1, 1);
+            return DateTime.MinValue;
         }
 
         /// <summary>

@@ -1530,8 +1530,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 txtLocalGovernment.Text = String.Empty;
                 if (office != null && !office.obsolete)
                 {
-                    office.council.SortByDate();
-                    var term = office.council.CouncilTerms.LastOrDefault();
+                    var term = office.council.CouncilTerms.FirstOrDefault();
                     if (term != null && term.beginreason != TermBeginType.TermExtended)
                     {
                         term.end = term.begin.AddYears(4).AddDays(-1);
@@ -1549,8 +1548,7 @@ namespace De.AHoerstemeier.Tambon.UI
                             String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin, term.end, term.type, term.size) + Environment.NewLine;
                         txtLocalGovernment.Text += txt;
                     }
-                    office.officials.SortByDate();
-                    var official = office.officials.OfficialTerms.LastOrDefault() as OfficialEntry;
+                    var official = office.officials.OfficialTerms.FirstOrDefault() as OfficialEntry;
                     if (official != null && official.beginreason != OfficialBeginType.TermExtended)
                     {
                         official.end = official.begin.AddYears(4).AddDays(-1);

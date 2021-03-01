@@ -9,7 +9,7 @@ namespace De.AHoerstemeier.Tambon
     {
         private DateTime GetDateFromItem(Object x)
         {
-            var councilTerm = x as CouncilTerm;
+            var councilTerm = x as CouncilTermOrVacancy;
             if ( councilTerm != null )
             {
                 return councilTerm.begin;
