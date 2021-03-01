@@ -605,9 +605,13 @@ namespace De.AHoerstemeier.Tambon
                     // foreach ( var term in office.council )
                     {
                         DateTime termEnd;
-                        if ( term.endSpecified )
+                        if (term.endSpecified)
                         {
                             termEnd = term.end;
+                        }
+                        else if (term.beginreason == OfficialBeginType.TermExtended)
+                        {
+                            termEnd = new DateTime(2050, 1, 1); // random day in far future
                         }
                         else
                         {

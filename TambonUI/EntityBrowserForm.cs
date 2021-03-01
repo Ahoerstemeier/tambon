@@ -100,7 +100,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     Tag = data
                 };
-                if ( !data.type.IsThirdLevelAdministrativeUnit() )  // No Muban in Treeview
+                if (!data.type.IsThirdLevelAdministrativeUnit())  // No Muban in Treeview
                 {
                     foreach (Entity entity in data.entity)
                     {
@@ -576,7 +576,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var allEntites = entity.FlatList().Where(x => !x.IsObsolete);
             var allEntityOfFittingType = allEntites.Where(x => x.type.IsCompatibleEntityType(entityTypes));
             var entitiesWithoutCode = allEntityOfFittingType.Where(x => String.IsNullOrEmpty(selector(x)));
-            if ( checkMissing && entitiesWithoutCode.Any() )
+            if (checkMissing && entitiesWithoutCode.Any())
             {
                 text += String.Format("Entity without {0} code ({1}):", codeName, entitiesWithoutCode.Count()) + Environment.NewLine;
                 foreach (var subEntity in entitiesWithoutCode)
@@ -716,6 +716,20 @@ namespace De.AHoerstemeier.Tambon.UI
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Count(),
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine + Environment.NewLine;
 
+            var localEntitiesWithVacantMayor = localEntitiesWithOffice.Where(x => x.office.First().officials.Items.FirstOrDefault() as OfficialVacancy != null);
+            if (localEntitiesWithVacantMayor.Any())
+            {
+                result += String.Format(CultureInfo.CurrentUICulture, "LAO with vacant mayor: {0} ({1} TAO)",
+                localEntitiesWithVacantMayor.Count(),
+                localEntitiesWithVacantMayor.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+            }
+            var localEntitiesWithVacantCouncil = localEntitiesWithOffice.Where(x => x.office.First().council.Items.FirstOrDefault() as CouncilVacancy != null);
+            if (localEntitiesWithVacantCouncil.Any())
+            {
+                result += String.Format(CultureInfo.CurrentUICulture, "LAO with vacant council: {0} ({1} TAO)",
+                   localEntitiesWithVacantCouncil.Count(),
+                   localEntitiesWithVacantCouncil.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
+            }
             var localGovernmentExpectingHistory = localGovernmentsInEntity.Where(x => x.Dola != null && x.type != EntityType.PAO);
             var localGovernmentWithoutLatestHistory = localGovernmentExpectingHistory.Where(x =>
                 !x.history.Items.Any(y => y is HistoryCreate) &&
@@ -810,12 +824,12 @@ namespace De.AHoerstemeier.Tambon.UI
 
             foreach (var lao in localGovernmentsInEntity)
             {
-                var gazette = gazetteConstituency.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency && (y.IsAboutGeocode(lao.geocode, false)|| (lao.tambonSpecified && y.IsAboutGeocode(lao.tambon, false))))).OrderBy(x => x.publication);
+                var gazette = gazetteConstituency.Where(x => x.GazetteOperations().Any(y => y is GazetteConstituency && (y.IsAboutGeocode(lao.geocode, false) || (lao.tambonSpecified && y.IsAboutGeocode(lao.tambon, false))))).OrderBy(x => x.publication);
                 if (gazette.Any())
                 {
                     latestConstituencyGazettes.Add((lao, gazette.Last()));
                 }
-                else if (lao.type!= EntityType.TAO)
+                else if (lao.type != EntityType.TAO)
                 {
                     laoWithoutConstituency.Add(lao);
                 }
@@ -971,9 +985,9 @@ namespace De.AHoerstemeier.Tambon.UI
                 AddPopulationToItems(subEntity, item);
                 AddCreationDateToItems(entity, subEntity, item);
                 var currentOfficialTerm = office.officials.OfficialTerms.OrderByDescending(x => x.begin).FirstOrDefault();
-                item.SubItems.Add(currentOfficialTerm?.begin.ToString("yyyy-mm-dd") ?? String.Empty);
+                item.SubItems.Add(currentOfficialTerm?.begin.ToString("yyyy-MM-dd") ?? String.Empty);
                 var currentCouncilTerm = office.council.CouncilTerms.OrderByDescending(x => x.begin).FirstOrDefault();
-                item.SubItems.Add(currentCouncilTerm?.begin.ToString("yyyy-mm-dd") ?? String.Empty);
+                item.SubItems.Add(currentCouncilTerm?.begin.ToString("yyyy-MM-dd") ?? String.Empty);
                 item.SubItems.Add(dolaCode);
             }
             listviewLocalAdministration.EndUpdate();
@@ -1243,6 +1257,7 @@ namespace De.AHoerstemeier.Tambon.UI
             CalcElectionData(entity);
             CalcMubanData(entity);
             CalcLocalGovernmentData(entity);
+            CalcLocalGovernmentConstituencies(entity);
 
             mnuMubanDefinitions.Enabled = AreaDefinitionAnnouncements(entity).Any();
 
@@ -1312,6 +1327,7 @@ namespace De.AHoerstemeier.Tambon.UI
             var hasWebId = false;
             var hasWikidata = false;
             var hasWebsite = false;
+            var hasLocation = false;
             if (listviewLocalAdministration.SelectedItems.Count == 1)
             {
                 foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
@@ -1321,6 +1337,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         hasWebId = entity.office.Any(x => x.webidSpecified);
                         hasWikidata = !String.IsNullOrEmpty(entity?.wiki?.wikidata);
                         hasWebsite = entity.office.First().url.Any();
+                        hasLocation = entity.office.First().Point != null;
                     }
                 }
             }
@@ -1328,11 +1345,24 @@ namespace De.AHoerstemeier.Tambon.UI
             mnuAdminInfoPage.Enabled = hasWebId;
             mnuWikidataLocal.Enabled = hasWikidata;
             mnuWebsite.Enabled = hasWebsite;
+            mnuLocation.Enabled = hasLocation;
         }
 
         private void popupListviewCentral_Opening(Object sender, CancelEventArgs e)
         {
             CheckHistoryAvailable(listviewCentralAdministration, mnuHistoryCentral);
+            var hasWikidata = false;
+            if (listviewCentralAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewCentralAdministration.SelectedItems)
+                {
+                    if (item.Tag is Entity entity)
+                    {
+                        hasWikidata = !String.IsNullOrEmpty(entity?.wiki?.wikidata);
+                    }
+                }
+            }
+            mnuWikidataCentral.Enabled = hasWikidata;
         }
 
         private void mnuAdminInfoPage_Click(Object sender, EventArgs e)
@@ -1369,7 +1399,7 @@ namespace De.AHoerstemeier.Tambon.UI
             }
         }
 
-        private void mnuWikidata_Click(Object sender, EventArgs e)
+        private void mnuWikidataLocal_Click(Object sender, EventArgs e)
         {
             if (listviewLocalAdministration.SelectedItems.Count == 1)
             {
@@ -1454,6 +1484,40 @@ namespace De.AHoerstemeier.Tambon.UI
                     }
                 }
             }
+        }
+
+        private void mnuLocation_Click(object sender, EventArgs e)
+        {
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewLocalAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    var location = entity.office.FirstOrDefault()?.Point;
+                    if (location != null)
+                    {
+                        var url = String.Format(CultureInfo.CurrentUICulture, "https://maps.google.com/maps?ll={0},{1}&q={0},{1}&hl=en&t=m&z=15", location.lat, location.@long);
+                        Process.Start(url);
+                    }
+                }
+            }
+        }
+
+        private void mnuWikidataCentral_Click(Object sender, EventArgs e)
+        {
+            if (listviewCentralAdministration.SelectedItems.Count == 1)
+            {
+                foreach (ListViewItem item in listviewCentralAdministration.SelectedItems)
+                {
+                    var entity = item.Tag as Entity;
+                    if (!String.IsNullOrEmpty(entity?.wiki?.wikidata))
+                    {
+                        var url = String.Format(CultureInfo.CurrentUICulture, "https://www.wikidata.org/wiki/{0}", entity.wiki.wikidata);
+                        Process.Start(url);
+                    }
+                }
+            }
+
         }
         #endregion
     }

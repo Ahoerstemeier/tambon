@@ -36,6 +36,13 @@ namespace De.AHoerstemeier.Tambon
                     result = result | GeocodeHelper.IsSameGeocode(geocode - 50, this.tambon, includeSubEntities);
                 }
             }
+            if (this.type == EntityType.Changwat)
+            {
+                if (GeocodeHelper.GeocodeLevel(geocode) == 3 && (geocode % 100 == 50) && ((geocode / 100) % 100 == 0))
+                {
+                    result = true;  // special fake geocode for PAO 
+                }
+            }
 
             foreach (var entry in Items)
             {
