@@ -599,8 +599,7 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ( (!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type) )
                 {
-                    officeEntry.officials.SortByDate();
-                    var term = officeEntry.officials.OfficialTerms.LastOrDefault();
+                    var term = officeEntry.officials.OfficialTerms.FirstOrDefault();
                     if ( term != null )
                     // foreach ( var term in office.council )
                     {
@@ -640,7 +639,7 @@ namespace De.AHoerstemeier.Tambon
                 if ( (!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type) )
                 {
                     officeEntry.officials.SortByDate();
-                    var term = officeEntry.officials.OfficialTerms.LastOrDefault();
+                    var term = officeEntry.officials.OfficialTerms.FirstOrDefault();
                     if ( term != null )
                     {
                         var name = String.Empty;
