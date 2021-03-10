@@ -1542,10 +1542,19 @@ namespace De.AHoerstemeier.Tambon.UI
                             size = term.size,
                             type = term.type,
                         };
-
-                        var txt =
-                            String.Format("<term begin=\"{0:yyyy-MM-dd}\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
-                            String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin, term.end, term.type, term.size) + Environment.NewLine;
+                        String txt;
+                        if (entity.type == EntityType.TAO)
+                        {
+                            txt =
+                                String.Format("<term begin=\"{0:yyyy-MM-dd}\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
+                                String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin, term.end, term.type, term.size) + Environment.NewLine;
+                        }
+                        else
+                        {
+                            txt =
+                                String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"2021-03-27\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
+                                String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin, term.end, term.type, term.size) + Environment.NewLine;
+                        }
                         txtLocalGovernment.Text += txt;
                     }
                     var official = office.officials.OfficialTerms.FirstOrDefault() as OfficialEntry;
@@ -1560,14 +1569,28 @@ namespace De.AHoerstemeier.Tambon.UI
                             name = official.name,
                             title = official.title,
                         };
-
-                        var txt =
-                            String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" beginreason=\"TermExtended\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
-                            String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
+                        String txt;
+                        if (entity.type == EntityType.TAO)
+                        {
+                            txt =
+                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" beginreason=\"TermExtended\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
+                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
+                        }
+                        else 
+                        {
+                            txt =
+                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"2021-03-27\" beginreason=\"TermExtended\" endreason=\"EndOfTerm\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
+                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
+                        }
 
                         txtLocalGovernment.Text += txt;
-                    }
 
+
+                    }
+                    if (!String.IsNullOrEmpty(txtLocalGovernment.Text))
+                    {
+                        CopyToClipboard(txtLocalGovernment.Text);
+                    }
                 }
             }
         }
