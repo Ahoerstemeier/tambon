@@ -143,18 +143,22 @@ namespace De.AHoerstemeier.Tambon.UI
             var itemsWithCouncilElectionsPending = new List<EntityTermEnd>();
             var itemsWithOfficialElectionsPending = new List<EntityTermEnd>();
             var itemsWithOfficialElectionResultUnknown = new List<EntityTermEnd>();
+            var itemsWithOfficialVacant = new List<EntityTermEnd>();
 
             var itemsWithCouncilElectionPendingInParent = dummyEntity.EntitiesWithCouncilElectionPending();
             itemsWithCouncilElectionsPending.AddRange(itemsWithCouncilElectionPendingInParent);
             itemsWithCouncilElectionsPending.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
 
-            var itemsWithOfficialElectionPendingInParent = dummyEntity.EntitiesWithOfficialElectionPending();
+            var itemsWithOfficialElectionPendingInParent = dummyEntity.EntitiesWithOfficialElectionPending(false);
             itemsWithOfficialElectionsPending.AddRange(itemsWithOfficialElectionPendingInParent);
             itemsWithOfficialElectionsPending.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
 
             var itemsWithOfficialElectionResultUnknownInParent = dummyEntity.EntitiesWithLatestOfficialElectionResultUnknown();
             itemsWithOfficialElectionResultUnknown.AddRange(itemsWithOfficialElectionResultUnknownInParent);
             itemsWithOfficialElectionResultUnknown.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
+
+            var itemsWithOfficialVacantInParent = dummyEntity.EntitiesWithOfficialVacant();
+            itemsWithOfficialVacant.AddRange(itemsWithOfficialVacantInParent);
 
             var result = String.Empty;
             var councilBuilder = new StringBuilder();
@@ -179,6 +183,35 @@ namespace De.AHoerstemeier.Tambon.UI
                 result +=
                     String.Format(CultureInfo.CurrentUICulture, "{0} LAO council elections pending", councilCount) + Environment.NewLine +
                     councilBuilder.ToString() + Environment.NewLine;
+            }
+
+            var vacantBuilder = new StringBuilder();
+            Int32 vacantCount = 0;
+            foreach (var item in itemsWithOfficialVacant)
+            {
+                String officialTermEnd = "unknown";
+                if ((item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900))
+                {
+                    DateTime end;
+                    if (item.OfficialTerm.endSpecified)
+                    {
+                        end = item.OfficialTerm.end;
+                    }
+                    else
+                    {
+                        end = item.OfficialTerm.begin.AddYears(4).AddDays(-1);
+                    }
+                    officialTermEnd = String.Format(CultureInfo.CurrentUICulture, "{0:d}", end);
+                }
+                vacantBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2}", item.Entity.english, item.Entity.geocode, officialTermEnd);
+                vacantBuilder.AppendLine();
+                vacantCount++;
+            }
+            if (vacantCount > 0)
+            {
+                result +=
+                    String.Format(CultureInfo.CurrentUICulture, "{0} LAO official vacant", vacantCount) + Environment.NewLine +
+                    vacantBuilder.ToString() + Environment.NewLine;
             }
 
             var officialBuilder = new StringBuilder();
