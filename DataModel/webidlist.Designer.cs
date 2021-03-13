@@ -61,7 +61,9 @@ namespace De.AHoerstemeier.Tambon {
         private int idField;
         
         private uint geocodeField;
-        
+
+        private bool obsoleteField;
+
         private string commentField;
         
         /// <summary>
@@ -97,7 +99,24 @@ namespace De.AHoerstemeier.Tambon {
                 this.geocodeField = value;
             }
         }
-        
+
+        /// <summary>
+        /// Whether entry intentionally refers to an obsolete entity.
+        /// </summary>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool obsolete
+        {
+            get
+            {
+                return this.obsoleteField;
+            }
+            set
+            {
+                this.obsoleteField = value;
+            }
+        }
+
         /// <summary>
         /// Auto generated comment tag to suppress XML code documentation warning.
         /// </summary>

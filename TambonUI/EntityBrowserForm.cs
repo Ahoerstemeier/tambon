@@ -1225,7 +1225,7 @@ namespace De.AHoerstemeier.Tambon.UI
                             errors += String.Format("Duplicate webId {0}", entry.id) + Environment.NewLine;
                         }
                     }
-                    else
+                    else if (!entry.obsolete)  
                     {
                         errors += String.Format("WebId {0} refers to invalid LAO {1}", entry.id, entry.geocode) + Environment.NewLine;
                     }
