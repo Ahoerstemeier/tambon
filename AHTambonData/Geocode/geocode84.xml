@@ -118,8 +118,7 @@
       <official title="PAOChairman" name="ทนงศักดิ์ ทวีทอง" begin="2017-09-15" end="2020-12-19" beginreason="TermExtended"/>
       <official title="PAOChairman" name="ทนงศักดิ์ ทวีทอง" begin="2013-09-15" end="2017-09-14" beginreason="ElectedDirectly" endreason="EndOfTerm">
         <election date="2013-09-15" type="PAOChairman">
-          <!-- inofficial result -->
-          <candidates eligiblevoter="734257" abstainvotes="12437" invalidvotes="4931">
+          <candidates eligiblevoter="734257" abstainvotes="12437" invalidvotes="4931" comment="Inofficial numbers">
             <candidate id="1" name="สรรเสริญ ฤกษ์อุไร" votes="5024" />
             <candidate id="2" name="มนตรี เพชรขุ้ม" votes="119267" />
             <candidate id="3" name="ทนงศักดิ์ ทวีทอง" votes="259739" status="elected" />
@@ -7364,8 +7363,7 @@
       <officials>
         <official title="Mayor" name="ประเสริฐ บุญประสพ" begin="2021-03-28" beginreason="ElectedDirectly" >
           <election date="2021-03-28" type="Mayor">
-            <candidates>
-              <!-- inofficial result -->
+            <candidates comment="Inofficial numbers">
               <candidate id="1" name="ประเสริฐ บุญประสพ" votes="30873"/>
               <candidate id="2" name="ธีระกิจ หวังมุทิตากุล" votes="17687"/>
               <candidate id="3" name="นัฐพงษ์ เตี่ยมังกรพันธุ์" votes="2614"/>
@@ -8083,6 +8081,15 @@
         <googleplus type="user" status="inactive">105939629647261298436</googleplus>
       </socialweb>
       <officials>
+        <official title="Mayor" name="รามเนตร ใจกว้าง" begin="2021-03-28" beginreason="ElectedDirectly">
+          <election type="Mayor" date="2021-03-28">
+            <candidates comment="Inofficial numbers">
+              <candidate id="1" name="ณัฐวุทธิ์ แก้วมีศรี" votes="9901"/>
+              <candidate id="2" name="รามเนตร ใจกว้าง" votes="14770"/>
+              <candidate id="3" name="รังสฤษดิ์ บุญสิน" votes="2422"/>
+            </candidates>
+          </election>
+        </official>
         <official title="Mayor" name="รามเนตร ใจกว้าง" begin="2016-12-23" end="2021-03-27" beginreason="TermExtended" />
         <official title="Mayor" name="รามเนตร ใจกว้าง" begin="2012-12-23" end="2016-12-22" beginreason="ElectedDirectly" endreason="EndOfTerm" >
           <election type="Mayor" date="2012-12-23">
@@ -8100,9 +8107,10 @@
         <official title="Mayor" name="เชวงศักดิ์ ธรรมทีปกุล" inoffice="2003" endyear="2004" />
       </officials>
       <council>
+        <term begin="2021-03-28" type="ThesabanNakhon" size="24" />
         <term begin="2016-12-23" end="2021-03-27" type="ThesabanNakhon" size="24" beginreason="TermExtended" />
-        <term begin="2012-12-23" end="2016-12-22" type="ThesabanNakhon" size="24" />
-        <term begin="2008-09-14" end="2012-09-13" type="ThesabanMueang" size="18" />
+        <term begin="2012-12-23" end="2016-12-22" type="ThesabanNakhon" size="24" sizechangereason="StatusChange"/>
+        <term begin="2008-09-14" end="2012-09-13" type="ThesabanMueang" size="18" sizechangereason="StatusChange"/>
         <term begin="2004-04-18" end="2008-04-17" type="ThesabanTambon" size="12" />
       </council>
       <areacoverage>
