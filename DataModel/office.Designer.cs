@@ -3913,6 +3913,11 @@ namespace De.AHoerstemeier.Tambon
         /// Election canceled due to coup.
         /// </summary>
         Coup,
+
+        /// <summary>
+        /// Election canceled due to death of only candidate.
+        /// </summary>
+        Death,
     }
 
     /// <summary>
