@@ -1585,6 +1585,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         else
                         {
                             txt =
+                                String.Format("<term begin=\"2021-03-28\" type=\"{0}\" size=\"{1}\" />",newTerm.type, newTerm.size) + Environment.NewLine +
                                 String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"2021-03-27\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
                                 String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin, term.end, term.type, term.size) + Environment.NewLine;
                         }
