@@ -170,6 +170,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     end = item.CouncilTerm.end;
                 }
+                else if (item.CouncilTerm.type != EntityType.TAO && item.CouncilTerm.beginreason == TermBeginType.TermExtended)
+                {
+                    end = new DateTime(2021, 3, 28);
+                }
                 else
                 {
                     end = item.CouncilTerm.begin.AddYears(4).AddDays(-1);
@@ -196,6 +200,10 @@ namespace De.AHoerstemeier.Tambon.UI
                     if (item.OfficialTerm.endSpecified)
                     {
                         end = item.OfficialTerm.end;
+                    }
+                    else if (item.OfficialTerm.title == OfficialType.Mayor && item.OfficialTerm.beginreason == OfficialBeginType.TermExtended)
+                    {
+                        end = new DateTime(2021, 3, 28);
                     }
                     else
                     {
