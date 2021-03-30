@@ -1613,6 +1613,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         else 
                         {
                             txt =
+                                "<officialterm title=\"Mayor\" begin=\"2013-03-28\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
                                 String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"2021-03-27\" beginreason=\"TermExtended\" endreason=\"EndOfTerm\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
                                 String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
                         }
