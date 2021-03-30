@@ -655,8 +655,8 @@ namespace De.AHoerstemeier.Tambon
             {
                 if ((!officeEntry.obsolete) && _officesWithElectedOfficials.Contains(officeEntry.type))
                 {
-                    var vacancy = officeEntry.officials.OfficialTermsOrVacancies.OfType<OfficialVacancy>().FirstOrDefault();
-                    if (vacancy != null)
+                    var vacancy = officeEntry.officials.OfficialTermsOrVacancies.FirstOrDefault();
+                    if ( vacancy is OfficialVacancy)
                     {
                         if (vacancy.endSpecified && vacancy.end.CompareTo(DateTime.Now) <= 0)
                         {
@@ -718,7 +718,14 @@ namespace De.AHoerstemeier.Tambon
                         }
                         else if (term.beginreason == TermBeginType.TermExtended)
                         {
-                            termEnd = new DateTime(2050, 1, 1);  // just a dummy future date
+                            if (term.type == EntityType.TAO)
+                            {
+                                termEnd = new DateTime(2050, 1, 1);  // just a dummy future date
+                            }
+                            else
+                            {
+                                termEnd = new DateTime(2021, 3, 27);
+                            }
                         }
                         else
                         {
@@ -751,7 +758,14 @@ namespace De.AHoerstemeier.Tambon
                     }
                     else if (term.beginreason == OfficialBeginType.TermExtended)
                     {
-                        termEnd = new DateTime(2050, 1, 1);  // just a dummy future date
+                        if (term.title == OfficialType.TAOMayor)
+                        {
+                            termEnd = new DateTime(2050, 1, 1);  // just a dummy future date
+                        }
+                        else
+                        {
+                            termEnd = new DateTime(2021, 3, 27);
+                        }
                     }
                     else
                     {
