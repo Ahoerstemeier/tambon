@@ -1233,7 +1233,7 @@ namespace De.AHoerstemeier.Tambon.UI
                             errors += String.Format("Duplicate webId {0}", entry.id) + Environment.NewLine;
                         }
                     }
-                    else if (!entry.obsolete)  
+                    else if (!entry.obsolete)
                     {
                         errors += String.Format("WebId {0} refers to invalid LAO {1}", entry.id, entry.geocode) + Environment.NewLine;
                     }
@@ -1569,66 +1569,27 @@ namespace De.AHoerstemeier.Tambon.UI
                 var entity = listviewLocalAdministration.SelectedItems[0]?.Tag as Entity;
                 var office = entity?.office.FirstOrDefault();
                 txtLocalGovernment.Text = String.Empty;
-                if (office != null && !office.obsolete)
+                if (office != null && !office.obsolete && office.type == OfficeType.MunicipalityOffice)
                 {
                     var term = office.council.CouncilTerms.FirstOrDefault();
-                    if (term != null && (term.beginreason != TermBeginType.TermExtended || term.type!=EntityType.TAO) )
+                    if (term != null && term.beginreason == TermBeginType.TermExtended)
                     {
-                        if (term.beginreason == TermBeginType.TermExtended)
-                        {
-                            term = office.council.CouncilTerms.ElementAt(1);
-                        }
-                        term.end = term.begin.AddYears(4).AddDays(-1);
+                        term.end = new DateTime(2021, 3, 27);
                         term.endreason = TermEndType.EndOfTerm;
-                        var newTerm = new CouncilTerm()
-                        {
-                            begin = term.begin.AddYears(4),
-                            beginreason = TermBeginType.TermExtended,
-                            size = term.size,
-                            type = term.type,
-                        };
-                        String txt;
-                        if (entity.type == EntityType.TAO)
-                        {
-                            txt =
-                                String.Format("<term begin=\"{0:yyyy-MM-dd}\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
-                                String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin, term.end, term.type, term.size) + Environment.NewLine;
-                        }
-                        else
-                        {
-                            txt =
-                                String.Format("<term begin=\"2021-03-28\" type=\"{0}\" size=\"{1}\" />",newTerm.type, newTerm.size) + Environment.NewLine +
-                                String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"2021-03-27\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", newTerm.begin, newTerm.type, newTerm.size) + Environment.NewLine +
-                                String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"{1:yyyy-MM-dd}\" type=\"{2}\" size=\"{3}\" />", term.begin, term.end, term.type, term.size) + Environment.NewLine;
-                        }
+                        String txt =
+                            String.Format("<term begin=\"2021-03-28\" type=\"{0}\" size=\"{1}\" />", term.type, term.size) + Environment.NewLine +
+                            String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"2021-03-27\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", term.begin, term.type, term.size) + Environment.NewLine;
                         txtLocalGovernment.Text += txt;
                     }
                     var official = office.officials.OfficialTerms.FirstOrDefault() as OfficialEntry;
-                    if (official != null && official.beginreason != OfficialBeginType.TermExtended)
+                    if (official != null && official.beginreason == OfficialBeginType.TermExtended)
                     {
-                        official.end = official.begin.AddYears(4).AddDays(-1);
+                        official.end = new DateTime(2021, 3, 27);
                         official.endreason = OfficialEndType.EndOfTerm;
-                        var newOfficial = new OfficialEntry()
-                        {
-                            begin = official.begin.AddYears(4),
-                            beginreason = OfficialBeginType.TermExtended,
-                            name = official.name,
-                            title = official.title,
-                        };
-                        String txt;
-                        if (entity.type == EntityType.TAO)
-                        {
-                            txt =
-                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" beginreason=\"TermExtended\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
-                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
-                        }
-                        else 
-                        {
-                            txt =
+
+                        String txt =
                                 "<officialterm title=\"Mayor\" begin=\"2021-03-28\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
-                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"2021-03-27\" beginreason=\"TermExtended\" endreason=\"EndOfTerm\" />", newOfficial.title, newOfficial.name, newOfficial.begin) + Environment.NewLine +
-                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"{3:yyyy-MM-dd}\" beginreason=\"ElectedDirectly\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin, official.end) + Environment.NewLine;
-                        }
+                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"2021-03-27\" beginreason=\"TermExtended\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin) + Environment.NewLine;
 
                         txtLocalGovernment.Text += txt;
 
