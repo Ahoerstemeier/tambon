@@ -272,9 +272,11 @@ namespace De.AHoerstemeier.Tambon.UI
             var thesaban = dummyEntity.FlatList().Where(x => !x.IsObsolete && x.office!=null && ( x.type == EntityType.ThesabanTambon || x.type == EntityType.ThesabanMueang || x.type == EntityType.ThesabanNakhon));
             var thesabanWithMayorFrom2021 = thesaban.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().begin == new DateTime(2021 , 03 , 28)).ToList();
             var mayorRelected = thesabanWithMayorFrom2021.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name).ToList();
-            thesabanWithMayorFrom2021.RemoveAll(x => mayorRelected.Contains(x));
-            var oldMayorElected = thesabanWithMayorFrom2021.Where(x => (x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().Count(y=> y.name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name))>1).ToList();
+            var remainingMayor = thesabanWithMayorFrom2021.ToList();
+            remainingMayor.RemoveAll(x => mayorRelected.Contains(x));
+            var oldMayorElected = remainingMayor.Where(x => (x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().Count(y=> y.name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name))>1).ToList();
 
+            result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors elected", thesabanWithMayorFrom2021.Count ) + Environment.NewLine;
             result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors reelected", mayorRelected.Count) + Environment.NewLine;
             result += String.Format(CultureInfo.CurrentUICulture, "{0} previous mayors elected", oldMayorElected.Count) + Environment.NewLine;
             result += String.Format(CultureInfo.CurrentUICulture, "{0} new mayors elected", thesabanWithMayorFrom2021.Count - mayorRelected.Count - oldMayorElected.Count) + Environment.NewLine;
