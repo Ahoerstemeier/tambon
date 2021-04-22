@@ -346,6 +346,11 @@
           <xs:documentation>Change of party membership, thus disqualified as move-up.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="quorumnotreached">
+        <xs:annotation>
+          <xs:documentation>Did not reach minimum number of votes to be elected.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="Candidate">
