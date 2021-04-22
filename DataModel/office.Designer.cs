@@ -2201,12 +2201,33 @@ namespace De.AHoerstemeier.Tambon
     [System.Runtime.Serialization.DataContractAttribute(Name = "CanceledElection", Namespace = "http://hoerstemeier.com/tambon/", IsReference = true)]
     public partial class CanceledElection
     {
+        private Election electionField;
 
         private System.DateTime dateField;
 
         private string commentField;
 
         private ElectionCancelReason reasonField;
+
+        /// <summary>
+        /// Data on the election which got the official into his office.
+        /// </summary>
+        /// <value>
+        /// The election.
+        /// </value>
+        [System.Xml.Serialization.XmlElementAttribute(Order = 0)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Election election
+        {
+            get
+            {
+                return this.electionField;
+            }
+            set
+            {
+                this.electionField = value;
+            }
+        }
 
         /// <summary>
         /// Election date.
@@ -3918,6 +3939,11 @@ namespace De.AHoerstemeier.Tambon
         /// Election canceled due to death of only candidate.
         /// </summary>
         Death,
+
+        /// <summary>
+        /// Did not reach minimum number of votes to be elected.
+        /// </summary>
+        QuorumNotReached,
     }
 
     /// <summary>
