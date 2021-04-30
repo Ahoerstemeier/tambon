@@ -374,7 +374,7 @@
   <xs:complexType name="CandidateListEntry">
     <xs:complexContent>
       <xs:extension base="t:Candidate">
-        <xs:attribute name="id" type="xs:unsignedInt" use="required" />
+        <xs:attribute name="id" type="xs:unsignedInt" use="optional" />
         <xs:attribute name="votes" type="xs:unsignedInt" use="optional" />
       </xs:extension>
     </xs:complexContent>
