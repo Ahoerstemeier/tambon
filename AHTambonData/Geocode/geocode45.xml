@@ -2518,7 +2518,14 @@
         </create>
       </history>
       <entity type="Muban" geocode="45041201" name="บ้านอีโคตร" english="Ban I Khot" />
-      <entity type="Muban" geocode="45041202" name="บ้านค้อน้อย" english="Ban Kho Noi" />
+      <entity type="Muban" geocode="45041202" name="บ้านค้อ" english="Ban Kho" >
+        <history>
+          <rename name="บ้านค้อ" english="Ban Kho" oldname="บ้านค้อน้อย" oldenglish="Ban Kho Noi" effective="2021-01-28">
+            <gazetteref volume="138" page="98" issue="8 ง" date="2021-01-28" />
+            <meetingreference board="rename" number="2" date="2020-09-22" />
+          </rename>
+        </history>
+      </entity>
       <entity type="Muban" geocode="45041203" name="บ้านเหล่าล้อ" english="Ban Lao Lo" />
       <entity type="Muban" geocode="45041204" name="บ้านหนองหิน" english="Ban Nong Hin" />
       <entity type="Muban" geocode="45041205" name="บ้านดอนแคน" english="Ban Don Khaen" />
@@ -8188,7 +8195,7 @@
       </geo:Point>
       <officials>
         <official title="DistrictOfficer" name="สันติ โอฆะพนม" begin="2021-05-28" beginreason="Appointed" />
-        
+
         <official title="DistrictOfficer" name="สัญญา ประเสริฐวิทย์" begin="2010-02-22" endyear="2011" endreason="Transfer" />
         <official title="DistrictOfficer" name="อดิเทพ กมลเวชช์" begin="2009-08-24" end="2010-02-21" />
         <official title="DistrictOfficer" name="ธีระพล ช่วยเรียง" end="2009-08-23" />
