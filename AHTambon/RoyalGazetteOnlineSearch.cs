@@ -146,7 +146,11 @@ namespace De.AHoerstemeier.Tambon
                     {ProtectedAreaTypes.WildlifeSanctuary,"เป็นเขตรักษาพันธุ์สัตว์ป่า"},
                     {ProtectedAreaTypes.NationalPark,"เป็นอุทยานแห่งชาติ หรือ เพิกถอนอุทยานแห่งชาติ"},
                     {ProtectedAreaTypes.HistoricalSite,"กำหนดเขตที่ดินโบราณสถาน"},
-                    {ProtectedAreaTypes.NationalPreservedForest,"เป็นป่าสงวนแห่งชาติ หรือ กำหนดพื้นที่ป่าสงวนแห่งชาติ"}
+                    {ProtectedAreaTypes.NationalForest,"เป็นป่าสงวนแห่งชาติ หรือ กำหนดพื้นที่ป่าสงวนแห่งชาติ"},
+                    {ProtectedAreaTypes.BotanicalGarden,"เป็นสวนพฤกษศาสตร์" },
+                    {ProtectedAreaTypes.Arboretum,"เป็นสวนรุกขชาติ" },
+                    {ProtectedAreaTypes.Wat,"การตั้งวัดในพระพุทธศาสนา" },
+                    {ProtectedAreaTypes.ForestPark,"เป็นวนอุทยาน" }
                   }
                },
                {
