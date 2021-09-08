@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -1380,6 +1381,50 @@ namespace De.AHoerstemeier.Tambon.UI
             var webId = GetWebIdOfSelectedItem(listviewLocalAdministration);
             if (webId > 0)
             {
+                var request = (HttpWebRequest)WebRequest.Create("https://info.dla.go.th/eForm/abtData.do");
+                request.Method = "POST";
+                request.Referer="https://info.dla.go.th/eForm/abtData.do";
+                request.Host="info.dla.go.th";
+                request.Accept = "text/html";
+                request.Headers.Add("Origin","https://info.dla.go.th");
+                request.Headers.Add("Accept-Encoding"," gzip, deflate, br");
+                request.Headers.Add("Accept-Language","en-US");
+
+                StringBuilder postData = new StringBuilder();
+                var separator = "------WebKitFormBoundaryuOVpIaOZr1T7bhVP";
+                Action<String,String> addValue = (String name, String value) => 
+                {
+                    postData.AppendLine(separator);
+                    postData.AppendLine("Content-Disposition: form-data; name = \""+name+"\"");
+                    postData.AppendLine(value);
+                };
+                addValue("cmd", "goView");
+                addValue("data_index", "0");
+                addValue("searchCondition.orgId", webId.ToString(CultureInfo.InvariantCulture));
+                addValue("searchCondition.provinceId", "0");
+                addValue("searchCondition.AmphurId", "0");
+                addValue("searchCondition.position", "0");
+                addValue("searchCondition.pageSize", "10");
+                postData.AppendLine(separator);
+                request.ContentType = "multipart/form-data; boundary="+separator;
+                
+                var data = Encoding.ASCII.GetBytes(postData.ToString());
+                request.GetRequestStream().Write(data, 0, data.Length);
+                try
+                {
+                    var response = (HttpWebResponse)request.GetResponse();
+                    // TODO - parse response stream
+                }
+                catch (WebException)
+                { }
+                //cmd: goView
+                //data_index: 0
+                //searchCondition.provinceId: 81
+                //searchCondition.amphurId: 8104
+                //searchCondition.orgId: 6882
+                //searchCondition.position: 0
+                //searchCondition.pageSize: 10
+
                 var url = String.Format(CultureInfo.CurrentUICulture, "http://infov1.dla.go.th/public/surveyInfo.do?cmd=surveyForm&orgInfoId={0}", webId);
                 Process.Start(url);
             }
