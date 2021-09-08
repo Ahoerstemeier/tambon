@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace De.AHoerstemeier.Tambon
 {
@@ -103,6 +104,24 @@ namespace De.AHoerstemeier.Tambon
                 retval = value.Remove(0, englishStringChumchon.Length).Trim();
             }
             return retval;
+        }
+
+        /// <summary>
+        /// Appends a name-value tuple URL encoded into the string builder.
+        /// </summary>
+        /// <param name="builder">String builder.</param>
+        /// <param name="name">Name.</param>
+        /// <param name="value">Value.</param>
+        public static void AppendUrlEncoded(this StringBuilder builder, String name, String value)
+        {
+            _ = builder ?? throw new ArgumentNullException(nameof(builder));
+            if (builder.Length != 0)
+            { 
+                builder.Append("&"); 
+            }
+            builder.Append(HttpUtility.UrlEncode(name));
+            builder.Append("=");
+            builder.Append(HttpUtility.UrlEncode(value));
         }
     }
 }
