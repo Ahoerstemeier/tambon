@@ -1449,7 +1449,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     var entity = item.Tag as Entity;
 
-                    var url = String.Format(CultureInfo.CurrentUICulture, "https://www.google.de/search?source=hp&q={0}", entity.FullName);
+                    var url = String.Format(CultureInfo.CurrentUICulture, "https://www.google.de/search?q={0}", entity.FullName);
                     Process.Start(url);
                 }
             }
