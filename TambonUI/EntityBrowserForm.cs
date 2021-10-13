@@ -1603,7 +1603,7 @@ namespace De.AHoerstemeier.Tambon.UI
                         official.endreason = OfficialEndType.EndOfTerm;
 
                         String txt =
-                                "<officialterm title=\"Mayor\" begin=\"2021-11-27\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
+                                "<officialterm title=\"TAOMayor\" begin=\"2021-11-27\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
                                 String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"2021-11-27\" beginreason=\"TermExtended\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin) + Environment.NewLine;
 
                         txtLocalGovernment.Text += txt;
