@@ -1603,12 +1603,24 @@ namespace De.AHoerstemeier.Tambon.UI
                         official.endreason = OfficialEndType.EndOfTerm;
 
                         String txt =
-                                "<officialterm title=\"TAOMayor\" begin=\"2021-11-27\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
+                                "<officialterm title=\"TAOMayor\" begin=\"2021-11-28\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
                                 String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"2021-11-27\" beginreason=\"TermExtended\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin) + Environment.NewLine;
 
                         txtLocalGovernment.Text += txt;
 
                     }
+                    var vacancy = office.officials.OfficialTermsOrVacancies.FirstOrDefault() as OfficialVacancy;
+                    if (vacancy != null )
+                    {
+                        vacancy.end = new DateTime(2021, 11, 27);
+
+                        String txt =
+                                "<officialterm title=\"TAOMayor\" begin=\"2021-11-28\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
+                                String.Format("<vacant title=\"{0}\" year=\"{1}\" end=\"2021-11-27\" />", vacancy.title, vacancy.year) + Environment.NewLine;
+                             txtLocalGovernment.Text += txt;
+
+                    }
+
                     if (!String.IsNullOrEmpty(txtLocalGovernment.Text))
                     {
                         CopyToClipboard(txtLocalGovernment.Text);
