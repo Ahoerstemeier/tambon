@@ -466,6 +466,11 @@ namespace De.AHoerstemeier.Tambon
         Environment,
 
         /// <summary>
+        /// Aquatic animal sanctuary (เขตพื้นที่รักษาพันธุ์สัตว์น้ำ).
+        /// </summary>
+        Aquatic,
+
+        /// <summary>
         /// Buddhist temple (วัด).
         /// </summary>
         Wat,
