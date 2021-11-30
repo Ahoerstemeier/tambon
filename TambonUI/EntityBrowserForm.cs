@@ -170,6 +170,10 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     end = item.CouncilTerm.end;
                 }
+                else if (item.CouncilTerm.type == EntityType.TAO && item.CouncilTerm.beginreason == TermBeginType.TermExtended)
+                {
+                    end = new DateTime(2021, 11, 28);
+                }
                 else if (item.CouncilTerm.type != EntityType.TAO && item.CouncilTerm.beginreason == TermBeginType.TermExtended)
                 {
                     end = new DateTime(2021, 3, 28);
@@ -200,6 +204,10 @@ namespace De.AHoerstemeier.Tambon.UI
                     if (item.OfficialTerm.endSpecified)
                     {
                         end = item.OfficialTerm.end;
+                    }
+                    else if (item.OfficialTerm.title == OfficialType.TAOMayor && item.OfficialTerm.beginreason == OfficialBeginType.TermExtended)
+                    {
+                        end = new DateTime(2021, 11, 28);
                     }
                     else if (item.OfficialTerm.title == OfficialType.Mayor && item.OfficialTerm.beginreason == OfficialBeginType.TermExtended)
                     {
@@ -269,19 +277,41 @@ namespace De.AHoerstemeier.Tambon.UI
                     officialUnknownBuilder.ToString() + Environment.NewLine;
             }
 
-            var thesaban = dummyEntity.FlatList().Where(x => !x.IsObsolete && x.office!=null && ( x.type == EntityType.ThesabanTambon || x.type == EntityType.ThesabanMueang || x.type == EntityType.ThesabanNakhon));
-            var thesabanWithMayorFrom2021 = thesaban.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().begin == new DateTime(2021 , 03 , 28)).ToList();
+            var thesaban = dummyEntity.FlatList().Where(x => !x.IsObsolete && x.office != null && (x.type == EntityType.ThesabanTambon || x.type == EntityType.ThesabanMueang || x.type == EntityType.ThesabanNakhon));
+            var thesabanWithMayorFrom2021 = thesaban.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().begin == new DateTime(2021, 03, 28)).ToList();
             var mayorReElected = thesabanWithMayorFrom2021.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name).ToList();
             var remainingMayor = thesabanWithMayorFrom2021.ToList();
             remainingMayor.RemoveAll(x => mayorReElected.Contains(x));
-            var oldMayorElected = remainingMayor.Where(x => (x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().Count(y=> y.name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name))>1).ToList();
+            var oldMayorElected = remainingMayor.Where(x => (x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().Count(y => y.name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name)) > 1).ToList();
             var relativeElected = remainingMayor.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name.LastName() == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name.LastName()).ToList();
 
-            result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors elected", thesabanWithMayorFrom2021.Count ) + Environment.NewLine;
-            result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors reelected", mayorReElected.Count) + Environment.NewLine;
-            result += String.Format(CultureInfo.CurrentUICulture, "{0} previous mayors elected", oldMayorElected.Count) + Environment.NewLine;
-            result += String.Format(CultureInfo.CurrentUICulture, "{0} new mayors elected", thesabanWithMayorFrom2021.Count - mayorReElected.Count - oldMayorElected.Count) + Environment.NewLine;
-            result += String.Format(CultureInfo.CurrentUICulture, "{0} relative of previous mayor elected", relativeElected.Count) + Environment.NewLine;
+            if (thesaban.Any())
+            {
+                result += Environment.NewLine + "Municipality mayors:" + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors elected", thesabanWithMayorFrom2021.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors reelected", mayorReElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} previous mayors elected", oldMayorElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} new mayors elected", thesabanWithMayorFrom2021.Count - mayorReElected.Count - oldMayorElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} relative of previous mayor elected", relativeElected.Count) + Environment.NewLine;
+            }
+
+            var tao = dummyEntity.FlatList().Where(x => !x.IsObsolete && x.office != null && x.type == EntityType.TAO);
+            var taoWithMayorFrom2021 = tao.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().begin == new DateTime(2021, 11, 28)).ToList();
+            var taoMayorReElected = taoWithMayorFrom2021.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name).ToList();
+            var taoRemainingMayor = taoWithMayorFrom2021.ToList();
+            taoRemainingMayor.RemoveAll(x => taoMayorReElected.Contains(x));
+            var taoOldMayorElected = taoRemainingMayor.Where(x => (x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().Count(y => y.name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name)) > 1).ToList();
+            var taoRelativeElected = taoRemainingMayor.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name.LastName() == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name.LastName()).ToList();
+
+            if (taoWithMayorFrom2021.Any())
+            {
+                result += Environment.NewLine + "TAO mayors:" + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors elected (of {1} TAO)", taoWithMayorFrom2021.Count, tao.Count()) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors reelected", taoMayorReElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} previous mayors elected", taoOldMayorElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} new mayors elected", taoWithMayorFrom2021.Count - taoMayorReElected.Count - taoOldMayorElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} relative of previous mayor elected", taoRelativeElected.Count) + Environment.NewLine;
+            }
 
             txtElections.Text = result;
         }
@@ -1610,14 +1640,14 @@ namespace De.AHoerstemeier.Tambon.UI
 
                     }
                     var vacancy = office.officials.OfficialTermsOrVacancies.FirstOrDefault() as OfficialVacancy;
-                    if (vacancy != null )
+                    if (vacancy != null)
                     {
                         vacancy.end = new DateTime(2021, 11, 27);
 
                         String txt =
                                 "<officialterm title=\"TAOMayor\" begin=\"2021-11-28\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
                                 String.Format("<vacant title=\"{0}\" year=\"{1}\" end=\"2021-11-27\" />", vacancy.title, vacancy.year) + Environment.NewLine;
-                             txtLocalGovernment.Text += txt;
+                        txtLocalGovernment.Text += txt;
 
                     }
 
