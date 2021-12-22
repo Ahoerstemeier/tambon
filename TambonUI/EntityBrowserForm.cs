@@ -1621,8 +1621,9 @@ namespace De.AHoerstemeier.Tambon.UI
                     {
                         term.end = new DateTime(2021, 11, 27);
                         term.endreason = TermEndType.EndOfTerm;
+                        term.size = Math.Max(6, term.size / 2);
                         String txt =
-                            String.Format("<term begin=\"2021-11-28\" type=\"{0}\" size=\"{1}\" />", term.type, term.size) + Environment.NewLine +
+                            String.Format("<term begin=\"2021-11-28\" type=\"{0}\" size=\"{1}\" sizechangereason=\"Law\" />", term.type, term.size) + Environment.NewLine +
                             String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"2021-11-27\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", term.begin, term.type, term.size) + Environment.NewLine;
                         txtLocalGovernment.Text += txt;
                     }
