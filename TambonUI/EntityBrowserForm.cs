@@ -302,6 +302,7 @@ namespace De.AHoerstemeier.Tambon.UI
             taoRemainingMayor.RemoveAll(x => taoMayorReElected.Contains(x));
             var taoOldMayorElected = taoRemainingMayor.Where(x => (x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().Count(y => y.name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name)) > 1).ToList();
             var taoRelativeElected = taoRemainingMayor.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name.LastName() == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name.LastName()).ToList();
+            var taoMayorFirstNames = taoWithMayorFrom2021.GroupBy(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name.Split(' ').First()).OrderByDescending(x => x.Count());
 
             if (taoWithMayorFrom2021.Any())
             {
@@ -311,6 +312,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 result += String.Format(CultureInfo.CurrentUICulture, "{0} previous mayors elected", taoOldMayorElected.Count) + Environment.NewLine;
                 result += String.Format(CultureInfo.CurrentUICulture, "{0} new mayors elected", taoWithMayorFrom2021.Count - taoMayorReElected.Count - taoOldMayorElected.Count) + Environment.NewLine;
                 result += String.Format(CultureInfo.CurrentUICulture, "{0} relative of previous mayor elected", taoRelativeElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "Most common first name {0} ({1})", taoMayorFirstNames.First().Key, taoMayorFirstNames.First().Count());
             }
 
             txtElections.Text = result;
