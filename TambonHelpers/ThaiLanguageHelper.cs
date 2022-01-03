@@ -288,5 +288,17 @@ namespace De.AHoerstemeier.Tambon
             //{"ซอย","Soi"},  // side-street
             {"เมือง","mɯ̄aŋ"}  // town
         };
+
+        /// <summary>
+        /// Retrieves family name from a " " separated full name.
+        /// </summary>
+        /// <param name="value">Full name.</param>
+        /// <returns>Last name.</returns>
+        public static String LastName(this String value)
+        {
+            var names = value.Split(' ');
+            var result = value.Replace(names.First() + " ", "");
+            return result;
+        }
     }
 }

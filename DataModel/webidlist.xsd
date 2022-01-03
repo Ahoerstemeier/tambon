@@ -22,6 +22,11 @@
         <xs:documentation>Geocode of corresponding entity.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="obsolete" type="xs:boolean" use="optional" default="false">
+      <xs:annotation>
+        <xs:documentation>Whether entry intentionally refers to an obsolete entity.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attributeGroup ref="t:Comment" />
   </xs:complexType>
 

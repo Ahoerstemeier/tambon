@@ -244,7 +244,12 @@
       </xs:enumeration>
       <xs:enumeration value="MinisterOfEnvironment">
         <xs:annotation>
-          <xs:documentation>Minister of Natural Resources and Environment (รัฐมนตรีว่าการกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อมของไทย)</xs:documentation>
+          <xs:documentation>Minister of Natural Resources and Environment (รัฐมนตรีว่าการกระทรวงทรัพยากรธรรมชาติและสิ่งแวดล้อมของไทย).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DirectorOfNationalBureauOfBuddhism">
+        <xs:annotation>
+          <xs:documentation>Director of the National Bureau of Buddhism (ผู้อำนวยการสำนักงานพระพุทธศาสนาแห่งชาติ).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -757,7 +762,7 @@
   <xs:complexType name="GazetteCorrection">
     <xs:complexContent>
       <xs:extension base="t:GazetteReferenceBase">
-        <xs:group ref='t:EntryAction' minOccurs='0' maxOccurs='1' />
+        <xs:group ref='t:EntryAction' minOccurs='0' maxOccurs='unbounded' />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

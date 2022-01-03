@@ -276,7 +276,16 @@
   </xs:complexType>
   <xs:complexType name="EntityCount">
     <xs:sequence minOccurs="1" maxOccurs="1">
-      <xs:element minOccurs="1" maxOccurs="unbounded" name="entry" type="t:EntityCountType" />
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="entry" type="t:EntityCountType" >
+        <xs:annotation>
+          <xs:documentation>Number of entities of given type.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="population" type="t:PopulationDataPoint" >
+        <xs:annotation>
+          <xs:documentation>Population data.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
       <xs:element name="reference" type="t:ReferenceList" minOccurs="0" maxOccurs="1">
         <xs:annotation>
           <xs:documentation>Sources for the numbers.</xs:documentation>

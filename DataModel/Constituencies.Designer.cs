@@ -1890,8 +1890,14 @@ namespace De.AHoerstemeier.Tambon {
         /// Change of party membership, thus disqualified as move-up.
         /// </summary>
         partychange,
+
+        /// <summary>
+        /// Did not reach minimum number of votes to be elected.
+        /// </summary>
+        quorumnotreached,
+
     }
-    
+
     /// <summary>
     /// Reason a candidate looses his seat.
     /// </summary>

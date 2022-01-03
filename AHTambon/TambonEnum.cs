@@ -53,13 +53,75 @@ namespace De.AHoerstemeier.Tambon
 
     public enum ProtectedAreaTypes
     {
+        /// <summary>
+        /// National park (อุทยานแห่งชาติ).
+        /// </summary>
         NationalPark,
+
+        /// <summary>
+        /// Forest park (วนอุทยาน).
+        /// </summary>
         ForestPark,
-        WildlifeSanctuary,
-        NonHuntingArea,
+
+        /// <summary>
+        /// Historical park (อุทยานประวัติศาสตร์).
+        /// </summary>
         HistoricalPark,
+
+        /// <summary>
+        /// Wildlife sanctuary (เขตรักษาพันธุ์สัตว์ป่า).
+        /// </summary>
+        WildlifeSanctuary,
+
+        /// <summary>
+        /// Non-hunting area (เขตห้ามล่าสัตว์ป่า).
+        /// </summary>
+        NonHuntingArea,
+
+        /// <summary>
+        /// Historical site (เขตที่ดินโบราณสถาน).
+        /// </summary>
         HistoricalSite,
-        NationalPreservedForest
+
+        /// <summary>
+        /// National protected forest (ป่าสงวนแห่งชาติ).
+        /// </summary>
+        NationalForest,
+
+        /// <summary>
+        /// UNESCO world heritage (มรดกโลก).
+        /// </summary>
+        WorldHeritage,
+
+        /// <summary>
+        /// UNESCO biosphere reserve (พื้นที่สงวนชีวมณฑล).
+        /// </summary>
+        BiosphereReserve,
+
+        /// <summary>
+        /// Botanical garden (สวนพฤกษศาสตร์).
+        /// </summary>
+        BotanicalGarden,
+
+        /// <summary>
+        /// Arboretum or forest garden (สวนรุกขชาติ).
+        /// </summary>
+        Arboretum,
+
+        /// <summary>
+        /// Paleontological survey area (เขตสำรวจและศึกษาวิจัยเกี่ยวกับแหล่งซากดึกดำบรรพ์หรือซากดึกดำบรรพ์).
+        /// </summary>
+        Paleontological,
+
+        /// <summary>
+        /// Environment protection area (เขตพื้นที่คุ้มครองสิ่งแวดล้อม).
+        /// </summary>
+        Environment,
+
+        /// <summary>
+        /// Buddhist temple (วัด).
+        /// </summary>
+        Wat,
     }
 
     public enum EntityLeaderType
@@ -168,6 +230,7 @@ namespace De.AHoerstemeier.Tambon
         RegisterOfficeDeputyDirector,
         DirectorGeneralDepartmentOfProvincialAdministration,
         MinisterOfEnvironment,
-        DepartmentOfMineralResourceDirectorGeneral
+        DepartmentOfMineralResourceDirectorGeneral,
+        DirectorOfNationalBureauOfBuddhism
     }
 }

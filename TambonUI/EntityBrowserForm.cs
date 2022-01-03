@@ -143,18 +143,22 @@ namespace De.AHoerstemeier.Tambon.UI
             var itemsWithCouncilElectionsPending = new List<EntityTermEnd>();
             var itemsWithOfficialElectionsPending = new List<EntityTermEnd>();
             var itemsWithOfficialElectionResultUnknown = new List<EntityTermEnd>();
+            var itemsWithOfficialVacant = new List<EntityTermEnd>();
 
             var itemsWithCouncilElectionPendingInParent = dummyEntity.EntitiesWithCouncilElectionPending();
             itemsWithCouncilElectionsPending.AddRange(itemsWithCouncilElectionPendingInParent);
             itemsWithCouncilElectionsPending.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
 
-            var itemsWithOfficialElectionPendingInParent = dummyEntity.EntitiesWithOfficialElectionPending();
+            var itemsWithOfficialElectionPendingInParent = dummyEntity.EntitiesWithOfficialElectionPending(false);
             itemsWithOfficialElectionsPending.AddRange(itemsWithOfficialElectionPendingInParent);
             itemsWithOfficialElectionsPending.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
 
             var itemsWithOfficialElectionResultUnknownInParent = dummyEntity.EntitiesWithLatestOfficialElectionResultUnknown();
             itemsWithOfficialElectionResultUnknown.AddRange(itemsWithOfficialElectionResultUnknownInParent);
             itemsWithOfficialElectionResultUnknown.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
+
+            var itemsWithOfficialVacantInParent = dummyEntity.EntitiesWithOfficialVacant();
+            itemsWithOfficialVacant.AddRange(itemsWithOfficialVacantInParent);
 
             var result = String.Empty;
             var councilBuilder = new StringBuilder();
@@ -165,6 +169,14 @@ namespace De.AHoerstemeier.Tambon.UI
                 if (item.CouncilTerm.endSpecified)
                 {
                     end = item.CouncilTerm.end;
+                }
+                else if (item.CouncilTerm.type == EntityType.TAO && item.CouncilTerm.beginreason == TermBeginType.TermExtended)
+                {
+                    end = new DateTime(2021, 11, 28);
+                }
+                else if (item.CouncilTerm.type != EntityType.TAO && item.CouncilTerm.beginreason == TermBeginType.TermExtended)
+                {
+                    end = new DateTime(2021, 3, 28);
                 }
                 else
                 {
@@ -179,6 +191,43 @@ namespace De.AHoerstemeier.Tambon.UI
                 result +=
                     String.Format(CultureInfo.CurrentUICulture, "{0} LAO council elections pending", councilCount) + Environment.NewLine +
                     councilBuilder.ToString() + Environment.NewLine;
+            }
+
+            var vacantBuilder = new StringBuilder();
+            Int32 vacantCount = 0;
+            foreach (var item in itemsWithOfficialVacant)
+            {
+                String officialTermEnd = "unknown";
+                if ((item.OfficialTerm.begin != null) && (item.OfficialTerm.begin.Year > 1900))
+                {
+                    DateTime end;
+                    if (item.OfficialTerm.endSpecified)
+                    {
+                        end = item.OfficialTerm.end;
+                    }
+                    else if (item.OfficialTerm.title == OfficialType.TAOMayor && item.OfficialTerm.beginreason == OfficialBeginType.TermExtended)
+                    {
+                        end = new DateTime(2021, 11, 28);
+                    }
+                    else if (item.OfficialTerm.title == OfficialType.Mayor && item.OfficialTerm.beginreason == OfficialBeginType.TermExtended)
+                    {
+                        end = new DateTime(2021, 3, 28);
+                    }
+                    else
+                    {
+                        end = item.OfficialTerm.begin.AddYears(4).AddDays(-1);
+                    }
+                    officialTermEnd = String.Format(CultureInfo.CurrentUICulture, "{0:d}", end);
+                }
+                vacantBuilder.AppendFormat(CultureInfo.CurrentUICulture, "{0} ({1}): {2}", item.Entity.english, item.Entity.geocode, officialTermEnd);
+                vacantBuilder.AppendLine();
+                vacantCount++;
+            }
+            if (vacantCount > 0)
+            {
+                result +=
+                    String.Format(CultureInfo.CurrentUICulture, "{0} LAO official vacant", vacantCount) + Environment.NewLine +
+                    vacantBuilder.ToString() + Environment.NewLine;
             }
 
             var officialBuilder = new StringBuilder();
@@ -227,6 +276,45 @@ namespace De.AHoerstemeier.Tambon.UI
                     String.Format(CultureInfo.CurrentUICulture, "{0} LAO official elections result missing", officialUnknownCount) + Environment.NewLine +
                     officialUnknownBuilder.ToString() + Environment.NewLine;
             }
+
+            var thesaban = dummyEntity.FlatList().Where(x => !x.IsObsolete && x.office != null && (x.type == EntityType.ThesabanTambon || x.type == EntityType.ThesabanMueang || x.type == EntityType.ThesabanNakhon));
+            var thesabanWithMayorFrom2021 = thesaban.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().begin == new DateTime(2021, 03, 28)).ToList();
+            var mayorReElected = thesabanWithMayorFrom2021.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name).ToList();
+            var remainingMayor = thesabanWithMayorFrom2021.ToList();
+            remainingMayor.RemoveAll(x => mayorReElected.Contains(x));
+            var oldMayorElected = remainingMayor.Where(x => (x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().Count(y => y.name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name)) > 1).ToList();
+            var relativeElected = remainingMayor.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name.LastName() == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name.LastName()).ToList();
+
+            if (thesaban.Any())
+            {
+                result += Environment.NewLine + "Municipality mayors:" + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors elected", thesabanWithMayorFrom2021.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors reelected", mayorReElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} previous mayors elected", oldMayorElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} new mayors elected", thesabanWithMayorFrom2021.Count - mayorReElected.Count - oldMayorElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} relative of previous mayor elected", relativeElected.Count) + Environment.NewLine;
+            }
+
+            var tao = dummyEntity.FlatList().Where(x => !x.IsObsolete && x.office != null && x.type == EntityType.TAO);
+            var taoWithMayorFrom2021 = tao.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().begin == new DateTime(2021, 11, 28)).ToList();
+            var taoMayorReElected = taoWithMayorFrom2021.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name).ToList();
+            var taoRemainingMayor = taoWithMayorFrom2021.ToList();
+            taoRemainingMayor.RemoveAll(x => taoMayorReElected.Contains(x));
+            var taoOldMayorElected = taoRemainingMayor.Where(x => (x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().Count(y => y.name == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name)) > 1).ToList();
+            var taoRelativeElected = taoRemainingMayor.Where(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().ElementAt(1).name.LastName() == x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name.LastName()).ToList();
+            var taoMayorFirstNames = taoWithMayorFrom2021.GroupBy(x => x.office.First().officials.OfficialTerms.OfType<OfficialEntry>().First().name.Split(' ').First()).OrderByDescending(x => x.Count());
+
+            if (taoWithMayorFrom2021.Any())
+            {
+                result += Environment.NewLine + "TAO mayors:" + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors elected (of {1} TAO)", taoWithMayorFrom2021.Count, tao.Count()) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} mayors reelected", taoMayorReElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} previous mayors elected", taoOldMayorElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} new mayors elected", taoWithMayorFrom2021.Count - taoMayorReElected.Count - taoOldMayorElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "{0} relative of previous mayor elected", taoRelativeElected.Count) + Environment.NewLine;
+                result += String.Format(CultureInfo.CurrentUICulture, "Most common first name {0} ({1})", taoMayorFirstNames.First().Key, taoMayorFirstNames.First().Count());
+            }
+
             txtElections.Text = result;
         }
 
@@ -716,14 +804,14 @@ namespace De.AHoerstemeier.Tambon.UI
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Count(),
                 localGovernmentCoveringMoreThanOneTambonAndAllCompletely.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine + Environment.NewLine;
 
-            var localEntitiesWithVacantMayor = localEntitiesWithOffice.Where(x => x.office.First().officials.Items.FirstOrDefault() as OfficialVacancy != null);
+            var localEntitiesWithVacantMayor = localEntitiesWithOffice.Where(x => x.office.First().officials.OfficialTermsOrVacancies.FirstOrDefault() as OfficialVacancy != null);
             if (localEntitiesWithVacantMayor.Any())
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "LAO with vacant mayor: {0} ({1} TAO)",
                 localEntitiesWithVacantMayor.Count(),
                 localEntitiesWithVacantMayor.Where(x => x.type == EntityType.TAO).Count()) + Environment.NewLine;
             }
-            var localEntitiesWithVacantCouncil = localEntitiesWithOffice.Where(x => x.office.First().council.Items.FirstOrDefault() as CouncilVacancy != null);
+            var localEntitiesWithVacantCouncil = localEntitiesWithOffice.Where(x => x.office.First().council.CouncilTermsOrVacancies.FirstOrDefault() as CouncilVacancy != null);
             if (localEntitiesWithVacantCouncil.Any())
             {
                 result += String.Format(CultureInfo.CurrentUICulture, "LAO with vacant council: {0} ({1} TAO)",
@@ -1192,7 +1280,7 @@ namespace De.AHoerstemeier.Tambon.UI
                             errors += String.Format("Duplicate webId {0}", entry.id) + Environment.NewLine;
                         }
                     }
-                    else
+                    else if (!entry.obsolete)
                     {
                         errors += String.Format("WebId {0} refers to invalid LAO {1}", entry.id, entry.geocode) + Environment.NewLine;
                     }
@@ -1393,7 +1481,7 @@ namespace De.AHoerstemeier.Tambon.UI
                 {
                     var entity = item.Tag as Entity;
 
-                    var url = String.Format(CultureInfo.CurrentUICulture, "https://www.google.de/#q={0}", entity.FullName);
+                    var url = String.Format(CultureInfo.CurrentUICulture, "https://www.google.de/search?q={0}", entity.FullName);
                     Process.Start(url);
                 }
             }
@@ -1520,5 +1608,58 @@ namespace De.AHoerstemeier.Tambon.UI
 
         }
         #endregion
+
+        private void listviewLocalAdministration_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if (listviewLocalAdministration.SelectedItems.Count == 1)
+            {
+                var entity = listviewLocalAdministration.SelectedItems[0]?.Tag as Entity;
+                var office = entity?.office.FirstOrDefault();
+                txtLocalGovernment.Text = String.Empty;
+                if (office != null && !office.obsolete && office.type == OfficeType.TAOOffice)
+                {
+                    var term = office.council.CouncilTerms.FirstOrDefault();
+                    if (term != null && term.beginreason == TermBeginType.TermExtended)
+                    {
+                        term.end = new DateTime(2021, 11, 27);
+                        term.endreason = TermEndType.EndOfTerm;
+                        var newTermSize = Math.Max(6, term.size / 2);
+                        String txt =
+                            String.Format("<term begin=\"2021-11-28\" type=\"{0}\" size=\"{1}\" sizechangereason=\"Law\" />", term.type, newTermSize) + Environment.NewLine +
+                            String.Format("<term begin=\"{0:yyyy-MM-dd}\" end=\"2021-11-27\" type=\"{1}\" size=\"{2}\" beginreason=\"TermExtended\" />", term.begin, term.type, term.size) + Environment.NewLine;
+                        txtLocalGovernment.Text += txt;
+                    }
+                    var official = office.officials.OfficialTerms.FirstOrDefault() as OfficialEntry;
+                    if (official != null && official.beginreason == OfficialBeginType.TermExtended)
+                    {
+                        official.end = new DateTime(2021, 11, 27);
+                        official.endreason = OfficialEndType.EndOfTerm;
+
+                        String txt =
+                                "<officialterm title=\"TAOMayor\" begin=\"2021-11-28\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
+                                String.Format("<official title=\"{0}\" name=\"{1}\" begin=\"{2:yyyy-MM-dd}\" end=\"2021-11-27\" beginreason=\"TermExtended\" endreason=\"EndOfTerm\" />", official.title, official.name, official.begin) + Environment.NewLine;
+
+                        txtLocalGovernment.Text += txt;
+
+                    }
+                    var vacancy = office.officials.OfficialTermsOrVacancies.FirstOrDefault() as OfficialVacancy;
+                    if (vacancy != null)
+                    {
+                        vacancy.end = new DateTime(2021, 11, 27);
+
+                        String txt =
+                                "<officialterm title=\"TAOMayor\" begin=\"2021-11-28\" beginreason=\"ElectedDirectly\" />" + Environment.NewLine +
+                                String.Format("<vacant title=\"{0}\" year=\"{1}\" end=\"2021-11-27\" />", vacancy.title, vacancy.year) + Environment.NewLine;
+                        txtLocalGovernment.Text += txt;
+
+                    }
+
+                    if (!String.IsNullOrEmpty(txtLocalGovernment.Text))
+                    {
+                        CopyToClipboard(txtLocalGovernment.Text);
+                    }
+                }
+            }
+        }
     }
 }

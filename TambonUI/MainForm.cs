@@ -881,7 +881,7 @@ namespace De.AHoerstemeier.Tambon.UI
             itemsWithCouncilElectionsPending.AddRange(itemsWithCouncilElectionPendingInChangwat);
             itemsWithCouncilElectionsPending.Sort((x, y) => x.CouncilTerm.begin.CompareTo(y.CouncilTerm.begin));
 
-            var itemsWithOfficialElectionPendingInChangwat = entity.EntitiesWithOfficialElectionPending();
+            var itemsWithOfficialElectionPendingInChangwat = entity.EntitiesWithOfficialElectionPending(true);
             itemsWithOfficialElectionsPending.AddRange(itemsWithOfficialElectionPendingInChangwat);
             itemsWithOfficialElectionsPending.Sort((x, y) => x.OfficialTerm.begin.CompareTo(y.OfficialTerm.begin));
 

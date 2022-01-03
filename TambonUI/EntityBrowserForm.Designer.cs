@@ -294,6 +294,7 @@
             this.listviewLocalAdministration.TabIndex = 15;
             this.listviewLocalAdministration.UseCompatibleStateImageBehavior = false;
             this.listviewLocalAdministration.View = System.Windows.Forms.View.Details;
+            this.listviewLocalAdministration.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listviewLocalAdministration_ItemSelectionChanged);
             // 
             // columnLocalName
             // 

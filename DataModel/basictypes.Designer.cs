@@ -459,6 +459,21 @@ namespace De.AHoerstemeier.Tambon
         /// Paleontological survey area (เขตสำรวจและศึกษาวิจัยเกี่ยวกับแหล่งซากดึกดำบรรพ์หรือซากดึกดำบรรพ์).
         /// </summary>
         Paleontological,
+
+        /// <summary>
+        /// Environment protection area (เขตพื้นที่คุ้มครองสิ่งแวดล้อม).
+        /// </summary>
+        Environment,
+
+        /// <summary>
+        /// Aquatic animal sanctuary (เขตพื้นที่รักษาพันธุ์สัตว์น้ำ).
+        /// </summary>
+        Aquatic,
+
+        /// <summary>
+        /// Buddhist temple (วัด).
+        /// </summary>
+        Wat,
     }
 
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EntityIncludeSub))]
@@ -802,6 +817,11 @@ namespace De.AHoerstemeier.Tambon
         /// Website cannot be accessed, though Google can update cache.
         /// </summary>
         inaccessible,
+
+        /// <summary>
+        /// URL now used by a different Thai administrative unit.
+        /// </summary>
+        changeowner,
     }
 
     /// <summary>
