@@ -1000,11 +1000,11 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btn_Population_Click(Object sender, EventArgs e)
         {
-            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
-            // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 83);
+            var geocode = (cbxChangwat.SelectedItem as Entity).geocode;
+            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), geocode);
             downloader.Process();
             var output = XmlManager.EntityToXml<Entity>(downloader.Data);
-            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
+            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, geocode.ToString() + " " + edtYear.Value.ToString() + ".xml"), output);
         }
 
         private void btnNayokResign_Click(Object sender, EventArgs e)
@@ -1571,6 +1571,14 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var form = new ConstituencyForm();
             form.Show();
+        }
+
+        private void btn_PopulationAllProvinces_Click(object sender, EventArgs e)
+        {
+            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
+            downloader.Process();
+            var output = XmlManager.EntityToXml<Entity>(downloader.Data);
+            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
         }
     }
 }
