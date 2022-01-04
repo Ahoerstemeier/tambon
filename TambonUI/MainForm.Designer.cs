@@ -102,6 +102,7 @@
             this.btn_PopulationAllProvinces.TabIndex = 44;
             this.btn_PopulationAllProvinces.Text = "All provinces";
             this.btn_PopulationAllProvinces.UseVisualStyleBackColor = true;
+            this.btn_PopulationAllProvinces.Click += new System.EventHandler(this.btn_PopulationAllProvinces_Click);
             // 
             // btnCreateKml
             // 

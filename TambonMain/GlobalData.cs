@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -15,7 +13,7 @@ namespace De.AHoerstemeier.Tambon
         /// <summary>
         /// Latest year for which the DOPA population statistics is available.
         /// </summary>
-        public const Int32 PopulationStatisticMaxYear = 2020;
+        public const Int32 PopulationStatisticMaxYear = 2021;
 
         /// <summary>
         /// Earliest year for which the DOPA population statistics is available.

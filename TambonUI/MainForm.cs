@@ -1000,11 +1000,11 @@ namespace De.AHoerstemeier.Tambon.UI
 
         private void btn_Population_Click(Object sender, EventArgs e)
         {
-            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
-            // var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 83);
+            var geocode = (cbxChangwat.SelectedItem as Entity).geocode;
+            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), geocode);
             downloader.Process();
             var output = XmlManager.EntityToXml<Entity>(downloader.Data);
-            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
+            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, geocode.ToString() + " " + edtYear.Value.ToString() + ".xml"), output);
         }
 
         private void btnNayokResign_Click(Object sender, EventArgs e)
@@ -1522,7 +1522,7 @@ namespace De.AHoerstemeier.Tambon.UI
             if ( dialog.FileNames.Count() == 2 )
             {
                 var builder = new StringBuilder();
-                List<EntityType> entityTypes = new List<EntityType>() { EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Tambon, EntityType.Muban, EntityType.Thesaban, EntityType.Sukhaphiban };
+                List<EntityType> entityTypes = new List<EntityType>() { EntityType.Amphoe, EntityType.KingAmphoe, EntityType.Tambon, EntityType.Muban, EntityType.Thesaban, EntityType.TAO, EntityType.Sukhaphiban };
 
                 Entity dataOne = null;
                 using ( var fileStream = new FileStream(dialog.FileNames.First(), FileMode.Open, FileAccess.Read) )
@@ -1547,7 +1547,7 @@ namespace De.AHoerstemeier.Tambon.UI
                             var oldItem = entity.entitycount.First().entry.FirstOrDefault(x => x.type == entityType);
                             if ( oldItem != null )
                             {
-                                value += Convert.ToInt32(oldItem.count);
+                                value -= Convert.ToInt32(oldItem.count);
                             }
                             var newItem = compare.entitycount.First().entry.FirstOrDefault(x => x.type == entityType);
                             if ( newItem != null )
@@ -1561,6 +1561,9 @@ namespace De.AHoerstemeier.Tambon.UI
                 }
                 Clipboard.Clear();
                 Clipboard.SetText(builder.ToString());
+
+                var form = new StringDisplayForm("Yearbook compare", builder.ToString());
+                form.Show();
             }
         }
 
@@ -1568,6 +1571,14 @@ namespace De.AHoerstemeier.Tambon.UI
         {
             var form = new ConstituencyForm();
             form.Show();
+        }
+
+        private void btn_PopulationAllProvinces_Click(object sender, EventArgs e)
+        {
+            var downloader = new PopulationDataDownloader(Convert.ToInt32(edtYear.Value), 0);
+            downloader.Process();
+            var output = XmlManager.EntityToXml<Entity>(downloader.Data);
+            File.WriteAllText(Path.Combine(PopulationDataDownloader.OutputDirectory, edtYear.Value.ToString() + ".xml"), output);
         }
     }
 }
