@@ -82,6 +82,23 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="ElectionResultType">
+    <xs:annotation>
+      <xs:documentation>Election result actions.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Approve">
+        <xs:annotation>
+          <xs:documentation>Election result was approved.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Nulled">
+        <xs:annotation>
+          <xs:documentation>Election nulled and will be repeated.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:complexType name="ConstituencyEntity">
     <xs:complexContent>
       <xs:extension base="t:EntityBase">
