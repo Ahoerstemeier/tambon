@@ -1133,6 +1133,11 @@ namespace De.AHoerstemeier.Tambon
         /// Department of Provincial Administration (กรมการปกครอง).
         /// </summary>
         DOPA,
+
+        /// <summary>
+        /// Election commission (กรรมการการเลือกตั้ง).
+        /// </summary>
+        ElectionCommission,
     }
 
     /// <summary>

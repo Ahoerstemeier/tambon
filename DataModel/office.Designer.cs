@@ -2210,7 +2210,7 @@ namespace De.AHoerstemeier.Tambon
         private ElectionCancelReason reasonField;
 
         /// <summary>
-        /// Data on the election which got the official into his office.
+        /// Data of the election which was nulled.
         /// </summary>
         /// <value>
         /// The election.
@@ -3906,7 +3906,7 @@ namespace De.AHoerstemeier.Tambon
     }
 
     /// <summary>
-    /// Reasons why an election can be canceled or nulled..
+    /// Reasons why an election can be canceled or nulled.
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.3056.0")]
     [System.SerializableAttribute()]
@@ -3941,7 +3941,7 @@ namespace De.AHoerstemeier.Tambon
         Death,
 
         /// <summary>
-        /// Did not reach minimum number of votes to be elected.
+        /// Single candidate did not reach quorum to be elected.
         /// </summary>
         QuorumNotReached,
     }
